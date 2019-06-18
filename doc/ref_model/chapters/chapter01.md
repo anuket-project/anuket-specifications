@@ -1,4 +1,5 @@
 # 1. Introduction
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="75%"/></p>
 
 ## Table of Contents
 * [1.1 Overview.](#overview)
