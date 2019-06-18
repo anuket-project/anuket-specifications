@@ -41,7 +41,7 @@ The virtual infrastructure resources provided by the NFVI can be grouped into fo
 
 The virtualised infrastructure resources related to these categories are listed below:
 
-###Tenant
+### Tenant
 
 A network function virtualisation infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific VNF/CNF workloads from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 
