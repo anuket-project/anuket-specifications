@@ -20,6 +20,8 @@ Although a couple of explicit and implicit abstraction models (e.g. in the conte
 
 To summarise: the abstraction model presented in this paper will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and VNF related responsibilities.
 
+## 3.1	Model
+The abstraction model for the NFVI makes use of following layers (only the virtual infrastructure layer will be directly exposed to the VNFs/CNFs):
 
 
 
