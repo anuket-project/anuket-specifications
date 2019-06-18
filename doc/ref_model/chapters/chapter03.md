@@ -58,3 +58,9 @@ A network function virtualisation infrastructure needs to be capable of supporti
 | `metadata` | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 <p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
 
+### Compute Host
+
+A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of VNFs. A compute host therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance.
+
+**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
+
