@@ -18,3 +18,11 @@ The benefits of this approach are:
   - Supply chain, procurement and assurance teams can also then use these metrics to more accurately assess the most efficient / best value vendor for each scenario.
 - Better utilization
   - Mapping VNFs to flavours which are properly mapped to IaaS will bring better utilization, than current VNFs expressing variety of instance types as their needs on IaaS.
+  
+## 1.2	Problem Statement
+Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF Challenges - Identified Long-Poles
+
+## 1.3	Scope
+The scope of this document is illustrated in **Figure 1** below
+
+
