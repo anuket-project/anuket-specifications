@@ -1,6 +1,4 @@
-# Common NFVO Task Force (CNTT)
+# Common NFVI Telco Task Force (CNTT)
 
-Table of Contents
-Second line
-Third line
-Forth Line
+## Table of Contents
+* [Reference Model](doc/ref_model)
