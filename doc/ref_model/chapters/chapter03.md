@@ -47,6 +47,16 @@ A network function virtualisation infrastructure needs to be capable of supporti
 
 **Example**: a tenant within an OpenStack environment or a Kubernetes cluster.
 
+| Attribute | Description |
+| --- | --- |
+| name | name of the logical resource pool |
+| type | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …) |
+| vcpus | max. number of virtual CPUs |
+| ram | max. size of random access memory in GB |
+| disc | max. size of ephemeral disc in GB |
+| networks | description of external networks required for inter-domain connectivity |
+| metadata | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
+
 
 
 
