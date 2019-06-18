@@ -18,6 +18,7 @@
 * [Vision](vision)
 
 
+## Contributors
 | Item/Chapter | Lead | Contributors list | Priority |
 | --- | --- | --- | --- |
 | Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) | | |
