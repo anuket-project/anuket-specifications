@@ -1,7 +1,7 @@
 # Common NFVi for Telco Reference Model
 
 ## Table of Contents
-* [Chapter 1 - Introduction](chapters/chapter1.md)
+* [Chapter 1 - Introduction](chapters/chapter01.md)
 * [Data Catalog](datacatalog)
 * [Datastore](datastore)
 * [Endpoints](endpoints)
