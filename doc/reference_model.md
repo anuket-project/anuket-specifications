@@ -1,22 +1,17 @@
 # Common NFVi for Telco Reference Model
 
 ## Table of Contents
-* [Chapter 1 - Introduction](chapters/chapter01.md)
-* [Data Catalog](datacatalog)
-* [Datastore](datastore)
-* [Endpoints](endpoints)
-* [Identity-Aware Proxy](iap)
-* [Key Management Service](kms)
-* [Logging](logging)
-* [Monitoring](monitoring)
-* [Natural Language](language)
-* [PubSub](pubsub)
-* [Cloud Spanner](spanner)
-* [Speech](speech)
-* [Cloud Storage](storage)
-* [Translate](translate)
-* [Vision](vision)
-
+* [Chapter 01 - Introduction](chapters/chapter01.md)
+* [Chapter 02 - VNF requirements & Analysis](chapters/chapter02.md)
+* [Chapter 03 - Infrastructure Abstraction](chapters/chapter03.md)
+* [Chapter 04 - Catalogue](chapters/chapter04.md)
+* [Chapter 05 - Reference NFVI SW profiles and configurations](chapters/chapter05.md)
+* [Chapter 06 - Reference NFVI HW profiles and configurations](chapters/chapter06.md)
+* [Chapter 07 - APIs & Interfaces](chapters/chapter07.md)
+* [Chapter 08 - Security](chapters/chapter08.md)
+* [Chapter 09 - Operations (OA&M)](chapters/chapter09.md)
+* [Chapter 10 - Compliance, Verification, and Certification](chapters/chapter10.md)
+* [Chapter 11 - Challenges and Gaps](chapters/chapter11.md)
 
 ## Contributors
 | Item/Chapter | Lead | Contributors list | Priority |
