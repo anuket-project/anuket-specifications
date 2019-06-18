@@ -2,7 +2,6 @@
 
 ## Table of Contents
 * [Abbreviations](abbreviations.md)
-
 * [Chapter 01 - Introduction](chapters/chapter01.md)
 * [Chapter 02 - VNF requirements & Analysis](chapters/chapter02.md)
 * [Chapter 03 - Infrastructure Abstraction](chapters/chapter03.md)
