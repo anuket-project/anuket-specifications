@@ -1,4 +1,5 @@
 # 3	Infrastructure Abstraction
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Model.](#model)
