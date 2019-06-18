@@ -1,5 +1,16 @@
 # 3	Infrastructure Abstraction
 
+## Table of Contents
+* [1.1 Overview.](#overview)
+* [1.2 Problem Statement.](#problemstatement)
+* [1.3 Scope.](#scope)
+* [1.4 Relations to other industry projects.](#relation)
+* [1.5 How this document works.](#docu)
+* [1.6 What this document is not covering.](#notcovering)
+* [1.7 Bogo-Meter.](#bogometer)
+* [1.8 Roadmap.](#roadmap)
+
+
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of each of the VNFs and CNFs match the capabilities of the NFVI.
 
 << Figure 3 >>
