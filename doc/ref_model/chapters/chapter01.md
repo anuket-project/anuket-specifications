@@ -1,8 +1,8 @@
 # 1. Introduction
 
-**Table of Contents** 
-1.1 [Overview.](#overview) 
-2.2 [Problem Statement.](#problemstatement)
+## Table of Contents
+* [1.1 Overview.](#overview)
+* [2.2 Problem Statement.](#problemstatement)
 
 <a name="overview"></a>
 ## 1.1 Overview
