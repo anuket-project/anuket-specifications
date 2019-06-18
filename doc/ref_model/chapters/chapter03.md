@@ -58,8 +58,3 @@ A network function virtualisation infrastructure needs to be capable of supporti
 | `metadata` | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 
 
-
-
-
-
-
