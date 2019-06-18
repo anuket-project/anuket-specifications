@@ -2,7 +2,7 @@
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of each of the VNFs and CNFs match the capabilities of the NFVI.
 
-<< Figure >>
+<< Figure 3 >>
 
 The lack of a common understanding of which resources and corresponding capabilities a suitable NFVI should provide may lead to several issues which could negatively impact the time and cost for onboarding and maintaining these solutions on top of a virtualised infrastructure e.g.:
 - supporting any kind of VNF specific requirements (e.g. regarding network acceleration or API access) might result in having to establish different silo NFVIs for each VNF
@@ -22,6 +22,30 @@ To summarise: the abstraction model presented in this paper will build upon exis
 
 ## 3.1	Model
 The abstraction model for the NFVI makes use of following layers (only the virtual infrastructure layer will be directly exposed to the VNFs/CNFs):
+
+<<Figure 4 >>
+  
+The functionalities of each layer are as follows:
+- NFVI hardware profile: This layer consists of physical hardware components such as servers, random access memory, storage devices, network ports, hardware acceleration devices, etc. and their corresponding basic operating systems (BIOS).
+- NFVI software profile: This layer consists of both the host Operating System (OS) responsible for managing the hardware resources of the layer below as well as the virtualization/containerization technology which turns hardware components into a pool of logical resources and dynamically allocates them to the layer above.
+- Virtual infrastructure resources: This layer represents all the infrastructure resources which the NFVI provides to the VNFs/CNFs such as tenants, compute hosts, storage and networks These resources can be managed by the layer above directly or indirectly via an application programming interface or graphical user interface.
+- VNFs/CNFs: This layer consists of virtualized and/or containerized network functions that run on top of a VM or as a Container.
+The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
+
+<<Figure 5>>
+
+- tenant: tenants represent an independently manageable logical pool of compute, storage and network resources
+- compute resources: represent virtualised hosts for operating systems and applications
+- storage resources: represent virtualised resources for persisting data
+- network resources: represent virtual resources providing layer 2 and layer 3 connectivity
+
+The virtualised infrastructure resources related to these categories are listed below:
+
+###Tenant
+
+A network function virtualisation infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific VNF/CNF workloads from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
+
+**Example**: a tenant within an OpenStack environment or a Kubernetes cluster.
 
 
 
