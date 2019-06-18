@@ -1,4 +1,4 @@
-**Common NFVi for Telco Reference Model** {style=text-align:center}
+**Common NFVi for Telco Reference Model**
 
 
 | Item/Chapter | Lead | Contributors list | Priority |
