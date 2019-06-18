@@ -6,3 +6,10 @@ Therefore, for a true cloud type deployment, a model, which relies on engagement
  
 Additionally, to bring the most value to telco operators as well as vendors, agreeing on a standard set of infrastructure profiles for vendors to use for their VNFs is needed within the industry.
 
+The benefits of this approach are:
+
+- Configuration over customisation
+  - By abstracting the infrastructure capabilities, operators are able to have common infrastructure platforms across all VNF vendors.
+  - Maintaining a consistent infrastructure allows for higher levels of automation as there is less customisation.
+  - Overall, this will reduce the total cost of ownership for operators.
+
