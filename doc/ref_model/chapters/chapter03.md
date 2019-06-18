@@ -1,15 +1,9 @@
 # 3	Infrastructure Abstraction
 
 ## Table of Contents
-* [1.1 Overview.](#overview)
-* [1.2 Problem Statement.](#problemstatement)
-* [1.3 Scope.](#scope)
-* [1.4 Relations to other industry projects.](#relation)
-* [1.5 How this document works.](#docu)
-* [1.6 What this document is not covering.](#notcovering)
-* [1.7 Bogo-Meter.](#bogometer)
-* [1.8 Roadmap.](#roadmap)
-
+* [3.1 Model.](#model)
+* [3.2 Exposed vs Internal.](#expint)
+* [3.3 Exposed NFVI capabilities, metrics, and constraints.](#expcap)
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of each of the VNFs and CNFs match the capabilities of the NFVI.
 
@@ -31,6 +25,7 @@ Although a couple of explicit and implicit abstraction models (e.g. in the conte
 
 To summarise: the abstraction model presented in this paper will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and VNF related responsibilities.
 
+<a name="model"></a>
 ## 3.1	Model
 The abstraction model for the NFVI makes use of following layers (only the virtual infrastructure layer will be directly exposed to the VNFs/CNFs):
 
@@ -84,11 +79,13 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 
 <<Table 4>
 
+<a name="expint"></a>
 ## 3.2	Exposed vs Internal
 Mark S./Tom investigating.
 1.	(Explanation)
 2.	E.g. this is how I expose my NFVi storage to the VNF = External
 
+<a name="expcap"></a>
 ## 3.3	Exposed NFVI capabilities, metrics, and constraints
 
 ### 3.3.1	Exposed NFVI capabilities
