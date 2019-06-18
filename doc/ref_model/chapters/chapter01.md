@@ -39,7 +39,7 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 ## 1.3	Scope
 The scope of this document is illustrated in **Figure 1** below
 
-<p><img src="../figures/scope.PNG" alt="scope" title="Scope" /></p>
+<p><img src="../figures/scope.PNG" alt="scope" title="Scope" class="center"/></p>
 
 This document specifies:
 - NFVI Infrastructure abstraction
