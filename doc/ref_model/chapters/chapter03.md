@@ -43,9 +43,7 @@ The virtualised infrastructure resources related to these categories are listed 
 
 ### Tenant
 
-A network function virtualisation infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific VNF/CNF workloads from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
-
-**Example**: a tenant within an OpenStack environment or a Kubernetes cluster.
+A network function virtualisation infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific VNF/CNF workloads from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. **Example**: a tenant within an OpenStack environment or a Kubernetes cluster.
 
 | Attribute | Description |
 | --- | --- |
@@ -60,7 +58,5 @@ A network function virtualisation infrastructure needs to be capable of supporti
 
 ### Compute Host
 
-A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of VNFs. A compute host therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance.
-
-**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
+A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of VNFs. A compute host therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
 
