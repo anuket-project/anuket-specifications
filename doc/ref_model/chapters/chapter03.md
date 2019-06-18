@@ -57,6 +57,35 @@ A network function virtualisation infrastructure needs to be capable of supporti
 <p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
 
 ### Compute Host
-
 A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of VNFs. A compute host therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
+
+<<Table 2>>
+
+### Storage
+A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a compute host. A storage device resides in a tenant context and exists independently from any compute host. **Example**: an OpenStack cinder volume.
+
+<< Table 3>>
+
+**Comments**: we need to be more specific regarding acceleration and metadata.
+
+### Network
+A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
+
+<<Table 4>
+
+## 3.2	Exposed vs Internal
+Mark S./Tom investigating.
+1.	(Explanation)
+2.	E.g. this is how I expose my NFVi storage to the VNF = External
+
+## 3.3	Exposed NFVI capabilities, metrics, and constraints
+
+### 3.3.1	Exposed NFVI capabilities
+This section covers a list of explicit NFVI capabilities and metrics that defines an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
+
+Note: 	It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures.
+
+#### 3.3.1.1	Exposed resource capabilities
+Table xx below shows resource capabilities of NFVI. Those indicate resources offered to VNFs by NFVI.
+
 
