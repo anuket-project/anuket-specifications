@@ -38,5 +38,22 @@ This document specifies:
   - **Certification programs**: Define the requirement for certification programs for both VNFs and NFVI.
   - **Test framework**:  Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles. Part of the framework is also developing a reference implementation of the defined profiles (with the defined configurations0 to be used as a reference for compliance, certification, and verification of NFVI and VNFs.
 
+## 1.4	Relations to other industry projects 
+(clarify ETSI discussion re: what part of ETSI NFVi arch)
+Software Stack Model (Abstracted)
+
+## 1.5	How this document works
+How to engage with it 
+How the model links to reference
+
+## 1.6	What this document is not covering 
+Separate document w/labels/artifacts
+Not part of model but will be applicable to architecture 
+
+## 1.7	Bogo-Meter
+A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indicates the completeness and maturity each chapter’s content, at a glance.
+
+## 1.8	Roadmap
+What’s next in further releases/what’s the backlog and priority roadmap
 
 
