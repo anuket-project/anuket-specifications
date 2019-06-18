@@ -40,7 +40,7 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 The scope of this document is illustrated in **Figure 1** below
 
 <p align="center"><img src="../figures/scope.PNG" alt="scope" title="Scope" width="75%"/></p>
-<p align="center">**Figure 1: Scope of Wrok**</p>
+<p align="center"><b>Figure 1:<b> Scope of Wrok**</p>
 
 This document specifies:
 - NFVI Infrastructure abstraction
