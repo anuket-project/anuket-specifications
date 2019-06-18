@@ -13,3 +13,8 @@ The benefits of this approach are:
   - Maintaining a consistent infrastructure allows for higher levels of automation as there is less customisation.
   - Overall, this will reduce the total cost of ownership for operators.
 
+- Onboarding and certification
+  - By defining abstracted infrastructure capabilities, and the metrics by which they are measured, the onboarding and certification process for both NFVI and VNFs can be standardised.
+  - Supply chain, procurement and assurance teams can also then use these metrics to more accurately assess the most efficient / best value vendor for each scenario.
+- Better utilization
+  - Mapping VNFs to flavours which are properly mapped to IaaS will bring better utilization, than current VNFs expressing variety of instance types as their needs on IaaS.
