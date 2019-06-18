@@ -83,7 +83,7 @@ Mark S./Tom investigating.
 ### 3.3.1	Exposed NFVI capabilities
 This section covers a list of explicit NFVI capabilities and metrics that defines an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
 
-> **Note**: 	It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures.
+> _ _**Note**: 	It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._ _
 
 #### 3.3.1.1	Exposed resource capabilities
 Table xx below shows resource capabilities of NFVI. Those indicate resources offered to VNFs by NFVI.
