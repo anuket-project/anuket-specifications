@@ -1,5 +1,23 @@
 # Common NFVi for Telco Reference Model
 
+## Table of Contents
+* [Bigquery](bigquery)
+* [Data Catalog](datacatalog)
+* [Datastore](datastore)
+* [Endpoints](endpoints)
+* [Identity-Aware Proxy](iap)
+* [Key Management Service](kms)
+* [Logging](logging)
+* [Monitoring](monitoring)
+* [Natural Language](language)
+* [PubSub](pubsub)
+* [Cloud Spanner](spanner)
+* [Speech](speech)
+* [Cloud Storage](storage)
+* [Translate](translate)
+* [Vision](vision)
+
+
 | Item/Chapter | Lead | Contributors list | Priority |
 | --- | --- | --- | --- |
 | Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) | | |
