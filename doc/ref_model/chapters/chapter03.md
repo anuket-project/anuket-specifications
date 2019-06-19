@@ -200,9 +200,9 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|--------------------------|---------------------------|---------------------------|
-| e.nfvi.per.met.001 | Up to speed of   <I Opt> | Up to speed of    <I Opt> | Up to speed of    <I Opt> |
-| e.nfvi.per.met.002 | <30ms | <0.5ms | <5ms |
-| e.nfvi.per.met.003 | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
-| e.nfvi.per.met.004 | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
+| `e.nfvi.per.met.001` | Up to speed of   <I Opt> | Up to speed of    <I Opt> | Up to speed of    <I Opt> |
+| `e.nfvi.per.met.002` | <30ms | <0.5ms | <5ms |
+| `e.nfvi.per.met.003` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
+| `e.nfvi.per.met.004` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
 
 <p align="center"><b>Table 3-12:</b> Mapping of Exposed performance metrics to NFVI instance types.</p>
