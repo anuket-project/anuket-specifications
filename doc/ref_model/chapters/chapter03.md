@@ -131,6 +131,8 @@ Table xx below shows resource capabilities of NFVI. Those indicate resources off
 | e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNF-C by NFVI. |
 | e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Min, Max storage in GB that can be attached / mounted to VNF-C by NFVI. |
 
+Following is how they map to different NFVI instances:
+
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|----------------------------|----------------------------|----------------------------|
 | e.nfvi.res.cap.001 | As per selected  <flavour> | As per selected  <flavour> | As per selected  <flavour> |
@@ -139,6 +141,6 @@ Table xx below shows resource capabilities of NFVI. Those indicate resources off
 | e.nfvi.res.cap.004 | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |
 | e.nfvi.res.cap.005 | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
 
-<p align="center"><b>Table 3-5:</b> Explicit resource capabilities of NFVI.</p>
+<p align="center"><b>Table 3-5:</b> Explicit resource capabilities of NFVI and how they map to different instances.</p>
 
 
