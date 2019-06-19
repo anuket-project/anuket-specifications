@@ -170,4 +170,18 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 <p align="center"><b>Table 3-8:</b> Mapping of Exposed performance optimisation capabilities with different NFVI instance types.</p>
 
+#### 3.3.1.3	Exposed monitoring capabilities
+**Table 3-9** shows possible monitoring capabilities available by NFVI for VNFs.
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|---------------------------|--------|----------------------------------------------------|
+| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability for VNF-C to monitor their own L2-L7 data. |
+
+<p align="center"><b>Table 3-9:</b> Exposed monitoring capabilities of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|------------|------------------|------------------|
+| e.nfvi.mon.cap.001 | No | Yes | No |
+
+<p align="center"><b>Table 3-10:</b> Mapping of Exposed monitoring capabilities with different NFVI instance types.</p>
 
