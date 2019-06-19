@@ -13,6 +13,34 @@ It is inevitable that different VNFs require different capabilities from the und
 
 <a name="collateral"></a>
 ## 2.1	VNFs collateral (Sample)
+The following is a list of VNFs that have been taken as samples and used to understand requirements and to drive the NFVI metrics definition.
+- **Management and Control Plane**: EPC (MME, P/S-GW, S/G-GSN), IMS, SBC, PCRF, SDM, mVAS, DRA
+- **User Plane and network**: RAN, BBU, MRF, BNG, CDN, PE, Switch, Router, RR, CPE
+- **Security & testing**: FW, LB, DNS, AES, DPI, NAT/CGN, SecGW, Probe
+- **Data Core**:
+  - Packet Core: GGSN, SGW, PGW, SGSN, MME, CSGN.
+  - Subscriber Management: HSS.
+  - Policy & Traffic Management: PCRF, TMF
+  - Optimizer: MSP.
+- **Voice Core**:
+  - IP Multimedia: CSCF, ENUM, TAS, SBC.
+  - Database: CSDB
+  - Circuit Switched: MSC-S(MSS), MGW.
+  - Signalling: DRA, SGW, STP.
+  - Messaging
+  - Security
+- **IP Core**: SEC-GW
+- **SDO**:
+  - Convergent Charging: CCS
+  - Smart Pricing: SPO.
+  - NGIN, Gi-LAN
+  - SecureNet: Clean Pipe.
+  - Network Security: SS7FW, CMS, SIG.
+  - Others: Web RTC GW, Service integration GW
+- **Fixed Access**:
+  - BNG, CPE
+- **Radio (Cloud RAN)**.
+
 
 <a name="analysis"></a>
 ## 2.2	Analysis of requirements 
