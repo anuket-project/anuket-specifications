@@ -53,15 +53,15 @@ The virtualised infrastructure resources related to these categories are listed 
 
 A network function virtualisation infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific VNF/CNF workloads from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. **Example**: a tenant within an OpenStack environment or a Kubernetes cluster.
 
-| Attribute                     | Description                              |
-|-------------------------------|------------------------------------------|
-| `name` | name of the logical resource pool |
-| `type` | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …) |
-| `vcpus` | max. number of virtual CPUs |
-| `ram` | max. size of random access memory in GB |
-| `disc` | max. size of ephemeral disc in GB |
-| `networks` | description of external networks required for inter-domain connectivity |
-| `metadata` | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
+| Attribute | Description                                                                                             |
+|-----------|---------------------------------------------------------------------------------------------------------|
+| name      | name of the logical resource pool                                                                       |
+| type      | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …)                                           |
+| vcpus     | max. number of virtual CPUs                                                                             |
+| ram       | max. size of random access memory in GB                                                                 |
+| disc      | max. size of ephemeral disc in GB                                                                       |
+| networks  | description of external networks required for inter-domain connectivity                                 |
+| metadata  | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 <p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
 
 ### Compute Host
