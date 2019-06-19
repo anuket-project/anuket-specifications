@@ -3,4 +3,5 @@
 ## Table of Contents
 * [Reference Model](doc/ref_model)
 
-https://cntt-n.github.io/CNTT/
+### web-friendly view:
+* [CNTT Webl](https://cntt-n.github.io/CNTT/) 
