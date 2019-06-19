@@ -355,5 +355,26 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 #### 3.4.2.2	Internal performance Metrics 
 **Table 3-26** shows performance metrics of NFVI. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI. These metrics are aligned with ETSI GS NFV TST-009 [2].
 
+| Ref | NFVI metrics | Unit | Definition/Notes |
+|--------------------|------------------------------------------------------|----------------|----------------------------------------------------------------------|
+| i.nfvi.per.met.001 | Network I/O East/West | Mpps @256Bytes | VNF-C to VNF-C within same platform. Do we need to expose it to VNF? |
+| i.nfvi.per.met.002 | Simultaneous active flows | max # |  |
+| i.nfvi.per.met.003 | New flows per second | flows/s |  |
+| i.nfvi.per.met.004 | Network Latency | ms | ETSI NFV-TST 009[2]. |
+| i.nfvi.per.met.005 | ephemeral storage IO | iops | Range (min, max) |
+| i.nfvi.per.met.006 | ephemeral storage throughput | MB/s | Range (min, max) per VNF-C |
+
+<p align="center"><b>Table 3-26:</b> Internal performance metrics exposed to VNFs by NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|-------------|-------------|-------------|
+| i.nfvi.per.met.001 | 3-5 | 15 - 30 | 3-5 |
+| i.nfvi.per.met.002 | Up to 200K | Up to 1M | Up to 200K |
+| i.nfvi.per.met.003 |  |  |  |
+| i.nfvi.per.met.004 | <10ms | <0.5ms | <5ms |
+| i.nfvi.per.met.005 | 280K-680K | 280K-680K | 280K-680K |
+| i.nfvi.per.met.006 | 1000 – 2650 | 1000 – 2650 | 1000 – 2650 |
+
+<p align="center"><b>Table 3-27:</b> Mapping of Internal performance metrics to NFVI instance types.</p>
 
 
