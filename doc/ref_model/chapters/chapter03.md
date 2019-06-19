@@ -121,7 +121,7 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 > _**Note**: 	It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
 #### 3.3.1.1	Exposed resource capabilities
-Table xx below shows resource capabilities of NFVI. Those indicate resources offered to VNFs by NFVI.
+**Table 3-5** below shows resource capabilities of NFVI. Those indicate resources offered to VNFs by NFVI.
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
@@ -131,7 +131,9 @@ Table xx below shows resource capabilities of NFVI. Those indicate resources off
 | e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNF-C by NFVI. |
 | e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Min, Max storage in GB that can be attached / mounted to VNF-C by NFVI. |
 
-Following is how they map to different NFVI instances:
+<p align="center"><b>Table 3-5:</b> Exposed resource capabilities of NFVI.</p>
+
+**Table 3-6** is how they map to different NFVI instances:
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|----------------------------|----------------------------|----------------------------|
@@ -141,6 +143,6 @@ Following is how they map to different NFVI instances:
 | e.nfvi.res.cap.004 | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |
 | e.nfvi.res.cap.005 | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
 
-<p align="center"><b>Table 3-5:</b> Explicit resource capabilities of NFVI and how they map to different instances.</p>
+<p align="center"><b>Table 3-5:</b> Mapping of exposed resource capabilities to different NFVI instances.</p>
 
 
