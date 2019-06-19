@@ -39,6 +39,35 @@ It is initially proposed to divide the APIs into three primary categories, each 
 
 <a name="7.1"></a>
 ## 7.1	Infra-Related APIs
-
 This is a place holder for Infra Related APIs.
+
+<a name="7.2"></a>
+## 7.2	NFVI APIs
+The NFVI APIs consist of the externally and internally visible APIs. The externally visible APIs are made available for orchestration and management of workloads and the internally visible APIs for the internal management of the NFVI. Figure 14 is a pictorial representation of the NFVI with some of the interfaces shown.
+
+<<Figure>>
+ 
+In the abstraction model of the NFVI (Chapter 3.1) a conceptual model of a Tenant (Figure 4) represents the slice of a cloud zone dedicated to a VNF. This slice, the Tenant, is composed of virtual resources being utilized by VNFs within that Tenant. A conceptual data model of a Tenant is shown in Figure 16. The Tenant has an assigned quota of virtual resources, a set of users can perform operations as per their assigned roles, and the Tenant exists within a Cloud Zone. The APIs will specify the allowed operations on the Tenant including its component virtual resources and the different APIs can only be executed by users with the appropriate roles. For example, a Tenant may only be allowed to be created and deleted by Cloud Zone administrators while virtual compute resources could be allowed to be created and deleted by Tenant administrators.
+
+<<Figure>>
+ 
+For a VNF stack to be created in a Tenant also requires APIs for the management (creation, deletion and operation) of the Tenant, software flavours (Chapter 5), Operating System and VNF images (“Images”), Identity and Authorization (“Identity”), virtual resources, security and the VNF application (“stack”).
+
+A virtual compute resource is created as per the flavour template (specifies the compute, memory and local storage capacity) and is launched using an image with access and security credentials; once launched, it is referred to as a virtual compute instance or just “Instance”). Instances can be launched by specifying the compute, memory and local storage capacity parameters instead of an existing flavour; reference to flavours coves the situation where the capacity parameters are specified. IP addresses and storage volumes can be attached to a running Instance. 
+
+<<Table>>
+ 
+Table 44 specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
+
+<a name="7.3"></a>
+## 7.3	Enabler Services APIs (not-MVP)
+
+This is a place holder for Enabler Services APIs.
+a.	NTP, DNS, etc. – where is the care and feeding of these? Who provides certain features/services within or outside the tenant?
+b.	Licensing and imaging connectivity
+
+
+ 
+ 
+
 
