@@ -309,3 +309,45 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.sec.cap.004 | Yes | Yes | Yes |
 
 <p align="center"><b>Table 3-22:</b> Mapping of Internal security capabilities to NFVI instance types.</p>
+
+### 3.4.2	Internal NFVI metrics
+#### 3.4.2.1	 Internal resources management metrics 
+**Table 3-23** shows resource management metrics of NFVI as aligned with ETSI GS NFV TST-012 [3]. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI.
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
+| i.nfvi.rmt.met.001 | Time to create VNF-C for a given VNF | Max ms | Are VNF-C memories isolated from each other by hardware support? |
+| i.nfvi.rmt.met.002 | Time to delete  VNF-C of a given VNF | Max ms |  |
+| i.nfvi.rmt.met.003 | Time to start VNF-C of a given VNF | Max ms |  |
+| i.nfvi.rmt.met.004 | Time to stop VNF-C of a given VNF | Max ms |  |
+| i.nfvi.rmt.met.005 | Time to pause VNF-C of a given VNF | Max ms |  |
+| i.nfvi.rmt.met.006 | Time to create internal virtual network | Max ms |  |
+| i.nfvi.rmt.met.007 | Time to delete internal virtual network | Max ms |  |
+| i.nfvi.rmt.met.008 | Time to update internal virtual network | Max ms |  |
+| i.nfvi.rmt.met.009 | Time to create external virtual network | Max ms |  |
+| i.nfvi.rmt.met.010 | Time to delete external virtual network | Max ms |  |
+| i.nfvi.rmt.met.011 | Time to update external virtual   network | Max ms |  |
+| i.nfvi.rmt.met.012 | Time to create vSwitch | Max ms |  |
+| i.nfvi.rmt.met.013 | Time to create vRouter | Max ms |  |
+| i.nfvi.rmt.met.014 | Time to create external storage ready for use by VNF | Max ms |  |
+
+<p align="center"><b>Table 3-24:</b> Internal resource management metrics of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
+| i.nfvi.rmt.met.001 |  |  |  |
+| i.nfvi.rmt.met.002 |  |  |  |
+| i.nfvi.rmt.met.003 |  |  |  |
+| i.nfvi.rmt.met.004 |  |  |  |
+| i.nfvi.rmt.met.005 |  |  |  |
+| i.nfvi.rmt.met.006 |  |  |  |
+| i.nfvi.rmt.met.007 |  |  |  |
+| i.nfvi.rmt.met.008 |  |  |  |
+| i.nfvi.rmt.met.009 |  |  |  |
+| i.nfvi.rmt.met.010 |  |  |  |
+| i.nfvi.rmt.met.011 |  |  |  |
+| i.nfvi.rmt.met.012 |  |  |  |
+| i.nfvi.rmt.met.013 |  |  |  |
+| i.nfvi.rmt.met.014 |  |  |  |
+
+<p align="center"><b>Table 3-25:</b> Mapping of Internal resource management metrics to NFVI instance types.</p>
