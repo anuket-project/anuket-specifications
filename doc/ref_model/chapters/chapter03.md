@@ -209,7 +209,25 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 ## 3.4	Internal NFVI capabilities metrics, and constraints
 This section covers a list of implicit NFVI capabilities and metrics that defines the interior of   NFVI. These capabilities and metrics determines how NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will have a big impact on the overall performance and capabilities of a given NFVI solution.
->_Note: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
+
+>**_Note**: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
+
 ### 3.4.1	Internal NFVI capabilities
 #### 3.4.1.1	Internal resource capabilities
+**Table 3-13** shows resource capabilities of NFVI. These include capabilities offered to VNFs and resources consumed internally by NFVI.
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|---------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------|
+| i.nfvi.res.cap.001 | Number of vCPU cores consumed by NFVI software in a single compute nodes. | % (of total available) | This indicates the number of vCPU cores consumed (wasted) by NFVI components (including host OS) in a compute node. |
+| i.nfvi.res.cap.002 | Amount of memory consumed by NFVI software in a single compute nodes. | % (of total available) | This indicates the amount of memory consumed (wasted) by NFVI components (including host OS) in a compute node. |
+
+<p align="center"><b>Table 3-13:</b> Internal resource capabilities of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|--------------------------|--------------------------|--------------------------|
+| i.nfvi.res.cap.001 | 5-10% | 10-20% | 15-25% |
+| i.nfvi.res.cap.002 | 5-10% | 10-20% | 15-25% |
+
+<p align="center"><b>Table 3-14:</b> Mapping of Internal resource capabilities to NFVI instance types.</p>
+
 
