@@ -53,8 +53,8 @@ The virtualised infrastructure resources related to these categories are listed 
 
 A network function virtualisation infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific VNF/CNF workloads from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. **Example**: a tenant within an OpenStack environment or a Kubernetes cluster.
 
-| Attribute | Description |
-| --- | --- |
+| Attribute                     | Description                              |
+|-------------------------------|------------------------------------------|
 | `name` | name of the logical resource pool |
 | `type` | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …) |
 | `vcpus` | max. number of virtual CPUs |
