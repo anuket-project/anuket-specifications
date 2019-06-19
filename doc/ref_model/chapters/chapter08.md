@@ -4,7 +4,7 @@
 
 ## Table of Contents
 * [8.1 Common standards.](#8.1)
-  * [8.1.1 Testing demarcation points.] (#8.1.1)
+  * [8.1.1 Testing demarcation points.](#8.1.1)
 * [8.2 VNF Vendors responsibility.](#8.2)
 * [8.3 NFVi Vendors responsibility (qualify what infrastructure means).](#8.3)
 
