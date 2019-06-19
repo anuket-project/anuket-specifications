@@ -230,4 +230,20 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 <p align="center"><b>Table 3-14:</b> Mapping of Internal resource capabilities to NFVI instance types.</p>
 
+#### 3.4.1.2	Internal SLA capabilities
+Table 13 below shows SLA (Service Level Agreement) capabilities available by NFVI. These include capabilities required by VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNF-C.
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
+| i.nfvi.sla.cap.001 | CPU overbooking | 1:N | This indicates the number of vCPU cores consumed (wasted) by NFVI components (including host OS) in a compute node. |
+| i.nfvi.sla.cap.002 | vNIC QoS | Yes/No | QoS enablement |
+
+<p align="center"><b>Table 3-15:</b> Internal SLA capabilities to NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|--------------------------|--------------------------|--------------------------|
+| i.nfvi.sla.cap.001 | 1:4 | 1:1 | 1:1 |
+| i.nfvi.sla.cap.002 | No | Yes | Yes |
+
+<p align="center"><b>Table 3-16:</b> Mapping of Internal SLA capabilities to NFVI instance type.</p>
 
