@@ -1,4 +1,4 @@
-[<< Back](../ref_model)
+[<< Back](../ref_model/chapters)
 # 1. Introduction
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
