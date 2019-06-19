@@ -181,7 +181,7 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------------|------------------|
-| e.nfvi.mon.cap.001 | No | Yes | No |
+| `e.nfvi.mon.cap.001` | No | Yes | No |
 
 <p align="center"><b>Table 3-10:</b> Mapping of Exposed monitoring capabilities with different NFVI instance types.</p>
 
