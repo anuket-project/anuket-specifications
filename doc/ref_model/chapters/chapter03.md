@@ -143,6 +143,31 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 | `e.nfvi.res.cap.004` | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |
 | `e.nfvi.res.cap.005` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
 
-<p align="center"><b>Table 3-5:</b> Mapping of exposed resource capabilities to different NFVI instances.</p>
+<p align="center"><b>Table 3-6:</b> Mapping of exposed resource capabilities to different NFVI instances.</p>
+
+#### 3.3.1.2 Exposed performance optimisation capabilities
+**Table 3-7** shows possible performance optimisation capabilities that can be provided by NFVI. These indicate capabilities exposed to VNFs. Those capabilities need to be consumed by VNFs in a standard way.
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|---------------------------|--------|--------------------------------------------|
+| e.nfvi.per.cap.001 | CPU pinning support | Yes/No | Determining if NFVI support CPU pinning |
+| e.nfvi.per.cap.002 | NUMA support | Yes/No | Determining if NFVI support NUMA awareness |
+| e.nfvi.per.cap.003 | IPSec Acceleration | Yes/No | IPSec Acceleration |
+| e.nfvi.per.cap.004 | Crypto Acceleration | Yes/No | Crypto Acceleration |
+| e.nfvi.per.cap.005 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
+| e.nfvi.per.cap.006 | Programmable Acceleration | Yes/No | Programmable Acceleration |
+
+<p align="center"><b>Table 3-7:</b> Exposed performance optimisation capabilities of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|------------|------------------|------------------|
+| e.nfvi.per.cap.001 | No | Yes | Yes |
+| e.nfvi.per.cap.002 | No | Yes | No |
+| e.nfvi.per.cap.003 | No | Yes (if offered) | No |
+| e.nfvi.per.cap.004 | No | Yes (if offered) | No |
+| e.nfvi.per.cap.005 | No | No | Yes (if offered) |
+| e.nfvi.per.cap.006 | No | No | Yes (if offered) |
+
+<p align="center"><b>Table 3-8:</b> Mapping of Exposed performance optimisation capabilities with different NFVI instance types.</p>
 
 
