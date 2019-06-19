@@ -9,7 +9,7 @@
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of each of the VNFs and CNFs match the capabilities of the NFVI.
 
-<p align="center"><img src="../figures/chapter03_model_layers.PNG" alt="model_layers" title="Model Layers" width="50%"/></p>
+<p align="center"><img src="../figures/chapter03_model_layers.PNG" alt="model_layers" title="Model Layers" width="75%"/></p>
 <p align="center"><b>Figure 3-1:</b> VNFs/CNFs manage and consume NFVI infrastructure resources.</p>
 
 The lack of a common understanding of which resources and corresponding capabilities a suitable NFVI should provide may lead to several issues which could negatively impact the time and cost for onboarding and maintaining these solutions on top of a virtualised infrastructure e.g.:
@@ -32,7 +32,7 @@ To summarise: the abstraction model presented in this paper will build upon exis
 ## 3.1	Model
 The abstraction model for the NFVI makes use of following layers (only the virtual infrastructure layer will be directly exposed to the VNFs/CNFs):
 
-<p align="center"><img src="../figures/ch03_layers_of_nfvi.PNG" alt="nfvi_layers" title="NFVI Layers" width="50%"/></p>
+<p align="center"><img src="../figures/ch03_layers_of_nfvi.PNG" alt="nfvi_layers" title="NFVI Layers" width="75%"/></p>
 <p align="center"><b>Figure 3-2:</b> Layers of NFVI.</p>
   
 The functionalities of each layer are as follows:
@@ -42,7 +42,8 @@ The functionalities of each layer are as follows:
 - VNFs/CNFs: This layer consists of virtualized and/or containerized network functions that run on top of a VM or as a Container.
 The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
 
-<<Figure 5>>
+<p align="center"><img src="../figures/ch03_virtual_resources.PNG" alt="virtual_resources" title="Virtual Resources" width="75%"/></p>
+<p align="center"><b>Figure 3-3:</b> Virtual infrastructure resources.</p>
 
 - tenant: tenants represent an independently manageable logical pool of compute, storage and network resources
 - compute resources: represent virtualised hosts for operating systems and applications
