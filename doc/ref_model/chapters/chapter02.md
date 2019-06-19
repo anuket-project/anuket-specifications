@@ -61,4 +61,6 @@ By examining the list of VNFs provided in Section 2.1(VNFs collateral (Sample)) 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
+In the next chapter, Infrastructure profiles catalogue, those infrastructure profiles will be offered to VNFs in form of different instance types: B (Basic), N (Network intensive), and C (Compute intensive) respectively.
+
 
