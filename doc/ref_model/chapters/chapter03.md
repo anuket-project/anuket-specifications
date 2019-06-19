@@ -137,11 +137,11 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|----------------------------|----------------------------|----------------------------|
-| e.nfvi.res.cap.001 | As per selected  <flavour> | As per selected  <flavour> | As per selected  <flavour> |
-| e.nfvi.res.cap.002 | As per selected  <flavour> | As per selected  <flavour> | As per selected  <flavour> |
-| e.nfvi.res.cap.003 | As per selected  <flavour> | As per selected  <flavour> | As per selected  <flavour> |
-| e.nfvi.res.cap.004 | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |
-| e.nfvi.res.cap.005 | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
+| `e.nfvi.res.cap.001` | As per selected  <flavour> | As per selected  <flavour> | As per selected  <flavour> |
+| `e.nfvi.res.cap.002` | As per selected  <flavour> | As per selected  <flavour> | As per selected  <flavour> |
+| `e.nfvi.res.cap.003` | As per selected  <flavour> | As per selected  <flavour> | As per selected  <flavour> |
+| `e.nfvi.res.cap.004` | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |
+| `e.nfvi.res.cap.005` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
 
 <p align="center"><b>Table 3-5:</b> Mapping of exposed resource capabilities to different NFVI instances.</p>
 
