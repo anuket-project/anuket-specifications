@@ -351,3 +351,9 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | `i.nfvi.rmt.met.014` |  |  |  |
 
 <p align="center"><b>Table 3-25:</b> Mapping of Internal resource management metrics to NFVI instance types.</p>
+
+#### 3.4.2.2	Internal performance Metrics 
+**Table 3-26** shows performance metrics of NFVI. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI. These metrics are aligned with ETSI GS NFV TST-009 [2].
+
+
+
