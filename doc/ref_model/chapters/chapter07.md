@@ -3,7 +3,7 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [7.1 Infra related APIs.](#)
+* [7.1 Infra related APIs.](#7.1)
   * [2.1 VNFs collateral (Sample).](#)
 * [7.2 NFVI APIs.](#)
 * [7.3 Supporting Enabler Service APIs (not-MVP).](#)
@@ -38,6 +38,7 @@ It is initially proposed to divide the APIs into three primary categories, each 
 
 **Enabler Services**: These APIs are provided by functions which may be instantiated at higher layers (i.e. in user or workload space), and provide facilities that are required for a majority of VNFs. For example, DHCP, DNS, NTP, DBaaS, etc. Note, in some cases Enabler Services may mirror services provided within the Infra, such as DNS or DHCP. However, the purpose in this section is explicitly to describe instances of those services which are both hosted and consumed above the Infra water mark.
 
+<a name="7.1"></a>
 ## 7.1	Infra-Related APIs
 
 This is a place holder for Infra Related APIs.
