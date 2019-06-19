@@ -1,3 +1,3 @@
-[<< Back](../doc/ref_model)
+[<< Back](../ref_model)
 
 
