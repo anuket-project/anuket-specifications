@@ -9,7 +9,7 @@
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of each of the VNFs and CNFs match the capabilities of the NFVI.
 
-<p align="center"><img src="../figures/chapter03_model_layers.PNG" alt="model_layers" title="Model Layers" width="65%"/></p>
+<p align="center"><img src="../figures/ch03_model_layers.PNG" alt="model_layers" title="Model Layers" width="65%"/></p>
 <p align="center"><b>Figure 3-1:</b> VNFs/CNFs manage and consume NFVI infrastructure resources.</p>
 
 The lack of a common understanding of which resources and corresponding capabilities a suitable NFVI should provide may lead to several issues which could negatively impact the time and cost for onboarding and maintaining these solutions on top of a virtualised infrastructure e.g.:
