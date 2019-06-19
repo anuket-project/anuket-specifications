@@ -77,6 +77,7 @@ A virtual machine or a container/pod belonging to a tenant capable of hosting th
 | `nics` | sorted list of network interfaces connecting the host to the virtual networks |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 | `metadata` | key/value pairs for selection of the appropriate redundancy domain |
+
 <p align="center"><b>Table 3-2:</b> Attributes of compute resources.</p>
 
 ### Storage
