@@ -334,7 +334,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.rmt.met.013 | Time to create vRouter | Max ms |  |
 | i.nfvi.rmt.met.014 | Time to create external storage ready for use by VNF | Max ms |  |
 
-<p align="center"><b>Table 3-24:</b> Internal resource management metrics of NFVI.</p>
+<p align="center"><b>Table 3-23:</b> Internal resource management metrics of NFVI.</p>
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
@@ -353,7 +353,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | `i.nfvi.rmt.met.013` |  |  |  |
 | `i.nfvi.rmt.met.014` |  |  |  |
 
-<p align="center"><b>Table 3-25:</b> Mapping of Internal resource management metrics to NFVI instance types.</p>
+<p align="center"><b>Table 3-24:</b> Mapping of Internal resource management metrics to NFVI instance types.</p>
 
 #### 3.4.2.2	Internal performance Metrics 
 **Table 3-26** shows performance metrics of NFVI. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI. These metrics are aligned with ETSI GS NFV TST-009 [2].
@@ -367,7 +367,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.per.met.005 | ephemeral storage IO | iops | Range (min, max) |
 | i.nfvi.per.met.006 | ephemeral storage throughput | MB/s | Range (min, max) per VNF-C |
 
-<p align="center"><b>Table 3-26:</b> Internal performance metrics exposed to VNFs by NFVI.</p>
+<p align="center"><b>Table 3-25:</b> Internal performance metrics exposed to VNFs by NFVI.</p>
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|-------------|-------------|-------------|
@@ -378,7 +378,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.per.met.005 | 280K-680K | 280K-680K | 280K-680K |
 | i.nfvi.per.met.006 | 1000 – 2650 | 1000 – 2650 | 1000 – 2650 |
 
-<p align="center"><b>Table 3-27:</b> Mapping of Internal performance metrics to NFVI instance types.</p>
+<p align="center"><b>Table 3-26:</b> Mapping of Internal performance metrics to NFVI instance types.</p>
 
 #### 3.4.2.3	Internal SLA metrics
 **Table 3-28** shows SLA metrics of NFVI. Expected values of these metrics are determined by the standard instance type used by VNF-C.
@@ -388,14 +388,14 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.sla.met.001 | vNIC CIR | bbs | Committed Information Rate per vNIC |
 | i.nfvi.sla.met.002 | vNIC PIR | bbs | Peak Information Rate per vNIC |
 
-<p align="center"><b>Table 3-28:</b> Internal SLA metrics of NFVI.</p>
+<p align="center"><b>Table 3-27:</b> Internal SLA metrics of NFVI.</p>
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|-------------|--------------------|-------------|
 | i.nfvi.sla.met.001 | NA | As per vNIC option | NA |
 | i.nfvi.sla.met.002 | NA | As per vNIC option | NA |
 
-<p align="center"><b>Table 3-29:</b> Mapping of Internal SLA metrics to NFVI instance types.</p>
+<p align="center"><b>Table 3-28:</b> Mapping of Internal SLA metrics to NFVI instance types.</p>
 
 #### 3.4.2.4	Internal scalability metrics 
 **Table 3-30** below shows scalability of NFVI. These metrics are aligned with ETSI GS NFV TST-012 [3]
@@ -405,14 +405,14 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.scl.met.001 | Time to scale out VNF | bbs | Excluding initial VNF deployment |
 | i.nfvi.scl.met.002 | Time to scale in VNF | bbs |  |
 
-<p align="center"><b>Table 3-30:</b> Internal scalability metrics of NFVI.</p>
+<p align="center"><b>Table 3-29:</b> Internal scalability metrics of NFVI.</p>
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------|------------|
 | i.nfvi.scl.met.001 |  |  |  |
 | i.nfvi.scl.met.002 |  |  |  |
 
-<p align="center"><b>Table 3-31:</b> Mapping of Internal scalability metrics to NFVI instance types.</p>
+<p align="center"><b>Table 3-30:</b> Mapping of Internal scalability metrics to NFVI instance types.</p>
 
 #### 3.4.2.5	Internal availability/reliability metrics
 
@@ -423,7 +423,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.arl.met.003 | MTBF AZ | days | Mean Time between Failure for an   AZ |
 | i.nfvi.arl.met.004 | Recovery time | seconds |  |
 
-<p align="center"><b>Table 3-32:</b> Internal availability/reliability metrics of NFVI.</p>
+<p align="center"><b>Table 3-31:</b> Internal availability/reliability metrics of NFVI.</p>
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------|------------|
@@ -432,5 +432,5 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.arl.met.003 |  |  |  |
 | i.nfvi.arl.met.004 |  |  |  |
 
-<p align="center"><b>Table 3-33:</b> Mapping of Internal availability/reliability metrics to NFVI instance types.</p>
+<p align="center"><b>Table 3-32:</b> Mapping of Internal availability/reliability metrics to NFVI instance types.</p>
 
