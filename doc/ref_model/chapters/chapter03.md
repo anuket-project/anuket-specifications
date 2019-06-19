@@ -161,12 +161,12 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------------|------------------|
-| e.nfvi.per.cap.001 | No | Yes | Yes |
-| e.nfvi.per.cap.002 | No | Yes | No |
-| e.nfvi.per.cap.003 | No | Yes (if offered) | No |
-| e.nfvi.per.cap.004 | No | Yes (if offered) | No |
-| e.nfvi.per.cap.005 | No | No | Yes (if offered) |
-| e.nfvi.per.cap.006 | No | No | Yes (if offered) |
+| `e.nfvi.per.cap.001` | No | Yes | Yes |
+| `e.nfvi.per.cap.002` | No | Yes | No |
+| `e.nfvi.per.cap.003` | No | Yes (if offered) | No |
+| `e.nfvi.per.cap.004` | No | Yes (if offered) | No |
+| `e.nfvi.per.cap.005` | No | No | Yes (if offered) |
+| `e.nfvi.per.cap.006` | No | No | Yes (if offered) |
 
 <p align="center"><b>Table 3-8:</b> Mapping of Exposed performance optimisation capabilities with different NFVI instance types.</p>
 
