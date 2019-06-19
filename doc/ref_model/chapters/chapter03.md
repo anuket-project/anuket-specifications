@@ -32,7 +32,8 @@ To summarise: the abstraction model presented in this paper will build upon exis
 ## 3.1	Model
 The abstraction model for the NFVI makes use of following layers (only the virtual infrastructure layer will be directly exposed to the VNFs/CNFs):
 
-<<Figure 4 >>
+<p align="center"><img src="../figures/ch03_layers_of_nfvi.PNG" alt="nfvi_layers" title="NFVI Layers" width="50%"/></p>
+<p align="center"><b>Figure 3-2:</b> Layers of NFVI.</p>
   
 The functionalities of each layer are as follows:
 - NFVI hardware profile: This layer consists of physical hardware components such as servers, random access memory, storage devices, network ports, hardware acceleration devices, etc. and their corresponding basic operating systems (BIOS).
