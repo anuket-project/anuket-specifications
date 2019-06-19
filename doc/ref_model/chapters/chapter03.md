@@ -90,6 +90,7 @@ A block device of a certain size for persisting information which can be created
 | `attachments` | list of compute hosts to which the device is currently attached |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 | `metadata` | key/value pairs for selection of the appropriate redundancy domain |
+
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources.</p>
 
 _**Comments**: we need to be more specific regarding acceleration and metadata._
@@ -102,6 +103,7 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 | `name` | name of the network resource |
 | `subnet` | classless inter-domain routing of the subnet |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
+
 <p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
 
 <a name="expint"></a>
