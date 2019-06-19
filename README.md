@@ -4,4 +4,4 @@
 * [Reference Model](doc/ref_model)
 
 ### web-friendly view:
-* [CNTT Webl](https://cntt-n.github.io/CNTT/) 
+* [CNTT Web](https://cntt-n.github.io/CNTT/) 
