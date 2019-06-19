@@ -314,7 +314,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 #### 3.4.2.1	 Internal resources management metrics 
 **Table 3-23** shows resource management metrics of NFVI as aligned with ETSI GS NFV TST-012 [3]. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI.
 
-| Ref | NFVI capability | Unit | Definition/Notes |
+| Ref | NFVI metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
 | i.nfvi.rmt.met.001 | Time to create VNF-C for a given VNF | Max ms |  |
 | i.nfvi.rmt.met.002 | Time to delete  VNF-C of a given VNF | Max ms |  |
