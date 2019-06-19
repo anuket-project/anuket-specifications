@@ -66,7 +66,16 @@ A network function virtualisation infrastructure needs to be capable of supporti
 ### Compute Host
 A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of VNFs. A compute host therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
 
-<<Table 2>>
+| Attribute | Description |
+| --- | --- |
+| `name` | name of the virtual host |
+| `vcpus` | number of virtual cpus |
+| `ram` | size of random access memory in GB |
+| `disc` | size of root disc in GB |
+| `nics` | sorted list of network interfaces connecting the host to the virtual networks |
+| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
+| `metadata` | key/value pairs for selection of the appropriate redundancy domain |
+<p align="center"><b>Table 3-2:</b> Attributes of compute resources.</p>
 
 ### Storage
 A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a compute host. A storage device resides in a tenant context and exists independently from any compute host. **Example**: an OpenStack cinder volume.
