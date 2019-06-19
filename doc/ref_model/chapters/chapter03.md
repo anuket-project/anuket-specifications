@@ -123,4 +123,14 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 #### 3.3.1.1	Exposed resource capabilities
 Table xx below shows resource capabilities of NFVI. Those indicate resources offered to VNFs by NFVI.
 
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
+| e.nfvi.res.cap.001 | #vCPU cores | number | Min, Max number of vCPU cores that can be assigned to a single VNF-C |
+| e.nfvi.res.cap.002 | Amount of RAM (MB) | MB | Min, Max memory in MB  that can be assigned to a single VNF-C by NFVI. |
+| e.nfvi.res.cap.003 | Total amount of instance (ephemeral) storage (GB) | GB | Min, Max storage in GB  that can be assigned to a single VNF-C by NFVI |
+| e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNF-C by NFVI. |
+| e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Min, Max storage in GB that can be attached / mounted to VNF-C by NFVI. |
+
+<p align="center"><b>Table 3-5:</b> Explicit resource capabilities of NFVI.</p>
+
 
