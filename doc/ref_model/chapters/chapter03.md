@@ -94,7 +94,12 @@ _**Comments**: we need to be more specific regarding acceleration and metadata._
 ### Network
 A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
 
-<<Table 4>
+| Attribute | Description |
+| --- | --- |
+| `name` | name of the network resource |
+| `subnet` | classless inter-domain routing of the subnet |
+| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
+<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
 
 <a name="expint"></a>
 ## 3.2	Exposed vs Internal
