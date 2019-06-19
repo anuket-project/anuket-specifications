@@ -49,4 +49,13 @@ Capturing performance characteristics.
 
 <a name="profiles"></a>
 ## 2.3	NFVI Profiles
+By examining the list of VNFs provided in Section 2.1(VNFs collateral (Sample)) and understand their various requirements of NFVI capabilities and metrics, they can be categorised into the following categories.
+- **Basic**: VNFs with VNF-Cs that perform basic compute operations. 
+- **Network intensive**: VNFs with VNF-Cs that perform network intensive operations with high throughput and low latency requirements.
+- **Compute Intensive**: VNFs with VNF-Cs that perform compute intensive operations with low latency requirements.
+
+**Figure 2-1** shows proposed list of NFVI profiles to match those VNF categories.
+
+>_**Note**: 	This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures._
+
 
