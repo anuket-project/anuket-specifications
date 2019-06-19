@@ -247,3 +247,48 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 <p align="center"><b>Table 3-16:</b> Mapping of Internal SLA capabilities to NFVI instance type.</p>
 
+#### 3.4.1.3	Internal performance optimisation capabilities
+**Table 3-17** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNF-C (VNF Component)
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|------------------------------------------|--------|----------------------------------------|
+| i.nfvi.per.cap.001 | Huge page support | Yes/No | Determining if NFVI support huge pages |
+
+<p align="center"><b>Table 3-17:</b> Internal performance optimisation capabilities of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|--------------------------|--------------------------|--------------------------|
+| i.nfvi.per.cap.001 | No | Yes | No |
+
+<p align="center"><b>Table 3-18:</b> Mapping of Internal performance optimisation capabilities to NFVI instance types.</p>
+
+#### 3.4.1.4	Internal monitoring capabilities
+**Table 3-19** shows possible monitoring capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by VNFs.
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
+| i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
+| i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
+| i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNF-C |
+| i.nfvi.mon.cap.005 | Monitoring of external storage IOPS | Yes/No | Transcoding Acceleration |
+| i.nfvi.mon.cap.006 | Monitoring of external storage throughput | Yes/No | Programmable Acceleration |
+| i.nfvi.mon.cap.007 | Monitoring of external storage capacity | Yes/No |  |
+
+<p align="center"><b>Table 3-19:</b> Internal monitoring capabilities of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|------------|------------|------------|
+| i.nfvi.mon.cap.001 | Yes | Yes | Yes |
+| i.nfvi.mon.cap.002 | Yes | Yes | Yes |
+| i.nfvi.mon.cap.003 | Yes | Yes | Yes |
+| i.nfvi.mon.cap.004 | Yes | Yes | Yes |
+| i.nfvi.mon.cap.005 | Yes | No | Yes |
+| i.nfvi.mon.cap.006 | Yes | No | Yes |
+| i.nfvi.mon.cap.007 | Yes | No | Yes |
+
+<p align="center"><b>Table 3-20:</b> Mapping of Internal monitoring capabilities to NFVI instance types.</p>
+
+
+
+
