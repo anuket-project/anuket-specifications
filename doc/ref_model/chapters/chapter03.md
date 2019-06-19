@@ -225,8 +225,8 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|--------------------------|--------------------------|--------------------------|
-| i.nfvi.res.cap.001 | 5-10% | 10-20% | 15-25% |
-| i.nfvi.res.cap.002 | 5-10% | 10-20% | 15-25% |
+| `i.nfvi.res.cap.001` | 5-10% | 10-20% | 15-25% |
+| `i.nfvi.res.cap.002` | 5-10% | 10-20% | 15-25% |
 
 <p align="center"><b>Table 3-14:</b> Mapping of Internal resource capabilities to NFVI instance types.</p>
 
@@ -242,8 +242,8 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|--------------------------|--------------------------|--------------------------|
-| i.nfvi.sla.cap.001 | 1:4 | 1:1 | 1:1 |
-| i.nfvi.sla.cap.002 | No | Yes | Yes |
+| `i.nfvi.sla.cap.001` | 1:4 | 1:1 | 1:1 |
+| `i.nfvi.sla.cap.002` | No | Yes | Yes |
 
 <p align="center"><b>Table 3-16:</b> Mapping of Internal SLA capabilities to NFVI instance type.</p>
 
@@ -258,7 +258,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|--------------------------|--------------------------|--------------------------|
-| i.nfvi.per.cap.001 | No | Yes | No |
+| `i.nfvi.per.cap.001` | No | Yes | No |
 
 <p align="center"><b>Table 3-18:</b> Mapping of Internal performance optimisation capabilities to NFVI instance types.</p>
 
@@ -279,13 +279,13 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------|------------|
-| i.nfvi.mon.cap.001 | Yes | Yes | Yes |
-| i.nfvi.mon.cap.002 | Yes | Yes | Yes |
-| i.nfvi.mon.cap.003 | Yes | Yes | Yes |
-| i.nfvi.mon.cap.004 | Yes | Yes | Yes |
-| i.nfvi.mon.cap.005 | Yes | No | Yes |
-| i.nfvi.mon.cap.006 | Yes | No | Yes |
-| i.nfvi.mon.cap.007 | Yes | No | Yes |
+| `i.nfvi.mon.cap.001` | Yes | Yes | Yes |
+| `i.nfvi.mon.cap.002` | Yes | Yes | Yes |
+| `i.nfvi.mon.cap.003` | Yes | Yes | Yes |
+| `i.nfvi.mon.cap.004` | Yes | Yes | Yes |
+| `i.nfvi.mon.cap.005` | Yes | No | Yes |
+| `i.nfvi.mon.cap.006` | Yes | No | Yes |
+| `i.nfvi.mon.cap.007` | Yes | No | Yes |
 
 <p align="center"><b>Table 3-20:</b> Mapping of Internal monitoring capabilities to NFVI instance types.</p>
 
@@ -303,10 +303,10 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------|------------|
-| i.nfvi.sec.cap.001 | Yes | Yes | Yes |
-| i.nfvi.sec.cap.002 | No | No | No |
-| i.nfvi.sec.cap.003 | Yes | No | No |
-| i.nfvi.sec.cap.004 | Yes | Yes | Yes |
+| `i.nfvi.sec.cap.001` | Yes | Yes | Yes |
+| `i.nfvi.sec.cap.002` | No | No | No |
+| `i.nfvi.sec.cap.003` | Yes | No | No |
+| `i.nfvi.sec.cap.004` | Yes | Yes | Yes |
 
 <p align="center"><b>Table 3-22:</b> Mapping of Internal security capabilities to NFVI instance types.</p>
 
@@ -316,7 +316,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| i.nfvi.rmt.met.001 | Time to create VNF-C for a given VNF | Max ms | Are VNF-C memories isolated from each other by hardware support? |
+| i.nfvi.rmt.met.001 | Time to create VNF-C for a given VNF | Max ms |  |
 | i.nfvi.rmt.met.002 | Time to delete  VNF-C of a given VNF | Max ms |  |
 | i.nfvi.rmt.met.003 | Time to start VNF-C of a given VNF | Max ms |  |
 | i.nfvi.rmt.met.004 | Time to stop VNF-C of a given VNF | Max ms |  |
@@ -335,19 +335,19 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| i.nfvi.rmt.met.001 |  |  |  |
-| i.nfvi.rmt.met.002 |  |  |  |
-| i.nfvi.rmt.met.003 |  |  |  |
-| i.nfvi.rmt.met.004 |  |  |  |
-| i.nfvi.rmt.met.005 |  |  |  |
-| i.nfvi.rmt.met.006 |  |  |  |
-| i.nfvi.rmt.met.007 |  |  |  |
-| i.nfvi.rmt.met.008 |  |  |  |
-| i.nfvi.rmt.met.009 |  |  |  |
-| i.nfvi.rmt.met.010 |  |  |  |
-| i.nfvi.rmt.met.011 |  |  |  |
-| i.nfvi.rmt.met.012 |  |  |  |
-| i.nfvi.rmt.met.013 |  |  |  |
-| i.nfvi.rmt.met.014 |  |  |  |
+| `i.nfvi.rmt.met.001` |  |  |  |
+| `i.nfvi.rmt.met.002` |  |  |  |
+| `i.nfvi.rmt.met.003` |  |  |  |
+| `i.nfvi.rmt.met.004` |  |  |  |
+| `i.nfvi.rmt.met.005` |  |  |  |
+| `i.nfvi.rmt.met.006` |  |  |  |
+| `i.nfvi.rmt.met.007` |  |  |  |
+| `i.nfvi.rmt.met.008` |  |  |  |
+| `i.nfvi.rmt.met.009` |  |  |  |
+| `i.nfvi.rmt.met.010` |  |  |  |
+| `i.nfvi.rmt.met.011` |  |  |  |
+| `i.nfvi.rmt.met.012` |  |  |  |
+| `i.nfvi.rmt.met.013` |  |  |  |
+| `i.nfvi.rmt.met.014` |  |  |  |
 
 <p align="center"><b>Table 3-25:</b> Mapping of Internal resource management metrics to NFVI instance types.</p>
