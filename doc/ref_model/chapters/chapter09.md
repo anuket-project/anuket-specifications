@@ -1,3 +1,4 @@
+[<< Back](../../ref_model)
 # 9	Operations (OA&M)
 
 The purpose of this chapter is to ensure the infra is supportable / maintainable by Operations, and it should include direct Ops group input. It includes requirements identified for operation and maintenance of the infra, after it is built and deployed (i.e. in production). Telco infra is by definition, HA/non-stop, so this chapter ensures requirements related to maintaining the infra w/o the need to take it out of service or impact the VNFs and without using excessive human labor, are addressed. It shall also capture any exceptions and related assumptions.
