@@ -80,9 +80,16 @@ A virtual machine or a container/pod belonging to a tenant capable of hosting th
 ### Storage
 A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a compute host. A storage device resides in a tenant context and exists independently from any compute host. **Example**: an OpenStack cinder volume.
 
-<< Table 3>>
+| Attribute | Description |
+| --- | --- |
+| `name` | name of storage resources |
+| `size` | size of disc in GB |
+| `attachments` | list of compute hosts to which the device is currently attached |
+| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
+| `metadata` | key/value pairs for selection of the appropriate redundancy domain |
+<p align="center"><b>Table 3-3:</b> Attributes of storage resources.</p>
 
-**Comments**: we need to be more specific regarding acceleration and metadata.
+_**Comments**: we need to be more specific regarding acceleration and metadata._
 
 ### Network
 A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
