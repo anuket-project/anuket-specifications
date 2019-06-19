@@ -210,7 +210,7 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 ## 3.4	Internal NFVI capabilities metrics, and constraints
 This section covers a list of implicit NFVI capabilities and metrics that defines the interior of   NFVI. These capabilities and metrics determines how NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will have a big impact on the overall performance and capabilities of a given NFVI solution.
 
->**_Note**: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
+>_**Note**: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
 ### 3.4.1	Internal NFVI capabilities
 #### 3.4.1.1	Internal resource capabilities
