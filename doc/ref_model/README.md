@@ -16,6 +16,13 @@
 * [Chapter 11 - Challenges and Gaps](chapters/chapter11.md)
 
 ## Contributors
+
+| Item/Chapter                  | Lead                                     | Contributors list | Priority |
+|-------------------------------|------------------------------------------|-------------------|----------|
+| Overall Document & Rapporteur | Rabi Abdel ( abdel.rabi@vodafone.com)    |                   |          |
+| Chapter 1 - Introduction      | Beth Cohen ( beth.cohen@one.verizon.com) |                   |     1    |
+|                               |                                          |                   |          |
+
 | Item/Chapter | Lead | Contributors list | Priority |
 | --- | --- | --- | --- |
 | Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) | | |
