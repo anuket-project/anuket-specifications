@@ -17,14 +17,9 @@
 
 ## Contributors
 
+
 | Item/Chapter                  | Lead                                     | Contributors list | Priority |
 |-------------------------------|------------------------------------------|-------------------|----------|
-| Overall Document & Rapporteur | Rabi Abdel ( abdel.rabi@vodafone.com)    |                   |          |
-| Chapter 1 - Introduction      | Beth Cohen ( beth.cohen@one.verizon.com) |                   |     1    |
-|                               |                                          |                   |          |
-
-| Item/Chapter | Lead | Contributors list | Priority |
-| --- | --- | --- | --- |
 | Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) | | |
 | Chapter 1 - Introduction | Beth Cohen (beth.cohen@one.verizon.com) | | 1 |
 | Chapter 2 - VNF requirements and analysis | Ahmed ElSawaf (aelsawaf.c@stc.com.sa) | | 1 |
