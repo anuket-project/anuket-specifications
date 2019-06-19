@@ -185,3 +185,24 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 <p align="center"><b>Table 3-10:</b> Mapping of Exposed monitoring capabilities with different NFVI instance types.</p>
 
+### 3.3.2	Exposed NFVI metrics
+#### 3.3.2.1	Exposed performance metrics 
+**Table 3-11** below shows performance metrics of NFVI. The intent of those metrics is to be well known to VNFs. These metrics are aligned with ETSI GS NFV TST-009 [2].
+
+| Ref | NFVI metric | Unit | Definition/Notes |
+|--------------------|------------------------------------------|--------|-----------------------------------------------------------------------|
+| e.nfvi.per.met.001 | Network Throughput | bps | Max thougput per vNIC assigned to VNF-C @256 Bytes |
+| e.nfvi.per.met.002 | Network Latency | ms | Range (min, max) on each vNIC assigned to VNF-C. ETSI NFV-TST 009[2]. |
+| e.nfvi.per.met.003 | External (persistent) storage IO | iops | Range (min, max) per VNF-C |
+| e.nfvi.per.met.004 | External (persistent) storage throughput | MB/s | Range (min, max) per VNF-C |
+
+<p align="center"><b>Table 3-11:</b> Exposed performance metrics of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|--------------------------|---------------------------|---------------------------|
+| e.nfvi.per.met.001 | Up to speed of   <I Opt> | Up to speed of    <I Opt> | Up to speed of    <I Opt> |
+| e.nfvi.per.met.002 | <30ms | <0.5ms | <5ms |
+| e.nfvi.per.met.003 | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
+| e.nfvi.per.met.004 | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
+
+<p align="center"><b>Table 3-12:</b> Mapping of Exposed performance metrics to NFVI instance types.</p>
