@@ -57,9 +57,24 @@ For a VNF stack to be created in a Tenant also requires APIs for the management 
 
 A virtual compute resource is created as per the flavour template (specifies the compute, memory and local storage capacity) and is launched using an image with access and security credentials; once launched, it is referred to as a virtual compute instance or just “Instance”). Instances can be launched by specifying the compute, memory and local storage capacity parameters instead of an existing flavour; reference to flavours coves the situation where the capacity parameters are specified. IP addresses and storage volumes can be attached to a running Instance. 
 
+| Resource | Create | List | Attach | Detach | Delete | Notes |
+|-----------------|--------|------|--------|--------|--------|-------------------------------------------------------------------------------------------------------------|
+| Flavour | + | + |  |  | + |  |
+| Image | + | + |  |  | + | Create/delete by appropriate administrators |
+| Key pairs | + | + |  |  | + |  |
+| Privileges |  |  |  |  |  | Created and managed by Cloud Service Provider(CSP)  administrators |
+| Role | + | + |  |  | + | Create/delete by authorized administrators where roles are assigned privileges and mapped to users in scope |
+| Security Groups | + | + |  |  | + | Create and delete only by VDC administrators |
+| Stack | + | + |  |  | + | Create/delete by VDC users with appropriate role |
+| Virtual Storage | + | + | + | + | + | Create/delete by VDC users with appropriate role |
+| User | + | + |  | + | + | Create/delete only by VDC administrators |
+| Tenant | + | + |  | + | + | Create/delete only by Cloud Zone administrators |
+| Virtual compute | + | + |  | + | + | Create/delete by VDC users with appropriate role.  Additional operations would include suspend/unsuspend |
+| Virtual network | + | + | + | + | + | Create/delete by VDC users with appropriate role |
+
 <p align="center"><b>Table 7-1:</b> API types for a minimal set of resources.</p>
  
-Table 44 specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
+**Table 7-1** specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
 
 <a name="7.3"></a>
 ## 7.3	Enabler Services APIs (not-MVP)
