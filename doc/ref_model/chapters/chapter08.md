@@ -4,5 +4,5 @@
 - Common standards 
   - Testing demarcation points (‘stub points’)
 - VNF Vendors responsibility
-- NFVi Vendors responsibility (qualify what infrastructure means)
+- NFVi Vendors responsibility (qualify what infrastructure means).
 
