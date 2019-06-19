@@ -289,6 +289,23 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 <p align="center"><b>Table 3-20:</b> Mapping of Internal monitoring capabilities to NFVI instance types.</p>
 
+#### 3.4.1.5	Internal security capabilities
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|-------------------------------------|--------|------------------------------------------------------------------|
+| i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation | Yes/No | Are VNF-C memories isolated from each other by hardware support? |
+| i.nfvi.sec.cap.002 | VNF-C -> Host | Yes/No | Can VNF-C access host memory? |
+| i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory? |
+| i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest? |
 
 
+<p align="center"><b>Table 3-21:</b> Internal security capabilities of NFVI.</p>
 
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|------------|------------|------------|
+| i.nfvi.sec.cap.001 | Yes | Yes | Yes |
+| i.nfvi.sec.cap.002 | No | No | No |
+| i.nfvi.sec.cap.003 | Yes | No | No |
+| i.nfvi.sec.cap.004 | Yes | Yes | Yes |
+
+<p align="center"><b>Table 3-22:</b> Mapping of Internal security capabilities to NFVI instance types.</p>
