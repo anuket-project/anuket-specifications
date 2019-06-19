@@ -16,7 +16,7 @@ It is inevitable that different VNFs require different capabilities from the und
 <a name="analysis"></a>
 ## 2.2	Analysis of requirements 
 (Key Assumptions and Rationale)
-Capturing performance characteristics
+Capturing performance characteristics.
 
 <a name="profiles"></a>
 ## 2.3	NFVI Profiles
