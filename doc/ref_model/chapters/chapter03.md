@@ -411,3 +411,23 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 <p align="center"><b>Table 3-31:</b> Mapping of Internal scalability metrics to NFVI instance types.</p>
 
+#### 3.4.2.5	Internal availability/reliability metrics
+
+| Ref | NFVI metric | Unit | Definition/Notes |
+|--------------------|------------------|---------|-------------------------------------------|
+| i.nfvi.arl.met.001 | Availability | % |  |
+| i.nfvi.arl.met.002 | MTBF single node | days | Mean Time between Failure for single node |
+| i.nfvi.arl.met.003 | MTBF AZ | days | Mean Time between Failure for an   AZ |
+| i.nfvi.arl.met.004 | Recovery time | seconds |  |
+
+<p align="center"><b>Table 3-32:</b> Internal availability/reliability metrics of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|------------|------------|------------|
+| i.nfvi.arl.met.001 |  |  |  |
+| i.nfvi.arl.met.002 |  |  |  |
+| i.nfvi.arl.met.003 |  |  |  |
+| i.nfvi.arl.met.004 |  |  |  |
+
+<p align="center"><b>Table 3-33:</b> Mapping of Internal availability/reliability metrics to NFVI instance types.</p>
+
