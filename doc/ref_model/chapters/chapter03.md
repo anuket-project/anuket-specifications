@@ -377,4 +377,20 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 <p align="center"><b>Table 3-27:</b> Mapping of Internal performance metrics to NFVI instance types.</p>
 
+#### 3.4.2.3	Internal SLA metrics
+**Table 3-28** shows SLA metrics of NFVI. Expected values of these metrics are determined by the standard instance type used by VNF-C.
+
+| Ref | NFVI metrics | Unit | Definition/Notes |
+|--------------------|------------------------------|------|-------------------------------------|
+| i.nfvi.sla.met.001 | vNIC CIR | bbs | Committed Information Rate per vNIC |
+| i.nfvi.sla.met.002 | vNIC PIR | bbs | Peak Information Rate per vNIC |
+
+<p align="center"><b>Table 3-28:</b> Internal SLA metrics of NFVI.</p>
+
+| Ref | B Instance | N Instance | C Instance |
+|--------------------|-------------|--------------------|-------------|
+| i.nfvi.sla.met.001 | NA | As per vNIC option | NA |
+| i.nfvi.sla.met.002 | NA | As per vNIC option | NA |
+
+<p align="center"><b>Table 3-29:</b> Mapping of Internal SLA metrics to NFVI instance types.</p>
 
