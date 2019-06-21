@@ -5,12 +5,14 @@
 ## Table of Contents
 * [1.1 Overview.](#overview)
 * [1.2 Problem Statement.](#problemstatement)
-* [1.3 Scope.](#scope)
-* [1.4 Relations to other industry projects.](#relation)
-* [1.5 How this document works.](#docu)
-* [1.6 What this document is not covering.](#notcovering)
-* [1.7 Bogo-Meter.](#bogometer)
-* [1.8 Roadmap.](#roadmap)
+* [1.3 Problem Statement.](#1.3)
+* [1.4 Problem Statement.](#1.4)
+* [1.5 Scope.](#scope)
+* [1.6 Relations to other industry projects.](#relation)
+* [1.7 How this document works.](#docu)
+* [1.8 What this document is not covering.](#notcovering)
+* [1.9 Bogo-Meter.](#bogometer)
+* [1.10 Roadmap.](#roadmap)
 
 <a name="overview"></a>
 ## 1.1 Overview
@@ -37,8 +39,14 @@ The benefits of this approach are:
 ## 1.2	Problem Statement
 Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF Challenges - Identified Long-Poles
 
+<a name="1.3"></a>
+## 1.3	Problem Statement
+
+<a name="1.4"></a>
+## 1.4	Problem Statement
+
 <a name="scope"></a>
-## 1.3	Scope
+## 1.5	Scope
 The scope of this document is illustrated in **Figure 1** below
 
 <p align="center"><img src="../figures/scope.PNG" alt="scope" title="Scope" width="100%"/></p>
@@ -56,26 +64,26 @@ This document specifies:
   - **Test framework**:  Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles. Part of the framework is also developing a reference implementation of the defined profiles (with the defined configurations0 to be used as a reference for compliance, certification, and verification of NFVI and VNFs.
 
 <a name="relation"></a>
-## 1.4	Relations to other industry projects 
+## 1.6	Relations to other industry projects 
 (clarify ETSI discussion re: what part of ETSI NFVi arch)
 Software Stack Model (Abstracted)
 
 <a name="docu"></a>
-## 1.5	How this document works
+## 1.7	How this document works
 How to engage with it 
 How the model links to reference
 
 <a name="notcovering"></a>
-## 1.6	What this document is not covering 
+## 1.8	What this document is not covering 
 Separate document w/labels/artifacts
 Not part of model but will be applicable to architecture 
 
 <a name="bogometer"></a>
-## 1.7	Bogo-Meter
+## 1.9	Bogo-Meter
 A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indicates the completeness and maturity each chapter’s content, at a glance.
 
 <a name="roadmap"></a>
-## 1.8	Roadmap
+## 1.10	Roadmap
 What’s next in further releases/what’s the backlog and priority roadmap
 
 
