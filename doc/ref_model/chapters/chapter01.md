@@ -45,6 +45,25 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 <a name="1.4"></a>
 ## 1.4	Principles
 
+This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
+1.	Infrastructure abstraction is aiming to abstract resources provided to VNFs/CNFs (network applications) by NFVI. Those resources include:
+  a.	Compute resources.
+  b.	Storage resources.
+  c.	Networking resources. (Limited to connectivity services).
+  d.	Acceleration resources.
+2.	NFVI exposed resources should not have any dependency on any particular suppliers. All APIs implemented must be standard and open, to allow substitution of components.
+3.	NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
+  a.	By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”
+4.	NFVI resources are configured on behalf of VNFs/CNFs through standard/Open Interfaces and APIs.
+5.	NFVI resources are discovered/monitored by management entities (such as orchestration) through standard/Open Interfaces and APIs.
+6.	VNFs/CNFs should be designed to be modular and utilise minimum resources. 
+7.	NFVI exposes pre-defined and expandable T-shirt sizes that determine the dimensions/class of those resources in conjunction with the NFVI profile.
+  a.	VNFs/CNFs requiring custom T-Shirt sizes or different T-shirt sizes can still do that and it will be up to each individual service provider to allow it.
+  b.	T-Shirt sizes will evolve with time.
+8.	VNFs/CNFs should only consume resources and take advantage of capabilities and features (such as for performance optimisation) as offered by the targeted NFVI profile.
+9.	(rephrase) VNFs/CNFs running targeting a given profile should be able to run on it without requiring specific features that are supported by the profile such as acceleration, etc.
+  a.	Performance might be impacted.
+
 <a name="scope"></a>
 ## 1.5	Scope
 The scope of this document is illustrated in **Figure 1** below
