@@ -115,6 +115,8 @@ Mark S./Tom investigating.
 1.	(Explanation)
 2.	E.g. this is how I expose my NFVi storage to the VNF = External
 
+This is a test
+
 <a name="expcap"></a>
 ## 3.3	Exposed NFVI capabilities, metrics, and constraints
 
