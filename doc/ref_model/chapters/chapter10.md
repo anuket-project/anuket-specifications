@@ -23,3 +23,4 @@ The purpose of this chapter is to address the relation with this Reference Model
 ### 10.4.1 Vendor supplied NFVI solutions
 <a name="10.5"></a>
 ## 10.5 NFVI reference implementations
+
