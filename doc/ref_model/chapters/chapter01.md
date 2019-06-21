@@ -47,6 +47,10 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 
 This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
 
+100. First list item
+     - First nested list item
+       - Second nested list item
+
 1.	Infrastructure abstraction is aiming to abstract resources provided to VNFs/CNFs (network applications) by NFVI. Those resources include:
    - Compute resources.
    - Storage resources.
