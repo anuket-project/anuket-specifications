@@ -56,48 +56,32 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
       - **Compute flavour**: [Pankaj] define the compute, memory, and storage capacity of a virtual compute resource 
     - **Virtual Storage resources**: [Pankaj] [ETSI] virtualised non-volatile storage allocated to a
     - **Virtual Networking resources**: [Pankaj] [ETSI] routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity.
-•	Virtual Acceleration resources:
-o	Software Layer: 
-[Walter] Responsible for the abstraction of the underlying hardware resources and typically implemented using VM/hypervisor or container-based technology.
-o	Virtualisation layer:
-[Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
-o	Hardware Layer:
-[Pankaj] The physical resources/devices providing the NFVi services/functions required to support the execution environment for VNFs.
-	Hardware resources:
-•	[Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
-•	Node: 
-[Pankaj] a virtualised compute resource instance that runs on a physical host
-•	NFVI Software Profile: 
-[Rabi] This defines the behaviour, capabilities and metrics provided by an NFVI Software Layer. 
-•	NFVI SW Configuration:
-o	[Rabi] is a set of settings (Key:Value) that are applied to NFVI SW layers to behalf as their corresponding NFVI SW Profile. 
-•	NFVI Hardware Profile: 
-[Rabi] This defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer. 
-•	NFVI HW configurations.
-o	Host Profile: 
-[Pankaj] is a configuration template used to configure physical hosts (servers)
-[Rabi] is a set of settings (Key:Value) that are applied to NFVI HW layers to behalf as their corresponding NFVI HW Profile.
-•	Hardware Platform:
-•	CPU Socket:
-•	PCIe Slot
-•	NIC
-•	SmartNIC
-•	Hardware Acceleration
-•	Cluster:
-•	Virtual data centre:
-•	Provider Virtual Data Center (PVDC)
-[Sammuel] A PVDC combines the compute and memory resources of a single VIM (virtual infrastructure manager) resource pool with the storage resources of one or more datastores connected to that resource pool. A provider virtual data center is defined as a resource cluster residing in a resource site.
-•	Organisation Virtual Data Center (OVDC)
-[Sammuel] A subgrouping of compute, memory, storage and network resources allocated from a PVDC. A virtual data center is a deployment environment where vApps can be instantiated, deployed, and powered on. Virtual data centers cannot span multiple organisations.
-
-An organisation virtual data center allocates resources using one of the following allocation models:
-•	Pay-As-You-Go
-•	Reservation
-•	Allocation
-•	Organisation:
-[Sammuel] The unit of multi-tenancy representing a single logical security boundary. An organisation contains users and organisational virtual data centres. On the NFV platform, this is referred to as an NFVI tenant.
-•	Others?
-
+    - **Virtual Acceleration resources**:
+  - **Software Layer**: [Walter] Responsible for the abstraction of the underlying hardware resources and typically implemented using VM/hypervisor or container-based technology.
+    - **Virtualisation layer**: [Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
+  - **Hardware Layer**: [Pankaj] The physical resources/devices providing the NFVi services/functions required to support the execution environment for VNFs.
+    - **Hardware resources**: [Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
+- **Node**: [Pankaj] a virtualised compute resource instance that runs on a physical host.
+- **NFVI Software Profile**: [Rabi] This defines the behaviour, capabilities and metrics provided by an NFVI Software Layer. 
+- **NFVI SW Configuration**: [Rabi] is a set of settings (Key:Value) that are applied to NFVI SW layers to behalf as their corresponding NFVI SW Profile. 
+- **NFVI Hardware Profile**: [Rabi] This defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer. 
+- **NFVI HW configurations**: [Rabi] is a set of settings (Key:Value) that are applied to NFVI HW layers to behalf as their corresponding NFVI HW Profile.
+  - **Host Profile**: [Pankaj] is a configuration template used to configure physical hosts (servers)
+- **Hardware Platform**:
+  - **CPU Socket**:
+  - **PCIe Slot**:
+  - **NIC**: 
+  - **SmartNIC**: 
+  - **Hardware Acceleration**:
+- **Cluster**:
+- **Virtual data centre**:
+  - **Provider Virtual Data Center (PVDC)**: [Sammuel] A PVDC combines the compute and memory resources of a single VIM (virtual infrastructure manager) resource pool with the storage resources of one or more datastores connected to that resource pool. A provider virtual data center is defined as a resource cluster residing in a resource site.
+  - **Organisation Virtual Data Center (OVDC)**: [Sammuel] A subgrouping of compute, memory, storage and network resources allocated from a PVDC. A virtual data center is a deployment environment where vApps can be instantiated, deployed, and powered on. Virtual data centers cannot span multiple organisations. An organisation virtual data center allocates resources using one of the following allocation models:
+    - Pay-As-You-Go.
+    - Reservation.
+    - Allocation.
+- **Organisation**: [Sammuel] The unit of multi-tenancy representing a single logical security boundary. An organisation contains users and organisational virtual data centres. On the NFV platform, this is referred to as an NFVI tenant.
+- **Others?**
 
 <a name="1.4"></a>
 ## 1.4	Principles
