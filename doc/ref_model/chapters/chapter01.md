@@ -48,10 +48,10 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
 
 1.	Infrastructure abstraction is aiming to abstract resources provided to VNFs/CNFs (network applications) by NFVI. Those resources include:
-   * Compute resources.
-   *	Storage resources.
-   *	Networking resources. (Limited to connectivity services).
-   *	Acceleration resources.
+  1. Compute resources.
+  1. Storage resources.
+  1. Networking resources. (Limited to connectivity services).
+  1. Acceleration resources.
 1.	NFVI exposed resources should not have any dependency on any particular suppliers. All APIs implemented must be standard and open, to allow substitution of components.
 1.	NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
    * By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”
