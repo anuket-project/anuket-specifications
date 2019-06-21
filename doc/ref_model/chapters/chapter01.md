@@ -53,16 +53,16 @@ This section specifies the principles of infrastructure abstraction and profilin
    - Networking resources. (Limited to connectivity services).
    - Acceleration resources.
 1.	NFVI exposed resources should not have any dependency on any particular suppliers. All APIs implemented must be standard and open, to allow substitution of components.
-1.	NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
+1. NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
    - By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”.
 1.	NFVI resources are configured on behalf of VNFs/CNFs through standard/Open Interfaces and APIs.
 1.	NFVI resources are discovered/monitored by management entities (such as orchestration) through standard/Open Interfaces and APIs.
 1.	VNFs/CNFs should be designed to be modular and utilise minimum resources. 
-1.	NFVI exposes pre-defined and expandable T-shirt sizes that determine the dimensions/class of those resources in conjunction with the NFVI profile.
+1. NFVI exposes pre-defined and expandable T-shirt sizes that determine the dimensions/class of those resources in conjunction with the NFVI profile.
    - VNFs/CNFs requiring custom T-Shirt sizes or different T-shirt sizes can still do that and it will be up to each individual service provider to allow it.
    - T-Shirt sizes will evolve with time.
 1.	VNFs/CNFs should only consume resources and take advantage of capabilities and features (such as for performance optimisation) as offered by the targeted NFVI profile.
-1.	(rephrase) VNFs/CNFs running targeting a given profile should be able to run on it without requiring specific features that are supported by the profile such as acceleration, etc.
+1. (rephrase) VNFs/CNFs running targeting a given profile should be able to run on it without requiring specific features that are supported by the profile such as acceleration, etc.
    - Performance might be impacted.
 
 <a name="scope"></a>
