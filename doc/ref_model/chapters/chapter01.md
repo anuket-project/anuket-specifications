@@ -54,7 +54,7 @@ This section specifies the principles of infrastructure abstraction and profilin
    - Acceleration resources.
 1.	NFVI exposed resources should not have any dependency on any particular suppliers. All APIs implemented must be standard and open, to allow substitution of components.
 1.	NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
-   - By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”
+   - By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”.
 1.	NFVI resources are configured on behalf of VNFs/CNFs through standard/Open Interfaces and APIs.
 1.	NFVI resources are discovered/monitored by management entities (such as orchestration) through standard/Open Interfaces and APIs.
 1.	VNFs/CNFs should be designed to be modular and utilise minimum resources. 
