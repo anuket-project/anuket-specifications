@@ -115,12 +115,8 @@ Mark S./Tom investigating.
 1.	(Explanation)
 2.	E.g. this is how I expose my NFVi storage to the VNF = External
 
-This is a test
-
 <a name="expcap"></a>
 ## 3.3	Exposed NFVI capabilities, metrics, and constraints
-
-This is a 2nd test
 
 ### 3.3.1	Exposed NFVI capabilities
 This section covers a list of explicit NFVI capabilities and metrics that defines an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
