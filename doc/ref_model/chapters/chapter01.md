@@ -5,8 +5,8 @@
 ## Table of Contents
 * [1.1 Overview.](#overview)
 * [1.2 Problem Statement.](#problemstatement)
-* [1.3 Problem Statement.](#1.3)
-* [1.4 Problem Statement.](#1.4)
+* [1.3 Terminology.](#1.3)
+* [1.4 Principles.](#1.4)
 * [1.5 Scope.](#scope)
 * [1.6 Relations to other industry projects.](#relation)
 * [1.7 How this document works.](#docu)
@@ -40,10 +40,10 @@ The benefits of this approach are:
 Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF Challenges - Identified Long-Poles
 
 <a name="1.3"></a>
-## 1.3	Problem Statement
+## 1.3	Terminology
 
 <a name="1.4"></a>
-## 1.4	Problem Statement
+## 1.4	Principles
 
 <a name="scope"></a>
 ## 1.5	Scope
