@@ -72,6 +72,46 @@ B instance comes with various Interfaces options, Table **Table 4-3** below show
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
+#### 4.2.2	N Instances (Network Intensive)
+This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
 
+N instance comes with various interfaces options, the Table below shows the various Interfaces options available for N instance types (Up to 6 interfaces are possible).
 
+| Virtual interface option* | Type | Description |
+|---------------------------|------------|---------------------------------|
+| 10 | virtio-net | 1x 10Gbps network |
+| 10D | virtio-net | 2x 10Gbps network |
+| 10T* | virtio-net | 3x 10Gbps network |
+| 10Q, 10P, 10H* | virtio-net | 4x 10Gbps, 5x 10Gbps, 6x 10Gbps |
+| 25 | virtio-net | 1x 25Gbps network |
+| 25D | virtio-net | 2x 25Gbps network |
+| 25T* | virtio-net | 3x 25Gbps network |
+| 25Q, 25P, 25H* | virtio-net | 4x 25Gbps, 5x 25Gbps, 6x 25Gbps |
+| 40 | virtio-net | 1x 40Gbps network |
+| 40D | virtio-net | 2x 40Gbps network |
+| 40T* | virtio-net | 3x 40Gbps network |
+| 40Q, 40P, 40H* | virtio-net | 4x 40Gbps, 5x 40Gbps, 6x 40Gbps |
+| 50 | virtio-net | 1x 50Gbps network |
+| 50D | virtio-net | 2x 50Gbps network |
+| 50T* | virtio-net | 3x 50Gbps network |
+| 50Q, 50P, 50H* | virtio-net | 4x 50Gbps, 5x 50Gbps, 6x 50Gbps |
+| 100 | virtio-net | 1x 100Gbps network |
+| 100D | virtio-net | 2x 100Gbps network |
+| 100T* | virtio-net | 3x 100Gbps network |
+| 100Q, 100P, 100H* | virtio-net | 4x 100Gbps, 5x 100Gbps, 6x 100Gbps |
 
+<p align="center"><b>Table 4-4:</b> Virtual NIC interfaces options for N instance type.</p>
+
+> _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
+
+#### 4.2.2.1	Network Acceleration Extensions
+N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized. Those interfaces are aligned with ETSI NFV IFA 002 [4].
+
+| .conf | Interface type | Description |
+|------------|----------------|-----------------------------------------|
+| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
+| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
+
+<p align="center"><b>Table 4-5:</b> Acceleration extensions for N instance type.</p>
+
+> _*Need to work with relevant open source communities to create missing interfaces._
