@@ -6,3 +6,6 @@ Infrastructure profiles are collection of capabilities, metrics, compute flavour
 
 The idea of the infrastructure profiles catalogue is to have a predefined set of instance types with a predefined set of compute flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more of those compute flavours (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-1**.
 
+<p align="center"><img src="../figures/ch04_vnf_design.PNG" alt="vnf_design" title="VNF Design" width="65%"/></p>
+<p align="center"><b>Figure 4-1:</b> VNFs built against standard instance types and compute flavours.</p>
+
