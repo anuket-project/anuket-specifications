@@ -155,5 +155,17 @@ C instance types can come with compute acceleration extensions to assist VNF/app
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
+## 4.3	One stop shop
+### 4.3.1	Naming convention
+An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
+
+
+
+Whereas:
+- **B/N/C**: specifies the instance type (Basic, Network Intensive, and Compute Intensive)
+- **<I opt>**: specifies the interface option of the instant.
+- **<flavour>**: specifies the compute flavour.
+- **<S ext>**: specifies an optional storage extension.
+- **<A ext>**: specifies an optional acceleration extension for either N or H instance types.
 
 
