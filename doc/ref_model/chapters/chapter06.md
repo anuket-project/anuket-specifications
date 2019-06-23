@@ -38,3 +38,24 @@ The host profile properties are specified in the following sub-sections. The fol
 <p align="center"><b>Figure 6-3:</b> Generic model of a computer host for use in Host Profile configurations.</p>
 
 The configurations specified in this model section will be utilized in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 6-1**.
+
+### 6.1.1	Compute Resource Configurations
+
+| Reference | Feature | Description |
+|---------------------|---------------------------------------------------------------|----------------------------------------------------------------------|
+| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the number of CPU sockets exist within each platform |
+| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. |
+| nfvi.hw.cpu.cfg.003 | NUMA Alignment |  |
+| nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) |  |
+| nfvi.hw.cpu.cfg.005 | CPU Pinning |  |
+| nfvi.hw.cpu.cfg.006 | CPU Allocation Ratio |  |
+| nfvi.hw.cpu.cfg.007 | Cores dedicated to Host Resources | Hypervisor, VIM components, base containers, etc. |
+| nfvi.hw.cpu.cfg.008 | Cores dedicated for Data Plane Development Kit ( DPDK) Router |  |
+| nfvi.hw.cpu.cfg.009 | Cores available for Guest vServers |  |
+| nfvi.hw.cpu.cfg.010 | Hugepages |  |
+| nfvi.hw.cpu.cfg.011 | Max vCPUs available for tenants/NUMA |  |
+| nfvi.hw.cpu.cfg.012 | Max vCPUs available for tenants/host | Across al NUMA (or CPUs) |
+
+<p align="center"><b>Table 1-5:</b> Compute resources configuration parameters.</p>
+
+
