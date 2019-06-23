@@ -21,16 +21,23 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 ### 5.1.1	Virtual Compute
 
-**Table 5-1**
+| .conf | Feature | Configuration | Mandatory? | Description |
+|------------------|----------------|----------------------------------|------------|------------------------------------------------------------------------------------------------|
+| nfvi.com.cfg.001 | VM Flavours | All flavours listed in **Chapter 4** | Yes | Supported VM Flavours needs to be the same as those listed in the compute flavours' catalogue. |
+| nfvi.com.cfg.002 | Hyperthreading | Enabled | Yes | Hyperthreading needs to be enabled and allowed. |
+| nfvi.com.cfg.003 |  |  |  |  |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute Configuration for B instance.</p>
-
 
 #### 5.1.1.1	Virtual compute Acceleration
 
 ### 5.1.2	Virtual Storage
 
-**Table 5-2**
+| .conf | Feature | Configuration | Mandatory? | Description |
+|------------------|---------------|-----------------------------------|------------|--------------------------------------------------------------------------------|
+| nfvi.stg.cfg.001 | Storage Types | All types listed in **Chapter 4** | Yes | Supported Storage types needs to be the same as those listed in the catalogue. |
+| nfvi.stg.cfg.002 |  |  |  |  |
+| nfvi.stg.cfg.003 |  |  |  |  |
 
 <p align="center"><b>Table 5-2:</b> Virtual Storage Configuration for B instance.</p>
 
@@ -38,7 +45,13 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 ### 5.1.3	Virtual Networking and SDN
 
-**Table 5-3**
+| .conf | Feature | Configuration | Mandatory? | Description |
+|------------------|---------------------------|--------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| nfvi.net.cfg.001 | vNIC interface | Virtio1.1 |  | vNIC interface needs to be virtio1.1. |
+| nfvi.net.cfg.002 | Overlay protocol | VXLAN, MPLSoUDP, GENEVE, other |  | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. |
+| nfvi.net.cfg.003 | SFC support |  |  |  |
+| nfvi.net.cfg.004 | Traffic patterns symmetry |  |  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
+| nfvi.net.cfg.005 | Horizontal scaling |  |  | The VNF cluster must be able to scale horizontally and to leverage technologies such as ECMP to enable scale-outs/scale-ins, privileging Active-Active HA models, even though this may require some level of application re-design to cope with the need of sharing state between VNF instances |
 
 <p align="center"><b>Table 5-3:</b> Virtual Networking & SDN Configuration for B instance.</p>
 
