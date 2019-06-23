@@ -100,4 +100,31 @@ The configurations specified in this model section will be utilized in specifyin
 
 > _*Repeat Configuration for each Bond and specify use._
 
+#### 6.1.2.4	Network Acceleration Configurations
 
+| Reference | Feature | Description |
+|---------------------|----------------------------|-----------------------------------------------------------------------|
+| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |
+| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware. |
+| nfvi.hw.nac.cfg.003 | Compression |  |
+
+<p align="center"><b>Table 6-6:</b> Network acceleration configuration specifications.</p>
+
+### 6.1.3	Storage Configurations
+
+| Reference | Feature | Description |
+|-------------------------|-------------------|-------------|
+| nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD |  |
+| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD |  |
+
+<p align="center"><b>Table 6-7:</b> Storage configuration specifications.</p>
+
+> _*This specified local storage configurations including # and capacity of storage drives._
+
+### 6.1.4	Security Configuration
+
+| Reference* | Feature | Description |
+|---------------------|---------|---------------------------------------------|
+| nfvi.hw.sec.cfg.001 | TPM | Platform must have Trusted Platform Module. |
+
+<p align="center"><b>Table 6-8:</b> Security configuration specifications.</p>
