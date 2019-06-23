@@ -4,8 +4,13 @@
 
 ## Table of Contents
 * [4.1 Compute flavours.](#4.1)
+  * [4.1.1 Storage extensions.](#4.1.1)
 * [4.2 Instance types.](#4.2)
+  * [4.2.1 B Instances (Basic).](#4.2.1)
+  * [4.2.2 N Instances (Network Intensive).](#4.2.2)
+  * [4.2.3 C Instances (Compute Intensive).](#4.2.2)
 * [4.3 One stop shop.](#4.3)
+  * [4.3.1 Naming convention.](#4.3.1)
 
 Infrastructure profiles are collection of capabilities, metrics, compute flavours, interface options, storage extensions, and acceleration capabilities that are offered by the infrastructure to VNFs. Infrastructure profiles are offered to VNFs in form of instance types with their corresponding options and extensions.
 
@@ -33,6 +38,7 @@ Compute flavours defines the compute, memory, storage capacity, and management n
 
 > _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt micro server’s designs for their VNFs_
 
+<a name="4.1.1"></a>
 ### 4.1.1 Storage extensions
 These are non-ephemeral storage extensions that can be provided to VNFs for persistent data storage. More than one storage extension can be provided to a single VNF-C. Add comment about CEPH distributed storage. (Potentially create new profile for it).
 
@@ -52,6 +58,8 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 
 <a name="4.2"></a>
 ## 4.2 Instance types
+
+<a name="4.2.1"></a>
 ## 4.2.1	B Instances (Basic)
 This is the basic type of infrastructure profiles and is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
 
@@ -73,6 +81,7 @@ B instance comes with various Interfaces options, Table **Table 4-3** below show
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
+<a name="4.2.2"></a>
 #### 4.2.2	N Instances (Network Intensive)
 This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
 
@@ -117,6 +126,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
+<a name="4.2.3"></a>
 ### 4.2.3	C Instances (Compute Intensive)
 This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
 H instance comes with various Interfaces options, the table below shows the various interfaces options available for C instance type (Up to 6 interfaces are possible). 
@@ -158,6 +168,8 @@ C instance types can come with compute acceleration extensions to assist VNF/app
 
 <a name="4.3"></a>
 ## 4.3	One stop shop
+
+<a name="4.3.1"></a>
 ### 4.3.1	Naming convention
 An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
 
