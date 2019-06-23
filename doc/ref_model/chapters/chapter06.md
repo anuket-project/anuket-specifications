@@ -56,6 +56,48 @@ The configurations specified in this model section will be utilized in specifyin
 | nfvi.hw.cpu.cfg.011 | Max vCPUs available for tenants/NUMA |  |
 | nfvi.hw.cpu.cfg.012 | Max vCPUs available for tenants/host | Across al NUMA (or CPUs) |
 
-<p align="center"><b>Table 1-5:</b> Compute resources configuration parameters.</p>
+<p align="center"><b>Table 6-1:</b> Compute resources configuration parameters.</p>
+
+#### 6.1.1.1	Compute Acceleration Hardware Specifications
+
+| Reference | Feature | Description |
+|---------------------|---------|-------------|
+| nfvi.hw.cac.cfg.001 | GPU | GPU |
+
+<p align="center"><b>Table 6-2:</b> Compute acceleration configuration specifications.</p>
+
+### 6.1.2	Network Resources Configurations
+#### 6.1.2.1	NIC configurations
+
+| Reference | Feature | Description |
+|-------------------------------|--------------------------------|-----------------------------------------------------|
+| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform |
+| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps |
+| nfvi.hw.nic.numa.00.cfg.00 1 | NUMA 0 NICs | Specify the NUMA 0 NIC ports |
+| nfvi.hw.nic.numa.00.cfg.002 | NUMA 0 NIC VF Promiscuous Mode |  |
+| nfvi.hw.nic.numa.01.cfg.00  1 | NUMA 1 NICs | Specify the NUMA 1 NIC ports |
+| nfvi.hw.nic.numa.01.cfg.002 | NUMA 1 NIC VF Promiscuous Mode |  |
+
+<p align="center"><b>Table 6-3:</b> NIC configuration specifications.</p>
+
+#### 6.1.2.2	PCIe Configurations
+
+| Reference | Feature | Description |
+|---------------------|------------|------------------------------------------------|
+| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the platform |
+| nfvi.hw.pci.cfg.002 | PCIe speed |  |
+| nfvi.hw.pci.cfg.003 | PCIe Lanes |  |
+
+<p align="center"><b>Table 6-4:</b> PCIe configuration specification.</p>
+
+##### 6.1.2.3	Network Bond Configurations
+
+| Reference* | Feature | Description |
+|---------------------|-------------------|-------------|
+| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  |
+
+<p align="center"><b>Table 6-5:</b> Network bond configuration specifications.</p>
+
+> _*Repeat Configuration for each Bond and specify use._
 
 
