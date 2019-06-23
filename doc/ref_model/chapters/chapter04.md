@@ -3,9 +3,9 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [4.1 VNFs collateral (Sample).](#4.1)
-* [4.2 Analysis of requirements.](#4.1)
-* [4.3 NFVI Profiles.](#4.1)
+* [4.1 Compute flavours.](#4.1)
+* [4.2 Instance types.](#4.2)
+* [4.3 One stop shop.](#4.3)
 
 Infrastructure profiles are collection of capabilities, metrics, compute flavours, interface options, storage extensions, and acceleration capabilities that are offered by the infrastructure to VNFs. Infrastructure profiles are offered to VNFs in form of instance types with their corresponding options and extensions.
 
@@ -50,6 +50,7 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 
 <p align="center"><b>Table 4-2:</b> Storage extensions for compute flavours.</p>
 
+<a name="4.2"></a>
 ## 4.2 Instance types
 ## 4.2.1	B Instances (Basic)
 This is the basic type of infrastructure profiles and is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
@@ -155,6 +156,7 @@ C instance types can come with compute acceleration extensions to assist VNF/app
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
+<a name="4.3"></a>
 ## 4.3	One stop shop
 ### 4.3.1	Naming convention
 An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
