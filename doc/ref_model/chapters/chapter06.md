@@ -73,9 +73,9 @@ The configurations specified in this model section will be utilized in specifyin
 |-------------------------------|--------------------------------|-----------------------------------------------------|
 | nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform |
 | nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps |
-| nfvi.hw.nic.numa.00.cfg.00 1 | NUMA 0 NICs | Specify the NUMA 0 NIC ports |
+| nfvi.hw.nic.numa.00.cfg.001 | NUMA 0 NICs | Specify the NUMA 0 NIC ports |
 | nfvi.hw.nic.numa.00.cfg.002 | NUMA 0 NIC VF Promiscuous Mode |  |
-| nfvi.hw.nic.numa.01.cfg.00  1 | NUMA 1 NICs | Specify the NUMA 1 NIC ports |
+| nfvi.hw.nic.numa.01.cfg.001 | NUMA 1 NICs | Specify the NUMA 1 NIC ports |
 | nfvi.hw.nic.numa.01.cfg.002 | NUMA 1 NIC VF Promiscuous Mode |  |
 
 <p align="center"><b>Table 6-3:</b> NIC configuration specifications.</p>
