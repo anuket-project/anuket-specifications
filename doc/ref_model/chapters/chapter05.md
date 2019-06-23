@@ -21,7 +21,7 @@
 
 Depending on the requirements of VNFs and the capabilities expected from the infrastructure, this area is defining the right infrastructure configuration that is needed for each profile.
 
-<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles.PNG" alt="ref_profiles" title="Reference Profiles" width="65%"/></p>
+<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles.PNG" alt="ref_profiles" title="Reference Profiles" width="100%"/></p>
 <p align="center"><b>Figure 5-1:</b> Reference NFVI software profiles.</p>
 
 <a name="5.1"></a>
