@@ -28,7 +28,7 @@ Depending on the requirements of VNFs and the capabilities expected from the inf
 ## 5.1	Basic NFVI reference SW profile and configuration
 This NFVI SW Profile and configuration will be suitable for B instance type (Please see Section 3). **Figure 5-2** below shows the reference architecture of the NFVI solution.
 
-<p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Basic Reference Profile" width="65%"/></p>
+<p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Basic Reference Profile" width="100%"/></p>
 <p align="center"><b>Figure 5-2:</b> Reference NFVI software profile and configuration for B instance.</p>
 
 <a name="5.1.1"></a>
@@ -79,7 +79,7 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 ## 5.2	Network intensive NFVI reference SW profile and configuration
 This NFVI SW Profile and configuration will be suitable for both B and N instance types.
 
-<p align="center"><img src="../figures/ch05_n_ref_profile.PNG" alt="n_ref_profile" title="Network Intensive Reference Profile" width="65%"/></p>
+<p align="center"><img src="../figures/ch05_n_ref_profile.PNG" alt="n_ref_profile" title="Network Intensive Reference Profile" width="100%"/></p>
 <p align="center"><b>Figure 5-3:</b> Reference NFVI software profile and configuration for N instance.</p>
 
 <a name="5.2.1"></a>
@@ -139,7 +139,7 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 ## 5.3	Compute intensive NFVI reference SW profile and configuration
 This NFVI SW profile and configuration will be suitable for C instance type
 
-<p align="center"><img src="../figures/ch05_c_ref_profile.PNG" alt="c_ref_profile" title="Compute Intensive Reference Profile" width="65%"/></p>
+<p align="center"><img src="../figures/ch05_c_ref_profile.PNG" alt="c_ref_profile" title="Compute Intensive Reference Profile" width="100%"/></p>
 <p align="center"><b>Figure 5-4:</b> Reference NFVI software profile and configuration for C instance.</p>
 
 <a name="5.3.1"></a>
