@@ -6,6 +6,11 @@
 * [3.1 Model.](#model)
 * [3.2 Exposed vs Internal.](#expint)
 * [3.3 Exposed NFVI capabilities, metrics, and constraints.](#expcap)
+  * [3.3.1 Exposed NFVI capabilities.](#3.3.1)
+  * [3.3.2 Exposed NFVI metrics.](#3.3.2)
+* [3.4 Internal NFVI capabilities, metrics, and constraints.](#3.4)
+  * [3.4.1 Internal NFVI capabilities.](#3.4.1)
+  * [3.4.2 Internal NFVI metrics.](#3.4.2)
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of each of the VNFs and CNFs match the capabilities of the NFVI.
 
@@ -118,6 +123,7 @@ Mark S./Tom investigating.
 <a name="expcap"></a>
 ## 3.3	Exposed NFVI capabilities, metrics, and constraints
 
+<a name="3.3.1"></a>
 ### 3.3.1	Exposed NFVI capabilities
 This section covers a list of explicit NFVI capabilities and metrics that defines an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
 
@@ -188,6 +194,7 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 <p align="center"><b>Table 3-10:</b> Mapping of Exposed monitoring capabilities with different NFVI instance types.</p>
 
+<a name="3.3.2"></a>
 ### 3.3.2	Exposed NFVI metrics
 #### 3.3.2.1	Exposed performance metrics 
 **Table 3-11** below shows performance metrics of NFVI. The intent of those metrics is to be well known to VNFs. These metrics are aligned with ETSI GS NFV TST-009 [2].
@@ -210,11 +217,13 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 <p align="center"><b>Table 3-12:</b> Mapping of Exposed performance metrics to NFVI instance types.</p>
 
+<a name="3.4"></a>
 ## 3.4	Internal NFVI capabilities metrics, and constraints
 This section covers a list of implicit NFVI capabilities and metrics that defines the interior of   NFVI. These capabilities and metrics determines how NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will have a big impact on the overall performance and capabilities of a given NFVI solution.
 
 >_**Note**: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
+<a name="3.4.1"></a>
 ### 3.4.1	Internal NFVI capabilities
 #### 3.4.1.1	Internal resource capabilities
 **Table 3-13** shows resource capabilities of NFVI. These include capabilities offered to VNFs and resources consumed internally by NFVI.
@@ -313,6 +322,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 <p align="center"><b>Table 3-22:</b> Mapping of Internal security capabilities to NFVI instance types.</p>
 
+<a name="3.4.2"></a>
 ### 3.4.2	Internal NFVI metrics
 #### 3.4.2.1	 Internal resources management metrics 
 **Table 3-23** shows resource management metrics of NFVI as aligned with ETSI GS NFV TST-012 [3]. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI.
