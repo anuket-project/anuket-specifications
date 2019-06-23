@@ -3,9 +3,21 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [5.1	Basic NFVI reference SW profile and configuration.](#5.1)
+* [5.1 Basic NFVI reference SW profile and configuration.](#5.1)
+  * [5.1.1 Virtual Compute.](#5.1.1)
+  * [5.1.2 Virtual Storage.](#5.1.2)
+  * [5.1.3 Virtual Networking and SDN.](#5.1.3)
+  * [5.1.4 Security.](#5.1.4)
 * [5.2 Network intensive NFVI reference SW profile and configuration.](#5.2)
+  * [5.2.1 Virtual Compute.](#5.2.1)
+  * [5.2.2 Virtual Storage.](#5.2.2)
+  * [5.2.3 Virtual Networking and SDN.](#5.2.3)
+  * [5.2.4 Security.](#5.2.4)
 * [5.3 Compute intensive NFVI reference SW profile and configuration.](#5.3)
+  * [5.3.1 Virtual Compute.](#5.3.1)
+  * [5.3.2 Virtual Storage.](#5.3.2)
+  * [5.3.3 Virtual Networking and SDN.](#5.3.3)
+  * [5.3.4 Security.](#5.3.4)
 
 Depending on the requirements of VNFs and the capabilities expected from the infrastructure, this area is defining the right infrastructure configuration that is needed for each profile.
 
@@ -19,6 +31,7 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Basic Reference Profile" width="65%"/></p>
 <p align="center"><b>Figure 5-2:</b> Reference NFVI software profile and configuration for B instance.</p>
 
+<a name="5.1.1"></a>
 ### 5.1.1	Virtual Compute
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -31,6 +44,7 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 #### 5.1.1.1	Virtual compute Acceleration
 
+<a name="5.1.2"></a>
 ### 5.1.2	Virtual Storage
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -41,9 +55,10 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 <p align="center"><b>Table 5-2:</b> Virtual Storage Configuration for B instance.</p>
 
-#### 5.1.2.1	Virtual storage Acceleration
+#### 5.1.2.1 Virtual storage Acceleration
 
-### 5.1.3	Virtual Networking and SDN
+<a name="5.1.3"></a>
+### 5.1.3 Virtual Networking and SDN
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|---------------------------|--------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,6 +72,7 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 #### 5.1.3.1	Virtual Network Acceleration
 
+<a name="5.1.4"></a>
 ### 5.1.4	Security
 
 <a name="5.2"></a>
@@ -66,6 +82,7 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 <p align="center"><img src="../figures/ch05_n_ref_profile.PNG" alt="n_ref_profile" title="Network Intensive Reference Profile" width="65%"/></p>
 <p align="center"><b>Figure 5-3:</b> Reference NFVI software profile and configuration for N instance.</p>
 
+<a name="5.2.1"></a>
 ### 5.2.1	Virtual Compute
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -79,6 +96,7 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 
 #### 5.2.1.1	Virtual compute Acceleration
 
+<a name="5.2.2"></a>
 ### 5.2.2	Virtual Storage
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -91,6 +109,7 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 
 #### 5.2.2.1	Virtual storage Acceleration
 
+<a name="5.2.3"></a>
 ### 5.2.3	Virtual Networking and SDN
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -113,6 +132,7 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 
 <p align="center"><b>Table 5-7:</b> Virtual Acceleration configuration for N instance.</p>
 
+<a name="5.2.4"></a>
 ### 5.2.4	Security
 
 <a name="5.3"></a>
@@ -122,6 +142,7 @@ This NFVI SW profile and configuration will be suitable for C instance type
 <p align="center"><img src="../figures/ch05_c_ref_profile.PNG" alt="c_ref_profile" title="Compute Intensive Reference Profile" width="65%"/></p>
 <p align="center"><b>Figure 5-4:</b> Reference NFVI software profile and configuration for C instance.</p>
 
+<a name="5.3.1"></a>
 ### 5.3.1	Virtual Compute
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -135,6 +156,7 @@ This NFVI SW profile and configuration will be suitable for C instance type
 
 #### 5.3.1.1	Virtual compute Acceleration
 
+<a name="5.3.2"></a>
 ### 5.3.2	Virtual Storage
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -147,6 +169,7 @@ This NFVI SW profile and configuration will be suitable for C instance type
 
 #### 5.3.2.1	Virtual storage Acceleration
 
+<a name="5.3.3"></a>
 ### 5.3.3	Virtual Networking and SDN
 
 | .conf | Feature | Configuration | Mandatory? | Description |
@@ -162,4 +185,5 @@ This NFVI SW profile and configuration will be suitable for C instance type
 
 #### 5.3.3.1	Virtual Network Acceleration
 
+<a name="5.3.4"></a>
 ### 5.3.4	Security
