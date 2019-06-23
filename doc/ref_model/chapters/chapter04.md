@@ -163,9 +163,9 @@ An entry in the infrastructure profile catalogue can be referenced using the fol
 
 Whereas:
 - **B/N/C**: specifies the instance type (Basic, Network Intensive, and Compute Intensive)
-- **<I opt>**: specifies the interface option of the instant.
-- **<flavour>**: specifies the compute flavour.
-- **<S ext>**: specifies an optional storage extension.
-- **<A ext>**: specifies an optional acceleration extension for either N or H instance types.
+- **\<I opt>**: specifies the interface option of the instant.
+- **\<flavour>**: specifies the compute flavour.
+- **\<S ext>**: specifies an optional storage extension.
+- **\<A ext>**: specifies an optional acceleration extension for either N or H instance types.
 
 
