@@ -115,3 +115,45 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 <p align="center"><b>Table 4-5:</b> Acceleration extensions for N instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
+
+### 4.2.3	C Instances (Compute Intensive)
+This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
+H instance comes with various Interfaces options, the table below shows the various interfaces options available for C instance type (Up to 6 interfaces are possible). 
+
+| Virtual interface option* | Type | Description |
+|---------------------------|------------|---------------------------------|
+| 10 | virtio-net | 1x 10Gbps network |
+| 10D | virtio-net | 2x 10Gbps network |
+| 10T* | virtio-net | 3x 10Gbps network |
+| 10Q, 10P, 10H* | virtio-net | 4x 10Gbps, 5x 10Gbps, 6x 10Gbps |
+| 25 | virtio-net | 1x 25Gbps network |
+| 25D | virtio-net | 2x 25Gbps network |
+| 25T* | virtio-net | 3x 25Gbps network |
+| 25Q, 25P, 25H* | virtio-net | 4x 25Gbps, 5x 25Gbps, 6x 25Gbps |
+| 40 | virtio-net | 1x 40Gbps network |
+| 40D | virtio-net | 2x 40Gbps network |
+| 40T* | virtio-net | 3x 40Gbps network |
+| 40Q, 40P, 40H* | virtio-net | 4x 40Gbps, 5x 40Gbps, 6x 40Gbps |
+| 50 | virtio-net | 1x 50Gbps network |
+| 50D | virtio-net | 2x 50Gbps network |
+| 50T* | virtio-net | 3x 50Gbps network |
+| 50Q, 50P, 50H* | virtio-net | 4x 50Gbps, 5x 50Gbps, 6x 50Gbps |
+
+<p align="center"><b>Table 4-5:</b> Virtual NIC interfaces options for C instance type.</p>
+
+> _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
+
+### 4.2.3.1	Compute acceleration extensions
+C instance types can come with compute acceleration extensions to assist VNF/applications offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
+
+| .conf | Interface type | Description |
+|------------|----------------|-----------------------------------------|
+| .la-trans | virtio-trans* | ILook-Aside Transcoding acceleration |
+| .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
+
+<p align="center"><b>Table 4-6:</b> Acceleration extensions for C instance type.</p>
+
+> _*Need to work with relevant open source communities to create missing interfaces._
+
+
+
