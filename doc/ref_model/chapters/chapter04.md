@@ -29,7 +29,7 @@ Compute flavours defines the compute, memory, storage capacity, and management n
 | .xlarge2* | 8 | 32GB | 160GB | 1Gbps |
 | .xlarge3* | 8 | 64GB | 160GB | 1Gbps |
 
-<p align="center"><b>Table 4-1:</b> Compute flavours.</p>
+<p align="center"><b>Table 4-2:</b> Compute flavours.</p>
 
 > _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt micro server’s designs for their VNFs_
 
