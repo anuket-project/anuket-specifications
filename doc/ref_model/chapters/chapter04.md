@@ -170,4 +170,6 @@ Whereas:
 - **\<S ext>**: specifies an optional storage extension.
 - **\<A ext>**: specifies an optional acceleration extension for either N or H instance types.
 
+<p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="65%"/></p>
+<p align="center"><b>Figure 4-2:</b> Infrastructure profiles catalogue.</p>
 
