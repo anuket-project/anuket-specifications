@@ -3,9 +3,12 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [6.1	Basic NFVI reference SW profile and configuration.](#6.1)
-* [6.2 Network intensive NFVI reference SW profile and configuration.](#6.2)
-* [6.3 Compute intensive NFVI reference SW profile and configuration.](#6.3)
+* [6.1 Hardware Profile Model.](#6.1)
+  * [6.1.1 Compute Resource Configurations.](#6.1.1)
+  * [6.1.2 Network Resources Configurations.](#6.1.2)
+  * [6.1.3 Storage Configurations.](#6.1.3)
+  * [6.1.4 Security Configuration.](#6.1.4)
+
 
 The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware host profile. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as (aka) compute host, host, node or pServer). The host profile contains a specification (yaml file) on how the host should be configured including the underlay networking and storage.
 
@@ -14,6 +17,7 @@ This chapter defines a simplified host and host profile model and the host profi
 <p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles.PNG" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 6-1:</b> Reference NFVI hardware profiles.</p>
 
+<a name="6.1"></a>
 ## 6.1	Hardware Profile Model
 The host profile model and configuration parameters will be utilized in the reference architecture to define different hardware profiles.
 
@@ -39,6 +43,7 @@ The host profile properties are specified in the following sub-sections. The fol
 
 The configurations specified in this model section will be utilized in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 6-1**.
 
+<a name="6.1.1"></a>
 ### 6.1.1	Compute Resource Configurations
 
 | Reference | Feature | Description |
@@ -66,6 +71,7 @@ The configurations specified in this model section will be utilized in specifyin
 
 <p align="center"><b>Table 6-2:</b> Compute acceleration configuration specifications.</p>
 
+<a name="6.1.2"></a>
 ### 6.1.2	Network Resources Configurations
 #### 6.1.2.1	NIC configurations
 
@@ -110,6 +116,7 @@ The configurations specified in this model section will be utilized in specifyin
 
 <p align="center"><b>Table 6-6:</b> Network acceleration configuration specifications.</p>
 
+<a name="6.1.3"></a>
 ### 6.1.3	Storage Configurations
 
 | Reference | Feature | Description |
@@ -121,6 +128,7 @@ The configurations specified in this model section will be utilized in specifyin
 
 > _*This specified local storage configurations including # and capacity of storage drives._
 
+<a name="6.1.4"></a>
 ### 6.1.4	Security Configuration
 
 | Reference* | Feature | Description |
