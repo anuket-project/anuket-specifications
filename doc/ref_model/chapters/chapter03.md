@@ -381,12 +381,12 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|-------------|-------------|-------------|
-| i.nfvi.per.met.001 | 3-5 | 15 - 30 | 3-5 |
-| i.nfvi.per.met.002 | Up to 200K | Up to 1M | Up to 200K |
-| i.nfvi.per.met.003 |  |  |  |
-| i.nfvi.per.met.004 | <10ms | <0.5ms | <5ms |
-| i.nfvi.per.met.005 | 280K-680K | 280K-680K | 280K-680K |
-| i.nfvi.per.met.006 | 1000 – 2650 | 1000 – 2650 | 1000 – 2650 |
+| `i.nfvi.per.met.001` | 3-5 | 15 - 30 | 3-5 |
+| `i.nfvi.per.met.002` | Up to 200K | Up to 1M | Up to 200K |
+| `i.nfvi.per.met.003` |  |  |  |
+| `i.nfvi.per.met.004` | <10ms | <0.5ms | <5ms |
+| `i.nfvi.per.met.005` | 280K-680K | 280K-680K | 280K-680K |
+| `i.nfvi.per.met.006` | 1000 – 2650 | 1000 – 2650 | 1000 – 2650 |
 
 <p align="center"><b>Table 3-26:</b> Mapping of Internal performance metrics to NFVI instance types.</p>
 
@@ -402,8 +402,8 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|-------------|--------------------|-------------|
-| i.nfvi.sla.met.001 | NA | As per vNIC option | NA |
-| i.nfvi.sla.met.002 | NA | As per vNIC option | NA |
+| `i.nfvi.sla.met.001` | NA | As per vNIC option | NA |
+| `i.nfvi.sla.met.002` | NA | As per vNIC option | NA |
 
 <p align="center"><b>Table 3-28:</b> Mapping of Internal SLA metrics to NFVI instance types.</p>
 
@@ -419,8 +419,8 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------|------------|
-| i.nfvi.scl.met.001 |  |  |  |
-| i.nfvi.scl.met.002 |  |  |  |
+| `i.nfvi.scl.met.001` |  |  |  |
+| `i.nfvi.scl.met.002` |  |  |  |
 
 <p align="center"><b>Table 3-30:</b> Mapping of Internal scalability metrics to NFVI instance types.</p>
 
@@ -437,10 +437,10 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|------------|------------|------------|
-| i.nfvi.arl.met.001 |  |  |  |
-| i.nfvi.arl.met.002 |  |  |  |
-| i.nfvi.arl.met.003 |  |  |  |
-| i.nfvi.arl.met.004 |  |  |  |
+| `i.nfvi.arl.met.001` |  |  |  |
+| `i.nfvi.arl.met.002` |  |  |  |
+| `i.nfvi.arl.met.003` |  |  |  |
+| `i.nfvi.arl.met.004` |  |  |  |
 
 <p align="center"><b>Table 3-32:</b> Mapping of Internal availability/reliability metrics to NFVI instance types.</p>
 
