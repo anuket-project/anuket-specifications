@@ -148,7 +148,7 @@ C instance types can come with compute acceleration extensions to assist VNF/app
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .la-trans | virtio-trans* | ILook-Aside Transcoding acceleration |
+| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
 | .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
 
 <p align="center"><b>Table 4-6:</b> Acceleration extensions for C instance type.</p>
