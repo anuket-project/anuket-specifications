@@ -133,7 +133,7 @@ Regarding the ETSI NFV architecture specified by ETSI GS NFV002 [link to ref: NF
 A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 2** below
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 2:</b>Mapping to ETSI NFV architecture</p>
+<p align="center"><b>Figure 2:</b> Mapping to ETSI NFV architecture</p>
 
 <a name="docu"></a>
 ## 1.7	How this document works
