@@ -44,9 +44,10 @@ Extra Specs	|Key and value pairs that define on which compute nodes a flavor can
 
 <p align="center"><b>Table 4-1:</b> Flavour Geometry Specification.</p>
 
-<br />
-Flavour Capabilities
-1.	**CPU Oversubscription Ratio**: is based on the number of threads available.   For example, on a 24-core host with HT, there are 48 vCPUs with 1:1 CPU Ratio and 96 vCPUs with 2:1 CPU Ratio.
+Flavour Capabilities:
+
+1. **CPU Oversubscription Ratio**: is based on the number of threads available. For example, on a 24-core host with HT, there are 48 vCPUs with 1:1 CPU Ratio and 96 vCPUs with 2:1 CPU Ratio.
+
 2. **HT (Hyper Threading support)**: Enabled on all servers. Gets 2 hyper threads per physical CPU.  Always ON. 
 3. **CPU Pinning**: vCPU is pinned to a physical core and dedicated to the requesting VM. 
 4. **NUMA (Non-Uniform Memory Access) Alignment**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory.  Important for performance optimized VNFs. 
@@ -80,6 +81,7 @@ The predefined flavours can be customized by specifying key-value pairs for the 
 <customization options> :: <”.”> < [<”r”><number>] [<”d”><number>] >]
 ```
 In the above, it is optional to specify the customization options (are enclosed within “[“ and “]” parentheses. The customization options may specify one or more key-value pair of options. The Table shows examples of some customizations.
+
 Customization	|vCPU	|RAM	|Local Disk	|Management Interface
 ----|---|---|---|----
 .medium.r12d80	|2	|12 GB	|80 GB	|1 Gbps
