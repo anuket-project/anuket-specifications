@@ -5,7 +5,7 @@
 * [Reference Architecture](doc/ref_arch)
 
 ## Logistics
-* [How to Contribute](doc/logistics)
+* [How to Contribute](logistics)
 
 ### Read the Docs:
 * [HTML](https://cntt-n.github.io/CNTT/) 
