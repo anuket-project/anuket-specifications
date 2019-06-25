@@ -1,6 +1,20 @@
 [<< Back](../)
 # Common NFVi for Telco Reference Model
 
+## Overall Status
+| Chapter | Status |
+| --- | --- |
+| Chapter 01 | Still Developing Content |
+| Chapter 02 | Still Developing Content |
+| Chapter 03 | Lots of SME Feedback |
+| Chapter 04 | Lots of SME Feedback |
+| Chapter 05 | Still Developing Content |
+| Chapter 06 | Still Developing Content |
+| Chapter 07 | Still Developing Content |
+| Chapter 08 | Initial Framework Only |
+| Chapter 09 | Initial Framework Only |
+| Chapter 10 | Initial Framework Only |
+
 ## Table of Contents
 * [Abbreviations](abbreviations.md)
 * [Chapter 01 - Introduction](chapters/chapter01.md)
