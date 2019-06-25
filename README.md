@@ -6,6 +6,7 @@
 
 ## Logistics
 * [How to Contribute](logistics#how_to_contribute)
+* [Approval Process](logistics#approval_process)
 
 ### Read the Docs:
 * [HTML](https://cntt-n.github.io/CNTT/) 
