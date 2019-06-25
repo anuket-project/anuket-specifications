@@ -1,5 +1,3 @@
-[<< Back](/)
-
 ### Logistcs
 * [Meeting times.](meeting_times)
 * [How to Contribute.](#how_to_contribute)
