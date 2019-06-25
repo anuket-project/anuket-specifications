@@ -1,4 +1,4 @@
-[<< Back](../)
+[<< Back](/)
 
 ### Logistcs
 * [Meeting times.](meeting_times)
