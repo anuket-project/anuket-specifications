@@ -5,8 +5,9 @@
 * [Reference Architecture](doc/ref_arch)
 
 ## Logistics
-* [How to Contribute](logistics#how_to_contribute)
-* [Approval Process](logistics#approval_process)
+* [Meeting times](logistics#meeting_times)
+* [How to contribute](logistics#how_to_contribute)
+* [Approval process](logistics#approval_process)
 
 ### Read the Docs:
 * [HTML](https://cntt-n.github.io/CNTT/) 
