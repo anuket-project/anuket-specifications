@@ -16,12 +16,12 @@
 <a name="approval_process"></a>
 ## Approval process
 Pull Requests will be approved in two ways:
-- Online Approval within 48 hours of submission provided that:
+- **Online Approval** within 48 hours of submission provided that:
   - It does not conflict with CNTT principles or uses conflicting terminology.
   - It does not suggest fundamental changes or majour addition/modification.
   - There has been no active discussions or objection to approve it.
   - All comments and questions on the pull request are addressed.
-- Approvals during Weekly meetings:
+- Approvals during **Weekly meetings**:
   - For those Pull requests that require further discussion will be discussed/approved during weekly meetings.
   
 
