@@ -2,7 +2,7 @@
 
 ## Table of Contents
 * [Reference Model](doc/ref_model)
-* [Reference Architecture](doc/ref_architecture)
+* [Reference Architecture](doc/ref_arch)
 
 ## How to contribue
 * [How to Contribute](doc/how_to_contribute)
