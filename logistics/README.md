@@ -1,5 +1,5 @@
 ### Logistcs
-* [Meeting times.](meeting_times)
+* [Meeting times.](#meeting_times)
 * [How to Contribute.](#how_to_contribute)
 * [Approval Process.](#approval_process)
 
