@@ -2,6 +2,7 @@
 # Common NFVi for Telco Reference Model
 
 ## Overall Status
+
 | Chapter | Status |
 | --- | --- |
 | Chapter 01 | Still Developing Content |
