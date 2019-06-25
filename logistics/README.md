@@ -10,5 +10,5 @@
 <a name="how_to_contribute"></a>
 ## How to Contribute
 
-[here](artifacts/CNTT_Artifact.pptx)
+[here](../artifacts/CNTT_Artifact.pptx)
 
