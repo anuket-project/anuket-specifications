@@ -5,6 +5,7 @@
 
 <a name="meeeting_times"></a>
 ## Meeting Times
+To be shared later.
 
 <a name="how_to_contribute"></a>
 ## How to Contribute
