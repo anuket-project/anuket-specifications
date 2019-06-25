@@ -1,4 +1,4 @@
-### Logistcs
+### Logistics
 * [Meeting times.](#meeting_times)
 * [How to contribute.](#how_to_contribute)
 * [Approval process.](#approval_process)
