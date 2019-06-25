@@ -2,6 +2,10 @@
 
 ## Table of Contents
 * [Reference Model](doc/ref_model)
+* [Reference Architecture](doc/ref_architecture)
 
-### web-friendly view:
-* [CNTT Web](https://cntt-n.github.io/CNTT/) 
+## How to contribue
+* [How to Contribute](doc/how_to_contribute)
+
+### Read the Docs:
+* [HTML](https://cntt-n.github.io/CNTT/) 
