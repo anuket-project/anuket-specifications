@@ -72,7 +72,7 @@ n10, n10D, n10T, n10Q, n10P, n10H	|1x 10, 2x 10, 3x 10, 4x 10, 5x 10, 6x 10 Gbps
 n25, n25D, n25T, n25Q, n25P, n25H	|1x 25, 2x 25, 3x 25, 4x 25, 5x 25, 6x 25 Gbps
 n50, n50D, n50T, n50Q, n50P, n50H	|1x 50, 2x 50, 36x 50, 4x 50, 5x 50, 6x 50 Gbps
 
-<p align="center"><b>Table 4-5:</b> Virtual Network Interface Specification Examples.</p>
+<p align="center"><b>Table 4-3:</b> Virtual Network Interface Specification Examples.</p>
 
 <a name="4.3"></a>
 ##  4.3 Storage Extensions
@@ -85,7 +85,7 @@ Multiplee non-ephemeral storage volumes can be attached to virtual computes (*re
 .silver	|Up to 60K	|Up to 30K	|Up to 1200	|Up to 400
 .gold	|Up to 680K	|Up to 360K	|Up to 2650	|Up to 1400
 
-<p align="center"><b>Table 4-6:</b> Storage Performance Profiles.</p>
+<p align="center"><b>Table 4-4:</b> Storage Performance Profiles.</p>
 
 <a name="4.3.1"></a>
 ### 4.3.1 Available storage extensions
@@ -103,7 +103,7 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 | .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 
-<p align="center"><b>Table 4-7:</b> Storage extensions for compute flavours.</p>
+<p align="center"><b>Table 4-5:</b> Storage extensions for compute flavours.</p>
 
 <a name="4.4"></a>
 ## 4.4 Instance types
@@ -112,7 +112,7 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 ## 4.4.1	B Instances (Basic)
 This is the basic type of infrastructure profiles and is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
 
-B instance comes with various Interfaces options, Table **Table 4-8** below shows the various Interfaces options available for B instance type (Up to 6 interfaces are possible). 
+B instance comes with various Interfaces options, Table **Table 4-6** below shows the various Interfaces options available for B instance type (Up to 6 interfaces are possible). 
 
 
 | Virtual interface option* | Type | Description |
@@ -126,7 +126,7 @@ B instance comes with various Interfaces options, Table **Table 4-8** below show
 | 10T* | virtio-net | 3x 10Gbps network |
 | 10Q, 10P, 10H* | virtio-net | 4x 10Gbps, 5x 10Gbps, 6x 10Gbps |
 
-<p align="center"><b>Table 4-8:</b> Virtual NIC interfaces options for B instance type.</p>
+<p align="center"><b>Table 4-6:</b> Virtual NIC interfaces options for B instance type.</p>
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
@@ -159,7 +159,7 @@ N instance comes with various interfaces options, the Table below shows the vari
 | 100T* | virtio-net | 3x 100Gbps network |
 | 100Q, 100P, 100H* | virtio-net | 4x 100Gbps, 5x 100Gbps, 6x 100Gbps |
 
-<p align="center"><b>Table 4-9:</b> Virtual NIC interfaces options for N instance type.</p>
+<p align="center"><b>Table 4-7:</b> Virtual NIC interfaces options for N instance type.</p>
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
@@ -171,7 +171,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 | .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
 | .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
 
-<p align="center"><b>Table 4-10:</b> Acceleration extensions for N instance type.</p>
+<p align="center"><b>Table 4-8:</b> Acceleration extensions for N instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -199,7 +199,7 @@ H instance comes with various Interfaces options, the table below shows the vari
 | 50T* | virtio-net | 3x 50Gbps network |
 | 50Q, 50P, 50H* | virtio-net | 4x 50Gbps, 5x 50Gbps, 6x 50Gbps |
 
-<p align="center"><b>Table 4-11:</b> Virtual NIC interfaces options for C instance type.</p>
+<p align="center"><b>Table 4-9:</b> Virtual NIC interfaces options for C instance type.</p>
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
@@ -211,7 +211,7 @@ C instance types can come with compute acceleration extensions to assist VNF/app
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
 | .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
 
-<p align="center"><b>Table 4-12:</b> Acceleration extensions for C instance type.</p>
+<p align="center"><b>Table 4-10:</b> Acceleration extensions for C instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
