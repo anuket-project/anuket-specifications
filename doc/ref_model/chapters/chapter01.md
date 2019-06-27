@@ -44,7 +44,7 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 
 - **Physical Network Function (PNF)**: [Walter] Implementation of a network function that relies on dedicated hardware and software (for part of its functionality). Walter + Fred to finalise.
 - **Tenant**: A logical construct that defines the boundaries (e.g., security boundary, operational boundary, billing boundary, etc.) around a collection of resources. Tenant users can share access to a set of physical, virtual or service resources.
-- **Workload**: Mehmet to provide definition later. (github)
+- **Workload**: Workload refers to software running on top of NFVI resources such as VMs or containers.
 - **VNF**: ETSI describes a VNF as an implementation of a network function that can be deployed on an NFVI. 
   - Any extra additional details will be covered in their corresponding chapter/section.
 - **CNF**: from CNCF. 
