@@ -5,10 +5,8 @@
 ## Table of Contents
 * [10.1	Introduction.](#10.1)
 * [10.2	Compliance, Verification, and Certification process and life cycle.](#10.2)
-  * [10.2.1	NFVI reference architectures.](#10.2.1)
-  * [10.2.2 NFVI reference implementations.](#10.2.2)
-  * [10.2.3 VNFs reference implementations.](#10.2.3)
-  * [10.2.4 Test suites.](#10.2.4)
+  * [10.2.1 NFVI reference architectures.](#10.2.1)
+  * [10.2.2 Test suites.](#10.2.2)
 * [10.3	Recommendations.](#10.3)
 
 The purpose of this chapter is to address the relation with this Reference Model and the industry driven compliance, verification, and certification programs such as The OVP (OPNFV Verified Program) by Linux Foundation Networking. 
@@ -23,13 +21,7 @@ The purpose of this chapter is to address the relation with this Reference Model
 ### 10.2.1	NFVI reference architectures
 
 <a name="10.2.2"></a>
-### 10.2.2 NFVI reference implementations
-
-<a name="10.2.3"></a>
-### 10.2.3 VNFs reference implementations
-
-<a name="10.2.4"></a>
-### 10.2.4 Test suites
+### 10.2.2 Test suites
 
 <a name="10.3"></a>
 ## 10.3	Recommendations
