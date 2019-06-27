@@ -18,7 +18,7 @@ The purpose of this chapter is to address the relation with this Reference Model
 ## 10.2	Compliance, Verification, and Certification process and life cycle
 
 <a name="10.2.1"></a>
-### 10.2.1	NFVI reference architectures
+### 10.2.1 NFVI reference architectures
 
 <a name="10.2.2"></a>
 ### 10.2.2 Test suites
