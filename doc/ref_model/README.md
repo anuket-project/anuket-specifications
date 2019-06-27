@@ -1,4 +1,4 @@
-[<< Back](../)
+[<< Back](../../)
 # Common NFVi for Telco Reference Model
 
 ## Overall Status
