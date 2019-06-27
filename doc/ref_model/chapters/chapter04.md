@@ -43,6 +43,8 @@ Is Public	|Boolean value, whether flavor is available to all users or private to
 ###  4.1.1	Predefined Compute flavours
 The intent of the following flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute flavours are specified relative to the standardised “large” flavour. The standard “large” flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting instance will have a management interface of 1 Gbps. The “medium” flavour is half the size of a large and small is half the size of medium. The tiny flavour is a special sized flavour.
 
+>_*Note:* Customised (Parameterized) flavours can be used in concession by operators and , if needed, are  created using TOSCA, HEAT templates and/or VIM APIs.
+
 .conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Managmenet Interface
 -----|------------|----------|-----|-----
 .tiny	|1	|512 MB	|1 GB	|1 Gbps
