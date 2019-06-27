@@ -1,4 +1,4 @@
-[<< Back](../../)
+[<< Back](https://cntt-n.github.io/CNTT/)
 # Common NFVi for Telco Reference Model
 
 ## Overall Status
