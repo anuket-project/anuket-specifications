@@ -3,36 +3,127 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [5.1 Basic NFVI reference SW profile and configuration.](#5.1)
-  * [5.1.1 Virtual Compute.](#5.1.1)
-  * [5.1.2 Virtual Storage.](#5.1.2)
-  * [5.1.3 Virtual Networking and SDN.](#5.1.3)
-  * [5.1.4 Security.](#5.1.4)
-* [5.2 Network intensive NFVI reference SW profile and configuration.](#5.2)
-  * [5.2.1 Virtual Compute.](#5.2.1)
-  * [5.2.2 Virtual Storage.](#5.2.2)
-  * [5.2.3 Virtual Networking and SDN.](#5.2.3)
-  * [5.2.4 Security.](#5.2.4)
-* [5.3 Compute intensive NFVI reference SW profile and configuration.](#5.3)
-  * [5.3.1 Virtual Compute.](#5.3.1)
-  * [5.3.2 Virtual Storage.](#5.3.2)
-  * [5.3.3 Virtual Networking and SDN.](#5.3.3)
-  * [5.3.4 Security.](#5.3.4)
+* [5.1 Virtual Compute.](#5.1)
+* [5.2 Virtual Storage.](#5.2)
+* [5.3 Virtual Networking.](#5.3) 
+* [5.4 Security.](#5.4)
+* [5.5 Basic NFVI reference SW profile and configuration.](#5.5)
+  * [5.5.1 Virtual Compute.](#5.5.1)
+  * [5.5.2 Virtual Storage.](#5.5.2)
+  * [5.5.3 Virtual Networking and SDN.](#5.5.3)
+  * [5.5.4 Security.](#5.5.4)
+* [5.6 Network intensive NFVI reference SW profile and configuration.](#5.6)
+  * [5.6.1 Virtual Compute.](#5.6.1)
+  * [5.6.2 Virtual Storage.](#5.6.2)
+  * [5.6.3 Virtual Networking and SDN.](#5.6.3)
+  * [5.6.4 Security.](#5.6.4)
+* [5.7 Compute intensive NFVI reference SW profile and configuration.](#5.7)
+  * [5.7.1 Virtual Compute.](#5.7.1)
+  * [5.7.2 Virtual Storage.](#5.7.2)
+  * [5.7.3 Virtual Networking and SDN.](#5.7.3)
+  * [5.7.4 Security.](#5.7.4)
 
-Depending on the requirements of VNFs and the capabilities expected from the infrastructure, this area is defining the right infrastructure configuration that is needed for each profile.
+NFVI Software layer is composed of 2 layers, [ ref figure]:
+- the virtualization Infrastructure layer, which is based on hypervisor virtualization technology or container-based virtualization technology. Container virtualization can be nested in hypervisor-based virtualization
+- the host OS layer
+
+<p align="center"><img src="../figures/ch05_nfvi_layers_sw_profile.PNG" alt="ref_profiles" title="Layers of Software Profile" width="100%"/></p>
+<p align="center"><b>Figure 5-1:</b> Layers of NFVI software profile.</p>
+
+For a host (compute node or physical server), the virtualization layer is an abstraction layer between hardware components (compute, storage and network resources) and logical resources allocated to VNF-C, each VNF-C maps 1:1 against a single VM or a single Container, [ref figure].
+
+<p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="100%"/></p>
+<p align="center"><b>Table 5-1:</b> Compute Node .</p>
+
+Depending on the requirements of VNFs and the capabilities expected from the infrastructure, a NFVI software profile represents for a host the right configuration needed. Figure  [ref figure] depicts the software profiles required for Basic, Network Intensive and Compute intensive requirements.
 
 <p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles.PNG" alt="ref_profiles" title="Reference Profiles" width="100%"/></p>
 <p align="center"><b>Figure 5-1:</b> Reference NFVI software profiles.</p>
 
+Note: the SDN controller must be removed of the Network Intensive picture. The SDN controller is part of the VIM and not part of compute nodes.
+
+The features of software profiles types are detailed in the following sections.
+
 <a name="5.1"></a>
-## 5.1	Basic NFVI reference SW profile and configuration
+## 5.1	Virtual Compute
+
+| .conf | Feature | Type  | Description |
+|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
+| nfvi.com.cfg.001 | Flavours |  | Supported VM Flavours needs to be the same as those listed in the compute flavours' catalogue. |
+| nfvi.com.cfg.002 | Numa awareness | true/false  |  |
+| nfvi.com.cfg.003 | CPU partionning  | value | CPU dedicated to the host and CPU dedicated to VNFs  |
+| nfvi.com.cfg.004 | CPU allocation ratio  | value |  |
+| nfvi.com.cfg.005 | CPU pinning capability  | true/false |  |
+| nfvi.com.cfg.006 | Huge Pages  | value |  |
+
+<p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
+
+### 5.1.1	Virtual compute Acceleration
+
+| .conf | Feature | Type  | Description |
+|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
+| nfvi.com.acc.cfg.001 | |  | |
+
+<a name="5.2"></a>
+## 5.2	Virtual Storage
+
+| .conf | Feature | Type  | Description |
+|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
+| nfvi.stg.cfg.001 | Storage Types |   | Supported Storage types needs to be the same as those listed in the catalogue. |
+| nfvi.stg.cfg.002 | Storage Block |  |  |  
+| nfvi.stg.cfg.003 | Storage Object |  |  |  
+| nfvi.stg.cfg.004 | Storage with replication |  |  |  
+| nfvi.stg.cfg.005 | Storage with encryption |  |  |  
+
+<p align="center"><b>Table 5-2:</b> Virtual Storage features.</p>
+
+### 5.2.1 Virtual storage Acceleration
+
+| .conf | Feature | Type  | Description |
+|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
+| nfvi.stg.acc.cfg.001 | Storage IOPS oriented |   |   |
+| nfvi.stg.acc.cfg.002 | Storage capacity oriented |   |   |
+
+<a name="5.3"></a>
+## 5.3 Virtual Networking
+
+| .conf | Feature | Type  | Description |
+|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
+| nfvi.net.cfg.001 | vNIC interface | | e.g. virtio1.1, i40evf (Intel driver for VF SR-IOV). |
+| nfvi.net.cfg.002 | Overlay protocol |  | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. |
+| nfvi.net.cfg.003 | NAT |  |  |
+| nfvi.net.cfg.004 | Security Group |  |  |
+| nfvi.net.cfg.005 | SFC support |  |  |  
+| nfvi.net.cfg.006 | Traffic patterns symmetry |  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
+| nfvi.net.cfg.007 | Horizontal scaling |  | The VNF cluster must be able to scale horizontally and to leverage technologies such as ECMP to enable scale-outs/scale-ins, privileging Active-Active HA models, even though this may require some level of application re-design to cope with the need of sharing state between VNF instances |
+
+<p align="center"><b>Table 5-3:</b> Virtual Networking features.</p>
+
+### 5.3.1	Virtual Network Acceleration
+
+| .conf | Feature | Type  | Description |
+|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
+| nfvi.net.acc.cfg.001 | vSwitch optimization | | e.g. DPDK. |
+| nfvi.net.acc.cfg.002 | Support of HW offload | | e.g. support of SR-IOV, SmartNic. |
+| nfvi.net.acc.cfg.003 | Crypto acceleration | |  |
+| nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | | |
+
+<a name="5.4"></a>
+## 5.4	Security
+Note: can be removed?
+
+
+Note: 	The following sections should be more relevant for reference architecture document
+
+<a name="5.5"></a>
+## 5.5	Basic NFVI reference SW profile and configuration
 This NFVI SW Profile and configuration will be suitable for B instance type (Please see Section 3). **Figure 5-2** below shows the reference architecture of the NFVI solution.
 
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Basic Reference Profile" width="100%"/></p>
 <p align="center"><b>Figure 5-2:</b> Reference NFVI software profile and configuration for B instance.</p>
 
-<a name="5.1.1"></a>
-### 5.1.1	Virtual Compute
+<a name="5.5.1"></a>
+### 5.5.1	Virtual Compute
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|----------------|----------------------------------|------------|------------------------------------------------------------------------------------------------|
@@ -42,10 +133,10 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute Configuration for B instance.</p>
 
-#### 5.1.1.1	Virtual compute Acceleration
+#### 5.5.1.1	Virtual compute Acceleration
 
-<a name="5.1.2"></a>
-### 5.1.2	Virtual Storage
+<a name="5.5.2"></a>
+### 5.5.2	Virtual Storage
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|---------------|-----------------------------------|------------|--------------------------------------------------------------------------------|
@@ -55,10 +146,10 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 <p align="center"><b>Table 5-2:</b> Virtual Storage Configuration for B instance.</p>
 
-#### 5.1.2.1 Virtual storage Acceleration
+#### 5.5.2.1 Virtual storage Acceleration
 
-<a name="5.1.3"></a>
-### 5.1.3 Virtual Networking and SDN
+<a name="5.5.3"></a>
+### 5.5.3 Virtual Networking and SDN
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|---------------------------|--------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -70,20 +161,20 @@ This NFVI SW Profile and configuration will be suitable for B instance type (Ple
 
 <p align="center"><b>Table 5-3:</b> Virtual Networking & SDN Configuration for B instance.</p>
 
-#### 5.1.3.1	Virtual Network Acceleration
+#### 5.5.3.1	Virtual Network Acceleration
 
-<a name="5.1.4"></a>
-### 5.1.4	Security
+<a name="5.5.4"></a>
+### 5.5.4	Security
 
-<a name="5.2"></a>
-## 5.2	Network intensive NFVI reference SW profile and configuration
+<a name="5.6"></a>
+## 5.6	Network intensive NFVI reference SW profile and configuration
 This NFVI SW Profile and configuration will be suitable for both B and N instance types.
 
 <p align="center"><img src="../figures/ch05_n_ref_profile.PNG" alt="n_ref_profile" title="Network Intensive Reference Profile" width="100%"/></p>
 <p align="center"><b>Figure 5-3:</b> Reference NFVI software profile and configuration for N instance.</p>
 
-<a name="5.2.1"></a>
-### 5.2.1	Virtual Compute
+<a name="5.6.1"></a>
+### 5.6.1	Virtual Compute
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|----------------|----------------------------------|------------|------------------------------------------------------------------------------------------------|
@@ -94,10 +185,10 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 <p align="center"><b>Table 5-4:</b> Virtual Compute Configuration for N instance.</p>
 
 
-#### 5.2.1.1	Virtual compute Acceleration
+#### 5.6.1.1	Virtual compute Acceleration
 
-<a name="5.2.2"></a>
-### 5.2.2	Virtual Storage
+<a name="5.6.2"></a>
+### 5.6.2	Virtual Storage
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|---------------|-----------------------------------|------------|--------------------------------------------------------------------------------|
@@ -107,10 +198,10 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 
 <p align="center"><b>Table 5-5:</b> Virtual Storage Configuration for N instance.</p>
 
-#### 5.2.2.1	Virtual storage Acceleration
+#### 5.6.2.1	Virtual storage Acceleration
 
-<a name="5.2.3"></a>
-### 5.2.3	Virtual Networking and SDN
+<a name="5.6.3"></a>
+### 5.6.3	Virtual Networking and SDN
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|---------------------------|--------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -123,7 +214,7 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 
 <p align="center"><b>Table 5-6:</b> Virtual Networking & SDN Configuration for N instance.</p>
 
-#### 5.2.3.1	Virtual Network Acceleration
+#### 5.6.3.1	Virtual Network Acceleration
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|-------------------------------|-------------------|------------|--------------------------------------------------|
@@ -132,18 +223,18 @@ This NFVI SW Profile and configuration will be suitable for both B and N instanc
 
 <p align="center"><b>Table 5-7:</b> Virtual Acceleration configuration for N instance.</p>
 
-<a name="5.2.4"></a>
-### 5.2.4	Security
+<a name="5.6.4"></a>
+### 5.6.4	Security
 
-<a name="5.3"></a>
-## 5.3	Compute intensive NFVI reference SW profile and configuration
+<a name="5.7"></a>
+## 5.7	Compute intensive NFVI reference SW profile and configuration
 This NFVI SW profile and configuration will be suitable for C instance type
 
 <p align="center"><img src="../figures/ch05_c_ref_profile.PNG" alt="c_ref_profile" title="Compute Intensive Reference Profile" width="100%"/></p>
 <p align="center"><b>Figure 5-4:</b> Reference NFVI software profile and configuration for C instance.</p>
 
-<a name="5.3.1"></a>
-### 5.3.1	Virtual Compute
+<a name="5.7.1"></a>
+### 5.7.1	Virtual Compute
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|----------------|----------------------------------|------------|------------------------------------------------------------------------------------------------|
@@ -154,10 +245,10 @@ This NFVI SW profile and configuration will be suitable for C instance type
 <p align="center"><b>Table 5-8:</b> Virtual Compute Configuration for C instance.</p>
 
 
-#### 5.3.1.1	Virtual compute Acceleration
+#### 5.7.1.1	Virtual compute Acceleration
 
-<a name="5.3.2"></a>
-### 5.3.2	Virtual Storage
+<a name="5.7.2"></a>
+### 5.7.2	Virtual Storage
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|---------------|-----------------------------------|------------|--------------------------------------------------------------------------------|
@@ -167,10 +258,10 @@ This NFVI SW profile and configuration will be suitable for C instance type
 
 <p align="center"><b>Table 5-9:</b> Virtual Storage Configuration for C instance.</p>
 
-#### 5.3.2.1	Virtual storage Acceleration
+#### 5.7.2.1	Virtual storage Acceleration
 
-<a name="5.3.3"></a>
-### 5.3.3	Virtual Networking and SDN
+<a name="5.7.3"></a>
+### 5.7.3	Virtual Networking and SDN
 
 | .conf | Feature | Configuration | Mandatory? | Description |
 |------------------|---------------------------|--------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -183,7 +274,7 @@ This NFVI SW profile and configuration will be suitable for C instance type
 
 <p align="center"><b>Table 5-10:</b> Virtual Networking & SDN Configuration for C instance.</p>
 
-#### 5.3.3.1	Virtual Network Acceleration
+#### 5.7.3.1	Virtual Network Acceleration
 
-<a name="5.3.4"></a>
-### 5.3.4	Security
+<a name="5.7.4"></a>
+### 5.7.4	Security
