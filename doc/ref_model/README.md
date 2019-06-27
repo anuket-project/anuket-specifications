@@ -4,7 +4,7 @@
 <p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>
 
 ## Current Release
-**Release: -- **
+**Release: --**
 
 ## Current Version
 **Version: 0.9**
