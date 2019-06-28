@@ -105,7 +105,7 @@ This section specifies the principles of infrastructure abstraction and profilin
 1.	VNFs/CNFs should only consume resources and take advantage of capabilities and features (such as for performance optimisation) as offered by the targeted NFVI profile.
 1. (rephrase) VNFs/CNFs running targeting a given profile should be able to run on it without requiring specific features that are supported by the profile such as acceleration, etc.
    - Performance might be impacted.
-#. An objective of CNTT is to have a single Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
+1. An objective of CNTT is to have a single Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
 
    - Principle #1 – Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture: 
       -   - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don’t interfere with each other
