@@ -116,9 +116,20 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 
 <a name="expint"></a>
 ## 3.2	Exposed vs Internal
-Mark S./Tom investigating.
-1.	(Explanation)
-2.	E.g. this is how I expose my NFVi storage to the VNF = External
+
+The following pertains to the context of NFVI Capabilities, Metrics and Constraints, as discussed within this chapter.
+
+<b>Exposed:</b> Refers to any mechanism (e.g., discovery, configuration, consumption, telemetry, some object, API, Interface, etc.) that exists in or pertains to, the domain of the NFVI and is made visible (aka “Exposed”) to a tenant and/or VNF in the workload domain. When an object is exposed to a given tenant or VNF, the scope of visibility within a given VNF is at the discretion of the specific VNF’s designer. From an Infra perspective, the Infra-resident object is simply being exposed to one or more virtual environments (i.e. VMs). It is then the responsibility of the kernel or supervisor/executive within the VM to control how, when and where the object is further exposed within the VM, with regard to permissions, security, etc. As the object(s) originate with the NFVI or Control Plane, they are by definition visible within those domains.
+
+<b>Internal:</b> Effectively the opposite of Exposed; objects Internal to the NFVI, which are exclusively available for use by the NFVI and components within the NFVI control plane.
+
+<p align="center"><img src="../figures/Sect_3-2_Exposed_vs_Internal_Diagram_v2.jpg" alt="Exposed vs. Internal Scope" title="Scope" width="65%"/></p>
+
+<b>Figure x: Exposed vs. Internal Scope</b>
+
+As illustrated in the figure above, objects designated as "Internal" are only visibile within the area inside the blue oval (the NFVI), and only when the entity accessing the object has the appropriate permissions. Whereas objects designated as "Exposed" are potentially visible from both the area within the green oval (the Workload), as well as from within the NFVI, again provided the entity accessing the object has appropriate permissions.
+
+Note: The figure above indicates the areas from where the objects are <i>visible</i>. It is not intended to indicate where the objects are <i>instantiated</i>. For example, the virtual resources are instantiated within the NFVI (the blue area), but are Exposed, and therefore are <i>visible</i> to the Workload, within the green area.
 
 <a name="expcap"></a>
 ## 3.3	Exposed NFVI capabilities, metrics, and constraints
