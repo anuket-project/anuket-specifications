@@ -42,69 +42,59 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 <a name="1.3"></a>
 ## 1.3	Terminology
 
-- **Physical Network Function (PNF)**: [Walter] Implementation of a network function that relies on dedicated hardware and software (for part of its functionality). Walter + Fred to finalise.
-- **Tenant**: A logical construct that defines the boundaries (e.g., security boundary, operational boundary, billing boundary, etc.) around a collection of resources. Tenant users can share access to a set of physical, virtual or service resources.
-- **Workload**: Workload refers to software running on top of NFVI resources such as VMs or containers.
-- **VNF**: ETSI describes a VNF as an implementation of a network function that can be deployed on an NFVI. 
-  - Any extra additional details will be covered in their corresponding chapter/section.
-- **CNF**: from CNCF. 
-- **VNFC**: [ETSI] internal component of a VNF providing a VNF Provider a defined sub-set of that VNF's functionality.
-  - Any extra additional details will be covered in their corresponding chapter/section.
-- **NFVI**:
-  - **Tenant resources**:
-    - **Virtual Compute resources**: [Pankaj] ETSI – virtualised container] partition of a compute node that provides an isolated virtualized computation environment.
-      - **Compute flavour**: [Pankaj] define the compute, memory, and storage capacity of a virtual compute resource 
-    - **Virtual Storage resources**: [Pankaj] [ETSI] virtualised non-volatile storage allocated to a
-    - **Virtual Networking resources**: [Pankaj] [ETSI] routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity.
-    - **Virtual Acceleration resources**:
-  - **Software Layer**: [Walter] Responsible for the abstraction of the underlying hardware resources and typically implemented using VM/hypervisor or container-based technology.
-    - **Virtualisation layer**: [Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
-  - **Hardware Layer**: [Pankaj] The physical resources/devices providing the NFVi services/functions required to support the execution environment for VNFs.
-    - **Hardware resources**: [Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
-- **Node**: [Pankaj] a virtualised compute resource instance that runs on a physical host.
-- **NFVI Software Profile**: [Rabi] This defines the behaviour, capabilities and metrics provided by an NFVI Software Layer. 
-- **NFVI SW Configuration**: [Rabi] is a set of settings (Key:Value) that are applied to NFVI SW layers to behalf as their corresponding NFVI SW Profile. 
-- **NFVI Hardware Profile**: [Rabi] This defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer. 
-- **NFVI HW configurations**: [Rabi] is a set of settings (Key:Value) that are applied to NFVI HW layers to behalf as their corresponding NFVI HW Profile.
-  - **Host Profile**: [Pankaj] is a configuration template used to configure physical hosts (servers)
-- **Hardware Platform**:
-  - **CPU Socket**:
-  - **PCIe Slot**:
-  - **NIC**: 
-  - **SmartNIC**: 
-  - **Hardware Acceleration**:
-- **Cluster**:
-- **Virtual data centre**:
-  - **Provider Virtual Data Center (PVDC)**: [Sammuel] A PVDC combines the compute and memory resources of a single VIM (virtual infrastructure manager) resource pool with the storage resources of one or more datastores connected to that resource pool. A provider virtual data center is defined as a resource cluster residing in a resource site.
-  - **Organisation Virtual Data Center (OVDC)**: [Sammuel] A subgrouping of compute, memory, storage and network resources allocated from a PVDC. A virtual data center is a deployment environment where vApps can be instantiated, deployed, and powered on. Virtual data centers cannot span multiple organisations. An organisation virtual data center allocates resources using one of the following allocation models:
-    - Pay-As-You-Go.
-    - Reservation.
-    - Allocation.
-- **Organisation**: [Sammuel] The unit of multi-tenancy representing a single logical security boundary. An organisation contains users and organisational virtual data centres. On the NFV platform, this is referred to as an NFVI tenant.
-- **Others?**
+This section defines the main terms used in this document; these deinitions are primarily based on the ETSI GS NFV 003 V1.4.1 (2018-08) but have beern cleaned to avoid deployment technology dependencies if necessary.
+
+-	**vApp**: software capable of running on the NFVi. A VNF is one type of vApp.
+-	**VNF**: a software implementation of a network function, capable of running on the NFVi.
+-	**Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. Note: a VM consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server.
+-	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
+-	**Network Function (NF)**: functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behavior.
+-	**Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
+-	**Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system.
+-	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
+-	**Virtual Network Function (VNF)**: a software implementation of a network function, capable of running on the NFVi. NOTE: VNFs can be deployed on Virtual machines (VM) or containers (Please see definition for CNF).
+-	**Cloud-native (containerised) Network Function (CNF)**: VNF with a full adherence to cloud native principles, or a VNF that is transitioning to cloud native. NOTE: It is a containerised VNF that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
+-	**Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which vApps are deployed. NOTE: The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVi. NFVi and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
+-	**Compute Node**: abstract definition of a physical or virtual server.
+-	**NFVI Software Profile/Flavour**: defines the compute, memory, and storage capacity of a virtual compute resource. Note: used to define the configuration/capacity limit of a virtualised container.
+-	**Network Service**: composition of Network Function(s) and/or Network Service(s), defined by its functional and behavioural specification, including the service lifecycle.
+-	**NFVI Hardware Profile**: defines the configuration of compute, storage and networking of a hardware server.
+-	**Host Profile**: is another term for a NFVI hardware profile.
+-	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
+-	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtual compute resource
+-	**Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
+-	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVi platform software runs
+-	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
+-	**Tenant (Internal) Networks (a.k.a. vApp Network)**: virtual networks that are internal to tenant instances.
+-	**Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the NFVi compute, storage and network resources.
+-	**NFVi Orchestrator (NFVO)**: manages the VNF lifecycle and NFVi resources (supported by the VIM) to ensure an optimised allocation of the necessary resources and connectivity.
+-	**Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytics, etc.
+-	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the VIM by a given consumer (tenant).
+-	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An NFVi resource can be part of none, one or more resource pools.
+-	**Workload**: Workload refers to software running on top of NFVI resources such as VMs or containers.
+
 
 <a name="1.4"></a>
 ## 1.4	Principles
 
 This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
 
-1. Infrastructure abstraction is aiming to abstract resources provided to VNFs/CNFs (network applications) by NFVI. Those resources include:
+1. NFVI provides abstract and physical resources corresponding to:
    - Compute resources.
    - Storage resources.
    - Networking resources. (Limited to connectivity services).
    - Acceleration resources.
-1.	NFVI exposed resources should not have any dependency on any particular suppliers. All APIs implemented must be standard and open, to allow substitution of components.
-1. NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
-   - By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”.
-1.	NFVI resources are configured on behalf of VNFs/CNFs through standard/Open Interfaces and APIs.
-1.	NFVI resources are discovered/monitored by management entities (such as orchestration) through standard/Open Interfaces and APIs.
-1.	VNFs/CNFs should be designed to be modular and utilise minimum resources. 
-1. NFVI exposes pre-defined and expandable T-shirt sizes that determine the dimensions/class of those resources in conjunction with the NFVI profile.
-   - VNFs/CNFs requiring custom T-Shirt sizes or different T-shirt sizes can still do that and it will be up to each individual service provider to allow it.
+1.	NFVI exposed resources should be supplier independent.
+1. All NFVi APIs must be standard and open to ensure components substitution.
+   - NFVI resources are consumed by VNFs through standard and open APIs.
+   -	NFVI resources are configured on behalf of VNFs through standard and open APIs.
+   -	NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
+1.	VNFs should be modular and utilise minimum resources. 
+1. NFVI shall support pre-defined and elastic T-shirt sizes that, in conformance with the NFVi profile, specify the dimensions/class of tenant consumable resource.
+1. NFVI shall support custom and/or parmeterised T-Shirt sizes.
    - T-Shirt sizes will evolve with time.
-1.	VNFs/CNFs should only consume resources and take advantage of capabilities and features (such as for performance optimisation) as offered by the targeted NFVI profile.
-1. (rephrase) VNFs/CNFs running targeting a given profile should be able to run on it without requiring specific features that are supported by the profile such as acceleration, etc.
-   - Performance might be impacted.
+1.	NFVI provides certain resources, capabilities and features and vApps should only consume these resources, capabilities and features.
+1. VNFs that are designed to take advantage of NFVI accelerations should still be able to run without these accelerations with potential performance impacts.
 
 <a name="scope"></a>
 ## 1.5	Scope
