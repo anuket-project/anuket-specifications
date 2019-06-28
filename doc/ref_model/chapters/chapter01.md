@@ -107,13 +107,13 @@ This section specifies the principles of infrastructure abstraction and profilin
    - Performance might be impacted.
 1. An objective of CNTT is to have a single Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
 
-   - Principle #1 – Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture: 
+   - **Principle #1 – Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture:**
           - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don’t interfere with each other
  
-   - Principle #2 – Create an additional Architecture only when incompatible elements are unavoidable: 
+   - **Principle #2 – Create an additional Architecture only when incompatible elements are unavoidable:** 
           - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to review and vote to approve by the CNTT technical Working Group, such that one Architecture would be KVM-based and the other would be ESXi-based. 
  
-     *Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation. 
+   *Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation. 
 
 
 <a name="scope"></a>
