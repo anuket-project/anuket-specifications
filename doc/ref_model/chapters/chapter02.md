@@ -24,7 +24,7 @@ The following is a list of VNFs that have been taken as samples and used to unde
   - Optimizer: MSP.
 - **Voice Core**:
   - IP Multimedia: CSCF, ENUM, TAS, SBC.
-  - Database: CSDB
+  - Database: CSDB , UDC
   - Circuit Switched: MSC-S(MSS), MGW.
   - Signalling: DRA, SGW, STP.
   - Messaging
