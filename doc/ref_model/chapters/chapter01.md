@@ -44,13 +44,13 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 
 This section defines the main terms used in this document; these deinitions are primarily based on the ETSI GS NFV 003 V1.4.1 (2018-08) but have beern cleaned to avoid deployment technology dependencies if necessary.
 
--	**vApp**: software capable of running on the NFVi. A VNF is one type of vApp.
+-	**vApp (VA)**: Virtual Application is more of a general term for software which can be loaded into a Virtual Machine. NOTE: a VNF is one type of vApp.
 -	**VNF**: a software implementation of a network function, capable of running on the NFVi.
 -	**Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. Note: a VM consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server.
 -	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
 -	**Network Function (NF)**: functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behavior.
 -	**Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
--	**Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system.
+-	**Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
 -	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
 -	**Virtual Network Function (VNF)**: a software implementation of a network function, capable of running on the NFVi. NOTE: VNFs can be deployed on Virtual machines (VM) or containers (Please see definition for CNF).
 -	**Cloud-native (containerised) Network Function (CNF)**: VNF with a full adherence to cloud native principles, or a VNF that is transitioning to cloud native. NOTE: It is a containerised VNF that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
@@ -72,6 +72,13 @@ This section defines the main terms used in this document; these deinitions are 
 -	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the VIM by a given consumer (tenant).
 -	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An NFVi resource can be part of none, one or more resource pools.
 -	**Workload**: Workload refers to software running on top of NFVI resources such as VMs or containers.
+- **Data Plane Workloads**: are related to packet handling in an end-to-end communication between applications. These tasks are expected to be very intensive in I/O operations and memory read/write operations.
+- **Control Plane Workloads**: are the task related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. This category includes session management,routing or authentication.
+- **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
+- **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
+- **NFVI Hardware Configuration**: is a set of settings (Key:Value) that are applied to NFVI HW layers on behalf of their corresponding NFVI HW Profile.
+- **NFVI Software Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
+- **NFVI Software Configuration**: a set of settings (Key:Value) that are applied to NFVI SW layers on behalf of their corresponding NFVI SW Profile.
 
 
 <a name="1.4"></a>
