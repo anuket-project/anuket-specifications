@@ -54,13 +54,13 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
   - **Tenant resources**:
     - **Virtual Compute resources**: [Pankaj] ETSI – virtualised container] partition of a compute node that provides an isolated virtualized computation environment.
       - **Compute flavour**: [Pankaj] define the compute, memory, and storage capacity of a virtual compute resource 
-    - **Virtual Storage resources**: [Pankaj] [ETSI] virtualised non-volatile storage allocated to a
+    - **Virtual Storage resources**: [Pankaj] [ETSI] virtualised non-volatile storage allocated to a virtualised computation environment hosting a VNFC
     - **Virtual Networking resources**: [Pankaj] [ETSI] routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity.
     - **Virtual Acceleration resources**:
   - **Software Layer**: [Walter] Responsible for the abstraction of the underlying hardware resources and typically implemented using VM/hypervisor or container-based technology.
-    - **Virtualisation layer**: [Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
-  - **Hardware Layer**: [Pankaj] The physical resources/devices providing the NFVi services/functions required to support the execution environment for VNFs.
-    - **Hardware resources**: [Walter] Compute/Storage/Network hardware resources on which the NFVi platform software runs.
+    - **Virtualisation layer**: [Walter] Compute/Storage/Network hardware resources on which the NFVI platform software runs.
+  - **Hardware Layer**: [Pankaj] The physical resources/devices providing the NFVI services/functions required to support the execution environment for VNFs.
+    - **Hardware resources**: [Walter] Compute/Storage/Network hardware resources on which the NFVI platform software runs.
 - **Node**: [Pankaj] a virtualised compute resource instance that runs on a physical host.
 - **NFVI Software Profile**: [Rabi] This defines the behaviour, capabilities and metrics provided by an NFVI Software Layer. 
 - **NFVI SW Configuration**: [Rabi] is a set of settings (Key:Value) that are applied to NFVI SW layers to behalf as their corresponding NFVI SW Profile. 
