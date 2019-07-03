@@ -87,7 +87,9 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
 
-- **Physical Network Function (PNF)**: [Walter] Implementation of a network function that relies on dedicated hardware and software (for part of its functionality). Walter + Fred to finalise.
+- **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
+-	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVi platform software runs
+-	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
   - **Host Profile**: is another term for a **NFVI hardware profile**.
 - **NFVI Hardware Configuration**: is a set of settings (Key:Value) that are applied to NFVI HW layers on behalf of their corresponding NFVI HW Profile.
@@ -96,6 +98,7 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.3"></a>
 ### 1.3.3 Operational and administrative terminology
 -	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
+-	**Tenant (Internal) Networks (a.k.a. vApp Network)**: virtual networks that are internal to tenant instances.
 -	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the VIM by a given consumer (tenant).
 -	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An NFVi resource can be part of none, one or more resource pools.
 -	**Compute Node**: abstract definition of a physical or virtual server.
@@ -103,6 +106,8 @@ This section defines the main terms used in this document; these deinitions are 
 
 <a name="1.3.4"></a>
 ### 1.3.4 Other terminology
+-	**Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the NFVi compute, storage and network resources.
+-	**NFVi Orchestrator (NFVO)**: manages the VNF lifecycle and NFVi resources (supported by the VIM) to ensure an optimised allocation of the necessary resources and connectivity.
 
 <a name="1.4"></a>
 ## 1.4	Principles
