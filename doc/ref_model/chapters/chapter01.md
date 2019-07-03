@@ -58,31 +58,33 @@ This section defines the main terms used in this document; these deinitions are 
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
   - Within **NFV**, A **Network Function** is implemented in a form of **VNF** or a **CNF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
-- **VNF**: a software implementation of a network function, capable of running on the NFVi.
-  - **VNF**s are built from VNF Components (known as **VM**).
-- **Cloud-native (containerised) Network Function (CNF)**: VNF with a full adherence to cloud native principles, or a VNF that is transitioning to cloud native. NOTE: It is a containerised VNF that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
+- **VNF**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
+  - **VNF**s are built from VNF Components (e.g. **VM**s).
+- **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
+  >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
 - **vApp (VA)**: Virtual Application is more of a general term for software which can be loaded into a Virtual Machine. 
   >_*Note:*_ a **VNF** is one type of vApp.
-- **Workload**: Workload refers to software running on top of NFVI resources such as VMs or containers.
+- **Workload**: Workload refers to software running on top of **NFVI** resources such as **VMs** or **Container**s.
   - **Data Plane Workloads**: are related to packet handling in an end-to-end communication between applications. These tasks are expected to be very intensive in I/O operations and memory read/write operations.
   - **Control Plane Workloads**: are the task related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. This category includes session management,routing or authentication.
   - **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
 - **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. 
   >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server.
 - **VM Instance**:
-  - **instance type**
+  - **instance type**: VNF exposed terminology for VM which directly maps to combination of the underlying NFVI SW Profile and NFVI HW Profile.
   - **compute flavour**: defines the compute, memory, and storage capacity of a virtual compute resource. 
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 - **Container**: Content to be added here.
-- **VM instance Catalogue**
-- **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which vApps are deployed. NOTE: The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVi. NFVi and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
+- **VM instance Catalogue**: Pre-defined instance types and compute flavours.
+- **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which vApps are deployed. 
+  >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVi. NFVi and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 - **Virtual resources**:
   -	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
   -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtual compute resource
   -	**Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 -	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
-- **NFVI Software Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
-- **NFVI Software Configuration**: a set of settings (Key:Value) that are applied to NFVI SW layers on behalf of their corresponding NFVI SW Profile.
+- **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
+- **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied to **NFVI** SW deployment.
 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
