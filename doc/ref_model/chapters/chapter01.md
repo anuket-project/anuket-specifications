@@ -6,6 +6,10 @@
 * [1.1 Overview.](#overview)
 * [1.2 Problem Statement.](#problemstatement)
 * [1.3 Terminology.](#1.3)
+  * [1.3.1 Software layers terminology.](#1.3.1)
+  * [1.3.2 Hardware layers terminology.](#1.3.2)
+  * [1.3.3 Operational and administrative terminology.](#1.3.3)
+  * [1.3.4 Other terminology.](#1.3.4)
 * [1.4 Principles.](#1.4)
 * [1.5 Scope.](#scope)
 * [1.6 Relations to other industry projects.](#relation)
@@ -41,6 +45,24 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 
 <a name="1.3"></a>
 ## 1.3	Terminology
+
+This section defines the main terms used in this document; these deinitions are primarily based on the ETSI GS NFV 003 V1.4.1 (2018-08) but have beern cleaned to avoid deployment technology dependencies if necessary.
+
+<a name="1.3.1"></a>
+### 1.3.1 Software layers terminology
+
+<p align="right"><img src="../figures/ch01_software_terminology.PNG" alt="software_terminology" title="Software Terminology" width="75%"/></p>
+<p align="center"><b>Figure 1-1:</b> Software Terminologies</p>
+
+- **Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
+- **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
+  - Within **NFV**, A **Network Function** is implemented in a form of **VNF** or a **CNF**.
+- A **Network Service (NS)** consists of one or more **Network Function**.
+- **VNF**: a software implementation of a network function, capable of running on the NFVi.
+- **Cloud-native (containerised) Network Function (CNF)**: VNF with a full adherence to cloud native principles, or a VNF that is transitioning to cloud native. NOTE: It is a containerised VNF that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
+
+
+__Previous__
 
 - **Physical Network Function (PNF)**: [Walter] Implementation of a network function that relies on dedicated hardware and software (for part of its functionality). Walter + Fred to finalise.
 - **Tenant**: A logical construct that defines the boundaries (e.g., security boundary, operational boundary, billing boundary, etc.) around a collection of resources. Tenant users can share access to a set of physical, virtual or service resources.
@@ -82,6 +104,17 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
     - Allocation.
 - **Organisation**: [Sammuel] The unit of multi-tenancy representing a single logical security boundary. An organisation contains users and organisational virtual data centres. On the NFV platform, this is referred to as an NFVI tenant.
 - **Others?**
+
+<a name="1.3.2"></a>
+### 1.3.2 Hardware layers terminology
+
+- **Physical Network Function (PNF)**: [Walter] Implementation of a network function that relies on dedicated hardware and software (for part of its functionality). Walter + Fred to finalise.
+
+<a name="1.3.3"></a>
+### 1.3.3 Operational and administrative terminology
+
+<a name="1.3.4"></a>
+### 1.3.4 Other terminology
 
 <a name="1.4"></a>
 ## 1.4	Principles
