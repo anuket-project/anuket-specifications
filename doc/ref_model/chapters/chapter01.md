@@ -59,7 +59,7 @@ This section defines the main terms used in this document; these deinitions are 
   - Within **NFV**, A **Network Function** is implemented in a form of **VNF** or a **CNF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
 - **VNF**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
-  - **VNF**s are built from VNF Components (e.g. **VM**s).
+  - **VNF**s are built from VNF Components, **VNFC** (e.g. **VM**s).
 - **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
   >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
 - **vApp (VA)**: Virtual Application is more of a general term for software which can be loaded into a Virtual Machine. 
@@ -80,7 +80,7 @@ This section defines the main terms used in this document; these deinitions are 
   >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVi. NFVi and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 - **Virtual resources**:
   -	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
-  -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtual compute resource
+  -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
   -	**Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 -	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
 - **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
@@ -94,8 +94,7 @@ This section defines the main terms used in this document; these deinitions are 
 <p align="center"><b>Figure 1-2:</b> Hardware layers terminology</p>
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
--	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVi platform software runs
--	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
+-	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software runs
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
   - **Host Profile**: is another term for a **NFVI hardware profile**.
 - **NFVI Hardware Configuration**: is a set of settings (Key:Value) that are applied to NFVI HW layers on behalf of their corresponding NFVI HW Profile.
@@ -109,6 +108,7 @@ This section defines the main terms used in this document; these deinitions are 
 
 -	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
 -	**Tenant (Internal) Networks (a.k.a. vApp Network)**: virtual networks that are internal to tenant instances.
+-	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
 -	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the VIM by a given consumer (tenant).
 -	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An NFVi resource can be part of none, one or more resource pools.
 -	**Compute Node**: abstract definition of a physical or virtual server.
