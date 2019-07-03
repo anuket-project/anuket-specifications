@@ -70,8 +70,8 @@ This section defines the main terms used in this document; these deinitions are 
   - **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
 - **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. 
   >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server.
-- **VM Instance**:
-  - **instance type**: VNF exposed terminology for VM which directly maps to combination of the underlying NFVI SW Profile and NFVI HW Profile.
+- **VM Instance**: an abstract describtion of a VM that implies it's capabilities and resource usage. It has two parameters:
+  - **instance type**: The type of NFVI of which the VM is expected to run on. It directly maps to the combination of the underlying NFVI SW Profile and NFVI HW Profile.
   - **compute flavour**: defines the compute, memory, and storage capacity of a virtual compute resource. 
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
@@ -85,7 +85,7 @@ This section defines the main terms used in this document; these deinitions are 
 -	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
 - **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 - **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
-- **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied to **NFVI** SW deployment.
+- **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied/mapped to **NFVI** SW deployment.
 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
@@ -97,27 +97,23 @@ This section defines the main terms used in this document; these deinitions are 
 -	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software runs
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
   - **Host Profile**: is another term for a **NFVI hardware profile**.
-- **NFVI Hardware Configuration**: is a set of settings (Key:Value) that are applied to NFVI HW layers on behalf of their corresponding NFVI HW Profile.
-
+- **NFVI Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **NFVI** HW deployment.
 
 <a name="1.3.3"></a>
 ### 1.3.3 Operational and administrative terminology
 
-<p align="right"><img src="../figures/ch01_oa_terminology.PNG" alt="OA_terminology" title="Operational and administrative terminology" width="75%"/></p>
-<p align="center"><b>Figure 1-3:</b> Operational and administrative terminology</p>
-
 -	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
 -	**Tenant (Internal) Networks (a.k.a. vApp Network)**: virtual networks that are internal to tenant instances.
 -	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
--	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the VIM by a given consumer (tenant).
--	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An NFVi resource can be part of none, one or more resource pools.
+-	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
+-	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **NFVI** resource can be part of none, one or more resource pools.
 -	**Compute Node**: abstract definition of a physical or virtual server.
 -	**Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytics, etc.
 
 <a name="1.3.4"></a>
 ### 1.3.4 Other terminology
--	**Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the NFVi compute, storage and network resources.
--	**NFVi Orchestrator (NFVO)**: manages the VNF lifecycle and NFVi resources (supported by the VIM) to ensure an optimised allocation of the necessary resources and connectivity.
+-	**Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the NFVI compute, storage and network resources.
+-	**Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the VIM) to ensure an optimised allocation of the necessary resources and connectivity.
 
 <a name="1.4"></a>
 ## 1.4	Principles
