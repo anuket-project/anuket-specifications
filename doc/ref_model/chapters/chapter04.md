@@ -15,7 +15,7 @@
 * [4.5 One stop shop.](#4.5)
   * [4.5.1 Naming convention.](#4.5.1)
 
-Infrastructure exposes set of capabilities, metrics, compute flavours, interface options, storage extensions, and acceleration capabilities to VNFs. Those are offered to VNFs in form of instance types with their corresponding options and extensions.
+Infrastructure exposes sets of capabilities, metrics, compute flavours, interface options, storage extensions, and acceleration capabilities to VNFs. Those sets are offered to VNFs in form of instance types with their corresponding options and extensions.
 
 The idea of the infrastructure profiles catalogue is to have a predefined set of instance types with a predefined set of compute flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more of those compute flavours (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-1**.
 
