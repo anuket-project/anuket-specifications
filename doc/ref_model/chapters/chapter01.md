@@ -74,8 +74,8 @@ This section defines the main terms used in this document; these deinitions are 
   - **instance type**: VNF exposed terminology for VM which directly maps to combination of the underlying NFVI SW Profile and NFVI HW Profile.
   - **compute flavour**: defines the compute, memory, and storage capacity of a virtual compute resource. 
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
-- **Container**: Content to be added here.
-- **VM instance Catalogue**: Pre-defined instance types and compute flavours.
+- **VM instances Catalogue**: Pre-defined instance types and compute flavours.
+- **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Container**s and **VM**s is that containers "share" the host system’s kernel with other containers.
 - **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which vApps are deployed. 
   >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVi. NFVi and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 - **Virtual resources**:
@@ -83,6 +83,7 @@ This section defines the main terms used in this document; these deinitions are 
   -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtual compute resource
   -	**Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 -	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
+- **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 - **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
 - **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied to **NFVI** SW deployment.
 
