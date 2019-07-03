@@ -52,7 +52,7 @@ This section defines the main terms used in this document; these deinitions are 
 ### 1.3.1 Software layers terminology
 
 <p align="right"><img src="../figures/ch01_software_terminology.PNG" alt="software_terminology" title="Software Terminology" width="75%"/></p>
-<p align="center"><b>Figure 1-1:</b> Software Terminologies</p>
+<p align="center"><b>Figure 1-1:</b> Software layers terminology</p>
 
 - **Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
