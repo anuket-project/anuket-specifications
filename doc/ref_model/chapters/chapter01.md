@@ -90,7 +90,7 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
 
-<p align="right"><img src="../figures/ch01_haardware_terminology.PNG" alt="hardware_terminology" title="Hardware Terminology" width="75%"/></p>
+<p align="right"><img src="../figures/ch01_hardware_terminology.PNG" alt="hardware_terminology" title="Hardware Terminology" width="75%"/></p>
 <p align="center"><b>Figure 1-2:</b> Hardware layers terminology</p>
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
