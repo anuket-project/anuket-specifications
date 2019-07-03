@@ -51,7 +51,7 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.1"></a>
 ### 1.3.1 Software layers terminology
 
-<p align="right"><img src="../figures/ch01_software_terminology.PNG" alt="software_terminology" title="Software Terminology" width="75%"/></p>
+<p align="center"><img src="../figures/ch01_software_terminology.PNG" alt="software_terminology" title="Software Terminology" width="75%"/></p>
 <p align="center"><b>Figure 1-1:</b> Software layers terminology</p>
 
 - **Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
@@ -90,7 +90,7 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
 
-<p align="right"><img src="../figures/ch01_hardware_terminology.PNG" alt="hardware_terminology" title="Hardware Terminology" width="75%"/></p>
+<p align="center"><img src="../figures/ch01_hardware_terminology.PNG" alt="hardware_terminology" title="Hardware Terminology" width="75%"/></p>
 <p align="center"><b>Figure 1-2:</b> Hardware layers terminology</p>
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
@@ -143,7 +143,7 @@ This section specifies the principles of infrastructure abstraction and profilin
 The scope of this document is illustrated in **Figure 1** below
 
 <p align="center"><img src="../figures/scope.PNG" alt="scope" title="Scope" width="100%"/></p>
-<p align="center"><b>Figure 1:</b> Scope of Wrok</p>
+<p align="center"><b>Figure 1-3:</b> Scope of Wrok</p>
 
 This document specifies:
 - NFVI Infrastructure abstraction
@@ -165,7 +165,7 @@ Regarding the ETSI NFV architecture specified by ETSI GS NFV002 [link to ref: NF
 A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 2** below
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 2:</b> Mapping to ETSI NFV architecture</p>
+<p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
 
 <a name="docu"></a>
 ## 1.7	How this document works
