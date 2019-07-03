@@ -135,6 +135,8 @@ A mapping of the functional blocks considered in that document to that NFV archi
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> Mapping to ETSI NFV architecture</p>
 
+Following ETSI model, **Figure 2**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in Chapter 7 "API & Interfaces".
+
 <a name="docu"></a>
 ## 1.7	How this document works
 How to engage with it 
