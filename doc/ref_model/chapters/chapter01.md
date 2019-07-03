@@ -90,6 +90,9 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
 
+<p align="right"><img src="../figures/ch01_haardware_terminology.PNG" alt="hardware_terminology" title="Hardware Terminology" width="75%"/></p>
+<p align="center"><b>Figure 1-2:</b> Hardware layers terminology</p>
+
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
 -	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVi platform software runs
 -	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
@@ -100,6 +103,10 @@ This section defines the main terms used in this document; these deinitions are 
 
 <a name="1.3.3"></a>
 ### 1.3.3 Operational and administrative terminology
+
+<p align="right"><img src="../figures/ch01_oa_terminology.PNG" alt="OA_terminology" title="Operational and administrative terminology" width="75%"/></p>
+<p align="center"><b>Figure 1-3:</b> Operational and administrative terminology</p>
+
 -	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
 -	**Tenant (Internal) Networks (a.k.a. vApp Network)**: virtual networks that are internal to tenant instances.
 -	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the VIM by a given consumer (tenant).
