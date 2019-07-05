@@ -114,24 +114,23 @@ This section defines the main terms used in this document; these deinitions are 
 
 This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
 
-1. Infrastructure abstraction is aiming to abstract resources provided to VNFs/CNFs (network applications) by NFVI. Those resources include:
+1. NFVI provides abstract and physical resources corresponding to:
    - Compute resources.
    - Storage resources.
    - Networking resources. (Limited to connectivity services).
    - Acceleration resources.
-1.	NFVI exposed resources should not have any dependency on any particular suppliers. All APIs implemented must be standard and open, to allow substitution of components.
-1. NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
-   - By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”.
-1.	NFVI resources are configured on behalf of VNFs/CNFs through standard/Open Interfaces and APIs.
-1.	NFVI resources are discovered/monitored by management entities (such as orchestration) through standard/Open Interfaces and APIs.
-1.	VNFs/CNFs should be designed to be modular and utilise minimum resources. 
-1. NFVI exposes pre-defined and expandable T-shirt sizes that determine the dimensions/class of those resources in conjunction with the NFVI profile.
-   - VNFs/CNFs requiring custom T-Shirt sizes or different T-shirt sizes can still do that and it will be up to each individual service provider to allow it.
+1.	NFVI exposed resources should be supplier independent.
+1. All NFVi APIs must be standard and open to ensure components substitution.
+   - NFVI resources are consumed by VNFs through standard and open APIs.
+   - NFVI resources are configured on behalf of VNFs through standard and open APIs.
+   - NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
+1.	VNFs should be modular and utilise minimum resources. 
+1. NFVI shall support pre-defined and parameterised T-Shirt sizes.
    - T-Shirt sizes will evolve with time.
-1.	VNFs/CNFs should only consume resources and take advantage of capabilities and features (such as for performance optimisation) as offered by the targeted NFVI profile.
-1. (rephrase) VNFs/CNFs running targeting a given profile should be able to run on it without requiring specific features that are supported by the profile such as acceleration, etc.
-   - Performance might be impacted.
+1.	NFVI provides certain resources, capabilities and features and vApps should only consume these resources, capabilities and features.
+1. VNFs that are designed to take advantage of NFVI accelerations should still be able to run without these accelerations with potential performance impacts.
 1. An objective of CNTT is to have a single, overarching Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
+
   - **Principle #1 – Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
     - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don’t interfere with each other
     - Focus on the commonalities of the features over the perceived differences.  Seek an approach that allows small differences to be handled at either the low level design or implementation stage. For example, assume the use of existing common APIs over new ones.
