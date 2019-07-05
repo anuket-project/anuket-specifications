@@ -51,6 +51,9 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.1"></a>
 ### 1.3.1 Software layers terminology
 
+<p align="center"><img src="../figures/ch01_software_terminology.PNG" alt="software_terminology" title="Software Terminology" width="75%"/></p>
+<p align="center"><b>Figure 1-1:</b> Software layers terminology</p>
+
 - **Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
   - Within **NFV**, A **Network Function** is implemented in a form of **VNF** or a **CNF**.
@@ -87,6 +90,9 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
 
+<p align="center"><img src="../figures/ch01_hardware_terminology.PNG" alt="hardware_terminology" title="Hardware Terminology" width="75%"/></p>
+<p align="center"><b>Figure 1-2:</b> Hardware layers terminology</p>
+
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
 -	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software runs
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
@@ -114,30 +120,29 @@ This section defines the main terms used in this document; these deinitions are 
 
 This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
 
-1. Infrastructure abstraction is aiming to abstract resources provided to VNFs/CNFs (network applications) by NFVI. Those resources include:
+1. NFVI provides abstract and physical resources corresponding to:
    - Compute resources.
    - Storage resources.
    - Networking resources. (Limited to connectivity services).
    - Acceleration resources.
-1.	NFVI exposed resources should not have any dependency on any particular suppliers. All APIs implemented must be standard and open, to allow substitution of components.
-1. NFVI resources are consumed by VNFs/CNFs through standard/Open Interfaces and APIs.
-   - By convention, resource consumption is through an “Interface”, while resource configuration is through an “API”.
-1.	NFVI resources are configured on behalf of VNFs/CNFs through standard/Open Interfaces and APIs.
-1.	NFVI resources are discovered/monitored by management entities (such as orchestration) through standard/Open Interfaces and APIs.
-1.	VNFs/CNFs should be designed to be modular and utilise minimum resources. 
-1. NFVI exposes pre-defined and expandable T-shirt sizes that determine the dimensions/class of those resources in conjunction with the NFVI profile.
-   - VNFs/CNFs requiring custom T-Shirt sizes or different T-shirt sizes can still do that and it will be up to each individual service provider to allow it.
+1.	NFVI exposed resources should be supplier independent.
+1. All NFVi APIs must be standard and open to ensure components substitution.
+   - NFVI resources are consumed by VNFs through standard and open APIs.
+   - NFVI resources are configured on behalf of VNFs through standard and open APIs.
+   - NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
+1.	VNFs should be modular and utilise minimum resources. 
+1. NFVI shall support pre-defined and parameterised T-Shirt sizes.
    - T-Shirt sizes will evolve with time.
-1.	VNFs/CNFs should only consume resources and take advantage of capabilities and features (such as for performance optimisation) as offered by the targeted NFVI profile.
-1. (rephrase) VNFs/CNFs running targeting a given profile should be able to run on it without requiring specific features that are supported by the profile such as acceleration, etc.
-   - Performance might be impacted.
+1.	NFVI provides certain resources, capabilities and features and vApps should only consume these resources, capabilities and features.
+1. VNFs that are designed to take advantage of NFVI accelerations should still be able to run without these accelerations with potential performance impacts.
 1. An objective of CNTT is to have a single, overarching Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
-  - **Principle #1 – Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
-    - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don’t interfere with each other
+
+   - **Principle #A – Strive to eliminate feature, capability and component differences so as to create a common Reference Architecture:**
+             - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don’t interfere with each other
  
-  - **Principle #2 – Create an additional Architecture only when incompatible elements are unavoidable:** 
-    - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to review and vote to approve by the CNTT technical Working Group, such that one Architecture would be KVM-based and the other would be ESXi-based.
-    - Focus on the commonalities of the features over the perceived differences.  Seek an approach that allows small differences to be handled at either the low level design or implementation stage. For example, assume the use of existing common APIs over new ones.
+   - **Principle #B – Create additional Reference Architectures only when incompatiblilities are unavoidable:** 
+             - Creating additional Architectures is limited to when incompatible capabilities exist. For example, where the hypervisor differences, such as between KVM and ESXI, also result in differences in Reference Architecture components.
+             - Focus on the commonalities of the features, capabilities and components over perceived differences.  Seek an approach that allows small differences to be handled at either the low level design or implementation stage. For example, the common APIs to manage certain differences.
  
    *Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation. 
 
