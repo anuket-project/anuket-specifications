@@ -51,9 +51,6 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.3.1"></a>
 ### 1.3.1 Software layers terminology
 
-<p align="center"><img src="../figures/ch01_software_terminology.PNG" alt="software_terminology" title="Software Terminology" width="75%"/></p>
-<p align="center"><b>Figure 1-1:</b> Software layers terminology</p>
-
 - **Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
   - Within **NFV**, A **Network Function** is implemented in a form of **VNF** or a **CNF**.
@@ -89,9 +86,6 @@ This section defines the main terms used in this document; these deinitions are 
 
 <a name="1.3.2"></a>
 ### 1.3.2 Hardware layers terminology
-
-<p align="center"><img src="../figures/ch01_hardware_terminology.PNG" alt="hardware_terminology" title="Hardware Terminology" width="75%"/></p>
-<p align="center"><b>Figure 1-2:</b> Hardware layers terminology</p>
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
 -	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software runs
