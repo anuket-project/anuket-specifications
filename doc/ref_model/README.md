@@ -13,13 +13,13 @@
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Still Developing Content |
+| Chapter 01 | Lots of SME feedback |
 | Chapter 02 | Still Developing Content |
 | Chapter 03 | Lots of SME Feedback |
-| Chapter 04 | Lots of SME Feedback |
-| Chapter 05 | Still Developing Content |
-| Chapter 06 | Still Developing Content |
-| Chapter 07 | Still Developing Content |
+| Chapter 04 | Dickering over the fine points |
+| Chapter 05 | Lots of SME Feedback |
+| Chapter 06 | Lots of SME Feedback |
+| Chapter 07 | Lots of SME Feedback |
 | Chapter 08 | Initial Framework Only |
 | Chapter 09 | Initial Framework Only |
 | Chapter 10 | Initial Framework Only |
