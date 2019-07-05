@@ -16,7 +16,7 @@ To be shared later.
 - Pull Requests should clearly speceify the Chapter and the section number in the title.
   - Please use also the description field to clarify the nature of your contribution.
 - It is highly advised to check if there is a Pull Request already in place for the chapter/section you would like to contribute to.
-  - It is highly advised that you align with the creator of that Pull Request to incorporate your own commits into there .
+  - It is highly advised that you align with the creator of that Pull Request to incorporate your changes on there .
   - This will avoid conflicts when merging multiple Pull Requests for the same content.
 
 <a name="approval_process"></a>
