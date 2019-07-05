@@ -17,7 +17,7 @@
 
 Infrastructure exposes sets of capabilities, metrics, compute flavours, interface options, storage extensions, and acceleration capabilities to VNFs. Those sets are offered to VNFs in form of instance types with their corresponding options and extensions.
 
-The idea of the infrastructure profiles catalogue is to have a predefined set of instance types with a predefined set of compute flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more of those compute flavours (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-1**.
+The idea of the infrastructure instances catalogue is to have a predefined set of instance types with a predefined set of compute flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more of those compute flavours (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-1**.
 
 <p align="center"><img src="../figures/ch04_vnf_design.PNG" alt="vnf_design" title="VNF Design" width="65%"/></p>
 <p align="center"><b>Figure 4-1:</b> VNFs built against standard instance types and compute flavours.</p>
@@ -78,7 +78,7 @@ n50, n50D, n50T, n50Q, n50P, n50H	|1x 50, 2x 50, 36x 50, 4x 50, 5x 50, 6x 50 Gbp
 
 <a name="4.3"></a>
 ##  4.3 Storage Extensions
-Multiplee non-ephemeral storage volumes can be attached to virtual computes (*replace with decided term*) for persistent data storage. Each of those volumes can be configured with the required performance catagories (*storage performance prfiles*).
+Multiple non-ephemeral storage volumes can be attached to virtual computes (*replace with decided term*) for persistent data storage. Each of those volumes can be configured with the required performance catagories (*storage performance prfiles*).
 
 .conf	|Read IO/s	|Write IO/s	Read |Throughput (MB/s)	|Write Throughput (MB/s)
 ---|---|---|---|---
