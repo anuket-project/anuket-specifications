@@ -22,8 +22,9 @@ To be shared later.
 <a name="approval_process"></a>
 ## Approval process
 Pull Requests will be approved in two ways:
-- **Automatic Approval**
-  - Pull Requests that are introducing editorial fixes and/or very minor changes **can** be automatically approved upon creation.
+- **Prompt Approval**
+  - If you believe your Pull Request introduces editorial/minor changes, please label it as **"minor"**
+  - Pull Requests that are introducing editorial fixes and/or very minor changes **can** be approved without discussion.
     - Best Effort Judgement will be made on this.
     - Pull Requests approved this way can be **re-opened** if proved to be controversial.
 - **Online Approval** within 48 hours of submission provided that:
