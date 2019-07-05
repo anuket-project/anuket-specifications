@@ -23,36 +23,34 @@
   * [5.7.3 Virtual Networking and SDN.](#5.7.3)
   * [5.7.4 Security.](#5.7.4)
 
-NFVI Software layer is composed of 2 layers, [ ref figure]:
+NFVI Software layer is composed of 2 layers, **Figure 5-1**:
 - the virtualization Infrastructure layer, which is based on hypervisor virtualization technology or container-based virtualization technology. Container virtualization can be nested in hypervisor-based virtualization
 - the host OS layer
 
 <p align="center"><img src="../figures/ch05_nfvi_layers_sw_profile.PNG" alt="ref_profiles" title="Layers of Software Profile" width="100%"/></p>
 <p align="center"><b>Figure 5-1:</b> Layers of NFVI software profile.</p>
 
-For a host (compute node or physical server), the virtualization layer is an abstraction layer between hardware components (compute, storage and network resources) and logical resources allocated to VNF-C, each VNF-C maps 1:1 against a single VM or a single Container, [ref figure].
+For a host (compute node or physical server), the virtualization layer is an abstraction layer between hardware components (compute, storage and network resources) and logical resources allocated to VNF-C, each VNF-C maps 1:1 against a single VM or a single Container. **Figure 5-2** represents the virtual resources (virtual compute, virtual network and virtual storage) allocated to VNF-C and managed by the VIM.
 
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="100%"/></p>
-<p align="center"><b>Table 5-1:</b> Compute Node .</p>
+<p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
 
-Depending on the requirements of VNFs and the capabilities expected from the infrastructure, a NFVI software profile represents for a host the right configuration needed. Figure  [ref figure] depicts the software profiles required for Basic, Network Intensive and Compute intensive requirements.
+Depending on the requirements of VNFs and the capabilities expected from the infrastructure, a NFVI software profile represents for a host the right configuration needed. It is a set of virtual resources with specific behaviour, capabilities and metrics. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive requirements.
 
-<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles.PNG" alt="ref_profiles" title="Reference Profiles" width="100%"/></p>
-<p align="center"><b>Figure 5-1:</b> Reference NFVI software profiles.</p>
+<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.PNG" alt="ref_profiles" title="Reference Profiles" width="100%"/></p>
+<p align="center"><b>Figure 5-3:</b> Reference NFVI software profiles.</p>
 
-Note: the SDN controller must be removed of the Network Intensive picture. The SDN controller is part of the VIM and not part of compute nodes.
-
-The features of software profiles types are detailed in the following sections.
+The features of these software profiles types are detailed in the following sections. The list of these features will evolved on time.
 
 <a name="5.1"></a>
 ## 5.1	Virtual Compute
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.com.cfg.001 | Flavours |  | Supported VM Flavours needs to be the same as those listed in the compute flavours' catalogue. |
-| nfvi.com.cfg.002 | Numa awareness | true/false  |  |
-| nfvi.com.cfg.003 | CPU partionning  | value | CPU dedicated to the host and CPU dedicated to VNFs  |
-| nfvi.com.cfg.004 | CPU allocation ratio  | value |  |
+| nfvi.com.cfg.001 | Support of flavours |  | Supported compute Flavours need to be the same as those listed in the compute flavours' catalogue. |
+| nfvi.com.cfg.002 | CPU partionning  | value | CPU dedicated to the host and CPU dedicated to VNFs  |
+| nfvi.com.cfg.003 | CPU allocation ratio  | value |  |
+| nfvi.com.cfg.004 | NUMA awareness | true/false  | Support of NUMA at the virtualization layer  |
 | nfvi.com.cfg.005 | CPU pinning capability  | true/false |  |
 | nfvi.com.cfg.006 | Huge Pages  | value |  |
 
@@ -63,6 +61,8 @@ The features of software profiles types are detailed in the following sections.
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.com.acc.cfg.001 | |  | |
+
+<p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
 <a name="5.2"></a>
 ## 5.2	Virtual Storage
@@ -75,7 +75,7 @@ The features of software profiles types are detailed in the following sections.
 | nfvi.stg.cfg.004 | Storage with replication |  |  |  
 | nfvi.stg.cfg.005 | Storage with encryption |  |  |  
 
-<p align="center"><b>Table 5-2:</b> Virtual Storage features.</p>
+<p align="center"><b>Table 5-3:</b> Virtual Storage features.</p>
 
 ### 5.2.1 Virtual storage Acceleration
 
@@ -83,6 +83,8 @@ The features of software profiles types are detailed in the following sections.
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.stg.acc.cfg.001 | Storage IOPS oriented |   |   |
 | nfvi.stg.acc.cfg.002 | Storage capacity oriented |   |   |
+
+<p align="center"><b>Table 5-4:</b> Virtual Storage Acceleration features.</p>
 
 <a name="5.3"></a>
 ## 5.3 Virtual Networking
@@ -97,7 +99,7 @@ The features of software profiles types are detailed in the following sections.
 | nfvi.net.cfg.006 | Traffic patterns symmetry |  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
 | nfvi.net.cfg.007 | Horizontal scaling |  | The VNF cluster must be able to scale horizontally and to leverage technologies such as ECMP to enable scale-outs/scale-ins, privileging Active-Active HA models, even though this may require some level of application re-design to cope with the need of sharing state between VNF instances |
 
-<p align="center"><b>Table 5-3:</b> Virtual Networking features.</p>
+<p align="center"><b>Table 5-5:</b> Virtual Networking features.</p>
 
 ### 5.3.1	Virtual Network Acceleration
 
@@ -107,6 +109,8 @@ The features of software profiles types are detailed in the following sections.
 | nfvi.net.acc.cfg.002 | Support of HW offload | | e.g. support of SR-IOV, SmartNic. |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | |  |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | | |
+
+<p align="center"><b>Table 5-6:</b> Virtual Networking Acceleration features.</p>
 
 <a name="5.4"></a>
 ## 5.4	Security
