@@ -37,7 +37,7 @@ For a host (compute node or physical server), the virtualization layer is an abs
 
 Depending on the requirements of VNFs and the capabilities expected from the infrastructure, a NFVI software profile represents for a host the right configuration needed. It is a set of virtual resources with specific behaviour, capabilities and metrics. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive requirements.
 
-<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.PNG" alt="ref_profiles" title="Reference Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.png" alt="ref_profiles" title="Reference Profiles" width="100%"/></p>
 <p align="center"><b>Figure 5-3:</b> Reference NFVI software profiles.</p>
 
 The features of these software profiles types are detailed in the following sections. The list of these features will evolved on time.
