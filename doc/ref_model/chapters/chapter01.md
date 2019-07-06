@@ -56,12 +56,12 @@ This section defines the main terms used in this document; these deinitions are 
   - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Containerised NF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
 - **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
-  - **VNF**s are built from VNF Components, **VNFC**.
+  - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
 - **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
   >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
-- **Virtual Application (vApp or VA)**: is more of a general term for software which can be loaded into a Virtual Machine. 
-  >_*Note:*_ a **VNF** is one type of vApp.
-- **Workload**: Workload refers to software running on top of **NFVI** resources such as **VMs** or **Container**s.
+- **Virtual Application (VA)**: is more of a general term for software which can be loaded into a Virtual Machine. 
+  >_*Note:*_ a **VNF** is one type of VA.
+- **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
   - **Data Plane Workloads**: are related to packet handling in an end-to-end communication between applications. These tasks are expected to be very intensive in I/O operations and memory read/write operations.
   - **Control Plane Workloads**: are the task related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. This category includes session management,routing or authentication.
   - **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
@@ -74,7 +74,7 @@ This section defines the main terms used in this document; these deinitions are 
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
 - **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Container**s and **VM**s is that containers "share" the host system’s kernel with other containers.
 - **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which vApps are deployed. 
-  >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVi. NFVi and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
+  >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVI. NFVI and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 - **Virtual resources**:
   -	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
   -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
@@ -97,11 +97,11 @@ This section defines the main terms used in this document; these deinitions are 
 ### 1.3.3 Operational and administrative terminology
 
 -	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
--	**Tenant (Internal) Networks (a.k.a. vApp Network)**: virtual networks that are internal to tenant instances.
+-	**Tenant (Internal) Networks**: virtual networks that are internal to tenant instances.
 -	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
 -	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
 -	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **NFVI** resource can be part of none, one or more resource pools.
--	**Compute Node**: abstract definition of a physical or virtual server.
+-	**Compute Node**: abstract definition of a server.
 -	**Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytics, etc.
 
 <a name="1.3.4"></a>
