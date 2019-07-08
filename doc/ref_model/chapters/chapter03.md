@@ -29,8 +29,8 @@ To summarise: the abstraction model presented in this paper will build upon exis
 ## 3.1	Model
 The abstraction model for the NFVI makes use of following layers (only the virtual infrastructure layer will be directly exposed to the workloads such as VNFs/CNFs):
 
-<p align="center"><img src="../figures/ch03_model_layers.PNG" alt="model_layers" title="Model Layers" width="65%"/></p>
-<p align="center"><b>Figure 3.1:</b>NFVI Layers.</p>
+<p align="center"><img src="../figures/figure_3.1_NFVI-Model.png" alt="NFVI model_layers" Title="NFVI MOdel Layers" width="65%"/></p>
+<p align="center"><b>Figure 3.1:</b> NFVI Model Layers.</p>
   
 The functionalities of each layer are as follows:
 - Physical Infrastructure Resources: This layer consists of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and their corresponding basic operating systems (BIOS).
@@ -39,8 +39,8 @@ The functionalities of each layer are as follows:
 - Workloads (VNFs/CNFs): This layer consists of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. 
 The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in Figure 3.2.
 
-<p align="center"><img src="../figures/ch03_virtual_resources.PNG" alt="virtual_resources" title="Virtual Resources" width="65%"/></p>
-<p align="center"><b>Figure 3.2:</b>Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
+<p align="center"><img src="../figures/figure_3.2_Virtual_Infra_Resources.png" alt="virtual_resources" Title="Virtual Infrastructure Resources" width="65%"/></p>
+<p align="center"><b>Figure 3.2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
 
 - tenants: represent an independently manageable logical pool of compute, storage and network resources
 - compute resources: represent virtualised computes for workloads and Operating and other Systems as necessary  
