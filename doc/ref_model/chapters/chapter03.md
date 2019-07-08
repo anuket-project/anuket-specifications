@@ -207,26 +207,45 @@ This section covers a list of explicit NFVI capabilities and metrics that define
 
 <a name="3.3.2"></a>
 ### 3.3.2	Exposed NFVI metrics
-#### 3.3.2.1	Exposed performance metrics 
-**Table 3-11** below shows performance metrics of NFVI. The intent of those metrics is to be well known to VNFs. These metrics are aligned with ETSI GS NFV TST-009 [2].
+The intent of those metrics is to be well known to VNFs.
 
-| Ref | NFVI metric | Unit | Definition/Notes |
-|--------------------|------------------------------------------|--------|-----------------------------------------------------------------------|
-| e.nfvi.per.met.001 | Network Throughput | bps | Max thougput per vNIC assigned to VNF-C @256 Bytes |
-| e.nfvi.per.met.002 | Network Latency | ms | Range (min, max) on each vNIC assigned to VNF-C. ETSI NFV-TST 009[2]. |
-| e.nfvi.per.met.003 | External (persistent) storage IO | iops | Range (min, max) per VNF-C |
-| e.nfvi.per.met.004 | External (persistent) storage throughput | MB/s | Range (min, max) per VNF-C |
+#### 3.3.2.1	Exposed performance metrics
 
-<p align="center"><b>Table 3-11:</b> Exposed performance metrics of NFVI.</p>
+[COMMENT - Xavier Grall, Orange: the mapping table is removed since there are reference values that depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
 
-| Ref | B Instance | N Instance | C Instance |
-|--------------------|--------------------------|---------------------------|---------------------------|
-| `e.nfvi.per.met.001` | Up to speed of   <I Opt> | Up to speed of    <I Opt> | Up to speed of    <I Opt> |
-| `e.nfvi.per.met.002` | <30ms | <0.5ms | <5ms |
-| `e.nfvi.per.met.003` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
-| `e.nfvi.per.met.004` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |
+The following shows performance metrics per VNF-C, vNIC or vCPU.
 
-<p align="center"><b>Table 3-12:</b> Mapping of Exposed performance metrics to NFVI instance types.</p>
+| Ref                | NFVI metric               | Unit                | Definition/Notes                                             |
+| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
+| e.nfvi.per.met.001 | Network throughput        | bits/s or packets/s | Max throughput per vNIC (as aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.002 | Network latency           | second              | Max round trip time to vNIC (as aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.003 | Network Delay Variation   | second              | Max packet delay variation (a.k.a., jitter) of round trip time to vNIC (as aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
+| e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
+| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNF-C |
+| e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU             |
+
+<p align="center"><b>Table 3-xx:</b> Exposed performance metrics of NFVI.</p>
+
+#### 3.3.2.2	Exposed resource management metrics
+
+[COMMENT - Xavier Grall, Orange: those metrics includes VIM processing duration, and even only VIM duration in some cases, and thus, may not be relevant for NFVI characterization => to be discussed wrt ETSI archi mapping in 1.6]
+
+The following table shows resource management metrics as aligned with ETSI GR NFV TST-012 [3].
+
+| Ref                | NFVI metrics                    | Unit   | Definition/Notes |
+| ------------------ | ------------------------------- | ------ | ---------------- |
+| e.nfvi.rmt.met.001 | Time to create VNF-C            | second |                  |
+| e.nfvi.rmt.met.002 | Time to delete  VNF-C           | second |                  |
+| e.nfvi.rmt.met.003 | Time to resize VNF-C            | second |                  |
+| e.nfvi.rmt.met.004 | Time to migrate VNF-C           | second |                  |
+| e.nfvi.rmt.met.005 | Time to create virtual network  | second |                  |
+| e.nfvi.rmt.met.006 | Time to delete virtual network  | second |                  |
+| e.nfvi.rmt.met.007 | Time to update virtual network  | second |                  |
+| e.nfvi.rmt.met.008 | Time to create virtual router   | second |                  |
+| e.nfvi.rmt.met.009 | Time to create external storage | second |                  |
+
+<p align="center"><b>Table 3-xx:</b> Exposed resource management metrics of NFVI.</p>
 
 <a name="3.4"></a>
 ## 3.4	Internal NFVI capabilities metrics, and constraints
@@ -335,123 +354,42 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 
 <a name="3.4.2"></a>
 ### 3.4.2	Internal NFVI metrics
-#### 3.4.2.1	 Internal resources management metrics 
-**Table 3-23** shows resource management metrics of NFVI as aligned with ETSI GS NFV TST-012 [3]. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI.
+[COMMENT - Xavier Grall, Orange: section  "3.4.2.1 Internal resource management metrics" is moved to 3.3  since indicated metrics directly concern VNF and thus, should be considered as "exposed"]
 
-| Ref | NFVI metrics | Unit | Definition/Notes |
-|--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| i.nfvi.rmt.met.001 | Time to create VNF-C for a given VNF | Max ms |  |
-| i.nfvi.rmt.met.002 | Time to delete  VNF-C of a given VNF | Max ms |  |
-| i.nfvi.rmt.met.003 | Time to start VNF-C of a given VNF | Max ms |  |
-| i.nfvi.rmt.met.004 | Time to stop VNF-C of a given VNF | Max ms |  |
-| i.nfvi.rmt.met.005 | Time to pause VNF-C of a given VNF | Max ms |  |
-| i.nfvi.rmt.met.006 | Time to create internal virtual network | Max ms |  |
-| i.nfvi.rmt.met.007 | Time to delete internal virtual network | Max ms |  |
-| i.nfvi.rmt.met.008 | Time to update internal virtual network | Max ms |  |
-| i.nfvi.rmt.met.009 | Time to create external virtual network | Max ms |  |
-| i.nfvi.rmt.met.010 | Time to delete external virtual network | Max ms |  |
-| i.nfvi.rmt.met.011 | Time to update external virtual   network | Max ms |  |
-| i.nfvi.rmt.met.012 | Time to create vSwitch | Max ms |  |
-| i.nfvi.rmt.met.013 | Time to create vRouter | Max ms |  |
-| i.nfvi.rmt.met.014 | Time to create external storage ready for use by VNF | Max ms |  |
+[COMMENT - Xavier Grall, Orange: section "3.4.2.3 Internal SLA metrics" is removed since it is redundant with network performance metrics]
 
-<p align="center"><b>Table 3-23:</b> Internal resource management metrics of NFVI.</p>
+[COMMENT - Xavier Grall, Orange: section "3.4.2.4 Internal scalability metrics" is removed since it is redundant with resource management metrics]
 
-| Ref | B Instance | N Instance | C Instance |
-|--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| `i.nfvi.rmt.met.001` |  |  |  |
-| `i.nfvi.rmt.met.002` |  |  |  |
-| `i.nfvi.rmt.met.003` |  |  |  |
-| `i.nfvi.rmt.met.004` |  |  |  |
-| `i.nfvi.rmt.met.005` |  |  |  |
-| `i.nfvi.rmt.met.006` |  |  |  |
-| `i.nfvi.rmt.met.007` |  |  |  |
-| `i.nfvi.rmt.met.008` |  |  |  |
-| `i.nfvi.rmt.met.009` |  |  |  |
-| `i.nfvi.rmt.met.010` |  |  |  |
-| `i.nfvi.rmt.met.011` |  |  |  |
-| `i.nfvi.rmt.met.012` |  |  |  |
-| `i.nfvi.rmt.met.013` |  |  |  |
-| `i.nfvi.rmt.met.014` |  |  |  |
+#### 3.4.2.1	Internal performance metrics 
+[COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
 
-<p align="center"><b>Table 3-24:</b> Mapping of Internal resource management metrics to NFVI instance types.</p>
-
-#### 3.4.2.2	Internal performance Metrics 
-**Table 3-26** shows performance metrics of NFVI. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI. These metrics are aligned with ETSI GS NFV TST-009 [2].
+The following table shows performance metrics per NFVI node.
 
 | Ref | NFVI metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|----------------|----------------------------------------------------------------------|
-| i.nfvi.per.met.001 | Network I/O East/West | Mpps @256Bytes | VNF-C to VNF-C within same platform. Do we need to expose it to VNF? |
-| i.nfvi.per.met.002 | Simultaneous active flows | max # |  |
-| i.nfvi.per.met.003 | New flows per second | flows/s |  |
-| i.nfvi.per.met.004 | Network Latency | ms | ETSI NFV-TST 009[2]. |
-| i.nfvi.per.met.005 | ephemeral storage IO | iops | Range (min, max) |
-| i.nfvi.per.met.006 | ephemeral storage throughput | MB/s | Range (min, max) per VNF-C |
+| i.nfvi.per.met.001 | Network throughput | bits/s or packets/s | Max throughput per node (aligned with ETSI GS NFV-TST 009 [2]) |
+| i.nfvi.per.met.002 | Simultaneous active flows | number | Max simultaneous active L4 flows per node before a new flow is dropped |
+| i.nfvi.per.met.003 | New flows rate               | flows/s  | Max new L4 flow rate per node                                |
+| i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per node |
+| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNF-C (but fully ready for it) |
+| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node max network throughput, normalized to the bit rate |
+| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption during the node processing capacity measurement (i.nfvi.per.met.004), normalized to physical cores usable by VNF-C |
 
-<p align="center"><b>Table 3-25:</b> Internal performance metrics exposed to VNFs by NFVI.</p>
+<p align="center"><b>Table 3-xx:</b> Internal performance metrics of NFVI.</p>
 
-| Ref | B Instance | N Instance | C Instance |
-|--------------------|-------------|-------------|-------------|
-| `i.nfvi.per.met.001` | 3-5 | 15 - 30 | 3-5 |
-| `i.nfvi.per.met.002` | Up to 200K | Up to 1M | Up to 200K |
-| `i.nfvi.per.met.003` |  |  |  |
-| `i.nfvi.per.met.004` | <10ms | <0.5ms | <5ms |
-| `i.nfvi.per.met.005` | 280K-680K | 280K-680K | 280K-680K |
-| `i.nfvi.per.met.006` | 1000 – 2650 | 1000 – 2650 | 1000 – 2650 |
+It should be noted that energy-related metrics must only be considered for NFVI software implementations benchmarking on a same NFVI hardware implementation (since energy consumption may be very different for a same processor model due to foundry process spread).
 
-<p align="center"><b>Table 3-26:</b> Mapping of Internal performance metrics to NFVI instance types.</p>
+#### 3.4.2.2	Internal availability/reliability metrics
 
-#### 3.4.2.3	Internal SLA metrics
-**Table 3-28** shows SLA metrics of NFVI. Expected values of these metrics are determined by the standard instance type used by VNF-C.
+[COMMENT - Xavier Grall, Orange: the following table should be reviewed to only consider and probably detail the recovery-related metrics ; indeed, availability and MTBF metrics do not seem consistent with expected testbed measurement duration]
 
-| Ref | NFVI metrics | Unit | Definition/Notes |
-|--------------------|------------------------------|------|-------------------------------------|
-| i.nfvi.sla.met.001 | vNIC CIR | bbs | Committed Information Rate per vNIC |
-| i.nfvi.sla.met.002 | vNIC PIR | bbs | Peak Information Rate per vNIC |
-
-<p align="center"><b>Table 3-27:</b> Internal SLA metrics of NFVI.</p>
-
-| Ref | B Instance | N Instance | C Instance |
-|--------------------|-------------|--------------------|-------------|
-| `i.nfvi.sla.met.001` | NA | As per vNIC option | NA |
-| `i.nfvi.sla.met.002` | NA | As per vNIC option | NA |
-
-<p align="center"><b>Table 3-28:</b> Mapping of Internal SLA metrics to NFVI instance types.</p>
-
-#### 3.4.2.4	Internal scalability metrics 
-**Table 3-30** below shows scalability of NFVI. These metrics are aligned with ETSI GS NFV TST-012 [3]
-
-| Ref | NFVI metrics | Unit | Definition/Notes |
-|--------------------|-----------------------|------|----------------------------------|
-| i.nfvi.scl.met.001 | Time to scale out VNF | bbs | Excluding initial VNF deployment |
-| i.nfvi.scl.met.002 | Time to scale in VNF | bbs |  |
-
-<p align="center"><b>Table 3-29:</b> Internal scalability metrics of NFVI.</p>
-
-| Ref | B Instance | N Instance | C Instance |
-|--------------------|------------|------------|------------|
-| `i.nfvi.scl.met.001` |  |  |  |
-| `i.nfvi.scl.met.002` |  |  |  |
-
-<p align="center"><b>Table 3-30:</b> Mapping of Internal scalability metrics to NFVI instance types.</p>
-
-#### 3.4.2.5	Internal availability/reliability metrics
+[COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on reference architecture and implementation]
 
 | Ref | NFVI metric | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
 | i.nfvi.arl.met.001 | Availability | % |  |
 | i.nfvi.arl.met.002 | MTBF single node | days | Mean Time between Failure for single node |
 | i.nfvi.arl.met.003 | MTBF AZ | days | Mean Time between Failure for an   AZ |
-| i.nfvi.arl.met.004 | Recovery time | seconds |  |
+| i.nfvi.arl.met.001 | Reboot recovery time | second | Max time before a node is ready after a reboot |
 
-<p align="center"><b>Table 3-31:</b> Internal availability/reliability metrics of NFVI.</p>
-
-| Ref | B Instance | N Instance | C Instance |
-|--------------------|------------|------------|------------|
-| `i.nfvi.arl.met.001` |  |  |  |
-| `i.nfvi.arl.met.002` |  |  |  |
-| `i.nfvi.arl.met.003` |  |  |  |
-| `i.nfvi.arl.met.004` |  |  |  |
-
-<p align="center"><b>Table 3-32:</b> Mapping of Internal availability/reliability metrics to NFVI instance types.</p>
-
+<p align="center"><b>Table 3-xx:</b> Internal availability/reliability metrics of NFVI.</p>
