@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 8	Security
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [8.1 Common standards.](#8.1)
