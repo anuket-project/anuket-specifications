@@ -67,8 +67,8 @@ This section defines the main terms used in this document; these deinitions are 
   - **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
 - **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. 
   >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour. 
-- **VM Instance**: is a VM
-- **Instance type**: defines the capabilities of the physical compute server that the virtual compute resource can run on.
+- **Instance type**: defines the capabilities of an image available to users for the creation of a virtual compute resource; includes capabilities such as CPU, storage, and memory.
+- **Instance**: is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server. NOTE: can be used to specify VM Instance or Container Instance.
 - **Compute flavour**: defines the compute, memory, and storage capacity, and the capabilities of the physical compute server that the virtual compute resource can run on. 
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
