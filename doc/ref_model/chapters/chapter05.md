@@ -34,7 +34,7 @@ NFVI Software layer is composed of 2 layers, **Figure 5-1**:
 <p align="center"><img src="../figures/ch05_nfvi_layers_sw_profile.PNG" alt="ref_profiles" title="Layers of Software Profile" width="50%"/></p>
 <p align="center"><b>Figure 5-1:</b> NFVI software layers.</p>
 
-For a host (compute node or physical server), the virtualization layer is an abstraction layer between hardware components (compute, storage and network resources) and virtual resources allocated to VNF-C, each VNF-C maps 1:1 against a single VM or a single container/pod. **Figure 5-2** represents the virtual resources (virtual compute, virtual network and virtual storage) allocated to VNF-C and managed by the VIM.
+For a host (compute node or physical server), the virtualization layer is an abstraction layer between hardware components (compute, storage and network resources) and virtual resources allocated to VNF-C, each VNF-C generally maps 1:1 against a single VM or a single container/pod. **Figure 5-2** represents the virtual resources (virtual compute, virtual network and virtual storage) allocated to VNF-C and managed by the VIM.
 
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
