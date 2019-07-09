@@ -4,10 +4,10 @@
 
 ## Table of Contents
 * [6.1 Hardware Profile Model.](#6.1)
-  * [6.1.1 Compute Resource Configurations.](#6.1.1)
-  * [6.1.2 Network Resources Configurations.](#6.1.2)
-  * [6.1.3 Storage Configurations.](#6.1.3)
-  * [6.1.4 Security Configuration.](#6.1.4)
+* [6.1.1 Compute Resource Configurations.](#6.2)
+* [6.1.2 Network Resources Configurations.](#6.3)
+* [6.1.3 Storage Configurations.](#6.4)
+* [6.1.4 Security Configuration.](#6.5)
 
 
 The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware host profile. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as (aka) compute host, host, node or pServer). The host profile contains a specification (yaml file) on how the host should be configured including the underlay networking and storage.
@@ -31,20 +31,25 @@ When a software flavour series is associated with a host profile then a qualifie
 
 `<qualified host profile>:: <software flavor series><”-“><”hp”><numeral host profile sequence #>`
 
-The following model depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled. 
+<p align="center"><img src="../figures/Chapter-6-HW-SW-Profile-Diagram.png" alt="HW-Profile-SW-Flavour" Title="HW Profils and SW Flavour relationship" width=85%/></p>
+<p align="center"><b>Figure 6-2:</b> Generic Hardware Profile, Software Flavour, Physical server relationship.</p>
+
+**Figure 6-2** shows a simpolistic depiction of the relationship between Hardware profile, Software Flavour, Physical server, virtual and compute. In the diagram the resource pool, a logical construct, depicts all physical hosts that have been configured as per a given host profile; there is one resource pool for each hardware profile. Please note resource pools are not OpenStack host aggregates.
+
+The following model, **Figure 6-3**, depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled. 
 
 <p align="center"><img src="../figures/ch06_generic_model.PNG" alt="generic_model" title="Generic Model" width="100%"/></p>
-<p align="center"><b>Figure 6-2:</b> Generic model of a computer host for use in Host Profile configurations.</p>
+<p align="center"><b>Figure 6-3:</b> Generic model of a computer host for use in Host Profile configurations.</p>
 
-The host profile properties are specified in the following sub-sections. The following diagram (**Figure 6-2**) pictorially represents a high-level abstraction of a host.
+The hardware (host) profile properties are specified in the following sub-sections. The following diagram (**Figure 6-4**) pictorially represents a high-level abstraction of a physical server (host).
 
 <p align="center"><img src="../figures/ch06_ref_hw_profile.PNG" alt="reference_hw_profile" title="Reference HW Profile" width="65%"/></p>
-<p align="center"><b>Figure 6-3:</b> Generic model of a computer host for use in Host Profile configurations.</p>
+<p align="center"><b>Figure 6-4:</b> Generic model of a computer host for use in Host Profile configurations.</p>
 
 The configurations specified in this model section will be utilized in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 6-1**.
 
-<a name="6.1.1"></a>
-### 6.1.1	Compute Resource Configurations
+<a name="6.2"></a>
+## 6.2	Compute Resource Configurations
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
@@ -60,7 +65,7 @@ The configurations specified in this model section will be utilized in specifyin
 
 > _*These features are not set at the physical server BIOS _
 
-#### 6.1.1.1	Compute Acceleration Hardware Specifications
+### 6.2.1	Compute Acceleration Hardware Specifications
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|--------------|--------|--------|--------
@@ -68,9 +73,9 @@ The configurations specified in this model section will be utilized in specifyin
 
 <p align="center"><b>Table 6-2:</b> Compute acceleration configuration specifications.</p>
 
-<a name="6.1.2"></a>
-### 6.1.2	Network Resources Configurations
-#### 6.1.2.1	NIC configurations
+<a name="6.3"></a>
+## 6.3.	Network Resources Configurations
+### 6.3.1	NIC configurations
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
@@ -79,7 +84,7 @@ The configurations specified in this model section will be utilized in specifyin
 
 <p align="center"><b>Table 6-3:</b> Minimum NIC configuration specifications.</p>
 
-#### 6.1.2.2	PCIe Configurations
+### 6.3.2.	PCIe Configurations
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
@@ -89,7 +94,7 @@ The configurations specified in this model section will be utilized in specifyin
 
 <p align="center"><b>Table 6-4:</b> PCIe configuration specification.</p>
 
-##### 6.1.2.3	Network Bond Configurations
+#### 6.3.3	Network Bond Configurations
 
 | Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
@@ -99,7 +104,7 @@ The configurations specified in this model section will be utilized in specifyin
 
 > _*Repeat Configuration for each Bond and specify use._
 
-#### 6.1.2.4	Network Acceleration Configurations
+### 6.3.4	Network Acceleration Configurations
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
@@ -109,8 +114,8 @@ The configurations specified in this model section will be utilized in specifyin
 
 <p align="center"><b>Table 6-6:</b> Network acceleration configuration specifications.</p>
 
-<a name="6.1.3"></a>
-### 6.1.3	Storage Configurations
+<a name="6.4"></a>
+## 6.4.	Storage Configurations
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
@@ -121,8 +126,8 @@ The configurations specified in this model section will be utilized in specifyin
 
 > _*This specified local storage configurations including # and capacity of storage drives._
 
-<a name="6.1.4"></a>
-### 6.1.4	Security Configuration
+<a name="6.5"></a>
+### 6.5.	Security Configuration
 
 | Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
