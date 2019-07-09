@@ -14,7 +14,7 @@ The support of a variety of different workload types, each with different (somet
 
 This chapter defines a simplified host and host profile model and the host profile configuration parameters associated with the different hardware profile types shown in **Figure 6-1**.
 
-<p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles.PNG" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.PNG" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 6-1:</b> Reference NFVI hardware profiles.</p>
 
 <a name="6.1"></a>
@@ -46,28 +46,25 @@ The configurations specified in this model section will be utilized in specifyin
 <a name="6.1.1"></a>
 ### 6.1.1	Compute Resource Configurations
 
-| Reference | Feature | Description |
-|---------------------|---------------------------------------------------------------|----------------------------------------------------------------------|
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the number of CPU sockets exist within each platform |
-| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. |
-| nfvi.hw.cpu.cfg.003 | NUMA Alignment |  |
-| nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) |  |
-| nfvi.hw.cpu.cfg.005 | CPU Pinning |  |
-| nfvi.hw.cpu.cfg.006 | CPU Allocation Ratio |  |
-| nfvi.hw.cpu.cfg.007 | Cores dedicated to Host Resources | Hypervisor, VIM components, base containers, etc. |
-| nfvi.hw.cpu.cfg.008 | Cores dedicated for Data Plane Development Kit ( DPDK) Router |  |
-| nfvi.hw.cpu.cfg.009 | Cores available for Guest vServers |  |
-| nfvi.hw.cpu.cfg.010 | Hugepages |  |
-| nfvi.hw.cpu.cfg.011 | Max vCPUs available for tenants/NUMA |  |
-| nfvi.hw.cpu.cfg.012 | Max vCPUs available for tenants/host | Across al NUMA (or CPUs) |
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|---------------------------|--------|--------|--------
+| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the number of CPU sockets exist within each platform | 2| 2| 2
+| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 
+| nfvi.hw.cpu.cfg.003 | NUMA Alignment |  | N | Y | N
+| nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) |  | Y | Y| Y 
+| nfvi.hw.cpu.cfg.005 | CPU Pinning |  | N | Y | Y
+| nfvi.hw.cpu.cfg.006 | CPU Oversubscription Ratio* |  | n:1 | 1:1 | 1:1 
+| nfvi.hw.cpu.cfg.007 | Hugepages* |  | N | Y | Y
 
-<p align="center"><b>Table 6-1:</b> Compute resources configuration parameters.</p>
+<p align="center"><b>Table 6-1:</b> Minimum Compute resources configuration parameters.</p>
+
+> _*These features are not set at the physical server BIOS _
 
 #### 6.1.1.1	Compute Acceleration Hardware Specifications
 
-| Reference | Feature | Description |
-|---------------------|---------|-------------|
-| nfvi.hw.cac.cfg.001 | GPU | GPU |
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|--------------|--------|--------|--------
+| nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | Y 
 
 <p align="center"><b>Table 6-2:</b> Compute acceleration configuration specifications.</p>
 
@@ -75,32 +72,28 @@ The configurations specified in this model section will be utilized in specifyin
 ### 6.1.2	Network Resources Configurations
 #### 6.1.2.1	NIC configurations
 
-| Reference | Feature | Description |
-|-------------------------------|--------------------------------|-----------------------------------------------------|
-| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform |
-| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps |
-| nfvi.hw.nic.numa.00.cfg.001 | NUMA 0 NICs | Specify the NUMA 0 NIC ports |
-| nfvi.hw.nic.numa.00.cfg.002 | NUMA 0 NIC VF Promiscuous Mode |  |
-| nfvi.hw.nic.numa.01.cfg.001 | NUMA 1 NICs | Specify the NUMA 1 NIC ports |
-| nfvi.hw.nic.numa.01.cfg.002 | NUMA 1 NIC VF Promiscuous Mode |  |
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|---------------------------|--------|--------|--------
+| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform | 4 | 4 | 4
+| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps | 10 | 25 | 25
 
-<p align="center"><b>Table 6-3:</b> NIC configuration specifications.</p>
+<p align="center"><b>Table 6-3:</b> Minimum NIC configuration specifications.</p>
 
 #### 6.1.2.2	PCIe Configurations
 
-| Reference | Feature | Description |
-|---------------------|------------|------------------------------------------------|
-| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the platform |
-| nfvi.hw.pci.cfg.002 | PCIe speed |  |
-| nfvi.hw.pci.cfg.003 | PCIe Lanes |  |
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|---------------------------|--------|--------|--------
+| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the platform | 8 | 8 | 8
+| nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 | Gen 3 |
+| nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 8
 
 <p align="center"><b>Table 6-4:</b> PCIe configuration specification.</p>
 
 ##### 6.1.2.3	Network Bond Configurations
 
-| Reference* | Feature | Description |
-|---------------------|-------------------|-------------|
-| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  |
+| Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|---------------------------|--------|--------|--------
+| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  | Y | Y | Y
 
 <p align="center"><b>Table 6-5:</b> Network bond configuration specifications.</p>
 
@@ -108,10 +101,10 @@ The configurations specified in this model section will be utilized in specifyin
 
 #### 6.1.2.4	Network Acceleration Configurations
 
-| Reference | Feature | Description |
-|---------------------|----------------------------|-----------------------------------------------------------------------|
-| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |
-| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware. |
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|---------------------------|--------|--------|--------
+| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto | 
+| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware | | Maybe | Maybe
 | nfvi.hw.nac.cfg.003 | Compression |  |
 
 <p align="center"><b>Table 6-6:</b> Network acceleration configuration specifications.</p>
@@ -119,10 +112,10 @@ The configurations specified in this model section will be utilized in specifyin
 <a name="6.1.3"></a>
 ### 6.1.3	Storage Configurations
 
-| Reference | Feature | Description |
-|-------------------------|-------------------|-------------|
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|---------------------------|--------|--------|--------
 | nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD |  |
-| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD |  |
+| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD |  | Recommended | Recommended |Recommended |
 
 <p align="center"><b>Table 6-7:</b> Storage configuration specifications.</p>
 
@@ -131,8 +124,8 @@ The configurations specified in this model section will be utilized in specifyin
 <a name="6.1.4"></a>
 ### 6.1.4	Security Configuration
 
-| Reference* | Feature | Description |
-|---------------------|---------|---------------------------------------------|
-| nfvi.hw.sec.cfg.001 | TPM | Platform must have Trusted Platform Module. |
+| Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive
+|---------------------|-----------|---------------------------|--------|--------|--------
+| nfvi.hw.sec.cfg.001 | TPM | Platform must have Trusted Platform Module. | Y | Y | Y |
 
 <p align="center"><b>Table 6-8:</b> Security configuration specifications.</p>
