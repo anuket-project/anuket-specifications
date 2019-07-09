@@ -14,7 +14,7 @@ The support of a variety of different workload types, each with different (somet
 
 This chapter defines a simplified host and host profile model and the host profile configuration parameters associated with the different hardware profile types shown in **Figure 6-1**.
 
-<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.PNG" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
+<p align="center"><img src="https://github.com/pgoyal01/CNTT/blob/patch-12/doc/ref_model/figures/ch05_ref_nfvi_sw_profiles_v2.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 6-1:</b> Reference NFVI hardware profiles.</p>
 
 <a name="6.1"></a>
