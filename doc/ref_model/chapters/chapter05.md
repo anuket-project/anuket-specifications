@@ -8,7 +8,7 @@
   * [5.1.2 Virtual Storage.](#5.1.2)
   * [5.1.3 Virtual Networking.](#5.1.3) 
   * [5.1.4 Security.](#5.1.4) 
- * [5.2 Basic NFVI reference SW profile and configuration.](#5.2)
+* [5.2 Basic NFVI reference SW profile and configuration.](#5.2)
   * [5.2.1 Virtual Compute.](#5.2.1)
   * [5.2.2 Virtual Storage.](#5.2.2)
   * [5.2.3 Virtual Networking.](#5.2.3)
@@ -41,7 +41,7 @@ For a host (compute node or physical server), the virtualization layer is an abs
 
 Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of virtual resources with specific behaviour, capabilities and metrics. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive instances types.
 
-<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.png" alt="ref_profiles" title="Reference Profiles" width="70%"/></p>
+<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
 <p align="center"><b>Figure 5-3:</b> Reference NFVI software profiles.</p>
 
 The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
@@ -130,8 +130,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 This NFVI SW Profile and configuration described in this section will be the reference SW profile for B instance type, **Figure 5-4**.
 
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Basic Reference Profile" width="70%"/></p>
-<p align="center"><b>Figure 5-4:</b> Reference NFVI software profile and configuration fo
-r B instance.</p>
+<p align="center"><b>Figure 5-4:</b> Reference NFVI software profile and configuration for B instance.</p>
 
 ### 5.2.1	Virtual Compute features and configuration
 
