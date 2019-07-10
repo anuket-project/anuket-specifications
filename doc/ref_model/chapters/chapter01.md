@@ -143,10 +143,16 @@ This section specifies the principles of infrastructure abstraction and profilin
 
 <a name="scope"></a>
 ## 1.5	Scope
+
+There are three level of documents needed to fulfill the CNTT vision. They are, as highligted in Figure 1-4, Reference Model, Reference Archiecture, and Reference Implementatin. 
+
+<p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
+
 The scope of this document is illustrated in **Figure 1** below
 
 <p align="center"><img src="../figures/scope.PNG" alt="scope" title="Scope" width="100%"/></p>
-<p align="center"><b>Figure 1-3:</b> Scope of Wrok</p>
+<p align="center"><b>Figure 1-5:</b> Scope of Reference Model</p>
 
 This document specifies:
 - NFVI Infrastructure abstraction
@@ -168,7 +174,7 @@ Regarding the ETSI NFV architecture specified by ETSI GS NFV002 [link to ref: NF
 A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 2** below
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
+<p align="center"><b>Figure 1-6:</b> Mapping to ETSI NFV architecture</p>
 
 Following ETSI model, **Figure 2**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in Chapter 7 "API & Interfaces".
 
