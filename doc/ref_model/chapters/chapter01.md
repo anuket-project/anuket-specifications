@@ -149,9 +149,9 @@ There are three level of documents needed to fulfill the CNTT vision. They are, 
 <p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
 
-- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how it is exposed to VNFs. 
-- **Reference Architecture**: Focuses on High level NFVI Architecture. It is expected to have few of those reference architectures.
-- **Reference Implementation**: Focuses on the design and implementation of NFVI. Each reference Architecture created is expected to have at least one Reference Implementation.
+- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. 
+- **Reference Architecture**: High level NFVI system components and their interactions to deliver on the Reference Model goals. It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.
+- **Reference Implementation**: Focuses on the design and implementation of a NFVI Reference Architecture. Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
 
 This document foucuses on the **Reference Model**. **Figure 1-5** below highlights its scope in more details.
 
