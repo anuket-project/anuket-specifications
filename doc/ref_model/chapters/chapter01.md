@@ -144,12 +144,12 @@ This section specifies the principles of infrastructure abstraction and profilin
 <a name="scope"></a>
 ## 1.5	Scope
 
-There are three level of documents needed to fulfill the CNTT vision. They are, as highligted in Figure 1-4, Reference Model, Reference Archiecture, and Reference Implementatin. 
+There are three level of documents needed to fulfill the CNTT vision. They are, as highlighted in **Figure 1-4**, **Reference Model**, **Reference Architecture**, and **Reference Implementation**. 
 
 <p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
 
-The scope of this document is illustrated in **Figure 1** below
+The scope of this document is illustrated in **Figure 1-5** below
 
 <p align="center"><img src="../figures/scope.PNG" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 1-5:</b> Scope of Reference Model</p>
