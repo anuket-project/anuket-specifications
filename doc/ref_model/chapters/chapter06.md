@@ -31,7 +31,7 @@ When a software flavour series is associated with a host profile then a qualifie
 
 `<qualified host profile>:: <software flavor series><”-“><”hp”><numeral host profile sequence #>`
 
-<p align="center"><img src="../figures/Chapter-6-HW-SW-Profile-Diagram.png" alt="HW-Profile-SW-Flavour" Title="HW Profils and SW Flavour relationship" width=85%/></p>
+<p align="center"><img src="../figures/Chapter-6-HW-SW-Profile-Diagram_v2.png" alt="HW-Profile-SW-Flavour" Title="HW Profils and SW Flavour relationship" width=85%/></p>
 <p align="center"><b>Figure 6-2:</b> Generic Hardware Profile, Software Flavour, Physical server relationship.</p>
 
 **Figure 6-2** shows a simpolistic depiction of the relationship between Hardware profile, Software Flavour, Physical server, virtual and compute. In the diagram the resource pool, a logical construct, depicts all physical hosts that have been configured as per a given host profile; there is one resource pool for each hardware profile. Please note resource pools are not OpenStack host aggregates.
