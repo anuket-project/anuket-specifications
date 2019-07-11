@@ -155,7 +155,7 @@ There are three level of documents needed to fulfill the CNTT vision. They are, 
 
 This document foucuses on the **Reference Model**. **Figure 1-5** below highlights its scope in more details.
 
-<p align="center"><img src="../figures/scope.PNG" alt="scope" title="Scope" width="100%"/></p>
+<p align="center"><img src="../figures/ch01_scope.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 1-5:</b> Scope of Reference Model</p>
 
 This document specifies:
