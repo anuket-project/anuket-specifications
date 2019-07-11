@@ -9,7 +9,7 @@
 * [4.3 Storage Extensions.](#4.3)
   * [4.3.1 Available storage extensions.](#4.3.1)
 * [4.4 Instance types.](#4.4)
-  * [4.4.1 Network Interface Options (Basic).](#4.4.1)
+  * [4.4.1 Network Interface Options.](#4.4.1)
   * [4.4.2 B Instances (Basic).](#4.4.2)
   * [4.4.3 N Instances (Network Intensive).](#4.4.3)
   * [4.4.4 C Instances (Compute Intensive).](#4.4.4)
