@@ -15,8 +15,8 @@ To be shared later.
 ### Contributing guidelines
 - Pull Requests should clearly speceify the Chapter and the section number in the title.
   - Please use also the description field to clarify the nature of your contribution.
-- It is highly advised to check if there is a Pull Request already in place for the chapter you would like to contribute to.
-  - It is advised to align with the creator for that Pull Request to incorporate your suggested changes.
+- It is highly advised to check if there is a Pull Request already in place for the chapter/section you would like to contribute to.
+  - It is highly advised that you align with the creator of that Pull Request to incorporate your changes on there .
   - This will avoid conflicts when merging multiple Pull Requests for the same content.
 
 <a name="approval_process"></a>
@@ -25,7 +25,7 @@ Pull Requests will be approved in two ways:
 - **Prompt Approval**
   - If you believe your Pull Request introduces editorial/minor changes, please label it as **"minor"**
   - Pull Requests that are introducing editorial fixes and/or very minor changes **can** be approved without discussion.
-    - Best Effort Judgement will be made on this.
+    - Best Effort Judgement will be made on this by the rapporteur.
     - Pull Requests approved this way can be **re-opened** if proved to be controversial.
 - **Online Approval** within 48 hours of submission provided that:
   - It does not conflict with CNTT principles or uses conflicting terminology.

@@ -53,28 +53,28 @@ This section defines the main terms used in this document; these deinitions are 
 
 - **Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
-  - Within **NFV**, A **Network Function** is implemented in a form of **VNF** or a **CNF**.
+  - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Containerised NF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
-- **VNF**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
-  - **VNF**s are built from VNF Components, **VNFC** (e.g. **VM**s).
+- **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
+  - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
 - **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
   >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
-- **vApp (VA)**: Virtual Application is more of a general term for software which can be loaded into a Virtual Machine. 
-  >_*Note:*_ a **VNF** is one type of vApp.
-- **Workload**: Workload refers to software running on top of **NFVI** resources such as **VMs** or **Container**s.
+- **Virtual Application (VA)**: is more of a general term for software which can be loaded into a Virtual Machine. 
+  >_*Note:*_ a **VNF** is one type of VA.
+- **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
   - **Data Plane Workloads**: are related to packet handling in an end-to-end communication between applications. These tasks are expected to be very intensive in I/O operations and memory read/write operations.
   - **Control Plane Workloads**: are the task related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. This category includes session management,routing or authentication.
   - **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
 - **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. 
-  >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server.
-- **VM Instance**: an abstract describtion of a VM that implies it's capabilities and resource usage. It has two parameters:
-  - **instance type**: The type of NFVI of which the VM is expected to run on. It directly maps to the combination of the underlying NFVI SW Profile and NFVI HW Profile.
-  - **compute flavour**: defines the compute, memory, and storage capacity of a virtual compute resource. 
+  >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour. 
+- **Instance type**: specifies a set of virtualized hardware resources and capabilities used for the creation of a virtual compute on which a workload runs on; includes capability specifications such as CPU, storage, and memory.
+- **Instance**: is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server. NOTE: can be used to specify VM Instance or Container Instance.
+- **Compute flavour**: defines the compute, memory, and storage capacity, and the capabilities of the physical compute server that the virtual compute resource can run on. 
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
 - **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Container**s and **VM**s is that containers "share" the host system’s kernel with other containers.
 - **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which vApps are deployed. 
-  >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVi. NFVi and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
+  >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVI. NFVI and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 - **Virtual resources**:
   -	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
   -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
@@ -88,7 +88,7 @@ This section defines the main terms used in this document; these deinitions are 
 ### 1.3.2 Hardware layers terminology
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
--	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software runs
+-	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software, virtual machines and containers run on.
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
   - **Host Profile**: is another term for a **NFVI hardware profile**.
 - **NFVI Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **NFVI** HW deployment.
@@ -97,17 +97,17 @@ This section defines the main terms used in this document; these deinitions are 
 ### 1.3.3 Operational and administrative terminology
 
 -	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
--	**Tenant (Internal) Networks (a.k.a. vApp Network)**: virtual networks that are internal to tenant instances.
+-	**Tenant (Internal) Networks**: virtual networks that are internal to tenant instances.
 -	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
 -	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
 -	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **NFVI** resource can be part of none, one or more resource pools.
--	**Compute Node**: abstract definition of a physical or virtual server.
+-	**Compute Node**: abstract definition of a server.
 -	**Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytics, etc.
 
 <a name="1.3.4"></a>
 ### 1.3.4 Other terminology
 -	**Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the NFVI compute, storage and network resources.
--	**Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the VIM) to ensure an optimised allocation of the necessary resources and connectivity.
+-	**NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the VIM) to ensure an optimised allocation of the necessary resources and connectivity.
 
 <a name="1.4"></a>
 ## 1.4	Principles
@@ -140,6 +140,7 @@ This section specifies the principles of infrastructure abstraction and profilin
      
    *Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation. 
 
+
 <a name="scope"></a>
 ## 1.5	Scope
 The scope of this document is illustrated in **Figure 1** below
@@ -166,7 +167,7 @@ Software Stack Model (Abstracted)
 Regarding the ETSI NFV architecture specified by ETSI GS NFV002 [link to ref: NFV Architectural framework v1.2.1], the scope of this document is only, but all, the NFVI part, including its external reference points.
 A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 2** below
 
-<p align="center"><img src="../figures/ch01_etsi_archi_mapping.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
+<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
 <p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
 
 Following ETSI model, **Figure 2**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in Chapter 7 "API & Interfaces".
