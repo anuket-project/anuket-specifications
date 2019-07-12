@@ -1,7 +1,7 @@
 [<< Back](../../ref_model)
 # 3	Infrastructure Abstraction
 <p align="right"><img src="../figures/bogo_sdc.png" alt="bogo" title="Bogo Meter" width="35%"/></p>
-
+ 
 ## Table of Contents
 * [3.1 Model.](#model)
 * [3.2 Exposed vs Internal.](#expint)
