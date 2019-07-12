@@ -121,8 +121,7 @@ The following pertains to the context of NFVI Capabilities, Metrics and Constrai
 <b>Internal:</b> Effectively the opposite of Exposed; objects Internal to the NFVI, which are exclusively available for use by the NFVI and components within the NFVI control plane.
 
 <p align="center"><img src="../figures/Sect_3-2_Exposed_vs_Internal_Diagram_v2.jpg" alt="Exposed vs. Internal Scope" title="Scope" width="65%"/></p>
-
-<b>Figure x: Exposed vs. Internal Scope</b>
+<p align="center"><b>Figure 3-4:</b> Exposed vs. Internal Scope.</p>
 
 As illustrated in the figure above, objects designated as "Internal" are only visibile within the area inside the blue oval (the NFVI), and only when the entity accessing the object has the appropriate permissions. Whereas objects designated as "Exposed" are potentially visible from both the area within the green oval (the Workload), as well as from within the NFVI, again provided the entity accessing the object has appropriate permissions.
 
