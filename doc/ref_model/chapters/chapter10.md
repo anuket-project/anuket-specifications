@@ -9,7 +9,7 @@
   * [10.2.2 Test suites.](#10.2.2)
 * [10.3	Recommendations.](#10.3)
 
-The purpose of this chapter is to address the relation with this Reference Model and the industry driven compliance, verification, and certification programs such as The OVP (OPNFV Verified Program) by Linux Foundation Networking. 
+The purpose of this chapter is to address the relation with this Reference Model and the industry driven compliance, verification, and certification programs such as The OVP (OPNFV Verified Program) by Linux Foundation Networking.  
 
 <a name="10.1"></a>
 ## 10.1 Introduction
