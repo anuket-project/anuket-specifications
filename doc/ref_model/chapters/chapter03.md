@@ -29,7 +29,7 @@ To summarise: the abstraction model presented in this paper will build upon exis
 ## 3.1	Model
 The abstraction model for the NFVI makes use of following layers (only the virtual infrastructure layer will be directly exposed to the workload (VNFs/CNFs)):
 
-<p align="center"><img src="../igures/figure_3.1_NFVI-Model.png" alt="NFVI model_layers" title="NFVI Model Layers" width="65%"/></p>
+<p align="center"><img src="../figures/figure_3.1_NFVI-Model.png" alt="NFVI model_layers" title="NFVI Model Layers" width="65%"/></p>
 <p align="center"><b>Figure 3-1:</b> NFVI Model Layers.</p>
   
 The functionalities of each layer are as follows:
