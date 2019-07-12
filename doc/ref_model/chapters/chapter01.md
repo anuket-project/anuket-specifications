@@ -167,7 +167,7 @@ Software Stack Model (Abstracted)
 Regarding the ETSI NFV architecture specified by ETSI GS NFV002 [link to ref: NFV Architectural framework v1.2.1], the scope of this document is only, but all, the NFVI part, including its external reference points.
 A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 2** below
 
-<p align="center"><img src="../figures/ch01_etsi_archi_mapping.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
+<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
 <p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
 
 Following ETSI model, **Figure 2**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in Chapter 7 "API & Interfaces".
