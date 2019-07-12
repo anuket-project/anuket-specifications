@@ -451,4 +451,4 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | `i.nfvi.arl.met.004` |  |  |  |
 
 <p align="center"><b>Table 3-32:</b> Mapping of Internal availability/reliability metrics to NFVI instance types.</p>
-
+ 
