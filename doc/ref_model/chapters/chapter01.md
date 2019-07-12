@@ -149,9 +149,9 @@ There are three level of documents needed to fulfill the CNTT vision. They are, 
 <p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
 
-- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how it is exposed to VNFs. 
-- **Reference Architecture**: Focuses on High level NFVI Architecture. It is expected to have few of those reference architectures.
-- **Reference Implementation**: Focuses on the design and implementation of NFVI. Each reference Architecture created is expected to have at least one Reference Implementation.
+- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. 
+- **Reference Architecture**: High level NFVI system components and their interactions to deliver on the Reference Model goals. It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.
+- **Reference Implementation**: Focuses on the design and implementation of a NFVI Reference Architecture. Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
 
 This document foucuses on the **Reference Model**. **Figure 1-5** below highlights its scope in more details.
 
@@ -175,12 +175,12 @@ This document specifies:
 Software Stack Model (Abstracted)
 
 Regarding the ETSI NFV architecture specified by ETSI GS NFV002 [link to ref: NFV Architectural framework v1.2.1], the scope of this document is only, but all, the NFVI part, including its external reference points.
-A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 2** below
+A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 1-6** below
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
+<p align="center"><b>Figure 1-6:</b> Mapping to ETSI NFV architecture</p>
 
-Following ETSI model, **Figure 2**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in Chapter 7 "API & Interfaces".
+Following ETSI model, **Figure 1-6**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in Chapter 7 "API & Interfaces".
 
 <a name="docu"></a>
 ## 1.7	How this document works
