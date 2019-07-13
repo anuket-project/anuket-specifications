@@ -1,5 +1,28 @@
-[<< Back](../)
+[<< Back](https://cntt-n.github.io/CNTT/)
 # Common NFVi for Telco Reference Model
+
+<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>
+
+## Current Release
+**Release: --**
+
+## Current Version
+**Version: 0.9**
+
+## Overall Status
+
+| Chapter | Status |
+| --- | --- |
+| Chapter 01 | Lots of SME feedback |
+| Chapter 02 | Still Developing Content |
+| Chapter 03 | Lots of SME Feedback |
+| Chapter 04 | Dickering over the fine points |
+| Chapter 05 | Lots of SME Feedback |
+| Chapter 06 | Lots of SME Feedback |
+| Chapter 07 | Lots of SME Feedback |
+| Chapter 08 | Initial Framework Only |
+| Chapter 09 | Initial Framework Only |
+| Chapter 10 | Initial Framework Only |
 
 ## Table of Contents
 * [Abbreviations](abbreviations.md)
