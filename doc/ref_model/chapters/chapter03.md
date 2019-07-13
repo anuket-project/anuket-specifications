@@ -14,21 +14,21 @@
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of the workloads match the capabilities of the NFVI.
 
-The lack of a common understanding of which resources and corresponding capabilities a suitable NFVI should provide may lead to several issues which could negatively impact the time and cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure e.g.:
+The lack of a common understanding of which resources and corresponding capabilities a suitable NFVI should provide may lead to several issues which could negatively impact the time and cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure. For Example:
 
 - supporting any kind of workload specific requirements (e.g. regarding network acceleration or API access) might result in having to establish different silo NFVIs for each workload type.
 - synchronising the release cycles of a large set of different technologies will sooner or later lead to situations in which required upgrades cannot be applied easily due to incompatibilities.
 
 The abstraction model presented in this chapter specifies a common set of virtual infrastructure resources which a NFVI will need to provide to be able to host most of the typical VNF/CNF workloads required by the operator community.
-Although a couple of explicit and implicit abstraction models (e.g. in the context of ETSI/NFV) are already available they fall short when addressing the following design principles:
--	**Scope**: the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) an NFVI needs to provide for hosting Telco VNF workloads
--	**Separation of Concern**: the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
--	**Simplicity**: the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
--	**Declarative**: the model should allow for a declarative description of the required NFVI capabilities for on-boarding and maintaining workloads
+Although a couple of explicit and implicit abstraction models (e.g. in the context of ETSI/NFV) are already available, they fall short when addressing the following design principles:
+-	**Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) an NFVI needs to provide for hosting Telco VNF workloads
+-	**Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
+-	**Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
+-	**Declarative:** the model should allow for a declarative description of the required NFVI capabilities for on-boarding and maintaining workloads
 
--	**Explicit**: the model needs to be rich enough to allow for a direct mapping towards the APIs of NFVIs for the instantiation of virtual infrastructure elements without requiring any additional parameters
--	**Lifecycle**: the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
--	**Aligned**: the model should clearly highlight the dependencies between the elements to allow for a well-defined and simplified synchronisation of independent automation tasks.
+-	**Explicit:** the model needs to be rich enough to allow for a direct mapping towards the APIs of NFVIs for the instantiation of virtual infrastructure elements without requiring any additional parameters
+-	**Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
+-	**Aligned:** the model should clearly highlight the dependencies between the elements to allow for a well-defined and simplified synchronisation of independent automation tasks.
 
 To summarise: the abstraction model presented in this document will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and workload related responsibilities.
 
@@ -38,23 +38,23 @@ To summarise: the abstraction model presented in this document will build upon e
 The abstraction model for the NFVI makes use of the following layers (only the virtual infrastructure layer will be directly exposed to workloads such as VNFs/CNFs):
 
 <p align="center"><img src="../figures/figure_3.1_NFVI-Model.png" alt="NFVI model_layers" Title="NFVI Model Layers" width="65%"/></p>
-<p align="center"><b>Figure 3-1:</b>Layers of the NFVI Model.</p>
+<p align="center"><b>Figure 3-1:</b> Layers of the NFVI Model.</p>
   
 The functionalities of each layer are as follows:
-- Physical Infrastructure Resources: This layer consists of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and the basic input output system (BIOS).
-- NFVI Software: This layer consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
-- Virtual Infrastructure Resources: This layer represents all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
-- Workloads (VNFs/CNFs): This layer consists of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram in Figure 3-2.
+- **Physical Infrastructure Resources:** This layer consists of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and the basic input output system (BIOS).
+- **NFVI Software:** This layer consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
+- **Virtual Infrastructure Resources:** This layer represents all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
+- **Workloads (VNFs/CNFs):** This layer consists of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram in Figure 3-2.
 
 The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
 
 <p align="center"><img src="../figures/figure_3.2_Virtual_Infra_Resources.png" alt="virtual_resources" Title="Virtual Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
 
-- Tenants: represent an independently manageable logical pool of compute, storage and network resources
-- Compute resources: represent virtualised computes for workloads and Operating and other Systems as necessary
-- Storage resources: represent virtualised resources for persisting data
-- Network resources: represent virtual resources providing layer 2 and layer 3 connectivity
+- **Tenants:** represent an independently manageable logical pool of compute, storage and network resources
+- **Compute resources:** represent virtualised computes for workloads and Operating and other Systems as necessary
+- **Storage resources:** represent virtualised resources for persisting data
+- **Network resources:** represent virtual resources providing layer 2 and layer 3 connectivity
 
 The virtualised infrastructure resources related to these categories are listed below:
 
@@ -72,7 +72,7 @@ A network function virtualisation infrastructure needs to be capable of supporti
 | `networks`  | description of external networks required for inter-domain connectivity                                 |
 | `metadata`  | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 
-<p align="center"><b>Table 3.1:</b> Attributes of a tenant.</p>
+<p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
 
 ### Compute
 A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
@@ -87,7 +87,7 @@ A virtual machine or a container/pod belonging to a tenant capable of hosting th
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 | `metadata` | key/value pairs for selection of the appropriate redundancy domain |
 
-<p align="center"><b>Table 3.2:</b> Attributes of compute resources.</p>
+<p align="center"><b>Table 3-2:</b> Attributes of compute resources.</p>
 
 ### Storage
 A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host. **Example**: an OpenStack cinder volume.
@@ -100,7 +100,7 @@ A block device of a certain size for persisting information which can be created
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 | `metadata` | key/value pairs for selection of the appropriate redundancy domain |
 
-<p align="center"><b>Table 3.3:</b> Attributes of storage resources.</p>
+<p align="center"><b>Table 3-3:</b> Attributes of storage resources.</p>
 
 _**Comments**: we need to be more specific regarding acceleration and metadata._
 
@@ -113,7 +113,7 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 | `subnet` | network address of the subnet |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 
-<p align="center"><b>Table 3.4:</b> Attributes of network resources.</p>
+<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
 
 <a name="expint"></a>
 ## 3.2	Exposed vs Internal
@@ -125,7 +125,7 @@ The following pertains to the context of NFVI Capabilities, Metrics and Constrai
 <b>Internal:</b> Effectively the opposite of Exposed; objects Internal to the NFVI, which are exclusively available for use by the NFVI and components within the NFVI control plane.
 
 <p align="center"><img src="../figures/Sect_3-2_Exposed_vs_Internal_Diagram_v2.jpg" alt="Exposed vs. Internal Scope" title="Exposed vs. Internal Scope" width="65%"/></p>
-<p align="center"><b>Figure 3-3:</b>Exposed vs. Internal Scope</p>
+<p align="center"><b>Figure 3-3:</b> Exposed vs. Internal Scope</p>
 
 As illustrated in the figure above, objects designated as "Internal" are only visible within the area inside the blue oval (the NFVI), and only when the entity accessing the object has the appropriate permissions. Whereas objects designated as "Exposed" are potentially visible from both the area within the green oval (the Workload), as well as from within the NFVI, again provided the entity accessing the object has appropriate permissions.
 
@@ -136,7 +136,7 @@ Note: The figure above indicates the areas from where the objects are <i>visible
 
 <a name="3.3.1"></a>
 ### 3.3.1	Exposed NFVI capabilities
-This section covers a list of explicit NFVI capabilities and metrics that define an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
+This section describes a set of explicit NFVI capabilities and metrics that define an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
 
 > _**Note**: 	It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
@@ -216,7 +216,6 @@ The intent of those metrics is to be well known to VNFs.
 | e.nfvi.per.met.003 | External (persistent) storage IO | iops | Range (min, max) per VNF-C |
 | e.nfvi.per.met.004 | External (persistent) storage throughput | MB/s | Range (min, max) per VNF-C |
 
-[COMMENT - Xavier Grall, Orange: the mapping table is removed since there are reference values that depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
 
 The following shows performance metrics per VNF-C, vNIC or vCPU.
 
@@ -230,7 +229,7 @@ The following shows performance metrics per VNF-C, vNIC or vCPU.
 | e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNF-C |
 | e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU             |
 
-<p align="center"><b>Table 3-xx:</b> Exposed performance metrics of NFVI.</p>
+<p align="center"><b>Table 3-11:</b> Exposed performance metrics of NFVI.</p>
 
 #### 3.3.2.2	Exposed resource management metrics
 
@@ -250,11 +249,11 @@ The following table shows resource management metrics as aligned with ETSI GR NF
 | e.nfvi.rmt.met.008 | Time to create virtual router   | second |                  |
 | e.nfvi.rmt.met.009 | Time to create external storage | second |                  |
 
-<p align="center"><b>Table 3-xx:</b> Exposed resource management metrics of NFVI.</p>
+<p align="center"><b>Table 3-12:</b> Exposed resource management metrics of NFVI.</p>
 
 <a name="3.4"></a>
 ## 3.4	Internal NFVI capabilities metrics, and constraints
-This section covers a list of implicit NFVI capabilities and metrics that define the interior of   NFVI. These capabilities and metrics determines how NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will have a big impact on the overall performance and capabilities of a given NFVI solution.
+This section covers a list of implicit NFVI capabilities and metrics that define the interior of the NFVI. These capabilities and metrics determine how the NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will have a big impact on the overall performance and capabilities of a given NFVI solution.
 
 >_**Note**: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
@@ -265,20 +264,29 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|---------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.res.cap.001 | Number of vCPU cores consumed by NFVI software in a single compute nodes. | % (of total available) | This indicates the number of vCPU cores consumed (wasted) by NFVI components (including host OS) in a compute node. |
-| i.nfvi.res.cap.002 | Amount of memory consumed by NFVI software in a single compute nodes. | % (of total available) | This indicates the amount of memory consumed (wasted) by NFVI components (including host OS) in a compute node. |
-
+| i.nfvi.res.cap.001 | Percentage of vCPU cores consumed by NFVI overhead in a compute node. | % (of total available) | Indicates the percentage of vCPU cores consumed (wasted) by NFVI components (including host OS) in a compute node. |
+| i.nfvi.res.cap.002 | Percentage of memory consumed by NFVI overhead in a compute node. | % (of total available) | Indicates the percentage of memory consumed (wasted) by NFVI components (including host OS) in a compute node. |
 <p align="center"><b>Table 3-13:</b> Internal resource capabilities of NFVI.</p>
 
+<!--
+/* MXS 13/7/2019 - Mapping table 3-14 is being commented out. If someone can provide supporting details,
+   we can put it back. Details should include assumptions (e.g., is it SRIOV, OvS or what?), 
+   citable references, an explanation of what we're mapping and why (#s represent min? max? anticipated?, etc.),
+   and a detailed basis for the values, including an explanation for how come the numbers are identical for both
+   cores and ram. Thanks, -Mark */
+//
 | Ref | B Instance | N Instance | C Instance |
 |--------------------|--------------------------|--------------------------|--------------------------|
 | `i.nfvi.res.cap.001` | 5-10% | 10-20% | 15-25% |
 | `i.nfvi.res.cap.002` | 5-10% | 10-20% | 15-25% |
-
+//
 <p align="center"><b>Table 3-14:</b> Mapping of Internal resource capabilities to NFVI instance types.</p>
+-->
+
+<p align="left"><b>Table 3-14:</b> RESERVED</p>
 
 #### 3.4.1.2	Internal SLA capabilities
-Table 13 below shows SLA (Service Level Agreement) capabilities available by NFVI. These include capabilities required by VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNF-C.
+**Table 3-15** below shows SLA (Service Level Agreement) capabilities available by NFVI. These include capabilities required by VNFs as well as internal capabilities to NFVI. Application of these capabilities to a given workload is determined by its instance type (e.g. T-Shirt size).
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
@@ -310,7 +318,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 <p align="center"><b>Table 3-18:</b> Mapping of Internal performance optimisation capabilities to NFVI instance types.</p>
 
 #### 3.4.1.4	Internal monitoring capabilities
-**Table 3-19** shows possible monitoring capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by VNFs.
+**Table 3-19** shows possible monitoring capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by the workloads.
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -402,7 +410,7 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 <p align="center"><b>Table 3-24:</b> Mapping of Internal resource management metrics to NFVI instance types.</p>
 
 #### 3.4.2.2	Internal performance Metrics 
-**Table 3-26** shows performance metrics of NFVI. Some of these metrics are related to what VNFs sees from the infrastructure and some of them are internal to NFVI. These metrics are aligned with ETSI GS NFV TST-009 [2].
+**Table 3-25** shows performance metrics of NFVI. Some of these metrics are exposed by the infrastructure to the workloads, and some are internal to the NFVI. These metrics are aligned with ETSI GS NFV TST-009 [2].
 
 | Ref | NFVI metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|----------------|----------------------------------------------------------------------|
@@ -413,13 +421,17 @@ Table 13 below shows SLA (Service Level Agreement) capabilities available by NFV
 | i.nfvi.per.met.005 | ephemeral storage IO | iops | Range (min, max) |
 | i.nfvi.per.met.006 | ephemeral storage throughput | MB/s | Range (min, max) per VNF-C |
 
+<p align="center"><b>Table 3-25:</b> Internal resource management metrics.</p>
+
+<!-- 
 [COMMENT - Xavier Grall, Orange: section "3.4.2.3 Internal SLA metrics" is removed since it is redundant with network performance metrics]
-
+//
 [COMMENT - Xavier Grall, Orange: section "3.4.2.4 Internal scalability metrics" is removed since it is redundant with resource management metrics]
-
+--> 
 #### 3.4.2.1	Internal performance metrics 
+<!-- 
 [COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
-
+--> 
 The following table shows performance metrics per NFVI node.
 
 | Ref | NFVI metrics | Unit | Definition/Notes |
@@ -432,15 +444,17 @@ The following table shows performance metrics per NFVI node.
 | i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node max network throughput, normalized to the bit rate |
 | i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption during the node processing capacity measurement (i.nfvi.per.met.004), normalized to physical cores usable by VNF-C |
 
-<p align="center"><b>Table 3-xx:</b> Internal performance metrics of NFVI.</p>
+<p align="center"><b>Table 3-26:</b> Internal performance metrics of NFVI.</p>
 
 It should be noted that energy-related metrics must only be considered for NFVI software implementations benchmarking on a same NFVI hardware implementation (since energy consumption may be very different for a same processor model due to foundry process spread).
 
 #### 3.4.2.2	Internal availability/reliability metrics
 
 [COMMENT - Xavier Grall, Orange: the following table should be reviewed to only consider and probably detail the recovery-related metrics ; indeed, availability and MTBF metrics do not seem consistent with expected testbed measurement duration]
-
+<!--
 [COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on reference architecture and implementation]
+-->
+_**Comment**: MXS - 13/7/2019 To-do: This table needs to be reworked and clarified w/ clear explanations and assumptions stated._
 
 | Ref | NFVI metric | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
@@ -449,14 +463,6 @@ It should be noted that energy-related metrics must only be considered for NFVI 
 | i.nfvi.arl.met.003 | MTBF AZ | days | Mean Time between Failure for an   AZ |
 | i.nfvi.arl.met.004 | Recovery time | seconds |  |
 
-<p align="center"><b>Table 3-31:</b> Internal availability/reliability metrics of NFVI.</p>
+<p align="center"><b>Table 3-27:</b> Internal availability/reliability metrics of NFVI.</p>
 
-| Ref | B Instance | N Instance | C Instance |
-|--------------------|------------|------------|------------|
-| `i.nfvi.arl.met.001` |  |  |  |
-| `i.nfvi.arl.met.002` |  |  |  |
-| `i.nfvi.arl.met.003` |  |  |  |
-| `i.nfvi.arl.met.004` |  |  |  |
-
-<p align="center"><b>Table 3-32:</b> Mapping of Internal availability/reliability metrics to NFVI instance types.</p>
  
