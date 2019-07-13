@@ -20,11 +20,11 @@ The support of a variety of different workload types, each with different (somet
 This chapter defines a simplified host, host profile and related capabilities model associated with each of the different NFVI hardware profile and related capabilities; some of these profile and capability parameters are shown in **Figure 6-1**.
 
 <p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles_v2.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
-<p align="center"><b>Figure 6-1:</b> Reference NFVI hardware profiles and host associated capabilities.</p>
+<p align="center"><b>Figure 6-1:</b> Reference NFVI hardware profiles and host associated capabilities (examples).</p>
 
 <a name="6.1"></a>
 ## 6.1	Hardware Profile and Capabilities Model
-The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be utilized in the reference architecture to define different hardware profiles.
+The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be utilized in the reference architecture to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources. Please note that in this chapter we shall not list all of the EPA-related configuration parameters.
 
 A software flavour series (see Chapters 4 and 5) defines the characteristics of Virtual Machines (VMs or vServers) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between software flavour series and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may utilize different naming standards for their host profiles. 
 
@@ -52,6 +52,10 @@ The host profile and capabilities include:
 1. **CPU Pinning**: vCPU is pinned to a physical core and dedicated to the requesting VM. Configured in VIM and Hypervisor.
 1. **Huge Pages**: By default, CPUs allocate RAM in 4K chunks. Hugepages can be enabled to allocate in larger Chunks (such as 2MB, 1GB). This helps improve performance in some cases. Configured in the Operating System.
 1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV. 
+1. **DPDK (Data Plane Development Kit)**: Accelerated virtual switch using Data Plan Development Kit (DPDK)
+1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
+1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT
+1. **Security features**: such as TRusted Platform Module (TPM) 
 
 The following model, **Figure 6-3**, depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled. 
 
