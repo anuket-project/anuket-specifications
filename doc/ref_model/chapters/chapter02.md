@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 2	VNF requirements & Analysis
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 VNFs collateral (Sample).](#collateral)

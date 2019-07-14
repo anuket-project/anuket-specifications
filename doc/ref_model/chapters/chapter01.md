@@ -3,22 +3,22 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [1.1 Overview.](#overview)
-* [1.2 Problem Statement.](#problemstatement)
+* [1.1 Overview.](#1.1)
+* [1.2 Problem Statement.](#1.2)
 * [1.3 Terminology.](#1.3)
   * [1.3.1 Software layers terminology.](#1.3.1)
   * [1.3.2 Hardware layers terminology.](#1.3.2)
   * [1.3.3 Operational and administrative terminology.](#1.3.3)
   * [1.3.4 Other terminology.](#1.3.4)
 * [1.4 Principles.](#1.4)
-* [1.5 Scope.](#scope)
-* [1.6 Relations to other industry projects.](#relation)
-* [1.7 How this document works.](#docu)
-* [1.8 What this document is not covering.](#notcovering)
-* [1.9 Bogo-Meter.](#bogometer)
-* [1.10 Roadmap.](#roadmap)
+* [1.5 Scope.](#1.5)
+* [1.6 Relations to other industry projects.](#1.6)
+* [1.7 How this document works.](#1.7)
+* [1.8 What this document is not covering.](#1.8)
+* [1.9 Bogo-Meter.](#1.9)
+* [1.10 Roadmap.](#1.10)
 
-<a name="overview"></a>
+<a name="1.1"></a>
 ## 1.1 Overview
 The main concept of NFV (Network Function Virtualization) is the ability to use general purpose computer hardware and platforms that run multiple VNFs (Virtualised Network Functions) and hence achieving the desired CapEx and OpEx savings. However, one of big challenges NFV is facing with VNF vendors is that vendors, while building or designing their virtualized services (whether it's VoLTE, EPC, or enterprise services like SD-WAN (Software Defined Wide Area Network)), must bring their own set of infrastructure requirements and custom design parameters. This attitude from vendors triggered the creation of various vendor/function specific silos which are incompatible with each other and have different operating models. In addition, this makes the onboarding and certification processes of VNFs (coming from different vendors) hard to automate and standardise.
  
@@ -39,7 +39,7 @@ The benefits of this approach are:
 - Better utilization
   - Mapping VNFs to flavours which are properly mapped to IaaS will bring better utilization, than current VNFs expressing variety of instance types as their needs on IaaS.
 
-<a name="problemstatement"></a>
+<a name="1.2"></a>
 ## 1.2	Problem Statement
 Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF Challenges - Identified Long-Poles
 
@@ -125,14 +125,14 @@ This section specifies the principles of infrastructure abstraction and profilin
    - NFVI resources are configured on behalf of VNFs through standard and open APIs.
    - NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
 1.	VNFs should be modular and utilise minimum resources. 
-1. NFVI shall support pre-defined and parameterised T-Shirt sizes.
+1. NFVI shall support pre-defined and parameterized T-Shirt sizes.
    - T-Shirt sizes will evolve with time.
 1.	NFVI provides certain resources, capabilities and features and vApps should only consume these resources, capabilities and features.
 1. VNFs that are designed to take advantage of NFVI accelerations should still be able to run without these accelerations with potential performance impacts.
 1. An objective of CNTT is to have a single, overarching Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
 
   - **Principle #1 – Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
-    - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don’t interfere with each other
+    - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
     - Focus on the commonalities of the features over the perceived differences.  Seek an approach that allows small differences to be handled at either the low level design or implementation stage. For example, assume the use of existing common APIs over new ones.
  
   - **Principle #2 – Create an additional Architecture only when incompatible elements are unavoidable:** 
@@ -141,10 +141,10 @@ This section specifies the principles of infrastructure abstraction and profilin
    *Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation. 
 
 
-<a name="scope"></a>
+<a name="1.5"></a>
 ## 1.5	Scope
 
-There are three level of documents needed to fulfill the CNTT vision. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**. 
+There are three level of documents needed to fulfil the CNTT vision. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**. 
 
 <p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
@@ -153,7 +153,7 @@ There are three level of documents needed to fulfill the CNTT vision. They are, 
 - **Reference Architecture**: High level NFVI system components and their interactions to deliver on the Reference Model goals. It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.
 - **Reference Implementation**: Focuses on the design and implementation of a NFVI Reference Architecture. Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
 
-This document foucuses on the **Reference Model**. **Figure 1-5** below highlights its scope in more details.
+This document focuses on the **Reference Model**. **Figure 1-5** below highlights its scope in more details.
 
 <p align="center"><img src="../figures/ch01_scope.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 1-5:</b> Scope of Reference Model</p>
@@ -169,7 +169,7 @@ This document specifies:
   - **Certification programs**: Define the requirement for certification programs for both VNFs and NFVI.
   - **Test framework**:  Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles. Part of the framework is also developing a reference implementation of the defined profiles (with the defined configurations0 to be used as a reference for compliance, certification, and verification of NFVI and VNFs.
 
-<a name="relation"></a>
+<a name="1.6"></a>
 ## 1.6	Relations to other industry projects 
 (clarify ETSI discussion re: what part of ETSI NFVi arch)
 Software Stack Model (Abstracted)
@@ -182,22 +182,22 @@ A mapping of the functional blocks considered in that document to that NFV archi
 
 Following ETSI model, **Figure 1-6**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in Chapter 7 "API & Interfaces".
 
-<a name="docu"></a>
+<a name="1.7"></a>
 ## 1.7	How this document works
 How to engage with it 
 How the model links to reference
 
-<a name="notcovering"></a>
+<a name="1.8"></a>
 ## 1.8	What this document is not covering 
 Separate document w/labels/artifacts
 Not part of model but will be applicable to architecture 
 
-<a name="bogometer"></a>
+<a name="1.9"></a>
 ## 1.9	Bogo-Meter
-A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indicates the completeness and maturity each chapter’s content, at a glance.
+A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indicates the completeness and maturity each chapter's content, at a glance.
 
-<a name="roadmap"></a>
+<a name="1.10"></a>
 ## 1.10	Roadmap
-What’s next in further releases/what’s the backlog and priority roadmap
+what's next in further releases/what's the backlog and priority roadmap
 
 

@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 6	Reference NFVI HW profiles and configurations
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Hardware Profile Model.](#6.1)

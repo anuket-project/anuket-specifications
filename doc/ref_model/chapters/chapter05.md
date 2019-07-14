@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 5	Reference NFVI SW profiles and configurations
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 NFVI SW profile description.](#5.1)
