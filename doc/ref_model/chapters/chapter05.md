@@ -43,10 +43,10 @@ The following sections detail the NFVI SW profile features per type of virtual r
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.com.cfg.001 | Support of flavours | Flavours | Support of compute Flavours defined in Compute Flavour's catalogue.|
 | nfvi.com.cfg.002 | CPU partionning  | Value | CPU dedicated to the host and CPU dedicated to VNFs  |
-| nfvi.com.cfg.003 | CPU allocation ratio  | Value |  |
+| nfvi.com.cfg.003 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
 | nfvi.com.cfg.004 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
-| nfvi.com.cfg.005 | CPU pinning capability  | Yes/No |  |
-| nfvi.com.cfg.006 | Huge Pages  | Yes/No |  |
+| nfvi.com.cfg.005 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
+| nfvi.com.cfg.006 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
 
@@ -87,9 +87,9 @@ The following sections detail the NFVI SW profile features per type of virtual r
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.net.cfg.001 | vNIC interface | IO virtualisation | e.g. virtio1.1, i40evf (Intel driver for VF SR-IOV). |
 | nfvi.net.cfg.002 | Overlay protocol | Protocols | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. |
-| nfvi.net.cfg.003 | NAT |  Yes/No |  |
-| nfvi.net.cfg.004 | Security Group | Yes/No  |  |
-| nfvi.net.cfg.005 | SFC support |Yes/No   |  |  
+| nfvi.net.cfg.003 | NAT |  Yes/No |  Support of Network Address Translation |
+| nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
+| nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |  
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
 | nfvi.net.cfg.007 | Horizontal scaling | Yes/No  | The VNF cluster must be able to scale horizontally and to leverage technologies such as ECMP to enable scale-outs/scale-ins, privileging Active-Active HA models, even though this may require some level of application re-design to cope with the need of sharing state between VNF instances |
 
