@@ -3,13 +3,10 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [2.1 Introduction.](#2.1)
-* [2.2 VNFs collateral (Sample).](#2.2)
-* [2.3 Analysis.](#2.3)
-* [2.4 NFVI Profiles.](#2.4)
+* [2.1 VNFs collateral (Sample).](#2.1)
+* [2.2 Analysis.](#2.2)
+* [2.3 NFVI Profiles.](#2.3)
 
-<a name="2.1"></a>
-# 2.1 Introduction
 The NFV Infrastructure (NFVI) is the totality of all hardware and software components which build up the environment in which VNFs/applications are deployed, managed and executed. It is, therefore, inevitable that different VNFs/applications would require different capabilities and have different expectations from it.
 
 One of the main targets of the CNTT is to define an agnostic NFVI and removes any dependencies between VNF/Virtual applications and the deployed Infrastructure (NFVI) and offer NFVI to VNFs/Applications in an abstracted way with defined capabilities and metrics.
@@ -20,8 +17,8 @@ Additionally, well defined NFVI is also needed for other type of workloads than 
 
 In this chapter we try to analyse various VNF types used in Telco and examine their requirements. We will also highlight some of the NFVI parameters needed to achieve the desired performance expected by various workloads.
 
-<a name="2.2"></a>
-# 2.2 VNFs collateral (Sample)
+<a name="2.1"></a>
+# 2.1 VNFs collateral (Sample)
 
 There are many ways of which above VNFs can be classified, for example: 
 
@@ -144,8 +141,8 @@ The following is a list of VNFs that are considered for analysis in this chapter
 
 -->
 
-<a name="2.3"></a>
-# 2.3 Analysis
+<a name="2.2"></a>
+# 2.2 Analysis
 
 Studying various requirements of VNFs helps understanding what expectation they will have from the underlying NFVI.
 
@@ -199,8 +196,8 @@ By trying to categorise VNF components into different categories based on the re
   - _**Example:** UDR_
 
 
-<a name="2.4"></a>
-# 2.4 NFVI Profiles
+<a name="2.3"></a>
+# 2.3 NFVI Profiles
 
 Based on the above analysis, following NFVI profiles are proposed (Also shown in **Figure 2-1** below)
 
