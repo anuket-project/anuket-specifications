@@ -127,7 +127,7 @@ This section specifies the principles of infrastructure abstraction and profilin
 1.	VNFs should be modular and utilise minimum resources. 
 1. NFVI shall support pre-defined and parameterised T-Shirt sizes.
    - T-Shirt sizes will evolve with time.
-1.	NFVI provides certain resources, capabilities and features and vApps should only consume these resources, capabilities and features.
+1.	NFVI provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
 1. VNFs that are designed to take advantage of NFVI accelerations should still be able to run without these accelerations with potential performance impacts.
 1. An objective of CNTT is to have a single, overarching Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
 
