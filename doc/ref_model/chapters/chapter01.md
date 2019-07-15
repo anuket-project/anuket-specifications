@@ -171,10 +171,8 @@ This document specifies:
 
 <a name="1.6"></a>
 ## 1.6	Relations to other industry projects 
-(clarify ETSI discussion re: what part of ETSI NFVi arch)
-Software Stack Model (Abstracted)
 
-Regarding the ETSI NFV architecture specified by ETSI GS NFV002 [link to ref: NFV Architectural framework v1.2.1], the scope of this document is only, but all, the NFVI part, including its external reference points.
+Regarding the ETSI NFV architecture specified by ETSI GS NFV002<!--[link to ref: NFV Architectural framework v1.2.1]-->, the scope of this document is only, but all, the NFVI part, including its external reference points.
 A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 1-6** below
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
