@@ -46,16 +46,17 @@ The host profile and capabilities include:
 1. **# of cores/CPU**: is the number of cores on each of the CPUs of the physical server.
 1. **RAM (GB)**: is the amount of RAM installed on the pysical server.
 1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
-<!--1. **CPU Oversubscription Ratio**: is based on the number of threads available. For example, on a 2CPU, 24-core host with SMT/HT, there are 96 vCPUs with 1:1 CPU Ratio and 192 vCPUs with 2:1 CPU Ratio. NOTE: While the oversubscription ratio is specified in the Virtual Infrastructure MAnager (VIM), once assigned it becomes part of the host personality and hence will be treated as part of the host profile and capabilities. -->
 1. **HT (Hyper Threading; technically, SMT: Simultaneous Multithreading)**: Enabled on all physical servers. Gets 2 hyper threads per physical core. Always ON. Configured in the host (BIOS).
-1.**NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host (BIOS).
+1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host (BIOS).
+1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV. 
+1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
+1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
+1. **Security features**: such as TRusted Platform Module (TPM).
+
+<!--1. **CPU Oversubscription Ratio**: is based on the number of threads available. For example, on a 2CPU, 24-core host with SMT/HT, there are 96 vCPUs with 1:1 CPU Ratio and 192 vCPUs with 2:1 CPU Ratio. NOTE: While the oversubscription ratio is specified in the Virtual Infrastructure MAnager (VIM), once assigned it becomes part of the host personality and hence will be treated as part of the host profile and capabilities. -->
+<!--1. **DPDK (Data Plane Development Kit)**: Accelerated virtual switch using Data Plan Development Kit (DPDK) -->
 <!--1. **CPU Pinning**: vCPU is pinned to a physical core and dedicated to the requesting VM. Configured in VIM and Hypervisor.-->
 <!--1. **Huge Pages**: By default, CPUs allocate RAM in 4K chunks. Hugepages can be enabled to allocate in larger Chunks (such as 2MB, 1GB). This helps improve performance in some cases. Configured in the Operating System. -->
-1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV. 
-<!--1. **DPDK (Data Plane Development Kit)**: Accelerated virtual switch using Data Plan Development Kit (DPDK) -->
-1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
-1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT
-1. **Security features**: such as TRusted Platform Module (TPM) 
 
 The following model, **Figure 6-3**, depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled. 
 
