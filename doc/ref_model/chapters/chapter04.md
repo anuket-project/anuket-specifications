@@ -9,12 +9,15 @@
 * [4.3 Storage Extensions.](#4.3)
   * [4.3.1 Available storage extensions.](#4.3.1)
 * [4.4 Instance types.](#4.4)
-  * [4.4.1 Network Interface Options.](#4.4.1)
-  * [4.4.2 B Instances (Basic).](#4.4.2)
-  * [4.4.3 N Instances (Network Intensive).](#4.4.3)
-  * [4.4.4 C Instances (Compute Intensive).](#4.4.4)
-* [4.5 One stop shop.](#4.5)
-  * [4.5.1 Naming convention.](#4.5.1)
+  * [4.4.1 B Instances (Basic).](#4.4.1)
+  * [4.4.2 N Instances (Network Intensive).](#4.4.2)
+  * [4.4.3 C Instances (Compute Intensive).](#4.4.3)
+  * [4.4.4 Network Interface Options.](#4.4.4)
+* [4.5 Instance capabilities and metrics.](#4.5)
+  * [4.5.1 Instance capabilities.](#4.5.1)
+  * [4.5.2 Instance metrics.](#4.5.2)
+* [4.6 One stop shop.](#4.6)
+  * [4.6.1 Naming convention.](#4.6.1)
 
 Infrastructure exposes sets of capabilities, metrics, compute flavours, interface options, storage extensions, and acceleration capabilities to VNFs. Those sets are offered to VNFs in form of instance types with their corresponding options and extensions.
 
@@ -113,7 +116,43 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 ## 4.4 Instance types
 
 <a name="4.4.1"></a>
-### 4.4.1 Network Interface Options
+### 4.4.1	B Instances (Basic)
+This is the basic type of infrastructure profiles and is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
+
+<a name="4.4.2"></a>
+### 4.4.2	N Instances (Network Intensive)
+This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
+
+#### 4.4.2.1	Network Acceleration Extensions
+N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized. Those interfaces are aligned with ETSI NFV IFA 002 [4].
+
+| .conf | Interface type | Description |
+|------------|----------------|-----------------------------------------|
+| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
+| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
+
+<p align="center"><b>Table 4-7:</b> Acceleration extensions for N instance type.</p>
+
+> _*Need to work with relevant open source communities to create missing interfaces._
+
+<a name="4.4.3"></a>
+### 4.4.3	C Instances (Compute Intensive)
+This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
+
+#### 4.4.3.1	Compute acceleration extensions
+C instance types can come with compute acceleration extensions to assist VNF/applications offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
+
+| .conf | Interface type | Description |
+|------------|----------------|-----------------------------------------|
+| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
+| .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
+
+<p align="center"><b>Table 4-8:</b> Acceleration extensions for C instance type.</p>
+
+> _*Need to work with relevant open source communities to create missing interfaces._
+
+<a name="4.4.4"></a>
+### 4.4.4 Network Interface Options
 **Table 4-6** below shows the various network interfaces options (from Table 4-4) are available for which profile type (Up to 6 interfaces are possible).
 
 | Virtual interface option* | Basic Type | Network Intensive Type | Compute Intensive Type
@@ -128,47 +167,54 @@ n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
-<a name="4.4.2"></a>
-### 4.4.2	B Instances (Basic)
-This is the basic type of infrastructure profiles and is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
-
-<a name="4.4.3"></a>
-### 4.4.3	N Instances (Network Intensive)
-This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
-
-#### 4.4.3.1	Network Acceleration Extensions
-N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized. Those interfaces are aligned with ETSI NFV IFA 002 [4].
-
-| .conf | Interface type | Description |
-|------------|----------------|-----------------------------------------|
-| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
-| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
-
-<p align="center"><b>Table 4-7:</b> Acceleration extensions for N instance type.</p>
-
-> _*Need to work with relevant open source communities to create missing interfaces._
-
-<a name="4.4.4"></a>
-### 4.4.4	C Instances (Compute Intensive)
-This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
-
-#### 4.4.4.1	Compute acceleration extensions
-C instance types can come with compute acceleration extensions to assist VNF/applications offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
-
-| .conf | Interface type | Description |
-|------------|----------------|-----------------------------------------|
-| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
-| .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
-
-<p align="center"><b>Table 4-8:</b> Acceleration extensions for C instance type.</p>
-
-> _*Need to work with relevant open source communities to create missing interfaces._
-
 <a name="4.5"></a>
-## 4.5	One stop shop
+
+## 4.5 Instance capabilities and metrics.
 
 <a name="4.5.1"></a>
-### 4.5.1	Naming convention
+
+### 4.5.1 Instance capabilities.
+| Ref | B Instance | N Instance | C Instance | Notes |
+|----------------------|----------------------------|----------------------------|----------------------------|-------|
+| `e.nfvi.res.cap.001` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> | Exposed resource capabilities as per [**Table 3-5**.](chapter03.md/#Table3.5)|
+| `e.nfvi.res.cap.002` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> |  |
+| `e.nfvi.res.cap.003` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> |  |
+| `e.nfvi.res.cap.004` | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |  |
+| `e.nfvi.res.cap.005` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |  |
+| `e.nfvi.per.cap.001` | No | Yes | Yes | Exposed performance capabilities as per [**Table 3-6**.](chapter03.md/#Table3.6) |
+| `e.nfvi.per.cap.002` | No | Yes | No | |
+| `e.nfvi.per.cap.003` | No | Yes (if offered) | No | |
+| `e.nfvi.per.cap.004` | No | Yes (if offered) | No | |
+| `e.nfvi.per.cap.005` | No | No | Yes (if offered) | |
+| `e.nfvi.per.cap.006` | No | No | Yes (if offered) | |
+| `e.nfvi.mon.cap.001` | No | Yes | No | Exposed monitoring capabilities as per [**Table 3-7**.](chapter03.md/#Table3.7) |
+| `i.nfvi.sla.cap.001` | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 3-10**.](chapter03.md/#Table3.10) |
+| `i.nfvi.sla.cap.002` | No | Yes | Yes | |
+| `i.nfvi.per.cap.001` | No | Yes | No | Internal performance capabilities as per [**Table 3-11**.](chapter03.md/#Table3.11) |
+| `i.nfvi.mon.cap.001` | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 3-12**.](chapter03.md/#Table3.12) |
+| `i.nfvi.mon.cap.002` | Yes | Yes | Yes | |
+| `i.nfvi.mon.cap.003` | Yes | Yes | Yes | |
+| `i.nfvi.mon.cap.004` | Yes | Yes | Yes | |
+| `i.nfvi.mon.cap.005` | Yes | No | Yes | |
+| `i.nfvi.mon.cap.006` | Yes | No | Yes | |
+| `i.nfvi.mon.cap.007` | Yes | No | Yes | |
+| `i.nfvi.sec.cap.001` | Yes | Yes | Yes | Internal security capabilities as per [**Table 3-13**.](chapter03.md/#Table3.13) |
+| `i.nfvi.sec.cap.002` | No | No | No | |
+| `i.nfvi.sec.cap.003` | Yes | No | No | |
+| `i.nfvi.sec.cap.004` | Yes | Yes | Yes | |
+
+<p align="center"><b>Table 3-6:</b> Mapping of NFVI capabilities to instance types.</p>
+<a name="4.5.2"></a>
+
+### 4.5.2 Instance metrics.
+
+_**Comment:** To be worked on._
+
+<a name="4.6"></a>
+## 4.6	One stop shop
+
+<a name="4.6.1"></a>
+### 4.6.1	Naming convention
 An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
 
 `B/N/C <I opt> . <flavour> . <S ext> . <A ext>`

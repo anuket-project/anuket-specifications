@@ -7,9 +7,15 @@
 * [2.2 Analysis of requirements.](#analysis)
 * [2.3 NFVI Profiles.](#profiles)
 
-The NFV Infrastructure (NFVI) is the totality of all hardware and software components which build up the environment in which VNFs are deployed, managed and executed.
+The NFV Infrastructure (NFVI) is the totality of all hardware and software components which build up the environment in which VNFs are deployed, managed and executed. It is inevitable that different VNFs require different capabilities from the underlying infrastructure.
 
-It is inevitable that different VNFs require different capabilities from the underlying infrastructure and therefore metrics that define those capabilities are needed.
+One of the targets of the CNTT is to define an agnostic NFVI and removes dependencies between VNF/Virtual applications and the deployed Infrastructure (NFVI) and offer NFVI to VNFs/Applications in an abstracted way with defined capabilities and metrics.
+
+This means operators will be able to host their Telco Workload (VNF) with different traffic types, behaviour and from any vendor on a unified consistent infrastructure.
+
+Additionally, well defined NFVI is also needed for  other type of workloads that NFVI such as IT workload, Machine learning, Artificial intelligence, etc. 
+
+In this chapter we try to analyse various VNF types used in Telco and examine they are different from those of IT. We also highlights some of the NFVI parameters needed to  achieve the desired performance expected by various workloads.
 
 <a name="collateral"></a>
 ## 2.1	VNFs collateral (Sample)
