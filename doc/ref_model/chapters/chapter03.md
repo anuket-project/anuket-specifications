@@ -146,7 +146,8 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 #### 3.3.1.1	Exposed resource capabilities
 **Table 3-5** below shows resource capabilities of NFVI. Those indicate resources offered to VNFs by NFVI.
 
-<a name="Table3.5"></a>
+<a name="Table3-5"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
 | e.nfvi.res.cap.001 | #vCPU cores | number | Min, Max number of vCPU cores that can be assigned to a single VNF-C |
@@ -160,7 +161,8 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 #### 3.3.1.2 Exposed performance optimisation capabilities
 **Table 3-6** shows possible performance optimisation capabilities that can be provided by NFVI. These indicate capabilities exposed to VNFs. Those capabilities need to be consumed by VNFs in a standard way.
 
-<a name="Table3.6"></a>
+<a name="Table3-6"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|--------------------------------------------|
 | e.nfvi.per.cap.001 | CPU pinning support | Yes/No | Determining if NFVI support CPU pinning |
@@ -175,7 +177,8 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 #### 3.3.1.3	Exposed monitoring capabilities
 **Table 3-9** shows possible monitoring capabilities available by NFVI for VNFs.
 
-<a name="Table3.7"></a>
+<a name="Table3-7"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
 | e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability for VNF-C to monitor their own L2-L7 data. |
@@ -190,7 +193,8 @@ The intent of those metrics is to be well known to VNFs.
 
 The following shows performance metrics per VNF-C, vNIC or vCPU.
 
-<a name="Table3.8"></a>
+<a name="Table3-8"></a>
+
 | Ref                | NFVI metric               | Unit                | Definition/Notes                                             |
 | ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
 | e.nfvi.per.met.001 | Network throughput        | bits/s or packets/s | Max throughput per vNIC (as aligned with ETSI GS NFV-TST 009 [2]) |
@@ -214,7 +218,8 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 #### 3.4.1.1	Internal resource capabilities
 **Table 3-13** shows resource capabilities of NFVI. These include capabilities offered to VNFs and resources consumed internally by NFVI.
 
-<a name="Table3.9"></a>
+<a name="Table3-9"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|---------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.res.cap.001 | Percentage of vCPU cores consumed by NFVI overhead in a compute node. | % (of total available) | Indicates the percentage of vCPU cores consumed (wasted) by NFVI components (including host OS) in a compute node. |
@@ -240,7 +245,8 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 #### 3.4.1.2	Internal SLA capabilities
 **Table 3-10** below shows SLA (Service Level Agreement) capabilities available by NFVI. These include capabilities required by VNFs as well as internal capabilities to NFVI. Application of these capabilities to a given workload is determined by its instance type (e.g. T-Shirt size).
 
-<a name="Table3.10"></a>
+<a name="Table3-10"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.sla.cap.001 | CPU overbooking | 1:N | This indicates the number of vCPU cores consumed (wasted) by NFVI components (including host OS) in a compute node. |
@@ -251,7 +257,8 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 #### 3.4.1.3	Internal performance optimisation capabilities
 **Table 3-11** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNF-C (VNF Component)
 
-<a name="Table3.11"></a>
+<a name="Table3-11"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|----------------------------------------|
 | i.nfvi.per.cap.001 | Huge page support | Yes/No | Determining if NFVI support huge pages |
@@ -261,7 +268,8 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 #### 3.4.1.4	Internal monitoring capabilities
 **Table 3-12** shows possible monitoring capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by the workloads.
 
-<a name="Table3.12"></a>
+<a name="Table3-12"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
@@ -276,7 +284,8 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 #### 3.4.1.5	Internal security capabilities
 
-<a name="Table3.13"></a>
+<a name="Table3-13"></a>
+
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------|--------|------------------------------------------------------------------|
 | i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation | Yes/No | Are VNF-C memories isolated from each other by hardware support? |
@@ -304,7 +313,8 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 The following table shows performance metrics per NFVI node.
 
-<a name="Table3.14"></a>
+<a name="Table3-14"></a>
+
 | Ref | NFVI metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|----------------|----------------------------------------------------------------------|
 | i.nfvi.per.met.001 | Network throughput | bits/s or packets/s | Max throughput per node (aligned with ETSI GS NFV-TST 009 [2]) |
@@ -328,7 +338,8 @@ _**Comment**: Xavier Grall, Orange: the following table should be reviewed to on
 -->
 _**Comment**: MXS - 13/7/2019 To-do: This table needs to be reworked and clarified w/ clear explanations and assumptions stated._
 
-<a name="Table3.15"></a>
+<a name="Table3-15"></a>
+
 | Ref | NFVI metric | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
 | i.nfvi.arl.met.001 | Availability | % |  |
@@ -355,7 +366,8 @@ _**Comment**: Rabi A: Still to be worked on._
 #### 3.5.2.1	 Resources management metrics 
 **Table 3-16** shows resource management metrics of VIM as aligned with ETSI GS NFV TST-012 [3].
 
-<a name="Table3.16"></a>
+<a name="Table3-16"></a>
+
 | Ref | VIM metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
 | vim.rmt.met.001 | Time to create VNF-C for a given VNF | Max ms |  |

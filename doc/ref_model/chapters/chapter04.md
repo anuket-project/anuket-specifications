@@ -176,29 +176,29 @@ n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 ### 4.5.1 Instance capabilities.
 | Ref | B Instance | N Instance | C Instance | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
-| `e.nfvi.res.cap.001` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> | Exposed resource capabilities as per [**Table 3-5**.](chapter03.md/#Table3.5)|
+| `e.nfvi.res.cap.001` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> | Exposed resource capabilities as per [**Table 3-5**.](chapter03.md/#Table3-5)|
 | `e.nfvi.res.cap.002` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> |  |
 | `e.nfvi.res.cap.003` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> |  |
 | `e.nfvi.res.cap.004` | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |  |
 | `e.nfvi.res.cap.005` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |  |
-| `e.nfvi.per.cap.001` | No | Yes | Yes | Exposed performance capabilities as per [**Table 3-6**.](chapter03.md/#Table3.6) |
+| `e.nfvi.per.cap.001` | No | Yes | Yes | Exposed performance capabilities as per [**Table 3-6**.](chapter03.md/#Table3-6) |
 | `e.nfvi.per.cap.002` | No | Yes | No | |
 | `e.nfvi.per.cap.003` | No | Yes (if offered) | No | |
 | `e.nfvi.per.cap.004` | No | Yes (if offered) | No | |
 | `e.nfvi.per.cap.005` | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.006` | No | No | Yes (if offered) | |
-| `e.nfvi.mon.cap.001` | No | Yes | No | Exposed monitoring capabilities as per [**Table 3-7**.](chapter03.md/#Table3.7) |
-| `i.nfvi.sla.cap.001` | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 3-10**.](chapter03.md/#Table3.10) |
+| `e.nfvi.mon.cap.001` | No | Yes | No | Exposed monitoring capabilities as per [**Table 3-7**.](chapter03.md/#Table3-7) |
+| `i.nfvi.sla.cap.001` | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 3-10**.](chapter03.md/#Table3-10) |
 | `i.nfvi.sla.cap.002` | No | Yes | Yes | |
-| `i.nfvi.per.cap.001` | No | Yes | No | Internal performance capabilities as per [**Table 3-11**.](chapter03.md/#Table3.11) |
-| `i.nfvi.mon.cap.001` | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 3-12**.](chapter03.md/#Table3.12) |
+| `i.nfvi.per.cap.001` | No | Yes | No | Internal performance capabilities as per [**Table 3-11**.](chapter03.md/#Table3-11) |
+| `i.nfvi.mon.cap.001` | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 3-12**.](chapter03.md/#Table3-12) |
 | `i.nfvi.mon.cap.002` | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.003` | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.004` | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.005` | Yes | No | Yes | |
 | `i.nfvi.mon.cap.006` | Yes | No | Yes | |
 | `i.nfvi.mon.cap.007` | Yes | No | Yes | |
-| `i.nfvi.sec.cap.001` | Yes | Yes | Yes | Internal security capabilities as per [**Table 3-13**.](chapter03.md/#Table3.13) |
+| `i.nfvi.sec.cap.001` | Yes | Yes | Yes | Internal security capabilities as per [**Table 3-13**.](chapter03.md/#Table3-13) |
 | `i.nfvi.sec.cap.002` | No | No | No | |
 | `i.nfvi.sec.cap.003` | Yes | No | No | |
 | `i.nfvi.sec.cap.004` | Yes | Yes | Yes | |
