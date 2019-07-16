@@ -1,4 +1,4 @@
-<< Back](../../ref_arch)
+[<< Back](../../ref_arch)
 
 # 6. Design, Build, Deployment, and Operate Guidelines
 
