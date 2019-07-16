@@ -356,6 +356,8 @@ _**Editor Note:** This table needs to be reworked and clarified w/ clear explana
 
 ## 3.5 VIM capabilities, metrics, and constraints.
 
+Editor Note: This Section is still to be worked on.
+
 <a name="3.5.1"></a>
 
 ### 3.5.1 VIM capabilities.
@@ -374,11 +376,11 @@ _**Editor Note:** This Section is still to be worked on._
 
 | Ref | VIM metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| vim.rmt.met.001 | Time to create VNF-C for a given VNF | Max ms |  |
-| vim.rmt.met.002 | Time to delete VNF-C of a given VNF | Max ms |  |
-| vim.rmt.met.003 | Time to start VNF-C of a given VNF | Max ms |  |
-| vim.rmt.met.004 | Time to stop VNF-C of a given VNF | Max ms |  |
-| vim.rmt.met.005 | Time to pause VNF-C of a given VNF | Max ms |  |
+| vim.rmt.met.001 | Time to create Virtual Compute for a given VNF | Max ms |  |
+| vim.rmt.met.002 | Time to delete Virtual Compute of a given VNF | Max ms |  |
+| vim.rmt.met.003 | Time to start Virtual Compute of a given VNF | Max ms |  |
+| vim.rmt.met.004 | Time to stop Virtual Compute of a given VNF | Max ms |  |
+| vim.rmt.met.005 | Time to pause Virtual Compute of a given VNF | Max ms |  |
 | vim.rmt.met.006 | Time to create internal virtual network | Max ms |  |
 | vim.rmt.met.007 | Time to delete internal virtual network | Max ms |  |
 | vim.rmt.met.008 | Time to update internal virtual network | Max ms |  |
