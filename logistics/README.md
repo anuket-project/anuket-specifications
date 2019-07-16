@@ -6,6 +6,7 @@
 <a name="meeeting_times"></a>
 ## Meeting times
 To be shared later.
+https://etherpad.opnfv.org/p/o9KvmtEPUx
 
 <a name="how_to_contribute"></a>
 ## How to contribute
