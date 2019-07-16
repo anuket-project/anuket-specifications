@@ -84,7 +84,7 @@ n100, n100D, n100T, n100Q, n100P, n100H	|1x 100, 2x 100, 3x 100, 4x 100, 5x 100,
 
 <a name="4.3"></a>
 ##  4.3 Storage Extensions
-Multiple non-ephemeral storage volumes can be attached to virtual computes (*replace with decided term*) for persistent data storage. Each of those volumes can be configured with the required performance catagories (*storage performance prfiles*).
+Multiple non-ephemeral storage volumes can be attached to virtual computes  for persistent data storage. Each of those volumes can be configured with the required performance category.
 
 .conf	|Read IO/s	|Write IO/s	Read |Throughput (MB/s)	|Write Throughput (MB/s)
 ---|---|---|---|---
@@ -96,7 +96,7 @@ Multiple non-ephemeral storage volumes can be attached to virtual computes (*rep
 
 <a name="4.3.1"></a>
 ### 4.3.1 Available storage extensions
-These are non-ephemeral storage extensions that can be provided to VNFs for persistent data storage. More than one storage extension can be provided to a single VNF-C. Add comment about CEPH distributed storage. (Potentially create new profile for it).
+These are non-ephemeral storage extensions that can be provided to VNFs for persistent data storage. More than one storage extension can be provided to a single VNF-C.
 
 | .conf | capacity | Read IOPS | Write IOPS | Read Throughput (MB/s) | Write Throughput (MB/s) |
 |----------|----------|------------|------------|------------------------|-------------------------|
@@ -117,14 +117,15 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 
 <a name="4.4.1"></a>
 ### 4.4.1	B Instances (Basic)
-This is the basic type of infrastructure profiles and is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
+This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
 
 <a name="4.4.2"></a>
 ### 4.4.2	N Instances (Network Intensive)
 This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
 
 #### 4.4.2.1	Network Acceleration Extensions
-N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized. Those interfaces are aligned with ETSI NFV IFA 002 [4].
+N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized. 
+>_Interface types are aligned with ETSI NFV IFA 002 [4]._
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
@@ -140,7 +141,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
 
 #### 4.4.3.1	Compute acceleration extensions
-C instance types can come with compute acceleration extensions to assist VNF/applications offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
+C instance types can come with compute acceleration extensions to assist VNFs/VAs offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
@@ -153,7 +154,7 @@ C instance types can come with compute acceleration extensions to assist VNF/app
 
 <a name="4.4.4"></a>
 ### 4.4.4 Network Interface Options
-**Table 4-6** below shows the various network interfaces options (from Table 4-4) are available for which profile type (Up to 6 interfaces are possible).
+**Table 4-6** below shows the various network interfaces options (from **Table 4-3**) are available for which profile type (Up to 6 interfaces are possible).
 
 | Virtual interface option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
