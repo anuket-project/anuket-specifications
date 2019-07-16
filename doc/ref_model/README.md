@@ -1,5 +1,5 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# Common NFVi for Telco Reference Model
+# Common NFVI for Telco Reference Model
 
 <p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>
 
@@ -14,7 +14,7 @@
 
 | Version | Date | Note
 | --- | --- | --- |
-| 1.1 | 16th July 2019 | First Release|
+| 1.0 | 16th July 2019 | First Release|
 
 
 ## Overall Status
