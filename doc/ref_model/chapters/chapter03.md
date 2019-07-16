@@ -387,8 +387,6 @@ _**Editor Note:** This Section is still to be worked on._
 | vim.rmt.met.009 | Time to create external virtual network | Max ms |  |
 | vim.rmt.met.010 | Time to delete external virtual network | Max ms |  |
 | vim.rmt.met.011 | Time to update external virtual   network | Max ms |  |
-| vim.rmt.met.012 | Time to create vSwitch | Max ms |  |
-| vim.rmt.met.013 | Time to create vRouter | Max ms |  |
 | vim.rmt.met.014 | Time to create external storage ready for use by VNF | Max ms |  |
 
 <p align="center"><b>Table 3-16:</b> Resource management metrics of VIM.</p>
