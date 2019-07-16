@@ -17,15 +17,15 @@
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of the workloads match the capabilities of the NFVI.
 
-The lack of a common understanding of which resources and corresponding capabilities a suitable NFVI should provide may lead to several issues which could negatively impact the time and cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure. For Example:
+The lack of a common understanding of which resources and corresponding capabilities a suitable NFVI should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure. For Example:
 
-- supporting any kind of workload specific requirements (e.g. regarding network acceleration or API access) might result in having to establish different silo NFVIs for each workload type.
-- synchronising the release cycles of a large set of different technologies will sooner or later lead to situations in which required upgrades cannot be applied easily due to incompatibilities.
+- Supporting any kind of workload specific requirements (e.g. regarding network acceleration or API access) might result in having to establish different silo of NFVIs for each workload type.
+- Synchronising the release cycles of a large set of different technologies will sooner or later lead to situations in which required upgrades cannot be applied easily due to incompatibilities.
 
-The abstraction model presented in this chapter specifies a common set of virtual infrastructure resources which a NFVI will need to provide to be able to host most of the typical VNF/CNF workloads required by the operator community.
+The abstraction model presented in this chapter specifies a common set of virtual infrastructure resources which NFVI will need to provide to be able to host most of the typical VNF/CNF workloads required by the operator community.
 
-Although a couple of explicit and implicit abstraction models (e.g. in the context of ETSI/NFV) are already available, they fall short when addressing the following design principles:
--	**Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) an NFVI needs to provide for hosting Telco VNF workloads
+Although a couple of explicit and implicit abstraction models (e.g. in the context of ETSI NFV) are already available, they fall short when addressing the following design principles:
+-	**Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) an NFVI needs to provide for hosting Telco workloads
 -	**Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
 -	**Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
 -	**Declarative:** the model should allow for a declarative description of the required NFVI capabilities for on-boarding and maintaining workloads
@@ -33,7 +33,7 @@ Although a couple of explicit and implicit abstraction models (e.g. in the conte
 -	**Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
 -	**Aligned:** the model should clearly highlight the dependencies between the elements to allow for a well-defined and simplified synchronisation of independent automation tasks.
 
-To summarise: the abstraction model presented in this document will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and workload related responsibilities.
+_**To summarise:** the abstraction model presented in this document will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and workload related responsibilities._
 
 <a name="3.1"></a>
 ## 3.1	Model
@@ -47,7 +47,7 @@ The functionalities of each layer are as follows:
 - **Physical Infrastructure Resources:** This layer consists of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and the basic input output system (BIOS).
 - **NFVI Software:** This layer consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
 - **Virtual Infrastructure Resources:** This layer represents all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
-- **Workloads (VNFs/CNFs):** This layer consists of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram in Figure 3-2.
+- **Workloads (VNFs/CNFs):** This layer consists of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram in **Figure 3-2**.
 
 The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
 
@@ -63,7 +63,7 @@ The virtualised infrastructure resources related to these categories are listed 
 
 ### Tenant
 
-A network function virtualisation infrastructure (NFVI) needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. **Example**: a tenant within an OpenStack environment or a Kubernetes cluster.
+A network function virtualisation infrastructure (NFVI) needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 | Attribute | Description                                                                                             |
 |-----------|---------------------------------------------------------------------------------------------------------|
@@ -78,7 +78,7 @@ A network function virtualisation infrastructure (NFVI) needs to be capable of s
 <p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
 
 ### Compute
-A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
+A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
 | Attribute | Description |
 | --- | --- |
@@ -93,7 +93,7 @@ A virtual machine or a container/pod belonging to a tenant capable of hosting th
 <p align="center"><b>Table 3-2:</b> Attributes of compute resources.</p>
 
 ### Storage
-A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host. **Example**: an OpenStack cinder volume.
+A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host. _**Example**: an OpenStack cinder volume._
 
 | Attribute | Description |
 | --- | --- |
@@ -108,7 +108,7 @@ A block device of a certain size for persisting information which can be created
 _**Comments**: we need to be more specific regarding acceleration and metadata._
 
 ### Network
-A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. **Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV.
+A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
 | Attribute | Description |
 | --- | --- |
