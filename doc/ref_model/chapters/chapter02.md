@@ -3,22 +3,22 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [2.1 VNFs collateral (Sample).](#2.1)
+* [2.1 VNFs collateral.](#2.1)
 * [2.2 Analysis.](#2.2)
 * [2.3 NFVI Profiles.](#2.3)
 
-The NFV Infrastructure (NFVI) is the totality of all hardware and software components which build up the environment in which VNFs/applications are deployed, managed and executed. It is, therefore, inevitable that different VNFs/applications would require different capabilities and have different expectations from it.
+The NFV Infrastructure (NFVI) is the totality of all hardware and software components which build up the environment in which VNFs/VAs are deployed, managed and executed. It is, therefore, inevitable that different VNFs/VAs would require different capabilities and have different expectations from it.
 
-One of the main targets of the CNTT is to define an agnostic NFVI and removes any dependencies between VNF/Virtual applications and the deployed Infrastructure (NFVI) and offer NFVI to VNFs/Applications in an abstracted way with defined capabilities and metrics.
+One of the main targets of the CNTT is to define an agnostic NFVI and removes any dependencies between VNFs/VAs and the deployed Infrastructure (NFVI) and offer NFVI to VNFs/VAs in an abstracted way with defined capabilities and metrics.
 
-This means operators will be able to host their Telco Workload (VNF) with different traffic types, behaviour and from any vendor on a unified consistent Infrastructure.
+This means, operators will be able to host their Telco Workload (VNF) with different traffic types, behaviour and from any vendor on a unified consistent Infrastructure.
 
-Additionally, well defined NFVI is also needed for other type of workloads than NFVI such as IT, Machine learning, Artificial intelligence, etc. 
+Additionally, a well defined NFVI is also needed for other type of workloads than NFV such as IT, Machine learning, Artificial Intelligence, etc. 
 
-In this chapter we try to analyse various VNF types used in Telco and examine their requirements. We will also highlight some of the NFVI parameters needed to achieve the desired performance expected by various workloads.
+In this chapter we try to analyse various VNF types used in telco and examine their requirements. We will also highlight some of the NFVI parameters needed to achieve the desired performance expected by various workloads.
 
 <a name="2.1"></a>
-# 2.1 VNFs collateral (Sample)
+# 2.1 VNFs collateral
 
 There are many ways that VNFs can be classified, for example: 
 
@@ -33,7 +33,7 @@ There are many ways that VNFs can be classified, for example:
     - VASs : vSMS-C ,  vCDN , vCGNAT 
 -	**By Technology:** (2G, 3G, 4G, 5G, Fixed...)  
 
-Below is a list of Network Functions that covers almost _**95%**_ of the Telco workload (and that most likely to be virtualized/moved to cloud). They don't follow any specific categorisation.
+Below is a list of Network Functions that covers almost _**95%**_ of the Telco workload (and the most likely to be virtualized/moved to cloud). They don't follow any specific categorisation.
 
 _**Note:** definition of some of the VNFs below is based on 3GPP definitions._
 
@@ -104,9 +104,9 @@ _**Note:** definition of some of the VNFs below is based on 3GPP definitions._
     - UDR: The Unified Data Repository (UDR
     - PCF: The Policy Control Function (PCF)
     - AUSF: The Authentication Server Function (AUSF)
-    - AF: The Application Function (AF) interacts
+    - AF: The Application Function (AF) interacts.
 
-_**Note:** for 5G Service-based Architecture (SBA) all the function is stateless (store all sessions/ state on unified data repository UDR)_
+    >_**Note:** for 5G Service-based Architecture (SBA) all Network Functions are stateless (store all sessions/ state on unified data repository UDR)_
 
 <!--
 The following is a list of VNFs that are considered for analysis in this chapter:
@@ -143,13 +143,11 @@ The following is a list of VNFs that are considered for analysis in this chapter
 <a name="2.2"></a>
 # 2.2 Analysis
 
-Studying various requirements of VNFs helps understanding what expectation they will have from the underlying NFVI.
-
-Following are _some_ of the requirement you might expect by various workloads:
+Studying various requirements of VNFs helps understanding what expectation they will have from the underlying NFVI. Following are _some_ of the requirement you might expect by various workloads:
 
 - Number of VNFC
 - Networking between VNFC
-- Intel Enhanced Platform awareness (EPA)
+- Enhanced Platform awareness (EPA)
   - CPU Pinning 
   - SR-IOV
   - Affinity / Anti-affinity rules
@@ -211,6 +209,6 @@ Based on the above analysis, following NFVI profiles are proposed (Also shown in
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-In the next chapter, Infrastructure profiles catalogue, those infrastructure profiles will be offered to VNFs in form of different instance types: B (Basic), N (Network intensive), and C (Compute intensive) respectively.
+On **Chapter 4** later in the document, those infrastructure profiles will be offered to VNFs in form of instance types: **B (Basic)**, **N (Network intensive)**, and **C (Compute intensive)** respectively.
 
 
