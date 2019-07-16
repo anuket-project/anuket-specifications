@@ -20,12 +20,12 @@ In this chapter we try to analyse various VNF types used in Telco and examine th
 <a name="2.1"></a>
 # 2.1 VNFs collateral (Sample)
 
-There are many ways of which above VNFs can be classified, for example: 
+There are many ways that VNFs can be classified, for example: 
 
 - **By Traffic Type:** 
-    - User plane (data plane).
-    - Control plane (Signaling).  
-    - Management plane.
+    - User Plane (Data Plane)
+    - Control Plane (Signalling Plane).  
+    - Management Plane.
 -	**By Service offered:**
     - Mobile broadband service: vEPC, vDPI, vGI-FW 
     - Fixed broadband Service vBNG, vDPI
@@ -37,61 +37,60 @@ Below is a list of Network Functions that covers almost _**95%**_ of the Telco w
 
 _**Note:** definition of some of the VNFs below is based on 3GPP definitions._
 
-- **For 3G/4G**
-  - EPC Nodes (Evolved Packet Core Nodes) – 3GPP TS 23.002 R15 Network architecture
-    - MME: MME is the control plane entity within EPS supporting functions Mobility Management,[ Control plane ]
-    - SGW (With CUPS, Control Plane & User Plane Separation, they will be split to SGW-C & SGW-U)
-    - PGW (With CUPS, Control Plane & User Plane Separation, they will be split to PGW-C & PGW-U)
-    - Serving GW: The Serving GW is the gateway which terminates the interface towards E-UTRAN. [  Control / Data Plane ] forwarding traffic from/toward RAN, Mobility anchor for 3GPP access  
-    - The PDN GW is the gateway which terminates the SGi interface towards the PDN. [ User Plane], mobility anchor for non 3GPP ( Wifi) 
-    - EPDG : evolved packet data gateway (ePDG) : interconnect non 3GPP access with 3GPP core ( VoWifi ) [ User Plane / Control Plane ]
-    - 3GPP AAA
-    - PCRF: Policy and Charging Rules Function (PCRF) to provide subscription and policy management for 3G and 4G mobile networks [Control Plane ]
-    - OCS: Online Charging system  [Control Plane
-    - HSS: The Home Subscriber Server, The HSS is the master database for a given user. It is the entity containing the subscription-related information to support the network entities actually handling calls/sessions. [Control Plane ]
-    - HLR: The Home Location Register (HLR) [Control Plane ]
-    - DRA: Diameter Routing Agent  [Control Plane ]
-    - SCEF: Service Capability Exposure Function, Exposing Data via API to its application
-    - Circuit Switched - Media Gateway Function (CS-MGW)
-    - MSC Server
-    - Serving GPRS Support Node (SGSN); The location register function in the SGSN stores two types of subscriber data needed to handle originating and terminating packet data transfer:
-    - Gateway GPRS Support Node (GGSN); The location register function in the GGSN stores subscriber data received from the HLR and the SGSN
 
-    - Deep packet inspection (DPI) for network data processing for reporting and other services on mobile and fixed networks.
-    - SBC: Session Border Controller (SBC): Secures voice over IP (VoIP) infrastructures while providing interworking between incompatible signalling messages and media flows (sessions) from end devices or application servers. [ Payload ] 
-    - SMS-C : SMS Center [Control Plane ]
+- EPC Nodes (Evolved Packet Core Nodes) – 3GPP TS 23.002 R15 Network architecture
+  - MME: MME is the control plane entity within EPS supporting functions Mobility Management,[ Control Plane ]
+  - SGW (With CUPS, Control Plane & User Plane Separation, they will be split to SGW-C & SGW-U)
+  - PGW (With CUPS, Control Plane & User Plane Separation, they will be split to PGW-C & PGW-U)
+  - Serving GW: The Serving GW is the gateway which terminates the interface towards E-UTRAN. [  Control / Data Plane ] forwarding traffic from/toward RAN, Mobility anchor for 3GPP access [ Control / Data Plane ]
+  - The PDN GW is the gateway which terminates the SGi interface towards the PDN. [ User Plane], mobility anchor for non 3GPP ( Wifi) [ User Plane].
+  - EPDG : evolved packet data gateway (ePDG) : interconnect non 3GPP access with 3GPP core ( VoWifi ) [ User Plane / Control Plane ]
+  - 3GPP AAA: Authentication, Authorization, and Accounting
+  - PCRF: Policy and Charging Rules Function (PCRF) to provide subscription and policy management for 3G and 4G mobile networks [Control Plane ]
+  - OCS: Online Charging system  [Control Plane]
+  - HSS: The Home Subscriber Server, The HSS is the master database for a given user. It is the entity containing the subscription-related information to support the network entities actually handling calls/sessions. [Control Plane ]
+  - HLR: The Home Location Register (HLR) [Control Plane ]
+  - DRA: Diameter Routing Agent  [Control Plane ]
+  - SCEF: Service Capability Exposure Function, to securely expose the services and capabilities provided by the 3GPP network interfaces.
+  - Circuit Switched - Media Gateway Function (CS-MGW)
+  - MSC Server
+  - Serving GPRS Support Node (SGSN); The location register function in the SGSN stores two types of subscriber data needed to handle originating and terminating packet data transfer:
+  - Gateway GPRS Support Node (GGSN); The location register function in the GGSN stores subscriber data received from the HLR and the SGSN
 
- 
-  - Other Core/Main VNFs - 3GPP TS 23.002 R15 Network architecture
-    - cRAN – Centralized Unit (CU) BBU, in 5G will be DU and CU 
-    - IMS:
-      - CSCF :  Call Session Control Function [ control ] 
-      - MTAS mobile telephony application server[ control ] 
-      - MRF: Media Resource Function [ user plane ]
-      - Enum : [ control ]
-      - BGCF : Border gateway control function [ control ] . interconnect
-      - MGCF: Media Gateway control function :
-    - DNS Domain Name System 
-    - AAA: Authentication, authorization, and accounting (AAA) services
-    - UDC: User Data Convergence
-      - HSS-FE :
-      - HLR –FE
-      - AAA-FE
-      - MNP-FE
-      - EIR – FE
-      - UDR
-    - Carrier-Grade Network Address Translation (CG-NAT) for IPv4 optimization of mobile and fixed networks.
-    - Transmission Control Protocol (TCP) optimization for improved customer experience in 3G/4G mobile networks
-    - Gi Firewall
-    - IPSEC GW
-    - IPS/IDS
-    - DDOS
-    - Access : 
-      - OLT 
-      - BNG: Border Network Gateway  / broadband remote access server
-      - RGW: Residential gateway
-      - Wifi Controller [Control Plane ]
-    - CDN: Content delivery network 
+  - Deep packet inspection (DPI) for network data processing for reporting and other services on mobile and fixed networks.
+  - SBC: Session Border Controller (SBC): Secures voice over IP (VoIP) infrastructures while providing interworking between incompatible signalling messages and media flows (sessions) from end devices or application servers. [ Payload ] 
+  - SMS-C : SMS Center [Control Plane ]
+
+- Other Core/Main VNFs - 3GPP TS 23.002 R15 Network architecture
+  - cRAN – Centralized Unit (CU) BBU, in 5G will be DU and CU 
+  - IMS (IP-Multimedia Subsystem ):
+    - CSCF :  Call Session Control Function [ control ] 
+    - MTAS mobile telephony application server[ control ] 
+    - MRF: Media Resource Function [ user plane ]
+    - Enum : [ control ]
+    - BGCF : Border gateway control function [ control ] . interconnect
+    - MGCF: Media Gateway control function :
+  - DNS Domain Name System 
+  - AAA: Authentication, authorization, and accounting (AAA) services
+  - UDC: User Data Convergence
+    - HSS-FE: Home Subscriber Server) is a database that contains user-related and subscriber-related information
+    - HLR–FE: Home Location Register
+    - AAA-FE
+    - MNP-FE: Mobile Number Portability
+    - EIR–FE: Equipment Identity Register 
+    - UDR: User Data Repository  is a functional entity that acts as a single logical repository that stores converged user data
+  - Carrier-Grade Network Address Translation (CG-NAT) for IPv4 optimization of mobile and fixed networks.
+  - Transmission Control Protocol (TCP) optimization for improved customer experience in 3G/4G mobile networks
+  - Gi Firewall
+  - IPSEC GW
+  - IPS/IDS
+  - DDOS
+  - Access : 
+    - OLT 
+    - BNG: Border Network Gateway  / broadband remote access server
+    - RGW: Residential gateway
+    - Wifi Controller [Control Plane ]
+  - CDN: Content delivery network 
 
 - **For 5G:**
   - Core nodes: Virtualized by nature and strong candidate to be onboarded onto Telco Cloud as "cloud-native application"  
@@ -156,6 +155,7 @@ Following are _some_ of the requirement you might expect by various workloads:
   - Affinity / Anti-affinity rules
   - Huge Pages 
   - NUMA alignment
+  - DPDK
 - CPU Hyper-Threading
 -	Packet per Second
 -	User Space 
@@ -165,7 +165,7 @@ Following are _some_ of the requirement you might expect by various workloads:
 - Storage requirements  
   - Ephemeral or Persistence.
   - Number of IOPS required 
-  - Size 
+  - Volume 
 
 By trying to categorise VNF components into different categories based on the requirement observed, below are the different profiles concluded:
 
@@ -174,14 +174,14 @@ By trying to categorise VNF components into different categories based on the re
   -	A small number of Network cards
   - Low PPS 
   - EPA enabled (in some cases)
-  - _**Example:**  (PCRF, IMS, UDC)_
+  - _**Example:**  (PCRF, IMS, NMS)_
 
 - **Profile Two -** Network Intensive Workloads:
   - High throughput
   - Multiple Network Interfaces.
   - High PPS 
   - EPA enabled 
-  - _**Example:** BNG,  CDN, CPE_
+  - _**Example:** BNG,  CDN, EPC_
 
 - **Profile Three -** Compute Intensive Workloads:
   - Algorithmic Intensive
