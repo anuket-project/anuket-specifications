@@ -21,7 +21,7 @@
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Still Developing Content |
+| Chapter 01 | Lots of SME Feedback |
 | Chapter 02 | Lots of SME feedback |
 | Chapter 03 | Lots of SME Feedback |
 | Chapter 04 | Lots of SME feedback |
