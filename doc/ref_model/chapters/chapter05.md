@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 5	Reference NFVI SW profiles and configurations
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 NFVI SW profile description.](#5.1)
@@ -17,8 +17,8 @@
 ## 5.1 NFVI SW profile description
 
 NFVI Software layer is composed of 2 layers, **Figure 5-1**:
-- the virtualization Infrastructure layer, which is based on hypervisor virtualization technology or container-based virtualization technology. Container virtualization can be nested in hypervisor-based virtualization
-- the host OS layer
+- The virtualisation Infrastructure layer, which is based on hypervisor virtualisation technology or container-based virtualisation technology. Container virtualisation can be nested in hypervisor-based virtualisation
+- The host OS layer
 
 <p align="center"><img src="../figures/ch05_nfvi_layers_sw_profile.PNG" alt="ref_profiles" title="Layers of Software Profile" width="50%"/></p>
 <p align="center"><b>Figure 5-1:</b> NFVI software layers.</p>
@@ -31,7 +31,7 @@ For a host (compute node or physical server), the virtualization layer is an abs
 Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of virtual resources with specific behaviour, capabilities and metrics. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive instances types.
 
 <p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
-<p align="center"><b>Figure 5-3:</b> Reference NFVI software profiles.</p>
+<p align="center"><b>Figure 5-3:</b> NFVI software profiles.</p>
 
 The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
 
@@ -53,7 +53,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.com.acc.cfg.001 | |  | |
+| nfvi.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |  | |
 
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
@@ -131,7 +131,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.com.acc.cfg.001 | |  | | |
+| nfvi.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |  | | |
 
 <p align="center"><b>Table 5-8:</b> Virtual Compute Acceleration features.</p>
 
