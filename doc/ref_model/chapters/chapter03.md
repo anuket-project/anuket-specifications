@@ -331,12 +331,15 @@ It should be noted that energy-related metrics must only be considered for NFVI 
 
 #### 3.4.2.2	Internal availability/reliability metrics
 
-_**Comment**: Xavier Grall, Orange: the following table should be reviewed to only consider and probably detail the recovery-related metrics ; indeed, availability and MTBF metrics do not seem consistent with expected testbed measurement duration]_
+<!-- Xavier Grall, Orange -->
+_**Editor Note:** the following table should be reviewed to only consider and probably detail the recovery-related metrics ; indeed, availability and MTBF metrics do not seem consistent with expected testbed measurement duration]_
 
 <!--
 [COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on reference architecture and implementation]
 -->
-_**Comment**: MXS - 13/7/2019 To-do: This table needs to be reworked and clarified w/ clear explanations and assumptions stated._
+
+<!-- MXS - 13/7/2019 To-do -->
+_**Editor Note:** This table needs to be reworked and clarified w/ clear explanations and assumptions stated._
 
 <a name="Table3-15"></a>
 
@@ -357,7 +360,8 @@ _**Comment**: MXS - 13/7/2019 To-do: This table needs to be reworked and clarifi
 
 ### 3.5.1 VIM capabilities.
 
-_**Comment**: Rabi A: Still to be worked on._
+<!-- Rabi A -->
+_**Editor Note:** This Section is still to be worked on._
 
 <a name="3.5.2"></a>
 
