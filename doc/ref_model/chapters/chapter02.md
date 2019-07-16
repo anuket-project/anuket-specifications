@@ -154,7 +154,7 @@ Studying various requirements of VNFs helps understanding what expectation they 
   - Huge Pages 
   - NUMA alignment
   - DPDK
-- CPU Hyper-Threading
+- Hyper-Threading/SMT
 -	Packet per Second
 -	User Space 
 - Security
