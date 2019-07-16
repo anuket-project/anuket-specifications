@@ -201,7 +201,7 @@ n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 | `i.nfvi.mon.cap.007` | Yes | No | Yes | |
 | `i.nfvi.sec.cap.001` | Yes | Yes | Yes | Internal security capabilities as per [**Table 3-13**.](chapter03.md/#Table3-13) |
 | `i.nfvi.sec.cap.002` | No | No | No | |
-| `i.nfvi.sec.cap.003` | Yes | No | No | |
+| `i.nfvi.sec.cap.003` | Yes | Yes | Yes | |
 | `i.nfvi.sec.cap.004` | Yes | Yes | Yes | |
 
 <p align="center"><b>Table 3-6:</b> Mapping of NFVI capabilities to instance types.</p>
