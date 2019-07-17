@@ -8,10 +8,7 @@
 
 ### Paris F2F 
 **Etherpad:**
-
-https://etherpad.opnfv.org/p/o9KvmtEPUx
-
-https://etherpad.opnfv.org/p/hIxOfHRDqr
+Link to the master with all the rest of the Etherpad links: https://etherpad.opnfv.org/p/CNTT_F2F_Meeting_Notes_July2019
 
 <a name="how_to_contribute"></a>
 ## How to contribute
