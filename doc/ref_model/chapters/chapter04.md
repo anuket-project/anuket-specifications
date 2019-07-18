@@ -29,7 +29,7 @@ The idea of the infrastructure instances catalogue is to have a predefined set o
 <a name="4.1"></a>
 ## 4.1 Compute flavours
 
-Flavours represent the compute, memory, storage capacity, and management network resource templates that are used to create the VMs on the compute hosts. Each VM instance is given a flavour (resource template), which determines the instance’s core, memory and storage characteristics. 
+Flavours represent the compute, memory, storage capacity, and management network resource templates that are used to create the VMs on the compute hosts. Each VM instance is given a flavour (resource template), which determines the instance's core, memory and storage characteristics. 
 
 Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute flavour geometry consists of the following elements:
 
@@ -49,7 +49,7 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 >_*Note:*_ Customised (Parameterized) flavours can be used in concession by operators and , if needed, are  created using TOSCA, HEAT templates and/or VIM APIs.
 
-.conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Managmenet Interface
+.conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Management Interface
 -----|------------|----------|-----|-----
 .tiny	|1	|512 MB	|1 GB	|1 Gbps
 .small	|1	|2 GB	|20 GB 	|1 Gbps
@@ -60,7 +60,7 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 <p align="center"><b>Table 4-2:</b> Predefined Compute flavours.</p>
 
-> _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt micro server’s designs for their VNFs_
+> _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt micro server's designs for their VNFs_
 
 <a name="4.2"></a>
 ## 4.2 Network Interface Specifications
@@ -117,7 +117,7 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 
 <a name="4.4.1"></a>
 ### 4.4.1	B Instances (Basic)
-This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any Operator’s network.
+This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any operator's network.
 
 <a name="4.4.2"></a>
 ### 4.4.2	N Instances (Network Intensive)
@@ -132,7 +132,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 | .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
 | .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
 
-<p align="center"><b>Table 4-7:</b> Acceleration extensions for N instance type.</p>
+<p align="center"><b>Table 4-6:</b> Acceleration extensions for N instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -148,13 +148,13 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
 | .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
 
-<p align="center"><b>Table 4-8:</b> Acceleration extensions for C instance type.</p>
+<p align="center"><b>Table 4-7:</b> Acceleration extensions for C instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
 <a name="4.4.4"></a>
 ### 4.4.4 Network Interface Options
-**Table 4-6** below shows the various network interfaces options (from **Table 4-3**) are available for which profile type (Up to 6 interfaces are possible).
+**Table 4-8** below shows the various network interfaces options (from **Table 4-3**) are available for which profile type (Up to 6 interfaces are possible).
 
 | Virtual interface option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
@@ -164,7 +164,7 @@ n25, n25D, n25T*, n25Q*, n25P*, n25H*	| N | Y | Y
 n50, n50D, n50T*, n50Q*, n50P*, n50H*	| N | Y | Y
 n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 
-<p align="center"><b>Table 4-6:</b> Virtual NIC interfaces options</p>
+<p align="center"><b>Table 4-8:</b> Virtual NIC interfaces options</p>
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
@@ -204,7 +204,7 @@ n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 | `i.nfvi.sec.cap.003` | Yes | Yes | Yes | |
 | `i.nfvi.sec.cap.004` | Yes | Yes | Yes | |
 
-<p align="center"><b>Table 3-6:</b> Mapping of NFVI capabilities to instance types.</p>
+<p align="center"><b>Table 4-9:</b> Mapping of NFVI capabilities to instance types.</p>
 <a name="4.5.2"></a>
 
 ### 4.5.2 Instance metrics.
