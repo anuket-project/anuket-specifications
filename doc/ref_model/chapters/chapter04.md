@@ -175,6 +175,7 @@ n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 <a name="4.5.1"></a>
 
 ### 4.5.1 Instance capabilities.
+
 | Ref | B Instance | N Instance | C Instance | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
 | `e.nfvi.res.cap.001` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> | Exposed resource capabilities as per [**Table 3-5**.](chapter03.md/#Table3-5)|
