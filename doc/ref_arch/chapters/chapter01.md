@@ -21,20 +21,13 @@
 
 Principles should apply to all reference architectures we design and develop
 
-1. CNTT operator/supplier community must proactively influence open source activities.
-1. Interaction between components of NFVI and with external systems like MANO must be implemented according to Open Published API specifications. 
-1. NFVI must be architected to allow High Availability and Resilience for hosted VNFs. 
-1. Use flexible hardware and networking architecture to find balance between horizontal and vertical scaling. 
-1. Deployment and life-cycle management of  NFVI instances must be done via an automated process.
-1. NFVI Platform Architecture must support automated assurance and minimize complexity of operations and maintenance. 
-1. NFVI platform access controls must use 2FA authentication using encrypted connection and at all levels must comply with industry and regional security regulations. 
-
+1. Principles should apply to all reference architectures we design and develop
 1. Traceability between reference model to reference architecture (and vice versa)
 1. Implementable and usable for VNF developer community, i.e. with enough specificity to support the design and development of a VNF 
 1. Define the NFVI so that developers can understand how to build VNFs
 1. Design the architectures with common elements so that the VNFs require less operator specific customizations
 1. Rationalize need for each discrete architecture
-1. Design architectures to established open standards as much as possible
+    1. Intention is to minimize the number of discrete reference architectures
 1. Architectures should be:
     1. Resilient
     1. Scalable
@@ -42,11 +35,8 @@ Principles should apply to all reference architectures we design and develop
     1. Secure
     1. Low Latency
     1. Resource and Operational Efficiency
-1. E2E Lifecycle Automation (Deployment, Operations, & Maintenance)
-1. High-Availability
-1. Prioritize incorporation of open source components
-1. Clearly convey to audience that the intention to minimize the number of discrete reference architectures, architectures will evolve over time 
-
-
-<a name="1.4"></a>
-## 1.4 Scope
+    1. E2E Lifecycle Automation (Deployment, Operations, & Maintenance)
+    1. High-Availability
+1. Prioritize incorporation of open source components 
+    1. Design architectures to established open standards as much as possible
+1. Architectures will evolve over time 

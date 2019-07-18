@@ -61,5 +61,4 @@
 ### 3.5.5 VIM Components List
 
 <p align="center"><img src="../figures/ref_arch_ch03_components_list.png" alt="components" title="VIM Components" width="100%"/></p>
-
 <p align="center"><b>Figure 1-4:</b> VIM Components</p>
