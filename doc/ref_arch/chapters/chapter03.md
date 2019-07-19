@@ -28,7 +28,7 @@
 
 <p align="center"><img src="../figures/ref_arch_ch03_detailed.png" alt="focused" title="Focused NFVI VIM Reference Architecture" width="100%"/><p>
 
-<p align="center"><b>Figure 1-3:</b> NFVI Centric Architecture</p>
+<p align="center"><b>Figure 1-3:</b> NFVI Centric Architecture (Connectivity Example)</p>
 
 <a name="3.3"></a>
 ## 3.3 Virtual Components (trace to Ref Model)
