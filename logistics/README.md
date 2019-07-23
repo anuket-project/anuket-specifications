@@ -5,7 +5,10 @@
 
 <a name="meeeting_times"></a>
 ## Meeting times
-To be shared later.
+
+### Paris F2F 
+**Etherpad:**
+Link to the master with all the rest of the Etherpad links: https://etherpad.opnfv.org/p/CNTT_F2F_Meeting_Notes_July2019
 
 <a name="how_to_contribute"></a>
 ## How to contribute

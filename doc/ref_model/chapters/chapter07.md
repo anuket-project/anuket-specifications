@@ -5,6 +5,7 @@
 ## Table of Contents
 * [7.1 Infra related APIs.](#7.1)
 * [7.2 NFVI APIs.](#7.2)
+  * [7.2.1 Tenant Level APIs.](#7.2.1)
 * [7.3 Supporting Enabler Service APIs (not-MVP).](#7.3)
   * [7.3.1 NTP, DNS, etc.](#7.3.1)
   * [7.3.2 Licensing and imaging connectivity.](#7.3.2)
@@ -43,14 +44,41 @@ This is a place holder for Infra Related APIs.
 
 <a name="7.2"></a>
 ## 7.2	NFVI APIs
-The NFVI APIs consist of the externally and internally visible APIs. The externally visible APIs are made available for orchestration and management of workloads and the internally visible APIs for the internal management of the NFVI. Figure 14 is a pictorial representation of the NFVI with some of the interfaces shown.
+The NFVI APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads (e.g., VNFs) while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference Architecture Framework (Figure 7-1) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in Table 7-1. 
 
-<p align="center"><img src="../figures/ch07_nfvi_api.PNG" alt="nfvi_api" title="NFVI API" width="65%"/></p>
-<p align="center"><b>Figure 7-1:</b> NFVI APIs – external and internal (not all shown).</p>
- 
-In the abstraction model of the NFVI (Chapter 3.1) a conceptual model of a Tenant (Figure 4) represents the slice of a cloud zone dedicated to a VNF. This slice, the Tenant, is composed of virtual resources being utilized by VNFs within that Tenant. A conceptual data model of a Tenant is shown in Figure 16. The Tenant has an assigned quota of virtual resources, a set of users can perform operations as per their assigned roles, and the Tenant exists within a Cloud Zone. The APIs will specify the allowed operations on the Tenant including its component virtual resources and the different APIs can only be executed by users with the appropriate roles. For example, a Tenant may only be allowed to be created and deleted by Cloud Zone administrators while virtual compute resources could be allowed to be created and deleted by Tenant administrators.
+<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
+<p align="center"><b>Figure 7-1:</b> ETSI NFVI Interface points.</p>
 
-<p align="center"><img src="../figures/ch07_tenant_data_model.PNG" alt="tenant_data_model" title="Tenant Data Model" width="65%"/></p>
+| Interface Point	| NFVI Exposure	| Interface Between |	Description|
+|--------------|--------------|--------------|--------------|
+| Vi-Ha	| Internal	NFVI | Software Layer and Hardware Resources |	1.	Discover/collect resources and their configuration information <br>2.	Create execution environment (e.g., VM) for workloads (VNF) |
+| Vn-Nf| 	External	| NFVI and VM (VNF)	| Represents the execution environment. There is no protocol or interface defined between these layers. Advantage is that the workloads can be made NFVI independent except for performance |
+| NF-Vi	| External	| NFVI and VIM |	1.	Discover/collect physical/virtual resources and their configuration information<br>2.	Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3.	Physical/Virtual resources configuration changes<br>4.	Physical/Virtual resource configuration. |
+| Or-Vi	| External	| VNF Orchestrator and VIM	| See below |
+| Vi-Vnfm	| External	| VNF Manager and VIM	| See below |
+
+<p align="center"><b>Table 7-1:</b> NFVI and VIM Interfaces with Other System Components.</p>
+			
+The Or-Vi and Vi-VNfm are both specifying interfaces provided by the VIM and therefore are related. The Or-Vi reference point is used for exchanges between NFV Orchestrator and VIM, and supports the following interfaces; virtualised resources refers to virtualised compute, storage and network resources:
+
+- Software Image Management
+- Virtualised Resources Information Management
+- Virtualised Resources Capacity Management (only VNF Orchestrator and VIM (Or-Vi))
+- Virtualised Resources Management
+- Virtualised Resources Change Management
+- Virtualised Resources Reservation Management
+- Virtualised Resources Quota Management
+- Virtualised Resources Performance Management
+- Virtualised Resources Fault Management
+- Policy Management
+- Network Forwarding Path (NFP) Management (only VNF Orchestrator and VIM (Or-Vi))
+
+<a name="7.2.1"></a>
+### 7.2.1 Tenant Level APIs
+
+In the abstraction model of the NFVI (Chapter 3.1) a conceptual model of a Tenant (Figure 3-2) represents the slice of a cloud zone dedicated to a VNF. This slice, the Tenant, is composed of virtual resources being utilized by VNFs within that Tenant. A conceptual data model of a Tenant is shown in Figure 16. The Tenant has an assigned quota of virtual resources, a set of users can perform operations as per their assigned roles, and the Tenant exists within a Cloud Zone. The APIs will specify the allowed operations on the Tenant including its component virtual resources and the different APIs can only be executed by users with the appropriate roles. For example, a Tenant may only be allowed to be created and deleted by Cloud Zone administrators while virtual compute resources could be allowed to be created and deleted by Tenant administrators.
+
+<p align="center"><img src="../figures/Ch07-Figure7-2-Tenant.PNG" alt="tenant_data_model" title="Tenant Data Model" width="65%"/></p>
 <p align="center"><b>Figure 7-2:</b> Conceptual Tenant data model.</p>
  
 For a VNF stack to be created in a Tenant also requires APIs for the management (creation, deletion and operation) of the Tenant, software flavours (Chapter 5), Operating System and VNF images (“Images”), Identity and Authorization (“Identity”), virtual resources, security and the VNF application (“stack”).
@@ -72,9 +100,9 @@ A virtual compute resource is created as per the flavour template (specifies the
 | Virtual compute | + | + |  | + | + | Create/delete by VDC users with appropriate role.  Additional operations would include suspend/unsuspend |
 | Virtual network | + | + | + | + | + | Create/delete by VDC users with appropriate role |
 
-<p align="center"><b>Table 7-1:</b> API types for a minimal set of resources.</p>
+<p align="center"><b>Table 7-2:</b> API types for a minimal set of resources.</p>
  
-**Table 7-1** specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
+**Table 7-2** specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
 
 <a name="7.3"></a>
 ## 7.3	Enabler Services APIs (not-MVP)
