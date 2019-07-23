@@ -188,8 +188,8 @@ By trying to categorise VNF components into different categories based on the re
   - _**Example:** SEC-GW, Firewall, DPI_
 
 - **Profile Four -** Storage Intensive Workloads:
-  -	Hight IOPS 
-  -	Hight capacity
+  -	High IOPS 
+  -	High capacity
   -	EPA enabled 
   - _**Example:** UDR_
 
