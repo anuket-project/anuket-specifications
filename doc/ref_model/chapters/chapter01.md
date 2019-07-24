@@ -57,10 +57,10 @@ This section defines the main terms used in this document; these deinitions are 
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
   - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Containerised NF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
-- **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
-  - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
-- **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
-  >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
+- **Virtualised Network Function (VNF)**: a software implementation of a **Network Function** delivered as set of VMs capable of running on a **NFVI**.
+  - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases, a single VNFC instance is hosted on a single VM.
+- **Cloud-native (containerised) Network Function (CNF)**: a software implementation of a **Network Function**, delivered as a set of container images capable of running on a container orchestration platform. 
+  >_*Note:*_ It is a containerised **NF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux (OCI-compliant) or other operating system container technology.
 - **Virtual Application (VA)**: is more of a general term for software which can be loaded into a Virtual Machine. 
   >_*Note:*_ a **VNF** is one type of VA.
 - **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
