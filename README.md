@@ -5,7 +5,7 @@
 * [Reference Architecture](doc/ref_arch)
 
 ## Term of Reference
-* [Term of Reference](GSMA CNTT Terms of Reference.pdf)
+* [Term of Reference](GSMA_CNTT_Terms_of_Reference.pdf)
 * [License](LICENSE)
 
 ## Logistics
