@@ -7,6 +7,7 @@
 ## Term of Reference
 * [Term of Reference](GSMA_CNTT_Terms_of_Reference.pdf)
 * [License](LICENSE)
+* [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Logistics
 * [Meeting times](logistics#meeting_times)
