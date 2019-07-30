@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 4	Infrastructure Abstraction
+# 4	Infrastructure Capabilities, Metrics, and Catalogue
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 
