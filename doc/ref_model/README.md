@@ -49,17 +49,16 @@
 ## Contributors
 
 
-| Item/Chapter | Lead | Priority |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------|
-| Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) |  |
-| Chapter 1 - Introduction | Beth Cohen (beth.cohen@one.verizon.com) | 1 |
-| Chapter 2 - VNF requirements and analysis | Ahmed ElSawaf (aelsawaf.c@stc.com.sa) | 1 |
-| Chapter 3 - Infrastructure Abstraction | Mark Shostak (Mark.Shostak@att.com),  Bernard Tsai (Bernard.Tsai@telekom.de),  Tom Kivlin (tom.kivlin@vodafone.com) | 1 |
-| Chapter 4 - Catalogue | Burak Kazan (burak.kazan@turkcell.com.tr) | 1 |
-| Chapter 5 - SW Config | Karine Sevilla (karine.sevilla@orange.com) | 1 |
-| Chapter 6 - HW Config | Pankaj Goyal (pg683k@att.com) | 1 |
-| Chapter 7 - API | Pankaj Goyal (pg683k@att.com) | 1 (subset) |
-| Chapter 8 - Security | Beth Cohen (beth.cohen@one.verizon.com) | >1 |
-| Chapter 9 - Operations | Mark Shostak (Mark.Shostak@att.com) | >1 |
-| Chapter 10 - Compliance and Verification | Rabi Abdel (abdel.rabi@vodafone.com) | >1 |
-| Chapter 11 - GAPS | JONATHAN BELTRAN (jb788y@att.com) | >1 |
+| Item/Chapter | Lead | Co-Lead | Priority |
+|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------|------------|
+| Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) |  | |
+| Chapter 1 - Introduction | Beth Cohen (beth.cohen@one.verizon.com) | | 1 |
+| Chapter 2 - VNF requirements and analysis | Ahmed ElSawaf (aelsawaf.c@stc.com.sa) | | 1 |
+| Chapter 3 - Modeling | Bernard Tsai (Bernard.Tsai@telekom.de) | | 1 |
+| Chapter 4 - Infrastructure Abstraction | Mark Shostak (Mark.Shostak@att.com) | | 1 |
+| Chapter 5 - Featureset and Requirements from Infrastructure | Karine Sevilla (karine.sevilla@orange.com) | | 1 |
+| Chapter 6 - External Interfaces | Pankaj Goyal (pg683k@att.com) | Samuel Manam, VF| 1 |
+| Chapter 7 - Security Gudelines | Walter, Telstra  | Mike B, ATT | >1 |
+| Chapter 8 - Compliance and Verification | Mike F , ATT | Daniel W? Verizon | >1 |
+| Chapter 9 - Life Cycle management | Tom Kivlin (tom.kivlin@vodafone.com) | | >1 |
+| Chapter 10 - GAPS | JONATHAN BELTRAN (jb788y@att.com) | | >1 |
