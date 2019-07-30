@@ -41,7 +41,7 @@
 * [Chapter 05 - Featureset and Requirements from Infrastructure](chapters/chapter05.md)
 * [Chapter 06 - External Interfaces](chapters/chapter06.md)
 * [Chapter 07 - Security Guidelines](chapters/chapter07.md)
-* [Chapter 08 - Compliance and Verification](chapters/chapter08.md)
+* [Chapter 08 - Compliance, Verification, and Certification](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
 
