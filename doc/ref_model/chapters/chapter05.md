@@ -270,7 +270,7 @@ The configurations specified in here will be utilized in specifying the actual h
 | nfvi.hw.cpu.cfg.007 | Hugepages* |  | N | Y | Y
 -->
 
-<p align="center"><b>Table 6-1:</b> Minimum Compute resources configuration parameters.</p>
+<p align="center"><b>Table 5-13:</b> Minimum Compute resources configuration parameters.</p>
 
 <!--
 > _*These features are not set at the physical server BIOS_
@@ -283,7 +283,7 @@ The configurations specified in here will be utilized in specifying the actual h
 |---------------------|-----------|--------------|--------|--------|--------
 | nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | Y 
 
-<p align="center"><b>Table 6-2:</b> Compute acceleration configuration specifications.</p>
+<p align="center"><b>Table 5-14:</b> Compute acceleration configuration specifications.</p>
 
 
 <a name="5.4.2"></a>
@@ -294,7 +294,7 @@ The configurations specified in here will be utilized in specifying the actual h
 | nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD |  |
 | nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD |  | Recommended | Recommended |Recommended |
 
-<p align="center"><b>Table 6-7:</b> Storage configuration specification.</p>
+<p align="center"><b>Table 5-15:</b> Storage configuration specification.</p>
 
 > _*This specified local storage configurations including # and capacity of storage drives._
 
@@ -309,7 +309,7 @@ The configurations specified in here will be utilized in specifying the actual h
 | nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform | 4 | 4 | 4
 | nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps | 10 | 25 | 25
 
-<p align="center"><b>Table 6-3:</b> Minimum NIC configuration specification.</p>
+<p align="center"><b>Table 5-16:</b> Minimum NIC configuration specification.</p>
 
 <a name="5.4.3.2"></a>
 #### 5.4.3.2 PCIe Configurations
@@ -320,7 +320,7 @@ The configurations specified in here will be utilized in specifying the actual h
 | nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 | Gen 3 |
 | nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 8
 
-<p align="center"><b>Table 6-4:</b> PCIe configuration specification.</p>
+<p align="center"><b>Table 5-17:</b> PCIe configuration specification.</p>
 
 <!--
 <a name="5.4.3.3"></a>
@@ -344,7 +344,7 @@ The configurations specified in here will be utilized in specifying the actual h
 | nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware | | Maybe | Maybe
 | nfvi.hw.nac.cfg.003 | Compression |  |
 
-<p align="center"><b>Table 6-6:</b> Network acceleration configuration specification.</p>
+<p align="center"><b>Table 5-18:</b> Network acceleration configuration specification.</p>
 
 <a name="5.4.4"></a>
 ### 5.4.4 Security Configuration
@@ -353,4 +353,4 @@ The configurations specified in here will be utilized in specifying the actual h
 |---------------------|-----------|---------------------------|--------|--------|--------
 | nfvi.hw.sec.cfg.001 | TPM | Platform must have Trusted Platform Module. | Y | Y | Y |
 
-<p align="center"><b>Table 6-8:</b> Security configuration specification.</p>
+<p align="center"><b>Table 5-19:</b> Security configuration specification.</p>
