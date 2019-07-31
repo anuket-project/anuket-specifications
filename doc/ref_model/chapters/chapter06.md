@@ -18,7 +18,7 @@ The support of a variety of different workload types, each with different (somet
 
 This chapter defines a simplified host, host profile and related capabilities model associated with each of the different NFVI hardware profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 6-1**.
 
-<p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles_v3.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/Ch6-Figure-6-1-CNTT-HW-Config-Parameters.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 6-1:</b> NFVI hardware profiles and host associated capabilities.</p>
 
 <a name="6.1"></a>
