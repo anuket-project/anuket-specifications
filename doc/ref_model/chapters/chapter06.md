@@ -64,10 +64,7 @@ The following model, **Figure 6-3**, depicts the essential characteristics of a 
 <p align="center"><img src="../figures/ch06_generic_model.PNG" alt="generic_model" title="Generic Model" width="100%"/></p>
 <p align="center"><b>Figure 6-3:</b> Generic model of a compute host for use in Host Profile configurations.</p>
 
-The hardware (host) profile properties are specified in the following sub-sections. The following diagram (**Figure 6-4**) pictorially represents a high-level abstraction of a physical server (host).
-
-<p align="center"><img src="../figures/ch06_ref_hw_profile.PNG" alt="reference_hw_profile" title="Reference HW Profile" width="65%"/></p>
-<p align="center"><b>Figure 6-4:</b> Generic model of a compute host for use in Host Profile configurations.</p>
+The hardware (host) profile properties are specified in the following sub-sections. 
 
 The configurations specified in here will be utilized in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 6-1**.
 
