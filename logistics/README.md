@@ -6,17 +6,36 @@
 <a name="meeeting_times"></a>
 ## Meeting times
 
-### Paris F2F 
-**Etherpad:**
-Link to the master with all the rest of the Etherpad links: https://etherpad.opnfv.org/p/CNTT_F2F_Meeting_Notes_July2019
+### Master meeting
+
+will be posted here soon.
+
+### Reference Model
+
+will be posted here soon.
+
+### Reference Architecture
+
+will be posted here soon.
+
+### Upcoming F2F 
+Will be announced soon.
+
+### Previous F2F
+July 23rd - July 25th
+Orange Gardens
+44 avenue de la République
+Châtillon, Paris
+
+Wiki: https://wiki.lfnetworking.org/display/LN/July+2019+CNTT+Face+to+Face+Working+Session
 
 <a name="how_to_contribute"></a>
 ## How to contribute
-- Contributions are made in the form of Pull Requests clidk [here](../artifacts/CNTT_GitHub_Technical_WG_Process.pptx) for how to create it.
-- Any contribution contnet should align with CNTT [principles](../doc/ref_model/chapters/chapter01.md#1.4) and [Terminologies](../doc/ref_model/chapters/chapter01.md#1.3).
+- Contributions are made in the form of Pull Requests click [here](../artefacts/CNTT_GitHub_Technical_WG_Process.pptx) for how to create it.
+- Any contribution content should align with CNTT [principles](../doc/ref_model/chapters/chapter01.md#1.4) and [Terminologies](../doc/ref_model/chapters/chapter01.md#1.3).
 
 ### Contributing guidelines
-- Pull Requests should clearly speceify the Chapter and the section number in the title.
+- Pull Requests should clearly specify the Chapter and the section number in the title.
   - Please use also the description field to clarify the nature of your contribution.
 - It is highly advised to check if there is a Pull Request already in place for the chapter/section you would like to contribute to.
   - It is highly advised that you align with the creator of that Pull Request to incorporate your changes on there .
