@@ -1,7 +1,7 @@
 # Common NFVI Telco Task Force (CNTT)
 
 ## About CNTT
-* [artefacts/CNTT_intro.pdf](GSMA_CNTT_Terms_of_Reference.pdf)
+* [CNTT Introduction](artefacts/CNTT_intro.pdf)
 
 ## Available Specifications
 * [Reference Model](doc/ref_model)
