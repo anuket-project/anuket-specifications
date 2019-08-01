@@ -153,7 +153,7 @@ There are three level of documents needed to fulfil the CNTT vision. They are, a
 - **Reference Implementation**: Focuses on the design and implementation of a NFVI Reference Architecture. Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
 
 <p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-5:</b> Description of the possible different layers of CNTT artefacts</p>
+<p align="center"><b>Figure 1-5:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="1.5"></a>
 ## 1.5	Scope
