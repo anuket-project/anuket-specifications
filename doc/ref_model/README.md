@@ -6,7 +6,7 @@
 ## Release Information
 **Release: _1.0_**
 
-**Version: _1.0_**
+**Version: _1.1_**
 
 **Release Date: _16th July 2019_**
 
@@ -15,6 +15,7 @@
 | Version | Date | Note
 | --- | --- | --- |
 | 1.0 | 16th July 2019 | First Release|
+| 1.1 | 2nd August 2019 | Post Paris F2F clean up|
 
 
 ## Overall Status
@@ -49,14 +50,14 @@
 
 | Item/Chapter | Lead | Co-Lead |
 |-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------|
-| Overall | Rabi Abdel (abdel.rabi@vodafone.com) @rabiabdel | Mark Shostak (Mark.Shostak@att.com) @markshostak |
+| Overall | Rabi Abdel (abdel.rabi@vodafone.com) @rabiabdel | Walter Kozlowski (walter.kozlowski@team.telstra.com) @wkozlowski |
 | Chapter 1 - Introduction | Beth Cohen (beth.cohen@one.verizon.com) @bfcohen| |
 | Chapter 2 - VNF requirements and analysis | Ahmed ElSawaf (aelsawaf.c@stc.com.sa) @ASawwaf| |
 | Chapter 3 - Modelling | Bernard Tsai (Bernard.Tsai@telekom.de) @BernardTsai-DT| |
 | Chapter 4 - Infrastructure Abstraction | Mark Shostak (Mark.Shostak@att.com) @markshostak | |
 | Chapter 5 - Featureset and Requirements from Infrastructure | Karine Sevilla (karine.sevilla@orange.com) @karinesevilla | |
 | Chapter 6 - External Interfaces | Pankaj Goyal (pg683k@att.com) @pgoyal01| Samuel Manam (samuel.manam@vodafone.com) |
-| Chapter 7 - Security Guidelines | Walter Kozlowski (walter.kozlowski@team.telstra.com)  | Mike B (mb100w@att.com) |
-| Chapter 8 - Compliance and Verification | Mike F (mf4716@att.com)| Kyle Greenwell (Kyle.Greenwell@VerizonWireless.com) |
+| Chapter 7 - Security Guidelines | Walter Kozlowski (walter.kozlowski@team.telstra.com) @wkozlowski | Mike B (mb100w@att.com) |
+| Chapter 8 - Compliance and Verification | Mike F (mf4716@att.com)| Kyle Greenwell (Kyle.Greenwell@VerizonWireless.com) @kagreenwell |
 | Chapter 9 - Life Cycle Management | Tom Kivlin (tom.kivlin@vodafone.com) @tomkivlin| |
 | Chapter 10 - GAPS | JONATHAN BELTRAN (jb788y@att.com) | |
