@@ -1,7 +1,18 @@
 ### Logistics
+* [Mailing Lists.](#mailing_lists)
 * [Meeting times.](#meeting_times)
 * [How to contribute.](#how_to_contribute)
 * [Approval process.](#approval_process)
+
+
+<a name="mailing lists"></a>
+## Mailing Lists
+
+Please subscribe to our mailing lists to stay up to date with news, events, meeting times, etc.
+
+[Reference Model](https://lists.opnfv.org/g/cntt-tech-refm)
+
+[Reference Architecture](https://lists.opnfv.org/g/cntt-tech-refa)
 
 <a name="meeeting_times"></a>
 ## Meeting times
