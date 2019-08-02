@@ -1,3 +1,6 @@
-Details of how to contirbute can be found here:
+# Contribution
 
-* [How to contribute](logistics#how_to_contribute)
+Details of how to contribute and approval process can be found here:
+
+* [Contribution Guidelines](https://github.com/cntt-n/CNTT/wiki/Contribution-Guidelines)
+* [Approval Process](https://github.com/cntt-n/CNTT/wiki/Approval-Process)
