@@ -56,7 +56,7 @@
 | Chapter 3 - Modelling | Bernard Tsai (Bernard.Tsai@telekom.de) @BernardTsai-DT| |
 | Chapter 4 - Infrastructure Abstraction | Mark Shostak (Mark.Shostak@att.com) @markshostak | |
 | Chapter 5 - Featureset and Requirements from Infrastructure | Karine Sevilla (karine.sevilla@orange.com) @karinesevilla | |
-| Chapter 6 - External Interfaces | Pankaj Goyal (pg683k@att.com) @pgoyal01| Samuel Manam (samuel.manam@vodafone.com) |
+| Chapter 6 - External Interfaces | Pankaj Goyal (pg683k@att.com) @pgoyal01| Samuel Manam (samuel.manam@vodafone.com) @manamsamuel|
 | Chapter 7 - Security Guidelines | Walter Kozlowski (walter.kozlowski@team.telstra.com) @wkozlowski | Mike B (mb100w@att.com) |
 | Chapter 8 - Compliance and Verification | Mike F (mf4716@att.com)| Kyle Greenwell (Kyle.Greenwell@VerizonWireless.com) @kagreenwell |
 | Chapter 9 - Life Cycle Management | Tom Kivlin (tom.kivlin@vodafone.com) @tomkivlin| |
