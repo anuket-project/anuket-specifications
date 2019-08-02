@@ -6,7 +6,7 @@
 
 ## Term of Reference & License
 * [Term of Reference](GSMA_CNTT_Terms_of_Reference.pdf)
-* [Code of Conduct](ODE_OF_CONDUCT.md)
+* [Code of Conduct](CODE_OF_CONDUCT.md)
 * [License](LICENSE)
 
 ### Read the Docs:
