@@ -11,9 +11,6 @@
 <a name="1"></a>
 ## Available Reference Architectures
 * [Openstack Based](openstack)
-* [Kubernettes Based](.)
-* [Vmware Based](.)
-
 
 <a name="2"></a>
 ## Principles
