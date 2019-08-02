@@ -1,4 +1,4 @@
-[<< Back](../../ref_arch)
+[<< Back](../../openstack)
 
 # 1. Overview
 
