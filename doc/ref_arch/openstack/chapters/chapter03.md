@@ -1,4 +1,4 @@
-[<< Back](../../ref_arch)
+[<< Back](../../openstack)
 
 # 3. High Level Architecture
 

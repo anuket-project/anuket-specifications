@@ -1,4 +1,4 @@
-[<< Back](../../ref_arch)
+[<< Back](../../openstack)
 
 # 4. Component Level Architecture
 
