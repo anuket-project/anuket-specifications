@@ -1,15 +1,16 @@
 [<< Back](../../openstack)
 
 # 7. Security
+<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [7.1 --](#7.1)
+* [7.1 Introduction](#7.1)
 * [7.2 --](#7.2)
 * [7.3 --](#7.3)
 * [7.4 --](#7.4)
 
 <a name="7.1"></a>
-## 7.1 --
+## 7.1 Introduction
 
 <a name="7.2"></a>
 ## 7.2 --

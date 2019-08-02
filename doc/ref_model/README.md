@@ -60,4 +60,4 @@
 | Chapter 7 - Security Guidelines | Walter Kozlowski (walter.kozlowski@team.telstra.com) @wkozlowski | Mike Bustamente (mb100w@att.com) |
 | Chapter 8 - Compliance and Verification | Mike Fix (mf4716@att.com) @mf4716 | Kyle Greenwell (Kyle.Greenwell@VerizonWireless.com) @kagreenwell |
 | Chapter 9 - Life Cycle Management | Tom Kivlin (tom.kivlin@vodafone.com) @tomkivlin| |
-| Chapter 10 - GAPS | JONATHAN BELTRAN (jb788y@att.com) | |
+| Chapter 10 - GAPS | JONATHAN BELTRAN (jb788y@att.com) @jbeltranatl| |

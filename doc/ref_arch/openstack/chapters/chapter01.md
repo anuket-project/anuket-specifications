@@ -1,6 +1,7 @@
 [<< Back](../../openstack)
 
 # 1. Overview
+<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
