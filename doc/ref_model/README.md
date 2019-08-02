@@ -6,7 +6,7 @@
 ## Release Information
 **Release: _1.0_**
 
-**Version: _1.0_**
+**Version: _1.1_**
 
 **Release Date: _16th July 2019_**
 
@@ -15,6 +15,7 @@
 | Version | Date | Note
 | --- | --- | --- |
 | 1.0 | 16th July 2019 | First Release|
+| 1.1 | 2nd August 2019 | Post Paris F2F clean up|
 
 
 ## Overall Status
@@ -36,30 +37,27 @@
 * [Abbreviations](abbreviations.md)
 * [Chapter 01 - Introduction](chapters/chapter01.md)
 * [Chapter 02 - VNF requirements & Analysis](chapters/chapter02.md)
-* [Chapter 03 - Infrastructure Abstraction](chapters/chapter03.md)
-* [Chapter 04 - Catalogue](chapters/chapter04.md)
-* [Chapter 05 - NFVI SW profiles](chapters/chapter05.md)
-* [Chapter 06 - NFVI HW profiles](chapters/chapter06.md)
-* [Chapter 07 - APIs & Interfaces](chapters/chapter07.md)
-* [Chapter 08 - Security](chapters/chapter08.md)
-* [Chapter 09 - Operations (OA&M)](chapters/chapter09.md)
-* [Chapter 10 - Compliance, Verification, and Certification](chapters/chapter10.md)
-* [Chapter 11 - Challenges and Gaps](chapters/chapter11.md)
+* [Chapter 03 - Modelling](chapters/chapter03.md)
+* [Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue](chapters/chapter04.md)
+* [Chapter 05 - Featureset and Requirements from Infrastructure](chapters/chapter05.md)
+* [Chapter 06 - External Interfaces](chapters/chapter06.md)
+* [Chapter 07 - Security Guidelines](chapters/chapter07.md)
+* [Chapter 08 - Compliance, Verification, and Certification](chapters/chapter08.md)
+* [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
+* [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
 
 ## Contributors
 
-
-| Item/Chapter | Lead | Priority |
+| Item/Chapter | Lead | Co-Lead |
 |-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------|
-| Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) |  |
-| Chapter 1 - Introduction | Beth Cohen (beth.cohen@one.verizon.com) | 1 |
-| Chapter 2 - VNF requirements and analysis | Ahmed ElSawaf (aelsawaf.c@stc.com.sa) | 1 |
-| Chapter 3 - Infrastructure Abstraction | Mark Shostak (Mark.Shostak@att.com),  Bernard Tsai (Bernard.Tsai@telekom.de),  Tom Kivlin (tom.kivlin@vodafone.com) | 1 |
-| Chapter 4 - Catalogue | Burak Kazan (burak.kazan@turkcell.com.tr) | 1 |
-| Chapter 5 - SW Config | Karine Sevilla (karine.sevilla@orange.com) | 1 |
-| Chapter 6 - HW Config | Pankaj Goyal (pg683k@att.com) | 1 |
-| Chapter 7 - API | Pankaj Goyal (pg683k@att.com) | 1 (subset) |
-| Chapter 8 - Security | Beth Cohen (beth.cohen@one.verizon.com) | >1 |
-| Chapter 9 - Operations | Mark Shostak (Mark.Shostak@att.com) | >1 |
-| Chapter 10 - Compliance and Verification | Rabi Abdel (abdel.rabi@vodafone.com) | >1 |
-| Chapter 11 - GAPS | JONATHAN BELTRAN (jb788y@att.com) | >1 |
+| Overall | Rabi Abdel (abdel.rabi@vodafone.com) @rabiabdel | Walter Kozlowski (walter.kozlowski@team.telstra.com) @wkozlowski |
+| Chapter 1 - Introduction | Beth Cohen (beth.cohen@one.verizon.com) @bfcohen| |
+| Chapter 2 - VNF requirements and analysis | Ahmed ElSawaf (aelsawaf.c@stc.com.sa) @ASawwaf| |
+| Chapter 3 - Modelling | Bernard Tsai (Bernard.Tsai@telekom.de) @BernardTsai-DT| |
+| Chapter 4 - Infrastructure Abstraction | Mark Shostak (Mark.Shostak@att.com) @markshostak | |
+| Chapter 5 - Featureset and Requirements from Infrastructure | Karine Sevilla (karine.sevilla@orange.com) @karinesevilla | |
+| Chapter 6 - External Interfaces | Pankaj Goyal (pg683k@att.com) @pgoyal01| Samuel Manam (samuel.manam@vodafone.com) @manamsamuel|
+| Chapter 7 - Security Guidelines | Walter Kozlowski (walter.kozlowski@team.telstra.com) @wkozlowski | Mike B (mb100w@att.com) |
+| Chapter 8 - Compliance and Verification | Mike F (mf4716@att.com)| Kyle Greenwell (Kyle.Greenwell@VerizonWireless.com) @kagreenwell |
+| Chapter 9 - Life Cycle Management | Tom Kivlin (tom.kivlin@vodafone.com) @tomkivlin| |
+| Chapter 10 - GAPS | JONATHAN BELTRAN (jb788y@att.com) | |
