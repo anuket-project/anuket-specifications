@@ -4,20 +4,19 @@
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
-* [1.2 Reference Architecture traceability to the CNTT.](#1.2)
-* [1.3 Principles.](#1.3)
-* [1.4 Scope.](#1.4)
+* [1.2 Principles](#1.2)
+* [1.3 Scope.](#1.3)
+* [1.4 Vision](#1.4)
+* [1.5 Roadmap](#1.5)
+* [1.6 Use Cases](#1.6)
 
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-<p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p>
-
-<a name="1.2"></a>
-## 1.2 Reference Architecture traceability to the CNTT
+<!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
   
-<a name="1.3"></a>
-## 1.3 Principles
+<a name="1.2"></a>
+## 1.2 Principles
 
 Principles should apply to all reference architectures we design and develop
 
@@ -40,3 +39,15 @@ Principles should apply to all reference architectures we design and develop
 1. Prioritize incorporation of open source components 
     1. Design architectures to established open standards as much as possible
 1. Architectures will evolve over time 
+
+<a name="1.3"></a>
+## 1.3 Scope
+
+<a name="1.4"></a>
+## 1.4 Vision
+
+<a name="1.5"></a>
+## 1.5 Roadmap
+
+<a name="1.6"></a>
+## 1.6 Use Cases

@@ -3,15 +3,18 @@
 # 2. Architecture Requirements
 
 ## Table of Contents
-* [2.1 LCM.](#2.1)
-* [2.2 Service Assurance.](#2.2)
-* [2.3 Networking.](#2.3)
-* [2.4 VIM.](#2.4)
-* [2.5 Security / Compliance.](#2.5)
-* [2.6 APIs.](#2.6)
-* [2.7 Tenants.](#2.7)
-* [2.8 Infrastructure.](#2.8)
+* [2.1 Reference Model Requirements.](#2.1)
+* [2.2 Open Stack Requirements.](#2.2)
 
+<a name="2.1"></a>
+## 2.1 Reference Model Requirements.
+
+Traceability to Reference Model.
+
+<a name="2.2"></a>
+## 2.2 Open Stack Requirements.
+
+<!--
 <a name="2.1"></a>
 ## 2.1 LCM
 
@@ -87,3 +90,6 @@
 | # | Requirement | Notes |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | req.inf.1 | Support Application Specific Acceleration (exposed to VNFs). (Data Plane – Computing) | Issue : « Must » Change |
+
+-->
+
