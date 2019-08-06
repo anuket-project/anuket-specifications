@@ -193,15 +193,15 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 <p align="center"><b>Table 5-12:</b> Virtual Networking Acceleration features.</p>
 
+<a name="5.3"></a>
+## 5.3 NFVI HW profile description
+
 The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as compute host, host, node or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as #CPUs (sockets), # of cores/CPU, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, <!--software (VIM, Hypervisor, Operating System),--> specialised hardware (such as accelerators), the underlay networking and storage.
 
 This chapter defines a simplified host, host profile and related capabilities model associated with each of the different NFVI hardware profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 5-4**.
 
 <p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles_v3.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 5-4:</b> NFVI hardware profiles and host associated capabilities.</p>
-
-<a name="5.3"></a>
-## 5.3 NFVI HW profile description
 
 The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be utilized in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources. 
 >Please note that in this chapter we shall not list all of the EPA-related configuration parameters.
