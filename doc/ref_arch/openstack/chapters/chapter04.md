@@ -13,10 +13,13 @@
   * [4.4.1 Basic Profile](#4.3.1)
   * [4.4.2 Network Intensive Profile](#4.4.2)
   * [4.4.3 Compute Intensive Profile](#4.4.3)
-* [4.5 Storage nodes](#4.4)
+* [4.5 Storage nodes](#4.5)
+* [4.6 Integration and Interoperability](#4.6)
 
 <a name="4.1"></a>
 ## 4.1 Introduction.
+
+This should focus on IaaS elements.
 
 <a name="4.2"></a>
 ## 4.2 Foundational Components.
@@ -62,3 +65,6 @@ Components here will not change amongst different profiles
 
 <a name="4.5"></a>
 ## 4.5 Storage nodes.
+
+<a name="4.6"></a>
+## 4.6 Integration and Interoperability.

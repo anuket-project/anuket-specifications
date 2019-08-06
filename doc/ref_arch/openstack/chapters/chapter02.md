@@ -4,17 +4,20 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [2.1 Introductions.](#2.1)
+* [2.1 Introduction.](#2.1)
 * [2.2 Reference Model Requirements.](#2.2)
 * [2.3 Open Stack Requirements.](#2.3)
 
 <a name="2.1"></a>
-## 2.1 Reference Model Requirements.
+## 2.1 Introduction.
+
+<a name="2.2"></a>
+## 2.2 Reference Model Requirements.
 
 Traceability to Reference Model.
 
-<a name="2.2"></a>
-## 2.2 Open Stack Requirements.
+<a name="2.3"></a>
+## 2.3 Open Stack Requirements.
 
 <!--
 <a name="2.1"></a>
