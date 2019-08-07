@@ -118,4 +118,4 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 | `subnet` | network address of the subnet |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 
-<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
+<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p> 
