@@ -62,7 +62,7 @@ This section defines the main terms used in this document; these deinitions are 
 - **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
   >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux (OCI-compliant) or other operating system container technology.
 - **Virtual Network Function Component (VNFC)**: component of a **VNF**, which is either a **V-VNFC** or **C-VNFC**
-- **VM-based VNFC (V-VNFC)**: **VNFC** hosted on a **VM** and in most case, a single **V-VNF** is hosted on a single **VM**
+- **VM-based VNFC (V-VNFC)**: **VNFC** hosted on a **VM** and in most case, a single **V-VNFC** is hosted on a single **VM**
 - **Container-based VNFC (C-VNFC)**: **VNFC** hosted on **Container** and in most case, a single **C-VNFC** is hosted on a single **Container**
 - **Virtual Application (VA)**: is more of a general term for software which can be loaded into a Virtual Machine. 
   >_*Note:*_ a **VNF** is one type of VA.
