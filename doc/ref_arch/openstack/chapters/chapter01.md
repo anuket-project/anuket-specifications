@@ -27,27 +27,12 @@
 <a name="1.4"></a>
 ## 1.4 Principles
 
-Principles should apply to all reference architectures we design and develop
+Open Stack Reference Architecture must obey to the following set of principles:
+- [CNTT Reference Model Principles](../../#principles)
+- [CNTT Reference Architecture Principles](../../../ref_model/chapters/chapter01.md#1.3)
 
-1. Principles should apply to all reference architectures we design and develop
-1. Traceability between reference model to reference architecture (and vice versa)
-1. Implementable and usable for VNF developer community, i.e. with enough specificity to support the design and development of a VNF 
-1. Define the NFVI so that developers can understand how to build VNFs
-1. Design the architectures with common elements so that the VNFs require less operator specific customizations
-1. Rationalize need for each discrete architecture
-    1. Intention is to minimize the number of discrete reference architectures
-1. Architectures should be:
-    1. Resilient
-    1. Scalable
-    1. Elastic
-    1. Secure
-    1. Low Latency
-    1. Resource and Operational Efficiency
-    1. E2E Lifecycle Automation (Deployment, Operations, & Maintenance)
-    1. High-Availability
-1. Prioritize incorporation of open source components 
-    1. Design architectures to established open standards as much as possible
-1. Architectures will evolve over time 
+>Any Open Stack specific principles needs to be added here.
+
 
 <a name="1.5"></a>
 ## 1.5 Scope

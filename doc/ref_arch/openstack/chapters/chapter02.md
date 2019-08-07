@@ -19,6 +19,47 @@ Traceability to Reference Model.
 <a name="2.3"></a>
 ## 2.3 Open Stack Requirements.
 
+Following are Open Stack Reference Architecture requirements:
+
+
+
+1. HW virtualization -- compute, storage and network
+1. Support LCM of NFVI resources -- allocation, upgrade, release and reclamation
+1. Manage discovery of resources, resource capabilities/features
+1. Manage repository of resources and their allocations
+1. Orchestrate (create, update, delete, …) virtual computes, storage, virtual links, networks, subnets and ports
+1. Collect and disseminate performance and fault information
+1. Provides transparent, fully automated hardware addition, removal, and replacement with zero to minimal service disruption
+1. Provides transparent, fully automated software updates, rollback, and post-install configuration changes with zero to minimal service disruption
+1. Automated and validated deployment of Enhanced Platform Awareness (EPA) features across multiple nodes
+1. Support tenant isolation
+1. Policy driven auto-scaling
+1. Image management and provisioning control
+1. Policy based RBAC
+1. Tenant based (a user may have different access rights in different tenants)
+1. **Q:** do site administrators have access to Tenant space and what are their rights (public cloud?)
+1. Policy based security
+1. Policy driven performance and fault management
+1. Principles should apply to all reference architectures we design and develop
+1. Traceability between reference model to reference architecture (and vice versa)
+1. Implementable and usable for VNF developer community, i.e. with enough specificity to support the design and development of a VNF 
+1. Define the NFVI so that developers can understand how to build VNFs
+1. Design the architectures with common elements so that the VNFs require less operator specific customizations
+1. Rationalize need for each discrete architecture
+    1. Intention is to minimize the number of discrete reference architectures
+1. Architectures should be:
+    1. Resilient
+    1. Scalable
+    1. Elastic
+    1. Secure
+    1. Low Latency
+    1. Resource and Operational Efficiency
+    1. E2E Lifecycle Automation (Deployment, Operations, & Maintenance)
+    1. High-Availability
+1. Prioritize incorporation of open source components 
+    1. Design architectures to established open standards as much as possible
+1. Architectures will evolve over time 
+
 <!--
 <a name="2.1"></a>
 ## 2.1 LCM
