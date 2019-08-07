@@ -28,8 +28,8 @@
 ## 1.4 Principles
 
 Open Stack Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../#principles)
-- [CNTT Reference Architecture Principles](../../../ref_model/chapters/chapter01.md#1.3)
+- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
+- [CNTT Reference Architecture Principles](../../#principles)
 
 >Any Open Stack specific principles needs to be added here.
 
