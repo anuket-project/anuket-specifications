@@ -11,6 +11,6 @@
 Those principles apply to all reference architecture produced by CNTT.
 
 1. Cloud Native principles.
-1. Zero Touch principles.
-1. Openess and portability.
-1. Layering.
+2. Zero Touch principles.
+3. Openess and portability.
+4. Layering.
