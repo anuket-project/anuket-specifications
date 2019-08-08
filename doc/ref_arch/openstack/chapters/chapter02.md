@@ -21,8 +21,14 @@ Traceability to Reference Model.
 
 Following are Open Stack Reference Architecture requirements:
 
+| Ref | Requirement | Note |
+|--------------|-------------|------|
+| `rm.req.001` | Support LCM of NFVI resources | includes allocation, release and reclamation |
+| `rm.req.002` | Req1 | Note |
+| `rm.req.003` | Req1 | Note |
 
 
+**Backlog of Req**
 1. HW virtualization -- compute, storage and network
 1. Support LCM of NFVI resources -- allocation, upgrade, release and reclamation
 1. Manage discovery of resources, resource capabilities/features
