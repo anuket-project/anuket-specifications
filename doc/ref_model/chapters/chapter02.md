@@ -145,64 +145,54 @@ The following is a list of VNFs that are considered for analysis in this chapter
 
 Studying various requirements of VNFs helps understanding what expectation they will have from the underlying NFVI. Following are _some_ of the requirements that various workloads might expected:
 
-- Computing
+- **Compute**
   - Parallelized processing
   - Memory access intensity
-  - Latency sensitivy
+  - Latency
   - Specific processing (e.g., cryptography, transcoding)
-- Networking
+- **Network**
   - Throughput (bit rate and/or packet rate)
   - Latency
-  - Filtering/NAT
-  - vNIC / VLAN number
-  - Specific external network connectivity (e.g.,  MPLS)
-- Storage
+  - interfaces number (i.e., vNIC and VLAN)
+  - Specific features (e.g., firewalling, NAT, des/encryption)
+  - Specific external network connectivity (e.g., MPLS, VXLAN)
+- **Storage**
   - IOPS
   - Volume
   - Ephemeral or Persistent
   - Specific storage (e.g., object)
 
 
+By trying to sort VNFs into different categories based on the requirements observed, below are the different profiles concluded, which are mainly based on performance needs:
 
-By trying to sort VNF components into different categories based on the requirements observed, below are the different profiles concluded, which are mainly performance-oriented:
-
-- **Profile One **
-
+- **Profile One**
   - Workload types
     - Control plane, management plane and non-Telco functions
     - _Examples: PCRF, NMS, BSS_
   - Nos specific requirements
-
-- **Profile Two **
-
+- **Profile Two**
   - Workload types
     - Data plane functions without specific computing need
     - _Examples: BNG, PGW, CDN_
   - Requirements
-    - High bit rate
+    - Fast computation
     - High packet rate
     - Low latency
-
-- **Profile Three ** 
-
+- **Profile Three** 
   - Workload types
     - Data plane functions with specific computing need
     - _Examples: SEC-GW, Firewall, DPI_
   - Requirements
     - Algorithmic-intensive
     - Fast computation
+    - High packet rate
     - Low latency
-
 - **Profile Four**
-
   - Workload types
-
     - Control plane functions with specific storage need
     - _Example: UDR_
-
   - Requirements
-
-    - High storage IOPS	 
+    - High storage IOPS
     - High storage capacity
 
 <a name="2.3"></a>
