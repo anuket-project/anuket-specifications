@@ -164,25 +164,24 @@ By trying to sort VNFs into different categories based on the requirements obser
 
 - **Profile One**
   - VNF types
-    - Control plane functions (without specific need) and management plane functions
+    - Control plane functions without specific need and management plane functions
     - _Examples: PCRF, NMS, BSS_
   - Nos specific requirements
 - **Profile Two**
   - VNF types
-    - Data plane functions (without specific computing needs)
-    - _Examples: BNG, PGW, CDN_
+    - Data plane functions (i.e., functions with specific networking and computing needs)
+    - _Examples: BNG, PGW, UPF, SEC-GW, DPI, CDN, SBC _
   - Requirements
+    - Algorithmic-intensive
     - Fast computing
     - High throughput
     - Low network latency
 - **Profile Three** 
   - VNF types
-    - Data plane functions with specific computing needs
-    - _Examples: SEC-GW, Firewall, DPI_
+    - Control plane functions with specific computing needs
+    - _Examples: MME, AMF, IMS-CSCF_
   - Requirements
-    - Algorithmic-intensive
     - Fast computing
-    - Low network latency
 - **Profile Four**
   - VNF types
     - Control plane functions with specific storage needs
@@ -193,14 +192,15 @@ By trying to sort VNFs into different categories based on the requirements obser
 
 
 <a name="2.3"></a>
+
 # 2.3 NFVI Profiles
 
 Based on the above analysis, following NFVI profiles are proposed (Also shown in **Figure 2-1** below)
 
-- **Basic**: VNFs with VNF-Cs that perform basic compute operations. 
-- **Network intensive**: VNFs with VNF-Cs that perform network intensive operations with high throughput and low latency requirements.
-- **Compute Intensive**: VNFs with VNF-Cs that perform compute intensive operations with low latency requirements.
-- **Storage Intensive**: VNFs with VNF-Cs that perform storage intensive operations with high IPOS requirements. (_**Note:** Storage Intensive Profile will not be defined in initial CNTT releases_)
+- **Basic**: VNFs with VNFCs that perform basic compute operations. 
+- **Network Intensive**: VNFs with VNFCs that perform network and compute intensive operations with high throughput and low latency requirements.
+- **Compute Intensive**: VNFs with VNFCs that perform compute intensive operations.
+- **Storage Intensive**: VNFs with VNFCs that perform storage intensive operations with high IPOS requirements. (_**Note:** Storage Intensive Profile will not be defined in initial CNTT releases_)
 
 >_**Note**: 	This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures._
 
@@ -208,5 +208,3 @@ Based on the above analysis, following NFVI profiles are proposed (Also shown in
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
 On **Chapter 4** later in the document, those infrastructure profiles will be offered to VNFs in form of instance types: **B (Basic)**, **N (Network intensive)**, and **C (Compute intensive)** respectively.
-
-
