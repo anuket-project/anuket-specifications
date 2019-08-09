@@ -143,55 +143,53 @@ The following is a list of VNFs that are considered for analysis in this chapter
 <a name="2.2"></a>
 # 2.2 Analysis
 
-Studying various requirements of VNFs helps understanding what expectation they will have from the underlying NFVI. Following are _some_ of the requirement you might expect by various workloads:
+Studying various requirements of VNFs helps understanding what expectation they will have from the underlying NFVI. Following are _some_ of the requirement types on which various workloads might have different expectation levels:
 
-- Number of VNFC
-- Networking between VNFC
-- Enhanced Platform awareness (EPA)
-  - CPU Pinning 
-  - SR-IOV
-  - Affinity / Anti-affinity rules
-  - Huge Pages 
-  - NUMA alignment
-  - DPDK
-- Hyper-Threading/SMT
--	Packet per Second
--	User Space 
-- Security
-  - Advanced Encryption Standard – New Instructions (Intel® AES – NI).
-  - SELinux 
-- Storage requirements  
-  - Ephemeral or Persistence.
-  - Number of IOPS required 
-  - Volume 
+- **Computing**
+  - Computing speed (i.e., cpu utlization and memory access)
+  - Specific processing (e.g., cryptography, transcoding)
+- **Networking**
+  - Throughput (i.e., bit rate and/or packet rate)
+  - Latency
+  - interfaces number (i.e., vNIC and VLAN)
+  - Specific traffic control (e.g., firewalling, NAT, VPN)
+  - Specific external network connectivity (e.g., MPLS, VXLAN)
+- **Storage**
+  - IOPS
+  - Volume
+  - Ephemeral or Persistent
+  - Specific features (e.g., object storage, local storage)
 
-By trying to categorise VNF components into different categories based on the requirement observed, below are the different profiles concluded:
+By trying to sort VNFs into different categories based on the requirements observed, below are the different profiles concluded, which are mainly driven by expected performance levels:
 
-- **Profile One -** Signalling / Control traffic profile/ Management OSS/BSS and Non-Telco workload:  
-  -	Low throughput
-  -	A small number of Network cards
-  - Low PPS 
-  - EPA enabled (in some cases)
-  - _**Example:**  (PCRF, IMS, NMS)_
-
-- **Profile Two -** Network Intensive Workloads:
-  - High throughput
-  - Multiple Network Interfaces.
-  - High PPS 
-  - EPA enabled 
-  - _**Example:** BNG,  CDN, EPC_
-
-- **Profile Three -** Compute Intensive Workloads:
-  - Algorithmic Intensive
-  - GPU.
-  - Smart NIC / FPGA
-  - _**Example:** SEC-GW, Firewall, DPI_
-
-- **Profile Four -** Storage Intensive Workloads:
-  -	High IOPS 
-  -	High capacity
-  -	EPA enabled 
-  - _**Example:** UDR_
+- **Profile One**
+  - VNF types
+    - Control plane functions (without specific need) and management plane functions
+    - _Examples: PCRF, NMS, BSS_
+  - Nos specific requirements
+- **Profile Two**
+  - VNF types
+    - Data plane functions (without specific computing needs)
+    - _Examples: BNG, PGW, CDN_
+  - Requirements
+    - Fast computing
+    - High throughput
+    - Low network latency
+- **Profile Three** 
+  - VNF types
+    - Data plane functions with specific computing needs
+    - _Examples: SEC-GW, Firewall, DPI_
+  - Requirements
+    - Algorithmic-intensive
+    - Fast computing
+    - Low network latency
+- **Profile Four**
+  - VNF types
+    - Control plane functions with specific storage needs
+    - _Example: UDR_
+  - Requirements
+    - High storage IOPS
+    - High storage volume
 
 
 <a name="2.3"></a>
