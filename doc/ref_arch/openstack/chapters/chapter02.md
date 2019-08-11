@@ -118,7 +118,7 @@ Following are Open Stack Reference Architecture requirements:
 | # | Requirement | Notes |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | req.sec.1 | Security | Zoning, identity management (specific roles assigned to a domain or tenant), Storage and password encryption; RBAC for Infrastructure and Tenants; Tenant isolation; authentication management (integration with Corporate Identity Management) |
-| req.sec.2 | Compliance | Compliance with standards and regulations. |
+| req.sec.2 | Compliance | Compliance with standards and regulations |
 
 <a name="2.6"></a>
 ## 2.6 APIs
