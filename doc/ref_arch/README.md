@@ -9,7 +9,9 @@
 <a name="principles"></a>
 ## Principles
 Preamble:
-CNTT develops a number of NFVI reference architectures. While technology and deployment aspects may differ between them, each of the CNTT reference architetcures describes a variant of a NFV oriented IaaS (Infrastructure as a Service) and its interaction with a wider NFV ecosystem. There is a number of key architetcural principles that apply to all reference architecture produced by CNTT. These principles are enumerated below.  They are meant to be general and at high level, and very limited in number. Some of the chapters of this document will inlcude more specific principles to provide the implementation guidelines for a particular function or a specific component. Also, we need to distinguish between architectural principles and architetcural requirements elaborated later in this document. The principles are here to guide our architetcural thinking, while requirements should be understood as a check list used to gauge a level of compliance of a NFVI implementation to the CNTT standard described in each reference architecture.
+CNTT develops a limited number of NFVI reference architectures. While technology and deployment aspects may differ between them, each of the CNTT reference architectures is based on a common CNTT Reference Model. There is a number of key architectural principles that apply to all reference architecture produced by CNTT. These principles are enumerated below.  They are meant to be general and at high level, and very limited in number. Some of the chapters of this document will inlcude more specific principles to provide the implementation guidelines for a particular function or a specific component. 
+
+We need to distinguish between architectural principles and architectural requirements elaborated later in this document. The principles are here to guide our architectural thinking, while requirements should be understood as a check list used to gauge a level of compliance of a NFVI implementation to the CNTT reference architecture.
 
 1. Open source preference...
 2. Interoperability of interfaces...
