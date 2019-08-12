@@ -19,6 +19,27 @@ Traceability to Reference Model.
 <a name="2.3"></a>
 ## 2.3 Open Stack Requirements.
 
+Proposals (WK): 
+(a) change title of thsi section to 2.3 Architectural Requirements
+(b) suggets the following structure of requirements:
+
+1.	General
+a.	Open source
+b.	Cloud nativeness
+c.	Scalability
+d.	Resiliency
+2.	Infrastructure
+a.	Compute
+b.	Storage
+c.	Networking
+3.	VIM
+4.	APIs
+5.	Tenants
+6.	LCM
+7.	Assurance
+8.	Security
+
+++++++++++++++++++++++++++++++++++++++++++++
 Following are Open Stack Reference Architecture requirements:
 
 | Ref | Requirement | Note |
