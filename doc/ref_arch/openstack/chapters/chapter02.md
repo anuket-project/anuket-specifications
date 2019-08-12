@@ -20,14 +20,14 @@ Traceability to Reference Model.
 ## 2.3 Open Stack Requirements.
 
 Proposals (WK): 
-(a) change title of thsi section to 2.3 Architectural Requirements
-(b) suggets the following structure of requirements:
+1. change title of this section to 2.3 Architectural Requirements
+1. suggets the following structure of requirements:
 
 1.	General
-    a.	Open source
-    b.	Cloud nativeness
-    c.	Scalability
-    d.	Resiliency
+    1.	Open source
+    1.	Cloud nativeness
+    1.	Scalability
+    1.	Resiliency
 2.	Infrastructure
     a.	Compute
     b.	Storage
