@@ -24,14 +24,14 @@ Proposals (WK):
 (b) suggets the following structure of requirements:
 
 1.	General
-a.	Open source
-b.	Cloud nativeness
-c.	Scalability
-d.	Resiliency
+    a.	Open source
+    b.	Cloud nativeness
+    c.	Scalability
+    d.	Resiliency
 2.	Infrastructure
-a.	Compute
-b.	Storage
-c.	Networking
+    a.	Compute
+    b.	Storage
+    c.	Networking
 3.	VIM
 4.	APIs
 5.	Tenants
