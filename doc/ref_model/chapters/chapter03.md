@@ -23,7 +23,7 @@ Although a couple of explicit and implicit abstraction models (e.g. in the conte
 -	**Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) an NFVI needs to provide for hosting Telco workloads
 -	**Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
 -	**Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
--	**Declarative:** the model should allow for a declarative description of the required NFVI capabilities for on-boarding and maintaining workloads
+-	**Specific:** the model should allow for a machine-readable description of the required NFVI capabilities for on-boarding and maintaining workloads
 -	**Explicit:** the model needs to be rich enough to allow for a direct mapping towards the APIs of NFVIs for the instantiation of virtual infrastructure elements without requiring any additional parameters
 -	**Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
 -	**Aligned:** the model should clearly highlight the dependencies between the elements to allow for a well-defined and simplified synchronisation of independent automation tasks.
