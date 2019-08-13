@@ -12,7 +12,7 @@
 
 CNTT develops a limited number of NFVI reference architectures. While technology and deployment aspects may differ between them, each of the CNTT reference architectures is based on a common CNTT Reference Model. 
 
-There is a number of key architectural principles that apply to all reference architecture produced by CNTT. These principles are enumerated below.  They are meant to be general and at high level, and very limited in number. Some of the chapters of this document will inlcude more specific principles to provide the implementation guidelines for a particular function or a specific component. 
+There are a number of key architectural principles that apply to all reference architectures produced by CNTT. These principles are enumerated below. They are meant to be general and at a high level, and limited in number. Some of the chapters of this document will include more specific principles to provide the implementation guidelines for a particular function or a specific component. 
 
 We need to distinguish between architectural principles and architectural requirements elaborated later in this document. The principles are here to guide our architectural thinking, while requirements should be understood as a check list used to gauge a level of compliance of a NFVI implementation to the CNTT reference architecture.
 
@@ -32,6 +32,7 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Security compliance:** To ensure compliance at all level to industry and regional security requirements
 
-1. **Resiliency:** ............*include removing SPOF*
+1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and remove Single Point Failures. 
+
 
 
