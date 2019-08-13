@@ -9,7 +9,8 @@
 <a name="principles"></a>
 ## Principles
 **Preamble**
-    CNTT develops a limited number of NFVI reference architectures. While technology and deployment aspects may differ between them, each of the CNTT reference architectures is based on a common CNTT Reference Model. 
+
+CNTT develops a limited number of NFVI reference architectures. While technology and deployment aspects may differ between them, each of the CNTT reference architectures is based on a common CNTT Reference Model. 
 
 There is a number of key architectural principles that apply to all reference architecture produced by CNTT. These principles are enumerated below.  They are meant to be general and at high level, and very limited in number. Some of the chapters of this document will inlcude more specific principles to provide the implementation guidelines for a particular function or a specific component. 
 
