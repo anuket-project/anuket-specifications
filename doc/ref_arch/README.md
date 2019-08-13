@@ -32,7 +32,7 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Security compliance:** To ensure compliance at all level to industry and regional security requirements
 
-1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and remove Single Point Failures. 
+1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and to avoid Single Point of Failure. 
 
 
 
