@@ -22,7 +22,7 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Disaggregation between clearly defined architecture layers:** To ensure proper separation of concern, example: disagregation of h/w and s/w.
 
-1. **Automated lifecycle management:** To minimize costs of the whole lifecycle and avoid errors and discrepancies resulting from manual processes.
+1. **Automated lifecycle management:** To minimize costs of the whole lifecycle, support zero-downtime maintenance, avoid errors and discrepancies resulting from manual processes.
 
 1. **Automated scalability:** To enable scaling out of workloads to minimize costs and operational impacts.
 
@@ -33,3 +33,5 @@ We need to distinguish between architectural principles and architectural requir
 1. **Security compliance:** To ensure compliance at all level to industry and regional security requirements
 
 1. **Resiliency:** ............*include removing SPOF*
+
+
