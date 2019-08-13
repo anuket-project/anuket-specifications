@@ -203,6 +203,7 @@ A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indi
 
 <a name="1.9"></a>
 ## 1.9	Roadmap
+Release 1 of this document will focus on the network function virtualisation infrastructure and virtualised network functions which are based on virtual machines. In Release 2 there will be partial support for cloud native functions which make use of container technology.
 >_**Comment**: Please Contact the CNTT team for access to the Roadmap_
 
 
