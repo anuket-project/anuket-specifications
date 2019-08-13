@@ -15,13 +15,18 @@ There is a number of key architectural principles that apply to all reference ar
 
 We need to distinguish between architectural principles and architectural requirements elaborated later in this document. The principles are here to guide our architectural thinking, while requirements should be understood as a check list used to gauge a level of compliance of a NFVI implementation to the CNTT reference architecture.
 
-1. Open source preference...
-   Goal: To ensure that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio. 
+1. Open source preference: To ensure that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio. 
 
-2. Interoperability of interfaces...
-3. Disaggregation between clearly defined layers...
-4. Automated lifecycle management...
-5. Automated scalability and elasticity...
-6. Automated closed loop assurance...
-7. Cloud nativeness strategic direction...
-8. Security compliance...
+2. Interoperability of interfaces: To ensure interoperability and minimize integration and efforts.
+
+3. Disaggregation between clearly defined layers: To ensure proper separation of concern and allow for component substitutionas.
+
+4. Automated lifecycle management: To minimize costs of the whole lifecycle and avoid errors and discrepancies resulting from manual processes.
+
+5. Automated scalability and elasticity: To enable scaling out of workloads to minimize costs and operational impacts.
+
+6. Automated closed loop assurance: To minimize operational costs and simplify operations.
+
+7. Cloud nativeness strategic direction: To utilise resource and operational efficiencies of cloud native implementations
+
+8. Security compliance: To ensure compliance at all level to industry and regional security requirements
