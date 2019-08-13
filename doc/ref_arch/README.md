@@ -18,16 +18,18 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Open source preference:** To ensure that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio. 
 
-1. **Interoperability of interfaces:** To ensure interoperability and minimize integration efforts.
+1. **Open APIs:** To ensure interoperability and minimize integration efforts, and for component substitution.
 
-1. **Disaggregation between clearly defined layers:** To ensure proper separation of concern and allow for component substitutionas.
+1. **Disaggregation between clearly defined architecture layers:** To ensure proper separation of concern, example: disagregation of h/w and s/w.
 
 1. **Automated lifecycle management:** To minimize costs of the whole lifecycle and avoid errors and discrepancies resulting from manual processes.
 
-1. **Automated scalability and elasticity:** To enable scaling out of workloads to minimize costs and operational impacts.
+1. **Automated scalability:** To enable scaling out of workloads to minimize costs and operational impacts.
 
 1. **Automated closed loop assurance:** To minimize operational costs and simplify operations.
 
-1. **Cloud nativeness strategic direction:** To utilise resource and operational efficiencies of cloud native implementations
+1. **Cloud nativeness:** To utilise resource and ensure operational efficiencies of cloud native implementations
 
 1. **Security compliance:** To ensure compliance at all level to industry and regional security requirements
+
+1. **Resiliency:** ............*include removing SPOF*
