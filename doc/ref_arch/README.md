@@ -17,7 +17,7 @@ We need to distinguish between architectural principles and architectural requir
 
 1. Open source preference: To ensure that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio. 
 
-2. Interoperability of interfaces: To ensure interoperability and minimize integration and efforts.
+2. Interoperability of interfaces: To ensure interoperability and minimize integration efforts.
 
 3. Disaggregation between clearly defined layers: To ensure proper separation of concern and allow for component substitutionas.
 
