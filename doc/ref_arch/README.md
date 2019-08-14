@@ -18,19 +18,19 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Open source preference:** To ensure that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio. 
 
-1. **Open APIs:** To ensure interoperability and minimize integration efforts, and for component substitution.
+1. **Open APIs:** To enable interoperability and component substitution, and minimize integration efforts.
 
-1. **Disaggregation between clearly defined architecture layers:** To ensure proper separation of concern, example: disagregation of h/w and s/w.
+1. **Seperation of concerns:** To promote lifecycle indpendence of different architectural layers and modules (e.g. disagregation of software from hardware).
 
-1. **Automated lifecycle management:** To minimize costs of the whole lifecycle, support zero-downtime maintenance, avoid errors and discrepancies resulting from manual processes.
+1. **Automated lifecycle management:** To minimize costs of the end-to-end lifecycle, maintenance downtime (target zero downtime), avoid errors and discrepancies resulting from manual processes.
 
-1. **Automated scalability:** To enable scaling out of workloads to minimize costs and operational impacts.
+1. **Automated scalability:** To minimize costs and operational impacts through automated policy-driven scaling of workloads.
 
 1. **Automated closed loop assurance:** To minimize operational costs and simplify operations.
 
-1. **Cloud nativeness:** To utilise resource and ensure operational efficiencies of cloud native implementations
+1. **Cloud nativeness:** To optimise the utilization of resources and enable operational efficiencies.
 
-1. **Security compliance:** To ensure compliance at all level to industry and regional security requirements
+1. **Security compliance:** To ensure the architecture follows the industry best security practices and is at all levels compliant to relevant security regulations.
 
 1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and to avoid Single Point of Failure. 
 
