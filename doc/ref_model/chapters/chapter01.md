@@ -98,7 +98,7 @@ This section defines the main terms used in this document; these deinitions are 
 <a name="1.2.3"></a>
 ### 1.2.3 Operational and administrative terminology
 
--	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
+-	**Tenant**: represents an independently manageable pool of virtual compute, storage and network resources.
 -	**Tenant (Internal) Networks**: virtual networks that are internal to tenant instances.
 -	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
 -	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
