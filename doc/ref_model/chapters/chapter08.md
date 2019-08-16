@@ -63,5 +63,5 @@ CNTT will utilize existing processes, test frameworks, tooks, and test scenarios
 Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline.
 Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
-<a name="Future Planning"></a>
-## Future Planning
+<a name="Future Planning Efforts"></a>
+## Future Planning Efforts
