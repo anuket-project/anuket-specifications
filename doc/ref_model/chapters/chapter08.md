@@ -65,3 +65,7 @@ Example performance-based metrics include, but are not limited to: resource util
 
 <a name="Future Planning Efforts"></a>
 ## Future Planning Efforts
+This section will be used to plan for future offerings.
+1. Performance
+2. Dashboard
+3. etc
