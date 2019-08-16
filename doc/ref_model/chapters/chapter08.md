@@ -28,3 +28,38 @@ The purpose of this chapter is to address the relation between this Reference Mo
 
 <a name="8.3"></a>
 ## 8.3 Recommendations
+
+---
+
+<a name="Synopsis"></a>
+## Synopsis
+
+<a name="Terms and Definitions"></a>
+## Terms and Definitions
+
+<a name="Principles and Guidelines"></a>
+## Principles and Guidelines
+
+<a name="Lifecycle and Process Flow"></a>
+## Lifecycle and Process Flow
+
+<a name="Current OVP/CVC Process"></a>
+## Current OVP/CVC Process
+
+<a name="CNTT/NFVI Certification Approach"></a>
+## CNTT/NFVI Certification Approach
+
+<a name="Quality Assurance"></a>
+## Quality Assurance
+
+<a name="Automation Considerations"></a>
+## Automations Considerations
+
+<a name="Results Reporting"></a>
+## Results Reporting
+
+Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline.
+Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, sustained throughput per second (TPS).
+
+<a name="Future Planning"></a>
+## Future Planning
