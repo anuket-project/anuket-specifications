@@ -153,13 +153,13 @@ Expectations for acknowlegment and turn-round from onboarding, verifications, an
 Process flow for RA (Infra) Validation and Verfiication
 
 <a name="8.5"></a>
-### Current OVP/CVC Process
+### 8.5 Current OVP/CVC Process
 
 <a name="8.5.1"></a>
-### Process (CVC)
+### 8.5.1 Process (CVC)
 
 <a name="8.5.2"></a>
-### Test Framework and Supported Test Cases
+### 8.5.2 Test Framework and Supported Test Cases
 	1. OPNFV – NFVi Testing and Certification
 		1. Test framework, test result database and Web UI
 			1. Dovetail project
@@ -169,7 +169,7 @@ Process flow for RA (Infra) Validation and Verfiication
 		3. Load testing (Bottleneck)
 
 <a name="8.5.3"></a>
-### ONAP - VNF Testing and Certification
+### 8.5.3 ONAP - VNF Testing and Certification
 	1. VNF Validation/Packaging Compliance (HEAT and TOSCA/CSAR/VFD)
 	2. Web front-end integrated with OPNFV Dovetail Web UI
 	3. Future plan: testing of VNF lifecycle, VNF functions, VNF performance
@@ -182,33 +182,33 @@ The OVP Ecosystem Validates Itself Then Certifies VNF.
 3rd Party test platforms may also be leveraged, if desired
 
 <a name="8.6.1"></a>
-### NFVI Certification
+### 8.6.1 NFVI Certification
 1.  Ensures NFVI is fully operational before executing VNF test suite by leveraging OVP Ecosystem Test Suite
 a.	Manifest validations
 
 <a name="8.6.2"></a>
-### Empirical Validation
+### 8.6.2 Empirical Validation
 1.	Spins up instrumented “Golden VNF” objectively validating resources through consumption and measurement
 
 <a name="8.6.3"></a>
-### VNF Certification
+### 8.6.3 VNF Certification
 1.	Certifies Supplier’s VNF meets CNTT Telco entrance criteria by leveraging VVP/CVP/CVC Test Suite
 
 <a name="8.7"></a>
 ## 8.7 Quality Assurance
 
 <a name="8.7.1"></a>
-### Dependencies, Recommendations, Assumptions
+### 8.7.1 Dependencies, Recommendations, Assumptions
 
 <a name="8.7.2"></a>
-### System Under Test (SUT) Pre-reqs
+### 8.7.2 System Under Test (SUT) Pre-reqs
 1. Test Specifications – per infra profile, specifications, and features/capabilities
 2. Naming conventions
 3. NFVi profiles and Flavors
 4. Test User Guide
 
 <a name="8.7.3"></a>
-### Entrance & Exit Criteria
+### 8.7.3 Entrance & Exit Criteria
 1. OVP Entrance (i.e. Supplier needs to submit/agree/conform)
 	1. Conform to CNTT ref model
 	2. Confirm to ref arch
@@ -218,53 +218,53 @@ a.	Manifest validations
 	1. Certifications Required: NFVI, OVP
 
 <a name="8.7.4"></a>
-### Test Frameworks
+### 8.7.4 Test Frameworks
 1. Dovtail
 2. Yardstick
 3. Bottlenecks
 
 <a name="8.7.5"></a>
-### Test Categories
+### 8.7.5 Test Categories
 1. ONAP MANO
 2. Instantiation
 3. Scalability
 
 <a name="8.7.6"></a>
-### Test Harness(es)
+### 8.7.6 Test Harness(es)
 
 <a name="8.7.7"></a>
-### Test Tools
+### 8.7.7 Test Tools
 1. AQuA
 
 <a name="8.8"></a>
-## Test Results
+## 8.8 Test Results
 
 Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline.
 Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
 <a name="8.8.1"></a>
-### Metrics
+### 8.8.1 Metrics
 Metrics/Measurements and respective certification(s).
 e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
 
 <a name="8.8.2"></a>
-### Report Summary
+### 8.8.2 Report Summary
 1. Pass/Fail
 2. Measure Only (e.g. throughput analysis, baseline, transaction stats, etc)
 
 <a name="8.9"></a>
-## Future Planning
+## 8.9 Future Planning
 
 This section will be used to plan for future offerings.
 
 <a name="8.9.1"></a>
-### Performance and Resiliency Testing
+### 8.9.1 Performance and Resiliency Testing
 
 <a name="8.9.2"></a>
-### Reports Dashboard
+### 8.9.2 Reports Dashboard
 
 <a name="8.9.3"></a>
-### Automation Considerations
+### 8.9.3 Automation Considerations
 
 <a name="8.10"></a>
 ## 8.10 Recommendations
