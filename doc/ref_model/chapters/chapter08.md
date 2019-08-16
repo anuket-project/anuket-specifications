@@ -5,8 +5,12 @@
 ## Table of Contents
 * [8.1 Introduction.](#8.1)
 * [8.2 Principals and Guidelines.](#8.2)
-* [8.3	Terms and Resources.](#8.3)
-
+  * [8.2.1 NFVI reference architectures.](#8.2.1)
+  * [8.2.2 Test suites.](#8.2.2)
+* [8.3 Terms and Resources.](#8.3)
+  * [8.3.1 Resources.](#8.3.1)
+  * [8.3.2 Terms.](#8.3.2)
+  * [8.3.3 Test Plans | Suites | Cases.](#8.3.3)
 * [8.4 Compliance, Verification, and Certification process and life cycle.](#8.4)
   * [8.4.1 NFVI reference architectures.](#8.4.1)
   * [8.4.2 Test suites.](#8.4.2)
@@ -31,62 +35,41 @@ The objectives of the verification program are to deliver certified reference ar
 
 These core principals will guide NFV verification deliverables: 
 
-<b><u>Overarching Objectives and Goals</u></b><br>
+<a name="8.2.1"></a>
+### 8.2.1 Overarching Objectives and Goals
+
 1. Deliver certified reference architecture which matches VNF-developer specifications<br>
 2. All accomplished with augmentation to the current OVP ecosystem.<br>
 3. Certified VNFs will on-board and function first shot<br>
 
-<b><u>Verification Methodologies</u></b><br>
+<a name="8.2.2"></a>
+### 8.2.2 Verification Methodologies
 1. Engineering package validations will be performed against targeted infrastructure/architecture<br>
 2. Configuration settings/features/capabilities will be baseline<br> 
 3. Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs<br>
 4. Verification decisions will be based on data
 
-<b><u>Governance</u></b><br>
+<a name="8.2.3"></a>
+### 8.2.3 Governance
 1. Certification badges will be presented by the CVC<br>
 2. CVC will maintain requirements for certification<br>
 
 <a name="8.3"></a>
 ## 8.3 Terms and Resources
 
-<table>
-  <tr>
-    <th>Term</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>AZ</td>
-    <td>AZ	Availability Zone</td>
-  </tr>
-  <tr>
-    <td>CPE</td>
-    <td>Customer Premises Equipment</td>
-  </tr>
-  <tr>
-    <td>CVC</td>
-    <td>Compliance and Verification Committee</td>
-  </tr>  <tr>
-	<td>ETSI</td>
-	<td>European Telecommunications Standards Institute</td>
-  </tr>
-  <tr>
-	<td>ETSI NFV-TST</td>
-	<td>ETSI - Network Functions Virtualisation - Test</td>
-  </tr>
-  <tr>
-	<td>ETSI NFV-IFA</td>
-	<td>ETSI - Network Functions Virtualisation - Infrastructure</td>
-  </tr>
-  <tr>
-	<td>GB</td>
-	<td>Gigabit</td>
-  <tr>
-  <tr>
-	<td>HW</td>
-	<td>Hardware</td>
-  </tr>
-  <tr>
+<a name="8.3.1"></a>
+### 8.3.1 Terms
 
+<table>
+  <tr><th>Term</th><th>Description</th></tr>
+  <tr><td>AZ</td><td>AZ	Availability Zone</td></tr>
+  <tr><td>CPE</td><td>Customer Premises Equipment</td></tr>
+  <tr><td>CVC</td><td>Compliance and Verification Committee</td></tr>
+  <tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
+  <tr><td>ETSI NFV-TST</td><td>ETSI - Network Functions Virtualisation - Test</td></tr>
+  <tr><td>ETSI NFV-IFA</td><td>ETSI - Network Functions Virtualisation - Infrastructure</td></tr>
+  <tr><td>GB</td><td>Gigabit</td></tr>
+  <tr><td>HW</td><td>Hardware</td></tr>
 <tr><td>IMS</td>	<td>IP Multimedia Subsystem</td></tr>
 <tr><td>I/O</td>	<td>Input/Output</td></tr>
 <tr><td>MB</td>	<td>Megabit</td></tr>
@@ -110,12 +93,14 @@ These core principals will guide NFV verification deliverables:
 <tr><td>VNFM</td>	<td>VNF Manager</td></tr>
 </table>
 
-<b><u>Communites</u></b><br>
+<a name="8.3.2"></a>
+### 8.3.2 Resources
 1. OPNFV https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
 2. CVC https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
 
-<b><u>Test Plans | Suites | Cases</u></b><br>
-1.
+<a name="8.3.3"></a>
+### 8.3.3 Test Plans | Suites | Cases
+1. 
 
 ------
 
