@@ -9,8 +9,8 @@
   * [8.2.2 Verification Methodologies.](#8.2.2)
   * [8.2.3 Governance.](#8.2.3)  
 * [8.3 Terms and Resources.](#8.3)
-  * [8.3.1 Resources.](#8.3.1)
-  * [8.3.2 Terms.](#8.3.2)
+  * [8.3.1 Terms.](#8.3.1)
+  * [8.3.2 Resources.](#8.3.2)
   * [8.3.3 Test Plans | Suites | Cases.](#8.3.3)
 * [8.4 Lifecycle and Process Flow.](#8.4)
   * [8.4.1 Project Mgmt.](#8.4.1)
@@ -18,13 +18,13 @@
   * [8.4.3 Onboarding RA and Supplier VNF.](#8.4.3)
   * [8.4.4 SLAs and Issue Resolution](#8.4.4)
   * [8.4.5 RA Verification.](#8.4.5)
-* [8.5 Current OVP/CVC Process.](#8.5)
+* [8.5 Current OVP and CVC Process.](#8.5)
   * [8.5.1 Process (CVC)](#8.5.1)
   * [8.5.2 Test Framework and Supported Test Cases.](#8.5.2)
   * [8.5.3 ONAP - VNF Testing and Certification.](#8.5.3)
 * [8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy.](#8.6)
   * [8.6.1 NFVI Certification.](#8.6.1)
-  * [8.6.2 Empirical Validation.])(#8.6.2)
+  * [8.6.2 Empirical Validation.](#8.6.2)
   * [8.6.3 VNF Certification.](#8.6.3)
 * [8.7 Quality Assurance.](#8.7)
   * [8.7.1 Dependencies, Recommendations, Assumptions.](#8.7.1)
@@ -153,27 +153,27 @@ Expectations for acknowlegment and turn-round from onboarding, verifications, an
 Process flow for RA (Infra) Validation and Verfiication
 
 <a name="8.5"></a>
-### 8.5 Current OVP/CVC Process
+## 8.5 Current OVP and CVC Process
 
 <a name="8.5.1"></a>
 ### 8.5.1 Process (CVC)
 
 <a name="8.5.2"></a>
 ### 8.5.2 Test Framework and Supported Test Cases
-	1. OPNFV – NFVi Testing and Certification
-		1. Test framework, test result database and Web UI
-			1. Dovetail project
-	2. Test tools, test cases and test execution
-		1. API testing (FuncTest)
-		2. Performance and HA (Yardstick)
-		3. Load testing (Bottleneck)
+1. OPNFV – NFVi Testing and Certification
+	1. Test framework, test result database and Web UI
+		1. Dovetail project
+2. Test tools, test cases and test execution
+	1. API testing (FuncTest)
+	2. Performance and HA (Yardstick)
+	3. Load testing (Bottleneck)
 
 <a name="8.5.3"></a>
 ### 8.5.3 ONAP - VNF Testing and Certification
-	1. VNF Validation/Packaging Compliance (HEAT and TOSCA/CSAR/VFD)
-	2. Web front-end integrated with OPNFV Dovetail Web UI
-	3. Future plan: testing of VNF lifecycle, VNF functions, VNF performance
- 
+1. VNF Validation/Packaging Compliance (HEAT and TOSCA/CSAR/VFD)
+2. Web front-end integrated with OPNFV Dovetail Web UI
+3. Future plan: testing of VNF lifecycle, VNF functions, VNF performance
+
 <a name="8.6"></a>
 ## 8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy
 
