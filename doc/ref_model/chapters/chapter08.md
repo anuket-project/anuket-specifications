@@ -40,6 +40,8 @@ The purpose of this chapter is to address the relation between this Reference Mo
 <a name="Principles and Guidelines"></a>
 ## Principles and Guidelines
 
+CNTT will utilize existing processes, test frameworks, tooks, and test scenarios to satisfy validation and compliance requirements, with a preference toward OPNFV projects. Where gaps exist related to telco specific requirements, CNTT will look to subsidize these projects with materials necessary to close those gaps, including processes, tools, and test scenarios.
+
 <a name="Lifecycle and Process Flow"></a>
 ## Lifecycle and Process Flow
 
