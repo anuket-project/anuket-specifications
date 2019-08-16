@@ -4,7 +4,8 @@
 
 ## Table of Contents
 * [8.1 Introduction.](#8.1)
-* [8.2 Principals and Guidelines](#8.2)
+* [8.2 Principals and Guidelines.](#8.2)
+* [8.3	Terms and Resources.](#8.3)
 
 * [8.4 Compliance, Verification, and Certification process and life cycle.](#8.4)
   * [8.4.1 NFVI reference architectures.](#8.4.1)
@@ -45,11 +46,78 @@ These core principals will guide NFV verification deliverables:
 1. Certification badges will be presented by the CVC<br>
 2. CVC will maintain requirements for certification<br>
 
-
-
-
 <a name="8.3"></a>
-## 8.3 Recommendations
+## 8.3 Terms and Resources
+
+<table>
+  <tr>
+    <th>Term</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>AZ</td>
+    <td>AZ	Availability Zone</td>
+  </tr>
+  <tr>
+    <td>CPE</td>
+    <td>Customer Premises Equipment</td>
+  </tr>
+  <tr>
+    <td>CVC</td>
+    <td>Compliance and Verification Committee</td>
+  </tr>  <tr>
+	<td>ETSI</td>
+	<td>European Telecommunications Standards Institute</td>
+  </tr>
+  <tr>
+	<td>ETSI NFV-TST</td>
+	<td>ETSI - Network Functions Virtualisation - Test</td>
+  </tr>
+  <tr>
+	<td>ETSI NFV-IFA</td>
+	<td>ETSI - Network Functions Virtualisation - Infrastructure</td>
+  </tr>
+  <tr>
+	<td>GB</td>
+	<td>Gigabit</td>
+  <tr>
+  <tr>
+	<td>HW</td>
+	<td>Hardware</td>
+  </tr>
+  <tr>
+
+<tr><td>IMS</td>	<td>IP Multimedia Subsystem</td></tr>
+<tr><td>I/O</td>	<td>Input/Output</td></tr>
+<tr><td>MB</td>	<td>Megabit</td></tr>
+<tr><td>NFV</td>	<td>Network Function Virtualization</td></tr>
+<tr><td>NFVI</td>	<td>NFV Infrastructure</td></tr>
+<tr><td>NUMA</td>	<td>Non-Unified Memory Access</td></tr>
+<tr><td>OPNFV</td>	<td>Open Platform for NFV</td></tr>
+<tr><td>RAM</td><td>Random Access Memory</td></tr>
+<tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
+<tr><td>SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
+<tr><td>SLA</td>	<td>Service Level Agreement</td></tr>
+<tr><td>SUT</td>	<td>System Under Test</td></tr>
+<tr><td>SW</td>	<td>Software</td></tr>
+<tr><td>vCPU</td>	<td>Virtual CPU (Central Processing Unit)</td></tr>
+<tr><td>vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
+<tr><td>vRouter</td>	<td>Virtual Router</td></tr>
+<tr><td>vSwitch</td>	<td>Virtual Switch</td></tr>
+<tr><td>VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
+<tr><td>VNF</td>	<td>Virtualised Network Function</td></tr>
+<tr><td>VNF-C</td>	<td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
+<tr><td>VNFM</td>	<td>VNF Manager</td></tr>
+</table>
+
+<b><u>Communites</u></b><br>
+1. OPNFV https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
+2. CVC https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
+
+<b><u>Test Plans | Suites | Cases</u></b><br>
+1.
+
+------
 
 <a name="8.4"></a>
 ## 8.4 Compliance, Verification, and Certification process and life cycle
@@ -60,10 +128,10 @@ These core principals will guide NFV verification deliverables:
 <a name="8.4.2"></a>
 ### 8.4.2 Test suites
 
----
+<a name="8.5"></a>
+## 8.5 Recommendations
 
-<a name="Terms and Definitions"></a>
-## Terms and Definitions
+-----
 
 <a name="Lifecycle and Process Flow"></a>
 ## Lifecycle and Process Flow
