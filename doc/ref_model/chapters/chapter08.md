@@ -4,7 +4,7 @@
 
 ## Table of Contents
 * [8.1 Introduction.](#8.1)
-* [8.2 Principals and Guidelines.](#8.2)
+* [8.2 Principles and Guidelines.](#8.2)
   * [8.2.1 Overarching Objectives and Goals.](#8.2.1)
   * [8.2.2 Verification Methodologies.](#8.2.2)
   * [8.2.3 Governance.](#8.2.3)  
@@ -12,10 +12,36 @@
   * [8.3.1 Resources.](#8.3.1)
   * [8.3.2 Terms.](#8.3.2)
   * [8.3.3 Test Plans | Suites | Cases.](#8.3.3)
-* [8.4 Compliance, Verification, and Certification process and life cycle.](#8.4)
-  * [8.4.1 NFVI reference architectures.](#8.4.1)
-  * [8.4.2 Test suites.](#8.4.2)
-* [8.3	Recommendations.](#8.3)
+* [8.4 Lifecycle and Process Flow.](#8.4)
+  * [8.4.1 Project Mgmt.](#8.4.1)
+  * [8.4.2 OPNFV Iterations & Communications.](#8.4.2)
+  * [8.4.3 Onboarding RA and Supplier VNF.](#8.4.3)
+  * [8.4.4 SLAs and Issue Resolution](#8.4.4)
+  * [8.4.5 RA Verification.](#8.4.5)
+* [8.5 Current OVP/CVC Process.](#8.5)
+  * [8.5.1 Process (CVC)](#8.5.1)
+  * [8.5.2 Test Framework and Supported Test Cases.](#8.5.2)
+  * [8.5.3 ONAP - VNF Testing and Certification.](#8.5.3)
+* [8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy.](#8.6)
+  * [8.6.1 NFVI Certification.](#8.6.1)
+  * [8.6.2 Empirical Validation.])(#8.6.2)
+  * [8.6.3 VNF Certification.](#8.6.3)
+* [8.7 Quality Assurance.](#8.7)
+  * [8.7.1 Dependencies, Recommendations, Assumptions.](#8.7.1)
+  * [8.7.2 System Under Test (SUT) Pre-reqs.](#8.7.2)
+  * [8.7.3 Entrance & Exit Criteria.](#8.7.3)
+  * [8.7.4 Test Frameworks.](#8.7.4)
+  * [8.7.5 Test Categories.](#8.7.5)
+  * [8.7.6 Test Harness(es).](#8.7.6)
+  * [8.7.7 Test Tools.](#8.7.7)
+* [8.8 Test Results.](#8.8)
+  * [8.8.1 Metrics.](#8.8.1)
+  * [8.8.2 Report Summary.](#8.8.2)
+* [8.9 Future Planning.](#8.9)
+  * [8.9.1 Performance and Resiliency Testing.](#8.9.1)
+  * [8.9.2 Reports Dashboard.](#8.9.2)
+  * [8.9.3 Automation Considerations.](#8.9.3)
+* [8.10 Recommendations.](#8.10)
 
 ## Synopsis
 
@@ -30,11 +56,11 @@ This document includes process flow, logistics, and requirements which much be s
 <p align="center"><b>Figure 8-1:</b> CNTT relation to LFN OVP</p>
 
 <a name="8.2"></a>
-## 8.2 Principals and Guidelines
+## 8.2 Principles and Guidelines
 
 The objectives of the verification program are to deliver certified reference architecture which matches VNF-developer specifications, levering the OVP ecosystem as the vehicle for deliverying validated NFV.
 
-These core principals will guide NFV verification deliverables: 
+These core principles will guide NFV verification deliverables: 
 
 <a name="8.2.1"></a>
 ### 8.2.1 Overarching Objectives and Goals
@@ -103,46 +129,146 @@ These core principals will guide NFV verification deliverables:
 ### 8.3.3 Test Plans | Suites | Cases
 1. 
 
-------
-
 <a name="8.4"></a>
-## 8.4 Compliance, Verification, and Certification process and life cycle
+## 8.4 Lifecycle and Process Flow
 
 <a name="8.4.1"></a>
-### 8.4.1 NFVI reference architectures
+### 8.4.1 Project Mgmt
+How certifications are requested, processed, managed, what lab(s) is used, life cycle management
 
 <a name="8.4.2"></a>
-### 8.4.2 Test suites
+### 8.4.2 OPNFV Iterations & Communications
+OPNNV Iterations with the CNTT (mgmt and communication of)
+
+<a name="8.4.3"></a>
+### 8.4.3 Onboarding RA and Supplier VNF
+Onboarding (for OVP certification) 
+
+<a name="8.4.4"></a>
+### 8.4.4 SLAs and Issue Resolution
+Expectations for acknowlegment and turn-round from onboarding, verifications, and issue resolution.
+
+<a name="8.4.5"></a>
+### 8.4.5 RA Verification
+Process flow for RA (Infra) Validation and Verfiication
 
 <a name="8.5"></a>
-## 8.5 Recommendations
+### Current OVP/CVC Process
 
------
+<a name="8.5.1"></a>
+### Process (CVC)
 
-<a name="Lifecycle and Process Flow"></a>
-## Lifecycle and Process Flow
+<a name="8.5.2"></a>
+### Test Framework and Supported Test Cases
+	1. OPNFV – NFVi Testing and Certification
+		1. Test framework, test result database and Web UI
+			1. Dovetail project
+	2. Test tools, test cases and test execution
+		1. API testing (FuncTest)
+		2. Performance and HA (Yardstick)
+		3. Load testing (Bottleneck)
 
-<a name="Current OVP/CVC Process"></a>
-## Current OVP/CVC Process
+<a name="8.5.3"></a>
+### ONAP - VNF Testing and Certification
+	1. VNF Validation/Packaging Compliance (HEAT and TOSCA/CSAR/VFD)
+	2. Web front-end integrated with OPNFV Dovetail Web UI
+	3. Future plan: testing of VNF lifecycle, VNF functions, VNF performance
+ 
+<a name="8.6"></a>
+## 8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy
 
-<a name="CNTT/NFVI Certification Approach"></a>
-## CNTT/NFVI Certification Approach
+The OVP Ecosystem Validates Itself Then Certifies VNF.
 
-<a name="Quality Assurance"></a>
-## Quality Assurance
+3rd Party test platforms may also be leveraged, if desired
 
-<a name="Automation Considerations"></a>
-## Automations Considerations
+<a name="8.6.1"></a>
+### NFVI Certification
+1.  Ensures NFVI is fully operational before executing VNF test suite by leveraging OVP Ecosystem Test Suite
+a.	Manifest validations
 
-<a name="Results Reporting"></a>
-## Results Reporting
+<a name="8.6.2"></a>
+### Empirical Validation
+1.	Spins up instrumented “Golden VNF” objectively validating resources through consumption and measurement
+
+<a name="8.6.3"></a>
+### VNF Certification
+1.	Certifies Supplier’s VNF meets CNTT Telco entrance criteria by leveraging VVP/CVP/CVC Test Suite
+
+<a name="8.7"></a>
+## 8.7 Quality Assurance
+
+<a name="8.7.1"></a>
+### Dependencies, Recommendations, Assumptions
+
+<a name="8.7.2"></a>
+### System Under Test (SUT) Pre-reqs
+1. Test Specifications – per infra profile, specifications, and features/capabilities
+2. Naming conventions
+3. NFVi profiles and Flavors
+4. Test User Guide
+
+<a name="8.7.3"></a>
+### Entrance & Exit Criteria
+1. OVP Entrance (i.e. Supplier needs to submit/agree/conform)
+	1. Conform to CNTT ref model
+	2. Confirm to ref arch
+	3. Submit standard documentation
+	4. Adhere to security compliance
+2. OVP Exit – defined by community for OVP Compliance 
+	1. Certifications Required: NFVI, OVP
+
+<a name="8.7.4"></a>
+### Test Frameworks
+1. Dovtail
+2. Yardstick
+3. Bottlenecks
+
+<a name="8.7.5"></a>
+### Test Categories
+1. ONAP MANO
+2. Instantiation
+3. Scalability
+
+<a name="8.7.6"></a>
+### Test Harness(es)
+
+<a name="8.7.7"></a>
+### Test Tools
+1. AQuA
+
+<a name="8.8"></a>
+## Test Results
 
 Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline.
 Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
-<a name="Future Planning Efforts"></a>
-## Future Planning Efforts
+<a name="8.8.1"></a>
+### Metrics
+Metrics/Measurements and respective certification(s).
+e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
+
+<a name="8.8.2"></a>
+### Report Summary
+1. Pass/Fail
+2. Measure Only (e.g. throughput analysis, baseline, transaction stats, etc)
+
+<a name="8.9"></a>
+## Future Planning
+
 This section will be used to plan for future offerings.
-1. Performance
-2. Dashboard
-3. etc
+
+<a name="8.9.1"></a>
+### Performance and Resiliency Testing
+
+<a name="8.9.2"></a>
+### Reports Dashboard
+
+<a name="8.9.3"></a>
+### Automation Considerations
+
+<a name="8.10"></a>
+## 8.10 Recommendations
+
+-----
+
+<< Work space.  Ideas, Drafts, Work in progress. >>
