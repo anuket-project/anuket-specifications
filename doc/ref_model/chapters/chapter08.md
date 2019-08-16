@@ -5,8 +5,9 @@
 ## Table of Contents
 * [8.1 Introduction.](#8.1)
 * [8.2 Principals and Guidelines.](#8.2)
-  * [8.2.1 NFVI reference architectures.](#8.2.1)
-  * [8.2.2 Test suites.](#8.2.2)
+  * [8.2.1 Overarching Objectives and Goals.](#8.2.1)
+  * [8.2.2 Verification Methodologies.](#8.2.2)
+  * [8.2.3 Governance.](#8.2.3)  
 * [8.3 Terms and Resources.](#8.3)
   * [8.3.1 Resources.](#8.3.1)
   * [8.3.2 Terms.](#8.3.2)
