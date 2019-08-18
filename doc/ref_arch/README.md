@@ -17,7 +17,7 @@ There are a number of key architectural principles that apply to all reference a
 
 We need to distinguish between architectural principles and architectural requirements elaborated later in this document. The principles are here to guide our architectural thinking, while requirements should be understood as a check list used to gauge a level of compliance of a NFVI implementation to the CNTT reference architecture.
 
-1. **Open source preference:** To ensure that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio. 
+1. **Open source preference:** To ensure, by building on technology available in open source projects, that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio. 
 
 1. **Open APIs:** To enable interoperability and component substitution, and minimize integration efforts.
 
