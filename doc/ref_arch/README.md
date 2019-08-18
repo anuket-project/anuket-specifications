@@ -25,9 +25,9 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Automated lifecycle management:** To minimize costs of the end-to-end lifecycle, maintenance downtime (target zero downtime), avoid errors and discrepancies resulting from manual processes.
 
-1. **Automated scalability:** To minimize costs and operational impacts through automated policy-driven scaling of workloads.
+1. **Automated scalability:** To minimize costs and operational impacts through automated policy-driven scaling of workloads by enabling automated horizontal scalability of workloads.
 
-1. **Automated closed loop assurance:** To minimize operational costs and simplify operations.
+1. **Automated closed loop assurance:** To minimize operational costs and simplify NFVI platform operations by using automated fault resolution and performance optimization.
 
 1. **Cloud nativeness:** To optimise the utilization of resources and enable operational efficiencies.
 
