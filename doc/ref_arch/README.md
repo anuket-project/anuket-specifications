@@ -21,7 +21,7 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Open APIs:** To enable interoperability and component substitution, and minimize integration efforts by uisng openly published API definitions.
 
-1. **Seperation of concerns:** To promote lifecycle indpendence of different architectural layers and modules (e.g. disagregation of software from hardware).
+1. **Separation of concerns:** To promote lifecycle independence of different architectural layers and modules (e.g. disagregation of software from hardware).
 
 1. **Automated lifecycle management:** To minimize costs of the end-to-end lifecycle, maintenance downtime (target zero downtime), avoid errors and discrepancies resulting from manual processes.
 
