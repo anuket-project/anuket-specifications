@@ -75,6 +75,7 @@ These core principles will guide NFV verification deliverables:
 2. Configuration settings/features/capabilities will be baseline<br> 
 3. Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs<br>
 4. Verification decisions will be based on data
+5. Test harness is “compatible”, or “conforms” to testing against standard interfaces and services
 
 <a name="8.2.3"></a>
 ### 8.2.3 Governance
