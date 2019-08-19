@@ -9,7 +9,7 @@
 * [6.3 Supporting Enabler Service APIs (not-MVP).](#6.3)
   * [6.3.1 NTP, DNS, etc.](#6.3.1)
   * [6.3.2 Licensing and imaging connectivity.](#6.3.2)
-* [6.4 Acceleration Interfaces and APIs (not-MVP).](#6.4)
+* [6.4 Hardware Acceleration Interfaces and APIs.](#6.4)
 * [6.5 Tool functionalities needed (not-MVP).](#6.5)
   * [6.5.1 Categorized (not specifically named).](#6.5.1)
   * [6.5.2 Policies and Security related primarily.](#6.5.2)
@@ -104,9 +104,48 @@ A virtual compute resource is created as per the flavour template (specifies the
  
 **Table 6-2** specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
 
+
 <a name="6.3"></a>
 ## 6.3	Enabler Services APIs (not-MVP)
 
 This is a place holder for Enabler Services APIs.
 a.	NTP, DNS, etc. – where is the care and feeding of these? Who provides certain features/services within or outside the tenant?
 b.	Licensing and imaging connectivity
+
+<a name="6.4"></a>
+## 6.4 Hardware Acceleration Interfaces and APIs 
+
+**Virtual GPU**: A physical Graphics Processing Unit (pGPU) can be virtualized as multiple virtual Graphics Processing Units (vGPUs) if the hypervisor supports the hardware driver and has the capability to create guests using those virtual devices. The virtual GPU feature in some VIMs allows a deployment to provide specific GPU types for instances using physical GPUs that can provide virtual devices. The steps required to enable virtual GPUs include (i) enabling GPU types; and (ii) configuring an instance type to use a vGPU. Comoute hosts properly configured for vGPU support then pmake it ossible to create instances (VMs) with virtual GPU devices. 
+
+**Acceleration Resources**: ETSI (Ref: NFV IFA 019 v03101p) has defined a set of technology independnet interfaces for acceleration resource life cycle management. These operations allow: allocation, release and querying of acceleration resource, get and reset statistics, subscribe/unsubscribe (terminate) to fault notifications, notify (only used by NFVI) and get alarm information. These acceleration interfaces are  shown in Table 6.3.
+
+|Request|Response|From, To|Type|Parameter|Description|
+|-------|--------|---------|--------|---------|---------|
+|AllocateAccResourceRequest|AllocateAccResourceResponse|VIM → NFVI|Input|attachTargetInfo|the resource the accelerator is to be attached to (e.g., VM) |
+||||Input|accResourceInfo|Accelerator Information|
+||||Output|accResourceId|Id if successful|
+|ReleaseAccResourceRequest|ReleaseAccResourceResponse|VIM → NFVI|Input|accResourceId|Id of resource to be released|
+|QueryAccResourceRequest|QueryAccResourceResponse|VIM → NFVI|Input|hostId|Id of specified host|
+||||Input|Filter|Specifies the accelerators for which query applies|
+||||Output|accQueryResult|Details of the accelerators matching the input filter located in the selected host|
+|GetAccStatisticsRequest|GetAccStatisticsResponse|VIM → NFVI|Input|hostId|Id of specified host|
+||||Input|Filter|Specifies the accelerators for which query applies|
+||||Output|accStatistics|Statistics data of the accelerators matching the input filter located in the selected host.|
+|ResetAccStatisticsRequest|ResetAccStatisticsResponse|VIM → NFVI|Input|hostId|Id of specified host |
+||||Input|Filter|Specifies the accelerators for which request applies |
+|SubscribeRequest|SubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
+||||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
+||||Output|SubscriptionId|Identifier of the successfully created subscription. |
+|UnsubscribeRequest|UnsubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
+||||Input|SubscriptionId|Identifier of the subscription to be unsubscribed.|
+|Notify||NFVI → VIM|||NFVI notifies an alarm to VIM |
+|GetAlarmInfoRequest|GetAlarmInfoResponse|VIM → NFVI|Input|hostId|Id of specified host |
+||||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
+||||Output|Alarm|Information about the alarms if filter matches an alarm. |
+|AccResourcesDiscoveryRequest|AccResourcesDiscoveryResponse|VIM → NFVI|Input|hostId|Id of specified host |
+||||Output|discoveredAccResourceInfo|Information on the acceleration resources discovered within the NFVI. |
+|OnloadAccImageRequest|OnloadAccImageResponse|VIM → NFVI|Input|accResourceId|Identifier of the chosen accelerator in the NFVI. |
+||||Input|accImageInfo|Information about the acceleration image. |
+||||Input|accImage|The binary file of acceleration image. |
+<p align="center"><b>Table 6-3:</b> Hardware Acceleration Interfaces.</p>
+
