@@ -76,6 +76,7 @@ These core principles will guide NFV verification deliverables:
 3. Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs<br>
 4. Verification decisions will be based on data
 5. Test harness is “compatible”, or “conforms” to testing against standard interfaces and services
+6. VNF functionality easily tested w/ addition of Supplier Apparatus 
 
 <a name="8.2.3"></a>
 ### 8.2.3 Governance
@@ -178,32 +179,90 @@ Process flow for RA (Infra) Validation and Verfiication
 <a name="8.6"></a>
 ## 8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy
 
-### 8.6.1 NFVI Profiles reference implementations.
+<a name="8.6.1"></a>
+### 8.6.1 Methodology
+
+Perform VNF certifications using CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects
+will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+
+3rd Party test platforms may also be leveraged, if desired.
+
+<p align="center"><img src="../figures/ch8_certifying_methodlogy.jpg" alt="Certification Methodology" title="Certification Methodology" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Certification Methodology</p>
+
+<a name="8.6.2"></a>
+### 8.6.2 OVP/CVC Certification Strategy & Vehicle
+<ul>
+<li><strong>NFVI Certification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
+<li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
+<li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/CVC Test Suites</li>
+<li><strong>Security</strong>: Ensures VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks</li>
+	
+<a name="8.6.3"></a>
+### 8.6.3 Best Practices.
+<ul>
+<li>Standardized test methodology / flow, Test Plan, and Test Case Suites</li>
+<li>Integration with Dovetail and OVP flow (code, docs, cert criteria, etc.)</li>
+<li>Leveraging ONAP Network and Service Models, with identified VNF-specific parameters</li>
+<li>Standardized certification criteria</li>
+</ul>
+
+<a name="8.6.4"></a>
+### 8.6.4 NFVI Profiles reference implementations.
+
 For compliance, verification, and certification, of NFVI solutions provided for a given NFVI Profile, it is required to have a reference implementation of each profile so it can be used for compliance, validation, and certification.
-Those reference implementations need to reflect on their corresponding profiles and deliver all metrics and capabilities promised. They need to use open source components. Figure 13 below shows the various reference implementations required for each profile, they are:
- NFVI SW Reference implementation.
- NFVI HW Reference implementation.
- VNF reference implementation.
+
+Those reference implementations need to reflect on their corresponding profiles and deliver all metrics and capabilities promised. They need to use open source components. Figure below shows the various reference implementations required for each profile, they are:
+
+- NFVI SW Reference implementation.
+- NFVI HW Reference implementation.
+- VNF reference implementation.
 
 <p align="center"><img src="../figures/ch8_NFVI_ref_profiles_impementations.jpg" alt="NFVI RI Profiles" title="NFVI RI Profiles" width="100%"/></p>
 <p align="center"><b>Figure:</b> Figure: Reference NFVI Profiles Implementation</p>
 
-The OVP Ecosystem Validates Itself Then Certifies VNF.
+<a name="8.6.5"></a>
+### 8.6.5 Vendor supplied NFVI solutions.
 
-3rd Party test platforms may also be leveraged, if desired
+Infrastructure Abstraction and Profiling allows NFVI SW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure below). Having NFVI solutions tailored towards a given profile makes it easier to verify, certify and test that solution against that profile using the reference implementation of the profile mentioned previously.
 
-<a name="8.6.1"></a>
-### 8.6.1 NFVI Certification
-1.  Ensures NFVI is fully operational before executing VNF test suite by leveraging OVP Ecosystem Test Suite
-a.	Manifest validations
+<p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_sw_solutions.jpg" alt="NFVI Vendor SW Solutions" title="NFVI Vendor SW Solutions" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Vendor Supplied NFVI SW Solutions</p>
 
-<a name="8.6.2"></a>
-### 8.6.2 Empirical Validation
-1.	Spins up instrumented “Golden VNF” objectively validating resources through consumption and measurement
+Similarly, Infrastructure Abstraction and Profiling allows NFVI HW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure below). Having NFVI hardware solutions tailored towards a given profile makes it easier to verify, certify and test that hardware solution against that profile using the reference implementation of the profile mentioned previously.
 
-<a name="8.6.3"></a>
-### 8.6.3 VNF Certification
-1.	Certifies Supplier’s VNF meets CNTT Telco entrance criteria by leveraging VVP/CVP/CVC Test Suite
+<p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_hw_solutions.jpg" alt="NFVI Vendor HW Solutions" title="NFVI Vendor HW Solutions" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Vendor Supplied NFVI HW Solutions</p>
+
+<a name="8.6.6"></a>
+### 8.6.6 NFVI Compliance, Verification, and Certification.
+
+Infrastructure abstraction and profiling makes it easier for a given NFVI SW solutions to be validated, certified and tested against the profile it is intended for.
+
+Having a deterministic NFVI metrics and capabilities expected for a given profile, allows NFVI SW solutions to be characterised, validated, and verified against those metrics and capabilities, and therefore report the results in a standard format. This will allow operators to understand in depth the details and the differentiation a given solution can provide against other options.
+
+Figure below demonstrates how a given NFVI SW solution can be validated and certified against a given profile by using a reference HW implementation and a reference NFVI implementation.
+
+<p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_sw_solutions.jpg" alt="Certifying NFVI Vendor SW Solutions" title="Certifying NFVI Vendor SW Solutions" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Certifying Vendor NFVI SW Solutions</p>
+
+Similarly, to characterise, validate, and certify NFVI HW solution against a given profile, both NFVI SW reference implementation and a VNF reference implementation are needed as demonstrated as in Figure below.
+
+<p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_hw_solutions.jpg" alt="Certifying NFVI Vendor HW Solutions" title="Certifying NFVI Vendor HW Solutions" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Certifying Vendor NFVI HW Solutions</p>
+
+Finally, NFVI vendors can characterise, validate, and certify an entire NFVI platform (both SW & HW) against a given profile by using a VNF reference implementation as shown in Figure below.
+
+<p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_swhw_solutions.jpg" alt="Certifying NFVI Vendor SW/HW Solutions" title="Certifying NFVI Vendor SW/HW Solutions" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Certifying Vendor NFVI SW/HW Solutions</p>
+
+<a name="8.6.7"></a>
+### 8.6.7 VNF Compliance, Validation, and Certification.
+
+Standardising on Infrastructure profiles allows VNFs to be characterised, validated, and certified against a given profile by using reference NFVI implementations as demonstrated in Figure below. Where VNFs are using multiple profiles (different VNF-C written against different profiles), multiple Reference NFVI implementations should be used.
+
+<p align="center"><img src="../figures/ch8_certifying_vendor_supplied_vnfs.jpg" alt="Certifying Vendor Supplied VNFs" title="Certifying Vendor Supplied VNFs" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Certifying Vendor Supplied VNFs</p>
 
 <a name="8.7"></a>
 ## 8.7 Quality Assurance
@@ -236,12 +295,38 @@ a.	Manifest validations
 
 <a name="8.7.5"></a>
 ### 8.7.5 Test Categories
-1. ONAP MANO
-2. Instantiation
-3. Scalability
+<ol>
+<li>On-Boarding (ONAP MANO, NFVi Agnostic)</li>
+<li>Instantiation, Deletion, Recent Change (ONAP MANO, NFVi Agnostic)</li>
+<li>VNF Functional Testing</li>
+<li>Security Testing</li>
+<li>Charging / Revenue Assurance Verification</li>
+<li>MicroServices Support</li>
+<li>Closed Loop Testing</li>
+<li>VNF Coexistence (ETSI NFV-TST001 &ldquo;Noisy Neighbor&rdquo;)</li>
+<li>VNF Interactions with Extended NFVi Topology</li>
+<li>VNF Interactions with Complex NFVi (Akraino)</li>
+<li>Scalability Testing</li>
+<li>HA Testing</li>
+<li>Fault Recovery Testing</li>
+<li>PM/KPI/Service Assurance Testing</li>
+</ol>
 
 <a name="8.7.6"></a>
 ### 8.7.6 Test Harness(es)
+<ol>
+<li>Standardized test methodology / flow</li>
+<li>Working test bed reference design</li>
+<li>Standardized Cloud-based facilities (storage, IAM, etc.)</li>
+<li>Standard ONAP Network and Service Models, with identified VNF-specific parameters</li>
+<li>Robot library to enable Data-Driven testing of On-Boarding, Instantiation, etc.</li>
+<li>Sample VNF, CSAR and Robot Test Cases</li>
+<li>Standardized base Test Plan and Test Case suite</li>
+<li>Standardized certification criteria</li>
+<li>Integration with Dovetail and OVP flow (code, docs, cert criteria, etc.)</li>
+<li>Real, usable documentation</li>
+<li>&ldquo;Just add Water&rdquo; deployment vehicle</li>
+</ol>
 
 <a name="8.7.7"></a>
 ### 8.7.7 Test Tools
