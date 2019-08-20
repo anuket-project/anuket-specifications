@@ -13,7 +13,8 @@
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
 
-**shall**: Requirements that are marked as _shall_ are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to _shall not_.
+**should**: Requirements that are marked as _should_ are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to _should not_. 
+> RFC2119
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
@@ -23,16 +24,14 @@
 Traceability to Reference Model.
 
 <a name="2.3"></a>
-## 2.3 Open Stack Requirements.
-
-Proposals (WK): Change title of this section to 2.3 Architectural Requirements; propose the following structure of requirements:
+## 2.3 Requirements.
 
 <a name="2.3.1"></a>
 ### 2.3.1 General
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.gen.ost.01` | Open source | The Architecture shall/must xxx. |
+| `req.gen.ost.01` | Open source | The Architecture **must** use openstack APIs.|
 | `req.gen.ost.02` | Open source | The Architecture shall/must xxx. |
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture shall/must xxx. |
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture shall/must xxx. |
@@ -48,13 +47,13 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.inf.com.01` | Compute | The Architecture shall/must xxx. |
+| `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for VM Instancs. |
 | `req.inf.com.02` | Compute | The Architecture shall/must xxx. |
-| `req.inf.stg.01` | Storage | The Architecture **must** provide storage solution for VIM Instances and VNFs to support Block/Image and local VNF File system storage. |
+| `req.inf.stg.01` | Storage | The Architecture **must** provide storage solution for VM Instances to support Block/Image and local VNF File system storage. |
 | `req.inf.stg.02` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
 | `req.inf.ntw.01` | Network | The Architecture **must** include an SDN integration to support provisioning of network services from host-based OpenStack Neutron networking VTEPs to the Border Edge based VRFs. |
 | `req.inf.ntw.02` | Network | The Architecture **must** Localize intra-host traffic to provide low latency, high throughput, and resiliency. |
-| `req.inf.ntw.03` | Network | The Architecture **shall** support service function chaining from Data plane and fabric perspective. |
+| `req.inf.ntw.03` | Network | The Architecture **should** support service function chaining from Data plane and fabric perspective. |
 | `req.inf.ntw.04` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay - VXLAN or Geneve). |
 | `req.inf.ntw.05` | Network | The Architecture **shall** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently |
 | `req.inf.acc.01` | Acceleration | The Architecture **shall** support Application Specific Acceleration (exposed to VNFs) xxx. |
