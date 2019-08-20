@@ -21,30 +21,120 @@ Traceability to Reference Model.
 
 Proposals (WK): Change title of this section to 2.3 Architectural Requirements; propose the following structure of requirements:
 
-1.	General
-    1.	Open source
-    1.	Cloud nativeness
-    1.	Scalability
-    1.	Resiliency
-2.	Infrastructure
-    1.	Compute
-    1.	Storage
-    1.	Networking
-3.	VIM
-4.	APIs
-5.	Tenants
-6.	LCM
-7.	Assurance
-8.	Security
+<a name="2.3.1"></a>
+### 2.3.1 General
 
-Following are Open Stack Reference Architecture requirements:
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.gen.ost.01` | Open source | The Architecture shall/must xxx. |
+| `req.gen.ost.02` | Open source | The Architecture shall/must xxx. |
+| `req.gen.cnt.01` | Cloud nativeness | The Architecture shall/must xxx. |
+| `req.gen.cnt.02` | Cloud nativeness | The Architecture shall/must xxx. |
+| `req.gen.scl.01` | Scalability | The Architecture shall/must xxx. |
+| `req.gen.scl.02` | Scalability | The Architecture shall/must xxx. |
+| `req.gen.rsl.01` | Resiliency | The Architecture shall/must xxx. |
+| `req.gen.rsl.02` | Resiliency | The Architecture shall/must xxx. |
 
-| Ref | Requirement | Note |
-|--------------|-------------|------|
-| `rm.req.001` | Support LCM of NFVI resources | includes allocation, release and reclamation |
-| `rm.req.002` | Req1 | Note |
-| `rm.req.003` | Req1 | Note |
+<p align="center"><b>Table 2-1:</b> OpenStack General Requirements.</p>
 
+<a name="2.3.2"></a>
+### 2.3.2 Infrastrucuture
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.inf.com.01` | Compute | The Architecture shall/must xxx. |
+| `req.inf.com.02` | Compute | The Architecture shall/must xxx. |
+| `req.inf.stg.01` | Storage | The Architecture shall/must xxx. |
+| `req.inf.stg.02` | Storage | The Architecture shall/must xxx. |
+| `req.inf.ntw.01` | Network | The Architecture shall/must xxx. |
+| `req.inf.ntw.02` | Network | The Architecture shall/must xxx. |
+
+<p align="center"><b>Table 2-2:</b> OpenStack Infrastructure Requirements.</p>
+
+<a name="2.3.3"></a>
+### 2.3.3 VIM
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.vim.01` | General | The Architecture shall/must xxx. |
+| `req.vim.02` | General | The Architecture shall/must xxx. |
+| `req.vim.03` | General | The Architecture shall/must xxx. |
+| `req.vim.04` | General | The Architecture shall/must xxx. |
+| `req.vim.05` | General | The Architecture shall/must xxx. |
+| `req.vim.06` | General | The Architecture shall/must xxx. |
+
+<p align="center"><b>Table 2-3:</b> OpenStack VIM Requirements.</p>
+
+<a name="2.3.4"></a>
+### 2.3.4 Interfaces & APIs
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.int.gen.01` | Interface | The Architecture shall/must xxx. |
+| `req.int.gen.02` | Interface | The Architecture shall/must xxx. |
+| `req.int.gen.03` | Interface | The Architecture shall/must xxx. |
+| `req.int.api.01` | API | The Architecture shall/must xxx. |
+| `req.int.api.02` | API | The Architecture shall/must xxx. |
+| `req.int.api.03` | API | The Architecture shall/must xxx. |
+
+<p align="center"><b>Table 2-4:</b> OpenStack Interfaces and APIs Requirements.</p>
+
+<a name="2.3.5"></a>
+### 2.3.5 Tenants
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.tnt.gen.01` | General | The Architecture shall/must xxx. |
+| `req.tnt.gen.02` | General | The Architecture shall/must xxx. |
+| `req.tnt.gen.03` | General | The Architecture shall/must xxx. |
+| `req.tnt.gen.01` | General | The Architecture shall/must xxx. |
+| `req.tnt.gen.02` | General | The Architecture shall/must xxx. |
+| `req.tnt.gen.03` | General | The Architecture shall/must xxx. |
+
+<p align="center"><b>Table 2-5:</b> OpenStack Tenants Requirements.</p>
+
+<a name="2.3.6"></a>
+### 2.3.6 LCM
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.lcm.gen.01`	| General | The Architecture will support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
+| `req.lcm.gen.02` | General	| The Architecture will support plug-ins to manage deployment of workload to multiple sites and various technology stack. Multi-cloud support through hybrid, migrations, etc. |
+| `req.lcm.gen.03` | General |	The Architecture will provide OpenStack Ironic Bare Metal provision to support VIM Instance provisioning (bootstrap), Management System, KVM host provisioning and Kubernetes host provisioning |
+| `req.lcm.adp.01` | Automated deployment | The Architecture shall allow the “cookie cutter” automated deployment to multiple sites. |
+| `req.lcm.adp.02` | Automated deployment | The Architecture shall enable automated and incremental upgrade of the various software components in a manner that still allows tenant workloads to continue to operate. |
+| `req.lcm.cid.01` | CI/CD | The Architecture will include integration with CI/CD Toolchain for the purpose of Infrastructure Automation |
+| `req.lcm.cid.02` | CI/CD | CI/CD for NFVI and VIM components |
+
+<p align="center"><b>Table 2-6:</b> OpenStack LCM Requirements.</p>
+
+<a name="2.3.7"></a>
+### 2.3.7 Assurance
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.asr.gen.01` | General | The Architecture shall/must xxx. |
+| `req.asr.gen.02` | General | The Architecture shall/must xxx. |
+| `req.asr.gen.03` | General | The Architecture shall/must xxx. |
+| `req.asr.gen.01` | General | The Architecture shall/must xxx. |
+| `req.asr.gen.02` | General | The Architecture shall/must xxx. |
+| `req.asr.gen.03` | General | The Architecture shall/must xxx. |
+
+<p align="center"><b>Table 2-7:</b> OpenStack Assurance Requirements.</p>
+
+<a name="2.3.8"></a>
+### 2.3.8 Security
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.sec.gen.01` | General | The Architecture shall/must xxx. |
+| `req.sec.gen.02` | General | The Architecture shall/must xxx. |
+| `req.sec.gen.03` | General | The Architecture shall/must xxx. |
+| `req.sec.gen.01` | General | The Architecture shall/must xxx. |
+| `req.sec.gen.02` | General | The Architecture shall/must xxx. |
+| `req.sec.gen.03` | General | The Architecture shall/must xxx. |
+
+<p align="center"><b>Table 2-8:</b> OpenStack Security Requirements.</p>
 
 **Backlog of Req**
 1. HW virtualization -- compute, storage and network
@@ -82,21 +172,37 @@ Following are Open Stack Reference Architecture requirements:
     1. High-Availability
 1. Prioritize incorporation of open source components 
     1. Design architectures to established open standards as much as possible
-1. Architectures will evolve over time 
+1. Architectures will evolve over time
+1. Mandatory Core services:
+    1. Neutron (networking)
+    1. Nova (compute)
+    1. Cinder (block storage)
+    1. Keystone (authentication/authorisation)
+    1. Glance (image repository)
+    1. Heat (orchestration)
+1. Optional Core Services:
+    1. Swift (object storage)
+    1. Ceilometer / Panko / Aodh (workload monitoring / autoscaling)
+    1. Ironic (baremetal)
+      … the list could get quite long so perhaps we tier these requirements…
+1. Compute:
+    1. The hypervisor should be KVM with EMU (we can be prescriptive here as it makes certification simpler)
+    1. We could state that we don’t want SR-IOV but any network acceleration should be based on DP-DK or SmartNIC.
+    1. I don’t want to be prescriptive over CPU pinning or NUMA but we can discuss.
+1. Network:
+    1. Load balancing – should we base this on Octavia or do we need a plug-in like AVI / F5?
+    1. OpenVSwitch? 
+    1. Geneve/VXLAN tunnelling?
+    1. IPv6… when?
+1. Tagging:
+    1. We may want to define a standard for tagging resources.
+1. Logging, Monitoring, Alerting of the Cloud should ensure any failures in the control plane are either self-healed or alerted on and ideally some sort of centralised log file analysis should be possible without needing to trawl local log files.    Logging in the tenant space is left to the application.
+1. Backup of the control plane configuration (keystone DB, other DB, policy.json’s) to a remote object store.
 
 <!--
 <a name="2.1"></a>
 ## 2.1 LCM
 
-| # | Requirement | Notes |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| req.lcm.1 | Automated deployment | The Architecture shall allow the “cookie cutter” automated deployment to multiple sites. |
-| req.lcm.2 | Automated/ Incremental Upgrade,(Zero Downtime) | The Architecture shall enable automated and incremental upgrade of the various software components in a manner that still allows tenant workloads to continue to operate. |
-| req.lcm.3	| Zero Downtime Expansion/Change | The Architecture will support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
-| req.lcm.4 | Multi-environment support	| The Architecture will support plug-ins to manage deployment of workload to multiple sites and various technology stack. Multi-cloud support through hybrid, migrations, etc. |
-| req.lcm.5 | Bare Metal Provisioning |	The Architecture will provide OpenStack Ironic Bare Metal provision to support VIM Instance provisioning (bootstrap), Management System, KVM host provisioning and Kubernetes host provisioning |
-| req.lcm.6 | Support CI/CD | Toolchain Integration	The Architecture will include integration with CI/CD Toolchain for the purpose of Infrastructure Automation |
-| req.lcm.7 | Support Lifecycle Management | CI/CD for NFVI and VIM components |
 
 
 <a name="2.2"></a>
