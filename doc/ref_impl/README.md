@@ -2,10 +2,6 @@
 
 # CNTT Reference Implementation
 
-<a name="available-ra"></a>
+<a name="available-ri"></a>
 ## Table of Contents
-* [Openstack Based](openstack)
-
-<a name="principles"></a>
-## Principles
-**Preamble**
+* [Openstack Reference Implementation](openstack)
