@@ -1,138 +1,112 @@
 [<< Back](../../ref_model)
-# 6	Reference NFVI HW profiles and configurations
+# 6	External Interfaces
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [6.1 Hardware Profile Model.](#6.1)
-  * [6.1.1 Compute Resource Configurations.](#6.1.1)
-  * [6.1.2 Network Resources Configurations.](#6.1.2)
-  * [6.1.3 Storage Configurations.](#6.1.3)
-  * [6.1.4 Security Configuration.](#6.1.4)
+* [6.1 Infra related APIs.](#6.1)
+* [6.2 NFVI APIs.](#6.2)
+  * [6.2.1 Tenant Level APIs.](#6.2.1)
+* [6.3 Supporting Enabler Service APIs (not-MVP).](#6.3)
+  * [6.3.1 NTP, DNS, etc.](#6.3.1)
+  * [6.3.2 Licensing and imaging connectivity.](#6.3.2)
+* [6.4 Acceleration Interfaces and APIs (not-MVP).](#6.4)
+* [6.5 Tool functionalities needed (not-MVP).](#6.5)
+  * [6.5.1 Categorized (not specifically named).](#6.5.1)
+  * [6.5.2 Policies and Security related primarily.](#6.5.2)
+  * [6.5.3 If embedded in VM.](#6.5.3)
+* [6.6 Cloud agnostic (not-MVP).](#6.6)
+* [6.7 IPL (Reference Model component only) (not-MVP).](#6.7)
+ 
+In this document’s earlier chapters, the various resources and capabilities of the NFVI have been catalogued and the workloads (VNFs) have been profiled with respect to those capabilities. The intent behind this chapter and an “API Layer” is to similarly provide a single place to catalogue and thereby codify, a common set of open APIs to access (i.e. request, consume, control, etc.) the aforementioned resources, be them directly exposed to the VNFs, or purely internal to the NFVI.
 
+It is a further intent of this chapter and this document to ensure the APIs adopted for CNTT NFVI implementations are open and not proprietary, in support of compatibility, component substitution and ability to realize maximum value from existing and future test heads and harnesses.
 
-The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware host profile. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as (aka) compute host, host, node or pServer). The host profile contains a specification (yaml file) on how the host should be configured including the underlay networking and storage.
+While it is the intent of this chapter, when included in a Reference Architecture, to catalogue the APIs, it is not the intent of this chapter to reprint the APIs, as this would make maintenance of the chapter impractical and the length of the chapter disproportionate within the Reference Model document. Instead, the APIs selected for CNTT NFVI implementations and specified in this chapter, will be incorporated by reference and URLs for the latest, authoritative versions of the APIs, provided in the References section of this document.
 
-This chapter defines a simplified host and host profile model and the host profile configuration parameters associated with the different hardware profile types shown in **Figure 6-1**.
+Although the document does not attempt to reprint the APIs themselves, where appropriate and generally where the mapping of resources and capabilities within the NFVI to objects in APIs would be otherwise ambiguous, this chapter shall provide explicit identification and mapping.
 
-<p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles.PNG" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
-<p align="center"><b>Figure 6-1:</b> Reference NFVI hardware profiles.</p>
+In addition to the raw or base-level NFVI functionality to API and object mapping, it is further the intent to specify an explicit, normalized set of APIs and mappings to control the logical interconnections and relationships between these objects, notably, but not limited to, support of SFC (Service Function Chaining) and other networking and network management functionality.
+It is initially proposed to divide the APIs into three primary categories, each reflecting a specific domain relative to the NFVI, as follows, and described in detail in the first three sections of this chapter:
+
+1.	Intra-Infrastructure (NFVI) APIs
+2.	NFVI APIs
+3.	Enabler Services APIs
+
+**Infra Related**: These APIs are provided and consumed directly by the infra. These APIs are purely internal to the NFVI, and not exposed to VNF workloads.
+
+**NFVI APIs**: These APIs are provided to the VNF workloads (i.e. exposed), by the infra.
+
+**Enabler Services**: These APIs are provided by functions which may be instantiated at higher layers (i.e. in user or workload space), and provide facilities that are required for a majority of VNFs. For example, DHCP, DNS, NTP, DBaaS, etc. Note, in some cases Enabler Services may mirror services provided within the Infra, such as DNS or DHCP. However, the purpose in this section is explicitly to describe instances of those services which are both hosted and consumed above the Infra water mark.
 
 <a name="6.1"></a>
-## 6.1	Hardware Profile Model
-The host profile model and configuration parameters will be utilized in the reference architecture to define different hardware profiles.
+## 6.1 Infra-Related APIs
+This is a place holder for Infra Related APIs.
 
-A software flavour series (see Chapters 4 and 5) defines the characteristics of Virtual Machines (VMs or vServers) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between software flavour series and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may utilize different naming standards for their host profiles. 
+<a name="6.2"></a>
+## 6.2 NFVI APIs
+The NFVI APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads (e.g., VNFs) while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference Architecture Framework (**Figure 6-1**) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**. 
 
-The following naming convention is utilized in this document:
+<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
+<p align="center"><b>Figure 6-1:</b> ETSI NFVI Interface points.</p>
 
-`<host profile name>:: <”hp”><numeral host profile sequence #>`
+| Interface Point	| NFVI Exposure	| Interface Between |	Description|
+|--------------|--------------|--------------|--------------|
+| Vi-Ha	| Internal	NFVI | Software Layer and Hardware Resources |	1.	Discover/collect resources and their configuration information <br>2.	Create execution environment (e.g., VM) for workloads (VNF) |
+| Vn-Nf| 	External	| NFVI and VM (VNF)	| Represents the execution environment. There is no protocol or interface defined between these layers. Advantage is that the workloads can be made NFVI independent except for performance |
+| NF-Vi	| External	| NFVI and VIM |	1.	Discover/collect physical/virtual resources and their configuration information<br>2.	Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3.	Physical/Virtual resources configuration changes<br>4.	Physical/Virtual resource configuration. |
+| Or-Vi	| External	| VNF Orchestrator and VIM	| See below |
+| Vi-Vnfm	| External	| VNF Manager and VIM	| See below |
 
-When a software flavour series is associated with a host profile then a qualified name can be used as specified below. For example, for software flavor series “ns” (network intensive with SR-IOV) the above host profile name would be “ns-hp1”.
+<p align="center"><b>Table 6-1:</b> NFVI and VIM Interfaces with Other System Components.</p>
+			
+The Or-Vi and Vi-VNfm are both specifying interfaces provided by the VIM and therefore are related. The Or-Vi reference point is used for exchanges between NFV Orchestrator and VIM, and supports the following interfaces; virtualised resources refers to virtualised compute, storage and network resources:
 
-`<qualified host profile>:: <software flavor series><”-“><”hp”><numeral host profile sequence #>`
+- Software Image Management
+- Virtualised Resources Information Management
+- Virtualised Resources Capacity Management (only VNF Orchestrator and VIM (Or-Vi))
+- Virtualised Resources Management
+- Virtualised Resources Change Management
+- Virtualised Resources Reservation Management
+- Virtualised Resources Quota Management
+- Virtualised Resources Performance Management
+- Virtualised Resources Fault Management
+- Policy Management
+- Network Forwarding Path (NFP) Management (only VNF Orchestrator and VIM (Or-Vi))
 
-The following model depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled. 
+<a name="6.2.1"></a>
+### 6.2.1 Tenant Level APIs
 
-<p align="center"><img src="../figures/ch06_generic_model.PNG" alt="generic_model" title="Generic Model" width="100%"/></p>
-<p align="center"><b>Figure 6-2:</b> Generic model of a computer host for use in Host Profile configurations.</p>
+In the abstraction model of the NFVI (**Chapter 3**) a conceptual model of a Tenant (**Figure 3-2**) represents the slice of a cloud zone dedicated to a VNF. This slice, the Tenant, is composed of virtual resources being utilized by VNFs within that Tenant. A conceptual data model of a Tenant is shown in Figure 16. The Tenant has an assigned quota of virtual resources, a set of users can perform operations as per their assigned roles, and the Tenant exists within a Cloud Zone. The APIs will specify the allowed operations on the Tenant including its component virtual resources and the different APIs can only be executed by users with the appropriate roles. For example, a Tenant may only be allowed to be created and deleted by Cloud Zone administrators while virtual compute resources could be allowed to be created and deleted by Tenant administrators.
 
-The host profile properties are specified in the following sub-sections. The following diagram (**Figure 6-2**) pictorially represents a high-level abstraction of a host.
+<p align="center"><img src="../figures/Ch07-Figure7-2-Tenant.PNG" alt="tenant_data_model" title="Tenant Data Model" width="65%"/></p>
+<p align="center"><b>Figure 6-2:</b> Conceptual Tenant data model.</p>
+ 
+For a VNF stack to be created in a Tenant also requires APIs for the management (creation, deletion and operation) of the Tenant, software flavours (Chapter 5), Operating System and VNF images (“Images”), Identity and Authorization (“Identity”), virtual resources, security and the VNF application (“stack”).
 
-<p align="center"><img src="../figures/ch06_ref_hw_profile.PNG" alt="reference_hw_profile" title="Reference HW Profile" width="65%"/></p>
-<p align="center"><b>Figure 6-3:</b> Generic model of a computer host for use in Host Profile configurations.</p>
+A virtual compute resource is created as per the flavour template (specifies the compute, memory and local storage capacity) and is launched using an image with access and security credentials; once launched, it is referred to as a virtual compute instance or just “Instance”). Instances can be launched by specifying the compute, memory and local storage capacity parameters instead of an existing flavour; reference to flavours coves the situation where the capacity parameters are specified. IP addresses and storage volumes can be attached to a running Instance. 
 
-The configurations specified in this model section will be utilized in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 6-1**.
+| Resource | Create | List | Attach | Detach | Delete | Notes |
+|-----------------|--------|------|--------|--------|--------|-------------------------------------------------------------------------------------------------------------|
+| Flavour | + | + |  |  | + |  |
+| Image | + | + |  |  | + | Create/delete by appropriate administrators |
+| Key pairs | + | + |  |  | + |  |
+| Privileges |  |  |  |  |  | Created and managed by Cloud Service Provider(CSP)  administrators |
+| Role | + | + |  |  | + | Create/delete by authorized administrators where roles are assigned privileges and mapped to users in scope |
+| Security Groups | + | + |  |  | + | Create and delete only by VDC administrators |
+| Stack | + | + |  |  | + | Create/delete by VDC users with appropriate role |
+| Virtual Storage | + | + | + | + | + | Create/delete by VDC users with appropriate role |
+| User | + | + |  | + | + | Create/delete only by VDC administrators |
+| Tenant | + | + |  | + | + | Create/delete only by Cloud Zone administrators |
+| Virtual compute | + | + |  | + | + | Create/delete by VDC users with appropriate role.  Additional operations would include suspend/unsuspend |
+| Virtual network | + | + | + | + | + | Create/delete by VDC users with appropriate role |
 
-<a name="6.1.1"></a>
-### 6.1.1	Compute Resource Configurations
+<p align="center"><b>Table 6-2:</b> API types for a minimal set of resources.</p>
+ 
+**Table 6-2** specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
 
-| Reference | Feature | Description |
-|---------------------|---------------------------------------------------------------|----------------------------------------------------------------------|
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the number of CPU sockets exist within each platform |
-| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. |
-| nfvi.hw.cpu.cfg.003 | NUMA Alignment |  |
-| nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) |  |
-| nfvi.hw.cpu.cfg.005 | CPU Pinning |  |
-| nfvi.hw.cpu.cfg.006 | CPU Allocation Ratio |  |
-| nfvi.hw.cpu.cfg.007 | Cores dedicated to Host Resources | Hypervisor, VIM components, base containers, etc. |
-| nfvi.hw.cpu.cfg.008 | Cores dedicated for Data Plane Development Kit ( DPDK) Router |  |
-| nfvi.hw.cpu.cfg.009 | Cores available for Guest vServers |  |
-| nfvi.hw.cpu.cfg.010 | Hugepages |  |
-| nfvi.hw.cpu.cfg.011 | Max vCPUs available for tenants/NUMA |  |
-| nfvi.hw.cpu.cfg.012 | Max vCPUs available for tenants/host | Across al NUMA (or CPUs) |
+<a name="6.3"></a>
+## 6.3	Enabler Services APIs (not-MVP)
 
-<p align="center"><b>Table 6-1:</b> Compute resources configuration parameters.</p>
-
-#### 6.1.1.1	Compute Acceleration Hardware Specifications
-
-| Reference | Feature | Description |
-|---------------------|---------|-------------|
-| nfvi.hw.cac.cfg.001 | GPU | GPU |
-
-<p align="center"><b>Table 6-2:</b> Compute acceleration configuration specifications.</p>
-
-<a name="6.1.2"></a>
-### 6.1.2	Network Resources Configurations
-#### 6.1.2.1	NIC configurations
-
-| Reference | Feature | Description |
-|-------------------------------|--------------------------------|-----------------------------------------------------|
-| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform |
-| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps |
-| nfvi.hw.nic.numa.00.cfg.001 | NUMA 0 NICs | Specify the NUMA 0 NIC ports |
-| nfvi.hw.nic.numa.00.cfg.002 | NUMA 0 NIC VF Promiscuous Mode |  |
-| nfvi.hw.nic.numa.01.cfg.001 | NUMA 1 NICs | Specify the NUMA 1 NIC ports |
-| nfvi.hw.nic.numa.01.cfg.002 | NUMA 1 NIC VF Promiscuous Mode |  |
-
-<p align="center"><b>Table 6-3:</b> NIC configuration specifications.</p>
-
-#### 6.1.2.2	PCIe Configurations
-
-| Reference | Feature | Description |
-|---------------------|------------|------------------------------------------------|
-| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the platform |
-| nfvi.hw.pci.cfg.002 | PCIe speed |  |
-| nfvi.hw.pci.cfg.003 | PCIe Lanes |  |
-
-<p align="center"><b>Table 6-4:</b> PCIe configuration specification.</p>
-
-##### 6.1.2.3	Network Bond Configurations
-
-| Reference* | Feature | Description |
-|---------------------|-------------------|-------------|
-| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  |
-
-<p align="center"><b>Table 6-5:</b> Network bond configuration specifications.</p>
-
-> _*Repeat Configuration for each Bond and specify use._
-
-#### 6.1.2.4	Network Acceleration Configurations
-
-| Reference | Feature | Description |
-|---------------------|----------------------------|-----------------------------------------------------------------------|
-| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |
-| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware. |
-| nfvi.hw.nac.cfg.003 | Compression |  |
-
-<p align="center"><b>Table 6-6:</b> Network acceleration configuration specifications.</p>
-
-<a name="6.1.3"></a>
-### 6.1.3	Storage Configurations
-
-| Reference | Feature | Description |
-|-------------------------|-------------------|-------------|
-| nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD |  |
-| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD |  |
-
-<p align="center"><b>Table 6-7:</b> Storage configuration specifications.</p>
-
-> _*This specified local storage configurations including # and capacity of storage drives._
-
-<a name="6.1.4"></a>
-### 6.1.4	Security Configuration
-
-| Reference* | Feature | Description |
-|---------------------|---------|---------------------------------------------|
-| nfvi.hw.sec.cfg.001 | TPM | Platform must have Trusted Platform Module. |
-
-<p align="center"><b>Table 6-8:</b> Security configuration specifications.</p>
+This is a place holder for Enabler Services APIs.
+a.	NTP, DNS, etc. – where is the care and feeding of these? Who provides certain features/services within or outside the tenant?
+b.	Licensing and imaging connectivity

@@ -1,7 +1,14 @@
 # Common NFVI Telco Task Force (CNTT)
 
-## Table of Contents
+## Available Specifications
 * [Reference Model](doc/ref_model)
+* [Reference Architecture](doc/ref_arch)
 
-### web-friendly view:
-* [CNTT Web](https://cntt-n.github.io/CNTT/) 
+## Term of Reference & License
+* [Term of Reference](GSMA_CNTT_Terms_of_Reference.pdf)
+* [Code of Conduct](CODE_OF_CONDUCT.md)
+* [License](LICENSE)
+
+### Read the Docs:
+* [Wiki](https://github.com/cntt-n/CNTT/wiki) 
+* [Doc](https://cntt-n.github.io/CNTT/)

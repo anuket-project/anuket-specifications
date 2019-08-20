@@ -1,0 +1,39 @@
+# This is a comment.
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# @global-owner1 and @global-owner2 will be requested for
+# review when someone opens a pull request.
+*       @rabiabdel
+
+# Reference Model
+# Chapter 1 - Overview
+/doc/ref_model/chapters/chapter01.md    @rabiabdel @bfcohen
+
+# Chapter 2 - Analysis
+/doc/ref_model/chapters/chapter02.md    @rabiabdel @ASawwaf
+
+# Chapter 3 - Modelling
+/doc/ref_model/chapters/chapter03.md    @rabiabdel @BernardTsai-DT
+
+# Chapter 4 - Abstraction
+/doc/ref_model/chapters/chapter04.md    @rabiabdel @markshostak
+
+# Chapter 5 - Infra Features & Req
+/doc/ref_model/chapters/chapter05.md    @rabiabdel @karinesevilla
+
+# Chapter 6 - External Interfaces
+/doc/ref_model/chapters/chapter06.md    @rabiabdel @pgoyal01
+
+# Chapter 7 - Security
+/doc/ref_model/chapters/chapter07.md    @rabiabdel @wkozlowski
+
+# Chapter 8 - Compliance & Verification
+/doc/ref_model/chapters/chapter08.md    @mf4716 @rabiabdel
+
+# Chapter 9 - Operations
+/doc/ref_model/chapters/chapter09.md    @rabiabdel @tomkivlin
+
+# Chapter 10 - GAPS
+/doc/ref_model/chapters/chapter10.md    @jbeltranatl @rabiabdel
