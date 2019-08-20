@@ -178,6 +178,15 @@ Process flow for RA (Infra) Validation and Verfiication
 <a name="8.6"></a>
 ## 8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy
 
+### 8.6.1 NFVI Profiles reference implementations.
+For compliance, verification, and certification, of NFVI solutions provided for a given NFVI Profile, it is required to have a reference implementation of each profile so it can be used for compliance, validation, and certification.
+Those reference implementations need to reflect on their corresponding profiles and deliver all metrics and capabilities promised. They need to use open source components. Figure 13 below shows the various reference implementations required for each profile, they are:
+ NFVI SW Reference implementation.
+ NFVI HW Reference implementation.
+ VNF reference implementation.
+
+
+
 The OVP Ecosystem Validates Itself Then Certifies VNF.
 
 3rd Party test platforms may also be leveraged, if desired
