@@ -185,8 +185,8 @@ Those reference implementations need to reflect on their corresponding profiles 
  NFVI HW Reference implementation.
  VNF reference implementation.
 
-<p align="right"><img src="../figures/ch8_NFVI_ref_profiles_impementations.jpg" alt="NFVI RI Profiles" title="NFVI RI Profiles" width="35%"/></p>
-Figure: Reference NFVI Profiles Implementation
+<p align="center"><img src="../figures/ch8_NFVI_ref_profiles_impementations.jpg" alt="NFVI RI Profiles" title="NFVI RI Profiles" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Reference NFVI Profiles Implementation</p>
 
 The OVP Ecosystem Validates Itself Then Certifies VNF.
 
