@@ -11,6 +11,12 @@
 <a name="2.1"></a>
 ## 2.1 Introduction.
 
+**must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
+
+**shall**: Requirements that are marked as _shall_ are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to _shall not_.
+
+**may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
+
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements.
 
@@ -30,7 +36,7 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 | `req.gen.ost.02` | Open source | The Architecture shall/must xxx. |
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture shall/must xxx. |
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture shall/must xxx. |
-| `req.gen.scl.01` | Scalability | The Architecture shall/must xxx. |
+| `req.gen.scl.01` | Scalability | The Architecture **shall** support policy driven auto-scaling. |
 | `req.gen.scl.02` | Scalability | The Architecture shall/must xxx. |
 | `req.gen.rsl.01` | Resiliency | The Architecture shall/must xxx. |
 | `req.gen.rsl.02` | Resiliency | The Architecture shall/must xxx. |
@@ -38,21 +44,22 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 <p align="center"><b>Table 2-1:</b> OpenStack General Requirements.</p>
 
 <a name="2.3.2"></a>
-### 2.3.2 Infrastrucuture
+### 2.3.2 Infrastructure
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.inf.com.01` | Compute | The Architecture shall/must xxx. |
 | `req.inf.com.02` | Compute | The Architecture shall/must xxx. |
-| `req.inf.stg.01` | Storage | The Architecture shall provide storage solution for VIM Instances and VNFs to support Block/Image and local VNF File system storage. |
-| `req.inf.stg.02` | Storage | The Architecture shall support Resilient and scalable virtualized storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
-| `req.inf.ntw.01` | Network | The Architecture shall include an SDN integration to support provisioning of network services from host-based OpenStack Neutron networking VTEPs to the Border Edge based VRFs. |
-| `req.inf.ntw.02` | Network | The Architecture shall Localize intra-host traffic to provide low latency, high throughput, and resiliency. |
-| `req.inf.ntw.03` | Network | The Architecture shall support service function chaining from Data plane and fabric perspective. |
-| `req.inf.ntw.04` | Network | The Architecture shall allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay - VXLAN or Geneve). |
-| `req.inf.ntw.05` | Network | The Architecture shall support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently |
-| `req.inf.acc.01` | Acceleration | The Architecture shall support Application Specific Acceleration (exposed to VNFs) xxx. |
-| `req.inf.acc.02` | Acceleratuin | The Architecture shall support NFVI Acceleration (such as SmartNICs) |
+| `req.inf.stg.01` | Storage | The Architecture **must** provide storage solution for VIM Instances and VNFs to support Block/Image and local VNF File system storage. |
+| `req.inf.stg.02` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
+| `req.inf.ntw.01` | Network | The Architecture **must** include an SDN integration to support provisioning of network services from host-based OpenStack Neutron networking VTEPs to the Border Edge based VRFs. |
+| `req.inf.ntw.02` | Network | The Architecture **must** Localize intra-host traffic to provide low latency, high throughput, and resiliency. |
+| `req.inf.ntw.03` | Network | The Architecture **shall** support service function chaining from Data plane and fabric perspective. |
+| `req.inf.ntw.04` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay - VXLAN or Geneve). |
+| `req.inf.ntw.05` | Network | The Architecture **shall** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently |
+| `req.inf.acc.01` | Acceleration | The Architecture **shall** support Application Specific Acceleration (exposed to VNFs) xxx. |
+| `req.inf.acc.02` | Acceleration | The Architecture **shall** support NFVI Acceleration (such as SmartNICs) |
+| `req.inf.acc.03` | Acceleration | The Architecture **shall not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs |
 
 <p align="center"><b>Table 2-2:</b> OpenStack Infrastructure Requirements.</p>
 
@@ -61,7 +68,7 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.vim.01` | General | The Architecture shall allow infrastructure resource sharing among several service operation teams to avoid per VNF vertical solutions. |
+| `req.vim.01` | General | The Architecture **must** allow infrastructure resource sharing among several service operation teams to avoid per VNF vertical solutions. |
 | `req.vim.02` | General | The Architecture shall/must xxx. |
 | `req.vim.03` | General | The Architecture shall/must xxx. |
 | `req.vim.04` | General | The Architecture shall/must xxx. |
@@ -79,9 +86,11 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 | `req.int.gen.01` | Interface | The Architecture shall/must xxx. |
 | `req.int.gen.02` | Interface | The Architecture shall/must xxx. |
 | `req.int.gen.03` | Interface | The Architecture shall/must xxx. |
-| `req.int.api.01` | API | The Architecture shall provide Control API endpoints, GUI & internal services for the cloud |
-| `req.int.api.02` | API | The Architecture shall allow external access to APIs exposed by the VIM and NFVI. |
+| `req.int.api.01` | API | The Architecture **must** provide Control API endpoints, GUI & internal services for the cloud |
+| `req.int.api.02` | API | The Architecture **shall** allow external access to APIs exposed by the VIM and NFVI. |
 | `req.int.api.03` | API | The Architecture shall/must xxx. |
+| `req.int.acc.01` | Acceleration | The Architecture **shall** provide an open and standard acceleration interface to VNFs. |
+| `req.int.acc.02` | Acceleration | The Architecture **shall not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. |
 
 <p align="center"><b>Table 2-4:</b> OpenStack Interfaces and APIs Requirements.</p>
 
@@ -90,7 +99,7 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.tnt.gen.01` | General | The Architecture shall allow for a multi-tenanted solution that allows tenants to deploy workloads using self-service interfaces (both UI and API). |
+| `req.tnt.gen.01` | General | The Architecture **must** allow for a multi-tenanted solution that allows tenants to deploy workloads using self-service interfaces (both UI and API). |
 | `req.tnt.gen.02` | General | The Architecture shall/must xxx. |
 | `req.tnt.gen.03` | General | The Architecture shall/must xxx. |
 | `req.tnt.gen.01` | General | The Architecture shall/must xxx. |
@@ -104,13 +113,12 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.lcm.gen.01`	| General | The Architecture will support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
-| `req.lcm.gen.02` | General	| The Architecture will support plug-ins to manage deployment of workload to multiple sites and various technology stack. Multi-cloud support through hybrid, migrations, etc. |
-| `req.lcm.gen.03` | General |	The Architecture will provide OpenStack Ironic Bare Metal provision to support VIM Instance provisioning (bootstrap), Management System, KVM host provisioning and Kubernetes host provisioning |
-| `req.lcm.adp.01` | Automated deployment | The Architecture shall allow the “cookie cutter” automated deployment to multiple sites. |
-| `req.lcm.adp.02` | Automated deployment | The Architecture shall enable automated and incremental upgrade of the various software components in a manner that still allows tenant workloads to continue to operate. |
-| `req.lcm.cid.01` | CI/CD | The Architecture will include integration with CI/CD Toolchain for the purpose of Infrastructure Automation |
-| `req.lcm.cid.02` | CI/CD | CI/CD for NFVI and VIM components |
+| `req.lcm.gen.01`	| General | The Architecture **shall** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
+| `req.lcm.gen.02` | General	| The Architecture **shall** support plug-ins to manage deployment of workload to multiple sites and various technology stack. Multi-cloud support through hybrid, migrations, etc. |
+| `req.lcm.gen.03` | General |	The Architecture **shall** provide OpenStack Ironic Bare Metal provision to support VIM Instance provisioning (bootstrap), Management System, KVM host provisioning and Kubernetes host provisioning |
+| `req.lcm.adp.01` | Automated deployment | The Architecture **shall** allow the “cookie cutter” automated deployment to multiple sites. |
+| `req.lcm.adp.02` | Automated deployment | The Architecture **must** enable automated and incremental upgrade of the various software components in a manner that still allows tenant workloads to continue to operate. |
+| `req.lcm.cid.02` | CI/CD | The Architecture **shall** support integrating with CI/CD Toolchain for NFVI and VIM components Automation |
 
 <p align="center"><b>Table 2-6:</b> OpenStack LCM Requirements.</p>
 
@@ -125,9 +133,9 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 | `req.asr.gen.01` | General | The Architecture shall/must xxx. |
 | `req.asr.gen.02` | General | The Architecture shall/must xxx. |
 | `req.asr.gen.03` | General | The Architecture shall/must xxx. |
-| `req.asr.ing.01` | Integration | The Architecture will define integration with the standard OSS/BSS assurance systems and will support automation of assurance processes. |
-| `req.asr.mon.03` | Integration | The Architecture shall include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
-| `req.asr.mon.02` | Monitoring | The Architecture shall support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads . |
+| `req.asr.ing.01` | Integration | The Architecture **must** support integration with the standard OSS/BSS assurance systems and will support automation of assurance processes. |
+| `req.asr.mon.03` | Integration | The Architecture **must** include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
+| `req.asr.mon.02` | Monitoring | The Architecture **shall** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads . |
 
 <p align="center"><b>Table 2-7:</b> OpenStack Assurance Requirements.</p>
 
@@ -136,15 +144,15 @@ Proposals (WK): Change title of this section to 2.3 Architectural Requirements; 
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.sec.gen.03` | General | The Architecture shall/must xxx. |
-| `req.sec.gen.01` | General | The Architecture shall/must xxx. |
+| `req.sec.gen.03` | General | The Architecture **must** provide tenants isolation. |
+| `req.sec.gen.01` | General | The Architecture **must** support policy based RBAC. |
 | `req.sec.gen.02` | General | The Architecture shall/must xxx. |
 | `req.sec.gen.03` | General | The Architecture shall/must xxx. |
-| `req.sec.zon.01` | Zoning | The Architecture shall support identity management (specific roles assigned to a domain or tenant), Storage and password encryption; RBAC for Infrastructure and Tenants; Tenant isolation; authentication management (integration with Corporate Identity Management). |
-| `req.sec.cmp.02` | Compliance | The Architecture shall comply with standards and regulations. |
+| `req.sec.zon.01` | Zoning | The Architecture **must** support identity management (specific roles assigned to a domain or tenant), Storage and password encryption; RBAC for Infrastructure and Tenants; Tenant isolation; authentication management (integration with Corporate Identity Management). |
+| `req.sec.cmp.02` | Compliance | The Architecture **must** comply with standards and regulations. |
+| `req.sec.cmp.03` | Compliance | The Architecture **must** comply with regional standards and regulations. |
 
 <p align="center"><b>Table 2-8:</b> OpenStack Security Requirements.</p>
-
 
 **Backlog of Req**
 1. HW virtualization -- compute, storage and network
