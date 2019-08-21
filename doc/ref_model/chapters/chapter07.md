@@ -2,7 +2,7 @@
 # 7	Security
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-** CNTT VNF Security Requirements
+**Security Scope**
 
 -   In-scope and Out-of-Scope definition
 
