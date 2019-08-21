@@ -5,150 +5,150 @@
 
 -   In-scope and Out-of-Scope definition
 
-*(Declare what should be in scope and what should be out of scope for
-CNTT security)*
+    *(Declare what should be in scope and what should be out of scope for
+    CNTT security)*
 
 -   Define and note separation of security postures of platform and
     workload, but that workload is dependent’ upon platform security.
 
-*(Provide some background commentary, from a security perspective,
-around the inter-relationship between platform and workload security
-where it is assumed that ‘workload’ leverages ‘platform’ security)*
+    *(Provide some background commentary, from a security perspective,
+    around the inter-relationship between platform and workload security
+    where it is assumed that ‘workload’ leverages ‘platform’ security)*
 
 -   Define Platform security requirements
 
-*(An overview/introduction to platform security requirements and incl
-types of platforms covered)*
+    *(An overview/introduction to platform security requirements and incl
+    types of platforms covered)*
 
 -   Define Workload security requirements
 
-*(An overview/introduction to workload security requirements and incl
-types of workloads covered)*
+    *(An overview/introduction to workload security requirements and incl
+    types of workloads covered)*
 
 -   Define certification requirements
 
-*(An overview/introduction to workload certification requirements and
-incl types of workloads covered)*
+    *(An overview/introduction to workload certification requirements and
+    incl types of workloads covered)*
 
 **Platform Security**
 
 -   Platform Security Assumption: that platform security compliance will
     be the responsibility of the platform owner.
 
-*(Define the platform security assumption. Note also that the platform
-may have a different security posture/level to the workload, but that
-the workload can leverage security accreditations/compliances/services
-offered by the platform).*
+    *(Define the platform security assumption. Note also that the platform
+    may have a different security posture/level to the workload, but that
+    the workload can leverage security accreditations/compliances/services
+    offered by the platform).*
 
 -   Refer industry references (case by case) – i.e. ISO, NIST, and etc.
 
-*(Can use material from, and update, the existing CNTT section on
-industry security standards)*
+    *(Can use material from, and update, the existing CNTT section on
+    industry security standards)*
 
 -   Define platform ‘back-end’ access security
 
-*(Security requirements around how the platform systems must
-interconnect with supporting infrastructure services including
-assurance, fault, asset systems, billing systems, capacity,
-configuration, and etc.)*
+    *(Security requirements around how the platform systems must
+    interconnect with supporting infrastructure services including
+    assurance, fault, asset systems, billing systems, capacity,
+    configuration, and etc.)*
 
 -   Define platform ‘front-end’ access security
 
-*(Security requirements around how the platform will support network
-connections that can be used by workloads. Generally the platform will
-provide the basic connectivity such as a physical MPLS connection, or
-Internet connection, but the workloads will have a VLAN on that physical
-connection and provide additional security controls).*
+    *(Security requirements around how the platform will support network
+    connections that can be used by workloads. Generally the platform will
+    provide the basic connectivity such as a physical MPLS connection, or
+    Internet connection, but the workloads will have a VLAN on that physical
+    connection and provide additional security controls).*
 
 -   Platform services – cloud and security
 
-*(Security requirements for any services hosted within the local VIM
-environment, or the immediate trusted cloud)*
+    *(Security requirements for any services hosted within the local VIM
+    environment, or the immediate trusted cloud)*
 
 -   Platform services – external and security
 
-*(Security requirements for any services that are hosted externally, but
-leveraged or consumed within the local VIM environment)*
+    *(Security requirements for any services that are hosted externally, but
+    leveraged or consumed within the local VIM environment)*
 
 -   Data at rest
 
-*(Security requirements of stored data used by platform services. This
-will include provision for workload data)*
+    *(Security requirements of stored data used by platform services. This
+    will include provision for workload data)*
 
 -   Data in transit
 
-*(Security requirements for securing the different data types used in
-the platform. This will include provision for protection of workload
-data)*
+    *(Security requirements for securing the different data types used in
+    the platform. This will include provision for protection of workload
+    data)*
 
 -   Network Security considerations incl zoning, tiering, segmentation,
     standalone/hybrid clouds, multi-VIM, etc.
 
-*(This section will have sub-sections – probably based on technology
-types. Needs to cover security considerations around network security
-for platforms, but also platform-to-platform, VIM-to-VIM where VIMs may
-be homogeneous or heterogeneous. This will include confidentiality,
-integrity, availability, identity federation and trust (authenticity)).*
+    *(This section will have sub-sections – probably based on technology
+    types. Needs to cover security considerations around network security
+    for platforms, but also platform-to-platform, VIM-to-VIM where VIMs may
+    be homogeneous or heterogeneous. This will include confidentiality,
+    integrity, availability, identity federation and trust (authenticity)).*
 
 -   Operator and support access to platform – requirements
 
-*(It must be shown that operator and programmatic access to a platform
-is secure. This will include ensuring that access controls are secure,
-but not cumbersome. For programmatic access, there should be guidelines
-around API gateway functionality expected and authentication/identity
-standards expected).*
+    *(It must be shown that operator and programmatic access to a platform
+    is secure. This will include ensuring that access controls are secure,
+    but not cumbersome. For programmatic access, there should be guidelines
+    around API gateway functionality expected and authentication/identity
+    standards expected).*
 
 -   Assurance and Availability
 
-*(The platform must have an assurance system(s) that meets minimum
-requirements for the time to learn state changes, collect performance
-and problem data from multiple platform layers, stream, correlate and
-prioritise specific data \[to a specific bus type?\], and co-operate
-with downstream systems in a closed-loop arrangement).*
+    *(The platform must have an assurance system(s) that meets minimum
+    requirements for the time to learn state changes, collect performance
+    and problem data from multiple platform layers, stream, correlate and
+    prioritise specific data \[to a specific bus type?\], and co-operate
+    with downstream systems in a closed-loop arrangement).*
 
 -   Vulnerability Management
 
-*(Security requirements around which and how vulnerabilities are
-discovered, mitigated, managed in the platform. Any impacts to workloads
-must be included).*
+    *(Security requirements around which and how vulnerabilities are
+    discovered, mitigated, managed in the platform. Any impacts to workloads
+    must be included).*
 
 -   Logging management & privacy considerations (and incl legal
     intercept considerations?)
 
-*(Requirements for platform security logging. This is likely to include
-off-site storage, SIEM integration, logging access control, and log
-rotation/archival/retrieval).*
+    *(Requirements for platform security logging. This is likely to include
+    off-site storage, SIEM integration, logging access control, and log
+    rotation/archival/retrieval).*
 
 -   Configuration management & CI/CD
 
-*(Security requirements around how configuration changes are made to the
-platform. This will include automated update processes and any impacts
-to service and availability. Any impacts to workloads must be
-included).*
+    *(Security requirements around how configuration changes are made to the
+    platform. This will include automated update processes and any impacts
+    to service and availability. Any impacts to workloads must be
+    included).*
 
 -   Fault Management
 
-*(Security requirements around fault restoration (including zero trust
-for more secure deployments?)*
+    *(Security requirements around fault restoration (including zero trust
+    for more secure deployments?)*
 
 -   Asset Management
 
-*(Security requirements around how assets should be discovered,
-collected, stored, accessed and protected).*
+    *(Security requirements around how assets should be discovered,
+    collected, stored, accessed and protected).*
 
 -   Closed Loop Security (general) and/or SIEM integration –
     requirements and implementation
 
-*(Security requirements around closed-loop security. Starting to define
-a set of standards that we want for vendor standardisation. Implications
-on homogeneous/heterogeneous VIMs).*
+    *(Security requirements around closed-loop security. Starting to define
+    a set of standards that we want for vendor standardisation. Implications
+    on homogeneous/heterogeneous VIMs).*
 
 -   Micro-segmentation (general) – requirements and implementation
 
-*(Security requirements around micro-segmentation – levels of controls
-within the platform, how the controls are managed and monitored.
-Expectations around application of policy and flow monitoring across
-homogeneous/heterogeneous VIMs)*
+    *(Security requirements around micro-segmentation – levels of controls
+    within the platform, how the controls are managed and monitored.
+    Expectations around application of policy and flow monitoring across
+    homogeneous/heterogeneous VIMs)*
 
 **Workload Security**
 
@@ -156,64 +156,64 @@ homogeneous/heterogeneous VIMs)*
     be a responsibility of the workload owner (if not the platform
     owner) but will leverage any compliances from the platform.
 
-*(Define the workload security assumption. Note also that the workload
-may have a different security posture/level to the platform, but that
-the workload can leverage security accreditations/compliances/services
-offered by the platform).*
+    *(Define the workload security assumption. Note also that the workload
+    may have a different security posture/level to the platform, but that
+    the workload can leverage security accreditations/compliances/services
+    offered by the platform).*
 
 -   Strong separation between tenants and tenants
     -   data at rest
 
-*(requirements that tenant data is protected including disk allocation,
-namespace separation, and memory isolation)*
+    *(requirements that tenant data is protected including disk allocation,
+    namespace separation, and memory isolation)*
 
 -   data in transit
 
-*(ensure that strong access controls and processes exist around
-east-west and north-south tenant-to-tenant comms. Define level of access
-control and associated access services)*
+    *(ensure that strong access controls and processes exist around
+    east-west and north-south tenant-to-tenant comms. Define level of access
+    control and associated access services)*
 
 -   cloud security – refer cloud security industry standards – i.e. TBC
 
-*(meet industry cloud security requirements)*
+    *(meet industry cloud security requirements)*
 
 -   workload services – cloud
 
-*(Security requirements for any services consumed within the local VIM
-environment, or the immediate trusted cloud)*
+    *(Security requirements for any services consumed within the local VIM
+    environment, or the immediate trusted cloud)*
 
 -   workload services – external
 
-*(Security requirements for any services that are consumed from external
-sources)*
+    *(Security requirements for any services that are consumed from external
+    sources)*
 
 -   Strong separation between tenants and platform
 
-*(Cover different platform types and separation requirements of each,
-including:*
+    *(Cover different platform types and separation requirements of each,
+    including:*
 
 -   *Bare metal*
 -   *VM*
 -   *Container*
 
-*Incl. separation of workload traffic from platform
-management/signalling)*
+    *Incl. separation of workload traffic from platform
+    management/signalling)*
 
 -   Define workload ‘Front-end’ access security
 
-*(Security requirements around how the workload will connect to network
-connections that are external to the tenancy, and are used as part of
-the tenancy data service – this could include an MPLS VPN connection, or
-an Internet connection. The workload environment will be expected to
-support sufficient security to support the workload certification
-requirements).*
+    *(Security requirements around how the workload will connect to network
+    connections that are external to the tenancy, and are used as part of
+    the tenancy data service – this could include an MPLS VPN connection, or
+    an Internet connection. The workload environment will be expected to
+    support sufficient security to support the workload certification
+    requirements).*
 
 -   Define workload ‘Back-end’ access security
 
-*(Security requirements around how the workload may be managed - which
-may or may not be known by the tenant. This includes management and
-signalling and separation/protection/isolation of these network
-connections)*
+    *(Security requirements around how the workload may be managed - which
+    may or may not be known by the tenant. This includes management and
+    signalling and separation/protection/isolation of these network
+    connections)*
 
 -   Operator and support access to workload including:
     -   Bare Metal
@@ -221,43 +221,43 @@ connections)*
     -   Container
     -   VNF
 
-*(Security requirements around how tenant workloads are supported –
-cover a situation where it is tenant, and another where it is a cloud
-service. May be different for different service types – i.e. BareMetal,
-VM, Container, and VNF).*
+    *(Security requirements around how tenant workloads are supported –
+    cover a situation where it is tenant, and another where it is a cloud
+    service. May be different for different service types – i.e. BareMetal,
+    VM, Container, and VNF).*
 
 -   Workload tenant access to workloads
 
-*(Security requirements around tenant support of a workload. Covers
-operator and robotic access. Access controls, policy, and guidelines.
-May be different for different service types – i.e. BareMetal, VM,
-Container, and VNF).*
+    *(Security requirements around tenant support of a workload. Covers
+    operator and robotic access. Access controls, policy, and guidelines.
+    May be different for different service types – i.e. BareMetal, VM,
+    Container, and VNF).*
 
 -   Assurance – tenant
 
-*(The workload environment must have support for assurance system(s)
-that meets minimum requirements for the time to learn state changes,
-collect performance and problem data from multiple platform layers,
-stream, correlate and prioritise specific data \[to a specific bus
-type?\], and co-operate with downstream systems in a closed-loop
-arrangement).*
+    *(The workload environment must have support for assurance system(s)
+    that meets minimum requirements for the time to learn state changes,
+    collect performance and problem data from multiple platform layers,
+    stream, correlate and prioritise specific data \[to a specific bus
+    type?\], and co-operate with downstream systems in a closed-loop
+    arrangement).*
 
 -   Configuration Management – tenant
 
-*(Security requirements around how configuration changes are made to the
-workload environment. This will include automated update processes and
-any impacts to service and availability. This includes process).*
+    *(Security requirements around how configuration changes are made to the
+    workload environment. This will include automated update processes and
+    any impacts to service and availability. This includes process).*
 
 -   Fault Management – tenant
 
-*(Security requirements around fault restoration in a workload
-environment (including zero trust for more secure deployments?)*
+    *(Security requirements around fault restoration in a workload
+    environment (including zero trust for more secure deployments?)*
 
 -   Telemetry – tenant (reference to a telemetry working group, if any)?
 
-*(Security requirements covering the provision of telemetry to tenants
-incl access, authentication, integrity, confidentiality and
-availability).*
+    *(Security requirements covering the provision of telemetry to tenants
+    incl access, authentication, integrity, confidentiality and
+    availability).*
 
 **Workload Vendor Responsibilities**
 
