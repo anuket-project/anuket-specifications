@@ -1,7 +1,8 @@
 [<< Back](../../ref_model)
 # 7	Security
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
-# CNTT VNF Security Requirements
+
+** CNTT VNF Security Requirements
 
 -   In-scope and Out-of-Scope definition
 
