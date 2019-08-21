@@ -4,11 +4,13 @@
  
 ## Table of Contents
 * [3.1 Model.](#3.1)
-* [3.2 Model Components.](#3.2)
+* [3.2 Virtual Resources.](#3.2)
   * [3.2.1 Tenant.](#3.2.1)
   * [3.2.2 Compute.](#3.2.2)
   * [3.2.3 Storage.](#3.2.3)
   * [3.2.4 Network.](#3.2.4)
+* [3.3 Management Software.](#3.3)
+* [3.4 Physical Resources.](#3.4)
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of the workloads match the capabilities of the NFVI.
 
@@ -35,18 +37,21 @@ _**To summarise:** the abstraction model presented in this document will build u
 
 The abstraction model for the NFVI makes use of the following layers (only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs)):
 
-<p align="center"><img src="../figures/figure_3.1_NFVI-Model.png" alt="NFVI model_layers" Title="NFVI Model Layers" width="65%"/></p>
-<p align="center"><b>Figure 3-1:</b> NFVI Model Layers.</p>
+<p align="center"><img src="../figures/ch03_model_overview.png" alt="NFVI Model Overview" Title="NFVI Model Overview" width="65%"/></p>
+<p align="center"><b>Figure 3-1:</b> NFVI Model Overview.</p>
   
 The functionalities of each layer are as follows:
-- **Physical Infrastructure Resources:** This layer consists of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and the basic input output system (BIOS).
-- **NFVI Software:** This layer consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
-- **Virtual Infrastructure Resources:** This layer represents all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
-- **Workloads (VNFs/CNFs):** This layer consists of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram in **Figure 3-2**.
+- **Physical Infrastructure Resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and the basic input output system (BIOS).
+- **NFVI Management Software:** This consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
+- **Virtual Infrastructure Resources:** These are all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
+- **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. 
+
+<a name="3.2"></a>
+## 3.2	Virtual Resources
 
 The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
 
-<p align="center"><img src="../figures/figure_3.2_Virtual_Infra_Resources.png" alt="virtual_resources" Title="Virtual Infrastructure Resources" width="65%"/></p>
+<p align="center"><img src="../figures/ch03_model_virtual_resources.png" alt="NFVI Virtual Infrastructure Resources" Title="NFVI Virtual Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
 
 - **Tenants:** represent an independently manageable logical pool of compute, storage and network resources
@@ -54,10 +59,7 @@ The virtual infrastructure resources provided by the NFVI can be grouped into fo
 - **Storage resources:** represent virtualised resources for persisting data
 - **Network resources:** represent virtual resources providing layer 2 and layer 3 connectivity
 
-The virtualised infrastructure resources related to these categories are listed below:
-
-<a name="3.2"></a>
-## 3.2	Model Components
+The virtualised infrastructure resources related to these categories are listed below.
 
 <a name="3.2.1"></a>
 ### 3.2.1 Tenant
@@ -119,3 +121,19 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 
 <p align="center"><b>Table 3-4:</b> Attributes of network resources.</p> 
+
+<a name="3.3"></a>
+## 3.3	Management Software
+
+<p align="center"><img src="../figures/ch03_model_management_software.png" alt="NFVI Management Software" Title="NFVI Management Software" width="65%"/></p>
+<p align="center"><b>Figure 3-3:</b> NFVI Management Software.</p>
+  
+<a name="3.4"></a>
+## 3.4	Physical Resources
+
+<p align="center"><img src="../figures/ch03_model_physical_resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-4:</b> NFVI Physical Resources.</p>
+  
+
+
+
