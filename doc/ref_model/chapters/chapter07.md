@@ -3,26 +3,105 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [7.1 Security Scope.](#7.1)
-  * [7.1.1 In-scope and Out-of-Scope definition.](#7.1.1)
-  * [7.1.2 Define Platform security requirements](#7.1.2)
-  * [7.1.3 Define Workload security requirements](#7.1.3)
-  * [7.1.4 Define Workload security requirements](#7.1.4)
-* [7.2 Operator responsibility.](#7.2)
-  * [7.2.1 Remote Attestation/openCIT.](#7.2.1)
-  * [7.2.2 VNF Image Scanning / Signing.](#7.2.2)
-* [7.3 VNF Vendors responsibility.](#7.3)
-* [7.4 NFVI Vendors responsibility](#7.4)
-  * [7.4.1 Networking Security Zoning.](#7.4.1)
-  * [7.4.2 Encryption.](#7.4.2)
-  * [7.4.3 Platform Patching.](#7.4.3)
-  * [7.4.4 Boot Integrity Measurement (TPM).](#7.4.4)
+* [7.1 Introduction.](#7.1)
+* [7.2 Principles and Guidelines.](#7.2)
+  * [7.2.1 Overarching Objectives and Goals.](#7.2.1)
+  * [7.2.2 Verification Methodologies.](#7.2.2)
+  * [7.2.3 Governance.](#7.2.3)  
+* [7.3 Terms and Resources.](#7.3)
+  * [7.3.1 Terms.](#7.3.1)
+  * [7.3.2 Resources.](#7.3.2)
+* [7.4 Security Scope.](#7.4)
+  * [7.4.1 In-scope and Out-of-Scope definition.](#7.4.1)
+  * [7.4.2 Define Platform security requirements](#7.4.2)
+  * [7.4.3 Define Workload security requirements](#7.4.3)
+  * [7.4.4 Define Workload security requirements](#7.4.4)
+* [7.5 Platform Security.](#7.5)
+  * [7.5.1 Platform Security Assumption.](#7.5.1)
+  * [7.5.2 Platform ‘back-end’ access security.](#7.5.2)
+  * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
+  * [7.5.4 Platform services.](#7.5.4)
+* [7.6 Workload Security.](#7.6)
+* [7.7 Vendor Responsibilities](#7.7)
+
 
 <a name="7.1"></a>
-## 7.1 Security Scope
+## 7.1 Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
+<p align="center"><b>Figure 8-1:</b> CNTT relation to LFN OVP</p>
+
+<a name="7.2"></a>
+## 7.2 Principles and Guidelines
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<a name="7.2.1"></a>
+### 7.2.1 Overarching Objectives and Goals
+
+1. Deliver security certified reference architecture which matches VNF-developer specifications<br>
+2. All accomplished with augmentation to the current OVP ecosystem.<br>
+3. Certified VNFs will on-board and function first shot<br>
+
+<a name="7.2.2"></a>
+### 7.2.2 Verification Methodologies
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<a name="7.2.3"></a>
+### 7.2.3 Governance
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<a name="7.3"></a>
+## 7.3 Terms and Resources
+
+<a name="7.3.1"></a>
+### 7.3.1 Terms
+
+<table>
+  <tr><th>Term</th><th>Description</th></tr>
+  <tr><td>AZ</td><td>AZ	Availability Zone</td></tr>
+  <tr><td>CPE</td><td>Customer Premises Equipment</td></tr>
+  <tr><td>CVC</td><td>Compliance and Verification Committee</td></tr>
+  <tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
+  <tr><td>ETSI NFV-TST</td><td>ETSI - Network Functions Virtualisation - Test</td></tr>
+  <tr><td>ETSI NFV-IFA</td><td>ETSI - Network Functions Virtualisation - Infrastructure</td></tr>
+  <tr><td>GB</td><td>Gigabit</td></tr>
+  <tr><td>HW</td><td>Hardware</td></tr>
+<tr><td>IMS</td>	<td>IP Multimedia Subsystem</td></tr>
+<tr><td>I/O</td>	<td>Input/Output</td></tr>
+<tr><td>MB</td>	<td>Megabit</td></tr>
+<tr><td>NFV</td>	<td>Network Function Virtualization</td></tr>
+<tr><td>NFVI</td>	<td>NFV Infrastructure</td></tr>
+<tr><td>NUMA</td>	<td>Non-Unified Memory Access</td></tr>
+<tr><td>OPNFV</td>	<td>Open Platform for NFV</td></tr>
+<tr><td>RAM</td><td>Random Access Memory</td></tr>
+<tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
+<tr><td>SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
+<tr><td>SLA</td>	<td>Service Level Agreement</td></tr>
+<tr><td>SUT</td>	<td>System Under Test</td></tr>
+<tr><td>SW</td>	<td>Software</td></tr>
+<tr><td>vCPU</td>	<td>Virtual CPU (Central Processing Unit)</td></tr>
+<tr><td>vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
+<tr><td>vRouter</td>	<td>Virtual Router</td></tr>
+<tr><td>vSwitch</td>	<td>Virtual Switch</td></tr>
+<tr><td>VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
+<tr><td>VNF</td>	<td>Virtualised Network Function</td></tr>
+<tr><td>VNF-C</td>	<td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
+<tr><td>VNFM</td>	<td>VNF Manager</td></tr>
+</table>
+
+<a name="7.3.2"></a>
+### 7.3.2 Resources
+1. OPNFV https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
+2. CVC https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
+
+<a name="7.4"></a>
+## 7.4 Security Scope
 
 <a name="7.1.1"></a>
-## 7.1.1 In-scope and Out-of-Scope definition
+## 7.4.1 In-scope and Out-of-Scope definition
 
     *(Declare what should be in scope and what should be out of scope for
     CNTT security)*
@@ -34,28 +113,30 @@
     around the inter-relationship between platform and workload security
     where it is assumed that ‘workload’ leverages ‘platform’ security)*
 
-<a name="7.1.2"></a>
-## 7.1.2 Define Platform security requirements
+<a name="7.4.2"></a>
+## 7.4.2 Define Platform security requirements
 
     *(An overview/introduction to platform security requirements and incl
     types of platforms covered)*
 
-<a name="7.1.3"></a>
-## 7.1.3 Define Workload security requirements
+<a name="7.4.3"></a>
+## 7.4.3 Define Workload security requirements
 
     *(An overview/introduction to workload security requirements and incl
     types of workloads covered)*
 
-<a name="7.1.4"></a>
-## 7.1.4 Define certification/validation requirements
+<a name="7.4.4"></a>
+## 7.4.4 Define certification/validation requirements
 
     *(An overview/introduction to workload certification requirements and
     incl types of workloads covered)*
 
-**Platform Security**
+<a name="7.5"></a>
+## 7.5 Platform Security
 
--   Platform Security Assumption: that platform security compliance will
-    be the responsibility of the platform owner.
+<a name="7.5.1"></a>
+## 7.5.1 Platform Security Assumption
+    platform security compliance will be the responsibility of the platform owner.
 
     *(Define the platform security assumption. Note also that the platform
     may have a different security posture/level to the workload, but that
@@ -67,14 +148,16 @@
     *(Can use material from, and update, the existing CNTT section on
     industry security standards)*
 
--   Define platform ‘back-end’ access security
+<a name="7.5.2"></a>
+## 7.5.2 Platform ‘back-end’ access security
 
     *(Security requirements around how the platform systems must
     interconnect with supporting infrastructure services including
     assurance, fault, asset systems, billing systems, capacity,
     configuration, and etc.)*
 
--   Define platform ‘front-end’ access security
+<a name="7.5.3"></a>
+## 7.5.3 Platform ‘front-end’ access security
 
     *(Security requirements around how the platform will support network
     connections that can be used by workloads. Generally the platform will
@@ -82,6 +165,8 @@
     Internet connection, but the workloads will have a VLAN on that physical
     connection and provide additional security controls).*
 
+<a name="7.5.4"></a>
+## 7.5.4 Platform services
 -   Platform services – cloud and security
 
     *(Security requirements for any services hosted within the local VIM
@@ -172,7 +257,8 @@
     Expectations around application of policy and flow monitoring across
     homogeneous/heterogeneous VIMs)*
 
-**Workload Security**
+<a name="7.6"></a>
+## 7.6 Workload Security
 
 -   Workload Security Assumption: that workload security compliance will
     be a responsibility of the workload owner (if not the platform
@@ -281,7 +367,8 @@
     incl access, authentication, integrity, confidentiality and
     availability).*
 
-**Workload Vendor Responsibilities**
+<a name="7.7"></a>
+## 7.7 Vendor Responsibilities
 
 -   Host Hardening
     -   Host Protection
