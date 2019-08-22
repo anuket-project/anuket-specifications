@@ -34,7 +34,7 @@ For a host (compute node or physical server), the virtualization layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
 
-Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of virtual resources with specific behaviour, capabilities and metrics. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive instances types.
+Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive instances types.
 
 <p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
 <p align="center"><b>Figure 5-3:</b> NFVI software profiles.</p>
@@ -47,12 +47,11 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.com.cfg.001 | Support of flavours | Flavours | Support of compute Flavours defined in Compute Flavour's catalogue.|
-| nfvi.com.cfg.002 | CPU partionning  | Value | CPU dedicated to the host and CPU dedicated to VNFs  |
-| nfvi.com.cfg.003 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
-| nfvi.com.cfg.004 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
-| nfvi.com.cfg.005 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
-| nfvi.com.cfg.006 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
+| nfvi.com.cfg.001 | CPU partionning  | Value | CPU dedicated to the host and CPU dedicated to VNFs  |
+| nfvi.com.cfg.002 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
+| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
+| nfvi.com.cfg.004 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
+| nfvi.com.cfg.005 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
 
@@ -97,7 +96,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
 | nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |  
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
-| nfvi.net.cfg.007 | Horizontal scaling | Yes/No  | The VNF cluster must be able to scale horizontally and to leverage technologies such as ECMP to enable scale-outs/scale-ins, privileging Active-Active HA models, even though this may require some level of application re-design to cope with the need of sharing state between VNF instances |
+| nfvi.net.cfg.007 | NFVI scaling | Yes/No  |  |
 
 <p align="center"><b>Table 5-5:</b> Virtual Networking features.</p>
 
@@ -126,12 +125,11 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.com.cfg.001 | Support of flavours | Yes/No | Y | Y |Y|
-| nfvi.com.cfg.002 | CPU partionning  | value |  |  |  |
-| nfvi.com.cfg.003 | CPU allocation ratio  | value | 1:4 | 1:1  | 1:1 |
-| nfvi.com.cfg.004 | NUMA awareness | Yes/No  | N | Y | Y |
-| nfvi.com.cfg.005 | CPU pinning capability | Yes/No  | N | Y | Y |
-| nfvi.com.cfg.006 | Huge Pages  | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.001 | CPU partionning  | value |  |  |  |
+| nfvi.com.cfg.002 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
+| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.004 | CPU pinning capability | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.005 | Huge Pages  | Yes/No  | N | Y | Y |
 
 <p align="center"><b>Table 5-7:</b> Virtual Compute features and configuration for the 3 types of SW profiles.</p>
 
@@ -180,7 +178,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.net.cfg.004 | Security Group | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.005 | SFC support | Yes/No  | N | Y | Y |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Y | Y | Y |
-| nfvi.net.cfg.007 | Horizontal scaling | Yes/No  | Y | Y | Y |
+| nfvi.net.cfg.007 | NFVI scaling | Yes/No  | Y | Y | Y |
 
 <p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
 
