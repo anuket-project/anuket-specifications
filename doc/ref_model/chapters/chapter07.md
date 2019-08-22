@@ -2,9 +2,27 @@
 # 7	Security
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-**Security Scope**
+## Table of Contents
+* [7.1 Security Scope.](#7.1)
+  * [7.1.1 In-scope and Out-of-Scope definition.](#7.1.1)
+  * [7.1.2 Define Platform security requirements](#7.1.2)
+  * [7.1.3 Define Workload security requirements](#7.1.3)
+  * [7.1.4 Define Workload security requirements](#7.1.4)
+* [7.2 Operator responsibility.](#7.2)
+  * [7.2.1 Remote Attestation/openCIT.](#7.2.1)
+  * [7.2.2 VNF Image Scanning / Signing.](#7.2.2)
+* [7.3 VNF Vendors responsibility.](#7.3)
+* [7.4 NFVI Vendors responsibility](#7.4)
+  * [7.4.1 Networking Security Zoning.](#7.4.1)
+  * [7.4.2 Encryption.](#7.4.2)
+  * [7.4.3 Platform Patching.](#7.4.3)
+  * [7.4.4 Boot Integrity Measurement (TPM).](#7.4.4)
 
--   In-scope and Out-of-Scope definition
+<a name="7.1"></a>
+## 7.1 Security Scope
+
+a name="7.1.1"></a>
+## 7.1.1 In-scope and Out-of-Scope definition
 
     *(Declare what should be in scope and what should be out of scope for
     CNTT security)*
@@ -16,17 +34,20 @@
     around the inter-relationship between platform and workload security
     where it is assumed that ‘workload’ leverages ‘platform’ security)*
 
--   Define Platform security requirements
+a name="7.1.2"></a>
+## 7.1.2 Define Platform security requirements
 
     *(An overview/introduction to platform security requirements and incl
     types of platforms covered)*
 
--   Define Workload security requirements
+a name="7.1.3"></a>
+## 7.1.3 Define Workload security requirements
 
     *(An overview/introduction to workload security requirements and incl
     types of workloads covered)*
 
--   Define certification requirements
+a name="7.1.4"></a>
+## 7.1.4 Define certification/validation requirements
 
     *(An overview/introduction to workload certification requirements and
     incl types of workloads covered)*
