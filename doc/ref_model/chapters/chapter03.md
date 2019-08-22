@@ -49,7 +49,7 @@ The virtual infrastructure resources provided by the NFVI can be grouped into fo
 <p align="center"><img src="../figures/figure_3.2_Virtual_Infra_Resources.png" alt="virtual_resources" Title="Virtual Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
 
-- **Tenants:** represent an independently manageable logical pool of compute, storage and network resources
+- **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
 - **Compute resources:** represent virtualised computes for workloads and Operating and other Systems as necessary
 - **Storage resources:** represent virtualised resources for persisting data
 - **Network resources:** represent virtual resources providing layer 2 and layer 3 connectivity
