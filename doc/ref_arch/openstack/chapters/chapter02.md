@@ -31,7 +31,7 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.gen.ost.01` | Open source | The Architecture **must** use openstack APIs.|
+| `req.gen.ost.01` | Open source | The Architecture **must** use OpenStack APIs.|
 | `req.gen.ost.02` | Open source | The Architecture shall/must xxx. |
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture shall/must xxx. |
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture shall/must xxx. |
