@@ -21,7 +21,7 @@
 <a name="7.1"></a>
 ## 7.1 Security Scope
 
-a name="7.1.1"></a>
+<a name="7.1.1"></a>
 ## 7.1.1 In-scope and Out-of-Scope definition
 
     *(Declare what should be in scope and what should be out of scope for
@@ -34,19 +34,19 @@ a name="7.1.1"></a>
     around the inter-relationship between platform and workload security
     where it is assumed that ‘workload’ leverages ‘platform’ security)*
 
-a name="7.1.2"></a>
+<a name="7.1.2"></a>
 ## 7.1.2 Define Platform security requirements
 
     *(An overview/introduction to platform security requirements and incl
     types of platforms covered)*
 
-a name="7.1.3"></a>
+<a name="7.1.3"></a>
 ## 7.1.3 Define Workload security requirements
 
     *(An overview/introduction to workload security requirements and incl
     types of workloads covered)*
 
-a name="7.1.4"></a>
+<a name="7.1.4"></a>
 ## 7.1.4 Define certification/validation requirements
 
     *(An overview/introduction to workload certification requirements and
