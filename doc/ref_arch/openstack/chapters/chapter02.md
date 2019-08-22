@@ -47,7 +47,7 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for VM Instancs.  |
+| `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for VM instancs.  |
 | `req.inf.com.02` | Compute | The Architecture shall/must xxx. |
 | `req.inf.stg.01` | Storage | The Architecture **must** provide storage solution for VM Instances to support Block/Image and local VNF File system storage. |
 | `req.inf.stg.02` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
