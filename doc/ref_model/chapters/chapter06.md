@@ -113,39 +113,79 @@ a.	NTP, DNS, etc. – where is the care and feeding of these? Who provides certa
 b.	Licensing and imaging connectivity
 
 <a name="6.4"></a>
-## 6.4 Hardware Acceleration Interfaces and APIs 
+## 6.4 Hardware Acceleration Interfaces 
 
-**Virtual GPU**: A physical Graphics Processing Unit (pGPU) can be virtualized as multiple virtual Graphics Processing Units (vGPUs) if the hypervisor supports the hardware driver and has the capability to create guests using those virtual devices. The virtual GPU feature in some VIMs allows a deployment to provide specific GPU types for instances using physical GPUs that can provide virtual devices. The steps required to enable virtual GPUs include (i) enabling GPU types; and (ii) configuring an instance type to use a vGPU. Compute hosts properly configured for vGPU support then make it possible to create instances (VMs) with virtual GPU devices. 
 
-**Acceleration Resources**: ETSI (Ref: NFV IFA 019 v03101p) has defined a set of technology independnet interfaces for acceleration resource life cycle management. These operations allow: allocation, release and querying of acceleration resource, get and reset statistics, subscribe/unsubscribe (terminate) to fault notifications, notify (only used by NFVI) and get alarm information. These acceleration interfaces are  shown in Table 6.3.
+**Acceleration Interface Specifications**
+ETSI GS NFV-IFA 002 defines a technology and implementation independent virtual accelerator, the accelerator interface requirements and specifications that would allow a VNF to leverage a Virtual Accelerator. The virtual accelerator is modeled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 specifies the architectural model in Chapter 4 and the abstract interfaces for management, configuration, monitoring and Data exchange in Chapter 7.
 
-|Request|Response|From, To|Type|Parameter|Description|
-|-------|--------|---------|--------|---------|---------|
-|AllocateAccResourceRequest|AllocateAccResourceResponse|VIM → NFVI|Input|attachTargetInfo|the resource the accelerator is to be attached to (e.g., VM) |
-||||Input|accResourceInfo|Accelerator Information|
-||||Output|accResourceId|Id if successful|
-|ReleaseAccResourceRequest|ReleaseAccResourceResponse|VIM → NFVI|Input|accResourceId|Id of resource to be released|
-|QueryAccResourceRequest|QueryAccResourceResponse|VIM → NFVI|Input|hostId|Id of specified host|
-||||Input|Filter|Specifies the accelerators for which query applies|
-||||Output|accQueryResult|Details of the accelerators matching the input filter located in the selected host|
-|GetAccStatisticsRequest|GetAccStatisticsResponse|VIM → NFVI|Input|hostId|Id of specified host|
-||||Input|Filter|Specifies the accelerators for which query applies|
-||||Output|accStatistics|Statistics data of the accelerators matching the input filter located in the selected host.|
-|ResetAccStatisticsRequest|ResetAccStatisticsResponse|VIM → NFVI|Input|hostId|Id of specified host |
-||||Input|Filter|Specifies the accelerators for which request applies |
-|SubscribeRequest|SubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
-||||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
-||||Output|SubscriptionId|Identifier of the successfully created subscription. |
-|UnsubscribeRequest|UnsubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
-||||Input|SubscriptionId|Identifier of the subscription to be unsubscribed.|
-|Notify||NFVI → VIM|||NFVI notifies an alarm to VIM |
-|GetAlarmInfoRequest|GetAlarmInfoResponse|VIM → NFVI|Input|hostId|Id of specified host |
-||||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
-||||Output|Alarm|Information about the alarms if filter matches an alarm. |
-|AccResourcesDiscoveryRequest|AccResourcesDiscoveryResponse|VIM → NFVI|Input|hostId|Id of specified host |
-||||Output|discoveredAccResourceInfo|Information on the acceleration resources discovered within the NFVI. |
-|OnloadAccImageRequest|OnloadAccImageResponse|VIM → NFVI|Input|accResourceId|Identifier of the chosen accelerator in the NFVI. |
-||||Input|accImageInfo|Information about the acceleration image. |
-||||Input|accImage|The binary file of acceleration image. |
+ETSI ETSI (Ref: NFV IFA 019 v03101p) has defined a set of technology independent interfaces for acceleration resource life cycle management. These operations allow: allocation, release and querying of acceleration resource, get and reset statistics, subscribe/unsubscribe (terminate) to fault notifications, notify (only used by NFVI) and get alarm information.
+
+These acceleration interfaces are summarized here in Table 6.3 only for convenience.
+
+| **Request**|**Response**|**From, To**|**Type**|**Parameter**|**Description** |
+| ------------|------------|------------|------------|------------|------------ |
+| InitAccRequest|InitAccResponse|VNF → NFVI|Input|accFilter|the accelartor sub-system(s) to initialize and retrieve their capabilities. |
+| |||Filter|accAttributeSelector|attribute names of accelerator capabilities |
+| |||Output|accCapabilities|acceleration sub-system capabilities |
+| RegisterForAccEventRequest|RegisterForAccEventResponse|VNF → NFVI|Input|accEvent|event the VNF is interested in |
+| |||Input|vnfEventHandlerId|the handler for NFVI to use when notifying the VNF of the event |
+| AccEventNotificationRequest|AccEventNotificationResponse|NFVI → VNF|Input|vnfEventHandlerId|Handler used by VNF registering |
+| for this event |
+| |||Input|accEventMetaData| |
+| DeRegisterForAccEventRequest|DeRegisterForAccEventResponse|VNF → NFVI|Input|accEvent|Event VNF is deregistering from |
+| ReleaseAccRequest|ReleaseAccResponse|VNF → NFVI||| |
+| ModifyAccConfigurationRequest|ModifyAccConfigurationResponse|VNF → NFVI|Input|accConfigurationData|Config data for accelerator |
+| |||Input|accSubSysConfigurationData|Config data for accelerator sub-system |
+| GetAccConfigsRequest|GetAccConfigsResponse|VNF → NFVI|Input|accFilter|Filter for subsystems from which config data requested |
+| |||Input|accConfigSelector|attributes of config types |
+| |||Output|accComfigs|Config info (only for the specified attributes) for specified subsystems |
+| ResetAccConfigsRequest|ResetAccConfigsResponse|VNF → NFVI|Input|accFilter|Filter for subsystems for which config is to be reset |
+| |||Input|accConfigSelector|attributes of config types whose values will be reset |
+| AccDataRequest|AccDataResponse|VNF → NFVI|Input|accData|Data (metadata) sent too accelerator |
+| |||Input|accChannel|Channel data is to be sent to |
+| |||Output|accData|Data from accelerator |
+| AccSendDataRequest|AccSendDataResponse|VNF → NFVI|Input|accData|Data (metadata) sent too accelerator |
+| |||Input|accChannel|Channel data is to be sent to |
+| AccReceiveDataRequest|AccReceiveDataResponse|VNF → NFVI|Input|maxNumberOfDataItems|Max number of data items to be received |
+| |||Input|accChannel|Channel data is requested from |
+| |||Output|accData|Data received form Accelerator |
+| RegisterForAccDataAvailableEventRequest|RegisterForAccDataAvailableEventResponse|VNF → NFVI|Input|regHandlerId|Registration Identifier |
+| |||Input|accChannel|Channel where event is requested for |
+| AccDataAvailableEventNotificationRequest|AccDataAvailableEventNotificationResponse|NFVI → VNF|Input|regHandlerId|Reference used by VNF when registering for the event |
+| DeRegisterForAccDataAvailableEventRequest|DeRegisterForAccDataAvailableEventResponse|VNF → NFVI|Input|accChannel|Channel related to the event  |
+| AllocateAccResourceRequest|AllocateAccResourceResponse|VIM → NFVI|Input|attachTargetInfo|the resource the |
+| accelerator is to be attached to (e.g., VM) |
+| |||Input|accResourceInfo|Accelerator Information |
+| |||Output|accResourceId|Id if successful |
+| ReleaseAccResourceRequest|ReleaseAccResourceResponse|VIM → NFVI|Input|accResourceId|Id of resource to be released |
+| QueryAccResourceRequest|QueryAccResourceResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|Filter|Specifies the accelerators for which query applies |
+| |||Output|accQueryResult|Details of the accelerators matching the input filter located in the selected host. |
+| GetAccStatisticsRequest|GetAccStatisticsResponse|VIM → NFVI|Input|accFilter|Accelerator subsystems from which data is requested |
+| |||Input|accStatSelector|attributes of AccStatistics whose data will be returned |
+| |||Output|accStatistics|Statistics data of the accelerators |
+| matching the input filter located in the |
+| selected host. |
+| ResetAccStatisticsRequest|ResetAccStatisticsResponse|VIM → NFVI|Input|accFilter|Accelerator subsystems for which data is to be reset |
+| |||Input|accStatSelector|attributes of AccStatistics whose data will be reset |
+| SubscribeRequest|SubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
+| |||Output|SubscriptionId|Identifier of the successfully created |
+| subscription. |
+| UnsubscribeRequest|UnsubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|SubscriptionId|Identifier of the subscription to be |
+| unsubscribed. |
+| Notify||NFVI → VIM|||NFVI notifies an alarm to VIM |
+| GetAlarmInfoRequest|GetAlarmInfoResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
+| |||Output|Alarm|Information about the alarms if filter matches an alarm. |
+|  |
+| AccResourcesDiscoveryRequest|AccResourcesDiscoveryResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Output|discoveredAccResourceInfo|Information on the acceleration resources discovered within the NFVI. |
+| OnloadAccImageRequest|OnloadAccImageResponse|VIM → NFVI|Input|accResourceId|Identifier of the chosen accelerator in the NFVI. |
+| |||Input|accImageInfo|Information about the acceleration image. |
+| |||Input|accImage|The binary file of acceleration image. |
+
 <p align="center"><b>Table 6-3:</b> Hardware Acceleration Interfaces.</p>
 
