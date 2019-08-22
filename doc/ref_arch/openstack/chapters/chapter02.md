@@ -32,13 +32,12 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.gen.ost.01` | Open source | The Architecture **must** use OpenStack APIs.|
-| `req.gen.ost.02` | Open source | The Architecture shall/must xxx. |
-| `req.gen.cnt.01` | Cloud nativeness | The Architecture shall/must xxx. |
-| `req.gen.cnt.02` | Cloud nativeness | The Architecture shall/must xxx. |
-| `req.gen.scl.01` | Scalability | The Architecture **shall** support policy driven auto-scaling. |
-| `req.gen.scl.02` | Scalability | The Architecture shall/must xxx. |
-| `req.gen.rsl.01` | Resiliency | The Architecture shall/must xxx. |
-| `req.gen.rsl.02` | Resiliency | The Architecture shall/must xxx. |
+| `req.gen.ost.02` | Open source | The Architecture **must** support dynamic request and configuration of virtual services (servers, networks, storage) through OpenStack APIs. |
+| `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component.. |
+| `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable.. |
+| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. |
+| `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient OpenStack components that are required for the continued operation of running workloads. |
+
 
 <p align="center"><b>Table 2-1:</b> OpenStack General Requirements.</p>
 
@@ -53,12 +52,13 @@ Traceability to Reference Model.
 | `req.inf.stg.02` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
 | `req.inf.ntw.01` | Network | The Architecture **must** include an SDN integration to support provisioning of network services from host-based OpenStack Neutron networking VTEPs to the Border Edge based VRFs. |
 | `req.inf.ntw.02` | Network | The Architecture **must** Localize intra-host traffic to provide low latency, high throughput, and resiliency. |
-| `req.inf.ntw.03` | Network | The Architecture **should** support service function chaining from Data plane and fabric perspective. |
+| `req.inf.ntw.03` | Network | The Architecture **should** support service function chaining. |
 | `req.inf.ntw.04` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay - VXLAN or Geneve). |
-| `req.inf.ntw.05` | Network | The Architecture **shall** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently |
-| `req.inf.acc.01` | Acceleration | The Architecture **shall** support Application Specific Acceleration (exposed to VNFs) xxx. |
-| `req.inf.acc.02` | Acceleration | The Architecture **shall** support NFVI Acceleration (such as SmartNICs) |
-| `req.inf.acc.03` | Acceleration | The Architecture **shall not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs |
+| `req.inf.ntw.05` | Network | The Architecture **should** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently |
+| `req.inf.ntw.06` | Network | The Architecture **must** provide low latency and high throughput (do we need to quantify it?). |
+| `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs) xxx. |
+| `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs) |
+| `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs |
 
 <p align="center"><b>Table 2-2:</b> OpenStack Infrastructure Requirements.</p>
 
@@ -67,8 +67,8 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.vim.01` | General | The Architecture **must** allow infrastructure resource sharing among several service operation teams to avoid per VNF vertical solutions. |
-| `req.vim.02` | General | The Architecture shall/must xxx. |
+| `req.vim.01` | General | The Architecture **must** allow infrastructure resource sharing. |
+| `req.vim.02` | General | The Architecture **should** support deployment of OpenStack components in containers. |
 | `req.vim.03` | General | The Architecture shall/must xxx. |
 | `req.vim.04` | General | The Architecture shall/must xxx. |
 | `req.vim.05` | General | The Architecture shall/must xxx. |
@@ -86,10 +86,10 @@ Traceability to Reference Model.
 | `req.int.gen.02` | Interface | The Architecture shall/must xxx. |
 | `req.int.gen.03` | Interface | The Architecture shall/must xxx. |
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints, GUI & internal services for the cloud |
-| `req.int.api.02` | API | The Architecture **shall** allow external access to APIs exposed by the VIM and NFVI. |
+| `req.int.api.02` | API | The Architecture **should** allow external access to APIs exposed by the VIM and NFVI. |
 | `req.int.api.03` | API | The Architecture shall/must xxx. |
-| `req.int.acc.01` | Acceleration | The Architecture **shall** provide an open and standard acceleration interface to VNFs. |
-| `req.int.acc.02` | Acceleration | The Architecture **shall not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. |
+| `req.int.acc.01` | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |
+| `req.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. |
 
 <p align="center"><b>Table 2-4:</b> OpenStack Interfaces and APIs Requirements.</p>
 
@@ -98,8 +98,8 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.tnt.gen.01` | General | The Architecture **must** allow for a multi-tenanted solution that allows tenants to deploy workloads using self-service interfaces (both UI and API). |
-| `req.tnt.gen.02` | General | The Architecture shall/must xxx. |
+| `req.tnt.gen.01` | General | The Architecture **must** support multi-tenancy. |
+| `req.tnt.gen.02` | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. |
 | `req.tnt.gen.03` | General | The Architecture shall/must xxx. |
 | `req.tnt.gen.01` | General | The Architecture shall/must xxx. |
 | `req.tnt.gen.02` | General | The Architecture shall/must xxx. |
@@ -112,12 +112,10 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.lcm.gen.01`	| General | The Architecture **shall** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
-| `req.lcm.gen.02` | General	| The Architecture **shall** support plug-ins to manage deployment of workload to multiple sites and various technology stack. Multi-cloud support through hybrid, migrations, etc. |
-| `req.lcm.gen.03` | General |	The Architecture **shall** provide OpenStack Ironic Bare Metal provision to support VIM Instance provisioning (bootstrap), Management System, KVM host provisioning and Kubernetes host provisioning |
-| `req.lcm.adp.01` | Automated deployment | The Architecture **shall** allow the “cookie cutter” automated deployment to multiple sites. |
-| `req.lcm.adp.02` | Automated deployment | The Architecture **must** enable automated and incremental upgrade of the various software components in a manner that still allows tenant workloads to continue to operate. |
-| `req.lcm.cid.02` | CI/CD | The Architecture **shall** support integrating with CI/CD Toolchain for NFVI and VIM components Automation |
+| `req.lcm.gen.01`	| General | The Architecture **should** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
+| `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow the “cookie cutter” automated deployment to multiple sites. |
+| `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that running workloads are not impacted. |
+| `req.lcm.cid.02` | CI/CD | The Architecture **should** support integrating with CI/CD Toolchain for NFVI and VIM components Automation |
 
 <p align="center"><b>Table 2-6:</b> OpenStack LCM Requirements.</p>
 
