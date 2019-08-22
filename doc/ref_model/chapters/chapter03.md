@@ -64,7 +64,9 @@ The virtualised infrastructure resources related to these categories are listed 
 <a name="3.2.1"></a>
 ### 3.2.1 Tenant
 
-A network function virtualisation infrastructure (NFVI) needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
+A network function virtualisation infrastructure (NFVI) needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. 
+
+_**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 | Attribute | Description                                                                                             |
 |-----------|---------------------------------------------------------------------------------------------------------|
@@ -80,7 +82,9 @@ A network function virtualisation infrastructure (NFVI) needs to be capable of s
 
 <a name="3.2.2"></a>
 ### 3.2.2 Compute
-A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
+A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. 
+
+_**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
 | Attribute | Description |
 | --- | --- |
@@ -96,7 +100,9 @@ A virtual machine or a container/pod belonging to a tenant capable of hosting th
 
 <a name="3.2.3"></a>
 ### 3.2.3 Storage
-A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host. _**Example**: an OpenStack cinder volume._
+A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host. 
+
+_**Example**: an OpenStack cinder volume._
 
 | Attribute | Description |
 | --- | --- |
@@ -112,7 +118,9 @@ _**Comments**: we need to be more specific regarding acceleration and metadata._
 
 <a name="3.2.4"></a>
 ### 3.2.4 Network
-A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
+A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. 
+
+_**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
 | Attribute | Description |
 | --- | --- |
@@ -125,11 +133,49 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 <a name="3.3"></a>
 ## 3.3	Management Software
 
+A network function virtualisation infrastructure provides the capability to manage virtual resources via application programming interfaces or graphical user interfaces. The management software allows to:
+
+* setup, manage and delete tenants,
+* setup, manage and delete user- and service-accounts,
+* manage access privileges and
+* provision, manage, monitor and delete virtual resources.
+
 <p align="center"><img src="../figures/ch03_model_management_software.png" alt="NFVI Management Software" Title="NFVI Management Software" width="65%"/></p>
 <p align="center"><b>Figure 3-3:</b> NFVI Management Software.</p>
   
+ The management software needs to support following functional aspects:
+ 
+ **API/UI**
+ : an application programming interface / user interface providing access to the NFVI management functions 
+ 
+**Catalogue**
+: manages the collection of available templates for virtual resource the NFVI can provide
+
+**Inventory**
+: manages the information related to all the physical and virtual resources of a NFVI
+
+**Scheduler**
+: receives requests via API/UI, provisions and manages virtual resources by coordinating the activities of the compute-, storage- and network resources managers
+
+**Monitoring**
+:  monitors and collects information on all events and the current state of all physical and virtual resources
+
+**Additional Management Functions**
+: include identity management, policy management (e.g. to enforce security policies), etc.
+
+**Compute Resources Manager**
+: provides a mechanism to provision virtual resources with the help of physical compute resources
+
+**Storage Resources Manager**
+: provides a mechanism to provision virtual resources with the help of physical storage resources
+
+**Network Resources Manager**
+: provides a mechanism to provision virtual resources with the help of physical network resources
+
 <a name="3.4"></a>
 ## 3.4	Physical Resources
+
+The physical compute, storage and network resources serve as the foundation of the network function virtualisation infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
 
 <p align="center"><img src="../figures/ch03_model_physical_resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> NFVI Physical Resources.</p>
