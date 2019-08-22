@@ -126,7 +126,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
 | nfvi.com.cfg.001 | CPU partionning  | value |  |  |  |
-| nfvi.com.cfg.002 | CPU allocation ratio  | value | 1:4 | 1:1  | 1:1 |
+| nfvi.com.cfg.002 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
 | nfvi.com.cfg.003 | NUMA awareness | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.004 | CPU pinning capability | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.005 | Huge Pages  | Yes/No  | N | Y | Y |
