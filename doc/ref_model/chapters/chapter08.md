@@ -145,8 +145,21 @@ These core principles will guide NFV verification deliverables:
 
 <a name="8.3.2"></a>
 ### 8.3.2 Resources
-1. OPNFV https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
-2. CVC https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
+1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
+2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
+3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html 
+4. **Dovetail**
+	1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements 
+	2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf 
+	3. TCs: 
+		1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review 
+		2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
+		3. Per OVP release in the release notes:
+			1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
+			2. https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/release/release-notes/index.html
+5. **Overall documentation** is on docs.opnfv.org for the corresponding Fraser and Danube releases
+	1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
+	2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
 
 <a name="8.3.3"></a>
 ### 8.3.3 Test Plans | Suites | Cases
