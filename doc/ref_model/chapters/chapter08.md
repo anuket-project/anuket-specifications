@@ -291,12 +291,89 @@ will define features/capabilities, test scenarios, and test cases to augment exi
 
 <a name="8.6.2"></a>
 ### 8.6.2 OVP/CVC Certification Strategy & Vehicle.
+<p><strong>NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance.&nbsp; </strong>Adherenence to <strong>Security</strong> standards are equally important and addressed in Chapter 7.</p>
+<p>The three part verificaiton process includes <strong>NFVI Manifest Validations</strong>, <strong>Emprical Baseline measurements against targeted VNF families</strong>, and <strong>Candidate VNF verifications</strong>.&nbsp; More specifically,</p>
 <ul>
 <li><strong>NFVI Certification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
 <li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
 <li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/CVC Test Suites</li>
-<li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <i>(Refer to CNTT Chapter 7 Security for additional test/verification details)</i></li>
+<li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <em>(Refer to CNTT Chapter 7 Security for additional test/verification details)</em></li>
 </ul>
+<p>Validations are performed against an <strong>Infrastruture Profile Catalog</strong>, <strong>VNF Category</strong>, and&nbsp;<strong>targeted VNF class,</strong> or family for baseline measurements.</p>
+<p>The <strong>Infrastucture Profile Catalog</strong>&nbsp;contains the following attributes:&nbsp;</p>
+<ul>
+<li>Profile is a collection of (limited) options offered by the infrastructure to the VNF
+<ul>
+<li>Capabilities</li>
+<li>Metrics</li>
+<li>Compute flavours</li>
+<li>Interface options</li>
+<li>Storage extensions</li>
+<li>Acceleration capabilities</li>
+</ul>
+</li>
+<li>Profiles are offered to VNFs as an instance types with predefined compute flavours (T-shirt size)
+<ul>
+<li>A particular set of options is an instance type</li>
+<li>Compute flavours: S, M, L</li>
+</ul>
+</li>
+</ul>
+<p><strong>VNF Categories</strong>, for which NFVI validations will support and be verified against include:</p>
+<ul>
+<li><strong>Basic</strong>: VNFs with VNF-Cs that perform basic compute operations.</li>
+<li><strong>Network intensive</strong>: VNFs with VNF-Cs that perform network intensive operations with high throuput and low latency requirements.</li>
+<li><strong>Compute Intensive</strong>: VNFs with VNF-Cs that perform compute intensive operations with low latency requirements.</li>
+</ul>
+
+<p align="center"><img src="../figures/ch8_B-N-C_VNF_Categories.jpg" alt="BNC VNF Categories" title="BNC VNF Categories" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: Basic(B), Network(N), Compute(C) VNF Categories</p>
+
+<p><strong>Targeted VNF Classes/Families </strong>for baseline measurements can include, but not limited to:</p>
+<ul>
+<li><strong>Management and Control Plane</strong>: EPC (MME, P/S-GW, S/G-GSN), IMS, SBC, PCRF, SDM, mVAS, DRA</li>
+<li><strong>User Plane and network</strong>: RAN, BBU, MRF, BNG, CDN, PE, Switch, Router, RR, CPE</li>
+<li><strong>Security &amp; testing</strong>: FW, LB, DNS, AES, DPI, NAT/CGN, SecGW, Probe</li>
+<li><strong>Data Core:</strong>
+<ul>
+<li>Packet Core: GGSN, SGW, PGW, SGSN, MME, CSGN.</li>
+<li>Subscriber Management: HSS.</li>
+<li>Policy &amp; Traffic Management: PCRF, TMF</li>
+<li>Optimizer: MSP.</li>
+</ul>
+</li>
+<li><strong>Voice Core:</strong>
+<ul>
+<li>IP Multimedia: CSCF, ENUM, TAS, SBC.</li>
+<li>Database: CSDB</li>
+<li>Circuit Switched: MSC-S(MSS), MGW.</li>
+<li>Signalling: DRA, SGW, STP.</li>
+<li>Messaging</li>
+<li>Security</li>
+</ul>
+</li>
+<li><strong>IP Core:</strong>
+<ul>
+<li>SEC-GW</li>
+</ul>
+</li>
+<li><strong>SDO:</strong>
+<ul>
+<li>Convergent Charging: CCS</li>
+<li>Smart Pricing: SPO.</li>
+<li>NGIN, Gi-LAN</li>
+<li>SecureNet: Clean Pipe.</li>
+<li>Network Security: SS7FW, CMS, SIG.</li>
+<li>Others: Web RTC GW, Service integration GW</li>
+</ul>
+</li>
+<li><strong>Fixed Access:</strong>
+<ul>
+<li>BNG, CPE</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
 	
 <a name="8.6.3"></a>
 ### 8.6.3 Best Practices.
@@ -372,6 +449,138 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 <a name="8.7.1"></a>
 ### 8.7.1 Dependencies, Recommendations, Assumptions
 
+<p><strong>Assumptions</strong></p>
+<ul>
+<li>NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See impage.)</li>
+	
+<p align="center"><img src="../figures/ch8_NFVI_VNF_Instance_Type.jpg" alt="NFVI+VNF Instance Type" title="NFVI+VNF Instance Type" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: NFVI+VNF Instance Type</p>
+
+<li>Agreed upon declaration of Compute flavors:</li>
+</ul>
+<table style="margin-left: 60px;">
+<tbody>
+<tr>
+<td>Type</td>
+<td>vCPU</td>
+<td>RAM</td>
+<td>Local Disk</td>
+<td>Network Interface</td>
+</tr>
+<tr>
+<td>tiny</td>
+<td>1</td>
+<td>512 MB</td>
+<td>1 GB</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>small</td>
+<td>1</td>
+<td>2 GB</td>
+<td>40 GB</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>2</td>
+<td>4 GB</td>
+<td>40 GB</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>large</td>
+<td>4</td>
+<td>8 GB</td>
+<td>80 GB</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>large2</td>
+<td>4</td>
+<td>16 GB</td>
+<td>80 GB</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>xlarge</td>
+<td>8</td>
+<td>16 GB</td>
+<td>160 GB</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>xlarge2</td>
+<td>8</td>
+<td>32 GB</td>
+<td>160 GB</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>xlarge3</td>
+<td>8</td>
+<td>64 GB</td>
+<td>160 GB</td>
+<td>1 Gbps</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Performance profiles defined as follows:</li>
+</ul>
+<table style="margin-left: 60px;">
+<tbody>
+<tr>
+<td>NFVI</td>
+<td>Compute Workload</td>
+<td>Network Workload</td>
+<td>Network Performance Requirements</td>
+<td>Metrics</td>
+</tr>
+<tr>
+<td>Basic</td>
+<td>Low</td>
+<td>Low</td>
+<td>
+<p>Offered load medium</p>
+<p>Latentcy threshold high</p>
+</td>
+<td>
+<p>Capacity with 5% loss ratio</p>
+<p>99th percentile of one-way Latency</p>
+</td>
+</tr>
+<tr>
+<td>Network Intensive</td>
+<td>Medium</td>
+<td>High</td>
+<td>
+<p>Offered load line-rate</p>
+<p>Latentcy threshold low</p>
+</td>
+<td>&nbsp;
+<p>Throughput (zero packet loss)</p>
+<p>99th percentile of one-way Latency</p>
+</td>
+</tr>
+<tr>
+<td>Compute Intensive</td>
+<td>High</td>
+<td>Medium</td>
+<td>
+<p>Offered load high</p>
+<p>Latentcy threshold low</p>
+</td>
+<td>&nbsp;
+<p>Capacity with 1% loss ratio</p>
+<p>99th percentile of one-way Latency</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
 <a name="8.7.2"></a>
 ### 8.7.2 System Under Test (SUT) Pre-reqs
 1. Test Specifications – per infra profile, specifications, and features/capabilities
@@ -411,7 +620,7 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 <li>Images uploaded to tenant space</li>
 <li>External system test data needs identified</li>
 <li>Owners (NFVI, VNF, PTL, etc) documented</li>
-<li>Security Compliance Satisfied (<i>(Refer to CNTT Chapter 7 Security for additional tests, scans, and vulnerabilities validations)<u></u></li>
+<li>Security Compliance Satisfied <i>(Refer to CNTT Chapter 7 Security for additional tests, scans, and vulnerabilities validations)</i><u></u></li>
 </ul>
 </li>
 <li><u><strong>Test Case Contributions</strong></u>
