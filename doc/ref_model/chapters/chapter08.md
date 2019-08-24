@@ -77,6 +77,7 @@ These core principles will guide NFV verification deliverables:
 4. Verification decisions will be based on data
 5. Test harness is “compatible”, or “conforms” to testing against standard interfaces and services
 6. VNF functionality easily tested w/ addition of Supplier Apparatus 
+7. Leverage test harnesses from existing open source projects where practical, and applicable. 
 
 <a name="8.2.3"></a>
 ### 8.2.3 Governance
