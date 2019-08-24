@@ -19,9 +19,9 @@
   * [8.4.4 SLAs and Issue Resolution](#8.4.4)
   * [8.4.5 RA Verification.](#8.4.5)
 * [8.5 Current OVP and CVC Process.](#8.5)
-  * [8.5.1 Process (CVC)](#8.5.1)
-  * [8.5.2 Test Framework and Supported Test Cases.](#8.5.2)
-  * [8.5.3 ONAP - VNF Testing and Certification.](#8.5.3)
+  * [8.5.1 Process (CVC).](#8.5.1)
+  * [8.5.2 Process (OPNFV).](#8.5.2)
+  * [8.5.3 Test Framework and Supported Test Cases.](#8.5.3)
 * [8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy.](#8.6)
   * [8.6.1 Methodology.](#8.6.1)
   * [8.6.2 OVP/CVC Certification Strategy & Vehicle.](#8.6.2)
@@ -194,23 +194,88 @@ Process flow for RA (Infra) Validation and Verfiication
 <a name="8.5.1"></a>
 ### 8.5.1 Process (CVC)
 
+<p><u><strong>CVC Compliance, Verification, and Certification governing framework consists of: </strong></u>&nbsp;</p>
+<ul>
+<li><strong>Compliance testing</strong>: compares the system under test against the specifications / standards</li>
+<li><strong>Validation testing:</strong> ensures the system under test is operating according to its intended / required purpose</li>
+<li><strong>Performance testing</strong>: measures how well the system under test performs its specific purpose(s)</li>
+</ul>
+<p><u><strong>OVP certifications are accomplished as a two-part process: </strong></u></p>
+<ol>
+<li>OPNFV provides Test Tools and Test Cases to OVP.</li>
+<li>OVP provides vendor NFVI products a &ldquo;badge&rdquo; claiming &ldquo;OPNFV-certified&rdquo; once OVP testing passes successfully (via Dovetail).</li>
+</ol>
+
 <a name="8.5.2"></a>
-### 8.5.2 Test Framework and Supported Test Cases
-1. OPNFV – NFVi Testing and Certification
-	1. Test framework, test result database and Web UI
-		1. Dovetail project
-2. Test tools, test cases and test execution
-	1. API testing (FuncTest)
-	2. Performance and HA (Yardstick)
-	3. Load testing (Bottleneck)
+### 8.5.2 Process (OPNFV)
+
+<p><strong>OPNFV Releases including the successful adoption and implementaiton of Installer, Feature, and Test Projects to perform release level verification, compliance, and certification.</strong></p>
+<p><strong>More specifically:</strong></p>
+<p><strong><u>Release Status</u></strong></p>
+<ul>
+<li>Installer oriented release</li>
+<li>Multiple installers exist</li>
+<li>Multiple scenarios exist, with one scenario represents a certain integration group and a certain configuration</li>
+<li>All releases must pass CI（Continuous Integration) test</li>
+<li>OVP includes test cases that at lease one OPNFV release scenario can pass</li>
+</ul>
+<p><u><strong>Feature Projects</strong></u></p>
+<ul>
+<li>Define a certain feature for the OPNFV release, e.g. high availability</li>
+<li>Work with upstream projects to develop features</li>
+<li>Work with testing projects to define and co-develop feature tests</li>
+<li>Work with installer projects to develop certain scenarios including the feature</li>
+</ul>
+<p><strong><span style="text-decoration: underline;">Test scenarios</span> </strong></p>
+<ul>
+<li>Derived from Projects coming into OPNFV for release scoping, resulting in test cases used by OVP for verification and certification.&nbsp;</li>
+<li>Only test cases that can let one of the scenarios pass can be included in OVP.</li>
+<li>This is a procedure to make sure OVP test cases are written in a right way</li>
+</ul>
+<p>&nbsp;</p>
+
+<p align="center"><img src="../figures/ch8_OPNFV_current_projects_and_releases.jpg" alt="OPNFV Projects and Releases" title="OPNFV Projects and Releases" width="100%"/></p>
+<p align="center"><b>Figure:</b> Figure: OPNFV (current) Projects and Releases Process</p>
 
 <a name="8.5.3"></a>
-### 8.5.3 ONAP - VNF Testing and Certification
-1. VNF Validation/Packaging Compliance (HEAT and TOSCA/CSAR/VFD)
-2. Web front-end integrated with OPNFV Dovetail Web UI
-3. Future plan: testing of VNF lifecycle, VNF functions, VNF performance
+### 8.5.3 Test Framework and Supported Test Cases
+<p><u><strong>Test frameworks and supported test cases for OVP Certifications include (OPNFV and ONAP):</strong></u></p>
+<ol>
+<li><u><strong>OPNFV</strong></u><u> &ndash; </u><u><strong>NFVI Testing and Certification</strong></u>
+<ol>
+<li><strong>CVC Category:&nbsp; Validation, Compliance</strong></li>
+<li><strong>Purpose</strong>: <strong>NFVI platform is checked against the Open Stack requirements</strong></li>
+<li>Test framework, test result database and Web UI
+<ul>
+<li><strong>Dovetail</strong> project</li>
+</ul>
+</li>
+<li>Test tools, test cases and test execution
+<ul>
+<li>API testing (<strong>FuncTest</strong>)</li>
+<li>Performance and HA (<strong>Yardstick</strong>)</li>
+<li>Load testing (<strong>Bottleneck</strong>)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li><u><strong>ONAP</strong></u><u> &ndash; </u><u><strong>VNF Testing and Certification</strong></u>
+<ol>
+<li><strong>CVC Category:&nbsp; Compliance, Performance</strong></li>
+<li><strong>Purpose: VNF template is checked against the ONAP Requirements</strong>
+<ul>
+<li>VNF Validation/Packaging Compliance (HEAT and TOSCA/CSAR/VFD)</li>
+<li>Web front-end integrated with OPNFV Dovetail Web UI</li>
+<li>Future plan: testing of VNF lifecycle, VNF functions, VNF performance</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>NOTE:&nbsp;&nbsp;<strong>VNF Validation Testing </strong>- CVC and ONAP teams are working to develop the initial life-cycle tests for VNF devices.&nbsp; The first release will run on the "basic open stack" meeting ONAP requirements. Future versions would require this to be the reference NFVI defined by CNTT</p>
 
-<a name="8.6"></a>
 ## 8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy
 
 <a name="8.6.1"></a>
@@ -230,7 +295,8 @@ will define features/capabilities, test scenarios, and test cases to augment exi
 <li><strong>NFVI Certification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
 <li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
 <li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/CVC Test Suites</li>
-<li><strong>Security</strong>: Ensures VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks</li>
+<li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <i>(Refer to CNTT Chapter 7 Security for additional test/verification details)</i></li>
+</ul>
 	
 <a name="8.6.3"></a>
 ### 8.6.3 Best Practices.
@@ -239,6 +305,8 @@ will define features/capabilities, test scenarios, and test cases to augment exi
 <li>Integration with Dovetail and OVP flow (code, docs, cert criteria, etc.)</li>
 <li>Leveraging ONAP Network and Service Models, with identified VNF-specific parameters</li>
 <li>Standardized certification criteria</li>
+<li>Define CNTT ref arch as scenarios, and have all test cases for the ref arch be involved in OVP (could also be addressed in OVP as CNTT test)</li>
+<li>Add test cases from operators, which operators already tested in their environment</li>
 </ul>
 
 <a name="8.6.4"></a>
@@ -343,7 +411,7 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 <li>Images uploaded to tenant space</li>
 <li>External system test data needs identified</li>
 <li>Owners (NFVI, VNF, PTL, etc) documented</li>
-<li>Security Compliance Satisfied (see Ch. 8 &ndash; scans, vulnerabilities)<u></u></li>
+<li>Security Compliance Satisfied (<i>(Refer to CNTT Chapter 7 Security for additional tests, scans, and vulnerabilities validations)<u></u></li>
 </ul>
 </li>
 <li><u><strong>Test Case Contributions</strong></u>
