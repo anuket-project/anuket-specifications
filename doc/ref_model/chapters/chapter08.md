@@ -344,7 +344,7 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 </li>
 </ol>
 
-<p><strong>OPNFV Exit Criteria includes <em>D</em></strong><strong><em>emonstration of Compliance, Verification, Performance, and Validaiton, of Reference Architecture Implementation, and&nbsp;</em></strong><strong><em>Delivery of the following:</em></strong></p>
+<br><p><strong>OPNFV Exit Criteria includes <em>D</em></strong><strong><em>emonstration of Compliance, Verification, Performance, and Validaiton, of Reference Architecture Implementation, and&nbsp;</em></strong><strong><em>Delivery of the following:</em></strong></p>
 <ol>
 <li><u><strong>CERTIFICATION TENANTS (via OVP Ecosystem)</strong></u>
 <ol>
