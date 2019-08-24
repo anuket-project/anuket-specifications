@@ -23,9 +23,13 @@
   * [8.5.2 Test Framework and Supported Test Cases.](#8.5.2)
   * [8.5.3 ONAP - VNF Testing and Certification.](#8.5.3)
 * [8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy.](#8.6)
-  * [8.6.1 NFVI Certification.](#8.6.1)
-  * [8.6.2 Empirical Validation.](#8.6.2)
-  * [8.6.3 VNF Certification.](#8.6.3)
+  * [8.6.1 Methodology.](#8.6.1)
+  * [8.6.2 OVP/CVC Certification Strategy & Vehicle.](#8.6.2)
+  * [8.6.3 Best Practices.](#8.6.3)
+  * [8.6.4 NFVI Profiles reference implementations.](#8.6.4)
+  * [8.6.5 Vendor supplied NFVI solutions.](#8.6.5)
+  * [8.6.6 NFVI Compliance, Verification, and Certification.](#8.6.6)
+  * [8.6.7 VNF Compliance, Validation, and Certification.](#8.6.7)
 * [8.7 Quality Assurance.](#8.7)
   * [8.7.1 Dependencies, Recommendations, Assumptions.](#8.7.1)
   * [8.7.2 System Under Test (SUT) Pre-reqs.](#8.7.2)
@@ -181,7 +185,7 @@ Process flow for RA (Infra) Validation and Verfiication
 ## 8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy
 
 <a name="8.6.1"></a>
-### 8.6.1 Methodology
+### 8.6.1 Methodology.
 
 Perform VNF certifications using CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects
 will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
@@ -192,7 +196,7 @@ will define features/capabilities, test scenarios, and test cases to augment exi
 <p align="center"><b>Figure:</b> Figure: Certification Methodology</p>
 
 <a name="8.6.2"></a>
-### 8.6.2 OVP/CVC Certification Strategy & Vehicle
+### 8.6.2 OVP/CVC Certification Strategy & Vehicle.
 <ul>
 <li><strong>NFVI Certification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
 <li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
