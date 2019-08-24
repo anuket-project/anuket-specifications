@@ -75,13 +75,29 @@ These core principles will guide NFV verification deliverables:
 
 <a name="8.2.2"></a>
 ### 8.2.2 Verification Methodologies
-1. Engineering package validations will be performed against targeted infrastructure/architecture<br>
-2. Configuration settings/features/capabilities will be baseline<br> 
-3. Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs<br>
-4. Verification decisions will be based on data
-5. Test harness is “compatible”, or “conforms” to testing against standard interfaces and services
-6. VNF functionality easily tested w/ addition of Supplier Apparatus 
-7. Leverage test harnesses from existing open source projects where practical, and applicable. 
+<ol>
+<li>Engineering package validations will be performed against targeted infrastructure/architecture.</li>
+<li>Configuration settings/features/capabilities will be baseline</li>
+<li>Entrance Criteria Guidelines will be satisfied prior to OPNFV verification (i.e. Supplier needs to submit/agree/conform)
+<ol>
+<li>Conform to CNTT ref model</li>
+<li>Confirm to ref arch</li>
+<li>Submit standard documentation</li>
+<li>Adhere to security compliance</li>
+</ol>
+</li>
+<li>Exit Criteria Guidelines will be satisfied prior to issuance of OPNFV compliance badges.
+<ol>
+<li>Certification for Tenants (OVP Ecosystem)</li>
+<li>Operaitonal Considerations (Telco Perspective)</li>
+<li>End User Considerations (Telco Perspective)</li>
+</ol>
+</li>
+<li>Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs</li>
+<li>Verification decisions will be based on data6. Test harness is &ldquo;compatible&rdquo;, or &ldquo;conforms&rdquo; to testing against standard interfaces and services</li>
+<li>VNF functionality easily tested w/ addition of Supplier Apparatus</li>
+<li>Leverage test harnesses from existing open source projects where practical, and applicable.&nbsp;</li>
+</ol>
 
 <a name="8.2.3"></a>
 ### 8.2.3 Governance
@@ -284,13 +300,90 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 
 <a name="8.7.3"></a>
 ### 8.7.3 Entrance & Exit Criteria
-1. OVP Entrance (i.e. Supplier needs to submit/agree/conform)
-	1. Conform to CNTT ref model
-	2. Confirm to ref arch
-	3. Submit standard documentation
-	4. Adhere to security compliance
-2. OVP Exit – defined by community for OVP Compliance 
-	1. Certifications Required: NFVI, OVP
+<p><strong>OPNFV Entrance Criteria includes <em>D</em></strong><strong><em>emonstration of Reference Architecture Implementation,&nbsp;</em></strong><strong><em>and Delivery of the following:</em></strong></p>
+<ol>
+<li><u><strong>Design &amp; Requirements</strong></u>
+<ul>
+<li>Design, Configuration, Features, SLAs, and Capability documentation complete</li>
+<li>Users stories / Adherence to CNTT Model principles and guidelines</li>
+<li>Chosen Reference Architecture Matches a Reference Architecture from the product catalog<u></u></li>
+</ul>
+</li>
+<li><u><strong>Environment</strong></u>
+<ol>
+<li>Lab / Flavor, component s/w rev levels specified, with confirmation of compatibility with external systems</li>
+<li>Tenant needs identified</li>
+<li>All connectivity, network, image, VMs, delivered with successful pairwise tests</li>
+<li>Lab instrumented for proper monitoring<u></u></li>
+</ol>
+</li>
+<li><u><strong>Planning &amp; Delivery</strong></u>
+<ul>
+<li>Kickoff / Acceptance Criteria reviews performed</li>
+<li>Delivery commitments, timelines, and cadence accepted</li>
+<li>Confirm backward compat. across software/flavor rev levels<u></u></li>
+</ul>
+</li>
+<li><u><strong>Data / VNFs / Security</strong></u>
+<ul>
+<li>Images, Heat Templates, Preload Sheets available</li>
+<li>Images uploaded to tenant space</li>
+<li>External system test data needs identified</li>
+<li>Owners (NFVI, VNF, PTL, etc) documented</li>
+<li>Security Compliance Satisfied (see Ch. 8 &ndash; scans, vulnerabilities)<u></u></li>
+</ul>
+</li>
+<li><u><strong>Test Case Contributions</strong></u>
+<ul>
+<li>VNF Developer/Supplier validations to be performed documented and supplied</li>
+<li>NFVi validations to be performed supplied (e.g. echo, manifest)</li>
+<li>Test to ensure users are added and have correct privileges for the tenant</li>
+<li>Test to ensure quota against submitted request for the respective tenants</li>
+<li>Test to ensure custom flavors against submitted request for respective tenants</li>
+</ul>
+</li>
+</ol>
+
+<p><strong>OPNFV Exit Criteria includes <em>D</em></strong><strong><em>emonstration of Compliance, Verification, Performance, and Validaiton, of Reference Architecture Implementation, and&nbsp;</em></strong><strong><em>Delivery of the following:</em></strong></p>
+<ol>
+<li><u><strong>CERTIFICATION TENANTS (via OVP Ecosystem)</strong></u>
+<ol>
+<li>All Test Cases have a status of &ldquo;Passed&rdquo;, &ldquo;Failed&rdquo;, &ldquo;N/A&rdquo; or &ldquo;Out-scoped&rdquo;.</li>
+<li>All Severity 1 and Severity 2 issues are resolved.</li>
+<li>All Issues have been Resolved or the Project/Component Team has voted unanimously for a Conditional Certification.</li>
+<li>Known defects, or issues, are clearly documented and furnished to Telco providers with certification notes.</li>
+<li>Certification Notification(s) issued.<u></u></li>
+</ol>
+</li>
+<li><u><strong>OPERATIONAL CONSIDERATIONS (TELCO PERSPECTIVE)</strong></u>
+<ol>
+<li>Orchestration capabilities verified to be working as expected</li>
+<li>Fabric setup/configuration validations successfully passed</li>
+<li>Openstack API endpoint is reachable and working for that zone</li>
+<li>Compute zones and cinder types verified</li>
+<li>Standard images verified to exist (and usable)</li>
+<li>Network object created (and working, as in IPs are bindable and usable)</li>
+<li>Resolver overlay/DNS traffic/port 53 overlay on gateway is working properly</li>
+<li>Designate is working, domain preferably created, and maybe test A record created/verified to be resolvable</li>
+<li>Standard NTP servers are working and verified (using tenant's CIDR source IP)</li>
+<li>NFVI/VNF is tested at steady state and high load</li>
+<li>Continuously monitored to ensure SLAs are met and used as feedback to load/perf tests<u></u></li>
+</ol>
+</li>
+<li><u><strong>END USER CONSIDERATIONS (TELCO PERSPECTIVE)</strong></u>
+<ol>
+<li>Component redundancy to ensure graceful updates without disruption of services</li>
+<li>Thin provisioning storage should handle actual full quota usage cases</li>
+<li>Load balancing should support elasticity</li>
+<li>SRIOV Network configuration via SDN must be aware of all VMs on a host (and their network config)</li>
+<li>Auto-healing databases (any component related db) when out of sync</li>
+<li>Obvious, but, supports all required network functionality (all protocols, service chaining, VLAN trunking, QoS marking, probe/mirror, etc)</li>
+<li>Supports NFV migration</li>
+<li>Supports snapshots and backups of large volumes</li>
+<li>Pre-check or audit failures during NFV deployment should allow follow-up mitigation, when possible, rather than killing deployment and rolling back</li>
+</ol>
+</li>
+</ol>
 
 <a name="8.7.4"></a>
 ### 8.7.4 Test Frameworks
