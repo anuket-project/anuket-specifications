@@ -338,7 +338,7 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 <li>VNF Developer/Supplier validations to be performed documented and supplied</li>
 <li>NFVi validations to be performed supplied (e.g. echo, manifest)</li>
 <li>Test to ensure users are added and have correct privileges for the tenant</li>
-<li>Test to ensure quota against submitted request for the respective tenants</li>
+<li>Test to ensure quota against submitted request for the respective tenant</li>
 <li>Test to ensure custom flavors against submitted request for respective tenants</li>
 </ul>
 </li>
