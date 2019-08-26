@@ -485,7 +485,7 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 
 <a name="8.7.3"></a>
 ### 8.7.3 Entrance & Exit Criteria
-**OPNFV Entrance Criteria includes _D_emonstration of Reference Architecture Implementation _and_ Delivery of the following:**
+**OPNFV Entrance Criteria includes Demonstration of Reference Architecture Implementation and Delivery of the following:**
 <ol>
 <li><u><strong>Design &amp; Requirements</strong></u>
 <ul>
