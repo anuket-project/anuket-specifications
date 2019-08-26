@@ -439,7 +439,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 -   Container Management
                 -   Immutability
                 
-   
   <a name="7.7.7"></a>
 ### 7.7.7 Identity and Access Management
 
@@ -460,8 +459,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 -   Software should support configurable, or industry
                     standard, password complexity rules
                     
-       <a name="7.7.10"></a>
-### 7.7.10 Banner
+       <a name="7.7.11"></a>
+### 7.7.11 Banner
                 -   Software should have support for configurable
                     banners to display authorized use criteria/policy
 
