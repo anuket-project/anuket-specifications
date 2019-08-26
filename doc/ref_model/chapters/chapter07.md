@@ -374,8 +374,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <a name="7.7"></a>
 ## 7.7 Vendor Responsibilities
 
-<a name="7.5.4"></a>
-## 7.7.1 Software Hardening
+<a name="7.7.1"></a>
+### 7.7.1 Software Hardening
         -   No hard-coded credentials/ clear text passwords
         -   Software should be independent of the infrastructure
             platform (no OS point release dependencies to patch)
@@ -385,8 +385,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             classification, communication, and timely resolution of
             security vulnerabilities (i.e.; bug bounty, Penetration
             testing/scan findings, etc)
- <a name="7.7.7"></a>
-## 7.7.2 Port Protection
+ <a name="7.7.2"></a>
+### 7.7.2 Port Protection
         -   Unused software and unused network ports should be disabled,
             by default
     -   Software Code Quality
