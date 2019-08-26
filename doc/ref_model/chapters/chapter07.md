@@ -25,7 +25,16 @@
 * [7.7 Vendor Responsibilities](#7.7)
   * [7.7.1 Software Hardening](#7.7.1)
   * [7.7.2 Port Protection](#7.7.2)
-
+  * [7.7.3 Software Code Quality](#7.7.3)
+  * [7.7.4 Alerting and Monitoring](#7.7.4)
+  * [7.7.5 Logging](#7.7.5)
+  * [7.7.6 VNF images](#7.7.6)
+  * [7.7.7 Identity and Access Management](#7.7.7)
+  * [7.7.8 CVEs and Vulnerability Management](#7.7.8)
+  * [7.7.9 Encryption suite supports](#7.7.9)
+  * [7.7.10 Password complexity support](#7.7.10)
+  * [7.7.11 Customized Banner](#7.7.11)
+* [7.8 Certification requirements](#7.8)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -387,11 +396,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             classification, communication, and timely resolution of
             security vulnerabilities (i.e.; bug bounty, Penetration
             testing/scan findings, etc)
- <a name="7.7.2"></a>
+
+<a name="7.7.2"></a>
 ### 7.7.2 Port Protection
         -   Unused software and unused network ports should be disabled,
             by default
-    -   Software Code Quality
+
+<a name="7.7.3"></a>
+### 7.7.3 Software Code Quality
         -   Vendors should use industry recognized software testing
             suites
             -   Static and dynamic scanning
@@ -408,34 +420,54 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 -   Methodology for ensuring security is included in the
                     Agile/DevOps delivery lifecycle for ongoing feature
                     enhancement/maintenance.
-            -   Alerting and Monitoring
+
+<a name="7.7.4"></a>
+### 7.7.4 Alerting and monitoring
                 -   Security event logging (All security events should
                     be logged, including informational)
                 -   Privilege escalation detection
-            -   Logging
+  
+  <a name="7.7.5"></a>
+### 7.7.5 Logging
                 -   (Logging output should support customizable Log
                     retention and Log rotation)
-            -   VM images
+
+  <a name="7.7.6"></a>
+### 7.7.6 VNF images
                 -   Image integrity – fingerprinting/validation
             -   Container Images
                 -   Container Management
                 -   Immutability
-            -   Identity and Access Management
-            -   CVEs and Vulnerability Management
+                
+   
+  <a name="7.7.7"></a>
+### 7.7.7 Identity and Access Management
+
+
+       <a name="7.7.8"></a>
+### 7.7.8 CVEs and Vulnerability Management
                 -   Security defect reporting
                 -   Cadence with NFVi vendors (OSSA for OpenStack)
-            -   Encryption suite support
+
+       <a name="7.7.9"></a>
+### 7.7.9 Encryption suite support
                 -   Software should support recognized encryption
                     standards and encryption should be decoupled from
                     software
-            -   Password complexity support
+
+       <a name="7.7.10"></a>
+### 7.7.10 Password complexity support
                 -   Software should support configurable, or industry
                     standard, password complexity rules
-            -   Banner
+                    
+       <a name="7.7.10"></a>
+### 7.7.10 Banner
                 -   Software should have support for configurable
                     banners to display authorized use criteria/policy
 
-**Certification requirements (Just ideas):**
+
+<a name="7.8"></a>
+## 7.8 Certification requirements (Just ideas)
 
 -   Security test cases executed and test case results
 -   Industry standard compliance achieved (NIST, ISO, PCI, FedRAMP
