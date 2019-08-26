@@ -64,38 +64,39 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ### 7.3.1 Terms
 
 
-| Term         |       Description                                                                                       |
-|--------------|---------------------------------------------------------------------------------------------------------|
-| AZ           | AZ	Availability Zone                                                                                    |
-| CPE          | Customer Premises Equipment                                                                             |
-| CVC          | Compliance and Verification Committee                                                                   |
-| ETSI         | European Telecommunications Standards Institute                                                         |
-| ETSI NFV-TST | ETSI - Network Functions Virtualisation - Test                                                          |
-| ETSI NFV-IFA | ETSI - Network Functions Virtualisation - Infrastructure| 
-| GB| Gigabit| 
-| HW</td><td>Hardware</td></tr>
-| IMS</td>	<td>IP Multimedia Subsystem</td></tr>
-| I/O</td>	<td>Input/Output</td></tr>
-| MB</td>	<td>Megabit</td></tr>
-| NFV</td>	<td>Network Function Virtualization</td></tr>
-| NFVI</td>	<td>NFV Infrastructure</td></tr>
-| NUMA</td>	<td>Non-Unified Memory Access</td></tr>
-| OPNFV</td>	<td>Open Platform for NFV</td></tr>
-| RAM</td><td>Random Access Memory</td></tr>
-| SDN</td>	<td>Software Defined Networking</td></tr>
-| SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
-| SLA</td>	<td>Service Level Agreement</td></tr>
-| SUT</td>	<td>System Under Test</td></tr>
-| SW</td>	<td>Software</td></tr>
-| vCPU</td>	<td>Virtual CPU (Central Processing Unit)</td></tr>
-| vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
-| vRouter</td>	<td>Virtual Router</td></tr>
-| vSwitch</td>	<td>Virtual Switch</td></tr>
-| VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
-| VNF</td>	<td>Virtualised Network Function</td></tr>
-| VNF-C</td>	<td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
-| VNFM</td>	<td>VNF Manager</td></tr>
+| Term         |       Description                                                                                                  |
+|--------------|--------------------------------------------------------------------------------------------------------------------|
+| AZ           | AZ	Availability Zone                                                                                               |
+| CPE          | Customer Premises Equipment                                                                                        |
+| CVC          | Compliance and Verification Committee                                                                              |
+| ETSI         | European Telecommunications Standards Institute                                                                    |
+| ETSI NFV-TST | ETSI - Network Functions Virtualisation - Test                                                                     |
+| ETSI NFV-IFA | ETSI - Network Functions Virtualisation - Infrastructure                                                           | 
+| GB           | Gigabit                                                                                                            | 
+| HW           | Hardware                                                                                                           | 
+| IMS          | IP Multimedia Subsystem                                                                                            | 
+| I/O          | Input/Output                                                                                                       | 
+| MB           | Megabit                                                                                                            | 
+| NFV          | Network Function Virtualization                                                                                    | 
+| NFVI         | NFV Infrastructure                                                                                                 | 
+| NUMA         | Non-Unified Memory Access                                                                                          | 
+| OPNFV        | Open Platform for NFV                                                                                              | 
+| RAM          | Random Access Memory                                                                                               | 
+| SDN          | Software Defined Networking                                                                                        | 
+| SD-WAN       | Software Defined Wide Area Network                                                                                 | 
+| SLA          | Service Level Agreement                                                                                            | 
+| SUT          | System Under Test                                                                                                  | 
+| SW           | Software                                                                                                           | 
+| vCPU         | Virtual CPU (Central Processing Unit)                                                                              | 
+| vNIC         | Virtual NIC (Network Interface Card)                                                                               | 
+| vRouter      | Virtual Router                                                                                                     | 
+| vSwitch      | Virtual Switch                                                                                                     | 
+| VIM          | Virtual Infrastructure Manager                                                                                     | 
+| VNF          | Virtualised Network Function                                                                                       | 
+| VNF-C        | VNF Component (can be hosted on a VM, Container, etc)                                                              | 
+| VNFM         | VNF Manager                                                                                                        | 
 
+<p align="center"><b>Table 7-1:</b> Common Acronyms </p>
 
 <a name="7.3.2"></a>
 ### 7.3.2 Resources
