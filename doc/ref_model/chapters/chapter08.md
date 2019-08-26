@@ -457,6 +457,7 @@ NFVI & VNF verification will rely upon test harnesses, test tools, and test suit
 ![NFVI+VNF Instance Type](../figures/ch8_NFVI_VNF_Instance_Type.jpg)
 **Figure:** NFVI+VNF Instance Type
 - Agreed upon declaration of Compute flavors:
+
 Type | vCPU | RAM | Local Disk | Network Interface
 ---- | ---- | --- | ---------- | -----------------
 tiny | 1 | 512 MB | 1 GB | 1 Gbps
@@ -468,6 +469,7 @@ xlarge | 8 | 16 GB | 160 GB | 1 Gbps
 xlarge2 | 8 | 32 GB | 160 GB | 1 Gbps
 xlarge3 | 8 | 64 GB | 160 GB | 1 Gbps
 - Performance profiles defined as follows:
+
 NFVI | Compute Workload | Network Workload | Network Performance Requirements | Metrics
 ---- | ---------------- | ---------------- | -------------------------------- | -------
 Basic | Low | Low | Offered load medium<br>Latency threshold high | Capacity with 5% loss ratio<br>99th percentile of one-way Latency
