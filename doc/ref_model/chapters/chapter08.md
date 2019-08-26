@@ -486,48 +486,31 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 <a name="8.7.3"></a>
 ### 8.7.3 Entrance & Exit Criteria
 **OPNFV Entrance Criteria includes Demonstration of Reference Architecture Implementation and Delivery of the following:**
-<ol>
-<li><u><strong>Design &amp; Requirements</strong></u>
-<ul>
-<li>Design, Configuration, Features, SLAs, and Capability documentation complete</li>
-<li>Users stories / Adherence to CNTT Model principles and guidelines</li>
-<li>Chosen Reference Architecture Matches a Reference Architecture from the product catalog<u></u></li>
-</ul>
-</li>
-<li><u><strong>Environment</strong></u>
-<ol>
-<li>Lab / Flavor, component s/w rev levels specified, with confirmation of compatibility with external systems</li>
-<li>Tenant needs identified</li>
-<li>All connectivity, network, image, VMs, delivered with successful pairwise tests</li>
-<li>Lab instrumented for proper monitoring<u></u></li>
-</ol>
-</li>
-<li><u><strong>Planning &amp; Delivery</strong></u>
-<ul>
-<li>Kickoff / Acceptance Criteria reviews performed</li>
-<li>Delivery commitments, timelines, and cadence accepted</li>
-<li>Confirm backward compat. across software/flavor rev levels<u></u></li>
-</ul>
-</li>
-<li><u><strong>Data / VNFs / Security</strong></u>
-<ul>
-<li>Images, Heat Templates, Preload Sheets available</li>
-<li>Images uploaded to tenant space</li>
-<li>External system test data needs identified</li>
-<li>Owners (NFVI, VNF, PTL, etc) documented</li>
-<li>Security Compliance Satisfied <i>(Refer to CNTT Chapter 7 Security for additional tests, scans, and vulnerabilities validations)</i><u></u></li>
-</ul>
-</li>
-<li><u><strong>Test Case Contributions</strong></u>
-<ul>
-<li>VNF Developer/Supplier validations to be performed documented and supplied</li>
-<li>NFVi validations to be performed supplied (e.g. echo, manifest)</li>
-<li>Test to ensure users are added and have correct privileges for the tenant</li>
-<li>Test to ensure quota against submitted request for the respective tenant</li>
-<li>Test to ensure custom flavors against submitted request for respective tenants</li>
-</ul>
-</li>
-</ol>
+1. **Design & Requirements**
+   - Design, Configuration, Features, SLAs, and Capability documentation complete
+   - Users stories / Adherence to CNTT Model principles and guidelines
+   - Chosen Reference Architecture Matches a Reference Architecture from the product catalog
+2. **Environment**
+    -  Lab / Flavor, component s/w rev levels specified, with confirmation of compatibility with external systems
+    -  Tenant needs identified
+    -  All connectivity, network, image, VMs, delivered with successful pairwise tests
+    -  Lab instrumented for proper monitoring
+3. **Planning & Delivery**
+    - Kickoff / Acceptance Criteria reviews performed
+    - Delivery commitments, timelines, and cadence accepted
+    - Confirm backward compat. across software/flavor rev levels
+4. **Data / VNFs / Security**
+    - Images, Heat Templates, Preload Sheets available
+    - Images uploaded to tenant space
+    - External system test data needs identified
+    - Owners (NFVI, VNF, PTL, etc) documented
+    - Security Compliance Satisfied (_Refer to_ CNTT Chapter 7 Security _for additional tests, scans, and vulnerabilities validations_)
+5. **Test Case Contributions**
+    - VNF Developer/Supplier validations to be performed documented and supplied
+    - NFVi validations to be performed supplied (e.g. echo, manifest)
+    - Test to ensure users are added and have correct privileges for the tenant
+    - Test to ensure quota against submitted request for the respective tenant
+    - Test to ensure custom flavors against submitted request for respective tenants
 
 <br><p><strong>OPNFV Exit Criteria includes <em>D</em></strong><strong><em>emonstration of Compliance, Verification, Performance, and Validaiton, of Reference Architecture Implementation, and&nbsp;</em></strong><strong><em>Delivery of the following:</em></strong></p>
 <ol>
