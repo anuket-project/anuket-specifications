@@ -23,8 +23,8 @@
   * [7.5.4 Platform services.](#7.5.4)
 * [7.6 Workload Security.](#7.6)
 * [7.7 Vendor Responsibilities](#7.7)
-  * [7.7.1 Software Hardening](#7.5.1)
-  * [7.7.2 Port Protection](#7.5.2)
+  * [7.7.1 Software Hardening](#7.7.1)
+  * [7.7.2 Port Protection](#7.7.2)
 
 
 <a name="7.1"></a>
