@@ -63,38 +63,40 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <a name="7.3.1"></a>
 ### 7.3.1 Terms
 
-<table>
-  <tr><th>Term</th><th>Description</th></tr>
-  <tr><td>AZ</td><td>AZ	Availability Zone</td></tr>
-  <tr><td>CPE</td><td>Customer Premises Equipment</td></tr>
-  <tr><td>CVC</td><td>Compliance and Verification Committee</td></tr>
-  <tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
-  <tr><td>ETSI NFV-TST</td><td>ETSI - Network Functions Virtualisation - Test</td></tr>
-  <tr><td>ETSI NFV-IFA</td><td>ETSI - Network Functions Virtualisation - Infrastructure</td></tr>
-  <tr><td>GB</td><td>Gigabit</td></tr>
-  <tr><td>HW</td><td>Hardware</td></tr>
-<tr><td>IMS</td>	<td>IP Multimedia Subsystem</td></tr>
-<tr><td>I/O</td>	<td>Input/Output</td></tr>
-<tr><td>MB</td>	<td>Megabit</td></tr>
-<tr><td>NFV</td>	<td>Network Function Virtualization</td></tr>
-<tr><td>NFVI</td>	<td>NFV Infrastructure</td></tr>
-<tr><td>NUMA</td>	<td>Non-Unified Memory Access</td></tr>
-<tr><td>OPNFV</td>	<td>Open Platform for NFV</td></tr>
-<tr><td>RAM</td><td>Random Access Memory</td></tr>
-<tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
-<tr><td>SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
-<tr><td>SLA</td>	<td>Service Level Agreement</td></tr>
-<tr><td>SUT</td>	<td>System Under Test</td></tr>
-<tr><td>SW</td>	<td>Software</td></tr>
-<tr><td>vCPU</td>	<td>Virtual CPU (Central Processing Unit)</td></tr>
-<tr><td>vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
-<tr><td>vRouter</td>	<td>Virtual Router</td></tr>
-<tr><td>vSwitch</td>	<td>Virtual Switch</td></tr>
-<tr><td>VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
-<tr><td>VNF</td>	<td>Virtualised Network Function</td></tr>
-<tr><td>VNF-C</td>	<td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
-<tr><td>VNFM</td>	<td>VNF Manager</td></tr>
-</table>
+
+| Term         |       Description                                                                                                  |
+|--------------|--------------------------------------------------------------------------------------------------------------------|
+| AZ           | AZ	Availability Zone                                                                                               |
+| CPE          | Customer Premises Equipment                                                                                        |
+| CVC          | Compliance and Verification Committee                                                                              |
+| ETSI         | European Telecommunications Standards Institute                                                                    |
+| ETSI NFV-TST | ETSI - Network Functions Virtualisation - Test                                                                     |
+| ETSI NFV-IFA | ETSI - Network Functions Virtualisation - Infrastructure                                                           | 
+| GB           | Gigabit                                                                                                            | 
+| HW           | Hardware                                                                                                           | 
+| IMS          | IP Multimedia Subsystem                                                                                            | 
+| I/O          | Input/Output                                                                                                       | 
+| MB           | Megabit                                                                                                            | 
+| NFV          | Network Function Virtualization                                                                                    | 
+| NFVI         | NFV Infrastructure                                                                                                 | 
+| NUMA         | Non-Unified Memory Access                                                                                          | 
+| OPNFV        | Open Platform for NFV                                                                                              | 
+| RAM          | Random Access Memory                                                                                               | 
+| SDN          | Software Defined Networking                                                                                        | 
+| SD-WAN       | Software Defined Wide Area Network                                                                                 | 
+| SLA          | Service Level Agreement                                                                                            | 
+| SUT          | System Under Test                                                                                                  | 
+| SW           | Software                                                                                                           | 
+| vCPU         | Virtual CPU (Central Processing Unit)                                                                              | 
+| vNIC         | Virtual NIC (Network Interface Card)                                                                               | 
+| vRouter      | Virtual Router                                                                                                     | 
+| vSwitch      | Virtual Switch                                                                                                     | 
+| VIM          | Virtual Infrastructure Manager                                                                                     | 
+| VNF          | Virtualised Network Function                                                                                       | 
+| VNF-C        | VNF Component (can be hosted on a VM, Container, etc)                                                              | 
+| VNFM         | VNF Manager                                                                                                        | 
+
+<p align="center"><b>Table 7-1:</b> Common Acronyms </p>
 
 <a name="7.3.2"></a>
 ### 7.3.2 Resources
