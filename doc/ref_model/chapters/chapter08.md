@@ -449,7 +449,10 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 <a name="8.7.1"></a>
 ### 8.7.1 Dependencies, Recommendations, Assumptions
 
-<p><strong>Assumptions</strong></p>
+**Dependencies**
+NFVI & VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects. 
+
+**Assumptions**
 <ul>
 <li>NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See impage.)</li>
 	
