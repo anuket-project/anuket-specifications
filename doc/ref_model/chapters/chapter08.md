@@ -54,7 +54,7 @@ Ensure Reference Model and Reference Architecture infrastructure meets industry 
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-This document includes process flow, logistics, and requirements which much be satisfied to ensure Virtualized Network Functions (VNFs) meet the design, feature, and capability expectations of VNF consumers to deliver NFV promoting the use and scalability of SDN capabilities.  This chapter captures the core fundamentals and steps needed to certify VNFs on target NFVi frameworks and architectures which drives more work into the community, resulting in pre-certified VNFs on core capabilities ultimately reducing the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
+This document includes process flow, logistics, and requirements which much be satisfied to ensure Virtualized Network Functions (VNFs) meet the design, feature, and capability expectations of VNF consumers to deliver NFV promoting the use and scalability of SDN capabilities. This chapter captures the core fundamentals and steps needed to certify VNFs on target NFVi frameworks and architectures which drives more work into the community, resulting in pre-certified VNFs on core capabilities ultimately reducing the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs..
 
 <p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 8-1:</b> CNTT relation to LFN OVP</p>
