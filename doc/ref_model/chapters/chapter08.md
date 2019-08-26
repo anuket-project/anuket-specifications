@@ -452,137 +452,27 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 **Dependencies**
 NFVI & VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects. 
 
-**Assumptions**
-<ul>
-<li>NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See impage.)</li>
-	
-<p align="center"><img src="../figures/ch8_NFVI_VNF_Instance_Type.jpg" alt="NFVI+VNF Instance Type" title="NFVI+VNF Instance Type" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: NFVI+VNF Instance Type</p>
+- NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
 
-<li>Agreed upon declaration of Compute flavors:</li>
-</ul>
-<table style="margin-left: 60px;">
-<tbody>
-<tr>
-<td>Type</td>
-<td>vCPU</td>
-<td>RAM</td>
-<td>Local Disk</td>
-<td>Network Interface</td>
-</tr>
-<tr>
-<td>tiny</td>
-<td>1</td>
-<td>512 MB</td>
-<td>1 GB</td>
-<td>1 Gbps</td>
-</tr>
-<tr>
-<td>small</td>
-<td>1</td>
-<td>2 GB</td>
-<td>40 GB</td>
-<td>1 Gbps</td>
-</tr>
-<tr>
-<td>medium</td>
-<td>2</td>
-<td>4 GB</td>
-<td>40 GB</td>
-<td>1 Gbps</td>
-</tr>
-<tr>
-<td>large</td>
-<td>4</td>
-<td>8 GB</td>
-<td>80 GB</td>
-<td>1 Gbps</td>
-</tr>
-<tr>
-<td>large2</td>
-<td>4</td>
-<td>16 GB</td>
-<td>80 GB</td>
-<td>1 Gbps</td>
-</tr>
-<tr>
-<td>xlarge</td>
-<td>8</td>
-<td>16 GB</td>
-<td>160 GB</td>
-<td>1 Gbps</td>
-</tr>
-<tr>
-<td>xlarge2</td>
-<td>8</td>
-<td>32 GB</td>
-<td>160 GB</td>
-<td>1 Gbps</td>
-</tr>
-<tr>
-<td>xlarge3</td>
-<td>8</td>
-<td>64 GB</td>
-<td>160 GB</td>
-<td>1 Gbps</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Performance profiles defined as follows:</li>
-</ul>
-<table style="margin-left: 60px;">
-<tbody>
-<tr>
-<td>NFVI</td>
-<td>Compute Workload</td>
-<td>Network Workload</td>
-<td>Network Performance Requirements</td>
-<td>Metrics</td>
-</tr>
-<tr>
-<td>Basic</td>
-<td>Low</td>
-<td>Low</td>
-<td>
-<p>Offered load medium</p>
-<p>Latentcy threshold high</p>
-</td>
-<td>
-<p>Capacity with 5% loss ratio</p>
-<p>99th percentile of one-way Latency</p>
-</td>
-</tr>
-<tr>
-<td>Network Intensive</td>
-<td>Medium</td>
-<td>High</td>
-<td>
-<p>Offered load line-rate</p>
-<p>Latentcy threshold low</p>
-</td>
-<td>&nbsp;
-<p>Throughput (zero packet loss)</p>
-<p>99th percentile of one-way Latency</p>
-</td>
-</tr>
-<tr>
-<td>Compute Intensive</td>
-<td>High</td>
-<td>Medium</td>
-<td>
-<p>Offered load high</p>
-<p>Latentcy threshold low</p>
-</td>
-<td>&nbsp;
-<p>Capacity with 1% loss ratio</p>
-<p>99th percentile of one-way Latency</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+![NFVI+VNF Instance Type](../figures/ch8_NFVI_VNF_Instance_Type.jpg)
+**Figure:** NFVI+VNF Instance Type
+- Agreed upon declaration of Compute flavors:
+Type | vCPU | RAM | Local Disk | Network Interface
+---- | ---- | --- | ---------- | -----------------
+tiny | 1 | 512 MB | 1 GB | 1 Gbps
+small | 1 | 2 GB | 40 GB | 1 Gbps
+medium | 2 | 4 GB | 40 GB | 1 Gbps
+large | 4 | 8 GB | 80 GB | 1 Gbps
+large2 | 4 | 16 GB | 80 GB | 1 Gbps
+xlarge | 8 | 16 GB | 160 GB | 1 Gbps
+xlarge2 | 8 | 32 GB | 160 GB | 1 Gbps
+xlarge3 | 8 | 64 GB | 160 GB | 1 Gbps
+- Performance profiles defined as follows:
+NFVI | Compute Workload | Network Workload | Network Performance Requirements | Metrics
+---- | ---------------- | ---------------- | -------------------------------- | -------
+Basic | Low | Low | Offered load medium<br>Latency threshold high | Capacity with 5% loss ratio<br>99th percentile of one-way Latency
+Network Intensive | Medium | High | Offered load line-rate<br>Latentcy threshold low | Throughput (zero packet loss)<br>99th percentile of one-way Latency
+Compute Intensive | High | Medium | Offered load high<br>Latency threshold low | Capacity with 1% loss ratio<br>99th percentile of one-way Latency
 
 <a name="8.7.2"></a>
 ### 8.7.2 System Under Test (SUT) Pre-reqs
