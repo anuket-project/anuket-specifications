@@ -34,7 +34,8 @@ Traceability to Reference Model.
 | `req.gen.ost.01` | Open source | The Architecture **must** use OpenStack APIs.|
 | `req.gen.ost.02` | Open source | The Architecture **must** support dynamic request and configuration of virtual services (servers, networks, storage) through OpenStack APIs. |
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component.. |
-| `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable.. |
+| `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. |
+| `req.gen.cnt.03` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where the state is required it **must** be kept external to the component. |
 | `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. |
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient OpenStack components that are required for the continued operation of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient OpenStack service components that are are not subject to `req.gen.rsl.01`. |
@@ -108,7 +109,7 @@ Traceability to Reference Model.
 | `req.int.gen.02` | Interface | The Architecture shall/must xxx. |
 | `req.int.gen.03` | Interface | The Architecture shall/must xxx. |
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services |
-| `req.int.api.02` | API | The Architecture **must** provide GUI access to cloud platform core services |
+| `req.int.api.02` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services |
 | `req.int.api.03` | API | The Architecture **should** allow enabling external access to Control API endpoints and GUI. |
 | `req.int.api.04` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. |
 | `req.int.acc.01` | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |
