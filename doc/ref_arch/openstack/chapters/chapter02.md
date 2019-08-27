@@ -77,11 +77,12 @@ Traceability to Reference Model.
 | `req.inf.ntw.11` | Network | The NFVI Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites. |
 | `req.inf.ntw.12` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
 | `req.inf.ntw.13` | Network | A SDN solution **must** be provided . |
-| `req.inf.ntw.14` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using standard APIs. |
+| `req.inf.ntw.14` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions APIs. |
 | `req.inf.ntw.15` | Network | The SDN solution **should** be modular in nature to be able to federate between different availability zones, but able to be centrally administrated and configured. |
 | `req.inf.ntw.16` | Network | The Architecture **must** support Multiple Networking options for NFVI to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
 | `req.inf.ntw.17` | Network | The Architecture **must** include Load Balancing.
-| `req.inf.ntw.18` | Network | The Architecture **should** support IPv6.
+| `req.inf.ntw.18` | Network | The Architecture **must** support IPv6 for tenant networks.
+| `req.inf.ntw.19` | Network | The Architecture **should** use IPv6 for NFVI internal networks.
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs) xxx. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs) |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs |
@@ -134,7 +135,7 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.lcm.gen.01`	| General | The Architecture **should** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
+| `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement) |
 | `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow the “cookie cutter” automated deployment to multiple sites. |
 | `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that running workloads are not impacted. |
 | `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
@@ -149,7 +150,6 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.asr.ing.01` | Integration | The Architecture **must** support integration with the standard OSS/BSS assurance systems and will support automation of assurance processes. |
 | `req.asr.mon.01` | Integration | The Architecture **must** include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
 | `req.asr.mon.02` | Monitoring | The Architecture **shall** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads . |
 | `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information |
@@ -164,7 +164,6 @@ Traceability to Reference Model.
 | `req.sec.gen.03` | General | The Architecture **must** provide tenants isolation. |
 | `req.sec.gen.01` | General | The Architecture **must** support policy based RBAC. |
 | `req.sec.gen.02` | General | The Architecture **must** support having a centralised authentication and authorisation mechanism. |
-| `req.sec.gen.03` | General | The Architecture shall/must xxx. |
 | `req.sec.zon.01` | Zoning | The Architecture **must** support identity management (specific roles assigned to a domain or tenant), Storage and password encryption; RBAC for Infrastructure and Tenants; Tenant isolation; authentication management (integration with Corporate Identity Management). |
 | `req.sec.cmp.02` | Compliance | The Architecture **must** comply with standards and regulations. |
 | `req.sec.cmp.03` | Compliance | The Architecture **must** comply with regional standards and regulations. |
