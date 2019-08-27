@@ -272,6 +272,46 @@ _**Editor Note:** This table needs to be reworked and clarified w/ clear explana
 <a name="4.1.6"></a>
 ### 4.1.6 VIM capabilities.
 
+VIM is responsible for controlling and managing the NFVI compute, storage and network resources. Resources allocation is dynamically set up upon VNFs requirements. This section covers the list of capabilities offered by the VIM to VNFs or service orchestrator.
+
+Table 4-12 shows capabilities related to resources allocation
+
+<a name="Table4-12"></a>
+
+| Ref | VIM capability | Unit | Definition/Notes |
+|--------------------|------------------|---------|-------------------------------------------|
+| e.vim.res.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNFC |
+| e.vim.res.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNFC |
+| e.vim.res.cap.003 | Virtual Networking resources  allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
+| e.vim.res.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
+| e.vim.res.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
+
+<p align="center"><b>Table 4-12:</b> VIM capabilities related to resources allocation .</p>
+
+
+Table 4-13 shows monitoring capabiltities
+
+<a name="Table4-13"></a>
+
+| Ref | VIM capability | Unit | Definition/Notes |
+|--------------------|------------------|---------|-------------------------------------------|
+| e.vim.mon.cap.001 | Virtual resources inventory per tenant | Yes/No | Capability to provide information related to allocated virtualised resources per tenant |
+| e.vim.mon.cap.002 | Resources Monitoring | Yes/No | Capability to notify state changes of allocated resources |
+| e.vim.mon.cap.003 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
+| e.vim.mon.cap.004 |Virtual resources Fault information | Yes/No | Capability to collect and notify fault information on virtualised resources |
+
+<p align="center"><b>Table 4-13:</b> VIM capabilities related to resources monitoring .</p>
+
+Table 4-14 shows security capabilities
+
+<a name="Table4-14"></a>
+
+| Ref | VIM capability | Unit | Definition/Notes |
+|--------------------|------------------|---------|-------------------------------------------|
+| e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM|
+
+<p align="center"><b>Table 4-14:</b> VIM capabilities related to security .</p>
+
 <!-- Rabi A -->
 _**Editor Note:** This Section is still to be worked on._
 
