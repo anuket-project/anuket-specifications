@@ -54,6 +54,8 @@ Traceability to Reference Model.
 | `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. |
 | `req.inf.com.04` | Compute | The Architecture **must** support Multiple CPU SKU options to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
 | `req.inf.com.05` | Compute | The Architecture **must** support Multiple memory type, channel, socket and speed options regarding performance and capacity to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
+| `req.inf.com.06` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.
+| `req.inf.com.07` | Compute | The Architecture **must** support CPU Pinning.
 | `req.inf.stg.01` | Storage | The Architecture **must** provide storage solution for VM Instances to support Block/Image and local VNF File system storage. |
 | `req.inf.stg.02` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
 | `req.inf.stg.03` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. |
@@ -78,6 +80,8 @@ Traceability to Reference Model.
 | `req.inf.ntw.14` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using standard APIs. |
 | `req.inf.ntw.15` | Network | The SDN solution **should** be modular in nature to be able to federate between different availability zones, but able to be centrally administrated and configured. |
 | `req.inf.ntw.16` | Network | The Architecture **must** support Multiple Networking options for NFVI to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
+| `req.inf.ntw.17` | Network | The Architecture **must** include Load Balancing.
+| `req.inf.ntw.18` | Network | The Architecture **should** support IPv6.
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs) xxx. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs) |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs |
@@ -96,6 +100,7 @@ Traceability to Reference Model.
 | `req.vim.05` | General | The Architecture **must** include image repository management and provisions component. |
 | `req.vim.06` | General | The Architecture **must** allow orchestration solutions to be integrated with VIM. |
 | `req.vim.07` | General | The Architecture **must** support a multi-tenanted environment. |
+| `req.vim.08` | General | The Architecture **must** support resource tagging. |
 
 <p align="center"><b>Table 2-3:</b> OpenStack VIM Requirements.</p>
 
@@ -105,9 +110,6 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.int.gen.01` | Interface | The Architecture shall/must xxx. |
-| `req.int.gen.02` | Interface | The Architecture shall/must xxx. |
-| `req.int.gen.03` | Interface | The Architecture shall/must xxx. |
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services |
 | `req.int.api.02` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services |
 | `req.int.api.03` | API | The Architecture **should** allow enabling external access to Control API endpoints and GUI. |
@@ -124,10 +126,6 @@ Traceability to Reference Model.
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.tnt.gen.01` | General | The Architecture **must** support multi-tenancy. |
 | `req.tnt.gen.02` | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. |
-| `req.tnt.gen.03` | General | The Architecture shall/must xxx. |
-| `req.tnt.gen.01` | General | The Architecture shall/must xxx. |
-| `req.tnt.gen.02` | General | The Architecture shall/must xxx. |
-| `req.tnt.gen.03` | General | The Architecture shall/must xxx. |
 
 <p align="center"><b>Table 2-5:</b> OpenStack Tenants Requirements.</p>
 
@@ -151,12 +149,6 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.asr.gen.01` | General | The Architecture shall/must xxx. |
-| `req.asr.gen.02` | General | The Architecture shall/must xxx. |
-| `req.asr.gen.03` | General | The Architecture shall/must xxx. |
-| `req.asr.gen.01` | General | The Architecture shall/must xxx. |
-| `req.asr.gen.02` | General | The Architecture shall/must xxx. |
-| `req.asr.gen.03` | General | The Architecture shall/must xxx. |
 | `req.asr.ing.01` | Integration | The Architecture **must** support integration with the standard OSS/BSS assurance systems and will support automation of assurance processes. |
 | `req.asr.mon.01` | Integration | The Architecture **must** include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
 | `req.asr.mon.02` | Monitoring | The Architecture **shall** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads . |
@@ -226,7 +218,7 @@ Traceability to Reference Model.
     1. Keystone (authentication/authorisation)
     1. Glance (image repository)
     1. Heat (orchestration)
--->
+
 1. Optional Core Services:
     1. Swift (object storage)
     1. Ceilometer / Panko / Aodh (workload monitoring / autoscaling)
@@ -241,7 +233,10 @@ Traceability to Reference Model.
     1. OpenVSwitch? 
     1. Geneve/VXLAN tunnelling?
     1. IPv6… when?
+    
 1. Tagging:
     1. We may want to define a standard for tagging resources.
+    
 1. Logging, Monitoring, Alerting of the Cloud should ensure any failures in the control plane are either self-healed or alerted on and ideally some sort of centralised log file analysis should be possible without needing to trawl local log files.    Logging in the tenant space is left to the application.
 1. Backup of the control plane configuration (keystone DB, other DB, policy.json’s) to a remote object store.
+-->
