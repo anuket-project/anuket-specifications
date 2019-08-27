@@ -60,7 +60,7 @@ Traceability to Reference Model.
 | `req.inf.stg.02` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
 | `req.inf.stg.03` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. |
 | `req.inf.stg.04` | Storage | The Architecture **should** make the immutable images available via location independent means. |
-| `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable VIM instance storage |
+| `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable VIM storage |
 | `req.inf.stg.06` | Storage | The Architecture **should** make shared storage available to tenants as network-based File or Object Storage and support very large file needs. |
 | `req.inf.stg.07` | Storage | The Architecture **should** allow to use externally provided large archival storage for its Backup / Restore / Archives needs. |
 | `req.inf.stg.08` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. |
@@ -68,7 +68,7 @@ Traceability to Reference Model.
 | `req.inf.ntw.02` | Network | The Architecture **must** include an SDN integration to support provisioning of network services from host-based OpenStack Neutron networking VTEPs to the Border Edge based VRFs. |
 | `req.inf.ntw.03` | Network | The Architecture **must** Localize intra-host traffic to provide low latency, high throughput, and resiliency. |
 | `req.inf.ntw.04` | Network | The Architecture **should** support service function chaining. |
-| `req.inf.ntw.05` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay - VXLAN or Geneve). |
+| `req.inf.ntw.05` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). |
 | `req.inf.ntw.06` | Network | The Architecture **should** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently |
 | `req.inf.ntw.07` | Network | The Architecture **must** provide low latency and high throughput (do we need to quantify it?). |
 | `req.inf.ntw.08` | Network | The NFVI Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems |
@@ -76,14 +76,12 @@ Traceability to Reference Model.
 | `req.inf.ntw.10` | Network | The NFVI Network Fabric **must** be capable of supporting carrier-specific VNF workloads. |
 | `req.inf.ntw.11` | Network | The NFVI Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites. |
 | `req.inf.ntw.12` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
-| `req.inf.ntw.13` | Network | A SDN solution **must** be provided . |
-| `req.inf.ntw.14` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions APIs. |
-| `req.inf.ntw.15` | Network | The SDN solution **should** be modular in nature to be able to federate between different availability zones, but able to be centrally administrated and configured. |
-| `req.inf.ntw.16` | Network | The Architecture **must** support Multiple Networking options for NFVI to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
-| `req.inf.ntw.17` | Network | The Architecture **must** include Load Balancing.
-| `req.inf.ntw.18` | Network | The Architecture **must** support IPv6 for tenant networks.
-| `req.inf.ntw.19` | Network | The Architecture **should** use IPv6 for NFVI internal networks.
-| `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs) xxx. |
+| `req.inf.ntw.13` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions APIs. |
+| `req.inf.ntw.14` | Network | The SDN solution **should** be modular in nature to be able to federate between different availability zones, but able to be centrally administrated and configured. |
+| `req.inf.ntw.15` | Network | The Architecture **must** support Multiple Networking options for NFVI to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
+| `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.
+| `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for NFVI internal networks.
+| `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs) |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs |
 
@@ -113,8 +111,7 @@ Traceability to Reference Model.
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services |
 | `req.int.api.02` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services |
-| `req.int.api.03` | API | The Architecture **should** allow enabling external access to Control API endpoints and GUI. |
-| `req.int.api.04` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. |
+| `req.int.api.03` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. |
 | `req.int.acc.01` | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |
 | `req.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. |
 
@@ -151,7 +148,7 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.asr.mon.01` | Integration | The Architecture **must** include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
-| `req.asr.mon.02` | Monitoring | The Architecture **shall** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads . |
+| `req.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads . |
 | `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information |
 
 <p align="center"><b>Table 2-7:</b> OpenStack Assurance Requirements.</p>
@@ -161,9 +158,9 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.sec.gen.03` | General | The Architecture **must** provide tenants isolation. |
-| `req.sec.gen.01` | General | The Architecture **must** support policy based RBAC. |
-| `req.sec.gen.02` | General | The Architecture **must** support having a centralised authentication and authorisation mechanism. |
+| `req.sec.gen.01` | General | The Architecture **must** provide tenant isolation. |
+| `req.sec.gen.02` | General | The Architecture **must** support policy based RBAC. |
+| `req.sec.gen.03` | General | The Architecture **must** support having a centralised authentication and authorisation mechanism. |
 | `req.sec.zon.01` | Zoning | The Architecture **must** support identity management (specific roles assigned to a domain or tenant), Storage and password encryption; RBAC for Infrastructure and Tenants; Tenant isolation; authentication management (integration with Corporate Identity Management). |
 | `req.sec.cmp.02` | Compliance | The Architecture **must** comply with standards and regulations. |
 | `req.sec.cmp.03` | Compliance | The Architecture **must** comply with regional standards and regulations. |
@@ -174,8 +171,9 @@ Traceability to Reference Model.
 
 <p align="center"><b>Table 2-8:</b> OpenStack Security Requirements.</p>
 
-**Backlog of Req**
 <!-- 
+**Backlog of Req**
+
 1. Manage discovery of resources, resource capabilities/features
 1. Manage repository of resources and their allocations
 1. Orchestrate (create, update, delete, …) virtual computes, storage, virtual links, networks, subnets and ports
