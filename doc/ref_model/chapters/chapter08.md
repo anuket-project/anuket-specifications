@@ -128,6 +128,7 @@ These core principles will guide NFV verification deliverables:
 <tr><td>NFVI</td>	<td>NFV Infrastructure</td></tr>
 <tr><td>NUMA</td>	<td>Non-Unified Memory Access</td></tr>
 <tr><td>OPNFV</td>	<td>Open Platform for NFV</td></tr>
+	<tr><td>OVP</td><td>OPNFV Verification Program (OVP)</td></tr>
 <tr><td>RAM</td><td>Random Access Memory</td></tr>
 <tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
 <tr><td>SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
@@ -161,6 +162,8 @@ These core principles will guide NFV verification deliverables:
 5. **Overall documentation** is on docs.opnfv.org for the corresponding Fraser and Danube releases
 	1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
 	2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
+6. **OPNFV Verification Program** is an open source, community-led compliance and verification program to demonstrate the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV and ONAP components (https://www.lfnetworking.org/OVP/).
+	1. OVP Whitepaper - https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
 
 <a name="8.3.3"></a>
 ### 8.3.3 Test Plans | Suites | Cases
