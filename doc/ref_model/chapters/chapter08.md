@@ -600,7 +600,7 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 
 <a name="8.7.7"></a>
 ### 8.7.7 Test Tools
-1. AQuA
+1. Shaker  https://pyshaker.readthedocs.io/en/latest/ (We can do VNFs E2E validation with this tool)
 
 <a name="8.8"></a>
 ## 8.8 Test Results
