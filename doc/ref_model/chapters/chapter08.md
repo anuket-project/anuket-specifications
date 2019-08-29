@@ -600,7 +600,8 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 
 <a name="8.7.7"></a>
 ### 8.7.7 Test Tools
-1. Shaker  https://pyshaker.readthedocs.io/en/latest/ (We can do VNFs E2E validation with this tool)
+1. Shaker:  https://pyshaker.readthedocs.io/en/latest/ (The distributed data-plane testing tool built for OpenStack)
+2. Sonubuoy: It is a diagnostic tool that makes it easier to understand the state of a Kubernetes cluster by running a set of plugins (including Kubernetes conformance tests) in an accessible and non-destructive manner.
 
 <a name="8.8"></a>
 ## 8.8 Test Results
