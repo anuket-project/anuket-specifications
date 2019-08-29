@@ -34,7 +34,16 @@
   * [7.7.9 Encryption suite supports](#7.7.9)
   * [7.7.10 Password complexity support](#7.7.10)
   * [7.7.11 Customized Banner](#7.7.11)
-* [7.8 Certification requirements](#7.8)
+ * [7.8 Operator responsibility.](#7.2)
+  * [7.8.1 Remote Attestation/openCIT.](#7.2.1)
+  * [7.8.2 VNF Image Scanning / Signing.](#7.2.2)
+* [7.9 VNF Vendors responsibility.](#7.3)
+* [7.10 NFVI Vendors responsibility](#7.4)
+  * [7.10.1 Networking Security Zoning.](#7.4.1)
+  * [7.10.2 Encryption.](#7.4.2)
+  * [7.10.3 Platform Patching.](#7.4.3)
+  * [7.10.4 Boot Integrity Measurement (TPM).](#7.4.4)
+* [7.11 Certification requirements](#7.8)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -492,7 +501,98 @@ Insuring that the security standards and best practices are incorporated into th
 
 
 <a name="7.8"></a>
-## 7.8 Certification requirements (Just ideas)
+## 7.8 Operator responsibility.
+
+The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective.   This includes but is not limited to securing the following elements:
+
+•	Maintaining standard security operational management methods and processes
+
+•	Monitoring and reporting functions
+
+•	Processes to address regulatory compliance failure
+
+•	Support for appropriate incident response and reporting
+
+•	Methods to support appropriate remote attestation certification of the validity of the security components, architectures and methodologies used
+
+<a name="7.8.1"></a>
+### 7.8.1 Remote Attestation/openCIT
+
+NFVI operators must ensure that remote attestation methods are used to remotely verify the trust status of a given NFVI platform.  The basic concept is based on boot integrity measurements leveraging the TPM built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
+
+Insert diagram here:
+https://01.org/sites/default/files/users/u26957/32_architecture.png 
+
+<a name="7.8.2"></a>
+### 7.8.2 VNF Image Scanning / Signing
+
+It is easy to tamper with VNF images. It requires only a few seconds to insert some malware into a VNF image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, VNF images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the VNF operator must test the image and supplementary components verifying that everything conforms to security policies and best practices. 
+
+<a name="7.9"></a>
+## 7.9 VNF Vendors responsibility.
+
+The VNF vendors need to incorporate security elements to support the highest level of security of the networks they support.  This includes but is not limited to securing the following elements:
+
+•	Operating system or container
+
+•	Application
+
+•	Network interfaces
+
+•	Management and controller systems used to support the VNFs directly, examples include a SIEM system or a SD WAN policy manager
+
+•	Regulatory compliance failure as it relates to the application itself only
+ 
+Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
+
+<a name="7.10"></a>
+## 7.10 NFVI Vendors responsibility
+
+The NFVI vendors need to incorporate security elements to support the highest level of security of the infrastructure they support.  This includes but is not limited to securing the following elements:
+
+•	Hypervisor
+
+•	VM/container management system
+
+•	APIs
+
+•	Network interfaces
+
+•	Networking security zoning
+
+•	Platform patching mechanisms
+
+•	Regulatory compliance Failure
+
+<a name="7.10.1"></a>
+### 7.10.1 Networking Security Zoning
+
+Network segmentation is important to ensure that VMs can only communicate with the VMs they are supposed to. To prevent a VM from impacting other VMs or hosts, it is a good practice to separate VM traffic and management traffic. This will prevent attacks by VMs breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, VMs of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
+
+Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
+
+<a name="7.10.2"></a>
+### 7.10.2 Encryption
+
+Virtual volume disks associated with VNFs may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the VNF volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event a VNF crashes or is intentionally destroyed to prevent it from unauthorized access.  
+
+•	Composition analysis: New vulnerabilities are discovered in common open source libraries every week. As such, mechanisms to validate components of the VNF application stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
+
+•	Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
+
+•	The use of Image scanners such as OpenSCAP to determine security vulnerabilities
+
+<a name="7.10.3"></a>
+### 7.10.3 Platform Patching
+
+NFVI operators should ensure that the platform including the components (hypervisors, VMs, etc.) are kept up to date with the latest patch. 
+
+<a name="7.10.4"></a>
+### 7.10.4 Boot Integrity Measurement (TPM)
+
+Using trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components such as platform firmware, BIOS, bootloader, OS kernel, and other system components can be securely stored and verified. NFVI Operators should ensure that the platform measurement can only be taken when the system is reset or rebooted; there needs to be no ability to write the new platform measurement in TPM during system run-time. The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server
+
+## 7.11 Certification requirements (Just ideas)
 
 -   Security test cases executed and test case results
 -   Industry standard compliance achieved (NIST, ISO, PCI, FedRAMP
