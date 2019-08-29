@@ -8,9 +8,9 @@
   * [7.2.1 Overarching Objectives and Goals.](#7.2.1)
   * [7.2.2 Verification Methodologies.](#7.2.2)
   * [7.2.3 Governance.](#7.2.3)  
-* [7.3 Terms and Resources.](#7.3)
-  * [7.3.1 Terms.](#7.3.1)
-  * [7.3.2 Resources.](#7.3.2)
+* [7.3 Common standards.](#7.3)
+  * [7.3.1 Potential attack vectors.](#7.3.1)
+  * [7.3.2 Testing demarcation points.](#7.3.2)
 * [7.4 Security Scope.](#7.4)
   * [7.4.1 In-scope and Out-of-Scope definition.](#7.4.1)
   * [7.4.2 Define Platform security requirements](#7.4.2)
@@ -67,50 +67,77 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <a name="7.3"></a>
-## 7.3 Terms and Resources
+## 7.3 Common standards
+
+Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world.   The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global Telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any NFVI infrastructure built needs to be able to withstand attacks in whatever form they take.
+
+With that in mind, the NFVI reference model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure. 
+Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.  
+
+ •	Center for Internet Security - https://www.cisecurity.org/
+
+ •	Cloud Security Alliance - https://cloudsecurityalliance.org/
+
+ •	Open Web Application Security Project https://www.owasp.org  
+
+ •	The National Institute of Standards and Technology (NIST) (US Only)
+
+ •	FedRAMP Certification https://www.fedramp.gov/ (US Only)
+
+ •	ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
+
+•	ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
+
+    o	ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
+
+    o	ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity.
+
+    o	ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. Incident management
+    
+    o	ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
+    
+A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP – Open Web Application Security Project.  These include the following core principles:
+
+•	Confidentiality – Only allow access to data for which the user is permitted
+
+•	Integrity – Ensure data is not tampered with or altered by unauthorized users
+
+•	Availability – ensure systems and data are available to authorized users when they need it
+
+Additional NFVI security principles that need to be incorporated:
+
+•	Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
 
 <a name="7.3.1"></a>
-### 7.3.1 Terms
-
-
-| Term         |       Description                                                                                                  |
-|--------------|--------------------------------------------------------------------------------------------------------------------|
-| AZ           | AZ	Availability Zone                                                                                               |
-| CPE          | Customer Premises Equipment                                                                                        |
-| CVC          | Compliance and Verification Committee                                                                              |
-| ETSI         | European Telecommunications Standards Institute                                                                    |
-| ETSI NFV-TST | ETSI - Network Functions Virtualisation - Test                                                                     |
-| ETSI NFV-IFA | ETSI - Network Functions Virtualisation - Infrastructure                                                           | 
-| GB           | Gigabit                                                                                                            | 
-| HW           | Hardware                                                                                                           | 
-| IMS          | IP Multimedia Subsystem                                                                                            | 
-| I/O          | Input/Output                                                                                                       | 
-| MB           | Megabit                                                                                                            | 
-| NFV          | Network Function Virtualization                                                                                    | 
-| NFVI         | NFV Infrastructure                                                                                                 | 
-| NUMA         | Non-Unified Memory Access                                                                                          | 
-| OPNFV        | Open Platform for NFV                                                                                              | 
-| RAM          | Random Access Memory                                                                                               | 
-| SDN          | Software Defined Networking                                                                                        | 
-| SD-WAN       | Software Defined Wide Area Network                                                                                 | 
-| SLA          | Service Level Agreement                                                                                            | 
-| SUT          | System Under Test                                                                                                  | 
-| SW           | Software                                                                                                           | 
-| vCPU         | Virtual CPU (Central Processing Unit)                                                                              | 
-| vNIC         | Virtual NIC (Network Interface Card)                                                                               | 
-| vRouter      | Virtual Router                                                                                                     | 
-| vSwitch      | Virtual Switch                                                                                                     | 
-| VIM          | Virtual Infrastructure Manager                                                                                     | 
-| VNF          | Virtualised Network Function                                                                                       | 
-| VNF-C        | VNF Component (can be hosted on a VM, Container, etc)                                                              | 
-| VNFM         | VNF Manager                                                                                                        | 
-
-<p align="center"><b>Table 7-1:</b> Common Acronyms </p>
+## 7.3.1 Potential attack vectors.
+Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using NFVI, violation of regulatory policies and laws becomes possible by actors diverting or moving a VNF from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. NFVI operators should ensure that VNF APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices and RBAC policies to limit exposure of this vulnerability.
 
 <a name="7.3.2"></a>
-### 7.3.2 Resources
-1. OPNFV https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
-2. CVC https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
+## 7.3.2 Testing demarcation points.
+
+It is not enough to just secure all potential points of entry and hope for the best, any NFVI architecture must be able to be tested and validated that it is in fact protected from attack as much as possible. The ability to test the infrastructure for vulnerabilities on a continuous basis is critical for maintaining the highest level of security possible.  Testing needs to be done both from the inside and outside of the systems and networks.  Below is a small sample of some of the testing methodologies and frameworks available.  
+
+•	OWASP testing guide
+
+•	PCI Penetration testing guide
+
+•	Penetration Testing Execution Standard
+
+•	NIST 800-115
+
+    o	VULCAN: Vulnerability Assessment Framework for Cloud Computing (NIST)
+
+•	Penetration Testing Framework
+
+•	Information Systems Security Assessment Framework (ISSAF)
+
+•	Open Source Security Testing Methodology Manual (“OSSTMM”)
+
+•	FedRAMP Penetration Test Guidance (US Only)
+
+•	CREST Penetration Testing Guide
+
+Insuring that the security standards and best practices are incorporated into the NFVI model and architectures must be a shared responsibility, among the Telecommunications operators interested in building and maintaining the infrastructures in support of their services, the VNF vendors developing the network services that will be consumed by the operators, and the NFVI vendors creating the infrastructures for their Telecommunications customers.  All of the parties need to incorporate security and testing components, and maintain operational processes and procedures to address any security threats or incidents in an appropriate manner.  Each of the stakeholders need to contribute their part to create effective security for NFVI.
 
 <a name="7.4"></a>
 ## 7.4 Security Scope
