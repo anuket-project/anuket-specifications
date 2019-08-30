@@ -55,7 +55,7 @@ Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Archi
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-This document includes process flow, logistics, and requirements which much be satisfied to ensure Virtualized Network Functions (VNFs) meet the design, feature, and capability expectations of VNF consumers to deliver NFV promoting the use and scalability of SDN capabilities. This chapter captures the core fundamentals and steps needed to certify VNFs on target NFVi frameworks and architectures which drives more work into the community, resulting in pre-certified VNFs on core capabilities ultimately reducing the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs..
+This document includes process flow, logistics, and requirements which much be satisfied to ensure Virtualized Network Functions (VNF) Infrastructure meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
 
 <p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 8-1:</b> CNTT relation to LFN OVP</p>
