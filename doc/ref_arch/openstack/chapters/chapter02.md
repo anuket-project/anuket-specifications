@@ -32,7 +32,7 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.gen.ost.01` | Open source | The Architecture **must** use OpenStack APIs.|
-| `req.gen.ost.02` | Open source | The Architecture **must** support dynamic request and configuration of virtual services (servers, networks, storage) through OpenStack APIs. |
+| `req.gen.ost.02` | Open source | The Architecture **must** support dynamic request and configuration of virtual resources (compute, network, storage) through OpenStack APIs. |
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component.. |
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. |
 | `req.gen.cnt.03` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where the state is required it **must** be kept external to the component. |
@@ -50,20 +50,22 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for VM instances.  |
-| `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management tools system at both HW device level (embedded) and HW platform level (external to device). |
+| `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
 | `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. |
-| `req.inf.com.04` | Compute | The Architecture **must** support Multiple CPU SKU options to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
-| `req.inf.com.05` | Compute | The Architecture **must** support Multiple memory type, channel, socket and speed options regarding performance and capacity to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
-| `req.inf.com.06` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.
-| `req.inf.com.07` | Compute | The Architecture **must** support CPU Pinning.
-| `req.inf.stg.01` | Storage | The Architecture **must** provide storage solution for VM Instances to support Block/Image and local VNF File system storage. |
-| `req.inf.stg.02` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
-| `req.inf.stg.03` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. |
-| `req.inf.stg.04` | Storage | The Architecture **should** make the immutable images available via location independent means. |
-| `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable VIM storage |
-| `req.inf.stg.06` | Storage | The Architecture **should** make shared storage available to tenants as network-based File or Object Storage and support very large file needs. |
-| `req.inf.stg.07` | Storage | The Architecture **should** allow to use externally provided large archival storage for its Backup / Restore / Archives needs. |
-| `req.inf.stg.08` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. |
+| `req.inf.com.04` | Compute | The Architecture **must** support multiple CPU SKU options to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
+| `req.inf.com.05` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.|
+| `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning.|
+| `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
+| `req.inf.stg.01` | Storage | The Architecture **must** provide Block storage for VM Instances.
+| `req.inf.stg.02` | Storage | The Architecture **must** provide Object storage for VM Instances.
+| `req.inf.stg.03` | Storage | The Architecture **may** provide local file system storage solution for VM Instances.
+| `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports Block storage, object storage and flat files. |
+| `req.inf.stg.05` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. |
+| `req.inf.stg.06` | Storage | The Architecture **should** make the immutable images available via location independent means. |
+| `req.inf.stg.07` | Storage | The Architecture **should** provide high-performance and horizontally scalable VIM storage |
+| `req.inf.stg.08` | Storage | The Architecture **should** make shared storage available to tenants as network-based File or Object Storage and support very large file needs. |
+| `req.inf.stg.09` | Storage | The Architecture **should** allow to use externally provided large archival storage for its Backup / Restore / Archives needs. |
+| `req.inf.stg.10` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. |
 | `req.inf.ntw.01` | Network | The Architecture **must** provide virtual network interfaces to VM instances |
 | `req.inf.ntw.02` | Network | The Architecture **must** include an SDN integration to support provisioning of network services from host-based OpenStack Neutron networking VTEPs to the Border Edge based VRFs. |
 | `req.inf.ntw.03` | Network | The Architecture **must** Localize intra-host traffic to provide low latency, high throughput, and resiliency. |
@@ -78,9 +80,9 @@ Traceability to Reference Model.
 | `req.inf.ntw.12` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
 | `req.inf.ntw.13` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions APIs. |
 | `req.inf.ntw.14` | Network | The SDN solution **should** be modular in nature to be able to federate between different availability zones, but able to be centrally administrated and configured. |
-| `req.inf.ntw.15` | Network | The Architecture **must** support Multiple Networking options for NFVI to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).
-| `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.
-| `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for NFVI internal networks.
+| `req.inf.ntw.15` | Network | The Architecture **must** support Multiple Networking options for NFVI to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
+| `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.|
+| `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for NFVI internal networks.|
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs) |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs |
@@ -161,7 +163,10 @@ Traceability to Reference Model.
 | `req.sec.gen.01` | General | The Architecture **must** provide tenant isolation. |
 | `req.sec.gen.02` | General | The Architecture **must** support policy based RBAC. |
 | `req.sec.gen.03` | General | The Architecture **must** support having a centralised authentication and authorisation mechanism. |
-| `req.sec.zon.01` | Zoning | The Architecture **must** support identity management (specific roles assigned to a domain or tenant), Storage and password encryption; RBAC for Infrastructure and Tenants; Tenant isolation; authentication management (integration with Corporate Identity Management). |
+| `req.sec.zon.01` | Zoning | The Architecture **must** support identity management (specific roles and permissions assigned to a domain or tenant) |
+| `req.sec.zon.02` | Zoning | The Architecture **must** support password encryption. |
+| `req.sec.zon.03` | Zoning | The Architecture **must** support data encryption. |
+| `req.sec.zon.04` | Zoning | The Architecture **must** support integration with Corporate Identity Management systems. |
 | `req.sec.cmp.02` | Compliance | The Architecture **must** comply with standards and regulations. |
 | `req.sec.cmp.03` | Compliance | The Architecture **must** comply with regional standards and regulations. |
 | `req.sec.ntw.01` | Networking | The Architecture **must** have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework. |
