@@ -63,16 +63,16 @@ This document includes process flow, logistics, and requirements which much be s
 <a name="8.2"></a>
 ## 8.2 Principles and Guidelines
 
-The objectives of the verification program are to deliver certified reference architecture which matches VNF-developer specifications, levering the OVP ecosystem as the vehicle for deliverying validated NFV.
+The objectives of the verification program are to deliver a validated implementation of reference architecture which matches infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
 
 These core principles will guide NFV verification deliverables: 
 
 <a name="8.2.1"></a>
 ### 8.2.1 Overarching Objectives and Goals
 
-1. Deliver certified reference architecture which matches VNF-developer specifications<br>
+1. Deliver verified implementation of reference architecture which matches infrastructure needs for VNF-developer teams<br>
 2. All accomplished with augmentation to the current OVP ecosystem.<br>
-3. Certified VNFs will on-board and function first shot<br>
+3. VNFs will on-board and function first shot<br>
 
 <a name="8.2.2"></a>
 ### 8.2.2 Verification Methodologies
@@ -285,8 +285,7 @@ Process flow for RA (Infra) Validation and Verfiication
 <a name="8.6.1"></a>
 ### 8.6.1 Methodology.
 
-Perform VNF certifications using CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects
-will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+Perform VNF interoperability verifications against an implementation of CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 3rd Party test platforms may also be leveraged, if desired.
 
@@ -298,7 +297,7 @@ will define features/capabilities, test scenarios, and test cases to augment exi
 <p><strong>NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance.&nbsp; </strong>Adherenence to <strong>Security</strong> standards are equally important and addressed in Chapter 7.</p>
 <p>The three part verificaiton process includes <strong>NFVI Manifest Validations</strong>, <strong>Emprical Baseline measurements against targeted VNF families</strong>, and <strong>Candidate VNF verifications</strong>.&nbsp; More specifically,</p>
 <ul>
-<li><strong>NFVI Certification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
+<li><strong>NFVI Verification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
 <li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
 <li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/CVC Test Suites</li>
 <li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <em>(Refer to CNTT Chapter 7 Security for additional test/verification details)</em></li>
