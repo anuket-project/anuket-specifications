@@ -154,15 +154,14 @@ Insuring that the security standards and best practices are incorporated into th
 <a name="7.1.1"></a>
 ## 7.4.1 In-scope and Out-of-Scope definition
 
-    *(Declare what should be in scope and what should be out of scope for
-    CNTT security)*
-
--   Define and note separation of security postures of platform and
-    workload, but that workload is dependent’ upon platform security.
-
-    *(Provide some background commentary, from a security perspective,
-    around the inter-relationship between platform and workload security
-    where it is assumed that ‘workload’ leverages ‘platform’ security)*
+    The scope of the security controls requirements maps to the scope of the CNTT reference architecture.
+    The CNTT scope is shown below:
+    
+    https://github.com/cntt-n/CNTT/commit/0d2fe89ab44eb5b83ed80d4968b097e66a96ba36
+    
+    This means that the security of the CNTT requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM.
+    
+    There will be a different set of security requirements for each NFVi reference architecture. 
 
 <a name="7.4.2"></a>
 ## 7.4.2 Define Platform security requirements
