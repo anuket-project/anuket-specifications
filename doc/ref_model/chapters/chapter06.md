@@ -9,7 +9,7 @@
 * [6.3 Supporting Enabler Service APIs (not-MVP).](#6.3)
   * [6.3.1 NTP, DNS, etc.](#6.3.1)
   * [6.3.2 Licensing and imaging connectivity.](#6.3.2)
-* [6.4 Acceleration Interfaces and APIs (not-MVP).](#6.4)
+* [6.4 Hardware Acceleration Interfaces and APIs.](#6.4)
 * [6.5 Tool functionalities needed (not-MVP).](#6.5)
   * [6.5.1 Categorized (not specifically named).](#6.5.1)
   * [6.5.2 Policies and Security related primarily.](#6.5.2)
@@ -52,7 +52,7 @@ The NFVI APIs consist of set of APIs that are externally and internally visible.
 | Interface Point	| NFVI Exposure	| Interface Between |	Description|
 |--------------|--------------|--------------|--------------|
 | Vi-Ha	| Internal	NFVI | Software Layer and Hardware Resources |	1.	Discover/collect resources and their configuration information <br>2.	Create execution environment (e.g., VM) for workloads (VNF) |
-| Vn-Nf| 	External	| NFVI and VM (VNF)	| Represents the execution environment. There is no protocol or interface defined between these layers. Advantage is that the workloads can be made NFVI independent except for performance |
+| Vn-Nf| 	External	| NFVI and VM (VNF)	| Here VNF represents the execution environment. The interface is used to specify interactions between the VNF and abstract NFVI accelerators. The inetrafecs can be used to discover, configure and manage these acceleartors and for the VNF to register/deregister for receiving acceleartor events and data. |
 | NF-Vi	| External	| NFVI and VIM |	1.	Discover/collect physical/virtual resources and their configuration information<br>2.	Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3.	Physical/Virtual resources configuration changes<br>4.	Physical/Virtual resource configuration. |
 | Or-Vi	| External	| VNF Orchestrator and VIM	| See below |
 | Vi-Vnfm	| External	| VNF Manager and VIM	| See below |
@@ -104,9 +104,97 @@ A virtual compute resource is created as per the flavour template (specifies the
  
 **Table 6-2** specifies a minimal set of API types for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
 
+
 <a name="6.3"></a>
 ## 6.3	Enabler Services APIs (not-MVP)
 
 This is a place holder for Enabler Services APIs.
 a.	NTP, DNS, etc. – where is the care and feeding of these? Who provides certain features/services within or outside the tenant?
 b.	Licensing and imaging connectivity
+
+<a name="6.4"></a>
+## 6.4 Hardware Acceleration Interfaces 
+
+
+**Acceleration Interface Specifications**
+ETSI GS NFV-IFA 002 defines a technology and implementation independent virtual accelerator, the accelerator interface requirements and specifications that would allow a VNF to leverage a Virtual Accelerator. The virtual accelerator is modeled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 specifies the architectural model in Chapter 4 and the abstract interfaces for management, configuration, monitoring and Data exchange in Chapter 7.
+
+ETSI ETSI (Ref: NFV IFA 019 v03101p) has defined a set of technology independent interfaces for acceleration resource life cycle management. These operations allow: allocation, release and querying of acceleration resource, get and reset statistics, subscribe/unsubscribe (terminate) to fault notifications, notify (only used by NFVI) and get alarm information.
+
+These acceleration interfaces are summarized here in Table 6.3 only for convenience.
+
+| **Request**|**Response**|**From, To**|**Type**|**Parameter**|**Description** |
+| ------------|------------|------------|------------|------------|------------ |
+| InitAccRequest|InitAccResponse|VNF → NFVI|Input|accFilter|the accelartor sub-system(s) to initialize and retrieve their capabilities. |
+| |||Filter|accAttributeSelector|attribute names of accelerator capabilities |
+| |||Output|accCapabilities|acceleration sub-system capabilities |
+| RegisterForAccEventRequest|RegisterForAccEventResponse|VNF → NFVI|Input|accEvent|event the VNF is interested in |
+| |||Input|vnfEventHandlerId|the handler for NFVI to use when notifying the VNF of the event |
+| AccEventNotificationRequest|AccEventNotificationResponse|NFVI → VNF|Input|vnfEventHandlerId|Handler used by VNF registering |
+| for this event |
+| |||Input|accEventMetaData| |
+| DeRegisterForAccEventRequest|DeRegisterForAccEventResponse|VNF → NFVI|Input|accEvent|Event VNF is deregistering from |
+| ReleaseAccRequest|ReleaseAccResponse|VNF → NFVI||| |
+| ModifyAccConfigurationRequest|ModifyAccConfigurationResponse|VNF → NFVI|Input|accConfigurationData|Config data for accelerator |
+| |||Input|accSubSysConfigurationData|Config data for accelerator sub-system |
+| GetAccConfigsRequest|GetAccConfigsResponse|VNF → NFVI|Input|accFilter|Filter for subsystems from which config data requested |
+| |||Input|accConfigSelector|attributes of config types |
+| |||Output|accComfigs|Config info (only for the specified attributes) for specified subsystems |
+| ResetAccConfigsRequest|ResetAccConfigsResponse|VNF → NFVI|Input|accFilter|Filter for subsystems for which config is to be reset |
+| |||Input|accConfigSelector|attributes of config types whose values will be reset |
+| AccDataRequest|AccDataResponse|VNF → NFVI|Input|accData|Data (metadata) sent too accelerator |
+| |||Input|accChannel|Channel data is to be sent to |
+| |||Output|accData|Data from accelerator |
+| AccSendDataRequest|AccSendDataResponse|VNF → NFVI|Input|accData|Data (metadata) sent too accelerator |
+| |||Input|accChannel|Channel data is to be sent to |
+| AccReceiveDataRequest|AccReceiveDataResponse|VNF → NFVI|Input|maxNumberOfDataItems|Max number of data items to be received |
+| |||Input|accChannel|Channel data is requested from |
+| |||Output|accData|Data received form Accelerator |
+| RegisterForAccDataAvailableEventRequest|RegisterForAccDataAvailableEventResponse|VNF → NFVI|Input|regHandlerId|Registration Identifier |
+| |||Input|accChannel|Channel where event is requested for |
+| AccDataAvailableEventNotificationRequest|AccDataAvailableEventNotificationResponse|NFVI → VNF|Input|regHandlerId|Reference used by VNF when registering for the event |
+| DeRegisterForAccDataAvailableEventRequest|DeRegisterForAccDataAvailableEventResponse|VNF → NFVI|Input|accChannel|Channel related to the event  |
+| AllocateAccResourceRequest|AllocateAccResourceResponse|VIM → NFVI|Input|attachTargetInfo|the resource the |
+| accelerator is to be attached to (e.g., VM) |
+| |||Input|accResourceInfo|Accelerator Information |
+| |||Output|accResourceId|Id if successful |
+| ReleaseAccResourceRequest|ReleaseAccResourceResponse|VIM → NFVI|Input|accResourceId|Id of resource to be released |
+| QueryAccResourceRequest|QueryAccResourceResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|Filter|Specifies the accelerators for which query applies |
+| |||Output|accQueryResult|Details of the accelerators matching the input filter located in the selected host. |
+| GetAccStatisticsRequest|GetAccStatisticsResponse|VIM → NFVI|Input|accFilter|Accelerator subsystems from which data is requested |
+| |||Input|accStatSelector|attributes of AccStatistics whose data will be returned |
+| |||Output|accStatistics|Statistics data of the accelerators |
+| matching the input filter located in the |
+| selected host. |
+| ResetAccStatisticsRequest|ResetAccStatisticsResponse|VIM → NFVI|Input|accFilter|Accelerator subsystems for which data is to be reset |
+| |||Input|accStatSelector|attributes of AccStatistics whose data will be reset |
+| SubscribeRequest|SubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
+| |||Output|SubscriptionId|Identifier of the successfully created |
+| subscription. |
+| UnsubscribeRequest|UnsubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|SubscriptionId|Identifier of the subscription to be |
+| unsubscribed. |
+| Notify||NFVI → VIM|||NFVI notifies an alarm to VIM |
+| GetAlarmInfoRequest|GetAlarmInfoResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
+| |||Output|Alarm|Information about the alarms if filter matches an alarm. |
+|  |
+| AccResourcesDiscoveryRequest|AccResourcesDiscoveryResponse|VIM → NFVI|Input|hostId|Id of specified host |
+| |||Output|discoveredAccResourceInfo|Information on the acceleration resources discovered within the NFVI. |
+| OnloadAccImageRequest|OnloadAccImageResponse|VIM → NFVI|Input|accResourceId|Identifier of the chosen accelerator in the NFVI. |
+| |||Input|accImageInfo|Information about the acceleration image. |
+| |||Input|accImage|The binary file of acceleration image. |
+
+<p align="center"><b>Table 6-3:</b> Hardware Acceleration Interfaces.</p>
+
+<a name="6.5"></a>
+## 6.5 Other Interfaces
+
+### 6.5.1. Hypervisor Hardware Interface
+
+Table 6-1 lists a number of NFVI and VIM inetrfaces, including the internal VI-Ha intterface. the The VI-Ha interface allows the hypervisor to control the physical infrastructure; the hypervisor acts under VIM control. The VIM issues all requests and responses using the NF-VI interface; requests and responses include commands, configuration requests, policies, updates, alerts and response to infrastructure results. The hypervisor also provides information about the health of the physical infrastructure resources to the VM.  All these activities, on behalf of the VIM, are performed by the hypervisor using the VI-Ha interface. While no abstract APIs have yet been defined for this internal VI-Ha interface, ETSI GS NFV-INF 004 defines a set of requirements and details of the information that is required by the VIM from the physical infrastructure resources. Hypervisors utilize various programs to get this data including BIOS, IPMI, PCI, I/O Adapters/Drivers, etc.
+
+Reference: Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004
+
