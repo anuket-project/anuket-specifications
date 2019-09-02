@@ -189,3 +189,12 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 
 <p align="center"><b>Table 6-3:</b> Hardware Acceleration Interfaces.</p>
 
+<a name="6.5"></a>
+## 6.5 Other Interfaces
+
+### 6.5.1. Hypervisor Hardware Interface
+
+Table 6-1 lists a number of NFVI and VIM inetrfaces, including the internal VI-Ha intterface. the The VI-Ha interface allows the hypervisor to control the physical infrastructure; the hypervisor acts under VIM control. The VIM issues all requests and responses using the NF-VI interface; requests and responses include commands, configuration requests, policies, updates, alerts and response to infrastructure results. The hypervisor also provides information about the health of the physical infrastructure resources to the VM.  All these activities, on behalf of the VIM, are performed by the hypervisor using the VI-Ha interface. While no abstract APIs have yet been defined for this internal VI-Ha interface, ETSI GS NFV-INF 004 defines a set of requirements and details of the information that is required by the VIM from the physical infrastructure resources. Hypervisors utilize various programs to get this data including BIOS, IPMI, PCI, I/O Adapters/Drivers, etc.
+
+Reference: Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004
+
