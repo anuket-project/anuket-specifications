@@ -159,7 +159,8 @@ Insuring that the security standards and best practices are incorporated into th
     
     https://github.com/cntt-n/CNTT/commit/0d2fe89ab44eb5b83ed80d4968b097e66a96ba36
     
-    This means that the security of the CNTT requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM.
+    This means that the security of the CNTT requirements must cover the virtual resources (including the virtualisation layer), 
+    the hardware resources, and the VIM.
     
     There will be a different set of security requirements for each NFVi reference architecture. 
 
