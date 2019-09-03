@@ -14,26 +14,21 @@ This should focus on IaaS elements.
 
 <a name="4.2"></a>
 
-## 4.2 Foundational Components.
-Components here will not change amongst different profiles
-
-- Enabler services.
-
-## 4.3 Network Topology (control plane, storage, tenant, external)
+## 4.2 Network Topology (control plane, storage, tenant, external)
 - Physical Network = Spine / Leaf with dual homing to ToR
 - Proposed logical network layout – VLANs, overlay, FIPs, IPv6   – we will follow common vendor recommendations however we can agree on our minimum expectations
 - LBaaS v2 compliant Load Balancing 
 - Neutron ML2 integration to any external SDN controller
 
 
-## 4.4 Cloud Topology
+## 4.3 Cloud Topology
 - Host aggregates / AZs / pools /  scheduler hints
 - Default T-Shirt sizes – predefined Flavors
 - Default tenant configuration and topologies
 - Host Profile choices for “any workload, any host” (prevent partitioning of the cloud)
 
 
-## 4.5 Control Plane
+## 4.4 Control Plane
 - Core Components (keystone, heat, nova, neutron, cinder, glance)
 - Logging / Monitoring / Alerting (should this be a separate section on its own?)
 - Identity Management
@@ -41,7 +36,7 @@ Components here will not change amongst different profiles
 
 <a name="4.4"></a>
 
-## 4.6 Data Plane Components.
+## 4.5 Data Plane Components.
 
 - Basic Profile
   - Software components
@@ -62,14 +57,14 @@ Components here will not change amongst different profiles
   - Hardware Platform
   - > for example: dual socket platform. 2x25G NIC, GPU, etc.
 
-## 4.7 Integration / Interfaces
+## 4.6 Integration / Interfaces
 - Detail integration to other supporting services (enablers) – LDAP, DNS, etc.
 - Enterprise systems for Identity Management, IP Address Management, …
 
-## 4.8 Logging / Monitoring / Alerting of Control Plane / Prometheus
+## 4.7 Logging / Monitoring / Alerting of Control Plane / Prometheus
 
-## 4.9 Telemetry
+## 4.8 Telemetry
 
-## 4.10 General Hardware requirements (for control, compute, storage)
+## 4.9 General Hardware requirements (for control, compute, storage)
 - Scaling options for extra compute, storage, throughput
 - Shared Storage (Optional)
