@@ -4,65 +4,46 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [3.1 Introduction.](#3.1)
-* [3.2 High Level Components.](#3.2)
-* [3.3 Interfaces.](#3.3)
+* [3.x xxx.](#3.x)
+
 
 <a name="3.1"></a>
-## 3.1 Introduction.
+
+## 3.1 Introduction
+- Architectural drivers (from requirements)
+- Core NFVI Software services to meet requirements (minimum set of commonly utilized services)
 
 <a name="3.2"></a>
-## 3.2 High Level Components.
 
-L2: Level 2 Artefacts
-
-<a name="3.3"></a>
-## 3.3 Interfaces.
-- virtio
-- accel interfaces?
-
-<!--
-<p align="center"><img src="../figures/ref_arch_ch03_hl.png" alt="High Level" title="E2E" width="100%"/></p> 
-
-<p align="center"><b>Figure 1-2:</b> High Level E2E Architecture</p>
-
-<a name="3.2"></a>
-## 3.2 NFVI Centric Architecture
-
-<p align="center"><img src="../figures/ref_arch_ch03_detailed.png" alt="focused" title="Focused NFVI VIM Reference Architecture" width="100%"/><p>
-
-<p align="center"><b>Figure 1-3:</b> NFVI Centric Architecture (Connectivity Example)</p>
+## 3.2 NFVI Software Services Topology
+- Distribution options for control, storage, compute nodes etc. e.g.  >=3 control nodes 
+  – also include options for Edge – cater for multiple sized clouds / edge?
+  - Baseline versions
 
 <a name="3.3"></a>
-## 3.3 Virtual Components (trace to Ref Model)
 
-<a name="3.3.1"></a>
-### 3.3.1 Technology choices to satisfy these requirements
-
-<a name="3.3.2"></a>
-### 3.3.2 Rationale/Explain why, how, of choices
+## 3.3 Foundation
+- Baremetal cloud creation
 
 <a name="3.4"></a>
-## 3.4 Physical Components (trace to Ref Model)
 
-<a name="3.4.1"></a>
-### 3.4.1 Technology choices to satisfy these requirements
-
-<a name="3.4.2"></a>
-### 3.4.2 Rationale/Explain why, how, of choices
+## 3.4 Control Plane
+- Highly available OpenStack Services 
+<!-- - Core APIs (keystone, heat, nova, neutron, cinder, glance)
+- Logging / Monitoring / Alerting (should this be a separate section on its own?)
+- Identity Management
+-->
 
 <a name="3.5"></a>
-## 3.5 VIM Components (trace to Ref Model)
 
-<a name="3.5.1"></a>
-### 3.5.1 Technology choices to satisfy these requirements
+## 3.5 User Plane
+- Abstraction of Compute, Storage, Network resources (this is covered in RM Chapter 3)
+- Tenant separation (this is covered in RM Chapter 3)
 
-<a name="3.5.2"></a>
-### 3.5.2 Rationale/Explain why, how, of choices
-  
-<a name="3.5.3"></a>
-### 3.5.3 VIM Components List
+<a name="3.6"></a>
 
-<p align="center"><img src="../figures/ref_arch_ch03_components_list.png" alt="components" title="VIM Components" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> VIM Components</p>
--->
+## 3.6 Interfaces
+
+<a name="3.7"></a>
+
+## 3.7 APIs 
