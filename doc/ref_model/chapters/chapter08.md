@@ -63,16 +63,16 @@ This document includes process flow, logistics, and requirements which must be s
 <a name="8.2"></a>
 ## 8.2 Principles and Guidelines
 
-The objectives of the verification program are to deliver a validated implementation of reference architecture which matches infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
+The objectives of the verification program are to deliver a validated implementation of reference architecture which satisifes infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
 
 These core principles will guide NFV verification deliverables: 
 
 <a name="8.2.1"></a>
 ### 8.2.1 Overarching Objectives and Goals
 
-1. Deliver verified implementation of reference architecture which matches infrastructure needs for VNF-developer teams<br>
+1. Deliver verified implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams<br>
 2. All accomplished with augmentation to the current OVP ecosystem.<br>
-3. VNFs will on-board and function first shot<br>
+3. Increase probability VNFs will on-board and function with minimal problems, or issues, during initial instantiation of VNF<br>
 
 <a name="8.2.2"></a>
 ### 8.2.2 Verification Methodologies
