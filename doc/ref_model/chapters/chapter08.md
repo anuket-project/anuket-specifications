@@ -12,7 +12,6 @@
 * [8.3 Terms and Resources.](#8.3)
   * [8.3.1 Terms.](#8.3.1)
   * [8.3.2 Resources.](#8.3.2)
-  * [8.3.3 Test Plans | Suites | Cases.](#8.3.3)
 * [8.4 Lifecycle and Process Flow.](#8.4)
   * [8.4.1 Project Mgmt.](#8.4.1)
   * [8.4.2 OPNFV Iterations & Communications.](#8.4.2)
@@ -39,6 +38,8 @@
   * [8.7.5 Test Categories.](#8.7.5)
   * [8.7.6 Test Harness(es).](#8.7.6)
   * [8.7.7 Test Tools.](#8.7.7)
+  * [8.7.8 Scenario Descriptor File (SDF).](#8.7.8)
+  * [8.7.9 Test Categories | Cases.](#8.7.9)
 * [8.8 Test Results.](#8.8)
   * [8.8.1 Metrics.](#8.8.1)
   * [8.8.2 Report Summary.](#8.8.2)
@@ -164,10 +165,6 @@ These core principles will guide NFV verification deliverables:
 	2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
 6. **OPNFV Verification Program** is an open source, community-led compliance and verification program to demonstrate the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV and ONAP components (https://www.lfnetworking.org/OVP/).
 	1. OVP Whitepaper - https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
-
-<a name="8.3.3"></a>
-### 8.3.3 Test Plans | Suites | Cases
-1. 
 
 <a name="8.4"></a>
 ## 8.4 Lifecycle and Process Flow
@@ -485,6 +482,7 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 2. Naming conventions
 3. NFVi profiles and Flavors
 4. Test User Guide
+5. Scenarnio Descriptor File (SDF)
 
 <a name="8.7.3"></a>
 ### 8.7.3 Entrance & Exit Criteria
@@ -601,6 +599,256 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 ### 8.7.7 Test Tools
 1. Shaker:  https://pyshaker.readthedocs.io/en/latest/ (The distributed data-plane testing tool built for OpenStack)
 2. Sonubuoy: https://sonobuoy.io/ It is a diagnostic tool that makes it easier to understand the state of a Kubernetes cluster by running a set of plugins (including Kubernetes conformance tests) in an accessible and non-destructive manner.
+
+<a name="8.7.8"></a>
+### 8.7.8 Scenario Descriptor File (SDF)
+As defined by OPNFV, Scenarnio Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
+
+SDF's will contain, but not limited to, the following Metadata, Components, Deployment Options, Deployment Tools, and Hardware prerequistes:
+<ul>
+<li><strong>Metadata</strong>
+<ul>
+<li>Name</li>
+<li>History</li>
+<li>Purpose</li>
+<li>Owner</li>
+</ul>
+</li>
+<li><strong>Components</strong>
+<ul>
+<li>e.g. SDN controllers</li>
+<li>Versions</li>
+<li>Optional features,<br /> e.g. NFV features</li>
+</ul>
+</li>
+<li><strong>Deployment Options</strong>
+<ul>
+<li>Hardwaretypes</li>
+<li>Virtual deploy</li>
+<li>HA, NOHA</li>
+</ul>
+</li>
+<li><strong>Deployment Tools</strong>
+<ul>
+<li>Supporting installers</li>
+<li>Valid options per installer</li>
+</ul>
+</li>
+<li><strong>Hardware Prerequisites</strong>
+<ul>
+<li>e.g. SRIOV, DPDK</li>
+</ul>
+</li>
+</ul>
+
+<a name="8.7.9"></a>
+### 8.7.9 Test Categories | Cases
+
+The following five test categories, and respective test cases, have been identified as minimal testing required to verify NFVI interoperability to satisfy the needs VNF developer teams.
+
+<b><u>Test Categories</u></b>
+<ol>
+<li>Baremetal - validations</li>
+<li>Openstack - VNF Interoperability - validations</li>
+<li>Openstack Compute Component - validations</li>
+<li>Openstack Control Plane Component- validations</li>
+<li>Security - see Ch 7 for complete lisy</li>
+</ol>
+
+<b><u>Test Cases</u></b>
+
+<ul>
+<li><span style="text-decoration: underline;"><strong>Baremetal - validations</strong></span>
+<ul>
+<li>Interface &ndash; Validate nic status for all member in bond1 group</li>
+<li>Interface &ndash; MTU speed for bond1 and its member set to 9100</li>
+<li>Grub &ndash; SR-IOV is enabled</li>
+<li>Numa &ndash; Each server should configure with two numa boundaries
+<ul>
+<li>ODD CPU/Core number is assigned to numa 1</li>
+<li>EVEN CPU/Core number is assigned to numa 0</li>
+</ul>
+</li>
+<li>Numa &ndash; Ensure Total memory available is equally distributed between two numa boundaries</li>
+<li>VF&rsquo;s &ndash;64 VFs being created on each PCI SYS Interface.<br />/* In RDMx we have 32 VF per pci sys interface. Per md980r it should be 64."</li>
+<li>Modules &ndash; following modules loaded
+<ul>
+<li>bonding</li>
+<li>8021q</li>
+<li>i40e</li>
+</ul>
+</li>
+<li>OS: IPTables are enabled.</li>
+<li>OS: ntp is enabled and configured to sync system time</li>
+<li>OS: Dedicate mount point for following file system
+<ul>
+<li>/var/log</li>
+<li>/var/lib/nova</li>
+</ul>
+</li>
+<li>OS: Huge Pages are enabled.
+<ul>
+<li>Hugepage size is 1GB</li>
+<li>Number of Huge page is 320 &lt;Per server&gt;<br />/* In RDM8 and 9 we have 300. Per md980r it should be 320."</li>
+</ul>
+</li>
+<li>OS: Validate proxy/iptables implementation
+<ul>
+<li>Reboot Server and ensure proxy starts up and all necessary route are added to system</li>
+</ul>
+</li>
+<li>OS: Validate proxy/iptables implementation
+<ul>
+<li>Validate Boot order</li>
+</ul>
+</li>
+<li>check NIC card is detect first than hard drive
+<ul>
+<li>Kernel version Comparison.</li>
+</ul>
+</li>
+<li>Validate it matches the manifest version
+<ul>
+<li>Validate Bios.</li>
+<li>Validate Firmware.</li>
+<li>Validate Redfish tool and module is working.</li>
+<li>CPU Performance mode validation</li>
+<li>Compare CPU verification server specs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li><span style="text-decoration: underline;"><strong>Openstack - VNF Interoperability - validations</strong></span>
+<ul>
+<li>Create Tenant</li>
+<li>Create users</li>
+<li>Assign role to user</li>
+<li>Create security profile with appropriate ingress and egress rule</li>
+<li>Load images to glance repository</li>
+<li>Create Host aggregate with following meta data
+<ul>
+<li>xxx-ns-ha01 &ndash; metadata up=true</li>
+<li>xxx-ns-ha02 &ndash; metadata cp=true</li>
+<li>xxx-ns-ha03 &ndash; metadata tp=true</li>
+<li>xxx-kvm-az01</li>
+<li>xxx-kvm-az02</li>
+<li>Validate host assignment for each aggregate are per design</li>
+<li>All server in ODD number RACK should be part of xxx-kvm-az01</li>
+<li>All server in EVEN number RACK should be part of xxx-kvm-az02</li>
+<li>Number of server in Host Agg in xxx-kvm-az01 should match xxx-kvm-az02</li>
+</ul>
+</li>
+<li>Create minimum 5 flavor with following spec
+<ul>
+<li>cpu pining, Enable Huge Pages, cp=true</li>
+<li>cpu pining, Enable Huge Pages, tp=true</li>
+<li>cpu pining, Enable Huge Pages, up=true</li>
+<li>cpu pining, Enable Huge Pages, up=true, cross numa boundaries (allowing VM to spin across numa boundaries)</li>
+<li>Flavor without any extra spec.</li>
+</ul>
+</li>
+<li>Create 3 Network and assigned appropriate subnet
+<ul>
+<li>Provider Network &ndash; SRIOV - VLAN</li>
+<li>L3/Tenant Network</li>
+<li>OAM Network</li>
+</ul>
+</li>
+<li>Create routers across 2 tenant network (optional)</li>
+<li>Validate anti-affinity and affinity rules</li>
+<li>Validate user ability to force VM landing on given hypervisor host</li>
+<li>Create VMs using flavor defined above and Attached ceph storage
+<ul>
+<li>Validate VM is able to extract meta data</li>
+<li>Validate VM connectivity between SR-IOV Network</li>
+<li>Validate SRIOV Port mapping to OS/VF</li>
+<li>Validate VM connectivity between L3/Tenant network</li>
+<li>Validate VM connectivity between L3/Network traffic passing through router.</li>
+<li>Validate user-data script gets execute as part of POST VM creation in your stack</li>
+<li>Assuming all above task is perform using heat template</li>
+<li>Delete all Heat stack created as part of this testing</li>
+<li>Validate VM&rsquo;s host-dev mapping to physical host</li>
+</ul>
+</li>
+<li>Validate hairpinning Solution -- Communication between 2 VMs residing on same compute should not go over wire</li>
+<li>Validate hairpinning Solution -- Communication between 2 VMs residing on same compute should not go over wire&nbsp;</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li><span style="text-decoration: underline;"><strong>Openstack Compute Component - validations</strong></span>
+<ul>
+<li>Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity. Lag time between Shutdown and Startup should be no more than 10 minute
+<ul>
+<li>Restart libvirt pod</li>
+<li>Restart nova-compute pod</li>
+<li>Restart openvswitch-db pod</li>
+<li>Restart openvswitch-vswitchd pod</li>
+<li>Restart neutron-ovs-agent pod</li>
+<li>Restart neutron-sriov-agent pod<span style="text-decoration: underline;"><strong><br /></strong></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+
+<ul>
+<li style="list-style-type: none;"></li>
+<li><span style="text-decoration: underline;"><strong>Openstack Control Plane Component- validations</strong></span>
+<ul>
+<li>Validate RabbitMQ resiliency by shutting down 1 or more pods. Make nova/openstack API call to see system result <br />(expected results is BAU)"</li>
+<li>Validate nova-api resilency by shutting down 1 or more pods. Document API call results. (expected results is BAU)</li>
+<li>Run similar resiliency test for each of listed services and expected result is BAU &ndash; No impact to VNF
+<ul>
+<li>nova-api-metadaa</li>
+<li>nova-conductor</li>
+<li>nova-scheduler</li>
+<li>nova-placement-api</li>
+<li>nova-console-auth</li>
+<li>nova-novnc-proxy</li>
+<li>nova-rabbitmq</li>
+<li>glance-api</li>
+<li>glance-registry</li>
+<li>glance-rabbitmq</li>
+<li>heat-api</li>
+<li>heat-cfn</li>
+<li>heat-engine</li>
+<li>heat-rabbitmq</li>
+<li>keystone-api</li>
+<li>keystone-rabbitmq</li>
+<li>keystone-rabbitmq</li>
+</ul>
+</li>
+<li>Validate maridb cluster is insync
+<ul>
+<li>Studown mariadb and upon restart ensure its sync up with masterdb.</li>
+<li>Maria DB is single point of failure</li>
+</ul>
+</li>
+<li>Validate ceph
+<ul>
+<li>Restart ceph-osd</li>
+<li>Document VNF impact while ceph is unavailable and once ceph service is restoredbeing restored.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li style="list-style-type: none;"></li>
+<li><span style="text-decoration: underline;"><strong>Security - see Ch 7 for complete list</strong></span>
+<ul>
+<li>Validate User Role to ensure it allow user to perform all designated task and prohibits user performing any unassigned task.</li>
+<li>Validate Security Policy/Rules are enforced</li>
+</ul>
+</li>
+</ul>
 
 <a name="8.8"></a>
 ## 8.8 Test Results
