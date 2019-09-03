@@ -65,6 +65,6 @@ Components here will not change amongst different profiles
 
 <a name="4.5"></a>
 ## 4.5 Storage nodes.
-
+ 
 <a name="4.6"></a>
 ## 4.6 Integration and Interoperability.
