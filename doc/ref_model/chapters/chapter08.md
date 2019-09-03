@@ -661,7 +661,7 @@ The following five test categories, and respective test cases, have been identif
 <li><span style="text-decoration: underline;"><strong>Baremetal - validations</strong></span>
 <ul>
 <li>Interface &ndash; Validate nic status for all member in bond1 group</li>
-<li>Interface &ndash; MTU speed for bond1 and its member set to 9100</li>
+<li>Interface &ndash; MTU speed for bond1 interface</li>
 <li>Grub &ndash; SR-IOV is enabled</li>
 <li>Numa &ndash; Each server should configure with two numa boundaries
 <ul>
@@ -670,7 +670,7 @@ The following five test categories, and respective test cases, have been identif
 </ul>
 </li>
 <li>Numa &ndash; Ensure Total memory available is equally distributed between two numa boundaries</li>
-<li>VF&rsquo;s &ndash;64 VFs being created on each PCI SYS Interface.<br />/* In RDMx we have 32 VF per pci sys interface. Per md980r it should be 64."</li>
+<li>VF&rsquo;s &ndash;64 VFs being created on each PCI SYS Interface.</li>
 <li>Modules &ndash; following modules loaded
 <ul>
 <li>bonding</li>
@@ -689,7 +689,7 @@ The following five test categories, and respective test cases, have been identif
 <li>OS: Huge Pages are enabled.
 <ul>
 <li>Hugepage size is 1GB</li>
-<li>Number of Huge page is 320 &lt;Per server&gt;<br />/* In RDM8 and 9 we have 300. Per md980r it should be 320."</li>
+<li>Number of Huge page is 320 &lt;Per server&gt;</li>
 </ul>
 </li>
 <li>OS: Validate proxy/iptables implementation
