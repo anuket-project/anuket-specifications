@@ -4,67 +4,72 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [4.1 Introduction.](#4.1)
-* [4.2 Foundational Components.](#4.2)
-  * [4.2 Enabler services.](#4.2.1)
-  * [4.2 Networking Fabric.](#4.2.2)
-* [4.3 Open Stack Components (Controller nodes).](#4.3)
-* [4.4 NFVI Components (Compute nodes)](#4.4)
-  * [4.4.1 Basic Profile](#4.3.1)
-  * [4.4.2 Network Intensive Profile](#4.4.2)
-  * [4.4.3 Compute Intensive Profile](#4.4.3)
-* [4.5 Storage nodes](#4.5)
-* [4.6 Integration and Interoperability](#4.6)
+* [4.xx xx.](#4.x)
 
 <a name="4.1"></a>
+
 ## 4.1 Introduction.
 
 This should focus on IaaS elements.
 
 <a name="4.2"></a>
+
 ## 4.2 Foundational Components.
 Components here will not change amongst different profiles
 
-<a name="4.2.1"></a>
-## 4.2.1 Enabler services.
+- Enabler services.
 
-<a name="4.2.2"></a>
-## 4.2.2 Networking Fabric.
+## 4.3 Network Topology (control plane, storage, tenant, external)
+- Physical Network = Spine / Leaf with dual homing to ToR
+- Proposed logical network layout – VLANs, overlay, FIPs, IPv6   – we will follow common vendor recommendations however we can agree on our minimum expectations
+- LBaaS v2 compliant Load Balancing 
+- Neutron ML2 integration to any external SDN controller
 
-<a name="4.3"></a>
-## 4.3 Open Stack Components (Controller nodes).
 
-Components here will not change amongst different profiles
+## 4.4 Cloud Topology
+- Host aggregates / AZs / pools /  scheduler hints
+- Default T-Shirt sizes – predefined Flavors
+- Default tenant configuration and topologies
+- Host Profile choices for “any workload, any host” (prevent partitioning of the cloud)
+
+
+## 4.5 Control Plane
+- Core Components (keystone, heat, nova, neutron, cinder, glance)
+- Logging / Monitoring / Alerting (should this be a separate section on its own?)
+- Identity Management
+
 
 <a name="4.4"></a>
-## 4.4 NFVI Components (Compute nodes).
 
-> L2 level of artefacts 
+## 4.6 Data Plane Components.
 
-<a name="4.4.1"></a>
-### 4.4.1 Basic Profile
+- Basic Profile
+  - Software components
+    - > for example: vSwitch.
+  - Hardware Platform
+    - > for example: single socket platform. 2x10G NIC, etc.
 
-#### 4.4.1.1 Software Components
-> for example: vSwitch.
-#### 4.4.1.2 Hardware Platform
-> for example: single socket platform. 2x10G NIC, etc.
 
-<a name="4.4.2"></a>
-### 4.4.2 Network Intensive Profile
-#### 4.4.2.1 Software Components
-> for example: vSwitch DPDK + Contrail
-#### 4.4.2.2 Hardware Platform
-> for example: dual socket platform. 2x25G NIC, CryptoAcc, etc. 
+- Network Intensive Profile
+  - Software Components
+    - > for example: vSwitch DPDK + Contrail
+  - Hardware Platform
+    - > for example: dual socket platform. 2x25G NIC, CryptoAcc, etc. 
 
-<a name="4.4.3"></a>
-### 4.4.3 Compute Intensive Profile 
-#### 4.4.2.1 Software Components
-> for example: vSwitch DPDK + Contrail 
-#### 4.4.2.2 Hardware Platform
-> for example: dual socket platform. 2x25G NIC, GPU, etc.
+- Compute Intensive Profile 
+  - Software Components
+    - > for example: vSwitch DPDK + Contrail 
+  - Hardware Platform
+  - > for example: dual socket platform. 2x25G NIC, GPU, etc.
 
-<a name="4.5"></a>
-## 4.5 Storage nodes.
- 
-<a name="4.6"></a>
-## 4.6 Integration and Interoperability.
+## 4.7 Integration / Interfaces
+- Detail integration to other supporting services (enablers) – LDAP, DNS, etc.
+- Enterprise systems for Identity Management, IP Address Management, …
+
+## 4.8 Logging / Monitoring / Alerting of Control Plane / Prometheus
+
+## 4.9 Telemetry
+
+## 4.10 General Hardware requirements (for control, compute, storage)
+- Scaling options for extra compute, storage, throughput
+- Shared Storage (Optional)
