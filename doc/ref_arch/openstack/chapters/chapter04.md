@@ -36,7 +36,6 @@ This should focus on IaaS elements.
 <a name="4.4"></a>
 ## 4.4 Cloud Controller Services
 - Core Components (keystone, heat, nova, neutron, glance)
-- Logging / Monitoring / Alerting (should this be a separate section on its own?)
 - Identity Management
 
 
@@ -57,7 +56,7 @@ This should focus on IaaS elements.
 
 - Compute Intensive Profile 
   - Software Components
-    - > for example: vSwitch DPDK + Contrail 
+    - > for example: vSwitch DPDK + Open Contrail 
   - Hardware Platform
   - > for example: dual socket platform. 2x25G NIC, GPU, etc.
 

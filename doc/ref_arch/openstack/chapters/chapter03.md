@@ -40,12 +40,9 @@
 <a name="3.5"></a>
 ## 3.5 Cloud Workload Services
 - Abstraction of Compute, Storage, Network resources (this is covered in RM Chapter 3)
+- Virtualisation Services
 - Tenant separation (this is covered in RM Chapter 3)
 
 
 <a name="3.6"></a>
 ## 3.6 Interfaces & APIs
-
-
-<a name="3.7"></a>
-## 3.7 Interfaces & APIs.
