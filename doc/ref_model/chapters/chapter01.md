@@ -183,13 +183,12 @@ This document specifies:
 <a name="1.6"></a>
 ## 1.6	Relations to other industry projects 
 
-Regarding the ETSI NFV architecture specified by ETSI GS NFV002<!--[link to ref: NFV Architectural framework v1.2.1]-->, the scope of this document is only, but the entirety of, the NFVI part, including its external reference points.
-A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 1-7** below
+An industry project closely related to CNTT is ETSI's NFV. The CNTT Reference Model's scope has been aligned to the ETSI NFV Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002<!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-7** illustrates which functional blocks of the ETSI NFV Architecture are in scope for CNTT.
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
 <p align="center"><b>Figure 1-7:</b> Mapping to ETSI NFV architecture</p>
 
-Following ETSI model, **Figure 1-6**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in **Chapter 7 "API & Interfaces"**.
+Following the ETSI model, **Figure 1-7** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, is included in the CNTT scope. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in **Chapter 7 "API & Interfaces"**.
 
 <a name="1.7"></a>
 ## 1.7	What this document is not covering 
