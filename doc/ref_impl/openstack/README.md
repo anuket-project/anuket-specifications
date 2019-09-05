@@ -1,4 +1,4 @@
-[<< Back](https://cntt-n.github.io/CNTT/doc/ref_arch/)
+[<< Back](../../)
 
 # Openstack based Reference Implementation
 
