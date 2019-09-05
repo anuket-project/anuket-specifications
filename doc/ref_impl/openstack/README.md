@@ -34,6 +34,6 @@ This is Openstack based Reference Implementation
 * [Chapter 03 - Test Cases](chapters/chapter03.md)
 
 ## Technical Leads
-- Fu Quao
-- Mike Fix
-- Kyle
+- Fu Quao (China Mobile)
+- Mike Fix (AT&T)
+- Kyle Greenwell (Verizon)
