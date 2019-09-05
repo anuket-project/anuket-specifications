@@ -546,7 +546,7 @@ The VNF vendors need to incorporate security elements to support the highest lev
 Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
 
 <a name="7.10"></a>
-## 7.10 NFVI Vendors responsibility
+## 7.10 NFVI and VIM Vendors responsibility
 
 The NFVI vendors need to incorporate security elements to support the highest level of security of the infrastructure they support.  This includes but is not limited to securing the following elements:
 
@@ -591,6 +591,11 @@ NFVI operators should ensure that the platform including the components (hypervi
 ### 7.10.4 Boot Integrity Measurement (TPM)
 
 Using trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components such as platform firmware, BIOS, bootloader, OS kernel, and other system components can be securely stored and verified. NFVI Operators should ensure that the platform measurement can only be taken when the system is reset or rebooted; there needs to be no ability to write the new platform measurement in TPM during system run-time. The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server
+
+<a name="7.10.5"></a>
+### 7.10.4 VIM 
+
+Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
 
 ## 7.11 Certification requirements (Just ideas)
 
