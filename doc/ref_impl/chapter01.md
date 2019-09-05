@@ -1,6 +1,6 @@
 [<< Back](./)
 
-# 1.0 Overview
+# 1. Overview
 
 <a name="toc"></a>
 ## Table of Contents
