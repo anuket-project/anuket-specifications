@@ -1,4 +1,4 @@
-[<< Back](../../)
+[<< Back](../)
 
 # Openstack based Reference Implementation
 
