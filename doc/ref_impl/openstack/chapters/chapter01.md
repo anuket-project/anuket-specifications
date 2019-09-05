@@ -20,7 +20,4 @@
 <a name="1.3"></a>
 ## 1.3 Scope
 
-<p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
-
 
