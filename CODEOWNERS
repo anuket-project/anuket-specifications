@@ -37,3 +37,6 @@
 
 # Chapter 10 - GAPS
 /doc/ref_model/chapters/chapter10.md    @jbeltranatl @rabiabdel
+
+# Reference Implementation
+/doc/ref_impl/*                         @mf4716 @markshostak @kagreenwell
