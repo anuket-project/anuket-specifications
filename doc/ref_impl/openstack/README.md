@@ -28,7 +28,6 @@ This is Openstack based Reference Implementation
 
 
 ## Table of Contents
-* [Abbreviations](abbreviations.md)
 * [Chapter 01 - Overview](chapters/chapter01.md)
 * [Chapter 02 - Installers](chapters/chapter02.md)
 
