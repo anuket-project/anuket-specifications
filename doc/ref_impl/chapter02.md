@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 2.0 Labs
+# 2. Labs
 
 <a name="toc"></a>
 ## Table of Contents
