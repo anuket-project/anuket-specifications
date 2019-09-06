@@ -689,7 +689,3 @@ This section will be used to plan for future offerings.
 
 <a name="8.10"></a>
 ## 8.10 Recommendations
-
------
-
-<< Work space.  Ideas, Drafts, Work in progress. >>
