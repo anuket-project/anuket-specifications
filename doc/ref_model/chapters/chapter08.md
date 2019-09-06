@@ -652,7 +652,7 @@ The following five test categories have been identified as minimal testing requi
 <li>VNF Interoperability - validations</li>
 <li>Compute Component - validations</li>
 <li>Control Plane Component- validations</li>
-<li>Security - see Ch 7 for complete lisy</li>
+<li><p>Security - see <a title="Chapter 7 Security" href="https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter07.md" target="_blank" rel="noopener">Chapter 7</a> for complete list</p></li>
 </ol>
 
 <p>Respective test cases can be found in the <a title="Annex for Chapter 8" href="https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08-annex.md" target="_blank" rel="noopener">Annex for Chapter 8</a>.</p>
