@@ -26,7 +26,6 @@ TBD
 <a name="8.3.1"></a>
 ### 8.3.1 OpenStack (OS)
 
-This document include
 <p><strong><u>Test Cases</u></strong></p>
 <ul>
 <li><span style="text-decoration: underline;"><strong>Baremetal - validations</strong></span>
