@@ -257,7 +257,7 @@ The configurations specified in here will be utilized in specifying the actual h
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the number of CPU sockets exist within each platform | 2| 2| 2
+| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the number of CPU sockets exist within each host | 2| 2| 2
 | nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 
 | nfvi.hw.cpu.cfg.003 | NUMA |  | N | Y | Y
 | nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) |  | Y | Y| Y 
@@ -304,7 +304,7 @@ The configurations specified in here will be utilized in specifying the actual h
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform | 4 | 4 | 4
+| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the host | 4 | 4 | 4
 | nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps | 10 | 25 | 25
 
 <p align="center"><b>Table 5-16:</b> Minimum NIC configuration specification.</p>
@@ -314,7 +314,7 @@ The configurations specified in here will be utilized in specifying the actual h
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the platform | 8 | 8 | 8
+| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the host | 8 | 8 | 8
 | nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 | Gen 3 |
 | nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 8
 
@@ -349,6 +349,6 @@ The configurations specified in here will be utilized in specifying the actual h
 
 | Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive
 |---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.sec.cfg.001 | TPM | Platform must have Trusted Platform Module. | Y | Y | Y |
+| nfvi.hw.sec.cfg.001 | TPM | Host must have Trusted Platform Module. | Y | Y | Y |
 
 <p align="center"><b>Table 5-19:</b> Security configuration specification.</p>
