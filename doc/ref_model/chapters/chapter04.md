@@ -391,6 +391,8 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 ### 4.2.2 Network Interface Specifications
 
 The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” option.
+
+Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base flavour. 
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
