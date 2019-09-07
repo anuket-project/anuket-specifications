@@ -390,20 +390,18 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 <a name="4.2.2"></a>
 ### 4.2.2 Network Interface Specifications
 
-The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps) and an alphabetic character defining the number of interfaces with that bandwidth; multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” option.
+The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” option.
 ```
-<network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>< # of interfaces of that bandwidth>
-<number of interfaces> :: <”” | “D” | “T” | “Q” | “P” | “H”> 
-where “” represents 1x, “D” 2x, “T” 3x, “Q” 4x, “p” 5x and “H” 6x interfaces of the given bandwidth.
+<network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
 
-Virtual network interface option	|Description (Bandwidth in Gbps)
+Virtual Network Interface Option	|Interface Bandwidth
 ---|---
-n1, n10, n1T, n1Q, n1P, n1H	|1x 1, 2x 1, 3x 1, 4x 1, 5x 1, 6x 1 Gbps
-n10, n10D, n10T, n10Q, n10P, n10H	|1x 10, 2x 10, 3x 10, 4x 10, 5x 10, 6x 10 Gbps
-n25, n25D, n25T, n25Q, n25P, n25H	|1x 25, 2x 25, 3x 25, 4x 25, 5x 25, 6x 25 Gbps
-n50, n50D, n50T, n50Q, n50P, n50H	|1x 50, 2x 50, 36x 50, 4x 50, 5x 50, 6x 50 Gbps
-n100, n100D, n100T, n100Q, n100P, n100H	|1x 100, 2x 100, 3x 100, 4x 100, 5x 100, 6x 100 Gbps
+n1, n2, n3, n4, n5, n6	|1, 2, 3, 4, 5, 6 Gbps
+n10, n20, n30, n40, n50, n60	|10, 20, 30, 40, 50, 60 Gbps
+n25, n50, n75, n100, n125, n150	|25, 50, 75, 100, 125, 150 Gbps
+n50, n100, n150, n200, n250, n300	|50, 100, 150, 200, 250, 300 Gbps
+n100, n200, n300, n400, n500, n600	|100, 200, 300, 400, 500, 600 Gbps
 
 <p align="center"><b>Table 4-15:</b> Virtual Network Interface Specification Examples.</p>
 
