@@ -98,7 +98,7 @@ These core principles will guide NFV verification deliverables:
 </ol>
 </li>
 <li>Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs</li>
-<li>Verification decisions will be based on data6. Test harness is &ldquo;compatible&rdquo;, or &ldquo;conforms&rdquo; to testing against standard interfaces and services</li>
+<li>Verification decisions will be based on data. Test harness is &ldquo;compatible&rdquo;, or &ldquo;conforms&rdquo; to testing against standard interfaces and services</li>
 <li>VNF functionality easily tested w/ addition of Supplier Apparatus</li>
 <li>Leverage test harnesses from existing open source projects where practical, and applicable.&nbsp;</li>
 </ol>
@@ -565,6 +565,8 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 <li>Standard NTP servers are working and verified (using tenant's CIDR source IP)</li>
 <li>NFVI/VNF is tested at steady state and high load</li>
 <li>Continuously monitored to ensure SLAs are met and used as feedback to load/perf tests<u></u></li>
+<li>Passing Interoperability Validations: a) <b>Compatibility Checks</b> (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); b) 
+	<b>Integration Checks</b> (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
 </ol>
 </li>
 <li><u><strong>END USER CONSIDERATIONS (TELCO PERSPECTIVE)</strong></u>
