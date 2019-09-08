@@ -51,7 +51,9 @@
 
 ## Synopsis
 
-Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and certification.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+
+For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  **Certifications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and development of which there are no code developed/delivered with the NFVI+VNF testing and verification.
 
 <a name="8.1"></a>
 ## 8.1 Introduction
@@ -109,8 +111,23 @@ These core principles will guide NFV verification deliverables:
 <a name="8.3"></a>
 ## 8.3 Terms and Resources
 
+NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  
+
+- **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.  
+- **Certfications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, development (of which there are no code developed/delivered), and logistics for communications.  
+
+Source information for additional reading:
+- [https://www.softwaretestingmaterial.com/verification-and-validation/](https://www.softwaretestingmaterial.com/verification-and-validation/ "What is Verification And Validation In Software Testing")
+
+- [http://softwaretestingfundamentals.com/verification-vs-validation/ ](http://softwaretestingfundamentals.com/verification-vs-validation/  "Verification vs Validation")
+
+- [https://users.ece.cmu.edu/~koopman/des_s99/verification/](https://users.ece.cmu.edu/~koopman/des_s99/verification/ "Verification/Validation/Certification")
+
 <a name="8.3.1"></a>
 ### 8.3.1 Terms
+
+Additional Terms utilized throughout the document:
 
 <table>
   <tr><th>Term</th><th>Description</th></tr>
@@ -449,8 +466,19 @@ Standardising on Infrastructure profiles allows VNFs to be characterised, valida
 <a name="8.7.1"></a>
 ### 8.7.1 Dependencies, Recommendations, Assumptions
 
+**Assumptions**
+NFVI+VNF testing will be considered **Testable** if the follow qualifiers are present in a test execution, and subsequent result:
+
+- Ability to perform Conformance, or Verification of Artifacts to ensure designs (RM/RA/RI) are delivered per specification
+
+- Ability to Control (or manipulate), manifestations of RM/RA/RI for the purposes to adjust the test environment, and respective cases, scenarios, and apparatus, to support actual test validations
+
+- Ability to monitor, measure, and report, Validations performed against a target, controlled system under test
+
+In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.  Refer to [https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08.md#8.7.3](https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08.md#8.7.3 "Entrance & Exit Criteria") for detailed information.
+
 **Dependencies**
-NFVI & VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects. 
+NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects. 
 
 - NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
 
