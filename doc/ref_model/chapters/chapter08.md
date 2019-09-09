@@ -58,6 +58,21 @@ For the purposes of this chapter, NFVI+VNF testing will be performed for **Verif
 <a name="8.1"></a>
 ## 8.1 Introduction
 
+**Objective**
+Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+
+**Scope**
+- Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
+- Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
+- Candidate VNF Validation (Validation & Performance) will ensure complete interopablity of VNF behavior on the NFVI leverage VVP/CVC test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).  
+
+**Repeat** the approach of Manifest compliance, Empirical Golden VNF, and Interopability Testing with new Distributions. 
+
+**Not in Scope**
+- Functional testing/validation of the VNF is not in scope.
+- ONAP is not used for MANO, or mangement and orechestration of VNFs.  
+
+**Document Purpose**
 This document includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
 
 <p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
