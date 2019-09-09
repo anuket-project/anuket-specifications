@@ -6,15 +6,19 @@
 * [6.1 Introduction.](#6.1)
 * [6.2 NFVI APIs.](#6.2)
   * [6.2.1 Tenant Level APIs.](#6.2.1)
-* [6.3 Hardware Acceleration Interfaces and APIs.](#6.3)
-* [6.4 Other Interfaces.](#6.4)
-  * [6.4.1. Hypervisor Hardware Interface.](#6.4.1)
+  * [6.2.2 Hardware Acceleration Interfaces and APIs.](#6.2.2)
+* [6.3 Intra-NFVI Interfaces.](#6.3)
+  * [6.3.1. Hypervisor Hardware Interface.](#6.3.1)
+* [6.4 Enabler Services Interfaces.](#6.4)
 
 
 <a name="6.1"></a>
 ## 6.1 Introduction 
-Chapter 3 introduced a model of the Network Function Virtualisation Infrastructure (NFVI). Figure 3-1 shows an overview of the NFVI model including the external application programming interface (API)/ user interface (UI) for providing access to the NFVI management functions. Section 3.3 lists the actions supported by the NFVI Management Software.  This chapter specifies the abtstract interfaces (API, CLI, etc.) supported by the NFVI Reference Model.
+Chapter 3 introduced a model of the Network Function Virtualisation Infrastructure (NFVI). Figure 3-1 shows an overview of the NFVI model including the external application programming interface (API)/ user interface (UI) for providing access to the NFVI management functions. Section 3.3 lists the actions supported by the NFVI Management Software.  This chapter specifies the abtstract interfaces (API, CLI, etc.) supported by the NFVI Reference Model. The purpose of this chapter is to define and catalogue a common set of open (not proprietary) APIs, of the following types:
 
+- NFVI APIs: These APIs are provided to the VNF workloads (i.e. exposed), by the infrastructure in order for VNF workloads to access (i.e. request, consume, control, etc.) NFVI resources.
+- Intra-NFVI APIs: These APIs are provided and consumed directly by the infrastructure. These APIs are purely internal to the NFVI and are not exposed to the workloads.
+- Enabler Services APIs: These APIs are provided by non-NFVI services and provide capabilities that are required for a majority of VNF workloads, e.g. DHCP, DNS, NTP, DBaaS, etc.
 
 <a name="6.2"></a>
 ## 6.2 NFVI APIs
@@ -75,8 +79,8 @@ A virtual compute resource is created as per the flavour template (specifies the
  
 **Table 6-2** specifies a minimal set of operations for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
 
-<a name="6.3"></a>
-## 6.3 Hardware Acceleration Interfaces 
+<a name="6.2.2"></a>
+### 6.2.2 Hardware Acceleration Interfaces 
 
 **Acceleration Interface Specifications**
 ETSI GS NFV-IFA 002 defines a technology and implementation independent virtual accelerator, the accelerator interface requirements and specifications that would allow a VNF to leverage a Virtual Accelerator. The virtual accelerator is modeled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 specifies the architectural model in Chapter 4 and the abstract interfaces for management, configuration, monitoring and Data exchange in Chapter 7.
@@ -151,14 +155,17 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 
 <p align="center"><b>Table 6-3:</b> Hardware Acceleration Interfaces.</p>
 
-<a name="6.4"></a>
-## 6.4 Other Interfaces
+<a name="6.3"></a>
+## 6.3 Intra-NFVI Interfaces
 
-<a name="6.4.1"></a>
-### 6.4.1. Hypervisor Hardware Interface
+<a name="6.3.1"></a>
+### 6.3.1. Hypervisor Hardware Interface
 
 Table 6-1 lists a number of NFVI and VIM inetrfaces, including the internal VI-Ha intterface. the The VI-Ha interface allows the hypervisor to control the physical infrastructure; the hypervisor acts under VIM control. The VIM issues all requests and responses using the NF-VI interface; requests and responses include commands, configuration requests, policies, updates, alerts and response to infrastructure results. The hypervisor also provides information about the health of the physical infrastructure resources to the VM.  All these activities, on behalf of the VIM, are performed by the hypervisor using the VI-Ha interface. While no abstract APIs have yet been defined for this internal VI-Ha interface, ETSI GS NFV-INF 004 defines a set of requirements and details of the information that is required by the VIM from the physical infrastructure resources. Hypervisors utilize various programs to get this data including BIOS, IPMI, PCI, I/O Adapters/Drivers, etc.
 
+<a name="6.4"></a>
+## 6.4. Enabler Services Interfaces
+An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming requests amongst a pool of designated resources. 
 
 ## References
 Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004
