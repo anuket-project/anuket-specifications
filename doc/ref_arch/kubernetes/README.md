@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# Openstack based Reference Architecture
+# Kubernetes based Reference Architecture
 
 This is Kubernetes based Reference Architecture
 
