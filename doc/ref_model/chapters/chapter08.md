@@ -58,7 +58,7 @@ For the purposes of this chapter, NFVI+VNF testing will be performed for **Verif
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-**Objective**
+**Objective**<br>
 Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 **Scope**
@@ -72,7 +72,7 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 - Functional testing/validation of the VNF is not in scope.
 - ONAP is not used for MANO, or mangement and orechestration of VNFs.  
 
-**Document Purpose**
+**Document Purpose**<br>
 This document includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
 
 <p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
