@@ -3,10 +3,10 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [9.1 Configuration and Lifecycle Management](#9.2)
-* [9.2 Resource and Service Assurance](#9.3)
-* [9.3 Capacity Management](#9.4)
-* [9.4 Infrastructure Maintenance](#9.5)
+* [9.1 Configuration and Lifecycle Management](#9.1)
+* [9.2 Resource and Service Assurance](#9.2)
+* [9.3 Capacity Management](#9.3)
+* [9.4 Infrastructure Maintenance](#9.4)
 
 
 The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and VNFs, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
