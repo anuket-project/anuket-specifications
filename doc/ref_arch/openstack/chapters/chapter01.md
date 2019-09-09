@@ -43,6 +43,7 @@ Open Stack Reference Architecture must obey to the following set of principles:
 <a name="1.6"></a>
 ## 1.6 Vision
 
+
 <a name="1.7"></a>
 ## 1.7 Roadmap
 
