@@ -156,15 +156,15 @@ Insuring that the security standards and best practices are incorporated into th
 
 The scope of the security controls requirements maps to the scope of the CNTT reference architecture.
 
-The CNTT scope is shown below:
+The CNTT scope is shown below (as outlined in chapter 1 of the reference model): :
 
-![Image of ETSI NFV Mapping](![https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/figures/ch01_etsi_archi_mapping_v2.PNG](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/figures/ch01_etsi_archi_mapping_v2.PNG))
+![Image of ETSI NFV Mapping](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/figures/ch01_etsi_archi_mapping_v2.PNG)
 
 **Figure 7-1**: Mapping to ETSI NFV Architecture
 
-This means that the security of the CNTT requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM. It is noted, however that the VIM (Virtualised Infrastructure Manager) is not strictly included into NFVi, but the interactions between the NFVi and VIM are included.
+This means that the security of the CNTT requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
 
-There will be a different set of security requirements for each NFVi reference architecture. In this case, the first reference model is OpenStack.
+There will be a different set of security requirements for each NFVi reference architecture. In this case, the first reference architcture is OpenStack.
 
 <a name="7.4.2"></a>
 ## 7.4.2 Define Platform security requirements
