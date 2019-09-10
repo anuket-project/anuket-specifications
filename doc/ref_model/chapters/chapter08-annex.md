@@ -93,6 +93,7 @@ TBD
 <ul>
 <li><span style="text-decoration: underline;"><strong>VNF Interoperability - validations</strong></span>
 <ul>
+<li> After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc.
 <li>Create Tenant</li>
 <li>Create users</li>
 <li>Assign role to user</li>
