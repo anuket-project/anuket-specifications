@@ -166,6 +166,7 @@ TBD
 </li>
 <li><span style="text-decoration: underline;"><strong>Control Plane Component- validations</strong></span>
 <ul>
+<li> We are validating RabbitMQ, Ceph, Mariadb and Openstack components like nova, glance, heat, keystone API and resillency test.
 <li>Validate RabbitMQ resiliency by shutting down 1 or more pods. Make nova/openstack API call to see system result <br />(expected results is BAU)"</li>
 <li>Validate nova-api resilency by shutting down 1 or more pods. Document API call results. (expected results is BAU)</li>
 <li>Run similar resiliency test for each of listed services and expected result is BAU &ndash; No impact to VNF
