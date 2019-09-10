@@ -30,9 +30,7 @@ TBD
 <ul>
 <li><span style="text-decoration: underline;"><strong>Baremetal - validations</strong></span>
 <ul>
-<ul>
 <li> We will validate Control and compute nodes hardware, bios, Firmware (Pxe boot), interfaces configuration like SRIOV and also validating Grub, network bonding and mount points.
-<ul>
 <li>Interface &ndash; Validate nic status for all member in bond1 group</li>
 <li>Interface &ndash; MTU speed for bond1 interface</li>
 <li>Grub &ndash; SR-IOV is enabled</li>
