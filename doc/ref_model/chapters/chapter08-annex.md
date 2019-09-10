@@ -209,6 +209,7 @@ TBD
 <li><span style="text-decoration: underline;"><strong>Security - see Ch 7 for complete list</strong></span>
 <ul>
 <li> Validating user RBAC Roles and User group policies.
+</ul>
 <li>Validate User Role to ensure it allow user to perform all designated task and prohibits user performing any unassigned task.</li>
 <li>Validate Security Policy/Rules are enforced</li>
 </ul>
