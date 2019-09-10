@@ -57,7 +57,7 @@ Traceability to Reference Model.
 | `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
 | `req.inf.stg.01` | Storage | The Architecture **must** provide shared Block storage for VM Instances.
 | `req.inf.stg.02` | Storage | The Architecture **must** provide shared Object storage for VM Instances.
-| `req.inf.stg.03` | Storage | The Architecture **may** provide shared local file system storage solution for VM Instances.
+| `req.inf.stg.03` | Storage | The Architecture **may** provide local file system storage solution for VM Instances.
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
 | `req.inf.stg.05` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. |
 | `req.inf.stg.06` | Storage | The Architecture **should** make the immutable images available via location independent means. |
