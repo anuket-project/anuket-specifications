@@ -6,7 +6,7 @@
 ## Table of Contents
 * [2.1 Introduction.](#2.1)
 * [2.2 Reference Model Requirements.](#2.2)
-* [2.3 Open Stack Requirements.](#2.3)
+* [2.3 Architecture and OpenStack Requirements.](#2.3)
 
 <a name="2.1"></a>
 ## 2.1 Introduction.
@@ -24,7 +24,7 @@
 Traceability to Reference Model.
 
 <a name="2.3"></a>
-## 2.3 Requirements.
+## 2.3 Architecture and OpenStack Requirements.
 
 <a name="2.3.1"></a>
 ### 2.3.1 General
