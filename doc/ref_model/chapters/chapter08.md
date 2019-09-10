@@ -697,6 +697,7 @@ The following five test categories have been identified as minimal testing requi
 <b><u>Test Categories</u></b>
 <ol>
 <li>Baremetal - validations</li>
+<ol>We will validate Control and compute nodes hardware,
 <li>VNF Interoperability - validations</li>
 <li>Compute Component - validations</li>
 <li>Control Plane Component- validations</li>
