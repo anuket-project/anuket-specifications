@@ -700,8 +700,8 @@ The following five test categories have been identified as minimal testing requi
 <li>VNF Interoperability - validations</li> - After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc.
 <li>Compute Component - validations</li> - Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity.
 <li>Control Plane Component- validations</li> - We are validating RabbitMQ, Ceph, Mariadb and Openstack components like nova, glance, heat, keystone API and resillency test.
-<li><p>Security - see <a title="Chapter 7 Security" - Validating user RBAC Roles and User group policies href="https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter07.md" target="_blank" rel="noopener">Chapter 7</a> for complete list</p></li>
-</ol>
+<li><p>Security - see <a title="Chapter 7 Security" href="https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter07.md" target="_blank" rel="noopener">Chapter 7</a> for complete list</p></li>
+</ol> - Validating user RBAC Roles and User group policies.
 
 <p>Respective test cases can be found in the <a title="Annex for Chapter 8" href="https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08-annex.md" target="_blank" rel="noopener">Annex for Chapter 8</a>.</p>
 
