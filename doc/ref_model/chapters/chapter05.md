@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 5	Featureset and Requirements from Infrastructure
+# 5	Feature set and Requirements from Infrastructure
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -47,7 +47,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.com.cfg.001 | CPU partionning  | Value | CPU dedicated to the host and CPU dedicated to VNFs  |
+| nfvi.com.cfg.001 | CPU partionning  | Value | Minimum number of CPU dedicated to the host |
 | nfvi.com.cfg.002 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
 | nfvi.com.cfg.003 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
 | nfvi.com.cfg.004 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
@@ -69,7 +69,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.stg.cfg.001 | Storage Types |   | Supported Storage types. |
+| nfvi.stg.cfg.001 | Storage Types | Yes/No   | Support of Storage types described in the catalogue |
 | nfvi.stg.cfg.002 | Storage Block | Yes/No  |  |  
 | nfvi.stg.cfg.003 | Storage Object | Yes/No |  |  
 | nfvi.stg.cfg.004 | Storage with replication |  Yes/No |  |  
@@ -96,7 +96,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
 | nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |  
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
-| nfvi.net.cfg.007 | NFVI scaling | Yes/No  |  |
+
 
 <p align="center"><b>Table 5-5:</b> Virtual Networking features.</p>
 
@@ -125,13 +125,15 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.com.cfg.001 | CPU partionning  | value |  |  |  |
+| nfvi.com.cfg.001 | CPU partionning  | value | 0 | 1 CPU per NUMA* | 1 CPU per NUMA |
 | nfvi.com.cfg.002 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
 | nfvi.com.cfg.003 | NUMA awareness | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.004 | CPU pinning capability | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.005 | Huge Pages  | Yes/No  | N | Y | Y |
 
 <p align="center"><b>Table 5-7:</b> Virtual Compute features and configuration for the 3 types of SW profiles.</p>
+
+> _*This number should be increased for instance if DPDK is implemented ._
 
 **Table 5-8** will gather virtual compute acceleration features. It will be filled over time.
 
@@ -152,7 +154,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.stg.cfg.002 | Storage Block | Yes/No | Y | Y |Y  | 
 | nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y | Y | Y | 
 | nfvi.stg.cfg.004 | Storage with replication | Yes/No | N | Y | Y | 
-| nfvi.stg.cfg.005 | Storage with encryption |Yes/No | N | N | Y | 
+| nfvi.stg.cfg.005 | Storage with encryption |Yes/No | Y | Y | Y | 
 
 <p align="center"><b>Table 5-9:</b> Virtual Storage features and configuration for the 3 types of SW profiles.</p>
 
@@ -178,7 +180,6 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.net.cfg.004 | Security Group | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.005 | SFC support | Yes/No  | N | Y | Y |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Y | Y | Y |
-| nfvi.net.cfg.007 | NFVI scaling | Yes/No  | Y | Y | Y |
 
 <p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
 
@@ -255,12 +256,12 @@ The configurations specified in here will be utilized in specifying the actual h
 <a name="5.4.1"></a>
 ### 5.4.1 Compute Resources
 
-| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the number of CPU sockets exist within each platform | 2| 2| 2
-| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 
-| nfvi.hw.cpu.cfg.003 | NUMA |  | N | Y | Y
-| nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) |  | Y | Y| Y 
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|---------------------------|--------|--------|--------|
+| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets exist within each platform | 2| 2| 2 |
+| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
+| nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
+| nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) | This allows a CPU to work a 2 streams of data simultaneously | Y | Y| Y |
 
 <!--
 | nfvi.hw.cpu.cfg.005 | CPU Pinning |  | N | Y | Y
@@ -277,9 +278,9 @@ The configurations specified in here will be utilized in specifying the actual h
 <a name="5.4.1.1"></a>
 #### 5.4.1.1 Compute Acceleration Hardware Specifications
 
-| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|--------------|--------|--------|--------
-| nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | Y 
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|--------------|--------|--------|--------|
+| nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | Y |
 
 <p align="center"><b>Table 5-14:</b> Compute acceleration configuration specifications.</p>
 
@@ -287,10 +288,10 @@ The configurations specified in here will be utilized in specifying the actual h
 <a name="5.4.2"></a>
 ### 5.4.2 Storage Configurations
 
-| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD |  |
-| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD |  | Recommended | Recommended |Recommended |
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|---------------------------|--------|--------|--------|
+| nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD | Hard Disk Drive |  |  |  |
+| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid Disk Drive | Recommended | Recommended |Recommended |
 
 <p align="center"><b>Table 5-15:</b> Storage configuration specification.</p>
 
@@ -302,21 +303,21 @@ The configurations specified in here will be utilized in specifying the actual h
 <a name="5.4.3.1"></a>
 #### 5.4.3.1 NIC configurations
 
-| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform | 4 | 4 | 4
-| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps | 10 | 25 | 25
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|---------------------------|--------|--------|--------|
+| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the platform | 4 | 4 | 4 |
+| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps | 10 | 25 | 25 |
 
 <p align="center"><b>Table 5-16:</b> Minimum NIC configuration specification.</p>
 
 <a name="5.4.3.2"></a>
 #### 5.4.3.2 PCIe Configurations
 
-| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the platform | 8 | 8 | 8
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|---------------------------|--------|--------|--------|
+| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the platform | 8 | 8 | 8 |
 | nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 | Gen 3 |
-| nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 8
+| nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 8 |
 
 <p align="center"><b>Table 5-17:</b> PCIe configuration specification.</p>
 
@@ -324,9 +325,9 @@ The configurations specified in here will be utilized in specifying the actual h
 <a name="5.4.3.3"></a>
 #### 5.4.3.3 Network Bond Configurations
 
-| Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  | Y | Y | Y
+| Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|---------------------------|--------|--------|--------|
+| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  | Y | Y | Y |
 
 <p align="center"><b>Table 6-5:</b> Network bond configuration specifications.</p>
 
@@ -336,19 +337,12 @@ The configurations specified in here will be utilized in specifying the actual h
 <a name="5.4.3.3"></a>
 #### 5.4.3.3 Network Acceleration Configurations
 
-| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto | 
-| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware | | Maybe | Maybe
-| nfvi.hw.nac.cfg.003 | Compression |  |
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|---------------------------|--------|--------|--------|
+| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |  N | Optional | Optional |
+| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware | N | Optional  | Optional |
+| nfvi.hw.nac.cfg.003 | Compression |  |  |  |
 
 <p align="center"><b>Table 5-18:</b> Network acceleration configuration specification.</p>
 
-<a name="5.4.4"></a>
-### 5.4.4 Security Configuration
 
-| Reference* | Feature | Description | Basic Type | Network Intensive | Compute Intensive
-|---------------------|-----------|---------------------------|--------|--------|--------
-| nfvi.hw.sec.cfg.001 | TPM | Platform must have Trusted Platform Module. | Y | Y | Y |
-
-<p align="center"><b>Table 5-19:</b> Security configuration specification.</p>
