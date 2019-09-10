@@ -69,8 +69,10 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 **Repeat** the approach of Manifest compliance, Empirical Golden VNF, and Interopability Testing with new Distributions. 
 
 **Not in Scope**
+
 - Functional testing/validation of the VNF is not in scope.
-- ONAP is not used for MANO, or mangement and orechestration of VNFs.  
+- ONAP is not used for MANO, or mangement and orechestration of VNFs.
+- Upgrades to VNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
 **Document Purpose**<br>
 This document includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
