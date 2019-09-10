@@ -698,8 +698,8 @@ The following five test categories have been identified as minimal testing requi
 <ol>
 <li>Baremetal - validations</li> - We will validate Control and compute nodes hardware.
 <li>VNF Interoperability - validations</li> - After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc.
-<li>Compute Component - validations</li>
-<li>Control Plane Component- validations</li>
+<li>Compute Component - validations</li> - Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity.
+<li>Control Plane Component- validations</li> - We are validating RabbitMQ, Ceph, Mariadb and Openstack components like nova, glance, heat, keystone API and resillency test.
 <li><p>Security - see <a title="Chapter 7 Security" href="https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter07.md" target="_blank" rel="noopener">Chapter 7</a> for complete list</p></li>
 </ol>
 
