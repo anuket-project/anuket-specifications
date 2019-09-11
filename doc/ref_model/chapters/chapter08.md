@@ -249,7 +249,7 @@ Process flow for RA (Infra) Validation and Verfiication
 <p><strong>More specifically:</strong></p>
 <p><strong><u>Release Status</u></strong></p>
 <ul>
-<li>Installer oriented release</li>
+<li>Installer oriented release. CNTT does not recommended any specific installer. An agnostic approach is taken that allows for an implementation to determine their own installer.</li>
 <li>Multiple installers exist</li>
 <li>Multiple scenarios exist, with one scenario represents a certain integration group and a certain configuration</li>
 <li>All releases must pass CI（Continuous Integration) test</li>
