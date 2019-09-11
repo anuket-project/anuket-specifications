@@ -13,8 +13,18 @@
 
 
 <a name="6.1"></a>
-## 6.1 Introduction 
-Chapter 3 introduced a model of the Network Function Virtualisation Infrastructure (NFVI). Figure 3-1 shows an overview of the NFVI model including the external application programming interface (API)/ user interface (UI) for providing access to the NFVI management functions. Section 3.3 lists the actions supported by the NFVI Management Software.  This chapter specifies the abtstract interfaces (API, CLI, etc.) supported by the NFVI Reference Model. The purpose of this chapter is to define and catalogue a common set of open (not proprietary) APIs, of the following types:
+## 6.1 Introduction
+In this document’s earlier chapters, the various resources and capabilities of the NFVI have been catalogued and the workloads (VNFs) have been profiled with respect to those capabilities. The intent behind this chapter and an “API Layer” is to similarly provide a single place to catalogue and thereby codify, a common set of open APIs to access (i.e. request, consume, control, etc.) the aforementioned resources, be them directly exposed to the VNFs, or purely internal to the NFVI.
+
+It is a further intent of this chapter and this document to ensure the APIs adopted for CNTT NFVI implementations are open and not proprietary, in support of compatibility, component substitution and ability to realize maximum value from existing and future test heads and harnesses.
+
+While it is the intent of this chapter, when included in a Reference Architecture, to catalogue the APIs, it is not the intent of this chapter to reprint the APIs, as this would make maintenance of the chapter impractical and the length of the chapter disproportionate within the Reference Model document. Instead, the APIs selected for CNTT NFVI implementations and specified in this chapter, will be incorporated by reference and URLs for the latest, authoritative versions of the APIs, provided in the References section of this document.
+
+Although the document does not attempt to reprint the APIs themselves, where appropriate and generally where the mapping of resources and capabilities within the NFVI to objects in APIs would be otherwise ambiguous, this chapter shall provide explicit identification and mapping.
+
+In addition to the raw or base-level NFVI functionality to API and object mapping, it is further the intent to specify an explicit, normalized set of APIs and mappings to control the logical interconnections and relationships between these objects, notably, but not limited to, support of SFC (Service Function Chaining) and other networking and network management functionality.
+
+Chapter 3 introduced a model of the Network Function Virtualisation Infrastructure (NFVI). Figure 3-1 shows an overview of the NFVI model including the external application programming interface (API)/ user interface (UI) for providing access to the NFVI management functions. Section 3.3 lists the actions supported by the NFVI Management Software.  This chapter specifies the abstract interfaces (API, CLI, etc.) supported by the NFVI Reference Model. The purpose of this chapter is to define and catalogue a common set of open (not proprietary) APIs, of the following types:
 
 - NFVI APIs: These APIs are provided to the VNF workloads (i.e. exposed), by the infrastructure in order for VNF workloads to access (i.e. request, consume, control, etc.) NFVI resources.
 - Intra-NFVI APIs: These APIs are provided and consumed directly by the infrastructure. These APIs are purely internal to the NFVI and are not exposed to the workloads.
