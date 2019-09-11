@@ -83,7 +83,7 @@ This document includes process flow, logistics, and requirements which must be s
 <a name="8.2"></a>
 ## 8.2 Principles and Guidelines
 
-The objectives of the verification program are to deliver a validated implementation of reference architecture which satisifes infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
+The objectives of the verification program are to deliver a validated implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
 
 These core principles will guide NFV verification deliverables: 
 
@@ -245,7 +245,8 @@ Process flow for RA (Infra) Validation and Verfiication
 <a name="8.5.2"></a>
 ### 8.5.2 Process (OPNFV)
 
-<p><strong>OPNFV Releases including the successful adoption and implementaiton of Installer, Feature, and Test Projects to perform release level verification, compliance, and certification.</strong></p>
+<p><strong>OPNFV Releases, and their repsective test verificaitons and validations requires 1) the implentation and adoption of an Installer to perform the needed installation and distirbution of infrastructure componetns and services, 2) identification and acceptance of a Feature Project introducing new, or enhanced, platform capabilities, and 3) an appropriate Test Project explicitly calling out the test use cases and scenarnios for verificaiton and validation.</strong></p>
+
 <p><strong>More specifically:</strong></p>
 <p><strong><u>Release Status</u></strong></p>
 <ul>
@@ -582,7 +583,7 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 
 <a name="8.7.4"></a>
 ### 8.7.4 Test Frameworks
-1. Dovtail
+1. Dovetail
 2. Yardstick
 3. Bottlenecks
 
