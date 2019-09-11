@@ -354,7 +354,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 </ul>
 </li>
 </ul>
-<p>**VNF performance profiles**, for which NFVI validations will support and be verified against, are defined as basic, network intensive, and compute intensive. Details for each of these profiles can be found in [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3).
+**VNF performance profiles**, for which NFVI validations will support and be verified against, are defined as basic, network intensive, and compute intensive. Details for each of these profiles can be found in [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3).
 
 <p align="center"><img src="../figures/ch8_B-N-C_VNF_Categories.jpg" alt="BNC VNF Categories" title="BNC VNF Categories" width="100%"/></p>
 <p align="center"><b>Figure:</b> Figure: Basic(B), Network(N), Compute(C) VNF Categories</p>
