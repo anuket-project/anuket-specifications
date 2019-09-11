@@ -73,10 +73,10 @@ FuncTest test suites will be run as part of the validations, and as a pre-requis
 <li>/var/lib/nova</li>
 </ul>
 </li>
-<li>OS: Huge Pages are enabled. (not available for all flavors)
+<li>OS: Validate Huge Pages are enabled, with proper config settings for the target infrastructure. (not available for all flavors)
 <ul>
-<li>Hugepage size is 1GB</li>
-<li>Number of Huge page is 320 &lt;Per server&gt;</li>
+<li>Validate existence of, and setting for, Hugepage size (e.g. 1GB)</li>
+<li>Validate the Number of Huge page (e.g. 320 &lt;Per server&gt;)</li>
 </ul>
 </li>
 <li>OS: Validate proxy/iptables implementation
@@ -145,7 +145,7 @@ FuncTest test suites will be run as part of the validations, and as a pre-requis
 <li>OAM Network</li>
 </ul>
 </li>
-<li>Create routers across 2 tenant network (optional)</li>
+<li>Create routers across 2 tenant network (optional - i.e. create virtual router on two different tenants and validate the network connectivity between the two)</li>
 <li>Validate anti-affinity and affinity rules</li>
 <li>Validate user ability to force VM landing on given hypervisor host</li>
 <li>Create VMs using flavor defined above and Attached ceph storage
