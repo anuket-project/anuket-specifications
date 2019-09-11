@@ -538,7 +538,7 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
    - Users stories / Adherence to CNTT Model principles and guidelines
    - Chosen Reference Architecture Matches a Reference Architecture from the product catalog
 2. **Environment**
-    -  Lab / Flavor, component s/w rev levels specified, with confirmation of compatibility with external systems
+    -  Lab assets/resources and respective s/w rev levels are specified, with confirmation of compatibility across external systems
     -  Tenant needs identified
     -  All connectivity, network, image, VMs, delivered with successful pairwise tests
     -  Lab instrumented for proper monitoring
