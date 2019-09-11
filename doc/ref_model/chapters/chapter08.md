@@ -334,7 +334,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/CVC Test Suites</li>
 <li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <em>(Refer to CNTT Chapter 7 Security for additional test/verification details)</em></li>
 </ul>
-<p>Validations are performed against an <strong>Infrastruture Profile Catalog</strong>, <strong>VNF Category</strong>, and&nbsp;<strong>targeted VNF class,</strong> or family for baseline measurements.</p>
+<p>Validations are performed against an **Infrastructure Profile Catalog**, **VNF performance profile**, and **targeted VNF class** or family for baseline measurements.</p>
 <p>The <strong>Infrastucture Profile Catalog</strong>&nbsp;contains the following attributes:&nbsp;</p>
 <ul>
 <li>Profile is a collection of (limited) options offered by the infrastructure to the VNF
@@ -354,12 +354,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 </ul>
 </li>
 </ul>
-<p><strong>VNF Categories</strong>, for which NFVI validations will support and be verified against include:</p>
-<ul>
-<li><strong>Basic</strong>: VNFs with VNF-Cs that perform basic compute operations.</li>
-<li><strong>Network intensive</strong>: VNFs with VNF-Cs that perform network intensive operations with high throuput and low latency requirements.</li>
-<li><strong>Compute Intensive</strong>: VNFs with VNF-Cs that perform compute intensive operations with low latency requirements.</li>
-</ul>
+<p>**VNF performance profiles**, for which NFVI validations will support and be verified against, are defined as basic, network intensive, and compute intensive. Details for each of these profiles can be found in [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3). 
 
 <p align="center"><img src="../figures/ch8_B-N-C_VNF_Categories.jpg" alt="BNC VNF Categories" title="BNC VNF Categories" width="100%"/></p>
 <p align="center"><b>Figure:</b> Figure: Basic(B), Network(N), Compute(C) VNF Categories</p>
