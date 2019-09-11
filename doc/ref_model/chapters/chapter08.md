@@ -502,7 +502,7 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 
 ![NFVI+VNF Instance Type](../figures/ch8_NFVI_VNF_Instance_Type.jpg)
 **Figure:** NFVI+VNF Instance Type
-- Compute flavors can be found in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
+- Standard compute flavors to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
 - Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
 <a name="8.7.2"></a>
