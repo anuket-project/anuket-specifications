@@ -502,18 +502,7 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 
 ![NFVI+VNF Instance Type](../figures/ch8_NFVI_VNF_Instance_Type.jpg)
 **Figure:** NFVI+VNF Instance Type
-- Agreed upon declaration of Compute flavors:
-
-Type | vCPU | RAM | Local Disk | Network Interface
----- | ---- | --- | ---------- | -----------------
-tiny | 1 | 512 MB | 1 GB | 1 Gbps
-small | 1 | 2 GB | 40 GB | 1 Gbps
-medium | 2 | 4 GB | 40 GB | 1 Gbps
-large | 4 | 8 GB | 80 GB | 1 Gbps
-large2 | 4 | 16 GB | 80 GB | 1 Gbps
-xlarge | 8 | 16 GB | 160 GB | 1 Gbps
-xlarge2 | 8 | 32 GB | 160 GB | 1 Gbps
-xlarge3 | 8 | 64 GB | 160 GB | 1 Gbps
+- Compute flavors can be found in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
 - Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
 <a name="8.7.2"></a>
