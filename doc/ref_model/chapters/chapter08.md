@@ -514,13 +514,7 @@ large2 | 4 | 16 GB | 80 GB | 1 Gbps
 xlarge | 8 | 16 GB | 160 GB | 1 Gbps
 xlarge2 | 8 | 32 GB | 160 GB | 1 Gbps
 xlarge3 | 8 | 64 GB | 160 GB | 1 Gbps
-- Performance profiles defined as follows:
-
-NFVI | Compute Workload | Network Workload | Network Performance Requirements | Metrics
----- | ---------------- | ---------------- | -------------------------------- | -------
-Basic | Low | Low | Offered load medium<br>Latency threshold high | Capacity with 5% loss ratio<br>99th percentile of one-way Latency
-Network Intensive | Medium | High | Offered load line-rate<br>Latentcy threshold low | Throughput (zero packet loss)<br>99th percentile of one-way Latency
-Compute Intensive | High | Medium | Offered load high<br>Latency threshold low | Capacity with 1% loss ratio<br>99th percentile of one-way Latency
+- Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
 <a name="8.7.2"></a>
 ### 8.7.2 System Under Test (SUT) Pre-reqs
