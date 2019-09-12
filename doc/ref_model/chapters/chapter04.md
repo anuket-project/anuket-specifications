@@ -202,17 +202,21 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 <a name="4.1.4.5"></a>
 #### 4.1.4.5 Internal security capabilities
 
-<a name="Table4-9"></a>
+Security content has been relocated to the Security chapter (RM Chapter 7).
 
+Table 4-9: Reserved
+
+<!-- 
+<a name="Table4-9"></a>
+//
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------|--------|------------------------------------------------------------------|
 | i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation | Yes/No | Are VNF-C memories isolated from each other by hardware support? |
 | i.nfvi.sec.cap.002 | VNF-C -> Host | Yes/No | Can VNF-C access host memory? |
 | i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory? |
 | i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest? |
-
-
 <p align="center"><b>Table 4-9:</b> Internal security capabilities of NFVI.</p>
+-->
 
 <a name="4.1.5"></a>
 ### 4.1.5 Internal Infrastructure metrics
@@ -302,27 +306,27 @@ Table 4-13 shows monitoring capabiltities
 
 <p align="center"><b>Table 4-13:</b> VIM capabilities related to resources monitoring .</p>
 
+Table 4-14: Reserved
+
+<!--
+Security content relocated to RM Chapter 7 - MXS 10/9/2019
 Table 4-14 shows security capabilities
-
 <a name="Table4-14"></a>
-
 | Ref | VIM capability | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
 | e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM|
-
 <p align="center"><b>Table 4-14:</b> VIM capabilities related to security .</p>
+-->
 
-<!-- Rabi A -->
-_**Editor Note:** This Section is still to be worked on._
 
 <a name="4.1.7"></a>
 ### 4.1.7 VIM metrics.
 
 <a name="4.1.7.1"></a>
 #### 4.1.7.1 Resources management metrics 
-**Table 4-12** shows resource management metrics of VIM as aligned with ETSI GS NFV TST-012 [3].
+**Table 4-15** shows resource management metrics of VIM as aligned with ETSI GS NFV TST-012 [3].
 
-<a name="Table4-12"></a>
+<a name="Table4-15"></a>
 
 | Ref | VIM metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
@@ -339,7 +343,7 @@ _**Editor Note:** This Section is still to be worked on._
 | vim.rmt.met.011 | Time to update external virtual   network | Max ms |  |
 | vim.rmt.met.014 | Time to create external storage ready for use by VNF | Max ms |  |
 
-<p align="center"><b>Table 4-12:</b> Resource management metrics of VIM.</p>
+<p align="center"><b>Table 4-15:</b> Resource management metrics of VIM.</p>
 
 <a name="4.1"></a>
 ## 4.2 Catalogue
@@ -366,7 +370,7 @@ Memory MB	|Instance memory in megabytes.
 Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. 
 Is Public	|Boolean value, whether flavor is available to all users or private to the project it was created in. Defaults to True.
 
-<p align="center"><b>Table 4-13:</b> Flavour Geometry Specification.</p>
+<p align="center"><b>Table 4-16:</b> Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Predefined Compute flavours
@@ -383,7 +387,7 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 .2xlarge*	|8	|16 GB	|160 GB	|1 Gbps
 .4xlarge*	|16	|32 GB	|320 GB	|1 Gbps
 
-<p align="center"><b>Table 4-14:</b> Predefined Compute flavours.</p>
+<p align="center"><b>Table 4-17:</b> Predefined Compute flavours.</p>
 
 > _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt micro server's designs for their VNFs_
 
@@ -405,7 +409,7 @@ n25, n50, n75, n100, n125, n150	|25, 50, 75, 100, 125, 150 Gbps
 n50, n100, n150, n200, n250, n300	|50, 100, 150, 200, 250, 300 Gbps
 n100, n200, n300, n400, n500, n600	|100, 200, 300, 400, 500, 600 Gbps
 
-<p align="center"><b>Table 4-15:</b> Virtual Network Interface Specification Examples.</p>
+<p align="center"><b>Table 4-18:</b> Virtual Network Interface Specification Examples.</p>
 
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
@@ -417,7 +421,7 @@ Multiple non-ephemeral storage volumes can be attached to virtual computes  for 
 .silver	|Up to 60K	|Up to 30K	|Up to 1200	|Up to 400
 .gold	|Up to 680K	|Up to 360K	|Up to 2650	|Up to 1400
 
-<p align="center"><b>Table 4-16:</b> Storage Performance Profiles.</p>
+<p align="center"><b>Table 4-19:</b> Storage Performance Profiles.</p>
 
 <a name="4.2.3.1"></a>
 #### 4.2.3.1 Available storage extensions
@@ -435,7 +439,7 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 | .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 
-<p align="center"><b>Table 4-17:</b> Storage extensions for compute flavours.</p>
+<p align="center"><b>Table 4-20:</b> Storage extensions for compute flavours.</p>
 
 <a name="4.2.4"></a>
 ### 4.2.4 Instance types
@@ -457,7 +461,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 | .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
 | .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
 
-<p align="center"><b>Table 4-18:</b> Acceleration extensions for N instance type.</p>
+<p align="center"><b>Table 4-21:</b> Acceleration extensions for N instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -473,7 +477,7 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
 | .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
 
-<p align="center"><b>Table 4-19:</b> Acceleration extensions for C instance type.</p>
+<p align="center"><b>Table 4-22:</b> Acceleration extensions for C instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -489,7 +493,7 @@ n25, n25D, n25T*, n25Q*, n25P*, n25H*	| N | Y | Y
 n50, n50D, n50T*, n50Q*, n50P*, n50H*	| N | Y | Y
 n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 
-<p align="center"><b>Table 4-20:</b> Virtual NIC interfaces options</p>
+<p align="center"><b>Table 4-23:</b> Virtual NIC interfaces options</p>
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
@@ -525,7 +529,7 @@ n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 | `i.nfvi.sec.cap.003` | Yes | Yes | Yes | |
 | `i.nfvi.sec.cap.004` | Yes | Yes | Yes | |
 
-<p align="center"><b>Table 4-21:</b> Mapping of NFVI capabilities to instance types.</p>
+<p align="center"><b>Table 4-24:</b> Mapping of NFVI capabilities to instance types.</p>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Instance metrics mapping.
