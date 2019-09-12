@@ -151,18 +151,20 @@ Insuring that the security standards and best practices are incorporated into th
 <a name="7.4"></a>
 ## 7.4 Security Scope
 
-<a name="7.1.1"></a>
+<a name="7.4.1"></a>
 ## 7.4.1 In-scope and Out-of-Scope definition
 
-    *(Declare what should be in scope and what should be out of scope for
-    CNTT security)*
+The scope of the security controls requirements maps to the scope of the Reference Model architecture.
 
--   Define and note separation of security postures of platform and
-    workload, but that workload is dependent’ upon platform security.
+The Reference Model scope is shown below (as outlined in chapter 1 of the reference model): :
 
-    *(Provide some background commentary, from a security perspective,
-    around the inter-relationship between platform and workload security
-    where it is assumed that ‘workload’ leverages ‘platform’ security)*
+<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="Scope" title="ETSI Scope" width="100%"/></p>
+<p align="center"><b>Figure 7-2:</b> ETSI Mapping</p>
+
+
+This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
+
+There will be a different set of security requirements for each NFVi reference architecture. In this case, the first reference architecture is OpenStack.
 
 <a name="7.4.2"></a>
 ## 7.4.2 Define Platform security requirements
