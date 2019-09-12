@@ -160,7 +160,6 @@ The Reference Model scope is shown below (as outlined in chapter 1 of the refere
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="Scope" title="ETSI Scope" width="100%"/></p>
 <p align="center"><b>Figure 7-2:</b> ETSI Mapping</p>
-![Image of ETSI NFV Mapping]
 
 **Figure 7-1**: Mapping to ETSI NFV Architecture
 
