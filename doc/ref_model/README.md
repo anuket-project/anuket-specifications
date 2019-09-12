@@ -30,7 +30,7 @@
 | Chapter 06 | Lots of SME Feedback |
 | Chapter 07 | Still Developing Content |
 | Chapter 08 | Still Developing Content |
-| Chapter 09 | Initial Framework Only |
+| Chapter 09 | Still Developing Content |
 | Chapter 10 | Initial Framework Only |
 
 ## Table of Contents

@@ -1,8 +1,8 @@
 [<< Back](../)
 
-# Openstack based Reference Implementation
+# OPNFV CNTT-RI
 
-This is Openstack based Reference Implementation
+This is the GitHub repository for CNTT-RI project within OPNFV.
 
 ## Release Information
 **Release: _0.0_**
