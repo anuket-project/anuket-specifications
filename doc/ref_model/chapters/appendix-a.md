@@ -1,5 +1,6 @@
 [<< Back](../../ref_model)
 # Appendix A - VNF Design Guidelines
+<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [10.1 Heading 1.](#10.1)
