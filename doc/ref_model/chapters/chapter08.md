@@ -61,21 +61,22 @@ For the purposes of this chapter, NFVI+VNF testing will be performed for **Verif
 **Objective**<br>
 Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
-**Scope**
+**Scope and Test Methodology**
 - Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
 - Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
 - Candidate VNF Validation (Validation & Performance) will ensure complete interopablity of VNF behavior on the NFVI leverage VVP/CVC test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).  
 
-**Repeat** the approach of Manifest compliance, Empirical Golden VNF, and Interopability Testing with new Distributions. 
+**Different Distributions** 
+The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
 
 **Not in Scope**
 
 - Functional testing/validation of the VNF is not in scope.
-- ONAP is not used for MANO, or mangement and orechestration of VNFs.
+- ONAP is not used in the process flow for NFVI verifications, or validations.
 - Upgrades to VNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
-**Document Purpose**<br>
-This document includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
+**Chapter Purpose**<br>
+This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
 
 <p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 8-1:</b> CNTT relation to LFN OVP</p>
@@ -129,6 +130,8 @@ These core principles will guide NFV verification deliverables:
 <a name="8.3"></a>
 ## 8.3 Terms and Resources
 
+**Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
+
 NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  
 
 - **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
@@ -150,12 +153,15 @@ Additional Terms utilized throughout the document:
 <table>
   <tr><th>Term</th><th>Description</th></tr>
   <tr><td>AZ</td><td>AZ	Availability Zone</td></tr>
+	<tr><td>Compatibility</td><td>the capacity for two systems to work together without having to be altered to do so, e.g. same data formats</td></tr>
+	<tr><td>Compliance</td><td>a state of being in accordance with established guidelines or specifications</td></tr>
   <tr><td>CPE</td><td>Customer Premises Equipment</td></tr>
   <tr><td>CVC</td><td>Compliance and Verification Committee</td></tr>
   <tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
   <tr><td>ETSI NFV-TST</td><td>ETSI - Network Functions Virtualisation - Test</td></tr>
   <tr><td>ETSI NFV-IFA</td><td>ETSI - Network Functions Virtualisation - Infrastructure</td></tr>
   <tr><td>GB</td><td>Gigabit</td></tr>
+  <tr><td>Hareness (Test)</td><td>automated test framework (test engine, scrip repository) configured to test a program unit by running it under varying conditions and monitoring its behavior and outputs</td></tr>
   <tr><td>HW</td><td>Hardware</td></tr>
 <tr><td>IMS</td>	<td>IP Multimedia Subsystem</td></tr>
 <tr><td>I/O</td>	<td>Input/Output</td></tr>
@@ -166,6 +172,7 @@ Additional Terms utilized throughout the document:
 <tr><td>OPNFV</td>	<td>Open Platform for NFV</td></tr>
 	<tr><td>OVP</td><td>OPNFV Verification Program (OVP)</td></tr>
 <tr><td>RAM</td><td>Random Access Memory</td></tr>
+<tr><td>Scenario (Test)</td>	<td>any functionality that can be tested; synonymous with use case, or collection of test steps to complete a user workflow</td></tr>
 <tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
 <tr><td>SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
 <tr><td>SLA</td>	<td>Service Level Agreement</td></tr>
@@ -175,11 +182,16 @@ Additional Terms utilized throughout the document:
 <tr><td>vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
 <tr><td>vRouter</td>	<td>Virtual Router</td></tr>
 <tr><td>vSwitch</td>	<td>Virtual Switch</td></tr>
+<tr><td>Validation</td>	<td>esting performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior</td></tr>
+	<tr><td>Verification</td>	<td>conformance to design requirement specifications; Reviews and Walk-Throughs to ensure a product delivered meets implementation specifications</td></tr>
 <tr><td>VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
 <tr><td>VNF</td>	<td>Virtualised Network Function</td></tr>
 <tr><td>VNF-C</td>	<td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
 <tr><td>VNFM</td>	<td>VNF Manager</td></tr>
 </table>
+
+- **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.  
 
 <a name="8.3.2"></a>
 ### 8.3.2 Resources
