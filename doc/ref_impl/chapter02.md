@@ -8,6 +8,7 @@
 * [2.2 Lab Requirement](#2.2)
 * [2.3 Lab Topology](#2.3)  
 * [2.4 Lab HW Spec](#2.4)  
+* [2.5 Lab Use Guidelines](#2.5)  
 
 
 <a name="2.1"></a>
@@ -51,3 +52,34 @@
 
 <a name="2.4"></a>
 ## 2.4 Lab HW Spec
+
+
+<a name="2.5"></a>
+## 2.5 Lab Use Guidelines
+
+**SETUP & Maintenance** 
+
+OPNFV will facilitate the need for lab procurment, as required, for projects which come into their front door for verification and validation.  
+
+Individual companies that donated a lab would be responsible for setup and maintenance of a community lab. Labs, once setup, will be shared and posted in a wiki https://wiki.opnfv.org/display/pharos/Community+Labs.
+
+The wiki will contain information such as:
+- Lab Location
+- Number of physical and virtual PODS which are available
+- Contact person
+- Policy info for use
+- Access instructions, include VPN
+- Lab Topolgy
+- Resrouce Availability
+
+**N+1 Labs Use Strategy**
+
+The "lab" concept could mean one physical POD or multiple PODs in a community lab.  In practice, a person requesting a lab can apply for multiple PODs, where POD 1 can be "Lab 1", POD 2+3 can be "Lab 2", etc, all subject to the availability of PODs. Each "Lab" can be used for different purpose such as "Reference Implementation (RI) Lab 1" (POD 1), "RI Lab 2" (POD 2+3), etc.
+
+The requestor for labs needs to know only the number of PODs that are needed.  Then, apply for use of PODs according to the requirement.
+
+Talk to the Lab Owners if special hardware or topology requirements are needed, such as special NIC or hardware accelerators or if 8 servers in one POD is a different default setting from the lab settings.  The Lab Owner will check to see if lab config changes can be made to accommodate the test need.
+
+**Lab Quantities and Duration of Lab Use**
+
+There is no limit to the number of labs which can be secured, or the duration.  The limiting factor is resource available.  Lab Owners reserve the right to reclaim underutilized labs and reassign to other teams where there is demand for labs.  It is important that the Lab User have a schedule and plan in place to utilize the labs to retain the lab for testing.
