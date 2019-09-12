@@ -151,7 +151,7 @@ Insuring that the security standards and best practices are incorporated into th
 <a name="7.4"></a>
 ## 7.4 Security Scope
 
-<a name="7.1.1"></a>
+<a name="7.4.1"></a>
 ## 7.4.1 In-scope and Out-of-Scope definition
 
 The scope of the security controls requirements maps to the scope of the Reference Model architecture.
@@ -161,7 +161,6 @@ The Reference Model scope is shown below (as outlined in chapter 1 of the refere
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="Scope" title="ETSI Scope" width="100%"/></p>
 <p align="center"><b>Figure 7-2:</b> ETSI Mapping</p>
 
-**Figure 7-1**: Mapping to ETSI NFV Architecture
 
 This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
 
