@@ -37,7 +37,7 @@ Traceability to Reference Model.
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. |
 | `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. |
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient OpenStack components that are required for the continued availability of running workloads. |
-| `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient OpenStack service components that are are not subject to `req.gen.rsl.01`. |
+| `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to `req.gen.rsl.01`. |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for OpenStack components. |
 
 
@@ -134,7 +134,7 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
-| `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisoning and management of multiple NFVI sites. |
+| `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites. |
 | `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
 | `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
 | `req.lcm.adp.04` | Automated deployment | The Architecture **should** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
