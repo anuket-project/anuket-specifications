@@ -18,7 +18,23 @@ This Chapter 8 Annex contains standard test cases to be executed furing NFVI val
 <a name="8.2"></a>
 ## 8.2 Generic Test Cases
 
-TBD
+The following test projects, and their respective test cases, will be executed with each RI implementation.  More targeted, or specific test cases, are listed below which may be a subset of test cases run within these test suites listed.
+
+
+**FuncTest**
+
+FuncTest test suites will be run as part of the validations, and as a pre-requisite with approximately 2000+ functional test cases leveraging Tempest plugins.  At a minimum, FuncTest executions will include reuse of functest-smoke (functional tests), functional-benchmarking (rally_full and rally_jobs).  
+
+
+- Additional Resources for FuncTest detailse:
+	- Project Description: https://wiki.opnfv.org/display/functest/Opnfv+Functional+Testing#OpnfvFunctionalTesting-Testcases
+	- User Guide: https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/index.html
+	- Overview of test suites: https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/test_overview.html.   
+
+
+- Example, or Reference, Functest Status Reporting Artifacts:
+	- Rally Verification (Status): http://artifacts.opnfv.org/functest/functest-opnfv-functest-smoke-iruya-tempest_full-run-259/results/tempest_full/tempest-report.html
+	- Rally Tasks (Status): http://artifacts.opnfv.org/functest/functest-opnfv-functest-benchmarking-iruya-rally_full-run-169/results/rally_full/rally_full.html
 
 <a name="8.3"></a>
 ## 8.3 Architecture Specific Test Cases (if needed)
@@ -30,14 +46,14 @@ TBD
 <ul>
 <li><span style="text-decoration: underline;"><strong>Baremetal - validations</strong></span>
 <ul>
-<li> We will validate Control and compute nodes hardware, bios, Firmware (Pxe boot), interfaces configuration like SRIOV and also validating Grub, network bonding and mount points.
+<li>**SUMMARY:** We will validate Control and compute nodes hardware, bios, Firmware (Pxe boot), interfaces configuration like SRIOV and also validating Grub, network bonding and mount points.
 <li>Interface &ndash; Validate nic status for all member in bond1 group</li>
 <li>Interface &ndash; MTU speed for bond1 interface</li>
 <li>Grub &ndash; SR-IOV is enabled</li>
 <li>Numa &ndash; Each server should configure with two numa boundaries
 <ul>
-<li>ODD CPU/Core number is assigned to numa 1</li>
-<li>EVEN CPU/Core number is assigned to numa 0</li>
+<li>ODD numbered CPU/Cores are assigned to numa 1</li>
+<li>EVEN numbered CPU/Cores are assigned to numa 0</li>
 </ul>
 </li>
 <li>Numa &ndash; Ensure Total memory available is equally distributed between two numa boundaries</li>
@@ -57,10 +73,10 @@ TBD
 <li>/var/lib/nova</li>
 </ul>
 </li>
-<li>OS: Huge Pages are enabled.
+<li>OS: Validate Huge Pages are enabled, with proper config settings for the target infrastructure. (not available for all flavors)
 <ul>
-<li>Hugepage size is 1GB</li>
-<li>Number of Huge page is 320 &lt;Per server&gt;</li>
+<li>Validate existence of, and setting for, Hugepage size (e.g. 1GB)</li>
+<li>Validate the Number of Huge page (e.g. 320 &lt;Per server&gt;)</li>
 </ul>
 </li>
 <li>OS: Validate proxy/iptables implementation
@@ -93,7 +109,7 @@ TBD
 <ul>
 <li><span style="text-decoration: underline;"><strong>VNF Interoperability - validations</strong></span>
 <ul>
-<li> After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc.
+<li>**SUMMARY:** After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc.
 <li>Create Tenant</li>
 <li>Create users</li>
 <li>Assign role to user</li>
@@ -106,13 +122,14 @@ TBD
 <li>xxx-ns-ha03 &ndash; metadata tp=true</li>
 <li>xxx-kvm-az01</li>
 <li>xxx-kvm-az02</li>
+<li>Assign Host aggregate based on meta data provided</li>
 <li>Validate host assignment for each aggregate are per design</li>
 <li>All server in ODD number RACK should be part of xxx-kvm-az01</li>
 <li>All server in EVEN number RACK should be part of xxx-kvm-az02</li>
 <li>Number of server in Host Agg in xxx-kvm-az01 should match xxx-kvm-az02</li>
 </ul>
 </li>
-<li>Create minimum 5 flavor with following spec
+<li>Create minimum 5 flavor with following spec (can be independently validated)
 <ul>
 <li>cpu pining, Enable Huge Pages, cp=true</li>
 <li>cpu pining, Enable Huge Pages, tp=true</li>
@@ -123,19 +140,19 @@ TBD
 </li>
 <li>Create 3 Network and assigned appropriate subnet
 <ul>
-<li>Provider Network &ndash; SRIOV - VLAN</li>
+<li>Provider Network &ndash; SRIOV - VLAN (where applicable, allowing a device, such as a network adapter, to separate access to its resources among various PCIe hardware functions)</li>
 <li>L3/Tenant Network</li>
 <li>OAM Network</li>
 </ul>
 </li>
-<li>Create routers across 2 tenant network (optional)</li>
+<li>Create routers across 2 tenant network (optional - i.e. create virtual router on two different tenants and validate the network connectivity between the two)</li>
 <li>Validate anti-affinity and affinity rules</li>
 <li>Validate user ability to force VM landing on given hypervisor host</li>
 <li>Create VMs using flavor defined above and Attached ceph storage
 <ul>
 <li>Validate VM is able to extract meta data</li>
 <li>Validate VM connectivity between SR-IOV Network</li>
-<li>Validate SRIOV Port mapping to OS/VF</li>
+<li>Validate SRIOV Port mapping to OS/VF (where applicable)</li>
 <li>Validate VM connectivity between L3/Tenant network</li>
 <li>Validate VM connectivity between L3/Network traffic passing through router.</li>
 <li>Validate user-data script gets execute as part of POST VM creation in your stack</li>
@@ -152,21 +169,21 @@ TBD
 <ul>
 <li><span style="text-decoration: underline;"><strong>Compute Component - validations</strong></span>
 <ul>
-<li>Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity. Lag time between Shutdown and Startup should be no more than 10 minute
+<li>**SUMMARY:** Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity. Lag time between Shutdown and Startup should be no more than 10 minute
 <ul>
 <li>Restart libvirt pod</li>
 <li>Restart nova-compute pod</li>
 <li>Restart openvswitch-db pod</li>
 <li>Restart openvswitch-vswitchd pod</li>
 <li>Restart neutron-ovs-agent pod</li>
-<li>Restart neutron-sriov-agent pod<span style="text-decoration: underline;"><strong><br /></strong></span></li>
+<li>Restart neutron-sriov-agent pod<span style="text-decoration: underline;">(where applicable)<strong><br /></strong></span></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><span style="text-decoration: underline;"><strong>Control Plane Component- validations</strong></span>
 <ul>
-<li> We are validating RabbitMQ, Ceph, Mariadb and Openstack components like nova, glance, heat, keystone API and resillency test.
+<li>**SUMMARY:** We are validating RabbitMQ, Ceph, Mariadb and Openstack components like nova, glance, heat, keystone API and resillency test.
 <li>Validate RabbitMQ resiliency by shutting down 1 or more pods. Make nova/openstack API call to see system result <br />(expected results is BAU)"</li>
 <li>Validate nova-api resilency by shutting down 1 or more pods. Document API call results. (expected results is BAU)</li>
 <li>Run similar resiliency test for each of listed services and expected result is BAU &ndash; No impact to VNF
@@ -205,12 +222,11 @@ TBD
 </ul>
 </li>
 <ul>
-<li style="list-style-type: none;"></li>
 <li><span style="text-decoration: underline;"><strong>Security - see Ch 7 for complete list</strong></span>
 <ul>
-<li> Validating user RBAC Roles and User group policies.
+<li>Validation above is performed using both RBAC Roles and User group policies, both of Admin and User Roles.
 </ul>
-<li>Validate User Role to ensure it allow user to perform all designated task and prohibits user performing any unassigned task.</li>
+<li>**SUMMARY:** Validate User Role to ensure it allow user to perform all designated task and prohibits user performing any unassigned task.</li>
 <li>Validate Security Policy/Rules are enforced</li>
 </ul>
 </li>
