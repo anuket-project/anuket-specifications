@@ -593,9 +593,32 @@ NFVI operators should ensure that the platform including the components (hypervi
 Using trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components such as platform firmware, BIOS, bootloader, OS kernel, and other system components can be securely stored and verified. NFVI Operators should ensure that the platform measurement can only be taken when the system is reset or rebooted; there needs to be no ability to write the new platform measurement in TPM during system run-time. The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server
 
 <a name="7.10.5"></a>
-### 7.10.4 VIM 
+### 7.10.5 NFVI & VIM 
 
 Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
+<!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019
+#### 4.1.4.5 Internal security capabilities
+--> 
+<a name="Table5-1"></a>
+
+| Ref | NFVI capability | Unit | Definition/Notes |
+|--------------------|-------------------------------------|--------|------------------------------------------------------------------|
+| i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation | Yes/No | Are VNF-C memories isolated from each other by hardware support |
+| i.nfvi.sec.cap.002 | VNF-C -> Host | Yes/No | Can VNF-C access host memory |
+| i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory |
+| i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest |
+
+<p align="center"><b>Table 5-1:</b> Internal security capabilities of NFVI.</p>
+
+Table 5-2 shows security capabilities
+
+<a name="Table5-2"></a>
+
+| Ref | VIM capability | Unit | Definition/Notes |
+|--------------------|------------------|---------|-------------------------------------------|
+| e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM|
+
+<p align="center"><b>Table 5-2:</b> VIM capabilities related to security .</p>
 
 ## 7.11 Certification requirements (Just ideas)
 
