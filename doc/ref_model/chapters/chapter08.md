@@ -372,51 +372,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <p align="center"><img src="../figures/ch8_B-N-C_VNF_Categories.jpg" alt="BNC VNF Categories" title="BNC VNF Categories" width="100%"/></p>
 <p align="center"><b>Figure:</b> Figure: Basic(B), Network(N), Compute(C) VNF Categories</p>
 
-<p><strong>Targeted VNF Classes/Families </strong>for baseline measurements can include, but not limited to:</p>
-<ul>
-<li><strong>Management and Control Plane</strong>: EPC (MME, P/S-GW, S/G-GSN), IMS, SBC, PCRF, SDM, mVAS, DRA</li>
-<li><strong>User Plane and network</strong>: RAN, BBU, MRF, BNG, CDN, PE, Switch, Router, RR, CPE</li>
-<li><strong>Security &amp; testing</strong>: FW, LB, DNS, AES, DPI, NAT/CGN, SecGW, Probe</li>
-<li><strong>Data Core:</strong>
-<ul>
-<li>Packet Core: GGSN, SGW, PGW, SGSN, MME, CSGN.</li>
-<li>Subscriber Management: HSS.</li>
-<li>Policy &amp; Traffic Management: PCRF, TMF</li>
-<li>Optimizer: MSP.</li>
-</ul>
-</li>
-<li><strong>Voice Core:</strong>
-<ul>
-<li>IP Multimedia: CSCF, ENUM, TAS, SBC.</li>
-<li>Database: CSDB</li>
-<li>Circuit Switched: MSC-S(MSS), MGW.</li>
-<li>Signalling: DRA, SGW, STP.</li>
-<li>Messaging</li>
-<li>Security</li>
-</ul>
-</li>
-<li><strong>IP Core:</strong>
-<ul>
-<li>SEC-GW</li>
-</ul>
-</li>
-<li><strong>SDO:</strong>
-<ul>
-<li>Convergent Charging: CCS</li>
-<li>Smart Pricing: SPO.</li>
-<li>NGIN, Gi-LAN</li>
-<li>SecureNet: Clean Pipe.</li>
-<li>Network Security: SS7FW, CMS, SIG.</li>
-<li>Others: Web RTC GW, Service integration GW</li>
-</ul>
-</li>
-<li><strong>Fixed Access:</strong>
-<ul>
-<li>BNG, CPE</li>
-</ul>
-</li>
-</ul>
-<p>&nbsp;</p>
+<p><strong>Targeted VNF Classes/Families </strong>for baseline measurements are described in [chapter 2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.2).
 	
 <a name="8.6.3"></a>
 ### 8.6.3 Best Practices.
