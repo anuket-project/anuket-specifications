@@ -372,7 +372,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <p align="center"><img src="../figures/ch8_B-N-C_VNF_Categories.jpg" alt="BNC VNF Categories" title="BNC VNF Categories" width="100%"/></p>
 <p align="center"><b>Figure:</b> Figure: Basic(B), Network(N), Compute(C) VNF Categories</p>
 
-<p><strong>Targeted VNF Classes/Families </strong>for baseline measurements are described in [chapter 2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.2).
+<p><strong>Targeted VNF Classes/Families </strong>for baseline measurements are described in <a href=https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.2>chapter 2.2</a>.
 	
 <a name="8.6.3"></a>
 ### 8.6.3 Best Practices.
