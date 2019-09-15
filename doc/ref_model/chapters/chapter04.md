@@ -142,7 +142,7 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 <!--
 /* MXS 13/7/2019 - Mapping table 3-14 is being commented out. If someone can provide supporting details,
-   we can put it back. Details should include assumptions (e.g., is it SRIOV, OvS or what?), 
+   we can put it back. Details should include assumptions (e.g., is it SRIOV, OvS or what?),
    citable references, an explanation of what we're mapping and why (#s represent min? max? anticipated?, etc.),
    and a detailed basis for the values, including an explanation for how come the numbers are identical for both
    cores and ram. Thanks, -Mark */
@@ -206,7 +206,7 @@ Security content has been relocated to the Security chapter (RM Chapter 7).
 
 Table 4-9: Reserved
 
-<!-- 
+<!--
 <a name="Table4-9"></a>
 //
 | Ref | NFVI capability | Unit | Definition/Notes |
@@ -220,16 +220,16 @@ Table 4-9: Reserved
 
 <a name="4.1.5"></a>
 ### 4.1.5 Internal Infrastructure metrics
-<!-- 
+<!--
 [COMMENT - Xavier Grall, Orange: section "3.4.2.3 Internal SLA metrics" is removed since it is redundant with network performance metrics]
 //
 [COMMENT - Xavier Grall, Orange: section "3.4.2.4 Internal scalability metrics" is removed since it is redundant with resource management metrics]
---> 
+-->
 <a name="4.1.5.1"></a>
-#### 4.1.5.1 Internal performance metrics 
-<!-- 
+#### 4.1.5.1 Internal performance metrics
+<!--
 [COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
---> 
+-->
 
 The following table shows performance metrics per NFVI node.
 
@@ -323,7 +323,7 @@ Table 4-14 shows security capabilities
 ### 4.1.7 VIM metrics.
 
 <a name="4.1.7.1"></a>
-#### 4.1.7.1 Resources management metrics 
+#### 4.1.7.1 Resources management metrics
 **Table 4-15** shows resource management metrics of VIM as aligned with ETSI GS NFV TST-012 [3].
 
 <a name="Table4-15"></a>
@@ -358,16 +358,16 @@ The idea of the infrastructure instances catalogue is to have a predefined set o
 <a name="4.2.1"></a>
 ### 4.2.1 Compute flavours
 
-Flavours represent the compute, memory, storage capacity, and management network resource templates that are used to create the VMs on the compute hosts. Each VM instance is given a flavour (resource template), which determines the instance's core, memory and storage characteristics. 
+Flavours represent the compute, memory, storage capacity, and management network resource templates that are used to create the VMs on the compute hosts. Each VM instance is given a flavour (resource template), which determines the instance's core, memory and storage characteristics.
 
 Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute flavour geometry consists of the following elements:
 
-Element |Description 
+Element |Description
 --------|----------
 Name	|A descriptive name
 Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the instance.
-Memory MB	|Instance memory in megabytes. 
-Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. 
+Memory MB	|Instance memory in megabytes.
+Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
 Is Public	|Boolean value, whether flavor is available to all users or private to the project it was created in. Defaults to True.
 
 <p align="center"><b>Table 4-16:</b> Flavour Geometry Specification.</p>
@@ -396,7 +396,7 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” option.
 
-Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base flavour. 
+Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base flavour.
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
@@ -453,7 +453,7 @@ This instance type is intended to be used for both IT workloads as well as NFV w
 This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
-N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized. 
+N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
 >_Interface types are aligned with ETSI NFV IFA 002 [4]._
 
 | .conf | Interface type | Description |

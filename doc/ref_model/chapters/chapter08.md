@@ -8,7 +8,7 @@
 * [8.2 Principles and Guidelines.](#8.2)
   * [8.2.1 Overarching Objectives and Goals.](#8.2.1)
   * [8.2.2 Verification Methodologies.](#8.2.2)
-  * [8.2.3 Governance.](#8.2.3)  
+  * [8.2.3 Governance.](#8.2.3)
 * [8.3 Terms and Resources.](#8.3)
   * [8.3.1 Terms.](#8.3.1)
   * [8.3.2 Resources.](#8.3.2)
@@ -64,9 +64,9 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 **Scope**
 - Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
 - Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
-- Candidate VNF Validation (Validation & Performance) will ensure complete interopablity of VNF behavior on the NFVI leverage VVP/CVC test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).  
+- Candidate VNF Validation (Validation & Performance) will ensure complete interopablity of VNF behavior on the NFVI leverage VVP/CVC test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
-**Repeat** the approach of Manifest compliance, Empirical Golden VNF, and Interopability Testing with new Distributions. 
+**Repeat** the approach of Manifest compliance, Empirical Golden VNF, and Interopability Testing with new Distributions.
 
 **Not in Scope**
 
@@ -85,7 +85,7 @@ This document includes process flow, logistics, and requirements which must be s
 
 The objectives of the verification program are to deliver a validated implementation of reference architecture which satisifes infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
 
-These core principles will guide NFV verification deliverables: 
+These core principles will guide NFV verification deliverables:
 
 <a name="8.2.1"></a>
 ### 8.2.1 Overarching Objectives and Goals
@@ -129,11 +129,11 @@ These core principles will guide NFV verification deliverables:
 <a name="8.3"></a>
 ## 8.3 Terms and Resources
 
-NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  
+NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.
 
-- **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
-- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.  
-- **Certfications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, development (of which there are no code developed/delivered), and logistics for communications.  
+- **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.
+- **Certfications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, development (of which there are no code developed/delivered), and logistics for communications.
 
 Source information for additional reading:
 - [https://www.softwaretestingmaterial.com/verification-and-validation/](https://www.softwaretestingmaterial.com/verification-and-validation/ "What is Verification And Validation In Software Testing")
@@ -185,12 +185,12 @@ Additional Terms utilized throughout the document:
 ### 8.3.2 Resources
 1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
 2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
-3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html 
+3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
 4. **Dovetail**
-	1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements 
-	2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf 
-	3. TCs: 
-		1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review 
+	1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements
+	2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf
+	3. TCs:
+		1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review
 		2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
 		3. Per OVP release in the release notes:
 			1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
@@ -214,7 +214,7 @@ OPNNV Iterations with the CNTT (mgmt and communication of)
 
 <a name="8.4.3"></a>
 ### 8.4.3 Onboarding RA and Supplier VNF
-Onboarding (for OVP certification) 
+Onboarding (for OVP certification)
 
 <a name="8.4.4"></a>
 ### 8.4.4 SLAs and Issue Resolution
@@ -409,7 +409,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 </li>
 </ul>
 <p>&nbsp;</p>
-	
+
 <a name="8.6.3"></a>
 ### 8.6.3 Best Practices.
 <ul>
@@ -496,7 +496,7 @@ NFVI+VNF testing will be considered **Testable** if the follow qualifiers are pr
 In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.  Refer to [https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08.md#8.7.3](https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08.md#8.7.3 "Entrance & Exit Criteria") for detailed information.
 
 **Dependencies**
-NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects. 
+NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects.
 
 - NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
 
@@ -583,7 +583,7 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 <li>Standard NTP servers are working and verified (using tenant's CIDR source IP)</li>
 <li>NFVI/VNF is tested at steady state and high load</li>
 <li>Continuously monitored to ensure SLAs are met and used as feedback to load/perf tests<u></u></li>
-<li>Passing Interoperability Validations: a) <b>Compatibility Checks</b> (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); b) 
+<li>Passing Interoperability Validations: a) <b>Compatibility Checks</b> (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); b)
 	<b>Integration Checks</b> (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
 </ol>
 </li>

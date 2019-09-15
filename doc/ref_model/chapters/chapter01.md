@@ -20,9 +20,9 @@
 <a name="1.1"></a>
 ## 1.1 Overview & Problem Statement
 The main concept of NFV (Network Function Virtualization) is the ability to use general purpose compute hardware and platforms to run multiple VNFs (Virtualised Network Functions) and hence achieving the desired CapEx and OpEx savings. However, one of big challenges NFV is facing with VNF vendors is that vendors, while building or designing their virtualized services (whether it's VoLTE, EPC, or enterprise services like SD-WAN (Software Defined Wide Area Network)), must bring their own set of infrastructure requirements and custom design parameters. This attitude from vendors triggered the creation of various vendor/function specific silos which are incompatible with each other and have different operating models. In addition, this makes the onboarding and certification processes of VNFs (coming from different vendors) hard to automate and standardise.
- 
+
 Therefore, for a true cloud type deployment, a model, which relies on engagement with specific vendors and unique infrastructure, needs to be reversed in a way that there is a lot more consistency on the infrastructure. Vendors need to bring their software to run on pre-defined environment with common capabilities. That common infrastructure, whether it is optimized for IT (Information Technology) workloads, NFV workloads, or even for AI (Artificial Intelligence) workloads, needs to be fully abstracted to VNFs so that it can be a standard offer.
- 
+
 Additionally, to bring the most value to telco operators as well as vendors, agreeing on a standard set of infrastructure profiles for vendors to use for their VNFs is needed within the industry.
 
 The benefits of this approach are:
@@ -48,7 +48,7 @@ Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF C
 <a name="1.2"></a>
 ## 1.2	Terminology
 
-This section defines the main terms used in this document; these deinitions are primarily based on the ETSI GS NFV 003 V1.4.1 (2018-08) but have been cleaned to avoid deployment technology dependencies when necessary.
+This section defines the main terms used in this document; these definitions are primarily based on the ETSI GS NFV 003 V1.4.1 (2018-08) but have been cleaned to avoid deployment technology dependencies when necessary.
 
 <a name="1.2.1"></a>
 ### 1.2.1 Software layers terminology
@@ -59,23 +59,23 @@ This section defines the main terms used in this document; these deinitions are 
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
 - **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
-- **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
+- **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native.
   >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
-- **Virtual Application (VA)**: is more of a general term for software which can be loaded into a Virtual Machine. 
+- **Virtual Application (VA)**: is more of a general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
 - **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
   - **Data Plane Workloads**: are related to packet handling in an end-to-end communication between applications. These tasks are expected to be very intensive in I/O operations and memory read/write operations.
   - **Control Plane Workloads**: are the task related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. This category includes session management, routing or authentication.
   - **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
-- **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. 
-  >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour. 
+- **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server.
+  >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour.
 - **Instance type**: specifies a set of virtualized hardware resources and capabilities used for the creation of a virtual compute on which a workload runs on; includes capability specifications such as CPU, storage, and memory.
 - **Instance**: is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server. NOTE: can be used to specify VM Instance or Container Instance.
-- **Compute flavour**: defines the compute, memory, and storage capacity, and the capabilities of the physical compute server that the virtual compute resource can run on. 
+- **Compute flavour**: defines the compute, memory, and storage capacity, and the capabilities of the physical compute server that the virtual compute resource can run on.
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
 - **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Container**s and **VM**s is that containers "share" the host system’s kernel with other containers.
-- **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which **VA** are deployed. 
+- **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which **VA** are deployed.
   >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVI. NFVI and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 - **Virtual resources**:
   -	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
@@ -126,7 +126,7 @@ This section specifies the principles of infrastructure abstraction and profilin
    - NFVI resources are consumed by VNFs through standard and open APIs.
    - NFVI resources are configured on behalf of VNFs through standard and open APIs.
    - NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
-1.	VNFs should be modular and utilise minimum resources. 
+1.	VNFs should be modular and utilise minimum resources.
 1. NFVI shall support pre-defined and parameterized T-Shirt sizes.
    - T-Shirt sizes will evolve with time.
 1.	NFVI provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
@@ -135,20 +135,20 @@ This section specifies the principles of infrastructure abstraction and profilin
     - **Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
       - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
       - Focus on the commonalities of the features over the perceived differences.  Seek an approach that allows small differences to be handled at either the low level design or implementation stage. For example, assume the use of existing common APIs over new ones.
- 
-    - **Create an additional Architecture only when incompatible elements are unavoidable:** 
+
+    - **Create an additional Architecture only when incompatible elements are unavoidable:**
       - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to review and vote to approve by the CNTT technical Working Group, such that one Architecture would be KVM-based and the other would be ESXi-based.
-     
-        >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation. 
+
+        >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation.
 
 <a name="1.4"></a>
 ## 1.4	How this document works
-There are three level of documents needed to fulfil the CNTT vision. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**. 
+There are three level of documents needed to fulfil the CNTT vision. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
 
 <p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
 
-- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. 
+- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs.
 - **Reference Architecture**: High level NFVI system components and their interactions to deliver on the Reference Model goals. It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.
 - **Reference Implementation**: Focuses on the design and implementation of a NFVI Reference Architecture. Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
 
@@ -166,7 +166,7 @@ This document focuses on the **Reference Model**. **Figure 1-6** below highlight
 This document specifies:
 - NFVI Infrastructure abstraction
   - **NFVI metrics & capabilities**: A set of carrier grade metrics and capabilities of NFVI which VNFs require to perform telco grade network functions.
-  - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to completely abstract the infrastructure from VNFs. With a limited and well defined profiles and well understood characteristics, VNF compatibility and performance predictability can be achieved. 
+  - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to completely abstract the infrastructure from VNFs. With a limited and well defined profiles and well understood characteristics, VNF compatibility and performance predictability can be achieved.
 
     >_The current focus is for VMs but the intention is to expand the definition to include Container profiles too._
 
@@ -181,7 +181,7 @@ This document specifies:
   - **Test framework**: Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles.
 
 <a name="1.6"></a>
-## 1.6	Relations to other industry projects 
+## 1.6	Relations to other industry projects
 
 An industry project closely related to CNTT is ETSI's NFV. The CNTT Reference Model's scope has been aligned to the ETSI NFV Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002<!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-7** illustrates which functional blocks of the ETSI NFV Architecture are in scope for CNTT.
 
@@ -191,7 +191,7 @@ An industry project closely related to CNTT is ETSI's NFV. The CNTT Reference Mo
 Following the ETSI model, **Figure 1-7** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, is included in the CNTT scope. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in **Chapter 7 "API & Interfaces"**.
 
 <a name="1.7"></a>
-## 1.7	What this document is not covering 
+## 1.7	What this document is not covering
 >_**Comment**: This section is still under development._
 <!--Separate document w/labels/artifacts
 Not part of model but will be applicable to architecture -->
@@ -203,5 +203,3 @@ A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indi
 <a name="1.9"></a>
 ## 1.9	Roadmap
 >_**Comment**: Please Contact the CNTT team for access to the Roadmap_
-
-

@@ -6,9 +6,9 @@
 ## Table of Contents
 * [2.1 Introduction](#2.1)
 * [2.2 Lab Requirement](#2.2)
-* [2.3 Lab Topology](#2.3)  
-* [2.4 Lab HW Spec](#2.4)  
-* [2.5 Lab Use Guidelines](#2.5)  
+* [2.3 Lab Topology](#2.3)
+* [2.4 Lab HW Spec](#2.4)
+* [2.5 Lab Use Guidelines](#2.5)
 
 
 <a name="2.1"></a>
@@ -19,7 +19,7 @@
 ## 2.2 Lab Requirement
 
 - Controller Nodes:
-  - 3 x 
+  - 3 x
     - 2x dual-port 10Gbps NIC.
     - 2.2GHz 14C/28T.
     - 256GB RAM.
@@ -57,9 +57,9 @@
 <a name="2.5"></a>
 ## 2.5 Lab Use Guidelines
 
-**SETUP & Maintenance** 
+**SETUP & Maintenance**
 
-OPNFV will facilitate the need for lab procurment, as required, for projects which come into their front door for verification and validation.  
+OPNFV will facilitate the need for lab procurment, as required, for projects which come into their front door for verification and validation.
 
 Individual companies that donated a lab would be responsible for setup and maintenance of a community lab. Labs, once setup, will be shared and posted in a wiki https://wiki.opnfv.org/display/pharos/Community+Labs.
 

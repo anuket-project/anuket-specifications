@@ -23,13 +23,13 @@ The following test projects, and their respective test cases, will be executed w
 
 **FuncTest**
 
-FuncTest test suites will be run as part of the validations, and as a pre-requisite with approximately 2000+ functional test cases leveraging Tempest plugins.  At a minimum, FuncTest executions will include reuse of functest-smoke (functional tests), functional-benchmarking (rally_full and rally_jobs).  
+FuncTest test suites will be run as part of the validations, and as a pre-requisite with approximately 2000+ functional test cases leveraging Tempest plugins.  At a minimum, FuncTest executions will include reuse of functest-smoke (functional tests), functional-benchmarking (rally_full and rally_jobs).
 
 
 - Additional Resources for FuncTest detailse:
 	- Project Description: https://wiki.opnfv.org/display/functest/Opnfv+Functional+Testing#OpnfvFunctionalTesting-Testcases
 	- User Guide: https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/index.html
-	- Overview of test suites: https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/test_overview.html.   
+	- Overview of test suites: https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/test_overview.html.
 
 
 - Example, or Reference, Functest Status Reporting Artifacts:

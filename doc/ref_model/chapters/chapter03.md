@@ -1,7 +1,7 @@
 [<< Back](../../ref_model)
 # 3	Modelling
 <p align="right"><img src="../figures/bogo_lsf.png" alt="bogo" title="Bogo Meter" width="35%"/></p>
- 
+
 ## Table of Contents
 * [3.1 Model.](#3.1)
 * [3.2 Virtual Resources.](#3.2)
@@ -39,12 +39,12 @@ The abstraction model for the NFVI makes use of the following layers (only the v
 
 <p align="center"><img src="../figures/ch03_model_overview.png" alt="NFVI Model Overview" Title="NFVI Model Overview" width="65%"/></p>
 <p align="center"><b>Figure 3-1:</b> NFVI Model Overview.</p>
-  
+
 The functionalities of each layer are as follows:
 - **Physical Infrastructure Resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and the basic input output system (BIOS).
 - **NFVI Management Software:** This consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
 - **Virtual Infrastructure Resources:** These are all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
-- **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container. 
+- **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container.
 
 <a name="3.2"></a>
 ## 3.2	Virtual Resources
@@ -64,7 +64,7 @@ The virtualised infrastructure resources related to these categories are listed 
 <a name="3.2.1"></a>
 ### 3.2.1 Tenant
 
-A network function virtualisation infrastructure (NFVI) needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware. 
+A network function virtualisation infrastructure (NFVI) needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 
 _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
@@ -82,7 +82,7 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 <a name="3.2.2"></a>
 ### 3.2.2 Compute
-A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance. 
+A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance.
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
@@ -100,7 +100,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 
 <a name="3.2.3"></a>
 ### 3.2.3 Storage
-A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host. 
+A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host.
 
 _**Example**: an OpenStack cinder volume._
 
@@ -118,7 +118,7 @@ _**Comments**: we need to be more specific regarding acceleration and metadata._
 
 <a name="3.2.4"></a>
 ### 3.2.4 Network
-A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context. 
+A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context.
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
@@ -128,7 +128,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 | `subnet` | network address of the subnet |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 
-<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p> 
+<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
 
 <a name="3.3"></a>
 ## 3.3	Management Software
@@ -142,12 +142,12 @@ A network function virtualisation infrastructure provides the capability to mana
 
 <p align="center"><img src="../figures/ch03_model_management_software.png" alt="NFVI Management Software" Title="NFVI Management Software" width="65%"/></p>
 <p align="center"><b>Figure 3-3:</b> NFVI Management Software.</p>
-  
+
  The management software needs to support following functional aspects:
- 
+
  **API/UI**
- : an application programming interface / user interface providing access to the NFVI management functions 
- 
+ : an application programming interface / user interface providing access to the NFVI management functions
+
 **Catalogue**
 : manages the collection of available templates for virtual resource the NFVI can provide
 
@@ -179,7 +179,3 @@ The physical compute, storage and network resources serve as the foundation of t
 
 <p align="center"><img src="../figures/ch03_model_physical_resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> NFVI Physical Resources.</p>
-  
-
-
-

@@ -20,7 +20,7 @@
 
 <a name="3.2"></a>
 ## 3.2 NFVI Software Services Topology
-- Distribution options for control, storage, compute nodes etc. e.g.  >=3 control nodes 
+- Distribution options for control, storage, compute nodes etc. e.g.  >=3 control nodes
   – also include options for Edge – cater for multiple sized clouds / edge?
   - Baseline versions
 
@@ -32,7 +32,7 @@
 
 <a name="3.4"></a>
 ## 3.4 Cloud Controller Services
-- Highly available OpenStack Services 
+- Highly available OpenStack Services
 - Logging / Monitoring / Alerting (should this be a separate section on its own?)
 - Identity Management
 

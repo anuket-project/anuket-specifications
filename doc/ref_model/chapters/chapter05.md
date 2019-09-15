@@ -6,7 +6,7 @@
 * [5.1 NFVI SW profile description.](#5.1)
   * [5.1.1 Virtual Compute.](#5.1.1)
   * [5.1.2 Virtual Storage.](#5.1.2)
-  * [5.1.3 Virtual Networking.](#5.1.3) 
+  * [5.1.3 Virtual Networking.](#5.1.3)
   * [5.1.4 Security.](#5.1.4)
 * [5.2 NFVI SW profiles features and requirements.](#5.2)
   * [5.2.1 Virtual Compute.](#5.2.1)
@@ -70,10 +70,10 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.stg.cfg.001 | Storage Types | Yes/No   | Support of Storage types described in the catalogue |
-| nfvi.stg.cfg.002 | Storage Block | Yes/No  |  |  
-| nfvi.stg.cfg.003 | Storage Object | Yes/No |  |  
-| nfvi.stg.cfg.004 | Storage with replication |  Yes/No |  |  
-| nfvi.stg.cfg.005 | Storage with encryption | Yes/No |  |  
+| nfvi.stg.cfg.002 | Storage Block | Yes/No  |  |
+| nfvi.stg.cfg.003 | Storage Object | Yes/No |  |
+| nfvi.stg.cfg.004 | Storage with replication |  Yes/No |  |
+| nfvi.stg.cfg.005 | Storage with encryption | Yes/No |  |
 
 <p align="center"><b>Table 5-3:</b> Virtual Storage features.</p>
 
@@ -94,7 +94,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | nfvi.net.cfg.002 | Overlay protocol | Protocols | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. |
 | nfvi.net.cfg.003 | NAT |  Yes/No |  Support of Network Address Translation |
 | nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
-| nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |  
+| nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
 
 
@@ -150,11 +150,11 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.stg.cfg.001 | Catalogue storage Types | Yes/No | Y  | Y  | Y |  
-| nfvi.stg.cfg.002 | Storage Block | Yes/No | Y | Y |Y  | 
-| nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y | Y | Y | 
-| nfvi.stg.cfg.004 | Storage with replication | Yes/No | N | Y | Y | 
-| nfvi.stg.cfg.005 | Storage with encryption |Yes/No | Y | Y | Y | 
+| nfvi.stg.cfg.001 | Catalogue storage Types | Yes/No | Y  | Y  | Y |
+| nfvi.stg.cfg.002 | Storage Block | Yes/No | Y | Y |Y  |
+| nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y | Y | Y |
+| nfvi.stg.cfg.004 | Storage with replication | Yes/No | N | Y | Y |
+| nfvi.stg.cfg.005 | Storage with encryption |Yes/No | Y | Y | Y |
 
 <p align="center"><b>Table 5-9:</b> Virtual Storage features and configuration for the 3 types of SW profiles.</p>
 
@@ -162,8 +162,8 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.stg.acc.cfg.001 | Storage IOPS oriented | Yes/No | N | Y | Y |  
-| nfvi.stg.acc.cfg.002 | Storage capacity oriented |  Yes/No| N | N | Y |  
+| nfvi.stg.acc.cfg.001 | Storage IOPS oriented | Yes/No | N | Y | Y |
+| nfvi.stg.acc.cfg.002 | Storage capacity oriented |  Yes/No| N | N | Y |
 
 <p align="center"><b>Table 5-10:</b> Virtual Storage Acceleration features.</p>
 
@@ -202,10 +202,10 @@ This chapter defines a simplified host, host profile and related capabilities mo
 <p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles_v3.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 5-4:</b> NFVI hardware profiles and host associated capabilities.</p>
 
-The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be utilized in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources. 
+The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be utilized in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources.
 >Please note that in this chapter we shall not list all of the EPA-related configuration parameters.
 
-A software profile (see **Chapter 4** and **Chapter 5**) defines the characteristics of NFVI SW of which Virtual Machines (or Containers) will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may utilize different naming standards for their host profiles. 
+A software profile (see **Chapter 4** and **Chapter 5**) defines the characteristics of NFVI SW of which Virtual Machines (or Containers) will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may utilize different naming standards for their host profiles.
 
 The following naming convention is used in this document:
 
@@ -228,7 +228,7 @@ The host profile and capabilities include:
 1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
 1. **HT (Hyper Threading; technically, SMT: Simultaneous Multithreading)**: Enabled on all physical servers. Gets 2 hyper threads per physical core. Always ON. Configured in the host (BIOS).
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host (BIOS).
-1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV. 
+1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV.
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
 1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
 1. **Security features**: such as TRusted Platform Module (TPM).
@@ -238,7 +238,7 @@ The host profile and capabilities include:
 <!--1. **CPU Pinning**: vCPU is pinned to a physical core and dedicated to the requesting VM. Configured in VIM and Hypervisor.-->
 <!--1. **Huge Pages**: By default, CPUs allocate RAM in 4K chunks. Hugepages can be enabled to allocate in larger Chunks (such as 2MB, 1GB). This helps improve performance in some cases. Configured in the Operating System. -->
 
-The following model, **Figure 5-6**, depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled. 
+The following model, **Figure 5-6**, depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled.
 
 <p align="center"><img src="../figures/ch06_generic_model.PNG" alt="generic_model" title="Generic Model" width="100%"/></p>
 <p align="center"><b>Figure 5-6:</b> Generic model of a compute host for use in Host Profile configurations.</p>
@@ -266,7 +266,7 @@ The configurations specified in here will be utilized in specifying the actual h
 
 <!--
 | nfvi.hw.cpu.cfg.005 | CPU Pinning |  | N | Y | Y
-| nfvi.hw.cpu.cfg.006 | CPU Oversubscription Ratio* |  | n:1 | 1:1 | 1:1 
+| nfvi.hw.cpu.cfg.006 | CPU Oversubscription Ratio* |  | n:1 | 1:1 | 1:1
 | nfvi.hw.cpu.cfg.007 | Hugepages* |  | N | Y | Y
 -->
 
