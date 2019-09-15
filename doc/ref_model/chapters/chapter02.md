@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 2	VNF requirements & Analysis
+# 2 VNF requirements & Analysis
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -26,12 +26,12 @@ There are many ways that VNFs can be classified, for example:
     - User Plane (Data Plane)
     - Control Plane (Signalling Plane).
     - Management Plane.
--	**By Service offered:**
+- **By Service offered:**
     - Mobile broadband service: vEPC, vDPI, vGI-FW
     - Fixed broadband Service vBNG, vDPI
     - VoLTE / VoWifi : vIMS , UDC , HSBC , vEPDG.
     - VASs : vSMS-C ,  vCDN , vCGNAT
--	**By Technology:** (2G, 3G, 4G, 5G, Fixed...)
+- **By Technology:** (2G, 3G, 4G, 5G, Fixed...)
 
 Below is a list of Network Functions that covers almost _**95%**_ of the Telco workload (and the most likely to be virtualized/moved to cloud). They don't follow any specific categorisation.
 
@@ -202,7 +202,7 @@ Based on the above analysis, following NFVI profiles are proposed (Also shown in
 - **Compute Intensive**: VNFs with VNFCs that perform compute intensive operations.
 - **Storage Intensive**: VNFs with VNFCs that perform storage intensive operations with high IPOS requirements. (_**Note:** Storage Intensive Profile will not be defined in initial CNTT releases_)
 
->_**Note**: 	This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures._
+>_**Note**:  This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures._
 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>

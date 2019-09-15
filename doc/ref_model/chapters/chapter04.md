@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 4	Infrastructure Capabilities, Metrics, and Catalogue
+# 4 Infrastructure Capabilities, Metrics, and Catalogue
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 
@@ -46,7 +46,7 @@ Note: The figure above indicates the areas from where the objects are <i>visible
 ### 4.1.2 Exposed Infrastructure capabilities
 This section describes a set of explicit NFVI capabilities and metrics that define an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
 
-> _**Note**: 	It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
+> _**Note**:  It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
 <a name="4.1.2.1"></a>
 #### 4.1.2.1 Exposed resource capabilities
@@ -125,7 +125,7 @@ The following shows performance metrics per VNF-C, vNIC or vCPU.
 
 This section covers a list of implicit NFVI capabilities and metrics that define the interior of   NFVI. These capabilities and metrics determine how the NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will have a big impact on the overall performance and capabilities of a given NFVI solution.
 
->_**Note**: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
+>_**Note**:  It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
 <a name="4.1.4.1"></a>
 #### 4.1.4.1 Internal resource capabilities
@@ -364,11 +364,11 @@ Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute
 
 Element |Description
 --------|----------
-Name	|A descriptive name
+Name |A descriptive name
 Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the instance.
-Memory MB	|Instance memory in megabytes.
+Memory MB |Instance memory in megabytes.
 Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
-Is Public	|Boolean value, whether flavor is available to all users or private to the project it was created in. Defaults to True.
+Is Public |Boolean value, whether flavor is available to all users or private to the project it was created in. Defaults to True.
 
 <p align="center"><b>Table 4-16:</b> Flavour Geometry Specification.</p>
 
@@ -380,12 +380,12 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 .conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Management Interface
 -----|------------|----------|-----|-----
-.tiny	|1	|512 MB	|1 GB	|1 Gbps
-.small	|1	|2 GB	|20 GB 	|1 Gbps
-.medium	|2	|4 GB	|40 GB	|1 Gbps
-.large	|4	|8 GB	|80 GB	|1 Gbps
-.2xlarge*	|8	|16 GB	|160 GB	|1 Gbps
-.4xlarge*	|16	|32 GB	|320 GB	|1 Gbps
+.tiny |1 |512 MB |1 GB |1 Gbps
+.small |1 |2 GB |20 GB  |1 Gbps
+.medium |2 |4 GB |40 GB |1 Gbps
+.large |4 |8 GB |80 GB |1 Gbps
+.2xlarge* |8 |16 GB |160 GB |1 Gbps
+.4xlarge* |16 |32 GB |320 GB |1 Gbps
 
 <p align="center"><b>Table 4-17:</b> Predefined Compute flavours.</p>
 
@@ -401,13 +401,13 @@ Note, the number of virtual network interfaces, aka vNICs, associated with an in
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
 
-Virtual Network Interface Option	|Interface Bandwidth
+Virtual Network Interface Option |Interface Bandwidth
 ---|---
-n1, n2, n3, n4, n5, n6	|1, 2, 3, 4, 5, 6 Gbps
-n10, n20, n30, n40, n50, n60	|10, 20, 30, 40, 50, 60 Gbps
-n25, n50, n75, n100, n125, n150	|25, 50, 75, 100, 125, 150 Gbps
-n50, n100, n150, n200, n250, n300	|50, 100, 150, 200, 250, 300 Gbps
-n100, n200, n300, n400, n500, n600	|100, 200, 300, 400, 500, 600 Gbps
+n1, n2, n3, n4, n5, n6 |1, 2, 3, 4, 5, 6 Gbps
+n10, n20, n30, n40, n50, n60 |10, 20, 30, 40, 50, 60 Gbps
+n25, n50, n75, n100, n125, n150 |25, 50, 75, 100, 125, 150 Gbps
+n50, n100, n150, n200, n250, n300 |50, 100, 150, 200, 250, 300 Gbps
+n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 
 <p align="center"><b>Table 4-18:</b> Virtual Network Interface Specification Examples.</p>
 
@@ -415,11 +415,11 @@ n100, n200, n300, n400, n500, n600	|100, 200, 300, 400, 500, 600 Gbps
 ###  4.2.3 Storage Extensions
 Multiple non-ephemeral storage volumes can be attached to virtual computes  for persistent data storage. Each of those volumes can be configured with the required performance category.
 
-.conf	|Read IO/s	|Write IO/s	Read |Throughput (MB/s)	|Write Throughput (MB/s)
+.conf |Read IO/s |Write IO/s Read |Throughput (MB/s) |Write Throughput (MB/s)
 ---|---|---|---|---
-.bronze	|Up to 3K	|Up to 15K	|Up to 180	|Up to 120
-.silver	|Up to 60K	|Up to 30K	|Up to 1200	|Up to 400
-.gold	|Up to 680K	|Up to 360K	|Up to 2650	|Up to 1400
+.bronze |Up to 3K |Up to 15K |Up to 180 |Up to 120
+.silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400
+.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400
 
 <p align="center"><b>Table 4-19:</b> Storage Performance Profiles.</p>
 
@@ -487,10 +487,10 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 
 | Virtual interface option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
-n1, n10, n1T*, n1Q*, n1P*, n1H*	| Y | N |N
-n10, n10D, n10T*, n10Q*, n10P*, n10H*	| Y | Y | Y
-n25, n25D, n25T*, n25Q*, n25P*, n25H*	| N | Y | Y
-n50, n50D, n50T*, n50Q*, n50P*, n50H*	| N | Y | Y
+n1, n10, n1T*, n1Q*, n1P*, n1H* | Y | N |N
+n10, n10D, n10T*, n10Q*, n10P*, n10H* | Y | Y | Y
+n25, n25D, n25T*, n25Q*, n25P*, n25H* | N | Y | Y
+n50, n50D, n50T*, n50Q*, n50P*, n50H* | N | Y | Y
 n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 
 <p align="center"><b>Table 4-23:</b> Virtual NIC interfaces options</p>

@@ -39,14 +39,14 @@ The benefits of this approach are:
   - Mapping VNFs to flavours which are properly mapped to IaaS will bring better utilization, than current VNFs expressing variety of instance types as their needs on IaaS.
 
 <!--<a name="1.2"></a>
-## 1.2	Problem Statement
+## 1.2 Problem Statement
 Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF Challenges - Identified Long-Poles.
 
 >_**Comment**: This section is still under development._
 -->
 
 <a name="1.2"></a>
-## 1.2	Terminology
+## 1.2 Terminology
 
 This section defines the main terms used in this document; these definitions are primarily based on the ETSI GS NFV 003 V1.4.1 (2018-08) but have been cleaned to avoid deployment technology dependencies when necessary.
 
@@ -78,10 +78,10 @@ This section defines the main terms used in this document; these definitions are
 - **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which **VA** are deployed.
   >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVI. NFVI and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 - **Virtual resources**:
-  -	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
-  -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
-  -	**Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
--	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
+  - **Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
+  - **Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
+  - **Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
+- **Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
 - **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 - **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
 - **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied/mapped to **NFVI** SW deployment.
@@ -90,7 +90,7 @@ This section defines the main terms used in this document; these definitions are
 ### 1.2.2 Hardware layers terminology
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
--	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software, virtual machines and containers run on.
+- **Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software, virtual machines and containers run on.
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
   - **Host Profile**: is another term for a **NFVI hardware profile**.
 - **NFVI Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **NFVI** HW deployment.
@@ -98,21 +98,21 @@ This section defines the main terms used in this document; these definitions are
 <a name="1.2.3"></a>
 ### 1.2.3 Operational and administrative terminology
 
--	**Tenant**: represents an independently manageable pool of virtual compute, storage and network resources.
--	**Tenant (Internal) Networks**: virtual networks that are internal to tenant instances.
--	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
--	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
--	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **NFVI** resource can be part of none, one or more resource pools.
--	**Compute Node**: abstract definition of a server.
--	**Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
+- **Tenant**: represents an independently manageable pool of virtual compute, storage and network resources.
+- **Tenant (Internal) Networks**: virtual networks that are internal to tenant instances.
+- **External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
+- **Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
+- **Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **NFVI** resource can be part of none, one or more resource pools.
+- **Compute Node**: abstract definition of a server.
+- **Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
 
 <a name="1.2.4"></a>
 ### 1.2.4 Other terminology
--	**Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
--	**NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
+- **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
+- **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
 
 <a name="1.3"></a>
-## 1.3	Principles
+## 1.3 Principles
 
 This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
 
@@ -121,15 +121,15 @@ This section specifies the principles of infrastructure abstraction and profilin
    - Storage resources.
    - Networking resources. (Limited to connectivity services).
    - Acceleration resources.
-1.	NFVI exposed resources should be supplier independent.
+1. NFVI exposed resources should be supplier independent.
 1. All NFVI APIs must be standard and open to ensure components substitution.
    - NFVI resources are consumed by VNFs through standard and open APIs.
    - NFVI resources are configured on behalf of VNFs through standard and open APIs.
    - NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
-1.	VNFs should be modular and utilise minimum resources.
+1. VNFs should be modular and utilise minimum resources.
 1. NFVI shall support pre-defined and parameterized T-Shirt sizes.
    - T-Shirt sizes will evolve with time.
-1.	NFVI provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
+1. NFVI provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
 1. VNFs that are designed to take advantage of NFVI accelerations should still be able to run without these accelerations with potential performance impacts.
 1. An objective of CNTT is to have a single, overarching Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
     - **Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
@@ -142,7 +142,7 @@ This section specifies the principles of infrastructure abstraction and profilin
         >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation.
 
 <a name="1.4"></a>
-## 1.4	How this document works
+## 1.4 How this document works
 There are three level of documents needed to fulfil the CNTT vision. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
 
 <p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
@@ -156,7 +156,7 @@ There are three level of documents needed to fulfil the CNTT vision. They are, a
 <p align="center"><b>Figure 1-5:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="1.5"></a>
-## 1.5	Scope
+## 1.5 Scope
 
 This document focuses on the **Reference Model**. **Figure 1-6** below highlights its scope in more details.
 
@@ -181,7 +181,7 @@ This document specifies:
   - **Test framework**: Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles.
 
 <a name="1.6"></a>
-## 1.6	Relations to other industry projects
+## 1.6 Relations to other industry projects
 
 An industry project closely related to CNTT is ETSI's NFV. The CNTT Reference Model's scope has been aligned to the ETSI NFV Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002<!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-7** illustrates which functional blocks of the ETSI NFV Architecture are in scope for CNTT.
 
@@ -191,15 +191,15 @@ An industry project closely related to CNTT is ETSI's NFV. The CNTT Reference Mo
 Following the ETSI model, **Figure 1-7** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, is included in the CNTT scope. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in **Chapter 7 "API & Interfaces"**.
 
 <a name="1.7"></a>
-## 1.7	What this document is not covering
+## 1.7 What this document is not covering
 >_**Comment**: This section is still under development._
 <!--Separate document w/labels/artifacts
 Not part of model but will be applicable to architecture -->
 
 <a name="1.8"></a>
-## 1.8	Bogo-Meter
+## 1.8 Bogo-Meter
 A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indicates the completeness and maturity each chapter's content, at a glance.
 
 <a name="1.9"></a>
-## 1.9	Roadmap
+## 1.9 Roadmap
 >_**Comment**: Please Contact the CNTT team for access to the Roadmap_

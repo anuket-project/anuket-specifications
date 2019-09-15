@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 5	Feature set and Requirements from Infrastructure
+# 5 Feature set and Requirements from Infrastructure
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -41,9 +41,9 @@ Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI insta
 
 The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
 
-### 5.1.1	Virtual Compute
+### 5.1.1 Virtual Compute
 
-**Table 5-1** and **Table 5-2**	depict the features related to virtual compute.
+**Table 5-1** and **Table 5-2** depict the features related to virtual compute.
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
@@ -63,7 +63,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
 <a name="5.2"></a>
-### 5.1.2	Virtual Storage
+### 5.1.2 Virtual Storage
 
 **Table 5-3** and **Table 5-4** depict the features related to virtual storage.
 
@@ -110,7 +110,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 <p align="center"><b>Table 5-6:</b> Virtual Networking Acceleration features.</p>
 
 <a name="5.1.4"></a>
-### 5.1.4	Security
+### 5.1.4 Security
 _**Comment:** To be worked on._
 
 <a name="5.2"></a>

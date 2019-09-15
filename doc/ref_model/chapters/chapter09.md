@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 9	Infrastructure Operations and Lifecycle Management
+# 9 Infrastructure Operations and Lifecycle Management
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents

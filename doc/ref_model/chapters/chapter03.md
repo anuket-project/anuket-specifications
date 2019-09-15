@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 3	Modelling
+# 3 Modelling
 <p align="right"><img src="../figures/bogo_lsf.png" alt="bogo" title="Bogo Meter" width="35%"/></p>
 
 ## Table of Contents
@@ -22,18 +22,18 @@ The lack of a common understanding of which resources and corresponding capabili
 The abstraction model presented in this chapter specifies a common set of virtual infrastructure resources which NFVI will need to provide to be able to host most of the typical VNF/CNF workloads required by the operator community.
 
 Although a couple of explicit and implicit abstraction models (e.g. in the context of ETSI NFV) are already available, they fall short when addressing the following design principles:
--	**Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) an NFVI needs to provide for hosting Telco workloads
--	**Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
--	**Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
+- **Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) an NFVI needs to provide for hosting Telco workloads
+- **Separation of Concern:** the model should support a clear distinction between the responsibilities related to maintaining the network function virtualisation infrastructure and the responsibilities related to managing the various VNF workloads
+- **Simplicity:** the amount of different types of resources (including their attributes and relationships amongst one another) should be kept to a minimum to reduce the configuration spectrum which needs to be considered
 - **Declarative**: the model should allow for the description of the intended state and configuration of the NFVI resources for automated life cycle management
--	**Explicit:** the model needs to be rich enough to allow for a direct mapping towards the APIs of NFVIs for the instantiation of virtual infrastructure elements without requiring any additional parameters
--	**Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
--	**Aligned:** the model should clearly highlight the dependencies between the elements to allow for a well-defined and simplified synchronisation of independent automation tasks.
+- **Explicit:** the model needs to be rich enough to allow for a direct mapping towards the APIs of NFVIs for the instantiation of virtual infrastructure elements without requiring any additional parameters
+- **Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
+- **Aligned:** the model should clearly highlight the dependencies between the elements to allow for a well-defined and simplified synchronisation of independent automation tasks.
 
 _**To summarise:** the abstraction model presented in this document will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and workload related responsibilities._
 
 <a name="3.1"></a>
-## 3.1	Model
+## 3.1 Model
 
 The abstraction model for the NFVI makes use of the following layers (only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs)):
 
@@ -47,7 +47,7 @@ The functionalities of each layer are as follows:
 - **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container.
 
 <a name="3.2"></a>
-## 3.2	Virtual Resources
+## 3.2 Virtual Resources
 
 The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
 
@@ -131,7 +131,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
 
 <a name="3.3"></a>
-## 3.3	Management Software
+## 3.3 Management Software
 
 A network function virtualisation infrastructure provides the capability to manage virtual resources via application programming interfaces or graphical user interfaces. The management software allows to:
 
@@ -173,7 +173,7 @@ A network function virtualisation infrastructure provides the capability to mana
 : provides a mechanism to provision virtual resources with the help of physical network resources
 
 <a name="3.4"></a>
-## 3.4	Physical Resources
+## 3.4 Physical Resources
 
 The physical compute, storage and network resources serve as the foundation of the network function virtualisation infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
 

@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 6	External Interfaces
+# 6 External Interfaces
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -37,13 +37,13 @@ The NFVI APIs consist of set of APIs that are externally and internally visible.
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
 <p align="center"><b>Figure 6-1:</b> ETSI NFVI Interface points.</p>
 
-| Interface Point	| NFVI Exposure	| Interface Between |	Description|
+| Interface Point | NFVI Exposure | Interface Between | Description|
 |--------------|--------------|--------------|--------------|
-| Vi-Ha	| Internal	NFVI | Software Layer and Hardware Resources |	1.	Discover/collect resources and their configuration information <br>2.	Create execution environment (e.g., VM) for workloads (VNF) |
-| Vn-Nf| 	External	| NFVI and VM (VNF)	| Here VNF represents the execution environment. The interface is used to specify interactions between the VNF and abstract NFVI accelerators. The inetrafecs can be used to discover, configure and manage these acceleartors and for the VNF to register/deregister for receiving acceleartor events and data. |
-| NF-Vi	| External	| NFVI and VIM |	1.	Discover/collect physical/virtual resources and their configuration information<br>2.	Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3.	Physical/Virtual resources configuration changes<br>4.	Physical/Virtual resource configuration. |
-| Or-Vi	| External	| VNF Orchestrator and VIM	| See below |
-| Vi-Vnfm	| External	| VNF Manager and VIM	| See below |
+| Vi-Ha | Internal NFVI | Software Layer and Hardware Resources | 1. Discover/collect resources and their configuration information <br>2. Create execution environment (e.g., VM) for workloads (VNF) |
+| Vn-Nf|  External | NFVI and VM (VNF) | Here VNF represents the execution environment. The interface is used to specify interactions between the VNF and abstract NFVI accelerators. The inetrafecs can be used to discover, configure and manage these acceleartors and for the VNF to register/deregister for receiving acceleartor events and data. |
+| NF-Vi | External | NFVI and VIM | 1. Discover/collect physical/virtual resources and their configuration information<br>2. Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3. Physical/Virtual resources configuration changes<br>4. Physical/Virtual resource configuration. |
+| Or-Vi | External | VNF Orchestrator and VIM | See below |
+| Vi-Vnfm | External | VNF Manager and VIM | See below |
 
 <p align="center"><b>Table 6-1:</b> NFVI and VIM Interfaces with Other System Components.</p>
 

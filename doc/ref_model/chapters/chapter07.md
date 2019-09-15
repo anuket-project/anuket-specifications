@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 7	Security
+# 7 Security
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -83,39 +83,39 @@ Security vulnerabilities and attack vectors are everywhere.  The telecom industr
 With that in mind, the NFVI reference model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
 Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
 
- •	Center for Internet Security - https://www.cisecurity.org/
+ • Center for Internet Security - https://www.cisecurity.org/
 
- •	Cloud Security Alliance - https://cloudsecurityalliance.org/
+ • Cloud Security Alliance - https://cloudsecurityalliance.org/
 
- •	Open Web Application Security Project https://www.owasp.org
+ • Open Web Application Security Project https://www.owasp.org
 
- •	The National Institute of Standards and Technology (NIST) (US Only)
+ • The National Institute of Standards and Technology (NIST) (US Only)
 
- •	FedRAMP Certification https://www.fedramp.gov/ (US Only)
+ • FedRAMP Certification https://www.fedramp.gov/ (US Only)
 
- •	ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
+ • ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
 
-•	ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
+• ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
 
-    o	ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
+    o ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
 
-    o	ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity.
+    o ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity.
 
-    o	ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. Incident management
+    o ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. Incident management
 
-    o	ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
+    o ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
 
 A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP – Open Web Application Security Project.  These include the following core principles:
 
-•	Confidentiality – Only allow access to data for which the user is permitted
+• Confidentiality – Only allow access to data for which the user is permitted
 
-•	Integrity – Ensure data is not tampered with or altered by unauthorized users
+• Integrity – Ensure data is not tampered with or altered by unauthorized users
 
-•	Availability – ensure systems and data are available to authorized users when they need it
+• Availability – ensure systems and data are available to authorized users when they need it
 
 Additional NFVI security principles that need to be incorporated:
 
-•	Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
+• Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
 
 <a name="7.3.1"></a>
 ## 7.3.1 Potential attack vectors.
@@ -126,25 +126,25 @@ Previously attacks designed to place and migrate workload outside the legal boun
 
 It is not enough to just secure all potential points of entry and hope for the best, any NFVI architecture must be able to be tested and validated that it is in fact protected from attack as much as possible. The ability to test the infrastructure for vulnerabilities on a continuous basis is critical for maintaining the highest level of security possible.  Testing needs to be done both from the inside and outside of the systems and networks.  Below is a small sample of some of the testing methodologies and frameworks available.
 
-•	OWASP testing guide
+• OWASP testing guide
 
-•	PCI Penetration testing guide
+• PCI Penetration testing guide
 
-•	Penetration Testing Execution Standard
+• Penetration Testing Execution Standard
 
-•	NIST 800-115
+• NIST 800-115
 
-    o	VULCAN: Vulnerability Assessment Framework for Cloud Computing (NIST)
+    o VULCAN: Vulnerability Assessment Framework for Cloud Computing (NIST)
 
-•	Penetration Testing Framework
+• Penetration Testing Framework
 
-•	Information Systems Security Assessment Framework (ISSAF)
+• Information Systems Security Assessment Framework (ISSAF)
 
-•	Open Source Security Testing Methodology Manual (“OSSTMM”)
+• Open Source Security Testing Methodology Manual (“OSSTMM”)
 
-•	FedRAMP Penetration Test Guidance (US Only)
+• FedRAMP Penetration Test Guidance (US Only)
 
-•	CREST Penetration Testing Guide
+• CREST Penetration Testing Guide
 
 Insuring that the security standards and best practices are incorporated into the NFVI model and architectures must be a shared responsibility, among the Telecommunications operators interested in building and maintaining the infrastructures in support of their services, the VNF vendors developing the network services that will be consumed by the operators, and the NFVI vendors creating the infrastructures for their Telecommunications customers.  All of the parties need to incorporate security and testing components, and maintain operational processes and procedures to address any security threats or incidents in an appropriate manner.  Each of the stakeholders need to contribute their part to create effective security for NFVI.
 
@@ -507,15 +507,15 @@ There will be a different set of security requirements for each NFVi reference a
 
 The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective.   This includes but is not limited to securing the following elements:
 
-•	Maintaining standard security operational management methods and processes
+• Maintaining standard security operational management methods and processes
 
-•	Monitoring and reporting functions
+• Monitoring and reporting functions
 
-•	Processes to address regulatory compliance failure
+• Processes to address regulatory compliance failure
 
-•	Support for appropriate incident response and reporting
+• Support for appropriate incident response and reporting
 
-•	Methods to support appropriate remote attestation certification of the validity of the security components, architectures and methodologies used
+• Methods to support appropriate remote attestation certification of the validity of the security components, architectures and methodologies used
 
 <a name="7.8.1"></a>
 ### 7.8.1 Remote Attestation/openCIT
@@ -535,15 +535,15 @@ It is easy to tamper with VNF images. It requires only a few seconds to insert s
 
 The VNF vendors need to incorporate security elements to support the highest level of security of the networks they support.  This includes but is not limited to securing the following elements:
 
-•	Operating system or container
+• Operating system or container
 
-•	Application
+• Application
 
-•	Network interfaces
+• Network interfaces
 
-•	Management and controller systems used to support the VNFs directly, examples include a SIEM system or a SD WAN policy manager
+• Management and controller systems used to support the VNFs directly, examples include a SIEM system or a SD WAN policy manager
 
-•	Regulatory compliance failure as it relates to the application itself only
+• Regulatory compliance failure as it relates to the application itself only
 
 Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
 
@@ -552,19 +552,19 @@ Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vect
 
 The NFVI vendors need to incorporate security elements to support the highest level of security of the infrastructure they support.  This includes but is not limited to securing the following elements:
 
-•	Hypervisor
+• Hypervisor
 
-•	VM/container management system
+• VM/container management system
 
-•	APIs
+• APIs
 
-•	Network interfaces
+• Network interfaces
 
-•	Networking security zoning
+• Networking security zoning
 
-•	Platform patching mechanisms
+• Platform patching mechanisms
 
-•	Regulatory compliance Failure
+• Regulatory compliance Failure
 
 <a name="7.10.1"></a>
 ### 7.10.1 Networking Security Zoning
@@ -578,11 +578,11 @@ Recommended practice to set network security policies following the principle of
 
 Virtual volume disks associated with VNFs may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the VNF volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event a VNF crashes or is intentionally destroyed to prevent it from unauthorized access.
 
-•	Composition analysis: New vulnerabilities are discovered in common open source libraries every week. As such, mechanisms to validate components of the VNF application stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
+• Composition analysis: New vulnerabilities are discovered in common open source libraries every week. As such, mechanisms to validate components of the VNF application stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
 
-•	Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
+• Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
 
-•	The use of Image scanners such as OpenSCAP to determine security vulnerabilities
+• The use of Image scanners such as OpenSCAP to determine security vulnerabilities
 
 <a name="7.10.3"></a>
 ### 7.10.3 Platform Patching

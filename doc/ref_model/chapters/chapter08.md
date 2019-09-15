@@ -149,7 +149,7 @@ Additional Terms utilized throughout the document:
 
 <table>
   <tr><th>Term</th><th>Description</th></tr>
-  <tr><td>AZ</td><td>AZ	Availability Zone</td></tr>
+  <tr><td>AZ</td><td>AZ Availability Zone</td></tr>
   <tr><td>CPE</td><td>Customer Premises Equipment</td></tr>
   <tr><td>CVC</td><td>Compliance and Verification Committee</td></tr>
   <tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
@@ -157,28 +157,28 @@ Additional Terms utilized throughout the document:
   <tr><td>ETSI NFV-IFA</td><td>ETSI - Network Functions Virtualisation - Infrastructure</td></tr>
   <tr><td>GB</td><td>Gigabit</td></tr>
   <tr><td>HW</td><td>Hardware</td></tr>
-<tr><td>IMS</td>	<td>IP Multimedia Subsystem</td></tr>
-<tr><td>I/O</td>	<td>Input/Output</td></tr>
-<tr><td>MB</td>	<td>Megabit</td></tr>
-<tr><td>NFV</td>	<td>Network Function Virtualization</td></tr>
-<tr><td>NFVI</td>	<td>NFV Infrastructure</td></tr>
-<tr><td>NUMA</td>	<td>Non-Unified Memory Access</td></tr>
-<tr><td>OPNFV</td>	<td>Open Platform for NFV</td></tr>
-	<tr><td>OVP</td><td>OPNFV Verification Program (OVP)</td></tr>
+<tr><td>IMS</td> <td>IP Multimedia Subsystem</td></tr>
+<tr><td>I/O</td> <td>Input/Output</td></tr>
+<tr><td>MB</td> <td>Megabit</td></tr>
+<tr><td>NFV</td> <td>Network Function Virtualization</td></tr>
+<tr><td>NFVI</td> <td>NFV Infrastructure</td></tr>
+<tr><td>NUMA</td> <td>Non-Unified Memory Access</td></tr>
+<tr><td>OPNFV</td> <td>Open Platform for NFV</td></tr>
+ <tr><td>OVP</td><td>OPNFV Verification Program (OVP)</td></tr>
 <tr><td>RAM</td><td>Random Access Memory</td></tr>
-<tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
-<tr><td>SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
-<tr><td>SLA</td>	<td>Service Level Agreement</td></tr>
-<tr><td>SUT</td>	<td>System Under Test</td></tr>
-<tr><td>SW</td>	<td>Software</td></tr>
-<tr><td>vCPU</td>	<td>Virtual CPU (Central Processing Unit)</td></tr>
-<tr><td>vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
-<tr><td>vRouter</td>	<td>Virtual Router</td></tr>
-<tr><td>vSwitch</td>	<td>Virtual Switch</td></tr>
-<tr><td>VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
-<tr><td>VNF</td>	<td>Virtualised Network Function</td></tr>
-<tr><td>VNF-C</td>	<td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
-<tr><td>VNFM</td>	<td>VNF Manager</td></tr>
+<tr><td>SDN</td> <td>Software Defined Networking</td></tr>
+<tr><td>SD-WAN</td> <td>Software Defined Wide Area Network</td></tr>
+<tr><td>SLA</td> <td>Service Level Agreement</td></tr>
+<tr><td>SUT</td> <td>System Under Test</td></tr>
+<tr><td>SW</td> <td>Software</td></tr>
+<tr><td>vCPU</td> <td>Virtual CPU (Central Processing Unit)</td></tr>
+<tr><td>vNIC</td> <td>Virtual NIC (Network Interface Card)</td></tr>
+<tr><td>vRouter</td> <td>Virtual Router</td></tr>
+<tr><td>vSwitch</td> <td>Virtual Switch</td></tr>
+<tr><td>VIM</td> <td>Virtual Infrastructure Manager</td></tr>
+<tr><td>VNF</td> <td>Virtualised Network Function</td></tr>
+<tr><td>VNF-C</td> <td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
+<tr><td>VNFM</td> <td>VNF Manager</td></tr>
 </table>
 
 <a name="8.3.2"></a>
@@ -187,19 +187,19 @@ Additional Terms utilized throughout the document:
 2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
 3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
 4. **Dovetail**
-	1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements
-	2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf
-	3. TCs:
-		1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review
-		2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
-		3. Per OVP release in the release notes:
-			1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
-			2. https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/release/release-notes/index.html
+ 1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements
+ 2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf
+ 3. TCs:
+  1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review
+  2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
+  3. Per OVP release in the release notes:
+   1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
+   2. https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/release/release-notes/index.html
 5. **Overall documentation** is on docs.opnfv.org for the corresponding Fraser and Danube releases
-	1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
-	2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
+ 1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
+ 2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
 6. **OPNFV Verification Program** is an open source, community-led compliance and verification program to demonstrate the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV and ONAP components (https://www.lfnetworking.org/OVP/).
-	1. OVP Whitepaper - https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
+ 1. OVP Whitepaper - https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
 
 <a name="8.4"></a>
 ## 8.4 Lifecycle and Process Flow
@@ -584,7 +584,7 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 <li>NFVI/VNF is tested at steady state and high load</li>
 <li>Continuously monitored to ensure SLAs are met and used as feedback to load/perf tests<u></u></li>
 <li>Passing Interoperability Validations: a) <b>Compatibility Checks</b> (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); b)
-	<b>Integration Checks</b> (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
+ <b>Integration Checks</b> (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
 </ol>
 </li>
 <li><u><strong>END USER CONSIDERATIONS (TELCO PERSPECTIVE)</strong></u>
