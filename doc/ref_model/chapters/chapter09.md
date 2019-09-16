@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 9	Infrastructure Operations and Lifecycle Management
+# 9 Infrastructure Operations and Lifecycle Management
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -48,4 +48,4 @@ This is a placeholder for Infrastructure Maintenance requirements. e.g.
 
 - ability to drain hosts
 - ability to update control plane before host agents etc.
-- ability to 
+- ability to
