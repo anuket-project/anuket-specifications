@@ -65,9 +65,9 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 **Scope and Test Methodology**
 - Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
 - Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
-- Candidate VNF Validation (Validation & Performance) will ensure complete interoperablity of VNF behavior on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).  
+- Candidate VNF Validation (Validation & Performance) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
-**Different Distributions** 
+**Different Distributions**
 The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
 
 
@@ -137,7 +137,7 @@ These core principles will guide NFV verification deliverables:
 NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  
 
 - **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.
-- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour.
 - **Certfications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, development (of which there are no code developed/delivered), and logistics for communications.
 
 Source information for additional reading:
@@ -163,7 +163,7 @@ Additional Terms utilized throughout the document:
   <tr><td>ETSI NFV-TST</td><td>ETSI - Network Functions Virtualisation - Test</td></tr>
   <tr><td>ETSI NFV-IFA</td><td>ETSI - Network Functions Virtualisation - Infrastructure</td></tr>
   <tr><td>GB</td><td>Gigabit</td></tr>
-  <tr><td>Hareness (Test)</td><td>automated test framework (test engine, scrip repository) configured to test a program unit by running it under varying conditions and monitoring its behavior and outputs</td></tr>
+  <tr><td>Hareness (Test)</td><td>automated test framework (test engine, scrip repository) configured to test a program unit by running it under varying conditions and monitoring its behaviour and outputs</td></tr>
   <tr><td>HW</td><td>Hardware</td></tr>
 <tr><td>IMS</td> <td>IP Multimedia Subsystem</td></tr>
 <tr><td>I/O</td> <td>Input/Output</td></tr>
@@ -184,7 +184,7 @@ Additional Terms utilized throughout the document:
 <tr><td>vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
 <tr><td>vRouter</td>	<td>Virtual Router</td></tr>
 <tr><td>vSwitch</td>	<td>Virtual Switch</td></tr>
-<tr><td>Validation</td>	<td>esting performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior</td></tr>
+<tr><td>Validation</td>	<td>esting performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour</td></tr>
 	<tr><td>Verification</td>	<td>conformance to design requirement specifications; Reviews and Walk-Throughs to ensure a product delivered meets implementation specifications</td></tr>
 <tr><td>VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
 <tr><td>VNF</td>	<td>Virtualised Network Function</td></tr>
@@ -193,7 +193,7 @@ Additional Terms utilized throughout the document:
 </table>
 
 - **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
-- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.  
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour.  
 
 <a name="8.3.2"></a>
 ### 8.3.2 Resources
@@ -239,7 +239,7 @@ OPNNV Iterations with the CNTT (mgmt and communication of)
 
 **NOT MVP**
 
-Onboarding (for OVP certification) 
+Onboarding (for OVP certification)
 
 <a name="8.4.4"></a>
 ### 8.4.4 SLAs and Issue Resolution
@@ -392,7 +392,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <p align="center"><b>Figure:</b> Figure: Basic(B), Network(N), Compute(C) VNF Categories</p>
 
 <p><strong>Targeted VNF Classes/Families </strong>for baseline measurements are described in <a href=https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.2>chapter 2.2</a>.
-	
+
 <a name="8.6.3"></a>
 ### 8.6.3 Best Practices.
 <ul>
@@ -485,14 +485,14 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 
 ![NFVI+VNF Instance Type](../figures/ch8_NFVI_VNF_Instance_Type.jpg)
 **Figure:** NFVI+VNF Instance Type
-- Standard compute flavors to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
+- Standard compute flavours to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
 - Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
 <a name="8.7.2"></a>
 ### 8.7.2 System Under Test (SUT) Pre-reqs
 1. Test Specifications – per infra profile, specifications, and features/capabilities
 2. Naming conventions
-3. NFVi profiles and Flavors
+3. NFVi profiles and Flavours
 4. Test User Guide
 5. Scenarnio Descriptor File (SDF)
 
@@ -511,7 +511,7 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 3. **Planning & Delivery**
     - Kickoff / Acceptance Criteria reviews performed
     - Delivery commitments, timelines, and cadence accepted
-    - Confirm backward compat. across software/flavor rev levels
+    - Confirm backward compat. across software/flavour rev levels
 4. **Data / VNFs / Security**
     - Images, Heat Templates, Preload Sheets available
     - Images uploaded to tenant space
@@ -523,7 +523,7 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
     - NFVi validations to be performed supplied (e.g. echo, manifest)
     - Test to ensure users are added and have correct privileges for the tenant
     - Test to ensure quota against submitted request for the respective tenant
-    - Test to ensure custom flavors against submitted request for respective tenants
+    - Test to ensure custom flavours against submitted request for respective tenants
 
 <br><p><strong>OPNFV Exit Criteria includes <em>D</em></strong><strong><em>emonstration of Compliance, Verification, Performance, and Validaiton, of Reference Architecture Implementation, and&nbsp;</em></strong><strong><em>Delivery of the following:</em></strong></p>
 <ol>
@@ -782,7 +782,7 @@ The following five test categories have been identified as minimal testing requi
 <b><u>Test Categories</u></b>
 <ol>
 <li>Baremetal - validations</li> - We will validate Control and compute nodes hardware.
-<li>VNF Interoperability - validations</li> - After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc.
+<li>VNF Interoperability - validations</li> - After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavours etc.
 <li>Compute Component - validations</li> - Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity.
 <li>Control Plane Component- validations</li> - We are validating RabbitMQ, Ceph, Mariadb and Openstack components like nova, glance, heat, keystone API and resillency test.
 <li><p>Security - see <a title="Chapter 7 Security" href="https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter07.md" target="_blank" rel="noopener">Chapter 7</a> for complete list</p></li>
@@ -806,7 +806,7 @@ Example performance-based metrics include, but are not limited to: resource util
 Metrics/Measurements and respective certification(s).
 e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
 
-Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviors of the application which are defined by functional requirements.
+Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
 
 This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please visit [Chapter 4 of the Reference Model](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md "Chapter 4 - Infrastructure Capabilities, Metrics, and Catalog").**
 

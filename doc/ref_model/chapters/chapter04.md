@@ -109,7 +109,7 @@ The intent of those metrics is to be well known to VNFs.
 <a name="4.1.3.1"></a>
 #### 4.1.3.1 Exposed performance metrics
 
-The following table of exposed performance metrics shows performance metrics per VNFC, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host. 
+The following table of exposed performance metrics shows performance metrics per VNFC, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host.
 
 <a name="Table4-4"></a>
 
@@ -237,7 +237,7 @@ Table 4-9: Reserved
 [COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
 -->
 
-The following table of internal performance metrics shows performance metrics per NFVI node. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically internal performance metrics use a baseline (Phy2Phy) dataplane test setup in a single host. 
+The following table of internal performance metrics shows performance metrics per NFVI node. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically internal performance metrics use a baseline (Phy2Phy) dataplane test setup in a single host.
 
 <a name="Table4-10"></a>
 
@@ -374,7 +374,7 @@ Compute Flavour Name |A descriptive name
 Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the VM instance.
 Memory |Virtual compute instance memory in megabytes.
 Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
-Management Interface |Specifies the bandwidth of mangemetn interface/s
+Management Interface |Specifies the bandwidth of management interface/s
 
 <p align="center"><b>Table 4-16:</b> Compute Flavour Geometry Specification.</p>
 
