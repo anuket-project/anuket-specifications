@@ -29,7 +29,7 @@ NFVI Software layer is composed of 2 layers, **Figure 5-1**:
 <p align="center"><img src="../figures/ch05_nfvi_layers_sw_profile.PNG" alt="ref_profiles" title="Layers of Software Profile" width="50%"/></p>
 <p align="center"><b>Figure 5-1:</b> NFVI software layers.</p>
 
-For a host (compute node or physical server), the virtualization layer is an abstraction layer between hardware components (compute, storage and network resources) and virtual resources allocated to VNF-C, each VNF-C generally maps 1:1 against a single VM or a single container/pod. **Figure 5-2** represents the virtual resources (virtual compute, virtual network and virtual storage) allocated to VNF-C and managed by the VIM.
+For a host (compute node or physical server), the virtualisation layer is an abstraction layer between hardware components (compute, storage and network resources) and virtual resources allocated to VNF-C, each VNF-C generally maps 1:1 against a single VM or a single container/pod. **Figure 5-2** represents the virtual resources (virtual compute, virtual network and virtual storage) allocated to VNF-C and managed by the VIM.
 
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
@@ -49,7 +49,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.com.cfg.001 | CPU partionning  | Value | Minimum number of CPU dedicated to the host |
 | nfvi.com.cfg.002 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
-| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
+| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | Support of NUMA at the virtualisation layer  |
 | nfvi.com.cfg.004 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
 | nfvi.com.cfg.005 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
 
@@ -102,7 +102,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.net.acc.cfg.001 | vSwitch optimization | Yes/No and SW Optimization | e.g. DPDK. |
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | e.g. DPDK. |
 | nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | e.g. support of SR-IOV, SmartNic. |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No |  |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface |Yes/No | |
@@ -185,7 +185,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.acc.cfg.001 | vSwitch optimization | YeS/No and SW Optimization | N | Y, DPDK | Y, DPDK |
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | YeS/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
 | nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SR-IOV and  SmartNic |Y, support of SR-IOV and  SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No | N  | Y | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y | Y |
@@ -202,10 +202,10 @@ This chapter defines a simplified host, host profile and related capabilities mo
 <p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles_v3.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 5-4:</b> NFVI hardware profiles and host associated capabilities.</p>
 
-The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be utilized in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources.
+The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be used in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources.
 >Please note that in this chapter we shall not list all of the EPA-related configuration parameters.
 
-A software profile (see **Chapter 4** and **Chapter 5**) defines the characteristics of NFVI SW of which Virtual Machines (or Containers) will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may utilize different naming standards for their host profiles.
+A software profile (see **Chapter 4** and **Chapter 5**) defines the characteristics of NFVI SW of which Virtual Machines (or Containers) will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles.
 
 The following naming convention is used in this document:
 
@@ -251,7 +251,7 @@ The hardware (host) profile properties are specified in the following sub-sectio
 <a name="5.4"></a>
 ## 5.4 NFVI HW profiles features and requirements.
 
-The configurations specified in here will be utilized in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 5-4**.
+The configurations specified in here will be used in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 5-4**.
 
 <a name="5.4.1"></a>
 ### 5.4.1 Compute Resources
