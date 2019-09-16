@@ -163,6 +163,16 @@ However, the key requirements for the infrastructure and infrastructure manageme
 </table>
 <p align="center"><b>Table 9-2:</b> Configuration and Lifecycle Management Capabilities</p>
 
+This leads to the following table (Table 9-3) which defines the standard interfaces that should be made available by the infrastructure and infrastructure management (VIM) components to allow for successful Configuration Management.
+
+| Component | Interface Standard | Link |
+| --- | --- | --- |
+| Infrastructure Management | ... | ... |
+| Infrastructure Software | ... | ... |
+| Infrastructure Hardware | Redfish API | [DMTF Specification](https://www.dmtf.org/standards/redfish) |
+
+<p align="center"><b>Table 9-3:</b> Interface Standards for Configuration Management</p>
+
 <a name="9.3"></a>
 ## 9.3 Resource and Service Assurance
 
