@@ -66,7 +66,7 @@ Configuration management is concerned with defining the configuration of infrast
 <p align="center"><img src="../figures/ch09_config_mgmt.png" alt="Configuration and Lifecycle Management" title="Configuration and Lifecycle Management" width="65%"/></p>
 <p align="center"><b>Figure 9-2:</b> Configuration and Lifecycle Management</p>
 
-The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desried state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
+The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
 
 However, the key requirements for the infrastructure and infrastructure management are those interfaces and reference points in the red box - where configuration is **set**, and where it is **observed**. Table 9-1 lists the main components and capabilities required in order to manage the configuration and lifecycle of those components.
 
@@ -170,14 +170,6 @@ This leads to the following table (Table 9-3) which defines the standard interfa
 <a name="9.3"></a>
 ## 9.3 Assurance
 
-This is a placeholder for Resource and Service Assurance requirements. e.g.
-- ability to detect and deal with rogue workloads
-- ability to detect and deal with defective components
-- closing the loop with orchestration to perform healing activities based on events / configuration management input
-- effective telemetry/event streams for enhanced decision making by assurance systems
-- etc.
-
-
 Assurance is concerned with:
 - The proactive and reactive maintenance activities that are required to ensure infrastructure services are available as per defined performance and availability levels.
 - Continuous monitoring of the status and performance of individual components and of the service as a whole.
@@ -185,18 +177,18 @@ Assurance is concerned with:
 
 There are the following requirement types:
 1. Data collection from all components, e.g.
-  - ability collect data relating to events (transactions, security events, physical interface up/down events, warning events, error events, etc.)
-  - ability to collect data relating to component status (up/down, physical temperature, disk speed, etc.)
-  - ability to collect data relating to component performance (total CPU used, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
+  - The ability to collect data relating to events (transactions, security events, physical interface up/down events, warning events, error events, etc.)
+  - The ability to collect data relating to component status (up/down, physical temperature, disk speed, etc.)
+  - The ability to collect data relating to component performance (total CPU used, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
 2. Capabilities of the Infrastructure Management Software to allow for in-service maintenance of the Infrastructure Software and Hardware under its management, e.g.
-  - ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
+  - The ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
+  - The ability to co-ordinate, automate and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler components in the Infrastructure Management Software
 
-Note the above only refers to components - it is expected that any "service" level assurance doesn't add any further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the knowledge it has of the services being offered.
+Note that the above only refers to components - it is expected that any "service" level assurance doesn't add any further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the knowledge it has of the services being offered.
 
 <a name="9.4"></a>
 ## 9.4 Capacity Management
 
-This is a placeholder for Capacity Management requirements. e.g.
-- effective telemetry and events to allow for data-driven decisions
-- ability to include application metrics/events?
-- etc.
+Capacity Management is a potentially wide ranging process that includes taking demand across lines of business, analysing data about the infrastructure that is running and calculating when additional infrastructure might be required, or when infrastructure might need to be decommissioned.
+
+As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware, software and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
