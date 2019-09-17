@@ -44,8 +44,8 @@ Since OpenStack is a complex, multi-project framework, we initially will focus o
 
 The architecture consists of the services shown in the Figure 3-1.   The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
 
-<p align="center"><img src=”../figures/Figure_3_1_Core_NFVI_Services.png” alt=” Core NFVI Software Services”></br>
-Figure 3-1. Core NFVI Software Services</p>
+<p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/></p>
+<p align="center"><b>Figure 3-1:</b> Core NFVI Software Services</p>
 
 We will refer to the functions above as falling into the following categories to avoid any confusion with other terminology that may be used:
 -	Control nodes
@@ -83,8 +83,8 @@ The architecture based on OpenStack technology relies on different types of node
 The data plane consists of the compute nodes. It is typical to consider the other node types to be part of the control plane.
 Figure 3-2 depicts the 4 types of nodes constitutive of the Infrastructure: control, compute, network and storage nodes.
 
-<p align="center"><img src=”../figures/Figure_3_2_NFVI_Software_Services_Topology.png” alt=” NFVI Software Services Topology”></br>
-Figure 3-2. NFVI Software Services Topology</p>
+<p align="center"><img src="../figures/Figure_3_2_NFVI_Software_Services_Topology.png" alt="NFVI Software Services Topology" title="NFVI Software Services Topology" width="100%"/></p>
+<p align="center"><b>Figure 3-2:</b> NFVI Software Services Topology</p>
 
 Deployments can be structured using the distribution of services amongst the 4 node types as depicted in Figure 3-2, but depending on workloads requirements, OpenStack services can also be hosted on the same nodes. For instance, services related to Controller, network and storage roles can be hosted on controller nodes.
 
