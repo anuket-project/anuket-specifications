@@ -65,7 +65,7 @@ Chapter 3 presented the core OpenStack services for creating an IaaS cloud.  The
 <a name="4.2.2"></a>
 ### 4.2.2. Physical Network
 
-<p align=”center”><img src=”../figures/Figure_4_1_Network_Fabric_Physical.png” alt=” Network Fabric -- Physical”></br>Figure 4-1. Network Fabric – Physical</p>
+<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"></br>Figure 4-1. Network Fabric – Physical</p>
 
 Figure 4-1 shows a physical network layout where each physical server is dual homed to TOR (C/Agg-Leaf) switches with redundant (2x) connections.  The Leaf switches are dual homed with redundant connections to spines. 
 
@@ -74,7 +74,7 @@ Figure 4-1 shows a physical network layout where each physical server is dual ho
 
 A tenant network represents the Layer 2 and Layer 3 network resources that are configured to enable layer-3 routing between networks connecting VMs and the external WAN VPN. Figure 4-2 (<a href="https://docs.openstack.org/newton/install-guide-ubuntu/launch-instance-networks-selfservice.html">OpenStack Self-Srevice (tenant) Networks</a>) shows the connectivity from Tenant VMs through provider networks (and by extension to other Tenant VMs on a different Compute node (server)) and to external networks. The OpenStack Provider networks are shared by all Tenants. Each VNF/VM network interface will be associated with the Tenant network. A tenant network can be local or external; local tenant networks do not have WAN access. External Tenant networks have their VLANs and IP subnets associated with a WAN VPN (Figure 4-2).
 
-<p align=”center”><img src=”../figures/Figure_4_2_Tenant_Network.png” alt=”Tenant Network”></br>Figure 4-2. (<a href="https://docs.openstack.org/newton/install-guide-ubuntu/launch-instance-networks-selfservice.html">OpenStack Self-Srevice (tenant) Networks</a></p>
+<p align="center"><img src="../figures/Figure_4_2_Tenant_Network.png" alt="Tenant Network"></br>Figure 4-2. <a href="https://docs.openstack.org/newton/install-guide-ubuntu/launch-instance-networks-selfservice.html">OpenStack Self-Srevice (tenant) Networks</a></p>
 
 A VNF application network topology is expressed in terms of VMs, vNIC interfaces with vNet access networks, and WAN Networks while the VNF Application VMs require multiple vNICs, VLANs, and host routes configured within the VM’s Kernel.
 
@@ -95,7 +95,7 @@ The OpenStack Modular Layer 2 (ML2) plugin simplifies adding networking technolo
 A host aggregate is a set of hosts with specific properties (multiple software and/or hardware properties); the properties are specified as key-value pairs.  Example would be a host aggregate created for a particular flavour or specific hardware. A host can belong to multiple host aggregates. Host aggregates are not visible to users.
 
 Availability Zones are user visible host aggregates where a host can only be in one availability zone.  Availability zones partition the cloud independent of the infrastructure layout.
-Availability zones (AZ) serve a couple of important purposes. Firstly, users can deploy their workloads to create local redundancy for resiliency and high availability.  This permits rolling upgrades – an AZ at a time upgrade with enough time between AZ upgrades to allow recovery of tenant workloads on the upgraded AAZ. Secondly, AZs can accommodate hosts with special hardware and software characteristics, for example, hosts with hardware accelerators.
+Availability zones (AZ) serve a couple of important purposes. Firstly, users can deploy their workloads to create local redundancy for resiliency and high availability.  This permits rolling upgrades – an AZ at a time upgrade with enough time between AZ upgrades to allow recovery of tenant workloads on the upgraded AZ. Secondly, AZs can accommodate hosts with special hardware and software characteristics, for example, hosts with hardware accelerators.
 
 An over use of host aggregates and availability zones can result in a granular partition the cloud and, hence, operational c
 omplexities and inefficiencies.
@@ -133,9 +133,10 @@ ontainers are lightweight compared to Virtual Machines and leads to efficient re
 
 In Section 3.5 the high-level set of infrastructure components needed to run VMs was presented.  This section is primarily about scheduling the VM to be created onto a particular physical server. This section delves into the compute host selection for these VMs, the resource pools, hardware and software considerations.
 
-<p align=”center”><img src=”../figures/Figure_4_3_Select_host_instance_launch.png” alt=”Selection of a compute host to launch an instance”></br>Figure 4-3. Selection of a compute host to launch an instance.</p>
+<p align="center"><img src="../figures/Figure_4_3_Select_host_instance_launch.png" alt="Selection of a compute host to launch an instance"></br>Figure 4-3. Selection of a compute host to launch an instance.</p>
 
-When a request for an instance creation is made, the requested features and capabilities of the instance is used to determine the host on which the instance should be launched (Figure 4-x).  The nova scheduler service matches requested features and capabilities of the instance and the capabilities/configuration of the hosts (hardware and software).  The nova-scheduler can be configured to use the host aggregates (and availability zones) in selecting the hosts when an instance create request with these capabilities/configurations is requested. The Common Telco NFVI has only a handful of standard profiles and hence the number of potential target host servers (Figure 4-x) may be large if only the host-aggregates filter is utilized and, thus, other filters should also be selected; affinity/non-affinity, custom key-value pairs, etc. 
+When a request for an instance creation is made, the requested features and capabilities of the instance is used to determine the host on which the instance should be launched (Figure 4-3).  The nova scheduler service matches requested features and capabilities of the instance and the capabilities/configuration of the hosts (hardware and software).  The nova-scheduler can be configured to use the host aggregates (and availability zones) in selecting the hosts when an instance create request with these capabilities/configurations is requested. The Common Telco NFVI has only a handful of standard profiles and hence the number of potential target host servers (Figure 4-3) may be large if only the host-aggregates filter is utilized and, thus, other filters should also be selected; affinity/non-affinity, custom key-value pairs, etc. 
+
 A flavor may, in addition to the base flavor properties, include additional properties specified as key-value pairs in the extra specifications section of the flavour definition.  These additional properties can specify advanced configurations information or desired hardware characteristics. Examples include SSD drives, hardware accelerators, or a key-value pair used as meta data to associate the host with a tenant or host aggregate; both the host aggregate and the hosts that are to be assigned to the host aggregate would be assigned the same key-value pair, for example, <OVS-DPDK, True>. 
 
 <a name="4.4.1"></a>
@@ -185,7 +186,7 @@ Enterprises and vendors may have custom monitoring and logging solutions. The in
 
 In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only. 
 
-<p align=”center”><img src=”../figures/Figure_4_4_Monitoring_Logging_Framework.png” alt=”Monitoring and Logging Framework”></br>
+<p align="center"><img src="../figures/Figure_4_4_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"></br>
 Figure 4-4. Monitoring and Logging Framework </p>
 
 The monitoring and logging framework (Figure 4-4) leverages Prometheus as the monitoring engine and Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. Prometheus agents pull information from individual components on every host.  Fluentd, an open source data collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures the access, application and system logs.
