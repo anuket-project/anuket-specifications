@@ -83,7 +83,7 @@ The architecture based on OpenStack technology relies on different types of node
 The data plane consists of the compute nodes. It is typical to consider the other node types to be part of the control plane.
 Figure 3-2 depicts the 4 types of nodes constitutive of the Infrastructure: control, compute, network and storage nodes.
 
-<p align="center"><img src=”../figures/Figure_3_2_ NFVI_Software_Services_Topology.png” alt=” NFVI Software Services Topology”></br>
+<p align="center"><img src=”../figures/Figure_3_2_NFVI_Software_Services_Topology.png” alt=” NFVI Software Services Topology”></br>
 Figure 3-2. NFVI Software Services Topology</p>
 
 Deployments can be structured using the distribution of services amongst the 4 node types as depicted in Figure 3-2, but depending on workloads requirements, OpenStack services can also be hosted on the same nodes. For instance, services related to Controller, network and storage roles can be hosted on controller nodes.
