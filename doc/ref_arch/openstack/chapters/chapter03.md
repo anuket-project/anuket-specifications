@@ -62,9 +62,9 @@ Each deployment of OpenStack should be a unique cloud with its own API endpoint.
 <a name="3.2.1"></a>
 ### 3.2.1. Architectural Drivers – Requirements Traceability
 
-| Ref #	sub-category	Description |
+| Ref # |	sub-category	| Description |
 |-----------------|----------------------|------------------------------|
-| req.gen.rsl.01 \ Resiliency | The Architecture must support resilient OpenStack components that are required for the continued availability of running workloads. |
+| req.gen.rsl.01 | Resiliency | The Architecture must support resilient OpenStack components that are required for the continued availability of running workloads. |
 | req.vim.02 | General | The Architecture should support deployment of OpenStack components in containers. |
 
 <a name="3.2.2"></a>
@@ -94,7 +94,7 @@ Deployments can be structured using the distribution of services amongst the 4 n
 <a name="3.3.1"></a>
 ### 3.3.1 Architectural Drivers – Requirements Traceability
 
-Ref #|sub-category|Description |
+| Ref # | sub-category | Description |
 |--------|-------------|---------------------------|
 | req.lcm.adp.04 | Automated deployment | The Architecture should support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
 | req.lcm.adp.05 | Automated deployment | The Architecture should support automated process for Deployment and life-cycle management of VIM Instances. |
@@ -167,7 +167,7 @@ Keystone is the authentication service, the foundation of identity management in
 -	Keystone admin API
 -	Keystone public API – in Keystone V3 this is the same as the admin API,
 
-| ** OpenStack Service ** | ** Link for API and CLI  ** | ** API/client Baseline Version ** |
+| **OpenStack Service** | **Link for API and CLI** | **API/client Baseline Version** |
 |------------------|----------------------------------------------------|-------------------|
 |Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html | Version 3.10 |
 |Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
@@ -177,7 +177,7 @@ Glance is the image management service. Glance has only a dependency on the Keys
 -	Glance API,
 -	Glance Registry.
 
-| ** OpenStack Service ** | ** Link for API and CLI  ** | ** API/Client Baseline Version ** |
+| **OpenStack Service** | **Link for API and CLI** | **API/Client Baseline Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images | Version 2.0 |
 | Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
@@ -188,7 +188,7 @@ Cinder is the block device management service, Cinder depends on Keystone and po
 -	Cinder Scheduler,
 -	Cinder Volume – the Cinder volume process needs to talk to its backends.
 
-| ** OpenStack Service ** | ** Link for API and CLI ** | ** API/CLI Baseline Version ** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
 |------------------|----------------------------------------------------|-------------------|
 |Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions/a> | Version 3.0 |
 
@@ -199,7 +199,7 @@ Swift is the object storage management service, Swift depends on Keystone and po
 -	Container Services
 -	Account Services 
 
-| ** OpenStack Service ** | ** Link for API and CLI ** | ** API/CLI Baseline Version ** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/ | Version 1.0 |
 | Object Storage: Swift |https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
@@ -211,7 +211,7 @@ Neutron is the networking service, Neutron depends on Keystone and has services 
 -	neutron-rpc
 -	neutron-*-agent agents which runs on Compute and Network nodes
 
-| ** OpenStack Service ** | ** Link for API and CLI ** | ** API/CLI Baseline Version ** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Networking: Neutron | https://docs.openstack.org/api-ref/network/ | Version 2.0 |
 | Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
@@ -227,7 +227,7 @@ Nova is the compute management service, Nova depends on all above components and
 -	nova-novncproxy
 -	nova-compute-agent which runs on Compute node
 
-| ** OpenStack Service ** | ** Link for API and CLI ** | ** API/CLI Baseline Version ** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
 |--------------|------------------|---------------------------------------|
 | Compute: Nova | https://docs.openstack.org/api-ref/compute/ | Version 2.1 |
 | Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
@@ -237,7 +237,7 @@ Ironic is the bare metal provisioning service. Ironic depends on all above compo
 -	Ironic API
 -	ironic-conductor which executes operation on bare metal nodes 
 
-| ** OpenStack Service ** | ** Link for API and CLI ** | ** API/CLI Baseline Version ** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Bare Metal: Ironic | https://docs.openstack.org/api-ref/baremetal/ | Version 1.0 |
 | Bare Metal: Ironic | https://docs.openstack.org/python-ironicclient/latest/cli/index.html | Version 1.25 |
@@ -248,7 +248,7 @@ Heat is the orchestration service using template to provision cloud resources, H
 -	heat-cfn-api
 -	heat-engine
 
-|** OpenStack Service ** | ** Link for API and CLI ** | ** API/CLI Baseline Version ** |
+|**OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Bare Metal: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions | Version 1.0 |
 | Bare Metal: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.25 |
