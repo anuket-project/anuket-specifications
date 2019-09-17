@@ -672,32 +672,58 @@ The following five test categories have been identified as minimal testing requi
 <a name="8.8"></a>
 ## 8.8 Test Results
 
+**NOT MVP**
+
 Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline.
 Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
 <a name="8.8.1"></a>
 ### 8.8.1 Metrics
+
+**NOT MVP**
+
 Metrics/Measurements and respective certification(s).
 e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
 
 <a name="8.8.2"></a>
 ### 8.8.2 Report Summary
+
+**NOT MVP**
+
 1. Pass/Fail
 2. Measure Only (e.g. throughput analysis, baseline, transaction stats, etc)
 
 <a name="8.9"></a>
 ## 8.9 Future Planning
 
+**NOT MVP**
+
 This section will be used to plan for future offerings.
 
 <a name="8.9.1"></a>
 ### 8.9.1 Performance and Resiliency Testing
 
+**NOT MVP**
+
+Placeholder to define performance and resiliency needs, and strategies for testing.
+
 <a name="8.9.2"></a>
 ### 8.9.2 Reports Dashboard
+
+**NOT MVP**
+
+Placeholder to document where results will be posted (e.g. Dovetail dashboards.)
 
 <a name="8.9.3"></a>
 ### 8.9.3 Automation Considerations
 
+**NOT MVP**
+
+Placholder to identify automation needs and tool chains.
+
 <a name="8.10"></a>
 ## 8.10 Recommendations
+
+**NOT MVP**
+
+Placholder to capture best practices.
