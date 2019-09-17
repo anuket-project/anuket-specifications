@@ -170,12 +170,12 @@ There will be a different set of security requirements for each NFVi reference a
 
 The following diagram shows the different security domains that are covered in the following sections in relation to the Reference Model:
 
-<p align="center"><img src="../figures/CNTT_Security_Posture.PNG" alt="Overview" title="Security Domains" width="100%"/></p>
+<p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
 <p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
 
 From a network access perspective, the following diagram shows where different access controls will separate the security domains in the Reference model:
 
-<p align="center"><img src="../figures/Data_Access_Model.PNG" alt="Overview" title="Access Controls" width="100%"/></p>
+<p align="center"><img src="../figures/ch7_data_access_model.png" alt="Overview" title="Access Controls" width="100%"/></p>
 <p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
 
 <a name="7.4.2"></a>
