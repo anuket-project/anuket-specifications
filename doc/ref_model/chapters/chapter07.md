@@ -156,30 +156,58 @@ Insuring that the security standards and best practices are incorporated into th
 
 The scope of the security controls requirements maps to the scope of the Reference Model architecture.
 
-The Reference Model scope is shown below (as outlined in chapter 1 of the reference model): :
+The Reference Model scope is shown below (as outlined in chapter 1 of the reference model):
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="Scope" title="ETSI Scope" width="100%"/></p>
 <p align="center"><b>Figure 7-2:</b> ETSI Mapping</p>
-
 
 This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
 
 There will be a different set of security requirements for each NFVi reference architecture. In this case, the first reference architecture is OpenStack.
 
 <a name="7.4.2"></a>
-## 7.4.2 Define Platform security requirements
+## 7.4.2 Security Requirements
 
-    *(An overview/introduction to platform security requirements and incl
-    types of platforms covered)*
+The following diagram shows the different security domains that are covered in the following sections in relation to the Reference Model:
+
+<p align="center"><img src="../figures/CNTT_Security_Posture.PNG" alt="Overview" title="Security Domains" width="100%"/></p>
+<p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
+
+From a network access perspective, the following diagram shows where different access controls will separate the security domains in the Reference model:
+
+<p align="center"><img src="../figures/Data_Access_Model.PNG" alt="Overview" title="Access Controls" width="100%"/></p>
+<p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
+
+<a name="7.4.2"></a>
+## 7.4.3 Platform security requirements
+
+At a high level, the following areas/requirements cover platform security for a particular deployment:
+* Platform certification
+* Secure access controls for administrators
+* Secure API interface for Tenants
+* Encryption for all external and control comms
+* Strong separation between tenants
+* Authenticated/secure APIs provided to overlay network administrators
+* Platform change control on hardware
+* Templated approved changes for automation where available
+* Typically well defined security framework documentation including approved deployment use cases
+* Infrastructure software update process
+* Identity Domain = platform
 
 <a name="7.4.3"></a>
-## 7.4.3 Define Workload security requirements
+## 7.4.4 Workload security requirements
 
-    *(An overview/introduction to workload security requirements and incl
-    types of workloads covered)*
+At a high level, the following areas/requirements cover workload security for a particular deployment:
+* Up to platform-level certification
+* Each workload network will have a separate/specific security assessment
+* Potentially automated service activation
+* Workload owner owns security certification process
+* Workload owner owns design change process
+* Workload owner owns software update process
+* Identity Domain = workload
 
 <a name="7.4.4"></a>
-## 7.4.4 Define certification/validation requirements
+## 7.4.5 Certification/validation requirements
 
     *(An overview/introduction to workload certification requirements and
     incl types of workloads covered)*
