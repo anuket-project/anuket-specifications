@@ -216,24 +216,41 @@ Additional Terms utilized throughout the document:
 <a name="8.4"></a>
 ## 8.4 Lifecycle and Process Flow
 
+**NOT MVP**
+
 <a name="8.4.1"></a>
 ### 8.4.1 Project Mgmt
+
+**NOT MVP**
+
 How certifications are requested, processed, managed, what lab(s) is used, life cycle management
 
 <a name="8.4.2"></a>
 ### 8.4.2 OPNFV Iterations & Communications
+
+**NOT MVP**
+
 OPNNV Iterations with the CNTT (mgmt and communication of)
 
 <a name="8.4.3"></a>
 ### 8.4.3 Onboarding RA and Supplier VNF
+
+**NOT MVP**
+
 Onboarding (for OVP certification) 
 
 <a name="8.4.4"></a>
 ### 8.4.4 SLAs and Issue Resolution
+
+**NOT MVP**
+
 Expectations for acknowlegment and turn-round from onboarding, verifications, and issue resolution.
 
 <a name="8.4.5"></a>
 ### 8.4.5 RA Verification
+
+**NOT MVP**
+
 Process flow for RA (Infra) Validation and Verfiication
 
 <a name="8.5"></a>
