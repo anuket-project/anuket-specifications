@@ -35,6 +35,7 @@
   * [8.7.2 System Under Test (SUT) Pre-reqs.](#8.7.2)
   * [8.7.3 Entrance & Exit Criteria.](#8.7.3)
   * [8.7.4 Test Frameworks.](#8.7.4)
+    * [8.7.4.1 Functest.](#8.7.4.1)
   * [8.7.5 Test Categories.](#8.7.5)
   * [8.7.6 Test Harness(es).](#8.7.6)
   * [8.7.7 Test Tools.](#8.7.7)
@@ -604,9 +605,128 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 
 <a name="8.7.4"></a>
 ### 8.7.4 Test Frameworks
-1. Dovtail
-2. Yardstick
-3. Bottlenecks
+
+#### 8.7.4.1 Functest
+
+[Functest](https://functest.readthedocs.io/en/stable-iruya/) was initially
+created to verify OPNFV Installers and Scenarios and then to publish fair,
+trustable and public results regarding the status of the different opensource
+technologies, especially for Neutron backends (e.g. Neutron agents,
+OpenDaylight, OVN, etc.). It has been continuously updated to offer the best
+testing coverage for any kind of OpenStack and Kubernetes deployments
+including production environments. It also ensures that the platforms meet
+Network Functions Virtualization requirements by running and testing VNFs
+amongst all tests available.
+
+
+Functest is driven by a true verification of the platform under test as opposed
+to the interoperability programs such as
+[RefStack](https://refstack.openstack.org/) or
+[OPNFV Verification Program](https://www.opnfv.org/verification) which select
+a small subset of Functional tests passing in many different
+opensource software combinations:
+- tests are skipped if an optional support is missing (e.g.
+  [Barbican](https://docs.openstack.org/barbican/latest/) or networking
+  features such as
+  [BGPVPN interconnection](https://docs.openstack.org/networking-bgpvpn/latest/)
+  or
+  [Service Function Chaining](https://docs.openstack.org/networking-sfc/latest/))
+- tests are parameterized (e.g. shared vs non-shared live migration)
+- blacklist mechanisms are available if needed
+
+It should be noted that
+[the RefStack lists](https://refstack.openstack.org/#/guidelines) are included
+as they are in Functest in the next 3 dedicated testcases:
+- refstack_compute (OpenStack Powered Compute)
+- refstack_object (OpenStack Powered Object Storage)
+- refstack_platform (OpenStack Powered Platform)
+
+Functest also integrates
+[Kubernetes End-to-end tests](https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/) and allows verifying Kubernetes Conformance (see
+[k8s-conformance](https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-iruya-k8s_conformance-run/206/console)).
+
+Dovetail (OVP) mostly leverages on Functest but only runs a small part of
+Functest (~15% of all functional tests, no benchmarking tests, no VNF
+deployment and testing). It's worth mentioning that Functest is patched to
+[disable API verification](https://github.com/opnfv/dovetail/tree/master/etc/patches/functest/disable-api-validation) which has differed from OpenStack rules for
+years.
+
+Then Functest conforms with the upstream rules (versions, code quality, etc.)
+and especially their
+[gates](https://docs.openstack.org/infra/system-config/devstack-gate.html)
+(a.k.a. the automatic verification prior to any code review)
+to preserve the quality between code and deployment.
+In that case, Functest can be considered as a smooth and lightweight
+integration of tests developed upstream (and the Functest team directly
+contributes in these projects:
+[Rally](https://github.com/openstack/rally-openstack),
+[Tempest](https://github.com/openstack/tempest), etc.).
+It's worth mentioning that, as opposed to the OpenStack Gates leveraging on
+[DevStack](https://docs.openstack.org/devstack/latest/), it can check the same
+already deployed SUT over and over even from a
+[Raspberry PI](https://www.raspberrypi.org/). Here the testcases can be
+executed in parallel vs the same deployment instead of being executed vs
+different pools of virtual machines.
+
+Here are the functional tests (>2000) running in OpenStack gates integrated in
+Functest Smoke (see
+[Functest daily jobs](https://build.opnfv.org/ci/view/functest/job/functest-iruya-daily/190/) for more details):
+
+| Testcases                  | Gates              |
+| :------------------------- | :----------------- |
+| tempest_full               | General            |
+| tempest_slow               | General            |
+| tempest_scenario           | General            |
+| neutron-tempest-plugin-api | Neutron            |
+| patrole                    | Patrole            |
+| barbican                   | Barbican           |
+| networking-bgpvpn          | Networking BGP VPN |
+| networking-sfc             | Networking SFC     |
+
+To complete functional testing, Functest also integrates a few
+[performance tools](https://docs.openstack.org/developer/performance-docs/methodologies/tools.html)
+(2-3 hours) as proposed by OpenStack:
+
+| Testcases  | Benchmarking                |
+| :--------- | :-------------------------- |
+| rally_full | Control Plane (API) testing |
+| rally_jobs | Control Plane (API) testing |
+| vmtp       | Data Plane testing          |
+| shaker     | Data Plane testing          |
+
+And VNFs automatically deployed and tested :
+
+| Testcases    | Benchmarking                        |
+| :----------- | :---------------------------------- |
+| cloudify     | Cloudify deployment                 |
+| cloudify_ims | Clearwater IMS deployed via Coudify |
+| heat_ims     | Clearwater IMS deployed via Heat    |
+| vyos_vrouter | VyOS deployed via Cloudify          |
+| juju_epc     | OAI deployed via Juju               |
+
+Functest should be considered as a whole as it meets multiple objectives about
+the reference implementation:
+- verify all APIs (services, advances, features, etc.) exposed by the reference
+  implementation
+- compare the reference implementation and local deployments from a functional
+  standpoint and from OpenStack control plane and dataplane capabilities
+
+It's worth mentioning that Functest already takes into account the first CNTT
+[profiles](https://git.opnfv.org/functest/tree/functest/ci/config_patch.yaml#n2).
+CNTT should simply add the next Functest inputs according the reference
+implementation:
+- [Functest inputs](https://github.com/opnfv/functest/blob/stable/iruya/functest/utils/env.py#L17)
+- [tempest specific configuration](https://github.com/opnfv/functest/blob/stable/iruya/functest/opnfv_tests/openstack/tempest/custom_tests/tempest_conf.yaml)
+
+Additional links:
+- [Homepage](https://functest.readthedocs.io/en/stable-iruya/)
+- [Run Alpine Functest containers (Iruya)](https://wiki.opnfv.org/pages/viewpage.action?pageId=35291769)
+- [Deploy your own Functest CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004)
+- [Functest gates](https://build.opnfv.org/ci/view/functest/)
+
+#### 8.7.4.2 Yardstick
+
+#### 8.7.4.3 Bottlenecks
 
 <a name="8.7.5"></a>
 ### 8.7.5 Test Categories
