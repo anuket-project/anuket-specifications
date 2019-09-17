@@ -125,7 +125,7 @@ As we get away from the large data centers to the smaller sites it becomes progr
 
 #### 4.3.3.2. Justification
 
-ontainers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc.  Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
+Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc.  Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
 
 
 <a name="4.4"></a>
