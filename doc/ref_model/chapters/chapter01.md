@@ -18,7 +18,7 @@
   * [1.4.2 Audience.](#1.4.2)
 * [1.5 Scope.](#1.5)
   * [1.5.1 Use Cases.](#1.5.1)
-* [1.6 Relations to other industry projects.](#1.6)
+* [1.6 Relationship to other industry projects.](#1.6)
 * [1.7 Out of Scope Components.](#1.7)
 * [1.8 Bogo-Meter.](#1.8)
 * [1.9 Roadmap.](#1.9)
@@ -254,11 +254,13 @@ Since the CNTT membership is primarily from the telecom and telecom supporting v
     - Case 2: By splitting CU-DU (from BBU), vCU can run on the same NFVI edge computing platform that runs UPF(5G) ( or S/P-GW-U in 4G) and other VNFs including vFW and vLB. End users/devices traffic can be released at the clear demarcation point placing UPF in Edge DC. We can install Kubernetes based cloud on top of NFVI and put UPF(and other VNFs) in front of Kubernetes to carry the user's traffic to cloud native apps in the Kubernetes.
     - Case 1: 1- The vBBU deployment is driven by need for : easy life cycle management, vendor independence, automatic scaling (and energy savings). 2- The NFV deployments is driven by need for automatic scaling and vendor independence. 3- The MEC deployment is driven by opportunities for new revenue streams possibly from new sources.
     - Case 2: 1) Edge Cloud B2B2X model In the traditional Telco service provider model, the Telco provided services(the first B of B2B2X) directly to either individual or corporate consumers to increase revenue. In the Edge Cloud B2B2X model, Telco collaborates with diverse partners in other industries(the second B of B2B2X)to deliver added value to consumers/devices(X of B2B2X) through a wide range of the biz service providers. Here, the value that Telco Edge Cloud can provide biz service providers can take various forms, such as IoT & Edge Intelligence, Containerized micro service, AI framework, and other advanced ICT technologies, user interface technologies, and security tools.
+    
 More use cases to pull in:  https://docs.openstack.org/arch-design/use-cases.html
+
 >_**Comment**: This section is still under development._
 
 <a name="1.6"></a>
-## 1.6 Relations to other industry projects
+## 1.6 Relationship to other industry projects
 The Common Telco NFVI work is not done in a vacuum.  The intention from the beginning was to utilize the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
 
  -	ETSI NFV ISG
