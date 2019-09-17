@@ -162,35 +162,23 @@ All components must be deployed within a high available architecture that can wi
 
 The services can be containerized or VM hosted as long as they provide the high availability principles described above.
 
+The APIs for these OpenStack services are listed in <a href="chapter05.md">Chapter 5: Inetrafces and APIs</a>.
+
 #### 3.4.2.1. Keystone
 Keystone is the authentication service, the foundation of identity management in OpenStack. Keystone needs to be the first deployed service. Keystone has services running on the control nodes and no services running on the compute nodes:
 -	Keystone admin API
 -	Keystone public API – in Keystone V3 this is the same as the admin API,
-
-| **OpenStack Service** | **Link for API and CLI** | **API/client Baseline Version** |
-|------------------|----------------------------------------------------|-------------------|
-|Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html | Version 3.10 |
-|Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
 
 #### 3.4.2.2 Glance
 Glance is the image management service. Glance has only a dependency on the Keystone service therefore it is the second one deployed. Glance has services running on the control nodes and no services running on the compute nodes:
 -	Glance API,
 -	Glance Registry.
 
-| **OpenStack Service** | **Link for API and CLI** | **API/Client Baseline Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images | Version 2.0 |
-| Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
-
 #### 3.4.2.3. Cinder 
 Cinder is the block device management service, Cinder depends on Keystone and possibly Glance to be able to create volumes from images. Cinder has services running on the control nodes and no services running on the compute nodes:
 -	Cinder API,
 -	Cinder Scheduler,
 -	Cinder Volume – the Cinder volume process needs to talk to its backends.
-
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
-|------------------|----------------------------------------------------|-------------------|
-|Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions/a> | Version 3.0 |
 
 #### 3.4.2.4. Swift
 Swift is the object storage management service, Swift depends on Keystone and possibly Glance to be able to create volumes from images. Swift has services running on the control nodes and the compute nodes:
@@ -199,11 +187,6 @@ Swift is the object storage management service, Swift depends on Keystone and po
 -	Container Services
 -	Account Services 
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/ | Version 1.0 |
-| Object Storage: Swift |https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
-
 When images are stored in block storage service, Cinder, the object storage service, Swift, may not be required. 
 
 #### 3.4.2.5. Neutron
@@ -211,11 +194,6 @@ Neutron is the networking service, Neutron depends on Keystone and has services 
 -	neutron-api
 -	neutron-rpc
 -	neutron-*-agent agents which runs on Compute and Network nodes
-
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Networking: Neutron | https://docs.openstack.org/api-ref/network/ | Version 2.0 |
-| Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
 
 #### 3.4.2.6. Nova
 Nova is the compute management service, Nova depends on all above components and is deployed after. Nova has services running on the control nodes and the compute nodes:
@@ -228,20 +206,10 @@ Nova is the compute management service, Nova depends on all above components and
 -	nova-novncproxy
 -	nova-compute-agent which runs on Compute node
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
-|--------------|------------------|---------------------------------------|
-| Compute: Nova | https://docs.openstack.org/api-ref/compute/ | Version 2.1 |
-| Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
-
 #### 3.4.2.7. Ironic
 Ironic is the bare metal provisioning service. Ironic depends on all above components and is deployed after. Ironic has services running on the control nodes and the compute nodes:
 -	Ironic API
 -	ironic-conductor which executes operation on bare metal nodes 
-
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Bare Metal: Ironic | https://docs.openstack.org/api-ref/baremetal/ | Version 1.0 |
-| Bare Metal: Ironic | https://docs.openstack.org/python-ironicclient/latest/cli/index.html | Version 1.25 |
 
 Note: This is an optional service.
 
@@ -250,11 +218,6 @@ Heat is the orchestration service using template to provision cloud resources, H
 -	heat-api
 -	heat-cfn-api
 -	heat-engine
-
-|**OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Bare Metal: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions | Version 1.0 |
-| Bare Metal: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.25 |
 
 #### 3.4.2.9. Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
