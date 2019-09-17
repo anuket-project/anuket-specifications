@@ -261,7 +261,7 @@ The configurations specified in here will be used in specifying the actual hardw
 |---------------------|-----------|---------------------------|--------|--------|--------|
 | nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets exist within each host | 2| 2| 2 |
 | nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
-| nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
+| nfvi.hw.cpu.cfg.003 | NUMA | NUMA supported and enabled | N | Y | Y |
 | nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) | This allows a CPU to work a 2 streams of data simultaneously | Y | Y| Y |
 
 <!--
