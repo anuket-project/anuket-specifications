@@ -5,9 +5,8 @@
 ## Table of Contents
 * [9.1 Introduction](#9.1)
 * [9.2 Configuration and Lifecycle Management](#9.2)
-* [9.3 Resource and Service Assurance](#9.3)
+* [9.3 Assurance](#9.3)
 * [9.4 Capacity Management](#9.4)
-* [9.5 Infrastructure Maintenance](#9.5)
 
 
 <a name="9.1"></a>
@@ -43,7 +42,7 @@ The chapters below roughly map to these frameworks as follows:
       <td>Fulfilment</td>
     </tr>
     <tr>
-      <td rowspan=2>Resource and Service Assurance</td>
+      <td rowspan=2>Assurance</td>
       <td>Performance</td>
       <td rowspan=2>Assurance</td>
     </tr>
@@ -54,11 +53,6 @@ The chapters below roughly map to these frameworks as follows:
       <td>Capacity Management</td>
       <td>Configuration</td>
       <td>Fulfilment</td>
-    </tr>
-    <tr>
-      <td>Infrastructure Maintenance</td>
-      <td>Performance</td>
-      <td>Assurance</td>
     </tr>
   </tbody>
 </table>
@@ -174,18 +168,30 @@ This leads to the following table (Table 9-3) which defines the standard interfa
 <p align="center"><b>Table 9-3:</b> Interface Standards for Configuration Management</p>
 
 <a name="9.3"></a>
-## 9.3 Resource and Service Assurance
+## 9.3 Assurance
 
 This is a placeholder for Resource and Service Assurance requirements. e.g.
-- monitoring, logging and alerting of individual components/resources (e.g. a single host)
-- monitoring, logging and alerting of an infrastructure service (e.g. NFVI in a region/location)
 - ability to detect and deal with rogue workloads
 - ability to detect and deal with defective components
 - closing the loop with orchestration to perform healing activities based on events / configuration management input
 - effective telemetry/event streams for enhanced decision making by assurance systems
 - etc.
 
-Note: chapter 4 includes monitoring metrics
+
+Assurance is concerned with:
+- The proactive and reactive maintenance activities that are required to ensure infrastructure services are available as per defined performance and availability levels.
+- Continuous monitoring of the status and performance of individual components and of the service as a whole.
+- Collection and analysis of performance data, which is used to identify potential issues including the ability to resolve the issue with no customer impact.
+
+There are the following requirement types:
+1. Data collection from all components, e.g.
+  - ability collect data relating to events (transactions, security events, physical interface up/down events, warning events, error events, etc.)
+  - ability to collect data relating to component status (up/down, physical temperature, disk speed, etc.)
+  - ability to collect data relating to component performance (total CPU used, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
+2. Capabilities of the Infrastructure Management Software to allow for in-service maintenance of the Infrastructure Software and Hardware under its management, e.g.
+  - ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
+
+Note the above only refers to components - it is expected that any "service" level assurance doesn't add any further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the knowledge it has of the services being offered.
 
 <a name="9.4"></a>
 ## 9.4 Capacity Management
@@ -194,12 +200,3 @@ This is a placeholder for Capacity Management requirements. e.g.
 - effective telemetry and events to allow for data-driven decisions
 - ability to include application metrics/events?
 - etc.
-
-<a name="9.5"></a>
-## 9.5 Infrastructure Maintenance
-
-This is a placeholder for Infrastructure Maintenance requirements. e.g.
-
-- ability to drain hosts
-- ability to update control plane before host agents etc.
-- ability to
