@@ -44,7 +44,7 @@ Since OpenStack is a complex, multi-project framework, we initially will focus o
 
 The architecture consists of the services shown in the Figure 3-1.   The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
 
-<p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/></p>
+<p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v2.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/></p>
 <p align="center"><b>Figure 3-1:</b> Core NFVI Software Services</p>
 
 We will refer to the functions above as falling into the following categories to avoid any confusion with other terminology that may be used:
@@ -203,6 +203,7 @@ Swift is the object storage management service, Swift depends on Keystone and po
 |------------------|----------------------------------------------------|-------------------|
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/ | Version 1.0 |
 | Object Storage: Swift |https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
+
 When images are stored in block storage service, Cinder, the object storage service, Swift, may not be required. 
 
 #### 3.4.2.5. Neutron
@@ -241,6 +242,8 @@ Ironic is the bare metal provisioning service. Ironic depends on all above compo
 |------------------|----------------------------------------------------|-------------------|
 | Bare Metal: Ironic | https://docs.openstack.org/api-ref/baremetal/ | Version 1.0 |
 | Bare Metal: Ironic | https://docs.openstack.org/python-ironicclient/latest/cli/index.html | Version 1.25 |
+
+Note: This is an optional service.
 
 #### 3.4.2.8. Heat
 Heat is the orchestration service using template to provision cloud resources, Heat integrates with all OpenStack services. Heat has services running on the control nodes and no services running on the compute nodes:
