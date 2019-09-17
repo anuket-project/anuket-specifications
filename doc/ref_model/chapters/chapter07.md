@@ -13,9 +13,10 @@
   * [7.3.2 Testing demarcation points.](#7.3.2)
 * [7.4 Security Scope.](#7.4)
   * [7.4.1 In-scope and Out-of-Scope definition.](#7.4.1)
-  * [7.4.2 Define Platform security requirements](#7.4.2)
-  * [7.4.3 Define Workload security requirements](#7.4.3)
-  * [7.4.4 Define Workload security requirements](#7.4.4)
+  * [7.4.2 Security requirements](#7.4.2)
+  * [7.4.3 Platform security requirements](#7.4.3)
+  * [7.4.4 Workload security requirements](#7.4.4)
+  * [7.4.5 Workload security requirements](#7.4.5)
 * [7.5 Platform Security.](#7.5)
   * [7.5.1 Platform Security Assumption.](#7.5.1)
   * [7.5.2 Platform ‘back-end’ access security.](#7.5.2)
@@ -168,7 +169,7 @@ There will be a different set of security requirements for each NFVi reference a
 <a name="7.4.2"></a>
 ## 7.4.2 Security Requirements
 
-The following diagram shows the different security domains that are covered in the following sections in relation to the Reference Model:
+The following diagram shows the different security domains that impact the Reference Model:
 
 <p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
 <p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
