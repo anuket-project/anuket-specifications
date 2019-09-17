@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 6	External Interfaces
+# 6 External Interfaces
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -32,21 +32,21 @@ Chapter 3 introduced a model of the Network Function Virtualisation Infrastructu
 
 <a name="6.2"></a>
 ## 6.2 NFVI APIs
-The NFVI APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads (e.g., VNFs) while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference Architecture Framework (**Figure 6-1**) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**. 
+The NFVI APIs consist of set of APIs that are externally and internally visible. The externally visible APIs are made available for orchestration and management of the execution environments that host workloads (e.g., VNFs) while the internally visible APIs support actions on the hypervisor and the physical resources. The ETSI NFV Reference Architecture Framework (**Figure 6-1**) shows a number of Interface points where specific or sets of APIs are supported. For the scope of the reference model the relevant interface points are shown in **Table 6-1**.
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
 <p align="center"><b>Figure 6-1:</b> ETSI NFVI Interface points.</p>
 
-| Interface Point	| NFVI Exposure	| Interface Between |	Description|
+| Interface Point | NFVI Exposure | Interface Between | Description|
 |--------------|--------------|--------------|--------------|
-| Vi-Ha	| Internal	NFVI | Software Layer and Hardware Resources |	1.	Discover/collect resources and their configuration information <br>2.	Create execution environment (e.g., VM) for workloads (VNF) |
-| Vn-Nf| 	External	| NFVI and VM (VNF)	| Here VNF represents the execution environment. The interface is used to specify interactions between the VNF and abstract NFVI accelerators. The inetrafecs can be used to discover, configure and manage these acceleartors and for the VNF to register/deregister for receiving acceleartor events and data. |
-| NF-Vi	| External	| NFVI and VIM |	1.	Discover/collect physical/virtual resources and their configuration information<br>2.	Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3.	Physical/Virtual resources configuration changes<br>4.	Physical/Virtual resource configuration. |
-| Or-Vi	| External	| VNF Orchestrator and VIM	| See below |
-| Vi-Vnfm	| External	| VNF Manager and VIM	| See below |
+| Vi-Ha | Internal NFVI | Software Layer and Hardware Resources | 1. Discover/collect resources and their configuration information <br>2. Create execution environment (e.g., VM) for workloads (VNF) |
+| Vn-Nf|  External | NFVI and VM (VNF) | Here VNF represents the execution environment. The interface is used to specify interactions between the VNF and abstract NFVI accelerators. The inetrafecs can be used to discover, configure and manage these acceleartors and for the VNF to register/deregister for receiving acceleartor events and data. |
+| NF-Vi | External | NFVI and VIM | 1. Discover/collect physical/virtual resources and their configuration information<br>2. Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3. Physical/Virtual resources configuration changes<br>4. Physical/Virtual resource configuration. |
+| Or-Vi | External | VNF Orchestrator and VIM | See below |
+| Vi-Vnfm | External | VNF Manager and VIM | See below |
 
 <p align="center"><b>Table 6-1:</b> NFVI and VIM Interfaces with Other System Components.</p>
-			
+
 The Or-Vi and Vi-VNfm are both specifying interfaces provided by the VIM and therefore are related. The Or-Vi reference point is used for exchanges between NFV Orchestrator and VIM, and supports the following interfaces; virtualised resources refers to virtualised compute, storage and network resources:
 
 - Software Image Management
@@ -65,10 +65,10 @@ The Or-Vi and Vi-VNfm are both specifying interfaces provided by the VIM and the
 ### 6.2.1 Tenant Level APIs
 
 In the abstraction model of the NFVI (**Chapter 3**) a conceptual model of a Tenant (**Figure 3-2**) represents the slice of a cloud zone dedicated to a VNF. This slice, the Tenant, is composed of virtual resources being utilized by VNFs within that Tenant. The Tenant has an assigned quota of virtual resources, a set of users can perform operations as per their assigned roles, and the Tenant exists within a Cloud Zone. The APIs will specify the allowed operations on the Tenant including its component virtual resources and the different APIs can only be executed by users with the appropriate roles. For example, a Tenant may only be allowed to be created and deleted by Cloud Zone administrators while virtual compute resources could be allowed to be created and deleted by Tenant administrators.
- 
+
 For a VNF stack to be created in a Tenant also requires APIs for the management (creation, deletion and operation) of the Tenant, software flavours (Chapter 5), Operating System and VNF images (“Images”), Identity and Authorization (“Identity”), virtual resources, security and the VNF application (“stack”).
 
-A virtual compute resource is created as per the flavour template (specifies the compute, memory and local storage capacity) and is launched using an image with access and security credentials; once launched, it is referred to as a virtual compute instance or just “Instance”). Instances can be launched by specifying the compute, memory and local storage capacity parameters instead of an existing flavour; reference to flavours coves the situation where the capacity parameters are specified. IP addresses and storage volumes can be attached to a running Instance. 
+A virtual compute resource is created as per the flavour template (specifies the compute, memory and local storage capacity) and is launched using an image with access and security credentials; once launched, it is referred to as a virtual compute instance or just “Instance”). Instances can be launched by specifying the compute, memory and local storage capacity parameters instead of an existing flavour; reference to flavours coves the situation where the capacity parameters are specified. IP addresses and storage volumes can be attached to a running Instance.
 
 | Resource | Create | List | Attach | Detach | Delete | Notes |
 |-----------------|--------|------|--------|--------|--------|-------------------------------------------------------------------------------------------------------------|
@@ -86,11 +86,11 @@ A virtual compute resource is created as per the flavour template (specifies the
 | Virtual network | + | + | + | + | + | Create/delete by VDC users with appropriate role |
 
 <p align="center"><b>Table 6-2:</b> API types for a minimal set of resources.</p>
- 
+
 **Table 6-2** specifies a minimal set of operations for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
 
 <a name="6.2.2"></a>
-### 6.2.2 Hardware Acceleration Interfaces 
+### 6.2.2 Hardware Acceleration Interfaces
 
 **Acceleration Interface Specifications**
 ETSI GS NFV-IFA 002 defines a technology and implementation independent virtual accelerator, the accelerator interface requirements and specifications that would allow a VNF to leverage a Virtual Accelerator. The virtual accelerator is modeled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 specifies the architectural model in Chapter 4 and the abstract interfaces for management, configuration, monitoring and Data exchange in Chapter 7.
@@ -175,7 +175,7 @@ Table 6-1 lists a number of NFVI and VIM inetrfaces, including the internal VI-H
 
 <a name="6.4"></a>
 ## 6.4. Enabler Services Interfaces
-An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming requests amongst a pool of designated resources. 
+An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming requests amongst a pool of designated resources.
 
 ## References
 Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004

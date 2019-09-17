@@ -11,5 +11,5 @@
 * [License](LICENSE)
 
 ### Read the Docs:
-* [Wiki](https://github.com/cntt-n/CNTT/wiki) 
+* [Wiki](https://github.com/cntt-n/CNTT/wiki)
 * [Doc](https://cntt-n.github.io/CNTT/)

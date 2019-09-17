@@ -13,7 +13,7 @@
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
 
-**should**: Requirements that are marked as _should_ are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to _should not_. 
+**should**: Requirements that are marked as _should_ are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to _should not_.
 > RFC2119
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
@@ -176,7 +176,7 @@ Traceability to Reference Model.
 
 <p align="center"><b>Table 2-8:</b> OpenStack Security Requirements.</p>
 
-<!-- 
+<!--
 **Backlog of Req**
 
 1. Manage discovery of resources, resource capabilities/features
@@ -196,7 +196,7 @@ Traceability to Reference Model.
 1. Policy driven performance and fault management
 1. Principles should apply to all reference architectures we design and develop
 1. Traceability between reference model to reference architecture (and vice versa)
-1. Implementable and usable for VNF developer community, i.e. with enough specificity to support the design and development of a VNF 
+1. Implementable and usable for VNF developer community, i.e. with enough specificity to support the design and development of a VNF
 1. Define the NFVI so that developers can understand how to build VNFs
 1. Design the architectures with common elements so that the VNFs require less operator specific customizations
 1. Rationalize need for each discrete architecture
@@ -210,7 +210,7 @@ Traceability to Reference Model.
     1. Resource and Operational Efficiency
     1. E2E Lifecycle Automation (Deployment, Operations, & Maintenance)
     1. High-Availability
-1. Prioritize incorporation of open source components 
+1. Prioritize incorporation of open source components
     1. Design architectures to established open standards as much as possible
 1. Architectures will evolve over time
 1. Mandatory Core services:
@@ -232,13 +232,13 @@ Traceability to Reference Model.
     1. I don’t want to be prescriptive over CPU pinning or NUMA but we can discuss.
 1. Network:
     1. Load balancing – should we base this on Octavia or do we need a plug-in like AVI / F5?
-    1. OpenVSwitch? 
+    1. OpenVSwitch?
     1. Geneve/VXLAN tunnelling?
     1. IPv6… when?
-    
+
 1. Tagging:
     1. We may want to define a standard for tagging resources.
-    
+
 1. Logging, Monitoring, Alerting of the Cloud should ensure any failures in the control plane are either self-healed or alerted on and ideally some sort of centralised log file analysis should be possible without needing to trawl local log files.    Logging in the tenant space is left to the application.
 1. Backup of the control plane configuration (keystone DB, other DB, policy.json’s) to a remote object store.
 -->

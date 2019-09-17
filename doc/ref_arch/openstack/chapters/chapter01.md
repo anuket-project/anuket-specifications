@@ -23,7 +23,7 @@
 ## 1.3 Terminology
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
-  
+
 <a name="1.4"></a>
 ## 1.4 Principles
 
@@ -45,4 +45,3 @@ Open Stack Reference Architecture must obey to the following set of principles:
 
 <a name="1.7"></a>
 ## 1.7 Roadmap
-

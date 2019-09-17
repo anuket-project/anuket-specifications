@@ -14,7 +14,7 @@
 * [4.8 Telemetry.](#4.8)
 * [4.9 General Hardware requirements.](#4.9)
 
-<a name="4.1"></a> 
+<a name="4.1"></a>
 ## 4.1 Introduction.
 
 This should focus on IaaS elements.
@@ -23,7 +23,7 @@ This should focus on IaaS elements.
 ## 4.2 Network Topology (control plane, storage, tenant, external)
 - Physical Network = Spine / Leaf with dual homing to ToR
 - Proposed logical network layout – VLANs, overlay, FIPs, IPv6   – we will follow common vendor recommendations however we can agree on our minimum expectations
-- LBaaS v2 compliant Load Balancing 
+- LBaaS v2 compliant Load Balancing
 - Neutron ML2 integration to any external SDN controller
 
 
@@ -52,11 +52,11 @@ This should focus on IaaS elements.
   - Software Components
     - > for example: vSwitch DPDK + Contrail
   - Hardware Platform
-    - > for example: dual socket platform. 2x25G NIC, CryptoAcc, etc. 
+    - > for example: dual socket platform. 2x25G NIC, CryptoAcc, etc.
 
-- Compute Intensive Profile 
+- Compute Intensive Profile
   - Software Components
-    - > for example: vSwitch DPDK + Open Contrail 
+    - > for example: vSwitch DPDK + Open Contrail
   - Hardware Platform
   - > for example: dual socket platform. 2x25G NIC, GPU, etc.
 
@@ -68,7 +68,7 @@ This should focus on IaaS elements.
 
 
 <a name="4.7"></a>
-## 4.7 Logging / Monitoring / Alerting of Control Plane 
+## 4.7 Logging / Monitoring / Alerting of Control Plane
 - Prometheus
 
 

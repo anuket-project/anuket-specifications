@@ -6,7 +6,7 @@
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
   * [1.1.1 About CNTT-RI.](#1.1.1)
-  * [1.1.2 Relationship with other communities.](#1.1.2) 
+  * [1.1.2 Relationship with other communities.](#1.1.2)
 * [1.2 Terminology.](#1.2)
 * [1.3 Scope.](#1.3)
 * [1.4 Roadmap.](#1.4)
