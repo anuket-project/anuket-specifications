@@ -9,11 +9,11 @@
   * [1.1.3 Common NFVI Benefits.](#1.1.3)
 * [1.2 Terminology.](#1.2)
 * [1.3 Principles.](#1.3)
-* [1.4 How this document works.](#1.4)
-  * [1.4.1 Document Organization.](#1.4.1)
-  * [1.4.2 Audience.](#1.4.2)
-* [1.5 Scope.](#1.5)
-  * [1.5.1 Use Cases.](#1.5.1)
+* [1.4 Scope.](#1.4)
+  * [1.4.1 Use Cases.](#1.4.1)
+* [1.5 How this document works.](#1.5)
+  * [1.5.1 Document Organization.](#1.5.1)
+  * [1.5.2 Audience.](#1.5.2)
 * [1.6 Relationship to other industry projects.](#1.6)
 * [1.7 Out of Scope Components.](#1.7)
 * [1.8 Bogo-Meter.](#1.8)
@@ -106,54 +106,7 @@ This section introduces the high-level principles of infrastructure abstraction 
 1. VNFs that are designed to take advantage of NFVI accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts.
 
 <a name="1.4"></a>
-## 1.4 How this document works
-Within the framework of the CNTT vision, there are three levels of documents needed to document the components and allow the practical application of the systems. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
-
-<p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
-
-<a name="1.4.1"></a>
-## 1.4.1 Document Organization
-
-- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. It written at a high enough level that as new **Reference Architectures** and **Reference Implementations** are added, the model document should require few or no changes.
-- **Reference Architecture**: High level NFVI system components and their interactions that takes the Reference Model goals and maps them to something that has components in the real world.  It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.  The intention whenever possible to use existing elements, rather than specify entirely new architectures in support of the high-level goals specified in the **Reference Model**.
-- **Reference Implementation**: Builds on the requirements and specifications developed in the other two documents and adds details so that it can be implemented.  Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
-
-Below is a diagram of the different artifacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
-
-<p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-5:</b> Description of the possible different levels of CNTT artefacts</p>
-
-<a name="1.4.2"></a>
-## 1.4.2 Audience
-
-The document starts from the abstract and as it progresses it increasingly gets into more details.  It follows the traditional design process where you start from core principles, progress to abstract concepts and models, then finish with operational considerations, such as security and lifecycle management.
-
-- **Chapter 01 - Introduction**: Overall scope of the Reference Model document including the goals and objectives of the project.  
-  -	**Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Chapter 02 - VNF requirements & Analysis**: High level requirements and core principles needed to understand how the model was developed.  Addresses the thinking behind the decisions that were made. 
-  -	**Audience**: This chapter is written for architects and others with an interest in how the decisions were made.
-- Chapter 03 - Modelling:  The high-level NFVI model itself.  
-  -	**Audience**: This chapter is written for architects and others who wants to gain a quick high-level understanding of the model.
-- **Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue**:  Details about the capabilities needed to support the various types of VNFs and how the capabilities are applied to the model. The details regarding T-shirt sizes and other considerations are found in this section.
-  -	**Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
-- **Chapter 05 - Featureset and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the NFVI.  It includes a discussion of some of the external components, such as the VIM and the NFVs and how they interact with the NFVI. 
-  - **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
-- **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communication with the NFVs themselves and any other external components.
-  -	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or write VNF applications that use the APIs.
-- **Chapter 07 - Security Guidelines**:  This chapter identifies the security components that need to be taken into consideration when designing and implementing an NFVI environment.  It does not cover details related to company specific requirements to meet regulatory requirements.
-  - **Audience**: This chapter is written for security professional, architects, developers and others who need to understand the role of security in the NFVI environment.
-- **Chapter 08 - Compliance, Verification, and Certification**:  This chapter details the requirements for developing test suites for a verification and validation program for developers and vendors to validate that their software and applications meet the requirements for the NFVI architectures.
-  -	**Audience**: This chapter is written for QA testers, developers and others who need to develop infrastructure or write VNF applications.
-- **Chapter 09 - Life Cycle Management**: This chapter focuses on the operational aspects of the NFVI.  Discussions include deployment considerations, on-going management, upgrades and other lifecycle concerns and requirements.  It does not cover details related to company specific operational requirements, nor does it go into how the NFVI will interface with existing BSS/OSS systems.
-  - **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the VNF applications.
-- **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
-  - **Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Appendix A - VNF Design Guidelines**: More details related to how the VNF applications will interface with the NFVI through APIs and the VIM.
-  - **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
-
-<a name="1.5"></a>
-## 1.5 Scope
+## 1.4 Scope
 
 This document focuses on the documenting the higher level concepts that are needed to identify **Reference Model**. **Figure 1-6** below highlights its scope in more details.
 
@@ -177,8 +130,8 @@ This document specifies:
 
   - **Test framework**: Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles.
   
-<a name="1.5.1"></a>
-## 1.5.1 Use Cases
+<a name="1.4.1"></a>
+## 1.4.1 Use Cases
 Since the CNTT membership is primarily from the telecom and telecom supporting vendors communities, most of the use cases represent the interests of that community.  The following high-level use cases are used to inform and guide both the reference model and subsequent architectures and implementations.  Note that many of these use cases were taken from the work done by the OpenStack Foundation Edge Working Group.
 
 - **Mobile service provider 5G/4G virtual RAN deployment and Edge Cloud B2B2X**: There are at least three use cases related to this (e.g. vRAN, NFV, MEC). While the use cases are different, the expectation is that they will run on the same infrastructure. So it makes sense to treat them together. Case 1: 1- vRAN: Here the l focus on virtual Baseband Unit (BBU) which has stringent requirements on processing for timing controls with 'remote radio heads' 2- NFV: Here the focus is on running the Core applications as virtual machines at the edge. This includes, vEPC elements, vRouters, Virtual Firewall (vFW), Virtual Load Balancer (vLB). 3- MEC: Here the focus is on running 3rd party or operator applications at the edge. The MEC resource pools could be supporting a variety of other MEC applications (smart city, v2x, consumer AR).
@@ -196,6 +149,52 @@ Since the CNTT membership is primarily from the telecom and telecom supporting v
 More use cases to pull in:  https://docs.openstack.org/arch-design/use-cases.html
 
 >_**Comment**: This section is still under development._
+
+<a name="1.5"></a>
+## 1.5 How this document works
+Within the framework of the CNTT vision, there are three levels of documents needed to document the components and allow the practical application of the systems. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
+
+<p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
+
+<a name="1.5.1"></a>
+## 1.5.1 Document Organization
+
+- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. It written at a high enough level that as new **Reference Architectures** and **Reference Implementations** are added, the model document should require few or no changes.
+- **Reference Architecture**: High level NFVI system components and their interactions that takes the Reference Model goals and maps them to something that has components in the real world.  It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.  The intention whenever possible to use existing elements, rather than specify entirely new architectures in support of the high-level goals specified in the **Reference Model**.
+- **Reference Implementation**: Builds on the requirements and specifications developed in the other two documents and adds details so that it can be implemented.  Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
+
+Below is a diagram of the different artifacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
+
+<p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 1-5:</b> Description of the possible different levels of CNTT artefacts</p>
+
+<a name="1.5.2"></a>
+## 1.5.2 Audience
+The document starts from the abstract and as it progresses it increasingly gets into more details.  It follows the traditional design process where you start from core principles, progress to abstract concepts and models, then finish with operational considerations, such as security and lifecycle management.
+
+- **Chapter 01 - Introduction**: Overall scope of the Reference Model document including the goals and objectives of the project.  
+  -	**Audience**: This chapter is written for a general technical audience with interest in this topic.
+- **Chapter 02 - VNF requirements & Analysis**: High level requirements and core principles needed to understand how the model was developed.  Addresses the thinking behind the decisions that were made. 
+  -	**Audience**: This chapter is written for architects and others with an interest in how the decisions were made.
+- Chapter 03 - Modelling:  The high-level NFVI model itself.  
+  -	**Audience**: This chapter is written for architects and others who wants to gain a quick high-level understanding of the model.
+- **Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue**:  Details about the capabilities needed to support the various types of VNFs and how the capabilities are applied to the model. The details regarding T-shirt sizes and other considerations are found in this section.
+  -	**Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
+- **Chapter 05 - Featureset and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the NFVI.  It describes the software and hardware capabilities and configurations recommended for the different types of NFVI profiles. 
+  - **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
+- **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communication with the NFVs themselves and any other external components.
+  -	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or write VNF applications that use the APIs.
+- **Chapter 07 - Security Guidelines**:  This chapter identifies the security components that need to be taken into consideration when designing and implementing an NFVI environment.  It does not cover details related to company specific requirements to meet regulatory requirements.
+  - **Audience**: This chapter is written for security professional, architects, developers and others who need to understand the role of security in the NFVI environment.
+- **Chapter 08 - Compliance, Verification, and Certification**:  This chapter details the requirements for developing test suites for a verification and validation program for developers and vendors to validate that their software and applications meet the requirements for the NFVI architectures.
+  -	**Audience**: This chapter is written for QA testers, developers and others who need to develop infrastructure or write VNF applications.
+- **Chapter 09 - Life Cycle Management**: This chapter focuses on the operational aspects of the NFVI.  Discussions include deployment considerations, on-going management, upgrades and other lifecycle concerns and requirements.  It does not cover details related to company specific operational requirements, nor does it go into how the NFVI will interface with existing BSS/OSS systems.
+  - **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the VNF applications.
+- **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
+  - **Audience**: This chapter is written for a general technical audience with interest in this topic.
+- **Appendix A - VNF Design Guidelines**: More details related to how the VNF applications will interface with the NFVI through APIs and the VIM.
+  - **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
 
 <a name="1.6"></a>
 ## 1.6 Relationship to other industry projects
