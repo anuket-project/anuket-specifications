@@ -686,6 +686,42 @@ Example performance-based metrics include, but are not limited to: resource util
 Metrics/Measurements and respective certification(s).
 e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
 
+Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviors of the application which are defined by functional requirements.
+
+This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please visit [Chapter 4 of the Reference Model](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md "Chapter 4 - Infrastructure Capabilities, Metrics, and Catalog").**
+
+**STORAGE and IOPS**
+
+_**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
+
+From a definition perspective, IOPS is the standard unit of measurement for I/O (Input/Output) operations per second. This measurement is a performance-based measurement and is usually seen written as**(1)**:
+
+- **Total IOPS**: Average number of I/O operations per second.
+- **Read IOPS**: Average number of read I/O operations per second.
+- **Write IOPS**: Average number of write I/O operations per second.
+
+For example, if you have a disk that is capable of doing a 100 IOPS, it means that it is theoretically capable of issuing a 100 read and or write operations per second.  This is in theory.  In reality, additional time is needed to actually process the 100 reads/writes.  This additional time is referred to as "latency", which reduces the total IOPS that is calculated, and measured.  Latency needs needs to be measured, and included in the IOPS calculation.  Latency will tell us how long it takes to process a single I/O request, and is generally in the 2 millisecond (ms) range per IO operation for a physical disk, through 20+ ms, at which time users will notice an impact in their experience**(2)**.  
+
+Additional factors to consider when measuring IOPS:
+
+
+- Take into consideration the percentage of Input (write) vs. Output (reads) operations, as Writes can be more resource intensive.
+- Determine if Reads were performed from Cache, as this this may (will) result in faster performance, and faster IOPS.
+- Confirm the storage types (Physical, RAID), as storage arrays with linear, or sequential reading/writing may (will) be slower.
+- Identify the block size used, as using large block sizes vs. small block sizes can (will) impact IOPS performance.
+- Determine Hard Disk Speeds (HDD in RPMs) used, as the higher the RPMS, the potential for faster IOPS performance.
+- Quantify the number of disk controllers used to process the number of requested IO requests.
+- Determine the specific work-load requirements, as this will dictate speed, controllers, disk RPM, and latency tolerances.  
+
+For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
+
+**References:**
+
+
+1. _IOPS - I/O (Input/Output) operations per second_, by Vangie Beal.  Retrieved from https://www.webopedia.com/TERM/I/IOPS.html on 9/18/2019.
+2. _The ultimate IOPS cheat sheet!_, by Bas van Kaam.  Retrieved from https://www.basvankaam.com/2014/07/29/the-ultimate-iops-cheat-sheet/ on 9/18/2019.
+3. _An explanation of IOPS and latency_, by Dimitris Krekoukias.  Retrieved from http://recoverymonkey.org/2012/07/26/an-explanation-of-iops-and-latency/ on 9/18/2019.
+
 <a name="8.8.2"></a>
 ### 8.8.2 Report Summary
 
