@@ -347,11 +347,11 @@ Table 4-14 shows security capabilities
 <p align="center"><b>Table 4-15:</b> Resource management metrics of VIM.</p>
 
 <a name="4.1"></a>
-## 4.2 Catalogue
+## 4.2 Infrastructure Profiles Catalogue
 
-Infrastructure exposes sets of capabilities, metrics, compute flavours, interface options, storage extensions, and acceleration capabilities to VNFs. Those sets are offered to VNFs in form of instance types with their corresponding options and extensions.
+Infrastructure exposes compute flavours with options, virtual interface options, storage extensions, and acceleration extensions to VNFs. These NFVI Profiles are offered to VNFs in the form of infrastructure instance types with their corresponding options and extensions.
 
-The idea of the infrastructure instances catalogue is to have a predefined set of instance types with a predefined set of compute flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more of those compute flavours (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-2**.
+The idea of the infrastructure profiles catalogue is to have a predefined set of instance types with a predefined set of compute flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more compute flavour (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-2**.
 
 <p align="center"><img src="../figures/ch04_vnf_design.PNG" alt="vnf_design" title="VNF Design" width="65%"/></p>
 <p align="center"><b>Figure 4-2:</b> VNFs built against standard instance types and compute flavours.</p>
@@ -359,23 +359,24 @@ The idea of the infrastructure instances catalogue is to have a predefined set o
 <a name="4.2.1"></a>
 ### 4.2.1 Compute flavours
 
-Flavours represent the compute, memory, storage capacity, and management network resource templates that are used to create the VMs on the compute hosts. Each VM instance is given a flavour (resource template), which determines the instance's core, memory and storage characteristics.
+Compute flavours represent the compute, memory, storage, and management network resource templates that are used by VMs on the compute hosts. Each VM is given a compute flavour (resource template), which determines the VMs compute, memory and storage characteristics.
 
-Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute flavour geometry consists of the following elements:
+Compute flavours can also specify secondary ephemeral storage, swap disk, etc. A compute flavour geometry consists of the following elements:
 
 Element |Description
 --------|----------
-Name |A descriptive name
-Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the instance.
-Memory MB |Instance memory in megabytes.
+Compute Flavour Name |A descriptive name
+Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the VM instance.
+Memory |Local memory in megabytes.
 Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
-Is Public |Boolean value, whether flavor is available to all users or private to the project it was created in. Defaults to True.
+Managemetn Interface |Specifies the bandwidth of mangemetn interface/s
+Is Public |Boolean value. Specifies flavor is available to all users (True) or is private to the project it was created in (False). Defaults to True.
 
-<p align="center"><b>Table 4-16:</b> Flavour Geometry Specification.</p>
+<p align="center"><b>Table 4-16:</b> Compute Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Predefined Compute flavours
-The intent of the following flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute flavours are specified relative to the standardised “large” flavour. The standard “large” flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting instance will have a management interface of 1 Gbps. The “medium” flavour is half the size of a large and small is half the size of medium. The tiny flavour is a special sized flavour.
+The intent of the following flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute flavours are specified relative to the “large” flavour. The “large” flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting instance will have a management interface of 1 Gbps. The “medium” flavour is half the size of a large and small is half the size of medium. The tiny flavour is a special sized flavour.
 
 >_*Note:*_ Customised (Parameterized) flavours can be used in concession by operators and , if needed, are  created using TOSCA, HEAT templates and/or VIM APIs.
 
@@ -395,9 +396,9 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 <a name="4.2.2"></a>
 ### 4.2.2 Network Interface Specifications
 
-The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” option.
+The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” with interface bandwidth.
 
-Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base flavour.
+Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment and supported by physical NICs. The vNIC extension is not part of the base flavour.
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
@@ -414,7 +415,7 @@ n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
-Multiple non-ephemeral storage volumes can be attached to virtual computes  for persistent data storage. Each of those volumes can be configured with the required performance category.
+Multiple non-ephemeral storage volumes can be attached to virtual computes for persistent data storage. Each of those volumes can be configured with the required performance category.
 
 .conf |Read IO/s |Write IO/s Read |Throughput (MB/s) |Write Throughput (MB/s)
 ---|---|---|---|---
