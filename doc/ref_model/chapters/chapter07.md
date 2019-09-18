@@ -174,11 +174,6 @@ The following diagram shows the different security domains that impact the Refer
 <p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
 <p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
 
-From a network access perspective, the following diagram shows where different access controls will separate the security domains in the Reference model:
-
-<p align="center"><img src="../figures/ch7_data_access_model.png" alt="Overview" title="Access Controls" width="100%"/></p>
-<p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
-
 <a name="7.4.2"></a>
 ## 7.4.3 Platform security requirements
 
@@ -217,18 +212,22 @@ At a high level, the following areas/requirements cover workload security for a 
 ## 7.5 Platform Security
 
 <a name="7.5.1"></a>
-## 7.5.1 Platform Security Assumption
-    platform security compliance will be the responsibility of the platform owner.
+## 7.5.1 Platform Security
 
-    *(Define the platform security assumption. Note also that the platform
-    may have a different security posture/level to the workload, but that
-    the workload can leverage security accreditations/compliances/services
-    offered by the platform).*
+The security certification of the platform will typically need to be the same, or higher, than the workload or VNF requirements.
 
--   Refer industry references (case by case) – i.e. ISO, NIST, and etc.
+The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by VNFs, or by Data Centre Operations staff supporting the workload, or by tenants accessing VNFs. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
-    *(Can use material from, and update, the existing CNTT section on
-    industry security standards)*
+<p align="center"><img src="../figures/ch7_data_access_model.png" alt="Overview" title="Access Controls" width="100%"/></p>
+<p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
+
+The high-level functions of these different access controls are described below:
+* **MGNT ACCESS CONTROLS** - Platform access to VNFs for service management. Typically all management and control-plane traffic is encrypted.
+* **DATA ACCESS CONTROLS** - Control of east-west traffic between VNFs, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and pltaform services. Inherently strong separation between tenants is mandatory.
+* **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
+* **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as 2FA, and using technologies such as RBAC and encryption. API gateways may be required for automated/script-driven processes.
+* **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks (usually sub, or virtual networks).
+* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including RBAC, authentication controls as approriate for the access arrangement, and API gateways for automated/script-driven processes.
 
 <a name="7.5.2"></a>
 ## 7.5.2 Platform ‘back-end’ access security
