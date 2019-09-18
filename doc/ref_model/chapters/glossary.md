@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # Glossary - Terminology
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [11.1 Terminology.](#11.1)
@@ -16,6 +16,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 <a name="11.1.1"></a>
 ### 1.2.1 Software Layer Terminology
+
 - **Network Function Virtualisation (NFV)**: The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 - **Network Function Virtualisation Infrastructure (NFVI)**: The totality of all hardware and software components used to build the environment in which a set of VAs are deployed.
  >_*Note:*_ The NFV-Infrastructure can span across many locations, e.g. places where data centres or edge nodes are operated. The network providing connectivity between these locations is regarded to be part of the NFVI. NFVI and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
@@ -73,5 +74,6 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 <a name="11.1.4"></a>
 ### 1.1.4 Other Referenced Terminology
+
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
