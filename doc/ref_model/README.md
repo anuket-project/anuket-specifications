@@ -35,9 +35,9 @@
 | Chapter 09 | Still Developing Content |
 | Chapter 10 | Initial Framework Only |
 | Appendix A | Initial Framework Only |
+| Glossary | Lots of SME Feedback |
 
 ## Table of Contents
-* [Abbreviations](abbreviations.md)
 * [Chapter 01 - Introduction](chapters/chapter01.md)
 * [Chapter 02 - VNF requirements & Analysis](chapters/chapter02.md)
 * [Chapter 03 - Modelling](chapters/chapter03.md)
@@ -50,6 +50,7 @@
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
 * [Appendix A - VNF Design Guidelines](chapters/appendix-a.md)
+* [Glossary](glossary.md)
 
 ## Technical Leads
 
@@ -66,3 +67,4 @@
 | Chapter 8 - Compliance and Verification | Mike Fix (mf4716@att.com) @mf4716 | Kyle Greenwell (Kyle.Greenwell@VerizonWireless.com) @kagreenwell |
 | Chapter 9 - Life Cycle Management | Tom Kivlin (tom.kivlin@vodafone.com) @tomkivlin| |
 | Chapter 10 - GAPS | JONATHAN BELTRAN (jb788y@att.com) @jbeltranatl| |
+| Glossary | Beth Cohen (beth.cohen@one.verizon.com) @bfcohen| |
