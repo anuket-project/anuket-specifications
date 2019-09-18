@@ -228,7 +228,6 @@ The host profile and capabilities include:
 1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
 1. **SMT/HT (SMT: Simultaneous Multithreading/ HT: Hyper Threading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host.
-1. **CPU Clock Speed or CPU frequency**: represents how many cycles per second the CPU can execute.
 1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV.
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
 1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
@@ -264,7 +263,6 @@ The configurations specified in here will be utilized in specifying the actual h
 | nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
 | nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
 | nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y| Y |
-| nfvi.hw.cpu.cfg.005 | CPU clock speed | This represents the minimum value for CPU clock speed (GHz) | 2 | 2| 2 |
 
 <!--
 | nfvi.hw.cpu.cfg.005 | CPU Pinning |  | N | Y | Y
