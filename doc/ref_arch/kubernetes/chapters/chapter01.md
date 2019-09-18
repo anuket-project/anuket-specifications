@@ -21,7 +21,7 @@
 <a name="1.3"></a>
 ## 1.3 Approach
 
-  
+
 <a name="1.4"></a>
 ## 1.4 Principles
 
@@ -41,4 +41,3 @@ Kubernetes Reference Architecture must obey to the following set of principles:
 
 <a name="1.7"></a>
 ## 1.7 Roadmap
-

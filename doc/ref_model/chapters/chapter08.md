@@ -8,7 +8,7 @@
 * [8.2 Principles and Guidelines.](#8.2)
   * [8.2.1 Overarching Objectives and Goals.](#8.2.1)
   * [8.2.2 Verification Methodologies.](#8.2.2)
-  * [8.2.3 Governance.](#8.2.3)  
+  * [8.2.3 Governance.](#8.2.3)
 * [8.3 Terms and Resources.](#8.3)
   * [8.3.1 Terms.](#8.3.1)
   * [8.3.2 Resources.](#8.3.2)
@@ -69,6 +69,7 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 **Different Distributions** 
 The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
 
+
 **Not in Scope**
 
 - Functional testing/validation of the VNF is not in scope.
@@ -86,7 +87,7 @@ This chapter includes process flow, logistics, and requirements which must be sa
 
 The objectives of the verification program are to deliver a validated implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
 
-These core principles will guide NFV verification deliverables: 
+These core principles will guide NFV verification deliverables:
 
 <a name="8.2.1"></a>
 ### 8.2.1 Overarching Objectives and Goals
@@ -134,9 +135,9 @@ These core principles will guide NFV verification deliverables:
 
 NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  
 
-- **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
-- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.  
-- **Certfications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, development (of which there are no code developed/delivered), and logistics for communications.  
+- **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.
+- **Certfications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, development (of which there are no code developed/delivered), and logistics for communications.
 
 Source information for additional reading:
 - [https://www.softwaretestingmaterial.com/verification-and-validation/](https://www.softwaretestingmaterial.com/verification-and-validation/ "What is Verification And Validation In Software Testing")
@@ -163,14 +164,14 @@ Additional Terms utilized throughout the document:
   <tr><td>GB</td><td>Gigabit</td></tr>
   <tr><td>Hareness (Test)</td><td>automated test framework (test engine, scrip repository) configured to test a program unit by running it under varying conditions and monitoring its behavior and outputs</td></tr>
   <tr><td>HW</td><td>Hardware</td></tr>
-<tr><td>IMS</td>	<td>IP Multimedia Subsystem</td></tr>
-<tr><td>I/O</td>	<td>Input/Output</td></tr>
-<tr><td>MB</td>	<td>Megabit</td></tr>
-<tr><td>NFV</td>	<td>Network Function Virtualization</td></tr>
-<tr><td>NFVI</td>	<td>NFV Infrastructure</td></tr>
-<tr><td>NUMA</td>	<td>Non-Unified Memory Access</td></tr>
-<tr><td>OPNFV</td>	<td>Open Platform for NFV</td></tr>
-	<tr><td>OVP</td><td>OPNFV Verification Program (OVP)</td></tr>
+<tr><td>IMS</td> <td>IP Multimedia Subsystem</td></tr>
+<tr><td>I/O</td> <td>Input/Output</td></tr>
+<tr><td>MB</td> <td>Megabit</td></tr>
+<tr><td>NFV</td> <td>Network Function Virtualization</td></tr>
+<tr><td>NFVI</td> <td>NFV Infrastructure</td></tr>
+<tr><td>NUMA</td> <td>Non-Unified Memory Access</td></tr>
+<tr><td>OPNFV</td> <td>Open Platform for NFV</td></tr>
+ <tr><td>OVP</td><td>OPNFV Verification Program (OVP)</td></tr>
 <tr><td>RAM</td><td>Random Access Memory</td></tr>
 <tr><td>Scenario (Test)</td>	<td>any functionality that can be tested; synonymous with use case, or collection of test steps to complete a user workflow</td></tr>
 <tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
@@ -197,21 +198,21 @@ Additional Terms utilized throughout the document:
 ### 8.3.2 Resources
 1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
 2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
-3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html 
+3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
 4. **Dovetail**
-	1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements 
-	2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf 
-	3. TCs: 
-		1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review 
-		2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
-		3. Per OVP release in the release notes:
-			1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
-			2. https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/release/release-notes/index.html
+ 1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements
+ 2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf
+ 3. TCs:
+  1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review
+  2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
+  3. Per OVP release in the release notes:
+   1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
+   2. https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/release/release-notes/index.html
 5. **Overall documentation** is on docs.opnfv.org for the corresponding Fraser and Danube releases
-	1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
-	2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
+ 1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
+ 2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
 6. **OPNFV Verification Program** is an open source, community-led compliance and verification program to demonstrate the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV and ONAP components (https://www.lfnetworking.org/OVP/).
-	1. OVP Whitepaper - https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
+ 1. OVP Whitepaper - https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
 
 <a name="8.4"></a>
 ## 8.4 Lifecycle and Process Flow
@@ -477,7 +478,7 @@ NFVI+VNF testing will be considered **Testable** if the follow qualifiers are pr
 In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.  Refer to [https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08.md#8.7.3](https://github.com/cntt-n/CNTT/blob/chapter08/doc/ref_model/chapters/chapter08.md#8.7.3 "Entrance & Exit Criteria") for detailed information.
 
 **Dependencies**
-NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects. 
+NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects.
 
 - NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
 
@@ -547,8 +548,8 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 <li>Standard NTP servers are working and verified (using tenant's CIDR source IP)</li>
 <li>NFVI/VNF is tested at steady state and high load</li>
 <li>Continuously monitored to ensure SLAs are met and used as feedback to load/perf tests<u></u></li>
-<li>Passing Interoperability Validations: a) <b>Compatibility Checks</b> (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); b) 
-	<b>Integration Checks</b> (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
+<li>Passing Interoperability Validations: a) <b>Compatibility Checks</b> (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); b)
+ <b>Integration Checks</b> (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
 </ol>
 </li>
 <li><u><strong>END USER CONSIDERATIONS (TELCO PERSPECTIVE)</strong></u>

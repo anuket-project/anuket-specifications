@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 4	Infrastructure Capabilities, Metrics, and Catalogue
+# 4 Infrastructure Capabilities, Metrics, and Catalogue
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 
@@ -46,7 +46,7 @@ Note: The figure above indicates the areas from where the objects are <i>visible
 ### 4.1.2 Exposed Infrastructure capabilities
 This section describes a set of explicit NFVI capabilities and metrics that define an NFVI. These capabilities and metrics are well known to VNFs as they provide capabilities which VNFs rely on.
 
-> _**Note**: 	It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
+> _**Note**:  It is expected that NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
 <a name="4.1.2.1"></a>
 #### 4.1.2.1 Exposed resource capabilities
@@ -125,7 +125,7 @@ The following shows performance metrics per VNF-C, vNIC or vCPU.
 
 This section covers a list of implicit NFVI capabilities and metrics that define the interior of   NFVI. These capabilities and metrics determine how the NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will have a big impact on the overall performance and capabilities of a given NFVI solution.
 
->_**Note**: 	It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
+>_**Note**:  It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
 <a name="4.1.4.1"></a>
 #### 4.1.4.1 Internal resource capabilities
@@ -142,7 +142,7 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 <!--
 /* MXS 13/7/2019 - Mapping table 3-14 is being commented out. If someone can provide supporting details,
-   we can put it back. Details should include assumptions (e.g., is it SRIOV, OvS or what?), 
+   we can put it back. Details should include assumptions (e.g., is it SRIOV, OvS or what?),
    citable references, an explanation of what we're mapping and why (#s represent min? max? anticipated?, etc.),
    and a detailed basis for the values, including an explanation for how come the numbers are identical for both
    cores and ram. Thanks, -Mark */
@@ -202,30 +202,34 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 <a name="4.1.4.5"></a>
 #### 4.1.4.5 Internal security capabilities
 
-<a name="Table4-9"></a>
+Security content has been relocated to the Security chapter (RM Chapter 7).
 
+Table 4-9: Reserved
+
+<!--
+<a name="Table4-9"></a>
+//
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------|--------|------------------------------------------------------------------|
 | i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation | Yes/No | Are VNF-C memories isolated from each other by hardware support? |
 | i.nfvi.sec.cap.002 | VNF-C -> Host | Yes/No | Can VNF-C access host memory? |
 | i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory? |
 | i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest? |
-
-
 <p align="center"><b>Table 4-9:</b> Internal security capabilities of NFVI.</p>
+-->
 
 <a name="4.1.5"></a>
 ### 4.1.5 Internal Infrastructure metrics
-<!-- 
+<!--
 [COMMENT - Xavier Grall, Orange: section "3.4.2.3 Internal SLA metrics" is removed since it is redundant with network performance metrics]
 //
 [COMMENT - Xavier Grall, Orange: section "3.4.2.4 Internal scalability metrics" is removed since it is redundant with resource management metrics]
---> 
+-->
 <a name="4.1.5.1"></a>
-#### 4.1.5.1 Internal performance metrics 
-<!-- 
+#### 4.1.5.1 Internal performance metrics
+<!--
 [COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
---> 
+-->
 
 The following table shows performance metrics per NFVI node.
 
@@ -302,27 +306,27 @@ Table 4-13 shows monitoring capabiltities
 
 <p align="center"><b>Table 4-13:</b> VIM capabilities related to resources monitoring .</p>
 
+Table 4-14: Reserved
+
+<!--
+Security content relocated to RM Chapter 7 - MXS 10/9/2019
 Table 4-14 shows security capabilities
-
 <a name="Table4-14"></a>
-
 | Ref | VIM capability | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
 | e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM|
-
 <p align="center"><b>Table 4-14:</b> VIM capabilities related to security .</p>
+-->
 
-<!-- Rabi A -->
-_**Editor Note:** This Section is still to be worked on._
 
 <a name="4.1.7"></a>
 ### 4.1.7 VIM metrics.
 
 <a name="4.1.7.1"></a>
-#### 4.1.7.1 Resources management metrics 
-**Table 4-12** shows resource management metrics of VIM as aligned with ETSI GS NFV TST-012 [3].
+#### 4.1.7.1 Resources management metrics
+**Table 4-15** shows resource management metrics of VIM as aligned with ETSI GS NFV TST-012 [3].
 
-<a name="Table4-12"></a>
+<a name="Table4-15"></a>
 
 | Ref | VIM metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
@@ -339,7 +343,7 @@ _**Editor Note:** This Section is still to be worked on._
 | vim.rmt.met.011 | Time to update external virtual   network | Max ms |  |
 | vim.rmt.met.014 | Time to create external storage ready for use by VNF | Max ms |  |
 
-<p align="center"><b>Table 4-12:</b> Resource management metrics of VIM.</p>
+<p align="center"><b>Table 4-15:</b> Resource management metrics of VIM.</p>
 
 <a name="4.1"></a>
 ## 4.2 Catalogue
@@ -354,19 +358,19 @@ The idea of the infrastructure instances catalogue is to have a predefined set o
 <a name="4.2.1"></a>
 ### 4.2.1 Compute flavours
 
-Flavours represent the compute, memory, storage capacity, and management network resource templates that are used to create the VMs on the compute hosts. Each VM instance is given a flavour (resource template), which determines the instance's core, memory and storage characteristics. 
+Flavours represent the compute, memory, storage capacity, and management network resource templates that are used to create the VMs on the compute hosts. Each VM instance is given a flavour (resource template), which determines the instance's core, memory and storage characteristics.
 
 Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute flavour geometry consists of the following elements:
 
-Element |Description 
+Element |Description
 --------|----------
-Name	|A descriptive name
+Name |A descriptive name
 Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the instance.
-Memory MB	|Instance memory in megabytes. 
-Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. 
-Is Public	|Boolean value, whether flavor is available to all users or private to the project it was created in. Defaults to True.
+Memory MB |Instance memory in megabytes.
+Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
+Is Public |Boolean value, whether flavor is available to all users or private to the project it was created in. Defaults to True.
 
-<p align="center"><b>Table 4-13:</b> Flavour Geometry Specification.</p>
+<p align="center"><b>Table 4-16:</b> Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Predefined Compute flavours
@@ -376,48 +380,48 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 .conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Management Interface
 -----|------------|----------|-----|-----
-.tiny	|1	|512 MB	|1 GB	|1 Gbps
-.small	|1	|2 GB	|20 GB 	|1 Gbps
-.medium	|2	|4 GB	|40 GB	|1 Gbps
-.large	|4	|8 GB	|80 GB	|1 Gbps
-.2xlarge*	|8	|16 GB	|160 GB	|1 Gbps
-.4xlarge*	|16	|32 GB	|320 GB	|1 Gbps
+.tiny |1 |512 MB |1 GB |1 Gbps
+.small |1 |2 GB |20 GB  |1 Gbps
+.medium |2 |4 GB |40 GB |1 Gbps
+.large |4 |8 GB |80 GB |1 Gbps
+.2xlarge* |8 |16 GB |160 GB |1 Gbps
+.4xlarge* |16 |32 GB |320 GB |1 Gbps
 
-<p align="center"><b>Table 4-14:</b> Predefined Compute flavours.</p>
+<p align="center"><b>Table 4-17:</b> Predefined Compute flavours.</p>
 
 > _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt micro server's designs for their VNFs_
 
 <a name="4.2.2"></a>
 ### 4.2.2 Network Interface Specifications
 
-The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps) and an alphabetic character defining the number of interfaces with that bandwidth; multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” option.
+The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” option.
+
+Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base flavour.
 ```
-<network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>< # of interfaces of that bandwidth>
-<number of interfaces> :: <”” | “D” | “T” | “Q” | “P” | “H”> 
-where “” represents 1x, “D” 2x, “T” 3x, “Q” 4x, “p” 5x and “H” 6x interfaces of the given bandwidth.
+<network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
 
-Virtual network interface option	|Description (Bandwidth in Gbps)
+Virtual Network Interface Option |Interface Bandwidth
 ---|---
-n1, n10, n1T, n1Q, n1P, n1H	|1x 1, 2x 1, 3x 1, 4x 1, 5x 1, 6x 1 Gbps
-n10, n10D, n10T, n10Q, n10P, n10H	|1x 10, 2x 10, 3x 10, 4x 10, 5x 10, 6x 10 Gbps
-n25, n25D, n25T, n25Q, n25P, n25H	|1x 25, 2x 25, 3x 25, 4x 25, 5x 25, 6x 25 Gbps
-n50, n50D, n50T, n50Q, n50P, n50H	|1x 50, 2x 50, 36x 50, 4x 50, 5x 50, 6x 50 Gbps
-n100, n100D, n100T, n100Q, n100P, n100H	|1x 100, 2x 100, 3x 100, 4x 100, 5x 100, 6x 100 Gbps
+n1, n2, n3, n4, n5, n6 |1, 2, 3, 4, 5, 6 Gbps
+n10, n20, n30, n40, n50, n60 |10, 20, 30, 40, 50, 60 Gbps
+n25, n50, n75, n100, n125, n150 |25, 50, 75, 100, 125, 150 Gbps
+n50, n100, n150, n200, n250, n300 |50, 100, 150, 200, 250, 300 Gbps
+n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 
-<p align="center"><b>Table 4-15:</b> Virtual Network Interface Specification Examples.</p>
+<p align="center"><b>Table 4-18:</b> Virtual Network Interface Specification Examples.</p>
 
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
 Multiple non-ephemeral storage volumes can be attached to virtual computes  for persistent data storage. Each of those volumes can be configured with the required performance category.
 
-.conf	|Read IO/s	|Write IO/s	Read |Throughput (MB/s)	|Write Throughput (MB/s)
+.conf |Read IO/s |Write IO/s Read |Throughput (MB/s) |Write Throughput (MB/s)
 ---|---|---|---|---
-.bronze	|Up to 3K	|Up to 15K	|Up to 180	|Up to 120
-.silver	|Up to 60K	|Up to 30K	|Up to 1200	|Up to 400
-.gold	|Up to 680K	|Up to 360K	|Up to 2650	|Up to 1400
+.bronze |Up to 3K |Up to 15K |Up to 180 |Up to 120
+.silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400
+.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400
 
-<p align="center"><b>Table 4-16:</b> Storage Performance Profiles.</p>
+<p align="center"><b>Table 4-19:</b> Storage Performance Profiles.</p>
 
 <a name="4.2.3.1"></a>
 #### 4.2.3.1 Available storage extensions
@@ -435,7 +439,7 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 | .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 
-<p align="center"><b>Table 4-17:</b> Storage extensions for compute flavours.</p>
+<p align="center"><b>Table 4-20:</b> Storage extensions for compute flavours.</p>
 
 <a name="4.2.4"></a>
 ### 4.2.4 Instance types
@@ -449,7 +453,7 @@ This instance type is intended to be used for both IT workloads as well as NFV w
 This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
-N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized. 
+N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
 >_Interface types are aligned with ETSI NFV IFA 002 [4]._
 
 | .conf | Interface type | Description |
@@ -457,7 +461,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 | .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
 | .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
 
-<p align="center"><b>Table 4-18:</b> Acceleration extensions for N instance type.</p>
+<p align="center"><b>Table 4-21:</b> Acceleration extensions for N instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -473,7 +477,7 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
 | .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
 
-<p align="center"><b>Table 4-19:</b> Acceleration extensions for C instance type.</p>
+<p align="center"><b>Table 4-22:</b> Acceleration extensions for C instance type.</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -483,13 +487,13 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 
 | Virtual interface option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
-n1, n10, n1T*, n1Q*, n1P*, n1H*	| Y | N |N
-n10, n10D, n10T*, n10Q*, n10P*, n10H*	| Y | Y | Y
-n25, n25D, n25T*, n25Q*, n25P*, n25H*	| N | Y | Y
-n50, n50D, n50T*, n50Q*, n50P*, n50H*	| N | Y | Y
+n1, n10, n1T*, n1Q*, n1P*, n1H* | Y | N |N
+n10, n10D, n10T*, n10Q*, n10P*, n10H* | Y | Y | Y
+n25, n25D, n25T*, n25Q*, n25P*, n25H* | N | Y | Y
+n50, n50D, n50T*, n50Q*, n50P*, n50H* | N | Y | Y
 n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 
-<p align="center"><b>Table 4-20:</b> Virtual NIC interfaces options</p>
+<p align="center"><b>Table 4-23:</b> Virtual NIC interfaces options</p>
 
 > _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
 
@@ -525,7 +529,7 @@ n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
 | `i.nfvi.sec.cap.003` | Yes | Yes | Yes | |
 | `i.nfvi.sec.cap.004` | Yes | Yes | Yes | |
 
-<p align="center"><b>Table 4-21:</b> Mapping of NFVI capabilities to instance types.</p>
+<p align="center"><b>Table 4-24:</b> Mapping of NFVI capabilities to instance types.</p>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Instance metrics mapping.

@@ -23,7 +23,7 @@
 ## 1.3 Terminology
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
-  
+
 <a name="1.4"></a>
 ## 1.4 Principles
 
@@ -38,11 +38,14 @@ Open Stack Reference Architecture must obey to the following set of principles:
 ## 1.5 Scope
 
 <p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
+<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts.</p>
 
 <a name="1.6"></a>
 ## 1.6 Vision
 
+
 <a name="1.7"></a>
 ## 1.7 Roadmap
 
+<p align="center"><img src="../figures/ref_arch_ch01_roadmap.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 1-2:</b> Roadmap of CNTT Reference Architecture.</p>
