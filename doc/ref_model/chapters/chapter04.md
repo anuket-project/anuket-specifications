@@ -22,6 +22,7 @@
   * [4.2.5 Instance capabilities mapping.](#4.2.5)
   * [4.2.6 Instance metrics mapping.](#4.2.6)
   * [4.2.7 One stop shop.](#4.2.7)
+* [4.3 Networking.](#4.2)
 
 <a name="4.1"></a>
 ## 4.1 Capabilities and Metrics
@@ -556,3 +557,8 @@ Whereas:
 
 <p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="100%"/></p>
 <p align="center"><b>Figure 4-3:</b> Infrastructure Instances catalogue.</p>
+
+<a name="4.3"></a>
+## 4.3 Networking
+
+This is a placeholder for NFVI infrastructure networking information that is common to all Reference Architectures.
