@@ -51,8 +51,12 @@ Open Stack Reference Architecture must obey to the following set of principles:
 ## 1.5 Scope
 
 <p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
+<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts.</p>
 
 <a name="1.6"></a>
 ## 1.6 Roadmap
 As OpenStack evolves over time it will add new technologies and make modifications to the components in the ecosystem, the Common Telecom NFVI Reference Architecture will obviously need to evolve with it.  The final release cadence for the Reference Model changes and feature updates is still under discussion, but the Common Telecom NFVI cadence should at the very least mirror the OpenStack six month release cadence, and the three year support cadence.  OpenStack has a strong ecosystem of vendors that support older versions back at least six years. Given the typically long time frames that telecom infrastructures must be supported, the intention is for these documents to have similiarly long support lifespans.
+
+<p align="center"><img src="../figures/ref_arch_ch01_roadmap.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 1-2:</b> Roadmap of CNTT Reference Architecture.</p>
+
