@@ -5,25 +5,24 @@
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
+  * [1.1.1 Vision](#1.1.1)
 * [1.2 Use Cases](#1.2)
 * [1.3 Terminology.](#1.3)
 * [1.4 Principles](#1.4)
 * [1.5 Scope.](#1.5)
-* [1.6 Vision](#1.6)
-* [1.7 Roadmap](#1.7)
-
+* [1.6 Roadmap](#1.6)
 
 <a name="1.1"></a>
 ## 1.1 Introduction
-The next step after the general NFVI Reference Model has been identified and developed (See the NFVI Reference Model documentation) is to take the high level model, which is purposely designed to be able to be applied to a number of technologies, and apply it to a concrete and ultimately deployable Reference Architecture platform. The intention is to create a small set of architectures that meets the specific requirements for supporting NFV and Telecom specific applications. Per the principles laid out in the Reference Model documentation, the Reference Architectures need to meet the following criteria as much as is practical:
-  - Initially should be based on widely established technology and systems used in the Telecom Industry.  This will help ensure a faster adoption rate because the operators are already familiar with the technology and might even have systems in production. Another advantage to this approach is a project faster development cycle. 
-  - Subsequent architectures should be based on either addional established or promising emerging technologies that are chosen by the community members.  
+This is just the first of a limited set of Reference Architectures that will be developed using the Reference Model principles.  OpenStack was chosen first based on the criteria laid out in the [Reference Architecture Readme](../../../ref_arch/README.md#1.1). OpenStack has the advantages of being a mature and widely accepted Open Source technology; a strong ecosystem of vendors that support it, the OpenStack Foundation for managing the community, and, most importantly, it is widely deployed by the global operator community for both internal infrastructure and external facing products and services.  This means that the operators have existing staff with the right skill sets to support an NFVI deployment into development, test and production. Another reason to chose OpenStack is that it has a large active community of vendors and operators, which means that any code or component changes needed to support the Common Telecon NFVI requirements can be managed through the existing project communities processes to add and validate the required features through well established mechanisms.
 
-Based on the above criteria, OpenStack was chosen as the first Reference Architecture to develop because it is a relatively mature and widely accepted Open Source technology, has a strong ecosystem of vendors to support it, and, most importantly, is widely deployed by the global operator community for both internal infrastructure and external facing products and services.  This means that the operators have existing staff with the right skill sets to support an NFVI deployment into development, test and production. Another reason to chose OpenStack is that it has a large active community of vendors and operators, which means that any code or component changes needed to support the Common Telecon NFVI requirements, existing project communities would able to add and validate the required features through well established mechanisms.
+<a name="1.1.1"></a>
+## 1.1.1. Vision
+The ultimate goal is the OpenStack and subsequent Reference Architectures will be used as a platform to test and validate supprtability and compatibility with NFV workloads of interest to the Common Telecom NFVI community.  Initially the OpenStack Reference Architecture would be deployed in the OPNFV lab environment and used for testing and validating compatible with NFVs through the OVP umbrella.   The Reference Architecture document needs to be specified in sufficient detail that the model can ultimiately be robust enough so that operators will deploy it as part of a production infrastructure. To achieve this goal, this Reference Architecture document would be used in conjunction with the Reference Deployment document.  
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
-Several NFV use cases are documented in OpenStack. https://docs.openstack.org/arch-design/use-cases.html  Examples include:
+Several NFV use cases are documented in OpenStack. For more examples and details refer to the OpenStack docs found at the following link: https://docs.openstack.org/arch-design/use-cases.html  Examples include:
 
   - **Overlay networks**: The overlay functionality design includes OpenStack Networking in Open vSwitch GRE tunnel mode. In this case, the layer-3 external routers pair with VRRP, and switches pair with an implementation of MLAG to ensure that you do not lose connectivity with the upstream routing infrastructure.
 
@@ -33,7 +32,7 @@ Several NFV use cases are documented in OpenStack. https://docs.openstack.org/ar
 
 <a name="1.3"></a>
 ## 1.3 Terminology
-Unless specific OpenStack terms are used, the terminology can be found [CNTT Reference Model Terminology](../../../ref_model/chapters/chapter01.md#1.2).  
+Unless specific OpenStack terms are used, the terminology can be found [CNTT Reference Model Terminology](../../../ref_model/chapters/glossary.md#1.1).  
 
 Add add any OpenStack specific terms here.
 
@@ -48,7 +47,6 @@ Open Stack Reference Architecture must obey to the following set of principles:
 
 >Any Open Stack specific principles needs to be added here.
 
-
 <a name="1.5"></a>
 ## 1.5 Scope
 
@@ -56,9 +54,5 @@ Open Stack Reference Architecture must obey to the following set of principles:
 <p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="1.6"></a>
-## 1.6 Vision
-This is just the first of a limited set of Reference Architectures. The ultimate goal is the OpenStack and subsequent Reference Architectures will be used as a platform to test and validate supprtability and compatibility with NFV workloads of interest to the Common Telecom NFVI community.  Initially the OpenStack Reference Architecture would be deployed in the OPNFV lab environment and used for testing and validating compatible with NFVs through the OVP umbrella.   The Reference Architecture document needs to be specified in sufficient detail that the model can ultimiately be robust enough so that operators will deploy it as part of a production infrastructure. To achieve this goal, this Reference Architecture document would be used in conjunction with the Reference Deployment document.  
-
-<a name="1.7"></a>
-## 1.7 Roadmap
-As OpenStack evolves over time with new technologies and components folded in to the codebase, the Common Telecom NFVI Reference Architecture will need to evolve with it.  The final release cadence for changes and feature updates is still under discussion, but the Common Telecom NFVI cadence should at the very least mirror the OpenStack six month release cadence, and the three year support cadence.  OpenStack has a strong ecosystem of vendors that support older versions for at least six years. Given the typically long time frames that telecom infrastructures must be supported, the intention is for these documents to have similiarly long supported lifespans.
+## 1.6 Roadmap
+As OpenStack evolves over time it will add new technologies and make modifications to the components in the ecosystem, the Common Telecom NFVI Reference Architecture will obviously need to evolve with it.  The final release cadence for the Reference Model changes and feature updates is still under discussion, but the Common Telecom NFVI cadence should at the very least mirror the OpenStack six month release cadence, and the three year support cadence.  OpenStack has a strong ecosystem of vendors that support older versions back at least six years. Given the typically long time frames that telecom infrastructures must be supported, the intention is for these documents to have similiarly long support lifespans.
