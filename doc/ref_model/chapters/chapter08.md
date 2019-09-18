@@ -64,7 +64,7 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 **Scope and Test Methodology**
 - Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
 - Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
-- Candidate VNF Validation (Validation & Performance) will ensure complete interopablity of VNF behavior on the NFVI leverage VVP/CVC test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).  
+- Candidate VNF Validation (Validation & Performance) will ensure complete interoperablity of VNF behavior on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).  
 
 **Different Distributions** 
 The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
@@ -361,7 +361,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <ul>
 <li><strong>NFVI Verification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
 <li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
-<li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/CVC Test Suites</li>
+<li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/VFNSDK Test Suites</li>
 <li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <em>(Refer to CNTT Chapter 7 Security for additional test/verification details)</em></li>
 </ul>
 <p>Validations are performed against an <strong>Infrastructure Profile Catalog</strong>, <strong>VNF performance profile</strong>, and <strong>targeted VNF class</strong> or family for baseline measurements.</p>
