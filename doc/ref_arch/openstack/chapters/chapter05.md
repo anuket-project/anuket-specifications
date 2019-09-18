@@ -72,6 +72,7 @@ This section illustrates some of the Interfaces provided by OpenStack; the exhau
 
 **APIs**
 | OpenStack Service | Link for API list | API Baseline Version |
+|------------------|--------------------|------------------------|
 | Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html?expanded=#identity-api-operations  | Version 3.10 |
 | Compute: Nova | https://docs.openstack.org/api-ref/compute/  | Version 2.1 |
 | Networking: Neutron | https://docs.openstack.org/api-ref/network/  | Version 2.0 |
@@ -84,6 +85,7 @@ This section illustrates some of the Interfaces provided by OpenStack; the exhau
 
 **CLIs**
 | OpenStack Service | Link to Client | Client Baseline Version |
+|------------------|--------------------|------------------------|
 | Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
 | Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
 | Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
@@ -105,6 +107,6 @@ The KVM APIs are documented in Section 4 of the document https://www.kernel.org/
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
 
 ### 5.3.4. vSphere/ESXi APIs
-The ESXI PAIs are documented together with vCenter and available at https://code.vmware.com/apis/62/vcenter-management
+The ESXi APIs are documented together with vCenter and available at https://code.vmware.com/apis/62/vcenter-management
 
 
