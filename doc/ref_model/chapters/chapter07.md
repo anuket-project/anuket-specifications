@@ -229,7 +229,7 @@ The high-level functions of these different access controls are described below:
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks (usually sub, or virtual networks).
 * **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including RBAC, authentication controls as approriate for the access arrangement, and API gateways for automated/script-driven processes.
 
-The following security requirements apply to Platform Security:
+# The following security requirements apply to the platform:
 * Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions
 * Support zoning within a tenant workload - using application-level filtering
