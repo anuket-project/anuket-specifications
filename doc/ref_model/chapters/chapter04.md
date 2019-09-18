@@ -244,7 +244,7 @@ The following table of internal performance metrics shows performance metrics pe
 | i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per core and with all cores running multiple parallel workloads|
 | i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNF-C (but fully ready for it) |
 | i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput benchmark offered load level, normalized to the bit rate |
-| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node durign processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
+| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
 
 <p align="center"><b>Table 4-10:</b> Internal performance metrics of NFVI.</p>
 
