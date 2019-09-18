@@ -229,6 +229,33 @@ The high-level functions of these different access controls are described below:
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks (usually sub, or virtual networks).
 * **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including RBAC, authentication controls as approriate for the access arrangement, and API gateways for automated/script-driven processes.
 
+The following security requirements apply to Platform Security:
+* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic
+* Provide protections between the Internet and any workloads including web and volumetrics attack preventions
+* Support zoning within a tenant workload - using application-level filtering
+* All host to host communications within the Cloud provider network are to be cryptographically protected in transit.
+* Not expose tenant IP address details to another tenant
+* Use cryptographically-protected protocols for administrative access to the platform
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, TLS.
+* A Platform change management process is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence is implemented.
+* Processes for managing platform access control filters is documented, followed, and monitored.
+* No login to root on any platform systems, and RBAC must apply
+* An approved system or process for last resort access must exist for the platform
+* All API access must use TLS
+* All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks
+* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management and application communication are cryptographically protected in transit between data centre facilities.
+* Continuous Cloud security compliance is mandatory
+* All data persisted to primary, replica or backup storage is to be encrypted
+* All platform security logs are to be time synchronised
+* Logs are to be regularly scanned for events of interest
+* An incident response plan must exist for the platform
+* the cloud services must be regulalry vulnerability and penetration tested
+* 
+*              --- review and continue this list ---
+*
+
+
 <a name="7.5.2"></a>
 ## 7.5.2 Platform ‘back-end’ access security
 
