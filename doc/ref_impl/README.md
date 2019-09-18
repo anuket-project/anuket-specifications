@@ -7,5 +7,5 @@
 * [Overview](./chapter01.md)
 * [Labs](./chapter02.md)
 
-## Available Reference Implementations
-* [Openstack Reference Implementation](openstack)
+## Community Projects
+* [OPNFV CNTT-RI](cntt-ri)

@@ -6,7 +6,7 @@
 ## Release Information
 **Release: _1.0_**
 
-**Version: _1.1_**
+**Version: _1.2_**
 
 **Release Date: _16th July 2019_**
 
@@ -16,6 +16,7 @@
 | --- | --- | --- |
 | 1.0 | 16th July 2019 | First Release|
 | 1.1 | 2nd August 2019 | Post Paris F2F clean up|
+| 1.2 | 18th September 2019 | Added Chapter 8 Test Case Annex|
 
 
 ## Overall Status
@@ -30,8 +31,10 @@
 | Chapter 06 | Lots of SME Feedback |
 | Chapter 07 | Still Developing Content |
 | Chapter 08 | Still Developing Content |
-| Chapter 09 | Initial Framework Only |
+| Chapter 08-Annex | Still Developing Content |
+| Chapter 09 | Still Developing Content |
 | Chapter 10 | Initial Framework Only |
+| Appendix A | Initial Framework Only |
 
 ## Table of Contents
 * [Abbreviations](abbreviations.md)
@@ -43,8 +46,10 @@
 * [Chapter 06 - External Interfaces](chapters/chapter06.md)
 * [Chapter 07 - Security Guidelines](chapters/chapter07.md)
 * [Chapter 08 - Compliance, Verification, and Certification](chapters/chapter08.md)
+* [Chapter 08 Annex - Test Case Repository for Compliance, Verification, and Certification](chapters/chapter08-annex.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
+* [Appendix A - VNF Design Guidelines](chapters/appendix-a.md)
 
 ## Technical Leads
 
