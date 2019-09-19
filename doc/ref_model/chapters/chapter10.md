@@ -1,7 +1,7 @@
 [<< Back](../../ref_model)
 # 10 Challenges and Gaps
 
-https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/figures/bogo_sdc.png
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [10.1 Introduction.](#10.1)
