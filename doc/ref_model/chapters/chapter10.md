@@ -45,8 +45,8 @@ This section includes a backlog table of all existing open issues in the develop
 
 Backlogs
 
-Reference Model [Add link to issues]
-Reference Architecture [Add link to issues]
+Reference Model [https://github.com/cntt-n/CNTT/issues]
+Reference Architecture [https://github.com/cntt-n/CNTT/issues]
 Reference Implementation [Future link to issues]
 Verification & Validation [Future link to issues]
 Lifecycle Feedback [Future link issues]
