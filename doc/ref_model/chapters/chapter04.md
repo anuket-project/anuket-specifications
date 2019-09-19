@@ -423,6 +423,8 @@ Multiple non-ephemeral storage volumes can be attached to virtual computes  for 
 
 <p align="center"><b>Table 4-19:</b> Storage Performance Profiles.</p>
 
+Note, performance is based on a block size of 256KB or larger.
+
 <a name="4.2.3.1"></a>
 #### 4.2.3.1 Available storage extensions
 These are non-ephemeral storage extensions that can be provided to VNFs for persistent data storage. More than one storage extension can be provided to a single VNF-C.
