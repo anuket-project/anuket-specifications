@@ -29,9 +29,9 @@
 <a name="4.1.1"></a>
 ### 4.1.1 Exposed vs Internal
 
-The following pertains to the context of NFVI Resources and Capabilities as discussed within this chapter.
+The following pertains to the context of NFVI Resources, Capabilities and Metrics as discussed within this chapter.
 
-<b>Exposed:</b> Refers to any mechanism or object (e.g. resource discovery/configuration/consumption, platform telemetry, Interface, etc.) that exists in or pertains to, the domain of the NFVI and is made visible (aka “Exposed”) to a VNF. When an object is exposed to a given VNF, the scope of visibility within a given VNF is at the discretion of the specific VNF’s designer. From an Infra perspective, the Infra-resident object is simply being exposed to one or more virtual environments (i.e. VMs). It is then the responsibility of the kernel or supervisor/executive within the VM to control how, when and where the object is further exposed within the VM, with regard to permissions, security, etc. As the object(s) originate with the Infra, they are by definition visible within that domain.
+<b>Exposed:</b> Refers to any object (e.g., resource discovery/configuration/consumption, platform telemetry, Interface, etc.) that exists in or pertains to, the domain of the NFVI and is made visible (aka “Exposed”) to a VNF. When an object is exposed to a given VNF, the scope of visibility within a given VNF is at the discretion of the specific VNF’s designer. From an Infra perspective, the Infra-resident object is simply being exposed to one or more virtual environments (i.e. VMs). It is then the responsibility of the kernel or supervisor/executive within the VM to control how, when and where the object is further exposed within the VM, with regard to permissions, security, etc. As the object(s) originate with the Infra, they are by definition visible within that domain.
 
 <b>Internal:</b> Effectively the opposite of Exposed; objects Internal to the NFVI, which are exclusively available for use by the NFVI and components within the NFVI.
 
@@ -58,11 +58,11 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
-| e.nfvi.res.cap.001 | #vCPU | number | Min, Max number of vCPU that can be assigned to a single VNF-C |
-| e.nfvi.res.cap.002 | Amount of RAM (MB) | MB | Min, Max memory in MB that can be assigned to a single VNF-C by NFVI. |
-| e.nfvi.res.cap.003 | Total amount of instance (ephemeral) storage (GB) | GB | Min, Max storage in GB that can be assigned to a single VNF-C by NFVI |
-| e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNF-C by NFVI. |
-| e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Max storage in GB that can be attached / mounted to VNF-C by NFVI. |
+| e.nfvi.res.cap.001 | #vCPU | number | Min, Max number of vCPU that can be assigned to a single VNFC |
+| e.nfvi.res.cap.002 | Amount of RAM (MB) | MB | Min, Max memory in MB that can be assigned to a single VNFC by NFVI. |
+| e.nfvi.res.cap.003 | Total amount of instance (ephemeral) storage (GB) | GB | Min, Max storage in GB that can be assigned to a single VNFC by NFVI |
+| e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNFC by NFVI. |
+| e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI. |
 
 <p align="center"><b>Table 4-1:</b> Exposed resource capabilities of NFVI.</p>
 
@@ -93,7 +93,7 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
-| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability for VNF-C to monitor their own L2-L7 data. |
+| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability for VNFC to monitor their own L2-L7 data. |
 
 <p align="center"><b>Table 4-3:</b> Exposed monitoring capabilities of NFVI.</p>
 
@@ -104,18 +104,18 @@ The intent of those metrics is to be well known to VNFs.
 <a name="4.1.3.1"></a>
 #### 4.1.3.1 Exposed performance metrics
 
-The following table of exposed performance metrics shows performance metrics per VNF-C, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host. 
+The following table of exposed performance metrics shows performance metrics per VNFC, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host. 
 
 <a name="Table4-4"></a>
 
 | Ref                | NFVI metric               | Unit                | Definition/Notes                                             |
 | ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
-| e.nfvi.per.met.001 | Network throughput        | frames/s            | Benchmark of throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput benchmark offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.001 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
 | e.nfvi.per.met.003 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
 | e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
 | e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
-| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNF-C |
+| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
 | e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
 
 <p align="center"><b>Table 4-4:</b> Exposed performance metrics of NFVI.</p>
@@ -164,14 +164,14 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.sla.cap.001 | CPU overbooking | 1:N | This indicates the number of cores consumed by NFVI components (including host OS) in a compute node. |
+| i.nfvi.sla.cap.001 | CPU overbooking | 1:N | <definition update scheduled> |
 | i.nfvi.sla.cap.002 | vNIC QoS | Yes/No | QoS enablement |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI.</p>
 
 <a name="4.1.4.3"></a>
 #### 4.1.4.3 Internal performance optimisation capabilities
-**Table 4-7** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNF-C (VNF Component)
+**Table 4-7** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNFC
 
 <a name="Table4-7"></a>
 
@@ -193,7 +193,7 @@ This section covers a list of implicit NFVI capabilities and metrics that define
 | i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
 | i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
 | i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
-| i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNF-C |
+| i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
 | i.nfvi.mon.cap.005 | Monitoring of external storage IOPS | Yes/No | Transcoding Acceleration |
 | i.nfvi.mon.cap.006 | Monitoring of external storage throughput | Yes/No | Programmable Acceleration |
 | i.nfvi.mon.cap.007 | Monitoring of external storage capacity | Yes/No |  |
@@ -212,9 +212,9 @@ Table 4-9: Reserved
 //
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------|--------|------------------------------------------------------------------|
-| i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation | Yes/No | Are VNF-C memories isolated from each other by hardware support? |
-| i.nfvi.sec.cap.002 | VNF-C -> Host | Yes/No | Can VNF-C access host memory? |
-| i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory? |
+| i.nfvi.sec.cap.001 | VNFC <-> VNFC  memory isolation | Yes/No | Are VNFC memories isolated from each other by hardware support? |
+| i.nfvi.sec.cap.002 | VNFC -> Host | Yes/No | Can VNFC access host memory? |
+| i.nfvi.sec.cap.003 | Host -> VNFC | Yes/No | Can Host access VNFC memory? |
 | i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest? |
 <p align="center"><b>Table 4-9:</b> Internal security capabilities of NFVI.</p>
 -->
@@ -238,12 +238,12 @@ The following table of internal performance metrics shows performance metrics pe
 
 | Ref | NFVI metrics | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|----------------|----------------------------------------------------------------------|
-| i.nfvi.per.met.001 | Network throughput | frames/s | Benchmark of throughput (aligned with ETSI GS NFV-TST 009 [2]) |
+| i.nfvi.per.met.001 | Network throughput | frames/s | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
 | i.nfvi.per.met.002 | Simultaneous active flows | number | Max simultaneous active L4 flows per node before a new flow is dropped |
 | i.nfvi.per.met.003 | New flows rate               | flows/s  | Max new L4 flow rate per node                                |
 | i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per core and with all cores running multiple parallel workloads|
-| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNF-C (but fully ready for it) |
-| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput benchmark offered load level, normalized to the bit rate |
+| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNFC (but fully ready for it) |
+| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
 | i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
 
 <p align="center"><b>Table 4-10:</b> Internal performance metrics of NFVI.</p>
@@ -285,9 +285,9 @@ Table 4-12 shows capabilities related to resources allocation
 
 | Ref | VIM capability | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
-| e.vim.res.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNF-C |
-| e.vim.res.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNF-C |
-| e.vim.res.cap.003 | Virtual Networking resources  allocation | Yes/No | Capability to allocate virtual networking resources  to VNF-C |
+| e.vim.res.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNFC |
+| e.vim.res.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNFC |
+| e.vim.res.cap.003 | Virtual Networking resources  allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
 | e.vim.res.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
 | e.vim.res.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
 
@@ -367,10 +367,9 @@ Element |Description
 --------|----------
 Compute Flavour Name |A descriptive name
 Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the VM instance.
-Memory |Local memory in megabytes.
+Memory |Virtual compute instance memory in megabytes.
 Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
-Managemetn Interface |Specifies the bandwidth of mangemetn interface/s
-Is Public |Boolean value. Specifies flavor is available to all users (True) or is private to the project it was created in (False). Defaults to True.
+Management Interface |Specifies the bandwidth of mangemetn interface/s
 
 <p align="center"><b>Table 4-16:</b> Compute Flavour Geometry Specification.</p>
 
@@ -398,7 +397,7 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” with interface bandwidth.
 
-Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment and supported by physical NICs. The vNIC extension is not part of the base flavour.
+Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base flavour.
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
@@ -427,7 +426,7 @@ Multiple non-ephemeral storage volumes can be attached to virtual computes for p
 
 <a name="4.2.3.1"></a>
 #### 4.2.3.1 Available storage extensions
-These are non-ephemeral storage extensions that can be provided to VNFs for persistent data storage. More than one storage extension can be provided to a single VNF-C.
+These are non-ephemeral storage extensions that can be provided to VNFs for persistent data storage. More than one storage extension can be provided to a single VNFC.
 
 | .conf | capacity | Read IOPS | Write IOPS | Read Throughput (MB/s) | Write Throughput (MB/s) |
 |----------|----------|------------|------------|------------------------|-------------------------|
