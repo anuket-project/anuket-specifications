@@ -17,7 +17,6 @@
   * [5.4.1 Compute Resources.](#5.4.1)
   * [5.4.2 Storage Resources.](#5.4.2)
   * [5.4.3 Network Resources.](#5.4.3)
-  * [5.4.4 Security.](#5.4.4)
 
 <a name="5.1"></a>
 ## 5.1 NFVI SW profile description
@@ -29,14 +28,14 @@ NFVI Software layer is composed of 2 layers, **Figure 5-1**:
 <p align="center"><img src="../figures/ch05_nfvi_layers_sw_profile.PNG" alt="ref_profiles" title="Layers of Software Profile" width="50%"/></p>
 <p align="center"><b>Figure 5-1:</b> NFVI software layers.</p>
 
-For a host (compute node or physical server), the virtualisation layer is an abstraction layer between hardware components (compute, storage and network resources) and virtual resources allocated to VNF-C, each VNF-C generally maps 1:1 against a single VM or a single container/pod. **Figure 5-2** represents the virtual resources (virtual compute, virtual network and virtual storage) allocated to VNF-C and managed by the VIM.
+For a host (compute node or physical server), the virtualisation layer is an abstraction layer between hardware components (compute, storage and network resources) and virtual resources allocated to VNFC, each VNFC generally maps 1:1 against a single VM or a single container/pod. **Figure 5-2** represents the virtual resources (virtual compute, virtual network and virtual storage) allocated to VNFC and managed by the VIM.
 
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
 
 Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive instances types.
 
-<p align="center"><img src="../figures/ch05_ref_nfvi_sw_profiles_v2.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
+<p align="center"><img src="../figures/RM_chap5_fig_5_3_SW_profile.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
 <p align="center"><b>Figure 5-3:</b> NFVI software profiles.</p>
 
 The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
@@ -195,13 +194,13 @@ The support of a variety of different workload types, each with different (somet
 
 This chapter defines a simplified host, host profile and related capabilities model associated with each of the different NFVI hardware profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 5-4**.
 
-<p align="center"><img src="../figures/ch06_ref_nfvi_hw_profiles_v3.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/RM_chap5_fig_5_4_HW_profile.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
 <p align="center"><b>Figure 5-4:</b> NFVI hardware profiles and host associated capabilities.</p>
 
 The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be used in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources.
 >Please note that in this chapter we shall not list all of the EPA-related configuration parameters.
 
-A software profile (see **Chapter 4** and **Chapter 5**) defines the characteristics of NFVI SW of which Virtual Machines (or Containers) will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles.
+A software profile (see **Chapter 4**, **5.1 and 5.2**) defines the characteristics of NFVI SW of which Virtual Machines or Containers will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles.
 
 The following naming convention is used in this document:
 
@@ -255,7 +254,7 @@ The configurations specified in here will be used in specifying the actual hardw
 
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
 |---------------------|-----------|---------------------------|--------|--------|--------|
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets exist within each host | 2| 2| 2 |
+| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets within each host | 2| 2| 2 |
 | nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
 | nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
 | nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y| Y |
@@ -295,7 +294,7 @@ The configurations specified in here will be used in specifying the actual hardw
 > _*This specified local storage configurations including # and capacity of storage drives._
 
 <a name="5.4.3"></a>
-### 5.4.3 Network Resources Configurations
+### 5.4.3 Network Resources
 
 <a name="5.4.3.1"></a>
 #### 5.4.3.1 NIC configurations
@@ -303,7 +302,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
 |---------------------|-----------|---------------------------|--------|--------|--------|
 | nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the host | 4 | 4 | 4 |
-| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps | 10 | 25 | 25 |
+| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values) | 10 | 25 | 25 |
 
 
 <p align="center"><b>Table 5-16:</b> Minimum NIC configuration specification.</p>
