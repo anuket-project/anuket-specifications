@@ -5,15 +5,15 @@
 
 ## Table of Contents
 * [4.1 Introduction.](#4.1)
-  * [4.1.1. Architectural Drivers – Requirements Traceability.](#4.1.1)
+  * [4.1.1 Architectural Drivers – Requirements Traceability.](#4.1.1)
   * [4.1.2 OpenStack Core Services.](#4.1.2)
   * [4.1.3 OpenStack Services Topology.](#4.1.3)
 * [4.2 Foundation Services.](#4.2)
-  * [4.2.1. Architectural Drivers – Requirements Traceability.](#4.2.1)
-  * [4.2.2. Foundation Node.](#4.2.2)
+  * [4.2.1 Architectural Drivers – Requirements Traceability.](#4.2.1)
+  * [4.2.2 Foundation Node.](#4.2.2)
 * [4.3 Cloud Controller Services.](#4.3)
-  * [4.3.1. Architectural Drivers – Requirements Traceability.](#4.3.1)
-  * [4.3.2. Overview.](#4.3.2)
+  * [4.3.1 Architectural Drivers – Requirements Traceability.](#4.3.1)
+  * [4.3.2 Overview.](#4.3.2)
 * [4.4 Cloud Workload Services.](#4.4)
   * [4.4.1 Compute Nodes Specifications.](#4.4.1)
 * [4.5 Network Topology.](#4.5)
@@ -23,24 +23,30 @@
   * [4.5.4 LBaaS v2 compliant Load Balancing.](#4.5.4)
   * [4.5.5 Neutron ML2 integration.](#4.5.5)
 * [4.6 Cloud Topology.](#4.6)
-  * [4.6.1. Host Aggregates, Availability Zones.](#4.6.1)
-  * [4.6.2. Cloud Topology Considerations.](#4.6.2)
-  * [4.6.3. Containerised OpenStack Services.](#4.6.3)
+  * [4.6.1 Host Aggregates, Availability Zones.](#4.6.1)
+  * [4.6.2 Cloud Topology Considerations.](#4.6.2)
+  * [4.6.3 Containerised OpenStack Services.](#4.6.3)
 * [4.7 Integration Interfaces.](#4.7)
 * [4.8 Logging / Monitoring / Alerting of Control Plane.](#4.8)
 * [4.9 Telemetry.](#4.9)
 * [4.10 General Hardware requirements (for control, compute, storage) .](#4.10) 
-* [4.11. LCM Considerations.](#4.11)
-* [4.12. Security Considerations.](#4.12)
+* [4.11 LCM Considerations.](#4.11)
+* [4.12 Security Considerations.](#4.12)
 
 
 <a name="4.1"></a>
 ## 4.1 Introduction.
 
-Chapter 3 presented the high level architecture and core OpenStack services for creating an IaaS cloud.  The chapter discusses the second level of details (as defined by L3) including deployment topology, distribution of the core OpenStack services among Controller and Compute nodes. Additionally,  This Chapter will delve deeper into certain topics that need to be considered in creating and operating an OpenStack based IaaS cloud. The OpenStack IaaS cloud needs the physical (underlay) and the overlay networks needed for intra tenant and external (to the tenant) communications. Cloud topology related to host aggregates and availability zones, and minimal software versions for shared services (kernel, host operating system, common drivers, etc.). To round up the operationalisation considerations, the chapter includes a listing of some of the requirements for Security and Life Cycle Management.
+Chapter 3 presented the high level architecture and core OpenStack services for creating an IaaS cloud. This chapter discusses the second level of details (as defined by L3) including deployment topology, distribution of the core OpenStack services among Controller and Compute nodes. 
+
+Additionally, This Chapter will delve deeper into certain topics that need to be considered in creating and operating an OpenStack based IaaS cloud, such as: 
+
+- The physical (underlay) and the overlay networks needed for intra tenant and external (to the tenant) communications. 
+- Cloud topology related to host aggregates and availability zones, and minimal software versions for shared services (kernel, host operating system, common drivers, etc.). 
+- Listing of some of the requirements for Security and Life Cycle Management.
 
 <a name="4.1.1"></a>
-### 4.1.1. Architectural Drivers – Requirements Traceability
+### 4.1.1 Architectural Drivers – Requirements Traceability
 
 | Ref #| sub-category| Description| 
 |--------|--------------------|--------------------------------------------|
@@ -55,7 +61,7 @@ Chapter 3 presented the high level architecture and core OpenStack services for 
 | req.vim.02 | General | The Architecture should support deployment of OpenStack components in containers. |
 
 <a name="4.1.2"></a>
-### 4.1.2. OpenStack Core Services
+### 4.1.2 OpenStack Core Services
 
 The Common Telco NFVI OpenStack Reference Architecture aims to provide an industry standard reference architecture independent of the many distributions of OpenStack.  It does not seek to change any vendor implementation assuming Common Telco NFVI compliance out of the box without vendor specific enhancements that are not up-streamed.
 
@@ -63,10 +69,10 @@ This document assumes a good understanding of OpenStack core services and will n
 
 Since OpenStack is a complex, multi-project framework, we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for NFVi/VIM use cases.   Other components are optional and provide functionality above and beyond NFVi/VIM requirements.
 
-The architecture consists of the services shown in the Figure 3-1; Ironic and Swift are optional OpenStack srevices. The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
+The architecture consists of the services shown in the **Figure 4-1**; Ironic and Swift are optional OpenStack srevices. The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
 
 <p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v2.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/></p>
-<p align="center"><b>Figure 3-1:</b> OpenStack Core Services</p>
+<p align="center"><b>Figure 4-1:</b> OpenStack Core Services</p>
 
 We will refer to the functions above as falling into the following categories to avoid any confusion with other terminology that may be used:
 -	Foundation node
@@ -90,10 +96,10 @@ The architecture based on OpenStack technology relies on different types of node
 - Storage node types offering external attached storage (block, object, flat files)
 
 The data plane consists of the compute nodes. It is typical to consider the other node types to be part of the control plane.
-Figure 3-2 depicts the 4 types of nodes constitutive of the Infrastructure: control, compute, network and storage nodes.
+**Figure 4-2** depicts the 4 types of nodes constitutive of the Infrastructure: control, compute, network and storage nodes.
 
 <p align="center"><img src="../figures/Figure_3_2_ NFVI_Software_Services_Topology_v2.png" alt="NFVI Software Services Topology" title="NFVI Software Services Topology" width="100%"/></p>
-<p align="center"><b>Figure 3-2:</b> OpenStack Services Topology</p>
+<p align="center"><b>Figure 4-2:</b> OpenStack Services Topology</p>
 
 Deployments can be structured using the distribution of services amongst the 4 node types as depicted in Figure 3-2, but depending on workloads requirements, OpenStack services can also be hosted on the same nodes. For instance, services related to Controller, network and storage roles can be hosted on controller nodes.
 
@@ -250,7 +256,7 @@ The number of Compute nodes (for workloads) determines the load on the controlle
 <a name="4.4.1"></a>
 ### 4.4.1 Compute Nodes Specifications
 
-In Section 3.5 the high-level set of infrastructure components needed to run VMs was presented.  This section is primarily about scheduling the VM to be created onto a particular physical server. This section delves into the compute host selection for these VMs, the resource pools, hardware and software considerations.
+This section is primarily about scheduling the VM to be created onto a particular physical server. This section delves into the compute host selection for these VMs, the resource pools, hardware and software considerations.
 
 <p align="center"><img src="../figures/Figure_4_3_Select_host_instance_launch.png" alt="Selection of a compute host to launch an instance"></br>Figure 4-3. Selection of a compute host to launch an instance.</p>
 
@@ -346,16 +352,16 @@ This section specifies specific software components needed to support the three 
 <a name="4.5.2"></a>
 ### 4.5.2 Physical Network
 
-<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"></br>Figure 4-1. Network Fabric – Physical</p>
+<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"></br>Figure 4-4: Network Fabric – Physical</p>
 
-Figure 4-1 shows a physical network layout where each physical server is dual homed to TOR (C/Agg-Leaf) switches with redundant (2x) connections.  The Leaf switches are dual homed with redundant connections to spines. 
+**Figure 4-4** shows a physical network layout where each physical server is dual homed to TOR (C/Agg-Leaf) switches with redundant (2x) connections.  The Leaf switches are dual homed with redundant connections to spines. 
 
 <a name="4.5.3"></a>
 ### 4.5.3 High Level Logical Network Layout
 
-A tenant network represents the Layer 2 and Layer 3 network resources that are configured to enable layer-3 routing between networks connecting VMs and the external WAN VPN. Figure 4-2 (<a href="https://docs.openstack.org/newton/install-guide-ubuntu/launch-instance-networks-selfservice.html">OpenStack Self-Srevice (tenant) Networks</a>) shows the connectivity from Tenant VMs through provider networks (and by extension to other Tenant VMs on a different Compute node (server)) and to external networks. The OpenStack Provider networks are shared by all Tenants. Each VNF/VM network interface will be associated with the Tenant network. A tenant network can be local or external; local tenant networks do not have WAN access. External Tenant networks have their VLANs and IP subnets associated with a WAN VPN (Figure 4-2).
+A tenant network represents the Layer 2 and Layer 3 network resources that are configured to enable layer-3 routing between networks connecting VMs and the external WAN VPN. Figure 4-2 (<a href="https://docs.openstack.org/newton/install-guide-ubuntu/launch-instance-networks-selfservice.html">OpenStack Self-Srevice (tenant) Networks</a>) shows the connectivity from Tenant VMs through provider networks (and by extension to other Tenant VMs on a different Compute node (server)) and to external networks. The OpenStack Provider networks are shared by all Tenants. Each VNF/VM network interface will be associated with the Tenant network. A tenant network can be local or external; local tenant networks do not have WAN access. External Tenant networks have their VLANs and IP subnets associated with a WAN VPN (**Figure 4-5**).
 
-<p align="center"><img src="../figures/Figure_4_2_Tenant_Network.png" alt="Tenant Network"></br>Figure 4-2. <a href="https://docs.openstack.org/newton/install-guide-ubuntu/launch-instance-networks-selfservice.html">OpenStack Self-Srevice (tenant) Networks</a></p>
+<p align="center"><img src="../figures/Figure_4_2_Tenant_Network.png" alt="Tenant Network"></br>Figure 4-5. OpenStack Self-Srevice (tenant) Networks</p>
 
 A VNF application network topology is expressed in terms of VMs, vNIC interfaces with vNet access networks, and WAN Networks while the VNF Application VMs require multiple vNICs, VLANs, and host routes configured within the VM’s Kernel.
 
@@ -396,7 +402,7 @@ As we get away from the large data centers to the smaller sites it becomes progr
 <a name="4.6.3"></a>
 ### 4.6.3 Containerised OpenStack Services
 
-#### 4.6.3.1. Architectural Drivers – Requirements Traceability
+#### 4.6.3.1 Architectural Drivers – Requirements Traceability
 
 | Ref # | sub-category | Description |
 |----|----|-----|
@@ -404,7 +410,7 @@ As we get away from the large data centers to the smaller sites it becomes progr
 | req.vim.02 | General | The Architecture should support deployment of OpenStack components in containers. |
 | req.gen.rsl.01 | Resiliency | The Architecture must support resilient OpenStack components that are required for the continued availability of running workloads. |
 
-#### 4.6.3.2. Justification
+#### 4.6.3.2 Justification
 
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc.  Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
 
@@ -414,11 +420,9 @@ Containers are lightweight compared to Virtual Machines and leads to efficient r
 **DHCP**
 When the Neutron-DHCP agent is hosted in controller nodes, then VMs, on a Tenant network, that need to acquire an IPv4 and/or IPv6 address, the VLAN for the Tenant must be extended to the control plane servers so that the Neutron agent can receive the DHCP requests from the VM and send the response to the VM with the IPv4 and/or IPv6 addresses and the lease time. Please see <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">OpenStack provider Network</a>.
 
-**DNS**
-
-**LDAP**
-
-**IPAM**
+- **DNS**
+- **LDAP**
+- **IPAM**
 
 <a name="4.8"></a>
 ## 4.8 Logging / Monitoring / Alerting of Control Plane
@@ -428,9 +432,9 @@ Enterprises and vendors may have custom monitoring and logging solutions. The in
 In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only. 
 
 <p align="center"><img src="../figures/Figure_4_4_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"></br>
-Figure 4-4. Monitoring and Logging Framework </p>
+Figure 4-6: Monitoring and Logging Framework </p>
 
-The monitoring and logging framework (Figure 4-4) leverages Prometheus as the monitoring engine and Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. Prometheus agents pull information from individual components on every host.  Fluentd, an open source data collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures the access, application and system logs.
+The monitoring and logging framework (**Figure 4-6**) leverages Prometheus as the monitoring engine and Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. Prometheus agents pull information from individual components on every host.  Fluentd, an open source data collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures the access, application and system logs.
 
 <a name="4.9"></a>
 ## 4.9 Telemetry
