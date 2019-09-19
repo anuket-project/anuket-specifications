@@ -85,7 +85,7 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 
 <p align="center"><b>Table 4-2:</b> Exposed performance optimisation capabilities of NFVI.</p>
 
-* L and X policies require CPU pinning be active.
+\* L and X cache policies require CPU pinning to be active.
 
 Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance. Providing the physical CPU microarchitecture supports it, cache management policy can be used to specify the static allocation of cache resources within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a VNF that has the "X" attribute applied. The "Lean" attribute can be applied to VNFs which do not realize significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
 
@@ -356,19 +356,19 @@ Table 4-14 shows security capabilities
 <a name="4.1"></a>
 ## 4.2 Infrastructure Profiles Catalogue
 
-Infrastructure exposes compute flavours with options, virtual interface options, storage extensions, and acceleration extensions to VNFs. These NFVI Profiles are offered to VNFs in the form of infrastructure instance types with their corresponding options and extensions.
+Infrastructure exposes compute Flavours with options, virtual interface options, storage extensions, and acceleration extensions to VNFs. These NFVI Profiles are offered to VNFs in the form of infrastructure instance types with their corresponding options and extensions.
 
-The idea of the infrastructure profiles catalogue is to have a predefined set of instance types with a predefined set of compute flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more compute flavour (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-2**.
+The idea of the infrastructure profiles catalogue is to have a predefined set of instance types with a predefined set of compute Flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more compute Flavour (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-2**.
 
 <p align="center"><img src="../figures/ch04_vnf_design.PNG" alt="vnf_design" title="VNF Design" width="65%"/></p>
-<p align="center"><b>Figure 4-2:</b> VNFs built against standard instance types and compute flavours.</p>
+<p align="center"><b>Figure 4-2:</b> VNFs built against standard instance types and compute Flavours.</p>
 
 <a name="4.2.1"></a>
-### 4.2.1 Compute flavours
+### 4.2.1 Compute Flavours
 
-Compute flavours represent the compute, memory, storage, and management network resource templates that are used by VMs on the compute hosts. Each VM is given a compute flavour (resource template), which determines the VMs compute, memory and storage characteristics.
+Compute Flavours represent the compute, memory, storage, and management network resource templates that are used by VMs on the compute hosts. Each VM is given a compute Flavour (resource template), which determines the VMs compute, memory and storage characteristics.
 
-Compute flavours can also specify secondary ephemeral storage, swap disk, etc. A compute flavour geometry consists of the following elements:
+Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute Flavour geometry consists of the following elements:
 
 Element |Description
 --------|----------
@@ -381,10 +381,10 @@ Management Interface |Specifies the bandwidth of mangemetn interface/s
 <p align="center"><b>Table 4-16:</b> Compute Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
-#### 4.2.1.1 Predefined Compute flavours
-The intent of the following flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute flavours are specified relative to the “large” flavour. The “large” flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting instance will have a management interface of 1 Gbps. The “medium” flavour is half the size of a large and small is half the size of medium. The tiny flavour is a special sized flavour.
+#### 4.2.1.1 Predefined Compute Flavours
+The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
 
->_*Note:*_ Customised (Parameterized) flavours can be used in concession by operators and , if needed, are  created using TOSCA, HEAT templates and/or VIM APIs.
+>_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and , if needed, are  created using TOSCA, HEAT templates and/or VIM APIs.
 
 .conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Management Interface
 -----|------------|----------|-----|-----
@@ -395,9 +395,9 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 .2xlarge* |8 |16 GB |160 GB |1 Gbps
 .4xlarge* |16 |32 GB |320 GB |1 Gbps
 
-<p align="center"><b>Table 4-17:</b> Predefined Compute flavours.</p>
+<p align="center"><b>Table 4-17:</b> Predefined Compute Flavours.</p>
 
-> _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt microservices-based designs for their VNFs_
+> _*These compute Flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller Flavours and adopt microservices-based designs for their VNFs_
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
@@ -440,7 +440,7 @@ Note, performance is based on a block size of 256KB or larger.
 <a name="4.2.3.1"></a>
 
 #### 4.2.3.1 Available Storage Extensions
-The following table defines persistent storage extensions that can be provided to VNFs for data storage. More than one storage extension can be provided to a single VNF-C. The option selected determines both the size and the performance of the extension.
+The following table defines persistent storage extensions that can be provided to VNFs for data storage. More than one storage extension can be provided to a single VNFC. The option selected determines both the size and the performance of the extension.
 
 | .conf | capacity | Read IOPS | Write IOPS | Read Throughput (MB/s) | Write Throughput (MB/s) |
 |----------|----------|------------|------------|------------------------|-------------------------|
@@ -461,7 +461,7 @@ The following table defines persistent storage extensions that can be provided t
 
 <a name="4.2.4.1"></a>
 #### 4.2.4.1 B Instances (Basic)
-This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute flavours. This instance type is intended to be available in any data centre within any operator's network.
+This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute Flavours. This instance type is intended to be available in any data centre within any operator's network.
 
 <a name="4.2.4.2"></a>
 #### 4.2.4.2 N Instances (Network Intensive)
@@ -540,9 +540,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.mon.cap.005`<br />(External storage IOPS) | Yes | No | Yes | |
 | `i.nfvi.mon.cap.006`<br />(External storage throughput) | Yes | No | Yes | |
 | `i.nfvi.mon.cap.007`<br />(External storage capacity) | Yes | No | Yes | |
-| `i.nfvi.sec.cap.001`<br />(VNF-C/VNF-C memory isolation) | Yes | Yes | Yes | Internal security capabilities as per [**Table 7-1**](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#Table7-1) |
-| `i.nfvi.sec.cap.002`<br />(VNF-C -> Host) | No | No | No | |
-| `i.nfvi.sec.cap.003`<br />(Host -> VNF-C) | Yes | Yes | Yes | |
+| `i.nfvi.sec.cap.001`<br />(VNFC/VNFC memory isolation) | Yes | Yes | Yes | Internal security capabilities as per [**Table 7-1**](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#Table7-1) |
+| `i.nfvi.sec.cap.002`<br />(VNFC -> Host) | No | No | No | |
+| `i.nfvi.sec.cap.003`<br />(Host -> VNFC) | Yes | Yes | Yes | |
 | `i.nfvi.sec.cap.004`<br />(External storage at-rest encryption) | Yes | Yes | Yes | |
 
 <p align="center"><b>Table 4-24:</b> Mapping of NFVI capabilities to instance types.</p>
@@ -559,12 +559,12 @@ _**Comment:** To be worked on._
 #### 4.2.7.1 Naming convention
 An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
 
-`B/N/C <I opt> . <flavour> . <S ext> . <A ext>`
+`B/N/C <I opt> . <Flavour> . <S ext> . <A ext>`
 
 Whereas:
 - **B/N/C**: specifies the instance type (Basic, Network Intensive, and Compute Intensive)
 - **\<I opt>**: specifies the interface option of the instant.
-- **\<flavour>**: specifies the compute flavour.
+- **\<Flavour>**: specifies the compute Flavour.
 - **\<S ext>**: specifies an optional storage extension.
 - **\<A ext>**: specifies an optional acceleration extension for either N or H instance types.
 
