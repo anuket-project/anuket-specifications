@@ -15,13 +15,14 @@
   * [4.1.6 VIM capabilities.](#4.1.6)
   * [4.1.7 VIM metrics.](#4.1.7)
 * [4.2 Catalogue.](#4.2)
-  * [4.2.1 Compute flavours.](#4.2.1)
-  * [4.2.2 Network Interface Specifications.](#4.2.2)
+  * [4.2.1 Compute Flavours.](#4.2.1)
+  * [4.2.2 Virtual Network Interface Specifications.](#4.2.2)
   * [4.2.3 Storage Extensions.](#4.2.3)
   * [4.2.4 Instance types.](#4.2.4)
   * [4.2.5 Instance capabilities mapping.](#4.2.5)
   * [4.2.6 Instance metrics mapping.](#4.2.6)
   * [4.2.7 One stop shop.](#4.2.7)
+* [4.3 Networking.](#4.2)
 
 <a name="4.1"></a>
 ## 4.1 Capabilities and Metrics
@@ -63,7 +64,6 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 | e.nfvi.res.cap.003 | Total amount of instance (ephemeral) storage (GB) | GB | Min, Max storage in GB that can be assigned to a single VNFC by NFVI |
 | e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNFC by NFVI. |
 | e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI. |
-
 <p align="center"><b>Table 4-1:</b> Exposed resource capabilities of NFVI.</p>
 
 <a name="4.1.2.2"></a>
@@ -81,8 +81,15 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 | e.nfvi.per.cap.004 | Crypto Acceleration | Yes/No | Crypto Acceleration |
 | e.nfvi.per.cap.005 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
 | e.nfvi.per.cap.006 | Programmable Acceleration | Yes/No | Programmable Acceleration |
+| e.nfvi.per.cap.007 | Enhanced Cache Management* | enum | L=Lean; E=Equal; X=eXpanded |
 
 <p align="center"><b>Table 4-2:</b> Exposed performance optimisation capabilities of NFVI.</p>
+
+* L and X policies require CPU pinning be active.
+
+Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance. Providing the physical CPU microarchitecture supports it, cache management policy can be used to specify the static allocation of cache resources within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a VNF that has the "X" attribute applied. The "Lean" attribute can be applied to VNFs which do not realize significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
+
+In addition to static allocation, an advanced Reference Architecture implementation may also implement dynamic cache management control policies, operating with tight (~ms) or standard (10s of seconds) control loops, thereby achieving higher overall performance for the socket.
 
 <a name="4.1.2.3"></a>
 #### 4.1.2.3 Exposed monitoring capabilities
@@ -390,14 +397,17 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 <p align="center"><b>Table 4-17:</b> Predefined Compute flavours.</p>
 
-> _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt micro server's designs for their VNFs_
+> _*These compute flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller flavours and adopt microservices-based designs for their VNFs_
 
 <a name="4.2.2"></a>
-### 4.2.2 Network Interface Specifications
+### 4.2.2 Virtual Network Interface Specifications
 
-The network interface specifications extend the flavour customization to specify the network interface “n” followed by the interface bandwidth (in Gbps). Multiple network interface bandwidths, where network interfaces of different bandwidths exist, can be specified by repeating the “n” with interface bandwidth.
 
-Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base flavour.
+The virtual network interface specifications extend a Flavour customization with network interface(s), with an associated bandwidth, and are identified by the literal, “n”, followed by the interface bandwidth (in Gbps). Multiple network interfaces can be specified by repeating the “n” option.
+
+Virtual interfaces may be of an Access type, and thereby untagged, or may be of a Trunk type, with one or more 802.1Q tagged logical interfaces. Note, tagged interfaces are encapsulated by the Overlay, such that tenant isolation (i.e. security) is maintained, irrespective of the tag value(s) applied by the VNF.  
+
+Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base Flavour.
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
@@ -414,7 +424,8 @@ n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
-Multiple non-ephemeral storage volumes can be attached to virtual computes for persistent data storage. Each of those volumes can be configured with the required performance category.
+
+Multiple persistent storage extensions can be attached to virtual compute instances for data storage. Each extension can be configured with the required performance category.
 
 .conf |Read IO/s |Write IO/s Read |Throughput (MB/s) |Write Throughput (MB/s)
 ---|---|---|---|---
@@ -425,8 +436,9 @@ Multiple non-ephemeral storage volumes can be attached to virtual computes for p
 <p align="center"><b>Table 4-19:</b> Storage Performance Profiles.</p>
 
 <a name="4.2.3.1"></a>
-#### 4.2.3.1 Available storage extensions
-These are non-ephemeral storage extensions that can be provided to VNFs for persistent data storage. More than one storage extension can be provided to a single VNFC.
+
+#### 4.2.3.1 Available Storage Extensions
+The following table defines persistent storage extensions that can be provided to VNFs for data storage. More than one storage extension can be provided to a single VNF-C. The option selected determines both the size and the performance of the extension.
 
 | .conf | capacity | Read IOPS | Write IOPS | Read Throughput (MB/s) | Write Throughput (MB/s) |
 |----------|----------|------------|------------|------------------------|-------------------------|
@@ -440,7 +452,7 @@ These are non-ephemeral storage extensions that can be provided to VNFs for pers
 | .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 
-<p align="center"><b>Table 4-20:</b> Storage extensions for compute flavours.</p>
+<p align="center"><b>Table 4-20:</b> Storage Extension Options.</p>
 
 <a name="4.2.4"></a>
 ### 4.2.4 Instance types
@@ -484,51 +496,52 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 
 <a name="4.2.4.4"></a>
 #### 4.2.4.4 Network Interface Options
-**Table 4-8** below shows the various network interfaces options (from **Table 4-3**) are available for which profile type (Up to 6 interfaces are possible).
+**Table 4-23** below shows the various network interface extension bandwidth options (from **Table 4-3**) available each profile type (Up to 6 extensions (i.e. interfaces) may be associated with a virtual compute instance).
 
 | Virtual interface option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
-n1, n10, n1T*, n1Q*, n1P*, n1H* | Y | N |N
-n10, n10D, n10T*, n10Q*, n10P*, n10H* | Y | Y | Y
-n25, n25D, n25T*, n25Q*, n25P*, n25H* | N | Y | Y
-n50, n50D, n50T*, n50Q*, n50P*, n50H* | N | Y | Y
-n100, n100D, n100T*, n100Q*, n100P*, n100H* | N | Y | N
+n1, n2, n3, n4, n5, n6 | Y | N |N
+n10, n20, n30, n40, n50, n60 | Y | Y | Y
+n25, n50, n75, n100, n125, n150 | N | Y | Y
+n50, n100, n150, n200, n250, n300 | N | Y | Y
+n100, n200, n300, n400, n500, n600 | N | Y | N
 
 <p align="center"><b>Table 4-23:</b> Virtual NIC interfaces options</p>
 
-> _*These options are intended to be used for transitional purposes. VNFs are expected to use minimum number of interfaces and adopt micro-servers design principles._
+> _*VNFs are expected to use the minimum number of interfaces and adopt microservices design principles._
 
 <a name="4.2.5"></a>
 ### 4.2.5 Instance capabilities mapping.
 
 | Ref | B Instance | N Instance | C Instance | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
-| `e.nfvi.res.cap.001` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> | Exposed resource capabilities as per [**Table 4-1**.](#Table4-1)|
-| `e.nfvi.res.cap.002` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> |  |
-| `e.nfvi.res.cap.003` | As per selected  \<flavour> | As per selected  \<flavour> | As per selected  \<flavour> |  |
-| `e.nfvi.res.cap.004` | As per selected  <I Opt> | As per selected  <I Opt> | As per selected  <I Opt> |  |
-| `e.nfvi.res.cap.005` | As per selected  <S Ext> | As per selected  <S Ext> | As per selected  <S Ext> |  |
-| `e.nfvi.per.cap.001` | No | Yes | Yes | Exposed performance capabilities as per [**Table 4-2**.](#Table4-2) |
-| `e.nfvi.per.cap.002` | No | Yes | No | |
-| `e.nfvi.per.cap.003` | No | Yes (if offered) | No | |
-| `e.nfvi.per.cap.004` | No | Yes (if offered) | No | |
-| `e.nfvi.per.cap.005` | No | No | Yes (if offered) | |
-| `e.nfvi.per.cap.006` | No | No | Yes (if offered) | |
-| `e.nfvi.mon.cap.001` | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**.](#Table4-3) |
-| `i.nfvi.sla.cap.001` | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
-| `i.nfvi.sla.cap.002` | No | Yes | Yes | |
-| `i.nfvi.per.cap.001` | No | Yes | No | Internal performance capabilities as per [**Table 4-7**.](#Table4-7) |
-| `i.nfvi.mon.cap.001` | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**.](#Table4-8) |
-| `i.nfvi.mon.cap.002` | Yes | Yes | Yes | |
-| `i.nfvi.mon.cap.003` | Yes | Yes | Yes | |
-| `i.nfvi.mon.cap.004` | Yes | Yes | Yes | |
-| `i.nfvi.mon.cap.005` | Yes | No | Yes | |
-| `i.nfvi.mon.cap.006` | Yes | No | Yes | |
-| `i.nfvi.mon.cap.007` | Yes | No | Yes | |
-| `i.nfvi.sec.cap.001` | Yes | Yes | Yes | Internal security capabilities as per [**Table 4-9**.](#Table4-9) |
-| `i.nfvi.sec.cap.002` | No | No | No | |
-| `i.nfvi.sec.cap.003` | Yes | Yes | Yes | |
-| `i.nfvi.sec.cap.004` | Yes | Yes | Yes | |
+| `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
+| `e.nfvi.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.nfvi.res.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.nfvi.res.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> | Per selected  <I Opt> |  |
+| `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> | Per selected  <S Ext> |  |
+| `e.nfvi.per.cap.001`<br />(CPU pinning support) | No | Yes | Yes | Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
+| `e.nfvi.per.cap.002`<br />(NUMA support) | No | Yes | No | |
+| `e.nfvi.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | No | |
+| `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | No | |
+| `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
+| `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
+| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
+| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3) |
+| `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
+| `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | No | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
+| `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes | Yes | |
+| `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes | Yes | |
+| `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | Yes | |
+| `i.nfvi.mon.cap.005`<br />(External storage IOPS) | Yes | No | Yes | |
+| `i.nfvi.mon.cap.006`<br />(External storage throughput) | Yes | No | Yes | |
+| `i.nfvi.mon.cap.007`<br />(External storage capacity) | Yes | No | Yes | |
+| `i.nfvi.sec.cap.001`<br />(VNF-C/VNF-C memory isolation) | Yes | Yes | Yes | Internal security capabilities as per [**Table 7-1**](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#Table7-1) |
+| `i.nfvi.sec.cap.002`<br />(VNF-C -> Host) | No | No | No | |
+| `i.nfvi.sec.cap.003`<br />(Host -> VNF-C) | Yes | Yes | Yes | |
+| `i.nfvi.sec.cap.004`<br />(External storage at-rest encryption) | Yes | Yes | Yes | |
 
 <p align="center"><b>Table 4-24:</b> Mapping of NFVI capabilities to instance types.</p>
 
@@ -555,3 +568,8 @@ Whereas:
 
 <p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="100%"/></p>
 <p align="center"><b>Figure 4-3:</b> Infrastructure Instances catalogue.</p>
+
+<a name="4.3"></a>
+## 4.3 Networking
+
+This is a placeholder for NFVI infrastructure networking information that is common to all Reference Architectures.
