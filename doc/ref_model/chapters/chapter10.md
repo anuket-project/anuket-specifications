@@ -1,6 +1,8 @@
 [<< Back](../../ref_model)
 # 10 Challenges and Gaps
 
+https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/figures/bogo_sdc.png
+
 ## Table of Contents
 * [10.1 Introduction.](#10.1)
 * [10.2 Challenges.](#10.2)
