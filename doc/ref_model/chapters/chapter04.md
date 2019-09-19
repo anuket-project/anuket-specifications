@@ -498,7 +498,7 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 
 <a name="4.2.4.4"></a>
 #### 4.2.4.4 Network Interface Options
-**Table 4-23** below shows the various network interface extension bandwidth options (from **Table 4-3**) available each profile type (Up to 6 extensions (i.e. interfaces) may be associated with a virtual compute instance).
+**Table 4-23** below shows the various network interface extension bandwidth options (from **Table 4-18**) available for each profile type (Up to 6 extensions (i.e. interfaces) may be associated with a virtual compute instance).
 
 | Virtual interface option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
