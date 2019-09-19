@@ -62,7 +62,7 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 | e.nfvi.res.cap.002 | Amount of RAM (MB) | MB | Min, Max memory in MB that can be assigned to a single VNF-C by NFVI. |
 | e.nfvi.res.cap.003 | Total amount of instance (ephemeral) storage (GB) | GB | Min, Max storage in GB that can be assigned to a single VNF-C by NFVI |
 | e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNF-C by NFVI. |
-| e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Min, Max storage in GB that can be attached / mounted to VNF-C by NFVI. |
+| e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Min, Max storage in GB that can be attached / mounted to VNF-C by NFVI |
 
 <p align="center"><b>Table 4-1:</b> Exposed resource capabilities of NFVI.</p>
 
@@ -81,8 +81,15 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 | e.nfvi.per.cap.004 | Crypto Acceleration | Yes/No | Crypto Acceleration |
 | e.nfvi.per.cap.005 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
 | e.nfvi.per.cap.006 | Programmable Acceleration | Yes/No | Programmable Acceleration |
+| e.nfvi.per.cap.007 | Enhanced Cache Management* | enum | L=Lean; E=Equal; X=eXpanded |
 
 <p align="center"><b>Table 4-2:</b> Exposed performance optimisation capabilities of NFVI.</p>
+
+* L and X policies require CPU pinning be active.
+
+Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance. Providing the physical CPU microarchitecture supports it, cache management policy can be used to specify the static allocation of cache resources within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a VNF that has the "X" attribute applied. The "Lean" attribute can be applied to VNFs which do not realize significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
+
+In addition to static allocation, an advanced Reference Architecture implementation may also implement dynamic cache management control policies, operating with tight (~ms) or standard (10s of seconds) control loops, thereby achieving higher overall performance for the socket.
 
 <a name="4.1.2.3"></a>
 #### 4.1.2.3 Exposed monitoring capabilities
@@ -397,7 +404,7 @@ The intent of the following flavours list is to be comprehensive and yet effecti
 
 The virtual network interface specifications extend a Flavour customization with network interface(s), with an associated bandwidth, and are identified by the literal, “n”, followed by the interface bandwidth (in Gbps). Multiple network interfaces can be specified by repeating the “n” option.
 
-Virtual interfaces may be of an Access type, and thereby untagged, or may be of a Trunk type, with one or more 802.1Q tagged logical interfaces.
+Virtual interfaces may be of an Access type, and thereby untagged, or may be of a Trunk type, with one or more 802.1Q tagged logical interfaces. Note, tagged interfaces are encapsulated by the Overlay, such that tenant isolation (i.e. security) is maintained, irrespective of the tag value(s) applied by the VNF.  
 
 Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base Flavour.
 ```
@@ -498,7 +505,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 
 <p align="center"><b>Table 4-23:</b> Virtual NIC interfaces options</p>
 
-> _*VNFs are expected to use the minimum number of interfaces and adopt micro-servers design principles._
+> _*VNFs are expected to use the minimum number of interfaces and adopt microservices design principles._
 
 <a name="4.2.5"></a>
 ### 4.2.5 Instance capabilities mapping.
@@ -516,6 +523,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | No | |
 | `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
+| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
 | `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3) |
 | `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
