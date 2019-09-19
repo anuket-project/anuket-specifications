@@ -4,11 +4,11 @@
 <!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
 
 ## Release Information
-**Release: _1.0_**
+**Release: _2.0_**
 
-**Version: _1.2_**
+**Version: _0.0_**
 
-**Release Date: _16th July 2019_**
+**Release Date: _20th September 2019_**
 
 ## Version History
 
@@ -16,7 +16,7 @@
 | --- | --- | --- |
 | 1.0 | 16th July 2019 | First Release|
 | 1.1 | 2nd August 2019 | Post Paris F2F clean up|
-| 1.2 | 18th September 2019 | Added Chapter 8 Test Case Annex|
+| 2.0 | 20th September 2019 | Botrange Release|
 
 
 ## Overall Status
