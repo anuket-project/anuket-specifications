@@ -106,7 +106,7 @@ The KVM APIs are documented in Section 4 of the document https://www.kernel.org/
 #### 5.3.3.1. Libvirt Interfaces
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
 
+<!--
 ### 5.3.4. vSphere/ESXi APIs
 The ESXi APIs are documented together with vCenter and available at https://code.vmware.com/apis/62/vcenter-management
-
-
+-->
