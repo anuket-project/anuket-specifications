@@ -47,11 +47,10 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.com.cfg.001 | CPU partionning  | Value | Minimum number of CPU dedicated to the host |
-| nfvi.com.cfg.002 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
-| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | Support of NUMA at the virtualisation layer  |
-| nfvi.com.cfg.004 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
-| nfvi.com.cfg.005 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
+| nfvi.com.cfg.001 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
+| nfvi.com.cfg.002 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
+| nfvi.com.cfg.003 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
+| nfvi.com.cfg.004 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
 
@@ -125,15 +124,12 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.com.cfg.001 | CPU partionning  | value | 0 | 1 CPU per NUMA* | 1 CPU per NUMA |
-| nfvi.com.cfg.002 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
-| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | N | Y | Y |
-| nfvi.com.cfg.004 | CPU pinning capability | Yes/No  | N | Y | Y |
-| nfvi.com.cfg.005 | Huge Pages  | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.001 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
+| nfvi.com.cfg.002 | NUMA awareness | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |
 
 <p align="center"><b>Table 5-7:</b> Virtual Compute features and configuration for the 3 types of SW profiles.</p>
-
-> _*This number should be increased for instance if DPDK is implemented ._
 
 **Table 5-8** will gather virtual compute acceleration features. It will be filled over time.
 
