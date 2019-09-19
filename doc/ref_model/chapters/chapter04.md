@@ -435,6 +435,8 @@ Multiple persistent storage extensions can be attached to virtual compute instan
 
 <p align="center"><b>Table 4-19:</b> Storage Performance Profiles.</p>
 
+Note, performance is based on a block size of 256KB or larger.
+
 <a name="4.2.3.1"></a>
 
 #### 4.2.3.1 Available Storage Extensions
