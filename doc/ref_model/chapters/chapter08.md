@@ -35,6 +35,7 @@
   * [8.7.2 System Under Test (SUT) Pre-reqs.](#8.7.2)
   * [8.7.3 Entrance & Exit Criteria.](#8.7.3)
   * [8.7.4 Test Frameworks.](#8.7.4)
+    * [8.7.4.1 Functest.](#8.7.4.1)
   * [8.7.5 Test Categories.](#8.7.5)
   * [8.7.6 Test Harness(es).](#8.7.6)
   * [8.7.7 Test Tools.](#8.7.7)
@@ -61,21 +62,23 @@ For the purposes of this chapter, NFVI+VNF testing will be performed for **Verif
 **Objective**<br>
 Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
-**Scope**
+**Scope and Test Methodology**
 - Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
 - Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
-- Candidate VNF Validation (Validation & Performance) will ensure complete interopablity of VNF behavior on the NFVI leverage VVP/CVC test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
+- Candidate VNF Validation (Validation & Performance) will ensure complete interoperablity of VNF behavior on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).  
 
-**Repeat** the approach of Manifest compliance, Empirical Golden VNF, and Interopability Testing with new Distributions.
+**Different Distributions** 
+The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
+
 
 **Not in Scope**
 
 - Functional testing/validation of the VNF is not in scope.
-- ONAP is not used for MANO, or mangement and orechestration of VNFs.
+- ONAP is not used in the process flow for NFVI verifications, or validations.
 - Upgrades to VNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
-**Document Purpose**<br>
-This document includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
+**Chapter Purpose**<br>
+This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
 
 <p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 8-1:</b> CNTT relation to LFN OVP</p>
@@ -83,7 +86,7 @@ This document includes process flow, logistics, and requirements which must be s
 <a name="8.2"></a>
 ## 8.2 Principles and Guidelines
 
-The objectives of the verification program are to deliver a validated implementation of reference architecture which satisifes infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
+The objectives of the verification program are to deliver a validated implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
 
 These core principles will guide NFV verification deliverables:
 
@@ -129,7 +132,9 @@ These core principles will guide NFV verification deliverables:
 <a name="8.3"></a>
 ## 8.3 Terms and Resources
 
-NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.
+**Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
+
+NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  
 
 - **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.
 - **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.
@@ -149,13 +154,16 @@ Additional Terms utilized throughout the document:
 
 <table>
   <tr><th>Term</th><th>Description</th></tr>
-  <tr><td>AZ</td><td>AZ Availability Zone</td></tr>
+  <tr><td>AZ</td><td>AZ	Availability Zone</td></tr>
+	<tr><td>Compatibility</td><td>the capacity for two systems to work together without having to be altered to do so, e.g. same data formats</td></tr>
+	<tr><td>Compliance</td><td>a state of being in accordance with established guidelines or specifications</td></tr>
   <tr><td>CPE</td><td>Customer Premises Equipment</td></tr>
   <tr><td>CVC</td><td>Compliance and Verification Committee</td></tr>
   <tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
   <tr><td>ETSI NFV-TST</td><td>ETSI - Network Functions Virtualisation - Test</td></tr>
   <tr><td>ETSI NFV-IFA</td><td>ETSI - Network Functions Virtualisation - Infrastructure</td></tr>
   <tr><td>GB</td><td>Gigabit</td></tr>
+  <tr><td>Hareness (Test)</td><td>automated test framework (test engine, scrip repository) configured to test a program unit by running it under varying conditions and monitoring its behavior and outputs</td></tr>
   <tr><td>HW</td><td>Hardware</td></tr>
 <tr><td>IMS</td> <td>IP Multimedia Subsystem</td></tr>
 <tr><td>I/O</td> <td>Input/Output</td></tr>
@@ -166,20 +174,26 @@ Additional Terms utilized throughout the document:
 <tr><td>OPNFV</td> <td>Open Platform for NFV</td></tr>
  <tr><td>OVP</td><td>OPNFV Verification Program (OVP)</td></tr>
 <tr><td>RAM</td><td>Random Access Memory</td></tr>
-<tr><td>SDN</td> <td>Software Defined Networking</td></tr>
-<tr><td>SD-WAN</td> <td>Software Defined Wide Area Network</td></tr>
-<tr><td>SLA</td> <td>Service Level Agreement</td></tr>
-<tr><td>SUT</td> <td>System Under Test</td></tr>
-<tr><td>SW</td> <td>Software</td></tr>
-<tr><td>vCPU</td> <td>Virtual CPU (Central Processing Unit)</td></tr>
-<tr><td>vNIC</td> <td>Virtual NIC (Network Interface Card)</td></tr>
-<tr><td>vRouter</td> <td>Virtual Router</td></tr>
-<tr><td>vSwitch</td> <td>Virtual Switch</td></tr>
-<tr><td>VIM</td> <td>Virtual Infrastructure Manager</td></tr>
-<tr><td>VNF</td> <td>Virtualised Network Function</td></tr>
-<tr><td>VNF-C</td> <td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
-<tr><td>VNFM</td> <td>VNF Manager</td></tr>
+<tr><td>Scenario (Test)</td>	<td>any functionality that can be tested; synonymous with use case, or collection of test steps to complete a user workflow</td></tr>
+<tr><td>SDN</td>	<td>Software Defined Networking</td></tr>
+<tr><td>SD-WAN</td>	<td>Software Defined Wide Area Network</td></tr>
+<tr><td>SLA</td>	<td>Service Level Agreement</td></tr>
+<tr><td>SUT</td>	<td>System Under Test</td></tr>
+<tr><td>SW</td>	<td>Software</td></tr>
+<tr><td>vCPU</td>	<td>Virtual CPU (Central Processing Unit)</td></tr>
+<tr><td>vNIC</td>	<td>Virtual NIC (Network Interface Card)</td></tr>
+<tr><td>vRouter</td>	<td>Virtual Router</td></tr>
+<tr><td>vSwitch</td>	<td>Virtual Switch</td></tr>
+<tr><td>Validation</td>	<td>esting performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior</td></tr>
+	<tr><td>Verification</td>	<td>conformance to design requirement specifications; Reviews and Walk-Throughs to ensure a product delivered meets implementation specifications</td></tr>
+<tr><td>VIM</td>	<td>Virtual Infrastructure Manager</td></tr>
+<tr><td>VNF</td>	<td>Virtualised Network Function</td></tr>
+<tr><td>VNF-C</td>	<td>VNF Component (can be hosted on a VM, Container, etc)</td></tr>
+<tr><td>VNFM</td>	<td>VNF Manager</td></tr>
 </table>
+
+- **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.  
 
 <a name="8.3.2"></a>
 ### 8.3.2 Resources
@@ -204,24 +218,41 @@ Additional Terms utilized throughout the document:
 <a name="8.4"></a>
 ## 8.4 Lifecycle and Process Flow
 
+**NOT MVP**
+
 <a name="8.4.1"></a>
 ### 8.4.1 Project Mgmt
+
+**NOT MVP**
+
 How certifications are requested, processed, managed, what lab(s) is used, life cycle management
 
 <a name="8.4.2"></a>
 ### 8.4.2 OPNFV Iterations & Communications
+
+**NOT MVP**
+
 OPNNV Iterations with the CNTT (mgmt and communication of)
 
 <a name="8.4.3"></a>
 ### 8.4.3 Onboarding RA and Supplier VNF
-Onboarding (for OVP certification)
+
+**NOT MVP**
+
+Onboarding (for OVP certification) 
 
 <a name="8.4.4"></a>
 ### 8.4.4 SLAs and Issue Resolution
+
+**NOT MVP**
+
 Expectations for acknowlegment and turn-round from onboarding, verifications, and issue resolution.
 
 <a name="8.4.5"></a>
 ### 8.4.5 RA Verification
+
+**NOT MVP**
+
 Process flow for RA (Infra) Validation and Verfiication
 
 <a name="8.5"></a>
@@ -245,11 +276,12 @@ Process flow for RA (Infra) Validation and Verfiication
 <a name="8.5.2"></a>
 ### 8.5.2 Process (OPNFV)
 
-<p><strong>OPNFV Releases including the successful adoption and implementaiton of Installer, Feature, and Test Projects to perform release level verification, compliance, and certification.</strong></p>
+<p><strong>OPNFV Releases, and their repsective test verificaitons and validations requires 1) the implentation and adoption of an Installer to perform the needed installation and distirbution of infrastructure componetns and services, 2) identification and acceptance of a Feature Project introducing new, or enhanced, platform capabilities, and 3) an appropriate Test Project explicitly calling out the test use cases and scenarnios for verificaiton and validation.</strong></p>
+
 <p><strong>More specifically:</strong></p>
 <p><strong><u>Release Status</u></strong></p>
 <ul>
-<li>Installer oriented release</li>
+<li>Installer oriented release. CNTT does not recommended any specific installer. An agnostic approach is taken that allows for an implementation to determine their own installer.</li>
 <li>Multiple installers exist</li>
 <li>Multiple scenarios exist, with one scenario represents a certain integration group and a certain configuration</li>
 <li>All releases must pass CI（Continuous Integration) test</li>
@@ -331,10 +363,10 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <ul>
 <li><strong>NFVI Verification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
 <li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
-<li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/CVC Test Suites</li>
+<li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/VFNSDK Test Suites</li>
 <li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <em>(Refer to CNTT Chapter 7 Security for additional test/verification details)</em></li>
 </ul>
-<p>Validations are performed against an <strong>Infrastruture Profile Catalog</strong>, <strong>VNF Category</strong>, and&nbsp;<strong>targeted VNF class,</strong> or family for baseline measurements.</p>
+<p>Validations are performed against an <strong>Infrastructure Profile Catalog</strong>, <strong>VNF performance profile</strong>, and <strong>targeted VNF class</strong> or family for baseline measurements.</p>
 <p>The <strong>Infrastucture Profile Catalog</strong>&nbsp;contains the following attributes:&nbsp;</p>
 <ul>
 <li>Profile is a collection of (limited) options offered by the infrastructure to the VNF
@@ -354,62 +386,13 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 </ul>
 </li>
 </ul>
-<p><strong>VNF Categories</strong>, for which NFVI validations will support and be verified against include:</p>
-<ul>
-<li><strong>Basic</strong>: VNFs with VNF-Cs that perform basic compute operations.</li>
-<li><strong>Network intensive</strong>: VNFs with VNF-Cs that perform network intensive operations with high throuput and low latency requirements.</li>
-<li><strong>Compute Intensive</strong>: VNFs with VNF-Cs that perform compute intensive operations with low latency requirements.</li>
-</ul>
+<p><strong>VNF performance profiles</strong>, for which NFVI validations will support and be verified against, are defined as basic, network intensive, and compute intensive. Details for each of these profiles can be found in <a href=https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3>chapter 2.3</a>.
 
-<p align="center"><img src="../figures/ch8_B-N-C_VNF_Categories.jpg" alt="BNC VNF Categories" title="BNC VNF Categories" width="100%"/></p>
+<p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="BNC VNF Categories" title="BNC VNF Categories" width="100%"/></p>
 <p align="center"><b>Figure:</b> Figure: Basic(B), Network(N), Compute(C) VNF Categories</p>
 
-<p><strong>Targeted VNF Classes/Families </strong>for baseline measurements can include, but not limited to:</p>
-<ul>
-<li><strong>Management and Control Plane</strong>: EPC (MME, P/S-GW, S/G-GSN), IMS, SBC, PCRF, SDM, mVAS, DRA</li>
-<li><strong>User Plane and network</strong>: RAN, BBU, MRF, BNG, CDN, PE, Switch, Router, RR, CPE</li>
-<li><strong>Security &amp; testing</strong>: FW, LB, DNS, AES, DPI, NAT/CGN, SecGW, Probe</li>
-<li><strong>Data Core:</strong>
-<ul>
-<li>Packet Core: GGSN, SGW, PGW, SGSN, MME, CSGN.</li>
-<li>Subscriber Management: HSS.</li>
-<li>Policy &amp; Traffic Management: PCRF, TMF</li>
-<li>Optimizer: MSP.</li>
-</ul>
-</li>
-<li><strong>Voice Core:</strong>
-<ul>
-<li>IP Multimedia: CSCF, ENUM, TAS, SBC.</li>
-<li>Database: CSDB</li>
-<li>Circuit Switched: MSC-S(MSS), MGW.</li>
-<li>Signalling: DRA, SGW, STP.</li>
-<li>Messaging</li>
-<li>Security</li>
-</ul>
-</li>
-<li><strong>IP Core:</strong>
-<ul>
-<li>SEC-GW</li>
-</ul>
-</li>
-<li><strong>SDO:</strong>
-<ul>
-<li>Convergent Charging: CCS</li>
-<li>Smart Pricing: SPO.</li>
-<li>NGIN, Gi-LAN</li>
-<li>SecureNet: Clean Pipe.</li>
-<li>Network Security: SS7FW, CMS, SIG.</li>
-<li>Others: Web RTC GW, Service integration GW</li>
-</ul>
-</li>
-<li><strong>Fixed Access:</strong>
-<ul>
-<li>BNG, CPE</li>
-</ul>
-</li>
-</ul>
-<p>&nbsp;</p>
-
+<p><strong>Targeted VNF Classes/Families </strong>for baseline measurements are described in <a href=https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.2>chapter 2.2</a>.
+	
 <a name="8.6.3"></a>
 ### 8.6.3 Best Practices.
 <ul>
@@ -502,25 +485,8 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 
 ![NFVI+VNF Instance Type](../figures/ch8_NFVI_VNF_Instance_Type.jpg)
 **Figure:** NFVI+VNF Instance Type
-- Agreed upon declaration of Compute flavors:
-
-Type | vCPU | RAM | Local Disk | Network Interface
----- | ---- | --- | ---------- | -----------------
-tiny | 1 | 512 MB | 1 GB | 1 Gbps
-small | 1 | 2 GB | 40 GB | 1 Gbps
-medium | 2 | 4 GB | 40 GB | 1 Gbps
-large | 4 | 8 GB | 80 GB | 1 Gbps
-large2 | 4 | 16 GB | 80 GB | 1 Gbps
-xlarge | 8 | 16 GB | 160 GB | 1 Gbps
-xlarge2 | 8 | 32 GB | 160 GB | 1 Gbps
-xlarge3 | 8 | 64 GB | 160 GB | 1 Gbps
-- Performance profiles defined as follows:
-
-NFVI | Compute Workload | Network Workload | Network Performance Requirements | Metrics
----- | ---------------- | ---------------- | -------------------------------- | -------
-Basic | Low | Low | Offered load medium<br>Latency threshold high | Capacity with 5% loss ratio<br>99th percentile of one-way Latency
-Network Intensive | Medium | High | Offered load line-rate<br>Latentcy threshold low | Throughput (zero packet loss)<br>99th percentile of one-way Latency
-Compute Intensive | High | Medium | Offered load high<br>Latency threshold low | Capacity with 1% loss ratio<br>99th percentile of one-way Latency
+- Standard compute flavors to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
+- Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
 <a name="8.7.2"></a>
 ### 8.7.2 System Under Test (SUT) Pre-reqs
@@ -538,7 +504,7 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
    - Users stories / Adherence to CNTT Model principles and guidelines
    - Chosen Reference Architecture Matches a Reference Architecture from the product catalog
 2. **Environment**
-    -  Lab / Flavor, component s/w rev levels specified, with confirmation of compatibility with external systems
+    -  Lab assets/resources and respective s/w rev levels are specified, with confirmation of compatibility across external systems
     -  Tenant needs identified
     -  All connectivity, network, image, VMs, delivered with successful pairwise tests
     -  Lab instrumented for proper monitoring
@@ -604,9 +570,128 @@ Compute Intensive | High | Medium | Offered load high<br>Latency threshold low |
 
 <a name="8.7.4"></a>
 ### 8.7.4 Test Frameworks
-1. Dovtail
-2. Yardstick
-3. Bottlenecks
+
+#### 8.7.4.1 Functest
+
+[Functest](https://functest.readthedocs.io/en/stable-iruya/) was initially
+created to verify OPNFV Installers and Scenarios and then to publish fair,
+trustable and public results regarding the status of the different opensource
+technologies, especially for Neutron backends (e.g. Neutron agents,
+OpenDaylight, OVN, etc.). It has been continuously updated to offer the best
+testing coverage for any kind of OpenStack and Kubernetes deployments
+including production environments. It also ensures that the platforms meet
+Network Functions Virtualization requirements by running and testing VNFs
+amongst all tests available.
+
+
+Functest is driven by a true verification of the platform under test as opposed
+to the interoperability programs such as
+[RefStack](https://refstack.openstack.org/) or
+[OPNFV Verification Program](https://www.opnfv.org/verification) which select
+a small subset of Functional tests passing in many different
+opensource software combinations:
+- tests are skipped if an optional support is missing (e.g.
+  [Barbican](https://docs.openstack.org/barbican/latest/) or networking
+  features such as
+  [BGPVPN interconnection](https://docs.openstack.org/networking-bgpvpn/latest/)
+  or
+  [Service Function Chaining](https://docs.openstack.org/networking-sfc/latest/))
+- tests are parameterized (e.g. shared vs non-shared live migration)
+- blacklist mechanisms are available if needed
+
+It should be noted that
+[the RefStack lists](https://refstack.openstack.org/#/guidelines) are included
+as they are in Functest in the next 3 dedicated testcases:
+- refstack_compute (OpenStack Powered Compute)
+- refstack_object (OpenStack Powered Object Storage)
+- refstack_platform (OpenStack Powered Platform)
+
+Functest also integrates
+[Kubernetes End-to-end tests](https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/) and allows verifying Kubernetes Conformance (see
+[k8s-conformance](https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-iruya-k8s_conformance-run/206/console)).
+
+Dovetail (OVP) mostly leverages on Functest but only runs a small part of
+Functest (~15% of all functional tests, no benchmarking tests, no VNF
+deployment and testing). It's worth mentioning that Functest is patched to
+[disable API verification](https://github.com/opnfv/dovetail/tree/master/etc/patches/functest/disable-api-validation) which has differed from OpenStack rules for
+years.
+
+Then Functest conforms with the upstream rules (versions, code quality, etc.)
+and especially their
+[gates](https://docs.openstack.org/infra/system-config/devstack-gate.html)
+(a.k.a. the automatic verification prior to any code review)
+to preserve the quality between code and deployment.
+In that case, Functest can be considered as a smooth and lightweight
+integration of tests developed upstream (and the Functest team directly
+contributes in these projects:
+[Rally](https://github.com/openstack/rally-openstack),
+[Tempest](https://github.com/openstack/tempest), etc.).
+It's worth mentioning that, as opposed to the OpenStack Gates leveraging on
+[DevStack](https://docs.openstack.org/devstack/latest/), it can check the same
+already deployed SUT over and over even from a
+[Raspberry PI](https://www.raspberrypi.org/). Here the testcases can be
+executed in parallel vs the same deployment instead of being executed vs
+different pools of virtual machines.
+
+Here are the functional tests (>2000) running in OpenStack gates integrated in
+Functest Smoke (see
+[Functest daily jobs](https://build.opnfv.org/ci/view/functest/job/functest-iruya-daily/190/) for more details):
+
+| Testcases                  | Gates              |
+| :------------------------- | :----------------- |
+| tempest_full               | General            |
+| tempest_slow               | General            |
+| tempest_scenario           | General            |
+| neutron-tempest-plugin-api | Neutron            |
+| patrole                    | Patrole            |
+| barbican                   | Barbican           |
+| networking-bgpvpn          | Networking BGP VPN |
+| networking-sfc             | Networking SFC     |
+
+To complete functional testing, Functest also integrates a few
+[performance tools](https://docs.openstack.org/developer/performance-docs/methodologies/tools.html)
+(2-3 hours) as proposed by OpenStack:
+
+| Testcases  | Benchmarking                |
+| :--------- | :-------------------------- |
+| rally_full | Control Plane (API) testing |
+| rally_jobs | Control Plane (API) testing |
+| vmtp       | Data Plane testing          |
+| shaker     | Data Plane testing          |
+
+And VNFs automatically deployed and tested :
+
+| Testcases    | Benchmarking                        |
+| :----------- | :---------------------------------- |
+| cloudify     | Cloudify deployment                 |
+| cloudify_ims | Clearwater IMS deployed via Coudify |
+| heat_ims     | Clearwater IMS deployed via Heat    |
+| vyos_vrouter | VyOS deployed via Cloudify          |
+| juju_epc     | OAI deployed via Juju               |
+
+Functest should be considered as a whole as it meets multiple objectives about
+the reference implementation:
+- verify all APIs (services, advances, features, etc.) exposed by the reference
+  implementation
+- compare the reference implementation and local deployments from a functional
+  standpoint and from OpenStack control plane and dataplane capabilities
+
+It's worth mentioning that Functest already takes into account the first CNTT
+[profiles](https://git.opnfv.org/functest/tree/functest/ci/config_patch.yaml#n2).
+CNTT should simply add the next Functest inputs according the reference
+implementation:
+- [Functest inputs](https://github.com/opnfv/functest/blob/stable/iruya/functest/utils/env.py#L17)
+- [tempest specific configuration](https://github.com/opnfv/functest/blob/stable/iruya/functest/opnfv_tests/openstack/tempest/custom_tests/tempest_conf.yaml)
+
+Additional links:
+- [Homepage](https://functest.readthedocs.io/en/stable-iruya/)
+- [Run Alpine Functest containers (Iruya)](https://wiki.opnfv.org/pages/viewpage.action?pageId=35291769)
+- [Deploy your own Functest CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004)
+- [Functest gates](https://build.opnfv.org/ci/view/functest/)
+
+#### 8.7.4.2 Yardstick
+
+#### 8.7.4.3 Bottlenecks
 
 <a name="8.7.5"></a>
 ### 8.7.5 Test Categories
@@ -708,32 +793,94 @@ The following five test categories have been identified as minimal testing requi
 <a name="8.8"></a>
 ## 8.8 Test Results
 
+**NOT MVP**
+
 Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline.
 Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
 <a name="8.8.1"></a>
 ### 8.8.1 Metrics
+
+**NOT MVP**
+
 Metrics/Measurements and respective certification(s).
 e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
 
+Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviors of the application which are defined by functional requirements.
+
+This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please visit [Chapter 4 of the Reference Model](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md "Chapter 4 - Infrastructure Capabilities, Metrics, and Catalog").**
+
+**STORAGE and IOPS**
+
+_**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
+
+From a definition perspective, IOPS is the standard unit of measurement for I/O (Input/Output) operations per second. This measurement is a performance-based measurement and is usually seen written as**(1)**:
+
+- **Total IOPS**: Average number of I/O operations per second.
+- **Read IOPS**: Average number of read I/O operations per second.
+- **Write IOPS**: Average number of write I/O operations per second.
+
+For example, if you have a disk that is capable of doing a 100 IOPS, it means that it is theoretically capable of issuing a 100 read and or write operations per second.  This is in theory.  In reality, additional time is needed to actually process the 100 reads/writes.  This additional time is referred to as "latency", which reduces the total IOPS that is calculated, and measured.  Latency needs needs to be measured, and included in the IOPS calculation.  Latency will tell us how long it takes to process a single I/O request, and is generally in the 2 millisecond (ms) range per IO operation for a physical disk, through 20+ ms, at which time users will notice an impact in their experience**(2)**.  
+
+Additional factors to consider when measuring IOPS:
+
+
+- Take into consideration the percentage of Input (write) vs. Output (reads) operations, as Writes can be more resource intensive.
+- Determine if Reads were performed from Cache, as this this may (will) result in faster performance, and faster IOPS.
+- Confirm the storage types (Physical, RAID), as storage arrays with linear, or sequential reading/writing may (will) be slower.
+- Identify the block size used, as using large block sizes vs. small block sizes can (will) impact IOPS performance.
+- Determine Hard Disk Speeds (HDD in RPMs) used, as the higher the RPMS, the potential for faster IOPS performance.
+- Quantify the number of disk controllers used to process the number of requested IO requests.
+- Determine the specific work-load requirements, as this will dictate speed, controllers, disk RPM, and latency tolerances.  
+
+For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
+
+**References:**
+
+
+1. _IOPS - I/O (Input/Output) operations per second_, by Vangie Beal.  Retrieved from https://www.webopedia.com/TERM/I/IOPS.html on 9/18/2019.
+2. _The ultimate IOPS cheat sheet!_, by Bas van Kaam.  Retrieved from https://www.basvankaam.com/2014/07/29/the-ultimate-iops-cheat-sheet/ on 9/18/2019.
+3. _An explanation of IOPS and latency_, by Dimitris Krekoukias.  Retrieved from http://recoverymonkey.org/2012/07/26/an-explanation-of-iops-and-latency/ on 9/18/2019.
+
 <a name="8.8.2"></a>
 ### 8.8.2 Report Summary
+
+**NOT MVP**
+
 1. Pass/Fail
 2. Measure Only (e.g. throughput analysis, baseline, transaction stats, etc)
 
 <a name="8.9"></a>
 ## 8.9 Future Planning
 
+**NOT MVP**
+
 This section will be used to plan for future offerings.
 
 <a name="8.9.1"></a>
 ### 8.9.1 Performance and Resiliency Testing
 
+**NOT MVP**
+
+Placeholder to define performance and resiliency needs, and strategies for testing.
+
 <a name="8.9.2"></a>
 ### 8.9.2 Reports Dashboard
+
+**NOT MVP**
+
+Placeholder to document where results will be posted (e.g. Dovetail dashboards.)
 
 <a name="8.9.3"></a>
 ### 8.9.3 Automation Considerations
 
+**NOT MVP**
+
+Placholder to identify automation needs and tool chains.
+
 <a name="8.10"></a>
 ## 8.10 Recommendations
+
+**NOT MVP**
+
+Placholder to capture best practices.

@@ -46,11 +46,10 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.com.cfg.001 | CPU partionning  | Value | Minimum number of CPU dedicated to the host |
-| nfvi.com.cfg.002 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
-| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | Support of NUMA at the virtualisation layer  |
-| nfvi.com.cfg.004 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
-| nfvi.com.cfg.005 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
+| nfvi.com.cfg.001 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
+| nfvi.com.cfg.002 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
+| nfvi.com.cfg.003 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
+| nfvi.com.cfg.004 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
 
@@ -124,15 +123,12 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.com.cfg.001 | CPU partionning  | value | 0 | 1 CPU per NUMA* | 1 CPU per NUMA |
-| nfvi.com.cfg.002 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
-| nfvi.com.cfg.003 | NUMA awareness | Yes/No  | N | Y | Y |
-| nfvi.com.cfg.004 | CPU pinning capability | Yes/No  | N | Y | Y |
-| nfvi.com.cfg.005 | Huge Pages  | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.001 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
+| nfvi.com.cfg.002 | NUMA awareness | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
+| nfvi.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |
 
 <p align="center"><b>Table 5-7:</b> Virtual Compute features and configuration for the 3 types of SW profiles.</p>
-
-> _*This number should be increased for instance if DPDK is implemented ._
 
 **Table 5-8** will gather virtual compute acceleration features. It will be filled over time.
 
@@ -224,9 +220,9 @@ The host profile and capabilities include:
 1. **# of CPUs (sockets)**: is the #of CPUs installed on the physical server.
 1. **# of cores/CPU**: is the number of cores on each of the CPUs of the physical server.
 1. **RAM (GB)**: is the amount of RAM installed on the pysical server.
-1. **Local Disk Capacity**: is the # of local disks and the capacity of the disks installed on the physical server.
-1. **HT (Hyper Threading; technically, SMT: Simultaneous Multithreading)**: Enabled on all physical servers. Gets 2 hyper threads per physical core. Always ON. Configured in the host (BIOS).
-1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host (BIOS).
+1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
+1. **SMT/HT (SMT: Simultaneous Multithreading/ HT: Hyper Threading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
+1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host.
 1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV.
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
 1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
@@ -260,8 +256,8 @@ The configurations specified in here will be used in specifying the actual hardw
 |---------------------|-----------|---------------------------|--------|--------|--------|
 | nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets within each host | 2| 2| 2 |
 | nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
-| nfvi.hw.cpu.cfg.003 | NUMA | NUMA supported and enabled | N | Y | Y |
-| nfvi.hw.cpu.cfg.004 | Hyperthreading (HT) | This allows a CPU to work a 2 streams of data simultaneously | Y | Y| Y |
+| nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
+| nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y| Y |
 
 <!--
 | nfvi.hw.cpu.cfg.005 | CPU Pinning |  | N | Y | Y

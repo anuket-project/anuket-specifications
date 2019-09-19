@@ -13,9 +13,10 @@
   * [7.3.2 Testing demarcation points.](#7.3.2)
 * [7.4 Security Scope.](#7.4)
   * [7.4.1 In-scope and Out-of-Scope definition.](#7.4.1)
-  * [7.4.2 Define Platform security requirements](#7.4.2)
-  * [7.4.3 Define Workload security requirements](#7.4.3)
-  * [7.4.4 Define Workload security requirements](#7.4.4)
+  * [7.4.2 Security requirements](#7.4.2)
+  * [7.4.3 Platform security requirements](#7.4.3)
+  * [7.4.4 Workload security requirements](#7.4.4)
+  * [7.4.5 Workload security requirements](#7.4.5)
 * [7.5 Platform Security.](#7.5)
   * [7.5.1 Platform Security Assumption.](#7.5.1)
   * [7.5.2 Platform ‘back-end’ access security.](#7.5.2)
@@ -156,30 +157,53 @@ Insuring that the security standards and best practices are incorporated into th
 
 The scope of the security controls requirements maps to the scope of the Reference Model architecture.
 
-The Reference Model scope is shown below (as outlined in chapter 1 of the reference model): :
+The Reference Model scope is shown below (as outlined in chapter 1 of the reference model):
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="Scope" title="ETSI Scope" width="100%"/></p>
 <p align="center"><b>Figure 7-2:</b> ETSI Mapping</p>
-
 
 This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
 
 There will be a different set of security requirements for each NFVi reference architecture. In this case, the first reference architecture is OpenStack.
 
 <a name="7.4.2"></a>
-## 7.4.2 Define Platform security requirements
+## 7.4.2 Security Requirements
 
-    *(An overview/introduction to platform security requirements and incl
-    types of platforms covered)*
+The following diagram shows the different security domains that impact the Reference Model:
+
+<p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
+<p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
+
+<a name="7.4.2"></a>
+## 7.4.3 Platform security requirements
+
+At a high level, the following areas/requirements cover platform security for a particular deployment:
+* Platform certification
+* Secure access controls for administrators
+* Secure API interface for Tenants
+* Encryption for all external and control comms
+* Strong separation between tenants
+* Authenticated/secure APIs provided to overlay network administrators
+* Platform change control on hardware
+* Templated approved changes for automation where available
+* Typically well defined security framework documentation including approved deployment use cases
+* Infrastructure software update process
+* Identity Domain = platform
 
 <a name="7.4.3"></a>
-## 7.4.3 Define Workload security requirements
+## 7.4.4 Workload security requirements
 
-    *(An overview/introduction to workload security requirements and incl
-    types of workloads covered)*
+At a high level, the following areas/requirements cover workload security for a particular deployment:
+* Up to platform-level certification
+* Each workload network will have a separate/specific security assessment
+* Potentially automated service activation
+* Workload owner owns security certification process
+* Workload owner owns design change process
+* Workload owner owns software update process
+* Identity Domain = workload
 
 <a name="7.4.4"></a>
-## 7.4.4 Define certification/validation requirements
+## 7.4.5 Certification/validation requirements
 
     *(An overview/introduction to workload certification requirements and
     incl types of workloads covered)*
@@ -188,18 +212,49 @@ There will be a different set of security requirements for each NFVi reference a
 ## 7.5 Platform Security
 
 <a name="7.5.1"></a>
-## 7.5.1 Platform Security Assumption
-    platform security compliance will be the responsibility of the platform owner.
+## 7.5.1 Platform Security
 
-    *(Define the platform security assumption. Note also that the platform
-    may have a different security posture/level to the workload, but that
-    the workload can leverage security accreditations/compliances/services
-    offered by the platform).*
+The security certification of the platform will typically need to be the same, or higher, than the workload or VNF requirements.
 
--   Refer industry references (case by case) – i.e. ISO, NIST, and etc.
+The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by VNFs, or by Data Centre Operations staff supporting the workload, or by tenants accessing VNFs. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
-    *(Can use material from, and update, the existing CNTT section on
-    industry security standards)*
+<p align="center"><img src="../figures/ch7_data_access_model.png" alt="Overview" title="Access Controls" width="100%"/></p>
+<p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
+
+The high-level functions of these different access controls are described below:
+* **MGNT ACCESS CONTROLS** - Platform access to VNFs for service management. Typically all management and control-plane traffic is encrypted.
+* **DATA ACCESS CONTROLS** - Control of east-west traffic between VNFs, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and pltaform services. Inherently strong separation between tenants is mandatory.
+* **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
+* **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as 2FA, and using technologies such as RBAC and encryption. API gateways may be required for automated/script-driven processes.
+* **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks (usually sub, or virtual networks).
+* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including RBAC, authentication controls as approriate for the access arrangement, and API gateways for automated/script-driven processes.
+
+# The following security requirements apply to the platform:
+* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic
+* Provide protections between the Internet and any workloads including web and volumetrics attack preventions
+* Support zoning within a tenant workload - using application-level filtering
+* All host to host communications within the Cloud provider network are to be cryptographically protected in transit.
+* Not expose tenant IP address details to another tenant
+* Use cryptographically-protected protocols for administrative access to the platform
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, TLS.
+* A Platform change management process is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence is implemented.
+* Processes for managing platform access control filters is documented, followed, and monitored.
+* No login to root on any platform systems, and RBAC must apply
+* An approved system or process for last resort access must exist for the platform
+* All API access must use TLS
+* All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks
+* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management and application communication are cryptographically protected in transit between data centre facilities.
+* Continuous Cloud security compliance is mandatory
+* All data persisted to primary, replica or backup storage is to be encrypted
+* All platform security logs are to be time synchronised
+* Logs are to be regularly scanned for events of interest
+* An incident response plan must exist for the platform
+* the cloud services must be regulalry vulnerability and penetration tested
+* 
+*              --- review and continue this list ---
+*
+
 
 <a name="7.5.2"></a>
 ## 7.5.2 Platform ‘back-end’ access security
