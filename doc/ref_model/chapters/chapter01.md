@@ -100,8 +100,8 @@ This section introduces the high-level principles of infrastructure abstraction 
    - NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
    - All NFVI APIs must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and come from Open Communities and Standards Development Organizations. Through such APIs will NFVI resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
 1. VNFs should be modular and be designed to utilise the minimum resources required for the service.
-1. NFVI shall support pre-defined and parameterized T-Shirt sizes.
-   - T-Shirt sizes will evolve with time.
+1. NFVI shall support pre-defined and parameterized sizes.
+   - These pre-defined sizes will evolve over time.
 1. NFVI provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
 1. VNFs that are designed to take advantage of NFVI accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts.
 
