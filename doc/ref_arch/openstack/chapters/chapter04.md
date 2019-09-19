@@ -240,11 +240,11 @@ Horizon is the Web User Interface to all OpenStack services. Horizon has service
 ## 4.4 Cloud Workload Services
 
 This section describes the high-level set of infrastructure components needed to run VMs and provide their compute, network and storage resources. The core set of services and service components needed to run workloads including instances (such as VMs), their networks and storage are referred to as the “Compute Node Services” (a.k.a. user or data plane services).  Contrast this with the Controller nodes which host OpenStack services used for cloud administration and management. The Compute Node Services include virtualisation, hypervisor instance creation/deletion, networking and storage services; some of these activities include RabbitMQ queues in the control plane including the scheduling, networking and cinder volume creation / attachment.
--	Compute, Storage, Network services: Section 3.4 lists the OpenStack service components that are deployed in the data plane (viz., Compute nodes).
-  -	Nova Compute service: nova-compute (creating/deleting instances)
-  -	Neutron Networking service: neutron-l2-agent (manage local Open vSwitch (OVS) configuration), VXLAN
-  -	Local Storage (Ephemeral, Root, etc.)
-  -	Attached Storage (using Local drives)
+-	Compute, Storage, Network services:
+    -	Nova Compute service: nova-compute (creating/deleting instances)
+    -	Neutron Networking service: neutron-l2-agent (manage local Open vSwitch (OVS) configuration), VXLAN
+    -	Local Storage (Ephemeral, Root, etc.)
+    -	Attached Storage (using Local drives)
 -	Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The main supported hypervisor in this Reference Architecture is KVM.
     > **_Note_**: Other hypervisors (such as ESXI) can also be supported as long as it can interoperate with other OpenStack components in this Reference Architecture using standard interfaces and APIs as specified in Chapter 5. 
 
