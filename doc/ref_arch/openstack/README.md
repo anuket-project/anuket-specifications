@@ -5,17 +5,17 @@
 This is Openstack based Reference Architecture
 
 ## Release Information
-**Release: _0.0_**
+**Release: _1.0_**
 
 **Version: _0.0_**
 
-**Release Date: _xxx_**
+**Release Date: _20th September 2019_**
 
 ## Version History
 
 | Version | Date | Note
 | --- | --- | --- |
-| 0.0 | 2nd August 2019 | First Release|
+| 1.0 | 20th September 2019 | Botrange Release|
 
 
 ## Overall Status

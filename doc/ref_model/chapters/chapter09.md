@@ -19,7 +19,7 @@ According to the scope laid out in chapter 1, this chapter will include any requ
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
 <p align="center"><b>Figure 9-1:</b> ETSI NFVI Interface points.</p>
 
-Note this may seem like a large overlap with the topics in Chapter 6, however that chapter focusses primarily on the interfaces provided by the VIM and NFVI to NFVM and NFV workloads, not the interfaces used to manage the NFVI and VIM themselves.
+Note this may seem like a large overlap with the topics in Chapter 6, however that chapter focusses primarily on the interfaces provided by the VIM and NFVI to VNFM and NFV workloads, not the interfaces used to manage the NFVI and VIM themselves.
 
 There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chaper:
 - FCAPS (ISO model for network management)
@@ -177,12 +177,12 @@ Assurance is concerned with:
 
 There are the following requirement types:
 1. Data collection from all components, e.g.
-  - The ability to collect data relating to events (transactions, security events, physical interface up/down events, warning events, error events, etc.)
-  - The ability to collect data relating to component status (up/down, physical temperature, disk speed, etc.)
-  - The ability to collect data relating to component performance (total CPU used, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
+    - The ability to collect data relating to events (transactions, security events, physical interface up/down events, warning events, error events, etc.)
+    - The ability to collect data relating to component status (up/down, physical temperature, disk speed, etc.)
+    - The ability to collect data relating to component performance (total CPU used, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
 2. Capabilities of the Infrastructure Management Software to allow for in-service maintenance of the Infrastructure Software and Hardware under its management, e.g.
-  - The ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
-  - The ability to co-ordinate, automate and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler components in the Infrastructure Management Software
+    - The ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
+    - The ability to co-ordinate, automate and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler components in the Infrastructure Management Software
 
 Note that the above only refers to components - it is expected that any "service" level assurance doesn't add any further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the knowledge it has of the services being offered.
 
