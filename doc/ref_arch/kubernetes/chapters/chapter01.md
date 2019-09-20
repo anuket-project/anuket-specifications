@@ -21,7 +21,7 @@ This document (at this stage, not a RA, we're just using the template as a place
 - Kubernetes-based CaaS (Containers-as-a-Service)
 - Kubernetes-as-a-Service
 
-Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should therefore be closely linked to the application lifecycle. However, it is very important to point out that Kubernetes Platforms also consist of other open source projects, or add-ons, such as:
+Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should be closely linked to the application lifecycle. However, it is very important to point out that Kubernetes Platforms also consist of other open source projects, or add-ons, such as:
 - CNI-compliant network plugins
 - CSI-compliant storage plugins
 - CRI-compliant container runtimes
