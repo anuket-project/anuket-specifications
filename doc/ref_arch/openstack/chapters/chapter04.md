@@ -245,8 +245,8 @@ This section describes the high-level set of infrastructure components needed to
     -	Neutron Networking service: neutron-l2-agent (manage local Open vSwitch (OVS) configuration), VXLAN
     -	Local Storage (Ephemeral, Root, etc.)
     -	Attached Storage (using Local drives)
--	Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The main supported hypervisor in this Reference Architecture is KVM.
-    > **_Note_**: Other hypervisors (such as ESXI) can also be supported as long as it can interoperate with other OpenStack components in this Reference Architecture using standard interfaces and APIs as specified in Chapter 5. 
+-	Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The preferred supported hypervisor in this Reference Architecture is KVM.
+    > **_Note_**: Other hypervisors (such as ESXI) can also be supported as long as it can interoperate with other OpenStack components in this Reference Architecture using standard interfaces and APIs as specified in Chapter 5.
 
 <!--The supported hypervisors include ESXi (primarily through VMware vSphere) and QEMU/KVM through libvirt. Since the hypervisor plays a critical role for virtualized workloads including their isolation from each other, the selection of the hypervisor should be guided by security considerations in addition to other factors such as efficiency and resiliency. -->
 
