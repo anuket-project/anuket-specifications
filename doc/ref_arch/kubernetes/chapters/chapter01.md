@@ -51,7 +51,7 @@ Suggested recommendation:
 
 Figure 1-1 below shows this at a high level.
 
-<p align="center"><img src="../figures/ch01_k8s_arch.png" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="65%"/></p>
+<p align="center"><img src="../figures/ch01_k8s_arch.png" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b> Kubernetes Architecture for NFV</p>
 
 Other thoughts:
