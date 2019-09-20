@@ -298,26 +298,16 @@ This section specifies specific software components needed to support the three 
 
 **Compute Hosts:**
 -	Basic Profile
-    - Blade Servers.
-    - dual socket platform. 
-    - 2x (2.4 Ghz, 14 cores/28HT)
-    - 2x (dual 10G NIC).
-    - 2x Gen3x8 PCIe.
+    - Level of HW details needs to be discussed and analysed further.
+      > some of level of sizing is needed to set the accepted bar.
 
 -	Network Intensive Profile
-    - Rackmount Server.
-    - dual socket platform.
-    - 2x (min: 2.1 Ghz, 24 cores/48HT)
-    - 2x (dual 25G NIC).
-    - 4x Gen3x8 PCIe.
+    - Level of HW details needs to be discussed and analysed further.
+      > some of level of sizing is needed to set the accepted bar.
 
 - Compute Intensive Profile
-    - Rackmount Server.
-    - dual socket platform.
-    - 2x (min: 2.4 Ghz, 24 cores/48HT)
-    - 2x (dual 25G NIC).
-    - 4x Gen3x8 PCIe.
-
+    - Level of HW details needs to be discussed and analysed further.
+      > some of level of sizing is needed to set the accepted bar.
 
 <a name="4.5"></a>
 ## 4.5 Network Topology 
