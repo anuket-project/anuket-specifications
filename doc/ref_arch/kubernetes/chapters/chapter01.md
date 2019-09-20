@@ -49,6 +49,11 @@ The main pros and cons to these approaches can be seen in the table below. This 
 Suggested recommendation:
 - Option 2, operator brings Kubernetes to meet model for other "as-a-Service" components that are required such as DNS, NTP, etc.
 
+Figure 1-1 below shows this at a high level.
+
+<p align="center"><img src="../figures/ch01-k8s-arch.PNG" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="65%"/></p>
+<p align="center"><b>Figure 1-1:</b> Kubernetes Architecture for NFV</p>
+
 Other thoughts:
 - Kubernetes / CaaS should be recognised in ETSI NFV / MANO
 - It is feasible that Kubernetes, using operators and custom resources, could become a generic VNFM (i.e. the Kubernetes parts are the underlying engine, with the operators and custom resources being the equivalent of the specific VNFM).
