@@ -15,9 +15,13 @@
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications”.  Kubernetes place within our architecture should therefore be closely linked to the application lifecycle.
+This document (at this stage, not a RA, we're just using the template as a placeholder), discusses the role of Kubernetes in managing NFV software components (e.g. VNFCs). Application containers such as those managed by Kubernetes can be considered a Foundational PaaS capability<sup>1</sup> and so the following terms can all be thought of as being the topic of this document:
+- Kubernetes PaaS (Platform-as-a-Service)
+- CaaS (Containers-as-a-Service)
+- Kubernetes-based CaaS (Containers-as-a-Service)
+- Kubernetes-as-a-Service
 
-However, it is very important to point out that Kubernetes Platforms are not just Kubernetes, they also consist of a whole load of other open source projects, or add-ons, such as:
+Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should therefore be closely linked to the application lifecycle. However, it is very important to point out that Kubernetes Platforms, in addition to Kubernetes itself, also consist of other open source projects, or add-ons, such as:
 - CNI-compliant network plugins
 - CSI-compliant storage plugins
 - CRI-compliant container runtimes
@@ -26,7 +30,7 @@ However, it is very important to point out that Kubernetes Platforms are not jus
 - monitoring and logging options
 - etc.
 
-Therefore, when considering software validation, and in NFV scenarios the compliance, verification and certification complexities, more thought is required around how flexible the "Platform" is, with regards to these add-ons.  i.e. does a single blueprint for a "Kubernetes Platform for NFV" include specific versions of specific projects for each add-on, and if you change from, e.g. Envoy to Fluentd, that is a new blueprint to certify against.
+Therefore, when considering software validation, and in NFV scenarios the compliance, verification and certification complexities, more thought is required around how flexible the "Platform" should be, with regards to these add-ons.  i.e. does a single blueprint for a "Kubernetes Platform for NFV" include specific versions of specific projects for each add-on, meaning that if you change from, e.g. Envoy to Fluentd, a new blueprint is created to certify against.
 
 There are a number of different approaches that could be adopted:
 1. Software vendor brings Kubernetes
@@ -47,8 +51,15 @@ Suggested recommendation:
 
 Other thoughts:
 - Kubernetes / CaaS should be recognised in ETSI NFV / MANO
-- I think it is feasible that Kubernetes, using operators and custom resources, could become a generic VNFM (i.e. the Kubernetes parts are the underlying engine, with the operators and custom resources being the equivalent of the specific VNFM).
+- It is feasible that Kubernetes, using operators and custom resources, could become a generic VNFM (i.e. the Kubernetes parts are the underlying engine, with the operators and custom resources being the equivalent of the specific VNFM).
 - Should each operator decide how Kubernetes is shared (if at all)?  Should we/someone suggest some best practice (such as, link Kubernetes cluster lifecycle to application lifecycle - so VNFv1.0 is in one cluster, VNFv2.0 is in another cluster. Are clusters shared between VNF vendors, or VNF types?). 
+
+A note on virtualised and containerised workloads:
+It is highly likely that a single VNFM will be managing applications (or components) that are virtualised (i.e. running in VMs) and applications (or components) that are containerised (i.e. running in containers), at the same time.  There are different approaches to achieving this:
+1. Application manager (EMS, VNFM) uses both IaaS (VIM) API and Kubernetes API - the former for VM based workloads, the latter for containerised workloads.
+2. Application manager (EMS, VNFM) uses just the Kubernetes API for both VM-based and container-based workloads, with the Kubernetes PaaS managing the lifecycle of VMs using on of the following methods:
+    a) Kubernetes interacts with IaaS/VIM API (Cluster API model)
+    b) Kubernetes is the IaaS/VIM and interacts direct with the hypervisor (Kubevirt model)
 
 <a name="1.2"></a>
 ## 1.2 Terminology
@@ -76,3 +87,7 @@ Kubernetes Reference Architecture must obey to the following set of principles:
 
 <a name="1.7"></a>
 ## 1.7 Roadmap
+
+References
+---
+1: http://www.theenterprisearchitect.eu/blog/categorize-compare-cloud-vendors/
