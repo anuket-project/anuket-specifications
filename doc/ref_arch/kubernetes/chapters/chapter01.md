@@ -51,13 +51,13 @@ Suggested recommendation:
 
 Figure 1-1 below shows this at a high level.
 
-<p align="center"><img src="../figures/ch01-k8s-arch.PNG" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="65%"/></p>
+<p align="center"><img src="../figures/ch01_k8s_arch.PNG" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="65%"/></p>
 <p align="center"><b>Figure 1-1:</b> Kubernetes Architecture for NFV</p>
 
 Other thoughts:
 - Kubernetes / CaaS should be recognised in ETSI NFV / MANO
 - It is feasible that Kubernetes, using operators and custom resources, could become a generic VNFM (i.e. the Kubernetes parts are the underlying engine, with the operators and custom resources being the equivalent of the specific VNFM).
-- Should each operator decide how Kubernetes is shared (if at all)?  Should we/someone suggest some best practice (such as, link Kubernetes cluster lifecycle to application lifecycle - so VNFv1.0 is in one cluster, VNFv2.0 is in another cluster. Are clusters shared between VNF vendors, or VNF types?). 
+- Should each operator decide how Kubernetes is shared (if at all)?  Should we/someone suggest some best practice (such as, link Kubernetes cluster lifecycle to application lifecycle - so VNFv1.0 is in one cluster, VNFv2.0 is in another cluster. Are clusters shared between VNF vendors, or VNF types?).
 
 A note on virtualised and containerised workloads:
 It is highly likely that a single VNFM will be managing applications (or components) that are virtualised (i.e. running in VMs) and applications (or components) that are containerised (i.e. running in containers), at the same time.  There are different approaches to achieving this:
