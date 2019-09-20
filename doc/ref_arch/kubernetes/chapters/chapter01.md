@@ -21,7 +21,7 @@ This document (at this stage, not a RA, we're just using the template as a place
 - Kubernetes-based CaaS (Containers-as-a-Service)
 - Kubernetes-as-a-Service
 
-Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should be closely linked to the application lifecycle. However, it is very important to point out that Kubernetes Platforms also consist of other open source projects, or add-ons, such as:
+Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should be closely linked to the application lifecycle (this is especially important when considering bare-metal containerisation). However, it is very important to point out that Kubernetes Platforms also consist of other open source projects, or add-ons, such as:
 - CNI-compliant network plugins
 - CSI-compliant storage plugins
 - CRI-compliant container runtimes
@@ -51,27 +51,39 @@ Suggested recommendation:
 
 Figure 1-1 below shows this at a high level.
 
-<p align="center"><img src="../figures/ch01_k8s_arch.png" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="100%"/></p>
+<p align="center"><img src="../figures/ch01_k8s_arch.PNG" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="65%"/></p>
 <p align="center"><b>Figure 1-1:</b> Kubernetes Architecture for NFV</p>
 
-Other thoughts:
+### Other thoughts
 - Kubernetes / CaaS should be recognised in ETSI NFV / MANO
 - It is feasible that Kubernetes, using operators and custom resources, could become a generic VNFM (i.e. the Kubernetes parts are the underlying engine, with the operators and custom resources being the equivalent of the specific VNFM).
 - Should each operator decide how Kubernetes is shared (if at all)?  Should we/someone suggest some best practice (such as, link Kubernetes cluster lifecycle to application lifecycle - so VNFv1.0 is in one cluster, VNFv2.0 is in another cluster. Are clusters shared between VNF vendors, or VNF types?).
 
-A note on virtualised and containerised workloads:
+### A note on virtualised and containerised workloads
 It is highly likely that a single VNFM will be managing applications (or components) that are virtualised (i.e. running in VMs) and applications (or components) that are containerised (i.e. running in containers), at the same time.  There are different approaches to achieving this:
 1. Application manager (EMS, VNFM) uses both IaaS (VIM) API and Kubernetes API - the former for VM based workloads, the latter for containerised workloads.
 2. Application manager (EMS, VNFM) uses just the Kubernetes API for both VM-based and container-based workloads, with the Kubernetes PaaS managing the lifecycle of VMs using on of the following methods:
     a) Kubernetes interacts with IaaS/VIM API (Cluster API model)
     b) Kubernetes is the IaaS/VIM and interacts direct with the hypervisor (Kubevirt model)
+    
+### A note on bare metal containerisation
+As described above, Kubernetes is an application manager and therefore the lifecycle of Kubernetes clusters should closely match the lifecyle of the application or applications being deployed into Kubernetes. It therefore goes that the engineering teams defining the lifecycle of their applications will also define the lifecycle of the clusters they use for those applications. In an operator this might be a network engineering team, for example.
+
+This has the following considerations when it comes to bare metal:
+- With virtualised infrastructure, the underlying hypervisor hosts are or can be shared amongst a large number of tenants (i.e. application teams); much of the financial benefit of NFV was due to this concept
+- If the above lifecycle is used then the following things need careful thought:
+    - Size of bare metal nodes
+    - Infrastructure management API, network overlay, etc.
+
+Regarding the size of the nodes, this is about trying not to reduce the benefits we gained with NFV in the first place. For example, if three hypervisor hosts have 60CPUs and 1.5TB RAM between them, sharing those resources between a large number of applications (lets say 50) is made efficient by the use of virtualisation. For bare metal containerisation, that same number of applications would need a much larger number of bare metal hosts, with each host being a much smaller unit.
+
+Regarding the network overlay, this is about having a service with capabilities that are provided by the VIM for virtualised environments, but for bare metal. So the ability to provision bare metal to a particular tenant, ensure the networking to each node is correctly provisioned (so, for bare metal this may mean calling out to an external SDN controller, as opposed to using an SDN controller provided by the VIM), and so on.
 
 <a name="1.2"></a>
 ## 1.2 Terminology
 
 <a name="1.3"></a>
 ## 1.3 Approach
-
 
 <a name="1.4"></a>
 ## 1.4 Principles
