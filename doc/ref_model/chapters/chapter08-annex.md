@@ -73,7 +73,7 @@ FuncTest test suites will be run as part of the validations, and as a pre-requis
 <li>/var/lib/nova</li>
 </ul>
 </li>
-<li>OS: Validate Huge Pages are enabled, with proper config settings for the target infrastructure. (not available for all flavors)
+<li>OS: Validate Huge Pages are enabled, with proper config settings for the target infrastructure. (not available for all flavours)
 <ul>
 <li>Validate existence of, and setting for, Hugepage size (e.g. 1GB)</li>
 <li>Validate the Number of Huge page (e.g. 320 &lt;Per server&gt;)</li>
@@ -109,7 +109,7 @@ FuncTest test suites will be run as part of the validations, and as a pre-requis
 <ul>
 <li><span style="text-decoration: underline;"><strong>VNF Interoperability - validations</strong></span>
 <ul>
-<li>**SUMMARY:** After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc.
+<li>**SUMMARY:** After VNF on boarded we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavours etc.
 <li>Create Tenant</li>
 <li>Create users</li>
 <li>Assign role to user</li>
@@ -129,13 +129,13 @@ FuncTest test suites will be run as part of the validations, and as a pre-requis
 <li>Number of server in Host Agg in xxx-kvm-az01 should match xxx-kvm-az02</li>
 </ul>
 </li>
-<li>Create minimum 5 flavor with following spec (can be independently validated)
+<li>Create minimum 5 flavour with following spec (can be independently validated)
 <ul>
 <li>cpu pining, Enable Huge Pages, cp=true</li>
 <li>cpu pining, Enable Huge Pages, tp=true</li>
 <li>cpu pining, Enable Huge Pages, up=true</li>
 <li>cpu pining, Enable Huge Pages, up=true, cross numa boundaries (allowing VM to spin across numa boundaries)</li>
-<li>Flavor without any extra spec.</li>
+<li>Flavour without any extra spec.</li>
 </ul>
 </li>
 <li>Create 3 Network and assigned appropriate subnet
@@ -148,7 +148,7 @@ FuncTest test suites will be run as part of the validations, and as a pre-requis
 <li>Create routers across 2 tenant network (optional - i.e. create virtual router on two different tenants and validate the network connectivity between the two)</li>
 <li>Validate anti-affinity and affinity rules</li>
 <li>Validate user ability to force VM landing on given hypervisor host</li>
-<li>Create VMs using flavor defined above and Attached ceph storage
+<li>Create VMs using flavour defined above and Attached ceph storage
 <ul>
 <li>Validate VM is able to extract meta data</li>
 <li>Validate VM connectivity between SR-IOV Network</li>

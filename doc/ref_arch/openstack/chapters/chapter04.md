@@ -29,7 +29,7 @@
 * [4.7 Integration Interfaces.](#4.7)
 * [4.8 Logging / Monitoring / Alerting of Control Plane.](#4.8)
 * [4.9 Telemetry.](#4.9)
-* [4.10 General Hardware requirements (for control, compute, storage) .](#4.10) 
+* [4.10 General Hardware requirements (for control, compute, storage) .](#4.10)
 * [4.11 LCM Considerations.](#4.11)
 * [4.12 Security Considerations.](#4.12)
 
@@ -37,23 +37,23 @@
 <a name="4.1"></a>
 ## 4.1 Introduction.
 
-Chapter 3 presented the high level architecture and core OpenStack services for creating an IaaS cloud. This chapter discusses the second level of details (as defined by L3) including deployment topology, distribution of the core OpenStack services among Controller and Compute nodes. 
+Chapter 3 presented the high level architecture and core OpenStack services for creating an IaaS cloud. This chapter discusses the second level of details (as defined by L3) including deployment topology, distribution of the core OpenStack services among Controller and Compute nodes.
 
-Additionally, This Chapter will delve deeper into certain topics that need to be considered in creating and operating an OpenStack based IaaS cloud, such as: 
+Additionally, This Chapter will delve deeper into certain topics that need to be considered in creating and operating an OpenStack based IaaS cloud, such as:
 
-- The physical (underlay) and the overlay networks needed for intra tenant and external (to the tenant) communications. 
-- Cloud topology related to host aggregates and availability zones, and minimal software versions for shared services (kernel, host operating system, common drivers, etc.). 
+- The physical (underlay) and the overlay networks needed for intra tenant and external (to the tenant) communications.
+- Cloud topology related to host aggregates and availability zones, and minimal software versions for shared services (kernel, host operating system, common drivers, etc.).
 - Listing of some of the requirements for Security and Life Cycle Management.
 
 <a name="4.1.1"></a>
 ### 4.1.1 Architectural Drivers – Requirements Traceability
 
-| Ref #| sub-category| Description| 
+| Ref #| sub-category| Description|
 |--------|--------------------|--------------------------------------------|
-| req.gen.cnt.01| Cloud nativeness | The Architecture should consist of stateless service components. However, where state is required it must be kept external to the component. | 
-| req.gen.rsl.01| Resiliency| The Architecture must support resilient OpenStack components that are required for the continued availability of running workloads. | 
-| req.gen.rsl.02| Resiliency| The Architecture should support resilient OpenStack service components that are not subject to req.gen.rsl.01. | 
-| req.gen.avl.01| Availability| The Architecture must provide High Availability for OpenStack components. | 
+| req.gen.cnt.01| Cloud nativeness | The Architecture should consist of stateless service components. However, where state is required it must be kept external to the component. |
+| req.gen.rsl.01| Resiliency| The Architecture must support resilient OpenStack components that are required for the continued availability of running workloads. |
+| req.gen.rsl.02| Resiliency| The Architecture should support resilient OpenStack service components that are not subject to req.gen.rsl.01. |
+| req.gen.avl.01| Availability| The Architecture must provide High Availability for OpenStack components. |
 
 | Ref # |	sub-category	| Description |
 |-----------------|----------------------|------------------------------|
@@ -65,7 +65,7 @@ Additionally, This Chapter will delve deeper into certain topics that need to be
 
 The Common Telco NFVI OpenStack Reference Architecture aims to provide an industry standard reference architecture independent of the many distributions of OpenStack.  It does not seek to change any vendor implementation assuming Common Telco NFVI compliance out of the box without vendor specific enhancements that are not up-streamed.
 
-This document assumes a good understanding of OpenStack core services and will not repeat details found at <a href="https://openstack.org">OpenStack website</a>.  Its primary aim is to highlight the important considerations needed by all operators to deploy NFVI in a consistent, cost effective and predictable way and allowing vendors to work on a level technical playing field. 
+This document assumes a good understanding of OpenStack core services and will not repeat details found at <a href="https://openstack.org">OpenStack website</a>.  Its primary aim is to highlight the important considerations needed by all operators to deploy NFVI in a consistent, cost effective and predictable way and allowing vendors to work on a level technical playing field.
 
 Since OpenStack is a complex, multi-project framework, we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for NFVi/VIM use cases.   Other components are optional and provide functionality above and beyond NFVi/VIM requirements.
 
@@ -77,7 +77,7 @@ The architecture consists of the services shown in the **Figure 4-1**; Ironic an
 We will refer to the functions above as falling into the following categories to avoid any confusion with other terminology that may be used:
 -	Foundation node
 -	Control nodes
--	Compute nodes 
+-	Compute nodes
 -	Other supporting service nodes e.g. network, shared storage, logging, monitoring and alerting.
 
 Each deployment of OpenStack should be a unique cloud with its own API endpoint.  Sharing underlying cloud resources across OpenStack clouds is not recommended.
@@ -85,8 +85,8 @@ Each deployment of OpenStack should be a unique cloud with its own API endpoint.
 <a name="4.1.3"></a>
 ### 4.1.3 OpenStack Services Topology
 
-NFVI software services are distributed over 2 planes: 
--	Control Plane that hosts all Control and Management services 
+NFVI software services are distributed over 2 planes:
+-	Control Plane that hosts all Control and Management services
 -	Data Plane (a.k.a. User plane) that provides physical and virtual resources (compute, storage and networking) for the actual virtual workloads to run.
 
 The architecture based on OpenStack technology relies on different types of nodes associated with specific roles:
@@ -157,7 +157,7 @@ Functional requirements of this node include:
 | req.tnt.gen.02 | General | The Architecture must support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads.  |
 
 <a name="4.3.2"></a>
-### 4.3.2 Overview 
+### 4.3.2 Overview
 The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed within control plane and some of them will be deployed within both control and compute nodes:
 
 | Service  |  Description  | Deployed on Controller Nodes | Deployed on Compute Nodes |
@@ -172,7 +172,7 @@ The following OpenStack components are deployed on the Infrastructure. Some of t
 | Heat  |  the orchestration service  | X |  |
 | Horizon  |  the WEB UI service  | X |  |
 
-All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services (i.e. instances of a same service must run on different nodes). 
+All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services (i.e. instances of a same service must run on different nodes).
 
 The services can be containerized or VM hosted as long as they provide the high availability principles described above.
 
@@ -188,7 +188,7 @@ Glance is the image management service. Glance has only a dependency on the Keys
 -	Glance API,
 -	Glance Registry.
 
-#### 4.3.2.3 Cinder 
+#### 4.3.2.3 Cinder
 Cinder is the block device management service, Cinder depends on Keystone and possibly Glance to be able to create volumes from images. Cinder has services running on the control nodes and no services running on the compute nodes:
 -	Cinder API,
 -	Cinder Scheduler,
@@ -199,9 +199,9 @@ Swift is the object storage management service, Swift depends on Keystone and po
 -	Proxy Services
 -	Object Services
 -	Container Services
--	Account Services 
+-	Account Services
 
-When images are stored in block storage service, Cinder, the object storage service, Swift, may not be required. 
+When images are stored in block storage service, Cinder, the object storage service, Swift, may not be required.
 
 #### 4.3.2.5 Neutron
 Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes:
@@ -223,7 +223,7 @@ Nova is the compute management service, Nova depends on all above components and
 #### 4.3.2.7 Ironic
 Ironic is the bare metal provisioning service. Ironic depends on all above components and is deployed after. Ironic has services running on the control nodes and the compute nodes:
 -	Ironic API
--	ironic-conductor which executes operation on bare metal nodes 
+-	ironic-conductor which executes operation on bare metal nodes
 
 Note: This is an optional service.
 
@@ -260,13 +260,13 @@ This section is primarily about scheduling the VM to be created onto a particula
 
 <p align="center"><img src="../figures/Figure_4_3_Select_host_instance_launch.png" alt="Selection of a compute host to launch an instance"></br>Figure 4-3. Selection of a compute host to launch an instance.</p>
 
-When a request for an instance creation is made, the requested features and capabilities of the instance is used to determine the host on which the instance should be launched (Figure 4-3).  The nova scheduler service matches requested features and capabilities of the instance and the capabilities/configuration of the hosts (hardware and software).  The nova-scheduler can be configured to use the host aggregates (and availability zones) in selecting the hosts when an instance create request with these capabilities/configurations is requested. The Common Telco NFVI has only a handful of standard profiles and hence the number of potential target host servers (Figure 4-3) may be large if only the host-aggregates filter is utilized and, thus, other filters should also be selected; affinity/non-affinity, custom key-value pairs, etc. 
+When a request for an instance creation is made, the requested features and capabilities of the instance is used to determine the host on which the instance should be launched (Figure 4-3).  The nova scheduler service matches requested features and capabilities of the instance and the capabilities/configuration of the hosts (hardware and software).  The nova-scheduler can be configured to use the host aggregates (and availability zones) in selecting the hosts when an instance create request with these capabilities/configurations is requested. The Common Telco NFVI has only a handful of standard profiles and hence the number of potential target host servers (Figure 4-3) may be large if only the host-aggregates filter is utilized and, thus, other filters should also be selected; affinity/non-affinity, custom key-value pairs, etc.
 
-A flavor may, in addition to the base flavor properties, include additional properties specified as key-value pairs in the extra specifications section of the flavour definition.  These additional properties can specify advanced configurations information or desired hardware characteristics. Examples include SSD drives, hardware accelerators, or a key-value pair used as meta data to associate the host with a tenant or host aggregate; both the host aggregate and the hosts that are to be assigned to the host aggregate would be assigned the same key-value pair, for example, <OVS-DPDK, True>. 
+A flavour may, in addition to the base flavour properties, include additional properties specified as key-value pairs in the extra specifications section of the flavour definition.  These additional properties can specify advanced configurations information or desired hardware characteristics. Examples include SSD drives, hardware accelerators, or a key-value pair used as meta data to associate the host with a tenant or host aggregate; both the host aggregate and the hosts that are to be assigned to the host aggregate would be assigned the same key-value pair, for example, <OVS-DPDK, True>.
 
 <a name="4.4.1.1"></a>
 #### 4.4.1.1 Software Specifications
-This section specifies specific software components needed to support the three primary flavor types, Basic, Network Intensive and Compute Intensive, and Controllers. The number of controller nodes and compute nodes is determined by the cloud size and workload needs. For Resiliency and availability, we need at least 3 deployments of each of the Controller node services. The minimum hardware requirements are specified in the Reference Model Chapter 4: Feature set and Requirements from Infrastructure.
+This section specifies specific software components needed to support the three primary flavour types, Basic, Network Intensive and Compute Intensive, and Controllers. The number of controller nodes and compute nodes is determined by the cloud size and workload needs. For Resiliency and availability, we need at least 3 deployments of each of the Controller node services. The minimum hardware requirements are specified in the Reference Model Chapter 4: Feature set and Requirements from Infrastructure.
 
 **Compute Hosts:**
 -	Basic Profile
@@ -293,8 +293,8 @@ This section specifies specific software components needed to support the three 
 <a name="4.4.1.2"></a>
 #### 4.4.1.2 Hardware Specifications
 
--	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive). Leads to efficient use of the hardware as the server resources are specific to the flavour.  If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavor type. The specifications for this type of resource pooling is specified in 4.5.2.
--	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavor or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection. The specifications for this type of resource pooling is specified in 4.5.3.
+-	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive). Leads to efficient use of the hardware as the server resources are specific to the flavour.  If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type. The specifications for this type of resource pooling is specified in 4.5.2.
+-	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection. The specifications for this type of resource pooling is specified in 4.5.3.
 
 **Compute Hosts:**
 -	Basic Profile
@@ -310,7 +310,7 @@ This section specifies specific software components needed to support the three 
       > some of level of sizing is needed to set the accepted bar.
 
 <a name="4.5"></a>
-## 4.5 Network Topology 
+## 4.5 Network Topology
 
 <a name="4.5.1"></a>
 ### 4.5.1 Architectural Drivers – Requirements Traceability
@@ -344,7 +344,7 @@ This section specifies specific software components needed to support the three 
 
 <p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"></br>Figure 4-4: Network Fabric – Physical</p>
 
-**Figure 4-4** shows a physical network layout where each physical server is dual homed to TOR (C/Agg-Leaf) switches with redundant (2x) connections.  The Leaf switches are dual homed with redundant connections to spines. 
+**Figure 4-4** shows a physical network layout where each physical server is dual homed to TOR (C/Agg-Leaf) switches with redundant (2x) connections.  The Leaf switches are dual homed with redundant connections to spines.
 
 <a name="4.5.3"></a>
 ### 4.5.3 High Level Logical Network Layout
@@ -359,7 +359,7 @@ A VNF application network topology is expressed in terms of VMs, vNIC interfaces
 ### 4.5.4 LBaaS v2 compliant Load Balancing
 
 <a name="4.5.5"></a>
-### 4.5.5 Neutron ML2 integration 
+### 4.5.5 Neutron ML2 integration
 
 The OpenStack Modular Layer 2 (ML2) plugin simplifies adding networking technologies by utilizing drivers that implement these network types and methods for accessing them.  Each network type is managed by an ML2 type driver and the mechanism driver exposes interfaces to support the actions that can be performed on the network type resources. The <a href="https://wiki.openstack.org/wiki/Neutron/ML2">OpenStack ML2 documentation</a> lists example mechanism drivers.
 
@@ -380,14 +380,14 @@ omplexities and inefficiencies.
 <a name="4.6.2"></a>
 ### 4.6.2 Cloud Topology Considerations
 
-A Telco cloud will be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or stated slightly differently, multiple telco clouds (i.e. OpenStack end points) will be deployed and they all contain isolated resources that do not rely on each other.   The application must span such end points in order to provide the required service SLA Irrespective of the nature of the deployment characteristics (number of racks, number of hosts, etc.), the intent of the architecture would be to allow VNFs to be deployed in these sites as needed without major changes; if not all as many as possible. 
+A Telco cloud will be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or stated slightly differently, multiple telco clouds (i.e. OpenStack end points) will be deployed and they all contain isolated resources that do not rely on each other.   The application must span such end points in order to provide the required service SLA Irrespective of the nature of the deployment characteristics (number of racks, number of hosts, etc.), the intent of the architecture would be to allow VNFs to be deployed in these sites as needed without major changes; if not all as many as possible.
 -	Large data center capable of hosting thousands of servers and the networking to support them
 -	Mini data center (such as a central office) capable of hosting up to a hundred servers
 -	Edge (not customer premise) capable of hosting between ten to fifty servers
 
 Host profiles (SW Host profile + HW host profile) “partition” the cloud into pseudo sub-clouds, for example, hosts targeted for basic instance types, network intensive instance types and compute intensive instance types. This can happen, because of specific hardware adds and/or hardware and software configurations.  Depending upon the workload types and the capacity requirements, cloud providers and operators may choose to support the instance types with targeted hardware (different number of sockets, RAM, clock speeds, etc.) and host profiles or choose common hardware and minimize the number of host profiles (for example, network intensive and compute intensive types using a common host profile).
 
-As we get away from the large data centers to the smaller sites it becomes progressively difficult to be able to create enough capacity for each of these instance types in support of their target VNFs or to have a mix of hardware targeted for each instance type. 
+As we get away from the large data centers to the smaller sites it becomes progressively difficult to be able to create enough capacity for each of these instance types in support of their target VNFs or to have a mix of hardware targeted for each instance type.
 
 <a name="4.6.3"></a>
 ### 4.6.3 Containerised OpenStack Services
@@ -419,7 +419,7 @@ When the Neutron-DHCP agent is hosted in controller nodes, then VMs, on a Tenant
 
 Enterprises and vendors may have custom monitoring and logging solutions. The intent of the logging and monitoring is to capture events and data of interest to the NFVI and workloads so that appropriate actions can be taken.  Some of the data is to support the metrics collection specified in the <a href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md">Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue</a>.
 
-In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only. 
+In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only.
 
 <p align="center"><img src="../figures/Figure_4_4_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"></br>
 Figure 4-6: Monitoring and Logging Framework </p>
