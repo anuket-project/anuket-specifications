@@ -87,7 +87,9 @@ This section describes a set of explicit NFVI capabilities and metrics that defi
 
 \* L and X cache policies require CPU pinning to be active.
 
->In addition to static allocation, an advanced Reference Architecture implementation may also implement dynamic cache management control policies, operating with tight (~ms) or standard (10s of seconds) control loops, thereby achieving higher overall performance for the socket.
+Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance, provided the associated physical CPU microarchitecture supports it. Cache management policy can be used to specify the static allocation of cache resources to cores within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a VNF that has the "X" attribute applied. The "Lean" attribute can be applied to VNFs which do not realize significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
+
+In addition to static allocation, an advanced Reference Architecture implementation can implement dynamic cache management control policies, operating with tight (~ms) or standard (10s of seconds) control loop response times, thereby achieving higher overall performance for the socket.
 
 <a name="4.1.2.3"></a>
 #### 4.1.2.3 Exposed monitoring capabilities
