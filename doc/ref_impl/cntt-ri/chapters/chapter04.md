@@ -1,22 +1,22 @@
 [<< Back](../)
 
-# 2. Labs
+# 4. Lab Requirements
 
 <a name="toc"></a>
 ## Table of Contents
-* [2.1 Introduction](#2.1)
-* [2.2 Lab Requirement](#2.2)
-* [2.3 Lab Topology](#2.3)
-* [2.4 Lab HW Spec](#2.4)
-* [2.5 Lab Use Guidelines](#2.5)
+* [4.1 Introduction](#4.1)
+* [4.2 Lab Requirement](#4.2)
+* [4.3 Lab Topology](#4.3)
+* [4.4 Lab HW Spec](#4.4)
+* [4.5 Lab Use Guidelines](#4.5)
 
 
-<a name="2.1"></a>
-## 2.1 Introdcution
+<a name="4.1"></a>
+## 4.1 Introdcution
 
 
-<a name="2.2"></a>
-## 2.2 Lab Requirement
+<a name="4.2"></a>
+## 4.2 Lab Requirement
 
 - Controller Nodes:
   - 3 x
@@ -46,16 +46,16 @@
 - 1x 48u Rack
 - Cables and Transcievers
 
-<a name="2.3"></a>
-## 2.3 Lab Topology
+<a name="4.3"></a>
+## 4.3 Lab Topology
 
 
-<a name="2.4"></a>
-## 2.4 Lab HW Spec
+<a name="4.4"></a>
+## 4.4 Lab HW Spec
 
 
-<a name="2.5"></a>
-## 2.5 Lab Use Guidelines
+<a name="4.5"></a>
+## 4.5 Lab Use Guidelines
 
 **SETUP & Maintenance**
 
