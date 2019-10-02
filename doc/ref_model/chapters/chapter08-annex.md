@@ -13,28 +13,25 @@
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-This Chapter 8 Annex contains standard test cases to be executed furing NFVI valications to Ensure a Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance and verification.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA/RI verifications.
+This Chapter 8 Annex contains standard test cases to be executed during NFVI validations to ensure a Reference Implementation of CNTT Reference Model Architecture complies with industry-driven standards.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA/RI verifications.
 
 <a name="8.2"></a>
 ## 8.2 Generic Test Cases
 
-The following test projects, and their respective test cases, will be executed with each RI implementation.  More targeted, or specific test cases, are listed below which may be a subset of test cases run within these test suites listed.
-
+The following test projects, and their respective test cases, will be executed with each reference implementation. [More specific test cases are listed below, which may be a subset of test cases run within these test suites listed]().
 
 **FuncTest**
 
-FuncTest test suites will be run as part of the validations, and as a pre-requisite with approximately 2000+ functional test cases leveraging Tempest plugins.  At a minimum, FuncTest executions will include reuse of functest-smoke (functional tests), functional-benchmarking (rally_full and rally_jobs).
+FuncTest test suites will be run as part of NFVi validation against all OpenStack based reference implementations. At a minimum, FuncTest executions will include execution of the functest-smoke and functional-benchmarking test suites.
 
+Additional Resources for FuncTest:
+- [Project Description](https://wiki.opnfv.org/display/functest/Opnfv+Functional+Testing#OpnfvFunctionalTesting-Testcases)
+- [User Guide](https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/index.html)
+- [Test Suite Overview](https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/test_overview.html)
 
-- Additional Resources for FuncTest detailse:
- - Project Description: https://wiki.opnfv.org/display/functest/Opnfv+Functional+Testing#OpnfvFunctionalTesting-Testcases
- - User Guide: https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/index.html
- - Overview of test suites: https://opnfv-functest.readthedocs.io/en/stable-hunter/testing/user/userguide/test_overview.html.
-
-
-- Example, or Reference, Functest Status Reporting Artifacts:
- - Rally Verification (Status): http://artifacts.opnfv.org/functest/functest-opnfv-functest-smoke-iruya-tempest_full-run-259/results/tempest_full/tempest-report.html
- - Rally Tasks (Status): http://artifacts.opnfv.org/functest/functest-opnfv-functest-benchmarking-iruya-rally_full-run-169/results/rally_full/rally_full.html
+Example, or Reference, Functest Status Reporting Artifacts:
+- [Rally Verification](http://artifacts.opnfv.org/functest/functest-opnfv-functest-smoke-iruya-tempest_full-run-259/results/tempest_full/tempest-report.html)
+- [Rally Tasks](http://artifacts.opnfv.org/functest/functest-opnfv-functest-benchmarking-iruya-rally_full-run-169/results/rally_full/rally_full.html)
 
 <a name="8.3"></a>
 ## 8.3 Architecture Specific Test Cases (if needed)
