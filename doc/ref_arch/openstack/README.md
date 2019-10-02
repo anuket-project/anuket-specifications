@@ -29,6 +29,8 @@ This is Openstack based Reference Architecture
 | Chapter 05 | Initial Framework Only |
 | Chapter 06 | Initial Framework Only |
 | Chapter 07 | Initial Framework Only |
+| Chapter 08 | Initial Framework Only |
+
 
 ## Table of Contents
 * [Abbreviations](abbreviations.md)
@@ -38,18 +40,6 @@ This is Openstack based Reference Architecture
 * [Chapter 04 - L3: Component Level Architecture](chapters/chapter04.md)
 * [Chapter 05 - Interfaces and APIs](chapters/chapter05.md)
 * [Chapter 06 - Security](chapters/chapter06.md)
-* [Chapter 07 - Life Cycle Management](chapters/chapter07.md)
+* [Chapter 07 - Operations & Life Cycle Management](chapters/chapter07.md)
+* [Chapter 08 - Gaps, Innovation, and Development](chapters/chapter08.md)
 
-
-## Technical Leads
-
-| Item/Chapter | Lead | Co-Lead |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------|
-| Overall | Rabi Abdel (abdel.rabi@vodafone.com) @rabiabdel | Walter Kozlowski (walter.kozlowski@team.telstra.com) @wkozlowski |
-| Chapter 1 -  | | |
-| Chapter 2 -  | | |
-| Chapter 3 -  | | |
-| Chapter 4 -  | | |
-| Chapter 5 -  | | |
-| Chapter 6 -  | | |
-| Chapter 7 -  | | |
