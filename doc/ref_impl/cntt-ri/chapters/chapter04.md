@@ -26,11 +26,12 @@
     - 10TB HDD.
     - 3.2TB SSD.
 - Compute Node
-  - 4x
+  - 10x
     - 2x dual-port 25Gbps NIC.
     - 2.2GHz 24C/48T.
     - 512GB RAM.
     - 2TB HDD
+    - Supports 2x Nodes for B/N/C flavors
 - Jump/Baremetal manager
   - 1x
     - 2x dual-port 10Gbps NIC.
