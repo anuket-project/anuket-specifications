@@ -5,15 +5,58 @@
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
-* [1.2 Terminology.](#1.2)
-* [1.3 Approach](#1.3)
-* [1.4 Principles](#1.4)
-* [1.5 scope](#1.4)
-* [1.6 Vision](#1.4)
-* [1.7 Roadmap](#1.4)
+  * [1.1.1 Terminology.](#1.1.1)
+  * [1.1.2 Cloud Native.](#1.1.2)
+  * [1.1.3 Scope](#1.1.3)
+* [1.2 Principles](#1.2)
+* [1.3 Vision](#1.3)
+* [1.4 Approach](#1.4)
+* [1.5 Roadmap](#1.5)
+
 
 <a name="1.1"></a>
 ## 1.1 Introduction
+
+> to be written
+
+
+<a name="1.1.1"></a>
+### 1.1.1 Terminology
+
+> to be written
+
+<a name="1.1.2"></a>
+### 1.1.2 Cloud Native
+
+
+
+<a name="1.1.3"></a>
+## 1.1.3 Scope
+
+> to be written
+
+<a name="1.2"></a>
+## 1.2 Principles
+
+Kubernetes Reference Architecture must obey to the following set of principles:
+- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
+- [CNTT Reference Architecture Principles](../../#principles)
+
+>Any Kubernetes specific principles needs to be added here.
+
+
+<a name="1.3"></a>
+## 1.3 Vision
+
+<a name="1.4"></a>
+## 1.4 Approach
+
+
+<a name="1.5"></a>
+## 1.5 Roadmap
+
+
+## General thoughts
 
 This document (at this stage, not a RA, we're just using the template as a placeholder), discusses the role of Kubernetes in managing NFV software components (e.g. VNFCs). Application containers such as those managed by Kubernetes can be considered a Foundational PaaS capability<sup>1</sup> and so the following terms can all be thought of as being the topic of this document:
 - Kubernetes PaaS (Platform-as-a-Service)
@@ -54,7 +97,7 @@ Figure 1-1 below shows this at a high level.
 <p align="center"><img src="../figures/ch01_k8s_arch.png" alt="Kubernetes Architecture for NFV" title="Kubernetes Architecture for NFV" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b> Kubernetes Architecture for NFV</p>
 
-### Other thoughts
+### More thoughts
 - Kubernetes / CaaS should be recognised in ETSI NFV / MANO
 - It is feasible that Kubernetes, using operators and custom resources, could become a generic VNFM (i.e. the Kubernetes parts are the underlying engine, with the operators and custom resources being the equivalent of the specific VNFM).
 - Should each operator decide how Kubernetes is shared (if at all)?  Should we/someone suggest some best practice (such as, link Kubernetes cluster lifecycle to application lifecycle - so VNFv1.0 is in one cluster, VNFv2.0 is in another cluster. Are clusters shared between VNF vendors, or VNF types?).
@@ -79,31 +122,6 @@ Regarding the size of the nodes, this is about trying not to reduce the benefits
 
 Regarding the network overlay, this is about having a service with capabilities that are provided by the VIM for virtualised environments, but for bare metal. So the ability to provision bare metal to a particular tenant, ensure the networking to each node is correctly provisioned (so, for bare metal this may mean calling out to an external SDN controller, as opposed to using an SDN controller provided by the VIM), and so on.
 
-<a name="1.2"></a>
-## 1.2 Terminology
-
-<a name="1.3"></a>
-## 1.3 Approach
-
-<a name="1.4"></a>
-## 1.4 Principles
-
-Kubernetes Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
-- [CNTT Reference Architecture Principles](../../#principles)
-
->Any Kubernetes specific principles needs to be added here.
-
-
-<a name="1.5"></a>
-## 1.5 Scope
-
-
-<a name="1.6"></a>
-## 1.6 Vision
-
-<a name="1.7"></a>
-## 1.7 Roadmap
 
 References
 ---
