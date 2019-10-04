@@ -23,8 +23,8 @@ This is the GitHub repository for CNTT-RI project within OPNFV.
 | Chapter | Status |
 | --- | --- |
 | Chapter 01 - Overview | Initial Framework Only |
-| Chapter 02 - NFVI + VNF Target State and Specification | Initial Framework Only |
-| Chapter 03 - Reference Implementation Requirements | Initial Framework Only |
+| Chapter 02 - Reference Implementation Requirements | Initial Framework Only |
+| Chapter 03 - NFVI + VNF Target State and Specification | Initial Framework Only |
 | Chapter 04 - Lab Requirements | Initial Framework Only |
 | Chapter 05 - Installer Requirements | Initial Framework Only |
 | Chapter 06 - Lab Operations | Initial Framework Only |
@@ -34,8 +34,8 @@ This is the GitHub repository for CNTT-RI project within OPNFV.
 
 ## Table of Contents
 * [Chapter 01 - Overview](chapters/chapter01.md)
-* [Chapter 02 - NFVI + VNF Target State and Specification](chapters/chapter02.md)
-* [Chapter 03 - Reference Implementation Requirements](chapters/chapter03.md)
+* [Chapter 02 - Reference Implementation Requirements](chapters/chapter02.md)
+* [Chapter 03 - NFVI + VNF Target State and Specification](chapters/chapter03.md)
 * [Chapter 04 - Lab Requirements ](chapters/chapter04.md)
 * [Chapter 05 - Installer Requirements](chapters/chapter05.md)
 * [Chapter 06 - Lab Operations](chapters/chapter06.md)

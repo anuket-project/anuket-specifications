@@ -1,6 +1,6 @@
 [<< Back](../../openstack)
 
-# 2. NFVI + VNF Target State & Specification
+# 2. Reference Implementation Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -11,9 +11,9 @@
 <a name="2.1"></a>
 ## 2.1 Introduction
 
-<a name="8.2"></a>
+<a name="2.2"></a>
 ## 2.2 Heading
 
 
-<a name="8.3"></a>
+<a name="2.3"></a>
 ## 2.3 Heading
