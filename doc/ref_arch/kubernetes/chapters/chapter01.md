@@ -5,13 +5,13 @@
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
-  * [1.1.1 Terminology.](#1.1.1)
-  * [1.1.2 Cloud Native.](#1.1.2)
-  * [1.1.3 Scope](#1.1.3)
-* [1.2 Principles](#1.2)
-* [1.3 Vision](#1.3)
-* [1.4 Approach](#1.4)
-* [1.5 Roadmap](#1.5)
+* [1.2 Terminology](#1.2)
+* [1.3 Principles](#1.3)
+  * [1.3.1 Cloud Native.](#1.3.1)
+* [1.4 Scope](#1.4)
+* [1.5 Vision](#1.5)
+* [1.6 Approach](#1.6)
+* [1.7 Roadmap](#1.7)
 
 
 <a name="1.1"></a>
@@ -20,16 +20,25 @@
 > to be written
 
 
-<a name="1.1.1"></a>
-### 1.1.1 Terminology
+<a name="1.2"></a>
+### 1.2 Terminology
 
 - **Scalable Applicatins**:
 - **Declarative APIs**:
 - **Platform**:
 
 
-<a name="1.1.2"></a>
-### 1.1.2 Cloud Native
+<a name="1.3"></a>
+## 1.3 Principles
+
+Kubernetes Reference Architecture must obey to the following set of principles:
+- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
+- [CNTT Reference Architecture Principles](../../#principles)
+
+>Any Kubernetes specific principles needs to be added here.
+
+<a name="1.3.1"></a>
+### 1.3.1 Cloud Native Principles
 
 According to CNCF TOC (Technical Oversight Committee), following is the definition of Cloud Native:
 >CNCF Cloud Native Definition v1.0
@@ -55,31 +64,19 @@ The definition above is very applicatin centric and look at cloud native from th
 - **observable**:
 - **robust automation**:
 
-
-<a name="1.1.3"></a>
-## 1.1.3 Scope
+<a name="1.4"></a>
+## 1.4 Scope
 
 > to be written
-
-<a name="1.2"></a>
-## 1.2 Principles
-
-Kubernetes Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
-- [CNTT Reference Architecture Principles](../../#principles)
-
->Any Kubernetes specific principles needs to be added here.
-
-
-<a name="1.3"></a>
-## 1.3 Vision
-
-<a name="1.4"></a>
-## 1.4 Approach
-
-
 <a name="1.5"></a>
-## 1.5 Roadmap
+## 1.5 Vision
+
+<a name="1.6"></a>
+## 1.6 Approach
+
+
+<a name="1.7"></a>
+## 1.7 Roadmap
 
 
 ## General thoughts
