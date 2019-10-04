@@ -1,6 +1,6 @@
 [<< Back](../../openstack)
 
-# 8. Gaps analysis & Innovation
+# 8. E2E Framework Integration
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -10,6 +10,7 @@
 
 <a name="8.1"></a>
 ## 8.1 Introduction
+
 
 <a name="8.2"></a>
 ## 8.2 Heading

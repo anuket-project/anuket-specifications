@@ -2,8 +2,7 @@
 
 # CNTT Reference Certification
 
-<a name="available-cert"></a>
+<a name="available-cr"></a>
 
-## Table of Content
-* [NFVI Certification](./)
-* [VNF Certification](./)
+## Certification Projects within the community
+* [LFN](cntt-ri)

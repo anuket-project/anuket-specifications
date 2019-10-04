@@ -1,6 +1,6 @@
 [<< Back](../../openstack)
 
-# 3. Reference Implementation Requirements
+# 3. NFVI Test Case Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -10,6 +10,8 @@
 
 <a name="3.1"></a>
 ## 3.1 Introduction
+
+> Scope of this chapter is to have a list of test cases needed (a detailed table of sort)
 
 <a name="3.2"></a>
 ## 3.2 Heading

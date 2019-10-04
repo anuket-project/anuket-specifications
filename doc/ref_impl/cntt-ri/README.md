@@ -23,20 +23,21 @@ This is the GitHub repository for CNTT-RI project within OPNFV.
 | Chapter | Status |
 | --- | --- |
 | Chapter 01 - Overview | Initial Framework Only |
-| Chapter 02 - NFVI Target State and Specification | Initial Framework Only |
-| Chapter 03 - E2E C&V Framework Requirements | Initial Framework Only |
+| Chapter 02 - NFVI + VNF Target State and Specification | Initial Framework Only |
+| Chapter 03 - Reference Implementation Requirements | Initial Framework Only |
 | Chapter 04 - Lab Requirements | Initial Framework Only |
 | Chapter 05 - Installer Requirements | Initial Framework Only |
-| Chapter 06 - Test Cases Requirements | Initial Framework Only |
-| Chapter 07 - Gap analysis & Innovation | Initial Framework Only |
-| Chapter 08 - Lab Operations | Initial Framework Only |
+| Chapter 06 - Lab Operations | Initial Framework Only |
+| Chapter 07 - Integration | Initial Framework Only |
+| Chapter 08 - Gap analysis & Development | Initial Framework Only |
+
 
 ## Table of Contents
 * [Chapter 01 - Overview](chapters/chapter01.md)
-* [Chapter 02 - NFVI Target State and Specification](chapters/chapter02.md)
-* [Chapter 03 - E2E C&V Framework Requirements](chapters/chapter03.md)
+* [Chapter 02 - NFVI + VNF Target State and Specification](chapters/chapter02.md)
+* [Chapter 03 - Reference Implementation Requirements](chapters/chapter03.md)
 * [Chapter 04 - Lab Requirements ](chapters/chapter04.md)
 * [Chapter 05 - Installer Requirements](chapters/chapter05.md)
-* [Chapter 06 - Test Cases Requirements](chapters/chapter06.md)
-* [Chapter 07 - Gap analysis & Innovation](chapters/chapter07.md)
-* [Chapter 08 - Lab Operations](chapters/chapter08.md)
+* [Chapter 06 - Lab Operations](chapters/chapter06.md)
+* [Chapter 07 - Integration](chapters/chapter07.md)
+* [Chapter 08 - Gap analysis & Development](chapters/chapter08.md)
