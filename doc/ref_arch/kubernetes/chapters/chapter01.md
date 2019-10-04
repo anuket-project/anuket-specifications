@@ -23,8 +23,10 @@
 <a name="1.1.1"></a>
 ### 1.1.1 Terminology
 
-- **Scalable Applicatins**
+- **Scalable Applicatins**:
 - **Declarative APIs**:
+- **Platform**:
+
 
 <a name="1.1.2"></a>
 ### 1.1.2 Cloud Native
