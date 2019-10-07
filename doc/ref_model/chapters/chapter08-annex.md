@@ -70,8 +70,8 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - CPU Performance mode validation
 - Compare CPU verification server specs
 
-**VNF Interoperability - validations**
-**SUMMARY:** After VNF onboarding, we are validating end to end openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavours etc.
+**VNF Interoperability**
+**SUMMARY:** Validation of end to end openstack resources, including: Tenant, Network (L2/L3), CPU Pinning, Security Policies, Affinity/Anti-Affinity, Roles, Flavours, etc.
 
 - Validate security profiles against a reference VNF
   - Validate blocking ICMP traffic blocks two reference VNFs from pinging each other
@@ -81,86 +81,58 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Validate assignment of nodes to host aggregate
 - Provider Network - SRIOV - VLAN (where applicable, allowing a device, such as a network adapter, to separate access to its resources among various PCIe hardware functions)
 - OAM Network
-- Create routers across 2 tenant network (optional - i.e. create virtual router on two different tenants and validate the network connectivity between the two)</li>
-Validate anti-affinity and affinity rules</li>
-Validate user ability to force VM landing on given hypervisor host</li>
-Create VMs using flavour defined above and Attached ceph storage
-Validate VM is able to extract meta data</li>
-Validate VM connectivity between SR-IOV Network</li>
-Validate SRIOV Port mapping to OS/VF (where applicable)</li>
-Validate VM connectivity between L3/Tenant network</li>
-Validate VM connectivity between L3/Network traffic passing through router.</li>
-Validate user-data script gets execute as part of POST VM creation in your stack</li>
-<li>Assuming all above task is perform using heat template</li>
-<li>Delete all Heat stack created as part of this testing</li>
-<li>Validate VM&rsquo;s host-dev mapping to physical host</li>
-</ul>
-</li>
-<li>Validate hairpinning Solution -- Communication between 2 VMs residing on same compute should not go over wire</li>
-<li>Validate hairpinning Solution -- Communication between 2 VMs residing on same compute should not go over wire&nbsp;</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><span style="text-decoration: underline;"><strong>Compute Component - validations</strong></span>
-<ul>
-<li>**SUMMARY:** Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity. Lag time between Shutdown and Startup should be no more than 10 minute
-- Restart libvirt pod</li>
-- Restart nova-compute pod</li>
-- Restart openvswitch-db pod</li>
-- Restart openvswitch-vswitchd pod</li>
-- Restart neutron-ovs-agent pod</li>
+- Create routers across 2 tenant network (optional - i.e. create virtual router on two different tenants and validate the network connectivity between the two)
+- Validate anti-affinity and affinity rules
+- Validate user ability to force VM landing on given hypervisor host
+- Create VMs using flavour defined above and Attached ceph storage
+- Validate VM is able to extract meta data
+- Validate VM connectivity between SR-IOV Network
+- Validate SRIOV Port mapping to OS/VF (where applicable)
+- Validate VM connectivity between L3/Tenant network
+- Validate VM connectivity between L3/Network traffic passing through router
+- Validate user-data script gets execute as part of POST VM creation in your stack
+- Delete all Heat stack created as part of this testing
+- Validate VM host-dev mapping to physical host
+- Validate hairpinning Solution -- Communication between 2 VMs residing on same compute should not go over wire
+
+**Compute Component**
+**SUMMARY:** Validate/Document VMs status and connectivity result after performing each of listed steps.
+- Restart libvirt pod
+- Restart nova-compute pod
+- Restart openvswitch-db pod
+- Restart openvswitch-vswitchd pod
+- Restart neutron-ovs-agent pod
 - Restart neutron-sriov-agent pod (where applicable)
+
 **Control Plane Components**
-**SUMMARY:** We are validating RabbitMQ, Ceph, Mariadb and Openstack components like nova, glance, heat, keystone API and resillency test.
-<li>Validate RabbitMQ resiliency by shutting down 1 or more pods. Make nova/openstack API call to see system result <br />(expected results is BAU)"</li>
-<li>Validate nova-api resilency by shutting down 1 or more pods. Document API call results. (expected results is BAU)</li>
-<li>Run similar resiliency test for each of listed services and expected result is BAU &ndash; No impact to VNF
-<ul>
-<li>nova-api-metadaa</li>
-<li>nova-conductor</li>
-<li>nova-scheduler</li>
-<li>nova-placement-api</li>
-<li>nova-console-auth</li>
-<li>nova-novnc-proxy</li>
-<li>nova-rabbitmq</li>
-<li>glance-api</li>
-<li>glance-registry</li>
-<li>glance-rabbitmq</li>
-<li>heat-api</li>
-<li>heat-cfn</li>
-<li>heat-engine</li>
-<li>heat-rabbitmq</li>
-<li>keystone-api</li>
-<li>keystone-rabbitmq</li>
-<li>keystone-rabbitmq</li>
-</ul>
-</li>
-<li>Validate maridb cluster is insync
-<ul>
-<li>Studown mariadb and upon restart ensure its sync up with masterdb.</li>
-<li>Maria DB is single point of failure</li>
-</ul>
-</li>
-<li>Validate ceph
-<ul>
-<li>Restart ceph-osd</li>
-<li>Document VNF impact while ceph is unavailable and once ceph service is restoredbeing restored.</li>
-</ul>
-</li>
-</ul>
-</li>
-<ul>
-<li><span style="text-decoration: underline;"><strong>Security - see Ch 7 for complete list</strong></span>
-<ul>
-<li>Validation above is performed using both RBAC Roles and User group policies, both of Admin and User Roles.
-</ul>
-<li>**SUMMARY:** Validate User Role to ensure it allow user to perform all designated task and prohibits user performing any unassigned task.</li>
-<li>Validate Security Policy/Rules are enforced</li>
-</ul>
-</li>
-</ul>
-</ul>
+**SUMMARY:** Validatie RabbitMQ, Ceph, Mariadb and Openstack components, including: Nova, Glance, Heat, and Keystone. Resiliancy is validated by shutting down service under test in one or more pods, making API calls against that service, and validating service is still working as expected.
+- Validate RabbitMQ resiliency
+- Validate nova-api resilency
+- Validate nova-api-metadaa
+- Validate nova-conductor
+- Validate nova-scheduler
+- Validate nova-placement-api
+- Validate nova-console-auth
+- Validate nova-novnc-proxy
+- Validate nova-rabbitmq
+- Validate glance-api
+- Validate glance-registry
+- Validate glance-rabbitmq
+- Validate heat-api
+- Validate heat-cfn
+- Validate heat-engine
+- Validate heat-rabbitmq
+- Validate keystone-api
+- Validate keystone-rabbitmq
+- Validate keystone-rabbitmq
+- Validate maridb cluster is insync
+- Studown mariadb and upon restart ensure its sync up with masterdb
+- Validate ceph (if including in implementation)
+- Restart ceph-osd (if including in implementation)
+- Validate VNF is working as expected following ceph service restart
+
+**Security**
+**Summary:** See [chapter 7](../chapter07.md) for security requirements
 
 <a name="8.3.2"></a>
 ### 8.3.2 Kubernetes (K8s)
