@@ -132,7 +132,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Validate VNF is working as expected following ceph service restart
 
 **Security**
-**Summary:** See [chapter 7](/chapter07.md) for security requirements
+**Summary:** See [./chapter 7](/chapter07.md) for security requirements
 
 <a name="8.3.2"></a>
 ### 8.3.2 Kubernetes (K8s)
