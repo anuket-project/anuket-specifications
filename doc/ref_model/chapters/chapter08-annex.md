@@ -13,7 +13,7 @@
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-This Chapter 8 Annex contains standard test cases to be executed during NFVI validations to ensure a Reference Implementation of CNTT Reference Model Architecture complies with industry-driven standards.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA/RI verifications.
+This Chapter 8 Annex contains test cases to be executed during NFVI validations to ensure a Reference Implementation of CNTT Reference Architecture is in compliance.  The Linux Foundation Networking (LFN) OPNFV Verified Program (OVP), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA/RI verifications.
 
 <a name="8.2"></a>
 ## 8.2 Generic Test Cases
