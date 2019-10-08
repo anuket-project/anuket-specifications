@@ -61,9 +61,9 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Validate proxy configuration after server reboot
 - Validate routing table after server reboot
 - BIOS: Validate Boot order
-- Validate Kernel version
-- Validate BIOS version
-- Validate Firmware version
+- Validate Kernel version against Reference Implementation
+- Validate BIOS version against Reference Implementation
+- Validate Firmware version against Reference Implementation
 - CPU Performance mode validation
 - Compare CPU verification server specs
 
