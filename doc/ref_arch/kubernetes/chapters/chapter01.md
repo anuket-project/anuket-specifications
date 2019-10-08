@@ -23,10 +23,20 @@
 <a name="1.2"></a>
 ### 1.2 Terminology
 
-- **Scalable Applicatins**:
-- **Declarative APIs**:
-- **Platform**:
-
+|Term|Definition|Reference|
+|---|---|---|
+|Container Image|A container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.|[Link](https://www.docker.com/resources/what-container)|
+|Container|A running instantiation of a container image.|-|
+|Pod|A Pod (as in a pod of whales or pea pod) is a group of one or more containers (such as Docker containers), with shared storage/network, and a specification for how to run the containers. A Pod’s contents are always co-located and co-scheduled, and run in a shared context.|[Link](https://kubernetes.io/docs/concepts/workloads/pods/pod/)|
+|Cluster|A cluster consists of at least one cluster master and multiple worker machines called nodes. These master and node machines run the Kubernetes cluster orchestration system.|[Link](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture)|
+|Master|The cluster master runs the Kubernetes control plane processes, including the Kubernetes API server, scheduler, and core resource controllers.|[Link](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture)|
+|Node|Nodes are the worker machines (physical or virtual) that run your containerised applications and other workloads. Each node is managed from the master, which receives updates on each node's self-reported status. A node runs the services necessary to support the Docker containers that make up your cluster's workloads. These include the Docker runtime and the Kubernetes node agent (kubelet) which communicates with the master and is responsible for starting and running Docker containers scheduled on that node.|[Link](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture)|
+|PaaS|The capability provided to the consumer is to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.|[NIST SP 800-145, The NIST Definition of Cloud Computing](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf)|
+|CaaS|Container-as-a-Service, a foundational application PaaS capability, in this case delivered as a Kubernetes cluster and other technologies such as CNI, Ingress, Service Mesh, LMA, etc. CaaS sits above VIM/NFVI and performs some application LCM based on instructions received from VNFM.|[Foundational PaaS Definition](http://www.theenterprisearchitect.eu/blog/categorize-compare-cloud-vendors/#row5column3)|
+|CaaS Manager|A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more Kubernetes clusters, including communication with VIM for master/node lifecycle management.|-|
+|CNF|A Cloud Native Virtual Network Function - or CNF for short - is an implementation of a Virtual Network Function (as defined by ETSI GS NFV 003 V1.4.1 (2018-08) that adheres to the CNCF Cloud Native Definition.|CNCF TUG (link tbc)|
+|Service|A Service in Kubernetes is an abstraction which defines a logical set of Pods and a policy by which to access them. Services enable a loose coupling between dependent Pods.|[Link](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)|
+|Service Mesh|A service mesh is a dedicated infrastructure layer for handling service-to-service communication. It’s responsible for the reliable delivery of requests through the complex topology of services that comprise a modern, cloud native application. In practice, the service mesh is typically implemented as an array of lightweight network proxies that are deployed alongside application code, without the application needing to be aware.|[Link](https://buoyant.io/2017/04/25/whats-a-service-mesh-and-why-do-i-need-one/)|
 
 <a name="1.3"></a>
 ## 1.3 Principles
@@ -54,7 +64,7 @@ The definition above is very applicatin centric and look at cloud native from th
 
 - **scalable**:
 - **dynamic environments**:
-- **service meshes**: 
+- **service meshes**:
 - **microservices**:
 - **immutable infrastructure**:
 - **declarative APIs**:
@@ -131,7 +141,7 @@ It is highly likely that a single VNFM will be managing applications (or compone
 2. Application manager (EMS, VNFM) uses just the Kubernetes API for both VM-based and container-based workloads, with the Kubernetes PaaS managing the lifecycle of VMs using on of the following methods:
     a) Kubernetes interacts with IaaS/VIM API (Cluster API model)
     b) Kubernetes is the IaaS/VIM and interacts direct with the hypervisor (Kubevirt model)
-    
+
 ### A note on bare metal containerisation
 As described above, Kubernetes is an application manager and therefore the lifecycle of Kubernetes clusters should closely match the lifecyle of the application or applications being deployed into Kubernetes. It therefore goes that the engineering teams defining the lifecycle of their applications will also define the lifecycle of the clusters they use for those applications. In an operator this might be a network engineering team, for example.
 
