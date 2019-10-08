@@ -57,7 +57,6 @@ Example, or Reference, Functest Status Reporting Artifacts:
   - Validate Hugepage size configuration
   - Validate Hugepage total number configuration
 - OS: Validate proxy/iptables implementation
-- OS: Validate proxy/iptables implementation
 - Validate proxy configuration after server reboot
 - Validate routing table after server reboot
 - BIOS: Validate Boot order
