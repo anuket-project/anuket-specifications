@@ -47,10 +47,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Numa - Validate numa configuration on each node
 - Numa - Validate total memory available is distributed equally across numa boundaries
 - VFs - Validate VFs are availablebeing created on each PCI SYS Interface.
-- Modules - Validate the following modules are loaded
-  - bonding
-  - 8021q
-  - i40e
+- Modules - Validate necessary kernel modules are loaded
 - OS: IPTables are enabled.
 - OS: ntp is enabled and configured to sync system time
 - OS: Dedicate mount point for following file system
@@ -64,7 +61,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Validate proxy configuration after server reboot
 - Validate routing table after server reboot
 - BIOS: Validate Boot order
-- Validate Kernel version</li>
+- Validate Kernel version
 - Validate BIOS version
 - Validate Firmware version
 - CPU Performance mode validation
