@@ -18,55 +18,55 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 
 ### 5.2.1. Keystone
 
-| **OpenStack Service** | **Link for API and CLI** | **API/client Baseline Version** |
+| **OpenStack Service** | **Link for API and CLI** | **API/client Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
 |Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html | Version 3.10 |
 |Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
 
 ### 5.2.2 Glance
 
-| **OpenStack Service** | **Link for API and CLI** | **API/Client Baseline Version** |
+| **OpenStack Service** | **Link for API and CLI** | **API/Client Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images | Version 2.0 |
 | Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
 
 ### 5.2.3. Cinder 
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
 |Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions/a> | Version 3.0 |
 
 ### 5.2.4. Swift
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/ | Version 1.0 |
 | Object Storage: Swift |https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
 
 ### 5.2.5. Neutron
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Networking: Neutron | https://docs.openstack.org/api-ref/network/ | Version 2.0 |
 | Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
 
 ### 5.2.6. Nova
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |--------------|------------------|---------------------------------------|
 | Compute: Nova | https://docs.openstack.org/api-ref/compute/ | Version 2.1 |
 | Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
 
 ### 5.2.7. Ironic
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
+| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Bare Metal: Ironic | https://docs.openstack.org/api-ref/baremetal/ | Version 1.0 |
 | Bare Metal: Ironic | https://docs.openstack.org/python-ironicclient/latest/cli/index.html | Version 1.25 |
 
 ### 5.2.8. Heat
 
-|**OpenStack Service** | **Link for API and CLI** | **API/CLI Baseline Version** |
+|**OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
 | Bare Metal: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions | Version 1.0 |
 | Bare Metal: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.25 |
@@ -80,7 +80,7 @@ This section illustrates some of the Interfaces provided by OpenStack; the exhau
 
 **APIs**
 
-| OpenStack Service | Link for API list | API Baseline Version |
+| OpenStack Service | Link for API list | API Minimum (Baseline) Version |
 |------------------|--------------------|------------------------|
 | Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html?expanded=#identity-api-operations  | Version 3.10 |
 | Compute: Nova | https://docs.openstack.org/api-ref/compute/  | Version 2.1 |
@@ -94,7 +94,7 @@ This section illustrates some of the Interfaces provided by OpenStack; the exhau
 
 **CLIs**
 
-| OpenStack Service | Link to Client | Client Baseline Version |
+| OpenStack Service | Link to Client | Client Minimum (Baseline) Version |
 |------------------|--------------------|------------------------|
 | Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
 | Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
