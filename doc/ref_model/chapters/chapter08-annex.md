@@ -102,7 +102,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Restart neutron-sriov-agent pod (where applicable)
 
 **Control Plane Components**
-**SUMMARY:** Validatie RabbitMQ, Ceph, Mariadb and Openstack components, including: Nova, Glance, Heat, and Keystone. Resiliancy is validated by shutting down service under test in one or more pods, making API calls against that service, and validating service is still working as expected.
+**SUMMARY:** Validate RabbitMQ, Ceph, Mariadb and Openstack components, including: Nova, Glance, Heat, and Keystone. Resiliancy is validated by shutting down service under test in one or more pods, making API calls against that service, and validating service is still working as expected.
 - Validate RabbitMQ resiliency
 - Validate nova-api resilency
 - Validate nova-api-metadaa
