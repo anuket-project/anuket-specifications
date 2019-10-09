@@ -45,7 +45,7 @@
   * [8.8.1 Metrics.](#8.8.1)
   * [8.8.2 Report Summary.](#8.8.2)
 * [8.9 Future Planning.](#8.9)
-  * [8.9.1 Performance and Resiliency Testing.](#8.9.1)
+  * [8.9.1 Performance & Resiliency - Metrics, Measurements, Testing.](#8.9.1)
   * [8.9.2 Reports Dashboard.](#8.9.2)
   * [8.9.3 Automation Considerations.](#8.9.3)
 * [8.10 Recommendations.](#8.10)
@@ -858,11 +858,52 @@ For additional insight, or deeper understanding and reading of IOPS, refer to th
 This section will be used to plan for future offerings.
 
 <a name="8.9.1"></a>
-### 8.9.1 Performance and Resiliency Testing
+### 8.9.1 Performance & Resiliency - Metrics, Measurements, Testing
 
 **NOT MVP**
 
-Placeholder to define performance and resiliency needs, and strategies for testing.
+#### 8.9.1.1 Performance Metrics & Measurements
+
+The following table contains a lists of performance metrics, measurements, and/or capabilities, to be captured where feasible during test validations.  More specifically, the table contains:
+
+
+
+- Exposed performance metrics per VNFC, vNIC or vCPU.  Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host.  (e.g. _\*e.nfvi.per.met\*_)
+
+
+
+- Monitoring capabilities available by NFVI.  The availability of these capabilities will be determined by the instance type used by the workloads. (e.g. _\*i.nfvi.mon.cap\*_)
+
+
+
+- Internal performance metrics per NFVI node.  Specifically internal performance metrics use a baseline (Phy2Phy) dataplane test setup in a single host. (e.g. _\*i.nfvi.per.met\*_)
+
+> _**NOTE**:  Refer to RM Chapter 4, <a href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md">Infrastructure Capabilities, Metrics, and Catalogue</a>, for a list performance measurements and capabilities internal to the infrastructure._
+
+
+| Ref                | NFVI Measurement             | Unit                | Definition/Notes                                             |
+| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
+| e.nfvi.per.met.001 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.003 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
+| e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
+| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
+| e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
+| i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
+| i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
+| i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
+| i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
+| i.nfvi.mon.cap.005 | Monitoring of external storage IOPS | Yes/No | Transcoding Acceleration |
+| i.nfvi.mon.cap.006 | Monitoring of external storage throughput | Yes/No | Programmable Acceleration |
+| i.nfvi.mon.cap.007 | Monitoring of external storage capacity | Yes/No |  |
+| i.nfvi.per.met.001 | Network throughput | frames/s | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
+| i.nfvi.per.met.002 | Simultaneous active flows | number | Max simultaneous active L4 flows per node before a new flow is dropped |
+| i.nfvi.per.met.003 | New flows rate               | flows/s  | Max new L4 flow rate per node                                |
+| i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per core and with all cores running multiple parallel workloads|
+| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNFC (but fully ready for it) |
+| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
+| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
 
 <a name="8.9.2"></a>
 ### 8.9.2 Reports Dashboard
