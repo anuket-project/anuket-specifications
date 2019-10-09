@@ -191,23 +191,23 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 <p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of NFVI</p>
 
 <a name="4.1.4.4"></a>
-#### 4.1.4.4 Internal Monitoring Capabilities
+#### 4.1.4.4 Internal Performance Measurement Capabilities
 
-**Table 4-8** shows possible monitoring capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by the workloads.
+**Table 4-8** shows possible performance measurement capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by the workloads.
 
 <a name="Table4-8"></a>
 
-| Ref | NFVI Capability | Unit | Definition/Notes |
+| Ref | NFVI Measurement | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
 | i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
 | i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
 | i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
-| i.nfvi.mon.cap.005 | Monitoring of external storage IOPS | Yes/No | Transcoding Acceleration |
-| i.nfvi.mon.cap.006 | Monitoring of external storage throughput | Yes/No | Programmable Acceleration |
-| i.nfvi.mon.cap.007 | Monitoring of external storage capacity | Yes/No |  |
+| i.nfvi.mon.cap.005 | Measurement of external storage IOPS | Yes/No | Transcoding Acceleration |
+| i.nfvi.mon.cap.006 | Measurement of external storage throughput | Yes/No | Programmable Acceleration |
+| i.nfvi.mon.cap.007 | Available external storage capacity | Yes/No |  |
 
-<p align="center"><b>Table 4-8:</b> Internal Monitoring Capabilities of NFVI</p>
+<p align="center"><b>Table 4-8:</b> Internal Measurement Capabilities of NFVI</p>
 
 <a name="4.1.4.5"></a>
 #### 4.1.4.5 Internal Security Capabilities
@@ -296,14 +296,14 @@ Table 4-12 shows capabilities related to resources allocation
 |--------------------|------------------|---------|-------------------------------------------|
 | e.vim.res.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNFC |
 | e.vim.res.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNFC |
-| e.vim.res.cap.003 | Virtual Networking resources  allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
+| e.vim.res.cap.003 | Virtual Networking resources allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
 | e.vim.res.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
 | e.vim.res.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
 
 <p align="center"><b>Table 4-12:</b> VIM Resource Allocation Capabilities</p>
 
 
-Table 4-13 Shows monitoring capabiltities
+Table 4-13 Shows performance measurement capabiltities
 
 <a name="Table4-13"></a>
 
@@ -314,7 +314,7 @@ Table 4-13 Shows monitoring capabiltities
 | e.vim.mon.cap.003 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
 | e.vim.mon.cap.004 |Virtual resources Fault information | Yes/No | Capability to collect and notify fault information on virtualised resources |
 
-<p align="center"><b>Table 4-13:</b> VIM Resource Monitoring Capabilities</p>
+<p align="center"><b>Table 4-13:</b> VIM Resource Performance Measurement Capabilities</p>
 
 Table 4-14: Reserved
 
@@ -535,7 +535,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | No | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
+| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal PM capabilities as per [**Table 4-8**](#Table4-8) |
 | `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | Yes | |
