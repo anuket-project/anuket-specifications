@@ -94,13 +94,15 @@ In addition to static allocation, an advanced Reference Architecture implementat
 <a name="4.1.2.3"></a>
 #### 4.1.2.3 Exposed Monitoring Capabilities
 
-**Table 4-3** shows possible monitoring capabilities available by NFVI for VNFs.
+Monitoring capabilities are used for the passive observation of traffic traversing the NFVI. As with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. If this functionallity is enabled, it must be subject to strict security policies. Refer to the Reference Model Security chapter for additional details.
+
+**Table 4-3** shows possible monitoring capabilities available from the NFVI for VNFs.
 
 <a name="Table4-3"></a>
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
-| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability for VNFC to monitor their own L2-L7 data. |
+| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability for VNFC to monitor their own L2-L7 data |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
@@ -111,9 +113,7 @@ The intent of the following PMs is to be available for and well known to VNFs.
 <a name="4.1.3.1"></a>
 #### 4.1.3.1 Exposed Performance Measurements
 
-The following table of exposed Performance Measurements shows PMs per VNFC, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed PMs use a single VNF (PVP*) dataplane test setup in a single host.
-
-> _*NOTE: Need to define PVP and add to glossary_
+The following table of exposed Performance Measurements shows PMs per VNFC, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed PMs use a single VNF (PVP) dataplane test setup in a single host.
 
 <a name="Table4-4"></a>
 
@@ -580,10 +580,13 @@ This is a placeholder for NFVI infrastructure networking information that is com
 
 ## 4.4 Networking
 
-4.4 Key Terminology / Glossary
+4.4 Key Terminology, Definitions and Glossary
 
 This section is temporary while the team defines and aligns on key terms used in this chapter. When finalized, these definitions will be moved to the RM glossary appendix.
 
 - **PM / Performance Measurement / Measurement:** PMs reflect data generated and collected within the NFVI, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
 
-- PVP: Need definition
+- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
+
+- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in ETSI NFV-TST009
+
