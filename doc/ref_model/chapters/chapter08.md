@@ -45,7 +45,7 @@
   * [8.8.1 Metrics.](#8.8.1)
   * [8.8.2 Report Summary.](#8.8.2)
 * [8.9 Future Planning.](#8.9)
-  * [8.9.1 Performance & Resiliency - Metrics, Measurements, Testing.](#8.9.1)
+  * [8.9.1 Performance & Resiliency - Measurements, Testing.](#8.9.1)
   * [8.9.2 Reports Dashboard.](#8.9.2)
   * [8.9.3 Automation Considerations.](#8.9.3)
 * [8.10 Recommendations.](#8.10)
@@ -799,11 +799,11 @@ Test suites will be categorized as functional or performance based. Results repo
 Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
 <a name="8.8.1"></a>
-### 8.8.1 Metrics
+### 8.8.1 Measurements
 
 **NOT MVP**
 
-Metrics/Measurements and respective certification(s).
+Measurements and respective certification(s).
 e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
 
 Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
@@ -858,13 +858,13 @@ For additional insight, or deeper understanding and reading of IOPS, refer to th
 This section will be used to plan for future offerings.
 
 <a name="8.9.1"></a>
-### 8.9.1 Performance & Resiliency - Metrics, Measurements, Testing
+### 8.9.1 Performance & Resiliency - Measurements, Testing
 
 **NOT MVP**
 
-#### 8.9.1.1 Performance Metrics & Measurements
+#### 8.9.1.1 Performance Measurements
 
-The following table contains a lists of performance metrics, measurements, and/or capabilities, to be captured where feasible during test validations.  More specifically, the table contains:
+The following table contains a lists of performance measurements, and/or capabilities, to be captured where feasible during test validations.  More specifically, the table contains:
 
 
 
