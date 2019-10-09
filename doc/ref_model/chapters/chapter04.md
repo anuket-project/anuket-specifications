@@ -94,7 +94,7 @@ In addition to static allocation, an advanced Reference Architecture implementat
 <a name="4.1.2.3"></a>
 #### 4.1.2.3 Exposed Monitoring Capabilities
 
-Monitoring capabilities are used for the passive observation of traffic traversing the NFVI. As with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. If this functionallity is enabled, it must be subject to strict security policies. Refer to the Reference Model Security chapter for additional details.
+Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. As with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. If this functionallity is enabled, it must be subject to strict security policies. Refer to the Reference Model Security chapter for additional details.
 
 **Table 4-3** shows possible monitoring capabilities available from the NFVI for VNFs.
 
@@ -102,7 +102,7 @@ Monitoring capabilities are used for the passive observation of traffic traversi
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
-| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability for VNFC to monitor their own L2-L7 data |
+| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workoad |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
@@ -263,7 +263,7 @@ It should be noted that energy-related metrics must only be considered for NFVI 
 #### 4.1.5.2 Internal Availability/Reliability Measurements
 
 <!-- Xavier Grall, Orange -->
-_**Editor Note:** the following table should be reviewed to only consider and probably detail the recovery-related metrics ; indeed, availability and MTBF measurements do not seem consistent with expected testbed measurement duration]_
+_**Editor Note:** the following table should be reviewed to only consider and probably detail the recovery-related PMs; indeed, availability and MTBF PMs do not seem consistent with expected testbed measurement duration]_
 
 <!--
 [COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on reference architecture and implementation]
@@ -578,15 +578,14 @@ Whereas:
 
 This is a placeholder for NFVI infrastructure networking information that is common to all Reference Architectures.
 
-## 4.4 Networking
 
-4.4 Key Terminology, Definitions and Glossary
+## 4.4 Key Terminology, Definitions and Glossary (temporary)
 
 This section is temporary while the team defines and aligns on key terms used in this chapter. When finalized, these definitions will be moved to the RM glossary appendix.
 
-- **PM / Performance Measurement / Measurement:** PMs reflect data generated and collected within the NFVI, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
+- **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the NFVI, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
 
-- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
+- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
 
 - PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in ETSI NFV-TST009
 
