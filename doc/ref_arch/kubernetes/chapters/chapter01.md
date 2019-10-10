@@ -90,7 +90,7 @@ The definition above is very application centric and look at cloud native from t
 
 ## General thoughts
 
-Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should be closely linked to the application lifecycle (this is especially important when considering bare-metal containerisation). However, it is very important to point out that Kubernetes Platforms also consist of other open source projects, or add-ons, such as:
+Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should be closely linked to the application lifecycle (this is especially important when considering bare-metal containerisation). However, it is very important to point out that a CaaS also consist of other open source projects, or add-ons, such as:
 - CNI-compliant network plugins
 - CSI-compliant storage plugins
 - CRI-compliant container runtimes
@@ -105,7 +105,7 @@ Figure 1-1 below shows how Kubernetes, CaaS, and the CaaS Manager might fit with
 <p align="center"><b>Figure 1-1:</b> Kubernetes Architecture for NFV</p>
 
 ### A note on virtualised and containerised workloads
-It is highly likely that a single VNFM will be managing applications (or components) that are virtualised (i.e. running in VMs) and applications (or components) that are containerised (i.e. running in containers), at the same time.  There are different approaches to achieving this:
+It is possible that a single VNFM will be managing applications (or components) that are virtualised (i.e. running in VMs) and applications (or components) that are containerised (i.e. running in containers), at the same time.  There are different approaches to achieving this:
 1. Application manager (EMS, VNFM) uses both IaaS (VIM) API and Kubernetes API - the former for VM based workloads, the latter for containerised workloads.
 2. Application manager (EMS, VNFM) uses just the Kubernetes API for both VM-based and container-based workloads, with the Kubernetes PaaS managing the lifecycle of VMs using on of the following methods:
     a) Kubernetes interacts with IaaS/VIM API (Cluster API model)
