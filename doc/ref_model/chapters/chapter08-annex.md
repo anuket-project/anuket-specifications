@@ -46,10 +46,10 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Grub - SR-IOV is enabled
 - Numa - Validate numa configuration on each node
 - Numa - Validate total memory available is distributed equally across numa boundaries
-- VFs - Validate VFs are availablebeing created on each PCI SYS Interface.
+- VFs - Validate VF creation on each PCI SYS Interface.
 - Modules - Validate necessary kernel modules are loaded
 - OS: IPTables are enabled.
-- OS: ntp is enabled and configured to sync system time
+- OS: System time on all hosts is synchronized to a common set of NTP servers
 - OS: Dedicate mount point for following file system
   - /var/log
   - /var/lib/nova
