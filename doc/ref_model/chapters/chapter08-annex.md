@@ -40,6 +40,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - [Rally Tasks](http://artifacts.opnfv.org/functest/functest-opnfv-functest-benchmarking-iruya-rally_full-run-169/results/rally_full/rally_full.html)
 
 **Baremetal**
+
 **SUMMARY:** Control and compute node hardware, bios, firmware, network interfaces, and base operating system configuration must be validated.
 - Interface - Validate nic status for all member in bond1 group
 - Interface - MTU speed for bond1 interface
@@ -67,6 +68,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Compare CPU verification server specs
 
 **VNF Interoperability**
+
 **SUMMARY:** Validation of end to end openstack resources, including: Tenant, Network (L2/L3), CPU Pinning, Security Policies, Affinity/Anti-Affinity, Roles, Flavours, etc.
 
 - Validate security profiles against a reference VNF
@@ -92,6 +94,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Validate hairpinning Solution -- Communication between 2 VMs residing on same compute should not go over wire
 
 **Compute Component**
+
 **SUMMARY:** Validate/Document VMs status and connectivity result after performing each of listed steps.
 - Restart libvirt pod
 - Restart nova-compute pod
@@ -101,6 +104,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Restart neutron-sriov-agent pod (where applicable)
 
 **Control Plane Components**
+
 **SUMMARY:** Validate RabbitMQ, Ceph, Mariadb and Openstack components, including: Nova, Glance, Heat, and Keystone. Resiliancy is validated by shutting down service under test in one or more pods, making API calls against that service, and validating service is still working as expected.
 - Validate RabbitMQ resiliency
 - Validate nova-api resilency
@@ -128,7 +132,8 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Validate VNF is working as expected following ceph service restart
 
 **Security**
-**Summary:** See [chapter 7](./chapter07.md) for security requirements
+
+**SUMMARY:** See [chapter 7](./chapter07.md) for security requirements
 
 <a name="8.3.2"></a>
 ### 8.3.2 Kubernetes (K8s)
