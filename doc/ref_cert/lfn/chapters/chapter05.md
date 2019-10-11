@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 5. Installer Requirements
+# 5. VNF E2E C&V Framework Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -10,6 +10,8 @@
 
 <a name="5.1"></a>
 ## 5.1 Introduction
+
+> Scope of this chapter is to have a list of test cases needed (a detailed table of sort)
 
 <a name="5.2"></a>
 ## 5.2 Heading
