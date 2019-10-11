@@ -4,5 +4,5 @@
 
 <a name="available-cr"></a>
 
-## Community Projects
-* [LFN OVP](lfn)
+## Community
+* [LFN Based Certification](lfn)
