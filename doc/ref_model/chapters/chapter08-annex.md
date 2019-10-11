@@ -107,8 +107,8 @@ Example, or Reference, Functest Status Reporting Artifacts:
 
 **SUMMARY:** Validate RabbitMQ, Ceph, Mariadb and Openstack components, including: Nova, Glance, Heat, and Keystone. Resiliancy is validated by shutting down service under test in one or more pods, making API calls against that service, and validating service is still working as expected.
 - Validate RabbitMQ resiliency
-- Validate nova-api resilency
-- Validate nova-api-metadaa
+- Validate nova-api resiliency
+- Validate nova-api-metadata
 - Validate nova-conductor
 - Validate nova-scheduler
 - Validate nova-placement-api
@@ -125,7 +125,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 - Validate keystone-api
 - Validate keystone-rabbitmq
 - Validate keystone-rabbitmq
-- Validate maridb cluster is insync
+- Validate mariadb cluster is in sync
 - Studown mariadb and upon restart ensure its sync up with masterdb
 - Validate ceph (if including in implementation)
 - Restart ceph-osd (if including in implementation)
