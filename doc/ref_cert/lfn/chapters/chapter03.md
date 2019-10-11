@@ -1,4 +1,4 @@
-[<< Back](../../openstack)
+[<< Back](../)
 
 # 3. NFVI Test Case Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>

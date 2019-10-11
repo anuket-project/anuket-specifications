@@ -1,4 +1,4 @@
-[<< Back](../../openstack)
+[<< Back](../)
 
 # 8. Gaps analysis & Innovation
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>

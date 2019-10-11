@@ -4,5 +4,5 @@
 
 <a name="available-ri"></a>
 
-## Community Projects
+## Community
 * [OPNFV CNTT-RI](cntt-ri)

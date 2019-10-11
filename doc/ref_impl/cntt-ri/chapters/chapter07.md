@@ -1,4 +1,4 @@
-[<< Back](../../openstack)
+[<< Back](../)
 
 # 7. Integration
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>

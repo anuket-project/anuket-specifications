@@ -1,4 +1,4 @@
-[<< Back](../../openstack)
+[<< Back](../)
 
 # 10. VNF Tests Traceability to TC Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
