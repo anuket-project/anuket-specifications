@@ -4,5 +4,5 @@
 
 <a name="available-cr"></a>
 
-## Community
-* [LFN Based Certification](lfn)
+## Available Programs
+* [RC1 - LFN Based](lfn)

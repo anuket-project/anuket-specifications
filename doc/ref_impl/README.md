@@ -4,5 +4,5 @@
 
 <a name="available-ri"></a>
 
-## Community
-* [OPNFV CNTT-RI](cntt-ri)
+## Available Implementations
+* [RI1 - OPNFV Based](cntt-ri)
