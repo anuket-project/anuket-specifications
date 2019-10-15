@@ -71,7 +71,7 @@ Since OpenStack is a complex, multi-project framework, we initially will focus o
 
 The architecture consists of the services shown in the **Figure 4-1**; Ironic and Swift are optional OpenStack srevices. The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
 
-<p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v2.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/></p>
+<p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v3.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/></p>
 <p align="center"><b>Figure 4-1:</b> OpenStack Core Services</p>
 
 We will refer to the functions above as falling into the following categories to avoid any confusion with other terminology that may be used:
