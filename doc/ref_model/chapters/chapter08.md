@@ -881,15 +881,16 @@ The following table contains a lists of performance measurements, and/or capabil
 > _**NOTE**:  Refer to RM Chapter 4, <a href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md">Infrastructure Capabilities, Metrics, and Catalogue</a>, for a list performance measurements and capabilities internal to the infrastructure._
 
 
-| Ref                | NFVI Measurement             | Unit                | Definition/Notes                                             |
-| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
-| e.nfvi.per.met.001 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.003 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
-| e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
-| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
-| e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
+| Ref                | NFVI Measurement                  | Unit                | Definition/Notes                                             |
+| ------------------ | ----------------------------------| ------------------- | ------------------------------------------------------------ |
+| e.nfvi.per.met.001 | Network measurement configuration | n/a                 | Identifier for the configuration of network measurement used to measure e.nfvi.per.met.002, e.nfvi.per.met.003 and e.nfvi.per.met.004. See *note 1* |
+| e.nfvi.per.met.002 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.003 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.004 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.005 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
+| e.nfvi.per.met.006 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
+| e.nfvi.per.met.007 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
+| e.nfvi.per.met.008 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
 | i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
 | i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
 | i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
@@ -904,6 +905,8 @@ The following table contains a lists of performance measurements, and/or capabil
 | i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNFC (but fully ready for it) |
 | i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
 | i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
+
+*Note 1*: Network measurement configuration should define the configuration to be used to measure the values of e.nfvi.per.met.002, e.nfvi.per.met.003 and e.nfvi.per.met.004. The value should follow the rules set up in ETSI GS NFV-TST 009 V3.1.1 (2018-10) Chapter 6.2 with the extension that PCP means container setup on bare metal while PVCVP means container setup on top of VM-s. Also it should be noted that Phy2Phy is different in case of VM and container setup as in case of containers there is no vSwitch.  
 
 <a name="8.9.2"></a>
 ### 8.9.2 Reports Dashboard
