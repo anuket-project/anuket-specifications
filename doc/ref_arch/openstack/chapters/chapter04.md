@@ -158,19 +158,20 @@ Functional requirements of this node include:
 
 <a name="4.3.2"></a>
 ### 4.3.2 Overview
-The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed within control plane and some of them will be deployed within both control and compute nodes:
+The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model Management Software components (<a ref="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.3">Reference Model Chapter 3.3 Management Software</a>).
 
-| Service  |  Description  | Deployed on Controller Nodes | Deployed on Compute Nodes |
-|-----------|-------------|-----------|-----------------|
-| Keystone  |  the authentication service  | X |  |
-| Glance  |  the image management service  | X |  |
-| Cinder  |  the block storage management service  | X |  |
-| Swift  |  the Object storage management service  | X | X |
-| Neutron  |  the network management service  | X | X |
-| Nova  |  the compute resources management service  | X | X |
-| Ironic  | the Bare Metal Provisioning service  | X | X |
-| Heat  |  the orchestration service  | X |  |
-| Horizon  |  the WEB UI service  | X |  |
+| RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
+|-----------------------|-------------|----------------------|----------------|-----------|---------|
+| Identity Management (Additional Management Functions) + Catalogue| Keystone| the authentication service| Required| X|  |
+| Storage Resources Manager| Glance| the image management service| Optional| X|  |
+| Storage Resources Manager | Cinder| the block storage management service| Required| X|  |
+| Storage Resources Manager| Swift| the Object storage management service| Optional| X|   |
+| Network Resources Manager| Neutron| the network management service| Required| X| X |
+| Compute Resources Manager + Inventory + Scheduler | Nova| the compute resources management service| Required| X| X |
+| Compute Resources Manager| Ironic| the Bare Metal Provisioning service| Optional| X| X |
+| (Tool that utilizes APIs)| Heat| the orchestration service| Required| X|  |
+| UI| Horizon| the WEB UI service| Required| X|  |
+
 
 All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services (i.e. instances of a same service must run on different nodes).
 
