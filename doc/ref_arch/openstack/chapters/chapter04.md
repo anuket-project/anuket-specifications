@@ -163,7 +163,7 @@ The following OpenStack components are deployed on the Infrastructure. Some of t
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|
 | Identity Management (Additional Management Functions) + Catalogue| Keystone| the authentication service| Required| X|  |
-| Storage Resources Manager| Glance| the image management service| Optional| X|  |
+| Storage Resources Manager| Glance| the image management service| Required| X|  |
 | Storage Resources Manager | Cinder| the block storage management service| Required| X|  |
 | Storage Resources Manager| Swift| the Object storage management service| Optional| X|   |
 | Network Resources Manager| Neutron| the network management service| Required| X| X |
