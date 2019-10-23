@@ -525,7 +525,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.res.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> | Per selected  <I Opt> |  |
 | `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> | Per selected  <S Ext> |  |
 | `e.nfvi.per.cap.001`<br />(CPU pinning support) | No | Yes | Yes | Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
-| `e.nfvi.per.cap.002`<br />(NUMA support) | No | Yes | No | |
+| `e.nfvi.per.cap.002`<br />(NUMA support) | No | Yes | Yes | |
 | `e.nfvi.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | No | |
 | `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | No | |
 | `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
@@ -534,18 +534,13 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3) |
 | `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
-| `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | No | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal PM capabilities as per [**Table 4-8**](#Table4-8) |
+| `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
 | `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | Yes | |
-| `i.nfvi.mon.cap.005`<br />(External storage IOPS) | Yes | No | Yes | |
-| `i.nfvi.mon.cap.006`<br />(External storage throughput) | Yes | No | Yes | |
-| `i.nfvi.mon.cap.007`<br />(External storage capacity) | Yes | No | Yes | |
-| `i.nfvi.sec.cap.001`<br />(VNFC/VNFC memory isolation) | Yes | Yes | Yes | Internal security capabilities as per [**Table 7-1**](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#Table7-1) |
-| `i.nfvi.sec.cap.002`<br />(VNFC -> Host) | No | No | No | |
-| `i.nfvi.sec.cap.003`<br />(Host -> VNFC) | Yes | Yes | Yes | |
-| `i.nfvi.sec.cap.004`<br />(External storage at-rest encryption) | Yes | Yes | Yes | |
+| `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
+
 
 <p align="center"><b>Table 4-24:</b> Mapping of NFVI Capabilities to Instance Types</p>
 
