@@ -158,7 +158,7 @@ Functional requirements of this node include:
 
 <a name="4.3.2"></a>
 ### 4.3.2 Overview
-The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model Management Software components (<a ref="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.3">Reference Model Chapter 3.3 Management Software</a>).
+The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Management Software components (<a ref="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.3">Reference Model Chapter 3.3 Management Software</a>).
 
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|
