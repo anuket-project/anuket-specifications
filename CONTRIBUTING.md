@@ -43,6 +43,7 @@
   - From at least one of committers for that workstream
   - From WSL  (to make sure consensus is reached).
     - WSL can request additional approvals reviews.
+  - 2 business days cool off period will be applied before Final approval.
   - Final Approval by TSL (to make sure process is followed)
 - Only One approval is permitted per each organization for a given PR.
 - The selection of which Committers to approve a PR is made by the WSL and should take those factors into consideration:
