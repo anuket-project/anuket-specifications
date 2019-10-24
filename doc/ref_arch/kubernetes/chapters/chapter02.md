@@ -83,17 +83,73 @@ Containerised Infrastructure Manager (CIM): a functional block that is responsib
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.vim.01` | General | The Architecture **must** allow infrastructure resource sharing. |
-| `req.vim.02` | General | The Architecture **must** allow discovery and management of NFVI resources. |
-| `req.vim.03` | General | The Architecture **must** support Enhanced Platform Awareness (EPA). |
-| `req.vim.04` | General | The Architecture **must** include image repository management. |
-| `req.vim.05` | General | The Architecture **should** support a multi-tenanted environment. |
-| `req.vim.06` | General | The Architecture **must** support resource tagging. |
-| `req.vim.07` | General | The Architecture **must** support horizontal scaling. |
-| `req.vim.08` | General | The Architecture **must** support workload resiliency. |
+| `req.cim.01` | General | The Architecture **must** allow infrastructure resource sharing. |
+| `req.cim.02` | General | The Architecture **must** allow discovery and management of NFVI resources. |
+| `req.cim.03` | General | The Architecture **must** support Enhanced Platform Awareness (EPA). |
+| `req.cim.04` | General | The Architecture **must** include image repository management. |
+| `req.cim.05` | General | The Architecture **should** support a multi-tenanted environment. |
+| `req.cim.06` | General | The Architecture **must** support resource tagging. |
+| `req.cim.07` | General | The Architecture **must** support horizontal scaling. |
+| `req.cim.08` | General | The Architecture **must** support workload resiliency. |
 
 <p align="center"><b>Table 2-3:</b> Containerised Platform: CIM Requirements.</p>
 
+<a name="2.3.4"></a>
+### 2.3.4 Interfaces & APIs
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
+| `req.int.api.02` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. |
 
 
+<p align="center"><b>Table 2-4:</b> Containerised Platform: Interfaces and APIs Requirements. </p>
 
+<a name="2.3.5"></a>
+### 2.3.5 LCM
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
+| `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites. |
+| `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
+| `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
+| `req.lcm.adp.04` | Automated deployment | The Architecture **should** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
+| `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
+| `req.lcm.cid.02` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
+
+<p align="center"><b>Table 2-5:</b> Containerised Platform: LCM Requirements. </p>
+
+
+<a name="2.3.6"></a>
+### 2.3.6 Assurance
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.asr.mon.01` | Integration | The Architecture **must** include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
+| `req.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from CNF workloads. |
+| `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information. |
+| `req.asr.mon.04` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
+
+<p align="center"><b>Table 2-6:</b> Containerised Platform: Assurance Requirements.</p>
+
+<a name="2.3.7"></a>
+### 2.3.7 Security
+
+| Ref # | sub-category | Description |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.sec.gen.01` | General | The Architecture **must** provide workload isolation. |
+| `req.sec.gen.02` | General | The Architecture **must** support policy based RBAC. |
+| `req.sec.gen.03` | General | The Architecture **must** support a centralised authentication and authorisation mechanism. |
+| `req.sec.zon.01` | Zoning | The Architecture **must** support identity management. |
+| `req.sec.zon.02` | Zoning | The Architecture **must** support password encryption. |
+| `req.sec.zon.03` | Zoning | The Architecture **must** support data, at-rest and in-flight, encryption. |
+| `req.sec.zon.04` | Zoning | The Architecture **must** support integration with Corporate Identity Management systems. |
+| `req.sec.cmp.02` | Compliance | The Architecture **must** comply with all applicable standards and regulations. |
+| `req.sec.cmp.03` | Compliance | The Architecture **must** comply with all applicable regional standards and regulations. |
+| `req.sec.ntw.01` | Networking | The Architecture **must** have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework. |
+| `req.sec.ntw.02` | Networking | The Architecture **must** have all security logs stored in accordance with ISO27001. |
+| `req.sec.ntw.03` | Networking | The Architecture **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
+| `req.sec.ntw.04` | Networking | The Architecture **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. |
+
+<p align="center"><b>Table 2-7:</b> Containerised Platform: Security Requirements. </p>
