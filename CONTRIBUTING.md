@@ -53,7 +53,7 @@
   - Committers needs to be actively discussing the PR to be selected for approval.
   - Committers needs to be active in the workstream.
 - PRs will be merged automatically online by the TSL once consensus is reached and all approvals are received. 
-- If WSL is the person who is creating the PR, he needs to request an alternate approver, preferably a co-lead or from the committers list.
+- If WSL is the person who is creating the PR, They need to request an alternate approver, preferably a co-lead or from the committers list.
 
 
 <p align="right"><img src="artefacts//figures/approval_process.png" alt="scope" title="Scope" width="100%"/></p>
