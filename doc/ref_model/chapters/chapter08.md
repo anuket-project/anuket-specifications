@@ -860,50 +860,201 @@ This section will be used to plan for future offerings.
 <a name="8.9.1"></a>
 ### 8.9.1 Performance & Resiliency - Measurements, Testing
 
-**NOT MVP**
+
 
 #### 8.9.1.1 Performance Measurements
 
-The following table contains a lists of performance measurements, and/or capabilities, to be captured where feasible during test validations.  More specifically, the table contains:
+
+
+**Objectives**
+
+The NFVI performance measurements allow to assess the performance of a given NFVI implementation on the execution plane (i.e., excluding VIM) by providing it with a set of significative metrics to be measured.
+
+They aim at validating the performance of any software and/or hardware NFVI implementation as described in 8.6.6. 
+
+Of course, they can also be used for other purposes, as:
+
+- fine tuning of software and/or hardware NFVI configuration (e.g., the number of cores dedicated to the dpdk vswitch)
+- comparison of the performance of different software or hardware technologies (e.g., dpdk vswitch vs hardware-offloaded vswitch)
+- assessing the performance impact of specific feature (e.g., with or without encapsulation) 
 
 
 
-- Exposed performance metrics per VNFC, vNIC or vCPU.  Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host.  (e.g. _\*e.nfvi.per.met\*_)
+**Metrics Baseline**
+
+For the purpose of validation, a baseline of the performance metrics is required for being compared with the results of their measurements on the NFVI implementation to be validated.
+
+That baseline is a set of threshold values which could be determined  by **measuring the performance metrics on Reference Implementations**.. 
+
+The validation can then be based on simple pass/fail test results or on a grade (e.g. "class" A, B or C) provided by the combination of pass/fail results for 2 different threshold values of some (or all) metrics.
 
 
 
-- Monitoring capabilities available by NFVI.  The availability of these capabilities will be determined by the instance type used by the workloads. (e.g. _\*i.nfvi.mon.cap\*_)
+**Metrics Description**
+
+Two metrics categories are considered depending if they are related to either the VNF domain or the NFVI domain itself:
+
+- Metrics related to the VNF domain are defined from VNF perspective (i.e., per VNFC, per vNIC, per vCPU...) and should interest VNF as well as NFVI actors. 
+- Metrics related to the NFVI domain are defined per NFVI node and  their measurement is based on virtual workloads (i.e., VM or container) in order to reflect the performance of a NFVI node with a given profile ; they should only interest NFVI actors. 
+
+The following table contains the list of performance metrics related to the VNF domain.
+
+| Reference         |              Name              |      Unit      | Definition/Notes                                             |
+| ----------------- | :----------------------------: | :------------: | ------------------------------------------------------------ |
+| vnf.nfvi.perf.001 |        vNIC throughput         |     bits/s     | Throughput per vNIC                                          |
+| vnf.nfvi.perf.002 |          vNIC latency          |     second     | Round-trip-time (RTT) to vNIC at the network throughput (nfvi.perf.001) |
+| vnf.nfvi.perf.003 |      vNIC delay variation      |     second     | Frame Delay Variation (FDV) to vNIC at the network throughput (nfvi.perf.001) |
+| vnf.nfvi.perf.004 | vNIC simultaneous active flows |     number     | Simultaneous active L3/L4 flows per vNIC before a new flow is dropped |
+| vnf.nfvi.perf.005 |      vNIC new flows rate       |    flows/s     | New L3/L4 flows rate per vNIC                                |
+| vnf.nfvi.perf.006 |       Storage throughput       | Input-Output/s | Throughput per virtual storage unit.                         |
+| vnf.nfvi.perf.007 |         vCPU capacity          | test-specific  | Processing capacity test-specific score per vCPU with all vCPU of the node running multiple parallel workloads |
+
+The following table contains the list of performance metrics related to the NFVI domain.
+
+| Reference           | Name                           | Unit          | Definition/Notes                                             |
+| ------------------- | ------------------------------ | ------------- | ------------------------------------------------------------ |
+| infra.nfvi.perf.001 | Node network throughput        | bits/s        | Throughput per node                                          |
+| infra.nfvi.perf.002 | Node simultaneous active flows | number        | Simultaneous active L3/L4 flows per node before a new flow is dropped |
+| infra.nfvi.perf.003 | Node new flows rate            | flows/s       | New L3/L4 flows rate per node                                |
+| infra.nfvi.perf.004 | Physical core capacity         | test-specific | Processing capacity test-specific score with all vCPU of the node running multiple parallel workloads (as for vnf.nfvi.perf.007), normalized to the number of physical cores usable by VNFs |
+| infra.nfvi.perf.005 | Energy consumption             | W             | Energy consumption of the node without hosting any VNFC (but fully ready for it) |
+| infra.nfvi.perf.006 | Network energy efficiency      | W/bits/s      | Energy consumption of the node at the network throughput (infra.nfvi.perf.001), normalized to the measured bit rate |
+| infra.nfvi.perf.007 | Compute energy efficiency      | W/core        | Energy consumption of the node during compute capacity test (vnf.nfvi.perf.007 or infra.nfvi.perf.004), normalized to the number of physical cores usable by VNFs |
 
 
 
-- Internal performance metrics per NFVI node.  Specifically internal performance metrics use a baseline (Phy2Phy) dataplane test setup in a single host. (e.g. _\*i.nfvi.per.met\*_)
+**MVP Metrics**
 
-> _**NOTE**:  Refer to RM Chapter 4, <a href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md">Infrastructure Capabilities, Metrics, and Catalogue</a>, for a list performance measurements and capabilities internal to the infrastructure._
+The following metrics should be considered as MVP:
+
+- vnf.nfvi.perf.001,002,006,007
+- infra.nfvi.perf.001,004,005,006,007
 
 
-| Ref                | NFVI Measurement             | Unit                | Definition/Notes                                             |
-| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
-| e.nfvi.per.met.001 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.003 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
-| e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
-| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
-| e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
-| i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
-| i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
-| i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
-| i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
-| i.nfvi.mon.cap.005 | Monitoring of external storage IOPS | Yes/No | Transcoding Acceleration |
-| i.nfvi.mon.cap.006 | Monitoring of external storage throughput | Yes/No | Programmable Acceleration |
-| i.nfvi.mon.cap.007 | Monitoring of external storage capacity | Yes/No |  |
-| i.nfvi.per.met.001 | Network throughput | frames/s | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| i.nfvi.per.met.002 | Simultaneous active flows | number | Max simultaneous active L4 flows per node before a new flow is dropped |
-| i.nfvi.per.met.003 | New flows rate               | flows/s  | Max new L4 flow rate per node                                |
-| i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per core and with all cores running multiple parallel workloads|
-| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNFC (but fully ready for it) |
-| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
-| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
+
+**Network Metrics Measurement Test Cases**
+
+The network performance metrics are vnf.nfvi.perf.001-005 and infra.nfvi.perf.001-003,006.
+
+The different possible test cases are defined by each of the 3 following test traffic conditions.
+
+- **Test traffic path across NFVI**
+
+  3 traffic path topologies can be considered:
+
+  - **North/South traffic**, between VNFCs and outside NFVI 
+
+    This can be provided by PVP test setup of ETSI GS NFV-TST009.
+
+  - **East/West intra-node traffic**, between VNFCs within a node
+
+    This can be provided by a V2V (Virtual-to-Virtual) test setup and, in some cases, by PVVP test setup of ETSI GS NFV-TST009.  
+
+  - **East/West inter-node traffic**, between VNFCs in different nodes
+
+    This can be provided by VPV test setup and, in some cases, by PVVP test setup between 2 nodes.
+
+- **Test traffic processing by NFVI**
+
+  The traffic crossing the NFVI can be applied processing with different complexity by NFVI, including especially  :
+
+  - L4 statefull processing (e.g., FW, NAT, SFC)
+  - Encryption (e.g., IPSec ESP tunneling)
+
+- **Test traffic profile**
+
+  Two different test traffic profiles should be considered according to the two VNF types that must be provided with network connectivity by the NFVI. 
+
+  - ***Forwarded traffic*** for L3/L4 forwarding VNF (e.g., PGW, FW) 
+
+    It is based on ETSI GS NFV-TST009 and it should be:
+
+    -  **bidirectional UDP traffic** with **0.001%** frame loss ratio, **300B** frame size, **10k** L3/L4 flows
+    - between a traffic generator/receiver and a **L3 traffic looper** with sufficient capacity not to be the test bottleneck.
+
+    *Note*: Basically, it is stateless traffic, but it could need to be statefull (e.g., including TCP sessions setup/release) when NFVI provides connectivity with L4 statefull processing.
+
+    The main OPNFV test tools candidates for that purpose are NFVbench and VSPerf.
+
+  - ***Client-server traffic*** for L4/L7 endpoint VNF (e.g., MME, CDN)
+
+    It should be:
+
+    - **bidirectional TCP traffic** with **1400B** maximum frame size, **5k** TCP sessions,
+    - between **2 TCP client&server endpoints** with sufficient capacity not to be the test bottleneck.
+
+    *Note*: the maximum TCP frame size can be forced by configuring TCP endpoint link MTU.
+
+    The main OPNFV test tools candidates for that purpose are Functest (VMTP and SHAKER) and Yardstick (TC011 and TC083).
+
+The combination of each of those 3 test conditions types, in addition to the different NFVI profiles results in a wide test cases matrix (more than 50 cases) and metrics measurements number (more than 400 measurements) which need to be reduced to only keep the most relevant ones.
+
+This optimization should be based on the following principles:
+
+1. NFVI domain metrics measurement on PVP topology only
+2. Network intensive profile metrics measurement with no L4 statefull processing
+3. Basic and Compute intensive profiles metrics measurement for client-server traffic profile only
+4. Flows & latency related metrics measurements for PVP only
+
+The following table proposed a possible optimized matrix model of the test cases against the metrics to be measured. 
+
+|                     | NFVI Profiles       | B & C          |                |                |                | N             |                |
+| :------------------ | ------------------- | :------------- | :------------- | :------------- | :------------- | :------------ | :------------- |
+|                     | **Test Cases**      | V2V - L2 - SRV | VPV - L3 - SRV | PVP - L2 - SRV | PVP - L4 - SRV | PVP - L2- SRV | PVP - L2 - FWD |
+|                     |                     |                |                |                |                |               |                |
+| **MVP Metrics**     | vnf.nfvi.perf.001   | 50Gbps         | 20Gbps         | 20Gbps         | 10Gbps         | 40Gbps        | 40Gbps         |
+|                     | vnf.nfvi.perf.002   | n/a (4)        | n/a (4)        | 1ms            | 5ms            | 1ms           | 0.5ms          |
+|                     | infra.nfvi.perf.001 | n/a (1)        | n/a (1)        | 40Gbps         | 20Gbps         | 60Gbps        | 80Gbps         |
+|                     | infra.nfvi.perf.006 | n/a (1)        | n/a (1)        | ? W/Gbps       | ? W/Gbps       | ?W/Gbps       | ?W/Gbps        |
+|                     |                     |                |                |                |                |               |                |
+| **Non-MVP Metrics** | vnf.nfvi.perf.003   | n/a (4)        | n/a (4)        | 1ms            | 1ms?           | 1ms           | ?              |
+|                     | vnf.nfvi.perf.004   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | ?              |
+|                     | vnf.nfvi.perf.005   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | ?              |
+|                     | infra.nfvi.perf.002 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | ?              |
+|                     | infra.nfvi.perf.003 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | ?              |
+
+*Table notes*:
+
+- Values are only indicative
+- L2/L3/L4 refer to the network processing layer
+  - L2 for Ethernet switching
+  - L3 for IP routing
+  - L4 for IP routing with L4 statefull processing (e.g. NAT)
+- SRV/FWD refer to the traffic profile (and pseudo-VNFC type implied)
+  - SRV for client-server traffic and L4/L7 endpoint pseudo-VNF
+  - FWD for forwarded traffic and L3/L4 forwarding pseudo-VNF
+
+
+
+**Energy Metrics Measurement Test Cases**
+
+Energy metrics (infra.nfvi.perf.005-007) should be considered carefully for NFVI validation since energy consumption may vary a lot across processor architectures, models and power management features, but also across different processors of the same model due to foundry process spread.
+
+So they are firstly indicative in order to have metrics regarding NFVI environment footprint available and to allow energy-based comparison of different NFVI software implementations running on the same physical NFVI hardware platform.
+
+OPNFV tool: https://docs.opnfv.org/en/latest/testing/ecosystem/energy-monitoring.html
+
+
+
+**Storage Metrics Measurement Test Cases**
+
+TBD
+
+Metric (MVP): vnf.nfvi.perf.006
+
+Main OPNFV test tool candidates: Yardstick (TC 014), StorPerf
+
+
+
+**Computing Metrics Measurement Test Cases**
+
+TBD
+
+Metrics (all MVP): vnf.nfvi.perf.007 and infra.nfvi.perf.004,007
+
+Main OPNFV test tool candidates: Yardstick (TC014), other ?
+
+
 
 <a name="8.9.2"></a>
 ### 8.9.2 Reports Dashboard
