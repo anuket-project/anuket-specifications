@@ -33,7 +33,8 @@
 - PRs must only be created by a committer who has an issue assigned to him/her by the respective WSL.
 - PRs must only be created when there is an issue present and a decision to create a PR is made. A PR must reference the issue it is resolving into the description field.
 - One person only is allowed to edit a given PR (unless given permission to other committers).
-- One PR should only create/modify content within the scope of a single workstream.
+- A PR should only create/modify content within the scope of a single workstream.
+- A PR should only add/change content related to the issue associated with the PR
 
 
 <a name="approvals"></a>
@@ -41,8 +42,10 @@
 
 - Once a PR is created, it needs to get the following approvals before it is merged into master.
   - From at least one of committers for that workstream
-  - From WSL  (to make sure consensus is reached).
-    - WSL can request additional approvals reviews.
+    - Approvers should be distributed equally among operators and vendors.
+  - From WSL (to make sure consensus is reached).
+  - WSL can request additional approvals reviews.
+    - Recommendation is to use 4 approvals for complex PRs.
   - 2 business days cool off period will be applied before Final approval.
   - Final Approval by TSL (to make sure process is followed)
 - Only One approval is permitted per each organization for a given PR.
@@ -50,7 +53,7 @@
   - Committers needs to be actively discussing the PR to be selected for approval.
   - Committers needs to be active in the workstream.
 - PRs will be merged automatically online by the TSL once consensus is reached and all approvals are received. 
-- If WSL is the person who is creating the PR, he needs to request an additional from the committers list.  
+- If WSL is the person who is creating the PR, he needs to request an alternate approver, preferably a co-lead or from the committers list.
 
 
 <p align="right"><img src="artefacts//figures/approval_process.png" alt="scope" title="Scope" width="100%"/></p>
