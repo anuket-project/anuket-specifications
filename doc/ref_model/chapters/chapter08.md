@@ -906,7 +906,7 @@ The following table contains a lists of performance measurements, and/or capabil
 | i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
 | i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
 
-*Note 1*: Network measurement configuration should define the configuration to be used to measure the values of e.nfvi.per.met.002, e.nfvi.per.met.003 and e.nfvi.per.met.004. The value should follow the rules set up in ETSI GS NFV-TST 009 V3.1.1 (2018-10) Chapter 6.2 with the extension that PCP means container setup on bare metal while PVCVP means container setup on top of VM-s. Also it should be noted that Phy2Phy is different in case of VM and container setup as in case of containers there is no vSwitch.  
+*Note 1*: Network measurement configuration should define the configuration to be used to measure the values of e.nfvi.per.met.002, e.nfvi.per.met.003 and e.nfvi.per.met.004. The value should follow the rules set up in ETSI GS NFV-TST 009 V3.1.1 (2018-10) Chapter 6.2 with the note that PVP can also mean container setup on bare metal while PVVP can also mean container setup on top of VM-s. Also it should be noted that Phy2Phy is different in case of VM and container setup as in case of containers there is no vSwitch.  
 
 <a name="8.9.2"></a>
 ### 8.9.2 Reports Dashboard
