@@ -9,9 +9,10 @@
 * [4.3 Kubernetes](#4.3)
 * [4.4 Container runtimes](#4.4)
 * [4.5 CNI plugins](#4.5)
-* [4.6 Service meshes](#4.6)
-* [4.7 Container package managers](#4.7)
-* [4.8 Supplementary components](#4.8)
+* [4.6 Storage components](#4.6)
+* [4.7 Service meshes](#4.7)
+* [4.8 Container package managers](#4.8)
+* [4.9 Supplementary components](#4.9)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -40,16 +41,21 @@
 > This chapter should describe which CNI plugins are part of the Rerefence Architecture.
 
 <a name="4.6"></a>
-## 4.6 Service meshes
+## 4.5 Storage components
+
+> This chapter should describe the components used to provide storage services by the reference architecture.
+
+<a name="4.7"></a>
+## 4.7 Service meshes
 
 > This chapter should describe which service meshes are part of the Reference Architecture. For the shake of simplcity this chapter should discuss both the "normal" service meshes and Network Service Mesh.
 
-<a name="4.7"></a>
-## 4.7 Container package managers
+<a name="4.8"></a>
+## 4.8 Container package managers
 
 > This chapter should describe which container package managers are used in the Reference Architecture. 
 
-<a name="4.8"></a>
-## 4.8 Supplementary components (okay, this is a bad heading, but I do not have any better)
+<a name="4.9"></a>
+## 4.9 Supplementary components (okay, this is a bad heading, but I do not have any better)
 
 > This chapter should list all the supplementary components needed to provide the services defined in Chapter 3.2 (e.g: Prometheus)
