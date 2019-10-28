@@ -95,7 +95,7 @@ This section introduces the high-level principles of infrastructure abstraction 
    - Networking resources. (Limited to connectivity services only).
    - Acceleration resources.
 1. NFVI exposed resources should be supplier independent.
-1. All NFVI Application Programming Interfaces (API) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and come from Open Communities or Standards Development Organizations. Through such APIs will NFVI resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
+1. All NFVI Application Programming Interfaces (API) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organizations). Through such APIs will NFVI resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
 1. VNFs should be modular and be designed to utilise the minimum resources required for the service.
 1. NFVI shall support pre-defined and parameterized sizes.
    - These pre-defined sizes will evolve over time.
