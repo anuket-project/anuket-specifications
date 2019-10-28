@@ -942,22 +942,22 @@ The different possible test cases are defined by each of the 3 following test tr
 
   3 traffic path topologies should be considered:
 
-  - **North/South traffic**, between VNFCs and outside NFVI
+  - ***North/South traffic***, between VNFCs and outside NFVI  
     This can be provided by PVP test setup of ETSI GS NFV-TST009.
 
-  - **East/West intra-node traffic**, between VNFCs within a node
+  - ***East/West intra-node traffic***, between VNFCs within a node  
     This can be provided by a V2V (Virtual-to-Virtual) test setup and, in some cases, by PVVP test setup of ETSI GS NFV-TST009.  
 
-  - **East/West inter-node traffic**, between VNFCs in different nodes
+  - ***East/West inter-node traffic***, between VNFCs in different nodes      
     This can be provided by VPV (Virtual-Physical-Virtual) test setup and, in some cases, by PVVP test setup between 2 nodes.
 
 - **Test traffic processing by NFVI**
 
   Different processing complexity applicable to the traffic crossing the NFVI should be considered, including especially (but not exhaustively):
-  - L2 processing (Ethernet switching), possibly including VLAN tagging/mapping and encapsulation (e.g., VXLAN)
-  - L3 processing (IP routing), possibly including L2 processing
-  - L4 statefull processing (e.g., FW, NAT, SFC), also including L3 processing
-  - Encryption (e.g., IPSec ESP tunneling)
+  - ***L2 processing*** (Ethernet switching), possibly including VLAN tagging/mapping and encapsulation (e.g., VXLAN)
+  - ***L3 processing*** (IP routing), possibly including L2 processing
+  - ***L4 statefull processing*** (e.g., FW, NAT, SFC), also including L3 processing
+  - ***Encryption*** (e.g., IPSec ESP tunneling)
     
 - **Test traffic profile**
 
