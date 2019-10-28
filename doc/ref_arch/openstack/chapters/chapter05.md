@@ -30,7 +30,7 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 | Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images | Version 2.0 |
 | Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
 
-### 5.2.3. Cinder 
+### 5.2.3. Cinder
 
 | **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
@@ -49,6 +49,80 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 |------------------|----------------------------------------------------|-------------------|
 | Networking: Neutron | https://docs.openstack.org/api-ref/network/ | Version 2.0 |
 | Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
+
+| **Neutron Extensions**         | **Mandatory** |
+|--------------------------------|:-------------:|
+| address-scope                  | X             |
+| agent                          | X             |
+| allowed-address-pairs          | X             |
+| auto-allocated-topology        | X             |
+| availability_zone              | X             |
+| availability_zone_filter       | X             |
+| binding                        | X             |
+| binding-extended               | X             |
+| default-subnetpools            | X             |
+| dhcp_agent_scheduler           | X             |
+| dns-domain-ports               |               |
+| dns-integration                |               |
+| dvr                            | X             |
+| empty-string-filtering         | X             |
+| ext-gw-mode                    | X             |
+| external-net                   | X             |
+| extra_dhcp_opt                 | X             |
+| extraroute                     | X             |
+| flavors                        | X             |
+| filter-validation              | X             |
+| fip-port-details               | X             |
+| floatingip-pools               |               |
+| ip-substring-filtering         | X             |
+| l3_agent_scheduler             | X             |
+| l3-flavors                     | X             |
+| l3-ha                          | X             |
+| logging                        |               |
+| metering                       |               |
+| multi-provider                 | X             |
+| net-mtu                        | X             |
+| net-mtu-writable               | X             |
+| network_availability_zone      | X             |
+| network-ip-availability        | X             |
+| network-segment-range          |               |
+| pagination                     | X             |
+| port-mac-address-regenerate    | X             |
+| port-resource-request          |               |
+| port-security                  | X             |
+| port-security-groups-filtering | X             |
+| project-id                     | X             |
+| provider                       | X             |
+| rbac-policies                  | X             |
+| router                         | X             |
+| router_availability_zone       | X             |
+| qos                            | X             |
+| qos-bw-limit-direction         | X             |
+| qos-bw-minimum-ingress         | X             |
+| qos-default                    | X             |
+| qos-fip                        | X             |
+| qos-gateway-ip                 | X             |
+| qos-rule-type-details          | X             |
+| qos-rules-alias                | X             |
+| quotas                         | X             |
+| quota_details                  | X             |
+| revision-if-match              | X             |
+| security-group                 | X             |
+| service-type                   | X             |
+| sorting                        | X             |
+| standard-attr-description      | X             |
+| standard-attr-revisions        | X             |
+| standard-attr-tag              | X             |
+| standard-attr-timestamp        | X             |
+| subnet_allocation              | X             |
+| subnet-service-types           | X             |
+| rbac-security-groups           |               |
+| router-interface-fip           |               |
+| trunk                          | X             |
+| trunk-details                  | X             |
+| uplink-status-propagation      |               |
+
+The exhaustive list of extensions is available at https://docs.openstack.org/api-ref/network/v2/
 
 ### 5.2.6. Nova
 
@@ -76,7 +150,7 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 ## 5.3. Consolidated Set of APIs.
 
 ### 5.3.1. OpenStack Interfaces
-This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available at https://docs.openstack.org/api-ref/ and CNTT standard is to use the latest version v3. OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs directly using the HTTP or REST library, or they can use one of the many programming language specific cloud libraries. 
+This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available at https://docs.openstack.org/api-ref/ and CNTT standard is to use the latest version v3. OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs directly using the HTTP or REST library, or they can use one of the many programming language specific cloud libraries.
 
 **APIs**
 
@@ -108,10 +182,10 @@ This section illustrates some of the Interfaces provided by OpenStack; the exhau
 | OpenStack Client (python) | https://docs.openstack.org/python-openstackclient/pike/index.html  | Version 3.2.1 |
 
 ### 5.3.2. Kubernetes Interfaces
-The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/. 
+The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
 
 ### 5.3.3. KVM Interfaces
-The KVM APIs are documented in Section 4 of the document https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt. 
+The KVM APIs are documented in Section 4 of the document https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt.
 
 #### 5.3.3.1. Libvirt Interfaces
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
