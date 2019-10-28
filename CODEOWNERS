@@ -7,6 +7,9 @@
 # review when someone opens a pull request.
 *       @rabiabdel
 
+# Governance
+/doc/gov/*       @jbeltranatl
+
 # Reference Model Core WS
 /doc/ref_model/chapters/chapter01.md    @rabiabdel @markshostak
 /doc/ref_model/chapters/chapter02.md    @rabiabdel @markshostak
