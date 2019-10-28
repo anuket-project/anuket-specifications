@@ -868,15 +868,15 @@ This section will be used to plan for future offerings.
 
 **Objectives**
 
-The NFVI performance measurements allow to assess the performance of a given NFVI implementation on the execution plane (i.e., excluding VIM) by providing it with a set of significative metrics to be measured.
+The NFVI performance measurements aim at assessing the performance of a given NFVI implementation on the execution plane (i.e., excluding VIM) by providing it with a set of significative metrics to be measured.
 
-They aim at validating the performance of any software and/or hardware NFVI implementation as described in 8.6.6. 
+They should allow to validate the performance of any software and/or hardware NFVI implementation as described in 8.6.6. 
 
 Of course, they can also be used for other purposes, as:
 
 - fine tuning of software and/or hardware NFVI configuration (e.g., the number of cores dedicated to the dpdk vswitch)
 - comparison of the performance of different software or hardware technologies (e.g., dpdk vswitch vs hardware-offloaded vswitch)
-- assessing the performance impact of specific feature (e.g., with or without encapsulation) 
+- assessing the performance impact of specific features (e.g., with or without encapsulation) 
 
 
 
@@ -906,7 +906,7 @@ The following table contains the list of performance metrics related to the VNF 
 | vnf.nfvi.perf.003 |      vNIC delay variation      |     second     | Frame Delay Variation (FDV) to vNIC at the network throughput (nfvi.perf.001) |
 | vnf.nfvi.perf.004 | vNIC simultaneous active flows |     number     | Simultaneous active L3/L4 flows per vNIC before a new flow is dropped |
 | vnf.nfvi.perf.005 |      vNIC new flows rate       |    flows/s     | New L3/L4 flows rate per vNIC                                |
-| vnf.nfvi.perf.006 |       Storage throughput       | Input-Output/s | Throughput per virtual storage unit.                         |
+| vnf.nfvi.perf.006 |       Storage throughput       | Input-Output/s | Throughput per virtual storage unit                          |
 | vnf.nfvi.perf.007 |         vCPU capacity          | test-specific  | Processing capacity test-specific score per vCPU with all vCPU of the node running multiple parallel workloads |
 
 The following table contains the list of performance metrics related to the NFVI domain.
@@ -940,27 +940,25 @@ The different possible test cases are defined by each of the 3 following test tr
 
 - **Test traffic path across NFVI**
 
-  3 traffic path topologies can be considered:
+  3 traffic path topologies should be considered:
 
-  - **North/South traffic**, between VNFCs and outside NFVI 
-
+  - **North/South traffic**, between VNFCs and outside NFVI
     This can be provided by PVP test setup of ETSI GS NFV-TST009.
 
   - **East/West intra-node traffic**, between VNFCs within a node
-
     This can be provided by a V2V (Virtual-to-Virtual) test setup and, in some cases, by PVVP test setup of ETSI GS NFV-TST009.  
 
   - **East/West inter-node traffic**, between VNFCs in different nodes
-
-    This can be provided by VPV test setup and, in some cases, by PVVP test setup between 2 nodes.
+    This can be provided by VPV (Virtual-Physical-Virtual) test setup and, in some cases, by PVVP test setup between 2 nodes.
 
 - **Test traffic processing by NFVI**
 
-  The traffic crossing the NFVI can be applied processing with different complexity by NFVI, including especially  :
-
-  - L4 statefull processing (e.g., FW, NAT, SFC)
+  Different processing complexity applicable to the traffic crossing the NFVI should be considered, including especially (but not exhaustively):
+  - L2 processing (Ethernet switching), possibly including VLAN tagging/mapping and encapsulation (e.g., VXLAN)
+  - L3 processing (IP routing), possibly including L2 processing
+  - L4 statefull processing (e.g., FW, NAT, SFC), also including L3 processing
   - Encryption (e.g., IPSec ESP tunneling)
-
+    
 - **Test traffic profile**
 
   Two different test traffic profiles should be considered according to the two VNF types that must be provided with network connectivity by the NFVI. 
@@ -970,9 +968,9 @@ The different possible test cases are defined by each of the 3 following test tr
     It is based on ETSI GS NFV-TST009 and it should be:
 
     -  **bidirectional UDP traffic** with **0.001%** frame loss ratio, **300B** frame size, **10k** L3/L4 flows
-    - between a traffic generator/receiver and a **L3 traffic looper** with sufficient capacity not to be the test bottleneck.
+    - between a **traffic generator/receiver** and a **L3 traffic looper** with sufficient capacity not to be the test bottleneck.
 
-    *Note*: Basically, it is stateless traffic, but it could need to be statefull (e.g., including TCP sessions setup/release) when NFVI provides connectivity with L4 statefull processing.
+    *Note*: Basically, it is stateless traffic, but it could optionally be statefull (e.g., including TCP sessions setup/release) when NFVI provides connectivity with L4 statefull processing.
 
     The main OPNFV test tools candidates for that purpose are NFVbench and VSPerf.
 
@@ -1003,20 +1001,20 @@ The following table proposed a possible optimized matrix model of the test cases
 |                     | **Test Cases**      | V2V - L2 - SRV | VPV - L3 - SRV | PVP - L2 - SRV | PVP - L4 - SRV | PVP - L2- SRV | PVP - L2 - FWD |
 |                     |                     |                |                |                |                |               |                |
 | **MVP Metrics**     | vnf.nfvi.perf.001   | 50Gbps         | 20Gbps         | 20Gbps         | 10Gbps         | 40Gbps        | 40Gbps         |
-|                     | vnf.nfvi.perf.002   | n/a (4)        | n/a (4)        | 1ms            | 5ms            | 1ms           | 0.5ms          |
+|                     | vnf.nfvi.perf.002   | n/a (4)        | n/a (4)        | 1ms            | 1ms            | 1ms           | 0.5ms          |
 |                     | infra.nfvi.perf.001 | n/a (1)        | n/a (1)        | 40Gbps         | 20Gbps         | 60Gbps        | 80Gbps         |
-|                     | infra.nfvi.perf.006 | n/a (1)        | n/a (1)        | ? W/Gbps       | ? W/Gbps       | ?W/Gbps       | ?W/Gbps        |
+|                     | infra.nfvi.perf.006 | n/a (1)        | n/a (1)        | ? W/Gbps       | ? W/Gbps       | ? W/Gbps      | ? W/Gbps     |
 |                     |                     |                |                |                |                |               |                |
-| **Non-MVP Metrics** | vnf.nfvi.perf.003   | n/a (4)        | n/a (4)        | 1ms            | 1ms?           | 1ms           | ?              |
-|                     | vnf.nfvi.perf.004   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | ?              |
-|                     | vnf.nfvi.perf.005   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | ?              |
-|                     | infra.nfvi.perf.002 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | ?              |
-|                     | infra.nfvi.perf.003 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | ?              |
+| **Non-MVP Metrics** | vnf.nfvi.perf.003   | n/a (4)        | n/a (4)        | 1ms            | 1ms            | 1ms           | 1ms              |
+|                     | vnf.nfvi.perf.004   | n/a (4)        | n/a (4)        | 500k           | 50k            | 500k          | 500k              |
+|                     | vnf.nfvi.perf.005   | n/a (4)        | n/a (4)        | 100kfps        | 10kfps         | 100kfps       | 100kfps    |
+|                     | infra.nfvi.perf.002 | n/a (1)        | n/a (1)        | 1G             | 100K           | 1G            | 1G              |
+|                     | infra.nfvi.perf.003 | n/a (1)        | n/a (1)        | 200kfps        | 20kfps         | 200kfps       | 200kfps    |
 
 *Table notes*:
 
 - Values are only indicative
-- L2/L3/L4 refer to the network processing layer
+- L2/L3/L4 refer to network processing layer
   - L2 for Ethernet switching
   - L3 for IP routing
   - L4 for IP routing with L4 statefull processing (e.g. NAT)
@@ -1042,7 +1040,7 @@ TBD
 
 Metric (MVP): vnf.nfvi.perf.006
 
-Main OPNFV test tool candidates: Yardstick (TC 014), StorPerf
+Main OPNFV test tool candidates: Yardstick (TC 005), StorPerf
 
 
 
@@ -1052,7 +1050,7 @@ TBD
 
 Metrics (all MVP): vnf.nfvi.perf.007 and infra.nfvi.perf.004,007
 
-Main OPNFV test tool candidates: Yardstick (TC014), other ?
+Main OPNFV test tool candidate: Yardstick (TC014)
 
 
 
