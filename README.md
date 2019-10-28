@@ -1,6 +1,7 @@
 # Common NFVI Telco Task Force (CNTT)
 
 ## Available Specifications
+* [Governance](doc/gov)
 * [Reference Model](doc/ref_model)
 * [Reference Architecture](doc/ref_arch)
 * [Reference Implementation](doc/ref_impl)
