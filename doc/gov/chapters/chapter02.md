@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
-* [2.2 Heading](#2.2)
+* [2.2 Heading TEST](#2.2)
 * [2.3 Heading](#2.3)
 
 <a name="2.1"></a>
