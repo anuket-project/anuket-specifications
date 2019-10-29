@@ -790,6 +790,33 @@ The following five test categories have been identified as minimal testing requi
 
 <p>Respective test cases can be found in the <a title="Annex for Chapter 8" href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08-annex.md" target="_blank" rel="noopener">Annex for Chapter 8</a>.</p>
 
+
+### 8.7.10 Test Case Selection Requirements
+
+This section lists requirements test cases must fulfill to be eligable for
+inclusion in the NFVI and/or VNF compliance test suite.  These requirements act
+as a checklist to gate the inclusion of test cases.
+
+
+| Ref # | Category   | Description |
+|----|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.tests.01` | Implementation | Test cases and tools **must** be implemented in an open source project and publicly available. |
+| `req.tests.02` | Implementation | Test cases and tools **should** be self-contained and not require downloading additional data from external systems at runtime. |
+| `req.tests.03` | Implementation | Test cases and tools **must not** require dynamic interaction with external systems or resources, e.g., of OPNFV, LFN or others. |
+| `req.tests.04` | Implementation | Test cases and tools **must** generate machine- and human-readable output, i.e. logs and result files. |
+| `req.tests.05` | Implementation | The execution of all test case **must** be idem-potent, i.e., test cases handle setup and teardown of resources and revert state changes of the system under test performed by the test case. |
+| `req.tests.06` | Implementation | Test cases and tools **must** run against a fully deployed and operational system under test, i.e., not isolated individual components. |
+| `req.tests.07` | Implementation | Test cases and tools **must not** require un-merged patches to the relevant upstream projects. |
+| `req.tests.08` | Implementation | Test tools **must** allow selective execution of individual test cases even if test cases are part of a larger test suite. |
+| `req.tests.09` | Implementation | NFVI tests and test tools **must** run independently of the method of NFVI platform installation. |
+| `req.tests.10` | Implementation | NFVI tests and test tools **must** run independently of platform components not specified in the corresponding reference archiecture, i.e., allowing different backend implementations such as storage backends or SDN controllers. |
+| `req.tests.11` | Documentation  | Test cases and tools **must** be documented, comprising a reference to all targeted reference architectures, pre- and post-conditions, basic test flow execution, and pass/fail criteria. |
+| `req.tests.12` | Documentation  | Documentation of test cases and tools **must** be publicly available. |
+| `req.tests.13` | Maturity       | Test projects providing test cases **must** be mature and active to ensure availability and maintenance of test case implementations over an extended period of time. Criteria for maturity include code quality, test coverage, release history of the project, release cadence, and contributer base. |
+| `req.tests.14` | Scope          | Test cases **must** pass on all reference implementations of the targeted reference architecture in the OPNFV CI/CD pipeline. |
+| `req.tests.15` | Scope          | Test cases **must** be traceable to a requirement based on the reference model or a reference architecture. |
+
+
 <a name="8.8"></a>
 ## 8.8 Test Results
 
