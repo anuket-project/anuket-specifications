@@ -6,14 +6,13 @@
  ______________________________________________________________
 ## Table of Contents
 
-* [4.1 Capabilities and Performance Measurements](#4.1)
+* [4.1 Capabilities](#4.1)
   * [4.1.1 Exposed vs Internal](#4.1.1)
   * [4.1.2 Exposed Infrastructure Capabilities](#4.1.2)
-  * [4.1.3 Exposed Infrastructure Measurements](#4.1.3)
-  * [4.1.4 Internal Infrastructure Capabilities](#4.1.4)
-  * [4.1.5 Internal Infrastructure Measurements](#4.1.5)
-  * [4.1.6 VIM Capabilities](#4.1.6)
-  * [4.1.7 VIM Measurements](#4.1.7)
+  * [4.1.3 Internal Infrastructure Capabilities](#4.1.3)
+  * [4.1.4 Internal Infrastructure Measurements](#4.1.4)
+  * [4.1.5 VIM Capabilities](#4.1.5)
+  * [4.1.6 VIM Measurements](#4.1.6)
 * [4.2 Catalogue](#4.2)
   * [4.2.1 Compute Flavours](#4.2.1)
   * [4.2.2 Virtual Network Interface Specifications](#4.2.2)
@@ -25,7 +24,7 @@
 * [4.3 Networking](#4.2)
 
 <a name="4.1"></a>
-## 4.1 Capabilities and Performance Measurements
+## 4.1 Capabilities
 
 <a name="4.1.1"></a>
 ### 4.1.1 Exposed vs Internal
@@ -107,48 +106,24 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
 <a name="4.1.3"></a>
-### 4.1.3 Exposed Infrastructure Performance Measurements
-The intent of the following PMs is to be available for and well known to VNFs.
-
-<a name="4.1.3.1"></a>
-#### 4.1.3.1 Exposed Performance Measurements
-
-The following table of exposed Performance Measurements shows PMs per VNFC, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed PMs use a single VNF (PVP) dataplane test setup in a single host.
-
-<a name="Table4-4"></a>
-
-| Ref                | NFVI Measurement               | Unit                | Definition/Notes                                             |
-| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
-| e.nfvi.per.met.001 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.003 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
-| e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
-| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
-| e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
-
-<p align="center"><b>Table 4-4:</b> Exposed Performance Measurements of NFVI</p>
-
-
-<a name="4.1.4"></a>
-### 4.1.4 Internal Infrastructure Capabilities
+### 4.1.3 Internal Infrastructure Capabilities
 
 This section covers a list of implicit NFVI capabilities and measurements that define an NFVI. These capabilities and metrics determine how the NFVI behaves internally. They are hidden from VNFs (i.e. VNFs may not know about them) but they will impact the overall performance and capabilities of a given NFVI solution.
 
 >_**Note**:  It is expected that implicit NFVI capabilities and metrics will evolve with time as more capabilities are added as technology enhances and matures._
 
-<a name="4.1.4.1"></a>
-#### 4.1.4.1 Internal Resource Capabilities
-**Table 4-5** shows resource capabilities of NFVI. These include capabilities offered to VNFs and resources consumed internally by NFVI.
+<a name="4.1.3.1"></a>
+#### 4.1.3.1 Internal Resource Capabilities
+**Table 4-4** shows resource capabilities of NFVI. These include capabilities offered to VNFs and resources consumed internally by NFVI.
 
-<a name="Table4-5"></a>
+<a name="Table4-4"></a>
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|---------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.res.cap.001 | CPU cores consumed by NFVI overhead in a compute node. | % (of total available) | Indicates the percentage of cores consumed by NFVI components (including host OS) in a compute node. |
 | i.nfvi.res.cap.002 | Memory consumed by NFVI overhead in a compute node. | % (of total available) | Indicates the percentage of memory consumed by NFVI components (including host OS) in a compute node. |
 
-<p align="center"><b>Table 4-5:</b> Internal Resource Capabilities of NFVI</p>
+<p align="center"><b>Table 4-4:</b> Internal Resource Capabilities of NFVI</p>
 
 <!--
 /* MXS 13/7/2019 - Mapping table 3-14 is being commented out. If someone can provide supporting details,
@@ -164,38 +139,38 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 <p align="center"><b>Table 3-14:</b> Mapping of Internal resource capabilities to NFVI instance types.</p>
 //
 -->
-<a name="4.1.4.2"></a>
-#### 4.1.4.2 Internal SLA capabilities
+<a name="4.1.3.2"></a>
+#### 4.1.3.2 Internal SLA capabilities
 
-**Table 4-6** below shows SLA (Service Level Agreement) capabilities of NFVI. These include NFVI capabilities required by VNFs as well as required internal to NFVI. Application of these capabilities to a given workload is determined by its instance type (e.g. T-Shirt size).
+**Table 4-5** below shows SLA (Service Level Agreement) capabilities of NFVI. These include NFVI capabilities required by VNFs as well as required internal to NFVI. Application of these capabilities to a given workload is determined by its instance type (e.g. T-Shirt size).
 
-<a name="Table4-6"></a>
+<a name="Table4-5"></a>
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.sla.cap.001 | CPU overbooking | 1:N | <definition update scheduled> |
 | i.nfvi.sla.cap.002 | vNIC QoS | Yes/No | QoS enablement |
 
-<p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
+<p align="center"><b>Table 4-5:</b> Internal SLA capabilities to NFVI</p>
 
-<a name="4.1.4.3"></a>
-#### 4.1.4.3 Internal Performance Optimisation Capabilities
-**Table 4-7** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNFC
+<a name="4.1.3.3"></a>
+#### 4.1.3.3 Internal Performance Optimisation Capabilities
+**Table 4-6** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNFC
 
-<a name="Table4-7"></a>
+<a name="Table4-6"></a>
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|----------------------------------------|
 | i.nfvi.per.cap.001 | Huge page support | Yes/No | Determining if NFVI support huge pages |
 
-<p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of NFVI</p>
+<p align="center"><b>Table 4-6:</b> Internal performance optimisation capabilities of NFVI</p>
 
-<a name="4.1.4.4"></a>
-#### 4.1.4.4 Internal Performance Measurement Capabilities
+<a name="4.1.3.4"></a>
+#### 4.1.3.4 Internal Performance Measurement Capabilities
 
-**Table 4-8** shows possible performance measurement capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by the workloads.
+**Table 4-7** shows possible performance measurement capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by the workloads.
 
-<a name="Table4-8"></a>
+<a name="Table4-7"></a>
 
 | Ref | NFVI Measurement | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -207,17 +182,17 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 | i.nfvi.mon.cap.006 | Measurement of external storage throughput | Yes/No | Programmable Acceleration |
 | i.nfvi.mon.cap.007 | Available external storage capacity | Yes/No |  |
 
-<p align="center"><b>Table 4-8:</b> Internal Measurement Capabilities of NFVI</p>
+<p align="center"><b>Table 4-7:</b> Internal Measurement Capabilities of NFVI</p>
 
-<a name="4.1.4.5"></a>
-#### 4.1.4.5 Internal Security Capabilities
+<a name="4.1.3.5"></a>
+#### 4.1.3.5 Internal Security Capabilities
 
 Security content has been relocated to the Security chapter (RM Chapter 7).
 
-Table 4-9: Reserved
+Table 4-8: Reserved
 
 <!--
-<a name="Table4-9"></a>
+<a name="Table4-8"></a>
 //
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------|--------|------------------------------------------------------------------|
@@ -225,42 +200,14 @@ Table 4-9: Reserved
 | i.nfvi.sec.cap.002 | VNFC -> Host | Yes/No | Can VNFC access host memory? |
 | i.nfvi.sec.cap.003 | Host -> VNFC | Yes/No | Can Host access VNFC memory? |
 | i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest? |
-<p align="center"><b>Table 4-9:</b> Internal security capabilities of NFVI.</p>
+<p align="center"><b>Table 4-8:</b> Internal security capabilities of NFVI.</p>
 -->
 
-<a name="4.1.5"></a>
-### 4.1.5 Internal Infrastructure Performance Measurements
-<!--
-[COMMENT - Xavier Grall, Orange: section "3.4.2.3 Internal SLA metrics" is removed since it is redundant with network performance metrics]
-//
-[COMMENT - Xavier Grall, Orange: section "3.4.2.4 Internal scalability metrics" is removed since it is redundant with resource management metrics]
--->
-<a name="4.1.5.1"></a>
-#### 4.1.5.1 Internal Performance Measurements
-<!--
-[COMMENT - Xavier Grall, Orange: the mapping table is removed since those reference values will depend on architecture and implementation, and/or may be derived for different cases (eg w/ or w/o filtering rules for network throughput) ]
--->
+<a name="4.1.4"></a>
+### 4.1.4 Internal Infrastructure Performance Measurements
 
-The following table of internal Performance Measurements shows PMs per NFVI node. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically internal performance metrics use a baseline (Phy2Phy) dataplane test setup in a single host.
-
-<a name="Table4-10"></a>
-
-| Ref | NFVI Measurement | Unit | Definition/Notes |
-|--------------------|------------------------------------------------------|----------------|----------------------------------------------------------------------|
-| i.nfvi.per.met.001 | Network throughput | frames/s | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| i.nfvi.per.met.002 | Simultaneous active flows | number | Max simultaneous active L4 flows per node before a new flow is dropped |
-| i.nfvi.per.met.003 | New flows rate               | flows/s  | Max new L4 flow rate per node                                |
-| i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per core and with all cores running multiple parallel workloads|
-| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNFC (but fully ready for it) |
-| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
-| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
-
-<p align="center"><b>Table 4-10:</b> Internal Performance Measurements of NFVI</p>
-
-It should be noted that energy-related metrics must only be considered for NFVI software running on a same NFVI hardware implementation (since energy consumption may be very different across processor architecures, models and power management features).
-
-<a name="4.1.5.2"></a>
-#### 4.1.5.2 Internal Availability/Reliability Measurements
+<a name="4.1.4.1"></a>
+#### 4.1.4.1 Internal Availability/Reliability Measurements
 
 <!-- Xavier Grall, Orange -->
 _**Editor Note:** the following table should be reviewed to only consider and probably detail the recovery-related PMs; indeed, availability and MTBF PMs do not seem consistent with expected testbed measurement duration]_
@@ -272,7 +219,7 @@ _**Editor Note:** the following table should be reviewed to only consider and pr
 <!-- MXS - 13/7/2019 To-do -->
 _**Editor Note:** This table needs to be reworked and clarified w/ clear explanations and assumptions stated._
 
-<a name="Table4-11"></a>
+<a name="Table4-9"></a>
 
 | Ref | NFVI Measurement | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
@@ -281,16 +228,16 @@ _**Editor Note:** This table needs to be reworked and clarified w/ clear explana
 | i.nfvi.arl.met.003 | MTBF AZ | days | Mean Time between Failure for an   AZ |
 | i.nfvi.arl.met.004 | Recovery time | seconds |  |
 
-<p align="center"><b>Table 4-11:</b> Internal availability/reliability metrics of NFVI</p>
+<p align="center"><b>Table 4-9:</b> Internal availability/reliability metrics of NFVI</p>
 
-<a name="4.1.6"></a>
-### 4.1.6 VIM Capabilities.
+<a name="4.1.5"></a>
+### 4.1.5 VIM Capabilities.
 
 VIM is responsible for controlling and managing the NFVI compute, storage and network resources. Resources allocation is dynamically set up upon VNFs requirements. This section covers the list of capabilities offered by the VIM to VNFs or service orchestrator.
 
 Table 4-12 shows capabilities related to resources allocation
 
-<a name="Table4-12"></a>
+<a name="Table4-10"></a>
 
 | Ref | VIM Capability | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
@@ -300,12 +247,12 @@ Table 4-12 shows capabilities related to resources allocation
 | e.vim.res.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
 | e.vim.res.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
 
-<p align="center"><b>Table 4-12:</b> VIM Resource Allocation Capabilities</p>
+<p align="center"><b>Table 4-10:</b> VIM Resource Allocation Capabilities</p>
 
 
 Table 4-13 Shows performance measurement capabiltities
 
-<a name="Table4-13"></a>
+<a name="Table4-11"></a>
 
 | Ref | VIM Capability | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
@@ -314,7 +261,7 @@ Table 4-13 Shows performance measurement capabiltities
 | e.vim.mon.cap.003 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
 | e.vim.mon.cap.004 |Virtual resources Fault information | Yes/No | Capability to collect and notify fault information on virtualised resources |
 
-<p align="center"><b>Table 4-13:</b> VIM Resource Performance Measurement Capabilities</p>
+<p align="center"><b>Table 4-11:</b> VIM Resource Performance Measurement Capabilities</p>
 
 Table 4-14: Reserved
 
@@ -329,14 +276,14 @@ Table 4-14 shows security capabilities
 -->
 
 
-<a name="4.1.7"></a>
-### 4.1.7 VIM Performance Measurements
+<a name="4.1.6"></a>
+### 4.1.6 VIM Performance Measurements
 
-<a name="4.1.7.1"></a>
-#### 4.1.7.1 Resources Management Measurements
-**Table 4-15** shows resource management measurements of VIM as aligned with ETSI GS NFV TST-012 [3].
+<a name="4.1.6.1"></a>
+#### 4.1.6.1 Resources Management Measurements
+**Table 4-12** shows resource management measurements of VIM as aligned with ETSI GS NFV TST-012 [3].
 
-<a name="Table4-15"></a>
+<a name="Table4-12"></a>
 
 | Ref | VIM Measurement | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
@@ -353,9 +300,9 @@ Table 4-14 shows security capabilities
 | vim.rmt.met.011 | Time to update external virtual   network | Max ms |  |
 | vim.rmt.met.014 | Time to create external storage ready for use by VNF | Max ms |  |
 
-<p align="center"><b>Table 4-15:</b> VIM Resource Management Measurements</p>
+<p align="center"><b>Table 4-12:</b> VIM Resource Management Measurements</p>
 
-<a name="4.1"></a>
+<a name="4.2"></a>
 ## 4.2 Infrastructure Profiles Catalogue
 
 Infrastructure exposes compute Flavours with options, virtual interface options, storage extensions, and acceleration extensions to VNFs. These NFVI Profiles are offered to VNFs in the form of infrastructure instance types with their corresponding options and extensions.
@@ -380,7 +327,7 @@ Memory |Virtual compute instance memory in megabytes.
 Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
 Management Interface |Specifies the bandwidth of management interface/s
 
-<p align="center"><b>Table 4-16:</b> Compute Flavour Geometry Specification.</p>
+<p align="center"><b>Table 4-13:</b> Compute Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Predefined Compute Flavours
@@ -397,7 +344,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 .2xlarge* |8 |16 GB |160 GB |1 Gbps
 .4xlarge* |16 |32 GB |320 GB |1 Gbps
 
-<p align="center"><b>Table 4-17:</b> Predefined Compute Flavours.</p>
+<p align="center"><b>Table 4-14:</b> Predefined Compute Flavours.</p>
 
 > _*These compute Flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller Flavours and adopt microservices-based designs for their VNFs_
 
@@ -422,7 +369,7 @@ n25, n50, n75, n100, n125, n150 |25, 50, 75, 100, 125, 150 Gbps
 n50, n100, n150, n200, n250, n300 |50, 100, 150, 200, 250, 300 Gbps
 n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 
-<p align="center"><b>Table 4-18:</b> Virtual Network Interface Specification Examples</p>
+<p align="center"><b>Table 4-15:</b> Virtual Network Interface Specification Examples</p>
 
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
@@ -435,12 +382,11 @@ Multiple persistent storage extensions can be attached to virtual compute instan
 .silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400
 .gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400
 
-<p align="center"><b>Table 4-19:</b> Storage Performance Profiles</p>
+<p align="center"><b>Table 4-16:</b> Storage Performance Profiles</p>
 
 Note, performance is based on a block size of 256KB or larger.
 
 <a name="4.2.3.1"></a>
-
 #### 4.2.3.1 Available Storage Extensions
 The following table defines persistent storage extensions that can be provided to VNFs for data storage. More than one storage extension can be provided to a single VNFC. The option selected determines both the size and the performance of the extension.
 
@@ -456,7 +402,7 @@ The following table defines persistent storage extensions that can be provided t
 | .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 
-<p align="center"><b>Table 4-20:</b> Storage Extension Options</p>
+<p align="center"><b>Table 4-17:</b> Storage Extension Options</p>
 
 <a name="4.2.4"></a>
 ### 4.2.4 Instance types
@@ -478,7 +424,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 | .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
 | .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
 
-<p align="center"><b>Table 4-21:</b> Acceleration Extensions for N Instance Type</p>
+<p align="center"><b>Table 4-18:</b> Acceleration Extensions for N Instance Type</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -494,7 +440,7 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
 | .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
 
-<p align="center"><b>Table 4-22:</b> Acceleration Extensions for C Instance Type</p>
+<p align="center"><b>Table 4-19:</b> Acceleration Extensions for C Instance Type</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -510,7 +456,7 @@ n25, n50, n75, n100, n125, n150 | N | Y | Y
 n50, n100, n150, n200, n250, n300 | N | Y | Y
 n100, n200, n300, n400, n500, n600 | N | Y | N
 
-<p align="center"><b>Table 4-23:</b> Virtual NIC Interfaces Options</p>
+<p align="center"><b>Table 4-20:</b> Virtual NIC Interfaces Options</p>
 
 > _*VNFs are expected to use the minimum number of interfaces and adopt Microservice design principles._
 
@@ -542,7 +488,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
 
 
-<p align="center"><b>Table 4-24:</b> Mapping of NFVI Capabilities to Instance Types</p>
+<p align="center"><b>Table 4-21:</b> Mapping of NFVI Capabilities to Instance Types</p>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Instance Performance Measurement Mapping
@@ -566,7 +512,7 @@ Whereas:
 - **\<A ext>**: specifies an optional acceleration extension for either N or H instance types.
 
 <p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="100%"/></p>
-<p align="center"><b>Figure 4-3:</b> Infrastructure Instances Catalogue</p>
+<p align="center"><b>Figure 4-22:</b> Infrastructure Instances Catalogue</p>
 
 <a name="4.3"></a>
 ## 4.3 Networking
