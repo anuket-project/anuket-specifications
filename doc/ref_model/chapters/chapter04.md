@@ -491,15 +491,10 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <p align="center"><b>Table 4-21:</b> Mapping of NFVI Capabilities to Instance Types</p>
 
 <a name="4.2.6"></a>
-### 4.2.6 Instance Performance Measurement Mapping
+### 4.2.6 One stop shop
 
-_**Comment:** To be worked on._
-
-<a name="4.2.7"></a>
-### 4.2.7 One stop shop
-
-<a name="4.2.7.1"></a>
-#### 4.2.7.1 Naming convention
+<a name="4.2.6.1"></a>
+#### 4.2.6.1 Naming convention
 An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
 
 `B/N/C <I opt> . <Flavour> . <S ext> . <A ext>`
