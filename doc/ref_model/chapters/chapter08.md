@@ -874,8 +874,8 @@ They should allow to validate the performance of any software and/or hardware NF
 
 Of course, they can also be used for other purposes, as:
 
-- fine tuning of software and/or hardware NFVI configuration (e.g., the number of cores dedicated to the dpdk vswitch)
-- comparison of the performance of different software or hardware technologies (e.g., dpdk vswitch vs hardware-offloaded vswitch)
+- fine tuning of software and/or hardware NFVI configuration (e.g., the number of cores dedicated to the DPDK vSwitch)
+- comparison of the performance of different software or hardware technologies (e.g., DPDK vSwitch vs hardware-offloaded vSwitch)
 - assessing the performance impact of specific features (e.g., with or without encapsulation) 
 
 
