@@ -791,9 +791,10 @@ The following five test categories have been identified as minimal testing requi
 <p>Respective test cases can be found in the <a title="Annex for Chapter 8" href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08-annex.md" target="_blank" rel="noopener">Annex for Chapter 8</a>.</p>
 
 
+<a name="8.7.10"></a>
 ### 8.7.10 Test Case Selection Requirements
 
-This section lists requirements test cases must fulfill to be eligable for
+This section lists requirements test cases must fulfill to be eligible for
 inclusion in the NFVI and/or VNF compliance test suite.  These requirements act
 as a checklist to gate the inclusion of test cases.
 
