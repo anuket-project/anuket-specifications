@@ -200,11 +200,11 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 | Ref | NFVI Measurement | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
-| i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
+| i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  |  |
 | i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
 | i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
-| i.nfvi.mon.cap.005 | Measurement of external storage IOPS | Yes/No | Transcoding Acceleration |
-| i.nfvi.mon.cap.006 | Measurement of external storage throughput | Yes/No | Programmable Acceleration |
+| i.nfvi.mon.cap.005 | Measurement of external storage IOPS | Yes/No |  |
+| i.nfvi.mon.cap.006 | Measurement of external storage throughput | Yes/No | |
 | i.nfvi.mon.cap.007 | Available external storage capacity | Yes/No |  |
 
 <p align="center"><b>Table 4-8:</b> Internal Measurement Capabilities of NFVI</p>
