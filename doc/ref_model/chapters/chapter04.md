@@ -59,9 +59,9 @@ This section describes a set of explicit NFVI capabilities and performance measu
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
-| e.nfvi.res.cap.001 | #vCPU | number | Min, Max number of vCPU that can be assigned to a single VNFC |
-| e.nfvi.res.cap.002 | Amount of RAM (MB) | MB | Min, Max memory in MB that can be assigned to a single VNFC by NFVI. |
-| e.nfvi.res.cap.003 | Total amount of instance (ephemeral) storage (GB) | GB | Min, Max storage in GB that can be assigned to a single VNFC by NFVI |
+| e.nfvi.res.cap.001 | #vCPU | number | Maximum number of vCPU that can be assigned to a single VNFC |
+| e.nfvi.res.cap.002 | Amount of RAM (MB) | MB | Maximum memory in MB that can be assigned to a single VNFC by NFVI. |
+| e.nfvi.res.cap.003 | Total amount of instance (ephemeral) storage (GB) | GB | Maximum storage in GB that can be assigned to a single VNFC by NFVI |
 | e.nfvi.res.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNFC by NFVI. |
 | e.nfvi.res.cap.005 | Total amount of external (persistent) storage (GB) | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI. |
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of NFVI</p>
