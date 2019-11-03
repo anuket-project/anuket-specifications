@@ -51,9 +51,9 @@
 > This chapter should describe which service meshes are part of the Reference Architecture. For the shake of simplcity this chapter should discuss both the "normal" service meshes and Network Service Mesh.
 
 <a name="4.8"></a>
-## 4.8 Container package managers
+## 4.8 Kubernetes Application package manager
 
-The reference architecture should include [Helm v3](https://v3.helm.sh/).
+The reference architecture must include [Helm v3](https://v3.helm.sh/).
 
 <a name="4.9"></a>
 ## 4.9 Supplementary components (okay, this is a bad heading, but I do not have any better)
