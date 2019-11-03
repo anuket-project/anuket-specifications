@@ -45,7 +45,7 @@
 <a name="3.2.4"></a>
 ### 3.2.4 Container Package Managers
 
-> This chapter shoud describe what type of container package manager (e.g.: Helm, [CNAB](https://cnab.io/)) related considerations 
+To manage complex applications consisting from several pods the reference architecture should provide a container package manager. The package manager shold be able to manage the lifecycle a set of pods and provide a framework to customize a set of parameters for the deployment.
 
 <a name="3.3"></a>
 ## 3.3 Heading

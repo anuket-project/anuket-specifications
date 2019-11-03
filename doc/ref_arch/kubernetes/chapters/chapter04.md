@@ -53,7 +53,7 @@
 <a name="4.8"></a>
 ## 4.8 Container package managers
 
-> This chapter should describe which container package managers are used in the Reference Architecture. 
+The reference architecture should include [Helm v3](https://v3.helm.sh/).
 
 <a name="4.9"></a>
 ## 4.9 Supplementary components (okay, this is a bad heading, but I do not have any better)
