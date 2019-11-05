@@ -31,6 +31,8 @@ The Reference Model (RM) defines the NFVI to consist of the physical resources, 
 
 Containerised Infrastructure Manager (CIM): a functional block that is responsible for controlling and managing the containerised NFVI compute, storage and network resources. Note CIM supports the Life Cycle Management of conatinerised and the underlying physical resources.
 
+"Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Model Chapter 3) and consists of the Physical resources, virtual and container resources, and Software Management Layer (Hypervisor, Container runtime, virtual or container Orcehstrator(s), Operating System).
+
 <a name="2.3.1"></a>
 ### 2.3.1 General
 
@@ -40,10 +42,11 @@ Containerised Infrastructure Manager (CIM): a functional block that is responsib
 | `req.gen.k8s.02` | Open source | The Architecture **must** support dynamic request and configuration of resources (compute, network, storage) through Kubernetes APIs. |
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. |
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. |
-| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven horizontal auto-scaling. |
+| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven horizontal auto-scaling of workloads. |
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for Kubernetes components. |
+| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, Compute Intensive). |
 
 
 <p align="center"><b>Table 2-1:</b> Containerised Platform: General Requirements.</p>
@@ -55,8 +58,9 @@ Containerised Infrastructure Manager (CIM): a functional block that is responsib
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for Pods.  |
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
+| `req.inf.com.03` | Network | The Architecture **must** support Conatiner Runtime Interfgace (CRI). |
 | `req.inf.stg.01` | Storage | The Architecture **must** provide shared Block storage for Containers.
-| `req.inf.stg.02` | Storage | The Architecture **must** provide shared Object storage for Containers.
+| `req.inf.stg.02` | Storage | The Architecture **may** provide shared Object storage as a service for Containers.
 | `req.inf.stg.03` | Storage | The Architecture **may** provide local file system storage solution for Containers.
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
 | `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable storage. |
@@ -73,10 +77,14 @@ Containerised Infrastructure Manager (CIM): a functional block that is responsib
 | `req.inf.ntw.11` | Network | The SDN solution **should** be configurable in an automated manner using openly published API definitions. |
 | `req.inf.ntw.12` | Network | The SDN solution **should** be able to be centrally administrated and configured. |
 | `req.inf.ntw.13` | Network | The Architecture **must** support dual stack IPv4 and IPv6 in Pods and Services. |
+| `req.inf.ntw.14` | Network | The Architecture **must** support Conatiner Network Interfgace (CNI). |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
+| req.inf.vir.01   | Virtualisation |   The Architecture **must** support the capability for Containers to consume virtualised compute, storage and network resources.|
+| req.inf.phy.01  |  Physical Infrastructure |   The Architecture **must** support the capability for Containers to consume physical (aka bare metal) compute, storage and network resources. |
 
 <p align="center"><b>Table 2-2:</b> Containerised Platform: Infrastructure Requirements.</p>
+Please note that "shared" is a reference to multi-tenant support and pooled storage resources.
 
 <a name="2.3.3"></a>
 ### 2.3.3 Containerised Infrastructure Management (CIM)
@@ -106,7 +114,7 @@ Containerised Infrastructure Manager (CIM): a functional block that is responsib
 <p align="center"><b>Table 2-4:</b> Containerised Platform: Interfaces and APIs Requirements. </p>
 
 <a name="2.3.5"></a>
-### 2.3.5 LCM
+### 2.3.5 Operations and LCM of the Infrastructure
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -114,7 +122,7 @@ Containerised Infrastructure Manager (CIM): a functional block that is responsib
 | `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites. |
 | `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
 | `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **should** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
+| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
 | `req.lcm.cid.02` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
 
@@ -141,6 +149,10 @@ Containerised Infrastructure Manager (CIM): a functional block that is responsib
 | `req.sec.gen.01` | General | The Architecture **must** provide workload isolation. |
 | `req.sec.gen.02` | General | The Architecture **must** support policy based RBAC. |
 | `req.sec.gen.03` | General | The Architecture **must** support a centralised authentication and authorisation mechanism. |
+| `req.sec.gen.04` | General | The Architecture **must** provide Operating System kernel isolation. |
+| `req.sec.gen.05` | General | The Architecture **must** provide comoute resources isolation. |
+| `req.sec.gen.06` | General | The Architecture **must** provide storage resources isolation. |
+| `req.sec.gen.07` | General | The Architecture **must** provide network resources isolation. |
 | `req.sec.zon.01` | Zoning | The Architecture **must** support identity management. |
 | `req.sec.zon.02` | Zoning | The Architecture **must** support password encryption. |
 | `req.sec.zon.03` | Zoning | The Architecture **must** support data, at-rest and in-flight, encryption. |
