@@ -26,6 +26,8 @@ Traceability to Reference Model.
 <a name="2.3"></a>
 ## 2.3 Architecture and OpenStack Requirements.
 
+"Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Model Chapter 3) and consists of the Physical resources, virtual and container resources, and Software Management Layer (Hypervisor, Container runtime, virtual or container Orcehstrator(s), Operating System).
+
 <a name="2.3.1"></a>
 ### 2.3.1 General
 
@@ -53,17 +55,19 @@ Traceability to Reference Model.
 | `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. |
 | `req.inf.com.04` | Compute | The Architecture **must** be able to support multiple CPU SKU options to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
 | `req.inf.com.05` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.|
-| `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning.|
+| `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning of the CPUs of VM instance.|
 | `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
-| `req.inf.stg.01` | Storage | The Architecture **must** provide shared Block storage for VM Instances.
-| `req.inf.stg.02` | Storage | The Architecture **must** provide shared Object storage for VM Instances.
-| `req.inf.stg.03` | Storage | The Architecture **may** provide local file system storage solution for VM Instances.
+| `req.inf.com.08` | Compute | The Architecture **must** support certain vCPUs of a host to be dedicated for non-tenant workloads such as for OpenStack services.|
+| `req.inf.stg.01` | Storage | The Architecture **must** provide remote Block storage for VM Instances. |
+| `req.inf.stg.02` | Storage | The Architecture **should** provide Object storage for VM Instances. |
+| `req.inf.stg.03` | Storage | The Architecture **may** provide a file system service (file system storage solution) for VM Instances. |
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
 | `req.inf.stg.05` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. |
 | `req.inf.stg.06` | Storage | The Architecture **should** make the immutable images available via location independent means. |
 | `req.inf.stg.07` | Storage | The Architecture **should** provide high-performance and horizontally scalable VM storage. |
 | `req.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. |
 | `req.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. |
+| `req.inf.stg.10` | Storage | The Architecture **should** provide local Block storage for VM Instances. |
 | `req.inf.ntw.01` | Network | The Architecture **must** provide virtual network interfaces to VM instances. |
 | `req.inf.ntw.02` | Network | The Architecture **must** include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs. |
 | `req.inf.ntw.03` | Network | The Architecture **must** support low latency and high throughput traffic needs. |
@@ -73,7 +77,7 @@ Traceability to Reference Model.
 | `req.inf.ntw.07` | Network | The Architecture **must** support network resiliency. |
 | `req.inf.ntw.08` | Network | The NFVI Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. |
 | `req.inf.ntw.09` | Network | The NFVI Network Fabric **should** embrace open-based standards and technologies. |
-| `req.inf.ntw.10` | Network | The NFVI Network Fabric **must** be capable of supporting highly available (Five 9’s or better) VNF workloads. |
+| `req.inf.ntw.10` | Network | The NFVI Network Fabric **must** be capable of enabling highly available (Five 9’s or better) NFVI. |
 | `req.inf.ntw.11` | Network | The NFVI Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites. |
 | `req.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. |
 | `req.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. |
@@ -129,7 +133,7 @@ Traceability to Reference Model.
 <p align="center"><b>Table 2-5:</b> OpenStack Tenants Requirements.</p>
 
 <a name="2.3.6"></a>
-### 2.3.6 LCM
+### 2.3.6 Operations and LCM
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -169,11 +173,11 @@ Traceability to Reference Model.
 | `req.sec.zon.04` | Zoning | The Architecture **must** support integration with Corporate Identity Management systems. |
 | `req.sec.cmp.02` | Compliance | The Architecture **must** comply with all applicable standards and regulations. |
 | `req.sec.cmp.03` | Compliance | The Architecture **must** comply with all applicable regional standards and regulations. |
-| `req.sec.ntw.01` | Networking | The Architecture **must** have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework. |
-| `req.sec.ntw.02` | Networking | The Architecture **must** have all security logs stored in accordance with ISO27001. |
+| `req.sec.ntw.01` | Networking | The Architecture **must** have the underlay network include strong access controls that comply with the applicable security standard (national, regional), for example ISO27001. |
+| `req.sec.ntw.02` | Networking | The Architecture **must** have all security logs stored in accordance with applicable security standard (national, regional), for example ISO27001. |
 | `req.sec.ntw.03` | Networking | The Architecture **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
 | `req.sec.ntw.04` | Networking | The Architecture **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. |
-
+| `req.sec.ntw.05` | Networking | The Architecture **must** have the underlay network include strong access controls that adhere to the V1.1 NIST Cybersecurity Framework. |
 <p align="center"><b>Table 2-8:</b> OpenStack Security Requirements.</p>
 
 <!--
