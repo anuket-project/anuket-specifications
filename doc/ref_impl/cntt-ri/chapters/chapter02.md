@@ -35,7 +35,7 @@ The implementation should follow all the requirement identified in the RA chapte
 
 The implementation **must** use open source software.
 
-The implementation **may** use software version same or different from the main brance of upstream software
+The implementation **may** use software version same or different from the main branch of upstream software
 
 The implementation **must** use open source API as identified in the RA
 
@@ -47,7 +47,7 @@ The Implementation **must** support automatic deployment and configuration
 
 The implementation **must** follow generic installer requirements identified in the following chapters when deploy
 
-The implementation **must** be scaleble in order to fix into lab testing as well as large scale field deployment
+The implementation **must** be scalable in order to fix into lab testing as well as large scale field deployment
 
 The implementation **must** provide detailed capabilities needed so as to verify test cases for Reference compliance
 
@@ -57,7 +57,7 @@ The implementation **must** be capable of acting as 'golden NFVi' and support VN
 <a name="2.4"></a>
 ## 2.4 Typical Example for Reference Implementation
 
-The following figure explicitely shows a typicle example for reference implementation based on OpenStack. Note that this is just an example, actual
+The following figure explicitely shows a typical example for reference implementation based on OpenStack. Note that this is just an example, actual
 deployment can be varied in multiple aspects, including the number of VIM-ctrl, SDN/no-SDN, the number of network nodes and storage nodes and 
 leaf-spine/no leaf-spine. 
 
@@ -75,3 +75,5 @@ N compute nodes: support for cloud workload service identified in RA. (N>=2)
 
 Note that the number "N" can be defined according to the need for deployment or verification. It will be defined by actual work load that is going to run 
 on the cloud. N need to be equal or larger than 2 so as to fit into the requirement for resiliency.
+
+ 
