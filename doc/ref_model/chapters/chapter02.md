@@ -137,7 +137,7 @@ By trying to sort VNFs into different categories based on the requirements obser
 - **Profile One**
   - VNF types
     - Control plane functions without specific need, and management plane functions
-    - _Examples: PCRF, AAA, NMS_
+    - _Examples: OFCS, AAA, NMS_
   - No specific requirement
 - **Profile Two**
   - VNF types
@@ -169,14 +169,14 @@ By trying to sort VNFs into different categories based on the requirements obser
 
 Based on the above analysis, following NFVI profiles are proposed (Also shown in **Figure 2-1** below)
 
-- **Basic**: VNFs with VNFCs that perform basic compute operations.
-- **Network Intensive**: VNFs with VNFCs that perform network and compute intensive operations with high throughput and low latency requirements.
-- **Compute Intensive**: VNFs with VNFCs that perform compute intensive operations.
-- **Storage Intensive**: VNFs with VNFCs that perform storage intensive operations with high IOPS requirements. (_**Note:** Storage Intensive Profile will not be defined in initial CNTT releases_)
+- **Basic**: VNFCs that perform basic compute operations.
+- **Network Intensive**: VNFCs that perform network and compute intensive operations with high throughput and low latency requirements.
+- **Compute Intensive**: VNFCs that perform compute intensive operations.
+- **Storage Intensive**: VNFCs that perform storage intensive operations with high IOPS requirements. (_**Note:** Storage Intensive Profile will not be defined in initial CNTT releases_)
 
 >_**Note**: This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures._
 
-<p align="center"><img src="../figures/ch02_infra_profiles_v2.png" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/ch02_infra_profiles_v2.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
 On **Chapter 4** later in the document, those infrastructure profiles will be offered to VNFs in form of instance types: **B (Basic)**, **N (Network intensive)**, and **C (Compute intensive)** respectively.
