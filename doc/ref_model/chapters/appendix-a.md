@@ -6,7 +6,8 @@
 * [A.1 Goals](#A.1)
 * [A.2 Intro and Terminology](#A.2)
 * [A.3 VNF Maturity Levels](#A.3)
-* [A.4 Links](#A.3)
+* [A.4 Links](#A.4)
+* [A.5 Miscellaneous](#A.5)
 
 <a name="A.1"></a>
 ## A.1 Goals
@@ -26,3 +27,15 @@ The goal is not to be prescriptive on how to re-architect existing or architect 
 
 <a name="A.4"></a>
 ## A.4 Links
+
+
+<a name="A.5"></a>
+## A.5 Miscellaneous
+### A.5.1 VNF Network Monitoring Capabilities - UseCase.
+Network Monitoring capabilities exposed by NFVI Platform are used for the passive observation of VNF-specific traffic traversing the NFVI when:
+* Performance issues and/or packet drops reported in VNF
+* Determining performance bottle necks at VNF level
+* Doing anomaly detection and network forensics
+
+<b>Note: It is responsibility of NFVI Platform to expose such capabilities (like vTAP) to have visibility into VNF traffic.</b>
+
