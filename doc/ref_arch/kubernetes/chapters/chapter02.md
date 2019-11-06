@@ -10,7 +10,7 @@
 * [2.3 Kubernetes Architecture Requirements.](#2.3)
 
 <a name="2.1"></a>
-## 2.1 Introduction.
+## 2.1 Introduction
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
 
@@ -20,12 +20,12 @@
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 <a name="2.2"></a>
-## 2.2 Reference Model Requirements.
+## 2.2 Reference Model Requirements
 
 Traceability to Reference Model.
 
 <a name="2.3"></a>
-## 2.3 Kubernetes Architecture Requirements.
+## 2.3 Kubernetes Architecture Requirements
 
 The Reference Model (RM) defines the NFVI to consist of the physical resources, virtualised resources and a software managment system.  In the virtualised world, the NFVI Software Management System (Virtualised Infrastructure Manager -- VIM) consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  And the VIM is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management. Now consider, the containerisation equivalent.
 
@@ -49,7 +49,7 @@ Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Mo
 | `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, Compute Intensive). |
 
 
-<p align="center"><b>Table 2-1:</b> Kubernetes Architecture: General Requirements.</p>
+<p align="center"><b>Table 2-1:</b> Kubernetes Architecture: General Requirements</p>
 
 <a name="2.3.2"></a>
 ### 2.3.2 Infrastructure
@@ -83,7 +83,7 @@ Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Mo
 | `req.inf.vir.01`   | Virtualisation |   The Architecture **must** support the capability for Containers to consume virtualised compute, storage and network resources.|
 | `req.inf.phy.01`  |  Physical Infrastructure |   The Architecture **must** support the capability for Containers to consume physical (aka bare metal) compute, storage and network resources. |
 
-<p align="center"><b>Table 2-2:</b> Kubernetes Architecture: Infrastructure Requirements.</p>
+<p align="center"><b>Table 2-2:</b> Kubernetes Architecture: Infrastructure Requirements</p>
 Please note that "shared" is a reference to multi-tenant support and pooled storage resources.
 
 <a name="2.3.3"></a>
@@ -100,7 +100,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.cim.07` | General | The Architecture **must** support horizontal scaling. |
 | `req.cim.08` | General | The Architecture **must** support workload resiliency. |
 
-<p align="center"><b>Table 2-3:</b> Kubernetes Architecture: Kubernetes Cluster Requirements.</p>
+<p align="center"><b>Table 2-3:</b> Kubernetes Architecture: Kubernetes Cluster Requirements</p>
 
 <a name="2.3.4"></a>
 ### 2.3.4 Interfaces & APIs
@@ -111,7 +111,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.int.api.02` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. |
 
 
-<p align="center"><b>Table 2-4:</b> Kubernetes Architecture: Interfaces and APIs Requirements. </p>
+<p align="center"><b>Table 2-4:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
 <a name="2.3.5"></a>
 ### 2.3.5 Operations and LCM of the Infrastructure
@@ -126,7 +126,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
 | `req.lcm.cid.02` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
 
-<p align="center"><b>Table 2-5:</b> Kubernetes Architecture: Operations and LCM Requirements. </p>
+<p align="center"><b>Table 2-5:</b> Kubernetes Architecture: Operations and LCM Requirements </p>
 
 
 <a name="2.3.6"></a>
@@ -139,7 +139,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information. |
 | `req.asr.mon.04` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
 
-<p align="center"><b>Table 2-6:</b> Kubernetes Architecture: Assurance Requirements.</p>
+<p align="center"><b>Table 2-6:</b> Kubernetes Architecture: Assurance Requirements</p>
 
 <a name="2.3.7"></a>
 ### 2.3.7 Security
@@ -164,4 +164,4 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.sec.ntw.03` | Networking | The Architecture **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
 | `req.sec.ntw.04` | Networking | The Architecture **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. |
 
-<p align="center"><b>Table 2-7:</b> Kubernetes Architecture: Security Requirements. </p>
+<p align="center"><b>Table 2-7:</b> Kubernetes Architecture: Security Requirements </p>
