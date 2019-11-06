@@ -35,3 +35,18 @@ We need to distinguish between architectural principles and architectural requir
 1. **Security compliance:** To ensure the architecture follows the industry best security practices and is at all levels compliant to relevant security regulations.
 
 1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and to avoid Single Point of Failure.
+
+<a name="ra-relationship-scope"></a>
+## Reference Architectures Relationships and Scope
+
+<p align="center"><img src="./figures/ref_arch_relationships.png" alt="scope" title="Scope and Relationships" width="80%"/></p>
+
+RA1 is focussing on an OpenStack Reference Architecture that will support VM-based VNFs only (i.e. no containerised workloads), whilst delivering the NFVI and VIM requirements as outlined in the Reference Model.
+
+RA2 is adding to this by providing a Kubernetes Reference Architecture that will enable the support for Cloud native Network Functions (CNFs) that comprise of either containers or VMs (both of which would be managed through Kubernetes). Note that RA2 is not looking to support the running of VNFs through Kubernetes (this would likely invoke discussions relating to Kubernetes as a VIM, which is not appropriate at this time).
+
+Key notes:
+- The primary difference between VNF and CNF in this context is the maturity of the software to be able to make use of immutable infrastructure, not whether it is a VM or not
+- RA2 scope will include mention of Kubernetes cloud providers that may integrate with other clouds (i.e. other than OpenStack as defined in RA1)
+- For the purposes of a CNTT Reference Implementation / Reference Certification the only fully conformant implementation of Kubernetes will be a Kubernetes that is conformant with RA2 that is itself deployed on an OpenStack deployment that is conformant with RA1
+- Note, any gaps identified between the two (e.g. ability for RA1 to support bare metal containerisation) must be raised as Issues associated with the appropriate workstream
