@@ -52,7 +52,7 @@ The support of different workload types, each with different compute, storage, n
 Besides it may include optional information such area name, data center name etc.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | area_name | String | Yes | data center area name |
 | area_center_name | String | Yes | data center name, may compliance with a naming rule.  |
 | room_name | String | Yes | rome static data, helpful in locating issue occurred. |
