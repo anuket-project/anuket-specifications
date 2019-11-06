@@ -171,7 +171,7 @@ Based on the above analysis, following NFVI profiles are proposed (Also shown in
 
 - **Basic**: VNFCs that perform basic compute operations.
 - **Network Intensive**: VNFCs that perform network and compute intensive operations with high throughput and low latency requirements.
-- **Compute Intensive**: VNFCs that perform compute intensive operations (but do not have high network throughput and low latency requirements).
+- **Compute Intensive**: VNFCs that perform compute intensive operations.
 - **Storage Intensive**: VNFCs that perform storage intensive operations with high IOPS requirements. (_**Note:** Storage Intensive Profile will not be defined in initial CNTT releases_)
 
 >_**Note**: This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures._
