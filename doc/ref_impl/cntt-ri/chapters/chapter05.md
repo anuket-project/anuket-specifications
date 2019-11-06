@@ -28,7 +28,7 @@ It's installer's responsibility to translate the descriptor file to adapt with i
 Thanks to the descriptor file, the NFVi infrastructure deployment could be completed in one step run.
 
 | Ref # | sub-category | Description |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.gen.ins.01` | Installer | Installer **should** accept a descriptor file to finish deployment.|
 | `req.gen.ins.02` | Installer | Installer implementation **must** validate the descriptor file with schema.|
 | `req.gen.ins.03` | Installer | Any existing installer implementation **may** need adaption for the descriptor file. |
@@ -52,7 +52,7 @@ The support of different workload types, each with different compute, storage, n
 Besides it may include optional information such area name, data center name etc.
 
 | Field # | type | mandatory | Instruction |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | area_name | String | Yes | data center area name |
 | area_center_name | String | Yes | data center name, may compliance with a naming rule.  |
 | room_name | String | Yes | rome static data, helpful in locating issue occurred. |
