@@ -10,8 +10,11 @@
 
 <a name="5.1"></a>
 ## 5.1 Introduction
+
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference implementation and implemented by installer. The same applies to _must not_.
+
 **should**: Requirements that are marked as _should_ are expected to be fulfilled by the reference implementation but it is up to each installer to accept an implementation targeting this reference implementation that is not reflecting on any of those requirements. The same applies to _should not_.
+
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 <a name="5.2"></a>
@@ -23,7 +26,6 @@ It would specialize the installer type per user's implementation requirements.
 It would be validated at the very beginning of the deployment.
 It's installer's responsibility to translate the descriptor file to adapt with its own configuration. 
 Thanks to the descriptor file, the NFVi infrastructure deployment could be completed in one step run.
-
 
 | Ref # | sub-category | Description |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -55,7 +57,7 @@ Besides it may include optional information such area name, data center name etc
 | area_center_name | String | Yes | data center name, may compliance with a naming rule.  |
 | room_name | String | Yes | rome static data, helpful in locating issue occurred. |
 | city | String | Yes |  |
-| resourece_pool_name | String | Yes |  |
+| resource_pool_name | String | Yes |  |
 | outband_network_segment | String | Yes |  |
 | server_templates | List | Yes |  |
 | server_infos | List | Yes |  |
@@ -65,6 +67,7 @@ Besides it may include optional information such area name, data center name etc
 ### 5.3.2 Server template
 The server template describes the capability of the host like processor, memory, harddrive, raid, NIC/NIC binding, manufacturer, model etc.
 Server template would be assigned to multiple servers, i.e physicalhosts.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | template_name | String | Yes |  |
@@ -75,7 +78,7 @@ Server template would be assigned to multiple servers, i.e physicalhosts.
 | hard_drive | String | Yes |  |
 | raid | String | Yes |  |
 | network_controller_infos | List | Yes |  |
-| network_cart_bond_infos | List | Yes |  |
+| network_card_bond_infos | List | Yes |  |
 
 <p align="center"><b>Table 5-3-2:</b> Server template.</p>
 
@@ -105,7 +108,7 @@ It includes Virtualized Infrastructure Manager configurations,
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | vim_name | String | Yes | vim name |
 | vim_id | String | No | a name VIM Resource pool naming rule |
-| vendor | String | Yes | VIM Provider information, e.g. ZTE,Huawei,Ericssion,NOKIA|
+| vendor | String | Yes | VIM Provider information, e.g. ZTE,Huawei,Ericsson,NOKIA|
 | version | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | ip_version | String | Yes | Ipaddress type: IPV6 or IPV4 |
 | az_info | List | Yes | list of availability zone name designed for this VIM |
@@ -175,7 +178,8 @@ List of compute nodes that designed for current VIM deployment.
 | ceph_iscsi_gateway | String | Yes | splitted by semicolon if more than one. e.g 2409:8086:8412:10a::1;2409:8086:8412:10a::2|
 | ceph_manage_plane_address_segment | String | Yes | The address segment of ceph management plane. e.g 2409:8086:8412:100::/64|
 | ceph_storage_plane_address_segment | String | Yes | The address segment of ceph storage plane. e.g 2409:8086:8412:100::/64|
-| ceph_os_password | String | Yes | the tecs user's password of the ceph OS. |
+| ceph_os_user | String | Yes | the user of ceph OS. |
+| ceph_os_password | String | Yes | the user's password of ceph OS. |
 | ceph_manage_plane_float_ip | String | Yes |  |
 | ceph_network_manage_plane_float_ip | String | Yes |  |
 | zms_network_manage_admin_password | String | Yes |  |
@@ -216,8 +220,8 @@ DNS server informmation if VIM deployment requires.
 
 <p align="center"><b>Table 5-3-7:</b> DNS server information.</p>
 
-### 5.3.10 Deployment pc informations
-Investigating pc settings.
+### 5.3.10 Deployment host informations
+Deployment host setting, which should have the access for the openstack nodes network.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
