@@ -250,8 +250,6 @@ The following table of internal Performance Measurements shows PMs per NFVI node
 
 <p align="center"><b>Table 4-10:</b> Internal Performance Measurements of NFVI</p>
 
-It should be noted that energy-related metrics must only be considered for NFVI software running on a same NFVI hardware implementation (since energy consumption may be very different across processor architecures, models and power management features).
-
 <a name="4.1.5.2"></a>
 #### 4.1.5.2 Internal Availability/Reliability Measurements
 
