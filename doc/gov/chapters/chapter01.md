@@ -9,11 +9,11 @@
 * [1.3 Operational Scope](#1.3)
 
 <a name="1.1"></a>
-## 1.1 WHo We Are
+## 1.1 Who We Are
 
-The founding members of the Common NFVI Telco Task Force (CNTT) were AT&T, Vodafone, Verizon, Deutsche Telecom, Orange, and China Mobile. Soon thereafter, additional participants began to steadily joined the Task Force. It reached its first major milestone of gaining the sponsorship and support of GSMA and The Linux Foundation- Networking in Summer 2019, and it continues to grow steadily. CNTT now has over thirty network operators and vendor partners (VNF suppliers, third-party integrators, hw/sw suppliers) in its member commmunity and are leading the industry in creating a common Network Function Virtualization Infrastructure in the form of reference model and architecture definitions, as well as reference implementations and certifications. 
+The founding members of the Common NFVI Telco Task Force (CNTT) were AT&T, Vodafone, Verizon, Deutsche Telecom, Orange, and China Mobile. Soon thereafter, additional telco operator and vendor partner participants began to steadily join the Task Force. It reached its first major milestone of gaining the sponsorship and support of GSMA and The Linux Foundation- Networking in Summer 2019, and it continues to grow steadily. CNTT now has over thirty operators and partners (VNF suppliers, third-party integrators, hw/sw suppliers) in its member commmunity. Together they are leading the industry in creating a common Network Function Virtualization Infrastructure in the form of reference model and architecture definitions, as well as reference implementations and certifications. 
 
-The CNTT organizational processes and procedures provided in this document were undertaken by a CNTT working group and developed under the guidnce of the CNTT Governance Steering Committee to address CNTT's ability to scale, garner momentum, and plan for the future of CNTT--as outlined in our 3rd Technical Workshop in Antwerp, Belgium, in September 2019. 
+The CNTT organizational processes and procedures provided in this document were undertaken by a CNTT working group and developed under the guidance of the CNTT Governance Steering Committee to address CNTT's ability to scale, garner momentum, and plan for the future of CNTT--as outlined in our 3rd Technical Workshop in Antwerp, Belgium, in September 2019. 
 
 <a name="1.2"></a>
 ## 1.2 Document Purpose
