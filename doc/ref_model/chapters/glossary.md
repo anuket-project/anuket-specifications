@@ -26,7 +26,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
 - **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
-- **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native.
+- **Cloud-native (containerised) Network Function (CNF)**: An implementation of a Virtual Network Function (**VNF**, as defined by ETSI GS NFV 003) that adheres to the CNCF Cloud Native Definition or a **VNF** that is transitioning to cloud native.
   >_*Note:*_ A containerised **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The containers run on an application orchestration layer, not directly on the underlaying infrastructure itself. the containers themselves may be Linux, Docker or other similar container technology.
 - **Virtual Application (VA)**: A general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
