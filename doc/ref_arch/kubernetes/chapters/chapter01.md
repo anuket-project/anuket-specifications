@@ -97,6 +97,10 @@ The scope of this particular Reference Architecture can be described as follows 
 - Support for CNFs that are consumed wholly of containers
 - Support for CNFs that are consumed partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
 
+For the avoidance of doubt, the following is considered to be **out of scope**:
+- **Kubernetes cluster lifecycle management**: reason being, it is not considered to be "visible" to a CNF and so should not be included.
+- **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of CNTT. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
+
 <p align="center"><img src="../figures/ch01_scope_k8s.png" alt="Kubernetes Reference Architecture scope" title="Kubernetes Reference Architecture scope" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture scope</p>
 
