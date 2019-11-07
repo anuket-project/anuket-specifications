@@ -656,7 +656,7 @@ Resources management is essential. Requests coming from NFVO or VNFM to the VIM 
 <!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019
 #### 4.1.4.5 Internal security capabilities
 -->
-<a name="Table5-1"></a>
+<a name="Table7-1"></a>
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------|--------|------------------------------------------------------------------|
@@ -665,17 +665,17 @@ Resources management is essential. Requests coming from NFVO or VNFM to the VIM 
 | i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory |
 | i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest |
 
-<p align="center"><b>Table 5-1:</b> Internal security capabilities of NFVI.</p>
+<p align="center"><b>Table 7-1:</b> Internal security capabilities of NFVI.</p>
 
-Table 5-2 shows security capabilities
+Table 7-2 shows security capabilities
 
-<a name="Table5-2"></a>
+<a name="Table7-2"></a>
 
 | Ref | VIM capability | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
 | e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM|
 
-<p align="center"><b>Table 5-2:</b> VIM capabilities related to security .</p>
+<p align="center"><b>Table 7-2:</b> VIM capabilities related to security .</p>
 
 ## 7.11 Certification requirements (Just ideas)
 

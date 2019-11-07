@@ -45,7 +45,7 @@
   * [8.8.1 Metrics.](#8.8.1)
   * [8.8.2 Report Summary.](#8.8.2)
 * [8.9 Future Planning.](#8.9)
-  * [8.9.1 Performance and Resiliency Testing.](#8.9.1)
+  * [8.9.1 Performance & Resiliency - Measurements, Testing.](#8.9.1)
   * [8.9.2 Reports Dashboard.](#8.9.2)
   * [8.9.3 Automation Considerations.](#8.9.3)
 * [8.10 Recommendations.](#8.10)
@@ -790,6 +790,34 @@ The following five test categories have been identified as minimal testing requi
 
 <p>Respective test cases can be found in the <a title="Annex for Chapter 8" href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08-annex.md" target="_blank" rel="noopener">Annex for Chapter 8</a>.</p>
 
+
+<a name="8.7.10"></a>
+### 8.7.10 Test Case Selection Requirements
+
+This section lists requirements test cases must fulfill to be eligible for
+inclusion in the NFVI and/or VNF compliance test suite.  These requirements act
+as a checklist to gate the inclusion of test cases.
+
+
+| Ref # | Category   | Description |
+|----|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `req.tests.01` | Implementation | Test cases and tools **must** be implemented in an open source project and publicly available. |
+| `req.tests.02` | Implementation | Test cases and tools **should** be self-contained and not require downloading additional data from external systems at runtime. |
+| `req.tests.03` | Implementation | Test cases and tools **must not** require dynamic interaction with external systems or resources, e.g., of OPNFV, LFN or others. |
+| `req.tests.04` | Implementation | Test cases and tools **must** generate machine- and human-readable output, i.e. logs and result files. |
+| `req.tests.05` | Implementation | The execution of all test case **must** be idem-potent, i.e., test cases handle setup and teardown of resources and revert state changes of the system under test performed by the test case. |
+| `req.tests.06` | Implementation | Test cases and tools **must** run against a fully deployed and operational system under test, i.e., not isolated individual components. |
+| `req.tests.07` | Implementation | Test cases and tools **must not** require un-merged patches to the relevant upstream projects. |
+| `req.tests.08` | Implementation | Test tools **must** allow selective execution of individual test cases even if test cases are part of a larger test suite. |
+| `req.tests.09` | Implementation | NFVI tests and test tools **must** run independently of the method of NFVI platform installation. |
+| `req.tests.10` | Implementation | NFVI tests and test tools **must** run independently of platform components not specified in the corresponding reference archiecture, i.e., allowing different backend implementations such as storage backends or SDN controllers. |
+| `req.tests.11` | Documentation  | Test cases and tools **must** be documented, comprising a reference to all targeted reference architectures, pre- and post-conditions, basic test flow execution, and pass/fail criteria. |
+| `req.tests.12` | Documentation  | Documentation of test cases and tools **must** be publicly available. |
+| `req.tests.13` | Maturity       | Test projects providing test cases **must** be mature and active to ensure availability and maintenance of test case implementations over an extended period of time. Criteria for maturity include code quality, test coverage, release history of the project, release cadence, and contributer base. |
+| `req.tests.14` | Scope          | Test cases **must** pass on all reference implementations of the targeted reference architecture in the OPNFV CI/CD pipeline. |
+| `req.tests.15` | Scope          | Test cases **must** be traceable to a requirement based on the reference model or a reference architecture. |
+
+
 <a name="8.8"></a>
 ## 8.8 Test Results
 
@@ -799,11 +827,11 @@ Test suites will be categorized as functional or performance based. Results repo
 Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
 <a name="8.8.1"></a>
-### 8.8.1 Metrics
+### 8.8.1 Measurements
 
 **NOT MVP**
 
-Metrics/Measurements and respective certification(s).
+Measurements and respective certification(s).
 e.g. OVP Testing Ecosystem badge (with link to certification with posted results)
 
 Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
@@ -858,11 +886,52 @@ For additional insight, or deeper understanding and reading of IOPS, refer to th
 This section will be used to plan for future offerings.
 
 <a name="8.9.1"></a>
-### 8.9.1 Performance and Resiliency Testing
+### 8.9.1 Performance & Resiliency - Measurements, Testing
 
 **NOT MVP**
 
-Placeholder to define performance and resiliency needs, and strategies for testing.
+#### 8.9.1.1 Performance Measurements
+
+The following table contains a lists of performance measurements, and/or capabilities, to be captured where feasible during test validations.  More specifically, the table contains:
+
+
+
+- Exposed performance metrics per VNFC, vNIC or vCPU.  Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host.  (e.g. _\*e.nfvi.per.met\*_)
+
+
+
+- Monitoring capabilities available by NFVI.  The availability of these capabilities will be determined by the instance type used by the workloads. (e.g. _\*i.nfvi.mon.cap\*_)
+
+
+
+- Internal performance metrics per NFVI node.  Specifically internal performance metrics use a baseline (Phy2Phy) dataplane test setup in a single host. (e.g. _\*i.nfvi.per.met\*_)
+
+> _**NOTE**:  Refer to RM Chapter 4, <a href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md">Infrastructure Capabilities, Metrics, and Catalogue</a>, for a list performance measurements and capabilities internal to the infrastructure._
+
+
+| Ref                | NFVI Measurement             | Unit                | Definition/Notes                                             |
+| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
+| e.nfvi.per.met.001 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.003 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
+| e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
+| e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
+| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
+| e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
+| i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
+| i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
+| i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
+| i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
+| i.nfvi.mon.cap.005 | Monitoring of external storage IOPS | Yes/No | Transcoding Acceleration |
+| i.nfvi.mon.cap.006 | Monitoring of external storage throughput | Yes/No | Programmable Acceleration |
+| i.nfvi.mon.cap.007 | Monitoring of external storage capacity | Yes/No |  |
+| i.nfvi.per.met.001 | Network throughput | frames/s | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
+| i.nfvi.per.met.002 | Simultaneous active flows | number | Max simultaneous active L4 flows per node before a new flow is dropped |
+| i.nfvi.per.met.003 | New flows rate               | flows/s  | Max new L4 flow rate per node                                |
+| i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per core and with all cores running multiple parallel workloads|
+| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNFC (but fully ready for it) |
+| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
+| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
 
 <a name="8.9.2"></a>
 ### 8.9.2 Reports Dashboard
