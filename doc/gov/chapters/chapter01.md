@@ -18,7 +18,7 @@ The CNTT organizational processes and procedures provided in this document were 
 <a name="1.2"></a>
 ## 1.2 Document Purpose
 
-The purpose of this document is to provide definition of basic CNTT operational structure, processes, procedures, and other supporting details. This document defines the operational scope, structure, and responsibilities of all groups and individuals associated with CNTT. It provides a reference overview of the organizational structure and related work streams and provides processes and procedures around which the CNTT Community will be managed.
+The purpose of this document is to provide definition of basic CNTT community operations other key supporting details. This document defines the operational scope, structure, and responsibilities of all groups and individuals associated with CNTT. It provides a reference overview of the organization and related work streams and provides processes and procedures around which the CNTT Community will be managed.
 
 This document is intended for use by CNTT Task Force new and existing contributors, participants, other associated organizations, and, as an open-source community following the GSMA and LFN Anti-Trust Policies and Creative Commons Licensing, the public at-large.
 
