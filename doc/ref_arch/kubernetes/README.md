@@ -34,7 +34,6 @@ This is Kubernetes based Reference Architecture
 
 
 ## Table of Contents
-* [Abbreviations](abbreviations.md)
 * [Chapter 01 - Overview](chapters/chapter01.md)
 * [Chapter 02 - Architecture Requirements](chapters/chapter02.md)
 * [Chapter 03 - L2: High Level Architecture](chapters/chapter03.md)
