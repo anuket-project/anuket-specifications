@@ -3,19 +3,20 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [11.1 Terminology.](#11.1)
-  * [11.1.1 Software layers terminology.](#11.1.1)
-  * [11.1.2 Hardware layers terminology.](#11.1.2)
-  * [11.1.3 Operational and administrative terminology.](#11.1.3)
-  * [11.1.4 Other terminology.](#11.1.4)
+* [11.1 Terminology](#11.1)
+  * [11.1.1 Software layers terminology](#11.1.1)
+  * [11.1.2 Hardware layers terminology](#11.1.2)
+  * [11.1.3 Operational and administrative terminology](#11.1.3)
+  * [11.1.4 Container Related Terminology](#11.1.4)
+  * [11.1.4 Other terminology](#11.1.5)
 
 <a name="11.1"></a>
-## 11.1 Terminology.
+## 11.1 Terminology
 
 To help guide the reader, this glossary provides an introduction to the terminology used within this document. These definitions are, with a few exceptions, based on the ETSI GS NFV 003 V1.4.1 (2018-08) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
 <a name="11.1.1"></a>
-### 1.2.1 Software Layer Terminology
+### 11.1.1 Software Layer Terminology
 
 - **Network Function Virtualisation (NFV)**: The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 - **Network Function Virtualisation Infrastructure (NFVI)**: The totality of all hardware and software components used to build the environment in which a set of VAs are deployed.
@@ -73,7 +74,12 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
 
 <a name="11.1.4"></a>
-### 1.1.4 Other Referenced Terminology
+### 11.1.4 Container Related Terminology
+
+Relevant terms from RA2 shall be added.
+
+<a name="11.1.5"></a>
+### 11.1.5 Other Referenced Terminology
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
