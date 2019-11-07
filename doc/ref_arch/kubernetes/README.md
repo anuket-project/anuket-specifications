@@ -22,7 +22,7 @@ This is Kubernetes based Reference Architecture
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Initial Framework Only |
+| Chapter 01 | Still Developing Content |
 | Chapter 02 | Initial Framework Only |
 | Chapter 03 | Initial Framework Only |
 | Chapter 04 | Initial Framework Only |
@@ -30,6 +30,7 @@ This is Kubernetes based Reference Architecture
 | Chapter 06 | Initial Framework Only |
 | Chapter 07 | Initial Framework Only |
 | Chapter 08 | Initial Framework Only |
+| Appendix A - Guidance for VNF-to-CNF Transition | Initial Framework Only |
 
 
 ## Table of Contents
@@ -42,3 +43,4 @@ This is Kubernetes based Reference Architecture
 * [Chapter 06 - Security](chapters/chapter06.md)
 * [Chapter 07 - Operations & Life Cycle Management](chapters/chapter07.md)
 * [Chapter 08 - Gaps, Innovation, and Development](chapters/chapter08.md)
+* [Appendix A - Guidance for VNF-to-CNF Transition](chapters/appendix-a.md)
