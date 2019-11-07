@@ -1,7 +1,7 @@
 [<< Back](../../kubernetes)
 
 # 1. Overview
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
@@ -103,7 +103,11 @@ The scope of this particular Reference Architecture can be described as follows 
 <a name="1.5"></a>
 ## 1.5 Approach
 
-The approach taken in this Reference Architecture is to start
+The approach taken in this Reference Architecture is to start simple (i.e. with a basic Kubernetes architecture), and then add detail and additional features/extensions as is required to meet the requirements of the Reference Model.
+
+For example, whilst the management of VMs through Kubernetes is included, we will likely start with the "native" control of containers and add VMs at a later date - to be decided and documented in the Roadmap section below.
+
+In addition, we will start with a description of interfaces and capabilities (the "what") before at a later date providing guidance on "how" those elements are deployed (which will be documented in full detail in the Reference Implementation). In addition, an [Appendix](./appendix-a.md) will be created with the purpose of describing the transition from VNF to CNF and the potential pitfalls and complexities that may need consideration. This appendix may in turn lead to gaps that need filling in one or more Reference Architectures.
 
 <a name="1.6"></a>
 ## 1.6 Roadmap
@@ -111,27 +115,3 @@ The approach taken in this Reference Architecture is to start
 As Kubernetes evolves over time it will add new technologies and capabilities and so the CNTT Reference Architecture will need to evolve with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is every three months and at least the support cadence, which is nine months (latest release, plus two previous releases).
 
 > A populated roadmap view will be added here after the January 2020 release.
-
-
-## General thoughts
-***Please note that the notes below will be removed and replaced with content in the chapters of this Reference Architecture***
-
-### A note on virtualised and containerised workloads
-It is possible that a single VNFM will be managing applications (or components) that are virtualised (i.e. running in VMs) and applications (or components) that are containerised (i.e. running in containers), at the same time.  There are different approaches to achieving this:
-1. Application manager (EMS, VNFM) uses both IaaS (VIM) API and Kubernetes API - the former for VM based workloads, the latter for containerised workloads.
-2. Application manager (EMS, VNFM) uses just the Kubernetes API for both VM-based and container-based workloads, with the Kubernetes PaaS managing the lifecycle of VMs using on of the following methods:
-    a) Kubernetes interacts with IaaS/VIM API (Cluster API model)
-    b) Kubernetes is the IaaS/VIM and interacts direct with the hypervisor (Kubevirt model)
-
-### A note on bare metal containerisation
-As described above, Kubernetes is an application manager and therefore the lifecycle of Kubernetes clusters should closely match the lifecyle of the application or applications being deployed into Kubernetes. It therefore goes that the engineering teams defining the lifecycle of their applications will also define the lifecycle of the clusters they use for those applications. In an operator this might be a network engineering team, for example.
-
-This has the following considerations when it comes to bare metal:
-- With virtualised infrastructure, the underlying hypervisor hosts are or can be shared amongst a large number of tenants (i.e. application teams); much of the financial benefit of NFV was due to this concept
-- If the above lifecycle is used then the following things need careful thought:
-    - Size of bare metal nodes
-    - Infrastructure management API, network overlay, etc.
-
-Regarding the size of the nodes, this is about trying not to reduce the benefits we gained with NFV in the first place. For example, if three hypervisor hosts have 60CPUs and 1.5TB RAM between them, sharing those resources between a large number of applications (lets say 50) is made efficient by the use of virtualisation. For bare metal containerisation, that same number of applications would need a much larger number of bare metal hosts, with each host being a much smaller unit.
-
-Regarding the network overlay, this is about having a service with capabilities that are provided by the VIM for virtualised environments, but for bare metal. So the ability to provision bare metal to a particular tenant, ensure the networking to each node is correctly provisioned (so, for bare metal this may mean calling out to an external SDN controller, as opposed to using an SDN controller provided by the VIM), and so on.
