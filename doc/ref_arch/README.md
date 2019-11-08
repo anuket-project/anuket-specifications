@@ -45,10 +45,8 @@ We need to distinguish between architectural principles and architectural requir
 
 RA1 is focussing on an OpenStack Reference Architecture that will support VM-based VNFs only (i.e. no containerised workloads), whilst delivering the NFVI and VIM requirements as outlined in the Reference Model.
 
-RA2 is adding to this by providing a Kubernetes Reference Architecture that will enable the support for Cloud native Network Functions (CNFs) that comprise of either containers or VMs (both of which would be managed through Kubernetes). Note that RA2 is not looking to support the running of VNFs through Kubernetes (this would likely invoke discussions relating to Kubernetes as a VIM, which is not appropriate at this time).
+The scope of RA2 will be to enable support for containerised and VM-based workloads (i.e. VMs managed by Kubernetes). A thorough gap analysis will need performing to understand the level to which Kubernetes might support traditional VNFs (i.e. to what level can Kubernetes conform to the VIM specification from ETSI NFV v3, or the Vi-Vnfm interface, for example). This is likely to be included in a later release of RA2.
 
-Key notes:
-- The primary difference between VNF and CNF in this context is the maturity of the software to be able to make use of immutable infrastructure, not whether it is a VM or not
-- RA2 scope will include mention of Kubernetes cloud providers that may integrate with other clouds (i.e. other than OpenStack as defined in RA1)
-- For the purposes of a CNTT Reference Implementation / Reference Certification the only fully conformant implementation of Kubernetes will be a Kubernetes that is conformant with RA2 that is itself deployed on an OpenStack deployment that is conformant with RA1
-- Note, any gaps identified between the two (e.g. RA2 includes support for bare metal containerisation but RA1 only deals with VM-based workloads) must be raised as Issues associated with the appropriate workstream
+RA2 is delivering a Kubernetes Reference Architecture that will be standalone, meaning:
+- If there are any components from RA1 (or any other subsequent RA) that are needed in RA2, they will be explicitly included rather than requiring a Reference Implementation to refer to multiple Reference Architectures
+- The Kubernetes Reference Architecture will also include the Kubernetes cloud providers on which a Reference Implementation can choose to deploy an RA2-conformant Kubernetes
