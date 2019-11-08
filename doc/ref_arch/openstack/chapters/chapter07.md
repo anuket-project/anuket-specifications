@@ -23,6 +23,8 @@
 - Provisioning of networks
 - Provisioning of OpenStack and related common services
 - Configuration of compute nodes (activation of services per profiles types)
+- Post configuration of compute nodes
+- Provisioning of host aggregates
 
 <a name="7.4"></a>
 ## 7.4 Monitoring
