@@ -5,16 +5,25 @@
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)
-* [5.2 Core OpenStack Services APIs.](#5.2)
-* [5.3 Consolidated Set of APIs.](#5.3)
+* [5.2 Core OpenStack Services APIs](#5.2)
+* [5.3 Consolidated Set of APIs](#5.3)
 
 <a name="5.1"></a>
-## 5.1 Introduction.
+## 5.1 Introduction
 
-This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSi Vi-Nf inetrfaces. The Openstack Pike version is used as the baseline for these APIs and CLIs. The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in teh Chapter a consolidated view of these and other APIs that would be of interest.
+This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSi Vi-Nf interfaces. 
+The OpenStack Pike version is used as the baseline for these APIs and CLIs. CNTT reference architectures and future 
+reference implementations will only considered OpenStack releases greater or equal to Pike. Any reference 
+implementation that **get certified by RC** can be considered as CNTT RA Compliant. When different OpenStack version 
+based reference implementations gets certified then the "CNTT standard" will be the oldest used OpenStack release. 
+Example, Let us assume that the Pike, Queens and Stein OpenStack based reference implementations get certified. Then, 
+the CNTT standard OpenStack version will be Pike. 
+ 
+The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in the Chapter a 
+consolidated view of these and other APIs that would be of interest.
 
 <a name="5.2"></a>
-## 5.2. Core OpenStack Services APIs.
+## 5.2. Core OpenStack Services APIs
 
 ### 5.2.1. Keystone
 
@@ -162,10 +171,15 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 
 <a name="5.3"></a>
-## 5.3. Consolidated Set of APIs.
+## 5.3. Consolidated Set of APIs
 
 ### 5.3.1. OpenStack Interfaces
-This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available at https://docs.openstack.org/api-ref/ and CNTT standard is to use the latest version v3. OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs directly using the HTTP or REST library, or they can use one of the many programming language specific cloud libraries.
+This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available 
+at https://docs.openstack.org/api-ref/.
+ 
+OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs 
+directly using the HTTP or REST library, or they can use one of the many programming language specific cloud 
+libraries.
 
 **APIs**
 
