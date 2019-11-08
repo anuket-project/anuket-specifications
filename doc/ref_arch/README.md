@@ -45,7 +45,7 @@ We need to distinguish between architectural principles and architectural requir
 
 RA1 is focussing on an OpenStack Reference Architecture that will support VM-based VNFs only (i.e. no containerised workloads), whilst delivering the NFVI and VIM requirements as outlined in the Reference Model.
 
-The scope of RA2 will be to enable support for containerised and VM-based workloads (i.e. VMs managed by Kubernetes). A thorough gap analysis will need performing to understand the level to which Kubernetes might support traditional VNFs (i.e. to what level can Kubernetes conform to the VIM specification from ETSI NFV v3, or the Vi-Vnfm interface, for example). This is likely to be included in a later release of RA2.
+The scope of RA2 will be to enable support for containerised and VM-based workloads (i.e. VMs managed by Kubernetes). A thorough gap analysis will need performing to understand the level to which Kubernetes might support traditional VNFs (i.e. to what level can Kubernetes conform to the VIM specification from ETSI NFV v3, or the Vi-Vnfm interface, for example).
 
 RA2 is delivering a Kubernetes Reference Architecture that will be standalone, meaning:
 - If there are any components from RA1 (or any other subsequent RA) that are needed in RA2, they will be explicitly included rather than requiring a Reference Implementation to refer to multiple Reference Architectures
