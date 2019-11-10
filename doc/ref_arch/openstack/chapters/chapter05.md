@@ -30,11 +30,26 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 | Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images | Version 2.0 |
 | Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
 
-### 5.2.3. Cinder 
+### 5.2.3. Cinder
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-|Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions/a> | Version 3.0 |
+| **OpenStack Service** | **Version** | **Minimal Microversion** |
+|-----------------------|-------------|--------------------------|
+| Block Storage: Cinder | 3           | 3.43                     |
+
+| **Cinder Features**    | **Mandatory** |
+|------------------------|:-------------:|
+| backup                 | X             |
+| clone                  | X             |
+| consistency_group      |               |
+| extend_attached_volume |               |
+| manage_snapshot        | X             |
+| manage_volume          | X             |
+| snapshot               | X             |
+| volume_revert          | X             |
+
+Block Storage API: https://docs.openstack.org/api-ref/block-storage/
+
+REST API Version History: https://docs.openstack.org/cinder/latest/contributor/api_microversion_history.html
 
 ### 5.2.4. Swift
 
@@ -76,7 +91,7 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 ## 5.3. Consolidated Set of APIs.
 
 ### 5.3.1. OpenStack Interfaces
-This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available at https://docs.openstack.org/api-ref/ and CNTT standard is to use the latest version v3. OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs directly using the HTTP or REST library, or they can use one of the many programming language specific cloud libraries. 
+This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available at https://docs.openstack.org/api-ref/ and CNTT standard is to use the latest version v3. OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs directly using the HTTP or REST library, or they can use one of the many programming language specific cloud libraries.
 
 **APIs**
 
@@ -108,10 +123,10 @@ This section illustrates some of the Interfaces provided by OpenStack; the exhau
 | OpenStack Client (python) | https://docs.openstack.org/python-openstackclient/pike/index.html  | Version 3.2.1 |
 
 ### 5.3.2. Kubernetes Interfaces
-The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/. 
+The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
 
 ### 5.3.3. KVM Interfaces
-The KVM APIs are documented in Section 4 of the document https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt. 
+The KVM APIs are documented in Section 4 of the document https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt.
 
 #### 5.3.3.1. Libvirt Interfaces
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
