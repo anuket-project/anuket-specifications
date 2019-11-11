@@ -12,9 +12,9 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-Three types of profiles are mentioned in CNTT Reference Model: VNF profile is used to describe in all workloads running on top of NFVI. NFVI SW profile is used to describe the feature provoided by the unified layer of hypervisor and host OS. Finally the NFVI HW profile is used to depict the characteristics of all actual servers on the bottom.
+Three types of profiles are mentioned in CNTT Reference Model: VNF profile is used to describe every workload running on top of NFVI. NFVI SW profile is used to describe the list of features provided by the hypervisor and host OS. Finally the NFVI HW profile is used to depict the details characteristics of every actual servers on the bottom.
 
-Lots of contents of this chapter is referenced to the CNTT Reference Model, **RM1** will be used to avoid long and duplicated reference titles.
+The CNTT Reference Model will be referenced as **RM1** to avoid long and duplicated reference titles.
 
 <a name="3.2"></a>
 ## 3.2 VNF profile
@@ -34,7 +34,7 @@ Whereas:
 
 Every VNF instance must declare its profiles explicitly, which can be used by VIM to allocate resources duration instantiation, also it would be useful to evaluate portability of workload.
 
-> OP: an example snippet:
+> OP: an example snippet ?
 
 ```yaml
 vnfname: foo
@@ -44,13 +44,13 @@ instancetype: basic
 <a name="3.3"></a>
 ## 3.3 NFVI SW profile
 
-[Reference Model: 5.2 NFVI SW profile features and requirements] defines the NFVI software layer. The profile depicts the feature status of the virtual Compute (nfvi.com.cfg.xxx in RM1 Table 5-7: Virtual Compute features and configuration for the 3 types of SW profiles and nfvi.com.acc.cfg.xxx in Table 5-8: Virtual Compute Acceleration features), storage(see nfvi.stg.cfg.xxx in RM1: Table 5-9: Virtual Storage features and configuration for the 3 types of SW profiles and nfvi.stg.acc.cfg.xxx in Table 5-10: Virtual Storage Acceleration features), networking configuration(see nfvi.net.cfg.xxx in Table 5-11 Virtual Networking features and configuration for the 3 types of SW profiles and nfvi.net.acc.cfg.xxx in Table 5-12 Virtual Networking Acceleration features)
+[RM1: 5.2 NFVI SW profile features and requirements](https://cntt-n.github.io/CNTT/doc/ref_model/chapters/chapter05.html#5.2) defines the NFVI software layer. The profile depicts the feature status of the virtual Compute (**nfvi.com.cfg.xxx** in RM1 Table 5-7: Virtual Compute features and configuration for the 3 types of SW profiles and **nfvi.com.acc.cfg.xxx** in Table 5-8: Virtual Compute Acceleration features), storage(see **nfvi.stg.cfg.xxx** in RM1: Table 5-9: Virtual Storage features and configuration for the 3 types of SW profiles and **nfvi.stg.acc.cfg.xxx** in Table 5-10: Virtual Storage Acceleration features), networking configuration(see **nfvi.net.cfg.xxx** in Table 5-11 Virtual Networking features and configuration for the 3 types of SW profiles and **nfvi.net.acc.cfg.xxx** in Table 5-12 Virtual Networking Acceleration features)
 
-This profile is the global settings for the whole NFVI, which means there should be only one node per NFVI resource pool (Basic/Netowrk/Compute)
+This profile is the global settings for the whole NFVI, which means there should be only one entry per NFVI resource pool (Basic/Netowrk/Compute)
 
 ```yaml
-vnfname: foo
-instancetype: basic
+nfviswprofile: foo
+type: basic
 ```
 
 > OP: include RM1: 4.1.6 VIM Resource Allocation and Performance Measurement Capabilities or not
@@ -58,13 +58,13 @@ instancetype: basic
 <a name="3.4"></a>
 ## 3.3 NFVI HW profile
 
-NFVI HW profile (see [RM1: 5.4 NFVI HW profiles features and requirements]) contains all the compute, storage, network specification of the actual servers, which are used to build basic, network, compute resource pools.
+NFVI HW profile (see [RM1: 5.4 NFVI HW profiles features and requirements](https://cntt-n.github.io/CNTT/doc/ref_model/chapters/chapter05.html#5.4)) contains all the compute, storage, network specification of the actual servers, which are used to build basic, network, compute resource pools.
 
 - Compuate resources refers to the number of CPU, the number of cores per CPU, NUMA, SMT/HT, GPU etc(RM1: Table 5-13: Minimum Compute resources configuration parameters and Table 5-14 Compute acceleration configuration specifications for details reference name and details)
 - Storage Configurations refers to HDD and SSD detail specification, i.e., total number of hard disk drivers and each capacity (RM1: Table 5-15 Storage configuration specification for details)
 - Network resources referes to total number of NIC Ports, Port Speed, total number of PCIe slots available, the PCIe speed, lanes and network accleration configurations (RM1: Table 5-16: Minimum NIC configuration specification, Table 5-17 PCIe configuration specification and Table 5-18: Network acceleration configuration specification)
 
-Every servers used in the NFVI must be contain in a machine readable format file, in case the same configuration is applied to many server, a template can be defined and referenced by all of them to aovid content duplication. This input file can be used and consumed by other tools to calculate statistics overview and make NFVI comparsion eaiser.
+Every servers used in the NFVI must be dumped in a machine readable format file, in case the same configuration is applied to many server, a template can be defined and referenced by all of them to aovid content duplication. This input file can be used and consumed by other tools to calculate statistics overview and make NFVI comparsion more eaiser.
 
 ```yaml
 host: host1
