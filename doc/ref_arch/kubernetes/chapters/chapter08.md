@@ -11,8 +11,7 @@
 
 <a name="8.1"></a>
 ## 8.1 Introduction
-While this Reference Architecture is being developed, there will be Gaps identified which require addressing by the community. This chapter will highlight those gaps in details with proposed solutions. As a result, various community projets will be identified and will be tergeted by developmnent efforts by CNTT community. 
-
+While this Reference Architecture is being developed, Gaps will be identified that require addressing. This chapter will highlight these gaps in details and may provide proposed solutions. As a result, various “upstream” community projects will be identified and will be targeted for development efforts.
 
 <a name="8.2"></a>
 ## 8.2 Gap analysis
