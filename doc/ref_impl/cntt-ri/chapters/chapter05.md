@@ -66,7 +66,7 @@ Besides it may include optional information such area name, data center name etc
 
 ### 5.3.2 Server template
 The server template describes the capability of the host like processor, memory, harddrive, raid, NIC/NIC binding, manufacturer, model etc.
-Server template would be assigned to multiple servers, i.e physicalhosts.
+Server template would be assigned to multiple servers, i.e physical hosts.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -78,7 +78,7 @@ Server template would be assigned to multiple servers, i.e physicalhosts.
 | hard_drive | String | Yes |  |
 | raid | String | Yes |  |
 | network_controller_infos | List | Yes |  |
-| network_card_bond_infos | List | Yes |  |
+| network_card_bond_infos | List | No | NIC bonding might not be always the case.|
 
 <p align="center"><b>Table 5-3-2:</b> Server template.</p>
 
@@ -96,7 +96,6 @@ Besides it may include additional information pim username, password, rack_name,
 | pim_password | String | Yes |  |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
-| network_controller_infos | List | Yes |  |
 
 <p align="center"><b>Table 5-3-3:</b> Server information.</p>
 
@@ -112,7 +111,7 @@ It includes Virtualized Infrastructure Manager configurations,
 | version | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | ip_version | String | Yes | Ipaddress type: IPV6 or IPV4 |
 | az_info | List | Yes | list of availability zone name designed for this VIM |
-| ha_name | List | No | HA name  if provided|
+| ha_name | List | No | HA name  if provided, HA is set of host server group having one or more same attribute(s),e.g: hardware specification.|
 | network_infos | List | Yes | List of NICs used in VIM deployment |
 | controller_nodes | List | Yes | List of controllers designed in VIM deployment |
 | compute_nodes | List | Yes | List of compute nodes designed in VIM deployment |
@@ -155,7 +154,7 @@ List of compute nodes that designed for current VIM deployment.
 | device_name | String | Yes | must be the device_name defined in server_information(###5.3.3), which would be set on Server from BMC|
 | node_name | String | Yes | node name for the compute to deploy, e.g: compute01 |
 | az_name | String | Yes | availability zone name which this node belongs to |
-| ha_name | List | Yes | HA name which this node assigned to, could be more than one HA it belongs.|
+| ha_name | List | Yes | HA name(s) which this node assigned to.|
 | manage_vlan_id | String | Yes | may multiple vlan_id for management plane. Setting the dedicated vlan id assigned.|
 | storage_vlan_id | String | Yes | may multiple vlan_id for storage plane. Setting the dedicated vlan id assigned.|
 | vnic_type | String | Yes | VIM verification needs know compute node type: OVS,DPDK_OVS or SR-IOV node.|
@@ -218,7 +217,7 @@ DNS server informmation if VIM deployment requires.
 | external_dns_network | String | No | DNS information if VIM deployment needed. |
 | external_dns_ip | String | No | |
 
-<p align="center"><b>Table 5-3-7:</b> DNS server information.</p>
+<p align="center"><b>Table 5-3-10:</b> DNS server information.</p>
 
 ### 5.3.10 Deployment host informations
 Deployment host setting, which should have the access for the openstack nodes network.
@@ -229,7 +228,7 @@ Deployment host setting, which should have the access for the openstack nodes ne
 | mask | String | No | mask of debug PC|
 | gateway | String | No |gateway of debug PC |
 
-<p align="center"><b>Table 5-3-7:</b> Deployment pc information.</p>
+<p align="center"><b>Table 5-3-10:</b> Deployment host information.</p>
 
 ### 5.3.11 Deployment control informations
 Used to control if VIM will be automatically deployment.
@@ -238,4 +237,4 @@ Used to control if VIM will be automatically deployment.
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | auto_deploy | String | Yes | Flag of enabling or disabling automatically deploy VIM. |
 
-<p align="center"><b>Table 5-3-7:</b> Auto deployment control information.</p>
+<p align="center"><b>Table 5-3-10:</b> Auto deployment control information.</p>
