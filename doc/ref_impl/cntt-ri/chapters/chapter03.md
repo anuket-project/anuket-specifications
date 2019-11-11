@@ -14,14 +14,14 @@
 
 Three types of profiles are mentioned in CNTT Reference Model: VNF profile is used to describe in all workloads running on top of NFVI. NFVI SW profile is used to describe the feature provoided by the unified layer of hypervisor and host OS. Finally the NFVI HW profile is used to depict the characteristics of all actual servers on the bottom.
 
-Lots of contents of this chapter is referenced to the CNTT Reference Model, **RM1** will be used to avoid long and duplication title.
+Lots of contents of this chapter is referenced to the CNTT Reference Model, **RM1** will be used to avoid long and duplicated reference titles.
 
 <a name="3.2"></a>
 ## 3.2 VNF profile
 
 Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in NFVI Infrastructure Profiles Catalogue. As states in [RM1: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](https://cntt-n.github.io/CNTT/doc/ref_model/chapters/chapter04.html#4.2), the entry uses the following naming convention.
 
-  B/N/C <I opt> . <Flavour> . <S ext> . <A ext>
+`B/N/C <I opt> . <Flavour> . <S ext> . <A ext>`
 
 B/N/C is used to specify the instance type (Basic, Network Intensive, and Compute Intensive), different instance types are associated with different acceleartion extensions, network characteristics ([RM1: 4.2.4 Instance Types](https://cntt-n.github.io/CNTT/doc/ref_model/chapters/chapter04.html#4.2.4)) and instance capabilities([RM1: 4.2.5 Instance Capabilities Mapping](https://cntt-n.github.io/CNTT/doc/ref_model/chapters/chapter04.html#4.2.5)).
 
