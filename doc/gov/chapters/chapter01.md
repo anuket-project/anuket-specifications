@@ -39,10 +39,16 @@ This area includes the structure of governance and technical co-leadership and s
 
 * Nomination and Selection 
 
-Covers the processes for nominating and selecting leads and co-leads for governance and technical workstreams, timeframes, and obiligations.
+Covers the processes for nominating and selecting candidates to be leads and co-leads for governance and technical workstreams, the timeframes of their service, responsibilities, and obiligations.
 
-* Consensus-Based Decision Making (w/brief desc)
+* Consensus-Based Decision Making
 
-* Relationship to LFN Projects and GSMA (w/brief desc)
+The approaches and processes by which CNTT contributors shall use to ensure fair representation for key decisions made, approve releases; including how to manage dissention. 
+
+* Relationship to LFN Projects and GSMA
+
+Provides operational guidance regarding how CNTT operational structures shall interoperate with GSMA and LFN.
+
+
 
 
