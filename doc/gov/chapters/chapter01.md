@@ -11,26 +11,38 @@
 <a name="1.1"></a>
 ## 1.1 Who We Are
 
-The founding members of the Common NFVI Telco Task Force (CNTT) were AT&T, Vodafone, Verizon, Deutsche Telecom, Orange, and China Mobile. Soon thereafter, additional telco operator and vendor partner participants began to steadily join the Task Force. It reached its first major milestone of gaining the sponsorship and support of GSMA and The Linux Foundation- Networking in Summer 2019, and it continues to grow steadily. CNTT now has over thirty operators and partners (VNF suppliers, third-party integrators, hw/sw suppliers) in its member commmunity. Together they are leading the industry in creating a common Network Function Virtualization Infrastructure in the form of reference model and architecture definitions, as well as reference implementations and certifications. 
+The founding members of the Common NFVI Telco Task Force (CNTT) were AT&T, Vodafone, Verizon, Deutsche Telecom, Orange, and China Mobile. Soon thereafter, additional telco operator and vendor partner participants began to steadily join the Task Force. CNTT reached its first major milestone of gaining the sponsorship and support of GSMA and The Linux Foundation Networking in Summer 2019. It now has over thirty operators and partners (VNF suppliers, third-party integrators, hw/sw suppliers) in its member commmunity and continue to grow. Together they are leading the industry in creating a common Network Function Virtualization Infrastructure in the form of reference model and reference architecture definitions, as well as developing and supporting reference implementations and reference certification platforms. 
 
-The CNTT organizational processes and procedures provided in this document were undertaken by a CNTT working group and developed under the guidance of the CNTT Governance Steering Committee to address CNTT's ability to scale, garner momentum, and plan for the future of CNTT--as outlined in our 3rd Technical Workshop in Antwerp, Belgium, in September 2019. 
+In order to establish governing guidelines and procedures by which the CNTT technical community may operate, the development of this document was undertaken by a CNTT working group and developed under the guidance of the CNTT Governance Steering Committee. 
 
 <a name="1.2"></a>
 ## 1.2 Document Purpose
 
-The purpose of this document is to provide definition of basic CNTT community operations other key supporting details. This document defines the operational scope, structure, and responsibilities of all groups and individuals associated with CNTT. It provides a reference overview of the organization and related work streams and provides processes and procedures around which the CNTT Community will be managed.
+The goal of this document is to assist CNTT to continue to scale, garner momentum, and plan for the future of CNTT--as outlined in its 3rd Technical Workshop in Antwerp, Belgium, in September 2019. Therefore, the purpose of this document is to define and detail basic CNTT community operations and important structures. It provides a reference of the organization and related work streams, processes, and procedures around which the CNTT Community will be managed; including operational scope, structure, and responsibilities of all groups and individuals associated with CNTT.  
 
-This document is intended for use by CNTT Task Force new and existing contributors, participants, other associated organizations, and, as an open-source community following the GSMA and LFN Anti-Trust Policies and Creative Commons Licensing, the public at-large.
+This document is intended for use by CNTT Task Force's new and existing contributors, participants, associated organizations, and, as an open-source community following the GSMA and LFN Anti-Trust Policies and Creative Commons Licensing, the public at-large.
 
-This document is not intended to be used to define any the technical specifications, definitions, requirements, testing, certifications, or lab platforms developed by the CNTT Community members. 
+This document is not intended to be used to define any the technical specifications, definitions, requirements, testing, certifications, or lab platforms developed by CNTT. 
 
 <a name="1.3"></a>
 ## 1.3 Operational Scope
+
+To support the technical mission and goals (link to docs here?), the scope of CNTT community operations are defined in this document as follows:
  
-* Onboarding (w/brief desc)
-* Organizational Structure and Works Streams (w/brief desc)
-* Nomination and Selection (w/brief desc)
+* Onboarding
+
+The CNTT Onboarding process ensures new members are informed of their obligations, confirms terms of agreement, and provides practical support to get them onboard as fully contributing members of the community.    
+
+* Organizational Structure and Works Streams 
+
+This area includes the structure of governance and technical co-leadership and support, all participanting work streams and resources, the scope and the methods to manage the creation of deliverables by those work streams. 
+
+* Nomination and Selection 
+
+Covers the processes for nominating and selecting leads and co-leads for governance and technical workstreams, timeframes, and obiligations.
+
 * Consensus-Based Decision Making (w/brief desc)
+
 * Relationship to LFN Projects and GSMA (w/brief desc)
 
 
