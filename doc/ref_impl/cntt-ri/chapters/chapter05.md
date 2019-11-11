@@ -128,7 +128,16 @@ List of All designed NIC definitions which are referenced by various roles of no
 | usage | String | Yes | used for compute/control: value is one of [manage,storage,service], for distribute storage  value if one of [storage_front,storage_backend] |
 | network_plane_infos | List | Yes | vlan_id,sub_network(CIDR),gateway(could be null)|
 
-<p align="center"><b>Table 5-3-5:</b> Network information.</p>
+<p align="center"><b>Table 5-3-5-1:</b> Network information.</p>
+
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| vlan_id | String | Yes | vlan id for current network |
+| sub_network | String | Yes | subnet in CIDR format.|
+| gateway | String | No | gateway(could be null)|
+
+<p align="center"><b>Table 5-3-5-2:</b> Network plane information.</p>
 
 
 
@@ -237,4 +246,4 @@ Used to control if VIM will be automatically deployment.
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | auto_deploy | String | Yes | Flag of enabling or disabling automatically deploy VIM. |
 
-<p align="center"><b>Table 5-3-10:</b> Auto deployment control information.</p>
+<p align="center"><b>Table 5-3-11:</b> Auto deployment control information.</p>
