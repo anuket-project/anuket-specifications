@@ -29,23 +29,23 @@ This document is not intended to be used to define any the technical specificati
 
 To support the technical mission and goals (link to docs here?), the scope of CNTT community operations are defined in this document as follows:
  
-* Onboarding
+* Onboarding (Ch. 2)
 
 The CNTT Onboarding process ensures new members are informed of their obligations, confirms terms of agreement, and provides practical support to get them onboard as fully contributing members of the community.    
 
-* Organizational Structure and Works Streams 
+* Organizational Structure and Works Streams (Ch. 3)
 
 This area includes the structure of governance and technical co-leadership and support, all participanting work streams and resources, the scope and the methods to manage the creation of deliverables by those work streams. 
 
-* Nomination and Selection 
+* Nomination and Selection (Ch. 4)
 
 Covers the processes for nominating and selecting candidates to be leads and co-leads for governance and technical workstreams, the timeframes of their service, responsibilities, and obiligations.
 
-* Consensus-Based Decision Making
+* Consensus-Based Decision Making (Ch. 5)
 
 The approaches and processes by which CNTT contributors shall use to ensure fair representation for key decisions made, approve releases; including how to manage dissention. 
 
-* Relationship to LFN Projects and GSMA
+* Relationship to LFN Projects and GSMA (Ch. 6)
 
 Provides operational guidance regarding how CNTT operational structures shall interoperate with GSMA and LFN.
 
