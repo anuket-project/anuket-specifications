@@ -145,42 +145,23 @@ Additional links:
 As defined by OPNFV, Scenarnio Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
 
 SDF's will contain, but not limited to, the following Metadata, Components, Deployment Options, Deployment Tools, and Hardware prerequistes:
-<ul>
-<li><strong>Metadata</strong>
-<ul>
-<li>Name</li>
-<li>History</li>
-<li>Purpose</li>
-<li>Owner</li>
-</ul>
-</li>
-<li><strong>Components</strong>
-<ul>
-<li>e.g. SDN controllers</li>
-<li>Versions</li>
-<li>Optional features,<br /> e.g. NFV features</li>
-</ul>
-</li>
-<li><strong>Deployment Options</strong>
-<ul>
-<li>Hardwaretypes</li>
-<li>Virtual deploy</li>
-<li>HA, NOHA</li>
-</ul>
-</li>
-<li><strong>Deployment Tools</strong>
-<ul>
-<li>Supporting installers</li>
-<li>Valid options per installer</li>
-</ul>
-</li>
-<li><strong>Hardware Prerequisites</strong>
-<ul>
-<li>e.g. SRIOV, DPDK</li>
-</ul>
-</li>
-</ul>
 
+- **Metadata**
+  - Name
+  - History
+  - Purpose
+  - Owner
+- **Components**
+  - e.g. SDN controllers
+  - Versions
+  - Optional features, e.g. NFV features
+- **Deployment Options**
+  - Hardware types
+  - Virtual deploy
+  - HA, NUMA
+- **Deployment Tools**
+  - Supporting installers.
+  - Valid options per installer.
 
 <a name="8.3"></a>
 ## 8.3 Integrated E2E Framework

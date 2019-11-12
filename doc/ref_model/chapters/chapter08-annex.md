@@ -497,63 +497,6 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <li>Add test cases from operators, which operators already tested in their environment</li>
 </ul>
 
-<a name="x.x.x"></a>
-### NFVI Profiles reference implementations.
-
-For compliance, verification, and certification, of NFVI solutions provided for a given NFVI Profile, it is required to have a reference implementation of each profile so it can be used for compliance, validation, and certification.
-
-Those reference implementations need to reflect on their corresponding profiles and deliver all metrics and capabilities promised. They need to use open source components. Figure below shows the various reference implementations required for each profile, they are:
-
-- NFVI SW Reference implementation.
-- NFVI HW Reference implementation.
-- VNF reference implementation.
-
-<p align="center"><img src="../figures/ch8_NFVI_ref_profiles_impementations.jpg" alt="NFVI RI Profiles" title="NFVI RI Profiles" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Reference NFVI Profiles Implementation</p>
-
-<a name="x.x.x"></a>
-### Vendor supplied NFVI solutions.
-
-Infrastructure Abstraction and Profiling allows NFVI SW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure below). Having NFVI solutions tailored towards a given profile makes it easier to verify, certify and test that solution against that profile using the reference implementation of the profile mentioned previously.
-
-<p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_sw_solutions.jpg" alt="NFVI Vendor SW Solutions" title="NFVI Vendor SW Solutions" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Vendor Supplied NFVI SW Solutions</p>
-
-Similarly, Infrastructure Abstraction and Profiling allows NFVI HW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure below). Having NFVI hardware solutions tailored towards a given profile makes it easier to verify, certify and test that hardware solution against that profile using the reference implementation of the profile mentioned previously.
-
-<p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_hw_solutions.jpg" alt="NFVI Vendor HW Solutions" title="NFVI Vendor HW Solutions" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Vendor Supplied NFVI HW Solutions</p>
-
-<a name="x.x.x"></a>
-### NFVI Compliance, Verification, and Certification.
-
-Infrastructure abstraction and profiling makes it easier for a given NFVI SW solutions to be validated, certified and tested against the profile it is intended for.
-
-Having a deterministic NFVI metrics and capabilities expected for a given profile, allows NFVI SW solutions to be characterised, validated, and verified against those metrics and capabilities, and therefore report the results in a standard format. This will allow operators to understand in depth the details and the differentiation a given solution can provide against other options.
-
-Figure below demonstrates how a given NFVI SW solution can be validated and certified against a given profile by using a reference HW implementation and a reference NFVI implementation.
-
-<p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_sw_solutions.jpg" alt="Certifying NFVI Vendor SW Solutions" title="Certifying NFVI Vendor SW Solutions" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Certifying Vendor NFVI SW Solutions</p>
-
-Similarly, to characterise, validate, and certify NFVI HW solution against a given profile, both NFVI SW reference implementation and a VNF reference implementation are needed as demonstrated as in Figure below.
-
-<p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_hw_solutions.jpg" alt="Certifying NFVI Vendor HW Solutions" title="Certifying NFVI Vendor HW Solutions" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Certifying Vendor NFVI HW Solutions</p>
-
-Finally, NFVI vendors can characterise, validate, and certify an entire NFVI platform (both SW & HW) against a given profile by using a VNF reference implementation as shown in Figure below.
-
-<p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_swhw_solutions.jpg" alt="Certifying NFVI Vendor SW/HW Solutions" title="Certifying NFVI Vendor SW/HW Solutions" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Certifying Vendor NFVI SW/HW Solutions</p>
-
-<a name="x.x.x"></a>
-### VNF Compliance, Validation, and Certification.
-
-Standardising on Infrastructure profiles allows VNFs to be characterised, validated, and certified against a given profile by using reference NFVI implementations as demonstrated in Figure below. Where VNFs are using multiple profiles (different VNF-C written against different profiles), multiple Reference NFVI implementations should be used.
-
-<p align="center"><img src="../figures/ch8_certifying_vendor_supplied_vnfs.jpg" alt="Certifying Vendor Supplied VNFs" title="Certifying Vendor Supplied VNFs" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Certifying Vendor Supplied VNFs</p>
-
 
 
 <a name="x.x.x"></a>
