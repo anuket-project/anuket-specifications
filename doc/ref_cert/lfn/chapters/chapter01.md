@@ -4,17 +4,23 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [1.1 Introduction](#1.1)
+* [1.1 Overview](#1.1)
+  * [1.1.1 Scope](#1.1.2)
 * [1.2 Terminology](#1.2)
 * [1.3 Resources](#1.3)
 
 <a name="1.1"></a>
-## 1.1 Introduction
+## 1.1 Overview
+
+<a name="1.1.1"></a>
+### 1.1.1 Scope
 
 <a name="1.2"></a>
 ## 1.2 Terminology
 
 Below are some of the terminology used throughout the document:
+
+> Convert the table below to ML instead of HTML.
 
 <table>
   <tr><th>Term</th><th>Description</th></tr>
