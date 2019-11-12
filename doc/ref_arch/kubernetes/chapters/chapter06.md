@@ -10,7 +10,8 @@
 
 <a name="6.1"></a>
 ## 6.1 Introduction
-Cloud-native applications and infrastructure create several new challenges from a security standpoint. With Cloud-native, the industy requires a radically different apporach to security in contrast to monolithic architecture. 
+The adoption of cloud-native allows development teams to move fast, deploy software efficiently, and operate at an unprecedented scale. 
+Cloud-native applications offer the benefits by providing applications as small microservices (either containers or serverless), and managing them through DevOps processes. To build these applications, organisations need a cloud-native infrastructure which provides flexibility and enough services for developers. Cloud-native infrastructures should provide a platform for the build and release team to effectively perform continuous delivery of its applications, with close to zero human intervention. With Cloud-native, the industy requires a radically different apporach to security in contrast to monolithic architecture. 
 
 ##  6.2 Principles
 ### Cloud Native Security
