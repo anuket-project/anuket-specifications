@@ -10,7 +10,10 @@
 
 <a name="6.1"></a>
 ## 6.1 Introduction
-Cloud-native applications and infrastructure create several new challenges from a security standpoint. With Cloud-native, the industy requires a radically different apporach to security in contrast to monolithic architecture. The following are core principles to consider when securing cloud-native applications and infrastructure;
+Cloud-native applications and infrastructure create several new challenges from a security standpoint. With Cloud-native, the industy requires a radically different apporach to security in contrast to monolithic architecture. 
+
+##  6.2 Security Principle
+The following are core principles to consider when securing cloud-native applications and infrastructure;
 
 - Deploy only secure applications and trusted codes
 - Only deploy applications from validated and verified images
