@@ -15,9 +15,10 @@ Cloud-native applications and infrastructure create several new challenges from 
 - Deploy only secure applications and trusted codes
 - Only deploy applications from validated and verified images
 - Only deploy applications from truested registries
-- Containers
-- bull1
-- bull2
+- Containers orchestration (Kubernetes) must be secure with administrative boundaries between tenants
+- Network segmentation using security zoning and network standards must be followed when deploying containers. 
+- The Host OS running the containers must be hardened
+- Use container-aware runtime defense tools.
 
 <a name="6.2"></a>
 ## 6.2 Heading
