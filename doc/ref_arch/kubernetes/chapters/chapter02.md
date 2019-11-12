@@ -63,7 +63,9 @@ Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Mo
 | `req.inf.stg.03` | Storage | The Architecture **must** support Container Storage Interfaces (CSI).
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
 | `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable storage. |
-| `req.inf.ntw.01` | Network | The Architecture **must** support intra-pod communications such as between all containers within a pod on localhost |
+| `req.inf.stg.06` | Storage | The Architecture **must** support ephemeral storage (non-persistent) storage for Pods. |
+| `req.inf.stg.07` | Storage | The Architecture **must** support persistent storage for Pods. |
+| `req.inf.ntw.01` | Network | The Architecture **must** support Conatiner Network Interface (CNI). |
 | `req.inf.ntw.02` | Network | The Architecture **must** support intra-node communications, such as between agents on a node and all pods on that node |
 | `req.inf.ntw.03` | Network | The Architecture **must** support inter-node communications without NAT, such as communications between pods on a node with all other pods on all nodes |
 | `req.inf.ntw.04` | Network | The Architecture **must** support low latency and high throughput traffic needs. |
@@ -77,7 +79,6 @@ Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Mo
 | `req.inf.ntw.11` | Network | The networking solution **should** be able to be centrally administrated and configured. |
 | `req.inf.ntw.12` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |
 | `req.inf.ntw.13` | Network | The Architecture **should** support IPv6 for Kubernetes workloads. |
-| `req.inf.ntw.14` | Network | The Architecture **must** support Conatiner Network Interface (CNI). |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtualisation |   The Architecture **must** support the capability for Containers to consume virtualised compute, storage and network resources.|
@@ -92,8 +93,8 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.kcm.01` | General | The Architecture **must** allow infrastructure resource sharing within a Kubernetes cluster. |
-| `req.kcm.02` | General | The Architecture **must** allow discovery and management of NFVI resources. |
-| `req.kcm.03` | General | The Architecture **must** support Enhanced Platform Awareness (EPA). |
+| `req.kcm.02` | General | The Architecture **must** support discoverability of nodes and their features. |
+| `req.kcm.03` | General | The Architecture **must** support scheduling of workloads based on Enhanced Platform Awareness (EPA) features such as CPU Pinning, huge-pages and SR-IOV. |
 | `req.kcm.04` | General | The Architecture **must** include kubernetes artefacts (e.g., images, Helm charts, etc.) repository capabilities. |
 | `req.kcm.05` | General | The Architecture **should** support multi-tenancy in Kubernetes cluster. |
 | `req.kcm.06` | General | The Architecture **must** support resource tagging. |
@@ -119,7 +120,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
-| `req.lcm.adp.01` | Automated deployment | The Architecture should allow for automated deployment, configuration, provisioning and management of multiple - declaratively specified - kubernetes clusters. |
+| `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for automated deployment, configuration, provisioning and management of multiple - declaratively specified - kubernetes clusters. |
 | `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
 | `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
 | `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
