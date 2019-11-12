@@ -68,6 +68,7 @@ Traceability to Reference Model.
 | `req.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. |
 | `req.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. |
 | `req.inf.stg.10` | Storage | The Architecture **should** provide local Block storage for VM Instances. |
+| `req.inf.stg.11` | Storage | The Architecture **should** support the Block storage capabilities specified in https://docs.openstack.org/api-ref/block-storage/. |
 | `req.inf.ntw.01` | Network | The Architecture **must** provide virtual network interfaces to VM instances. |
 | `req.inf.ntw.02` | Network | The Architecture **must** include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs. |
 | `req.inf.ntw.03` | Network | The Architecture **must** support low latency and high throughput traffic needs. |
@@ -85,6 +86,7 @@ Traceability to Reference Model.
 | `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for NFVI to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
 | `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.|
 | `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for NFVI internal networks.|
+| `req.inf.ntw.17` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.|
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. |
