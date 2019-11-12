@@ -32,9 +32,24 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 
 ### 5.2.3. Cinder
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-|Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions/a> | Version 3.0 |
+| **OpenStack Service** | **Version** | **Minimal Microversion** |
+|-----------------------|-------------|--------------------------|
+| Block Storage: Cinder | 3           | 3.43                     |
+
+| **Cinder Features**    | **Mandatory** |
+|------------------------|:-------------:|
+| backup                 | X             |
+| clone                  | X             |
+| consistency_group      |               |
+| extend_attached_volume |               |
+| manage_snapshot        | X             |
+| manage_volume          | X             |
+| snapshot               | X             |
+| volume_revert          | X             |
+
+Block Storage API: https://docs.openstack.org/api-ref/block-storage/
+
+REST API Version History: https://docs.openstack.org/cinder/latest/contributor/api_microversion_history.html
 
 ### 5.2.4. Swift
 
