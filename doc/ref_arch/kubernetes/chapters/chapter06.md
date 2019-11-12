@@ -15,7 +15,7 @@ Cloud-native applications offer the benefits by providing applications as small 
 
 <a name="6.2"></a>
 ##  6.2 Principles
-### Cloud Native Security
+### Kubernetes Security
 The following are core principles to consider when securing cloud-native applications and infrastructure;
 
 - Deploy only secure applications and trusted codes
@@ -26,8 +26,11 @@ The following are core principles to consider when securing cloud-native applica
 - The Host OS running the containers must be hardened
 - Use container-aware runtime defense tools.
 
+##  6.3 Kubernetes Security Architecture
+Kubernetes Security architecture is made up of of several components that provide end to end security for the infrastructure and application or workload. These components include image registries (private or public), Kubernetes API, RBAC, network services, host and container runtime, keys or secret management. Each of these components work in a collaborative mode to ensure the security of the applications or workload. 
+
 <a name="6.3"></a>
-## 6.3 Security Perimeters
+## 6.4 Security Perimeters
 When applications or workloads run on Kubernetes, there are several layers which come into picture that govern the security. Each of these layers need to be secured within their perimeters. The various layers that come into picture are:
 
 - Container Registry: A container registry is a repostory to manage container images. The access to container registry needs to be secured in order to provide a controlled access.
