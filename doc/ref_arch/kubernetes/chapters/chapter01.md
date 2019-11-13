@@ -94,8 +94,8 @@ The high level scope of the CNTT Reference Architectures can be seen in Figure 1
 
 The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-2:
 - Kubernetes capabilities required to conform to the Reference Model requirements
-- Support for CNFs that are consumed wholly of containers
-- Support for CNFs that are consumed partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
+- Support for CNFs that consist wholly of containers
+- Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
 
 For the avoidance of doubt, the following is considered to be **out of scope**:
 - **Kubernetes cluster lifecycle management**: reason being, it is not considered to be "visible" to a CNF and so should not be included.
