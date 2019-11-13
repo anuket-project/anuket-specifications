@@ -5,9 +5,9 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [2.1 Introduction.](#2.1)
-* [2.2 Reference Model Requirements.](#2.2)
-* [2.3 Kubernetes Architecture Requirements.](#2.3)
+* [2.1 Introduction](#2.1)
+* [2.2 Reference Model Requirements](#2.2)
+* [2.3 Kubernetes Architecture Requirements](#2.3)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -29,7 +29,7 @@ Traceability to Reference Model.
 
 The Reference Model (RM) defines the NFVI to consist of the physical resources, virtualised resources and a software managment system.  In the virtualised world, the NFVI Software Management System (Virtualised Infrastructure Manager -- VIM) consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  And the VIM is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management. Now consider, the containerisation equivalent.
 
-Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Model Chapter 3) and consists of the NFVI Hardware (e.g. physical resources) and NFVI Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System, infrastructure resources consumed by virtual machines or containers).
+Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. physical resources), NFVI Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
 
 <a name="2.3.1"></a>
 ### 2.3.1 General
@@ -127,7 +127,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
 | `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
-| `req.lcm.cid.02` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
+| `req.lcm.cid.01` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
 
 <p align="center"><b>Table 2-5:</b> Kubernetes Architecture: Operations and LCM Requirements </p>
 
@@ -149,19 +149,23 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.sec.gen.01` | General | The Architecture **should** provide workload isolation. |
+| `req.sec.gen.01` | General | The Architecture **must** provide workload isolation. |
 | `req.sec.gen.02` | General | The Architecture **must** support policy based RBAC. |
 | `req.sec.gen.03` | General | The Architecture **must** support a centralised authentication and authorisation mechanism. |
 | `req.sec.gen.04` | General | The Architecture **should** provide Operating System kernel isolation. |
 | `req.sec.gen.05` | General | The Architecture **must** provide compute resources isolation. |
 | `req.sec.gen.06` | General | The Architecture **must** provide storage resources isolation. |
 | `req.sec.gen.07` | General | The Architecture **must** provide network resources isolation. |
+| `req.sec.gen.08` | General | The Architecture **should** minimise the attack surface by ensuring only required services and processes are running on the Node Operating System. |
+| `req.sec.gen.09` | General | The Architecture **should** support the ability to restrict resource, service, capabilities and interface permissions based on the principles of least privilege. |
+| `req.sec.gen.10` | General | The Architecture **should** support the ability to conform to the Center for Internet Security (CIS) Benchmark for Kubernetes. |
+| `req.sec.gen.11` | General | The Architecture **should** support the ability to secure API communications. |
 | `req.sec.zon.01` | Zoning | The Architecture **must** support identity management. |
 | `req.sec.zon.02` | Zoning | The Architecture **must** support password encryption. |
 | `req.sec.zon.03` | Zoning | The Architecture **must** support data, at-rest and in-flight, encryption. |
 | `req.sec.zon.04` | Zoning | The Architecture **must** support integration with Corporate Identity Management systems. |
-| `req.sec.cmp.02` | Compliance | The Architecture **must** comply with all applicable national standards and regulations. |
-| `req.sec.cmp.03` | Compliance | The Architecture **must** comply with all applicable regional standards and regulations. |
+| `req.sec.cmp.01` | Compliance | The Architecture **must** comply with all applicable national standards and regulations. |
+| `req.sec.cmp.02` | Compliance | The Architecture **must** comply with all applicable regional standards and regulations. |
 | `req.sec.ntw.01` | Networking | The Architecture **must** have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework. |
 | `req.sec.ntw.02` | Networking | The Architecture **must** have all security audit logs stored in accordance with ISO27001. |
 | `req.sec.ntw.03` | Networking | The Architecture **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
