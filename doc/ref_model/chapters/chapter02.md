@@ -118,7 +118,8 @@ Below is a list of Network Functions that covers almost _**95%**_ of the Telco w
 Studying various requirements of VNFs helps understanding what expectation they will have from the underlying NFVI. Following are _some_ of the requirement types on which various workloads might have different expectation levels:
 
 - **Computing**
-  - Computing speed and/or predictability (i.e., CPU and RAM sharing level)
+  - Speed (e.g., CPU clock and physical cores number)
+  - Predictability (e.g., CPU and RAM sharing level)
   - Specific processing (e.g., cryptography, transcoding)
 - **Networking**
   - Throughput (i.e., bit rate and/or packet rate)
@@ -169,8 +170,8 @@ By trying to sort VNFs into different categories based on the requirements obser
 
 Based on the above analysis, following NFVI profiles are proposed (Also shown in **Figure 2-1** below) 
 - **Basic**: for VNFCs that can tolerate resource over-subscription and variable latency.
-- **Network Intensive**: for VNFCs that require predictable compute performance, high network throughput and low network latency.
-- **Compute Intensive**: for VNFCs that require predictable compute performance and low network latency.
+- **Network Intensive**: for VNFCs that require predictable computing performance, high network throughput and low network latency.
+- **Compute Intensive**: for VNFCs that require predictable computing performance and low network latency.
 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
