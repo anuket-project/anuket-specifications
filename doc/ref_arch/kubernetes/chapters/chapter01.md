@@ -88,7 +88,10 @@ The definition above is very application centric and look at cloud native from t
 ## 1.7 Roadmap
 
 
+
+
 ## General thoughts
+***Please note that the notes below will be removed and replaced with content in the chapters of this Reference Architecture***
 
 Kubernetes itself is a “system for automating deployment, scaling, and management of containerized applications” and therefore Kubernetes place within our architecture should be closely linked to the application lifecycle (this is especially important when considering bare-metal containerisation). However, it is very important to point out that a CaaS also consist of other open source projects, or add-ons, such as:
 - CNI-compliant network plugins
