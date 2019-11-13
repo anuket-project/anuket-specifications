@@ -43,9 +43,9 @@
 > This shapter should discuss storage services provided by the reference architecture. 
 
 <a name="3.2.4"></a>
-### 3.2.4 Container Package Managers
+### 3.2.4 Kubernetes Application package manager
 
-> This chapter shoud describe what type of container package manager (e.g.: Helm, [CNAB](https://cnab.io/)) related considerations 
+To manage complex applications consisting from several pods the reference architecture may provide support for a Kubernetes Application package manager. The package manager may be able to manage the lifecycle a set of pods and provide a framework to customize a set of parameters for the deployment.
 
 <a name="3.3"></a>
 ## 3.3 Heading
