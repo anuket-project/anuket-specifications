@@ -9,7 +9,10 @@
 * [8.3 Architecture specific test cases (if needed).](#8.3)
   * [8.3.1 OpenStack (OS).](#8.3.1)
   * [8.3.2 Kubernetes (K8s).](#8.3.2)
+
+<!--
 * [8.4 General Thoughts](#8.4)
+-->
 
 <a name="8.1"></a>
 ## 8.1 Introduction
@@ -141,6 +144,7 @@ Example, or Reference, Functest Status Reporting Artifacts:
 
 TBD
 
+<!--
 <a name="8.5"></a>
 ## 8.5 General Thoughts.
 
@@ -287,26 +291,6 @@ Additional Terms utilized throughout the document:
 
 - **Verification** will be used to indicate conformance to design requirement specifications.  Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.  
 - **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour.  
-
-<a name="x.x.x"></a>
-### Resources
-1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
-2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
-3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
-4. **Dovetail**
- 1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements
- 2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf
- 3. TCs:
-  1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review
-  2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
-  3. Per OVP release in the release notes:
-   1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
-   2. https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/release/release-notes/index.html
-5. **Overall documentation** is on docs.opnfv.org for the corresponding Fraser and Danube releases
- 1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
- 2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
-6. **OPNFV Verification Program** is an open source, community-led compliance and verification program to demonstrate the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV and ONAP components (https://www.lfnetworking.org/OVP/).
- 1. OVP Whitepaper - https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
 
 <a name="x.x"></a>
 ## Lifecycle and Process Flow
@@ -543,58 +527,6 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <li>&ldquo;Just add Water&rdquo; deployment vehicle</li>
 </ol>
 
-<a name="x.x.x"></a>
-### Test Tools
-1. Shaker:  https://pyshaker.readthedocs.io/en/latest/ (The distributed data-plane testing tool built for OpenStack)
-2. Sonubuoy: https://sonobuoy.io/ It is a diagnostic tool that makes it easier to understand the state of a Kubernetes cluster by running a set of plugins (including Kubernetes conformance tests) in an accessible and non-destructive manner.
-
-<a name="x.x.x"></a>
-### Scenario Descriptor File (SDF)
-As defined by OPNFV, Scenarnio Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
-
-SDF's will contain, but not limited to, the following Metadata, Components, Deployment Options, Deployment Tools, and Hardware prerequistes:
-<ul>
-<li><strong>Metadata</strong>
-<ul>
-<li>Name</li>
-<li>History</li>
-<li>Purpose</li>
-<li>Owner</li>
-</ul>
-</li>
-<li><strong>Components</strong>
-<ul>
-<li>e.g. SDN controllers</li>
-<li>Versions</li>
-<li>Optional features,<br /> e.g. NFV features</li>
-</ul>
-</li>
-<li><strong>Deployment Options</strong>
-<ul>
-<li>Hardwaretypes</li>
-<li>Virtual deploy</li>
-<li>HA, NOHA</li>
-</ul>
-</li>
-<li><strong>Deployment Tools</strong>
-<ul>
-<li>Supporting installers</li>
-<li>Valid options per installer</li>
-</ul>
-</li>
-<li><strong>Hardware Prerequisites</strong>
-<ul>
-<li>e.g. SRIOV, DPDK</li>
-</ul>
-</li>
-</ul>
-
-
-
-<p>Respective test cases can be found in the <a title="Annex for Chapter 8" href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08-annex.md" target="_blank" rel="noopener">Annex for Chapter 8</a>.</p>
-
-
-
 
 <a name="x.x"></a>
 ## Test Results
@@ -648,3 +580,4 @@ Placholder to identify automation needs and tool chains.
 **NOT MVP**
 
 Placholder to capture best practices.
+-->

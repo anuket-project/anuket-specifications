@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [8.1 Introduction](#8.1)
-* [8.2 Available Test Framework](#8.2)
+* [8.2 Relevant Community Projects and Initiatives](#8.2)
 * [8.3 Integrated E2E Framework](#8.3)
   * [8.3.1 NFVI Integrated E2E Framework (Playbook)](#8.3)
   * [8.3.1 VNF Integrated E2E Framework (Playbook)](#8.3)
@@ -14,7 +14,7 @@
 ## 8.1 Introduction
 
 <a name="8.2"></a>
-## 8.2 Available Test Framework
+## 8.2 Relevant Community Projects and Initiatives
 
 ### 8.2.1 Functest
 [Functest](https://functest.readthedocs.io/en/stable-iruya/) was initially
