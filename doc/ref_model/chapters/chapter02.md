@@ -145,16 +145,17 @@ By trying to sort VNFs into different categories based on the requirements obser
     - Data plane functions (i.e., functions with specific networking and computing needs)
     - _Examples: BNG, S/PGW, UPF, Sec-GW, DPI, CDN, SBC_
   - Requirements
-    - Algorithmic-intensive
-    - Fast computing
-    - High throughput
+    - Predictable computing
+    - High network throughput
     - Low network latency
 - **Profile Three**
   - VNF types
     - Control plane functions with specific computing needs
     - _Examples: MME, AMF, IMS-CSCF_
   - Requirements
-    - Fast computing
+    - Predictable computing
+    - Low network latency    
+<!--
 - **Profile Four**
   - VNF types
     - Control plane functions with specific storage needs
@@ -162,10 +163,9 @@ By trying to sort VNFs into different categories based on the requirements obser
   - Requirements
     - High storage IOPS
     - High storage volume
-
+-->
 
 <a name="2.3"></a>
-
 # 2.3 NFVI Profiles
 
 Based on the above analysis, following NFVI profiles are proposed (Also shown in **Figure 2-1** below) 
