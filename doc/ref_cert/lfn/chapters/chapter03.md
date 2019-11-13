@@ -8,7 +8,7 @@
 * [3.2 Measurement Criteria](#3.2)
   * [3.2.1 Storage and IOPS](#3.2.1)
 * [3.3 Measurement Types](#3.3)
-  * [3.3.1 PerformanceMeasurements](#3.3.1)
+  * [3.3.1 Performance Measurements](#3.3.1)
   * [3.3.2 Resiliency Measurements](#3.3.2)
 * [3.4 NFVI Test Cases](#3.4)
 
