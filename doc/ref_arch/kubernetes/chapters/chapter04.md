@@ -53,7 +53,7 @@
 <a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
 
-The reference architecture must include [Helm v3](https://v3.helm.sh/).
+The reference architecture must support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like [Helm v3](https://v3.helm.sh/).
 
 <a name="4.9"></a>
 ## 4.9 Supplementary components (okay, this is a bad heading, but I do not have any better)

@@ -45,7 +45,7 @@
 <a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager
 
-To manage complex applications consisting from several pods the reference architecture should provide a Kubernetes Application package manager. The package manager should be able to manage the lifecycle a set of pods and provide a framework to customize a set of parameters for the deployment.
+To manage complex applications consisting from several pods the reference architecture may provide support for a Kubernetes Application package manager. The package manager may be able to manage the lifecycle a set of pods and provide a framework to customize a set of parameters for the deployment.
 
 <a name="3.3"></a>
 ## 3.3 Heading
