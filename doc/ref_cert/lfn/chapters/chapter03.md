@@ -51,7 +51,7 @@ Additional factors to consider when measuring IOPS:
 For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
 
 <a name="3.3"></a>
-## 3.3 Measurement Criteria
+## 3.3 Measurement Types
 
 <a name="3.3.1"></a>
 ### 3.3.1 Performance & Resiliency Measurements
