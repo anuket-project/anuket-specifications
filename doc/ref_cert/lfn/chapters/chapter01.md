@@ -11,8 +11,20 @@
 <a name="1.1"></a>
 ## 1.1 Overview
 
+To be added once more content is developed.
+
 <a name="1.2"></a>
 ## 1.2 Scope
+
+This document covers the realisation aspects of Verification and Certification of both NFVI and VNFs. The document will cover the following topics:
+
+- Identify in details the Requirements for Verification and Certification Framework.
+- Identify in details the Requirement of Test Cases (and mapping them to requirements from The Reference Model and The OpenStack Based Reference Architecture ).
+- analysis of existing community projects.
+- Propose an E2E Framework for verification and certification of NFVI and VNFs.
+- Playbook of instructions, user manuals, steps of how to perform verification and certification for both NFVI and VNFs using hte proposed E2E Framework.
+- Gap analysis to identify where the Gaps are in the industry (tooling, test cases, process, etc).
+- Identify development efforts needed to address any gaps identified.
 
 <a name="1.3"></a>
 ## 1.3 Resources & References
