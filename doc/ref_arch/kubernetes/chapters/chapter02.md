@@ -57,7 +57,7 @@ Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Mo
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for Pods.  |
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
-| `req.inf.com.03` | Network | The Architecture **must** support Conatiner Runtime Interface (CRI). |
+| `req.inf.com.03` | Network | The Architecture **must** support Container Runtime Interface (CRI). |
 | `req.inf.stg.01` | Storage | The Architecture **must**  support for Kubernetes Volumes for container storage.
 | `req.inf.stg.02` | Storage | The Architecture **may** provide shared Object storage as a service for Containers workload.
 | `req.inf.stg.03` | Storage | The Architecture **must** support Container Storage Interfaces (CSI).
@@ -71,14 +71,15 @@ Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Mo
 | `req.inf.ntw.04` | Network | The Architecture **must** support low latency and high throughput traffic needs. |
 | `req.inf.ntw.05` | Network | The Architecture **should** support service function chaining. |
 | `req.inf.ntw.06` | Network | The Architecture **must** support network resiliency. |
-| `req.inf.ntw.06` | Network | The Architecture **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. |
 | `req.inf.ntw.07` | Network | The Architecture **should** embrace open-based standards and technologies. |
-| `req.inf.ntw.08` | Network | The Architecture **must** be capable of supporting highly available (Five 9’s or better) workloads. |
-| `req.inf.ntw.09` | Network | The Architecture **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites. |
+| `req.inf.ntw.08` | Network | The Architecture **must** be fully redundant. |
+| `req.inf.ntw.09` | Network | The Architecture **should** support life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling and healing. |
 | `req.inf.ntw.10` | Network | The networking solution **should** be configurable in an automated manner using openly published API definitions. |
 | `req.inf.ntw.11` | Network | The networking solution **should** be able to be centrally administrated and configured. |
 | `req.inf.ntw.12` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |
 | `req.inf.ntw.13` | Network | The Architecture **should** support IPv6 for Kubernetes workloads. |
+| `req.inf.ntw.14` | Network | The Architecture **must** support capabilities for integrating SDN controllers. |
+| `req.inf.ntw.15` | Network | The Architecture **should** support Service Mesh Interface (SMI). |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtualisation |   The Architecture **must** support the capability for Containers to consume virtualised compute, storage and network resources.|
@@ -158,7 +159,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.sec.zon.02` | Zoning | The Architecture **must** support password encryption. |
 | `req.sec.zon.03` | Zoning | The Architecture **must** support data, at-rest and in-flight, encryption. |
 | `req.sec.zon.04` | Zoning | The Architecture **must** support integration with Corporate Identity Management systems. |
-| `req.sec.cmp.02` | Compliance | The Architecture **must** comply with all applicable standards and regulations. |
+| `req.sec.cmp.02` | Compliance | The Architecture **must** comply with all applicable national standards and regulations. |
 | `req.sec.cmp.03` | Compliance | The Architecture **must** comply with all applicable regional standards and regulations. |
 | `req.sec.ntw.01` | Networking | The Architecture **must** have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework. |
 | `req.sec.ntw.02` | Networking | The Architecture **must** have all security audit logs stored in accordance with ISO27001. |
