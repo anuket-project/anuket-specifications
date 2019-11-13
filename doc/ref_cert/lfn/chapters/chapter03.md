@@ -5,10 +5,11 @@
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
-* [3.2 Measurement](#3.2)
-  * [3.2.1 Performance & Resiliency Measurements](#3.2.1)
-  * [3.2.2 Storage and IOPS](#3.2.2)
-* [3.3 NFVI Test Cases](#3.3)
+* [3.2 Measurement Criteria](#3.2)
+  * [3.2.1 Storage and IOPS](#3.2.1)
+* [3.3 Measurement Types](#3.3)
+  * [3.3.1 Performance & Resiliency Measurements](#3.3.1)
+* [3.4 NFVI Test Cases](#3.4)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
@@ -16,14 +17,44 @@
 > Scope of this chapter is to have a list of test cases needed (a detailed table of sort)
 
 <a name="3.2"></a>
-## 3.2 Measurement
+## 3.2 Measurement Criteria
 
 Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
 
 This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please refer to Reference Model**
 
+
 <a name="3.2.1"></a>
-### 3.2.1 Performance & Resiliency Measurements
+### 3.2.1 Storage and IOPS
+
+_**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
+
+From a definition perspective, IOPS is the standard unit of measurement for I/O (Input/Output) operations per second. This measurement is a performance-based measurement and is usually seen written as**(1)**:
+
+- **Total IOPS**: Average number of I/O operations per second.
+- **Read IOPS**: Average number of read I/O operations per second.
+- **Write IOPS**: Average number of write I/O operations per second.
+
+For example, if you have a disk that is capable of doing a 100 IOPS, it means that it is theoretically capable of issuing a 100 read and or write operations per second.  This is in theory.  In reality, additional time is needed to actually process the 100 reads/writes.  This additional time is referred to as "latency", which reduces the total IOPS that is calculated, and measured.  Latency needs needs to be measured, and included in the IOPS calculation.  Latency will tell us how long it takes to process a single I/O request, and is generally in the 2 millisecond (ms) range per IO operation for a physical disk, through 20+ ms, at which time users will notice an impact in their experience**(2)**.  
+
+Additional factors to consider when measuring IOPS:
+
+
+- Take into consideration the percentage of Input (write) vs. Output (reads) operations, as Writes can be more resource intensive.
+- Determine if Reads were performed from Cache, as this this may (will) result in faster performance, and faster IOPS.
+- Confirm the storage types (Physical, RAID), as storage arrays with linear, or sequential reading/writing may (will) be slower.
+- Identify the block size used, as using large block sizes vs. small block sizes can (will) impact IOPS performance.
+- Determine Hard Disk Speeds (HDD in RPMs) used, as the higher the RPMS, the potential for faster IOPS performance.
+- Quantify the number of disk controllers used to process the number of requested IO requests.
+- Determine the specific work-load requirements, as this will dictate speed, controllers, disk RPM, and latency tolerances.  
+
+For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
+
+<a name="3.3"></a>
+## 3.3 Measurement Criteria
+
+<a name="3.3.1"></a>
+### 3.3.1 Performance & Resiliency Measurements
 
 The following table contains a lists of performance measurements, and/or capabilities, to be captured where feasible during test validations.  More specifically, the table contains:
 
@@ -60,33 +91,9 @@ The following table contains a lists of performance measurements, and/or capabil
 | i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
 | i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
 
-<a name="3.2.2"></a>
-### 3.2.2 Storage and IOPS
-
-_**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
-
-From a definition perspective, IOPS is the standard unit of measurement for I/O (Input/Output) operations per second. This measurement is a performance-based measurement and is usually seen written as**(1)**:
-
-- **Total IOPS**: Average number of I/O operations per second.
-- **Read IOPS**: Average number of read I/O operations per second.
-- **Write IOPS**: Average number of write I/O operations per second.
-
-For example, if you have a disk that is capable of doing a 100 IOPS, it means that it is theoretically capable of issuing a 100 read and or write operations per second.  This is in theory.  In reality, additional time is needed to actually process the 100 reads/writes.  This additional time is referred to as "latency", which reduces the total IOPS that is calculated, and measured.  Latency needs needs to be measured, and included in the IOPS calculation.  Latency will tell us how long it takes to process a single I/O request, and is generally in the 2 millisecond (ms) range per IO operation for a physical disk, through 20+ ms, at which time users will notice an impact in their experience**(2)**.  
-
-Additional factors to consider when measuring IOPS:
 
 
-- Take into consideration the percentage of Input (write) vs. Output (reads) operations, as Writes can be more resource intensive.
-- Determine if Reads were performed from Cache, as this this may (will) result in faster performance, and faster IOPS.
-- Confirm the storage types (Physical, RAID), as storage arrays with linear, or sequential reading/writing may (will) be slower.
-- Identify the block size used, as using large block sizes vs. small block sizes can (will) impact IOPS performance.
-- Determine Hard Disk Speeds (HDD in RPMs) used, as the higher the RPMS, the potential for faster IOPS performance.
-- Quantify the number of disk controllers used to process the number of requested IO requests.
-- Determine the specific work-load requirements, as this will dictate speed, controllers, disk RPM, and latency tolerances.  
-
-For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
-
-<a name="3.3"></a>
-## 3.3 NFVI Test Cases
+<a name="3.4"></a>
+## 3.4 NFVI Test Cases
 
 > we need to have list of NFVI test cases in here.
