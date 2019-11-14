@@ -76,7 +76,11 @@ To help guide the reader, this glossary provides an introduction to the terminol
 <a name="11.1.4"></a>
 ### 11.1.4 Container Related Terminology
 
-Relevant terms from RA2 shall be added.
+>_*Note:*_ Relevant terms are added here from RA2. These term definitions are taken from [kubernetes glossary](https://kubernetes.io/docs/reference/glossary) but in some cases made independent from kubernetes as a specific container orchestration engines.
+
+- **Container Image**:	Stored instance of a container that holds a set of software needed to run an application.
+- **Container**:	A lightweight and portable executable image that contains software and all of its dependencies.
+- **Pod**:	The smallest and simplest object orchestrated by the container engine. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
 
 <a name="11.1.5"></a>
 ### 11.1.5 Other Referenced Terminology
