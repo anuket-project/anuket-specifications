@@ -20,7 +20,7 @@ The following are core principles to consider when securing cloud-native applica
 
 - Deploy only secure applications and trusted codes
 - Only deploy applications from validated and verified images
-- Only deploy applications from truested registries
+- Only deploy applications from trusted registries
 - Containers orchestration (Kubernetes) must be secure with administrative boundaries between tenants
 - Network segmentation using security zoning and network standards must be followed when deploying containers. 
 - The Host OS running the containers must be hardened
@@ -33,9 +33,9 @@ Kubernetes Security architecture is made up of of several components that provid
 ## 6.4 Security Perimeters
 When applications or workloads run on Kubernetes, there are several layers which come into picture that govern the security. Each of these layers need to be secured within their perimeters. The various layers that come into picture are:
 
-- Container Registry: A container registry is a repostory to manage container images. The access to container registry needs to be secured in order to provide a controlled access.
+- Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to provide a controlled access.
 - Container Images: Containers image is a unit of pre-packages application and all its dependencies. Before loading them to container registry, they need to be made secured by performing various checks like vulnerability analysis, scans etc. These should also be signed and from trusted sources.
-- Containers: A container is a running instance of a container image. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, checking the privelege level of containers.
+- Containers: A container is a running instance of a container image. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, checking the privilege level of containers.
 - Pods: A pod is a collection of containers.
 - Node: A node can either be a master node (where all the core services are running) or a worker node (where the workloads are running). A node in an unsecured boundary can lead to a potential threat to the running workloads. 
 - Cluster: A cluster comprises of a collection of nodes which contain the control plane as well as the data plane. It also provides API endpoints for interacting with the cluster. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
