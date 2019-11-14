@@ -63,7 +63,7 @@ leaf-spine/no leaf-spine.
 
 
 <p align="center"><img src="../figures/chp02_typical_RI.PNG" alt="relationship" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> CNTT-RI Relationship with other communities.</p>
+<p align="center"><b>Figure 1-1:</b> A Typical Example for RI.</p>
 
 For the purpose of reference implementation and verification, OPNFV based RI will include the following components:
 
