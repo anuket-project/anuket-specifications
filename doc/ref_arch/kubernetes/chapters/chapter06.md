@@ -40,6 +40,16 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Node: A node can either be a master node (where all the core services are running) or a worker node (where the workloads are running). A node in an unsecured boundary can lead to a potential threat to the running workloads. 
 - Cluster: A cluster comprises of a collection of nodes which contain the control plane as well as the data plane. It also provides API endpoints for interacting with the cluster. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
 
-<a name="6.4"></a>
-## 6.4 Heading
+<a name="6.5"></a>
+## 6.5 Isolation
+### VM vs. Container Isolation
+Sometimes container isolation is compared directly with VM based isolation, with the conclusion '*there are issues with container isolation, it is not as good as VM isolation*'. Such 1:1 comparison is not reasonable because VM and container based isolation are fundamentally different:
+- VMs: hard isolation, in the layers underlying the application SW
+- Containers: isolation by SW based mechanisms available in OS, Docker and Kubernetes. A container workload is just a set of Linux processes. It is _possible_ to configure SW based _additional isolation_ for container workloads, for example by kernel namespaces.
+
+Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist.
+
+### Container Isolation in Kubernetes Cluster
+#### Namespaces  
+Kernel namespaces should be used to provide process level isolation within a Kubernetes cluster. There are different types of kernel namespaces like PID and network. The default is to allocate one namespace per container application, in case several applications can be deployed in the same cluster.
 
