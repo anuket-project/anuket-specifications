@@ -76,11 +76,11 @@ To help guide the reader, this glossary provides an introduction to the terminol
 <a name="11.1.4"></a>
 ### 11.1.4 Container Related Terminology
 
->_*Note:*_ Relevant terms are added here from RA2. Most of these term definitions are taken from [kubernetes glossary](https://kubernetes.io/docs/reference/glossary) but in some cases should be made independent from kubernetes as a specific container orchestration engine.
+>_*Note:*_ Relevant terms are added here from RA2. Most of these term definitions are taken from [Kubernetes glossary](https://kubernetes.io/docs/reference/glossary) but in some cases should be made independent from Kubernetes as a specific container orchestration engine.
 
 - **Container Image**:	Stored instance of a container that holds a set of software needed to run an application.
 - **Container**:	A lightweight and portable executable image that contains software and all of its dependencies.
-- **Pod**:	The smallest and simplest kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
+- **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
 - **Kubernetes Cluster**: A set of machines, called nodes, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master node.
 - **Kubernetes Master**:	The master node(s) manages the worker nodes and the pods in the cluster. Multiple master nodes are used to provide a cluster with failover and high availability.
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
