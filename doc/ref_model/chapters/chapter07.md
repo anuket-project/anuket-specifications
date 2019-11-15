@@ -43,7 +43,9 @@
   * [7.10.1 Networking Security Zoning.](#7.4.1)
   * [7.10.2 Encryption.](#7.4.2)
   * [7.10.3 Platform Patching.](#7.4.3)
-  * [7.10.4 Boot Integrity Measurement (TPM).](#7.4.4)
+  * [7.10.4 Boot Integrity Measurement (TPM).](#7.10.4)
+  * [7.10.5 Runtime Integrity Measurement (TPM).](#7.10.5)
+  * [7.10.6 NFVI & VIM.](#7.10.6)
 * [7.11 Certification requirements](#7.8)
 
 <a name="7.1"></a>
@@ -656,7 +658,14 @@ Additionally, NFVI Operators should ensure that OS kernel measurements can be re
 The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
 <a name="7.10.5"></a>
-### 7.10.5 NFVI & VIM
+### 7.10.5 Runtime Integrity Measurement (TPM)
+If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
+Additionally, platform measurements may be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) funcitonality of OpenCIT.
+The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
+This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
+
+<a name="7.10.6"></a>
+### 7.10.6 NFVI & VIM
 
 Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
 <!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019
