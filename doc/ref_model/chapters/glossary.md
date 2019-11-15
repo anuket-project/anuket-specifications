@@ -86,7 +86,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
 - **Kubernetes Node**:	A node is a worker machine in Kubernetes. A worker node may be a VM or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
 - **CaaS**:	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
-- **CaaS Manager**:	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management. CaaS Manager could be considered the "undercloud" where the CaaS is the "overcloud".
+- **CaaS Manager**:	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
 - **Kubernetes Service**: An abstract way to expose an application running on a set of Pods as a network service.
 
 <a name="11.1.5"></a>
