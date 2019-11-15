@@ -18,10 +18,24 @@ This chapter presents a consolidated set of OpenStack Service APIs corresponding
 
 ### 5.2.1. Keystone
 
-| **OpenStack Service** | **Link for API and CLI** | **API/client Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-|Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html | Version 3.10 |
-|Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
+| **OpenStack Service** | **API Version** |
+|-----------------------|-----------------|
+| Identity: Keystone    | 3.8             |
+
+| **Keystone Features**   | **Mandatory** |
+|-------------------------|:-------------:|
+| application_credentials | X             |
+| external_idp            |               |
+| federation              |               |
+| project_tags            | X             |
+| security_compliance     | X             |
+| trust                   | X             |
+
+Identity API v3: https://docs.openstack.org/api-ref/identity/v3/index.html
+
+Identity API v3 extensions: https://docs.openstack.org/api-ref/identity/v3-ext/
+
+Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin/configuration.html#security-compliance-and-pci-dss
 
 ### 5.2.2 Glance
 
