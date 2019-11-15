@@ -40,10 +40,10 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 <!--
 | `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|
 | `req.gen.k8s.02` | Open source | The Architecture **must** support dynamic request and configuration of resources (compute, network, storage) through Kubernetes APIs. |
--->
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. |
-|----|------------------------------------------------|------------------------------------------|
+-->
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. |
+|----|------------------------------------------------|------------------------------------------|
 | `req.gen.cnt.03` | Cloud nativeness | The Architecture **must** support immutable infrastructure. |
 | `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven horizontal auto-scaling of workloads. |
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
@@ -83,8 +83,11 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.09` | Network | The Architecture **should** support life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling and healing. |
 | `req.inf.ntw.10` | Network | The networking solution **should** be configurable in an automated manner using openly published API definitions. |
 | `req.inf.ntw.11` | Network | The networking solution **should** be able to be centrally administrated and configured. |
+<!--
 | `req.inf.ntw.12` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |
+-->
 | `req.inf.ntw.13` | Network | The Architecture **should** support IPv6 for Kubernetes workloads. |
+|----|------------------------------------------------|------------------------------------------|
 | `req.inf.ntw.14` | Network | The Architecture **must** support capabilities for integrating SDN controllers. |
 | `req.inf.ntw.15` | Network | The Architecture **should** support Service Mesh Interface (SMI). |
 | `req.inf.ntw.16` | Network | The Architecture **should**  support co-exisence of multiple Conatiner Network Interface (CNI). |
@@ -104,14 +107,19 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|------------------------------------------|
+<!--
 | `req.kcm.01` | General | The Architecture **must** allow infrastructure resource sharing within a Kubernetes cluster. |
 | `req.kcm.02` | General | The Architecture **must** support discoverability of nodes and their features. |
 | `req.kcm.03` | General | The Architecture **must** support scheduling of workloads based on Enhanced Platform Awareness (EPA) features such as CPU Pinning, huge-pages and SR-IOV. |
 | `req.kcm.04` | General | The Architecture **must** include kubernetes artefacts (e.g., images, Helm charts, etc.) repository capabilities. |
 | `req.kcm.05` | General | The Architecture **should** support multi-tenancy in Kubernetes cluster. |
 | `req.kcm.06` | General | The Architecture **must** support resource tagging. |
+-->
 | `req.kcm.07` | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. |
+|----|------------------------------------------------|------------------------------------------|
+<!--
 | `req.kcm.08` | General | The Architecture **must** support workload resiliency. |
+-->
 
 <p align="center"><b>Table 2-3:</b> Kubernetes Architecture: Kubernetes Cluster Requirements</p>
 
@@ -120,9 +128,10 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|-----------------------------------------|
+<!--
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
 | `req.int.api.02` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. |
-
+-->
 
 <p align="center"><b>Table 2-4:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
