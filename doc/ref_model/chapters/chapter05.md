@@ -69,7 +69,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.stg.cfg.001 | Storage Types | Yes/No   | Support of Storage types described in the catalogue |
 | nfvi.stg.cfg.002 | Storage Block | Yes/No  |  |
-| nfvi.stg.cfg.003 | Storage Object | Yes/No |  |
+| nfvi.stg.cfg.003 | Storage Object | Yes/No | **Note:** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope. |
 | nfvi.stg.cfg.004 | Storage with replication |  Yes/No |  |
 | nfvi.stg.cfg.005 | Storage with encryption | Yes/No |  |
 
@@ -88,8 +88,8 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | e.g. virtio1.1, i40evf (Intel driver for VF SR-IOV). |
-| nfvi.net.cfg.002 | Overlay protocol | Protocols | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. |
+| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | e.g. virtio1.1, i40evf (Intel driver for VF SR-IOV). <br> **Note:** This feature is not applicable to containers or Kubernetes based infrastructures. |
+| nfvi.net.cfg.002 | Overlay protocol | Protocols | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. <br> **Note:** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN) |
 | nfvi.net.cfg.003 | NAT |  Yes/No |  Support of Network Address Translation |
 | nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
 | nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |
@@ -100,7 +100,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | e.g. DPDK. |
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | e.g. DPDK. <br> **Note:** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitchm however workloads need access to user space networking solutions. |
 | nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | e.g. support of SR-IOV, SmartNic. |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No |  |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface |Yes/No | |
@@ -147,9 +147,11 @@ This section will detail NFVI SW profiles and associated configurations for the 
 |------------------|----------------|----------------|----------------|----------------|----------------|
 | nfvi.stg.cfg.001 | Catalogue storage Types | Yes/No | Y  | Y  | Y |
 | nfvi.stg.cfg.002 | Storage Block | Yes/No | Y | Y |Y  |
-| nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y | Y | Y |
+| nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y / N<sup>1)</sup> | Y / N<sup>1)</sup> | Y / N<sup>1)</sup> |
 | nfvi.stg.cfg.004 | Storage with replication | Yes/No | N | Y | Y |
 | nfvi.stg.cfg.005 | Storage with encryption |Yes/No | Y | Y | Y |
+
+**1)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.
 
 <p align="center"><b>Table 5-9:</b> Virtual Storage features and configuration for the 3 types of SW profiles.</p>
 
@@ -169,8 +171,8 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1 |  virtio1.1, i40evf (Intel driver for VF SR-IOV) |  virtio1.1, i40evf (Intel driver for VF SR-IOV) |
-| nfvi.net.cfg.002 | Overlay protocol | Protocols  | VXLAN, MPLSoUDP, GENEVE, other |  VXLAN, MPLSoUDP, GENEVE, other |VXLAN, MPLSoUDP, GENEVE, other |
+| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1<sup>1)</sup> |  virtio1.1, i40evf (Intel driver for VF SR-IOV)<sup>1)</sup> |  virtio1.1, i40evf (Intel driver for VF SR-IOV)<sup>1)</sup> |
+| nfvi.net.cfg.002 | Overlay protocol | Protocols  | VXLAN, MPLSoUDP, GENEVE or other<sup>2)</sup> |  VXLAN, MPLSoUDP, GENEVE or other<sup>2)</sup> |VXLAN, MPLSoUDP, GENEVE or other<sup>2)</sup> |
 | nfvi.net.cfg.003 | NAT | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.004 | Security Group | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.005 | SFC support | Yes/No  | N | Y | Y |
@@ -178,14 +180,19 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 <p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
 
+**1)** In case of containers there are no vNIC-s.<br>
+**2)** In case of Kubernetes based infrastructure the network separation can be solved without an overlay solution (e.g.: with IPVLAN).
+
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | YeS/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | YeS/No and SW Optimisation | N | Y / N<sup>1)</sup>, DPDK | Y / N<sup>1)</sup>, DPDK |
 | nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SR-IOV and  SmartNic |Y, support of SR-IOV and  SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No | N  | Y | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y | Y |
 
 <p align="center"><b>Table 5-12:</b> Virtual Networking Acceleration features.</p>
+
+**1)**: There is no vSwitch in Kubernetes based infrastructures.
 
 <a name="5.3"></a>
 ## 5.3 NFVI HW profile description
@@ -287,7 +294,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
 |---------------------|-----------|---------------------------|--------|--------|--------|
 | nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD | Hard Disk Drive |  |  |  |
-| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid Disk Drive | Recommended | Recommended |Recommended |
+| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid State Drive | Recommended | Recommended |Recommended |
 
 <p align="center"><b>Table 5-15:</b> Storage configuration specification.</p>
 

@@ -94,7 +94,7 @@ This section describes a set of explicit NFVI capabilities and performance measu
 | e.nfvi.cap.009 | Crypto Acceleration | Yes/No | Crypto Acceleration |
 | e.nfvi.cap.010 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
 | e.nfvi.cap.011 | Programmable Acceleration | Yes/No | Programmable Acceleration |
-| e.nfvi.cap.012 | Enhanced Cache Management* | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded |
+| e.nfvi.cap.012 | Enhanced Cache Management* | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded </br> **Note:** This capability is not applicable to containers or Kubernetes based infrastructures.|
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of NFVI</p>
 
@@ -181,7 +181,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.cap.016 | CPU overbooking | 1:N | <definition update scheduled> |
-| i.nfvi.cap.017 | vNIC QoS | Yes/No | QoS enablement |
+| i.nfvi.cap.017 | vNIC QoS | Yes/No | QoS enablement <br> **Note:** This capability is not applicable for containers due to the lack of vNIC, however VLAN QoS or DSCP marking can be implemented.|
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
 
@@ -288,7 +288,7 @@ Table 4-12 shows capabilities related to resources allocation
 | e.vim.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNFC |
 | e.vim.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNFC |
 | e.vim.cap.003 | Virtual Networking resources allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
-| e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
+| e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants <br> **Note:** In a Kubernetes based infrastructure within one Kubernetes cluster multitenacy is provided only in resource management level. Isolation of execution environments requires separate Kubernetes clusters. |
 | e.vim.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
 
 <p align="center"><b>Table 4-12:</b> VIM Resource Allocation Capabilities</p>
@@ -302,7 +302,7 @@ Table 4-13 Shows performance measurement capabiltities
 |--------------------|------------------|---------|-------------------------------------------|
 | e.vim.cap.006 | Virtual resources inventory per tenant | Yes/No | Capability to provide information related to allocated virtualised resources per tenant |
 | e.vim.cap.007 | Resources Monitoring | Yes/No | Capability to notify state changes of allocated resources |
-| e.vim.cap.008 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
+| e.vim.cap.008 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated  <br> **Note:** In a Kubernetes based infrastructure only CPU and memory resources are exposed.|
 | e.vim.cap.009 | Virtual resources Fault information | Yes/No | Capability to collect and notify fault information on virtualised resources |
 
 <p align="center"><b>Table 4-13:</b> VIM Resource Performance Measurement Capabilities</p>
@@ -328,8 +328,8 @@ Table 4-14: Reserved
 | e.vim.pm.001 | Time to create Virtual Compute for a given VNF | Max ms |  |
 | e.vim.pm.002 | Time to delete Virtual Compute of a given VNF | Max ms |  |
 | e.vim.pm.003 | Time to start Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.004 | Time to stop Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.005 | Time to pause Virtual Compute of a given VNF | Max ms |  |
+| e.vim.pm.004 | Time to stop Virtual Compute of a given VNF | Max ms | **Note:** In case of containers there is no stop operation. |
+| e.vim.pm.005 | Time to pause Virtual Compute of a given VNF | Max ms | **Note:** In case of containers there is no pause operation. |
 | e.vim.pm.006 | Time to create internal virtual network | Max ms |  |
 | e.vim.pm.007 | Time to delete internal virtual network | Max ms |  |
 | e.vim.pm.008 | Time to update internal virtual network | Max ms |  |
@@ -460,8 +460,8 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
-| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
+| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. <br> **Note:** In Kubernetes based infrastructures virtio-ipsec can be applied only if the CNI plugin is OVS. |
+| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. <br> **Note:** In Kubernetes based infrastructures virtio-crypto can be applied only if the CNI plugin is OVS. |
 
 <p align="center"><b>Table 4-21:</b> Acceleration Extensions for N Instance Type</p>
 
@@ -476,8 +476,8 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
-| .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
+| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. <br> **Note:** In Kubernetes based infrastructures virtio-trans can be applied only if the CNI plugin is OVS. |
+| .la-programmable | virtio-programmable | Look-Aside programmable acceleration. <br> **Note:** In Kubernetes based infrastructures virtio-programmable can be applied only if the CNI plugin is OVS. |
 
 <p align="center"><b>Table 4-22:</b> Acceleration Extensions for C Instance Type</p>
 
@@ -515,8 +515,8 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | No | |
 | `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
-| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
-| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3) |
+| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | <sup>1)</sup> |
+| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes / No<sup>2)</sup> | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
 | `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
@@ -528,6 +528,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 
 
 <p align="center"><b>Table 4-24:</b> Mapping of NFVI Capabilities to Instance Types</p>
+
+**1):** In case of containers the Enhanced Cache Management capability is not applicable.<br>
+**2):** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Instance Performance Measurement Mapping
