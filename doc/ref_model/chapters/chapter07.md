@@ -649,7 +649,11 @@ NFVI operators should ensure that the platform including the components (hypervi
 <a name="7.10.4"></a>
 ### 7.10.4 Boot Integrity Measurement (TPM)
 
-Using trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components such as platform firmware, BIOS, bootloader, OS kernel, and other system components can be securely stored and verified. NFVI Operators should ensure that the platform measurement can only be taken when the system is reset or rebooted; there needs to be no ability to write the new platform measurement in TPM during system run-time. The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server
+Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem and other system components can be securely stored and verified.
+NFVI Operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
+
+Additionally, NFVI Operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
+The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
 <a name="7.10.5"></a>
 ### 7.10.5 NFVI & VIM
