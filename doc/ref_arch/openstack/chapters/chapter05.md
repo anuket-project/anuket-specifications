@@ -53,10 +53,32 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 
 ### 5.2.4. Swift
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/ | Version 1.0 |
-| Object Storage: Swift |https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
+| **OpenStack Service** | **API Version** |
+|-----------------------|-----------------|
+| Object Storage: Swift | 1               |
+
+| **Swift Features** | **Mandatory** |
+|--------------------|:-------------:|
+| account_quotas     | X             |
+| bulk_delete        | X             |
+| bulk_upload        | X             |
+| container_quotas   | X             |
+| container_sync     | X             |
+| crossdomain        | X             |
+| discoverability    | X             |
+| form_post          | X             |
+| ratelimit          | X             |
+| s3api              |               |
+| slo                | X             |
+| staticweb          | X             |
+| symlink            | X             |
+| temp_url           | X             |
+| tempauth           | X             |
+| versioned_writes   | X             |
+
+Object Storage API: https://docs.openstack.org/api-ref/object-store/index.html
+
+Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.html
 
 ### 5.2.5. Neutron
 
