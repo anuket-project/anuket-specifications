@@ -288,7 +288,7 @@ Table 4-12 shows capabilities related to resources allocation
 | e.vim.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNFC |
 | e.vim.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNFC |
 | e.vim.cap.003 | Virtual Networking resources allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
-| e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants <br> **Note:** In a Kubernetes based infrastructure within one Kubernetes cluster multitenacy is provided only in resource management level. Isolation of execution environments requires separate Kubernetes clusters. |
+| e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants <br> **Note:** In a Kubernetes based infrastructure within one Kubernetes cluster multitenacy is provided only in resource management level. Isolation of execution environments requires separate Kubernetes clusters or worker nodes. |
 | e.vim.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
 
 <p align="center"><b>Table 4-12:</b> VIM Resource Allocation Capabilities</p>
