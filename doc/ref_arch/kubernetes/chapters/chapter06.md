@@ -34,11 +34,11 @@ Kubernetes Security architecture is made up of of several components that provid
 When applications or workloads run on Kubernetes, there are several layers which come into picture that govern the security. Each of these layers need to be secured within their perimeters. The various layers that come into picture are:
 
 - Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to provide a controlled access.
-- Container Images: Containers image is a unit of pre-packages application and all its dependencies. Before loading them to container registry, they need to be made secured by performing various checks like vulnerability analysis, scans etc. These should also be signed and from trusted sources.
-- Containers: A container is a running instance of a container image. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, checking the privilege level of containers.
-- Pods: A pod is a collection of containers.
-- Node: A node can either be a master node (where all the core services are running) or a worker node (where the workloads are running). A node in an unsecured boundary can lead to a potential threat to the running workloads. 
-- Cluster: A cluster comprises of a collection of nodes which contain the control plane as well as the data plane. It also provides API endpoints for interacting with the cluster. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
+- Container Images: Stored instance of a container that holds a set of software needed to run an application. Before loading them to container registry, they need to be made secured by performing various checks like vulnerability analysis, scans etc. These should also be signed from trusted sources.
+- Containers: A lightweight and portable executable image that contains software and all of its dependencies. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, mounting of directories of underlying OS etc and it must also be ensured that they don't run in priveleged mode..
+- Pods: A Pod represents a set of running containers on your cluster. Kuberenetes inherently offers pod security policies that define a set of conditions that a pod must run with in order to be accepted into the system. These policies help in ensuring the necessary checks for running the pods.
+- Node: A node can either be a master node (where all the core services are running) or a worker node (where the workloads are running). A node in an unsecured boundary can lead to a potential threat to the running workloads. A node may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
+- Cluster: A cluster provides API endpoints for interaction. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
 
 <a name="6.5"></a>
 ## 6.5 Isolation
