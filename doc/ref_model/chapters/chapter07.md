@@ -3,26 +3,26 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [7.1 Introduction.](#7.1)
-* [7.2 Principles and Guidelines.](#7.2)
-  * [7.2.1 Overarching Objectives and Goals.](#7.2.1)
-  * [7.2.2 Verification Methodologies.](#7.2.2)
-  * [7.2.3 Governance.](#7.2.3)
-* [7.3 Common standards.](#7.3)
-  * [7.3.1 Potential attack vectors.](#7.3.1)
-  * [7.3.2 Testing demarcation points.](#7.3.2)
-* [7.4 Security Scope.](#7.4)
-  * [7.4.1 In-scope and Out-of-Scope definition.](#7.4.1)
+* [7.1 Introduction](#7.1)
+* [7.2 Principles and Guidelines](#7.2)
+  * [7.2.1 Overarching Objectives and Goals](#7.2.1)
+  * [7.2.2 Verification Methodologies](#7.2.2)
+  * [7.2.3 Governance](#7.2.3)
+* [7.3 Common standards](#7.3)
+  * [7.3.1 Potential attack vectors](#7.3.1)
+  * [7.3.2 Testing demarcation points](#7.3.2)
+* [7.4 Security Scope](#7.4)
+  * [7.4.1 In-scope and Out-of-Scope definition](#7.4.1)
   * [7.4.2 Security requirements](#7.4.2)
   * [7.4.3 Platform security requirements](#7.4.3)
   * [7.4.4 Workload security requirements](#7.4.4)
   * [7.4.5 Workload security requirements](#7.4.5)
-* [7.5 Platform Security.](#7.5)
-  * [7.5.1 Platform Security Assumption.](#7.5.1)
-  * [7.5.2 Platform ‘back-end’ access security.](#7.5.2)
+* [7.5 Platform Security](#7.5)
+  * [7.5.1 Platform Security Assumption](#7.5.1)
+  * [7.5.2 Platform ‘back-end’ access security](#7.5.2)
   * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
-  * [7.5.4 Platform services.](#7.5.4)
-* [7.6 Workload Security.](#7.6)
+  * [7.5.4 Platform services](#7.5.4)
+* [7.6 Workload Security](#7.6)
 * [7.7 Vendor Responsibilities](#7.7)
   * [7.7.1 Software Hardening](#7.7.1)
   * [7.7.2 Port Protection](#7.7.2)
@@ -35,16 +35,18 @@
   * [7.7.9 Encryption suite supports](#7.7.9)
   * [7.7.10 Password complexity support](#7.7.10)
   * [7.7.11 Customized Banner](#7.7.11)
- * [7.8 Operator responsibility.](#7.2)
-  * [7.8.1 Remote Attestation/openCIT.](#7.2.1)
-  * [7.8.2 VNF Image Scanning / Signing.](#7.2.2)
-* [7.9 VNF Vendors responsibility.](#7.3)
-* [7.10 NFVI Vendors responsibility](#7.4)
-  * [7.10.1 Networking Security Zoning.](#7.4.1)
-  * [7.10.2 Encryption.](#7.4.2)
-  * [7.10.3 Platform Patching.](#7.4.3)
-  * [7.10.4 Boot Integrity Measurement (TPM).](#7.4.4)
-* [7.11 Certification requirements](#7.8)
+ * [7.8 Operator responsibility](#7.8)
+  * [7.8.1 Remote Attestation/openCIT](#7.8.1)
+  * [7.8.2 VNF Image Scanning / Signing](#7.8.2)
+* [7.9 VNF Vendors responsibility](#7.9)
+* [7.10 NFVI Vendors responsibility](#7.10)
+  * [7.10.1 Networking Security Zoning](#7.10.1)
+  * [7.10.2 Encryption](#7.10.2)
+  * [7.10.3 Platform Patching](#7.10.3)
+  * [7.10.4 Boot Integrity Measurement (TPM)](#7.10.4)
+  * [7.10.5 Runtime Integrity Measurement (TPM)](#7.10.5)
+  * [7.10.6 NFVI & VIM](#7.10.6)
+* [7.11 Certification requirements](#7.11)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -95,6 +97,8 @@ Standards organizations with recommendations and best practices, and certificati
  • FedRAMP Certification https://www.fedramp.gov/ (US Only)
 
  • ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
+
+ • ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/committee/1427-nfv
 
 • ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
 
@@ -647,10 +651,21 @@ NFVI operators should ensure that the platform including the components (hypervi
 <a name="7.10.4"></a>
 ### 7.10.4 Boot Integrity Measurement (TPM)
 
-Using trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components such as platform firmware, BIOS, bootloader, OS kernel, and other system components can be securely stored and verified. NFVI Operators should ensure that the platform measurement can only be taken when the system is reset or rebooted; there needs to be no ability to write the new platform measurement in TPM during system run-time. The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server
+Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem and other system components can be securely stored and verified.
+NFVI Operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
+
+Additionally, NFVI Operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
+The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
 <a name="7.10.5"></a>
-### 7.10.5 NFVI & VIM
+### 7.10.5 Runtime Integrity Measurement (TPM)
+If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
+Additionally, platform measurements may be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
+The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
+This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
+
+<a name="7.10.6"></a>
+### 7.10.6 NFVI & VIM
 
 Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
 <!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019
