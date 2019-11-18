@@ -1,31 +1,42 @@
 # Contribution
 
 ## Table of Contents
+* [Labels](#labels)
 * [Issues & Labels](#issues)
 * [Pull Requests](#prs)
 * [Approval Process](#approvals)
 
+<a name="labels"></a>
+### Labels
+Following labels should be correctly used for all issues and PRs to indicate the status of them and to assist automation pipelines to correctly apply CNTT processes.
+
+  - **Roadmap Item**: This label applies to both issues and PRs to indicate that the issue/PR is for a roadmap item for an upcoming release.
+  - **Fix needed**: This label applies to both issues and PRs to indicate that the issue/PR is to fix an existing bug.
+  - **Backlog**: This label applies to issues only to indicate that the issue is to be added to a backlog of features for future releases (to be considered during technical steering meeting).
+  - **Workstream Name**: This label applies to both issues and PRs to indicate which project the issue/PR is targeting.
+  - **Chapter Number**: This label applies to PRs (and optionally to issues) to indicate which chapter the PR is targeting.
+  - **General**: This label applies to both issues and PRs to indicate that this issue/PR is not corresponding to any particular chapter/file.
+  - **Major/Minor**: This bale applies to both issues and PRs to indicate if the issue/PR is addressing a major or minor change. 
+  - **Enhancement**: This label applies to both issues and PRs to indicate that the issue/Pr is proposing an Enhancement.
+  - **Returned**: This label applies to both issues and PRs to indicate that the issue/PR has been returned for reasons such as (more information needed, not a high priority, no longer valid, etc).
+  - **Idle**: This label will be **automatically** applied to both issues/Labels to indicate that no activity has been observed on the issue/PR for some determined time frame. This an trigger an action to close the issue/PR.
+  - **Forced**: This label will be **automatically** applied to PRs to indicate that the PR has been merged without following the default process (due to reasons identified below)
+
 <a name="issues"></a>
-### Issues & Labels
-- Issue Types:
-  - **Roadmap Item**: This issue type indicates a request for feature to be added for an upcoming release. 
-    - This issue type should only be created by Technical Steering Leads.
-  - **Fix needed**: This issue type indicates a request to fix a bug or to introduce an enhancement.
-    - This issue type can be created by any individual.
-  - **Backlog**: This issue type indicate a feature request (to be considered during technical steering meeting) for future releases.
-    - This issue type can be created by any individual.
-  - **Enhancement**: This issue type indicate an enhancement request
-    - This issue type can be created by any individual.
+### Issues
+
 - All issues must be clearly titled, described, and tagged with the right labels when created.
-- Issue Labels (one or more to be selected form pre-defined set):
-  - **Roadmap Item**: To indicate this issue is for a roadmap item.
-  - **Fix needed**: To indicate this issue is for a fix request.
-  - **Backlog**: To indicate this issue is for a backlog feature request.
-  - **Workstream Name**: To indicate which project this issue targeting.
-  - **Chapter Number**: To indicate which Chapter this issue targeting.
-  - **General**: To indicate that this issue is not corresponding to any particular chapter/file.
-  - **Major/Minor**: To indicate if the issue request a major or minor change. 
-  - **Enhancement**: Suggested Enhancement.
+  - Title needs to be in the following format [WSx Chx].
+    - WSx: The name of the work stream it is targeting.
+    - Chx: The name of the chapter it is targeting (if applicable).
+- Issue Labels (one or more to be selected form pre-defined set).
+- Issues should be correctly set with the correct Project and Milestone.
+  - Milestone = the upcoming release name.
+  - Project = Work stream.
+- Workstream Leads has the sole responsibility to assign issues to individuals to address them.
+- No self assignment allowed, instead, ask WSL (vai comment or others) to get the issue assigned to you if you would like to address it.
+  - This is to make sure items are worked on based on priorities and right reasoning.
+- WSL may label an issue as "Returned" to request further information or to decide not to work on it.
 
 
 <a name="prs"></a>
@@ -38,7 +49,7 @@
 
 
 <a name="approvals"></a>
-### Approval Process
+### Pull Requests Approval Process
 
 - Once a PR is created, it needs to get the following approvals before it is merged into master.
   - From at least one of committers for that workstream
