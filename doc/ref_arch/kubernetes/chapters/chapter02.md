@@ -76,8 +76,11 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.02` | Network | The Architecture **must** support intra-node communications, such as between agents on a node and all pods on that node |
 | `req.inf.ntw.03` | Network | The Architecture **must** support inter-node communications without NAT, such as communications between pods on a node with all other pods on all nodes |
 | `req.inf.ntw.04` | Network | The Architecture **must** support low latency and high throughput traffic needs. |
+<!--
 | `req.inf.ntw.05` | Network | The Architecture **should** support service function chaining. |
+-->
 | `req.inf.ntw.06` | Network | The Architecture **must** support network resiliency. |
+|----|------------------------------------------------|------------------------------------------|
 | `req.inf.ntw.07` | Network | The Architecture **should** embrace open-based standards and technologies. |
 | `req.inf.ntw.08` | Network | The Architecture **must** be fully redundant. |
 | `req.inf.ntw.09` | Network | The Architecture **should** support life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling and healing. |
