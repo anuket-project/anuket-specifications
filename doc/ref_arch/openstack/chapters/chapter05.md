@@ -39,10 +39,11 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 
 ### 5.2.2 Glance
 
-| **OpenStack Service** | **Link for API and CLI** | **API/Client Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images | Version 2.0 |
-| Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
+| **OpenStack Service** | **Minimal API Version** |
+|-----------------------|-------------------------|
+| Image: Glance         | 2.5                     |
+
+Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
 ### 5.2.3. Cinder
 
