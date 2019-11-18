@@ -11,7 +11,7 @@
 <a name="5.1"></a>
 ## 5.1 Introduction
 
-This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSi Vi-Nf interfaces. 
+This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Vi-Vnfm and Or-Vi interfaces. 
 The OpenStack Pike version is used as the baseline for these APIs and CLIs. CNTT reference architectures and future 
 reference implementations will only considered OpenStack releases greater or equal to Pike. Any reference 
 implementation that **get certified by RC** can be considered as CNTT RA Compliant. When different OpenStack version 
