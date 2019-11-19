@@ -24,7 +24,15 @@
 <a name="3.2.1"></a>
 ### 3.2.1 Container Runtime Services
 
-> This chapter should describe considerations about the services of container runtimes.
+The Container Runtime is the component that runs within a Host Operating System (OS) and manages the underlying OS functionality such as cgroups and namespaces (in Linux) in order to provide a service within which container images can be launched.  For the purposes of this document the Container Runtime is not just the true 'runtime' but also the container 'engine' that manages the container-related infrastructure such as networking, security, storage and distributed state.  Essentially the component that pulls an image from a registry, unpacks it and runs it.
+
+There are a number of different container runtimes, ranging from low-level runtimes that are essentially scripts that manage the low-level OS primitives, through to full application-centric "high level" container runtimes that include a comprehensive API and other developer-friendly features.
+
+A Container Runtime used in a Reference Implementation that is conformant with this Reference Architecture is compliant with the Kubernetes Container Runtime Interface (https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md).
+
+Any container runtime sed in a Reference Implementation that is conformant with this Reference Architecture is compliant with the Open Container Initiative (OCI) runtime specification (https://github.com/opencontainers/runtime-spec/blob/master/spec.md).
+
+
 
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
@@ -40,7 +48,7 @@
 <a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
 
-> This shapter should discuss storage services provided by the reference architecture. 
+> This shapter should discuss storage services provided by the reference architecture.
 
 <a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager
