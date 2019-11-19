@@ -32,8 +32,6 @@ A Container Runtime used in a Reference Implementation that is conformant with t
 
 Any container runtime sed in a Reference Implementation that is conformant with this Reference Architecture is compliant with the Open Container Initiative (OCI) runtime specification (https://github.com/opencontainers/runtime-spec/blob/master/spec.md).
 
-
-
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
