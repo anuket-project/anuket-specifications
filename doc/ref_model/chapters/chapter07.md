@@ -229,32 +229,29 @@ The high-level functions of these different access controls are described below:
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks (usually sub, or virtual networks).
 * **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including RBAC, authentication controls as approriate for the access arrangement, and API gateways for automated/script-driven processes.
 
-# The following security requirements apply to the platform:
-* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic
-* Provide protections between the Internet and any workloads including web and volumetrics attack preventions
-* Support zoning within a tenant workload - using application-level filtering
+# The following general security requirements apply to the platform:
+* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
+* Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
+* Support zoning within a tenant workload - using application-level filtering.
 * All host to host communications within the Cloud provider network are to be cryptographically protected in transit.
-* Not expose tenant IP address details to another tenant
-* Use cryptographically-protected protocols for administrative access to the platform
-* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, TLS.
-* A Platform change management process is documented, well communicated to staff and tenants, and rigourously followed.
-* A process to check change management adherence is implemented.
-* Processes for managing platform access control filters is documented, followed, and monitored.
-* No login to root on any platform systems, and RBAC must apply
-* An approved system or process for last resort access must exist for the platform
-* All API access must use TLS
-* All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks
+* Not expose tenant IP address details to another tenant.
+* Use cryptographically-protected protocols for administrative access to the platform.
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
+* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence that is implemented, and rigourously followed.
+* Processes for managing platform access control filters that are documented, followed, and monitored.
+* No login to root on any platform systems.
+* RBAC must apply for all systems access.
+* An approved system or process for last resort access must exist for the platform.
+* All API access must use TLS.
+* All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
 * Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management and application communication are cryptographically protected in transit between data centre facilities.
-* Continuous Cloud security compliance is mandatory
-* All data persisted to primary, replica or backup storage is to be encrypted
-* All platform security logs are to be time synchronised
-* Logs are to be regularly scanned for events of interest
-* An incident response plan must exist for the platform
-* the cloud services must be regulalry vulnerability and penetration tested
-* 
-*              --- review and continue this list ---
-*
-
+* Continuous cloud security compliance is mandatory.
+* All data persisted to primary, replica or backup storage is to be encrypted.
+* All platform security logs are to be time synchronised.
+* Logs are to be regularly scanned for events of interest.
+* An incident response plan must exist for the platform.
+* The cloud services must be regulalry vulnerability and penetration tested.
 
 <a name="7.5.2"></a>
 ## 7.5.2 Platform ‘back-end’ access security
@@ -272,208 +269,6 @@ The high-level functions of these different access controls are described below:
     provide the basic connectivity such as a physical MPLS connection, or
     Internet connection, but the workloads will have a VLAN on that physical
     connection and provide additional security controls).*
-
-<a name="7.5.4"></a>
-## 7.5.4 Platform services
--   Platform services – cloud and security
-
-    *(Security requirements for any services hosted within the local VIM
-    environment, or the immediate trusted cloud)*
-
--   Platform services – external and security
-
-    *(Security requirements for any services that are hosted externally, but
-    leveraged or consumed within the local VIM environment)*
-
--   Data at rest
-
-    *(Security requirements of stored data used by platform services. This
-    will include provision for workload data)*
-
--   Data in transit
-
-    *(Security requirements for securing the different data types used in
-    the platform. This will include provision for protection of workload
-    data)*
-
--   Network Security considerations incl zoning, tiering, segmentation,
-    standalone/hybrid clouds, multi-VIM, etc.
-
-    *(This section will have sub-sections – probably based on technology
-    types. Needs to cover security considerations around network security
-    for platforms, but also platform-to-platform, VIM-to-VIM where VIMs may
-    be homogeneous or heterogeneous. This will include confidentiality,
-    integrity, availability, identity federation and trust (authenticity)).*
-
--   Operator and support access to platform – requirements
-
-    *(It must be shown that operator and programmatic access to a platform
-    is secure. This will include ensuring that access controls are secure,
-    but not cumbersome. For programmatic access, there should be guidelines
-    around API gateway functionality expected and authentication/identity
-    standards expected).*
-
--   Assurance and Availability
-
-    *(The platform must have an assurance system(s) that meets minimum
-    requirements for the time to learn state changes, collect performance
-    and problem data from multiple platform layers, stream, correlate and
-    prioritise specific data \[to a specific bus type?\], and co-operate
-    with downstream systems in a closed-loop arrangement).*
-
--   Vulnerability Management
-
-    *(Security requirements around which and how vulnerabilities are
-    discovered, mitigated, managed in the platform. Any impacts to workloads
-    must be included).*
-
--   Logging management & privacy considerations (and incl legal
-    intercept considerations?)
-
-    *(Requirements for platform security logging. This is likely to include
-    off-site storage, SIEM integration, logging access control, and log
-    rotation/archival/retrieval).*
-
--   Configuration management & CI/CD
-
-    *(Security requirements around how configuration changes are made to the
-    platform. This will include automated update processes and any impacts
-    to service and availability. Any impacts to workloads must be
-    included).*
-
--   Fault Management
-
-    *(Security requirements around fault restoration (including zero trust
-    for more secure deployments?)*
-
--   Asset Management
-
-    *(Security requirements around how assets should be discovered,
-    collected, stored, accessed and protected).*
-
--   Closed Loop Security (general) and/or SIEM integration –
-    requirements and implementation
-
-    *(Security requirements around closed-loop security. Starting to define
-    a set of standards that we want for vendor standardisation. Implications
-    on homogeneous/heterogeneous VIMs).*
-
--   Micro-segmentation (general) – requirements and implementation
-
-    *(Security requirements around micro-segmentation – levels of controls
-    within the platform, how the controls are managed and monitored.
-    Expectations around application of policy and flow monitoring across
-    homogeneous/heterogeneous VIMs)*
-
-<a name="7.6"></a>
-## 7.6 Workload Security
-
--   Workload Security Assumption: that workload security compliance will
-    be a responsibility of the workload owner (if not the platform
-    owner) but will leverage any compliances from the platform.
-
-    *(Define the workload security assumption. Note also that the workload
-    may have a different security posture/level to the platform, but that
-    the workload can leverage security accreditations/compliances/services
-    offered by the platform).*
-
--   Strong separation between tenants and tenants
-    -   data at rest
-
-    *(requirements that tenant data is protected including disk allocation,
-    namespace separation, and memory isolation)*
-
--   data in transit
-
-    *(ensure that strong access controls and processes exist around
-    east-west and north-south tenant-to-tenant comms. Define level of access
-    control and associated access services)*
-
--   cloud security – refer cloud security industry standards – i.e. TBC
-
-    *(meet industry cloud security requirements)*
-
--   workload services – cloud
-
-    *(Security requirements for any services consumed within the local VIM
-    environment, or the immediate trusted cloud)*
-
--   workload services – external
-
-    *(Security requirements for any services that are consumed from external
-    sources)*
-
--   Strong separation between tenants and platform
-
-    *(Cover different platform types and separation requirements of each,
-    including:*
-
--   *Bare metal*
--   *VM*
--   *Container*
-
-    *Incl. separation of workload traffic from platform
-    management/signalling)*
-
--   Define workload ‘Front-end’ access security
-
-    *(Security requirements around how the workload will connect to network
-    connections that are external to the tenancy, and are used as part of
-    the tenancy data service – this could include an MPLS VPN connection, or
-    an Internet connection. The workload environment will be expected to
-    support sufficient security to support the workload certification
-    requirements).*
-
--   Define workload ‘Back-end’ access security
-
-    *(Security requirements around how the workload may be managed - which
-    may or may not be known by the tenant. This includes management and
-    signalling and separation/protection/isolation of these network
-    connections)*
-
--   Operator and support access to workload including:
-    -   Bare Metal
-    -   VM
-    -   Container
-    -   VNF
-
-    *(Security requirements around how tenant workloads are supported –
-    cover a situation where it is tenant, and another where it is a cloud
-    service. May be different for different service types – i.e. BareMetal,
-    VM, Container, and VNF).*
-
--   Workload tenant access to workloads
-
-    *(Security requirements around tenant support of a workload. Covers
-    operator and robotic access. Access controls, policy, and guidelines.
-    May be different for different service types – i.e. BareMetal, VM,
-    Container, and VNF).*
-
--   Assurance – tenant
-
-    *(The workload environment must have support for assurance system(s)
-    that meets minimum requirements for the time to learn state changes,
-    collect performance and problem data from multiple platform layers,
-    stream, correlate and prioritise specific data \[to a specific bus
-    type?\], and co-operate with downstream systems in a closed-loop
-    arrangement).*
-
--   Configuration Management – tenant
-
-    *(Security requirements around how configuration changes are made to the
-    workload environment. This will include automated update processes and
-    any impacts to service and availability. This includes process).*
-
--   Fault Management – tenant
-
-    *(Security requirements around fault restoration in a workload
-    environment (including zero trust for more secure deployments?)*
-
--   Telemetry – tenant (reference to a telemetry working group, if any)?
-
-    *(Security requirements covering the provision of telemetry to tenants
-    incl access, authentication, integrity, confidentiality and
-    availability).*
 
 <a name="7.7"></a>
 ## 7.7 Vendor Responsibilities
