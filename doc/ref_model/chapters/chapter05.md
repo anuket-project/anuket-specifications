@@ -101,7 +101,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | e.g. DPDK. |
-| nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | e.g. support of SR-IOV, SmartNic. |
+| nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | e.g. support of SmartNic. |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No |  |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface |Yes/No | |
 
@@ -181,7 +181,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
 | nfvi.net.acc.cfg.001 | vSwitch optimisation | YeS/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
-| nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SR-IOV and  SmartNic |Y, support of SR-IOV and  SmartNic |
+| nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SmartNic |Y, support of SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No | N  | Y | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y | Y |
 
@@ -223,7 +223,7 @@ The host profile and capabilities include:
 1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
 1. **SMT/HT (SMT: Simultaneous Multithreading/ HT: Hyper Threading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host.
-1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV.
+1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV (without exposing SR-IOV VFs to workload via PCI-Pass through).
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
 1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
 1. **Security features**: such as TRusted Platform Module (TPM).
