@@ -3,21 +3,21 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [1.1 Overview & Problem Statement.](#1.1)
-  * [1.1.1 Problem Statement.](#1.1.1)
-  * [1.1.2 Project Goals and Purpose.](#1.1.2)
-  * [1.1.3 Common NFVI Benefits.](#1.1.3)
-* [1.2 Terminology.](#1.2)
-* [1.3 Principles.](#1.3)
-* [1.4 Scope.](#1.4)
-  * [1.4.1 Use Cases.](#1.4.1)
-* [1.5 How this document works.](#1.5)
-  * [1.5.1 Document Organization.](#1.5.1)
-  * [1.5.2 Audience.](#1.5.2)
-* [1.6 Relationship to other industry projects.](#1.6)
-* [1.7 Out of Scope Components.](#1.7)
-* [1.8 Bogo-Meter.](#1.8)
-* [1.9 Roadmap.](#1.9)
+* [1.1 Overview & Problem Statement](#1.1)
+  * [1.1.1 Problem Statement](#1.1.1)
+  * [1.1.2 Project Goals and Purpose](#1.1.2)
+  * [1.1.3 Common NFVI Benefits](#1.1.3)
+* [1.2 Terminology](#1.2)
+* [1.3 Principles](#1.3)
+* [1.4 Scope](#1.4)
+  * [1.4.1 Use Cases](#1.4.1)
+* [1.5 How this document works](#1.5)
+  * [1.5.1 Document Organization](#1.5.1)
+  * [1.5.2 Audience](#1.5.2)
+* [1.6 Relationship to other industry projects](#1.6)
+* [1.7 Out of Scope Components](#1.7)
+* [1.8 Bogo-Meter](#1.8)
+* [1.9 Roadmap](#1.9)
 
 <a name="1.1"></a>
 ## 1.1 Overview
@@ -72,7 +72,7 @@ In conclusion, to serve the stated objective building a common NFVI infrastructu
 
 <a name="1.2"></a>
 ## 1.2 Terminology
-To help guide the reader, a glossary [Reference Model Terminology](../../../ref_model/chapters/glossary.md#1.1) provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GS NFV 003 V1.4.1 (2018-08) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
+To help guide the reader, a glossary [Reference Model Terminology](../../ref_model/chapters/glossary.md#1.1) provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GS NFV 003 V1.4.1 (2018-08) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
 <a name="1.3"></a>
 ## 1.3 Principles
@@ -230,7 +230,7 @@ There will be dedicated OVP hacking tracks to facilitate VNF vendor onboarding a
 The Common Telco NFVI will collaborate with the respective API workgroups of SDOs (ETSI, MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
 
 <a name="1.7"></a>
-## 1.7 Out of Scope Components.
+## 1.7 Out of Scope Components
 While the nature of the NFVI reference model might seem quite broad, the following areas are not at this time part of the scope of this effort.  
 - Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the document so that it is general enough that any vendor hardware can be used in the implementation without making significant changes to the model. 
 - VNF and application specifications: Other than the API interfaces when they directly need to touch the VNFs themselves, the intention is to assume the VNF application is a blackbox that the NFVI is providing resources to.  The majority of interactions for lifecycle management of the VNFs will be through the VIM whenever possible.
