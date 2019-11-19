@@ -5,23 +5,46 @@
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)
-* [5.2 Core OpenStack Services APIs.](#5.2)
-* [5.3 Consolidated Set of APIs.](#5.3)
+* [5.2 Core OpenStack Services APIs](#5.2)
+* [5.3 Consolidated Set of APIs](#5.3)
 
 <a name="5.1"></a>
-## 5.1 Introduction.
+## 5.1 Introduction
 
-This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSi Vi-Nf inetrfaces. The Openstack Pike version is used as the baseline for these APIs and CLIs. The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in teh Chapter a consolidated view of these and other APIs that would be of interest.
+This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Vi-Vnfm and Or-Vi interfaces. 
+The OpenStack Pike version is used as the baseline for these APIs and CLIs. CNTT reference architectures and future 
+reference implementations will only considered OpenStack releases greater or equal to Pike. Any reference 
+implementation that **get certified by RC** can be considered as CNTT RA Compliant. When different OpenStack version 
+based reference implementations gets certified then the "CNTT standard" will be the oldest used OpenStack release. 
+Example, Let us assume that the Pike, Queens and Stein OpenStack based reference implementations get certified. Then, 
+the CNTT standard OpenStack version will be Pike. 
+ 
+The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in the Chapter a 
+consolidated view of these and other APIs that would be of interest.
 
 <a name="5.2"></a>
-## 5.2. Core OpenStack Services APIs.
+## 5.2. Core OpenStack Services APIs
 
 ### 5.2.1. Keystone
 
-| **OpenStack Service** | **Link for API and CLI** | **API/client Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-|Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html | Version 3.10 |
-|Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
+| **OpenStack Service** | **API Version** |
+|-----------------------|-----------------|
+| Identity: Keystone    | 3.8             |
+
+| **Keystone Features**   | **Mandatory** |
+|-------------------------|:-------------:|
+| application_credentials | X             |
+| external_idp            |               |
+| federation              |               |
+| project_tags            | X             |
+| security_compliance     | X             |
+| trust                   | X             |
+
+Identity API v3: https://docs.openstack.org/api-ref/identity/v3/index.html
+
+Identity API v3 extensions: https://docs.openstack.org/api-ref/identity/v3-ext/
+
+Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin/configuration.html#security-compliance-and-pci-dss
 
 ### 5.2.2 Glance
 
@@ -53,10 +76,32 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 
 ### 5.2.4. Swift
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/ | Version 1.0 |
-| Object Storage: Swift |https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
+| **OpenStack Service** | **API Version** |
+|-----------------------|-----------------|
+| Object Storage: Swift | 1               |
+
+| **Swift Features** | **Mandatory** |
+|--------------------|:-------------:|
+| account_quotas     | X             |
+| bulk_delete        | X             |
+| bulk_upload        | X             |
+| container_quotas   | X             |
+| container_sync     | X             |
+| crossdomain        | X             |
+| discoverability    | X             |
+| form_post          | X             |
+| ratelimit          | X             |
+| s3api              |               |
+| slo                | X             |
+| staticweb          | X             |
+| symlink            | X             |
+| temp_url           | X             |
+| tempauth           | X             |
+| versioned_writes   | X             |
+
+Object Storage API: https://docs.openstack.org/api-ref/object-store/index.html
+
+Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.html
 
 ### 5.2.5. Neutron
 
@@ -162,10 +207,15 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 
 <a name="5.3"></a>
-## 5.3. Consolidated Set of APIs.
+## 5.3. Consolidated Set of APIs
 
 ### 5.3.1. OpenStack Interfaces
-This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available at https://docs.openstack.org/api-ref/ and CNTT standard is to use the latest version v3. OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs directly using the HTTP or REST library, or they can use one of the many programming language specific cloud libraries.
+This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available 
+at https://docs.openstack.org/api-ref/.
+ 
+OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs 
+directly using the HTTP or REST library, or they can use one of the many programming language specific cloud 
+libraries.
 
 **APIs**
 
