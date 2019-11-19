@@ -26,8 +26,8 @@ The following are core principles to consider when securing cloud-native applica
   - Create and define cluster network policies
   - Run a cluster-wide pod security policy
   - Turn on Audit Logging
-  - Separate sensitive workloads with namespaces
-  - Secure tenant eetadata Access
+  - Separate sensitive workloads using namespaces
+  - Secure tenant metadata Access
 - Network segmentation using security zoning and network standards must be followed when deploying containers 
 - The Host OS running the containers must be hardened
 - Use container-aware runtime defense tools
