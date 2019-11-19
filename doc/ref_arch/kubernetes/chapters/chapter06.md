@@ -22,9 +22,16 @@ The following are core principles to consider when securing cloud-native applica
 - Only deploy applications from validated and verified images
 - Only deploy applications from trusted registries
 - Containers orchestration (Kubernetes) must be secure with administrative boundaries between tenants
-- Network segmentation using security zoning and network standards must be followed when deploying containers. 
+  - Use Namespaces to establish security boundaries
+  - Create and define cluster network policies
+  - Run a cluster-wide pod security policy
+  - Turn on Audit Logging
+  - Separate sensitive workloads with namespaces
+  - Secure tenant eetadata Access
+- Network segmentation using security zoning and network standards must be followed when deploying containers 
 - The Host OS running the containers must be hardened
-- Use container-aware runtime defense tools.
+- Use container-aware runtime defense tools
+- Enable Role-Based Access Control (RBAC)
 
 ##  6.3 Kubernetes Security Architecture
 Kubernetes Security architecture is made up of of several components that provide end to end security for the infrastructure and application or workload. These components include image registries (private or public), Kubernetes API, RBAC, network services, host and container runtime, keys or secret management. Each of these components work in a collaborative mode to ensure the security of the applications or workload. 
