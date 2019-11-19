@@ -251,24 +251,25 @@ The high-level functions of these different access controls are described below:
 * All platform security logs are to be time synchronised.
 * Logs are to be regularly scanned for events of interest.
 * An incident response plan must exist for the platform.
-* The cloud services must be regulalry vulnerability and penetration tested.
+* The cloud services must be regularly vulnerability and penetration tested.
 
 <a name="7.5.2"></a>
 ## 7.5.2 Platform ‘back-end’ access security
-
-    *(Security requirements around how the platform systems must
-    interconnect with supporting infrastructure services including
-    assurance, fault, asset systems, billing systems, capacity,
-    configuration, and etc.)*
+* Restrict traffic to only traffic that is necessary, and deny all other traffic.
+* Use cryptographically-protected protocols for administrative access to the platform.
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
+* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence that is implemented, and rigourously followed.
+* Processes for managing platform access control filters that are documented, followed, and monitored.
+* No login to root on any platform systems.
+* RBAC must apply for all systems access.
+* An approved system or process for last resort access must exist for the platform.
+* All back-end API access must use TLS.
 
 <a name="7.5.3"></a>
 ## 7.5.3 Platform ‘front-end’ access security
-
-    *(Security requirements around how the platform will support network
-    connections that can be used by workloads. Generally the platform will
-    provide the basic connectivity such as a physical MPLS connection, or
-    Internet connection, but the workloads will have a VLAN on that physical
-    connection and provide additional security controls).*
+* Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks
+* The front-end network may provide DDOS support
 
 <a name="7.7"></a>
 ## 7.7 Vendor Responsibilities
