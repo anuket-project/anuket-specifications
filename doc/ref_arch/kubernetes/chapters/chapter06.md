@@ -10,7 +10,7 @@
 
 <a name="6.1"></a>
 ## 6.1 Introduction
-The adoption of cloud-native allows development teams to move fast, deploy software efficiently, and operate at an unprecedented scale. 
+The adoption of cloud-native allows development teams to move fast, deploy software efficiently, and operate scale. 
 Cloud-native applications offer the benefits by providing applications as small microservices (either containers or serverless), and managing them through DevOps processes. To build these applications, organisations need a cloud-native infrastructure which provides flexibility and enough services for developers. Cloud-native infrastructures should provide a platform for the build and release team to effectively perform continuous delivery of its applications, with close to zero human intervention. With Cloud-native, the industy requires a radically different apporach to security in contrast to monolithic architecture. 
 
 <a name="6.2"></a>
@@ -37,8 +37,9 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Container Images: Stored instance of a container that holds a set of software needed to run an application. Before loading them to container registry, they need to be made secured by performing various checks like vulnerability analysis, scans etc. These should also be signed from trusted sources.
 - Containers: A lightweight and portable executable image that contains software and all of its dependencies. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, mounting of directories of underlying OS etc and it must also be ensured that they don't run in priveleged mode..
 - Pods: A Pod represents a set of running containers on your cluster. Kuberenetes inherently offers pod security policies that define a set of conditions that a pod must run with in order to be accepted into the system. These policies help in ensuring the necessary checks for running the pods.
-- Node: A node can either be a master node (where all the core services are running) or a worker node (where the workloads are running). A node in an unsecured boundary can lead to a potential threat to the running workloads. A node may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
-- Cluster: A cluster provides API endpoints for interaction. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
+- Kubernetes Node: A node is a worker machine in Kubernetes. A worker node may be a VM or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane. A node in an unsecured boundary can lead to a potential threat to the running workloads. A node may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
+- Kubernetes Master: The master node(s) manages the worker nodes and the pods in the cluster. Multiple master nodes are used to provide a cluster with failover and high availability. A master in an unsecured boundary can lead to a potential threat to the running workloads. A master may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
+- Kubernetes Control Plane: The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
 
 <a name="6.5"></a>
 ## 6.5 Isolation
