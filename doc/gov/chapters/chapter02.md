@@ -26,6 +26,10 @@ Overall the process is as follows:
 <a name="2.2"></a>
 ## 2.2 Membership
 
+- Guide To Getting Started
+  - xxx
+  
+ 
 <a name="2.3"></a>
 ## 2.3 Prerequisites
 
