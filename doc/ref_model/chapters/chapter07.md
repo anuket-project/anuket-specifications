@@ -18,10 +18,9 @@
   * [7.4.4 Workload security requirements](#7.4.4)
   * [7.4.5 Workload security requirements](#7.4.5)
 * [7.5 Platform Security.](#7.5)
-  * [7.5.1 Platform Security Assumption.](#7.5.1)
+  * [7.5.1 General Platform Security.](#7.5.1)
   * [7.5.2 Platform ‘back-end’ access security.](#7.5.2)
   * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
-  * [7.5.4 Platform services.](#7.5.4)
 * [7.6 Workload Security.](#7.6)
 * [7.7 Vendor Responsibilities](#7.7)
   * [7.7.1 Software Hardening](#7.7.1)
@@ -212,7 +211,7 @@ At a high level, the following areas/requirements cover workload security for a 
 ## 7.5 Platform Security
 
 <a name="7.5.1"></a>
-## 7.5.1 Platform Security
+### 7.5.1 General Platform Security
 
 The security certification of the platform will typically need to be the same, or higher, than the workload or VNF requirements.
 
@@ -221,7 +220,8 @@ The platform supports the workload, and in effect controls access to the workloa
 <p align="center"><img src="../figures/ch7_data_access_model.png" alt="Overview" title="Access Controls" width="100%"/></p>
 <p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
 
-The high-level functions of these different access controls are described below:
+<a name="7.5.1.1"></a>
+#### 7.5.1.1 The high-level functions of these different access controls
 * **MGNT ACCESS CONTROLS** - Platform access to VNFs for service management. Typically all management and control-plane traffic is encrypted.
 * **DATA ACCESS CONTROLS** - Control of east-west traffic between VNFs, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and pltaform services. Inherently strong separation between tenants is mandatory.
 * **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
@@ -229,7 +229,8 @@ The high-level functions of these different access controls are described below:
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks (usually sub, or virtual networks).
 * **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including RBAC, authentication controls as approriate for the access arrangement, and API gateways for automated/script-driven processes.
 
-# The following general security requirements apply to the platform:
+<a name="7.5.1.2"></a>
+#### 7.5.1.2 The following general security requirements apply to the platform:
 * Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
 * Support zoning within a tenant workload - using application-level filtering.
@@ -254,7 +255,7 @@ The high-level functions of these different access controls are described below:
 * The cloud services must be regularly vulnerability and penetration tested.
 
 <a name="7.5.2"></a>
-## 7.5.2 Platform ‘back-end’ access security
+### 7.5.2 Platform ‘back-end’ access security
 * Restrict traffic to only traffic that is necessary, and deny all other traffic.
 * Use cryptographically-protected protocols for administrative access to the platform.
 * Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
@@ -267,7 +268,7 @@ The high-level functions of these different access controls are described below:
 * All back-end API access must use TLS.
 
 <a name="7.5.3"></a>
-## 7.5.3 Platform ‘front-end’ access security
+### 7.5.3 Platform ‘front-end’ access security
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks
 * The front-end network may provide DDOS support
 
