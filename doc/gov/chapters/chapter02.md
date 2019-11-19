@@ -27,7 +27,12 @@ Overall the process is as follows:
 ## 2.2 Membership
 
 - Guide To Getting Started
-  - xxx
+  - How do I start the process of joining? Onboarding starts as soon as you submit a request to join CNTT via email to xxxx@xxxxx.com
+  - How long will it take to onboard? The onboarding process will take approximately X hours of your time initially. 
+  - What will I learn about during onboarding process? You’ll get an overview of the CNTT mission and goals, community organizational structures and processes, as well as technology development status and roadmaps. Additionally, you’ll be made aware of participant responsibilities and legal obligations. Finally, you’ll be provided with support and logistical information you’ll need to join the community.
+
+  -
+
   
  
 <a name="2.3"></a>
