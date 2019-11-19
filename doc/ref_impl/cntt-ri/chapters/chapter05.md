@@ -96,7 +96,7 @@ Besides it may include additional information pim username, password, rack_name,
 | pim_password | String | Yes |  |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
-| remote_mamange_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
+| remote_manange_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
 | remote_user | String | Yes | remote user  |
 | remote_password | String | Yes | remote password |
 
