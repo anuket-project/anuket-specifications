@@ -29,7 +29,7 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.gen.ins.01` | Installer | Installer **should** accept a descriptor file to finish deployment.|
+| `req.gen.ins.01` | Installer | Installer **must** accept a descriptor file to finish deployment.|
 | `req.gen.ins.02` | Installer | Installer implementation **must** validate the descriptor file with schema.|
 | `req.gen.ins.03` | Installer | Any existing installer implementation **may** need adaption for the descriptor file. |
 | `req.gen.ins.04` | Installer | Installer **may** support reporting the deployment progress status.|
@@ -96,6 +96,9 @@ Besides it may include additional information pim username, password, rack_name,
 | pim_password | String | Yes |  |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
+| remote_mamange_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
+| remote_user | String | Yes | remote user  |
+| remote_password | String | Yes | remote password |
 
 <p align="center"><b>Table 5-3-3:</b> Server information.</p>
 
@@ -185,7 +188,7 @@ List of compute nodes that designed for current VIM deployment.
 | cluster_name | String | Yes | indicate the cluster name|
 | ceph_iscsi_gateway | String | Yes | splitted by semicolon if more than one. e.g 2409:8086:8412:10a::1;2409:8086:8412:10a::2|
 | ceph_manage_plane_address_segment | String | Yes | The address segment of ceph management plane. e.g 2409:8086:8412:100::/64|
-| ceph_storage_plane_address_segment | String | Yes | The address segment of ceph storage plane. e.g 2409:8086:8412:100::/64|
+| ceph_storage_plane_address_segment | String | Yes | The address segment of ceph storage plane. e.g 2409:8086:8412:10a::/64|
 | ceph_os_user | String | Yes | the user of ceph OS. |
 | ceph_os_password | String | Yes | the user's password of ceph OS. |
 | ceph_manage_plane_float_ip | String | Yes |  |
@@ -228,7 +231,7 @@ DNS server informmation if VIM deployment requires.
 
 <p align="center"><b>Table 5-3-10:</b> DNS server information.</p>
 
-### 5.3.10 Deployment host informations
+### 5.3.11 Deployment host informations
 Deployment host setting, which should have the access for the openstack nodes network.
 
 | Field # | type | mandatory | Instruction |
@@ -237,13 +240,13 @@ Deployment host setting, which should have the access for the openstack nodes ne
 | mask | String | No | mask of debug PC|
 | gateway | String | No |gateway of debug PC |
 
-<p align="center"><b>Table 5-3-10:</b> Deployment host information.</p>
+<p align="center"><b>Table 5-3-11:</b> Deployment host information.</p>
 
-### 5.3.11 Deployment control informations
+### 5.3.12 Deployment control informations
 Used to control if VIM will be automatically deployment.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | auto_deploy | String | Yes | Flag of enabling or disabling automatically deploy VIM. |
 
-<p align="center"><b>Table 5-3-11:</b> Auto deployment control information.</p>
+<p align="center"><b>Table 5-3-12:</b> Auto deployment control information.</p>
