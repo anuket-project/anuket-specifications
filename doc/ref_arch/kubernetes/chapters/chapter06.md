@@ -10,13 +10,17 @@
 
 <a name="6.1"></a>
 ## 6.1 Introduction
-The adoption of cloud-native allows development teams to move fast, deploy software efficiently, and operate scale. 
-Cloud-native applications offer the benefits by providing applications as small microservices (either containers or serverless), and managing them through DevOps processes. To build these applications, organisations need a cloud-native infrastructure which provides flexibility and enough services for developers. Cloud-native infrastructures should provide a platform for the build and release team to effectively perform continuous delivery of its applications, with close to zero human intervention. With Cloud-native, the industy requires a radically different apporach to security in contrast to monolithic architecture. 
+Securing Kubernetes requires several layers of security to features to support cloud native applications. It is also important to adopt a layered packaging model which supports separation of concerns during image build. A fully integrated security testing should be baked into the continuous deployment and continuous integration processes. Automated security policies should also be used to flag builds with issue.  Image registries should be monitored to automatically replace images with known vulnerabilites while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
+The features below are recommended for securing kubernetes platform;
+- Imgae Signing
+- Role-base Access Control
+- Secret Managment
+- Platform multitenant security
+- Integration with other security ecosystem like monitoring and alerting tools
 
 <a name="6.2"></a>
 ##  6.2 Principles
-### Kubernetes Security
-The following are core principles to consider when securing cloud-native applications and infrastructure;
+The following are core principles to consider when securing cloud-native applications;
 
 - Deploy only secure applications and trusted codes
 - Only deploy applications from validated and verified images
