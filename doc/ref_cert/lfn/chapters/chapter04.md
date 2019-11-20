@@ -19,14 +19,15 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-The scope of this chaptor is to identify and list down testcases based on <a href=https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter02.md>requirements for reference archtiecture-1 (OpenStack based)</a>. This will serve as traceability between test cases and requirements.
+The scope of this chaptor is to identify and list down testcases based on [Requirements for Reference Archtiecture-1 (OpenStack based)](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter02.md). This will serve as traceability between test cases and requirements.
+
 Note that Each requirement may have one or more test cases associated with it. 
 
-<b>must</b>: Test Cases that are marked as must are considered mandatory and must pass succesfully.
+**must**: Test Cases that are marked as must are considered mandatory and must pass succesfully.
 
-<b>should</b>: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI tagetting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
+**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI tagetting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
 
-<b>may</b>: Test cases that are marked as may are considered optional. The same applies to may not.
+**may**: Test cases that are marked as may are considered optional. The same applies to may not.
 
 <a name="4.2"></a>
 ## 4.2 Selection Criteria
