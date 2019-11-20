@@ -7,56 +7,62 @@
 * [4.1 Introduction](#4.1)
 * [4.2 Lab Requirement](#4.2)
 * [4.3 Lab Topology](#4.3)
-* [4.4 Lab HW Spec](#4.4)
-* [4.5 Lab Use Guidelines](#4.5)
+* [4.4 Lab Use Guidelines](#4.4)
 
 
 <a name="4.1"></a>
-## 4.1 Introdcution
+## 4.1 Introduction
+This chapter provides the laboratory hardware requirements needed to deploy the reference implementation.  These requirements represent a minimum set of requirements, where different labs may have hardware or capabilities exceeding these minimum specifications.  
 
+The lab provides a set of bare-metal servers, supported by a dedicated network infrastructure.  Users should be provided access to the servers, their operating systems, and out-of-band management (i.e. IPMI, IDRAC, ILO, etc.).  
 
 <a name="4.2"></a>
 ## 4.2 Lab Requirement
 
-- Controller Nodes:
-  - 3 x
-    - 2x dual-port 10Gbps NIC.
-    - 2.2GHz 14C/28T.
-    - 256GB RAM.
-    - 10TB HDD.
-    - 3.2TB SSD.
-- Compute Node
-  - 10x
-    - 2x dual-port 25Gbps NIC.
-    - 2.2GHz 24C/48T.
-    - 512GB RAM.
-    - 2TB HDD
-    - Supports 2x Nodes for B/N/C flavors
-- Jump/Baremetal manager
-  - 1x
-    - 2x dual-port 10Gbps NIC.
-    - 2.2GHz 14C/28T.
-    - 256GB RAM.
-    - 10TB HDD
-- Networking
-  - 1x Spine Switch
-    - Total: 32x100G
-  - 2x Leaf Switch
-    - 48 x 25/10G
-    - 6 x 100G
-- 1x 48u Rack
-- Cables and Transcievers
+Labs are organized into one or more *Pods*, where the *Pod* provides the complete set of resources [servers and network(s)] necessary to support the reference implementation installation and operation.  
+
+A CNTT compliant *Pod* shall meet the following requirements.
+
+1. One (1) bare-metal server dedicated as a Jump / Test Host
+2. Six (6) bare-metal servers, serving as either compute or controllers
+3. A configured network topology allowing for: Out-of-Band Management, Admin, Public, Private, and Storage Networks
+
+The Jump Host / Test Host system will be utilized to install and manage the operation of the *Pod*.  For example, the system can be used to host the installer software used to deploy and configure OpenStack on the other bare-metal servers.  Once installed, the system may be used to run test automations or it may be used to generate test traffic intended to measure the performance of a VNF operating within the *Pod*.  To support these operations, the bare-metal server provided for the Jump / Test Host shall meet the same hardware requirements as compute / controller, as outline below.  In this context, the system may be considered as a miscellaneous use  or general purpose system.
+
+<a name="4.2.1"></a>
+### 4.2.1 Bare-metal Server Requirements
+Each server shall meet the following minimum specifications:
+
+- **CPU**
+  - 2x CPU sockets, providing 24 cores each, at 2.2 GHz
+- **Memory**
+  - 512 GB RAM
+- **Storage**
+  - 3.2 TB SSD via SATA 6 Gbps
+  - Storage should present as at least 3 or more disks to the OS, allowing for usage as CEPH storage nodes, or similar.
+- **Network Interfaces** (note 1)
+  - 4x 10Gbps Ethernet Ports
+  - Out-of-band Management Port
+
+Note 1: At least 1 network interface must be capable of performing PXE boot and that network must be available to both the Jump / Test Host and each bare-metal server.
+
+<a name="4.2.2"></a>
+### 4.2.2 Networking Hardware
+
+The minimum networking configuration must provide at least VLANs to partition the various networks required for the reference implementation deployment.  At least one top of rack switch will be provided for each *Pod*, with interface speeds matching the above server specifications.
 
 <a name="4.3"></a>
-## 4.3 Lab Topology
+## 4.3 Lab Network Topology
 
+The *Pod* network topology should provide at least 2 networks with preallocated IP addressing schemes for the *out-of-band management* network and the *Public* network.  The *Public* network should be able to access the public Internet.  At least IPv4 addresses must be available, ideally IPv6 addresses should also be supported.
+
+Remote users shall access the lab via a VPN gateway, that shall also provide basic security and separation from the public Internet.  Both the *Public* and *out-of-band management* networks shall be accessible through the VPN connection.
+
+***EDITORS NOTE: Provide a figure showing the basic lab topology, include the VPN, Pod / Servers, Switch, and management / public networks.***
 
 <a name="4.4"></a>
-## 4.4 Lab HW Spec
 
-
-<a name="4.5"></a>
-## 4.5 Lab Use Guidelines
+## 4.4 Lab Use Guidelines
 
 **SETUP & Maintenance**
 
