@@ -6,7 +6,22 @@
 ## Table of Contents
 * [5.1 Introduction](#5.1)
 * [5.2 Installer requirements](#5.2)
+   * [5.2.1 General](#5.2.1)
+   * [5.2.2 Additional](#5.2.2)
 * [5.3 Descriptor file definition](#5.3)
+   * [5.3.1 Hardware resource information](#5.3.1)
+   * [5.3.2 Server template](#5.3.2)
+   * [5.3.3 Server information](#5.3.3)
+   * [5.3.4 Software configuration definition](#5.3.4)
+   * [5.3.5 Network informations](#5.3.5)
+   * [5.3.6 Controller informations](#5.3.6)
+   * [5.3.7 Compute informations](#5.3.7)
+   * [5.3.8 Distributed storage informations](#5.3.8)
+   * [5.3.9 NTP server informations](#5.3.9)
+   * [5.3.10 DNS server informations](#5.3.10)
+   * [5.3.11 Deployment host informations](#5.3.11)
+   * [5.3.12 Deployment control informations](#5.3.12)
+   * [5.3.13 Proxy informations](#5.3.13)   
 
 <a name="5.1"></a>
 ## 5.1 Introduction
@@ -19,6 +34,7 @@
 
 <a name="5.2"></a>
 ## 5.2 Installer requirements
+
 <a name="5.2.1"></a>
 ### 5.2.1 General
 The Descriptor File defines the unique configuration required by installer in a common schema. 
@@ -42,7 +58,7 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 Depends xxx.
 
 <a name="5.3"></a>
-## 5.3 Descriptor definition
+## 5.3 Descriptor file definition
 There should be a Descriptor File definition, which used by installer as input of necessary configuration.
 Mandatory and optional definition should be defined.
  
@@ -64,6 +80,7 @@ Besides it may include optional information such area name, data center name etc
 
 <p align="center"><b>Table 5-3-1:</b> Hardware resource description.</p>
 
+<a name="5.3.2"></a>
 ### 5.3.2 Server template
 The server template describes the capability of the host like processor, memory, harddrive, raid, NIC/NIC binding, manufacturer, model etc.
 Server template would be assigned to multiple servers, i.e physical hosts.
@@ -82,6 +99,7 @@ Server template would be assigned to multiple servers, i.e physical hosts.
 
 <p align="center"><b>Table 5-3-2:</b> Server template.</p>
 
+<a name="5.3.3"></a>
 ### 5.3.3 Server information
 Server will reference a server template, i.e, inherting all configuration of server template,
 Besides it may include additional information pim username, password, rack_name,position etc.
@@ -102,7 +120,7 @@ Besides it may include additional information pim username, password, rack_name,
 
 <p align="center"><b>Table 5-3-3:</b> Server information.</p>
 
-
+<a name="5.3.4"></a>
 ### 5.3.4 Software configuration definition
 It includes Virtualized Infrastructure Manager configurations,
 
@@ -118,7 +136,7 @@ It includes Virtualized Infrastructure Manager configurations,
 
 <p align="center"><b>Table 5-3-4:</b> Software configuration.</p>
 
-
+<a name="5.3.5"></a>
 ### 5.3.5 Network informations
 List of All designed NIC definitions which are referenced by various roles of node, control/compute/network/storage node.
 
@@ -140,8 +158,7 @@ List of All designed NIC definitions which are referenced by various roles of no
 
 <p align="center"><b>Table 5-3-5-2:</b> Network plane information.</p>
 
-
-
+<a name="5.3.6"></a>
 ### 5.3.6 Controller informations
 List of controller nodes that designed for current VIM deployment.
 
@@ -156,6 +173,7 @@ List of controller nodes that designed for current VIM deployment.
 
 <p align="center"><b>Table 5-3-6:</b> Controller information.</p>
 
+<a name="5.3.7"></a>
 ### 5.3.7 Compute informations
 List of compute nodes that designed for current VIM deployment.
 
@@ -173,6 +191,7 @@ List of compute nodes that designed for current VIM deployment.
 
 <p align="center"><b>Table 5-3-7:</b> Compute information.</p>
 
+<a name="5.3.8"></a>
 ### 5.3.8 Distributed storage informations
 List of compute nodes that designed for current VIM deployment.
 
@@ -207,6 +226,7 @@ List of compute nodes that designed for current VIM deployment.
 | cinder_backend_name | String | Yes | backend name cinder connected|
 <p align="center"><b>Table 5-3-8-3:</b> Cinder information.</p>
 
+<a name="5.3.9"></a>
 ### 5.3.9 NTP server informations
 primary and backup NTP server information.
 
@@ -219,6 +239,7 @@ primary and backup NTP server information.
 
 <p align="center"><b>Table 5-3-9:</b> NTP server information.</p>
 
+<a name="5.3.10"></a>
 ### 5.3.10 DNS server informations
 DNS server informmation if VIM deployment requires.
 
@@ -229,6 +250,7 @@ DNS server informmation if VIM deployment requires.
 
 <p align="center"><b>Table 5-3-10:</b> DNS server information.</p>
 
+<a name="5.3.11"></a>
 ### 5.3.11 Deployment host informations
 Deployment host setting, which should have the access for the openstack nodes network.
 
@@ -240,6 +262,7 @@ Deployment host setting, which should have the access for the openstack nodes ne
 
 <p align="center"><b>Table 5-3-11:</b> Deployment host information.</p>
 
+<a name="5.3.12"></a>
 ### 5.3.12 Deployment control informations
 Used to control if VIM will be automatically deployment.
 
@@ -249,6 +272,7 @@ Used to control if VIM will be automatically deployment.
 
 <p align="center"><b>Table 5-3-12:</b> Auto deployment control information.</p>
 
+<a name="5.3.13"></a>
 ### 5.3.13 Proxy informations
 Proxy information, this section could be empty if not needed.
 
