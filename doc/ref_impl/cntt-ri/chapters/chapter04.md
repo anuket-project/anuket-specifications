@@ -34,7 +34,7 @@ The Jump Host / Test Host system will be utilized to install and manage the oper
 Each server shall meet the following minimum specifications:
 
 - **CPU**
-  - 2x CPU sockets, providing 24 cores each, at 2.2 GHz
+  - 2x x86_64 CPU sockets, providing 24 cores each, 44 hyper-threads, at 2.2 GHz
 - **Memory**
   - 512 GB RAM
 - **Storage**
