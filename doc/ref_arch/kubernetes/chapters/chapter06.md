@@ -12,8 +12,8 @@
 ## 6.1 Introduction
 Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which support separation of concerns during image build. A fully integrated security testing should be baked into the CI/CD pipeline. Automated security policies should also be used to flag builds with issue.  Image registries must be monitored to automatically block or replace images with known vulnerabilites, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
 
-The features below are recommended for securing kubernetes platform;
-- Imgae Signing
+The following functionalities are recommended for securing kubernetes platform;
+- Image Signing
 - Role-base Access Control
 - Secret Managment
 - Platform multitenant security
