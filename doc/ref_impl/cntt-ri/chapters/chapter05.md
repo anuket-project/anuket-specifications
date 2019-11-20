@@ -96,7 +96,7 @@ Besides it may include additional information pim username, password, rack_name,
 | pim_password | String | Yes |  |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
-| remote_manange_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
+| remote_manage_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
 | remote_user | String | Yes | remote user  |
 | remote_password | String | Yes | remote password |
 
@@ -113,9 +113,6 @@ It includes Virtualized Infrastructure Manager configurations,
 | vendor | String | Yes | VIM Provider information, e.g. ZTE,Huawei,Ericsson,NOKIA|
 | version | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | ip_version | String | Yes | Ipaddress type: IPV6 or IPV4 |
-| az_info | List | Yes | list of availability zone name designed for this VIM |
-| ha_name | List | No | HA name  if provided, HA is set of host server group having one or more same attribute(s),e.g: hardware specification.|
-| network_infos | List | Yes | List of NICs used in VIM deployment |
 | controller_nodes | List | Yes | List of controllers designed in VIM deployment |
 | compute_nodes | List | Yes | List of compute nodes designed in VIM deployment |
 
@@ -128,8 +125,8 @@ List of All designed NIC definitions which are referenced by various roles of no
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | network_plane_type | String | Yes | distinguish network type: e.g MANAGEMENT,STORAGEDATA |
-| usage | String | Yes | used for compute/control: value is one of [manage,storage,service], for distribute storage  value if one of [storage_front,storage_backend] |
-| network_plane_infos | List | Yes | vlan_id,sub_network(CIDR),gateway(could be null)|
+| usage | String | Yes | used for compute/control: value is one of [manage,storage,service,PXE,iLo], for distribute storage  value if one of [storage_front,storage_backend] |
+| network_plane_infos | List | Yes | vlan_id,ip address,sub_network(CIDR),gateway|
 
 <p align="center"><b>Table 5-3-5-1:</b> Network information.</p>
 
@@ -137,8 +134,9 @@ List of All designed NIC definitions which are referenced by various roles of no
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | vlan_id | String | Yes | vlan id for current network |
-| sub_network | String | Yes | subnet in CIDR format.|
-| gateway | String | No | gateway(could be null)|
+| ip_address | String | Yes | ip address |
+| sub_network | String | Yes | subnet in CIDR format. e.g: 2409:8086:8412:100::/64|
+| gateway | String | No | gateway|
 
 <p align="center"><b>Table 5-3-5-2:</b> Network plane information.</p>
 
@@ -236,9 +234,9 @@ Deployment host setting, which should have the access for the openstack nodes ne
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ip_address | String | No | Ip address of debug PC |
-| mask | String | No | mask of debug PC|
-| gateway | String | No |gateway of debug PC |
+| ip_address | String | No | Ip address of debug host |
+| mask | String | No | mask of debug host|
+| gateway | String | No |gateway of debug host |
 
 <p align="center"><b>Table 5-3-11:</b> Deployment host information.</p>
 
@@ -250,3 +248,15 @@ Used to control if VIM will be automatically deployment.
 | auto_deploy | String | Yes | Flag of enabling or disabling automatically deploy VIM. |
 
 <p align="center"><b>Table 5-3-12:</b> Auto deployment control information.</p>
+
+### 5.3.13 Proxy informations
+Proxy information, this section could be empty if not needed.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| proxyAddress | String | Yes | Proxy address |
+| port | String | Yes | port |
+| user | String | Yes | user |
+| password | String | Yes | password |
+
+<p align="center"><b>Table 5-3-13:</b> Proxy information.</p>
