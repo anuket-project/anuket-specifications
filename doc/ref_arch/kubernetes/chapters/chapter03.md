@@ -46,7 +46,11 @@ WHen it comes to Kubernetes, the important interface that we need to consider fo
 <a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
 
-> This shapter should discuss storage services provided by the reference architecture.
+Containers, when running, will require storage with which to run themselves (i.e. storage on which the unpacked container image is stored and executed from). This is ephemeral storage that lives and dies with the container and will be a directory on the worker node on which the container is running.  Note, this means that it is mounted locally in the worker node filesystem. This could be physically external to the worker node (e.g. iSCSI, NFS, FC) but the container will reference it as part of the local filesystem. Additional ephemeral storage can also be attached to a container through the use of Kubernetes Volumes - this can be storage from the worker node filesystem, or it can be external storage through the use of a Volume Plugin, which allows the use of a storage protocol (e.g. iSCSI, NFS) or management API (e.g. Cinder) for the attaching and mounting of storage into a Pod.
+
+Another sort of storage that a container may need to use is when data persistence is required. In Kubernetes this is termed a Persistent Volume (PV). PVs are resources in a Kubernetes Cluster that are consumed by Persistent Volume Claims (PVCs) and have a lifecycle that is independent of any Pod that uses the PV. PVCs are a type of Kubernetes Volume, and so this is how a Pod can use a PV - it will use a PVC as the volume in the Pod spec. By default, PVs and PVCs are manually created and deleted.
+
+Kubernetes also provides an object called Storage Classes, which are created by cluster administrators and map to storage attributes such as quality-of-service, encryption, data resilience, etc. Storage Classes also enable the dynamic provisioning of Persistent Volumes (as opposed to the default, which is manual creation of Persistent Volumes). This can be beneficial for organisations where the administration of storage is performed separately from the administration of Kubernetes-based workloads.
 
 <a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager
