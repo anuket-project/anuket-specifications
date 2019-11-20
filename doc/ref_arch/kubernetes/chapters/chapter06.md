@@ -38,11 +38,8 @@ The following are core principles to consider when securing cloud-native applica
 - Use container-aware runtime defense tools
 - Enable Role-Based Access Control (RBAC)
 
-##  6.3 Kubernetes Security Architecture
-Kubernetes Security architecture is made up of of several components that provide end to end security for the infrastructure and application or workload. These components include image registries (private or public), Kubernetes API, RBAC, network services, host and container runtime, keys or secret management. Each of these components work in a collaborative mode to ensure the security of the applications or workload. 
-
 <a name="6.3"></a>
-## 6.4 Security Perimeters
+## 6.3 Security Perimeters
 When applications or workloads run on Kubernetes, there are several layers which come into picture that govern the security. Each of these layers need to be secured within their perimeters. The various layers that come into picture are:
 
 - Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to provide a controlled access.
