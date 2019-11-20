@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
-* [2.2 Membership](#2.2)
+* [2.2 Request Membership](#2.2)
 * [2.3 Prerequisites](#2.3)
 * [2.4 Beginning Engagement](#2.4)
 * [2.5 Member Administration](#2.4)
