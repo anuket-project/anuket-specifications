@@ -4,14 +4,34 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [1.1 Overview](#1.1)
+* [1.1 Introduction](#1.1)
 * [1.2 Scope](#1.2)
-* [1.3 Resources & References](#1.3)
+* [1.3 Principles and Guidelines](#1.3)
+  * [1.3.1 Overarching Objectives and Goals](#1.3.1)
+* [x.x Resources & References](#x.x)
+
+## Synopsis
+
+Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+
+For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implmented, NFVI.
 
 <a name="1.1"></a>
-## 1.1 Overview
+## 1.1 Introduction
 
-To be added once more content is developed.
+**Chapter Purpose**<br>
+This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of VNF developers promoting both the use and scalability of Software Defined Networking (SDN) capabilities.  Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
+
+**Objective**<br>
+Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+
+**Test Methodology**
+- Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
+- Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
+- Candidate VNF Validation (Validation & Performance) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
+
+**Different Distributions**
+The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -26,8 +46,28 @@ This document covers the realisation aspects of Verification and Certification o
 - Gap analysis to identify where the Gaps are in the industry (tooling, test cases, process, etc).
 - Identify development efforts needed to address any gaps identified.
 
+**Not in Scope**
+- Functional testing/validation of the VNF is not in scope.
+- ONAP is not used in the process flow for NFVI verifications, or validations.
+- Upgrades to VNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
+
 <a name="1.3"></a>
-## 1.3 Resources & References
+## 1.3 Principles and Guidelines
+
+The objectives of the verification program are to deliver a validated implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
+
+These core principles will guide NFV verification deliverables:
+
+<a name="1.3.1"></a>
+### 1.3.1 Overarching Objectives and Goals
+
+1. Deliver verified implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams.
+2. All accomplished with augmentation to the current OVP ecosystem.
+3. Increase probability VNFs will on-board and function with minimal problems, or issues, during initial instantiation of VNF.
+4. Test Harnesses will be portable, or compatible, across all RAs/Distributions which already conform to standard interfaces and services.
+
+<a name="x.x"></a>
+## x.x Resources & References
  
 1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
 2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
