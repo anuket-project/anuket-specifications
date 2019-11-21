@@ -12,7 +12,7 @@
 
 ## Synopsis
 
-Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
 
 For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implmented, NFVI.
 
@@ -26,9 +26,9 @@ This chapter includes process flow, logistics, and requirements which must be sa
 Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 **Test Methodology**
-- Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
-- Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
-- Candidate VNF Validation (Validation & Performance) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
+- Manifest Verifications (Termed Compliance by CVC) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
+- Empirical Validation with Reference Golden VNFs (Termed Validation by CVC) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
+- Candidate VNF Validation (Termed Validation & Performance by CVC) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
 **Different Distributions**
 The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
@@ -47,7 +47,7 @@ This document covers the realisation aspects of Verification and Certification o
 - Identify development efforts needed to address any gaps identified.
 
 **Not in Scope**
-- Functional testing/validation of the VNF is not in scope.
+- Functional testing / validation of the application provided by the VNF is outside the scope of this work.
 - ONAP is not used in the process flow for NFVI verifications, or validations.
 - Upgrades to VNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
