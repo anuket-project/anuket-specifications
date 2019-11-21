@@ -202,8 +202,8 @@ An over use of host aggregates and availability zones can result in a granular p
 Recommendation: Separation of control zone and execution zone into different security zones
 
 <a name="3.3.4"></a>
-### 3.3.4. Flavour management (i.e. T-Shirt type)
-Content to be developed
+### 3.3.4. Flavor management
+A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named according to T-shirt sizes like XS,S,M,L,XL,2XL,3XL and so on. The specifications for these sizes can be defined based on the  category of worloads in terms of resource requirements.
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources
