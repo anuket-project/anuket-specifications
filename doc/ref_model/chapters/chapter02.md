@@ -183,3 +183,4 @@ On **Chapter 4** later in the document, these infrastructure profiles will be of
 >- ***Storage Intensive**: for VNFCs that require low storage latency and/or high storage IOPS.* 
 >- ***Enhanced Compute Intensive**: for compute intensive VNFCs that require higher computing performance and/or specific compute resource (e.g., GPU).* 
 >- ***Enhanced Network Intensive**: for network intensive VNFCs that require higher network performance and/or specific network resource (e.g., crypto acceleration).*
+  
