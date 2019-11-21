@@ -11,6 +11,9 @@
 * [7.5 Descriptor File Preparations](#7.5)
 * [7.6 Deployment Installer & Install Steps](#7.6)
 * [7.7 Deployment Validations](#7.7)
+* [7.8 CICD Tool Chain (use of, process, and scripts)](#7.8)
+* [7.9 Jenkins Setup & Job Creation](#7.9)
+* [7.10 Compliance Validation (steps, process)](#7.10)
  
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -66,3 +69,20 @@ Details explaining:
 - Expected outpus
 - Explanation of Pass/Fail
 - Disposition, or next steps, based on test results (e.g. handling of failures, handoff to next tier with passing results)
+
+<a name="7.8"></a>
+## 7.8 CICD Tool Chain (use of, process, and scripts)]
+
+Placeholder to describe the CICD tool chain used in RI validations.  
+
+Include flow diagram.
+
+<a name="7.9"></a>
+## 7.9 Jenkins Setup & Job Creation
+
+Placeholder to describe the process, access, steps, instance, etc, information for the setup of Jenkins, the jobs required for validation, and the results dashboard.
+
+<a name="7.10"></a>
+## 7.10 Compliance Validation (steps, process)
+
+Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.  
