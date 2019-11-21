@@ -41,7 +41,7 @@ The abstraction model for the NFVI makes use of the following layers (only the v
 <p align="center"><b>Figure 3-1:</b> NFVI Model Overview.</p>
 
 The functionalities of each layer are as follows:
-- **Physical Infrastructure Resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, etc. and the basic input output system (BIOS).
+- **Physical Infrastructure Resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, and the basic input output system (BIOS).
 - **NFVI Management Software:** This consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
 - **Virtual Infrastructure Resources:** These are all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
 - **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container.
@@ -55,7 +55,7 @@ The virtual infrastructure resources provided by the NFVI can be grouped into fo
 <p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
 
 - **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
-- **Compute resources:** represent virtualised computes for workloads and Operating and other Systems as necessary
+- **Compute resources:** represent virtualised computes for workloads and other systems as necessary
 - **Storage resources:** represent virtualised resources for persisting data
 - **Network resources:** represent virtual resources providing layer 2 and layer 3 connectivity
 
@@ -133,7 +133,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.3"></a>
 ## 3.3 Management Software
 
-A network function virtualisation infrastructure provides the capability to manage virtual resources via application programming interfaces or graphical user interfaces. The management software allows to:
+Network Function Virtualisation Infrastructure provides the capability to manage virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
