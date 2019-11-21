@@ -34,14 +34,14 @@ The Jump Host / Test Host system will be utilized to install and manage the oper
 Each server shall meet the following minimum specifications:
 
 - **CPU**
-  - 2x x86_64 CPU sockets, providing 24 cores each, 44 hyper-threads, at 2.2 GHz
+  - 2x x86_64 CPU sockets (both populated), providing 24 cores each, 48 simultaneous multi-threads (SMT), at 2.2 GHz
 - **Memory**
   - 512 GB RAM
 - **Storage**
   - 3.2 TB SSD via SATA 6 Gbps
   - Storage should present as at least 3 or more disks to the OS, allowing for usage as CEPH storage nodes, or similar.
 - **Network Interfaces** (note 1)
-  - 4x 10Gbps Ethernet Ports
+  - 4x 25 Gbps Ethernet Ports, implemented as two separate dual port NICs
   - Out-of-band Management Port
 
 Note 1: At least 1 network interface must be capable of performing PXE boot and that network must be available to both the Jump / Test Host and each bare-metal server.
@@ -66,7 +66,7 @@ Remote users shall access the lab via a VPN gateway, that shall also provide bas
 
 **SETUP & Maintenance**
 
-OPNFV will facilitate the need for lab procurment, as required, for projects which come into their front door for verification and validation.
+OPNFV will facilitate the need for lab procurement, as required, for projects which come into their front door for verification and validation.
 
 Individual companies that donated a lab would be responsible for setup and maintenance of a community lab. Labs, once setup, will be shared and posted in a wiki https://wiki.opnfv.org/display/pharos/Community+Labs.
 
@@ -76,14 +76,14 @@ The wiki will contain information such as:
 - Contact person
 - Policy info for use
 - Access instructions, include VPN
-- Lab Topolgy
-- Resrouce Availability
+- Lab Topology
+- Resource Availability
 
 **N+1 Labs Use Strategy**
 
 The "lab" concept could mean one physical POD or multiple PODs in a community lab.  In practice, a person requesting a lab can apply for multiple PODs, where POD 1 can be "Lab 1", POD 2+3 can be "Lab 2", etc, all subject to the availability of PODs. Each "Lab" can be used for different purpose such as "Reference Implementation (RI) Lab 1" (POD 1), "RI Lab 2" (POD 2+3), etc.
 
-The requestor for labs needs to know only the number of PODs that are needed.  Then, apply for use of PODs according to the requirement.
+The requester for labs needs to know only the number of PODs that are needed.  Then, apply for use of PODs according to the requirement.
 
 Talk to the Lab Owners if special hardware or topology requirements are needed, such as special NIC or hardware accelerators or if 8 servers in one POD is a different default setting from the lab settings.  The Lab Owner will check to see if lab config changes can be made to accommodate the test need.
 
