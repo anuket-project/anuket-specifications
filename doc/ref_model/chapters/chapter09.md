@@ -59,6 +59,7 @@ The chapters below roughly map to these frameworks as follows:
 <p align="center"><b>Table 9-1:</b> Operating Frameworks</p>
 
 <a name="9.2"></a>
+
 ## 9.2 Configuration and Lifecycle Management
 
 Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. Figure 9-2 shows the configuration management "loop" and how this relates to lifecycle management.
