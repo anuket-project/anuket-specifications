@@ -1,9 +1,9 @@
 # Add 'repo' label to any root file changes
-repo:
-  - ./*
+#repo:
+#  - ./*
 
 # Add 'RM Core' label to any change to one of the RM Chapter files within the doc dir
-RM Core:
+"RM Core":
   - ./doc/ref_model/chapters/chapter01.md
   - ./doc/ref_model/chapters/chapter02.md
   - ./doc/ref_model/chapters/chapter03.md
