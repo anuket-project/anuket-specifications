@@ -21,7 +21,7 @@ The following functionalities are recommended for securing kubernetes platform;
 
 <a name="6.2"></a>
 ##  6.2 Principles
-The following are core principles to consider when securing cloud-native applications;
+The following are core principles to consider when securing cloud native applications;
 
 - Deploy only secure applications and trusted codes
 - Only deploy applications from validated and verified images
@@ -46,8 +46,8 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Container Images: Stored instance of a container that holds a set of software needed to run an application. Before loading them to container registry, they need to be made secured by performing various checks like vulnerability analysis, scans etc. These should also be signed from trusted sources.
 - Containers: A lightweight and portable executable image that contains software and all of its dependencies. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, mounting of directories of underlying OS etc and it must also be ensured that they don't run in priveleged mode..
 - Pods: A Pod represents a set of running containers on your cluster. Kuberenetes inherently offers pod security policies that define a set of conditions that a pod must run with in order to be accepted into the system. These policies help in ensuring the necessary checks for running the pods.
-- Kubernetes Node: A node is a worker machine in Kubernetes. A worker node may be a VM or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane. A node in an unsecured boundary can lead to a potential threat to the running workloads. A node may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
-- Kubernetes Master: The master node(s) manages the worker nodes and the pods in the cluster. Multiple master nodes are used to provide a cluster with failover and high availability. A master in an unsecured boundary can lead to a potential threat to the running workloads. A master may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
+- Kubernetes Node: A Kubernetes node in an unsecured boundary can lead to a potential threat to the running workloads. Such a node may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
+- Kubernetes Master: A master node in an unsecured boundary can lead to a potential threat to the running workloads. A master may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
 - Kubernetes Control Plane: The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
 
 <a name="6.5"></a>
