@@ -50,8 +50,8 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Kubernetes Master: A master node in an unsecured boundary can lead to a potential threat to the running workloads. A master may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
 - Kubernetes Control Plane: The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
 
-<a name="6.5"></a>
-## 6.5 Isolation
+<a name="6.4"></a>
+## 6.4 Isolation
 ### VM vs. Container Isolation
 Sometimes container isolation is compared directly with VM based isolation, with the conclusion '*there are issues with container isolation, it is not as good as VM isolation*'. Such 1:1 comparison is not reasonable because VM and container based isolation are fundamentally different:
 - VMs: hard isolation, in the layers underlying the application SW
