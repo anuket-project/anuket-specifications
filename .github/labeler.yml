@@ -94,7 +94,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter11.md
   
 # Add 'Ch01' label to any change to corresponding chapter file within the doc dir
-"Ch01":
+"Ch 01":
   - doc/ref_model/chapters/chapter01.md
   - doc/ref_arch/openstack/chapters/chapter01.md
   - doc/ref_arch/kubernetes/chapters/chapter01.md
@@ -102,7 +102,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter01.md
   
 # Add 'Ch02' label to any change to corresponding chapter file within the doc dir
-"Ch02":
+"Ch 02":
   - doc/ref_model/chapters/chapter02.md
   - doc/ref_arch/openstack/chapters/chapter02.md
   - doc/ref_arch/kubernetes/chapters/chapter02.md
@@ -110,7 +110,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter02.md
   
 # Add 'Ch03' label to any change to corresponding chapter file within the doc dir
-"Ch03":
+"Ch 03":
   - doc/ref_model/chapters/chapter03.md
   - doc/ref_arch/openstack/chapters/chapter03.md
   - doc/ref_arch/kubernetes/chapters/chapter03.md
@@ -118,7 +118,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter03.md
   
 # Add 'Ch04' label to any change to corresponding chapter file within the doc dir
-"Ch04":
+"Ch 04":
   - doc/ref_model/chapters/chapter04.md
   - doc/ref_arch/openstack/chapters/chapter04.md
   - doc/ref_arch/kubernetes/chapters/chapter04.md
@@ -126,7 +126,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter04.md
   
 # Add 'Ch05' label to any change to corresponding chapter file within the doc dir
-"Ch05":
+"Ch 05":
   - doc/ref_model/chapters/chapter05.md
   - doc/ref_arch/openstack/chapters/chapter05.md
   - doc/ref_arch/kubernetes/chapters/chapter05.md
@@ -134,7 +134,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter05.md
   
 # Add 'Ch06' label to any change to corresponding chapter file within the doc dir
-"Ch06":
+"Ch 06":
   - doc/ref_model/chapters/chapter06.md
   - doc/ref_arch/openstack/chapters/chapter06.md
   - doc/ref_arch/kubernetes/chapters/chapter06.md
@@ -142,7 +142,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter06.md
   
 # Add 'Ch07' label to any change to corresponding chapter file within the doc dir
-"Ch07":
+"Ch 07":
   - doc/ref_model/chapters/chapter07.md
   - doc/ref_arch/openstack/chapters/chapter07.md
   - doc/ref_arch/kubernetes/chapters/chapter07.md
@@ -150,7 +150,7 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter07.md
   
 # Add 'Ch08' label to any change to corresponding chapter file within the doc dir
-"Ch08":
+"Ch 08":
   - doc/ref_model/chapters/chapter08.md
   - doc/ref_arch/openstack/chapters/chapter08.md
   - doc/ref_arch/kubernetes/chapters/chapter08.md
@@ -158,16 +158,16 @@ repo:
   - doc/ref_cert/lfn/chapters/chapter08.md
   
 # Add 'Ch09' label to any change to corresponding chapter file within the doc dir
-"Ch09":
+"Ch 09":
   - doc/ref_model/chapters/chapter09.md
   - doc/ref_cert/lfn/chapters/chapter09.md
   
 # Add 'Ch10' label to any change to corresponding chapter file within the doc dir
-"Ch10":
+"Ch 10":
   - doc/ref_cert/lfn/chapters/chapter10.md
   
 # Add 'Ch11' label to any change to corresponding chapter file within the doc dir
-"Ch11":
+"Ch 11":
   - doc/ref_cert/lfn/chapters/chapter11.md
 
 "Appendix - A":
