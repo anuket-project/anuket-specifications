@@ -6,6 +6,7 @@
 ## Table of Contents
 * [8.1 Introduction](#8.1)
 * [8.2 Gap analysis](#8.2)
+  * [8.2.1 Container Interfaces](#8.2.1)
 * [8.3 Proposals & Resolution](#8.3)
 * [8.4 Development Efforts](#8.3)
 
@@ -16,6 +17,8 @@ While this Reference Architecture is being developed, Gaps will be identified th
 <a name="8.2"></a>
 ## 8.2 Gap analysis
 
+<a name="8.2.1"></a>
+### 8.2.1 Container Interfaces
 
 <a name="8.3"></a>
 ## 8.3 Proposals & Resolution
