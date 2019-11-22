@@ -16,6 +16,12 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
+The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. It does not seek to change any vendor implementation assuming CNTT compliance out of the box without vendor specific enhancements that are not up-streamed. This would allow operators to provide a common Kubernetes-based architecture allowing any compliant VNF or CNF to be deployed and operate as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
+
+Kubernetes is already very well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
+
+This reference architecture provides optionality in terms of pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution. 
+
 <a name="3.2"></a>
 ## 3.2 Infrastructure Services
 
