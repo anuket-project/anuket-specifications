@@ -41,10 +41,10 @@ Following labels should be correctly used for all issues and PRs to indicate the
 
 <a name="prs"></a>
 ### Pull Requests
-- PRs must only be created by a committer who has an issue assigned to them by the respective WSL.
+- PRs must only be created by a contributor who has an issue assigned to them by the respective WSL.
 - PRs must only be created when there is an issue present and a decision to create a PR is made. A PR must reference the issue it is resolving into the description field.
   - using GitHub predefined keyword "**Fixes Issue#**" will automatically close the issue which the PR is resolving when it is merged.
-- One person only is allowed to edit a given PR unless given permission to other committers to contribute directly into the PR.
+- One person only is allowed to edit a given PR unless given permission to other contributor to contribute directly into the PR.
 - A PR is recommended to only create/modify content within the scope of a single workstream.
 - A PR should only add/change content related to the issue associated with the PR.
 
@@ -52,7 +52,7 @@ Following labels should be correctly used for all issues and PRs to indicate the
 ### Pull Requests Approval Process
 
 - Once a PR is created, it needs to get the following approvals before it is merged into master.
-  - From at least one of committers for that workstream
+  - From at least one of contributor for that workstream
     - Approvers should be distributed equally among operators and vendors.
   - From WSL (to make sure consensus is reached).
   - WSL can request additional approvals reviews.
@@ -60,11 +60,11 @@ Following labels should be correctly used for all issues and PRs to indicate the
   - 2 business days cool off period should be applied before Final approval.
   - Final Approval by TSL (to make sure process is followed)
 - Only One approval will be counted per each organization for a given PR.
-- The selection of which Committers to approve a PR is made by the WSL and should take those factors into consideration:
-  - Committers needs to be actively discussing the PR to be selected for approval.
-  - Committers needs to be active in the workstream.
+- The selection of which contributor to approve a PR is made by the WSL and should take those factors into consideration:
+  - Contributor needs to be actively discussing the PR to be selected for approval.
+  - Contributor needs to be active in the workstream.
 - PRs will be merged automatically online by the TSL once consensus is reached and all approvals are received. 
-- If WSL is the person who is creating the PR, They need to request an alternate approver, preferably a co-lead or from the committers list.
+- If WSL is the person who is creating the PR, They need to request an alternate approver, preferably a co-lead or from the contributors list.
 
 <p align="right"><img src="artefacts//figures/approval_process.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Approval Process</p>
