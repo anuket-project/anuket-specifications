@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 5. Chapter 5
+# 5. Voting and Approval
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
