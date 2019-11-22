@@ -18,9 +18,13 @@
 
 
 ## Table of Contents
-* [Chapter 01 - Chapter 01](chapters/chapter01.md)
-* [Chapter 02 - Chapter 02](chapters/chapter02.md)
-* [Chapter 03 - Chapter 03](chapters/chapter03.md)
-* [Chapter 04 - Chapter 04](chapters/chapter04.md)
-* [Chapter 05 - Chapter 05](chapters/chapter05.md)
-* [Chapter 06 - Chapter 06](chapters/chapter06.md)
+* [Chapter 01 - Introduction](chapters/chapter01.md)
+* [Chapter 02 - Onboarding](chapters/chapter02.md)
+* [Chapter 03 - Organizational Structure and Works Streams](chapters/chapter03.md)
+* [Chapter 04 - Governance, Technical, Work Stream Nomination and Selection](chapters/chapter04.md)
+* [Chapter 05 - Voting and Approval](chapters/chapter05.md)
+* [Chapter 06 - Relationship to GSMA and LFN](chapters/chapter06.md)
+* [Chapter 07 - Release & Lifecycle Management](chapters/chapter06.md)
+* [Chapter 08 - Recruiting, Engagement, & Adoption](chapters/chapter06.md)
+* [Chapter 09 - Marketing & Communications](chapters/chapter06.md)
+* [Chapter 10 - Business & Technology Metrics](chapters/chapter06.md)
