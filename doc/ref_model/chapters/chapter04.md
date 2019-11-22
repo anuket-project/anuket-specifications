@@ -302,7 +302,7 @@ Table 4-13 Shows performance measurement capabiltities
 |--------------------|------------------|---------|-------------------------------------------|
 | e.vim.cap.006 | Virtual resources inventory per tenant | Yes/No | Capability to provide information related to allocated virtualised resources per tenant |
 | e.vim.cap.007 | Resources Monitoring | Yes/No | Capability to notify state changes of allocated resources |
-| e.vim.cap.008 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated  <br> **Note:** In a Kubernetes based infrastructure only CPU and memory resources are exposed.|
+| e.vim.cap.008 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
 | e.vim.cap.009 | Virtual resources Fault information | Yes/No | Capability to collect and notify fault information on virtualised resources |
 
 <p align="center"><b>Table 4-13:</b> VIM Resource Performance Measurement Capabilities</p>
