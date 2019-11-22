@@ -35,9 +35,9 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 
 |.conf | Basic | Network Intensive | Compute Intensive |
 |------|-------|-------------------|-------------------|
-|#vCPU cores |Per selected <Flavour>|Per selected <Flavour>|Per selected <Flavour>|
-|Amount of RAM |Per selected <Flavour>|Per selected <Flavour>|Per selected <Flavour>|
-|Total instance (ephemeral) storage (GB) |Per selected <Flavour>|Per selected <Flavour>|Per selected <Flavour>|
+|#vCPU cores |Per selected \<Flavour>|Per selected \<Flavour>|Per selected \<Flavour>|
+|Amount of RAM |Per selected \<Flavour>|Per selected \<Flavour>|Per selected \<Flavour>|
+|Total instance (ephemeral) storage (GB) |Per selected \<Flavour>|Per selected \<Flavour>|Per selected \<Flavour>|
 |Total instance (persistent) storage (GB) |Per selected |Per selected |Per selected |
 |n1, n2, n3, n4, n5, n6 | Y | N | N |
 |n10, n20, n30, n40, n50, n60 | Y | Y | Y |
