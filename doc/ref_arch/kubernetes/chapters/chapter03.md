@@ -20,7 +20,7 @@ The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry stan
 
 Kubernetes is already very well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
 
-This reference architecture provides optionality in terms of pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution. 
+This reference architecture provides optionality in terms of pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution.
 
 <a name="3.2"></a>
 ## 3.2 Infrastructure Services
@@ -36,7 +36,7 @@ There are a number of different container runtimes. The simplest form, low-level
 
 Where low-level runtimes are focussed on the execution of a container within an OS, the more complex/complete high-level container runtimes focus on the general management of container images - getting them from somewhere, unpacking them, and then passing them to the low-level runtime, which then executes the container. These high-level runtimes also include a comprehensive API that other applications (e.g. Kubernetes) can use to interact and manage containers. An example of this type of runtime is containerd, which provides the features described above, before passing off the unpacked container image to runc for execution.
 
-WHen it comes to Kubernetes, the important interface that we need to consider for container management is the [Kubernetes Container Runtime Interface (CRI)](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md), which is an interface specification for any container runtime to be able to integrate with the kubelet on a Kubernetes Node. The CRI decouples the kubelet from the runtime that is running in the Host OS, meaning that the code required to integrate kubelet with a container runtime is not part of the kubelet itself (i.e. if a new container runtime comes along, and it uses CRI, it will work with kubelet). Examples of this type of runtime include containerd (with cri plugin) and cri-o, which was built specifically for Kubernetes.
+When it comes to Kubernetes, the important interface that we need to consider for container management is the [Kubernetes Container Runtime Interface (CRI)](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md), which is an interface specification for any container runtime to be able to integrate with the kubelet on a Kubernetes Node. The CRI decouples the kubelet from the runtime that is running in the Host OS, meaning that the code required to integrate kubelet with a container runtime is not part of the kubelet itself (i.e. if a new container runtime comes along, and it uses CRI, it will work with kubelet). Examples of this type of runtime include containerd (with cri plugin) and cri-o, which was built specifically for Kubernetes.
 
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
@@ -52,7 +52,7 @@ WHen it comes to Kubernetes, the important interface that we need to consider fo
 <a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
 
-Containers, when running, will require ephemeral storage on which to run themselves (i.e. storage on which the unpacked container image is stored and executed from). This is ephemeral storage lives and dies with the container and is a directory on the worker node on which the container is running.  Note, this means that the ephemeral storage is mounted locally in the worker node filesystem. The filesystem can also be physically external to the worker node (e.g. iSCSI, NFS, FC) but the container will still reference it as part of the local filesystem.
+Containers, when running, will require ephemeral storage on which to run themselves (i.e. storage on which the unpacked container image is stored and executed from). This ephemeral storage lives and dies with the container and is a directory on the worker node on which the container is running.  Note, this means that the ephemeral storage is mounted locally in the worker node filesystem. The filesystem can also be physically external to the worker node (e.g. iSCSI, NFS, FC) but the container will still reference it as part of the local filesystem.
 
 Additional ephemeral storage can also be attached to a container through the use of Kubernetes Volumes - this can be storage from the worker node filesystem, or it can be external storage that is accessed through the use of a Volume Plugin. Volume Plugins allow the use of a storage protocol (e.g. iSCSI, NFS) or management API (e.g. Cinder) for the attaching and mounting of storage into a Pod. This additional ephemeral storage, that is attached to a container using a Kubernetes Volume, does not live and die with the container but instead follows the lifecycle of the Pod that the container is a part of. This means the ephemeral Volume persists across container restarts, whilst the Pod is still running.
 
@@ -63,7 +63,7 @@ Kubernetes also provides an object called Storage Class, which is created by clu
 <a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager
 
-To manage complex applications consisting from several pods the reference architecture may provide support for a Kubernetes Application package manager. The package manager may be able to manage the lifecycle a set of pods and provide a framework to customize a set of parameters for the deployment.
+To manage complex applications consisting from several Pods the reference architecture may provide support for a Kubernetes Application package manager. The package manager may be able to manage the lifecycle a set of Pods and provide a framework to customise a set of parameters for the deployment.
 
 <a name="3.3"></a>
 ## 3.3 Heading
