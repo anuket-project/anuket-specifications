@@ -6,6 +6,7 @@
 * [Pull Requests](#prs)
 * [Pull Requests Approval Process](#approvals)
 * [Idle Pull Requests Policy](#idle)
+* [Unresolved Pull Requests Policy](#unresolved)
 
 <a name="labels"></a>
 ### Labels
@@ -21,7 +22,8 @@ Following labels should be correctly used for all issues and PRs to indicate the
   - **WIP**: This label applies to PRs to indicate that this PR is still being developed and no reviews/approvals are still expected.
   - **Enhancement**: This label applies to both issues and PRs to indicate that the issue/Pr is proposing an Enhancement.
   - **Returned**: This label applies to both issues and PRs to indicate that the issue/PR has been returned for reasons such as (more information needed, not a high priority, no longer valid, etc).
-  - **Idle**: This label will be **automatically** applied to both issues/Labels to indicate that no activity has been observed on the issue/PR for some determined time frame. This an trigger an action to close the issue/PR.
+  - **Idle**: This label will be **automatically** applied to both issues/PRs to indicate that no activity has been observed on the issue/PR for some determined time frame. This an trigger an action to close the issue/PR.
+  - **Unresolved**: This label will be **automatically** applied to PRs to indicate that no consensus has been reached on the PR. This triggers an action to resolve the PR by the TSC.
   - **Forced**: This label will be **automatically** applied to PRs to indicate that the PR has been merged without following the default process (due to reasons identified below)
 
 <a name="issues"></a>
@@ -76,12 +78,19 @@ Pull Requests will be automatically labled as "**Idle**" when:
 - No Engagement from the author of the PR to address Review Requests or input from the community for more than 15 calender days.
   - Personal holidays or public holidays will not be counted.
 - One or more identified Reviewers (including WSL) are not providing feedback/resolutions or approving the Pull Request for more than 15 calender days.
-- No consensus are reached during approval process.
 
 Any Pull Requests that are labeled as "Idle" will be discussed during Technical Steering Meeting to take a decision on, such as:
 - Close the PR and label it as "**Returned**".
 - "**Force**" Merging of the PR without having full reviewers approvals due to their inactivity.
-- Follow Governance Procedures to get consensus via agreement or voting mechanisms.
+
+<a name="unresolved"></a>
+### Unresolved Pull Requests Policy
+
+Pull Requests will be automatically labled as "**Unresolved**" when no consensus are reached during approval process.
+
+Any Pull Requests that are labeled as "**Unresolved**" will be discussed during Technical Steering Comitee Meeting to take a decision on it by:
+- Finding Common Grounds to come to consensus.
+- Follow Governance Procedures to get consensus via voting mechanisms.
 
 
 <!--
