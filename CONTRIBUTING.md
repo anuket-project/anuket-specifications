@@ -38,7 +38,7 @@ Following labels should be correctly used for all issues and PRs to indicate the
   - Project = Work stream.
 - Workstream Leads has the sole responsibility to assign issues to individuals to address them.
 - **self assignment** are NOT recommended. Contributors may ask WSL (via comment or others) to get the issue assigned to them if they would like to work on it.
-  - This is to make sure items are worked on based on priorities and right reasoning.
+  - This is to make sure items are worked based on priorities and right reasoning.
 - WSL may label an issue as "**Returned**" to request further information or to decide not to work on it.
 
 <a name="prs"></a>
