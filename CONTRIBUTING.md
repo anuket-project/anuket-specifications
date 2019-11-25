@@ -64,7 +64,6 @@ Following labels should be correctly used for all issues and PRs to indicate the
 - Only One approval will be counted per each organization for a given PR.
 - The selection of which contributor to approve a PR is made by the WSL and should take those factors into consideration:
   - Contributor needs to be actively discussing the PR to be selected for approval.
-  - Contributor needs to be active in the workstream.
 - PRs will be merged automatically online by the TSL once consensus is reached and all approvals are received. 
 - If WSL is the person who is creating the PR, They need to request an alternate approver, preferably a co-lead or from the contributors list.
 
