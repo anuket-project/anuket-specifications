@@ -85,7 +85,7 @@ Any Pull Requests that are labeled as "Idle" will be discussed during Technical 
 <a name="unresolved"></a>
 ### Unresolved Pull Requests Policy
 
-Pull Requests will be automatically labled as "**Unresolved**" when no consensus are reached during approval process.
+Pull Requests will be automatically labled as "**Unresolved**" (by GitHub automation flow or a similar automation mechanism) when no consensus is reached during approval process.
 
 Any Pull Requests that are labeled as "**Unresolved**" will be discussed during Technical Steering Comitee Meeting to take a decision on it by:
 - Finding Common Grounds to come to consensus.
