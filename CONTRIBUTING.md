@@ -74,7 +74,7 @@ Following labels should be correctly used for all issues and PRs to indicate the
 ### Idle Pull Requests Policy
 
 Pull Requests will be automatically labled as "**Idle**" when:
-- No Engagement from the author of the PR to address Review Requests or input from the community for more than 15 calender days.
+- No engagement/activity (content, reviews, conversations) from author, reviewers and workstream contributors on non-merge ready PRs for 15 calendar days.
   - Personal holidays or public holidays will not be counted.
 - One or more identified Reviewers (including WSL) are not providing feedback/resolutions or approving the Pull Request for more than 15 calender days.
 
