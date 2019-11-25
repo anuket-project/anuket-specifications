@@ -11,15 +11,15 @@
 <a name="5.1"></a>
 ## 5.1 Introduction
 
-This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Vi-Vnfm and Or-Vi interfaces. 
-The OpenStack Pike version is used as the baseline for these APIs and CLIs. CNTT reference architectures and future 
-reference implementations will only considered OpenStack releases greater or equal to Pike. Any reference 
-implementation that **get certified by RC** can be considered as CNTT RA Compliant. When different OpenStack version 
-based reference implementations gets certified then the "CNTT standard" will be the oldest used OpenStack release. 
-Example, Let us assume that the Pike, Queens and Stein OpenStack based reference implementations get certified. Then, 
-the CNTT standard OpenStack version will be Pike. 
- 
-The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in the Chapter a 
+This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Vi-Vnfm and Or-Vi interfaces.
+The OpenStack Pike version is used as the baseline for these APIs and CLIs. CNTT reference architectures and future
+reference implementations will only considered OpenStack releases greater or equal to Pike. Any reference
+implementation that **get certified by RC** can be considered as CNTT RA Compliant. When different OpenStack version
+based reference implementations gets certified then the "CNTT standard" will be the oldest used OpenStack release.
+Example, Let us assume that the Pike, Queens and Stein OpenStack based reference implementations get certified. Then,
+the CNTT standard OpenStack version will be Pike.
+
+The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in the Chapter a
 consolidated view of these and other APIs that would be of interest.
 
 <a name="5.2"></a>
@@ -187,10 +187,38 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 ### 5.2.6. Nova
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|--------------|------------------|---------------------------------------|
-| Compute: Nova | https://docs.openstack.org/api-ref/compute/ | Version 2.1 |
-| Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
+| **OpenStack Service** | **API Version** | **Minimal Microversion** |
+|-----------------------|-----------------|--------------------------|
+| Compute: Nova         | 2.1             | 2.53                     |
+
+| **Nova Features**        | **Mandatory** |
+|--------------------------|:-------------:|
+| attach_encrypted_volume  | X             |
+| change_password          |               |
+| cold_migration           | X             |
+| console_output           | X             |
+| disk_config              | X             |
+| instance_password        |               |
+| interface_attach         | X             |
+| live_migration           | X             |
+| metadata_service         | X             |
+| pause                    | X             |
+| personality              |               |
+| rdp_console              |               |
+| rescue                   | X             |
+| resize                   | X             |
+| serial_console           |               |
+| shelve                   | X             |
+| snapshot                 | X             |
+| spice_console            |               |
+| suspend                  | X             |
+| swap_volume              |               |
+| vnc_console              |               |
+| volume_multiattach       |               |
+
+Compute API: https://docs.openstack.org/api-ref/compute/
+
+REST API Version History: https://docs.openstack.org/nova/latest/reference/api-microversion-history.html
 
 ### 5.2.7. Ironic
 
@@ -211,11 +239,11 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 ## 5.3. Consolidated Set of APIs
 
 ### 5.3.1. OpenStack Interfaces
-This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available 
+This section illustrates some of the Interfaces provided by OpenStack; the exhaustive list of APIs is available
 at https://docs.openstack.org/api-ref/.
- 
-OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs 
-directly using the HTTP or REST library, or they can use one of the many programming language specific cloud 
+
+OpenStack REST APIs are simple to interact with using either of two options. Clients can either call the APIs
+directly using the HTTP or REST library, or they can use one of the many programming language specific cloud
 libraries.
 
 **APIs**
