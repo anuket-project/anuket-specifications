@@ -21,7 +21,7 @@ Following labels should be correctly used for all issues and PRs to indicate the
   - **Major/Minor**: This label applies to both issues and PRs to indicate if the issue/PR is addressing a major or minor change. 
   - **WIP**: This label applies to PRs to indicate that this PR is still being developed and no reviews/approvals are expected.
   - **Enhancement**: This label applies to both issues and PRs to indicate that the issue/Pr is proposing an Enhancement.
-  - **Returned**: This label applies to both issues and PRs to indicate that the issue/PR has been returned for reasons such as (more information needed, not a high priority, no longer valid, etc).
+  - **Returned**: This label applies to both issues and PRs to indicate that the issue/PR has been sent back to authoer (e.g. more information needed, not a high priority, no longer valid, etc).
   - **Idle**: This label will be **automatically** applied to both issues/PRs to indicate that no activity has been observed on the issue/PR for some determined time frame. This an trigger an action to close the issue/PR.
   - **Unresolved**: This label will be **automatically** applied to PRs to indicate that no consensus has been reached on the PR. This triggers an action to resolve the PR by the TSC.
   - **Forced**: This label will be **automatically** applied to PRs to indicate that the PR has been merged without following the default process (due to reasons identified below)
