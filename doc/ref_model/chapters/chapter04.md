@@ -94,7 +94,7 @@ This section describes a set of explicit NFVI capabilities and performance measu
 | e.nfvi.cap.009 | Crypto Acceleration | Yes/No | Crypto Acceleration |
 | e.nfvi.cap.010 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
 | e.nfvi.cap.011 | Programmable Acceleration | Yes/No | Programmable Acceleration |
-| e.nfvi.cap.012 | Enhanced Cache Management* | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded </br> **Note:** This capability is not applicable to containers or Kubernetes based infrastructures.|
+| e.nfvi.cap.012 | Enhanced Cache Management* | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of NFVI</p>
 
@@ -181,7 +181,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.cap.016 | CPU overbooking | 1:N | <definition update scheduled> |
-| i.nfvi.cap.017 | vNIC QoS | Yes/No | QoS enablement <br> **Note:** This capability is not applicable for containers due to the lack of vNIC, however VLAN QoS or DSCP marking can be implemented.|
+| i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connectin point (vNIC or interface) |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
 
@@ -328,8 +328,8 @@ Table 4-14: Reserved
 | e.vim.pm.001 | Time to create Virtual Compute for a given VNF | Max ms |  |
 | e.vim.pm.002 | Time to delete Virtual Compute of a given VNF | Max ms |  |
 | e.vim.pm.003 | Time to start Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.004 | Time to stop Virtual Compute of a given VNF | Max ms | **Note:** In case of containers there is no stop operation. |
-| e.vim.pm.005 | Time to pause Virtual Compute of a given VNF | Max ms | **Note:** In case of containers there is no pause operation. |
+| e.vim.pm.004 | Time to stop Virtual Compute of a given VNF | Max ms | <sup>1)</sup> |
+| e.vim.pm.005 | Time to pause Virtual Compute of a given VNF | Max ms | <sup>2)</sup> |
 | e.vim.pm.006 | Time to create internal virtual network | Max ms |  |
 | e.vim.pm.007 | Time to delete internal virtual network | Max ms |  |
 | e.vim.pm.008 | Time to update internal virtual network | Max ms |  |
@@ -339,6 +339,10 @@ Table 4-14: Reserved
 | e.vim.pm.012 | Time to create external storage ready for use by VNF | Max ms |  |
 
 <p align="center"><b>Table 4-15:</b> VIM Resource Management Measurements</p>
+
+**1)** In case of containers there is no stop operation.
+
+**2)** In case of containers there is no pause operation.
 
 <a name="4.1"></a>
 ## 4.2 Infrastructure Profiles Catalogue
@@ -460,10 +464,14 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. <br> **Note:** In Kubernetes based infrastructures virtio-ipsec can be applied only if the CNI plugin is OVS. |
-| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. <br> **Note:** In Kubernetes based infrastructures virtio-crypto can be applied only if the CNI plugin is OVS. |
+| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. <sup>1)</sup> |
+| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. <sup>2)</sup> |
 
 <p align="center"><b>Table 4-21:</b> Acceleration Extensions for N Instance Type</p>
+
+**1)** In Kubernetes based infrastructures virtio-ipsec can be applied only if the CNI plugin is OVS.
+
+**2)** In Kubernetes based infrastructures virtio-crypto can be applied only if the CNI plugin is OVS.
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 

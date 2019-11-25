@@ -69,11 +69,13 @@ The following sections detail the NFVI SW profile features per type of virtual r
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.stg.cfg.001 | Storage Types | Yes/No   | Support of Storage types described in the catalogue |
 | nfvi.stg.cfg.002 | Storage Block | Yes/No  |  |
-| nfvi.stg.cfg.003 | Storage Object | Yes/No | **Note:** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope. |
+| nfvi.stg.cfg.003 | Storage Object | Yes/No | <sup>1)</sup> |
 | nfvi.stg.cfg.004 | Storage with replication |  Yes/No |  |
 | nfvi.stg.cfg.005 | Storage with encryption | Yes/No |  |
 
 <p align="center"><b>Table 5-3:</b> Virtual Storage features.</p>
+
+**1)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
@@ -88,24 +90,29 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | e.g. virtio1.1, i40evf (Intel driver for VF SR-IOV). <br> **Note:** This feature is not applicable to containers or Kubernetes based infrastructures. |
-| nfvi.net.cfg.002 | Overlay protocol | Protocols | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. <br> **Note:** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN) |
+| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | e.g. virtio1.1, i40evf (Intel driver for VF SR-IOV). <sup>1)</sup> |
+| nfvi.net.cfg.002 | Overlay protocol | Protocols | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. <sup>2)</sup> |
 | nfvi.net.cfg.003 | NAT |  Yes/No |  Support of Network Address Translation |
 | nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
 | nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
 
-
 <p align="center"><b>Table 5-5:</b> Virtual Networking features.</p>
+
+**1)** This feature is not applicable to containers or Kubernetes based infrastructures.
+
+**2)** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN)
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | e.g. DPDK. <br> **Note:** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions. |
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | e.g. DPDK. <sup>1)</sup> |
 | nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | e.g. support of SR-IOV, SmartNic. |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No |  |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface |Yes/No | |
 
 <p align="center"><b>Table 5-6:</b> Virtual Networking Acceleration features.</p>
+
+**1)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.
 
 <a name="5.1.4"></a>
 ### 5.1.4 Security
