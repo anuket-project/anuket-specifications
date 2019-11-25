@@ -55,9 +55,10 @@ Traceability to Reference Model.
 | `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. |
 | `req.inf.com.04` | Compute | The Architecture **must** be able to support multiple CPU SKU options to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
 | `req.inf.com.05` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.|
-| `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning of the CPUs of VM instance.|
+| `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning of the vCPUs of VM instance.|
 | `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
-| `req.inf.com.08` | Compute | The Architecture **must** support certain vCPUs of a host to be dedicated for non-tenant workloads such as for OpenStack services.|
+| `req.inf.com.08` | Compute | The Architecture **must** support allocating certain number of host cores/threads to non-tenant workloads such as for OpenStack services. |
+| `req.inf.com.09` | Compute | The Architecture **must** ensure that the host cores/threads assigned to a workload are thread-sibling aware: that is, that a core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. |
 | `req.inf.stg.01` | Storage | The Architecture **must** provide remote Block storage for VM Instances. |
 | `req.inf.stg.02` | Storage | The Architecture **should** provide Object storage for VM Instances. |
 | `req.inf.stg.03` | Storage | The Architecture **may** provide a file system service (file system storage solution) for VM Instances. |
