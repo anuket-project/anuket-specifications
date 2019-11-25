@@ -43,9 +43,9 @@ Following labels should be correctly used for all issues and PRs to indicate the
 
 <a name="prs"></a>
 ### Pull Requests
-- PRs must only be created by a contributor who has an issue assigned to them by the respective WSL.
 - PRs must only be created when there is an issue present and a decision to create a PR is made. A PR must reference the issue it is resolving into the description field.
   - using GitHub predefined keyword "**Fixes Issue#**" will automatically close the issue which the PR is resolving when it is merged.
+- A PR for an issues must only be created by the contributor assigned to the issue by the respective WSL.
 - One person only is allowed to edit a given PR unless given permission to other contributor to contribute directly into the PR.
 - A PR is recommended to only create/modify content within the scope of a single workstream.
 - A PR should only add/change content related to the issue associated with the PR.
