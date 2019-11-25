@@ -65,7 +65,7 @@ Following labels should be correctly used for all issues and PRs to indicate the
 - The selection of which contributor to approve a PR is made by the WSL and should take those factors into consideration:
   - Contributor needs to be actively discussing the PR to be selected for approval.
 - PRs will be merged automatically online by the TSL once consensus is reached and all approvals are received. 
-- If WSL is the person who is creating the PR, They need to request an alternate approver, preferably a co-lead or from the contributors list.
+- If WSL is the person who is creating the PR, They need to request an alternate approver, preferably from the co-lead or from the contributors list.
 
 <p align="right"><img src="artefacts//figures/approval_process.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Approval Process</p>
