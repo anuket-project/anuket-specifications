@@ -23,8 +23,8 @@ Labs are organized into one or more *Pods*, where the *Pod* provides the complet
 
 A CNTT compliant *Pod* shall meet the following requirements.
 
-1. One (1) bare-metal server dedicated as a Jump / Test Host
-2. Six (6) bare-metal servers, serving as either compute or controllers
+1. One (1) physical server dedicated as a Jump / Test Host
+2. Six (6) physical servers, serving as either compute or controllers
 3. A configured network topology allowing for: Out-of-Band Management, Admin, Public, Private, and Storage Networks
 
 The Jump Host / Test Host system will be utilized to install and manage the operation of the *Pod*.  For example, the system can be used to host the installer software used to deploy and configure OpenStack on the other bare-metal servers.  Once installed, the system may be used to run test automations or it may be used to generate test traffic intended to measure the performance of a VNF operating within the *Pod*.  To support these operations, the bare-metal server provided for the Jump / Test Host shall meet the same hardware requirements as compute / controller, as outline below.  In this context, the system may be considered as a miscellaneous use  or general purpose system.
