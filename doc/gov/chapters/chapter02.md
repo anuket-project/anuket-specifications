@@ -1,11 +1,11 @@
 [<< Back](../)
 
 # 2. Onboarding
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
-* [2.2 Membership](#2.2)
+* [2.2 Request Membership](#2.2)
 * [2.3 Prerequisites](#2.3)
 * [2.4 Beginning Engagement](#2.4)
 * [2.5 Member Administration](#2.4)
@@ -34,13 +34,8 @@ As an open-source community organization, CNTT has developed the following proce
   
   - **What happens once I get onboarded?** Once you have reviewed the CNTT onboarding information and have agreed to the perquisite terms and agreements associated with participating and contributing to the Task Force, and you have completed onboarding and now it will be your opportunity to join desired work streams. For an initial period after onboarding, you will be assigned a volunteer mentor from the Task Force to help you get up to speed and contributing quickly.
   
-  - **Overall, the process is as follows**
-  - 1. Request Membership
-  - 2. Review General Information packet
-  - 3. Agree to Terms
-  - 4. Join the Community
-  - 5. Begin Contributing
-  
+  - **Diagram**
+<p align="middle"><img src="../figures/onboarding_proc.png" alt="onboarding_proc" title="Onboarding Process" width="60%"/></p>
  
 <a name="2.3"></a>
 ## 2.3 Prerequisites
