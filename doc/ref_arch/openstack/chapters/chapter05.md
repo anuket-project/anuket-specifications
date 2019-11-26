@@ -193,12 +193,11 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 | **Nova Features**        | **Mandatory** |
 |--------------------------|:-------------:|
-| attach_encrypted_volume  | X             |
+| attach_encrypted_volume  |               |
 | change_password          |               |
 | cold_migration           | X             |
 | console_output           | X             |
 | disk_config              | X             |
-| instance_password        |               |
 | interface_attach         | X             |
 | live_migration           | X             |
 | metadata_service         | X             |
