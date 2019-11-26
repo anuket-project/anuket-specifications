@@ -5,6 +5,11 @@
 
 ## Table of Contents
 * [8.1 Introduction](#8.1)
+
+The purpose of this chapter is to identify the gaps between what is required for automated deployment of VNFs on NFVI frameworks and framework offered by OpenStack.Once gaps are identified, the next step will be to propose a plan to address these gaps. 
+
+The most obvious way to address the gaps will be to propose a set of APIs in the upstream OpenStack community
+
 * [8.2 Gaps in OpenStack](#8.2)
 
 Discovery  - The VNFs and NFVI frameworks should be able to discover each other and exchange their capabilities required or offered. CNTT reference model specifies a model, but OpenStack does not provide APIs to support such capabilities. Following should be supported: 
