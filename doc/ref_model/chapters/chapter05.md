@@ -171,14 +171,14 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1 |  virtio1.1 or NIC-specific* |  virtio1.1 |
+| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1 |  virtio1.1* |  virtio1.1 |
 | nfvi.net.cfg.002 | Overlay protocol | Protocols  | VXLAN, MPLSoUDP, GENEVE, other |  VXLAN, MPLSoUDP, GENEVE, other |VXLAN, MPLSoUDP, GENEVE, other |
 | nfvi.net.cfg.003 | NAT | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.004 | Security Group | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.005 | SFC support | Yes/No  | N | Y | Y |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Y | Y | Y |
 
-*For enabling SR-IOV VFs to be directly passed to VNFC, NIC vendor specific interface is transiently allowed but not recommended, and it should be prohibited when mature enough solutions will be available for providing the same efficiency level (especially regarding CPU and energy consumption).
+*[VNF Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to VNFC) or NIC-specefic drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
 
 <p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
 
