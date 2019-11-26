@@ -26,7 +26,7 @@ Traceability to Reference Model.
 <a name="2.3"></a>
 ## 2.3 Architecture and OpenStack Requirements.
 
-"Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Model Chapter 3) and consists of the Physical resources, virtual and container resources, and Software Management Layer (Hypervisor, Container runtime, virtual or container Orcehstrator(s), Operating System).
+"Architecture" in this chapter refers to NFVI + VIM (as specified in Reference Model Chapter 3).
 
 <a name="2.3.1"></a>
 ### 2.3.1 General
