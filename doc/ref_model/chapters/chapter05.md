@@ -40,6 +40,7 @@ Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI insta
 
 The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
 
+<a name="5.1.1"></a>
 ### 5.1.1 Virtual Compute
 
 **Table 5-1** and **Table 5-2** depict the features related to virtual compute.
@@ -60,7 +61,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
-<a name="5.2"></a>
+<a name="5.1.2"></a>
 ### 5.1.2 Virtual Storage
 
 **Table 5-3** and **Table 5-4** depict the features related to virtual storage.
@@ -82,6 +83,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 <p align="center"><b>Table 5-4:</b> Virtual Storage Acceleration features.</p>
 
+<a name="5.1.3"></a>
 ### 5.1.3 Virtual Networking
 
 **Table 5-5** and **Table 5-6** depict the features related to virtual networking.
@@ -169,14 +171,14 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1 |  virtio1.1* |  virtio1.1* |
+| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1 |  virtio1.1 or NIC-specific* |  virtio1.1 |
 | nfvi.net.cfg.002 | Overlay protocol | Protocols  | VXLAN, MPLSoUDP, GENEVE, other |  VXLAN, MPLSoUDP, GENEVE, other |VXLAN, MPLSoUDP, GENEVE, other |
 | nfvi.net.cfg.003 | NAT | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.004 | Security Group | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.005 | SFC support | Yes/No  | N | Y | Y |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Y | Y | Y |
 
-*[VNF Transtion Guidelines.](../chapters/appendix-a.md) may allow for intermediate alternative interfaces.
+*For enabling SR-IOV VFs to be directly passed to VNFC, NIC vendor specific interface is transiently allowed but not recommended, and it should be prohibited when mature enough solutions will be available for providing the same efficiency level (especially regarding CPU and energy consumption).
 
 <p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
 
@@ -225,7 +227,7 @@ The host profile and capabilities include:
 1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
 1. **SMT/HT (SMT: Simultaneous Multithreading/ HT: Hyper Threading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host.
-1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to enable SR-IOV (without exposing SR-IOV VFs to workload via PCI-Pass through).
+1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to enable SR-IOV.
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
 1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
 1. **Security features**: such as TRusted Platform Module (TPM).
