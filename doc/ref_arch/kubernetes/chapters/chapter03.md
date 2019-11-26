@@ -59,13 +59,31 @@
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
-> This chapter should discuss networking related considerations of container network services, like:
-> * Ingress and any limitations on protocol or raw interface support
-> * Dependencies on external loadbalancers
-> * Regular service mesh related considerations
-> * Network Service Mesh related considerations
-> * Number of interfaces and IP addresses to be supported by a pod
-> * IPv6 single and dual stack needs
+Becouse `req.inf.ntw.01` requires the architecture to support CNI and `req.inf.ntw.16` requires the capability to attach several network interfaces to the pods the architecture must suport a CNI metaplugin/CNI multiplexer.
+
+A CNI metaplugin/CNI multiplexer is capable to attach several interfaces, using different other CNI plugins to a pod. The different network charastheristics of the interfaces, which require different networking technologies require different CNI plugins.
+
+Inter node communication required by `req.inf.ntw.02` must be served by a simple CNI using overlay technology, like Flannel.
+
+There are two types of low latency and high throughput networks required by `req.inf.ntw.04`. Network used for signalling traffic are more demanding than what an overlay network can handle, but still does not need the usage of user space networking. Due to the nature of signalling protocols used this type of netorks require the NAT-less communication stated by `req.inf.ntw.03`. Due to the combination of these two requirements networks with this charactheristics must be served by a CNI plugin with IPVLAN or MACVLAN suport.
+
+The low latency, high throughput networks for handling the user plane traffic require the capability to use an user space networking technology, like VPP or DPDK. In case of DPDK the usage of SR-IOV VF-s is recommended.
+
+As `req.inf.ntw.14` mandates the architecture must enable the integration of different SDN solutions via their respective CNI integration.
+
+The architecture must support networking for telecom equipments in an environment where the networks of the CNF-s are set up by the network adminisrators of the telecom operator. This is why, as `req.inf.ntw.10` requires, the architecture must provide a set of abstract management API-s to manage the network connectivity of the CNF pods.
+The API must support multiple tennants and must require elevated acces rights to manipulate infrastructure related API objects as these operations require reconfiguration of the physical network infrastructure.
+
+To fullfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API, also the alignement of the devices and the CPU topology must be supported using the Topology Manager.
+
+The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads.
+ > How about IPv6 support of the control plane?
+
+As Kubernetes Ingress and Services have no support for all the protocols needed in telecommunication environments and their capacity is limited the architecture must enable the usage alternative load balancers, like external or built into the application.
+
+Well known service meshes have no support for protocols required by telecom applications therefore their suport is not required in the architecture.
+
+As the most recent version of Network Service Mesh is v0.1.0 at the time of specifying RA2 in Snezka release it is not required in the architecture.
 
 <a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
