@@ -17,7 +17,7 @@ This chapter provides the laboratory hardware requirements needed to deploy the 
 The lab provides a set of bare-metal servers, supported by a dedicated network infrastructure.  Users should be provided access to the servers, their operating systems, and out-of-band management (i.e. IPMI, IDRAC, ILO, etc.).  
 
 <a name="4.2"></a>
-## 4.2 Lab Requirement
+## 4.2 Lab Requirements
 
 Labs are organized into one or more *Pods*, where the *Pod* provides the complete set of resources [servers and network(s)] necessary to support the reference implementation installation and operation.  
 
@@ -47,14 +47,16 @@ Each server shall meet the following minimum specifications:
 Note 1: At least 1 network interface must be capable of performing PXE boot and that network must be available to both the Jump / Test Host and each bare-metal server.
 
 <a name="4.2.2"></a>
-### 4.2.2 Networking Hardware
 
-The minimum networking configuration must provide at least VLANs to partition the various networks required for the reference implementation deployment.  At least one top of rack switch will be provided for each *Pod*, with interface speeds matching the above server specifications.
+## 4.2.2 Lab Network Hardware & Topology
 
-<a name="4.3"></a>
-## 4.3 Lab Network Topology
+Labs that are hosting multiple *Pods* should utilize a leaf / spine topology when interconnecting *Pods* or bare-metal servers.   This is especially important in the cases where the bare-metal servers constituting a *Pod* are not located in the same physical rack or are not connected to the same leaf switch. At least one leaf switch will be provided for each *Pod*, with interface speeds matching the above server specifications.  In this context, the reference to the single leaf refers to the logical appearance of switch, compared to topologies providing 2 or more leaf switches to provide high availability.
 
-The *Pod* network topology should provide at least 2 networks with preallocated IP addressing schemes for the *out-of-band management* network and the *Public* network.  The *Public* network should be able to access the public Internet.  At least IPv4 addresses must be available, ideally IPv6 addresses should also be supported.
+Leaf switches must provide interfaces matching the bare-metal server specifications above and northbound (spine connections) of 100 Gbps connections. Spine switches must provide the corresponding 100 Gbps interfaces to each leaf switch.  The minimum requirement is one spine switch.
+
+The minimum networking configuration must provide at least VLANs to partition the various networks required for the reference implementation deployment and separation of each *Pod*, if multiple *Pods* are hosted within the labs.   
+
+The *Pod* network topology should provide at least 2 networks with preallocated IP addressing schemes for the *out-of-band management* network and the *Public* network.  The *Public* network must be able to reach / access the public Internet.  At least IPv4 addresses must be available, ideally IPv6 address space should also be supported.
 
 Remote users shall access the lab via a VPN gateway, that shall also provide basic security and separation from the public Internet.  Both the *Public* and *out-of-band management* networks shall be accessible through the VPN connection.
 
