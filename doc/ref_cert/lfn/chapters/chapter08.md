@@ -6,17 +6,29 @@
 ## Table of Contents
 * [8.1 Introduction](#8.1)
 * [8.2 Relevant Community Projects and Initiatives](#8.2)
+   * [8.2.1 Functest](#8.2.1)
+   * [8.2.2 Yardstick](#8.2.2)
+   * [8.2.3 Bottlenecks](#8.2.3)
+   * [8.2.4 Test Tools](#8.2.4)
+   * [8.2.5 Scenario Descriptor File (SDF)](#8.2.5)
 * [8.3 Integrated E2E Framework](#8.3)
-  * [8.3.1 NFVI Integrated E2E Framework (Playbook)](#8.3)
-  * [8.3.1 VNF Integrated E2E Framework (Playbook)](#8.3)
+  * [8.3.1 NFVI Integrated E2E Framework (Playbook)](#8.3.1)
+  * [8.3.2 VNF Integrated E2E Framework (Playbook)](#8.3.2)
 
 <a name="8.1"></a>
 ## 8.1 Introduction
 
+Define the purpose of the chapter which is to:
+-	Identify Framework Needs, Goals, and Dependencies
+- Define Opensource Integration (OPNFV, OVP, Functest, CVC, others)
+- Provide Automation Toolchain (list, topology, flow)
+
 <a name="8.2"></a>
 ## 8.2 Relevant Community Projects and Initiatives
 
+<a name="8.2.1"></a>
 ### 8.2.1 Functest
+
 [Functest](https://functest.readthedocs.io/en/stable-iruya/) was initially
 created to verify OPNFV Installers and Scenarios and then to publish fair,
 trustable and public results regarding the status of the different opensource
@@ -132,15 +144,18 @@ Additional links:
 - [Deploy your own Functest CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004)
 - [Functest gates](https://build.opnfv.org/ci/view/functest/)
 
+<a name="8.2.2"></a>
 ### 8.2.2 Yardstick
 
+<a name="8.2.3"></a>
 ### 8.2.3 Bottlenecks
 
-
+<a name="8.2.4"></a>
 ### 8.2.4 Test Tools
 1. Shaker:  https://pyshaker.readthedocs.io/en/latest/ (The distributed data-plane testing tool built for OpenStack)
 2. Sonubuoy: https://sonobuoy.io/ It is a diagnostic tool that makes it easier to understand the state of a Kubernetes cluster by running a set of plugins (including Kubernetes conformance tests) in an accessible and non-destructive manner.
 
+<a name="8.2.5"></a>
 ### 8.2.5 Scenario Descriptor File (SDF)
 As defined by OPNFV, Scenarnio Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
 
@@ -173,7 +188,7 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 
 > using existing testing framework, proposal of an E2E integrated one to be used fir NFVI testing.
 
-<a name="8.3.1"></a>
-### 8.3.1 VNF Integrated E2E Framework.
+<a name="8.3.2"></a>
+### 8.3.2 VNF Integrated E2E Framework.
 
 > using existing testing framework, proposal of an E2E integrated one to be used fir NFVI testing.
