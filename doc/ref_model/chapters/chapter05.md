@@ -178,7 +178,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.net.cfg.005 | SFC support | Yes/No  | N | Y | Y |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Y | Y | Y |
 
-*[VNF Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to VNFC) or NIC-specefic drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
+*[VNF Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to VNFC) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
 
 <p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
 
