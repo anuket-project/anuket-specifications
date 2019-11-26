@@ -12,9 +12,7 @@
 * [1.5 Verification methodologies](#1.5)
 *	[1.6 Assumptions & Dependencies](#1.6)
 *	[1.7 Results Collation & Presentation](#1.7)
-* [1.8 Measurements, Monitoring](#1.8)
-  * [1.8.1 Performance & Resiliency - Measurements, Testing.](#1.8.1)
-*	[1.9 Governance](#1.9)
+*	[1.8 Governance](#1.8)
 * [x.x Resources & References](#x.x)
 
 ## Synopsis
@@ -74,7 +72,7 @@ These core principles will guide NFV verification deliverables:
 4. Test Harnesses will be portable, or compatible, across all RAs/Distributions which already conform to standard interfaces and services.
 
 <a name="1.4"></a>
-### Best Practices
+### 1.4 Best Practices
 
 The following best practices have been adopted to ensure verification and validation procedures are repeatable with consistent quality in test results, and RI certifications:
 
@@ -86,7 +84,7 @@ The following best practices have been adopted to ensure verification and valida
 * Add test cases from operators, which operators already tested in their environment
 
 <a name="1.5"></a>
-### Verification methodologies
+### 1.5 Verification methodologies
 
 Perform VNF interoperability verifications against an implementation of CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
@@ -96,7 +94,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <p align="center"><b>Figure:</b> Figure: Certification Methodology</p>
 
 <a name="1.6"></a>
-### Assumptions & Dependencies
+### 1.6 Assumptions & Dependencies
 
 **Assumptions** NFVI+VNF testing will be considered **Testable** if the follow qualifiers are present in a test execution, and subsequent result:
 
@@ -120,55 +118,14 @@ In addition, respective Entrance criteria is a prerequisite which needs to be sa
 * Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
 <a name="1.7"></a>
-### Results Collation & Presentation
+### 1.7 Results Collation & Presentation
 
 Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline. Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
 **Placeholder to document where results will be posted (e.g. Dovetail dashboards.)**
 
 <a name="1.8"></a>
-### Measurements, Monitoring
-
-<a name="1.8.1"></a>
-#### 1.8.1 Performance & Resiliency - Measurements, Testing.
-
-The following table contains a lists of performance measurements, and/or capabilities, to be captured where feasible during test validations.  More specifically, the table contains:
-
-* Exposed performance metrics per VNFC, vNIC or vCPU.  Specifically exposed performance metrics use a single VNF (PVP) dataplane test setup in a single host.  (e.g. _\*e.nfvi.per.met\*_)
-
-* Monitoring capabilities available by NFVI.  The availability of these capabilities will be determined by the instance type used by the workloads. (e.g. _\*i.nfvi.mon.cap\*_)
-
-* Internal performance metrics per NFVI node.  Specifically internal performance metrics use a baseline (Phy2Phy) dataplane test setup in a single host. (e.g. _\*i.nfvi.per.met\*_)
-
-> _**NOTE**:  Refer to RM Chapter 4, <a href="https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md">Infrastructure Capabilities, Metrics, and Catalogue</a>, for a list performance measurements and capabilities internal to the infrastructure._
-
-
-| Ref                | NFVI Measurement             | Unit                | Definition/Notes                                             |
-| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
-| e.nfvi.per.met.001 | Network throughput        | frames/s            | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.002 | Network latency           | second              | 99th percentile of one-way frame transfer time at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.003 | Network Delay Variation   | second              | 99th percentile of Frame Delay Variation (FDV) at throughput offered load level (aligned with ETSI GS NFV-TST 009 [2]) |
-| e.nfvi.per.met.004 | Simultaneous active flows | number              | Max simultaneous active L4 flows per vNIC before a new flow is dropped |
-| e.nfvi.per.met.005 | New flows rate            | flows/s             | Max new L4 flow rate per vNIC                                |
-| e.nfvi.per.met.006 | Storage throughput        | bytes/s or IO/s     | Max throughput per virtual block storage unit assigned to VNFC |
-| e.nfvi.per.met.007 | Processing capacity       | test-specific       | Processing capacity test-specific score per vCPU and with all vCPU running multiple parallel workloads|
-| i.nfvi.mon.cap.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
-| i.nfvi.mon.cap.002 | Virtual compute resource CPU usage |  | QoS enablement |
-| i.nfvi.mon.cap.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
-| i.nfvi.mon.cap.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
-| i.nfvi.mon.cap.005 | Monitoring of external storage IOPS | Yes/No | Transcoding Acceleration |
-| i.nfvi.mon.cap.006 | Monitoring of external storage throughput | Yes/No | Programmable Acceleration |
-| i.nfvi.mon.cap.007 | Monitoring of external storage capacity | Yes/No |  |
-| i.nfvi.per.met.001 | Network throughput | frames/s | Throughput (aligned with ETSI GS NFV-TST 009 [2]) |
-| i.nfvi.per.met.002 | Simultaneous active flows | number | Max simultaneous active L4 flows per node before a new flow is dropped |
-| i.nfvi.per.met.003 | New flows rate               | flows/s  | Max new L4 flow rate per node                                |
-| i.nfvi.per.met.004 | Processing capacity | test-specific | Processing capacity test-specific score per core and with all cores running multiple parallel workloads|
-| i.nfvi.per.met.005 | Energy consumption           | W                   | Maximum energy consumption of the node without hosting any VNFC (but fully ready for it) |
-| i.nfvi.per.met.006 | Network energy efficiency    | W/bits/s            | Energy consumption for the node at throughput offered load level, normalized to the bit rate |
-| i.nfvi.per.met.007 | Processing energy efficiency | W/core | Energy consumption for the node during processing capacity test-specific score with all cores running multiple parallel workloads (i.nfvi.per.met.004), normalized to cores usable by VNFs |
-
-<a name="1.9"></a>
-### Governance
+### 1.8 Governance
 
 1. Certification badges will be presented by the CVC
 2. CVC will maintain requirements for certification
