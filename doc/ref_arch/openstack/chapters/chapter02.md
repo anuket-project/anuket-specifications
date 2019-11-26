@@ -59,7 +59,7 @@ Traceability to Reference Model.
 | `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Base, Network Intensive, and Compute Intensive).|
 | `req.inf.com.08` | Compute | The Architecture **must** support allocating certain number of host cores/threads to non-tenant workloads such as for OpenStack services. |
 | `req.inf.com.09` | Compute | The Architecture **must** ensure that the host cores/threads assigned to a workload are thread-sibling aware: that is, that a core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. |
-| `req.inf.stg.01` | Storage | The Architecture **must** provide remote Block storage for VM Instances. |
+| `req.inf.stg.01` | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for VM Instances. |
 | `req.inf.stg.02` | Storage | The Architecture **should** provide Object storage for VM Instances. |
 | `req.inf.stg.03` | Storage | The Architecture **may** provide a file system service (file system storage solution) for VM Instances. |
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
