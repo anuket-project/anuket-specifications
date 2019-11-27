@@ -40,6 +40,7 @@ Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI insta
 
 The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
 
+<a name="5.1.1"></a>
 ### 5.1.1 Virtual Compute
 
 **Table 5-1** and **Table 5-2** depict the features related to virtual compute.
@@ -60,7 +61,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
-<a name="5.2"></a>
+<a name="5.1.2"></a>
 ### 5.1.2 Virtual Storage
 
 **Table 5-3** and **Table 5-4** depict the features related to virtual storage.
@@ -82,6 +83,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 <p align="center"><b>Table 5-4:</b> Virtual Storage Acceleration features.</p>
 
+<a name="5.1.3"></a>
 ### 5.1.3 Virtual Networking
 
 **Table 5-5** and **Table 5-6** depict the features related to virtual networking.
