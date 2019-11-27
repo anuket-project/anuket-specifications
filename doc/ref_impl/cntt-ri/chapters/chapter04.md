@@ -14,7 +14,7 @@
 ## 4.1 Introduction
 This chapter provides the laboratory hardware requirements needed to deploy the reference implementation.  These requirements represent a minimum set of requirements, where different labs may have hardware or capabilities exceeding these minimum specifications.  
 
-The lab provides a set of bare-metal servers, supported by a dedicated network infrastructure.  Users should be provided access to the servers, their operating systems, and out-of-band management (i.e. IPMI, IDRAC, ILO, etc.).  
+The lab provides a set of physical servers, supported by a dedicated network infrastructure.  Users should be provided access to the servers, their operating systems, and out-of-band management (i.e. IPMI, IDRAC, ILO, etc.).  
 
 <a name="4.2"></a>
 ## 4.2 Lab Requirements
@@ -27,10 +27,10 @@ A CNTT compliant *Pod* shall meet the following requirements.
 2. Six (6) physical servers, serving as either compute or controllers
 3. A configured network topology allowing for: Out-of-Band Management, Admin, Public, Private, and Storage Networks
 
-The Jump Host / Test Host system will be utilized to install and manage the operation of the *Pod*.  For example, the system can be used to host the installer software used to deploy and configure OpenStack on the other bare-metal servers.  Once installed, the system may be used to run test automations or it may be used to generate test traffic intended to measure the performance of a VNF operating within the *Pod*.  To support these operations, the bare-metal server provided for the Jump / Test Host shall meet the same hardware requirements as compute / controller, as outline below.  In this context, the system may be considered as a miscellaneous use  or general purpose system.
+The Jump Host / Test Host system will be utilized to install and manage the operation of the *Pod*.  For example, the system can be used to host the installer software used to deploy and configure OpenStack on the other physical servers.  Once installed, the system may be used to run test automations or it may be used to generate test traffic intended to measure the performance of a VNF operating within the *Pod*.  To support these operations, the physical server provided for the Jump / Test Host shall meet the same hardware requirements as compute / controller, as outline below.  In this context, the system may be considered as a miscellaneous use  or general purpose system.
 
 <a name="4.2.1"></a>
-### 4.2.1 Bare-metal Server Requirements
+### 4.2.1 Physical Server Requirements
 Each server shall meet the following minimum specifications:
 
 - **CPU**
@@ -44,15 +44,15 @@ Each server shall meet the following minimum specifications:
   - 4x 25 Gbps Ethernet Ports, implemented as two separate dual port NICs
   - Out-of-band Management Port
 
-Note 1: At least 1 network interface must be capable of performing PXE boot and that network must be available to both the Jump / Test Host and each bare-metal server.
+Note 1: At least 1 network interface must be capable of performing PXE boot and that network must be available to both the Jump / Test Host and each physical server.
 
 <a name="4.2.2"></a>
 
 ## 4.2.2 Lab Network Hardware & Topology
 
-Labs that are hosting multiple *Pods* should utilize a leaf / spine topology when interconnecting *Pods* or bare-metal servers.   This is especially important in the cases where the bare-metal servers constituting a *Pod* are not located in the same physical rack or are not connected to the same leaf switch. At least one leaf switch will be provided for each *Pod*, with interface speeds matching the above server specifications.  In this context, the reference to the single leaf refers to the logical appearance of switch, compared to topologies providing 2 or more leaf switches to provide high availability.
+Labs that are hosting multiple *Pods* should utilize a leaf / spine topology when interconnecting *Pods* or physical servers. This is especially important in the cases where the physical servers constituting a *Pod* are not located in the same physical rack or are not connected to the same leaf switch. At least one leaf switch will be provided for each *Pod*, with interface speeds matching the above server specifications.  In this context, the reference to the single leaf refers to the logical appearance of switch, compared to topologies providing 2 or more leaf switches to provide high availability.
 
-Leaf switches must provide interfaces matching the bare-metal server specifications above and northbound (spine connections) of 100 Gbps connections. Spine switches must provide the corresponding 100 Gbps interfaces to each leaf switch.  The minimum requirement is one spine switch.
+Leaf switches must provide interfaces matching the physical server specifications above and northbound (spine connections) of 100 Gbps connections. Spine switches must provide the corresponding 100 Gbps interfaces to each leaf switch.  The minimum requirement is one spine switch.
 
 The minimum networking configuration must provide at least VLANs to partition the various networks required for the reference implementation deployment and separation of each *Pod*, if multiple *Pods* are hosted within the labs.   
 
