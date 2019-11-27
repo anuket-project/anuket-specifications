@@ -28,8 +28,6 @@
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference implementation and implemented by installer. The same applies to _must not_.
 
-**should**: Requirements that are marked as _should_ are expected to be fulfilled by the reference implementation but it is up to each installer to accept an implementation targeting this reference implementation that is not reflecting on any of those requirements. The same applies to _should not_.
-
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 <a name="5.2"></a>
@@ -40,7 +38,7 @@
 The Descriptor File defines the unique configuration required by installer in a common schema. 
 It would specialize the installer type per user's implementation requirements.
 It would be validated at the very beginning of the deployment.
-It's installer's responsibility to translate the descriptor file to adapt with its own configuration. 
+It's the installer's responsibility to translate the descriptor file to adapt with its own configuration. 
 Thanks to the descriptor file, the NFVi infrastructure deployment could be completed in one step run.
 
 | Ref # | sub-category | Description |
@@ -49,7 +47,7 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 | `req.gen.ins.02` | Installer | Installer implementation **must** validate the descriptor file with schema.|
 | `req.gen.ins.03` | Installer | Any existing installer implementation **may** need adaption for the descriptor file. |
 | `req.gen.ins.04` | Installer | Installer **may** support reporting the deployment progress status.|
-| `req.gen.des.01` | Descriptor | Descriptor file **should** include hardware resource configuration, software configuration.|
+| `req.gen.des.01` | Descriptor | Descriptor file **must** include hardware resource configuration, software configuration.|
 | `req.gen.des.02` | Descriptor | Descriptor file **may** include additional extending configuration.|
 <p align="center"><b>Table 5-2-1:</b> Installer requirements </p>
 
@@ -243,8 +241,8 @@ DNS server informmation if VIM deployment requires.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| external_dns_network | String | No | DNS information if VIM deployment needed. |
-| external_dns_ip | String | No | |
+| dns_network | String | No | DNS information if VIM deployment needed. |
+| dns_ip | String | No | |
 
 <p align="center"><b>Table 5-3-10:</b> DNS server information.</p>
 
