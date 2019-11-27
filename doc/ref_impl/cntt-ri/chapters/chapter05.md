@@ -149,8 +149,6 @@ List of controller nodes that designed for current VIM deployment.
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | device_name | String | Yes | must be the device_name defined in server_information(###5.3.3), which would be set on Server from BMC|
 | node_name | String | Yes | node name for the controller to deploy, e.g: controller01 |
-| az_name | String | Yes | availability zone name which this node belongs to |
-| ha_name | List | Yes | HA name which this node assigned to, could be more than one HA it belongs.|
 | manage_vlan_id | String | Yes | may multiple vlan_id for management plane. Setting the dedicated vlan id assigned.|
 | storage_vlan_id | String | Yes | may multiple vlan_id for storage plane. Setting the dedicated vlan id assigned.|
 
