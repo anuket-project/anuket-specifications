@@ -27,6 +27,18 @@ Kubernetes is already very well documented at [https://kubernetes.io/docs/home/]
 
 This reference architecture provides optionality in terms of pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution.
 
+Chapter 5 of the Reference Model (RM) describes the [hardware](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#5.4) and [software](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#52-nfvi-sw-profiles-features-and-requirements) profiles, which are descriptions of the capabilities and features that the NFVI offer to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high level view of the software profile features that apply to each instance profile (Basic, Network Intensive, Compute Intensive). For more information on the instance profiles please read [RM Chapter 4, section 4.2.4](https://cntt-n.github.io/CNTT/doc/ref_model/chapters/chapter04.html#4.2.4).
+
+<p align="center"><img src="../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png" width="80%"/></p>
+<p align="center"><b>Figure 5-3 (from RM):</b> NFVI software profiles</p>
+
+In addition, Figure 5-4 (also shown below) depicts the hardware profile features that apply to each instance profile.
+
+<p align="center"><img src="../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png" width="80%"/></p>
+<p align="center"><b>Figure 5-4 (from RM):</b> NFVI hardware profiles and host associated capabilities</p>
+
+These features and capabilities that are described in the software and hardware profiles are considered throughout this RA, with traceability of the RA requirements to the RM requirements formally captured in [chapter 2, section 2.2](https://cntt-n.github.io/CNTT/doc/ref_arch/kubernetes/chapters/chapter02.html#2.2) of this RA.
+
 <a name="3.2"></a>
 ## 3.2 Infrastructure Services
 
@@ -41,6 +53,8 @@ This reference architecture provides optionality in terms of pluggable component
 #### 3.2.1.1 Memory management
 
 > This chapter should describe considerations about memory management, like huge pages.
+
+> Relate back to features described in the RM [here](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
@@ -57,12 +71,15 @@ This reference architecture provides optionality in terms of pluggable component
 
 > This chapter should describe considerations about CPU management.
 
+> Relate back to features described in the RM [here](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#521-virtual-compute) and [here](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+
+
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Container Runtime Services
 
 The Container Runtime is the component that runs within a Host Operating System (OS) and manages the underlying OS functionality, such as cgroups and namespaces (in Linux), in order to provide a service within which container images can be launched. For the purposes of this document the Container Runtime is not just the true 'runtime' but also the container 'engine' that manages the container-related infrastructure such as networking, security, storage and distributed state.  Essentially the component that pulls an image from a registry, unpacks it and runs it.
 
-There are a number of different container runtimes. The simplest form, low-level container runtimes, just manage the OS capabilities such as cgroups and namespaces, and then run commands within those cgroups and namesapces. An example of this type of runtime is runc, which underpins many of the high-level runtimes and is considered a reference implementation of the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec).
+There are a number of different container runtimes. The simplest form, low-level container runtimes, just manage the OS capabilities such as cgroups and namespaces, and then run commands within those cgroups and namesapces. An example of this type of runtime is runc, which underpins many of the high-level runtimes and is considered a reference implementation of the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). This specification includes detail on how an implementation (i.e. an actual container runtime such as runc) must, for example, configure resource shares and limits (e.g. CPU, Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on that host. This is important in ensuring the features and capabilities described in [chapter 5 of the RM](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md) are delivered by this RA and any subsequent Reference Implementations (RIs) to the instance types defined in the RM.
 
 Where low-level runtimes are focussed on the execution of a container within an OS, the more complex/complete high-level container runtimes focus on the general management of container images - getting them from somewhere, unpacking them, and then passing them to the low-level runtime, which then executes the container. These high-level runtimes also include a comprehensive API that other applications (e.g. Kubernetes) can use to interact and manage containers. An example of this type of runtime is containerd, which provides the features described above, before passing off the unpacked container image to runc for execution.
 
@@ -79,6 +96,8 @@ When it comes to Kubernetes, the important interface that we need to consider fo
 > * Number of interfaces and IP addresses to be supported by a pod
 > * IPv6 single and dual stack needs
 
+> Refer to software profile features [here](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) and hardware profile features [here](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources).
+
 <a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
 
@@ -89,6 +108,8 @@ Additional ephemeral storage can also be attached to a container through the use
 In Kubernetes, Persistent Volumes (PV) are used when data persistence is required. PVs are resources in a Kubernetes Cluster that are consumed by Persistent Volume Claims (PVCs) and have a lifecycle that is independent of any Pod that uses the PV. A Pod will use a PVC as the volume in the Pod spec; a PVC is a request for persistent storage (a PV) by a Pod. By default, PVs and PVCs are manually created and deleted.
 
 Kubernetes also provides an object called Storage Class, which is created by cluster administrators and maps to storage attributes such as quality-of-service, encryption, data resilience, etc. Storage Classes also enable the dynamic provisioning of Persistent Volumes (as opposed to the default manual creation). This can be beneficial for organisations where the administration of storage is performed separately from the administration of Kubernetes-based workloads.
+
+There are no restrictions or constraints that Kubernetes places on the storage that can be consumed by a workload, in terms of the requirements that are defined in RM sections [5.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#522-virtual-storage) (software) and [5.4.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#542-storage-configurations) (hardware). The only point of difference is that Kubernetes does not have a native object storage offering, and this RA is not looking to address this capability directly.
 
 <a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager
