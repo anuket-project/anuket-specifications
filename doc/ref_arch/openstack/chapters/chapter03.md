@@ -11,7 +11,7 @@
   * [3.2.3. Virtual Storage](#3.2.3)
   * [3.2.4. Virtual Networking – Neutron standalone](#3.2.4)
   * [3.2.5. Virtual Networking – 3rd party SDN solution](#3.2.5)
-* [3.3. NFVI Management Software (VIM)](#3.3)
+* [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
   * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
@@ -106,7 +106,7 @@ Content to be developed
 Content to be developed
 
 <a name="3.3"></a>
-## 3.3. NFVI Management Software (VIM)
+## 3.3. Virtualised Infrastructure Manager (VIM)
 The NFVI Management Software (VIM) provides the services for the management of Consumable Resources/Services.
 
 <a name="3.3.1"></a>
