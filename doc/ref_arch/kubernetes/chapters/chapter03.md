@@ -21,7 +21,7 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. It does not seek to change any vendor implementation assuming CNTT compliance out of the box without vendor specific enhancements that are not up-streamed. This would allow operators to provide a common Kubernetes-based architecture allowing any compliant VNF or CNF to be deployed and operate as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
+The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT compliance; compliance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any compliant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
 
 Kubernetes is already very well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
 
@@ -60,7 +60,7 @@ This reference architecture provides optionality in terms of pluggable component
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Container Runtime Services
 
-The Container Runtime is the component that runs within a Host Operating System (OS) and manages the underlying OS functionality such as cgroups and namespaces (in Linux) in order to provide a service within which container images can be launched.  For the purposes of this document the Container Runtime is not just the true 'runtime' but also the container 'engine' that manages the container-related infrastructure such as networking, security, storage and distributed state.  Essentially the component that pulls an image from a registry, unpacks it and runs it.
+The Container Runtime is the component that runs within a Host Operating System (OS) and manages the underlying OS functionality, such as cgroups and namespaces (in Linux), in order to provide a service within which container images can be launched. For the purposes of this document the Container Runtime is not just the true 'runtime' but also the container 'engine' that manages the container-related infrastructure such as networking, security, storage and distributed state.  Essentially the component that pulls an image from a registry, unpacks it and runs it.
 
 There are a number of different container runtimes. The simplest form, low-level container runtimes, just manage the OS capabilities such as cgroups and namespaces, and then run commands within those cgroups and namesapces. An example of this type of runtime is runc, which underpins many of the high-level runtimes and is considered a reference implementation of the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec).
 
