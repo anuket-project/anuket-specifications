@@ -7,7 +7,12 @@
 
 * [3.1 Introduction](#3.1)
 * [3.2 Infrastructure Services](#3.2)
-    * [3.2.1 Container Runtime Services](#3.2.1)
+    * [3.2.1 Container Compute Services](#3.2.1)
+        * [3.2.1.1 Memory management](#3.2.1.1)
+        * [3.2.1.2 HW Topology management](#3.2.1.2)
+        * [3.2.1.3 HW Acceleration](#3.2.1.3)
+        * [3.2.1.4 CPU management](#3.2.1.4)
+        * [3.2.1.5 Container Runtime Services](#3.2.1.5)
     * [3.2.2 Container Networking Services](#3.2.2)
     * [3.2.3 Container Storage Services](#3.2.3)
     * [3.2.4 Container Package Managers](#3.2.4)
@@ -28,7 +33,32 @@ This reference architecture provides optionality in terms of pluggable component
 > This chapter shall list the services provided by the infrastructure. Some example of these services can be: log collection, monitoring, health check, load balancer. For the shake of clarity CaaS services should be also listed, like container lifecycle management or networking services.
 
 <a name="3.2.1"></a>
-### 3.2.1 Container Runtime Services
+### 3.2.1 Container Compute Services
+
+> This chapter should describe considerations about container compute services.
+
+<a name="3.2.1.1."></a>
+#### 3.2.1.1 Memory management
+
+> This chapter should describe considerations about memory management, like huge pages.
+
+<a name="3.2.1.2"></a>
+#### 3.2.1.2 HW Topology management
+
+> This chapter should describe considerations about hardware topology management.
+
+<a name="3.2.1.3"></a>
+#### 3.2.1.3 HW Acceleration
+
+> This chapter should describe considerations about hardware acceleration, like device management.
+
+<a name="3.2.1.4"></a>
+#### 3.2.1.4 CPU management
+
+> This chapter should describe considerations about CPU management.
+
+<a name="3.2.1.5"></a>
+#### 3.2.1.5 Container Runtime Services
 
 The Container Runtime is the component that runs within a Host Operating System (OS) and manages the underlying OS functionality such as cgroups and namespaces (in Linux) in order to provide a service within which container images can be launched.  For the purposes of this document the Container Runtime is not just the true 'runtime' but also the container 'engine' that manages the container-related infrastructure such as networking, security, storage and distributed state.  Essentially the component that pulls an image from a registry, unpacks it and runs it.
 
@@ -64,6 +94,3 @@ Kubernetes also provides an object called Storage Class, which is created by clu
 ### 3.2.4 Kubernetes Application package manager
 
 To manage complex applications consisting from several Pods the reference architecture may provide support for a Kubernetes Application package manager. The package manager may be able to manage the lifecycle a set of Pods and provide a framework to customise a set of parameters for the deployment.
-
-<a name="3.3"></a>
-## 3.3 Heading

@@ -28,23 +28,7 @@ The Kubernetes Reference Architecture will also be used in conjunction with a Ku
 <a name="1.2"></a>
 ### 1.2 Terminology
 
-Generic terms can be found in the (CNTT Reference Model Terminology)[https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#1.1]
-
-Any terms specific to Kubernetes can be found in the table below.
-
-|Term|Definition|Reference|
-|---|---|---|
-|Container Image|Stored instance of a container that holds a set of software needed to run an application.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-image)|
-|Container|A lightweight and portable executable image that contains software and all of its dependencies.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-container)|
-|Pod|The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-pod)|
-|Kubernetes Cluster|A set of machines, called nodes, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master node.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-cluster)|
-|Kubernetes Master|The master node(s) manages the worker nodes and the pods in the cluster. Multiple master nodes are used to provide a cluster with failover and high availability.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-cluster)|
-|Kubernetes Control Plane|The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-control-plane)|
-|Kubernetes Node|A node is a worker machine in Kubernetes. A worker node may be a VM or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-node)|
-|CaaS|Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.|-|
-|CaaS Manager|A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management. CaaS Manager could be considered the "undercloud" where the CaaS is the "overcloud".|-|
-|CNF|A Cloud Native Virtual Network Function - or CNF for short - is an implementation of a Virtual Network Function (as defined by ETSI GS NFV 003 V1.4.1 (2018-08) that adheres to the CNCF Cloud Native Definition.|[CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329)|
-|Service|An abstract way to expose an application running on a set of Pods as a network service.|[Link](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-service)|
+For the terminology refer to the [glossary](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#11.1.4) 
 
 <a name="1.3"></a>
 ## 1.3 Principles
