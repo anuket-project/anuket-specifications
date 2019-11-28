@@ -1,17 +1,15 @@
 \<\< Back
 
-5. VNF E2E C&V Framework Requirements
+# 5. VNF E2E C&V Framework Requirements
 
-Table of Contents
+## Table of Contents
 
-[5.1 Introduction](#introduction)
+* [5.1 Introduction](#5.1)
+* [5.2 Scope](#5.2)
+* [5.3 Platform Requirements](#5.3)
+* [5.4 Certification Process](#5.4)
 
-[5.2 Scope](#scope)
-
-[5.3 Platform Requirements](#platform-requirements)
-
-[5.4 Certification Process](#certification-process)
-
+<a name="5.1"></a>
 ### 5.1 Introduction
 
 As Telcom industry is evolving along with virtualization and software based
@@ -24,6 +22,7 @@ as reference for VNF certification platform, which helps to perform the various
 compliance and verification (C&V) testing and submit results to LFN OVP
 certification portal.
 
+<a name="5.2"></a>
 ### 5.2 Scope
 
 The requirements defined in next section for the platform would be scoped with
@@ -77,12 +76,13 @@ NFVi
 
 along with required MANO system supporting these NFVi.
 
-#### VNF 
+#### VNF
 
 Platform should support to test and certify those VNF which is compliant with
 capabilities, requirements and interface defined by *CNTT RM chapters.* Also it
 should support TOSCA and HOT based distros.
 
+<a name="5.3"></a>
 ### 5.3 Platform Requirements
 
 Following requirements are defined the scope of guidelines defined in above
@@ -161,6 +161,7 @@ Docker image based installation
 
 Standalone installation scripts and zip artifact
 
+<a name="5.4"></a>
 ### 5.4 Certification Process
 
 This process details the end-end steps required for certifying the given VNF by
