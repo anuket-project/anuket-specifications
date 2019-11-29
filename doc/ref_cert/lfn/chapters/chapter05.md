@@ -44,6 +44,10 @@ certification testing.
 Refer *chapter RC-06* for more details on test case requirements defined for VNF
 under CNTT. Platform should support to managed and execute these test cases.
 
+NOTE: For certification, only compliance and verification test cases will be
+considered, but in future, it could be extent to validation and Performance
+related testing.
+
 ##### Compliance
 
 Perform compliance check based on
