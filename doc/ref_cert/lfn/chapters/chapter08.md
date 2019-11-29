@@ -191,4 +191,29 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 <a name="8.3.2"></a>
 ### 8.3.2 VNF Integrated E2E Framework.
 
-> using existing testing framework, proposal of an E2E integrated one to be used fir NFVI testing.
+>
+As detailed in the CNTT RC chapter 05 on E2E VNF test platform requirements,
+ONAP VNF Test Platform (VTP) helps to address most of them and it is used for
+VNF certification testing.
+
+Following sections provides required guidelines and details.
+
+#### Platform Architecture
+
+Provides details on the architecture, components and it's responsibilities
+
+#### Platform Admin guide
+
+Provides detail on installation, configuration, un-installation operations
+
+#### Test case development guide
+
+Provides details on how to develop new test cases and packages them for deploying 
+
+#### Test case model guide
+
+Model the required test cases for various scenario, which could help in standardizing the test cases for various NF, different compliance and multiple MANO/NFVi based LCM operations.
+
+#### Test case admin guide
+
+Provides detail on installation, configuration, un-installation operations
