@@ -8,7 +8,7 @@
   * [11.1.2 Hardware layers terminology](#11.1.2)
   * [11.1.3 Operational and administrative terminology](#11.1.3)
   * [11.1.4 Container Related Terminology](#11.1.4)
-  * [11.1.4 Other terminology](#11.1.5)
+  * [11.1.5 Other terminology](#11.1.5)
 
 <a name="11.1"></a>
 ## 11.1 Terminology
@@ -28,7 +28,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
 - **Cloud native Network Function (CNF)**: An implementation of a Virtual Network Function (**VNF**, as defined by ETSI GS NFV 003) that adheres to the CNCF Cloud Native Definition or a **VNF** that is transitioning to cloud native.
-  >_*Note:*_ This definition is derived from [CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329). A cloud native **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The containers run on an application orchestration layer, not directly on the underlaying infrastructure itself. the containers themselves may be Linux, Docker or other similar container technology.
+  >_*Note:*_ This definition is derived from [CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329). A cloud native **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The microservices typically run using a container engine, not directly on the underlaying infrastructure itself. The containers themselves may use Linux, Docker or other similar container technology.
 - **Virtual Application (VA)**: A general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
 - **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
