@@ -82,19 +82,20 @@ To help guide the reader, this glossary provides an introduction to the terminol
 A **Container** provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
 
 - **Container Runtime**: reads the configuration files for a **Container** from a directory structure, uses that information to create a container, launches a process inside the container, and performs other lifecycle actions."
->_*Note:*_ adapted from https://github.com/opencontainers/runtime-spec/blob/master/glossary.md.
+>_*Note:*_ adapted from [OCI Glossary](https://github.com/opencontainers/runtime-spec/blob/master/glossary.md).
 
 - **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 
 - **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
 - **Kubernetes Cluster**: A set of worker machines, called nodes, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
->_*Note:*_ adapted from https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster.
+>_*Note:*_ adapted from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster).
 - **Kubernetes Master**:	The master(s) manage the worker nodes and the pods in the cluster. Multiple masters are used to provide a cluster with failover and high availability.
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
 - **Kubernetes Node**:	A node is a worker machine in Kubernetes. A worker node may be a **VM** or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
 - **CaaS**:	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
 - **CaaS Manager**:	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
 - **Kubernetes Service**: An abstract way to expose an application running on a set of Pods as a network service.
+>_*Note:*_ This definition from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-service) uses the network service differently than in ETSI NFV.
 
 <a name="11.1.5"></a>
 ### 11.1.5 Other Referenced Terminology
