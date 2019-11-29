@@ -80,6 +80,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Container Image**:	Stored instance of a container that holds a set of software needed to run an application.
 - **Container**:	A lightweight and portable executable image that contains software and all of its dependencies.
+>_*Note:*_ OCI defines Conatiner as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment."
+
 - **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
 - **Kubernetes Cluster**: A set of machines, called nodes, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master node.
 - **Kubernetes Master**:	The master node(s) manages the worker nodes and the pods in the cluster. Multiple master nodes are used to provide a cluster with failover and high availability.
