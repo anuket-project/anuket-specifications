@@ -19,7 +19,7 @@
 
 Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
 
-For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implmented, NFVI.
+For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implmented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the Reference Model (RM) and Reference Architecture (RA) requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.  
 
 <a name="1.1"></a>
 ## 1.1 Introduction
