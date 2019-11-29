@@ -42,7 +42,6 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Compute flavour**: defines the sizing of the virtualised resources (compute, memory, and storage) required to run a workload.
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
-- **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
 - **Virtual resources**:
   - **Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
   - **Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
@@ -80,7 +79,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Container Image**:	Stored instance of a container that holds a set of software needed to run an application.
 - **Container**:	A lightweight and portable executable image that contains software and all of its dependencies.
->_*Note:*_ OCI defines Conatiner as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment."
+>_*Note:*_ OCI defines **Container** as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment." 
+A **Container** provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
 
 - **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
 - **Kubernetes Cluster**: A set of machines, called nodes, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master node.
