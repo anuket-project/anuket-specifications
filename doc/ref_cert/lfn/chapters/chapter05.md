@@ -95,7 +95,8 @@ scoped example architecture could be as below:
 
 ![](media/2269537e91994b5b49858734fe73bbb1.png)
 
-\#\#\# 5.3 Platform Requirements
+<a name="5.3"></a>
+### 5.3 Platform Requirements
 
 Following requirements are defined based on the guidelines defined in above
 scope section.
