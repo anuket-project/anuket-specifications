@@ -10,7 +10,7 @@
   * [4.2.2 Compute](#4.2.2)
   * [4.2.3 Network Fabric](#4.2.3)
   * [4.2.4 Storage Backend](#4.2.3)
-* [4.3 NFVI Management Sofwtare (VIM)](#4.3)
+* [4.3 Virtualised Infrastructure Manager (VIM)](#4.3)
   * [4.3.1 VIM Core Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
   * [4.3.3 Build Parameters](#4.3.3)
@@ -195,7 +195,7 @@ DHCP When the Neutron-DHCP agent is hosted in controller nodes, then VMs, on a T
 
 
 <a name="4.3"></a>
-## 4.3 NFVI Management Software (VIM)
+## 4.3 Virtualised Infrastructure Manager (VIM)
 This section covers:
 -	Detailed breakdown of OpenStack core services 
 -	Specific build-time parameters
