@@ -58,6 +58,8 @@ Perform compliance check based on
 
 -   GSMA profile (Check with Rabi)
 
+![](media/c665a3d13461f67ea8729042cf8d975d.png)
+
 ##### Verification
 
 Perform on-boarding/ verification life cycle operation (from instantiation,
@@ -84,12 +86,18 @@ along with required MANO system supporting these NFVi.
 
 Platform should support to test and certify those VNF which is compliant with
 capabilities, requirements and interface defined by *CNTT RM chapters.* Also it
-should support TOSCA and HOT based distros.
+should support TOSCA and HOT based VNF distros.
 
-<a name="5.3"></a>
-### 5.3 Platform Requirements
+In addition, Platform should be able to perform the required test case
+management and executions and produce the result the CVC OVP portal for
+certification process along with required testing foot print details. So overall
+scoped example architecture could be as below:
 
-Following requirements are defined the scope of guidelines defined in above
+![](media/2269537e91994b5b49858734fe73bbb1.png)
+
+\#\#\# 5.3 Platform Requirements
+
+Following requirements are defined based on the guidelines defined in above
 scope section.
 
 These requirements are provided to address test case design, distribution,
