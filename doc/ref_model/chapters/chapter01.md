@@ -11,9 +11,7 @@
 * [1.3 Principles](#1.3)
 * [1.4 Scope](#1.4)
   * [1.4.1 Use Cases](#1.4.1)
-* [1.5 How this document works](#1.5)
-  * [1.5.1 Document Organization](#1.5.1)
-  * [1.5.2 Audience](#1.5.2)
+* [1.5 Audience](#1.5)
 * [1.6 Relationship to other industry projects](#1.6)
 * [1.7 Out of Scope Components](#1.7)
 * [1.8 Bogo-Meter](#1.8)
@@ -151,26 +149,7 @@ More use cases to pull in:  https://docs.openstack.org/arch-design/use-cases.htm
 -->  
 
 <a name="1.5"></a>
-## 1.5 How this document works
-Within the framework of the Common Telecom NFVI vision, there are three levels of documents needed to document the components and allow the practical application of the systems. They are, as highlighted in **Figure 1-2**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
-
-<p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> Scope of CNTT</p>
-
-<a name="1.5.1"></a>
-## 1.5.1 Document Organization
-
-- **Reference Model**: (_This document_) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. It written at a high enough level that as new **Reference Architectures** and **Reference Implementations** are added, the model document should require few or no changes. Additionally, the Reference Model is intended to be neutral towards VMs or Containers.
-- **Reference Architecture**: High level NFVI system components and their interactions that takes the Reference Model goals and maps them to something that has components in the real world.  It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.  The intention whenever possible to use existing elements, rather than specify entirely new architectures in support of the high-level goals specified in the **Reference Model**.
-- **Reference Implementation**: Builds on the requirements and specifications developed in the other two documents and adds details so that it can be implemented.  Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
-
-Below is a diagram of the different artifacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
-
-<p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-3:</b> Description of the possible different levels of CNTT artefacts</p>
-
-<a name="1.5.2"></a>
-## 1.5.2 Audience
+## 1.5 Audience
 The document starts from the abstract and as it progresses it increasingly gets into more details.  It follows the traditional design process where you start from core principles, progress to abstract concepts and models, then finish with operational considerations, such as security and lifecycle management.
 
 - **Chapter 01 - Introduction**: Overall scope of the Reference Model document including the goals and objectives of the project.  
@@ -210,10 +189,10 @@ The Common Telco NFVI work is not done in a vacuum.  The intention from the begi
  - OSM (ETSi Open Source MANO project)
  - VMWare (While not an Open Source project, VMWare is a commonly used platform used for VNF deployments in the telecom industry)
 
-The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-4** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
+The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-2** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
+<p align="center"><b>Figure 1-2:</b> Mapping to ETSI NFV architecture</p>
 
 Following the ETSI model, **Figure 1-4** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, the VIM is included in the Common Telco NFVI scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the NFVI.  These interactions and interfaces will be detailed in  **Chapter 7 "API & Interfaces"**.
 
