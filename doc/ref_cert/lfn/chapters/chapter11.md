@@ -8,6 +8,7 @@
 * [11.2 Openstack Release Comparisons](#11.2)
 * [11.3 Automation Gaps](#11.3)
 * [11.4 Test Case Gaps](#11.4)
+* [11.5 Framework Gaps](#11.5)
 
 <a name="11.1"></a>
 ## 11.1 Introduction
@@ -31,3 +32,8 @@
 ## 11.4 Test Case Gaps (analysis)
 
 - Provide details/analysis of Test Case gaps which required addition/editing of existing test suites, or creation of new suites altogether
+
+<a name="11.5"></a>
+## 11.5 Framework Gaps
+
+- Provide details/analysis of Test Framework Gaps which required addition/editing of existing frameworks, incompatibility with frameworks, depreciation of frameworks.
