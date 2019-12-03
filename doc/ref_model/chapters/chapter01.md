@@ -109,7 +109,7 @@ This section introduces the high-level principles of infrastructure abstraction 
             <td>TBC</td>
         </tr>
         <tr>
-            <td><b>Supplier Independencee</td>
+            <td><b>Supplier Independence</td>
             <td>NFVI exposed resources are supplier independent.</td>
             <td>TBC</td>
             <td>TBC</td>
