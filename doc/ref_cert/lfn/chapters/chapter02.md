@@ -48,5 +48,4 @@ Provide a list of entry and exit criteria to be used for NFVI certifications..
 <a name="2.7"></a>
 ## 2.7 Frameworks
 
-List out the various frameworks used in certifications
-- e.g. Functest, StorePerf, SampleVNF, etc)
+List out the various frameworks requirements needed for certifications
