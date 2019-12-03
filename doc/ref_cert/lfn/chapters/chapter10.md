@@ -19,7 +19,7 @@ Define, and describe the purpose of this chapter to be:
 <a name="10.2"></a>
 ## 10.2 RM/RA-1 Requirements
 
-- Need to list out requirements from RM/RA-1.  
+- List out reference to Test Cases Requirement (coming from Chapter 6) and map them to real project test scripts.
 
 <a name="10.3"></a>
 ## 10.3 TC Mapping to Requirements
