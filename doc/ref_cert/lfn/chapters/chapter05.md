@@ -52,4 +52,4 @@
 <a name="5.8"></a>
 ## 5.8 Frameworks
 
-- Provide a list of framework requirements for VNF certification.  This is _not_ the same as test frameworks, or test harnesses.  Rather, these are the expected VNF requirements needing to be satisifed for VNF certification.  
+- Provide a list of framework requirements for VNF certification. 
