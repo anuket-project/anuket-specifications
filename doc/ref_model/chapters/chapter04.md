@@ -181,7 +181,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.cap.016 | CPU overbooking | 1:N | <definition update scheduled> |
-| i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connectin point (vNIC or interface) |
+| i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface) |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
 
@@ -288,7 +288,7 @@ Table 4-12 shows capabilities related to resources allocation
 | e.vim.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNFC |
 | e.vim.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNFC |
 | e.vim.cap.003 | Virtual Networking resources allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
-| e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants <br> **Note:** In a Kubernetes based infrastructure within one Kubernetes cluster multitenacy is provided only in resource management level. Isolation of execution environments requires separate Kubernetes clusters or worker nodes. |
+| e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
 | e.vim.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
 
 <p align="center"><b>Table 4-12:</b> VIM Resource Allocation Capabilities</p>
@@ -340,8 +340,7 @@ Table 4-14: Reserved
 
 <p align="center"><b>Table 4-15:</b> VIM Resource Management Measurements</p>
 
-**1)** In case of containers there is no stop operation.
-
+**1)** In case of containers there is no stop operation.<br>
 **2)** In case of containers there is no pause operation.
 
 <a name="4.1"></a>
@@ -464,14 +463,10 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. <sup>1)</sup> |
-| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. <sup>2)</sup> |
+| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. |
+| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. |
 
 <p align="center"><b>Table 4-21:</b> Acceleration Extensions for N Instance Type</p>
-
-**1)** In Kubernetes based infrastructures virtio-ipsec can be applied only if the CNI plugin is OVS.
-
-**2)** In Kubernetes based infrastructures virtio-crypto can be applied only if the CNI plugin is OVS.
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -484,8 +479,8 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. <br> **Note:** In Kubernetes based infrastructures virtio-trans can be applied only if the CNI plugin is OVS. |
-| .la-programmable | virtio-programmable | Look-Aside programmable acceleration. <br> **Note:** In Kubernetes based infrastructures virtio-programmable can be applied only if the CNI plugin is OVS. |
+| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. |
+| .la-programmable | virtio-programmable | Look-Aside programmable acceleration. |
 
 <p align="center"><b>Table 4-22:</b> Acceleration Extensions for C Instance Type</p>
 
@@ -523,8 +518,8 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | No | |
 | `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
-| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | <sup>1)</sup> |
-| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes / No<sup>2)</sup> | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
+| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
+| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
 | `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
@@ -536,9 +531,6 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 
 
 <p align="center"><b>Table 4-24:</b> Mapping of NFVI Capabilities to Instance Types</p>
-
-**1):** In case of containers the Enhanced Cache Management capability is not applicable.<br>
-**2):** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Instance Performance Measurement Mapping
