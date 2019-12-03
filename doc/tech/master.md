@@ -45,7 +45,7 @@ Below is a diagram of the different artifacts that will need to be created to su
 <a name="3.0"></a>
 ## 3. Principles
 
-Any specification work created within CNTT **must** obey to set of principles specified below:
+Any specification work created within CNTT **must** obey to set of principles specified by CNTT:
 
 [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles)
 [Reference Architecture Principles](../ref_arch#principles)
@@ -74,9 +74,17 @@ Any specification work created within CNTT **must** obey to set of principles sp
 <a name="4.7"></a>
 ### 4.7 EPA/NFD
 
-
 <a name="5.0"></a>
 ## 5. Transitional Plans
+
+It is vitally important for CNTT to have working NFVI solutions from NFVI vendors and mature VNFs/CNFs designs from application vendors that is compliant to CNTT specifications. It is also understood that, in some areas, the industry might not have solutions that are fully aligned with CNTT requirements. Therefore, it is important to have transitional plans to move from what is available today in the industry into fully CNTT compliant solutions and designs.
+
+[Reference Model Guidelines and Transitional Plan](../ref_model/chapters/appendix-a.md) Describes maturity levels of VNFs/CNFs and technologies that might be allowed on each for VNFs/CNFs consumptions. 
+
+**Figure 3** explains transitional plan approach in CNTT.
+
+<p align="center"><img src="./figures/tech_transitional_plan.png" alt="scope" title="Transitional Plan" width="100%"/></p>
+<p align="center"><b>Figure 3:</b> Transitional Plan in CNTT</p>
 
 <a name="6.0"></a>
 ## 6. Roadmap
