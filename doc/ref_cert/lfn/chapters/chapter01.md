@@ -17,9 +17,16 @@
 
 ## Synopsis
 
-Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
 
-For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implmented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the Reference Model (RM) and Reference Architecture (RA) requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.  
+For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implmented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.  
+
+In summary, NFVI+VNF testing will be performed for **Verification** and **Validation** purposes.
+
+- **Verification** will be used to indicate conformance to design requirement specifications. Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.
+- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour.
+
+**All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
 
 <a name="1.1"></a>
 ## 1.1 Introduction
@@ -31,12 +38,12 @@ This chapter includes process flow, logistics, and requirements which must be sa
 Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 **Test Methodology**
-- Manifest Verifications (Termed Compliance by CVC) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
-- Empirical Validation with Reference Golden VNFs (Termed Validation by CVC) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
+- Manifest Verifications (Termed Compliance by CVC) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the RM and RA.
+- Empirical Validation with Reference Golden VNFs (Termed Validation by CVC) will ensure the NFVI runs with a set of VNF Families, or Classes, to mimic production-like VNF connectivity, for the purposes of interopability checks.
 - Candidate VNF Validation (Termed Validation & Performance by CVC) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
 **Different Distributions**
-The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
+The three step methodolgy described above of verifying Manifest compliance, executing Empirical Golden VNF transactions, and performing Interopability Testing is the same validation process regardless of the Distribution used to establish a cloud topology, and the components and services used in the client software stack.  
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -45,7 +52,7 @@ This document covers the realisation aspects of Verification and Certification o
 
 - Identify in details the Requirements for Verification and Certification Framework.
 - Identify in details the Requirement of Test Cases (and mapping them to requirements from The Reference Model and The OpenStack Based Reference Architecture ).
-- analysis of existing community projects.
+- Analysis of existing community projects.
 - Propose an E2E Framework for verification and certification of NFVI and VNFs.
 - Playbook of instructions, user manuals, steps of how to perform verification and certification for both NFVI and VNFs using hte proposed E2E Framework.
 - Gap analysis to identify where the Gaps are in the industry (tooling, test cases, process, etc).
@@ -78,9 +85,9 @@ The following best practices have been adopted to ensure verification and valida
 
 * Standardized test methodology / flow, Test Plan, and Test Case Suites
 * Integration with OPNFV Upstream Projects and OVP flow (code, docs, cert criteria, etc.)
-* Leverag Network and Service Models, with identified VNF-specific parameters
+* Leverage Network and Service Models, with identified VNF-specific parameters
 * Standardized certification criteria
-* Define CNTT ref arch as scenarios, and have all test cases for the ref arch be involved in OVP (could also be addressed in OVP as CNTT test)
+* Define CNTT RA as scenarios, and have all test cases for the RA be involved in OVP (could also be addressed in OVP as CNTT test)
 * Add test cases from operators, which operators already tested in their environment
 
 <a name="1.5"></a>
@@ -91,7 +98,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 3rd Party test platforms may also be leveraged, if desired.
 
 <p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="Certification Methodology" title="Certification Methodology" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Certification Methodology</p>
+<p align="center"><b>Figure:</b> Certification Methodology</p>
 
 <a name="1.6"></a>
 ### 1.6 Assumptions & Dependencies
@@ -111,9 +118,9 @@ In addition, respective Entrance criteria is a prerequisite which needs to be sa
 * NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
 
 <p align="center"><img src="../figures/RC_NFVI_VNF_Instance_Type_25Nov2019.jpg" alt="Instance Type" title="Instance Type" width="100%"/></p>
-<p align="center"><b>Figure:</b> Figure: Instance Type</p>
+<p align="center"><b>Figure:</b> Instance Type</p>
 
-**Figure:** NFVI+VNF Instance Type
+**NFVI+VNF Instance Type:**
 * Standard compute flavours to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
 * Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
