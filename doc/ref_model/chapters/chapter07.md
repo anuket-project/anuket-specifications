@@ -185,7 +185,7 @@ At a high level, the following areas/requirements cover platform security for a 
 * Secure access controls for administrators
 * Secure API interface for Tenants
 * Encryption for all external and control comms
-* Strong separation between tenants
+* Strong separation between tenants - ensuring network, data, and runtime process isolation between tenants
 * Authenticated/secure APIs provided to overlay network administrators
 * Platform change control on hardware
 * Templated approved changes for automation where available
@@ -198,11 +198,11 @@ At a high level, the following areas/requirements cover platform security for a 
 
 At a high level, the following areas/requirements cover workload security for a particular deployment:
 * Up to platform-level certification
-* Each workload network will have a separate/specific security assessment
+* Each workload network will need to undertake it own security self-assessment and accreditation, and not inherit a security accreditation from the platform
 * Potentially automated service activation
-* Workload owner owns security certification process
-* Workload owner owns design change process
-* Workload owner owns software update process
+* Workload owner owns workload security certification process
+* Workload owner owns workload design change process
+* Workload owner owns workload software update process
 * Identity Domain = workload
 
 <a name="7.4.4"></a>
@@ -227,28 +227,28 @@ The platform supports the workload, and in effect controls access to the workloa
 <a name="7.5.1.1"></a>
 #### 7.5.1.1 The high-level functions of these different access controls
 * **MGNT ACCESS CONTROLS** - Platform access to VNFs for service management. Typically all management and control-plane traffic is encrypted.
-* **DATA ACCESS CONTROLS** - Control of east-west traffic between VNFs, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and pltaform services. Inherently strong separation between tenants is mandatory.
+* **DATA ACCESS CONTROLS** - Control of east-west traffic between VNFs, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
 * **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
-* **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as 2FA, and using technologies such as RBAC and encryption. API gateways may be required for automated/script-driven processes.
-* **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks (usually sub, or virtual networks).
-* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including RBAC, authentication controls as approriate for the access arrangement, and API gateways for automated/script-driven processes.
+* **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
+* **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
+* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as approriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
 
 <a name="7.5.1.2"></a>
 #### 7.5.1.2 The following general security requirements apply to the platform:
 * Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
 * Support zoning within a tenant workload - using application-level filtering.
-* All host to host communications within the Cloud provider network are to be cryptographically protected in transit.
+* All host to host communications within the cloud provider network are to be cryptographically protected in transit.
 * Not expose tenant IP address details to another tenant.
 * Use cryptographically-protected protocols for administrative access to the platform.
 * Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
 * A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
 * A process to check change management adherence that is implemented, and rigourously followed.
 * Processes for managing platform access control filters that are documented, followed, and monitored.
-* No login to root on any platform systems.
-* RBAC must apply for all systems access.
+* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform).
+* Role-Based Access Control (RBAC) must apply for all platform systems access.
 * An approved system or process for last resort access must exist for the platform.
-* All API access must use TLS.
+* All API access must use TLS protocol.
 * All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
 * Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management and application communication are cryptographically protected in transit between data centre facilities.
 * Continuous cloud security compliance is mandatory.
@@ -267,14 +267,14 @@ The platform supports the workload, and in effect controls access to the workloa
 * A process to check change management adherence that is implemented, and rigourously followed.
 * Processes for managing platform access control filters that are documented, followed, and monitored.
 * No login to root on any platform systems.
-* RBAC must apply for all systems access.
+* Role-Based Access Control (RBAC) must apply for all systems access.
 * An approved system or process for last resort access must exist for the platform.
 * All back-end API access must use TLS.
 
 <a name="7.5.3"></a>
 ### 7.5.3 Platform ‘front-end’ access security
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks
-* The front-end network may provide DDOS support
+* The front-end network may provide (Distributed Denial Of Service) DDOS support
 
 <a name="7.7"></a>
 ## 7.7 Vendor Responsibilities
