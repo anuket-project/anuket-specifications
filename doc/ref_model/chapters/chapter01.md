@@ -76,77 +76,16 @@ To help guide the reader, a glossary [Reference Model Terminology](../../ref_mod
 ## 1.3 Principles
 This section introduces the high-level principles of infrastructure abstraction and profiling that will be used in context of this document.
 
-<table>
-    <thead>
-        <tr>
-            <th>Principle</th>
-            <th>Statement</th>
-            <th>Rationale</th>
-            <th>Implication</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><b>Minimise Architecture proliferation</td>
-            <td>Minimise Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible.</td>
-            <td >A top-level objective of the Common Telco NFVI is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical.</td>
-            <td>Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other.</p>
-            Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.</p>
-            Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to review and vote to approve by the CNTT technical Working Group, such that one Architecture would be KVM-based and the other would be ESXi-based.</td>
-        </tr>
-        <tr>
-            <td><b>Resource Abstraction</td>
-            <td>NFVI provides abstract and physical resources corresponding to:
-                <ul>
-                    <li>Compute resources</li>
-                    <li>Storage resources</li>
-                    <li>Memory resources</li>
-                    <li>Networking resources. (Limited to connectivity services only)</li>
-                    <li>Acceleration resources.</li>
-                </ul>
-            </td>
-            <td>TBC</td>
-            <td>TBC</td>
-        </tr>
-        <tr>
-            <td><b>Supplier Independence</td>
-            <td>NFVI exposed resources are supplier independent.</td>
-            <td>TBC</td>
-            <td>TBC</td>
-        </tr>
-        <tr>
-            <td><b>Interoperable APIs</td>
-            <td>All NFVI Application Programming Interfaces (APIs) ensure Interoperability (multi-vendor, components substitution).</p>
-            Through such APIs will NFVI resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.</td>
-            <td>Drives simplification.</td>
-            <td>Open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations).</td>
-        </tr>
-        <tr>
-            <td><b>Modular and efficient design</td>
-            <td>VNFs are modular and designed to utilise the minimum resources required for the service.</td>
-            <td>TBC</td>
-            <td>TBC</td>
-        </tr>
-        <tr>
-            <td><b>NFVI Parameterisation</td>
-            <td>NFVI supports pre-defined and parameterised sizes. These pre-defined sizes will evolve over time.</td>
-            <td>TBC</td>
-            <td>TBC</td>
-        </tr>
-        <tr>
-            <td><b>NFVI Exclusivity</td>
-            <td>NFVI provides certain resources, capabilities and features. Virtual applications (VA) consume only these resources, capabilities and features.</td>
-            <td>TBC</td>
-            <td>TBC</td>
-        </tr>
-        <tr>
-            <td><b>Presence of Hardware Acceleration</td>
-            <td>VNFs that are designed to take advantage of NFVI accelerations are still able to run without these accelerations.</td>
-            <td>TBC</td>
-            <td>It is understood that without the hardware acceleration capabilities in place, there will be potential performance impacts.</td>
-        </tr>
-    </tbody>
-</table>
+|Ref#|Principle|Statement|Rationale|Implication|
+|---|---|---|---|---|
+|`prn.rm.01`|**Minimise Architecture proliferation**|Minimise Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible.|A top-level objective of the Common Telco NFVI is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical.|Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other.</br></br>Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.</br></br>Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to review and vote to approve by the CNTT technical Working Group, such that one Architecture would be KVM-based and the other would be ESXi-based.|
+|`prn.rm.02`|Resource Abstraction|NFVI provides abstract and physical resources corresponding to:<ul><li>Compute resources</li><li>Storage resources</li><li>Memory resources</li><li>Networking resources. (Limited to connectivity services only)</li><li>Acceleration resources.</li>|TBC|TBC|
+|`prn.rm.03`|Supplier Independence|NFVI exposed resources are supplier independent.|TBC|TBC|
+|`prn.rm.04`|Interoperable APIs|All NFVI Application Programming Interfaces (APIs) ensure Interoperability (multi-vendor, components substitution).</br></br>Through such APIs will NFVI resources be discovered / monitored by management entities, configured on behalf of VNFs and consumed by VNFs.|Drives simplification.|Open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations).|
+|`prn.rm.05`|Modular and efficient design|VNFs are modular and designed to utilise the minimum resources required for the service.|TBC|TBC|
+|`prn.rm.06`|NFVI Parameterisation|NFVI supports pre-defined and parameterised sizes. These pre-defined sizes will evolve over time.|TBC|TBC|
+|`prn.rm.07`|NFVI Exclusivity|NFVI provides certain resources, capabilities and features. Virtual applications (VA) consume only these resources, capabilities and features.|TBC|TBC|
+|`prn.rm.08`|Presence of Hardware Acceleration|NFs that are designed to take advantage of NFVI accelerations are still able to run without these accelerations.|TBC|It is understood that without the hardware acceleration capabilities in place, there will be potential performance impacts.|
 
 <p align="center"><b>Table 1-1:</b> CNTT Reference Model Principles</p>
 
