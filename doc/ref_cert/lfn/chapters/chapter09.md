@@ -24,4 +24,6 @@ Define, and describe the purpose of this chapter to be:
 <a name="9.3"></a>
 ## 9.3 TC Mapping to Requirements
 
+_**Remove these notes when starting drafting content:**_
 - Based on specific requirement, or use case, need to provide a Mapping of TCs to Requirements
+- Will be a mapping of test cases in various frameworks that will be identified in Ch04.
