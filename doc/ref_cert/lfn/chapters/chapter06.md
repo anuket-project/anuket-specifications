@@ -56,4 +56,4 @@
 
 <a name="6.9"></a>
 ## 6.9 VNF Test Cases
-> we need to have list of NFVI test cases in here.
+> we need to have list of VNF test cases in here.
