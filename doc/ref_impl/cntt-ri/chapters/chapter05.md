@@ -98,6 +98,7 @@ Server template would be assigned to multiple servers, i.e physical hosts.
 <p align="center"><b>Table 5-3-2-1:</b> Server template.</p>
 
 This is the network interface definition. Generally, there are a list of interfaces included in server template.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | port_name | String | Yes | port name, e.g ens0,ens1 |
@@ -105,6 +106,7 @@ This is the network interface definition. Generally, there are a list of interfa
 <p align="center"><b>Table 5-3-2-2:</b> Network Card Bond information.</p>
 
 In some case, interface would be bonded together. This is the network interface bond definition.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | bond_name | String | Yes | new bonded name. e.g bond 0 is the new name after bond eno0,eno1.|
