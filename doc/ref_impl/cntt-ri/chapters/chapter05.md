@@ -73,8 +73,8 @@ Besides it may include optional information such area name, data center name etc
 | city | String | Yes |  |
 | resource_pool_name | String | Yes |  |
 | outband_network_segment | String | Yes |  |
-| server_templates | List | Yes |  |
-| server_infos | List | Yes |  |
+| server_templates | List | Yes | server template list included in the resource pool |
+| server_infos | List | Yes | server information list included in the resource pool |
 
 <p align="center"><b>Table 5-3-1:</b> Hardware resource description.</p>
 
@@ -85,15 +85,14 @@ Server template would be assigned to multiple servers, i.e physical hosts.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| template_name | String | Yes |  |
+| template_name | String | Yes | template name will referenced by dedicated server |
 | manufacturer | String | Yes |  |
 | model | String | Yes |  |
 | processor | String | Yes |  |
 | memory | String | Yes |  |
 | hard_drive | String | Yes |  |
 | raid | String | Yes |  |
-| network_controller_infos | List | Yes |  |
-| network_card_bond_infos | List | No | NIC bonding might not be always the case.|
+| network_card_bond_infos | List | No | NIC bonding, might not be always the case.|
 
 <p align="center"><b>Table 5-3-2:</b> Server template.</p>
 
@@ -106,20 +105,19 @@ Besides it may include additional information pim username, password, rack_name,
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | template_name | String | Yes | template referenced |
 | device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
-| outband_ip | String | Yes |  |
-| outband_subnet_mask | String | Yes |  |
-| ipmi_username | String | No |  |
-| ipmi_password | String | No |  |
-| system_diskname | String | No |  |
-| system_disksize | String | No |  |
-| pim_username | String | Yes |  |
-| pim_password | String | Yes |  |
-| hugepage_number | String | No |  |
+| system_diskname | String | No | system disk name |
+| system_disksize | String | No | system disk size |
+| pim_ip_address | String | Yes | PIM ip address |
+| pim_netmask | String | Yes | PIM netmask |
+| pim_username | String | Yes | PIM user |
+| pim_password | String | Yes | PIM password |
+| hugepage_number | String | No | huge page quantity |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
 | remote_management_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
 | remote_user | String | Yes | remote user  |
 | remote_password | String | Yes | remote password |
+| nic_info | List | Yes | network interface information |
 
 <p align="center"><b>Table 5-3-3:</b> Server information.</p>
 
@@ -134,6 +132,7 @@ It includes Virtualized Infrastructure Manager configurations,
 | vendor | String | Yes | VIM Provider information, e.g. ZTE,Huawei,Ericsson,NOKIA|
 | version | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | ip_version | String | Yes | Ipaddress type: IPV6 or IPV4 |
+| time_zone | String | Yes | timezone settings, e.g GMT+08:00 Asia/Shanghai |
 | controller_nodes | List | Yes | List of controllers designed in VIM deployment |
 | compute_nodes | List | Yes | List of compute nodes designed in VIM deployment |
 
@@ -141,25 +140,18 @@ It includes Virtualized Infrastructure Manager configurations,
 
 <a name="5.3.5"></a>
 ### 5.3.5 Network information
-List of All designed NIC definitions which are referenced by various roles of node, control/compute/network/storage node.
+List of NIC definitions which are referenced by various roles of node, control/compute/network/storage node.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| network_plane_type | String | Yes | distinguish network type: e.g MANAGEMENT,STORAGEDATA |
-| usage | String | Yes | used for compute/control: value is one of [manage,storage,service,PXE,iLo], for distribute storage  value if one of [storage_front,storage_backend] |
-| network_plane_infos | List | Yes | vlan_id,ip address,sub_network(CIDR),gateway|
-
-<p align="center"><b>Table 5-3-5-1:</b> Network information.</p>
-
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| vlan_id | String | Yes | vlan id for current network |
+| device_name | String | Yes | device name which the network interface belongs to |
 | ip_address | String | Yes | ip address |
 | sub_network | String | Yes | subnet in CIDR format. e.g: 2409:8086:8412:100::/64|
 | gateway | String | No | gateway|
+| vlan_id | String | Yes | vlan id for current network |
+| network_plane_type | String | Yes | distinguish network type: e.g MANAGEMENT,STORAGEDATA,COMPUTE |
 
-<p align="center"><b>Table 5-3-5-2:</b> Network plane information.</p>
+<p align="center"><b>Table 5-3-5:</b> Network information.</p>
 
 <a name="5.3.6"></a>
 ### 5.3.6 Controller information
