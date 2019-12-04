@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [8.1 Introduction](#8.1)
-* [8.2 Heading](#8.2)
+* [8.2 The Gaps](#8.2)
 * [8.3 Heading](#8.3)
 
 <a name="8.1"></a>
