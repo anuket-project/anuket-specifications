@@ -13,15 +13,15 @@
    * [5.3.2 Server template](#5.3.2)
    * [5.3.3 Server information](#5.3.3)
    * [5.3.4 Software configuration definition](#5.3.4)
-   * [5.3.5 Network informations](#5.3.5)
-   * [5.3.6 Controller informations](#5.3.6)
-   * [5.3.7 Compute informations](#5.3.7)
-   * [5.3.8 Distributed storage informations](#5.3.8)
-   * [5.3.9 NTP server informations](#5.3.9)
-   * [5.3.10 DNS server informations](#5.3.10)
-   * [5.3.11 Deployment host informations](#5.3.11)
-   * [5.3.12 Deployment control informations](#5.3.12)
-   * [5.3.13 Proxy informations](#5.3.13)   
+   * [5.3.5 Network information](#5.3.5)
+   * [5.3.6 Controller information](#5.3.6)
+   * [5.3.7 Compute information](#5.3.7)
+   * [5.3.8 Distributed storage information](#5.3.8)
+   * [5.3.9 NTP server information](#5.3.9)
+   * [5.3.10 DNS server information](#5.3.10)
+   * [5.3.11 Deployment host information](#5.3.11)
+   * [5.3.12 Deployment control information](#5.3.12)
+   * [5.3.13 Proxy information](#5.3.13)   
 
 <a name="5.1"></a>
 ## 5.1 Introduction
@@ -57,8 +57,8 @@ Depends xxx.
 
 <a name="5.3"></a>
 ## 5.3 Descriptor file definition
-There should be a Descriptor File definition, which used by installer as input of necessary configuration.
-Mandatory and optional definition should be defined.
+There must be a Descriptor File definition, which used by installer as input of necessary configuration.
+Mandatory and optional definition shall be defined.
  
 <a name="5.3.1"></a>
 ### 5.3.1 Hardware resource information
@@ -108,11 +108,16 @@ Besides it may include additional information pim username, password, rack_name,
 | device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | outband_ip | String | Yes |  |
 | outband_subnet_mask | String | Yes |  |
+| ipmi_username | String | No |  |
+| ipmi_password | String | No |  |
+| system_diskname | String | No |  |
+| system_disksize | String | No |  |
 | pim_username | String | Yes |  |
 | pim_password | String | Yes |  |
+| hugepage_number | String | No |  |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
-| remote_manage_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
+| remote_management_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
 | remote_user | String | Yes | remote user  |
 | remote_password | String | Yes | remote password |
 
@@ -135,7 +140,7 @@ It includes Virtualized Infrastructure Manager configurations,
 <p align="center"><b>Table 5-3-4:</b> Software configuration.</p>
 
 <a name="5.3.5"></a>
-### 5.3.5 Network informations
+### 5.3.5 Network information
 List of All designed NIC definitions which are referenced by various roles of node, control/compute/network/storage node.
 
 | Field # | type | mandatory | Instruction |
@@ -157,7 +162,7 @@ List of All designed NIC definitions which are referenced by various roles of no
 <p align="center"><b>Table 5-3-5-2:</b> Network plane information.</p>
 
 <a name="5.3.6"></a>
-### 5.3.6 Controller informations
+### 5.3.6 Controller information
 List of controller nodes that designed for current VIM deployment.
 
 | Field # | type | mandatory | Instruction |
@@ -170,7 +175,7 @@ List of controller nodes that designed for current VIM deployment.
 <p align="center"><b>Table 5-3-6:</b> Controller information.</p>
 
 <a name="5.3.7"></a>
-### 5.3.7 Compute informations
+### 5.3.7 Compute information
 List of compute nodes that designed for current VIM deployment.
 
 | Field # | type | mandatory | Instruction |
@@ -188,7 +193,7 @@ List of compute nodes that designed for current VIM deployment.
 <p align="center"><b>Table 5-3-7:</b> Compute information.</p>
 
 <a name="5.3.8"></a>
-### 5.3.8 Distributed storage informations
+### 5.3.8 Distributed storage information
 List of compute nodes that designed for current VIM deployment.
 
 | Field # | type | mandatory | Instruction |
@@ -198,32 +203,19 @@ List of compute nodes that designed for current VIM deployment.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| storage_type | String | Yes | Ceph/HDFS/Swift/GFS/Luster, etc |
 | cluster_name | String | Yes | indicate the cluster name|
-| ceph_iscsi_gateway | String | Yes | splitted by semicolon if more than one. e.g 2409:8086:8412:10a::1;2409:8086:8412:10a::2|
-| ceph_manage_plane_address_segment | String | Yes | The address segment of ceph management plane. e.g 2409:8086:8412:100::/64|
-| ceph_storage_plane_address_segment | String | Yes | The address segment of ceph storage plane. e.g 2409:8086:8412:10a::/64|
-| ceph_os_user | String | Yes | the user of ceph OS. |
-| ceph_os_password | String | Yes | the user's password of ceph OS. |
-| ceph_manage_plane_float_ip | String | Yes |  |
-| ceph_network_manage_plane_float_ip | String | Yes |  |
-| zms_network_manage_admin_password | String | Yes |  |
-| ceph_device_name | String | Yes |  |
-| ceph_iscsi_device_name | String | Yes |  |
+| storage_os_user | String | No | storage os user|
+| storage_os_password | String | No | storage os password|
+| storage_network_address | String | Yes | storage access address|
+| storage_network_mask | String | Yes | mask for the network|
 | glance_pool_name | String | Yes |  |
 | nova_pool_name | String | Yes |  |
-| belong_to_az_one | String | Yes |  |
-| cinder_infos | List | Yes |a list of cinder infos which are cinder pool name and backend info |
+| az_name | String | Yes | availabile zone which belongs to |
 
-<p align="center"><b>Table 5-3-8-2:</b> Cluster information.</p>
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| cinder_pool_name | String | Yes | cinder pool name|
-| cinder_backend_name | String | Yes | backend name cinder connected|
-<p align="center"><b>Table 5-3-8-3:</b> Cinder information.</p>
 
 <a name="5.3.9"></a>
-### 5.3.9 NTP server informations
+### 5.3.9 NTP server information
 primary and backup NTP server information.
 
 | Field # | type | mandatory | Instruction |
@@ -236,7 +228,7 @@ primary and backup NTP server information.
 <p align="center"><b>Table 5-3-9:</b> NTP server information.</p>
 
 <a name="5.3.10"></a>
-### 5.3.10 DNS server informations
+### 5.3.10 DNS server information
 DNS server informmation if VIM deployment requires.
 
 | Field # | type | mandatory | Instruction |
@@ -247,8 +239,8 @@ DNS server informmation if VIM deployment requires.
 <p align="center"><b>Table 5-3-10:</b> DNS server information.</p>
 
 <a name="5.3.11"></a>
-### 5.3.11 Deployment host informations
-Deployment host setting, which should have the access for the openstack nodes network.
+### 5.3.11 Deployment host information
+Deployment host setting, which must have the access for the openstack nodes network.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -259,7 +251,7 @@ Deployment host setting, which should have the access for the openstack nodes ne
 <p align="center"><b>Table 5-3-11:</b> Deployment host information.</p>
 
 <a name="5.3.12"></a>
-### 5.3.12 Deployment control informations
+### 5.3.12 Deployment control information
 Used to control if VIM will be automatically deployment.
 
 | Field # | type | mandatory | Instruction |
@@ -269,7 +261,7 @@ Used to control if VIM will be automatically deployment.
 <p align="center"><b>Table 5-3-12:</b> Auto deployment control information.</p>
 
 <a name="5.3.13"></a>
-### 5.3.13 Proxy informations
+### 5.3.13 Proxy information
 Proxy information, this section could be empty if not needed.
 
 | Field # | type | mandatory | Instruction |
