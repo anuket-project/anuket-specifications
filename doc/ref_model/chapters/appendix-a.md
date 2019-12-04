@@ -5,7 +5,7 @@
 ## Table of Contents
 * [A.1 Goals](#A.1)
 * [A.2 Intro and Terminology](#A.2)
-* [A.3 VNF Maturity Levels](#A.3)
+* [A.3 VNF Evolution Phases](#A.3)
 * [A.4 Links](#A.3)
 * [A.5 Hardware-Dependent Coding Policies](#A.4)
 
@@ -43,12 +43,20 @@ i. GPU/NPU
 i. FPGA/Other Acceleration
 i. CPU instruction sets and extensions
 
+The preceding list is not exhaustive; technologies will be added as required.
+
 Current CNTT Policies:
 
 **SR-IOV:**
 
-CNTT recognizes that today, SR-IOV provides a critical Capability for increased throughput over network interfaces at an economical cost. As such, the CNTT approach to SR-IOV is to <language under development>.
-  
+CNTT recognizes that today, SR-IOV provides a critical Capability for increased throughput over network interfaces at an economical cost. As such, the CNTT approach to SR-IOV is to (detailed policy language under development; to be tied in with VNF Evolution).
+
+Without arguing for or against SR-IOV, CNTT provides the following anecdotes which have been raised in discussions over SR-IOV:
+- SR-IOV mitigates the need for duplicated servicing of interrupts from unbuffered (i.e. small buffer) NICs, however it does not reduce the number of frame reception driven interrupts which much be serviced.
+- SR-IOV increases the Fabric management complexity, as encapsulation must be applied by the ToR/Leaf interface and the encapsulation must be managed as VNFs and/or networks are added/deleted from the Tenant. Therefore, performance isn't the only factor; fabric touch points and Service Chaining must also be considered.
+- Indications are that technologies such as DPDK, VPP, FD.io and others offer comparable throughput, today.<sup>(Citations Needed)</sup>
+
+
 **GPU/NPU:**
 <content needed>
 
