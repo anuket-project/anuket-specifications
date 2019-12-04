@@ -255,7 +255,7 @@ Ironic is the bare metal provisioning service. Ironic depends on all above compo
 -	Ironic API
 -	ironic-conductor which executes operation on bare metal nodes
 
-Note: This is an optional service. As Ironic is currently not invoked directly (only invoked through other srevices such as Nova) hence its APIs will not be specified.
+Note: This is an optional service. As Ironic is currently not invoked directly (only invoked through other services such as Nova) hence its APIs will not be specified.
 
 #### 4.3.1.8 Heat
 Heat is the orchestration service using template to provision cloud resources, Heat integrates with all OpenStack services. Heat has services running on the control nodes and no services running on the compute nodes:
