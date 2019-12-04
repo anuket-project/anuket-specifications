@@ -301,11 +301,11 @@ To configure the T-shirt sizes (specified in [Table 4-17](https://../../../ref_m
 | T-Shirt Size | vCPU ("c") | RAM ("r") | Local Disk ("d") |
 |-----|------|---------|----------------|
 | .tiny | 1<br>-- vcpus 1 | 512 MB<br>-- ram 512 | 1 GB<br>-- disk 1 |
-| .small | 1<br>-- vcpus 1 | 2 GB<br>-- ram 2000 | 20 GB<br>-- disk 20 |
-| .medium | 2<br>-- vcpus 2 | 4 GB<br>-- ram 4000 | 40 GB<br>-- disk 40 |
-| .large | 4<br>-- vcpus 4 | 8 GB<br>-- ram 8000 | 80 GB<br>-- disk 80 |
-| .2xlarge* | 8<br>-- vcpus 8 | 16 GB<br>-- ram 16000 | 160 GB<br>-- disk 160 |
-| .4xlarge* | 16<br>-- vcpus 16 | 32 GB<br>-- ram 32000 | 320 GB<br>-- disk 320 |
+| .small | 1<br>-- vcpus 1 | 2 GB<br>-- ram 2048 | 20 GB<br>-- disk 20 |
+| .medium | 2<br>-- vcpus 2 | 4 GB<br>-- ram 4096 | 40 GB<br>-- disk 40 |
+| .large | 4<br>-- vcpus 4 | 8 GB<br>-- ram 8192 | 80 GB<br>-- disk 80 |
+| .2xlarge* | 8<br>-- vcpus 8 | 16 GB<br>-- ram 16384 | 160 GB<br>-- disk 160 |
+| .4xlarge* | 16<br>-- vcpus 16 | 32 GB<br>-- ram 32768 | 320 GB<br>-- disk 320 |
 
 In addition, to configure the storage IOPS the following two parameters need to be specified in the flavor create: --property quota:disk_write_iops_sec=<IOPS#> and --property quota:disk_read_iops_sec=<IOPS#>.
 
