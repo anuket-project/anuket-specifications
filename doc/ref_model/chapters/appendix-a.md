@@ -37,11 +37,11 @@ CNTT realizes there are implications to this and limitations to the ability to l
 
 Solving the problems associated with implementing the Abstraction Principle is a work in progress. CNTT has not solved all of the associated problems, nor has the industry. As technology evolves and more designs incorporate cloud native concepts, these problems will be addressed. This appendix is specifically intended to provide CNTT policies to manage these situations as they exist today,   and their exceptions and transitions, as the technology around and supporting the Abstraction Principle matures.
 
-Several specific technology areas have been identified by CNTT as being impacted by the Abstraction Principle, as follows:
-i. SR-IOV
-i. GPU/NPU
-i. FPGA/Other Acceleration
-i. CPU instruction sets and extensions
+Several specific technology areas have been identified by CNTT as using an ABI impacted by the Abstraction Principle, as follows:
+- SR-IOV
+- GPU/NPU
+- FPGA/Other Acceleration
+- CPU Instruction Sets and Extensions
 
 The preceding list is not exhaustive; technologies will be added as required.
 
@@ -61,6 +61,9 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 <content needed>
 
 **FPGA/Other Acceleration:**
+<content needed>
+
+**CPU Instruction Sets and Extensions:**
 <content needed>
 
 End of policies.
