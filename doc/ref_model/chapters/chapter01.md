@@ -103,7 +103,7 @@ This section introduces the high-level principles of infrastructure abstraction 
 1. VNFs that are designed to take advantage of NFVI accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts.
 1. Workloads shall not require hardware-dependent software
    - This is in support of VNF abstraction, enabling portability across the Infra and simplification of VNF design
-   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features such as SR-IOV
+   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
    - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
 1. Specific internal hardware details shall not be exposed above the Infra+VIM layers
    - This is in support of VNF abstraction, enabling portability across the Infra and simplification of VNF design
