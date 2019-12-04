@@ -76,8 +76,6 @@ To help guide the reader, a glossary [Reference Model Terminology](../../ref_mod
 ## 1.3 Principles
 This section introduces the high-level principles of infrastructure abstraction and profiling that will be used in context of this document.
 
-
-
 1. A top-level objective of the Common Telco NFVI is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical. Two principles are introduced in support of these objectives:
     - **Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
       - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
