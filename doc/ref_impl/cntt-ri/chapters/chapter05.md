@@ -92,9 +92,27 @@ Server template would be assigned to multiple servers, i.e physical hosts.
 | memory | String | Yes |  |
 | hard_drive | String | Yes |  |
 | raid | String | Yes |  |
+| network_card_infos | List | No | interface list definition|
 | network_card_bond_infos | List | No | NIC bonding, might not be always the case.|
 
-<p align="center"><b>Table 5-3-2:</b> Server template.</p>
+<p align="center"><b>Table 5-3-2-1:</b> Server template.</p>
+
+This is the network interface definition. Generally, there are a list of interfaces included in server template.
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| port_name | String | Yes | port name, e.g ens0,ens1 |
+
+<p align="center"><b>Table 5-3-2-2:</b> Network Card Bond information.</p>
+
+In some case, interface would be bonded together. This is the network interface bond definition.
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bond_name | String | Yes | new bonded name. e.g bond 0 is the new name after bond eno0,eno1.|
+| bond_type | String | Yes | dvs,sr-iov,ovs |
+| bond_mode | String | Yes | balance-tcp,balance-slb,balance-backup |
+| bond_members | String | Yes | members of interface name to bond in together, e.g eno0,eno1. |
+
+<p align="center"><b>Table 5-3-2-3:</b> Network Card Bond information.</p>
 
 <a name="5.3.3"></a>
 ### 5.3.3 Server information
@@ -161,8 +179,6 @@ List of controller nodes that designed for current VIM deployment.
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | device_name | String | Yes | must be the device_name defined in server_information(###5.3.3), which would be set on Server from BMC|
 | node_name | String | Yes | node name for the controller to deploy, e.g: controller01 |
-| manage_vlan_id | String | Yes | may multiple vlan_id for management plane. Setting the dedicated vlan id assigned.|
-| storage_vlan_id | String | Yes | may multiple vlan_id for storage plane. Setting the dedicated vlan id assigned.|
 
 <p align="center"><b>Table 5-3-6:</b> Controller information.</p>
 
@@ -176,8 +192,6 @@ List of compute nodes that designed for current VIM deployment.
 | node_name | String | Yes | node name for the compute to deploy, e.g: compute01 |
 | az_name | String | Yes | availability zone name which this node belongs to |
 | ha_name | List | Yes | HA name(s) which this node assigned to.|
-| manage_vlan_id | String | Yes | may multiple vlan_id for management plane. Setting the dedicated vlan id assigned.|
-| storage_vlan_id | String | Yes | may multiple vlan_id for storage plane. Setting the dedicated vlan id assigned.|
 | vnic_type | String | Yes | VIM verification needs know compute node type: OVS,DPDK_OVS or SR-IOV node.|
 | os_reserved_cores | String | No | Designed and planned by provider itself, may be none|
 | ovs_reserved_cores | String | No | Designed and planned by provider itself, may be none |
@@ -191,12 +205,12 @@ List of compute nodes that designed for current VIM deployment.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | cluster_infos | List | Yes | a list of cluster information|
-<p align="center"><b>Table 5-3-8-1:</b> Storage information.</p>
+<p align="center"><b>Table 5-3-8-1:</b> Cluster information.</p>
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| storage_type | String | Yes | Ceph/HDFS/Swift/GFS/Luster, etc |
 | cluster_name | String | Yes | indicate the cluster name|
+| storage_type | String | Yes | Ceph/HDFS/Swift/GFS/Luster, etc |
 | storage_os_user | String | No | storage os user|
 | storage_os_password | String | No | storage os password|
 | storage_network_address | String | Yes | storage access address|
@@ -205,6 +219,7 @@ List of compute nodes that designed for current VIM deployment.
 | nova_pool_name | String | Yes |  |
 | az_name | String | Yes | availabile zone which belongs to |
 
+<p align="center"><b>Table 5-3-8-2:</b> Storage information.</p>
 
 <a name="5.3.9"></a>
 ### 5.3.9 NTP server information
