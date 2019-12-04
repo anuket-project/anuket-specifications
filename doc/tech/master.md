@@ -5,7 +5,7 @@
 * [1. Overview](#1.0)
 * [2. Scope](#2.0)
 * [3. Principles](#3.0)
-* [4. Technology Direction](#4.0)
+* [4. Technology Direction and policies](#4.0)
   * [4.1 SR-IOV](#4.1)
   * [4.2 PCI-Pass Through](#4.2)
   * [4.3 SmartNICs](#4.3)
@@ -51,10 +51,12 @@ Any specification work created within CNTT **must** obey to set of principles sp
 [Reference Architecture Principles](../ref_arch#principles)
 
 <a name="4.0"></a>
-## 4. Technology Direction
+## 4. Technology Direction and policies
 
 <a name="4.1"></a>
 ### 4.1 SR-IOV
+
+SR-IOV is a technology that allows 
 
 <a name="4.2"></a>
 ### 4.2 PCI-Pass Through
@@ -84,7 +86,7 @@ It is vitally important for CNTT to have working NFVI solutions from NFVI vendor
 **Figure 3** explains transitional plan approach in CNTT.
 
 <p align="center"><img src="./figures/tech_transitional_plan.png" alt="scope" title="Transitional Plan" width="100%"/></p>
-<p align="center"><b>Figure 3:</b> Transitional Plan in CNTT</p>
+<p align="center"><b>Figure 3:</b> Transitional Plans in CNTT</p>
 
 <a name="6.0"></a>
 ## 6. Roadmap
