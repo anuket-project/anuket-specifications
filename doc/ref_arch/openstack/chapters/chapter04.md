@@ -283,8 +283,31 @@ In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topol
 
 <a name="4.4.1"></a>
 ### 4.4.1. Support for Profiles and T-shirt instance types
-**Content to be developed**
-Develop on Flavors and metadata
+Reference Model Chapter 4 and  5 provide information about the instance types and sizing information. To implement these profiles and sizes requires the setting up of information as specified in the Tables below. As OpenStack no longer supports default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properies.
+
+| Flavor | CPU allocation ratio| NUMA Awareness| CPU Pinning| Huge Pages| OVS-DPDK| Local Storage SSD| Port speed | 
+|----------|-------------|--------------|-------------|-----------|---------|-------------|----------------------| 
+| nfvi.com.cfg.001| nfvi.com.cfg.002| nfvi.com.cfg.003| nfvi.com.cfg.004| nfvi.net.acc.cfg.001| nfvi.hw.stg.ssd.cfg.002| nfvi.hw.nic.cfg.002 | 
+Basic| In Nova.conf include <br> cpu_allocation_ratio= 4.0| | In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default)| | | trait:STORAGE_DISK_SSD=required | 
+| --property quota vif_inbound_average=1250000 <br>and<br>vif_outbound_average=1250000 | 
+Network Intensive| In Nova.conf include <br>cpu_allocation_ratio= 1.0| In flavor create or flavor set specify <br> --property hw:numa_nodes=<#numa_nodes – 1> | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and <br>--property hw:cpu__thread_policy= <prefer, require, isolate>| --property hw:mem_page_size=large <br>(needed for OVS-DPDK)| ml2.conf.ini  configured to support <br>[OVS] <br>datapath_type=netdev <br>huge pages should be configured to large |  trait:STORAGE_DISK_SSD=required |  --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000 | 
+Compute Intensive| In Nova.conf include <br>cpu_allocation_ratio= 1.0| In flavor create or flavor set specify <br> --property hw:numa_nodes=<#numa_nodes – 1> | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and <br>--property hw:cpu__thread_policy= <prefer, require, isolate>| --property hw:mem_page_size=large <br>(needed for OVS-DPDK)| ml2.conf.ini  configured to support <br>[OVS] <br>datapath_type=netdev <br>huge pages should be configured to large |  trait:STORAGE_DISK_SSD=required |  --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000 | 
+
+
+To configure the T-shirt sizes (specified in Table 4-17 Reference Model Chapter4), the parameters in the folloiwng table are specified as part of the flavor create; the parameters are preceded by "--".
+
+| T-Shirt Size | vCPU ("c") | RAM ("r") | Local Disk ("d") |
+|-----|------|---------|----------------|
+| .tiny | 1<br>-- vcpus 1 | 512 MB<br>-- ram 512 | 1 GB<br>-- disk 1 |
+| .small | 1<br>-- vcpus 1 | 2 GB<br>-- ram 2000 | 20 GB<br>-- disk 20 |
+| .medium | 2<br>-- vcpus 2 | 4 GB<br>-- ram 4000 | 40 GB<br>-- disk 40 |
+| .large | 4<br>-- vcpus 4 | 8 GB<br>-- ram 8000 | 80 GB<br>-- disk 80 |
+| .2xlarge* | 8<br>-- vcpus 8 | 16 GB<br>-- ram 16000 | 160 GB<br>-- disk 160 |
+| .4xlarge* | 16<br>-- vcpus 16 | 32 GB<br>-- ram 32000 | 320 GB<br>-- disk 320 |
+
+In addition to configure the storage IOPS the following two parameters need to be specified in the flavor create: --property quota:disk_write_iops_sec=<IOPS#> and --property quota:disk_read_iops_sec=<IOPS#>.
+
+The flavor create command and the mandatory and option ocnfiguration parameters is documented in https://docs.openstack.org/nova/latest/user/flavors.html; please note that some of teh configuration paramteres are only applicable to VMWare.
 
 <a name="4.4.2"></a>
 ### 4.4.2. Logical segregation and high availability
