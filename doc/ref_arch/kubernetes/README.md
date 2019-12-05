@@ -42,4 +42,4 @@ This is Kubernetes based Reference Architecture
 * [Chapter 06 - Security](chapters/chapter06.md)
 * [Chapter 07 - Operations & Life Cycle Management](chapters/chapter07.md)
 * [Chapter 08 - Gaps, Innovation, and Development](chapters/chapter08.md)
-* [Appendix A - Guidance for VNF-to-CNF Transition](chapters/appendix-a.md)
+* [Appendix A - Guidelines](chapters/appendix-a.md)
