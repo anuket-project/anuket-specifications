@@ -64,8 +64,11 @@ To help guide the reader, this glossary provides an introduction to the terminol
 <a name="11.1.3"></a>
 ### 11.1.3 Operational and Administrative Terminology
 
-- **Tenant**: Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
+- **cloud service user**: Natural person, or entity acting on their behalf, associated with a cloud service customer that uses cloud services.
+- **Tenant**: One or more cloud service users sharing access to a set of physical and virtual resources ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)).
+>_*Note*_ Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 - **Tenant (Internal) Networks**: Virtual networks that are internal to tenant instances.
+- **multi-tenancy**: feature where physical, virtual or service resources are allocated in such a way that multiple tenants and their computations and data are isolated from and inaccessible by each another. ([ETSI}(https://www.etsi.org/deliver/etsi_gs/NFV/001_099/003/01.04.01_60/gs_nfv003v010401p.pdf))
 - **External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
 - **Quota**: An imposed upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
 - **Resource pool**: A logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **NFVI** resource can be part of none, one or more resource pools.
