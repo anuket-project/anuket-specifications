@@ -49,7 +49,7 @@ The scope of RA2 will be to enable support for containerised and VM-based worklo
 
 RA2 is delivering a Kubernetes Reference Architecture that will be standalone, meaning that a Reference Implementation for RA2 can be established solely on the content and requirements present in the RA2 documentation.
 
-Kubernetes can be executed on top of differnt types of underlying infrastrucutre. Examples of those underlying infrastructures are:
+Kubernetes can be executed on top of different types of underlying infrastrucutre. Examples of those underlying infrastructures are:
 - Infrastructure as a Service based on virtual machines such as OpenStack in general or a Reference Implementation of RA1
 - Physical servers. (This is often referred to as "baremetal Kubernetes")
 
