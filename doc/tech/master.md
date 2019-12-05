@@ -5,7 +5,7 @@
 * [1. Overview](#1.0)
 * [2. Scope](#2.0)
 * [3. Principles](#3.0)
-* [4. Technology Direction and policies](#4.0)
+* [4. Technology Direction](#4.0)
   * [4.1 SR-IOV](#4.1)
   * [4.2 PCI-Pass Through](#4.2)
   * [4.3 SmartNICs](#4.3)
@@ -51,7 +51,7 @@ Any specification work created within CNTT **must** obey to set of principles sp
 [Reference Architecture Principles](../ref_arch#principles)
 
 <a name="4.0"></a>
-## 4. Technology Direction and policies
+## 4. Technology Direction
 
 <a name="4.1"></a>
 ### 4.1 SR-IOV
