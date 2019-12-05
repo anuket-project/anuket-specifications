@@ -56,7 +56,9 @@ Any specification work created within CNTT **must** obey to set of principles sp
 <a name="4.1"></a>
 ### 4.1 SR-IOV
 
-SR-IOV is a technology that allows 
+Single root input/output virtualization or SR-IOV is a specification that allows the virtualization and isolation of the PCI Express resources for manageability and performance reasons. A single physical PCI Express can be shared on a virtual environment using the SR-IOV.
+
+
 
 <a name="4.2"></a>
 ### 4.2 PCI-Pass Through
@@ -85,7 +87,7 @@ It is vitally important for CNTT to have working NFVI solutions from NFVI vendor
 
 **Figure 3** explains transitional plan approach in CNTT.
 
-<p align="center"><img src="./figures/tech_transitional_plan.png" alt="scope" title="Transitional Plan" width="100%"/></p>
+<p align="center"><img src="./figures/tech_transition_plan.png" alt="scope" title="Transitional Plan" width="100%"/></p>
 <p align="center"><b>Figure 3:</b> Transitional Plans in CNTT</p>
 
 <a name="6.0"></a>
