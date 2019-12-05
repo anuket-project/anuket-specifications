@@ -202,26 +202,34 @@ List of compute nodes that designed for current VIM deployment.
 
 <a name="5.3.8"></a>
 ### 5.3.8 Distributed storage information
-List of compute nodes that designed for current VIM deployment.
+List of storage nodes that designed for current VIM deployment.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| cluster_infos | List | Yes | a list of cluster information|
+| cluster_name | String | Yes | cluster name|
+| device_infos | List | Yes | a list of device|
 <p align="center"><b>Table 5-3-8-1:</b> Cluster information.</p>
 
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| cluster_name | String | Yes | indicate the cluster name|
+| device_name | String | Yes | indicate the device name|
 | storage_type | String | Yes | Ceph/HDFS/Swift/GFS/Luster, etc |
 | storage_os_user | String | No | storage os user|
 | storage_os_password | String | No | storage os password|
 | storage_network_address | String | Yes | storage access address|
 | storage_network_mask | String | Yes | mask for the network|
-| glance_pool_name | String | Yes |  |
-| nova_pool_name | String | Yes |  |
 | az_name | String | Yes | availabile zone which belongs to |
+| additional_attributes | List | Yes | specific attribute(key value pairs) list, decided by the storage_type. e.g: For example, Ceph would specific storage pool name, while HDFS would need replication options |
 
-<p align="center"><b>Table 5-3-8-2:</b> Storage information.</p>
+<p align="center"><b>Table 5-3-8-2:</b> Storage device information.</p>
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| attribute_name | String | Yes | specific attribute name required by the storage type |
+| attribute_value | String | Yes | attribute value |
+<p align="center"><b>Table 5-3-8-3:</b> Additional storage attribute.</p>
+
 
 <a name="5.3.9"></a>
 ### 5.3.9 NTP server information
