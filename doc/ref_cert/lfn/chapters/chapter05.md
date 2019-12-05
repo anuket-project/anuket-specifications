@@ -58,8 +58,6 @@ Perform compliance check based on
 
 -   GSMA profile (Check with Rabi)
 
-![](media/c665a3d13461f67ea8729042cf8d975d.png)
-
 ##### Verification
 
 Perform on-boarding/ verification life cycle operation (from instantiation,
