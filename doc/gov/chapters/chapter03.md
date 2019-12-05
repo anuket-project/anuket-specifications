@@ -6,7 +6,7 @@
 ## Table of Contents
 * [3.1 Introduction](#3.1)
 * [3.2 Heading](#3.2)
-* [3.3 Heading](#3.3)
+* [3.3 New WS Policy](#3.3)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
