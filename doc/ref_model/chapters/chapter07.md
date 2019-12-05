@@ -18,7 +18,7 @@
   * [7.4.4 Workload security requirements](#7.4.4)
   * [7.4.5 Certification/validation requirements](#7.4.5)
 * [7.5 Platform Security](#7.5)
-  * [7.5.1 General Platform Security.](#7.5.1)
+  * [7.5.1 General Platform Security](#7.5.1)
   * [7.5.2 Platform ‘back-end’ access security](#7.5.2)
   * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
 * [7.6 Workload Security](#7.6)
