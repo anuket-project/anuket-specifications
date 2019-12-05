@@ -11,7 +11,7 @@
   * [3.2.3. Virtual Storage](#3.2.3)
   * [3.2.4. Virtual Networking – Neutron standalone](#3.2.4)
   * [3.2.5. Virtual Networking – 3rd party SDN solution](#3.2.5)
-* [3.3. NFVI Management Software (VIM)](#3.3)
+* [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
   * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
@@ -106,7 +106,7 @@ Content to be developed
 Content to be developed
 
 <a name="3.3"></a>
-## 3.3. NFVI Management Software (VIM)
+## 3.3. Virtualised Infrastructure Manager (VIM)
 The NFVI Management Software (VIM) provides the services for the management of Consumable Resources/Services.
 
 <a name="3.3.1"></a>
@@ -185,7 +185,8 @@ This section describes the core set of services and service components needed to
 
 <a name="3.3.2"></a>
 ### 3.3.2. Tenant Isolation
-Content to be developed
+In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack. With Keystone v3, the term "project" got adopted and both the terms became interchangeable. However, as CNTT RA uses Keystone v3 in [this](chapter05.md#5.2) section, so it is recommended to use the term "project" when referring to OpenStack and use [tenant](../../../ref_model/chapters/chapter03.md#321-tenant) when referring to multi-tenancy. According to [OpenStack glossary](https://docs.openstack.org/doc-contrib-guide/common/glossary.html), Projects represent the base unit of resources (compute, storage and network) in OpenStack, in that all assigned resources in OpenStack are owned by a specific project.
+OpenStack offers multi-tenancy by means of resource (compute, network and storage)separation via projects. OpenStack offers ways to share virtual resources between projects while maintaining logical separation. As an example, traffic separation is provided by creating different VLAN ids for neutron networks of different projects. As another example, if host separation is needed, nova scheduler offers AggregateMultiTenancyIsolation scheduler filter to separate projects in host aggregates. Thus, if a host in an aggregate is configured for a particular project, only the instances from that project are placed on the host. Overall, tenant isolation ensures that the resources of a project are not affected by resources of another project.
 
 <a name="3.3.3"></a>
 ### 3.3.3. Host aggregates providing resource pooling
