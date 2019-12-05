@@ -5,7 +5,8 @@
 ## Table of Contents
 * [A.1 Goals](#A.1)
 * [A.2 Intro and Terminology](#A.2)
-* [A.3 VNF/CNFs Maturity Levels and transitional plans](#A.3)
+* [A.3 VNF Maturity Levels](#A.3)
+* [A.4 Links](#A.3)
 
 <a name="A.1"></a>
 ## A.1 Goals
@@ -20,6 +21,8 @@ The goal is not to be prescriptive on how to re-architect existing or architect 
 (Summary status and trends of ETSI NFV and Cloud. Decoupling application from platform. Terminology used/introduced.)
 
 <a name="A.3"></a>
-## A.3 VNF/CNFs Maturity Levels and transitional plans
+## A.3 VNF Maturity Levels
+(And how they map to CNTT RAs)
 
-
+<a name="A.4"></a>
+## A.4 Links
