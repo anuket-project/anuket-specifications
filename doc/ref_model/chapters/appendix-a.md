@@ -5,7 +5,7 @@
 ## Table of Contents
 * [A.1 Guidelines for VNF Vendors](#A.1)
 * [A.2 Guidelines for CNF Vendors](#A.2)
-* [A.3 VNF Transition Plan](#A.3)
+* [A.3 VNF Transition Phases](#A.3)
 * [A.4 CNF Transition Phases](#A.4)
 * [A.5 Links](#A.5)
 
@@ -13,13 +13,13 @@
 ## A.1 Guidelines for VNF Vendors
 
 <a name="A.2"></a>
-## A.2 Guidelines for VNF Vendors
+## A.2 Guidelines for CNF Vendors
 
 <a name="A.3"></a>
-## A.3 Guidelines for VNF Vendors
+## A.3 VNF Transition Phases
 
 <a name="A.4"></a>
-## A.4 Links
+## A.4 CNF Transition Phases
 
 <a name="A.5"></a>
 ## A.5 Links
