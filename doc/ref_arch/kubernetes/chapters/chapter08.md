@@ -16,12 +16,12 @@ While this Reference Architecture is being developed, Gaps will be identified th
 <a name="8.2"></a>
 ## 8.2 Gap analysis
 
-- Container Interfaces towards NFVI resources.
+- Container Run-Time Interfaces towards NFVI resources.
 - Multi-Tenancy
 - K8s as VM based VNF Orchestrator
 
 <a name="8.2.1"></a>
-### 8.2.1 Container Interfaces
+### 8.2.1 Container run-time Interfaces towards NFVI resources
 
 <a name="8.3"></a>
 ## 8.3 Proposals & Resolution
