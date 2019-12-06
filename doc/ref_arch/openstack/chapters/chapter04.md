@@ -283,7 +283,7 @@ In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topol
 
 <a name="4.4.1"></a>
 ### 4.4.1. Support for Profiles and T-shirt instance types
-Reference Model Chapter 4 and  5 provide information about the instance types and size information. To implement these profiles and sizes requires the setting up of information as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properies.
+Reference Model Chapter 4 and  5 provide information about the instance types and size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes requires the setting up of information as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properies.
 
 | Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | Compute Intensive |
 |----------|-------------|--------------|-------------|-------------|
