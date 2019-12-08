@@ -8,6 +8,13 @@
 * [2.1 Introduction](#2.1)
 * [2.2 Reference Model Requirements](#2.2)
 * [2.3 Kubernetes Architecture Requirements](#2.3)
+  * [2.3.1 General Requirements](#2.3.1)
+  * [2.3.2 Infrastructure Requirements](#2.3.2)
+  * [2.3.3 Kubernetes Cluster Requirements](#2.3.3)
+  * [2.3.4 Interfaces and APIs Requirements](#2.3.4)
+  * [2.3.5 Operations and LCM Requirements](#2.3.5)
+  * [2.3.6 Assurance Requirements](#2.3.6)
+  * [2.3.7 Security Requirements](#2.3.7)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -33,7 +40,7 @@ The Reference Model (RM) defines the NFVI to consist of the physical resources, 
 Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. physical resources), NFVI Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
 
 <a name="2.3.1"></a>
-### 2.3.1 General
+### 2.3.1 General Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -54,7 +61,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 <p align="center"><b>Table 2-1:</b> Kubernetes Architecture: General Requirements</p>
 
 <a name="2.3.2"></a>
-### 2.3.2 Infrastructure
+### 2.3.2 Infrastructure Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -115,7 +122,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-3:</b> Kubernetes Architecture: Kubernetes Cluster Requirements</p>
 
 <a name="2.3.4"></a>
-### 2.3.4 Interfaces & APIs
+### 2.3.4 Interfaces & APIs Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -128,7 +135,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-4:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
 <a name="2.3.5"></a>
-### 2.3.5 Operations and LCM of the Infrastructure
+### 2.3.5 Operations and LCM Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -147,7 +154,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 
 <a name="2.3.6"></a>
-### 2.3.6 Assurance
+### 2.3.6 Assurance Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -159,7 +166,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-6:</b> Kubernetes Architecture: Assurance Requirements</p>
 
 <a name="2.3.7"></a>
-### 2.3.7 Security
+### 2.3.7 Security Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
