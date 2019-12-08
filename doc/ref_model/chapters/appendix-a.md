@@ -6,8 +6,8 @@
 * [A.1 Goals](#A.1)
 * [A.2 Intro and Terminology](#A.2)
 * [A.3 VNF Evolution Phases](#A.3)
-* [A.4 Links](#A.3)
-* [A.5 Hardware-Dependent Coding Policies](#A.4)
+* [A.4 Links](#A.4)
+* [A.5 Policies for Managing Non-Conforming Technology](#A.5)
 
 <a name="A.1"></a>
 ## A.1 Goals
@@ -29,7 +29,7 @@ The goal is not to be prescriptive on how to re-architect existing or architect 
 ## A.4 Links
 
 <a name="A.5"></a>
-## A.5 CNTT Policies for Non-Conforming Technology and Transition
+## A.5 CNTT Policies for Managing Non-Conforming Technology and Transition
 
 There are multiple situations where a policy, comprised of one or more compromises and/or transitions is required to address technology that does not presently conform to CNTT mandates or strategy, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future. This informs application designers how RC and ultimately OVP will react when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of an OVP badge. 
 
