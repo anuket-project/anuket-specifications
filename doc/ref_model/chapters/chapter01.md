@@ -101,13 +101,20 @@ This section introduces the high-level principles of infrastructure abstraction 
    - These pre-defined sizes will evolve over time.
 1. NFVI provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
 1. VNFs that are designed to take advantage of NFVI accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts.
+1. Workloads shall not require hardware-dependent software
+   - This is in support of VNF abstraction, enabling portability across the Infra and simplification of VNF design
+   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
+   - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
+1. Specific internal hardware details shall not be exposed above the Infra+VIM layers
+   - This is in support of VNF abstraction, enabling portability across the Infra and simplification of VNF design
+   - This pertains to features that operate at detailed levels of hardware granularity, such as EPA
 
 <a name="1.4"></a>
 ## 1.4 Scope
-This document focuses on the documenting the higher level concepts that are needed to identify **Reference Model**. **Figure 1-6** below highlights its scope in more details.
+This document focuses on the documenting the higher level concepts that are needed to identify **Reference Model**. **Figure 1-1** below highlights its scope in more details.
 
 <p align="center"><img src="../figures/ch01_scope.png" alt="scope" title="Scope" width="100%"/></p>
-<p align="center"><b>Figure 1-6:</b> Scope of Reference Model</p>
+<p align="center"><b>Figure 1-1:</b> Scope of Reference Model</p>
 
 This document specifies:
 - **NFVI Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete system that supports **VNF**s.
@@ -152,10 +159,10 @@ More use cases to pull in:  https://docs.openstack.org/arch-design/use-cases.htm
 
 <a name="1.5"></a>
 ## 1.5 How this document works
-Within the framework of the Common Telecom NFVI vision, there are three levels of documents needed to document the components and allow the practical application of the systems. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
+Within the framework of the Common Telecom NFVI vision, there are three levels of documents needed to document the components and allow the practical application of the systems. They are, as highlighted in **Figure 1-2**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
 
 <p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
+<p align="center"><b>Figure 1-2:</b> Scope of CNTT</p>
 
 <a name="1.5.1"></a>
 ## 1.5.1 Document Organization
@@ -167,7 +174,7 @@ Within the framework of the Common Telecom NFVI vision, there are three levels o
 Below is a diagram of the different artifacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
 
 <p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-5:</b> Description of the possible different levels of CNTT artefacts</p>
+<p align="center"><b>Figure 1-3:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="1.5.2"></a>
 ## 1.5.2 Audience
@@ -210,12 +217,12 @@ The Common Telco NFVI work is not done in a vacuum.  The intention from the begi
  - OSM (ETSi Open Source MANO project)
  - VMWare (While not an Open Source project, VMWare is a commonly used platform used for VNF deployments in the telecom industry)
 
-The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-7** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
+The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-4** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 1-7:</b> Mapping to ETSI NFV architecture</p>
+<p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
 
-Following the ETSI model, **Figure 1-7** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, the VIM is included in the Common Telco NFVI scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the NFVI.  These interactions and interfaces will be detailed in  **Chapter 7 "API & Interfaces"**.
+Following the ETSI model, **Figure 1-4** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, the VIM is included in the Common Telco NFVI scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the NFVI.  These interactions and interfaces will be detailed in  **Chapter 7 "API & Interfaces"**.
 
 The Common Telco NFVI is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG). 
 

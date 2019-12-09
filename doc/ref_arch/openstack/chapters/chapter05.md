@@ -193,12 +193,11 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 | **Nova Features**        | **Mandatory** |
 |--------------------------|:-------------:|
-| attach_encrypted_volume  | X             |
+| attach_encrypted_volume  |               |
 | change_password          |               |
 | cold_migration           | X             |
 | console_output           | X             |
 | disk_config              | X             |
-| instance_password        |               |
 | interface_attach         | X             |
 | live_migration           | X             |
 | metadata_service         | X             |
@@ -220,14 +219,7 @@ Compute API: https://docs.openstack.org/api-ref/compute/
 
 REST API Version History: https://docs.openstack.org/nova/latest/reference/api-microversion-history.html
 
-### 5.2.7. Ironic
-
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Bare Metal: Ironic | https://docs.openstack.org/api-ref/baremetal/ | Version 1.0 |
-| Bare Metal: Ironic | https://docs.openstack.org/python-ironicclient/latest/cli/index.html | Version 1.25 |
-
-### 5.2.8. Heat
+### 5.2.7. Heat
 
 |**OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
 |------------------|----------------------------------------------------|-------------------|
@@ -257,7 +249,6 @@ libraries.
 | Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions  | Version 3.0 |
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/  | Version 1.0 |
 | Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | Version 1.0 |
-| Bare Metal: Ironic |  |  |
 | Acceleration: Cyborg | https://docs.openstack.org/api-ref/accelerator/v1/index.html  | Version 1.0 |
 
 **CLIs**
@@ -271,7 +262,6 @@ libraries.
 | Block Storage: Cinder | https://docs.openstack.org/python-cinderclient/latest/ | Version 3.0 |
 | Object Storage: Swift | https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
 | Orchestration: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.0 |
-| Bare Metal: Ironic | https://docs.openstack.org/python-ironicclient/latest/cli/index.html  | Version 1.25 |
 | Acceleration: Cyborg | https://docs.openstack.org/python-cyborgclient/latest/ | Version 1.0 |
 | OpenStack Client (python) | https://docs.openstack.org/python-openstackclient/pike/index.html  | Version 3.2.1 |
 

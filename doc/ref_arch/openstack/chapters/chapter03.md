@@ -11,11 +11,11 @@
   * [3.2.3. Virtual Storage](#3.2.3)
   * [3.2.4. Virtual Networking – Neutron standalone](#3.2.4)
   * [3.2.5. Virtual Networking – 3rd party SDN solution](#3.2.5)
-* [3.3. NFVI Management Software (VIM)](#3.3)
+* [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
   * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
-  * [3.3.4. Flavour management (i.e. T-Shirt type)](#3.3.4)
+  * [3.3.4. Flavor management](#3.3.4)
 * [3.4. Underlying Resources](#3.4)
   * [3.4.1. Virtualisation (KVM/QEMU)](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
@@ -47,7 +47,7 @@ This chapter is organized as follows:
     - VIM Core services (keystone, cinder, nova, neutron etc.)
     - Tenant Separation
     - Host aggregates providing resource pooling
-    - Flavour management (i.e. T-Shirt type)
+    - Flavor management
 *	Underlying Resources: are what provides the resources that allow the Consumable Infrastructure Resources and Services to be created and managed by the NFVI Management Software (VIM).
     - Virtualisation (KVM/QEMU)
     - Physical infrastructure
@@ -78,7 +78,7 @@ This RA does not intend to restrict how workloads are distributed across tenants
 ### 3.2.2. Virtual Compute (vCPU and vRAM)
 The virtual compute resources (vCPU and vRAM) used by the VNFs behave like their physical counterparts.  A physical core is an actual processor and can support multiple vCPUs through Symmetric Multi-Threading (SMT) and CPU overbooking. With no overbooking and SMT of 2 (2 threads per core), each core can support 2 vCPUs. With the same SMT of 2 and overbooking factor of 4, each core can support 8 vCPUs. The performance of a vCPU can be affected by various configurations such as CPU pinning, NUMA alignment, and SMT.
 
-The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components. Profiles are defined in the chapters 5.1 and 5.2 of the reference model document. Flavours are defined in the chapter 4.2 of the reference model document.
+The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components. Profiles are defined in the chapters 5.1 and 5.2 of the reference model document. Flavors are defined in the chapter 4.2 of the reference model document.
 
 <a name="3.2.3"></a>
 ### 3.2.3. Virtual Storage
@@ -106,7 +106,7 @@ Content to be developed
 Content to be developed
 
 <a name="3.3"></a>
-## 3.3. NFVI Management Software (VIM)
+## 3.3. Virtualised Infrastructure Manager (VIM)
 The NFVI Management Software (VIM) provides the services for the management of Consumable Resources/Services.
 
 <a name="3.3.1"></a>
@@ -185,7 +185,8 @@ This section describes the core set of services and service components needed to
 
 <a name="3.3.2"></a>
 ### 3.3.2. Tenant Isolation
-Content to be developed
+In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack. With Keystone v3, the term "project" got adopted and both the terms became interchangeable. However, as CNTT RA uses Keystone v3 in [this](chapter05.md#5.2) section, so it is recommended to use the term "project" when referring to OpenStack and use [tenant](../../../ref_model/chapters/chapter03.md#321-tenant) when referring to multi-tenancy. According to [OpenStack glossary](https://docs.openstack.org/doc-contrib-guide/common/glossary.html), Projects represent the base unit of resources (compute, storage and network) in OpenStack, in that all assigned resources in OpenStack are owned by a specific project.
+OpenStack offers multi-tenancy by means of resource (compute, network and storage)separation via projects. OpenStack offers ways to share virtual resources between projects while maintaining logical separation. As an example, traffic separation is provided by creating different VLAN ids for neutron networks of different projects. As another example, if host separation is needed, nova scheduler offers AggregateMultiTenancyIsolation scheduler filter to separate projects in host aggregates. Thus, if a host in an aggregate is configured for a particular project, only the instances from that project are placed on the host. Overall, tenant isolation ensures that the resources of a project are not affected by resources of another project.
 
 <a name="3.3.3"></a>
 ### 3.3.3. Host aggregates providing resource pooling
@@ -202,8 +203,8 @@ An over use of host aggregates and availability zones can result in a granular p
 Recommendation: Separation of control zone and execution zone into different security zones
 
 <a name="3.3.4"></a>
-### 3.3.4. Flavour management (i.e. T-Shirt type)
-Content to be developed
+### 3.3.4. Flavor management
+A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors lister [here](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours).
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources

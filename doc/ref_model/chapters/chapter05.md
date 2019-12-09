@@ -33,13 +33,16 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
 
-Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of software profiles for Basic, Network Intensive and Compute intensive instances types.
+Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of the Basic, Network Intensive and Compute Intensive Instance Types.
 
 <p align="center"><img src="../figures/RM_chap5_fig_5_3_SW_profile.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
-<p align="center"><b>Figure 5-3:</b> NFVI software profiles.</p>
+<p align="center"><b>Figure 5-3:</b> NFVI Instance Types.</p>
+
+
 
 The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
 
+<a name="5.1.1"></a>
 ### 5.1.1 Virtual Compute
 
 **Table 5-1** and **Table 5-2** depict the features related to virtual compute.
@@ -53,14 +56,13 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
 
-
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |  | |
 
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
-<a name="5.2"></a>
+<a name="5.1.2"></a>
 ### 5.1.2 Virtual Storage
 
 **Table 5-3** and **Table 5-4** depict the features related to virtual storage.
@@ -82,13 +84,14 @@ The following sections detail the NFVI SW profile features per type of virtual r
 
 <p align="center"><b>Table 5-4:</b> Virtual Storage Acceleration features.</p>
 
+<a name="5.1.3"></a>
 ### 5.1.3 Virtual Networking
 
 **Table 5-5** and **Table 5-6** depict the features related to virtual networking.
 
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | e.g. virtio1.1, i40evf (Intel driver for VF SR-IOV). |
+| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | e.g. virtio1.1 |
 | nfvi.net.cfg.002 | Overlay protocol | Protocols | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric. |
 | nfvi.net.cfg.003 | NAT |  Yes/No |  Support of Network Address Translation |
 | nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
@@ -101,7 +104,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | e.g. DPDK. |
-| nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | e.g. support of SR-IOV, SmartNic. |
+| nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | e.g. support of SmartNic. |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No |  |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface |Yes/No | |
 
@@ -169,19 +172,21 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1 |  virtio1.1, i40evf (Intel driver for VF SR-IOV) |  virtio1.1, i40evf (Intel driver for VF SR-IOV) |
+| nfvi.net.cfg.001 | vNIC interface | IO virtualisation | virtio1.1 |  virtio1.1* |  virtio1.1 |
 | nfvi.net.cfg.002 | Overlay protocol | Protocols  | VXLAN, MPLSoUDP, GENEVE, other |  VXLAN, MPLSoUDP, GENEVE, other |VXLAN, MPLSoUDP, GENEVE, other |
 | nfvi.net.cfg.003 | NAT | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.004 | Security Group | Yes/No  | Y | Y | Y |
 | nfvi.net.cfg.005 | SFC support | Yes/No  | N | Y | Y |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Y | Y | Y |
 
+*[VNF Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to VNFC) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
+
 <p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
 | nfvi.net.acc.cfg.001 | vSwitch optimisation | YeS/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
-| nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SR-IOV and  SmartNic |Y, support of SR-IOV and  SmartNic |
+| nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SmartNic |Y, support of SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No | N  | Y | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y | Y |
 
@@ -223,7 +228,7 @@ The host profile and capabilities include:
 1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
 1. **SMT/HT (SMT: Simultaneous Multithreading/ HT: Hyper Threading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized VNFs. Configured in the host.
-1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to support SR-IOV.
+1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to enable SR-IOV.
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
 1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
 1. **Security features**: such as TRusted Platform Module (TPM).
