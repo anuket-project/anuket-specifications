@@ -9,7 +9,7 @@
   * [4.2.1 Virtualisation](#4.2.1)
   * [4.2.2 Compute](#4.2.2)
   * [4.2.3 Network Fabric](#4.2.3)
-  * [4.2.4 Storage Backend](#4.2.3)
+  * [4.2.4 Storage Backend](#4.2.4)
 * [4.3 Virtualised Infrastructure Manager (VIM)](#4.3)
   * [4.3.1 VIM Core Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
@@ -190,7 +190,22 @@ DHCP When the Neutron-DHCP agent is hosted in controller nodes, then VMs, on a T
 -	LDAP
 -	IPAM
 
+<a name="4.2.4"></a>
 ### 4.2.4. Storage Back-end
+Storage systems are available from multiple vendors and can also utilize commodity hardware from any number of open-source based storage packages (such as LVM, Ceph, NFS, etc.). The proprietary and open-source storage systems are supported in Cinder through specific plugin drivers. The OpenStack [Cinder documentation]( https://docs.openstack.org/cinder/latest/reference/support-matrix.html) specifies the minimum functionality that all storage drivers must support. The functions include:
+-	Volume: create, delete, attach, detach, extend, clone (volume from volume), migrate
+-	Snapshot: create, delete and create volume from snapshot
+-	Image: create form volume
+
+The document also includes a matrix for a number of proprietary drivers and some of the optional functions that these drivers support. This matrix is a handy tool to select storage backends that have the optional storage functions needed by the cloud operator. The cloud workload storage requirements helps determine the backends that should be deployed by the cloud operator.  
+The common storage backend attachment methods include iSCSI, NFS, local disk, etc. and the matrix list the supported methods for each of the vendor drivers. The OpenStack Cinder [Available Drivers]( https://docs.openstack.org/cinder/latest/drivers.html) documentation provides a list of all OpenStack compatible drivers and their configuration options.
+
+The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including CNTT required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by CNTT including managing volumes, snapshots, multi-storage backends, migrate volumes, etc. 
+
+[Ceph](https://ceph.io/) is the default CNTT Reference Architecture storage backend and is discussed below.
+
+#### 4.2.4.1. Ceph
+
 **Content to be developed**
 -	Types of storage (incl NVMe)
 -	Ceph
