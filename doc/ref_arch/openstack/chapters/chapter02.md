@@ -15,7 +15,6 @@
   * [2.3.6 LCM Requirements](#2.3.6)
   * [2.3.7 Assurance Requirements](#2.3.7)
   * [2.3.8 Security Requirements](#2.3.8)
-  * [2.3.8 Security Requirements](#2.3.8)
 
 <a name="2.1"></a>
 ## 2.1 Introduction.
