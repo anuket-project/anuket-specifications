@@ -77,4 +77,4 @@ Network Monitoring capabilities exposed by NFVI Platform are used for the passiv
 * Determining performance bottle necks at VNF level
 * Doing anomaly detection and network forensics
 
-<b>Note: It is responsibility of NFVI Platform to expose capability to create virtual interface having mirrored traffic from monitored VNF. This port can be attached to Monitoring VNF so that all traffic from Monitored VNF would be available for troubleshooting/debugging purpose.</b>
+**Note:** It is responsibility of NFVI Platform to expose capability to create virtual interface having mirrored traffic from monitored VNF. This port can be attached to Monitoring VNF so that all traffic from Monitored VNF would be available for troubleshooting/debugging purpose.
