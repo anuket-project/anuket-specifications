@@ -49,6 +49,14 @@ Following labels should be correctly used for all issues and PRs to indicate the
 - One person only is allowed to edit a given PR unless given permission to other contributor to contribute directly into the PR.
 - A PR is recommended to only create/modify content within the scope of a single workstream.
 - A PR should only add/change content related to the issue associated with the PR.
+- Comments/sub-Conversations within a PR may only be marked Resolved by:
+  - A) The originator of the sub-conversation. 
+  - B) The relevant WSL or 
+  - C) An automated timeout of 48hrs when there has been no additional comments after an update is posted to resolve the sub-thread. 
+  - **The person responding to a sub-conversation shall not mark it as Resolved**.
+- Explicitly communicate all changes to existing PRs shall be made through subsequent commits. 
+  - **Do not modify an existing commit, create separate commits under the same PR**.
+  - PRs will be merged using "Squash and Merge" to enforce a linear commit history.
 
 <a name="approvals"></a>
 ### Pull Requests Approval Process
@@ -96,3 +104,4 @@ Any Pull Requests that are labeled as "**Unresolved**" will be discussed during 
 * [Contribution Guidelines](https://github.com/cntt-n/CNTT/wiki/Contribution-Guidelines)
 * [Approval Process](https://github.com/cntt-n/CNTT/wiki/Approval-Process) 
 -->
+  
