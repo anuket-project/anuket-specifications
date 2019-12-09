@@ -15,7 +15,7 @@
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
   * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
-  * [3.3.4. Flavour management (i.e. T-Shirt type)](#3.3.4)
+  * [3.3.4. Flavor management](#3.3.4)
 * [3.4. Underlying Resources](#3.4)
   * [3.4.1. Virtualisation (KVM/QEMU)](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
@@ -47,7 +47,7 @@ This chapter is organized as follows:
     - VIM Core services (keystone, cinder, nova, neutron etc.)
     - Tenant Separation
     - Host aggregates providing resource pooling
-    - Flavour management (i.e. T-Shirt type)
+    - Flavor management
 *	Underlying Resources: are what provides the resources that allow the Consumable Infrastructure Resources and Services to be created and managed by the NFVI Management Software (VIM).
     - Virtualisation (KVM/QEMU)
     - Physical infrastructure
@@ -78,7 +78,7 @@ This RA does not intend to restrict how workloads are distributed across tenants
 ### 3.2.2. Virtual Compute (vCPU and vRAM)
 The virtual compute resources (vCPU and vRAM) used by the VNFs behave like their physical counterparts.  A physical core is an actual processor and can support multiple vCPUs through Symmetric Multi-Threading (SMT) and CPU overbooking. With no overbooking and SMT of 2 (2 threads per core), each core can support 2 vCPUs. With the same SMT of 2 and overbooking factor of 4, each core can support 8 vCPUs. The performance of a vCPU can be affected by various configurations such as CPU pinning, NUMA alignment, and SMT.
 
-The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components. Profiles are defined in the chapters 5.1 and 5.2 of the reference model document. Flavours are defined in the chapter 4.2 of the reference model document.
+The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components. Profiles are defined in the chapters 5.1 and 5.2 of the reference model document. Flavors are defined in the chapter 4.2 of the reference model document.
 
 <a name="3.2.3"></a>
 ### 3.2.3. Virtual Storage
@@ -203,8 +203,8 @@ An over use of host aggregates and availability zones can result in a granular p
 Recommendation: Separation of control zone and execution zone into different security zones
 
 <a name="3.3.4"></a>
-### 3.3.4. Flavour management (i.e. T-Shirt type)
-Content to be developed
+### 3.3.4. Flavor management
+A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors lister [here](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours).
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources
