@@ -2,7 +2,7 @@
 
 # OPNFV CNTT-RI
 
-This is the GitHub repository for CNTT-RI project within OPNFV.
+This is the GitHub repository for the first Reference Implementation of CNTT. This RI will make full use of and evolve the Installers, Test Fraweworks, automation CI pipeline within OPNFV. 
 
 ## Release Information
 **Release: _0.0_**
