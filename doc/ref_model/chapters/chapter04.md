@@ -94,11 +94,19 @@ This section describes a set of explicit NFVI capabilities and performance measu
 | e.nfvi.cap.009 | Crypto Acceleration | Yes/No | Crypto Acceleration |
 | e.nfvi.cap.010 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
 | e.nfvi.cap.011 | Programmable Acceleration | Yes/No | Programmable Acceleration |
-| e.nfvi.cap.012 | Enhanced Cache Management* | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded |
+| e.nfvi.cap.012 | Enhanced Cache Management<sup>1)</sup> | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded |
+| e.nfvi.cap.013 | SR-IOV over PCI-PT<sup>2)</sup> | Yes/No | Traditional SR-IOV |
+| e.nfvi.cap.014 | GPU/NPU<sup>2)</sup> | Yes/No | Hardware coprocessor |
+| e.nfvi.cap.015 | SmartNIC<sup>2)3)</sup> | Yes/No | Network Acceleration |
+| e.nfvi.cap.016 | FPGA/other Acceleration H/W<sup>2)</sup> | Yes/No | Non-specific hardware |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of NFVI</p>
 
-\* L and X cache policies require CPU pinning to be active.
+<sup>1)</sup> L and X cache policies require CPU pinning to be active.
+
+<sup>2)</sup> These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type.
+
+<sup>3)</sup> SmartNICs that do not utilise PCI-PT are not subject to the Abstraction Principle, nor any related policies or prohibitions.
 
 Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance, provided the associated physical CPU microarchitecture supports it. Cache management policy can be used to specify the static allocation of cache resources to cores within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a VNF that has the "X" attribute applied. The "Lean" attribute can be applied to VNFs which do not realize significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
 
