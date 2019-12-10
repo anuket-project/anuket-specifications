@@ -19,9 +19,9 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-The scope of this chaptor is to identify and list down testcases based on [Requirements for Reference Archtiecture-1 (OpenStack based)](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter02.md). This will serve as traceability between test cases and requirements.
+The scope of this chapter is to identify and list down test cases based on requirements defined in [Reference Architecture-1 (RA-1)](../../../ref_arch/openstack/README.md). This will serve as traceability between test cases and requirements.
 
-Note that Each requirement may have one or more test cases associated with it. 
+Note that each requirement may have one or more test cases associated with it. 
 
 **must**: Test Cases that are marked as must are considered mandatory and must pass succesfully.
 
@@ -41,10 +41,12 @@ Note that Each requirement may have one or more test cases associated with it.
 <a name="4.3.1"></a>
 ### 4.3.1 Architecture and OpenStack Requirements
 
-- Describe and define in detail, RM/RA-1 Openstack requirements.
+- Describe and define in detail, RM/RA-1 OpenStack requirements.
 
 <a name="4.3.2"></a>
 ### 4.3.2 Infrastructure
+
+
 | Test case # | sub-category | Description | Requirement # |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | `cert.test.inf.01` | Compute | Create a virtual machine with CPU pinning and 2 NUMA nodes. | `req.inf.com.05` |
@@ -54,6 +56,8 @@ Note that Each requirement may have one or more test cases associated with it.
 
 <a name="4.3.3"></a>
 ### 4.3.3 VIM
+
+
 | Test case # | sub-category | Description | Requirement # |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | `cert.test.vim.01` | VIM | Create a virtual machine with CPU pinning, HugePages and 2 NUMA nodes. | `req.vim.04` |
@@ -63,9 +67,39 @@ Note that Each requirement may have one or more test cases associated with it.
 
 <a name="4.3.4"></a>
 ### 4.3.4 Interfaces & APIs
+This defines the test cases around the functionality that are exposed by OpenStack APIs. All the defined OpenStack 
+service APIs in RA-1's [chapter 05](../../../ref_arch/openstack/chapters/chapter05.md) will be the scope here. 
+
+Note: It will only target the functionality that are exposed by standard OpenStack APIs.  
+
+#### 4.3.4.1 Identity - Keystone
+
+It covers the test cases against identity management operations like user management, project management, multi-tenancy etc. 
+
 | Test case # | sub-category | Description | Requirement # |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | `cert.test.vim.01` | API | Show API endpoint catalog. It *must* have endpoint for each Core service. | `req.int.api.01` |
+
+#### 4.3.4.2 Image - Glance
+It covers the test cases against image management operations. 
+
+
+#### 4.3.4.3 Block Storage - Cinder
+It covers the test cases against volume management operations.
+
+#### 4.3.4.4 Object Storage - Swift
+It covers the test cases against object management operations.
+
+
+#### 4.3.4.4 Networking - Neutron
+It covers the test cases against networking management operations.
+
+
+#### 4.3.4.5 Compute - Nova
+It covers the test cases against compute management operations.
+
+#### 4.3.4.5 Orchestration - Heat
+It covers the test cases against orchestration operations.
 
 <a name="4.3.5"></a>
 ### 4.3.5 Tenants
