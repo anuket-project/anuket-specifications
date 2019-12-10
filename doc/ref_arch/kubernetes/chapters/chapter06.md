@@ -16,7 +16,9 @@ The following functionalities are recommended for securing kubernetes platform;
 - Image Signing
 - Role-base Access Control
 - Secret Managment
-- Platform multitenant security
+- Kubernetes Cluster Multi-tenancy security
+  - Tenant can be distinct teams or workload types (Develpoment or Production) within an organisation, each with a namespace
+  - Tenant can also be per dedicated kubernetes cluster
 - Integration with other security ecosystem like monitoring and alerting tools
 
 <a name="6.2"></a>
@@ -61,5 +63,5 @@ Thus the primary isolation mechanism in Kubernetes environment should be VM or p
 
 ### Container Isolation in Kubernetes Cluster
 #### Namespaces  
-Kernel namespaces should be used to provide process level isolation within a Kubernetes cluster. There are different types of kernel namespaces like PID and network. The default is to allocate one namespace per container application, in case several applications can be deployed in the same cluster.
+Kubernetes namespaces should be used to provide process level isolation within a Kubernetes cluster. Kubernetest namespaces can be used to isolate different types of workloads like Development, Production or Test. The default is to allocate one namespace per Containerised Network Function (CNF).
 
