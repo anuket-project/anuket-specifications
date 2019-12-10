@@ -8,6 +8,7 @@
 * [A.3 VNF Evolution Phases](#A.3)
 * [A.4 Links](#A.3)
 * [A.5 Hardware-Dependent Coding Policies](#A.4)
+* [A.6 Miscellaneous](#A.5)
 
 <a name="A.1"></a>
 ## A.1 Goals
@@ -67,3 +68,13 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 <content needed>
 
 End of policies.
+
+<a name="A.6"></a>
+## A.6 Miscellaneous
+### A.6.1 VNF Network Monitoring Capabilities - UseCase.
+Network Monitoring capabilities exposed by NFVI Platform are used for the passive observation of VNF-specific traffic traversing the NFVI when:
+* Performance issues and/or packet drops reported in VNF
+* Determining performance bottle necks at VNF level
+* Doing anomaly detection and network forensics
+
+**Note:** It is responsibility of NFVI Platform to expose capability to create virtual interface having mirrored traffic from monitored VNF. This port can be attached to Monitoring VNF so that all traffic from Monitored VNF would be available for troubleshooting/debugging purpose.
