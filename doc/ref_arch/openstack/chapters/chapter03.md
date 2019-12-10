@@ -9,7 +9,7 @@
   * [3.2.1. Multi-Tenancy (execution environment)](#3.2.1)
   * [3.2.2. Virtual Compute (vCPU and vRAM)](#3.2.2)
   * [3.2.3. Virtual Storage](#3.2.3)
-  * [3.2.4. Virtual Networking – Neutron standalone](#3.2.4)
+  * [3.2.4. Virtual Networking Neutron standalone](#3.2.4)
   * [3.2.5. Virtual Networking – 3rd party SDN solution](#3.2.5)
 * [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
@@ -98,8 +98,8 @@ Images are stored using the OpenStack Glance service discussed below in Section 
 The [OpenStack Storage Table](https://docs.openstack.org/arch-design/design-storage/design-storage-concepts.html#table-openstack-storage) explains the differences between the storage types and typical use cases. The [OpenStack compatible storage backend drivers](https://docs.openstack.org/cinder/latest/reference/support-matrix.html) table lists the capabilities that each of these drivers support.
 
 <a name="3.2.4"></a>
-### 3.2.4. Virtual Networking – Neutron standalone 
-Content to be developed
+### 3.2.4. Virtual Networking Neutron standalone 
+Neutron is an OpenStack project that provides "network connectivity as a service" between interface devices(e.g., vNICs) managed by other OpenStack services (e.g., nova). Neutron allows users to create networks, subnets, ports, routers etc. Neutron also facilitates traffic isolation between different subnets - within as well as across project(s) by using different type drivers/mechanism drivers that use VLANs, VxLANs, GRE (Generic Routing Encapsulation) tunnels etc. For Neutron API consumer, this is abstracted and provided by Neutron. Multiple network segments are supported by Neutron via ML2 plugins to simultaneously utilize varierty of layer 2 networking technologies like VLAN, VxLAN, GRE etc. Neutron also allows to create routers to connect layer 2 networks via "neutron-l3-agent". In addition, floating IP support is also provided that allows a project VM to be accessed using a public IP.
 
 <a name="3.2.5"></a>
 ### 3.2.5. Virtual Networking – 3rd party SDN solution
