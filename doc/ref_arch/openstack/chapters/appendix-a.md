@@ -16,6 +16,8 @@
 
 CNF Generation definitions are defined in [RM Appendix](../../../ref_modle/chapters/appendix-a#A.3)
 
+> This will contains architectural choices that are suitable for each generation based on the Exceptions (deviation) agreed on in RM A.7
+
 <a name="A.3"></a>
 ## A.3 TBC
 
