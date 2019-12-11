@@ -91,14 +91,14 @@ It covers the test cases against volume management operations.
 It covers the test cases against object management operations.
 
 
-#### 4.3.4.4 Networking - Neutron
+#### 4.3.4.5 Networking - Neutron
 It covers the test cases against networking management operations.
 
 
-#### 4.3.4.5 Compute - Nova
+#### 4.3.4.6 Compute - Nova
 It covers the test cases against compute management operations.
 
-#### 4.3.4.5 Orchestration - Heat
+#### 4.3.4.7 Orchestration - Heat
 It covers the test cases against orchestration operations.
 
 <a name="4.3.5"></a>
