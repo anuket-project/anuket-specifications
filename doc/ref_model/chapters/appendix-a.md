@@ -10,6 +10,7 @@
 * [A.5 Exceptions](#A.5)
 * [A.6 VNF Generation Timelines](#A.6)
 * [A.7 CNF Generation Timelines](#A.7)
+* [A.8 Miscellaneous](#A.8)
 
 <a name="A.1"></a>
 ## A.1 Guidelines for VNF Vendors
@@ -59,7 +60,7 @@ This will be covered in: https://github.com/cntt-n/CNTT/pull/760
 | Gen4 |  |  |  |
 
 <a name="A.7"></a>
-## A.6 CNF Generation Timelines
+## A.7 CNF Generation Timelines
 
 | Generation | Exception List | Time Frame | Notes |
 |------------|----------------|------------|-------|
@@ -68,3 +69,12 @@ This will be covered in: https://github.com/cntt-n/CNTT/pull/760
 | Gen3 |  |  |  |
 | Gen4 |  |  |  |
 
+<a name="A.8"></a>
+## A.8 Miscellaneous
+### A.8.1 VNF Network Monitoring Capabilities - UseCase.
+Network Monitoring capabilities exposed by NFVI Platform are used for the passive observation of VNF-specific traffic traversing the NFVI when:
+* Performance issues and/or packet drops reported in VNF
+* Determining performance bottle necks at VNF level
+* Doing anomaly detection and network forensics
+
+**Note:** It is responsibility of NFVI Platform to expose capability to create virtual interface having mirrored traffic from monitored VNF. This port can be attached to Monitoring VNF so that all traffic from Monitored VNF would be available for troubleshooting/debugging purpose.
