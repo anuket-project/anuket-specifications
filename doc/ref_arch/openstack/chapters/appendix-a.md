@@ -4,7 +4,7 @@
 
 ## Table of Contents
 * [A.1 Guidance for Vendors](#A.1)
-* [A.2 RA Transition Phases](#A.2)
+* [A.2 RA Transitional Generations](#A.2)
 * [A.3 TBC](#A.3)
 * [A.4 TBC](#A.4)
 
@@ -12,7 +12,9 @@
 ## A.1 Guidance Vendors
 
 <a name="A.2"></a>
-## A.2 RA Transition Phases
+## A.2 RA Transitional Generations
+
+CNF Generation definitions are defined in [RM Appendix](../../../ref_modle/chapters/appendix-a#A.3)
 
 <a name="A.3"></a>
 ## A.3 TBC
