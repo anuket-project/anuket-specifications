@@ -7,6 +7,14 @@
 * [2.1 Introduction.](#2.1)
 * [2.2 Reference Model Requirements.](#2.2)
 * [2.3 Architecture and OpenStack Requirements.](#2.3)
+  * [2.3.1 General Requirements](#2.3.1)
+  * [2.3.2 Infrastructure Requirements](#2.3.2)
+  * [2.3.3 VIM Requirements](#2.3.3)
+  * [2.3.4 Interfaces & APIs Requirements](#2.3.4)
+  * [2.3.5 Tenants Requirements](#2.3.5)
+  * [2.3.6 LCM Requirements](#2.3.6)
+  * [2.3.7 Assurance Requirements](#2.3.7)
+  * [2.3.8 Security Requirements](#2.3.8)
 
 <a name="2.1"></a>
 ## 2.1 Introduction.
@@ -24,10 +32,10 @@
 Traceability to Reference Model.
 
 <a name="2.3"></a>
-## 2.3 Architecture and OpenStack Requirements.
+## 2.3 Architecture and OpenStack Requirements
 
 <a name="2.3.1"></a>
-### 2.3.1 General
+### 2.3.1 General Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,10 +49,10 @@ Traceability to Reference Model.
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for OpenStack components. |
 
 
-<p align="center"><b>Table 2-1:</b> OpenStack General Requirements.</p>
+<p align="center"><b>Table 2-1:</b> General Requirements</p>
 
 <a name="2.3.2"></a>
-### 2.3.2 Infrastructure
+### 2.3.2 Infrastructure Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,10 +93,10 @@ Traceability to Reference Model.
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. |
 
-<p align="center"><b>Table 2-2:</b> OpenStack Infrastructure Requirements.</p>
+<p align="center"><b>Table 2-2:</b> Infrastructure Requirements</p>
 
 <a name="2.3.3"></a>
-### 2.3.3 VIM
+### 2.3.3 VIM Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -102,11 +110,11 @@ Traceability to Reference Model.
 | `req.vim.08` | General | The Architecture **must** support resource tagging. |
 | `req.vim.09` | General | The Architecture **must** support horizontal scaling. |
 
-<p align="center"><b>Table 2-3:</b> OpenStack VIM Requirements.</p>
+<p align="center"><b>Table 2-3:</b> VIM Requirements</p>
 
 
 <a name="2.3.4"></a>
-### 2.3.4 Interfaces & APIs
+### 2.3.4 Interfaces & APIs Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -116,20 +124,20 @@ Traceability to Reference Model.
 | `req.int.acc.01` | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |
 | `req.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. |
 
-<p align="center"><b>Table 2-4:</b> OpenStack Interfaces and APIs Requirements.</p>
+<p align="center"><b>Table 2-4:</b> Interfaces and APIs Requirements</p>
 
 <a name="2.3.5"></a>
-### 2.3.5 Tenants
+### 2.3.5 Tenants Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `req.tnt.gen.01` | General | The Architecture **must** support multi-tenancy. |
 | `req.tnt.gen.02` | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. |
 
-<p align="center"><b>Table 2-5:</b> OpenStack Tenants Requirements.</p>
+<p align="center"><b>Table 2-5:</b> Tenants Requirements</p>
 
 <a name="2.3.6"></a>
-### 2.3.6 LCM
+### 2.3.6 LCM Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -141,10 +149,10 @@ Traceability to Reference Model.
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of VIM Instances. |
 | `req.lcm.cid.02` | CI/CD | The Architecture **should** support integrating with CI/CD Toolchain for NFVI and VIM components Automation. |
 
-<p align="center"><b>Table 2-6:</b> OpenStack LCM Requirements.</p>
+<p align="center"><b>Table 2-6:</b> LCM Requirements</p>
 
 <a name="2.3.7"></a>
-### 2.3.7 Assurance
+### 2.3.7 Assurance Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -153,10 +161,10 @@ Traceability to Reference Model.
 | `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information. |
 | `req.asr.mon.04` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
 
-<p align="center"><b>Table 2-7:</b> OpenStack Assurance Requirements.</p>
+<p align="center"><b>Table 2-7:</b> Assurance Requirements</p>
 
 <a name="2.3.8"></a>
-### 2.3.8 Security
+### 2.3.8 Security Requirements
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -174,7 +182,7 @@ Traceability to Reference Model.
 | `req.sec.ntw.03` | Networking | The Architecture **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
 | `req.sec.ntw.04` | Networking | The Architecture **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. |
 
-<p align="center"><b>Table 2-8:</b> OpenStack Security Requirements.</p>
+<p align="center"><b>Table 2-8:</b> Security Requirements</p>
 
 <!--
 **Backlog of Req**
