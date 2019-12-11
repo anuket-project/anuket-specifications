@@ -32,8 +32,8 @@ In order for CNTT to stay current with new trends in the industry and the introd
   - Proposed Roadmap.
   - List of committed contributors (at least five) and committed named Work stream Leads and Co-Leads.
   - Endorsement from at least 2 service providers and 2 vendors.
-- New Work Stream proposals needs to be approved by the Technical Steering Committee during their regular meetings.
-- New Work Stream proposals needs to be approved and signed off by Governance Steering Committee during their regular meetings.
+- New Work Stream proposals need to be approved by the Technical Steering Committee during their regular meetings.
+- New Work Stream proposals need to be approved and signed off by Governance Steering Committee during their regular meetings.
 
 
 
