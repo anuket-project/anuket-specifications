@@ -1,6 +1,7 @@
-\<\< Back
+[<< Back](../)
 
 # 5. VNF E2E C&V Framework Requirements
+<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 
@@ -8,6 +9,10 @@
 * [5.2 Scope](#5.2)
 * [5.3 Platform Requirements](#5.3)
 * [5.4 Certification Process](#5.4)
+* [5.5 Methodology](#5.5)
+* [5.6 Protoype VNFs](#5.6)
+* [5.7 Profiles Reference](#5.7)
+* [5.8 Frameworks](#5.8)
 
 <a name="5.1"></a>
 ### 5.1 Introduction
@@ -226,3 +231,24 @@ using this platform (providing above requirements), producing the test results t
 certification portal , review and granting the badge to this VNF.
 
 #### 5.4.1 Entry & Exit criteria
+
+<a name="5.5"></a>
+### 5.5 Methodology
+
+- Content to be written.
+- Describe the methodolgy and selection process for VNF C&V Framework requirements
+
+<a name="5.6"></a>
+### 5.6 Protoype VNFs
+
+- Introduce concept and purpose for Golden VNFs &/or Prototype VNFs
+
+<a name="5.7"></a>
+### 5.7 Profiles Reference
+
+- Describe the different profiles used for testing and verification 
+
+<a name="5.8"></a>
+### 5.8 Frameworks
+
+- Provide a list of framework requirements for VNF certification.
