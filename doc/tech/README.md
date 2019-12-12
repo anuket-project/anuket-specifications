@@ -6,13 +6,12 @@
 * [2. Scope](#2.0)
 * [3. Principles](#3.0)
 * [4. Technology Direction](#4.0)
-  * [4.1 SR-IOV](#4.1)
-  * [4.2 PCI-Pass Through](#4.2)
-  * [4.3 SmartNICs](#4.3)
-  * [4.4 Acceleration Cards](#4.4)
-  * [4.5 FPGA](#4.5)
-  * [4.6 GPUs/NPUs](#4.6)
-  * [4.7 EPA/NFD](#4.7)
+  * [4.1 IO Virtualisation](#4.1)
+  * [4.2 SmartNICs](#4.2)
+  * [4.3 Acceleration Cards](#4.3)
+  * [4.4 FPGA](#4.4)
+  * [4.5 GPUs/NPUs](#4.5)
+  * [4.6 EPA/NFD](#4.6)
 * [5. Available Specifications](#5.0)
 
 <a name="1.0"></a>
@@ -52,28 +51,34 @@ Any specification work created within CNTT **must** obey to set of principles sp
 ## 4. Technology Direction
 
 <a name="4.1"></a>
-### 4.1 SR-IOV
+### 4.1 IO Virtualization
 
-Single root input/output virtualization or SR-IOV is a specification that allows the virtualization and isolation of the PCI Express resources for manageability and performance reasons. A single physical PCI Express can be shared on a virtual environment using the SR-IOV.
+There are different ways of which IO devices (such as NICs) are presented to VMs for consumption by those VMs. Here is a list of current methods of existing IO Virtualisatin:
 
+- Para-Virtualization method (software only).
+- Direct assignment with VT-d.
+- Device Sharing with SR-IOV & VT-d.
+- Para-Virtualisation method (Hardware support).
 
-<a name="4.2"></a>
-### 4.2 PCI-Pass Through
+**Figure 3** below shows some of the relevant IO Virtualization techniques.
+
+<p align="center"><img src="./figures/tech_iov.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 3:</b> Relevant IO Virtualisation Techniques</p>
 
 <a name="4.3"></a>
-### 4.3 SmartNICs
+### 4.2 SmartNICs
 
 <a name="4.4"></a>
-### 4.4 Acceleration Cards
+### 4.3 Acceleration Cards
 
 <a name="4.5"></a>
-### 4.5 FPGAs
+### 4.4 FPGAs
 
 <a name="4.6"></a>
-### 4.6 GPUs/NPUs
+### 4.5 GPUs/NPUs
 
 <a name="4.7"></a>
-### 4.7 EPA/NFD
+### 4.6 EPA/NFD
 
 <a name="5.0"></a>
 ## 5. Available Specifications
