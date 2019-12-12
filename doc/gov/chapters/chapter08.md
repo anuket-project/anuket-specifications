@@ -9,8 +9,8 @@
 * [8.3 Engagement](#8.3)
 * [8.4 Adoption](#8.4)
   * [8.4.1 Adoption Strategy](#8.4.1)
-  * [8.4.2 VNF Transition Generations](#8.4.2)
-  * [8.4.3 CNF Transition Generations](#8.4.3)
+  * [8.4.2 VNF Evolution Generations](#8.4.2)
+  * [8.4.3 CNF Evolution Generations](#8.4.3)
 * [8.5 Roadmap](#8.5)
   * [8.5.1 CNTT Roadmap](#8.5.1)
   * [8.5.2 VNF Adoption Roadmap](#8.5.2)
@@ -32,20 +32,25 @@
 <a name="8.4.1"></a>
 ### 8.4.1 Adoption Strategy
 
-It is vitally important for CNTT to have working NFVI solutions from NFVI vendors and mature VNFs/CNFs designs from application vendors that is compliant to CNTT specifications. It is also understood that, in some areas, the industry might not have solutions that are fully aligned with CNTT requirements. Therefore, a strategy, comprised of one or more compromises/Exceptions and/or transitions is required to address technology that does not presently conform to CNTT mandates, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future. 
+It is vitally important for CNTT to have working NFVI solutions from NFVI vendors and mature VNFs/CNFs designs from application vendors that is compliant to CNTT specifications. It is also understood that, in some areas, the industry might not have solutions that are fully aligned with CNTT requirements. Therefore, an evolution or transitional strategy, comprised of one or more compromises/Exceptions and/or transitions is required to address technology that does not presently conform to CNTT mandates, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future. 
 
-This informs application designers how RC and ultimately OVP will react when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of an OVP badge.
+This strategy will inform application designers how RC and ultimately OVP will react when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of an OVP badge.
 
-**Figure 3** explains transitional plan approach in CNTT.
-
-<p align="center"><img src="../figures/tech_transition_plan.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
-<p align="center"><b>Figure 3:</b> Transitional Plans in CNTT</p>
+The Adoption Strategy has the following elements (as shown in **Figure 3** below):
+- A VNF/CNF Generation
+- Exceptions/Compromises List.
+- Dates (Time Points)
 
 <p align="center"><img src="../figures/adoption_parts.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
-<p align="center"><b>Figure 4:</b> Transitional Plans Structure in CNTT</p>
+<p align="center"><b>Figure 3:</b> Transitional Plans Elements within CNTT</p>
+
+As Technology evolves and the infrastructure evolves with it, Less and less of exceptions/compromises will be needed and hence the Generation of VNFs/CNFs is expected to evolve with it until VNFs/CNFs are completely compliant to CNTT as shown in **Figure 4** below. 
+
+<p align="center"><img src="../figures/tech_transition_plan.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
+<p align="center"><b>Figure 4:</b> Transitional Plans and evolution Generations within CNTT</p>
 
 <a name="8.4.2"></a>
-### 8.4.2 VNF Transition Generations
+### 8.4.2 VNF Evolution Generations
 
 **Non-Conformant**: (Non-Conformant): None are aligned.
 
@@ -58,7 +63,7 @@ This informs application designers how RC and ultimately OVP will react when enc
 **Gen4**: (Fully Conformant): All items are aligned.
 
 <a name="8.4.3"></a>
-### 8.4.3 CNF Transition Generations
+### 8.4.3 CNF Evolution Generations
 
 **Non-Conformant**: (Non-Conformant): None are aligned.
 
