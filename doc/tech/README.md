@@ -84,6 +84,19 @@ The downside of para-virtualisation interfaces is the involvement of the hypervi
 <p align="center"><img src="./figures/tech_virtio.png" alt="virtio" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 4:</b> Para-Virtualised interface components (software only).</p>
 
+<a name="4.1.2"></a>
+#### 4.1.2 Direct assignment with VT-d
+
+Direct assignment (or pass-through) is when an IO device is directly assigned to an application by-passing the hypervisor. Direct assignment is supported in intel platforms (using VT-d technology) and by AMD platforms (using AMD-V technology) as shown in **Figure 5**.
+
+Once an IO device is directly assigned to an application, that application will then have an exclusive access to that device and no other entities (including the hypervisor) can access it.
+This method provides better performance than the para-virtualised one as no hypervisor is involved but provides less flexibility and less portability.
+
+Having an IO device directly assigned to an application means that the application needs to run vendor specific drivers and libraries to be able to access that device which makes the application less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of CNTT and hence this method of IO Virtualisation should not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+
+<p align="center"><img src="./figures/tech_vtd.png" alt="virtio" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 5:</b> Direct Assignment with VT-d.</p>
+
 <a name="4.3"></a>
 ### 4.2 SmartNICs
 
