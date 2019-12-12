@@ -36,7 +36,6 @@ It is vitally important for CNTT to have working NFVI solutions from NFVI vendor
 
 This informs application designers how RC and ultimately OVP will react when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of an OVP badge.
 
-
 **Figure 3** explains transitional plan approach in CNTT.
 
 <p align="center"><img src="../figures/tech_transition_plan.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
