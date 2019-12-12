@@ -420,7 +420,7 @@ n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
 
-Persistent storage is associated with VNFs via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of **(TBD)**. Extensions are configured with the required performance category, as per Table 4-19. Multiple persistent Storage Extensions can be attached to virtual compute instances.
+Persistent storage is associated with VNFs via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-19. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
 Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
