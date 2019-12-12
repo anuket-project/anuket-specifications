@@ -29,6 +29,14 @@
 <a name="8.4.1"></a>
 ### 8.4.1 Adoption Strategy
 
+It is vitally important for CNTT to have working NFVI solutions from NFVI vendors and mature VNFs/CNFs designs from application vendors that is compliant to CNTT specifications. It is also understood that, in some areas, the industry might not have solutions that are fully aligned with CNTT requirements. Therefore, it is important to have transitional plans to move from what is available today in the industry into fully CNTT compliant solutions and designs.
+
+**Figure 3** explains transitional plan approach in CNTT.
+
+<p align="center"><img src="../figures/tech_transition_plan.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
+<p align="center"><b>Figure 3:</b> Transitional Plans in CNTT</p>
+
+
 <a name="8.4.2"></a>
 ### 8.4.2 VNF Transition Generations
 
