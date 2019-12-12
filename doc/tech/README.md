@@ -57,7 +57,6 @@ Any specification work created within CNTT **must** obey to set of principles sp
 Single root input/output virtualization or SR-IOV is a specification that allows the virtualization and isolation of the PCI Express resources for manageability and performance reasons. A single physical PCI Express can be shared on a virtual environment using the SR-IOV.
 
 
-
 <a name="4.2"></a>
 ### 4.2 PCI-Pass Through
 
