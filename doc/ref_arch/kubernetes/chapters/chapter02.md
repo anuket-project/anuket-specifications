@@ -8,6 +8,13 @@
 * [2.1 Introduction](#2.1)
 * [2.2 Reference Model Requirements](#2.2)
 * [2.3 Kubernetes Architecture Requirements](#2.3)
+  * [2.3.1 General Requirements](#2.3.1)
+  * [2.3.2 Infrastructure Requirements](#2.3.2)
+  * [2.3.3 Kubernetes Cluster Requirements](#2.3.3)
+  * [2.3.4 Interfaces and APIs Requirements](#2.3.4)
+  * [2.3.5 Operations and LCM Requirements](#2.3.5)
+  * [2.3.6 Assurance Requirements](#2.3.6)
+  * [2.3.7 Security Requirements](#2.3.7)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -33,7 +40,7 @@ The Reference Model (RM) defines the NFVI to consist of the physical resources, 
 Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. physical resources), NFVI Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
 
 <a name="2.3.1"></a>
-### 2.3.1 General
+### 2.3.1 General Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -54,7 +61,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 <p align="center"><b>Table 2-1:</b> Kubernetes Architecture: General Requirements</p>
 
 <a name="2.3.2"></a>
-### 2.3.2 Infrastructure
+### 2.3.2 Infrastructure Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -82,6 +89,8 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.16` | Network | The Architecture **should**  support co-exisence of multiple Conatiner Network Interface (CNI). |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
+| `req.inf.vir.01`   | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |
+| `req.inf.phy.01`  |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. |
 
 <!--
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
@@ -89,7 +98,6 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.12` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |
 | `req.inf.ntw.13` | Network | The Architecture **should** support IPv6 for Kubernetes workloads. |
 | `req.inf.vir.01`   | Virtualisation |   The Architecture **must** support the capability for Containers to consume virtualised compute, storage and network resources.|
-| `req.inf.phy.01`  |  Physical Infrastructure |   The Architecture **must** support the capability for Containers to consume physical (aka bare metal) compute, storage and network resources. |
 -->
 
 <p align="center"><b>Table 2-2:</b> Kubernetes Architecture: Infrastructure Requirements</p>
@@ -115,7 +123,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-3:</b> Kubernetes Architecture: Kubernetes Cluster Requirements</p>
 
 <a name="2.3.4"></a>
-### 2.3.4 Interfaces & APIs
+### 2.3.4 Interfaces & APIs Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -128,7 +136,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-4:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
 <a name="2.3.5"></a>
-### 2.3.5 Operations and LCM of the Infrastructure
+### 2.3.5 Operations and LCM Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -147,7 +155,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 
 <a name="2.3.6"></a>
-### 2.3.6 Assurance
+### 2.3.6 Assurance Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -159,7 +167,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-6:</b> Kubernetes Architecture: Assurance Requirements</p>
 
 <a name="2.3.7"></a>
-### 2.3.7 Security
+### 2.3.7 Security Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|

@@ -36,8 +36,12 @@ Note that Each requirement may have one or more test cases associated with it.
 <a name="4.3"></a>
 ## 4.3 Traceability Matrix
 
+- Write content that explains this section defines the mapping, or traceability of RM/RA-1 requirements to test cases.
+
 <a name="4.3.1"></a>
 ### 4.3.1 Architecture and OpenStack Requirements
+
+- Describe and define in detail, RM/RA-1 Openstack requirements.
 
 <a name="4.3.2"></a>
 ### 4.3.2 Infrastructure

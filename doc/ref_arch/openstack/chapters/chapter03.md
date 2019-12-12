@@ -9,15 +9,15 @@
   * [3.2.1. Multi-Tenancy (execution environment)](#3.2.1)
   * [3.2.2. Virtual Compute (vCPU and vRAM)](#3.2.2)
   * [3.2.3. Virtual Storage](#3.2.3)
-  * [3.2.4. Virtual Networking – Neutron standalone](#3.2.4)
+  * [3.2.4. Virtual Networking Neutron standalone](#3.2.4)
   * [3.2.5. Virtual Networking – 3rd party SDN solution](#3.2.5)
-* [3.3. NFVI Management Software (VIM)](#3.3)
+* [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
   * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
-  * [3.3.4. Flavour management (i.e. T-Shirt type)](#3.3.4)
+  * [3.3.4. Flavor management](#3.3.4)
 * [3.4. Underlying Resources](#3.4)
-  * [3.4.1. Virtualisation (KVM/QEMU)](#3.4.1)
+  * [3.4.1. Virtualisation](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
 * [3.5. Deployment Models](#3.5)
 * [3.6. Architectural Drivers – Requirements Traceability](#3.6)
@@ -47,9 +47,9 @@ This chapter is organized as follows:
     - VIM Core services (keystone, cinder, nova, neutron etc.)
     - Tenant Separation
     - Host aggregates providing resource pooling
-    - Flavour management (i.e. T-Shirt type)
+    - Flavor management
 *	Underlying Resources: are what provides the resources that allow the Consumable Infrastructure Resources and Services to be created and managed by the NFVI Management Software (VIM).
-    - Virtualisation (KVM/QEMU)
+    - Virtualisation
     - Physical infrastructure
       -	Compute
       -	Network: Spine/Leaf; East/West and North/South traffic
@@ -78,7 +78,7 @@ This RA does not intend to restrict how workloads are distributed across tenants
 ### 3.2.2. Virtual Compute (vCPU and vRAM)
 The virtual compute resources (vCPU and vRAM) used by the VNFs behave like their physical counterparts.  A physical core is an actual processor and can support multiple vCPUs through Symmetric Multi-Threading (SMT) and CPU overbooking. With no overbooking and SMT of 2 (2 threads per core), each core can support 2 vCPUs. With the same SMT of 2 and overbooking factor of 4, each core can support 8 vCPUs. The performance of a vCPU can be affected by various configurations such as CPU pinning, NUMA alignment, and SMT.
 
-The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components. Profiles are defined in the chapters 5.1 and 5.2 of the reference model document. Flavours are defined in the chapter 4.2 of the reference model document.
+The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components. Profiles are defined in the chapters 5.1 and 5.2 of the reference model document. Flavors are defined in the chapter 4.2 of the reference model document.
 
 <a name="3.2.3"></a>
 ### 3.2.3. Virtual Storage
@@ -98,15 +98,22 @@ Images are stored using the OpenStack Glance service discussed below in Section 
 The [OpenStack Storage Table](https://docs.openstack.org/arch-design/design-storage/design-storage-concepts.html#table-openstack-storage) explains the differences between the storage types and typical use cases. The [OpenStack compatible storage backend drivers](https://docs.openstack.org/cinder/latest/reference/support-matrix.html) table lists the capabilities that each of these drivers support.
 
 <a name="3.2.4"></a>
-### 3.2.4. Virtual Networking – Neutron standalone 
-Content to be developed
+### 3.2.4. Virtual Networking Neutron standalone 
+Neutron is an OpenStack project that provides "network connectivity as a service" between interface devices(e.g., vNICs) managed by other OpenStack services (e.g., nova). Neutron allows users to create networks, subnets, ports, routers etc. Neutron also facilitates traffic isolation between different subnets - within as well as across project(s) by using different type drivers/mechanism drivers that use VLANs, VxLANs, GRE (Generic Routing Encapsulation) tunnels etc. For Neutron API consumer, this is abstracted and provided by Neutron. Multiple network segments are supported by Neutron via ML2 plugins to simultaneously utilize varierty of layer 2 networking technologies like VLAN, VxLAN, GRE etc. Neutron also allows to create routers to connect layer 2 networks via "neutron-l3-agent". In addition, floating IP support is also provided that allows a project VM to be accessed using a public IP.
 
 <a name="3.2.5"></a>
 ### 3.2.5. Virtual Networking – 3rd party SDN solution
-Content to be developed
+SDN (Software Defined Networking) controllers separate control and data (user) plane functions where the control plane programmatically configures and controls all network data path elements via open APIs. Open Networking Forum (ONF) defines SDN as “Software-Defined Networking (SDN) is an emerging architecture that is dynamic, manageable, cost-effective, and adaptable, making it ideal for the high-bandwidth, dynamic nature of today's applications. This architecture decouples the network control and forwarding functions enabling the network control to become directly programmable and the underlying infrastructure to be abstracted for applications and network services. The OpenFlow protocol is a foundational element for building SDN solutions." While the ONF definition specifically mentions the OpenFlow protocol in practicality other protocols are also supported by SDN controllers. From our perspective the key messages of the SDN definition are:
+
+- Decoupling of control and forwarding functions into control plane and data plane
+- Networking capabilities that can be instantiated, deployed, configured and managed like software. Network control is programmable and supports dynamic, manageable and adaptable networking.
+
+OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server. Plugins for various SDN controllers include the standard [ML-2 plugin](../chapter04.md#4234-neutron-ml2-integration) and vendor product specific [monolithic plugins](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers).
+
+Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
 
 <a name="3.3"></a>
-## 3.3. NFVI Management Software (VIM)
+## 3.3. Virtualised Infrastructure Manager (VIM)
 The NFVI Management Software (VIM) provides the services for the management of Consumable Resources/Services.
 
 <a name="3.3.1"></a>
@@ -203,16 +210,16 @@ An over use of host aggregates and availability zones can result in a granular p
 Recommendation: Separation of control zone and execution zone into different security zones
 
 <a name="3.3.4"></a>
-### 3.3.4. Flavour management (i.e. T-Shirt type)
-Content to be developed
+### 3.3.4. Flavor management
+A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors lister [here](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours).
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources
 The number of Compute nodes (for workloads) determines the load on the controller nodes and networking traffic and, hence, the number of controller nodes needed in the OpenStack cloud; the number of controller nodes required is determined on the load placed on these controller nodes and the need for High availability and quorum requires at least 3 instances of many of the services on these controller nodes.
 
 <a name="3.4.1"></a>
-### 3.4.1. Virtualisation (KVM/QEMU)
-Content to be developed
+### 3.4.1. Virtualisation
+Virtualisation is a technology that enables a guest Operating System (OS) to be abstracted from the underlying hardware and software. This allows to run multiple Virtual Machines(VMs) on the same hardware. Each such VMs have their own OS and are isolated from each other i.e. application running on one VM does not have the access to resources of another VM. Such virtualisation is supported by various hypervisors available as open-source (KVM, Xen etc.) as well as commercial (Hyper-V, Citrix XenServer etc.). Selecting a hypervisor depends on the workload needs and the features provided by various hypervisors as illustrated in Hypervisor [Feature Support Matrix](https://docs.openstack.org/nova/latest/user/support-matrix.html). OpenStack (Nova) allows the use of various hypervisors within a single installation by means of scheduler filters like ComputeFilter, ImagePropertiesFilter etc.
 
 Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The preferred supported hypervisor in this Reference Architecture is KVM. 
 
