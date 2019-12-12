@@ -53,7 +53,7 @@ Any specification work created within CNTT **must** obey to set of principles sp
 <a name="4.1"></a>
 ### 4.1 IO Virtualization
 
-There are different ways of which IO devices (such as NICs) are presented to VMs for consumption by those VMs. Here is a list of current methods of existing IO Virtualisatin:
+There are different ways of which IO devices (such as NICs) are presented to workloads for consumption by those workloads. Here is a list of current methods of existing IO Virtualisatin:
 
 - Para-Virtualization method (software only).
 - Direct assignment with VT-d.
@@ -71,10 +71,10 @@ There are different ways of which IO devices (such as NICs) are presented to VMs
 This is the preferred method of IO virtualisation as it provides flexibility and full abstraction of workloads from the underlying infrastructure. It usually relies on standard IO interfaces that are implemented in software.
 For Networking, there are two common networking interfaces used: virtio-net for KVM/QEMU and VMXNET for VMware.
 
-Using a standard interface for IO means that applications don’t need to run any proprietary software drivers for specific hardware vendors and the implementation of that application is completely agnostics of the hardware used.
+Using a standard interface for IO means that workload doesn't need to run any proprietary software drivers for specific hardware vendors and the implementation of that workload is completely agnostics of the hardware used.
 
 **Figure 4** below shows the typical components of a para-virtualised interface: 
-- frontEnd driver: The frontEnd driver is an off-the-shelf driver that runs on the guest machine
+- frontEnd driver: The frontEnd driver is an off-the-shelf driver that runs on the workload.
 - backEnd driver: runs on the Hypervisor and is responsible of bridging standard communications coming from applications to a hardware specific ones. 
 
 This nature of this disaggregation is what gives the para-virtualised interfaces the flexibility that makes them favourable in a virtualised environment.
@@ -87,15 +87,42 @@ The downside of para-virtualisation interfaces is the involvement of the hypervi
 <a name="4.1.2"></a>
 #### 4.1.2 Direct assignment with VT-d
 
-Direct assignment (or pass-through) is when an IO device is directly assigned to an application by-passing the hypervisor. Direct assignment is supported in intel platforms (using VT-d technology) and by AMD platforms (using AMD-V technology) as shown in **Figure 5**.
+Direct assignment (or pass-through) is when an IO device is directly assigned to a workload by-passing the hypervisor. Direct assignment is supported in intel platforms (using VT-d technology) and by AMD platforms (using AMD-V technology) as shown in **Figure 5**.
 
-Once an IO device is directly assigned to an application, that application will then have an exclusive access to that device and no other entities (including the hypervisor) can access it.
+Once an IO device is directly assigned to a workload, that workload will then have an exclusive access to that device and no other entities (including the hypervisor) can access it.
+
 This method provides better performance than the para-virtualised one as no hypervisor is involved but provides less flexibility and less portability.
 
-Having an IO device directly assigned to an application means that the application needs to run vendor specific drivers and libraries to be able to access that device which makes the application less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of CNTT and hence this method of IO Virtualisation should not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of CNTT and hence this method of IO Virtualisation should not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
 
 <p align="center"><img src="./figures/tech_vtd.png" alt="virtio" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 5:</b> Direct Assignment with VT-d.</p>
+
+<a name="4.1.3"></a>
+#### 4.1.3 Device Sharing with SR-IOV & VT-d
+
+Unlike Direct assignment, this method allows a hardware device to be shared amongst many workloads where each workload has an exclusive access to one region of the device (known as VF). 
+
+For this method to be possible, the IO device need to support Single Root Input Output Virtualisation (SR-IOV) which allows it to present itself as multiple devices (known as Physical Functions, PFs, and Virtual Functions, VFs as presented in **Figure 6**.
+
+Each of those Virtual Functions can then be independently assigned exclusively to a workload (with the appropriate support by VT-d or AMD-V from the infrastructure).
+
+Similar to the previous method, this method provides better performance than the para-virtualised one but still lack the flexibility and the portability sought and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+
+<p align="center"><img src="./figures/tech_sriov.png" alt="sriov" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 6:</b> Device Sharing with SR-IOV & VT-D..</p>
+
+<a name="4.1.4"></a>
+#### 4.1.4 Para-Virtualisation method (Hardware support)
+
+This method basically is a mixture between the software only para-virtualisation method and the direct assignment (including the device sharing method) where the fronEnd driver which is running on the workload is a standard off the shelf driver whereas the backEnd driver is implemented straight in hardware (by-passing the hypervisor with support from VT-d/AMD-V and SR-IOV in case of device sharing) as shown in **Figure 7**.
+
+Unlike the software only Para-virtualised interfaces, this method provides better performance as it by-passes the hypervisor and unlike Direct Assignment methods, this method doesn’t require proprietary drivers to run in the workload and hence this method make workloads portable.
+
+However, this method doesn’t provide the same level of flexibility as the software only para-virtualisation method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+
+<p align="center"><img src="./figures/tech_virtio_hw.png" alt="vitio_hw" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 7:</b> Para-Virtualisation method (with hardware support).</p>
 
 <a name="4.3"></a>
 ### 4.2 SmartNICs
