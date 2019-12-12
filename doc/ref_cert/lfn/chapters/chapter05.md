@@ -12,7 +12,6 @@
 * [5.5 Methodology](#5.5)
 * [5.6 Protoype VNFs](#5.6)
 * [5.7 Profiles Reference](#5.7)
-* [5.8 Frameworks](#5.8)
 
 <a name="5.1"></a>
 ### 5.1 Introduction
@@ -246,9 +245,4 @@ certification portal , review and granting the badge to this VNF.
 <a name="5.7"></a>
 ### 5.7 Profiles Reference
 
-- Describe the different profiles used for testing and verification 
-
-<a name="5.8"></a>
-### 5.8 Frameworks
-
-- Provide a list of framework requirements for VNF certification.
+- Describe the different profiles used for testing and verification
