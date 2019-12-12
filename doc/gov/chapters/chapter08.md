@@ -36,6 +36,8 @@ It is vitally important for CNTT to have working NFVI solutions from NFVI vendor
 <p align="center"><img src="../figures/tech_transition_plan.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
 <p align="center"><b>Figure 3:</b> Transitional Plans in CNTT</p>
 
+<p align="center"><img src="../figures/adoption_parts.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
+<p align="center"><b>Figure 4:</b> Transitional Plans Structure in CNTT</p>
 
 <a name="8.4.2"></a>
 ### 8.4.2 VNF Transition Generations
