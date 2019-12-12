@@ -14,9 +14,9 @@
 <a name="A.2"></a>
 ## A.2 RA Transitional Generations
 
-VNF Generation are defined by Adoption Governance WS (link)
+VNF Generation are defined by [Adoption Governance WS](../../../doc/gov/chapters/chapter08.md#842-vnf-transition-generations)
 
-> This will contains architectural choices that are suitable for each generation based on the Exceptions (deviation) agreed on in RM A.5
+> This will contains architectural choices that are suitable for each generation based on the Exceptions (deviation) agreed on in RM A.3
 
 <a name="A.3"></a>
 ## A.3 TBC

@@ -19,7 +19,7 @@
 <a name="A.3"></a>
 ## A.3 VNF Transitional Generations
 
-VNF Generation are defined by Adoption Governance WS (link)
+VNF Generation are defined by [Adoption Governance WS](../../../doc/gov/chapters/chapter08.md#842-vnf-transition-generations)
 
 | VNF Generation | Exception List | Notes |
 |------------|----------------|-------|
@@ -30,6 +30,8 @@ VNF Generation are defined by Adoption Governance WS (link)
 
 <a name="A.4"></a>
 ## A.4 CNF Transitional Generations
+
+CNF Generation are defined by [Adoption Governance WS](../../../doc/gov/chapters/chapter08.md#844-cnf-transition-generations)
 
 | CNF Generation | Exception List | Notes |
 |------------|----------------|-------|
