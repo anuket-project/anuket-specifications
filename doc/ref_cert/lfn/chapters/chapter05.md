@@ -254,12 +254,12 @@ exit criteria:
 * Release notes
 * Provided with required installation guide, configuration guide, etc.
 
-<a name="5.6"></a>
-### 5.6 Protoype VNFs
+<a name="5.5"></a>
+### 5.5 Protoype VNFs
 
 - Introduce concept and purpose for Golden VNFs &/or Prototype VNFs
 
 <a name="5.7"></a>
-### 5.7 Profiles Reference
-
-- Describe the different profiles used for testing and verification
+### 5.6 Profiles Reference
+ VNF Certification is aligned with required profiled defined in
+ [reference model](../../ref_model/chapters/chapter02.md)
