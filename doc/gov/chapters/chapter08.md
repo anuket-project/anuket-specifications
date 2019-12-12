@@ -37,9 +37,9 @@ It is vitally important for CNTT to have working NFVI solutions from NFVI vendor
 This strategy will inform application designers how RC and ultimately OVP will react when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of an OVP badge.
 
 The Adoption Strategy has the following elements (as shown in **Figure 3** below):
-- A VNF/CNF Generation
-- Exceptions/Compromises List.
-- Dates (Time Points)
+- **VNF/CNF Evolution Generations**: Defines the evolution metric from Non-Conformant to Fully Conformant.
+- **Exceptions/Compromises List**: Those are explicitly defined by CNTT for each Generation. 
+- **Dates (Time Points)**: The dates of which the current evolution generation is expected to finish (moving to the next generation)
 
 <p align="center"><img src="../figures/adoption_parts.png" alt="Transition" title="Transitional Plan" width="100%"/></p>
 <p align="center"><b>Figure 3:</b> Transitional Plans Elements within CNTT</p>
@@ -52,28 +52,29 @@ As Technology evolves and the infrastructure evolves with it, Less and less of e
 <a name="8.4.2"></a>
 ### 8.4.2 VNF Evolution Generations
 
-**Non-Conformant**: (Non-Conformant): None are aligned.
+**Non-Conformant**: Big deviation from CNTT direction.
 
-**Gen1**: (Consistent): Going to the right direction but still lots of work to do.
+**Gen1** (Consistent): Going to the right direction but still lots of work to do.
 
-**Gen2**: (Compliant): Many aspects are aligned
+**Gen2** (Compliant): Using current-state technology exceptions and may also have permitted technology version exceptions.
 
-**Gen3**: (Conformant): Most aspects are aligned
+**Gen3** (Conformant): Using current-state technology exceptions but not permitted technology version exceptions.
 
-**Gen4**: (Fully Conformant): All items are aligned.
+**Gen4** (Fully Conformant): No exceptions at all.
 
 <a name="8.4.3"></a>
 ### 8.4.3 CNF Evolution Generations
 
-**Non-Conformant**: (Non-Conformant): None are aligned.
+**Non-Conformant**: Big deviation from CNTT direction.
 
-**Gen1**: (Consistent): Going to the right direction but still lots of work to do.
+**Gen1** (Consistent): Going to the right direction but still lots of work to do.
 
-**Gen2**: (Compliant): Many aspects are aligned
+**Gen2** (Compliant): Using current-state technology exceptions and may also have permitted technology version exceptions.
 
-**Gen3**: (Conformant): Most aspects are aligned
+**Gen3** (Conformant): Using current-state technology exceptions but not permitted technology version exceptions.
 
-**Gen4**: (Fully Conformant): All items are aligned.
+**Gen4** (Fully Conformant): No exceptions at all.
+
 
 <a name="8.5"></a>
 ### 8.5 Roadmap
