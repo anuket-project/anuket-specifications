@@ -65,6 +65,25 @@ There are different ways of which IO devices (such as NICs) are presented to VMs
 <p align="center"><img src="./figures/tech_iov.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 3:</b> Relevant IO Virtualisation Techniques</p>
 
+<a name="4.1.1"></a>
+#### 4.1.1 Para-virtualization method (software only)
+
+This is the preferred method of IO virtualisation as it provides flexibility and full abstraction of workloads from the underlying infrastructure. It usually relies on standard IO interfaces that are implemented in software.
+For Networking, there are two common networking interfaces used: virtio-net for KVM/QEMU and VMXNET for VMware.
+
+Using a standard interface for IO means that applications don’t need to run any proprietary software drivers for specific hardware vendors and the implementation of that application is completely agnostics of the hardware used.
+
+**Figure 4** below shows the typical components of a para-virtualised interface: 
+- frontEnd driver: The frontEnd driver is an off-the-shelf driver that runs on the guest machine
+- backEnd driver: runs on the Hypervisor and is responsible of bridging standard communications coming from applications to a hardware specific ones. 
+
+This nature of this disaggregation is what gives the para-virtualised interfaces the flexibility that makes them favourable in a virtualised environment.
+
+The downside of para-virtualisation interfaces is the involvement of the hypervisor which may introduce latency and jitter that can impact the performance.
+
+<p align="center"><img src="./figures/tech_virtio.png" alt="virtio" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 4:</b> Para-Virtualised interface components (software only).</p>
+
 <a name="4.3"></a>
 ### 4.2 SmartNICs
 
