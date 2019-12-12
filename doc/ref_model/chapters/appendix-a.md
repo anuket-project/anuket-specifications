@@ -5,12 +5,10 @@
 ## Table of Contents
 * [A.1 Guidelines for VNF Vendors](#A.1)
 * [A.2 Guidelines for CNF Vendors](#A.2)
-* [A.3 VNF Transition Generations](#A.3)
-* [A.4 CNF Transition Generations](#A.4)
-* [A.5 Exceptions](#A.5)
-* [A.6 VNF Generation Timelines](#A.6)
-* [A.7 CNF Generation Timelines](#A.7)
-* [A.8 Miscellaneous](#A.8)
+* [A.3 VNF Generations Details](#A.3)
+* [A.4 CNF Generations Details](#A.4)
+* [A.5 Technical Exceptions](#A.5)
+* [A.6 Miscellaneous](#A.6)
 
 <a name="A.1"></a>
 ## A.1 Guidelines for VNF Vendors
@@ -21,57 +19,34 @@
 <a name="A.3"></a>
 ## A.3 VNF Transitional Generations
 
-**Non-Conformant**: (Non-Conformant): None are aligned.
+VNF Generation are defined by Adoption Governance WS (link)
 
-**Gen1**: (Consistent): Going to the right direction but still lots of work to do.
-
-**Gen2**: (Compliant): Many aspects are aligned
-
-**Gen3**: (Conformant): Most aspects are aligned
-
-**Gen4**: (Fully Conformant): All items are aligned.
+| VNF Generation | Exception List | Notes |
+|------------|----------------|-------|
+| Gen1 |  |  | 
+| Gen2 |  |  | 
+| Gen3 |  |  | 
+| Gen4 |  |  | 
 
 <a name="A.4"></a>
 ## A.4 CNF Transitional Generations
 
-**Non-Conformant**: (Non-Conformant): None are aligned.
-
-**Gen1**: (Consistent): Going to the right direction but still lots of work to do.
-
-**Gen2**: (Compliant): Many aspects are aligned
-
-**Gen3**: (Conformant): Most aspects are aligned
-
-**Gen4**: (Fully Conformant): All items are aligned.
+| CNF Generation | Exception List | Notes |
+|------------|----------------|-------|
+| Gen1 |  |  | 
+| Gen2 |  |  | 
+| Gen3 |  |  | 
+| Gen4 |  |  | 
 
 <a name="A.5"></a>
-## A.5 Exceptions
+## A.5 Technical Exceptions
 
 This will be covered in: https://github.com/cntt-n/CNTT/pull/760
 
+
 <a name="A.6"></a>
-## A.6 VNF Generation Timelines
-
-| Generation | Exception List | Time Frame | Notes |
-|------------|----------------|------------|-------|
-| Gen1 |  |  |  |
-| Gen2 |  |  |  |
-| Gen3 |  |  |  |
-| Gen4 |  |  |  |
-
-<a name="A.7"></a>
-## A.7 CNF Generation Timelines
-
-| Generation | Exception List | Time Frame | Notes |
-|------------|----------------|------------|-------|
-| Gen1 |  |  |  |
-| Gen2 |  |  |  |
-| Gen3 |  |  |  |
-| Gen4 |  |  |  |
-
-<a name="A.8"></a>
-## A.8 Miscellaneous
-### A.8.1 VNF Network Monitoring Capabilities - UseCase.
+## A.6 Miscellaneous
+### A.6.1 VNF Network Monitoring Capabilities - UseCase.
 Network Monitoring capabilities exposed by NFVI Platform are used for the passive observation of VNF-specific traffic traversing the NFVI when:
 * Performance issues and/or packet drops reported in VNF
 * Determining performance bottle necks at VNF level
