@@ -43,8 +43,12 @@ Define the framework and process for NFVI certification..
 
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
+**Entry criteria**: Before entering into NFVI certification, NFVI needs to satisfy the following requirements as entry pass:
+* Lab Requirements*: The NFVI lab needs to be setup according to RA1/RA2 as defined by CNTT.
 
-Provide a list of entry and exit criteria to be used for NFVI certifications..
+**Exit criteria**: NFVI certification testing should completed with following exit criteria:
+* All mandatory test cases should pass.
+* A report to be generated with test summary along with test results and statistics in HTML, JSON, XML etc. format.
 
 <a name="2.7"></a>
 ## 2.7 Frameworks
