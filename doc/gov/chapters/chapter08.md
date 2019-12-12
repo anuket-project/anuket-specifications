@@ -87,10 +87,10 @@ As Technology evolves and the infrastructure evolves with it, Less and less of e
 
 | Generation | Details | Date | Notes |
 |------------|----------------|------------|-------|
-| Gen1 | "refer to RM + RA1 Appendix" |  |  |
-| Gen2 | "refer to RM + RA1 Appendix" |  |  |
-| Gen3 | "refer to RM + RA1 Appendix" |  |  |
-| Gen4 | "refer to RM + RA1 Appendix" |  |  |
+| Gen1 | As per Technical Specification |  |  |
+| Gen2 | As per Technical Specification |  |  |
+| Gen3 | As per Technical Specification |  |  |
+| Gen4 | As per Technical Specification |  |  |
 
 
 <a name="8.5.3"></a>
@@ -98,10 +98,12 @@ As Technology evolves and the infrastructure evolves with it, Less and less of e
 
 | Generation | Details | Date | Notes |
 |------------|----------------|------------|-------|
-| Gen1 | "refer to RM + RA2 Appendix" |  |  |
-| Gen2 | "refer to RM + RA2 Appendix" |  |  |
-| Gen3 | "refer to RM + RA2 Appendix" |  |  |
-| Gen4 | "refer to RM + RA2 Appendix" |  |  |
+| Gen1 | As per Technical Specification |  |  |
+| Gen2 | As per Technical Specification |  |  |
+| Gen3 | As per Technical Specification |  |  |
+| Gen4 | As per Technical Specification |  |  |
 
 <a name="8.5.4"></a>
 #### 8.5.4 Infrastructure Adoption Roadmap
+
+To be figured out.
