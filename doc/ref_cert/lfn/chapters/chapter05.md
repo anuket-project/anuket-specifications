@@ -8,10 +8,9 @@
 * [5.1 Introduction](#5.1)
 * [5.2 Scope](#5.2)
 * [5.3 Platform Requirements](#5.3)
-* [5.4 Certification Process](#5.4)
-* [5.5 Methodology](#5.5)
-* [5.6 Protoype VNFs](#5.6)
-* [5.7 Profiles Reference](#5.7)
+* [5.4 Certification Methodology](#5.4)
+* [5.5 Protoype VNFs](#5.5)
+* [5.6 Profiles Reference](#5.6)
 
 <a name="5.1"></a>
 ### 5.1 Introduction
@@ -223,19 +222,37 @@ so following model deliverables would enable it:
 * Standalone installation scripts and zip artifact
 
 <a name="5.4"></a>
-### 5.4 Certification Process
+### 5.4 Certification Methodology
+Perform the required VNF certtification based on scope defined in this chapter and by
+leveraging the test cases and tools which provides the features defined under
+platform requirements as above.
 
-This process details the end-end steps required for certifying the given VNF by
+It defines the end-end Certification Process required for certifying the given VNF by
 using this platform (providing above requirements), producing the test results to
 certification portal , review and granting the badge to this VNF.
 
+[More details](https://wiki.lfnetworking.org/display/LN/VNF+Certification+Lifecycle)
+
 #### 5.4.1 Entry & Exit criteria
 
-<a name="5.5"></a>
-### 5.5 Methodology
+**Entry criteria**: Before entering into the VNF certification, VNF needs to
+satisfy the following requirements as entry pass:
 
-- Content to be written.
-- Describe the methodolgy and selection process for VNF C&V Framework requirements
+* *Environment Requirements* : Details on required dependent system which are
+required to deploy and test VNF.
+* *VNF artifact* : VNF cloud (native) image, VNF configurations and guidelines,
+etc
+* *NFVi profiles*: List of supporting OVP Certified CNTT compliant NFVi
+* Completed Security review report
+* Vendor specific test cases and its deployment and usage guidelines
+
+**Exit criteria**: VNF certification testing should completed with following
+exit criteria:
+
+* All required test cases should be passed
+* No outstanding high severity issues and other know issues to be documented
+* Release notes
+* Provided with required installation guide, configuration guide, etc.
 
 <a name="5.6"></a>
 ### 5.6 Protoype VNFs
