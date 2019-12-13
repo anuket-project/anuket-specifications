@@ -16,7 +16,7 @@ This Appendix has two goals:
 1. Provide guidance to VNF or more generally Application vendors on how to consume CNTT Reference Model and Architectures
 2. Provide usable definitions of maturity levels for VNF software architecture between Physical-to-Virtual migration and “Cloud Native”.
 
-The goal is not to be prescriptive on how to re-architect existing or architect new applications but rather staying within scope of focusing on interface and interaction between applications and platform. So, it will primarily look at Operational impact (in steps like Install, Configure, Validate, Operate) towards full lifecycle automation of Develop decisions made (in steps like Design, Simulate, Build, Bundle).
+The goal is not to be prescriptive on how to re-architect existing or architect new applications but rather staying within scope of focusing on interface and interaction between applications and platform. So, it will primarily look at Operational impact (in steps like Install, Configure, Validate, Operate) towards full lifecycle automation, after all Develop decisions were made (in steps like Design, Simulate, Build, Bundle).
 
 <a name="A.2"></a>
 ## A.2 Intro and Terminology
@@ -28,7 +28,7 @@ Terminology used or introduced:
 
 -	Encapsulation = Restricting of direct access to some of an object's components. [2]
 
--	Appliance deployment model = Application has tight coupling with underlying Platform. That application can be virtualized or containerized.
+-	Appliance deployment model = Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
 
 -	Tenant/Cloud deployment model = Tenant brings applications that are decoupled from the platform provided by Cloud operator. Tenant and Cloud operator are normally different legal entities.
 
@@ -48,7 +48,7 @@ Terminology used or introduced:
 Taking advantage of CNTT pre-defined environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
 
 **1. Infrastructure**:
-- a. Application functionality or application control require infrastructure components beyond RM profiles or requires infrastructure configuration changes beyond RA exposed APIs. Generally, such application is tightly coupled with infrastructure which results in Appliance deployment model and primary reason for starting CNTT. 
+- a. Application functionality or application control require infrastructure components beyond RM profiles or requires infrastructure configuration changes beyond RA exposed APIs. Generally, such application is tightly coupled with infrastructure which results in Appliance deployment model. 
 - b. Application control using RA APIs finds node with required infrastructure component(s), and in that node using RA APIs configures infrastructure components that make application work. Example is application that requires certain acceleration adapter available in RM profile and is exposed through RA APIs.
 - c. Application control using RA APIs finds node with optional infrastructure component(s), and in that node using RA APIs configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is app that would work better with certain acceleration adapter but can also work without it.
 - d. Application control using RA APIs finds general profile node without any specific infrastructure component.
