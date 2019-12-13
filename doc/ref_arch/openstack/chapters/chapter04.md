@@ -47,7 +47,7 @@ Additionally, This Chapter will delve deeper into certain topics that need to be
 In OpenStack, KVM is configured as the default hypervisor for compute nodes. 
 - Configuration: [OpenStack](https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
-    - QEMIU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
+    - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
   -	Configure Compute backing storage
   -	Specify the CPU Model for KVM guests (VMs)
   -	KVM Performance Tweaks
@@ -77,7 +77,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	How many nodes to meet SLA
     -	Minimum 3 nodes for high availability
 -	HW specifications
-    -	the boot disks are SSD disks with a minimum capacity of 240GB 
+    -	Boot disks are dedicated with Flash technology disks
 -	Sizing rules
     -	It is easy to horizontally scale the number of control nodes
     -	The number of control nodes is determined by a minimum number needed for high availability (viz., 3 nodes) and the extra nodes needed to handle the transaction volumes, in particular, for Messaging service (e.g., RabbitMQ) and Database (e.g., MySQL) to track state. 
@@ -113,7 +113,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	How many nodes to meet SLA
     - minimum: two nodes per profile
 -	HW specifications
-    -	the boot disks are SSD disks with 240GB minimum
+    -	Boot disks are dedicated with Flash technology disks
 -	Sizing rules
 
 | Number of CPU sockets| s | 
@@ -205,7 +205,7 @@ The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configurati
 
 #### 4.2.4.1. Ceph Storage Cluster
 The Ceph storage cluster is deployed on bare metal hardware. The minimal configuration is a cluster of three bare metal servers to ensure High availability. The Ceph Storage cluster consists of 3 main daemon types:
--	Monitor
+-	CEPH-MON (Ceph Monitor)
 -	OSD (object storage daemon)
 -	RadosGW (Rados Gateway)
 
@@ -223,9 +223,9 @@ How many nodes to meet SLA :
 -	minimum: three bare metal servers where Monitors are collocated with OSD. Note: at least 3 Monitors and 3 OSDs are reuired for High AVailability. 
 
 HW specifications :
--	the boot disks are SSD disks with a minimum capacity of 120GB
--	for an IOPS oriented cluster (full SSD),  the journal can be hosted on OSD disks
--	for a capacity oriented cluster (HDD), the journal must be hosted on dedicated SSD disks
+- Boot disks are dedicated with Flash technology disks
+- For an IOPS oriented cluster (Flash technology ), the journal can be hosted on OSD disks
+- For a capacity oriented cluster (HDD), the journal must be hosted on dedicated Flash technology disks
 
 Sizing rules :
 -	Minimum of 6 disks per server
