@@ -223,7 +223,7 @@ so following model deliverables would enable it:
 
 <a name="5.4"></a>
 ### 5.4 Certification Methodology
-Perform the required VNF certtification based on scope defined in this chapter and by
+Perform the required VNF certification based on scope defined in this chapter and by
 leveraging the test cases and tools which provides the features defined under
 platform requirements as above.
 
@@ -238,8 +238,14 @@ certification portal , review and granting the badge to this VNF.
 **Entry criteria**: Before entering into the VNF certification, VNF needs to
 satisfy the following requirements as entry pass:
 
-* *Environment Requirements* : Details on required dependent system which are
-required to deploy and test VNF along with OVP lab schedule details.
+* *Environment Requirements* : Published details providing evidence that a RAx compliant lab has been implemented, meeting requirements set forth in respective RM and RAx documentation for features, options, and capabilities needed for VNF test validations. Expected information includes:
+  * Lab Flavor
+  * Component software rev levels
+  * Confirmation of compatibility with external systems
+  * Tenant needs identified
+  * All connectivity, network, image, VMs, delivered with successful pairwise tests
+  * Lab instrumented for proper monitoring
+
 * *VNF artifact* : VNF cloud (native) image, VNF configurations and guidelines,
 automation scripts, etc
 * *NFVi profiles*: List of supporting OVP Certified CNTT compliant NFVi
@@ -250,7 +256,7 @@ automation scripts, etc
 exit criteria:
 
 * All required test cases should be passed
-* No outstanding high severity issues and other know issues to be documented
+* No outstanding high severity issues and other known issues to be documented
 * Release notes
 * Provided with required installation guide, configuration guide, etc.
 * Test results collated, centralized, and normalized, with a final report generated
