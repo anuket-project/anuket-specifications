@@ -253,6 +253,10 @@ exit criteria:
 * No outstanding high severity issues and other know issues to be documented
 * Release notes
 * Provided with required installation guide, configuration guide, etc.
+* Test results collated, centralized, and normalized, with a final report generated
+showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement
+  Success/Fail, etc), along with traceability to a functional, or non-functional,
+  requirement
 
 <a name="5.5"></a>
 ### 5.5 Protoype VNFs
