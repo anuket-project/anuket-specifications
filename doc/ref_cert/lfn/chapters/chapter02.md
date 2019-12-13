@@ -48,7 +48,7 @@ Define the framework and process for NFVI certification..
 
 **Exit criteria**: NFVI certification testing should completed with following exit criteria:
 * All mandatory test cases should pass.
-* A report to be generated with test summary along with test results and statistics in HTML, JSON, XML etc. format.
+* Test results collated, centralized, and normalized, with a final report generated showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement Success/Fail, etc), along with traceability to a functional, or non-functional, requirement
 
 <a name="2.7"></a>
 ## 2.7 Frameworks
