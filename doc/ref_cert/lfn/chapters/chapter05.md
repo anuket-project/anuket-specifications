@@ -239,9 +239,9 @@ certification portal , review and granting the badge to this VNF.
 satisfy the following requirements as entry pass:
 
 * *Environment Requirements* : Details on required dependent system which are
-required to deploy and test VNF along with OVP lab schedule details. 
+required to deploy and test VNF along with OVP lab schedule details.
 * *VNF artifact* : VNF cloud (native) image, VNF configurations and guidelines,
-etc
+automation scripts, etc
 * *NFVi profiles*: List of supporting OVP Certified CNTT compliant NFVi
 * Completed Security review report
 * Vendor specific test cases and its deployment and usage guidelines
