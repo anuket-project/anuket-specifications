@@ -108,7 +108,7 @@ place.
 
 #### 5.3.1 Test Case Model
 As there are more number of VNF at different levels of networking such as access,
-transport and core level as well as OSI level L0-L7. Every network functions
+transport and core level as well as OSI level L0-L7. Every network function
 provides set of pre-defined features and functionalities. so its important to
 model test cases for every functionality to identify it uniquely and use it as
 part of test flow design.
@@ -143,7 +143,7 @@ environment to support execution of test cases developed under different run-tim
 * **RPC**: In order to enable the scaling/remote execution, it should be enabled with
 required gRPC or queue support
 
-When VNF test platform execute the test cases, it captures the foot-prints of
+When VNF test platform execute the test cases, it captures the footprints of
 test case execution along with results, which are made available to user and
 integrated system for consuming.
 
