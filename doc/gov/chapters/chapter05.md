@@ -10,28 +10,30 @@
 
 <a name="5.1"></a>
 ## 5.1 Introduction
-Consensus decision making is the model adopted by CNTT for all decisions taken within CNTT. This is essential for the success of CNTT and the buying needed from all parties involved in the community. In scenarios where disagreements are found, a reasonable effort shall be taken to identify the core cause of disagreements and work on a compromise that satisfies all parties involved in the discussion. 
 
-However, in scenarios where an agreement can not be reached, a voting process will be taken place to find a way forward. 
+Consensus decision making is the model adopted by CNTT for all decisions taken within CNTT. Buy in from all community member organisations is essential for the success of CNTT. 
+
+In situations where consensus cannot be reached, a reasonable efforts shall be taken made to identify and address the core root causes of the disagreements. If, in spite of these efforts, an agreement cannot be reached, a the voting process, described below in Section 5.3, shall be undertaken to resolve the issue.
 
 <a name="5.2"></a>
 ## 5.2 Voting representatives
 
-Before any voting can take place, a voting representative list<sup>1</sup> shall be maintained that contains a list of individuals representing their corresponding organisation. Each organisation should only identify a single voting representative.
+Each CNTT member organisation shall nominate a single voting representative. A list of voting representatives shall be maintained within CNTT<sup>1</sup>.
 
-Being on the voting representative list **doesn't** mean the right to vote, the right to vote will be identified via the following criteria<sup>2</sup>:
+Being on the voting representative list **doesn't** mean the right to vote. The following criteria<sup>2</sup> shall be used to identify eligible voting representatives prior to a voting event. To be eligible, the voting representative’s organization must have had at least a person from their organization(or directly associated with them<sup>2</sup>):
 
-- The organisation with a voting representative must have people directly associated with it physically attended at least **one** F2F workshop in the 6 months period prior to the voting event.
-- The organisation with a voting representative must have people directly associated with it attended at least **five** CNTT meetings in the 3 months period prior to the voting event.
-- The organisation with a voting representative must have people directly associated with it who had at least **two** Issues on GitHub assigned to them that resulted in the issues being resolved in the 3 months period prior to the voting event.
-- The organisation with a voting representative must have people directly associated with it created at least **two** Pull Requests on GitHub in the 3 months period prior to the voting event.
-- The organisation with a voting representative must have people directly associated with it provided at least **two** reviews on Pull Requests on GitHub in the 3 months period prior to the voting event.
-  - A review on a PR is either an approval, a request for change, or a comment.
-- Individuals who doesn't present an organisation will not have voting right.
+
+1. to have physically attended at least **one** F2F workshop in the 6 months period prior to the voting event;
+1. to have attended at least **five** CNTT meetings in the 3 months period prior to the voting event;
+1. to have had at least **two** Issues on GitHub assigned to them that resulted in the issues being resolved in the 3 months period prior to the voting event;
+1. to have created at least **two** Pull Requests on GitHub in the 3 months period prior to the voting event.
+1. to have created at least **two** reviews on Pull Requests on GitHub in the 3 months period prior to the voting event where a review on a PR is either an approval, a request for change, or a comment.
 
 <sup>1)</sup>https://github.com/cntt-n/CNTT/wiki/Voting-Representatives
 
 <sup>2)</sup>The criteria will be checked and the voting representative list will be updated prior any voting event when the voting process kicks in.
+
+<sup>3)</sup> Individuals who doesn't present an organisation will not have voting right.
 
 <a name="5.3"></a>
 ## 5.3 Voting Process
