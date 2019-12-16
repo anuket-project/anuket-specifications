@@ -20,7 +20,7 @@ In situations where consensus cannot be reached, a reasonable efforts shall be t
 
 Each CNTT member organisation shall nominate a single voting representative. A list of voting representatives shall be maintained within CNTT<sup>1</sup>.
 
-Being on the voting representative list **doesn't** mean the right to vote. The following criteria<sup>2</sup> shall be used to identify eligible voting representatives prior to a voting event. To be eligible, the voting representative’s organization must have had at least a person from their organization(or directly associated with them<sup>2</sup>) satisfies **ALL** each condition below:
+Being on the voting representative list **doesn't** mean the right to vote. The following criteria<sup>2</sup> shall be used to identify eligible voting representatives prior to a voting event. To be eligible, the voting representative’s organization must have had at least a person from their organization(or directly associated with them<sup>2</sup>) satisfies **each** condition below:
 
 1. to have physically attended at least **one** F2F workshop in the 6 months period prior to the voting event;
 1. to have attended at least **five** CNTT meetings in the 3 months period prior to the voting event;
