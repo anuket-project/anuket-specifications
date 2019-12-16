@@ -16,7 +16,7 @@ This Appendix has two goals:
 1. Provide guidance to VNF or more generally Application vendors on how to consume CNTT Reference Model and Architectures
 2. Provide usable definitions of maturity levels for VNF software architecture between Physical-to-Virtual migration and “Cloud Native”.
 
-The goal is not to be prescriptive on how to re-architect existing or architect new applications but rather staying within scope of focusing on interface and interaction between applications and platform. So, it will primarily look at Operational impact (in steps like Install, Configure, Validate, Operate) towards full lifecycle automation, after all Develop decisions were made (in steps like Design, Simulate, Build, Bundle).
+The goal is not to be prescriptive on how to re-architect existing or architect new applications but rather staying within scope of focusing on interface and interaction between applications and platform. So, it will primarily look at Operational impact (in steps like Install, Configure, Validate, Operate) towards full lifecycle automation supporting CI/CD.
 
 <a name="A.2"></a>
 ## A.2 Intro and Terminology
