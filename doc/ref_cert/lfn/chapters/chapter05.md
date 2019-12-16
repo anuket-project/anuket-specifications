@@ -141,7 +141,7 @@ environment to support execution of test cases developed under different run-tim
 (JVM, Python, Shell, Container, Cloud VM, etc)
 
 * **RPC**: In order to enable the scaling/remote execution, it should be enabled with
-required gRPC or queue support
+required RPC support.
 
 When VNF test platform execute the test cases, it captures the footprints of
 test case execution along with results, which are made available to user and
