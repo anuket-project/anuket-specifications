@@ -59,7 +59,7 @@ Perform compliance check based on
 
 -   OpenStack HOT using ONAP VNFREQS
 
--   GSMA profile (Check with Rabi)
+-   GSMA profile as defined in *chapter RM-04*.
 
 ##### Verification
 
