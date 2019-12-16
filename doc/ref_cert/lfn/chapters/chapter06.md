@@ -63,8 +63,8 @@ In order to Certificate the VNF, CNTT define the following four category testing
 
 |  VNF Test Case Category   |  Category Definitions  |
 | ----------------------- | ------------------|
-|  Compliance testing|  compliance check based on TOSCA using ETSI SOL004 & SOL001；OpenStack HOT using ONAP VNFREQS；GSMA profile  |
-|  Verification testing|  Perform on-boarding/ verification life cycle operation (from instantiation,configuration, update, termination) using MANO supporting CNTT compliant NFVI. |
+|  Compliance testing|  compliance check based on TOSCA using ETSI SOL004 & SOL001;OpenStack HOT using ONAP VNFREQS;GSMA profile  |
+|  Verification testing|  Perform on-boarding/ verification life cycle operation (from instantiation,configuration, update, termination) using service/resource Orchestrator supporting CNTT compliant NFVI. |
 | Validation Testing  |  Perform various VNF type specific functionality operations on CNTT RA & RM compliant NFVI |
 |Performance testing| Perform various performance related testing and facilitate for benchmarking the VNF performance on different profile and scenarios.|
 
@@ -146,7 +146,7 @@ Above compliance test cases defination can be found https://github.com/onap/vnfs
 
 - Verification test cases
 In general， the VNF Manager, in collaboration with the NFV Orchestrator, the VIM and the EM, is responsible for managing a VNF's lifecycle. The lifecycle phases are listed below：
-  • VNF on-boarding, it refers to VNF package onboarding to MANO
+  • VNF on-boarding, it refers to VNF package onboarding to service/resouce Orchestrator
   • VNF instantiation, once the VNF is instantiated,  its associated VNFCs have been successfully instantiated and have been allocated necessary NFVI resources
   • VNF scaling/updating, it means the VNF can scale or update by allocating more or less NFVI resources
   • VNF termination, any NFVI resources consumed by the VNF can be cleaned up and released.
