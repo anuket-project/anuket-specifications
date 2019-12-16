@@ -44,7 +44,7 @@ CNTT has no formal membership, and nothing to sign. Participation is open to any
 
 LFN Anti-Trust Policy https://r.lfnetworking.org/Antitrust%20Slide.pdf
 GSMA Anti-Trust Policy https://raw.githubusercontent.com/cntt-n/CNTT/master/Anti-Trust_Notice_GSMA_20190911.png
-CNTT Terms of Reference LFN | GSMA https://wiki.lfnetworking.org/display/LN/Terms+of+Reference?src=contextnavpagetreemode
+CNTT Terms of Reference (ToR) LFN | GSMA https://wiki.lfnetworking.org/display/LN/Terms+of+Reference?src=contextnavpagetreemode
 Code of Conduct LFN https://lfprojects.org/policies/code-of-conduct/
 Trademark Policy https://lfprojects.org/policies/trademark-policy/
 
