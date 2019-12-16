@@ -109,7 +109,7 @@ place.
 #### 5.3.1 Test Case Model
 As there are more number of VNF at different levels of networking such as access,
 transport and core level as well as OSI level L0-L7. Every network function
-provides set of pre-defined features and functionalities. so its important to
+provides set of pre-defined features and functionalities. So its important to
 model test cases for every functionality to identify it uniquely and use it as
 part of test flow design.
 
@@ -190,7 +190,7 @@ across multiple tenant’s environments.
 #### 5.3.9 3rd-party test tool integration
 
 In any telco environment, heterogeneous is inevitable and need for executing the
-test cases from different test tools is required. so system would support to
+test cases from different test tools is required. So system would support to
 on-board the 3rd party test tools and corresponding test cases from them and
 allows executing the test cases from those 3rd party test tools.
 
