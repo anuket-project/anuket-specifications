@@ -26,6 +26,7 @@ Being on the voting representative list **doesn't** mean the right to vote. The 
 1. to have attended at least **five** CNTT meetings in the 3 months period prior to the voting event;
 1. to have had at least **two** Issues on GitHub assigned to them that resulted in the issues being resolved in the 3 months period prior to the voting event;
 1. to have created at least **two** Pull Requests on GitHub in the 3 months period prior to the voting event.
+  - Pull Requests created must contain meaningful commits (not minor).
 1. to have created at least **two** reviews on Pull Requests on GitHub in the 3 months period prior to the voting event where a review on a PR is either an approval, a request for change, or a comment.
 
 <sup>1)</sup>https://github.com/cntt-n/CNTT/wiki/Voting-Representatives
