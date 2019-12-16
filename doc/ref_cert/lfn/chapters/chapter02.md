@@ -19,7 +19,7 @@ NFVI (Network Functions Virtualization Infrastructure) refers to the physical re
 <a name="2.2"></a>
 ## 2.2 Methodology
 The NFVI provided by hardware vendors is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. CNTT recommends RA1/RA2 to be used as a reference architecture for NFVI certification. This  would provide a set of standard interaces to create resources on NFVI. Below step by step process illustrates the NFVI certification methodology:
-* CNTT RA1/RA2 is deployed on NFVI that needs to be certifited.
+* CNTT RA1/RA2 is deployed on NFVI that needs to be certified.
 * Golden KPIs are taken as a reference.
 * A set of tests are run on the target NFVI.
 * KPIs obtained from the target NFVI are collected and submitted to certification portal.
