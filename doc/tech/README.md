@@ -24,7 +24,7 @@ Initially organized early in 2019, the Common Network Function Virtualisation In
 
 Within the framework of the Common Telecom NFVI vision, there are three levels of documents needed to document the components and allow the practical application of the systems. They are, as highlighted in **Figure 1**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
 
-<p align="center"><img src="./figures/tech_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Scope of CNTT</p>
 
 <a name="2.1"></a>
@@ -37,7 +37,7 @@ Within the framework of the Common Telecom NFVI vision, there are three levels o
 
 Below is a diagram of the different artifacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
 
-<p align="center"><img src="./figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="3.0"></a>
