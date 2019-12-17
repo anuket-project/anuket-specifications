@@ -72,12 +72,15 @@ This section describes a set of explicit NFVI capabilities and performance measu
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
-| e.nfvi.cap.001 | # vCPU | number | Max number of vCPU that can be assigned to a single VNFC |
-| e.nfvi.cap.002 | RAM Size | MB | Max memory in MB that can be assigned to a single VNFC by NFVI |
+| e.nfvi.cap.001 | # vCPU | number | Max number of vCPU that can be assigned to a single VNFC <sup>1)</sup>|
+| e.nfvi.cap.002 | RAM Size | MB | Max memory in MB that can be assigned to a single VNFC by NFVI <sup>2)</sup>|
 | e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB | Max storage in GB that can be assigned to a single VNFC by NFVI |
-| e.nfvi.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNFC by NFVI |
+| e.nfvi.cap.004 | # Connection points | number | Max number of connection points that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.005 | Total external (persistent) storage | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI |
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of NFVI</p>
+
+**1)** In a Kubernetes based environment this means the CPU limit of a pod. <br>
+**2)** In a Kubernetes based environment this means the memory limit of a pod.
 
 <a name="4.1.2.2"></a>
 #### 4.1.2.2 Exposed Performance Optimisation Capabilities

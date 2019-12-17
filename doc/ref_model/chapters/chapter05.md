@@ -184,8 +184,8 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | YeS/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
-| nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SmartNic |Y, support of SmartNic |
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
+| nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | N | Y, support of SmartNic |Y, support of SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No | N  | Y | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y | Y |
 
