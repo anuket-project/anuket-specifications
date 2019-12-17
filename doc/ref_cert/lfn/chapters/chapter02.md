@@ -32,8 +32,9 @@ Define and illustrate the certification strategy and vehicle for NFVI..
 
 <a name="2.4"></a>
 ## 2.4 Profiles Reference 
-
-Define the profiles used, why they're important, and what is being certified..
+Several vendors have different types of VNF to serve different use-cases. As such, some VNFs may be compute intensive while other may be network intensive. Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI. To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI certification based on their types of profile.
+ * Certify Vendor NFVI Hardware solution: This allows for certification of only NFVI.
+ * Certify Vendor NFVI Hardware and Software Solution: This allows for certification for NFVI running a particular VNF.
 
 <a name="2.5"></a>
 ## 2.5 Compliance, Verification, and Certification
