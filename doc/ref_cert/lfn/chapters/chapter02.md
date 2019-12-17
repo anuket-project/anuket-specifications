@@ -42,8 +42,14 @@ Similarly, different NFVI vendors may specialise in different hardware profiles 
 
 <a name="2.5"></a>
 ## 2.5 Compliance, Verification, and Certification
-
-Define the framework and process for NFVI certification..
+The below set of steps define the compliance, verification and certification process for NFVI
+* Based on VNF's requirements, NFVI profile is selected - B, C, N
+* The test VNFs are on-boarded using automation scripts on the NFVI.
+* VNF on-boarding is validated by running fucntional tests to ensure that the on-boarding is successful.
+* VNF performance tests are executed and NFVI KPIs are recorded during the tests.
+* KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI certification.
+* If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge.
+* If NFVI KPIs do not meet Golden KPIs, no certification is provided.
 
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
