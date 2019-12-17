@@ -1,0 +1,175 @@
+# Add 'repo' label to any root file changes
+repo:
+  - ./*
+
+# Add 'RM Core' label to any change to one of the RM Chapter files within the doc dir
+"RM Core":
+  - doc/ref_model/chapters/chapter01.md
+  - doc/ref_model/chapters/chapter02.md
+  - doc/ref_model/chapters/chapter03.md
+  - doc/ref_model/chapters/chapter04.md
+  - doc/ref_model/chapters/chapter05.md
+  - doc/ref_model/chapters/appendix-a.md
+  
+# Add 'RM Ops' label to any change to one of the RM Chapter files within the doc dir
+"RM Ops":
+  - doc/ref_model/chapters/chapter06.md
+  - doc/ref_model/chapters/chapter07.md
+  - doc/ref_model/chapters/chapter09.md
+
+# Add 'RM Com' label to any change to one of the RM Chapter files within the doc dir
+"RM Com":
+  - doc/ref_model/chapters/chapter08.md
+ 
+# Add 'RA 1 Core' label to any change to one of the RA 1 Chapter files within the doc dir
+"RA 1 Core":
+  - doc/ref_arch/openstack/chapters/chapter01.md
+  - doc/ref_arch/openstack/chapters/chapter02.md
+  - doc/ref_arch/openstack/chapters/chapter03.md
+  - doc/ref_arch/openstack/chapters/chapter04.md
+
+# Add 'RA 1 Ops' label to any change to one of the RA 1 Chapter files within the doc dir
+"RA 1 Ops":
+  - doc/ref_arch/openstack/chapters/chapter05.md
+  - doc/ref_arch/openstack/chapters/chapter06.md
+  - doc/ref_arch/openstack/chapters/chapter07.md
+  
+# Add 'RA 1 Dev' label to any change to one of the RA 1 Chapter files within the doc dir
+"RA 1 Dev":
+  - doc/ref_arch/openstack/chapters/chapter08.md
+  
+# Add 'RA 2 Core' label to any change to one of the RA 2 Chapter files within the doc dir
+"RA 2 Core":
+  - doc/ref_arch/kubernetes/chapters/chapter01.md
+  - doc/ref_arch/kubernetes/chapters/chapter02.md
+  - doc/ref_arch/kubernetes/chapters/chapter03.md
+  - doc/ref_arch/kubernetes/chapters/chapter04.md
+  
+# Add 'RA 2 Ops' label to any change to one of the RA 2 Chapter files within the doc dir
+"RA 2 Ops":
+  - doc/ref_arch/kubernetes/chapters/chapter05.md
+  - doc/ref_arch/kubernetes/chapters/chapter06.md
+  - doc/ref_arch/kubernetes/chapters/chapter07.md
+ 
+# Add 'RA 2 Dev' label to any change to one of the RA 2 Chapter files within the doc dir
+"RA 2 Dev":
+  - doc/ref_arch/kubernetes/chapters/chapter08.md
+  - doc/ref_arch/kubernetes/chapters/appendix-a.md
+
+# Add 'RI 1 Core' label to any change to one of the RI 1 Chapter files within the doc dir
+"RI 1 Core":
+  - doc/ref_impl/cntt-ri/chapters/chapter01.md
+  - doc/ref_impl/cntt-ri/chapters/chapter02.md
+  - doc/ref_impl/cntt-ri/chapters/chapter03.md
+  - doc/ref_impl/cntt-ri/chapters/chapter04.md
+ 
+# Add 'RI 1 Labs' label to any change to one of the RI 1 Chapter files within the doc dir
+"RI 1 Labs":
+  - doc/ref_impl/cntt-ri/chapters/chapter04.md
+  - doc/ref_impl/cntt-ri/chapters/chapter06.md
+  
+# Add 'RI 1 Dev' label to any change to one of the RI 1 Chapter files within the doc dir
+"RI 1 Dev":
+  - doc/ref_impl/cntt-ri/chapters/chapter07.md
+  - doc/ref_impl/cntt-ri/chapters/chapter08.md
+  
+# Add 'RC 1 NFVI' label to any change to one of the RC 1 Chapter files within the doc dir
+"RC 1 NFVI":
+  - doc/ref_cert/lfn/chapters/chapter01.md
+  - doc/ref_cert/lfn/chapters/chapter02.md
+  - doc/ref_cert/lfn/chapters/chapter03.md
+  - doc/ref_cert/lfn/chapters/chapter04.md
+  
+# Add 'RC 1 VNF' label to any change to one of the RC 1 Chapter files within the doc dir
+"RC 1 VNF":
+  - doc/ref_cert/lfn/chapters/chapter05.md
+  - doc/ref_cert/lfn/chapters/chapter06.md
+  - doc/ref_cert/lfn/chapters/chapter07.md
+
+# Add 'RC 1 Dev' label to any change to one of the RC 1 Chapter files within the doc dir
+"RC 1 Dev":
+  - doc/ref_cert/lfn/chapters/chapter08.md
+  - doc/ref_cert/lfn/chapters/chapter09.md
+  - doc/ref_cert/lfn/chapters/chapter10.md
+  - doc/ref_cert/lfn/chapters/chapter11.md
+  
+# Add 'Ch01' label to any change to corresponding chapter file within the doc dir
+"Ch 01":
+  - doc/ref_model/chapters/chapter01.md
+  - doc/ref_arch/openstack/chapters/chapter01.md
+  - doc/ref_arch/kubernetes/chapters/chapter01.md
+  - doc/ref_impl/cntt-ri/chapters/chapter01.md
+  - doc/ref_cert/lfn/chapters/chapter01.md
+  
+# Add 'Ch02' label to any change to corresponding chapter file within the doc dir
+"Ch 02":
+  - doc/ref_model/chapters/chapter02.md
+  - doc/ref_arch/openstack/chapters/chapter02.md
+  - doc/ref_arch/kubernetes/chapters/chapter02.md
+  - doc/ref_impl/cntt-ri/chapters/chapter02.md
+  - doc/ref_cert/lfn/chapters/chapter02.md
+  
+# Add 'Ch03' label to any change to corresponding chapter file within the doc dir
+"Ch 03":
+  - doc/ref_model/chapters/chapter03.md
+  - doc/ref_arch/openstack/chapters/chapter03.md
+  - doc/ref_arch/kubernetes/chapters/chapter03.md
+  - doc/ref_impl/cntt-ri/chapters/chapter03.md
+  - doc/ref_cert/lfn/chapters/chapter03.md
+  
+# Add 'Ch04' label to any change to corresponding chapter file within the doc dir
+"Ch 04":
+  - doc/ref_model/chapters/chapter04.md
+  - doc/ref_arch/openstack/chapters/chapter04.md
+  - doc/ref_arch/kubernetes/chapters/chapter04.md
+  - doc/ref_impl/cntt-ri/chapters/chapter04.md
+  - doc/ref_cert/lfn/chapters/chapter04.md
+  
+# Add 'Ch05' label to any change to corresponding chapter file within the doc dir
+"Ch 05":
+  - doc/ref_model/chapters/chapter05.md
+  - doc/ref_arch/openstack/chapters/chapter05.md
+  - doc/ref_arch/kubernetes/chapters/chapter05.md
+  - doc/ref_impl/cntt-ri/chapters/chapter05.md
+  - doc/ref_cert/lfn/chapters/chapter05.md
+  
+# Add 'Ch06' label to any change to corresponding chapter file within the doc dir
+"Ch 06":
+  - doc/ref_model/chapters/chapter06.md
+  - doc/ref_arch/openstack/chapters/chapter06.md
+  - doc/ref_arch/kubernetes/chapters/chapter06.md
+  - doc/ref_impl/cntt-ri/chapters/chapter06.md
+  - doc/ref_cert/lfn/chapters/chapter06.md
+  
+# Add 'Ch07' label to any change to corresponding chapter file within the doc dir
+"Ch 07":
+  - doc/ref_model/chapters/chapter07.md
+  - doc/ref_arch/openstack/chapters/chapter07.md
+  - doc/ref_arch/kubernetes/chapters/chapter07.md
+  - doc/ref_impl/cntt-ri/chapters/chapter07.md
+  - doc/ref_cert/lfn/chapters/chapter07.md
+  
+# Add 'Ch08' label to any change to corresponding chapter file within the doc dir
+"Ch 08":
+  - doc/ref_model/chapters/chapter08.md
+  - doc/ref_arch/openstack/chapters/chapter08.md
+  - doc/ref_arch/kubernetes/chapters/chapter08.md
+  - doc/ref_impl/cntt-ri/chapters/chapter08.md
+  - doc/ref_cert/lfn/chapters/chapter08.md
+  
+# Add 'Ch09' label to any change to corresponding chapter file within the doc dir
+"Ch 09":
+  - doc/ref_model/chapters/chapter09.md
+  - doc/ref_cert/lfn/chapters/chapter09.md
+  
+# Add 'Ch10' label to any change to corresponding chapter file within the doc dir
+"Ch 10":
+  - doc/ref_cert/lfn/chapters/chapter10.md
+  
+# Add 'Ch11' label to any change to corresponding chapter file within the doc dir
+"Ch 11":
+  - doc/ref_cert/lfn/chapters/chapter11.md
+
+"Appendix - A":
+  - doc/ref_model/chapters/appendix-a.md
+  - doc/ref_arch/kubernetes/chapters/appendix-a.md

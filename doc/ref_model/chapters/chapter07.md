@@ -3,25 +3,25 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [7.1 Introduction.](#7.1)
-* [7.2 Principles and Guidelines.](#7.2)
-  * [7.2.1 Overarching Objectives and Goals.](#7.2.1)
-  * [7.2.2 Verification Methodologies.](#7.2.2)
-  * [7.2.3 Governance.](#7.2.3)
-* [7.3 Common standards.](#7.3)
-  * [7.3.1 Potential attack vectors.](#7.3.1)
-  * [7.3.2 Testing demarcation points.](#7.3.2)
-* [7.4 Security Scope.](#7.4)
-  * [7.4.1 In-scope and Out-of-Scope definition.](#7.4.1)
-  * [7.4.2 Define Platform security requirements](#7.4.2)
-  * [7.4.3 Define Workload security requirements](#7.4.3)
-  * [7.4.4 Define Workload security requirements](#7.4.4)
-* [7.5 Platform Security.](#7.5)
-  * [7.5.1 Platform Security Assumption.](#7.5.1)
-  * [7.5.2 Platform ‘back-end’ access security.](#7.5.2)
+* [7.1 Introduction](#7.1)
+* [7.2 Principles and Guidelines](#7.2)
+  * [7.2.1 Overarching Objectives and Goals](#7.2.1)
+  * [7.2.2 Verification Methodologies](#7.2.2)
+  * [7.2.3 Governance](#7.2.3)
+* [7.3 Common standards](#7.3)
+  * [7.3.1 Potential attack vectors](#7.3.1)
+  * [7.3.2 Testing demarcation points](#7.3.2)
+* [7.4 Security Scope](#7.4)
+  * [7.4.1 In-scope and Out-of-Scope definition](#7.4.1)
+  * [7.4.2 Security requirements](#7.4.2)
+  * [7.4.3 Platform security requirements](#7.4.3)
+  * [7.4.4 Workload security requirements](#7.4.4)
+  * [7.4.5 Certification/validation requirements](#7.4.5)
+* [7.5 Platform Security](#7.5)
+  * [7.5.1 General Platform Security](#7.5.1)
+  * [7.5.2 Platform ‘back-end’ access security](#7.5.2)
   * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
-  * [7.5.4 Platform services.](#7.5.4)
-* [7.6 Workload Security.](#7.6)
+* [7.6 Workload Security](#7.6)
 * [7.7 Vendor Responsibilities](#7.7)
   * [7.7.1 Software Hardening](#7.7.1)
   * [7.7.2 Port Protection](#7.7.2)
@@ -34,16 +34,18 @@
   * [7.7.9 Encryption suite supports](#7.7.9)
   * [7.7.10 Password complexity support](#7.7.10)
   * [7.7.11 Customized Banner](#7.7.11)
- * [7.8 Operator responsibility.](#7.2)
-  * [7.8.1 Remote Attestation/openCIT.](#7.2.1)
-  * [7.8.2 VNF Image Scanning / Signing.](#7.2.2)
-* [7.9 VNF Vendors responsibility.](#7.3)
-* [7.10 NFVI Vendors responsibility](#7.4)
-  * [7.10.1 Networking Security Zoning.](#7.4.1)
-  * [7.10.2 Encryption.](#7.4.2)
-  * [7.10.3 Platform Patching.](#7.4.3)
-  * [7.10.4 Boot Integrity Measurement (TPM).](#7.4.4)
-* [7.11 Certification requirements](#7.8)
+ * [7.8 Operator responsibility](#7.8)
+  * [7.8.1 Remote Attestation/openCIT](#7.8.1)
+  * [7.8.2 VNF Image Scanning / Signing](#7.8.2)
+* [7.9 VNF Vendors responsibility](#7.9)
+* [7.10 NFVI Vendors responsibility](#7.10)
+  * [7.10.1 Networking Security Zoning](#7.10.1)
+  * [7.10.2 Encryption](#7.10.2)
+  * [7.10.3 Platform Patching](#7.10.3)
+  * [7.10.4 Boot Integrity Measurement (TPM)](#7.10.4)
+  * [7.10.5 Runtime Integrity Measurement (TPM)](#7.10.5)
+  * [7.10.6 NFVI & VIM](#7.10.6)
+* [7.11 Certification requirements](#7.11)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -94,6 +96,8 @@ Standards organizations with recommendations and best practices, and certificati
  • FedRAMP Certification https://www.fedramp.gov/ (US Only)
 
  • ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
+
+ • ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/committee/1427-nfv
 
 • ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
 
@@ -156,30 +160,53 @@ Insuring that the security standards and best practices are incorporated into th
 
 The scope of the security controls requirements maps to the scope of the Reference Model architecture.
 
-The Reference Model scope is shown below (as outlined in chapter 1 of the reference model): :
+The Reference Model scope is shown below (as outlined in chapter 1 of the reference model):
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="Scope" title="ETSI Scope" width="100%"/></p>
 <p align="center"><b>Figure 7-2:</b> ETSI Mapping</p>
-
 
 This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
 
 There will be a different set of security requirements for each NFVi reference architecture. In this case, the first reference architecture is OpenStack.
 
 <a name="7.4.2"></a>
-## 7.4.2 Define Platform security requirements
+## 7.4.2 Security Requirements
 
-    *(An overview/introduction to platform security requirements and incl
-    types of platforms covered)*
+The following diagram shows the different security domains that impact the Reference Model:
+
+<p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
+<p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
+
+<a name="7.4.2"></a>
+## 7.4.3 Platform security requirements
+
+At a high level, the following areas/requirements cover platform security for a particular deployment:
+* Platform certification
+* Secure access controls for administrators
+* Secure API interface for Tenants
+* Encryption for all external and control comms
+* Strong separation between tenants - ensuring network, data, and runtime process isolation between tenants
+* Authenticated/secure APIs provided to overlay network administrators
+* Platform change control on hardware
+* Templated approved changes for automation where available
+* Typically well defined security framework documentation including approved deployment use cases
+* Infrastructure software update process
+* Identity Domain = platform
 
 <a name="7.4.3"></a>
-## 7.4.3 Define Workload security requirements
+## 7.4.4 Workload security requirements
 
-    *(An overview/introduction to workload security requirements and incl
-    types of workloads covered)*
+At a high level, the following areas/requirements cover workload security for a particular deployment:
+* Up to platform-level certification
+* Each workload network will need to undertake it own security self-assessment and accreditation, and not inherit a security accreditation from the platform
+* Potentially automated service activation
+* Workload owner owns workload security certification process
+* Workload owner owns workload design change process
+* Workload owner owns workload software update process
+* Identity Domain = workload
 
 <a name="7.4.4"></a>
-## 7.4.4 Define certification/validation requirements
+## 7.4.5 Certification/validation requirements
 
     *(An overview/introduction to workload certification requirements and
     incl types of workloads covered)*
@@ -188,237 +215,66 @@ There will be a different set of security requirements for each NFVi reference a
 ## 7.5 Platform Security
 
 <a name="7.5.1"></a>
-## 7.5.1 Platform Security Assumption
-    platform security compliance will be the responsibility of the platform owner.
+### 7.5.1 General Platform Security
 
-    *(Define the platform security assumption. Note also that the platform
-    may have a different security posture/level to the workload, but that
-    the workload can leverage security accreditations/compliances/services
-    offered by the platform).*
+The security certification of the platform will typically need to be the same, or higher, than the workload or VNF requirements.
 
--   Refer industry references (case by case) – i.e. ISO, NIST, and etc.
+The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by VNFs, or by Data Centre Operations staff supporting the workload, or by tenants accessing VNFs. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
-    *(Can use material from, and update, the existing CNTT section on
-    industry security standards)*
+<p align="center"><img src="../figures/ch7_data_access_model.png" alt="Overview" title="Access Controls" width="100%"/></p>
+<p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
+
+<a name="7.5.1.1"></a>
+#### 7.5.1.1 The high-level functions of these different access controls
+* **MGNT ACCESS CONTROLS** - Platform access to VNFs for service management. Typically all management and control-plane traffic is encrypted.
+* **DATA ACCESS CONTROLS** - Control of east-west traffic between VNFs, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
+* **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
+* **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
+* **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific VNFs to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
+* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as approriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
+
+<a name="7.5.1.2"></a>
+#### 7.5.1.2 The following general security requirements apply to the platform:
+* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
+* Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
+* Support zoning within a tenant workload - using application-level filtering.
+* All host to host communications within the cloud provider network are to be cryptographically protected in transit.
+* Not expose tenant IP address details to another tenant.
+* Use cryptographically-protected protocols for administrative access to the platform.
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
+* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence that is implemented, and rigourously followed.
+* Processes for managing platform access control filters that are documented, followed, and monitored.
+* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform).
+* Role-Based Access Control (RBAC) must apply for all platform systems access.
+* An approved system or process for last resort access must exist for the platform.
+* All API access must use TLS protocol.
+* All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
+* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management and application communication are cryptographically protected in transit between data centre facilities.
+* Continuous cloud security compliance is mandatory.
+* All data persisted to primary, replica or backup storage is to be encrypted.
+* All platform security logs are to be time synchronised.
+* Logs are to be regularly scanned for events of interest.
+* An incident response plan must exist for the platform.
+* The cloud services must be regularly vulnerability and penetration tested.
 
 <a name="7.5.2"></a>
-## 7.5.2 Platform ‘back-end’ access security
-
-    *(Security requirements around how the platform systems must
-    interconnect with supporting infrastructure services including
-    assurance, fault, asset systems, billing systems, capacity,
-    configuration, and etc.)*
+### 7.5.2 Platform ‘back-end’ access security
+* Restrict traffic to only traffic that is necessary, and deny all other traffic.
+* Use cryptographically-protected protocols for administrative access to the platform.
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
+* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence that is implemented, and rigourously followed.
+* Processes for managing platform access control filters that are documented, followed, and monitored.
+* No login to root on any platform systems.
+* Role-Based Access Control (RBAC) must apply for all systems access.
+* An approved system or process for last resort access must exist for the platform.
+* All back-end API access must use TLS.
 
 <a name="7.5.3"></a>
-## 7.5.3 Platform ‘front-end’ access security
-
-    *(Security requirements around how the platform will support network
-    connections that can be used by workloads. Generally the platform will
-    provide the basic connectivity such as a physical MPLS connection, or
-    Internet connection, but the workloads will have a VLAN on that physical
-    connection and provide additional security controls).*
-
-<a name="7.5.4"></a>
-## 7.5.4 Platform services
--   Platform services – cloud and security
-
-    *(Security requirements for any services hosted within the local VIM
-    environment, or the immediate trusted cloud)*
-
--   Platform services – external and security
-
-    *(Security requirements for any services that are hosted externally, but
-    leveraged or consumed within the local VIM environment)*
-
--   Data at rest
-
-    *(Security requirements of stored data used by platform services. This
-    will include provision for workload data)*
-
--   Data in transit
-
-    *(Security requirements for securing the different data types used in
-    the platform. This will include provision for protection of workload
-    data)*
-
--   Network Security considerations incl zoning, tiering, segmentation,
-    standalone/hybrid clouds, multi-VIM, etc.
-
-    *(This section will have sub-sections – probably based on technology
-    types. Needs to cover security considerations around network security
-    for platforms, but also platform-to-platform, VIM-to-VIM where VIMs may
-    be homogeneous or heterogeneous. This will include confidentiality,
-    integrity, availability, identity federation and trust (authenticity)).*
-
--   Operator and support access to platform – requirements
-
-    *(It must be shown that operator and programmatic access to a platform
-    is secure. This will include ensuring that access controls are secure,
-    but not cumbersome. For programmatic access, there should be guidelines
-    around API gateway functionality expected and authentication/identity
-    standards expected).*
-
--   Assurance and Availability
-
-    *(The platform must have an assurance system(s) that meets minimum
-    requirements for the time to learn state changes, collect performance
-    and problem data from multiple platform layers, stream, correlate and
-    prioritise specific data \[to a specific bus type?\], and co-operate
-    with downstream systems in a closed-loop arrangement).*
-
--   Vulnerability Management
-
-    *(Security requirements around which and how vulnerabilities are
-    discovered, mitigated, managed in the platform. Any impacts to workloads
-    must be included).*
-
--   Logging management & privacy considerations (and incl legal
-    intercept considerations?)
-
-    *(Requirements for platform security logging. This is likely to include
-    off-site storage, SIEM integration, logging access control, and log
-    rotation/archival/retrieval).*
-
--   Configuration management & CI/CD
-
-    *(Security requirements around how configuration changes are made to the
-    platform. This will include automated update processes and any impacts
-    to service and availability. Any impacts to workloads must be
-    included).*
-
--   Fault Management
-
-    *(Security requirements around fault restoration (including zero trust
-    for more secure deployments?)*
-
--   Asset Management
-
-    *(Security requirements around how assets should be discovered,
-    collected, stored, accessed and protected).*
-
--   Closed Loop Security (general) and/or SIEM integration –
-    requirements and implementation
-
-    *(Security requirements around closed-loop security. Starting to define
-    a set of standards that we want for vendor standardisation. Implications
-    on homogeneous/heterogeneous VIMs).*
-
--   Micro-segmentation (general) – requirements and implementation
-
-    *(Security requirements around micro-segmentation – levels of controls
-    within the platform, how the controls are managed and monitored.
-    Expectations around application of policy and flow monitoring across
-    homogeneous/heterogeneous VIMs)*
-
-<a name="7.6"></a>
-## 7.6 Workload Security
-
--   Workload Security Assumption: that workload security compliance will
-    be a responsibility of the workload owner (if not the platform
-    owner) but will leverage any compliances from the platform.
-
-    *(Define the workload security assumption. Note also that the workload
-    may have a different security posture/level to the platform, but that
-    the workload can leverage security accreditations/compliances/services
-    offered by the platform).*
-
--   Strong separation between tenants and tenants
-    -   data at rest
-
-    *(requirements that tenant data is protected including disk allocation,
-    namespace separation, and memory isolation)*
-
--   data in transit
-
-    *(ensure that strong access controls and processes exist around
-    east-west and north-south tenant-to-tenant comms. Define level of access
-    control and associated access services)*
-
--   cloud security – refer cloud security industry standards – i.e. TBC
-
-    *(meet industry cloud security requirements)*
-
--   workload services – cloud
-
-    *(Security requirements for any services consumed within the local VIM
-    environment, or the immediate trusted cloud)*
-
--   workload services – external
-
-    *(Security requirements for any services that are consumed from external
-    sources)*
-
--   Strong separation between tenants and platform
-
-    *(Cover different platform types and separation requirements of each,
-    including:*
-
--   *Bare metal*
--   *VM*
--   *Container*
-
-    *Incl. separation of workload traffic from platform
-    management/signalling)*
-
--   Define workload ‘Front-end’ access security
-
-    *(Security requirements around how the workload will connect to network
-    connections that are external to the tenancy, and are used as part of
-    the tenancy data service – this could include an MPLS VPN connection, or
-    an Internet connection. The workload environment will be expected to
-    support sufficient security to support the workload certification
-    requirements).*
-
--   Define workload ‘Back-end’ access security
-
-    *(Security requirements around how the workload may be managed - which
-    may or may not be known by the tenant. This includes management and
-    signalling and separation/protection/isolation of these network
-    connections)*
-
--   Operator and support access to workload including:
-    -   Bare Metal
-    -   VM
-    -   Container
-    -   VNF
-
-    *(Security requirements around how tenant workloads are supported –
-    cover a situation where it is tenant, and another where it is a cloud
-    service. May be different for different service types – i.e. BareMetal,
-    VM, Container, and VNF).*
-
--   Workload tenant access to workloads
-
-    *(Security requirements around tenant support of a workload. Covers
-    operator and robotic access. Access controls, policy, and guidelines.
-    May be different for different service types – i.e. BareMetal, VM,
-    Container, and VNF).*
-
--   Assurance – tenant
-
-    *(The workload environment must have support for assurance system(s)
-    that meets minimum requirements for the time to learn state changes,
-    collect performance and problem data from multiple platform layers,
-    stream, correlate and prioritise specific data \[to a specific bus
-    type?\], and co-operate with downstream systems in a closed-loop
-    arrangement).*
-
--   Configuration Management – tenant
-
-    *(Security requirements around how configuration changes are made to the
-    workload environment. This will include automated update processes and
-    any impacts to service and availability. This includes process).*
-
--   Fault Management – tenant
-
-    *(Security requirements around fault restoration in a workload
-    environment (including zero trust for more secure deployments?)*
-
--   Telemetry – tenant (reference to a telemetry working group, if any)?
-
-    *(Security requirements covering the provision of telemetry to tenants
-    incl access, authentication, integrity, confidentiality and
-    availability).*
+### 7.5.3 Platform ‘front-end’ access security
+* Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks
+* The front-end network may provide (Distributed Denial Of Service) DDOS support
 
 <a name="7.7"></a>
 ## 7.7 Vendor Responsibilities
@@ -592,16 +448,27 @@ NFVI operators should ensure that the platform including the components (hypervi
 <a name="7.10.4"></a>
 ### 7.10.4 Boot Integrity Measurement (TPM)
 
-Using trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components such as platform firmware, BIOS, bootloader, OS kernel, and other system components can be securely stored and verified. NFVI Operators should ensure that the platform measurement can only be taken when the system is reset or rebooted; there needs to be no ability to write the new platform measurement in TPM during system run-time. The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server
+Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem and other system components can be securely stored and verified.
+NFVI Operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
+
+Additionally, NFVI Operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
+The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
 <a name="7.10.5"></a>
-### 7.10.5 NFVI & VIM
+### 7.10.5 Runtime Integrity Measurement (TPM)
+If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
+Additionally, platform measurements may be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
+The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
+This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
+
+<a name="7.10.6"></a>
+### 7.10.6 NFVI & VIM
 
 Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
 <!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019
 #### 4.1.4.5 Internal security capabilities
 -->
-<a name="Table5-1"></a>
+<a name="Table7-1"></a>
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|-------------------------------------|--------|------------------------------------------------------------------|
@@ -610,17 +477,17 @@ Resources management is essential. Requests coming from NFVO or VNFM to the VIM 
 | i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory |
 | i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest |
 
-<p align="center"><b>Table 5-1:</b> Internal security capabilities of NFVI.</p>
+<p align="center"><b>Table 7-1:</b> Internal security capabilities of NFVI.</p>
 
-Table 5-2 shows security capabilities
+Table 7-2 shows security capabilities
 
-<a name="Table5-2"></a>
+<a name="Table7-2"></a>
 
 | Ref | VIM capability | Unit | Definition/Notes |
 |--------------------|------------------|---------|-------------------------------------------|
 | e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM|
 
-<p align="center"><b>Table 5-2:</b> VIM capabilities related to security .</p>
+<p align="center"><b>Table 7-2:</b> VIM capabilities related to security .</p>
 
 ## 7.11 Certification requirements (Just ideas)
 
