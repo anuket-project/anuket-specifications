@@ -81,7 +81,7 @@ This nature of this disaggregation is what gives the para-virtualised interfaces
 
 The downside of para-virtualisation interfaces is the involvement of the hypervisor which may introduce latency and jitter that can impact the performance.
 
-<p align="center"><img src="./figures/tech_virtio.png" alt="virtio" title="Document Types" width="70%"/></p>
+<p align="center"><img src="./figures/tech_virtio.png" alt="virtio" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 4:</b> Para-Virtualised interface components (software only).</p>
 
 <a name="4.1.2"></a>
@@ -95,7 +95,7 @@ This method provides better performance than the para-virtualised one as no hype
 
 Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of CNTT and hence this method of IO Virtualisation should not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
 
-<p align="center"><img src="./figures/tech_vtd.png" alt="virtio" title="Document Types" width="70%"/></p>
+<p align="center"><img src="./figures/tech_vtd.png" alt="virtio" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 5:</b> Direct Assignment with VT-d.</p>
 
 <a name="4.1.3"></a>
@@ -109,7 +109,7 @@ Each of those Virtual Functions can then be independently assigned exclusively t
 
 Similar to the previous method, this method provides better performance than the para-virtualised one but still lack the flexibility and the portability sought and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
 
-<p align="center"><img src="./figures/tech_sriov.png" alt="sriov" title="Document Types" width="70%"/></p>
+<p align="center"><img src="./figures/tech_sriov.png" alt="sriov" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 6:</b> Device Sharing with SR-IOV & VT-D..</p>
 
 <a name="4.1.4"></a>
@@ -121,7 +121,7 @@ Unlike the software only Para-virtualised interfaces, this method provides bette
 
 However, this method doesn’t provide the same level of flexibility as the software only para-virtualisation method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
 
-<p align="center"><img src="./figures/tech_virtio_hw.png" alt="vitio_hw" title="Document Types" width="70%"/></p>
+<p align="center"><img src="./figures/tech_virtio_hw.png" alt="vitio_hw" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 7:</b> Para-Virtualisation method (with hardware support).</p>
 
 <a name="4.3"></a>
