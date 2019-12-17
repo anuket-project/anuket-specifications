@@ -204,11 +204,12 @@ The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configurati
 [Ceph](https://ceph.io/) is the default CNTT Reference Architecture storage backend and is discussed below.
 
 #### 4.2.4.1. Ceph Storage Cluster
-The Ceph storage cluster is deployed on bare metal hardware. The minimal configuration is a cluster of three bare metal servers to ensure High availability. The Ceph Storage cluster consists of 4 main daemon types:
+The Ceph storage cluster is deployed on bare metal hardware. The minimal configuration is a cluster of three bare metal servers to ensure High availability. The Ceph Storage cluster consists of the following components:
 -	CEPH-MON (Ceph Monitor)
 -	OSD (object storage daemon)
 -	RadosGW (Rados Gateway)
 - Journal
+- Manager
 
 Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
 
