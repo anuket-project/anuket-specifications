@@ -32,7 +32,11 @@ Define and illustrate the certification strategy and vehicle for NFVI..
 
 <a name="2.4"></a>
 ## 2.4 Profiles Reference 
-Several vendors have different types of VNF to serve different use-cases. As such, some VNFs may be compute intensive while other may be network intensive. Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI. To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI certification based on their types of profile.
+Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high netorking throughout whereas a VNF like Mobility Management Entity (MME) woud require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs woud have different characteristics. Depending on VNF's requirements, the NFVI can be categorised into below profiles:
+* Basic (B) profile for standard computing
+* Compute intensive (C) profile where predictable computing performance is expected and
+* Network intensive (N) profile offerring low latency and high networking throughout
+Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI. To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI certification based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
  * Certify Vendor NFVI Hardware solution: This allows for certification of only NFVI.
  * Certify Vendor NFVI Hardware and Software Solution: This allows for certification for NFVI running a particular VNF.
 
