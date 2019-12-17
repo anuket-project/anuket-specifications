@@ -231,7 +231,29 @@ It defines the end-end Certification Process required for certifying the given V
 using this platform (providing above requirements), producing the test results to
 certification portal , review and granting the badge to this VNF.
 
-[More details](https://wiki.lfnetworking.org/display/LN/VNF+Certification+Lifecycle)
+The complete process is detailed below:
+
+1. *VNF Vendors* submit the VNF into OVP Lab for certification testing_guide
+
+2. Using VNF Test Platform, VNF will be tested with all required test cases Provided
+by *Test authors* by using the appropriate MANO and NFVi provided by Vendors. while
+testing, required profile to be considered. This whole setup is owned by 3rd-Party
+ *OVP Lab provider*
+
+ ![](media/f3b0c214bc58c44406fd5b801d3dfc89.png)
+
+3. Once testing is completed successfully, test results will be submitted to ovp
+ portal for reviewing it.
+
+4. *LFN CVC* reviewers will review the results and will approve or reject it.
+
+5.  If reviewer rejected it, then step 2 and 3 will be ran again to address the
+review comments. Otherwise Once reviewer approved it, corresponding VNF will be
+published into OVP VNF Portal with OVP badge.
+
+6. OVP portal reports the VNF with certified badge.
+
+Now VNF is ready and *Telco Operators* could start consume it.
 
 #### 5.4.1 Entry & Exit criteria
 
