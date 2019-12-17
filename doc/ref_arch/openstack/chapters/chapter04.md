@@ -222,7 +222,7 @@ Ceph monitors maintain a master copy of the maps of the cluster state required b
 | Boot disks | RAID 1 |
 
 How many nodes to meet SLA :
--	minimum: three bare metal servers where Monitors are collocated with OSD. Note: at least 3 Monitors and 3 OSDs are reuired for High AVailability. 
+-	minimum: three bare metal servers where Monitors are collocated with OSD. Note: at least 3 Monitors and 3 OSDs are required for High AVailability. 
 
 HW specifications :
 - Boot disks are dedicated with Flash technology disks
