@@ -63,7 +63,7 @@ In order to Certificate the VNF, CNTT define the following four category testing
 
 |  VNF Test Case Category   |  Category Definitions  |
 | ----------------------- | ------------------|
-|  Compliance testing|  compliance check based on TOSCA using ETSI SOL004 & SOL001;OpenStack HOT using ONAP VNFREQS;GSMA profile  |
+|  Compliance testing|  compliance check based on TOSCA using ETSI SOL004 & SOL001;OpenStack HOT using ONAP VNFREQS;GSMA profile as defined in *chapter RM-04*.  |
 |  Verification testing|  Perform on-boarding/ verification life cycle operation (from instantiation,configuration, update, termination) using service/resource Orchestrator supporting CNTT compliant NFVI. |
 | Validation Testing  |  Perform various VNF type specific functionality operations on CNTT RA & RM compliant NFVI |
 |Performance testing| Perform various performance related testing and facilitate for benchmarking the VNF performance on different profile and scenarios.|
