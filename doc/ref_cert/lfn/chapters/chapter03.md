@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 3. NFVI Test Case Requirements
+# 3. NFVI Compliance Verification Test Case Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -17,16 +17,26 @@
   * [3.8.2 Resiliency Measurements](#3.8.2)
 * [3.9 NFVI Test Cases](#3.9)
 
+
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-> Scope of this chapter is to have a list of test cases needed (a detailed table of sort)
+The objective of this chapter is to describe the requirements on NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Chapter 8.2.4 of the reference model.
+
 
 <a name="3.2"></a>
-## 3.2 Assumptions
+## 3.2 Generic Requirements
 
-Content to be written:
-- Assumptions:  Automatable, Integrated with CICD tool chain
+All test cases must fullfil the generic requirements listed in Chapter 8.2.4 of the reference model.
+
+In addition, for test cases targeting the NFVI compliance program, the following requirements must be met:
+
+| Reference         | Description                                                                                                              |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------|
+| x                 | All NFVI test cases *must* be automated, that is, implemented in an open source  test tool.                              |
+| x                 | All NFVI test cases *must* be integrated and run in the OPNFV CI/CD pipeline.                                            |
+| x                 | All NFVI test cases *must* exercise existing APIs only, that is, treat the NFVI platform as a black box.                 |
+
 
 <a name="3.3"></a>
 ## 3.3 Requirement Type
@@ -34,11 +44,20 @@ Content to be written:
 Content to be written:
 -  Type of requirement:  Bare metal, API, etc
 
+
 <a name="3.4"></a>
 ## 3.4 Profile Catalog
 
-Content to be written:
--  Table showing Profile Catalog
+Chapter 4.2 of the reference model defines three software profiles, targeting three different use cases:
+
+* Basic
+* Network intensive
+* Compute intensive
+
+The test cases selected for validating compliance of the three flavors must cover the functional and non-functional requirements as listed in Chapter 4.2.5 and 4.2.6 of the reference model.
+
+TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
+
 
 <a name="3.5"></a>
 ## 3.5 Software & Hardware Reference
@@ -47,12 +66,14 @@ Content to be written:
 - Identify SW Reference
 - Identify HW Reference
 
+
 <a name="3.6"></a>
 ## 3.6 Options & Extensions
 
 Content to be written:
 - Options Available / Configured
 - Extensions Available / Configured
+
 
 <a name="3.7"></a>
 ## 3.7 Measurement Criteria
