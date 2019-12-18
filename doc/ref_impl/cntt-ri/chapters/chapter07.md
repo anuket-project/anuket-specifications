@@ -34,6 +34,16 @@ The following are pre-requisites to be completed in advance of software deployme
 
 1.  Bare-metal validations: confirming delivery, rack, stack, of env and that env is "ready" for software deployments (e.g. BIOS, firmware, boot order, health, disk config, port / socket validations, MAC/NIC status, etc)
 
+Need some details from pod 15:
+
+- [ ] What servers/models are present
+- [ ] What firmware is loaded
+- [ ] BIOS settings that are not factory default - is HT on, what VT extensions?
+- [ ] How many NICs are present per server?
+- [ ] How many switches and how are they cabled?
+- [ ] Does Airship configure disks and boot order or must this be done ahead of time?
+
+
 <a name="7.3"></a>
 ## 7.3 Requirements Gathering
 
@@ -49,10 +59,31 @@ Logical steps for lab access and connectivity.
 
 Sample steps provided mimic those utilized for POD10 test lab access.
 
+This RI leverages OPNFV Pharos pod 15, which is hosted by Intel and requires VPN access.  Requests for VPN access must go through the OPNFV Infra Project.  Once on the VPN, two networks are reachable:
+
+1. Public Network - this is where the jump host is connected, and
+2. Admin Network - this is where OpenStack public enpoints and floating IP addresses can be reached
+
+Do we link to the yEd Network Topology diagram from here, or is this the right place to put it?
+
 <a name="7.5"></a>
 ## 7.5 Descriptor File Preparations
 
 Reference steps describing the use, creation, and implementation of descriptor files.
+
+This is where the Airship Mafiest files need to be documented:
+
+- Profiles
+- Hardware
+  - Server
+  - Device Aliases
+  - Disk Aliases
+- Nodes
+- Networks
+- Software
+- PKI-Catalog
+- Secrets
+- Actions
 
 e.g. Descriptor file &/or Manifest creation (data elements, use/implementation, etc
 
@@ -60,15 +91,18 @@ e.g. Descriptor file &/or Manifest creation (data elements, use/implementation, 
 ## 7.6 Deployment Installer & Install Steps
 
 Steps and precedures for installing and setting up the RI.
+Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Installer+Deployment+Guide
 
 <a name="7.7"></a>
 ## 7.7 Deployment Validations
 
 Details explaining:
 - Validation Tests Run
-- Expected outpus
+- Expected outputs
 - Explanation of Pass/Fail
 - Disposition, or next steps, based on test results (e.g. handling of failures, handoff to next tier with passing results)
+
+Description of the Functest suite and what is selected for validation testing.  Need to document the line between "validation of install" and "reference certification."  It has been stated that these might be one and the same, however deployment validation could be a simple smoke test prior to starting a full run.
 
 <a name="7.8"></a>
 ## 7.8 CICD Tool Chain (use of, process, and scripts)]
