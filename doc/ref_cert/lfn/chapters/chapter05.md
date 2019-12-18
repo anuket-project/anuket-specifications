@@ -292,4 +292,4 @@ showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement
 <a name="5.7"></a>
 ### 5.6 Profiles Reference
  VNF Certification is aligned with required profiled defined in
- [reference model](../ref_model/chapters/chapter02.md)
+ [reference model](../../../ref_model/chapters/chapter02.md)
