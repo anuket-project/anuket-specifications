@@ -85,9 +85,7 @@ along with required MANO system supporting these NFVi.
 
 #### VNF
 
-Platform should support to test and certify those VNF which is compliant with
-capabilities, requirements and interface defined by *CNTT RM chapters.* Also it
-should support TOSCA and HOT based VNF distros.
+Suppliers of VNFs/CNFs seeking to receive VNF certification badges must first ensure their testing is performed against a compliant RM/RA architecture supporting all capabilities, features, and services defined by the respective *RM/RA requirements*.  More specifically, the VNF Supplier must ensure their implementation of the RM/RA receives the NFVI Certification badge prior to starting VNF testing.  Finally, to receive VNF Certification, the test platform will need to support TOSCA and HOT based VNF distros.
 
 In addition, Platform should be able to perform the required test case
 management and executions and produce the result the CVC OVP portal for
@@ -242,8 +240,8 @@ testing, required profile to be considered. This whole setup is owned by 3rd-Par
 
  ![](media/f3b0c214bc58c44406fd5b801d3dfc89.png)
 
-3. Once testing is completed successfully, test results will be submitted to ovp
- portal for reviewing it.
+3. Once testing is completed successfully, test results will be submitted to the OVP
+ portal for community review.  When submitting the application to the portal, the vendor will also provide a additional information, including the product name, documentation links, primary company contact information, etc.
 
 4. *LFN CVC* reviewers will review the results and will approve or reject it.
 
@@ -251,7 +249,7 @@ testing, required profile to be considered. This whole setup is owned by 3rd-Par
 review comments. Otherwise Once reviewer approved it, corresponding VNF will be
 published into OVP VNF Portal with OVP badge.
 
-6. OVP portal reports the VNF with certified badge.
+6. LFN staff will provide the certificate badge graphics and graphical usage guidelines.  The OVP portal will reflect LFN's disposition and assignment of the certified VNF badge.
 
 Now VNF is ready and *Telco Operators* could start consume it.
 
