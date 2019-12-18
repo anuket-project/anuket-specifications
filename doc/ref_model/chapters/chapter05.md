@@ -70,10 +70,10 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | .conf | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.stg.cfg.001 | Storage Types | Yes/No   | Support of Storage types described in the catalogue |
-| nfvi.stg.cfg.002 | Storage Block | Yes/No  |  |
-| nfvi.stg.cfg.003 | Storage Object | Yes/No |  |
-| nfvi.stg.cfg.004 | Storage with replication |  Yes/No |  |
-| nfvi.stg.cfg.005 | Storage with encryption | Yes/No |  |
+| nfvi.stg.cfg.002 | Storage Block | Yes/No  | |
+| nfvi.stg.cfg.003 | Storage Object | Yes/No | |
+| nfvi.stg.cfg.004 | Storage with replication | Yes/No | |
+| nfvi.stg.cfg.005 | Storage with encryption | Yes/No | |
 
 <p align="center"><b>Table 5-3:</b> Virtual Storage features.</p>
 
@@ -97,7 +97,6 @@ The following sections detail the NFVI SW profile features per type of virtual r
 | nfvi.net.cfg.004 | Security Groups | Yes/No  | Set of rules managing incoming and outgoing network traffic |
 | nfvi.net.cfg.005 | SFC  |Yes/No   |  Support of Service Function Chaining |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
-
 
 <p align="center"><b>Table 5-5:</b> Virtual Networking features.</p>
 
@@ -185,8 +184,8 @@ This section will detail NFVI SW profiles and associated configurations for the 
 
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | YeS/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
-| nfvi.net.acc.cfg.002 | Support of HW offload | YeS/No | N | Y, support of SmartNic |Y, support of SmartNic |
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | Yes/No and SW Optimisation | N | Y, DPDK | Y, DPDK |
+| nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | N | Y, support of SmartNic |Y, support of SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No | N  | Y | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y | Y |
 
@@ -292,7 +291,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
 |---------------------|-----------|---------------------------|--------|--------|--------|
 | nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD | Hard Disk Drive |  |  |  |
-| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid Disk Drive | Recommended | Recommended |Recommended |
+| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid State Drive | Recommended | Recommended |Recommended |
 
 <p align="center"><b>Table 5-15:</b> Storage configuration specification.</p>
 
@@ -343,7 +342,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
 |---------------------|-----------|---------------------------|--------|--------|--------|
 | nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |  N | Optional | Optional |
-| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload vSwitch functionality to hardware | N | Optional  | Optional |
+| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload network functionality to hardware | N | Optional  | Optional |
 | nfvi.hw.nac.cfg.003 | Compression |  |  |  |
 
 <p align="center"><b>Table 5-18:</b> Network acceleration configuration specification.</p>

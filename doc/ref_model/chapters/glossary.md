@@ -44,7 +44,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
 - **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
 - **Virtual resources**:
-  - **Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
+  - **Virtual Compute resource (a.k.a. virtualisation container)**: partition of a compute node that provides an isolated virtualised computation environment.
   - **Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
   - **Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 - **Hypervisor**: A piece of software with management components that allows the user to partition the underlying physical resources and allocate them to Virtual Machines. Typically, the hypervisor is managed by a cloud management software such as OpenStack.
