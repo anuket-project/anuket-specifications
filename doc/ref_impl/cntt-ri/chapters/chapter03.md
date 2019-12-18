@@ -7,6 +7,7 @@
 * [3.1 Introduction](#3.1)
 * [3.2 VNF profile](#3.2)
 * [3.3 NFVI SW profile](#3.3)
+* [3.4 NFVI Required State](#3.4)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
@@ -99,3 +100,7 @@ This profile is the global settings for the whole NFVI, which means there should
 | Crypto acceleration | N  | Y | Y |
 | Crypto Acceleration Interface | N  | Y | Y |
 
+<a name="3.4"></a>
+## 3.4 NFVI Required State
+This sections describes the readiness of NFVI before the certification process can begin. Once the NFVI is configured with either of the profiles - B, C, N, a set of tests should (for example functests) be run in order to determine the readiness of NFVI for certification. 
+#TODO : Identify the tests for this section
