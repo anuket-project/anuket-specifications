@@ -328,11 +328,11 @@ Table 4-14: Reserved
 
 | Ref | VIM Measurement | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| e.vim.pm.001 | Time to create Virtual Compute for a given VNF | Max ms |  |
-| e.vim.pm.002 | Time to delete Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.003 | Time to start Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.004 | Time to stop Virtual Compute of a given VNF | Max ms | <sup>1)</sup> |
-| e.vim.pm.005 | Time to pause Virtual Compute of a given VNF | Max ms | <sup>2)</sup> |
+| e.vim.pm.001 | Time to create computing resources for a given VNF | Max ms |  |
+| e.vim.pm.002 | Time to delete computing resources of a given VNF | Max ms |  |
+| e.vim.pm.003 | Time to start computing resources of a given VNF | Max ms |  |
+| e.vim.pm.004 | Time to stop computing resources of a given VNF | Max ms | <sup>1)</sup> |
+| e.vim.pm.005 | Time to pause computing resources of a given VNF | Max ms | <sup>2)</sup> |
 | e.vim.pm.006 | Time to create internal virtual network | Max ms |  |
 | e.vim.pm.007 | Time to delete internal virtual network | Max ms |  |
 | e.vim.pm.008 | Time to update internal virtual network | Max ms |  |
