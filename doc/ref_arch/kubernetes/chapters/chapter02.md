@@ -73,15 +73,15 @@ This reference model intends to implement both the Basic, Network Intensive and 
 
 **1)** In a Kubernetes based infrastructure within one Kubernetes cluster multitenacy is provided only in resource management level. Isolation of execution environments requires separate Kubernetes clusters or worker nodes.
 
-<a name="2.2.2.></a>
-### 2.2.3 Instance Capabilities Mapping
+<a name="2.2.4"></a>
+### 2.2.4 Instance Capabilities Mapping
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
 | e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single VNFC | 16 | Y |
 | e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single VNFC by NFVI | 32 GB | Y |
 | e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single VNFC by NFVI | 320 GB | Y |
-| e.nfvi.res.cap.004 | # vNICs | 6 | Y |
+| e.nfvi.res.cap.004 | # Connection Points | 6 | Y |
 | e.nfvi.res.cap.005 | Total instance (persistent) storage (GB | 300 GB | Y |
 | e.nfvi.per.cap.001 | CPU pinning support | | Y |
 | e.nfvi.per.cap.002 | NUMA support | | Y |
