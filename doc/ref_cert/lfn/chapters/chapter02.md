@@ -43,7 +43,7 @@ Similarly, different NFVI vendors may specialise in different hardware profiles 
 ## 2.5 Compliance, Verification, and Certification
 The below set of steps define the compliance, verification and certification process for NFVI
 * Based on VNF's requirements, NFVI profile is selected - B, C, N
-* NFVI readiness is checked based for certification.
+* NFVI readiness is checked for certification.
 * The test VNFs are on-boarded using automation scripts on the NFVI.
 * VNF on-boarding is validated by running fucntional tests to ensure that the on-boarding is successful.
 * VNF performance tests are executed and NFVI KPIs are recorded during the tests.
