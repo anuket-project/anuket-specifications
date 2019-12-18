@@ -59,6 +59,10 @@ Sometimes container isolation is compared directly with VM based isolation, with
 - VMs: hard isolation, in the layers underlying the application SW
 - Containers: isolation by SW based mechanisms available in OS, Docker and Kubernetes. A container workload is just a set of Linux processes. It is _possible_ to configure SW based _additional isolation_ for container workloads, for example by kernel namespaces.
 
+<p align="center"><img src="../figures/cntt_ra2_ch06_diagram.png" alt="scope" title="Security boundaries" width="100%"/></p>
+<p align="center"><b>Figure 6-1:</b> Security Boundaries</p>
+
+
 Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist.
 
 ### Container Isolation in Kubernetes Cluster
