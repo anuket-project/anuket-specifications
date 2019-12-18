@@ -69,3 +69,5 @@ Thus the primary isolation mechanism in Kubernetes environment should be VM or p
 #### Namespaces  
 Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. Kubernetes should be used to isolate different types of workloads like Development, Production or Test. The default is to allocate one namespace per Containerised Network Function (CNF).
 
+
+
