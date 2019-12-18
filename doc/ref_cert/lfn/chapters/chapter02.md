@@ -68,4 +68,4 @@ The NFVI certification framework deals with the process of testing NFVI in below
 * Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
 * Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
-The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI certification. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge. If NFVI KPIs do not meet Golden KPIs, no certification is provided.
+The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI certification. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge. If NFVI KPIs do not meet Golden KPIs, no certification badge is provided.
