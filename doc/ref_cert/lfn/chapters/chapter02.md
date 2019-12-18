@@ -20,6 +20,7 @@ NFVI (Network Functions Virtualization Infrastructure) refers to the physical re
 ## 2.2 Methodology
 The NFVI provided by hardware vendors is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. CNTT recommends RA1/RA2 to be used as a reference architecture for NFVI certification. This  would provide a set of standard interaces to create resources on NFVI. Below step by step process illustrates the NFVI certification methodology:
 * CNTT RA1/RA2 is deployed on NFVI that needs to be certified.
+* A set of tests are run on NFVI to determine the NFVI readiness for certification process,
 * Golden KPIs are taken as a reference.
 * A set of tests are run on the target NFVI.
 * KPIs obtained from the target NFVI are collected and submitted to certification portal.
@@ -45,7 +46,7 @@ The below set of steps define the compliance, verification and certification pro
 * Based on VNF's requirements, NFVI profile is selected - B, C, N
 * NFVI readiness is checked for certification.
 * The test VNFs are on-boarded using automation scripts on the NFVI.
-* VNF on-boarding is validated by running fucntional tests to ensure that the on-boarding is successful.
+* VNF on-boarding is validated by running functional tests to ensure that the on-boarding is successful.
 * VNF performance tests are executed and NFVI KPIs are recorded during the tests.
 * KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI certification.
 * If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge.
@@ -62,5 +63,9 @@ The below set of steps define the compliance, verification and certification pro
 
 <a name="2.7"></a>
 ## 2.7 Frameworks
+The NFVI certification framework deals with the process of testing NFVI in below three areas:
+* Compliance: The NFVI needs to comply to CNTT RA1/RA2.
+* Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
+* Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
-List out the various frameworks requirements needed for certifications
+The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI certification. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge. If NFVI KPIs do not meet Golden KPIs, no certification is provided.
