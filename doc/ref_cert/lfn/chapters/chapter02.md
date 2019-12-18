@@ -27,8 +27,7 @@ The NFVI provided by hardware vendors is consumed or used by VNFs via APIs expos
 
 <a name="2.3"></a>
 ## 2.3 Certification Strategy & Vehicle
-
-Define and illustrate the certification strategy and vehicle for NFVI..
+In order to begin the certification process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in Reference Implementation. Once the target NFVI passes these tests, it would become a candidate for NFVI certification. If NFVI fails the tests, it will not be move to next workflow for certification.
 
 <a name="2.4"></a>
 ## 2.4 Profiles Reference 
@@ -44,6 +43,7 @@ Similarly, different NFVI vendors may specialise in different hardware profiles 
 ## 2.5 Compliance, Verification, and Certification
 The below set of steps define the compliance, verification and certification process for NFVI
 * Based on VNF's requirements, NFVI profile is selected - B, C, N
+* NFVI readiness is checked based for certification.
 * The test VNFs are on-boarded using automation scripts on the NFVI.
 * VNF on-boarding is validated by running fucntional tests to ensure that the on-boarding is successful.
 * VNF performance tests are executed and NFVI KPIs are recorded during the tests.
@@ -54,7 +54,7 @@ The below set of steps define the compliance, verification and certification pro
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
 **Entry criteria**: Before entering into NFVI certification, NFVI needs to satisfy the following requirements as entry pass:
-* Lab Requirements*: The NFVI lab needs to be setup according to RA1/RA2 as defined by CNTT.
+* Lab Requirements*: The NFVI lab needs to be setup according to RA1/RA2 as defined by CNTT and should be in the required state.
 
 **Exit criteria**: NFVI certification testing should completed with following exit criteria:
 * All mandatory test cases should pass.
