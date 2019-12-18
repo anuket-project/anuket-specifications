@@ -102,5 +102,5 @@ This profile is the global settings for the whole NFVI, which means there should
 
 <a name="3.4"></a>
 ## 3.4 NFVI Required State
-This sections describes the readiness of NFVI before the certification process can begin. Once the NFVI is configured with either of the profiles - B, C, N, a set of tests should (for example functests) be run in order to determine the readiness of NFVI for certification. 
+This sections describes the readiness of NFVI before the certification process can begin. Once the NFVI is configured with either of the profiles - B, C, N, a set of tests (for example functests) should be run in order to determine the readiness of NFVI for certification. 
 #TODO : Identify the tests for this section
