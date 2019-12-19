@@ -38,48 +38,9 @@ Here lists the assumptions for VNF certification:
 ## 6.3 Developer Deliverables
 
 This section define the developer Deliverables (artifacts),the following list the expectations and deliverables we expect from developers in order to achieve the VNF certification:
-- VNF test cases scripts/programs
+- VNF test cases model/scripts/programs
 - VNF test cases configuration/profile
 - VNF test tools
-
-<a name="6.4"></a>
-## 6.4 Requirement Type
-
-- Describe the types of requirement:  Bare metal, API, etc
-
-<a name="6.5"></a>
-## 6.5 Interaction Type
-
-- Descrive the types of Interactions: Extended Topology, Complex (Akraino), Functional, HA, Fault, Interoperability
-
-<a name="6.6"></a>
-## 6.6 Performance Profiles
-
-- Descrie and provide a Table showing Performance Profiles
-
-<a name="6.7"></a>
-## 6.7 VNF Test Case Category
-In order to Certificate the VNF, CNTT define the following four category testing which should be consistent with the VNF test category defined by OVP.
-
-|  VNF Test Case Category   |  Category Definitions  |
-| ----------------------- | ------------------|
-|  Compliance testing|  compliance check based on TOSCA using ETSI SOL004 & SOL001;OpenStack HOT using ONAP VNFREQS;GSMA profile as defined in *chapter RM-04*.  |
-|  Verification testing|  Perform on-boarding/ verification life cycle operation (from instantiation,configuration, update, termination) using service/resource Orchestrator supporting CNTT compliant NFVI. |
-| Validation Testing  |  Perform various VNF type specific functionality operations on CNTT RA & RM compliant NFVI |
-|Performance testing| Perform various performance related testing and facilitate for benchmarking the VNF performance on different profile and scenarios.|
-
-Note: The four category testing can be gradually supported.
-
-
-<a name="6.8"></a>
-## 6.8 Measurement
-
-- Describe Assumptions:  Automatable, Integrated with CICD tool chain
-
-<a name="6.3"></a>
-## 6.3 Developer Deliverables
-
-- Describe - Developer Deliverables (artifacts) - what kinds of expectations and deliverables do we expect from developers.
 
 <a name="6.4"></a>
 ## 6.4 Requirement Type
@@ -123,17 +84,23 @@ b) VNFs that operate at Layer 4 through Layer 7 and are involved in forwarding, 
 
 c) VNFs that are involved in the dataplane forwarding through the evolved packet core.
 
-
 <a name="6.8"></a>
 ## 6.8 Measurement
 
-> we need to a list of VNFs measurements we need to collect.
+As part of certification testing, following measurement would help for evaluating
+the badging:
+
+* VNF type defined as part of *Chapter RM-02* and its profile used for testing.
+* Test cases and their test results including the test case outputs, logs
+* VNF model type (TOSCA/HOT)
+* Test case pass/failed
+* Different NFVi profiles used and LAB reference identifier
+* Test owner (point of contact)
 
 <a name="6.9"></a>
 ## 6.9 VNF Test Cases
-> we need to have list of VNF test cases in here.
 
-- Compliance test cases
+### Compliance test cases
  Currently, there VNFs can be packaged as HEAT templates or in a CSAR file using TOSCA and OVP has supported the VNF compliance test cases, all the OVP supported test case can be found in the following two link:
 
 |  Test Cases |   Link|
@@ -145,7 +112,7 @@ Above compliance test cases defination can be found https://github.com/onap/vnfs
 
  In order to adapt CNTT specification, more compliance test case will be added here.
 
-- Verification test cases
+### Verification test cases
 In general， the VNF Manager, in collaboration with the NFV Orchestrator, the VIM and the EM, is responsible for managing a VNF's lifecycle. The lifecycle phases are listed below：
   • VNF on-boarding, it refers to VNF package onboarding to service/resouce Orchestrator
   • VNF instantiation, once the VNF is instantiated,  its associated VNFCs have been successfully instantiated and have been allocated necessary NFVI resources
@@ -155,11 +122,11 @@ In general， the VNF Manager, in collaboration with the NFV Orchestrator, the V
  OVP has also supported the lifecycle test case:https://wiki.lfnetworking.org/display/LN/VNF+Validation+Minimum+Viable+Product?src=contextnavpagetreemode
 
 
-- Validation Test cases
+### Validation Test cases
 From the current situation of operators, there are usually corresponding functional test specifications for each types of VNFs. Therefore, different types of VNFs have different functional test cases. Normally, functional tests for VNFs require the cooperation of surrounding VNFs. Or use the instruments to simulate the functions of surrounding VNFs for testing.
 Therefore, different test cases need to be defined according to different types of VNFs
 
-- Performance Test cases
+### Performance Test cases
 This is the same as what described in validation test cases，the performance test cases need to be defined according to different types of VNFs.
 Combined with the classification of VNF, according to the protocol level that VNF operates, it can include:
   • VNF data plane benchmarking, like forwarding Performance Benchmarking,Long duration traffic testing, low misrouting and so on.
