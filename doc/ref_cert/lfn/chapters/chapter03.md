@@ -21,7 +21,7 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The objective of this chapter is to describe the requirements on NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Chapter 8.2.4 of the reference model.
+The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Chapter 8.2.4 of the reference model.
 
 
 <a name="3.2"></a>
@@ -33,7 +33,8 @@ In addition, for test cases targeting the NFVI compliance program, the following
 
 | Reference         | Description                                                                                                              |
 |-------------------|--------------------------------------------------------------------------------------------------------------------------|
-| x                 | All NFVI test cases *must* be automated, that is, implemented in an open source  test tool.                              |
+| x                 | All NFVI test cases *must* be automated.                              |
+| x                 | All NFVI test cases *must* be implemented using open source tools.                              |
 | x                 | All NFVI test cases *must* be integrated and run in the OPNFV CI/CD pipeline.                                            |
 | x                 | All NFVI test cases *must* exercise existing APIs only, that is, treat the NFVI platform as a black box.                 |
 
@@ -54,7 +55,7 @@ Chapter 4.2 of the reference model defines three software profiles, targeting th
 * Network intensive
 * Compute intensive
 
-The test cases selected for validating compliance of the three flavors must cover the functional and non-functional requirements as listed in Chapter 4.2.5 and 4.2.6 of the reference model.
+The test cases selected for validating compliance of the three profiles must cover the functional and non-functional requirements as listed in Chapter 4.2.5 and 4.2.6 of the reference model.
 
 TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
 
