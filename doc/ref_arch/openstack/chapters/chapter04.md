@@ -9,7 +9,7 @@
   * [4.2.1 Virtualisation](#4.2.1)
   * [4.2.2 Compute](#4.2.2)
   * [4.2.3 Network Fabric](#4.2.3)
-  * [4.2.4 Storage Backend](#4.2.3)
+  * [4.2.4 Storage Backend](#4.2.4)
 * [4.3 Virtualised Infrastructure Manager (VIM)](#4.3)
   * [4.3.1 VIM Core Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
@@ -47,7 +47,7 @@ Additionally, This Chapter will delve deeper into certain topics that need to be
 In OpenStack, KVM is configured as the default hypervisor for compute nodes. 
 - Configuration: [OpenStack](https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
-    - QEMIU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
+    - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
   -	Configure Compute backing storage
   -	Specify the CPU Model for KVM guests (VMs)
   -	KVM Performance Tweaks
@@ -77,7 +77,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	How many nodes to meet SLA
     -	Minimum 3 nodes for high availability
 -	HW specifications
-    -	the boot disks are SSD disks with a minimum capacity of 240GB 
+    -	Boot disks are dedicated with Flash technology disks
 -	Sizing rules
     -	It is easy to horizontally scale the number of control nodes
     -	The number of control nodes is determined by a minimum number needed for high availability (viz., 3 nodes) and the extra nodes needed to handle the transaction volumes, in particular, for Messaging service (e.g., RabbitMQ) and Database (e.g., MySQL) to track state. 
@@ -113,7 +113,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	How many nodes to meet SLA
     - minimum: two nodes per profile
 -	HW specifications
-    -	the boot disks are SSD disks with 240GB minimum
+    -	Boot disks are dedicated with Flash technology disks
 -	Sizing rules
 
 | Number of CPU sockets| s | 
@@ -199,16 +199,50 @@ DHCP When the Neutron-DHCP agent is hosted in controller nodes, then VMs, on a T
 -	LDAP
 -	IPAM
 
-### 4.2.4. Storage Back-end
-**Content to be developed**
--	Types of storage (incl NVMe)
--	Ceph
-    -	Ceph Configuration
-    -	Cinder Gateway, Swift Gateway
--	How many nodes to meet SLA
--	Sizing rules (IOPS, SSD vs. SATA, NICs, etc).
+<a name="4.2.4"></a>
+### 4.2.4. Storage Backend
+Storage systems are available from multiple vendors and can also utilize commodity hardware from any number of open-source based storage packages (such as LVM, Ceph, NFS, etc.). The proprietary and open-source storage systems are supported in Cinder through specific plugin drivers. The OpenStack [Cinder documentation]( https://docs.openstack.org/cinder/latest/reference/support-matrix.html) specifies the minimum functionality that all storage drivers must support. The functions include:
+-	Volume: create, delete, attach, detach, extend, clone (volume from volume), migrate
+-	Snapshot: create, delete and create volume from snapshot
+-	Image: create from volume
 
+The document also includes a matrix for a number of proprietary drivers and some of the optional functions that these drivers support. This matrix is a handy tool to select storage backends that have the optional storage functions needed by the cloud operator. The cloud workload storage requirements helps determine the backends that should be deployed by the cloud operator.   The common storage backend attachment methods include iSCSI, NFS, local disk, etc. and the matrix list the supported methods for each of the vendor drivers. The OpenStack Cinder [Available Drivers]( https://docs.openstack.org/cinder/latest/drivers.html) documentation provides a list of all OpenStack compatible drivers and their configuration options.
 
+The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including CNTT required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by CNTT including managing volumes, snapshots, multi-storage backends, migrate volumes, etc. 
+
+[Ceph](https://ceph.io/) is the default CNTT Reference Architecture storage backend and is discussed below.
+
+#### 4.2.4.1. Ceph Storage Cluster
+The Ceph storage cluster is deployed on bare metal hardware. The minimal configuration is a cluster of three bare metal servers to ensure High availability. The Ceph Storage cluster consists of the following components:
+-	CEPH-MON (Ceph Monitor)
+-	OSD (object storage daemon)
+-	RadosGW (Rados Gateway)
+- Journal
+- Manager
+
+Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
+
+<p align="center"><img src="../figures/Figure_4_x_Ceph.png" alt="Ceph Storage System"></br>Figure 4-2. Ceph Storage System.</p>
+
+**BIOS Requirement for Ceph servers**
+
+| BIOS/boot Parameter | Control Srever |
+|-------------|----------------|
+| Boot disks | RAID 1 |
+
+How many nodes to meet SLA :
+-	minimum: three bare metal servers where Monitors are collocated with OSD. Note: at least 3 Monitors and 3 OSDs are required for High AVailability. 
+
+HW specifications :
+- Boot disks are dedicated with Flash technology disks
+- For an IOPS oriented cluster (Flash technology ), the journal can be hosted on OSD disks
+- For a capacity oriented cluster (HDD), the journal must be hosted on dedicated Flash technology disks
+
+Sizing rules :
+-	Minimum of 6 disks per server
+-	Replication factor : 3
+-	1 Core-GHz per OSD
+-	16GB RAM baseline + 2-3 GB per OSD
 
 <a name="4.3"></a>
 ## 4.3 Virtualised Infrastructure Manager (VIM)
@@ -285,9 +319,10 @@ Horizon is the Web User Interface to all OpenStack services. Horizon has service
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services 
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc. Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
-In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-2.
 
-<p align="center"><img src="../figures/Figure_4_2_Containerised_OpenStack_Services.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-2. Containerised OpenStack Services Topology.</p>
+In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-3.
+
+<p align="center"><img src="../figures/Figure_4_2_Containerised_OpenStack_Services.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-3. Containerised OpenStack Services Topology.</p>
 
 <a name="4.3.3"></a>
 ### 4.3.3. Build Parameters
