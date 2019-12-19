@@ -98,5 +98,5 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
-- **Platform**: all hardware and software that serves as a foundation or base to host VNFs and CNFs. 
+- **Platform**: A cloud capabilities type in which the cloud service user can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)). 
 >_*Note:*_ For CNTT,  this includes the physical infrastructure, Operating Systems, virtualization/containerization software and other orchestration, security, monitoring/logging and life-cycle management software.
