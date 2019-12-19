@@ -17,7 +17,7 @@
 
 As Telcom industry is evolving along with virtualization and software based
 cloud network function from hardware based network function, and CNTT is
-defining the required architecture and model for NFVi along with VNF
+defining the required architecture and model for NFVI along with VNF
 specification. As deferent vendors and open-source produce network functions,
 it’s important to define and certify these network functions based on the CNTT
 defined VNF specification. In this chapter the scope and requirements is defined
@@ -64,12 +64,12 @@ Perform compliance check based on
 ##### Verification
 
 Perform on-boarding/ verification life cycle operation (from instantiation,
-configuration, update, termination) using MANO supporting CNTT compliant NFVi.
+configuration, update, termination) using MANO supporting CNTT compliant NFVI.
 
 ##### Validation
 
 Perform various VNF type specific functionality operations on CNTT RA & RM
-compliant NFVi
+compliant NFVI
 
 ##### Performance
 
@@ -79,9 +79,9 @@ VNF performance on different profile and scenarios.
 #### Eco-system MANO/NFVI
 
 Platform would support to execute various test cases on CNTT RA & RM compliant
-NFVi
+NFVI
 
-along with required MANO system supporting these NFVi.
+along with required MANO system supporting these NFVI.
 
 #### VNF
 
@@ -177,7 +177,7 @@ As part of profile, testing environment URL, credentials and related security
 keys are captured and while running the test cases, user would be able to inputs
 the required profile in place of actual inputs and artifacts.
 
-Also helps in Managing System under test configuration and multiple MANO / NFVi
+Also helps in Managing System under test configuration and multiple MANO / NFVI
 and related eco system management elements.
 
 #### 5.3.8 Tenant & User management
@@ -234,7 +234,7 @@ The complete process is detailed below:
 1. *VNF Vendors* submit the VNF into OVP Lab for certification testing_guide
 
 2. Using VNF Test Platform, VNF will be tested with all required test cases Provided
-by *Test authors* by using the appropriate MANO and NFVi provided by Vendors. while
+by *Test authors* by using the appropriate MANO and NFVI provided by Vendors. while
 testing, required profile to be considered. This whole setup is owned by 3rd-Party
  *OVP Lab provider*
 
@@ -251,7 +251,7 @@ published into OVP VNF Portal with OVP badge.
 
 6. LFN staff will provide the certificate badge graphics and graphical usage guidelines.  The OVP portal will reflect LFN's disposition and assignment of the certified VNF badge.
 
-Now VNF is ready and *Telco Operators* could start consume it.
+Now VNF is certified and *Telco Operators* could start consume it.
 
 #### 5.4.1 Entry & Exit criteria
 
@@ -268,7 +268,7 @@ satisfy the following requirements as entry pass:
 
 * *VNF artifact* : VNF cloud (native) image, VNF configurations and guidelines,
 automation scripts, etc
-* *NFVi profiles*: List of supporting OVP Certified CNTT compliant NFVi
+* *NFVI profiles*: List of supporting OVP Certified CNTT compliant NFVI
 * Completed Security review report
 * Vendor specific test cases and its deployment and usage guidelines
 
