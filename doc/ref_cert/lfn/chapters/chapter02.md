@@ -12,7 +12,7 @@
 * [2.6 Entry & Exit Criteria](#2.6)
 * [2.7 Frameworks](#2.7)
 
-##Synopsis:
+## Synopsis:
 Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
 
 For the purposes of this chapter, NFVI+VNF testing will be performed for Verification, Validations, ultimately leading to Certifications indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implemented, NFVI. Similarily, VNFs will be checked for Compliance and Validations against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture. The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
@@ -62,7 +62,7 @@ Verification Methodologies to be implemented, from a process perspective include
 
 <a name="2.3"></a>
 ## 2.3 Certification Strategy & Vehicle
-In order to begin the certification process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in Reference Implementation. Once the target NFVI passes these tests, it would become a candidate for NFVI certification. If NFVI fails the tests, it will not be move to next workflow for certification. NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of CNTT RM](../../../ref_model/chapters/chapter07.md).
+In order to begin the certification process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in CNTT RI. Once the target NFVI passes these tests, it would become a candidate for NFVI certification. If NFVI fails the tests, it will not be move to next workflow for certification. NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of CNTT RM](../../../ref_model/chapters/chapter07.md).
 
 The three part verificaiton process includes NFVI Manifest Validations, Emprical Baseline measurements against targeted VNF families, and Candidate VNF verifications. More specifically,
 * NFVI Verification (Compliance): NFVI is the SUT, ensuring NFVI is compliant with specs of RM and RA accomplished with Manifest Validations (performed via Echo Tests)
@@ -90,11 +90,13 @@ Targeted VNF Classes/Families for baseline measurements are described in chapter
 
 <a name="2.4"></a>
 ## 2.4 Profiles Reference 
-Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high netorking throughout whereas a VNF like Mobility Management Entity (MME) woud require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs woud have different characteristics. Depending on VNF's requirements, the NFVI can be categorised into below profiles:
+Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughout whereas a VNF like Mobility Management Entity (MME) woud require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs woud have different characteristics. Depending on VNF's requirements, the NFVI can be categorised into below profiles:
 * Basic (B) profile for standard computing
 * Compute intensive (C) profile where predictable computing performance is expected and
 * Network intensive (N) profile offerring low latency and high networking throughout
-Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI. To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI certification based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
+Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI. 
+
+To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI certification based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
  * Certify Vendor NFVI Hardware solution: This allows for certification of only NFVI.
  * Certify Vendor NFVI Hardware and Software Solution: This allows for certification for NFVI running a particular VNF.
 
