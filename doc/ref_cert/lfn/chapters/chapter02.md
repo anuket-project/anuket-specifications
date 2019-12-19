@@ -57,17 +57,15 @@ Validations are performed against an Infrastructure Profile Catalog, VNF perform
 The Infrastructure Profile Catalog contains the following attributes:
 
 * Profile is a collection of (limited) options offered by the infrastructure to the VNF
-
-Capabilities
-Metrics
-Compute flavors
-Interface options
-Storage extensions
-Acceleration capabilities
+  * Capabilities
+  * Metrics
+  * Compute flavors
+  * Interface options
+  * Storage extensions
+  * Acceleration capabilities
 * Profiles are offered to VNFs as an instance types with predefined compute flavors.
-
-A particular set of options is an instance type
-Compute flavors: S, M, L
+  * A particular set of options is an instance type
+  * Compute flavors: S, M, L
 * VNF performance profiles, for which NFVI validations will support and be verified against, are defined as basic, network intensive, and compute intensive. Details for each of these profiles can be found in chapter 2.3.
 <p align="center"><img src="../figures/RC_NFVI_Profiles.jpg" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
 <p align="center"><b>Figure:</b> NFVI Profiles</p>
@@ -94,6 +92,8 @@ The below set of steps define the compliance, verification and certification pro
 * KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI certification.
 * If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge.
 * If NFVI KPIs do not meet Golden KPIs, no certification is provided.
+<p align="center"><img src="../figures/RC_Ref_NFVI_Profiles.jpg.jpg" alt="Reference NFVI Profiles Implementation" title="Reference NFVI Profiles Implementation" width="100%"/></p>
+<p align="center"><b>Figure:</b> Reference NFVI Profiles Implementation</p>
 
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
