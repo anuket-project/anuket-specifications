@@ -43,6 +43,23 @@ The NFVI provided by hardware vendors is consumed or used by VNFs via APIs expos
 <p align="center"><img src="../figures/RC_CertificationMethodology.jpg" alt="Certification Methodology" title="Certification Methodology" width="100%"/></p>
 <p align="center"><b>Figure:</b> Certification Methodology</p>
 
+Verification Methodologies to be implemented, from a process perspective include:
+* Engineering package validations will be performed against targeted infrastructure/architecture.
+* Configuration settings/features/capabilities will be baseline.
+* Entrance Criteria Guidelines will be satisfied prior to OPNFV verification (i.e. Supplier needs to submit/agree/conform)
+  * Conform to CNTT RM
+  * Confirm to CNTT RA
+  * Submit standard documentation
+  * Adhere to security compliance
+* Exit Criteria Guidelines will be satisfied prior to issuance of OPNFV compliance badges.
+  * Certification for Tenants (OVP Ecosystem)
+  * Operational Considerations (Telco Perspective)
+  * End User Considerations (Telco Perspective)
+* Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs.
+* Verification decisions will be based on data. Test harness is compatible, or conforms to testing against standard interfaces and services.
+* VNF functionality easily tested with addition of Supplier Apparatus.
+* Leverage test harnesses from existing open source projects where practical, and applicable.
+
 <a name="2.3"></a>
 ## 2.3 Certification Strategy & Vehicle
 In order to begin the certification process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in Reference Implementation. Once the target NFVI passes these tests, it would become a candidate for NFVI certification. If NFVI fails the tests, it will not be move to next workflow for certification. NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of CNTT RM](../../../ref_model/chapters/chapter07.md).
@@ -98,7 +115,32 @@ The below set of steps define the compliance, verification and certification pro
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
 **Entry criteria**: Before entering into NFVI certification, NFVI needs to satisfy the following requirements as entry pass:
-* Lab Requirements*: The NFVI lab needs to be setup according to RA1/RA2 as defined by CNTT and should be in the required state.
+* Design & Requirements
+  * Design, Configuration, Features, SLAs, and Capability documentation complete
+  * Users stories / Adherence to CNTT Model principles and guidelines
+  * Chosen Reference Architecture Matches a Reference Architecture from the product catalog
+* Environment
+  * Lab assets/resources and respective software revision levels are specified, with confirmation of compatibility across external systems
+  * Tenant needs identified
+  * All connectivity, network, image, VMs, delivered with successful pairwise tests
+  * Lab instrumented for proper monitoring
+  * Lab needs to be setup according to RA1/RA2 as defined by CNTT and should be in the NFVI required state.
+* Planning & Delivery
+  * Kickoff / Acceptance Criteria reviews performed
+  * Delivery commitments, timelines, and cadence accepted
+  * Confirm backward compatability across software/flavor revision levels
+* Data/VNFs/Security
+  * Images, Heat Templates, Preload Sheets available
+  * Images uploaded to tenant space
+  * External system test data needs identified
+  * Owners (NFVI, VNF, PTL, etc) documented
+  * Security Compliance Satisfied (Refer to CNTT Chapter XXXX Security for additional tests, scans, and vulnerabilities validations)
+* Test Case Contributions
+  * VNF Developer/Supplier validations to be performed documented and supplied
+  * NFVI validations to be performed supplied (e.g. echo, manifest)
+  * Test to ensure users are added and have correct privileges for the tenant
+  * Test to ensure quota against submitted request for the respective tenant
+  * Test to ensure custom flavours against submitted request for respective tenants
 
 **Exit criteria**: NFVI certification testing should completed with following exit criteria:
 * All mandatory test cases should pass.
