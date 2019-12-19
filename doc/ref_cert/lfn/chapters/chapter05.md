@@ -6,31 +6,165 @@
 ## Table of Contents
 
 * [5.1 Introduction](#5.1)
-* [5.2 Scope](#5.2)
-* [5.3 Platform Requirements](#5.3)
-* [5.4 Certification Methodology](#5.4)
-* [5.5 Protoype VNFs](#5.5)
-* [5.6 Profiles Reference](#5.6)
+* [5.2 Certification Methodology](#5.2)
+ * [5.2.1 Profiles Reference](#5.2.1)
+ * [5.2.2 Protoype VNFs](#5.2.2)
+* [5.3 Badging Requirements](#5.3)
+ * [5.3.1 Badging Scope](#5.3.1)
+ * [5.3.2 Entry Criteria](#5.3.2)
+ * [5.3.3 Exit Criteria](#5.3.3)
+* [5.4 Test platform Requirements](#5.5)
 
 <a name="5.1"></a>
 ### 5.1 Introduction
+This chapter covers comprehensive VNF certification process which includes
+end to end test framework requirements, test cases and results to provide VNF
+badges, based on the scope defined for VNF Compliance, Validation and Performance.
 
-As Telcom industry is evolving along with virtualization and software based
-cloud network function from hardware based network function, and CNTT is
-defining the required architecture and model for NFVi along with VNF
-specification. As deferent vendors and open-source produce network functions,
-it’s important to define and certify these network functions based on the CNTT
-defined VNF specification. In this chapter the scope and requirements is defined
-as reference for VNF certification platform, which helps to perform the various
-compliance and verification (C&V) testing and submit results to LFN OVP
-certification portal.
+It also covers steps involved in VNF badging process and covers the requirements
+for the VNF test framework.
+
+It is assumed, NFVI used for VNF certification would be already certified for
+NFVI Compliance, Validation and Performance.
 
 <a name="5.2"></a>
-### 5.2 Scope
+### 5.2 Certification Methodology
 
-The requirements defined in next section for the platform would be scoped with
-guidelines defined as below to support VNF compliance & verification
-certification testing.
+Perform the required VNF certification based on scope defined in this chapter and by
+leveraging the test cases and tools which provides the features defined under
+platform requirements as above.
+
+It defines the end-end Certification Process required for certifying the given VNF by
+using this platform (providing above requirements), producing the test results to
+certification portal , review and granting the badge to this VNF.
+
+Overall end-end certification framework
+
+![](media/f3b0c214bc58c44406fd5b801d3dfc91.png)
+
+The steps 1-4 are NFVI related steps are covered in detail in the *RC NFVi chapters*.
+Step-5.	Interoperability validations for VNF functional testing defined
+Step-6.	Interoperability validations for VNF performance testing defined (IOPS,
+  connection, threading, resource consumption).
+Step-7.	Sending requirements to the VNF requirements projects in terms of t-shirt
+sizes, config settings, required for
+VNF/orchestration validation.
+
+And the certification process is detailed below:
+
+1. *VNF Vendors* submit the VNF into OVP Lab for certification testing_guide
+
+2. Using VNF certification Platform, VNF will be tested with all required test cases
+Provided by *Test authors* by using the appropriate MANO and NFVi provided by Vendors.
+ while testing, required profile to be considered. This whole setup is owned by 3rd-Party
+ *OVP Lab provider*
+
+![](media/f3b0c214bc58c44406fd5b801d3dfc89.png)
+
+3. Once testing is completed successfully, test results will be submitted to the
+OVP portal for community review.  When submitting the application to the portal,
+the vendor will also provide a additional information, including the product name,
+ documentation links, primary company contact information, etc.
+
+4. *LFN CVC* reviewers will review the results and will approve or reject it.
+
+5.  If reviewer rejected it, then step 2 and 3 will be ran again to address the
+review comments. Otherwise Once reviewer approved it, corresponding VNF will be
+published into OVP VNF Portal with OVP badge.
+
+6. LFN staff will provide the certificate badge graphics and graphical usage guidelines.  The OVP portal will reflect LFN's disposition and assignment of the certified VNF badge.
+
+Now VNF is ready and *Telco Operators* could start consume it.
+
+
+<a name="5.2.1"></a>
+### 5.2.1 Profiles Reference
+ VNF Certification is aligned with required profiled defined in
+ [reference model](../../../ref_model/chapters/chapter02.md)
+
+<a name="5.2.2"></a>
+### 5.2.2 Protoype VNFs
+
+- Introduce concept and purpose for Golden VNFs &/or Prototype VNFs
+
+<a name="5.3"></a>
+### 5.3 Badging Requirements
+
+<a name="5.3.1"></a>
+#### 5.3.1 Badging Scope
+
+The VNF badging includes:
+
+1.	NFVi Verifications (Compliance): Manifest Verifications will ensure the NFVI
+is compliant, and delivered for testing, with hardware and software profile
+specifications defined by the Ref Model and Ref Architecture.
+2.	Empirical Validation with Reference VNF (Validation):  Empirical Validation
+with Reference Golden VNFs will ensure the NFVI runs with a set of VNF Families,
+or Classes, to mimic production-like VNFs to baseline infrastructure conformance.
+
+3.	Candidate VNF Validation (Validation & Performance):  Candidate VNF Validation
+ will ensure complete interoperability of VNF behavior on the NFVI leveraging
+ VVP/VNFSDK test suites to ensure VNF can be spun up, modified, or removed,
+ on the target NFVI (aka Interoperability).
+
+![](media/f3b0c214bc58c44406fd5b801d3dfc90.png)
+
+* Compliance – Testing to ensure product meets requirements defined by the
+project API testing for correct implementation, format, responses, etc.
+* Validation – Testing to ensure product operation meets requirements
+Testing of API control over the larger system, i.e. use API to create network
+with expected access controls, etc.
+VNF could be instantiated in NFVI and passes minimal health check.
+* Performance – Testing to measure the capability of the product like Testing
+of traffic throughput on a VNF, minimum number of sessions supported by a VNF
+Here, the compliance and validation will be in scope of phase 1 badging.
+
+4.	Security: Ensures VNF is free from known security vulnerabilities, utilizing
+industry-standard cyber security frameworks
+
+<a name="5.3.2"></a>
+#### 5.3.2 Entry criteria
+
+Before entering into the VNF badging process, VNF needs to satisfy the following
+requirements as entry criteria:
+
+* *Environment Requirements* : Published details providing evidence that a RAx
+compliant lab has been implemented, meeting requirements set forth in respective
+RM and RAx documentation for features, options, and capabilities needed for VNF
+test validations. Expected information includes:
+  * Lab Flavor
+  * Component software rev levels
+  * Confirmation of compatibility with external systems
+  * Tenant needs identified
+  * All connectivity, network, image, VMs, delivered with successful pairwise tests
+  * Lab instrumented for proper monitoring
+
+* *VNF artifact* : VNF cloud (native) image, VNF configurations and guidelines,
+automation scripts, etc
+* *NFVi profiles*: List of supporting OVP Certified CNTT compliant NFVi
+* Completed Security review report
+* Vendor specific test cases and its deployment and usage guidelines
+
+<a name="5.3.3"></a>
+#### 5.3.3 Exit criteria
+
+VNF certification testing should be completed with following exit criteria:
+
+* All required test cases should be passed
+* No outstanding high severity issues and other known issues to be documented
+* Release notes
+* Provided with required installation guide, configuration guide, etc.
+* Test results collated, centralized, and normalized, with a final report generated
+showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement
+  Success/Fail, etc), along with traceability to a functional, or non-functional,
+  requirement
+
+<a name="5.5"></a>
+### 5.5 Test Platform Requirements
+
+Test platform requirements are provided to address test case design, distribution,
+execution and result reporting along with required artifacts and environments in
+place and are defined based on below scope.
 
 ![](media/c665a3d13461f67ea8729042cf8d975d.png)
 
@@ -79,13 +213,17 @@ VNF performance on different profile and scenarios.
 #### Eco-system MANO/NFVI
 
 Platform would support to execute various test cases on CNTT RA & RM compliant
-NFVi
-
-along with required MANO system supporting these NFVi.
+NFVi along with required MANO system supporting these NFVi.
 
 #### VNF
 
-Suppliers of VNFs/CNFs seeking to receive VNF certification badges must first ensure their testing is performed against a compliant RM/RA architecture supporting all capabilities, features, and services defined by the respective *RM/RA requirements*.  More specifically, the VNF Supplier must ensure their implementation of the RM/RA receives the NFVI Certification badge prior to starting VNF testing.  Finally, to receive VNF Certification, the test platform will need to support TOSCA and HOT based VNF distros.
+Suppliers of VNFs/CNFs seeking to receive VNF certification badges must first
+ensure their testing is performed against a compliant RM/RA architecture supporting
+all capabilities, features, and services defined by the respective *RM/RA requirements*.
+More specifically, the VNF Supplier must ensure their implementation of the RM/RA
+receives the NFVI Certification badge prior to starting VNF testing.  Finally,
+to receive VNF Certification, the test platform will need to support TOSCA and
+HOT based VNF distros.
 
 In addition, Platform should be able to perform the required test case
 management and executions and produce the result the CVC OVP portal for
@@ -94,17 +232,8 @@ scoped example architecture could be as below:
 
 ![](media/2269537e91994b5b49858734fe73bbb1.png)
 
-<a name="5.3"></a>
-### 5.3 Platform Requirements
 
-Following requirements are defined based on the guidelines defined in above
-scope section.
-
-These requirements are provided to address test case design, distribution,
-execution and result reporting along with required artifacts and environments in
-place.
-
-#### 5.3.1 Test Case Model
+#### 5.5.1 Test Case Model
 As there are more number of VNF at different levels of networking such as access,
 transport and core level as well as OSI level L0-L7. Every network function
 provides set of pre-defined features and functionalities. So its important to
@@ -125,13 +254,13 @@ while implementing the test cases, this model would act as specification and as
 it captures the input and output, it would help while designing the test flow
 which will help to execute set of test cases in pre-defined flow.
 
-#### 5.3.2 Test case management
+#### 5.5.2 Test case management
 
 * **Test case** : On-board/discover, update, disable/enable, delete
 * **Test suite** : On-board/discover, update, disable/enable, delete
 * **Test flow** : design/discover, update, disable/enable, delete
 
-#### 5.3.3 Test Execution management
+#### 5.5.3 Test Execution management
 
 * **Run-time**: One of the common nature of the test environment is heterogeneous
 and multiple vendors and open communities would provide various test tool and
@@ -145,7 +274,7 @@ When VNF test platform execute the test cases, it captures the footprints of
 test case execution along with results, which are made available to user and
 integrated system for consuming.
 
-#### 5.3.4 Test Result management
+#### 5.5.4 Test Result management
 
 * **Formats** : As part of execution management, system produces the result in JSON
 format which can be represented in various form like YAML, CSV, Table, etc.
@@ -154,19 +283,19 @@ format which can be represented in various form like YAML, CSV, Table, etc.
  various fact such as test case, VNF, date of execution, environment, etc. and
  produce the report in various format like pie-chart, success rates, etc
 
-#### 5.3.5 Test Artifact management
+#### 5.5.5 Test Artifact management
 As part of testing various binaries, configurations, images, scripts ,etc would
 be used during test cases building or execution and
 Version artifact supports such as VNF CSAR.
 
-#### 5.3.6 Test Scenario management
+#### 5.5.6 Test Scenario management
 Allow to create repeatable scenario includes test cases, artifacts and profiles.
 
 It helps to create dynamic testing scenario development and testing from the
 existing test cases and flows along with required artifacts and profiles.
 It allows to run repeated testing with one or different profiles.
 
-#### 5.3.7 Test Profile management
+#### 5.5.7 Test Profile management
 For every test case execution needs to be configured with required environments
 and predefined test input parameter values. This is provided by means of profile
 
@@ -180,19 +309,19 @@ the required profile in place of actual inputs and artifacts.
 Also helps in Managing System under test configuration and multiple MANO / NFVi
 and related eco system management elements.
 
-#### 5.3.8 Tenant & User management
+#### 5.5.8 Tenant & User management
 
 Testing involves design, distribution by different user roles and executed
 across multiple tenant’s environments.
 
-#### 5.3.9 3rd-party test tool integration
+#### 5.5.9 3rd-party test tool integration
 
 In any telco environment, heterogeneous is inevitable and need for executing the
 test cases from different test tools is required. So system would support to
 on-board the 3rd party test tools and corresponding test cases from them and
 allows executing the test cases from those 3rd party test tools.
 
-#### 5.3.10 Certification management & integration
+#### 5.5.10 Certification management & integration
 
 Platform should have integration with OVP certification portal for submitting
 results with OVP defined format.
@@ -200,7 +329,7 @@ results with OVP defined format.
 It should enable repository of certified VNFs which can be used for testing
 validation and performance.
 
-#### 5.3.11 User & System interfaces
+#### 5.5.11 User & System interfaces
 
 **User interface**:
 
@@ -212,84 +341,9 @@ validation and performance.
 * REST API
 * gRPC
 
-#### 5.3.12 Deliverables
+#### 5.5.12 Deliverables
 Platform should be able to get deployed in both container and cloud environments.
 so following model deliverables would enable it:
 
 * Docker image based installation
 * Standalone installation scripts and zip artifact
-
-<a name="5.4"></a>
-### 5.4 Certification Methodology
-Perform the required VNF certification based on scope defined in this chapter and by
-leveraging the test cases and tools which provides the features defined under
-platform requirements as above.
-
-It defines the end-end Certification Process required for certifying the given VNF by
-using this platform (providing above requirements), producing the test results to
-certification portal , review and granting the badge to this VNF.
-
-The complete process is detailed below:
-
-1. *VNF Vendors* submit the VNF into OVP Lab for certification testing_guide
-
-2. Using VNF Test Platform, VNF will be tested with all required test cases Provided
-by *Test authors* by using the appropriate MANO and NFVi provided by Vendors. while
-testing, required profile to be considered. This whole setup is owned by 3rd-Party
- *OVP Lab provider*
-
- ![](media/f3b0c214bc58c44406fd5b801d3dfc89.png)
-
-3. Once testing is completed successfully, test results will be submitted to the OVP
- portal for community review.  When submitting the application to the portal, the vendor will also provide a additional information, including the product name, documentation links, primary company contact information, etc.
-
-4. *LFN CVC* reviewers will review the results and will approve or reject it.
-
-5.  If reviewer rejected it, then step 2 and 3 will be ran again to address the
-review comments. Otherwise Once reviewer approved it, corresponding VNF will be
-published into OVP VNF Portal with OVP badge.
-
-6. LFN staff will provide the certificate badge graphics and graphical usage guidelines.  The OVP portal will reflect LFN's disposition and assignment of the certified VNF badge.
-
-Now VNF is ready and *Telco Operators* could start consume it.
-
-#### 5.4.1 Entry & Exit criteria
-
-**Entry criteria**: Before entering into the VNF certification, VNF needs to
-satisfy the following requirements as entry pass:
-
-* *Environment Requirements* : Published details providing evidence that a RAx compliant lab has been implemented, meeting requirements set forth in respective RM and RAx documentation for features, options, and capabilities needed for VNF test validations. Expected information includes:
-  * Lab Flavor
-  * Component software rev levels
-  * Confirmation of compatibility with external systems
-  * Tenant needs identified
-  * All connectivity, network, image, VMs, delivered with successful pairwise tests
-  * Lab instrumented for proper monitoring
-
-* *VNF artifact* : VNF cloud (native) image, VNF configurations and guidelines,
-automation scripts, etc
-* *NFVi profiles*: List of supporting OVP Certified CNTT compliant NFVi
-* Completed Security review report
-* Vendor specific test cases and its deployment and usage guidelines
-
-**Exit criteria**: VNF certification testing should completed with following
-exit criteria:
-
-* All required test cases should be passed
-* No outstanding high severity issues and other known issues to be documented
-* Release notes
-* Provided with required installation guide, configuration guide, etc.
-* Test results collated, centralized, and normalized, with a final report generated
-showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement
-  Success/Fail, etc), along with traceability to a functional, or non-functional,
-  requirement
-
-<a name="5.5"></a>
-### 5.5 Protoype VNFs
-
-- Introduce concept and purpose for Golden VNFs &/or Prototype VNFs
-
-<a name="5.7"></a>
-### 5.6 Profiles Reference
- VNF Certification is aligned with required profiled defined in
- [reference model](../../ref_model/chapters/chapter02.md)
