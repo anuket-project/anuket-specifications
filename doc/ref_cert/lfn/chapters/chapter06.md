@@ -94,7 +94,8 @@ Note: The four category testing can be gradually supported.
 <a name="6.6"></a>
 ## 6.6 Performance Profiles
 
-- Descrie and provide a Table showing Performance Profiles
+Performance profiles are not in the scope of current release, and in future it
+would need to align with *chapter RM-4* defined measurements.
 
 <a name="6.7"></a>
 ## 6.7 VNF Class/Family and Characteristics
@@ -118,7 +119,7 @@ We can also classify VNFs based on the level of VNF operation：
 
 a) VNFs that operate at Layer 2 or Layer 3 and are primarily involved in switching or routing packets at these layers. Examples include vRouter, vBNG, vCE device, or vSwitch.
 
-b) VNFs that operate at Layer 4 through Layer 7 and are involved in forwarding, dropping, filtering or redirecting packets at Layer 4 through 7. Examples include vFirewall, vADC, vIDS/vIPS, or vWAN Accelerator. 
+b) VNFs that operate at Layer 4 through Layer 7 and are involved in forwarding, dropping, filtering or redirecting packets at Layer 4 through 7. Examples include vFirewall, vADC, vIDS/vIPS, or vWAN Accelerator.
 
 c) VNFs that are involved in the dataplane forwarding through the evolved packet core.
 
@@ -162,7 +163,7 @@ Therefore, different test cases need to be defined according to different types 
 This is the same as what described in validation test cases，the performance test cases need to be defined according to different types of VNFs.
 Combined with the classification of VNF, according to the protocol level that VNF operates, it can include:
   • VNF data plane benchmarking, like forwarding Performance Benchmarking,Long duration traffic testing, low misrouting and so on.
-  • VNF control plane benchmarking, like throughput 
+  • VNF control plane benchmarking, like throughput
   • VNF user plane benchmarking, like Packet Loss,Latency, Packet Delay
-  
+
  ETSI spec has also defined the testing method http://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
