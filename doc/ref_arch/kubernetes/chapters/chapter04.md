@@ -38,7 +38,10 @@
 <a name="4.5"></a>
 ## 4.5 CNI plugins
 
-> This chapter should describe which CNI plugins are part of the Rerefence Architecture.
+The used CNI multiplexer/metapulgin must be [DANM](https://github.com/nokia/danm) with [Calico](https://github.com/projectcalico/cni-plugin) as the CNI what complies with the basic networking assumptions of Kubernetes.
+For the network of signalling connections the built in IPVLAN CNI of DANM must be used. For the user plane network(s) the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used.
+
+> Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin to the architecture is under debate.
 
 <a name="4.6"></a>
 ## 4.5 Storage components
@@ -48,7 +51,7 @@
 <a name="4.7"></a>
 ## 4.7 Service meshes
 
-> This chapter should describe which service meshes are part of the Reference Architecture. For the shake of simplcity this chapter should discuss both the "normal" service meshes and Network Service Mesh.
+No service meshes are part of the architecture.
 
 <a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
