@@ -14,7 +14,7 @@
 * [6.8 Run latest Version](#6.8)
 * [6.9 Secure Platform Metadata](#6.9)
 * [6.10 Enable Logging and Monitoring](#6.10)
-* [6.11 Run-Time Security](#6.11)
+* [6.11 Run-time Security](#6.11)
 * [6.12 Secrets Management](#6.12)
 * [6.13 Trusted Registry](#6.13)
 * [6.14 Security Parameters](#6.14)
@@ -65,17 +65,25 @@ All connections to a Kubernetes cluster must be via a secure channel. The follow
  - Access control must be integrated existing identity and authentication platform like SAML, AD, etc
 
 ##  6.5 Use Namespaces to Establish Security Boundaries
-
+Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc) to diffferent types of workloads when deployed in seperate namespaaces. 
 
 ##  6.6 Seperate Sensitvive Workload
+To limit the potential impact of a compromise, it is best to run sensitive workloads on a dedicated set of machines. This approach reduces the risk of a sensitive application being accessed through a less-secure application that shares a container runtime or host.
+
+- The seperation can achieved by using node pools and Kubernetes namespaces.
 
 ##  6.7 Create and Define Network Policies
 
 ##  6.8 Run latest Version
-
+As new security features and patches are added in every quarterly update, it is important to take advantage of these fixes and patches. 
+- It is recommended to run the latest release with its most recent patches.
 ##  6.9 Secure Platform Metadata
+Kubernetes metadata contain sensitive information including kubelet admin credentials. It is recommended to secure them using encryption to avoid this being stolen and use to for escalated privileges in the the cluster.
 
+- Limit discovery by restricting services and users that can access cluster managment metadata on configuration, container application, and nodes
+- Ensure all metadata  information are encryption and network access must run over TLS connections
 ##  6.10    Enable Logging and Monitoring
+Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure. 
 
 ##  6.11  Run-Time Security
 
@@ -94,6 +102,18 @@ Secrets must not be stored in scripts or code but provided dynamically at runtim
 
 ##  6.13    Trusted Registry
 Ensure that the container registry only accepts container images from trusted sources that have tested and validated the images. Where images are provided by third parties, define and follow a formal process to validate compliance with security requirements. Also ensure that access control is applied to registries requiring unique credentials, to limit who can control the build or add images.
+
+ - Network access to the registry must run over TLS or VPN connections
+
+Ensure container applications are validated to assess their use and applicability as well as scanned for viruses and vulnerabilities. Only deploy container application from images that are signed with a trusted key
+
+- Ensure the latest certified container application is always selected by versioning images
+- Trusted repository and registry services should reject containers that are not properly signed
+- Images loaded into production musts come from the approved registry
+- Where possible, use third-party products to validate container content both before and after deployment
+
+Ensure stale images are removed from the registry. Remove unsafe, vulnerable images (e.g. containers should no longer be used based on time triggers and labels associated with images).
+
 ##  6.14    Security Perimeters
 When applications or workloads run on Kubernetes, there are several layers which come into picture that govern the security. Each of these layers needs to be secured within their perimeters. The various layers that come into picture are:
 
