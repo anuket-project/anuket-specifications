@@ -5,8 +5,20 @@
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
-* [6.2 Heading](#6.2)
-* [6.3 Heading](#6.3)
+* [6.2 Principles](#6.2)
+* [6.3 Node Hardening](#6.3)
+* [6.4 Authentication and Authorisation](#6.4)
+* [6.4 Namespaces to Establish Security Boundaries](#6.5)
+* [6.6 Seperate Sensitvive Workload](#6.6)
+* [6.7 Create and Define Network Policies](#6.7)
+* [6.8 Run latest Version](#6.8)
+* [6.9 Secue Platform Metadat](#6.9)
+* [6.10 Enable Logging and Monitoring](#6.10)
+* [6.11 Run-time Security](#6.11)
+* [6.12 Enable Logging & Monitoring](#6.12)
+* [6.13 Security Parameters](#6.13)
+* [6.14 Run-time Security](#6.14)
+
 
 <a name="6.1"></a>
 ## 6.1 Introduction
