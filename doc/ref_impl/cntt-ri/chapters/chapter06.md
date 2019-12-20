@@ -17,7 +17,7 @@
 The Reference Implemenation will follow the baseline OPNFV Pharos specification.  The following diagam illustrates the networking
 and servers required.
 
-<img src="../figures/ch06_lab_tpology.png" title="Lab Topology">
+<img src="../figures/ch06_lab_tpology.jpg" title="Lab Topology">
 
 
 <a name="6.3"></a>
@@ -25,5 +25,5 @@ and servers required.
 
 The ideal spine leaf topology would span at least 3 racks to ensure HA at the rack level as demonstrated in the follow diagram.
 
-<img src="../figures/ch06_spine_leaf.png" title="Spine Leaf Topology">
+<img src="../figures/ch06_spine_leaf.jpg" title="Spine Leaf Topology">
 
