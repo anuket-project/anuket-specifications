@@ -14,7 +14,7 @@
 * [6.8 Run latest Version](#6.8)
 * [6.9 Secure Platform Metadata](#6.9)
 * [6.10 Enable Logging and Monitoring](#6.10)
-* [6.11 Run-time Security](#6.11)
+* [6.11 Run-Time Security](#6.11)
 * [6.12 Secrets Management](#6.12)
 * [6.13 Trusted Registry](#6.13)
 * [6.14 Security Parameters](#6.14)
@@ -77,7 +77,7 @@ All connections to a Kubernetes cluster must be via a secure channel. The follow
 
 ##  6.10    Enable Logging and Monitoring
 
-##  6.11  Run-time Security
+##  6.11  Run-Time Security
 
 ##  6.12    Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
