@@ -88,7 +88,7 @@ The Infrastructure Profile Catalog contains the following attributes:
   * A particular set of options is an instance type
   * Compute flavors: S, M, L
 * VNF performance profiles, for which NFVI validations will support and be verified against, are defined as basic, network intensive, and compute intensive. Details for each of these profiles can be found in chapter 2.3.
-<p align="center"><img src="../figures/RC_NFVI_Profiles.jpg" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/RC_NFVI_Profiles.png" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
 <p align="center"><b>Figure:</b> NFVI Profiles</p>
 Targeted VNF Classes/Families for baseline measurements are described in chapter XXXX.
 
