@@ -166,7 +166,7 @@ The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI
 Testing for NFVI certification falls under three broad categories - Compliance, Validation and Performance. Target NFVI for certification needs to pass all these tests in order to obtain the certification badge.
 
 <a name="2.7.1.1"></a>
-### 2.7.1.1 Test Categories
+#### 2.7.1.1 Test Categories
 The following five test categories have been identified as minimal testing required to verify NFVI interoperability to satisfy the needs of VNF developer teams.
  * Baremetal validation: To validate control and compute nodes hardware
  * VNF Interoperability: After VNFs are on-boarded, openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc. would be validated.
@@ -175,7 +175,7 @@ The following five test categories have been identified as minimal testing requi
  * Security: Validation for use RBAC roles and user group policies. See [Chapter 7](./chapter07.md) for complete list.
 
 <a name="2.7.1.2"></a>
-### 2.7.1.2 Test Results
+#### 2.7.1.2 Test Results
 Test results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
 
 
