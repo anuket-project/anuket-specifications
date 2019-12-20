@@ -6,7 +6,7 @@
 ## Table of Contents
 * [6.1 Introduction](#6.1)
 * [6.2 OPNFV Pharos Specification](#6.2)
-* [6.3 Heading](#6.3)
+* [6.3 Spine Leaf Topology](#6.3)
 
 <a name="6.1"></a>
 ## 6.1 Introduction
@@ -21,4 +21,9 @@ and servers required.
 
 
 <a name="6.3"></a>
-## 6.3 Heading
+## 6.3 Spine Leaf Topology
+
+The ideal spine leaf topology would span at least 3 racks to ensure HA at the rack level as demonstrated in the follow diagram.
+
+<img src="../figures/ch06_spine_leaf.png" title="Spine Leaf Topology">
+
