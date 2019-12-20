@@ -212,7 +212,7 @@ validation and performance.
 **Programming interface**:
 
 * REST API
-* gRPC
+* RPC
 
 #### 5.3.12 Deliverables
 Platform should be able to get deployed in both container and cloud environments.
