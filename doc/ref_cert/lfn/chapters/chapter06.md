@@ -45,7 +45,23 @@ This section define the developer Deliverables (artifacts),the following list th
 <a name="6.4"></a>
 ## 6.4 Requirement Type
 
-- Describe the types of requirement:  Bare metal, API, etc
+VNF test cases are used to verify whether the virtualization network functions can be deployed on the CNTT-compatible NFVI and provide normal functions and meet performance, security and other requirements.
+
+By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance certification and help on CNTT-compatible NFVI validation and performance certification.
+
+All the VNF test cases should be supported and run by VNF E2E certification and verification Framework and generate outputs, logs to identify whether the test passed or failed.
+
+CNTT defines the following four category testing which should be consistent with the VNF test category defined by OVP.
+
+|  VNF Test Case Category   | Requirement Number  | Type (Measurement/Boolean)  |Definition/Description   |
+| ------------ | ------------ | ------------ | ------------ |
+|  Compliance | VNF.COMPreq.001  |  Boolean (i.e. Pass/Fail) |  Test case “must”perform a platform check against the Open Stack requirements and VNF package structure and syntax requirements  | 
+|  Verification |  VNF.VERIFYreq.001 |  Boolean (i.e. Pass/Fail) | Test case “must” perform on-boarding/ verification life cycle operation validation  |
+|  Validation | VNF.VALIDreq.001  |  Boolean (i.e. Pass/Fail) | Test case “must” perform API validation tests to verify operability  |
+|  Performance  | VNF.PERFreq.001  | Measurement  | Test case “must” execute various performance related testing and facilitate for benchmarking the VNF performance on different profile and scenarios  |
+
+Note: The four category testing can be gradually supported and in the future, will also cover secutiry and other test category.
+
 
 <a name="6.5"></a>
 ## 6.5 Interaction Type
@@ -101,7 +117,7 @@ the badging:
 ## 6.9 VNF Test Cases
 
 ### Compliance test cases
- Currently, there VNFs can be packaged as HEAT templates or in a CSAR file using TOSCA and OVP has supported the VNF compliance test cases, all the OVP supported test case can be found in the following two link:
+ Currently, there VNFs can be packaged as HEAT templates or in a CSAR file using TOSCA and OVP has supported the VNF compliance test cases(compliance check based on TOSCA using ETSI SOL004 & SOL001；OpenStack HOT using ONAP VNFREQS；GSMA profile), all the OVP supported test case can be found in the following two link:
 
 |  Test Cases |   Link|
 | ------------ | ------------ |
