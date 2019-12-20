@@ -7,17 +7,16 @@
 * [6.1 Introduction](#6.1)
 * [6.2 Principles](#6.2)
 * [6.3 Node Hardening](#6.3)
-* [6.4 Authentication and Authorisation](#6.4)
-* [6.4 Namespaces to Establish Security Boundaries](#6.5)
+* [6.4 Authentication](#6.4)
+* [6.5 Use Namespaces to Establish Security Boundaries](#6.5)
 * [6.6 Seperate Sensitvive Workload](#6.6)
 * [6.7 Create and Define Network Policies](#6.7)
 * [6.8 Run latest Version](#6.8)
-* [6.9 Secue Platform Metadat](#6.9)
+* [6.9 Secure Platform Metadata](#6.9)
 * [6.10 Enable Logging and Monitoring](#6.10)
 * [6.11 Run-time Security](#6.11)
-* [6.12 Enable Logging & Monitoring](#6.12)
-* [6.13 Security Parameters](#6.13)
-* [6.14 Run-time Security](#6.14)
+* [6.12 Security Parameters](#6.12)
+* [6.13 Run-time Security](#6.13)
 
 
 <a name="6.1"></a>
@@ -53,7 +52,25 @@ The following are core principles to consider when securing cloud native applica
 - Enable Role-Based Access Control (RBAC)
 
 <a name="6.3"></a>
-## 6.3 Security Perimeters
+##  6.3 Node Hardening
+
+##  6.4 Authentication
+
+##  6.5 Use Namespaces to Establish Security Boundaries
+
+##  6.6 Seperate Sensitvive Workload
+
+##  6.7 Create and Define Network Policies
+
+##  6.8 Run latest Version
+
+##  6.9 Secure Platform Metadata
+
+##  6.10  Enable Logging and Monitoring
+
+##  6.11  Run-time Security
+
+##  6.12  Security Perimeters
 When applications or workloads run on Kubernetes, there are several layers which come into picture that govern the security. Each of these layers needs to be secured within their perimeters. The various layers that come into picture are:
 
 - Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to prevent unauthorised access or image tampering.
@@ -65,7 +82,7 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Kubernetes Control Plane: The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
 
 <a name="6.4"></a>
-## 6.4 Isolation
+##  6.13  Isolation
 ### VM vs. Container Isolation
 Sometimes container isolation is compared directly with VM based isolation, with the conclusion '*there are issues with container isolation, it is not as good as VM isolation*'. Such 1:1 comparison is not reasonable because VM and container based isolation are fundamentally different:
 - VMs: hard isolation, in the layers underlying the application SW
