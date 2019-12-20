@@ -54,7 +54,7 @@ The following are core principles to consider when securing cloud native applica
 
 <a name="6.3"></a>
 ##  6.3 Node Hardening
-Ensure kubernetes nodes are secure, hardened and configured correctly following well known security framework like CIS benchmark, etc. Administrative access to kubernetes nodes should be restricted while operational activities including debugging, troubleshoting, and other tasks should be handled without direct access to the nodes.
+Ensure kubernetes nodes are secure, hardened and configured correctly following well known security framework e.g. CIS benchmark, etc. Administrative access to kubernetes nodes should be restricted while operational activities including debugging, troubleshoting, and other tasks should be handled without direct access to the nodes.
 
 ##  6.4 Authentication & Authorisation
 All connections to a Kubernetes cluster must be via a secure channel. The following security authentication mechanism must be adopted;
