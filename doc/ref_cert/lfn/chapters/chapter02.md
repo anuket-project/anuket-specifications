@@ -11,9 +11,13 @@
 * [2.5 Compliance, Verification, and Certification](#2.5)
 * [2.6 Entry & Exit Criteria](#2.6)
 * [2.7 Frameworks](#2.7)
+  * [2.7.1 Testing](#2.7.1)
+    * [2.7.1.1 Test Categories](#2.7.1.1)
+    * [2.7.1.2 Test Results](#2.7.1.2)
+    * [2.7.1.3 Test Results](#2.7.1.2)
 
 ## Synopsis:
-Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification whereas CNTT will provide the badging for NFVI certification in accordance with the certification process as explained in this chapter.
 
 For the purposes of this chapter, NFVI+VNF testing will be performed for Verification, Validations, ultimately leading to Certifications indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implemented, NFVI. Similarily, VNFs will be checked for Compliance and Validations against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture. The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
 
@@ -35,7 +39,7 @@ The NFVI provided by hardware vendors is consumed or used by VNFs via APIs expos
 * CNTT RA1/RA2 is deployed on NFVI that needs to be certified.
 * A set of tests are run on NFVI to determine the NFVI readiness for certification process.
 * Golden KPIs are taken as a reference.
-* A set of tests are run on the target NFVI.
+* A set of tests are run on the target NFVI (target for certification).
 * KPIs obtained from the target NFVI are collected and submitted to certification portal.
 * The NFVI KPIs are reviewed and compared with Golden KPIs to determine if the certification badge is to be provided to NFVI or not.
 * Perform VNF interoperability verifications against an implementation of CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem. Third-party test platforms may also be leveraged, if desired.
@@ -48,7 +52,7 @@ Verification Methodologies to be implemented, from a process perspective include
 * Configuration settings/features/capabilities will be baseline.
 * Entrance Criteria Guidelines will be satisfied prior to OPNFV verification (i.e. Supplier needs to submit/agree/conform)
   * Conform to CNTT RM
-  * Confirm to CNTT RA
+  * Conform to CNTT RA
   * Submit standard documentation
   * Adhere to security compliance
 * Exit Criteria Guidelines will be satisfied prior to issuance of OPNFV compliance badges.
@@ -156,3 +160,22 @@ The NFVI certification framework deals with the process of testing NFVI in below
 * Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
 The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI certification. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge. If NFVI KPIs do not meet Golden KPIs, no certification badge is provided.
+
+<a name="2.7.1"></a>
+### 2.7.1 Testing
+Add content
+
+<a name="2.7.1.1"></a>
+### 2.7.1.1 Test Categories
+The following five test categories have been identified as minimal testing required to verify NFVI interoperability to satisfy the needs of VNF developer teams.
+ * Baremetal validation: To validate control and compute nodes hardware
+ * VNF Interoperability: After VNFs are on-boarded, openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc. would be validated.
+ * Compute components: Validate VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has L2 and L3 connectivity.
+ * Control plane components: Validations for RabbitMQ, Ceph, MariaDB etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
+ * Security: Validation for use RBAC roles and user group policies. See [Chapter 7](./chapter07.md) for complete list.
+
+<a name="2.7.1.1"></a>
+### 2.7.1.1 Test Results
+Test results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
+
+
