@@ -28,7 +28,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
 - **Cloud native Network Function (CNF)**: An implementation of a Virtual Network Function (**VNF**, as defined by ETSI GS NFV 003) that adheres to the CNCF Cloud Native Definition or a **VNF** that is transitioning to cloud native.
-  >_*Note:*_ This definition is derived from [CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329). A cloud native **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The microservices typically run using a container engine, not directly on the underlaying infrastructure itself. The containers themselves may use Linux, Docker or other similar container technology.
+  >_*Note:*_ This definition is derived from [CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329), which is still a draft. A cloud native **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The microservices typically run using a container engine, not directly on the underlaying infrastructure itself. The containers themselves may use Linux, Docker or other similar container technology.
 - **Virtual Application (VA)**: A general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
 - **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
@@ -93,7 +93,7 @@ A **Container** provides operating-system-level virtualization by abstracting th
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
 - **Kubernetes Node**:	A node is a worker machine in Kubernetes. A worker node may be a **VM** or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
 - **Kubernetes Service**: An abstract way to expose an application running on a set of Pods as a network service.
->_*Note:*_ This definition from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-service) uses the network service differently than in ETSI NFV.
+>_*Note:*_ This definition from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-service) uses the term "network service" differently than in ETSI NFV.
 
 Terms not defined by Kubernetes:
 - **CaaS**:	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
