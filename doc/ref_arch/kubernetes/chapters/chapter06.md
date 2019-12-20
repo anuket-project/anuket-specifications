@@ -109,7 +109,7 @@ Ensure container applications are validated to assess their use and applicabilit
 
 - Ensure the latest certified container application is always selected by versioning images
 - Trusted repository and registry services should reject containers that are not properly signed
-- Images loaded into production musts come from the approved registry
+- Images loaded into production must come from the approved registry
 - Where possible, use third-party products to validate container content both before and after deployment
 
 Ensure stale images are removed from the registry. Remove unsafe, vulnerable images (e.g. containers should no longer be used based on time triggers and labels associated with images).
