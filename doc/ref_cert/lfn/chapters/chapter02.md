@@ -14,7 +14,7 @@
   * [2.7.1 Testing](#2.7.1)
     * [2.7.1.1 Test Categories](#2.7.1.1)
     * [2.7.1.2 Test Results](#2.7.1.2)
-    * [2.7.1.3 Test Results](#2.7.1.2)
+  * [2.7.2 Badging](#2.7.2)
 
 ## Synopsis:
 Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification whereas CNTT will provide the badging for NFVI certification in accordance with the certification process as explained in this chapter.
@@ -163,7 +163,7 @@ The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI
 
 <a name="2.7.1"></a>
 ### 2.7.1 Testing
-Add content
+Testing for NFVI certification falls under three broad categories - Compliance, Validation and Performance. Target NFVI for certification needs to pass all these tests in order to obtain the certification badge.
 
 <a name="2.7.1.1"></a>
 ### 2.7.1.1 Test Categories
@@ -174,8 +174,13 @@ The following five test categories have been identified as minimal testing requi
  * Control plane components: Validations for RabbitMQ, Ceph, MariaDB etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
  * Security: Validation for use RBAC roles and user group policies. See [Chapter 7](./chapter07.md) for complete list.
 
-<a name="2.7.1.1"></a>
-### 2.7.1.1 Test Results
+<a name="2.7.1.2"></a>
+### 2.7.1.2 Test Results
 Test results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
 
 
+<a name="2.7.2"></a>
+### 2.7.2 Badging
+Badging refers to the granting of a certification badge to NFVI by CNTT, after it has passed all tests, to certify that:
+ * NFVI adheres to CNTT RA/RM.
+ * CNTT certified VNFs will functionally perform well on NFVI with acceptable levels of performance.
