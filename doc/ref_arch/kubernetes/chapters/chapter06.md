@@ -17,8 +17,9 @@
 * [6.11 Run-time Security](#6.11)
 * [6.12 Secrets Management](#6.12)
 * [6.13 Trusted Registry](#6.13)
-* [6.14 Security Parameters](#6.14)
-* [6.15 Run-time Security](#6.15)
+* [6.14 Orchestration & Container Manager](#6.14)
+* [6.15 Security Parameters](#6.15)
+* [6.16 Run-time Security](#6.16)
 
 <a name="6.1"></a>
 ## 6.1 Introduction
@@ -82,12 +83,12 @@ Kubernetes metadata contain sensitive information including kubelet admin creden
 
 - Limit discovery by restricting services and users that can access cluster managment metadata on configuration, container application, and nodes
 - Ensure all metadata  information are encryption and network access must run over TLS connections
-##  6.10    Enable Logging and Monitoring
+##  6.10  Enable Logging and Monitoring
 Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure. 
 
 ##  6.11  Run-Time Security
 
-##  6.12    Secrets Management
+##  6.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
 
 - Ensure the containerised code can read only the secrets that it needs
@@ -100,7 +101,7 @@ Secrets must not be stored in scripts or code but provided dynamically at runtim
 - Check there are no hard-coded passwords, keys, and other sensitive items in the container application.
 - Where possible use security tools to automate scanning for hard-coded passwords, keys, and other sensitive items in the container application
 
-##  6.13    Trusted Registry
+##  6.13  Trusted Registry
 Ensure that the container registry only accepts container images from trusted sources that have tested and validated the images. Where images are provided by third parties, define and follow a formal process to validate compliance with security requirements. Also ensure that access control is applied to registries requiring unique credentials, to limit who can control the build or add images.
 
  - Network access to the registry must run over TLS or VPN connections
@@ -114,7 +115,30 @@ Ensure container applications are validated to assess their use and applicabilit
 
 Ensure stale images are removed from the registry. Remove unsafe, vulnerable images (e.g. containers should no longer be used based on time triggers and labels associated with images).
 
-##  6.14    Security Perimeters
+##  6.14  Orchestration & Container Manager
+The kubernetes orchestration manager also know as the control plane consist of various components including a Kube-API server, an etcd storage, a kube-controller-manager, a cloud-controller-manager, a kube-scheduler, and a DNS server for Kubernetes services. 
+The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc. 
+
+They following are security recommendations for orchestration manager;
+
+- Cluster management Network isolation can help protect the master node and control where administrative commands can run. Use network isolation techniques, configure RBAC on the cluster manager and configure node service accounts following the principle of least privilege.
+- Ensure that access control is applied to registries requiring unique credentials, to limit who can control the build or add images.
+- Network access must run over TLS connections.
+- User roles and access levels must be configured to provide segregation of duties.
+  - Do not mix container and non-containers services on the same node
+  - Do not run containers as root
+- Multi-factor authentication is mandatory for all administrative access.
+- Harden the configuration by using CIS (Center for Internet Security) benchmarks, which are available for container runtime and Kubernetes
+- Deploy security products that provide whitelisting,  behaviour monitoring and anomaly detection for preventing malicious activity
+- Avoid privileged container application through policy management to reduce the effects of potential attacks.
+- Avoid privileged container application through policy management to reduce the effects of potential attacks
+- Enable integration with other security ecosystem (SIEM)
+- Isolate environments (Dev /test /Production) from other environments within the cluster.
+- Create administrative boundaries between resources using namespace and avoid using default namespaces.
+- Enable Seccomp to ensure that the workloads have restricted actions available within the container application.
+- Limit discovery by restricting services and users that can access cluster managment metadata on configuration, containers and nodes 
+ 
+##  6.15  Security Perimeters
 When applications or workloads run on Kubernetes, there are several layers which come into picture that govern the security. Each of these layers needs to be secured within their perimeters. The various layers that come into picture are:
 
 - Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to prevent unauthorised access or image tampering.
