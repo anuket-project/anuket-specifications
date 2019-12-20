@@ -117,7 +117,7 @@ Ensure stale images are removed from the registry. Remove unsafe, vulnerable ima
 
 ##  6.14  Orchestration & Container Manager
 The kubernetes orchestration manager also know as the control plane consist of various components including a Kube-API server, an etcd storage, a kube-controller-manager, a cloud-controller-manager, a kube-scheduler, and a DNS server for Kubernetes services. 
-The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc. 
+The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc. A master node in an unsecured boundary can lead to a potential threat to the running workloads. A master must be hardened in terms of security by disabling unused ports, prohibiting root access etc. 
 
 They following are security recommendations for orchestration manager;
 
