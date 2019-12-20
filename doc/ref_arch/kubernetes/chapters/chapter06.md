@@ -67,7 +67,7 @@ All connections to a Kubernetes cluster must be via a secure channel. The follow
 ##  6.5 Use Namespaces to Establish Security Boundaries
 Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc) to diffferent types of workloads when deployed in seperate namespaaces. 
 
-##  6.6 Seperate Sensitvive Workload
+##  6.6 Seperate Sensitive Workload
 To limit the potential impact of a compromise, it is best to run sensitive workloads on a dedicated set of machines. This approach reduces the risk of a sensitive application being accessed through a less-secure application that shares a container runtime or host.
 
 - The seperation can achieved by using node pools and Kubernetes namespaces.
