@@ -5,12 +5,17 @@
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
-* [3.2 Measurement Criteria](#3.2)
-  * [3.2.1 Storage and IOPS](#3.2.1)
-* [3.3 Measurement Types](#3.3)
-  * [3.3.1 Performance Measurements](#3.3.1)
-  * [3.3.2 Resiliency Measurements](#3.3.2)
-* [3.4 NFVI Test Cases](#3.4)
+* [3.2 Assumptions](#3.2)
+* [3.3 Requirement Type](#3.3)
+* [3.4 Profile Catalog](#3.4)
+* [3.5 Software & Hardware Reference](#3.5)
+* [3.6 Options & Extensions](#3.6)
+* [3.7 Measurement Criteria](#3.7)
+  * [3.7.1 Storage and IOPS](#3.7.1)
+* [3.8 Measurement Types](#3.8)
+  * [3.8.1 Performance Measurements](#3.8.1)
+  * [3.8.2 Resiliency Measurements](#3.8.2)
+* [3.9 NFVI Test Cases](#3.9)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
@@ -18,15 +23,47 @@
 > Scope of this chapter is to have a list of test cases needed (a detailed table of sort)
 
 <a name="3.2"></a>
-## 3.2 Measurement Criteria
+## 3.2 Assumptions
+
+Content to be written:
+- Assumptions:  Automatable, Integrated with CICD tool chain
+
+<a name="3.3"></a>
+## 3.3 Requirement Type
+
+Content to be written:
+-  Type of requirement:  Bare metal, API, etc
+
+<a name="3.4"></a>
+## 3.4 Profile Catalog
+
+Content to be written:
+-  Table showing Profile Catalog
+
+<a name="3.5"></a>
+## 3.5 Software & Hardware Reference
+
+Content to be written:
+- Identify SW Reference
+- Identify HW Reference
+
+<a name="3.6"></a>
+## 3.6 Options & Extensions
+
+Content to be written:
+- Options Available / Configured
+- Extensions Available / Configured
+
+<a name="3.7"></a>
+## 3.7 Measurement Criteria
 
 Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
 
 This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please refer to Reference Model**
 
 
-<a name="3.2.1"></a>
-### 3.2.1 Storage and IOPS
+<a name="3.7.1"></a>
+### 3.7.1 Storage and IOPS
 
 _**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
 
@@ -51,11 +88,11 @@ Additional factors to consider when measuring IOPS:
 
 For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
 
-<a name="3.3"></a>
-## 3.3 Measurement Types
+<a name="3.8"></a>
+## 3.8 Measurement Types
 
-<a name="3.3.1"></a>
-#### 3.3.1 Performance Measurements
+<a name="3.8.1"></a>
+#### 3.8.1 Performance Measurements
 
 **Objectives**
 
@@ -247,11 +284,11 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 > _**Note:** to be studied: how to define the different possible test cases, especially the different workload profiles (i.e., pseudo-VNF) to consider_
 
 
-<a name="3.3.2"></a>
-#### 3.3.2 Resiliency Measurements
+<a name="3.8.2"></a>
+#### 3.8.2 Resiliency Measurements
 
 
-<a name="3.4"></a>
-## 3.4 NFVI Test Cases
+<a name="3.9"></a>
+## 3.9 NFVI Test Cases
 
 > we need to have list of NFVI test cases in here.
