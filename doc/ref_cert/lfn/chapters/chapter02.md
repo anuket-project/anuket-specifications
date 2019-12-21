@@ -11,10 +11,12 @@
 * [2.5 Compliance, Verification, and Certification](#2.5)
 * [2.6 Entry & Exit Criteria](#2.6)
 * [2.7 Frameworks](#2.7)
-  * [2.7.1 Testing](#2.7.1)
-    * [2.7.1.1 Test Categories](#2.7.1.1)
-    * [2.7.1.2 Test Results](#2.7.1.2)
-  * [2.7.2 Badging](#2.7.2)
+  * [2.7.1 Best Practices (General)](#2.7.1)
+  * [2.7.2 Testing](#2.7.2)
+    * [2.7.2.1 Test Categories](#2.7.2.1)
+    * [2.7.2.2 Test Harnessess](#2.7.2.2)
+    * [2.7.2.3 Test Results](#2.7.2.3)
+  * [2.7.3 Badging](#2.7.3)
 
 ## Synopsis:
 Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification whereas CNTT will provide the badging for NFVI certification in accordance with the certification process as explained in this chapter.
@@ -162,25 +164,101 @@ The NFVI certification framework deals with the process of testing NFVI in below
 The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI certification. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge. If NFVI KPIs do not meet Golden KPIs, no certification badge is provided.
 
 <a name="2.7.1"></a>
-### 2.7.1 Testing
-Testing for NFVI certification falls under three broad categories - Compliance, Validation and Performance. Target NFVI for certification needs to pass all these tests in order to obtain the certification badge.
-
-<a name="2.7.1.1"></a>
-#### 2.7.1.1 Test Categories
-The following five test categories have been identified as minimal testing required to verify NFVI interoperability to satisfy the needs of VNF developer teams.
- * Baremetal validation: To validate control and compute nodes hardware
- * VNF Interoperability: After VNFs are on-boarded, openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc. would be validated.
- * Compute components: Validate VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has L2 and L3 connectivity.
- * Control plane components: Validations for RabbitMQ, Ceph, MariaDB etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
- * Security: Validation for use RBAC roles and user group policies. See [Chapter 7](./chapter07.md) for complete list.
-
-<a name="2.7.1.2"></a>
-#### 2.7.1.2 Test Results
-Test results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
-
+### 2.7.1 Best Practices (General)
+The NFVI certification framework will be guided by the following core principles:
+-   Implementing, and adhering to, Standardized Test Methodology / flow, Test Plan, and Test Case Suites, which promotes scalability using repeatable processes.
+-   Integration with Automated Tool-Chains, such as XTesting or Dovetail, for continuous deployment, validation, and centralization of test harnesses and results visualization.
+- Alliance and execution of OVP flows and methodologies, which supports common structures for code, artifact generation and repository, certification criteria, etc.)
+-   Where possible, leveraging ONAP Network and Service Models, with identified VNF-specific parameters
+-   Utilizing Standard certification criteria.
+-   Defining CNTT reference architecture (RA) as scenarios, and having all test cases for the RA be involved in OVP (could also be addressed in OVP as CNTT test)
+-   Add test cases from operators, which operators already tested in their environment
 
 <a name="2.7.2"></a>
-### 2.7.2 Badging
-Badging refers to the granting of a certification badge to NFVI by CNTT, after it has passed all tests, to certify that:
- * NFVI adheres to CNTT RA/RM.
- * CNTT certified VNFs will functionally perform well on NFVI with acceptable levels of performance.
+### 2.7.2 Testing
+Testing for NFVI certification falls under three broad categories - Compliance, Validation and Performance. Target NFVI for certification needs to pass all these tests in order to obtain the certification badge.
+
+<a name="2.7.2.1"></a>
+#### 2.7.2.1 Test Categories
+The following five test categories have been identified as **minimal testing required** to verify NFVI interoperability to satisfy the needs of VNF developer teams.
+ 1. Baremetal validation: To validate control and compute nodes hardware
+ 2. VNF Interoperability: After VNFs are on-boarded, openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc. would be validated.
+ 3. Compute components: Validate VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has L2 and L3 connectivity.
+ 4. Control plane components: Validations for RabbitMQ, Ceph, MariaDB etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
+ 5. Security: Validation for use RBAC roles and user group policies. See [Chapter 7](./chapter07.md) for complete list.
+
+The following **Optional Test Categories** which can be considered by the Operator, or Supplier, for targeted validations to complement required testing for certification: 
+
+ - On-Boarding (MANO agnostic)
+ - VNF Functional Testing
+ - Charging / Revenue Assurance Verification
+ - MicroServices Support
+ - Closed Loop Testing
+ - VNF Coexistence (ETSI NFV-TST001 “Noisy Neighbor”)
+ - VNF Interactions with Extended NFVi Topology
+ - VNF Interactions with Complex NFVi (Akraino)
+ - Scalability Testing
+ - HA Testing
+ - Fault Recovery Testing
+ - PM/KPI/Service Assurance Testing
+
+<a name="2.7.2.2"></a>
+#### 2.7.2.2 Test Harnesses
+In addition to General Best Practices for NFVI certification, the following Quality Engineering (QE) standards will be applied when defining and delivering test scenarios for certification:  
+1.  Standardized test methodologies / flows capturing requirements from RA's, goals and scenarios for test execution, and normalizing test results.
+2.  Establishing, and leveraging, working test-beds which can be referenced in subsequent test scenario designs.  
+3.  Leveraging standardized cloud-based facilities such as storage, IAM, etc.
+4.  Test Script libraries need to enable Data-Driven testing of On-Boarding, Instantiation, etc.
+5.  Standards base Test Plan and Test Case suite needs to include sample VNFs, CSAR, and Automated Test Cases.
+6.  Documentation needs to be dynamic, and consumable.
+7.  Harnesses need to apply a “Just add Water” deployment strategy, enabling test teams to readily implement test harnesses which promotes certification scalability.
+
+<a name="2.7.2.3"></a>
+#### 2.7.2.3 Test Results
+
+**Categorization**.  Test suites will be categorized as Functional/Platform or Performance based.  
+
+**Results.** Test results reporting will be communicated as a boolean (pass/fail), or Measurements Only.  
+
+ - **Functional Pass/Fail** signals the assertions set in a test script verify the Functional Requirements (FR) has met its stated objective as delivered by the developer. This will consist of both positive validation of expected behavior, as well as negative based testing when to confirm error handling is working as expected.
+ - **Performance-based Pass/Fail** determination will be made by comparing Non-Functional (NFR) NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
+ - **Measurement Results**.  Baseline Measurements will be performed when there are no benchmark standards to compare results, or established FRs/NFRs for which to gauge application / platform behavior in an integrated environment, or under load conditions.  In these cases, test results will be executed to measure the application, platform, then prepare FRs/NFRs for subsequent enhancements and test runs.  
+ 
+ **Collation | Portal**.  The following criteria will be applied to the collation and presentation of test-runs seeking NFVI certification:   
+ 
+ - RA number and name (e.g. RA-1 OpenStack)
+ - Version of software tested (e.g. OpenStack Ocata)
+ - Normalized results will be collated across all test runs (i.e. centralized database)
+ - Clear time stamps of test runs will be provided.
+ - Identification of test engineer / executor.
+ - Traceability to requirements.
+ - Summarized conclusion if conditions warrant test certification (see Badging Section).
+ - Portal contains links to certification badge(s) received. 
+
+<a name="2.7.3"></a>
+### 2.7.3 Badging
+**Defined**.  _Badging_ refers to the granting of a certification badge by the OVP to Suppliers/Testers of CNTT NFVI upon demonstration the testing performed confirms: 
+
+ - NFVI adheres to CNTT RA/RM requirements.
+ - CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
+
+**Specifics**.  More specifically, suppliers of NFVI testing seeking infrastructure certification are required to furnish the following:
+
+|Category|OPV/CVC Expectation|Supporting Artifact(s)|
+|--|--|--|
+|Lab|Verification that the delivered test lab conforms to RI-x lab requirements for topology, # of nodes, network fabric, etc|Bare-metal H/W Validations|
+|Compliance|Verification that the installed software conforms to RM/RA requirements for required components and configured options and extensions, etc|Manifest S/W Validations|
+|Validation|FR Validation of Component and API functional behavior meets requirements specified in RM/RA-x requirements documents|API & Platform Test Results|
+|Performance|NFR Validation of Component, Interface, and API, results are within tolerance, or achieve baseline measurements|Performance Test Results|
+|Results Reporting|Published of Test Results into centralized and common repository and reporting portal|Normalized Results per Standards|
+|Release Notes|Supplier provides concluding remarks, links to artifacts, and demonstration of having met exit criteria for testing|Release Notes
+
+**Certification Process**.  
+Certification and issuance of NFVI badges will be as follows:
+ - NFVI supplier utilizes, or installs a target RM/RA-x certified RI lab.
+ - Required artifacts are submitted/supplied to the OVP, demonstrating proper Lab Installation, Compliance, Validation, Performance, and Release of Results & Known Issues.
+ - Artifact validations will be corroborated and confirmed by the OVP. with direct comparison between measured results and documented FRs/NFRs for applications, hardware and software configuration settings, and host systems. 
+ - All OVP inquiries, requests for re-tests, or reformatting / re-uploading of results data are closed.
+
+<p align="center"><img src="../figures/NFVI_certifying_vendor_swhw_solutions.jpg" alt="NFVI Badges" title="NFVI Badges" width="100%"/></p>
+<p align="center"><b>Figure:</b> NFVI Badges</p>
