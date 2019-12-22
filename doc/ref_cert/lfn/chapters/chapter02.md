@@ -117,7 +117,7 @@ The below set of steps define the compliance, verification and certification pro
 * KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI certification.
 * If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge.
 * If NFVI KPIs do not meet Golden KPIs, no certification is provided.
-<p align="center"><img src="../figures/RC_Ref_NFVI_Profiles.jpg.jpg" alt="Reference NFVI Profiles Implementation" title="Reference NFVI Profiles Implementation" width="100%"/></p>
+<p align="center"><img src="../figures/RC_Ref_NFVI_Profiles.jpg" alt="Reference NFVI Profiles Implementation" title="Reference NFVI Profiles Implementation" width="100%"/></p>
 <p align="center"><b>Figure:</b> Reference NFVI Profiles Implementation</p>
 
 <a name="2.6"></a>
@@ -241,6 +241,12 @@ In addition to General Best Practices for NFVI certification, the following Qual
 
  - NFVI adheres to CNTT RA/RM requirements.
  - CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
+
+The below figure shows the targetted badge for NFVI.
+
+<p align="center"><img src="../figures/NFVI-badge.jpg" alt="NFVI Badge" title="NFVI Badge" width="100%"/></p>
+<p align="center"><b>Figure:</b> NFVI badge</p>
+
 
 **Specifics**.  More specifically, suppliers of NFVI testing seeking infrastructure certification are required to furnish the following:
 
