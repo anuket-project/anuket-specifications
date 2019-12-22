@@ -250,7 +250,7 @@ The below figure shows the targetted badge for NFVI.
 
 **Specifics**.  More specifically, suppliers of NFVI testing seeking infrastructure certification are required to furnish the following:
 
-|Category|OPV/CVC Expectation|Supporting Artifact(s)|
+|Category|OVP/CVC Expectation|Supporting Artifact(s)|
 |--|--|--|
 |Lab|Verification that the delivered test lab conforms to RI-x lab requirements for topology, # of nodes, network fabric, etc|Bare-metal H/W Validations|
 |Compliance|Verification that the installed software conforms to RM/RA requirements for required components and configured options and extensions, etc|Manifest S/W Validations|
