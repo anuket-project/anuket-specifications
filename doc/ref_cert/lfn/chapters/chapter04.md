@@ -82,8 +82,25 @@ It covers the test cases against identity management operations like user manage
 | `cert.test.vim.01` | API | Show API endpoint catalog. It *must* have endpoint for each Core service. | `req.int.api.01` |
 
 #### 4.3.4.2 Image - Glance
-It covers the test cases against image management operations.
 
+Glance API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+the next test names must not be executed:
+- .\*image.v1
+
+Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_glance
+- GlanceImages.create_and_delete_image
+- GlanceImages.create_and_list_image
+- GlanceImages.list_images
+- GlanceImages.create_image_and_boot_instances
 
 #### 4.3.4.3 Block Storage - Cinder
 It covers the test cases against volume management operations.
