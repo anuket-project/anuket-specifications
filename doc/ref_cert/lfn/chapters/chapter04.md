@@ -97,7 +97,64 @@ It covers the test cases against networking management operations.
 
 
 #### 4.3.4.6 Compute - Nova
-It covers the test cases against compute management operations.
+
+Nova API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+the next test names must not be executed:
+- .\*test_fixed_ips
+- .\*test_fixed_ips_negative
+- .\*test_auto_allocate_network
+- .\*test_floating_ips_bulk
+- .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume
+- .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration
+- .\*test_live_migration.LiveMigrationTest.test_iscsi_volume
+- .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration
+- .\*test_live_migration.LiveMigrationRemoteConsolesV26Test
+- .\*certificates.test_certificates
+- .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest
+- .\*test_novnc
+- .\*test_server_personality
+- .\*test_servers.ServerShowV263Test.test_show_update_rebuild_list_server
+- .\*test_servers_negative.ServersNegativeTestJSON.test_personality_file_contents_not_encoded
+- .\*servers.test_virtual_interfaces
+- .\*test_server_actions.ServerActionsTestJSON.test_change_server_password
+- .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console
+- .\*test_server_actions.ServerActionsTestJSON.test_reboot_server_soft
+- .\*test_security_group_default_rules
+- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name
+- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description
+- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name
+- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des
+- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id
+- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name
+- .\*test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex
+- .\*compute.test_virtual_interfaces
+- .\*compute.test_virtual_interfaces_negative
+- .\*compute.test_networks
+- .\*test_attach_volume.AttachVolumeMultiAttach
+- .\*test_volume_swap
+
+Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_nova
+- NovaServers.boot_and_live_migrate_server
+- NovaServers.boot_server_attach_created_volume_and_live_migrate
+- NovaServers.boot_server_from_volume_and_live_migrate
+- NovaKeypair.boot_and_delete_server_with_keypair
+- NovaServers.boot_server_from_volume_and_delete
+- NovaServers.pause_and_unpause_server
+- NovaServers.boot_and_migrate_server
+- NovaServers.boot_server_and_list_interfaces
+- NovaServers.boot_server_associate_and_dissociate_floating_ip
+- NovaServerGroups.create_and_delete_server_group
+- Quotas.nova_update_and_delete
+- Quotas.nova_update
 
 #### 4.3.4.7 Orchestration - Heat
 It covers the test cases against orchestration operations.
