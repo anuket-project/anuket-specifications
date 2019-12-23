@@ -25,7 +25,7 @@ Negotiation/Hand Shake API - VNFs and NFVIs should be able to negotiate on certa
 
 * Service Function Chain - Reference model  makes a reference to SFC support from NFVI. Moreover to support network services, a way is needed to chain the services. Service Function Chain was developed in OpenStack and went dormant. It is not supported and well tested. This requires to be revamped to be useful for CNTT reference architecture
 
-* Packet Acceleration Request (e.g Hardware Acceleration) - Reference model makes a reference packet acceleration. OpenStack does not have such support that could be easily used or automated for deployments of VNFs/NFVIs. 
+* Packet Acceleration Request (e.g Hardware Acceleration) - Reference model states packet acceleration should be supported. OpenStack does not have such support that could be easily used or automated for deployments of VNFs/NFVIs. 
 
 * Public and Multi-Cloud  - The framework offered by OpenStack does not support multi-cloud of public deployments, along with the core deployments
 
