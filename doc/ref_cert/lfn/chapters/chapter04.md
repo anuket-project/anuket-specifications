@@ -93,8 +93,56 @@ It covers the test cases against object management operations.
 
 
 #### 4.3.4.5 Networking - Neutron
-It covers the test cases against networking management operations.
 
+Neutron API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) and
+[neutron-tempest-plugin](https://opendev.org/openstack/neutron-tempest-plugin)
+as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+the next test names must not be executed:
+- .\*test_logging
+- .\*test_logging_negative
+- .\*test_network_segment_range
+- .\*test_ports.PortTestCasesResourceRequest
+- .\*test_floating_ips.FloatingIPPoolTestJSON
+- .\*test_metering_extensions
+- .\*test_metering_negative
+- .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain
+- .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status
+- .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status
+- .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain
+- .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name
+- .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name
+- .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision
+- .\*test_router_interface_fip
+- .\*test_security_groups.RbacSharedSecurityGroupTest
+- .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp
+- .\*test_qos.QosMinimumBandwidthRuleTestJSON
+- .\*network.test_tags
+- .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip
+- .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip
+- .\*test_network_v6
+
+Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_neutron
+- NeutronNetworks.create_and_delete_networks
+- NeutronNetworks.create_and_delete_ports
+- NeutronNetworks.create_and_delete_routers
+- NeutronNetworks.create_and_delete_subnets
+- NeutronNetworks.create_and_list_networks
+- NeutronNetworks.create_and_list_ports
+- NeutronNetworks.create_and_list_routers
+- NeutronNetworks.create_and_list_subnets
+- NeutronSecurityGroup.create_and_delete_security_groups
+- NeutronSecurityGroup.create_and_delete_security_group_rule
+- NeutronNetworks.set_and_clear_router_gateway
+- Quotas.neutron_update
 
 #### 4.3.4.6 Compute - Nova
 It covers the test cases against compute management operations.
