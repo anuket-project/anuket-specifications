@@ -27,8 +27,6 @@ Negotiation/Hand Shake API - VNFs and NFVIs should be able to negotiate on certa
 
 * Packet Acceleration Request (e.g Hardware Acceleration) - Reference model makes a reference packet acceleration. OpenStack does not have such support that could be easily used or automated for deployments of VNFs/NFVIs. 
 
-* Hardware Interfaces Discovery  - There is no easy way in OpenStack to identify and publish hardware interfaces (NICs and their capabilities). Ironic Inspector has some such capabilities, but it requires a manual intervention.
-
 * Public and Multi-Cloud  - The framework offered by OpenStack does not support multi-cloud of public deployments, along with the core deployments
 
 
