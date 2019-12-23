@@ -89,8 +89,24 @@ It covers the test cases against image management operations.
 It covers the test cases against volume management operations.
 
 #### 4.3.4.4 Object Storage - Swift
-It covers the test cases against object management operations.
 
+Swift API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+all tests must be executed.
+
+Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- SwiftObjects.create_container_and_object_then_list_objects
+- SwiftObjects.list_objects_in_containers
+- SwiftObjects.create_container_and_object_then_download_object
+- SwiftObjects.create_container_and_object_then_delete_all
+- SwiftObjects.list_and_download_objects_in_containers
 
 #### 4.3.4.5 Networking - Neutron
 It covers the test cases against networking management operations.
