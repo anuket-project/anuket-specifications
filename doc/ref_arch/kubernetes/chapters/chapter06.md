@@ -60,10 +60,10 @@ Ensure kubernetes nodes are secure, hardened and configured correctly following 
 ##  6.4 Authentication & Authorisation
 All connections to a Kubernetes cluster must be via a secure channel. The following security authentication mechanism must be adopted;
 
- - User roles and access levels must be configured to provide segregation of duties
+ - User roles and access levels must be configured to provide segregation of duties (RBAC)
  - Multi-factor authentication is mandated for all administrative access
  - Service and session authentication mechanisms must be token-based or certificate-based
- - Access control must be integrated existing identity and authentication platform like SAML, AD, etc
+ - Access control should be integrated with existing identity management platforms e.g SAML, AD, etc.
 
 ##  6.5 Use Namespaces to Establish Security Boundaries
 Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc) to diffferent types of workloads when deployed in seperate namespaaces. 
