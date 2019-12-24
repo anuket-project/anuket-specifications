@@ -11,17 +11,18 @@
   * [4.3.2 Infrastructure](#4.3.2)
   * [4.3.3 VIM](#4.3.3)
   * [4.3.4 Interfaces & APIs](#4.3.4)
-  * [4.3.5 Tenants](#4.3.5)
-  * [4.3.6 LCM](#4.3.6)
-  * [4.3.7 Assurance](#4.3.7)
-  * [4.3.8 Security](#4.3.8)
+  * [4.3.5 opensource VNF onboarding and testing](#4.3.5)
+  * [4.3.6 Tenants](#4.3.6)
+  * [4.3.7 LCM](#4.3.7)
+  * [4.3.8 Assurance](#4.3.8)
+  * [4.3.9 Security](#4.3.9)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
 
 The scope of this chapter is to identify and list down test cases based on requirements defined in [Reference Architecture-1 (RA-1)](../../../ref_arch/openstack/README.md). This will serve as traceability between test cases and requirements.
 
-Note that each requirement may have one or more test cases associated with it. 
+Note that each requirement may have one or more test cases associated with it.
 
 **must**: Test Cases that are marked as must are considered mandatory and must pass succesfully.
 
@@ -67,21 +68,21 @@ Note that each requirement may have one or more test cases associated with it.
 
 <a name="4.3.4"></a>
 ### 4.3.4 Interfaces & APIs
-This defines the test cases around the functionality that are exposed by OpenStack APIs. All the defined OpenStack 
-service APIs in RA-1's [chapter 05](../../../ref_arch/openstack/chapters/chapter05.md) will be the scope here. 
+This defines the test cases around the functionality that are exposed by OpenStack APIs. All the defined OpenStack
+service APIs in RA-1's [chapter 05](../../../ref_arch/openstack/chapters/chapter05.md) will be the scope here.
 
 Note: It will only target the functionality that are exposed by standard OpenStack APIs.  
 
 #### 4.3.4.1 Identity - Keystone
 
-It covers the test cases against identity management operations like user management, project management, multi-tenancy etc. 
+It covers the test cases against identity management operations like user management, project management, multi-tenancy etc.
 
 | Test case # | sub-category | Description | Requirement # |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | `cert.test.vim.01` | API | Show API endpoint catalog. It *must* have endpoint for each Core service. | `req.int.api.01` |
 
 #### 4.3.4.2 Image - Glance
-It covers the test cases against image management operations. 
+It covers the test cases against image management operations.
 
 
 #### 4.3.4.3 Block Storage - Cinder
@@ -102,13 +103,34 @@ It covers the test cases against compute management operations.
 It covers the test cases against orchestration operations.
 
 <a name="4.3.5"></a>
-### 4.3.5 Tenants
+### 4.3.5 opensource VNF onboarding and testing
+
+Running opensource VNFs is a key technical solution to ensure that the
+platforms meet Network Functions Virtualization requirements.
+[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml)
+offers 5 test cases which automatically onboard and test the next 3 opensource
+VNFs:
+- [Clearwater IMS](https://clearwater.readthedocs.io/en/stable/)
+- [VyOS vRouter](https://www.vyos.io/)
+- [OpenAirInterface vEPC](https://www.openairinterface.org/)
+
+Here are the full list of orchestrators used for all these deployments:
+- [Cloudify](https://cloudify.co/)
+- [Heat](https://wiki.openstack.org/wiki/Heat)
+- [Juju](https://jaas.ai/)
+
+The VNF are covered by upstream tests when possible (see
+[clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)) and
+by Functest VNF tests in the other cases.
 
 <a name="4.3.6"></a>
-### 4.3.6 LCM
+### 4.3.6 Tenants
 
 <a name="4.3.7"></a>
-### 4.3.7 Assurance
+### 4.3.7 LCM
 
 <a name="4.3.8"></a>
-### 4.3.8 Security
+### 4.3.8 Assurance
+
+<a name="4.3.9"></a>
+### 4.3.9 Security
