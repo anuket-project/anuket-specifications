@@ -27,8 +27,6 @@ Figure 4-1 below shows the architectural components that are described in the su
 <a name="4.2"></a>
 ## 4.2 Host OS
 
-> This chapter should describe the requirements for a host os to run the software stack of Reference Architecture 2.
-
 The primary interface between the Physical / Virtual Infrastructure and any container-relevant components is the Host Operating System.  This is the OS within which the container runtime exists, and within which the containers run (and therefore, the OS whose kernel is shared by said containers).  This is shown in Figure 4-1 below.
 
 <p align="center"><img src="../figures/ch04_hostOS.png" alt="Kubernetes Host Operating System" Title="Kubernetes Host Operating System" width="65%"/></p>
@@ -58,7 +56,9 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-> This chapter should describe which container runtimes are part of the Reference Architecture.
+In order to be compliant with this architecture, the chosen runtime must be compliant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/).
+
+If privileged containers are required (not recommended) then a container runtime that provides additional security isolation is required.  This could be via the use of lightweight virtual machines (e.g. Kata) or alternative sandbox methods (e.g. gVisor).
 
 <a name="4.5"></a>
 ## 4.5 CNI plugins
