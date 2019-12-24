@@ -11,11 +11,12 @@
   * [4.3.2 Infrastructure](#4.3.2)
   * [4.3.3 VIM](#4.3.3)
   * [4.3.4 Interfaces & APIs](#4.3.4)
-  * [4.3.5 opensource VNF onboarding and testing](#4.3.5)
-  * [4.3.6 Tenants](#4.3.6)
-  * [4.3.7 LCM](#4.3.7)
-  * [4.3.8 Assurance](#4.3.8)
-  * [4.3.9 Security](#4.3.9)
+  * [4.3.5 OpenStack API benchmarking](#4.3.5)
+  * [4.3.6 opensource VNF onboarding and testing](#4.3.6)
+  * [4.3.7 Tenants](#4.3.7)
+  * [4.3.8 LCM](#4.3.8)
+  * [4.3.9 Assurance](#4.3.9)
+  * [4.3.10 Security](#4.3.10)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -103,7 +104,201 @@ It covers the test cases against compute management operations.
 It covers the test cases against orchestration operations.
 
 <a name="4.3.5"></a>
-### 4.3.5 opensource VNF onboarding and testing
+### 4.3.5 OpenStack API benchmarking
+
+[Rally](https://opendev.org/openstack/rally) is tool and framework that allows
+to perform OpenStack API benchmarking.
+
+Here are the Rally-based test cases proposed by
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+- [rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+  Functest scenarios iterating 10 times the mainline Rally scenarios
+- [rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+  Neutron scenarios executed in the OpenStack gates
+
+At the time of writing, no KPI is defined in
+[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+which would have asked for an update of the default SLA proposed in
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+
+#### 4.3.5.1 Identity - Keystone
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                     | Iterations |
+|-----------------------------------------------|:----------:|
+| Authenticate.keystone                         | 10         |
+| KeystoneBasic.add_and_remove_user_role        | 10         |
+| KeystoneBasic.create_add_and_list_user_roles  | 10         |
+| KeystoneBasic.create_and_list_tenants         | 10         |
+| KeystoneBasic.create_and_delete_role          | 10         |
+| KeystoneBasic.create_and_delete_service       | 10         |
+| KeystoneBasic.get_entities                    | 10         |
+| KeystoneBasic.create_update_and_delete_tenant | 10         |
+| KeystoneBasic.create_user                     | 10         |
+| KeystoneBasic.create_tenant                   | 10         |
+| KeystoneBasic.create_and_list_users           | 10         |
+| KeystoneBasic.create_tenant_with_users        | 10         |
+
+#### 4.3.5.2 Image - Glance
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                    | Iterations |
+|----------------------------------------------|:----------:|
+| Authenticate.validate_glance                 | 10         |
+| GlanceImages.create_and_delete_image         | 10         |
+| GlanceImages.create_and_list_image           | 10         |
+| GlanceImages.list_images                     | 10         |
+| GlanceImages.create_image_and_boot_instances | 10         |
+| GlanceImages.create_and_deactivate_image     | 10         |
+| GlanceImages.create_and_download_image       | 10         |
+| GlanceImages.create_and_get_image            | 10         |
+| GlanceImages.create_and_update_image         | 10         |
+
+#### 4.3.5.3 Block Storage - Cinder
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                     | Iterations |
+|---------------------------------------------------------------|:----------:|
+| Authenticate.validate_glance                                  | 10         |
+| CinderVolumes.create_and_attach_volume                        | 10         |
+| CinderVolumes.create_and_list_snapshots                       | 10         |
+| CinderVolumes.create_and_list_volume                          | 10         |
+| CinderVolumes.create_and_upload_volume_to_image               | 10         |
+| CinderVolumes.create_nested_snapshots_and_attach_volume       | 10         |
+| CinderVolumes.create_snapshot_and_attach_volume               | 10         |
+| CinderVolumes.create_volume                                   | 10         |
+| CinderVolumes.list_volumes                                    | 10         |
+| CinderVolumes.create_and_delete_snapshot                      | 10         |
+| CinderVolumes.create_and_delete_volume                        | 10         |
+| CinderVolumes.create_and_extend_volume                        | 10         |
+| CinderVolumes.create_from_volume_and_delete_volume            | 10         |
+| CinderQos.create_and_get_qos                                  | 10         |
+| CinderQos.create_and_list_qos                                 | 10         |
+| CinderQos.create_and_set_qos                                  | 10         |
+| CinderVolumeTypes.create_and_get_volume_type                  | 10         |
+| CinderVolumeTypes.create_and_list_volume_types                | 10         |
+| CinderVolumeTypes.create_and_update_volume_type               | 10         |
+| CinderVolumeTypes.create_volume_type_and_encryption_type      | 10         |
+| CinderVolumeTypes.create_volume_type_add_and_list_type_access | 10         |
+| Quotas.cinder_update_and_delete                               | 10         |
+| Quotas.cinder_update                                          | 10         |
+
+#### 4.3.5.4 Object Storage - Swift
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                     | Iterations |
+|---------------------------------------------------------------|:----------:|
+| SwiftObjects.create_container_and_object_then_list_objects    | 10         |
+| SwiftObjects.list_objects_in_containers                       | 10         |
+| SwiftObjects.create_container_and_object_then_download_object | 10         |
+| SwiftObjects.create_container_and_object_then_delete_all      | 10         |
+| SwiftObjects.list_and_download_objects_in_containers          | 10         |
+
+#### 4.3.5.5 Networking - Neutron
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                  | Iterations |
+|------------------------------------------------------------|:----------:|
+| Authenticate.validate_neutron                              | 10         |
+| NeutronNetworks.create_and_update_networks                 | 10         |
+| NeutronNetworks.create_and_update_ports                    | 10         |
+| NeutronNetworks.create_and_update_routers                  | 10         |
+| NeutronNetworks.create_and_update_subnets                  | 10         |
+| NeutronNetworks.create_and_delete_networks                 | 10         |
+| NeutronNetworks.create_and_delete_ports                    | 10         |
+| NeutronNetworks.create_and_delete_routers                  | 10         |
+| NeutronNetworks.create_and_delete_subnets                  | 10         |
+| NeutronNetworks.create_and_list_networks                   | 10         |
+| NeutronNetworks.create_and_list_ports                      | 10         |
+| NeutronNetworks.create_and_list_routers                    | 10         |
+| NeutronNetworks.create_and_list_subnets                    | 10         |
+| NeutronSecurityGroup.create_and_delete_security_groups     | 10         |
+| NeutronSecurityGroup.create_and_delete_security_group_rule | 10         |
+| NeutronSecurityGroup.create_and_list_security_group_rules  | 10         |
+| NeutronSecurityGroup.create_and_show_security_group        | 10         |
+| NeutronNetworks.set_and_clear_router_gateway               | 10         |
+| NeutronNetworks.create_and_show_ports                      | 10         |
+| NeutronNetworks.create_and_show_routers                    | 10         |
+| NeutronNetworks.create_and_show_subnets                    | 10         |
+| Quotas.neutron_update                                      | 10         |
+
+[Functest rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+
+| Scenarios                                    | Iterations |
+|----------------------------------------------|:----------:|
+| NeutronNetworks.create_and_delete_networks   | 40         |
+| NeutronNetworks.create_and_delete_ports      | 40         |
+| NeutronNetworks.create_and_delete_routers    | 40         |
+| NeutronNetworks.create_and_delete_subnets    | 40         |
+| NeutronNetworks.create_and_list_networks     | 100        |
+| NeutronNetworks.create_and_list_ports        | 8          |
+| NeutronNetworks.create_and_list_routers      | 40         |
+| NeutronNetworks.create_and_list_subnets      | 40         |
+| NeutronNetworks.create_and_update_networks   | 40         |
+| NeutronNetworks.create_and_update_ports      | 40         |
+| NeutronNetworks.create_and_update_routers    | 40         |
+| NeutronNetworks.create_and_update_subnets    | 100        |
+| NeutronTrunks.create_and_list_trunk_subports | 4          |
+| Quotas.neutron_update                        | 40         |
+
+#### 4.3.5.6 Compute - Nova
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                      | Iterations |
+|----------------------------------------------------------------|:----------:|
+| Authenticate.validate_nova                                     | 10         |
+| NovaKeypair.create_and_delete_keypair                          | 10         |
+| NovaKeypair.create_and_list_keypairs                           | 10         |
+| NovaServers.boot_and_bounce_server                             | 10         |
+| NovaServers.boot_and_delete_server                             | 10         |
+| NovaServers.boot_and_list_server                               | 10         |
+| NovaServers.boot_and_rebuild_server                            | 10         |
+| NovaServers.snapshot_server                                    | 10         |
+| NovaServers.boot_server_from_volume                            | 10         |
+| NovaServers.boot_server                                        | 10         |
+| NovaServers.list_servers                                       | 10         |
+| NovaServers.resize_server                                      | 10         |
+| NovaServers.boot_and_live_migrate_server                       | 10         |
+| NovaServers.boot_server_attach_created_volume_and_live_migrate | 10         |
+| NovaServers.boot_server_from_volume_and_live_migrate           | 10         |
+| NovaKeypair.boot_and_delete_server_with_keypair                | 10         |
+| NovaServers.boot_server_from_volume_and_delete                 | 10         |
+| NovaServers.pause_and_unpause_server                           | 10         |
+| NovaServers.boot_and_migrate_server                            | 10         |
+| NovaServers.boot_server_and_list_interfaces                    | 10         |
+| NovaServers.boot_and_get_console_url                           | 10         |
+| NovaServers.boot_server_and_attach_interface                   | 10         |
+| NovaServers.boot_server_attach_volume_and_list_attachments     | 10         |
+| NovaServers.boot_server_associate_and_dissociate_floating_ip   | 10         |
+| NovaServers.boot_and_associate_floating_ip                     | 10         |
+| NovaServerGroups.create_and_delete_server_group                | 10         |
+| NovaServerGroups.create_and_get_server_group                   | 10         |
+| NovaServerGroups.create_and_list_server_groups                 | 10         |
+| Quotas.nova_update_and_delete                                  | 10         |
+| Quotas.nova_update                                             | 10         |
+
+#### 4.3.5.7 Orchestration - Heat
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                     | Iterations |
+|-----------------------------------------------|:----------:|
+| Authenticate.validate_heat                    | 10         |
+| HeatStacks.create_and_delete_stack            | 10         |
+| HeatStacks.create_and_list_stack              | 10         |
+| HeatStacks.create_update_delete_stack         | 10         |
+| HeatStacks.create_check_delete_stack          | 10         |
+| HeatStacks.create_suspend_resume_delete_stack | 10         |
+| HeatStacks.list_stacks_and_resources          | 10         |
+
+<a name="4.3.6"></a>
+### 4.3.6 opensource VNF onboarding and testing
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
@@ -123,14 +318,14 @@ The VNF are covered by upstream tests when possible (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)) and
 by Functest VNF tests in the other cases.
 
-<a name="4.3.6"></a>
-### 4.3.6 Tenants
-
 <a name="4.3.7"></a>
-### 4.3.7 LCM
+### 4.3.7 Tenants
 
 <a name="4.3.8"></a>
-### 4.3.8 Assurance
+### 4.3.8 LCM
 
 <a name="4.3.9"></a>
-### 4.3.9 Security
+### 4.3.9 Assurance
+
+<a name="4.3.10"></a>
+### 4.3.10 Security
