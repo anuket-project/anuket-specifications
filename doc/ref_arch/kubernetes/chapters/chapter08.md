@@ -66,6 +66,14 @@ While this Reference Architecture is being developed, Gaps will be identified th
 > This produces an overhead of Kubernetes Masters - is there a way of making this more efficient whilst still able to meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
 
 
+<a name="8.2.7"></a>
+### 8.2.7 Interoperability with VNF-based networking
+
+> For example, today in existing networks L3 VPNs are commonly used for traffic separation (e.g. separate L3 VPN for signalling, charging, LI, O&M etc.). CNFs will have to interwork with existing network elements and therefore a K8s POD will somehow need to be connected to a L3 VPN. Today this is only possible via Multus (or DANM), however typically there is a network orchestration responsibility to connect the network interface to a gateway router (where the L3 VPN is terminated). This network orchestration is not taken care of by K8s, nor there is a production grade solution in the open source space to take care of this.
+>
+> Note: with an underlying IAAS this is possible, but then it introduces (undesirable) dependency between workload orchestration in K8s and infrastructure orchestration in IAAS.
+
+
 <a name="8.3"></a>
 ## 8.3 Proposals & Resolution
 
