@@ -38,8 +38,10 @@
 <a name="4.5"></a>
 ## 4.5 CNI plugins
 
-The used CNI multiplexer/metapulgin must be [DANM](https://github.com/nokia/danm) with [Calico](https://github.com/projectcalico/cni-plugin) as the CNI what complies with the basic networking assumptions of Kubernetes.
-For the network of signalling connections the built in IPVLAN CNI of DANM must be used. For the user plane network(s) the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used.
+The used CNI multiplexer/metapulgin must be [DANM](https://github.com/nokia/danm)
+as it provides the possibility to use several other CNI plugins (`req.inf.ntw.16`) and provides an API based solution to administer the networks (`req.inf.ntw.10`) from a central point (`req.inf.ntw.11`).
+ [Calico](https://github.com/projectcalico/cni-plugin) must be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.02`.
+For the network of signalling connections the built in IPVLAN CNI of DANM must be used as it provides NAT-less connectivity (`req.inf.ntw.03`). For the user plane network(s) fullfilling requirement `req.inf.ntw.04` the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used.
 
 > Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin to the architecture is under debate.
 
