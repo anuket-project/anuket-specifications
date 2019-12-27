@@ -90,7 +90,10 @@ Glance API is covered in the OpenStack Gates via
 According to
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
 the next test names must not be executed:
-- .\*image.v1
+
+| test rejection regular expressions | reasons |
+|------------------------------------|---------|
+| .\*image.v1                        | API v1  |
 
 Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
