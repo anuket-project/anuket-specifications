@@ -80,8 +80,9 @@ conform to this model which also fits the heterogeneous user deployments.
 From a CNTT Compliance state point, the capabilities are well described in
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
 which allows tuning the test configurations and the test lists to avoid
-skipping any test. It results that all tests covering optional capabilities are
-not executed. All remaining tests must be executed and must pass successfully.
+skipping any test. It results that all tests covering optional capabilities and
+all upstream skipped tests due to known bugs are not executed. All remaining
+tests must be executed and must pass successfully.
 
 New [Functest containers](https://lists.opnfv.org/g/opnfv-tsc/message/5717)
 have been proposed for CNTT Compliance which simply override the default test
