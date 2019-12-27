@@ -96,14 +96,17 @@ as integrated in
 According to
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
 the next test names must not be executed:
-- .\*test_incremental_backup
-- .\*test_consistencygroups
-- .\*test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status
-- .\*test_multi_backend
-- .\*test_volume_retype.VolumeRetypeWithMigrationTest
-- .\*test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete
-- .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete
-- .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume
+
+| test rejection regular expressions                                                                   | reasons                               |
+|------------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*test_incremental_backup                                                                           | https://gerrit.opnfv.org/gerrit/68881 |
+| .\*test_consistencygroups                                                                            | consistency_group                     |
+| .\*test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status                      | https://launchpad.net/bugs/1770179    |
+| .\*test_multi_backend                                                                                | multi-backend                         |
+| .\*test_volume_retype.VolumeRetypeWithMigrationTest                                                  | multi-backend                         |
+| .\*test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete          | https://launchpad.net/bugs/1677525    |
+| .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                  |
+| .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                |
 
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
