@@ -84,9 +84,12 @@ as integrated in
 According to
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
 the next test names must not be executed:
-- .\*scenario.test_federated_authentication
-- .\*identity.admin.v2
-- .\*identity.v2
+
+| test rejection regular expressions        | reasons    |
+|-------------------------------------------|------------|
+| .\*scenario.test_federated_authentication | federation |
+| .\*identity.admin.v2                      | API v2     |
+| .\*identity.v2                            | API v2     |
 
 Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
