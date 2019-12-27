@@ -153,7 +153,6 @@ Here are the mainline tasks integrated in
 - NovaServers.boot_server_and_list_interfaces
 - NovaServers.boot_server_associate_and_dissociate_floating_ip
 - NovaServerGroups.create_and_delete_server_group
-- Quotas.nova_update_and_delete
 - Quotas.nova_update
 
 #### 4.3.4.7 Orchestration - Heat
