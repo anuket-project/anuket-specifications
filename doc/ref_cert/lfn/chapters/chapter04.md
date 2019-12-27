@@ -280,7 +280,6 @@ which would have asked for an update of the default SLA proposed in
 | NovaServerGroups.create_and_delete_server_group                | 10         |
 | NovaServerGroups.create_and_get_server_group                   | 10         |
 | NovaServerGroups.create_and_list_server_groups                 | 10         |
-| Quotas.nova_update_and_delete                                  | 10         |
 | Quotas.nova_update                                             | 10         |
 
 #### 4.3.5.7 Orchestration - Heat
