@@ -107,6 +107,7 @@ the next test names must not be executed:
 | .\*test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete          | https://launchpad.net/bugs/1677525    |
 | .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                  |
 | .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                |
+| .\*tempest.scenario.test_volume_migrate_attached                                                     | multi-backend                         |
 
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
