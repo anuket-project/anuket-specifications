@@ -96,7 +96,11 @@ Swift API is covered in the OpenStack Gates via
 
 According to
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
-all tests must be executed.
+the next test names must not be executed:
+
+| test rejection regular expressions                                      | reasons                            |
+|-------------------------------------------------------------------------|------------------------------------|
+| .\*test_container_sync.ContainerSyncTest.test_container_synchronization | https://launchpad.net/bugs/1317133 |
 
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
