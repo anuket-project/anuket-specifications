@@ -51,7 +51,7 @@ The following sections detail the NFVI SW profile features per type of virtual r
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.com.cfg.001 | CPU allocation ratio  | Value | Number of virtual cores per physical core  |
 | nfvi.com.cfg.002 | NUMA awareness | Yes/No  | Support of NUMA at the virtualization layer  |
-| nfvi.com.cfg.003 | CPU pinning capability  | Yes/No | Binding of a process to a dedicated CPU |
+| nfvi.com.cfg.003 | CPU pinning capability  | Yes/No | Binds a process/vCPU to a physical core or SMT thread  |
 | nfvi.com.cfg.004 | Huge Pages  | Yes/No | Ability to manage huge pages of memory |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
