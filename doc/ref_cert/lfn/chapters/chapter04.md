@@ -105,38 +105,46 @@ Nova API is covered in the OpenStack Gates via
 According to
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
 the next test names must not be executed:
-- .\*test_fixed_ips
-- .\*test_fixed_ips_negative
-- .\*test_auto_allocate_network
-- .\*test_floating_ips_bulk
-- .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume
-- .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration
-- .\*test_live_migration.LiveMigrationTest.test_iscsi_volume
-- .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration
-- .\*test_live_migration.LiveMigrationRemoteConsolesV26Test
-- .\*certificates.test_certificates
-- .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest
-- .\*test_novnc
-- .\*test_server_personality
-- .\*test_servers.ServerShowV263Test.test_show_update_rebuild_list_server
-- .\*test_servers_negative.ServersNegativeTestJSON.test_personality_file_contents_not_encoded
-- .\*servers.test_virtual_interfaces
-- .\*test_server_actions.ServerActionsTestJSON.test_change_server_password
-- .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console
-- .\*test_server_actions.ServerActionsTestJSON.test_reboot_server_soft
-- .\*test_security_group_default_rules
-- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name
-- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description
-- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name
-- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des
-- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id
-- .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name
-- .\*test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex
-- .\*compute.test_virtual_interfaces
-- .\*compute.test_virtual_interfaces_negative
-- .\*compute.test_networks
-- .\*test_attach_volume.AttachVolumeMultiAttach
-- .\*test_volume_swap
+
+| test rejection regular expressions                                                                                        | reasons                            |
+|---------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| .\*test_fixed_ips                                                                                                         | neutron                            |
+| .\*test_fixed_ips_negative                                                                                                | neutron                            |
+| .\*test_auto_allocate_network                                                                                             | shared networks                    |
+| .\*test_floating_ips_bulk                                                                                                 | nova-network                       |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume                                                   | block live migration               |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration                                   | volume-backed live migration       |
+| .\*test_live_migration.LiveMigrationTest.test_iscsi_volume                                                                | block live migration               |
+| .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration                                                | volume-backed live migration       |
+| .\*test_live_migration.LiveMigrationRemoteConsolesV26Test                                                                 | serial_console                     |
+| .\*certificates.test_certificates                                                                                         | cert                               |
+| .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest                                                              | https://launchpad.net/bugs/1186354 |
+| .\*test_novnc                                                                                                             | vnc_console                        |
+| .\*test_server_personality                                                                                                | personality                        |
+| .\*test_servers.ServerShowV263Test.test_show_update_rebuild_list_server                                                   | certified_image_ref                |
+| .\*test_servers_negative.ServersNegativeTestJSON.test_personality_file_contents_not_encoded                               | personality                        |
+| .\*test_server_actions.ServerActionsTestJSON.test_change_server_password                                                  | change_password                    |
+| .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console                                                         | vnc_console                        |
+| .\*test_server_actions.ServerActionsTestJSON.test_reboot_server_soft                                                      | https://launchpad.net/bugs/1014647 |
+| .\*test_security_group_default_rules                                                                                      | https://launchpad.net/bugs/1311500 |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name            | neutron                            |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description | https://launchpad.net/bugs/1161411 |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name        | https://launchpad.net/bugs/1161411 |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des            | neutron                            |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id             | neutron                            |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name           | neutron                            |
+| .\*test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex                              | https://launchpad.net/bugs/1540645 |
+| .\*servers.test_virtual_interfaces                                                                                        | nova-network                       |
+| .\*compute.test_virtual_interfaces_negative                                                                               | nova-network                       |
+| .\*compute.test_networks                                                                                                  | nova-network                       |
+| .\*test_attach_volume.AttachVolumeMultiAttach                                                                             | volume_multiattach                 |
+| .\*test_volume_boot_pattern.TestVolumeBootPattern.test_boot_server_from_encrypted_volume_luks                             | attach_encrypted_volume            |
+| .\*test_volume_swap                                                                                                       | swap_volume                        |
+| .\*test_encrypted_cinder_volumes                                                                                          | attach_encrypted_volume            |
+| .\*test_stamp_pattern.TestStampPattern.test_stamp_pattern                                                                 | https://launchpad.net/bugs/1664793 |
+| .\*test_volume_migrate_attached                                                                                           | https://launchpad.net/bugs/1664793 |
+| .\*test_minbw_allocation_placement                                                                                        | microversion                       |
+| .\*test_network_advanced_server_ops.TestNetworkAdvancedServerOps.test_server_connectivity_cold_migration_revert           | cold_migration                     |
 
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
