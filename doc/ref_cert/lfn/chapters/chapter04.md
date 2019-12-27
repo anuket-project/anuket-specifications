@@ -68,10 +68,50 @@ Note that each requirement may have one or more test cases associated with it.
 
 <a name="4.3.4"></a>
 ### 4.3.4 Interfaces & APIs
-This defines the test cases around the functionality that are exposed by OpenStack APIs. All the defined OpenStack
-service APIs in RA-1's [chapter 05](../../../ref_arch/openstack/chapters/chapter05.md) will be the scope here.
 
-Note: It will only target the functionality that are exposed by standard OpenStack APIs.  
+The [OpenStack Gates](https://opendev.org/openstack/devstack-gate) verify all
+changes proposed mostly by running thousands of Tempest tests completed by
+Rally scenarios in a few cases. Skipping tests is allowed in all OpenStack
+Gates and only failures rate the review -1 because of the multiple capabilities
+and backends selected in the different Gate jobs. The classical
+[Functest containers](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314)
+conform to this model which also fits the heterogeneous user deployments.
+
+From a CNTT Compliance state point, the capabilities are well described in
+[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+which allows tuning the test configurations and the test lists to avoid
+skipping any test. It results that all tests covering optional capabilities are
+not executed. All remaining tests must be executed and must pass successfully.
+
+New [Functest containers](https://lists.opnfv.org/g/opnfv-tsc/message/5717)
+have been proposed for CNTT Compliance which simply override the default test
+configurations and the default test lists. Any optional capability or services
+(e.g. Barbican) can be still verified by the classical Functest containers.
+
+The next subsections only detail the Tempest test which must not be executed
+from a Compliance state point. The remaining tests have to pass successfully.
+They cover all together the API testing requirements as asked by
+[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+
+According to OpenStack Pike selected by CNTT, the next software versions are
+considered here:
+
+| software                | version |
+|-------------------------|---------|
+| Functest                | hunter  |
+| Cinder Tempest plugin   | 0.2.0   |
+| Keystone Tempest plugin | 0.1.0   |
+| Neutron Tempest plugin  | 0.3.0   |
+| Rally OpenStack         | 1.5.0   |
+| Tempest                 | 21.0.0  |
+
+All the Tempest tests mentioned in the next sections are
+located in [Tempest tree](https://opendev.org/openstack/tempest) and additional
+[Tempest plugin trees](https://docs.openstack.org/tempest/latest/plugin-registry.html).
+
+All the Rally scenarios mentioned in the next sections are located in
+[Rally OpenStack tree](https://opendev.org/openstack/rally-openstack) and
+[Neutron tree](https://opendev.org/openstack/neutron/src/branch/master/rally-jobs).
 
 #### 4.3.4.1 Identity - Keystone
 
