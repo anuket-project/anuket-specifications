@@ -259,7 +259,7 @@ libraries.
 | Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
 | Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
 | Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0            |                              |
-| Imaging: Glance       | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.5                          |
+| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.5                          |
 | Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.43                         |
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
 | Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
