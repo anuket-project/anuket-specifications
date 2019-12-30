@@ -12,11 +12,12 @@
   * [4.3.3 VIM](#4.3.3)
   * [4.3.4 Interfaces & APIs](#4.3.4)
   * [4.3.5 OpenStack API benchmarking](#4.3.5)
-  * [4.3.6 opensource VNF onboarding and testing](#4.3.6)
-  * [4.3.7 Tenants](#4.3.7)
-  * [4.3.8 LCM](#4.3.8)
-  * [4.3.9 Assurance](#4.3.9)
-  * [4.3.10 Security](#4.3.10)
+  * [4.3.6 Dataplane Benchmarking](#4.3.6)
+  * [4.3.7 opensource VNF onboarding and testing](#4.3.7)
+  * [4.3.8 Tenants](#4.3.8)
+  * [4.3.9 LCM](#4.3.9)
+  * [4.3.10 Assurance](#4.3.10)
+  * [4.3.11 Security](#4.3.11)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -563,7 +564,95 @@ of 0%) proposed in
 | HeatStacks.list_stacks_and_resources          | 10         |
 
 <a name="4.3.6"></a>
-### 4.3.6 opensource VNF onboarding and testing
+### 4.3.6 Dataplane benchmarking
+
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+offers two benchmarking dataplane test cases leveraging on:
+- [VMTP](http://vmtp.readthedocs.io/en/latest)
+- [Shaker](http://pyshaker.readthedocs.io/en/latest/)
+
+[VMTP](http://vmtp.readthedocs.io/en/latest) is a small python application that
+will automatically perform ping connectivity, round trip time measurement
+(latency) and TCP/UDP throughput measurement on any OpenStack deployment.
+
+[Shaker](http://pyshaker.readthedocs.io/en/latest/) wraps around popular system
+network testing tools like iperf, iperf3 and netperf (with help of flent).
+[Shaker](http://pyshaker.readthedocs.io/en/latest/) is able to deploy OpenStack
+instances and networks in different topologies.
+[Shaker](http://pyshaker.readthedocs.io/en/latest/) scenario specifies the
+deployment and list of tests to execute.
+
+At the time of writing, no KPI is defined in CNTT chapters which would have
+asked for an update of the default SLA proposed in
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+
+### 4.3.6.1 VMTP
+
+Here are the
+[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.json)
+executed by
+[Functest vmtp](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.html):
+- VM to VM same network fixed IP (intra-node)
+- VM to VM different network fixed IP (intra-node)
+- VM to VM different network floating IP (intra-node)
+- VM to VM same network fixed IP (inter-node)
+- VM to VM different network fixed IP (inter-node)
+- VM to VM different network floating IP (inter-node)
+
+Here are all results per scenario:
+
+| protocol | pkt_size | results          |
+|----------|----------|------------------|
+| ICMP     | 64       | rtt_avg_ms       |
+| ICMP     | 64       | rtt_max_ms       |
+| ICMP     | 64       | rtt_min_ms       |
+| ICMP     | 64       | rtt_stddev       |
+| ICMP     | 391      | rtt_avg_ms       |
+| ICMP     | 391      | rtt_max_ms       |
+| ICMP     | 391      | rtt_min_ms       |
+| ICMP     | 391      | rtt_stddev       |
+| ICMP     | 1500     | rtt_avg_ms       |
+| ICMP     | 1500     | rtt_max_ms       |
+| ICMP     | 1500     | rtt_min_ms       |
+| ICMP     | 1500     | rtt_stddev       |
+| UDP      | 128      | loss_rate        |
+| UDP      | 128      | throughput_kbps  |
+| UDP      | 1024     | loss_rate        |
+| UDP      | 1024     | throughput_kbps  |
+| UDP      | 8192     | loss_rate        |
+| UDP      | 8192     | throughput_kbps  |
+| TCP      | 65536    | rtt_ms           |
+| TCP      | 65536    | throughput_kbps  |
+
+### 4.3.6.2 Shaker
+
+Here are the
+[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-shaker-run-329/shaker/report.json)
+executed by Shaker:
+- OpenStack L2
+- OpenStack L3 East-West
+- OpenStack L3 North-South
+- OpenStack L3 North-South Performance
+
+Here are all samples:
+
+| test           | samples                |
+|----------      |------------------------|
+| Bi-directional | ping_icmp (ms)         |
+| Bi-directional | tcp_download (Mbits/s) |
+| Bi-directional | tcp_upload (Mbits/s)   |
+| Download       | ping_icmp (ms)         |
+| Download       | tcp_download (Mbits/s) |
+| Upload         | ping_icmp (ms)         |
+| Upload         | tcp_upload (Mbits/s)   |
+| Ping           | ping_icmp (ms)         |
+| Ping           | ping_udp (ms)          |
+| TCP            | bandwidth (bit/s)      |
+| TCP            | retransmits            |
+| UDP            | packets (pps)          |
+
+<a name="4.3.7"></a>
+### 4.3.7 opensource VNF onboarding and testing
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
@@ -583,14 +672,14 @@ The VNF are covered by upstream tests when possible (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)) and
 by Functest VNF tests in the other cases.
 
-<a name="4.3.7"></a>
-### 4.3.7 Tenants
-
 <a name="4.3.8"></a>
-### 4.3.8 LCM
+### 4.3.8 Tenants
 
 <a name="4.3.9"></a>
-### 4.3.9 Assurance
+### 4.3.9 LCM
 
 <a name="4.3.10"></a>
-### 4.3.10 Security
+### 4.3.10 Assurance
+
+<a name="4.3.11"></a>
+### 4.3.11 Security
