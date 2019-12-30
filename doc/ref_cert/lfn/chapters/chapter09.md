@@ -19,11 +19,46 @@ Define, and describe the purpose of this chapter to be:
 <a name="9.2"></a>
 ## 9.2 RM/RA-1 Requirements
 
-- List out reference to Test Cases Requirements (coming from Chapter 3) and map them to real project test scripts.
+According to [RC1 Chapter04](/doc/ref_cert/lfn/chapters/chapter04.html) the next
+test cases must pass as they are for CNTT NFVI Conformance/Certification:
+
+| container                               | test case                  | criteria |
+|-----------------------------------------|----------------------------|:--------:|
+| opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_cinder             | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_keystone           | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | rally_sanity               | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_full               | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_scenario           | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_slow               | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_full                 | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_jobs                 | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | vmtp                       | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | shaker                     | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify                   | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify_ims               | PASS     |
+| opnfv/functest-vnf:hunter               | heat_ims                   | PASS     |
+| opnfv/functest-vnf:hunter               | vyos_vrouter               | PASS     |
+| opnfv/functest-vnf:hunter               | juju_epc                   | PASS     |
 
 <a name="9.3"></a>
 ## 9.3 TC Mapping to Requirements
 
-_**Remove these notes when starting drafting content:**_
-- Based on specific requirement, or use case, need to provide a Mapping of TCs to Requirements
-- Will be a mapping of test cases in various frameworks that will be identified in Ch04.
+| test case                  | requirements                                                             |
+|----------------------------|--------------------------------------------------------------------------|
+| neutron-tempest-plugin-api | Neutron API testing                                                      |
+| tempest_cinder             | Cinder API testing                                                       |
+| tempest_keystone           | Keystone API testing                                                     |
+| rally_sanity               | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
+| tempest_full               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_scenario           | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_slow               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| rally_full                 | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
+| rally_jobs                 | Neutron API benchmarking                                                 |
+| vmtp                       | Dataplane benchmarking                                                   |
+| shaker                     | Dataplane benchmarking                                                   |
+| cloudify                   | opensource VNF onboarding and testing                                    |
+| cloudify_ims               | opensource VNF onboarding and testing                                    |
+| heat_ims                   | opensource VNF onboarding and testing                                    |
+| vyos_vrouter               | opensource VNF onboarding and testing                                    |
+| juju_epc                   | opensource VNF onboarding and testing                                    |
