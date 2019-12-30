@@ -133,7 +133,44 @@ Here are the mainline tasks integrated in
 - GlanceImages.create_image_and_boot_instances
 
 #### 4.3.4.3 Block Storage - Cinder
-It covers the test cases against volume management operations.
+
+Cinder API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) and
+[cinder-tempest-plugin](https://opendev.org/openstack/cinder-tempest-plugin)
+as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs](/doc/ref_arch/openstack/chapters/chapter05.html)
+the next test names must not be executed:
+
+| test rejection regular expressions                                                                   | reasons                               |
+|------------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*test_incremental_backup                                                                           | https://gerrit.opnfv.org/gerrit/68881 |
+| .\*test_consistencygroups                                                                            | consistency_group                     |
+| .\*test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status                      | https://launchpad.net/bugs/1770179    |
+| .\*test_multi_backend                                                                                | multi-backend                         |
+| .\*test_volume_retype.VolumeRetypeWithMigrationTest                                                  | multi-backend                         |
+| .\*test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete          | https://launchpad.net/bugs/1677525    |
+| .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                  |
+| .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                |
+| .\*tempest.scenario.test_volume_migrate_attached                                                     | multi-backend                         |
+
+Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_cinder
+- CinderVolumes.create_and_delete_snapshot
+- CinderVolumes.create_and_delete_volume
+- CinderVolumes.create_and_extend_volume
+- CinderVolumes.create_from_volume_and_delete_volume
+- CinderQos.create_and_list_qos
+- CinderQos.create_and_set_qos
+- CinderVolumeTypes.create_and_list_volume_types
+- CinderVolumeTypes.create_volume_type_and_encryption_type
+- Quotas.cinder_update_and_delete
+- Quotas.cinder_update
 
 #### 4.3.4.4 Object Storage - Swift
 It covers the test cases against object management operations.
