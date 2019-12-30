@@ -94,25 +94,18 @@ from a Compliance state point. The remaining tests have to pass successfully.
 They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
 
-According to OpenStack Pike selected by CNTT, the next software versions are
-considered here:
+According to Hunter (the oldest OPNFV active version), the next software
+versions are considered here to verify OpenStack Pike selected by CNTT:
 
 | software                | version |
 |-------------------------|---------|
 | Functest                | hunter  |
 | Cinder Tempest plugin   | 0.2.0   |
 | Keystone Tempest plugin | 0.1.0   |
+| Neutron                 | rocky   |
 | Neutron Tempest plugin  | 0.3.0   |
 | Rally OpenStack         | 1.5.0   |
 | Tempest                 | 21.0.0  |
-
-All the Tempest tests mentioned in the next sections are
-located in [Tempest tree](https://opendev.org/openstack/tempest) and additional
-[Tempest plugin trees](https://docs.openstack.org/tempest/latest/plugin-registry.html).
-
-All the Rally scenarios mentioned in the next sections are located in
-[Rally OpenStack tree](https://opendev.org/openstack/rally-openstack) and
-[Neutron tree](https://opendev.org/openstack/neutron/src/branch/master/rally-jobs).
 
 #### 4.3.4.1 Identity - Keystone
 
