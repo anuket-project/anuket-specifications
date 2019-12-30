@@ -75,11 +75,38 @@ Note: It will only target the functionality that are exposed by standard OpenSta
 
 #### 4.3.4.1 Identity - Keystone
 
-It covers the test cases against identity management operations like user management, project management, multi-tenancy etc.
+Keystone API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) and
+[keystone-tempest-plugin](https://opendev.org/openstack/keystone-tempest-plugin)
+as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
-| Test case # | sub-category | Description | Requirement # |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| `cert.test.vim.01` | API | Show API endpoint catalog. It *must* have endpoint for each Core service. | `req.int.api.01` |
+According to
+[RA1 Core OpenStack Services APIs](/doc/ref_arch/openstack/chapters/chapter05.html)
+the next test names must not be executed:
+
+| test rejection regular expressions        | reasons    |
+|-------------------------------------------|------------|
+| .\*scenario.test_federated_authentication | federation |
+| .\*identity.admin.v2                      | API v2     |
+| .\*identity.v2                            | API v2     |
+
+Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.keystone
+- KeystoneBasic.add_and_remove_user_role
+- KeystoneBasic.create_add_and_list_user_roles
+- KeystoneBasic.create_and_list_tenants
+- KeystoneBasic.create_and_delete_role
+- KeystoneBasic.create_and_delete_service
+- KeystoneBasic.get_entities
+- KeystoneBasic.create_update_and_delete_tenant
+- KeystoneBasic.create_user
+- KeystoneBasic.create_tenant
+- KeystoneBasic.create_and_list_users
+- KeystoneBasic.create_tenant_with_users
 
 #### 4.3.4.2 Image - Glance
 It covers the test cases against image management operations.
