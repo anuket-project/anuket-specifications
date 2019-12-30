@@ -27,25 +27,12 @@ Figure 4-1 below shows the architectural components that are described in the su
 <a name="4.2"></a>
 ## 4.2 Host OS
 
-The primary interface between the Physical / Virtual Infrastructure and any container-relevant components is the Host Operating System.  This is the OS within which the container runtime exists, and within which the containers run (and therefore, the OS whose kernel is shared by said containers).  This is shown in Figure 4-1 below.
-
-<p align="center"><img src="../figures/ch04_hostOS.png" alt="Kubernetes Host Operating System" Title="Kubernetes Host Operating System" width="65%"/></p>
-<p align="center"><b>Figure 4-1:</b> Kubernetes Host Operating System</p>
-
-The Host OS (as with any OS) consists of two main layers:
-- Kernel space
-- User space
-
-The Kernel is the tightly controlled space that provides an API via system calls to applications running in the user space (which usually have their own southbound interface in an interpreter or libraries).  Key containerisation capabilities such as Control Groups (cgroups) and namespaces are kernel features, and are used and managed by the container runtime in order to provide isolation between the user space processes (of which the container itself is one, and the processes running within the container are also).  The Host OS is key therefore to the overall security posture and must be appropriately secured to ensure processes running in one container cannot escalate their privileges, for example (covered further in [chapter 6](./chapter06.md)).
-
-A key thing to note is that the container runtime itself is also a set of processes that run in user space, and interact with the kernel via system calls as well.  Many diagrams will show containers as running on top of the runtime, or inside the runtime.  More accurately, the containers themselves are simply some processes running within an OS, and the container runtime is another set of processes that are used to manage those containers (pull, run, delete, etc.) and the kernel features required to provide the isolation (cgroups, namespaces, filesystems, etc.).
-
 In order for a Host OS to be compliant with this Reference Architecture it must meet the following requirements:
 - A deb/rpm compatible distribution of Linux (this must be used for the master nodes, and can be used for worker nodes)
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations))
 - Master node services (e.g. kube-apiserver) and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
 - High availability of the Kubernetes control plane (master nodes) is a per-operator decision
-- Workloads must not rely on the availability of the master nodes in order for successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue)
+- Workloads must not rely on the availability of the master nodes for successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue)
 
 <a name="4.3"></a>
 ## 4.3 Kubernetes
