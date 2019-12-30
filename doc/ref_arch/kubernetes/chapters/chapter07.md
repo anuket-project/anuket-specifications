@@ -25,6 +25,8 @@
 
 > Create, Read, Update, Delete
 > Include autoscaling and self-healing in this chapter
+> Desired state configuration management drives lifecycle management
+> Include the lifecycle management of associated objects (e.g. secrets)
 
 <a name="7.4"></a>
 ## 7.4 Monitoring Kubernetes Clusters
