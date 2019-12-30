@@ -32,6 +32,21 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
 - In order to support `req.gen.cnt.03` and `req.lcm.gen.01` and `req.lcm.adp.04`, the Host OS must be disposable and therefore the configuration of the Host OS (and associated infrastructure such as VM or bare metal server) must be consistent - e.g. the system software and configuration of that software must be identical apart from those areas of configuration that must be different such as IP addresses and hostnames.
 
+Table 4-1 lists the Operating Systems that comply with this Reference Architecture specification.
+
+|OS|Version(s)|Notes|
+|---|---|---|
+|Ubuntu|16.04+||
+|Debain|9+||
+|CentOS|7||
+|Red Hat Enterprise Linux (RHEL)|7||
+|Fedora|25+||
+|HypriotOS|1.0.1+||
+|Container Linux|1800.6.0||
+
+<p align="center"><b>Table 4-1:</b> Compliant Host OSs</p>
+
+
 <a name="4.3"></a>
 ## 4.3 Kubernetes
 
@@ -40,12 +55,35 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
 > * Which optional features are used and which optional API-s are available
 > * Which [alfa or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
 
-- Master node services (e.g. kube-apiserver) and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
+The distribution and version of Kubernetes used must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) which lists all those that are Certified as being conformant with the CNCF Kubernetes specification.
+
+This Reference Architecture also specifies:
+
+- Master nodes must run the following Kubernetes control plane services:
+    - kube-apiserver
+    - kube-scheduler
+    - kube-controller-manager
+- Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes
 - In order to support `req.gen.rsl.01`, `req.gen.rsl.02` and `req.gen.avl.01` a Reference Implementation must:
-    - Consist of either three, five or seven nodes running the etcd state database (can be colocated on the master nodes, or can run on separate nodes)
+    - Consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes)
     - At least one master node per availability zone or fault domain to ensure the high availability and resilience of Kubernetes control plane services
     - At least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes
+- Master node services, including etcd, and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
 - Workloads must ***not*** rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue)
+- The following kubelet features must be enabled
+    - CPU Manager
+    - Device Plugin
+    - Topology Manager
+
+All kubelet features can be enabled/disabled by using the `feature-gates:` section in the kubelet config file.  e.g.
+```
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+feature-gates:
+  CPUManager: true|false (BETA - default=true)
+  DevicePlugins: true|false (BETA - default=true)
+  TopologyManager: true|false (ALPHA - default=false)
+```
 
 <a name="4.4"></a>
 ## 4.4 Container runtimes
@@ -59,7 +97,7 @@ In order to support `req.inf.com.03`, the chosen runtime must be compliant with 
 
 If privileged containers are required (not recommended) then a container runtime that provides additional security isolation is required in order to support `req.sec.gen.01` and `req.sec.gen.04`.  This could be via the use of lightweight virtual machines (e.g. Kata) or alternative sandbox methods (e.g. gVisor).  For more information see the [Security chapter](./chapter06.md).
 
-> To add: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
+> Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
 
 <a name="4.5"></a>
 ## 4.5 CNI plugins
