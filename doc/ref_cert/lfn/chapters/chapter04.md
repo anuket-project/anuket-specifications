@@ -173,8 +173,28 @@ Here are the mainline tasks integrated in
 - Quotas.cinder_update
 
 #### 4.3.4.4 Object Storage - Swift
-It covers the test cases against object management operations.
 
+Swift API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs](/doc/ref_arch/openstack/chapters/chapter05.html)
+the next test names must not be executed:
+
+| test rejection regular expressions                                      | reasons                            |
+|-------------------------------------------------------------------------|------------------------------------|
+| .\*test_container_sync.ContainerSyncTest.test_container_synchronization | https://launchpad.net/bugs/1317133 |
+
+Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- SwiftObjects.create_container_and_object_then_list_objects
+- SwiftObjects.list_objects_in_containers
+- SwiftObjects.create_container_and_object_then_download_object
+- SwiftObjects.create_container_and_object_then_delete_all
+- SwiftObjects.list_and_download_objects_in_containers
 
 #### 4.3.4.5 Networking - Neutron
 It covers the test cases against networking management operations.
