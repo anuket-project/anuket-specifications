@@ -109,8 +109,28 @@ Here are the mainline tasks integrated in
 - KeystoneBasic.create_tenant_with_users
 
 #### 4.3.4.2 Image - Glance
-It covers the test cases against image management operations.
 
+Glance API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs](/doc/ref_arch/openstack/chapters/chapter05.html)
+the next test names must not be executed:
+
+| test rejection regular expressions | reasons |
+|------------------------------------|---------|
+| .\*image.v1                        | API v1  |
+
+Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_glance
+- GlanceImages.create_and_delete_image
+- GlanceImages.create_and_list_image
+- GlanceImages.list_images
+- GlanceImages.create_image_and_boot_instances
 
 #### 4.3.4.3 Block Storage - Cinder
 It covers the test cases against volume management operations.
