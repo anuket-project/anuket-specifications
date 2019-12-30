@@ -144,7 +144,6 @@ the next test names must not be executed:
 | .\*test_stamp_pattern.TestStampPattern.test_stamp_pattern                                                                 | https://launchpad.net/bugs/1664793 |
 | .\*test_volume_migrate_attached                                                                                           | https://launchpad.net/bugs/1664793 |
 | .\*test_minbw_allocation_placement                                                                                        | microversion                       |
-| .\*test_network_advanced_server_ops.TestNetworkAdvancedServerOps.test_server_connectivity_cold_migration_revert           | cold_migration                     |
 
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
