@@ -82,7 +82,7 @@ as integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+[RA1 Core OpenStack Services APIs](/doc/ref_arch/openstack/chapters/chapter05.html)
 the next test names must not be executed:
 
 | test rejection regular expressions        | reasons    |
