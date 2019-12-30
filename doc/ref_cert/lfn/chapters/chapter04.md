@@ -118,7 +118,8 @@ Here are the Rally-based test cases proposed by
 
 At the time of writing, no KPI is defined in
 [RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
-which would have asked for an update of the default SLA proposed in
+which would have asked for an update of the default SLA (maximum failure rate
+of 0%) proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
 
 #### 4.3.5.1 Identity - Keystone
