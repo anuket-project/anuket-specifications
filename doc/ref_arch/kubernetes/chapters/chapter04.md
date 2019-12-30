@@ -44,6 +44,8 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
 - A deb/rpm compatible distribution of Linux (this must be used for the master nodes, and can be used for worker nodes)
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations))
 - Master node services (e.g. kube-apiserver) and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
+- High availability of the Kubernetes control plane (master nodes) is a per-operator decision
+- Workloads must not rely on the availability of the master nodes in order for successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue)
 
 <a name="4.3"></a>
 ## 4.3 Kubernetes
