@@ -19,9 +19,8 @@ Define, and describe the purpose of this chapter to be:
 <a name="9.2"></a>
 ## 9.2 RM/RA-1 Requirements
 
-According to [RC1 Chapter04](https://github.com/cntt-n/CNTT/blob/master/doc/ref_cert/lfn/chapters/chapter04.md)
-the next test cases must pass as they are for CNTT NFVI
-Conformance/Certification:
+According to [RC1 Chapter04](/doc/ref_cert/lfn/chapters/chapter04.html) the next
+test cases must pass as they are for CNTT NFVI Conformance/Certification:
 
 | container                               | test case                  | criteria |
 |-----------------------------------------|----------------------------|:--------:|
