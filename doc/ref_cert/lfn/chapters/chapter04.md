@@ -100,7 +100,20 @@ It covers the test cases against networking management operations.
 It covers the test cases against compute management operations.
 
 #### 4.3.4.7 Orchestration - Heat
-It covers the test cases against orchestration operations.
+
+Heat API is not covered in the OpenStack Gates neither via
+[Tempest](https://opendev.org/openstack/tempest) nor
+[heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin).
+
+Heat API is covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_heat
+- HeatStacks.create_update_delete_stack
+- HeatStacks.create_check_delete_stack
+- HeatStacks.create_suspend_resume_delete_stack
+- HeatStacks.list_stacks_and_resources
 
 <a name="4.3.5"></a>
 ### 4.3.5 opensource VNF onboarding and testing
