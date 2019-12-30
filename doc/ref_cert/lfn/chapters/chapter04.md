@@ -117,7 +117,7 @@ Here are the Rally-based test cases proposed by
   Neutron scenarios executed in the OpenStack gates
 
 At the time of writing, no KPI is defined in
-[RA1 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md)
+[RA1 Core OpenStack Services APIs](/doc/ref_arch/openstack/chapters/chapter05.html)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
