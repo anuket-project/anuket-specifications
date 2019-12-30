@@ -192,12 +192,46 @@ The below set of steps define the compliance, verification and certification pro
 
 <a name="2.7"></a>
 ## 2.7 Frameworks
-The NFVI certification framework deals with the process of testing NFVI in below three areas:
-* Compliance: The NFVI needs to comply to CNTT RA1/RA2.
-* Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
-* Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
-The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI certification. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge. If NFVI KPIs do not meet Golden KPIs, no certification badge is provided.
+[Xtesting](https://xtesting.readthedocs.io/en/latest/) is a simple framework to
+assemble sparse test cases and to accelerate the adoption of CI/CD best
+practices. By managing all the interactions with the CI/CD components (test
+scheduler, test results database, artifact repository), it allows the developer
+to work only on the test suites without diving into CI/CD integration. Even
+more, it brings the capability to run heterogeneous test cases in the same CI
+toolchains thanks to a few low constraints
+[quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/).
+
+[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) is a more recent
+project which leverages on the common test case execution proposed by Xtesting.
+Thanks to a simple test case list, this tool deploys anywhere plug-and-play
+[CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
+In addition of this teaching capability needed by the Network Automation
+journey, it supports multiple components such as Jenkins and Gitlab CI (test
+schedulers) and
+[multiple deployment models](https://lists.opnfv.org/g/opnfv-tsc/message/5702)
+such as all-in-one or centralized services.
+
+This 2 projects combined meet the CNTT requirements about verification,
+compliance and certification:
+- smoothly assemble multiple heterogeneous test cases
+- generate the Jenkins jobs in
+  [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
+  verify CNTT RI
+- deploy local CI/CD toolchains everywhere to check compliance with CNTT
+- [dump all test case results and logs](http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip)
+  for third-party certification review
+
+All test cases must conform with Xtesting to ensure the smooth integration in
+the CI toolchain as expected by CNTT.
+
+It's worth mentioning that Functest already leverages on Xtesting. Here are the
+issues tracking the updates of the existing OPNFV test projects:
+- Bottlenecks: https://github.com/cntt-n/CNTT/issues/510
+- NFVBench: https://github.com/cntt-n/CNTT/issues/865
+- StorPerf: https://github.com/cntt-n/CNTT/issues/673
+- VSPERF: https://github.com/cntt-n/CNTT/issues/511
+- YardStick: https://github.com/cntt-n/CNTT/issues/509
 
 <a name="2.7.1"></a>
 ### 2.7.1 Best Practices (General)
