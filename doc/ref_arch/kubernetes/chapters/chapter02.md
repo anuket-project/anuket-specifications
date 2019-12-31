@@ -74,7 +74,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable storage. |
 | `req.inf.stg.06` | Storage | The Architecture **must** support ephemeral storage (non-persistent) storage for Pods. |
 | `req.inf.stg.07` | Storage | The Architecture **must** support persistent storage for Pods. |
-| `req.inf.ntw.01` | Network | The Architecture **must** support Conatiner Network Interface (CNI). |
+| `req.inf.ntw.01` | Network | The Architecture **must** support Container Network Interface (CNI). |
 | `req.inf.ntw.02` | Network | The Architecture **must** support intra-node communications, such as between agents on a node and all pods on that node |
 | `req.inf.ntw.03` | Network | The Architecture **must** support inter-node communications without NAT, such as communications between pods on a node with all other pods on all nodes |
 | `req.inf.ntw.04` | Network | The Architecture **must** support low latency and high throughput traffic needs. |
@@ -86,7 +86,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.11` | Network | The networking solution **should** be able to be centrally administrated and configured. |
 | `req.inf.ntw.14` | Network | The Architecture **must** support capabilities for integrating SDN controllers. |
 | `req.inf.ntw.15` | Network | The Architecture **should** support Service Mesh Interface (SMI). |
-| `req.inf.ntw.16` | Network | The Architecture **should**  support co-exisence of multiple Conatiner Network Interface (CNI). |
+| `req.inf.ntw.16` | Network | The Architecture **should**  support co-exisence of multiple Container Network Interface (CNI). |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |
