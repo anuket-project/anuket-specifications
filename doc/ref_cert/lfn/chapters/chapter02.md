@@ -234,15 +234,27 @@ issues tracking the updates of the existing OPNFV test projects:
 - YardStick: https://github.com/cntt-n/CNTT/issues/509
 
 <a name="2.7.1"></a>
-### 2.7.1 Best Practices (General)
-The NFVI certification framework will be guided by the following core principles:
--   Implementing, and adhering to, Standardized Test Methodology / flow, Test Plan, and Test Case Suites, which promotes scalability using repeatable processes.
--   Integration with Automated Tool-Chains, such as XTesting or Dovetail, for continuous deployment, validation, and centralization of test harnesses and results visualization.
-- Alliance and execution of OVP flows and methodologies, which supports common structures for code, artifact generation and repository, certification criteria, etc.)
--   Where possible, leveraging ONAP Network and Service Models, with identified VNF-specific parameters
--   Utilizing Standard certification criteria.
--   Defining CNTT reference architecture (RA) as scenarios, and having all test cases for the RA be involved in OVP (could also be addressed in OVP as CNTT test)
--   Add test cases from operators, which operators already tested in their environment
+### 2.7.1 Test case integration requirements
+
+To reach all goals (verification, compliance and certification) expected by
+CNTT, all test cases must be delivered as
+[Docker containers](https://www.docker.com/) embedding
+[the Xtesting Python package](https://pypi.org/project/xtesting/) and
+[their test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
+as required by Xtesting.
+
+Here the Docker containers simply enforce that the test cases are delivered
+with all runtime dependencies. Then it prevents lots of manual operations
+when configuring the server running the test cases and prevent conflicts
+between all test case dependencies. For its part, Xtesting brings the common
+test case execution hugely simplifying the CI toolchain setups (e.g. Jenkins
+jobs) and an easy way to dump all test case logs and results for third-party
+certification.
+
+All test projects should offer Xtesting CI description files (see
+[Functest site.yml](https://git.opnfv.org/functest/tree/ansible/site.yml)) to
+ease deploying plug-and-play
+[CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004)
 
 <a name="2.7.2"></a>
 ### 2.7.2 Testing
