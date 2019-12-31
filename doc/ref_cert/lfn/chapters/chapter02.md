@@ -52,14 +52,15 @@ test results in the
 and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
 
-The CNTT compliance and certification processes should benefit from the OPNFV
-testing history and then must conform to this overall toolchain design
-without reinventing the wheel. The RC toolchain only requires for the local
-deployment of the components instead of leveraging on the common OPNFV
-centralized services. But the interfaces remain unchanged mainly leveraging on
-jenkins jobs, the common test case execution, the test result DB and the S3
-protocol to publish the artifacts. It's worth mentioning that dumping all
-results and logs required by certification is already in place in CIRV (see
+The CNTT compliance and certification processes will leverage on existing OPNFV
+testing knowledge (projects) and experience (history) and then will conform
+to the overall toolchain design already in-place. The RC toolchain only
+requires for the local deployment of the components instead of leveraging on
+the common OPNFV centralized services. But the interfaces remain unchanged
+mainly leveraging on jenkins jobs, the common test case execution, the test
+result DB and the S3 protocol to publish the artifacts. It's worth mentioning
+that dumping all results and logs required by certification is already in place
+in CIRV (see
 [cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
 Functest daily jobs (see
 [functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console))
