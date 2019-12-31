@@ -106,6 +106,11 @@ A portion of the NFVI badging methodology includes Empirical Validation with Ref
 <a name="5.3"></a>
 ### 5.3 Badging Requirements
 
+**Defined**.  _Badging_  refers to the granting of a certification badge by the OVP to Suppliers/Testers of CNTT NFVI+VNF upon demonstration the testing performed confirms:
+
+-   NFVI adheres to CNTT RA/RM requirements.
+-   CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
+
 Following table shows the bading requirements with scope of mandatory (must) or
 optional.
 
@@ -295,12 +300,28 @@ integrated system for consuming.
 
 #### 5.4.4 Test Result management
 
-* **Formats** : As part of execution management, system produces the result in JSON
-format which can be represented in various form like YAML, CSV, Table, etc.
+**Categorization**. Test suites will be categorized as Functional/Platform or Performance based.
 
-* **Search & Reporting**: Search would help to query the test results based on
- various fact such as test case, VNF, date of execution, environment, etc. and
- produce the report in various format like pie-chart, success rates, etc
+**Results.**  Test results reporting will be communicated as a boolean (pass/fail), or Measurements Only.
+
+-   **Functional Pass/Fail**  signals the assertions set in a test script verify the Functional Requirements (FR) has met its stated objective as delivered by the developer. This will consist of both positive validation of expected behavior, as well as negative based testing when to confirm error handling is working as expected.
+-   **Performance-based Pass/Fail**  determination will be made by comparing Non-Functional (NFR) KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. 
+-   **Measurement Results**. Baseline Measurements will be performed when there are no benchmark standards to compare results, or established FRs/NFRs for which to gauge application / platform behavior in an integrated environment, or under load conditions. In these cases, test results will be executed to measure the application, platform, then prepare FRs/NFRs for subsequent enhancements and test runs.
+
+**Formats**.  As part of execution management, system produces the result in JSON format which can be represented in various form like YAML, CSV, Table, etc.
+
+**Search & Reporting**.  Search would help to query the test results based on various fact such as test case, VNF, date of execution, environment, etc. and produce the report in various format like pie-chart, success rates, etc
+
+**Collation | Portal**. The following criteria will be applied to the collation and presentation of test-runs seeking certification:
+
+-   RA number and name (e.g. RA-1 OpenStack)
+-   Version of software tested (e.g. OpenStack Ocata)
+-   Normalized results will be collated across all test runs (i.e. centralized database)
+-   Clear time stamps of test runs will be provided.
+-   Identification of test engineer / executor.
+-   Traceability to requirements.
+-   Summarized conclusion if conditions warrant test certification (see Badging Section).
+-   Portal contains links to certification badge(s) received.
 
 #### 5.4.5 Test Artifact management
 As part of testing various binaries, configurations, images, scripts ,etc would
