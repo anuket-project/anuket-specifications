@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 4. Component Level Architecture
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
@@ -43,6 +43,7 @@ Table 4-1 lists the Operating Systems that comply with this Reference Architectu
 |Fedora|25+||
 |HypriotOS|1.0.1+||
 |Container Linux|1800.6.0||
+|Windows Server|2019|For worker nodes only|
 
 <p align="center"><b>Table 4-1:</b> Compliant Host OSs</p>
 
@@ -88,14 +89,16 @@ feature-gates:
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-In order to support `req.inf.com.03`, the chosen runtime must be compliant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/).  Examples of container runtimes that are compliant with this specification are (note this is not a complete list and in no particular order):
+In order to support `req.inf.com.03`, the chosen runtime must be compliant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are compliant with these specification are (note this is not a complete list and in no particular order):
 - container-d (with CRI plugin enabled, which it is by default)
 - rkt
 - Docker CE (via the dockershim, which is currently built in to the kubelet)
 - CRI-O
 - Frakti
 
-If privileged containers are required (not recommended) then a container runtime that provides additional security isolation is required in order to support `req.sec.gen.01` and `req.sec.gen.04`.  This could be via the use of lightweight virtual machines (e.g. Kata) or alternative sandbox methods (e.g. gVisor).  For more information see the [Security chapter](./chapter06.md).
+These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when compliant with the above specifications) supports the requirement `req.inf.stg.06` for ephemeral storage for Pods.
+
+If privileged containers are required (not recommended, but required for some features such as the use of CSI drivers) then a container runtime that provides additional security isolation is required in order to support `req.sec.gen.01` and `req.sec.gen.04`.  This could be via the use of lightweight virtual machines (e.g. Kata) or alternative sandbox methods (e.g. gVisor).  For more information on isolation of workloads and underlying Host OS kernel, see the [Security chapter](./chapter06.md).
 
 > Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
 
@@ -107,7 +110,41 @@ If privileged containers are required (not recommended) then a container runtime
 <a name="4.6"></a>
 ## 4.5 Storage components
 
-> This chapter should describe the components used to provide storage services by the reference architecture.
+As described in [chapter 3](./chapter03.md), storage in Kubernetes consists of three types of storage:
+1. Ephemeral storage that is used to execute the containers
+    - **Ephemeral storage follows the lifecycle of a container**
+    - See the [Container runtimes](#4.4) section above for more information how this meets the requirement `req.inf.stg.06` for ephemeral storage for Pods
+1. Kubernetes Volumes, which are used to present additional storage to containers
+    - **A Volume follow the lifecycle of a Pod**
+    - This is a native Kubernetes capability and therefore `req.inf.stg.01` is supported by default
+    - This capability also delivers support for `req.inf.stg.06` although depending on the Volume Plugin used there may be additional steps required in order to remove data from disk (not all plugins manage the full lifecycle of the storage mounted using Volumes)
+1. Kubernetes Persistent Volumes, which are a subset of the above whose lifecycle persists beyond the lifetime of a Pod to allow for data persistence
+    - **Persistent Volumes have a lifecycle that is independent of Containers and/or Pods**
+    - This supports the requirement `req.inf.stg.07` for persistent storage for Pods
+
+Volume plugins are used in Kubernetes to allow for the use of a range of backend storage systems. There are two types of Volume plugin:
+1. In-tree
+    - These plugins are built, linked, compiled and shipped with the core Kubernetes binaries
+    - Therefore if a new backend storage system needs adding this is a change to the core Kubernetes code
+1. Out-of-tree
+    - These plugins allow new storage plugins to be created without any changes to the core Kubernetes code
+    - The Container Storage Interface (CSI) is such an out-of-tree plugin and many in-tree drivers are being migrated to use the CSI plugin instead (e.g. the [Cinder CSI plugin](https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/using-cinder-csi-plugin.md))
+    - In order to support the requirement `req.inf.stg.03` (CSI support), the following feature gates must be enabled:
+      - `CSIDriverRegistry`
+      - `CSINodeInfo`
+    - In addition to these feature gates, a CSI driver must be used (as opposed to an in-tree volume plugin) - a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)
+    - In order to support ephemeral storage use through a CSI-compatible volume plugin, the `CSIInlineVolume` feature gate must be enabled
+    - In order to support Persistent Volumes through a CSI-compatible volume plugin, the `CSIPersistentVolume` feature gate must be enabled
+
+> Should the following paragraph be moved to the Security chapter?
+
+> In order to support `req.sec.gen.09` and more generally to support automation and the separation of concerns between providers of a service and consumers of the service, Kubernetes Storage Classes should be used. Storage Classes allow a consumer of the Kubernetes platform to request Persistent Storage using a Persistent Volume Claim and for a Persistent Volume to be dynamically created based on the "class" that has been requested. This avoids having to grant `create`/`update`/`delete` permissions in RBAC to PersistentVolume resources, which are cluster-scoped rather than namespace-scoped (meaning an identity can manage all PVs or none).
+
+A note on object storage:
+- This Reference Architecture does not include any specifications for object storage, as this is neither a native Kubernetes object, nor something that is required by CSI drivers.  Object storage is an application-level requirement that would ordinarily be provided by a highly scalable service offering rather than being something an individual Kubernetes cluster could offer.
+
+> Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
+
 
 <a name="4.7"></a>
 ## 4.7 Service meshes
