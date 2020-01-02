@@ -33,21 +33,19 @@ This reference model intends to implement both the Basic, Network Intensive and 
 <a name="2.2.1"></a>
 ### 2.2.1 Network Acceleration Extensions
 
+From Reference Model section [4.2.4.2.1 Network Acceleration Extensions](../../../ref_model/chapters/chapter04.md#42421-network-acceleration-extensions)
+
 | Attribute | Description | Supported |
 |-----------|----------------------------------|-------|
-| .il-ipsec | In-line IPSec acceleration | optional <sup>1)</sup> |
-| .la-crypto | Look-Aside encryption/decryption engine | optional <sup>2)</sup> |
-| .la-trans | Look-Aside Transcoding acceleration | optional <sup>3)</sup> |
-| .la-programmable | Look-Aside programmable acceleration | optional <sup>4)</sup> |
-
-**1)** In Kubernetes based infrastructures virtio-ipsec can be applied only if the CNI plugin is OVS.<br>
-**2)** In Kubernetes based infrastructures virtio-crypto can be applied only if the CNI plugin is OVS.<br>
-**3)** In Kubernetes based infrastructures virtio-trans can be applied only if the CNI plugin is OVS.<br>
-**4)** In Kubernetes based infrastructures virtio-programmable can be applied only if the CNI plugin is OVS.
-
+| .il-ipsec | In-line IPSec acceleration | optional and only if the CNI plugin is OVS |
+| .la-crypto | Look-Aside encryption/decryption engine | optional and only if the CNI plugin is OVS |
+| .la-trans | Look-Aside Transcoding acceleration | optional and only if the CNI plugin is OVS |
+| .la-programmable | Look-Aside programmable acceleration | optional and only if the CNI plugin is OVS |
 
 <a name="2.2.2"></a>
 ### 2.2.2 Network Interface Options
+
+From Reference Model section [4.2.4.4 Network Interface Options](../../../ref_model/chapters/chapter04.md#4244-network-interface-options)
 
 | Attribute | Description | Supported |
 |-----------|----------------------------------|-------|
@@ -59,6 +57,9 @@ This reference model intends to implement both the Basic, Network Intensive and 
 
 <a name="2.2.3"></a>
 ### 2.2.3 VIM Capabilities
+
+From Reference Model section [4.1.6 VIM Capabilities](../../../ref_model/chapters/chapter04.md#416-vim-capabilities)
+
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
 | e.vim.cap.001 | Virtual Compute allocation | | Y |
@@ -76,21 +77,23 @@ This reference model intends to implement both the Basic, Network Intensive and 
 <a name="2.2.4"></a>
 ### 2.2.4 Instance Capabilities Mapping
 
+From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)
+
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single VNFC | 16 | Y |
-| e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single VNFC by NFVI | 32 GB | Y |
-| e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single VNFC by NFVI | 320 GB | Y |
+| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single pod bt the NFVI | 16<sup>1)</sup> | Y |
+| e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | 32 GB<sup>1)</sup> | Y |
+| e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | 320 GB<sup>1)</sup> | Y |
 | e.nfvi.res.cap.004 | # Connection Points | 6 | Y |
-| e.nfvi.res.cap.005 | Total instance (persistent) storage (GB | 300 GB | Y |
+| e.nfvi.res.cap.005 | Total instance (persistent) storage (GB) | 300 GB | Y |
 | e.nfvi.per.cap.001 | CPU pinning support | | Y |
 | e.nfvi.per.cap.002 | NUMA support | | Y |
-| e.nfvi.per.cap.003 | IPSec Acceleration | | Yes (if offered |
-| e.nfvi.per.cap.004 | Crypto Acceleration | | Yes (if offered |
-| e.nfvi.per.cap.005 | Transcoding Acceleration | | Yes (if offered |
-| e.nfvi.per.cap.006 | Programmable Acceleration | | Yes (if offered |
-| e.nfvi.per.cap.007 | Enhanced Cache Management | | X (if offered |
-| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | | N<sup>1)</sup> |
+| e.nfvi.per.cap.003 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.nfvi.per.cap.004 | Crypto Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.nfvi.per.cap.005 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.nfvi.per.cap.006 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.nfvi.per.cap.007 | Enhanced Cache Management | | X (if offered) |
+| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | | N<sup>2)</sup> |
 | i.nfvi.sla.cap.001 | CPU overbooking | 1:1, 1:4 | Y |
 | i.nfvi.sla.cap.002 | vNIC QoS | | Y |
 | i.nfvi.per.cap.001 | Huge page support |  | Y |
@@ -105,18 +108,18 @@ This reference model intends to implement both the Basic, Network Intensive and 
 | nfvi.com.cfg.004 | Huge Pages  | | Y |
 | nfvi.stg.cfg.001 | Catalogue storage Types | | Y |
 | nfvi.stg.cfg.002 | Storage Block |  | Y |
-| nfvi.stg.cfg.003 | Storage Object | | N<sup>2)</sub> |
+| nfvi.stg.cfg.003 | Storage Object | | N<sup>3)</sub> |
 | nfvi.stg.cfg.004 | Storage with replication | | Y |
 | nfvi.stg.cfg.005 | Storage with encryption | | Y |
 | nfvi.stg.acc.cfg.001 | Storage IOPS oriented | | Y |
 | nfvi.stg.acc.cfg.002 | Storage capacity oriented | | Y |
-| nfvi.net.cfg.001 | vNIC interface | | N<sup>3)</sup>|
-| nfvi.net.cfg.002 | Overlay protocol | | Y<sup>4)</sup>|
+| nfvi.net.cfg.001 | vNIC interface | | N<sup>4)</sup>|
+| nfvi.net.cfg.002 | Overlay protocol | | Y<sup>5)</sup>|
 | nfvi.net.cfg.003 | NAT | | |
 | nfvi.net.cfg.004 | Security Group | | |
 | nfvi.net.cfg.005 | SFC support | | |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | | |
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | | N <sup>5)</sup>|
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | | N <sup>6)</sup>|
 | nfvi.net.acc.cfg.002 | Support of HW offload | |Y, support of SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | | ? |
@@ -125,7 +128,7 @@ This reference model intends to implement both the Basic, Network Intensive and 
 | nfvi.hw.cpu.cfg.003 | NUMA | | Y |
 | nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | | Y |
 | nfvi.hw.cac.cfg.001 | GPU | | Y |
-| nfvi.hw.stg.hdd.cfg.001 | Local Storage HDD | | Y |
+| nfvi.hw.stg.hdd.cfg.001 | Local Storage HDD | | Optional |
 | nfvi.hw.stg.ssd.cfg.002 | Local Storage SSD | | Recommended |
 | nfvi.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | Y |
 | nfvi.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 25 | Y |
@@ -133,15 +136,16 @@ This reference model intends to implement both the Basic, Network Intensive and 
 | nfvi.hw.pci.cfg.002 | PCIe speed | Gen 3 | Y |
 | nfvi.hw.pci.cfg.003 | PCIe Lanes | 8 | Y |
 | nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | | Optional |
-| nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>6)</sup> |
+| nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>7)</sup> |
 | nfvi.hw.nac.cfg.003 | Compression |  | |
 
-**1)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
-**2)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
-**3)** There is no vNIC in case of containers.<br>
-**4)** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN)<br>
-**5)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.<br>
-**6)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.<br>
+**1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
+**2)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
+**3)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
+**4)** There is no vNIC in case of containers.<br>
+**5)** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN)<br>
+**6)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.<br>
+**7)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.<br>
 
 <a name="2.3"></a>
 ## 2.3 Kubernetes Architecture Requirements
