@@ -102,7 +102,6 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | i.nfvi.mon.cap.003 | Monitor host CPU utilization | | Y |
 | i.nfvi.mon.cap.004 | Monitor virtual compute CPU utilization | | Y |
 | i.nfvi.mon.cap.007 | Monitor external storage capacity | | Y |
-| nfvi.com.cfg.001 | CPU allocation ratio  | 4:1, 1:1 | Y |
 | nfvi.com.cfg.002 | NUMA awareness | | Y |
 | nfvi.com.cfg.003 | CPU pinning capability | | Y |
 | nfvi.com.cfg.004 | Huge Pages  | | Y |
