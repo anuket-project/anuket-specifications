@@ -37,7 +37,7 @@ Table 4-1 lists the Operating Systems that comply with this Reference Architectu
 |OS|Version(s)|Notes|
 |---|---|---|
 |Ubuntu|16.04+||
-|Debain|9+||
+|Debian|9+||
 |CentOS|7||
 |Red Hat Enterprise Linux (RHEL)|7||
 |Fedora|25+||
@@ -66,7 +66,7 @@ This Reference Architecture also specifies:
     - kube-controller-manager
 - Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes
 - In order to support `req.gen.rsl.01`, `req.gen.rsl.02` and `req.gen.avl.01` a Reference Implementation must:
-    - Consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes)
+    - Consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes)
     - At least one master node per availability zone or fault domain to ensure the high availability and resilience of Kubernetes control plane services
     - At least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes
 - Master node services, including etcd, and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
