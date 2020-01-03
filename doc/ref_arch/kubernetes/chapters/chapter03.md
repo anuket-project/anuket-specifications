@@ -54,7 +54,7 @@ These features and capabilities that are described in the software and hardware 
 The primary interface between the Physical / Virtual Infrastructure and any container-relevant components is the Host Operating System.  This is the OS within which the container runtime exists, and within which the containers run (and therefore, the OS whose kernel is shared by said containers).  This is shown in Figure 4-1 below.
 
 <p align="center"><img src="../figures/ch03_hostOS.png" alt="Kubernetes Host Operating System" Title="Kubernetes Host Operating System" width="65%"/></p>
-<p align="center"><b>Figure 4-1:</b> Kubernetes Host Operating System</p>
+<p align="center"><b>Figure 3-1:</b> Kubernetes Host Operating System</p>
 
 The Host OS (as with any OS) consists of two main layers:
 - Kernel space
