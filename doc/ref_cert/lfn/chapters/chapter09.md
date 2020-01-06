@@ -8,7 +8,7 @@
 * [9.2 RM/RA-1 Requirements](#9.2)
 * [9.3 TC Mapping to Requirements](#9.3)
 * [9.4 CNTT Compliance Cookbook](#9.4)
-  * [9.4.1 NVFI API testing configuration](#9.4.1)
+  * [9.4.1 NFVI API testing configuration](#9.4.1)
   * [9.4.2 Run CNTT Compliance](#9.4.1)
 
 <a name="9.1"></a>
@@ -101,7 +101,7 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
 <a name="9.4.1"></a>
-### 9.4.1 NVFI API testing configuration
+### 9.4.1 NFVI API testing configuration
 
 Here is the default Functest tree as proposed in
 [Run Alpine Functest containers (Hunter)](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314):
