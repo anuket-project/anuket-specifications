@@ -283,11 +283,12 @@ Heat is the orchestration service using template to provision cloud resources, H
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
 #### 4.3.1.10 Cyborg
-Cyborg is the acceleration resources management service. Cyborg depends on Nova and have services running on the control node and compute node:
+Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
 -	cyborg-api
 -	cyborg-conductor
 -	cyborg-db
-- cyborg-agent  which runs on Compute nodes
+- cyborg-agent  which runs on compute nodes
+- *-driver drivers which run on compute nodes and depend on the acceleration hardware
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services 
