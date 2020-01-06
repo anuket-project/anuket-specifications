@@ -69,6 +69,27 @@ test cases must pass as they are for CNTT NFVI Conformance/Certification:
 <a name="9.4"></a>
 ## 9.4 CNTT Compliance Cookbook
 
+[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) leverages on the
+common test case execution proposed by Xtesting. Thanks to a simple test case
+list, this tool deploys anywhere plug-and-play
+[CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
+In addition of this teaching capability needed by the Network Automation
+journey, it supports multiple components such as Jenkins and Gitlab CI (test
+schedulers) and
+[multiple deployment models](https://lists.opnfv.org/g/opnfv-tsc/message/5702)
+such as all-in-one or centralized services.
+
+[Xtesting](https://xtesting.readthedocs.io/en/latest/) and
+[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) combined meet the
+CNTT requirements about verification, compliance and certification:
+- smoothly assemble multiple heterogeneous test cases
+- generate the Jenkins jobs in
+  [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
+  verify CNTT RI
+- deploy local CI/CD toolchains everywhere to check compliance with CNTT
+- [dump all test case results and logs](http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip)
+  for third-party certification review
+
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
 GNU/Linux as Operating System and asks for a few dependencies as described in
 [Deploy your own Xtesting CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004):
