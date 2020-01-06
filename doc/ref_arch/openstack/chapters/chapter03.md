@@ -17,7 +17,7 @@
   * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
   * [3.3.4. Flavor management](#3.3.4)
 * [3.4. Underlying Resources](#3.4)
-  * [3.4.1. Virtualisation (KVM/QEMU)](#3.4.1)
+  * [3.4.1. Virtualisation](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
 * [3.5. Deployment Models](#3.5)
 * [3.6. Architectural Drivers – Requirements Traceability](#3.6)
@@ -49,7 +49,7 @@ This chapter is organized as follows:
     - Host aggregates providing resource pooling
     - Flavor management
 *	Underlying Resources: are what provides the resources that allow the Consumable Infrastructure Resources and Services to be created and managed by the NFVI Management Software (VIM).
-    - Virtualisation (KVM/QEMU)
+    - Virtualisation
     - Physical infrastructure
       -	Compute
       -	Network: Spine/Leaf; East/West and North/South traffic
@@ -218,8 +218,8 @@ A flavor defines the compute, memory, and storage capacity of nova instances. Wh
 The number of Compute nodes (for workloads) determines the load on the controller nodes and networking traffic and, hence, the number of controller nodes needed in the OpenStack cloud; the number of controller nodes required is determined on the load placed on these controller nodes and the need for High availability and quorum requires at least 3 instances of many of the services on these controller nodes.
 
 <a name="3.4.1"></a>
-### 3.4.1. Virtualisation (KVM/QEMU)
-Content to be developed
+### 3.4.1. Virtualisation
+Virtualisation is a technology that enables a guest Operating System (OS) to be abstracted from the underlying hardware and software. This allows to run multiple Virtual Machines(VMs) on the same hardware. Each such VMs have their own OS and are isolated from each other i.e. application running on one VM does not have the access to resources of another VM. Such virtualisation is supported by various hypervisors available as open-source (KVM, Xen etc.) as well as commercial (Hyper-V, Citrix XenServer etc.). Selecting a hypervisor depends on the workload needs and the features provided by various hypervisors as illustrated in Hypervisor [Feature Support Matrix](https://docs.openstack.org/nova/latest/user/support-matrix.html). OpenStack (Nova) allows the use of various hypervisors within a single installation by means of scheduler filters like ComputeFilter, ImagePropertiesFilter etc.
 
 Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The preferred supported hypervisor in this Reference Architecture is KVM. 
 

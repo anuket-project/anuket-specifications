@@ -8,7 +8,7 @@
   * [11.1.2 Hardware layers terminology](#11.1.2)
   * [11.1.3 Operational and administrative terminology](#11.1.3)
   * [11.1.4 Container Related Terminology](#11.1.4)
-  * [11.1.4 Other terminology](#11.1.5)
+  * [11.1.5 Other terminology](#11.1.5)
 
 <a name="11.1"></a>
 ## 11.1 Terminology
@@ -28,7 +28,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
 - **Cloud native Network Function (CNF)**: An implementation of a Virtual Network Function (**VNF**, as defined by ETSI GS NFV 003) that adheres to the CNCF Cloud Native Definition or a **VNF** that is transitioning to cloud native.
-  >_*Note:*_ This definition is derived from [CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329). A cloud native **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The containers run on an application orchestration layer, not directly on the underlaying infrastructure itself. the containers themselves may be Linux, Docker or other similar container technology.
+  >_*Note:*_ This definition is derived from [CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329), which is still a draft. A cloud native **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The microservices typically run using a container engine, not directly on the underlaying infrastructure itself. The containers themselves may use Linux, Docker or other similar container technology.
 - **Virtual Application (VA)**: A general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
 - **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
@@ -42,13 +42,11 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Compute flavour**: defines the sizing of the virtualised resources (compute, memory, and storage) required to run a workload.
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 - **VM instances Catalogue**: Pre-defined instance types and compute flavours.
-- **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
 - **Virtual resources**:
-  - **Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
+  - **Virtual Compute resource (a.k.a. virtualisation container)**: partition of a compute node that provides an isolated virtualised computation environment.
   - **Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
   - **Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 - **Hypervisor**: A piece of software with management components that allows the user to partition the underlying physical resources and allocate them to Virtual Machines. Typically, the hypervisor is managed by a cloud management software such as OpenStack.
-- **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 - **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
 - **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied/mapped to **NFVI** SW deployment.
 
@@ -84,17 +82,31 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Container Image**:	Stored instance of a container that holds a set of software needed to run an application.
 - **Container**:	A lightweight and portable executable image that contains software and all of its dependencies.
+>_*Note:*_ OCI defines **Container** as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment." 
+A **Container** provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
+
+- **Container Runtime**: The software that is responsible for running containers.
+>_*Note:*_ as explained in [OCI Glossary](https://github.com/opencontainers/runtime-spec/blob/master/glossary.md) it reads the configuration files for a **Container** from a directory structure, uses that information to create a container, launches a process inside the container, and performs other lifecycle actions.
+
+- **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
+
 - **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
-- **Kubernetes Cluster**: A set of machines, called nodes, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master node.
-- **Kubernetes Master**:	The master node(s) manages the worker nodes and the pods in the cluster. Multiple master nodes are used to provide a cluster with failover and high availability.
+- **Kubernetes Cluster**: A set of machines, called nodes and master, that run containerized applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
+>_*Note:*_ adapted from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster).
+- **Kubernetes Master**:	The master node(s) manage the worker nodes and the pods in the cluster. Multiple masters are used to provide a cluster with failover and high availability.
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
-- **Kubernetes Node**:	A node is a worker machine in Kubernetes. A worker node may be a VM or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
+- **Kubernetes Node**:	A node is a worker machine in Kubernetes. A worker node may be a **VM** or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
+- **Kubernetes Service**: An abstract way to expose an application running on a set of Pods as a network service.
+>_*Note:*_ This definition from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-service) uses the term "network service" differently than in ETSI NFV.
+
+Terms not defined by Kubernetes:
 - **CaaS**:	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
 - **CaaS Manager**:	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
-- **Kubernetes Service**: An abstract way to expose an application running on a set of Pods as a network service.
 
 <a name="11.1.5"></a>
 ### 11.1.5 Other Referenced Terminology
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
+- **Platform**: A cloud capabilities type in which the cloud service user can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)). 
+>_*Note:*_ For CNTT,  this includes the physical infrastructure, Operating Systems, virtualization/containerization software and other orchestration, security, monitoring/logging and life-cycle management software.
