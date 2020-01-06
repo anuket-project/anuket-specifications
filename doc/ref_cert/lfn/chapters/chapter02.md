@@ -215,65 +215,44 @@ The NFVI certification framework will be guided by the following core principles
 <a name="2.7.2"></a>
 ### 2.7.2 Test case integration requirements
 
-[Xtesting](https://xtesting.readthedocs.io/en/latest/) is a simple framework to
-assemble sparse test cases and to accelerate the adoption of CI/CD best
-practices. By managing all the interactions with the CI/CD components (test
-scheduler, test results database, artifact repository), it allows the developer
-to work only on the test suites without diving into CI/CD integration. Even
-more, it brings the capability to run heterogeneous test cases in the same CI
-toolchains thanks to a few low constraints
+To reach all goals (verification, compliance and certification) expected by
+CNTT, all test cases must be delivered as
+[Docker containers](https://www.docker.com/) and meet the requirements to
+simplify the CI toolchain setups:
+- the common test case execution
+- the unified way to manage all the interactions with the CI/CD components and
+  with third-parties (e.g. dump all test case logs and results for
+  certification)
+
+For their parts, the Docker containers simply enforce that the test cases are
+delivered with all runtime dependencies. Then it prevents lots of manual
+operations when configuring the server running the test cases and prevent
+conflicts between all test case dependencies.
+
+It's worth mentioning that current
+[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
+which is a simple framework to assemble sparse test cases and to accelerate the
+adoption of CI/CD best practices. By managing all the interactions with the
+CI/CD components (test scheduler, test results database, artifact repository),
+it allows the developer to work only on the test suites without diving into
+CI/CD integration. Even more, it brings the capability to run heterogeneous
+test cases in the same CI toolchains thanks to a few low constraints
 [quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/).
 
-[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) is a more recent
-project which leverages on the common test case execution proposed by Xtesting.
-Thanks to a simple test case list, this tool deploys anywhere plug-and-play
-[CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
-In addition of this teaching capability needed by the Network Automation
-journey, it supports multiple components such as Jenkins and Gitlab CI (test
-schedulers) and
-[multiple deployment models](https://lists.opnfv.org/g/opnfv-tsc/message/5702)
-such as all-in-one or centralized services.
+Following the design in use, the Docker containers proposed by the test
+projects must also embed
+[the Xtesting Python package](https://pypi.org/project/xtesting/) and
+[the related test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
+as required by Xtesting.
 
-This 2 projects combined meet the CNTT requirements about verification,
-compliance and certification:
-- smoothly assemble multiple heterogeneous test cases
-- generate the Jenkins jobs in
-  [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
-  verify CNTT RI
-- deploy local CI/CD toolchains everywhere to check compliance with CNTT
-- [dump all test case results and logs](http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip)
-  for third-party certification review
-
-All test cases must conform with Xtesting to ensure the smooth integration in
-the CI toolchain as expected by CNTT.
-
-It's worth mentioning that Functest already leverages on Xtesting. Here are the
-issues tracking the updates of the existing OPNFV test projects:
+Here are the issues tracking the updates of the existing OPNFV test
+projects:
 - Bottlenecks: https://github.com/cntt-n/CNTT/issues/510
 - NFVBench: https://github.com/cntt-n/CNTT/issues/865
 - StorPerf: https://github.com/cntt-n/CNTT/issues/673
 - VSPERF: https://github.com/cntt-n/CNTT/issues/511
 - YardStick: https://github.com/cntt-n/CNTT/issues/509
-
-To reach all goals (verification, compliance and certification) expected by
-CNTT, all test cases must be delivered as
-[Docker containers](https://www.docker.com/) embedding
-[the Xtesting Python package](https://pypi.org/project/xtesting/) and
-[their test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
-as required by Xtesting.
-
-Here the Docker containers simply enforce that the test cases are delivered
-with all runtime dependencies. Then it prevents lots of manual operations
-when configuring the server running the test cases and prevent conflicts
-between all test case dependencies. For its part, Xtesting brings the common
-test case execution hugely simplifying the CI toolchain setups (e.g. Jenkins
-jobs) and an easy way to dump all test case logs and results for third-party
-certification.
-
-All test projects should offer Xtesting CI description files (see
-[Functest site.yml](https://git.opnfv.org/functest/tree/ansible/site.yml)) to
-ease deploying plug-and-play
-[CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004)
 
 <a name="2.7.3"></a>
 ### 2.7.3 Testing
