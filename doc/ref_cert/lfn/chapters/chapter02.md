@@ -5,6 +5,7 @@
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
+* [2.1.1 RI and RC CI/CD toolchains](#2.1.1)
 * [2.2 Methodology](#2.2)
 * [2.3 Certification Strategy & Vehicle](#2.3)
 * [2.4 Profiles Reference](#2.4)
@@ -34,6 +35,41 @@ All Terms utilized throughout this chapter are intended to align with CVC defini
 <a name="2.1"></a>
 ## 2.1 Introduction
 NFVI (Network Functions Virtualization Infrastructure) refers to the physical resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. As such, the performance of a VNF depends on the underlying NFVI over which it is hosted. A certain VNF may perform good in one hardware and may perform worst in another. Thus, a need arises to certify NFVI that can help in onboarding VNFs onto a hardware with an acceptable level of VNF performance. Certain frameworks like [yardstick](https://github.com/opnfv/yardstick), [vsperf](https://github.com/opnfv/vswitchperf) etc. provide a set of tests that can be run on a hardware to obtain Key Performance Indicators (KPIs) which give a measurable output of the NFVI's performance. With these KPIs, a decision can be made on the VNFs that can offer an acceptable level of performance when on-boarded on the NFVI.
+
+<a name="2.1.1"></a>
+### 2.1.1 CNTT RI and RC toolchains
+
+[OPNFV](https://www.opnfv.org/) has built a complete CI/CD toolchain
+continuously deploying and testing NFVI. It's composed of centralized
+components de facto used by the CNTT RI hosted by OPNFV
+([CIRV](https://wiki.opnfv.org/pages/viewpage.action?pageId=47284396)).
+
+As for all OPNFV installer projects,
+[Jenkins](https://build.opnfv.org/ci/view/cntt/) triggers CIRV deployments,
+runs the OPNFV test cases part of the NFVI verification and then publishes all
+test results in the
+[centralized test database](https://docs.opnfv.org/en/stable-hunter/_images/OPNFV_testing_working_group.png)
+and all artifacts (reports, logs, etc.) to
+[an S3 compatible storage service](http://artifacts.opnfv.org/).
+
+The CNTT compliance and certification processes will leverage on existing OPNFV
+testing knowledge (projects) and experience (history) and then will conform
+to the overall toolchain design already in-place. The RC toolchain only
+requires for the local deployment of the components instead of leveraging on
+the common OPNFV centralized services. But the interfaces remain unchanged
+mainly leveraging on jenkins jobs, the common test case execution, the test
+result DB and the S3 protocol to publish the artifacts. It's worth mentioning
+that dumping all results and logs required by certification is already in place
+in CIRV (see
+[cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
+Functest daily jobs (see
+[functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console))
+
+It should be noted that
+[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) supports both
+centralized and distributed deployment models as described below. It has
+deployed the full toolchain in one small virtual machine to verify ONAP Openlab
+via Functest.
 
 <a name="2.2"></a>
 ## 2.2 Methodology
@@ -95,12 +131,12 @@ The Infrastructure Profile Catalog contains the following attributes:
 Targeted VNF Classes/Families for baseline measurements are described in chapter XXXX.
 
 <a name="2.4"></a>
-## 2.4 Profiles Reference 
+## 2.4 Profiles Reference
 Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughout whereas a VNF like Mobility Management Entity (MME) woud require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs woud have different characteristics. Depending on VNF's requirements, the NFVI can be categorised into below profiles:
 * Basic (B) profile for standard computing
 * Compute intensive (C) profile where predictable computing performance is expected and
 * Network intensive (N) profile offerring low latency and high networking throughout
-Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI. 
+Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI.
 
 To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI certification based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
  * Certify Vendor NFVI Hardware solution: This allows for certification of only NFVI.
@@ -187,7 +223,7 @@ The following five test categories have been identified as **minimal testing req
  4. Control plane components: Validations for RabbitMQ, Ceph, MariaDB etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
  5. Security: Validation for use RBAC roles and user group policies. See [Chapter 7](./chapter07.md) for complete list.
 
-The following **Optional Test Categories** which can be considered by the Operator, or Supplier, for targeted validations to complement required testing for certification: 
+The following **Optional Test Categories** which can be considered by the Operator, or Supplier, for targeted validations to complement required testing for certification:
 
  - On-Boarding (MANO agnostic)
  - VNF Functional Testing
@@ -223,9 +259,9 @@ In addition to General Best Practices for NFVI certification, the following Qual
  - **Functional Pass/Fail** signals the assertions set in a test script verify the Functional Requirements (FR) has met its stated objective as delivered by the developer. This will consist of both positive validation of expected behavior, as well as negative based testing when to confirm error handling is working as expected.
  - **Performance-based Pass/Fail** determination will be made by comparing Non-Functional (NFR) NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
  - **Measurement Results**.  Baseline Measurements will be performed when there are no benchmark standards to compare results, or established FRs/NFRs for which to gauge application / platform behavior in an integrated environment, or under load conditions.  In these cases, test results will be executed to measure the application, platform, then prepare FRs/NFRs for subsequent enhancements and test runs.  
- 
+
  **Collation | Portal**.  The following criteria will be applied to the collation and presentation of test-runs seeking NFVI certification:   
- 
+
  - RA number and name (e.g. RA-1 OpenStack)
  - Version of software tested (e.g. OpenStack Ocata)
  - Normalized results will be collated across all test runs (i.e. centralized database)
@@ -233,11 +269,11 @@ In addition to General Best Practices for NFVI certification, the following Qual
  - Identification of test engineer / executor.
  - Traceability to requirements.
  - Summarized conclusion if conditions warrant test certification (see Badging Section).
- - Portal contains links to certification badge(s) received. 
+ - Portal contains links to certification badge(s) received.
 
 <a name="2.7.3"></a>
 ### 2.7.3 Badging
-**Defined**.  _Badging_ refers to the granting of a certification badge by the OVP to Suppliers/Testers of CNTT NFVI upon demonstration the testing performed confirms: 
+**Defined**.  _Badging_ refers to the granting of a certification badge by the OVP to Suppliers/Testers of CNTT NFVI upon demonstration the testing performed confirms:
 
  - NFVI adheres to CNTT RA/RM requirements.
  - CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
@@ -263,7 +299,7 @@ The below figure shows the targetted badge for NFVI.
 Certification and issuance of NFVI badges will be as follows:
  - NFVI supplier utilizes, or installs a target RM/RA-x certified RI lab.
  - Required artifacts are submitted/supplied to the OVP, demonstrating proper Lab Installation, Compliance, Validation, Performance, and Release of Results & Known Issues.
- - Artifact validations will be corroborated and confirmed by the OVP. with direct comparison between measured results and documented FRs/NFRs for applications, hardware and software configuration settings, and host systems. 
+ - Artifact validations will be corroborated and confirmed by the OVP. with direct comparison between measured results and documented FRs/NFRs for applications, hardware and software configuration settings, and host systems.
  - All OVP inquiries, requests for re-tests, or reformatting / re-uploading of results data are closed.
 
 <p align="center"><img src="../figures/NFVI_certifying_vendor_swhw_solutions.jpg" alt="NFVI Badges" title="NFVI Badges" width="100%"/></p>
