@@ -5,8 +5,8 @@
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
-* [3.2 Assumptions](#3.2)
-* [3.3 Requirement Type](#3.3)
+* [3.2 Generic Requirements](#3.2)
+* [3.3 Requirement Types](#3.3)
 * [3.4 Profile Catalog](#3.4)
 * [3.5 Software & Hardware Reference](#3.5)
 * [3.6 Options & Extensions](#3.6)
@@ -21,47 +21,72 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Chapter 8.2.4 of the reference model.
+The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
 
 
 <a name="3.2"></a>
-## 3.2 Generic Requirements
+## 3.2 Generic Requirements on Test Cases
 
-All test cases must fullfil the generic requirements listed in Chapter 8.2.4 of the reference model.
+All test cases must fullfil the generic requirements listed in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
 
 In addition, for test cases targeting the NFVI compliance program, the following requirements must be met:
 
 | Reference         | Description                                                                                                              |
 |-------------------|--------------------------------------------------------------------------------------------------------------------------|
-| x                 | All NFVI test cases *must* be automated.                              |
-| x                 | All NFVI test cases *must* be implemented using open source tools.                              |
-| x                 | All NFVI test cases *must* be integrated and run in the OPNFV CI/CD pipeline.                                            |
-| x                 | All NFVI test cases *must* exercise existing APIs only, that is, treat the NFVI platform as a black box.                 |
+| x                 | All NFVI test cases *must* be automated. Once the pre-conditions of a test case are met, i.e., the system under test is configured and in a state according to the pre-conditions of the particular test case, no manual steps must be required to run a test case to completion.   |
+| x                 | All NFVI test cases *must* be implemented using publicly available open source tools. This enables access to test tools and test case implementations to all interested parties and organizations.  |
+| x                 | All NFVI test cases *must* be integrated and run in the OPNFV CI/CD pipeline. This requirement ensures that test cases are functionally correct, reliable, mature and pass on the NFVI reference implementation.   |
+| x                 | All NFVI test cases *must* treat the NFVI platform as a black box. In particular, test cases must not perform actions on or change the state of the system under test outside the scope of well-defined APIs as listed by RA1. This requirement ensures applicability of test cases across different implementations: reference implementations as well as commercial implementations.     |
+
 
 
 <a name="3.3"></a>
-## 3.3 Requirement Type
+## 3.3 Requirement Types
 
-Content to be written:
--  Type of requirement:  Bare metal, API, etc
+The compliance and certification program intends to validate four different types of requirements and system properties:
+
+* API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md)).
+
+* Performance: Test cases covering this type of requirement measure specific performance characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+
+* Resilience: Test cases covering this type of requirement measure specific resilience characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+
+* Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to CNTT/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
+
+The extend to which these different types of requirements are included in the compliance and certification test suite is subject to the availability of test cases. See Section [NFVI Test Cases](chapter03.md#39-nfvi-test-cases).
+
 
 
 <a name="3.4"></a>
 ## 3.4 Profile Catalog
 
-Chapter 4.2 of the reference model defines three software profiles, targeting three different use cases:
+Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines three software profiles, targeting three different use cases:
 
 * Basic
 * Network intensive
 * Compute intensive
 
-The test cases selected for validating compliance of the three profiles must cover the functional and non-functional requirements as listed in Chapter 4.2.5 and 4.2.6 of the reference model.
+The test cases selected for validating compliance of the three profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
 
 TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
 
 
 <a name="3.5"></a>
 ## 3.5 Software & Hardware Reference
+
+The LFN-based compliance and certification program comprises three distinct types of NFVI deployment and runtime environments:
+
+ 1. A CNTT reference implementation deployed in the OPNFV CI/CD environment,
+ 2. A commercial NFVI product deployed in a vendor's internal development and testing environment, and
+ 3. ACNTT reference implementation of a commercial NFVI product deployed in a 3rd party lab providing testing and certification services.
+
+The test tooling, harnesses and corresponding test cases which are part of the compliance and certification test suite must be capable of running across all of those environments. This results in the following list of requirements:
+
+| Reference         | Description                                                                                                              |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------|
+| x                 | NFVI test cases *must not* interact with remote (Internet) services apart from downloading container or VM images. In particular, test tools and test cases must not automatically upload test data to any system or service run by LFN or GSMA. The purpose of this requirement is to protect the confidentially of (intermediate) test data. |
+| x                 | NFVI test cases *must* support either proxied Internet connectivity or an offline mode if additional container or virtual machine images need to be downloaded at runtime.  |
+
 
 Content to be written:
 - Identify SW Reference
@@ -313,4 +338,52 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 <a name="3.9"></a>
 ## 3.9 NFVI Test Cases
 
-> we need to have list of NFVI test cases in here.
+This section lists all NFVI test cases, sorted by requirement type, which are part of the LFN-based compliance and certification program.
+
+
+#### 3.9.1 Functional (API) test cases
+
+The primary tool in the OpenStack domain for implementing functional tests is Tempest. Tempest test cases follow a naming scheme which allows to determine which OpenStack service is being targeted by a given test case. Test tools utilizing Tempest, e.g., Functest or Rally, often make use of regular expressions to define, by means of white- and blacklisting, a concrete set of Tempest tests for execution.
+
+Typically, each test case is calling a (set of) API(s) of a targeted OpenStack service. In addition, so called "scenario tests" call APIs across different OpenStack services in order to test  a specific workflow, for instance, creating virtual networks, spawning VMs on those networking, verifying SSH connectivity into those VMs and finally tearing down all newly created resources.
+
+Chapter [Interfaces and API](../../../ref_arch/openstack/chapters/chapter05.md) of the reference architecture RA1 defines the APIs and interfaces expected to be exposed by a system under test. This list guides the selection of Tempest test cases (along with the generic test case requirements). Please note that a compliance and certification program typically requires to list the full set of test cases which are part of the test scope. In case of Tempest tests, this list is prohibitively long. So instead of listing each test case individually, regular expressions are used to white- and blacklist test cases.
+
+
+* neutron-tempest-plugin-api
+
+* tempest-cinder
+
+* tempest-keystone
+
+* tempest-full
+
+* tempest-scenario
+
+* tempest-slow
+
+TODO: to be filled with regexs from [here](https://raw.githubusercontent.com/opnfv/functest/master/docker/smoke-cntt/testcases.yaml)
+
+
+
+Rally is a tool build on top of Tempest aiming to generate load on the OpenStack control plane by running Tempest tests in succession and in parallel.
+
+
+* rally-sanity
+
+
+
+
+#### 3.9.2 Performance test cases
+
+> none defined yet
+
+
+#### 3.9.3 Resilience test cases
+
+> none defined yet
+
+
+#### 3.9.4 Bare-metal validation test cases
+
+> none defined yet
