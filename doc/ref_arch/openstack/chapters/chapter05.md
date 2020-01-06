@@ -241,6 +241,14 @@ REST API Version History: https://docs.openstack.org/placement/latest/placement-
 
 Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
 
+### 5.2.9. Cyborg
+
+|**OpenStack Service**  | **API Version** |
+|-----------------------|-----------------|
+| Acceleration: Cyborg  | v2              |
+
+Acceleration Service API: https://docs.openstack.org/api-ref/accelerator/
+
 <a name="5.3"></a>
 ## 5.3. Consolidated Set of APIs
 
@@ -264,6 +272,7 @@ libraries.
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
 | Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
 | Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
+| Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/      | v2              |                              |
 
 ### 5.3.2. Kubernetes Interfaces
 The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
