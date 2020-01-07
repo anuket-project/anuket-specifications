@@ -19,7 +19,7 @@
 * [3.4. Underlying Resources](#3.4)
   * [3.4.1. Virtualisation](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
-* [3.5. Deployment Models](#3.5)
+* [3.5. Cloud Topology](#3.5)
 * [3.6. Architectural Drivers – Requirements Traceability](#3.6)
 
 
@@ -262,7 +262,7 @@ Figure 3-3 shows a physical network layout where each physical server is dual ho
 Most cloud storage architectures incorporate a number of clustered storage nodes that provide high bandwidth access to physical storage backends connected by high speed networks. The architecture consists of multiple storage controller units, each a generic server (CPU, Cache, storage), managing a number of high-performance hard drives. The distributed block storage software creates an abstract single pool of storage by aggregating all of the controller units. Advanced and high-speed networking (data routing) and global load balancing techniques ensure high-performance, high availability storage system
 
 <a name="3.5"></a>
-## 3.5. Deployment Models
+## 3.5. Cloud Topology
 Content to be developed along the following lines
 *	How do we define the different deployment types?
     - Edge
