@@ -19,7 +19,7 @@
 
 Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
 
-For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implmented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.  
+For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implemented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.  
 
 In summary, NFVI+VNF testing will be performed for **Verification** and **Validation** purposes.
 
@@ -43,7 +43,7 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 - Candidate VNF Validation (Termed Validation & Performance by CVC) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
 **Different Distributions**
-The three step methodolgy described above of verifying Manifest compliance, executing Empirical Golden VNF transactions, and performing Interopability Testing is the same validation process regardless of the Distribution used to establish a cloud topology, and the components and services used in the client software stack.  
+The three step methodology described above of verifying Manifest compliance, executing Empirical Golden VNF transactions, and performing Interopability Testing is the same validation process regardless of the Distribution used to establish a cloud topology, and the components and services used in the client software stack.  
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -54,7 +54,7 @@ This document covers the realisation aspects of Verification and Certification o
 - Identify in details the Requirement of Test Cases (and mapping them to requirements from The Reference Model and The OpenStack Based Reference Architecture ).
 - Analysis of existing community projects.
 - Propose an E2E Framework for verification and certification of NFVI and VNFs.
-- Playbook of instructions, user manuals, steps of how to perform verification and certification for both NFVI and VNFs using hte proposed E2E Framework.
+- Playbook of instructions, user manuals, steps of how to perform verification and certification for both NFVI and VNFs using the proposed E2E Framework.
 - Gap analysis to identify where the Gaps are in the industry (tooling, test cases, process, etc).
 - Identify development efforts needed to address any gaps identified.
 
@@ -111,7 +111,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 
 * Ability to monitor, measure, and report, Validations performed against a target, controlled system under test
 
-In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**. 
+In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.
 
 **Dependencies** NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects.
 
@@ -139,7 +139,7 @@ Test suites will be categorized as functional or performance based. Results repo
 
 <a name="x.x"></a>
 ## x.x Resources & References
- 
+
 1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
 2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
 3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
