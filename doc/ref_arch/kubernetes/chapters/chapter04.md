@@ -62,9 +62,9 @@ The following table contains a comparision of relevant features and requirements
 | Service based dicovery of all provisioned interfaces | Not supported | Supported |
 
  [Calico](https://github.com/projectcalico/cni-plugin) must be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.02` due to it's capability to handle `NetworkPolicies`, what is missing from [Flannel](https://github.com/coreos/flannel-cni).
-For the network of signalling connections the built in IPVLAN CNI of DANM must be used as it provides NAT-less connectivity (`req.inf.ntw.03`). For the user plane network(s) fullfilling requirement `req.inf.ntw.04` the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used.
+For the network of signalling connections the built in IPVLAN CNI of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan)  must be used as these provide NAT-less connectivity (`req.inf.ntw.03`). For the user plane network(s) fullfilling requirement `req.inf.ntw.04` the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used. The User Space CNI must use VPP or OVS-DPDK as a backend.
 
-> Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin to the architecture is under debate.
+> Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) to the architecture are under debate.
 
 <a name="4.6"></a>
 ## 4.5 Storage components
