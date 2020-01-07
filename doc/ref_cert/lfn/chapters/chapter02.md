@@ -13,11 +13,12 @@
 * [2.6 Entry & Exit Criteria](#2.6)
 * [2.7 Frameworks](#2.7)
   * [2.7.1 Best Practices (General)](#2.7.1)
-  * [2.7.2 Testing](#2.7.2)
-    * [2.7.2.1 Test Categories](#2.7.2.1)
-    * [2.7.2.2 Test Harnessess](#2.7.2.2)
-    * [2.7.2.3 Test Results](#2.7.2.3)
-  * [2.7.3 Badging](#2.7.3)
+  * [2.7.2 Test case integration requirements](#2.7.2)
+  * [2.7.3 Testing](#2.7.3)
+    * [2.7.3.1 Test Categories](#2.7.3.1)
+    * [2.7.3.2 Test Harnessess](#2.7.3.2)
+    * [2.7.3.3 Test Results](#2.7.3.3)
+  * [2.7.4 Badging](#2.7.4)
 
 ## Synopsis:
 Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification whereas CNTT will provide the badging for NFVI certification in accordance with the certification process as explained in this chapter.
@@ -192,6 +193,7 @@ The below set of steps define the compliance, verification and certification pro
 
 <a name="2.7"></a>
 ## 2.7 Frameworks
+
 The NFVI certification framework deals with the process of testing NFVI in below three areas:
 * Compliance: The NFVI needs to comply to CNTT RA1/RA2.
 * Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
@@ -211,11 +213,53 @@ The NFVI certification framework will be guided by the following core principles
 -   Add test cases from operators, which operators already tested in their environment
 
 <a name="2.7.2"></a>
-### 2.7.2 Testing
+### 2.7.2 Test case integration requirements
+
+To reach all goals (verification, compliance and certification) expected by
+CNTT, all test cases must be delivered as
+[Docker containers](https://www.docker.com/) and meet the requirements to
+simplify the CI toolchain setups:
+- the common test case execution
+- the unified way to manage all the interactions with the CI/CD components and
+  with third-parties (e.g. dump all test case logs and results for
+  certification)
+
+For their parts, the Docker containers simply enforce that the test cases are
+delivered with all runtime dependencies. Then it prevents lots of manual
+operations when configuring the server running the test cases and prevent
+conflicts between all test case dependencies.
+
+It's worth mentioning that current
+[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
+which is a simple framework to assemble sparse test cases and to accelerate the
+adoption of CI/CD best practices. By managing all the interactions with the
+CI/CD components (test scheduler, test results database, artifact repository),
+it allows the developer to work only on the test suites without diving into
+CI/CD integration. Even more, it brings the capability to run heterogeneous
+test cases in the same CI toolchains thanks to a few low constraints
+[quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/).
+
+Following the design in use, the Docker containers proposed by the test
+projects must also embed
+[the Xtesting Python package](https://pypi.org/project/xtesting/) and
+[the related test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
+as required by Xtesting.
+
+Here are the issues tracking the updates of the existing OPNFV test
+projects:
+- Bottlenecks: https://github.com/cntt-n/CNTT/issues/510
+- NFVBench: https://github.com/cntt-n/CNTT/issues/865
+- StorPerf: https://github.com/cntt-n/CNTT/issues/673
+- VSPERF: https://github.com/cntt-n/CNTT/issues/511
+- YardStick: https://github.com/cntt-n/CNTT/issues/509
+
+<a name="2.7.3"></a>
+### 2.7.3 Testing
 Testing for NFVI certification falls under three broad categories - Compliance, Validation and Performance. Target NFVI for certification needs to pass all these tests in order to obtain the certification badge.
 
-<a name="2.7.2.1"></a>
-#### 2.7.2.1 Test Categories
+<a name="2.7.3.1"></a>
+#### 2.7.3.1 Test Categories
 The following five test categories have been identified as **minimal testing required** to verify NFVI interoperability to satisfy the needs of VNF developer teams.
  1. Baremetal validation: To validate control and compute nodes hardware
  2. VNF Interoperability: After VNFs are on-boarded, openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc. would be validated.
@@ -238,8 +282,8 @@ The following **Optional Test Categories** which can be considered by the Operat
  - Fault Recovery Testing
  - PM/KPI/Service Assurance Testing
 
-<a name="2.7.2.2"></a>
-#### 2.7.2.2 Test Harnesses
+<a name="2.7.3.2"></a>
+#### 2.7.3.2 Test Harnesses
 In addition to General Best Practices for NFVI certification, the following Quality Engineering (QE) standards will be applied when defining and delivering test scenarios for certification:  
 1.  Standardized test methodologies / flows capturing requirements from RA's, goals and scenarios for test execution, and normalizing test results.
 2.  Establishing, and leveraging, working test-beds which can be referenced in subsequent test scenario designs.  
@@ -249,8 +293,8 @@ In addition to General Best Practices for NFVI certification, the following Qual
 6.  Documentation needs to be dynamic, and consumable.
 7.  Harnesses need to apply a “Just add Water” deployment strategy, enabling test teams to readily implement test harnesses which promotes certification scalability.
 
-<a name="2.7.2.3"></a>
-#### 2.7.2.3 Test Results
+<a name="2.7.3.3"></a>
+#### 2.7.3.3 Test Results
 
 **Categorization**.  Test suites will be categorized as Functional/Platform or Performance based.  
 
@@ -271,8 +315,8 @@ In addition to General Best Practices for NFVI certification, the following Qual
  - Summarized conclusion if conditions warrant test certification (see Badging Section).
  - Portal contains links to certification badge(s) received.
 
-<a name="2.7.3"></a>
-### 2.7.3 Badging
+<a name="2.7.4"></a>
+### 2.7.4 Badging
 **Defined**.  _Badging_ refers to the granting of a certification badge by the OVP to Suppliers/Testers of CNTT NFVI upon demonstration the testing performed confirms:
 
  - NFVI adheres to CNTT RA/RM requirements.
