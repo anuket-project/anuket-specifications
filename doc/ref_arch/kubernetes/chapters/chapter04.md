@@ -98,8 +98,6 @@ In order to support `req.inf.com.03`, the chosen runtime must be compliant with 
 
 These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when compliant with the above specifications) supports the requirement `req.inf.stg.06` for ephemeral storage for Pods.
 
-If privileged containers are required (not recommended, but required for some features such as the use of CSI drivers) then a container runtime that provides additional security isolation is required in order to support `req.sec.gen.01` and `req.sec.gen.04`.  This could be via the use of lightweight virtual machines (e.g. Kata) or alternative sandbox methods (e.g. gVisor).  For more information on isolation of workloads and underlying Host OS kernel, see the [Security chapter](./chapter06.md).
-
 > Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
 
 <a name="4.5"></a>
