@@ -11,6 +11,7 @@
   * [3.2.3. Virtual Storage](#3.2.3)
   * [3.2.4. Virtual Networking Neutron standalone](#3.2.4)
   * [3.2.5. Virtual Networking – 3rd party SDN solution](#3.2.5)
+  * [3.2.6. Acceleration](#3.2.6)
 * [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
@@ -112,6 +113,12 @@ OpenStack Neutron supports open APIs and a pluggable backend where different plu
 
 Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
 
+<a name="3.2.6"></a>
+### 3.2.6. Acceleration
+Acceleration deals with both hardware and software accelerations. Hardware acceleration is the use of specialized hardware to perform some function faster than is possible by executing the same function on a general-purpose CPU or on a traditional networking (or other I/O) device (e.g. NIC, switch, storage controller, etc.). The hardware accelerator covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the main CPU, and to accelerate workload performance. NFVI should manage the accelerators by plugins and provide the acceleration capabilities to VNFs.
+
+With the acceleration abstraction layer defined, hardware accelerators as well as software accelerators can be abstracted as a set of acceleration functions (or acceleration capabilities) which exposes a common API to either the VNF or the host.
+
 <a name="3.3"></a>
 ## 3.3. Virtualised Infrastructure Manager (VIM)
 The NFVI Management Software (VIM) provides the services for the management of Consumable Resources/Services.
@@ -175,6 +182,7 @@ The following OpenStack components are deployed on the Infrastructure. Some of t
 | Compute Resources Manager| Ironic| the Bare Metal Provisioning service| Optional| X| X |
 | (Tool that utilizes APIs)| Heat| the orchestration service| Required| X|  |
 | UI| Horizon| the WEB UI service| Required| X|  |
+| Acceleration Resources Manager| Cyborg| the acceleration resources management| Optional| X| X |
 
 All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services (i.e. instances of a same service must run on different nodes).
 
@@ -244,7 +252,9 @@ Aim here is how to deploy from ground up (in a shipping container) or what expec
     - Opensource???? Ceph (move to virtual)
     -	Pluggable into ….   
 *	Acceleration
-
+    - SmartNIC
+    - GPU
+    - FPGA
 
 #### 3.4.2.1. Compute
 NFVI physical Nodes
