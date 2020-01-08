@@ -47,7 +47,7 @@ Below is a diagram of the different artifacts that will need to be created to su
 <a name="3.0"></a>
 ## 3. Principles
 
-Any specification work created within CNTT **must** obey to set of principles specified by CNTT:
+Any specification work created within CNTT **must** conform to set of principles specified by CNTT:
 
 * [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles)
 * [Reference Architecture Principles](../ref_arch#principles)
@@ -62,9 +62,9 @@ This section describes the relevant technologies for CNTT and clarifies CNTT pos
 There are different ways of which IO devices (such as NICs) are presented to workloads for consumption by those workloads. Here is a list of current methods of existing IO Virtualization:
 
 - Para-Virtualization method (software only).
-- Direct assignment with Virtual Technology.
-- Device Sharing with SR-IOV & Direct Assignment.
-- Para-Virtualization method (Hardware support).
+- Direct Assignment via h/w assisted PCI-Passthrough (IOMMU).
+- Device Sharing with SR-IOV & h/w assisted PCI-Passthrough (IOMMU).
+- Para-Virtualization method with Hardware support.
 
 **Figure 3** below shows some of the relevant IO Virtualization techniques.
 
@@ -91,7 +91,7 @@ The downside of para-virtualization interfaces is the involvement of the hypervi
 <p align="center"><b>Figure 4:</b> Para-Virtualized interface components (software only).</p>
 
 <a name="4.1.2"></a>
-#### 4.1.2 Direct assignment with Virtual Technology.
+#### 4.1.2 Direct assignment with IOMMU.
 
 Direct assignment (or pass-through) is when an IO device is directly assigned to a workload by-passing the hypervisor. Direct assignment is supported in Intel platforms (using VT-d technology) and by AMD platforms (using AMD-V technology) as shown in **Figure 5**.
 
@@ -99,21 +99,21 @@ Once an IO device is directly assigned to a workload, that workload will then ha
 
 This method provides better performance than the para-virtualized one as no hypervisor is involved but provides less flexibility and less portability.
 
-Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of CNTT and hence this method of IO Virtualization should not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of CNTT and hence this method of IO Virtualization must not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
 
 <p align="center"><img src="./figures/tech_vtd.png" alt="virtio" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 5:</b> Direct Assignment with Virtual Technology.</p>
 
 <a name="4.1.3"></a>
-#### 4.1.3 Device Sharing with SR-IOV & Virtual Technology.
+#### 4.1.3 Device Sharing with SR-IOV & IOMMU.
 
 Unlike Direct assignment, this method allows a hardware device to be shared amongst many workloads where each workload has an exclusive access to one region of the device (known as VF). 
 
 For this method to be possible, the IO device need to support Single Root Input Output Virtualization (SR-IOV) which allows it to present itself as multiple devices, known as Physical Functions, PFs, and Virtual Functions, VFs as presented in **Figure 6**.
 
-Each of those Virtual Functions can then be independently assigned exclusively to a workload (with the appropriate support by VT-d or AMD-V from the infrastructure).
+Each of those Virtual Functions can then be independently assigned exclusively to a workload (with the appropriate hardware support of an IOMMU).
 
-Similar to the previous method ("Direct Assignment"), this method provides better performance than the para-virtualized one but lacks the flexibility and the portability sought and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+Similar to the previous method ("Direct Assignment"), this method provides better performance than para-virtualization, but lacks the flexibility and the portability sought and therefore must also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
 
 <p align="center"><img src="./figures/tech_sriov.png" alt="sriov" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 6:</b> Device Sharing with SR-IOV & Direct Assignment.</p>
@@ -121,7 +121,7 @@ Similar to the previous method ("Direct Assignment"), this method provides bette
 <a name="4.1.4"></a>
 #### 4.1.4 Para-Virtualization method (Hardware support)
 
-This method basically is a mixture between the software only para-virtualization method and the direct assignment method (including the device sharing method) where the frontEnd driver which is running on the workload is a standard off the shelf driver whereas the backEnd driver is implemented straight in hardware (by-passing the hypervisor with support from VT-d/AMD-V and SR-IOV in case of device sharing) as shown in **Figure 7**.
+This method basically is a mixture between the software only para-virtualization method and the direct assignment method (including the device sharing method) where the frontEnd driver which is running on the workload is a standard off the shelf driver and the backEnd driver is implemented straight in hardware logic (bypassing the hypervisor with hardware support from an IOMMU and SR-IOV) as shown in **Figure 7**.
 
 Unlike the software only para-virtualized interfaces, this method provides better performance as it by-passes the hypervisor and unlike Direct Assignment methods, this method doesn’t require proprietary drivers to run in the workload and hence this method makes workloads portable.
 
