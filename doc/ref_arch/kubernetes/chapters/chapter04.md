@@ -57,7 +57,7 @@ Table 4-1 lists the Operating Systems that comply with this Reference Architectu
 > * Which optional features are used and which optional API-s are available
 > * Which [alfa or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
 
-The distribution and version of Kubernetes used must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) which lists all those that are Certified as being conformant with the CNCF Kubernetes specification.
+The distribution and version of Kubernetes used must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) which lists all those that are Certified as being conformant with the CNCF Kubernetes specification.  In order to align with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), a Reference Implementation must use one of three latest minor versions (`n-2`) - e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15.
 
 This Reference Architecture also specifies:
 
