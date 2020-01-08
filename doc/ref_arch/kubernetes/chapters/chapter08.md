@@ -45,7 +45,7 @@ While this Reference Architecture is being developed, Gaps will be identified th
 <a name="8.2.4"></a>
 ### 8.2.4 Multiple network interfaces on Pods
 
-> As well as having multiple network interfaces on Pods (e.g. Multus), being able to have different network interfaces in differnet Pods using different CNI plugins within the same cluster.
+> As well as having multiple network interfaces on Pods (e.g. Multus), need to support different network interfaces in different Pods using different CNI plugins within the same cluster.
 
 
 <a name="8.2.5"></a>
