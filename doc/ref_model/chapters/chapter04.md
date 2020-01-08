@@ -424,11 +424,11 @@ Persistent storage is associated with VNFs via Storage Extensions. The size of a
 
 Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
-.conf |Read IO/s |Write IO/s Read |Throughput (MB/s) |Write Throughput (MB/s) |Max Ext Size
+.conf |Read IO/s |Write IO/s | Read Throughput (MB/s) |Write Throughput (MB/s) |Max Ext Size
 ---|---|---|---|---|---
 .bronze |Up to 3K |Up to 15K |Up to 180 |Up to 120 |16TB
 .silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400 |1TB
-.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400 |300GB
+.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400 |1TB
 
 <p align="center"><b>Table 4-19:</b> Storage Performance Profiles</p>
 
