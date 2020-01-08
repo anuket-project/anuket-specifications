@@ -91,12 +91,12 @@ have been proposed for CNTT Compliance which simply override the default test
 configurations and the default test lists. Any optional capability or services
 (e.g. Barbican) can be still verified by the classical Functest containers.
 
-The next subsections only detail the Tempest test which must not be executed
+The next subsections only detail the Tempest tests which must not be executed
 from a Compliance state point. The remaining tests have to pass successfully.
 They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 
-According to Hunter (the oldest OPNFV active release), the next software
+According to Hunter (the oldest OPNFV active release), the following software
 versions are considered here to verify OpenStack Pike selected by CNTT:
 
 | software                | version |
@@ -119,7 +119,7 @@ as integrated in
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the next test names must not be executed:
+the following test names must not be executed:
 
 | test rejection regular expressions        | reasons    |
 |-------------------------------------------|------------|
@@ -152,7 +152,7 @@ Glance API is covered in the OpenStack Gates via
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the next test names must not be executed:
+the following test names must not be executed:
 
 | test rejection regular expressions | reasons |
 |------------------------------------|---------|
@@ -178,7 +178,7 @@ as integrated in
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the next test names must not be executed:
+the following test names must not be executed:
 
 | test rejection regular expressions                                                                   | reasons                               |
 |------------------------------------------------------------------------------------------------------|---------------------------------------|
@@ -216,7 +216,7 @@ Swift API is covered in the OpenStack Gates via
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the next test names must not be executed:
+the following test names must not be executed:
 
 | test rejection regular expressions                                      | reasons                            |
 |-------------------------------------------------------------------------|------------------------------------|
@@ -242,7 +242,7 @@ as integrated in
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the next test names must not be executed:
+the following test names must not be executed:
 
 | test rejection regular expressions                                           | reasons                               |
 |------------------------------------------------------------------------------|---------------------------------------|
@@ -295,7 +295,7 @@ Nova API is covered in the OpenStack Gates via
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the next test names must not be executed:
+the following test names must not be executed:
 
 | test rejection regular expressions                                                                                        | reasons                            |
 |---------------------------------------------------------------------------------------------------------------------------|------------------------------------|
@@ -657,8 +657,8 @@ Here are all samples:
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
 [Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml)
-offers 5 test cases which automatically onboard and test the next 3 opensource
-VNFs:
+offers 5 test cases which automatically onboard and test the following 3
+opensource VNFs:
 - [Clearwater IMS](https://clearwater.readthedocs.io/en/stable/)
 - [VyOS vRouter](https://www.vyos.io/)
 - [OpenAirInterface vEPC](https://www.openairinterface.org/)
