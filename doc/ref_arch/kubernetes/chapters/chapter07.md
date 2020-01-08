@@ -9,6 +9,7 @@
 * [7.3 Kubernetes Cluster Lifecycle Management](#7.3)
 * [7.4 Monitoring Kubernetes Clusters](#7.4)
 * [7.5 Kubernetes Cluster Maintenance](#7.5)
+* [7.6 End-to-end Lifecycle Management Interfaces and Integration](#7.6)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -37,3 +38,10 @@
 ## 7.5 Kubernetes Cluster Maintenance
 
 > Upgrades, adding new services, etc.
+
+<a name="7.6"></a>
+## 7.6 End-to-end Lifecycle Management Interfaces and Integration
+
+> e.g. NFVI lifecycle management
+> e.g. e2e network service lifecycle management
+> e.g. integration with LCM of non cloud native workloads
