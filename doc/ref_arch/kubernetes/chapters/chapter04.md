@@ -92,7 +92,6 @@ feature-gates:
 
 In order to support `req.inf.com.03`, the chosen runtime must be compliant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are compliant with these specification are (note this is not a complete list and in no particular order):
 - container-d (with CRI plugin enabled, which it is by default)
-- rkt
 - Docker CE (via the dockershim, which is currently built in to the kubelet)
 - CRI-O
 - Frakti
