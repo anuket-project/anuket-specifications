@@ -197,13 +197,13 @@ This sections describes the readiness of NFVI before the certification process c
 
 [RA1: Chapter 5 Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md) describes the baseline version regarding to Openstack Service APIs.
 
-| OpenStack Service | Link for API list | Baseline Version |
+| OpenStack Service | Link for API list | Baseline Version | Minimal API Microversion |
 |------------------|--------------------|------------------------|
-| Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html?expanded=#identity-api-operations  | Version 3.10 |
-| Compute: Nova | https://docs.openstack.org/api-ref/compute/  | Version 2.1 |
-| Networking: Neutron | https://docs.openstack.org/api-ref/network/  | Version 2.0 |
-| Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images  | Version 2.0 |
-| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions  | Version 3.0 |
-| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/  | Version 1.0 |
-| Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | Version 1.0 |
-| Acceleration: Cyborg | https://docs.openstack.org/api-ref/accelerator/v1/index.html  | Version 1.0 |
+| Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html?expanded=#identity-api-operations  | 3 | 3.8 |
+| Compute: Nova | https://docs.openstack.org/api-ref/compute/  | v2.1 | 2.53 |
+| Networking: Neutron | https://docs.openstack.org/api-ref/network/  | v2.0 | NA |
+| Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images  | v2 | 2.5 |
+| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions  | v3 | 3.43 |
+| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/  | v1 | NA |
+| Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | v1.0 | NA |
+| Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
