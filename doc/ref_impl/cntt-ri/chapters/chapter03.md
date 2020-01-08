@@ -198,7 +198,7 @@ This sections describes the readiness of NFVI before the certification process c
 [RA1: Chapter 5 Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md) describes the baseline version regarding to Openstack Service APIs.
 
 | OpenStack Service | Link for API list | Baseline Version | Minimal API Microversion |
-|------------------|--------------------|------------------------|
+|------------------|--------------------|------------------------|------------------------|
 | Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html?expanded=#identity-api-operations  | 3 | 3.8 |
 | Compute: Nova | https://docs.openstack.org/api-ref/compute/  | v2.1 | 2.53 |
 | Networking: Neutron | https://docs.openstack.org/api-ref/network/  | v2.0 | NA |
