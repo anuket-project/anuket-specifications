@@ -9,7 +9,7 @@
   * [4.2.1 Virtualisation](#4.2.1)
   * [4.2.2 Compute](#4.2.2)
   * [4.2.3 Network Fabric](#4.2.3)
-  * [4.2.4 Storage Backend](#4.2.3)
+  * [4.2.4 Storage Backend](#4.2.4)
 * [4.3 Virtualised Infrastructure Manager (VIM)](#4.3)
   * [4.3.1 VIM Core Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
@@ -47,7 +47,7 @@ Additionally, This Chapter will delve deeper into certain topics that need to be
 In OpenStack, KVM is configured as the default hypervisor for compute nodes. 
 - Configuration: [OpenStack](https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
-    - QEMIU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
+    - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
   -	Configure Compute backing storage
   -	Specify the CPU Model for KVM guests (VMs)
   -	KVM Performance Tweaks
@@ -77,7 +77,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	How many nodes to meet SLA
     -	Minimum 3 nodes for high availability
 -	HW specifications
-    -	the boot disks are SSD disks with a minimum capacity of 240GB 
+    -	Boot disks are dedicated with Flash technology disks
 -	Sizing rules
     -	It is easy to horizontally scale the number of control nodes
     -	The number of control nodes is determined by a minimum number needed for high availability (viz., 3 nodes) and the extra nodes needed to handle the transaction volumes, in particular, for Messaging service (e.g., RabbitMQ) and Database (e.g., MySQL) to track state. 
@@ -113,7 +113,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	How many nodes to meet SLA
     - minimum: two nodes per profile
 -	HW specifications
-    -	the boot disks are SSD disks with 240GB minimum
+    -	Boot disks are dedicated with Flash technology disks
 -	Sizing rules
 
 | Number of CPU sockets| s | 
@@ -164,10 +164,26 @@ Caveats:
 
 A VNF application network topology is expressed in terms of VMs, vNIC interfaces with vNet access networks, and WAN Networks while the VNF Application VMs require multiple vNICs, VLANs, and host routes configured within the VM’s Kernel.
 
-#### 4.2.3.3. LBaaS v2 compliant Load Balancing
-**Content to be developed**
+#### 4.2.3.3. Octavia v2 API compliant Load Balancing
+Load balancing is needed for automatic scaling, managing availability and changes. [Octavia](https://docs.openstack.org/octavia/latest/reference/introduction.html) is an open-source load balancer for OpenStack, based on HAProxy, and replaces the deprecated (as of OpenStack Queens release) Neutron LBaaS. The Octavia v2 API is a superset of the deprecated Neutron LBaaS v2 API and has a similar CLI for seamless transition. 
 
-#### 4.2.3.4. Neutron ML2 integration
+As a default Octavia utilizes Amphorae Load Balancer. Amphorae consists of a fleet of VMs, containers or bare metal servers and delivers horizontal scaling by managing and spinning these resources on demand. The reference implementation of the Amphorae image is an Ubuntu virtual machine running HAProxy. 
+
+Octavia depends upon a number of OpenStack services including Nova for spinning up compute resources on demand and their life cycle management; Neutron for connectivity between the compute resources, project environment and external networks; Keystone for authentication; and Glance for storing of the compute resource images.
+
+Octavia supports provider drivers which allows third-party load balancing drivers (such as F5, AVI, etc.) to be utilized instead of the default Amphorae load balancer. When creating a third-party load balancer, the **provider** attribute is used to specify the backend to be used to create the load balancer. The **list providers** lists all enabled provider drivers.  Instead of using the provider parameter, an alternate is to specify the flavor_id in the create call where provider-specific Octavia flavors have been created. 
+
+
+#### 4.2.3.4. Neutron Extensions
+OpenStack Neutron is an extensible framework that allows incorporation through plugins and API Extensions. API Extensions provides a method for introducing new functionality and vendor specific capabilities. Neutron plugins support new or vendor-specific functionality. Extensions also allow specifying new resources or extensions to existing resources and the actions on these resources.  Plugins implement these resources and actions.
+
+CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)[(https://opendev.org/openstack/neutron-fwaas/), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
+
+Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/pike/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
+
+[Chapter 5](../chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions]( ../chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
+
+**Neutron ML2 integration**
 The OpenStack Modular Layer 2 (ML2) plugin simplifies adding networking technologies by utilizing drivers that implement these network types and methods for accessing them. Each network type is managed by an ML2 type driver and the mechanism driver exposes interfaces to support the actions that can be performed on the network type resources. The [OpenStack ML2 documentation](https://wiki.openstack.org/wiki/Neutron/ML2) lists example mechanism drivers.
 
 #### 4.2.3.5. Network quality of service
@@ -183,16 +199,50 @@ DHCP When the Neutron-DHCP agent is hosted in controller nodes, then VMs, on a T
 -	LDAP
 -	IPAM
 
-### 4.2.4. Storage Back-end
-**Content to be developed**
--	Types of storage (incl NVMe)
--	Ceph
-    -	Ceph Configuration
-    -	Cinder Gateway, Swift Gateway
--	How many nodes to meet SLA
--	Sizing rules (IOPS, SSD vs. SATA, NICs, etc).
+<a name="4.2.4"></a>
+### 4.2.4. Storage Backend
+Storage systems are available from multiple vendors and can also utilize commodity hardware from any number of open-source based storage packages (such as LVM, Ceph, NFS, etc.). The proprietary and open-source storage systems are supported in Cinder through specific plugin drivers. The OpenStack [Cinder documentation]( https://docs.openstack.org/cinder/latest/reference/support-matrix.html) specifies the minimum functionality that all storage drivers must support. The functions include:
+-	Volume: create, delete, attach, detach, extend, clone (volume from volume), migrate
+-	Snapshot: create, delete and create volume from snapshot
+-	Image: create from volume
 
+The document also includes a matrix for a number of proprietary drivers and some of the optional functions that these drivers support. This matrix is a handy tool to select storage backends that have the optional storage functions needed by the cloud operator. The cloud workload storage requirements helps determine the backends that should be deployed by the cloud operator.   The common storage backend attachment methods include iSCSI, NFS, local disk, etc. and the matrix list the supported methods for each of the vendor drivers. The OpenStack Cinder [Available Drivers]( https://docs.openstack.org/cinder/latest/drivers.html) documentation provides a list of all OpenStack compatible drivers and their configuration options.
 
+The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including CNTT required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by CNTT including managing volumes, snapshots, multi-storage backends, migrate volumes, etc. 
+
+[Ceph](https://ceph.io/) is the default CNTT Reference Architecture storage backend and is discussed below.
+
+#### 4.2.4.1. Ceph Storage Cluster
+The Ceph storage cluster is deployed on bare metal hardware. The minimal configuration is a cluster of three bare metal servers to ensure High availability. The Ceph Storage cluster consists of the following components:
+-	CEPH-MON (Ceph Monitor)
+-	OSD (object storage daemon)
+-	RadosGW (Rados Gateway)
+- Journal
+- Manager
+
+Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
+
+<p align="center"><img src="../figures/Figure_4_x_Ceph.png" alt="Ceph Storage System"></br>Figure 4-2. Ceph Storage System.</p>
+
+**BIOS Requirement for Ceph servers**
+
+| BIOS/boot Parameter | Control Srever |
+|-------------|----------------|
+| Boot disks | RAID 1 |
+
+How many nodes to meet SLA :
+-	minimum: three bare metal servers where Monitors are collocated with OSD. Note: at least 3 Monitors and 3 OSDs are required for High AVailability. 
+
+HW specifications :
+- Boot disks are dedicated with Flash technology disks
+- For an IOPS oriented cluster (Flash technology ), the journal can be hosted on OSD disks
+- For a capacity oriented cluster (HDD), the journal must be hosted on dedicated Flash technology disks
+
+Sizing rules :
+-	Minimum of 6 disks per server
+-	Replication factor : 3
+-	1 Core-GHz per OSD
+-	16GB RAM baseline + 2-3 GB per OSD
 
 <a name="4.3"></a>
 ## 4.3 Virtualised Infrastructure Manager (VIM)
@@ -266,12 +316,21 @@ Heat is the orchestration service using template to provision cloud resources, H
 #### 4.3.1.9 Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
+#### 4.3.1.10 Cyborg
+Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
+-	cyborg-api
+-	cyborg-conductor
+-	cyborg-db
+- cyborg-agent  which runs on compute nodes
+- *-driver drivers which run on compute nodes and depend on the acceleration hardware
+
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services 
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc. Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
-In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-2.
 
-<p align="center"><img src="../figures/Figure_4_2_Containerised_OpenStack_Services.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-2. Containerised OpenStack Services Topology.</p>
+In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-3.
+
+<p align="center"><img src="../figures/Figure_4_2_Containerised_OpenStack_Services.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-3. Containerised OpenStack Services Topology.</p>
 
 <a name="4.3.3"></a>
 ### 4.3.3. Build Parameters
@@ -283,8 +342,33 @@ In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topol
 
 <a name="4.4.1"></a>
 ### 4.4.1. Support for Profiles and T-shirt instance types
-**Content to be developed**
-Develop on Flavors and metadata
+Reference Model Chapter 4 and  5 provide information about the instance types and size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes requires the setting up of information as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properies.
+
+| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | Compute Intensive |
+|----------|-------------|--------------|-------------|-------------|
+| CPU allocation ratio | nfvi.com.cfg.001| In Nova.conf include <br>cpu_allocation_ratio= 4.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 |
+| NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> |
+| CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and <br>--property hw:cpu__thread_policy= <prefer, require, isolate>|
+| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | --property hw:mem_page_size=large | 
+| OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
+| Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
+| Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3276800<br><br>Note: 25 Gbps = 3276800 kilobytes per second | 
+
+
+To configure the T-shirt sizes (specified in [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) Reference Model Chapter4), the parameters in the following table are specified as part of the flavor create; the parameters are preceded by "--".
+
+| T-Shirt Size | vCPU ("c") | RAM ("r") | Local Disk ("d") |
+|-----|------|---------|----------------|
+| .tiny | 1<br>-- vcpus 1 | 512 MB<br>-- ram 512 | 1 GB<br>-- disk 1 |
+| .small | 1<br>-- vcpus 1 | 2 GB<br>-- ram 2048 | 20 GB<br>-- disk 20 |
+| .medium | 2<br>-- vcpus 2 | 4 GB<br>-- ram 4096 | 40 GB<br>-- disk 40 |
+| .large | 4<br>-- vcpus 4 | 8 GB<br>-- ram 8192 | 80 GB<br>-- disk 80 |
+| .2xlarge* | 8<br>-- vcpus 8 | 16 GB<br>-- ram 16384 | 160 GB<br>-- disk 160 |
+| .4xlarge* | 16<br>-- vcpus 16 | 32 GB<br>-- ram 32768 | 320 GB<br>-- disk 320 |
+
+In addition, to configure the storage IOPS the following two parameters need to be specified in the flavor create: --property quota:disk_write_iops_sec=<IOPS#> and --property quota:disk_read_iops_sec=<IOPS#>.
+
+The flavor create command and the mandatory and optional configuration parameters is documented in https://docs.openstack.org/nova/latest/user/flavors.html.
 
 <a name="4.4.2"></a>
 ### 4.4.2. Logical segregation and high availability
