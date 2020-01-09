@@ -93,7 +93,7 @@ The downside of para-virtualization interfaces is the involvement of the hypervi
 <a name="4.1.2"></a>
 #### 4.1.2 Direct assignment with IOMMU.
 
-Direct assignment (or pass-through) is when an IO device is directly assigned to a workload by-passing the hypervisor. Direct assignment is supported in Intel platforms (using VT-d technology) and by AMD platforms (using AMD-V technology) as shown in **Figure 5**.
+Direct Assignment is supported in x86 architectures through an IOMMU (Input/Ouput Memory Management Unit), which provides the ability for a PCIe device to autonomously (i.e. without hypervisor intervention) perform DMA transfers directly into guest memory as shown in **Figure 5**.
 
 Once an IO device is directly assigned to a workload, that workload will then have an exclusive access to that device and no other entities (including the hypervisor) can access it.
 
@@ -107,7 +107,7 @@ Having an IO device directly assigned to a workload means that the workload need
 <a name="4.1.3"></a>
 #### 4.1.3 Device Sharing with SR-IOV & IOMMU.
 
-Unlike Direct assignment, this method allows a hardware device to be shared amongst many workloads where each workload has an exclusive access to one region of the device (known as VF). 
+This method partitions a hardware device into multiple regions (known as VFs), and uses Direct Assignment to provide workloads exclusive access to one or more of those regions (VFs), thereby bypassing the hypervisor and simultaneously allowing multiple workloads to share the same device.
 
 For this method to be possible, the IO device need to support Single Root Input Output Virtualization (SR-IOV) which allows it to present itself as multiple devices, known as Physical Functions, PFs, and Virtual Functions, VFs as presented in **Figure 6**.
 
