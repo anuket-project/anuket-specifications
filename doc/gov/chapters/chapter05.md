@@ -37,4 +37,4 @@ Being on the voting representative list **doesn't** mean the right to vote. The 
 
 <a name="5.3"></a>
 ## 5.3 Voting Process
-
+ 
