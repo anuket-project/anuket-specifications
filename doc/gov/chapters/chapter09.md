@@ -42,7 +42,9 @@ The transition plan described here will inform application designers how RC and 
 <a name="9.2.3"></a>
 ### 9.2.3 Transition Framework
 
-Exceptions will be clearly recorded in the Reference Model Appendix which will act as a guidance to VNFs/CNFs of what Exceptions will be allowed on each CNTT release. **Figure 1** below demonstrate the concept.
+#### VNF/CNF Transition Plan Framework 
+
+Exceptions will be clearly recorded in the Reference Model Appendix which will act as a guidance to VNFs/CNFs vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrate the concept.
 
 - As technology matures, fewer and fewer Exceptions will be allowed in CNTT releases.
 - For each CNTT Release, VNF/CNF can be either:
@@ -53,6 +55,17 @@ Exceptions will be clearly recorded in the Reference Model Appendix which will a
 <p align="center"><img src="../figures/vnf_cnf_transition.png" alt="Transition" title="VNF/CNF Transition Plan" width="70%"/></p>
 <p align="center"><b>Figure 1:</b> Transition Plan for VNFs/CNFs within CNTT</p>
 
+#### NFVI Transition Plan Framework 
+
+Exceptions will be clearly recorded in Reference Architectures' Appendices which will act as a guidance to NFVI vendors of what Exceptions will be allowed in each CNTT release. **Figure 2** below demonstrate the concept.
+
+- As technology matures, fewer and fewer Exceptions will be allowed in CNTT releases.
+- For each CNTT Release, VNF/CNF can be either:
+  - **Fully Conformant**: Support Target Architecture with all RM Exceptions supported. There should be a technology choice in RA to support RM Exceptions (However, none of the Exceptions allowed in RA has been used).
+  - **Conformant with Exceptions**: One or more of the allowed exceptions in RA are used.
+
+<p align="center"><img src="../figures/nfvi_transition.png" alt="Transition" title="NFVI Transition Plan" width="70%"/></p>
+<p align="center"><b>Figure 2:</b> Transition Plan for NFVI solutions within CNTT</p>
 
 <a name="9.3"></a>
 ## 9.3 Adoption Strategy
