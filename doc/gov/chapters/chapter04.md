@@ -4,7 +4,6 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 
-
 ## Table of Contents
 * [4.1 Introduction](#4.1)
 * [4.2 Workstreams Lead/Co-Lead Nomination and Selection](#4.2)
