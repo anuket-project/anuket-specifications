@@ -38,6 +38,8 @@
 <a name="4.5"></a>
 ## 4.5 CNI plugins
 
+> Editors note: The following chapter lists a set of CNI plugins compliant with the Reference Architecture. The list of compliant components might change in future releases.
+
 The used CNI multiplexer/metapulgin must be [DANM](https://github.com/nokia/danm)
 as it provides the possibility to use several other CNI plugins (`req.inf.ntw.16`) and provides an API based solution to administer the networks (`req.inf.ntw.10`) from a central point (`req.inf.ntw.11`).<br>
 
