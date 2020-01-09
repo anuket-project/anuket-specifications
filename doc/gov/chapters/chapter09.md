@@ -16,11 +16,21 @@
 <a name="9.1"></a>
 ## 9.1 Introduction
 
+It is vitally important for CNTT to have working solution from infrastructure vendors and mature VNFs/CNFs designs from application vendors that is compliant to CNTT specifications. It is also understood that, in some areas, the industry might not have solutions that are fully aligned with CNTT requirements. 
+
+Therefore, a transition plan, an adoption strategy, and adoption Roadmap is needed to be agreed on within the CNTT community. This document explains those elements in details. 
+
+
 <a name="9.2"></a>
 ## 9.2 Transition Plan
 
+A Transition plan comprised of one or more exceptions and/or transitions is required to address technology that does not presently conform to CNTT mandates, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future.
+
+The transition plan described here will inform application designers how RC and ultimately industry certification programs will react when encountering exceptions during the qualification process, including flagging warnings and potentially errors which could prevent issuance of a certification badge.
+
 <a name="9.2.1"></a>
 ### 9.2.1 Conformance Levels
+
 
 <a name="9.2.2"></a>
 ### 9.2.2 Exception Types
