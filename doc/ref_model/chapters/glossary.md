@@ -59,12 +59,9 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
   - **Host Profile**: is another term for a **NFVI hardware profile**.
 - **NFVI Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **NFVI** HW deployment.
-- **Simultaneous Multi-threading**: Simultaneous multi-threading (SMT), also known as Hyper-threading in Intel
-CPUs, is a hardware technology that enables the Operating System to see each physical core of a CPU as two virtual cores.
-These virtual cores are independent threads of execution. This feature can usually be enabled or disabled in the
-Compute Node's BIOS.
-  >_*Note:*_ SMT **will not** make jobs run faster. It only allows two jobs to run simultaneously where only one job
-would have run before. In some cases, it can increase the amount of completed jobs within the same time span.
+- **Simultaneous Multi-threading**: Simultaneous multithreading (SMT) is a technique for improving the overall
+efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution to
+better utilize the resources provided by modern processor architectures.
 
 
 <a name="11.1.3"></a>
