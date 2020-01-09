@@ -9,19 +9,15 @@
 * [4.2 Workstreams Lead/Co-Lead Nomination and Selection](#4.2)
   * [4.2.1 Length of Terms](#4.2.1)
   * [4.2.2 Representation](#4.2.2)
+  * [4.2.3 Nomination](#4.2.4)
+  * [4.2.4 Selection](#4.2.4)
+  * [4.2.5 Interim Leads/Co-Leads](#4.2.5)
 * [4.3 Technical Steering Committee Lead/Co-Lead Nomination and Selection](#4.3)
-  * [4.3.1 Length of Terms](#4.3.1)
-  * [4.3.2 Representation](#4.3.2)
-  * [4.3.3 Membership and voting rights](#4.3.3)
 * [4.4 Governance Committee Lead/Co-Lead Nomination and Selection](#4.4)
-  * [4.4.1 Length of Terms](#4.4.1)
-  * [4.4.2 Representation](#4.4.2)
-  * [4.4.3 membership and voting rights](#4.4.3)
-* [4.5 Committee Structure](#4.5)
-  * [4.5.1 Governance Workstreams](#4.5.1)
-  * [4.5.2 Technical Workstreams](#4.5.2)
-* [4.6 Limits and Caps](#4.6)
-* [4.7 Tracking contributions](#4.7)
+* [4.5 Membership and voting rights](#4.5)
+* [4.6 Committee Structure](#4.6)
+* [4.7 Limits and Caps](#4.7)
+* [4.8 Tracking contributions](#4.8)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -45,49 +41,69 @@ The length of term for all CNTT leadership roles are **12** calender months.
 
 Any workstream Leads or Co-Leads positions can be held by any community individuals.
 
+<a name="4.2.3"></a>
+### 4.2.3 Nomination
+
+- Any individual can nominate themselves or someone else for a given lead/co-lead position (the nominee must accept nomination if was nominate by someone else) as long as they agree to CNTT ToR.
+- An individual can self-nominate themselves to as many positions as they like.
+
+<a name="4.2.4"></a>
+### 4.2.4 Selection
+
+There wil be a nomination window of which individuals an nominate others or nominate themselves for a particular position. The start and end date of the nomination window will be determined by Technical or Governance Steering Leads(depending on the nature of the WS)
+
+Once the nomination period expires for a particular Workstream, the selection process will start as follows:
+
+- Selection process for Leads positions and Co-Leads will occur separately.
+- No voting will be required if number of nominations received for a particular position is less than or equal to the number of available vacancies. 
+- Online Voting process will take place to select candidate(s) from the nominee list for any given position.
+- Only Voting representatives can vote (from the up to date voting representative list).
+- Candidate(s) who receives the highest number of votes win.
+
+<a name="4.2.5"></a>
+### 4.2.5 Interim Leads/Co-Leads
+
+- In case a Lead/Co-Lead steps down, an interim person (proposed by the person who is stepping down)to take over position duties until next available election.
+- For new Work Streams, a new Lead/Co-Leads will be assigned by Technical Steering/Governance to be interim until next available election period.
+
 <a name="4.3"></a>
 ## 4.3 Technical Steering Committee Lead/Co-Lead Nomination and Selection
 
-<a name="4.3.1"></a>
-### 4.3.1 Nomination
+The same terms, process of nomination and selection described in [**4.2**](#4.2) must be applied to technical steering committee leads and co-leads positions.
 
-- Any individual can nominate someone else for a lead/co-lead position (requires acceptance from the nominee)
-- Any individual can self nominate themselves for a Lead/Co-Lead position as long they agree to CNTT ToR.
-- Any individual can self-nominate themselves to as many positions as they like.
-
-<a name="4.3.2"></a>
-### 4.3.2 Selection
-
-<a name="4.3.1"></a>
-### 4.3.1 Length of Terms
-
-<a name="4.3.2"></a>
-### 4.3.2 Representation
-
-<a name="4.3.3"></a>
-### 4.3.3 membership and voting rights
+Additionally, The following points also apply:
+- One Lead and up to 5 Co-Leads positions are available for the TSC leadership.
+- When the nomination and selection process is due within CNTT, All Technical Workstream nomination and selection process has to conclude **before** technical steering committee nomination and selection process starts.
+- nomination and selection process for TSC should be facilitated by the Technical steering committee existing leads.
 
 <a name="4.4"></a>
 ## 4.4 Governance Committee Lead/Co-Lead Nomination and Selection
 
-<a name="4.4.1"></a>
-### 4.4.1 Length of Terms
+The same terms, process of nomination and selection described in [**4.2**](#4.2) must be applied to governance steering committee leads and co-leads positions.
 
-<a name="4.4.2"></a>
-### 4.4.2 Representation
+Additionally, The following points also apply:
+- One Lead and up to 3 Co-Leads positions are available for the Governance Comitee leadership.
+- When the nomination and selection process is due within CNTT, All Technical Workstream, Governance workstreams, and TSC nomination and selection process need to have been concluded **before** Governance committee nomination and selection process starts.
+- nomination and selection process for Governance Committee should be facilitated by the sitting Governance Committee Leads.
 
-<a name="4.4.3"></a>
-### 4.4.3 Membership and voting rights
 
 <a name="4.5"></a>
-## 4.5 Committee Structure
+## 4.5 Membership and voting rights
+
+Please refer to [Voting Representatives](../chapters/chapter05.md#52-voting-representatives)
+
+<a name="4.6"></a>
+## 4.6 Committee Structure
 
 Please refer to [Org Structure](../chapters/chapter03.md#32-org-structure).
 
-<a name="4.6"></a>
-## 4.6 Limits and Caps
+<a name="4.7"></a>
+## 4.7 Limits and Caps
 - No Limit or CAPs for how many position a given individual or an organisation can hold.
 
-<a name="4.7"></a>
-## 4.7 Tracking contributions
-
+<a name="4.8"></a>
+## 4.8 Tracking contributions
+There are few scenarios where contributions needs to be tracked (e.g. to maintain voting rights for individuals or organisations). CNTT will actively look at the following contribution metrics and leverage any available automated tooling for such purposes:
+- Meeting attendance and participating in dissuasions.
+- GitHub Contributions (Issue creation, PRs Creation, Comments, Reviews, and Approvals).
+- Marketing Activities such as (Whitepaper, Industry Event Talks, Webinars, etc).
