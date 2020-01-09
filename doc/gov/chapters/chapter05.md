@@ -38,3 +38,14 @@ Being on the voting representative list **doesn't** mean the right to vote. The 
 <a name="5.3"></a>
 ## 5.3 Voting Process
  
+ In Scenarios where Consensus cannot be reached, a voting event will be triggered by Technical/Governance Steering Leads (depending on if the event corresponds to a technical or governance matter). 
+
+ When a voting event is triggered, an online voting mechanism will be setup and the following process will be followed:
+ 
+ - The time and the deadline of which the voting representatives is required to cast their vote will be determined by teh leads themselves.
+ - The question will be created by the leads (A simple clear two-choices question is expected (**A | B**)).
+ - The vote result will be announced by the leads after the voting deadline.
+ - **50%** of the votes are needed for a decision to be made (Between **A | B**).
+
+<p align="center"><img src="../figures/voting_process.png" alt="scope" title="Scope" width="100%"/></p>
+<p align="center"><b>Figure 5-1:</b> Voting Process</p>
