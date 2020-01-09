@@ -18,7 +18,7 @@
 * [6.12 Secrets Management](#6.12)
 * [6.13 Trusted Registry](#6.13)
 * [6.14 Orchestration & Container Manager](#6.14)
-* [6.15 Security Parameters](#6.15)
+* [6.15 Security Perimeters](#6.15)
 
 <a name="6.1"></a>
 ## 6.1 Introduction
@@ -150,5 +150,4 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to prevent unauthorised access or image tampering.
 - Container Images: Stored instance of a container that holds a set of software needed to run an application. Before loading them to container registry, they need to be secured by performing various checks like vulnerability analysis, scans etc. These images should also be signed from trusted sources
 - Containers: A lightweight and portable executable image that contains software and all of its dependencies. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, mounting of directories of underlying OS etc and it must also be ensured that they don't run in priveleged mode. Exceptions to this rule are sometimes needed, for example when usage of a popular Cloud Native open src SW requires some of the listed properties.
-- VM or physical machine: isolation by these underlying layers is more reliable than the SW based isolation mechanisms in OS, Docker or Kubernetes. This is because the SW based mechanisms are subject to failures caused by SW bugs and vulnerabilities. Thus from security pov the VM or physical machine based isolation between CNFs is recommended – but ultimately the choice is based on risk evaluation, where eg. type of workload and security policies are important factors.
-Note: there are other (than security related) aspects which may require CNFs to be deployed into dedicated Kubernetes clusters. This is still under discussion.
+- VM or physical machine: isolation by these underlying layers is more reliable than the SW based isolation mechanisms in OS, Docker or Kubernetes. This is because the SW based mechanisms are subject to failures caused by SW bugs and vulnerabilities. Thus from security pov the VM or physical machine based isolation between CNFs is recommended – but ultimately the choice is based on risk evaluation, where eg. type of workload and security policies are important factors. <br/> **Note**: there are other (than security related) aspects which may require CNFs to be deployed into dedicated Kubernetes clusters. This is still under discussion.
