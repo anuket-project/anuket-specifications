@@ -8,13 +8,13 @@
 * [7.2 Pre-requisites](#7.2)
 * [7.3 Requirements Gathering](#7.3)
 * [7.4 Access and Connectivity](#7.4)
-* [7.5 Descriptor File Preparations](#7.5)
+* [7.5 Available Installers](#7.5)
 * [7.6 Deployment Installer & Install Steps](#7.6)
 * [7.7 Deployment Validations](#7.7)
 * [7.8 CICD Tool Chain (use of, process, and scripts)](#7.8)
 * [7.9 Jenkins Setup & Job Creation](#7.9)
 * [7.10 Compliance Validation (steps, process)](#7.10)
- 
+
 <a name="7.1"></a>
 ## 7.1 Introduction
 
@@ -59,19 +59,19 @@ Logical steps for lab access and connectivity.
 
 Sample steps provided mimic those utilized for POD10 test lab access.
 
-This RI leverages OPNFV Pharos pod 15, which is hosted by Intel and requires VPN access.  Requests for VPN access must go through the OPNFV Infra Project.  Once on the VPN, two networks are reachable:
-
-1. Public Network - this is where the jump host is connected, and
-2. Admin Network - this is where OpenStack public enpoints and floating IP addresses can be reached
-
-Do we link to the yEd Network Topology diagram from here, or is this the right place to put it?
+This RI leverages OPNFV Pharos pod 15, which is hosted by Intel and requires VPN access.  Requests for VPN access must
+go through the OPNFV Infra Project.  Once on the VPN, only the DMZ network is reachable.  In order to gain access to
+any of the other networks, the Foundation node (jump host) must be used.
 
 <a name="7.5"></a>
-## 7.5 Descriptor File Preparations
+## 7.5 Available Installers
 
-Reference steps describing the use, creation, and implementation of descriptor files.
+### 7.5.1 Airship
 
-This is where the Airship Mafiest files need to be documented:
+#### 7.5.1.1 Descriptor File Preparations
+
+Reference steps describing the use, creation, and implementation of descriptor files.  This is where the Airship Manifest
+files need to be documented:
 
 - Profiles
 - Hardware
@@ -85,12 +85,16 @@ This is where the Airship Mafiest files need to be documented:
 - Secrets
 - Actions
 
-e.g. Descriptor file &/or Manifest creation (data elements, use/implementation, etc
+#### 7.5.1.2 Deployment Installer & Install Steps
+
+### 7.5.2 Future Installers
+
+At this point, the RI is based on Airship, but can be extended to employ any other OpenStack distribution.
 
 <a name="7.6"></a>
 ## 7.6 Deployment Installer & Install Steps
 
-Steps and precedures for installing and setting up the RI.
+Steps and procedures for installing and setting up the RI.
 Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Installer+Deployment+Guide
 
 <a name="7.7"></a>
@@ -107,7 +111,7 @@ Description of the Functest suite and what is selected for validation testing.  
 <a name="7.8"></a>
 ## 7.8 CICD Tool Chain (use of, process, and scripts)]
 
-Placeholder to describe the CICD tool chain used in RI validations.  
+Placeholder to describe the CICD tool chain used in RI validations.
 
 Include flow diagram.
 
@@ -119,4 +123,4 @@ Placeholder to describe the process, access, steps, instance, etc, information f
 <a name="7.10"></a>
 ## 7.10 Compliance Validation (steps, process)
 
-Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.  
+Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.
