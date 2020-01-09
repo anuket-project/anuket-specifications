@@ -72,12 +72,15 @@ This section describes a set of explicit NFVI capabilities and performance measu
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
-| e.nfvi.cap.001 | # vCPU | number | Max number of vCPU that can be assigned to a single VNFC |
-| e.nfvi.cap.002 | RAM Size | MB | Max memory in MB that can be assigned to a single VNFC by NFVI |
+| e.nfvi.cap.001 | # vCPU | number | Max number of vCPU that can be assigned to a single VNFC <sup>1)</sup>|
+| e.nfvi.cap.002 | RAM Size | MB | Max memory in MB that can be assigned to a single VNFC by NFVI <sup>2)</sup>|
 | e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB | Max storage in GB that can be assigned to a single VNFC by NFVI |
-| e.nfvi.cap.004 | # vNICs | number | Max number of vNIC interfaces that can be assigned to a single VNFC by NFVI |
+| e.nfvi.cap.004 | # Connection points | number | Max number of connection points that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.005 | Total external (persistent) storage | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI |
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of NFVI</p>
+
+**1)** In a Kubernetes based environment this means the CPU limit of a pod. <br>
+**2)** In a Kubernetes based environment this means the memory limit of a pod.
 
 <a name="4.1.2.2"></a>
 #### 4.1.2.2 Exposed Performance Optimisation Capabilities
@@ -189,7 +192,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
 | i.nfvi.cap.016 | CPU overbooking | 1:N | <definition update scheduled> |
-| i.nfvi.cap.017 | vNIC QoS | Yes/No | QoS enablement |
+| i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface) |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
 
@@ -333,11 +336,11 @@ Table 4-14: Reserved
 
 | Ref | VIM Measurement | Unit | Definition/Notes |
 |--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| e.vim.pm.001 | Time to create Virtual Compute for a given VNF | Max ms |  |
-| e.vim.pm.002 | Time to delete Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.003 | Time to start Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.004 | Time to stop Virtual Compute of a given VNF | Max ms |  |
-| e.vim.pm.005 | Time to pause Virtual Compute of a given VNF | Max ms |  |
+| e.vim.pm.001 | Time to create Virtual Compute resources for a given VNF | Max ms |  |
+| e.vim.pm.002 | Time to delete Virtual Compute resources of a given VNF | Max ms |  |
+| e.vim.pm.003 | Time to start Virtual Compute resources of a given VNF | Max ms |  |
+| e.vim.pm.004 | Time to stop Virtual Compute resources of a given VNF | Max ms | <sup>1)</sup> |
+| e.vim.pm.005 | Time to pause Virtual Compute resources of a given VNF | Max ms | <sup>2)</sup> |
 | e.vim.pm.006 | Time to create internal virtual network | Max ms |  |
 | e.vim.pm.007 | Time to delete internal virtual network | Max ms |  |
 | e.vim.pm.008 | Time to update internal virtual network | Max ms |  |
@@ -347,6 +350,9 @@ Table 4-14: Reserved
 | e.vim.pm.012 | Time to create external storage ready for use by VNF | Max ms |  |
 
 <p align="center"><b>Table 4-15:</b> VIM Resource Management Measurements</p>
+
+**1)** In case of containers there is no stop operation.<br>
+**2)** In case of containers there is no pause operation.
 
 <a name="4.1"></a>
 ## 4.2 Infrastructure Profiles Catalogue
@@ -420,23 +426,25 @@ n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
 
-Multiple persistent storage extensions can be attached to virtual compute instances for data storage. Each extension can be configured with the required performance category.
+Persistent storage is associated with VNFs via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-19. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
-.conf |Read IO/s |Write IO/s Read |Throughput (MB/s) |Write Throughput (MB/s)
----|---|---|---|---
-.bronze |Up to 3K |Up to 15K |Up to 180 |Up to 120
-.silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400
-.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400
+Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
+
+.conf |Read IO/s |Write IO/s | Read Throughput (MB/s) |Write Throughput (MB/s) |Max Ext Size
+---|---|---|---|---|---
+.bronze |Up to 3K |Up to 15K |Up to 180 |Up to 120 |16TB
+.silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400 |1TB
+.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400 |1TB
 
 <p align="center"><b>Table 4-19:</b> Storage Performance Profiles</p>
 
 Note, performance is based on a block size of 256KB or larger.
 
+<!---
 <a name="4.2.3.1"></a>
-
 #### 4.2.3.1 Available Storage Extensions
 The following table defines persistent storage extensions that can be provided to VNFs for data storage. More than one storage extension can be provided to a single VNFC. The option selected determines both the size and the performance of the extension.
-
+//
 | .conf | capacity | Read IOPS | Write IOPS | Read Throughput (MB/s) | Write Throughput (MB/s) |
 |----------|----------|------------|------------|------------------------|-------------------------|
 | .bronze1 | 100GB | Up to 3K | Up to 15K | Up to 180 | Up to 120 |
@@ -448,8 +456,10 @@ The following table defines persistent storage extensions that can be provided t
 | .gold1 | 100GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
-
+//
 <p align="center"><b>Table 4-20:</b> Storage Extension Options</p>
+--->
+Table 4-20: Reserved
 
 <a name="4.2.4"></a>
 ### 4.2.4 Instance types
@@ -468,8 +478,8 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration |
-| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine |
+| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. |
+| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. |
 
 <p align="center"><b>Table 4-21:</b> Acceleration Extensions for N Instance Type</p>
 
@@ -484,8 +494,8 @@ C instance types can come with compute acceleration extensions to assist VNFs/VA
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
-| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration |
-| .la-programmable | virtio-programmable | Look-Aside programmable acceleration |
+| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. |
+| .la-programmable | virtio-programmable | Look-Aside programmable acceleration. |
 
 <p align="center"><b>Table 4-22:</b> Acceleration Extensions for C Instance Type</p>
 
@@ -524,7 +534,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
-| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3) |
+| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
 | `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |

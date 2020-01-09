@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 2. Architecture Requirements
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction.](#2.1)
@@ -103,7 +103,7 @@ Traceability to Reference Model.
 | `req.vim.01` | General | The Architecture **must** allow infrastructure resource sharing. |
 | `req.vim.02` | General | The Architecture **should** support deployment of OpenStack components in containers. |
 | `req.vim.03` | General | The Architecture **must** allow VIM to discover and manage NFVI resources. |
-| `req.vim.04` | General | The Architecture **must** support Enhanced Platform Awareness (EPA). |
+| `req.vim.04` | General | The Architecture **must** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.|
 | `req.vim.05` | General | The Architecture **must** include image repository management. |
 | `req.vim.06` | General | The Architecture **must** allow orchestration solutions to be integrated with VIM. |
 | `req.vim.07` | General | The Architecture **must** support a multi-tenanted environment. |

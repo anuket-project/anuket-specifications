@@ -21,31 +21,30 @@
   * [7.5.1 General Platform Security](#7.5.1)
   * [7.5.2 Platform ‘back-end’ access security](#7.5.2)
   * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
-* [7.6 Workload Security](#7.6)
-* [7.7 Vendor Responsibilities](#7.7)
-  * [7.7.1 Software Hardening](#7.7.1)
-  * [7.7.2 Port Protection](#7.7.2)
-  * [7.7.3 Software Code Quality](#7.7.3)
-  * [7.7.4 Alerting and Monitoring](#7.7.4)
-  * [7.7.5 Logging](#7.7.5)
-  * [7.7.6 VNF images](#7.7.6)
-  * [7.7.7 Identity and Access Management](#7.7.7)
-  * [7.7.8 CVEs and Vulnerability Management](#7.7.8)
-  * [7.7.9 Encryption suite supports](#7.7.9)
-  * [7.7.10 Password complexity support](#7.7.10)
-  * [7.7.11 Customized Banner](#7.7.11)
- * [7.8 Operator responsibility](#7.8)
-  * [7.8.1 Remote Attestation/openCIT](#7.8.1)
-  * [7.8.2 VNF Image Scanning / Signing](#7.8.2)
-* [7.9 VNF Vendors responsibility](#7.9)
-* [7.10 NFVI Vendors responsibility](#7.10)
-  * [7.10.1 Networking Security Zoning](#7.10.1)
-  * [7.10.2 Encryption](#7.10.2)
-  * [7.10.3 Platform Patching](#7.10.3)
-  * [7.10.4 Boot Integrity Measurement (TPM)](#7.10.4)
-  * [7.10.5 Runtime Integrity Measurement (TPM)](#7.10.5)
-  * [7.10.6 NFVI & VIM](#7.10.6)
-* [7.11 Certification requirements](#7.11)
+* [7.6 Workload Security - Vendor Responsibility](#7.6)
+  * [7.6.1 Software Hardening](#7.6.1)
+  * [7.6.2 Port Protection](#7.6.2)
+  * [7.6.3 Software Code Quality](#7.6.3)
+  * [7.6.4 Alerting and Monitoring](#7.6.4)
+  * [7.6.5 Logging](#7.6.5)
+  * [7.6.6 VNF images](#7.6.6)
+  * [7.6.7 Identity and Access Management](#7.6.7)
+  * [7.6.8 CVEs and Vulnerability Management](#7.6.8)
+  * [7.6.9 Encryption suite supports](#7.6.9)
+  * [7.6.10 Password complexity support](#7.6.10)
+  * [7.6.11 Customized Banner](#7.6.11)
+ * [7.7 Workload Security- Operator Responsibility](#7.7)
+  * [7.7.1 Remote Attestation/openCIT](#7.7.1)
+  * [7.7.2 VNF Image Scanning / Signing](#7.7.2)
+* [7.8 VNF Vendors responsibility](#7.8)
+* [7.9 NFVI Vendors responsibility](#7.9)
+  * [7.9.1 Networking Security Zoning](#7.9.1)
+  * [7.9.2 Encryption](#7.9.2)
+  * [7.9.3 Platform Patching](#7.9.3)
+  * [7.9.4 Boot Integrity Measurement (TPM)](#7.9.4)
+  * [7.9.5 Runtime Integrity Measurement (TPM)](#7.9.5)
+  * [7.9.6 NFVI & VIM](#7.9.6)
+* [7.10 Certification requirements](#7.10)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -276,11 +275,11 @@ The platform supports the workload, and in effect controls access to the workloa
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks
 * The front-end network may provide (Distributed Denial Of Service) DDOS support
 
-<a name="7.7"></a>
-## 7.7 Vendor Responsibilities
+<a name="7.6"></a>
+## 7.6 Workload Security - Vendor Responsibility
 
-<a name="7.7.1"></a>
-### 7.7.1 Software Hardening
+<a name="7.6.1"></a>
+### 7.6.1 Software Hardening
         -   No hard-coded credentials/ clear text passwords
         -   Software should be independent of the infrastructure
             platform (no OS point release dependencies to patch)
@@ -291,13 +290,13 @@ The platform supports the workload, and in effect controls access to the workloa
             security vulnerabilities (i.e.; bug bounty, Penetration
             testing/scan findings, etc)
 
-<a name="7.7.2"></a>
-### 7.7.2 Port Protection
+<a name="7.6.2"></a>
+### 7.6.2 Port Protection
         -   Unused software and unused network ports should be disabled,
             by default
 
-<a name="7.7.3"></a>
-### 7.7.3 Software Code Quality
+<a name="7.6.3"></a>
+### 7.6.3 Software Code Quality
         -   Vendors should use industry recognized software testing
             suites
             -   Static and dynamic scanning
@@ -315,51 +314,51 @@ The platform supports the workload, and in effect controls access to the workloa
                     Agile/DevOps delivery lifecycle for ongoing feature
                     enhancement/maintenance.
 
-<a name="7.7.4"></a>
-### 7.7.4 Alerting and monitoring
+<a name="7.6.4"></a>
+### 7.6.4 Alerting and monitoring
                 -   Security event logging (All security events should
                     be logged, including informational)
                 -   Privilege escalation detection
 
-  <a name="7.7.5"></a>
-### 7.7.5 Logging
+  <a name="7.6.5"></a>
+### 7.6.5 Logging
                 -   (Logging output should support customizable Log
                     retention and Log rotation)
 
-  <a name="7.7.6"></a>
-### 7.7.6 VNF images
+  <a name="7.6.6"></a>
+### 7.6.6 VNF images
                 -   Image integrity – fingerprinting/validation
             -   Container Images
                 -   Container Management
                 -   Immutability
 
-<a name="7.7.7"></a>
-### 7.7.7 Identity and Access Management
+<a name="7.6.7"></a>
+### 7.6.7 Identity and Access Management
 
-<a name="7.7.8"></a>
-### 7.7.8 CVEs and Vulnerability Management
+<a name="7.6.8"></a>
+### 7.6.8 CVEs and Vulnerability Management
                 -   Security defect reporting
                 -   Cadence with NFVi vendors (OSSA for OpenStack)
 
-<a name="7.7.9"></a>
-### 7.7.9 Encryption suite support
+<a name="7.6.9"></a>
+### 7.6.9 Encryption suite support
                 -   Software should support recognized encryption
                     standards and encryption should be decoupled from
                     software
 
-<a name="7.7.10"></a>
-### 7.7.10 Password complexity support
+<a name="7.6.10"></a>
+### 7.6.10 Password complexity support
                 -   Software should support configurable, or industry
                     standard, password complexity rules
 
- <a name="7.7.11"></a>
-### 7.7.11 Banner
+ <a name="7.6.11"></a>
+### 7.6.11 Banner
                 -   Software should have support for configurable
                     banners to display authorized use criteria/policy
 
 
-<a name="7.8"></a>
-## 7.8 Operator responsibility.
+<a name="7.7"></a>
+## 7.7 Workload Security  - Operator Responsibility.
 
 The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective.   This includes but is not limited to securing the following elements:
 
@@ -373,21 +372,21 @@ The Operator’s responsibility is to not only make sure that security is includ
 
 • Methods to support appropriate remote attestation certification of the validity of the security components, architectures and methodologies used
 
-<a name="7.8.1"></a>
-### 7.8.1 Remote Attestation/openCIT
+<a name="7.7.1"></a>
+### 7.7.1 Remote Attestation/openCIT
 
 NFVI operators must ensure that remote attestation methods are used to remotely verify the trust status of a given NFVI platform.  The basic concept is based on boot integrity measurements leveraging the TPM built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
 
 Insert diagram here:
 https://01.org/sites/default/files/users/u26957/32_architecture.png
 
-<a name="7.8.2"></a>
-### 7.8.2 VNF Image Scanning / Signing
+<a name="7.7.2"></a>
+### 7.7.2 VNF Image Scanning / Signing
 
 It is easy to tamper with VNF images. It requires only a few seconds to insert some malware into a VNF image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, VNF images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the VNF operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
 
-<a name="7.9"></a>
-## 7.9 VNF Vendors responsibility.
+<a name="7.8"></a>
+## 7.8 VNF Vendors responsibility.
 
 The VNF vendors need to incorporate security elements to support the highest level of security of the networks they support.  This includes but is not limited to securing the following elements:
 
@@ -404,7 +403,7 @@ The VNF vendors need to incorporate security elements to support the highest lev
 Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
 
 <a name="7.10"></a>
-## 7.10 NFVI and VIM Vendors responsibility
+## 7.9 NFVI and VIM Vendors responsibility
 
 The NFVI vendors need to incorporate security elements to support the highest level of security of the infrastructure they support.  This includes but is not limited to securing the following elements:
 
@@ -423,14 +422,14 @@ The NFVI vendors need to incorporate security elements to support the highest le
 • Regulatory compliance Failure
 
 <a name="7.10.1"></a>
-### 7.10.1 Networking Security Zoning
+### 7.9.1 Networking Security Zoning
 
 Network segmentation is important to ensure that VMs can only communicate with the VMs they are supposed to. To prevent a VM from impacting other VMs or hosts, it is a good practice to separate VM traffic and management traffic. This will prevent attacks by VMs breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, VMs of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
 
 Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
 
 <a name="7.10.2"></a>
-### 7.10.2 Encryption
+### 7.9.2 Encryption
 
 Virtual volume disks associated with VNFs may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the VNF volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event a VNF crashes or is intentionally destroyed to prevent it from unauthorized access.
 
@@ -441,12 +440,12 @@ Virtual volume disks associated with VNFs may contain sensitive data. Therefore,
 • The use of Image scanners such as OpenSCAP to determine security vulnerabilities
 
 <a name="7.10.3"></a>
-### 7.10.3 Platform Patching
+### 7.9.3 Platform Patching
 
 NFVI operators should ensure that the platform including the components (hypervisors, VMs, etc.) are kept up to date with the latest patch.
 
 <a name="7.10.4"></a>
-### 7.10.4 Boot Integrity Measurement (TPM)
+### 7.9.4 Boot Integrity Measurement (TPM)
 
 Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem and other system components can be securely stored and verified.
 NFVI Operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
@@ -455,14 +454,14 @@ Additionally, NFVI Operators should ensure that OS kernel measurements can be re
 The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
 <a name="7.10.5"></a>
-### 7.10.5 Runtime Integrity Measurement (TPM)
+### 7.9.5 Runtime Integrity Measurement (TPM)
 If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
 Additionally, platform measurements may be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
 The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
 
 <a name="7.10.6"></a>
-### 7.10.6 NFVI & VIM
+### 7.9.6 NFVI & VIM
 
 Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
 <!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019
@@ -489,7 +488,7 @@ Table 7-2 shows security capabilities
 
 <p align="center"><b>Table 7-2:</b> VIM capabilities related to security .</p>
 
-## 7.11 Certification requirements (Just ideas)
+## 7.10 Certification requirements (Just ideas)
 
 -   Security test cases executed and test case results
 -   Industry standard compliance achieved (NIST, ISO, PCI, FedRAMP
