@@ -38,7 +38,6 @@ Table 4-1 lists the Linux kernel versions that comply with this Reference Archit
 |OS Family|Version(s)|Notes|
 |---|---|---|
 |Linux|3.10+||
-|Linux|4+||
 |Windows|1809 (10.0.17763)|For worker nodes only|
 
 <p align="center"><b>Table 4-1:</b> Compliant OS Kernels</p>
