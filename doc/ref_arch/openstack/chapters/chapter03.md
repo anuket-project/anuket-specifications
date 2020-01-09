@@ -20,7 +20,7 @@
 * [3.4. Underlying Resources](#3.4)
   * [3.4.1. Virtualisation](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
-* [3.5. Deployment Models](#3.5)
+* [3.5. Cloud Topology](#3.5)
 * [3.6. Architectural Drivers – Requirements Traceability](#3.6)
 
 
@@ -56,7 +56,6 @@ This chapter is organized as follows:
       -	Network: Spine/Leaf; East/West and North/South traffic
       -	Storage
 
-Please note that while requirements are provided in various sections of this chapter for traceability, the source of record is Chapter 2. 
 
 <a name="3.2"></a>
 ## 3.2. Consumable Infrastructure Resources and Services
@@ -235,9 +234,8 @@ Virtualisation Services: The OpenStack nova-compute service supports multiple hy
 
 <a name="3.4.2"></a>
 ### 3.4.2. Physical Infrastructure
-Content to be developed
 
-Aim here is how to deploy from ground up (in a shipping container) or what expectations does the NFVi have of the DC.
+The aim is to specify the requirements on deploying the VIM, from ground up (in a shipping container), and what resources the NFVi requires of the DC (Data Centre).
 *	Servers 
     - Compute
     -	Storage
@@ -249,8 +247,7 @@ Aim here is how to deploy from ground up (in a shipping container) or what expec
     -	Storage networking, control plane and data plane
     -	Raw packet – tenant networking allowing “wild west” connection.  
 *	Storage 
-    - Opensource???? Ceph (move to virtual)
-    -	Pluggable into ….   
+    - discussed in [RA-1 Chapter 04](../chapter04.md#424-storage-backend)
 *	Acceleration
     - SmartNIC
     - GPU
@@ -263,31 +260,19 @@ The physical resources required for the NFVI are mainly based on COTS X86 hardwa
 HW profiles are defined in the chapters 5.3 and 5.4 of the reference model document.
 
 #### 3.4.2.2. Network
-(Spine-Leaf, East/West and North-South Traffic)
-
-NFVI Network & Security
-
-the recommended network architecture is spine and leaf topology however for small sites a legacy topology (access/aggregation switches) can be setup.
-
-Content to be developed along the following lines
-- do we include FW to separate control vs data plane?
-- do we include DC GW to separate NFVI from external environments?
-- do we include OoB switch
-
-Each instance of IaaS relies on physical resource: servers, switches, ToR
+The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up. 
 
 <p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"></br>Figure 3-3: Network Fabric – Physical</p>
-Figure 3-3 shows a physical network layout where each physical server is dual homed to TOR (C/Agg-Leaf) switches with redundant (2x) connections. The Leaf switches are dual homed with redundant connections to spines.
+Figure 3-3 shows a physical network layout where each physical server is dual homed to TOR (Leaf/Access) switches with redundant (2x) connections. The Leaf switches are dual homed with redundant connections to spines.
 
 #### 3.4.2.3. Storage
-Content to be developed including for Ceph 
 
 [OpenStack](https://docs.openstack.org/arch-design/design-storage.html) supports many different storage architectures and backends. The choice of a particular backend storage is driven by a number of factors including: scalability, resiliency, availability, data durability, capacity and performance. 
 
 Most cloud storage architectures incorporate a number of clustered storage nodes that provide high bandwidth access to physical storage backends connected by high speed networks. The architecture consists of multiple storage controller units, each a generic server (CPU, Cache, storage), managing a number of high-performance hard drives. The distributed block storage software creates an abstract single pool of storage by aggregating all of the controller units. Advanced and high-speed networking (data routing) and global load balancing techniques ensure high-performance, high availability storage system
 
 <a name="3.5"></a>
-## 3.5. Deployment Models
+## 3.5. Cloud Topology
 Content to be developed along the following lines
 *	How do we define the different deployment types?
     - Edge
@@ -296,6 +281,8 @@ Content to be developed along the following lines
 
 <a name="3.6"></a>
 ## 3.6. Architectural Drivers – Requirements Traceability
+
+Please note that while requirements are provided in various sections of this chapter for traceability, the source of record is Chapter 2. 
 
 
 
