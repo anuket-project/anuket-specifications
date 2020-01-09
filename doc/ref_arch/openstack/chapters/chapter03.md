@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 3. NFVI + VIM Architecture
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
