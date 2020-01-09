@@ -20,7 +20,6 @@ It is vitally important for CNTT to have working solution from infrastructure ve
 
 Therefore, a transition plan, an adoption strategy, and adoption Roadmap is needed to be agreed on within the CNTT community. This document explains those elements in details. 
 
-
 <a name="9.2"></a>
 ## 9.2 Transition Plan
 
@@ -31,12 +30,29 @@ The transition plan described here will inform application designers how RC and 
 <a name="9.2.1"></a>
 ### 9.2.1 Conformance Levels
 
+- **Fully Conformant**: VNFs/CNFs or NFVI are written and designed to be fully conformant to CNTT specification with no use of any of the allowed Exceptions.
+- **Conformant with Exceptions**: VNFs/CNFs or NFVI are written and designed to be conformant to CNTT with one or more of the allowed Exceptions used.
 
 <a name="9.2.2"></a>
 ### 9.2.2 Exception Types
 
+- **Technology Exceptions** : Using specific technologies that are considered non conformant to CNTT principles (such as PCIe Direct Assignment, exposure of hardware features to VNFs/CNFs).
+- **Version Exceptions**: Using Versions of  Software components, , APIs, or Hardware that are different from the one specified in the specification.
+
 <a name="9.2.3"></a>
 ### 9.2.3 Transition Framework
+
+Exceptions will be clearly recorded in the Reference Model Appendix which will act as a guidance to VNFs/CNFs of what Exceptions will be allowed on each CNTT release. **Figure 1** below demonstrate the concept.
+
+- As technology matures, fewer and fewer Exceptions will be allowed in CNTT releases.
+- For each CNTT Release, VNF/CNF can be either:
+  - **Fully Conformant**: No Exception used.
+  - **Conformant with Exception**: One or More of the allowed Exceptions in RM has been used.  
+
+
+<p align="center"><img src="../figures/vnf_cnf_transition.png" alt="Transition" title="VNF/CNF Transition Plan" width="70%"/></p>
+<p align="center"><b>Figure 1:</b> Transition Plan for VNFs/CNFs within CNTT</p>
+
 
 <a name="9.3"></a>
 ## 9.3 Adoption Strategy
