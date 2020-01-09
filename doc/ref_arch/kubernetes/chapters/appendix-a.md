@@ -1,7 +1,7 @@
 [<< Back](../../kubernetes)
 # Appendix A - Guidance for VNF-to-CNF Transition
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
-
+ 
 ## Table of Contents
 * [A.1 TBC](#A.1)
 * [A.2 TBC](#A.2)
