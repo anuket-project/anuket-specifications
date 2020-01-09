@@ -28,18 +28,35 @@
 
 The CNTT is structured into WorkStreams so it can scale and accommodate participation from the wider community. The CNTT is open to participation by any individual or organization that agrees to comply with it's ToR (each such participant, a “Participant”). Each of the Workstreams within CNTT has one Lead and up to two Co-Leads. Leads and Co-Leads for each Workstream is selected by the community itself through nomination and voting processes. This document explains the CNTT policies and process in details regarding nomination and selection.
 
-
 <a name="4.2"></a>
 ## 4.2 Workstreams Lead/Co-Lead Nomination and Selection
+
+For each Workstream, following leadership positions exist:
+- Lead.
+- Up to two Co-leads. 
 
 <a name="4.2.1"></a>
 ### 4.2.1 Length of Terms
 
+The length of term for all CNTT leadership roles are **12** calender months.
+
 <a name="4.2.2"></a>
 ### 4.2.2 Representation
 
+Any workstream Leads or Co-Leads positions can be held by any community individuals.
+
 <a name="4.3"></a>
 ## 4.3 Technical Steering Committee Lead/Co-Lead Nomination and Selection
+
+<a name="4.3.1"></a>
+### 4.3.1 Nomination
+
+- Any individual can nominate someone else for a lead/co-lead position (requires acceptance from the nominee)
+- Any individual can self nominate themselves for a Lead/Co-Lead position as long they agree to CNTT ToR.
+- Any individual can self-nominate themselves to as many positions as they like.
+
+<a name="4.3.2"></a>
+### 4.3.2 Selection
 
 <a name="4.3.1"></a>
 ### 4.3.1 Length of Terms
@@ -65,8 +82,11 @@ The CNTT is structured into WorkStreams so it can scale and accommodate particip
 <a name="4.5"></a>
 ## 4.5 Committee Structure
 
+Please refer to [Org Structure](../chapters/chapter03.md#32-org-structure).
+
 <a name="4.6"></a>
 ## 4.6 Limits and Caps
+- No Limit or CAPs for how many position a given individual or an organisation can hold.
 
 <a name="4.7"></a>
 ## 4.7 Tracking contributions
