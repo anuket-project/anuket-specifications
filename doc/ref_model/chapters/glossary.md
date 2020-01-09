@@ -53,11 +53,16 @@ To help guide the reader, this glossary provides an introduction to the terminol
 <a name="11.1.2"></a>
 ### 11.1.2 Hardware Layer Terminology
 
-- **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. >_*Note:*_ This is a physical NFVI resource with the NF software.
+- **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system.
+  >_*Note:*_ This is a physical NFVI resource with the NF software.
 - **Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software, virtual machines and containers run on.
 - **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
   - **Host Profile**: is another term for a **NFVI hardware profile**.
 - **NFVI Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **NFVI** HW deployment.
+- **Simultaneous Multi-threading**: Simultaneous multithreading (SMT) is a technique for improving the overall
+efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution to
+better utilize the resources provided by modern processor architectures.
+
 
 <a name="11.1.3"></a>
 ### 11.1.3 Operational and Administrative Terminology
