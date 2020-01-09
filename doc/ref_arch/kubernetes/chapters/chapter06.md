@@ -87,6 +87,7 @@ Kubernetes metadata contain sensitive information including kubelet admin creden
 Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure. 
 
 ##  6.11  Run-Time Security
+Usage of container and Kubernetes aware Cloud Workload Protection Platform (CWPP) tool is recommended. The CWPP tools offer features like process whitelisting, network segmentation / traffic whitelisting, system integrity monitoring. Secondly the tools offer good monitoring capabilities, which are needed not only from security pov but eg in trouble-shooting. In case of container workloads, the monitoring of the workloads can be performed down to system call level.
 
 ##  6.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
@@ -143,7 +144,7 @@ When applications or workloads run on Kubernetes, there are several layers which
 
 - Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to prevent unauthorised access or image tampering.
 - Container Images: Stored instance of a container that holds a set of software needed to run an application. Before loading them to container registry, they need to be secured by performing various checks like vulnerability analysis, scans etc. These images should also be signed from trusted sources
-- Containers: A lightweight and portable executable image that contains software and all of its dependencies. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, mounting of directories of underlying OS etc and it must also be ensured that they don't run in priveleged mode..
+- Containers: A lightweight and portable executable image that contains software and all of its dependencies. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, mounting of directories of underlying OS etc and it must also be ensured that they don't run in priveleged mode. Exceptions to this rule are sometimes needed, for example when usage of a popular Cloud Native open src SW requires some of the listed properties.
 - Pods: A Pod represents a set of running containers on your cluster. Kuberenetes inherently offers pod security policies that define a set of conditions that a pod must run with in order to be accepted into the system. These policies help in ensuring the necessary checks for running the pods.
 - Kubernetes Node: A Kubernetes node in an unsecured boundary can lead to a potential threat to the running workloads. Such a node should be hardened by disabling unused ports, prohibiting root access etc.
 - Kubernetes Master: A master node in an unsecured boundary can lead to a potential threat to the running workloads. A master may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
