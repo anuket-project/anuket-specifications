@@ -30,18 +30,21 @@ It is assumed that the reader of this chapter has the skill set to install Commo
 <a name="7.2"></a>
 ## 7.2 Prerequisites
 
-The following are pre-requisites to be completed in advance of software deployments:
+The following hardware was cabled and set up according to the OPNFV Pharos Specification:
 
-1.  Bare-metal validations: confirming delivery, rack, stack, of env and that env is "ready" for software deployments (e.g. BIOS, firmware, boot order, health, disk config, port / socket validations, MAC/NIC status, etc)
+| Node  | CPU Model | Memory | HDD           | SSD         | 1 GbE NIC | 10 GbE NIC |
+|-------|-----------|--------|---------------|-------------|-----------|------------|
+| Jump  | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 1     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 2     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 3     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 4     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 5     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
 
-Need some details from pod 15:
+Each server has all of 1GbE NICs connected to the same Extreme 480 1GbE switch, and all 10GbE NICs conneted to the
+same IZ1 switch as follows:
 
-- [ ] What servers/models are present
-- [ ] What firmware is loaded
-- [ ] BIOS settings that are not factory default - is HT on, what VT extensions?
-- [ ] How many NICs are present per server?
-- [ ] How many switches and how are they cabled?
-- [ ] Does Airship configure disks and boot order or must this be done ahead of time?
+<img src="../figures/ch07_pod10_switch_connectivity.png" title="Pod 10 Switch Connectivity">
 
 
 <a name="7.3"></a>
@@ -55,13 +58,21 @@ Requirements gathering processes and steps:
 <a name="7.4"></a>
 ## 7.4 Access & Connectivity
 
-Logical steps for lab access and connectivity.
+This RI leverages OPNFV Pharos pod 10, which is hosted by Intel and requires VPN access.  Requests for VPN access must
+go through the OPNFV Infra Project by submitting a JIRA request for VPN access here: https://jira.opnfv.org/projects/INFRA
 
-Sample steps provided mimic those utilized for POD10 test lab access.
+Upon completion, the VPN credentials and certificate will be sent via email.
 
-This RI leverages OPNFV Pharos pod 15, which is hosted by Intel and requires VPN access.  Requests for VPN access must
-go through the OPNFV Infra Project.  Once on the VPN, only the DMZ network is reachable.  In order to gain access to
-any of the other networks, the Foundation node (jump host) must be used.
+Once VPN connectivity is established, the only available subnet is the "DMZ" network, which gives access directly to
+the Foundation (jump) node.  All interaction with the RI must be done through this node.  It is possible to use
+software such as sshuttle (https://sshuttle.readthedocs.io/en/stable/ ) to assist with routing inside the lab.
+
+As an example, the following command adds the External API subnet route via sshuttle, allowing direct access from the client
+side of the VPN into that subnet:
+
+`sshuttle -r root@10.10.100.20 10.10.105.0/24`
+
+This will allow the VPN client host to directly access the Horizon dashboard, as an example.
 
 <a name="7.5"></a>
 ## 7.5 Available Installers
