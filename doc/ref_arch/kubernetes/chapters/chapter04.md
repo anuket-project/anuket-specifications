@@ -1,4 +1,4 @@
-[<< Back](../../openstack)
+[<< Back](../../kubernetes)
 
 # 4. Component Level Architecture
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
