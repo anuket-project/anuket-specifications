@@ -8,7 +8,6 @@
 * [7.2 Pre-requisites](#7.2)
 * [7.3 Requirements Gathering](#7.3)
 * [7.4 Access and Connectivity](#7.4)
-<<<<<<< HEAD
 * [7.5 Available Installers](#7.5)
   * [7.5.1 Airship](#7.5.1)
     * [7.5.1.1 Descriptor File Preparations](#7.5.1.1)
@@ -18,15 +17,6 @@
 * [7.7 CICD Tool Chain (use of, process, and scripts)](#7.7)
 * [7.8 Jenkins Setup & Job Creation](#7.8)
 * [7.9 Compliance Validation (steps, process)](#7.9)
-=======
-* [7.5 Descriptor File Preparations](#7.5)
-* [7.6 Deployment Installer & Install Steps](#7.6)
-* [7.7 Deployment Validations](#7.7)
-* [7.8 Development Validations](#7.8)
-* [7.9 CICD Tool Chain (use of, process, and scripts)](#7.9)
-* [7.10 Jenkins Setup & Job Creation](#7.10)
-* [7.11 Compliance Validation (steps, process)](#7.11)
->>>>>>> parent of 724f8e0... sync (#935)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -43,9 +33,21 @@ It is assumed that the reader of this chapter has the skill set to install Commo
 <a name="7.2"></a>
 ## 7.2 Prerequisites
 
-The following are pre-requisites to be completed in advance of software deployments:
+The following hardware was cabled and set up according to the OPNFV Pharos Specification:
 
-1.  Bare-metal validations: confirming delivery, rack, stack, of env and that env is "ready" for software deployments (e.g. BIOS, firmware, boot order, health, disk config, port / socket validations, MAC/NIC status, etc)
+| Node  | CPU Model | Memory | HDD           | SSD         | 1 GbE NIC | 10 GbE NIC |
+|-------|-----------|--------|---------------|-------------|-----------|------------|
+| Jump  | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 1     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 2     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 3     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 4     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 5     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+
+Each server has all of 1GbE NICs connected to the same Extreme 480 1GbE switch, and all 10GbE NICs conneted to the
+same IZ1 switch as follows:
+
+<img src="../figures/ch07_pod10_switch_connectivity.png" title="Pod 10 Switch Connectivity">
 
 <a name="7.3"></a>
 ## 7.3 Requirements Gathering
@@ -58,12 +60,24 @@ Requirements gathering processes and steps:
 <a name="7.4"></a>
 ## 7.4 Access & Connectivity
 
-Logical steps for lab access and connectivity.
+This RI leverages OPNFV Pharos pod 10, which is hosted by Intel and requires VPN access.  Requests for VPN access must
+go through the OPNFV Infra Project by submitting a JIRA request for VPN access here: https://jira.opnfv.org/projects/INFRA
 
-Sample steps provided mimic those utilized for POD10 test lab access.
+Upon completion, the VPN credentials and certificate will be sent via email.
+
+Once VPN connectivity is established, the only available subnet is the "DMZ" network, which gives access directly to
+the Foundation (jump) node.  All interaction with the RI must be done through this node.  It is possible to use
+software such as sshuttle (https://sshuttle.readthedocs.io/en/stable/ ) to assist with routing inside the lab.
+
+As an example, the following command adds the External API subnet route via sshuttle, allowing direct access from the client
+side of the VPN into that subnet:
+
+`sshuttle -r root@10.10.100.20 10.10.105.0/24`
+
+This will allow the VPN client host to directly access the Horizon dashboard, as an example.
 
 <a name="7.5"></a>
-<<<<<<< HEAD
+
 ## 7.5 Available Installers
 
 ### 7.5.1 Airship
@@ -108,6 +122,7 @@ There have been various efforts around infrastructure description. Below list is
 In this document, we will focus on first two OPNFV's descriptor files and Airship manifests.
 
 ##### OPNFV Descriptor Files
+
 The descriptor files – platform, infrastructure and software descriptor files – as used in OPNFV, provides an installer-agnostic way of describing both the hardware and software infrastructure. The main consumer of these descriptor files is the openstack (OPNFV) installer. For example, Fuel consumes these descriptor files to create its own set of templates/manifests, which will be used for deployment. The below figure summarizes how these descriptor files are consumed by the installers.
 
 
@@ -116,6 +131,7 @@ It is important for the generic descriptor files, apart from being generic, to b
 1. New Use-Cases: If the parameter(s) helps in creating new use-cases. Ex: Different networking scenarios.
 2. Feature: If the parameter(s) adds new feature to the installation. Ex: Security.
 3. Simplify: If the parameter(s) simplifies the auto-creation of custom manifests. Ex: Metadata.
+
 
 ##### **OPNFV Descriptor Files**
 
@@ -169,16 +185,14 @@ The below table summarizes the configurable parameters under PDF. Most of these 
 |       mac\_address:  |
 |       vlan: {native or 1-4095} |
 
+
 ##### IDF
 
 The Installer Descriptor File extends the PDF with POD related parameters required by the installer. This information may differ per each installer type and it is not considered part of the POD infrastructure. Currently, this file has only one section that is &#39;generic&#39; – the net\_config section. The below table describes the fields of the net\_config section.
-=======
-## 7.5 Descriptor File Preparations
->>>>>>> parent of 724f8e0... sync (#935)
 
-Reference steps describing the use, creation, and implementation of descriptor files.
 
-<<<<<<< HEAD
+The other section(s) in IDF are Installer specific.
+
 | **key** | **Details** |
 | --- | --- |
 | interface | The index of the interface to use for this net. |
@@ -190,6 +204,7 @@ Reference steps describing the use, creation, and implementation of descriptor f
 | dns | List of DNS IP addresses. Required for public, N/A for others. |
 
 ##### **OPNFV Airship Manifests**
+
 
 Airship is a collection of loosely coupled and interoperable open source tools that declaratively automate cloud provisioning - Infrastructure Deployment and Lifecycle Management of cloud.
 
@@ -266,7 +281,6 @@ The deployment is performed and managed from the 'jump-host' node. Any authorize
 ##### FQDN Registration
 To access the deployment, using FQDNs, it is important to get them registered as DNS records with the network administrator. In case of OPNFV Intel pods, the linux foundation helpdesk (sso.linuxfoundation.org) can take the request and add the records.
 
-
 ##### Setting up the Genesis Node
 Install Ubuntu 16.04 (Standard ISO) on the genesis node (Ex: Node-1 in Intel-Pod10), this node will be used as seed for the rest of the environment. During installation ensure the following:
 - UTC Timezone
@@ -340,14 +354,88 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 
 - http://grafana-airship.intel-pod10.opnfv.org/login
 - http://kibana-airship.intel-pod10.opnfv.org/
-=======
-e.g. Descriptor file &/or Manifest creation (data elements, use/implementation, etc
 
 <a name="7.6"></a>
-## 7.6 Deployment Installer & Install Steps
->>>>>>> parent of 724f8e0... sync (#935)
+## 7.6 Deployment: Installer & Install Steps
+The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
+### FQDN Registration
+To access the deployment, using FQDNs, it is important to get them registered as DNS records with the network administrator. In case of OPNFV Intel pods, the linux foundation helpdesk (sso.linuxfoundation.org) can take the request and add the records.
 
-Steps and precedures for installing and setting up the RI.
+
+### Setting up the Genesis Node
+Install Ubuntu 16.04 (Standard ISO) on the genesis node (Ex: Node-1 in Intel-Pod10), this node will be used as seed for the rest of the environment. During installation ensure the following:
+- UTC Timezone
+- Proper hostname - As defined in site-definition
+- Partitioning - As defined in site-definition
+- Disable automatic updates
+
+After Installation, perform the following:
+- Configure networks according to the site-definition.
+- Install proper kernel version - As defined in site-definition
+- Install ntpdate/ntp
+- Ensure password-less login from jumphost
+
+### Install
+As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See [deploy.sh](https://github.com/opnfv/airship/blob/master/tools/deploy.sh). User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the [wiki page]((https://wiki.opnfv.org/display/AIR/Airship+Manifest+Creation+For+New+Sites)
+)
+Once the Genesis node is setup, and the manifests are created, user can execute deploy.sh that supports (Shipyard) actions: deploy\_site and update\_site. Along with the action, the deploy script also take the site name (ex: intel-pod10). The deploy.sh script is part of the opnfv-airship repository. The steps to run the deploy script are as follows.
+
+- git clone https://gerrit.opnfv.org/gerrit/airship
+- cd airship/tools
+- ./deploy.sh intel-pod10 deploy\_site
+OR
+- ./deploy.sh intel-pod10 update\_site
+
+### Keeping track of the progress
+
+The complete installation can take signification time - 2-3 hours, and it involves following process:
+
+- Genesis node setup.
+  - Software deployment.
+- Baremetal provisioning of the nodes by Drydock
+  - Control plane nodes
+  - Dataplane nodes.
+- Software deployment.
+
+First, the genesis node is setup as single-node kubernetes cluster. This is followed by provisioning baremetal nodes. Once the Baremetal provisioning starts, user can use this link to check for the status:
+
+http://&lt;IP-OF-GENESIS-NODE&gt;:31900/MAAS/#/nodes
+
+Ex: for Pod10 - [http://10.10.100.21:31900/MAAS/#/nodes](http://10.10.100.21:31900/MAAS/#/nodes)
+
+The provisioning of the baremetal nodes is done in a particular order - ex: control nodes (node2 and node3 of intel-pod10) first and then the compute nodes (node4 and node5). To understand any failures in this step, user can check the logs of the drydock service in genesis-node.
+
+Once the baremetal provisioning is completed, the software deployment process starts. This includes setting up multiple services on the Kubernetes cluster, under following namespaces – in that particular order:
+
+- kube-system
+- ceph
+- ucp
+- osh-infra
+- tenant-ceph
+- openstack
+
+Below table provides some commands to run on **genesis node** to keep track of the software deployment.
+
+| **Description** | **Command** |
+| --- | --- |
+| Show all pods for a particular namespace, that has completed. Check for any crashlookBackoff states | kubectl get pods -n namespace-name -o wide |grep -v Completed |
+| Look at the logs of a any pod in any namespaceYou can follow it with --follow |  kubectl logs -n namespace-name pod-name;   |
+| Monitoring Ceph StatusShould be HEALTH\_OK  | kubectl exec -it -n ceph ceph-mon-instance-id -- ceph -s |
+| Get services running, and describe a service | kubectl get svc -n openstack and kubectl describe svc -n openstack ingress |
+
+This link [https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting\_guide.html](https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting_guide.html) will provide all the details for trouble shooting any issues.
+
+Once the software is successfully deployed, and the deploy.sh script terminates normally, user can use the following link to access the horizon dashboard.
+- http://dashboard-airship.intel-pod10.opnfv.org
+
+In addition to that, users can also use these links to track the metrics and logs, respectively:
+
+
+Steps and procedures for installing and setting up the RI.
+Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Installer+Deployment+Guide
+
+- http://grafana-airship.intel-pod10.opnfv.org/login
+- http://kibana-airship.intel-pod10.opnfv.org/
 
 ### 7.5.2 Future Installers
 >> Installers such as Triple-O specefic instructrions will come here.
@@ -476,15 +564,9 @@ the following test cases are executed at the end.
 | opnfv/functest-vnf:hunter               | vyos_vrouter               | Success            |
 | opnfv/functest-vnf:hunter               | juju_epc                   | Success            |
 
-<<<<<<< HEAD
+
 Description of the Functest suite and what is selected for validation testing.  Need to document the line between "validation of install" and "reference certification."  It has been stated that these might be one and the same, however deployment validation could be a simple smoke test prior to starting a full run.
 
-<a name="7.7"></a>
-=======
-<a name="7.8"></a>
->>>>>>> parent of 724f8e0... sync (#935)
-
-## 7.7 Development Validations
 
 CNTT RI jobs must verify all patches before merge as defined in the best open
 source practices (see
@@ -532,19 +614,19 @@ It's worth mentioning that Functest already part of RI development validation
 conform to these best practices by running all test cases vs SUTs
 [currently CNTT compliant](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/).
 
-<a name="7.8"></a>
-## 7.8 CICD Tool Chain (use of, process, and scripts)]
+<a name="7.7"></a>
+## 7.7 CICD Tool Chain (use of, process, and scripts)]
 
-Placeholder to describe the CICD tool chain used in RI validations.  
+Placeholder to describe the CICD tool chain used in RI validations.
 
 Include flow diagram.
 
-<a name="7.9"></a>
-## 7.9 Jenkins Setup & Job Creation
+<a name="7.8"></a>
+## 7.8 Jenkins Setup & Job Creation
 
 Placeholder to describe the process, access, steps, instance, etc, information for the setup of Jenkins, the jobs required for validation, and the results dashboard.
 
-<a name="7.10"></a>
-## 7.10 Compliance Validation (steps, process)
+<a name="7.9"></a>
+## 7.9 Compliance Validation (steps, process)
 
-Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.  
+Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.
