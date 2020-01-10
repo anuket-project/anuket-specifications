@@ -32,7 +32,6 @@
 | Chapter 06 | Lots of SME Feedback |
 | Chapter 07 | Still Developing Content |
 | Chapter 08 | Still Developing Content |
-| Chapter 08-Annex | Still Developing Content |
 | Chapter 09 | Still Developing Content |
 | Chapter 10 | Initial Framework Only |
 | Appendix A | Initial Framework Only |
@@ -47,7 +46,6 @@
 * [Chapter 06 - External Interfaces](chapters/chapter06.md)
 * [Chapter 07 - Security Guidelines](chapters/chapter07.md)
 * [Chapter 08 - Compliance, Verification, and Certification](chapters/chapter08.md)
-* [Chapter 08 Annex - Test Case Repository for Compliance, Verification, and Certification](chapters/chapter08-annex.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
 * [Appendix A - VNF Design Guidelines](chapters/appendix-a.md)
