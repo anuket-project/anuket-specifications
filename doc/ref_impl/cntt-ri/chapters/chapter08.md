@@ -14,6 +14,5 @@
 <a name="8.2"></a>
 ## 8.2 Heading
 
-
 <a name="8.3"></a>
 ## 8.3 Heading

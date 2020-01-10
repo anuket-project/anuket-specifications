@@ -16,7 +16,13 @@
   * [5.1 Feature Availability](#5.1)
   * [5.2 Hardware-Dependent Coding](#5.2)
   * [5.3 Current CNTT Policies](#5.3)
-* [6. Available Specifications](#6.0)
+
+
+## Available Specifications
+* [Reference Model](../ref_model)
+* [Reference Architecture](../ref_arch)
+* [Reference Implementation](../ref_impl)
+* [Reference Certification](../ref_cert)
 
 <a name="1.0"></a>
 ## 1. Overview
@@ -193,11 +199,3 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 - SR-IOV mitigates the need for duplicated servicing of interrupts from unbuffered (i.e. small buffer) NICs. However, it does not reduce the number of frame reception driven interrupts which much be serviced.
 - SR-IOV increases the Fabric management complexity, as encapsulation must be applied by the ToR/Leaf interface and the encapsulation must be continually updated as VNF interfaces (i.e. vNICs) and/or networks are added/deleted from Tenant(s) served by that interface. Therefore, performance isn't the only factor; fabric touch points and Service Chaining must also be considered.
 - Indications are that technologies such as DPDK, VPP, FD.io and others offer comparable throughput, today.<sup>(Citations Needed)</sup>
-
-
-<a name="6.0"></a>
-## 6. Available Specifications
-* [Reference Model](../ref_model)
-* [Reference Architecture](../ref_arch)
-* [Reference Implementation](../ref_impl)
-* [Reference Certification](../ref_cert)
