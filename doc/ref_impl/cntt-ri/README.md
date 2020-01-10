@@ -7,7 +7,7 @@ This is the OPNFV based Reference Implementation.
 ## Release Information
 **Release: _1.0-alpha_**
 
-**Version: _0.0_**
+**Version: _1.0_**
 
 **Release Date: _10th January 2020_**
 

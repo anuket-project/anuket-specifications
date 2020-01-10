@@ -6,7 +6,7 @@
 ## Release Information
 **Release: _3.0-alpha_**
 
-**Version: _0.0_**
+**Version: _1.0_**
 
 **Release Date: _10th January 2020_**
 
