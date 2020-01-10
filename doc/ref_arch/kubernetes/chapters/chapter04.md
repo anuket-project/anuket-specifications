@@ -31,14 +31,14 @@ In order for a Host OS to be compliant with this Reference Architecture it must 
 - A deb/rpm compatible distribution of Linux (this must be used for the master nodes, and can be used for worker nodes).
 - A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is focussed on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, etc.
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
-- In order to support `req.gen.cnt.03` and `req.lcm.gen.01` and `req.lcm.adp.04`, the Host OS must be disposable and therefore the configuration of the Host OS (and associated infrastructure such as VM or bare metal server) must be consistent - e.g. the system software and configuration of that software must be identical apart from those areas of configuration that must be different such as IP addresses and hostnames.
+- In order to support `req.gen.cnt.03` (immutable infrastructure), the Host OS must be disposable, meaning the configuration of the Host OS (and associated infrastructure such as VM or bare metal server) must be consistent - e.g. the system software and configuration of that software must be identical apart from those areas of configuration that must be different such as IP addresses and hostnames.
+- This approach to configuration management supports `req.lcm.gen.01` (automated deployments)
 
 Table 4-1 lists the Linux kernel versions that comply with this Reference Architecture specification.
 
 |OS Family|Version(s)|Notes|
 |---|---|---|
 |Linux|3.10+||
-|Linux|4+||
 |Windows|1809 (10.0.17763)|For worker nodes only|
 
 <p align="center"><b>Table 4-1:</b> Compliant OS Kernels</p>
@@ -52,7 +52,7 @@ Table 4-1 lists the Linux kernel versions that comply with this Reference Archit
 > * Which optional features are used and which optional API-s are available
 > * Which [alfa or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
 
-The distribution and version of Kubernetes used must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) which lists all those that are Certified as being conformant with the CNCF Kubernetes specification.  In order to align with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), a Reference Implementation must use one of three latest minor versions (`n-2`) - e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15.
+In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), a Reference Implementation must use one of three latest minor versions (`n-2`) - e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15. The Kubernetes distribution or product that is used in the RI must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) and marked (`X`) as conformant for the Kubernetes version that is being used.
 
 This Reference Architecture also specifies:
 
