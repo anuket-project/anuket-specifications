@@ -19,7 +19,7 @@
 * [6.13 Trusted Registry](#6.13)
 * [6.14 Orchestration & Container Manager](#6.14)
 * [6.15 Security Parameters](#6.15)
-* [6.16 Run-time Security](#6.16)
+* [6.16 Isolation](#6.16)
 
 <a name="6.1"></a>
 ## 6.1 Introduction
@@ -158,7 +158,7 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Kubernetes Control Plane: The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.
 
 <a name="6.15"></a>
-##  6.14  Isolation
+##  6.16  Isolation
 ### VM vs. Container Isolation
 Sometimes container isolation is compared directly with VM based isolation, with the conclusion '*there are issues with container isolation, it is not as good as VM isolation*'. Such 1:1 comparison is not reasonable because VM and container based isolation are fundamentally different:
 - VMs: hard isolation, in the layers underlying the application SW
