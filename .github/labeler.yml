@@ -178,5 +178,5 @@ repo:
   - doc/ref_arch/kubernetes/chapters/appendix-a.md
   
 # Add 'Technical Steering' label to the generic README for all Reference Architectures
-"Technical Steering"
+"Technical Steering":
   - doc/ref_arch/README.md
