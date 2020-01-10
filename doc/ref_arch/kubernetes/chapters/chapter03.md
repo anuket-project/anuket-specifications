@@ -1,7 +1,7 @@
-[<< Back](../../openstack)
+[<< Back](../../kubernetes)
 
 # 3. High Level Architecture
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 
@@ -103,13 +103,34 @@ When it comes to Kubernetes, the important interface that we need to consider fo
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
-> This chapter should discuss networking related considerations of container network services, like:
-> * Ingress and any limitations on protocol or raw interface support
-> * Dependencies on external loadbalancers
-> * Regular service mesh related considerations
-> * Network Service Mesh related considerations
-> * Number of interfaces and IP addresses to be supported by a pod
-> * IPv6 single and dual stack needs
+Because `req.inf.ntw.01` requires the architecture to support CNI and `req.inf.ntw.16` requires the capability to attach several network interfaces to the pods the architecture must support a CNI metaplugin/CNI multiplexer.
+
+A CNI metaplugin/CNI multiplexer is capable to attach several interfaces, using different other CNI plugins, to a pod. The different network characteristics of the interfaces, which require different networking technologies require different CNI plugins.
+
+Inter node communication required by `req.inf.ntw.02` must be served by a CNI plugin which complies with the default K8s networking assumptions.
+
+There are two types of low latency and high throughput networks required by `req.inf.ntw.04`. Network used for signalling traffic are more demanding than what an overlay network can handle, but still does not need the usage of user space networking. Due to the nature of signalling protocols used, this type of networks require the NAT-less communication stated by `req.inf.ntw.03`. Due to the combination of these two requirements networks with these characteristics must be served by a CNI plugin with IPVLAN or MACVLAN support.
+
+The low latency, high throughput networks for handling the user plane traffic require the capability to use an user space networking technology.
+
+> Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as an additional feature and still be compliant with CNTT.
+
+> Editors note: The possibility to SR-IOV for DPDK is under discussion.
+
+As `req.inf.ntw.14` mandates the architecture must enable the integration of different SDN solutions via their respective CNI integration.
+
+> Note: An SDN solution can manage the pod networks via the Kubernetes API or can have a CNI integration.
+
+The architecture must support telecom equipment networking where the CNF networks are set up by the operator's network administrators. This is why, as `req.inf.ntw.10` requires, the architecture must provide a set of abstract management API-s to manage the network connectivity of the CNF pods.
+The API must support multiple tenants and must require elevated acces rights to manipulate infrastructure related API objects as these operations require reconfiguration of the physical network infrastructure.
+
+To fullfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and hugepages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+
+The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads.
+
+As Kubernetes Ingress, Egress and Services have no support for all the protocols needed in telecommunication environments (Diameter, SIP, LDAP, etc) and their capacity is limited, the architecture must enable the usage of alternative load balancers, like external or built into the application. Management of external load balancers must be possible via Kubernetes API objects.
+
+The well known service meshes are "application service meshes" and deal with the application layer 7 protocols (eg.: HTTP) only. Therefore, their support is not required in the architecture.
 
 > Refer to software profile features [here](../../../ref_model/ref_model/chapters/chapter05.md#523-virtual-networking) and hardware profile features [here](../../../ref_model/ref_model/chapters/chapter05.md#543-network-resources).
 

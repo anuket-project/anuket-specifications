@@ -1,12 +1,12 @@
 [<< Back](../)
 
-# 3. NFVI Test Case Requirements
+# 3. NFVI Compliance Verification Test Case Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
-* [3.2 Assumptions](#3.2)
-* [3.3 Requirement Type](#3.3)
+* [3.2 Generic Requirements](#3.2)
+* [3.3 Requirement Types](#3.3)
 * [3.4 Profile Catalog](#3.4)
 * [3.5 Software & Hardware Reference](#3.5)
 * [3.6 Options & Extensions](#3.6)
@@ -17,35 +17,81 @@
   * [3.8.2 Resiliency Measurements](#3.8.2)
 * [3.9 NFVI Test Cases](#3.9)
 
+
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-> Scope of this chapter is to have a list of test cases needed (a detailed table of sort)
+The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
+
 
 <a name="3.2"></a>
-## 3.2 Assumptions
+## 3.2 Generic Requirements on Test Cases
 
-Content to be written:
-- Assumptions:  Automatable, Integrated with CICD tool chain
+All test cases must fullfil the generic requirements listed in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
+
+In addition, for test cases targeting the NFVI compliance program, the following requirements must be met:
+
+| Reference         | Description                                                                                                              |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------|
+| x                 | All NFVI test cases *must* be automated. Once the pre-conditions of a test case are met, i.e., the system under test is configured and in a state according to the pre-conditions of the particular test case, no manual steps must be required to run a test case to completion.   |
+| x                 | All NFVI test cases *must* be implemented using publicly available open source tools. This enables access to test tools and test case implementations to all interested parties and organizations.  |
+| x                 | All NFVI test cases *must* be integrated and run in the OPNFV CI/CD pipeline. This requirement ensures that test cases are functionally correct, reliable, mature and pass on the NFVI reference implementation.   |
+| x                 | All NFVI test cases *must* treat the NFVI platform as a black box. In particular, test cases must not perform actions on or change the state of the system under test outside the scope of well-defined APIs as listed by RA1. This requirement ensures applicability of test cases across different implementations: reference implementations as well as commercial implementations.     |
+
+
 
 <a name="3.3"></a>
-## 3.3 Requirement Type
+## 3.3 Requirement Types
 
-Content to be written:
--  Type of requirement:  Bare metal, API, etc
+The compliance and certification program intends to validate four different types of requirements and system properties:
+
+* API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md)).
+
+* Performance: Test cases covering this type of requirement measure specific performance characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+
+* Resilience: Test cases covering this type of requirement measure specific resilience characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+
+* Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to CNTT/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
+
+The extend to which these different types of requirements are included in the compliance and certification test suite is subject to the availability of test cases. See Section [NFVI Test Cases](chapter03.md#39-nfvi-test-cases).
+
+
 
 <a name="3.4"></a>
 ## 3.4 Profile Catalog
 
-Content to be written:
--  Table showing Profile Catalog
+Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines three software profiles, targeting three different use cases:
+
+* Basic
+* Network intensive
+* Compute intensive
+
+The test cases selected for validating compliance of the three profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
+
+TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
+
 
 <a name="3.5"></a>
 ## 3.5 Software & Hardware Reference
 
+The LFN-based compliance and certification program comprises three distinct types of NFVI deployment and runtime environments:
+
+ 1. A CNTT reference implementation deployed in the OPNFV CI/CD environment,
+ 2. A commercial NFVI product deployed in a vendor's internal development and testing environment, and
+ 3. ACNTT reference implementation of a commercial NFVI product deployed in a 3rd party lab providing testing and certification services.
+
+The test tooling, harnesses and corresponding test cases which are part of the compliance and certification test suite must be capable of running across all of those environments. This results in the following list of requirements:
+
+| Reference         | Description                                                                                                              |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------|
+| x                 | NFVI test cases *must not* interact with remote (Internet) services apart from downloading container or VM images. In particular, test tools and test cases must not automatically upload test data to any system or service run by LFN or GSMA. The purpose of this requirement is to protect the confidentially of (intermediate) test data. |
+| x                 | NFVI test cases *must* support a means of running in an internal enterprise lab environment. This could be achieved by either i) natively supporting proxied Internet connectivity and non-public DNS servers or ii) by providing a high-level description of remote dependencies (e.g., container and VM images, network services (DNS), etc.) such that local mirrors can be set up.  |
+
+
 Content to be written:
 - Identify SW Reference
 - Identify HW Reference
+
 
 <a name="3.6"></a>
 ## 3.6 Options & Extensions
@@ -53,6 +99,7 @@ Content to be written:
 Content to be written:
 - Options Available / Configured
 - Extensions Available / Configured
+
 
 <a name="3.7"></a>
 ## 3.7 Measurement Criteria
@@ -287,8 +334,3 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 <a name="3.8.2"></a>
 #### 3.8.2 Resiliency Measurements
 
-
-<a name="3.9"></a>
-## 3.9 NFVI Test Cases
-
-> we need to have list of NFVI test cases in here.

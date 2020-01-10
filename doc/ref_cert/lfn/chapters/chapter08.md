@@ -90,14 +90,20 @@ different pools of virtual machines.
 
 Here are the functional tests (>2000) running in OpenStack gates integrated in
 Functest Smoke (see
-[Functest daily jobs](https://build.opnfv.org/ci/view/functest/job/functest-iruya-daily/190/) for more details):
+[Functest daily jobs](https://build.opnfv.org/ci/job/functest-hunter-daily/392/)
+for more details):
 
 | Testcases                  | Gates              |
 | :------------------------- | :----------------- |
+| neutron-tempest-plugin-api | Neutron            |
+| tempest_cinder             | Cinder             |
+| tempest_keystone           | Keystone           |
+| rally_sanity               | General            |
+| refstack_defcore           | General            |
 | tempest_full               | General            |
 | tempest_slow               | General            |
 | tempest_scenario           | General            |
-| neutron-tempest-plugin-api | Neutron            |
+| neutron_trunk              | Neutron            |
 | patrole                    | Patrole            |
 | barbican                   | Barbican           |
 | networking-bgpvpn          | Networking BGP VPN |

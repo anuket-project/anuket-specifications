@@ -426,23 +426,25 @@ n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
 
-Multiple persistent storage extensions can be attached to virtual compute instances for data storage. Each extension can be configured with the required performance category.
+Persistent storage is associated with VNFs via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-19. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
-.conf |Read IO/s |Write IO/s Read |Throughput (MB/s) |Write Throughput (MB/s)
----|---|---|---|---
-.bronze |Up to 3K |Up to 15K |Up to 180 |Up to 120
-.silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400
-.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400
+Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
+
+.conf |Read IO/s |Write IO/s | Read Throughput (MB/s) |Write Throughput (MB/s) |Max Ext Size
+---|---|---|---|---|---
+.bronze |Up to 3K |Up to 15K |Up to 180 |Up to 120 |16TB
+.silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400 |1TB
+.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400 |1TB
 
 <p align="center"><b>Table 4-19:</b> Storage Performance Profiles</p>
 
 Note, performance is based on a block size of 256KB or larger.
 
+<!---
 <a name="4.2.3.1"></a>
-
 #### 4.2.3.1 Available Storage Extensions
 The following table defines persistent storage extensions that can be provided to VNFs for data storage. More than one storage extension can be provided to a single VNFC. The option selected determines both the size and the performance of the extension.
-
+//
 | .conf | capacity | Read IOPS | Write IOPS | Read Throughput (MB/s) | Write Throughput (MB/s) |
 |----------|----------|------------|------------|------------------------|-------------------------|
 | .bronze1 | 100GB | Up to 3K | Up to 15K | Up to 180 | Up to 120 |
@@ -454,8 +456,10 @@ The following table defines persistent storage extensions that can be provided t
 | .gold1 | 100GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
-
+//
 <p align="center"><b>Table 4-20:</b> Storage Extension Options</p>
+--->
+Table 4-20: Reserved
 
 <a name="4.2.4"></a>
 ### 4.2.4 Instance types
