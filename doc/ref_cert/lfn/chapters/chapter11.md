@@ -26,14 +26,23 @@
 <a name="11.3"></a>
 ## 11.3 Automation Gaps
 
-- Provide details of any automation gaps which require new/modified automation tools, or suites
+Here is the automation gap already tracked by an issue in CNTT:
+- [new RI deployment container](https://github.com/cntt-n/CNTT/issues/828)
 
 <a name="11.4"></a>
-## 11.4 Test Case Gaps (analysis)
+## 11.4 Test Case Gaps
 
-- Provide details/analysis of Test Case gaps which required addition/editing of existing test suites, or creation of new suites altogether
+Here are the test case gaps already tracked by issues in CNTT:
+- [update and integrate heat-tempest-plugin in Functest](https://github.com/cntt-n/CNTT/issues/483)
+- [integrate KloudBuster in Functest](https://github.com/cntt-n/CNTT/issues/508)
+- [port YardStick testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/509)
+- [port Bottlenecks to Xtesting](https://github.com/cntt-n/CNTT/issues/511)
+- [port StorPerf testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/673)
+- [port NFVbench testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/865)
+- [add tempest-stress in Functest](https://github.com/cntt-n/CNTT/issues/916)
 
 <a name="11.5"></a>
 ## 11.5 Framework Gaps
 
-- Provide details/analysis of Test Framework Gaps which required addition/editing of existing frameworks, incompatibility with frameworks, depreciation of frameworks.
+Here is the framework gap already tracked by an issue in CNTT:
+- [port VTP test cases to Xtesting](https://github.com/cntt-n/CNTT/issues/917)
