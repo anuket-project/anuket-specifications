@@ -160,7 +160,19 @@ Caveats:
 
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/Figure_4_1_Indicative_OpemStack_Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/Figure_4_1_OpenStack_Network_Layout_20200110.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
+
+| Network | Description | Characteristics |
+|----------|---------|--------------|
+| Provisioning & Management | Initial OS bootstrapping of the servers via PXE, deployment of software and thereafter for access from within the control plane. | Security Domain: Management<br />Externally Routable: No<br />Connected to: All nodes | 
+| Internal API | Intra-OpenStack service API communications, messaging and database replication | Security Domain: Management<br />Externally Routable: No <br />Connected to: All nodes except foundation | 
+| Storage Management | Backend connectivity between storage nodes for heartbeats, data object replication and synchronisation | Security Domain: Storage <br />Externally Routable: No <br />Connected to: All nodes except foundation | 
+| Storage Front-end | Block/Object storage access via cinder/swift | Security Domain: Storage<br />Externally Routable: No<br />Connected to: All nodes except foundation | 
+| Tenant | VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e. RFC1918 re-usable private networks as controlled by cloud administrator | Security Domain: Underlay<br />Externally Routable: No <br /> Connected to: controllers and computes | 
+| External API | Hosts the public OpenStack API endpoints including the dashboard (Horizon) | Security Domain: Public<br />Externally routable: Yes<br />Connected to: controllers | 
+| External Provider (FIP) | Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918 private networks | Security Domain: Data Centre<br />Externally routable: Yes<br />Connected to: controllers, OVS computes | 
+| External Provider (VLAN) | External Data Centre L2 networks (VLANs) that are directly accessible to the project. Note: External IP address management is required | Security Domain: Data Centre<br />Externally routable: Yes<br />Connected to: OVS DPDK computes | 
+| IPMI / Out of Band | The remote “lights-out” management port of the servers e.g. iLO, IDRAC / IPMI / Redfish | Security Domain: Management<br />Externally routable: No<br />Connected to: IPMI port on all servers | 
 
 A VNF application network topology is expressed in terms of VMs, vNIC interfaces with vNet access networks, and WAN Networks while the VNF Application VMs require multiple vNICs, VLANs, and host routes configured within the VM’s Kernel.
 
