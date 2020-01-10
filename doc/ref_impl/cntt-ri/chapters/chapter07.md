@@ -8,7 +8,7 @@
 * [7.2 Pre-requisites](#7.2)
 * [7.3 Requirements Gathering](#7.3)
 * [7.4 Access and Connectivity](#7.4)
-* [7.5 Descriptor File Preparations](#7.5)
+* [7.5 Available Installers](#7.5)
 * [7.6 Deployment Installer & Install Steps](#7.6)
 * [7.7 Deployment Validations](#7.7)
 * [7.8 CICD Tool Chain (use of, process, and scripts)](#7.8)
@@ -30,9 +30,22 @@ It is assumed that the reader of this chapter has the skill set to install Commo
 <a name="7.2"></a>
 ## 7.2 Prerequisites
 
-The following are pre-requisites to be completed in advance of software deployments:
+The following hardware was cabled and set up according to the OPNFV Pharos Specification:
 
-1.  Bare-metal validations: confirming delivery, rack, stack, of env and that env is "ready" for software deployments (e.g. BIOS, firmware, boot order, health, disk config, port / socket validations, MAC/NIC status, etc)
+| Node  | CPU Model | Memory | HDD           | SSD         | 1 GbE NIC | 10 GbE NIC |
+|-------|-----------|--------|---------------|-------------|-----------|------------|
+| Jump  | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 1     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 2     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 3     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 4     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+| 5     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
+
+Each server has all of 1GbE NICs connected to the same Extreme 480 1GbE switch, and all 10GbE NICs conneted to the
+same IZ1 switch as follows:
+
+<img src="../figures/ch07_pod10_switch_connectivity.png" title="Pod 10 Switch Connectivity">
+
 
 <a name="7.3"></a>
 ## 7.3 Requirements Gathering
@@ -45,12 +58,50 @@ Requirements gathering processes and steps:
 <a name="7.4"></a>
 ## 7.4 Access & Connectivity
 
-Logical steps for lab access and connectivity.
+This RI leverages OPNFV Pharos pod 10, which is hosted by Intel and requires VPN access.  Requests for VPN access must
+go through the OPNFV Infra Project by submitting a JIRA request for VPN access here: https://jira.opnfv.org/projects/INFRA
 
-Sample steps provided mimic those utilized for POD10 test lab access.
+Upon completion, the VPN credentials and certificate will be sent via email.
+
+Once VPN connectivity is established, the only available subnet is the "DMZ" network, which gives access directly to
+the Foundation (jump) node.  All interaction with the RI must be done through this node.  It is possible to use
+software such as sshuttle (https://sshuttle.readthedocs.io/en/stable/ ) to assist with routing inside the lab.
+
+As an example, the following command adds the External API subnet route via sshuttle, allowing direct access from the client
+side of the VPN into that subnet:
+
+`sshuttle -r root@10.10.100.20 10.10.105.0/24`
+
+This will allow the VPN client host to directly access the Horizon dashboard, as an example.
 
 <a name="7.5"></a>
-## 7.5 Descriptor File Preparations
+## 7.5 Available Installers
+
+
+### 7.5.1 Airship
+
+#### 7.5.1.1 Descriptor File Preparations
+
+Reference steps describing the use, creation, and implementation of descriptor files.  This is where the Airship Manifest
+files need to be documented:
+
+- Profiles
+- Hardware
+  - Server
+  - Device Aliases
+  - Disk Aliases
+- Nodes
+- Networks
+- Software
+- PKI-Catalog
+- Secrets
+- Actions
+
+#### 7.5.1.2 Deployment Installer & Install Steps
+
+### 7.5.2 Future Installers
+
+At this point, the RI is based on Airship, but can be extended to employ any other OpenStack distribution.
 
 Before getting into the details of descriptor file preparation, it is important to discuss what constitutes infrastructure description, and what are the options available- the related works. The term infrastructure is used to refer to both hardware and software components that form the NFV environment, on which the virualized network functions are run.
 As an end-user, one can define/describe the infrastructure using a select set of parameters. The below table categorizes these set of parameters, using which a user can describe the infrastructure, and which constitute any infrastructure definition. These parameters applies to any Installer available to the end-users, however, some installers may allow user to configure all parameters within a category, whereas some would allow just a subset of it. In addition, not all the categories would apply to all the installers.
@@ -216,7 +267,6 @@ Auto-generation phase involves generating certificates, which will be used by Ku
 - cp intel-pod10\_certs/\*.yaml site/intel-pod10/secrets/certificates/
 - mv site/intel-pod10 ../airship/site/
 
-
 #### Publishing
 
 The process of publishing involves submitting the manifests to opnfv-airship gerrit repo. It is important that the site-specific manifest, along with certificates, is present in &#39;site&#39; folder in opnfv-airship repository. This will be used for the deployment process and described in the subsequent section. An example record for pod-10 dashboard would be:
@@ -298,8 +348,13 @@ Once the software is successfully deployed, and the deploy.sh script terminates 
 
 In addition to that, users can also use these links to track the metrics and logs, respectively:
 
+
+Steps and procedures for installing and setting up the RI.
+Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Installer+Deployment+Guide
+
 - http://grafana-airship.intel-pod10.opnfv.org/login
 - http://kibana-airship.intel-pod10.opnfv.org/
+
 
 <a name="7.7"></a>
 ## 7.7 Deployment Validations
@@ -424,6 +479,8 @@ the following test cases are executed at the end.
 | opnfv/functest-vnf:hunter               | heat_ims                   | Success            |
 | opnfv/functest-vnf:hunter               | vyos_vrouter               | Success            |
 | opnfv/functest-vnf:hunter               | juju_epc                   | Success            |
+
+Description of the Functest suite and what is selected for validation testing.  Need to document the line between "validation of install" and "reference certification."  It has been stated that these might be one and the same, however deployment validation could be a simple smoke test prior to starting a full run.
 
 <a name="7.8"></a>
 
