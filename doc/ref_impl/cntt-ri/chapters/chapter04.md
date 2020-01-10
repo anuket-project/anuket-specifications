@@ -1,6 +1,8 @@
 [<< Back](../)
 
 # 4. Lab Requirements
+# 1. Overview
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 <a name="toc"></a>
 ## Table of Contents

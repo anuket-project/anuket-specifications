@@ -2,37 +2,37 @@
 
 # Certification within LFN
 
-This is the GitHub repository for CNTT-RC project within OPNFV.
+This is the LFN Based Reference Certification
 
 ## Release Information
 **Release: _0.0_**
 
 **Version: _0.0_**
 
-**Release Date: _xxx_**
+**Release Date: _10th January 2020_**
 
 ## Version History
 
 | Version | Date | Note
 | --- | --- | --- |
-| 0.0 | xxxx 2019 | First Release|
+| 0.0 | 10th January 2020 | First Initial Draft|
 
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 - Introduction | Initial Framework Only |
-| Chapter 02 - NFVI E2E C&V Framework Requirements | Initial Framework Only |
-| Chapter 03 - NFVI Test Case Requirements | Initial Framework Only |
-| Chapter 04 - NFVI TC Traceability to CNTT requirements | Initial Framework Only |
-| Chapter 05 - VNF E2E C&V Framework Requirements | Initial Framework Only |
-| Chapter 06 - VNF Test Case Requirements | Initial Framework Only |
-| Chapter 07 - VNF TC Traceability to CNTT Requirements | Initial Framework Only |
-| Chapter 08 - E2E Framework Integration | Initial Framework Only |
+| Chapter 01 - Introduction                               | Initial Framework Only |
+| Chapter 02 - NFVI E2E C&V Framework Requirements        | Initial Framework Only |
+| Chapter 03 - NFVI Test Case Requirements                | Initial Framework Only |
+| Chapter 04 - NFVI TC Traceability to CNTT requirements  | Initial Framework Only |
+| Chapter 05 - VNF E2E C&V Framework Requirements         | Initial Framework Only |
+| Chapter 06 - VNF Test Case Requirements                 | Initial Framework Only |
+| Chapter 07 - VNF TC Traceability to CNTT Requirements   | Initial Framework Only |
+| Chapter 08 - E2E Framework Integration                  | Initial Framework Only |
 | Chapter 09 - NFVI Tests Traceability to TC Requirements | Initial Framework Only |
-| Chapter 10 - VNF Tests Traceability to TC Requirements | Initial Framework Only |
-| Chapter 11 - Gap analysis and Development | Initial Framework Only |
+| Chapter 10 - VNF Tests Traceability to TC Requirements  | Initial Framework Only |
+| Chapter 11 - Gap analysis and Development               | Initial Framework Only |
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)

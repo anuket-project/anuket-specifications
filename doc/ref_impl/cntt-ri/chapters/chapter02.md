@@ -1,7 +1,7 @@
 [<< Back](../)
 
 # 2. Reference Implementation Requirements
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)

@@ -5,17 +5,17 @@
 This is Kubernetes based Reference Architecture
 
 ## Release Information
-**Release: _0.0_**
+**Release: _1.0-alpha_**
 
-**Version: _0.0_**
+**Version: _1.0_**
 
-**Release Date: _xxx_**
+**Release Date: _10th January 2020_**
 
 ## Version History
 
 | Version | Date | Note
 | --- | --- | --- |
-| 0.0 | xx 2019 | First Release|
+| 1.0-alpha | 10th January 2020 | Snezka Release|
 
 
 ## Overall Status

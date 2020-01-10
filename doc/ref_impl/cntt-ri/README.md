@@ -1,35 +1,35 @@
 [<< Back](../)
 
-# OPNFV CNTT-RI
+# Reference Implementation 1
 
-This is the GitHub repository for the first Reference Implementation of CNTT. This RI will make full use of and evolve the Installers, Test Fraweworks, automation CI pipeline within OPNFV. 
+This is the OPNFV based Reference Implementation. 
 
 ## Release Information
-**Release: _0.0_**
+**Release: _1.0-alpha_**
 
-**Version: _0.0_**
+**Version: _1.0_**
 
-**Release Date: _xxx_**
+**Release Date: _10th January 2020_**
 
 ## Version History
 
 | Version | Date | Note
 | --- | --- | --- |
-| 0.0 | 2nd August 2019 | First Release|
+| 1.0-alpha | 10th January 2020 | Snezka Release|
 
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 - Overview | Initial Framework Only |
-| Chapter 02 - Reference Implementation Requirements | Initial Framework Only |
-| Chapter 03 - NFVI + VNF Target State and Specification | Initial Framework Only |
-| Chapter 04 - Lab Requirements | Initial Framework Only |
-| Chapter 05 - Installer Requirements | Initial Framework Only |
-| Chapter 06 - Lab Operations | Initial Framework Only |
-| Chapter 07 - Integration | Initial Framework Only |
-| Chapter 08 - Gap analysis & Development | Initial Framework Only |
+| Chapter 01 - Overview                                  | Still Developing Content |
+| Chapter 02 - Reference Implementation Requirements     | Still Developing Content |
+| Chapter 03 - NFVI + VNF Target State and Specification | Still Developing Content |
+| Chapter 04 - Lab Requirements                          | Still Developing Content |
+| Chapter 05 - Installer Requirements                    | Still Developing Content |
+| Chapter 06 - Lab Operations                            | Initial Framework Only |
+| Chapter 07 - Integration                               | Still Developing Content |
+| Chapter 08 - Gap analysis & Development                | Initial Framework Only |
 
 
 ## Table of Contents
