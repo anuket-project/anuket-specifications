@@ -14,5 +14,6 @@
 <a name="6.2"></a>
 ## 6.2 Heading
 
-<a name="6.3"></a>q
+
+<a name="6.3"></a>
 ## 6.3 Heading
