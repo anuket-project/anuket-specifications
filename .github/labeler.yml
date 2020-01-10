@@ -4,6 +4,7 @@ repo:
 
 # Add 'RM Core' label to any change to one of the RM Chapter files within the doc dir
 "RM Core":
+  - doc/ref_model/README.md
   - doc/ref_model/chapters/chapter01.md
   - doc/ref_model/chapters/chapter02.md
   - doc/ref_model/chapters/chapter03.md
@@ -23,6 +24,7 @@ repo:
  
 # Add 'RA 1 Core' label to any change to one of the RA 1 Chapter files within the doc dir
 "RA 1 Core":
+  - doc/ref_arch/openstack/README.md
   - doc/ref_arch/openstack/chapters/chapter01.md
   - doc/ref_arch/openstack/chapters/chapter02.md
   - doc/ref_arch/openstack/chapters/chapter03.md
@@ -40,6 +42,7 @@ repo:
   
 # Add 'RA 2 Core' label to any change to one of the RA 2 Chapter files within the doc dir
 "RA 2 Core":
+  - doc/ref_arch/kubernetes/README.md
   - doc/ref_arch/kubernetes/chapters/chapter01.md
   - doc/ref_arch/kubernetes/chapters/chapter02.md
   - doc/ref_arch/kubernetes/chapters/chapter03.md
@@ -173,3 +176,7 @@ repo:
 "Appendix - A":
   - doc/ref_model/chapters/appendix-a.md
   - doc/ref_arch/kubernetes/chapters/appendix-a.md
+  
+# Add 'Technical Steering' label to the generic README for all Reference Architectures
+"Technical Steering"
+  - doc/ref_arch/README.md
