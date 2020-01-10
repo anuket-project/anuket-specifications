@@ -11,9 +11,7 @@
 * [1.3 Principles](#1.3)
 * [1.4 Scope](#1.4)
   * [1.4.1 Use Cases](#1.4.1)
-* [1.5 How this document works](#1.5)
-  * [1.5.1 Document Organization](#1.5.1)
-  * [1.5.2 Audience](#1.5.2)
+* [1.5 Audience](#1.5)
 * [1.6 Relationship to other industry projects](#1.6)
 * [1.7 Out of Scope Components](#1.7)
 * [1.8 Bogo-Meter](#1.8)
@@ -21,7 +19,7 @@
 
 <a name="1.1"></a>
 ## 1.1 Overview
-Initially organized early in 2019, the Common Network Function Virtualisation Infrastructure Telecom Taskforce (CNTT) was initially created in response to rapid changes in how networking applications are being designed, built and managed, plus a growing recognition of a perceived functional gap between the previous standard infrastructure models and the architectures needed to support Network Function Virtualization (NFV) applications.  Organizationally the Common Telco Network Function Virtualisation Infrastructure (NFVI)  project, jointly hosted by GSMA and the Linux Foundation, operates as an open committee responsible for creating and documenting an industry aligned Common NFVI Framework.  The CNTT group was created with the intent that it would create the NFVI framework, and eventually morph into an on-going project under the auspices of the GSMA and the Linux Foundation umbrellas.  The final on-going operational form of the group will be determined as the project evolves. 
+Initially organized early in 2019, the Common Network Function Virtualisation Infrastructure Telecom Taskforce (CNTT) was initially created in response to rapid changes in how networking applications are being designed, built and managed, plus a growing recognition of a perceived functional gap between the previous standard infrastructure models and the architectures needed to support Network Function Virtualization (NFV) applications.  Organizationally the Common Telco Network Function Virtualisation Infrastructure (NFVI)  project, jointly hosted by GSMA and the Linux Foundation, operates as an open committee responsible for creating and documenting an industry aligned Common NFVI Framework.  The CNTT group was created with the intent that it would create the NFVI framework, and eventually morph into an on-going project under the auspices of the GSMA and the Linux Foundation umbrellas.  The final on-going operational form of the group will be determined as the project evolves.
 
 <a name="1.1.1"></a>
 ## 1.1.1 Problem Statement
@@ -29,7 +27,7 @@ Based on informal conversations with many operators and developers, there is a r
 
  - Higher development costs due to the need to develop Virtual Network Functions (VNF) on multiple custom platforms for each operator
  - Increased complexities due to the need to maintain multiple versions of applications to support each custom environemnt
- - Lack of Testing and validation commonalities, leading to inefficiencies and increased time to market. While the operators will still do internal testing, but using an industry driven verification program based on a common NFVI would provide a head start. 
+ - Lack of Testing and validation commonalities, leading to inefficiencies and increased time to market. While the operators will still do internal testing, but using an industry driven verification program based on a common NFVI would provide a head start.
  - Slower adoption of cloud-native NFV applications and architectures.  A Common Telco NFVI may provide an easier path to methodologies that will drive faster cloud-native NFV application development.
  - Increased operational overhead due to the need for operators to integrate diverse and sometime conflicting VNF platform requirements.
 
@@ -49,7 +47,7 @@ All of this had led to a growing awareness of the need to develop more open mode
 
 The next step after the NFVI Reference Model has been identified and developed is to take the general model, which is purposely designed to be able to be applied to a number of technologies, and apply it to a discrete number of concrete and ultimately deployable Reference Architecture platforms. The intention is to chose the reference architectures carefully so that there will only be a small set of architectures that meets the specific requirements for supporting NFV and Telecom specific applications. Per the principles laid out in the Reference Model documentation, the Reference Architectures need to meet the following criteria as much as is practical:
 
-  - Initially should be based on widely established technology and systems used in the Telecom Industry.  This will help ensure a faster adoption rate because the operators are already familiar with the technology and might even have systems in production. Another advantage to this approach is a project faster development cycle. 
+  - Initially should be based on widely established technology and systems used in the Telecom Industry.  This will help ensure a faster adoption rate because the operators are already familiar with the technology and might even have systems in production. Another advantage to this approach is a project faster development cycle.
   - Subsequent architectures should be based on either additional established or promising emerging technologies that are chosen by the community members.  
 
 <a name="1.1.3"></a>
@@ -64,10 +62,10 @@ By providing a pre-defined environment with common capabilities, applications ar
 - Onboarding and certification
   - By defining abstracted infrastructure capabilities, and the metrics by which they are measured, the onboarding and certification process for both NFVI and VNFs can be standardized, reducing development time for the VNF developers and deployment and operational management costs for the operators standing up the NFVI environments.
   - Supply chain, procurement and assurance teams can then use these metrics to more accurately assess the most efficient / best value vendor for a given environment and network services requirement.
-  
+
 - Better utilization
   - Properly mapping VNFs to flavours to the underlying infrastructure, brings the potential for more efficient utilization, than needing to create specific configurations for each type of application in the infrastructure.  
-  
+
 In conclusion, to serve the stated objective building a common NFVI infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the Common Telco NFVI is documentation of a reference model, a select set of architectures and a set of validation and testing suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
 
 <a name="1.2"></a>
@@ -87,7 +85,6 @@ This section introduces the high-level principles of infrastructure abstraction 
       - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to review and vote to approve by the CNTT technical Working Group, such that one Architecture would be KVM-based and the other would be ESXi-based.
 
         >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, the infrastructure architecture designers might implement the Architecture as described in the reference document, however when there is a potential for incompatibility for  particular component, they would select their preferred option from one of the relevant annexes. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation.
-
 1. NFVI provides abstract and physical resources corresponding to:
    - Compute resources.
    - Storage resources.
@@ -108,6 +105,7 @@ This section introduces the high-level principles of infrastructure abstraction 
 1. Specific internal hardware details shall not be exposed above the Infra+VIM layers
    - This is in support of VNF abstraction, enabling portability across the Infra and simplification of VNF design
    - This pertains to features that operate at detailed levels of hardware granularity, such as EPA
+
 
 <a name="1.4"></a>
 ## 1.4 Scope
@@ -131,13 +129,13 @@ This document specifies:
   - **Certification programs**: This defines the requirements for certification and validation programs for both VNFs and NFVI.
   - **Test framework**: Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles.
 
-<!-- 
+<!--
 <a name="1.4.1"></a>
 ## 1.4.1 Use Cases
 Since the CNTT membership is primarily from the telecom and telecom supporting vendors communities, most of the use cases represent the interests of that community.  The following high-level use cases are used to inform and guide both the reference model and subsequent architectures and implementations.  Note that many of these use cases were taken from the work done by the OpenStack Foundation Edge Working Group.
 
-- **Mobile service provider 5G/4G virtual Radio Access Network (RAN) deployment and Edge Cloud B2B2X**: There are at least three use cases related to this (e.g. vRAN, VNF, Multi-access Edge Computing (MEC). While the use cases are different, the expectation is that they will run on the same infrastructure. So it makes sense to treat them together. 
-  1. vRAN: Here the focus on virtual Baseband Unit (BBU) which has stringent requirements on processing for timing controls with 'remote radio heads' 
+- **Mobile service provider 5G/4G virtual Radio Access Network (RAN) deployment and Edge Cloud B2B2X**: There are at least three use cases related to this (e.g. vRAN, VNF, Multi-access Edge Computing (MEC). While the use cases are different, the expectation is that they will run on the same infrastructure. So it makes sense to treat them together.
+  1. vRAN: Here the focus on virtual Baseband Unit (BBU) which has stringent requirements on processing for timing controls with 'remote radio heads'
   1. NFV: Here the focus is on running the Core applications as virtual machines at the edge. This includes, vEPC elements, vRouters, Virtual Firewall (vFW), Virtual Load Balancer (vLB)
   1. MEC: Here the focus is on running 3rd party or operator applications at the edge. The MEC resource pools could be supporting a variety of other MEC applications (smart city, v2x, consumer AR).
 - **Edge cloud service user**: For vRAN and NFV the user is the wireless network operator. For MEC it could be the operator, a 3rd party application provider or the wireless end-user.
@@ -145,12 +143,12 @@ Since the CNTT membership is primarily from the telecom and telecom supporting v
 - **Edge site(s)**: An operator's network could include thousands of sites. Each site could range from a handful of servers to dozens of racks.
 - **Connectviity reliability**: Front Haul reliability is driven by Radio requirements and is high. Backhaul reliability is driven by operator service requirements (5 9s)
 - **Edge Size**: medium to large
-- **Deployment infrastructure considerations / scaling**: 
+- **Deployment infrastructure considerations / scaling**:
 
    - Case 2: By splitting CU-DU (from BBU), vCU can run on the same NFVI edge computing platform that runs UPF(5G) ( or S/P-GW-U in 4G) and other VNFs including vFW and vLB. End users/devices traffic can be released at the clear demarcation point placing UPF in Edge DC. We can install Kubernetes based cloud on top of NFVI and put UPF(and other VNFs) in front of Kubernetes to carry the user's traffic to cloud native apps in the Kubernetes.
    - Case 1: 1- The vBBU deployment is driven by need for : easy life cycle management, vendor independence, automatic scaling (and energy savings). 2- The NFV deployments is driven by need for automatic scaling and vendor independence. 3- The MEC deployment is driven by opportunities for new revenue streams possibly from new sources.
    - Case 2: 1) Edge Cloud B2B2X model In the traditional Telco service provider model, the Telco provided services(the first B of B2B2X) directly to either individual or corporate consumers to increase revenue. In the Edge Cloud B2B2X model, Telco collaborates with diverse partners in other industries(the second B of B2B2X)to deliver added value to consumers/devices(X of B2B2X) through a wide range of the biz service providers. Here, the value that Telco Edge Cloud can provide biz service providers can take various forms, such as IoT & Edge Intelligence, Containerized micro service, AI framework, and other advanced ICT technologies, user interface technologies, and security tools.
-    
+
 More use cases to pull in:  https://docs.openstack.org/arch-design/use-cases.html
 
 >_**Comment**: This section is still under development._
@@ -158,37 +156,18 @@ More use cases to pull in:  https://docs.openstack.org/arch-design/use-cases.htm
 -->  
 
 <a name="1.5"></a>
-## 1.5 How this document works
-Within the framework of the Common Telecom NFVI vision, there are three levels of documents needed to document the components and allow the practical application of the systems. They are, as highlighted in **Figure 1-2**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**.
-
-<p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> Scope of CNTT</p>
-
-<a name="1.5.1"></a>
-## 1.5.1 Document Organization
-
-- **Reference Model**: (_This document_) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. It written at a high enough level that as new **Reference Architectures** and **Reference Implementations** are added, the model document should require few or no changes. Additionally, the Reference Model is intended to be neutral towards VMs or Containers.
-- **Reference Architecture**: High level NFVI system components and their interactions that takes the Reference Model goals and maps them to something that has components in the real world.  It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.  The intention whenever possible to use existing elements, rather than specify entirely new architectures in support of the high-level goals specified in the **Reference Model**.
-- **Reference Implementation**: Builds on the requirements and specifications developed in the other two documents and adds details so that it can be implemented.  Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
-
-Below is a diagram of the different artifacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
-
-<p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-3:</b> Description of the possible different levels of CNTT artefacts</p>
-
-<a name="1.5.2"></a>
-## 1.5.2 Audience
+## 1.5 Audience
 The document starts from the abstract and as it progresses it increasingly gets into more details.  It follows the traditional design process where you start from core principles, progress to abstract concepts and models, then finish with operational considerations, such as security and lifecycle management.
 
 - **Chapter 01 - Introduction**: Overall scope of the Reference Model document including the goals and objectives of the project.  
   >	**Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Chapter 02 - VNF requirements & Analysis**: High level requirements and core principles needed to understand how the model was developed.  Addresses the thinking behind the decisions that were made. 
+- **Chapter 02 - VNF requirements & Analysis**: High level requirements and core principles needed to understand how the model was developed.  Addresses the thinking behind the decisions that were made.
   >	**Audience**: This chapter is written for architects and others with an interest in how the decisions were made.
 - **Chapter 03 - Modelling**:  The high-level NFVI model itself.  
   >	**Audience**: This chapter is written for architects and others who wants to gain a quick high-level understanding of the model.
 - **Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue**:  Details about the capabilities needed to support the various types of VNFs and how the capabilities are applied to the model. The details regarding T-shirt sizes and other considerations are found in this section.
   >	**Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
-- **Chapter 05 - Featureset and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the NFVI.  It describes the software and hardware capabilities and configurations recommended for the different types of NFVI profiles. 
+- **Chapter 05 - Featureset and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the NFVI.  It describes the software and hardware capabilities and configurations recommended for the different types of NFVI profiles.
   > **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
 - **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communication with the NFVs themselves and any other external components.
   >	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or write VNF applications that use the APIs.
@@ -217,21 +196,21 @@ The Common Telco NFVI work is not done in a vacuum.  The intention from the begi
  - OSM (ETSi Open Source MANO project)
  - VMWare (While not an Open Source project, VMWare is a commonly used platform used for VNF deployments in the telecom industry)
 
-The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-4** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
+The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-2** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Mapping to ETSI NFV architecture</p>
+<p align="center"><b>Figure 1-2:</b> Mapping to ETSI NFV architecture</p>
 
-Following the ETSI model, **Figure 1-4** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, the VIM is included in the Common Telco NFVI scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the NFVI.  These interactions and interfaces will be detailed in  **Chapter 7 "API & Interfaces"**.
+Following the ETSI model, **Figure 1-2** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, the VIM is included in the Common Telco NFVI scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the NFVI.  These interactions and interfaces will be detailed in  **Chapter 7 "API & Interfaces"**.
 
-The Common Telco NFVI is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG). 
+The Common Telco NFVI is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
 Once the Common Telco NFVI Reference Models and Architectures are implemented and tested via OPNFV (Reference Implementations), commercial products adhering to these specifications can undergo an enhanced OVP’s VNF and NFVI compliance testing for establishing baseline conformance and offering interoperability.  More details about the testing and verification requirements are found in **Chapter 08 - Compliance, Verification, and Certification**.
 
 <!--
 There will be dedicated OVP hacking tracks to facilitate VNF vendor onboarding and testing. More information on the work and how to get involved can be found at the following links.  
-- https://www.lfnetworking.org/ovp. 
-- Information on the existing 11 OPNFV Verified products to date is available here: https://nfvi-verified.lfnetworking.org/#/ 
+- https://www.lfnetworking.org/ovp.
+- Information on the existing 11 OPNFV Verified products to date is available here: https://nfvi-verified.lfnetworking.org/#/
 -->
 
 The Common Telco NFVI will collaborate with the respective API workgroups of SDOs (ETSI, MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
@@ -239,9 +218,9 @@ The Common Telco NFVI will collaborate with the respective API workgroups of SDO
 <a name="1.7"></a>
 ## 1.7 Out of Scope Components
 While the nature of the NFVI reference model might seem quite broad, the following areas are not at this time part of the scope of this effort.  
-- Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the document so that it is general enough that any vendor hardware can be used in the implementation without making significant changes to the model. 
+- Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the document so that it is general enough that any vendor hardware can be used in the implementation without making significant changes to the model.
 - VNF and application specifications: Other than the API interfaces when they directly need to touch the VNFs themselves, the intention is to assume the VNF application is a blackbox that the NFVI is providing resources to.  The majority of interactions for lifecycle management of the VNFs will be through the VIM whenever possible.
-- Company specific requirements: This document is designed to be general enough that most operators and others in the Open Source communities will be able 
+- Company specific requirements: This document is designed to be general enough that most operators and others in the Open Source communities will be able
 
 <!--Separate document w/labels/artifacts
 Not part of model but will be applicable to architecture -->
@@ -266,5 +245,5 @@ The first reference architecture is based on Openstack, but the intention is to 
  - GPU/FPGA
  - Cyborg project
  - More Container infrastructure and cloud-native VNFs
- 
-In addition to adding a container-based reference architecture in the next iteration, the CNTT will continue to grow capabilities for supporting compliance and verification testing, providing a lifecycle approach for NFVI. The CNTT under the auspices of the LFN, GSMA and OPNFV look forward to continuing the open source definition and implementation work that powers the community and ecosystem, so that these new technologies can be more quickly and easily integrated into global service provider networks. 
+
+In addition to adding a container-based reference architecture in the next iteration, the CNTT will continue to grow capabilities for supporting compliance and verification testing, providing a lifecycle approach for NFVI. The CNTT under the auspices of the LFN, GSMA and OPNFV look forward to continuing the open source definition and implementation work that powers the community and ecosystem, so that these new technologies can be more quickly and easily integrated into global service provider networks.

@@ -18,6 +18,8 @@
   * [4.3.9 LCM](#4.3.9)
   * [4.3.10 Assurance](#4.3.10)
   * [4.3.11 Security](#4.3.11)
+  * [4.3.12 Resilience](#4.3.13)
+  * [4.3.13 Bare-metal validations](#4.3.14)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -683,3 +685,9 @@ by Functest VNF tests in the other cases.
 
 <a name="4.3.11"></a>
 ### 4.3.11 Security
+
+<a name="4.3.12"></a>
+### 4.3.13 Resilience
+
+<a name="4.3.13"></a>
+### 4.3.14 Bare-metal validations

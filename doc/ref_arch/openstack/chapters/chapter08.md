@@ -27,7 +27,7 @@ Negotiation/Hand Shake API - VNFs and NFVIs should be able to negotiate on certa
 
 * Packet Acceleration Request (e.g Hardware Acceleration) - Reference model states packet acceleration should be supported. OpenStack does not have such support that could be easily used or automated for deployments of VNFs/NFVIs. 
 
-* Public and Multi-Cloud  - The framework offered by OpenStack does not support multi-cloud of public deployments, along with the core deployments
+* Public and Multi-Cloud  - The framework offered by OpenStack does not support multi-cloud deployments, along with the core deployments
 
 
 
