@@ -23,13 +23,13 @@ This is Kubernetes based Reference Architecture
 | Chapter | Status |
 | --- | --- |
 | Chapter 01 | Still Developing Content |
-| Chapter 02 | Initial Framework Only |
-| Chapter 03 | Initial Framework Only |
-| Chapter 04 | Initial Framework Only |
+| Chapter 02 | Still Developing Content |
+| Chapter 03 | Still Developing Content |
+| Chapter 04 | Still Developing Content |
 | Chapter 05 | Initial Framework Only |
-| Chapter 06 | Initial Framework Only |
+| Chapter 06 | Still Developing Content |
 | Chapter 07 | Initial Framework Only |
-| Chapter 08 | Initial Framework Only |
+| Chapter 08 | Still Developing Content |
 | Appendix A - Guidance for VNF-to-CNF Transition | Initial Framework Only |
 
 

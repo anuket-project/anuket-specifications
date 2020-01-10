@@ -85,7 +85,7 @@ The test tooling, harnesses and corresponding test cases which are part of the c
 | Reference         | Description                                                                                                              |
 |-------------------|--------------------------------------------------------------------------------------------------------------------------|
 | x                 | NFVI test cases *must not* interact with remote (Internet) services apart from downloading container or VM images. In particular, test tools and test cases must not automatically upload test data to any system or service run by LFN or GSMA. The purpose of this requirement is to protect the confidentially of (intermediate) test data. |
-| x                 | NFVI test cases *must* support either proxied Internet connectivity or an offline mode if additional container or virtual machine images need to be downloaded at runtime.  |
+| x                 | NFVI test cases *must* support a means of running in an internal enterprise lab environment. This could be achieved by either i) natively supporting proxied Internet connectivity and non-public DNS servers or ii) by providing a high-level description of remote dependencies (e.g., container and VM images, network services (DNS), etc.) such that local mirrors can be set up.  |
 
 
 Content to be written:
@@ -334,56 +334,3 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 <a name="3.8.2"></a>
 #### 3.8.2 Resiliency Measurements
 
-
-<a name="3.9"></a>
-## 3.9 NFVI Test Cases
-
-This section lists all NFVI test cases, sorted by requirement type, which are part of the LFN-based compliance and certification program.
-
-
-#### 3.9.1 Functional (API) test cases
-
-The primary tool in the OpenStack domain for implementing functional tests is Tempest. Tempest test cases follow a naming scheme which allows to determine which OpenStack service is being targeted by a given test case. Test tools utilizing Tempest, e.g., Functest or Rally, often make use of regular expressions to define, by means of white- and blacklisting, a concrete set of Tempest tests for execution.
-
-Typically, each test case is calling a (set of) API(s) of a targeted OpenStack service. In addition, so called "scenario tests" call APIs across different OpenStack services in order to test  a specific workflow, for instance, creating virtual networks, spawning VMs on those networking, verifying SSH connectivity into those VMs and finally tearing down all newly created resources.
-
-Chapter [Interfaces and API](../../../ref_arch/openstack/chapters/chapter05.md) of the reference architecture RA1 defines the APIs and interfaces expected to be exposed by a system under test. This list guides the selection of Tempest test cases (along with the generic test case requirements). Please note that a compliance and certification program typically requires to list the full set of test cases which are part of the test scope. In case of Tempest tests, this list is prohibitively long. So instead of listing each test case individually, regular expressions are used to white- and blacklist test cases.
-
-
-* neutron-tempest-plugin-api
-
-* tempest-cinder
-
-* tempest-keystone
-
-* tempest-full
-
-* tempest-scenario
-
-* tempest-slow
-
-TODO: to be filled with regexs from [here](https://raw.githubusercontent.com/opnfv/functest/master/docker/smoke-cntt/testcases.yaml)
-
-
-
-Rally is a tool build on top of Tempest aiming to generate load on the OpenStack control plane by running Tempest tests in succession and in parallel.
-
-
-* rally-sanity
-
-
-
-
-#### 3.9.2 Performance test cases
-
-> none defined yet
-
-
-#### 3.9.3 Resilience test cases
-
-> none defined yet
-
-
-#### 3.9.4 Bare-metal validation test cases
-
-> none defined yet
