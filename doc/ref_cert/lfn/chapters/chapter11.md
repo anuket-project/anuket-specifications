@@ -73,5 +73,5 @@ VTP selected in
 [VNF E2E C&V Framework ]({{ "/doc/ref_cert/lfn/chapters/chapter05.html" | relative_url }})
 requires small adaptations to fully fulfill the current
 [RC Test case integration requirements]({{ "/doc/ref_cert/lfn/chapters/chapter02.html" | relative_url }}).
-It seems trivial changes as VTP proposed a REST API but will ensure that
-NFVI and VNF can be executed in the same CI toolchain very easily.
+It seems trivial changes as VTP proposed a REST API but will ensure that both
+NFVI and VNF testing can be executed in the same CI toolchain very easily.
