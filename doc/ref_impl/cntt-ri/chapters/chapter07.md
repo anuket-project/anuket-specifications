@@ -8,6 +8,7 @@
 * [7.2 Pre-requisites](#7.2)
 * [7.3 Requirements Gathering](#7.3)
 * [7.4 Access and Connectivity](#7.4)
+<<<<<<< HEAD
 * [7.5 Available Installers](#7.5)
   * [7.5.1 Airship](#7.5.1)
     * [7.5.1.1 Descriptor File Preparations](#7.5.1.1)
@@ -17,6 +18,15 @@
 * [7.7 CICD Tool Chain (use of, process, and scripts)](#7.7)
 * [7.8 Jenkins Setup & Job Creation](#7.8)
 * [7.9 Compliance Validation (steps, process)](#7.9)
+=======
+* [7.5 Descriptor File Preparations](#7.5)
+* [7.6 Deployment Installer & Install Steps](#7.6)
+* [7.7 Deployment Validations](#7.7)
+* [7.8 Development Validations](#7.8)
+* [7.9 CICD Tool Chain (use of, process, and scripts)](#7.9)
+* [7.10 Jenkins Setup & Job Creation](#7.10)
+* [7.11 Compliance Validation (steps, process)](#7.11)
+>>>>>>> parent of 724f8e0... sync (#935)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -33,22 +43,9 @@ It is assumed that the reader of this chapter has the skill set to install Commo
 <a name="7.2"></a>
 ## 7.2 Prerequisites
 
-The following hardware was cabled and set up according to the OPNFV Pharos Specification:
+The following are pre-requisites to be completed in advance of software deployments:
 
-| Node  | CPU Model | Memory | HDD           | SSD         | 1 GbE NIC | 10 GbE NIC |
-|-------|-----------|--------|---------------|-------------|-----------|------------|
-| Jump  | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
-| 1     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
-| 2     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
-| 3     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
-| 4     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
-| 5     | 2xE5-2699 | 64 GB  | 1 x 3 TB Sata | 1 x 180 SSD | 2         | 2          |
-
-Each server has all of 1GbE NICs connected to the same Extreme 480 1GbE switch, and all 10GbE NICs conneted to the
-same IZ1 switch as follows:
-
-<img src="../figures/ch07_pod10_switch_connectivity.png" title="Pod 10 Switch Connectivity">
-
+1.  Bare-metal validations: confirming delivery, rack, stack, of env and that env is "ready" for software deployments (e.g. BIOS, firmware, boot order, health, disk config, port / socket validations, MAC/NIC status, etc)
 
 <a name="7.3"></a>
 ## 7.3 Requirements Gathering
@@ -61,23 +58,12 @@ Requirements gathering processes and steps:
 <a name="7.4"></a>
 ## 7.4 Access & Connectivity
 
-This RI leverages OPNFV Pharos pod 10, which is hosted by Intel and requires VPN access.  Requests for VPN access must
-go through the OPNFV Infra Project by submitting a JIRA request for VPN access here: https://jira.opnfv.org/projects/INFRA
+Logical steps for lab access and connectivity.
 
-Upon completion, the VPN credentials and certificate will be sent via email.
-
-Once VPN connectivity is established, the only available subnet is the "DMZ" network, which gives access directly to
-the Foundation (jump) node.  All interaction with the RI must be done through this node.  It is possible to use
-software such as sshuttle (https://sshuttle.readthedocs.io/en/stable/ ) to assist with routing inside the lab.
-
-As an example, the following command adds the External API subnet route via sshuttle, allowing direct access from the client
-side of the VPN into that subnet:
-
-`sshuttle -r root@10.10.100.20 10.10.105.0/24`
-
-This will allow the VPN client host to directly access the Horizon dashboard, as an example.
+Sample steps provided mimic those utilized for POD10 test lab access.
 
 <a name="7.5"></a>
+<<<<<<< HEAD
 ## 7.5 Available Installers
 
 ### 7.5.1 Airship
@@ -186,9 +172,13 @@ The below table summarizes the configurable parameters under PDF. Most of these 
 ##### IDF
 
 The Installer Descriptor File extends the PDF with POD related parameters required by the installer. This information may differ per each installer type and it is not considered part of the POD infrastructure. Currently, this file has only one section that is &#39;generic&#39; – the net\_config section. The below table describes the fields of the net\_config section.
+=======
+## 7.5 Descriptor File Preparations
+>>>>>>> parent of 724f8e0... sync (#935)
 
-The other section(s) in IDF are Installer specific.
+Reference steps describing the use, creation, and implementation of descriptor files.
 
+<<<<<<< HEAD
 | **key** | **Details** |
 | --- | --- |
 | interface | The index of the interface to use for this net. |
@@ -350,7 +340,14 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 
 - http://grafana-airship.intel-pod10.opnfv.org/login
 - http://kibana-airship.intel-pod10.opnfv.org/
+=======
+e.g. Descriptor file &/or Manifest creation (data elements, use/implementation, etc
 
+<a name="7.6"></a>
+## 7.6 Deployment Installer & Install Steps
+>>>>>>> parent of 724f8e0... sync (#935)
+
+Steps and precedures for installing and setting up the RI.
 
 ### 7.5.2 Future Installers
 >> Installers such as Triple-O specefic instructrions will come here.
@@ -479,9 +476,13 @@ the following test cases are executed at the end.
 | opnfv/functest-vnf:hunter               | vyos_vrouter               | Success            |
 | opnfv/functest-vnf:hunter               | juju_epc                   | Success            |
 
+<<<<<<< HEAD
 Description of the Functest suite and what is selected for validation testing.  Need to document the line between "validation of install" and "reference certification."  It has been stated that these might be one and the same, however deployment validation could be a simple smoke test prior to starting a full run.
 
 <a name="7.7"></a>
+=======
+<a name="7.8"></a>
+>>>>>>> parent of 724f8e0... sync (#935)
 
 ## 7.7 Development Validations
 
@@ -534,7 +535,7 @@ conform to these best practices by running all test cases vs SUTs
 <a name="7.8"></a>
 ## 7.8 CICD Tool Chain (use of, process, and scripts)]
 
-Placeholder to describe the CICD tool chain used in RI validations.
+Placeholder to describe the CICD tool chain used in RI validations.  
 
 Include flow diagram.
 
@@ -546,4 +547,4 @@ Placeholder to describe the process, access, steps, instance, etc, information f
 <a name="7.10"></a>
 ## 7.10 Compliance Validation (steps, process)
 
-Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.
+Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.  
