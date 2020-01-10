@@ -127,7 +127,6 @@ The below table summarizes the configurable parameters under PDF. Most of these 
 |     user: root |
 |     pass: root |
 |   *remote\_management:* |
-|     \&lt;\&lt;: \*remote\_params |
 |     address: 10.4.7.3/24 |
 |     mac\_address:  |
 |   # physical interface list |
@@ -206,11 +205,11 @@ Mainly, the customization is done for the following categories:
 
 #### Auto-Generation
 
-Auto-generation phase involves generating certificates, which will be used by Kubernetes.  The process of generation of these certificates can be summarized with the steps, and the corresponding figure, below.
+Auto-generation phase involves generating certificates, which will be used by Kubernetes.  The process of generation of these certificates can be summarized with the steps below.
 
 - Get airship treasuremap to the jumpserver. git clone [https://github.com/airshipit/treasuremap.git](https://github.com/airshipit/treasuremap.git)
 - copy type/cntt folder opnfv-airship to treasuremap under type
-- mv site defn. For pod10 to treasremap
+- mv site definition for pod10 to treasuremap
 - sudo tools/airship pegleg site -r /target collect intel-pod10 -s intel-pod10\_collected
 - mkdir intel-pod10\_certs
 - sudo tools/airship promenade generate-certs -o /target/intel-pod10\_certs /target/intel-pod10\_collected/\*.yaml
@@ -220,12 +219,16 @@ Auto-generation phase involves generating certificates, which will be used by Ku
 
 #### Publishing
 
-The process of publishing involves submitting the manifests to opnfv-airship gerrit repo. It is important that the site-specific manifest, along with certificates, is present in &#39;site&#39; folder in opnfv-airship repository. This will be used for the deployment process and described in the subsequent section.
+The process of publishing involves submitting the manifests to opnfv-airship gerrit repo. It is important that the site-specific manifest, along with certificates, is present in &#39;site&#39; folder in opnfv-airship repository. This will be used for the deployment process and described in the subsequent section. An example record for pod-10 dashboard would be:
+
+- A | dashboard-airship.intel-pod10.opnfv.org | 10.10.100.100
 
 <a name="7.6"></a>
 ## 7.6 Deployment: Installer & Install Steps
 The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
-### DNS Registration
+### FQDN Registration
+To access the deployment, using FQDNs, it is important to get them registered as DNS records with the network administrator. In case of OPNFV Intel pods, the linux foundation helpdesk (sso.linuxfoundation.org) can take the request and add the records.
+
 
 ### Setting up the Genesis Node
 Install Ubuntu 16.04 (Standard ISO) on the genesis node (Ex: Node-1 in Intel-Pod10), this node will be used as seed for the rest of the environment. During installation ensure the following:
@@ -241,18 +244,19 @@ After Installation, perform the following:
 - Ensure password-less login from jumphost
 
 ### Install
-As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See [deploy.sh](https://github.com/opnfv/airship/blob/master/tools/deploy.sh).
+As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See [deploy.sh](https://github.com/opnfv/airship/blob/master/tools/deploy.sh). User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the [wiki page]((https://wiki.opnfv.org/display/AIR/Airship+Manifest+Creation+For+New+Sites)
+)
+Once the Genesis node is setup, and the manifests are created, user can execute deploy.sh that supports (Shipyard) actions: deploy\_site and update\_site. Along with the action, the deploy script also take the site name (ex: intel-pod10). The deploy.sh script is part of the opnfv-airship repository. The steps to run the deploy script are as follows.
 
-User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the wiki page.
-
-Once the prerequisites that are described in the Airship deployment guide (such as setting up Genesis node), and the manifests are created, you are ready to execute deploy.sh that supports Shipyard actions: deploy\_site and update\_site.
-
-  $ tools/deploy.sh
-  Usage: deploy.sh \&lt;site\_name\&gt; \&lt;deploy\_site|update\_site\&gt;
+- git clone https://gerrit.opnfv.org/gerrit/airship
+- cd airship/tools
+- ./deploy.sh intel-pod10 deploy\_site
+OR
+- ./deploy.sh intel-pod10 update\_site
 
 ### Keeping track of the progress
 
-The complete installation involves following process:
+The complete installation can take signification time - 2-3 hours, and it involves following process:
 
 - Genesis node setup.
   - Software deployment.
@@ -261,13 +265,15 @@ The complete installation involves following process:
   - Dataplane nodes.
 - Software deployment.
 
-Once the Baremetal provisioning starts, user can use this link to check for the status:
+First, the genesis node is setup as single-node kubernetes cluster. This is followed by provisioning baremetal nodes. Once the Baremetal provisioning starts, user can use this link to check for the status:
 
 http://&lt;IP-OF-GENESIS-NODE&gt;:31900/MAAS/#/nodes
 
 Ex: for Pod10 - [http://10.10.100.21:31900/MAAS/#/nodes](http://10.10.100.21:31900/MAAS/#/nodes)
 
-The software deployment process includes setting up multiple services on Kubernetes, under following namespaces – in that particular order:
+The provisioning of the baremetal nodes is done in a particular order - ex: control nodes (node2 and node3 of intel-pod10) first and then the compute nodes (node4 and node5). To understand any failures in this step, user can check the logs of the drydock service in genesis-node.
+
+Once the baremetal provisioning is completed, the software deployment process starts. This includes setting up multiple services on the Kubernetes cluster, under following namespaces – in that particular order:
 
 - kube-system
 - ceph
@@ -280,21 +286,20 @@ Below table provides some commands to run on **genesis node** to keep track of t
 
 | **Description** | **Command** |
 | --- | --- |
-| Show all pods for a particular namespace, that has completed. Check for any crashlookBackoff states | kubectl get pods -n \&lt;namespace-name\&gt; -o wide |grep -v Completed |
-| Look at the logs of a any pod in any namespaceYou can follow it with --follow |  kubectl logs -n \&lt;namespace-name\&gt; \&lt;pod-name\&gt;   |
-| Monitoring Ceph StatusShould be HEALTH\_OK  | kubectl exec -it -n ceph \&lt;ceph-mon-\*\*\*\&gt; -- ceph -sceph-mon-\*\*\*: Name of any monitor instance. |
-| Get services running, and describe a service | kubectl get svc -n openstackkubectl describe svc -n openstack ingress |
+| Show all pods for a particular namespace, that has completed. Check for any crashlookBackoff states | kubectl get pods -n namespace-name -o wide |grep -v Completed |
+| Look at the logs of a any pod in any namespaceYou can follow it with --follow |  kubectl logs -n namespace-name pod-name;   |
+| Monitoring Ceph StatusShould be HEALTH\_OK  | kubectl exec -it -n ceph ceph-mon-instance-id -- ceph -s |
+| Get services running, and describe a service | kubectl get svc -n openstack and kubectl describe svc -n openstack ingress |
 
 This link [https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting\_guide.html](https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting_guide.html) will provide all the details for trouble shooting any issues.
 
-Once successfully deployed, user can use this link to access the horizon dashboard.
-- http://dashboard-airship.\&lt;pod-name\&gt;.opnfv.org
+Once the software is successfully deployed, and the deploy.sh script terminates normally, user can use the following link to access the horizon dashboard.
+- http://dashboard-airship.intel-pod10.opnfv.org
 
 In addition to that, users can also use these links to track the metrics and logs, respectively:
 
-- http://kibana-airship.\&lt;pod-name\&gt;.opnfv.org/
-
-- http://grafana-airship.\&lt;pod-name\&gt;.opnfv.org/login
+- http://grafana-airship.intel-pod10.opnfv.org/login
+- http://kibana-airship.intel-pod10.opnfv.org/
 
 <a name="7.7"></a>
 ## 7.7 Deployment Validations
