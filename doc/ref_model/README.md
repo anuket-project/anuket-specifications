@@ -17,7 +17,7 @@
 | 1.0 | 16th July 2019 | First Release|
 | 1.1 | 2nd August 2019 | Post Paris F2F clean up|
 | 2.0 | 20th September 2019 | Botrange Release|
-| 3.0*| 10th January 2020 | Sneezka Release (*=Alpha)
+| 3.0*| 10th January 2020 | Snezka Release (*=Alpha)
 
 
 ## Overall Status
