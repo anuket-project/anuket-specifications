@@ -355,8 +355,8 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 - http://grafana-airship.intel-pod10.opnfv.org/login
 - http://kibana-airship.intel-pod10.opnfv.org/
 
-<a name="7.6"></a>
-## 7.6 Deployment: Installer & Install Steps
+<a name="7.5.1.2"></a>
+## 7.5.1.2 Deployment: Installer & Install Steps
 The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
 ### FQDN Registration
 To access the deployment, using FQDNs, it is important to get them registered as DNS records with the network administrator. In case of OPNFV Intel pods, the linux foundation helpdesk (sso.linuxfoundation.org) can take the request and add the records.
