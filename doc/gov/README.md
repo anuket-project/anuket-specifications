@@ -18,9 +18,14 @@
 
 
 ## Table of Contents
-* [Chapter 01 - Chapter 01](chapters/chapter01.md)
-* [Chapter 02 - Chapter 02](chapters/chapter02.md)
-* [Chapter 03 - Chapter 03](chapters/chapter03.md)
-* [Chapter 04 - Chapter 04](chapters/chapter04.md)
-* [Chapter 05 - Chapter 05](chapters/chapter05.md)
-* [Chapter 06 - Chapter 06](chapters/chapter06.md)
+* [Chapter 01 - Introduction](chapters/chapter01.md)
+* [Chapter 02 - Onboarding](chapters/chapter02.md)
+* [Chapter 03 - Org Structure and Work Streams](chapters/chapter03.md)
+* [Chapter 04 - Nomination and Selection](chapters/chapter04.md)
+* [Chapter 05 - Concensus-based Decision Making](chapters/chapter05.md)
+* [Chapter 06 - Relationship to LNF Projects and GSMA](chapters/chapter06.md)
+* [Chapter 07 - Release & Lifecycle Management](chapters/chapter07.md)
+* [Chapter 08 - Recruiting, Engagement](chapters/chapter08.md)
+* [Chapter 09 - Adoption](chapters/chapter09.md)
+* [Chapter 10 - Marketing & Communications](chapters/chapter10.md)
+* [Chapter 11 - Business & Technology Metrics](chapters/chapter11.md)
