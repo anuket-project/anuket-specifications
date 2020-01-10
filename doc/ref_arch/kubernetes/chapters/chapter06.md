@@ -74,10 +74,12 @@ To limit the potential impact of a compromise, it is best to run sensitive workl
 - The seperation can achieved by using node pools and Kubernetes namespaces.
 
 ##  6.7 Create and Define Network Policies
+Network Policies allow kubernetes managers to control network access into and out of the containerized applications. It is recommended to have a well defined ingress and egress policy for containerised applications. It is also important to modify the default network policies, such as blocking or allowing traffic from other namespaces or clusters while ensuring the namespaces/clusters are running with policy support enabled.
 
 ##  6.8 Run latest Version
 As new security features and patches are added in every quarterly update, it is important to take advantage of these fixes and patches. 
 - It is recommended to run the latest release with its most recent patches.
+
 ##  6.9 Secure Platform Metadata
 Kubernetes metadata contain sensitive information including kubelet admin credentials. It is recommended to secure them using encryption to avoid this being stolen and use to for escalated privileges in the the cluster.
 
@@ -87,6 +89,12 @@ Kubernetes metadata contain sensitive information including kubelet admin creden
 Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure. 
 
 ##  6.11  Run-Time Security
+The following are recommnended best practices for container run-time;
+- Integrate run-time processes to Security Information and Event Monitoring (SIEM)
+- Use container-aware run-time defense tools
+- Ensure all running container applications are from secure and verified images
+- Containerised application should not run with root priviledges
+- Ensure sensitive workloads are proper segmented by namespaces or cluster to mitigate the scope of compromise.
 
 ##  6.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
@@ -162,6 +170,3 @@ Thus the primary isolation mechanism in Kubernetes environment should be VM or p
 ### Container Isolation in Kubernetes Cluster
 #### Namespaces  
 Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. Kubernetes should be used to isolate different types of workloads like Development, Production or Test. The default is to allocate one namespace per Containerised Network Function (CNF).
-
-
-
