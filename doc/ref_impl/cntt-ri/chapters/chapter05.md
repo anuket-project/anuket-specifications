@@ -35,20 +35,21 @@
 
 <a name="5.2.1"></a>
 ### 5.2.1 General
-The Descriptor File defines the unique configuration required by installer in a common schema. 
+The Descriptor File defines the unique configuration required by installer in a common schema.
 It would specialize the installer type per user's implementation requirements.
 It would be validated at the very beginning of the deployment.
-It's the installer's responsibility to translate the descriptor file to adapt with its own configuration. 
+It's the installer's responsibility to translate the descriptor file to adapt with its own configuration.
 Thanks to the descriptor file, the NFVi infrastructure deployment could be completed in one step run.
 
-| Ref # | sub-category | Description |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.gen.ins.01` | Installer | Installer **must** accept a descriptor file to finish deployment.|
-| `req.gen.ins.02` | Installer | Installer implementation **must** validate the descriptor file with schema.|
-| `req.gen.ins.03` | Installer | Any existing installer implementation **may** need adaption for the descriptor file. |
-| `req.gen.ins.04` | Installer | Installer **may** support reporting the deployment progress status.|
-| `req.gen.des.01` | Descriptor | Descriptor file **must** include hardware resource configuration, software configuration.|
-| `req.gen.des.02` | Descriptor | Descriptor file **may** include additional extending configuration.|
+| Ref #            | sub-category | Description                                                                              |
+|------------------|--------------|------------------------------------------------------------------------------------------|
+| `req.gen.ins.01` | Installer    | Installer **must** accept a descriptor file to finish deployment.                        |
+| `req.gen.ins.02` | Installer    | Installer implementation **must** validate the descriptor file with schema.              |
+| `req.gen.ins.03` | Installer    | Any existing installer implementation **may** need adaption for the descriptor file.     |
+| `req.gen.ins.04` | Installer    | Installer **may** support reporting the deployment progress status.                      |
+| `req.gen.des.01` | Descriptor   | Descriptor file **must** include hardware resource configuration, software configuration.|
+| `req.gen.des.02` | Descriptor   | Descriptor file **may** include additional extending configuration.                      |
+
 <p align="center"><b>Table 5-2-1:</b> Installer requirements </p>
 
 <a name="5.2.2"></a>
@@ -59,7 +60,7 @@ Depends xxx.
 ## 5.3 Descriptor file definition
 There must be a Descriptor File definition, which used by installer as input of necessary configuration.
 Mandatory and optional definition shall be defined.
- 
+
 <a name="5.3.1"></a>
 ### 5.3.1 Hardware resource information
 The support of different workload types, each with different compute, storage, network requirements which needs kinds of hardware configuration template, we name this as server template.
@@ -204,10 +205,11 @@ List of compute nodes that designed for current VIM deployment.
 ### 5.3.8 Distributed storage information
 List of storage nodes that designed for current VIM deployment.
 
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| cluster_name | String | Yes | cluster name|
-| device_infos | List | Yes | a list of device|
+| Field #      | type   | mandatory | Instruction      |
+|--------------|--------|-----------|------------------|
+| cluster_name | String | Yes       | cluster name     |
+| device_infos | List   | Yes       | a list of device |
+
 <p align="center"><b>Table 5-3-8-1:</b> Cluster information.</p>
 
 

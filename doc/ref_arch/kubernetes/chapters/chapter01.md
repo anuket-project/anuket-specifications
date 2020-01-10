@@ -28,7 +28,7 @@ The Kubernetes Reference Architecture will also be used in conjunction with a Ku
 <a name="1.2"></a>
 ### 1.2 Terminology
 
-For the terminology refer to the [glossary](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#11.1.4) 
+For the terminology refer to the [glossary](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#11.1.4)
 
 <a name="1.3"></a>
 ## 1.3 Principles
@@ -101,5 +101,9 @@ In addition, we will start with a description of interfaces and capabilities (th
 ## 1.6 Roadmap
 
 As Kubernetes evolves over time it will add new technologies and capabilities and so the CNTT Reference Architecture will need to evolve with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is every three months and at least the support cadence, which is nine months (latest release, plus two previous releases).
+
+<p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
+<p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture Roadmap</p>
+
 
 > A populated roadmap view will be added here after the January 2020 release.

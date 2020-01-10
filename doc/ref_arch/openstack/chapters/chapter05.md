@@ -27,9 +27,9 @@ consolidated view of these and other APIs that would be of interest.
 
 ### 5.2.1. Keystone
 
-| **OpenStack Service** | **API Version** |
-|-----------------------|-----------------|
-| Identity: Keystone    | 3.8             |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Identity: Keystone    | v3              | 3.8                          |
 
 | **Keystone Features**   | **Mandatory** |
 |-------------------------|:-------------:|
@@ -48,17 +48,17 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 
 ### 5.2.2 Glance
 
-| **OpenStack Service** | **Minimal API Version** |
-|-----------------------|-------------------------|
-| Image: Glance         | 2.5                     |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Image: Glance         | v2              | 2.5                          |
 
 Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
 ### 5.2.3. Cinder
 
-| **OpenStack Service** | **Version** | **Minimal Microversion** |
-|-----------------------|-------------|--------------------------|
-| Block Storage: Cinder | 3           | 3.43                     |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Block Storage: Cinder | v3              | 3.43                         |
 
 | **Cinder Features**    | **Mandatory** |
 |------------------------|:-------------:|
@@ -68,6 +68,7 @@ Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.
 | extend_attached_volume |               |
 | manage_snapshot        | X             |
 | manage_volume          | X             |
+| multi_backend          |               |
 | snapshot               | X             |
 | volume_revert          | X             |
 
@@ -79,7 +80,7 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 
 | **OpenStack Service** | **API Version** |
 |-----------------------|-----------------|
-| Object Storage: Swift | 1               |
+| Object Storage: Swift | v1              |
 
 | **Swift Features** | **Mandatory** |
 |--------------------|:-------------:|
@@ -106,10 +107,9 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 
 ### 5.2.5. Neutron
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Networking: Neutron | https://docs.openstack.org/api-ref/network/ | Version 2.0 |
-| Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
+| **OpenStack Service** |  **API Version**  |
+|-----------------------|-------------------|
+| Networking: Neutron   | v2.0              |
 
 | **Neutron Extensions**         | **Mandatory** |
 |--------------------------------|:-------------:|
@@ -179,21 +179,25 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | subnet-service-types           | X             |
 | rbac-security-groups           |               |
 | router-interface-fip           |               |
+| tag-ext                        |               |
 | trunk                          | X             |
 | trunk-details                  | X             |
 | uplink-status-propagation      |               |
+
+Networking Service APIs: https://docs.openstack.org/api-ref/network/
 
 The exhaustive list of extensions is available at https://docs.openstack.org/api-ref/network/v2/
 
 ### 5.2.6. Nova
 
-| **OpenStack Service** | **API Version** | **Minimal Microversion** |
-|-----------------------|-----------------|--------------------------|
-| Compute: Nova         | 2.1             | 2.53                     |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Compute: Nova         | v2.1            | 2.53                         |
 
 | **Nova Features**        | **Mandatory** |
 |--------------------------|:-------------:|
 | attach_encrypted_volume  |               |
+| cert                     |               |
 | change_password          |               |
 | cold_migration           | X             |
 | console_output           | X             |
@@ -219,13 +223,23 @@ Compute API: https://docs.openstack.org/api-ref/compute/
 
 REST API Version History: https://docs.openstack.org/nova/latest/reference/api-microversion-history.html
 
-### 5.2.7. Heat
+### 5.2.7. Placement
 
-|**OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Bare Metal: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions | Version 1.0 |
-| Bare Metal: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.25 |
+|**OpenStack Service** |  **API Version** | **Minimal API Microversion** |
+|----------------------|------------------|------------------------------|
+| Placement            | v1               | 1.10                         |
 
+Placement API: https://docs.openstack.org/api-ref/placement/
+
+REST API Version History: https://docs.openstack.org/placement/latest/placement-api-microversion-history.html
+
+### 5.2.8. Heat
+
+|**OpenStack Service** | **API Version** |
+|----------------------|-----------------|
+| Orchestration: Heat  | v1              |
+
+Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
 
 <a name="5.3"></a>
 ## 5.3. Consolidated Set of APIs
@@ -240,30 +254,16 @@ libraries.
 
 **APIs**
 
-| OpenStack Service | Link for API list | API Minimum (Baseline) Version |
-|------------------|--------------------|------------------------|
-| Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html?expanded=#identity-api-operations  | Version 3.10 |
-| Compute: Nova | https://docs.openstack.org/api-ref/compute/  | Version 2.1 |
-| Networking: Neutron | https://docs.openstack.org/api-ref/network/  | Version 2.0 |
-| Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images  | Version 2.0 |
-| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions  | Version 3.0 |
-| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/  | Version 1.0 |
-| Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | Version 1.0 |
-| Acceleration: Cyborg | https://docs.openstack.org/api-ref/accelerator/v1/index.html  | Version 1.0 |
-
-**CLIs**
-
-| OpenStack Service | Link to Client | Client Minimum (Baseline) Version |
-|------------------|--------------------|------------------------|
-| Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
-| Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
-| Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
-| Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
-| Block Storage: Cinder | https://docs.openstack.org/python-cinderclient/latest/ | Version 3.0 |
-| Object Storage: Swift | https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
-| Orchestration: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.0 |
-| Acceleration: Cyborg | https://docs.openstack.org/python-cyborgclient/latest/ | Version 1.0 |
-| OpenStack Client (python) | https://docs.openstack.org/python-openstackclient/pike/index.html  | Version 3.2.1 |
+| OpenStack Service     | Link for API list                                    | **API Version** | **Minimal API Microversion** |
+|-----------------------|------------------------------------------------------|-----------------|------------------------------|
+| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
+| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
+| Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0            |                              |
+| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.5                          |
+| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.43                         |
+| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
+| Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
+| Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
 
 ### 5.3.2. Kubernetes Interfaces
 The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
