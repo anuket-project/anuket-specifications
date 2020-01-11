@@ -14,9 +14,10 @@
     * [7.5.1.2 Deployment Installer & Install Steps](#7.5.1.2)
   * [7.5.2 Future Installers](#7.5.2)
 * [7.6 Deployment Validations](#7.6)
-* [7.7 CICD Tool Chain (use of, process, and scripts)](#7.7)
-* [7.8 Jenkins Setup & Job Creation](#7.8)
-* [7.9 Compliance Validation (steps, process)](#7.9)
+* [7.7 Development Validations](#7.7)
+* [7.8 CICD Tool Chain (use of, process, and scripts)](#7.8)
+* [7.9 Jenkins Setup & Job Creation](#7.9)
+* [7.10 Compliance Validation (steps, process)](#7.10)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -564,9 +565,8 @@ the following test cases are executed at the end.
 | opnfv/functest-vnf:hunter               | vyos_vrouter               | Success            |
 | opnfv/functest-vnf:hunter               | juju_epc                   | Success            |
 
-
-Description of the Functest suite and what is selected for validation testing.  Need to document the line between "validation of install" and "reference certification."  It has been stated that these might be one and the same, however deployment validation could be a simple smoke test prior to starting a full run.
-
+<a name="7.7"></a>
+## 7.7 Development Validations
 
 CNTT RI jobs must verify all patches before merge as defined in the best open
 source practices (see
@@ -614,19 +614,19 @@ It's worth mentioning that Functest already part of RI development validation
 conform to these best practices by running all test cases vs SUTs
 [currently CNTT compliant](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/).
 
-<a name="7.7"></a>
-## 7.7 CICD Tool Chain (use of, process, and scripts)]
+<a name="7.8"></a>
+## 7.8 CICD Tool Chain (use of, process, and scripts)]
 
 Placeholder to describe the CICD tool chain used in RI validations.
 
 Include flow diagram.
 
-<a name="7.8"></a>
-## 7.8 Jenkins Setup & Job Creation
+<a name="7.9"></a>
+## 7.9 Jenkins Setup & Job Creation
 
 Placeholder to describe the process, access, steps, instance, etc, information for the setup of Jenkins, the jobs required for validation, and the results dashboard.
 
-<a name="7.9"></a>
-## 7.9 Compliance Validation (steps, process)
+<a name="7.10"></a>
+## 7.10 Compliance Validation (steps, process)
 
 Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.
