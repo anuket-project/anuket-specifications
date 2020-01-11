@@ -22,7 +22,7 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-The CNTT is structured into WorkStreams so it can scale and accommodate participation from the wider community. The CNTT is open to participation by any individual or organization that agrees to comply with it's ToR (each such participant, a “Participant”). Each of the Workstreams within CNTT has one Lead and up to two Co-Leads. Leads and Co-Leads for each Workstream is selected by the community itself through nomination and voting processes. This document explains the CNTT policies and process in details regarding nomination and selection.
+The CNTT is structured into Workstreams so it can scale and accommodate participation from the wider community. The CNTT is open to participation by any individual or organization that agrees to comply with it's ToR (each such participant, a “Participant”). Each of the Workstreams within CNTT has one Lead and up to two Co-Leads. Leads and Co-Leads for each Workstream are selected by the community itself through nomination and voting processes. This document explains the CNTT policies and process in details regarding nomination and selection.
 
 <a name="4.2"></a>
 ## 4.2 Workstreams Lead/Co-Lead Nomination and Selection
@@ -39,7 +39,7 @@ The length of term for all CNTT leadership roles are **12** calender months.
 <a name="4.2.2"></a>
 ### 4.2.2 Representation
 
-Any workstream Leads or Co-Leads positions can be held by any community individuals.
+Any Workstream Leads or Co-Leads positions can be held by any community individuals.
 
 <a name="4.2.3"></a>
 ### 4.2.3 Nomination
@@ -50,7 +50,7 @@ Any workstream Leads or Co-Leads positions can be held by any community individu
 <a name="4.2.4"></a>
 ### 4.2.4 Selection
 
-There wil be a nomination window of which individuals an nominate others or nominate themselves for a particular position. The start and end date of the nomination window will be determined by Technical or Governance Steering Leads(depending on the nature of the WS)
+There wil be a nomination window of which individuals an nominate others or nominate themselves for a particular position. The start and end date of the nomination window will be determined by Technical or Governance Steering Leads(depending on the nature of the Workstream).
 
 Once the nomination period expires for a particular Workstream, the selection process will start as follows:
 
@@ -63,7 +63,7 @@ Once the nomination period expires for a particular Workstream, the selection pr
 <a name="4.2.5"></a>
 ### 4.2.5 Interim Leads/Co-Leads
 
-- In case a Lead/Co-Lead steps down, an interim person (proposed by the person who is stepping down)to take over position duties until next available election.
+- In case a Lead/Co-Lead steps down, an interim person (proposed by the person who is stepping down) to take over position duties until next available election.
 - For new Work Streams, a new Lead/Co-Leads will be assigned by Technical Steering/Governance to be interim until next available election period.
 
 <a name="4.3"></a>
@@ -73,15 +73,15 @@ The same terms, process of nomination and selection described in [**4.2**](#4.2)
 
 Additionally, The following points also apply:
 - One Lead and up to 5 Co-Leads positions are available for the TSC leadership.
-- When the nomination and selection process is due within CNTT, All Technical Workstream nomination and selection process has to conclude **before** technical steering committee nomination and selection process starts.
-- nomination and selection process for TSC should be facilitated by the Technical steering committee existing leads.
+- When the nomination and selection process is due within CNTT, all Technical Workstream nomination and selection process has to conclude **before** technical steering committee nomination and selection process starts.
+- Nomination and selection process for TSC should be facilitated by the Technical steering committee existing leads.
 
 <a name="4.4"></a>
 ## 4.4 Governance Committee Lead/Co-Lead Nomination and Selection
 
-The same terms, process of nomination and selection described in [**4.2**](#4.2) must be applied to governance steering committee leads and co-leads positions.
+The same terms, process of nomination and selection described in [**4.2**](#4.2) must be applied to Governance Committee leads and co-leads positions.
 
-Additionally, The following points also apply:
+Additionally, the following points also apply:
 - One Lead and up to 3 Co-Leads positions are available for the Governance Comitee leadership.
 - When the nomination and selection process is due within CNTT, All Technical Workstream, Governance workstreams, and TSC nomination and selection process need to have been concluded **before** Governance committee nomination and selection process starts.
 - nomination and selection process for Governance Committee should be facilitated by the sitting Governance Committee Leads.
