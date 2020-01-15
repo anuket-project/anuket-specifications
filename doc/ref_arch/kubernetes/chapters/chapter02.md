@@ -204,7 +204,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.06` | Network | The Architecture **must** support network resiliency. |
 | `req.inf.ntw.07` | Network | The Architecture **should** embrace open-based standards and technologies. |
 | `req.inf.ntw.08` | Network | The Architecture **must** be fully redundant. |
-| `req.inf.ntw.09` | Network | The Architecture **must** support life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling and healing. |
+| `req.inf.ntw.09` | Network | The Architecture **must** support API Driven life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling and healing. |
 | `req.inf.ntw.10` | Network | The networking solution **should** be configurable in an automated manner using openly published API definitions. |
 | `req.inf.ntw.11` | Network | The networking solution **should** be able to be centrally administrated and configured. |
 | `req.inf.ntw.14` | Network | The Architecture **must** support capabilities for integrating SDN controllers. |
