@@ -196,7 +196,6 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable storage. |
 | `req.inf.stg.06` | Storage | The Architecture **must** support ephemeral storage (non-persistent) storage for Pods. |
 | `req.inf.stg.07` | Storage | The Architecture **must** support persistent storage for Pods. |
-| `req.inf.stg.08` | Storage | The Architecture **must** support Kubernetes based application Artefact Storage (Container Registry, Helm Chart Repository). |
 | `req.inf.ntw.01` | Network | The Architecture **must** support Container Network Interface (CNI). |
 | `req.inf.ntw.02` | Network | The Architecture **must** support intra-node communications, such as between agents on a node and all pods on that node |
 | `req.inf.ntw.03` | Network | The Architecture **must** support inter-node communications without NAT, such as communications between pods on a node with all other pods on all nodes |
@@ -232,12 +231,12 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.kcm.07` | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. |
-
+| `req.kcm.04` | General | The Architecture **must** include Kubernetes artefacts (e.g., images, Helm charts, etc.) repository capabilities. |
 <!--
 | `req.kcm.01` | General | The Architecture **must** allow infrastructure resource sharing within a Kubernetes cluster. |
 | `req.kcm.02` | General | The Architecture **must** support discoverability of nodes and their features. |
 | `req.kcm.03` | General | The Architecture **must** support scheduling of workloads based on Enhanced Platform Awareness (EPA) features such as CPU Pinning, huge-pages and SR-IOV. |
-| `req.kcm.04` | General | The Architecture **must** include kubernetes artefacts (e.g., images, Helm charts, etc.) repository capabilities. |
+
 | `req.kcm.05` | General | The Architecture **should** support multi-tenancy in Kubernetes cluster. |
 | `req.kcm.06` | General | The Architecture **must** support resource tagging. |
 | `req.kcm.08` | General | The Architecture **must** support workload resiliency. |
@@ -250,10 +249,10 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 | Ref # | sub-category | Description |
 |---|---|---|
-
+| `req.int.api.02` | API | The Architecture **must** provide APIs needed to discover and declaratively manage NFVI and bare metal resources. |
 <!--
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
-| `req.int.api.02` | API | The Architecture **must** provide APIs needed to discover and declaratively manage NFVI resources. |
+
 -->
 
 <p align="center"><b>Table 2.2.</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
@@ -264,8 +263,8 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
-| `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and management of multiple - declaratively specified - kubernetes clusters. |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
+| `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and life cycle management of multiple - declaratively specified - kubernetes clusters. |
+| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware and software assets including compute, network, and storage for automated deployment, configuration, maintenance, and management. |
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
 | `req.lcm.cid.01` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
 
