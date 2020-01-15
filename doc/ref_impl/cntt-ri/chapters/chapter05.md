@@ -21,7 +21,14 @@
    * [5.3.10 DNS server information](#5.3.10)
    * [5.3.11 Deployment host information](#5.3.11)
    * [5.3.12 Deployment control information](#5.3.12)
-   * [5.3.13 Proxy information](#5.3.13)   
+   * [5.3.13 Proxy information](#5.3.13) 
+
+* [5.4 Installer prerequisite ](#5.4)
+   * [5.4.1 Hardware validation ](#5.4.1)
+   * [5.4.2 Network configuration ](#5.4.2)
+
+* [5.5 Appendix ](#5.5)
+   * [5.5.1 sample description file ](#5.5.1)   
 
 <a name="5.1"></a>
 ## 5.1 Introduction
@@ -90,10 +97,12 @@ Server template would be assigned to multiple servers, i.e physical hosts.
 | model | String | Yes |  |
 | processor | String | Yes |  |
 | memory | String | Yes |  |
-| hard_drive | String | Yes |  |
+| disk | String | Yes |  |
 | raid | String | Yes |  |
-| network_card_infos | List | No | interface list definition|
-| network_card_bond_infos | List | No | NIC bonding, might not be always the case.|
+| interfaces | List | No | interface list definition|
+| bond_interfaces | List | No | NIC bonding, might not be always the case.|
+| remote_user | String | Yes | remote user, all server setting same remote user |
+| remote_password | String | Yes | remote password, all server setting same remote password |
 
 <p align="center"><b>Table 5-3-2-1:</b> Server template.</p>
 
@@ -127,16 +136,11 @@ Besides it may include additional information pim username, password, rack_name,
 | device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | system_diskname | String | No | system disk name |
 | system_disksize | String | No | system disk size |
-| pim_ip_address | String | Yes | PIM ip address |
-| pim_netmask | String | Yes | PIM netmask |
-| pim_username | String | Yes | PIM user |
-| pim_password | String | Yes | PIM password |
+| role | String | No | computer or controller |
 | hugepage_number | String | No | huge page quantity |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
 | remote_management_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
-| remote_user | String | Yes | remote user  |
-| remote_password | String | Yes | remote password |
 | nic_info | List | Yes | network interface information |
 
 <p align="center"><b>Table 5-3-3:</b> Server information.</p>
@@ -165,6 +169,7 @@ List of NIC definitions which are referenced by various roles of node, control/c
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | device_name | String | Yes | device name which the network interface belongs to |
+| nic_name | String | Yes | nic name, or bond name |
 | ip_address | String | Yes | ip address |
 | sub_network | String | Yes | subnet in CIDR format. e.g: 2409:8086:8412:100::/64|
 | gateway | String | No | gateway|
@@ -262,7 +267,7 @@ Deployment host setting, which must have the access for the openstack nodes netw
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ip_address | String | No | Ip address of debug host |
-| mask | String | No | mask of debug host|
+| netmask | String | No | mask of debug host|
 | gateway | String | No |gateway of debug host |
 
 <p align="center"><b>Table 5-3-11:</b> Deployment host information.</p>
@@ -289,3 +294,277 @@ Proxy information, this section could be empty if not needed.
 | password | String | Yes | password |
 
 <p align="center"><b>Table 5-3-13:</b> Proxy information.</p>
+
+
+* [5.4 Installer prerequisite ](#5.4)
+   * [5.4.1 Hardware validation ](#5.4.1)
+   * [5.4.2 Network configuration ](#5.4.2)
+
+
+<a name="5.4"></a>
+## 5.4 Installer prerequisite
+
+<a name="5.4.1"></a>
+### 5.4.1 Hardware validation
+User need check the BIOS setting, raid configuration, PXE boot order, boot mode, disk capacity for each server.
+User need check CPU, memory setting which can meet deployment requirements.
+User need validate the remote management(IPMI,ILO,BMC) accessibility.
+User need validate NIC quantity and configuration which can match the requirements.
+
+<a name="5.4.2"></a>
+### 5.4.2 Network configuration
+It's very important to make sure the necessary prerequisite settings should be ready before the deployment.
+For example, user need configurate necessary vlan on the switch before deployment.
+And user need obtain the valid ip address planned from lab administrator.
+
+
+<a name="5.5"></a>
+## 5.5 appendix
+
+<a name="5.5.1"></a>
+### 5.5.1 description file sample
+A proposed sample description file in yaml format.
+
+---
+### CNTT installer descriptor file ###
+
+### superset of parameter set collection for installation VIM ###
+
+version: 1.0
+details:
+  owner: user name
+  contact: yourname@company.com
+  lab_name: room001
+  location: Beijing
+  type: production
+  data_center:
+    area_name: datacenter01
+    description: data center usage description 
+
+software_configuration:
+  vim:
+    vim_id: vim001
+    vim_name: vim_xyz
+    vim_version: V03.17.01
+  storage_type: ceph/localdisk/diskarray
+  huge_page: true
+  network_type: vlan
+  ip_type: ipv4|ipv6
+  time_zone: Asia/Shanghai
+  authorize_user: vim_admin
+  authorize_password: vim_password
+  public_auth_ip: 172.29.158.4
+  floating_controller_ip: 192.168.2.100
+  tenant_vlan: 1000-2400
+  
+
+### control plane and data plane, additional private network plane
+network_plane:
+  - name: management
+    vlan: 801
+  - name: control02
+    vlan: 802
+  - name: dataplane
+    vlan: 1000-2400
+ 
+ 
+### a cluster of hardware server with same configuration, assuming two types: controller,computer ###
+server_templates:
+  - name: controller_host
+    manufactor: HP
+    model: DL360 Gen9
+    cpu: 
+    memory: 32G
+    disk: 1TB    
+    raid: raid0    
+    bios_version:
+    boot_mode: Legacy | uefi
+    bond: enable|disable
+    interfaces:
+      - name: nic1
+        speed: 10Gb
+      - name: nic2
+        speed: 10Gb        
+      - name: nic3
+        speed: 10Gb
+      - name: nic4
+        speed: 10Gb
+      - name: nic5
+        speed: 10Gb
+      - name: nic6
+        speed: 10Gb
+    #bond_interfaces only available if bond enable
+    bond_interfaces:
+      - name: bond0
+        bond_members: nic1,nic2
+        bond_type: sriov|dvs|ovs
+        bond_mode: balance-tcp
+      - name: bond1
+        bond_members: nic3,nic4
+        bond_type: sriov|dvs|ovs
+        bond_mode: balance-tcp        
+      - name: bond2
+        bond_members: nic5,nic6
+        bond_type: sriov|dvs|ovs
+        bond_mode: balance-tcp
+    remote_management:
+      remote_user: admin
+      remote_password: password
+          
+        
+    #huge_page set according phyical memory size. 1G = 1
+    huge_page:  
+      size: 1G
+      count: 200
+  
+  - name: computer_host
+    manufactor: HP
+    model: DL360 Gen9
+    cpu: 
+    memory: 32G
+    disk: 1TB    
+    raid: raid0    
+    bios_version:
+    boot_mode: Legacy | uefi
+    bond: enable|disable
+    interfaces:
+      - name: nic1
+        speed: 10Gb
+      - name: nic2
+        speed: 10Gb        
+      - name: nic3
+        speed: 10Gb
+      - name: nic4
+        speed: 10Gb
+      - name: nic5
+        speed: 10Gb
+      - name: nic6
+        speed: 10Gb
+    #bond_interfaces only available if bond enable
+    bond_interfaces:
+      - name: bond0
+        bond_members: nic1,nic2
+        bond_type: sriov|dvs|ovs
+        bond_mode: balance-tcp
+      - name: bond1
+        bond_members: nic3,nic4
+        bond_type: sriov|dvs|ovs
+        bond_mode: balance-tcp        
+      - name: bond2
+        bond_members: nic5,nic6
+        bond_type: sriov|dvs|ovs
+        bond_mode: balance-tcp      
+          
+        
+    
+    #similar with: IPMI,PMI,BMC,ILO,etc..., assumption: all hw with same configuration
+    remote_management:
+      remote_user: admin
+      remote_password: password
+      
+    #huge_page set according phyical memory size. 1G = 1
+    huge_page:  
+      size: 1G
+      count: 200
+
+  
+  
+### server instances ###
+servers:
+  - name: controller_host_device_01
+    template_name: controller_host
+    remote_management_ip: 192.168.1.x
+    role: controller
+    rack_name: B04
+    position: 14U
+    network:
+      - ip_address: 192.168.1.1
+        nic_name: bond0
+        vlan: 801 
+        subnet: 192.168.1.0
+        netmask: 24
+        gateway: 192.168.1.254
+        network_plane:  
+      - ip_address: 192.168.2.1
+        nic_name: bond0
+        vlan: 802 
+        subnet: 192.168.2.0
+        netmask: 24
+        gateway: 192.168.2.254        
+        
+      - ip_address: 172.29.158.1
+        nic_name: bond0
+        vlan: 84 
+        subnet: 172.29.158.0
+        netmask: 25
+        gateway: 172.29.158.126
+
+      - ip_address: 172.29.158.249
+        nic_name: bond0
+        vlan: 85 
+        subnet: 172.29.158.0
+        netmask: 29
+        gateway: 172.29.158.254
+
+      - ip_address: 192.169.4.1
+        nic_name: bond0
+        vlan: 804 
+        subnet: 192.169.4.0
+        netmask: 24
+        gateway: 192.169.4.254
+
+  - name: computer_host_device_01
+      template_name: controller_host
+      remote_management_ip: 192.168.1.x
+      role: computer
+      rack_name: B04
+      position: 15U
+      available_zone: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
+      host_aggregate: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
+      network:
+        - ip_address: 192.168.1.1
+          nic_name: bond0
+          vlan: 801 
+          subnet: 192.168.1.0
+          netmask: 24
+          gateway: 192.168.1.254
+          network_plane:  management
+
+  
+###  various storage type selection ###
+storage:
+  - name: storage name
+    storage_type: ceph [/hdfs/swift/gfs/localdisk/diskarray]
+    storage_os_user: user
+    storage_os_password: password
+    storage_network_address:
+    storage_network_mask:
+    available_zone: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
+    host_aggregate: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
+    additional_attributes:
+      - attribute_name: storage_pool_name
+        attribute_value: ceph_pool_1
+
+    
+NTP_server:
+  - master_server_ip: 8.8.8.8
+    master_server_timezone: Asia/Shanghai
+  - backup_server_ip: 0.0.0.0
+    backup_server_timezone: Asia/Shanghai  
+
+DNS_server:
+  dns_ip_1: 211.136.17.107
+  dns_ip_2: 221.130.33.60
+  
+### optional ###
+proxy:
+  ip_address:
+  port:
+  user:
+  password:
+
+### deployment host information, i.e installer host ###
+deployment_host:
+  ip_address: 172.29.159.50
+  netmask: 255.255.255.0
+  gateway: 172.29.159.254
