@@ -264,7 +264,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 |---|---|---|
 | `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
 | `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and life cycle management of multiple - declaratively specified - kubernetes clusters. |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware and software assets including compute, network, and storage for automated deployment, configuration, maintenance, and management. |
+| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware, including compute, network, and storage, and software assets for automated deployment, configuration, maintenance, and management. |
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
 | `req.lcm.cid.01` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
 
