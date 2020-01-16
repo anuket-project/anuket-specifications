@@ -202,7 +202,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.06` | Network | The Architecture **must** support network resiliency. |
 | `req.inf.ntw.07` | Network | The Architecture **should** embrace open-based standards and technologies. |
 | `req.inf.ntw.08` | Network | The Architecture **must** be fully redundant. |
-| `req.inf.ntw.09` | Network | The Architecture **should** support life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling and healing. |
+| `req.inf.ntw.09` | Network | The Architecture **must** support API driven life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling, and healing. |
 | `req.inf.ntw.10` | Network | The networking solution **should** be configurable in an automated manner using openly published API definitions. |
 | `req.inf.ntw.11` | Network | The networking solution **should** be able to be centrally administrated and configured. |
 | `req.inf.ntw.14` | Network | The Architecture **must** support capabilities for integrating SDN controllers. |
@@ -248,10 +248,9 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 | Ref # | sub-category | Description |
 |---|---|---|
-
+| `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (NFVI and bare metal resources), network, and storage. |
 <!--
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
-| `req.int.api.02` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. |
 -->
 
 <p align="center"><b>Table 2.2.</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
@@ -262,8 +261,8 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
-| `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for automated deployment, configuration, provisioning and management of multiple - declaratively specified - kubernetes clusters. |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. |
+| `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and life cycle management of multiple - declaratively specified - kubernetes clusters. |
+| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware, including compute, network, and storage, and software assets for automated deployment, configuration, maintenance, and life cycle management. |
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
 | `req.lcm.cid.01` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
 
