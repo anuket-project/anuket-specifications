@@ -61,7 +61,7 @@ Exceptions will be clearly recorded in Reference Architectures' Appendices which
 
 - As technology matures, fewer and fewer Exceptions will be allowed in CNTT releases.
 - For each CNTT Release, VNF/CNF can be either:
-  - **Fully Conformant**: Support Target Architecture with all RM Exceptions supported. There should be a technology choice in RA to support RM Exceptions (However, none of the Exceptions allowed in RA has been used).
+  - **Fully Conformant**: Support the Target Reference Architecture without any exceptions. There should be a technology choice in RA to support RM Exceptions (However, none of the Exceptions allowed in RA has been used).
   - **Conformant with Exceptions**: One or more of the allowed exceptions in RA are used.
 
 <p align="center"><img src="../figures/nfvi_transition.png" alt="Transition" title="NFVI Transition Plan" width="70%"/></p>
