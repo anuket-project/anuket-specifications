@@ -22,7 +22,7 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-The CNTT is structured into Workstreams so it can scale and accommodate participation from the wider community. The CNTT is open to participation by any individual or organization that agrees to comply with it's ToR (each such participant, a “Participant”). Each of the Workstreams within CNTT has one Lead and up to two Co-Leads. Leads and Co-Leads for each Workstream are selected by the community itself through nomination and voting processes. This document explains the CNTT policies and process in details regarding nomination and selection.
+The CNTT is structured into Workstreams so it can scale and accommodate participation from the wider community. The CNTT is open to participation by any individual or organization that agrees to comply with it's Term of Reference ([ToR](../../../GSMA_CNTT_Terms_of_Reference.pdf)) (each such participant, a “Participant”). Each of the Workstreams within CNTT has one Lead and up to two Co-Leads. Leads and Co-Leads for each Workstream are selected by the community itself through nomination and voting processes. This document explains the CNTT policies and process in details regarding nomination and selection.
 
 <a name="4.2"></a>
 ## 4.2 Workstreams Lead/Co-Lead Nomination and Selection
