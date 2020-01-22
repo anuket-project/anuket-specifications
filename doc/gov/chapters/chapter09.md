@@ -44,7 +44,7 @@ The transition plan described here will inform application designers how RC and 
 
 #### VNF/CNF Transition Plan Framework 
 
-Exceptions will be clearly recorded in the appropriate specefication Appendix which will act as a guidance to VNFs/CNFs vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrate the concept.
+Exceptions will be clearly recorded in the appropriate specification Appendix which will act as a guidance to VNFs/CNFs vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrate the concept.
 
 - As technology matures, fewer and fewer Exceptions will be allowed in CNTT releases.
 - For each CNTT Release, VNF/CNF can be either:
