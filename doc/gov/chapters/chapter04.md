@@ -17,7 +17,7 @@
 * [4.5 Membership and voting rights](#4.5)
 * [4.6 Committee Structure](#4.6)
 * [4.7 Limits and Caps](#4.7)
-* [4.8 Tracking contributions](#4.8)
+<!--* [4.8 Tracking contributions](#4.8)-->
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -50,7 +50,7 @@ Any Workstream Leads or Co-Leads positions can be held by any community individu
 <a name="4.2.4"></a>
 ### 4.2.4 Selection
 
-There wil be a nomination window of which individuals an nominate others or nominate themselves for a particular position. The start and end date of the nomination window will be determined by Technical or Governance Steering Leads(depending on the nature of the Workstream).
+There wil be a nomination window of which individuals an nominate others or nominate themselves for a particular position. The start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
 
 Once the nomination period expires for a particular Workstream, the selection process will start as follows:
 
@@ -63,7 +63,10 @@ Once the nomination period expires for a particular Workstream, the selection pr
 <a name="4.2.5"></a>
 ### 4.2.5 Interim Leads/Co-Leads
 
-- In case a Lead/Co-Lead steps down, an interim person (proposed by the person who is stepping down) to take over position duties until next available election.
+- In case a Lead steps down, an interim person (preferably from the existing Co-leads) will be assigned by Technical Steering/Governance Committee to take over position duties until next available election.
+
+- In case a Co-Lead steps down, an interim person will be assigned by Technical Steering/Governance Committee to take over position duties until next available election.
+
 - For new Work Streams, a new Lead/Co-Leads will be assigned by Technical Steering/Governance to be interim until next available election period.
 
 <a name="4.3"></a>
@@ -82,7 +85,7 @@ Additionally, The following points also apply:
 The same terms, process of nomination and selection described in [**4.2**](#4.2) must be applied to Governance Committee leads and co-leads positions.
 
 Additionally, the following points also apply:
-- One Lead and up to 3 Co-Leads positions are available for the Governance Comitee leadership.
+- One Lead and up to 3 Co-Leads positions are available for the Governance Committee leadership.
 - When the nomination and selection process is due within CNTT, All Technical Workstream, Governance workstreams, and TSC nomination and selection process need to have been concluded **before** Governance committee nomination and selection process starts.
 - nomination and selection process for Governance Committee should be facilitated by the sitting Governance Committee Leads.
 
@@ -101,9 +104,11 @@ Please refer to [Org Structure](../chapters/chapter03.md#32-org-structure).
 ## 4.7 Limits and Caps
 - No Limit or CAPs for how many position a given individual or an organisation can hold.
 
+<!-- 
 <a name="4.8"></a>
 ## 4.8 Tracking contributions
 There are few scenarios where contributions needs to be tracked (e.g. to maintain voting rights for individuals or organisations). CNTT will actively look at the following contribution metrics and leverage any available automated tooling for such purposes:
 - Meeting attendance and participating in dissuasions.
 - GitHub Contributions (Issue creation, PRs Creation, Comments, Reviews, and Approvals).
 - Marketing Activities such as (Whitepaper, Industry Event Talks, Webinars, etc).
+-->
