@@ -59,6 +59,7 @@ Once the nomination period expires for a particular Workstream, the selection pr
 - Selection process for Leads positions and Co-Leads will occur separately.
 - No voting will be required if number of nominations received for a particular position is less than or equal to the number of available vacancies. 
 - Online Voting process will take place to select candidate(s) from the nominee list for any given position.
+  - The exact tool used for voting will be determined by the LFN staff who will help administering the process and will depends on the approved tool at that point of time.
 - Only Voting representatives can vote (from the up to date voting representative list).
 - Candidate(s) who receives the highest number of votes win.
 
