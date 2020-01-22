@@ -52,6 +52,8 @@ Any Workstream Leads or Co-Leads positions can be held by any Participant.
 
 There will be a nomination window during which individuals can nominate others or nominate themselves for a position. The start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
 
+During the nomination period, Participants can send their nominations to LFN Staff who will help administering the process. The details and email addresses of LFN staff will be clarified when the process is started.
+
 Once the nomination period expires for a particular Workstream, the selection process will start as follows:
 
 - Selection process for Leads positions and Co-Leads will occur separately.
