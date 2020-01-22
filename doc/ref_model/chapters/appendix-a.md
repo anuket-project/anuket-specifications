@@ -43,6 +43,8 @@ Several specific technology areas have been identified by CNTT as using an ABI i
 - GPU/NPU
 - FPGA/Other Acceleration
 - CPU Instruction Sets and Extensions
+- Raw Disk Device Mapping
+- Remote Direct Memory Access
 
 The preceding list is not exhaustive; technologies will be added as required.
 
@@ -66,6 +68,18 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 
 **CPU Instruction Sets and Extensions:**
 <content needed>
+  
+**Raw Disk Device Mapping**
+<content needed>
+Overview of technology:
+
+It is possible to map SAN LUNs or local disks to a VM, giving direct hardware access to the specified device.  Given the state of today's storage technology, perhaps CNTT should not provide an exception for this.
+
+**Remote Direct Memory Access**
+<content needed>
+Overview of technology:
+
+RDMA allows direct memory access from the memory of one computer to the memory of another computer without involving the operating system or CPU . The transfer of memory is offloaded to the RDMA-capable Host Channel Adapters (HCA) . A PVRDMA network adapter provides remote direct memory access in a virtual environment.
 
 End of policies.
 
