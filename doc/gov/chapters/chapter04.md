@@ -34,23 +34,23 @@ For each Workstream, following leadership positions exist:
 <a name="4.2.1"></a>
 ### 4.2.1 Length of Terms
 
-The length of term for all CNTT leadership roles are **12** calender months.
+The length of term for all CNTT leadership roles is **12** calender months.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Representation
 
-Any Workstream Leads or Co-Leads positions can be held by any community individuals.
+Any Workstream Leads or Co-Leads positions can be held by any Participant.
 
 <a name="4.2.3"></a>
 ### 4.2.3 Nomination
 
-- Any individual can nominate themselves or someone else for a given lead/co-lead position (the nominee must accept nomination if was nominate by someone else) as long as they agree to CNTT ToR.
-- An individual can self-nominate themselves to as many positions as they like.
+- Any individual can nominate themselves or another participant for a given lead/co-lead position (the nominee must accept nomination if was nominate by someone else) as long as they agree to CNTT ToR.
+- An individual can self-nominate themselves or another participant to multiple positions.
 
 <a name="4.2.4"></a>
 ### 4.2.4 Selection
 
-There wil be a nomination window of which individuals an nominate others or nominate themselves for a particular position. The start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
+There will be a nomination window during which individuals can nominate others or nominate themselves for a position. The start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
 
 Once the nomination period expires for a particular Workstream, the selection process will start as follows:
 
@@ -102,7 +102,7 @@ Please refer to [Org Structure](../chapters/chapter03.md#32-org-structure).
 
 <a name="4.7"></a>
 ## 4.7 Limits and Caps
-- No Limit or CAPs for how many position a given individual or an organisation can hold.
+- No Limit or Caps for how many positions a given individual or an organisation can hold.
 
 <!-- 
 <a name="4.8"></a>
