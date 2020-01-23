@@ -34,7 +34,7 @@ For each Workstream, following leadership positions exist:
 <a name="4.2.1"></a>
 ### 4.2.1 Length of Terms
 
-The length of term for all CNTT leadership roles is **12** calender months.
+The length of term for all CNTT leadership roles is **12** calender months. It will start typically in February each year and end around the same time the year after. (Exact dates and timing might vary to accomodate CNTT releases and F2F workshops).
 
 <a name="4.2.2"></a>
 ### 4.2.2 Representation
@@ -50,7 +50,7 @@ Any Workstream Leads or Co-Leads positions can be held by any Participant.
 <a name="4.2.4"></a>
 ### 4.2.4 Selection
 
-There will be a nomination window during which individuals can nominate others or nominate themselves for a position. The start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
+There will be a nomination window (typically around February each year) during which individuals can nominate others or nominate themselves for a position. The exact start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
 
 During the nomination period, Participants can send their nominations to LFN Staff who will help in administering the process. The details and email addresses of LFN staff will be clarified when the process is started.
 
