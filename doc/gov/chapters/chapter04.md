@@ -78,7 +78,6 @@ Once the nomination period expires for a particular Workstream, the selection pr
 The same terms, process of nomination and selection described in [**4.2**](#4.2) apply to technical steering committee leads and co-leads positions.
 
 Additionally, The following points also apply:
-- One Lead and up to 5 Co-Leads positions are available for the TSC leadership.
 - When the nomination and selection process is due within CNTT, all Technical Workstream nomination and selection process has to conclude **before** technical steering committee nomination and selection process starts.
 - Nomination and selection process for TSC should be facilitated by the Technical steering committee existing leads.
 
@@ -88,7 +87,6 @@ Additionally, The following points also apply:
 The same terms, process of nomination and selection described in [**4.2**](#4.2) must be applied to Governance Committee leads and co-leads positions.
 
 Additionally, the following points also apply:
-- One Lead and up to 3 Co-Leads positions are available for the Governance Committee leadership.
 - When the nomination and selection process is due within CNTT, All Technical Workstream, Governance workstreams, and TSC nomination and selection process need to have been concluded **before** Governance committee nomination and selection process starts.
 - nomination and selection process for Governance Committee should be facilitated by the sitting Governance Committee Leads.
 
