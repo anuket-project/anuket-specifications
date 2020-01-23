@@ -75,7 +75,7 @@ Once the nomination period expires for a particular Workstream, the selection pr
 <a name="4.3"></a>
 ## 4.3 Technical Steering Committee Lead/Co-Lead Nomination and Selection
 
-The same terms, process of nomination and selection described in [**4.2**](#4.2) must be applied to technical steering committee leads and co-leads positions.
+The same terms, process of nomination and selection described in [**4.2**](#4.2) apply to technical steering committee leads and co-leads positions.
 
 Additionally, The following points also apply:
 - One Lead and up to 5 Co-Leads positions are available for the TSC leadership.
