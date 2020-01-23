@@ -66,11 +66,11 @@ Once the nomination period expires for a particular Workstream, the selection pr
 <a name="4.2.5"></a>
 ### 4.2.5 Interim Leads/Co-Leads
 
-- In case a Lead steps down, an interim person (preferably from the existing Co-leads) will be assigned by Technical Steering/Governance Committee to take over position duties until next available election.
+- In case a Lead steps down, an interim person (preferably from the existing Co-leads) will be assigned by Technical Steering/Governance Committee to take over position duties until next election.
 
-- In case a Co-Lead steps down, an interim person will be assigned by Technical Steering/Governance Committee to take over position duties until next available election.
+- In case a Co-Lead steps down, an interim person will be assigned by Technical Steering/Governance Committee to take over position duties until next election.
 
-- For new Work Streams, a new Lead/Co-Leads will be assigned by Technical Steering/Governance to be interim until next available election period.
+- For new Work Streams, a new Lead/Co-Leads will be assigned by Technical Steering/Governance to be interim until next election period.
 
 <a name="4.3"></a>
 ## 4.3 Technical Steering Committee Lead/Co-Lead Nomination and Selection
