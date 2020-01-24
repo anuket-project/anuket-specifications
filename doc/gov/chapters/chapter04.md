@@ -50,9 +50,11 @@ Any Workstream Leads or Co-Leads positions can be held by any Participant.
 <a name="4.2.4"></a>
 ### 4.2.4 Selection
 
+The process of nomination and selection is owned and operated by CNTT with the help from LFN staff.
+
 There will be a nomination window (typically around February each year) during which individuals can nominate others or nominate themselves for a position. The exact start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
 
-During the nomination period, Participants can send their nominations to LFN Staff who will help in administering the process. The details and email addresses of LFN staff will be clarified when the process is started.
+During the nomination period, Participants can send their nominations to a designated individual who will help in administering the process (from CNTT Governance team or LFN Staff) . The details and email addresses of that individual will be clarified when the process is started.
 
 Once the nomination period expires for a particular Workstream, the selection process will start as follows:
 
