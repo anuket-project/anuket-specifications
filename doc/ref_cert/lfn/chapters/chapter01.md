@@ -48,6 +48,7 @@ The three step methodology described above of verifying Manifest compliance, exe
 <a name="1.2"></a>
 ## 1.2 Scope
 
+
 This document covers the realisation aspects of Verification and Certification of both NFVI and VNFs. The document will cover the following topics:
 
 - Identify in details the Requirements for Verification and Certification Framework.

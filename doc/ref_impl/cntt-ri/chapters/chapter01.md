@@ -100,7 +100,6 @@ e) Provide detailed design for automation of deployment and testing, provide con
 
 f) Gap analysis with required actions for existing eco-system within LFN/OPNFV community projects
 
-
 <a name="1.4"></a>
 ## 1.4 Roadmap
 
