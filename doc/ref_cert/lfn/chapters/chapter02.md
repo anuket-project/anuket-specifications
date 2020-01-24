@@ -324,7 +324,7 @@ In addition to General Best Practices for NFVI certification, the following Qual
 
 The below figure shows the targetted badge for NFVI.
 
-<p align="center"><img src="../figures/NFVI-badge.jpg" alt="NFVI Badge" title="NFVI Badge" width="100%"/></p>
+<p align="center"><img src="../figures/NFVI-badge.jpg" alt="NFVI Badge" title="NFVI Badge" width="25%"/></p>
 <p align="center"><b>Figure:</b> NFVI badge</p>
 
 
