@@ -8,7 +8,7 @@
   * [1.1.1 About Reference Implementation.](#1.1.1)
   * [1.1.2 Terminology.](#1.1.2)
 * [1.2 Scope.](#1.2)
-* [1.3 Relationship with other communities.](#1.3)
+* [1.3 Relationship to other communities.](#1.3)
 * [1.4 Roadmap.](#1.4)
 
 <a name="1.1"></a>
@@ -56,7 +56,10 @@ e) Provide detailed design for automation of deployment and testing, provide con
 f) Gap analysis with required actions for existing eco-system within LFN/OPNFV community projects
 
 <a name="1.3"></a>
-## 1.3 Relationship with other communities
+## 1.3 Relationship to other communities
+
+<p align="center"><img src="../figures/ri1_relation.png" alt="scope" title="RI-1 Relation" width="100%"/></p>
+<p align="center"><b>Figure 1-2:</b> RI-1 Relation to other communities.</p>
 
 1. Relationship with OPNFV
 
@@ -100,8 +103,10 @@ b) Providing Reference Implementation as Golden NFVi for interoperobility testin
 
 c) Providing Reference Compliance test requirements and test cases for compliance test for both NFVi and VNFs
 
+<!--
 <p align="center"><img src="../figures/ch01_relationship.png" alt="relationship" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1-2:</b> CNTT-RI Relationship with other communities.</p>
+-->
 
 <a name="1.4"></a>
 ## 1.4 Roadmap
