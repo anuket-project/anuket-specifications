@@ -71,7 +71,7 @@ This section describes a set of explicit NFVI capabilities and performance measu
 <a name="Table4-1"></a>
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
-|--------------------|----------------------------------------------------|--------|-------------------------------------------------------------------------------|
+|--------------------|---------------------------|--------|--------------------------------------------|
 | e.nfvi.cap.001 | # vCPU | number | Max number of vCPU that can be assigned to a single VNFC <sup>1)</sup>|
 | e.nfvi.cap.002 | RAM Size | MB | Max memory in MB that can be assigned to a single VNFC by NFVI <sup>2)</sup>|
 | e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB | Max storage in GB that can be assigned to a single VNFC by NFVI |
@@ -97,11 +97,11 @@ This section describes a set of explicit NFVI capabilities and performance measu
 | e.nfvi.cap.009 | Crypto Acceleration | Yes/No | Crypto Acceleration |
 | e.nfvi.cap.010 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
 | e.nfvi.cap.011 | Programmable Acceleration | Yes/No | Programmable Acceleration |
-| e.nfvi.cap.012 | Enhanced Cache Management<sup>1)</sup> | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded |
-| e.nfvi.cap.013 | SR-IOV over PCI-PT<sup>2)</sup> | Yes/No | Traditional SR-IOV |
-| e.nfvi.cap.014 | GPU/NPU<sup>2)</sup> | Yes/No | Hardware coprocessor |
-| e.nfvi.cap.015 | SmartNIC<sup>2)3)</sup> | Yes/No | Network Acceleration |
-| e.nfvi.cap.016 | FPGA/other Acceleration H/W<sup>2)</sup> | Yes/No | Non-specific hardware |
+| e.nfvi.cap.012 | Enhanced Cache Management <sup>1)</sup> | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded |
+| e.nfvi.cap.013 | SR-IOV over PCI-PT <sup>2)</sup> | Yes/No | Traditional SR-IOV |
+| e.nfvi.cap.014 | GPU/NPU <sup>2)</sup> | Yes/No | Hardware coprocessor |
+| e.nfvi.cap.015 | SmartNIC <sup>2)3)</sup> | Yes/No | Network Acceleration |
+| e.nfvi.cap.016 | FPGA/other Acceleration H/W <sup>2)</sup> | Yes/No | Non-specific hardware |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of NFVI</p>
 
@@ -288,7 +288,7 @@ _**Editor Note:** This table needs to be reworked and clarified w/ clear explana
 <a name="4.1.6"></a>
 ### 4.1.6 VIM Capabilities.
 
-VIM is responsible for controlling and managing the NFVI compute, storage and network resources. Resources allocation is dynamically set up upon VNFs requirements. This section covers the list of capabilities offered by the VIM to VNFs or service orchestrator.
+VIM is responsible for controlling and managing the NFVI compute, storage, and network resources. Resources allocation is dynamically set up upon VNFs requirements. This section covers the list of capabilities offered by the VIM to VNFs or service orchestrator.
 
 Table 4-12 shows capabilities related to resources allocation
 
@@ -385,7 +385,7 @@ Management Interface |Specifies the bandwidth of management interface/s
 #### 4.2.1.1 Predefined Compute Flavours
 The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
 
->_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and , if needed, are  created using TOSCA, HEAT templates and/or VIM APIs.
+>_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
 
 .conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Management Interface
 -----|------------|----------|-----|-----
