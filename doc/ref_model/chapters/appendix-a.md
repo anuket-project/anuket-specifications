@@ -45,6 +45,7 @@ Several specific technology areas have been identified by CNTT as using an ABI i
 - CPU Instruction Sets and Extensions
 - Raw Disk Device Mapping
 - Remote Direct Memory Access
+- Persistent Memory
 
 The preceding list is not exhaustive; technologies will be added as required.
 
@@ -68,18 +69,35 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 
 **CPU Instruction Sets and Extensions:**
 <content needed>
-  
+
 **Raw Disk Device Mapping**
 <content needed>
+
 Overview of technology:
 
-It is possible to map SAN LUNs or local disks to a VM, giving direct hardware access to the specified device.  Given the state of today's storage technology, perhaps CNTT should not provide an exception for this.
+It is possible to map SAN LUNs or local disks to a virtual unit (VM or container), giving direct hardware access to the
+specified device.  As this is a form of PCI passthrough, it should be considered as a violation of the abstration
+principle.
+
+See: vfio-pci for qemu.
 
 **Remote Direct Memory Access**
 <content needed>
-Overview of technology:
 
-RDMA allows direct memory access from the memory of one computer to the memory of another computer without involving the operating system or CPU . The transfer of memory is offloaded to the RDMA-capable Host Channel Adapters (HCA) . A PVRDMA network adapter provides remote direct memory access in a virtual environment.
+RDMA allows direct memory access from the memory of one computer to the memory of another computer without involving the
+operating system or CPU. The transfer of memory is offloaded to the RDMA-capable Host Channel Adapters (HCA).  As this
+requires specific binary code (driver) to be present this should be considered a violation of the abstraction principle.
+
+Ref: https://github.com/qemu/qemu/blob/master/docs/rdma.txt
+
+**Persistent Memory**
+<content needed>
+
+Persistent Memory, also known as Non-Volatile Memory (NVM), is capable of maintaining data even after a power outage and is
+typically implemented as virtual NVDIMM.  As this is often backed by a host physical file, this technology must be examined to
+determine if it violates the abstraction principle.
+
+Ref: https://docs.pmem.io/persistent-memory/getting-started-guide/creating-development-environments/virtualization/qemu
 
 End of policies.
 
