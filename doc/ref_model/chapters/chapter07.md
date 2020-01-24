@@ -57,7 +57,7 @@ This document includes process flow, logistics, and requirements which must be s
 <a name="7.2"></a>
 ## 7.2 Principles and Guidelines
 
-The objectives of the Security verification program are to deliver certified reference architectures which match VNF-developer specifications, levering the OVP ecosystem as the vehicle for deliverying security validated NFV.
+The objectives of the Security verification program are to deliver certified reference architectures which match VNF-developer specifications, leveraging the OVP ecosystem as the vehicle for deliverying security validated NFV.
 
 These core principles will guide NFV verification deliverables
 
@@ -121,11 +121,11 @@ Additional NFVI security principles that need to be incorporated:
 • Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
 
 <a name="7.3.1"></a>
-## 7.3.1 Potential attack vectors.
-Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using NFVI, violation of regulatory policies and laws becomes possible by actors diverting or moving a VNF from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. NFVI operators should ensure that VNF APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices and RBAC policies to limit exposure of this vulnerability.
+## 7.3.1 Potential attack vectors
+Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using NFVI, violation of regulatory policies and laws becomes possible by actors diverting or moving a VNF from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. NFVI operators should ensure that VNF APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
 
 <a name="7.3.2"></a>
-## 7.3.2 Testing demarcation points.
+## 7.3.2 Testing demarcation points
 
 It is not enough to just secure all potential points of entry and hope for the best, any NFVI architecture must be able to be tested and validated that it is in fact protected from attack as much as possible. The ability to test the infrastructure for vulnerabilities on a continuous basis is critical for maintaining the highest level of security possible.  Testing needs to be done both from the inside and outside of the systems and networks.  Below is a small sample of some of the testing methodologies and frameworks available.
 
@@ -249,9 +249,9 @@ The platform supports the workload, and in effect controls access to the workloa
 * An approved system or process for last resort access must exist for the platform.
 * All API access must use TLS protocol.
 * All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
-* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management and application communication are cryptographically protected in transit between data centre facilities.
+* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management, and application communication are cryptographically protected in transit between data centre facilities.
 * Continuous cloud security compliance is mandatory.
-* All data persisted to primary, replica or backup storage is to be encrypted.
+* All data persisted to primary, replica, or backup storage is to be encrypted.
 * All platform security logs are to be time synchronised.
 * Logs are to be regularly scanned for events of interest.
 * An incident response plan must exist for the platform.
@@ -272,8 +272,8 @@ The platform supports the workload, and in effect controls access to the workloa
 
 <a name="7.5.3"></a>
 ### 7.5.3 Platform ‘front-end’ access security
-* Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks
-* The front-end network may provide (Distributed Denial Of Service) DDOS support
+* Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
+* The front-end network may provide (Distributed Denial Of Service) DDOS support.
 
 <a name="7.6"></a>
 ## 7.6 Workload Security - Vendor Responsibility
@@ -292,7 +292,7 @@ The platform supports the workload, and in effect controls access to the workloa
 
 <a name="7.6.2"></a>
 ### 7.6.2 Port Protection
-        -   Unused software and unused network ports should be disabled,
+        -   Unused software and unused network ports should be disabled
             by default
 
 <a name="7.6.3"></a>
@@ -370,12 +370,12 @@ The Operator’s responsibility is to not only make sure that security is includ
 
 • Support for appropriate incident response and reporting
 
-• Methods to support appropriate remote attestation certification of the validity of the security components, architectures and methodologies used
+• Methods to support appropriate remote attestation certification of the validity of the security components, architectures, and methodologies used
 
 <a name="7.7.1"></a>
 ### 7.7.1 Remote Attestation/openCIT
 
-NFVI operators must ensure that remote attestation methods are used to remotely verify the trust status of a given NFVI platform.  The basic concept is based on boot integrity measurements leveraging the TPM built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
+NFVI operators must ensure that remote attestation methods are used to remotely verify the trust status of a given NFVI platform.  The basic concept is based on boot integrity measurements leveraging the TPM built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
 
 Insert diagram here:
 https://01.org/sites/default/files/users/u26957/32_architecture.png
@@ -386,7 +386,7 @@ https://01.org/sites/default/files/users/u26957/32_architecture.png
 It is easy to tamper with VNF images. It requires only a few seconds to insert some malware into a VNF image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, VNF images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the VNF operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
 
 <a name="7.8"></a>
-## 7.8 VNF Vendors responsibility.
+## 7.8 VNF Vendors responsibility
 
 The VNF vendors need to incorporate security elements to support the highest level of security of the networks they support.  This includes but is not limited to securing the following elements:
 
@@ -447,7 +447,7 @@ NFVI operators should ensure that the platform including the components (hypervi
 <a name="7.10.4"></a>
 ### 7.9.4 Boot Integrity Measurement (TPM)
 
-Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem and other system components can be securely stored and verified.
+Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem, and other system components can be securely stored and verified.
 NFVI Operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
 
 Additionally, NFVI Operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
@@ -464,9 +464,9 @@ This allows the attestation server to detect any tampering with the static files
 ### 7.9.6 NFVI & VIM
 
 Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
-<!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019
+<!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019 -->
 #### 4.1.4.5 Internal security capabilities
--->
+
 <a name="Table7-1"></a>
 
 | Ref | NFVI capability | Unit | Definition/Notes |
@@ -505,5 +505,5 @@ Table 7-2 shows security capabilities
 -   Any additional Security and Privacy requirements implemented in the
     software deliverable beyond the default rules used security analysis
     tools
--   Resiliency tests run (such as hardware failures, or power failure
-    tests).
+-   Resiliency tests run (such as hardware failures or power failure
+    tests)
