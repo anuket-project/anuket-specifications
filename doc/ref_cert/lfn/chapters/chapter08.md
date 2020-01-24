@@ -191,7 +191,7 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 
 > Proposed integraed E2E Framework.
 
-<p align="center"><img src="../figures/rc1_cookbook_all.png" alt="nfvi_cookbook" title="NFVI Cookbook" width="100%"/></p>
+<p align="center"><img src="../figures/rc1_cookbook_all.png" alt="nfvi_cookbook" title="NFVI Cookbook" width="90%"/></p>
 <p align="center"><b>Figure 1-1:</b> E2E Integrated Testing Framework.</p>
 
 <a name="8.3.1"></a>
@@ -199,13 +199,13 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 
 > using existing testing framework, proposal of an E2E integrated one to be used fir NFVI testing.
 
-<p align="center"><img src="../figures/rc1_cookbook_nfvi.png" alt="nfvi_cookbook" title="NFVI Cookbook" width="100%"/></p>
+<p align="center"><img src="../figures/rc1_cookbook_nfvi.png" alt="nfvi_cookbook" title="NFVI Cookbook" width="60%"/></p>
 <p align="center"><b>Figure 1-2:</b> NFVI Testing Integrated Framework.</p>
 
 <a name="8.3.2"></a>
 ### 8.3.2 VNF Integrated E2E Framework.
 
-<p align="center"><img src="../figures/rc1_cookbook_vnf.png" alt="VNF_cookbook" title="VNF Cookbook" width="100%"/></p>
+<p align="center"><img src="../figures/rc1_cookbook_vnf.png" alt="VNF_cookbook" title="VNF Cookbook" width="60%"/></p>
 <p align="center"><b>Figure 1-3:</b> VNF Testing Integrated Framework.</p>
 
 As detailed in the CNTT RC chapter 05 on E2E VNF test platform requirements,
