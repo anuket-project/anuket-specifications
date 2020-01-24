@@ -167,6 +167,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 |---|---|---|
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. |
 | `req.gen.cnt.03` | Cloud nativeness | The Architecture **must** support immutable infrastructure. |
+| `req.gen.cnt.04` | Cloud nativeness | The Architecture **must** run conformant Kubernetes as defined by the [CNCF](https://github.com/cncf/k8s-conformance). |
 | `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven horizontal auto-scaling of workloads. |
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |
