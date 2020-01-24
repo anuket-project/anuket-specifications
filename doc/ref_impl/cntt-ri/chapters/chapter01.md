@@ -38,7 +38,7 @@ Terminology in this document will follow [CNTT Terminology](ref_model/chapters/g
 
 The scope of this document is illustrated in **Figure 1-1** below:
 
-<p align="center"><img src="../figures/ri1_scope.png" alt="scope" title="RI-1 Scope" width="100%"/></p>
+<p align="center"><img src="../figures/ri1_scope.png" alt="scope" title="RI-1 Scope" width="80%"/></p>
 <p align="center"><b>Figure 1-1:</b> RI-1 Scope.</p>
 
 
@@ -58,7 +58,7 @@ f) Gap analysis with required actions for existing eco-system within LFN/OPNFV c
 <a name="1.3"></a>
 ## 1.3 Relationship to other communities
 
-<p align="center"><img src="../figures/ri1_relation.png" alt="scope" title="RI-1 Relation" width="100%"/></p>
+<p align="center"><img src="../figures/ri1_relation.png" alt="scope" title="RI-1 Relation" width="60%"/></p>
 <p align="center"><b>Figure 1-2:</b> RI-1 Relation to other communities.</p>
 
 1. Relationship with OPNFV
