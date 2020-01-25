@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 2. NFVI E2E C&V Framework Requirements
+# 2. NFVI Testing Framework Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
