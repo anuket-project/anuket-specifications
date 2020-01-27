@@ -50,7 +50,7 @@ Infrastructure Abstraction and Profiling allows NFVI SW vendors to provide solut
 <p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_sw_solutions.jpg" alt="NFVI Vendor SW Solutions" title="NFVI Vendor SW Solutions" width="70%"/></p>
 <p align="center"><b>Figure 8-2:</b> Vendor Supplied NFVI SW Solutions</p>
 
-Similarly, Infrastructure Abstraction and Profiling allows NFVI HW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure 8-3 below). Having NFVI hardware solutions tailored towards a given profile makes it easier to verify, certif,y and test that hardware solution against that profile using the reference implementation of the profile mentioned previously.
+Similarly, Infrastructure Abstraction and Profiling allows NFVI HW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure 8-3 below). Having NFVI hardware solutions tailored towards a given profile makes it easier to verify, certify, and test that hardware solution against that profile using the reference implementation of the profile mentioned previously.
 
 <p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_hw_solutions.jpg" alt="NFVI Vendor HW Solutions" title="NFVI Vendor HW Solutions" width="70%"/></p>
 <p align="center"><b>Figure 8-3:</b> Vendor Supplied NFVI HW Solutions</p>
@@ -129,7 +129,7 @@ as a checklist to gate the inclusion of test cases.
 3. **Planning & Delivery**
     - Kickoff / Acceptance Criteria reviews performed
     - Delivery commitments, timelines, and cadence accepted
-    - Confirm backward compatability across software/flavour rev levels
+    - Confirm backward compatibility across software/flavour rev levels
 4. **Data / VNFs / Security**
     - Images, Heat Templates, Preload Sheets available
     - Images uploaded to tenant space
