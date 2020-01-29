@@ -6,9 +6,9 @@
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
   * [1.1.1 About Reference Implementation.](#1.1.1)
-  * [1.1.2 Relationship with other communities.](#1.1.2)
-* [1.2 Terminology.](#1.2)
-* [1.3 Scope.](#1.3)
+  * [1.1.2 Terminology.](#1.1.2)
+* [1.2 Scope.](#1.2)
+* [1.3 Relationship to other communities.](#1.3)
 * [1.4 Roadmap.](#1.4)
 
 <a name="1.1"></a>
@@ -27,8 +27,39 @@ This document includes the requirement and deployment details of the the first r
  pipeline and installer automation and testing automation capabilities. Detailed collaboration and contribution to OPNFV will be concluded in the
  following sessions.
 
+
 <a name="1.1.2"></a>
-### 1.1.2 Relationship with other communities
+### 1.1.2 Terminology
+
+Terminology in this document will follow [CNTT Terminology](ref_model/chapters/glossary.md).
+
+<a name="1.2"></a>
+## 1.2 Scope
+
+The scope of this document is illustrated in **Figure 1-1** below:
+
+<p align="center"><img src="../figures/ri1_scope.png" alt="scope" title="RI-1 Scope" width="80%"/></p>
+<p align="center"><b>Figure 1-1:</b> RI-1 Scope.</p>
+
+
+a) generate eco-system requirements for the establishement of Reference Implementation, including Labs, toolings, installers, releases and automation
+requirements
+
+b) Provide detailed discription file definition for installers, VNF features, and etc..
+
+c) Provide detailed Lab criteria and operations
+
+d) Provide a Run-book for the first RI, which includes detailed steps for the deployment and configuration.
+
+e) Provide detailed design for automation of deployment and testing, provide continuous integration and delivery pipeline for RI
+
+f) Gap analysis with required actions for existing eco-system within LFN/OPNFV community projects
+
+<a name="1.3"></a>
+## 1.3 Relationship to other communities
+
+<p align="center"><img src="../figures/ri1_relation.png" alt="scope" title="RI-1 Relation" width="60%"/></p>
+<p align="center"><b>Figure 1-2:</b> RI-1 Relation to other communities.</p>
 
 1. Relationship with OPNFV
 
@@ -72,34 +103,10 @@ b) Providing Reference Implementation as Golden NFVi for interoperobility testin
 
 c) Providing Reference Compliance test requirements and test cases for compliance test for both NFVi and VNFs
 
+<!--
 <p align="center"><img src="../figures/ch01_relationship.png" alt="relationship" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> CNTT-RI Relationship with other communities.</p>
-
-
-<a name="1.2"></a>
-## 1.2 Terminology
-
-Terminology in this document will follow [CNTT Terminology](ref_model/chapters/glossary.md).
-
-
-<a name="1.3"></a>
-## 1.3 Scope
-
-The scope of this document is illustrate as follows:
-
-a) generate eco-system requirements for the establishement of Reference Implementation, including Labs, toolings, installers, releases and automation
-requirements
-
-b) Provide detailed discription file definition for installers, VNF features, and etc..
-
-c) Provide detailed Lab criteria and operations
-
-d) Provide a Run-book for the first RI, which includes detailed steps for the deployment and configuration.
-
-e) Provide detailed design for automation of deployment and testing, provide continuous integration and delivery pipeline for RI
-
-f) Gap analysis with required actions for existing eco-system within LFN/OPNFV community projects
-
+<p align="center"><b>Figure 1-2:</b> CNTT-RI Relationship with other communities.</p>
+-->
 
 <a name="1.4"></a>
 ## 1.4 Roadmap

@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 2. NFVI E2E C&V Framework Requirements
+# 2. NFVI Testing Framework Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -324,7 +324,7 @@ In addition to General Best Practices for NFVI certification, the following Qual
 
 The below figure shows the targetted badge for NFVI.
 
-<p align="center"><img src="../figures/NFVI-badge.jpg" alt="NFVI Badge" title="NFVI Badge" width="100%"/></p>
+<p align="center"><img src="../figures/NFVI-badge.jpg" alt="NFVI Badge" title="NFVI Badge" width="25%"/></p>
 <p align="center"><b>Figure:</b> NFVI badge</p>
 
 
