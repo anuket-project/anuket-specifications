@@ -4,75 +4,73 @@
 
 ## Baldy Release Contents
 * [Overview](#overview)
-* [RM (v.3)](#rm)
-* [RA-1 (v.2)](#ra1)
-* [RI-1 (v.1)](#ri1)
-* [RC-1 (v.1-pre-alpha)](#rc1)
-* [RA-2 (v.1)](#rc1)
-
+* [RM (v3.0)](#rm)
+* [RA-1 (v2.0)](#ra1)
+* [RI-1 (v1.0)](#ri1)
+* [RC-1 (v1.0-pre-alpha)](#rc1)
+* [RA-2 (v1.0)](#ra2)
 
 <a name="overview"></a>
 ## Overview
 
 <a name="rm"></a>
-## Reference Model
+## Reference Model (v3.0)
 
 | Reference # 	| Feature 	| Notes 	|
-|-------------	|---------	|-------	|
-| 1           	|         	|       	|
-| 2           	|         	|       	|
-| 3           	|         	|       	|
-| 4           	|         	|       	|
-| 5           	|         	|       	|
-| 6           	|         	|       	|
+|-------------	|-----------------	|-------	|
+| baldy.rm.1 	| General Cleanup 	|  	|
+| baldy.rm.2 	|  	|  	|
+| baldy.rm.3 	|  	|  	|
+| baldy.rm.4 	|  	|  	|
+| baldy.rm.5 	|  	|  	|
+| baldy.rm.6 	|  	|  	|
 
 <a name="ra1"></a>
-## Reference Architecture 1
+## Reference Architecture 1 (v2.0)
 
 | Reference # 	| Feature 	| Notes 	|
-|-------------	|---------	|-------	|
-| 1           	|         	|       	|
-| 2           	|         	|       	|
-| 3           	|         	|       	|
-| 4           	|         	|       	|
-| 5           	|         	|       	|
-| 6           	|         	|       	|
-
+|-------------	|-----------------	|-------	|
+| baldy.ra1.1 	| General Cleanup 	|  	|
+| baldy.ra1.2 	|  	|  	|
+| baldy.ra1.3 	|  	|  	|
+| baldy.ra1.4 	|  	|  	|
+| baldy.ra1.5 	|  	|  	|
+| baldy.ra1.6 	|  	|  	|
 
 <a name="ri1"></a>
-## Reference Implementation 1
+## Reference Implementation 1 (v1.0)
 
 | Reference # 	| Feature 	| Notes 	|
-|-------------	|---------	|-------	|
-| 1           	|         	|       	|
-| 2           	|         	|       	|
-| 3           	|         	|       	|
-| 4           	|         	|       	|
-| 5           	|         	|       	|
-| 6           	|         	|       	|
-
+|-------------	|-----------------	|-------	|
+| baldy.ri1.1 	| General Cleanup 	|  	|
+| baldy.ri1.2 	|  	|  	|
+| baldy.ri1.3 	|  	|  	|
+| baldy.ri1.4 	|  	|  	|
+| baldy.ri1.5 	|  	|  	|
+| baldy.ri1.6 	|  	|  	|
 
 <a name="rc1"></a>
-## Reference Conformance 1 (Pre-Alpha)
+## Reference Conformance 1 (v1.0-Pre-alpha)
 
 | Reference # 	| Feature 	| Notes 	|
-|-------------	|---------	|-------	|
-| 1           	|         	|       	|
-| 2           	|         	|       	|
-| 3           	|         	|       	|
-| 4           	|         	|       	|
-| 5           	|         	|       	|
-| 6           	|         	|       	|
+|-------------	|-----------------	|-------	|
+| baldy.rc1.1 	| General Cleanup 	|  	|
+| baldy.rc1.2 	|  	|  	|
+| baldy.rc1.3 	|  	|  	|
+| baldy.rc1.4 	|  	|  	|
+| baldy.rc1.5 	|  	|  	|
+| baldy.rc1.6 	|  	|  	|
 
 
 <a name="ra2"></a>
-## Reference Architecture 2
+## Reference Architecture 2 (v1.0)
 
 | Reference # 	| Feature 	| Notes 	|
-|-------------	|---------	|-------	|
-| 1           	|         	|       	|
-| 2           	|         	|       	|
-| 3           	|         	|       	|
-| 4           	|         	|       	|
-| 5           	|         	|       	|
-| 6           	|         	|       	|
+|-------------	|-----------------	|-------	|
+| baldy.ra2.1 	| General Cleanup 	|  	|
+| baldy.ra2.2 	|  	|  	|
+| baldy.ra2.3 	|  	|  	|
+| baldy.ra2.4 	|  	|  	|
+| baldy.ra2.5 	|  	|  	|
+| baldy.ra2.6 	|  	|  	|
+
