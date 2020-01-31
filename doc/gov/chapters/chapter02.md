@@ -65,6 +65,11 @@ If you work for someone other than yourself (self-employed), then you must ensur
 
 In order to deliver on CNTT objectives, community members are expected to fully engage & contribute to the work streams. Engagement includes support, contributions, adoption of artifacts, issue ownership & resolution. 
 
+Participation
+
+  - **Diagram - Levels of Engagement**
+<p align="middle"><img src="../figures/engagement.png" alt="engagement_levels" title="Engagement Levels" width="60%"/></p>
+
 
 <a name="2.5"></a>
 
