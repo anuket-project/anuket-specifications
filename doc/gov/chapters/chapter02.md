@@ -8,7 +8,7 @@
 * [2.2 Request Participation](#2.2)
 * [2.3 Prerequisites](#2.3)
 * [2.4 Engagement](#2.4)
-* [2.5 Participant and Contributor Administration](#2.4)
+* [2.5 New Participant Checklist](#2.5)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -42,22 +42,24 @@ As an open-source community organization, CNTT has developed the following proce
 
 CNTT has no formal membership, and nothing to sign. Participation is open to anyone, whether you are an employee of an LFN member company, supporter, or observer. By participating, you do automatically accept the individual anti-trust policies of LFN and GSMA, the joint Terms of Reference of LFN and GSMA the LFN Code of Conduct, as well as the LFN Trademark policy. 
 
-LFN Anti-Trust Policy 
-https://r.lfnetworking.org/Antitrust%20Slide.pdf
+- **LFN Anti-Trust Policy** 
+- https://r.lfnetworking.org/Antitrust%20Slide.pdf
 
-GSMA Anti-Trust Policy 
-https://raw.githubusercontent.com/cntt-n/CNTT/master/Anti-Trust_Notice_GSMA_20190911.png
+- **GSMA Anti-Trust Policy** 
+- https://raw.githubusercontent.com/cntt-n/CNTT/master/Anti-Trust_Notice_GSMA_20190911.png
 
-CNTT Terms of Reference (ToR) LFN | GSMA 
+- **CNTT Terms of Reference (ToR) LFN | GSMA** 
 https://wiki.lfnetworking.org/display/LN/Terms+of+Reference?src=contextnavpagetreemode
 
-Code of Conduct LFN 
-https://lfprojects.org/policies/code-of-conduct/
+  - Note: If you work for someone other than yourself (self-employed), then you must ensure that your employer also agrees to the ToR before participating.
 
-Trademark Policy 
-https://lfprojects.org/policies/trademark-policy/
 
-If you work for someone other than yourself (self-employed), then you must ensure that your employer also agrees to the ToR before participating.
+- **Code of Conduct LFN** 
+- https://lfprojects.org/policies/code-of-conduct/
+
+- **Trademark Policy** 
+- https://lfprojects.org/policies/trademark-policy/
+
 
 <a name="2.4"></a>
 
@@ -65,12 +67,21 @@ If you work for someone other than yourself (self-employed), then you must ensur
 
 In order to deliver on CNTT objectives, community members are expected to fully engage & contribute to the work streams. Engagement includes support, contributions, adoption of artifacts, issue ownership & resolution. 
 
-Participation
+- **Participating in CNTT**
 
   - **Diagram - Levels of Engagement**
 <p align="middle"><img src="../figures/engagement.png" alt="engagement_levels" title="Engagement Levels" width="60%"/></p>
 
-
 <a name="2.5"></a>
 
-## 2.5 Participant and Contributor Administration
+## 2.5 New Participant Checklist
+
+- Here is a recommended checklist of items participants should have completed to join the CNTT community. Links to assist in this process can be found in the CNTT Information Packet.
+  - Review the CNTT Information Packet
+  - Review all legal policies, terms, and conditions
+  - Signup for an LFN ID
+  - Signup for a GitHub ID
+  - Signup for workstream participation
+  - Schedule to attend workstream(s), Governance Steering, and or Technology Steering meeting(s)
+  - Start engaging!
+
