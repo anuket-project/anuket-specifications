@@ -64,12 +64,12 @@ The Kernel is the tightly controlled space that provides an API via system calls
 
 A key thing to note is that the container runtime itself is also a set of processes that run in user space, and interact with the kernel via system calls as well.  Many diagrams will show containers as running on top of the runtime, or inside the runtime.  More accurately, the containers themselves are simply some processes running within an OS, and the container runtime is another set of processes that are used to manage those containers (pull, run, delete, etc.) and the kernel features required to provide the isolation (cgroups, namespaces, filesystems, etc.).
 
-<a name="3.2.1.1."></a>
+<a name="3.2.1.1"></a>
 #### 3.2.1.1 Memory management
 
 > This chapter should describe considerations about memory management, like huge pages.
 
-> Relate back to features described in the RM [here](../../../ref_model/ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+> Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
