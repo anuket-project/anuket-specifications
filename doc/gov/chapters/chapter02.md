@@ -24,7 +24,7 @@ As an open-source community organization, CNTT has developed the following proce
 
 - **Guide To Getting Started**
 
-  - **How do I start the process of joining?** Onboarding starts as soon as you submit a request to join CNTT via email to xxxx@xxxxx.com.
+  - **How do I start the process of joining?** Onboarding starts as soon as you submit a request to join CNTT via email to cntt-gov@lists.opnfv.org.
   
   - **How long will it take to onboard?** The onboarding process will take approximately one hour of your time initially.
   
