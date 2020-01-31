@@ -34,7 +34,7 @@ As an open-source community organization, CNTT has developed the following proce
   
   - **What happens once I get onboarded?** Once you have reviewed the CNTT onboarding information and have agreed to the perquisite terms and agreements associated with participating and contributing to the Task Force, and you have completed onboarding and now it will be your opportunity to join desired work streams. For an initial period after onboarding, you will be assigned a volunteer mentor from the Task Force to help you get up to speed and contributing quickly.
   
-  - **Diagram**
+  - **Diagram - Onboarding Process**
 <p align="middle"><img src="../figures/onboarding_proc.png" alt="onboarding_proc" title="Onboarding Process" width="60%"/></p>
  
 <a name="2.3"></a>
@@ -43,22 +43,22 @@ As an open-source community organization, CNTT has developed the following proce
 CNTT has no formal membership, and nothing to sign. Participation is open to anyone, whether you are an employee of an LFN member company, supporter, or observer. By participating, you do automatically accept the individual anti-trust policies of LFN and GSMA, the joint Terms of Reference of LFN and GSMA the LFN Code of Conduct, as well as the LFN Trademark policy. 
 
 - **LFN Anti-Trust Policy** 
-- https://r.lfnetworking.org/Antitrust%20Slide.pdf
+  - https://r.lfnetworking.org/Antitrust%20Slide.pdf
 
 - **GSMA Anti-Trust Policy** 
-- https://raw.githubusercontent.com/cntt-n/CNTT/master/Anti-Trust_Notice_GSMA_20190911.png
+  - https://raw.githubusercontent.com/cntt-n/CNTT/master/Anti-Trust_Notice_GSMA_20190911.png
 
 - **CNTT Terms of Reference (ToR) LFN | GSMA** 
-https://wiki.lfnetworking.org/display/LN/Terms+of+Reference?src=contextnavpagetreemode
+  - https://wiki.lfnetworking.org/display/LN/Terms+of+Reference?src=contextnavpagetreemode
 
   - Note: If you work for someone other than yourself (self-employed), then you must ensure that your employer also agrees to the ToR before participating.
 
 
 - **Code of Conduct LFN** 
-- https://lfprojects.org/policies/code-of-conduct/
+  - https://lfprojects.org/policies/code-of-conduct/
 
 - **Trademark Policy** 
-- https://lfprojects.org/policies/trademark-policy/
+  - https://lfprojects.org/policies/trademark-policy/
 
 
 <a name="2.4"></a>
