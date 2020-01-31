@@ -32,7 +32,7 @@ As an open-source community organization, CNTT has developed the following proce
 
   - **What help will I get throughout the onboarding process?** Once you submit a request to participate in the Task Force, during the onboarding process participants are supported by the CNTT onboarding team members: indicated in your “Getting Started” email. Onboarding participants are welcomed to reach out for assistance any time during the onboarding process.
   
-  - **What happens once I get onboarded?** Once you have reviewed the CNTT onboarding information and have agreed to the perquisite terms and agreements associated with participating and contributing to the Task Force, and you have completed onboarding and now it will be your opportunity to join desired work streams. For an initial period after onboarding, you will be assigned a volunteer mentor from the Task Force to help you get up to speed and contributing quickly.
+  - **What happens once I get onboarded?** Once you have reviewed the CNTT onboarding information and agree to the prerequisite terms and agreements associated with participating and contributing to the Task Force, then you have the opportunity to join desired work streams. For an initial period after onboarding, you will be assigned a volunteer mentor from the Task Force to help you get up to speed and contributing quickly.
   
   - **Diagram - Onboarding Process**
 <p align="middle"><img src="../figures/onboarding_proc.png" alt="onboarding_proc" title="Onboarding Process" width="60%"/></p>
