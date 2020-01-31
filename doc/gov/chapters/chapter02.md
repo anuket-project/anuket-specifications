@@ -24,7 +24,7 @@ As an open-source community organization, CNTT has developed the following proce
 
 - **Guide To Getting Started**
 
-  - **How do I start the process of joining?** Onboarding starts as soon as you submit a request to join CNTT via email to cntt-gov@lists.opnfv.org.
+  - **How do I start the process of becoming a participant?** Onboarding starts as soon as you submit a request to join CNTT via email to cntt-gov@lists.opnfv.org. You will receive additional information such as links to the CNTT Getting Started wiki and additional onboarding materials.
   
   - **How long will it take to onboard?** The onboarding process will take approximately one hour of your time initially.
   
@@ -51,7 +51,12 @@ Trademark Policy https://lfprojects.org/policies/trademark-policy/
 If you work for someone other than yourself (self-employed), then you must ensure that your employer also agrees to the ToR before participating.
 
 <a name="2.4"></a>
-## 2.4 Engagement
+
+## 2.4 Community Engagement
+
+In order to deliver on CNTT objectives, community members need to fully engage & contribute to the work streams. Engagement includes support, contributions, adoption of artifacts, issue ownership & resolution. 
+
 
 <a name="2.5"></a>
+
 ## 2.5 Participant and Contributor Administration
