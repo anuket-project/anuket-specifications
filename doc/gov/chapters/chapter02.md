@@ -65,7 +65,7 @@ CNTT has no formal membership, and nothing to sign. Participation is open to any
 
 ## 2.4 Community Engagement
 
-In order to deliver on CNTT objectives, community members are expected to fully engage & contribute to the work streams. Engagement includes support, contributions, adoption of artifacts, issue ownership & resolution. 
+In order to deliver on CNTT objectives, community participants are expected to fully engage & contribute to the work streams. Engagement includes support, contributions, adoption of artifacts, issue ownership & resolution. 
 
 - **Participating in CNTT**
 
