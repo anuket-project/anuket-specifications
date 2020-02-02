@@ -88,7 +88,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single pod bt the NFVI | 16<sup>1)</sup> | Y |
+| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the NFVI | 16<sup>1)</sup> | Y |
 | e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | 32 GB<sup>1)</sup> | Y |
 | e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | 320 GB<sup>1)</sup> | Y |
 | e.nfvi.res.cap.004 | # Connection Points | 6 | Y |
