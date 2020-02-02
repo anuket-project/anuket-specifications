@@ -189,7 +189,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 |---|---|---|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for Pods.  |
 | `req.inf.com.03` | Network | The Architecture **must** support Container Runtime Interface (CRI). |
-| `req.inf.stg.01` | Storage | The Architecture **must**  support for Kubernetes Volumes for container storage.
+| `req.inf.stg.01` | Storage | The Architecture **must**  support Kubernetes Volumes for container storage.
 | `req.inf.stg.02` | Storage | The Architecture **may** provide shared Object storage as a service for Containers workload.
 | `req.inf.stg.03` | Storage | The Architecture **must** support Container Storage Interfaces (CSI).
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
