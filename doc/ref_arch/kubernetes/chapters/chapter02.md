@@ -195,7 +195,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
 | `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable storage. |
 | `req.inf.stg.06` | Storage | The Architecture **must** support ephemeral storage (non-persistent) storage for Pods. |
-| `req.inf.stg.07` | Storage | The Architecture **must** support persistent storage for Pods. |
+| `req.inf.stg.07` | Storage | The Architecture **should** support persistent storage for Pods. |
 | `req.inf.ntw.01` | Network | The Architecture **must** support Container Network Interface (CNI). |
 | `req.inf.ntw.02` | Network | The Architecture **must** support intra-node communications, such as between agents on a node and all pods on that node |
 | `req.inf.ntw.03` | Network | The Architecture **must** support inter-node communications without NAT, such as communications between pods on a node with all other pods on all nodes |
