@@ -18,8 +18,8 @@
 
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
-| baldy.rm.1 	| General Cleanup 	|  	|
-| baldy.rm.2 	|  	|  	|
+| baldy.rm.1 	| General Cleanup 	| All Chapters 	|
+| baldy.rm.2 	| Limiting infrastructure profiles to Basic and Network Intensive 	| Ch02, Ch04, and Ch05 	|
 | baldy.rm.3 	|  	|  	|
 | baldy.rm.4 	|  	|  	|
 | baldy.rm.5 	|  	|  	|
