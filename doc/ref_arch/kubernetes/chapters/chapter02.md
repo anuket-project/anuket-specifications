@@ -88,7 +88,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single pod bt the NFVI | 16<sup>1)</sup> | Y |
+| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the NFVI | 16<sup>1)</sup> | Y |
 | e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | 32 GB<sup>1)</sup> | Y |
 | e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | 320 GB<sup>1)</sup> | Y |
 | e.nfvi.res.cap.004 | # Connection Points | 6 | Y |
@@ -189,7 +189,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 |---|---|---|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for Pods.  |
 | `req.inf.com.03` | Network | The Architecture **must** support Container Runtime Interface (CRI). |
-| `req.inf.stg.01` | Storage | The Architecture **must**  support for Kubernetes Volumes for container storage.
+| `req.inf.stg.01` | Storage | The Architecture **must**  support Kubernetes Volumes for container storage.
 | `req.inf.stg.02` | Storage | The Architecture **may** provide shared Object storage as a service for Containers workload.
 | `req.inf.stg.03` | Storage | The Architecture **must** support Container Storage Interfaces (CSI).
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
