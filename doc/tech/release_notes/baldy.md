@@ -40,9 +40,12 @@
 <a name="ri1"></a>
 ## Reference Implementation 1 (v1.0)
 
+<p align="center"><img src="../figures/ri1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 1:</b> RI-1 Baldy Release plan</p>
+
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
-| baldy.ri1.1 	| General Cleanup 	|  	|
+| baldy.ri1.1 	| General Cleanups 	| For all Chapters 	|
 | baldy.ri1.2 	|  	|  	|
 | baldy.ri1.3 	|  	|  	|
 | baldy.ri1.4 	|  	|  	|
@@ -51,6 +54,9 @@
 
 <a name="rc1"></a>
 ## Reference Conformance 1 (v1.0-Pre-alpha)
+
+<p align="center"><img src="../figures/rc1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 2:</b> RC-1 Baldy Release plan</p>
 
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
