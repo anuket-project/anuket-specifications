@@ -61,12 +61,14 @@
 
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
-| baldy.ri1.1 	| General Cleanups 	| For all Chapters 	|
-| baldy.ri1.2 	|  	|  	|
-| baldy.ri1.3 	|  	|  	|
-| baldy.ri1.4 	|  	|  	|
-| baldy.ri1.5 	|  	|  	|
-| baldy.ri1.6 	|  	|  	|
+| baldy.ri1.1 	| General Cleanups 	| All Chapters 	|
+| baldy.ri1.2 	| Complete Overall Requirements 	| Ch02 	|
+| baldy.ri1.3 	| Complete Lab Requirements 	| Ch04 	|
+| baldy.ri1.4 	| Complete Target State 	| Ch03 	|
+| baldy.ri1.5 	| Complete Installer Requirements 	| Ch05 	|
+| baldy.ri1.6 	| Complete Lab Cookbook (Ops) 	| Ch06 	|
+| baldy.ri1.6 	| Complete Integration Cookbook	| Ch07 	|
+| baldy.ra1.7 	| Implement Profiles within OPNFV Installers and consume CNTT metadata 	|  **DEV**	|
 
 <a name="rc1"></a>
 ## Reference Conformance 1 (v1.0-Pre-alpha)
@@ -78,13 +80,12 @@
 
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
-| baldy.rc1.1 	| General Cleanup 	|  	|
+| baldy.rc1.1 	| General Cleanup 	| All Chapters 	|
 | baldy.rc1.2 	|  	|  	|
 | baldy.rc1.3 	|  	|  	|
 | baldy.rc1.4 	|  	|  	|
 | baldy.rc1.5 	|  	|  	|
 | baldy.rc1.6 	|  	|  	|
-
 
 <a name="ra2"></a>
 ## Reference Architecture 2 (v1.0)
@@ -93,10 +94,9 @@
 
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
-| baldy.ra2.1 	| General Cleanup 	|  	|
+| baldy.ra2.1 	| General Cleanup 	| All Chapters 	|
 | baldy.ra2.2 	|  	|  	|
 | baldy.ra2.3 	|  	|  	|
 | baldy.ra2.4 	|  	|  	|
 | baldy.ra2.5 	|  	|  	|
 | baldy.ra2.6 	|  	|  	|
-
