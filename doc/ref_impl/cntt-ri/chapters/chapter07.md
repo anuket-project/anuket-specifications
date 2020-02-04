@@ -1,26 +1,26 @@
 [<< Back](../)
 
-# 7. Integration
+# 8. Integration
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [7.1 Introduction](#7.1)
-* [7.2 Pre-requisites](#7.2)
-* [7.3 Requirements Gathering](#7.3)
-* [7.4 Access and Connectivity](#7.4)
-* [7.5 Available Installers](#7.5)
-  * [7.5.1 Airship](#7.5.1)
-    * [7.5.1.1 Descriptor File Preparations](#7.5.1.1)
-    * [7.5.1.2 Deployment Installer & Install Steps](#7.5.1.2)
-  * [7.5.2 Future Installers](#7.5.2)
-* [7.6 Deployment Validations](#7.6)
-* [7.7 Development Validations](#7.7)
-* [7.8 CICD Tool Chain (use of, process, and scripts)](#7.8)
-* [7.9 Jenkins Setup & Job Creation](#7.9)
-* [7.10 Compliance Validation (steps, process)](#7.10)
+* [8.1 Introduction](#8.1)
+* [8.2 Pre-requisites](#8.2)
+* [8.3 Requirements Gathering](#8.3)
+* [8.4 Access and Connectivity](#8.4)
+* [8.5 Available Installers](#8.5)
+  * [8.5.1 Airship](#8.5.1)
+    * [8.5.1.1 Descriptor File Preparations](#8.5.1.1)
+    * [8.5.1.2 Deployment Installer & Install Steps](#8.5.1.2)
+  * [8.5.2 Future Installers](#8.5.2)
+* [8.6 Deployment Validations](#8.6)
+* [8.7 Development Validations](#8.7)
+* [8.8 CICD Tool Chain (use of, process, and scripts)](#8.8)
+* [8.9 Jenkins Setup & Job Creation](#8.9)
+* [8.10 Compliance Validation (steps, process)](#8.10)
 
-<a name="7.1"></a>
-## 7.1 Introduction
+<a name="8.1"></a>
+## 8.1 Introduction
 
 The purpose of this chapter is to establish an operational run-book containing sequences and steps explaining, with enough detail, how to install a Reference Implementation (RI).
 
@@ -31,8 +31,8 @@ It is assumed that the reader of this chapter has the skill set to install Commo
 *   Covers installers, automation, etc.
 *   Integration of installers and components.
 
-<a name="7.2"></a>
-## 7.2 Prerequisites
+<a name="8.2"></a>
+## 8.2 Prerequisites
 
 The following hardware was cabled and set up according to the OPNFV Pharos Specification:
 
@@ -50,16 +50,16 @@ same IZ1 switch as follows:
 
 <img src="../figures/ch07_pod10_switch_connectivity.png" title="Pod 10 Switch Connectivity">
 
-<a name="7.3"></a>
-## 7.3 Requirements Gathering
+<a name="8.3"></a>
+## 8.3 Requirements Gathering
 
 Requirements gathering processes and steps:
 
 1.  RA Requirements Gathering process
 2.  Infra Requirements and Selection Process
 
-<a name="7.4"></a>
-## 7.4 Access & Connectivity
+<a name="8.4"></a>
+## 8.4 Access & Connectivity
 
 This RI leverages OPNFV Pharos pod 10, which is hosted by Intel and requires VPN access.  Requests for VPN access must
 go through the OPNFV Infra Project by submitting a JIRA request for VPN access here: https://jira.opnfv.org/projects/INFRA
@@ -77,13 +77,13 @@ side of the VPN into that subnet:
 
 This will allow the VPN client host to directly access the Horizon dashboard, as an example.
 
-<a name="7.5"></a>
+<a name="8.5"></a>
 
-## 7.5 Available Installers
+## 8.5 Available Installers
 
-### 7.5.1 Airship
+### 8.5.1 Airship
 
-#### 7.5.1.1 Descriptor File Preparations
+#### 8.5.1.1 Descriptor File Preparations
 
 Reference steps describing the use, creation, and implementation of descriptor files.  This is where the Airship Manifest
 files need to be documented:
@@ -356,8 +356,8 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 - http://grafana-airship.intel-pod10.opnfv.org/login
 - http://kibana-airship.intel-pod10.opnfv.org/
 
-<a name="7.5.1.2"></a>
-## 7.5.1.2 Deployment: Installer & Install Steps
+<a name="8.5.1.2"></a>
+## 8.5.1.2 Deployment: Installer & Install Steps
 The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
 ### FQDN Registration
 To access the deployment, using FQDNs, it is important to get them registered as DNS records with the network administrator. In case of OPNFV Intel pods, the linux foundation helpdesk (sso.linuxfoundation.org) can take the request and add the records.
@@ -438,11 +438,11 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 - http://grafana-airship.intel-pod10.opnfv.org/login
 - http://kibana-airship.intel-pod10.opnfv.org/
 
-### 7.5.2 Future Installers
+### 8.5.2 Future Installers
 >> Installers such as Triple-O specefic instructrions will come here.
 
-<a name="7.6"></a>
-## 7.6 Deployment Validations
+<a name="8.6"></a>
+## 8.6 Deployment Validations
 
 CNTT RI should be both verified as any OpenStack deployment and compliant with
 the CNTT requirements which induces that the validation is composed of:
@@ -565,8 +565,8 @@ the following test cases are executed at the end.
 | opnfv/functest-vnf:hunter               | vyos_vrouter               | Success            |
 | opnfv/functest-vnf:hunter               | juju_epc                   | Success            |
 
-<a name="7.7"></a>
-## 7.7 Development Validations
+<a name="8.7"></a>
+## 8.7 Development Validations
 
 CNTT RI jobs must verify all patches before merge as defined in the best open
 source practices (see
@@ -614,19 +614,19 @@ It's worth mentioning that Functest already part of RI development validation
 conform to these best practices by running all test cases vs SUTs
 [currently CNTT compliant](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/).
 
-<a name="7.8"></a>
-## 7.8 CICD Tool Chain (use of, process, and scripts)]
+<a name="8.8"></a>
+## 8.8 CICD Tool Chain (use of, process, and scripts)]
 
 Placeholder to describe the CICD tool chain used in RI validations.
 
 Include flow diagram.
 
-<a name="7.9"></a>
-## 7.9 Jenkins Setup & Job Creation
+<a name="8.9"></a>
+## 8.9 Jenkins Setup & Job Creation
 
 Placeholder to describe the process, access, steps, instance, etc, information for the setup of Jenkins, the jobs required for validation, and the results dashboard.
 
-<a name="7.10"></a>
-## 7.10 Compliance Validation (steps, process)
+<a name="8.10"></a>
+## 8.10 Compliance Validation (steps, process)
 
 Placholder to describe the purpose, steps, and process, using the Jenkins Jobs, Tool Chain, and Test Case requirements mapping to perform validations.
