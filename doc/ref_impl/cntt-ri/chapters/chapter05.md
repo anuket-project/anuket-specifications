@@ -1,40 +1,40 @@
 [<< Back](../)
 
-# 5. Installer Requirements
+# 6. Installer Requirements
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [5.1 Introduction](#5.1)
-* [5.2 Installer requirements](#5.2)
-   * [5.2.1 General](#5.2.1)
-   * [5.2.2 Additional](#5.2.2)
-* [5.3 Descriptor file definition](#5.3)
-   * [5.3.1 Hardware resource information](#5.3.1)
-   * [5.3.2 Server template](#5.3.2)
-   * [5.3.3 Server information](#5.3.3)
-   * [5.3.4 Software configuration definition](#5.3.4)
-   * [5.3.5 Network information](#5.3.5)
-   * [5.3.6 Controller information](#5.3.6)
-   * [5.3.7 Compute information](#5.3.7)
-   * [5.3.8 Distributed storage information](#5.3.8)
-   * [5.3.9 NTP server information](#5.3.9)
-   * [5.3.10 DNS server information](#5.3.10)
-   * [5.3.11 Deployment host information](#5.3.11)
-   * [5.3.12 Deployment control information](#5.3.12)
-   * [5.3.13 Proxy information](#5.3.13)   
+* [6.1 Introduction](#6.1)
+* [6.2 Installer requirements](#6.2)
+   * [6.2.1 General](#6.2.1)
+   * [6.2.2 Additional](#6.2.2)
+* [6.3 Descriptor file definition](#6.3)
+   * [6.3.1 Hardware resource information](#6.3.1)
+   * [6.3.2 Server template](#6.3.2)
+   * [6.3.3 Server information](#6.3.3)
+   * [6.3.4 Software configuration definition](#6.3.4)
+   * [6.3.5 Network information](#6.3.5)
+   * [6.3.6 Controller information](#6.3.6)
+   * [6.3.7 Compute information](#6.3.7)
+   * [6.3.8 Distributed storage information](#6.3.8)
+   * [6.3.9 NTP server information](#6.3.9)
+   * [6.3.10 DNS server information](#6.3.10)
+   * [6.3.11 Deployment host information](#6.3.11)
+   * [6.3.12 Deployment control information](#6.3.12)
+   * [6.3.13 Proxy information](#6.3.13)   
 
-<a name="5.1"></a>
-## 5.1 Introduction
+<a name="6.1"></a>
+## 6.1 Introduction
 
 **must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference implementation and implemented by installer. The same applies to _must not_.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
-<a name="5.2"></a>
-## 5.2 Installer requirements
+<a name="6.2"></a>
+## 6.2 Installer requirements
 
-<a name="5.2.1"></a>
-### 5.2.1 General
+<a name="6.2.1"></a>
+### 6.2.1 General
 The Descriptor File defines the unique configuration required by installer in a common schema.
 It would specialize the installer type per user's implementation requirements.
 It would be validated at the very beginning of the deployment.
@@ -50,19 +50,19 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 | `req.gen.des.01` | Descriptor   | Descriptor file **must** include hardware resource configuration, software configuration.|
 | `req.gen.des.02` | Descriptor   | Descriptor file **may** include additional extending configuration.                      |
 
-<p align="center"><b>Table 5-2-1:</b> Installer requirements </p>
+<p align="center"><b>Table 6-2-1:</b> Installer requirements </p>
 
-<a name="5.2.2"></a>
-### 5.2.2 Additional
+<a name="6.2.2"></a>
+### 6.2.2 Additional
 Depends xxx.
 
-<a name="5.3"></a>
-## 5.3 Descriptor file definition
+<a name="6.3"></a>
+## 6.3 Descriptor file definition
 There must be a Descriptor File definition, which used by installer as input of necessary configuration.
 Mandatory and optional definition shall be defined.
 
-<a name="5.3.1"></a>
-### 5.3.1 Hardware resource information
+<a name="6.3.1"></a>
+### 6.3.1 Hardware resource information
 The support of different workload types, each with different compute, storage, network requirements which needs kinds of hardware configuration template, we name this as server template.
 Besides it may include optional information such area name, data center name etc.
 
@@ -77,10 +77,10 @@ Besides it may include optional information such area name, data center name etc
 | server_templates | List | Yes | server template list included in the resource pool |
 | server_infos | List | Yes | server information list included in the resource pool |
 
-<p align="center"><b>Table 5-3-1:</b> Hardware resource description.</p>
+<p align="center"><b>Table 6-3-1:</b> Hardware resource description.</p>
 
-<a name="5.3.2"></a>
-### 5.3.2 Server template
+<a name="6.3.2"></a>
+### 6.3.2 Server template
 The server template describes the capability of the host like processor, memory, harddrive, raid, NIC/NIC binding, manufacturer, model etc.
 Server template would be assigned to multiple servers, i.e physical hosts.
 
@@ -96,7 +96,7 @@ Server template would be assigned to multiple servers, i.e physical hosts.
 | network_card_infos | List | No | interface list definition|
 | network_card_bond_infos | List | No | NIC bonding, might not be always the case.|
 
-<p align="center"><b>Table 5-3-2-1:</b> Server template.</p>
+<p align="center"><b>Table 6-3-2-1:</b> Server template.</p>
 
 This is the network interface definition. Generally, there are a list of interfaces included in server template.
 
@@ -104,7 +104,7 @@ This is the network interface definition. Generally, there are a list of interfa
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | port_name | String | Yes | port name, e.g ens0,ens1 |
 
-<p align="center"><b>Table 5-3-2-2:</b> Network Card Bond information.</p>
+<p align="center"><b>Table 6-3-2-2:</b> Network Card Bond information.</p>
 
 In some case, interface would be bonded together. This is the network interface bond definition.
 
@@ -115,10 +115,10 @@ In some case, interface would be bonded together. This is the network interface 
 | bond_mode | String | Yes | balance-tcp,balance-slb,balance-backup |
 | bond_members | String | Yes | members of interface name to bond in together, e.g eno0,eno1. |
 
-<p align="center"><b>Table 5-3-2-3:</b> Network Card Bond information.</p>
+<p align="center"><b>Table 6-3-2-3:</b> Network Card Bond information.</p>
 
-<a name="5.3.3"></a>
-### 5.3.3 Server information
+<a name="6.3.3"></a>
+### 6.3.3 Server information
 Server will reference a server template, i.e, inherting all configuration of server template,
 Besides it may include additional information pim username, password, rack_name,position etc.
 
@@ -140,10 +140,10 @@ Besides it may include additional information pim username, password, rack_name,
 | remote_password | String | Yes | remote password |
 | nic_info | List | Yes | network interface information |
 
-<p align="center"><b>Table 5-3-3:</b> Server information.</p>
+<p align="center"><b>Table 6-3-3:</b> Server information.</p>
 
-<a name="5.3.4"></a>
-### 5.3.4 Software configuration definition
+<a name="6.3.4"></a>
+### 6.3.4 Software configuration definition
 It includes Virtualized Infrastructure Manager configurations,
 
 | Field # | type | mandatory | Instruction |
@@ -157,10 +157,10 @@ It includes Virtualized Infrastructure Manager configurations,
 | controller_nodes | List | Yes | List of controllers designed in VIM deployment |
 | compute_nodes | List | Yes | List of compute nodes designed in VIM deployment |
 
-<p align="center"><b>Table 5-3-4:</b> Software configuration.</p>
+<p align="center"><b>Table 6-3-4:</b> Software configuration.</p>
 
-<a name="5.3.5"></a>
-### 5.3.5 Network information
+<a name="6.3.5"></a>
+### 6.3.5 Network information
 List of NIC definitions which are referenced by various roles of node, control/compute/network/storage node.
 
 | Field # | type | mandatory | Instruction |
@@ -172,26 +172,26 @@ List of NIC definitions which are referenced by various roles of node, control/c
 | vlan_id | String | Yes | vlan id for current network |
 | network_plane_type | String | Yes | distinguish network type: e.g MANAGEMENT,STORAGEDATA,COMPUTE |
 
-<p align="center"><b>Table 5-3-5:</b> Network information.</p>
+<p align="center"><b>Table 6-3-5:</b> Network information.</p>
 
-<a name="5.3.6"></a>
-### 5.3.6 Controller information
+<a name="6.3.6"></a>
+### 6.3.6 Controller information
 List of controller nodes that designed for current VIM deployment.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| device_name | String | Yes | must be the device_name defined in server_information(###5.3.3), which would be set on Server from BMC|
+| device_name | String | Yes | must be the device_name defined in server_information(###6.3.3), which would be set on Server from BMC|
 | node_name | String | Yes | node name for the controller to deploy, e.g: controller01 |
 
-<p align="center"><b>Table 5-3-6:</b> Controller information.</p>
+<p align="center"><b>Table 6-3-6:</b> Controller information.</p>
 
-<a name="5.3.7"></a>
-### 5.3.7 Compute information
+<a name="6.3.7"></a>
+### 6.3.7 Compute information
 List of compute nodes that designed for current VIM deployment.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| device_name | String | Yes | must be the device_name defined in server_information(###5.3.3), which would be set on Server from BMC|
+| device_name | String | Yes | must be the device_name defined in server_information(###6.3.3), which would be set on Server from BMC|
 | node_name | String | Yes | node name for the compute to deploy, e.g: compute01 |
 | az_name | String | Yes | availability zone name which this node belongs to |
 | ha_name | List | Yes | HA name(s) which this node assigned to.|
@@ -199,10 +199,10 @@ List of compute nodes that designed for current VIM deployment.
 | os_reserved_cores | String | No | Designed and planned by provider itself, may be none|
 | ovs_reserved_cores | String | No | Designed and planned by provider itself, may be none |
 
-<p align="center"><b>Table 5-3-7:</b> Compute information.</p>
+<p align="center"><b>Table 6-3-7:</b> Compute information.</p>
 
-<a name="5.3.8"></a>
-### 5.3.8 Distributed storage information
+<a name="6.3.8"></a>
+### 6.3.8 Distributed storage information
 List of storage nodes that designed for current VIM deployment.
 
 | Field #      | type   | mandatory | Instruction      |
@@ -210,7 +210,7 @@ List of storage nodes that designed for current VIM deployment.
 | cluster_name | String | Yes       | cluster name     |
 | device_infos | List   | Yes       | a list of device |
 
-<p align="center"><b>Table 5-3-8-1:</b> Cluster information.</p>
+<p align="center"><b>Table 6-3-8-1:</b> Cluster information.</p>
 
 
 | Field # | type | mandatory | Instruction |
@@ -224,17 +224,17 @@ List of storage nodes that designed for current VIM deployment.
 | az_name | String | Yes | availabile zone which belongs to |
 | additional_attributes | List | Yes | specific attribute(key value pairs) list, decided by the storage_type. e.g: For example, Ceph would specific storage pool name, while HDFS would need replication options |
 
-<p align="center"><b>Table 5-3-8-2:</b> Storage device information.</p>
+<p align="center"><b>Table 6-3-8-2:</b> Storage device information.</p>
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | attribute_name | String | Yes | specific attribute name required by the storage type |
 | attribute_value | String | Yes | attribute value |
-<p align="center"><b>Table 5-3-8-3:</b> Additional storage attribute.</p>
+<p align="center"><b>Table 6-3-8-3:</b> Additional storage attribute.</p>
 
 
-<a name="5.3.9"></a>
-### 5.3.9 NTP server information
+<a name="6.3.9"></a>
+### 6.3.9 NTP server information
 primary and backup NTP server information.
 
 | Field # | type | mandatory | Instruction |
@@ -244,10 +244,10 @@ primary and backup NTP server information.
 | backup_server_ip | String | No | |
 | backup_server_timezone | String | No | |
 
-<p align="center"><b>Table 5-3-9:</b> NTP server information.</p>
+<p align="center"><b>Table 6-3-9:</b> NTP server information.</p>
 
-<a name="5.3.10"></a>
-### 5.3.10 DNS server information
+<a name="6.3.10"></a>
+### 6.3.10 DNS server information
 DNS server informmation if VIM deployment requires.
 
 | Field # | type | mandatory | Instruction |
@@ -255,10 +255,10 @@ DNS server informmation if VIM deployment requires.
 | dns_network | String | No | DNS information if VIM deployment needed. |
 | dns_ip | String | No | |
 
-<p align="center"><b>Table 5-3-10:</b> DNS server information.</p>
+<p align="center"><b>Table 6-3-10:</b> DNS server information.</p>
 
-<a name="5.3.11"></a>
-### 5.3.11 Deployment host information
+<a name="6.3.11"></a>
+### 6.3.11 Deployment host information
 Deployment host setting, which must have the access for the openstack nodes network.
 
 | Field # | type | mandatory | Instruction |
@@ -267,20 +267,20 @@ Deployment host setting, which must have the access for the openstack nodes netw
 | mask | String | No | mask of debug host|
 | gateway | String | No |gateway of debug host |
 
-<p align="center"><b>Table 5-3-11:</b> Deployment host information.</p>
+<p align="center"><b>Table 6-3-11:</b> Deployment host information.</p>
 
-<a name="5.3.12"></a>
-### 5.3.12 Deployment control information
+<a name="6.3.12"></a>
+### 6.3.12 Deployment control information
 Used to control if VIM will be automatically deployment.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | auto_deploy | String | Yes | Flag of enabling or disabling automatically deploy VIM. |
 
-<p align="center"><b>Table 5-3-12:</b> Auto deployment control information.</p>
+<p align="center"><b>Table 6-3-12:</b> Auto deployment control information.</p>
 
-<a name="5.3.13"></a>
-### 5.3.13 Proxy information
+<a name="6.3.13"></a>
+### 6.3.13 Proxy information
 Proxy information, this section could be empty if not needed.
 
 | Field # | type | mandatory | Instruction |
@@ -290,4 +290,4 @@ Proxy information, this section could be empty if not needed.
 | user | String | Yes | user |
 | password | String | Yes | password |
 
-<p align="center"><b>Table 5-3-13:</b> Proxy information.</p>
+<p align="center"><b>Table 6-3-13:</b> Proxy information.</p>
