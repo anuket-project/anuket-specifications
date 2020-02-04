@@ -1,18 +1,18 @@
 [<< Back](../)
 
-# 8. Gaps analysis & Innovation
+# 9. Gaps analysis & Innovation
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [8.1 Introduction](#8.1)
-* [8.2 Heading](#8.2)
-* [8.3 Heading](#8.3)
+* [9.1 Introduction](#9.1)
+* [9.2 Heading](#9.2)
+* [9.3 Heading](#9.3)
 
-<a name="8.1"></a>
-## 8.1 Introduction
+<a name="9.1"></a>
+## 9.1 Introduction
 
-<a name="8.2"></a>
-## 8.2 Heading
+<a name="9.2"></a>
+## 9.2 Heading
 
-<a name="8.3"></a>
-## 8.3 Heading
+<a name="9.3"></a>
+## 9.3 Heading
