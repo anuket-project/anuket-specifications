@@ -28,8 +28,8 @@ an "API version" is associated to each OpenStack service.
 In addition to major API versions, some OpenStack services (Nova, Glance, Keystone, Cinder...) support microversions.
 The microversions allow to introduce new features over time. 
 In this chapter, the **major version** and **microversion** are specified per service.
-The mentioned microversion is the minimal microversion supported the features requested for CNTT.
-For the purpose of compliance tests, the chapter also selects amongst the features offered by a service a set of the mandatory features. 
+The mentioned microversion is the minimal microversion that supports the features requested for CNTT.
+For the purpose of compliance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for CNTT. 
 
 <a name="5.2"></a>
 ## 5.2. Core OpenStack Services APIs
