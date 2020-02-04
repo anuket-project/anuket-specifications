@@ -67,7 +67,7 @@
 | baldy.ri1.4 	| Complete Target State & Metadata 	| Ch03 	|
 | baldy.ri1.5 	| Complete Installer Requirements 	| Ch05 	|
 | baldy.ri1.6 	| Complete Lab Cookbook (Ops) 	| Ch06 	|
-| baldy.ri1.6 	| Complete Integration Cookbook	| Ch07 	|
+| baldy.ri1.6 	| Restructure & Complete Integration Cookbook	| Ch07 	|
 | baldy.ri1.7 	| Implement Profiles within OPNFV Installers and consume CNTT metadata 	|  **DEV**	|
 
 <a name="rc1"></a>
@@ -81,11 +81,12 @@
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
 | baldy.rc1.1 	| General Cleanup 	| All Chapters 	|
-| baldy.rc1.2 	|  	|  	|
-| baldy.rc1.3 	|  	|  	|
-| baldy.rc1.4 	|  	|  	|
-| baldy.rc1.5 	|  	|  	|
-| baldy.rc1.6 	|  	|  	|
+| baldy.rc1.2 	| Clarify Conformance Categories (NFVI & VNFs)	| Ch01 	|
+| baldy.rc1.3 	| Complete NFVI Framework Requirements 	| Ch02 	|
+| baldy.rc1.4 	| Categorise NFVI TC Req and Write API Testing TC 	|  Ch03	|
+| baldy.rc1.5 	| Create NFVI Mapping & Traceability Matrix and populate it 	| Ch05 	|
+| baldy.rc1.6 	| Restructure NFVI Cookbook and Cleanup  	| Ch04 	|
+| baldy.rc1.7 	| NFVI Framework & Test Cases Development   | **DEV** 	|
 
 <a name="ra2"></a>
 ## Reference Architecture 2 (v1.0)
