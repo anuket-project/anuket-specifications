@@ -38,7 +38,7 @@ This is the OPNFV based Reference Implementation.
 * [Chapter 02 - Reference Implementation Requirements](chapters/chapter02.md)
 * [Chapter 03 - NFVI + VNF Target State and Specification](chapters/chapter03.md)
 * [Chapter 04 - Lab Requirements ](chapters/chapter04.md)
-* [Chapter 05 - Hardware Delivery and Configuration Requirements ](chpters/chapter-hdv.md)
+* [Chapter 05 - Hardware Delivery and Configuration Requirements ](chapters/chapter-hdv.md)
 * [Chapter 06 - Installer Requirements](chapters/chapter05.md)
 * [Chapter 07 - Lab Operations](chapters/chapter06.md)
 * [Chapter 08 - Integration](chapters/chapter07.md)
