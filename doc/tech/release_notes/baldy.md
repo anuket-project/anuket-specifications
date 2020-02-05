@@ -48,7 +48,7 @@
 |-------------	|-----------------	|-------	|
 | `baldy.ra1.1` 	| General Cleanup 	| All Chapters 	|
 | `baldy.ra1.2` 	| Clarify OpenStack version policy 	| Ch01, Ch05 	|
-| `baldy.ra1.3` 	| Align Requirement to RM requirements 	| Ch02 	|
+| `baldy.ra1.3` 	| Incorporate RM Requirements in RA-1 Requirements 	| Ch02 	|
 | `baldy.ra1.4` 	| Create a proposal for an exiting Gap 	|  Ch08	|
 | `baldy.ra1.5` 	| Complete High Level Architecture 	| Ch03 	|
 | `baldy.ra1.6*` 	| Complete Interfaces & APIs 	|  Ch05	|
@@ -96,9 +96,10 @@
 | `baldy.rc1.4` 	| Categorise NFVI TC Req and Write API Testing TC 	|  Ch03	|
 | `baldy.rc1.5` 	| Create NFVI Mapping & Traceability Matrix and populate it 	| Ch05 	|
 | `baldy.rc1.6` 	| Restructure NFVI Cookbook and Cleanup  	| Ch04 	|
-| `baldy.rc1.7*` 	| NFVI Framework & Test Cases Development   | **DEV** 	|
+| `baldy.rc1.7` 	| NFVI Framework & Test Cases Development   | **DEV** 	|
+| `baldy.rc1.8*` 	| RI-1 passes the RC-1 test suite execution (For sanity and APIs)   | **DEV** 	|
 
-*Baldy Release should include at least features up to and including `baldy.rc1.7`.
+*Baldy Release should include at least features up to and including `baldy.rc1.8`.
 
 <a name="ra2"></a>
 ## Reference Architecture 2 (v1.0)
