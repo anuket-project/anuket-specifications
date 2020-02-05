@@ -15,9 +15,10 @@
 
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
-| `baldy.tech.1` 	| VNF Revolution policy and strategy 	|  	|
-| `baldy.tech.2` 	| Future Roadmap |  |
-| `baldy.tech.3` 	| TBD |  |
+| `baldy.tech.1` 	| VNF Evolution policy and strategy 	|  	|
+| `baldy.tech.2` 	| Backwared/Forward Compitability 	|  	|
+| `baldy.tech.3` 	| Future Roadmap |  |
+| `baldy.tech.4` 	| TBD |  |
 
 *Baldy Release should include at least features up to and including `baldy.tech.2`.
 
