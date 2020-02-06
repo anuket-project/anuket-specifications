@@ -77,9 +77,10 @@
 | `baldy.ri1.5` 	| Complete Installer Requirements 	| Ch05 	|
 | `baldy.ri1.6` 	| Complete Lab Cookbook (Ops) 	| Ch06 	|
 | `baldy.ri1.6` 	| Restructure & Complete Integration Cookbook	| Ch07 	|
-| `baldy.ri1.7*` 	| Implement Profiles within OPNFV Installers and consume CNTT metadata 	|  **DEV**	|
+| `baldy.ri1.7` 	| Implement Profiles within OPNFV Installers and consume CNTT metadata 	|  **DEV**	|
+| `baldy.ri1.8*` 	| RI-1 passes the RC-1 test suite execution (For sanity and APIs)   | **DEV** 	|
 
-*Baldy Release should include at least features up to and including `baldy.ri1.7`.
+*Baldy Release should include at least features up to and including `baldy.ri1.8`.
 
 <a name="rc1"></a>
 ## Reference Conformance 1 (v1.0-Pre-alpha)
