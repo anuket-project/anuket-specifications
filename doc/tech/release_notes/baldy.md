@@ -16,7 +16,7 @@
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
 | `baldy.tech.1` 	| VNF Evolution policy and strategy 	|  	|
-| `baldy.tech.2` 	| Backwared/Forward Compitability 	|  	|
+| `baldy.tech.2` 	| Backward/Forward Compitability 	|  	|
 | `baldy.tech.3` 	| Future Roadmap |  |
 | `baldy.tech.4` 	| TBD |  |
 
