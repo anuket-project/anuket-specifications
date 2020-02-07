@@ -24,6 +24,10 @@
 * [Reference Implementation](../ref_impl)
 * [Reference Certification](../ref_cert)
 
+## CNTT Releases
+* [CNTT Releases](./release_notes)
+* [CNTT Roadmap](./roadmap.md)
+
 <a name="1.0"></a>
 ## 1. Overview
 
