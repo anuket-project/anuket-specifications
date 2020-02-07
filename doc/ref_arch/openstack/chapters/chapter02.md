@@ -43,9 +43,9 @@ Traceability to Reference Model.
 |----|---------------|---------------------|---------------|
 | `req.gen.ost.01` | Open source | The Architecture **must** use OpenStack APIs.| [RA-1 5.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#53-consolidated-set-of-apis) |
 | `req.gen.ost.02` | Open source | The Architecture **must** support dynamic request and configuration of virtual resources (compute, network, storage) through OpenStack APIs. | [RA-1 5.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#53-consolidated-set-of-apis) |
-| `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. FOr latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
+| `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
-| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. | AUtoscaling is supported through Heat and also through Senlin, cluster management service. |
+| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. | Autoscaling is supported through Heat and also through Senlin, cluster management service. |
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient OpenStack components that are required for the continued availability of running workloads. | |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to `req.gen.rsl.01`. | |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for OpenStack components. | [RA-1 4.2 "Underlying Resources"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter04.md#42-underlying-resources) |
@@ -97,7 +97,7 @@ Traceability to Reference Model.
 | `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for NFVI internal networks.| |
 | `req.inf.ntw.17` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#525-neutron) |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). | [RA-1 3.2.6. "Acceleration"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter03.md#326-acceleration) and [RA-1 4.3.1.10. "Cyborg"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter04.md#43110-cyborg) |
-| `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). | "OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
+| `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). | ["OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
 
 <p align="center"><b>Table 2-2:</b> Infrastructure Requirements</p>
@@ -108,13 +108,13 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |  Traceability |
 |----|----------------|----------------------|-----------|
 | `req.vim.01` | General | The Architecture **must** allow infrastructure resource sharing. | [RA-1 3.2. "Consumable Infrastructure Resources and Services"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter03.md#32-consumable-infrastructure-resources-and-services) |
-| `req.vim.02` | General | The Architecture **should** support deployment of OpenStack components in containers. | RA-1 4.3.2. "Containerised OpenStack Services"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter04.md#432-containerised-openstack-services) |
+| `req.vim.02` | General | The Architecture **should** support deployment of OpenStack components in containers. | [RA-1 4.3.2. "Containerised OpenStack Services"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter04.md#432-containerised-openstack-services) |
 | `req.vim.03` | General | The Architecture **must** allow VIM to discover and manage NFVI resources. | [RA-1 5.2.7. "Placement"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#527-placement) |
 | `req.vim.04` | General | The Architecture **must** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.| |
 | `req.vim.05` | General | The Architecture **must** include image repository management. | [RA-1 4.3.1.2. "Glance"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter04.md#4312-glance) |
 | `req.vim.06` | General | The Architecture **must** allow orchestration solutions to be integrated with VIM. | **Orchestration of what** |
 | `req.vim.07` | General | The Architecture **must** support a multi-tenanted environment. | [RA-1 3.2.1. "Multi-Tenancy"](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter03.md#321-multi-tenancy-execution-environment) |
-| `req.vim.08` | General | The Architecture **must** support resource tagging. | ["OpemStack Resource Tags"](https://docs.openstack.org/mitaka/networking-guide/ops-resource-tags.html) |
+| `req.vim.08` | General | The Architecture **must** support resource tagging. | ["OpenStack Resource Tags"](https://docs.openstack.org/mitaka/networking-guide/ops-resource-tags.html) |
 | `req.vim.09` | General | The Architecture **must** support horizontal scaling. | **of what** |
 
 <p align="center"><b>Table 2-3:</b> VIM Requirements</p>
@@ -134,7 +134,7 @@ Traceability to Reference Model.
 <p align="center"><b>Table 2-4:</b> Interfaces and APIs Requirements</p>
 
 <a name="2.3.5"></a>
-### 2.3.5 Tenants Requirements
+### 2.3.5 Tenant Requirements
 
 | Ref # | sub-category | Description |  Traceability |
 |----|--------------|---------------|-----------------|
