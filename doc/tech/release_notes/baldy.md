@@ -99,7 +99,7 @@
 | `baldy.rc1.5` 	| Create NFVI Mapping & Traceability Matrix and populate it 	| Ch05 	|
 | `baldy.rc1.6` 	| Restructure NFVI Cookbook and Cleanup  	| Ch04 	|
 | `baldy.rc1.7` 	| NFVI Framework & Test Cases Development   | **DEV** 	|
-| `baldy.rc1.8*` 	| RI-1 passes the RC-1 test suite execution (For sanity and APIs)   | **DEV** 	|
+| `baldy.rc1.8*` 	| RC-1 test suites can run against RI-1   | **DEV** 	|
 
 *Baldy Release should include at least features up to and including `baldy.rc1.8`.
 
