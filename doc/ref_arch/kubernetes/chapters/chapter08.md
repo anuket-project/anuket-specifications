@@ -20,6 +20,15 @@ While this Reference Architecture is being developed, Gaps will be identified th
 - Multi-Tenancy
 - K8s as VM based VNF Orchestrator
 
+<a name="8.2.0"></a>
+### 8.2.0 Gap template
+
+> **Related requirements:** List the requirement references `req.abc.xyz.00` from RA2 or RM which this gap tries to address.
+
+> **Baseline project:** Describe against which upstream project and which version of the project the gap exisits e.g. _Kubernetes v1.17_. If the gap is not against any specific upstream project, state "none".
+
+> **Gap description:** Describe which functionality described in the related requirements is currently missing in the implementations you're aware of. Include references to work ongoing in the target project, which may adress the gap.
+
 <a name="8.2.1"></a>
 ### 8.2.1 Container run-time Interfaces towards NFVI resources
 
