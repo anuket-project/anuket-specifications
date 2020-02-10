@@ -16,7 +16,9 @@
    * [5.3.5 Network device](#5.3.5)
    * [5.3.6 EOR card](#5.3.6)
    * [5.3.7 Cabling](#5.3.7) 
-
+* [5.4 Appendix](#5.4)
+   * [5.4.1 HDV Original collection.](#5.4.1)
+   
 <a name="5.1"></a>
 ## 5.1 Introduction
 
@@ -38,8 +40,8 @@ All the check point should be configurable for the check tool.
 A Descriptor File defines the configuration required by the checking tool in a common schema. 
 This file can be used as the input of checking tool(let's call it "checker") to validate the hardware settings meeting the requirement.
 Thanks to the descriptor file, user can validate if hardware matching requirement, and outcome the failure reason for invalid hardware.
-The failure reason would guide user for the correctness and another round of validation after that.
-hardware integration validation stage must happen before the software stack deployment. 
+The failure reason would guide user for the correctness and after then user can have another round of validation after that.
+Hardware integration validation stage must happen before the software stack deployment. 
 
 | Ref # | sub-category | Description |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -52,7 +54,7 @@ hardware integration validation stage must happen before the software stack depl
 
 <a name="5.2.2"></a>
 ### 5.2.2 Check point
-There are many hardware check points which initially drafted at [CNTT Hardware Delivery Validation (01-2020 DDF)](#https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908).
+There are many hardware check points which initially drafted at (#5.4.1)
 
 | Test Type # | Purpose | Example | Check when |
 |----|---------------|-----------|-----------|
@@ -67,7 +69,7 @@ There are many hardware check points which initially drafted at [CNTT Hardware D
 | Hardware Inventory | Inventory of h/w on platform.| CPU and count, NUMA topology, CPU Freq, RAM, speed, size, model, etc.||
 | Physical Disk Configuration | Verifies storage / disk config (type, size)|Physical disk type, card/port location,capacity||
 | SRIOV Port Validation | Verifies global and NIC level enabled.|Confirm setting is enabled (or none)||
-| Hardware Check | Verifies basic OS config attributes (i.e. Linux running on the host and reporting these values).|RAM size number of cores.||
+| Hardware Check | Verifies basic OS config attributes (i.e. Linux running on the host and reporting these values).|RAM size/number of cores.||
 <p align="center"><b>Table 5-2-2:</b> Hardware check point.</p>
 
 <a name="5.3"></a>
@@ -77,8 +79,8 @@ The entry information must be included in the description file , which are the r
  
 <a name="5.3.1"></a>
 ### 5.3.1 Resource pool
-Resource pool is the conception which is planned to build up. It consists hardware server device, network device and cabling among them.
-It is referenced by other resource type introduced later.
+Resource pool is the conception which a NFV resource is planned to build up. It consists hardware server device, network device and cabling among them.
+It is referenced by other resource type to introduce later.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|-----------------|-------------------------|
@@ -101,9 +103,6 @@ NIC Template defines network interface card parameters, it includes the crucial 
 | nic_vendor | String | Yes | nework interface card vendor: intel |
 | nic_type | String | Yes | Intel "x520" |
 | rootbdf | String | Yes | e.g "00:03:01:00" |
-| nic_type | String | Yes | Intel "x520" |
-| nic_type | String | Yes | Intel "x520" |
-| nic_type | String | Yes | Intel "x520" |
 | slot_id | String | Yes | the slot id number of card plugged-in |
 | connect_type | String | Yes | plugin |
 | port_quantity | Number | Yes | port quantity on the card. e.g. 2 |
@@ -215,3 +214,9 @@ Check tool will verify the correctness according to the cabling data.
 | cabling_type | String | Yes | e.g "SV-TOR","TOR-TOR","ST_TOR-ST_EOR","S_TOR-S_EOR","S_TOR-M_EOR","M_TOR-M_EOR","EOR-EOR" |
 
 <p align="center"><b>Table 5-3-7:</b> Cabling.</p>
+
+<a name="5.4"></a>
+## 5.4 Appendix
+<a name="5.4.1"></a>
+### 5.4.1 HDV Original collection.
+[CNTT Hardware Delivery Validation (01-2020 DDF)](#https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908).
