@@ -22,6 +22,15 @@ the CNTT standard OpenStack version will be Pike.
 The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in the Chapter a
 consolidated view of these and other APIs that would be of interest.
 
+OpenStack is a multi-project framework composed of services evolving independently. It is not enough to rely only on the 
+OpenStack release to characterise the capabilities supported by these services. Regarding OpenStack services APIs, 
+an "API version" is associated to each OpenStack service. 
+In addition to major API versions, some OpenStack services (Nova, Glance, Keystone, Cinder...) support microversions.
+The microversions allow to introduce new features over time. 
+In this chapter, the **major version** and **microversion** are specified per service.
+The mentioned microversion is the minimal microversion that supports the features requested for CNTT.
+For the purpose of compliance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for CNTT. 
+
 <a name="5.2"></a>
 ## 5.2. Core OpenStack Services APIs
 
