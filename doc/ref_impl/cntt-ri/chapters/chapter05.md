@@ -39,6 +39,9 @@
 
 <a name="5.2"></a>
 ## 5.2 Installer requirements
+There are many installer implementations from vendors, however that's always the case of different configuration used.
+For one operator, especially big service operator, it might have more than one supplier to build up their NFVi, meanwhile, they also need verify it.
+In order to align those installers, installers must support deploying NFVi with a common configuration. i.e, given a cluster of hardware resources in a common configuration, operator can set up NFVi by any installers.
 
 <a name="5.2.1"></a>
 ### 5.2.1 General
@@ -136,7 +139,7 @@ Besides it may include additional information pim username, password, rack_name,
 | device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | system_diskname | String | No | system disk name |
 | system_disksize | String | No | system disk size |
-| role | String | No | computer or controller |
+| role | String | No | computer,controller,storage |
 | hugepage_number | String | No | huge page quantity |
 | rack_name | String | Yes |  |
 | position | String | Yes |  |
