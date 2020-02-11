@@ -16,6 +16,8 @@
    * [5.3.5 Network device](#5.3.5)
    * [5.3.6 EOR card](#5.3.6)
    * [5.3.7 Cabling](#5.3.7) 
+   * [5.3.8 Server model](#5.3.8)
+   * [5.3.9 Network device model](#5.3.9) 
 * [5.4 Appendix](#5.4)
    * [5.4.1 HDV Original collection.](#5.4.1)
    
@@ -28,33 +30,35 @@
 
 <a name="5.2"></a>
 ## 5.2 Requirements
-Before deployment of software, a set of hardware delivery and related parameter should be validated. 
-Automated tool is also expected for checking if hardware settings match with the requirement for NFVi and VNF.
-First release, focus on the "readable" hardware parameter, in future release, "writable" parameter might add also.
-It's expected that a basic set of information should be prepared, for example, remote access configuration, IPMI ipaddress and credentials, or redfish interface.
-Further more, in production case of large scale to check, those basic information can be automated from user defined rule.
-All the check point should be configurable for the check tool.
+As we known, the NFVi software builds upon a set of hardware resources. For the operator(user) having a set of hardware resources, there is an inevitable step to examine it before deployment of the software.
+If there is only limited nodes for lab demonstration or something like this, it's acceptable to do it manually, however it would be a time consuming process especially there are large scale of hardware nodes, for example 1000 node. 
+Also,adding the different provider's factor, that's much complicated to validate it and a headache thing if doing it in manual.
+In order to resolve this issue of how to validate hardware efficiently , we call on here to build up a common data model for describing the hardware data, which is extensible to large scale and can be recognized by some automated check tool (Let's call it checker).
+Let's also name it to description file, which is align with the one for software deployment definition already commited in another chapter.
+The description file defines the same information data model accross the hardware vendor provider. 
+At present, in the first release,only the "readable" hardware parameter can be focused, in future release, "writable" parameter might add also.
+Besides, we also collect the common hardware check requiremnt here, most of which are origially from Prague meeting.
+We are expecting that by utilizing the common hardware description file, the check tool will perform all the neccessary hardware check point automatically.
+We believe this is a mutual interest for all operators having such needs.
 
 <a name="5.2.1"></a>
 ### 5.2.1 General
-A Descriptor File defines the configuration required by the checking tool in a common schema. 
-This file can be used as the input of checking tool(let's call it "checker") to validate the hardware settings meeting the requirement.
+A Descriptor File defines the configuration required by the checker in a common schema. 
+This file can be used as the input of checker to validate the hardware settings meeting the requirement.
 Thanks to the descriptor file, user can validate if hardware matching requirement, and outcome the failure reason for invalid hardware.
 The failure reason would guide user for the correctness and after then user can have another round of validation after that.
-Hardware integration validation stage must happen before the software stack deployment. 
 
 | Ref # | sub-category | Description |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----|----------------------|---------------------------------|
 | `req.gen.chk.01` | Checker | Checker **must** accept a descriptor file to finish hardware delivery validation.|
 | `req.gen.chk.02` | Checker | Checker **must** report the checking result of success or failure with reason.|
-| `req.gen.chk.03` | Checker | Checker **may** accept the configurable checkpoint file as input |
 | `req.gen.des.01` | Descriptor | Descriptor file **must** include neccessary information to remote access hardware resource|
-| `req.gen.des.02` | Descriptor | Descriptor file **may** be automated to generated from a user defined rule, how to generate asset name, IP address, gateways, VLAN ID, etc|
+| `req.gen.des.02` | Descriptor | Descriptor file **may** automate to generate from a user defined rule of how to generate asset name, IP address, gateways, VLAN ID, etc|
 <p align="center"><b>Table 5-2-1:</b> Check tool requirements </p>
 
 <a name="5.2.2"></a>
 ### 5.2.2 Check point
-There are many hardware check points which initially drafted at (#5.4.1)
+Till now, following the check point requirements are collected: (#5.4.1)
 
 | Test Type # | Purpose | Example | Check when |
 |----|---------------|-----------|-----------|
@@ -70,12 +74,14 @@ There are many hardware check points which initially drafted at (#5.4.1)
 | Physical Disk Configuration | Verifies storage / disk config (type, size)|Physical disk type, card/port location,capacity||
 | SRIOV Port Validation | Verifies global and NIC level enabled.|Confirm setting is enabled (or none)||
 | Hardware Check | Verifies basic OS config attributes (i.e. Linux running on the host and reporting these values).|RAM size/number of cores.||
+| Cabling Connection check | Verifies the wired connection between server NIC port and switch port, or the between switches.|Check if cabling is plugin correct as expected design data||
+| Redfish interface | Verifies that support classic interface.| system service/Manager service/ChassisService/SessionService/AccountService/EventService etc.||
 <p align="center"><b>Table 5-2-2:</b> Hardware check point.</p>
 
 <a name="5.3"></a>
 ## 5.3 Descriptor file definition
-There must be a Descriptor File definition for the hardware validation, at beginning only focus-on readable parameter, after then extend on writable parameters in future release.
-The entry information must be included in the description file , which are the remote access parameter settings。
+As mentioned at the beginning, the description file is used to define the common hardware data which are used by the checker implementation
+The entry information must be included in the description file,which are the remote access parameter settings.
  
 <a name="5.3.1"></a>
 ### 5.3.1 Resource pool
@@ -127,9 +133,13 @@ Cabinet is the rack holder for the server and network devices. The data will be 
 <a name="5.3.4"></a>
 ### 5.3.4 Server
 Server device data defines the key information about how to access the server remotely, i.e. remote ip, user, credentials.
-Hardware validation consists of BMC validation, interface verifcation etc. 
-Once the server have started up from PXE, in order to invoke remote interface(e.g. BMC) of the server from server OS.
-inband ip address is temporally configured and used, the inband ip is connective with remote BMC ip.
+There are many ways to validate the hardware by remote interface verifcation, for example IPMI,redfish etc.
+Considering the amount of server, user can validate the server interface in distributed way or centralized way.
+Distributed validation is to temporally install OS with inband ip configured, which can connect itself remote ip, and invoked the remote(BMC,IPMI) ip and validate the inteface from OS.
+Centralized validation is to invoke and validate the interface from remote access interface.
+This is totally decided by operator theirselves. 
+For storage type server, centralized way proposed as the amount is less than computational type server.
+For computational type server it's better to choose distributed validation way.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|-----------------|-------------------------|
@@ -148,9 +158,9 @@ inband ip address is temporally configured and used, the inband ip is connective
 | subnet | String | Yes | e.g. "2409:8086:8313:81"|
 | remote_user | String | Yes | e.g. "Administrator"|
 | remote_password | String | Yes | e.g. "password"|
-| inband_ip | String | Yes | temporary inband_ip e.g "2409:8086:8313:f::24"|
-| inband_gateway | String | Yes | gateway of inband ip, e.g "2409:8086:8313:f::ffff"|
-| inband_netmask | String | Yes | e.g. "64"|
+| inband_ip | String | No | temporary inband_ip e.g "2409:8086:8313:f::24"|
+| inband_gateway | String | No | gateway of inband ip, e.g "2409:8086:8313:f::ffff"|
+| inband_netmask | String | No | e.g. "64"|
 | group | String | Yes | network assignment "service/management/storage"|
 | is_bmc_configured | String | Yes | TOCHECK|
 
@@ -171,12 +181,13 @@ network device data defines the key data about how to remote access the network 
 | resource_pool_name | String | Yes | resource pool name which belongs to , e.g. "NFV-RP-HZZZ-03A_0" |
 | cabinet | String | Yes | cabinet which belongs to, in format room-column-cabinet, e.g. "2201-J-01" |
 | position | String | Yes | the server position located in the cabinet.|
-| remote_ip | String | Yes | BMC/iLO/IPMI ip for remote access, e.g "2409:8086:8313:81::1"|
+| remote_ip | String | Yes | BMC/iLO/IPMI/redfish ip for remote access, e.g "2409:8086:8313:81::1"|
 | gateway | String | Yes | gateway of remote ip, e.g "2409:8086:8313:81::ffff"|
 | netmask | String | Yes | e.g. "64"|
 | mac_address | String | Yes | mac address|
-| ssh_user | String | Yes | e.g. "Administrator"|
-| ssh_password | String | Yes | e.g. "password"|
+| protocol | String | Yes | ssh/telnet/redfish etc.|
+| user | String | Yes | e.g. "Administrator"|
+| password | String | Yes | e.g. "password"|
 | enable_password | String | Yes | e.g. "password"|
 | group | String | Yes | network assignment "service/management/storage"|
 
@@ -215,8 +226,46 @@ Check tool will verify the correctness according to the cabling data.
 
 <p align="center"><b>Table 5-3-7:</b> Cabling.</p>
 
+<a name="5.3.8"></a>
+### 5.3.8 Server model
+The server model describes processor, memory, harddrive, raid,manufacturer, model etc.
+server model will be referenced by servers.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|---------------------|-------------------------|
+| name | String | Yes | model name will referenced by server |
+| manufacturer | String | Yes |  |
+| model | String | Yes |  |
+| processor | String | Yes |  |
+| memory | String | Yes |  |
+| hard_drive | String | Yes |  |
+| raid | String | Yes |  |
+| network_card_infos | List | No | interface list definition|
+| network_card_bond_infos | List | No | NIC bonding, might not be always the case.|
+
+<p align="center"><b>Table 5-3-8:</b> Server model.</p>
+
+
+<a name="5.3.9"></a>
+### 5.3.9 Network device model
+The network device model describes processor, memory,manufacturer, model etc.
+network device model will be referenced by network device.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|---------------------|-------------------------|
+| name | String | Yes | model name will referenced by network device |
+| manufacturer | String | Yes |  |
+| model | String | Yes |  |
+| processor | String | Yes |  |
+| port_type | String | Yes | port type |
+| port_quantity | String | Yes | total number of port  |
+| memory | String | Yes |  |
+| version | String | Yes |  |
+
+<p align="center"><b>Table 5-3-9:</b> Network device model.</p>
+
 <a name="5.4"></a>
 ## 5.4 Appendix
 <a name="5.4.1"></a>
-### 5.4.1 HDV Original collection.
-[CNTT Hardware Delivery Validation (01-2020 DDF)](#https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908).
+### 5.4.1 HDV original collection.
+[CNTT Hardware Delivery Validation (01-2020 DDF)] https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908
