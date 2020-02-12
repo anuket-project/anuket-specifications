@@ -44,9 +44,9 @@ We believe this is a mutual interest for all operators having such needs.
 <a name="5.2.1"></a>
 ### 5.2.1 General
 A Descriptor File defines the configuration required by the checker in a common schema. 
-This file can be used as the input of checker to validate the hardware settings meeting the requirement.
-Thanks to the descriptor file, user can validate if hardware matching requirement, and outcome the failure reason for invalid hardware.
-The failure reason would guide user for the correctness and after then user can have another round of validation after that.
+The "checker tool" validates the current hardware against the descriptor file, listing mismatches or differences, as failures, allowing the user to quickly identify and correct any errors in hardware, network wiring, or configuration.
+If failures are detected, the process can be rerun after corrective actions are taken. 
+This checking process must be completed before the software stack deployment.
 
 | Ref # | sub-category | Description |
 |----|----------------------|---------------------------------|
