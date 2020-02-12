@@ -78,7 +78,7 @@ For the purpose of this RI, the following diagram illustrates the networks and n
 
 
 <a name="9.2.2"></a>
-## 4.5.2 Hardware Specification
+## 9.2.2 Hardware Specification
 
 CPU:
 
@@ -105,7 +105,7 @@ Memory:
 
 * 32G RAM Minimum
 
-<a name="4.5.3"></a>
+<a name="9.2.3"></a>
 ## 9.2.3 Network Specification
 
 Network Hardware
