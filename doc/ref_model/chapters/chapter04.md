@@ -485,6 +485,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
+<!--
 <a name="4.2.4.3"></a>
 #### 4.2.4.3 C Instances (Compute Intensive)
 This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
@@ -517,9 +518,35 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 
 > _*VNFs are expected to use the minimum number of interfaces and adopt Microservice design principles._
 
+-->
 <a name="4.2.5"></a>
 ### 4.2.5 Instance Capabilities Mapping
 
+| Ref | B Instance | N Instance | Notes |
+|----------------------|----------------------------|----------------------------|-------|
+| `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
+| `e.nfvi.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.nfvi.res.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.nfvi.res.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> |  |
+| `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> |   |
+| `e.nfvi.per.cap.001`<br />(CPU pinning support) | No | Yes |  Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
+| `e.nfvi.per.cap.002`<br />(NUMA support) | No | Yes |  |
+| `e.nfvi.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | |
+| `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | |
+| `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No |  |
+| `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No |  |
+| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E |  |
+| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes |  Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
+| `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 |  Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes |  |
+| `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes |  Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes |  Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
+| `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes |  |
+| `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes |  |
+| `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | |
+| `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | |
+
+<!--
 | Ref | B Instance | N Instance | C Instance | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
 | `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
@@ -543,7 +570,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
-
+-->
 
 <p align="center"><b>Table 4-24:</b> Mapping of NFVI Capabilities to Instance Types</p>
 
@@ -559,10 +586,10 @@ _**Comment:** To be worked on._
 #### 4.2.7.1 Naming convention
 An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
 
-`B/N/C <I opt> . <Flavour> . <S ext> . <A ext>`
+`B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
 Whereas:
-- **B/N/C**: specifies the instance type (Basic, Network Intensive, and Compute Intensive)
+- **B/N**: specifies the instance type (Basic, Network Intensive, and Compute Intensive)
 - **\<I opt>**: specifies the interface option of the instant.
 - **\<Flavour>**: specifies the compute Flavour.
 - **\<S ext>**: specifies an optional storage extension.
