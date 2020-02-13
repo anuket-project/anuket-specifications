@@ -175,7 +175,7 @@ Based on the above analysis, following NFVI profiles are proposed (Also shown in
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-On **Chapter 4** later in the document, these infrastructure profiles will be offered to VNFs in form of instance types: **B (Basic)**, **N (Network intensive)**, and **C (Compute intensive)** respectively.
+On **Chapter 4** later in the document, these infrastructure profiles will be offered to VNFs in form of instance types: **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> respectively.
 
 >***Note**  
 >This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:* 
