@@ -38,7 +38,7 @@ Being on the voting representative list **doesn't** mean the right to vote. The 
 <a name="5.3"></a>
 ## 5.3 Voting Process
  
- In Scenarios where Consensus cannot be reached, a voting event will be triggered by Technical/Governance Steering Leads (depending on if the event corresponds to a technical or governance matter). 
+ In Scenarios where Consensus cannot be reached, a voting event will be triggered by Technical/Governance Steering Leads (depending on whether the event corresponds to a technical or governance matter). 
 
  When a voting event is triggered, an online voting mechanism will be setup and the following process will be followed:
  
