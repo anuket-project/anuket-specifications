@@ -148,6 +148,7 @@ By trying to sort VNFs into different categories based on the requirements obser
     - Predictable computing
     - High network throughput
     - Low network latency
+<!--
 - **Profile Three**
   - VNF types
     - Control plane functions with specific computing needs
@@ -155,7 +156,7 @@ By trying to sort VNFs into different categories based on the requirements obser
   - Requirements
     - Predictable computing
     - Low network latency    
-<!--
+
 - **Profile Four**
   - VNF types
     - Control plane functions with specific storage needs
