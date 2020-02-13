@@ -5,28 +5,29 @@
 This is Openstack based Reference Architecture
 
 ## Release Information
-**Release: _1.0_**
+**Release: _2.0-alpha_**
 
-**Version: _0.0_**
+**Version: _1.0_**
 
-**Release Date: _20th September 2019_**
+**Release Date: _10th January 2020_**
 
 ## Version History
 
 | Version | Date | Note
 | --- | --- | --- |
 | 1.0 | 20th September 2019 | Botrange Release|
+| 2.0-alpha | 10th January 2020 | Snezka Release|
 
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Initial Framework Only |
-| Chapter 02 | Initial Framework Only |
-| Chapter 03 | Initial Framework Only |
-| Chapter 04 | Initial Framework Only |
-| Chapter 05 | Initial Framework Only |
+| Chapter 01 | Still Developing Content |
+| Chapter 02 | Dickering over the final points |
+| Chapter 03 | Dickering over the final points |
+| Chapter 04 | Still Developing Content |
+| Chapter 05 | Dickering over the final points |
 | Chapter 06 | Initial Framework Only |
 | Chapter 07 | Initial Framework Only |
 | Chapter 08 | Initial Framework Only |

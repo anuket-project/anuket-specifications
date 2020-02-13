@@ -29,8 +29,8 @@
 /doc/ref_model/chapters/chapter09.md    @rabiabdel @ASawwaf
 
 # Reference Model COM WS
-/doc/ref_model/chapters/chapter08.md        @rabiabdel @yangyanyj 
-/doc/ref_model/chapters/chapter08-annex.md  @rabiabdel @yangyanyj 
+/doc/ref_model/chapters/chapter08.md        @rabiabdel @Gaoweitao 
+/doc/ref_model/chapters/chapter08-annex.md  @rabiabdel @Gaoweitao 
 
 # Reference Architectures 1 Core
 /doc/ref_arch/openstack/chapters/chapter01.md        @rabiabdel @pgoyal1
@@ -62,18 +62,18 @@
 /doc/ref_arch/kubernetes/chapters/chapter08.md        @rabiabdel @pgoyal1
 
 # Reference Implementation Core
-/doc/ref_impl/cntt-ri/chapters/chapter01.md        @rabiabdel @fuqiao
-/doc/ref_impl/cntt-ri/chapters/chapter02.md        @rabiabdel @fuqiao
-/doc/ref_impl/cntt-ri/chapters/chapter03.md        @rabiabdel @fuqiao
-/doc/ref_impl/cntt-ri/chapters/chapter04.md        @rabiabdel @fuqiao
-/doc/ref_impl/cntt-ri/chapters/chapter05.md        @rabiabdel @fuqiao
+/doc/ref_impl/cntt-ri/chapters/chapter01.md        @rabiabdel @fuqiao123
+/doc/ref_impl/cntt-ri/chapters/chapter02.md        @rabiabdel @fuqiao123
+/doc/ref_impl/cntt-ri/chapters/chapter03.md        @rabiabdel @fuqiao123
+/doc/ref_impl/cntt-ri/chapters/chapter05.md        @rabiabdel @fuqiao123
 
 # Reference Implementations Labs
-/doc/ref_impl/cntt-ri/chapters/chapter06.md        @rabiabdel
+/doc/ref_impl/cntt-ri/chapters/chapter04.md        @rabiabdel @rrajesh70
+/doc/ref_impl/cntt-ri/chapters/chapter06.md        @rabiabdel @rrajesh70
 
 # Reference Implementations Dev
-/doc/ref_impl/cntt-ri/chapters/chapter07.md        @rabiabdel @ollivier
-/doc/ref_impl/cntt-ri/chapters/chapter08.md        @rabiabdel @ollivier
+/doc/ref_impl/cntt-ri/chapters/chapter07.md        @rabiabdel @collivier
+/doc/ref_impl/cntt-ri/chapters/chapter08.md        @rabiabdel @collivier
 
 # Reference Certification NFVI
 /doc/ref_cert/lfn/chapters/chapter01.md        @rabiabdel @mf4716
@@ -87,10 +87,7 @@
 /doc/ref_cert/lfn/chapters/chapter07.md        @rabiabdel @mf4716
 
 # Reference Certification Dev
-/doc/ref_cert/lfn/chapters/chapter08.md        @rabiabdel @ollivier
-/doc/ref_cert/lfn/chapters/chapter09.md        @rabiabdel @ollivier
-/doc/ref_cert/lfn/chapters/chapter10.md        @rabiabdel @ollivier
-/doc/ref_cert/lfn/chapters/chapter11.md        @rabiabdel @ollivier
-
-# Reference Implementation
-/doc/ref_impl/*                         @mf4716 @markshostak @kagreenwell
+/doc/ref_cert/lfn/chapters/chapter08.md        @rabiabdel @collivier
+/doc/ref_cert/lfn/chapters/chapter09.md        @rabiabdel @collivier
+/doc/ref_cert/lfn/chapters/chapter10.md        @rabiabdel @collivier
+/doc/ref_cert/lfn/chapters/chapter11.md        @rabiabdel @collivier

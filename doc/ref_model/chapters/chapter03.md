@@ -9,7 +9,7 @@
   * [3.2.2 Compute.](#3.2.2)
   * [3.2.3 Storage.](#3.2.3)
   * [3.2.4 Network.](#3.2.4)
-* [3.3 Management Software.](#3.3)
+* [3.3 NFVI Management Software.](#3.3)
 * [3.4 Physical Resources.](#3.4)
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of the workloads match the capabilities of the NFVI.
@@ -41,9 +41,9 @@ The abstraction model for the NFVI makes use of the following layers (only the v
 <p align="center"><b>Figure 3-1:</b> NFVI Model Overview.</p>
 
 The functionalities of each layer are as follows:
-- **Physical Infrastructure Resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, and the basic input output system (BIOS).
-- **NFVI Management Software:** This consists of both the host Operating System (OS) responsible for managing the physical infrastructure resources as well as the virtualization/containerization technology which, on request, dynamically allocates hardware components and exposes them as virtual resources.
 - **Virtual Infrastructure Resources:** These are all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
+- **NFVI Management Software:** This consists of the software components that manage the physical and virtual resources and make those management capabilities accessible via one or more APIs. The host Operating System (OS) is responsible for managing the physical infrastructure resources and abstracting them from processes running within the OS. Virtualisation / containerisation technology dynamically allocates these abstracted hardware components and exposes them as virtual resources. Additional software is responsible for the management of logical constructs such as tenants, tenant workloads, resource catalogues, identities, access controls, security policies, etc.
+- **Physical Infrastructure Resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, and the basic input output system (BIOS).
 - **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container.
 
 <a name="3.2"></a>
@@ -131,7 +131,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
 
 <a name="3.3"></a>
-## 3.3 Management Software
+## 3.3 NFVI Management Software
 
 Network Function Virtualisation Infrastructure provides the capability to manage virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
 
