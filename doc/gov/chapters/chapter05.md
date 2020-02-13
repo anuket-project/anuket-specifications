@@ -42,7 +42,7 @@ Being on the voting representative list **doesn't** mean the right to vote. The 
 
  When a voting event is triggered, an online voting mechanism will be setup and the following process will be followed:
  
- - The time and the deadline of which the voting representatives are required to cast their vote will be determined by the leads themselves.
+ - The time and deadline before which the voting representatives are required to cast their vote will be determined by the leads themselves.
  - The question will be created by the leads (A simple clear two-choices question is expected (**A | B**)).
  - The vote result will be announced by the leads after the voting deadline.
  - More than **50%** of the valid votes are needed for a decision to be made (Between **A | B**).
