@@ -33,7 +33,7 @@ Being on the voting representative list **doesn't** mean the right to vote. The 
 
 <sup>2)</sup>The criteria will be checked and the voting representative list will be updated prior any voting event when the voting process kicks in.
 
-<sup>3)</sup> Individuals who don't represent an organisation will not have voting right.
+<sup>3)</sup> Individuals who don't represent an organisation will not have voting rights.
 
 <a name="5.3"></a>
 ## 5.3 Voting Process
