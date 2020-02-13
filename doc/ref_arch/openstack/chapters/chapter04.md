@@ -21,7 +21,7 @@
 * [4.5 Cloud Topology.](#4.5)
   * [4.5.1 Cloud Topology Considerations](#4.5.1)
 * [4.6 Logging / Monitoring / Alerting of Control Plane](#4.6)
-* [4.7 Architectural Drivers – Requirements Traceability](#4.7)
+
 
 
 <a name="4.1"></a>
@@ -139,8 +139,31 @@ Caveats:
 -	Affinity and anti-affinity rules, among other factors, affect the sizing
 
 #### 4.2.2.6. Compute Resource Pooling Considerations
--	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive). Leads to efficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type. The specifications for this type of resource pooling is specified in 4.5.2.
--	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection. The specifications for this type of resource pooling is specified in 4.5.3.
+-	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive). Leads to efficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type. 
+-	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection. 
+
+#### 4.2.2.7. Reservation of Compute Node Cores
+The [RA-1 2.3.2 Infrastructure Requirements](https://github.com/cntt-n/CNTT/blob/pgoyal01-patch-2/doc/ref_arch/openstack/chapters/chapter02.md#232-infrastructure-requirements) req.inf.com.08 requires the allocation of "certain number of host cores/threads to non-tenant workloads such as for OpenStack services." A number ("n") of random cores can be reserved for host services (including OpenStack services) by specifying the following in nova.conf:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reserved_host_cpus = n
+
+where n is any positive integer.
+
+If we wish to dedicate specific cores for host processing we need to consider two different use cases:
+    - Require dedicated cores for Guest resources
+    - No dedicated cores are required for Guest resources
+
+For #1, we will need to specify both the cpu_shared_set and cpu_dedicated_set configurations, while for #2 only the cpu_shared_set configuration would need to be specified. The cores and their sibling threads dedicated to the host services are those that do no exist in either of the cpu_shared_set and cpu_dedicated_set configurations.
+
+Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 18-39
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_dedicated_set = 2-7,10-17
+
+This implies that the two physical cores '0' and '8' and their sibling threads are dedicated to the host services, while 7 cores and their sibling threads are dedicated to Guest instances (these dedicated cores cannot be over allocated), and 11 cores and their sibling threads are available for Guest instances (and can be over allocated as per the specified cpu_allocation_ratio in nova.conf.
+> Please note that in this example the cores and sibling threads are numbered consecutively but this is not usually the case.
+
 
 <a name="4.2.3"></a>
 ### 4.2.3. Network Fabric
@@ -432,6 +455,4 @@ Figure 4-3: Monitoring and Logging Framework </p>
 
 The monitoring and logging framework (**Figure 4-6**) leverages Prometheus as the monitoring engine and Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. Prometheus agents pull information from individual components on every host.  Fluentd, an open source data collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures the access, application and system logs.
 
-<a name="4.7"></a>
-## 4.7 Architectural Drivers – Requirements Traceability
 
