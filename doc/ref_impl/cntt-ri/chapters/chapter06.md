@@ -134,6 +134,7 @@ Besides it may include additional information pim username, password, rack_name,
 | device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | system_diskname | String | No | system disk name |
 | system_disksize | String | No | system disk size |
+| role | String | No | computer,controller,storage |
 | pim_ip_address | String | Yes | PIM ip address |
 | pim_netmask | String | Yes | PIM netmask |
 | pim_username | String | Yes | PIM user |
