@@ -4,5 +4,6 @@
 
 <a name="available-ri"></a>
 
-## Available Implementations
-* [RI1 - OPNFV Based](cntt-ri)
+## Available Reference Implementations
+* [RI1 - OpenStack Based](cntt-ri)
+* [RI2 - K8s Based](cntt-ri2)
