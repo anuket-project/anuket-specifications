@@ -22,7 +22,7 @@
 * [Reference Model](../ref_model)
 * [Reference Architecture](../ref_arch)
 * [Reference Implementation](../ref_impl)
-* [Reference Certification](../ref_cert)
+* [Reference Conformance](../ref_cert)
 
 ## CNTT Releases
 * [CNTT Releases](./release_notes)
