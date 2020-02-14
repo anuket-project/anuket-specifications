@@ -231,3 +231,19 @@ This sections describes the readiness of NFVI before the certification process c
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/  | v1 | NA |
 | Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | v1.0 | NA |
 | Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
+
+## 3.6 NFVI and VIM Architecture 
+This sections concludes the expectation for NFVi and VIM architecture according to [RA1: Chapter 3 NFVI + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md) 
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+| Multi-Tenancy | permit to host several VNF projects with the insurance to have isolated environment for each. Naming and quotas are kept consistent (details TBD)|
+|Virtual Compute |The virtual compute resources (vCPU and vRAM) used by the VNFs behave like their physical counterparts. The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components.|
+|Virtual Storage|The three storage services offered by NFVI are:Persistent storage, Ephemeral storage, Image storage |
+|Virtual Networking Neutron standalone|Allows users to create networks, subnets, ports, routers etc. Facilitates traffic isolation between different subnets. Support multiple network segments. Create routers to connect layer 2 networks|
+|Virtual Networking – 3rd party SDN solution|Utilize OpenStack Neutron to support plugins for various SDN controllers include the standard ML-2 plugin and vendor product specific monolithic plugins.|
+|Acceleration|The hardware accelerator covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the main CPU, and to accelerate workload performance. NFVI should manage the accelerators by plugins and provide the acceleration capabilities to VNFs.With the acceleration abstraction layer defined, hardware accelerators as well as software accelerators can be abstracted as a set of acceleration functions (or acceleration capabilities) which exposes a common API to either the VNF or the host.|
+|VIM core services| horizon, heat, keystone, nova, neutron, cinder, glance, swift, Ironic(optional only for bare-metal management)|
+|Foundation services| Foundation Node To build and lifecycle manage an OpenStack cloud it is typically necessary to deploy a server or virtual machine as a deployment node. This function must be able to manage the bare-metal provisioning of the hardware resources( can be detached from the OpenStack cloud). Capabilities include building the cloud (control, compute, storage, network hardware resources), Patch management / upgrades / change management, Grow / Shrink resources|
+|Cloud Controller Services|All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services|
+|Physical Network|The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up.
