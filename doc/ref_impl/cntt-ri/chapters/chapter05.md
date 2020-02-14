@@ -29,12 +29,6 @@
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 <a name="5.2"></a>
-<<<<<<< HEAD
-## 5.2 Installer requirements
-There are many installer implementations from vendors, however that's always the case of different configuration used.
-For one operator, especially big service operator, it might have more than one supplier to build up their NFVi, meanwhile, they also need verify it.
-In order to align those installers, installers must support deploying NFVi with a common configuration. i.e, given a cluster of hardware resources in a common configuration, operator can set up NFVi by any installers.
-=======
 ## 5.2 Requirements
 As we known, the NFVi software builds upon a set of hardware resources. For the operator(user) having a set of hardware resources, there is an inevitable step to examine it before deployment of the software.
 If there is only limited nodes for lab demonstration or something like this, it's acceptable to do it manually, however it would be a time consuming process especially there are large scale of hardware nodes, for example 1000 node. 
@@ -46,7 +40,6 @@ At present, in the first release,only the "readable" hardware parameter can be f
 Besides, we also collect the common hardware check requiremnt here, most of which are origially from Prague meeting.
 We are expecting that by utilizing the common hardware description file, the check tool will perform all the neccessary hardware check point automatically.
 We believe this is a mutual interest for all operators having such needs.
->>>>>>> daf9029adf304e54f2a2869b956d965013c4d15e
 
 <a name="5.2.1"></a>
 ### 5.2.1 General
@@ -129,21 +122,6 @@ NIC Template defines network interface card parameters, it includes the crucial 
 Cabinet is the rack holder for the server and network devices. The data will be referenced by server and network device data.
 
 | Field # | type | mandatory | Instruction |
-<<<<<<< HEAD
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| template_name | String | Yes | template referenced |
-| device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
-| system_diskname | String | No | system disk name |
-| system_disksize | String | No | system disk size |
-| role | String | No | computer,controller,storage |
-| hugepage_number | String | No | huge page quantity |
-| rack_name | String | Yes |  |
-| position | String | Yes |  |
-| remote_management_ip | String | Yes | remote management ip, e.g. iLO,iDRAC, BMC |
-| nic_info | List | Yes | network interface information |
-
-<p align="center"><b>Table 5-3-3:</b> Server information.</p>
-=======
 |----|--------------------|-----------------|-------------------------|
 | serial_no | String | Yes |  |
 | room | String | Yes | room number, e.g: 2201 |
@@ -151,7 +129,6 @@ Cabinet is the rack holder for the server and network devices. The data will be 
 | cabinet | String | Yes | cabinet number in the column: e.g. "01" |
 
 <p align="center"><b>Table 5-3-3:</b> Cabinet.</p>
->>>>>>> daf9029adf304e54f2a2869b956d965013c4d15e
 
 <a name="5.3.4"></a>
 ### 5.3.4 Server

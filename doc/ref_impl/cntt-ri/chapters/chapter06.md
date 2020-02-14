@@ -324,8 +324,6 @@ And user need obtain the valid ip address planned from lab administrator.
 ### 6.5.1 description file sample
 "A proposed sample description file in yaml format."
 
----
-
 version: 1.0
 details:
   owner: user name
