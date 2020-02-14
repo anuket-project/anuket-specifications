@@ -702,7 +702,7 @@ by Functest VNF tests in the other cases.
 
 According to [RC1 Chapter04]({{ "/doc/ref_cert/lfn/chapters/chapter04.html" | relative_url }})
 the following test cases must pass as they are for CNTT NFVI
-Conformance/Certification:
+Conformance:
 
 | container                               | test case                  | criteria |
 |-----------------------------------------|----------------------------|:--------:|

@@ -27,7 +27,7 @@ Define the purpose of the chapter which is to:
 <p align="center"><b>Figure 1-3:</b> VNF Testing Integrated Framework.</p>
 
 As detailed in the CNTT RC chapter 05 on E2E VNF test platform requirements,
-ONAP VNF Test Platform (VTP) helps to perform the VNF certification process by
+ONAP VNF Test Platform (VTP) helps to perform the VNF Conformance process by
 addressing those requirements. And following sections provides required
 guidelines and details for platform and test cases.
 

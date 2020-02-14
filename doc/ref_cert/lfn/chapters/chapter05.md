@@ -6,14 +6,14 @@
 ## Table of Contents
 
 * [5.1 Introduction](#5.1)
-* [5.2 Certification Methodology](#5.2)
+* [5.2 Conformance Methodology](#5.2)
   * [5.2.1 Profiles Reference](#5.2.1)
   * [5.2.2 Protoype VNFs](#5.2.2)
 * [5.3 Badging Requirements](#5.3)
   * [5.3.1 Badging Scope](#5.3.1)
   * [5.3.2 Entry Criteria](#5.3.2)
   * [5.3.3 Exit Criteria](#5.3.3)
-* [5.4 VNF Test Certification platform](#5.4)
+* [5.4 VNF Test Conformance platform](#5.4)
 * [5.5 VNF Test Cases Requirements](#5.5)
   * [5.5.1 Rationale](#5.5.1)
   * [5.5.2 Assumptions](#5.5.2)
@@ -27,14 +27,14 @@
 
 <a name="5.1"></a>
 ## 5.1 Introduction
-This chapter covers comprehensive VNF certification requirements for enabling
+This chapter covers comprehensive VNF Conformance requirements for enabling
 required process and steps to provide VNF badging based on define scope of
 compliance and validation. This includes end to end test framework requirements,
 badging entry and exit criteria, profiles to reference, different stake holders
-and certification Methodologies by using certified NFVi under NFVi badging program.
+and Conformance Methodologies by using certified NFVi under NFVi badging program.
 
 <a name="5.2"></a>
-## 5.2 Certification Methodology
+## 5.2 Conformance Methodology
 
 It defines the end-end framework and process required for certifying  the given
 VNF.
@@ -54,12 +54,12 @@ Step-6.	Interoperability validations for VNF performance testing defined (IOPS,
 Step-7.	Sending requirements to the VNF requirements projects in terms of t-shirt
 sizes, config settings, required for VNF/orchestration validation.
 
-**Certification flow**:
+**Conformance flow**:
 
 The entry and exit criteria defined in below section are pre-requisities for
 this flow.
 
-1. *VNF Vendors* submit the VNF into OVP Lab for certification (Fulfilling
+1. *VNF Vendors* submit the VNF into OVP Lab for Conformance (Fulfilling
   the entry  criteria is pre-requisities for this step.)
 
 2. As part of OVP lab, already required test cases, test tools, eco-system like
@@ -95,7 +95,7 @@ The NFV Infrastructure (NFVI) is the totality of all hardware and software compo
  VNFs and deployed Infrastructure (NFVI) and offer NFVI to VNFs in an abstracted way
  with defined capabilities and metrics. This would help operators to host their
  Telco Workload (VNF) with different traffic types, behaviour and from any vendor
- on a unified consistent Infrastructure. so as part of VNF Certification, its
+ on a unified consistent Infrastructure. so as part of VNF Conformance, its
  important to certify the VNF based on profiled defined in
  [reference model](../../../ref_model/chapters/chapter02.md).
 
@@ -116,7 +116,7 @@ A portion of the NFVI badging methodology includes Empirical Validation with Ref
 <a name="5.3"></a>
 ## 5.3 Badging Requirements
 
-**Defined**.  _Badging_  refers to the granting of a certification badge by the OVP to Suppliers/Testers of CNTT NFVI+VNF upon demonstration the testing performed confirms:
+**Defined**.  _Badging_  refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of CNTT NFVI+VNF upon demonstration the testing performed confirms:
 
 -   NFVI adheres to CNTT RA/RM requirements.
 -   CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
@@ -129,7 +129,7 @@ optional.
 |CVreq.VNF.001 | must | Receive NFVi badge in lab setup per RI-1 standards, performing h/w validations, performing s/w manifest validations, running nfvi compliance, validation, and performance checks |
 | CVreq.VNF.002 | must | met all entry and exit criteria |
 | CVreq.VNF.003 | must | run interoperability validations, including instantiation, communication / health, and removal |
-| CVreq.VNF.004 | shall | utilize automation frameworks to run all required tests. certification process would improve, if test framework satisfy the required defined in this chapter under *VNF Test Certification platform requirements* section |
+| CVreq.VNF.004 | shall | utilize automation frameworks to run all required tests. Conformance process would improve, if test framework satisfy the required defined in this chapter under *VNF Test Conformance platform requirements* section |
 | CVreq.VNF.005 | must | pass all required tests |
 | CVreq.VNF.006 | must | prepare release notes, with issues known, their severity and magnitude, mitigation plan |
 | CVreq.VNF.007 | must | publish results in defined normalized output |
@@ -182,7 +182,7 @@ automation scripts, etc
 <a name="5.3.3"></a>
 ### 5.3.3 Exit criteria
 
-VNF certification testing should be completed with following exit criteria:
+VNF Conformance testing should be completed with following exit criteria:
 
 * All required test cases should be passed
 * No outstanding high severity issues and other known issues to be documented
@@ -194,7 +194,7 @@ showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement
   requirement
 
 <a name="5.4"></a>
-## 5.4 VNF Test Certification platform Requirements
+## 5.4 VNF Test Conformance platform Requirements
 
 Test platform requirements are provided to address test case design, distribution,
 execution and result reporting along with required artifacts and environments in
@@ -215,7 +215,7 @@ place and are defined based on below scope.
 Refer *chapter RC-06* for more details on test case requirements defined for VNF
 under CNTT. Platform should support to managed and execute these test cases.
 
-NOTE: For certification, only compliance and verification test cases will be
+NOTE: For Conformance, only compliance and verification test cases will be
 considered, but in future, it could be extent to validation and Performance
 related testing.
 
@@ -251,17 +251,17 @@ NFVi along with required MANO system supporting these NFVi.
 
 #### VNF
 
-Suppliers of VNFs/CNFs seeking to receive VNF certification badges must first
+Suppliers of VNFs/CNFs seeking to receive VNF Conformance badges must first
 ensure their testing is performed against a compliant RM/RA architecture supporting
 all capabilities, features, and services defined by the respective *RM/RA requirements*.
 More specifically, the VNF Supplier must ensure their implementation of the RM/RA
-receives the NFVI Certification badge prior to starting VNF testing.  Finally,
-to receive VNF Certification, the test platform will need to support TOSCA and
+receives the NFVI Conformance badge prior to starting VNF testing.  Finally,
+to receive VNF Conformance, the test platform will need to support TOSCA and
 HOT based VNF distros.
 
 In addition, Platform should be able to perform the required test case
 management and executions and produce the result the CVC OVP portal for
-certification process along with required testing foot print details. So overall
+Conformance process along with required testing foot print details. So overall
 scoped example architecture could be as below:
 
 ![](media/2269537e91994b5b49858734fe73bbb1.png)
@@ -327,7 +327,7 @@ integrated system for consuming.
 
 **Search & Reporting**.  Search would help to query the test results based on various fact such as test case, VNF, date of execution, environment, etc. and produce the report in various format like pie-chart, success rates, etc
 
-**Collation | Portal**. The following criteria will be applied to the collation and presentation of test-runs seeking certification:
+**Collation | Portal**. The following criteria will be applied to the collation and presentation of test-runs seeking Conformance:
 
 -   RA number and name (e.g. RA-1 OpenStack)
 -   Version of software tested (e.g. OpenStack Ocata)
@@ -335,8 +335,8 @@ integrated system for consuming.
 -   Clear time stamps of test runs will be provided.
 -   Identification of test engineer / executor.
 -   Traceability to requirements.
--   Summarized conclusion if conditions warrant test certification (see Badging Section).
--   Portal contains links to certification badge(s) received.
+-   Summarized conclusion if conditions warrant test Conformance (see Badging Section).
+-   Portal contains links to Conformance badge(s) received.
 
 <a name="5.4.5"></a>
 ### 5.4.5 Test Artifact management
@@ -382,9 +382,9 @@ on-board the 3rd party test tools and corresponding test cases from them and
 allows executing the test cases from those 3rd party test tools.
 
 <a name="5.4.10"></a>
-### 5.4.10 Certification management & integration
+### 5.4.10 Conformance management & integration
 
-Platform should have integration with OVP certification portal for submitting
+Platform should have integration with OVP Conformance portal for submitting
 results with OVP defined format.
 
 It should enable repository of certified VNFs which can be used for testing
@@ -420,12 +420,12 @@ Network functions virtualization (NFV) and softwaredefined networking (SDN) offe
 
 CNTT is defining the required architecture and model for NFVI along with VNF specification which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI.Therefore,in addition to verify general NFVI capabilities based on CNTT RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the CNTT-compatible NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
 
-In this chapter, the scope and requirements of VNF test cases are defined as reference for VNF certification, which helps to perform the various compliance and verification (C&V) testing and submit results to LFN OVP certification portal.
+In this chapter, the scope and requirements of VNF test cases are defined as reference for VNF Conformance, which helps to perform the various compliance and verification (C&V) testing and submit results to LFN OVP Conformance portal.
 
 <a name="5.5.2"></a>
 ### 5.5.2 Assumptions
 
-Here lists the assumptions for VNF certification:
+Here lists the assumptions for VNF Conformance:
 - NFVI is ready and it should be CNTT-compatible NFVI
 - VNF template is ready to deploy and certificate
 - VNF Test environment is ready, the test environment contains test functions and entities(NFVI, MANO, VNF Test Platform, VNF Test Tools) to enable controlling the test execution and collecting the test measurements.
@@ -435,7 +435,7 @@ Here lists the assumptions for VNF certification:
 <a name="5.5.3"></a>
 ### 5.5.3 Developer Deliverables
 
-This section define the developer Deliverables (artifacts),the following list the expectations and deliverables we expect from developers in order to achieve the VNF certification:
+This section define the developer Deliverables (artifacts),the following list the expectations and deliverables we expect from developers in order to achieve the VNF Conformance:
 - VNF test cases model/scripts/programs
 - VNF test cases configuration/profile
 - VNF test tools
@@ -445,9 +445,9 @@ This section define the developer Deliverables (artifacts),the following list th
 
 VNF test cases are used to verify whether the virtualization network functions can be deployed on the CNTT-compatible NFVI and provide normal functions and meet performance, security and other requirements.
 
-By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance certification and help on CNTT-compatible NFVI validation and performance certification.
+By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance Conformance and help on CNTT-compatible NFVI validation and performance Conformance.
 
-All the VNF test cases should be supported and run by VNF E2E certification and verification Framework and generate outputs, logs to identify whether the test passed or failed.
+All the VNF test cases should be supported and run by VNF E2E Conformance and verification Framework and generate outputs, logs to identify whether the test passed or failed.
 
 CNTT defines the following four category testing which should be consistent with the VNF test category defined by OVP.
 
@@ -501,7 +501,7 @@ c) VNFs that are involved in the dataplane forwarding through the evolved packet
 <a name="5.5.8"></a>
 ### 5.5.8 Measurement
 
-As part of certification testing, following measurement would help for evaluating
+As part of Conformance testing, following measurement would help for evaluating
 the badging:
 
 * VNF type defined as part of *Chapter RM-02* and its profile used for testing.
