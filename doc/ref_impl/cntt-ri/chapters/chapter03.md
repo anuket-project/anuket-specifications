@@ -101,7 +101,31 @@ This profile is the global settings for the whole NFVI, which means there should
 | Crypto Acceleration Interface | N  | Y | Y |
 
 <a name="3.4"></a>
-## 3.4 NFVI Required State
+## 3.4 NFVI Hardware Profile
+[RM1: 5.4 NFVI HW profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the NFVI hardware layer profiles. It is difficult to require all labs to follow this hardware profile and prepare seperate hardware sets for different profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification. 
+
+
+| Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
+|---------------------|-----------|---------------------------|--------|--------|--------|
+| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets within each host | 2| 2| 2 |
+| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
+| nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
+| nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y| Y |
+| nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | Y |
+| nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD | Hard Disk Drive |  |  |  |
+| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid State Drive | Recommended | Recommended |Recommended |
+| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the host | 4 | 4 | 4 |
+| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values) | 10 | 25 | 25 |
+| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the host | 8 | 8 | 8 |
+| nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 | Gen 3 |
+| nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 8 |
+| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  | Y | Y | Y |
+| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |  N | Optional | Optional |
+| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload network functionality to hardware | N | Optional  | Optional |
+| nfvi.hw.nac.cfg.003 | Compression |  |  |  |
+
+
+## 3.5 NFVI Required State
 This sections describes the readiness of NFVI before the certification process can begin. Once the NFVI is configured with either of the profiles - B, C, N, a set of tests (for example functests) should be run in order to determine the readiness of NFVI for certification. 
 #TODO : Identify the tests for this section
 
