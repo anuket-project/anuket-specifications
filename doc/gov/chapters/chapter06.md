@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 6. Chapter 6
+# 6. Relationship to LNF Projects and GSMA
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents

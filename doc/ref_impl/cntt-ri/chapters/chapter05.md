@@ -1,35 +1,26 @@
 [<< Back](../)
 
-# 5. Installer Requirements
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# 5. Hardware Delivery and Configuration Requirements
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)
-* [5.2 Installer requirements](#5.2)
+* [5.2 Requirements](#5.2)
    * [5.2.1 General](#5.2.1)
-   * [5.2.2 Additional](#5.2.2)
+   * [5.2.2 Check point](#5.2.2)
 * [5.3 Descriptor file definition](#5.3)
-   * [5.3.1 Hardware resource information](#5.3.1)
-   * [5.3.2 Server template](#5.3.2)
-   * [5.3.3 Server information](#5.3.3)
-   * [5.3.4 Software configuration definition](#5.3.4)
-   * [5.3.5 Network information](#5.3.5)
-   * [5.3.6 Controller information](#5.3.6)
-   * [5.3.7 Compute information](#5.3.7)
-   * [5.3.8 Distributed storage information](#5.3.8)
-   * [5.3.9 NTP server information](#5.3.9)
-   * [5.3.10 DNS server information](#5.3.10)
-   * [5.3.11 Deployment host information](#5.3.11)
-   * [5.3.12 Deployment control information](#5.3.12)
-   * [5.3.13 Proxy information](#5.3.13) 
-
-* [5.4 Installer prerequisite ](#5.4)
-   * [5.4.1 Hardware validation ](#5.4.1)
-   * [5.4.2 Network configuration ](#5.4.2)
-
-* [5.5 Appendix ](#5.5)
-   * [5.5.1 sample description file ](#5.5.1)   
-
+   * [5.3.1 Resource pool](#5.3.1)
+   * [5.3.2 NIC template](#5.3.2)
+   * [5.3.3 Cabinet](#5.3.3)
+   * [5.3.4 Server](#5.3.4)
+   * [5.3.5 Network device](#5.3.5)
+   * [5.3.6 EOR card](#5.3.6)
+   * [5.3.7 Cabling](#5.3.7) 
+   * [5.3.8 Server model](#5.3.8)
+   * [5.3.9 Network device model](#5.3.9) 
+* [5.4 Appendix](#5.4)
+   * [5.4.1 HDV Original collection.](#5.4.1)
+   
 <a name="5.1"></a>
 ## 5.1 Introduction
 
@@ -38,102 +29,107 @@
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 <a name="5.2"></a>
+<<<<<<< HEAD
 ## 5.2 Installer requirements
 There are many installer implementations from vendors, however that's always the case of different configuration used.
 For one operator, especially big service operator, it might have more than one supplier to build up their NFVi, meanwhile, they also need verify it.
 In order to align those installers, installers must support deploying NFVi with a common configuration. i.e, given a cluster of hardware resources in a common configuration, operator can set up NFVi by any installers.
+=======
+## 5.2 Requirements
+As we known, the NFVi software builds upon a set of hardware resources. For the operator(user) having a set of hardware resources, there is an inevitable step to examine it before deployment of the software.
+If there is only limited nodes for lab demonstration or something like this, it's acceptable to do it manually, however it would be a time consuming process especially there are large scale of hardware nodes, for example 1000 node. 
+Also,adding the different provider's factor, that's much complicated to validate it and a headache thing if doing it in manual.
+In order to resolve this issue of how to validate hardware efficiently , we call on here to build up a common data model for describing the hardware data, which is extensible to large scale and can be recognized by some automated check tool (Let's call it checker).
+Let's also name it to description file, which is align with the one for software deployment definition already commited in another chapter.
+The description file defines the same information data model accross the hardware vendor provider. 
+At present, in the first release,only the "readable" hardware parameter can be focused, in future release, "writable" parameter might add also.
+Besides, we also collect the common hardware check requiremnt here, most of which are origially from Prague meeting.
+We are expecting that by utilizing the common hardware description file, the check tool will perform all the neccessary hardware check point automatically.
+We believe this is a mutual interest for all operators having such needs.
+>>>>>>> daf9029adf304e54f2a2869b956d965013c4d15e
 
 <a name="5.2.1"></a>
 ### 5.2.1 General
-The Descriptor File defines the unique configuration required by installer in a common schema. 
-It would specialize the installer type per user's implementation requirements.
-It would be validated at the very beginning of the deployment.
-It's the installer's responsibility to translate the descriptor file to adapt with its own configuration. 
-Thanks to the descriptor file, the NFVi infrastructure deployment could be completed in one step run.
+A Descriptor File defines the configuration required by the checker in a common schema. 
+The "checker tool" validates the current hardware against the descriptor file, listing mismatches or differences, as failures, allowing the user to quickly identify and correct any errors in hardware, network wiring, or configuration.
+If failures are detected, the process can be rerun after corrective actions are taken. 
+This checking process must be completed before the software stack deployment.
 
 | Ref # | sub-category | Description |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `req.gen.ins.01` | Installer | Installer **must** accept a descriptor file to finish deployment.|
-| `req.gen.ins.02` | Installer | Installer implementation **must** validate the descriptor file with schema.|
-| `req.gen.ins.03` | Installer | Any existing installer implementation **may** need adaption for the descriptor file. |
-| `req.gen.ins.04` | Installer | Installer **may** support reporting the deployment progress status.|
-| `req.gen.des.01` | Descriptor | Descriptor file **must** include hardware resource configuration, software configuration.|
-| `req.gen.des.02` | Descriptor | Descriptor file **may** include additional extending configuration.|
-<p align="center"><b>Table 5-2-1:</b> Installer requirements </p>
+|----|----------------------|---------------------------------|
+| `req.gen.chk.01` | Checker | Checker **must** accept a descriptor file to finish hardware delivery validation.|
+| `req.gen.chk.02` | Checker | Checker **must** report the checking result of success or failure with reason.|
+| `req.gen.des.01` | Descriptor | Descriptor file **must** include neccessary information to remote access hardware resource|
+| `req.gen.des.02` | Descriptor | Descriptor file **may** automate to generate from a user defined rule of how to generate asset name, IP address, gateways, VLAN ID, etc|
+<p align="center"><b>Table 5-2-1:</b> Check tool requirements </p>
 
 <a name="5.2.2"></a>
-### 5.2.2 Additional
-Depends xxx.
+### 5.2.2 Check point
+Till now, following the check point requirements are collected: (#5.4.1)
+
+| Test Type # | Purpose | Example | Check when |
+|----|---------------|-----------|-----------|
+| BIOS Settings | Verifies all applicable BIOS settings per hardware model.| Boot mode/Boot Sequence Retry/AC Power Recovery/Power Setting (balanced / performance)/Virt. Technology/Hyper Threading/Trusted platform module||
+| Firmware Settings | Verifies all applicable Firmware settings.| BIOS/Storage Array Controller/NIC (e.g.Intel X710)/PXE Enabled Ports||
+| Boot Order | Verifies applicable boot order settings.|First boot, Second boot.||
+| Hardware Health | Queries Intelligent Platform Management Interface (IPMI) is for all hardware components and their health status.| Raid/System Board/CPU temp/Power Supply ||
+| PCI Slot Status & MAC | Which cards are in which slot, which slot is assigned to which CPU, slot type | card(s) in slot/port/PCI partition /Slot speed / type / CPU / Slot assignment ||
+| NIC | Validates that all NICs are in the correct slots, with a healthy status (per IPMI), have correct MAC addresses, and are detecting a cable connection (or not). |Correct LLDP neighbor MAC Addresses.||
+| IPMI Logs | Check for existence of logs.| Physical event logged.  E.g. chassis open on power up.||
+| IPMI Users | Check for existence of user accounts.| Check if IPMI is availabile,if IPMI account is existing, if IPMI default credentials.||
+| Hardware Inventory | Inventory of h/w on platform.| CPU and count, NUMA topology, CPU Freq, RAM, speed, size, model, etc.||
+| Physical Disk Configuration | Verifies storage / disk config (type, size)|Physical disk type, card/port location,capacity||
+| SRIOV Port Validation | Verifies global and NIC level enabled.|Confirm setting is enabled (or none)||
+| Hardware Check | Verifies basic OS config attributes (i.e. Linux running on the host and reporting these values).|RAM size/number of cores.||
+| Cabling Connection check | Verifies the wired connection between server NIC port and switch port, or the between switches.|Check if cabling is plugin correct as expected design data||
+| Redfish interface | Verifies that support classic interface.| system service/Manager service/ChassisService/SessionService/AccountService/EventService etc.||
+<p align="center"><b>Table 5-2-2:</b> Hardware check point.</p>
 
 <a name="5.3"></a>
 ## 5.3 Descriptor file definition
-There must be a Descriptor File definition, which used by installer as input of necessary configuration.
-Mandatory and optional definition shall be defined.
+As mentioned at the beginning, the description file is used to define the common hardware data which are used by the checker implementation
+The entry information must be included in the description file,which are the remote access parameter settings.
  
 <a name="5.3.1"></a>
-### 5.3.1 Hardware resource information
-The support of different workload types, each with different compute, storage, network requirements which needs kinds of hardware configuration template, we name this as server template.
-Besides it may include optional information such area name, data center name etc.
+### 5.3.1 Resource pool
+Resource pool is the conception which a NFV resource is planned to build up. It consists hardware server device, network device and cabling among them.
+It is referenced by other resource type to introduce later.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| area_name | String | Yes | data center area name |
-| area_center_name | String | Yes | data center name, may compliance with a naming rule.  |
-| room_name | String | Yes | rome static data, helpful in locating issue occurred. |
-| city | String | Yes |  |
-| resource_pool_name | String | Yes |  |
-| outband_network_segment | String | Yes |  |
-| server_templates | List | Yes | server template list included in the resource pool |
-| server_infos | List | Yes | server information list included in the resource pool |
+|----|--------------------|-----------------|-------------------------|
+| serial_no | String | Yes |  |
+| resource_pool_name | String | Yes | resource name, e.g: NFV-RP-HZZZ-03A_0 |
+| type | String | Yes | TOCHECK: OTHER |
 
-<p align="center"><b>Table 5-3-1:</b> Hardware resource description.</p>
-
+<p align="center"><b>Table 5-3-1:</b> Resource pool.</p>
+ 
 <a name="5.3.2"></a>
-### 5.3.2 Server template
-The server template describes the capability of the host like processor, memory, harddrive, raid, NIC/NIC binding, manufacturer, model etc.
-Server template would be assigned to multiple servers, i.e physical hosts.
+### 5.3.2 NIC template
+NIC Template defines network interface card parameters, it includes the crucial port number on the NIC, which is used as the reference in the cabling data and check.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| template_name | String | Yes | template name will referenced by dedicated server |
-| manufacturer | String | Yes |  |
-| model | String | Yes |  |
-| processor | String | Yes |  |
-| memory | String | Yes |  |
-| disk | String | Yes |  |
-| raid | String | Yes |  |
-| interfaces | List | No | interface list definition|
-| bond_interfaces | List | No | NIC bonding, might not be always the case.|
-| remote_user | String | Yes | remote user, all server setting same remote user |
-| remote_password | String | Yes | remote password, all server setting same remote password |
+|----|--------------------|-----------------|-------------------------|
+| serial_no | String | Yes |  |
+| vendor | String | Yes | vendor name: ZTE,HUAWEI |
+| server_type | String | Yes | ZTE "R5300 G4", HUAWEI "TaiShan200-2280" |
+| customized_model | String | No | customized model: C2,C21 |
+| nic_vendor | String | Yes | nework interface card vendor: intel |
+| nic_type | String | Yes | Intel "x520" |
+| rootbdf | String | Yes | e.g "00:03:01:00" |
+| slot_id | String | Yes | the slot id number of card plugged-in |
+| connect_type | String | Yes | plugin |
+| port_quantity | Number | Yes | port quantity on the card. e.g. 2 |
+| port_bandwith | String | Yes | bandwith of port. e.g. 10G |
+| cabling_ports | Number | Yes | port name used in the cabing data. corresponding the quantity e.g: 1_1;1_2 or Slot3/Port1;Slot3/Port2 |
 
-<p align="center"><b>Table 5-3-2-1:</b> Server template.</p>
-
-This is the network interface definition. Generally, there are a list of interfaces included in server template.
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| port_name | String | Yes | port name, e.g ens0,ens1 |
-
-<p align="center"><b>Table 5-3-2-2:</b> Network Card Bond information.</p>
-
-In some case, interface would be bonded together. This is the network interface bond definition.
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bond_name | String | Yes | new bonded name. e.g bond 0 is the new name after bond eno0,eno1.|
-| bond_type | String | Yes | dvs,sr-iov,ovs |
-| bond_mode | String | Yes | balance-tcp,balance-slb,balance-backup |
-| bond_members | String | Yes | members of interface name to bond in together, e.g eno0,eno1. |
-
-<p align="center"><b>Table 5-3-2-3:</b> Network Card Bond information.</p>
+<p align="center"><b>Table 5-3-2:</b> NIC template.</p>
 
 <a name="5.3.3"></a>
-### 5.3.3 Server information
-Server will reference a server template, i.e, inherting all configuration of server template,
-Besides it may include additional information pim username, password, rack_name,position etc.
+### 5.3.3 Cabinet
+Cabinet is the rack holder for the server and network devices. The data will be referenced by server and network device data.
 
 | Field # | type | mandatory | Instruction |
+<<<<<<< HEAD
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | template_name | String | Yes | template referenced |
 | device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
@@ -147,427 +143,152 @@ Besides it may include additional information pim username, password, rack_name,
 | nic_info | List | Yes | network interface information |
 
 <p align="center"><b>Table 5-3-3:</b> Server information.</p>
+=======
+|----|--------------------|-----------------|-------------------------|
+| serial_no | String | Yes |  |
+| room | String | Yes | room number, e.g: 2201 |
+| column | String | Yes | column number in the room: e.g. "J" |
+| cabinet | String | Yes | cabinet number in the column: e.g. "01" |
+
+<p align="center"><b>Table 5-3-3:</b> Cabinet.</p>
+>>>>>>> daf9029adf304e54f2a2869b956d965013c4d15e
 
 <a name="5.3.4"></a>
-### 5.3.4 Software configuration definition
-It includes Virtualized Infrastructure Manager configurations,
+### 5.3.4 Server
+Server device data defines the key information about how to access the server remotely, i.e. remote ip, user, credentials.
+There are many ways to validate the hardware by remote interface verifcation, for example IPMI,redfish etc.
+Considering the amount of server, user can validate the server interface in distributed way or centralized way.
+Distributed validation is to temporally install OS with inband ip configured, which can connect itself remote ip, and invoked the remote(BMC,IPMI) ip and validate the inteface from OS.
+Centralized validation is to invoke and validate the interface from remote access interface.
+This is totally decided by operator theirselves. 
+For storage type server, centralized way proposed as the amount is less than computational type server.
+For computational type server it's better to choose distributed validation way.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| vim_name | String | Yes | vim name |
-| vim_id | String | No | a name VIM Resource pool naming rule |
-| vendor | String | Yes | VIM Provider information, e.g. ZTE,Huawei,Ericsson,NOKIA|
-| version | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
-| ip_version | String | Yes | Ipaddress type: IPV6 or IPV4 |
-| time_zone | String | Yes | timezone settings, e.g GMT+08:00 Asia/Shanghai |
-| controller_nodes | List | Yes | List of controllers designed in VIM deployment |
-| compute_nodes | List | Yes | List of compute nodes designed in VIM deployment |
+|----|--------------------|-----------------|-------------------------|
+| serial_no | String | Yes |  |
+| server_name | String | Yes | server name, e.g: NFV-D-HZZZ-03A-2201-0J01-M-SRV-01 |
+| vendor | String | Yes | vendor name "ZTE","HUAWEI" etc |
+| server_type | String | Yes | ZTE "R5300 G4", HUAWEI "TaiShan200-2280" |
+| customized_model | String | No | customized model: C2,C21 |
+| server_sn | String | Yes | server serial number |
+| resource_pool_name | String | Yes | resource pool name which belongs to |
+| cabinet | String | Yes | cabinet which belongs to, in format room-column-cabinet, e.g. "2201-J-01" |
+| position | String | Yes | the server position located in the cabinet.|
+| remote_ip | String | Yes | BMC/iLO/IPMI ip for remote access, e.g "2409:8086:8313:81::1"|
+| gateway | String | Yes | gateway of remote ip, e.g "2409:8086:8313:81::ffff"|
+| outband_netmask | String | Yes | e.g. "64"|
+| subnet | String | Yes | e.g. "2409:8086:8313:81"|
+| remote_user | String | Yes | e.g. "Administrator"|
+| remote_password | String | Yes | e.g. "password"|
+| inband_ip | String | No | temporary inband_ip e.g "2409:8086:8313:f::24"|
+| inband_gateway | String | No | gateway of inband ip, e.g "2409:8086:8313:f::ffff"|
+| inband_netmask | String | No | e.g. "64"|
+| group | String | Yes | network assignment "service/management/storage"|
+| is_bmc_configured | String | Yes | TOCHECK|
 
-<p align="center"><b>Table 5-3-4:</b> Software configuration.</p>
+<p align="center"><b>Table 5-3-4:</b> Server.</p>
 
 <a name="5.3.5"></a>
-### 5.3.5 Network information
-List of NIC definitions which are referenced by various roles of node, control/compute/network/storage node.
+### 5.3.5 Network device
+network device data defines the key data about how to remote access the network device, such as switches and routers.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| device_name | String | Yes | device name which the network interface belongs to |
-| nic_name | String | Yes | nic name, or bond name |
-| ip_address | String | Yes | ip address |
-| sub_network | String | Yes | subnet in CIDR format. e.g: 2409:8086:8412:100::/64|
-| gateway | String | No | gateway|
-| vlan_id | String | Yes | vlan id for current network |
-| network_plane_type | String | Yes | distinguish network type: e.g MANAGEMENT,STORAGEDATA,COMPUTE |
+|----|--------------------|-----------------|-------------------------|
+| serial_no | String | Yes |  |
+| device_name | String | Yes | device name, e.g: "NFV-D-HZZZ-03A-2201-0F01-DM-TOR-01" |
+| vendor | String | yes | vendor name "ZTE","HUAWEI" etc |
+| device_model | String | Yes | maipu "S4320", HUAWEI "CE6856" |
+| device_sn | String | No | vendor name "ZTE","HUAWEI" etc |
+| device_type | String | Yes | "EOR","TOR" |
+| resource_pool_name | String | Yes | resource pool name which belongs to , e.g. "NFV-RP-HZZZ-03A_0" |
+| cabinet | String | Yes | cabinet which belongs to, in format room-column-cabinet, e.g. "2201-J-01" |
+| position | String | Yes | the server position located in the cabinet.|
+| remote_ip | String | Yes | BMC/iLO/IPMI/redfish ip for remote access, e.g "2409:8086:8313:81::1"|
+| gateway | String | Yes | gateway of remote ip, e.g "2409:8086:8313:81::ffff"|
+| netmask | String | Yes | e.g. "64"|
+| mac_address | String | Yes | mac address|
+| protocol | String | Yes | ssh/telnet/redfish etc.|
+| user | String | Yes | e.g. "Administrator"|
+| password | String | Yes | e.g. "password"|
+| enable_password | String | Yes | e.g. "password"|
+| group | String | Yes | network assignment "service/management/storage"|
 
-<p align="center"><b>Table 5-3-5:</b> Network information.</p>
+<p align="center"><b>Table 5-3-5:</b> Network device.</p>
 
 <a name="5.3.6"></a>
-### 5.3.6 Controller information
-List of controller nodes that designed for current VIM deployment.
+### 5.3.6 EOR card
+EOR card data.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| device_name | String | Yes | must be the device_name defined in server_information(###5.3.3), which would be set on Server from BMC|
-| node_name | String | Yes | node name for the controller to deploy, e.g: controller01 |
+|----|--------------------|-----------------|-------------------------|
+| serial_no | String | Yes |  |
+| eor_device_name | String | Yes | EOR device name |
+| card_model | String | Yes | card model |
+| slot | String | Yes | slot e.g. "01" |
 
-<p align="center"><b>Table 5-3-6:</b> Controller information.</p>
+<p align="center"><b>Table 5-3-6:</b> EOR Card.</p>
 
 <a name="5.3.7"></a>
-### 5.3.7 Compute information
-List of compute nodes that designed for current VIM deployment.
+### 5.3.7 Cabling
+Cabling records the physical cable connection information between the ports of server and switch, or switches.
+Check tool will verify the correctness according to the cabling data.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| device_name | String | Yes | must be the device_name defined in server_information(###5.3.3), which would be set on Server from BMC|
-| node_name | String | Yes | node name for the compute to deploy, e.g: compute01 |
-| az_name | String | Yes | availability zone name which this node belongs to |
-| ha_name | List | Yes | HA name(s) which this node assigned to.|
-| vnic_type | String | Yes | VIM verification needs know compute node type: OVS,DPDK_OVS or SR-IOV node.|
-| os_reserved_cores | String | No | Designed and planned by provider itself, may be none|
-| ovs_reserved_cores | String | No | Designed and planned by provider itself, may be none |
+|----|--------------------|-----------------|-------------------------|
+| serial_no | String | Yes |  |
+| source_cabinet | String | Yes | source cabinet which belongs to, in format room-column-cabinet, e.g. "2201-J-01" |
+| source_device_name | String | yes | server,switch device name e.g "NFV-D-HZZZ-03A-2201-0G12-DM-TOR-01"|
+| source_device_type | String | Yes | switch or server|
+| source_port | String | Yes | e.g "gigabitethernet0/2" |
+| target_cabinet | String | Yes | source cabinet which belongs to, in format room-column-cabinet, e.g. "2201-J-02" |
+| target_device_name | String | yes | server,switch device name e.g "NFV-D-HZZZ-03A-2201-0G12-DM-TOR-01"|
+| target_device_type | String | Yes | switch or server|
+| target_port | String | Yes | e.g "gigabitethernet0/2" |
+| cabling_type | String | Yes | e.g "SV-TOR","TOR-TOR","ST_TOR-ST_EOR","S_TOR-S_EOR","S_TOR-M_EOR","M_TOR-M_EOR","EOR-EOR" |
 
-<p align="center"><b>Table 5-3-7:</b> Compute information.</p>
+<p align="center"><b>Table 5-3-7:</b> Cabling.</p>
 
 <a name="5.3.8"></a>
-### 5.3.8 Distributed storage information
-List of storage nodes that designed for current VIM deployment.
+### 5.3.8 Server model
+The server model describes processor, memory, harddrive, raid,manufacturer, model etc.
+server model will be referenced by servers.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| cluster_name | String | Yes | cluster name|
-| device_infos | List | Yes | a list of device|
-<p align="center"><b>Table 5-3-8-1:</b> Cluster information.</p>
+|----|--------------------|---------------------|-------------------------|
+| name | String | Yes | model name will referenced by server |
+| manufacturer | String | Yes |  |
+| model | String | Yes |  |
+| processor | String | Yes |  |
+| memory | String | Yes |  |
+| hard_drive | String | Yes |  |
+| raid | String | Yes |  |
+| network_card_infos | List | No | interface list definition|
+| network_card_bond_infos | List | No | NIC bonding, might not be always the case.|
 
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| device_name | String | Yes | indicate the device name|
-| storage_type | String | Yes | Ceph/HDFS/Swift/GFS/Luster, etc |
-| storage_os_user | String | No | storage os user|
-| storage_os_password | String | No | storage os password|
-| storage_network_address | String | Yes | storage access address|
-| storage_network_mask | String | Yes | mask for the network|
-| az_name | String | Yes | availabile zone which belongs to |
-| additional_attributes | List | Yes | specific attribute(key value pairs) list, decided by the storage_type. e.g: For example, Ceph would specific storage pool name, while HDFS would need replication options |
-
-<p align="center"><b>Table 5-3-8-2:</b> Storage device information.</p>
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| attribute_name | String | Yes | specific attribute name required by the storage type |
-| attribute_value | String | Yes | attribute value |
-<p align="center"><b>Table 5-3-8-3:</b> Additional storage attribute.</p>
+<p align="center"><b>Table 5-3-8:</b> Server model.</p>
 
 
 <a name="5.3.9"></a>
-### 5.3.9 NTP server information
-primary and backup NTP server information.
+### 5.3.9 Network device model
+The network device model describes processor, memory,manufacturer, model etc.
+network device model will be referenced by network device.
 
 | Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| master_server_ip | String | Yes | |
-| master_server_timezone | String | Yes | |
-| backup_server_ip | String | No | |
-| backup_server_timezone | String | No | |
+|----|--------------------|---------------------|-------------------------|
+| name | String | Yes | model name will referenced by network device |
+| manufacturer | String | Yes |  |
+| model | String | Yes |  |
+| processor | String | Yes |  |
+| port_type | String | Yes | port type |
+| port_quantity | String | Yes | total number of port  |
+| memory | String | Yes |  |
+| version | String | Yes |  |
 
-<p align="center"><b>Table 5-3-9:</b> NTP server information.</p>
-
-<a name="5.3.10"></a>
-### 5.3.10 DNS server information
-DNS server informmation if VIM deployment requires.
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| dns_network | String | No | DNS information if VIM deployment needed. |
-| dns_ip | String | No | |
-
-<p align="center"><b>Table 5-3-10:</b> DNS server information.</p>
-
-<a name="5.3.11"></a>
-### 5.3.11 Deployment host information
-Deployment host setting, which must have the access for the openstack nodes network.
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ip_address | String | No | Ip address of debug host |
-| netmask | String | No | mask of debug host|
-| gateway | String | No |gateway of debug host |
-
-<p align="center"><b>Table 5-3-11:</b> Deployment host information.</p>
-
-<a name="5.3.12"></a>
-### 5.3.12 Deployment control information
-Used to control if VIM will be automatically deployment.
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| auto_deploy | String | Yes | Flag of enabling or disabling automatically deploy VIM. |
-
-<p align="center"><b>Table 5-3-12:</b> Auto deployment control information.</p>
-
-<a name="5.3.13"></a>
-### 5.3.13 Proxy information
-Proxy information, this section could be empty if not needed.
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| proxyAddress | String | Yes | Proxy address |
-| port | String | Yes | port |
-| user | String | Yes | user |
-| password | String | Yes | password |
-
-<p align="center"><b>Table 5-3-13:</b> Proxy information.</p>
-
-
-* [5.4 Installer prerequisite ](#5.4)
-   * [5.4.1 Hardware validation ](#5.4.1)
-   * [5.4.2 Network configuration ](#5.4.2)
-
+<p align="center"><b>Table 5-3-9:</b> Network device model.</p>
 
 <a name="5.4"></a>
-## 5.4 Installer prerequisite
-
+## 5.4 Appendix
 <a name="5.4.1"></a>
-### 5.4.1 Hardware validation
-User need check the BIOS setting, raid configuration, PXE boot order, boot mode, disk capacity for each server.
-User need check CPU, memory setting which can meet deployment requirements.
-User need validate the remote management(IPMI,ILO,BMC) accessibility.
-User need validate NIC quantity and configuration which can match the requirements.
-
-<a name="5.4.2"></a>
-### 5.4.2 Network configuration
-It's very important to make sure the necessary prerequisite settings should be ready before the deployment.
-For example, user need configurate necessary vlan on the switch before deployment.
-And user need obtain the valid ip address planned from lab administrator.
-
-
-<a name="5.5"></a>
-## 5.5 appendix
-
-<a name="5.5.1"></a>
-### 5.5.1 description file sample
-A proposed sample description file in yaml format.
-
----
-### CNTT installer descriptor file ###
-
-### superset of parameter set collection for installation VIM ###
-
-version: 1.0
-details:
-  owner: user name
-  contact: yourname@company.com
-  lab_name: room001
-  location: Beijing
-  type: production
-  data_center:
-    area_name: datacenter01
-    description: data center usage description 
-
-software_configuration:
-  vim:
-    vim_id: vim001
-    vim_name: vim_xyz
-    vim_version: V03.17.01
-  storage_type: ceph/localdisk/diskarray
-  huge_page: true
-  network_type: vlan
-  ip_type: ipv4|ipv6
-  time_zone: Asia/Shanghai
-  authorize_user: vim_admin
-  authorize_password: vim_password
-  public_auth_ip: 172.29.158.4
-  floating_controller_ip: 192.168.2.100
-  tenant_vlan: 1000-2400
-  
-
-### control plane and data plane, additional private network plane
-network_plane:
-  - name: management
-    vlan: 801
-  - name: control02
-    vlan: 802
-  - name: dataplane
-    vlan: 1000-2400
- 
- 
-### a cluster of hardware server with same configuration, assuming two types: controller,computer ###
-server_templates:
-  - name: controller_host
-    manufactor: HP
-    model: DL360 Gen9
-    cpu: 
-    memory: 32G
-    disk: 1TB    
-    raid: raid0    
-    bios_version:
-    boot_mode: Legacy | uefi
-    bond: enable|disable
-    interfaces:
-      - name: nic1
-        speed: 10Gb
-      - name: nic2
-        speed: 10Gb        
-      - name: nic3
-        speed: 10Gb
-      - name: nic4
-        speed: 10Gb
-      - name: nic5
-        speed: 10Gb
-      - name: nic6
-        speed: 10Gb
-    #bond_interfaces only available if bond enable
-    bond_interfaces:
-      - name: bond0
-        bond_members: nic1,nic2
-        bond_type: sriov|dvs|ovs
-        bond_mode: balance-tcp
-      - name: bond1
-        bond_members: nic3,nic4
-        bond_type: sriov|dvs|ovs
-        bond_mode: balance-tcp        
-      - name: bond2
-        bond_members: nic5,nic6
-        bond_type: sriov|dvs|ovs
-        bond_mode: balance-tcp
-    remote_management:
-      remote_user: admin
-      remote_password: password
-          
-        
-    #huge_page set according phyical memory size. 1G = 1
-    huge_page:  
-      size: 1G
-      count: 200
-  
-  - name: computer_host
-    manufactor: HP
-    model: DL360 Gen9
-    cpu: 
-    memory: 32G
-    disk: 1TB    
-    raid: raid0    
-    bios_version:
-    boot_mode: Legacy | uefi
-    bond: enable|disable
-    interfaces:
-      - name: nic1
-        speed: 10Gb
-      - name: nic2
-        speed: 10Gb        
-      - name: nic3
-        speed: 10Gb
-      - name: nic4
-        speed: 10Gb
-      - name: nic5
-        speed: 10Gb
-      - name: nic6
-        speed: 10Gb
-    #bond_interfaces only available if bond enable
-    bond_interfaces:
-      - name: bond0
-        bond_members: nic1,nic2
-        bond_type: sriov|dvs|ovs
-        bond_mode: balance-tcp
-      - name: bond1
-        bond_members: nic3,nic4
-        bond_type: sriov|dvs|ovs
-        bond_mode: balance-tcp        
-      - name: bond2
-        bond_members: nic5,nic6
-        bond_type: sriov|dvs|ovs
-        bond_mode: balance-tcp      
-          
-        
-    
-    #similar with: IPMI,PMI,BMC,ILO,etc..., assumption: all hw with same configuration
-    remote_management:
-      remote_user: admin
-      remote_password: password
-      
-    #huge_page set according phyical memory size. 1G = 1
-    huge_page:  
-      size: 1G
-      count: 200
-
-  
-  
-### server instances ###
-servers:
-  - name: controller_host_device_01
-    template_name: controller_host
-    remote_management_ip: 192.168.1.x
-    role: controller
-    rack_name: B04
-    position: 14U
-    network:
-      - ip_address: 192.168.1.1
-        nic_name: bond0
-        vlan: 801 
-        subnet: 192.168.1.0
-        netmask: 24
-        gateway: 192.168.1.254
-        network_plane:  
-      - ip_address: 192.168.2.1
-        nic_name: bond0
-        vlan: 802 
-        subnet: 192.168.2.0
-        netmask: 24
-        gateway: 192.168.2.254        
-        
-      - ip_address: 172.29.158.1
-        nic_name: bond0
-        vlan: 84 
-        subnet: 172.29.158.0
-        netmask: 25
-        gateway: 172.29.158.126
-
-      - ip_address: 172.29.158.249
-        nic_name: bond0
-        vlan: 85 
-        subnet: 172.29.158.0
-        netmask: 29
-        gateway: 172.29.158.254
-
-      - ip_address: 192.169.4.1
-        nic_name: bond0
-        vlan: 804 
-        subnet: 192.169.4.0
-        netmask: 24
-        gateway: 192.169.4.254
-
-  - name: computer_host_device_01
-      template_name: controller_host
-      remote_management_ip: 192.168.1.x
-      role: computer
-      rack_name: B04
-      position: 15U
-      available_zone: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
-      host_aggregate: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
-      network:
-        - ip_address: 192.168.1.1
-          nic_name: bond0
-          vlan: 801 
-          subnet: 192.168.1.0
-          netmask: 24
-          gateway: 192.168.1.254
-          network_plane:  management
-
-  
-###  various storage type selection ###
-storage:
-  - name: storage name
-    storage_type: ceph [/hdfs/swift/gfs/localdisk/diskarray]
-    storage_os_user: user
-    storage_os_password: password
-    storage_network_address:
-    storage_network_mask:
-    available_zone: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
-    host_aggregate: NFV-AZ-HDBNJ-02A-ZX-01-AZ1
-    additional_attributes:
-      - attribute_name: storage_pool_name
-        attribute_value: ceph_pool_1
-
-    
-NTP_server:
-  - master_server_ip: 8.8.8.8
-    master_server_timezone: Asia/Shanghai
-  - backup_server_ip: 0.0.0.0
-    backup_server_timezone: Asia/Shanghai  
-
-DNS_server:
-  dns_ip_1: 211.136.17.107
-  dns_ip_2: 221.130.33.60
-  
-### optional ###
-proxy:
-  ip_address:
-  port:
-  user:
-  password:
-
-### deployment host information, i.e installer host ###
-deployment_host:
-  ip_address: 172.29.159.50
-  netmask: 255.255.255.0
-  gateway: 172.29.159.254
+### 5.4.1 HDV original collection.
+[CNTT Hardware Delivery Validation (01-2020 DDF)] https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908
