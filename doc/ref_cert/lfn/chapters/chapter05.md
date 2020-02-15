@@ -250,6 +250,7 @@ the following test names must not be executed:
 
 | test rejection regular expressions                                           | reasons                               |
 |------------------------------------------------------------------------------|---------------------------------------|
+| .\*test_dhcp_agent_scheduler                                                 | dhcp_agent_scheduler                  |
 | .\*test_logging                                                              | logging                               |
 | .\*test_logging_negative                                                     | logging                               |
 | .\*test_network_segment_range                                                | network-segment-range                 |
