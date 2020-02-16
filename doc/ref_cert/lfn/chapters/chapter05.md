@@ -248,30 +248,34 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following test names must not be executed:
 
-| test rejection regular expressions                                           | reasons                               |
-|------------------------------------------------------------------------------|---------------------------------------|
-| .\*test_logging                                                              | logging                               |
-| .\*test_logging_negative                                                     | logging                               |
-| .\*test_network_segment_range                                                | network-segment-range                 |
-| .\*test_ports.PortTestCasesResourceRequest                                   | port-resource-request                 |
-| .\*test_floating_ips.FloatingIPPoolTestJSON                                  | floatingip-pools                      |
-| .\*test_metering_extensions                                                  | metering                              |
-| .\*test_metering_negative                                                    | metering                              |
-| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain      | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status    | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain          | dns-domain-ports                      |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name            | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name         | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision        | dns-integration                       |
-| .\*test_router_interface_fip                                                 | router-interface-fip                  |
-| .\*test_security_groups.RbacSharedSecurityGroupTest                          | rbac-security-groups                  |
-| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                  | standard-attr-segment                 |
-| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                  | https://gerrit.opnfv.org/gerrit/69105 |
-| .\*network.test_tags                                                         | tag-ext                               |
-| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip | https://launchpad.net/bugs/1676207    |
-| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip     | https://launchpad.net/bugs/1676207    |
-| .\*test_network_v6                                                           | https://gerrit.opnfv.org/gerrit/69105 |
+| test rejection regular expressions                                                                 | reasons                               |
+|----------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*test_logging                                                                                    | logging                               |
+| .\*test_logging_negative                                                                           | logging                               |
+| .\*test_network_segment_range                                                                      | network-segment-range                 |
+| .\*test_ports.PortTestCasesResourceRequest                                                         | port-resource-request                 |
+| .\*test_floating_ips.FloatingIPPoolTestJSON                                                        | floatingip-pools                      |
+| .\*test_metering_extensions                                                                        | metering                              |
+| .\*test_metering_negative                                                                          | metering                              |
+| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan                                | vxlan                                 |
+| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                            | dns-integration                       |
+| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                          | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                       | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                | dns-domain-ports                      |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                  | dns-integration                       |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                               | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                              | dns-integration                       |
+| .\*test_router_interface_fip                                                                       | router-interface-fip                  |
+| .\*test_security_groups.RbacSharedSecurityGroupTest                                                | rbac-security-groups                  |
+| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                        | standard-attr-segment                 |
+| .\*test_trunk.TrunkTestMtusJSON                                                                    | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestMtusJSON                                                           | vxlan                                 |
+| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                        | https://gerrit.opnfv.org/gerrit/69105 |
+| .\*network.test_tags                                                                               | tag-ext                               |
+| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                       | https://launchpad.net/bugs/1676207    |
+| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                           | https://launchpad.net/bugs/1676207    |
+| .\*test_network_v6                                                                                 | https://gerrit.opnfv.org/gerrit/69105 |
 
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
