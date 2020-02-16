@@ -27,7 +27,7 @@ Kubernetes is already very well documented at [https://kubernetes.io/docs/home/]
 
 This reference architecture provides optionality in terms of pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution.
 
-Chapter 5 of the Reference Model (RM) describes the [hardware](../../../ref_model/ref_model/chapters/chapter05.md#5.4) and [software](../../../ref_model/ref_model/chapters/chapter05.md#52-nfvi-sw-profiles-features-and-requirements) profiles, which are descriptions of the capabilities and features that the NFVI offer to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high level view of the software profile features that apply to each instance profile (Basic, Network Intensive, Compute Intensive). For more information on the instance profiles please read [RM Chapter 4, section 4.2.4](../../../ref_model/chapters/chapter04.md#4.2.4).
+Chapter 5 of the Reference Model (RM) describes the [hardware](../../../ref_model/ref_model/chapters/chapter05.md#5.4) and [software](../../../ref_model/ref_model/chapters/chapter05.md#52-nfvi-sw-profiles-features-and-requirements) profiles, which are descriptions of the capabilities and features that the NFVI offers to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high level view of the software profile features that apply to each instance profile (Basic, Network Intensive, Compute Intensive). For more information on the instance profiles please read [RM Chapter 4, section 4.2.4](../../../ref_model/chapters/chapter04.md#4.2.4).
 
 <p align="center"><img src="../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png" width="80%"/></p>
 <p align="center"><b>Figure 5-3 (from RM):</b> NFVI software profiles</p>
@@ -109,13 +109,13 @@ A CNI metaplugin/CNI multiplexer is capable to attach several interfaces, using 
 
 Inter node communication required by `req.inf.ntw.02` must be served by a CNI plugin which complies with the default K8s networking assumptions.
 
-There are two types of low latency and high throughput networks required by `req.inf.ntw.04`. Network used for signalling traffic are more demanding than what an overlay network can handle, but still does not need the usage of user space networking. Due to the nature of signalling protocols used, this type of networks require the NAT-less communication stated by `req.inf.ntw.03`. Due to the combination of these two requirements networks with these characteristics must be served by a CNI plugin with IPVLAN or MACVLAN support.
+There are two types of low latency and high throughput networks required by `req.inf.ntw.04`. Network used for signalling traffic are more demanding than what an overlay network can handle, but still does not need the usage of user space networking. Due to the nature of signalling protocols used, these types of networks require the NAT-less communication stated by `req.inf.ntw.03`. Due to the combination of these two requirements, networks with these characteristics must be served by a CNI plugin with IPVLAN or MACVLAN support.
 
-The low latency, high throughput networks for handling the user plane traffic require the capability to use an user space networking technology.
+The low latency, high throughput networks for handling the user plane traffic require the capability to use a user space networking technology.
 
 > Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as an additional feature and still be compliant with CNTT.
 
-> Editors note: The possibility to SR-IOV for DPDK is under discussion.
+> Editors note: The possibility to use SR-IOV for DPDK is under discussion.
 
 As `req.inf.ntw.14` mandates the architecture must enable the integration of different SDN solutions via their respective CNI integration.
 
@@ -128,7 +128,7 @@ To fullfill the requirements of `req.inf.acc.02` the architecture must support t
 
 The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads.
 
-As Kubernetes Ingress, Egress and Services have no support for all the protocols needed in telecommunication environments (Diameter, SIP, LDAP, etc) and their capacity is limited, the architecture must enable the usage of alternative load balancers, like external or built into the application. Management of external load balancers must be possible via Kubernetes API objects.
+As Kubernetes Ingress, Egress, and Services have no support for all the protocols needed in telecommunication environments (Diameter, SIP, LDAP, etc) and their capacity is limited, the architecture must enable the usage of alternative load balancers, like external or built into the application. Management of external load balancers must be possible via Kubernetes API objects.
 
 The well known service meshes are "application service meshes" and deal with the application layer 7 protocols (eg.: HTTP) only. Therefore, their support is not required in the architecture.
 
@@ -151,3 +151,8 @@ There are no restrictions or constraints that Kubernetes places on the storage t
 ### 3.2.4 Kubernetes Application package manager
 
 To manage complex applications consisting from several Pods the reference architecture may provide support for a Kubernetes Application package manager. The package manager may be able to manage the lifecycle a set of Pods and provide a framework to customise a set of parameters for the deployment. The requirement on this Reference Architecture is to provide the Kubernetes API in conformance with the CNCF Conformance test, for the package managers to use in the lifecycle management of the applications they manage.
+
+<a name="3.2.5"></a>
+### 3.2.5 Monitoring and Telemetry
+
+> To monitor the health of applications
