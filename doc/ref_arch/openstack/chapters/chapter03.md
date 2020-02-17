@@ -31,7 +31,7 @@ The Common Telco NFVI OpenStack Reference Architecture (RA) aims to provide an i
 
 OpenStack is already very well documented at http://docs.openstack.org so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
 
-This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools however for MVP we will focus on a simplified model based on standard Neutron OVS/OVS-DPDK, standard NIC and no GPU.
+This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
 The NFVI will be based on physical infrastructure which is then separated into virtual resources via a hypervisor.
 The VIM is expected to be OpenStack in line with the OpenStack Foundation core release.
