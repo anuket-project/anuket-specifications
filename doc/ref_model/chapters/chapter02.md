@@ -143,7 +143,7 @@ By trying to sort VNFs into different categories based on the requirements obser
 - **Profile Two**
   - VNF types
     - Data plane functions (i.e., functions with specific networking and computing needs)
-    - _Examples: BNG, S/PGW, UPF, Sec-GW, DPI, CDN, SBC, MME, AMF, IMS-CSCF_
+    - _Examples: BNG, S/PGW, UPF, Sec-GW, DPI, CDN, SBC, MME, AMF, IMS-CSCF, UDR_
   - Requirements
     - Predictable computing
     - High network throughput
