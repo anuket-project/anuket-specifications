@@ -20,7 +20,7 @@ In situations where consensus cannot be reached, reasonable efforts shall be mad
 
 Each CNTT member organisation shall nominate a single voting representative. A list of voting representatives shall be maintained within CNTT<sup>1</sup>.
 
-Being on the voting representative list **doesn't** mean the right to vote. The following criteria<sup>2</sup> shall be used to identify eligible voting representatives prior to a voting event. To be eligible, the voting representative’s organization must have had people from their organization (or directly associated with them<sup>2</sup>) collectively satisfy the conditions below:
+Being on the voting representative list **doesn't** mean the right to vote. The following criteria<sup>2, 3</sup> shall be used to identify eligible voting representatives prior to a voting event. To be eligible, the voting representative’s organization must have had people from their organization (or directly associated with them<sup>2</sup>) collectively satisfy the conditions below:
 
 1. to have physically attended at least **one** F2F workshop in the 6 months period prior to the voting event;
 1. to have attended at least **five** CNTT meetings in the 3 months period prior to the voting event;
@@ -33,8 +33,19 @@ Being on the voting representative list **doesn't** mean the right to vote. The 
 
 <sup>2)</sup>The criteria will be checked and the voting representative list will be updated prior any voting event when the voting process kicks in.
 
-<sup>3)</sup> Individuals who don't present an organisation will not have voting right.
+<sup>3)</sup> Individuals who don't represent an organisation will not have voting rights.
 
 <a name="5.3"></a>
 ## 5.3 Voting Process
+ 
+ In Scenarios where Consensus cannot be reached, a voting event will be triggered by Technical/Governance Steering Leads (depending on whether the event corresponds to a technical or governance matter). 
 
+ When a voting event is triggered, an online voting mechanism will be setup and the following process will be followed:
+ 
+ - The time and deadline before which the voting representatives are required to cast their vote will be determined by the leads themselves.
+ - The question will be created by the leads, preferably with a simple, clear choice between two options (**A|B**)).
+ - The vote result will be announced by the leads after the voting deadline.
+ - More than **50%** of the valid votes are needed for a decision to be made (Between **A | B**).
+
+<p align="center"><img src="../figures/voting_process.png" alt="scope" title="Scope" width="100%"/></p>
+<p align="center"><b>Figure 5-1:</b> Voting Process</p>
