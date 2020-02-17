@@ -235,7 +235,6 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.kcm.01` | General | The Architecture **must** allow infrastructure resource sharing within a Kubernetes cluster. |
 | `req.kcm.02` | General | The Architecture **must** support discoverability of nodes and their features. |
 | `req.kcm.03` | General | The Architecture **must** support scheduling of workloads based on Enhanced Platform Awareness (EPA) features such as CPU Pinning, huge-pages and SR-IOV. |
-| `req.kcm.04` | General | The Architecture **must** include kubernetes artefacts (e.g., images, Helm charts, etc.) repository capabilities. |
 | `req.kcm.05` | General | The Architecture **should** support multi-tenancy in Kubernetes cluster. |
 | `req.kcm.06` | General | The Architecture **must** support resource tagging. |
 | `req.kcm.08` | General | The Architecture **must** support workload resiliency. |
@@ -249,6 +248,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (NFVI and bare metal resources), network, and storage. |
+| `req.kcm.04` | API | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like Helm v3. |
 <!--
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
 -->
