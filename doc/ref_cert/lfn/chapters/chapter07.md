@@ -1,152 +1,114 @@
 [<< Back](../)
 
-# 7. VNF Test Cases Requirements
+# 7. VNF Testing Cookbook
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [7.1 Introduction](#7.1)
-* [7.2 Assumptions](#7.2)
-* [7.3 Developer Deliverables](#7.3)
-* [7.4 Requirement Type](#7.4)
-* [7.5 Interaction Type](#7.5)
-* [7.6 Performance Profiles](#7.6)
-* [7.7 VNF Class/Family and Characteristics](#7.7)
-* [7.8 Measurement](#7.8)
-* [7.9 VNF Test Cases](#7.9)
+* [7.2 Relevant Community Projects](#7.2)
+* [7.3 Relevant Community Projects and Initiatives](#7.3)
 
 <a name="7.1"></a>
 ## 7.1 Introduction
 
-> Scope of this chapter is to have a list of test cases needed (a detailed table of sort)
-
-Network functions virtualization (NFV) and softwaredefined networking (SDN) offer service providers increased service agility, OpEx improvements, and back-office automation. Disaggregation, the approach of decoupling the various layers of the stack, from hardware, to NFVI/VIM software, to dataplane acceleration, SDN controllers, MANO components, and VNFs, enables multi-vendor deployments with best-of-breed options at each layer.
-
-CNTT is defining the required architecture and model for NFVI along with VNF specification which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI.Therefore,in addition to verify general NFVI capabilities based on CNTT RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the CNTT-compatible NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
-
-In this chapter, the scope and requirements of VNF test cases are defined as reference for VNF certification, which helps to perform the various compliance and verification (C&V) testing and submit results to LFN OVP certification portal.
+Define the purpose of the chapter which is to:
+-	Identify Framework Needs, Goals, and Dependencies
+- Define Opensource Integration (OPNFV, OVP, Functest, CVC, others)
+- Provide Automation Toolchain (list, topology, flow)
 
 <a name="7.2"></a>
-## 7.2 Assumptions
-Here lists the assumptions for VNF certification:
-- NFVI is ready and it should be CNTT-compatible NFVI
-- VNF template is ready to deploy and certificate
-- VNF Test environment is ready, the test environment contains test functions and entities(NFVI, MANO, VNF Test Platform, VNF Test Tools) to enable controlling the test execution and collecting the test measurements.
-- VNF Test Platform has been integrated with CICD chain
-- VNF test result can be generated with OVP defined format
+## 7.2 Relevant Community Projects.
+
 
 <a name="7.3"></a>
-## 7.3 Developer Deliverables
+## 7.3 VNF Testing Cookbook.
 
-This section define the developer Deliverables (artifacts),the following list the expectations and deliverables we expect from developers in order to achieve the VNF certification:
-- VNF test cases model/scripts/programs
-- VNF test cases configuration/profile
-- VNF test tools
+<p align="center"><img src="../figures/rc1_cookbook_vnf.png" alt="VNF_cookbook" title="VNF Cookbook" width="60%"/></p>
+<p align="center"><b>Figure 1-3:</b> VNF Testing Integrated Framework.</p>
 
-<a name="7.4"></a>
-## 7.4 Requirement Type
+As detailed in the CNTT RC chapter 05 on E2E VNF test platform requirements,
+ONAP VNF Test Platform (VTP) helps to perform the VNF Conformance process by
+addressing those requirements. And following sections provides required
+guidelines and details for platform and test cases.
 
-VNF test cases are used to verify whether the virtualization network functions can be deployed on the CNTT-compatible NFVI and provide normal functions and meet performance, security and other requirements.
+### 7.3.1 Platform Architecture
 
-By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance certification and help on CNTT-compatible NFVI validation and performance certification.
+Provides details on the architecture, components and it's responsibilities.
 
-All the VNF test cases should be supported and run by VNF E2E certification and verification Framework and generate outputs, logs to identify whether the test passed or failed.
+![](media/f3b0c214bc58c44406fd5b801d3dfc88.png)
 
-CNTT defines the following four category testing which should be consistent with the VNF test category defined by OVP.
+-   **Test Controller**: For every feature supported in VTP, Test controller
+    provides required REST API along with user authentication and authorization
+    based on given tenant?.
 
-|  VNF Test Case Category   | Requirement Number  | Type (Measurement/Boolean)  |Definition/Description   |
-| ------------ | ------------ | ------------ | ------------ |
-|  Compliance | VNF.COMPreq.001  |  Boolean (i.e. Pass/Fail) |  Test case “must”perform a platform check against the Open Stack requirements and VNF package structure and syntax requirements  | 
-|  Verification |  VNF.VERIFYreq.001 |  Boolean (i.e. Pass/Fail) | Test case “must” perform on-boarding/ verification life cycle operation validation  |
-|  Validation | VNF.VALIDreq.001  |  Boolean (i.e. Pass/Fail) | Test case “must” perform API validation tests to verify operability  |
-|  Performance  | VNF.PERFreq.001  | Measurement  | Test case “must” execute various performance related testing and facilitate for benchmarking the VNF performance on different profile and scenarios  |
+-   **Agile Test Orchestrator**: Dynamically allows to on-board and execute the
+    test cases and test flows across different run-time environment on given
+    System under test (SUT) along with required supported system in place.
 
-Note: The four category testing can be gradually supported and in the future, will also cover secutiry and other test category.
+-   **Portal & CLI**: To operate and manage the VTP features, Portal? provides
+    web 2.0 based graphical user interface along with Command line interface.
 
+-   **Test case plug-ins**: Test cases are on-boarded into the system as
+    independent plug-ins (developed using different programming/scripting
+    language) and/or plain text yaml file for those supported as profile in VTP
+    (such as HTTP, SNMP, etc)
 
-<a name="7.5"></a>
-## 7.5 Interaction Type
+-   **Repository**: Provides version controlled repository for persisting
+    various aspects of the VTP such as artifacts, results, reports, etc.
 
-- Descrive the types of Interactions: Extended Topology, Complex (Akraino), Functional, HA, Fault, Interoperability
+*? - Feature in-progress*
 
-<a name="7.6"></a>
-## 7.6 Performance Profiles
+### 7.3.2 Platform administrator guide
 
-Performance profiles are not in the scope of current release, and in future it
-would need to align with *chapter RM-4* defined measurements.
+Provides detail on installation, configuration, un-installation operations.
 
-<a name="7.7"></a>
-## 7.7 VNF Class/Family and Characteristics
+VTP is provided a script for performing installation and mange the installed VTP
+services as below:
 
-- Describe and provide a Table of VNF Class/Family & Characteristics of Each
+[vpt_install.sh](https://github.com/onap/vnfsdk-refrepo/blob/master/vnfmarket-be/deployment/install/vtp_install.sh)
 
-The communication network usually consists of three parts: access network, transmission network/bearer network and core network.
-Following are some examples of network elements for each type of network
+**--download** : It will download all required artifacts into /opt/vtp_stage
 
-|  Network Type               | Network Elements  |
-| ----------------------- | ------------------|
-| Access Network |  Including mobile access network, wireless access network, wired access network  |
-|  Transport network & Bearer network|  Including Trunk Optical Transport Network，Metro transport network，IP backbone network, etc. |
-| Core Network  |Circuit domain, including MSC / VLR, GMSC, MGW, NPMSC, HLR / AUC, NPHLR, HSS，etc；Packet domain devices, including MME, SAE GW, EPC CG, EPC DNS, PCC，etc；Core network equipment for IoT private network，including PGW/GGSN、PCRF、HSS/HLR，etc；5G core network element，including AMF、SMF、UPF、UDM/UDR/AUSF、PCF、NSSF、NRF、SMSF，etc|
+**--install** : It will install VTP (/opt/controller) and CLI (/opt/oclip)
 
-In addition to the above network elements, there are some other data communication network element, including FW, DNS, Router, GW, etc|
+**--start** : It will start VTP controller as tomcat service and CLI as oclip
+service
 
-According to the current level of the entire network virtualization, the core network already has many VNFs, and also includes some datacom-type(data communication) VNFs.
+**--verify** : It will verify the setup is done properly by running some test
+cases
 
-We can also classify VNFs based on the level of VNF operation：
+**--uninstall** : It will stop and uninstall the VTP
 
-a) VNFs that operate at Layer 2 or Layer 3 and are primarily involved in switching or routing packets at these layers. Examples include vRouter, vBNG, vCE device, or vSwitch.
+**--clean** : It will remove the downloaded artifacts
 
-b) VNFs that operate at Layer 4 through Layer 7 and are involved in forwarding, dropping, filtering or redirecting packets at Layer 4 through 7. Examples include vFirewall, vADC, vIDS/vIPS, or vWAN Accelerator.
+Customize the download URL as below from latest snapshot or release onap
+repository
 
-c) VNFs that are involved in the dataplane forwarding through the evolved packet core.
+export OCLIP_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/cli/cli-zip/4.0.0-SNAPSHOT/cli-zip-4.0.0-20190904.095516-170.zip"
 
-<a name="7.8"></a>
-## 7.8 Measurement
+export VTP_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/refrepo/vnf-sdk-marketplace/1.3.3-SNAPSHOT/vnf-sdk-marketplace-1.3.3-20190903.092849-18.war"
 
-As part of certification testing, following measurement would help for evaluating
-the badging:
+export CSAR_VALIDATE_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/validation/csarvalidation-deployment/1.2.2-SNAPSHOT/csarvalidation-deployment-1.2.2-20190904.082836-6.zip"
 
-* VNF type defined as part of *Chapter RM-02* and its profile used for testing.
-* Test cases and their test results including the test case outputs, logs
-* VNF model type (TOSCA/HOT)
-* Test case pass/failed
-* Different NFVi profiles used and LAB reference identifier
-* Test owner (point of contact)
+export CSAR_VALIDATE_JAR_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/validation/validation-csar/1.2.2-SNAPSHOT/validation-csar-1.2.2-20190904.082829-6.jar"
 
-<a name="7.9"></a>
-## 7.9 VNF Test Cases
+### 7.3.3 Test case development guide
 
-### Compliance test cases
- Currently, there VNFs can be packaged as HEAT templates or in a CSAR file using TOSCA and OVP has supported the VNF compliance test cases(compliance check based on TOSCA using ETSI SOL004 & SOL001；OpenStack HOT using ONAP VNFREQS；GSMA profile), all the OVP supported test case can be found in the following two link:
+Provides details on how to develop new test cases and packages them for
+deploying.
 
-|  Test Cases |   Link|
-| ------------ | ------------ |
-|  Heat Test Cases | https://onap.readthedocs.io/en/latest/submodules/vnfrqts/testcases.git/docs/Appendix.html#list-of-requirements-with-associated-tests |
-| Tosca Test Cases | https://onap.readthedocs.io/en/latest/submodules/vnfsdk/model.git/docs/files/csar-validation.html|
+[More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
 
-Above compliance test cases defination can be found https://github.com/onap/vnfsdk-validation/tree/master/csarvalidation/src/main/resources/open-cli-schema
+### 7.3.4 Test case model guide
 
- In order to adapt CNTT specification, more compliance test case will be added here.
+Model the required test cases for various scenario, which could help in
+standardizing the test cases for various NF, different compliance and multiple
+MANO/NFVi based LCM operations.
 
-### Verification test cases
-In general， the VNF Manager, in collaboration with the NFV Orchestrator, the VIM and the EM, is responsible for managing a VNF's lifecycle. The lifecycle phases are listed below：
-  • VNF on-boarding, it refers to VNF package onboarding to service/resouce Orchestrator
-  • VNF instantiation, once the VNF is instantiated,  its associated VNFCs have been successfully instantiated and have been allocated necessary NFVI resources
-  • VNF scaling/updating, it means the VNF can scale or update by allocating more or less NFVI resources
-  • VNF termination, any NFVI resources consumed by the VNF can be cleaned up and released.
+[More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
 
- OVP has also supported the lifecycle test case:https://wiki.lfnetworking.org/display/LN/VNF+Validation+Minimum+Viable+Product?src=contextnavpagetreemode
+### 7.3.5 Test case administrator guide
 
+Provides detail on installation, configuration, un-installation operations
 
-### Validation Test cases
-From the current situation of operators, there are usually corresponding functional test specifications for each types of VNFs. Therefore, different types of VNFs have different functional test cases. Normally, functional tests for VNFs require the cooperation of surrounding VNFs. Or use the instruments to simulate the functions of surrounding VNFs for testing.
-Therefore, different test cases need to be defined according to different types of VNFs
-
-### Performance Test cases
-This is the same as what described in validation test cases，the performance test cases need to be defined according to different types of VNFs.
-Combined with the classification of VNF, according to the protocol level that VNF operates, it can include:
-  • VNF data plane benchmarking, like forwarding Performance Benchmarking,Long duration traffic testing, low misrouting and so on.
-  • VNF control plane benchmarking, like throughput
-  • VNF user plane benchmarking, like Packet Loss,Latency, Packet Delay
-
- ETSI spec has also defined the testing method http://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/001/01.01.01_60/gs_nfv-tst001v010101p.pdf
+[More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
