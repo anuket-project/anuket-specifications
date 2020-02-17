@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# CNTT Reference Certification
+# CNTT Reference Conformance
 
 <a name="available-cr"></a>
 

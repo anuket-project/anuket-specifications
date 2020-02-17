@@ -21,7 +21,7 @@
 
 Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
 
-For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification**, **Validations**, ultimately leading to **Certifications** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but not limited to planning, logistics for communication, and testing of installed, or implemented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
+For the purposes of this chapter, NFVI+VNF testing will be performed for **Conformances** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but not limited to planning, logistics for communication, and testing of installed, or implemented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
 
 In summary, NFVI+VNF testing will be performed for **Verification** and **Validation** purposes.
 
@@ -58,13 +58,13 @@ Terminology in this document will follow [CNTT Terminology](../../../ref_model/c
 <p align="center"><img src="../figures/rc1_scope.png" alt="scope" title="RC1 Scope" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b> RC1 Scope.</p>
 
-This document covers the realisation aspects of Verification and Certification of both NFVI and VNFs. The document will cover the following topics:
+This document covers the realisation aspects of conformance of both NFVI and VNFs. The document will cover the following topics:
 
-- Identify in details the Requirements for Verification and Certification Framework.
+- Identify in details the Requirements for conformance Framework.
 - Identify in details the Requirement of Test Cases (and mapping them to requirements from The Reference Model and The OpenStack Based Reference Architecture ).
 - Analysis of existing community projects.
-- Propose an E2E Framework for verification and certification of NFVI and VNFs.
-- Playbook of instructions, user manuals, steps of how to perform verification and certification for both NFVI and VNFs using the proposed E2E Framework.
+- Propose an E2E Framework for conformance of NFVI and VNFs.
+- Playbook of instructions, user manuals, steps of how to perform verification and conformance for both NFVI and VNFs using the proposed E2E Framework.
 - Gap analysis to identify where the Gaps are in the industry (tooling, test cases, process, etc).
 - Identify development efforts needed to address any gaps identified.
 
@@ -97,12 +97,12 @@ These core principles will guide NFV verification deliverables:
 <a name="1.5"></a>
 ## 1.5 Best Practices
 
-The following best practices have been adopted to ensure verification and validation procedures are repeatable with consistent quality in test results, and RI certifications:
+The following best practices have been adopted to ensure verification and validation procedures are repeatable with consistent quality in test results, and RI conformances:
 
 * Standardized test methodology / flow, Test Plan, and Test Case Suites
 * Integration with OPNFV Upstream Projects and OVP flow (code, docs, cert criteria, etc.)
 * Leverage Network and Service Models, with identified VNF-specific parameters
-* Standardized certification criteria
+* Standardized conformance criteria
 * Define CNTT RA as scenarios, and have all test cases for the RA be involved in OVP (could also be addressed in OVP as CNTT test)
 * Add test cases from operators, which operators already tested in their environment
 
@@ -113,8 +113,8 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 
 3rd Party test platforms may also be leveraged, if desired.
 
-<p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="Certification Methodology" title="Certification Methodology" width="100%"/></p>
-<p align="center"><b>Figure:</b> Certification Methodology</p>
+<p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="conformance Methodology" title="conformance Methodology" width="100%"/></p>
+<p align="center"><b>Figure:</b> Conformance Methodology</p>
 
 <a name="1.7"></a>
 ## 1.7 Assumptions & Dependencies
@@ -129,7 +129,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 
 In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.
 
-**Dependencies** NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the certification process may change, but test parity is required if new test suites are added in place of older, stale projects.
+**Dependencies** NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the conformance process may change, but test parity is required if new test suites are added in place of older, stale projects.
 
 * NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
 
@@ -150,14 +150,14 @@ Test suites will be categorized as functional or performance based. Results repo
 <a name="1.9"></a>
 ## 1.9 Governance
 
-1. Certification badges will be presented by the CVC
-2. CVC will maintain requirements for certification
+1. Conformance badges will be presented by the CVC
+2. CVC will maintain requirements for conformance
 
 <a name="x.x"></a>
 ## x.x Resources & References
 
 1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
-2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and certification program to the Governing Board of LF Networking (“Governing Board”).
+2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and conformance program to the Governing Board of LF Networking (“Governing Board”).
 3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
 4. **Dovetail**
    1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements
@@ -175,7 +175,7 @@ Test suites will be categorized as functional or performance based. Results repo
 1. **OVP Whitepaper**: https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
 1. **What is Verification And Validation In Software Testing**: [https://www.softwaretestingmaterial.com/verification-and-validation/](https://www.softwaretestingmaterial.com/verification-and-validation/)
 1. **Verification vs Validation**: [http://softwaretestingfundamentals.com/verification-vs-validation/ ](http://softwaretestingfundamentals.com/verification-vs-validation/  )
-1. **Verification/Validation/Certification**: [https://users.ece.cmu.edu/~koopman/des_s99/verification/](https://users.ece.cmu.edu/~koopman/des_s99/verification/ )
+1. **Verification/Validation/Conformance**: [https://users.ece.cmu.edu/~koopman/des_s99/verification/](https://users.ece.cmu.edu/~koopman/des_s99/verification/ )
 1. _IOPS - I/O (Input/Output) operations per second_, by Vangie Beal.  Retrieved from https://www.webopedia.com/TERM/I/IOPS.html on 9/18/2019.
 2. _The ultimate IOPS cheat sheet!_, by Bas van Kaam.  Retrieved from https://www.basvankaam.com/2014/07/29/the-ultimate-iops-cheat-sheet/ on 9/18/2019.
 3. _An explanation of IOPS and latency_, by Dimitris Krekoukias.  Retrieved from http://recoverymonkey.org/2012/07/26/an-explanation-of-iops-and-latency/ on 9/18/2019.
