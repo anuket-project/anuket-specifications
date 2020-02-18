@@ -249,6 +249,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (NFVI and bare metal resources), network, and storage. |
+| `req.int.api.04` | API |The Architecture must support the usage of an OCI compatible artefact repository. |
 <!--
 | `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
 -->
