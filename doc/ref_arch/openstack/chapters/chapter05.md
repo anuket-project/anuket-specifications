@@ -141,8 +141,8 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | extra_dhcp_opt                 | X             |
 | extraroute                     | X             |
 | flavors                        | X             |
-| filter-validation              | X             |
-| fip-port-details               | X             |
+| filter-validation              |               |
+| fip-port-details               |               |
 | floatingip-pools               |               |
 | ip-substring-filtering         | X             |
 | l3_agent_scheduler             | X             |
@@ -157,7 +157,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | network-ip-availability        | X             |
 | network-segment-range          |               |
 | pagination                     | X             |
-| port-mac-address-regenerate    | X             |
+| port-mac-address-regenerate    |               |
 | port-resource-request          |               |
 | port-security                  | X             |
 | port-security-groups-filtering | X             |
