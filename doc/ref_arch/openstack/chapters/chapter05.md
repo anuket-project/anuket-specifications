@@ -134,7 +134,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | dhcp_agent_scheduler           |               |
 | dns-domain-ports               |               |
 | dns-integration                |               |
-| dvr                            | X             |
+| dvr                            |               |
 | empty-string-filtering         | X             |
 | ext-gw-mode                    | X             |
 | external-net                   | X             |
@@ -146,9 +146,9 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | fip-port-details               |               |
 | floatingip-pools               |               |
 | ip-substring-filtering         | X             |
-| l3_agent_scheduler             | X             |
-| l3-flavors                     | X             |
-| l3-ha                          | X             |
+| l3_agent_scheduler             |               |
+| l3-flavors                     |               |
+| l3-ha                          |               |
 | logging                        |               |
 | metering                       |               |
 | multi-provider                 | X             |
