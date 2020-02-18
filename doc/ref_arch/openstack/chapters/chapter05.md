@@ -178,6 +178,8 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | quotas                         | X             |
 | quota_details                  | X             |
 | revision-if-match              | X             |
+| rbac-security-groups           |               |
+| router-interface-fip           |               |
 | security-group                 | X             |
 | service-type                   | X             |
 | sorting                        | X             |
@@ -187,8 +189,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | standard-attr-timestamp        | X             |
 | subnet_allocation              | X             |
 | subnet-service-types           | X             |
-| rbac-security-groups           |               |
-| router-interface-fip           |               |
+| subnetpool_prefix_ops          |               |
 | tag-ext                        |               |
 | trunk                          | X             |
 | trunk-details                  | X             |
