@@ -247,3 +247,42 @@ This sections concludes the expectation for NFVi and VIM architecture according 
 |Foundation services| Foundation Node To build and lifecycle manage an OpenStack cloud it is typically necessary to deploy a server or virtual machine as a deployment node. This function must be able to manage the bare-metal provisioning of the hardware resources( can be detached from the OpenStack cloud). Capabilities include building the cloud (control, compute, storage, network hardware resources), Patch management / upgrades / change management, Grow / Shrink resources|
 |Cloud Controller Services|All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services|
 |Physical Network|The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up.
+
+## 3.7 NFVI and VIM Component Level Architecture 
+This sections concludes the expectation for NFVi and VIM component level architecture according to [RA1: Chapter 4 NFVI + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md) 
+
+Requirement for control node: 
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|SLA |Minimum 3 nodes for high availability|
+|HW specifications |Boot disks are dedicated with Flash technology disks|
+
+Requirement for compute node:
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|BIOS requirement| boot parameters should follow the table defined in [RA1: 4.2.2.5 Compute Nodes](../../../ref_arch/openstack/chapters/chapter04.md#4.2.2.5) |
+|SLA|minimum: two nodes per profile|
+|sizing rules| should follow the table defined in [RA1: 4.2.2.5 Compute Nodes](../../../ref_arch/openstack/chapters/chapter04.md#4.2.2.5) |
+
+Requirement for network fabric:
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|Network Layout| should follow the table in [RA1: 4.2.3.2 High Level Logical Network Layout](../../../ref_arch/openstack/chapters/chapter04.md#4.2.3.2)|
+
+Consumable Infrastructure Resources and Services
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|Support for Profiles and T-shirt instance types| should follow tabels specified in [RA1: 4.4.1 Support for Profiles and T-shirt instance types](../../../ref_arch/openstack/chapters/chapter04.md#4.4.1)
+|Availability| The NFVI doesn’t provide any resiliency mechanisms at the service level. Any VM restart shall be triggered by the VNF Manager instead of OpenStack|
+|NUMA | For Network intensive instances, VNF Component should fit into a single NUMA zone for performance reason|
+
+
+
+
+
+
+
