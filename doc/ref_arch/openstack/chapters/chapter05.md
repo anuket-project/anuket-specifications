@@ -193,6 +193,13 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | trunk-details                  | X             |
 | uplink-status-propagation      |               |
 
+| **Neutron Type Drivers** | **Mandatory** |
+|--------------------------|:-------------:|
+| geneve                   |               |
+| gre                      |               |
+| vlan                     | X             |
+| vxlan                    |               |
+
 Networking Service APIs: https://docs.openstack.org/api-ref/network/
 
 The exhaustive list of extensions is available at https://docs.openstack.org/api-ref/network/v2/
