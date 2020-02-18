@@ -140,6 +140,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | external-net                   | X             |
 | extra_dhcp_opt                 | X             |
 | extraroute                     | X             |
+| extraroute-atomic              |               |
 | flavors                        | X             |
 | filter-validation              |               |
 | fip-port-details               |               |
