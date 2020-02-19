@@ -21,7 +21,7 @@ As a guiding principle, all the development occurs in “Master” branch. All t
 
 To deliver a hot fix (also known as patch) into the latest release, simply apply the hot fix in the delivery branch and tag it (4.0.1-Baldy). Once the hot fix is delivered, cherry pick technique will be applied to carry over the changes into the current release. As shown in the below diagram.
 
-<p align="center"><img src="./figure/proposedmodel.png" alt="Proposed Model" title="Proposed Release Model" width="80%"/></p>
+<p align="center"><img src="../figures/proposedmodel.png" alt="Proposed Model" title="Proposed Release Model" width="80%"/></p>
 <p align="center"><b>Figure 1:</b> Proposed Release Model</p>
 
 During the development cycle when working with release branches, developers or architects should open up a “pull request” in GitHub so that team members can see what you are preparing to release.
@@ -31,7 +31,7 @@ During the development cycle when working with release branches, developers or a
 
 The table below captured the list of events, long holidays only, release plan and sign off with corresponding dates. The release plan consists of all the milestones associated with the release candidate (RC).
 
-<p align="center"><img src="./figure/proposeddate.png" alt="Baldy Roadmap" title="Baldy Roadmap" width="80%"/></p>
+<p align="center"><img src="../figures/proposeddate.png" alt="Baldy Roadmap" title="Baldy Roadmap" width="80%"/></p>
 <p align="center"><b>Figure 1:</b> Baldy Roadmap</p>
 
 <a name="events"></a>
