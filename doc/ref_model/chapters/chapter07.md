@@ -45,6 +45,17 @@
   * [7.9.5 Runtime Integrity Measurement (TPM)](#7.9.5)
   * [7.9.6 NFVI & VIM](#7.9.6)
 * [7.10 Certification requirements](#7.10)
+* [7.11 Consolidated Security requirements](#7.11)
+  * [7.11.1 System Hardening](#7.11.1)
+  * [7.11.2 Platform Access](#7.11.2)
+  * [7.11.3 Confidentiality and Integrity](#7.11.3)
+  * [7.11.4 Workload Security](#7.11.4)
+  * [7.11.5 Image Security](#7.11.5)
+  * [7.11.6 Security LCM](#7.11.6)
+  * [7.11.7 Monitoring and Security Audit](#7.11.7)
+  * [7.11.8 Compliance with Standards](#7.11.8)
+  * [7.11.9 References](#7.11.9)
+
 
 <a name="7.1"></a>
 ## 7.1 Introduction
@@ -402,7 +413,7 @@ The VNF vendors need to incorporate security elements to support the highest lev
 
 Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
 
-<a name="7.10"></a>
+<a name="7.9"></a>
 ## 7.9 NFVI and VIM Vendors responsibility
 
 The NFVI vendors need to incorporate security elements to support the highest level of security of the infrastructure they support.  This includes but is not limited to securing the following elements:
@@ -421,14 +432,14 @@ The NFVI vendors need to incorporate security elements to support the highest le
 
 • Regulatory compliance Failure
 
-<a name="7.10.1"></a>
+<a name="7.9.1"></a>
 ### 7.9.1 Networking Security Zoning
 
 Network segmentation is important to ensure that VMs can only communicate with the VMs they are supposed to. To prevent a VM from impacting other VMs or hosts, it is a good practice to separate VM traffic and management traffic. This will prevent attacks by VMs breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, VMs of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
 
 Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
 
-<a name="7.10.2"></a>
+<a name="7.9.2"></a>
 ### 7.9.2 Encryption
 
 Virtual volume disks associated with VNFs may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the VNF volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event a VNF crashes or is intentionally destroyed to prevent it from unauthorized access.
@@ -439,12 +450,12 @@ Virtual volume disks associated with VNFs may contain sensitive data. Therefore,
 
 • The use of Image scanners such as OpenSCAP to determine security vulnerabilities
 
-<a name="7.10.3"></a>
+<a name="7.9.3"></a>
 ### 7.9.3 Platform Patching
 
 NFVI operators should ensure that the platform including the components (hypervisors, VMs, etc.) are kept up to date with the latest patch.
 
-<a name="7.10.4"></a>
+<a name="7.9.4"></a>
 ### 7.9.4 Boot Integrity Measurement (TPM)
 
 Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem, and other system components can be securely stored and verified.
@@ -453,19 +464,19 @@ NFVI Operators should ensure that the TPM support is enabled in the platform fir
 Additionally, NFVI Operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
 The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
-<a name="7.10.5"></a>
+<a name="7.9.5"></a>
 ### 7.9.5 Runtime Integrity Measurement (TPM)
 If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
 Additionally, platform measurements may be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
 The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
 
-<a name="7.10.6"></a>
+<a name="7.9.6"></a>
 ### 7.9.6 NFVI & VIM
 
 Resources management is essential. Requests coming from NFVO or VNFM to the VIM must validated and the integrity of these requets must be verified.
 <!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019 -->
-#### 4.1.4.5 Internal security capabilities
+#### 7.9.6.1 Internal security capabilities
 
 <a name="Table7-1"></a>
 
@@ -488,6 +499,7 @@ Table 7-2 shows security capabilities
 
 <p align="center"><b>Table 7-2:</b> VIM capabilities related to security .</p>
 
+<a name="7.10"></a>
 ## 7.10 Certification requirements (Just ideas)
 
 -   Security test cases executed and test case results
@@ -507,3 +519,196 @@ Table 7-2 shows security capabilities
     tools
 -   Resiliency tests run (such as hardware failures or power failure
     tests)
+
+<a name="7.11"></a>
+## 7.11 Consolidated Security Requirements
+
+Please note that **Virtual Resource Manager (VRM)** is used to collectively represent VIM, K8s, …
+
+<a name="7.11.1"></a>
+### 7.11.1. System Hardening
+
+|  Ref | Requirement  |  Unit  | Definition  |
+|-------|------|------|-------|
+| sec.gen.001 | The Platform **must** support Continued system integrity maintain the state to what it is specified to be and does not change unless through change management process. |   | Continued: Traceability across the life cycle <br/> System Integrity: maintain the state to what it is specified to be and does not change unless through change management process. |
+| sec.gen.002 | All systems part of NFVI **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  | Hardening: NIST SP 800-63B |
+| sec.gen.003 | All servers part of NFVI **must** support secure boot, root of trust and trusted boot |  | Secure boot - measured boot, verified boot  <br/> Root of trust: specified in RA or RI; should CNTT specify how? |
+| sec.gen.004 | The Operating Systems of all the servers part of NFVI **must** be hardened |  | NIST SP 800-123 |
+| sec.gen.005 | The Platform **must** support Operating System level access control |  | Details on OS |
+| sec.gen.006 | The Platform **must** support Secure logging |  | Details |
+| sec.gen.007 | All servers part of NFVI **must** be Time synchronized with authenticated Time service |  | |
+| sec.gen.008 | All servers part of NFVI **must** be regularly updated to address security vulnerabilities |  | |
+| sec.gen.009 | The Platform **must** support Software integrity protection and verification |  | Move it to System section |
+| sec.gen.010 | The NFVI **must** support Secure storage (all types) |  | Expand/Delete based on other reqts |
+| sec.gen.011 | The NFVI **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  | NIST reference? |
+| sec.gen.012 | The Platform **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  | |
+| sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  | |
+
+<a name="7.11.21"></a>
+###  7.11.2. Platform Access
+
+Ref | Requirement | Unit | Definition |
+|-------|-------|-------|---------|
+| sec.sys.001 | The Platform **must** support authenticated and secure APIs, API endpoints |  | |
+| | The Platform **must** implement authenticated and secure access to GUI |  | |
+| sec.sys.002 | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) |  | |
+| sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic |  | |
+| sec.sys.004 | The NFVI **must** support Secure network channels |  | A secure channel enables transferring of data that is resistant to overhearing and tampering |
+| sec.sys.005 | The NFVI **must** segregate the underlay and overlay networks |  | |
+| sec.sys.006 | The NFVI **must** support tenant networks segregation |  | |
+| sec.sys.007 | The NFVI must be able to utilize the VRM identity management capabilities |  | |
+| sec.sys.008 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) |  | |
+| sec.sys.009 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. |  | Communication between different trust domains is not allowed, by default.  |
+| sec.sys.010 | The Platform **must** support creation of Trust Relationships between trust domains |  | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
+| sec.sys.011 | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly |  | |
+| sec.sys.012 | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) |  | |
+| sec.sys.013 | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component |  | e.g., Barbican (OpenStack) |
+| sec.sys.014 | The Platform **must** provide secrets dynamically as and when needed |  | |
+
+<a name="7.11.3"></a>
+### 7.11.3. Confidentiality and Integrity
+
+| Ref | Requirement | Unit | Definition |
+|---|----|---|----|
+| sec.ci.001 | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit |  | |
+| sec.ci.002 | The Platform **should** support self-encrypting storage devices |  | |
+| sec.ci.003 | The Platform **must** support Confidentiality and Integrity of data related metadata |  | |
+| sec.ci.004 | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |  | |
+| sec.ci.005 | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |  | |
+| sec.ci.006 | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  | |
+| sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services |  | Admin access must be carefully regulated |
+
+<a name="7.11.4"></a>
+### 7.11.4. Workload Security
+
+| Ref | Requirement | Unit | Definition |
+|---|----|---|----|
+| sec.wl.001 | The Platform **must** support Workload placement policy |  | |
+| sec.wl.002 | The Platform **must** support operational security |  | |
+| sec.wl.003 | The Platform **must** support secure provision of workloads  |  | |
+| sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) |  | |
+| sec.wl.005 | Production workloads **must** be separated from non-production workloads |  | |
+| sec.wl.006 | Workloads **must** be separable by sensitivity level (for example, financial versus external facing web server) |  | |
+| sec.wl.007 | Platform **must** verify VNF authenticity and integrity |  | |
+
+<a name="7.11.5"></a>
+### 7.11.5. Image Security
+
+| Ref | Requirement | Unit | Definition |
+|---|----|---|----|
+| sec.img.001 | Only images from trusted sources **must** be used |  | |
+| sec.img.002 | Images **must** be maintained to be free from known vulnerabilities |  | |
+| sec.img.003 | Images **must not** contain malicious code (e.g., malware, logic bombs, etc.)  |  | |
+| sec.img.004 | Images **must not** contain code such as daemons that exposes them to risk |  | |
+| sec.img.005 | Images **must** only be created with content and files from trusted sources |  | |
+| sec.img.006 | Images **must** be packaged with files that have been found free of malware and vulnerabilities |  | |
+| sec.img.007 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  | |
+| sec.img.008 | Images **must not** contain clear text secrets |  | |
+| sec.img.009 | Images **must** only be accessible to authorized actors |  | |
+| sec.img.010 | Image Registries **must** only be accessible to authorized actors |  | |
+| sec.img.011 | Image Registries **must** only be accessible over secure networks |  | |
+| sec.img.012 | Image registries **must** be clear of vulnerable and stale (out of date) versions |  | |
+
+<a name="7.11.6"></a>
+### 7.11.6. Security LCM
+
+| Ref | Requirement | Unit | Definition |
+|---|----|---|----|
+| sec.lcm.001 | The Platform **must** support Secure Provisioning, Maintaining availability, Deprovisioning (secure Clean-Up) of workload resources |  | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |
+| sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS |  | |
+| sec.lcm.003 | The Cloud Operator **must** implement change management for NFVI, VRM and other components of the cloud |  | Platform change control on hardware |
+| sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes |  | Templated approved changes for automation where available |
+| sec.lcm.005 | Platform **must** provide logs and these logs must be regularly scanned |  | |
+| sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests | Yes/No | |
+| sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time and time zone information |  | |
+| sec.lcm.008 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  | |
+| sec.lcm.009 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant IP addressing, including routing tables, route health information and whitelists/blacklists. |  | |
+| sec.lcm.010 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation information |  | |
+| sec.lcm.011 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  | |
+| sec.lcm.012 | The Platform **must** implement Security life cycle management processes including proactively update and patch of all deployed software. | | |
+
+<a name="7.11.7"></a>
+### 7.11.7. Monitoring and Security Audit
+
+The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
+
+| Ref | Requirement | Unit | Definition |
+|---|----|---|----|
+| sec.mon.001 | Platform must provide logs and these logs must be regularly scanned for events of interest |  | |
+| sec.mon.002 | Security logs must be time synchronised |  | |
+| sec.mon.003 | The Platform must log all changes to time server source, time, date and time zones |  | |
+| sec.mon.004 | The Platform must secure and protect Audit logs (contain sensitive information) both in-transit and at rest |  | |
+| sec.mon.005 | The Platform must Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly |  | |
+| sec.mon.006 | The Platform must Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions accordingly |  | |
+| sec.mon.007 | The Platform must Monitor and Audit security parameter configurations for compliance with defined security policies |  | |
+| sec.mon.008 | The Platform must Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures |  | |
+| sec.mon.009 | The Platform must Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly |  | |
+| sec.mon.010 | The Platform must Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly |  | |
+| sec.mon.011 | The Platform must Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly |  | |
+| sec.mon.012 | The Platform must Monitor and Audit Traffic patterns and volumes to detect inbound or outbound DoS attacks, and to prevent malware download attempts |  | |
+| sec.mon.013 | The Security monitoring system must not affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  | |
+| sec.mon.014 | The Monitoring systems should not impact IAAS, PAAS, and SAAS SLAs including availability SLAs |  | |
+| sec.mon.015 | The Platform must ensure that the Security Monitoring systems are never starved of resources |  | |
+| sec.mon.016 | The Platform Security Monitoring components should follow security best practices for auditing, including secure logging and tracing |  | |
+| sec.lcm.017 | The Platform must Audit systems for any missing security patches and take appropriate actions |  | |
+
+<a name="7.11.8"></a>
+### 7.11.8. Compliance with Standards
+
+| Ref | Requirement | Unit | Definition |
+|---------|---------------|----------------|------------|
+| sec.std.001 | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)) | | Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) |
+| | [Q: Are we going to verify compliance w Controls? If not, then why a “must” – but making it a “should” implies only guidance and not a control.] |  |  |
+| sec.std.002 | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |  | Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |
+| sec.std.003 | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries |  | Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) |
+| sec.std.004 | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
+| sec.std.005 | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  | |
+| <Testing> | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  | |
+| sec.std.013 | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en |  | ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) |
+| sec.std.014 | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | | |
+| sec.std.015 | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en |  | ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity |
+| sec.std.016 | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management |  | ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management |
+| sec.std.017 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity |  | ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity |
+| sec.std.018 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16) |  | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16 |
+
+<a name="7.11.9"></a>
+### 7.11.9. References
+
+Network Functions Virtualisation (NFV);NFV Security; Problem Statement, ETSI GS NFV-SEC 001 V1.1.1 (2014-10)
+
+Network Functions Virtualisation (NFV);NFV Security; Security and Trust Guidance, ETSI GS NFV-SEC 003 V1.1.1 (2014-12)
+
+Network Functions Virtualisation (NFV) Release 3; Security; Security Management and Monitoring specification, ETSI GS NFV-SEC 013 V3.1.1 (2017-02)
+
+Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specification for MANO Components and Reference points, ETSI GS NFV-SEC 014 V3.1.1 (2018-04)
+
+Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification, ETSI GS NFV-SEC 021 V2.6.1 (2019-06)
+
+ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - [https://www.etsi.org/committee/1427-nfv](https://www.etsi.org/committee/1427-nfv)
+
+ETSI Cyber Security Technical Committee (TC CYBER) - [https://www.etsi.org/committee/cyber](https://www.etsi.org/committee/cyber)
+
+**NIST Documents**
+
+NIST SP 800-53 Security and Privacy Controls for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf
+
+NIST SP 800-53A Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf
+
+NIST SP 800-63B Digital Identity Guidelines https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
+
+NIST SP 800-115 Technical Guide to Information Security Testing and Assessment https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf
+
+NIST SP 800-123 Guide to General Server Security https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf
+
+NIST SP 800-125 Guide to Security for Full Virtualization Technologies https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf
+
+NIST SP 800-125a Security Recommendations for Server-based Hypervisor Platforms https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf
+
+NIST SP 800-125b Secure Virtual Network Configuration for Virtual Machine (VM) Protection https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf
+
+NIST SP 800-137 Information Security Continuous Monitoring for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf
+
+NIST SP 800-145 The NIST Definition of Cloud Computing https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
+
+NIST SP 800-190 Application Container Security Guide [https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf)
+
