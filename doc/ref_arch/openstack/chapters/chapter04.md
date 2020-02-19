@@ -11,7 +11,7 @@
   * [4.2.3 Network Fabric](#4.2.3)
   * [4.2.4 Storage Backend](#4.2.4)
 * [4.3 Virtualised Infrastructure Manager (VIM)](#4.3)
-  * [4.3.1 VIM Core Services](#4.3.1)
+  * [4.3.1 VIM Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
   * [4.3.3 Build Parameters](#4.3.3)
 * [4.4 Consumable Infrastructure Resources and Services](#4.4)
@@ -263,8 +263,8 @@ This section covers:
 -	Specific build-time parameters
 
 <a name="4.3.1"></a>
-### 4.3.1 VIM Core Services
-A high level overview of the core OpenStack Srevices was provided in Chapter 3. Here we describe the services in somemore detail including their sizing rules (**to be developed**).
+### 4.3.1 VIM Services
+A high level overview of the core OpenStack Srevices was provided in [Chapter 3](./chapter03.md). In this section we describe the core and other needed services in more detail.
 
 #### 4.3.1.1 Keystone
 Keystone is the authentication service, the foundation of identity management in OpenStack. Keystone needs to be the first deployed service. Keystone has services running on the control nodes and no services running on the compute nodes:
@@ -335,6 +335,22 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 -	cyborg-db
 - cyborg-agent  which runs on compute nodes
 - *-driver drivers which run on compute nodes and depend on the acceleration hardware
+
+#### 4.3.1.11 Placement
+The OpenStack Placement service enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as VCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”).  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
+
+<p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
+    
+<p>Resource Classes specifies the type of resources (VCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)</p>
+    
+<p>Inventory: Each resource provider maintains the total and reserved quantity of one or more classes of resources.  For example, RP_1 has available inventory of 16 VCPU, 16384 MEMORY_MB and 1024 DISK_GB.</p>
+    
+<p>Traits are qualitative characteristics of the resources from a resource provider. For example, the trait for RPA_1 “is_SSD” to indicate that the DISK_GB provided by RP_1 are solid state drives.</p>
+    
+<p>Allocations represent resources that have been assigned/used by some consumer of that resource.</p>
+    
+<p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
+
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services 
