@@ -16,7 +16,6 @@
     * [3.2.2 Container Networking Services](#3.2.2)
     * [3.2.3 Container Storage Services](#3.2.3)
     * [3.2.4 Container Package Managers](#3.2.4)
-* [3.3 Heading](#3.3)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
