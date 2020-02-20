@@ -134,20 +134,21 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | dhcp_agent_scheduler           |               |
 | dns-domain-ports               |               |
 | dns-integration                |               |
-| dvr                            | X             |
+| dvr                            |               |
 | empty-string-filtering         | X             |
 | ext-gw-mode                    | X             |
 | external-net                   | X             |
 | extra_dhcp_opt                 | X             |
 | extraroute                     | X             |
+| extraroute-atomic              |               |
 | flavors                        | X             |
-| filter-validation              | X             |
-| fip-port-details               | X             |
+| filter-validation              |               |
+| fip-port-details               |               |
 | floatingip-pools               |               |
 | ip-substring-filtering         | X             |
-| l3_agent_scheduler             | X             |
-| l3-flavors                     | X             |
-| l3-ha                          | X             |
+| l3_agent_scheduler             |               |
+| l3-flavors                     |               |
+| l3-ha                          |               |
 | logging                        |               |
 | metering                       |               |
 | multi-provider                 | X             |
@@ -157,7 +158,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | network-ip-availability        | X             |
 | network-segment-range          |               |
 | pagination                     | X             |
-| port-mac-address-regenerate    | X             |
+| port-mac-address-regenerate    |               |
 | port-resource-request          |               |
 | port-security                  | X             |
 | port-security-groups-filtering | X             |
@@ -177,6 +178,8 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | quotas                         | X             |
 | quota_details                  | X             |
 | revision-if-match              | X             |
+| rbac-security-groups           |               |
+| router-interface-fip           |               |
 | security-group                 | X             |
 | service-type                   | X             |
 | sorting                        | X             |
@@ -186,8 +189,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | standard-attr-timestamp        | X             |
 | subnet_allocation              | X             |
 | subnet-service-types           | X             |
-| rbac-security-groups           |               |
-| router-interface-fip           |               |
+| subnetpool_prefix_ops          |               |
 | tag-ext                        |               |
 | trunk                          | X             |
 | trunk-details                  | X             |

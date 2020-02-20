@@ -21,7 +21,6 @@
   * [3.4.1. Virtualisation](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
 * [3.5. Cloud Topology](#3.5)
-* [3.6. Architectural Drivers – Requirements Traceability](#3.6)
 
 
 <a name="3.1"></a>
@@ -31,7 +30,7 @@ The Common Telco NFVI OpenStack Reference Architecture (RA) aims to provide an i
 
 OpenStack is already very well documented at http://docs.openstack.org so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
 
-This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools however for MVP we will focus on a simplified model based on standard Neutron OVS/OVS-DPDK, standard NIC and no GPU.
+This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
 The NFVI will be based on physical infrastructure which is then separated into virtual resources via a hypervisor.
 The VIM is expected to be OpenStack in line with the OpenStack Foundation core release.
@@ -218,7 +217,7 @@ Recommendation: Separation of control zone and execution zone into different sec
 
 <a name="3.3.4"></a>
 ### 3.3.4. Flavor management
-A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors lister [here](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours).
+A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors listed [here](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours).
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources
@@ -247,7 +246,7 @@ The aim is to specify the requirements on deploying the VIM, from ground up (in 
     -	Storage networking, control plane and data plane
     -	Raw packet – tenant networking allowing “wild west” connection.  
 *	Storage 
-    - discussed in [RA-1 Chapter 04](../chapter04.md#424-storage-backend)
+    - discussed in [RA-1 Chapter 04](./chapter04.md#424-storage-backend)
 *	Acceleration
     - SmartNIC
     - GPU
@@ -278,13 +277,3 @@ Content to be developed along the following lines
     - Edge
     -	Core DC 
     -	etc.
-
-<a name="3.6"></a>
-## 3.6. Architectural Drivers – Requirements Traceability
-
-Please note that while requirements are provided in various sections of this chapter for traceability, the source of record is Chapter 2. 
-
-
-
-
-
