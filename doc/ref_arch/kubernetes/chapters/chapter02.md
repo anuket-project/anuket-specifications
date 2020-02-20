@@ -24,9 +24,11 @@
 <a name="2.1"></a>
 ## 2.1 Introduction
 
-**must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
+**must**: Requirements that are marked as _must_ are considered mandatory and must exist in the Reference Architecture and reflected in any Reference Implementation or Vendor Implementation targeting this Reference Architecture. The same applies to _must not_.
 
-**should**: Requirements that are marked as _should_ are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to _should not_.
+**should**: Requirements that are marked as _should_ are expected to be fulfilled by the Reference Architecture but it is up to each service provider to accept a Vendor Implementation targeting this Reference Architecture that is not reflecting on any of those requirements. The same applies to _should not_.
+
+- ***NOTE:*** Some of these **must** and **should** requirements may be optional when it comes to an operator **deployment** (i.e. an operator may choose whether or not to deploy or not, depending on the NFVI Software Profiles required for each specific deployment). These will be marked with "(*optional for deployment*)" within the requirements tables in section 2.3.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
@@ -195,7 +197,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. |
 | `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable storage. |
 | `req.inf.stg.06` | Storage | The Architecture **must** support ephemeral storage (non-persistent) storage for Pods. |
-| `req.inf.stg.07` | Storage | The Architecture **must** support persistent storage for Pods. |
+| `req.inf.stg.07` | Storage | The Architecture **must** support persistent storage for Pods (*optional for deployment*). |
 | `req.inf.ntw.01` | Network | The Architecture **must** support Container Network Interface (CNI). |
 | `req.inf.ntw.02` | Network | The Architecture **must** support intra-node communications, such as between agents on a node and all pods on that node |
 | `req.inf.ntw.03` | Network | The Architecture **must** support inter-node communications without NAT, such as communications between pods on a node with all other pods on all nodes |
