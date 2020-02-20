@@ -85,11 +85,13 @@ The three storage services offered by NFVI are:
 -	Persistent storage 
 -	Ephemeral storage
 -	Image storage
+
 The different profiles and storage extensions are defined in the reference model document.
 
 Two types of persistent data storage are supported in OpenStack: 
 -	Block storage 
 -	Object storage
+
 The OpenStack services, Cinder for block storage and Swift for Object Storage, are discussed below in Section 3.3 “NFVI Management Software (VIM)”.
 
 Ephemeral data is typically stored on the compute host’s local disks, except in environments that support live instance migration between compute hosts. In the latter case, the ephemeral data would need to be stored in a storage system shared between the compute hosts such as on persistent block or object storage.
@@ -123,7 +125,7 @@ The NFVI Management Software (VIM) provides the services for the management of C
 
 <a name="3.3.1"></a>
 ### 3.3.1. VIM Core services 
-OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for NFVi/VIM use cases. Other components are optional and provide functionality above and beyond NFVi/VIM requirements.
+OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for NFVI/VIM use cases. Other components are optional and provide functionality above and beyond NFVI/VIM requirements.
 
 The architecture consists of the services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
 
@@ -158,7 +160,8 @@ Deployments can be structured using the distribution of services amongst the 4 n
 
 #### 3.3.1.2. Foundation Services
 Foundation Node
-To build and lifecycle manage an OpenStack cloud it is typically necessary to deploy a server or virtual machine as a deployment node.
+
+To build and lifecycle manage an OpenStack cloud, it is typically necessary to deploy a server or virtual machine as a deployment node.
 
 This function must be able to manage the bare-metal provisioning of the hardware resources but since this does not affect cloud execution it can be detached from the OpenStack cloud and an operator can select their own tooling as they wish.
 Functional requirements of this node include:
@@ -194,7 +197,7 @@ This section describes the core set of services and service components needed to
     - Nova Compute service: nova-compute (creating/deleting instances)
     -	Neutron Networking service: neutron-l2-agent (manage local Open vSwitch (OVS) configuration), VXLAN
     -	Local Storage (Ephemeral, Root, etc.)
-    -	Attached Storage (using Local drives)
+    -	Attached Storage (using Local drivers)
 
 <a name="3.3.2"></a>
 ### 3.3.2. Tenant Isolation
