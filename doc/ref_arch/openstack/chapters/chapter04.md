@@ -150,19 +150,17 @@ The [RA-1 2.3.2 Infrastructure Requirements](https://github.com/cntt-n/CNTT/blob
 where n is any positive integer.
 
 If we wish to dedicate specific cores for host processing we need to consider two different use cases:
-    - Require dedicated cores for Guest resources
-    - No dedicated cores are required for Guest resources
 
-For #1, we will need to specify both the cpu_shared_set and cpu_dedicated_set configurations, while for #2 only the cpu_shared_set configuration would need to be specified. The cores and their sibling threads dedicated to the host services are those that do no exist in either of the cpu_shared_set and cpu_dedicated_set configurations.
+    1. Require dedicated cores for Guest resources
+    2. No dedicated cores are required for Guest resources
 
-Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified
+Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Pike release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specication of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do no exist in the cpu_shared_set configuration.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 18-39
+Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vcpus numbered '0' and '20', '1' and '21', etc. are siblings:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_dedicated_set = 2-7,10-17
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 1-7,9-19,21-27,29-39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (can also be specified as cpu_shared_set = 1-19,^8,20-39,^28)
 
-This implies that the two physical cores '0' and '8' and their sibling threads are dedicated to the host services, while 7 cores and their sibling threads are dedicated to Guest instances (these dedicated cores cannot be over allocated), and 11 cores and their sibling threads are available for Guest instances (and can be over allocated as per the specified cpu_allocation_ratio in nova.conf.
-> Please note that in this example the cores and sibling threads are numbered consecutively but this is not usually the case.
+This implies that the two physical cores '0' and '8' and their sibling threads '1' and '20' are dedicated to the host services, and 19 cores and their sibling threads are available for Guest instances (and can be over allocated as per the specified cpu_allocation_ratio in nova.conf.
 
 
 <a name="4.2.3"></a>
