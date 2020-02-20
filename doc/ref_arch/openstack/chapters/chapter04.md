@@ -21,7 +21,7 @@
 * [4.5 Cloud Topology.](#4.5)
   * [4.5.1 Cloud Topology Considerations](#4.5.1)
 * [4.6 Logging / Monitoring / Alerting of Control Plane](#4.6)
-* [4.7 Architectural Drivers – Requirements Traceability](#4.7)
+
 
 
 <a name="4.1"></a>
@@ -103,13 +103,19 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
     -	The general bios requirements are described in the [Reference Model chapter 5.4](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#5.4)
     -	Additionally, for OpenStack we need to set the following boot parameters:
 
-| BIOS/boot Parameter | Basic  | Network Intensive | Compute Intensive |
-|---------------|-----------|------------------|-------------------------|
-| Boot disks | RAID 1 | RAID 1 | RAID 1 |
-| CPU reservation for host (kernel) | 1 core per Numa | 1 core per Numa | 1 core per Numa |
-| <to be filled if needed> |  |  |  |
-| … |  |  |  |
+| BIOS/boot Parameter | Basic  | Network Intensive |
+|---------------|-----------|------------------|
+| Boot disks | RAID 1 | RAID 1 | 
+| CPU reservation for host (kernel) | 1 core per Numa | 1 core per Numa | 
+| <to be filled if needed> |  |  | 
+| … |  |  | <!--- | --->
 
+<!--- 
+Had to delete the Column for Compute intensive as commenting in table  didn't work 
+Entries were:
+Boot Disks: RAID 1
+CPU reservation for host: 1 core per NUMA
+--->
 -	How many nodes to meet SLA
     - minimum: two nodes per profile
 -	HW specifications
@@ -127,13 +133,20 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 | Average RAM per instance | ri |
 
 
-| | | Basic | Network Intensive | Compute Intensive | 
-|---------------|------------|------------|------------|-----------------|
-| # of VMs per node (vCPU) | (s*c*t*o)/v | 4*(s*c*t)/v | (s*c*t)/v| (s*c*t)/v | 
-| # of VMs per node (RAM) | rt/ri | rt/ri | rt/ri | rt/ri| 
-| | | | | |  
-| Max # of VMs per node|  | min(4*(s*c*t)/v, rt/ri)| min((s*c*t)/v, rt/ri)| min((s*c*t)/v, rt/ri)| 
+| | | Basic | Network Intensive | 
+|---------------|------------|------------|------------|
+| # of VMs per node (vCPU) | (s*c*t*o)/v | 4*(s*c*t)/v | (s*c*t)/v|  
+| # of VMs per node (RAM) | rt/ri | rt/ri | rt/ri |  
+| | | | |  
+| Max # of VMs per node|  | min(4*(s*c*t)/v, rt/ri)| min((s*c*t)/v, rt/ri)|  
 
+<!--- 
+Had to delete the Column for Compute intensive as commenting in table  didn't work 
+Entries were:
+# of VMs per node (vCPU): s*c*t)/v| (s*c*t)/v
+# of VMs per node (RAM): rt/ri
+Max # of VMs per node: min((s*c*t)/v, rt/ri)
+--->
 Caveats:
 -	These are theoretical limits
 -	Affinity and anti-affinity rules, among other factors, affect the sizing
@@ -372,6 +385,8 @@ In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topol
 ### 4.4.1. Support for Profiles and T-shirt instance types
 Reference Model Chapter 4 and  5 provide information about the instance types and size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes requires the setting up of information as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properies.
 
+<!---
+Original Table w Compute Intensive
 | Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | Compute Intensive |
 |----------|-------------|--------------|-------------|-------------|
 | CPU allocation ratio | nfvi.com.cfg.001| In Nova.conf include <br>cpu_allocation_ratio= 4.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 |
@@ -381,7 +396,18 @@ Reference Model Chapter 4 and  5 provide information about the instance types an
 | OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
 | Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
 | Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3276800<br><br>Note: 25 Gbps = 3276800 kilobytes per second | 
+New Table w/o Compute Intensive column below
+--->
 
+| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | 
+|----------|-------------|--------------|-------------|
+| CPU allocation ratio | nfvi.com.cfg.001| In Nova.conf include <br>cpu_allocation_ratio= 4.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 |
+| NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | 
+| CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> |
+| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | 
+| OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
+| Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required | 
+| Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second |
 
 To configure the T-shirt sizes (specified in [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) Reference Model Chapter4), the parameters in the following table are specified as part of the flavor create; the parameters are preceded by "--".
 
@@ -448,6 +474,4 @@ Figure 4-3: Monitoring and Logging Framework </p>
 
 The monitoring and logging framework (**Figure 4-6**) leverages Prometheus as the monitoring engine and Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. Prometheus agents pull information from individual components on every host.  Fluentd, an open source data collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures the access, application and system logs.
 
-<a name="4.7"></a>
-## 4.7 Architectural Drivers – Requirements Traceability
 
