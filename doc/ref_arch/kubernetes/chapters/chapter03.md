@@ -39,8 +39,6 @@ In addition, Figure 5-4 (also shown below) depicts the hardware profile features
 
 These features and capabilities that are described in the software and hardware profiles are considered throughout this RA, with traceability of the RA requirements to the RM requirements formally captured in [chapter 2, section 2.2](./chapter02.md#2.2) of this RA.
 
-> As this RA is developed, it is quite possible that modifications to the RM are requested in order to make the RM more technology agnostic (i.e. to cater for VMs and Containers) or to add container-specific specifications to the RM.
-
 <a name="3.2"></a>
 ## 3.2 Infrastructure Services
 
