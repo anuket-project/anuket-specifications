@@ -24,9 +24,9 @@
 <a name="2.1"></a>
 ## 2.1 Introduction
 
-**must**: Requirements that are marked as _must_ are considered mandatory and must exist in the Reference Architecture and reflected in any Reference Implementation or Vendor Implementation targeting this Reference Architecture. The same applies to _must not_.
+**must**: Requirements that are marked as _must_ are considered mandatory and must exist in the Reference Architecture and reflected in any Reference Implementation or Vendor Implementation targeting conformance with this Reference Architecture. The same applies to _must not_.
 
-**should**: Requirements that are marked as _should_ are expected to be fulfilled by the Reference Architecture but it is up to each service provider to accept a Vendor Implementation targeting this Reference Architecture that is not reflecting on any of those requirements. The same applies to _should not_.
+**should**: Requirements that are marked as _should_ are expected to be fulfilled by the Reference Architecture but it is up to each service provider to accept a Vendor Implementation targeting conformance with this Reference Architecture that is not reflecting on any of those requirements. The same applies to _should not_.
 
 - ***NOTE:*** Some of these **must** and **should** requirements may be optional when it comes to an operator **deployment** (i.e. an operator may choose whether or not to deploy or not, depending on the NFVI Software Profiles required for each specific deployment). These will be marked with "(*optional for deployment*)" within the requirements tables in section 2.3.
 
