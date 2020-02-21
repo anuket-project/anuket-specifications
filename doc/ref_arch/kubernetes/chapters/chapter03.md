@@ -67,11 +67,11 @@ A key thing to note is that the container runtime itself is also a set of proces
 <a name="3.2.1.1"></a>
 #### 3.2.1.1 Memory management
 
-> This chapter should describe considerations about memory management, like huge pages.
+> This chapter should describe considerations about memory management, like hugepages.
 
 > Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
-The Reference Model requires the support of huge pages in `nfvi.com.cfg.004` what is supported by upstream Kubernetes already. In case of some applications the huge pages should be allocated with the considerations of the HW topology.
+The Reference Model requires the support of hugepages in `nfvi.com.cfg.004` what is supported by upstream Kubernetes already. In case of some applications the hugepages should be allocated with the considerations of the HW topology. This later feature is missing from Kubernetes, therefore a gap was added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
