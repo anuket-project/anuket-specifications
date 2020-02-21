@@ -177,7 +177,6 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 <!--
 | `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|
 | `req.gen.k8s.02` | Open source | The Architecture **must** support dynamic request and configuration of resources (compute, network, storage) through Kubernetes APIs. |
-| `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. |
 -->
 
 <p align="center"><b>Table 2-1:</b> Kubernetes Architecture: General Requirements</p>
