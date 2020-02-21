@@ -281,7 +281,7 @@ This section catalogs CNTT's high-level objectives for the Networking and Fabric
 > _List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
 
 1. The implementation of Networking inside the HW Layer should not be visible to the VNF/CNF and should preferably not even be visible to the IaaS/CaaS // TF #2
-1. Provide L3 tenant networks, GWs, SDS, etc.
+1. Provide networks for L3 tenant, GWs, SDS, etc.
 1. CLEANLY decouple interface/reference points between CNTT constituencies
 1. Provide interoperability at layer demarcation/reference points within the NFVI. Ex.:
    * any RA couples to RM
@@ -305,7 +305,7 @@ This section catalogs CNTT's high-level objectives for the Networking and Fabric
 1. NFVI layer responsibilities will include: // relates to TF (various)
    * HW Infrastructure Manager shall provide an abstracted model of the allocated HW resources into each specific Virtualization domain
      * Additionally, it is responsible for maintaining logical isolation between different instances of virtualization domain
-     * Some of the HW resources including networking resources will be withheld from Virtualization domains to allow for scaling, spare parts and HW Composition within the HW Infrastructure Layer itself
+     * Some of the HW resources including networking resources shall be possible to be withheld from Virtualization domains to allow for scaling, spare parts and HW Composition within the HW Infrastructure Layer itself
    * Virtualization layer shall provide the Cloud Tenants with an abstracted networking environment
      * It is therefore responsible for maintaining isolation between Cloud Tenants
 
