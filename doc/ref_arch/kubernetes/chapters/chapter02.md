@@ -145,7 +145,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>7)</sup> |
 | nfvi.hw.nac.cfg.003 | Compression |  | |
 
-**1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
+**1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)<br>
 **2)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
 **3)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
 **4)** There is no vNIC in case of containers.<br>
