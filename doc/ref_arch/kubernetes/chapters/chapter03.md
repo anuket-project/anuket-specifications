@@ -71,6 +71,8 @@ A key thing to note is that the container runtime itself is also a set of proces
 
 > Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
+The Reference Model requires the support of huge pages in `nfvi.com.cfg.004` what is supported by upstream Kubernetes already. In case of some applications the huge pages should be allocated with the considerations of the HW topology.
+
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
 
