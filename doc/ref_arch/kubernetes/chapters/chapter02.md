@@ -35,7 +35,7 @@
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
-This reference model intends to implement both the Basic, Network Intensive and Compute Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
+This reference model intends to implement both the Basic and the Network Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
 
 <a name="2.2.1"></a>
 ### 2.2.1 Network Acceleration Extensions
