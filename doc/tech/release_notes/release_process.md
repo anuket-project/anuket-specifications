@@ -19,7 +19,7 @@ It should be considered a living document until it is agreed and signed by all t
 
 As a guiding principle, all the development occurs in “Master” branch. All the contribution for the milestone (especially M3) goes into ”Master”. After M4 (Proof Reading), at one point in the release candidate (RC) (for now maintain RC0) for Baldy and based on experience we shall increase or limit what get into the final release. To make this happen, branch out from “Master”, create a delivery branch (“Baldy”,”Hallasan”, “Baraque”, etc). Developers can continue their next release branch work in “Master”. At the end of each release, artifacts are “tagged” in GitHub according to the guideline and principles defined.
 
-To deliver a hot fix (also known as patch) into the latest release, simply apply the hot fix in the delivery branch and tag it (4.0.1-Baldy). Once the hot fix is delivered, cherry pick technique will be applied to carry over the changes into the current release. As shown in the below diagram.
+To deliver a hot fix (also known as patch) into the latest release, simply apply the hot fix on the "master" branch and then cherry pick technique will be applied for a particular PR which would agree jointly and tag it (4.0.1-Baldy). In case, if the "master" has evolved significantly then apply the hot fix on the latest release branch directly. As shown in the below diagram.
 
 <p align="center"><img src="../figures/proposedmodel.png" alt="Proposed Model" title="Proposed Release Model" width="80%"/></p>
 <p align="center"><b>Figure 1:</b> Proposed Release Model</p>
