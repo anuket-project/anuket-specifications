@@ -256,7 +256,7 @@ Readers be aware, in parallel with the CNTT Networking Strategy, the RI team is 
 
 The following subsections, Executive Summary, Strategy Objectives, Networking Requirements and Initial Approach, respectively, are intended to provide an overview of CNTT's vision for networking and intent, objectives, requirements and their supporting rationale, as well as initial development approach.
 
-The networking within an NFVI, fabric or otherwise, is an area where there is significant variability across implementations. Leaf-Spine topology is well established, however, after topology there are countless decisions an Operator needs to make. Differences arise from many aspects, for example, is the solution layer-2 or layer-3; is the routing static or dynamic; what mechanism is used for encapsulation; what mechanism is used for isolation; does it support SR-IOV; does it support DPDK; does it employee SmartNICs; does it employ distributed control or a centralized control driving a programmable fabric; and the list continues. The multitude of permutations enable Operators to design (or procure) a fabric/networking solution that's optimized for their needs, whether their needs are minimal, very extensive or somewhere in between.
+The networking within an NFVI, fabric or otherwise, is an area where there is significant variability across implementations. Leaf-Spine topology is well established, however, after topology there are countless decisions an Operator needs to make. Differences arise from many aspects, for example, is the solution layer-2 or layer-3; is the routing static or dynamic; what mechanism is used for encapsulation; what mechanism is used for isolation; does it support SR-IOV; does it support DPDK; does it employ SmartNICs; does it employ distributed control or a centralized control driving a programmable fabric; and the list continues. The multitude of permutations enable NFVI architects (Operators and Suppliers) to design (or procure) a fabric/networking solution that's optimized for their needs, whether their needs are minimal, very extensive or somewhere in between.
 
 For CNTT, a strategy is needed that affords Operators the performance, flexibility, availability, maintainability and scalability their business requires, yet doesn't require OPNFV to design, manage and test prohibitive numbers of networking solutions. // relates to Petar's #2  
  
@@ -280,21 +280,21 @@ This section catalogs CNTT's high-level objectives for the Networking and Fabric
 
 > _List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
 
-1. The implementation of Networking inside the HW Layer should not be visible to the VNF/CNF and should preferably not even be visible to the IaaS/CaaS // TF #2
+1. The implementation of Networking inside the HW Layer should not be visible to the VNF/CNF and should preferably not even be visible to the IaaS/CaaS
 1. Provide networks for L3 tenant, GWs, SDS, etc.
-1. CLEANLY decouple interface/reference points between CNTT constituencies
+1. Cleanly decouple interface/reference points between CNTT constituencies
 1. Provide interoperability at layer demarcation/reference points within the NFVI. Ex.:
    * any RA couples to RM
    * like RI couples to RA
    * like VIs couple to RA
    * Operators can design or procure a compatible fabric
-1. Concurrently supports containerized and virtualized coexistence for VNF->CNF cutovers, as well as protracted parallel operations // TF #1
-1. Provide a version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration w/ a wide selection of fabric implementations // relates to Petar's #3
-1. Provide ability for any number of Operator-specific fabrics to power CNTT NFVI // relates to Petar's #1
+1. Concurrently supports containerized and virtualized coexistence for VNF->CNF cutovers, as well as protracted parallel operations
+1. Provide a version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration w/ a wide selection of fabric implementations
+1. Provide ability for any number of Operator-specific fabrics to power CNTT NFVI
 1. Enable RC's ability to realize mandated OVP qualification deliverables
 1. Unambiguously document the responsibilities of each CNTT constituency
-1. In cases where a VNF/CNF require HW layer resources it should be under the control of the Virtualization Layer // TF #3
-1. It is important that the HW Infrastructure Manager, each VIM and each VNF/CNF could be managed by separate organizations // TF #4
+1. In cases where a VNF/CNF require HW layer resources it should be under the control of the Virtualization Layer
+1. It is important that the HW Infrastructure Manager, each VIM and each VNF/CNF could be managed by separate organizations
 1. Drive the industry towards convergence on ABIs supporting Cloud-Native implementations for SmartNICs
 
 > _**Editor's Note:** Consider moving objectives to a table_
@@ -302,7 +302,7 @@ This section catalogs CNTT's high-level objectives for the Networking and Fabric
 <a name="1.9.3"></a>
 ## 1.9.3 Networking Requirements
 
-1. NFVI layer responsibilities will include: // relates to TF (various)
+1. NFVI layer responsibilities will include:
    * HW Infrastructure Manager shall provide an abstracted model of the allocated HW resources into each specific Virtualization domain
      * Additionally, it is responsible for maintaining logical isolation between different instances of virtualization domain
      * Some of the HW resources including networking resources shall be possible to be withheld from Virtualization domains to allow for scaling, spare parts and HW Composition within the HW Infrastructure Layer itself
