@@ -17,7 +17,7 @@
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-Kubernetes is a "portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available." [[kubernetes.io](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)]
+[Kubernetes](https://kubernetes.io/) is a "portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available." [[kubernetes.io](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)]. Kubernetes is developed as an open source project in the [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) repository of GitHub.
 
 This Reference Architecture for Kubernetes will describe the high level system components and their interactions, taking the goals and requirements of the [Reference Model](../../../ref_model/chapters/chapter01.md) and mapping them to real-world Kubernetes (and related) components. This document needs to be sufficiently detailed and robust such that it can be used to guide the production deployment of Kubernetes within an operator, whilst being flexible enough to evolve with and remain aligned with the wider Kubernetes ecosystem outside of Telco.
 
