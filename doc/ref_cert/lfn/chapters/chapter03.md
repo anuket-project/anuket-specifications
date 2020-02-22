@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 3. NNFVI Test Cases and Traceability to CNTT Requirements
+# 3. NFVI Test Cases and Traceability to CNTT Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -123,9 +123,9 @@ as integrated in
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the following test names must not be executed:
+the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| test rejection regular expressions        | reasons    |
+| Excluded Test (expression reference)        | Optional in RA-1 requirement, or Known Issue    |
 |-------------------------------------------|------------|
 | .\*scenario.test_federated_authentication | federation |
 | .\*identity.admin.v2                      | API v2     |
@@ -156,9 +156,9 @@ Glance API is covered in the OpenStack Gates via
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the following test names must not be executed:
+the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| test rejection regular expressions | reasons |
+| Excluded Test (expression reference) | Optional in RA-1 requirement, or Known Issue |
 |------------------------------------|---------|
 | .\*image.v1                        | API v1  |
 
@@ -182,9 +182,9 @@ as integrated in
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the following test names must not be executed:
+the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| test rejection regular expressions                                                                   | reasons                               |
+| Excluded Test (expression reference)                                                                   | Optional in RA-1 requirement, or Known Issue                               |
 |------------------------------------------------------------------------------------------------------|---------------------------------------|
 | .\*test_incremental_backup                                                                           | https://gerrit.opnfv.org/gerrit/68881 |
 | .\*test_consistencygroups                                                                            | consistency_group                     |
@@ -220,9 +220,9 @@ Swift API is covered in the OpenStack Gates via
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the following test names must not be executed:
+the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| test rejection regular expressions                                      | reasons                            |
+| Excluded Test (expression reference)                                      | Optional in RA-1 requirement, or Known Issue                            |
 |-------------------------------------------------------------------------|------------------------------------|
 | .\*test_container_sync.ContainerSyncTest.test_container_synchronization | https://launchpad.net/bugs/1317133 |
 
@@ -246,9 +246,9 @@ as integrated in
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the following test names must not be executed:
+the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| test rejection regular expressions                                                                 | reasons                               |
+| Excluded Test (expression reference)                                                                 | Optional in RA-1 requirement, or Known Issue                               |
 |----------------------------------------------------------------------------------------------------|---------------------------------------|
 | .\*admin.test_agent_availability_zone                                                              | DHCP agent and L3 agent               |
 | .\*admin.test_dhcp_agent_scheduler                                                                 | dhcp_agent_scheduler                  |
@@ -323,9 +323,9 @@ Nova API is covered in the OpenStack Gates via
 
 According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-the following test names must not be executed:
+the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| test rejection regular expressions                                                                                        | reasons                            |
+| Excluded Test (expression reference)                                                                                        | Optional in RA-1 requirement, or Known Issue                            |
 |---------------------------------------------------------------------------------------------------------------------------|------------------------------------|
 | .\*test_fixed_ips                                                                                                         | neutron                            |
 | .\*test_fixed_ips_negative                                                                                                | neutron                            |
