@@ -158,7 +158,7 @@ Scenario #1, results in compute nodes that host both pinned and unpinned workloa
 
 Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vcpus numbered '0' and '20', '1' and '21', etc. are siblings:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 1-7,9-19,21-27,29-39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (can also be specified as cpu_shared_set = 1-19,^8,20-39,^28)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 1-7,9-19,21-27,29-39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (can also be specified as cpu_shared_set = 1-19,^8,21-39,^28)
 
 This implies that the two physical cores '0' and '8' and their sibling threads '20' and '28' are dedicated to the host services, and 19 cores and their sibling threads are available for Guest instances (and can be over allocated as per the specified cpu_allocation_ratio in nova.conf.
 
