@@ -203,7 +203,6 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.06` | Network | The Architecture **must** support network resiliency. |
 | `req.inf.ntw.07` | Network | The Architecture **should** embrace open-based standards and technologies. |
 | `req.inf.ntw.08` | Network | The Architecture **must** be fully redundant. |
-| `req.inf.ntw.09` | Network | The Architecture **must** support API driven life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling, and healing. |
 | `req.inf.ntw.10` | Network | The networking solution **should** be configurable in an automated manner using openly published API definitions. |
 | `req.inf.ntw.11` | Network | The networking solution **should** be able to be centrally administrated and configured. |
 | `req.inf.ntw.12` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |
@@ -265,6 +264,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
+| `req.lcm.gen.02` | General | The Architecture **must** support API driven life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling, and healing. |
 | `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and life cycle management of multiple - declaratively specified - kubernetes clusters. |
 | `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware, including compute, network, and storage, and software assets for automated deployment, configuration, maintenance, and life cycle management. |
 | `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
