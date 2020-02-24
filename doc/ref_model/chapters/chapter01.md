@@ -124,8 +124,6 @@ This document specifies:
   - **NFVI metrics & capabilities**: A set of metrics and capabilities for the NFVI which VNFs require to perform telco scale network functions.
   - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to completely abstract the infrastructure from VNFs. With a limited and well-defined set of profiles with well understood characteristics, VNF compatibility and performance predictability can be achieved.
 
-    >_Note_: The current focus is on VMs, due to the state of the industry at the point of developing this document, but the intention is to expand the definition to include Container profiles as both the need and the technology to support containers mature.
-
 - NFVI Software and Hardware profiling
   - **NFVI software profiles and configurations**: These are software profiles and configurations that map directly to the infrastructure profiles within the infrastructure profiles catalogue.
   - **NFVI hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined NFVI software profiles & configurations.
