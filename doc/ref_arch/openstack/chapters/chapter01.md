@@ -18,7 +18,7 @@ This Reference Architectures is focussed on OpenStack as the VIM chosen based on
 
 <a name="1.1.1"></a>
 ## 1.1.1. Vision
-The ultimate goal is that the OpenStack-based CNTT Refernce Architecture will host NFV workloads, primarily VNFs, of interest to the Common NFVI Telco community.  Initially the OpenStack-based Reference Architecture would be used for testing and validating VNFs that can then be deployed in compatible operator clouds.   The Reference Architecture document can be used by operators to deploy compliant production infrastructure.  
+The ultimate goal is that the OpenStack-based CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Common NFVI Telco community.  Initially the OpenStack-based Reference Architecture would be used for testing and validating VNFs that can then be deployed in compatible operator clouds.   The Reference Architecture document can be used by operators to deploy compliant production infrastructure.  
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
@@ -53,13 +53,13 @@ OpenStack considers the following Four Opens essential for success:
 - Open Development
 - Open Community
 
-OpenStack is organised around the three major NFVI resource types as core services of compoute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
+OpenStack is organised around the three major NFVI resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
 
 
 <a name="1.5"></a>
 ## 1.5 Document Organisation
 
-The Reference Architecture requirements and the traceability where in this document the requirement is addressed is documented in Chpater 2. The intent of this document is to address all of the required ("must") requirements and the most useful of the other optional ("should")requirements. Chapter 3 and 4 cover the NFVI resources and the core OpenStack services, while the APIs are covered in Chapter 5. Chapter 6 covers the implementation and enforcement of security capabilities and controls. Life Cycle Management of the NFVI and VIM are covered in Chpater 7 with stress on Logging, Monitoring and Analytics (LMA), configuration management and some other operational items, Please note that Chapter 7 is not a replacement for the implementation, configuration and operational documentation that accompanies the different OpenStack distributions. Chapter 8 identifies certain Gaps that currently exist and plans on how to address them. For example, Service Function Chaining support needs to be addressed to realise the full potential and value of SDN and NFV.
+The Reference Architecture requirements and the traceability where in this document the requirement is addressed is documented in Chapter 2. The intent of this document is to address all of the mandatory ("must") requirements and the most useful of the other optional ("should") requirements. Chapter 3 and 4 cover the NFVI resources and the core OpenStack services, while the APIs are covered in Chapter 5. Chapter 6 covers the implementation and enforcement of security capabilities and controls. Life Cycle Management of the NFVI and VIM are covered in Chapter 7 with stress on Logging, Monitoring and Analytics (LMA), configuration management and some other operational items, Please note that Chapter 7 is not a replacement for the implementation, configuration and operational documentation that accompanies the different OpenStack distributions. Chapter 8 identifies certain Gaps that currently exist and plans on how to address them. For example, Service Function Chaining support needs to be addressed to realise the full potential and value of SDN and NFV.
 
 
 
