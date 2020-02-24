@@ -125,11 +125,11 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| Excluded Test (expression reference)        | Optional in RA-1 requirement, or Known Issue    |
-|-------------------------------------------|------------|
-| .\*scenario.test_federated_authentication | federation |
-| .\*identity.admin.v2                      | API v2     |
-| .\*identity.v2                            | API v2     |
+| Excluded Test (expression reference)        | Optional in RA-1 requirement, or Known Issue |
+|---------------------------------------------|----------------------------------------------|
+| .\*scenario.test_federated_authentication   | federation                                   |
+| .\*identity.admin.v2                        | API v2                                       |
+| .\*identity.v2                              | API v2                                       |
 
 Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -159,8 +159,8 @@ According to
 the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
 | Excluded Test (expression reference) | Optional in RA-1 requirement, or Known Issue |
-|------------------------------------|---------|
-| .\*image.v1                        | API v1  |
+|--------------------------------------|----------------------------------------------|
+| .\*image.v1                          | API v1                                       |
 
 Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -184,17 +184,17 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| Excluded Test (expression reference)                                                                   | Optional in RA-1 requirement, or Known Issue                               |
-|------------------------------------------------------------------------------------------------------|---------------------------------------|
+| Excluded Test (expression reference)                                                                 | Optional in RA-1 requirement, or Known Issue |
+|------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | .\*test_incremental_backup                                                                           | https://gerrit.opnfv.org/gerrit/68881 |
-| .\*test_consistencygroups                                                                            | consistency_group                     |
+| .\*test_consistencygroups                                                                            | consistency_group                              |
 | .\*test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status                      | https://launchpad.net/bugs/1770179    |
-| .\*test_multi_backend                                                                                | multi-backend                         |
-| .\*test_volume_retype.VolumeRetypeWithMigrationTest                                                  | multi-backend                         |
+| .\*test_multi_backend                                                                                | multi-backend                                  |
+| .\*test_volume_retype.VolumeRetypeWithMigrationTest                                                  | multi-backend                                  |
 | .\*test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete          | https://launchpad.net/bugs/1677525    |
-| .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                  |
-| .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                |
-| .\*tempest.scenario.test_volume_migrate_attached                                                     | multi-backend                         |
+| .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                          |
+| .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                        |
+| .\*tempest.scenario.test_volume_migrate_attached                                                     | multi-backend                                  |
 
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -222,9 +222,9 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| Excluded Test (expression reference)                                      | Optional in RA-1 requirement, or Known Issue                            |
-|-------------------------------------------------------------------------|------------------------------------|
-| .\*test_container_sync.ContainerSyncTest.test_container_synchronization | https://launchpad.net/bugs/1317133 |
+| Excluded Test (expression reference)                                    | Optional in RA-1 requirement, or Known Issue |
+|-------------------------------------------------------------------------|----------------------------------------------|
+| .\*test_container_sync.ContainerSyncTest.test_container_synchronization | https://launchpad.net/bugs/1317133           |
 
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -248,51 +248,51 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| Excluded Test (expression reference)                                                                 | Optional in RA-1 requirement, or Known Issue                               |
-|----------------------------------------------------------------------------------------------------|---------------------------------------|
-| .\*admin.test_agent_availability_zone                                                              | DHCP agent and L3 agent               |
-| .\*admin.test_dhcp_agent_scheduler                                                                 | dhcp_agent_scheduler                  |
-| .\*admin.test_l3_agent_scheduler                                                                   | l3_agent_scheduler                    |
-| .\*admin.test_logging                                                                              | logging                               |
-| .\*admin.test_logging_negative                                                                     | logging                               |
-| .\*admin.test_network_segment_range                                                                | network-segment-range                 |
-| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                 | port-mac-address-regenerate           |
-| .\*admin.test_ports.PortTestCasesResourceRequest                                                   | port-resource-request                 |
-| .\*admin.test_routers_dvr                                                                          | dvr                                   |
-| .\*admin.test_routers_flavors                                                                      | l3-flavors                            |
-| .\*admin.test_routers_ha                                                                           | l3-ha                                 |
-| .\*test_floating_ips.FloatingIPPoolTestJSON                                                        | floatingip-pools                      |
-| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                 | fip-port-details                      |
-| .\*test_metering_extensions                                                                        | metering                              |
-| .\*test_metering_negative                                                                          | metering                              |
-| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                           | filter-validation                     |
-| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                               | vxlan                                 |
-| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                            | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                          | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                       | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                | dns-domain-ports                      |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                  | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                               | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                              | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                 | l3-ha                                 |
-| .\*test_router_interface_fip                                                                       | router-interface-fip                  |
-| .\*test_routers.DvrRoutersTest                                                                     | dvr                                   |
-| .\*test_routers.HaRoutersTest                                                                      | l3-ha                                 |
-| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                           | extraroute-atomic                     |
-| .\*test_routers.RoutersTest.test_extra_routes_atomic                                               | extraroute-atomic                     |
-| .\*test_routers_negative.DvrRoutersNegativeTest                                                    | dvr                                   |
-| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                            | dvr                                   |
-| .\*test_routers_negative.HaRoutersNegativeTest                                                     | l3-ha                                 |
-| .\*test_security_groups.RbacSharedSecurityGroupTest                                                | rbac-security-groups                  |
-| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                     | filter-validation                     |
-| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                             | filter-validation                     |
-| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                        | standard-attr-segment                 |
+| Excluded Test (expression reference)                                                               | Optional in RA-1 requirement, or Known Issue |
+|----------------------------------------------------------------------------------------------------|----------------------------------------------|
+| .\*admin.test_agent_availability_zone                                                              | DHCP agent and L3 agent                       |
+| .\*admin.test_dhcp_agent_scheduler                                                                 | dhcp_agent_scheduler                         |
+| .\*admin.test_l3_agent_scheduler                                                                   | l3_agent_scheduler                           |
+| .\*admin.test_logging                                                                              | logging                                       |
+| .\*admin.test_logging_negative                                                                     | logging                                       |
+| .\*admin.test_network_segment_range                                                                | network-segment-range                         |
+| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                 | port-mac-address-regenerate                   |
+| .\*admin.test_ports.PortTestCasesResourceRequest                                                   | port-resource-request                         |
+| .\*admin.test_routers_dvr                                                                          | dvr                                           |
+| .\*admin.test_routers_flavors                                                                      | l3-flavors                                   |
+| .\*admin.test_routers_ha                                                                           | l3-ha                                         |
+| .\*test_floating_ips.FloatingIPPoolTestJSON                                                        | floatingip-pools                              |
+| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                 | fip-port-details                             |
+| .\*test_metering_extensions                                                                        | metering                                     |
+| .\*test_metering_negative                                                                          | metering                                     |
+| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                           | filter-validation                             |
+| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                               | vxlan                                         |
+| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                            | dns-integration                               |
+| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                          | uplink-status-propagation                     |
+| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                       | uplink-status-propagation                     |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                | dns-domain-ports                             |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                  | dns-integration                               |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                               | dns-integration                               |
+| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                              | dns-integration                               |
+| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                 | l3-ha                                         |
+| .\*test_router_interface_fip                                                                       | router-interface-fip                         |
+| .\*test_routers.DvrRoutersTest                                                                     | dvr                                           |
+| .\*test_routers.HaRoutersTest                                                                      | l3-ha                                         |
+| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                           | extraroute-atomic                             |
+| .\*test_routers.RoutersTest.test_extra_routes_atomic                                               | extraroute-atomic                             |
+| .\*test_routers_negative.DvrRoutersNegativeTest                                                    | dvr                                           |
+| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                            | dvr                                           |
+| .\*test_routers_negative.HaRoutersNegativeTest                                                     | l3-ha                                         |
+| .\*test_security_groups.RbacSharedSecurityGroupTest                                                | rbac-security-groups                         |
+| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                     | filter-validation                             |
+| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                             | filter-validation                             |
+| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                        | standard-attr-segment                         |
 | .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                            | https://launchpad.net/bugs/1863707    |
-| .\*test_trunk.TrunkTestMtusJSON                                                                    | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestMtusJSON                                                           | vxlan                                 |
+| .\*test_trunk.TrunkTestMtusJSON                                                                    | vxlan                                         |
+| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type | vxlan                                         |
+| .\*test_trunk_negative.TrunkTestMtusJSON                                                           | vxlan                                         |
 | .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                        | https://gerrit.opnfv.org/gerrit/69105 |
-| .\*network.test_tags                                                                               | tag-ext                               |
+| .\*network.test_tags                                                                               | tag-ext                                       |
 | .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                       | https://launchpad.net/bugs/1676207    |
 | .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                           | https://launchpad.net/bugs/1676207    |
 | .\*test_network_v6                                                                                 | https://gerrit.opnfv.org/gerrit/69105 |
@@ -325,44 +325,44 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following tests will be excluded as there is no corresponding mandatory requirement for the feature/capability in RA-1, or there is a known issue with the feature/capability prohibiting execution:
 
-| Excluded Test (expression reference)                                                                                        | Optional in RA-1 requirement, or Known Issue                            |
-|---------------------------------------------------------------------------------------------------------------------------|------------------------------------|
-| .\*test_fixed_ips                                                                                                         | neutron                            |
-| .\*test_fixed_ips_negative                                                                                                | neutron                            |
-| .\*test_auto_allocate_network                                                                                             | shared networks                    |
-| .\*test_floating_ips_bulk                                                                                                 | nova-network                       |
-| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume                                                   | block live migration               |
-| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration                                   | volume-backed live migration       |
-| .\*test_live_migration.LiveMigrationTest.test_iscsi_volume                                                                | block live migration               |
-| .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration                                                | volume-backed live migration       |
-| .\*test_live_migration.LiveMigrationRemoteConsolesV26Test                                                                 | serial_console                     |
-| .\*certificates.test_certificates                                                                                         | cert                               |
-| .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest                                                              | https://launchpad.net/bugs/1186354 |
-| .\*test_novnc                                                                                                             | vnc_console                        |
-| .\*test_server_personality                                                                                                | personality                        |
-| .\*test_servers.ServerShowV263Test.test_show_update_rebuild_list_server                                                   | certified_image_ref                |
-| .\*test_servers_negative.ServersNegativeTestJSON.test_personality_file_contents_not_encoded                               | personality                        |
-| .\*test_server_actions.ServerActionsTestJSON.test_change_server_password                                                  | change_password                    |
-| .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console                                                         | vnc_console                        |
-| .\*test_server_actions.ServerActionsTestJSON.test_reboot_server_soft                                                      | https://launchpad.net/bugs/1014647 |
-| .\*test_security_group_default_rules                                                                                      | https://launchpad.net/bugs/1311500 |
-| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name            | neutron                            |
-| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description | https://launchpad.net/bugs/1161411 |
-| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name        | https://launchpad.net/bugs/1161411 |
-| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des            | neutron                            |
-| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id             | neutron                            |
-| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name           | neutron                            |
-| .\*test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex                              | https://launchpad.net/bugs/1540645 |
-| .\*servers.test_virtual_interfaces                                                                                        | nova-network                       |
-| .\*compute.test_virtual_interfaces_negative                                                                               | nova-network                       |
-| .\*compute.test_networks                                                                                                  | nova-network                       |
-| .\*test_attach_volume.AttachVolumeMultiAttach                                                                             | volume_multiattach                 |
-| .\*test_volume_boot_pattern.TestVolumeBootPattern.test_boot_server_from_encrypted_volume_luks                             | attach_encrypted_volume            |
-| .\*test_volume_swap                                                                                                       | swap_volume                        |
-| .\*test_encrypted_cinder_volumes                                                                                          | attach_encrypted_volume            |
-| .\*test_stamp_pattern.TestStampPattern.test_stamp_pattern                                                                 | https://launchpad.net/bugs/1664793 |
-| .\*test_volume_migrate_attached                                                                                           | https://launchpad.net/bugs/1664793 |
-| .\*test_minbw_allocation_placement                                                                                        | microversion                       |
+| Excluded Test (expression reference)                                                                                      | Optional in RA-1 requirement, or Known Issue |
+|---------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
+| .\*test_fixed_ips                                                                                                         | neutron                                       |
+| .\*test_fixed_ips_negative                                                                                                | neutron                                       |
+| .\*test_auto_allocate_network                                                                                             | shared networks                            |
+| .\*test_floating_ips_bulk                                                                                                 | nova-network                             |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume                                                   | block live migration                           |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration                                   | volume-backed live migration               |
+| .\*test_live_migration.LiveMigrationTest.test_iscsi_volume                                                                | block live migration                           |
+| .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration                                                | volume-backed live migration               |
+| .\*test_live_migration.LiveMigrationRemoteConsolesV26Test                                                                 | serial_console                      |
+| .\*certificates.test_certificates                                                                                         | cert                                           |
+| .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest                                                              | https://launchpad.net/bugs/1186354  |
+| .\*test_novnc                                                                                                             | vnc_console                         |
+| .\*test_server_personality                                                                                                | personality                         |
+| .\*test_servers.ServerShowV263Test.test_show_update_rebuild_list_server                                                   | certified_image_ref                 |
+| .\*test_servers_negative.ServersNegativeTestJSON.test_personality_file_contents_not_encoded                               | personality                         |
+| .\*test_server_actions.ServerActionsTestJSON.test_change_server_password                                                  | change_password                     |
+| .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console                                                         | vnc_console                         |
+| .\*test_server_actions.ServerActionsTestJSON.test_reboot_server_soft                                                      | https://launchpad.net/bugs/1014647  |
+| .\*test_security_group_default_rules                                                                                      | https://launchpad.net/bugs/1311500  |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name            | neutron                                       |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description | https://launchpad.net/bugs/1161411  |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name        | https://launchpad.net/bugs/1161411  |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des            | neutron                                       |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id             | neutron                                       |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name           | neutron                                       |
+| .\*test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex                              | https://launchpad.net/bugs/1540645  |
+| .\*servers.test_virtual_interfaces                                                                                        | nova-network                             |
+| .\*compute.test_virtual_interfaces_negative                                                                               | nova-network                             |
+| .\*compute.test_networks                                                                                                  | nova-network                             |
+| .\*test_attach_volume.AttachVolumeMultiAttach                                                                             | volume_multiattach                  |
+| .\*test_volume_boot_pattern.TestVolumeBootPattern.test_boot_server_from_encrypted_volume_luks                             | attach_encrypted_volume             |
+| .\*test_volume_swap                                                                                                       | swap_volume                         |
+| .\*test_encrypted_cinder_volumes                                                                                          | attach_encrypted_volume             |
+| .\*test_stamp_pattern.TestStampPattern.test_stamp_pattern                                                                 | https://launchpad.net/bugs/1664793  |
+| .\*test_volume_migrate_attached                                                                                           | https://launchpad.net/bugs/1664793  |
+| .\*test_minbw_allocation_placement                                                                                        | microversion                        |
 
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
