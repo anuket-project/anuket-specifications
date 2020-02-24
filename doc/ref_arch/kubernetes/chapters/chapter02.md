@@ -238,7 +238,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.kcm.05` | General | The Architecture **should** prevent workloads from interfering with or observing other mutually ignorant workloads. |
 | `req.kcm.06` | General | The Architecture **must** support resource tagging. |
 | `req.kcm.08` | General | The Architecture **must** support workload resiliency. |
-| `req.kcm.09` | General | The Architecture **should** prevent workloads from starving other workloads of guaranteed resources. |
+| `req.kcm.09` | General | The Architecture **must** prevent workloads from starving other workloads of guaranteed resources. |
 -->
 
 <p align="center"><b>Table 2-3:</b> Kubernetes Architecture: Kubernetes Cluster Requirements</p>
