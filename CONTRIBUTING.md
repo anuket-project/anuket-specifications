@@ -12,15 +12,10 @@
 ### Labels
 Following labels should be correctly used for all issues and PRs to indicate the status of them and to assist automation pipelines to correctly apply CNTT processes.
 
-  - **Roadmap Item**: This label applies to both issues and PRs to indicate that the issue/PR is for a roadmap item for an upcoming release.
-  - **Fix needed**: This label applies to both issues and PRs to indicate that the issue/PR is to fix an existing bug.
-  - **Backlog**: This label applies to issues only to indicate that the issue is to be added to a backlog of features for future releases (to be considered during technical steering meeting).
-  - **Workstream Name**: This label applies to both issues and PRs to indicate which project the issue/PR is targeting.
-  - **Chapter Number**: This label applies to PRs (and optionally to issues) to indicate which chapter the PR is targeting.
-  - **General**: This label applies to both issues and PRs to indicate that this issue/PR is not corresponding to any particular chapter/file.
+  - **Backlog**: This label applies to issues only to indicate that the issue is to be added to a backlog of features for future releases.
   - **Major/Minor**: This label applies to both issues and PRs to indicate if the issue/PR is addressing a major or minor change. 
-  - **WIP**: This label applies to PRs to indicate that this PR is still being developed and no reviews/approvals are expected.
-  - **Enhancement**: This label applies to both issues and PRs to indicate that the issue/Pr is proposing an Enhancement.
+  - **WIP**: This label applies to PRs to indicate that this PR is still being developed and no reviews/approvals are expected yet.
+     - PRs can also be created as "Draft" indicate that the PR is working in progress.
   - **Returned**: This label applies to both issues and PRs to indicate that the issue/PR has been sent back to authoer (e.g. more information needed, not a high priority, no longer valid, etc).
   - **Idle**: This label will be **automatically** applied (by a GitHub work flow or by TSC Leads) to both issues/PRs to indicate that no activity has been observed on the issue/PR for some determined time frame. This triggers an action to close the issue/PR.
   - **Unresolved**: This label will be **automatically** applied to PRs to indicate that no consensus has been reached on the PR. This triggers an action to resolve the PR by the TSC.
@@ -33,9 +28,10 @@ Following labels should be correctly used for all issues and PRs to indicate the
   - Title needs to be in the following format [WSx Chx].
     - WSx: The name of the work stream it is targeting.
     - Chx: The name of the chapter it is targeting (if applicable).
-- Issues should be correctly set with the correct Project and Milestone.
-  - Milestone = the upcoming release related to the issue/PR.
-  - Project = Work stream.
+- Upon Creation, Issues must be correctly set with the correct **Project Name**. 
+  - Project Name = Workstream Name.
+- Issues must be correctly set with the right labels and Milestone by WSL.
+  - Relevant Milestone for the upcoming release (M1 - M6).
 - Workstream Leads has the sole responsibility to assign issues to individuals to address them.
 - **self assignment** are NOT recommended. Contributors may ask WSL (via comment or others) to get the issue assigned to them if they would like to work on it.
   - This is to make sure items are worked based on priorities and right reasoning.
