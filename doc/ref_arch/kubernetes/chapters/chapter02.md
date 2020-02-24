@@ -172,7 +172,8 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for Kubernetes components. |
-| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, Compute Intensive). |
+| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, ). |
+
 
 <!--
 | `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|
@@ -187,7 +188,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for Pods.  |
-| `req.inf.com.03` | Network | The Architecture **must** support Container Runtime Interface (CRI). |
+| `req.inf.com.03` | Compute | The Architecture **must** support Container Runtime Interface (CRI). |
 | `req.inf.stg.01` | Storage | The Architecture **must**  support Kubernetes Volumes for container storage.
 | `req.inf.stg.02` | Storage | The Architecture **may** provide shared Object storage as a service for Containers workload.
 | `req.inf.stg.03` | Storage | The Architecture **must** support Container Storage Interfaces (CSI).
