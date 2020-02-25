@@ -7,7 +7,7 @@
 * [7.1 Introduction ](#7.1)
 * [7.2 Requirements ](#7.2)
 * [7.3 NFVI and VIM configuration management ](#7.3)
-* [7.4 MFVI and VIM Maintenance ](#7.4)
+* [7.4 NFVI and VIM Maintenance ](#7.4)
 * [7.5 Logging, Monitoring and Analytics ](#7.5)
 
 
@@ -29,7 +29,7 @@
 - Provisioning of host aggregates
 
 <a name="7.4"></a>
-## 7.4 MFVI and VIM Maintenance
+## 7.4 NFVI and VIM Maintenance
 - Backup, upgrade and rollback
 -	Capacity management, horizontal scaling by adding bare metal servers(control/compute/storage)
 -	Solution evolution by adding new OpenStack services or additional components
