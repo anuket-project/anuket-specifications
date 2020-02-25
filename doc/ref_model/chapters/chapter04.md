@@ -601,7 +601,7 @@ Whereas:
 <a name="4.3"></a>
 ## 4.3 Networking
 
-This is a placeholder for NFVI infrastructure networking information that is common to all Reference Architectures.
+This is a placeholder for NFVI infrastructure networking information that is common to all Reference Architectures.(WIP) 
 
 
 ## 4.4 Key Terminology, Definitions and Glossary (temporary)
