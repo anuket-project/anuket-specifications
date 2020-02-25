@@ -395,6 +395,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 .large |4 |8 GB |80 GB |1 Gbps
 .2xlarge* |8 |16 GB |160 GB |1 Gbps
 .4xlarge* |16 |32 GB |320 GB |1 Gbps
+.8xlarge* |32 |64 GB |640 GB |1 Gbps
 
 <p align="center"><b>Table 4-17:</b> Predefined Compute Flavours.</p>
 
