@@ -33,7 +33,7 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
 
-Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities, and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of the Basic, Network Intensive and Compute Intensive Instance Types.
+Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities, and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of the Basic and Network Intensive <!-- and Compute Intensive Instance --> Types.
 
 <p align="center"><img src="../figures/RM_chap5_fig_5_3_SW_profile.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
 <p align="center"><b>Figure 5-3:</b> NFVI Instance Types.</p>
@@ -116,7 +116,7 @@ _**Comment:** To be worked on._
 <a name="5.2"></a>
 ## 5.2 NFVI SW profiles features and requirements
 
-This section will detail NFVI SW profiles and associated configurations for the 3 types of NFVI instances: Basic, Network intensive, and Compute intensive.
+This section will detail NFVI SW profiles and associated configurations for the 2 types of NFVI instances: Basic and Network intensive. <!-- and Compute intensive. -->
 
 <a name="5.2.1"></a>
 ### 5.2.1 Virtual Compute
