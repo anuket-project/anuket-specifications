@@ -52,7 +52,7 @@ From Reference Model section [4.2.4.2.1 Network Acceleration Extensions](../../.
 <a name="2.2.2"></a>
 ### 2.2.2 Network Interface Options
 
-From Reference Model section [4.2.4.4 Network Interface Options](../../../ref_model/chapters/chapter04.md#4244-network-interface-options)
+From Reference Model section [4.2.2 Virtual Network Interface Specifications](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications)
 
 | Attribute | Description | Supported |
 |-----------|----------------------------------|-------|
