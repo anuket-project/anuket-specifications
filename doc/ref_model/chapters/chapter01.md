@@ -199,7 +199,7 @@ The Common Telco NFVI work is not done in a vacuum.  The intention from the begi
  - OSM (ETSi Open Source MANO project)
  - VMWare (While not an Open Source project, VMWare is a commonly used platform used for VNF deployments in the telecom industry)
 
-The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-2** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
+The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf). **Figure 1-2** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
 <p align="center"><b>Figure 1-2:</b> Mapping to ETSI NFV architecture</p>
