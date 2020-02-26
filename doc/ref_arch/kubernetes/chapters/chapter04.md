@@ -27,7 +27,7 @@ Figure 4-1 below shows the architectural components that are described in the su
 <a name="4.2"></a>
 ## 4.2 Host OS
 
-In order for a Host OS to be compliant with this Reference Architecture it must meet the following requirements:
+In order for a Host OS to be conformant with this Reference Architecture it must meet the following requirements:
 - A deb/rpm compatible distribution of Linux (this must be used for the master nodes, and can be used for worker nodes).
 - A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is focussed on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, etc.
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
@@ -41,7 +41,7 @@ Table 4-1 lists the Linux kernel versions that comply with this Reference Archit
 |Linux|3.10+||
 |Windows|1809 (10.0.17763)|For worker nodes only|
 
-<p align="center"><b>Table 4-1:</b> Compliant OS Kernels</p>
+<p align="center"><b>Table 4-1:</b> Conformant OS Kernels</p>
 
 
 <a name="4.3"></a>
@@ -85,20 +85,20 @@ feature-gates:
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-In order to support `req.inf.com.03`, the chosen runtime must be compliant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are compliant with these specification are (note this is not a complete list and in no particular order):
+In order to support `req.inf.com.03`, the chosen runtime must be conformant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are conformant with these specification are (note this is not a complete list and in no particular order):
 - container-d (with CRI plugin enabled, which it is by default)
 - Docker CE (via the dockershim, which is currently built in to the kubelet)
 - CRI-O
 - Frakti
 
-These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when compliant with the above specifications) supports the requirement `req.inf.stg.06` for ephemeral storage for Pods.
+These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when conformant with the above specifications) supports the requirement `req.inf.stg.06` for ephemeral storage for Pods.
 
 > Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
 
 <a name="4.5"></a>
 ## 4.5 CNI plugins
 
-> Editors note: The following chapter lists a set of CNI plugins compliant with the Reference Architecture. In future releases the list of CNI plugins should be refined in a way that there is only component selected for each functionality. 
+> Editors note: The following chapter lists a set of CNI plugins conformant with the Reference Architecture. In future releases the list of CNI plugins should be refined in a way that there is only component selected for each functionality. 
 
 The used CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm)
 as it provides the possibility to use several other CNI plugins (`req.inf.ntw.16`) and provides an API based solution to administer the networks (`req.inf.ntw.10`) from a central point (`req.inf.ntw.11`).<br>

@@ -12,7 +12,7 @@
 <a name="5.1"></a>
 ## 5.1 Introduction
 
-> Summary of what is included in this chapter and how it will be used to drive RA-compliant Reference Implementations via Reference Certifications.
+> Summary of what is included in this chapter and how it will be used to drive Reference Implementations conformant to RA2.
 
 > Need to be clear [about "exposed" and "internal" interfaces](../../../ref_model/chapters/chapter04.md#4.1.1), in addition to the Kubernetes API and any other APIs used by Application Management capabilities (as opposed to exposed interfaces, which are those used by the workloads themselves).
 
