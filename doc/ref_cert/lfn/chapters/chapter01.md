@@ -89,10 +89,10 @@ These core principles will guide NFV verification deliverables:
 <a name="1.4.1"></a>
 ### 1.4.1 Overarching Objectives and Goals
 
-1. Deliver tools and methods for verifying NFVi capabilities satisfy infrastructure needs of VNFs identified in RM.
+1. Deliver tools and methods for verifying NFVI capabilities satisfy infrastructure needs of VNFs/CNFs identified in RM.
 2. Augment current OVP program to meet infrastructure verification requirements.
 3. Increase probability VNFs will on-board and function with minimal problems, or issues, during initial deployment of VNF.
-4. Increase confidence that VNF performance and capacity can be forecast for given NFVi
+4. Increase confidence that VNF performance and capacity can be forecast for given NFVI
 5. Verification tools to be portable, or compatible, across all RAs/Distributions which already conform to standard interfaces and services.
 
 <a name="1.5"></a>
@@ -110,11 +110,11 @@ The following best practices have been adopted to ensure verification and valida
 <a name="1.6"></a>
 ## 1.6 Verification methodologies
 
-Prior to onboarding a VNF the NFVi must be tested in Network, Compute and Storage domains to ensure that it provides required capabilities that allow the VNF to behave as expected.
+Prior to onboarding a VNF the NFVI must be tested in Network, Compute and Storage domains to ensure that it provides required capabilities that allow the VNF to behave as expected.
 
-Predicting networking performance may be particularly difficult to establish and can be extremely sensitive to configuration details of the NFVi. Testing should be from the perspective of the VNF and create an environment that represents a realistic NFVi setup using open-source test tools and test workloads (i.e. test VNFs) that mimic how a real VNF will consume the NFVi. At this stage of testing we assume that the NFVi vendor has fully debugged and optimized the NFVi components and stack. With this approach the above objectives can be achieved:
+Predicting networking performance may be particularly difficult to establish and can be extremely sensitive to configuration details of the NFVi. Testing should be from the perspective of the VNF and create an environment that represents a realistic NFVi setup using open-source test tools and test workloads (i.e. test VNFs) that mimic how a real VNF will consume the NFVi. At this stage of testing we assume that the NFVi vendor has fully debugged and optimized the NFVI components and stack. With this approach the above objectives can be achieved:
 
-1. VNF vendors will know the capabilities of the NFVi and be able to forecast performance of the VNF. By knowing how the NFVi has been tested (and having the open-source test tools including workloads) they can reproduce test results or produce their own results using their own NFVi configurations.
+1. VNF vendors will know the capabilities of the NFVi and be able to forecast performance of the VNF. By knowing how the NFVI has been tested (and having the open-source test tools including workloads) they can reproduce test results or produce their own results using their own NFVI configurations.
 	
 2. Since testing is from the viewpoint of the VNF, performance of a commercial VNF should also be predictable. If this is not the case, the reference results provide good data to investigate the discrepancy. 
 	
