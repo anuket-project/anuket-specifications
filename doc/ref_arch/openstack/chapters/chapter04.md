@@ -422,8 +422,6 @@ To configure the T-shirt sizes (specified in [Table 4-17](../../../ref_model/cha
 
 In addition, to configure the storage IOPS the following two parameters need to be specified in the flavor create: --property quota:disk_write_iops_sec=<IOPS#> and --property quota:disk_read_iops_sec=<IOPS#>.  
 
-To configure SMT, the following parameter needs to be specified in the flavor create:  --property smt_enabled=True.
-
 The flavor create command and the mandatory and optional configuration parameters is documented in https://docs.openstack.org/nova/latest/user/flavors.html.
 
 <a name="4.4.2"></a>
