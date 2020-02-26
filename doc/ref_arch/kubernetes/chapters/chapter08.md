@@ -82,6 +82,15 @@ While this Reference Architecture is being developed, Gaps will be identified th
 >
 > Note: with an underlying IAAS this is possible, but then it introduces (undesirable) dependency between workload orchestration in K8s and infrastructure orchestration in IAAS.
 
+<a name="8.2.8"></a>
+### 8.2.8 HW topology aware hugepages
+
+> **Related requirements:** `nfvi.com.cfg.004` and `nfvi.com.cfg.002`
+
+> **Baseline project:** _Kubernetes v1.17_
+
+> **Gap description:** Allocation of hugepages from the same NUMA node as other resources of a Pod. To support this [cAdvisor needed a change to support NUMA](https://github.com/google/cadvisor/pull/2304). Changes in Kubernetes are planned to be implemented in the [Node Topology Manager](https://github.com/kubernetes/enhancements/issues/693).
+
 
 <a name="8.3"></a>
 ## 8.3 Proposals & Resolution
