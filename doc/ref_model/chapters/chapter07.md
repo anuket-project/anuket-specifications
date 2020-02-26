@@ -530,7 +530,7 @@ Please note that **Virtual Resource Manager (VRM)** is used to collectively repr
 
 |  Ref | Requirement  |  Unit  | Definition  |
 |-------|------|------|-------|
-| sec.gen.001 | The Platform **must** support Continued system integrity maintain the state to what it is specified to be and does not change unless through change management process. |   | Continued: Traceability across the life cycle <br/> System Integrity: maintain the state to what it is specified to be and does not change unless through change management process. |
+| sec.gen.001 | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. |   |  |
 | sec.gen.002 | All systems part of NFVI **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  | Hardening: NIST SP 800-63B |
 | sec.gen.003 | All servers part of NFVI **must** support secure boot, root of trust and trusted boot |  | Secure boot - measured boot, verified boot  <br/> Root of trust: specified in RA or RI; should CNTT specify how? |
 | sec.gen.004 | The Operating Systems of all the servers part of NFVI **must** be hardened |  | NIST SP 800-123 |
@@ -538,7 +538,7 @@ Please note that **Virtual Resource Manager (VRM)** is used to collectively repr
 | sec.gen.006 | The Platform **must** support Secure logging |  | Details |
 | sec.gen.007 | All servers part of NFVI **must** be Time synchronized with authenticated Time service |  | |
 | sec.gen.008 | All servers part of NFVI **must** be regularly updated to address security vulnerabilities |  | |
-| sec.gen.009 | The Platform **must** support Software integrity protection and verification |  | Move it to System section |
+| sec.gen.009 | The Platform **must** support Software integrity protection and verification |  | |
 | sec.gen.010 | The NFVI **must** support Secure storage (all types) |  | Expand/Delete based on other reqts |
 | sec.gen.011 | The NFVI **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  | NIST reference? |
 | sec.gen.012 | The Platform **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  | |
@@ -555,7 +555,7 @@ Ref | Requirement | Unit | Definition |
 | sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic |  | |
 | sec.sys.004 | The NFVI **must** support Secure network channels |  | A secure channel enables transferring of data that is resistant to overhearing and tampering |
 | sec.sys.005 | The NFVI **must** segregate the underlay and overlay networks |  | |
-| sec.sys.006 | The NFVI **must** support tenant networks segregation |  | |
+| *sec.sys.006* | *Placeholder* |  | |
 | sec.sys.007 | The NFVI must be able to utilize the VRM identity management capabilities |  | |
 | sec.sys.008 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) |  | |
 | sec.sys.009 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. |  | Communication between different trust domains is not allowed, by default.  |
@@ -577,6 +577,7 @@ Ref | Requirement | Unit | Definition |
 | sec.ci.005 | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |  | |
 | sec.ci.006 | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  | |
 | sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services |  | Admin access must be carefully regulated |
+| sec.ci.008 | The NFVI **must** support tenant networks segregation |  | |
 
 <a name="7.11.4"></a>
 ### 7.11.4. Workload Security
