@@ -191,7 +191,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.cap.016 | CPU overbooking | 1:N | <definition update scheduled> |
+| i.nfvi.cap.016 | CPU allocation ratio | N:1 | Number of virtual cores per physical core |
 | i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface) |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
@@ -538,7 +538,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No |  |
 | `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E |  |
 | `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes |  Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 |  Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 |  Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes |  |
 | `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes |  Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes |  Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
@@ -563,7 +563,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
 | `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
