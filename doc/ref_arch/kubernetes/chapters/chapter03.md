@@ -20,7 +20,7 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT compliance; compliance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any compliant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
+The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT conformance; conformance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any conformant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
 
 Kubernetes is already very well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
 
@@ -110,7 +110,7 @@ There are two types of low latency and high throughput networks required by `req
 
 The low latency, high throughput networks for handling the user plane traffic require the capability to use an user space networking technology.
 
-> Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as an additional feature and still be compliant with CNTT.
+> Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as an additional feature and still be conformant with CNTT.
 
 > Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
