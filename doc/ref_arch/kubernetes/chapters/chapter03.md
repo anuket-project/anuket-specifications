@@ -67,11 +67,11 @@ A key thing to note is that the container runtime itself is also a set of proces
 <a name="3.2.1.1"></a>
 #### 3.2.1.1 Memory management
 
-> This chapter should describe considerations about memory management, like hugepages.
+> This chapter should describe considerations about memory management, like Huge Pages.
 
 > Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
-The Reference Model requires the support of hugepages in `nfvi.com.cfg.004` what is supported by upstream Kubernetes already. In case of some applications the hugepages should be allocated with the considerations of the HW topology. This later feature is missing from Kubernetes, therefore a gap was added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
+The Reference Model requires the support of Huge Pages in `nfvi.com.cfg.004` which is supported by upstream Kubernetes already. In case of some applications the Huge Pages should be allocated with the considerations of the HW topology. This later feature is missing from Kubernetes, therefore a gap was added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
@@ -126,7 +126,7 @@ As `req.inf.ntw.14` mandates the architecture must enable the integration of dif
 The architecture must support telecom equipment networking where the CNF networks are set up by the operator's network administrators. This is why, as `req.inf.ntw.10` requires, the architecture must provide a set of abstract management API-s to manage the network connectivity of the CNF pods.
 The API must support multiple tenants and must require elevated acces rights to manipulate infrastructure related API objects as these operations require reconfiguration of the physical network infrastructure.
 
-To fullfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and hugepages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+To fullfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and Huge Pages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
 
 The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads.
 
