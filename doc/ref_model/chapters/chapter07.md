@@ -82,43 +82,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world.   The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global Telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any NFVI infrastructure built needs to be able to withstand attacks in whatever form they take.
 
 With that in mind, the NFVI reference model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
-Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
+Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use. [inde](http://index.hu)
 
- • Center for Internet Security - https://www.cisecurity.org/
-
- • Cloud Security Alliance - https://cloudsecurityalliance.org/
-
- • Open Web Application Security Project https://www.owasp.org
-
- • The National Institute of Standards and Technology (NIST) (US Only)
-
- • FedRAMP Certification https://www.fedramp.gov/ (US Only)
-
- • ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
-
- • ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/committee/1427-nfv
-
-• ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
-
-    o ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
-
-    o ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity.
-
-    o ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. Incident management
-
-    o ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
+* Center for Internet Security - https://www.cisecurity.org/
+* Cloud Security Alliance - https://cloudsecurityalliance.org/
+* Open Web Application Security Project https://www.owasp.org
+* The National Institute of Standards and Technology (NIST) (US Only)
+* FedRAMP Certification https://www.fedramp.gov/ (US Only)
+* ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
+* ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/technologies/nfv
+  * ETSI NFV ISG [SEC WG specifications](https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword=&TB=&stdType=&frequency=&mandate=&collection=&sort=1)
+* ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
+  * ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
+  * ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity.
+  * ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. Incident management
+  * ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
 
 A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP – Open Web Application Security Project.  These include the following core principles:
 
-• Confidentiality – Only allow access to data for which the user is permitted
-
-• Integrity – Ensure data is not tampered with or altered by unauthorized users
-
-• Availability – ensure systems and data are available to authorized users when they need it
+* Confidentiality – Only allow access to data for which the user is permitted
+* Integrity – Ensure data is not tampered with or altered by unauthorized users
+* Availability – ensure systems and data are available to authorized users when they need it
 
 Additional NFVI security principles that need to be incorporated:
-
-• Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
+* Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
 
 <a name="7.3.1"></a>
 ## 7.3.1 Potential attack vectors
