@@ -67,7 +67,7 @@ Note that each requirement may have one or more test cases associated with it.
 
 | Test case # | sub-category | Description | Requirement # |
 |----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| `cert.test.vim.01` | VIM | Create a virtual machine with CPU pinning, HugePages and 2 NUMA nodes. | `req.vim.04` |
+| `cert.test.vim.01` | VIM | Create a virtual machine with CPU pinning, Huge Pages and 2 NUMA nodes. | `req.vim.04` |
 | `cert.test.vim.02` | VIM | Upload an image to image repository and download it back. | `req.vim.05` |
 | `cert.test.vim.03` | VIM | Deploy a heat stack having 2 virtual machines with associated network. | `req.vim.06` |
 | `cert.test.vim.04` | VIM | Create 2 tenants and then create virtual machine in each tenant. | `req.vim.07` |
