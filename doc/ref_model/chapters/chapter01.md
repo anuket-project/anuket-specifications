@@ -15,7 +15,12 @@
 * [1.6 Relationship to other industry projects](#1.6)
 * [1.7 Out of Scope Components](#1.7)
 * [1.8 Bogo-Meter](#1.8)
-* [1.9 Roadmap](#1.9)
+* [1.9 Networking and Fabric Strategy](#1.9)
+  * [1.9.1 Executive Summary](#1.9.1)
+  * [1.9.2 Strategic Objectives](#1.9.2)
+  * [1.9.3 Networking Requirements](#1.9.3)
+  * [1.9.4 Initial Steps](#1.9.4)
+* [1.10 Roadmap](#1.10)
 
 <a name="1.1"></a>
 ## 1.1 Overview
@@ -119,8 +124,6 @@ This document specifies:
   - **NFVI metrics & capabilities**: A set of metrics and capabilities for the NFVI which VNFs require to perform telco scale network functions.
   - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to completely abstract the infrastructure from VNFs. With a limited and well-defined set of profiles with well understood characteristics, VNF compatibility and performance predictability can be achieved.
 
-    >_Note_: The current focus is on VMs, due to the state of the industry at the point of developing this document, but the intention is to expand the definition to include Container profiles as both the need and the technology to support containers mature.
-
 - NFVI Software and Hardware profiling
   - **NFVI software profiles and configurations**: These are software profiles and configurations that map directly to the infrastructure profiles within the infrastructure profiles catalogue.
   - **NFVI hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined NFVI software profiles & configurations.
@@ -132,7 +135,7 @@ This document specifies:
 <!--
 <a name="1.4.1"></a>
 ## 1.4.1 Use Cases
-Since the CNTT membership is primarily from the telecom and telecom supporting vendors communities, most of the use cases represent the interests of that community.  The following high-level use cases are used to inform and guide both the reference model and subsequent architectures and implementations.  Note that many of these use cases were taken from the work done by the OpenStack Foundation Edge Working Group.
+Since the CNTT membership is primarily from the telecom and telecom supporting vendors communities, most of the use cases represent the interests of that community.  The following high-level use cases are used to inform and guide both the reference model and subsequent architectures and implementations.  Note that many of these use cases were taken from the work done by the [OpenStack Foundation Edge Computing Group](https://wiki.openstack.org/wiki/Edge_Computing_Group).
 
 - **Mobile service provider 5G/4G virtual Radio Access Network (RAN) deployment and Edge Cloud B2B2X**: There are at least three use cases related to this (e.g. vRAN, VNF, Multi-access Edge Computing (MEC). While the use cases are different, the expectation is that they will run on the same infrastructure. So it makes sense to treat them together.
   1. vRAN: Here the focus on virtual Baseband Unit (BBU) which has stringent requirements on processing for timing controls with 'remote radio heads'
@@ -196,12 +199,12 @@ The Common Telco NFVI work is not done in a vacuum.  The intention from the begi
  - OSM (ETSi Open Source MANO project)
  - VMWare (While not an Open Source project, VMWare is a commonly used platform used for VNF deployments in the telecom industry)
 
-The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by ETSI GS NFV002. <!--[link to ref: NFV Architectural framework v1.2.1]-->. **Figure 1-2** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
+The ETSI NFV ISG is very closely related to the Common Telco NFVI, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the Common Telco NFVI Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf). **Figure 1-2** illustrates which functional blocks of the ETSI NFV Architecture are in scope for Common Telco NFVI.
 
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
 <p align="center"><b>Figure 1-2:</b> Mapping to ETSI NFV architecture</p>
 
-Following the ETSI model, **Figure 1-2** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, the VIM is included in the Common Telco NFVI scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the NFVI.  These interactions and interfaces will be detailed in  **Chapter 7 "API & Interfaces"**.
+Following the ETSI model, **Figure 1-2** also depicts the VIM, which controls and manages the NFVI, and while technically not part of the NFVI, the VIM is included in the Common Telco NFVI scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the NFVI.  These interactions and interfaces will be detailed in  **Chapter 7 API & Interfaces**.
 
 The Common Telco NFVI is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
@@ -238,7 +241,98 @@ The ratings are as follows:
  - **Complete**: Content has been finalized for this release.  Few changes are anticipated in the future beyond fixing errors or slight refinements.
 
 <a name="1.9"></a>
-## 1.9 Roadmap
+## 1.9 Networking and Fabric Strategy
+
+> _**Editor's Note:** The purpose in the subsections comprising RM 1.9 is to provide initial high-level content related to networking across CNTT, so as to provide general direction and help coordinate current independent networking development activities, as well as to satisfy the networking MVP deliverables for the Baldy release. The following content addresses the overall CNTT networking solution, and **is not solely focused on the RM**. Hence, post-Baldy, it is anticipated this content will be expanded and be relocated where appropriate._
+
+The basic approach to producing the CNTT Baldy deliverables is to:
+A) Summarize the overall CNTT Networking and Fabric Strategy
+B) Document the initial list of Objectives and Requirements
+C) Document enough initial logistical details for contributors to create coherent content
+
+Readers be aware, in parallel with the CNTT Networking Strategy, the RI team is implementing networking for use today in labs and by RC. As RI has to deliver a working network at the same time the initial networking strategy and specifications (i.e. the work related to RM 1.9) are to be delivered, it is not expected nor mandated RI networking be compliant in the immediate future. However, the RI will need to be compatible, meaning, it delivers the network connectivity required by the RA and by RC, even if it does not implement the APIs, topology, encapsulation, etc., that will ultimately be specified herein.
+
+The following subsections, Executive Summary, Strategy Objectives, Networking Requirements and Initial Approach, respectively, are intended to provide an overview of CNTT's vision for networking and intent, objectives, requirements and their supporting rationale, as well as initial development approach.
+
+The networking within an NFVI, fabric or otherwise, is an area where there is significant variability across implementations. Leaf-Spine topology is well established, however, after topology there are countless decisions an Operator needs to make. Differences arise from many aspects, for example, is the solution layer-2 or layer-3; is the routing static or dynamic; what mechanism is used for encapsulation; what mechanism is used for isolation; does it support SR-IOV; does it support DPDK; does it employ SmartNICs; does it employ distributed control or a centralized control driving a programmable fabric; and the list continues. The multitude of permutations enable NFVI architects (Operators and Suppliers) to design (or procure) a fabric/networking solution that's optimized for their needs, whether their needs are minimal, very extensive or somewhere in between.
+
+For CNTT, a strategy is needed that affords Operators the performance, flexibility, availability, maintainability and scalability their business requires, yet doesn't require OPNFV to design, manage and test prohibitive numbers of networking solutions.
+ 
+**Some points for CNTT to consider when contemplating recommendations:**
+   > * Despite large variances in implementation, the spectrum of networking capabilities ultimately delivered to Workloads is comparatively narrow
+   > * Standard CNTT methodology (i.e. normalize interfaces, APIs, capabilities and behaviors at the reference points) applies well to networking, helping mitigate the need to be overly prescriptive about implementation  
+   > * CNTT/OPNFV MUST provide a functional networking solution for the RI, and in support of RC  
+   > * CNTT/OPNFV potentially does NOT have to provide a production networking solution for RI  
+   > * CNTT/OPNFV is NOT planning to provide a production compute solution for RI
+
+
+<a name="1.9.1"></a>
+## 1.9.1 Executive Summary
+
+> _Placeholder for the Executive Summary (targeting Baldy for first draft). **If you are interested in writing this content, please contact the RM lead.**_
+
+<a name="1.9.2"></a>
+## 1.9.2 Networking Strategy Objectives
+
+This section catalogs CNTT's high-level objectives for the Networking and Fabric Strategy. 
+
+> _List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
+
+1. The implementation of Networking inside the HW Layer should not be visible to the VNF/CNF and should preferably not even be visible to the IaaS/CaaS
+1. Provide networks for L3 tenant, GWs, SDS, etc.
+1. Cleanly decouple interface/reference points between CNTT constituencies
+1. Provide interoperability at layer demarcation/reference points within the NFVI. Ex.:
+   * any RA couples to RM
+   * like RI couples to RA
+   * like VIs couple to RA
+   * Operators can design or procure a compatible fabric
+1. Concurrently supports containerized and virtualized coexistence for VNF->CNF cutovers, as well as protracted parallel operations
+1. Provide a version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration w/ a wide selection of fabric implementations
+1. Provide ability for any number of Operator-specific fabrics to power CNTT NFVI
+1. Enable RC's ability to realize mandated OVP qualification deliverables
+1. Unambiguously document the responsibilities of each CNTT constituency
+1. In cases where a VNF/CNF require HW layer resources it should be under the control of the Virtualization Layer
+1. It is important that the HW Infrastructure Manager, each VIM and each VNF/CNF could be managed by separate organizations
+1. Drive the industry towards convergence on ABIs supporting Cloud-Native implementations for SmartNICs
+
+> _**Editor's Note:** Consider moving objectives to a table_
+
+<a name="1.9.3"></a>
+## 1.9.3 Networking Requirements
+
+1. NFVI layer responsibilities will include:
+   * HW Infrastructure Manager shall provide an abstracted model of the allocated HW resources into each specific Virtualization domain
+     * Additionally, it is responsible for maintaining logical isolation between different instances of virtualization domain
+     * Some of the HW resources including networking resources shall be possible to be withheld from Virtualization domains to allow for scaling, spare parts and HW Composition within the HW Infrastructure Layer itself
+   * Virtualization layer shall provide the Cloud Tenants with an abstracted networking environment
+     * It is therefore responsible for maintaining isolation between Cloud Tenants
+
+An example of the layering described above is depicted in **Figure 1-3**, where the Virtualization layer manages the Overlay Networking (e.g., through VLAN allocation) and the HW Infrastructure manages the Underlay networking (e.g., through VxLAN VNI range allocations).
+<p align="center"><img src="../figures/RMCH-01_Network_Layering_v0-2_TFredberg.png" alt="Network Layering" title="Network Layering" width="100%"/></p>
+<p align="center"><b>Figure 1-3:</b> Network Layering</p>
+
+<a name="1.9.4"></a>
+## 1.9.4 Initial Logistical Steps
+
+> _**Editor's Note:** The purpose in this section is to communicate the responsibilities of the CNTT levels, as they pertain to the networking solution, and how they relate (i.e. what goes in each bucket). The initial content below needs to be expanded with examples of material representative of the scope for each bucket, and refined. It is expected this area be enhanced to help authors in various CNTT levels understand their purview, and ultimately be deleted._
+
+As with most CNTT subsystems, responsibility for Objectives, Requirements, Guidelines, etc. is divided among the CNTT constituencies, as follows:
+- **Tech:** High-level strategy and other informative writings
+  - Ex. Executive summary, considerations, intent, vision, etc.
+- **RM:** Generic modeling and abstraction
+  - Ex. Guidelines and other information applicable to all RAs
+  - Overall theory of operation
+- **RA-x:** architecture, APIs and other service level details
+- **RI-x:** networking information for the relevant lab or POD
+  - Considerations related to differences between target architecture (RM 1.9) and current RI implementation
+  - Factors specific to supporting RC
+  - Known non-conformances
+- **RC:** Details related to qualification
+  - Implications of testbed network environment vs. production environments
+
+
+<a name="1.10"></a>
+## 1.10 Roadmap
 The NFVI Reference Model and Reference Architecture will continue to be refined as technology and industry needs change over time.  Release 1 of this document will focus on the network function virtualisation infrastructure and virtualised network functions which are based on virtual machines. In Release 2 there will be partial support for cloud native functions which make use of container technology.  
 The first reference architecture is based on Openstack, but the intention is to expand the portfolio of Reference Architectures with an upcoming focus in release 2 to areas such as Containerization, Kubernetes-based Cloud Native stacks and Container based network functions’ validation requirement.  Other planned additions to the project in future releases include support for:
 

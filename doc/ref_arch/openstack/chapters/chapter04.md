@@ -13,7 +13,6 @@
 * [4.3 Virtualised Infrastructure Manager (VIM)](#4.3)
   * [4.3.1 VIM Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
-  * [4.3.3 Build Parameters](#4.3.3)
 * [4.4 Consumable Infrastructure Resources and Services](#4.4)
   * [4.4.1 Support for Profiles and T-shirt instance types](#4.4.1)
   * [4.4.2 Logical segregation and high availability](#4.4.2)
@@ -372,10 +371,6 @@ Containers are lightweight compared to Virtual Machines and leads to efficient r
 In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-3.
 
 <p align="center"><img src="../figures/Figure_4_2_Containerised_OpenStack_Services.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-3. Containerised OpenStack Services Topology.</p>
-
-<a name="4.3.3"></a>
-### 4.3.3. Build Parameters
-**Content to be developed preferably by OpenStack Distributors**
 
 
 <a name="4.4"></a>

@@ -296,6 +296,7 @@ the following test names must not be executed:
 | .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                       | https://launchpad.net/bugs/1676207    |
 | .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                           | https://launchpad.net/bugs/1676207    |
 | .\*test_network_v6                                                                                 | https://gerrit.opnfv.org/gerrit/69105 |
+| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                             | l3_agent_scheduler                    |
 
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -614,6 +615,8 @@ At the time of writing, no KPI is defined in CNTT chapters which would have
 asked for an update of the default SLA proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
 
+On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
+
 ### 3.3.6.1 VMTP
 
 Here are the
@@ -678,6 +681,17 @@ Here are all samples:
 | TCP            | bandwidth (bit/s)      |
 | TCP            | retransmits            |
 | UDP            | packets (pps)          |
+
+### 3.3.6.3 PROX
+
+The generator used with the rapid scripts is PROX with a specific generator configuration file.
+When multiple flows are requested, the generator starts randomizing bits in the source and destination UDP ports.
+The number of flows to be generated during each run of the test is specified in the test files (e.g. TST009_Throughput.test).
+Packet size used during the test is also defined in the test file. IMIX is not supported yet, but you could take the average packet size of the IMIX for now.
+When defining n packet sizes with m different flow sizes, the test will run n x m times and will produce the results for these n x m combinations.
+All throughput benchmarking is done by a generator sending packets to a reflector. This results in bidirectional traffic which should be identical (src and dest IP and ports swapped) if all traffic goes through.
+The VMs or containers use only 1 vNIC for incoming and outgoing traffic. Multiple queues can be used.
+Multiple VMs or containers can be deployed prior to running any tests. This allows to use generator-reflector pairs on the same or different compute nodes, on the same or different NUMA nodes.
 
 <a name="3.3.7"></a>
 ### 3.3.7 opensource VNF onboarding and testing

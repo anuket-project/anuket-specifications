@@ -101,7 +101,31 @@ This profile is the global settings for the whole NFVI, which means there should
 | Crypto Acceleration Interface | N  | Y | Y |
 
 <a name="3.4"></a>
-## 3.4 NFVI Required State
+## 3.4 NFVI Hardware Profile
+[RM1: 5.4 NFVI HW profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the NFVI hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple NFVI profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification. 
+
+
+| Reference | Feature | Description | Basic Type | Network Intensive | 
+|---------------------|-----------|---------------------------|--------|--------|
+| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets within each host | 2| 2| 
+| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 
+| nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
+| nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y|
+| nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | 
+| nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD | Hard Disk Drive |  |  |
+| nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid State Drive | Recommended | Recommended |
+| nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the host | 4 | 4 |
+| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values) | 10 | 25 | 
+| nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the host | 8 | 8 |
+| nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 | 
+| nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 
+| nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  | Y | Y |
+| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |  N | Optional | 
+| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload network functionality to hardware | N | Optional  | 
+| nfvi.hw.nac.cfg.003 | Compression |  |  | 
+
+
+## 3.5 NFVI Required State
 This sections describes the readiness of NFVI before the certification process can begin. Once the NFVI is configured with either of the profiles - B, C, N, a set of tests (for example functests) should be run in order to determine the readiness of NFVI for certification. 
 #TODO : Identify the tests for this section
 
@@ -207,3 +231,73 @@ This sections describes the readiness of NFVI before the certification process c
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/  | v1 | NA |
 | Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | v1.0 | NA |
 | Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
+
+## 3.6 NFVI and VIM Architecture 
+This sections concludes the expectation for NFVi and VIM architecture according to [RA1: Chapter 3 NFVI + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md) 
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+| Multi-Tenancy | permit to host several VNF projects with the insurance to have isolated environment for each. Naming and quotas are kept consistent (details TBD)|
+|Virtual Compute |The virtual compute resources (vCPU and vRAM) used by the VNFs behave like their physical counterparts. The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components.|
+|Virtual Storage|The three storage services offered by NFVI are:Persistent storage, Ephemeral storage, Image storage |
+|Virtual Networking Neutron standalone|Allows users to create networks, subnets, ports, routers etc. Facilitates traffic isolation between different subnets. Support multiple network segments. Create routers to connect layer 2 networks|
+|Virtual Networking – 3rd party SDN solution|Utilize OpenStack Neutron to support plugins for various SDN controllers include the standard ML-2 plugin and vendor product specific monolithic plugins.|
+|Acceleration|The hardware accelerator covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the main CPU, and to accelerate workload performance. NFVI should manage the accelerators by plugins and provide the acceleration capabilities to VNFs.With the acceleration abstraction layer defined, hardware accelerators as well as software accelerators can be abstracted as a set of acceleration functions (or acceleration capabilities) which exposes a common API to either the VNF or the host.|
+|VIM core services| horizon, heat, keystone, nova, neutron, cinder, glance, swift, Ironic(optional only for bare-metal management)|
+|Foundation services| Foundation Node To build and lifecycle manage an OpenStack cloud it is typically necessary to deploy a server or virtual machine as a deployment node. This function must be able to manage the bare-metal provisioning of the hardware resources( can be detached from the OpenStack cloud). Capabilities include building the cloud (control, compute, storage, network hardware resources), Patch management / upgrades / change management, Grow / Shrink resources|
+|Cloud Controller Services|All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services|
+|Physical Network|The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up.
+
+## 3.7 NFVI and VIM Component Level Architecture 
+This sections concludes the expectation for NFVi and VIM component level architecture according to [RA1: Chapter 4 NFVI + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md) 
+
+Requirement for control node: 
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|SLA |Minimum 3 nodes for high availability|
+|HW specifications |Boot disks are dedicated with Flash technology disks|
+
+Requirement for compute node:
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|BIOS requirement| boot parameters should follow the table defined in [RA1: 4.2.2.5 Compute Nodes](../../../ref_arch/openstack/chapters/chapter04.md#4.2.2.5) |
+|SLA|minimum: two nodes per profile|
+|sizing rules| should follow the table defined in [RA1: 4.2.2.5 Compute Nodes](../../../ref_arch/openstack/chapters/chapter04.md#4.2.2.5) |
+
+Requirement for network fabric:
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|Network Layout| should follow the table in [RA1: 4.2.3.2 High Level Logical Network Layout](../../../ref_arch/openstack/chapters/chapter04.md#4.2.3.2)|
+
+Consumable Infrastructure Resources and Services
+
+| Requirement Area | Description |
+|----|-------------------------------------------------------------------------------|
+|Support for Profiles and T-shirt instance types| should follow tabels specified in [RA1: 4.4.1 Support for Profiles and T-shirt instance types](../../../ref_arch/openstack/chapters/chapter04.md#4.4.1)
+|Availability| The NFVI doesn’t provide any resiliency mechanisms at the service level. Any VM restart shall be triggered by the VNF Manager instead of OpenStack|
+|NUMA | For Network intensive instances, VNF Component should fit into a single NUMA zone for performance reason|
+
+## 3.8 Interface and API for Reference Implementation 1
+
+The following table lists the interface for RI1. 
+| OpenStack Service     | Link for API list                                    | **API Version** | **Minimal API Microversion** |
+|-----------------------|------------------------------------------------------|-----------------|------------------------------|
+| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
+| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
+| Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0            |                              |
+| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.5                          |
+| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.43                         |
+| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
+| Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
+| Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
+| Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/ | v2    |   |
+|K8S API  |https://kubernetes.io/docs/concepts/overview/kubernetes-api/|  |  |
+|KVM APIs  |https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt|  |  |
+| Libvirt APIs |https://libvirt.org/html/index.html|  |  |
+
+
+
+
