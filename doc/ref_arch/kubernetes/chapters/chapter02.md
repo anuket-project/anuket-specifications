@@ -172,7 +172,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for Kubernetes components. |
-| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, Compute Intensive). |
+| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic and Network Intensive). |
 
 <!--
 | `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|
