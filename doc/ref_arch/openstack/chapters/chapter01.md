@@ -53,7 +53,7 @@ OpenStack considers the following Four Opens essential for success:
 - Open Development
 - Open Community
 
-OpenStack is organised around the three major NFVI resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
+This OpenStack Reference Architecture is organised around the three major NFVI resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
 
 
 <a name="1.5"></a>
