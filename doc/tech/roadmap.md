@@ -18,7 +18,7 @@
 
 <a name="1.1"></a>
 ### Detailed Roadmap
-Please refer to 
+Please refer to individual [release plan](./release_notes/) and features for detailed roadmap.
 
 <a name="2"></a>
 ## Dependencies between various Workstreams
