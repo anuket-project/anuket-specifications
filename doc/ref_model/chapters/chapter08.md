@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 8 Compliance, Verification, and Certification
+# 8 Conformance, Verification and Certification
 <!--<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>-->
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -28,7 +28,7 @@ Additionally standardising on infrastructure profiles allows VNFs to be characte
 <a name="8.2.1"></a>
 ### 8.2.1 Reference Implementations Requirements
 
-For compliance, verification, and certification of NFVI solutions provided for a given NFVI Profile, it is required to have a reference implementation of each profile so it can be used for compliance, validation, and certification purposes.
+For conformance, verification, and certification of NFVI solutions provided for a given NFVI Profile, it is required to have a reference implementation of each profile so it can be used for conformance, validation, and certification purposes.
 
 Those reference implementations need to reflect on their corresponding profiles and deliver all metrics and capabilities promised. They need to use open source components. Figure below shows the various reference implementations required for each profile, they are:
 
@@ -86,7 +86,7 @@ Finally, NFVI vendors can characterise, validate, and certify an entire NFVI pla
 ### 8.2.4 Test Case Selection Requirements
 
 This section lists requirements test cases must fulfill to be eligible for
-inclusion in the NFVI and/or VNF compliance test suite.  These requirements act
+inclusion in the NFVI and/or VNF conformance test suite.  These requirements act
 as a checklist to gate the inclusion of test cases.
 
 
@@ -143,7 +143,7 @@ as a checklist to gate the inclusion of test cases.
     - Test to ensure quota against submitted request for the respective tenant
     - Test to ensure custom flavours against submitted request for respective tenants
 
-Exit Criteria includes Demonstration of Compliance, Verification, Performance, and Validation, of Reference Architecture Implementation, and Delivery of the following:
+Exit Criteria includes Demonstration of Conformance, Verification, Performance, and Validation, of Reference Architecture Implementation, and Delivery of the following:
 
 1. **Certification tenants**
     - All Test Cases have a status of Passed, Failed, N/A or Out-scoped.
@@ -163,8 +163,8 @@ Exit Criteria includes Demonstration of Compliance, Verification, Performance, a
     - Standard NTP servers are working and verified (using tenant's CIDR source IP).
     - NFVI/VNF is tested at steady state and high load.
     - Continuously monitored to ensure SLAs are met and used as feedback to load/perf tests.
-    - Passing Interoperability Validations: 
-      1. Compatibility Checks (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); 
+    - Passing Interoperability Validations:
+      1. Compatibility Checks (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF);
       1. Integration Checks (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
 1. **End User Consideration**
     - Component redundancy to ensure graceful updates without disruption of services

@@ -17,7 +17,7 @@
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-This Chapter 8 Annex contains test cases to be executed during NFVI validations to ensure a Reference Implementation of CNTT Reference Architecture is in compliance.  The Linux Foundation Networking (LFN) OPNFV Verified Program (OVP), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA/RI verifications.
+This Chapter 8 Annex contains test cases to be executed during NFVI validations to ensure a Reference Implementation of CNTT Reference Architecture is in conformance.  The Linux Foundation Networking (LFN) OPNFV Verified Program (OVP), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA/RI verifications.
 
 <a name="8.2"></a>
 ## 8.2 Generic Test Cases
@@ -150,7 +150,7 @@ TBD
 
 ## Synopsis
 
-Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+Ensure Reference Implementation of CNTT Reference Model and CNTT Reference Architecture meets industry driven quality assurance standards for conformance and verification.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), in partnership with the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
 
 For the purposes of this chapter, NFVI+VNF testing will be performed for **Verification** and **Validations** purpose.  **Certifications**, which are Out of Scope, include a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and development of which there are no code developed/delivered with the NFVI+VNF testing and verification.
 
@@ -158,15 +158,15 @@ For the purposes of this chapter, NFVI+VNF testing will be performed for **Verif
 ## Introduction
 
 **Objective**<br>
-Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI conformance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 **Scope and Test Methodology**
-- Manifest Verifications (aka CVC Compliance) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
+- Manifest Verifications (aka CVC conformance) will ensure the NFVI is conformant, and delivered for testing, with hardware and software profile specifications defined by the Ref Model and Ref Architecture.
 - Empirical Validation with Reference Golden VNFs (aka CVC Validation) will ensure the NFVI runs with a set of VNF Families, or Classes, to minic production-like VNF connectivity, for the purposes of interopability checks.
 - Candidate VNF Validation (Validation & Performance) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
 **Different Distributions**
-The three step methodolgy described above of verifying Manifest compliance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
+The three step methodolgy described above of verifying Manifest conformance, exeucting Empirical Golden VNF transactions, and performing Interopability Testing is the same validation proces regardless of the Distribution used to establish a cloud topology, and the components and serivces used in the client software stack.  
 
 
 **Not in Scope**
@@ -209,7 +209,7 @@ These core principles will guide NFV verification deliverables:
 <li>Adhere to security compliance</li>
 </ol>
 </li>
-<li>Exit Criteria Guidelines will be satisfied prior to issuance of OPNFV compliance badges.
+<li>Exit Criteria Guidelines will be satisfied prior to issuance of OPNFV conformance badges.
 <ol>
 <li>Certification for Tenants (OVP Ecosystem)</li>
 <li>Operaitonal Considerations (Telco Perspective)</li>
@@ -253,7 +253,7 @@ Additional Terms utilized throughout the document:
   <tr><th>Term</th><th>Description</th></tr>
   <tr><td>AZ</td><td>AZ	Availability Zone</td></tr>
 	<tr><td>Compatibility</td><td>the capacity for two systems to work together without having to be altered to do so, e.g. same data formats</td></tr>
-	<tr><td>Compliance</td><td>a state of being in accordance with established guidelines or specifications</td></tr>
+	<tr><td>Conformant</td><td>a state of being in accordance with established guidelines or specifications</td></tr>
   <tr><td>CPE</td><td>Customer Premises Equipment</td></tr>
   <tr><td>CVC</td><td>Compliance and Verification Committee</td></tr>
   <tr><td>ETSI</td><td>European Telecommunications Standards Institute</td></tr>
@@ -340,7 +340,7 @@ Process flow for RA (Infra) Validation and Verfiication
 
 <p><u><strong>CVC Compliance, Verification, and Certification governing framework consists of: </strong></u>&nbsp;</p>
 <ul>
-<li><strong>Compliance testing</strong>: compares the system under test against the specifications / standards</li>
+<li><strong>Conformance testing</strong>: compares the system under test against the specifications / standards</li>
 <li><strong>Validation testing:</strong> ensures the system under test is operating according to its intended / required purpose</li>
 <li><strong>Performance testing</strong>: measures how well the system under test performs its specific purpose(s)</li>
 </ul>
@@ -353,7 +353,7 @@ Process flow for RA (Infra) Validation and Verfiication
 <a name="x.x.x"></a>
 ### Process (OPNFV)
 
-<p><strong>OPNFV Releases, and their repsective test verificaitons and validations requires 1) the implentation and adoption of an Installer to perform the needed installation and distirbution of infrastructure componetns and services, 2) identification and acceptance of a Feature Project introducing new, or enhanced, platform capabilities, and 3) an appropriate Test Project explicitly calling out the test use cases and scenarnios for verificaiton and validation.</strong></p>
+<p><strong>OPNFV Releases, and their repsective test verifications and validations requires 1) the implentation and adoption of an Installer to perform the needed installation and distirbution of infrastructure componetns and services, 2) identification and acceptance of a Feature Project introducing new, or enhanced, platform capabilities, and 3) an appropriate Test Project explicitly calling out the test use cases and scenarnios for verification and validation.</strong></p>
 
 <p><strong>More specifically:</strong></p>
 <p><strong><u>Release Status</u></strong></p>
@@ -411,7 +411,7 @@ Process flow for RA (Infra) Validation and Verfiication
 <li><strong>CVC Category:&nbsp; Compliance, Performance</strong></li>
 <li><strong>Purpose: VNF template is checked against the ONAP Requirements</strong>
 <ul>
-<li>VNF Validation/Packaging Compliance (HEAT and TOSCA/CSAR/VFD)</li>
+<li>VNF Validation/Packaging Conformance (HEAT and TOSCA/CSAR/VFD)</li>
 <li>Web front-end integrated with OPNFV Dovetail Web UI</li>
 <li>Future plan: testing of VNF lifecycle, VNF functions, VNF performance</li>
 </ul>
@@ -421,7 +421,7 @@ Process flow for RA (Infra) Validation and Verfiication
 </ol>
 <p>NOTE:&nbsp;&nbsp;<strong>VNF Validation Testing </strong>- CVC and ONAP teams are working to develop the initial life-cycle tests for VNF devices.&nbsp; The first release will run on the "basic open stack" meeting ONAP requirements. Future versions would require this to be the reference NFVI defined by CNTT</p>
 
-## 8.6 CNTT/NFVI Compliance, Verification, and Certification Strategy
+## 8.6 CNTT/NFVI Conformance, Verification and Certification Strategy
 
 <a name="x.x.x"></a>
 ### Methodology.
@@ -435,10 +435,10 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 
 <a name="x.x.x"></a>
 ### OVP/CVC Certification Strategy & Vehicle.
-<p><strong>NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance.&nbsp; </strong>Adherenence to <strong>Security</strong> standards are equally important and addressed in Chapter 7.</p>
-<p>The three part verificaiton process includes <strong>NFVI Manifest Validations</strong>, <strong>Emprical Baseline measurements against targeted VNF families</strong>, and <strong>Candidate VNF verifications</strong>.&nbsp; More specifically,</p>
+<p><strong>NFVI+VNF validations consist of a three part process for Conformance, Validation, and Performance.&nbsp; </strong>Adherenence to <strong>Security</strong> standards are equally important and addressed in Chapter 7.</p>
+<p>The three part verification process includes <strong>NFVI Manifest Validations</strong>, <strong>Emprical Baseline measurements against targeted VNF families</strong>, and <strong>Candidate VNF verifications</strong>.&nbsp; More specifically,</p>
 <ul>
-<li><strong>NFVI Verification (</strong><em>Compliance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is compliant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
+<li><strong>NFVI Verification (</strong><em>Conformance</em><strong>):</strong> NFVI is the SUT, ensuring NFVI is conformant with specs of Ref Model and Ref Architecture accomplished with&nbsp;<strong>Manifest Validations</strong> (performed via Echo Tests)&nbsp;</li>
 <li><strong>Empirical Validation with Reference VNF (</strong><em>Validation</em><strong>):</strong> NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement</li>
 <li><strong>Candidate VNF Certification (</strong><em>Validation &amp; Performance</em><strong>):</strong> VNF is the SUT, ensuring VNFs operate with Ref Model and Ref Arch leveraging VVP/CVP/VFNSDK Test Suites</li>
 <li><strong>Security</strong>: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks <em>(Refer to CNTT Chapter 7 Security for additional test/verification details)</em></li>
