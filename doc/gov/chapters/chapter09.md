@@ -81,3 +81,6 @@ Exceptions will be clearly recorded in Reference Architectures' Appendices which
 
 <a name="9.4"></a>
 ## 9.4 Adoption Roadmap
+
+<a name="9.4"></a>
+## 9.5 Field Trial Approach
