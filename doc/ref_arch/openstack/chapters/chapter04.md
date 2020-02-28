@@ -401,7 +401,7 @@ New Table w/o Compute Intensive column below
 
 | Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | 
 |----------|-------------|--------------|-------------|
-| CPU allocation ratio | nfvi.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
+| CPU allocation ratio (custom extra_specs) | nfvi.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
 | NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | 
 | CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> |
 | Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | 
