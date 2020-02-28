@@ -1,6 +1,8 @@
 [<< Back](../)
 # Baraque Release Notes
 
+<p align="center"><img src="../figures/baraque.png" alt="Baraque Release Organisation" Title="Baraque Release Organisation" width="65%"/></p>
+<p align="center"><b>Figure 1:</b> Baraque Release Organisation</p>
 
 ## Baraque Release Contents
 * [Overview](#overview)
