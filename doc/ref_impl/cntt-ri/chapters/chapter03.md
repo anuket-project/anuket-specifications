@@ -130,7 +130,7 @@ This sections describes the readiness of NFVI before the certification process c
 #TODO : Identify the tests for this section
 
 
-[RA1: Chapter 2.3 Openstack Requirements](../../../ref_arch/openstack/chapters/chapter02.md#2.3) describes the requirements related to the following 8 domains: general(gen), infrastrucutre(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
+[RA1: Chapter 2.3 Openstack Requirements](../../../ref_arch/openstack/chapters/chapter02.md#2.3) describes the requirements related to the following 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
 | Ref # | Description |
 |----|-------------------------------------------------------------------------------|
