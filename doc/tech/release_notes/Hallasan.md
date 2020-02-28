@@ -1,6 +1,8 @@
 [<< Back](../)
 # Hallasan Release Notes
 
+<p align="center"><img src="../figures/Hallasan.png" alt="Hallasan Release Organisation" Title="Hallasan Release Organisation" width="65%"/></p>
+<p align="center"><b>Figure 1:</b> Hallasan Release Organisation</p>
 
 ## Hallasan Release Contents
 * [Overview](#overview)
