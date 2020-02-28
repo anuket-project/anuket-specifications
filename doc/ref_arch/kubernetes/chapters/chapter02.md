@@ -35,7 +35,7 @@
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
-This reference model intends to implement both the Basic, Network Intensive and Compute Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
+This reference model intends to implement both the Basic and the Network Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
 
 <a name="2.2.1"></a>
 ### 2.2.1 Network Acceleration Extensions
@@ -172,8 +172,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for Kubernetes components. |
-| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, ). |
-
+| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic and Network Intensive). |
 
 <!--
 | `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|
