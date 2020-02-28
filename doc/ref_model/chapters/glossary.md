@@ -37,7 +37,6 @@ To help guide the reader, this glossary provides an introduction to the terminol
   - **Storage Workloads**: are all tasks related to disk storage (either SSD or HDD or other).  Examples range from non-intensive router logging to more intensive database read/write operations.
 - **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server.
   >_*Note:*_ A **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour.
-- **Instance type**: Specifies a set of virtualized hardware resources and capabilities used for the creation of a virtual compute on which a workload runs on, includes capability specifications characterizing compute, storage and memory.
 - **Instance**: is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server.  >_*Note:*_ Can be used to specify VM Instance or Container Instance.
 - **Compute flavour**: defines the sizing of the virtualised resources (compute, memory, and storage) required to run a workload.
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
@@ -47,6 +46,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
   - **Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
   - **Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 - **Hypervisor**: A piece of software with management components that allows the user to partition the underlying physical resources and allocate them to Virtual Machines. Typically, the hypervisor is managed by a cloud management software such as OpenStack.
+- **NFVI Profile**: The combination of the NFVI Software Profile and the NFVI Hardware Profile that defines the capabilities of the NFVI.
 - **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
 - **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied/mapped to **NFVI** SW deployment.
 
