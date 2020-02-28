@@ -15,8 +15,6 @@
 
 As an open-source community organization, CNTT has developed the following process to ensure delivery on CNTT objectives. This process has several goals. First, inform new participants with the background and overview of this open-source initiative. Second, communicate the organizational and legal structures upon which the community operates. And third, help new participants become fully engage & contributing effectively to the goals of CNTT via its various work streams.
 
-
-
 <a name="2.2"></a>
 ## 2.2 Request Onboarding Info Packet
 
