@@ -31,14 +31,14 @@ Initially organized early in 2019, the Common Network Function Virtualisation In
 Based on informal conversations with many operators and developers, there is a realization that there are significant technical, operational and business challenges to the development and deployment of VNF applications related to the lack of a common virtualized infrastructure platform.  These include but are not limited to the following:
 
  - Higher development costs due to the need to develop Virtual Network Functions (VNF) on multiple custom platforms for each operator
- - Increased complexities due to the need to maintain multiple versions of applications to support each custom environemnt
+ - Increased complexities due to the need to maintain multiple versions of applications to support each custom environment
  - Lack of Testing and validation commonalities, leading to inefficiencies and increased time to market. While the operators will still do internal testing, but using an industry driven verification program based on a common NFVI would provide a head start.
  - Slower adoption of cloud-native NFV applications and architectures.  A Common Telco NFVI may provide an easier path to methodologies that will drive faster cloud-native NFV application development.
  - Increased operational overhead due to the need for operators to integrate diverse and sometime conflicting VNF platform requirements.
 
 One of major challenges holding back the more rapid and widespread adoption of VNF is that the traditional telecom ecosystem vendors, while building or designing their virtualized services (whether it be Voice over LTE (VoLTE), Evolved Packet Core (EPC), or popular customer facing enterprise services such as SD WAN (Software Defined Wide Area Network), are making their own infrastructure assumptions and requirements, often with custom design parameters. This leaves the operators being forced to build complex integrations of various vendor/function specific silos which are incompatible with each other and might possibly have different and conflicting operating models. In addition, this makes the onboarding and certification processes of VNFs (coming from different vendors) hard to automate and standardise.  
 
-To put this effort in perspective, over the past few years, the telecom industry has been going through a massive technology revolution by embracing software defined networking and cloud architecture principles, in pursuit of the goal of achieving more flexibility, agility and operational efficiency. At a high level, the main objective of NFV (Network Function Virtualization) is the ability to use general purpose standard COTS (Commercial off the Shelf) compute, memory and storage hardware platforms to run multiple Virtualised Network Functions.  VNFs is the general term that covers any type of virtualized application wiether it be in the form of a Virtual Machine (VM) or a containerized application.  Earlier common infrastructure models built on the previous assumption that networking applications are typically built on discrete hardware, do not offer the level of flexibility and agility needed for the support of newer networking technologies such as 5G, intelligent networks and Edge computing.  By running network applications as software rather than on purpose-built hardware, as it has been done since the early 1990’s, the operators aspire to realize operational efficiencies, and capital expense savings.  These Software Defined Network (SDN) applications are increasingly being used by telecom operators to support their internal and customer facing network infrastructures.  The need for a common model across the industry to facilitate more rapid adoption is clear.
+To put this effort in perspective, over the past few years, the telecom industry has been going through a massive technology revolution by embracing software defined networking and cloud architecture principles, in pursuit of the goal of achieving more flexibility, agility and operational efficiency. At a high level, the main objective of NFV (Network Function Virtualization) is the ability to use general purpose standard COTS (Commercial off the Shelf) compute, memory and storage hardware platforms to run multiple Virtualised Network Functions.  VNFs is the general term that covers any type of virtualized application whether it be in the form of a Virtual Machine (VM) or a containerized application.  Earlier common infrastructure models built on the previous assumption that networking applications are typically built on discrete hardware, do not offer the level of flexibility and agility needed for the support of newer networking technologies such as 5G, intelligent networks and Edge computing.  By running network applications as software rather than on purpose-built hardware, as it has been done since the early 1990’s, the operators aspire to realize operational efficiencies, and capital expense savings.  These Software Defined Network (SDN) applications are increasingly being used by telecom operators to support their internal and customer facing network infrastructures.  The need for a common model across the industry to facilitate more rapid adoption is clear.
 
 <!--Add diagram from Mark Contrell showing the Gap in the Open Source projects here.
 <p align="center"><img src="../figures/newfigure.jpg" alt="Gaps in SDN Open Source Projects" title="Gaps in SDN Open Source Projects"/></p>
@@ -83,7 +83,7 @@ This section introduces the high-level principles of infrastructure abstraction 
 
 1. A top-level objective of the Common Telco NFVI is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical. Two principles are introduced in support of these objectives:
     - **Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
-      - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
+      - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI Profile, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
       - Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.
 
     - **Create an additional Architecture only when incompatible elements are unavoidable:**
@@ -122,11 +122,12 @@ This document focuses on the documenting the higher level concepts that are need
 This document specifies:
 - **NFVI Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete system that supports **VNF**s.
   - **NFVI metrics & capabilities**: A set of metrics and capabilities for the NFVI which VNFs require to perform telco scale network functions.
-  - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to completely abstract the infrastructure from VNFs. With a limited and well-defined set of profiles with well understood characteristics, VNF compatibility and performance predictability can be achieved.
+  - **Infrastructure profiles catalogue**: A catalogue of standard NFVI Profiles needed in order to completely abstract the infrastructure from VNFs. With a limited and well-defined set of profiles with well understood characteristics, VNF compatibility and performance predictability can be achieved.
 
 - NFVI Software and Hardware profiling
-  - **NFVI software profiles and configurations**: These are software profiles and configurations that map directly to the infrastructure profiles within the infrastructure profiles catalogue.
-  - **NFVI hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined NFVI software profiles & configurations.
+  - **NFVI Software Profile**: Defines the NFVI software stack and its configuration.
+  - **NFVI Hardware Profile**: Defines the NFVI hardware, related middleware and their configuration.
+  - **NFVI Profile**: The combination of the NFVI Software Profile and the NFVI Hardware Profile that defines the capabilities of the NFVI.
 
 - Compliance and verification
   - **Certification programs**: This defines the requirements for certification and validation programs for both VNFs and NFVI.
@@ -257,7 +258,7 @@ The following subsections, Executive Summary, Strategy Objectives, Networking Re
 The networking within an NFVI, fabric or otherwise, is an area where there is significant variability across implementations. Leaf-Spine topology is well established, however, after topology there are countless decisions an Operator needs to make. Differences arise from many aspects, for example, is the solution layer-2 or layer-3; is the routing static or dynamic; what mechanism is used for encapsulation; what mechanism is used for isolation; does it support SR-IOV; does it support DPDK; does it employ SmartNICs; does it employ distributed control or a centralized control driving a programmable fabric; and the list continues. The multitude of permutations enable NFVI architects (Operators and Suppliers) to design (or procure) a fabric/networking solution that's optimized for their needs, whether their needs are minimal, very extensive or somewhere in between.
 
 For CNTT, a strategy is needed that affords Operators the performance, flexibility, availability, maintainability and scalability their business requires, yet doesn't require OPNFV to design, manage and test prohibitive numbers of networking solutions.
- 
+
 **Some points for CNTT to consider when contemplating recommendations:**
    > * Despite large variances in implementation, the spectrum of networking capabilities ultimately delivered to Workloads is comparatively narrow
    > * Standard CNTT methodology (i.e. normalize interfaces, APIs, capabilities and behaviors at the reference points) applies well to networking, helping mitigate the need to be overly prescriptive about implementation  
@@ -274,7 +275,7 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 <a name="1.9.2"></a>
 ## 1.9.2 Networking Strategy Objectives
 
-This section catalogs CNTT's high-level objectives for the Networking and Fabric Strategy. 
+This section catalogs CNTT's high-level objectives for the Networking and Fabric Strategy.
 
 > _List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
 
@@ -334,7 +335,7 @@ As with most CNTT subsystems, responsibility for Objectives, Requirements, Guide
 <a name="1.10"></a>
 ## 1.10 Roadmap
 The NFVI Reference Model and Reference Architecture will continue to be refined as technology and industry needs change over time.  Release 1 of this document will focus on the network function virtualisation infrastructure and virtualised network functions which are based on virtual machines. In Release 2 there will be partial support for cloud native functions which make use of container technology.  
-The first reference architecture is based on Openstack, but the intention is to expand the portfolio of Reference Architectures with an upcoming focus in release 2 to areas such as Containerization, Kubernetes-based Cloud Native stacks and Container based network functions’ validation requirement.  Other planned additions to the project in future releases include support for:
+The first reference architecture is based on OpenStack, but the intention is to expand the portfolio of Reference Architectures with an upcoming focus in release 2 to areas such as Containerization, Kubernetes-based Cloud Native stacks and Container based network functions’ validation requirement.  Other planned additions to the project in future releases include support for:
 
  - GPU/FPGA
  - Cyborg project
