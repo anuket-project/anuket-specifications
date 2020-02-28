@@ -81,3 +81,51 @@ Exceptions will be clearly recorded in Reference Architectures' Appendices which
 
 <a name="9.4"></a>
 ## 9.4 Adoption Roadmap
+
+<a name="9.5"></a>
+## 9.5 CNTT Field Trial Approach
+
+<a name="9.5.1"></a>
+### Background
+
+The Common NVFI Telco Taskforce (CNTT) is building a set of infrastructure standards to be implemented within telcos to improve cost effectiveness and speed of delivery of Virtual Network Functions. As part of the standards development, the organization has built a Reference Model (RM) on which Reference Implementation (RI) and Reference Conformance (RC) standards have been defined.  For CNTT to ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its methods (RI/RC standards).
+
+<a name="9.5.2"></a>
+### Purpose of this Document Section
+
+The purpose of this document is to define the goals/outcomes, expectations, and roles necessary to support the CNTT release trials. The document will define/discuss the following:
+
+•	Purpose of field trials
+•	Goals/desired outcomes of the field trials
+•	Success indicators 
+•	Intentions and expectations
+•	Action plan
+•	Resource requirements
+•	Metrics definition
+
+<a name="9.5.2"></a>
+### Field Trial Purpose
+
+In the truest form, adoption of a standard is an indication of it’s success within an industry. Standards developed must be interactively tested in multiple environments or “trialed” to ensure they are practicable, functional, and operative. Without running trials to validate the CNTT approach, standards may not provide intended value across a sufficient spectrum of participating entities to be widely adopted. 
+
+<a name="9.5.2.1"></a>
+#### Intents
+
+1)	This is a partnership approach to validate CNTT community is adopting a consistent approach
+2)	Validate RI-1 specifications and RC-1 test suite, not VNFs or NFVI’s in the trial
+
+a name="9.5.2.2"></a>
+#### Key Expectations and Assumptions
+
+1)	Expectation is through healthy feedback from suppliers, CNTT will exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps.
+2)	Expectation: Post trial and gap closure, the community will define a badging process that is mutually beneficial to operators and suppliers. 
+3)	Assumption: Performance testing is not in field trial
+
+<a name="9.5.3"></a>
+### Overview: Stages of Field Trial
+
+The following diagram the key components and flow of activities, actions, and deliverables to be undertaken during the trial. Details of each component are provided in this document.
+
+<p align="center"><img src="../figures/FTA.png" alt="CNTT Field Trial Approach" title="Field Trial Approach" width="70%"/></p>
+<p align="center"><b>Figure 1:</b> Field Trial Approach</p>
+
