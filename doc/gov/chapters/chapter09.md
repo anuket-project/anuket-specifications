@@ -129,7 +129,7 @@ The following diagram the key components and flow of activities, actions, and de
 <p align="center"><img src="../figures/FTA.png" alt="CNTT Field Trial Approach" title="Field Trial Approach" width="70%"/></p>
 <p align="center"><b>Figure 1:</b> Field Trial Approach</p>
 
-a name="9.5.4.1"></a>
+<a name="9.5.4.1"></a>
 #### Success Indicators
 
 1) Agreement secured on the use of trials results data, including:
@@ -190,9 +190,9 @@ Specific test cases consistent with the defined objectives and outcomes will be 
 
 Community members will define the measurement criteria that will denote pass vs fail for each test case. To support operators and suppliers consistent with the charter of the organization an Agreement Secured on the use of trials results data, including:
 
-•	Detail level of data required to validate
-•	Acceptable data values indicating valid results
-•	Detail level of data that will be published
+* •	Detail level of data required to validate
+* •	Acceptable data values indicating valid results
+* •	Detail level of data that will be published
 
 <a name="9.5.5.5"></a>
 #### 9.5.5.5Vendor Solicitation/Commitment
@@ -353,12 +353,13 @@ To close out the Field Trial, CNTT shall summarize its evaluation of the Field T
 #### 9.5.9.1 Final Deliverable - End-of-Trial Report
 
 Upon completion of field trials, CNTT shall develop an End of Trial Report which summarizes the overall conclusions based on the evaluation, to include:
-   o	Successes
-    * • What went activities well generally or specifically? How did it compare to the past or alternative results?   o	Challenges
+   * o	Successes
+    * • What went activities well generally or specifically? How did it compare to the past or alternative results?   
+    * o	Challenges
     * • What didn’t go well overall? What impact could these challenges have to adoption?
-   o	Discoveries
+   * o	Discoveries
     * •	What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
-   o	Decisions and Recommendations
+   * o	Decisions and Recommendations
     * •	Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
-   o	Next Steps
+   * o	Next Steps
     * • Indication of proposed steps and activities to be undertaken by the community
