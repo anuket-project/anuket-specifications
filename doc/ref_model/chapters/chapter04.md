@@ -37,7 +37,7 @@ b = Functional Area<nfvi | vim>
 c = Type <(cap)ability | (pm)>  
 d = Serial Number  
 
-A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and and the next available identifier, globally across all chapters of the RM.
+A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and the next available identifier, globally across all chapters of the RM.
 > To-Do: Create tracking ss and add link here
 
 <a name="4.1.1"></a>
