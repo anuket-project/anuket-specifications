@@ -128,9 +128,9 @@ This document specifies:
   - **NFVI software profiles and configurations**: These are software profiles and configurations that map directly to the infrastructure profiles within the infrastructure profiles catalogue.
   - **NFVI hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined NFVI software profiles & configurations.
 
-- Compliance and verification
+- Conformance and verification
   - **Certification programs**: This defines the requirements for certification and validation programs for both VNFs and NFVI.
-  - **Test framework**: Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles.
+  - **Test framework**: Provide test suites to allow conformance, certification, and verification of VNFs and NFVI against the defined set of profiles.
 
 <!--
 <a name="1.4.1"></a>
@@ -176,7 +176,7 @@ The document starts from the abstract and as it progresses it increasingly gets 
   >	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or write VNF applications that use the APIs.
 - **Chapter 07 - Security Guidelines**:  This chapter identifies the security components that need to be taken into consideration when designing and implementing an NFVI environment.  It does not cover details related to company specific requirements to meet regulatory requirements.
   > **Audience**: This chapter is written for security professional, architects, developers and others who need to understand the role of security in the NFVI environment.
-- **Chapter 08 - Compliance, Verification, and Certification**: This chapter details the requirements for developing test suites for a verification and validation program for developers and vendors to validate that their software and applications meet the requirements for the NFVI architectures.
+- **Chapter 08 - Conformance, Verification, and Certification**: This chapter details the requirements for developing test suites for a verification and validation program for developers and vendors to validate that their software and applications meet the requirements for the NFVI architectures.
   >	**Audience**: This chapter is written for QA testers, developers and others who need to develop infrastructure or write VNF applications.
 - **Chapter 09 - Life Cycle Management**: This chapter focuses on the operational aspects of the NFVI.  Discussions include deployment considerations, on-going management, upgrades and other lifecycle concerns and requirements.  It does not cover details related to company specific operational requirements, nor does it go into how the NFVI will interface with existing BSS/OSS systems.
   > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the VNF applications.
@@ -208,7 +208,7 @@ Following the ETSI model, **Figure 1-2** also depicts the VIM, which controls an
 
 The Common Telco NFVI is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
-Once the Common Telco NFVI Reference Models and Architectures are implemented and tested via OPNFV (Reference Implementations), commercial products adhering to these specifications can undergo an enhanced OVP’s VNF and NFVI compliance testing for establishing baseline conformance and offering interoperability.  More details about the testing and verification requirements are found in **Chapter 08 - Compliance, Verification, and Certification**.
+Once the Common Telco NFVI Reference Models and Architectures are implemented and tested via OPNFV (Reference Implementations), commercial products adhering to these specifications can undergo an enhanced OVP’s VNF and NFVI compliance testing for establishing baseline conformance and offering interoperability.  More details about the testing and verification requirements are found in **Chapter 08 - Conformance, Verification, and Certification**.
 
 <!--
 There will be dedicated OVP hacking tracks to facilitate VNF vendor onboarding and testing. More information on the work and how to get involved can be found at the following links.  
@@ -250,7 +250,7 @@ A) Summarize the overall CNTT Networking and Fabric Strategy
 B) Document the initial list of Objectives and Requirements
 C) Document enough initial logistical details for contributors to create coherent content
 
-Readers be aware, in parallel with the CNTT Networking Strategy, the RI team is implementing networking for use today in labs and by RC. As RI has to deliver a working network at the same time the initial networking strategy and specifications (i.e. the work related to RM 1.9) are to be delivered, it is not expected nor mandated RI networking be compliant in the immediate future. However, the RI will need to be compatible, meaning, it delivers the network connectivity required by the RA and by RC, even if it does not implement the APIs, topology, encapsulation, etc., that will ultimately be specified herein.
+Readers be aware, in parallel with the CNTT Networking Strategy, the RI team is implementing networking for use today in labs and by RC. As RI has to deliver a working network at the same time the initial networking strategy and specifications (i.e. the work related to RM 1.9) are to be delivered, it is not expected nor mandated RI networking be conformant in the immediate future. However, the RI will need to be compatible, meaning, it delivers the network connectivity required by the RA and by RC, even if it does not implement the APIs, topology, encapsulation, etc., that will ultimately be specified herein.
 
 The following subsections, Executive Summary, Strategy Objectives, Networking Requirements and Initial Approach, respectively, are intended to provide an overview of CNTT's vision for networking and intent, objectives, requirements and their supporting rationale, as well as initial development approach.
 
@@ -340,4 +340,4 @@ The first reference architecture is based on Openstack, but the intention is to 
  - Cyborg project
  - More Container infrastructure and cloud-native VNFs
 
-In addition to adding a container-based reference architecture in the next iteration, the CNTT will continue to grow capabilities for supporting compliance and verification testing, providing a lifecycle approach for NFVI. The CNTT under the auspices of the LFN, GSMA and OPNFV look forward to continuing the open source definition and implementation work that powers the community and ecosystem, so that these new technologies can be more quickly and easily integrated into global service provider networks.
+In addition to adding a container-based reference architecture in the next iteration, the CNTT will continue to grow capabilities for supporting conformance and verification testing, providing a lifecycle approach for NFVI. The CNTT under the auspices of the LFN, GSMA and OPNFV look forward to continuing the open source definition and implementation work that powers the community and ecosystem, so that these new technologies can be more quickly and easily integrated into global service provider networks.
