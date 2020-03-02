@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Scope](#scope)
 * [Release Model](#releasemodel)
-* [Roadmap](#roadmap)
+* [Release Delivery Timeline](#timeline)
 * [Events](#events)
 * [Release Sign-off](#signoff)
 
@@ -26,8 +26,8 @@ To deliver a fixes into the latest release, simply apply the fixes on the "maste
 
 During the development cycle when working with release branches, developers or architects should open up a “pull request” in GitHub so that team members can see what you are preparing to release.
 
-<a name="roadmap"></a>
-## Roadmap
+<a name="timeline"></a>
+## Release Delivery Timeline
 
 The table below captured the list of events, long holidays only, release plan and sign off with corresponding dates. The release plan consists of all the milestones associated with the release candidate (RC).
 
