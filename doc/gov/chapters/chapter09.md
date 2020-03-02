@@ -208,7 +208,7 @@ The Initiate Field Trial Stage will deliver execution and assessment Plans (per 
 * The plan will contain all the key milestones and activities the participants will expected to perform. 
 
 <a name="9.5.6"></a>
-### 9.5.6" Execution 
+### 9.5.6 Execution 
 
 The Execute Stage is where the participants implement the field trials tasks and then assess the outcomes.  It is anticipated that CNTT will assemble the Trials team to fully develop the action plan including resource assignments materials requirements and timelines. Activities include the deployment and configuration of RI-1 and execution of the RC-1 test cases. The Vendors community members that commit to the trials will build/setup/prep labs for the trials per the instructions:
 
