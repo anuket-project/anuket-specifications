@@ -83,7 +83,7 @@ Relevant for sizing infrastructure and application operations (which often is an
 4. [Wikipedia:Resilience](https://en.wikipedia.org/wiki/Resilience_(network))
 5. [Wikipedia:Observability](https://en.wikipedia.org/wiki/Observability)
 
-CNCF Cloud Native Definition v1.0 from June 2018, 6. https://github.com/cncf/toc/blob/master/DEFINITION.md .
+6. [CNCF Cloud Native Definition v1.0 from June 2018](https://github.com/cncf/toc/blob/master/DEFINITION.md)
 
 <a name="A.5"></a>
 ## A.5 Hardware-Dependent Coding Policies
