@@ -225,8 +225,8 @@ The Execute Stage is where the participants implement the field trials tasks and
       *	Vendor RC-1 test results are documented. Vendor provide feedback to CNTT
       * OPNVF RC-1 test results are documented. OPNFV provides feedback to CNTT
       *	Community shall review Issues/Gaps during the evaluate stage
-       *	Acceptance of Issues/Gaps – modification of RI/RC approval
-       *	Non-Acceptance of Issues/Gaps – Documentation of condition
+       **	Acceptance of Issues/Gaps – modification of RI/RC approval
+       **	Non-Acceptance of Issues/Gaps – Documentation of condition
 4.	RC-1 Changes implement in Lab(s) 
 
 <a name="9.5.6.1"></a>
