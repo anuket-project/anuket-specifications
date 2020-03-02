@@ -98,7 +98,8 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	Sizing rules
 
 #### 4.2.2.4. Storage nodes
--	BIOS requirements 
+-	BIOS requirements
+
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
