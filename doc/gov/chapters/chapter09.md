@@ -174,10 +174,15 @@ CNTT will work very closely with field trial partners (NFVI vendors, VNF vendors
 For information that is acceptable for publishing, the development activities, test cases, project plans, and results of field trials will be captured, tracked and managed. The targeted repositories for this information are:
 
 *	CNTT GitHub
+
   **	GitHub Code
+  
   **	GitHub Projects
+  
   **	GitHub Issues
+  
 *	OPNFV 
+
   **	(Where?)
 
 <a name="9.5.5.3"></a>
