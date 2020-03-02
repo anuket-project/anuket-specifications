@@ -95,13 +95,13 @@ The Common NVFI Telco Taskforce (CNTT) is building a set of infrastructure stand
 
 The purpose of this document is to define the goals/outcomes, expectations, and roles necessary to support the CNTT release trials. The document will define/discuss the following:
 
-* •	Purpose of field trials
-* •	Goals/desired outcomes of the field trials
-* •	Success indicators 
-* •	Intentions and expectations
-* •	Action plan
-* •	Resource requirements
-* •	Metrics definition
+*	Purpose of field trials
+*	Goals/desired outcomes of the field trials
+*	Success indicators 
+*	Intentions and expectations
+*	Action plan
+*	Resource requirements
+*	Metrics definition
 
 <a name="9.5.3"></a>
 ### 9.5.3 Field Trial Purpose
@@ -114,7 +114,7 @@ In the truest form, adoption of a standard is an indication of it’s success wi
 1)	This is a partnership approach to validate CNTT community is adopting a consistent approach
 2)	Validate RI-1 specifications and RC-1 test suite, not VNFs or NFVI’s in the trial
 
-a name="9.5.3.2"></a>
+<a name="9.5.3.2"></a>
 #### 9.5.3.2 Key Expectations and Assumptions
 
 1)	Expectation is through healthy feedback from suppliers, CNTT will exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps.
@@ -127,7 +127,7 @@ a name="9.5.3.2"></a>
 The following diagram the key components and flow of activities, actions, and deliverables to be undertaken during the trial. Details of each component are provided in this document.
 
 <p align="center"><img src="../figures/FTA.png" alt="CNTT Field Trial Approach" title="Field Trial Approach" width="70%"/></p>
-<p align="center"><b>Figure 1:</b> Field Trial Approach</p>
+<p align="center"><b>Figure 3:</b> Field Trial Approach</p>
 
 <a name="9.5.4.1"></a>
 #### Success Indicators
@@ -155,13 +155,13 @@ c.	LaaS (e.g. UNH)
 The following list defines the desired outcomes/goals for the RI-1/RC-1 trails:
 
 1)	Verified/Validated RI-1 and RC-1 standards and methods (latest release)
- * • RI-1 Cookbook 
- * • RI-1 Specifications
- *	• RC-1 Test Suite 
- *	• TC Traceability
- * • Test Pass Criteria
- * • Benchmark Data
- *	• Other?
+ * RI-1 Cookbook 
+ * RI-1 Specifications
+ * RC-1 Test Suite 
+ * TC Traceability
+ * Test Pass Criteria
+ * Benchmark Data
+ * Other?
 2)	Feedback from trial participants (suppliers/operators) in CNTT (Need to ID type of feedback)
 3)	Defined solutions to issues and gaps found in RI-1 and RC-1
 4)	Make enhancements to future releases accordingly.
@@ -173,12 +173,12 @@ CNTT will work very closely with field trial partners (NFVI vendors, VNF vendors
 
 For information that is acceptable for publishing, the development activities, test cases, project plans, and results of field trials will be captured, tracked and managed. The targeted repositories for this information are:
 
-•	CNTT GitHub
-  o	GitHub Code
-  o	GitHub Projects
-  o	GitHub Issues
-•	OPNFV 
-  o	(Where?)
+*	CNTT GitHub
+  **	GitHub Code
+  **	GitHub Projects
+  **	GitHub Issues
+*	OPNFV 
+  **	(Where?)
 
 <a name="9.5.5.3"></a>
 #### 9.5.5.3 Test Case Identification
@@ -190,9 +190,9 @@ Specific test cases consistent with the defined objectives and outcomes will be 
 
 Community members will define the measurement criteria that will denote pass vs fail for each test case. To support operators and suppliers consistent with the charter of the organization an Agreement Secured on the use of trials results data, including:
 
-* •	Detail level of data required to validate
-* •	Acceptable data values indicating valid results
-* •	Detail level of data that will be published
+*	Detail level of data required to validate
+* Acceptable data values indicating valid results
+* Detail level of data that will be published
 
 <a name="9.5.5.5"></a>
 #### 9.5.5.5Vendor Solicitation/Commitment
@@ -204,8 +204,8 @@ NFVI and VNF vendor members will be solicited for participation in the trials. T
 
 The Initiate Field Trial Stage will deliver execution and assessment Plans (per Participant), including: 
 
-* •	A high-level check list of the tasks each participant will need to complete shall be provided.  
-* •	The plan will contain all the key milestones and activities the participants will expected to perform. 
+* A high-level check list of the tasks each participant will need to complete shall be provided.  
+* The plan will contain all the key milestones and activities the participants will expected to perform. 
 
 <a name="9.5.6"></a>
 ### 9.5.6" Execution 
@@ -217,11 +217,11 @@ The Execute Stage is where the participants implement the field trials tasks and
 3.	RC-1 Test suite (MF for detail)
    a.	Run test Suite 3X times (Iterations
    b.	For each iteration/test case:   
-      * •	Vendor RC-1 test results are documented. Vendor provide feedback to CNTT
-      * • OPNVF RC-1 test results are documented. OPNFV provides feedback to CNTT
-      * •	Community shall review Issues/Gaps during the evaluate stage
-       * •	Acceptance of Issues/Gaps – modification of RI/RC approval
-       *  •	Non-Acceptance of Issues/Gaps – Documentation of condition
+      *	Vendor RC-1 test results are documented. Vendor provide feedback to CNTT
+      * OPNVF RC-1 test results are documented. OPNFV provides feedback to CNTT
+      *	Community shall review Issues/Gaps during the evaluate stage
+       **	Acceptance of Issues/Gaps – modification of RI/RC approval
+       **	Non-Acceptance of Issues/Gaps – Documentation of condition
 4.	RC-1 Changes implement in Lab(s) 
 
 <a name="9.5.6.1"></a>
@@ -229,13 +229,13 @@ The Execute Stage is where the participants implement the field trials tasks and
 
 CNTT will staff the plan by soliciting volunteers from the participants. The list below is suggested list of roles to be staffed:
 
-* •	Overall Project Lead
-* •	Overall CNTT decision making leads 
-* •	Vendor lead from each supplier
-* •	SME(s) for RC1 supporting suppliers
-* •	SME(s) for RI1 supporting suppliers
-* •	OPNVF lead for RI1/RC1
-* •	Other support roles such as Governance, technical writers, etc.
+*	Overall Project Lead
+*	Overall CNTT decision making leads 
+*	Vendor lead from each supplier
+*	SME(s) for RC1 supporting suppliers
+*	SME(s) for RI1 supporting suppliers
+*	OPNVF lead for RI1/RC1
+*	Other support roles such as Governance, technical writers, etc.
 
 The participants that volunteer for the roles will be expected to provide the appropriate level of time to support the trials initiative.
 
@@ -268,8 +268,8 @@ OPNFV will also assess their experience of the methods used by CNTT to assess th
 1.	Mechanism for Reporting Issues / Receiving Status
 2.	Results Collation and Presentation, 
 3.	Support Availability
-   * •	SME (Human)
-   * •	Materials 
+   *	SME (Human)
+   *	Materials 
 4.	Release Notes
 5.	Other?
 
@@ -319,12 +319,12 @@ Trial outcomes shall be organized based on the following:
 <a name="9.5.7.1"></a>
 #### 9.5.7.1 Deliverables
 
-•	Completed Questionnaires (Participant and OPNFV)
-   o	Participants and OPNFV shall be asked to provide answers to a criteria based questionnaire.
+*	Completed Questionnaires (Participant and OPNFV)
+   **	Participants and OPNFV shall be asked to provide answers to a criteria based questionnaire.
     ** Insert link to table of participant questions here 
-    **Insert link table of OPNFV questions here 
-•	Technical Test Report (OPNFV)
-   o	OPNFV shall compile/provide a detailed Technical Test Results report to be shared with appropriate parties.
+    ** Insert link table of OPNFV questions here 
+*	Technical Test Report (OPNFV)
+   ** OPNFV shall compile/provide a detailed Technical Test Results report to be shared with appropriate parties.
 
 <a name="9.5.8"></a>
 ### 9.5.8 Evaluation
@@ -341,8 +341,8 @@ Reports, Tools, and repositories shall be identified and managed to capture all 
 <a name="9.5.8.1"></a>
 #### 9.5.8.1 Deliverables
 
-•	Issues and Gaps (CNTT)
-   o	All identified gaps and issues shall be captured in the CNTT GitHub repository.
+*	Issues and Gaps (CNTT)
+  **	All identified gaps and issues shall be captured in the CNTT GitHub repository.
    
 <a name="9.5.9"></a>
 ### 9.5.9 Close
@@ -353,13 +353,13 @@ To close out the Field Trial, CNTT shall summarize its evaluation of the Field T
 #### 9.5.9.1 Final Deliverable - End-of-Trial Report
 
 Upon completion of field trials, CNTT shall develop an End of Trial Report which summarizes the overall conclusions based on the evaluation, to include:
-   * o	Successes
-    * • What went activities well generally or specifically? How did it compare to the past or alternative results?   
-    * o	Challenges
-    * • What didn’t go well overall? What impact could these challenges have to adoption?
-   * o	Discoveries
-    * •	What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
-   * o	Decisions and Recommendations
-    * •	Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
-   * o	Next Steps
-    * • Indication of proposed steps and activities to be undertaken by the community
+   *	Successes
+    ** What went activities well generally or specifically? How did it compare to the past or alternative results?   
+   * Challenges
+    ** What didn’t go well overall? What impact could these challenges have to adoption?
+   *	Discoveries
+    **	What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
+   *	Decisions and Recommendations
+     ** Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
+   *	Next Steps
+    ** Indication of proposed steps and activities to be undertaken by the community
