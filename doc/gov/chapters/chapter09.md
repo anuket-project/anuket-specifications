@@ -126,7 +126,7 @@ In the truest form, adoption of a standard is an indication of it’s success wi
 
 The following diagram the key components and flow of activities, actions, and deliverables to be undertaken during the trial. Details of each component are provided in this document.
 
-<p align="center"><img src="../figures/FTA.png" alt="CNTT Field Trial Approach" title="Field Trial Approach" width="70%"/></p>
+<p align="center"><img src="../figures/field_trials.png" alt="CNTT Field Trial Approach" title="Field Trial Approach" width="70%"/></p>
 <p align="center"><b>Figure 3:</b> Field Trial Approach</p>
 
 <a name="9.5.4.1"></a>
