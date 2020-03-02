@@ -220,8 +220,8 @@ The Execute Stage is where the participants implement the field trials tasks and
 1.	Trial Prep
 2.	Use RI-1 cookbook to ensure RI-1 Specifications are met 
 3.	RC-1 Test suite (MF for detail)
-   a.	Run test Suite 3X times (Iterations
-   b.	For each iteration/test case:   
+   - a.	Run test Suite 3X times (Iterations
+   - b.	For each iteration/test case:   
       *	Vendor RC-1 test results are documented. Vendor provide feedback to CNTT
       * OPNVF RC-1 test results are documented. OPNFV provides feedback to CNTT
       *	Community shall review Issues/Gaps during the evaluate stage
