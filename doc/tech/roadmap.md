@@ -12,7 +12,7 @@
 
 <a name="1"></a>
 ## Overview
-* The activities of the CNTT community are articulated around Projects, Milestones and Releases.
+* The activities of the CNTT community are articulated around [Projects](#project), [Milestones](#2.3) and [Releases](#release).
 * CNTT is embracing simultaneous delivery model, meaning that all contributing projects have to follow the cadence and intermediate milestones.
 * CNTT is single-release vehicle for all projects.
 * The CNTT current release plan is available [here](./release_notes/release_process.md).
@@ -24,11 +24,13 @@
 
 **Definitions**
 
+<a name="project"></a>
 A project is:
   * Long term endeavour setup to deliver features across multiple releases as shown [here](./release_notes/)
   * Led by leads/co-leads, contributors and committers with expertise in the relevant areas
   * Scripted and documented in repositories
   
+<a name="release"></a>
 A Release is:
   * Short term endeavour setup to deliver a specific features/functionalities as shown [here](./release_notes/baldy.md).
   * An agreed common framework (template, criteria, best practice) for all projects
