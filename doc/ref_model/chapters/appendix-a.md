@@ -77,7 +77,11 @@ Relevant for sizing infrastructure and application operations (which often is an
 <a name="A.4"></a>
 ## A.4 Links
 
-Wikipedia 1. https://en.wikipedia.org/wiki/Loose_coupling , 2. https://en.wikipedia.org/wiki/Encapsulation_(computer_programming) , 3. https://en.wikipedia.org/wiki/Decomposition_(computer_science) , 4. https://en.wikipedia.org/wiki/Resilience_(network) , 5. https://en.wikipedia.org/wiki/Observability .
+1. [Wikipedia:Loose Coupling](https://en.wikipedia.org/wiki/Loose_coupling)
+2. [Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming))
+3. [Wikipedia:Decomposition](https://en.wikipedia.org/wiki/Decomposition_(computer_science))
+4. [Wikipedia:Resilience](https://en.wikipedia.org/wiki/Resilience_(network))
+5. [Wikipedia:Observability](https://en.wikipedia.org/wiki/Observability)
 
 CNCF Cloud Native Definition v1.0 from June 2018, 6. https://github.com/cncf/toc/blob/master/DEFINITION.md .
 
