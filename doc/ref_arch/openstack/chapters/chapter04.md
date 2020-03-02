@@ -97,9 +97,9 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 -	Sizing rules
 
 #### 4.2.2.5. Compute Nodes
--	The software components are as specified in the [Reference Model chapter 5.4](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#5.4)
+-	The software and hardware configurations are as specified in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 -	BIOS requirement
-    -	The general bios requirements are described in the [Reference Model chapter 5.4](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#5.4)
+    -	The general bios requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
     -	Additionally, for OpenStack we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Basic  | Network Intensive |
@@ -151,8 +151,8 @@ Caveats:
 -	Affinity and anti-affinity rules, among other factors, affect the sizing
 
 #### 4.2.2.6. Compute Resource Pooling Considerations
--	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive). Leads to efficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type. The specifications for this type of resource pooling is specified in 4.5.2.
--	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection. The specifications for this type of resource pooling is specified in 4.5.3.
+-	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive) leads to efficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type.
+-	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection.
 
 <a name="4.2.3"></a>
 ### 4.2.3. Network Fabric
@@ -201,7 +201,7 @@ Octavia supports provider drivers which allows third-party load balancing driver
 #### 4.2.3.4. Neutron Extensions
 OpenStack Neutron is an extensible framework that allows incorporation through plugins and API Extensions. API Extensions provides a method for introducing new functionality and vendor specific capabilities. Neutron plugins support new or vendor-specific functionality. Extensions also allow specifying new resources or extensions to existing resources and the actions on these resources.  Plugins implement these resources and actions.
 
-CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)[(https://opendev.org/openstack/neutron-fwaas/), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
+CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/pike/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
 Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/pike/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
 
@@ -250,7 +250,7 @@ Ceph monitors maintain a master copy of the maps of the cluster state required b
 
 **BIOS Requirement for Ceph servers**
 
-| BIOS/boot Parameter | Control Srever |
+| BIOS/boot Parameter | Control Server |
 |-------------|----------------|
 | Boot disks | RAID 1 |
 
@@ -276,7 +276,7 @@ This section covers:
 
 <a name="4.3.1"></a>
 ### 4.3.1 VIM Services
-A high level overview of the core OpenStack Srevices was provided in [Chapter 3](./chapter03.md). In this section we describe the core and other needed services in more detail.
+A high level overview of the core OpenStack Services was provided in [Chapter 3](./chapter03.md). In this section we describe the core and other needed services in more detail.
 
 #### 4.3.1.1 Keystone
 Keystone is the authentication service, the foundation of identity management in OpenStack. Keystone needs to be the first deployed service. Keystone has services running on the control nodes and no services running on the compute nodes:
@@ -396,7 +396,7 @@ New Table w/o Compute Intensive column below
 
 | Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | 
 |----------|-------------|--------------|-------------|
-| CPU allocation ratio | nfvi.com.cfg.001| In Nova.conf include <br>cpu_allocation_ratio= 4.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 |
+| CPU allocation ratio (custom extra_specs) | nfvi.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
 | NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | 
 | CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> |
 | Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | 
@@ -415,7 +415,7 @@ To configure the T-shirt sizes (specified in [Table 4-17](../../../ref_model/cha
 | .2xlarge* | 8<br>-- vcpus 8 | 16 GB<br>-- ram 16384 | 160 GB<br>-- disk 160 |
 | .4xlarge* | 16<br>-- vcpus 16 | 32 GB<br>-- ram 32768 | 320 GB<br>-- disk 320 |
 
-In addition, to configure the storage IOPS the following two parameters need to be specified in the flavor create: --property quota:disk_write_iops_sec=<IOPS#> and --property quota:disk_read_iops_sec=<IOPS#>.
+In addition, to configure the storage IOPS the following two parameters need to be specified in the flavor create: --property quota:disk_write_iops_sec=<IOPS#> and --property quota:disk_read_iops_sec=<IOPS#>.  
 
 The flavor create command and the mandatory and optional configuration parameters is documented in https://docs.openstack.org/nova/latest/user/flavors.html.
 
@@ -460,7 +460,7 @@ As we get away from the large data centers to the smaller sites it becomes progr
 <a name="4.6"></a>
 ## 4.6 Logging / Monitoring / Alerting of Control Plane
 
-Enterprises and vendors may have custom monitoring and logging solutions. The intent of the logging and monitoring is to capture events and data of interest to the NFVI and workloads so that appropriate actions can be taken.  Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md).
+Enterprises and vendors may have custom monitoring and logging solutions. The intent of the logging and monitoring is to capture events and data of interest to the NFVI and workloads so that appropriate actions can be taken.  Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](../../../ref_model/chapters/chapter04.md).
 
 In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only.
 
