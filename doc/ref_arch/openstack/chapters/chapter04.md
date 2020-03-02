@@ -65,7 +65,7 @@ Minimal configuration: 1 node
 - BIOS Requirements
 For OpenStack control nodes we use the BIOS parameters for the basic profile defined in [Chapter 5.4 of the Reference Model](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#5.4). Additionally, for OpenStack we need to set the following boot parameters:
 
-| BIOS/boot Parameter |Control server |
+| BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
 | CPU reservation for host (kernel) |1 core per Numa |
@@ -86,12 +86,26 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 
 #### 4.2.2.3. Network nodes
 -	BIOS requirements 
+
+| BIOS/boot Parameter | Value |
+|--------------------|--------------------|
+| Boot disks |RAID 1 |
+| <to be filled if needed>|  |
+| …|  
+ 
 -	How many nodes to meet SLA
 -	HW specifications
 -	Sizing rules
 
 #### 4.2.2.4. Storage nodes
--	BIOS requirements 
+-	BIOS requirements
+
+| BIOS/boot Parameter | Value |
+|--------------------|--------------------|
+| Boot disks |RAID 1 |
+| <to be filled if needed>|  |
+| …|  
+ 
 -	HW specifications
 -	How many nodes to meet SLA
 -	Sizing rules
@@ -250,7 +264,7 @@ Ceph monitors maintain a master copy of the maps of the cluster state required b
 
 **BIOS Requirement for Ceph servers**
 
-| BIOS/boot Parameter | Control Server |
+| BIOS/boot Parameter | Value |
 |-------------|----------------|
 | Boot disks | RAID 1 |
 
