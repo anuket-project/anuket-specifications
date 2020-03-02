@@ -316,15 +316,15 @@ Trial outcomes shall be organized based on the following:
       i.	Results from 3 RC-1 Test cycles
      ii.	Other
 
-<a name="9.5.7.1"></a>
-#### 9.5.7.1 Deliverables
+<a name="9.5.7.2"></a>
+#### 9.5.7.2 Deliverables
 
 *	Completed Questionnaires (Participant and OPNFV)
-**	Participants and OPNFV shall be asked to provide answers to a criteria based questionnaire.
-** Insert link to table of participant questions here 
-** Insert link table of OPNFV questions here 
+- **Participants and OPNFV shall be asked to provide answers to a criteria based questionnaire.
+- **Insert link to table of participant questions here 
+-* Insert link table of OPNFV questions here 
 *	Technical Test Report (OPNFV)
-** OPNFV shall compile/provide a detailed Technical Test Results report to be shared with appropriate parties.
+**OPNFV shall compile/provide a detailed Technical Test Results report to be shared with appropriate parties.
 
 <a name="9.5.8"></a>
 ### 9.5.8 Evaluation
