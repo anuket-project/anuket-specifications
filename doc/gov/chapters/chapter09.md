@@ -218,15 +218,18 @@ The Initiate Field Trial Stage will deliver execution and assessment Plans (per 
 The Execute Stage is where the participants implement the field trials tasks and then assess the outcomes.  It is anticipated that CNTT will assemble the Trials team to fully develop the action plan including resource assignments materials requirements and timelines. Activities include the deployment and configuration of RI-1 and execution of the RC-1 test cases. The Vendors community members that commit to the trials will build/setup/prep labs for the trials per the instructions:
 
 1.	Trial Prep
+
 2.	Use RI-1 cookbook to ensure RI-1 Specifications are met 
+
 3.	RC-1 Test suite (MF for detail)
-   - Run test Suite 3X times (Iterations
-   - For each iteration/test case:   
-      *	Vendor RC-1 test results are documented. Vendor provide feedback to CNTT
-      * OPNVF RC-1 test results are documented. OPNFV provides feedback to CNTT
-      *	Community shall review Issues/Gaps during the evaluate stage
-       -	Acceptance of Issues/Gaps – modification of RI/RC approval
-       -	Non-Acceptance of Issues/Gaps – Documentation of condition
+   - a. Run test Suite 3X times (Iterations)   
+   - b. For each iteration/test case:   
+       1. Vendor RC-1 test results are documented. Vendor provide feedback to CNTT
+       2. OPNVF RC-1 test results are documented. OPNFV provides feedback to CNTT
+      	3 .Community shall review Issues/Gaps during the evaluate stage
+            -	Acceptance of Issues/Gaps – modification of RI/RC approval
+            -	Non-Acceptance of Issues/Gaps – Documentation of condition
+
 4.	RC-1 Changes implement in Lab(s) 
 
 <a name="9.5.6.1"></a>
@@ -284,39 +287,64 @@ OPNFV will also assess their experience of the methods used by CNTT to assess th
 Trial outcomes shall be organized based on the following:
 
 1)	Categorization
-   a.	Method (see list in Initiation)
-   b.	Aspect: Functional and non-functional aspects (the ‘what’)
-   c.	Execution Stage (the ‘when’)
-      i.	Deploy
-     ii.	Config
-    iii.	Testing
-     iv.	Decommission (removal from infrastructure)
-   d.	Criteria 
-      i.	Feasibility
-         1.	How easily or conveniently is something executed.
-     ii.	Utility
-         1.	How useful or beneficial to the intent.
-    iii.	Effectiveness 
-         1.	How successful in producing the desired result.
-   e. Examples
-     i.	RI-1 Specification: Feasibility
-         1.	Is the RI-1 spec consistent with its intended purpose?
-         2.	Does it provide sufficient details?
-         3.	Are there recommendations to modify and or enhance?
-         4.	Other?
-    ii.	RI-1 Cookbook: Utility and Effectiveness during RI-1 deployment
-         1.	Were the right competencies identified to deploy?
-         2.	Were there major issues that arose (that would be of interest to all)?
-         3.	Other?
-   iii.	RI-1 Cookbook: Utility and Effectiveness after deployment and configuration completed
-         1.	Any unintended or anticipated outcomes or side effects of the implementation?
-         2.	Did implementation result in acceptable results (need to define 'acceptable results')
-         3.	Were the resources used to implement consistent with those identified up front?
-         4.	Time, cost, people, materials?
-         5.	Other?
+
+   * a. Method (see list in Initiation)
+   
+   *	b. Aspect: Functional and non-functional aspects (the ‘what’)
+   
+   *	c. Execution Stage (the ‘when’)
+
+     * - i.	Deploy
+
+     * - ii.	Config
+
+     * - iii.	Testing
+
+     * - iv.	Decommission (removal from infrastructure)
+
+* d.	Criteria 
+
+      * - i.	Feasibility: how easily or conveniently is something executed.
+
+      * - ii.	Utility: how useful or beneficial to the intent.
+
+      * - iii.	Effectiveness: how successful in producing the desired result.
+
+* e. Examples
+
+     * - i.	RI-1 Specification: Feasibility
+
+      -  1.	Is the RI-1 spec consistent with its intended purpose?
+
+      -  2.	Does it provide sufficient details?
+
+      -  3.	Are there recommendations to modify and or enhance?
+
+      -  4.	Other?
+
+     * - ii.	RI-1 Cookbook: Utility and Effectiveness during RI-1 deployment
+
+       * - 1.	Were the right competencies identified to deploy?
+
+       * - 2.	Were there major issues that arose (that would be of interest to all)?
+
+       * - 3.	Other?
+
+     * -iii.	RI-1 Cookbook: Utility and Effectiveness after deployment and configuration completed
+
+       * - 1.	Any unintended or anticipated outcomes or side effects of the implementation?
+
+       * - 2.	Did implementation result in acceptable results (need to define 'acceptable results')
+
+       * - 3.	Were the resources used to implement consistent with those identified up front?
+
+       * - 4.	Time, cost, people, materials?
+
+       * - 5.	Other?
+
 2)	Data Capture
    a.	Qualitative information captured via Questionnaire
-      i.	Participant and OPNFV feedback and gap identification shall be captured via Questionnaires provided to them during the Assessment stage of the Field Trial
+      * - i.	Participant and OPNFV feedback and gap identification shall be captured via Questionnaires provided to them during the Assessment stage of the Field Trial
    b.	Quantitative information shall be captured by test systems and collated by Participant and or OPNFV. Such as,
       i.	Results from 3 RC-1 Test cycles
      ii.	Other
@@ -324,12 +352,16 @@ Trial outcomes shall be organized based on the following:
 <a name="9.5.7.2"></a>
 #### 9.5.7.2 Deliverables
 
-*	Completed Questionnaires (Participant and OPNFV)
+Completed Questionnaires (Participant and OPNFV)
 - **Participants and OPNFV shall be asked to provide answers to a criteria based questionnaire.
-- **Insert link to table of participant questions here 
--* Insert link table of OPNFV questions here 
-*	Technical Test Report (OPNFV)
-**OPNFV shall compile/provide a detailed Technical Test Results report to be shared with appropriate parties.
+
+- ** Insert link to table of participant questions here 
+
+- ** Insert link table of OPNFV questions here 
+
+- **	Technical Test Report (OPNFV)
+
+    ** - OPNFV shall compile/provide a detailed Technical Test Results report to be shared with appropriate parties.
 
 <a name="9.5.8"></a>
 ### 9.5.8 Evaluation
@@ -346,7 +378,7 @@ Reports, Tools, and repositories shall be identified and managed to capture all 
 <a name="9.5.8.1"></a>
 #### 9.5.8.1 Deliverables
 
-*	Issues and Gaps (CNTT)
+Issues and Gaps (CNTT)
   **	All identified gaps and issues shall be captured in the CNTT GitHub repository.
    
 <a name="9.5.9"></a>
@@ -359,12 +391,18 @@ To close out the Field Trial, CNTT shall summarize its evaluation of the Field T
 
 Upon completion of field trials, CNTT shall develop an End of Trial Report which summarizes the overall conclusions based on the evaluation, to include:
    *	Successes
-    ** What went activities well generally or specifically? How did it compare to the past or alternative results?   
+
+** - What went activities well generally or specifically? How did it compare to the past or alternative results?   
    * Challenges
-    ** What didn’t go well overall? What impact could these challenges have to adoption?
+
+** - What didn’t go well overall? What impact could these challenges have to adoption?
    *	Discoveries
-    **	What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
+
+**	- What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
    *	Decisions and Recommendations
-     ** Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
-   *	Next Steps
-    ** Indication of proposed steps and activities to be undertaken by the community
+
+**  - Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
+
+*	Next Steps
+
+** - Indication of proposed steps and activities to be undertaken by the community
