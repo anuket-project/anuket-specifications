@@ -175,15 +175,15 @@ For information that is acceptable for publishing, the development activities, t
 
 *	CNTT GitHub
 
-  **	GitHub Code
+  - **	GitHub Code
   
-  **	GitHub Projects
+  - **	GitHub Projects
   
-  **	GitHub Issues
+  - **	GitHub Issues
   
 *	OPNFV 
 
-  **	(Where?)
+  - **	(Where?)
 
 <a name="9.5.5.3"></a>
 #### 9.5.5.3 Test Case Identification
