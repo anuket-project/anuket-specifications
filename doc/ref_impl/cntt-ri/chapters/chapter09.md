@@ -10,6 +10,7 @@
   * [9.2.2 Hardware Specification](#9.2.2)
   * [9.2.3 Network Specification](#9.2.3)
 * [9.3 NFR Considerations](#9.3)
+  * [9.3.1 Traffic Generators & NIC](#9.3.1)
 
 <a name="9.1"></a>
 ## 9.1 Introduction
