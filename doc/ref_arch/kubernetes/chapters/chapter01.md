@@ -86,7 +86,7 @@ For the avoidance of doubt, the following is considered to be **out of scope**:
 - **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of CNTT. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
 
 <p align="center"><img src="../figures/ch01_scope_k8s.png" alt="Kubernetes Reference Architecture scope" title="Kubernetes Reference Architecture scope" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture scope</p>
+<p align="center"><b>Figure 1-2:</b> Kubernetes Reference Architecture scope</p>
 
 <a name="1.5"></a>
 ## 1.5 Approach
@@ -103,7 +103,7 @@ In addition, we will start with a description of interfaces and capabilities (th
 As Kubernetes evolves over time it will add new technologies and capabilities and so the CNTT Reference Architecture will need to evolve with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is every three months and at least the support cadence, which is nine months (latest release, plus two previous releases).
 
 <p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture Roadmap</p>
+<p align="center"><b>Figure 1-3:</b> Kubernetes Reference Architecture Roadmap</p>
 
 
 > A populated roadmap view will be added here after the January 2020 release.
