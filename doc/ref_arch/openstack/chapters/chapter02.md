@@ -188,10 +188,10 @@ The requirements listed in this section are optional, viz. do not need to be imp
 
 | Ref # | sub-category | Description |  Traceability |
 |----|-------|---------------------|-------------|
-| `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
-| `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
-| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likley be supported through [Senlin](https://docs.openstack.org/senlin/pike/index.html), cluster management service. |
-| `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to `req.gen.rsl.01`. | |
+| `rec.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
+| `rec.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
+| `rec.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likley be supported through [Senlin](https://docs.openstack.org/senlin/pike/index.html), cluster management service. |
+| `rec.gen.rsl.02` | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to `req.gen.rsl.01`. | |
 
 <p align="center"><b>Table 2-9:</b> General Recommendations</p>
 
@@ -201,20 +201,20 @@ The requirements listed in this section are optional, viz. do not need to be imp
 
 | Ref # | sub-category | Description |  Traceability |
 |----|-------|---------------------|-------------|
-| `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
-| `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. | |
-| `req.inf.stg.05` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. | **Wouldn't that be a Security Violation** |
-| `req.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
-| `req.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
-| `req.inf.ntw.04` | Network | The Architecture **should** support service function chaining. | **Is this VNFM/NFVO requirement** |
-| `req.inf.ntw.06` | Network | The Architecture **should** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently. | |
-| `req.inf.ntw.08` | Network | The NFVI Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. | |
-| `req.inf.ntw.09` | Network | The NFVI Network Fabric **should** embrace open-based standards and technologies. | |
-| `req.inf.ntw.11` | Network | The NFVI Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites. | |
-| `req.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. | |
-| `req.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. | |
-| `req.inf.ntw.14` | Network | The SDN solution **should** be able to be centrally administrated and configured. | |
-| `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
+| `rec.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
+| `rec.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. | |
+| `rec.inf.stg.05` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. | **Wouldn't that be a Security Violation** |
+| `rec.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
+| `rec.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
+| `rec.inf.ntw.04` | Network | The Architecture **should** support service function chaining. | **Is this VNFM/NFVO requirement** |
+| `rec.inf.ntw.06` | Network | The Architecture **should** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently. | |
+| `rec.inf.ntw.08` | Network | The NFVI Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. | |
+| `rec.inf.ntw.09` | Network | The NFVI Network Fabric **should** embrace open-based standards and technologies. | |
+| `rec.inf.ntw.11` | Network | The NFVI Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites. | |
+| `rec.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. | |
+| `rec.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. | |
+| `rec.inf.ntw.14` | Network | The SDN solution **should** be able to be centrally administrated and configured. | |
+| `rec.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
 
 <p align="center"><b>Table 2-10:</b> Infrastructure Recommendations</p>
 
@@ -224,9 +224,9 @@ The requirements listed in this section are optional, viz. do not need to be imp
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------------|----------------------|-----------|
-| `req.vim.04` | General | The Architecture **should** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.| |
-| `req.vim.06` | General | The Architecture **should** allow orchestration solutions to be integrated with VIM. | **Orchestration of what** |
-| `req.vim.09` | General | The Architecture **should** support horizontal scaling of OpenStack core services. |  |
+| `rec.vim.04` | General | The Architecture **should** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.| |
+| `rec.vim.06` | General | The Architecture **should** allow orchestration solutions to be integrated with VIM. | **Orchestration of what** |
+| `rec.vim.09` | General | The Architecture **should** support horizontal scaling of OpenStack core services. |  |
 
 <p align="center"><b>Table 2-11:</b> VIM Recommendations</p>
 
@@ -236,7 +236,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 
 | Ref # | sub-category | Description |  Traceability |
 |----|-------|---------------------|-------------|
-| `req.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of `req.inf.acc.03` under "Infrastructure Recommendations" |
+| `rec.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of `req.inf.acc.03` under "Infrastructure Recommendations" |
 
 <p align="center"><b>Table 2-12:</b> Interfaces and APIs Recommendations</p>
 
@@ -255,11 +255,11 @@ The requirements listed in this section are optional, viz. do not need to be imp
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------|-------------|-------------|
-| `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites. | |
-| `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. | |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **should** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. | |
-| `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of VIM Instances. | |
-| `req.lcm.cid.02` | CI/CD | The Architecture **should** support integrating with CI/CD Toolchain for NFVI and VIM components Automation. | |
+| `rec.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites. | |
+| `rec.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. | |
+| `rec.lcm.adp.04` | Automated deployment | The Architecture **should** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. | |
+| `rec.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of VIM Instances. | |
+| `rec.lcm.cid.02` | CI/CD | The Architecture **should** support integrating with CI/CD Toolchain for NFVI and VIM components Automation. | |
 
 <p align="center"><b>Table 2-14:</b> LCM Recommendations</p>
 
@@ -269,7 +269,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 
 | Ref # | sub-category | Description |  Traceability |
 |----|--------|-------------------|----------|
-| `req.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads. | |
+| `rec.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads. | |
 
 
 <p align="center"><b>Table 2-15:</b> Assurance Recommendations</p>
