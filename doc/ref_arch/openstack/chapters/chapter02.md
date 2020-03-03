@@ -4,9 +4,9 @@
 <p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [2.1 Introduction.](#2.1)
-* [2.2 Reference Model Requirements.](#2.2)
-* [2.3 Architecture and OpenStack Requirements.](#2.3)
+* [2.1 Introduction](#2.1)
+* [2.2 Reference Model Requirements](#2.2)
+* [2.3 Architecture and OpenStack Requirements](#2.3)
   * [2.3.1 General Requirements](#2.3.1)
   * [2.3.2 Infrastructure Requirements](#2.3.2)
   * [2.3.3 VIM Requirements](#2.3.3)
@@ -15,15 +15,15 @@
   * [2.3.6 LCM Requirements](#2.3.6)
   * [2.3.7 Assurance Requirements](#2.3.7)
   * [2.3.8 Security Requirements](#2.3.8)
-* [2.4 Architecture and OpenStack Recommendations.](#2.4)
-  * [2.4.1 General Requirements](#2.4.1)
-  * [2.4.2 Infrastructure Requirements](#2.4.2)
-  * [2.4.3 VIM Requirements](#2.4.3)
-  * [2.4.4 Interfaces & APIs Requirements](#2.4.4)
-  * [2.4.5 Tenant Requirements](#2.4.5)
-  * [2.4.6 LCM Requirements](#2.4.6)
-  * [2.4.7 Assurance Requirements](#2.4.7)
-  * [2.4.8 Security Requirements](#2.4.8)
+* [2.4 Architecture and OpenStack Recommendations](#2.4)
+  * [2.4.1 General Recommendationss](#2.4.1)
+  * [2.4.2 Infrastructure Recommendations](#2.4.2)
+  * [2.4.3 VIM Recommendations](#2.4.3)
+  * [2.4.4 Interfaces & APIs Recommendations](#2.4.4)
+  * [2.4.5 Tenant Recommendations](#2.4.5)
+  * [2.4.6 LCM Recommendations](#2.4.6)
+  * [2.4.7 Assurance Recommendations](#2.4.7)
+  * [2.4.8 Security Recommendations](#2.4.8)
 
 <a name="2.1"></a>
 ## 2.1 Introduction.
@@ -183,6 +183,7 @@ Traceability to Reference Model.
 
 The requirements listed in this section are optional, viz. do not need to be implemented in conformant implementations.
 
+<a name="2.4.1"></a>
 2.4.1 General Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
@@ -195,7 +196,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 <p align="center"><b>Table 2-9:</b> General Recommendations</p>
 
 
-
+<a name="2.4.2"></a>
 2.4.2 Infrastructure Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
@@ -218,7 +219,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 <p align="center"><b>Table 2-10:</b> Infrastructure Recommendations</p>
 
 
-
+<a name="2.4.3"></a>
 2.4.3 VIM Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
@@ -230,7 +231,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 <p align="center"><b>Table 2-11:</b> VIM Recommendations</p>
 
 
-
+<a name="2.4.4"></a>
 2.4.4 Interfaces and APIs Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
@@ -240,7 +241,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 <p align="center"><b>Table 2-12:</b> Interfaces and APIs Recommendations</p>
 
 
-
+<a name="2.4.5"></a>
 2.4.5 Tenant Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
@@ -249,6 +250,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 <p align="center"><b>Table 2-13:</b> Tenant Recommendations</p>
 
 
+<a name="2.4.6"></a>
 2.4.6 Operations and LCM Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
@@ -262,6 +264,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 <p align="center"><b>Table 2-14:</b> LCM Recommendations</p>
 
 
+<a name="2.4.7"></a>
 2.4.7 Assurance Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
@@ -272,6 +275,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 <p align="center"><b>Table 2-15:</b> Assurance Recommendations</p>
 
 
+<a name="2.4.8"></a>
 2.4.8 Security Recommendations
 
 | Ref # | sub-category | Description |  Traceability |
