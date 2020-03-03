@@ -33,7 +33,7 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
 
-Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities, and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of the Basic, Network Intensive and Compute Intensive Instance Types.
+Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities, and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of the Basic and Network Intensive <!-- and Compute Intensive Instance --> Types.
 
 <p align="center"><img src="../figures/RM_chap5_fig_5_3_SW_profile.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
 <p align="center"><b>Figure 5-3:</b> NFVI Instance Types.</p>
@@ -116,7 +116,7 @@ _**Comment:** To be worked on._
 <a name="5.2"></a>
 ## 5.2 NFVI SW profiles features and requirements
 
-This section will detail NFVI SW profiles and associated configurations for the 3 types of NFVI instances: Basic, Network intensive, and Compute intensive.
+This section will detail NFVI SW profiles and associated configurations for the 2 types of NFVI instances: Basic and Network intensive. <!-- and Compute intensive. -->
 
 <a name="5.2.1"></a>
 ### 5.2.1 Virtual Compute
@@ -269,7 +269,7 @@ The host profile and capabilities include:
 <!--1. **CPU Oversubscription Ratio**: is based on the number of threads available. For example, on a 2CPU, 24-core host with SMT/HT, there are 96 vCPUs with 1:1 CPU Ratio and 192 vCPUs with 2:1 CPU Ratio. NOTE: While the oversubscription ratio is specified in the Virtual Infrastructure MAnager (VIM), once assigned it becomes part of the host personality and hence will be treated as part of the host profile and capabilities. -->
 <!--1. **DPDK (Data Plane Development Kit)**: Accelerated virtual switch using Data Plan Development Kit (DPDK) -->
 <!--1. **CPU Pinning**: vCPU is pinned to a physical core and dedicated to the requesting VM. Configured in VIM and Hypervisor.-->
-<!--1. **Huge Pages**: By default, CPUs allocate RAM in 4K chunks. Hugepages can be enabled to allocate in larger Chunks (such as 2MB, 1GB). This helps improve performance in some cases. Configured in the Operating System. -->
+<!--1. **Huge Pages**: By default, CPUs allocate RAM in 4K chunks. Huge Pages can be enabled to allocate in larger Chunks (such as 2MB, 1GB). This helps improve performance in some cases. Configured in the Operating System. -->
 
 The following model, **Figure 5-6**, depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network, and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled.
 

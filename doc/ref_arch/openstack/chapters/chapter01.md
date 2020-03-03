@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 1. Overview
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over Fine Points" title="Bogo: Dickering over Fine Points" width="35%"/></p>
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
@@ -9,16 +9,16 @@
 * [1.2 Use Cases](#1.2)
 * [1.3 Terminology.](#1.3)
 * [1.4 Principles](#1.4)
-* [1.5 Scope.](#1.5)
-* [1.6 Roadmap](#1.6)
+* [1.5 Document Organisation](#1.5)
+
 
 <a name="1.1"></a>
 ## 1.1 Introduction
-This is the first of a limited set of Reference Architectures that will be developed using the Reference Model principles.  OpenStack was chosen first based on the criteria laid out in the [Reference Model](../../../ref_model/chapters/chapter01.md). OpenStack has the advantages of being a mature and widely accepted Open Source technology; a strong ecosystem of vendors that support it, the OpenStack Foundation for managing the community, and, most importantly, it is widely deployed by the global operator community for both internal infrastructure and external facing products and services.  This means that the operators have existing staff with the right skill sets to support an NFVI deployment into development, test and production. Another reason to chose OpenStack is that it has a large active community of vendors and operators, which means that any code or component changes needed to support the Common Telecon NFVI requirements can be managed through the existing project communities processes to add and validate the required features through well established mechanisms.
+This Reference Architectures is focussed on OpenStack as the VIM chosen based on the criteria laid out in the [Reference Model](../../../ref_model/chapters/chapter01.md). OpenStack has the advantages of being a mature and widely accepted Open Source technology; a strong ecosystem of vendors that support it, the OpenStack Foundation for managing the community, and, most importantly, it is widely deployed by the global operator community for both internal infrastructure and external facing products and services.  This means that the operators have existing staff with the right skill sets to support an NFVI deployment into development, test and production. Another reason to chose OpenStack is that it has a large active community of vendors and operators, which means that any code or component changes needed to support the Common Telecon NFVI requirements can be managed through the existing project communities processes to add and validate the required features through well established mechanisms.
 
 <a name="1.1.1"></a>
 ## 1.1.1. Vision
-The ultimate goal is the OpenStack and subsequent Reference Architectures will be used as a platform to test and validate supprtability and compatibility with NFV workloads of interest to the Common Telecom NFVI community.  Initially the OpenStack Reference Architecture would be deployed in the OPNFV lab environment and used for testing and validating compatible with NFVs through the OVP umbrella.   The Reference Architecture document needs to be specified in sufficient detail that the model can ultimiately be robust enough so that operators will deploy it as part of a production infrastructure. To achieve this goal, this Reference Architecture document would be used in conjunction with the Reference Deployment document.  
+The ultimate goal is that the OpenStack-based CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Common NFVI Telco community.  Initially the OpenStack-based Reference Architecture would be used for testing and validating VNFs that can then be deployed in compatible operator clouds.   The Reference Architecture document can be used by operators to deploy compliant production infrastructure.  
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
@@ -45,18 +45,22 @@ Open Stack Reference Architecture must obey to the following set of principles:
 - [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
 - [CNTT Reference Architecture Principles](../../#principles)
 
->Any Open Stack specific principles needs to be added here.
+**Open Stack specific principles**
+
+OpenStack considers the following Four Opens essential for success:
+- Open Source
+- Open design
+- Open Development
+- Open Community
+
+This OpenStack Reference Architecture is organised around the three major NFVI resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
+
 
 <a name="1.5"></a>
-## 1.5 Scope
+## 1.5 Document Organisation
 
-<p align="center"><img src="../figures/ch01_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts.</p>
+The Reference Architecture requirements and the traceability where in this document the requirement is addressed is documented in Chapter 2. The intent of this document is to address all of the mandatory ("must") requirements and the most useful of the other optional ("should") requirements. Chapter 3 and 4 cover the NFVI resources and the core OpenStack services, while the APIs are covered in Chapter 5. Chapter 6 covers the implementation and enforcement of security capabilities and controls. Life Cycle Management of the NFVI and VIM are covered in Chapter 7 with stress on Logging, Monitoring and Analytics (LMA), configuration management and some other operational items, Please note that Chapter 7 is not a replacement for the implementation, configuration and operational documentation that accompanies the different OpenStack distributions. Chapter 8 identifies certain Gaps that currently exist and plans on how to address them. For example, Service Function Chaining support needs to be addressed to realise the full potential and value of SDN and NFV.
 
-<a name="1.6"></a>
-## 1.6 Roadmap
-As OpenStack evolves over time it will add new technologies and make modifications to the components in the ecosystem, the Common Telecom NFVI Reference Architecture will obviously need to evolve with it.  The final release cadence for the Reference Model changes and feature updates is still under discussion, but the Common Telecom NFVI cadence should at the very least mirror the OpenStack six month release cadence, and the three year support cadence.  OpenStack has a strong ecosystem of vendors that support older versions back at least six years. Given the typically long time frames that telecom infrastructures must be supported, the intention is for these documents to have similiarly long support lifespans.
 
-<p align="center"><img src="../figures/ref_arch_ch01_roadmap.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> Roadmap of CNTT Reference Architecture.</p>
+
 

@@ -35,7 +35,7 @@
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
-This reference model intends to implement both the Basic, Network Intensive and Compute Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
+This reference model intends to implement both the Basic and the Network Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
 
 <a name="2.2.1"></a>
 ### 2.2.1 Network Acceleration Extensions
@@ -52,7 +52,7 @@ From Reference Model section [4.2.4.2.1 Network Acceleration Extensions](../../.
 <a name="2.2.2"></a>
 ### 2.2.2 Network Interface Options
 
-From Reference Model section [4.2.4.4 Network Interface Options](../../../ref_model/chapters/chapter04.md#4244-network-interface-options)
+From Reference Model section [4.2.2 Virtual Network Interface Specifications](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications)
 
 | Attribute | Description | Supported |
 |-----------|----------------------------------|-------|
@@ -145,7 +145,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>7)</sup> |
 | nfvi.hw.nac.cfg.003 | Compression |  | |
 
-**1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
+**1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)<br>
 **2)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
 **3)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
 **4)** There is no vNIC in case of containers.<br>
@@ -172,8 +172,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for Kubernetes components. |
-| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, ). |
-
+| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic and Network Intensive). |
 
 <!--
 | `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|

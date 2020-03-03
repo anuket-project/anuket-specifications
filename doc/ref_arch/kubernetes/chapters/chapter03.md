@@ -20,13 +20,13 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT compliance; compliance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any compliant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
+The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT conformance; conformance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any conformant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
 
 Kubernetes is already very well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
 
 This reference architecture provides optionality in terms of pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution.
 
-Chapter 5 of the Reference Model (RM) describes the [hardware](../../../ref_model/ref_model/chapters/chapter05.md#5.4) and [software](../../../ref_model/ref_model/chapters/chapter05.md#52-nfvi-sw-profiles-features-and-requirements) profiles, which are descriptions of the capabilities and features that the NFVI offer to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high level view of the software profile features that apply to each instance profile (Basic and Network Intensive). For more information on the instance profiles please read [RM Chapter 4, section 4.2.4](../../../ref_model/chapters/chapter04.md#4.2.4).
+Chapter 5 of the Reference Model (RM) describes the [hardware](../../../ref_model/chapters/chapter05.md#5.3) and [software](../../../ref_model/chapters/chapter05.md#5.1) profiles, which are descriptions of the capabilities and features that the NFVI offer to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high level view of the software profile features that apply to each instance profile (Basic and Network Intensive). For more information on the instance profiles please read [RM Chapter 4, section 4.2.4](../../../ref_model/chapters/chapter04.md#4.2.4).
 
 <p align="center"><img src="../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png" width="80%"/></p>
 <p align="center"><b>Figure 5-3 (from RM):</b> NFVI software profiles</p>
@@ -64,9 +64,11 @@ A key thing to note is that the container runtime itself is also a set of proces
 <a name="3.2.1.1"></a>
 #### 3.2.1.1 Memory management
 
-> This chapter should describe considerations about memory management, like huge pages.
+> This chapter should describe considerations about memory management, like Huge Pages.
 
 > Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+
+The Reference Model requires the support of Huge Pages in `nfvi.com.cfg.004` which is supported by upstream Kubernetes already. In case of some applications the Huge Pages should be allocated with the considerations of the HW topology. This later feature is missing from Kubernetes, therefore a gap was added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
@@ -110,7 +112,7 @@ There are two types of low latency and high throughput networks required by `req
 
 The low latency, high throughput networks for handling the user plane traffic require the capability to use an user space networking technology.
 
-> Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as an additional feature and still be compliant with CNTT.
+> Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as an additional feature and still be conformant with CNTT.
 
 > Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
@@ -121,7 +123,7 @@ As `req.inf.ntw.14` mandates the architecture must enable the integration of dif
 The architecture must support telecom equipment networking where the CNF networks are set up by the operator's network administrators. This is why, as `req.inf.ntw.10` requires, the architecture must provide a set of abstract management API-s to manage the network connectivity of the CNF pods.
 The API must support multiple tenants and must require elevated acces rights to manipulate infrastructure related API objects as these operations require reconfiguration of the physical network infrastructure.
 
-To fullfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and hugepages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+To fullfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and Huge Pages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
 
 The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads.
 
