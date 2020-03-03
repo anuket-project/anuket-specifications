@@ -1,14 +1,15 @@
 [<< Back](../../ref_model)
-# Appendix A - Guidelines For VNF Vendors
+# Appendix A - VNF Design Guidelines
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [A.1 Goals](#A.1)
 * [A.2 Intro and Terminology](#A.2)
 * [A.3 VNF Evolution Phases](#A.3)
-* [A.4 Links](#A.3)
-* [A.5 Hardware-Dependent Coding Policies](#A.4)
-* [A.6 Miscellaneous](#A.5)
+* [A.4 Links](#A.4)
+* [A.5 Hardware-Dependent Coding Policies](#A.5)
+* [A.6 VNF Design and Implementation Requirements](#A.6)
+* [A.7 Miscellaneous](#A.7)
 
 <a name="A.1"></a>
 ## A.1 Goals
@@ -70,6 +71,22 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 End of policies.
 
 <a name="A.6"></a>
+## A.6 VNF Design and Implementation Requirements
+This section specifies a set of VNF Design and Implementation Requirements. 
+
+| Ref | Requirmenet | Unit | Definition
+|----|-----|-----|----|
+| vnf.des.001 | The VNF Developer **must** ensure that their software and the resultant VNF image does not contain malicious code (e.g., malware, logic bombs, etc.)  |  | |
+| vnf.des.002 | The VNF Developer **must** ensure that their software and the resultant VNF image does not contain code such as daemons that exposes them to risk |  | |
+| vnf.des.003 | The VNF Developer **must** ensure that their software and resultant VNF image are only created with content and files from trusted sources |  | |
+| vnf.des.004 | The VNF Developer **must** ensure that their software and resultant VNF image are only packaged with files that have been found free of malware and vulnerabilities |  | |
+| vnf.des.005 | The VNF Developer **must** ensure that their software and resultant VNF image do not contain clear text secrets |  | |
+| vnf.des.006 | The VNF Developer **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |  | Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |
+| vnf.des.007 | The VNF Developer **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries |  | Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) |
+| vnf.des.008 | The VNF Developer **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
+
+
+<a name="A.7"></a>
 ## A.6 Miscellaneous
 ### A.6.1 VNF Network Monitoring Capabilities - UseCase.
 Network Monitoring capabilities exposed by NFVI Platform are used for the passive observation of VNF-specific traffic traversing the NFVI when:
