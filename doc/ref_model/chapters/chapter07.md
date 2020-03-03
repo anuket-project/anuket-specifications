@@ -555,15 +555,14 @@ Ref | Requirement | Unit | Definition |
 | sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic |  | |
 | sec.sys.004 | The NFVI **must** support Secure network channels |  | A secure channel enables transferring of data that is resistant to overhearing and tampering |
 | sec.sys.005 | The NFVI **must** segregate the underlay and overlay networks |  | |
-| *sec.sys.006* | *Placeholder* |  | |
-| sec.sys.007 | The NFVI must be able to utilize the VRM identity management capabilities |  | |
-| sec.sys.008 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) |  | |
-| sec.sys.009 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. |  | Communication between different trust domains is not allowed, by default.  |
-| sec.sys.010 | The Platform **must** support creation of Trust Relationships between trust domains |  | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
-| sec.sys.011 | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly |  | |
-| sec.sys.012 | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) |  | |
-| sec.sys.013 | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component |  | e.g., Barbican (OpenStack) |
-| sec.sys.014 | The Platform **must** provide secrets dynamically as and when needed |  | |
+| sec.sys.006 | The NFVI must be able to utilize the VRM identity management capabilities |  | |
+| sec.sys.007 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) |  | |
+| sec.sys.008 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. |  | Communication between different trust domains is not allowed, by default.  |
+| sec.sys.009 | The Platform **must** support creation of Trust Relationships between trust domains |  | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
+| sec.sys.010 | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly |  | |
+| sec.sys.011 | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) |  | |
+| sec.sys.012 | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component |  | e.g., Barbican (OpenStack) |
+| sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed |  | |
 
 <a name="7.11.3"></a>
 ### 7.11.3. Confidentiality and Integrity
@@ -599,16 +598,11 @@ Ref | Requirement | Unit | Definition |
 |---|----|---|----|
 | sec.img.001 | Only images from trusted sources **must** be used |  | |
 | sec.img.002 | Images **must** be maintained to be free from known vulnerabilities |  | |
-| sec.img.003 | Images **must not** contain malicious code (e.g., malware, logic bombs, etc.)  |  | |
-| sec.img.004 | Images **must not** contain code such as daemons that exposes them to risk |  | |
-| sec.img.005 | Images **must** only be created with content and files from trusted sources |  | |
-| sec.img.006 | Images **must** be packaged with files that have been found free of malware and vulnerabilities |  | |
-| sec.img.007 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  | |
-| sec.img.008 | Images **must not** contain clear text secrets |  | |
-| sec.img.009 | Images **must** only be accessible to authorized actors |  | |
-| sec.img.010 | Image Registries **must** only be accessible to authorized actors |  | |
-| sec.img.011 | Image Registries **must** only be accessible over secure networks |  | |
-| sec.img.012 | Image registries **must** be clear of vulnerable and stale (out of date) versions |  | |
+| sec.img.003 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  | |
+| sec.img.004 | Images **must** only be accessible to authorized actors |  | |
+| sec.img.005 | Image Registries **must** only be accessible to authorized actors |  | |
+| sec.img.006 | Image Registries **must** only be accessible over secure networks |  | |
+| sec.img.007 | Image registries **must** be clear of vulnerable and stale (out of date) versions |  | |
 
 <a name="7.11.6"></a>
 ### 7.11.6. Security LCM
@@ -623,10 +617,9 @@ Ref | Requirement | Unit | Definition |
 | sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests | Yes/No | |
 | sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time and time zone information |  | |
 | sec.lcm.008 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  | |
-| sec.lcm.009 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant IP addressing, including routing tables, route health information and whitelists/blacklists. |  | |
-| sec.lcm.010 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation information |  | |
-| sec.lcm.011 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  | |
-| sec.lcm.012 | The Platform **must** implement Security life cycle management processes including proactively update and patch of all deployed software. | | |
+| sec.lcm.009 |  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information |  | |
+| sec.lcm.010 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  | |
+| sec.lcm.011 | The Platform **must** implement Security life cycle management processes including proactively update and patch all deployed NFVI software. | | |
 
 <a name="7.11.7"></a>
 ### 7.11.7. Monitoring and Security Audit
