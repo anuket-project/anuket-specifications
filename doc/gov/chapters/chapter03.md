@@ -18,6 +18,8 @@
 <a name="3.3"></a>
 ## 3.3 Work Streams
 
+[Work in progress]
+
 <a name="3.4"></a>
 ## 3.4 New Work Streams Policy
 In order for CNTT to stay current with new trends in the industry and the introduction of new technologies and processes, there will be scenarios where a new WS for a new specification work is needed to be created within CNTT. Following is CNTT policy of creating a new WS:
