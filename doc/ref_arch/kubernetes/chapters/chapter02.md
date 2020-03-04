@@ -182,11 +182,6 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for Kubernetes components. |
 | `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic and Network Intensive). |
 
-<!--
-| `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|
-| `req.gen.k8s.02` | Open source | The Architecture **must** support dynamic request and configuration of resources (compute, network, storage) through Kubernetes APIs. |
--->
-
 <p align="center"><b>Table 2-5:</b> Kubernetes Architecture: General Requirements</p>
 
 <a name="2.3.2"></a>
@@ -258,10 +253,6 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (NFVI and bare metal resources), network, and storage. |
 | `req.int.api.03` | API |The Architecture **must** support the usage of an OCI compatible artefact repository. |
 | `req.int.api.04` | API | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like Helm v3. |
-
-<!--
-| `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
--->
 
 <p align="center"><b>Table 2-8:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
