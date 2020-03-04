@@ -76,7 +76,7 @@ This section specifies a set of VNF Design and Implementation Requirements.
 
 | Ref | Requirmenet | Unit | Definition
 |----|-----|-----|----|
-| vnf.des.001 | The VNF Developer **must** ensure that their software and the resultant VNF image does not contain malicious code (e.g., malware, logic bombs, etc.)  |  | |
+| vnf.des.001 | The VNF Developer **should** ensure that their software and the resultant VNF image does not contain malicious code (e.g., malware, logic bombs, etc.)  |  | |
 | vnf.des.002 | The VNF Developer **must** ensure that their software and the resultant VNF image does not contain code such as daemons that exposes them to risk |  | |
 | vnf.des.003 | The VNF Developer **must** ensure that their software and resultant VNF image are only created with content and files from trusted sources |  | |
 | vnf.des.004 | The VNF Developer **must** ensure that their software and resultant VNF image are only packaged with files that have been found free of malware and vulnerabilities |  | |
