@@ -77,6 +77,8 @@ This section describes a set of explicit NFVI capabilities and performance measu
 | e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB | Max storage in GB that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.004 | # Connection points | number | Max number of connection points that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.005 | Total external (persistent) storage | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI |
+| e.nfvi.cap.017 | Total Availability Zones | number | The number of availability zones supported by NFVI |
+
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of NFVI</p>
 
 **1)** In a Kubernetes based environment this means the CPU limit of a pod. <br>
@@ -126,7 +128,7 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
-| e.nfvi.cap.013 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workoad |
+| e.nfvi.cap.018 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workoad |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
@@ -611,7 +613,7 @@ This section is temporary while the team defines and aligns on key terms used in
 
 - **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the NFVI, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
 
-- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
+- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance.
 
 - PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
 
