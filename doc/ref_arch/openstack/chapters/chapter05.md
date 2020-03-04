@@ -49,6 +49,10 @@ For the purpose of compliance tests, this chapter also identifies the set of the
 | security_compliance     | X             |
 | trust                   | X             |
 
+| Ref #            | Category | Description                                                                                                                         |
+|------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
+| `req.vim.api.01` | infra    | must expose equal Keystone API version, equal or newer Keystone API microversion and all mandatory Keystone features listed by CNTT |
+
 Identity API v3: https://docs.openstack.org/api-ref/identity/v3/index.html
 
 Identity API v3 extensions: https://docs.openstack.org/api-ref/identity/v3-ext/
@@ -60,6 +64,10 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 | **OpenStack Service** | **API Version** | **Minimal API Microversion** |
 |-----------------------|-----------------|------------------------------|
 | Image: Glance         | v2              | 2.5                          |
+
+| Ref #            | Category | Description                                                                                    |
+|------------------|----------|------------------------------------------------------------------------------------------------|
+| `req.vim.api.02` | infra    | must expose equal Glance API version and equal or newer Glance API microversion listed by CNTT |
 
 Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
@@ -80,6 +88,10 @@ Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.
 | multi_backend          |               |
 | snapshot               | X             |
 | volume_revert          | X             |
+
+| Ref #            | Category | Description                                                                                                                   |
+|------------------|----------|-------------------------------------------------------------------------------------------------------------------------------|
+| `req.vim.api.03` | infra    | must expose equal Cinder API version, equal or newer Cinder API microversion and all mandatory Cinder features listed by CNTT |
 
 Block Storage API: https://docs.openstack.org/api-ref/block-storage/
 
@@ -109,6 +121,10 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 | temp_url           | X             |
 | tempauth           | X             |
 | versioned_writes   | X             |
+
+| Ref #            | Category | Description                                                                         |
+|------------------|----------|-------------------------------------------------------------------------------------|
+| `req.vim.api.04` | infra    | must expose equal Swift API version and all mandatory Swift features listed by CNTT |
 
 Object Storage API: https://docs.openstack.org/api-ref/object-store/index.html
 
@@ -202,6 +218,10 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | vlan                     | X             |
 | vxlan                    |               |
 
+| Ref #            | Category | Description                                                                                                     |
+|------------------|----------|-----------------------------------------------------------------------------------------------------------------|
+| `req.vim.api.05` | infra    | must expose equal Neutron API version, all mandatory Neutron extensions and Neutron type drivers listed by CNTT |
+
 Networking Service APIs: https://docs.openstack.org/api-ref/network/
 
 The exhaustive list of extensions is available at https://docs.openstack.org/api-ref/network/v2/
@@ -237,6 +257,10 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 | vnc_console              |               |
 | volume_multiattach       |               |
 
+| Ref #            | Category | Description                                                                                                             |
+|------------------|----------|-------------------------------------------------------------------------------------------------------------------------|
+| `req.vim.api.06` | infra    | must expose equal Nova API version, equal or newer Nova API microversion and all mandatory Nova features listed by CNTT |
+
 Compute API: https://docs.openstack.org/api-ref/compute/
 
 REST API Version History: https://docs.openstack.org/nova/latest/reference/api-microversion-history.html
@@ -247,6 +271,10 @@ REST API Version History: https://docs.openstack.org/nova/latest/reference/api-m
 |----------------------|------------------|------------------------------|
 | Placement            | v1               | 1.10                         |
 
+| Ref #            | Category | Description                                                                           |
+|------------------|----------|---------------------------------------------------------------------------------------|
+| `req.vim.api.07` | infra    | must expose equal Placement API version and equal or newer Placement API microversion |
+
 Placement API: https://docs.openstack.org/api-ref/placement/
 
 REST API Version History: https://docs.openstack.org/placement/latest/placement-api-microversion-history.html
@@ -256,6 +284,10 @@ REST API Version History: https://docs.openstack.org/placement/latest/placement-
 |**OpenStack Service** | **API Version** |
 |----------------------|-----------------|
 | Orchestration: Heat  | v1              |
+
+| Ref #            | Category | Description                        |
+|------------------|----------|------------------------------------|
+| `req.vim.api.08` | infra    | must expose equal Heat API version |
 
 Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
 
