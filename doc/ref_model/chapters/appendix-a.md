@@ -88,7 +88,7 @@ This section specifies a set of VNF Design and Implementation Requirements.
 
 <a name="A.7"></a>
 ## A.6 Miscellaneous
-### A.6.1 VNF Network Monitoring Capabilities - UseCase.
+### A.7.1 VNF Network Monitoring Capabilities - UseCase.
 Network Monitoring capabilities exposed by NFVI Platform are used for the passive observation of VNF-specific traffic traversing the NFVI when:
 * Performance issues and/or packet drops reported in VNF
 * Determining performance bottle necks at VNF level
