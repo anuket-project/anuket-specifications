@@ -279,7 +279,6 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 <!--
 | `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
-| `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
 -->
 
 <p align="center"><b>Table 2-9:</b> Kubernetes Architecture: Operations and LCM Requirements </p>
