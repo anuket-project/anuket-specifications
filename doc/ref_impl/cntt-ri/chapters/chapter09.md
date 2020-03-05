@@ -6,7 +6,11 @@
 ## Table of Contents
 * [9.1 Introduction](#9.1)
 * [9.2 OPNFV Pharos Project](#9.2)
-* [9.3 Heading](#9.3)
+  * [9.2.1 Pharos Specification](#9.2.1)
+  * [9.2.2 Hardware Specification](#9.2.2)
+  * [9.2.3 Network Specification](#9.2.3)
+* [9.3 NFR Considerations](#9.3)
+  * [9.3.1 Traffic Generators & NIC](#9.3.1)
 
 <a name="9.1"></a>
 ## 9.1 Introduction
@@ -78,7 +82,7 @@ For the purpose of this RI, the following diagram illustrates the networks and n
 
 
 <a name="9.2.2"></a>
-## 9.2.2 Hardware Specification
+### 9.2.2 Hardware Specification
 
 CPU:
 
@@ -106,7 +110,7 @@ Memory:
 * 32G RAM Minimum
 
 <a name="9.2.3"></a>
-## 9.2.3 Network Specification
+### 9.2.3 Network Specification
 
 Network Hardware
 
@@ -138,4 +142,36 @@ Network Options
 For this RI, Option III has been chosen.
 
 <a name="9.3"></a>
-## 9.3 Heading
+## 9.3 NFR Considerations
+Additional environmental specifications need to be considered when performing Non-Functional Requirement (NFR) testing, which includes performance, resiliency, and scalability, amongst other test categories not addressed through functional testing.  Refer to [What is Non Functional Testing?](https://www.guru99.com/non-functional-testing.html) for information and examples of the various types of NFR testing.  
+
+The rational for reviewing and documenting environmental needs and specifications is that NFR-type testing introduces traffic, chaos, or instability (e.g. impulse, spike, long-duration, etc) to the environment, and if not sized properly, or contains robust equipment the test results will be undeterministic, or unreliable.  
+
+Examples of potential measurements and/or test scenarios for which NFR test tooling needs to support, or remain stable under execution includes:
+
+ - Average (packet) Drop Rate
+ - Average Latency
+ - Execution of different frame size, packet path, or chain count
+ - Testing single switch (VNF) packet path
+ - Testing chained-switch (VNF) packet paths
+ - Support SRIOV, OVS-DPDK, and VLAN configuration and/or options
+
+Note, when it comes to NFR-tooling, the goals are to provide light-weight solutions that can be packaged within a cookbook to accelerate lab validations, agnostic to the type of hardware in the environment.  This will enable third party suppliers to achieve compliance expectations for the targeted architecture.  
+
+<a name="9.3.1"></a>
+
+### 9.3.1 Traffic Generators & NIC
+Performance, or load testing, may (will) require specific NICs to achieve desired throughput (TPS, kbps, etc) to properly validate an instance-types (e.g. Basic(B)) stability when subject to traffic.  
+
+For example, the OPNFV project, [NFVBench](https://wiki.opnfv.org/display/nfvbench/NFVbench), utilizes the [TRex](https://trex-tgn.cisco.com/) traffic generator.   While TRex offers stateful and stateless testing, achieves 200-400 Gb/sec, and captures latency/jitter measurements, there is a dependency on the type of NICs to be utilized to achieve optimal results:
+
+ - Recommended NICs to utilize when adopting the NFVBench project (& TRex) include Intel X710 (10G), XXV710 (25G) and XL710 (40G).  
+
+Interior interface cards may result in unexpected, or degraded performance, issues, or capabilities.   
+
+When planning NFR test scenarios, the engineer needs to document the following which ensure the planned traffic generator, and target environment are satisfactory for the type(s) of test to be performed, and the measurements to be collected:
+
+ - Desired throughput levels
+ - Analysis and confirmation that throughput can be achieved with Traffic Generators chosen
+ - Confirmation infrastructure (e.g. NIC, rack, switch, etc) is engineered to support the target load / traffic levels, unless testing to break- or saturation points
+ - If testing to break-points, then engineering specs of supported load levels are to be documented with an understanding that a ceiling may be reached within the traffic generators before saturation of the infrastructure.
