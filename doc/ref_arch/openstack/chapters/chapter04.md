@@ -154,7 +154,7 @@ If we wish to dedicate specific cores for host processing we need to consider tw
     1. Require dedicated cores for Guest resources
     2. No dedicated cores are required for Guest resources
 
-Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Pike release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specication of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do no exist in the cpu_shared_set configuration.
+Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Pike release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
 
 Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vcpus numbered '0' and '20', '1' and '21', etc. are siblings:
 
