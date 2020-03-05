@@ -17,7 +17,7 @@
 
 ## 6.1 Introduction
 
-This guide is intended to provide security implementation recommendations to CNTT architects who are looking to implementing NFVi using [OpenStack](https://www.openstack.org/) technology.  This is minimal set of high-level general security practice, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to CNTT architects who are looking to implementing NFVi using [OpenStack](https://www.openstack.org/) technology.  This is minimal set of high-level general security practice, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
@@ -25,7 +25,7 @@ This guide is intended to provide security implementation recommendations to CNT
 Based on chapter 2 requirements
 
 <a name="6.3"></a>
-## 6.3 NFVI and VIM Security
+## 6.3 NFVi and VIM Security
 
 OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html
@@ -37,13 +37,13 @@ https://docs.openstack.org/security-guide/introduction/introduction-to-openstack
 #### 6.3.1.1 Identity
 The OpenStack Identity service (Keystone) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end.
 
-OpenStack Keystone could work with an Identity services that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with your Enterprise Identity Services.  
+OpenStack Keystone could work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
 
 #### 6.3.1.2 Authentication
-Authentication is the first line of defense for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone support multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html)
+Authentication is the first line of defense for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone supports multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html)
 
 ##### Keystone Tokens
-Once a user is authenticated, a token is generated for authorization and access to an OpenStack environment and resources.  By default, the token is set to expire in one hour.  This setting could be change based on your business needs, but it's highly recommended to set the expiration to the shortest possible value without dramatically impacting your operations.
+Once a user is authenticated, a token is generated for authorization and access to an OpenStack environment and resources.  By default, the token is set to expire in one hour.  This setting could be change based on the business and operational needs, but it's highly recommended to set the expiration to the shortest possible value without dramatically impacting your operations.
 
 <b>Special Note on Logging Tokens:</b> since the token would allow access to the OpenStack services, it <i>MUST</i> be masked before outputting to any logs.
 
@@ -51,7 +51,7 @@ Once a user is authenticated, a token is generated for authorization and access 
 Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Service supports the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resource. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource then the user’s group/roles and association to determine if access can the requested resource.  For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
 
 #### 6.3.1.4 RBAC
-In order to properly manage user access to OpenStack services, service provider should utilize the Role Based Access Control (RBAC). system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles.
+In order to properly manage user access to OpenStack services, service provider should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles.
 
 ###### Rules
 The following rules govern create, read, update, and delete (CRUD) level access.
