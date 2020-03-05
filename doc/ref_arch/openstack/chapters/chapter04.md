@@ -164,7 +164,7 @@ This implies that the two physical cores '0' and '8' and their sibling threads '
 
 #### 4.2.2.8. Pinned and Unpinned CPUs
 
-When a VM instance is created the vCPU processes are, by default, not assigned to a particular host CPU. Certain workloads require real-time or near real-time behavior viz., uninterrupted access to their cores. For such workloads, CPU pinning allows us to bind an instance’s vCPUs to particular host cores. To configure a flavor to use pinned vCPUs, we use a dedicated CPU policy.
+When a VM instance is created the vCPUs are, by default, not assigned to a particular host CPU. Certain workloads require real-time or near real-time behavior viz., uninterrupted access to their cores. For such workloads, CPU pinning allows us to bind an instance’s vCPUs to particular host cores. To configure a flavor to use pinned vCPUs, we use a dedicated CPU policy.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; openstack flavor set .xlarge --property hw:cpu_policy=dedicated
 
