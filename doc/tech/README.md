@@ -26,7 +26,7 @@
 
 ## CNTT Releases
 * [CNTT Releases](./release_notes)
-* [CNTT Roadmap](./release_notes/release_process.md#roadmap)
+* [CNTT Roadmap](./roadmap.md#2)
 
 <a name="1.0"></a>
 ## 1. Overview
