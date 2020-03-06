@@ -99,6 +99,10 @@ Where low-level runtimes are focused on the execution of a container within an O
 
 When it comes to Kubernetes, the important interface that we need to consider for container management is the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/), which is an interface specification for any container runtime to be able to integrate with the kubelet on a Kubernetes Node. The CRI decouples the kubelet from the runtime that is running in the Host OS, meaning that the code required to integrate kubelet with a container runtime is not part of the kubelet itself (i.e. if a new container runtime comes along, and it uses CRI, it will work with kubelet). Examples of this type of runtime include containerd (with cri plugin) and cri-o, which was built specifically for Kubernetes.
 
+To fullfill `req.sec.gen.04` the architecture should support a container runtime which provides the isoltation of Operating System kernels.
+
+As `req.sec.gen.05` mandates the architecture to support the isolation of compute resources the architecture must support a way to isolate the compute resources of the infrastructure itself from the workloads compute resources.
+
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
