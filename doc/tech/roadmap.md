@@ -66,13 +66,13 @@ Please refer to individual [release plan](./release_notes/) and features for det
 <a name="3"></a>
 ## Dependencies between various Workstreams
 
-The various work streams in CNTT are 
+The various workstreams in CNTT are 
 - Reference Model (RM)
 - Reference Architecture (RA)
 - Reference Implementation (RI) 
 - Reference Conformance (RC)
 
-The work stream dependency relationship in a simple terms, [Reference Conformance](../ref_cert) verifies and tests the [Reference Implementation](../ref_impl) which follows the requirements and architecture defined in the CNTT [Reference Architecture](../ref_arch) and Reference Architecture describes the high level system components and its interactions by adhering to the requirements and expectations set by the CNTT [Reference Model](../ref_model) which sets the standards for infrastructure abstraction, compliance and verification. 
+The workstream dependency relationship in simple terms, [Reference Conformance](../ref_cert) verifies and tests the [Reference Implementation](../ref_impl) which follows the requirements and architecture defined in the CNTT [Reference Architecture](../ref_arch) and Reference Architecture describes the high level system components and its interactions by adhering to the requirements and expectations set by the CNTT [Reference Model](../ref_model) which sets the standards for infrastructure abstraction, compliance and verification. 
 
 For the standard release stabilisation, the pattern in each release follows RM must be the advanced version of RA. Similarly RA must be the advanced version of RI and simultaneously for RC.
 
