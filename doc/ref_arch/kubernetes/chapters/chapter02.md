@@ -241,7 +241,6 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.kcm.03` | General | The Architecture **must** support scheduling of workloads based on Enhanced Platform Awareness (EPA) features such as CPU Pinning, huge-pages and SR-IOV. |
 | `req.kcm.04` | General | The Architecture **must** include kubernetes artefacts (e.g., images, Helm charts, etc.) repository capabilities. |
 | `req.kcm.05` | General | The Architecture **should** prevent workloads from interfering with or observing other mutually ignorant workloads. |
-| `req.kcm.06` | General | The Architecture **must** support resource tagging. |
 | `req.kcm.08` | General | The Architecture **must** support workload resiliency. |
 | `req.kcm.09` | General | The Architecture **must** prevent workloads from starving other workloads of guaranteed resources. |
 -->
