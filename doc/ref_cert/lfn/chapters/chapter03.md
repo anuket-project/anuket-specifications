@@ -47,7 +47,7 @@ The following is a Requirements Traceability Matrix (RTM) mapping Test Case, and
 
 The RTM contains RM config (i.e. .conf) requirements listed “per profile”, followed by RA-1 requirements.  Requirements fall into 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
-For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to [RI-1 Chapter 3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md). 
+For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to [RI-1 Chapter 3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md).
 
 |#|Requirement|Description|Catalog|Status|MUST|Category|RI-1 Implemented (Yes/No)|RC-1 Coverage (project)|RC-1 Project To On-board|
 |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
@@ -218,6 +218,7 @@ the following test names must not be executed:
 
 | test rejection regular expressions        | reasons    |
 |-------------------------------------------|------------|
+| .\*api.identity.v3.test_oauth1_tokens     | oauth1     |
 | .\*scenario.test_federated_authentication | federation |
 | .\*identity.admin.v2                      | API v2     |
 | .\*identity.v2                            | API v2     |
