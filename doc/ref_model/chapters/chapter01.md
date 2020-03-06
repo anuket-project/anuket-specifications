@@ -83,7 +83,7 @@ This section introduces the high-level principles of infrastructure abstraction 
 
 1. A top-level objective of the Common Telco NFVI is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical. Two principles are introduced in support of these objectives:
     - **Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
-      - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI Profile, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
+      - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI deployment, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
       - Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.
 
     - **Create an additional Architecture only when incompatible elements are unavoidable:**
