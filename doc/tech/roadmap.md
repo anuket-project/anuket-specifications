@@ -97,9 +97,9 @@ The CNTT is collaboratively working with other standard bodies within the Open S
 - CNCF
 - ESTI NFV ISG
 
-The OpenStack based work stream in CNTT community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read Reference Implementation Chapter 01. 
+The OpenStack based work stream in CNTT community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read [Reference Implementation Chapter 01](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). 
 
-<p align="center"><img src="./figures/Relation_to_other_communities.png" alt="Relation to other communities" title="Relation to other communities" width="100%"/><b>Figure 4:</b> Relation to other communities</p>
+<p align="center"><img src="./figures/Relation_to_other_communities.png" alt="Relation to other communities" title="Relation to other communities" width="50%"/><b>Figure 4:</b> Relation to other communities</p>
 
 The Kubernetes based work stream in CNTT community works closely with CNCF by leveraging and evolving Kubernetes-based CNF continuous integration pipeline with automation installer and testing capabilities. The more details will come here or relate back to the description in the RI2.
 
