@@ -82,8 +82,10 @@ There are two different track in CNTT
 
 Each track follows the industry driven standards in the Reference Model as depicted in the below diagram.
 
+
 <p align="center"><img src="./figures/CNTT_Stable_3.0.png" alt="CNTT Stable 3.0 Portrait" title="CNTT Stable 3.0 Portrait
-" width="100%"/><b>Figure 3:</b> CNTT Stable 3.0 Portrait</p>
+" width="100%"/>
+ <p align="center"><b>Figure 3:</b> CNTT Stable 3.0 Portrait</p>
 
 
 <a name="4"></a>
