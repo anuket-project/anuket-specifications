@@ -121,7 +121,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 <a name="5.2.1"></a>
 ### 5.2.1 Virtual Compute
 
-**Table 5-7** depicts the features and configurations related to virtual compute for the 3 types of reference NFVI instances.
+**Table 5-7** depicts the features and configurations related to virtual compute for the 2 types of reference NFVI instances.
 
 | .conf | Feature | Type  | Basic | Network Intensive | 
 |------------------|----------------|----------------|----------------|----------------|
@@ -137,7 +137,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |
 -->
-<p align="center"><b>Table 5-7:</b> Virtual Compute features and configuration for the 3 types of SW profiles.</p>
+<p align="center"><b>Table 5-7:</b> Virtual Compute features and configuration for the 2 types of SW profiles.</p>
 
 **Table 5-8** will gather virtual compute acceleration features. It will be filled over time.
 
@@ -150,7 +150,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 <a name="5.2.2"></a>
 ### 5.2.2 Virtual Storage
 
-**Table 5-9** and **Table 5-10** depict the features and configurations related to virtual storage for the 3 types of reference NFVI instances.
+**Table 5-9** and **Table 5-10** depict the features and configurations related to virtual storage for the 2 types of reference NFVI instances.
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -167,7 +167,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y | Y |
 | nfvi.stg.cfg.004 | Storage with replication | Yes/No | N | Y |
 | nfvi.stg.cfg.005 | Storage with encryption |Yes/No | Y | Y |
-<p align="center"><b>Table 5-9:</b> Virtual Storage features and configuration for the 3 types of SW profiles.</p>
+<p align="center"><b>Table 5-9:</b> Virtual Storage features and configuration for the 2 types of SW profiles.</p>
 
 **Table 5-10** depicts the features related to Virtual storage Acceleration
 <!--
@@ -185,7 +185,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 <a name="5.2.3"></a>
 ### 5.2.3 Virtual Networking
 
-**Table 5-11** and **Table 5-12** depict the features and configurations related to virtual networking for the 3 types of reference NFVI instances.
+**Table 5-11** and **Table 5-12** depict the features and configurations related to virtual networking for the 2 types of reference NFVI instances.
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -207,7 +207,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No            | Y | Y |
 *[VNF Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to VNFC) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
 
-<p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
+<p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 2 types of SW profiles.</p>
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
