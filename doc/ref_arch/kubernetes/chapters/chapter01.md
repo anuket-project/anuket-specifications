@@ -9,9 +9,8 @@
 * [1.3 Principles](#1.3)
   * [1.3.1 Cloud Native.](#1.3.1)
 * [1.4 Scope](#1.4)
-* [1.5 Vision](#1.5)
-* [1.6 Approach](#1.6)
-* [1.7 Roadmap](#1.7)
+* [1.5 Approach](#1.5)
+* [1.6 Roadmap](#1.6)
 
 
 <a name="1.1"></a>
@@ -107,3 +106,4 @@ As Kubernetes evolves over time it will add new technologies and capabilities an
 
 
 > A populated roadmap view will be added here after the January 2020 release.
+
