@@ -1,22 +1,22 @@
 [<< Back](../../ref_model)
-# Glossary - Terminology
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
+# Glossary
+<p align="right"><img src="./figures/bogo_lsf.png" alt="scope" title="baldy" width="35%"/></p>
 
 ## Table of Contents
-* [11.1 Terminology](#11.1)
-  * [11.1.1 Software layers terminology](#11.1.1)
-  * [11.1.2 Hardware layers terminology](#11.1.2)
-  * [11.1.3 Operational and administrative terminology](#11.1.3)
-  * [11.1.4 Container Related Terminology](#11.1.4)
-  * [11.1.5 Other terminology](#11.1.5)
+* [1. Terminology](#1.0)
+  * [1.1 Software layers terminology](#1.1)
+  * [1.2 Hardware layers terminology](#1.2)
+  * [1.3 Operational and administrative terminology](#1.3)
+  * [1.4 Container Related Terminology](#1.4)
+  * [1.5 Other terminology](#1.5)
 
-<a name="11.1"></a>
-## 11.1 Terminology
+<a name="1.0"></a>
+# 1 Terminology
 
 To help guide the reader, this glossary provides an introduction to the terminology used within this document. These definitions are, with a few exceptions, based on the ETSI GS NFV 003 V1.4.1 (2018-08) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
-<a name="11.1.1"></a>
-### 11.1.1 Software Layer Terminology
+<a name="1.1"></a>
+## 1.1 Software Layer Terminology
 
 - **Network Function Virtualisation (NFV)**: The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 - **Network Function Virtualisation Infrastructure (NFVI)**: The totality of all hardware and software components used to build the environment in which a set of VAs are deployed.
@@ -50,8 +50,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
 - **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied/mapped to **NFVI** SW deployment.
 
-<a name="11.1.2"></a>
-### 11.1.2 Hardware Layer Terminology
+<a name="1.2"></a>
+## 1.2 Hardware Layer Terminology
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system.
   >_*Note:*_ This is a physical NFVI resource with the NF software.
@@ -64,8 +64,8 @@ efficiency of superscalar CPUs with hardware multithreading. SMT permits multipl
 better utilize the resources provided by modern processor architectures.
 
 
-<a name="11.1.3"></a>
-### 11.1.3 Operational and Administrative Terminology
+<a name="1.3"></a>
+## 1.3 Operational and Administrative Terminology
 
 - **Cloud service user**: Natural person, or entity acting on their behalf, associated with a cloud service customer that uses cloud services.
 >_*Note*_ Examples of such entities include devices and applications.
@@ -80,8 +80,8 @@ better utilize the resources provided by modern processor architectures.
 >_*Note:*_ A compute node can refer to a set of hardware and software that support the VMs or Containers running on it. 
 - **Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
 
-<a name="11.1.4"></a>
-### 11.1.4 Container Related Terminology
+<a name="1.4"></a>
+## 1.4 Container Related Terminology
 
 >_*Note:*_ Relevant terms are added here from RA2. Most of these term definitions are taken from [Kubernetes glossary](https://kubernetes.io/docs/reference/glossary) but in some cases should be made independent from Kubernetes as a specific container orchestration engine.
 
@@ -108,10 +108,16 @@ Terms not defined by Kubernetes:
 - **CaaS**:	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
 - **CaaS Manager**:	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
 
-<a name="11.1.5"></a>
-### 11.1.5 Other Referenced Terminology
+<a name="1.5"></a>
+## 1.5 Other Referenced Terminology
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
 - **Platform**: A cloud capabilities type in which the cloud service user can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)). 
 >_*Note:*_ For CNTT,  this includes the physical infrastructure, Operating Systems, virtualization/containerization software and other orchestration, security, monitoring/logging and life-cycle management software.
+
+- **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the NFVI, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
+
+- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
+
+- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)

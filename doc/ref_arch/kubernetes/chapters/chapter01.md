@@ -70,11 +70,6 @@ The definition above is very application centric and look at cloud native from t
 <a name="1.4"></a>
 ## 1.4 Scope
 
-The high level scope of the CNTT Reference Architectures can be seen in Figure 1-1 below.
-
-<p align="center"><img src="../figures/ch01_scope.png" alt="Description of the possible different levels of CNTT artefacts." title="Description of the possible different levels of CNTT artefacts" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
-
 The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-2:
 - Kubernetes capabilities required to conform to the Reference Model requirements
 - Support for CNFs that consist wholly of containers
