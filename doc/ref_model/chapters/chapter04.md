@@ -37,7 +37,7 @@ b = Functional Area<nfvi | vim>
 c = Type <(cap)ability | (pm)>  
 d = Serial Number  
 
-A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and and the next available identifier, globally across all chapters of the RM.
+A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and the next available identifier, globally across all chapters of the RM.
 > To-Do: Create tracking ss and add link here
 
 <a name="4.1.1"></a>
@@ -217,9 +217,9 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 | Ref | NFVI Measurement | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.pm.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
+| i.nfvi.pm.001 | Host CPU usage |  | Per Compute node. It needs to Maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM) and [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
 | i.nfvi.pm.002 | Virtual compute resource CPU usage |  | QoS enablement |
-| i.nfvi.pm.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
+| i.nfvi.pm.003 | Host CPU utilization |  | Per Compute node. It needs to map to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM) and [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
 | i.nfvi.pm.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
 | i.nfvi.pm.005 | Measurement of external storage IOPs | Yes/No |  |
 | i.nfvi.pm.006 | Measurement of external storage throughput | Yes/No |  |
@@ -475,7 +475,7 @@ This instance type is intended to be used for those applications that has high n
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
->_Interface types are aligned with ETSI NFV IFA 002 [4]._
+>_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
@@ -613,7 +613,7 @@ This section is temporary while the team defines and aligns on key terms used in
 
 - **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
 
-- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in ETSI NFV-TST009
+- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
 
 <!--
 The following draft definition placeholders are in support of the new PM schema/description. They are currently commented out as alignment discussions are in progress. They are to be published when their language is finalized. -MXS

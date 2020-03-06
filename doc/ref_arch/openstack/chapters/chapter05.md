@@ -45,6 +45,7 @@ For the purpose of compliance tests, this chapter also identifies the set of the
 | application_credentials | X             |
 | external_idp            |               |
 | federation              |               |
+| oauth1                  |               |
 | project_tags            | X             |
 | security_compliance     | X             |
 | trust                   | X             |
