@@ -43,7 +43,7 @@ A Release is:
 <a name="2.1"></a>
 ### High Level Roadmap
 <p align="center"><img src="./figures/cntt_roadmap.png" alt="scope" title="Roadmap" width="100%"/></p>
-<p align="center"><b>Figure 1:</b> CNTT Technical Specification Roadmap</p>
+<p align="center"><b>Figure 2:</b> CNTT Technical Specification Roadmap</p>
 
 <a name="2.2"></a>
 ### Detailed Roadmap
@@ -66,5 +66,40 @@ Please refer to individual [release plan](./release_notes/) and features for det
 <a name="3"></a>
 ## Dependencies between various Workstreams
 
+The various work streams in CNTT are 
+- Reference Model (RM)
+- Reference Architecture (RA)
+- Reference Implementation (RI) 
+- Reference Conformance (RC)
+
+The work stream dependency relationship in a simple terms, [Reference Conformance](../ref_cert) verifies and tests the [Reference Implementation](../ref_impl) which follows the requirements and architecture defined in the CNTT [Reference Architecture](../ref_arch) and Reference Architecture describes the high level system components and its interactions by adhering to the requirements and expectations set by the CNTT [Reference Model](../ref_model) which sets the standards for infrastructure abstraction, compliance and verification. 
+
+For the standard release stabilisation, the pattern in each release follows RM must be the advanced version of RA. Similarly RA must be the advanced version of RI and simultaneously for RC.
+
+There are two different track in CNTT
+- OpenStack based
+- Kubernetes based
+
+Each track follows the industry driven standards in the Reference Model as depicted in the below diagram.
+
+<p align="center"><img src="../figures/CNTT_Stable_3.0.png" alt="CNTT Stable 3.0 Portrait" title="CNTT Stable 3.0 Portrait
+" width="100%"/><b>Figure 3:</b> CNTT Stable 3.0 Portrait</p>
+
+
 <a name="4"></a>
 ## Dependencies with Industry Communities
+
+The CNTT is collaboratively working with other standard bodies within the Open Source industry. Some of the projects are 
+- OpenStack
+- Kubernetes
+- OPNFV
+- ONAP
+- CNCF
+- ESTI NFV ISG
+
+The OpenStack based work stream in CNTT community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read Reference Implementation Chapter 01. 
+
+<p align="center"><img src="../figures/Relation_to_other_communities.png" alt="Relation to other communities" title="Relation to other communities" width="100%"/><b>Figure 4:</b> Relation to other communities</p>
+
+The Kubernetes based work stream in CNTT community works closely with CNCF by leveraging and evolving Kubernetes-based CNF continuous integration pipeline with automation installer and testing capabilities. The more details will come here or relate back to the description in the RI2.
+
