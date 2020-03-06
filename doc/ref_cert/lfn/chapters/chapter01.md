@@ -5,16 +5,16 @@
 
 ## Table of Contents
 * [1.1 Introduction](#1.1)
-  * [1.1.1 Terminology](#1.1)
-  * [1.1.2 Relation to other communities](#1.1)
+  * [1.1.1 Terminology](#1.1.1)
 * [1.2 Scope](#1.2)
-* [1.3 Principles and Guidelines](#1.3)
-  * [1.3.1 Overarching Objectives and Goals](#1.3.1)
-* [1.4	Best Practices](#1.4)
-* [1.5 Verification methodologies](#1.5)
-*	[1.6 Assumptions & Dependencies](#1.6)
-*	[1.7 Results Collation & Presentation](#1.7)
-*	[1.8 Governance](#1.8)
+* [1.3 Relation to other communities](#1.3)
+* [1.4 Principles and Guidelines](#1.4)
+  * [1.4.1 Overarching Objectives and Goals](#1.4.1)
+* [1.5	Best Practices](#1.5)
+* [1.6 Verification methodologies](#1.6)
+*	[1.7 Assumptions & Dependencies](#1.7)
+*	[1.8 Results Collation & Presentation](#1.8)
+*	[1.9 Governance](#1.9)
 * [x.x Resources & References](#x.x)
 
 ## Synopsis
