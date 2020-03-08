@@ -467,7 +467,7 @@ Table 4-20: Reserved
 
 <a name="4.2.4.1"></a>
 #### 4.2.4.1 B Instances (Basic)
-This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute Flavours.
+This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface).
 
 <a name="4.2.4.2"></a>
 #### 4.2.4.2 N Instances (Network Intensive)
