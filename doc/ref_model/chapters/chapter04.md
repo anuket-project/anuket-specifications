@@ -467,11 +467,11 @@ Table 4-20: Reserved
 
 <a name="4.2.4.1"></a>
 #### 4.2.4.1 B Instances (Basic)
-This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute Flavours. This instance type is intended to be available in any data centre within any operator's network.
+This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute Flavours.
 
 <a name="4.2.4.2"></a>
 #### 4.2.4.2 N Instances (Network Intensive)
-This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
+This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
@@ -590,7 +590,7 @@ An entry in the infrastructure profile catalogue can be referenced using the fol
 `B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
 Whereas:
-- **B/N**: specifies the instance type (Basic, Network Intensive, and Compute Intensive)
+- **B/N**: specifies the instance type (Basic or Network Intensive)
 - **\<I opt>**: specifies the interface option of the instant.
 - **\<Flavour>**: specifies the compute Flavour.
 - **\<S ext>**: specifies an optional storage extension.
@@ -611,7 +611,7 @@ This section is temporary while the team defines and aligns on key terms used in
 
 - **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the NFVI, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
 
-- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
+- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance.
 
 - PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
 
