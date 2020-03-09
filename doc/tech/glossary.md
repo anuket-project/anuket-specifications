@@ -47,8 +47,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
   - **Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
   - **Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 - **Hypervisor**: A piece of software with management components that allows the user to partition the underlying physical resources and allocate them to Virtual Machines. Typically, the hypervisor is managed by a cloud management software such as OpenStack.
-- **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
-- **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied/mapped to **NFVI** SW deployment.
+- **Cloud Infrastructure Software Profile**: defines the behaviour, capabilities and metrics provided by a cloud infrastructure Software Layer
+- **Cloud Infrastructure Software Configuration**: a set of settings (Key:Value) that are applied/mapped to **cloud infrastructure** SW deployment.
 
 <a name="1.2"></a>
 ## 1.2 Hardware Layer Terminology
