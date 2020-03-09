@@ -44,7 +44,7 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 
 This section catalogs CNTT's high-level objectives for the Networking and Fabric Strategy. 
 
-> _List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
+> List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
 
 1. The implementation of Networking inside the HW Layer should not be visible to the VNF/CNF and should preferably not even be visible to the IaaS/CaaS
 1. Provide networks for L3 tenant, GWs, SDS, etc.
@@ -52,7 +52,7 @@ This section catalogs CNTT's high-level objectives for the Networking and Fabric
 1. Provide interoperability at layer demarcation/reference points within the NFVI. Ex.:
    * any RA couples to RM
    * like RI couples to RA
-   * like VIs couple to RA
+   * like VIs (Vendor's Implementations) couple to RA
    * Operators can design or procure a compatible fabric
 1. Concurrently supports containerized and virtualized coexistence for VNF->CNF cutovers, as well as protracted parallel operations
 1. Provide a version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration w/ a wide selection of fabric implementations
@@ -86,9 +86,9 @@ An example of the layering described above is depicted in **Figure 1-3**, where 
 
 As with most CNTT subsystems, responsibility for Objectives, Requirements, Guidelines, etc. is divided among the CNTT constituencies, as follows:
 - **Tech:** High-level strategy and other informative writings
-  - Ex. Executive summary, considerations, intent, vision, etc.
+  - e.g. Executive summary, considerations, intent, vision, etc.
 - **RM:** Generic modeling and abstraction
-  - Ex. Guidelines and other information applicable to all RAs
+  - e.g. Guidelines and other information applicable to all RAs
   - Overall theory of operation
 - **RA-x:** architecture, APIs and other service level details
 - **RI-x:** networking information for the relevant lab or POD
