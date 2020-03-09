@@ -76,7 +76,9 @@ The workstream dependency relationship in simple terms, [Reference Conformance](
 
 For the standard release stabilisation, the pattern in each release follows RM must be the advanced version of RA. Similarly RA must be the advanced version of RI and simultaneously for RC.
 
-There are two different track in CNTT
+There are two different tracks in CNTT
+- Virtualized workloads, deployed on OpenStack
+- Containerized workloads, deployed on Kubernetes
 - OpenStack based
 - Kubernetes based
 
