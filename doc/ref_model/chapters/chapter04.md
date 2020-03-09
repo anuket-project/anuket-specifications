@@ -387,19 +387,20 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 
 >_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
 
-.conf |vCPU ("c") |RAM ("r") |Local Disk ("d") | Management Interface
+.conf |vCPU ("c") <sup>2)</sup>|RAM ("r") <sup>2)</sup>|Local Disk ("d") | Management Interface
 -----|------------|----------|-----|-----
 .tiny |1 |512 MB |1 GB |1 Gbps
 .small |1 |2 GB |20 GB  |1 Gbps
 .medium |2 |4 GB |40 GB |1 Gbps
 .large |4 |8 GB |80 GB |1 Gbps
-.2xlarge* |8 |16 GB |160 GB |1 Gbps
-.4xlarge* |16 |32 GB |320 GB |1 Gbps
-.8xlarge* |32 |64 GB |640 GB |1 Gbps
+.2xlarge <sup>1)</sup> |8 |16 GB |160 GB |1 Gbps
+.4xlarge <sup>1)</sup> |16 |32 GB |320 GB |1 Gbps
+.8xlarge <sup>1)</sup> |32 |64 GB |640 GB |1 Gbps
 
 <p align="center"><b>Table 4-17:</b> Predefined Compute Flavours.</p>
 
-> _*These compute Flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller Flavours and adopt microservices-based designs for their VNFs_
+**1)** These compute Flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller Flavours and adopt microservices-based designs for their VNFs.<br>
+**2)** In Kubernetes based environments these are the resource requests limits of the pods.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
