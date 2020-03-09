@@ -34,7 +34,7 @@ The definition and intent of the terminology used throughout the documents is de
 
 <a name="1.2"></a>
 ## 1.2 Problem Statement
-Based on informal conversations with many operators and developers, there is a realization that there are significant technical, operational and business challenges to the development and deployment of VNF applications related to the lack of a common cloud infrastructure platform.  These include but are not limited to the following:
+Based on informal conversations with many operators and developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of VNF applications related to the lack of a common cloud infrastructure platform.  These include but are not limited to the following:
 
  - Higher development costs due to the need to develop Virtual Network Functions (VNF) on multiple custom platforms for each operator
  - Increased complexities due to the need to maintain multiple versions of applications to support each custom environment
