@@ -23,6 +23,10 @@
    * [6.3.12 Deployment control information](#6.3.12)
    * [6.3.13 Proxy information](#6.3.13)   
 
+* [6.4 Installer prerequisite ](#6.4)
+   * [6.4.1 Hardware validation ](#6.4.1)
+   * [6.4.2 Network configuration ](#6.4.2)
+
 <a name="6.1"></a>
 ## 6.1 Introduction
 
@@ -128,6 +132,7 @@ Besides it may include additional information pim username, password, rack_name,
 | device_name | String | Yes | e.g NFV-D-HDBNJ-02A-3503-G-02-M-SRV-01 |
 | system_diskname | String | No | system disk name |
 | system_disksize | String | No | system disk size |
+| role | String | No | computer,controller,storage |
 | pim_ip_address | String | Yes | PIM ip address |
 | pim_netmask | String | Yes | PIM netmask |
 | pim_username | String | Yes | PIM user |
@@ -291,3 +296,20 @@ Proxy information, this section could be empty if not needed.
 | password | String | Yes | password |
 
 <p align="center"><b>Table 6-3-13:</b> Proxy information.</p>
+
+
+<a name="6.4"></a>
+## 6.4 Installer prerequisite
+
+<a name="6.4.1"></a>
+### 6.4.1 Hardware validation
+User need check the BIOS setting, raid configuration, PXE boot order, boot mode, disk capacity for each server.
+User need check CPU, memory setting which can meet deployment requirements.
+User need validate the remote management(IPMI,ILO,BMC) accessibility.
+User need validate NIC quantity and configuration which can match the requirements.
+
+<a name="6.4.2"></a>
+### 6.4.2 Network configuration
+It's very important to make sure the necessary prerequisite settings should be ready before the deployment.
+For example, user need configurate necessary vlan on the switch before deployment.
+And user need obtain the valid ip address planned from lab administrator.

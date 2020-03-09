@@ -9,21 +9,20 @@
 * [1.3 Principles](#1.3)
   * [1.3.1 Cloud Native.](#1.3.1)
 * [1.4 Scope](#1.4)
-* [1.5 Vision](#1.5)
-* [1.6 Approach](#1.6)
-* [1.7 Roadmap](#1.7)
+* [1.5 Approach](#1.5)
+* [1.6 Roadmap](#1.6)
 
 
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-Kubernetes is a "portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available." [[kubernetes.io](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)]
+[Kubernetes](https://kubernetes.io/) is a "portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available." [[kubernetes.io](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)]. Kubernetes is developed as an open source project in the [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) repository of GitHub.
 
 This Reference Architecture for Kubernetes will describe the high level system components and their interactions, taking the goals and requirements of the [Reference Model](../../../ref_model/chapters/chapter01.md) and mapping them to real-world Kubernetes (and related) components. This document needs to be sufficiently detailed and robust such that it can be used to guide the production deployment of Kubernetes within an operator, whilst being flexible enough to evolve with and remain aligned with the wider Kubernetes ecosystem outside of Telco.
 
-To assist with this goal, we could create an "RA2 [Razor](https://en.wikipedia.org/wiki/Philosophical_razor)" along the lines of "if something is useful for non-Telco workloads, we should not include it only for Telco workloads". For example (thanks to @fzdarsky in #383) lets say we start with a vanilla Kubernetes (say, v1.16) feature set in the Reference Architecture, and we provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), we only then add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill this gap. If there are still gaps that cannot be filled by Kubernetes community technologies or extensions then we need to concisely document the requirement and take it to the relevant project maintainers.
+To assist with this goal, we could create an "RA2 [Razor](https://en.wikipedia.org/wiki/Philosophical_razor)" along the lines of "if something is useful for non-Telco workloads, we should not include it only for Telco workloads". For example, lets say we start with a vanilla Kubernetes (say, v1.16) feature set in the Reference Architecture, and we provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), we only then add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill this gap. If there are still gaps that cannot be filled by Kubernetes community technologies or extensions then we need to concisely document the requirement and take it to the relevant project maintainers.
 
-The Kubernetes Reference Architecture will also be used in conjunction with a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads of interest to the CNTT community. It is expected the Kubernetes Reference Architecture and Reference Implementation will be developed in parallel to OVP Phase 2, which is looking to build upon the work already in place with OpenStack to expand into the verification and certification of Kubernetes-based workloads.
+The Kubernetes Reference Architecture will also be used in conjunction with a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads of interest to the CNTT community. It is expected the Kubernetes Reference Architecture and Reference Implementation will be developed in parallel to OVP Phase 2, which is looking to build upon the work already in place with OpenStack to expand into the verification and conformance testing of Kubernetes-based workloads.
 
 <a name="1.2"></a>
 ### 1.2 Terminology
@@ -86,7 +85,7 @@ For the avoidance of doubt, the following is considered to be **out of scope**:
 - **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of CNTT. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
 
 <p align="center"><img src="../figures/ch01_scope_k8s.png" alt="Kubernetes Reference Architecture scope" title="Kubernetes Reference Architecture scope" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture scope</p>
+<p align="center"><b>Figure 1-2:</b> Kubernetes Reference Architecture scope</p>
 
 <a name="1.5"></a>
 ## 1.5 Approach
@@ -103,7 +102,8 @@ In addition, we will start with a description of interfaces and capabilities (th
 As Kubernetes evolves over time it will add new technologies and capabilities and so the CNTT Reference Architecture will need to evolve with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is every three months and at least the support cadence, which is nine months (latest release, plus two previous releases).
 
 <p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture Roadmap</p>
+<p align="center"><b>Figure 1-3:</b> Kubernetes Reference Architecture Roadmap</p>
 
 
 > A populated roadmap view will be added here after the January 2020 release.
+

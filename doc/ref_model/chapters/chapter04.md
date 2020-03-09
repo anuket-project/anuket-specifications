@@ -37,7 +37,7 @@ b = Functional Area<nfvi | vim>
 c = Type <(cap)ability | (pm)>  
 d = Serial Number  
 
-A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and and the next available identifier, globally across all chapters of the RM.
+A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and the next available identifier, globally across all chapters of the RM.
 > To-Do: Create tracking ss and add link here
 
 <a name="4.1.1"></a>
@@ -191,7 +191,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.cap.016 | CPU overbooking | 1:N | <definition update scheduled> |
+| i.nfvi.cap.016 | CPU allocation ratio | N:1 | Number of virtual cores per physical core; also known as CPU overbooking ratio |
 | i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface) |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
@@ -217,9 +217,9 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 | Ref | NFVI Measurement | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.pm.001 | Host CPU usage |  | Per Compute node. It needs to Maps to ETSI NFV-TST 008[1] clause 6, processor usage metric (NFVI exposed to VIM) and ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
+| i.nfvi.pm.001 | Host CPU usage |  | Per Compute node. It needs to Maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM) and [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
 | i.nfvi.pm.002 | Virtual compute resource CPU usage |  | QoS enablement |
-| i.nfvi.pm.003 | Host CPU utilization |  | Per Compute node. It needs to map to ETSI NFV-IFA 027 Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
+| i.nfvi.pm.003 | Host CPU utilization |  | Per Compute node. It needs to map to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM) and [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
 | i.nfvi.pm.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
 | i.nfvi.pm.005 | Measurement of external storage IOPs | Yes/No |  |
 | i.nfvi.pm.006 | Measurement of external storage throughput | Yes/No |  |
@@ -395,6 +395,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 .large |4 |8 GB |80 GB |1 Gbps
 .2xlarge* |8 |16 GB |160 GB |1 Gbps
 .4xlarge* |16 |32 GB |320 GB |1 Gbps
+.8xlarge* |32 |64 GB |640 GB |1 Gbps
 
 <p align="center"><b>Table 4-17:</b> Predefined Compute Flavours.</p>
 
@@ -466,15 +467,15 @@ Table 4-20: Reserved
 
 <a name="4.2.4.1"></a>
 #### 4.2.4.1 B Instances (Basic)
-This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface) with a wide range of compute Flavours. This instance type is intended to be available in any data centre within any operator's network.
+This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface).
 
 <a name="4.2.4.2"></a>
 #### 4.2.4.2 N Instances (Network Intensive)
-This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps). This instance type is more intended for VNFs and is expected to be available in regional (distributed) data centres and more towards the access networks.
+This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
->_Interface types are aligned with ETSI NFV IFA 002 [4]._
+>_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
@@ -485,6 +486,7 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
+<!--
 <a name="4.2.4.3"></a>
 #### 4.2.4.3 C Instances (Compute Intensive)
 This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
@@ -517,9 +519,35 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 
 > _*VNFs are expected to use the minimum number of interfaces and adopt Microservice design principles._
 
+-->
 <a name="4.2.5"></a>
 ### 4.2.5 Instance Capabilities Mapping
 
+| Ref | B Instance | N Instance | Notes |
+|----------------------|----------------------------|----------------------------|-------|
+| `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
+| `e.nfvi.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.nfvi.res.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.nfvi.res.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> |  |
+| `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> |   |
+| `e.nfvi.per.cap.001`<br />(CPU pinning support) | No | Yes |  Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
+| `e.nfvi.per.cap.002`<br />(NUMA support) | No | Yes |  |
+| `e.nfvi.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | |
+| `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | |
+| `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No |  |
+| `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No |  |
+| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E |  |
+| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes |  Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
+| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 |  Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes |  |
+| `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes |  Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes |  Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
+| `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes |  |
+| `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes |  |
+| `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | |
+| `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | |
+
+<!--
 | Ref | B Instance | N Instance | C Instance | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
 | `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
@@ -535,7 +563,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
 | `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
 | `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.nfvi.sla.cap.001`<br />(CPU overbooking) | 1:4 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
@@ -543,7 +571,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | Yes | |
 | `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
-
+-->
 
 <p align="center"><b>Table 4-24:</b> Mapping of NFVI Capabilities to Instance Types</p>
 
@@ -559,10 +587,10 @@ _**Comment:** To be worked on._
 #### 4.2.7.1 Naming convention
 An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
 
-`B/N/C <I opt> . <Flavour> . <S ext> . <A ext>`
+`B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
 Whereas:
-- **B/N/C**: specifies the instance type (Basic, Network Intensive, and Compute Intensive)
+- **B/N**: specifies the instance type (Basic or Network Intensive)
 - **\<I opt>**: specifies the interface option of the instant.
 - **\<Flavour>**: specifies the compute Flavour.
 - **\<S ext>**: specifies an optional storage extension.
@@ -583,9 +611,9 @@ This section is temporary while the team defines and aligns on key terms used in
 
 - **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the NFVI, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
 
-- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. 
+- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance.
 
-- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in ETSI NFV-TST009
+- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
 
 <!--
 The following draft definition placeholders are in support of the new PM schema/description. They are currently commented out as alignment discussions are in progress. They are to be published when their language is finalized. -MXS

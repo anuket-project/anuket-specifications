@@ -20,6 +20,15 @@ While this Reference Architecture is being developed, Gaps will be identified th
 - Multi-Tenancy
 - K8s as VM based VNF Orchestrator
 
+<a name="8.2.0"></a>
+### 8.2.0 Gap template
+
+> **Related requirements:** List the requirement references `req.abc.xyz.00` from RA2 or RM which this gap tries to address.
+
+> **Baseline project:** Describe against which upstream project and which version of the project the gap exists e.g. _Kubernetes v1.17_. If the gap is not against any specific upstream project, state "none".
+
+> **Gap description:** Describe which functionality described in the related requirements is currently missing in the implementations you're aware of. Include references to work ongoing in the target project, which may adress the gap.
+
 <a name="8.2.1"></a>
 ### 8.2.1 Container run-time Interfaces towards NFVI resources
 
@@ -72,6 +81,15 @@ While this Reference Architecture is being developed, Gaps will be identified th
 > For example, today in existing networks L3 VPNs are commonly used for traffic separation (e.g. separate L3 VPN for signalling, charging, LI, O&M etc.). CNFs will have to interwork with existing network elements and therefore a K8s POD will somehow need to be connected to a L3 VPN. Today this is only possible via Multus (or DANM), however typically there is a network orchestration responsibility to connect the network interface to a gateway router (where the L3 VPN is terminated). This network orchestration is not taken care of by K8s, nor there is a production grade solution in the open source space to take care of this.
 >
 > Note: with an underlying IAAS this is possible, but then it introduces (undesirable) dependency between workload orchestration in K8s and infrastructure orchestration in IAAS.
+
+<a name="8.2.8"></a>
+### 8.2.8 HW topology aware hugepages
+
+> **Related requirements:** `nfvi.com.cfg.004` and `nfvi.com.cfg.002`
+
+> **Baseline project:** _Kubernetes v1.17_
+
+> **Gap description:** Allocation of hugepages from the same NUMA node as other resources of a Pod. To support this [cAdvisor needed a change to support NUMA](https://github.com/google/cadvisor/pull/2304). Changes in Kubernetes are planned to be implemented in the [Node Topology Manager](https://github.com/kubernetes/enhancements/issues/693).
 
 
 <a name="8.3"></a>

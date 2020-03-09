@@ -1,114 +1,77 @@
 [<< Back](../)
 
-# 8. VNF Testing Cookbook
+# 8. Gap analysis and Development
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [8.1 Introduction](#8.1)
-* [8.2 Relevant Community Projects](#8.2)
-* [8.3 Relevant Community Projects and Initiatives](#8.3)
+* [8.2 Openstack Release Comparisons](#8.2)
+* [8.3 Automation Gaps](#8.3)
+* [8.4 Test Case Gaps](#8.4)
+* [8.5 Framework Gaps](#8.5)
 
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-Define the purpose of the chapter which is to:
--	Identify Framework Needs, Goals, and Dependencies
-- Define Opensource Integration (OPNFV, OVP, Functest, CVC, others)
-- Provide Automation Toolchain (list, topology, flow)
+- Describe the purpose of this chapter, which includes, but not limited to:
+- Test Case Gaps (analysis)
+-	Automation Gaps
+-	Open Stack release Comparisons (Ocata, Pike, Queens, Stein, etc)
 
 <a name="8.2"></a>
-## 8.2 Relevant Community Projects.
+## 8.2 Openstack Release Comparisons
 
+- Provide detail, perhaps in table format, comparing Openstack releases based on Pike baseline for CNTT RI-1 (e.g. Ocata, Pike, Queens, Stein, etc)
 
 <a name="8.3"></a>
-## 8.3 VNF Testing Cookbook.
+## 8.3 Automation Gaps
 
-<p align="center"><img src="../figures/rc1_cookbook_vnf.png" alt="VNF_cookbook" title="VNF Cookbook" width="60%"/></p>
-<p align="center"><b>Figure 1-3:</b> VNF Testing Integrated Framework.</p>
+At the time of writing,
+[the yaml file](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml)
+configuring all RI Jenkins jobs are postprocessed by hand which requires lots
+of skills especially about
+[Jenkins job builder](https://docs.openstack.org/infra/jenkins-job-builder/).
+The RI Cookbook will be deeply simplified if the deployment scripts are
+delivered in a new
+[Xtesting](https://xtesting.readthedocs.io/en/latest/)-based container as
+proposed in
+[new RI deployment container](https://github.com/cntt-n/CNTT/issues/828).
+In addition to avoid configuring the jumphost, it will allow generating the
+Jenkins jobs via a simple yaml file and
+[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting).
 
-As detailed in the CNTT RC chapter 05 on E2E VNF test platform requirements,
-ONAP VNF Test Platform (VTP) helps to perform the VNF certification process by
-addressing those requirements. And following sections provides required
-guidelines and details for platform and test cases.
+<a name="8.4"></a>
+## 8.4 Test Case Gaps
 
-### 8.3.1 Platform Architecture
+OPNFV has developed many test cases in the different
+[OPNFV test projects](https://wiki.opnfv.org/display/testing/TestPerf) which
+can quickly improve RC. As highlighted in OPNFV Marketing Goals for 2020 and
+listed in
+[RC Test case integration requirements]({{ "/doc/ref_cert/lfn/chapters/chapter02.html" | relative_url }}),
+porting all the existing testcases to Xtesting will unify the test case
+execution and simplify the test integration as required by RC. Here are all the
+related issues:
+- [port YardStick testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/509)
+- [port Bottlenecks to Xtesting](https://github.com/cntt-n/CNTT/issues/511)
+- [port StorPerf testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/673)
+- [port NFVbench testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/865)
 
-Provides details on the architecture, components and it's responsibilities.
+Here are the possible new test cases which could be integrated in the existing
+OPNFV projects to improve RC:
 
-![](media/f3b0c214bc58c44406fd5b801d3dfc88.png)
+| issues                                                                                            | requirements      |
+|---------------------------------------------------------------------------------------------------|-------------------|
+| [update and integrate heat-tempest-plugin in Functest](https://github.com/cntt-n/CNTT/issues/483) | Heat API testing  |
+| [integrate KloudBuster in Functest](https://github.com/cntt-n/CNTT/issues/508)                    | disk benchmarking |
+| [add tempest-stress in Functest](https://github.com/cntt-n/CNTT/issues/916)                       | stress testing    |
 
--   **Test Controller**: For every feature supported in VTP, Test controller
-    provides required REST API along with user authentication and authorization
-    based on given tenant?.
+<a name="8.5"></a>
+## 8.5 Framework Gaps
 
--   **Agile Test Orchestrator**: Dynamically allows to on-board and execute the
-    test cases and test flows across different run-time environment on given
-    System under test (SUT) along with required supported system in place.
-
--   **Portal & CLI**: To operate and manage the VTP features, Portal? provides
-    web 2.0 based graphical user interface along with Command line interface.
-
--   **Test case plug-ins**: Test cases are on-boarded into the system as
-    independent plug-ins (developed using different programming/scripting
-    language) and/or plain text yaml file for those supported as profile in VTP
-    (such as HTTP, SNMP, etc)
-
--   **Repository**: Provides version controlled repository for persisting
-    various aspects of the VTP such as artifacts, results, reports, etc.
-
-*? - Feature in-progress*
-
-### 8.3.2 Platform administrator guide
-
-Provides detail on installation, configuration, un-installation operations.
-
-VTP is provided a script for performing installation and mange the installed VTP
-services as below:
-
-[vpt_install.sh](https://github.com/onap/vnfsdk-refrepo/blob/master/vnfmarket-be/deployment/install/vtp_install.sh)
-
-**--download** : It will download all required artifacts into /opt/vtp_stage
-
-**--install** : It will install VTP (/opt/controller) and CLI (/opt/oclip)
-
-**--start** : It will start VTP controller as tomcat service and CLI as oclip
-service
-
-**--verify** : It will verify the setup is done properly by running some test
-cases
-
-**--uninstall** : It will stop and uninstall the VTP
-
-**--clean** : It will remove the downloaded artifacts
-
-Customize the download URL as below from latest snapshot or release onap
-repository
-
-export OCLIP_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/cli/cli-zip/4.0.0-SNAPSHOT/cli-zip-4.0.0-20190904.095516-170.zip"
-
-export VTP_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/refrepo/vnf-sdk-marketplace/1.3.3-SNAPSHOT/vnf-sdk-marketplace-1.3.3-20190903.092849-18.war"
-
-export CSAR_VALIDATE_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/validation/csarvalidation-deployment/1.2.2-SNAPSHOT/csarvalidation-deployment-1.2.2-20190904.082836-6.zip"
-
-export CSAR_VALIDATE_JAR_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/validation/validation-csar/1.2.2-SNAPSHOT/validation-csar-1.2.2-20190904.082829-6.jar"
-
-### 8.3.3 Test case development guide
-
-Provides details on how to develop new test cases and packages them for
-deploying.
-
-[More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
-
-### 8.3.4 Test case model guide
-
-Model the required test cases for various scenario, which could help in
-standardizing the test cases for various NF, different compliance and multiple
-MANO/NFVi based LCM operations.
-
-[More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
-
-### 8.3.5 Test case administrator guide
-
-Provides detail on installation, configuration, un-installation operations
-
-[More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
+As proposed in [port VTP test cases to Xtesting](https://github.com/cntt-n/CNTT/issues/917),
+VTP selected in
+[VNF E2E C&V Framework ]({{ "/doc/ref_cert/lfn/chapters/chapter05.html" | relative_url }})
+requires small adaptations to fully fulfill the current
+[RC Test case integration requirements]({{ "/doc/ref_cert/lfn/chapters/chapter02.html" | relative_url }}).
+It seems trivial changes as VTP proposed a REST API but will ensure that both
+NFVI and VNF testing can be executed in the same CI toolchain very easily.

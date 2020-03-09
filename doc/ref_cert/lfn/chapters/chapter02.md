@@ -1,17 +1,17 @@
 [<< Back](../)
 
-# 2. NFVI Testing Framework Requirements
+# 2. NFVI Conformance Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
 * [2.1.1 RI and RC CI/CD toolchains](#2.1.1)
 * [2.2 Methodology](#2.2)
-* [2.3 Certification Strategy & Vehicle](#2.3)
+* [2.3 Conformance Strategy & Vehicle](#2.3)
 * [2.4 Profiles Reference](#2.4)
-* [2.5 Compliance, Verification, and Certification](#2.5)
+* [2.5 Compliance, Verification, and Conformance](#2.5)
 * [2.6 Entry & Exit Criteria](#2.6)
-* [2.7 Frameworks](#2.7)
+* [2.7 Framework Requirements](#2.7)
   * [2.7.1 Best Practices (General)](#2.7.1)
   * [2.7.2 Test case integration requirements](#2.7.2)
   * [2.7.3 Testing](#2.7.3)
@@ -19,11 +19,23 @@
     * [2.7.3.2 Test Harnessess](#2.7.3.2)
     * [2.7.3.3 Test Results](#2.7.3.3)
   * [2.7.4 Badging](#2.7.4)
+* [2.8 NFVI Test Cases Requirements](#2.7)
+  * [2.8.8.1 Generic Requirements](#2.8.2)
+  * [2.8.3 Requirement Types](#2.8.3)
+  * [2.8.4 Profile Catalog](#2.8.4)
+  * [2.8.5 Software & Hardware Reference](#2.8.5)
+  * [2.8.6 Options & Extensions](#2.8.6)
+  * [2.8.7 Measurement Criteria](#2.8.7)
+    * [2.8.7.1 Storage and IOPS](#2.8.7.1)
+  * [2.8.8 Measurement Types](#2.8.8)
+    * [2.8.8.1 Performance Measurements](#2.8.8.1)
+    * [2.8.8.2 Resiliency Measurements](#2.8.8.2)
+  * [2.8.9 NFVI Test Cases](#2.8.9)
 
 ## Synopsis:
-Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification whereas CNTT will provide the badging for NFVI certification in accordance with the certification process as explained in this chapter.
+Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification whereas CNTT will provide the badging for NFVI conformance in accordance with the conformance process as explained in this chapter.
 
-For the purposes of this chapter, NFVI+VNF testing will be performed for Verification, Validations, ultimately leading to Certifications indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implemented, NFVI. Similarily, VNFs will be checked for Compliance and Validations against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture. The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
+For the purposes of this chapter, NFVI+VNF testing will be performed for Verification, Validations, ultimately leading to conformances indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implemented, NFVI. Similarily, VNFs will be checked for Compliance and Validations against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture. The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
 
 In summary, NFVI+VNF testing will be performed for Verification and Validation purposes.
 
@@ -31,7 +43,7 @@ Verification will be used to indicate conformance to design requirement specific
 
 Validations is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.
 
-All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI Certification.
+All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI conformance.
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -53,14 +65,14 @@ test results in the
 and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
 
-The CNTT compliance and certification processes will leverage on existing OPNFV
+The CNTT compliance and conformance processes will leverage on existing OPNFV
 testing knowledge (projects) and experience (history) and then will conform
 to the overall toolchain design already in-place. The RC toolchain only
 requires for the local deployment of the components instead of leveraging on
 the common OPNFV centralized services. But the interfaces remain unchanged
 mainly leveraging on jenkins jobs, the common test case execution, the test
 result DB and the S3 protocol to publish the artifacts. It's worth mentioning
-that dumping all results and logs required by certification is already in place
+that dumping all results and logs required by conformance is already in place
 in CIRV (see
 [cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
 Functest daily jobs (see
@@ -74,17 +86,17 @@ via Functest.
 
 <a name="2.2"></a>
 ## 2.2 Methodology
-The NFVI provided by hardware vendors is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. CNTT recommends RA1/RA2 to be used as a reference architecture for NFVI certification. This  would provide a set of standard interaces to create resources on NFVI. Below step by step process illustrates the NFVI certification methodology:
+The NFVI provided by hardware vendors is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. CNTT recommends RA1/RA2 to be used as a reference architecture for NFVI conformance. This  would provide a set of standard interaces to create resources on NFVI. Below step by step process illustrates the NFVI conformance methodology:
 * CNTT RA1/RA2 is deployed on NFVI that needs to be certified.
-* A set of tests are run on NFVI to determine the NFVI readiness for certification process.
+* A set of tests are run on NFVI to determine the NFVI readiness for conformance process.
 * Golden KPIs are taken as a reference.
-* A set of tests are run on the target NFVI (target for certification).
-* KPIs obtained from the target NFVI are collected and submitted to certification portal.
-* The NFVI KPIs are reviewed and compared with Golden KPIs to determine if the certification badge is to be provided to NFVI or not.
+* A set of tests are run on the target NFVI (target for conformance).
+* KPIs obtained from the target NFVI are collected and submitted to conformance portal.
+* The NFVI KPIs are reviewed and compared with Golden KPIs to determine if the conformance badge is to be provided to NFVI or not.
 * Perform VNF interoperability verifications against an implementation of CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem. Third-party test platforms may also be leveraged, if desired.
 
-<p align="center"><img src="../figures/RC_CertificationMethodology.jpg" alt="Certification Methodology" title="Certification Methodology" width="100%"/></p>
-<p align="center"><b>Figure:</b> Certification Methodology</p>
+<p align="center"><img src="../figures/RC_CertificationMethodology.jpg" alt="conformance Methodology" title="Conformance Methodology" width="100%"/></p>
+<p align="center"><b>Figure:</b> Conformance Methodology</p>
 
 Verification Methodologies to be implemented, from a process perspective include:
 * Engineering package validations will be performed against targeted infrastructure/architecture.
@@ -95,7 +107,7 @@ Verification Methodologies to be implemented, from a process perspective include
   * Submit standard documentation
   * Adhere to security compliance
 * Exit Criteria Guidelines will be satisfied prior to issuance of OPNFV compliance badges.
-  * Certification for Tenants (OVP Ecosystem)
+  * Conformance for Tenants (OVP Ecosystem)
   * Operational Considerations (Telco Perspective)
   * End User Considerations (Telco Perspective)
 * Test runs using reference model VNFs will validate RA chosen by the VNF-supplier meets developer needs.
@@ -104,13 +116,13 @@ Verification Methodologies to be implemented, from a process perspective include
 * Leverage test harnesses from existing open source projects where practical, and applicable.
 
 <a name="2.3"></a>
-## 2.3 Certification Strategy & Vehicle
-In order to begin the certification process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in CNTT RI. Once the target NFVI passes these tests, it would become a candidate for NFVI certification. If NFVI fails the tests, it will not be move to next workflow for certification. NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of CNTT RM](../../../ref_model/chapters/chapter07.md).
+## 2.3 Conformance Strategy & Vehicle
+In order to begin the Conformance process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in CNTT RI. Once the target NFVI passes these tests, it would become a candidate for NFVI Conformance. If NFVI fails the tests, it will not be move to next workflow for Conformance. NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of CNTT RM](../../../ref_model/chapters/chapter07.md).
 
 The three part verificaiton process includes NFVI Manifest Validations, Emprical Baseline measurements against targeted VNF families, and Candidate VNF verifications. More specifically,
 * NFVI Verification (Compliance): NFVI is the SUT, ensuring NFVI is compliant with specs of RM and RA accomplished with Manifest Validations (performed via Echo Tests)
 * Empirical Validation with Reference VNF (Validation): NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement
-* Candidate VNF Certification (Validation & Performance): VNF is the SUT, ensuring VNFs operate with RM and RA leveraging VVP/CVP/VFNSDK Test Suites
+* Candidate VNF Conformance (Validation & Performance): VNF is the SUT, ensuring VNFs operate with RM and RA leveraging VVP/CVP/VFNSDK Test Suites
 * Security: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks (Refer to CNTT Chapter 7 Security for additional test/verification details)
 Validations are performed against an Infrastructure Profile Catalog, VNF performance profile, and targeted VNF class or family for baseline measurements.
 
@@ -139,27 +151,27 @@ Different vendors have different types of VNFs to serve different use-cases. A V
 * Network intensive (N) profile offerring low latency and high networking throughout
 Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI.
 
-To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI certification based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
- * Certify Vendor NFVI Hardware solution: This allows for certification of only NFVI.
- * Certify Vendor NFVI Hardware and Software Solution: This allows for certification for NFVI running a particular VNF.
+To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI Conformance based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
+ * Certify Vendor NFVI Hardware solution: This allows for Conformance of only NFVI.
+ * Certify Vendor NFVI Hardware and Software Solution: This allows for Conformance for NFVI running a particular VNF.
 
 <a name="2.5"></a>
-## 2.5 Compliance, Verification, and Certification
-The below set of steps define the compliance, verification and certification process for NFVI
+## 2.5 Compliance, Verification, and Conformance
+The below set of steps define the compliance, verification and Conformance process for NFVI
 * Based on VNF's requirements, NFVI profile is selected - B, C, N
-* NFVI readiness is checked for certification.
+* NFVI readiness is checked for Conformance.
 * The test VNFs are on-boarded using automation scripts on the NFVI.
 * VNF on-boarding is validated by running functional tests to ensure that the on-boarding is successful.
 * VNF performance tests are executed and NFVI KPIs are recorded during the tests.
-* KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI certification.
-* If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge.
-* If NFVI KPIs do not meet Golden KPIs, no certification is provided.
+* KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI Conformance.
+* If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge.
+* If NFVI KPIs do not meet Golden KPIs, no Conformance is provided.
 <p align="center"><img src="../figures/RC_Ref_NFVI_Profiles.jpg" alt="Reference NFVI Profiles Implementation" title="Reference NFVI Profiles Implementation" width="100%"/></p>
 <p align="center"><b>Figure:</b> Reference NFVI Profiles Implementation</p>
 
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
-**Entry criteria**: Before entering into NFVI certification, NFVI needs to satisfy the following requirements as entry pass:
+**Entry criteria**: Before entering into NFVI Conformance, NFVI needs to satisfy the following requirements as entry pass:
 * Design & Requirements
   * Design, Configuration, Features, SLAs, and Capability documentation complete
   * Users stories / Adherence to CNTT Model principles and guidelines
@@ -187,42 +199,42 @@ The below set of steps define the compliance, verification and certification pro
   * Test to ensure quota against submitted request for the respective tenant
   * Test to ensure custom flavours against submitted request for respective tenants
 
-**Exit criteria**: NFVI certification testing should completed with following exit criteria:
+**Exit criteria**: NFVI Conformance testing should completed with following exit criteria:
 * All mandatory test cases should pass.
 * Test results collated, centralized, and normalized, with a final report generated showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement Success/Fail, etc), along with traceability to a functional, or non-functional, requirement.
 
 <a name="2.7"></a>
-## 2.7 Frameworks
+## 2.7 Framework Requirements
 
-The NFVI certification framework deals with the process of testing NFVI in below three areas:
+The NFVI Conformance framework deals with the process of testing NFVI in below three areas:
 * Compliance: The NFVI needs to comply to CNTT RA1/RA2.
 * Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
 * Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
-The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI certification. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a certification badge. If NFVI KPIs do not meet Golden KPIs, no certification badge is provided.
+The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI Conformance. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge. If NFVI KPIs do not meet Golden KPIs, no Conformance badge is provided.
 
 <a name="2.7.1"></a>
 ### 2.7.1 Best Practices (General)
-The NFVI certification framework will be guided by the following core principles:
+The NFVI Conformance framework will be guided by the following core principles:
 -   Implementing, and adhering to, Standardized Test Methodology / flow, Test Plan, and Test Case Suites, which promotes scalability using repeatable processes.
 -   Integration with Automated Tool-Chains, such as XTesting or Dovetail, for continuous deployment, validation, and centralization of test harnesses and results visualization.
-- Alliance and execution of OVP flows and methodologies, which supports common structures for code, artifact generation and repository, certification criteria, etc.)
+- Alliance and execution of OVP flows and methodologies, which supports common structures for code, artifact generation and repository, Conformance criteria, etc.)
 -   Where possible, leveraging ONAP Network and Service Models, with identified VNF-specific parameters
--   Utilizing Standard certification criteria.
+-   Utilizing Standard Conformance criteria.
 -   Defining CNTT reference architecture (RA) as scenarios, and having all test cases for the RA be involved in OVP (could also be addressed in OVP as CNTT test)
 -   Add test cases from operators, which operators already tested in their environment
 
 <a name="2.7.2"></a>
 ### 2.7.2 Test case integration requirements
 
-To reach all goals (verification, compliance and certification) expected by
+To reach all goals (verification, compliance and Conformance) expected by
 CNTT, all test cases must be delivered as
 [Docker containers](https://www.docker.com/) and meet the requirements to
 simplify the CI toolchain setups:
 - the common test case execution
 - the unified way to manage all the interactions with the CI/CD components and
   with third-parties (e.g. dump all test case logs and results for
-  certification)
+  Conformance)
 
 For their parts, the Docker containers simply enforce that the test cases are
 delivered with all runtime dependencies. Then it prevents lots of manual
@@ -256,7 +268,7 @@ projects:
 
 <a name="2.7.3"></a>
 ### 2.7.3 Testing
-Testing for NFVI certification falls under three broad categories - Compliance, Validation and Performance. Target NFVI for certification needs to pass all these tests in order to obtain the certification badge.
+Testing for NFVI Conformance falls under three broad categories - Compliance, Validation and Performance. Target NFVI for Conformance needs to pass all these tests in order to obtain the Conformance badge.
 
 <a name="2.7.3.1"></a>
 #### 2.7.3.1 Test Categories
@@ -267,7 +279,7 @@ The following five test categories have been identified as **minimal testing req
  4. Control plane components: Validations for RabbitMQ, Ceph, MariaDB etc. and OpenStack components like Nova/Glance/Heat etc. APIs.
  5. Security: Validation for use RBAC roles and user group policies. See [Chapter 7](./chapter07.md) for complete list.
 
-The following **Optional Test Categories** which can be considered by the Operator, or Supplier, for targeted validations to complement required testing for certification:
+The following **Optional Test Categories** which can be considered by the Operator, or Supplier, for targeted validations to complement required testing for Conformance:
 
  - On-Boarding (MANO agnostic)
  - VNF Functional Testing
@@ -284,14 +296,14 @@ The following **Optional Test Categories** which can be considered by the Operat
 
 <a name="2.7.3.2"></a>
 #### 2.7.3.2 Test Harnesses
-In addition to General Best Practices for NFVI certification, the following Quality Engineering (QE) standards will be applied when defining and delivering test scenarios for certification:  
+In addition to General Best Practices for NFVI Conformance, the following Quality Engineering (QE) standards will be applied when defining and delivering test scenarios for Conformance:  
 1.  Standardized test methodologies / flows capturing requirements from RA's, goals and scenarios for test execution, and normalizing test results.
 2.  Establishing, and leveraging, working test-beds which can be referenced in subsequent test scenario designs.  
 3.  Leveraging standardized cloud-based facilities such as storage, IAM, etc.
 4.  Test Script libraries need to enable Data-Driven testing of On-Boarding, Instantiation, etc.
 5.  Standards base Test Plan and Test Case suite needs to include sample VNFs, CSAR, and Automated Test Cases.
 6.  Documentation needs to be dynamic, and consumable.
-7.  Harnesses need to apply a “Just add Water” deployment strategy, enabling test teams to readily implement test harnesses which promotes certification scalability.
+7.  Harnesses need to apply a “Just add Water” deployment strategy, enabling test teams to readily implement test harnesses which promotes Conformance scalability.
 
 <a name="2.7.3.3"></a>
 #### 2.7.3.3 Test Results
@@ -304,7 +316,7 @@ In addition to General Best Practices for NFVI certification, the following Qual
  - **Performance-based Pass/Fail** determination will be made by comparing Non-Functional (NFR) NFVI KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. See [Chapter 4 of RM](../../../ref_model/chapters/chapter04.md) for a complete list of metrics and requirements.
  - **Measurement Results**.  Baseline Measurements will be performed when there are no benchmark standards to compare results, or established FRs/NFRs for which to gauge application / platform behavior in an integrated environment, or under load conditions.  In these cases, test results will be executed to measure the application, platform, then prepare FRs/NFRs for subsequent enhancements and test runs.  
 
- **Collation | Portal**.  The following criteria will be applied to the collation and presentation of test-runs seeking NFVI certification:   
+ **Collation | Portal**.  The following criteria will be applied to the collation and presentation of test-runs seeking NFVI Conformance:   
 
  - RA number and name (e.g. RA-1 OpenStack)
  - Version of software tested (e.g. OpenStack Ocata)
@@ -312,12 +324,12 @@ In addition to General Best Practices for NFVI certification, the following Qual
  - Clear time stamps of test runs will be provided.
  - Identification of test engineer / executor.
  - Traceability to requirements.
- - Summarized conclusion if conditions warrant test certification (see Badging Section).
- - Portal contains links to certification badge(s) received.
+ - Summarized conclusion if conditions warrant test Conformance (see Badging Section).
+ - Portal contains links to Conformance badge(s) received.
 
 <a name="2.7.4"></a>
 ### 2.7.4 Badging
-**Defined**.  _Badging_ refers to the granting of a certification badge by the OVP to Suppliers/Testers of CNTT NFVI upon demonstration the testing performed confirms:
+**Defined**.  _Badging_ refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of CNTT NFVI upon demonstration the testing performed confirms:
 
  - NFVI adheres to CNTT RA/RM requirements.
  - CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
@@ -328,7 +340,7 @@ The below figure shows the targetted badge for NFVI.
 <p align="center"><b>Figure:</b> NFVI badge</p>
 
 
-**Specifics**.  More specifically, suppliers of NFVI testing seeking infrastructure certification are required to furnish the following:
+**Specifics**.  More specifically, suppliers of NFVI testing seeking infrastructure Conformance are required to furnish the following:
 
 |Category|OVP/CVC Expectation|Supporting Artifact(s)|
 |--|--|--|
@@ -339,8 +351,8 @@ The below figure shows the targetted badge for NFVI.
 |Results Reporting|Published of Test Results into centralized and common repository and reporting portal|Normalized Results per Standards|
 |Release Notes|Supplier provides concluding remarks, links to artifacts, and demonstration of having met exit criteria for testing|Release Notes
 
-**Certification Process**.  
-Certification and issuance of NFVI badges will be as follows:
+**Conformance Process**.  
+Conformance and issuance of NFVI badges will be as follows:
  - NFVI supplier utilizes, or installs a target RM/RA-x certified RI lab.
  - Required artifacts are submitted/supplied to the OVP, demonstrating proper Lab Installation, Compliance, Validation, Performance, and Release of Results & Known Issues.
  - Artifact validations will be corroborated and confirmed by the OVP. with direct comparison between measured results and documented FRs/NFRs for applications, hardware and software configuration settings, and host systems.
@@ -348,3 +360,320 @@ Certification and issuance of NFVI badges will be as follows:
 
 <p align="center"><img src="../figures/NFVI_certifying_vendor_swhw_solutions.jpg" alt="NFVI Badges" title="NFVI Badges" width="100%"/></p>
 <p align="center"><b>Figure:</b> NFVI Badges</p>
+
+
+## 2.8 NFVI Test Cases Requirements
+The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
+
+
+<a name="2.8.2"></a>
+### 2.8.2 Generic Requirements on Test Cases
+
+All test cases must fullfil the generic requirements listed in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
+
+In addition, for test cases targeting the NFVI compliance program, the following requirements must be met:
+
+| Reference         | Description                                                                                                              |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------|
+| x                 | All NFVI test cases *must* be automated. Once the pre-conditions of a test case are met, i.e., the system under test is configured and in a state according to the pre-conditions of the particular test case, no manual steps must be required to run a test case to completion.   |
+| x                 | All NFVI test cases *must* be implemented using publicly available open source tools. This enables access to test tools and test case implementations to all interested parties and organizations.  |
+| x                 | All NFVI test cases *must* be integrated and run in the OPNFV CI/CD pipeline. This requirement ensures that test cases are functionally correct, reliable, mature and pass on the NFVI reference implementation.   |
+| x                 | All NFVI test cases *must* treat the NFVI platform as a black box. In particular, test cases must not perform actions on or change the state of the system under test outside the scope of well-defined APIs as listed by RA1. This requirement ensures applicability of test cases across different implementations: reference implementations as well as commercial implementations.     |
+
+
+
+<a name="2.8.3"></a>
+### 2.8.3 Requirement Types
+
+The compliance and Conformance program intends to validate four different types of requirements and system properties:
+
+* API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md)).
+
+* Performance: Test cases covering this type of requirement measure specific performance characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+
+* Resilience: Test cases covering this type of requirement measure specific resilience characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+
+* Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to CNTT/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
+
+The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases](chapter02.8.md#39-nfvi-test-cases).
+
+
+
+<a name="2.8.4"></a>
+### 2.8.4 Profile Catalog
+
+Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines three software profiles, targeting three different use cases:
+
+* Basic
+* Network intensive
+* Compute intensive
+
+The test cases selected for validating compliance of the three profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
+
+TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
+
+
+<a name="2.8.5"></a>
+### 2.8.5 Software & Hardware Reference
+
+The LFN-based compliance and Conformance program comprises three distinct types of NFVI deployment and runtime environments:
+
+ 1. A CNTT reference implementation deployed in the OPNFV CI/CD environment,
+ 2. A commercial NFVI product deployed in a vendor's internal development and testing environment, and
+ 3. ACNTT reference implementation of a commercial NFVI product deployed in a 3rd party lab providing testing and Conformance services.
+
+The test tooling, harnesses and corresponding test cases which are part of the compliance and Conformance test suite must be capable of running across all of those environments. This results in the following list of requirements:
+
+| Reference         | Description                                                                                                              |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------|
+| x                 | NFVI test cases *must not* interact with remote (Internet) services apart from downloading container or VM images. In particular, test tools and test cases must not automatically upload test data to any system or service run by LFN or GSMA. The purpose of this requirement is to protect the confidentially of (intermediate) test data. |
+| x                 | NFVI test cases *must* support a means of running in an internal enterprise lab environment. This could be achieved by either i) natively supporting proxied Internet connectivity and non-public DNS servers or ii) by providing a high-level description of remote dependencies (e.g., container and VM images, network services (DNS), etc.) such that local mirrors can be set up.  |
+
+
+Content to be written:
+- Identify SW Reference
+- Identify HW Reference
+
+
+<a name="2.8.6"></a>
+### 2.8.6 Options & Extensions
+
+Content to be written:
+- Options Available / Configured
+- Extensions Available / Configured
+
+
+<a name="2.8.7"></a>
+### 2.8.7 Measurement Criteria
+
+Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
+
+This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please refer to Reference Model**
+
+
+<a name="2.8.7.1"></a>
+#### 2.8.7.1 Storage and IOPS
+
+_**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
+
+From a definition perspective, IOPS is the standard unit of measurement for I/O (Input/Output) operations per second. This measurement is a performance-based measurement and is usually seen written as**(1)**:
+
+- **Total IOPS**: Average number of I/O operations per second.
+- **Read IOPS**: Average number of read I/O operations per second.
+- **Write IOPS**: Average number of write I/O operations per second.
+
+For example, if you have a disk that is capable of doing a 100 IOPS, it means that it is theoretically capable of issuing a 100 read and or write operations per second.  This is in theory.  In reality, additional time is needed to actually process the 100 reads/writes.  This additional time is referred to as "latency", which reduces the total IOPS that is calculated, and measured.  Latency needs needs to be measured, and included in the IOPS calculation.  Latency will tell us how long it takes to process a single I/O request, and is generally in the 2 millisecond (ms) range per IO operation for a physical disk, through 20+ ms, at which time users will notice an impact in their experience**(2)**.  
+
+Additional factors to consider when measuring IOPS:
+
+
+- Take into consideration the percentage of Input (write) vs. Output (reads) operations, as Writes can be more resource intensive.
+- Determine if Reads were performed from Cache, as this this may (will) result in faster performance, and faster IOPS.
+- Confirm the storage types (Physical, RAID), as storage arrays with linear, or sequential reading/writing may (will) be slower.
+- Identify the block size used, as using large block sizes vs. small block sizes can (will) impact IOPS performance.
+- Determine Hard Disk Speeds (HDD in RPMs) used, as the higher the RPMS, the potential for faster IOPS performance.
+- Quantify the number of disk controllers used to process the number of requested IO requests.
+- Determine the specific work-load requirements, as this will dictate speed, controllers, disk RPM, and latency tolerances.  
+
+For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
+
+<a name="2.8.8"></a>
+### 2.8.8 Measurement Types
+
+<a name="2.8.8.1"></a>
+#### 2.8.8.1 Performance Measurements
+
+**Objectives**
+
+The NFVI performance measurements aim at assessing the performance of a given NFVI implementation on the execution plane (i.e., excluding VIM) by providing it with a set of significant metrics to be measured.
+
+They should allow validating the performance of any software and/or hardware NFVI implementation as described in Reference Model.
+
+Of course, they can also be used for other purposes, such as:
+- fine tuning of software and/or hardware NFVI configuration (e.g., the number of cores dedicated to the DPDK vSwitch)
+- comparing the performances of different software or hardware technologies (e.g., DPDK vSwitch vs hardware-offloaded vSwitch)
+- assessing the performance impact of specific features (e.g., with or without encapsulation)
+
+
+**Metrics Baseline**
+
+For the purpose of validation, a baseline of the performance metrics is required for comparison with the results of their measurements on the NFVI implementation to be validated.
+
+That baseline is a set of threshold values which could be determined by **measuring the performance metrics on Reference Implementations**.
+
+The validation can then be based on simple pass/fail test results or on a grade (e.g., "class" A, B or C) provided by the combination of pass/fail results for 2 different threshold values of some (or all) metrics.
+
+
+**Metrics Description**
+
+Two categories of metrics are considered depending on whether they are related to either the VNF domain or the NFVI domain itself:
+
+- Metrics related to the VNF domain are defined from VNF perspective (i.e., per VNFC, per vNIC, per vCPU...) and should concern VNF as well as NFVI actors. 
+- Metrics related to the NFVI domain are defined per NFVI node ; their measurement is based on virtual workloads (i.e., VM or container) in order to reflect the performance of a NFVI node with a given profile ; they should only concern NFVI actors. 
+
+The following table contains the list of performance metrics related to the VNF domain.
+
+| Reference         | Name                           | Unit          | Definition/Notes                                             |
+| ----------------- | ------------------------------ | ------------- | ------------------------------------------------------------ |
+| vnf.nfvi.perf.001 | vNIC throughput                | bits/s        | Throughput per vNIC                                          |
+| vnf.nfvi.perf.002 | vNIC latency                   | second        | Frame transfer time to vNIC at the throughput (vnf.nfvi.perf.001) |
+| vnf.nfvi.perf.003 | vNIC delay variation           | second        | Frame Delay Variation (FDV) to vNIC at the throughput (vnf.nfvi.perf.001) |
+| vnf.nfvi.perf.004 | vNIC simultaneous active flows | number        | Simultaneous active L3/L4 flows per vNIC before a new flow is dropped |
+| vnf.nfvi.perf.005 | vNIC new flows rate            | flows/s       | New L3/L4 flows rate per vNIC                                |
+| vnf.nfvi.perf.006 | Storage throughput             | bytes/s       | Throughput per virtual storage unit                          |
+| vnf.nfvi.perf.007 | vCPU capacity                  | test-specific score | Compute capacity per vCPU                                    |
+
+The following table contains the list of performance metrics related to the NFVI domain.
+
+| Reference           | Name                           | Unit          | Definition/Notes                                           |
+| ------------------- | ------------------------------ | ------------- | ---------------------------------------------------------- |
+| infra.nfvi.perf.001 | Node network throughput        | bits/s        | Network throughput per node                                |
+| infra.nfvi.perf.002 | Node simultaneous active flows | number        | Simultaneous active L3/L4 flows per node before a new flow is dropped |
+| infra.nfvi.perf.003 | Node new flows rate            | flows/s       | New L3/L4 flows rate per node                              |
+| infra.nfvi.perf.004 | Node storage throughput        | bytes/s       | Storage throughput per node                                |
+| infra.nfvi.perf.005 | Physical core capacity         | test-specific score | Compute capacity per physical core usable by VNFs          |
+| infra.nfvi.perf.006 | Energy consumption             | W             | Energy consumption of the node without hosting any VNFC    |
+| infra.nfvi.perf.007 | Network energy efficiency      | W/bits/s      | Energy consumption of the node at the network throughput (infra.nfvi.perf.001), normalized to the measured bit rate |
+| infra.nfvi.perf.008 | Storage energy efficiency      | W/bits/s      | Energy consumption of the node at the storage throughput (infra.nfvi.perf.004), normalized to the measured byte rate |
+| infra.nfvi.perf.009 | Compute energy efficiency      | W/core        | Energy consumption of the node during compute capacity test (vnf.nfvi.perf.007 or infra.nfvi.perf.005), normalized to the number of physical cores usable by VNFs |
+
+
+**MVP Metrics**
+
+The following metrics should be considered as MVP:
+
+- vnf.nfvi.perf.001,002,006,007
+- infra.nfvi.perf.001,005,006,007,009
+
+
+**Network Metrics Measurement Test Cases**
+
+The network performance metrics are vnf.nfvi.perf.001-005 and infra.nfvi.perf.001-003,006.
+
+The different possible test cases are defined by each of the 3 following test traffic conditions.
+
+- **Test traffic path across NFVI**
+
+  3 traffic path topologies should be considered:
+
+  - ***North/South traffic***, between VNFCs whitin a node and outside NFVI  
+    This can be provided by PVP test setup of ETSI GS NFV-TST009.
+
+  - ***East/West intra-node traffic***, between VNFCs within a node  
+    This can be provided by a V2V (Virtual-to-Virtual) test setup and, in some cases, by PVVP test setup of ETSI GS NFV-TST009.  
+
+  - ***East/West inter-node traffic***, between VNFCs in different nodes      
+    This can be provided by VPV (Virtual-Physical-Virtual) test setup and, in some cases, by PVVP test setup between 2 nodes.
+
+- **Test traffic processing by NFVI**
+
+  Different processing complexity applicable to the traffic crossing the NFVI should be considered, including especially (but not exhaustively):
+  - ***L2 processing*** (Ethernet switching), possibly including VLAN tagging/mapping and encapsulation (e.g., VXLAN)
+  - ***L3 processing*** (IP routing), possibly including L2 processing
+  - ***L4 stateful processing*** (e.g., FW, NAT, SFC), also including L3 processing
+  - ***Encryption*** (e.g., IPSec ESP tunneling)
+    
+- **Test traffic profile**
+
+  Two different test traffic profiles should be considered according to the two VNF types that must be provided with network connectivity by the NFVI.
+
+  - ***Forwarded traffic*** for L3/L4 forwarding VNF (e.g., PGW, FW)
+
+    It is based on ETSI GS NFV-TST009 and it should be:
+
+    -  **bidirectional UDP traffic** with **0.001%** frame loss ratio, **300B** average frame size, **10k** L3/L4 flows,
+    - between a **traffic generator** and a **traffic receiver** through a **L3 forwarding** pseudo-VNF with sufficient capacity not to be the test bottleneck.
+
+    Latency and delay variation measurement should be the 99th percentile of measured values for one-way frame transfer (i.e. from generator to receiver).
+
+    The main OPNFV test tools candidates for that purpose are NFVbench and VSPerf.
+
+    > _**Note:** to be studied whether additional frame sizes and flows number should be considered_
+    
+  - ***Client-server traffic*** for L4/L7 endpoint VNF (e.g., MME, CDN)
+
+    It should be:
+
+    - **bidirectional TCP traffic** with **1400B** maximum frame size, **5k** TCP sessions,
+    - between **2 TCP client&server endpoints**, one or both as pseudo-VNF, with sufficient capacity not to be the test bottleneck.
+        
+    *Note*: the maximum TCP frame size can be forced by configuring TCP endpoint link MTU.
+
+    The main OPNFV test tools candidates for that purpose are Functest (VMTP and Shaker) and Yardstick (TC011 and TC083).
+        
+    > _**Note:** to be studied whether metrics related to latency and flows for that traffic profile should be considered (how? with UDP and/or ICMP test traffic in addition?)_
+
+The combination of each of those 3 test conditions types and the different NFVI profiles results in a wide matrix of test cases (potentially more than 50 cases).
+Furthermore, these test cases should be combined with the different metrics resulting in a huge number of measurements (potentially more than 400 measurements).
+For the efficiency of the validation, only the most relevant combinations should be kept.
+
+This optimization should be based on the following principles:
+
+1. NFVI domain metrics measurement: on PVP topology only
+2. Metrics measurement with forwarded traffic: with no L4 stateful processing
+3. Basic and Compute intensive profiles metrics measurement: client-server traffic profile only
+4. Flows & latency related metrics measurement: for PVP only
+
+The following table proposed a possible optimized matrix model of the test cases against the metrics to be measured. 
+
+|                     | **NFVI Profiles**   | **B & C**      |                |                |                | **N**         |                |
+| ------------------- | ------------------- | -------------- | -------------- | -------------- | -------------- | ------------- | -------------- |
+|                     | **Test Cases**      | V2V - L2 - SRV | VPV - L3 - SRV | PVP - L2 - SRV | PVP - L4 - SRV | PVP - L2- SRV | PVP - L2 - FWD |
+|                     |                     |                |                |                |                |               |                |
+| **MVP Metrics**     | vnf.nfvi.perf.001   | 50Gbps         | 20Gbps         | 20Gbps         | 10Gbps         | 40Gbps        | 40Gbps         |
+|                     | vnf.nfvi.perf.002   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 0.5ms          |
+|                     | infra.nfvi.perf.001 | n/a (1)        | n/a (1)        | 40Gbps         | 20Gbps         | 60Gbps        | 80Gbps         |
+|                     | infra.nfvi.perf.007 | n/a (1)        | n/a (1)        | ? W/Gbps       | ? W/Gbps       | ? W/Gbps      | ? W/Gbps       |
+|                     |                     |                |                |                |                |               |                |
+| **Non-MVP Metrics** | vnf.nfvi.perf.003   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 1ms            |
+|                     | vnf.nfvi.perf.004   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 500k           |
+|                     | vnf.nfvi.perf.005   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 100kfps        |
+|                     | infra.nfvi.perf.002 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | 1G             |
+|                     | infra.nfvi.perf.003 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | 200kfps        |
+
+*Table notes*:
+- Values are only indicative (see "Metrics Baseline" below)
+- L2/L3/L4 refers to network processing layer
+  - L2 for Ethernet switching
+  - L3 for IP routing
+  - L4 for IP routing with L4 stateful processing (e.g. NAT)
+- SRV/FWD refers to the traffic profile (and pseudo-VNF type implied)
+  - SRV for client-server traffic (and L4/L7 endpoint pseudo-VNF)
+  - FWD for forwarded traffic (and L3/L4 forwarding pseudo-VNF)
+
+
+**Energy Metrics Measurement Test Cases**
+
+Energy metrics (infra.nfvi.perf.006-009) should be considered carefully for NFVI validation since energy consumption may vary a lot across processor architectures, models and power management features.
+
+They mainly enable to have metrics available regarding NFVI environment footprint. They also allow energy-based comparison of different NFVI software implementations running on a same physical NFVI hardware implementation.
+
+OPNFV tool as possible basis: https://docs.opnfv.org/en/latest/testing/ecosystem/energy-monitoring.html
+
+
+**Storage Metrics Measurement Test Cases**
+
+Metric (MVP): vnf.nfvi.perf.006 and infra.nfvi.perf.004,008
+
+Main OPNFV test tool candidates: Yardstick (TC 005), StorPerf
+
+> _**Note:** to be completed _
+
+
+**Compute Metrics Measurement Test Cases**
+
+The compute performance metrics are vnf.nfvi.perf.007 and infra.nfvi.perf.004,009.
+
+Each compute performance test should be performed with all vCPU of the node running multiple parallel workloads and the result is then normalized:
+- to the number of vCPU, for the vCPU capacity measurements (vnf.nfvi.perf.007)
+- to the number of physical core usable by VNFs, for the physical core capacity and compute energy efficiency measurements infra.nfvi.perf.004,009)
+
+Main OPNFV test tool candidate: Yardstick (TC014)
+
+> _**Note:** to be studied: how to define the different possible test cases, especially the different workload profiles (i.e., pseudo-VNF) to consider_
+
+
+<a name="2.8.8.2"></a>
+#### 2.8.8.2 Resiliency Measurements
+
+
