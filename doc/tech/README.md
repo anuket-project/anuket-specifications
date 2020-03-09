@@ -6,7 +6,7 @@
     * [1.1 Glossary](#1.1)
     * [1.2 Problem Statement](#1.2)
     * [1.3 Project Goals and Purpose](#1.3)
-    * [1.4 Common NFVI Benefits](#1.4)
+    * [1.4 Common Cloud Infrastructure Benefits](#1.4)
 * [2. Principles](#3.0)
 * [3. Scope](#3.0)
   * [3.1 Specification Types](#3.1)
@@ -58,7 +58,7 @@ The next step after the Reference Model has been identified and developed is to 
   - Subsequent architectures should be based on either additional established or promising emerging technologies that are chosen by the community members.  
 
 <a name="1.4"></a>
-## 1.4 Common cloud infrastructure Benefits
+## 1.4 Common Cloud Infrastructure Benefits
 By providing a pre-defined environment with common capabilities, applications are able to be developed and deployed more rapidly.  In addition, the common infrastructure can be optimized for various workloads, such as IT (Information Technology), VNF, AI (Artificial Intelligence), and other future workload types as new technologies emerge. The benefits of this approach are:
 
 - Configuration automation over customization
