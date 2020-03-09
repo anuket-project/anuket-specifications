@@ -61,7 +61,7 @@ Please refer to individual [release plan](./release_notes/) and features for det
 | Release Candidate | RC0 | The goal of the Release Candidate is to ensure the documentations are properly aligned, fully reviewed in the new release branch. | Prioritise the required fixes and address them. If there are any critical fixes required then the fixes will be provided and it will be tagged with minor release. (Eg. Baldy 4.0.1). | |
 | Release Sign-Off | | The goal of the Release Sign-Off review is to ensure all the projects are successfully passed all the review. All the committed deliverables are available and passed the quality criteria. | | |
 
-
+<p align="center"><b>Table 1:</b> Detailed Milestones</p>
 
 <a name="3"></a>
 ## Dependencies between various Workstreams
