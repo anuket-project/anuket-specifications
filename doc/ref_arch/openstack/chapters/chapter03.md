@@ -206,7 +206,7 @@ OpenStack offers multi-tenancy by means of resource (compute, network and storag
 
 <a name="3.3.3"></a>
 ### 3.3.3. Cloud partitioning: Host Aggregates, Availability Zones
-Cloud administrators can partition the hosts within an OpenStack cloud using 2 mechanisms: Host Aggregates and Availability Zones.
+Cloud administrators can partition the hosts within an OpenStack cloud using Host Aggregates and Availability Zones.
 
 A Host Aggregate is a group of hosts (compute nodes) with specific characteristics and with the same specifications, software and/or hardware properties. Example would be a Host Aggregate created for specific hardware or performances. The administrator assigns key-value pairs to groups of compute nodes, this information will be used to schedule VMs. A host can belong to multiple host aggregates. Host Aggregates are not explicitly exposed to tenants.
 
