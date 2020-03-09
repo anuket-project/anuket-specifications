@@ -61,17 +61,17 @@ The next step after the Reference Model has been identified and developed is to 
 ## 1.4 Common Cloud Infrastructure Benefits
 By providing a pre-defined environment with common capabilities, applications are able to be developed and deployed more rapidly.  In addition, the common infrastructure can be optimized for various workloads, such as IT (Information Technology), VNF, AI (Artificial Intelligence), and other future workload types as new technologies emerge. The benefits of this approach are:
 
-- Configuration automation over customization
+- Configuration automation over customisation
   - By abstracting the infrastructure capabilities as much as possible, operators are able to use common infrastructure platforms across all VNF vendors.
-  - Maintaining a consistent infrastructure allows for higher levels of automation due to a reduced need for customization of the various components.
+  - Maintaining a consistent infrastructure allows for higher levels of automation due to a reduced need for customisation of the various components.
   - Overall, the intention is to reduce the total cost of ownership for operators and development costs for vendors
 
 - Onboarding and conformance
   - By defining abstracted infrastructure capabilities, and the metrics by which they are measured, the onboarding and conformance process for both cloud infrastructure and VNFs can be standardized, reducing development time for the VNF developers and deployment and operational management costs for the operators standing up the cloud environments.
   - Supply chain, procurement and assurance teams can then use these metrics to more accurately assess the most efficient / best value vendor for a given environment and network services requirement.
 
-- Better utilization
-  - Properly mapping VNFs to flavours to the underlying infrastructure, brings the potential for more efficient utilization, than needing to create specific configurations for each type of application in the infrastructure.  
+- Better utilisation
+  - Properly mapping VNFs to flavours to the underlying infrastructure, brings the potential for more efficient utilisation, than needing to create specific configurations for each type of application in the infrastructure.  
 
 In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the Common Telco cloud is documentation of a reference model, a select set of architectures and a set of validation and testing suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
 
