@@ -191,7 +191,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 | Ref | NFVI capability | Unit | Definition/Notes |
 |--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.cap.016 | CPU allocation ratio | N:1 | Number of virtual cores per physical core |
+| i.nfvi.cap.016 | CPU allocation ratio | N:1 | Number of virtual cores per physical core; also known as CPU overbooking ratio |
 | i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface) |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
