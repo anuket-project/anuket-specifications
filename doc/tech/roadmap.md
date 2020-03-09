@@ -79,8 +79,6 @@ For the standard release stabilisation, the pattern in each release follows RM m
 There are two different tracks in CNTT
 - Virtualized workloads, deployed on OpenStack
 - Containerized workloads, deployed on Kubernetes
-- OpenStack based
-- Kubernetes based
 
 Each track follows the industry driven standards in the Reference Model as depicted in the below diagram.
 
