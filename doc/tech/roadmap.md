@@ -106,5 +106,4 @@ The OpenStack based work stream in CNTT community works closely with OPNFV by le
 
 TODO: Placeholder for RI2 dependency diagram
 
-The Kubernetes based work stream in CNTT community works closely with CNCF by leveraging and evolving Kubernetes-based CNF continuous integration pipeline with automation installer and testing capabilities. The more details will come here or relate back to the description in the RI2.
-
+The Kubernetes based work stream in CNTT community works closely with CNCF by leveraging and evolving Kubernetes-based CNF continuous integration pipeline with automation installer and testing capabilities. 
