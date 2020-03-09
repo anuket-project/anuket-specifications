@@ -76,6 +76,8 @@ The workstream dependency relationship in simple terms, [Reference Conformance](
 
 For the standard release stabilisation, the pattern in each release follows RM must be the advanced version of RA. Similarly RA must be the advanced version of RI and simultaneously for RC.
 
+For the standard release stabilisation, each release follows the pattern of one workstream is functioning ahead of another workstream in the sequence of Reference Model, Reference Architecture, Reference Implementation and Reference Conformance. For eg. In Baldy release, RM3.0 inputs will feed into RA2.0 and likewise as shown in the Figure 3.
+
 There are two different tracks in CNTT
 - Virtualized workloads, deployed on OpenStack
 - Containerized workloads, deployed on Kubernetes
