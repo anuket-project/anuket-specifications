@@ -42,7 +42,7 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Strategy Objectives
 
-This section catalogs CNTT's high-level objectives for the Networking and Fabric Strategy. 
+This section catalogs CNTT's high-level objectives for the Network Fabric Strategy. 
 
 > List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
 
