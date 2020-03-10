@@ -95,7 +95,6 @@ Each track follows the industry driven standards in the Reference Model as depic
 
 The CNTT is collaboratively working with other standard bodies within the Open Source industry. Some of the projects are 
 - OpenStack
-- Kubernetes
 - OPNFV
 - ONAP
 - CNCF
