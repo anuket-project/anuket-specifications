@@ -308,7 +308,7 @@ This section catalogs CNTT's high-level objectives for the Networking and Fabric
      * It is therefore responsible for maintaining isolation between Cloud Tenants
 
 An example of the layering described above is depicted in **Figure 1-3**, where the Virtualization layer manages the Overlay Networking (e.g., through VLAN allocation) and the HW Infrastructure manages the Underlay networking (e.g., through VxLAN VNI range allocations).
-<p align="center"><img src="../figures/RMCH-01_Network_Layering_v0-2_TFredberg.png" alt="Network Layering" title="Network Layering" width="100%"/></p>
+<p align="center"><img src="../figures/RMCH-01_Network_Layering_v0-3.png" alt="Network Layering" title="Network Layering" width="100%"/></p>
 <p align="center"><b>Figure 1-3:</b> Network Layering</p>
 
 <a name="1.9.4"></a>
