@@ -48,5 +48,5 @@
 * [Chapter 08 - Compliance, Verification, and Certification](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
-* [Appendix A - VNF Design Guidelines](chapters/appendix-a.md)
+* [Appendix A - Guidelines for VNF Vendors](chapters/appendix-a.md)
 * [Glossary](chapters/glossary.md)
