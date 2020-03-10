@@ -115,10 +115,12 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------|--------------------|------------|
-| `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. | [RA-1 5.3. "Consolidated Set of APIs"](.s/chapter05.md#53-consolidated-set-of-apis) |
+| `req.int.api.01` | API | The Architecture **must** provide APIs to access all mandatory features of the cloud platform core services for the given CNTT OpenStack release. | [RA-1 5.3. "Consolidated Set of APIs"](.s/chapter05.md#53-consolidated-set-of-apis) |
 | `req.int.api.02` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) |
 | `req.int.api.03` | API | The Architecture **must** provide APIs needed to discover and manage NFVI resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
+| `req.int.api.04` | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services | [RA-1 5.2 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#52-core-openstack-services-apis) |
 | `req.int.acc.01` | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. | [RA-1 5.3.4. "Cyborg"](./chapter05.md#534-cyborg) |
+
 
 <p align="center"><b>Table 2-4:</b> Interfaces and APIs Requirements</p>
 
