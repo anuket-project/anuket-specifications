@@ -17,7 +17,7 @@ The Reference Model (RM) specification is written on the basis of complete infra
 
 <a name="1.2"></a>
 ## 1.2 Terminology
-To help guide the reader, a glossary [Reference Model Terminology](../../tech/glossary.md) provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GS NFV 003 V1.4.1 (2018-08) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
+To help guide the reader, a glossary [Reference Model Terminology](../../tech/glossary.md) provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the [ETSI GR NFV 003 V1.5.1 (2020-01)](https://www.etsi.org/deliver/etsi_gr/NFV/001_099/003/01.05.01_60/gr_NFV003v010501p.pdf) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
 <a name="1.3"></a>
 ## 1.3 Principles
