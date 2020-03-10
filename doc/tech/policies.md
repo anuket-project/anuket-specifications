@@ -42,7 +42,8 @@ Be aware the compromises and transition plans contained herein, are directly rel
 
 > **Note to Authors:** Status should be set to "Proposed" when initial content is entered. Once alignment is attained following vetting and discussion, status should be set to "Aligned". Immediately prior to merge, status should be set to "In Force". When amending previously approved language, status should be changed from "In Force" to "In Force (Pending Changes)", followed by "Aligned" and ultimately, "In Force".
 
-**SR-IOV**
+<a name="7.1.3.1"></a>
+#### 7.1.3.1 SR-IOV**
 
 SR-IOV transgresses the CNTT Abstraction Principle, which prohibits hardware-dependent code be required in a workload. Refer to the Abstraction Principle in RM Chapter 1 for the related rationale and details. However, CNTT recognizes that today, SR-IOV provides a capability to increase throughput over network interfaces at an economical cost, that some applications as currently implemented, are highly dependent upon. As such, the CNTT approach to SR-IOV shall be:
 
