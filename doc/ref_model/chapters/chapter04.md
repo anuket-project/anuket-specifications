@@ -573,7 +573,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
 -->
 
-<p align="center"><b>Table 4-24:</b> Mapping of NFVI Capabilities to Instance Types</p>
+<p align="center"><b>Table 4-22:</b> Mapping of NFVI Capabilities to Instance Types</p>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Instance Performance Measurement Mapping
