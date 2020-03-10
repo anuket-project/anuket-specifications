@@ -43,12 +43,13 @@ Be aware the compromises and transition plans contained herein, are directly rel
 > **Note to Authors:** Status should be set to "Proposed" when initial content is entered. Once alignment is attained following vetting and discussion, status should be set to "Aligned". Immediately prior to merge, status should be set to "In Force". When amending previously approved language, status should be changed from "In Force" to "In Force (Pending Changes)", followed by "Aligned" and ultimately, "In Force".
 
 <a name="7.1.3.1"></a>
-#### 7.1.3.1 SR-IOV**
+#### 7.1.3.1 SR-IOV
 
 SR-IOV transgresses the CNTT Abstraction Principle, which prohibits hardware-dependent code be required in a workload. Refer to the Abstraction Principle in RM Chapter 1 for the related rationale and details. However, CNTT recognizes that today, SR-IOV provides a capability to increase throughput over network interfaces at an economical cost, that some applications as currently implemented, are highly dependent upon. As such, the CNTT approach to SR-IOV shall be:
 
 1. At the present Time Point (TP), TP x, to enable VNFs currently dependent on SR-IOV to transition to Cloud Native technology, VNFs using SR-IOV will PASS OVP qualification, but generate a WARNING indicating the functionality will be deprecated, and to transition to a Cloud Native implementation
 1. At TP x+y, VNFs using SR-IOV will PASS OVP qualification, but generate a WARNING indicating the functionality is deprecated and they must transition to a Cloud Native implementation
+    - **y** will depend on when a technology is developed to replace SR-IOV and provide an acceptable low latency access to (network interface) devices.
 1. At TP x+y+z, VNFs using SR-IOV will **FAIL** OVP qualification, and generate an **ERROR** indicating the functionality is prohibited
 
 NOTE: A Time Point (TP) metric representing chronologic advancement of the CNTT VNF model is being developed in parallel under the VNF Evolution Framework. Hence, TPs referenced herein are placeholders and intended to be relative, until the absolute TPs are defined, at which point the placeholders are to be replaced with their absolute equivalents.
