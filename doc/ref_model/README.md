@@ -49,4 +49,4 @@
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
 * [Appendix A - Guidelines For VNF Vendors](chapters/appendix-a.md)
-* [Glossary](chapters/glossary.md)
+* [Glossary](../tech/glossary.md)
