@@ -14,7 +14,7 @@
 ## Overview
 * The activities of the CNTT community are articulated around [Projects](#project), [Milestones](#2.3) and [Releases](#release).
 * CNTT is embracing simultaneous delivery model, meaning that all contributing projects have to follow the cadence and intermediate milestones.
-* CNTT is single-release vehicle for all projects.
+* Each CNTT release is the only delivery vehicle and is common for all projects.
 * The CNTT current release plan is available [here](./release_notes/release_process.md).
 
 
@@ -61,7 +61,7 @@ Please refer to individual [release plan](./release_notes/) and features for det
 | Feature/Functionality/Content Development | | The goal is to ensure that changes to features and functionalities are captured and all content necessary for the In-Scope features & functionalities will be developed as part of the release scope. |<ul><li> Update Feature/Functionality as we evolve. </li> <li> Develop / Update the contents for the release in-scope listed features & functionalities </ul></li> | |
 | Content Freeze | M3 | The goal of the Content Freeze is to mark the end of the features documented and provided the resolution for all impacting defects. After Content Freeze, there will be no new features/functionalities are allowed into the current release. Only the critical fixes are allowed. | <ul><li> All the project leads review the document and ensure all the planned features are documented and fixes are available before end of the Content Freeze. </li> <li> Uncompleted features/functionality will be added to the Backlog. After discussed and approved by the TSC. </ul></li> | |
 | Content Review | | The goal is to carefully review and validate the contents and check for errors in the document. | <ul><li>  Validate content is within Release Scope and is technically correct. </li><li> Check document for grammatical errors, extraneous items, etc. </li> <li> Close all In-Scope & reviewed projects/issues and move all others to Backlog after discussed and approved by the TSC. <ul><li> | |
-| Content Review Freeze | M4 | The goal of the Proof Reading is to carefully review and validate the contents and check for errors in the document before it is released. This is the final and last stage of the milestone. This is the release content completion milestone.| All Projects are closed or else are marked Backlog. Discuss with TSC for any exceptional approval. | |
+| Content Review Freeze | M4 | The goal is to perform the final proof reading of the document before it is released. This is the release content completion milestone. | All Projects are closed or else are marked Backlog. Discuss with TSC for any exceptional approval. | |
 | Release Packaging | | The goal is to package the precise and reviewed document versions into a new release branch. | Create new Release Branch after content review ends. | |
 | Release Candidate | RC0 | The goal of the Release Candidate is to ensure the documentations are properly aligned, fully reviewed in the new release branch. | Prioritise the required fixes and address them. If there are any critical fixes required then the fixes will be provided and it will be tagged with minor release. (Eg. Baldy 4.0.1) | |
 | Release Sign-Off | | The goal of the Release Sign-Off review is to ensure all the projects are successfully passed all the review. All the committed deliverables are available and passed the quality criteria. | | |
