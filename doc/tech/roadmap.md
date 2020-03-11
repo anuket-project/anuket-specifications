@@ -18,7 +18,6 @@
 * The CNTT current release plan is available [here](./release_notes/release_process.md).
 
 
-
 <p align="center"><img src="./figures/Release Lifecycle.png" alt="scope" title="Milestones" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Milestones</p>
 
