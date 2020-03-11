@@ -96,7 +96,7 @@ The NFVI provided by hardware vendors is consumed or used by VNFs via APIs expos
 * Perform VNF interoperability verifications against an implementation of CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem. Third-party test platforms may also be leveraged, if desired.
 
 <p align="center"><img src="../figures/RC_CertificationMethodology.jpg" alt="conformance Methodology" title="Conformance Methodology" width="100%"/></p>
-<p align="center"><b>Figure:</b> Conformance Methodology</p>
+<p align="center"><b>Figure 2-1:</b> Conformance Methodology</p>
 
 Verification Methodologies to be implemented, from a process perspective include:
 * Engineering package validations will be performed against targeted infrastructure/architecture.
@@ -140,7 +140,7 @@ The Infrastructure Profile Catalog contains the following attributes:
   * Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
 * NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. <!-- , and compute intensive. --> Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
 <p align="center"><img src="../figures/RC_NFVI_Profiles.png" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
-<p align="center"><b>Figure:</b> NFVI Profiles</p>
+<p align="center"><b>Figure 2-2:</b> NFVI Profiles</p>
 Targeted VNF Classes/Families for baseline measurements are described in chapter XXXX.
 
 <a name="2.4"></a>
@@ -167,7 +167,7 @@ The below set of steps define the compliance, verification and Conformance proce
 * If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge.
 * If NFVI KPIs do not meet Golden KPIs, no Conformance is provided.
 <p align="center"><img src="../figures/RC_Ref_NFVI_Profiles.jpg" alt="Reference NFVI Profiles Implementation" title="Reference NFVI Profiles Implementation" width="100%"/></p>
-<p align="center"><b>Figure:</b> Reference NFVI Profiles Implementation</p>
+<p align="center"><b>Figure 2-3:</b> Reference NFVI Profiles Implementation</p>
 
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
@@ -334,10 +334,10 @@ In addition to General Best Practices for NFVI Conformance, the following Qualit
  - NFVI adheres to CNTT RA/RM requirements.
  - CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
 
-The below figure shows the targetted badge for NFVI.
+The below figure shows the targeted badge for NFVI.
 
 <p align="center"><img src="../figures/NFVI-badge.jpg" alt="NFVI Badge" title="NFVI Badge" width="25%"/></p>
-<p align="center"><b>Figure:</b> NFVI badge</p>
+<p align="center"><b>Figure 2-4:</b> NFVI badge</p>
 
 
 **Specifics**.  More specifically, suppliers of NFVI testing seeking infrastructure Conformance are required to furnish the following:
@@ -359,7 +359,7 @@ Conformance and issuance of NFVI badges will be as follows:
  - All OVP inquiries, requests for re-tests, or reformatting / re-uploading of results data are closed.
 
 <p align="center"><img src="../figures/NFVI_certifying_vendor_swhw_solutions.jpg" alt="NFVI Badges" title="NFVI Badges" width="100%"/></p>
-<p align="center"><b>Figure:</b> NFVI Badges</p>
+<p align="center"><b>Figure 2-5:</b> NFVI Badges</p>
 
 
 ## 2.8 NFVI Test Cases Requirements
