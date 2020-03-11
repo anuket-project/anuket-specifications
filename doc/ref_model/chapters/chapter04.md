@@ -227,7 +227,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 <p align="center"><b>Table 4-8:</b> Internal Measurement Capabilities of NFVI</p>
 
 <a name="4.1.5"></a>
-### 4.1.5 VIM Capabilities.
+### 4.1.5 VIM Capabilities
 
 VIM is responsible for controlling and managing the NFVI compute, storage, and network resources. Resources allocation is dynamically set up upon VNFs requirements. This section covers the list of capabilities offered by the VIM to VNFs or service orchestrator.
 
