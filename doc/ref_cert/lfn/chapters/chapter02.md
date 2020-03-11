@@ -137,8 +137,8 @@ The Infrastructure Profile Catalog contains the following attributes:
   * Acceleration capabilities
 * Profiles are offered to VNFs as an instance types with predefined compute flavors.
   * A particular set of options is an instance type
-  * Compute flavors: S, M, L
-* VNF performance profiles, for which NFVI validations will support and be verified against, are defined as basic, network intensive, and compute intensive. Details for each of these profiles can be found in chapter 2.3.
+  * Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
+* NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. <!-- , and compute intensive. --> Details for each of these profiles can be found in chapter 2.3.
 <p align="center"><img src="../figures/RC_NFVI_Profiles.png" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
 <p align="center"><b>Figure:</b> NFVI Profiles</p>
 Targeted VNF Classes/Families for baseline measurements are described in chapter XXXX.
@@ -158,7 +158,7 @@ To cater to different needs from multiple NFVI vendors, CNTT allows different ty
 <a name="2.5"></a>
 ## 2.5 Compliance, Verification, and Conformance
 The below set of steps define the compliance, verification and Conformance process for NFVI
-* Based on VNF's requirements, NFVI profile is selected - B, C, N
+* Based on VNF's requirements, NFVI profile is selected - B, <!-- C, --> N
 * NFVI readiness is checked for Conformance.
 * The test VNFs are on-boarded using automation scripts on the NFVI.
 * VNF on-boarding is validated by running functional tests to ensure that the on-boarding is successful.
