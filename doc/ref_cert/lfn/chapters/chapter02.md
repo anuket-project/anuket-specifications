@@ -138,7 +138,7 @@ The Infrastructure Profile Catalog contains the following attributes:
 * Profiles are offered to VNFs as an instance types with predefined compute flavors.
   * A particular set of options is an instance type
   * Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
-* NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. <!-- , and compute intensive. --> Details for each of these profiles can be found in chapter 2.3.
+* NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. <!-- , and compute intensive. --> Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
 <p align="center"><img src="../figures/RC_NFVI_Profiles.png" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
 <p align="center"><b>Figure:</b> NFVI Profiles</p>
 Targeted VNF Classes/Families for baseline measurements are described in chapter XXXX.
@@ -146,9 +146,9 @@ Targeted VNF Classes/Families for baseline measurements are described in chapter
 <a name="2.4"></a>
 ## 2.4 Profiles Reference
 Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughout whereas a VNF like Mobility Management Entity (MME) woud require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs woud have different characteristics. Depending on VNF's requirements, the NFVI can be categorised into below profiles:
-* Basic (B) profile for standard computing
-* Compute intensive (C) profile where predictable computing performance is expected and
-* Network intensive (N) profile offerring low latency and high networking throughout
+* Basic (B) profile for standard computing and
+<!-- * Compute intensive (C) profile where predictable computing performance is expected and -->
+* Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughout
 Similarly, different NFVI vendors may specialise in different hardware profiles and some may specialise in both VNFs and NFVI.
 
 To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI Conformance based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
@@ -402,13 +402,13 @@ The extend to which these different types of requirements are included in the co
 <a name="2.8.4"></a>
 ### 2.8.4 Profile Catalog
 
-Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines three software profiles, targeting three different use cases:
+Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines two software profiles, targeting two different use cases:
 
 * Basic
 * Network intensive
-* Compute intensive
+<!-- * Compute intensive -->
 
-The test cases selected for validating compliance of the three profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
+The test cases selected for validating compliance of the two profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
 
 TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
 
@@ -611,12 +611,12 @@ This optimization should be based on the following principles:
 
 1. NFVI domain metrics measurement: on PVP topology only
 2. Metrics measurement with forwarded traffic: with no L4 stateful processing
-3. Basic and Compute intensive profiles metrics measurement: client-server traffic profile only
+3. Basic <!-- and Compute intensive --> profile metrics measurement: client-server traffic profile only
 4. Flows & latency related metrics measurement: for PVP only
 
 The following table proposed a possible optimized matrix model of the test cases against the metrics to be measured. 
 
-|                     | **NFVI Profiles**   | **B & C**      |                |                |                | **N**         |                |
+|                     | **NFVI Profiles**   | **B <!-- & C -->**      |                |                |                | **N**         |                |
 | ------------------- | ------------------- | -------------- | -------------- | -------------- | -------------- | ------------- | -------------- |
 |                     | **Test Cases**      | V2V - L2 - SRV | VPV - L3 - SRV | PVP - L2 - SRV | PVP - L4 - SRV | PVP - L2- SRV | PVP - L2 - FWD |
 |                     |                     |                |                |                |                |               |                |
