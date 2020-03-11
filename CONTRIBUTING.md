@@ -32,7 +32,7 @@ Every Issue and PR should be tagged with one or more of the following labels to 
   - Project Name = Workstream Name.
 - Issues must be correctly set with the right labels and Milestone by WSL.
   - Relevant Milestone for the upcoming release (M1 - M6).
-- Contributors can assign the issues to themselves if they would like to work on them
+- Contributors can assign an unassigned issue to themselves if they would like to work on them
 - Workstream Leads have the responsibility to assign stalling or priority issues to individuals to address them.
 - WSL may label an issue as "**Returned**" to request further information or to decide not to work on it.
 
