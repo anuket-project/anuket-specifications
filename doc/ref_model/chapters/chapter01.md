@@ -98,7 +98,7 @@ The document starts from the abstract and as it progresses it increasingly gets 
   > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the VNF applications.
 - **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
   > **Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Appendix A - VNF Design Guidelines**: More details related to how the VNF applications will interface with the cloud infrastructure through APIs and the VIM.
+- **Appendix A - Guidelines For VNF Vendors**: More details related to how the VNF applications will interface with the NFVI through APIs and the VIM.
   > **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
 
 <a name="1.6"></a>
