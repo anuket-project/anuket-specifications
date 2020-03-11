@@ -165,4 +165,4 @@ There are multiple situations where a [policy](./policies.md), comprised of one 
 <a name="8.0"></a>
 # 8. Relevant Technologies
 
-There are different technologies used and specified by CNTT specifications. This [section](./technologioes.md) describes the relevant technologies for CNTT and clarifies CNTT position about them.
+There are different technologies used and specified by CNTT specifications. This [section](./technologies.md) describes the relevant technologies for CNTT and clarifies CNTT position about them.

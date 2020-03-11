@@ -61,3 +61,5 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 
 <a name="7.2"></a>
 ## 7.2 CNTT Technical Transition Plan
+
+Overall Transition Plan is explained in the Governance [Adoption](../gov/chapters/chapter09.md#9.3) strategy.
