@@ -83,15 +83,73 @@ Exceptions will be clearly recorded in Reference Architectures' Appendices which
 ## 9.4 Adoption Roadmap
 
 <a name="9.5"></a>
-## 9.5 CNTT Field Trial Approach
+## 9.5 CNTT Field Trial/ Approach
 
+This portion of Chapter 9 is segmented into two subsections. Section 9.5.1 provides a summary and overview of the trials activities specifically targeted to potential trials participants. Section 9.5.2 addresses the overall approach of CNTT to field trials as a method of ensuring consistency between releases.
 <a name="9.5.1"></a>
-### 9.5.1 Background
 
+### 9.5.1 Summary/Field Trials Participants Overview
+
+CNTT has built a Reference Architecture (RA-1) on which Reference Implementation (RI-1) and Reference Conformance (RC-1) requirements have been defined. To ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its requirements and methods (RI-1/RC-1).
+
+#### 9.5.1.1 Intents of Field Trials
+
+This is a partnership of CNTT with participants to validate the community is adopting a consistent approach. This is not a VI badging exercise. The trials will validate the RI-1 and the RC-1 test suite requirements and methods themselves, not VNFs or VI systems under test. 
+
+#### 9.5.1.2 Expectations and Assumptions of Field Trials
+
+CNTT expects to exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps. Through the community continuous improvement processes, a badging process that is mutually beneficial to operators and suppliers will be defined/refined. CNTT assumes that performance testing is not included in the field trial.
+
+#### 9.5.1.3 Pre-trials activities
+
+Prior to the beginning of field trials, the CNTT community will define an operational plan, secure resource, and provide all designated contact information required to support the trials participants.  As the results of the trails may produce data and information that could be considered sensitive by participants, CNTT will establish standard data set requirements and secure collection methods to ensure participant privacy protection.
+
+#### 9.5.1.4 Expectations of Trials Participants
+
+Trials participants will be expected to commit to establishing an RA-1 compliant NFVi through means that are most appropriate for the participant. 
+
+First, the participant will secure appropriate environment space from pre-existing space, newly built space or securing LaaS.  The environment can exist in private or community hardware infrastructure.
+
+Second, the participant will build/setup/configure the environment space via their preferred method. This can include the use of a cookbook, automated install, and/or build from RA-1/RI-1 requirements and specifications. CNTT RI-1 Chapter 3 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md ) documentation provides the matching RI-1 requirements for the build.
+
+#### 9.5.1.5 Expectation 2: Execute the RC-1 Test suite
+
+CNTT will provide the participants with the community RC-1 Test suite, found at this Link: https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter04.md. The participants will execute test cases per instructions and record the quantitative results.
+
+Test case suite should be executed successfully at least 3 times. Three times represents the recommended number of test suite runs to eliminate false positives in results.  A triage process will be used to determine and manage root cause analysis of failures. If the failures are determined to be issues with the participant’s RI, CNTT will convey the issues to the RI and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
+
+Once the test case suite execution is successful for 3 consecutive iterations, the participant will provide the data of all iterations (both successful and unsuccessful) to CNTT based on participant privacy expectations (See Expectation #4)
+
+#### 9.5.1.6 Expectation #3: The Qualitative Survey
+
+At the conclusion of Test Case iterations, the participant will be asked to complete a qualitative survey of their experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI-1 specifications, installation/configuration methods and RC-1 Test case efficacy. The survey will use an Agile User Story format. The Table below provides an example of the survey questions:
+
+
+
+
+Table 1: Survey/Questionnaire example
+
+#### 9.5.1.7 Expectation 4: Providing Trials Results
+
+As a community, CNTT is concerned with the privacy of the participant data. CNTT subscribes to the LFN anti-trust policies ( https://www.linuxfoundation.org/antitrust-policy/ ) and the LFN Privacy Policy ( https://www.linuxfoundation.org/privacy/ ). As discussed in the Pre-trials activity section of the document, data generated by the trials will be secured to protect participant privacy. Additionally, should participants have concerns regarding the data they generate from the trials, CNTT will either work with the participant to eliminate their concerns, honor instructions from the participant on the data use, or agree to exclude that participant’s data from the analysis.
+
+#### 9.5.1.8 Conclusion: Final Deliverable - End-of-Trial Report
+
+Upon completion of field trials, CNTT shall develop an End of Trial Report which summarizes the overall conclusions based on the evaluation, to include:
+
+1.	Successes: What went activities went well generally or specifically? How did it compare to the past or alternative results?
+2.	Challenges: What didn’t go well overall? What impact could these challenges have on adoption?
+3.	Discoveries: What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
+4.	Decisions and Recommendations: Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
+5.	Next Steps: Indication of proposed steps and activities to be undertaken by the community
+
+### 9.5.2 CNTT Field Trials Approach 
+
+### 9.5.2.1 Background
 The Common NVFI Telco Taskforce (CNTT) is building a set of infrastructure standards to be implemented within telcos to improve cost effectiveness and speed of delivery of Virtual Network Functions. As part of the standards development, the organization has built a Reference Model (RM) on which Reference Implementation (RI) and Reference Conformance (RC) standards have been defined.  For CNTT to ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its methods (RI/RC standards).
 
-<a name="9.5.2"></a>
-### 9.5.2 Purpose of this Document Section
+<a name="9.5.2.2"></a>
+### 9.5.2.2 Purpose of this Document Section
 
 The purpose of this document is to define the goals/outcomes, expectations, and roles necessary to support the CNTT release trials. The document will define/discuss the following:
 
@@ -103,33 +161,33 @@ The purpose of this document is to define the goals/outcomes, expectations, and 
 *	Resource requirements
 *	Metrics definition
 
-<a name="9.5.3"></a>
-### 9.5.3 Field Trial Purpose
+<a name="9.5.2.3"></a>
+### 9.5.2.3 Field Trial Purpose
 
 In the truest form, adoption of a standard is an indication of it’s success within an industry. Standards developed must be interactively tested in multiple environments or “trialed” to ensure they are practicable, functional, and operative. Without running trials to validate the CNTT approach, standards may not provide intended value across a sufficient spectrum of participating entities to be widely adopted. 
 
-<a name="9.5.3.1"></a>
-#### 9.5.3.1 Intents
+<a name="9.5.2.4"></a>
+#### 9.5.2.4 Intents
 
 1)	This is a partnership approach to validate CNTT community is adopting a consistent approach
 2)	Validate RI-1 specifications and RC-1 test suite, not VNFs or NFVI’s in the trial
 
-<a name="9.5.3.2"></a>
-#### 9.5.3.2 Key Expectations and Assumptions
+<a name="9.5.2.5"></a>
+#### 9.5.2.5 Key Expectations and Assumptions
 
 1)	Expectation is through healthy feedback from suppliers, CNTT will exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps.
 2)	Expectation: Post trial and gap closure, the community will define a badging process that is mutually beneficial to operators and suppliers. 
 3)	Assumption: Performance testing is not in field trial
 
-<a name="9.5.4"></a>
-### 9.5.4 Overview: Stages of Field Trial
+<a name="9.5.2.6"></a>
+### 9.5.2.6 Overview: Stages of Field Trial
 
 The following diagram the key components and flow of activities, actions, and deliverables to be undertaken during the trial. Details of each component are provided in this document.
 
 <p align="center"><img src="../figures/field_trials.png" alt="CNTT Field Trial Approach" title="Field Trial Approach" width="85%"/></p>
 <p align="center"><b>Figure 3:</b> Field Trial Approach</p>
 
-<a name="9.5.4.1"></a>
+<a name="9.5.2.7"></a>
 #### Success Indicators
 
 1) Agreement secured on the use of trials results data, including:
@@ -138,33 +196,32 @@ b.	Acceptable data values indicating valid results
 c.	Detail level of data that will be published
 
 2) RI-1 Labs are successfully stood up in all target environments
-a.	Vendor (3rd party)
-b.	Community (OPNFV)
-c.	LaaS (e.g. UNH)
+* Vendor (3rd party)
+*	Community (OPNFV)
+*	LaaS (e.g. UNH)
 
 3) Engaged NVFI vendors successfully configure their infrastructure per RI-1 and run the RC-1 test suite and are able to provide expert feedback
 
 4) Engaged VNF vendors are able to validate that they can instantiate and run rudimentary validation of VNF functionality on more than one conformant NVFI
 
-<a name="9.5.5"></a>
+<a name="9.5.2.7"></a>
 ### 9.5.5 Initiation 
 
-<a name="9.5.5.1"></a>
-#### 9.5.5.1 Objectives of RI-1/RC-1 Trials
+<a name="9.5.7.1"></a>
+#### 9.5.7.1 Objectives of RI-1/RC-1 Trials
 
-The following list defines the desired outcomes/goals for the RI-1/RC-1 trails:
-
-1)	Verified/Validated RI-1 and RC-1 standards and methods (latest release)
- * RI-1 Cookbook 
- * RI-1 Specifications
- * RC-1 Test Suite 
- * TC Traceability
- * Test Pass Criteria
- * Benchmark Data
+The object is to quantitively and qualitatively assess and evaluate the following CNTT requirements, methods, and support processes:
+*	RI-1 implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
+* RI-1 Specifications
+* RC-1 Test Suite 
+* TC Traceability
+* Test Pass Criteria
+* Benchmark Data
  * Other?
 2)	Feedback from trial participants (suppliers/operators) in CNTT (Need to ID type of feedback)
 3)	Defined solutions to issues and gaps found in RI-1 and RC-1
 4)	Make enhancements to future releases accordingly.
+
 
 <a name="9.5.5.2"></a>
 #### 9.5.5.2 Publication and Dissemination of Information
@@ -173,17 +230,17 @@ CNTT will work very closely with field trial partners (NFVI vendors, VNF vendors
 
 For information that is acceptable for publishing, the development activities, test cases, project plans, and results of field trials will be captured, tracked and managed. The targeted repositories for this information are:
 
-*	CNTT GitHub
+CNTT GitHub
 
-  - GitHub Code
+*  GitHub Code
   
-  - GitHub Projects
+*  GitHub Projects
   
-  - GitHub Issues
+*  GitHub Issues
   
-*	OPNFV 
+OPNFV 
 
-  - (Where?)
+*  (Where?)
 
 <a name="9.5.5.3"></a>
 #### 9.5.5.3 Test Case Identification
