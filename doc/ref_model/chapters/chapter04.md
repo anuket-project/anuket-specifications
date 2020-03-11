@@ -217,10 +217,10 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 | Ref | NFVI Measurement | Unit | Definition/Notes |
 |--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.pm.001 | Host CPU usage |  | Per Compute node. It needs to Maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM) and [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
-| i.nfvi.pm.002 | Virtual compute resource CPU usage |  | QoS enablement |
-| i.nfvi.pm.003 | Host CPU utilization |  | Per Compute node. It needs to map to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM) and [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
-| i.nfvi.pm.004 | Virtual compute resource CPU utilization |  | Range (min, max) per VNFC |
+| i.nfvi.pm.001 | Host CPU usage | nanoseconds | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM). |
+| i.nfvi.pm.002 | Virtual compute resource CPU usage | nanoseconds | Per VNFC.  It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
+| i.nfvi.pm.003 | Host CPU utilization | % | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM).|
+| i.nfvi.pm.004 | Virtual compute resource CPU utilization | % | Per VNFC. It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM).  |
 | i.nfvi.pm.005 | Measurement of external storage IOPs | Yes/No |  |
 | i.nfvi.pm.006 | Measurement of external storage throughput | Yes/No |  |
 | i.nfvi.pm.007 | Available external storage capacity | Yes/No |  |
