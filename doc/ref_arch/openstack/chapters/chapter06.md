@@ -142,7 +142,7 @@ This intent of this section is to provide key baseline and minimal requirement t
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
-* Logs must be generated for any component (ex. Nova in Openstack) that form the NFVi.
+* Logs must be generated for any component (ex. Nova in Openstack) that form the NFVI.
 * All security logging mechanisms must be active from system initialization. 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 
