@@ -127,9 +127,8 @@ The NFVI Management Software (VIM) provides the services for the management of C
 ### 3.3.1. VIM Core services 
 OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for NFVI/VIM use cases. Other components are optional and provide functionality above and beyond NFVI/VIM requirements.
 
-The architecture consists of the services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
+The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific CNTT conformant implementation requirements and recommendations for the core services.
 
-The following diagram shows the core OpenStack services that must be provided to be compliant.
 
 <p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v5.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/><b>Figure 3-1:</b> OpenStack Core Services</p>
 
