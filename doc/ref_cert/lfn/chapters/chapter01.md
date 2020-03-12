@@ -19,7 +19,7 @@
 
 ## Synopsis
 
-Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+Ensure an implementation of the CNTT Reference Architecture (RA), such as the Reference Implementation (RI), meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RI verification.
 
 For the purposes of this chapter, NFVI+VNF testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
 
@@ -27,12 +27,12 @@ For the purposes of this chapter, NFVI+VNF testing will be performed to evaluate
  - Clearly stated guidelines for test, badging, and lifecycle management
  - Inclusion of Operational run-books for 3rd party supplier instantiation and validations of NFVI+VNF0
  - Evidence, through test results (FR/NFR), confirming delivered code matches design and client expectations
- - Interoperability testing of Reference VNFs ensuring integration stability, including the successful removal of the VNF from the target architecture
+ - Interoperability testing with Reference VNFs, ensuring integration stability and life-cycle management of the Reference VNF on the target architecture.
 
 In summary, NFVI+VNF **Conformance** testing will be performed for **Verification** and **Validation** purposes, defined further as:
 
-- **Verification** will be used to indicate conformance to design requirement specifications. Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.
-- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour.
+- **Verification** will be used to indicate conformance to design requirement specifications. Accomplished with Requirement Traceability and Manifest Reviews to ensure the NFVI is delivered per implementation specifications.
+- **Validations** is used to indicate that testing performed confirms the NFVI+VNF meets the expected, or desired outcome, or behaviour.
 
 **All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
 
