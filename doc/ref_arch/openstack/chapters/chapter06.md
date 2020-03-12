@@ -160,8 +160,8 @@ Where technically feasible the following system events must be recorded:
 
 ##### What NOT to log
 Security audit logs must NOT contain:
-* Authentication credentials, even if encrypted;
-* Auhtorized tokens;
+* Authentication credentials, even if encrypted (ex. password);
+* Keystone Token;
 * Proprietary or Sensitive Personal Information.
 
 #### 6.3.7.3 Where to Log
