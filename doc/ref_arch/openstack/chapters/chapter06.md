@@ -17,7 +17,7 @@
 
 ## 6.1 Introduction
 
-This guide is intended to provide basic security requirements to CNTT architects who are looking to implementing NFVi using [OpenStack](https://www.openstack.org/) technology.  This is minimal set of high-level general security practice, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to CNTT architects who are looking to implementing NFVI using [OpenStack](https://www.openstack.org/) technology.  This is minimal set of high-level general security practice, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
@@ -25,7 +25,7 @@ This guide is intended to provide basic security requirements to CNTT architects
 Based on chapter 2 requirements
 
 <a name="6.3"></a>
-## 6.3 NFVi and VIM Security
+## 6.3 NFVI and VIM Security
 
 OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html
@@ -165,7 +165,7 @@ Security audit logs must NOT contain:
 * Proprietary or Sensitive Personal Information.
 
 #### 6.3.7.3 Where to Log
-* Where technically feasible, events MUST be recorded on the device where the event occurs. 
+* Where technically feasible, events MUST be recorded on the device (e.g. VM, physical node, etc.) where the event occurs. 
 * Where it is not technically feasible to record the event on the resource on which it occurs, then the operational use of another resource like a centralized log repository must record the event in a manner where the event can be linked to the resource on which it occurred.
 
 #### 6.3.7.4 Required Fields
