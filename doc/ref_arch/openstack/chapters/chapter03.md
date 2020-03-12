@@ -26,9 +26,9 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The Common Telco NFVI OpenStack Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many distributions of OpenStack. It does not seek to change any vendor implementation assuming Common Telco NFVI compliance out of the box without vendor specific enhancements that are not up-streamed. This would allow operators to provide a common OpenStack-based architecture allowing any compliant VNF to be deployed and operate as expected.  The purpose of this chapter is to outline all the components required to provide the NFVI and the VIM in a consistent and reliable way. 
+This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture. The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the NFVI and the VIM in a consistent and reliable way. 
 
-OpenStack is already very well documented at http://docs.openstack.org so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
+[OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and fetaures, NFVI features and how we expect them to be implemented.
 
 This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
