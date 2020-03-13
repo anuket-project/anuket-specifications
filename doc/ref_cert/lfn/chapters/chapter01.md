@@ -27,7 +27,7 @@ For the purposes of this chapter, NFVI+VNF testing will be performed to evaluate
  - Clearly stated guidelines for test, badging, and lifecycle management
  - Inclusion of Operational run-books for 3rd party supplier instantiation and validations of NFVI+VNF0
  - Evidence, through test results (FR/NFR), confirming delivered code matches design and client expectations
- - Interoperability testing with Reference VNFs, ensuring integration stability and life-cycle management of the Reference VNF on the target architecture.
+ - Interoperability testing with Reference VNFs, ensuring integration stability and life-cycle management of the Reference VNF on the target implementation.
 
 In summary, NFVI+VNF **Conformance** testing will be performed for **Verification** and **Validation** purposes, defined further as:
 
