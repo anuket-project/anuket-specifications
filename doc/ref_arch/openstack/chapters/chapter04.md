@@ -165,8 +165,37 @@ Caveats:
 -	Affinity and anti-affinity rules, among other factors, affect the sizing
 
 #### 4.2.2.6. Compute Resource Pooling Considerations
--	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive) leads to efficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type.
--	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection.
+
+-	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive) leads to inefficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type. 
+-	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection. 
+
+#### 4.2.2.7. Reservation of Compute Node Cores
+The [RA-1 2.3.2 Infrastructure Requirements](./chapter02.md#232-infrastructure-requirements) req.inf.com.08 requires the allocation of "certain number of host cores/threads to non-tenant workloads such as for OpenStack services." A number ("n") of random cores can be reserved for host services (including OpenStack services) by specifying the following in nova.conf:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reserved_host_cpus = n
+
+where n is any positive integer.
+
+If we wish to dedicate specific cores for host processing we need to consider two different use cases:
+
+    1. Require dedicated cores for Guest resources
+    2. No dedicated cores are required for Guest resources
+
+Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Pike release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
+
+Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vcpus numbered '0' and '20', '1' and '21', etc. are siblings:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 1-7,9-19,21-27,29-39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (can also be specified as cpu_shared_set = 1-19,^8,21-39,^28)
+
+This implies that the two physical cores '0' and '8' and their sibling threads '20' and '28' are dedicated to the host services, and 19 cores and their sibling threads are available for Guest instances (and can be over allocated as per the specified cpu_allocation_ratio in nova.conf.
+
+#### 4.2.2.8. Pinned and Unpinned CPUs
+
+When a VM instance is created the vCPUs are, by default, not assigned to a particular host CPU. Certain workloads require real-time or near real-time behavior viz., uninterrupted access to their cores. For such workloads, CPU pinning allows us to bind an instance’s vCPUs to particular host cores. To configure a flavor to use pinned vCPUs, we use a dedicated CPU policy.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; openstack flavor set .xlarge --property hw:cpu_policy=dedicated
+
+While an instance with pinned CPUs cannot use CPUs of another pinned instance, this does not apply to unpinned instances; an unpinned instance can utilize the pinned CPUs of another instance. To prevent unpinned instances from disrupting pinned instances, the hosts with CPU pinning enabled are pooled in their own host aggregate and hosts with CPU pinning disabled are pooled in another non-overlapping host aggregate. 
 
 <a name="4.2.3"></a>
 ### 4.2.3. Network Fabric

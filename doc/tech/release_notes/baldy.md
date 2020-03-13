@@ -1,6 +1,8 @@
 [<< Back](../)
 # Baldy Release Notes
 
+<p align="center"><img src="../figures/Baldy.png" alt="Baldy Release Organisation" Title="Baldy Release Organisation" width="65%"/></p>
+<p align="center"><b>Figure 1:</b> Baldy Release Organisation</p>
 
 ## Baldy Release Contents
 * [Overview](#overview)

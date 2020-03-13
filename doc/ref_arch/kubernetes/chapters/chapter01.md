@@ -9,9 +9,8 @@
 * [1.3 Principles](#1.3)
   * [1.3.1 Cloud Native.](#1.3.1)
 * [1.4 Scope](#1.4)
-* [1.5 Vision](#1.5)
-* [1.6 Approach](#1.6)
-* [1.7 Roadmap](#1.7)
+* [1.5 Approach](#1.5)
+* [1.6 Roadmap](#1.6)
 
 
 <a name="1.1"></a>
@@ -71,12 +70,7 @@ The definition above is very application centric and look at cloud native from t
 <a name="1.4"></a>
 ## 1.4 Scope
 
-The high level scope of the CNTT Reference Architectures can be seen in Figure 1-1 below.
-
-<p align="center"><img src="../figures/ch01_scope.png" alt="Description of the possible different levels of CNTT artefacts." title="Description of the possible different levels of CNTT artefacts" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
-
-The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-2:
+The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-1:
 - Kubernetes capabilities required to conform to the Reference Model requirements
 - Support for CNFs that consist wholly of containers
 - Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
@@ -86,7 +80,7 @@ For the avoidance of doubt, the following is considered to be **out of scope**:
 - **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of CNTT. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
 
 <p align="center"><img src="../figures/ch01_scope_k8s.png" alt="Kubernetes Reference Architecture scope" title="Kubernetes Reference Architecture scope" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> Kubernetes Reference Architecture scope</p>
+<p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture scope</p>
 
 <a name="1.5"></a>
 ## 1.5 Approach
@@ -107,3 +101,4 @@ As Kubernetes evolves over time it will add new technologies and capabilities an
 
 
 > A populated roadmap view will be added here after the January 2020 release.
+
