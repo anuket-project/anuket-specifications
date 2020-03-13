@@ -1,6 +1,6 @@
 # CNTT Vendor Implementation - VI
 
-## Vendor Name
+## Vendor Name and contact details
 Vendor XX
 
 ## Target Reference Architecture :
