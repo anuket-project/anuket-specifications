@@ -27,4 +27,4 @@
 
 > Detailed results of the test outputs.
 > if possible, pointers and links to public results (such as those of OVP)
-> Links to LFN badges, etc.
+> Links to LFN badges (if applicable), etc.
