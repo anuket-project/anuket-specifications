@@ -5,10 +5,10 @@
 ## Table of Contents
 * [A.1 Goals](#A.1)
 * [A.2 Intro and Terminology](#A.2)
-* [A.3 VNF Evolution Phases](#A.3)
+* [A.3 Exception List](#A.3)
 * [A.4 Links](#A.4)
 * [A.5 Hardware-Dependent Coding Policies](#A.5)
-* [A.6 VNF Design and Implementation Guidelines and Requirements](#A.6)
+* [A.6 VNF Design and Implementation Guidelines](#A.6)
 * [A.7 Miscellaneous](#A.7)
 
 <a name="A.1"></a>
@@ -24,8 +24,17 @@ The goal is not to be prescriptive on how to re-architect existing or architect 
 (Summary status and trends of ETSI NFV and Cloud. Decoupling application from platform. Terminology used/introduced.)
 
 <a name="A.3"></a>
-## A.3 VNF Maturity Levels
-(And how they map to CNTT RAs)
+## A.3 Exception List
+
+As Part of the [Transition Plan](../../gov/chapters/chapter09.md#9.2) described in the adoption strategy, following table explains the exceptions allowed in this RM release. The list of Exceptions described here are considered to be against CNTT principles and will be removed in future releases as soon as an alternative technology that is aligned with CNTT principles develops and matures. 
+
+| Ref        	| Type       	| Name               	| Description                                                           	|
+|------------	|------------	|--------------------	|-----------------------------------------------------------------------	|
+| rm.exc.001 	| Technology 	| SRIOV 	| This exception allows workloads (VNF/CNF) to rely on SR-IOV technology. 	|
+| rm.exc.002 	|            	|                    	|                                                                       	|
+| rm.exc.003 	|            	|                    	|                                                                       	|
+
+<p align="center"><b>Table A-1:</b> Exceptions allowed in this RM release</p>
 
 <a name="A.4"></a>
 ## A.4 Links
