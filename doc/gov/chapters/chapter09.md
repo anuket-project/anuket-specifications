@@ -131,9 +131,9 @@ Once the test case suite execution is successful for 3 consecutive iterations, t
 
 At the conclusion of Test Case iterations, the participant will be asked to complete a qualitative survey of their experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI-1 specifications, installation/configuration methods and RC-1 Test case efficacy. The survey will use an Agile User Story format. The Table below provides an example of the survey questions:
 
-## Table to be inserted
+<p align="center"><img src="../figures/Table 1.png" alt="Qualitative Survey" title="Survey/Questionnaire example" width="85%"/></p>
+<p align="center"><b>Table 1:</b> Survey/Questionnaire example</p>
 
-Table 1: Survey/Questionnaire example
 
 <a name="9.5.1.7"></a>
 #### 9.5.1.7 Expectation 4: Providing Trials Results
@@ -327,7 +327,7 @@ The deliverables of the execute stage will be:
 
 The Assess stage shall utilize data collected during the execute stage. Participants will assess their experience using the methods used by CNTT accordingly to quantitatively and or qualitatively measure:
 
-#*Required Assessments
+#### Required Assessments
 
 * RI-1 Implementation methods and procedures (cookbook, etc) 
 * RI-1 Specifications
@@ -337,8 +337,9 @@ The Assess stage shall utilize data collected during the execute stage. Particip
 *	Benchmark Data
 *	Other?
 
-#*Optional (Pre-Launch Trials only)
-#*VNF Instantiation
+#### Optional (Pre-Launch Trials only)
+
+##### NF Instantiation
 
    *	Smoke test the level of verification and validation
    *	Non-functional
