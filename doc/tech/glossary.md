@@ -37,7 +37,6 @@ To help guide the reader, this glossary provides an introduction to the terminol
   - **Storage Workloads**: are all tasks related to disk storage (either SSD or HDD or other).  Examples range from non-intensive router logging to more intensive database read/write operations.
 - **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server.
   >_*Note:*_ A **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour.
-- **Instance type**: Specifies a set of virtualized hardware resources and capabilities used for the creation of a virtual compute on which a workload runs on, includes capability specifications characterizing compute, storage and memory.
 - **Instance**: is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server.  >_*Note:*_ Can be used to specify VM Instance or Container Instance.
 - **Compute flavour**: defines the sizing of the virtualised resources (compute, memory, and storage) required to run a workload.
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
@@ -47,6 +46,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
   - **Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
   - **Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
 - **Hypervisor**: A piece of software with management components that allows the user to partition the underlying physical resources and allocate them to Virtual Machines. Typically, the hypervisor is managed by a cloud management software such as OpenStack.
+- **Cloud Infrastructure Profile**: The combination of the Cloud Infrastructure Software Profile and the Cloud Infrastructure Hardware Profile that defines the capabilities of the Cloud Infrastructure.
 - **Cloud Infrastructure Software Profile**: defines the behaviour, capabilities and metrics provided by a cloud infrastructure Software Layer
 - **Cloud Infrastructure Software Configuration**: a set of settings (Key:Value) that are applied/mapped to **cloud infrastructure** SW deployment.
 
@@ -77,7 +77,7 @@ better utilize the resources provided by modern processor architectures.
 - **Quota**: An imposed upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
 - **Resource pool**: A logical grouping of cloud infrastructure hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **Cloud Infrastructure** resource can be part of none, one or more resource pools.
 - **Compute Node**: An abstract definition of a server.
->_*Note:*_ A compute node can refer to a set of hardware and software that support the VMs or Containers running on it. 
+>_*Note:*_ A compute node can refer to a set of hardware and software that support the VMs or Containers running on it.
 - **Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
 
 <a name="1.4"></a>
@@ -87,7 +87,7 @@ better utilize the resources provided by modern processor architectures.
 
 - **Container Image**:	Stored instance of a container that holds a set of software needed to run an application.
 - **Container**:	A lightweight and portable executable image that contains software and all of its dependencies.
->_*Note:*_ OCI defines **Container** as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment." 
+>_*Note:*_ OCI defines **Container** as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment."
 A **Container** provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
 
 - **Container Runtime**: The software that is responsible for running containers.
@@ -113,11 +113,11 @@ Terms not defined by Kubernetes:
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **Cloud Infrastructure** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **Cloud Infrastructure** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
-- **Platform**: A cloud capabilities type in which the cloud service user can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)). 
+- **Platform**: A cloud capabilities type in which the cloud service user can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)).
 >_*Note:*_ For CNTT,  this includes the physical infrastructure, Operating Systems, virtualization/containerization software and other orchestration, security, monitoring/logging and life-cycle management software.
 
 - **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the cloud infrastructure, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
 
-- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance. 
+- **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance.
 
 - PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
