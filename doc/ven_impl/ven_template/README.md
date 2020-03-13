@@ -3,12 +3,17 @@
 ## Vendor Name
 Vendor XX
 
-## Target Reference Architecture :
+## Target Reference Architecture:
 |   Type          | Release  | Notes
 |--------------------------------|--------------------------------|-------------------------------|
 | OpenStack (RA-1) |  v3.0   |   |
 
-## Target Reference Conformance :
+## Target Reference Implementation:
+|   Type          | Release  | Notes
+|--------------------------------|--------------------------------|-------------------------------|
+| OpenStack (RI-1) |  v3.0   |   |
+
+## Target Reference Conformance:
 |   Type          | Release  | Notes
 |--------------------------------|--------------------------------|-------------------------------|
 | OpenStack (RC-1) |  v3.0   |   |
