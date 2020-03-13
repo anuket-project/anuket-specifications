@@ -107,10 +107,12 @@ Current CNTT Policies:
 **SR-IOV:**
 
 
-SR-IOV provides highly performant way of getting packets into VNFs but comes with tradeoffs in agility (VNF onboarding), operational issues (vendor drivers in VNFs) and changes in networking and security management. Without arguing for or against SR-IOV, CNTT provides the following anecdotes which have been raised in discussions over SR-IOV:
+CNTT recognizes that today, SR-IOV provides a critical Capability for increased throughput over network interfaces at an economical cost. However, SR-IOV comes with a set of tradeoffs in agility (VNF onboarding), operational issues (vendor drivers in VNFs) and changes in networking and security management. Without arguing for or against SR-IOV, CNTT provides the following anecdotes which have been raised in discussions over SR-IOV:
 - SR-IOV mitigates the need for duplicated servicing of interrupts from unbuffered (i.e. small buffer) NICs, however it does not reduce the number of frame reception driven interrupts which much be serviced.
 - SR-IOV increases the Fabric management complexity, as encapsulation must be applied by the ToR/Leaf interface and the encapsulation must be managed as VNFs and/or networks are added/deleted from the Tenant. Therefore, performance isn't the only factor; fabric touch points and Service Chaining must also be considered.
 - Indications are that technologies such as DPDK, VPP, FD.io and others offer comparable throughput, today.<sup>(Citations Needed)</sup>
+
+As such, the CNTT approach to SR-IOV is to accept the use of SR-IOV, and encourage the development of a suitable replacement that address the management and deployment shortcomings of SR-IOV while achieving similar price and performance.  When such an alternative emerges, this SR-IOV exception will be revisited.  (detailed policy language under development; to be tied in with VNF Evolution).
 
 
 **GPU/NPU:**
