@@ -400,7 +400,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 <p align="center"><b>Table 4-17:</b> Predefined Compute Flavours.</p>
 
 **1)** These compute Flavours are intended to be used for transitional purposes and VNF vendors are expected to consume smaller Flavours and adopt microservices-based designs for their VNFs.<br>
-**2)** In Kubernetes based environments these are the resource requests limits of the pods.
+**2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
