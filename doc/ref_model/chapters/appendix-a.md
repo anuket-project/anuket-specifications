@@ -71,19 +71,22 @@ Without arguing for or against SR-IOV, CNTT provides the following anecdotes whi
 End of policies.
 
 <a name="A.6"></a>
-## A.6 VNF Design and Implementation Guidelines and Requirements
-This section specifies a set of VNF Design and Implementation Guidelines and Requirements. In addition to the following, there are additonal guidelines and requirements specified by  ONAP in "[VNF or PNF Requirements Documentation](https://onap.readthedocs.io/en/latest/submodules/vnfrqts/requirements.git/docs/index.html)"
+## A.6 VNF Design Guidelines
+A number of software design guidelines (industry best practices) have been developed over the years including micro-services, cohesion and coupling. In addition to the industry best-practices, there are additonal guidelines and requirements specified by  ONAP in "[VNF or PNF Requirements Documentation](https://onap.readthedocs.io/en/latest/submodules/vnfrqts/requirements.git/docs/index.html)." This section does not supplant these well-known guidelines and practices. The content here only draws attention to some other design consideration that VNF Developers need to incorporate in their practices. Please note that some of these guidelines may be incorporated by operators in their contracts with VNF Vendors. 
 
-| Ref | Requiremenet | Unit | Definition
-|----|-----|-----|----|
-| vnf.des.001 | The VNF Developer **should** ensure that their software and the resultant VNF image does not contain malicious code (e.g., malware, logic bombs, etc.)  |  | |
-| vnf.des.002 | The VNF Developer **must** ensure that their software and the resultant VNF image does not contain code such as daemons that exposes them to risk |  | |
-| vnf.des.003 | The VNF Developer **must** ensure that their software and resultant VNF image are only created with content and files from trusted sources |  | |
-| vnf.des.004 | The VNF Developer **must** ensure that their software and resultant VNF image are only packaged with files that have been found free of malware and vulnerabilities |  | |
-| vnf.des.005 | The VNF Developer **must** ensure that their software and resultant VNF image do not contain clear text secrets |  | |
-| vnf.des.006 | The VNF Developer **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |  | Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |
-| vnf.des.007 | The VNF Developer **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries |  | Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) |
-| vnf.des.008 | The VNF Developer **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
+
+These guidelines are written in an informal style and any resemblance to requirements is incidental. The VNF Developer **should** ensure that their software and the resultant VNF image:
+1. does not contain malicious code (e.g., malware, logic bombs, etc.).
+1. does not contain code such as daemons that exposes them to risk.
+1. does not contain clear text secrets.
+1. are only created with content and files from trusted sources.
+1. are only packaged with files that have been found free of malware and vulnerabilities.
+
+Additionally, in the design and implementation of their software, the VNF Developer **should** follow the guidance in the: 
+1. [CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version)](https://cloudsecurityalliance.org). 
+1. [OWASP Cheat Sheet Series (OCSS)](https://github.com/OWASP/CheatSheetSeries) from the [Open Web Application Security Project](https://www.owasp.org). 
+
+The VNF Developer **should** ensure that their code is not vulnerable to the [OWASP Top Ten Security Risks](https://owasp.org/www-project-top-ten/) created by the [Open Web Application Security Project](https://www.owasp.org).
 
 
 <a name="A.7"></a>
