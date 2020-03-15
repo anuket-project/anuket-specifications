@@ -59,7 +59,7 @@ Some of the data is to support the metrics collection specified in the [Referenc
 
 Logs have multiple operational uses including for:
 
-1. Regulatory Compliance and SIEM featuring the automated gathering, analysis and correlation of log data across all systems and devices across AT&T to provide real-time analysis, event prioritization, reporting, notification and alerting.
+1. Regulatory Compliance and Security Information and Event Management (SIEM) featuring the automated gathering, analysis and correlation of log data across all systems and devices across an operator to provide real-time analysis, event prioritization, reporting, notification and alerting.
 1. Monitoring across systems in real-time to detect particular log events, patterns, anomalies or inactivity to gauge system and application health
 1. Identify system and application performance and configuration issues
 1. Root cause analysis for system and application failures and errors
@@ -82,16 +82,16 @@ values. Alert definitions are composed of two components: a metrics-based condit
 action to perform when the values fall outside of the acceptable conditions.
 
 While monitoring systems are incredibly useful for active interpretation and investigation, one of the primary
-benefits of a complete monitoring system is letting administrators disengage from the system. ALerts allow the
+benefits of a complete monitoring system is letting administrators disengage from the system. Alerts allow the
 specification of situations that make sense to actively manage, while relying on the passive monitoring of the 
 software to watch for changing conditions.
 
 ### 7.5.3. Logging,Monitoring, and Analytics (LMA) Framework
-In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only.
+In this section, a possible framework utilizing Prometheus, Fluentd, Elasticsearch and Kibana is given as an example only.
 
 
-<p align="center"><img src="../figures/Figure_4_4_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"></br>
-Figure 7-1: Monitoring and Logging Framework </p>
+<p align="center"><img src="../figures/Figure_7_1_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"><b>
+  Figure 7-1: Monitoring and Logging Framework</b> </p>
 
 The monitoring and logging framework (**Figure 7-1**) leverages Prometheus as the monitoring engine and 
 Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. 
