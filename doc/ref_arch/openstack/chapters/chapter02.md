@@ -66,10 +66,10 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |  Traceability |
 |----|--------------|---------------------|-----------|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for VM instances. | [RA-1 3.3.1.4 "Cloud Workload Services"](./chapter03.md#3314-cloud-workload-services) |
-| `req.inf.com.04` | Compute | The Architecture **must** be able to support multiple CPU SKU options to support various infrastructure profiles (Base, and Network Intensive<!--- , and Compute Intensive --->).| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
+| `req.inf.com.04` | Compute | The Architecture **must** be able to support multiple CPU SKU options to support various infrastructure profiles (Base, and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
 | `req.inf.com.05` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapters/chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
 | `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning of the vCPUs of VM instance.| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
-| `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Base, and Network Intensive<!--- , and Compute Intensive --->).| [RA-1 3.3.3. "Host aggregates providing resource pooling"](./chapter03.md#333-host-aggregates-providing-resource-pooling) |
+| `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Base, and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 3.3.3. "Host aggregates providing resource pooling"](./chapter03.md#333-host-aggregates-providing-resource-pooling) |
 | `req.inf.com.08` | Compute | The Architecture **must** support allocating certain number of host cores/threads to non-tenant workloads such as for OpenStack services. | [Dedicating host core/sibling threads to certain workloads (e.g., OpenStack services](https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set). Please see example, ["Configuring libvirt compute nodes for CPU pinning"](https://docs.openstack.org/nova/latest/admin/cpu-topologies.html) |
 | `req.inf.com.09` | Compute | The Architecture **must** ensure that the host cores/threads assigned to a workload are thread-sibling aware: that is, that a core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | Achieved through configuring the "cpu_dedicated_set" and "cpu_shared_set" parameters in nova.conf correctly. |
 | `req.inf.stg.01` | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for VM Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
@@ -86,7 +86,7 @@ Traceability to Reference Model.
 | `req.inf.ntw.05` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
 | `req.inf.ntw.07` | Network | The Architecture **must** support network resiliency. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
 | `req.inf.ntw.10` | Network | The NFVI Network Fabric **must** be capable of enabling highly available (Five 9’s or better) NFVI. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
-| `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for NFVI to support various infrastructure profiles (Base, Network Intensive<!--- , and Compute Intensive --->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
+| `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for NFVI to support various infrastructure profiles (Base, Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
 | `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.| |
 | `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for NFVI internal networks.| |
 | `req.inf.ntw.17` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](./chapter05.md#525-neutron) |
@@ -183,7 +183,7 @@ Traceability to Reference Model.
 <a name="2.4"></a>
 ### 2.4 Architecture and OpenStack Recommendations
 
-The requirements listed in this section are optional, viz. do not need to be implemented in conformant implementations.
+The requirements listed in this section are optional, and are not required in order to be deemed a conformant implementation.
 
 <a name="2.4.1"></a>
 2.4.1 General Recommendations
@@ -192,7 +192,7 @@ The requirements listed in this section are optional, viz. do not need to be imp
 |----|-------|---------------------|-------------|
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
-| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likley be supported through [Senlin](https://docs.openstack.org/senlin/pike/index.html), cluster management service. |
+| `req.gen.scl.01` | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likely be supported through [Senlin](https://docs.openstack.org/senlin/pike/index.html), cluster management service. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to `req.gen.rsl.01`. | |
 
 <p align="center"><b>Table 2-9:</b> General Recommendations</p>
@@ -205,7 +205,6 @@ The requirements listed in this section are optional, viz. do not need to be imp
 |----|-------|---------------------|-------------|
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
 | `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. | |
-| `req.inf.stg.05` | Storage | The Architecture **should** be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes. | **Wouldn't that be a Security Violation** |
 | `req.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
 | `req.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
 | `req.inf.ntw.04` | Network | The Architecture **should** support service function chaining. | **Is this VNFM/NFVO requirement** |
