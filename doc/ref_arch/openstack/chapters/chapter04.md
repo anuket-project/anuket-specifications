@@ -94,8 +94,15 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 | …|  
  
 -	How many nodes to meet SLA
+    - Minimum 2 nodes for high availibility using VRRP.
 -	HW specifications
+    - 3 NICs card are needed if we want to isolate the different flows :
+         - 1 NIC for Tenant Network
+         - 1 NIC for External Network
+         - 1 NIC for Other Networks (PXE, Mngt ...)
 -	Sizing rules
+    - Scale out of network node is not easy 
+    - DVR can be an option for large deployment (see more detail
 
 #### 4.2.2.4. Storage nodes
 -	BIOS requirements
@@ -120,6 +127,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 |---------------|-----------|------------------|
 | Boot disks | RAID 1 | RAID 1 | 
 | CPU reservation for host (kernel) | 1 core per Numa | 1 core per Numa | 
+| CPU Pinning | No | Yes | 
 | <to be filled if needed> |  |  | 
 | … |  |  | <!--- | --->
 
@@ -133,6 +141,7 @@ CPU reservation for host: 1 core per NUMA
     - minimum: two nodes per profile
 -	HW specifications
     -	Boot disks are dedicated with Flash technology disks
+    - Additional 4 cores overhead per numa in case of DPDK usage for Network Intensive nodes
 -	Sizing rules
 
 | Number of CPU sockets| s | 
