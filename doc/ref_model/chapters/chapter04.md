@@ -117,7 +117,7 @@ In addition to static allocation, an advanced Reference Architecture implementat
 <a name="4.1.2.3"></a>
 #### 4.1.2.3 Exposed Monitoring Capabilities
 
-Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. As with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI instance. If this functionallity is enabled, it must be subject to strict security policies. Refer to the Reference Model Security chapter for additional details.
+Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the NFVI. As with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given NFVI deployment. If this functionality is enabled, it must be subject to strict security policies. Refer to the Reference Model Security chapter for additional details.
 
 **Table 4-3** shows possible monitoring capabilities available from the NFVI for VNFs.
 
@@ -125,7 +125,7 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
-| e.nfvi.cap.013 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workoad |
+| e.nfvi.cap.013 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workload |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
@@ -184,7 +184,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 <a name="4.1.4.2"></a>
 #### 4.1.4.2 Internal SLA capabilities
 
-**Table 4-6** below shows SLA (Service Level Agreement) capabilities of NFVI. These include NFVI capabilities required by VNFs as well as required internal to NFVI. Application of these capabilities to a given workload is determined by its instance type (e.g. T-Shirt size).
+**Table 4-6** below shows SLA (Service Level Agreement) capabilities of NFVI. These include NFVI capabilities required by VNFs as well as required internal to NFVI. Application of these capabilities to a given workload is determined by its NFVI Profile.
 
 <a name="Table4-6"></a>
 
@@ -197,7 +197,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 <a name="4.1.4.3"></a>
 #### 4.1.4.3 Internal Performance Optimisation Capabilities
-**Table 4-7** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the standard instance type used by VNFC
+**Table 4-7** below shows possible performance optimisation capabilities that can be provided by NFVI. These include capabilities exposed to VNFs as well as internal capabilities to NFVI. These capabilities will be determined by the NFVI Profile used by the VNFC.
 
 <a name="Table4-7"></a>
 
@@ -210,7 +210,7 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 <a name="4.1.4.4"></a>
 #### 4.1.4.4 Internal Performance Measurement Capabilities
 
-**Table 4-8** shows possible performance measurement capabilities available by NFVI. The availability of these capabilities will be determined by the instance type used by the workloads.
+**Table 4-8** shows possible performance measurement capabilities available by NFVI. The availability of these capabilities will be determined by the NFVI Profile used by the workloads.
 
 <a name="Table4-8"></a>
 
@@ -246,7 +246,7 @@ Table 4-9 shows capabilities related to resources allocation
 <p align="center"><b>Table 4-9:</b> VIM Resource Allocation Capabilities</p>
 
 
-Table 4-10 Shows performance measurement capabiltities
+Table 4-10 Shows performance measurement capabilities
 
 <a name="Table4-13"></a>
 
@@ -291,12 +291,12 @@ Table 4-10 Shows performance measurement capabiltities
 <a name="4.2"></a>
 ## 4.2 Infrastructure Profiles Catalogue
 
-Infrastructure exposes compute Flavours with options, virtual interface options, storage extensions, and acceleration extensions to VNFs. These NFVI Profiles are offered to VNFs in the form of infrastructure instance types with their corresponding options and extensions.
+Infrastructure exposes compute Flavours with options, virtual interface options, storage extensions, and acceleration extensions to VNFs. These NFVI Profiles are offered to VNFs with their corresponding options and extensions.
 
-The idea of the infrastructure profiles catalogue is to have a predefined set of instance types with a predefined set of compute Flavours (sometimes referred to as T-shirt sizes) which VNF vendors use to build their VNFs. Each VNF uses one or more compute Flavour (with one or more of offered instance types) to build its overall functionality as illustrated in **Figure 4-2**.
+The idea of the NFVI profiles is to have a predefined set of infrastructure capabilities with a predefined set of compute Flavours which VNF vendors use to build their VNFs. Each VNF can use several Flavours from different NFVI Profiles to build its overall functionality as illustrated in **Figure 4-2**.
 
 <p align="center"><img src="../figures/ch04_vnf_design.PNG" alt="vnf_design" title="VNF Design" width="65%"/></p>
-<p align="center"><b>Figure 4-2:</b> VNFs built against standard instance types and compute Flavours.</p>
+<p align="center"><b>Figure 4-2:</b> VNFs built against NFVI Profiles and compute Flavours.</p>
 
 <a name="4.2.1"></a>
 ### 4.2.1 Compute Flavours
@@ -317,7 +317,7 @@ Management Interface |Specifies the bandwidth of management interface/s
 
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Predefined Compute Flavours
-The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
+The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting virtual compute instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
 
 >_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
 
@@ -344,7 +344,7 @@ The virtual network interface specifications extend a Flavour customization with
 
 Virtual interfaces may be of an Access type, and thereby untagged, or may be of a Trunk type, with one or more 802.1Q tagged logical interfaces. Note, tagged interfaces are encapsulated by the Overlay, such that tenant isolation (i.e. security) is maintained, irrespective of the tag value(s) applied by the VNF.  
 
-Note, the number of virtual network interfaces, aka vNICs, associated with an instance of a virtual environment, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base Flavour.
+Note, the number of virtual network interfaces, aka vNICs, associated with a virtual compute instance, is directly related to the number of vNIC extensions declared for the environment. The vNIC extension is not part of the base Flavour.
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
@@ -398,18 +398,18 @@ The following table defines persistent storage extensions that can be provided t
 Table 4-15: Reserved
 
 <a name="4.2.4"></a>
-### 4.2.4 Instance types
+### 4.2.4 NFVI Profiles
 
 <a name="4.2.4.1"></a>
-#### 4.2.4.1 B Instances (Basic)
-This instance type is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface).
+#### 4.2.4.1 Basic Profile
+This NFVI Profile is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface).
 
 <a name="4.2.4.2"></a>
-#### 4.2.4.2 N Instances (Network Intensive)
-This instance type is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
+#### 4.2.4.2 Network Intensive Profile
+This NFVI Profile is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
-N instance types can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
+Network Intensive Profile can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
 >_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
 
 | .conf | Interface type | Description |
@@ -417,24 +417,24 @@ N instance types can come with Network Acceleration extensions to assist VNFs of
 | .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. |
 | .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. |
 
-<p align="center"><b>Table 4-16:</b> Acceleration Extensions for N Instance Type</p>
+<p align="center"><b>Table 4-16:</b> Acceleration Extensions for Network Intensive Profile</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
 <!--
 <a name="4.2.4.3"></a>
-#### 4.2.4.3 C Instances (Compute Intensive)
-This instance type is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This instance type is intended to be available in local data centers and more towards the Edge of the network.
+#### 4.2.4.3 Compute Intensive Profile
+This NFVI Profile is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This NFVI Profile is intended to be available in local data centers and more towards the Edge of the network.
 
 ##### 4.2.4.3.1 Compute Acceleration Extensions
-C instance types can come with compute acceleration extensions to assist VNFs/VAs offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
+Compute Intensive Profile can come with compute acceleration extensions to assist VNFs/VAs offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
 
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. |
 | .la-programmable | virtio-programmable | Look-Aside programmable acceleration. |
 
-<p align="center"><b>Table 4-17:</b> Acceleration Extensions for C Instance Type</p>
+<p align="center"><b>Table 4-17:</b> Acceleration Extensions for Compute Intensive Profile</p>
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
@@ -456,9 +456,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 
 -->
 <a name="4.2.5"></a>
-### 4.2.5 Instance Capabilities Mapping
+### 4.2.5 NFVI Profile Capabilities Mapping
 
-| Ref | B Instance | N Instance | Notes |
+| Ref | Basic | Network Intensive | Notes |
 |----------------------|----------------------------|----------------------------|-------|
 | `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
 | `e.nfvi.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
@@ -483,7 +483,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | |
 
 <!--
-| Ref | B Instance | N Instance | C Instance | Notes |
+| Ref | Basic | Network Intensive | Compute Intensive | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
 | `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
 | `e.nfvi.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
@@ -508,10 +508,10 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
 -->
 
-<p align="center"><b>Table 4-19:</b> Mapping of NFVI Capabilities to Instance Types</p>
+<p align="center"><b>Table 4-19:</b> Mapping of Capabilities to NFVI Profiles</p>
 
 <a name="4.2.6"></a>
-### 4.2.6 Instance Performance Measurement Mapping
+### 4.2.6 NFVI Profile Performance Measurement Mapping
 
 _**Comment:** To be worked on._
 
@@ -525,14 +525,14 @@ An entry in the infrastructure profile catalogue can be referenced using the fol
 `B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
 Whereas:
-- **B/N**: specifies the instance type (Basic or Network Intensive)
+- **B/N**: specifies the NFVI Profile (Basic or Network Intensive)
 - **\<I opt>**: specifies the interface option of the instant.
 - **\<Flavour>**: specifies the compute Flavour.
 - **\<S ext>**: specifies an optional storage extension.
-- **\<A ext>**: specifies an optional acceleration extension for either N or H instance types.
+- **\<A ext>**: specifies an optional acceleration extension for the Network Intensive NFVI Profile.
 
 <p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="100%"/></p>
-<p align="center"><b>Figure 4-3:</b> Infrastructure Instances Catalogue</p>
+<p align="center"><b>Figure 4-3:</b> Infrastructure Profiles Catalogue</p>
 
 <a name="4.3"></a>
 ## 4.3 Networking
