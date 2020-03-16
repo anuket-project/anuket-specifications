@@ -26,9 +26,9 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The Common Telco NFVI OpenStack Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many distributions of OpenStack. It does not seek to change any vendor implementation assuming Common Telco NFVI compliance out of the box without vendor specific enhancements that are not up-streamed. This would allow operators to provide a common OpenStack-based architecture allowing any compliant VNF to be deployed and operate as expected.  The purpose of this chapter is to outline all the components required to provide the NFVI and the VIM in a consistent and reliable way. 
+This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture. The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the NFVI and the VIM in a consistent and reliable way. 
 
-OpenStack is already very well documented at http://docs.openstack.org so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
+[OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and fetaures, NFVI features and how we expect them to be implemented.
 
 This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
@@ -127,9 +127,8 @@ The NFVI Management Software (VIM) provides the services for the management of C
 ### 3.3.1. VIM Core services 
 OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for NFVI/VIM use cases. Other components are optional and provide functionality above and beyond NFVI/VIM requirements.
 
-The architecture consists of the services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
+The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific CNTT conformant implementation requirements and recommendations for the core services.
 
-The following diagram shows the core OpenStack services that must be provided to be compliant.
 
 <p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v5.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/><b>Figure 3-1:</b> OpenStack Core Services</p>
 
