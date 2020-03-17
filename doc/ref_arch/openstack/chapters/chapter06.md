@@ -179,5 +179,5 @@ The security audit log must contain at minimum the following fields (where appli
 * Source IP Address
 
 #### 6.3.7.5 Data Retention 
-* Log files must be retained for 180 days or per your customer mandate, whichever is higher.
-* Implementation and monitoring: after 180 days or your mandated rention period, security audit logs must be destroyed.
+* Log files must be retained for 180 days, or the relevant regulator mandate, or your customer mandate, whichever is higher.
+* Implementation and monitoring: after 180 days or your mandated retention period, security audit logs must be destroyed.
