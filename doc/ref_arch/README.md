@@ -20,7 +20,7 @@ We need to distinguish between architectural principles and architectural requir
 
 1. **Open source preference:** To ensure, by building on technology available in open source projects, that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio.
 
-1. **Open APIs:** To enable interoperability and component substitution, and minimize integration efforts by uisng openly published API definitions.
+1. **Open APIs:** To enable interoperability and component substitution, and minimize integration efforts by using openly published API definitions.
 
 1. **Separation of concerns:** To promote lifecycle independence of different architectural layers and modules (e.g. disagregation of software from hardware).
 
