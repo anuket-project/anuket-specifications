@@ -523,7 +523,7 @@ Table 7-2 shows security capabilities
 <a name="7.11"></a>
 ## 7.11 Consolidated Security Requirements
 
-Please note that **Virtual Resource Manager (VRM)** is used to collectively represent VIM, K8s, …
+Please note that **Virtual Resource Manager (VRM)** is used to collectively represent VIM, K8s, etc.
 
 <a name="7.11.1"></a>
 ### 7.11.1. System Hardening
@@ -532,7 +532,7 @@ Please note that **Virtual Resource Manager (VRM)** is used to collectively repr
 |-------|------|------|-------|
 | sec.gen.001 | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. |   |  |
 | sec.gen.002 | All systems part of NFVI **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  | Hardening: NIST SP 800-63B |
-| sec.gen.003 | All servers part of NFVI **must** support secure boot, root of trust and trusted boot |  | Secure boot - measured boot, verified boot  <br/> Root of trust: specified in RA or RI; should CNTT specify how? |
+| sec.gen.003 | All servers part of NFVI **must** support a root of trust and secure boot |  |  |
 | sec.gen.004 | The Operating Systems of all the servers part of NFVI **must** be hardened |  | NIST SP 800-123 |
 | sec.gen.005 | The Platform **must** support Operating System level access control |  | Details on OS |
 | sec.gen.006 | The Platform **must** support Secure logging |  | Details |
@@ -543,6 +543,7 @@ Please note that **Virtual Resource Manager (VRM)** is used to collectively repr
 | sec.gen.011 | The NFVI **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  | NIST reference? |
 | sec.gen.012 | The Platform **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  | |
 | sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  | |
+| sec.gen.014 | All servers part of NFVI **should** support measured boot and an attestation server that monitors the measurements of the servers. |  | |
 
 <a name="7.11.21"></a>
 ###  7.11.2. Platform Access
@@ -588,7 +589,7 @@ Ref | Requirement | Unit | Definition |
 | sec.wl.003 | The Platform **must** support secure provision of workloads  |  | |
 | sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) |  | |
 | sec.wl.005 | Production workloads **must** be separated from non-production workloads |  | |
-| sec.wl.006 | Workloads **must** be separable by sensitivity level (for example, financial versus external facing web server) |  | |
+| sec.wl.006 | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) |  | |
 | sec.wl.007 | Platform **must** verify VNF authenticity and integrity |  | |
 
 <a name="7.11.5"></a>
@@ -596,7 +597,7 @@ Ref | Requirement | Unit | Definition |
 
 | Ref | Requirement | Unit | Definition |
 |---|----|---|----|
-| sec.img.001 | Only images from trusted sources **must** be used |  | |
+| sec.img.001 | Images from untrusted sources **must not** be used |  | |
 | sec.img.002 | Images **must** be maintained to be free from known vulnerabilities |  | |
 | sec.img.003 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  | |
 | sec.img.004 | Images **must** only be accessible to authorized actors |  | |
@@ -615,7 +616,7 @@ Ref | Requirement | Unit | Definition |
 | sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes |  | Templated approved changes for automation where available |
 | sec.lcm.005 | Platform **must** provide logs and these logs must be regularly scanned |  | |
 | sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests | Yes/No | |
-| sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time and time zone information |  | |
+| sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information |  | |
 | sec.lcm.008 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  | |
 | sec.lcm.009 |  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information |  | |
 | sec.lcm.010 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  | |
@@ -639,11 +640,11 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.009 | The Platform must Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly |  | |
 | sec.mon.010 | The Platform must Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly |  | |
 | sec.mon.011 | The Platform must Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly |  | |
-| sec.mon.012 | The Platform must Monitor and Audit Traffic patterns and volumes to detect inbound or outbound DoS attacks, and to prevent malware download attempts |  | |
-| sec.mon.013 | The Security monitoring system must not affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  | |
+| sec.mon.012 | The Platform must Monitor and Audit Traffic patterns and volumes to prevent malware download attempts |  | |
+| sec.mon.013 | The monitoring system must not affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  | |
 | sec.mon.014 | The Monitoring systems should not impact IAAS, PAAS, and SAAS SLAs including availability SLAs |  | |
-| sec.mon.015 | The Platform must ensure that the Security Monitoring systems are never starved of resources |  | |
-| sec.mon.016 | The Platform Security Monitoring components should follow security best practices for auditing, including secure logging and tracing |  | |
+| sec.mon.015 | The Platform must ensure that the Monitoring systems are never starved of resources |  | |
+| sec.mon.016 | The Platform Monitoring components should follow security best practices for auditing, including secure logging and tracing |  | |
 | sec.lcm.017 | The Platform must Audit systems for any missing security patches and take appropriate actions |  | |
 
 <a name="7.11.8"></a>
