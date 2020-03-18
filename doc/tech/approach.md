@@ -40,7 +40,7 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 > _Placeholder for the Executive Summary (targeting Baldy for first draft). **If you are interested in writing this content, please contact the RM lead.**_
 
 <a name="5.1.2"></a>
-### 5.1.2 Networking Strategy Objectives
+### 5.1.2 Networking Strategy & Principle 
 
 This section catalogs CNTT's high-level objectives for the Network Fabric Strategy. 
 
