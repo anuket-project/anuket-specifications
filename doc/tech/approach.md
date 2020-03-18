@@ -35,9 +35,10 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 
 
 <a name="5.1.1"></a>
-### 5.1.1 Executive Summary
+### 5.1.1 Networking Scope
+According to the ETSI NFV Model, Networking alongside Compute and Storage, is an integral part of the Network Function Virtualisation Infrastructure (NFVI). The general function of Networking in the NFV context is to provide the connectivity between various virtualised and non-virtualised resources required for a delivery of a Network Service. Such a connectivity may manifest itself as a virtualised network between VMs or Containers (e.g. overlay networks managed by SDN Controllers, or programmable fabrics that provide such connectivity natively) or as an integration into the Infrastructure Hardware level for offloading some of the Network Functions into this level.  
+The main concern of CNTT, according to its methodology, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration).  The CNTT scope includes hence a definition of a normalized Abstraction layer between Virtualization Layer domains and the Networking Hardware layer resource pool in a way that the implementation details of the Networking Hardware are not visible to the VNFs/CNFs, and preferably not even visible to the Virtualization layer.
 
-> _Placeholder for the Executive Summary (targeting Baldy for first draft). **If you are interested in writing this content, please contact the RM lead.**_
 
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Strategy Objectives
