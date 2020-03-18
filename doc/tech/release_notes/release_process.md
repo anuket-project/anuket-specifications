@@ -7,7 +7,6 @@
 * [Events](#events)
 * [Release Sign-off](#signoff)
 
-
 <a name="scope"></a>
 ## Scope
 
