@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 2 VNF Requirements & Analysis
+# 2 Workload Requirements & Analysis
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
