@@ -7,17 +7,17 @@
 * [6.1 Introduction](#6.1)
 * [6.2 Security Requirements](#6.2)
 * [6.3 NFVI and VIM Security](#6.3)
- * [6.3.1 Platform Access](#6.3.1) 
- * [6.3.2 System Hardening](#6.3.2) 
- * [6.3.3 Confidentiality and Integrity](#6.3.3) 
- * [6.3.4 Workload Security](#6.3.4) 
- * [6.3.5 Image Security](#6.3.5) 
- * [6.3.6 Security LCM](#6.3.6) 
- * [6.3.7 Monitoring and Security Audit](#6.3.7)
+    * [6.3.1 Platform Access](#6.3.1) 
+    * [6.3.2 System Hardening](#6.3.2) 
+    * [6.3.3 Confidentiality and Integrity](#6.3.3) 
+    * [6.3.4 Workload Security](#6.3.4) 
+    * [6.3.5 Image Security](#6.3.5) 
+    * [6.3.6 Security LCM](#6.3.6) 
+    * [6.3.7 Security Audit Logging](#6.3.7)
 
 ## 6.1 Introduction
 
-This guide is intended to provide basic security requirements to CNTT architects who are looking to implementing NFVi using [OpenStack](https://www.openstack.org/) technology.  This is minimal set of high-level general security practice, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to CNTT architects who are looking to implementing NFVI using [OpenStack](https://www.openstack.org/) technology.  This is minimal set of high-level general security practice, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
@@ -25,7 +25,7 @@ This guide is intended to provide basic security requirements to CNTT architects
 Based on chapter 2 requirements
 
 <a name="6.3"></a>
-## 6.3 NFVi and VIM Security
+## 6.3 NFVI and VIM Security
 
 OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html
@@ -121,8 +121,63 @@ The following rules govern create, read, update, and delete (CRUD) level access.
  </ul>
 </ul>
 
-
-#### 6.3.1.5 Secrets management (Barbican)
-
-
 <a name="6.3.2"></a>
+### 6.3.2 System Hardening
+
+<a name="6.3.3"></a>
+### 6.3.3 Confidentiality and Integrity
+
+<a name="6.3.4"></a>
+### 6.3.4 Workload Security
+
+<a name="6.3.5"></a>
+### 6.3.5 Image Security
+
+<a name="6.3.6"></a>
+### 6.3.6 Security LCM
+
+<a name="6.3.7"></a>
+### 6.3.7 Security Audit Logging
+This intent of this section is to provide key baseline and minimal requirement to implement logging that would meet the basic security auditing needs.  This  should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution.  Regular review of security logs that record user access, as well as session and network activity, is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion. 
+
+#### 6.3.7.1 Creating Logs
+* All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
+* Logs must be generated for any component (ex. Nova in Openstack) that form the NFVI.
+* All security logging mechanisms must be active from system initialization. 
+    *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
+
+#### 6.3.7.2 What to Log / What NOT to Log
+##### What to log
+Where technically feasible the following system events must be recorded:
+* Successful and unsuccessful login attempts
+* Logoffs
+* Successful and unsuccessful changes to a privilege level
+* Starting and stopping of security logging
+* Creating, removing, or changing the inherent privilege level of users
+* Connections to a network listener of the resource
+* All command line activity performed by the following innate OS programs known to otherwise leave no evidence upon command completion including PowerShell on Windows systems (e.g. Servers, Desktops, and Laptops)
+* Where technically feasible, any other security events should be recorded
+
+##### What NOT to log
+Security audit logs must NOT contain:
+* Authentication credentials, even if encrypted (ex. password);
+* Keystone Token;
+* Proprietary or Sensitive Personal Information.
+
+#### 6.3.7.3 Where to Log
+* Where technically feasible, events MUST be recorded on the device (e.g. VM, physical node, etc.) where the event occurs. 
+* Where it is not technically feasible to record the event on the resource on which it occurs, then the operational use of another resource like a centralized log repository must record the event in a manner where the event can be linked to the resource on which it occurred.
+
+#### 6.3.7.4 Required Fields
+The security audit log must contain at minimum the following fields (where applicable and technically feasible): 
+* Event type
+* Date/time
+* Protocol
+* Service or program used for access
+* Success/failure
+* Login ID — Where the Login ID is defined on the system/application/authentication server; otherwise, the field should contain 'unknown', in order to protect authentication credentials accidentally entered at the Login ID prompt from appearing in the security audit log.
+* Source IP Address
+
+#### 6.3.7.5 Data Retention 
+* Log files must be retained for 180 days, or the relevant regulator mandate, or your customer mandate, whichever is higher.
+* Implementation and monitoring: after 180 days or your mandated retention period, security audit logs must be destroyed.
