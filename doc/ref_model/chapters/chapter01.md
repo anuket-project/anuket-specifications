@@ -24,7 +24,7 @@ To help guide the reader, a glossary [Reference Model Terminology](../../tech/gl
 This section introduces the high-level principles of infrastructure abstraction and profiling that will be used in context of this document.
 
 1. A top-level objective of the CNTT is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical. Two principles are introduced in support of these objectives:
-    - **Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
+    - **Minimise Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
       - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same cloud infrastructure instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
       - Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.
 
@@ -39,9 +39,9 @@ This section introduces the high-level principles of infrastructure abstraction 
    - Networking resources. (Limited to connectivity services only).
    - Acceleration resources.
 1. Cloud infrastructure exposed resources should be supplier independent.
-1. All cloud infrastructure Application Programming Interfaces (API) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organizations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
+1. All cloud infrastructure Application Programming Interfaces (API) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
 1. VNFs should be modular and be designed to utilise the minimum resources required for the service.
-1. Cloud infrastructure shall support pre-defined and parameterized sizes.
+1. Cloud infrastructure shall support pre-defined and parameterised sizes.
    - These pre-defined sizes will evolve over time.
 1. Cloud infrastructure provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
 1. VNFs that are designed to take advantage of cloud infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts.
@@ -103,7 +103,7 @@ The document starts from the abstract and as it progresses it increasingly gets 
 
 <a name="1.6"></a>
 ## 1.6 Relationship to other industry projects
-The CNTT work is not done in a vacuum.  The intention from the beginning was to utilize the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
+The CNTT work is not done in a vacuum.  The intention from the beginning was to utilise the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
 
  -	ETSI NFV ISG
  -	OpenStack
@@ -141,5 +141,5 @@ While the nature of the reference model might seem quite broad, the following ar
 - VNF and application specifications: Other than the API interfaces when they directly need to touch the VNFs themselves, the intention is to assume the VNF application is a blackbox that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the VNFs will be through the VIM whenever possible.
 - Company specific requirements: This document is designed to be general enough that most operators and others in the Open Source communities will be able
 
-<!--Separate document w/labels/artifacts
+<!--Separate document w/labels/artefacts
 Not part of model but will be applicable to architecture -->
