@@ -275,12 +275,14 @@ The process of publishing involves submitting the manifests to opnfv-airship ger
 
 - A | dashboard-airship.intel-pod10.opnfv.org | 10.10.100.100
 
-<a name="7.5.1.2"></a>
-#### 7.5.1.2 Deployment: Installer & Install Steps
+
+<a name="8.5.1.2"></a>
+#### 8.5.1.2 Deployment: Installer & Install Steps
 The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
 
 ##### FQDN Registration
 To access the deployment, using FQDNs, it is important to get them registered as DNS records with the network administrator. In case of OPNFV Intel pods, the linux foundation helpdesk (sso.linuxfoundation.org) can take the request and add the records.
+
 
 ##### Setting up the Genesis Node
 Install Ubuntu 16.04 (Standard ISO) on the genesis node (Ex: Node-1 in Intel-Pod10), this node will be used as seed for the rest of the environment. During installation ensure the following:
@@ -307,87 +309,6 @@ OR
 - ./deploy.sh intel-pod10 update\_site
 
 ##### Keeping track of the progress
-
-The complete installation can take signification time - 2-3 hours, and it involves following process:
-
-- Genesis node setup.
-  - Software deployment.
-- Baremetal provisioning of the nodes by Drydock
-  - Control plane nodes
-  - Dataplane nodes.
-- Software deployment.
-
-First, the genesis node is setup as single-node kubernetes cluster. This is followed by provisioning baremetal nodes. Once the Baremetal provisioning starts, user can use this link to check for the status:
-
-http://&lt;IP-OF-GENESIS-NODE&gt;:31900/MAAS/#/nodes
-
-Ex: for Pod10 - [http://10.10.100.21:31900/MAAS/#/nodes](http://10.10.100.21:31900/MAAS/#/nodes)
-
-The provisioning of the baremetal nodes is done in a particular order - ex: control nodes (node2 and node3 of intel-pod10) first and then the compute nodes (node4 and node5). To understand any failures in this step, user can check the logs of the drydock service in genesis-node.
-
-Once the baremetal provisioning is completed, the software deployment process starts. This includes setting up multiple services on the Kubernetes cluster, under following namespaces – in that particular order:
-
-- kube-system
-- ceph
-- ucp
-- osh-infra
-- tenant-ceph
-- openstack
-
-Below table provides some commands to run on **genesis node** to keep track of the software deployment.
-
-| **Description** | **Command** |
-| --- | --- |
-| Show all pods for a particular namespace, that has completed. Check for any crashlookBackoff states | kubectl get pods -n namespace-name -o wide |grep -v Completed |
-| Look at the logs of a any pod in any namespaceYou can follow it with --follow |  kubectl logs -n namespace-name pod-name;   |
-| Monitoring Ceph StatusShould be HEALTH\_OK  | kubectl exec -it -n ceph ceph-mon-instance-id -- ceph -s |
-| Get services running, and describe a service | kubectl get svc -n openstack and kubectl describe svc -n openstack ingress |
-
-This link [https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting\_guide.html](https://airship-treasuremap.readthedocs.io/en/latest/troubleshooting_guide.html) will provide all the details for trouble shooting any issues.
-
-Once the software is successfully deployed, and the deploy.sh script terminates normally, user can use the following link to access the horizon dashboard.
-- http://dashboard-airship.intel-pod10.opnfv.org
-
-In addition to that, users can also use these links to track the metrics and logs, respectively:
-
-Steps and procedures for installing and setting up the RI.
-Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Installer+Deployment+Guide
-
-- http://grafana-airship.intel-pod10.opnfv.org/login
-- http://kibana-airship.intel-pod10.opnfv.org/
-
-<a name="8.5.1.2"></a>
-## 8.5.1.2 Deployment: Installer & Install Steps
-The deployment is performed and managed from the 'jump-host' node. Any authorized user can login to this node.
-### FQDN Registration
-To access the deployment, using FQDNs, it is important to get them registered as DNS records with the network administrator. In case of OPNFV Intel pods, the linux foundation helpdesk (sso.linuxfoundation.org) can take the request and add the records.
-
-
-### Setting up the Genesis Node
-Install Ubuntu 16.04 (Standard ISO) on the genesis node (Ex: Node-1 in Intel-Pod10), this node will be used as seed for the rest of the environment. During installation ensure the following:
-- UTC Timezone
-- Proper hostname - As defined in site-definition
-- Partitioning - As defined in site-definition
-- Disable automatic updates
-
-After Installation, perform the following:
-- Configure networks according to the site-definition.
-- Install proper kernel version - As defined in site-definition
-- Install ntpdate/ntp
-- Ensure password-less login from jumphost
-
-### Install
-As Airship is tooling to declaratively automate site deployment, the automation from the installer side is light. See [deploy.sh](https://github.com/opnfv/airship/blob/master/tools/deploy.sh). User will need to export environment variables that correspond to the new site (keystone URL, node IPs, and so on). All these are captured in the site environment file - as described in the [wiki page]((https://wiki.opnfv.org/display/AIR/Airship+Manifest+Creation+For+New+Sites)
-)
-Once the Genesis node is setup, and the manifests are created, user can execute deploy.sh that supports (Shipyard) actions: deploy\_site and update\_site. Along with the action, the deploy script also take the site name (ex: intel-pod10). The deploy.sh script is part of the opnfv-airship repository. The steps to run the deploy script are as follows.
-
-- git clone https://gerrit.opnfv.org/gerrit/airship
-- cd airship/tools
-- ./deploy.sh intel-pod10 deploy\_site
-OR
-- ./deploy.sh intel-pod10 update\_site
-
-### Keeping track of the progress
 
 The complete installation can take signification time - 2-3 hours, and it involves following process:
 
