@@ -14,7 +14,7 @@
 
 | Ref         | Type       | Name               | RM Exception | Details |
 |-------------|------------|--------------------|--------------|---------|
-| ra2.exc.001 | Technology | SR-IOV             | rm.exc.001   | This exception allows workloads (VNF/CNF) to use SR-IOV Pass-Through. RA2 architectures allows plugins such as SR-IOV CNI to be used. |
+| ra2.exc.001 | Technology | SR-IOV             | rm.exc.001   | This exception allows workloads (VNF/CNF) to use SR-IOV. RA2 architectures allows plugins such as SR-IOV CNI and SR-IOV related Device Plugins, like [sriov-network-device-plugin](https://github.com/intel/sriov-network-device-plugin) to be used. |
 <!--
 | ra2.exc.002 |            |                    |              |         |
 -->
