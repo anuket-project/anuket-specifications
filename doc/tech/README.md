@@ -98,9 +98,9 @@ Within the framework of the Common Telecom cloud infrastructure vision, there ar
 <a name="3.1"></a>
 ## 3.1 Functional Scope
 In terms of the functional scope of the CNTT documentation, in order to target the project goals as described above, we are focussed on:
-- Functional interfaces between infrastructure and workloads
-- Functional interfaces between workload management and infrastructure management
-- Functional capabilities of the cloud infrastructure
+- Functional capabilities of the cloud infrastructure and the infrastructure management
+- Functional interfaces between infrastructure and infrastructure management
+- Functional interfaces between workloads and workload management
 
 Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf), those ETSI interfaces that are considered relevant (with notes where required) are included in the figure below.
 
@@ -112,7 +112,8 @@ Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/e
 While the nature of the CNTT might seem quite broad, the following areas are not at this time part of the scope of this effort.  
 - Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the documents so they are general enough that any vendor hardware can be used in a conformant implementation without making significant changes to the model.
 - Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a blackbox that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the cloud infrastructure whenever possible.
-- Company specific requirements: The CNTT documents are designed to be general enough that most operators and others in the Open Source communities will be able
+- Lifecycle Management of the CaaS Clusters: whilst a complete NFV-MANO solution would need to provide lifecycle management for the Kubernetes clusters it is using to deploy its CNFs, the CNTT doesn't describe the NFVO and VNFM parts, and therefore the management of the cluster(s) is not in scope, while the VIM and the lifecycle management of containers (by Kubernetes) is in scope.
+- Company specific requirements: The CNTT documents are designed to be general enough that most operators and others in the Open Source communities will be able to adapt and extend them to their own non-functional requirements.
 
 <a name="3.3"></a>
 ## 3.3 Relationship to other industry projects
