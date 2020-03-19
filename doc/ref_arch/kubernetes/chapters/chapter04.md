@@ -28,7 +28,6 @@ Figure 4-1 below shows the architectural components that are described in the su
 ## 4.2 Host OS
 
 In order for a Host OS to be conformant with this Reference Architecture it must meet the following requirements:
-- A deb/rpm compatible distribution of Linux (this must be used for the master nodes, and can be used for worker nodes).
 - A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is focussed on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, etc.
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
 - In order to support `req.gen.cnt.03` (immutable infrastructure), the Host OS must be easily reproduced, consistent, disposable, will have a repeatable deployment process, and will not have configuration or artifacts that are modifiable in place (i.e. once it is running).
