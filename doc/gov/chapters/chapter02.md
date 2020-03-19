@@ -36,7 +36,8 @@ As an open-source community organization, CNTT has developed the following proce
   
   - **Diagram - Onboarding Process**
 <p align="middle"><img src="../figures/onboarding_proc.png" alt="onboarding_proc" title="Onboarding Process" width="60%"/></p>
- 
+<p align="center"><b>Figure 2-1:</b> Onboarding Process</p>
+
 <a name="2.3"></a>
 ## 2.3 Prerequisites
 
@@ -71,6 +72,7 @@ In order to deliver on CNTT objectives, community participants are expected to f
 
   - **Diagram - Levels of Engagement**
 <p align="middle"><img src="../figures/engagement.png" alt="engagement_levels" title="Engagement Levels" width="60%"/></p>
+<p align="center"><b>Figure 2-2:</b> Levels of Engagement</p>
 
 <a name="2.5"></a>
 

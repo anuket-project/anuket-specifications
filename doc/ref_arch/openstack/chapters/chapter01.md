@@ -9,7 +9,8 @@
 * [1.2 Use Cases](#1.2)
 * [1.3 Terminology.](#1.3)
 * [1.4 Principles](#1.4)
-* [1.5 Document Organisation](#1.5)
+* [1.5 CNTT OpenStack Reference Release](#1.5)
+* [1.6 Document Organisation](#1.6)
 
 
 <a name="1.1"></a>
@@ -18,7 +19,7 @@ This Reference Architectures is focussed on OpenStack as the VIM chosen based on
 
 <a name="1.1.1"></a>
 ## 1.1.1. Vision
-The ultimate goal is that the OpenStack-based CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Common NFVI Telco community.  Initially the OpenStack-based Reference Architecture would be used for testing and validating VNFs that can then be deployed in compatible operator clouds.   The Reference Architecture document can be used by operators to deploy compliant production infrastructure.  
+The OpenStack-based CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the CNTT community.  The Reference Architecture document can be used by operators to deploy CNTT conformant infrastructure.  
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
@@ -32,9 +33,8 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 
 <a name="1.3"></a>
 ## 1.3 Terminology
-Unless specific OpenStack terms are used, the terminology can be found [CNTT Reference Model Terminology](../../../ref_model/chapters/glossary.md#1.1).  
 
-Add add any OpenStack specific terms here.
+General terminology definitions can be found [CNTT Reference Model](../../../ref_model/chapters/glossary.md#1.1) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./terminology.md).
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
 
@@ -57,10 +57,14 @@ This OpenStack Reference Architecture is organised around the three major NFVI r
 
 
 <a name="1.5"></a>
-## 1.5 Document Organisation
+## 1.5 CNTT OpenStack Reference Release
+
+This Reference Architecture document conforms to the OpenStack Pike release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture version can be referred to as "RA-1 OSTK Pike."
+
+<a name="1.6"></a>
+## 1.6 Document Organisation
 
 The Reference Architecture requirements and the traceability where in this document the requirement is addressed is documented in Chapter 2. The intent of this document is to address all of the mandatory ("must") requirements and the most useful of the other optional ("should") requirements. Chapter 3 and 4 cover the NFVI resources and the core OpenStack services, while the APIs are covered in Chapter 5. Chapter 6 covers the implementation and enforcement of security capabilities and controls. Life Cycle Management of the NFVI and VIM are covered in Chapter 7 with stress on Logging, Monitoring and Analytics (LMA), configuration management and some other operational items, Please note that Chapter 7 is not a replacement for the implementation, configuration and operational documentation that accompanies the different OpenStack distributions. Chapter 8 identifies certain Gaps that currently exist and plans on how to address them. For example, Service Function Chaining support needs to be addressed to realise the full potential and value of SDN and NFV.
-
 
 
 
