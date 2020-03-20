@@ -15,7 +15,7 @@
 * [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
-  * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
+  * [3.3.3. Cloud partitioning: Host Aggregates and Availability Zones](#3.3.3)
   * [3.3.4. Flavor management](#3.3.4)
 * [3.4. Underlying Resources](#3.4)
   * [3.4.1. Virtualisation](#3.4.1)
@@ -26,9 +26,9 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The Common Telco NFVI OpenStack Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many distributions of OpenStack. It does not seek to change any vendor implementation assuming Common Telco NFVI compliance out of the box without vendor specific enhancements that are not up-streamed. This would allow operators to provide a common OpenStack-based architecture allowing any compliant VNF to be deployed and operate as expected.  The purpose of this chapter is to outline all the components required to provide the NFVI and the VIM in a consistent and reliable way. 
+This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture. The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the NFVI and the VIM in a consistent and reliable way. 
 
-OpenStack is already very well documented at http://docs.openstack.org so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
+[OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and fetaures, NFVI features and how we expect them to be implemented.
 
 This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
@@ -127,9 +127,8 @@ The NFVI Management Software (VIM) provides the services for the management of C
 ### 3.3.1. VIM Core services 
 OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for NFVI/VIM use cases. Other components are optional and provide functionality above and beyond NFVI/VIM requirements.
 
-The architecture consists of the services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific Common Telco NFVI implementation requirements and recommendations.
+The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific CNTT conformant implementation requirements and recommendations for the core services.
 
-The following diagram shows the core OpenStack services that must be provided to be compliant.
 
 <p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v5.png" alt="Core NFVI Software Services" title="core NFVI Software Services" width="100%"/><b>Figure 3-1:</b> OpenStack Core Services</p>
 
@@ -205,18 +204,15 @@ In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack
 OpenStack offers multi-tenancy by means of resource (compute, network and storage)separation via projects. OpenStack offers ways to share virtual resources between projects while maintaining logical separation. As an example, traffic separation is provided by creating different VLAN ids for neutron networks of different projects. As another example, if host separation is needed, nova scheduler offers AggregateMultiTenancyIsolation scheduler filter to separate projects in host aggregates. Thus, if a host in an aggregate is configured for a particular project, only the instances from that project are placed on the host. Overall, tenant isolation ensures that the resources of a project are not affected by resources of another project.
 
 <a name="3.3.3"></a>
-### 3.3.3. Host aggregates providing resource pooling
-Availability zones: provide resiliency and fault tolerance for VM deployments, by means of physical hosting distribution of Compute Nodes in separate racks with separate power supply and eventually in different rooms
+### 3.3.3. Cloud partitioning: Host Aggregates, Availability Zones
+Cloud administrators can partition the hosts within an OpenStack cloud using Host Aggregates and Availability Zones.
 
-Host aggregate: is a Cloud Admin concept which is used to map the VNFC instances on the compute nodes
+A Host Aggregate is a group of hosts (compute nodes) with specific characteristics and with the same specifications, software and/or hardware properties. Example would be a Host Aggregate created for specific hardware or performance characteristics. The administrator assigns key-value pairs to Host Aggregates, these are then used when scheduling VMs. A host can belong to multiple Host Aggregates. Host Aggregates are not explicitly exposed to tenants.
 
-A host aggregate is a set of hosts with specific properties (multiple software and/or hardware properties); the properties are specified as key-value pairs. Example would be a host aggregate created for a particular flavour or specific hardware. A host can belong to multiple host aggregates. Host aggregates are not visible to users.
+Availability Zones (AZs) rely on Host Aggregates and make the partitioning visible to tenants. They are defined by attaching specific metadata information to an aggregate, making the aggregate visible for tenants. Hosts can only be in a single Availability Zone. By default a host is part of a default Availability Zone, even if it doesn’t belong to an aggregate. Availability Zones can be used to provide resiliency and fault tolerance for workloads deployments, for example by means of physical hosting distribution of Compute Nodes in separate racks with separate power supply and eventually in different rooms. They permit rolling upgrades – an AZ at a time upgrade with enough time between AZ upgrades to allow recovery of tenant workloads on the upgraded AZ. AZs can also be used to seggregate workloads.
 
-Availability Zones are user visible host aggregates where a host can only be in one availability zone. Availability zones partition the cloud independent of the infrastructure layout. Availability zones (AZ) serve a couple of important purposes. Firstly, users can deploy their workloads to create local redundancy for resiliency and high availability. This permits rolling upgrades – an AZ at a time upgrade with enough time between AZ upgrades to allow recovery of tenant workloads on the upgraded AZ. Secondly, AZs can accommodate hosts with special hardware and software characteristics, for example, hosts with hardware accelerators.
+An over use of Host Aggregates and Availability Zones can result in a granular partition the cloud and, hence, operational complexities and inefficiencies.
 
-An over use of host aggregates and availability zones can result in a granular partition the cloud and, hence, operational complexities and inefficiencies.
-
-Recommendation: Separation of control zone and execution zone into different security zones
 
 <a name="3.3.4"></a>
 ### 3.3.4. Flavor management
@@ -264,7 +260,7 @@ HW profiles are defined in the chapters 5.3 and 5.4 of the reference model docum
 #### 3.4.2.2. Network
 The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up. 
 
-<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"></br>Figure 3-3: Network Fabric – Physical</p>
+<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"><b>Figure 3-3:</b> Network Fabric – Physical</p>
 Figure 3-3 shows a physical network layout where each physical server is dual homed to TOR (Leaf/Access) switches with redundant (2x) connections. The Leaf switches are dual homed with redundant connections to spines.
 
 #### 3.4.2.3. Storage

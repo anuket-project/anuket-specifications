@@ -8,6 +8,7 @@
   * [5.1.2 Virtual Storage.](#5.1.2)
   * [5.1.3 Virtual Networking.](#5.1.3)
   * [5.1.4 Security.](#5.1.4)
+  * [5.1.5 Platform Services](#5.1.5)
 * [5.2 NFVI SW profiles features and requirements.](#5.2)
   * [5.2.1 Virtual Compute.](#5.2.1)
   * [5.2.2 Virtual Storage.](#5.2.2)
@@ -71,9 +72,8 @@ The following sections detail the NFVI SW profile features per type of virtual r
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | nfvi.stg.cfg.001 | Storage Types | Yes/No   | Support of Storage types described in the catalogue |
 | nfvi.stg.cfg.002 | Storage Block | Yes/No  | |
-| nfvi.stg.cfg.003 | Storage Object | Yes/No | |
-| nfvi.stg.cfg.004 | Storage with replication | Yes/No | |
-| nfvi.stg.cfg.005 | Storage with encryption | Yes/No | |
+| nfvi.stg.cfg.003 | Storage with replication | Yes/No | |
+| nfvi.stg.cfg.004 | Storage with encryption | Yes/No | |
 
 <p align="center"><b>Table 5-3:</b> Virtual Storage features.</p>
 
@@ -113,6 +113,17 @@ The following sections detail the NFVI SW profile features per type of virtual r
 ### 5.1.4 Security
 _**Comment:** To be worked on._
 
+<a name="5.1.5"></a>
+### 5.1.5 Platform Services
+
+This section details the services that may be made available to workloads by the NFVI.  
+
+| .conf | Feature | Type  | Description |
+|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
+| nfvi.svc.stg.001 | Object Storage | Yes/No | Object Storage Service (e.g S3-compatible) |
+<p align="center"><b>Table 5-7:</b> Virtual Networking Acceleration features.</p>
+
+
 <a name="5.2"></a>
 ## 5.2 NFVI SW profiles features and requirements
 
@@ -121,9 +132,9 @@ This section will detail NFVI SW profiles and associated configurations for the 
 <a name="5.2.1"></a>
 ### 5.2.1 Virtual Compute
 
-**Table 5-7** depicts the features and configurations related to virtual compute for the 3 types of reference NFVI instances.
+**Table 5-8** depicts the features and configurations related to virtual compute for the 2 types of reference NFVI instances.
 
-| .conf | Feature | Type  | Basic | Network Intensive | 
+| .conf | Feature | Type  | Basic | Network Intensive |
 |------------------|----------------|----------------|----------------|----------------|
 | nfvi.com.cfg.001 | CPU allocation ratio  | value | 4:1 | 1:1  |
 | nfvi.com.cfg.002 | NUMA awareness | Yes/No  | N | Y |
@@ -137,39 +148,37 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |
 -->
-<p align="center"><b>Table 5-7:</b> Virtual Compute features and configuration for the 3 types of SW profiles.</p>
+<p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of SW profiles.</p>
 
-**Table 5-8** will gather virtual compute acceleration features. It will be filled over time.
+**Table 5-9** will gather virtual compute acceleration features. It will be filled over time.
 
 | .conf | Feature | Type  | Basic | Network Intensive |
 |------------------|----------------|----------------|----------------|----------------|
 | nfvi.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |  | |
 
-<p align="center"><b>Table 5-8:</b> Virtual Compute Acceleration features.</p>
+<p align="center"><b>Table 5-9:</b> Virtual Compute Acceleration features.</p>
 
 <a name="5.2.2"></a>
 ### 5.2.2 Virtual Storage
 
-**Table 5-9** and **Table 5-10** depict the features and configurations related to virtual storage for the 3 types of reference NFVI instances.
+**Table 5-10** and **Table 5-11** depict the features and configurations related to virtual storage for the 2 types of reference NFVI instances.
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
 | nfvi.stg.cfg.001 | Catalogue storage Types | Yes/No | Y  | Y  | Y |
 | nfvi.stg.cfg.002 | Storage Block | Yes/No | Y | Y |Y  |
-| nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y | Y | Y |
-| nfvi.stg.cfg.004 | Storage with replication | Yes/No | N | Y | Y |
-| nfvi.stg.cfg.005 | Storage with encryption |Yes/No | Y | Y | Y |
+| nfvi.stg.cfg.003 | Storage with replication | Yes/No | N | Y | Y |
+| nfvi.stg.cfg.004 | Storage with encryption |Yes/No | Y | Y | Y |
 -->
 | .conf | Feature | Type  | Basic | Network Intensive |
 |------------------|----------------|----------------|----------------|----------------|
 | nfvi.stg.cfg.001 | Catalogue storage Types | Yes/No | Y  | Y  |
 | nfvi.stg.cfg.002 | Storage Block | Yes/No | Y | Y |
-| nfvi.stg.cfg.003 | Storage Object |Yes/No  | Y | Y |
-| nfvi.stg.cfg.004 | Storage with replication | Yes/No | N | Y |
-| nfvi.stg.cfg.005 | Storage with encryption |Yes/No | Y | Y |
-<p align="center"><b>Table 5-9:</b> Virtual Storage features and configuration for the 3 types of SW profiles.</p>
+| nfvi.stg.cfg.003 | Storage with replication | Yes/No | N | Y |
+| nfvi.stg.cfg.004 | Storage with encryption |Yes/No | Y | Y |
+<p align="center"><b>Table 5-10:</b> Virtual Storage features and configuration for the 2 types of SW profiles.</p>
 
-**Table 5-10** depicts the features related to Virtual storage Acceleration
+**Table 5-11** depicts the features related to Virtual storage Acceleration
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -180,12 +189,12 @@ This section will detail NFVI SW profiles and associated configurations for the 
 |------------------|----------------|----------------|----------------|----------------|
 | nfvi.stg.acc.cfg.001 | Storage IOPS oriented | Yes/No | N | Y |
 | nfvi.stg.acc.cfg.002 | Storage capacity oriented |  Yes/No| N | N |
-<p align="center"><b>Table 5-10:</b> Virtual Storage Acceleration features.</p>
+<p align="center"><b>Table 5-11:</b> Virtual Storage Acceleration features.</p>
 
 <a name="5.2.3"></a>
 ### 5.2.3 Virtual Networking
 
-**Table 5-11** and **Table 5-12** depict the features and configurations related to virtual networking for the 3 types of reference NFVI instances.
+**Table 5-12** and **Table 5-13** depict the features and configurations related to virtual networking for the 2 types of reference NFVI instances.
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -207,7 +216,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.net.cfg.006 | Traffic patterns symmetry | Yes/No            | Y | Y |
 *[VNF Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to VNFC) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
 
-<p align="center"><b>Table 5-11:</b> Virtual Networking features and configuration for the 3 types of SW profiles.</p>
+<p align="center"><b>Table 5-12:</b> Virtual Networking features and configuration for the 2 types of SW profiles.</p>
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -223,7 +232,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.net.acc.cfg.002 | Support of HW offload | Yes/No | N | Y, support of SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | Yes/No | N  | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y |
-<p align="center"><b>Table 5-12:</b> Virtual Networking Acceleration features.</p>
+<p align="center"><b>Table 5-13:</b> Virtual Networking Acceleration features.</p>
 
 <a name="5.3"></a>
 ## 5.3 NFVI HW profile description
@@ -310,7 +319,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | nfvi.hw.cpu.cfg.007 | Hugepages* |  | N | Y | Y
 -->
 
-<p align="center"><b>Table 5-13:</b> Minimum Compute resources configuration parameters.</p>
+<p align="center"><b>Table 5-14:</b> Minimum Compute resources configuration parameters.</p>
 
 <!--
 > _*These features are not set at the physical server BIOS_
@@ -328,7 +337,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | Y |
 -->
 
-<p align="center"><b>Table 5-14:</b> Compute acceleration configuration specifications.</p>
+<p align="center"><b>Table 5-15:</b> Compute acceleration configuration specifications.</p>
 
 
 <a name="5.4.2"></a>
@@ -345,7 +354,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid State Drive | Recommended | Recommended |Recommended |
 -->
 
-<p align="center"><b>Table 5-15:</b> Storage configuration specification.</p>
+<p align="center"><b>Table 5-16:</b> Storage configuration specification.</p>
 
 > _*This specified local storage configurations including # and capacity of storage drives._
 
@@ -366,7 +375,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values) | 10 | 25 | 25 |
 -->
 
-<p align="center"><b>Table 5-16:</b> Minimum NIC configuration specification.</p>
+<p align="center"><b>Table 5-17:</b> Minimum NIC configuration specification.</p>
 
 <a name="5.4.3.2"></a>
 #### 5.4.3.2 PCIe Configurations
@@ -384,7 +393,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 8 |
 -->
 
-<p align="center"><b>Table 5-17:</b> PCIe configuration specification.</p>
+<p align="center"><b>Table 5-18:</b> PCIe configuration specification.</p>
 
 <!--
 <a name="5.4.3.3"></a>
@@ -415,4 +424,4 @@ The configurations specified in here will be used in specifying the actual hardw
 | nfvi.hw.nac.cfg.003 | Compression |  |  |  |
 -->
 
-<p align="center"><b>Table 5-18:</b> Network acceleration configuration specification.</p>
+<p align="center"><b>Table 5-19:</b> Network acceleration configuration specification.</p>
