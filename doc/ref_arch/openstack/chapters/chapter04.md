@@ -102,7 +102,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
          - 1 NIC for Other Networks (PXE, Mngt ...)
 -	Sizing rules
     - Scale out of network node is not easy 
-    - DVR can be an option for large deployment (see more detail
+    - DVR can be an option for large deployment (see more detail in chapter 4.3.1.5 - Neutron)
 
 #### 4.2.2.4. Storage nodes
 -	BIOS requirements
