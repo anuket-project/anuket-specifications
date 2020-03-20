@@ -69,13 +69,14 @@ This section describes a set of explicit NFVI capabilities and performance measu
 
 <a name="Table4-1"></a>
 
-| Ref | NFVI Capability | Unit | Definition/Notes |
-|--------------------|---------------------------|--------|--------------------------------------------|
-| e.nfvi.cap.001 | # vCPU | number | Max number of vCPU that can be assigned to a single VNFC <sup>1)</sup>|
-| e.nfvi.cap.002 | RAM Size | MB | Max memory in MB that can be assigned to a single VNFC by NFVI <sup>2)</sup>|
-| e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB | Max storage in GB that can be assigned to a single VNFC by NFVI |
-| e.nfvi.cap.004 | # Connection points | number | Max number of connection points that can be assigned to a single VNFC by NFVI |
-| e.nfvi.cap.005 | Total external (persistent) storage | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI |
+| Ref            | NFVI Capability                        | Unit   | Definition/Notes                                                              |
+|----------------|----------------------------------------|--------|-------------------------------------------------------------------------------|
+| e.nfvi.cap.001 | # vCPU                                 | number | Max number of vCPU that can be assigned to a single VNFC <sup>1)</sup>        |
+| e.nfvi.cap.002 | RAM Size                               | MB     | Max memory in MB that can be assigned to a single VNFC by NFVI <sup>2)</sup>  |
+| e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB     | Max storage in GB that can be assigned to a single VNFC by NFVI               |
+| e.nfvi.cap.004 | # Connection points                    | number | Max number of connection points that can be assigned to a single VNFC by NFVI |
+| e.nfvi.cap.005 | Total external (persistent) storage    | GB     | Max storage in GB that can be attached / mounted to VNFC by NFVI              |
+
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of NFVI</p>
 
 **1)** In a Kubernetes based environment this means the CPU limit of a pod. <br>
@@ -88,19 +89,19 @@ This section describes a set of explicit NFVI capabilities and performance measu
 
 <a name="Table4-2"></a>
 
-| Ref | NFVI Capability | Unit | Definition/Notes |
-|--------------------|---------------------------|--------|--------------------------------------------|
-| e.nfvi.cap.006 | CPU core pinning support | Yes/No | Indicates if NFVI supports CPU core pinning |
-| e.nfvi.cap.007 | NUMA support | Yes/No | Indicates if NFVI supports NUMA |
-| e.nfvi.cap.008 | IPSec Acceleration | Yes/No | IPSec Acceleration |
-| e.nfvi.cap.009 | Crypto Acceleration | Yes/No | Crypto Acceleration |
-| e.nfvi.cap.010 | Transcoding Acceleration | Yes/No | Transcoding Acceleration |
-| e.nfvi.cap.011 | Programmable Acceleration | Yes/No | Programmable Acceleration |
-| e.nfvi.cap.012 | Enhanced Cache Management <sup>1)</sup> | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded |
-| e.nfvi.cap.013 | SR-IOV over PCI-PT <sup>2)</sup> | Yes/No | Traditional SR-IOV |
-| e.nfvi.cap.014 | GPU/NPU <sup>2)</sup> | Yes/No | Hardware coprocessor |
-| e.nfvi.cap.015 | SmartNIC <sup>2)3)</sup> | Yes/No | Network Acceleration |
-| e.nfvi.cap.016 | FPGA/other Acceleration H/W <sup>2)</sup> | Yes/No | Non-specific hardware |
+| Ref            | NFVI Capability                           | Unit   | Definition/Notes                            |
+|----------------|-------------------------------------------|--------|---------------------------------------------|
+| e.nfvi.cap.006 | CPU core pinning support                  | Yes/No | Indicates if NFVI supports CPU core pinning |
+| e.nfvi.cap.007 | NUMA support                              | Yes/No | Indicates if NFVI supports NUMA             |
+| e.nfvi.cap.008 | IPSec Acceleration                        | Yes/No | IPSec Acceleration                          |
+| e.nfvi.cap.009 | Crypto Acceleration                       | Yes/No | Crypto Acceleration                         |
+| e.nfvi.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration                    |
+| e.nfvi.cap.011 | Programmable Acceleration                 | Yes/No | Programmable Acceleration                   |
+| e.nfvi.cap.012 | Enhanced Cache Management <sup>1)</sup>   | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded   |
+| e.nfvi.cap.013 | SR-IOV over PCI-PT <sup>2)</sup>          | Yes/No | Traditional SR-IOV                          |
+| e.nfvi.cap.014 | GPU/NPU <sup>2)</sup>                     | Yes/No | Hardware coprocessor                        |
+| e.nfvi.cap.015 | SmartNIC <sup>2)3)</sup>                  | Yes/No | Network Acceleration                        |
+| e.nfvi.cap.016 | FPGA/other Acceleration H/W <sup>2)</sup> | Yes/No | Non-specific hardware                       |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of NFVI</p>
 
@@ -123,8 +124,8 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 <a name="Table4-3"></a>
 
-| Ref | NFVI Capability | Unit | Definition/Notes |
-|--------------------|---------------------------|--------|----------------------------------------------------|
+| Ref            | NFVI Capability         | Unit   | Definition/Notes                            |
+|----------------|-------------------------|--------|---------------------------------------------|
 | e.nfvi.cap.013 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workload |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
@@ -140,9 +141,9 @@ The following table of exposed Performance Measurements shows PMs per VNFC, vNIC
 
 <a name="Table4-4"></a>
 
-| Ref                | NFVI Measurement               | Unit                | Definition/Notes                                             |
-| ------------------ | ------------------------- | ------------------- | ------------------------------------------------------------ |
-| e.nfvi.pm.xxx | Place Holder        | Units            | Concise description |
+| Ref           | NFVI Measurement | Unit  | Definition/Notes    |
+|---------------|------------------|-------|---------------------|
+| e.nfvi.pm.xxx | Place Holder     | Units | Concise description |
 
 <p align="center"><b>Table 4-4:</b> Exposed Performance Measurements of NFVI</p>
 
@@ -160,10 +161,10 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 <a name="Table4-5"></a>
 
-| Ref | NFVI Capability | Unit | Definition/Notes |
-|--------------------|---------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.cap.014 | CPU cores consumed by NFVI overhead in a compute node | % (of total available) | Indicates the percentage of cores consumed by NFVI components (including host OS) in a compute node |
-| i.nfvi.cap.015 | Memory consumed by NFVI overhead in a compute node | % (of total available) | Indicates the percentage of memory consumed by NFVI components (including host OS) in a compute node |
+| Ref            | NFVI Capability                                       | Unit                   | Definition/Notes                                                                                     |
+|----------------|-------------------------------------------------------|------------------------|------------------------------------------------------------------------------------------------------|
+| i.nfvi.cap.014 | CPU cores consumed by NFVI overhead in a compute node | % (of total available) | Indicates the percentage of cores consumed by NFVI components (including host OS) in a compute node  |
+| i.nfvi.cap.015 | Memory consumed by NFVI overhead in a compute node    | % (of total available) | Indicates the percentage of memory consumed by NFVI components (including host OS) in a compute node |
 
 <p align="center"><b>Table 4-5:</b> Internal Resource Capabilities of NFVI</p>
 
@@ -188,10 +189,10 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 <a name="Table4-6"></a>
 
-| Ref | NFVI capability | Unit | Definition/Notes |
-|--------------------|------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.cap.016 | CPU allocation ratio | N:1 | Number of virtual cores per physical core; also known as CPU overbooking ratio |
-| i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface) |
+| Ref            | NFVI capability      | Unit   | Definition/Notes                                                               |
+|----------------|----------------------|--------|--------------------------------------------------------------------------------|
+| i.nfvi.cap.016 | CPU allocation ratio | N:1    | Number of virtual cores per physical core; also known as CPU overbooking ratio |
+| i.nfvi.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface)                     |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to NFVI</p>
 
@@ -201,8 +202,8 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 <a name="Table4-7"></a>
 
-| Ref | NFVI capability | Unit | Definition/Notes |
-|--------------------|------------------------------------------|--------|----------------------------------------|
+| Ref            | NFVI capability   | Unit   | Definition/Notes                      |
+|----------------|-------------------|--------|---------------------------------------|
 | i.nfvi.cap.018 | Huge page support | Yes/No | Indicates if NFVI supports huge pages |
 
 <p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of NFVI</p>
@@ -214,15 +215,15 @@ This section covers a list of implicit NFVI capabilities and measurements that d
 
 <a name="Table4-8"></a>
 
-| Ref | NFVI Measurement | Unit | Definition/Notes |
-|--------------------|-------------------------------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| i.nfvi.pm.001 | Host CPU usage | nanoseconds | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM). |
-| i.nfvi.pm.002 | Virtual compute resource CPU usage | nanoseconds | Per VNFC.  It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
-| i.nfvi.pm.003 | Host CPU utilization | % | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM).|
-| i.nfvi.pm.004 | Virtual compute resource CPU utilization | % | Per VNFC. It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM).  |
-| i.nfvi.pm.005 | Measurement of external storage IOPs | Yes/No |  |
-| i.nfvi.pm.006 | Measurement of external storage throughput | Yes/No |  |
-| i.nfvi.pm.007 | Available external storage capacity | Yes/No |  |
+| Ref           | NFVI Measurement                           | Unit        | Definition/Notes                                                                                                                                                                                                            |
+|---------------|--------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| i.nfvi.pm.001 | Host CPU usage                             | nanoseconds | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM).           |
+| i.nfvi.pm.002 | Virtual compute resource CPU usage         | nanoseconds | Per VNFC.  It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM exposed to VNFM). |
+| i.nfvi.pm.003 | Host CPU utilization                       | %           | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (NFVI exposed to VIM).           |
+| i.nfvi.pm.004 | Virtual compute resource CPU utilization   | %           | Per VNFC. It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (VIM, exposed to VNFM). |
+| i.nfvi.pm.005 | Measurement of external storage IOPs       | Yes/No      |                                                                                                                                                                                                                             |
+| i.nfvi.pm.006 | Measurement of external storage throughput | Yes/No      |                                                                                                                                                                                                                             |
+| i.nfvi.pm.007 | Available external storage capacity        | Yes/No      |                                                                                                                                                                                                                             |
 
 <p align="center"><b>Table 4-8:</b> Internal Measurement Capabilities of NFVI</p>
 
@@ -235,13 +236,13 @@ Table 4-9 shows capabilities related to resources allocation
 
 <a name="Table4-12"></a>
 
-| Ref | VIM Capability | Unit | Definition/Notes |
-|--------------------|------------------|---------|-------------------------------------------|
-| e.vim.cap.001 | Virtual Compute allocation | Yes/No | Capability to allocate virtual compute resources  to VNFC |
-| e.vim.cap.002 | Virtual Storage allocation | Yes/No | Capability to allocate virtual storage resources  to VNFC |
+| Ref           | VIM Capability                          | Unit   | Definition/Notes                                             |
+|---------------|-----------------------------------------|--------|--------------------------------------------------------------|
+| e.vim.cap.001 | Virtual Compute allocation              | Yes/No | Capability to allocate virtual compute resources  to VNFC    |
+| e.vim.cap.002 | Virtual Storage allocation              | Yes/No | Capability to allocate virtual storage resources  to VNFC    |
 | e.vim.cap.003 | Virtual Networking resources allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
-| e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
-| e.vim.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
+| e.vim.cap.004 | Multi-tenant isolation                  | Yes/No | Capability to isolate resources between tenants              |
+| e.vim.cap.005 | Images management                       | Yes/No | Capability to manage VNFC software images                    |
 
 <p align="center"><b>Table 4-9:</b> VIM Resource Allocation Capabilities</p>
 
@@ -250,12 +251,12 @@ Table 4-10 Shows performance measurement capabilities
 
 <a name="Table4-13"></a>
 
-| Ref | VIM Capability | Unit | Definition/Notes |
-|--------------------|------------------|---------|-------------------------------------------|
-| e.vim.cap.006 | Virtual resources inventory per tenant | Yes/No | Capability to provide information related to allocated virtualised resources per tenant |
-| e.vim.cap.007 | Resources Monitoring | Yes/No | Capability to notify state changes of allocated resources |
-| e.vim.cap.008 | Virtual resources Performance  | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
-| e.vim.cap.009 | Virtual resources Fault information | Yes/No | Capability to collect and notify fault information on virtualised resources |
+| Ref           | VIM Capability                         | Unit   | Definition/Notes                                                                            |
+|---------------|----------------------------------------|--------|---------------------------------------------------------------------------------------------|
+| e.vim.cap.006 | Virtual resources inventory per tenant | Yes/No | Capability to provide information related to allocated virtualised resources per tenant     |
+| e.vim.cap.007 | Resources Monitoring                   | Yes/No | Capability to notify state changes of allocated resources                                   |
+| e.vim.cap.008 | Virtual resources Performance          | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
+| e.vim.cap.009 | Virtual resources Fault information    | Yes/No | Capability to collect and notify fault information on virtualised resources                 |
 
 <p align="center"><b>Table 4-10:</b> VIM Resource Performance Measurement Capabilities</p>
 
@@ -268,20 +269,20 @@ Table 4-10 Shows performance measurement capabilities
 #### 4.1.6.1 Resources Management Measurements
 **Table 4-11** shows resource management measurements of VIM as aligned with ETSI GS NFV TST-012 [3].
 
-| Ref | VIM Measurement | Unit | Definition/Notes |
-|--------------------|------------------------------------------------------|--------|------------------------------------------------------------------|
-| e.vim.pm.001 | Time to create Virtual Compute resources for a given VNF | Max ms |  |
-| e.vim.pm.002 | Time to delete Virtual Compute resources of a given VNF | Max ms |  |
-| e.vim.pm.003 | Time to start Virtual Compute resources of a given VNF | Max ms |  |
-| e.vim.pm.004 | Time to stop Virtual Compute resources of a given VNF | Max ms | <sup>1)</sup> |
-| e.vim.pm.005 | Time to pause Virtual Compute resources of a given VNF | Max ms | <sup>2)</sup> |
-| e.vim.pm.006 | Time to create internal virtual network | Max ms |  |
-| e.vim.pm.007 | Time to delete internal virtual network | Max ms |  |
-| e.vim.pm.008 | Time to update internal virtual network | Max ms |  |
-| e.vim.pm.009 | Time to create external virtual network | Max ms |  |
-| e.vim.pm.010 | Time to delete external virtual network | Max ms |  |
-| e.vim.pm.011 | Time to update external virtual   network | Max ms |  |
-| e.vim.pm.012 | Time to create external storage ready for use by VNF | Max ms |  |
+| Ref          | VIM Measurement                                          | Unit   | Definition/Notes |
+|--------------|----------------------------------------------------------|--------|------------------|
+| e.vim.pm.001 | Time to create Virtual Compute resources for a given VNF | Max ms |                  |
+| e.vim.pm.002 | Time to delete Virtual Compute resources of a given VNF  | Max ms |                  |
+| e.vim.pm.003 | Time to start Virtual Compute resources of a given VNF   | Max ms |                  |
+| e.vim.pm.004 | Time to stop Virtual Compute resources of a given VNF    | Max ms | <sup>1)</sup>    |
+| e.vim.pm.005 | Time to pause Virtual Compute resources of a given VNF   | Max ms | <sup>2)</sup>    |
+| e.vim.pm.006 | Time to create internal virtual network                  | Max ms |                  |
+| e.vim.pm.007 | Time to delete internal virtual network                  | Max ms |                  |
+| e.vim.pm.008 | Time to update internal virtual network                  | Max ms |                  |
+| e.vim.pm.009 | Time to create external virtual network                  | Max ms |                  |
+| e.vim.pm.010 | Time to delete external virtual network                  | Max ms |                  |
+| e.vim.pm.011 | Time to update external virtual   network                | Max ms |                  |
+| e.vim.pm.012 | Time to create external storage ready for use by VNF     | Max ms |                  |
 
 <p align="center"><b>Table 4-11:</b> VIM Resource Management Measurements</p>
 
@@ -305,13 +306,13 @@ Compute Flavours represent the compute, memory, storage, and management network 
 
 Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute Flavour geometry consists of the following elements:
 
-Element |Description
---------|----------
-Compute Flavour Name |A descriptive name
-Virtual compute resources (aka vCPUs) |Number of virtual compute resources (vCPUs) presented to the VM instance.
-Memory |Virtual compute instance memory in megabytes.
-Ephemeral/Local Disk |Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks.
-Management Interface |Specifies the bandwidth of management interface/s
+| Element                               | Description                                                                                                                                                                                             |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Compute Flavour Name                  | A descriptive name                                                                                                                                                                                      |
+| Virtual compute resources (aka vCPUs) | Number of virtual compute resources (vCPUs) presented to the VM instance.                                                                                                                               |
+| Memory                                | Virtual compute instance memory in megabytes.                                                                                                                                                           |
+| Ephemeral/Local Disk                  | Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
+| Management Interface                  | Specifies the bandwidth of management interface/s                                                                                                                                                       |
 
 <p align="center"><b>Table 4-12:</b> Compute Flavour Geometry Specification.</p>
 
@@ -321,15 +322,15 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 
 >_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
 
-.conf |vCPU ("c") <sup>2)</sup>|RAM ("r") <sup>2)</sup>|Local Disk ("d") | Management Interface
------|------------|----------|-----|-----
-.tiny |1 |512 MB |1 GB |1 Gbps
-.small |1 |2 GB |20 GB  |1 Gbps
-.medium |2 |4 GB |40 GB |1 Gbps
-.large |4 |8 GB |80 GB |1 Gbps
-.2xlarge <sup>1)</sup> |8 |16 GB |160 GB |1 Gbps
-.4xlarge <sup>1)</sup> |16 |32 GB |320 GB |1 Gbps
-.8xlarge <sup>1)</sup> |32 |64 GB |640 GB |1 Gbps
+| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") | Management Interface |
+|------------------------|--------------------------|-------------------------|------------------|----------------------|
+| .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
+| .small                 | 1                        | 2 GB                    | 20 GB            | 1 Gbps               |
+| .medium                | 2                        | 4 GB                    | 40 GB            | 1 Gbps               |
+| .large                 | 4                        | 8 GB                    | 80 GB            | 1 Gbps               |
+| .2xlarge <sup>1)</sup> | 8                        | 16 GB                   | 160 GB           | 1 Gbps               |
+| .4xlarge <sup>1)</sup> | 16                       | 32 GB                   | 320 GB           | 1 Gbps               |
+| .8xlarge <sup>1)</sup> | 32                       | 64 GB                   | 640 GB           | 1 Gbps               |
 
 <p align="center"><b>Table 4-12:</b> Predefined Compute Flavours.</p>
 
@@ -349,13 +350,13 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
 
-Virtual Network Interface Option |Interface Bandwidth
----|---
-n1, n2, n3, n4, n5, n6 |1, 2, 3, 4, 5, 6 Gbps
-n10, n20, n30, n40, n50, n60 |10, 20, 30, 40, 50, 60 Gbps
-n25, n50, n75, n100, n125, n150 |25, 50, 75, 100, 125, 150 Gbps
-n50, n100, n150, n200, n250, n300 |50, 100, 150, 200, 250, 300 Gbps
-n100, n200, n300, n400, n500, n600 |100, 200, 300, 400, 500, 600 Gbps
+| Virtual Network Interface Option   | Interface Bandwidth               |
+|------------------------------------|-----------------------------------|
+| n1, n2, n3, n4, n5, n6             | 1, 2, 3, 4, 5, 6 Gbps             |
+| n10, n20, n30, n40, n50, n60       | 10, 20, 30, 40, 50, 60 Gbps       |
+| n25, n50, n75, n100, n125, n150    | 25, 50, 75, 100, 125, 150 Gbps    |
+| n50, n100, n150, n200, n250, n300  | 50, 100, 150, 200, 250, 300 Gbps  |
+| n100, n200, n300, n400, n500, n600 | 100, 200, 300, 400, 500, 600 Gbps |
 
 <p align="center"><b>Table 4-13:</b> Virtual Network Interface Specification Examples</p>
 
@@ -366,11 +367,11 @@ Persistent storage is associated with VNFs via Storage Extensions. The size of a
 
 Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
-.conf |Read IO/s |Write IO/s | Read Throughput (MB/s) |Write Throughput (MB/s) |Max Ext Size
----|---|---|---|---|---
-.bronze |Up to 3K |Up to 1.5K |Up to 180 |Up to 120 |16TB
-.silver |Up to 60K |Up to 30K |Up to 1200 |Up to 400 |1TB
-.gold |Up to 680K |Up to 360K |Up to 2650 |Up to 1400 |1TB
+| .conf   | Read IO/s  | Write IO/s | Read Throughput (MB/s) | Write Throughput (MB/s) | Max Ext Size |
+|---------|------------|------------|------------------------|-------------------------|--------------|
+| .bronze | Up to 3K   | Up to 1.5K | Up to 180              | Up to 120               | 16TB         |
+| .silver | Up to 60K  | Up to 30K  | Up to 1200             | Up to 400               | 1TB          |
+| .gold   | Up to 680K | Up to 360K | Up to 2650             | Up to 1400              | 1TB          |
 
 <p align="center"><b>Table 4-14:</b> Storage Performance Profiles</p>
 
@@ -412,10 +413,10 @@ This NFVI Profile is intended to be used for those applications that has high ne
 Network Intensive Profile can come with Network Acceleration extensions to assist VNFs offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
 >_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
 
-| .conf | Interface type | Description |
-|------------|----------------|-----------------------------------------|
-| .il-ipsec | virtio-ipsec* | In-line IPSec acceleration. |
-| .la-crypto | virtio-crypto | Look-Aside encryption/decryption engine. |
+| .conf      | Interface type | Description                              |
+|------------|----------------|------------------------------------------|
+| .il-ipsec  | virtio-ipsec*  | In-line IPSec acceleration.              |
+| .la-crypto | virtio-crypto  | Look-Aside encryption/decryption engine. |
 
 <p align="center"><b>Table 4-16:</b> Acceleration Extensions for Network Intensive Profile</p>
 
@@ -458,30 +459,29 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <a name="4.2.5"></a>
 ### 4.2.5 NFVI Profile Capabilities Mapping
 
-| Ref | Basic | Network Intensive | Notes |
-|----------------------|----------------------------|----------------------------|-------|
-| `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
-| `e.nfvi.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.nfvi.res.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.nfvi.res.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> |  |
-| `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> |   |
-| `e.nfvi.per.cap.001`<br />(CPU pinning support) | No | Yes |  Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
-| `e.nfvi.per.cap.002`<br />(NUMA support) | No | Yes |  |
-| `e.nfvi.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | |
-| `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | |
-| `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No |  |
-| `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No |  |
-| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E |  |
-| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes |  Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 |  Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
-| `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes |  |
-| `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes |  Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes |  Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
-| `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes |  |
-| `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes |  |
-| `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | |
-| `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | |
-
+| Ref                                                                  | Basic                    | Network Intensive        | Notes                                                               |
+|----------------------------------------------------------------------|--------------------------|--------------------------|---------------------------------------------------------------------|
+| `e.nfvi.res.cap.001`<br />(#vCPU cores)                              | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)     |
+| `e.nfvi.res.cap.002`<br />(Amount of RAM (MB))                       | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
+| `e.nfvi.res.cap.003`<br />(Total instance (ephemeral) storage (GB))  | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
+| `e.nfvi.res.cap.004`<br />(# vNICs)                                  | Per selected  <I Opt>    | Per selected  <I Opt>    |                                                                     |
+| `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext>    | Per selected  <S Ext>    |                                                                     |
+| `e.nfvi.per.cap.001`<br />(CPU pinning support)                      | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2)  |
+| `e.nfvi.per.cap.002`<br />(NUMA support)                             | No                       | Yes                      |                                                                     |
+| `e.nfvi.per.cap.003`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
+| `e.nfvi.per.cap.004`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
+| `e.nfvi.per.cap.005`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
+| `e.nfvi.per.cap.006`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
+| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
+| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
+| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
+| `i.nfvi.sla.cap.002`<br />(vNIC QoS)                                 | No                       | Yes                      |                                                                     |
+| `i.nfvi.per.cap.001`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.nfvi.mon.cap.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
+| `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage)                | Yes                      | Yes                      |                                                                     |
+| `i.nfvi.mon.cap.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
+| `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization)          | Yes                      | Yes                      |                                                                     |
+| `i.nfvi.mon.cap.007`<br />(External storage capacity)                | No                       | No                       |                                                                     |
 <!--
 | Ref | Basic | Network Intensive | Compute Intensive | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
