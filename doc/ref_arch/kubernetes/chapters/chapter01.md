@@ -65,7 +65,7 @@ The definition above is very application centric and look at cloud native from t
 - **observable**:
 - **robust automation**:
 
-> The CNCF TUG is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: https://docs.google.com/document/d/1RHx4mnJ4ELKphIK5ktXZ53XcbCpwObkgcvju5wI3jg4/edit.  Many of the principles above are taken from this document.
+> The CNCF TUG is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://github.com/vulk/cloud-native-principles/blob/master/cloud-native-principles.md).  Many of the principles above are taken from this document.
 
 <a name="1.4"></a>
 ## 1.4 Scope

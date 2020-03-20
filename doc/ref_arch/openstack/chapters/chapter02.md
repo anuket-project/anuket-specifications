@@ -188,9 +188,9 @@ Traceability to Reference Model.
 <!-- | `req.sec.ntw.01` | Networking | The Architecture **must** have the underlay network include strong access controls that comply with the applicable security standard (national, regional), for example ISO27001. | |
 | `req.sec.ntw.02` | Networking | The Architecture **must** have all security logs stored in accordance with applicable security standard (national, regional), for example ISO27001. | | -->
 | `req.sec.ntw.03` | Networking | The Architecture **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. | |
-|----|--------------|-----------------------------|-------|
 | `req.sec.ntw.04` | Networking | The Architecture **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. | |
 | `req.sec.ntw.05` | Networking | The Architecture **must** have the underlay network include strong access controls that adhere to the V1.1 NIST Cybersecurity Framework. | |
+|----|--------------|-----------------------------|-------|
 <p align="center"><b>Table 2-8:</b> OpenStack Security Requirements.</p>
 
 <!--
