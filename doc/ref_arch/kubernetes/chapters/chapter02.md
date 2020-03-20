@@ -17,9 +17,8 @@
   * [2.3.2 Infrastructure Requirements](#2.3.2)
   * [2.3.3 Kubernetes Cluster Requirements](#2.3.3)
   * [2.3.4 Interfaces and APIs Requirements](#2.3.4)
-  * [2.3.5 Operations and LCM Requirements](#2.3.5)
-  * [2.3.6 Assurance Requirements](#2.3.6)
-  * [2.3.7 Security Requirements](#2.3.7)
+  * [2.3.5 Assurance Requirements](#2.3.6)
+  * [2.3.6 Security Requirements](#2.3.7)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -259,25 +258,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-8:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
 <a name="2.3.5"></a>
-### 2.3.5 Operations and LCM Requirements
-
-| Ref # | sub-category | Description |
-|---|---|---|
-| `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
-| `req.lcm.gen.02` | General | The Architecture **must** support API driven life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling, and healing. |
-| `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and life cycle management of multiple - declaratively specified - kubernetes clusters. |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware, including compute, network, and storage, and software assets for automated deployment, configuration, maintenance, and life cycle management. |
-| `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
-| `req.lcm.cid.01` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
-
-<!--
-| `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
--->
-
-<p align="center"><b>Table 2-9:</b> Kubernetes Architecture: Operations and LCM Requirements </p>
-
-<a name="2.3.6"></a>
-### 2.3.6 Assurance Requirements
+### 2.3.5 Assurance Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -288,8 +269,8 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 <p align="center"><b>Table 2-10:</b> Kubernetes Architecture: Assurance Requirements</p>
 
-<a name="2.3.7"></a>
-### 2.3.7 Security Requirements
+<a name="2.3.6"></a>
+### 2.3.6 Security Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
