@@ -17,16 +17,17 @@
   * [2.3.2 Infrastructure Requirements](#2.3.2)
   * [2.3.3 Kubernetes Cluster Requirements](#2.3.3)
   * [2.3.4 Interfaces and APIs Requirements](#2.3.4)
-  * [2.3.5 Operations and LCM Requirements](#2.3.5)
-  * [2.3.6 Assurance Requirements](#2.3.6)
-  * [2.3.7 Security Requirements](#2.3.7)
+  * [2.3.5 Assurance Requirements](#2.3.6)
+  * [2.3.6 Security Requirements](#2.3.7)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
 
-**must**: Requirements that are marked as _must_ are considered mandatory and must exist in the reference architecture and reflected in any implementation targeting this reference architecture. The same applies to _must not_.
+**must**: Requirements that are marked as _must_ are considered mandatory and must exist in the Reference Architecture and reflected in any Reference Implementation or Vendor Implementation targeting conformance with this Reference Architecture. The same applies to _must not_.
 
-**should**: Requirements that are marked as _should_ are expected to be fulfilled by the reference architecture but it is up to each service provider to accept an implementation targeting this reference architecture that is not reflecting on any of those requirements. The same applies to _should not_.
+**should**: Requirements that are marked as _should_ are expected to be fulfilled by the Reference Architecture but it is up to each service provider to accept a Vendor Implementation targeting conformance with this Reference Architecture that is not reflecting on any of those requirements. The same applies to _should not_.
+
+- ***NOTE:*** Some of these **must** and **should** requirements may be optional when it comes to an operator **deployment** (i.e. an operator may choose whether or not to deploy or not, depending on the NFVI Software Profiles required for each specific deployment). Specific requirements asking for the Reference Architecture to be flexible enough to allow that optionality will be added in the tables in section 2.3.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
@@ -35,7 +36,7 @@
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
-This reference model intends to implement both the Basic, Network Intensive and Compute Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
+This reference model intends to implement both the Basic and the Network Intensive Instance types defined in the Reference Model. The following table contains the requirements of the Reference Model and indicates if the Reference Architecture supports them.
 
 <a name="2.2.1"></a>
 ### 2.2.1 Network Acceleration Extensions
@@ -49,10 +50,12 @@ From Reference Model section [4.2.4.2.1 Network Acceleration Extensions](../../.
 | .la-trans | Look-Aside Transcoding acceleration | optional and only if the CNI plugin is OVS |
 | .la-programmable | Look-Aside programmable acceleration | optional and only if the CNI plugin is OVS |
 
+<p align="center"><b>Table 2-1:</b> Reference Model Requirements: Network Acceleration Extensions</p>
+
 <a name="2.2.2"></a>
 ### 2.2.2 Network Interface Options
 
-From Reference Model section [4.2.4.4 Network Interface Options](../../../ref_model/chapters/chapter04.md#4244-network-interface-options)
+From Reference Model section [4.2.2 Virtual Network Interface Specifications](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications)
 
 | Attribute | Description | Supported |
 |-----------|----------------------------------|-------|
@@ -61,6 +64,8 @@ From Reference Model section [4.2.4.4 Network Interface Options](../../../ref_mo
 | n25, n50, n75, n100, n125, n150 | | Y |
 | n50, n100, n150, n200, n250, n300 | | Y |
 | n100, n200, n300, n400, n500, n600 | | Y |
+
+<p align="center"><b>Table 2-2:</b> Reference Model Requirements: Network Interface Options</p>
 
 <a name="2.2.3"></a>
 ### 2.2.3 VIM Capabilities
@@ -79,6 +84,8 @@ From Reference Model section [4.1.6 VIM Capabilities](../../../ref_model/chapter
 | e.vim.cap.008 | Virtual resources Performance  |  | Y |
 | e.vim.cap.009 | Virtual resources Fault information | | Y |
 
+<p align="center"><b>Table 2-3:</b> Reference Model Requirements: VIM Capabilities</p>
+
 **1)** In a Kubernetes based infrastructure within one Kubernetes cluster multitenacy is provided only in resource management level. Isolation of execution environments requires separate Kubernetes clusters or worker nodes.
 
 <a name="2.2.4"></a>
@@ -92,7 +99,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | at least 32 GB<sup>1)</sup> | Y |
 | e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | at least 320 GB<sup>1)</sup> | Y |
 | e.nfvi.res.cap.004 | # Connection Points | 6 | Y |
-| e.nfvi.res.cap.005 | Total instance (persistent) storage (GB) | 300 GB | Y |
+| e.nfvi.res.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
 | e.nfvi.per.cap.001 | CPU pinning support | | Y |
 | e.nfvi.per.cap.002 | NUMA support | | Y |
 | e.nfvi.per.cap.003 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
@@ -100,7 +107,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | e.nfvi.per.cap.005 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
 | e.nfvi.per.cap.006 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
 | e.nfvi.per.cap.007 | Enhanced Cache Management | | X (if offered) |
-| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | | N<sup>2)</sup> |
+| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | | N<sup>3)</sup> |
 | i.nfvi.sla.cap.001 | CPU overbooking | 1:1, 1:4 | Y |
 | i.nfvi.sla.cap.002 | vNIC QoS | | Y |
 | i.nfvi.per.cap.001 | Huge page support |  | Y |
@@ -114,18 +121,18 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | nfvi.com.cfg.004 | Huge Pages  | | Y |
 | nfvi.stg.cfg.001 | Catalogue storage Types | | Y |
 | nfvi.stg.cfg.002 | Storage Block |  | Y |
-| nfvi.stg.cfg.003 | Storage Object | | N<sup>3)</sub> |
+| nfvi.stg.cfg.003 | Storage Object | | N<sup>4)</sub> |
 | nfvi.stg.cfg.004 | Storage with replication | | Y |
 | nfvi.stg.cfg.005 | Storage with encryption | | Y |
 | nfvi.stg.acc.cfg.001 | Storage IOPS oriented | | Y |
 | nfvi.stg.acc.cfg.002 | Storage capacity oriented | | Y |
-| nfvi.net.cfg.001 | vNIC interface | | N<sup>4)</sup>|
-| nfvi.net.cfg.002 | Overlay protocol | | Y<sup>5)</sup>|
+| nfvi.net.cfg.001 | vNIC interface | | N<sup>5)</sup>|
+| nfvi.net.cfg.002 | Overlay protocol | | Y<sup>6)</sup>|
 | nfvi.net.cfg.003 | NAT | | |
 | nfvi.net.cfg.004 | Security Group | | |
 | nfvi.net.cfg.005 | SFC support | | |
 | nfvi.net.cfg.006 | Traffic patterns symmetry | | |
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | | N <sup>6)</sup>|
+| nfvi.net.acc.cfg.001 | vSwitch optimisation | | N <sup>7)</sup>|
 | nfvi.net.acc.cfg.002 | Support of HW offload | |Y, support of SmartNic |
 | nfvi.net.acc.cfg.003 | Crypto acceleration | | Y |
 | nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | | ? |
@@ -142,16 +149,19 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | nfvi.hw.pci.cfg.002 | PCIe speed | Gen 3 | Y |
 | nfvi.hw.pci.cfg.003 | PCIe Lanes | 8 | Y |
 | nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | | Optional |
-| nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>7)</sup> |
+| nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>8)</sup> |
 | nfvi.hw.nac.cfg.003 | Compression |  | |
 
-**1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
-**2)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
-**3)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
-**4)** There is no vNIC in case of containers.<br>
-**5)** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN)<br>
-**6)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.<br>
-**7)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.<br>
+<p align="center"><b>Table 2-4:</b> Reference Model Requirements: Instance Capabilities Mapping</p>
+
+**1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)<br>
+**2)** Defined in the `.bronze` configuration in section [4.2.3 Storage Extensions](../../../ref_model/chapters/chapter04.md#423-storage-extensions)<br>
+**3)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
+**4)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
+**5)** There is no vNIC in case of containers.<br>
+**6)** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN)<br>
+**7)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.<br>
+**8)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.<br>
 
 <a name="2.3"></a>
 ## 2.3 Kubernetes Architecture Requirements
@@ -172,15 +182,9 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.gen.rsl.01` | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |
 | `req.gen.rsl.02` | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |
 | `req.gen.avl.01` | Availability | The Architecture **must** provide High Availability for Kubernetes components. |
-| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic, Network Intensive, ). |
+| `req.gen.ref.01` | Model | The Architecture **must** support the Reference Model defined profiles (instance types: Basic and Network Intensive). |
 
-
-<!--
-| `req.gen.k8s.01` | Open source | The Architecture **must** use Kubernetes APIs.|
-| `req.gen.k8s.02` | Open source | The Architecture **must** support dynamic request and configuration of resources (compute, network, storage) through Kubernetes APIs. |
--->
-
-<p align="center"><b>Table 2-1:</b> Kubernetes Architecture: General Requirements</p>
+<p align="center"><b>Table 2-5:</b> Kubernetes Architecture: General Requirements</p>
 
 <a name="2.3.2"></a>
 ### 2.3.2 Infrastructure Requirements
@@ -196,6 +200,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.stg.05` | Storage | The Architecture **should** provide high-performance and horizontally scalable storage. |
 | `req.inf.stg.06` | Storage | The Architecture **must** support ephemeral storage (non-persistent) storage for Pods. |
 | `req.inf.stg.07` | Storage | The Architecture **must** support persistent storage for Pods. |
+| `req.inf.stg.08` | Storage | The Architecture **must** support the ability for an operator to choose whether or not to deploy persistent storage for Pods. |
 | `req.inf.ntw.01` | Network | The Architecture **must** support Container Network Interface (CNI). |
 | `req.inf.ntw.02` | Network | The Architecture **must** support intra-node communications, such as between agents on a node and all pods on that node |
 | `req.inf.ntw.03` | Network | The Architecture **must** support inter-node communications without NAT, such as communications between pods on a node with all other pods on all nodes |
@@ -220,7 +225,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.vir.01`   | Virtualisation |   The Architecture **must** support the capability for Containers to consume virtualised compute, storage and network resources.|
 -->
 
-<p align="center"><b>Table 2-2:</b> Kubernetes Architecture: Infrastructure Requirements</p>
+<p align="center"><b>Table 2-6:</b> Kubernetes Architecture: Infrastructure Requirements</p>
 Please note that "shared" is a reference to multi-tenant support and pooled storage resources.
 
 <a name="2.3.3"></a>
@@ -229,19 +234,17 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | Ref # | sub-category | Description |
 |---|---|---|
 | `req.kcm.07` | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. |
+| `req.kcm.08` | General | The Architecture **must** enable workload resiliency. |
 
 <!--
-| `req.kcm.01` | General | The Architecture **must** allow infrastructure resource sharing within a Kubernetes cluster. |
 | `req.kcm.02` | General | The Architecture **must** support discoverability of nodes and their features. |
-| `req.kcm.03` | General | The Architecture **must** support scheduling of workloads based on Enhanced Platform Awareness (EPA) features such as CPU Pinning, huge-pages and SR-IOV. |
 | `req.kcm.04` | General | The Architecture **must** include kubernetes artefacts (e.g., images, Helm charts, etc.) repository capabilities. |
 | `req.kcm.05` | General | The Architecture **should** prevent workloads from interfering with or observing other mutually ignorant workloads. |
-| `req.kcm.06` | General | The Architecture **must** support resource tagging. |
 | `req.kcm.08` | General | The Architecture **must** support workload resiliency. |
 | `req.kcm.09` | General | The Architecture **must** prevent workloads from starving other workloads of guaranteed resources. |
 -->
 
-<p align="center"><b>Table 2-3:</b> Kubernetes Architecture: Kubernetes Cluster Requirements</p>
+<p align="center"><b>Table 2-7:</b> Kubernetes Architecture: Kubernetes Cluster Requirements</p>
 
 <a name="2.3.4"></a>
 ### 2.3.4 Interfaces & APIs Requirements
@@ -252,34 +255,10 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.int.api.03` | API |The Architecture **must** support the usage of an OCI compatible artefact repository. |
 | `req.int.api.04` | API | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like Helm v3. |
 
-<!--
-| `req.int.api.01` | API | The Architecture **must** provide Control API endpoints to cloud platform core services. |
--->
-
-<p align="center"><b>Table 2.2.</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
+<p align="center"><b>Table 2-8:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
 <a name="2.3.5"></a>
-### 2.3.5 Operations and LCM Requirements
-
-| Ref # | sub-category | Description |
-|---|---|---|
-| `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
-| `req.lcm.gen.02` | General | The Architecture **must** support API driven life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling, and healing. |
-| `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and life cycle management of multiple - declaratively specified - kubernetes clusters. |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware, including compute, network, and storage, and software assets for automated deployment, configuration, maintenance, and life cycle management. |
-| `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
-| `req.lcm.cid.01` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
-
-<!--
-| `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
-| `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. |
--->
-
-<p align="center"><b>Table 2-5:</b> Kubernetes Architecture: Operations and LCM Requirements </p>
-
-
-<a name="2.3.6"></a>
-### 2.3.6 Assurance Requirements
+### 2.3.5 Assurance Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -288,10 +267,10 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information. |
 | `req.asr.mon.04` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
 
-<p align="center"><b>Table 2-6:</b> Kubernetes Architecture: Assurance Requirements</p>
+<p align="center"><b>Table 2-10:</b> Kubernetes Architecture: Assurance Requirements</p>
 
-<a name="2.3.7"></a>
-### 2.3.7 Security Requirements
+<a name="2.3.6"></a>
+### 2.3.6 Security Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -317,4 +296,4 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.sec.ntw.03` | Networking | The Architecture **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
 | `req.sec.ntw.04` | Networking | The Architecture **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. |
 
-<p align="center"><b>Table 2-7:</b> Kubernetes Architecture: Security Requirements </p>
+<p align="center"><b>Table 2-11:</b> Kubernetes Architecture: Security Requirements </p>

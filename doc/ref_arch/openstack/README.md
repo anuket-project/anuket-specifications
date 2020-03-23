@@ -34,7 +34,7 @@ This is Openstack based Reference Architecture
 
 
 ## Table of Contents
-* [Abbreviations](abbreviations.md)
+* [Terminology](chapter/terminology.md)
 * [Chapter 01 - Overview](chapters/chapter01.md)
 * [Chapter 02 - Architecture Requirements](chapters/chapter02.md)
 * [Chapter 03 - NFVI and VIM Architecture](chapters/chapter03.md)
