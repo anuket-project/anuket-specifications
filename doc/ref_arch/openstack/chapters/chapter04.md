@@ -141,7 +141,7 @@ CPU reservation for host: 1 core per NUMA
     - minimum: two nodes per profile
 -	HW specifications
     -	Boot disks are dedicated with Flash technology disks
-    - Additional 4 cores overhead per numa in case of DPDK usage for Network Intensive nodes
+    - In case of DPDK usage, extra cores must be reserved. The number of core to book for this overhead depend on the CPU frequency (Mpps available per core) and the number of Mpps to be delivered by node.
 -	Sizing rules
 
 | Number of CPU sockets| s | 
