@@ -44,14 +44,14 @@ As Part of the [Transition Plan](../../gov/chapters/chapter09.md#9.2) described 
 
 As described in the Principles sections of RM Chapter 1, features that require hardware-dependent code in the workload are prohibited in CNTT compliant implementations. This principle is henceforth referred to as the "Abstraction Principle". Note, this prohibition does not apply to the Compute node host software (e.g., host OS). Within the Infra, hosts are expected to have software that is customized for the specific hardware equipped. However, the intent is that these software drivers and higher layers will abstract the Capabilities they enable, thereby exposing them with an open API. An example of exposing capabilities in this manner is implemented in the Virtio family of APIs. This requirement is in support of VNF abstraction and portability of VNFs across the Infra landscape.
 
-CNTT realizes there are implications and limitations to the ability to live by the Abstraction Principle. A textbook example of a Capability that transgresses this principle, is SR-IOV over PCI-PT<sup>1)</sup>. Other, less notable, yet very important examples include GPU and other acceleration hardware, such as FPGA. A less obvious, yet critically important example is the VNF program(s) itself. As workloads are coded in native microarchitecture opcodes, the opcodes' instruction sets effectively constitute an ABI (Application Binary Interface). Additionally, the VNF programs may or may not, attempt to execute vendor-specific extensions to base instruction sets, such as de facto x86 or ARM.
+CNTT realizes there are implications and limitations to the ability to live by the Abstraction Principle. A textbook example of a Capability that transgresses this principle, is SR-IOV over PCI-PT <sup>1)</sup>. Other, less notable, yet very important examples include GPU and other acceleration hardware, such as FPGA. A less obvious, yet critically important example is the VNF program(s) itself. As workloads are coded in native microarchitecture opcodes, the opcodes' instruction sets effectively constitute an ABI (Application Binary Interface). Additionally, the VNF programs may or may not, attempt to execute vendor-specific extensions to base instruction sets, such as de facto x86 or ARM.
 
 Solving the problems associated with implementing the Abstraction Principle is a work in progress. CNTT has not solved all of the associated problems, nor has the industry. As technology evolves and more designs incorporate cloud native concepts, these problems will be addressed. This appendix is specifically intended to provide CNTT policies to manage these situations as they exist today, and their exceptions and transitions, as the technology around and supporting the Abstraction Principle matures.
 
 <sup>1)</sup> For a detailed description of the mechanisms underlying PCI-PT (PCI-PassThrough), refer to [Section 8.1](https://github.com/cntt-n/CNTT/blob/master/doc/tech/technologies.md#8.1) of Relevant Technologies.
 
 Several specific technology areas have been identified by CNTT as using an ABI impacted by the Abstraction Principle, as follows:
-- SR-IOV w/ PCI-PT
+- SR-IOV over PCI-PT
 - GPU/NPU
 - FPGA/Other Acceleration
 - CPU Instruction Sets and Extensions
@@ -64,9 +64,9 @@ Current CNTT Policies:
 
 CNTT recognizes that today, SR-IOV over PCI-PT provides a critical Capability for increased throughput over network interfaces at an economical cost. As such, the CNTT approach to SR-IOV over PCI-PT is to (detailed policy language under development; to be tied in with VNF Evolution).
 
-Without arguing for or against SR-IOV w/ PCI-PT, CNTT provides the following anecdotes which have been raised in discussions over SR-IOV:
-- SR-IOV w/ PCI-PT mitigates the need for duplicated servicing of interrupts from unbuffered (i.e. small buffer) NICs, however it does not reduce the number of frame reception driven interrupts which much be serviced.
-- SR-IOV w/ PCI-PT increases the Fabric management complexity, as encapsulation must be applied by the ToR/Leaf interface and the encapsulation must be managed as VNFs and/or networks are added/deleted from the Tenant. Therefore, performance isn't the only factor; fabric touch points and Service Chaining must also be considered.
+Without arguing for or against SR-IOV over PCI-PT, CNTT provides the following anecdotes which have been raised in discussions over SR-IOV:
+- SR-IOV over PCI-PT mitigates the need for duplicated servicing of interrupts from unbuffered (i.e. small buffer) NICs, however it does not reduce the number of frame reception driven interrupts which much be serviced.
+- SR-IOV over PCI-PT increases the Fabric management complexity, as encapsulation must be applied by the ToR/Leaf interface and the encapsulation must be managed as VNFs and/or networks are added/deleted from the Tenant. Therefore, performance isn't the only factor; fabric touch points and Service Chaining must also be considered.
 - Indications are that technologies such as DPDK, VPP, FD.io and others offer comparable throughput, today.<sup>(Citations Needed)</sup>
 
 
