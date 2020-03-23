@@ -159,7 +159,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 **3)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
 **4)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
 **5)** There is no vNIC in case of containers.<br>
-**6)** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN)<br>
+**6)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)<br>
 **7)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.<br>
 **8)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.<br>
 

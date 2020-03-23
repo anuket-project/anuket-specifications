@@ -3,18 +3,18 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [5.1 NFVI SW profile description.](#5.1)
+* [5.1 NFVI Software Profile description.](#5.1)
   * [5.1.1 Virtual Compute.](#5.1.1)
   * [5.1.2 Virtual Storage.](#5.1.2)
   * [5.1.3 Virtual Networking.](#5.1.3)
   * [5.1.4 Security.](#5.1.4)
   * [5.1.5 Platform Services](#5.1.5)
-* [5.2 NFVI SW profiles features and requirements.](#5.2)
+* [5.2 NFVI Software Profiles features and requirements.](#5.2)
   * [5.2.1 Virtual Compute.](#5.2.1)
   * [5.2.2 Virtual Storage.](#5.2.2)
   * [5.2.3 Virtual Networking.](#5.2.3)
-* [5.3 NFVI HW profile description.](#5.3)
-* [5.4 NFVI HW profiles features and requirements.](#5.4)
+* [5.3 NFVI Hardware Profile description.](#5.3)
+* [5.4 NFVI Hardware Profiles features and requirements.](#5.4)
   * [5.4.1 Compute Resources.](#5.4.1)
   * [5.4.2 Storage Resources.](#5.4.2)
   * [5.4.3 Network Resources.](#5.4.3)
@@ -34,14 +34,14 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.PNG" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> NFVI- Virtual resources.</p>
 
-Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI instance type and an appropriate compute flavour. A NFVI instance type is defined by a NFVI SW profile and a NFVI HW profile. A NFVI SW profile is a set of features, capabilities, and metrics offered by an NFVI SW layer. **Figure 5-3** depicts a high level view of the Basic and Network Intensive <!-- and Compute Intensive Instance --> Types.
+Depending on the requirements of VNFs, a VNFC will be deployed with a NFVI Profile and an appropriate compute flavour. A NFVI Profile is defined by a NFVI Software Profile and a NFVI Hardware Profile. A NFVI Software Profile is a set of features, capabilities, and metrics offered by an NFVI software layer. **Figure 5-3** depicts a high level view of the Basic and Network Intensive <!-- and Compute Intensive NFVI Profile --> Types.
 
 <p align="center"><img src="../figures/RM_chap5_fig_5_3_SW_profile.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
-<p align="center"><b>Figure 5-3:</b> NFVI Instance Types.</p>
+<p align="center"><b>Figure 5-3:</b> NFVI Profiles.</p>
 
 
 
-The following sections detail the NFVI SW profile features per type of virtual resource. The list of these features will evolve over time.
+The following sections detail the NFVI Software Profile features per type of virtual resource. The list of these features will evolve over time.
 
 <a name="5.1.1"></a>
 ### 5.1.1 Virtual Compute
@@ -126,14 +126,14 @@ This section details the services that may be made available to workloads by the
 
 
 <a name="5.2"></a>
-## 5.2 NFVI SW profiles features and requirements
+## 5.2 NFVI Software Profiles features and requirements
 
-This section will detail NFVI SW profiles and associated configurations for the 2 types of NFVI instances: Basic and Network intensive. <!-- and Compute intensive. -->
+This section will detail NFVI Software Profiles and associated configurations for the 2 types of NFVI Profiles: Basic and Network intensive. <!-- and Compute intensive. -->
 
 <a name="5.2.1"></a>
 ### 5.2.1 Virtual Compute
 
-**Table 5-8** depicts the features and configurations related to virtual compute for the 2 types of reference NFVI instances.
+**Table 5-8** depicts the features and configurations related to virtual compute for the 2 types of NFVI Profiles.
 
 | .conf            | Feature                | Type   | Basic | Network Intensive |
 |------------------|------------------------|--------|-------|-------------------|
@@ -150,7 +150,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 | nfvi.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |
 -->
-<p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of SW profiles.</p>
+<p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of NFVI Profiles.</p>
 
 **Table 5-9** will gather virtual compute acceleration features. It will be filled over time.
 
@@ -163,7 +163,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 <a name="5.2.2"></a>
 ### 5.2.2 Virtual Storage
 
-**Table 5-10** and **Table 5-11** depict the features and configurations related to virtual storage for the 2 types of reference NFVI instances.
+**Table 5-10** and **Table 5-11** depict the features and configurations related to virtual storage for the 2 types of NFVI Profiles.
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -200,7 +200,7 @@ This section will detail NFVI SW profiles and associated configurations for the 
 <a name="5.2.3"></a>
 ### 5.2.3 Virtual Networking
 
-**Table 5-12** and **Table 5-13** depict the features and configurations related to virtual networking for the 2 types of reference NFVI instances.
+**Table 5-12** and **Table 5-13** depict the features and configurations related to virtual networking for the 2 types of NFVI Profiles.
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -243,14 +243,14 @@ This section will detail NFVI SW profiles and associated configurations for the 
 <p align="center"><b>Table 5-13:</b> Virtual Networking Acceleration features.</p>
 
 <a name="5.3"></a>
-## 5.3 NFVI HW profile description
+## 5.3 NFVI Hardware Profile description
 
 The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as compute host, host, node, or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as #CPUs (sockets), # of cores/CPU, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, <!--software (VIM, Hypervisor, Operating System),--> specialised hardware (such as accelerators), the underlay networking, and storage.
 
-This chapter defines a simplified host, host profile and related capabilities model associated with each of the different NFVI hardware profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 5-4**.
+This chapter defines a simplified host, host profile and related capabilities model associated with each of the different NFVI Hardware Profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 5-4**.
 
 <p align="center"><img src="../figures/RM_chap5_fig_5_4_HW_profile.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
-<p align="center"><b>Figure 5-4:</b> NFVI hardware profiles and host associated capabilities.</p>
+<p align="center"><b>Figure 5-4:</b> NFVI Hardware Profiles and host associated capabilities.</p>
 
 The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be used in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on NFVI resources.
 >Please note that in this chapter we shall not list all of the EPA-related configuration parameters.
@@ -299,9 +299,9 @@ The hardware (host) profile properties are specified in the following sub-sectio
 <p align="center"><b>Figure 5-7:</b> Generic model of a compute host for use in Host Profile configurations.</p>
 
 <a name="5.4"></a>
-## 5.4 NFVI HW profiles features and requirements.
+## 5.4 NFVI Hardware Profiles features and requirements.
 
-The configurations specified in here will be used in specifying the actual hardware profile configurations for each of the NFVI hardware profile types depicted in **Figure 5-4**.
+The configurations specified in here will be used in specifying the actual hardware profile configurations for each of the NFVI Hardware Profiles depicted in **Figure 5-4**.
 
 <a name="5.4.1"></a>
 ### 5.4.1 Compute Resources
