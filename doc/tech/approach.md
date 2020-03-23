@@ -100,3 +100,75 @@ As with most CNTT subsystems, responsibility for Objectives, Requirements, Guide
 
 <a name="5.1.5"></a>
 ### 5.1.5 Network Layering and Concepts
+
+Cloud and Telco networking are layered, and it is very important to keep the layering dependences low to enable security, separation and portability in between multiple implementations.
+
+These explanations for Layering and Concepts are likely too rich and verbose for a CNTT document entry, but it is important that we first understand and agree on these concepts before we start entering text that could be misunderstood.
+
+### Underlay and Overlay Networking concepts
+
+The ETSI NFV model divide networking in an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the SW Virtualization tenants Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected HW units.
+
+The Overlay Networking separation is often done through encapsulation e.g. through VxLAN on the Underlay Networks e.g. based on L2 (VLAN) or L3 (IP) networks.
+
+In some instances, the SW Virtualization Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation is the usage of SR-IOV or PCI-PassThrough that both effectively hands up the physical NIC or Virtual Function on the NIC to the SW Virtualization Tenants. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
+
+### Software Defined Networking control concepts of the Underlay Networking
+
+VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking interfaces to the Underlay Networking in the HW Infrastructure Layer. Due to the many different facets of Software Defined Networking we will here denote them SDN Underlay (SDNu).
+
+Multiple Containerized Virtualization Layer (CaaS) running on an Infrastructure as a Service (IaaS) Virtualization Layer could make use of the IaaS layer to handle Underlay Networking separation. In these cases, also the IaaS Virtualization Infrastructure Manager (VIM) could include a SDNu control interface enabling automation.
+
+### Hardware and Software Infrastructure Layer concepts
+
+For Cloud implementations of multiple well separated simultaneous SW Virtualization domains on a shared HW Infrastructure there must be a separation of the hardware resources e.g. servers and the Underlay Networking resources that interconnect the hardware resources e.g. through a switching fabric.
+
+To allow multiple separated simultaneous SW Virtualization domains onto a shared switching fabric there is a need to split up the Underlay Networking resources into non overlapping addressing domains
+on suitable protocols e.g. VxLAN with their VNI Ranges. This separation must be done through an
+administrative domain that could not be compromised by any of the individual SW Virtualization domains either by malicious or unintentional Underlay Network separation configuration.
+
+The ETSI NFVI Infrastructure Management thus must be split into two distinct layers that can be referred to as HW Infrastructure Layer and SW Infrastructure Layer which can be managed separately from different administrative domains. When there are multiple separated simultaneous SW Virtualization domains, they have to be possible to be individual administrative domains.
+
+Referenced ETSI NFV model in the Architectural Framework: https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf
+
+### Switch Fabric and SmartNIC concepts for Underlay Networking separation
+
+The HW Infrastructure Layer can implement the Underlay Networking separation in any type of packet handling component. This may be deployed in many different ways depending on target use case requirements, workload characteristics and available platforms. Two of the most common ways is 1. within the physical Switch Fabric and 2. in a SmartNIC connected to the Server CPU being controlled over a management channel that is not reachable from the Server CPU and its host software. In either way the Underlay Networking separation is controlled by the HW Infrastructure Manager.
+
+In both cases the Underlay Networking can be externally controlled over the SDNu interface, that must be instantiated with appropriate Underlay Networking separation for each of the SW Virtualization administrative domains.
+
+Two exemplifications of different common HW realizations of Underlay separation in the HW Infrastructure Layer can be seen in the figure below.
+
+![RM_NW_Concepts_Layering-HWInfra_Underlay_Examples](https://user-images.githubusercontent.com/38792667/77347741-985c3f80-6d38-11ea-9479-489d13668d27.jpg)
+
+### Programmable Networking Fabric
+
+The concept of a Programmable Networking Fabric pertains to the ability to have an effective forwarding pipeline (a.k.a. forwarding plane) that can be programmed and/or configured without any risk of disruption to the shared Underlay Networking that is involved with the reprogramming for the specific efficiency increase.
+
+The forwarding plane is distributed by nature and must be possible to implement both in switch elements and on SmartNICs (managed outside the reach of host SW) that both can be managed from a logically centralized control plane.
+
+The logically centralized control plane is the foundation for the authoritative separation in between different SW Virtualization domains or Bare Metal Network Function applications that are regarded as untrusted both from the shared layers and each other.
+
+Although the control plane is logically centralized, scaling and control latency concerns must allow the actual implementation of the control plane to be distributed when required.
+
+All VNF, CNF and SW Virtualization acceleration or specific support functionality that could be programmed in the forwarding plane must be confined to the well separated sections or stages of any shared Underlay Networking. A practical example could be a SW Virtualization instance or VNF/CNF that control a NIC/SmartNIC where the Underlay Networking (switching fabric) ensures the separation in the same way as it is done for SR-IOV and PCI-PT cases today.
+
+The nature of a shared Underlay Network that shall ensure separation and be robust is that all code in the forwarding plane and in the control plane must be under the scrutiny and life cycle management of the HW Infrastructure Layer.
+
+This also imply that programmable forwarding functions in a Programmable Networking Fabric are shared resources and by that will have to get standardized interfaces over time to be useful for multi- vendor architectures such as ETSI NFV. Example of such future extensions of shared functionality implemented by a Programmable Networking Fabric could be L3 as a Service, Firewall as a Service and Load Balancing as a Service.
+
+Note: Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud implementation and falls outside the use cases for these specifications.
+
+### Networking Reference Model
+
+The Networking Reference Model depicted in the figure below is based on the ETSI NFV model and has a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It enables multiple well separated simultaneous SW Virtualization domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure.
+ 
+![RM_NW_Concepts_Layering-RMNW_ETSINFV](https://user-images.githubusercontent.com/38792667/77347878-ce012880-6d38-11ea-9bbc-537630ad17ee.jpg)
+
+### Deployment example of a Networking Reference Model
+
+A Networking Reference Model deployment example is depicted in the figure below to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains here represented with separate colors.
+
+The example is a rather common example scenario from operators that is during a rather long period of migration of some of the network functions from the predominant VNF / IaaS environments of today into a selection of CNF / CaaS on bare Metal and other on IaaS.
+
+![RM_NW_Concepts_Layering-RMNW_DeploymentExample](https://user-images.githubusercontent.com/38792667/77347922-e2ddbc00-6d38-11ea-86db-a09d406998db.jpg)
