@@ -101,12 +101,12 @@ This is a partnership of CNTT with participants to validate the community is ado
 <a name="9.5.1.2"></a>
 #### 9.5.1.2 Expectations and Assumptions of Field Trials
 
-CNTT expects to exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps. Through the community continuous improvement processes, a badging process that is mutually beneficial to operators and suppliers will be defined/refined. CNTT assumes that performance testing is not included in the field trial.
+CNTT expects to exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps. Through the community continuous improvement process, badging processes mutually beneficial to operators and suppliers will be defined/refined. CNTT assumes that performance testing is not included in the field trial.
 
 <a name="9.5.1.3"></a>
 #### 9.5.1.3 Pre-trials activities
 
-Prior to the beginning of field trials, the CNTT community will define an operational plan, secure resource, and provide all designated contact information required to support the trials participants.  As the results of the trails may produce data and information that could be considered sensitive by participants, CNTT will establish standard data set requirements and secure collection methods to ensure participant privacy protection.
+Prior to the beginning of field trials, the CNTT community will define an operational plan, secure resources, and provide all designated contact information required to support the trial participants.  As the results of the trails may produce data and information that could be considered sensitive by participants, CNTT will establish standard data set requirements and secure collection methods to ensure participant privacy protection.
 
 <a name="9.5.1.4"></a>
 #### 9.5.1.4 Expectations of Trials Participants
