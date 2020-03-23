@@ -30,7 +30,7 @@ As Part of the [Transition Plan](../../gov/chapters/chapter09.md#9.2) described 
 
 | Ref        	| Type       	| Name               	| Description                                                           	|
 |------------	|------------	|--------------------	|-----------------------------------------------------------------------	|
-| rm.exc.001 	| Technology 	| SRIOV 	| This exception allows workloads (VNF/CNF) to rely on SR-IOV over PCI-PT technology. 	|
+| rm.exc.001 	| Technology 	| SRIOV 	| This exception allows workloads (VNF/CNF) to rely on SR-IOV over PCI-PassThrough technology. 	|
 | rm.exc.002 	|            	|                    	|                                                                       	|
 | rm.exc.003 	|            	|                    	|                                                                       	|
 
