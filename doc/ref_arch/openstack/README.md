@@ -23,18 +23,17 @@ This is Openstack based Reference Architecture
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Still Developing Content |
+| Chapter 01 | SME Feedback |
 | Chapter 02 | Dickering over the final points |
 | Chapter 03 | Dickering over the final points |
 | Chapter 04 | Still Developing Content |
 | Chapter 05 | Dickering over the final points |
-| Chapter 06 | Initial Framework Only |
-| Chapter 07 | Initial Framework Only |
-| Chapter 08 | Initial Framework Only |
+| Chapter 06 | Still Developing Content |
+| Chapter 07 | SME Feedback |
+| Chapter 08 | Dickering over the final points |
 
 
 ## Table of Contents
-* [Terminology](chapter/terminology.md)
 * [Chapter 01 - Overview](chapters/chapter01.md)
 * [Chapter 02 - Architecture Requirements](chapters/chapter02.md)
 * [Chapter 03 - NFVI and VIM Architecture](chapters/chapter03.md)
