@@ -85,6 +85,9 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 
 
 #### 4.2.2.3. Network nodes
+
+Networks nodes are mainly used for L3 traffic management for overlay tenant network (see more detail in section 4.3.1.5 Neutron)
+
 -	BIOS requirements 
 
 | BIOS/boot Parameter | Value |
