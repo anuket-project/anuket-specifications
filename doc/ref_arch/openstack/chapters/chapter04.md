@@ -19,7 +19,6 @@
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
 * [4.5 Cloud Topology.](#4.5)
   * [4.5.1 Cloud Topology Considerations](#4.5.1)
-* [4.6 Logging / Monitoring / Alerting of Control Plane](#4.6)
 
 
 
@@ -500,16 +499,6 @@ Host profiles (SW Host profile + HW host profile) “partition” the cloud into
 As we get away from the large data centers to the smaller sites it becomes progressively difficult to be able to create enough capacity for each of these instance types in support of their target VNFs or to have a mix of hardware targeted for each instance type.
 
 
-<a name="4.6"></a>
-## 4.6 Logging / Monitoring / Alerting of Control Plane
 
-Enterprises and vendors may have custom monitoring and logging solutions. The intent of the logging and monitoring is to capture events and data of interest to the NFVI and workloads so that appropriate actions can be taken.  Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](../../../ref_model/chapters/chapter04.md).
-
-In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only.
-
-<p align="center"><img src="../figures/Figure_4_4_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"></br>
-Figure 4-3: Monitoring and Logging Framework </p>
-
-The monitoring and logging framework (**Figure 4-6**) leverages Prometheus as the monitoring engine and Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. Prometheus agents pull information from individual components on every host.  Fluentd, an open source data collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures the access, application and system logs.
 
 
