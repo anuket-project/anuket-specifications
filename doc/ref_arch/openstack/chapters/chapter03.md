@@ -260,7 +260,7 @@ HW profiles are defined in the chapters 5.3 and 5.4 of the reference model docum
 #### 3.4.2.2. Network
 The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up. 
 
-<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"></br>Figure 3-3: Network Fabric – Physical</p>
+<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"><b>Figure 3-3:</b> Network Fabric – Physical</p>
 Figure 3-3 shows a physical network layout where each physical server is dual homed to TOR (Leaf/Access) switches with redundant (2x) connections. The Leaf switches are dual homed with redundant connections to spines.
 
 #### 3.4.2.3. Storage
