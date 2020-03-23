@@ -8,8 +8,6 @@
 * [1.3 Principles](#1.3)
 * [1.4 Scope](#1.4)
 * [1.5 Audience](#1.5)
-* [1.6 Relationship to other industry projects](#1.6)
-* [1.7 Out of Scope Components](#1.7)
 
 <a name="1.1"></a>
 ## 1.1 Overview
@@ -101,46 +99,6 @@ The document starts from the abstract and as it progresses it increasingly gets 
   > **Audience**: This chapter is written for a general technical audience with interest in this topic.
 - **Appendix A - Guidelines For VNF Vendors**: More details related to how the workload applications will interface with the cloud infrastructure through APIs (including VIM and CaaS).
   > **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write workload applications.
-
-<a name="1.6"></a>
-## 1.6 Relationship to other industry projects
-The CNTT work is not done in a vacuum.  The intention from the beginning was to utilise the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
-
- -	ETSI NFV ISG
- -	OpenStack
- -	OPNFV
- -	ONAP
- -	CNCF
- -	MEF
- -	TM Forum
- - OSM (ETSi Open Source MANO project)
- - VMWare (While not an Open Source project, VMWare is a commonly used platform used for VNF deployments in the telecom industry)
-
-The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the CNTT Reference Model's scope has been purposely aligned to the ETSI NFV ISG Infrastructure plus the VIM (Virtualised Infrastructure Manager), inclusive of their external reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf). **Figure 1-2** illustrates which functional blocks of the ETSI NFV Architecture are in scope for CNTT.
-
-<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> Mapping to ETSI NFV architecture</p>
-
-Following the ETSI model, **Figure 1-2** also depicts the VIM, which controls and manages the cloud infrastructure, and while technically not part of the cloud infrastructure, the VIM is included in the CNTT scope, due to its role as a manager serving as a bridge between the underlying NVFI and the VNF applications. The interactions between cloud infrastructure and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on the cloud infrastructure.  These interactions and interfaces will be detailed in  **Chapter 7 API & Interfaces**.
-
-The CNTT is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including cloud infrastructure and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
-
-Once the CNTT Reference Models and Architectures are implemented and tested via OPNFV (Reference Implementations), commercial products adhering to these specifications can undergo an enhanced OVP’s VNF and cloud infrastructure compliance testing for establishing baseline conformance and offering interoperability.  More details about the testing and verification requirements are found in **Chapter 08 - Conformance, Verification, and Certification**.
-
-<!--
-There will be dedicated OVP hacking tracks to facilitate VNF vendor onboarding and testing. More information on the work and how to get involved can be found at the following links.  
-- https://www.lfnetworking.org/ovp.
-- Information on the existing 11 OPNFV Verified products to date is available here: https://nfvi-verified.lfnetworking.org/#/
--->
-
-The CNTT will collaborate with the respective API workgroups of SDOs (ETSI, MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
-
-<a name="1.7"></a>
-## 1.7 Out of Scope Components
-While the nature of the reference model might seem quite broad, the following areas are not at this time part of the scope of this effort.  
-- Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the document so that it is general enough that any vendor hardware can be used in the implementation without making significant changes to the model.
-- Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a blackbox that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the VIM or CaaS APIs whenever possible.
-- Company specific requirements: This document is designed to be general enough that most operators and others in the Open Source communities will be able
 
 <!--Separate document w/labels/artefacts
 Not part of model but will be applicable to architecture -->
