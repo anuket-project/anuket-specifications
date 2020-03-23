@@ -456,12 +456,12 @@ Resources management is essential. Requests coming from NFVO or VNFM to the VIM 
 
 <a name="Table7-1"></a>
 
-| Ref | NFVI capability | Unit | Definition/Notes |
-|--------------------|-------------------------------------|--------|------------------------------------------------------------------|
-| i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation | Yes/No | Are VNF-C memories isolated from each other by hardware support |
-| i.nfvi.sec.cap.002 | VNF-C -> Host | Yes/No | Can VNF-C access host memory |
-| i.nfvi.sec.cap.003 | Host -> VNF-C | Yes/No | Can Host access VNF-C memory |
-| i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest |
+| Ref                | NFVI capability                     | Unit   | Definition/Notes                                                |
+|--------------------|-------------------------------------|--------|-----------------------------------------------------------------|
+| i.nfvi.sec.cap.001 | VNF-C<->VNF-C  memory isolation     | Yes/No | Are VNF-C memories isolated from each other by hardware support |
+| i.nfvi.sec.cap.002 | VNF-C -> Host                       | Yes/No | Can VNF-C access host memory                                    |
+| i.nfvi.sec.cap.003 | Host -> VNF-C                       | Yes/No | Can Host access VNF-C memory                                    |
+| i.nfvi.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest                           |
 
 <p align="center"><b>Table 7-1:</b> Internal security capabilities of NFVI.</p>
 
@@ -469,9 +469,9 @@ Table 7-2 shows security capabilities
 
 <a name="Table7-2"></a>
 
-| Ref | VIM capability | Unit | Definition/Notes |
-|--------------------|------------------|---------|-------------------------------------------|
-| e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM|
+| Ref               | VIM capability                             | Unit   | Definition/Notes                                                                                            |
+|-------------------|--------------------------------------------|--------|-------------------------------------------------------------------------------------------------------------|
+| e.vim.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM |
 
 <p align="center"><b>Table 7-2:</b> VIM capabilities related to security .</p>
 
