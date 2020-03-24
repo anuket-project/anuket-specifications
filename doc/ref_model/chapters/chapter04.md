@@ -77,7 +77,8 @@ This section describes a set of explicit NFVI capabilities and performance measu
 | e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB | Max storage in GB that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.004 | # Connection points | number | Max number of connection points that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.005 | Total external (persistent) storage | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI |
-| e.nfvi.cap.017 | Total Availability Zones | number | The number of availability zones supported by NFVI |
+| e.nfvi.cap.017 | Total Availability Zones | number | The number of compute availability zones supported by NFVI |
+| e.nfvi.cap.018 | Total Availability Zones | number | The number of storage availability zones supported by NFVI |
 
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of NFVI</p>
 
@@ -128,7 +129,7 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
-| e.nfvi.cap.018 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workoad |
+| e.nfvi.cap.019 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workoad |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
