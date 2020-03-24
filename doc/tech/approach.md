@@ -129,7 +129,7 @@ administrative domain that could not be compromised by any of the individual SW 
 
 The ETSI NFVI Infrastructure Management thus must be split into two distinct layers that can be referred to as HW Infrastructure Layer and SW Infrastructure Layer which can be managed separately from different administrative domains. When there are multiple separated simultaneous SW Virtualization domains, they have to be possible to be individual administrative domains.
 
-Referenced ETSI NFV model in the Architectural Framework: https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf
+Referenced ETSI NFV model in the Architectural Framework, [ETSI GS NFV 002 V1.2.1.](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
 
 ### Switch Fabric and SmartNIC concepts for Underlay Networking separation
 
