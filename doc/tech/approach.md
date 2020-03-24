@@ -51,9 +51,19 @@ When looking into the existing ETSI NFV Architectural Framework) model we can id
 6.	ETSI NFV model does not have a way to enable programmable forwarding planes in the HW layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
 
 <a name="5.1.1.2"></a>
-#### 5.1.1.2 Specific Items to be included in the Networking Scope
-We have also identified a number of specific items to be included into the Networking Scope.  The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
-
+#### 5.1.1.2 Specific topics to be included in the Networking Scope
+We have also identified a number of specific topics to be included into the Networking Scope.  The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
+1. Network connectivity for L3 tenants, GWs, SDS, etc
+1. Spine-Leaf Architecture ( 3 Tier or 5 Tier CLOS architecture )
+1. Automation of the located Fabric ( Programmable Fabric )
+1. Variety of Underlay protocols that can be used as a transport layer within the Fabric
+1. Variety of Overlay protocols
+1. SDN integration with Cloud Infrastructure manager
+1. SRIOV workload interworking
+1. DPDK workload interworking
+1. Service Function Channing (SFC ) and how can be achieved
+1. New Networking technologies ( SmartNIC , FPGA ,..)
+1. Inter K8s POD communication and CNI
 
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Strategy Objectives
