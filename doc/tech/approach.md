@@ -49,7 +49,7 @@ When looking into the existing ETSI NFV Architectural Framework) model as depict
 4.	ETSI NFV lack of spelled out HW Abstraction does not enable a clear way to abstract and describe the technical possibilities that HW layer networking separation, encapsulation, acceleration, etc. can be implemented either in a HW Infrastructure Managed SmartNIC on the Server units or in the shared underlay switching fabric i.e. on the physical Switching Units 
 5.	ETSI NFV model does not include any reference to SDN (Software Define Network) controller(s) and relevant integration points into NFVI and MANO 
 6.	ETSI NFV model does not have a way to enable programmable forwarding planes in the HW layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
-
+https://github.com/cntt-n/CNTT/commit/e9d655803f2b853312a1901cf60115e50f029c7d#diff-39150492187b9942bf2402abe74953d0
 
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Strategy Objectives
