@@ -44,11 +44,11 @@ The main concern of this specification, is the normalization of the integration 
 #### 5.1.1.1 Identified Networking Gaps
 When looking into the existing ETSI NFV Architectural Framework) model we can identify a number of gaps. We need to address these gaps to enable a useful Reference Model for the Networking. 
 1.	ETSI NFV does not have a separation in between HW Infrastructure Management and SW Virtualization Management and by that the cardinality of having multiple CaaS and IaaS layers on top of a shared HW Infrastructure Layer cannot be expressed
-2.	ETSI NFV lacks a description of the reference points in between the SW Virtualization Layers and the HW Infrastructure Layer denoted as Vl-Ha and by that cannot express Packet Flows, Control/Status Interfaces and Management Interfaces them in between
-3.	ETSI NFV model does not explicitly call out an HW Abstraction layer on top of the HW resources and by that many SW Virtualization Layers act upon the physical HW components in a non-portable way that do not allow an HW Infrastructure to compose abstracted HW resources from pools of individual HW components
-4.	ETSI NFV lack of spelled out HW Abstraction does not enable a clear way to abstract and describe the technical possibilities that HW layer networking separation, encapsulation, acceleration, etc. can be implemented either in a HW Infrastructure Managed SmartNIC on the Server units or in the shared underlay switching fabric i.e. on the physical Switching Units 
-5.	ETSI NFV model does not include any reference to SDN (Software Define Network) controller(s) and relevant integration points into NFVI and MANO 
-6.	ETSI NFV model does not have a way to enable programmable forwarding planes in the HW layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
+1.	ETSI NFV lacks a description of the reference points in between the SW Virtualization Layers and the HW Infrastructure Layer denoted as Vl-Ha and by that cannot express Packet Flows, Control/Status Interfaces and Management Interfaces them in between
+1.	ETSI NFV model does not explicitly call out an HW Abstraction layer on top of the HW resources and by that many SW Virtualization Layers act upon the physical HW components in a non-portable way that do not allow an HW Infrastructure to compose abstracted HW resources from pools of individual HW components
+1.	ETSI NFV lack of spelled out HW Abstraction does not enable a clear way to abstract and describe the technical possibilities that HW layer networking separation, encapsulation, acceleration, etc. can be implemented either in a HW Infrastructure Managed SmartNIC on the Server units or in the shared underlay switching fabric i.e. on the physical Switching Units 
+1.	ETSI NFV model does not include any reference to SDN (Software Define Network) controller(s) and relevant integration points into NFVI and MANO 
+1.	ETSI NFV model does not have a way to enable programmable forwarding planes in the HW layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
 
 <a name="5.1.1.2"></a>
 #### 5.1.1.2 Specific topics to be included in the Networking Scope
@@ -64,6 +64,9 @@ We have also identified a number of specific topics to be included into the Netw
 1. Service Function Channing (SFC ) and how can be achieved
 1. New Networking technologies ( SmartNIC , FPGA ,..)
 1. Inter K8s POD communication and CNI
+1. Networking aspects of migration from IaaS to CaaS (from VNF to CNF paradigm)
+1. Coexistence of IaaS and CaaS and protracted parallel operations
+1. Version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration with a wide selection of fabric implementations
 
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Strategy Objectives
