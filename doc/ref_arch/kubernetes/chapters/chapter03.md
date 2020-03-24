@@ -85,7 +85,7 @@ The Reference Model requires the support of Huge Pages in `nfvi.com.cfg.004` whi
 
 > This chapter should describe considerations about CPU management.
 
-> Relate back to features described in the RM [here](../../../ref_model/ref_model/chapters/chapter05.md#521-virtual-compute) and [here](../../../ref_model/ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+> Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute) and [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
 
 <a name="3.2.1.5"></a>
@@ -93,7 +93,7 @@ The Reference Model requires the support of Huge Pages in `nfvi.com.cfg.004` whi
 
 The Container Runtime is the component that runs within a Host Operating System (OS) and manages the underlying OS functionality, such as cgroups and namespaces (in Linux), in order to provide a service within which container images can be executed and make use of the infrastructure resources (compute, storage, networking and other I/O devices) abstracted by the Host OS, based on API instructions from the kubelet.
 
-There are a number of different container runtimes. The simplest form, low-level container runtimes, just manage the OS capabilities such as cgroups and namespaces, and then run commands within those cgroups and namesapces. An example of this type of runtime is runc, which underpins many of the high-level runtimes and is considered a reference implementation of the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). This specification includes detail on how an implementation (i.e. an actual container runtime such as runc) must, for example, configure resource shares and limits (e.g. CPU, Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on that host. This is important in ensuring the features and capabilities described in [chapter 5 of the RM](../../../ref_model/ref_model/chapters/chapter05.md) are delivered by this RA and any subsequent Reference Implementations (RIs) to the instance types defined in the RM.
+There are a number of different container runtimes. The simplest form, low-level container runtimes, just manage the OS capabilities such as cgroups and namespaces, and then run commands within those cgroups and namesapces. An example of this type of runtime is runc, which underpins many of the high-level runtimes and is considered a reference implementation of the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). This specification includes detail on how an implementation (i.e. an actual container runtime such as runc) must, for example, configure resource shares and limits (e.g. CPU, Memory, IOPS) for the containers that Kubernetes (via the kubelet) schedules on that host. This is important in ensuring the features and capabilities described in [chapter 5 of the RM](../../../ref_model/chapters/chapter05.md) are delivered by this RA and any subsequent Reference Implementations (RIs) to the instance types defined in the RM.
 
 Where low-level runtimes are focused on the execution of a container within an OS, the more complex/complete high-level container runtimes focus on the general management of container images - getting them from somewhere, unpacking them, and then passing them to the low-level runtime, which then executes the container. These high-level runtimes also include a comprehensive API that other applications (e.g. Kubernetes) can use to interact and manage containers. An example of this type of runtime is containerd, which provides the features described above, before passing off the unpacked container image to runc for execution.
 
@@ -131,7 +131,7 @@ As Kubernetes Ingress, Egress and Services have no support for all the protocols
 
 The well known service meshes are "application service meshes" and deal with the application layer 7 protocols (eg.: HTTP) only. Therefore, their support is not required in the architecture.
 
-> Refer to software profile features [here](../../../ref_model/ref_model/chapters/chapter05.md#523-virtual-networking) and hardware profile features [here](../../../ref_model/ref_model/chapters/chapter05.md#543-network-resources).
+> Refer to software profile features [here](../../../ref_model/chapters/chapter05.md#5.1) and hardware profile features [here](../../../ref_model/chapters/chapter05.md#5.4).
 
 <a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
@@ -144,7 +144,7 @@ For those scenarios where data persistence is required, Persistent Volumes (PV) 
 
 Kubernetes also provides an object called Storage Class, which is created by cluster administrators and maps to storage attributes such as quality-of-service, encryption, data resilience, etc. Storage Classes also enable the dynamic provisioning of Persistent Volumes (as opposed to the default manual creation). This can be beneficial for organisations where the administration of storage is performed separately from the administration of Kubernetes-based workloads.
 
-There are no restrictions or constraints that Kubernetes places on the storage that can be consumed by a workload, in terms of the requirements that are defined in RM sections [5.2.2](../../../ref_model/ref_model/chapters/chapter05.md#522-virtual-storage) (software) and [5.4.2](../../../ref_model/ref_model/chapters/chapter05.md#542-storage-configurations) (hardware). The only point of difference is that Kubernetes does not have a native object storage offering, and this RA is not looking to address this capability directly.
+There are no restrictions or constraints that Kubernetes places on the storage that can be consumed by a workload, in terms of the requirements that are defined in RM sections [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) (software) and [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) (hardware). The only point of difference is that Kubernetes does not have a native object storage offering, and this RA is not looking to address this capability directly.
 
 <a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager

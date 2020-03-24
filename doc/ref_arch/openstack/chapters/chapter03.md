@@ -15,7 +15,7 @@
 * [3.3. Virtualised Infrastructure Manager (VIM)](#3.3)
   * [3.3.1. VIM Core services](#3.3.1)
   * [3.3.2. Tenant Isolation](#3.3.2)
-  * [3.3.3. Host aggregates providing resource pooling](#3.3.3)
+  * [3.3.3. Cloud partitioning: Host Aggregates and Availability Zones](#3.3.3)
   * [3.3.4. Flavor management](#3.3.4)
 * [3.4. Underlying Resources](#3.4)
   * [3.4.1. Virtualisation](#3.4.1)
@@ -205,18 +205,15 @@ In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack
 OpenStack offers multi-tenancy by means of resource (compute, network and storage)separation via projects. OpenStack offers ways to share virtual resources between projects while maintaining logical separation. As an example, traffic separation is provided by creating different VLAN ids for neutron networks of different projects. As another example, if host separation is needed, nova scheduler offers AggregateMultiTenancyIsolation scheduler filter to separate projects in host aggregates. Thus, if a host in an aggregate is configured for a particular project, only the instances from that project are placed on the host. Overall, tenant isolation ensures that the resources of a project are not affected by resources of another project.
 
 <a name="3.3.3"></a>
-### 3.3.3. Host aggregates providing resource pooling
-Availability zones: provide resiliency and fault tolerance for VM deployments, by means of physical hosting distribution of Compute Nodes in separate racks with separate power supply and eventually in different rooms
+### 3.3.3. Cloud partitioning: Host Aggregates, Availability Zones
+Cloud administrators can partition the hosts within an OpenStack cloud using Host Aggregates and Availability Zones.
 
-Host aggregate: is a Cloud Admin concept which is used to map the VNFC instances on the compute nodes
+A Host Aggregate is a group of hosts (compute nodes) with specific characteristics and with the same specifications, software and/or hardware properties. Example would be a Host Aggregate created for specific hardware or performance characteristics. The administrator assigns key-value pairs to Host Aggregates, these are then used when scheduling VMs. A host can belong to multiple Host Aggregates. Host Aggregates are not explicitly exposed to tenants.
 
-A host aggregate is a set of hosts with specific properties (multiple software and/or hardware properties); the properties are specified as key-value pairs. Example would be a host aggregate created for a particular flavour or specific hardware. A host can belong to multiple host aggregates. Host aggregates are not visible to users.
+Availability Zones (AZs) rely on Host Aggregates and make the partitioning visible to tenants. They are defined by attaching specific metadata information to an aggregate, making the aggregate visible for tenants. Hosts can only be in a single Availability Zone. By default a host is part of a default Availability Zone, even if it doesn’t belong to an aggregate. Availability Zones can be used to provide resiliency and fault tolerance for workloads deployments, for example by means of physical hosting distribution of Compute Nodes in separate racks with separate power supply and eventually in different rooms. They permit rolling upgrades – an AZ at a time upgrade with enough time between AZ upgrades to allow recovery of tenant workloads on the upgraded AZ. AZs can also be used to seggregate workloads.
 
-Availability Zones are user visible host aggregates where a host can only be in one availability zone. Availability zones partition the cloud independent of the infrastructure layout. Availability zones (AZ) serve a couple of important purposes. Firstly, users can deploy their workloads to create local redundancy for resiliency and high availability. This permits rolling upgrades – an AZ at a time upgrade with enough time between AZ upgrades to allow recovery of tenant workloads on the upgraded AZ. Secondly, AZs can accommodate hosts with special hardware and software characteristics, for example, hosts with hardware accelerators.
+An over use of Host Aggregates and Availability Zones can result in a granular partition the cloud and, hence, operational complexities and inefficiencies.
 
-An over use of host aggregates and availability zones can result in a granular partition the cloud and, hence, operational complexities and inefficiencies.
-
-Recommendation: Separation of control zone and execution zone into different security zones
 
 <a name="3.3.4"></a>
 ### 3.3.4. Flavor management

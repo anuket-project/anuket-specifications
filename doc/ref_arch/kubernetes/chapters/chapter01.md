@@ -9,9 +9,8 @@
 * [1.3 Principles](#1.3)
   * [1.3.1 Cloud Native.](#1.3.1)
 * [1.4 Scope](#1.4)
-* [1.5 Vision](#1.5)
-* [1.6 Approach](#1.6)
-* [1.7 Roadmap](#1.7)
+* [1.5 Approach](#1.5)
+* [1.6 Roadmap](#1.6)
 
 
 <a name="1.1"></a>
@@ -71,12 +70,7 @@ The definition above is very application centric and look at cloud native from t
 <a name="1.4"></a>
 ## 1.4 Scope
 
-The high level scope of the CNTT Reference Architectures can be seen in Figure 1-1 below.
-
-<p align="center"><img src="../figures/ch01_scope.png" alt="Description of the possible different levels of CNTT artefacts." title="Description of the possible different levels of CNTT artefacts" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
-
-The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-2:
+The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-1:
 - Kubernetes capabilities required to conform to the Reference Model requirements
 - Support for CNFs that consist wholly of containers
 - Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
@@ -103,7 +97,8 @@ In addition, we will start with a description of interfaces and capabilities (th
 As Kubernetes evolves over time it will add new technologies and capabilities and so the CNTT Reference Architecture will need to evolve with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is every three months and at least the support cadence, which is nine months (latest release, plus two previous releases).
 
 <p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture Roadmap</p>
+<p align="center"><b>Figure 1-3:</b> Kubernetes Reference Architecture Roadmap</p>
 
 
 > A populated roadmap view will be added here after the January 2020 release.
+
