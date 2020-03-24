@@ -50,7 +50,7 @@ When looking into the existing ETSI NFV Architectural Framework) model as depict
 5.	ETSI NFV model does not include any reference to SDN (Software Define Network) controller(s) and relevant integration points into NFVI and MANO 
 6.	ETSI NFV model does not have a way to enable programmable forwarding planes in the HW layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
 
-
+!(doc/tech/figures/ETSI.png)
 
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Strategy Objectives
