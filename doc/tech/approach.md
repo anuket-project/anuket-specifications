@@ -38,12 +38,12 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 ### 5.1.1 Networking Scope
 According to the ETSI NFV Model, Networking alongside Compute and Storage, is an integral part of the Network Function Virtualisation Infrastructure (NFVI). The general function of Networking in the NFV context is to provide the connectivity between various virtualised and non-virtualised resources required for a delivery of a Network Service. Such a connectivity may manifest itself as a virtualised network between VMs or Containers (e.g. overlay networks managed by SDN Controllers, or programmable fabrics that provide such connectivity natively) or as an integration into the Infrastructure Hardware level for offloading some of the Network Functions into this level. 
 
-The main concern of this specification, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration). It is an important feature of the proposed Networking Model to ensure the ability for supporting simultanous usage of different refernce architetcures by having multiple CaaS and IaaS layers on top of a shared Hardware Infrastructure layer.
+The main concern of this specification, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration). It is an important feature of the proposed Networking Model to ensure the ability for supporting simultanous usage of different reference architectures by having multiple CaaS and IaaS layers on top of a shared Hardware Infrastructure layer.
 
 <a name="5.1.1.1"></a>
 #### 5.1.1.1 Identified Networking Gaps
 When looking into the existing ETSI NFV Architectural Framework) model we can identify a number of gaps. We need to address these gaps to enable a useful Reference Model for the Networking. 
-1.	ETSI NFV does not have a separation in between HW Infrastructure Management and SW Virtualization Management and by that the cardinality of having multiple CaaS and IaaS layers on top of a shared HW Infrastructure Layer cannot be expressed
+1.	ETSI NFV does not have a separation between HW Infrastructure Management and SW Virtualization Management and by that the cardinality of having multiple CaaS and IaaS layers on top of a shared HW Infrastructure Layer cannot be expressed
 1.	ETSI NFV lacks a description of the reference points in between the SW Virtualization Layers and the HW Infrastructure Layer denoted as Vl-Ha and by that cannot express Packet Flows, Control/Status Interfaces and Management Interfaces them in between
 1.	ETSI NFV model does not explicitly call out an HW Abstraction layer on top of the HW resources and by that many SW Virtualization Layers act upon the physical HW components in a non-portable way that do not allow an HW Infrastructure to compose abstracted HW resources from pools of individual HW components
 1.	ETSI NFV lack of spelled out HW Abstraction does not enable a clear way to abstract and describe the technical possibilities that HW layer networking separation, encapsulation, acceleration, etc. can be implemented either in a HW Infrastructure Managed SmartNIC on the Server units or in the shared underlay switching fabric i.e. on the physical Switching Units 
@@ -61,10 +61,10 @@ We have also identified a number of specific topics to be included into the Netw
 1. SDN integration with Cloud Infrastructure manager
 1. SRIOV workload interworking
 1. DPDK workload interworking
-1. Service Function Channing (SFC ) and how can be achieved
+1. Service Function Chaining (SFC ) and how it can be achieved
 1. New Networking technologies ( SmartNIC , FPGA ,..)
 1. Inter K8s POD communication and CNI
-1. Networking aspects of migration from IaaS to CaaS (from VNF to CNF paradigm)
+1. Networking aspects of migration from IaaS to CaaS (from the VNF paradigm to the CNF paradigm)
 1. Coexistence of IaaS and CaaS and protracted parallel operations
 1. Version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration with a wide selection of fabric implementations
 
