@@ -183,9 +183,9 @@ In the truest form, adoption of a standard is an indication of it’s success wi
 <a name="9.5.2.5"></a>
 #### 9.5.2.5 Key Expectations and Assumptions
 
-1)	Expectation is through healthy feedback from suppliers, CNTT will exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps.
+1)	Expectation: Through healthy feedback from suppliers, CNTT will exit the trial with either validation of VI-1 and RC-1 or a set of actions to close gaps.
 2)	Expectation: Post trial and gap closure, the community will define a badging process that is mutually beneficial to operators and suppliers. 
-3)	Assumption: Performance testing is not in field trial
+3)	Assumption: Performance testing is not in field trial.
 
 <a name="9.5.2.6"></a>
 ### 9.5.2.6 Overview: Stages of Field Trial
@@ -203,7 +203,7 @@ a.	Detail level of data required to validate
 b.	Acceptable data values indicating valid results
 c.	Detail level of data that will be published
 
-2) RI-1 Labs are successfully stood up in all target environments
+2) VI-1 Labs are successfully stood up in all target environments
 * Vendor (NFVI, VNF, VIM, 3rd Party)
 *	Community (OPNFV)
 *	LaaS (e.g. UNH)
@@ -219,8 +219,8 @@ c.	Detail level of data that will be published
 #### 9.5.2.7.1 Objectives of RI-1/RC-1 Trials
 
 The object is to quantitively and qualitatively assess and evaluate the following CNTT requirements, methods, and support processes:
-*	RI-1 implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
 * RI-1 Specifications
+*	VI-1 implementation support methods ( i.e. cookbooks, installation manuals, how to guides etc.)
 * RC-1 Test Suite 
 * TC Traceability
 * Test Pass Criteria
@@ -253,7 +253,7 @@ OPNFV
 <a name="9.5.2.7.3"></a>
 #### 9.5.2.7.3 Test Case Identification
 
-Specific test cases for the field trials will be documented and provided to the participants based upon the CNTT RI-1  and RC-1 work streams requirements. The technical testing methods, procedures and documentation shall be provided by these work streams. 
+Specific test cases for the field trials will be documented and provided to the participants based upon the CNTT RI-1 and RC-1 work streams requirements. The technical testing methods, procedures and documentation shall be provided by these work streams. 
 
 <a name="9.5.2.7.4"></a>
 #### 9.5.2.7.4 Vendor Solicitation/Commitment
@@ -276,13 +276,13 @@ The Initiate Field Trial Stage will deliver execution and assessment plans inclu
 
 The objective of Execute Stage is participants implementing field trials tasks and record/assess outcomes CNTT will assemble the Trials team to fully develop the action plan including resource assignments, materials requirements, and timelines. 
 
-Activities include the deployment and configuration of RI-1 and execution of the RC-1 test cases. Vendor community members that commit to the trials will build/setup/prep labs for the trials per the instructions:
+Activities include the deployment and configuration of VI-1 and execution of the RC-1 test cases. Vendor community members that commit to the trials will build/setup/prep labs for the trials per the instructions:
 
 1.	Secure appropriate environment space (pre-existing, new build, LaaS)
 
-2.	RI-1 implementation  per published RI-1 Specifications  
+2.	VI-1 per published RI-1 Specifications  
 
-3.	RC-1 Test suite will be provided to the participants (MF for detail)
+3.	RC-1 Test suite will be provided to the participants
    
 4. Trial Participants ensure a complete understanding of the test suite actions and expected outcomes.
 
@@ -329,7 +329,7 @@ The Assess stage shall utilize data collected during the execute stage. Particip
 
 #### Required Assessments
 
-* RI-1 Implementation methods and procedures (cookbook, etc) 
+* VI-1 Implementation methods and procedures (cookbook, etc) 
 * RI-1 Specifications
 *	RC-1 Test Suite 
 *	TC Traceability
