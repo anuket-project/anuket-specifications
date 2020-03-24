@@ -541,7 +541,7 @@ Please note that **Virtual Resource Manager (VRM)** is used to collectively repr
 | sec.gen.009 | The Platform **must** support Software integrity protection and verification |  | |
 | sec.gen.010 | The NFVI **must** support Secure storage (all types) |  | Expand/Delete based on other reqts |
 | sec.gen.011 | The NFVI **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  | NIST reference? |
-| sec.gen.012 | The Platform **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  | |
+| sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  | |
 | sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  | |
 | sec.gen.014 | All servers part of NFVI **should** support measured boot and an attestation server that monitors the measurements of the servers. |  | |
 
@@ -590,7 +590,7 @@ Ref | Requirement | Unit | Definition |
 | sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) |  | |
 | sec.wl.005 | Production workloads **must** be separated from non-production workloads |  | |
 | sec.wl.006 | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) |  | |
-| sec.wl.007 | Platform **must** verify VNF authenticity and integrity |  | |
+| sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  | |
 
 <a name="7.11.5"></a>
 ### 7.11.5. Image Security
