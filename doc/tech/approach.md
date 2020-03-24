@@ -41,7 +41,7 @@ According to the ETSI NFV Model, Networking alongside Compute and Storage, is an
 The main concern of this specification, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration).  The Networking Sope includes hence a definition of a normalized Abstraction layer between Virtualization Layer domains and the Networking Hardware layer resource pool in a way that the implementation details of the Networking Hardware are not visible to the VNFs/CNFs, and preferably not even visible to the Virtualization layer.
 
 <a name="5.1.1.1"></a>
-### 5.1.1.1 Identified networking gaps
+#### 5.1.1.1 Identified Networking Gaps
 When looking into the existing ETSI NFV Architectural Framework) model as depicted in the figure below there are a number of gaps identified to enable a useful Reference Model for the Networking 
 1.	ETSI NFV does not have a separation in between HW Infrastructure Management and SW Virtualization Management and by that the cardinality of having multiple CaaS and IaaS layers on top of a shared HW Infrastructure Layer cannot be expressed
 2.	ETSI NFV lacks a description of the reference points in between the SW Virtualization Layers and the HW Infrastructure Layer denoted as Vl-Ha and by that cannot express Packet Flows, Control/Status Interfaces and Management Interfaces them in between
