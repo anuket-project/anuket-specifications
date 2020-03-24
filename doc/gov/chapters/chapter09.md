@@ -204,13 +204,13 @@ b.	Acceptable data values indicating valid results
 c.	Detail level of data that will be published
 
 2) RI-1 Labs are successfully stood up in all target environments
-* Vendor (3rd party)
+* Vendor (NFVI, VNF, VIM, 3rd Party)
 *	Community (OPNFV)
 *	LaaS (e.g. UNH)
 
-3) Engaged NVFI vendors successfully configure their infrastructure per RI-1 and run the RC-1 test suite and are able to provide expert feedback
+3) Engaged vendors successfully configure their cloud infrastructure per RI-1 and run the RC-1 test suite and are able to provide expert feedback
 
-4) Engaged VNF vendors are able to validate that they can instantiate and run rudimentary validation of VNF functionality on more than one conformant NVFI
+4) Engaged vendors are able to validate that they can instantiate and run rudimentary validation of VNF functionality on more than one conformant cloud infrastructure (NFVI)
 
 <a name="9.5.2.7"></a>
 ### 9.5.2.7 Initiation 
@@ -258,7 +258,7 @@ Specific test cases for the field trials will be documented and provided to the 
 <a name="9.5.2.7.4"></a>
 #### 9.5.2.7.4 Vendor Solicitation/Commitment
 
-NFVI and VNF vendor members will be solicited for participation in the trials. The vendors will be required to commit fully to the assessment and evaluation  processes. As previously mentioned, additional discussion is needed to define what results data and at what level is acceptable to be shared.
+Vendor members will be solicited for participation in the trials. The vendors will be required to commit fully to the assessment and evaluation  processes. As previously mentioned, additional discussion is needed to define what results data and at what level is acceptable to be shared.
 
 <a name="9.5.2.7.5"></a>
 #### 9.5.2.7.5 Deliverable
