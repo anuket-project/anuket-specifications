@@ -38,11 +38,11 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 ### 5.1.1 Networking Scope
 According to the ETSI NFV Model, Networking alongside Compute and Storage, is an integral part of the Network Function Virtualisation Infrastructure (NFVI). The general function of Networking in the NFV context is to provide the connectivity between various virtualised and non-virtualised resources required for a delivery of a Network Service. Such a connectivity may manifest itself as a virtualised network between VMs or Containers (e.g. overlay networks managed by SDN Controllers, or programmable fabrics that provide such connectivity natively) or as an integration into the Infrastructure Hardware level for offloading some of the Network Functions into this level. 
 
-The main concern of this specification, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration).  The Networking Sope includes hence a definition of a normalized Abstraction layer between Virtualization Layer domains and the Networking Hardware layer resource pool in a way that the implementation details of the Networking Hardware are not visible to the VNFs/CNFs, and preferably not even visible to the Virtualization layer.
+The main concern of this specification, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration). It is an important feature of the proposed Networking Model to ensure the ability for supporting simultanous usage of different refernce architetcures by having multiple CaaS and IaaS layers on top of a shared Hardware Infrastructure layer.
 
 <a name="5.1.1.1"></a>
 #### 5.1.1.1 Identified Networking Gaps
-When looking into the existing ETSI NFV Architectural Framework) model as depicted in the figure below there are a number of gaps identified to enable a useful Reference Model for the Networking 
+When looking into the existing ETSI NFV Architectural Framework) model we can identify a number of gaps. We need to address these gaps to enable a useful Reference Model for the Networking. 
 1.	ETSI NFV does not have a separation in between HW Infrastructure Management and SW Virtualization Management and by that the cardinality of having multiple CaaS and IaaS layers on top of a shared HW Infrastructure Layer cannot be expressed
 2.	ETSI NFV lacks a description of the reference points in between the SW Virtualization Layers and the HW Infrastructure Layer denoted as Vl-Ha and by that cannot express Packet Flows, Control/Status Interfaces and Management Interfaces them in between
 3.	ETSI NFV model does not explicitly call out an HW Abstraction layer on top of the HW resources and by that many SW Virtualization Layers act upon the physical HW components in a non-portable way that do not allow an HW Infrastructure to compose abstracted HW resources from pools of individual HW components
@@ -50,7 +50,10 @@ When looking into the existing ETSI NFV Architectural Framework) model as depict
 5.	ETSI NFV model does not include any reference to SDN (Software Define Network) controller(s) and relevant integration points into NFVI and MANO 
 6.	ETSI NFV model does not have a way to enable programmable forwarding planes in the HW layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
 
-![RM_Netw_Scope_ETSI_Model](https://github.com/cntt-n/CNTT/commit/e9d655803f2b853312a1901cf60115e50f029c7d#diff-39150492187b9942bf2402abe74953d0
+<a name="5.1.1.2"></a>
+#### 5.1.1.2 Specific Items to be included in the Networking Scope
+We have also identified a number of specific items to be included into the Networking Scope.  The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
+
 
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Strategy Objectives
