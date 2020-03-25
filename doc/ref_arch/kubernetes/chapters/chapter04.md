@@ -90,7 +90,7 @@ In order to support `req.inf.com.03`, the chosen runtime must be conformant with
 - CRI-O
 - Frakti
 
-To support `req.sec.gen.04`m the architecture specifies the usage of a container runtime with the capability of Kernel isolation:
+To support `req.sec.gen.04` the architecture specifies the usage of a container runtime with the capability of Kernel isolation:
 - kata-containers
 
 These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when conformant with the above specifications) supports the requirement `req.inf.stg.06` for ephemeral storage for Pods.
