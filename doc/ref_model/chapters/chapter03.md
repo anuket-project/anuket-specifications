@@ -38,7 +38,7 @@ _**To summarise:** the abstraction model presented in this document will build u
 
 The abstraction model for the Cloud Infrastructure makes use of the following layers (only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs)):
 
-<p align="center"><img src="../figures/ch03_model_overview.png" alt="Cloud Infrastructure Model Overview" Title="Cloud Infrastructure Model Overview" width="65%"/></p>
+<p align="center"><img src="../figures/ch03-model-overview.png" alt="Cloud Infrastructure Model Overview" Title="Cloud Infrastructure Model Overview" width="65%"/></p>
 <p align="center"><b>Figure 3-1:</b> Cloud Infrastructure Model Overview.</p>
 
 The functionalities of each layer are as follows:
@@ -53,7 +53,7 @@ The functionalities of each layer are as follows:
 
 The virtual infrastructure resources provided by the Cloud Infrastructure can be grouped into four categories as shown in the diagram below:
 
-<p align="center"><img src="../figures/ch03_model_virtual_resources.png" alt="Cloud Infrastructure Virtual Infrastructure Resources" Title="Cloud Infrastructure Virtual Infrastructure Resources" width="65%"/></p>
+<p align="center"><img src="../figures/ch03-model-virtual-resources.png" alt="Cloud Infrastructure Virtual Infrastructure Resources" Title="Cloud Infrastructure Virtual Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
 
 - **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
@@ -142,7 +142,7 @@ Cloud Infrastructure provides the capability to manage virtual resources via App
 * manage access privileges and
 * provision, manage, monitor and delete virtual resources.
 
-<p align="center"><img src="../figures/ch03_model_management_software.png" alt="Cloud Infrastructure Management Software" Title="Cloud Infrastructure Management Software" width="65%"/></p>
+<p align="center"><img src="../figures/ch03-model-management-software.png" alt="Cloud Infrastructure Management Software" Title="Cloud Infrastructure Management Software" width="65%"/></p>
 <p align="center"><b>Figure 3-3:</b> Cloud Infrastructure Management Software.</p>
 
  The management software needs to support following functional aspects:
