@@ -126,7 +126,7 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 | Ref            | NFVI Capability         | Unit   | Definition/Notes                            |
 |----------------|-------------------------|--------|---------------------------------------------|
-| e.nfvi.cap.013 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workload |
+| e.nfvi.cap.017 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workload |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
@@ -460,53 +460,36 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 ### 4.2.5 NFVI Profile Capabilities Mapping
 
 | Ref                                                                  | Basic                    | Network Intensive        | Notes                                                               |
-|----------------------------------------------------------------------|--------------------------|--------------------------|---------------------------------------------------------------------|
-| `e.nfvi.res.cap.001`<br />(#vCPU cores)                              | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)     |
-| `e.nfvi.res.cap.002`<br />(Amount of RAM (MB))                       | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
-| `e.nfvi.res.cap.003`<br />(Total instance (ephemeral) storage (GB))  | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
-| `e.nfvi.res.cap.004`<br />(# vNICs)                                  | Per selected  <I Opt>    | Per selected  <I Opt>    |                                                                     |
-| `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext>    | Per selected  <S Ext>    |                                                                     |
-| `e.nfvi.per.cap.001`<br />(CPU pinning support)                      | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2)  |
-| `e.nfvi.per.cap.002`<br />(NUMA support)                             | No                       | Yes                      |                                                                     |
-| `e.nfvi.per.cap.003`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
-| `e.nfvi.per.cap.004`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
-| `e.nfvi.per.cap.005`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
-| `e.nfvi.per.cap.006`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
-| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
-| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
-| `i.nfvi.sla.cap.002`<br />(vNIC QoS)                                 | No                       | Yes                      |                                                                     |
-| `i.nfvi.per.cap.001`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.nfvi.mon.cap.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
-| `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage)                | Yes                      | Yes                      |                                                                     |
-| `i.nfvi.mon.cap.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
-| `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization)          | Yes                      | Yes                      |                                                                     |
-| `i.nfvi.mon.cap.007`<br />(External storage capacity)                | No                       | No                       |                                                                     |
-<!--
-| Ref | Basic | Network Intensive | Compute Intensive | Notes |
-|----------------------|----------------------------|----------------------------|----------------------------|-------|
-| `e.nfvi.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
-| `e.nfvi.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.nfvi.res.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.nfvi.res.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> | Per selected  <I Opt> |  |
-| `e.nfvi.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> | Per selected  <S Ext> |  |
-| `e.nfvi.per.cap.001`<br />(CPU pinning support) | No | Yes | Yes | Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
-| `e.nfvi.per.cap.002`<br />(NUMA support) | No | Yes | Yes | |
-| `e.nfvi.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | No | |
-| `e.nfvi.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | No | |
-| `e.nfvi.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
-| `e.nfvi.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
-| `e.nfvi.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
-| `e.nfvi.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.nfvi.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
-| `i.nfvi.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
-| `i.nfvi.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.nfvi.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
-| `i.nfvi.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes | Yes | |
-| `i.nfvi.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes | Yes | |
-| `i.nfvi.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | Yes | |
-| `i.nfvi.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
--->
+|----------------------------------------------------------------------|--------------------------|--------------------------|--------------------------------------------------------------------|
+| `e.nfvi.cap.001`<br />(#vCPU cores)                              | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1) |
+| `e.nfvi.cap.002`<br />(Amount of RAM (MB))                                 | Per selected  \<Flavour> | Per selected  \<Flavour> | |
+| `e.nfvi.cap.003`<br />(Total instance (ephemeral) storage (GB))            | Per selected  \<Flavour> | Per selected  \<Flavour> | |
+| `e.nfvi.cap.004`<br />(# vNICs)                                            | Per selected  <I Opt>    | Per selected  <I Opt>    | |
+| `e.nfvi.cap.005`<br />(Total instance (persistent) storage (GB))           | Per selected  <S Ext>    | Per selected  <S Ext>    | |
+| `e.nfvi.cap.006`<br />(CPU pinning support)                                | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
+| `e.nfvi.cap.007`<br />(NUMA support)                                       | No                       | Yes                      | |
+| `e.nfvi.cap.008`<br />(IPSec Acceleration)                                 | No                       | Yes (if offered)         | |
+| `e.nfvi.cap.009`<br />(Crypto Acceleration)                                | No                       | Yes (if offered)         | |
+| `e.nfvi.cap.010`<br />(Transcoding Acceleration)                           | No                       | No                       | |
+| `e.nfvi.cap.011`<br />(Programmable Acceleration)                          | No                       | No                       | |
+| `e.nfvi.cap.012`<br />(Enhanced Cache Management)                          | E                        | E                        | |
+| `e.nfvi.cap.013`<br />(SR-IOV over PCI-PT)                                 | Yes                      | No                       | |
+| `e.nfvi.cap.014`<br />(GPU/NPU)                                            | No                       | No                       | |
+| `e.nfvi.cap.015`<br />(SmartNIC)                                           | Yes (if offered)         | No                       | |
+| `e.nfvi.cap.016`<br />(FPGA/other Acceleration H/W)                        | Yes (if offered)         | No                       | |
+| `e.nfvi.cap.017`<br />(Monitoring of L2-7 data)                            | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3) |
+| `i.nfvi.cap.014`<br />(CPU cores consumed by the NFVI on the worker nodes) | any                      | any                      | |
+| `i.nfvi.cap.015`<br />(Memory consumed by NFVI on the worker nodes)        | any                      | any                      | |
+| `i.nfvi.cap.016`<br />(CPU allocation ratio)                               | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.nfvi.cap.017`<br />(Connection point QoS)                               | No                       | Yes                      | |
+| `i.nfvi.cap.018`<br />(Huge page support)                                  | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.nfvi.pm.001`<br />(Host CPU usage)                                      | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
+| `i.nfvi.pm.002`<br />(Virtual compute CPU usage)                           | Yes                      | Yes                      | |
+| `i.nfvi.pm.003`<br />(Host CPU utilization)                                | Yes                      | Yes                      | |
+| `i.nfvi.pm.004`<br />(Virtual compute CPU utilization)                     | Yes                      | Yes                      | |
+| `i.nfvi.pm.005`<br />(Measurement of external storage IOPs)                | Yes                      | Yes                      | |
+| `i.nfvi.pm.006`<br />(Measurement of external storage throughput)          | Yes                      | Yes                      | |
+| `i.nfvi.pm.007`<br />(Available external storage capacity)                 | Yes                      | Yes                      | |
 
 <p align="center"><b>Table 4-19:</b> Mapping of Capabilities to NFVI Profiles</p>
 
