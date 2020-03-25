@@ -8,7 +8,8 @@
   * [1.2 Hardware layers terminology](#1.2)
   * [1.3 Operational and administrative terminology](#1.3)
   * [1.4 Container Related Terminology](#1.4)
-  * [1.5 Other terminology](#1.5)
+  * [1.5 OpenStack Related Terminology](#1.5) 
+  * [1.6 Other terminology](#1.6)
 
 <a name="1.0"></a>
 # 1 Terminology
@@ -106,8 +107,33 @@ Terms not defined by Kubernetes:
 - **CaaS**:	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
 - **CaaS Manager**:	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
 
+
 <a name="1.5"></a>
-## 1.5 Other Referenced Terminology
+## 1.5 OpenStack Related Terminology
+
+>_*Note:*_ The official [OpenStack Glossary]( https://docs.openstack.org/image-guide/common/glossary.html) is an extensive list of OpenStack-related concepts. Some additional terms used in the Reference Architecture RA-1 or used to relate RA-1 terms with terms defined elsewhere.
+
+**Core (physical)** is an independent computer processing unit (pcpu) that can independently execute CPU instructions but is integrated with other cores on a multiprocessor chip (integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
+
+**Flavor Capabilities** such as (CPU Pinning, NUMA, huge pages): CNTT NFVI Profile
+
+**Flavor Geometry** Flavor sizing such as number of vCPUs, RAM, disk, etc.
+
+**[Fluentd](https://www.fluentd.org/)**, a CNCF graduated project, is an open-source data collector for unified logging layer, which allows data collection and consumption for better use and understanding of data.
+
+**Host profile** is a set of underlay configuration values used to install a new compute host/server. Typically, the host profile configurations match the capabilities of one or more flavors.
+
+**Hugepages:** Physical memory is partitioned and accessed using the basic page unit (in Linux default size of 4 KB). Hugepages, typically 2 MB and 1GB size, allows large amounts of memory to be utilised with reduced overhead. In an NFV environment, huge pages are critical to support large memory pool allocation for data packet buffers. This results in fewer Translation Lookaside Buffers (TLB) lookups, which reduces the virtual to physical pages address translations. Without huge pages enabled high TLB miss rates would occur thereby degrading performance.
+
+**Kibana** is an open source data visualisation system
+
+**Prometheus** is an open-source monitoring and alerting system.
+
+**Software Defined Storage (SDS)** architecture consists of the storage software that is independent from the underlying storage hardware. The storage access software provides data request interfaces (APIs) and the SDS controller software provides storage access services and networking.
+
+
+<a name="1.6"></a>
+## 1.6 Other Referenced Terminology
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **Network Function Virtualisation Infrastructure** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **Cloud Infrastructure** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
