@@ -138,7 +138,7 @@ Terms not defined by Kubernetes:
 - Encapsulation = Restricting of direct access to some of an object's components. ([Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)))
 - Appliance deployment model = Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
 - Cloud deployment model = Applications are decoupled from the platform provided by Cloud operator.
-- Application Control = Any way of controlling tenant’s application. Depending on RA and technologies used, it can be tenant’s VNFM or Orchestration SW, or Platform capability.
+- Application Control = Any method or system of controlling applications (VNFs). Depending on RA and technologies used, this can be a VNF Manager or NFV Orchestrator provided as a VNF or Platform capability.
 - Decomposition = Decomposition (also known as factoring) is breaking a complex system into parts that are easier to program and maintain. ([Wikipedia:Decomposition](https://en.wikipedia.org/wiki/Decomposition_(computer_science)))
 - Resilience = Resilience is the ability to provide and maintain an acceptable level of service in the face of various faults and challenges to normal operation. ([Wikipedia:Resilience](https://en.wikipedia.org/wiki/Resilience_(network)))
 - Observability = Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs. ([Wikipedia:Observability](https://en.wikipedia.org/wiki/Observability))
