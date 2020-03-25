@@ -74,15 +74,15 @@ From Reference Model section [4.1.6 VIM Capabilities](../../../ref_model/chapter
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.vim.cap.001 | Virtual Compute allocation | | Y |
-| e.vim.cap.002 | Virtual Storage allocation | | Y |
-| e.vim.cap.003 | Virtual Networking resources allocation | | Y |
-| e.vim.cap.004 | Multi-tenant isolation | | N <sup>1)</sup> |
-| e.vim.cap.005 | Images management | | Y |
-| e.vim.cap.006 | Virtual resources inventory per tenant | | Y |
-| e.vim.cap.007 | Resources Monitoring | | Y |
-| e.vim.cap.008 | Virtual resources Performance  |  | Y |
-| e.vim.cap.009 | Virtual resources Fault information | | Y |
+| e.man.cap.001 | Virtual Compute allocation | | Y |
+| e.man.cap.002 | Virtual Storage allocation | | Y |
+| e.man.cap.003 | Virtual Networking resources allocation | | Y |
+| e.man.cap.004 | Multi-tenant isolation | | N <sup>1)</sup> |
+| e.man.cap.005 | Images management | | Y |
+| e.man.cap.006 | Virtual resources inventory per tenant | | Y |
+| e.man.cap.007 | Resources Monitoring | | Y |
+| e.man.cap.008 | Virtual resources Performance  |  | Y |
+| e.man.cap.009 | Virtual resources Fault information | | Y |
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: VIM Capabilities</p>
 
