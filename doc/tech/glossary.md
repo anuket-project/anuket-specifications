@@ -131,9 +131,20 @@ Terms not defined by Kubernetes:
 
 **Software Defined Storage (SDS)** architecture consists of the storage software that is independent from the underlying storage hardware. The storage access software provides data request interfaces (APIs) and the SDS controller software provides storage access services and networking.
 
-
 <a name="1.6"></a>
-## 1.6 Other Referenced Terminology
+## 1.6 Terminology For Decoupling Applications From Infrastructure, Platform and Other Application Functionality:
+- Decoupling, Loose Coupling = Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the definitions of other separate components. Loose coupling is the opposite of tight coupling. ([Wikipedia:Loose Coupling](https://en.wikipedia.org/wiki/Loose_coupling))
+- Abstraction = Process of removing smaller details or attributes in the study of systems to focus attention on topics of greater importance. It can be result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)))
+- Encapsulation = Restricting of direct access to some of an object's components. ([Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)))
+- Appliance deployment model = Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
+- Tenant/Cloud deployment model = Tenant brings applications that are decoupled from the platform provided by Cloud operator. Tenant and Cloud operator are normally different legal entities.
+- Application Control = Any way of controlling tenant’s application. Depending on RA and technologies used, it can be tenant’s VNFM or Orchestration SW, or Platform capability.
+- Decomposition = Decomposition (also known as factoring) is breaking a complex system into parts that are easier to program and maintain. ([Wikipedia:Decomposition](https://en.wikipedia.org/wiki/Decomposition_(computer_science)))
+- Resilience = Resilience is the ability to provide and maintain an acceptable level of service in the face of various faults and challenges to normal operation. ([Wikipedia:Resilience](https://en.wikipedia.org/wiki/Resilience_(network)))
+- Observability = Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs. ([Wikipedia:Observability](https://en.wikipedia.org/wiki/Observability))
+
+<a name="1.7"></a>
+## 1.7 Other Referenced Terminology
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **Network Function Virtualisation Infrastructure** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **Cloud Infrastructure** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
@@ -145,3 +156,4 @@ Terms not defined by Kubernetes:
 - **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance.
 
 - PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
+
