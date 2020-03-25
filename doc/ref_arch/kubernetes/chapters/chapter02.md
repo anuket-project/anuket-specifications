@@ -95,18 +95,18 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the NFVI | at least 16<sup>1)</sup> | Y |
-| e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | at least 32 GB<sup>1)</sup> | Y |
-| e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | at least 320 GB<sup>1)</sup> | Y |
-| e.nfvi.res.cap.004 | # Connection Points | 6 | Y |
-| e.nfvi.res.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
-| e.nfvi.per.cap.001 | CPU pinning support | | Y |
-| e.nfvi.per.cap.002 | NUMA support | | Y |
-| e.nfvi.per.cap.003 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.004 | Crypto Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.005 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.006 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.007 | Enhanced Cache Management | | X (if offered) |
+| e.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the NFVI | at least 16<sup>1)</sup> | Y |
+| e.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | at least 32 GB<sup>1)</sup> | Y |
+| e.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | at least 320 GB<sup>1)</sup> | Y |
+| e.res.cap.004 | # Connection Points | 6 | Y |
+| e.res.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
+| e.per.cap.001 | CPU pinning support | | Y |
+| e.per.cap.002 | NUMA support | | Y |
+| e.per.cap.003 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.per.cap.004 | Crypto Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.per.cap.005 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.per.cap.006 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.per.cap.007 | Enhanced Cache Management | | X (if offered) |
 | e.nfvi.mon.cap.001 | Monitoring of L2-7 data | | N<sup>3)</sup> |
 | i.nfvi.sla.cap.001 | CPU overbooking | 1:1, 1:4 | Y |
 | i.nfvi.sla.cap.002 | vNIC QoS | | Y |
