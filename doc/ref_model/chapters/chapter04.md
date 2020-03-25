@@ -460,35 +460,35 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 
 | Ref                                                                  | Basic                    | Network Intensive        | Notes                                                               |
 |----------------------------------------------------------------------|--------------------------|--------------------------|---------------------------------------------------------------------|
-| `e.res.cap.001`<br />(#vCPU cores)                              | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)     |
-| `e.res.cap.002`<br />(Amount of RAM (MB))                       | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
-| `e.res.cap.003`<br />(Total instance (ephemeral) storage (GB))  | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
-| `e.res.cap.004`<br />(# vNICs)                                  | Per selected  <I Opt>    | Per selected  <I Opt>    |                                                                     |
-| `e.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext>    | Per selected  <S Ext>    |                                                                     |
-| `e.per.cap.001`<br />(CPU pinning support)                      | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2)  |
-| `e.per.cap.002`<br />(NUMA support)                             | No                       | Yes                      |                                                                     |
-| `e.per.cap.003`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
-| `e.per.cap.004`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
-| `e.per.cap.005`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
-| `e.per.cap.006`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
-| `e.per.cap.007`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.mon.cap.001`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
-| `i.sla.cap.001`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
-| `i.sla.cap.002`<br />(vNIC QoS)                                 | No                       | Yes                      |                                                                     |
-| `i.per.cap.001`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.mon.cap.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
-| `i.mon.cap.002`<br />(Virtual compute CPU usage)                | Yes                      | Yes                      |                                                                     |
-| `i.mon.cap.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
-| `i.mon.cap.004`<br />(Virtual compute CPU utilization)          | Yes                      | Yes                      |                                                                     |
-| `i.mon.cap.007`<br />(External storage capacity)                | No                       | No                       |                                                                     |
+| `e.cap.001`<br />(#vCPU cores)                              | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)     |
+| `e.cap.002`<br />(Amount of RAM (MB))                       | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
+| `e.cap.003`<br />(Total instance (ephemeral) storage (GB))  | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
+| `e.cap.004`<br />(# vNICs)                                  | Per selected  <I Opt>    | Per selected  <I Opt>    |                                                                     |
+| `e.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext>    | Per selected  <S Ext>    |                                                                     |
+| `e.cap.006`<br />(CPU pinning support)                      | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2)  |
+| `e.cap.007`<br />(NUMA support)                             | No                       | Yes                      |                                                                     |
+| `e.cap.008`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
+| `e.cap.009`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
+| `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
+| `e.cap.011`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
+| `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
+| `e.cap.013`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
+| `i.cap.016`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
+| `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
+| `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.pm.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
+| `i.pm.002`<br />(Virtual compute CPU usage)                | Yes                      | Yes                      |                                                                     |
+| `i.pm.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
+| `i.pm.004`<br />(Virtual compute CPU utilization)          | Yes                      | Yes                      |                                                                     |
+| `i.pm.007`<br />(External storage capacity)                | No                       | No                       |                                                                     |
 <!--
 | Ref | Basic | Network Intensive | Compute Intensive | Notes |
 |----------------------|----------------------------|----------------------------|----------------------------|-------|
-| `e.res.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
-| `e.res.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.res.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.res.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> | Per selected  <I Opt> |  |
-| `e.res.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> | Per selected  <S Ext> |  |
+| `e.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
+| `e.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
+| `e.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> | Per selected  <I Opt> |  |
+| `e.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> | Per selected  <S Ext> |  |
 | `e.per.cap.001`<br />(CPU pinning support) | No | Yes | Yes | Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
 | `e.per.cap.002`<br />(NUMA support) | No | Yes | Yes | |
 | `e.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | No | |
