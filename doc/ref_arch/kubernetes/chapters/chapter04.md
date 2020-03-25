@@ -101,7 +101,7 @@ These specifications cover the [full lifecycle of a container](https://github.co
 
 The used CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm) as it provides the possibility to use several other CNI plugins (`req.inf.ntw.16`) and provides an API based solution to administer the networks (`req.inf.ntw.10`) from a central point (`req.inf.ntw.11`).<br>
 
-The NSX Container Plugin ([NCP](https://kubernetes.io/docs/concepts/cluster-administration/addons/)) is a CNCF-compliant container plugin that integrates with NSX-T Data Center to build Kubernetes networking and security objects.  NSX-T Container Plugin natively supports Containers in VM deployment model with superior security/isolation while meeting the data plane performance requirements. The ([NCP](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/ncp-openshift/GUID-30FECC09-B327-49CB-874F-DBDD3CF5208E.html)) is capable of supporting multiple interfaces to Kubernetes Pods.
+The NSX Container Plugin ([NCP](https://kubernetes.io/docs/concepts/cluster-administration/addons/)) is a CNCF-compliant container plugin that integrates with NSX-T Data Center to build Kubernetes networking and security objects.  NSX-T Container Plugin natively supports Containers in VM deployment model with superior security/isolation while meeting the data plane performance requirements. The [NCP](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/ncp-openshift/GUID-30FECC09-B327-49CB-874F-DBDD3CF5208E.html) is capable of supporting multiple interfaces to Kubernetes Pods.
 
 The following table contains a comparision of relevant features and requirements in Multus, DANM and NCP.
 
