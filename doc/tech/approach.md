@@ -111,11 +111,13 @@ The ETSI NFV model divide networking in an Underlay and an Overlay Network layer
 
 The Overlay Networking separation is often done through encapsulation e.g. through VxLAN on the Underlay Networks e.g. based on L2 (VLAN) or L3 (IP) networks.
 
-In some instances, the SW Virtualization Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation is the usage of SR-IOV or PCI-PassThrough that both effectively hands up the physical NIC or Virtual Function on the NIC to the SW Virtualization Tenants. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
+In some instances, the SW Virtualization Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation is the usage of SR-IOV that effectively hands up the NIC Physical and Virtual Functions on the NIC to the SW Virtualization Layer and Tenants. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
 
 ### Software Defined Networking control concepts of the Underlay Networking
 
 VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking interfaces to the Underlay Networking in the HW Infrastructure Layer. Due to the many different facets of Software Defined Networking we will here denote them SDN Underlay (SDNu).
+
+When there are multiple simultaneous SW Virtualization Layers on the same HW Infrastructure, there is a need to ensure Underlay networking separation in the HW Infrastructure Layer. This separation can be done manually through provisioning of a statically configured separation of the Underlay networking in the HW Infrastructure Layer. A better and more agile usage of the HW Infrastructure is to have an authoritative SDN provisioning controller function (here denoted SDNuP) that can be controlled through an automation interface from a HW Infrastructure Orchestrator. The main tasks for the SDNuP are to discover and establish the Underlay resources and the ensure separation of shared HW Infrastructure Underlay networking resources.
 
 Multiple Containerized Virtualization Layer (CaaS) running on an Infrastructure as a Service (IaaS) Virtualization Layer could make use of the IaaS layer to handle Underlay Networking separation. In these cases, also the IaaS Virtualization Infrastructure Manager (VIM) could include a SDNu control interface enabling automation.
 
@@ -140,6 +142,21 @@ In both cases the Underlay Networking can be externally controlled over the SDNu
 Two exemplifications of different common HW realizations of Underlay separation in the HW Infrastructure Layer can be seen in the figure below.
 
 ![RM_NW_Concepts_Layering-HWInfra_Underlay_Examples](https://user-images.githubusercontent.com/38792667/77347741-985c3f80-6d38-11ea-9479-489d13668d27.jpg)
+
+### SDN Overlay and SDN Underlay concepts, layering and relationships
+
+An SDN Overlay controller (here denoted SDNo) is responsible for managing the SW Virtualization Layer virtual switching that manages the Overlay Network switching and encapsulation and mapping onto the Underlay Networks.
+
+In cases where the V/CNF bypasses the SW Virtualization Layer virtual switching e.g. high performance applications using SR-IOV, there is a need for the HW Infrastructure Layer to perform the encapsulation and mapping onto the Underlay Networking. This is controlled by the SDN Underlay controller (SDNu) that is authoritative and ensures separation of the shared Underlay Networking resources.
+
+SDNo controllers can request Underlay encapsulation and mapping to be done by signaling to an SDNu controller. There are however today no standardized way for this signaling and by that there is a missing reference point and API description in this architecture.
+
+For deployments with multiple SW Virtualization instances sharing the same Underlay Networking resources, it is the SDNu responsibility to ensure separation of the shared Underlay resources and to set up appropriate enforcements in the Underlay Networking forwarding plane since each SW Virtualization
+instance or V/CNF that bypasses its local virtual switching instance cannot be trusted. Any fault or misconfiguration in such instances could potentially destroy all networking in the shared Underlay Networking.
+
+Two use case examples with both SDNo and SDNu controllers depicting a normal virtual switch encapsulating SW Virtualization Infrastructure instance and another high performance oriented SW Virtualization Infrastructure instance (e.g. using SR-IOV) are described in the figure below. The example is showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+
+![SDN_Controller_relationships](https://github.com/cntt-n/CNTT/tree/master/doc/tech/figures/RM_NW_Concepts_Layering-SDNo_SDNu_Examples-PA4.jpg)
 
 ### Programmable Networking Fabric
 
