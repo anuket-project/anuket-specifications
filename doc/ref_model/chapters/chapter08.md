@@ -115,33 +115,6 @@ as a checklist to gate the inclusion of test cases.
 <a name="8.3.1"></a>
 ## 8.3.1 Entry/Exit Criteria
 
-**Entrance Criteria for testing and validation includes _Demonstration of Reference Architecture Implementation and Delivery of the following_:**
-1. **Design & Requirements**
-   - Design, Configuration, Features, SLAs, and Capability documentation complete
-   - Users stories / Adherence to CNTT Model principles and guidelines
-   - Chosen Reference Architecture Matches a Reference Architecture from the product catalog
-2. **Environment**
-    -  Lab assets/resources and respective s/w rev levels are specified, with confirmation of compatibility across external systems
-    -  Tenant needs identified
-    -  All connectivity, network, image, VMs, delivered with successful pairwise tests
-    -  Lab instrumented for proper monitoring
-3. **Planning & Delivery**
-    - Kickoff / Acceptance Criteria reviews performed
-    - Delivery commitments, timelines, and cadence accepted
-    - Confirm backward compatibility across software/flavour rev levels
-4. **Data / VNFs / Security**
-    - Images, Heat Templates, Preload Sheets available
-    - Images uploaded to tenant space
-    - External system test data needs identified
-    - Owners (NFVI, VNF, PTL, etc) documented
-    - Security Compliance Satisfied (_Refer to_ CNTT Chapter 7 Security _for additional tests, scans, and vulnerabilities validations_)
-5. **Test Case Contributions**
-    - VNF Developer/Supplier validations to be performed documented and supplied
-    - NFVi validations to be performed supplied (e.g. echo, manifest)
-    - Test to ensure users are added and have correct privileges for the tenant
-    - Test to ensure quota against submitted request for the respective tenant
-    - Test to ensure custom flavours against submitted request for respective tenants
-
 Exit Criteria includes Demonstration of Compliance, Verification, Performance, and Validation, of Reference Architecture Implementation, and Delivery of the following:
 
 1. **Certification tenants**
