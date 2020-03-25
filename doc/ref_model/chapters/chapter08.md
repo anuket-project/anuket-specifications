@@ -12,8 +12,7 @@
    * [8.2.4 Test Cases Selection Requirements.](#8.2.4)
 * [8.3 Guidelines.](#8.3)
   * [8.3.1 Entry/Exit Criteria.](#8.3.1)
-  * [8.3.2 Quality Assurance.](#8.3.2)
-  * [8.3.3 Test Categories.](#8.3.3)
+  * [8.3.2 Test Categories.](#8.3.2)
 
 <a name="8.1"></a>
 ## 8.1 Introduction
@@ -163,8 +162,8 @@ Exit Criteria includes Demonstration of Compliance, Verification, Performance, a
     - Standard NTP servers are working and verified (using tenant's CIDR source IP).
     - NFVI/VNF is tested at steady state and high load.
     - Continuously monitored to ensure SLAs are met and used as feedback to load/perf tests.
-    - Passing Interoperability Validations: 
-      1. Compatibility Checks (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF); 
+    - Passing Interoperability Validations:
+      1. Compatibility Checks (e.g. documented s/w, driver rev levels, etc, in use and confirmed compatible between Platform and VNF);
       1. Integration Checks (e.g. empirical validation confirming positive performance and stability between Platform and VNF; for example, packet loss within acceptable tolerances)
 1. **End User Consideration**
     - Component redundancy to ensure graceful updates without disruption of services
@@ -177,30 +176,7 @@ Exit Criteria includes Demonstration of Compliance, Verification, Performance, a
     - Pre-check or audit failures during NFV deployment should allow follow-up mitigation, when possible, rather than killing deployment and rolling back
 
 <a name="8.3.2"></a>
-### 8.3.2 Quality Assurance
-
-**Assumptions**
-NFVI+VNF testing will be considered **Testable** if the follow qualifiers are present in a test execution, and subsequent result:
-
-- Ability to perform Conformance, or Verification of Artifacts to ensure designs (RM/RA/RI) are delivered per specification
-
-- Ability to Control (or manipulate), manifestations of RM/RA/RI for the purposes to adjust the test environment, and respective cases, scenarios, and apparatus, to support actual test validations
-
-- Ability to monitor, measure, and report, Validations performed against a target, controlled system under test
-
-In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.
-
-**Dependencies**
-NFVI+VNF verification will rely upon test harnesses, test tools, and test suites.  
-
-- NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
-
-<p align="center"><img src="../figures/ch8_NFVI_VNF_Instance_Type.jpg" alt="scope" title="NFVI+VNF Instance Type" width="100%"/></p>
-
-<p align="center"> <b>Figure 8-1:</b> NFVI+VNF Instance Type.</p>
-
-<a name="8.3.3"></a>
-### 8.3.3 Test Categories | Cases
+### 8.3.2 Test Categories | Cases
 
 The following five test categories have been identified as minimal testing required to verify NFVI interoperability to satisfy the needs of VNF developer teams.
 

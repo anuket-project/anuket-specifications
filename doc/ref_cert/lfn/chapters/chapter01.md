@@ -125,26 +125,40 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 <a name="1.7"></a>
 ## 1.7 Assumptions & Dependencies
 
-**Assumptions** NFVI+VNF testing will be considered **Testable** if the follow qualifiers are present in a test execution, and subsequent result:
+**Assumptions** NFVI+VNF testing will be considered **Testable** if the follow
+qualifiers are present in a test execution, and subsequent result:
+* Ability to perform Conformance, or Verification of Artifacts to ensure
+  designs (RM/RA/RI) are delivered per specification
+* Ability to Control (or manipulate), manifestations of RM/RA/RI for the
+  purposes to adjust the test environment, and respective cases, scenarios, and
+  apparatus, to support actual test validations
+* Ability to monitor, measure, and report, Validations performed against a
+  target, controlled system under test
 
-* Ability to perform Conformance, or Verification of Artifacts to ensure designs (RM/RA/RI) are delivered per specification
+In addition, respective Entrance criteria is a prerequisite which needs to be
+satisfied for NFVI+VNF to be considered **Testable**.
 
-* Ability to Control (or manipulate), manifestations of RM/RA/RI for the purposes to adjust the test environment, and respective cases, scenarios, and apparatus, to support actual test validations
+**Dependencies** NFVI+VNF verification will rely upon test harnesses, test
+tools, and test suites provided by upstream OPNFV projects, including dovetaill,
+yardstick, and Bottleneck. These upstream projects will be reviewed
+semi-annually to verify they are still healthy and active projects. Over time,
+the projects representing the conformance process may change, but test parity
+is required if new test suites are added in place of older, stale projects.
 
-* Ability to monitor, measure, and report, Validations performed against a target, controlled system under test
+* NFVI+VNF verifications will be performed against well defined instance types
+  consisting of a HW and SW Profile, Configured Options, and Applied Extensions
+  (See image.)
 
-In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.
-
-**Dependencies** NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the conformance process may change, but test parity is required if new test suites are added in place of older, stale projects.
-
-* NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
-
-<p align="center"><img src="../figures/RC_NFVI_VNF_Instance_Type_25Nov2019.jpg" alt="Instance Type" title="Instance Type" width="100%"/></p>
+![Instance Type](../figures/RC_NFVI_VNF_Instance_Type_25Nov2019.jpg)
 <p align="center"><b>Figure:</b> Instance Type</p>
 
 **NFVI+VNF Instance Type:**
-* Standard compute flavours to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
-* Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
+* Standard compute flavours to be tested are defined in
+  [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
+* Performance profiles come in the form of Basic, Network Intensive, and
+  Compute intensive. Refer to
+  [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3)
+  for details on these profiles.
 
 <a name="1.8"></a>
 ## 1.8 Results Collation & Presentation
