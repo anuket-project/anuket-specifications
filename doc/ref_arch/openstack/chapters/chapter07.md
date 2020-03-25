@@ -21,7 +21,7 @@
 ## 7.1 Introduction
 To create an Infrastructure as a Service (IaaS) cloud requires the provisioning and deployment of the underlying infrastructure (compute, networking and storage) and deployment, configuration and management of the necessary software on the infrastructure; in the process of deploying the software, configuration of the infrastructure may also need to be performed. 
 
-Instead of deploying the infrastructure components and services manually, the current best practice is to write *code* (infrastructure as a Code, IaC) to define, provision, deploy, configure and manage the IaaS cloud infrastructure and services. IaC tools allows the entire provisioning, configuration and management processes to be automated. The desired state of the infrastructure and services is represented in a set of human readable, machine executable, and version-controlled files. With version control, it is easy to roll back to an older version and have access to the history of all committed changes.
+Instead of deploying the infrastructure components and services manually, the current best practice is to write *code* (Infrastructure as Code, IaC) to define, provision, deploy, configure and manage the IaaS cloud infrastructure and services. IaC tools allows the entire provisioning, configuration and management processes to be automated. The desired state of the infrastructure and services is represented in a set of human readable, machine executable, and version-controlled files. With version control, it is easy to roll back to an older version and have access to the history of all committed changes.
 
 The provisioning of the infrastructure is typically performed by provisioning tools while the deployment of the software and the configuration of the software, and where needed the infrastructure, falls in the domain of configuration management tools. A single tool may support both provisioning and configuration management.
 
@@ -43,13 +43,15 @@ This section deals with automated provisioning of the cloud infrastructure; for 
 
 The following are the minimum tasks that need to be performed by automation:
 - **Pre-boot configuration** such as BIOS/RAID/IPMI settings: Hardware manufacturers typically have their proprietary interface for these tasks but standards such as Redfish are being increasingly utilised. Consider using tooling to ensure consistency across all infrastructure components.
-- **Bootloader installation** of base Network Operating System (NOS) on networking equipment or the Opetrating System (OS) should be performed using PXE; again consider tooling to ensure consistency across all infrastructure components.
+- **Bootloader installation** of base Network Operating System (NOS) on networking equipment or the Operating System (OS) should be performed using PXE; again consider tooling to ensure consistency across all infrastructure components.
 
 **Configuration and subsequent software installation** is then handed over to a configuration management tool or life cycle manager.
 
 [OpenStack TripleO]( https://docs.openstack.org/project-deploy-guide/tripleo-docs/latest/index.html) documentation, and similar documentation from OpenStack vendors, delves into great detail on the provisioning of servers (bare metal), deploying and configuring OpenStack services. 
 
-In the [Reference Implementation Chapter 06]( ../../../ref_impl/cntt-ri/chapters/chapter06.md) a set of Installer requirements are specified with a couple of Installers (such as Airship and Triple-O) described in  [Reference Implementation Chapter 8.5]( ../../../ref_impl/cntt-ri/chapters/chapter08.md#85-available-installers). It should be noted that systems such as [Airship]( https://www.airshipit.org/) are not only provisioning tools but also a configuration management system. For example, [Airship]( https://readthedocs.org/projects/airship-treasuremap/downloads/pdf/latest/) specifies how to provision and deploy the IaaS, and on how to update configuration including OpenStack services.
+In the [Reference Implementation Chapter 06]( ../../../ref_impl/cntt-ri/chapters/chapter06.md) a set of Installer requirements are specified with a couple of Installers (such as Airship and Triple-O) described in  [Reference Implementation Chapter 8.5]( ../../../ref_impl/cntt-ri/chapters/chapter08.md#85-available-installers). It should be noted that the installers choosen in order to automate deployment depend on the cloud provider.
+
+Systems such as [Airship]( https://www.airshipit.org/) are not only provisioning tools but also a configuration management system. For example, [Airship]( https://readthedocs.org/projects/airship-treasuremap/downloads/pdf/latest/) specifies how to provision and deploy the IaaS, and on how to update configuration including OpenStack services.
 
 For Airship, [Reference Implementation Chapter 8.5.1.1]( ../../../ref_impl/cntt-ri/chapters/chapter08.md#8511-descriptor-file-preparations) specifies the required descriptor files and in [Reference Implementation Chapter 8.5.1.2](../../../ref_impl/cntt-ri/chapters/chapter08.md#8512-deployment-installer--install-steps) describes the steps to provision the OpenStack based IaaS.  
 
@@ -68,7 +70,7 @@ Configuration Management is composed of the following activities:
 <a name="7.3"></a>
 ## 7.3 NFVI and VIM Maintenance
 NFVI and VIM Maintenance activities can be classified as
-1.	Deployment (or de-deployment) of infrastructure components
+1.	Deployment of additional infrastructure components (or removal of infrastructure components)
 1.	NFVI Configuration changes 
 1.	VIM Configuration changes 
 1.	Version changes (upgrade) of NFVI software (for example, Host Operating System, Hypervisor, etc.)
