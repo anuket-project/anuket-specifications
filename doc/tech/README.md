@@ -93,7 +93,7 @@ Any specification work created within CNTT **must** conform to set of principles
 
 Within the framework of the Common Telecom cloud infrastructure vision, there are four levels of documents needed to describe the components, realize the practical application of the systems and qualify the resulting cloud infrastructure. They are, as highlighted in **Figure 1**:  **Reference Model**, **Reference Architecture**, **Reference Implementation**, and **Reference Conformance**.
 
-<p align="center"><img src="./figures/tech-scope.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Documentation Scope of CNTT</p>
 
 <a name="3.1"></a>
@@ -105,7 +105,7 @@ In terms of the functional scope of the CNTT documentation, in order to target t
 
 Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf), those ETSI interfaces that are considered relevant (with notes where required) are included in the figure below.
 
-<p align="center"><img src="./figures/cntt_scope.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/cntt-scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> Functional Scope of CNTT</p>
 
 <a name="3.2"></a>
