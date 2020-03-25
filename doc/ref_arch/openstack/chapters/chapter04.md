@@ -84,6 +84,9 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 
 
 #### 4.2.2.3. Network nodes
+
+Networks nodes are mainly used for L3 traffic management for overlay tenant network (see more detail in section 4.3.1.5 Neutron)
+
 -	BIOS requirements 
 
 | BIOS/boot Parameter | Value |
@@ -93,8 +96,15 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 | …|  
  
 -	How many nodes to meet SLA
+    - Minimum 2 nodes for high availibility using VRRP.
 -	HW specifications
+    - 3 NICs card are needed if we want to isolate the different flows :
+         - 1 NIC for Tenant Network
+         - 1 NIC for External Network
+         - 1 NIC for Other Networks (PXE, Mngt ...)
 -	Sizing rules
+    - Scale out of network node is not easy 
+    - DVR can be an option for large deployment (see more detail in chapter 4.3.1.5 - Neutron)
 
 #### 4.2.2.4. Storage nodes
 -	BIOS requirements
@@ -119,6 +129,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 |---------------|-----------|------------------|
 | Boot disks | RAID 1 | RAID 1 | 
 | CPU reservation for host (kernel) | 1 core per Numa | 1 core per Numa | 
+| CPU Pinning | No | Yes | 
 | <to be filled if needed> |  |  | 
 | … |  |  | <!--- | --->
 
@@ -132,6 +143,8 @@ CPU reservation for host: 1 core per NUMA
     - minimum: two nodes per profile
 -	HW specifications
     -	Boot disks are dedicated with Flash technology disks
+    - In case of DPDK usage, cores (together with their sibling threads) must be reserved for DPDK Poll Mode Drivers (PMD), hugepages set to at least 1 GB, and all power settings disabled in the BIOS. The number of cores reserved for this overhead depends on the desired throughput (the number of Mpps we want to deliver).
+    
 -	Sizing rules
 
 | Number of CPU sockets| s | 
