@@ -122,7 +122,7 @@ Second, the participant will build/setup/configure the environment space via the
 
 CNTT will provide the participants with the community RC-1 Test suite, found at this Link: https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter04.md. The participants will execute test cases per instructions and record the quantitative results.
 
-Test case suite should be executed successfully at least 3 times. Three times represents the recommended number of test suite runs to eliminate false positives in results.  A triage process will be used to determine and manage root cause analysis of failures. If the failures are determined to be issues with the participant’s RI, CNTT will convey the issues to the RI and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
+Test case suite should be executed successfully at least 3 times. Three times represents the recommended number of test suite runs to eliminate false positives in results.  A triage process will be used to determine and manage root cause analysis of failures. If the failures are determined to be issues with the participant’s VI, CNTT will convey the issues to the RI work stream and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
 
 Once the test case suite execution is successful for 3 consecutive iterations, the participant will provide the data of all iterations (both successful and unsuccessful) to CNTT based on participant privacy expectations (See Expectation #4)
 
@@ -131,7 +131,7 @@ Once the test case suite execution is successful for 3 consecutive iterations, t
 
 At the conclusion of Test Case iterations, the participant will be asked to complete a qualitative survey of their experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI-1 specifications, installation/configuration methods and RC-1 Test case efficacy. The survey will use an Agile User Story format. The Table below provides an example of the survey questions:
 
-<p align="center"><img src="../figures/Table 1.png" alt="Qualitative Survey" title="Survey/Questionnaire example" width="85%"/></p>
+<p align="center"><img src="../figures/Table 1-1.png" alt="Qualitative Survey" title="Survey/Questionnaire example" width="85%"/></p>
 <p align="center"><b>Table 1:</b> Survey/Questionnaire example</p>
 
 
@@ -208,7 +208,7 @@ c.	Detail level of data that will be published
 *	Community (OPNFV)
 *	LaaS (e.g. UNH)
 
-3) Engaged vendors successfully configure their cloud infrastructure per RI-1 and run the RC-1 test suite and are able to provide expert feedback
+3) Engaged vendors successfully configure their VI and run the RC-1 test suite and are able to provide expert feedback
 
 4) Engaged vendors are able to validate that they can instantiate and run rudimentary validation of VNF functionality on more than one conformant cloud infrastructure (NFVI)
 
@@ -276,11 +276,11 @@ The Initiate Field Trial Stage will deliver execution and assessment plans inclu
 
 The objective of Execute Stage is participants implementing field trials tasks and record/assess outcomes CNTT will assemble the Trials team to fully develop the action plan including resource assignments, materials requirements, and timelines. 
 
-Activities include the deployment and configuration of VI-1 and execution of the RC-1 test cases. Vendor community members that commit to the trials will build/setup/prep labs for the trials per the instructions:
+Activities include the deployment and configuration of VI and execution of the RC-1 test cases. Vendor community members that commit to the trials will build/setup/prep labs for the trials per the instructions:
 
 1.	Secure appropriate environment space (pre-existing, new build, LaaS)
 
-2.	VI-1 per published RI-1 Specifications  
+2.	VI per published RI-1 Specifications  
 
 3.	RC-1 Test suite will be provided to the participants
    
@@ -329,7 +329,7 @@ The Assess stage shall utilize data collected during the execute stage. Particip
 
 #### Required Assessments
 
-* VI-1 Implementation methods and procedures (cookbook, etc) 
+* VI Implementation methods and procedures (cookbook, etc) 
 * RI-1 Specifications
 *	RC-1 Test Suite 
 *	TC Traceability
