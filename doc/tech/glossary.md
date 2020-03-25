@@ -137,7 +137,7 @@ Terms not defined by Kubernetes:
 - Abstraction = Process of removing smaller details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)), [Wikipedia:Generalization](https://en.wikipedia.org/wiki/Generalization))
 - Encapsulation = Restricting of direct access to some of an object's components. ([Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)))
 - Appliance deployment model = Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
-- Tenant/Cloud deployment model = Tenant brings applications that are decoupled from the platform provided by Cloud operator. Tenant and Cloud operator are normally different legal entities.
+- Cloud deployment model = Applications are decoupled from the platform provided by Cloud operator.
 - Application Control = Any way of controlling tenant’s application. Depending on RA and technologies used, it can be tenant’s VNFM or Orchestration SW, or Platform capability.
 - Decomposition = Decomposition (also known as factoring) is breaking a complex system into parts that are easier to program and maintain. ([Wikipedia:Decomposition](https://en.wikipedia.org/wiki/Decomposition_(computer_science)))
 - Resilience = Resilience is the ability to provide and maintain an acceptable level of service in the face of various faults and challenges to normal operation. ([Wikipedia:Resilience](https://en.wikipedia.org/wiki/Resilience_(network)))
