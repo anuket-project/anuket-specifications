@@ -133,7 +133,7 @@ Terms not defined by Kubernetes:
 
 <a name="1.6"></a>
 ## 1.6 Terminology For Decoupling Applications From Infrastructure, Platform and Other Application Functionality:
-- Decoupling, Loose Coupling = Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the definitions of other separate components. Loose coupling is the opposite of tight coupling. ([Wikipedia:Loose Coupling](https://en.wikipedia.org/wiki/Loose_coupling))
+- Decoupling, Loose Coupling = Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the implementation details of other separate components. Loose coupling is the opposite of tight coupling. ([Wikipedia:Loose Coupling](https://en.wikipedia.org/wiki/Loose_coupling))
 - Abstraction = Process of removing smaller details or attributes in the study of systems to focus attention on topics of greater importance. It can be result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)))
 - Encapsulation = Restricting of direct access to some of an object's components. ([Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)))
 - Appliance deployment model = Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
