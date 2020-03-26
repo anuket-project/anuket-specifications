@@ -89,7 +89,12 @@ In order to support `req.inf.com.03`, the chosen runtime must be conformant with
 - CRI-O
 - Frakti
 
+To support `req.sec.gen.04` the architecture specifies the usage of a container runtime with the capability of Kernel isolation:
+- kata-containers
+
 These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when conformant with the above specifications) supports the requirement `req.inf.stg.06` for ephemeral storage for Pods.
+
+To fulfill `req.sec.gen.05` the architecture specifies the usage of the Kubernetes CPU Manager and to support the isolation of workload resources from the infrastructure resources [CPU Pooler](https://github.com/nokia/CPU-Pooler/).
 
 > Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
 
@@ -174,7 +179,7 @@ No service meshes are part of the architecture.
 <a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
 
-The reference architecture must support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like [Helm v3](https://v3.helm.sh/).
+The reference architecture specifies the usage of a Kubernetes Application package manager using the Kubernetes API-s, like [Helm v3](https://v3.helm.sh/).
 
 <a name="4.9"></a>
 ## 4.9 Supplementary components (okay, this is a bad heading, but I do not have any better)
