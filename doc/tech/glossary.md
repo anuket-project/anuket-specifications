@@ -133,7 +133,7 @@ Terms not defined by Kubernetes:
 **Software Defined Storage (SDS)** architecture consists of the storage software that is independent from the underlying storage hardware. The storage access software provides data request interfaces (APIs) and the SDS controller software provides storage access services and networking.
 
 <a name="1.6"></a>
-## 1.6 Cloud Platform Abstractioin Related Terminology:
+## 1.6 Cloud Platform Abstraction Related Terminology:
 - Decoupling, Loose Coupling = Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the implementation details of other separate components. Loose coupling is the opposite of tight coupling. ([Wikipedia:Loose Coupling](https://en.wikipedia.org/wiki/Loose_coupling))
 - Abstraction = Process of removing smaller details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)), [Wikipedia:Generalization](https://en.wikipedia.org/wiki/Generalization))
 - Encapsulation = Restricting of direct access to some of an object's components. ([Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)))
