@@ -9,7 +9,7 @@
   * [1.3 Operational and administrative terminology](#1.3)
   * [1.4 Container Related Terminology](#1.4)
   * [1.5 OpenStack Related Terminology](#1.5) 
-  * [1.6 Cloud Platform Abstractioin Related Terminology](#1.6)
+  * [1.6 Cloud Platform Abstraction Related Terminology](#1.6)
   * [1.7 Other terminology](#1.7)
 
 <a name="1.0"></a>
