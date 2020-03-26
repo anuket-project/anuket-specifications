@@ -139,6 +139,8 @@ The HW Infrastructure Layer can implement the Underlay Networking separation in 
 
 In both cases the Underlay Networking can be externally controlled over the SDNu interface, that must be instantiated with appropriate Underlay Networking separation for each of the SW Virtualization administrative domains.
 
+> **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of SW Virtualization instances in separate Overlay domains. This is the important consideration for the Reference Model that enable multiple instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific SW Virtualization instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfearing with the authoritative Underlay separation laid out in the Reference Model.
+
 Two exemplifications of different common HW realizations of Underlay separation in the HW Infrastructure Layer can be seen in the figure below.
 
 ![RM_NW_Concepts_Layering-HWInfra_Underlay_Examples](https://user-images.githubusercontent.com/38792667/77347741-985c3f80-6d38-11ea-9479-489d13668d27.jpg)
