@@ -27,7 +27,7 @@
 
 **should**: Requirements that are marked as _should_ are expected to be fulfilled by the Reference Architecture but it is up to each service provider to accept a Vendor Implementation targeting conformance with this Reference Architecture that is not reflecting on any of those requirements. The same applies to _should not_.
 
-- ***NOTE:*** Some of these **must** and **should** requirements may be optional when it comes to an operator **deployment** (i.e. an operator may choose whether or not to deploy or not, depending on the NFVI Software Profiles required for each specific deployment). Specific requirements asking for the Reference Architecture to be flexible enough to allow that optionality will be added in the tables in section 2.3.
+- ***NOTE:*** Some of these **must** and **should** requirements may be optional when it comes to an operator **deployment** (i.e. an operator may choose whether or not to deploy or not, depending on the Cloud Infrastructure Software Profiles required for each specific deployment). Specific requirements asking for the Reference Architecture to be flexible enough to allow that optionality will be added in the tables in section 2.3.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
@@ -95,9 +95,9 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the NFVI | at least 16<sup>1)</sup> | Y |
-| e.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | at least 32 GB<sup>1)</sup> | Y |
-| e.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | at least 320 GB<sup>1)</sup> | Y |
+| e.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the Cloud Infrastructure | at least 16<sup>1)</sup> | Y |
+| e.res.cap.002 | Max memory in MB that can be assigned to a single pod by the Cloud Infrastructure | at least 32 GB<sup>1)</sup> | Y |
+| e.res.cap.003 | Max storage in GB that can be assigned to a single pod by the Cloud Infrastructure | at least 320 GB<sup>1)</sup> | Y |
 | e.res.cap.004 | # Connection Points | 6 | Y |
 | e.res.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
 | e.per.cap.001 | CPU pinning support | | Y |
@@ -166,9 +166,9 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 <a name="2.3"></a>
 ## 2.3 Kubernetes Architecture Requirements
 
-The Reference Model (RM) defines the NFVI to consist of the physical resources, virtualised resources and a software managment system.  In the virtualised world, the NFVI Software Management System (Virtualised Infrastructure Manager -- VIM) consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  And the VIM is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management. Now consider, the containerisation equivalent.
+The Reference Model (RM) defines the Cloud Infrastructure to consist of the physical resources, virtualised resources and a software managment system.  In the virtualised world, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  And the Cloud Infrastructure Management is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management. Now consider, the containerisation equivalent.
 
-Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. physical resources), NFVI Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
+Reference to "Architecture" in this chapter refers to the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
 
 <a name="2.3.1"></a>
 ### 2.3.1 General Requirements
@@ -215,7 +215,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.15` | Network | The Architecture **should** support Service Mesh Interface (SMI). |
 | `req.inf.ntw.16` | Network | The Architecture **should**  support coexistence of multiple connection points in a pod. |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
-| `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
+| `req.inf.acc.02` | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |
 | `req.inf.phy.01`  |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. |
 
@@ -251,7 +251,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 | Ref # | sub-category | Description |
 |---|---|---|
-| `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (NFVI and bare metal resources), network, and storage. |
+| `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |
 | `req.int.api.03` | API |The Architecture **must** support the usage of an OCI compatible artefact repository. |
 | `req.int.api.04` | API | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like Helm v3. |
 
@@ -265,7 +265,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.asr.mon.01` | Integration | The Architecture **must** include integration with infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
 | `req.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from CNF workloads. |
 | `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information. |
-| `req.asr.mon.04` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
+| `req.asr.mon.04` | Network | The Cloud Infrastructure Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
 
 <p align="center"><b>Table 2-10:</b> Kubernetes Architecture: Assurance Requirements</p>
 
