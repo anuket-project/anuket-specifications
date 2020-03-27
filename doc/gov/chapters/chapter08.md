@@ -29,13 +29,13 @@
 | B (Airship )    | B.1        | Number of Lines added & Number of Lines Removed | Individual                |
 |                 | B.2        | Number of Lines Reviews Submitted.              | Individual                |
 |                 | B.3        | .. (Others)                                     | Individual                |
-| C (Functest)    | C.1        | Number of Lines added & Number of Lines Removed | Individual                |
+| C (CIRV)        | C.1        | Number of Lines added & Number of Lines Removed | Individual                |
 |                 | C.2        | Number of Lines Reviews Submitted.              | Individual                |
 |                 | C.3        | .. (Others)                                     | Individual                |
-| D (CIRV)        | D.1        | Number of Lines added & Number of Lines Removed | Individual                |
+| D (Releng)      | D.1        | Number of Lines added & Number of Lines Removed | Individual                |
 |                 | D.2        | Number of Lines Reviews Submitted.              | Individual                |
 |                 | D.3        | .. (Others)                                     | Individual                |
-| E (CIRV)        | E.1        | Number of Lines added & Number of Lines Removed | Both                      |
+| E (Spec)        | E.1        | Number of Lines added & Number of Lines Removed | Both                      |
 |                 | E.2        | Number of PRs Created.                          | Both                      |
 |                 | E.3        | Number of Reviews Created                       | Both                      |
 |                 | E.4        | Number of Comments Made                         | Both                      |
