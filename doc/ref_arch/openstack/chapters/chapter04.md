@@ -363,10 +363,31 @@ Swift is the object storage management service, Swift depends on Keystone and po
 _The Swift backends include iSCSI drives, Ceph RBD and NFS._ 
 
 #### 4.3.1.5 Neutron
-Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes:
--	neutron-api
--	neutron-rpc
--	neutron-*-agent agents which runs on Compute and Network nodes
+Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes. Depending upon the workloads to be hosted by the Infrastructure and the expected load on the controller node, some of the Neutron services can run on separate network node(s). Factors affecting controller node load include number of compute nodes and the concurrent number of nova API calls as well as NAT. In this case, network nodes are widely added to manage L3 traffic for overlay tenant networks and interconnection with external networks. Table 4-2 below lists the networking service components and their placement. Please note that while network nodes are listed in the table below, network nodes only deal with tenant networks and not provider networks. Also, network nodes are not required when SDN is utilized for networking.
+
+| Networking Service component | Description | Required or Optional Service | Placement |
+|-----|-----|----|----|
+| neutron server (neutron-server and neutron-\*-plugin) | Manages user requests and exposes the Neutron APIs | Required | Controller node |
+| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node </br> (Controller node if no network node present) |
+| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node </br>(Controller node if no network node present)</br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
+| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node </br> (Controller node if no network node present) |
+| neutron plugin agent (neutron-\*-agent) | Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch or Linux Bridge) configuration and local networking configuration for VMs hosted on that node. | Required | Every Compute Node |
+<p align="center"><b>Table 4-2: Neutron Services Placemen</b></p>
+
+**Issues with the standard networking (centralized routing) approach**
+
+The network node performs both routing and NAT functions and represents both a scaling bottleneck and a single point of failure. 
+
+Two VMs on different compute nodes and using different project networks where the both of the project networks are connected by a project router. For communication between the two VMs (instances with a fixed or floating IP address), the network node routes east-west network traffic among project networks using the same project router. Even though the instances are connected by a router, all routed traffic must flow through the network node, and this becomes a bottleneck for the whole network.
+
+While the separation of the routing function from the controller node to the network node provides a degree of scaling it is not a truly scalable solution.  We can add additional cores/compute-power to the network node, but, eventually, it runs out of processing power. Therefore, for scaled deployments, use of Dynamic Virtual Routing (DVR) is advised. With DVR, each compute node also hosts the L3-agent (providing the distributed router capability) and this then allows direct instance to instance (East-West) communications. 
+
+**Distributed Virtual Routing (DVR)**
+
+The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation. 
+
+DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/pike/admin/config-dvr-ha-snat.html) addresses this vulnerability and is, thus, the preferred OpenStack Networking solution. 
+ 
 
 #### 4.3.1.6 Nova
 Nova is the compute management service, Nova depends on all above components and is deployed after. Nova has services running on the control nodes and the compute nodes:
