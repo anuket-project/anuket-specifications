@@ -227,7 +227,7 @@ While an instance with pinned CPUs cannot use CPUs of another pinned instance, t
 
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/Figure_4_1_OpenStack_Network_Layout_20200110.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/Figure_4_1_Indicative_OpenStack_Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
