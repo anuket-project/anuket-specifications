@@ -40,7 +40,32 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 > _Placeholder for the Executive Summary (targeting Baldy for first draft). **If you are interested in writing this content, please contact the RM lead.**_
 
 <a name="5.1.2"></a>
-### 5.1.2 Networking Strategy & Principle 
+
+### 5.1.2 Networking Principles & Startegy 
+
+•	Abstraction: A standardized layer between Virtualization Layer domains and the Networking Hardware layer resource pool hiding the implementation details of the Networking Hardware.
+Note: This Principle may be deployed in many different ways depending on target use case requirements, workload characteristics (different algorithms implementing pipeline steps) and available platforms. This includes network functions running on server nodes with our without programmable HW acceleration, or functions running on a programmable standalone network switch in the network.
+
+•	Agnosticity : Build Network Fabric that can carry any type of workload in terms of :
+
+      o	Workload type : Can be Control, User and Management plan
+
+      o	Workload supported acceleration Technologies : SRIOV or DPDK based workload
+ 
+•	Automation: Full Automation, starting from Fabric provisioning to automation of VNF/CNF onboarding
+
+•	Openness : All CNTT networking is based on open API ( NBI and SBI )  and Open source SDN controllers integration 
+
+•	Programmability : should be based on state of art programmable fabric.
+
+•	Scalability : should be scalable to handle all traffic traverse North-South and East-West.
+
+•	Multi-Cloud : should be capable to handle any VNF , CNF and BareMetal workload
+
+•	Telco grade : should be a Telco grade Fabric and SDN to fulfil Telco requirements such as Service chaining
+
+•	Edge : Can be extended to covers the edge use cases
+
 
 This section catalogs CNTT's high-level objectives for the Network Fabric Strategy. 
 
