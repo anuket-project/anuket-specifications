@@ -1,12 +1,23 @@
 # Contribution
 
 ## Table of Contents
+* [Permission levels](#permissions)
 * [Labels](#labels)
 * [Issues & Labels](#issues)
 * [Pull Requests](#prs)
 * [Pull Requests Approval Process](#approvals)
 * [Idle Pull Requests Policy](#idle)
 * [Unresolved Pull Requests Policy](#unresolved)
+
+<a name="permissions"></a>
+### Collaborators
+There are different permissions (levels) available for contributing into CNTT CNTT:
+- **Outside Collaborators**: This includes general public. Outside collaborators can add comments on issues and Pull Requests.
+- **Read, Triage, Write, and Maintain** Permissions, which are explained in [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization), will be assigned as follows:
+  - **Read** will be assigned to those who are intereted to join the discussion and provide feednack and input.
+  - **Triage** will be assigned to those who are active contributors who create issues, pull requests and review them.
+  - **Writes** will be assigned to Workstream Co-Leads to allow them to mange issues and pull reuquest, approve them and be auto requested for review.
+  - **Maintain** will be assigned to Workstream Leads to allow them to merge PRs into the repository.
 
 <a name="labels"></a>
 ### Labels
