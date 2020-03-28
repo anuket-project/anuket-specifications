@@ -38,11 +38,11 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 ### 5.1.1 Networking Scope
 According to the ETSI NFV Model, Networking alongside Compute and Storage, is an integral part of the Network Function Virtualisation Infrastructure (NFVI). The general function of Networking in the NFV context is to provide the connectivity between various virtualised and non-virtualised resources required for a delivery of a Network Service. Such a connectivity may manifest itself as a virtualised network between VMs or Containers (e.g. overlay networks managed by SDN Controllers, or programmable fabrics that provide such connectivity natively) or as an integration into the Infrastructure Hardware level for offloading some of the Network Functions into this level. 
 
-The main concern of this specification, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration). It is an important feature of the proposed Networking Model to ensure the ability for supporting simultanous usage of different reference architectures by having multiple CaaS and IaaS layers on top of a shared Hardware Infrastructure layer.
+The main concern of this specification, is the normalization of the integration reference points between different layers of the NFV architecture stack.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualization level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration). It is an important feature of the proposed Networking Model to ensure the ability for supporting simultanous usage of different reference architectures by having multiple CaaS and IaaS layers on top of a shared Hardware Infrastructure layer. The details of this approach are provided in the section "Network Layering and Concepts" below.
 
 <a name="5.1.1.1"></a>
 #### 5.1.1.1 Identified Networking Gaps
-When looking into the existing ETSI NFV Architectural Framework) model we can identify a number of gaps. We need to address these gaps to enable a useful Reference Model for the Networking. 
+When looking into the existing ETSI NFV Architectural Framework model, number of gaps can be identified as detailed below. These gaps will be addressed under Networking to enable a functional Reference Model. 
 1.	ETSI NFV does not have a separation between HW Infrastructure Management and SW Virtualization Management and by that the cardinality of having multiple CaaS and IaaS layers on top of a shared HW Infrastructure Layer cannot be expressed
 1.	ETSI NFV lacks a description of the reference points in between the SW Virtualization Layers and the HW Infrastructure Layer denoted as Vl-Ha and by that cannot express Packet Flows, Control/Status Interfaces and Management Interfaces them in between
 1.	ETSI NFV model does not explicitly call out an HW Abstraction layer on top of the HW resources and by that many SW Virtualization Layers act upon the physical HW components in a non-portable way that do not allow an HW Infrastructure to compose abstracted HW resources from pools of individual HW components
@@ -50,9 +50,13 @@ When looking into the existing ETSI NFV Architectural Framework) model we can id
 1.	ETSI NFV model does not include any reference to SDN (Software Define Network) controller(s) and relevant integration points into NFVI and MANO 
 1.	ETSI NFV model does not have a way to enable programmable forwarding planes in the HW layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
 
+<p align="center"><img src="../tech/figures/ETSI.png"><b> Figure 5-1-1: ETSI model and Networking.</b></p>
+
+Note: Other gaps may be identified and addressed during the later stages of work on the RM contents for Networking.
+
 <a name="5.1.1.2"></a>
 #### 5.1.1.2 Specific topics to be included in the Networking Scope
-We have also identified a number of specific topics to be included into the Networking Scope.  The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
+To address the gaps detailed above the specific topics listed below will be covered under Networking.The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
 1. Network connectivity for L3 tenants, GWs, SDS, etc
 1. Spine-Leaf Architecture ( 3 Tier or 5 Tier CLOS architecture )
 1. Automation of the located Fabric ( Programmable Fabric )
