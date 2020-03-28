@@ -10,7 +10,7 @@
 * [Unresolved Pull Requests Policy](#unresolved)
 
 <a name="permissions"></a>
-### Collaborators
+### Permission levels
 There are different permissions (levels) available for contributing into CNTT CNTT:
 - **Outside Collaborators**: This includes general public. Outside collaborators can add comments on issues and Pull Requests.
 - **Read, Triage, Write, and Maintain** Permissions, which are explained in [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization), will be assigned as follows:
