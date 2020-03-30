@@ -66,6 +66,8 @@ Note: This Principle may be deployed in many different ways depending on target 
 
 •	**Edge**: Can be extended to covers the edge use cases
 
+•	**Future prove **: should be support a new acceleration technologies like smart NIC 
+
 
 This section catalogs CNTT's high-level objectives for the Network Fabric Strategy. 
 
