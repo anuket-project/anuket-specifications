@@ -162,8 +162,8 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 | Ref       | Cloud Infrastructure Capability                       | Unit                   | Definition/Notes                                                   |
 |-----------|-------------------------------------------------------|------------------------|--------------------------------------------------------|
-| i.cap.014 | CPU cores consumed by NFVI overhead in a compute node | % (of total available) | Indicates the percentage of cores consumed by NFVI components (including host OS) in a compute node  |
-| i.cap.015 | Memory consumed by NFVI overhead in a compute node    | % (of total available) | Indicates the percentage of memory consumed by NFVI components (including host OS) in a compute node  |
+| i.cap.014 | CPU cores consumed by the Cloud Infrastructure overhead in a compute node | % (of total available) | Indicates the percentage of cores consumed by the Cloud Infrastructure components (including host OS) in a compute node  |
+| i.cap.015 | Memory consumed by the Cloud Infrastructure overhead in a compute node    | % (of total available) | Indicates the percentage of memory consumed by the Cloud Infrastructure components (including host OS) in a compute node  |
 
 <p align="center"><b>Table 4-5:</b> Internal Resource Capabilities of Cloud Infrastructure</p>
 
@@ -203,7 +203,7 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 | Ref       | Cloud Infrastructure capability | Unit   | Definition/Notes                      |
 |-----------|---------------------------------|--------|---------------------------------------|
-| i.cap.018 | Huge page support               | Yes/No | Indicates if NFVI supports huge pages |
+| i.cap.018 | Huge page support               | Yes/No | Indicates if the Cloud Infrastructure supports huge pages |
 
 <p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of Cloud Infrastructure</p>
 
@@ -238,8 +238,8 @@ Table 4-9 shows capabilities related to resources allocation
 | Ref       | Cloud Infrastructure management Capability | Unit   | Definition/Notes                                                 |
 |-----------|--------------------------------------------|--------|------------------------------------------------------------------|
 | e.man.001 | Virtual Compute allocation                 | Yes/No | Capability to allocate virtual compute resources to a workload   |
-| e.man.002 | Virtual Storage allocation                 | Yes/No | Capability to allocate virtual storage resourcesto a workload    |
-| e.man.003 | Virtual Networking resources allocation    | Yes/No | Capability to allocate virtual networking resourcesto a workload |
+| e.man.002 | Virtual Storage allocation                 | Yes/No | Capability to allocate virtual storage resources to a workload    |
+| e.man.003 | Virtual Networking resources allocation    | Yes/No | Capability to allocate virtual networking resources to a workload |
 | e.man.004 | Multi-tenant isolation                     | Yes/No | Capability to isolate resources between tenants                  |
 | e.man.005 | Images management                          | Yes/No | Capability to manage workload software images                    |
 
@@ -406,7 +406,7 @@ This Cloud Infrastructure Profile is intended to be used for both IT workloads a
 
 <a name="4.2.4.2"></a>
 #### 4.2.4.2 Network Intensive Profile
-This NFVI Profile is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
+This Cloud Infrastructure Profile is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
