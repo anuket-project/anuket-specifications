@@ -26,13 +26,13 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network FUnction Virtualisation Infrastrcuture (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the cloud infrastructure (NFVI and the VIM) in a consistent and reliable way. 
+This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network FUnction Virtualisation Infrastrcuture (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the Cloud Infrastructure (NFVI and the VIM) in a consistent and reliable way. 
 
-[OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and fetaures, cloud infrastructure features and how we expect them to be implemented.
+[OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and fetaures, Cloud Infrastructure features and how we expect them to be implemented.
 
 This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
-The cloud infrastructure layer includes the physical infrastructure which is then separated into virtual resources via a hypervisor.
+The Cloud Infrastructure layer includes the physical infrastructure which is then separated into virtual resources via a hypervisor.
 The VIM is expected to be OpenStack in line with the OpenStack Foundation core release.
 
 This chapter is organized as follows:
@@ -62,7 +62,7 @@ This section will describe the different services that are exposed for the VNF c
 -	Tenants: to provide isolated environments
 -	Virtual Compute: to provide computing resources
 -	Virtual Storage: to provide storage capacity and performance
--	Virtual networking: to provide connectivity within cloud infrastructure and with external networks
+-	Virtual networking: to provide connectivity within Ccloud Infrastructure and with external networks
 
 <a name="3.2.1"></a>
 ### 3.2.1. Multi-Tenancy (execution environment)
@@ -81,7 +81,7 @@ The configuration of the virtual resources will depend on the profile and the fl
 
 <a name="3.2.3"></a>
 ### 3.2.3. Virtual Storage
-The three storage services offered by cloud infrastructure are:
+The three storage services offered by Cloud Infrastructure are:
 -	Persistent storage 
 -	Ephemeral storage
 -	Image storage
@@ -125,7 +125,7 @@ The Cloud Infrastructure Management Software (VIM) provides the services for the
 
 <a name="3.3.1"></a>
 ### 3.3.1. VIM Core services 
-OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for cloud infrastructure/VIM use cases. Other components are optional and provide functionality above and beyond cloud infrastructure/VIM requirements.
+OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for Cloud Infrastructure/VIM use cases. Other components are optional and provide functionality above and beyond Cloud Infrastructure/VIM requirements.
 
 The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific CNTT conformant implementation requirements and recommendations for the core services.
 
@@ -252,9 +252,9 @@ The aim is to specify the requirements on deploying the VIM, from ground up (in 
     - FPGA
 
 #### 3.4.2.1. Compute
-Cloud infrastructure physical Nodes
+Cloud Infrastructure physical Nodes
 
-The physical resources required for the cloud infrastructure are mainly based on COTS X86 hardware for control and data plane nodes. 
+The physical resources required for the Cloud Infrastructure are mainly based on COTS X86 hardware for control and data plane nodes. 
 HW profiles are defined in the chapters 5.3 and 5.4 of the reference model document.
 
 #### 3.4.2.2. Network
