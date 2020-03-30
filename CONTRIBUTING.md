@@ -13,9 +13,9 @@
 ### Permission levels
 There are different permissions (levels) available for contributing into CNTT:
 - **Outside Collaborators**: This includes general public. 
-  - Outside collaborators can add comments to issues and Pull Requests.
+  - Outside collaborators can create issues and add comments to issues and Pull Requests.
 - **Read, Triage, Write, and Maintain** Permissions, which are explained in [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization), will be assigned as follows:
-  - **Read** will be assigned to those who are interested to create issues, join the discussion and provide feedback.
+  - **Read** will be assigned to those who are interested to create issues, join the discussion, receive notifications, and provide feedback.
   - **Triage** will be assigned to active contributors who create issues, pull requests and review them.
   - **Writes** will be assigned to Workstream Co-Leads to allow them to manage issues and pull request, approve them and be auto requested for review.
   - **Maintain** will be assigned to Workstream Leads to allow them to merge PRs into the repository.
