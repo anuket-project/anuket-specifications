@@ -86,7 +86,7 @@ Traceability to Reference Model.
 | `req.inf.ntw.05` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
 | `req.inf.ntw.07` | Network | The Architecture **must** support network resiliency. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
 | `req.inf.ntw.10` | Network | The Cloud Infrastructure Network Fabric **must** be capable of enabling highly available (Five 9’s or better) Cloud Infrastructure. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
-| `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for cloud infrastructure to support various infrastructure profiles (Base, Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
+| `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for Cloud Infrastructure to support various infrastructure profiles (Base, Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
 | `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.| |
 | `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for Cloud Infrastructure internal networks.| |
 | `req.inf.ntw.17` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](./chapter05.md#525-neutron) |
@@ -213,7 +213,7 @@ The requirements listed in this section are optional, and are not required in or
 | `req.inf.ntw.06` | Network | The Architecture **should** support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently. | |
 | `req.inf.ntw.08` | Network | The Cloud Infrastructure Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. | |
 | `req.inf.ntw.09` | Network | The Cloud Infrastructure Network Fabric **should** embrace open-based standards and technologies. | |
-| `req.inf.ntw.11` | Network | The Cloud Infrastructure Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable cloud infrastructure sites. | |
+| `req.inf.ntw.11` | Network | The Cloud Infrastructure Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable Cloud Infrastructure sites. | |
 | `req.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. | |
 | `req.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. | |
 | `req.inf.ntw.14` | Network | The SDN solution **should** be able to be centrally administrated and configured. | |
