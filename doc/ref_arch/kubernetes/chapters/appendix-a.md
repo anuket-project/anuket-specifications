@@ -1,5 +1,5 @@
 [<< Back](../../kubernetes)
-# Appendix A - Guidance For VNF Vendors
+# Appendix A - Guidance For application Vendors
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
