@@ -37,8 +37,8 @@ The table below captured the list of events, long holidays only, release plan an
 ## Events
 
 The list of events for the technical F2F planning captured from LGN events. <br>
-•	ONES NA 2020 (Los Angeles, California) - April 20 & 21. Technical meetings April 22 & 23rd. <br>
-•	LFN DDF (Seoul, South Korea) - June 1-4. <br>
+•	~~ONES NA 2020 (Los Angeles, California) - April 20 & 21. Technical meetings April 22 & 23rd. <br>~~
+•	~~LFN DDF (Seoul, South Korea) - June 1-4. <br>~~
 •	ONES Europe 2020 (Antwerp, Belgium) - September 29 & 30. Technical meetings October 1 & 2.
 
 <a name="signoff"></a>
