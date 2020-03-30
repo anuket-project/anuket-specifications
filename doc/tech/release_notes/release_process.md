@@ -16,7 +16,7 @@ It should be considered a living document until it is agreed and signed by all t
 <a name="releasemodel"></a>
 ## Release Model
 
-As a guiding principle, all the development occurs in “Master” branch. All the contribution for the milestone (especially M3) goes into ”Master”. After M4 (Proof Reading), at one point in the release candidate (RC) (for now maintain RC0) for Baldy and based on experience we shall increase or limit what get into the final release. To make this happen, branch out from “Master”, create a delivery branch (“Baldy”, “Baraque”, etc). Developers can continue their next release branch work in “Master”. At the end of each release, artifacts are “tagged” in GitHub according to the guideline and principles defined.
+As a guiding principle, all the development occurs in “Master” branch. All the contribution for the milestone (especially M3) goes into ”Master”. After M4 (Proof Reading), at one point in the release candidate (for now maintain Release Candidate 0) for Baldy and based on experience we shall increase or limit what get into the final release. To make this happen, branch out from “Master”, create a delivery branch (“Baldy”, “Baraque”, etc). Developers can continue their next release branch work in “Master”. At the end of each release, artifacts are “tagged” in GitHub according to the guideline and principles defined.
 
 To deliver a fixes into the latest release, simply apply the fixes on the "master" branch and then cherry pick technique will be applied for a particular PR which would agree jointly and tag it (4.0.1-Baldy). In case, if the "master" has evolved significantly then apply the fixes on the latest release branch directly. As shown in the below diagram.
 
@@ -28,7 +28,7 @@ During the development cycle when working with release branches, developers or a
 <a name="timeline"></a>
 ## Release Delivery Timeline
 
-The table below captured the list of events, long holidays only, release plan and sign off with corresponding dates. The release plan consists of all the milestones associated with the release candidate (RC).
+The table below captured the list of events, long holidays only, release plan and sign off with corresponding dates. The release plan consists of all the milestones associated with the release candidate.
 
 <p align="center"><img src="../figures/proposeddate.png" alt="Baldy Roadmap" title="Baldy Roadmap" width="80%"/></p>
 <p align="center"><b>Figure 2:</b> 2020 Release Roadmap</p>
