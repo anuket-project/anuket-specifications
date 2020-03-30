@@ -305,7 +305,7 @@ Please note that the initial version of the [Cyborg API v1.0](https://docs.opens
 
 | **OpenStack Service**           | **API Version** |
 |---------------------------------|-----------------|
-| OpenStack Key Manager: Barbican | v1              |
+| Key Manager: Barbican           | v1              |
 
 Barbican API Documentation: https://docs.openstack.org/barbican/pike/api/
 
