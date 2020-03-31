@@ -62,35 +62,13 @@ Note: This Principle may be deployed in many different ways depending on target 
 
 •	**Multi-Cloud**: should be capable to handle any VNF , CNF and BareMetal workload
 
-•	**Telco grade**: should be a Telco grade Fabric and SDN to fulfil Telco requirements such as Service chaining
-
+•	**Telco grade**: should be a Telco grade Fabric and SDN to fulfil Telco requirements such as Service chaining , Network Slicing,...etc
 •	**Edge**: Can be extended to covers the edge use cases
 
 •	**Future prove**: should be support a new acceleration technologies like smart NIC 
 
 
-This section catalogs CNTT's high-level objectives for the Network Fabric Strategy. 
 
-> List needs to be prioritized; expect additional objectives to be added, as they arise. This represents the _What_, not the _How_.
-
-1. The implementation of Networking inside the HW Layer should not be visible to the VNF/CNF and should preferably not even be visible to the IaaS/CaaS
-1. Provide networks for L3 tenant, GWs, SDS, etc.
-1. Cleanly decouple interface/reference points between CNTT constituencies
-1. Provide interoperability at layer demarcation/reference points within the cloud infrastructure. Ex.:
-   * any RA couples to RM
-   * like RI couples to RA
-   * like VIs (Vendor's Implementations) couple to RA
-   * Operators can design or procure a compatible fabric
-1. Concurrently supports containerized and virtualized coexistence for VNF->CNF cutovers, as well as protracted parallel operations
-1. Provide a version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration w/ a wide selection of fabric implementations
-1. Provide ability for any number of Operator-specific fabrics to power CNTT cloud infrastructure
-1. Enable RC's ability to realize mandated OVP qualification deliverables
-1. Unambiguously document the responsibilities of each CNTT constituency
-1. In cases where a VNF/CNF require HW layer resources it should be under the control of the Virtualization Layer
-1. It is important that the HW Infrastructure Manager, each VIM and each VNF/CNF could be managed by separate organizations
-1. Drive the industry towards convergence on ABIs supporting Cloud-Native implementations for SmartNICs
-
-> _**Editor's Note:** Consider moving objectives to a table_
 
 <a name="5.1.3"></a>
 ### 5.1.3 Networking Requirements
