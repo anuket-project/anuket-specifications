@@ -523,7 +523,6 @@ Table 7-2 shows security capabilities
 <a name="7.11"></a>
 ## 7.11 Consolidated Security Requirements
 
-Please note that **Virtual Resource Manager (VRM)** is used to collectively represent VIM, K8s, etc.
 
 <a name="7.11.1"></a>
 ### 7.11.1. System Hardening
@@ -539,14 +538,14 @@ Please note that **Virtual Resource Manager (VRM)** is used to collectively repr
 | sec.gen.007 | All servers part of NFVI **must** be Time synchronized with authenticated Time service |  | |
 | sec.gen.008 | All servers part of NFVI **must** be regularly updated to address security vulnerabilities |  | |
 | sec.gen.009 | The Platform **must** support Software integrity protection and verification |  | |
-| sec.gen.010 | The NFVI **must** support Secure storage (all types) |  | Expand/Delete based on other reqts |
-| sec.gen.011 | The NFVI **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  | NIST reference? |
+| sec.gen.010 | The NFVI **must** support Secure storage (all types) |  | Expand/Delete based on other requirements |
+| sec.gen.011 | The NFVI **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  | |
 | sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  | |
 | sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  | |
 | sec.gen.014 | All servers part of NFVI **should** support measured boot and an attestation server that monitors the measurements of the servers. |  | |
 
 <a name="7.11.21"></a>
-###  7.11.2. Platform Access
+###  7.11.2. Platform and Access
 
 Ref | Requirement | Unit | Definition |
 |-------|-------|-------|---------|
@@ -556,7 +555,7 @@ Ref | Requirement | Unit | Definition |
 | sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic |  | |
 | sec.sys.004 | The NFVI **must** support Secure network channels |  | A secure channel enables transferring of data that is resistant to overhearing and tampering |
 | sec.sys.005 | The NFVI **must** segregate the underlay and overlay networks |  | |
-| sec.sys.006 | The NFVI must be able to utilize the VRM identity management capabilities |  | |
+| sec.sys.006 | The NFVI must be able to utilize the Cloud Infrastructure Manager identity management capabilities |  | |
 | sec.sys.007 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) |  | |
 | sec.sys.008 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. |  | Communication between different trust domains is not allowed, by default.  |
 | sec.sys.009 | The Platform **must** support creation of Trust Relationships between trust domains |  | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
@@ -586,7 +585,7 @@ Ref | Requirement | Unit | Definition |
 |---|----|---|----|
 | sec.wl.001 | The Platform **must** support Workload placement policy |  | |
 | sec.wl.002 | The Platform **must** support operational security |  | |
-| sec.wl.003 | The Platform **must** support secure provision of workloads  |  | |
+| sec.wl.003 | The Platform **must** support secure provisioning of workloads  |  | |
 | sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) |  | |
 | sec.wl.005 | Production workloads **must** be separated from non-production workloads |  | |
 | sec.wl.006 | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) |  | |
@@ -612,7 +611,7 @@ Ref | Requirement | Unit | Definition |
 |---|----|---|----|
 | sec.lcm.001 | The Platform **must** support Secure Provisioning, Maintaining availability, Deprovisioning (secure Clean-Up) of workload resources |  | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |
 | sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS |  | |
-| sec.lcm.003 | The Cloud Operator **must** implement change management for NFVI, VRM and other components of the cloud |  | Platform change control on hardware |
+| sec.lcm.003 | The Cloud Operator **must** implement change management for NFVI, Cloud Infrastructure Manager and other components of the cloud |  | Platform change control on hardware |
 | sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes |  | Templated approved changes for automation where available |
 | sec.lcm.005 | Platform **must** provide logs and these logs must be regularly scanned |  | |
 | sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests | Yes/No | |
