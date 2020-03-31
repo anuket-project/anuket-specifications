@@ -8,7 +8,9 @@
   * [1.2 Hardware layers terminology](#1.2)
   * [1.3 Operational and administrative terminology](#1.3)
   * [1.4 Container Related Terminology](#1.4)
-  * [1.5 Other terminology](#1.5)
+  * [1.5 OpenStack Related Terminology](#1.5) 
+  * [1.6 Cloud Platform Abstraction Related Terminology](#1.6)
+  * [1.7 Other terminology](#1.7)
 
 <a name="1.0"></a>
 # 1 Terminology
@@ -20,15 +22,15 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Network Function Virtualisation (NFV)**: The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 - **Network Function Virtualisation Infrastructure (NFVI)**: The totality of all hardware and software components used to build the environment in which a set of VAs are deployed (also referred to as cloud infrastructure).
- >_*Note:*_ The NFV-Infrastructure can span across many locations, e.g. places where data centres or edge nodes are operated. The network providing connectivity between these locations is regarded to be part of the cloud infrastructure. cloud infrastructure and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
-
+ >_*Note:*_ The NFVI can span across many locations, e.g. places where data centres or edge nodes are operated. The network providing connectivity between these locations is regarded to be part of the cloud infrastructure. **NFVI** and **VNF** are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
+- **Cloud Infrastructure**: A generic term covering **NFVI** and **CaaS** capabilities - essentially the infrastructure on which a **Workload** can be executed.
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
-  - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Containerised NF**.
+  - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Cloud Native NF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
 - **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **Cloud Infrastructure**.
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
-- **Cloud native Network Function (CNF)**: An implementation of a Virtual Network Function (**VNF**, as defined by ETSI GS NFV 003) that adheres to the CNCF Cloud Native Definition or a **VNF** that is transitioning to cloud native.
-  >_*Note:*_ This definition is derived from [CNCF TUG White Paper](https://docs.google.com/document/d/1-zqxz5bdCLTuOEvi2ybADR3PcmzbBhNt6YkNnvx-KoA/edit#heading=h.5x0d5h95i329), which is still a draft. A cloud native **VNF** is microservices-oriented, to increase agility and maintainability, and can be dynamically orchestrated and managed to optimize resource utilization. The microservices typically run using a container engine, not directly on the underlaying infrastructure itself. The containers themselves may use Linux, Docker or other similar container technology.
+- **Cloud Native Network Function (CNF)**: A cloud native network function (CNF) is a cloud native application that implements network functionality. A CNF consists of one or more microservices and has been developed using Cloud Native Principles including immutable infrastructure, declarative APIs, and a “repeatable deployment process”.
+  >_*Note:*_ This definition is derived from the [Cloud Native Thinking for Telecommunications Whitepaper](https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4), which also includes further detail and examples.
 - **Virtual Application (VA)**: A general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
 - **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of cloud infrastructure are:
@@ -59,9 +61,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Cloud Infrastructure Hardware Profile**: defines the behaviour, capabilities and metrics provided by an cloud infrastructure Hardware Layer.
   - **Host Profile**: is another term for a **cloud infrastructure hardware profile**.
 - **Cloud Infrastructure Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **Cloud Infrastructure** HW deployment.
-- **Simultaneous Multi-threading**: Simultaneous multithreading (SMT) is a technique for improving the overall
-efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution to
-better utilize the resources provided by modern processor architectures.
+- **Simultaneous Multi-threading**: Simultaneous multithreading (SMT) is a technique for improving the overall efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution to better utilise the resources provided by modern processor architectures.
 
 
 <a name="1.3"></a>
@@ -88,7 +88,7 @@ better utilize the resources provided by modern processor architectures.
 - **Container Image**:	Stored instance of a container that holds a set of software needed to run an application.
 - **Container**:	A lightweight and portable executable image that contains software and all of its dependencies.
 >_*Note:*_ OCI defines **Container** as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment."
-A **Container** provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Containers** and **VM**s is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
+A **Container** provides operating-system-level virtualisation by abstracting the “user space”. One big difference between **Containers** and **VMs** is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
 
 - **Container Runtime**: The software that is responsible for running containers.
 >_*Note:*_ as explained in [OCI Glossary](https://github.com/opencontainers/runtime-spec/blob/master/glossary.md) it reads the configuration files for a **Container** from a directory structure, uses that information to create a container, launches a process inside the container, and performs other lifecycle actions.
@@ -96,7 +96,7 @@ A **Container** provides operating-system-level virtualization by abstracting th
 - **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 
 - **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
-- **Kubernetes Cluster**: A set of machines, called nodes and master, that run containerized applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
+- **Kubernetes Cluster**: A set of machines, called nodes and master, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
 >_*Note:*_ adapted from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster).
 - **Kubernetes Master**:	The master node(s) manage the worker nodes and the pods in the cluster. Multiple masters are used to provide a cluster with failover and high availability.
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
@@ -108,16 +108,53 @@ Terms not defined by Kubernetes:
 - **CaaS**:	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
 - **CaaS Manager**:	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
 
-<a name="1.5"></a>
-## 1.5 Other Referenced Terminology
 
-- **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **Cloud Infrastructure** compute, storage and network resources.
+<a name="1.5"></a>
+## 1.5 OpenStack Related Terminology
+
+>_*Note:*_ The official [OpenStack Glossary]( https://docs.openstack.org/image-guide/common/glossary.html) is an extensive list of OpenStack-related concepts. Some additional terms used in the Reference Architecture RA-1 or used to relate RA-1 terms with terms defined elsewhere.
+
+**Core (physical)** is an independent computer processing unit (pcpu) that can independently execute CPU instructions but is integrated with other cores on a multiprocessor chip (integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
+
+**Flavor Capabilities** such as (CPU Pinning, NUMA, huge pages): CNTT NFVI Profile
+
+**Flavor Geometry** Flavor sizing such as number of vCPUs, RAM, disk, etc.
+
+**[Fluentd](https://www.fluentd.org/)**, a CNCF graduated project, is an open-source data collector for unified logging layer, which allows data collection and consumption for better use and understanding of data.
+
+**Host profile** is a set of underlay configuration values used to install a new compute host/server. Typically, the host profile configurations match the capabilities of one or more flavors.
+
+**Hugepages:** Physical memory is partitioned and accessed using the basic page unit (in Linux default size of 4 KB). Hugepages, typically 2 MB and 1GB size, allows large amounts of memory to be utilised with reduced overhead. In an NFV environment, huge pages are critical to support large memory pool allocation for data packet buffers. This results in fewer Translation Lookaside Buffers (TLB) lookups, which reduces the virtual to physical pages address translations. Without huge pages enabled high TLB miss rates would occur thereby degrading performance.
+
+**Kibana** is an open source data visualisation system
+
+**Prometheus** is an open-source monitoring and alerting system.
+
+**Software Defined Storage (SDS)** architecture consists of the storage software that is independent from the underlying storage hardware. The storage access software provides data request interfaces (APIs) and the SDS controller software provides storage access services and networking.
+
+<a name="1.6"></a>
+## 1.6 Cloud Platform Abstraction Related Terminology:
+- Decoupling, Loose Coupling = Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the implementation details of other separate components. Loose coupling is the opposite of tight coupling. ([Wikipedia:Loose Coupling](https://en.wikipedia.org/wiki/Loose_coupling))
+- Abstraction = Process of removing smaller details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)), [Wikipedia:Generalization](https://en.wikipedia.org/wiki/Generalization))
+- Encapsulation = Restricting of direct access to some of an object's components. ([Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)))
+- Appliance deployment model = Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
+- Cloud deployment model = Applications are decoupled from the platform provided by Cloud operator.
+- Application Control = Any method or system of controlling applications (VNFs). Depending on RA and technologies used, this can be a VNF Manager or NFV Orchestrator provided as a VNF or Platform capability.
+- Decomposition = Decomposition (also known as factoring) is breaking a complex system into parts that are easier to program and maintain. ([Wikipedia:Decomposition](https://en.wikipedia.org/wiki/Decomposition_(computer_science)))
+- Resilience = Resilience is the ability to provide and maintain an acceptable level of service in the face of various faults and challenges to normal operation. ([Wikipedia:Resilience](https://en.wikipedia.org/wiki/Resilience_(network)))
+- Observability = Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs. ([Wikipedia:Observability](https://en.wikipedia.org/wiki/Observability))
+
+<a name="1.7"></a>
+## 1.7 Other Referenced Terminology
+
+- **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **Network Function Virtualisation Infrastructure** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **Cloud Infrastructure** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
 - **Platform**: A cloud capabilities type in which the cloud service user can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)).
->_*Note:*_ For CNTT,  this includes the physical infrastructure, Operating Systems, virtualization/containerization software and other orchestration, security, monitoring/logging and life-cycle management software.
+>_*Note:*_ For CNTT,  this includes the physical infrastructure, Operating Systems, virtualisation/containerisation software and other orchestration, security, monitoring/logging and life-cycle management software.
 
 - **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the cloud infrastructure, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
 
 - **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance.
 
 - PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
+
