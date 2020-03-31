@@ -11,3 +11,12 @@
 
 <a name="5.1"></a>
 ## 5.1 Edge
+
+Content 
+•	Objective ( High level Objective ) 
+•	Scope ( focus on Edge Scope , in/out scope , Next Slide ) 
+•	CNTT Edge Principle & Strategy 
+•	CNTT Edge roadmap 
+•	Use cases ( that CNTT Edge will focus )  
+•	Terminologies 
+•	SDO ( Engagement with other SDOs)
