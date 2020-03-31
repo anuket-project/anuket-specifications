@@ -126,7 +126,7 @@ The following table contains a comparision of relevant features and requirements
 | `req.inf.ntw.15` | Not relevant | Not relevant | Not relevant |
 | `req.inf.ntw.16` | Supported | Supported | Supported |
 | Cluster wide IP address management | Not suported | Supported | Supported |
-| Service based dicovery of all provisioned interfaces | Not supported | Supported | Supported |
+| Service based discovery of all provisioned interfaces | Not supported | Supported | Supported |
 
  [Calico](https://github.com/projectcalico/cni-plugin) may be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.02` due to it's capability to handle `NetworkPolicies`, what is missing from [Flannel](https://github.com/coreos/flannel-cni).
 For the network of signalling connections the built in IPVLAN CNI of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used as these provide NAT-less connectivity (`req.inf.ntw.03`). For the user plane network(s) fullfilling requirement `req.inf.ntw.04` the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.
