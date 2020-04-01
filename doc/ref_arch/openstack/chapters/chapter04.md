@@ -388,6 +388,10 @@ The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( ht
 
 DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/pike/admin/config-dvr-ha-snat.html) addresses this vulnerability and is, thus, the preferred OpenStack Networking solution. 
  
+**Software Defined Networking (SDN)**
+
+SDN, with controllers virtualised and distributed, provides a truly scalable and preferred solution to suport dynamic, very large-scale, high-density, telco cloud environments. OpenStack Neutron, with its plugin architecture, provides the ability to integrate SDN controllers (
+[3.2.5. Virtual Networking – 3rd party SDN solution](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution)). With SDN incorporated in OpenStack, changes to the network is triggered by workloads (and users), translated into Neutron APIs and then handled through neutron plugins by the corresponding SDN agents.
 
 #### 4.3.1.6 Nova
 Nova is the compute management service, Nova depends on all above components and is deployed after. Nova has services running on the control nodes and the compute nodes:
