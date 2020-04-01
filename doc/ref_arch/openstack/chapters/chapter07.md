@@ -76,10 +76,10 @@ NFVI and VIM Maintenance activities can be classified as
 1.	Version changes (upgrade) of NFVI software (for example, Host Operating System, Hypervisor, etc.)
 1.	Version changes of VIM Software (or component services) 
 
-**Deployment (or de-deployment) of infrastructure components** 
+**Deployment (or removal) of infrastructure components** 
 
 In declarative tools, the code with the specified desired state (for example, number of compute servers) is modified to the new desired state. The IaC tool then ensures that the desired state is achieved.
-In procedural tools, the step-by-step code to deploy (de-deploy) infrastructure components need to be specified. Existing code can be cloned, and appropriate changes made to get to the desired state.
+In procedural tools, the step-by-step code to deploy (remove) infrastructure components need to be specified. Existing code can be cloned, and appropriate changes made to get to the desired state.
 
 **Configuration and Version Changes** 
 
