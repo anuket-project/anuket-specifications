@@ -18,14 +18,13 @@ Content
 
 •	Objective ( High level Objective ) 
 
-•	Scope ( focus on Edge Scope , in/out scope ,  ) 
+•	Scope ( focus on Edge Scope , in/out scope ) 
 
 •	CNTT Edge Principle & Strategy 
 
 •	CNTT Edge roadmap 
 
 •	Use cases ( that CNTT Edge will focus ) 
-
 
 
 •	SDO ( Engagement with other SDOs)
