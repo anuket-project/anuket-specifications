@@ -45,7 +45,7 @@ Traceability to Reference Model.
 <a name="2.3"></a>
 ## 2.3 Architecture and OpenStack Requirements
 
-"Architecture" in this chapter refers to Cloud infrastructure (referred to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3)."
+"Architecture" in this chapter refers to Cloud infrastructure (referred to as NFVI by ETSI) + VIM (as specified in Reference Model Chapter 3).
 
 <a name="2.3.1"></a>
 ### 2.3.1 General Requirements
