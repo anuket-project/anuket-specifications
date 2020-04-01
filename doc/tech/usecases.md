@@ -18,7 +18,7 @@ Content
 
 •	Objective ( High level Objective ) 
 
-•	Scope ( focus on Edge Scope , in/out scope , Next Slide ) 
+•	Scope ( focus on Edge Scope , in/out scope ,  ) 
 
 •	CNTT Edge Principle & Strategy 
 
