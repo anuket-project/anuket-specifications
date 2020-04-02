@@ -24,21 +24,17 @@
 
 <a name="4.1"></a>
 ## 4.1 Introduction.
-**Will update this section with a summary from the sub-chapters**
 
-<!--
-Chapter 3 presented the high level architecture and core OpenStack services for creating an IaaS cloud. This chapter discusses the second level of details (as defined by L3) including deployment topology, distribution of the core OpenStack services among Controller and Compute nodes.
+Chapter 3 introduced the components of an OpenStack-based IaaS
+-	Consumable Infrastructure Resources and Services
+-	NFVI Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
+-	Underlying physical compute, storage and networking resources
 
-Additionally, This Chapter will delve deeper into certain topics that need to be considered in creating and operating an OpenStack based IaaS cloud, such as:
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for flavors. 
 
-- The physical (underlay) and the overlay networks needed for intra tenant and external (to the tenant) communications.
-- Cloud topology related to host aggregates and availability zones, and minimal software versions for shared services (kernel, host operating system, common drivers, etc.).
-- Listing of some of the requirements for Security and Life Cycle Management.
--->
 
 <a name="4.2"></a>
 ## 4.2 Underlying Resources
-**content to be developed**
 
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
@@ -143,8 +139,14 @@ CPU reservation for host: 1 core per NUMA
     - minimum: two nodes per profile
 -	HW specifications
     -	Boot disks are dedicated with Flash technology disks
-    - In case of DPDK usage, cores (together with their sibling threads) must be reserved for DPDK Poll Mode Drivers (PMD), hugepages set to at least 1 GB, and all power settings disabled in the BIOS. The number of cores reserved for this overhead depends on the desired throughput (the number of Mpps we want to deliver).
-    
+
+- In case of DPDK usage:
+
+| Layer | Description |
+|-------------|--|
+| Cloud infrastructure | Important is placement of NICs to get NUMA-balanced system (balancing the I/O, memory, and storage across both sockets), and configuration of NIC features. Server BIOS and Host OS kernel command line settings are described in [DPDK release notes](http://doc.dpdk.org/guides/rel_notes/) and [DPDK performance reports](http://core.dpdk.org/perf-reports/). Disabling power settings (like Intel Turbo Boost Technology) brings stable performance results, although understanding if and when they benefit workloads and enabling them can achieve better performance results. |
+| Workload | DPDK uses core affinity along with 1G or 2M Huge Pages, NUMA settings (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode Drivers (PMD, on reserved cores) to get the best performance. DPDK versions xx.11 are Long-Term Support maintained stable release with back-ported bug fixes for a two-year period. |
+
 -	Sizing rules
 
 | Number of CPU sockets| s | 
