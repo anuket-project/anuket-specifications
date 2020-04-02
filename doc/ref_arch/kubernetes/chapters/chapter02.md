@@ -95,27 +95,35 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the Cloud Infrastructure | at least 16<sup>1)</sup> | Y |
-| e.res.cap.002 | Max memory in MB that can be assigned to a single pod by the Cloud Infrastructure | at least 32 GB<sup>1)</sup> | Y |
-| e.res.cap.003 | Max storage in GB that can be assigned to a single pod by the Cloud Infrastructure | at least 320 GB<sup>1)</sup> | Y |
-| e.res.cap.004 | # Connection Points | 6 | Y |
-| e.res.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
-| e.per.cap.001 | CPU pinning support | | Y |
-| e.per.cap.002 | NUMA support | | Y |
-| e.per.cap.003 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.per.cap.004 | Crypto Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.per.cap.005 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.per.cap.006 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.per.cap.007 | Enhanced Cache Management | | X (if offered) |
-| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | | N<sup>3)</sup> |
-| i.nfvi.sla.cap.001 | CPU overbooking | 1:1, 1:4 | Y |
-| i.nfvi.sla.cap.002 | vNIC QoS | | Y |
-| i.nfvi.per.cap.001 | Huge page support |  | Y |
-| i.nfvi.mon.cap.001 | Monitor host CPU usage |  | Y |
-| i.nfvi.mon.cap.002 | Monitor virtual compute CPU usage | | Y |
-| i.nfvi.mon.cap.003 | Monitor host CPU utilization | | Y |
-| i.nfvi.mon.cap.004 | Monitor virtual compute CPU utilization | | Y |
-| i.nfvi.mon.cap.007 | Monitor external storage capacity | | Y |
+| e.cap.001 | Max number of vCPU that can be assigned to a single pod by the Cloud Infrastructure | at least 16<sup>1)</sup> | Y |
+| e.cap.002 | Max memory in MB that can be assigned to a single pod by the Cloud Infrastructure | at least 32 GB<sup>1)</sup> | Y |
+| e.cap.003 | Max storage in GB that can be assigned to a single pod by the Cloud Infrastructure | at least 320 GB<sup>1)</sup> | Y |
+| e.cap.004 | # Connection Points | 6 | Y |
+| e.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
+| e.cap.006 | CPU pinning support | | Y |
+| e.cap.007 | NUMA support | | Y |
+| e.cap.008 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.009 | Crypto Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.010 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.011 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.012 | Enhanced Cache Management | | X (if offered) |
+| e.cap.013 | SR-IOV over PCI-PT | | Y |
+| e.cap.014 | GPU/NPU | | X (if offered) |
+| e.cap.015 | SmartNIC | | X (if offered) |
+| e.cap.016 | FPGA/other Acceleration H/W | | X (if offered) |
+| e.cap.017 | Monitoring of L2-7 data | | N<sup>3)</sup> |
+| i.cap.014 | CPU cores consumed by the Cloud Infrastructure on the worker nodes | 2 | |
+| i.cap.015 | Memory consumed by Cloud Infrastructure on the worker nodes | 16 Gb | |
+| i.cap.016 | CPU allocation ratio | 1:1, 4:1 | Y |
+| i.cap.017 | Connection point QoS | | Y |
+| i.cap.018 | Huge page support |  | Y |
+| i.pm.001 | Monitor host CPU usage |  | Y |
+| i.pm.002 | Monitor virtual compute CPU usage | | Y |
+| i.pm.003 | Monitor host CPU utilization | | Y |
+| i.pm.004 | Monitor virtual compute CPU utilization | | Y |
+| i.pm.005 | Measurement of external storage IOPs | | ? |
+| i.pm.006 | Measurement of external storage throughput | | ? |
+| i.pm.007 | Available external storage capacity | | ? |
 | nfvi.com.cfg.002 | NUMA awareness | | Y |
 | nfvi.com.cfg.003 | CPU pinning capability | | Y |
 | nfvi.com.cfg.004 | Huge Pages  | | Y |
