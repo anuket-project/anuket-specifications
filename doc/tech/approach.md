@@ -60,7 +60,7 @@ Note: This Principle may be deployed in many different ways depending on target 
 
 •	**Scalability**: should be scalable to handle all traffic traverse North-South and East-West.
 
-•	**Multi-Cloud**: should be capable to handle any VNF , CNF and BareMetal workload
+•	**Workload diversity**: should be capable to handle any VNF , CNF and BareMetal workload
 
 •	**Telco grade**: should be a Telco grade Fabric and SDN to fulfil Telco requirements such as Service chaining , Network Slicing,...etc
 •	**Edge**: Can be extended to covers the edge use cases
