@@ -26,7 +26,7 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network FUnction Virtualisation Infrastrcuture (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the Cloud Infrastructure (NFVI and the VIM) in a consistent and reliable way. 
+This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network Function Virtualisation Infrastructure (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the Cloud Infrastructure (NFVI and the VIM) in a consistent and reliable way. 
 
 [OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and fetaures, Cloud Infrastructure features and how we expect them to be implemented.
 
@@ -62,7 +62,7 @@ This section will describe the different services that are exposed for the VNF c
 -	Tenants: to provide isolated environments
 -	Virtual Compute: to provide computing resources
 -	Virtual Storage: to provide storage capacity and performance
--	Virtual networking: to provide connectivity within Ccloud Infrastructure and with external networks
+-	Virtual networking: to provide connectivity within Cloud Infrastructure and with external networks
 
 <a name="3.2.1"></a>
 ### 3.2.1. Multi-Tenancy (execution environment)
