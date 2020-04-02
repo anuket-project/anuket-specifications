@@ -214,6 +214,8 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.14` | Network | The Architecture **must** support capabilities for integrating SDN controllers. |
 | `req.inf.ntw.15` | Network | The Architecture **should** support Service Mesh Interface (SMI). |
 | `req.inf.ntw.16` | Network | The Architecture **should**  support coexistence of multiple connection points in a pod. |
+| `req.inf.ntw.17` | Network | The Architecture **must** support cluster wide coordination of IP address assignment. |
+| `req.inf.ntw.18` | Network | The Architecture **should** support the use of any interface with a Kubernetes Service if the interface is designed to work with Kubernetes Services. |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |
