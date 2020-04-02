@@ -31,6 +31,7 @@ In order for a Host OS to be conformant with this Reference Architecture it must
 - A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is focussed on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, etc.
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
 - In order to support `req.gen.cnt.03` (immutable infrastructure), the Host OS must be easily reproduced, consistent, disposable, will have a repeatable deployment process, and will not have configuration or artifacts that are modifiable in place (i.e. once it is running).
+- The selection of Host OS shall not restrict the selection of the OS used to build container images (container base image).
 
 Table 4-1 lists the Linux kernel versions that comply with this Reference Architecture specification.
 
