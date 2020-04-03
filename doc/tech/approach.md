@@ -65,6 +65,7 @@ Note: This Principle may be deployed in many different ways depending on target 
 •	**Workload diversity**: should be capable to handle any VNF , CNF and BareMetal workload
 
 •	**Telco grade**: should be a Telco grade Fabric and SDN to fulfil Telco requirements such as Service chaining , Network Slicing,...etc
+
 •	**Edge**: Can be extended to covers the edge use cases
 
 •	**Future prove**: should be support a new acceleration technologies like smart NIC 
