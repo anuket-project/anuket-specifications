@@ -177,5 +177,5 @@ Network Function Virtualisation Infrastructure provides the capability to manage
 
 The physical compute, storage and network resources serve as the foundation of the network function virtualisation infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
 
-<p align="center"><img src="../figures/ch03_model_physical_resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-4:</b> NFVI Physical Resources.</p>
+<p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-4:</b> NFVI Physical Resources</p>
