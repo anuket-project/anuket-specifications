@@ -258,7 +258,7 @@ The physical resources required for the NFVI are mainly based on COTS X86 hardwa
 HW profiles are defined in the chapters 5.3 and 5.4 of the reference model document.
 
 #### 3.4.2.2. Network
-The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up. 
+The recommended network architecture is spine and leaf topology
 
 <p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"><b>Figure 3-3:</b> Network Fabric – Physical</p>
 Figure 3-3 shows a physical network layout where each physical server is dual homed to TOR (Leaf/Access) switches with redundant (2x) connections. The Leaf switches are dual homed with redundant connections to spines.
@@ -267,7 +267,7 @@ Figure 3-3 shows a physical network layout where each physical server is dual ho
 
 [OpenStack](https://docs.openstack.org/arch-design/design-storage.html) supports many different storage architectures and backends. The choice of a particular backend storage is driven by a number of factors including: scalability, resiliency, availability, data durability, capacity and performance. 
 
-Most cloud storage architectures incorporate a number of clustered storage nodes that provide high bandwidth access to physical storage backends connected by high speed networks. The architecture consists of multiple storage controller units, each a generic server (CPU, Cache, storage), managing a number of high-performance hard drives. The distributed block storage software creates an abstract single pool of storage by aggregating all of the controller units. Advanced and high-speed networking (data routing) and global load balancing techniques ensure high-performance, high availability storage system
+Most cloud storage architectures incorporate a number of clustered storage nodes that provide high bandwidth access to physical storage backends connected by high speed networks. The architecture consists of multiple storage controller units, each a generic server (CPU, Cache, storage), managing a number of high-performance hard drives. The distributed block storage software creates an abstract single pool of storage by aggregating all of the controller units. Advanced and high-speed networking (data routing) and global load balancing techniques ensure high-performance,high availability storage system.
 
 <a name="3.5"></a>
 ## 3.5. Cloud Topology

@@ -218,6 +218,8 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.18` | Network | The Architecture **must** support the ability for an operator to choose whether or not to deploy more than one networking solution.
 | `req.inf.ntw.19` | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. |
 | `req.inf.ntw.20` | Network | The networking solution **must**  must not interfere with or cause interference to any interface or network it does not own. |
+| `req.inf.ntw.21` | Network | The Architecture **must** support cluster wide coordination of IP address assignment. |
+| `req.inf.ntw.22` | Network | The Architecture **should** support the use of any interface with a Kubernetes Service if the interface is designed to work with Kubernetes Services. |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |
