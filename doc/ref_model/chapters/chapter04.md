@@ -76,8 +76,6 @@ This section describes a set of explicit NFVI capabilities and performance measu
 | e.nfvi.cap.003 | Total per-instance (ephemeral) storage | GB | Max storage in GB that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.004 | # Connection points | number | Max number of connection points that can be assigned to a single VNFC by NFVI |
 | e.nfvi.cap.005 | Total external (persistent) storage | GB | Max storage in GB that can be attached / mounted to VNFC by NFVI |
-| e.nfvi.cap.017 | Total Availability Zones | number | The number of compute availability zones supported by NFVI |
-| e.nfvi.cap.018 | Total Availability Zones | number | The number of storage availability zones supported by NFVI |
 
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of NFVI</p>
 
@@ -128,7 +126,7 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 | Ref | NFVI Capability | Unit | Definition/Notes |
 |--------------------|---------------------------|--------|----------------------------------------------------|
-| e.nfvi.cap.019 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workoad |
+| e.nfvi.cap.017 | Monitoring of L2-7 data | Yes/No | Ability to monitor L2-L7 data from workload |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of NFVI</p>
 
@@ -245,11 +243,13 @@ Table 4-9 shows capabilities related to resources allocation
 | e.vim.cap.003 | Virtual Networking resources allocation | Yes/No | Capability to allocate virtual networking resources  to VNFC |
 | e.vim.cap.004 | Multi-tenant isolation | Yes/No | Capability to isolate resources between tenants |
 | e.vim.cap.005 | Images management | Yes/No | Capability to manage VNFC software images |
+| e.vim.cap.010 | Compute Availability Zones | list of strings | The names of each Compute Availability Zone that was defined to separate failure domains |
+| e.vim.cap.011 | Storage Availability Zones | list of strings | The names of each Storage Availability Zone that was defined to separate failure domains |
 
 <p align="center"><b>Table 4-9:</b> VIM Resource Allocation Capabilities</p>
 
 
-Table 4-10 Shows performance measurement capabiltities
+Table 4-10 Shows performance measurement capabilities
 
 <a name="Table4-13"></a>
 
