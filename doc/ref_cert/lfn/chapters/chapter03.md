@@ -685,7 +685,7 @@ of 0%) proposed in
 | HeatStacks.list_stacks_and_resources          | 10         |
 
 <a name="3.3.6"></a>
-### 5.3.6 Dataplane benchmarking
+### 3.3.6 Dataplane benchmarking
 
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
 offers two benchmarking dataplane test cases leveraging on:
