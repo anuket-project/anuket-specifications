@@ -144,6 +144,8 @@ There will be dedicated OVP hacking tracks to facilitate VNF vendor onboarding a
 
 The CNTT will collaborate with the respective API workgroups of SDOs (ETSI, MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
 
+>_More diagrams needed to illustrate relationships_
+
 <a name="3.4"></a>
 ## 3.4 Specification Types
 
