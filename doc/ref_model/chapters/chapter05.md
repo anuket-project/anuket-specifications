@@ -137,7 +137,7 @@ This section will detail NFVI Software Profiles and associated configurations fo
 
 | .conf            | Feature                | Type   | Basic | Network Intensive |
 |------------------|------------------------|--------|-------|-------------------|
-| nfvi.com.cfg.001 | CPU allocation ratio   | value  | 4:1   | 1:1               |
+| nfvi.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               |
 | nfvi.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 |
 | nfvi.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 |
 | nfvi.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |
@@ -145,7 +145,7 @@ This section will detail NFVI Software Profiles and associated configurations fo
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
-| nfvi.com.cfg.001 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
+| nfvi.com.cfg.001 | CPU allocation ratio  | value | 1:1 | 1:1  | 1:1 |
 | nfvi.com.cfg.002 | NUMA awareness | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
 | nfvi.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |

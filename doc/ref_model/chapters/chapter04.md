@@ -478,7 +478,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.016`<br />(FPGA/other Acceleration H/W)                        | Yes (if offered)         | No                       | || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
 | `i.cap.014`<br />(CPU cores consumed by the NFVI on the worker nodes) | any                      | any                      | |
 | `i.cap.015`<br />(Memory consumed by NFVI on the worker nodes)        | any                      | any                      | |
-| `i.cap.016`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
+| `i.cap.016`<br />(CPU allocation ratio)                     | 1:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
 | `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
 | `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.pm.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
@@ -504,7 +504,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
 | `e.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
 | `e.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.sla.cap.001`<br />(CPU allocation ratio) | 1:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
