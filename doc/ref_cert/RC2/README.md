@@ -1,8 +1,8 @@
 [<< Back](../)
 
-# Reference Certification - Kubernetes based
+# Reference Conformance - Kubernetes based
 
-This is the Kubernetes Based Reference Certification
+This is the Kubernetes Based Reference Conformance
 
 ## Release Information
 **Release: _0.0_**
