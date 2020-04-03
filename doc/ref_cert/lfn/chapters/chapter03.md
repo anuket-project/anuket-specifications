@@ -6,7 +6,7 @@
 ## Table of Contents
 * [3.1 Introduction](#3.1)
 * [3.2 Selection Criteria](#3.2)
-* [3.3 Test Cases](#3.3)
+* [3.3 Traceability Matrix](#3.3)
   * [3.3.1 Architecture and OpenStack Based](#3.3.1)
   * [3.3.2 Infrastructure](#3.3.2)
   * [3.3.3 VIM](#3.3.3)
