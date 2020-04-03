@@ -43,6 +43,8 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 
 ### 5.1.2 Networking Principles & Strategy
 
+This section introduce some principles that should be followed during developing  and defining  Networking scopes for Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02  - K8s – down to Reference implementation and certificate under CNTT
+
 •	**Abstraction**: A standardized layer between Virtualization Layer domains and the Networking Hardware layer resource pool hiding the implementation details of the Networking Hardware.
 Note: This Principle may be deployed in many different ways depending on target use case requirements, workload characteristics (different algorithms implementing pipeline steps) and available platforms. This includes network functions running on server nodes with our without programmable HW acceleration, or functions running on a programmable standalone network switch in the network.
 
