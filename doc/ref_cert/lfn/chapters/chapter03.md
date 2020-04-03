@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 3. NFVI Test Cases and Traceability to CNTT Requirements
+# 3. Cloud Infrastructure Test Cases and Traceability to CNTT Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
