@@ -70,7 +70,7 @@ From Reference Model section [4.2.2 Virtual Network Interface Specifications](..
 <a name="2.2.3"></a>
 ### 2.2.3 VIM Capabilities
 
-From Reference Model section [4.1.6 VIM Capabilities](../../../ref_model/chapters/chapter04.md#416-vim-capabilities)
+From Reference Model section [4.1.5 Cloud Infrastructure management Capabilities](../../../ref_model/chapters/chapter04.md#4.1.5)
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
