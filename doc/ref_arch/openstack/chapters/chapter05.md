@@ -94,7 +94,7 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 | bulk_delete        | X             |
 | bulk_upload        | X             |
 | container_quotas   | X             |
-| container_sync     | X             |
+| container_sync     |               |
 | crossdomain        | X             |
 | discoverability    | X             |
 | form_post          | X             |
