@@ -108,7 +108,9 @@ SDN (Software Defined Networking) controllers separate control and data (user) p
 -	Decoupling of control and forwarding functions into control plane and data plane
 -	Networking capabilities that can be instantiated, deployed, configured and managed like software. Network control is programmable and supports dynamic, manageable and adaptable networking.
 -	Support for both overlay and underlay networking
-OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server. 
+
+OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server.
+
 Plugins for various SDN controllers include the standard ML-2 plugin and vendor product specific monolithic plugins.
 Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
 
