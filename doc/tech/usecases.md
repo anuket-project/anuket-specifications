@@ -14,17 +14,11 @@
 
 Content 
 
-•	Terminologies 
+1.	Executive Summary
+2.	Objective 
+3.	Approach & Scope
+4.	Principle
+5.	Use cases 
+6.	Terminologies 
+7.	SDO interlocking 
 
-•	Objective ( High level Objective ) 
-
-•	Scope ( focus on Edge Scope , in/out scope ) 
-
-•	CNTT Edge Principle & Strategy 
-
-•	CNTT Edge roadmap 
-
-•	Use cases ( that CNTT Edge will focus ) 
-
-
-•	SDO ( Engagement with other SDOs)
