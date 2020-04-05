@@ -110,7 +110,7 @@ We will emphasize 4 concepts in this section
  - Underlay and Overlay Networking concepts
  - Hardware and Software Infrastructure Layer concepts
  - Software Defined Networking, SDNu and SDNo concepts
- - Programmable Networking Fabric concepts (including SmartNICs)
+ - Programmable Networking Fabric concept
 
 ### Underlay and Overlay Networking concepts
 
@@ -138,7 +138,7 @@ The separation of Hardware and Software Infrastructure Layers makes it important
 
 Referenced ETSI NFV model in the Architectural Framework, [ETSI GS NFV 002 V1.2.1.](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
 
-**Software Defined Networking,  SDNu and SDNo concepts**
+### Software Defined Networking, SDNu and SDNo concepts
 
 A major point with a Cloud Infrastructures is to automate as much as possible and an important tool for Networking automation is Software Defined Networking (SDN) that comes in many different shapes and can act on multiple layers of the networking. In this section we will deal with the internal networking of a data center and not how data centers interconnect with each other or  get access to the world outside of a data center.
 
