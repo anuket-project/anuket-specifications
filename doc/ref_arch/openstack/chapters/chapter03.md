@@ -108,8 +108,31 @@ SDN (Software Defined Networking) controllers separate control and data (user) p
 -	Decoupling of control and forwarding functions into control plane and data plane
 -	Networking capabilities that can be instantiated, deployed, configured and managed like software. Network control is programmable and supports dynamic, manageable and adaptable networking.
 -	Support for both overlay and underlay networking
-OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server. Plugins for various SDN controllers include the standard ML-2 plugin and vendor product specific monolithic plugins.
+OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server. 
+Plugins for various SDN controllers include the standard ML-2 plugin and vendor product specific monolithic plugins.
 Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
+
+
+#### 3.2.5.1. Tungsten Fabric (SDN Controller)
+Tungsten Fabric, an open source SDN in Linux Foundation Networking (https://tungsten.io/), offers neutron networking through ML2 based pugin, additionally it supports advanced networking features beyond basic neutron networking via monolithic plugin. It also supports the same advanced networking features via CNI plugin in Kubernetes. Hence, it works as a multi-stack SDN to support VMs, containers, and baremetal workloads. It provides separation of control plane functions and data plane functions with its two components:
+
+- Tungsten Fabric Controller– a set of software services that maintains a model of networks and network policies, typically running on several servers for high availability
+- Tungsten Fabric vRouter– installed in each host that runs workloads (virtual machines or containers), the vRouter performings packet forwarding and enforces network and security policies
+
+It is based on proven, standards-based networking technologies that today support the wide-area networks of the world’s major service providers, but repurposed to work with virtualized workloads and cloud automation in data centers that can range from large scale enterprise data centers to much smaller telco POPs. It provides many enhanced features over the native networking implementations of orchestrators, including:
+- Highly scalable, multi-tenant networking
+- Multi-tenant IP address management
+- DHCP, ARP proxies to avoid flooding into networks
+- Efficient edge replication for broadcast and multicast traffic
+- Local, per-tenant DNS resolution
+- Distributed firewall with access control lists
+- Application-based security policies
+- Distributed load balancing across hosts
+- Network address translation (1:1 floating IPs and distributed SNAT)
+- Service chaining with virtual network functions
+- Dual stack IPv4 and IPv6
+- BGP peering with gateway routers
+- BGP as a Service (BGPaaS) for distribution of routes between privately managed customer networks and service provider networks
 
 <a name="3.2.6"></a>
 ### 3.2.6. Acceleration
