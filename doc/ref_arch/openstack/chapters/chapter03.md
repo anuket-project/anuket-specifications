@@ -104,13 +104,11 @@ Neutron is an OpenStack project that provides "network connectivity as a service
 
 <a name="3.2.5"></a>
 ### 3.2.5. Virtual Networking – 3rd party SDN solution
-SDN (Software Defined Networking) controllers separate control and data (user) plane functions where the control plane programmatically configures and controls all network data path elements via open APIs. Open Networking Forum (ONF) defines SDN as “Software-Defined Networking (SDN) is an emerging architecture that is dynamic, manageable, cost-effective, and adaptable, making it ideal for the high-bandwidth, dynamic nature of today's applications. This architecture decouples the network control and forwarding functions enabling the network control to become directly programmable and the underlying infrastructure to be abstracted for applications and network services. The OpenFlow protocol is a foundational element for building SDN solutions." While the ONF definition specifically mentions the OpenFlow protocol in practicality other protocols are also supported by SDN controllers. From our perspective the key messages of the SDN definition are:
-
-- Decoupling of control and forwarding functions into control plane and data plane
-- Networking capabilities that can be instantiated, deployed, configured and managed like software. Network control is programmable and supports dynamic, manageable and adaptable networking.
-
-OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server. Plugins for various SDN controllers include the standard [ML-2 plugin](../chapter04.md#4234-neutron-ml2-integration) and vendor product specific [monolithic plugins](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers).
-
+SDN (Software Defined Networking) controllers separate control and data (user) plane functions where the control plane programmatically configures and controls all network data path elements via open APIs. Open Networking Forum (ONF) defines SDN as “Software-Defined Networking (SDN) is an emerging architecture that is dynamic, manageable, cost-effective, and adaptable, making it ideal for the high-bandwidth, dynamic nature of today's applications. This architecture decouples the network control and forwarding functions enabling the network control to become directly programmable and the underlying infrastructure to be abstracted for applications and network services. The OpenFlow protocol is a foundational element for building SDN solutions." While the ONF definition specifically mentions the OpenFlow, it is not a choice for the production deployments of most of the operators. In practicality other protocols supported by SDN controllers. From our perspective the key messages of the SDN definition are:
+-	Decoupling of control and forwarding functions into control plane and data plane
+-	Networking capabilities that can be instantiated, deployed, configured and managed like software. Network control is programmable and supports dynamic, manageable and adaptable networking.
+-	Support for both overlay and underlay networking
+OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server. Plugins for various SDN controllers include the standard ML-2 plugin and vendor product specific monolithic plugins.
 Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
 
 <a name="3.2.6"></a>
