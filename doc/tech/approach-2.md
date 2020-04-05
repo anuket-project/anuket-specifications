@@ -109,7 +109,7 @@ We will emphasize 4 concepts in this section
 
  - Underlay and Overlay Networking concepts
  - Hardware and Software Infrastructure Layer concepts
- - Software Defined Networking, SDNu and SDNo concepts
+ - SDN, SDNu and SDNo concepts
  - Programmable Networking Fabric concepts (including SmartNICs)
 
 ### Underlay and Overlay Networking concepts
@@ -118,11 +118,13 @@ The ETSI NFV model divide networking in an Underlay and an Overlay Network layer
 
 The Overlay Networking separation is often done through encapsulation of Tenants traffic using overlay protocols e.g. through VxLAN or EVPN on the Underlay Networks e.g. based on L2 (VLAN) or L3 (IP) networks.
 
-In some instances, the SW Virtualization Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation normally done by the SW Virtualization Layer, is the VNF/CNF usage of SR-IOV that effectively take over the Physical and Virtual Functions of the NIC directly into the VNF/CNF Tenant. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
+In some instances, the SW Virtualization Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation is the usage of SR-IOV that effectively hands up the Physical and Virtual Functions of the NIC to the SW Virtualization Layer and its Tenants. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
 
 > **Note:** Bypassing the Overlay Networking layer is a violation of the basic CNTT decoupling principles, but in some cases unavoidable with existing technologies and standards. Until suitable technologies and standards are developed, CNTT have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
 
 VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer. 
+
+
 
 ### Hardware and Software Infrastructure Layer concepts
 
@@ -138,7 +140,7 @@ The separation of Hardware and Software Infrastructure Layers makes it important
 
 Referenced ETSI NFV model in the Architectural Framework, [ETSI GS NFV 002 V1.2.1.](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
 
-**Software Defined Networking,  SDNu and SDNo concepts**
+**SDN ,  SDNu and SDNo concepts**
 
 A major point with a Cloud Infrastructures is to automate as much as possible and an important tool for Networking automation is Software Defined Networking (SDN) that comes in many different shapes and can act on multiple layers of the networking. In this section we will deal with the internal networking of a data center and not how data centers interconnect with each other or  get access to the world outside of a data center.
 
@@ -154,12 +156,42 @@ SDNo controllers can request Underlay Networking encapsulation and mapping to be
 
 Multiple instances of Container as a Service (CaaS) Virtualization Layers running on an Infrastructure as a Service (IaaS) Virtualization Layer could make use of the IaaS layer to handle the required Underlay Networking separation. In these cases, the IaaS Virtualization Infrastructure Manager (VIM) could include a SDNu control interface enabling automation.
 
-> **Note:** The Reference Model describe a logical separation of SDNu and SDNo interfaces to clarify the separation of administrative domains where applicable. In real deployment cases an Operator can select to deploy a single SDN controller instance that implements all needed administrative domain separations or have separate SDN controllers for each administrative domain. A common deployment scenario today is to use a single SDN controller handling both Underlay and Overlay Networking which works on the implementation level when there is only one administrative domain that owns both the HW Infrastructure and the only  SW Virtualization Infrastructure. The nature of a shared Underlay Network that shall ensure separation and be robust is that all code in the forwarding plane and in the control plane must be under the scrutiny and life cycle management of the HW Infrastructure Layer.
-One consequence of this is that the Reference Architectures can not model collapsed SDNo and SDNu controllers since they must stay unaware of other deployed implementations  running on the same HW Infrastructure.
+> **Note:** The Reference Model describe a logical separation of SDNu and SDNo interfaces to clarify the separation of administrative domains where applicable. In real deployment cases an Operator can select to deploy a single SDN controller instance that implements all needed administrative domain separations or have separate SDN controllers for each administrative domain. A common deployment scenario today is to use a single SDN controller handling both Underlay and Overlay Networking which works on the implementation level when there is only one administrative domain that owns both the HW Infrastructure and the only  SW Virtualization Infrastructure. It is however not up to the Reference Architectures to collapse the SDN controllers since they must not be aware if there are other implementations based on that same or other Reference Architectures running on the same HW Infrastructure.
 
 So when Networking now gets introduced into the Reference Model, it is important that SDN also gets considered and that the two now existing Reference Architectures are harmonized with the new common Networking Reference Model. In absence of a Networking Reference Model, both Reference Architectures have mostly been specifying networking as if they where the only single SW Infrastructure on a dedicated HW resource pool.
 
-### Programmable Networking Fabric concept
+### Switch Fabric and SmartNIC concepts for Underlay Networking separation
+
+The HW Infrastructure Layer can implement the Underlay Networking separation in any type of packet handling component. This may be deployed in many different ways depending on target use case requirements, workload characteristics and available platforms. Two of the most common ways is 1. within the physical Switch Fabric and 2. in a SmartNIC connected to the Server CPU being controlled over a management channel that is not reachable from the Server CPU and its host software. In either way the Underlay Networking separation is controlled by the HW Infrastructure Manager.
+
+In both cases the Underlay Networking can be externally controlled over the SDNu interface, that must be instantiated with appropriate Underlay Networking separation for each of the SW Virtualization administrative domains.
+
+> **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of SW Virtualization instances in separate Overlay domains. This is the important consideration for the Reference Model that enable multiple instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific SW Virtualization instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfearing with the authoritative Underlay separation laid out in the Reference Model.
+
+Two exemplifications of different common HW realizations of Underlay separation in the HW Infrastructure Layer can be seen in **Figure 1-4**.
+
+<p align="center"><img src="./figures/RM_NW_Concepts_Layering-HWInfra_Underlay_Examples-PA4.jpg" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
+<p align="center"><b>Figure 1-4:</b> Underlay Networking separation examples</p>
+
+### SDN Overlay and SDN Underlay concepts, layering and relationships
+
+An SDN Overlay controller (here denoted SDNo) is responsible for managing the SW Virtualization Layer virtual switching that manages the Overlay Network switching and encapsulation, and mapping onto the Underlay Networks.
+
+In cases where the V/CNF bypasses the SW Virtualization Layer virtual switching e.g. high performance applications using SR-IOV, there is a need for the HW Infrastructure Layer to perform the encapsulation and mapping onto the Underlay Networking. This is controlled by the SDN Underlay controller (SDNu) that is authoritative and ensures the Overlay Networking separation on the shared Underlay Networking resources.
+
+SDNo controllers can request Underlay encapsulation and mapping to be done by signaling to an SDNu controller. There are however today no standardized way for this signaling and by that there is a missing reference point and API description in this architecture. Examples of useful concepts for this interfaces would be L2GW (OpenStack) and OVSDB.
+
+For deployments with multiple SW Virtualization instances sharing the same Underlay Networking resources, it is the SDNu (or SDNuP) responsibility to ensure separation of the shared Underlay resources and to set up appropriate enforcements in the Underlay Networking forwarding plane since each SW Virtualization
+instance or V/CNF that bypasses its local virtual switching instance cannot be trusted. Any fault or misconfiguration in such instances could potentially destroy all networking in the shared Underlay Networking.
+
+> **Note:** The Reference Model describe a logical SDNu and SDNo separation to clarify the separation of administrative domains where applicable. In real deployment cases an Operator can select to deploy a single SDN controller instance that implements all needed administrative domain separations or have separate SDN controllers for each administrative domain. A common deployment scenario today is to use a single SDN controller handling both underlay and overlay networking which works on the implementation level when there is only one administrative domain that owns both the HW Infrastructure and the only IaaS SW Virtualization Infrastructure. It is however not up to the Reference Architectures to collapse the SDN controllers since they should not be aware if there are other implementations based on that same or other Reference Architectures running on the same HW Infrastructure.
+
+Two use case examples with both SDNo and SDNu controllers depicting a normal virtual switch encapsulating SW Virtualization Infrastructure instance and another high performance oriented SW Virtualization Infrastructure instance (e.g. using SR-IOV) are described in **Figure 1-5**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+
+<p align="center"><img src="./figures/RM_NW_Concepts_Layering-SDNo_SDNu_Examples-PA4.jpg" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
+<p align="center"><b>Figure 1-5:</b> SDN Controller relationship examples</p>
+
+### Programmable Networking Fabric
 
 The concept of a Programmable Networking Fabric pertains to the ability to have an effective forwarding pipeline (a.k.a. forwarding plane) that can be programmed and/or configured without any risk of disruption to the shared Underlay Networking that is involved with the reprogramming for the specific efficiency increase.
 
@@ -177,43 +209,18 @@ This also imply that programmable forwarding functions in a Programmable Network
 
 > **Note:** Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud implementation and falls outside the use cases for these specifications.
 
-<a name="5.1.6"></a>
-### 5.1.6 Networking Reference Model
+### Networking Reference Model
 
-The Networking Reference Model depicted in **Figure 1-4** is based on the ETSI NFV model enhanced with Container Virtualization support and a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous SW Virtualization domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure. 
+The Networking Reference Model depicted in **Figure 1-6** is based on the ETSI NFV model and has a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It enables multiple well separated simultaneous SW Virtualization domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure.
 
-It is up to any deployment of  the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model
+<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA5.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
+<p align="center"><b>Figure 1-6:</b> Networking Reference Model based on the ETSI NFV</p>
 
-<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA6.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Networking Reference Model based on the ETSI NFV</p>
-
-### Deployment examples based on the Networking Reference Model
-
-#### Switch Fabric and SmartNIC examples for Underlay Networking separation
-
-The HW Infrastructure Layer can implement the Underlay Networking separation in any type of packet handling component. This may be deployed in many different ways depending on target use case requirements, workload characteristics and available platforms. Two of the most common ways is 1. within the physical Switch Fabric and 2. in a SmartNIC connected to the Server CPU being controlled over a management channel that is not reachable from the Server CPU and its host software. In either way the Underlay Networking separation is controlled by the HW Infrastructure Manager.
-
-In both cases the Underlay Networking can be externally controlled over the SDNu interface, that must be instantiated with appropriate Underlay Networking separation for each of the SW Virtualization administrative domains.
-
-> **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of SW Virtualization instances in separate Overlay domains in much the same way as AWS do with their Nitro SmartNIC. This is the important consideration for the Reference Model that enable multiple instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific SW Virtualization instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
-
-Two exemplifications of different common HW realizations of Underlay separation in the HW Infrastructure Layer can be seen in **Figure 1-5**.
-
-<p align="center"><img src="./figures/RM_NW_Concepts_Layering-HWInfra_Underlay_Examples-PA6.jpg" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
-<p align="center"><b>Figure 1-5:</b> Underlay Networking separation examples</p>
-
-#### SDN Overlay and SDN Underlay layering and relationship example
-
-Two use case examples with both SDNo and SDNu controllers depicting a normal virtual switch encapsulating SW Virtualization Infrastructure instance and another high performance oriented SW Virtualization Infrastructure instance (e.g. using SR-IOV) are described in **Figure 1-6**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
-
-<p align="center"><img src="./figures/RM_NW_Concepts_Layering-SDNo_SDNu_Examples-PA6.jpg" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
-<p align="center"><b>Figure 1-6:</b> SDN Controller relationship examples</p>
-
-#### IaaS and CaaS SW Virtualization example on a shared HW Infrastructure with SDN
+### Deployment example of a Networking Reference Model
 
 A Networking Reference Model deployment example is depicted in **Figure 1-7** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains here represented with separate colors.
 
-The example is or will be a common scenario for operators that modernize their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNF on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks since it is not foreseen any generic standard of a CaaS that will be capable to handle all types of CNFs and also have a decoupled Life Cycle Management from all individual CNFs from a multi-vendor community. 
+The example is common scenario for operators that modernize their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNF on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks since it is not foreseen any generic standard of a CaaS that will be capable to handle all types of CNFs and also have a decoupled Life Cycle Management from all individual CNFs from a multi-vendor community. 
 
-<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_DeploymentExample-PA6.jpg" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
+<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_DeploymentExample-PA5.jpg" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
 <p align="center"><b>Figure 1-7:</b> Networking Reference Model deployment example</p>
