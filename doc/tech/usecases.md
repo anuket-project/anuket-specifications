@@ -11,3 +11,5 @@
 
 <a name="5.1"></a>
 ## 5.1 Edge
+
+6.	Terminologies 
