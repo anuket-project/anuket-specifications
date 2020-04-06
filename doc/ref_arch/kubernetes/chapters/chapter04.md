@@ -105,16 +105,16 @@ The following table contains a comparision of relevant features and requirements
 | Requirement | Support in Multus | Support in DANM |
 |-------------|-------------------|-----------------|
 | `req.inf.ntw.01` | Supported | Supported |
-| `req.inf.ntw.02` | Supported via an other CNI plugin | Supported via an other CNI plugin |
-| `req.inf.ntw.03` | Supported via an other CNI plugin | Supported |
-| `req.inf.ntw.04` | Supported via an other CNI plugin | Supported via an other CNI plugin |
+| `req.inf.ntw.02` | Supported via another CNI plugin | Supported via another CNI plugin |
+| `req.inf.ntw.03` | Supported via another CNI plugin | Supported |
+| `req.inf.ntw.04` | Supported via another CNI plugin | Supported via another CNI plugin |
 | `req.inf.ntw.06` | Supported | Supported |
 | `req.inf.ntw.07` | Supported | Supported |
 | `req.inf.ntw.08` | Supported | Supported |
 | `req.inf.ntw.09` | Supported via LCM tools |  Supported via LCM tools |
 | `req.inf.ntw.10` | Not supported | Suported |
 | `req.inf.ntw.11` | Not supported | Partially supported |
-| `req.inf.ntw.14` | Supported via an other CNI plugin | Supported via an other CNI plugin |
+| `req.inf.ntw.14` | Supported via another CNI plugin | Supported via another CNI plugin |
 | `req.inf.ntw.15` | Not relevant | Not relevant |
 | `req.inf.ntw.16` | Supported | Supported |
 | Cluster wide IP address management | Not suported | Supported |
