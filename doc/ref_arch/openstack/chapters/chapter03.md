@@ -118,7 +118,7 @@ Below we will explore an example of SDN controller under LFN projects , that can
 
 
 #### 3.2.5.1. Tungsten Fabric (SDN Controller)
-OnTungsten Fabric, an open source SDN in Linux Foundation Networking (https://tungsten.io/), offers neutron networking through ML2 based pugin, additionally it supports advanced networking features beyond basic neutron networking via monolithic plugin. It also supports the same advanced networking features via CNI plugin in Kubernetes. Hence, it works as a multi-stack SDN to support VMs, containers, and baremetal workloads. It provides separation of control plane functions and data plane functions with its two components:
+Tungsten Fabric, an open source SDN in Linux Foundation Networking (https://tungsten.io/), offers neutron networking through ML2 based pugin, additionally it supports advanced networking features beyond basic neutron networking via monolithic plugin. It also supports the same advanced networking features via CNI plugin in Kubernetes. Hence, it works as a multi-stack SDN to support VMs, containers, and baremetal workloads. It provides separation of control plane functions and data plane functions with its two components:
 
 - Tungsten Fabric Controller– a set of software services that maintains a model of networks and network policies, typically running on several servers for high availability
 - Tungsten Fabric vRouter– installed in each host that runs workloads (virtual machines or containers), the vRouter performings packet forwarding and enforces network and security policies
