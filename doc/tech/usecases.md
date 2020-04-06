@@ -15,7 +15,7 @@
 
 This section introduce some principles that should be followed during developing and defining Edge scope for Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02 - K8s – down to Reference implementation and certificate under CNTT
 
-As we are not develop something new , so Edge Principle will follow Reference Model principle “ CNTT Reference Model:Introduction:Principles”  , Reference Architecture principle  “CNTT Reference Architecture : Principles” and Network principle  which in Nutshell 
+As we are not defining something new , so Edge Principle will follow Reference Model principle “ CNTT Reference Model:Introduction:Principles”  , Reference Architecture principle  “CNTT Reference Architecture : Principles” and Network principle  which in Nutshell 
 
 -	Open source preference
 -	Open APIs
