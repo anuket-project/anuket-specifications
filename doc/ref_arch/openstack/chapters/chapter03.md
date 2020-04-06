@@ -114,9 +114,11 @@ OpenStack Neutron supports open APIs and a pluggable backend where different plu
 Plugins for various SDN controllers include either the standard ML-2 plugin or specific monolithic plugins.
 Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
 
+Below we will explore an example of SDN controller under LFN projects , that can be used integrated with Neutron plugin which it help to overcome a lot of challenges in Vanilla Neutron and provide many features that can be consumed by VNF/CNF 
+
 
 #### 3.2.5.1. Tungsten Fabric (SDN Controller)
-Tungsten Fabric, an open source SDN in Linux Foundation Networking (https://tungsten.io/), offers neutron networking through ML2 based pugin, additionally it supports advanced networking features beyond basic neutron networking via monolithic plugin. It also supports the same advanced networking features via CNI plugin in Kubernetes. Hence, it works as a multi-stack SDN to support VMs, containers, and baremetal workloads. It provides separation of control plane functions and data plane functions with its two components:
+OnTungsten Fabric, an open source SDN in Linux Foundation Networking (https://tungsten.io/), offers neutron networking through ML2 based pugin, additionally it supports advanced networking features beyond basic neutron networking via monolithic plugin. It also supports the same advanced networking features via CNI plugin in Kubernetes. Hence, it works as a multi-stack SDN to support VMs, containers, and baremetal workloads. It provides separation of control plane functions and data plane functions with its two components:
 
 - Tungsten Fabric Controller– a set of software services that maintains a model of networks and network policies, typically running on several servers for high availability
 - Tungsten Fabric vRouter– installed in each host that runs workloads (virtual machines or containers), the vRouter performings packet forwarding and enforces network and security policies
@@ -135,6 +137,12 @@ It is based on proven, standards-based networking technologies that today suppor
 - Dual stack IPv4 and IPv6
 - BGP peering with gateway routers
 - BGP as a Service (BGPaaS) for distribution of routes between privately managed customer networks and service provider networks
+
+
+Based on Network Layering concept that introduced ealier , Tungsten Fabric Controller , can be considered as SDNu and SDNo
+
+The SDN controlelr can exposed an NB API that can be consumbed by ETSI MANO for VNF/CNF onboarding , Network Service onboarding and dynaimc Service chaining 
+
 
 <a name="3.2.6"></a>
 ### 3.2.6. Acceleration
