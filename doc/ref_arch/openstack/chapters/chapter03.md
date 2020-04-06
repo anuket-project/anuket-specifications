@@ -111,7 +111,7 @@ SDN (Software Defined Networking) controllers separate control and data (user) p
 
 OpenStack Neutron supports open APIs and a pluggable backend where different plugins can be incorporated in the neutron-server.
 
-Plugins for various SDN controllers include the standard ML-2 plugin and vendor product specific monolithic plugins.
+Plugins for various SDN controllers include either the standard ML-2 plugin or specific monolithic plugins.
 Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
 
 
