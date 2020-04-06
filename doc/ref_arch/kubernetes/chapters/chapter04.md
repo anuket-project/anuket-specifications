@@ -134,7 +134,7 @@ For the network of signalling connections the built in IPVLAN CNI of DANM or the
 > Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) to the architecture are under debate.
 
 <a name="4.6"></a>
-## 4.5 Storage components
+## 4.6 Storage components
 
 As described in [chapter 3](./chapter03.md), storage in Kubernetes consists of three types of storage:
 1. Ephemeral storage that is used to execute the containers
