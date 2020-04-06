@@ -104,7 +104,8 @@ Neutron is an OpenStack project that provides "network connectivity as a service
 
 <a name="3.2.5"></a>
 ### 3.2.5. Virtual Networking – 3rd party SDN solution
-SDN (Software Defined Networking) controllers separate control and data (user) plane functions where the control plane programmatically configures and controls all network data path elements via open APIs. Open Networking Forum (ONF) defines SDN as “Software-Defined Networking (SDN) is an emerging architecture that is dynamic, manageable, cost-effective, and adaptable, making it ideal for the high-bandwidth, dynamic nature of today's applications. This architecture decouples the network control and forwarding functions enabling the network control to become directly programmable and the underlying infrastructure to be abstracted for applications and network services. The OpenFlow protocol is a foundational element for building SDN solutions." While the ONF definition specifically mentions the OpenFlow, it is not a choice for the production deployments of most of the operators. In practicality other protocols supported by SDN controllers. From our perspective the key messages of the SDN definition are:
+SDN (Software Defined Networking) controllers separate control and data (user) plane functions where the control plane programmatically configures and controls all network data path elements via open APIs. Open Networking Forum (ONF) defines SDN as “Software-Defined Networking (SDN) is an emerging architecture that is dynamic, manageable, cost-effective, and adaptable, making it ideal for the high-bandwidth, dynamic nature of today's applications. This architecture decouples the network control and forwarding functions enabling the network control to become directly programmable and the underlying infrastructure to be abstracted for applications and network services. The OpenFlow protocol is a foundational element for building SDN solutions.
+The key messages of the SDN definition are:
 -	Decoupling of control and forwarding functions into control plane and data plane
 -	Networking capabilities that can be instantiated, deployed, configured and managed like software. Network control is programmable and supports dynamic, manageable and adaptable networking.
 -	Support for both overlay and underlay networking
@@ -114,16 +115,16 @@ OpenStack Neutron supports open APIs and a pluggable backend where different plu
 Plugins for various SDN controllers include either the standard ML-2 plugin or specific monolithic plugins.
 Neutron supports both core plugins that deal with L2 connectivity and IP address management, and service plugins that support services such as L3 routing, Load Balancers, Firewalls, etc.
 
-Below we will explore an example of SDN controller under LFN projects , that can be used integrated with Neutron plugin which it help to overcome a lot of challenges in Vanilla Neutron and provide many features that can be consumed by VNF/CNF 
+Below we will explore an example of an SDN controller from LFN projects, that can be integrated with a Neutron plugin, to help overcome a number of shortcomings of the vanilla Neutron and provide many needed features that can be consumed by VNF/CNF.
 
 
 #### 3.2.5.1. Tungsten Fabric (SDN Controller)
 Tungsten Fabric, an open source SDN in Linux Foundation Networking (https://tungsten.io/), offers neutron networking through ML2 based pugin, additionally it supports advanced networking features beyond basic neutron networking via monolithic plugin. It also supports the same advanced networking features via CNI plugin in Kubernetes. Hence, it works as a multi-stack SDN to support VMs, containers, and baremetal workloads. It provides separation of control plane functions and data plane functions with its two components:
 
 - Tungsten Fabric Controller– a set of software services that maintains a model of networks and network policies, typically running on several servers for high availability
-- Tungsten Fabric vRouter– installed in each host that runs workloads (virtual machines or containers), the vRouter performings packet forwarding and enforces network and security policies
+- Tungsten Fabric vRouter– installed in each host that runs workloads (virtual machines or containers), the vRouter performs packet forwarding and enforces network and security policies
 
-It is based on proven, standards-based networking technologies that today support the wide-area networks of the world’s major service providers, but repurposed to work with virtualized workloads and cloud automation in data centers that can range from large scale enterprise data centers to much smaller telco POPs. It provides many enhanced features over the native networking implementations of orchestrators, including:
+It is based on proven, standards-based networking technologies that today support the wide-area networks of the world’s major service providers, but repurposed to work with virtualized workloads and cloud automation in data centers that can range from large scale enterprise data centers to much smaller telco DC ( aka POPs) . It provides many enhanced features over the native networking implementations of orchestrators, including:
 - Highly scalable, multi-tenant networking
 - Multi-tenant IP address management
 - DHCP, ARP proxies to avoid flooding into networks
@@ -141,7 +142,7 @@ It is based on proven, standards-based networking technologies that today suppor
 
 Based on Network Layering concept that introduced ealier , Tungsten Fabric Controller , can be considered as SDNu and SDNo
 
-The SDN controlelr can exposed an NB API that can be consumbed by ETSI MANO for VNF/CNF onboarding , Network Service onboarding and dynaimc Service chaining 
+The SDN controller can exposes a NB API that can be consumed by ETSI MANO for VNF/CNF onboarding, network service onboarding and dynamic service function chaining.
 
 
 <a name="3.2.6"></a>
