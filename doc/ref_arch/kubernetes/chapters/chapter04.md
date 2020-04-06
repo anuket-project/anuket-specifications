@@ -125,7 +125,7 @@ The following table contains a comparision of relevant features and requirements
 | `req.inf.ntw.14` | Supported via an other CNI plugin | Supported via an other CNI plugin | Supported |
 | `req.inf.ntw.15` | Not relevant | Not relevant | Not relevant |
 | `req.inf.ntw.16` | Supported | Supported | Supported |
-| Cluster wide IP address management | Not suported | Supported | Supported |
+| Cluster wide IP address management | Not supported | Supported | Supported |
 | Service based discovery of all provisioned interfaces | Not supported | Supported | Supported |
 
  [Calico](https://github.com/projectcalico/cni-plugin) may be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.02` due to it's capability to handle `NetworkPolicies`, what is missing from [Flannel](https://github.com/coreos/flannel-cni).
