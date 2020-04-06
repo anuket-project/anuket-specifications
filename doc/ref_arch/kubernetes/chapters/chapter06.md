@@ -23,7 +23,7 @@
 
 <a name="6.1"></a>
 ## 6.1 Introduction
-Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which support separation of concerns during image build. A fully integrated security testing should be baked into the CI/CD pipeline. Automated security policies should also be used to flag builds with issues.  Image registries must be monitored to automatically block or replace images with known vulnerabilites, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
+Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which supports separation of concerns during image build. A fully integrated security testing phase should be baked into the CI/CD pipeline. Automated security policies should also be used to flag builds with issues.  Image registries must be monitored to automatically block or replace images with known vulnerabilites, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
 
 The following functionalities are recommended for securing kubernetes platform;
 - Image Signing
@@ -89,7 +89,7 @@ Kubernetes metadata contain sensitive information including kubelet admin creden
 Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure. 
 
 ##  6.11  Run-Time Security
-The following are recommnended best practices for container run-time:
+The following are recommended best practices for container run-time:
 - Integrate run-time processes to Security Information and Event Monitoring (SIEM)
 - Use container-aware run-time defense tools
 - Ensure all running container applications are from secure and verified images
@@ -124,7 +124,7 @@ Ensure container applications are validated to assess their use and applicabilit
 Ensure stale images are removed from the registry. Remove unsafe, vulnerable images (e.g. containers should no longer be used based on time triggers and labels associated with images).
 
 ##  6.14  Orchestration & Container Manager
-The kubernetes orchestration manager also known as the control plane consist of various components including a Kube-API server, an etcd storage, a kube-controller-manager, a cloud-controller-manager, a kube-scheduler, and a DNS server for Kubernetes services. 
+The Kubernetes orchestration manager also known as the control plane consist of various components including a Kube-API server, an etcd storage, a kube-controller-manager, a cloud-controller-manager, a kube-scheduler, and a DNS server for Kubernetes services. 
 The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc. A master node in an unsecured boundary can lead to a potential threat to the running workloads. A master must be hardened in terms of security by disabling unused ports, prohibiting root access etc. 
 
 They following are security recommendations for orchestration manager:
