@@ -103,7 +103,7 @@ As with most CNTT subsystems, responsibility for Objectives, Requirements, Guide
 
 Cloud and Telco networking are layered, and it is very important to keep the layering dependencies low to enable security, separation and portability in between multiple implementations.
 
-Before we start entering and develop a deep model we need to agree on some foundational concepts and layering that allow decoupling of implementations in between the layers. These initially needs to be rich and verbose for the CNTT Networking approaches to cover the CNTT Reference Model and its Reference Architectures that controls the Reference Implementations and respective Reference Conformance test suites.
+Before we start entering and develop a deep model we need to agree on some foundational concepts and layering that allow decoupling of implementations in between the layers. These initially needs to be rich and verbose for the networking approaches to cover the Reference Model and its Reference Architectures that controls the Reference Implementations and respective Reference Conformance test suites.
 
 We will emphasize 4 concepts in this section
 
