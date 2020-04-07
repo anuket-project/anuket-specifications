@@ -2,17 +2,14 @@
 # CNTT Use Cases
 
 ## Table of Contents
- * [5.1 Core](#5.1)
- * [5.2 Edge](#5.2)
+ * [5.1 Edge](#5.1)
+   * [5.1.1 Executive Summary](#5.1)
    
-<a name="5.1"></a>
-## 5.1 Core
-
-
 <a name="5.1"></a>
 ## 5.1 Edge
 
-1- Executive Summary:
+<a name="5.1.1"></a>
+### 5.1.1 Executive Summary:
 
 Edge computing consider on of disruptive  technology should be considered by any DSP as it is tightly linked with a lot of use cases that can monetize the 5G adoption , so a lot of CSP , Punblic  cloud , content provider and application developer focus on Edge 
 
