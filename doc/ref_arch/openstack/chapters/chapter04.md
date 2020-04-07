@@ -139,8 +139,14 @@ CPU reservation for host: 1 core per NUMA
     - minimum: two nodes per profile
 -	HW specifications
     -	Boot disks are dedicated with Flash technology disks
-    - In case of DPDK usage, cores (together with their sibling threads) must be reserved for DPDK Poll Mode Drivers (PMD), hugepages set to at least 1 GB, and all power settings disabled in the BIOS. The number of cores reserved for this overhead depends on the desired throughput (the number of Mpps we want to deliver).
-    
+
+- In case of DPDK usage:
+
+| Layer | Description |
+|-------------|--|
+| Cloud infrastructure | Important is placement of NICs to get NUMA-balanced system (balancing the I/O, memory, and storage across both sockets), and configuration of NIC features. Server BIOS and Host OS kernel command line settings are described in [DPDK release notes](http://doc.dpdk.org/guides/rel_notes/) and [DPDK performance reports](http://core.dpdk.org/perf-reports/). Disabling power settings (like Intel Turbo Boost Technology) brings stable performance results, although understanding if and when they benefit workloads and enabling them can achieve better performance results. |
+| Workload | DPDK uses core affinity along with 1G or 2M Huge Pages, NUMA settings (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode Drivers (PMD, on reserved cores) to get the best performance. DPDK versions xx.11 are Long-Term Support maintained stable release with back-ported bug fixes for a two-year period. |
+
 -	Sizing rules
 
 | Number of CPU sockets| s | 
@@ -391,6 +397,7 @@ Heat is the orchestration service using template to provision cloud resources, H
 #### 4.3.1.9 Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
+<!--
 #### 4.3.1.10 Cyborg
 Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
 -	cyborg-api
@@ -398,8 +405,9 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 -	cyborg-db
 - cyborg-agent  which runs on compute nodes
 - *-driver drivers which run on compute nodes and depend on the acceleration hardware
+-->
 
-#### 4.3.1.11 Placement
+#### 4.3.1.10 Placement
 The OpenStack Placement service enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as VCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”).  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
 
 <p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
