@@ -63,7 +63,7 @@
 This document includes process flow, logistics, and requirements which must be satisfied to ensure workloads meet the design, feature, and capability expectations of workload consumers to deliver cloud promoting the use and scalability of SDN capabilities. This chapter captures the core fundamentals and steps needed to conformance test workloads on target Cloud Infrastructure frameworks and architectures which drives more work into the community, resulting in pre-certified workloads on core capabilities ultimately reducing the amount of time and cost it takes each operator to on-board and maintain vendor provided workloads.
 
 <p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
-<p align="center"><b>Figure 8-1:</b> CNTT relation to LFN OVP</p>
+<p align="center"><b>Figure 7-1:</b> CNTT relation to LFN OVP</p>
 
 <a name="7.2"></a>
 ## 7.2 Principles and Guidelines
