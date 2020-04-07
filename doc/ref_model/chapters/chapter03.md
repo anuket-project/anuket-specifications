@@ -68,15 +68,15 @@ A network function virtualisation infrastructure (NFVI) needs to be capable of s
 
 _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
-| Attribute | Description                                                                                             |
-|-----------|---------------------------------------------------------------------------------------------------------|
-| `name`      | name of the logical resource pool                                                                       |
-| `type`      | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …)                                           |
-| `vcpus`     | max. number of virtual CPUs                                                                             |
-| `ram`       | max. size of random access memory in GB                                                                 |
-| `disc`      | max. size of ephemeral disc in GB                                                                       |
-| `networks`  | description of external networks required for inter-domain connectivity                                 |
-| `metadata`  | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
+| Attribute  | Description                                                                                             |
+|------------|---------------------------------------------------------------------------------------------------------|
+| `name`     | name of the logical resource pool                                                                       |
+| `type`     | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …)                                           |
+| `vcpus`    | max. number of virtual CPUs                                                                             |
+| `ram`      | max. size of random access memory in GB                                                                 |
+| `disc`     | max. size of ephemeral disc in GB                                                                       |
+| `networks` | description of external networks required for inter-domain connectivity                                 |
+| `metadata` | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 
 <p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
 
@@ -86,15 +86,15 @@ A virtual machine or a container/pod belonging to a tenant capable of hosting th
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
-| Attribute | Description |
-| --- | --- |
-| `name` | name of the virtual host |
-| `vcpus` | number of virtual cpus |
-| `ram` | size of random access memory in GB |
-| `disc` | size of root disc in GB |
-| `nics` | sorted list of network interfaces connecting the host to the virtual networks |
-| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
-| `metadata` | key/value pairs for selection of the appropriate redundancy domain |
+| Attribute      | Description                                                                   |
+|----------------|-------------------------------------------------------------------------------|
+| `name`         | name of the virtual host                                                      |
+| `vcpus`        | number of virtual cpus                                                        |
+| `ram`          | size of random access memory in GB                                            |
+| `disc`         | size of root disc in GB                                                       |
+| `nics`         | sorted list of network interfaces connecting the host to the virtual networks |
+| `acceleration` | key/value pairs for selection of the appropriate acceleration technology      |
+| `metadata`     | key/value pairs for selection of the appropriate redundancy domain            |
 
 <p align="center"><b>Table 3-2:</b> Attributes of compute resources.</p>
 
@@ -104,13 +104,13 @@ A block device of a certain size for persisting information which can be created
 
 _**Example**: an OpenStack cinder volume._
 
-| Attribute | Description |
-| --- | --- |
-| `name` | name of storage resources |
-| `size` | size of disc in GB |
-| `attachments` | list of compute hosts to which the device is currently attached |
+| Attribute      | Description                                                              |
+|----------------|--------------------------------------------------------------------------|
+| `name`         | name of storage resources                                                |
+| `size`         | size of disc in GB                                                       |
+| `attachments`  | list of compute hosts to which the device is currently attached          |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
-| `metadata` | key/value pairs for selection of the appropriate redundancy domain |
+| `metadata`     | key/value pairs for selection of the appropriate redundancy domain       |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources.</p>
 
@@ -122,10 +122,10 @@ A layer 2 / layer 3 communication domain within a tenant. A network requires a t
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
-| Attribute | Description |
-| --- | --- |
-| `name` | name of the network resource |
-| `subnet` | network address of the subnet |
+| Attribute      | Description                                                              |
+|----------------|--------------------------------------------------------------------------|
+| `name`         | name of the network resource                                             |
+| `subnet`       | network address of the subnet                                            |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 
 <p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
@@ -177,5 +177,5 @@ Network Function Virtualisation Infrastructure provides the capability to manage
 
 The physical compute, storage and network resources serve as the foundation of the network function virtualisation infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
 
-<p align="center"><img src="../figures/ch03_model_physical_resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-4:</b> NFVI Physical Resources.</p>
+<p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-4:</b> NFVI Physical Resources</p>

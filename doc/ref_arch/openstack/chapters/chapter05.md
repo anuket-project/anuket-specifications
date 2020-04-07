@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 5. Interfaces and APIs
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)
@@ -11,31 +11,37 @@
 <a name="5.1"></a>
 ## 5.1 Introduction
 
-This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Vi-Vnfm and Or-Vi interfaces.
-The OpenStack Pike version is used as the baseline for these APIs and CLIs. CNTT reference architectures and future
-reference implementations will only considered OpenStack releases greater or equal to Pike. Any reference
-implementation that **get certified by RC** can be considered as CNTT RA Compliant. When different OpenStack version
-based reference implementations gets certified then the "CNTT standard" will be the oldest used OpenStack release.
-Example, Let us assume that the Pike, Queens and Stein OpenStack based reference implementations get certified. Then,
-the CNTT standard OpenStack version will be Pike.
+This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces.
+The OpenStack Pike version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any NFVI + VIM reference
+implementations that **get certified by RC** can be considered as CNTT RA Conformant.
 
-The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and later in the Chapter a
-consolidated view of these and other APIs that would be of interest.
+The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and a
+consolidated view of these and other APIs that are of interest.
+
+OpenStack is a multi-project framework composed of services evolving independently. It is not enough to rely only on the
+OpenStack release to characterise the capabilities supported by these services. Regarding OpenStack services APIs,
+an "API version" is associated to each OpenStack service.
+In addition to major API versions, some OpenStack services (Nova, Glance, Keystone, Cinder...) support microversions.
+The microversions allow to introduce new features over time.
+In this chapter, the **major version** and **microversion** are specified per service.
+The mentioned microversion is the minimal microversion that supports the features requested for CNTT.
+For the purpose of conformance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for CNTT compliant implementation.
 
 <a name="5.2"></a>
 ## 5.2. Core OpenStack Services APIs
 
 ### 5.2.1. Keystone
 
-| **OpenStack Service** | **API Version** |
-|-----------------------|-----------------|
-| Identity: Keystone    | 3.8             |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Identity: Keystone    | v3              | 3.8                          |
 
 | **Keystone Features**   | **Mandatory** |
 |-------------------------|:-------------:|
 | application_credentials | X             |
 | external_idp            |               |
 | federation              |               |
+| oauth1                  |               |
 | project_tags            | X             |
 | security_compliance     | X             |
 | trust                   | X             |
@@ -48,17 +54,17 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 
 ### 5.2.2 Glance
 
-| **OpenStack Service** | **Minimal API Version** |
-|-----------------------|-------------------------|
-| Image: Glance         | 2.5                     |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Image: Glance         | v2              | 2.5                          |
 
 Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
 ### 5.2.3. Cinder
 
-| **OpenStack Service** | **Version** | **Minimal Microversion** |
-|-----------------------|-------------|--------------------------|
-| Block Storage: Cinder | 3           | 3.43                     |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Block Storage: Cinder | v3              | 3.43                         |
 
 | **Cinder Features**    | **Mandatory** |
 |------------------------|:-------------:|
@@ -68,6 +74,7 @@ Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.
 | extend_attached_volume |               |
 | manage_snapshot        | X             |
 | manage_volume          | X             |
+| multi_backend          |               |
 | snapshot               | X             |
 | volume_revert          | X             |
 
@@ -79,7 +86,7 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 
 | **OpenStack Service** | **API Version** |
 |-----------------------|-----------------|
-| Object Storage: Swift | 1               |
+| Object Storage: Swift | v1              |
 
 | **Swift Features** | **Mandatory** |
 |--------------------|:-------------:|
@@ -106,10 +113,9 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 
 ### 5.2.5. Neutron
 
-| **OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Networking: Neutron | https://docs.openstack.org/api-ref/network/ | Version 2.0 |
-| Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
+| **OpenStack Service** |  **API Version**  |
+|-----------------------|-------------------|
+| Networking: Neutron   | v2.0              |
 
 | **Neutron Extensions**         | **Mandatory** |
 |--------------------------------|:-------------:|
@@ -122,23 +128,24 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | binding                        | X             |
 | binding-extended               | X             |
 | default-subnetpools            | X             |
-| dhcp_agent_scheduler           | X             |
+| dhcp_agent_scheduler           |               |
 | dns-domain-ports               |               |
 | dns-integration                |               |
-| dvr                            | X             |
+| dvr                            |               |
 | empty-string-filtering         | X             |
 | ext-gw-mode                    | X             |
 | external-net                   | X             |
 | extra_dhcp_opt                 | X             |
 | extraroute                     | X             |
+| extraroute-atomic              |               |
 | flavors                        | X             |
-| filter-validation              | X             |
-| fip-port-details               | X             |
+| filter-validation              |               |
+| fip-port-details               |               |
 | floatingip-pools               |               |
 | ip-substring-filtering         | X             |
-| l3_agent_scheduler             | X             |
-| l3-flavors                     | X             |
-| l3-ha                          | X             |
+| l3_agent_scheduler             |               |
+| l3-flavors                     |               |
+| l3-ha                          |               |
 | logging                        |               |
 | metering                       |               |
 | multi-provider                 | X             |
@@ -148,7 +155,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | network-ip-availability        | X             |
 | network-segment-range          |               |
 | pagination                     | X             |
-| port-mac-address-regenerate    | X             |
+| port-mac-address-regenerate    |               |
 | port-resource-request          |               |
 | port-security                  | X             |
 | port-security-groups-filtering | X             |
@@ -168,6 +175,8 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | quotas                         | X             |
 | quota_details                  | X             |
 | revision-if-match              | X             |
+| rbac-security-groups           |               |
+| router-interface-fip           |               |
 | security-group                 | X             |
 | service-type                   | X             |
 | sorting                        | X             |
@@ -177,23 +186,33 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | standard-attr-timestamp        | X             |
 | subnet_allocation              | X             |
 | subnet-service-types           | X             |
-| rbac-security-groups           |               |
-| router-interface-fip           |               |
+| subnetpool_prefix_ops          |               |
+| tag-ext                        |               |
 | trunk                          | X             |
 | trunk-details                  | X             |
 | uplink-status-propagation      |               |
+
+| **Neutron Type Drivers** | **Mandatory** |
+|--------------------------|:-------------:|
+| geneve                   |               |
+| gre                      |               |
+| vlan                     | X             |
+| vxlan                    |               |
+
+Networking Service APIs: https://docs.openstack.org/api-ref/network/
 
 The exhaustive list of extensions is available at https://docs.openstack.org/api-ref/network/v2/
 
 ### 5.2.6. Nova
 
-| **OpenStack Service** | **API Version** | **Minimal Microversion** |
-|-----------------------|-----------------|--------------------------|
-| Compute: Nova         | 2.1             | 2.53                     |
+| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+|-----------------------|-----------------|------------------------------|
+| Compute: Nova         | v2.1            | 2.53                         |
 
 | **Nova Features**        | **Mandatory** |
 |--------------------------|:-------------:|
 | attach_encrypted_volume  |               |
+| cert                     |               |
 | change_password          |               |
 | cold_migration           | X             |
 | console_output           | X             |
@@ -219,12 +238,23 @@ Compute API: https://docs.openstack.org/api-ref/compute/
 
 REST API Version History: https://docs.openstack.org/nova/latest/reference/api-microversion-history.html
 
-### 5.2.7. Heat
+### 5.2.7. Placement
 
-|**OpenStack Service** | **Link for API and CLI** | **API/CLI Minimum (Baseline) Version** |
-|------------------|----------------------------------------------------|-------------------|
-| Bare Metal: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions | Version 1.0 |
-| Bare Metal: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.25 |
+|**OpenStack Service** |  **API Version** | **Minimal API Microversion** |
+|----------------------|------------------|------------------------------|
+| Placement            | v1               | 1.10                         |
+
+Placement API: https://docs.openstack.org/api-ref/placement/
+
+REST API Version History: https://docs.openstack.org/placement/latest/placement-api-microversion-history.html
+
+### 5.2.8. Heat
+
+|**OpenStack Service** | **API Version** |
+|----------------------|-----------------|
+| Orchestration: Heat  | v1              |
+
+Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
 
 
 <a name="5.3"></a>
@@ -240,30 +270,19 @@ libraries.
 
 **APIs**
 
-| OpenStack Service | Link for API list | API Minimum (Baseline) Version |
-|------------------|--------------------|------------------------|
-| Identity: Keystone | https://docs.openstack.org/api-ref/identity/v3/index.html?expanded=#identity-api-operations  | Version 3.10 |
-| Compute: Nova | https://docs.openstack.org/api-ref/compute/  | Version 2.1 |
-| Networking: Neutron | https://docs.openstack.org/api-ref/network/  | Version 2.0 |
-| Imaging: Glance | https://docs.openstack.org/api-ref/image/v2/index.html#images  | Version 2.0 |
-| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/index.html#api-versions  | Version 3.0 |
-| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/  | Version 1.0 |
-| Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | Version 1.0 |
-| Acceleration: Cyborg | https://docs.openstack.org/api-ref/accelerator/v1/index.html  | Version 1.0 |
-
-**CLIs**
-
-| OpenStack Service | Link to Client | Client Minimum (Baseline) Version |
-|------------------|--------------------|------------------------|
-| Identity: Keystone | https://docs.openstack.org/python-keystoneclient/latest/using-api-v3.html | Version 3.10 |
-| Compute: Nova | https://docs.openstack.org/python-novaclient/latest/cli/index.html | Version 2.1 |
-| Networking: Neutron | https://docs.openstack.org/python-neutronclient/latest/cli/index.html | Version 2.0 |
-| Imaging: Glance | https://docs.openstack.org/python-glanceclient/latest/ | Version 2.0 |
-| Block Storage: Cinder | https://docs.openstack.org/python-cinderclient/latest/ | Version 3.0 |
-| Object Storage: Swift | https://docs.openstack.org/python-swiftclient/latest/ | Version 1.0 |
-| Orchestration: Heat | https://docs.openstack.org/python-heatclient/latest/ | Version 1.0 |
-| Acceleration: Cyborg | https://docs.openstack.org/python-cyborgclient/latest/ | Version 1.0 |
-| OpenStack Client (python) | https://docs.openstack.org/python-openstackclient/pike/index.html  | Version 3.2.1 |
+| **OpenStack Service** | Link for API list                                    | **API Version** | **Minimal API Microversion** |
+|-----------------------|------------------------------------------------------|-----------------|------------------------------|
+| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
+| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
+| Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0            |                              |
+| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.5                          |
+| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.43                         |
+| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
+| Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
+| Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
+<!--
+| Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/ | v2    |
+-->
 
 ### 5.3.2. Kubernetes Interfaces
 The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
@@ -273,6 +292,25 @@ The KVM APIs are documented in Section 4 of the document https://www.kernel.org/
 
 #### 5.3.3.1. Libvirt Interfaces
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
+
+<!--
+### 5.3.4. Cyborg
+
+| **OpenStack Service** | **API Version** |
+|-----------------------|-----------------|
+| Accelerator: Cyborg   | v2              |
+
+Acceleration Service API: https://docs.openstack.org/api-ref/accelerator/v2/index.html
+Please note that the initial version of the [Cyborg API v1.0](https://docs.openstack.org/cyborg/stein/admin/api.html) was deprecated in the OpenStack Train release and will be removed in the Ussuri release.
+-->
+
+### 5.3.4. Barbican
+
+| **OpenStack Service**           | **API Version** |
+|---------------------------------|-----------------|
+| Key Manager: Barbican           | v1              |
+
+Barbican API Documentation: https://docs.openstack.org/barbican/pike/api/
 
 <!--
 ### 5.3.4. vSphere/ESXi APIs

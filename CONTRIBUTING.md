@@ -1,6 +1,7 @@
 # Contribution
 
 ## Table of Contents
+* [Permission levels](#permissions)
 * [Labels](#labels)
 * [Issues & Labels](#issues)
 * [Pull Requests](#prs)
@@ -8,45 +9,51 @@
 * [Idle Pull Requests Policy](#idle)
 * [Unresolved Pull Requests Policy](#unresolved)
 
+<a name="permissions"></a>
+### Permission levels
+There are different permissions (levels) available for contributing into CNTT:
+- **Outside Collaborators**: This includes general public. 
+  - Outside collaborators can create issues and add comments to issues and Pull Requests.
+- **Read, Triage, Write, and Maintain** Permissions, which are explained in [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization), will be assigned as follows:
+  - **Read** will be assigned to those who are interested to create issues, join the discussion, receive notifications, and provide feedback.
+  - **Triage** will be assigned to active contributors who create issues, pull requests and review them.
+  - **Writes** will be assigned to Workstream Co-Leads to allow them to manage issues and pull request, approve them and be auto requested for review.
+  - **Maintain** will be assigned to Workstream Leads to allow them to merge PRs into the repository.
+
 <a name="labels"></a>
 ### Labels
-Following labels should be correctly used for all issues and PRs to indicate the status of them and to assist automation pipelines to correctly apply CNTT processes.
+Every Issue and PR should be tagged with one or more of the following labels to indicate their status and for the automation pipelines to apply the correct CNTT processes.
 
-  - **Roadmap Item**: This label applies to both issues and PRs to indicate that the issue/PR is for a roadmap item for an upcoming release.
-  - **Fix needed**: This label applies to both issues and PRs to indicate that the issue/PR is to fix an existing bug.
-  - **Backlog**: This label applies to issues only to indicate that the issue is to be added to a backlog of features for future releases (to be considered during technical steering meeting).
-  - **Workstream Name**: This label applies to both issues and PRs to indicate which project the issue/PR is targeting.
-  - **Chapter Number**: This label applies to PRs (and optionally to issues) to indicate which chapter the PR is targeting.
-  - **General**: This label applies to both issues and PRs to indicate that this issue/PR is not corresponding to any particular chapter/file.
-  - **Major/Minor**: This label applies to both issues and PRs to indicate if the issue/PR is addressing a major or minor change. 
-  - **WIP**: This label applies to PRs to indicate that this PR is still being developed and no reviews/approvals are expected.
-  - **Enhancement**: This label applies to both issues and PRs to indicate that the issue/Pr is proposing an Enhancement.
-  - **Returned**: This label applies to both issues and PRs to indicate that the issue/PR has been sent back to authoer (e.g. more information needed, not a high priority, no longer valid, etc).
-  - **Idle**: This label will be **automatically** applied (by a GitHub work flow or by TSC Leads) to both issues/PRs to indicate that no activity has been observed on the issue/PR for some determined time frame. This triggers an action to close the issue/PR.
+  - **Backlog**: The Issue will be addressed in future releases..
+  - **Major/Minor**: The Issue or PR concerns a major or minor change.. 
+  - **WIP**: The PR is still being developed and no reviews/approvals are expected yet.
+     - PRs can also be created as "Draft" indicate that the PR is working in progress.
+  - **Returned**: The issue/PR has been sent back to author (e.g. more information needed, not a high priority, no longer valid, etc). Only WSL or TSL can tag an issue/PR as Returned.
+  - **Idle**: This label will be **automatically** applied (by a GitHub work flow or by WSL/TS Leads) to both issues/PRs to indicate that no activity has been observed on the issue/PR for some determined time frame. This triggers an action to close the issue/PR.
   - **Unresolved**: This label will be **automatically** applied to PRs to indicate that no consensus has been reached on the PR. This triggers an action to resolve the PR by the TSC.
   - **Forced**: This label will be **automatically** applied to PRs to indicate that the PR has been merged without following the default process (due to reasons identified below)
 
 <a name="issues"></a>
 ### Issues
 
-- All issues must be clearly titled, described, and tagged with the right labels when created.
+- Issues must be correctly tagged with the correct labels and Milestone by WSL.
   - Title needs to be in the following format [WSx Chx].
     - WSx: The name of the work stream it is targeting.
     - Chx: The name of the chapter it is targeting (if applicable).
-- Issues should be correctly set with the correct Project and Milestone.
-  - Milestone = the upcoming release related to the issue/PR.
-  - Project = Work stream.
-- Workstream Leads has the sole responsibility to assign issues to individuals to address them.
-- **self assignment** are NOT recommended. Contributors may ask WSL (via comment or others) to get the issue assigned to them if they would like to work on it.
-  - This is to make sure items are worked based on priorities and right reasoning.
+- Upon Creation, Issues must be correctly set with the correct **Project Name**. 
+  - Project Name = Workstream Name.
+- Issues must be correctly set with the right labels and Milestone by WSL.
+  - Relevant Milestone for the upcoming release (M1 - M6).
+- Contributors can assign an unassigned issue to themselves if they would like to work on them
+- Workstream Leads have the responsibility to assign stalling or priority issues to individuals to address them.
 - WSL may label an issue as "**Returned**" to request further information or to decide not to work on it.
 
 <a name="prs"></a>
 ### Pull Requests
-- PRs must only be created when there is an issue present and a decision to create a PR is made. A PR must reference the issue it is resolving into the description field.
+- PRs must only be created when there is an issue present and a decision to create a PR is made. A PR must reference the issue it is resolving in the description field.
   - using GitHub predefined keyword "**Fixes Issue#**" will automatically close the issue which the PR is resolving when it is merged.
 - A PR for an issues must only be created by the contributor assigned to the issue by the respective WSL.
-- One person only is allowed to edit a given PR unless given permission to other contributor to contribute directly into the PR.
+- Only the person assigned ("assignee") to a PR may edit it. The normal process is for others to make suggests in "Comments" but not directly edit a PR unless the assignee has granter another contributor permission to contribute directly to the PR.
 - A PR is recommended to only create/modify content within the scope of a single workstream.
 - A PR should only add/change content related to the issue associated with the PR.
 - Comments/sub-Conversations within a PR may only be marked Resolved by:
@@ -54,7 +61,7 @@ Following labels should be correctly used for all issues and PRs to indicate the
   - B) The relevant WSL or 
   - C) An automated timeout of 48hrs when there has been no additional comments after an update is posted to resolve the sub-thread. 
   - **The person responding to a sub-conversation shall not mark it as Resolved**.
-- Explicitly communicate all changes to existing PRs shall be made through subsequent commits. 
+- All changes to an existing PRs shall be made through subsequent commits. 
   - **Do not modify an existing commit, create separate commits under the same PR**.
   - PRs will be merged using "Squash and Merge" to enforce a linear commit history.
 

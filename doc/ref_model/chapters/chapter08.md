@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# 8 Compliance, Verification, and Certification
+# 8 Conformance, Verification, and Certification
 <!--<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>-->
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -18,9 +18,9 @@
 <a name="8.1"></a>
 ## 8.1 Introduction
 
-Having deterministic NFVI metrics and capabilities expected for a given profile, allows NFVI solutions to be characterised, validated, and verified against those metrics and capabilities, and therefore report the results in a standard format. This will allow operators to understand in depth the details and the differentiation a given solution can provide against other options.
+Having deterministic NFVI metrics and capabilities expected for a given profile allows NFVI solutions to be characterised, validated, and verified against those metrics and capabilities, and therefore report the results in a standard format. This will allow operators to understand in depth the details and the differentiation a given solution can provide against other options.
 
-Additionally standardising on infrastructure profiles allows VNFs to be characterised, validated, and certified against a given profile by using reference NFVI implementations as demonstrated in Figure below. Where VNFs are using multiple profiles (different VNF-C written against different profiles), multiple Reference NFVI implementations should be used.
+Additionally, standardising on infrastructure profiles allows VNFs to be characterised, validated, and certified against a given profile by using reference NFVI implementations as demonstrated in Figure 8-1 below. Where VNFs are using multiple profiles (different VNF-C written against different profiles), multiple Reference NFVI implementations should be used.
 
 <a name="8.2"></a>
 ## 8.2 Requirements
@@ -28,13 +28,13 @@ Additionally standardising on infrastructure profiles allows VNFs to be characte
 <a name="8.2.1"></a>
 ### 8.2.1 Reference Implementations Requirements
 
-For compliance, verification, and certification of NFVI solutions provided for a given NFVI Profile, it is required to have a reference implementation of each profile so it can be used for compliance, validation, and certification purposes.
+For conformance, verification, and certification of NFVI solutions provided for a given NFVI Profile, it is required to have a reference implementation of each profile so it can be used for conformance, validation, and certification purposes.
 
-Those reference implementations need to reflect on their corresponding profiles and deliver all metrics and capabilities promised. They need to use open source components. Figure below shows the various reference implementations required for each profile, they are:
+Those reference implementations need to reflect on their corresponding profiles and deliver all metrics and capabilities promised. They need to use open source components. Figure 8-1 below shows the various reference implementations required for each profile, they are:
 
 - NFVI SW Reference implementation.
 - NFVI HW Reference implementation.
-- VNF reference implementation.
+- VNF Reference implementation.
 
 <p align="center"><img src="../figures/ch8_NFVI_ref_profiles_impementations.jpg" alt="NFVI RI Profiles" title="NFVI RI Profiles" width="70%"/></p>
 <p align="center"><b>Figure 8-1:</b> Reference NFVI Profiles Implementation and Reference VNFs Implementations for each profile.</p>
@@ -45,27 +45,27 @@ Those reference implementations need to reflect on their corresponding profiles 
 <a name="8.2.2.1"></a>
 #### 8.2.2.1 Certification of Vendor supplied NFVI solutions.
 
-Infrastructure Abstraction and Profiling allows NFVI SW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure below). Having NFVI solutions tailored towards a given profile makes it easier to verify, certify and test that solution against that profile using the reference implementation of the profile mentioned previously.
+Infrastructure Abstraction and Profiling allows NFVI SW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure 8-2 below). Having NFVI solutions tailored towards a given profile makes it easier to verify, certify, and test that solution against that profile using the reference implementation of the profile mentioned previously.
 
 <p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_sw_solutions.jpg" alt="NFVI Vendor SW Solutions" title="NFVI Vendor SW Solutions" width="70%"/></p>
 <p align="center"><b>Figure 8-2:</b> Vendor Supplied NFVI SW Solutions</p>
 
-Similarly, Infrastructure Abstraction and Profiling allows NFVI HW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure below). Having NFVI hardware solutions tailored towards a given profile makes it easier to verify, certify and test that hardware solution against that profile using the reference implementation of the profile mentioned previously.
+Similarly, Infrastructure Abstraction and Profiling allows NFVI HW vendors to provide solutions that are suitable for a given profile (as demonstrated in Figure 8-3 below). Having NFVI hardware solutions tailored towards a given profile makes it easier to verify, certify, and test that hardware solution against that profile using the reference implementation of the profile mentioned previously.
 
 <p align="center"><img src="../figures/ch8_NFVI_vendor_supplied_hw_solutions.jpg" alt="NFVI Vendor HW Solutions" title="NFVI Vendor HW Solutions" width="70%"/></p>
 <p align="center"><b>Figure 8-3:</b> Vendor Supplied NFVI HW Solutions</p>
 
-Figure below demonstrates how a given NFVI SW solution can be validated and certified against a given profile by using a reference HW implementation and a reference NFVI implementation.
+Figure 8-4 below demonstrates how a given NFVI SW solution can be validated and certified against a given profile by using a reference HW implementation and a reference NFVI implementation.
 
 <p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_sw_solutions.jpg" alt="Certifying NFVI Vendor SW Solutions" title="Certifying NFVI Vendor SW Solutions" width="70%"/></p>
 <p align="center"><b>Figure 8-4:</b> Certifying Vendor NFVI SW Solutions</p>
 
-Similarly, to characterise, validate, and certify NFVI HW solution against a given profile, both NFVI SW reference implementation and a VNF reference implementation are needed as demonstrated as in Figure below.
+Similarly, to characterise, validate, and certify NFVI HW solution against a given profile, both NFVI SW reference implementation and a VNF reference implementation are needed as demonstrated as in Figure 8-5 below.
 
 <p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_hw_solutions.jpg" alt="Certifying NFVI Vendor HW Solutions" title="Certifying NFVI Vendor HW Solutions" width="70%"/></p>
 <p align="center"><b>Figure 8-5:</b> Certifying Vendor NFVI HW Solutions</p>
 
-Finally, NFVI vendors can characterise, validate, and certify an entire NFVI platform (both SW & HW) against a given profile by using a VNF reference implementation as shown in Figure below.
+Finally, NFVI vendors can characterise, validate, and certify an entire NFVI platform (both SW & HW) against a given profile by using a VNF reference implementation as shown in Figure 8-6 below.
 
 <p align="center"><img src="../figures/ch8_NFVI_certifying_vendor_swhw_solutions.jpg" alt="Certifying NFVI Vendor SW/HW Solutions" title="Certifying NFVI Vendor SW/HW Solutions" width="70%"/></p>
 <p align="center"><b>Figure 8-6:</b> Certifying Vendor NFVI SW/HW Solutions</p>
@@ -86,7 +86,7 @@ Finally, NFVI vendors can characterise, validate, and certify an entire NFVI pla
 ### 8.2.4 Test Case Selection Requirements
 
 This section lists requirements test cases must fulfill to be eligible for
-inclusion in the NFVI and/or VNF compliance test suite.  These requirements act
+inclusion in the NFVI and/or VNF conformance test suite.  These requirements act
 as a checklist to gate the inclusion of test cases.
 
 
@@ -129,7 +129,7 @@ as a checklist to gate the inclusion of test cases.
 3. **Planning & Delivery**
     - Kickoff / Acceptance Criteria reviews performed
     - Delivery commitments, timelines, and cadence accepted
-    - Confirm backward compat. across software/flavour rev levels
+    - Confirm backward compatibility across software/flavour rev levels
 4. **Data / VNFs / Security**
     - Images, Heat Templates, Preload Sheets available
     - Images uploaded to tenant space
@@ -146,7 +146,7 @@ as a checklist to gate the inclusion of test cases.
 Exit Criteria includes Demonstration of Compliance, Verification, Performance, and Validation, of Reference Architecture Implementation, and Delivery of the following:
 
 1. **Certification tenants**
-    - All Test Cases have a status of Passed, Failed, N/A or Out-scoped.
+    - All Test Cases have a status of Passed, Failed, N/A, or Out-scoped.
     - All Severity 1 and Severity 2 issues are resolved.
     - All Issues have been Resolved or the Project/Component Team has voted unanimously for a Conditional Certification.
     - Known defects, or issues, are clearly documented and furnished to Telco providers with certification notes.
@@ -171,7 +171,7 @@ Exit Criteria includes Demonstration of Compliance, Verification, Performance, a
     - Thin provisioning storage should handle actual full quota usage cases
     - Load balancing should support elasticity
     - Auto-healing databases (any component related db) when out of sync
-    - Obvious, but, supports all required network functionality (all protocols, service chaining, VLAN trunking, QoS marking, probe/mirror, etc)
+    - Supports all required network functionality (all protocols, service chaining, VLAN trunking, QoS marking, probe/mirror, etc)
     - Supports NFV migration
     - Supports snapshots and backups of large volumes
     - Pre-check or audit failures during NFV deployment should allow follow-up mitigation, when possible, rather than killing deployment and rolling back
@@ -205,7 +205,7 @@ NFVI+VNF verification will rely upon test harnesses, test tools, and test suites
 The following five test categories have been identified as minimal testing required to verify NFVI interoperability to satisfy the needs of VNF developer teams.
 
 - **Baremetal**: Validate Control and compute nodes hardware.
-- **VNF**: After VNF on boarded we are validating end to end resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavours etc.
-- **Compute Component**: Validate/Document VMs status and connectivity result after performing each of listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity.
+- **VNF**: After VNF on boarded we are validating end to end resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles, and flavours etc.
+- **Compute Component**: Validate/Document VMs status and connectivity result after performing each of the listed steps. Best candidate for this testing would be identify compute node that holds VMs which has l2 and l3 connectivity.
 - **Control Plane Component**: Validating different Control plane components and API.
 - **Security**: Validating user RBAC Roles and User group policies.
