@@ -1,12 +1,12 @@
 [<< Back](../)
 
-# 3. NNFVI Test Cases and Traceability to CNTT Requirements
+# 3. Cloud Infrastructure Test Cases and Traceability to CNTT Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
 * [3.2 Selection Criteria](#3.2)
-* [3.3 Test Cases](#3.3)
+* [3.3 Traceability Matrix](#3.3)
   * [3.3.1 Architecture and OpenStack Based](#3.3.1)
   * [3.3.2 Infrastructure](#3.3.2)
   * [3.3.3 VIM](#3.3.3)
@@ -685,7 +685,7 @@ of 0%) proposed in
 | HeatStacks.list_stacks_and_resources          | 10         |
 
 <a name="3.3.6"></a>
-### 5.3.6 Dataplane benchmarking
+### 3.3.6 Dataplane benchmarking
 
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
 offers two benchmarking dataplane test cases leveraging on:
