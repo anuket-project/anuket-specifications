@@ -82,7 +82,7 @@ In conclusion, to serve the stated objective building a common cloud infrastruct
 
 <a name="2.0"></a>
 # 2. Principles
-
+  
 Any specification work created within CNTT **must** conform to set of principles specified by CNTT:
 
 * [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles)
