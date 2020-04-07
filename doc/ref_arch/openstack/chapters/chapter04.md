@@ -57,6 +57,22 @@ In OpenStack, KVM is configured as the default hypervisor for compute nodes.
 <a name="4.2.2"></a>
 ### 4.2.2. Compute
 
+Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1. 
+
+**Flavor Geometry**
+
+| .conf | vCPU (c) | RAM (r) | Local Disk (d) | Management interface |
+|----|----|----|----|----|
+| .tiny | 1 | 512 MB | 1 GB | 1 Gbps |
+| .small | 1 | 2 GB | 20 GB  | 1 Gbps |
+| .medium | 2 | 4 GB | 40 GB | 1 Gbps |
+| .large | 4 | 8 GB | 80 GB | 1 Gbps |
+| .2xlarge* | 8 | 16 GB | 160 GB | 1 Gbps |
+| .4xlarge* | 16 | 32 GB | 320 GB | 1 Gbps |
+| .8xlarge* | 32 | 64 GB | 640 GB | 1 Gbps |
+
+<p align="center"><b>Table 4-1: Flavor Geometries</b></p>
+
 #### 4.2.2.1. Cloud Deployment (Foundation/management) Node
 Minimal configuration: 1 node
 
@@ -69,8 +85,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 | Boot disks |RAID 1 |
 | CPU reservation for host (kernel) |1 core per Numa |
 | CPU allocation ratio |2:1 |
-| <to be filled if needed>|  |
-| …|     |
+
 
 -	How many nodes to meet SLA
     -	Minimum 3 nodes for high availability
@@ -92,8 +107,7 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
-| <to be filled if needed>|  |
-| …|  
+ 
  
 -	How many nodes to meet SLA
     - Minimum 2 nodes for high availibility using VRRP.
@@ -112,26 +126,39 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
-| <to be filled if needed>|  |
-| …|  
+  
  
 -	HW specifications
 -	How many nodes to meet SLA
 -	Sizing rules
 
 #### 4.2.2.5. Compute Nodes
+
+This section specifies the compute node configurations to support the flavors. Because a flavor has the same capabilities but different geometry sizes, the term “flavor series” is used.
+
 -	The software and hardware configurations are as specified in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 -	BIOS requirement
-    -	The general bios requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
+    -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
+
+**Flavor Series**
+
+The Reference Model specifies the Basic (B) and Network Intensive (N) instance types (or flavor series). The Reference Model also specifies support for two different CPU allocation ratio values for the Basic flavor types, and choice of network acceleration capabilities utilising DPDK and SR-IOV technologies; please note SR-IOV is supported under an exception policy. Table 4-2 lists the capabilities for each flavor series.
+
+| Flavor Series | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
+|----|----|----|----|----|----|----|
+| B1 | 1:1 | Y | N | N | N | OVS-kernel |
+| B4 | 4:1 | Y | N | N | N | OVS-kernel |
+| NV | 1:1 | Y | Y | Y | Y | OVS-kernel |
+| ND | 1:1 | Y | Y | Y | Y | OVS-DPDK |
+| NS | 1:1 | Y | Y | Y | Y | SR-IOV with OVS-kernel |
+
+<p align="center"><b>Table 4-2: Flavor Capabilities</b></p>
+
     -	Additionally, for OpenStack we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Basic  | Network Intensive |
 |---------------|-----------|------------------|
 | Boot disks | RAID 1 | RAID 1 | 
-| CPU reservation for host (kernel) | 1 core per Numa | 1 core per Numa | 
-| CPU Pinning | No | Yes | 
-| <to be filled if needed> |  |  | 
-| … |  |  | <!--- | --->
 
 <!--- 
 Had to delete the Column for Compute intensive as commenting in table  didn't work 
@@ -211,35 +238,7 @@ While an instance with pinned CPUs cannot use CPUs of another pinned instance, t
 
 #### 4.2.2.9 Compute node configurations for Profiles and Flavors 
 
-Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities. This section specifies the compute node configurations to support these flavors. For convenience, the flavor geometry and capabilities are reproduced below. Because a flavor has the same capabilities but different geometry sizes, the term “flavor series” is used.
-
-**Flavor Geometry**
-
-| .conf | vCPU (c) | RAM (r) | Local Disk (d) | Management interface |
-|----|----|----|----|----|
-| .tiny | 1 | 512 MB | 1 GB | 1 Gbps |
-| .small | 1 | 2 GB | 20 GB  | 1 Gbps |
-| .medium | 2 | 4 GB | 40 GB | 1 Gbps |
-| .large | 4 | 8 GB | 80 GB | 1 Gbps |
-| .2xlarge* | 8 | 16 GB | 160 GB | 1 Gbps |
-| .4xlarge* | 16 | 32 GB | 320 GB | 1 Gbps |
-| .8xlarge* | 32 | 64 GB | 640 GB | 1 Gbps |
-
-<p align="center"><b>Table 4-1: Flavor Geometries</b></p>
-
-**Flavor Series**
-
-The Reference Model specifies the Basic (B) and Network Intensive (N) instance types (or flavor series). The Reference Model also specifies support for two different CPU allocation ratio values for the Basic flavor types, and choice of network acceleration capabilities utilising DPDK and SR-IOV technologies; please note SR-IOV is supported under an exception policy. Table 4-2 lists the capabilities for each flavor series.
-
-| Flavor Series | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
-|----|----|----|----|----|----|----|
-| B1 | 1:1 | Y | N | N | N | OVS-kernel |
-| B4 | 4:1 | Y | N | N | N | OVS-kernel |
-| NV | 1:1 | Y | Y | Y | Y | OVS-kernel |
-| ND | 1:1 | Y | Y | Y | Y | OVS-DPDK |
-| NS | 1:1 | Y | Y | Y | Y | SR-IOV with OVS-kernel |
-
-<p align="center"><b>Table 4-2: Flavor Capabilities</b></p>
+This section specifies the compute node configurations to support the flavors. 
 
 **Cloud Infrastructure Hardware Profile**
 
