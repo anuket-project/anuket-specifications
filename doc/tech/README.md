@@ -144,7 +144,8 @@ There will be dedicated OVP hacking tracks to facilitate VNF vendor onboarding a
 
 The CNTT will collaborate with the respective API workgroups of SDOs (ETSI, MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
 
->_More diagrams needed to illustrate relationships_
+<p align="center"><img src="./figures/tech_relation.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 3:</b> CNTT Relationship with OPNFV and CVC.</p>
 
 <a name="3.4"></a>
 ## 3.4 Specification Types
@@ -157,7 +158,7 @@ The CNTT will collaborate with the respective API workgroups of SDOs (ETSI, MEF,
 Below is a diagram of the different artefacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
 
 <p align="center"><img src="./figures/tech_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 3:</b> Description of the possible different levels of CNTT artefacts</p>
+<p align="center"><b>Figure 4:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="3.5"></a>
 ## 3.5 Bogo-Meter
