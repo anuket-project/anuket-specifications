@@ -45,30 +45,37 @@ For CNTT, a strategy is needed that affords Operators the performance, flexibili
 
 This section introduce some principles that should be followed during developing  and defining  Networking scopes for Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02  - K8s – down to Reference implementation and certificate under CNTT
 
-•	**Abstraction**: A standardized layer between Virtualization Layer domains and the Networking Hardware layer resource pool hiding the implementation details of the Networking Hardware.
+-	**Abstraction**:A standardized layer between Virtualization Layer domains and the Networking Hardware layer resource pool hiding the implementation details of the Networking Hardware.
+
+
 Note: This Principle may be deployed in many different ways depending on target use case requirements, workload characteristics (different algorithms implementing pipeline steps) and available platforms. This includes network functions running on server nodes with our without programmable HW acceleration, or functions running on a programmable standalone network switch in the network.
 
-•	**Agnosticity** : Build Network Fabric that can carry any type of workload in terms of :
 
-      o	Workload type : Can be Control, User and Management plan
+- **Agnosticity** :Build Network Fabric that can carry traffic for any type of workload in terms of:
 
-      o	Workload supported acceleration Technologies : SRIOV or DPDK based workload
+
+     o	Workload type : Can be Control, User ,  Management plan and Storage. 
+
+     o	Workload supported acceleration technologies : SRIOV or DPDK based workload.
+     
  
-•	**Automation**: Full Automation, starting from Fabric provisioning to automation of VNF/CNF onboarding
+-	**Automation**:Full Automation, starting from Fabric provisioning to automation of VNF/CNF onboarding.
 
-•	**Openness**: All CNTT networking is based on open API ( NBI and SBI )  and Open source SDN controllers integration 
 
-•	**Programmability**: should be based on state of art programmable fabric.
+-	**Openness**:All CNTT networking is based on open API ( NBI and SBI ) , standarded protocols and Open source SDN controllers integration.
 
-•	**Scalability**: should be scalable to handle all traffic traverse North-South and East-West.
 
-•	**Workload diversity**: should be capable to handle any VNF , CNF and BareMetal workload
+-	**Programmability**:Should be based on state of art programmable fabric.
 
-•	**Telco grade**: should be a Telco grade Fabric and SDN to fulfil Telco requirements such as Service chaining , Network Slicing,...etc
+-	**Scalability**:Should be scalable to handle all North-South and East-West traffic.
 
-•	**Edge**: Can be extended to covers the edge use cases
+-	**Workload diversity**:Should be capable to handle any VNF , CNF and BareMetal workload.
 
-•	**Future prove**: should be support a new acceleration technologies like smart NIC 
+-	**Telco grade**:Should be a Fabric and SDN that fulfils Telco requirements such as Availability, Manageability,Resiliency,Service  chaining and Network Slicing,...etc.
+
+-	**Edge**:Can be extended to covers the edge use cases.
+
+-	**Future prove**:Should be support a new acceleration technologies like Smart NIC , FPGAs,..etc.
 
 
 
