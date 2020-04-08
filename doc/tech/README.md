@@ -11,8 +11,8 @@
 * [3. Scope](#3.0)
   * [3.1 Functional Scope](#3.1)
   * [3.2 Out of Scope Components](#3.2)
-  * [3.3 Relationship to other industry projects](#3.3)
-  * [3.4 Specification Types](#3.4)
+  * [3.3 Specification Types](#3.4)
+  * [3.4 Relationship to other industry projects](#3.3)
   * [3.5 Bogo-Meter](#3.5)
 * [4. Approach](#4.0)
 * [5. Use Cases](#5.0)
@@ -116,8 +116,23 @@ While the nature of the CNTT might seem quite broad, the following areas are not
 - Lifecycle Management of the CaaS Clusters: whilst a complete NFV-MANO solution would need to provide lifecycle management for the Kubernetes clusters it is using to deploy its CNFs, the CNTT doesn't describe the NFVO and VNFM parts, and therefore the management of the cluster(s) is not in scope, while the VIM and the lifecycle management of containers (by Kubernetes) is in scope.
 - Company specific requirements: The CNTT documents are designed to be general enough that most operators and others in the Open Source communities will be able to adapt and extend them to their own non-functional requirements.
 
+
+
 <a name="3.3"></a>
-## 3.3 Relationship to other industry projects
+## 3.3 Specification Types
+
+- **Reference Model (RM)**: focuses on the __**Infrastructure Abstraction**__ and how services and resources are exposed to VNFs/CNFs. It needs to be written at a high enough level that as new **Reference Architectures** and **Reference Implementations** are added, the model document should require few or no changes. Additionally, the Reference Model is intended to be neutral towards VMs or Containers.
+- **Reference Architecture (RA)**: Reference Architectures defines all infrastructure components and properties which have effect on the VNF/CNF run time, deployment time, and design time.  It is expected that at least one, but not more than a few Reference Architectures will be created, and they will conform to the Reference Model.  The intention is, whenever possible, to use existing elements, rather than specify entirely new architectures in support of the high-level goals specified in the **Reference Model**.
+- **Reference Implementation(RI)**: Builds on the requirements and specifications developed in RM, RAs and adds details so that it can be implemented.  Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
+- **Reference Conformance(RC)**: Builds on the requirements and specifications developed in the other documents and adds details on how an implementation will be verified, tested and certified. Both infrastructure verification and conformance as well as VNFs/CNFs verifications and conformance will be covered.
+
+Below is a diagram of the different artefacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
+
+<p align="center"><img src="./figures/tech_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 3:</b> Description of the possible different levels of CNTT artefacts</p>
+
+<a name="3.4"></a>
+## 3.4 Relationship to other industry projects
 The CNTT work is not done in a vacuum.  The intention from the beginning was to utilize the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
 
 - ETSI NFV ISG
@@ -130,35 +145,31 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 - OSM (ETSi Open Source MANO project)
 - VMware (While not an Open Source project, VMware is a commonly used platform used for VNF deployments in the telecom industry)
 
+<a name="3.4.1"></a>
+### 3.4.1 Relationship to ETSI-NFV
+
 The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
+
+<p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 4:</b> CNTT Relationship with ETSI NFV.</p>
+
+<a name="3.4.2"></a>
+### 3.4.2 Relationship to OPNFV and OVP
 
 The CNTT is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including cloud infrastructure and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
 Once the CNTT Reference Models and Architectures are implemented and tested via OPNFV (**Reference Implementations**), commercial products adhering to these specifications can undergo an enhanced OVP’s workload and cloud infrastructure compliance testing for establishing baseline conformance and offering interoperability.  More details about the testing and verification requirements are found in the **Reference Conformance** documents.
 
-<!--
-There will be dedicated OVP hacking tracks to facilitate VNF vendor onboarding and testing. More information on the work and how to get involved can be found at the following links.  
-- https://www.lfnetworking.org/ovp.
-- Information on the existing 11 OPNFV Verified products to date is available here: https://nfvi-verified.lfnetworking.org/#/
--->
+<p align="center"><img src="./figures/tech_relation_opnfv.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 5:</b> CNTT Relationship with OPNFV and OVP.</p>
 
-The CNTT will collaborate with the respective API workgroups of SDOs (ETSI, MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
+<a name="3.4.3"></a>
+### 3.4.3 Relationship to CNCF
 
-<p align="center"><img src="./figures/tech_relation.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 3:</b> CNTT Relationship with OPNFV and CVC.</p>
+<a name="3.4.4"></a>
+### 3.4.4 Relationship to Other communities
 
-<a name="3.4"></a>
-## 3.4 Specification Types
-
-- **Reference Model (RM)**: focuses on the __**Infrastructure Abstraction**__ and how services and resources are exposed to VNFs/CNFs. It needs to be written at a high enough level that as new **Reference Architectures** and **Reference Implementations** are added, the model document should require few or no changes. Additionally, the Reference Model is intended to be neutral towards VMs or Containers.
-- **Reference Architecture (RA)**: Reference Architectures defines all infrastructure components and properties which have effect on the VNF/CNF run time, deployment time, and design time.  It is expected that at least one, but not more than a few Reference Architectures will be created, and they will conform to the Reference Model.  The intention is, whenever possible, to use existing elements, rather than specify entirely new architectures in support of the high-level goals specified in the **Reference Model**.
-- **Reference Implementation(RI)**: Builds on the requirements and specifications developed in RM, RAs and adds details so that it can be implemented.  Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
-- **Reference Conformance(RC)**: Builds on the requirements and specifications developed in the other documents and adds details on how an implementation will be verified, tested and certified. Both infrastructure verification and conformance as well as VNFs/CNFs verifications and conformance will be covered.
-
-Below is a diagram of the different artefacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
-
-<p align="center"><img src="./figures/tech_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 4:</b> Description of the possible different levels of CNTT artefacts</p>
+The CNTT will collaborate with the respective API workgroups of SDOs (MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
 
 <a name="3.5"></a>
 ## 3.5 Bogo-Meter
@@ -178,33 +189,7 @@ Different specification types within CNTT are related to each other and requires
 
 <a name="5.0"></a>
 # 5. Use Cases
-CNTT Addresses wide range of use cases from Core all the way to the Edge of Network. Different Use Cases supported by CNTT Specifications is described in [here](./usecases.md).
-
-<!--
-<a name="xxx"></a>
-## xxx Use Cases
-Since the CNTT membership is primarily from the telecom and telecom supporting vendors communities, most of the use cases represent the interests of that community.  The following high-level use cases are used to inform and guide both the reference model and subsequent architectures and implementations.  Note that many of these use cases were taken from the work done by the [OpenStack Foundation Edge Computing Group](https://wiki.openstack.org/wiki/Edge_Computing_Group).
-
-- **Mobile service provider 5G/4G virtual Radio Access Network (RAN) deployment and Edge Cloud B2B2X**: There are at least three use cases related to this (e.g. vRAN, VNF, Multi-access Edge Computing (MEC). While the use cases are different, the expectation is that they will run on the same infrastructure. So it makes sense to treat them together.
-  1. vRAN: Here the focus on virtual Baseband Unit (BBU) which has stringent requirements on processing for timing controls with 'remote radio heads'
-  1. NFV: Here the focus is on running the Core applications as virtual machines at the edge. This includes, vEPC elements, vRouters, Virtual Firewall (vFW), Virtual Load Balancer (vLB)
-  1. MEC: Here the focus is on running 3rd party or operator applications at the edge. The MEC resource pools could be supporting a variety of other MEC applications (smart city, v2x, consumer AR).
-- **Edge cloud service user**: For vRAN and NFV the user is the wireless network operator. For MEC it could be the operator, a 3rd party application provider or the wireless end-user.
-- **Edge cloud infrastructure user**: The Edge Cloud infrastructure user would be the network operator.
-- **Edge site(s)**: An operator's network could include thousands of sites. Each site could range from a handful of servers to dozens of racks.
-- **Connectviity reliability**: Front Haul reliability is driven by Radio requirements and is high. Backhaul reliability is driven by operator service requirements (5 9s)
-- **Edge Size**: medium to large
-- **Deployment infrastructure considerations / scaling**:
-
-   - Case 2: By splitting CU-DU (from BBU), vCU can run on the same edge computing platform that runs UPF(5G) ( or S/P-GW-U in 4G) and other VNFs including vFW and vLB. End users/devices traffic can be released at the clear demarcation point placing UPF in Edge DC. We can adopt a hybrid model and put VM-based UPF (and other VNFs) to carry the user's traffic to CNFs running in Kubernetes running on the same cloud infrastructure.
-   - Case 1: 1- The vBBU deployment is driven by need for : easy life cycle management, vendor independence, automatic scaling (and energy savings). 2- The NFV deployments is driven by need for automatic scaling and vendor independence. 3- The MEC deployment is driven by opportunities for new revenue streams possibly from new sources.
-   - Case 2: 1) Edge Cloud B2B2X model In the traditional Telco service provider model, the Telco provided services(the first B of B2B2X) directly to either individual or corporate consumers to increase revenue. In the Edge Cloud B2B2X model, Telco collaborates with diverse partners in other industries(the second B of B2B2X)to deliver added value to consumers/devices(X of B2B2X) through a wide range of the biz service providers. Here, the value that Telco Edge Cloud can provide biz service providers can take various forms, such as IoT & Edge Intelligence, Containerized micro service, AI framework, and other advanced ICT technologies, user interface technologies, and security tools.
-
-More use cases to pull in:  https://docs.openstack.org/arch-design/use-cases.html
-
->_**Comment**: This section is still under development._
-
--->  
+CNTT Addresses wide range of use cases from Core all the way to the Edge of the Network. Different use cases supported by CNTT specifications are described in [here](./usecases.md).
 
 <a name="6.0"></a>
 # 6. Roadmap and Releases
