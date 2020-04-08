@@ -205,10 +205,10 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 <a name="3.4.1"></a>
 ### 3.4.1 Relationship to ETSI-NFV
 
-The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
+The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
 
 <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 5:</b> CNTT Relationship with ETSI NFV.</p>
+<p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
 
 <a name="3.4.2"></a>
 ### 3.4.2 Relationship to OPNFV and OVP
@@ -221,8 +221,14 @@ Once the CNTT specifications are on place, OPNFV is expected to create a referen
 <p align="center"><b>Figure 6:</b> CNTT Relationship with OPNFV and OVP.</p>
 
 As can be seen from the above figure, roles and responsibilities are as follows:
-
-
+- CNTT specifies lab requirements in the **Reference Implementation** document which will be used by **OPNFV** to define what labs can be used within the community for the purpose of installing and testing CNTT conformant cloud infrastructure implementations.
+- CNTT includes a lab Playbook in it's **Reference Implementation** detailing available suitable labs to run and test cloud infrastructure implementations with access details and processes.
+- CNTT specifies installer requirements in the **Reference Implementation** document will be used by **OPNFV** to determine a suitable installer to be used to install a Reference Implementation of cloud infrastructure that are conformant to CNTT specifications.
+- CNTT includes an installation Playbook in it's **Reference Implementation** detailing instructions of how to to install OPNFV reference implementation using community installers. The **Reference Implementation** created by **OPNFV** is expected to be fully conformant to CNTT specifications and must pass all test suites defined in the CNTT **Reference Conformance** document.
+- CNTT specifies testing framework requirements in the **Reference Conformance** document will be used by OPNFV to determine a suitable testing framework and portals to be used for the purpose of running test suites and tools, and carry out badging processes.
+- CNTT defines high level test cases in the **Reference Conformance** document that relates to requirements coming from both the **Reference Model** and **Reference Architecture** to be used by **OPNFV** to determine what testing projects within the community are suitable to deliver those tests and convert them into low level test cases that can be implemented within those **OPNFV** testing Projects.
+- CNTT includes a traceability matrix in it's **Reference Conformance** document detailing every test case (or group of test cases) available in the community and map them to the high level test case definition and the requirements they are fulfilling.
+- CNTT includes a testing Playbook in it's **Reference Conformance** document detailing instructions of how to run **OPNFV** testing framework and test cases against commercial NFV products (infrastructure and workload) to check conformance to CNTT specifications. CNTT testing Playbook will also details instructions of how to submit testing results for the **OVP** badging process.
 
 
 <a name="3.4.3"></a>
