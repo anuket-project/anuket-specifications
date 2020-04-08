@@ -213,20 +213,27 @@ The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that
 <a name="3.4.2"></a>
 ### 3.4.2 Relationship to OPNFV and OVP
 
-The CNTT is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services, including cloud infrastructure and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
+The CNTT is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services including **Vendor's Implementation (VI)** of cloud infrastructure and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
-Once the CNTT Reference Models and Architectures are implemented and tested via OPNFV (**Reference Implementations**), commercial products adhering to these specifications can undergo an enhanced OVP’s workload and cloud infrastructure compliance testing for establishing baseline conformance and offering interoperability.  More details about the testing and verification requirements are found in the **Reference Conformance** documents.
+Once the CNTT specifications are on place, OPNFV is expected to create a reference implementation that is adherent to requirements set in CNTT (**Reference Implementations**). Additionally, Commercial products adhering to CNTT specifications will be able to undergo an enhanced OVP’s program (based on CNTT **Reference Conformance** specification) using OPNFV testing framework and tools. **Figure 6** below illustrates the relationship with OPNFV and OVP in more details (specific to OpenStack based specifications)
 
 <p align="center"><img src="./figures/tech_relation_opnfv.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 6:</b> CNTT Relationship with OPNFV and OVP.</p>
 
+As can be seen from the above figure, roles and responsibilities are as follows:
+
+
+
+
 <a name="3.4.3"></a>
 ### 3.4.3 Relationship to CNCF
+
+>to be clarified while as relationship is being established.
 
 <a name="3.4.4"></a>
 ### 3.4.4 Relationship to Other communities
 
-The CNTT will collaborate with the respective API workgroups of SDOs (MEF, TM Forum) as much as possible.  However, to collate on the relevant APIs from these SDOs in some cases requires special permission since information might not be available to the public.  For example. MEF LSO APIs & TM Forum OpenAPIs are accessible by members only.
+The CNTT collaborates with relevant API workgroups of SDOs ( such as MEF, TM Forum, 3GPP, TIP, etc) where applicable to align with their specification work and utilise their efforts.
 
 <a name="3.5"></a>
 ## 3.5 Bogo-Meter
