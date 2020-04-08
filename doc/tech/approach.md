@@ -153,11 +153,11 @@ VTEP could be manually provisioned in the Underlay Networking or be automated an
 <a name="5.1.3.2"></a>
 #### 5.1.3.2 Hardware and Software Infrastructure Layer concepts
 
+The ETSI NFV Infrastructure (that CNTT refers to as Cloud Infrastructure) can be considered to be composed of two distinct layers, referred to as HW Infrastructure Layer and SW Infrastructure Layer. When there are multiple separated simultaneously deployed SW Virtualisation domains, the architecture and deployed implementations must enable each of them to be in individual non-dependent administrative domains. The HW Infrastructure must also be enabled to be a fully separated administrative domain from all of the SW Virtualisation domains. 
+
 For Cloud implementations of multiple well separated simultaneous SW Virtualisation domains on a shared HW Infrastructure there must be a separation of the hardware resources e.g. servers and the Underlay Networking resources that interconnect the hardware resources e.g. through a switching fabric.
 
 To allow multiple separated simultaneous SW Virtualisation domains onto a shared switching fabric there is a need to split up the Underlay Networking resources into non overlapping addressing domains on suitable protocols e.g. VxLAN with their VNI Ranges. This separation must be done through an administrative domain that could not be compromised by any of the individual SW Virtualisation domains either by malicious or unintentional Underlay Network mapping or configuration.
-
-The ETSI NFV Infrastructure (that CNTT refers to as Cloud Infrastructure) can be considered to be composed of two distinct layers, referred to as HW Infrastructure Layer and SW Infrastructure Layer. When there are multiple separated simultaneously deployed SW Virtualisation domains, the architecture and deployed implementations must enable each of them to be in individual non-dependent administrative domains. The HW Infrastructure must also be enabled to be a fully separated administrative domain from all of the SW Virtualisation domains. 
 
 These concepts are very similar to how the Hyperscaler Cloud Providers (HCP) offer Virtual Private Clouds for users of Bare Metal deployment on the HCP shared pool of servers, storage and network resources.
 
@@ -213,7 +213,7 @@ The Networking Reference Model depicted in **Figure 5-1-4** is based on the ETSI
 
 It is up to any deployment of  the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
-<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA6.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
+<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA7.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
 <p align="center"><b>Figure 5-1-4:</b> Networking Reference Model based on the ETSI NFV</p>
 
 <a name="5.1.5"></a>
@@ -248,6 +248,6 @@ A Networking Reference Model deployment example is depicted in **Figure 5-1-5-3*
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNF on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks since it is not foreseen any generic standard of a CaaS that will be capable to handle all types of CNFs and also have a decoupled Life Cycle Management from all individual CNFs from a multi-vendor community. 
 
-<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_DeploymentExample-PA6.jpg" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
+<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_DeploymentExample-PA7.jpg" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
 <p align="center"><b>Figure 5-1-5-3:</b> Networking Reference Model deployment example</p>
 
