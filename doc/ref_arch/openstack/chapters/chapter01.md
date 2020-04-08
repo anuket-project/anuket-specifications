@@ -19,7 +19,7 @@ This Reference Architectures is focussed on OpenStack as the VIM chosen based on
 
 <a name="1.1.1"></a>
 ## 1.1.1. Vision
-The ultimate goal is that the OpenStack-based CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Common NFVI Telco community.  Initially the OpenStack-based Reference Architecture would be used for testing and validating VNFs that can then be deployed in compatible operator clouds.   The Reference Architecture document can be used by operators to deploy compliant production infrastructure.  
+The OpenStack-based CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the CNTT community.  The Reference Architecture document can be used by operators to deploy CNTT conformant infrastructure.  
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
@@ -33,9 +33,8 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 
 <a name="1.3"></a>
 ## 1.3 Terminology
-Unless specific OpenStack terms are used, the terminology can be found [CNTT Reference Model Terminology](../../../ref_model/chapters/glossary.md#1.1).  
 
-Add add any OpenStack specific terms here.
+General terminology definitions can be found [CNTT Reference Model](../../../ref_model/chapters/glossary.md#1.1) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./terminology.md).
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
 

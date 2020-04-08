@@ -37,13 +37,13 @@ The NFVI APIs consist of set of APIs that are externally and internally visible.
 <p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
 <p align="center"><b>Figure 6-1:</b> ETSI NFVI Interface points.</p>
 
-| Interface Point | NFVI Exposure | Interface Between | Description|
-|--------------|--------------|--------------|--------------|
-| Vi-Ha | Internal NFVI | Software Layer and Hardware Resources | 1. Discover/collect resources and their configuration information <br>2. Create execution environment (e.g., VM) for workloads (VNF) |
-| Vn-Nf|  External | NFVI and VM (VNF) | Here VNF represents the execution environment. The interface is used to specify interactions between the VNF and abstract NFVI accelerators. The interfaces can be used to discover, configure, and manage these acceleartors and for the VNF to register/deregister for receiving acceleartor events and data. |
-| NF-Vi | External | NFVI and VIM | 1. Discover/collect physical/virtual resources and their configuration information<br>2. Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3. Physical/Virtual resources configuration changes<br>4. Physical/Virtual resource configuration. |
-| Or-Vi | External | VNF Orchestrator and VIM | See below |
-| Vi-Vnfm | External | VNF Manager and VIM | See below |
+| Interface Point | NFVI Exposure | Interface Between                     | Description                                                                                                                                                                                                                                                                                                     |
+|-----------------|---------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Vi-Ha           | Internal NFVI | Software Layer and Hardware Resources | 1. Discover/collect resources and their configuration information <br>2. Create execution environment (e.g., VM) for workloads (VNF)                                                                                                                                                                            |
+| Vn-Nf           | External      | NFVI and VM (VNF)                     | Here VNF represents the execution environment. The interface is used to specify interactions between the VNF and abstract NFVI accelerators. The interfaces can be used to discover, configure, and manage these acceleartors and for the VNF to register/deregister for receiving acceleartor events and data. |
+| NF-Vi           | External      | NFVI and VIM                          | 1. Discover/collect physical/virtual resources and their configuration information<br>2. Manage (create, resize, (un) suspend, reboot, etc.) physical/virtualised resources<br>3. Physical/Virtual resources configuration changes<br>4. Physical/Virtual resource configuration.                               |
+| Or-Vi           | External      | VNF Orchestrator and VIM              | See below                                                                                                                                                                                                                                                                                                       |
+| Vi-Vnfm         | External      | VNF Manager and VIM                   | See below                                                                                                                                                                                                                                                                                                       |
 
 <p align="center"><b>Table 6-1:</b> NFVI and VIM Interfaces with Other System Components.</p>
 
@@ -70,21 +70,20 @@ For a VNF stack to be created in a Tenant also requires APIs for the management 
 
 A virtual compute resource is created as per the flavour template (specifies the compute, memory, and local storage capacity) and is launched using an image with access and security credentials; once launched, it is referred to as a virtual compute instance or just “Instance”). Instances can be launched by specifying the compute, memory, and local storage capacity parameters instead of an existing flavour; reference to flavours covers the situation where the capacity parameters are specified. IP addresses and storage volumes can be attached to a running Instance.
 
-| Resource | Create | List | Attach | Detach | Delete | Notes |
+| Resource        | Create | List | Attach | Detach | Delete | Notes                                                                                                       |
 |-----------------|--------|------|--------|--------|--------|-------------------------------------------------------------------------------------------------------------|
-| Flavour | + | + |  |  | + |  |
-| Image | + | + |  |  | + | Create/delete by appropriate administrators |
-| Key pairs | + | + |  |  | + |  |
-| Privileges |  |  |  |  |  | Created and managed by Cloud Service Provider(CSP)  administrators |
-| Role | + | + |  |  | + | Create/delete by authorized administrators where roles are assigned privileges and mapped to users in scope |
-| Security Groups | + | + |  |  | + | Create and delete only by VDC administrators |
-| Stack | + | + |  |  | + | Create/delete by VDC users with appropriate role |
-| Virtual Storage | + | + | + | + | + | Create/delete by VDC users with appropriate role |
-| User | + | + |  | + | + | Create/delete only by VDC administrators |
-| Tenant | + | + |  | + | + | Create/delete only by Cloud Zone administrators |
-| Virtual compute | + | + |  | + | + | Create/delete by VDC users with appropriate role.  Additional operations would include suspend/unsuspend |
-| Virtual network | + | + | + | + | + | Create/delete by VDC users with appropriate role |
-
+| Flavour         | +      | +    |        |        | +      |                                                                                                             |
+| Image           | +      | +    |        |        | +      | Create/delete by appropriate administrators                                                                 |
+| Key pairs       | +      | +    |        |        | +      |                                                                                                             |
+| Privileges      |        |      |        |        |        | Created and managed by Cloud Service Provider(CSP)  administrators                                          |
+| Role            | +      | +    |        |        | +      | Create/delete by authorized administrators where roles are assigned privileges and mapped to users in scope |
+| Security Groups | +      | +    |        |        | +      | Create and delete only by VDC administrators                                                                |
+| Stack           | +      | +    |        |        | +      | Create/delete by VDC users with appropriate role                                                            |
+| Virtual Storage | +      | +    | +      | +      | +      | Create/delete by VDC users with appropriate role                                                            |
+| User            | +      | +    |        | +      | +      | Create/delete only by VDC administrators                                                                    |
+| Tenant          | +      | +    |        | +      | +      | Create/delete only by Cloud Zone administrators                                                             |
+| Virtual compute | +      | +    |        | +      | +      | Create/delete by VDC users with appropriate role.  Additional operations would include suspend/unsuspend    |
+| Virtual network | +      | +    | +      | +      | +      | Create/delete by VDC users with appropriate role                                                            |
 <p align="center"><b>Table 6-2:</b> API types for a minimal set of resources.</p>
 
 **Table 6-2** specifies a minimal set of operations for a minimal set of resources that are needed to orchestrate VNF workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.

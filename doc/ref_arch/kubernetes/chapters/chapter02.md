@@ -17,9 +17,8 @@
   * [2.3.2 Infrastructure Requirements](#2.3.2)
   * [2.3.3 Kubernetes Cluster Requirements](#2.3.3)
   * [2.3.4 Interfaces and APIs Requirements](#2.3.4)
-  * [2.3.5 Operations and LCM Requirements](#2.3.5)
-  * [2.3.6 Assurance Requirements](#2.3.6)
-  * [2.3.7 Security Requirements](#2.3.7)
+  * [2.3.5 Assurance Requirements](#2.3.6)
+  * [2.3.6 Security Requirements](#2.3.7)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -71,7 +70,7 @@ From Reference Model section [4.2.2 Virtual Network Interface Specifications](..
 <a name="2.2.3"></a>
 ### 2.2.3 VIM Capabilities
 
-From Reference Model section [4.1.6 VIM Capabilities](../../../ref_model/chapters/chapter04.md#416-vim-capabilities)
+From Reference Model section [4.1.5 Cloud Infrastructure management Capabilities](../../../ref_model/chapters/chapter04.md#4.1.5)
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
@@ -160,7 +159,7 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 **3)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.<br>
 **4)** In Kubernetes based infrastructures object storage is considered as a PaaS capability and excluded from the infrastructures scope.<br>
 **5)** There is no vNIC in case of containers.<br>
-**6)** In Kubernetes based infrastructures network separation is possible withtout an overlay (e.g.: with IPVLAN)<br>
+**6)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)<br>
 **7)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.<br>
 **8)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.<br>
 
@@ -215,6 +214,12 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.14` | Network | The Architecture **must** support capabilities for integrating SDN controllers. |
 | `req.inf.ntw.15` | Network | The Architecture **should** support Service Mesh Interface (SMI). |
 | `req.inf.ntw.16` | Network | The Architecture **should**  support coexistence of multiple connection points in a pod. |
+| `req.inf.ntw.17` | Network | The Architecture **must**  support more than one networking solution.
+| `req.inf.ntw.18` | Network | The Architecture **must** support the ability for an operator to choose whether or not to deploy more than one networking solution.
+| `req.inf.ntw.19` | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. |
+| `req.inf.ntw.20` | Network | The networking solution **must**  must not interfere with or cause interference to any interface or network it does not own. |
+| `req.inf.ntw.21` | Network | The Architecture **must** support cluster wide coordination of IP address assignment. |
+| `req.inf.ntw.22` | Network | The Architecture **should** support the use of any interface with a Kubernetes Service if the interface is designed to work with Kubernetes Services. |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |
@@ -259,25 +264,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 <p align="center"><b>Table 2-8:</b> Kubernetes Architecture: Interfaces and APIs Requirements </p>
 
 <a name="2.3.5"></a>
-### 2.3.5 Operations and LCM Requirements
-
-| Ref # | sub-category | Description |
-|---|---|---|
-| `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). |
-| `req.lcm.gen.02` | General | The Architecture **must** support API driven life-cycle management (LCM) of the infrastructure that allows repeatable, scalable and standardised handling of K8s clusters. LCM use cases to cover are: instantiation, termination, upgrade, scaling, and healing. |
-| `req.lcm.adp.01` | Automated deployment | The Architecture **must** allow for automated deployment, configuration, provisioning and life cycle management of multiple - declaratively specified - kubernetes clusters. |
-| `req.lcm.adp.04` | Automated deployment | The Architecture **must** support declarative specifications of hardware, including compute, network, and storage, and software assets for automated deployment, configuration, maintenance, and life cycle management. |
-| `req.lcm.adp.05` | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of CIM Instances. |
-| `req.lcm.cid.01` | CI/CD | The Architecture **should** support integration with CI/CD Toolchain for NFVI and CIM components Automation. |
-
-<!--
-| `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. |
--->
-
-<p align="center"><b>Table 2-9:</b> Kubernetes Architecture: Operations and LCM Requirements </p>
-
-<a name="2.3.6"></a>
-### 2.3.6 Assurance Requirements
+### 2.3.5 Assurance Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|
@@ -288,8 +275,8 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 <p align="center"><b>Table 2-10:</b> Kubernetes Architecture: Assurance Requirements</p>
 
-<a name="2.3.7"></a>
-### 2.3.7 Security Requirements
+<a name="2.3.6"></a>
+### 2.3.6 Security Requirements
 
 | Ref # | sub-category | Description |
 |---|---|---|

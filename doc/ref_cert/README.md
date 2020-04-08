@@ -6,3 +6,4 @@
 
 ## Available Programs
 * [RC1 - LFN Based](lfn)
+* [RC2 - Kubernetes Based](RC2)

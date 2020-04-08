@@ -19,27 +19,22 @@
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
 * [4.5 Cloud Topology.](#4.5)
   * [4.5.1 Cloud Topology Considerations](#4.5.1)
-* [4.6 Logging / Monitoring / Alerting of Control Plane](#4.6)
 
 
 
 <a name="4.1"></a>
 ## 4.1 Introduction.
-**Will update this section with a summary from the sub-chapters**
 
-<!--
-Chapter 3 presented the high level architecture and core OpenStack services for creating an IaaS cloud. This chapter discusses the second level of details (as defined by L3) including deployment topology, distribution of the core OpenStack services among Controller and Compute nodes.
+Chapter 3 introduced the components of an OpenStack-based IaaS
+-	Consumable Infrastructure Resources and Services
+-	NFVI Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
+-	Underlying physical compute, storage and networking resources
 
-Additionally, This Chapter will delve deeper into certain topics that need to be considered in creating and operating an OpenStack based IaaS cloud, such as:
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for flavors. 
 
-- The physical (underlay) and the overlay networks needed for intra tenant and external (to the tenant) communications.
-- Cloud topology related to host aggregates and availability zones, and minimal software versions for shared services (kernel, host operating system, common drivers, etc.).
-- Listing of some of the requirements for Security and Life Cycle Management.
--->
 
 <a name="4.2"></a>
 ## 4.2 Underlying Resources
-**content to be developed**
 
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
@@ -85,6 +80,9 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 
 
 #### 4.2.2.3. Network nodes
+
+Networks nodes are mainly used for L3 traffic management for overlay tenant network (see more detail in section 4.3.1.5 Neutron)
+
 -	BIOS requirements 
 
 | BIOS/boot Parameter | Value |
@@ -94,8 +92,15 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 | …|  
  
 -	How many nodes to meet SLA
+    - Minimum 2 nodes for high availibility using VRRP.
 -	HW specifications
+    - 3 NICs card are needed if we want to isolate the different flows :
+         - 1 NIC for Tenant Network
+         - 1 NIC for External Network
+         - 1 NIC for Other Networks (PXE, Mngt ...)
 -	Sizing rules
+    - Scale out of network node is not easy 
+    - DVR can be an option for large deployment (see more detail in chapter 4.3.1.5 - Neutron)
 
 #### 4.2.2.4. Storage nodes
 -	BIOS requirements
@@ -120,6 +125,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 |---------------|-----------|------------------|
 | Boot disks | RAID 1 | RAID 1 | 
 | CPU reservation for host (kernel) | 1 core per Numa | 1 core per Numa | 
+| CPU Pinning | No | Yes | 
 | <to be filled if needed> |  |  | 
 | … |  |  | <!--- | --->
 
@@ -133,6 +139,14 @@ CPU reservation for host: 1 core per NUMA
     - minimum: two nodes per profile
 -	HW specifications
     -	Boot disks are dedicated with Flash technology disks
+
+- In case of DPDK usage:
+
+| Layer | Description |
+|-------------|--|
+| Cloud infrastructure | Important is placement of NICs to get NUMA-balanced system (balancing the I/O, memory, and storage across both sockets), and configuration of NIC features. Server BIOS and Host OS kernel command line settings are described in [DPDK release notes](http://doc.dpdk.org/guides/rel_notes/) and [DPDK performance reports](http://core.dpdk.org/perf-reports/). Disabling power settings (like Intel Turbo Boost Technology) brings stable performance results, although understanding if and when they benefit workloads and enabling them can achieve better performance results. |
+| Workload | DPDK uses core affinity along with 1G or 2M Huge Pages, NUMA settings (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode Drivers (PMD, on reserved cores) to get the best performance. DPDK versions xx.11 are Long-Term Support maintained stable release with back-ported bug fixes for a two-year period. |
+
 -	Sizing rules
 
 | Number of CPU sockets| s | 
@@ -383,6 +397,7 @@ Heat is the orchestration service using template to provision cloud resources, H
 #### 4.3.1.9 Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
+<!--
 #### 4.3.1.10 Cyborg
 Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
 -	cyborg-api
@@ -390,8 +405,9 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 -	cyborg-db
 - cyborg-agent  which runs on compute nodes
 - *-driver drivers which run on compute nodes and depend on the acceleration hardware
+-->
 
-#### 4.3.1.11 Placement
+#### 4.3.1.10 Placement
 The OpenStack Placement service enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as VCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”).  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
 
 <p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
@@ -500,16 +516,6 @@ Host profiles (SW Host profile + HW host profile) “partition” the cloud into
 As we get away from the large data centers to the smaller sites it becomes progressively difficult to be able to create enough capacity for each of these instance types in support of their target VNFs or to have a mix of hardware targeted for each instance type.
 
 
-<a name="4.6"></a>
-## 4.6 Logging / Monitoring / Alerting of Control Plane
 
-Enterprises and vendors may have custom monitoring and logging solutions. The intent of the logging and monitoring is to capture events and data of interest to the NFVI and workloads so that appropriate actions can be taken.  Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](../../../ref_model/chapters/chapter04.md).
-
-In this section, a possible framework utilizing Prometheus, Elasticsearch and Kibana is given as an example only.
-
-<p align="center"><img src="../figures/Figure_4_4_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"></br>
-Figure 4-3: Monitoring and Logging Framework </p>
-
-The monitoring and logging framework (**Figure 4-6**) leverages Prometheus as the monitoring engine and Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. Prometheus agents pull information from individual components on every host.  Fluentd, an open source data collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures the access, application and system logs.
 
 

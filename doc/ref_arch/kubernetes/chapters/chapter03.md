@@ -41,7 +41,7 @@ These features and capabilities that are described in the software and hardware 
 <a name="3.2"></a>
 ## 3.2 Infrastructure Services
 
-> This chapter shall list the services provided by the infrastructure. Some example of these services can be: log collection, monitoring, health check, load balancer. For the shake of clarity CaaS services should be also listed, like container lifecycle management or networking services.
+> This chapter shall list the services provided by the infrastructure. Some example of these services can be: log collection, monitoring, health check, load balancer. For the sake of clarity CaaS services should be also listed, like container lifecycle management or networking services.
 
 <a name="3.2.1"></a>
 ### 3.2.1 Container Compute Services
@@ -57,7 +57,7 @@ The Host OS (as with any OS) consists of two main layers:
 - Kernel space
 - User space
 
-The Kernel is the tightly controlled space that provides an API via system calls to applications running in the user space (which usually have their own southbound interface in an interpreter or libraries).  Key containerisation capabilities such as Control Groups (cgroups) and namespaces are kernel features, and are used and managed by the container runtime in order to provide isolation between the user space processes (of which the container itself is one, and the processes running within the container are also).  The Host OS is key therefore to the overall security posture and must be appropriately secured to ensure processes running in one container cannot escalate their privileges, for example (covered further in [chapter 6](./chapter06.md)).
+The Kernel is the tightly controlled space that provides an API via system calls to applications running in the user space (which usually have their own southbound interface in an interpreter or libraries). Key containerisation capabilities such as Control Groups (cgroups) and namespaces are kernel features, and are used and managed by the container runtime in order to provide isolation between the user space processes, that also include the container itself as well as processes running within it. The Host OS is key therefore to the overall security posture and must be appropriately secured to ensure processes running in one container cannot escalate their privileges, for example (covered further in [chapter 6](./chapter06.md)).
 
 A key thing to note is that the container runtime itself is also a set of processes that run in user space, and interact with the kernel via system calls as well.  Many diagrams will show containers as running on top of the runtime, or inside the runtime.  More accurately, the containers themselves are simply some processes running within an OS, and the container runtime is another set of processes that are used to manage those containers (pull, run, delete, etc.) and the kernel features required to provide the isolation (cgroups, namespaces, filesystems, etc.).
 
@@ -99,6 +99,10 @@ Where low-level runtimes are focused on the execution of a container within an O
 
 When it comes to Kubernetes, the important interface that we need to consider for container management is the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/), which is an interface specification for any container runtime to be able to integrate with the kubelet on a Kubernetes Node. The CRI decouples the kubelet from the runtime that is running in the Host OS, meaning that the code required to integrate kubelet with a container runtime is not part of the kubelet itself (i.e. if a new container runtime comes along, and it uses CRI, it will work with kubelet). Examples of this type of runtime include containerd (with cri plugin) and cri-o, which was built specifically for Kubernetes.
 
+To fullfill `req.sec.gen.04` the architecture should support a container runtime which provides the isolation of Operating System kernels.
+
+As `req.sec.gen.05` mandates the architecture to support the isolation of compute resources the architecture must support a way to isolate the compute resources of the infrastructure itself from the workloads compute resources.
+
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
@@ -123,7 +127,7 @@ As `req.inf.ntw.14` mandates the architecture must enable the integration of dif
 The architecture must support telecom equipment networking where the CNF networks are set up by the operator's network administrators. This is why, as `req.inf.ntw.10` requires, the architecture must provide a set of abstract management API-s to manage the network connectivity of the CNF pods.
 The API must support multiple tenants and must require elevated acces rights to manipulate infrastructure related API objects as these operations require reconfiguration of the physical network infrastructure.
 
-To fullfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and Huge Pages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+To fulfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and Huge Pages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
 
 The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads.
 
