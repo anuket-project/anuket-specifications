@@ -148,7 +148,10 @@ Following are a number of key architectural principles that apply to all Referen
 Within the framework of the Common Telecom cloud infrastructure vision, there are four levels of documents needed to describe the components, realize the practical application of the systems and qualify the resulting cloud infrastructure. They are, as highlighted in **Figure 1**:  **Reference Model**, **Reference Architecture**, **Reference Implementation**, and **Reference Conformance**.
 
 <p align="center"><img src="./figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1:</b> Documentation Scope of CNTT</p>
+<p align="center"><b>Figure 1:</b> Documentation Types of CNTT</p>
+
+<p align="center"><img src="./figures/tech_stack.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 2:</b> Documentation Scope of CNTT</p>
 
 <a name="3.1"></a>
 ## 3.1 Functional Scope
