@@ -182,6 +182,7 @@ The following OpenStack components are deployed on the Infrastructure. Some of t
 | Compute Resources Manager| Ironic| the Bare Metal Provisioning service| Optional| X| X |
 | (Tool that utilizes APIs)| Heat| the orchestration service| Required| X|  |
 | UI| Horizon| the WEB UI service| Required| X|  |
+| Key Manager| Barbican| the secret data management service| Optional| X|  |
 <!--
 | Acceleration Resources Manager| Cyborg| the acceleration resources management| Optional| X| X |
 -->
