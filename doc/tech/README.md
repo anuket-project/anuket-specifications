@@ -83,10 +83,64 @@ In conclusion, to serve the stated objective building a common cloud infrastruct
 <a name="2.0"></a>
 # 2. Principles
 
-Any specification work created within CNTT **must** conform to set of principles specified by CNTT:
+Any specification work created within CNTT **must** conform to the following principles:
 
-* [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles)
-* [Reference Architecture Principles](../ref_arch#principles)
+<a name="2.1"></a>
+## 2.1 Overall Principles
+
+1. A top-level objective is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical. Two principles are introduced in support of these objectives:
+    - **Minimise Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
+      - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same cloud infrastructure instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
+      - Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.
+
+    - **Create an additional Architecture only when incompatible elements are unavoidable:**
+      - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to community consensus, such that one Architecture would be KVM-based and the other would be ESXi-based.
+
+        >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, the infrastructure architecture designers might implement the Architecture as described in the reference document, however when there is a potential for incompatibility for particular component, they would select their preferred option from one of the relevant annexes. For example, if one member wanted to use Software-Defined storage (SDS) as CEPH, and another member wanted to use Storage attached network(SAN), assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the CEPH implementation and one annex for the SAN implementation.
+
+1. Cloud Infrastructure provides abstract and physical resources corresponding to:
+   - Compute resources
+   - Storage resources
+   - Memory resources
+   - Networking resources (Limited to connectivity services only)
+   - Acceleration resources
+1. Cloud Infrastructure exposed resources should be supplier independent
+1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
+1. VNFs should be modular and be designed to utilise the minimum resources required for the service
+1. Cloud Infrastructure shall support pre-defined and parameterised sizes
+   - These pre-defined sizes will evolve over time
+1. Cloud Infrastructure provides certain resources, capabilities and features, and workloads should only consume these resources, capabilities and features
+1. VNFs that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
+1. Workloads shall not require hardware-dependent software
+   - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
+   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
+   - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
+1. Specific internal hardware details shall not be exposed above the Infra+VIM layers
+   - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
+   - This pertains to features that operate at detailed levels of hardware granularity, such as EPA.
+
+<a name="2.2"></a>
+## 2.2 Architectural Principles
+
+Following are a number of key architectural principles that apply to all Reference Architectures produced by CNTT:
+
+1. **Open source preference:** To ensure, by building on technology available in open source projects, that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio.
+
+1. **Open APIs:** To enable interoperability and component substitution, and minimize integration efforts by using openly published API definitions.
+
+1. **Separation of concerns:** To promote lifecycle independence of different architectural layers and modules (e.g. disagregation of software from hardware).
+
+1. **Automated lifecycle management:** To minimize costs of the end-to-end lifecycle, maintenance downtime (target zero downtime), avoid errors and discrepancies resulting from manual processes.
+
+1. **Automated scalability:** To minimize costs and operational impacts through automated policy-driven scaling of workloads by enabling automated horizontal scalability of workloads.
+
+1. **Automated closed loop assurance:** To minimize operational costs and simplify NFVI platform operations by using automated fault resolution and performance optimization.
+
+1. **Cloud nativeness:** To optimise the utilization of resources and enable operational efficiencies.
+
+1. **Security compliance:** To ensure the architecture follows the industry best security practices and is at all levels compliant to relevant security regulations.
+
+1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and to avoid Single Point of Failure.
 
 <a name="3.0"></a>
 # 3. Scope
@@ -115,8 +169,6 @@ While the nature of the CNTT might seem quite broad, the following areas are not
 - Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a blackbox that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the cloud infrastructure whenever possible.
 - Lifecycle Management of the CaaS Clusters: whilst a complete NFV-MANO solution would need to provide lifecycle management for the Kubernetes clusters it is using to deploy its CNFs, the CNTT doesn't describe the NFVO and VNFM parts, and therefore the management of the cluster(s) is not in scope, while the VIM and the lifecycle management of containers (by Kubernetes) is in scope.
 - Company specific requirements: The CNTT documents are designed to be general enough that most operators and others in the Open Source communities will be able to adapt and extend them to their own non-functional requirements.
-
-
 
 <a name="3.3"></a>
 ## 3.3 Specification Types
