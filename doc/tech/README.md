@@ -150,6 +150,8 @@ Within the framework of the Common Telecom cloud infrastructure vision, there ar
 <p align="center"><img src="./figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Documentation Types of CNTT</p>
 
+**Figure 2** below illustrates the scope of each of those specifications within a typical cloud platform stack.
+
 <p align="center"><img src="./figures/tech_stack.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> Documentation Scope of CNTT</p>
 
@@ -163,7 +165,7 @@ In terms of the functional scope of the CNTT documentation, in order to target t
 Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf), those ETSI interfaces that are considered relevant (with notes where required) are included in the figure below.
 
 <p align="center"><img src="./figures/cntt-scope.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 2:</b> Functional Scope of CNTT</p>
+<p align="center"><b>Figure 3:</b> Functional Scope of CNTT</p>
 
 <a name="3.2"></a>
 ## 3.2 Out of Scope Components
@@ -184,7 +186,7 @@ While the nature of the CNTT might seem quite broad, the following areas are not
 Below is a diagram of the different artefacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
 
 <p align="center"><img src="./figures/tech_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 3:</b> Description of the possible different levels of CNTT artefacts</p>
+<p align="center"><b>Figure 4:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="3.4"></a>
 ## 3.4 Relationship to other industry projects
@@ -203,10 +205,10 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 <a name="3.4.1"></a>
 ### 3.4.1 Relationship to ETSI-NFV
 
-The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
+The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications. To facilitate more collaboration as the project matures, the CNTT scope (**Figure 3** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
 
 <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 4:</b> CNTT Relationship with ETSI NFV.</p>
+<p align="center"><b>Figure 5:</b> CNTT Relationship with ETSI NFV.</p>
 
 <a name="3.4.2"></a>
 ### 3.4.2 Relationship to OPNFV and OVP
@@ -216,7 +218,7 @@ The CNTT is also closely aligned with OVP, an open source, community-led complia
 Once the CNTT Reference Models and Architectures are implemented and tested via OPNFV (**Reference Implementations**), commercial products adhering to these specifications can undergo an enhanced OVP’s workload and cloud infrastructure compliance testing for establishing baseline conformance and offering interoperability.  More details about the testing and verification requirements are found in the **Reference Conformance** documents.
 
 <p align="center"><img src="./figures/tech_relation_opnfv.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 5:</b> CNTT Relationship with OPNFV and OVP.</p>
+<p align="center"><b>Figure 6:</b> CNTT Relationship with OPNFV and OVP.</p>
 
 <a name="3.4.3"></a>
 ### 3.4.3 Relationship to CNCF
