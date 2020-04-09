@@ -229,7 +229,7 @@ While an instance with pinned CPUs cannot use CPUs of another pinned instance, t
 
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/Figure_4_1_OpenStack_Network_Layout_20200110.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/Figure_4_1_Indicative_OpenStack_Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
@@ -365,10 +365,40 @@ Swift is the object storage management service, Swift depends on Keystone and po
 _The Swift backends include iSCSI drives, Ceph RBD and NFS._ 
 
 #### 4.3.1.5 Neutron
-Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes:
--	neutron-api
--	neutron-rpc
--	neutron-*-agent agents which runs on Compute and Network nodes
+Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes. Depending upon the workloads to be hosted by the Infrastructure and the expected load on the controller node, some of the Neutron services can run on separate network node(s). Factors affecting controller node load include number of compute nodes and the number of API calls being served for the various OpenStack services (nova, neutron, cinder, glance etc.). To reduce controller node load, network nodes are widely added to manage L3 traffic for overlay tenant networks and interconnection with external networks. Table 4-2 below lists the networking service components and their placement. Please note that while network nodes are listed in the table below, network nodes only deal with tenant networks and not provider networks. Also, network nodes are not required when SDN is utilized for networking.
+
+| Networking Service component | Description | Required or Optional Service | Placement |
+|-----|-----|----|----|
+| neutron server (neutron-server and neutron-\*-plugin) | Manages user requests and exposes the Neutron APIs | Required | Controller node |
+| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node </br> (Controller node if no network node present) |
+| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node </br>(Controller node if no network node present)</br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
+| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node </br> (Controller node if no network node present) |
+| neutron plugin agent (neutron-\*-agent) | Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch or Linux Bridge) configuration and local networking configuration for VMs hosted on that node. | Required | Every Compute Node |
+<p align="center"><b>Table 4-2: Neutron Services Placement</b></p>
+
+**Issues with the standard networking (centralized routing) approach**
+
+The network node performs both routing and NAT functions and represents both a scaling bottleneck and a single point of failure. 
+
+Two VMs on different compute nodes and using different project networks (a.k.a. tenant networks) where the both of the project networks are connected by a project router. For communication between the two VMs (instances with a fixed or floating IP address), the network node routes East-West network traffic among project networks using the same project router. Even though the instances are connected by a router, all routed traffic must flow through the network node, and this becomes a bottleneck for the whole network.
+
+While the separation of the routing function from the controller node to the network node provides a degree of scaling it is not a truly scalable solution.  We can either add additional cores/compute-power or network node to the network node cluster, but, eventually, it runs out of processing power especially with high throughput requirement. Therefore, for scaled deployments, there are multiple options including use of Dynamic Virtual Routing (DVR) and Software Defined Networking (SDN).  
+
+**Distributed Virtual Routing (DVR)**
+
+With DVR, each compute node also hosts the L3-agent (providing the distributed router capability) and this then allows direct instance to instance (East-West) communications.
+
+The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation. 
+
+DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/pike/admin/config-dvr-ha-snat.html) addresses this vulnerability. 
+
+ 
+**Software Defined Networking (SDN)**
+
+For the most reliable solution that addresses all the above issues and Telco workload requirements requires SDN to offload Neutron calls. 
+
+SDN provides a truly scalable and preferred solution to suport dynamic, very large-scale, high-density, telco cloud environments. OpenStack Neutron, with its plugin architecture, provides the ability to integrate SDN controllers (
+[3.2.5. Virtual Networking – 3rd party SDN solution](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution)). With SDN incorporated in OpenStack, changes to the network is triggered by workloads (and users), translated into Neutron APIs and then handled through neutron plugins by the corresponding SDN agents.
 
 #### 4.3.1.6 Nova
 Nova is the compute management service, Nova depends on all above components and is deployed after. Nova has services running on the control nodes and the compute nodes:
