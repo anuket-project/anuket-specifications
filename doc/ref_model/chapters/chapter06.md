@@ -28,7 +28,7 @@ Chapter 3 introduced a model of the Cloud Infrastructure. Figure 3-1 shows an ov
 
 - Cloud Infrastructure APIs: These APIs are provided to the workloads (i.e. exposed), by the infrastructure in order for workloads to access (i.e. request, consume, control, etc.) Cloud Infrastructure resources.
 - Intra-Cloud Infrastructure APIs: These APIs are provided and consumed directly by the infrastructure. These APIs are purely internal to the Cloud Infrastructure and are not exposed to the workloads.
-- Enabler Services APIs: These APIs are provided by non-Cloud Infrastructure services and provide capabilities that are required for a majority of VNF workloads, e.g. DHCP, DNS, NTP, DBaaS, etc.
+- Enabler Services APIs: These APIs are provided by non-Cloud Infrastructure services and provide capabilities that are required for a majority of workloads, e.g. DHCP, DNS, NTP, DBaaS, etc.
 
 <a name="6.2"></a>
 ## 6.2 Cloud Infrastructure APIs
