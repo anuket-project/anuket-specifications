@@ -30,7 +30,30 @@ During the development cycle when working with release branches, developers or a
 
 The table below captured the list of events, long holidays only, release plan and sign off with corresponding dates. The release plan consists of all the milestones associated with the release candidate.
 
-<p align="center"><img src="../figures/proposeddate.png" alt="Baldy Roadmap" title="Baldy Roadmap" width="80%"/></p>
+| Title | Feb/20 | Mar/20 | Apr/20 | May/20 | Jun/20 | Jul/20 | Aug/20 | Sep/20 | 
+|------|-------|-------|--------|---------|-------|-------|--------|---------|
+| Events | 
+| ONES NA 2020 ||| 20/Apr to 23/Apr |
+| ONES - Antwerp, Belgium (Proposed Release Name: **Baraque**) | | | | | | | | 29/Sep to 2/Oct | 
+| Long Holidays |
+| Easter (UK/US) |||10/Apr to 13/Apr | 
+| Labour Day (China) | ||| 1/May to 5/May |
+| Dragon Boat Festival (China) ||||| 25/Jun to 27/Jun |
+| **Baldy (Proposed)** |
+| M1 (Release Planning/Requirements) | 1/Feb |
+| M2 (Issue Logging) | 21/Feb |
+| M3 (Freeze Contributions) | ||~~03/Apr~~| 01/May |
+| M4 (Freeze Proof Reading) | ||~~09/Apr~~| 07/May |
+| Release Candidate | ||~~13/Apr~~| 11/May |
+| Baldy Sign-Off | ||~~17/Apr~~| 15/May |
+| **Baraque (Proposed)** |
+| M1 (Release Planning/Requirements) | ||| 29/May | ~~17/Jun~~ |
+| M2 (Issue Logging) | |||| 19/Jun | ~~01/Jul~~ |
+| M3 (Freeze Contributions) | | | | | | | | 14/Sep |
+| M4 (Freeze Proof Reading) | | | | | | | | 18/Sep |
+| Release Candidate | | | | | | | | 21/Sep |
+| Baldy Sign-Off | | | | | | | | 25/Sep |
+
 <p align="center"><b>Figure 2:</b> 2020 Release Roadmap</p>
 
 <a name="events"></a>

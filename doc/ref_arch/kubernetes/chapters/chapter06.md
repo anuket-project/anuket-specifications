@@ -23,20 +23,20 @@
 
 <a name="6.1"></a>
 ## 6.1 Introduction
-Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which support separation of concerns during image build. A fully integrated security testing should be baked into the CI/CD pipeline. Automated security policies should also be used to flag builds with issue.  Image registries must be monitored to automatically block or replace images with known vulnerabilites, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
+Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which supports separation of concerns during image build. A fully integrated security testing phase should be baked into the CI/CD pipeline. Automated security policies should also be used to flag builds with issues.  Image registries must be monitored to automatically block or replace images with known vulnerabilites, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
 
 The following functionalities are recommended for securing kubernetes platform;
 - Image Signing
 - Role-base Access Control
 - Secret Managment
 - Kubernetes Cluster Multi-tenancy security
-  - Tenant can be distinct teams or workload types (Develpoment or Production) within an organisation, each with a namespace
-  - Tenant can also be per dedicated kubernetes cluster
+  - Tenant can be distinct teams or workload types (Development or Production) within an organisation, each with a namespace
+  - Tenant can also be per dedicated Kubernetes cluster
 - Integration with other security ecosystem like monitoring and alerting tools
 
 <a name="6.2"></a>
 ##  6.2 Principles
-The following are core principles to consider when securing cloud native applications;
+The following are core principles to consider when securing cloud native applications:
 
 - Deploy only secure applications and trusted codes
 - Only deploy applications from validated and verified images
@@ -58,7 +58,7 @@ The following are core principles to consider when securing cloud native applica
 Ensure kubernetes nodes are secure, hardened and configured correctly following well known security framework e.g. CIS benchmark, etc. Administrative access to kubernetes nodes should be restricted while operational activities including debugging, troubleshoting, and other tasks should be handled without direct access to the nodes.
 
 ##  6.4 Authentication & Authorisation
-All connections to a Kubernetes cluster must be via a secure channel. The following security authentication mechanism must be adopted;
+All connections to a Kubernetes cluster must be via a secure channel. The following security authentication mechanism must be adopted:
 
  - User roles and access levels must be configured to provide segregation of duties (RBAC)
  - Multi-factor authentication is mandated for all administrative access
@@ -66,9 +66,9 @@ All connections to a Kubernetes cluster must be via a secure channel. The follow
  - Access control should be integrated with existing identity management platforms e.g SAML, AD, etc.
 
 ##  6.5 Use Namespaces to Establish Security Boundaries
-Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc) to diffferent types of workloads when deployed in seperate namespaaces. 
+Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc) to diffferent types of workloads when deployed in separate namespaces. 
 
-##  6.6 Seperate Sensitive Workload
+##  6.6 Separate Sensitive Workload
 To limit the potential impact of a compromise, it is best to run sensitive workloads on a dedicated set of machines. This approach reduces the risk of a sensitive application being accessed through a less-secure application that shares a container runtime or host.
 
 - The seperation can achieved by using node pools and Kubernetes namespaces.
@@ -89,12 +89,12 @@ Kubernetes metadata contain sensitive information including kubelet admin creden
 Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure. 
 
 ##  6.11  Run-Time Security
-The following are recommnended best practices for container run-time;
+The following are recommended best practices for container run-time:
 - Integrate run-time processes to Security Information and Event Monitoring (SIEM)
 - Use container-aware run-time defense tools
 - Ensure all running container applications are from secure and verified images
-- Containerised application should not run with root priviledges
-- Ensure sensitive workloads are proper segmented by namespaces or cluster to mitigate the scope of compromise.
+- Containerised application should not run with root privileges
+- Ensure sensitive workloads are properly segmented by namespaces or cluster to mitigate the scope of compromise.
 
 ##  6.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
@@ -124,10 +124,10 @@ Ensure container applications are validated to assess their use and applicabilit
 Ensure stale images are removed from the registry. Remove unsafe, vulnerable images (e.g. containers should no longer be used based on time triggers and labels associated with images).
 
 ##  6.14  Orchestration & Container Manager
-The kubernetes orchestration manager also know as the control plane consist of various components including a Kube-API server, an etcd storage, a kube-controller-manager, a cloud-controller-manager, a kube-scheduler, and a DNS server for Kubernetes services. 
+The Kubernetes orchestration manager also known as the control plane consist of various components including a Kube-API server, an etcd storage, a kube-controller-manager, a cloud-controller-manager, a kube-scheduler, and a DNS server for Kubernetes services. 
 The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc. A master node in an unsecured boundary can lead to a potential threat to the running workloads. A master must be hardened in terms of security by disabling unused ports, prohibiting root access etc. 
 
-They following are security recommendations for orchestration manager;
+They following are security recommendations for orchestration manager:
 
 - Cluster management Network isolation can help protect the master node and control where administrative commands can run. Use network isolation techniques, configure RBAC on the cluster manager and configure node service accounts following the principle of least privilege.
 - Ensure that access control is applied to registries requiring unique credentials, to limit who can control the build or add images.
@@ -139,7 +139,6 @@ They following are security recommendations for orchestration manager;
 - Harden the configuration by using CIS (Center for Internet Security) benchmarks, which are available for container runtime and Kubernetes
 - Deploy security products that provide whitelisting,  behaviour monitoring and anomaly detection for preventing malicious activity
 - Avoid privileged container application through policy management to reduce the effects of potential attacks.
-- Avoid privileged container application through policy management to reduce the effects of potential attacks
 - Enable integration with other security ecosystem (SIEM)
 - Isolate environments (Dev /test /Production) from other environments within the cluster.
 - Create administrative boundaries between resources using namespace and avoid using default namespaces.
@@ -152,7 +151,7 @@ When applications or workloads run on Kubernetes, there are several layers which
 - Container Registry: A container registry is a repository to manage container images. The access to container registry needs to be secured in order to prevent unauthorised access or image tampering.
 - Container Images: Stored instance of a container that holds a set of software needed to run an application. Before loading them to container registry, they need to be secured by performing various checks like vulnerability analysis, scans etc. These images should also be signed from trusted sources
 - Containers: A lightweight and portable executable image that contains software and all of its dependencies. The containers need to be prevented from accessing the underlying OS like loading of kernel modules, mounting of directories of underlying OS etc and it must also be ensured that they don't run in priveleged mode..
-- Pods: A Pod represents a set of running containers on your cluster. Kuberenetes inherently offers pod security policies that define a set of conditions that a pod must run with in order to be accepted into the system. These policies help in ensuring the necessary checks for running the pods.
+- Pods: A Pod represents a set of running containers on your cluster. Kubernetes inherently offers pod security policies that define a set of conditions that a pod must run with in order to be accepted into the system. These policies help in ensuring the necessary checks for running the pods.
 - Kubernetes Node: A Kubernetes node in an unsecured boundary can lead to a potential threat to the running workloads. Such a node should be hardened by disabling unused ports, prohibiting root access etc.
 - Kubernetes Master: A master node in an unsecured boundary can lead to a potential threat to the running workloads. A master may be hardened in terms of security by disabling unused ports, prohibiting root access etc.
 - Kubernetes Control Plane: The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers. The communication over these APIs needs to be secured via different mechanisms like TLS encryption, API authentication via LDAP etc.

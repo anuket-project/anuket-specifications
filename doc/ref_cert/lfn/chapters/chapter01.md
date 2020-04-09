@@ -21,7 +21,7 @@
 
 Ensure an implementation of the CNTT Reference Architecture (RA), such as the Reference Implementation (RI), meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RI verification.
 
-For the purposes of this chapter, NFVI+VNF testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
+For the purpose of this chapter, NFVI+VNF testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
 
  - Verified implementations of NFVI+VNF match expected design requirements
  - Clearly stated guidelines for test, badging, and lifecycle management
@@ -47,16 +47,16 @@ Perform NFVI+VNF Verification and Validations using CNTT reference architecture,
 
 **Test Methodology**
 - Manifest Verifications (Termed Compliance by CVC) will ensure the NFVI is compliant, and delivered for testing, with hardware and software profile specifications defined by the RM and RA.
-- Empirical Validation with Reference Golden VNFs (Termed Validation by CVC) will ensure the NFVI runs with a set of VNF Families, or Classes, to mimic production-like VNF connectivity, for the purposes of interopability checks.
+- Empirical Validation with Reference Golden VNFs (Termed Validation by CVC) will ensure the NFVI runs with a set of VNF Families, or Classes, to mimic production-like VNF connectivity, for the purposes of interoperability checks.
 - Candidate VNF Validation (Termed Validation & Performance by CVC) will ensure complete interoperablity of VNF behaviour on the NFVI leverage VVP/VNFSDK test suites.  Testing ensures VNF can be spun up, modified, or removed, on the target NFVI (aka Interoperability).
 
 **Different Distributions**
-The three step methodology described above of verifying Manifest compliance, executing Empirical Golden VNF transactions, and performing Interopability Testing is the same validation process regardless of the Distribution used to establish a cloud topology, and the components and services used in the client software stack.  
+The three step methodology described above of verifying Manifest compliance, executing Empirical Golden VNF transactions, and performing Interoperability Testing is the same validation process regardless of the Distribution used to establish a cloud topology, and the components and services used in the client software stack.  
 
 <a name="1.1.1"></a>
 ### 1.1.1 Terminology
 
-Terminology in this document will follow [CNTT Terminology](../../../ref_model/chapters/glossary.md).
+Terminology in this document will follow [CNTT Terminology](../../../tech/glossary.md).
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -120,7 +120,7 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 3rd Party test platforms may also be leveraged, if desired.
 
 <p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="conformance Methodology" title="conformance Methodology" width="100%"/></p>
-<p align="center"><b>Figure:</b> Conformance Methodology</p>
+<p align="center"><b>Figure 1-3:</b> Conformance Methodology</p>
 
 <a name="1.7"></a>
 ## 1.7 Assumptions & Dependencies
@@ -135,12 +135,12 @@ Perform VNF interoperability verifications against an implementation of CNTT ref
 
 In addition, respective Entrance criteria is a prerequisite which needs to be satisfied for NFVI+VNF to be considered **Testable**.
 
-**Dependencies** NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetaill, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the conformance process may change, but test parity is required if new test suites are added in place of older, stale projects.
+**Dependencies** NFVI+VNF verification will rely upon test harnesses, test tools, and test suites provided by upstream OPNFV projects, including dovetail, yardstick, and Bottleneck. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the conformance process may change, but test parity is required if new test suites are added in place of older, stale projects.
 
 * NFVI+VNF verifications will be performed against well defined instance types consisting of a HW and SW Profile, Configured Options, and Applied Extensions (See image.)
 
 <p align="center"><img src="../figures/RC_NFVI_VNF_Instance_Type_25Nov2019.jpg" alt="Instance Type" title="Instance Type" width="100%"/></p>
-<p align="center"><b>Figure:</b> Instance Type</p>
+<p align="center"><b>Figure 1-4:</b> Instance Type</p>
 
 **NFVI+VNF Instance Type:**
 * Standard compute flavours to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
