@@ -57,21 +57,6 @@ In OpenStack, KVM is configured as the default hypervisor for compute nodes.
 <a name="4.2.2"></a>
 ### 4.2.2. Compute
 
-Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1. 
-
-**Flavor Geometry**
-
-| .conf | vCPU (c) | RAM (r) | Local Disk (d) | Management interface |
-|----|----|----|----|----|
-| .tiny | 1 | 512 MB | 1 GB | 1 Gbps |
-| .small | 1 | 2 GB | 20 GB  | 1 Gbps |
-| .medium | 2 | 4 GB | 40 GB | 1 Gbps |
-| .large | 4 | 8 GB | 80 GB | 1 Gbps |
-| .2xlarge* | 8 | 16 GB | 160 GB | 1 Gbps |
-| .4xlarge* | 16 | 32 GB | 320 GB | 1 Gbps |
-| .8xlarge* | 32 | 64 GB | 640 GB | 1 Gbps |
-
-<p align="center"><b>Table 4-1: Flavor Geometries</b></p>
 
 #### 4.2.2.1. Cloud Deployment (Foundation/management) Node
 Minimal configuration: 1 node
@@ -140,6 +125,22 @@ This section specifies the compute node configurations to support the flavors. B
 -	BIOS requirement
     -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 
+Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1. 
+
+**Flavor Geometry**
+
+| .conf | vCPU (c) | RAM (r) | Local Disk (d) | Management interface |
+|----|----|----|----|----|
+| .tiny | 1 | 512 MB | 1 GB | 1 Gbps |
+| .small | 1 | 2 GB | 20 GB  | 1 Gbps |
+| .medium | 2 | 4 GB | 40 GB | 1 Gbps |
+| .large | 4 | 8 GB | 80 GB | 1 Gbps |
+| .2xlarge* | 8 | 16 GB | 160 GB | 1 Gbps |
+| .4xlarge* | 16 | 32 GB | 320 GB | 1 Gbps |
+| .8xlarge* | 32 | 64 GB | 640 GB | 1 Gbps |
+
+<p align="center"><b>Table 4-1: Flavor Geometries</b></p>
+
 **Flavor Series**
 
 The Reference Model specifies the Basic (B) and Network Intensive (N) instance types (or flavor series). The Reference Model also specifies support for two different CPU allocation ratio values for the Basic flavor types, and choice of network acceleration capabilities utilising DPDK and SR-IOV technologies; please note SR-IOV is supported under an exception policy. Table 4-2 lists the capabilities for each flavor series.
@@ -154,7 +155,11 @@ The Reference Model specifies the Basic (B) and Network Intensive (N) instance t
 
 <p align="center"><b>Table 4-2: Flavor Capabilities</b></p>
 
-    -	Additionally, for OpenStack we need to set the following boot parameters:
+**BIOS Settings**
+
+SMT, CPU Pinning, NUMA and Huge Pages are configured in the BIOS.
+
+Additionally, for OpenStack, we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Basic  | Network Intensive |
 |---------------|-----------|------------------|
@@ -252,9 +257,6 @@ Host profiles need to be created. for example, for each of the CPU Allocation Ra
 
 When a CPU Allocation Ratio exceeds 1.0 then CPU Pinning also needs to be disabled. 
 
-**BIOS Settings**
-
-SMT, CPU Pinning, NUMA and Huge Pages are configured in the BIOS.
 
 **Server Configurations**
 
