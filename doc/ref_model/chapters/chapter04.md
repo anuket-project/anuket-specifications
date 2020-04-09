@@ -476,8 +476,8 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.014`<br />(GPU/NPU)                                            | No                       | No                       | |
 | `e.cap.015`<br />(SmartNIC)                                           | Yes (if offered)         | No                       | |
 | `e.cap.016`<br />(FPGA/other Acceleration H/W)                        | Yes (if offered)         | No                       | || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
-| `i.cap.014`<br />(CPU cores consumed by the NFVI on the worker nodes) | any                      | any                      | |
-| `i.cap.015`<br />(Memory consumed by NFVI on the worker nodes)        | any                      | any                      | |
+| `i.cap.014`<br />(CPU cores consumed by the Cloud Infrastructure on the worker nodes) | any                      | any                      | |
+| `i.cap.015`<br />(Memory consumed by Cloud Infrastructure on the worker nodes)        | any                      | any                      | |
 | `i.cap.016`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
 | `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
 | `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
