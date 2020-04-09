@@ -117,48 +117,48 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 | i.cap.016 | CPU allocation ratio | 1:1, 4:1 | Y |
 | i.cap.017 | Connection point QoS | | Y |
 | i.cap.018 | Huge page support |  | Y |
-| i.pm.001 | Monitor host CPU usage |  | Y |
-| i.pm.002 | Monitor virtual compute CPU usage | | Y |
-| i.pm.003 | Monitor host CPU utilization | | Y |
-| i.pm.004 | Monitor virtual compute CPU utilization | | Y |
-| i.pm.005 | Measurement of external storage IOPs | | ? |
-| i.pm.006 | Measurement of external storage throughput | | ? |
-| i.pm.007 | Available external storage capacity | | ? |
-| nfvi.com.cfg.002 | NUMA awareness | | Y |
-| nfvi.com.cfg.003 | CPU pinning capability | | Y |
-| nfvi.com.cfg.004 | Huge Pages  | | Y |
-| nfvi.stg.cfg.001 | Catalogue storage Types | | Y |
-| nfvi.stg.cfg.002 | Storage Block |  | Y |
-| nfvi.stg.cfg.003 | Storage Object | | N<sup>4)</sub> |
-| nfvi.stg.cfg.004 | Storage with replication | | Y |
-| nfvi.stg.cfg.005 | Storage with encryption | | Y |
-| nfvi.stg.acc.cfg.001 | Storage IOPS oriented | | Y |
-| nfvi.stg.acc.cfg.002 | Storage capacity oriented | | Y |
-| nfvi.net.cfg.001 | vNIC interface | | N<sup>5)</sup>|
-| nfvi.net.cfg.002 | Overlay protocol | | Y<sup>6)</sup>|
-| nfvi.net.cfg.003 | NAT | | |
-| nfvi.net.cfg.004 | Security Group | | |
-| nfvi.net.cfg.005 | SFC support | | |
-| nfvi.net.cfg.006 | Traffic patterns symmetry | | |
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | | N <sup>7)</sup>|
-| nfvi.net.acc.cfg.002 | Support of HW offload | |Y, support of SmartNic |
-| nfvi.net.acc.cfg.003 | Crypto acceleration | | Y |
-| nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | | ? |
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) |  2 | Y |
-| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | Y |
-| nfvi.hw.cpu.cfg.003 | NUMA | | Y |
-| nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | | Y |
-| nfvi.hw.cac.cfg.001 | GPU | | Y |
-| nfvi.hw.stg.hdd.cfg.001 | Local Storage HDD | | Optional |
-| nfvi.hw.stg.ssd.cfg.002 | Local Storage SSD | | Recommended |
-| nfvi.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | Y |
-| nfvi.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 25 | Y |
-| nfvi.hw.pci.cfg.001 |  Number of PCIe slots available in the host | 8 | Y |
-| nfvi.hw.pci.cfg.002 | PCIe speed | Gen 3 | Y |
-| nfvi.hw.pci.cfg.003 | PCIe Lanes | 8 | Y |
-| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | | Optional |
-| nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>8)</sup> |
-| nfvi.hw.nac.cfg.003 | Compression |  | |
+| i.pm.001  | Monitor host CPU usage |  | Y |
+| i.pm.002  | Monitor virtual compute CPU usage | | Y |
+| i.pm.003  | Monitor host CPU utilization | | Y |
+| i.pm.004  | Monitor virtual compute CPU utilization | | Y |
+| i.pm.005  | Measurement of external storage IOPs | | ? |
+| i.pm.006  | Measurement of external storage throughput | | ? |
+| i.pm.007  | Available external storage capacity | | ? |
+| infra.com.cfg.002 | NUMA awareness | | Y |
+| infra.com.cfg.003 | CPU pinning capability | | Y |
+| infra.com.cfg.004 | Huge Pages  | | Y |
+| infra.stg.cfg.001 | Catalogue storage Types | | Y |
+| infra.stg.cfg.002 | Storage Block |  | Y |
+| infra.stg.cfg.003 | Storage Object | | N<sup>4)</sub> |
+| infra.stg.cfg.004 | Storage with replication | | Y |
+| infra.stg.cfg.005 | Storage with encryption | | Y |
+| infra.stg.acc.cfg.001 | Storage IOPS oriented | | Y |
+| infra.stg.acc.cfg.002 | Storage capacity oriented | | Y |
+| infra.net.cfg.001 | vNIC interface | | N<sup>5)</sup>|
+| infra.net.cfg.002 | Overlay protocol | | Y<sup>6)</sup>|
+| infra.net.cfg.003 | NAT | | |
+| infra.net.cfg.004 | Security Group | | |
+| infra.net.cfg.005 | SFC support | | |
+| infra.net.cfg.006 | Traffic patterns symmetry | | |
+| infra.net.acc.cfg.001 | vSwitch optimisation | | N <sup>7)</sup>|
+| infra.net.acc.cfg.002 | Support of HW offload | |Y, support of SmartNic |
+| infra.net.acc.cfg.003 | Crypto acceleration | | Y |
+| infra.net.acc.cfg.004 | Crypto Acceleration Interface | | ? |
+| infra.hw.cpu.cfg.001 | Number of CPU (Sockets) |  2 | Y |
+| infra.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | Y |
+| infra.hw.cpu.cfg.003 | NUMA | | Y |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | | Y |
+| infra.hw.cac.cfg.001 | GPU | | Y |
+| infra.hw.stg.hdd.cfg.001 | Local Storage HDD | | Optional |
+| infra.hw.stg.ssd.cfg.002 | Local Storage SSD | | Recommended |
+| infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | Y |
+| infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 25 | Y |
+| infra.hw.pci.cfg.001 |  Number of PCIe slots available in the host | 8 | Y |
+| infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Y |
+| infra.hw.pci.cfg.003 | PCIe Lanes | 8 | Y |
+| infra.hw.nac.cfg.001 | Cryptographic Acceleration | | Optional |
+| infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>8)</sup> |
+| infra.hw.nac.cfg.003 | Compression |  | |
 
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Instance Capabilities Mapping</p>
 
