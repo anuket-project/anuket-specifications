@@ -314,9 +314,10 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following test names must not be executed:
 
-| test rejection regular expressions                                      | reasons                            |
-|-------------------------------------------------------------------------|------------------------------------|
-| .\*test_container_sync.ContainerSyncTest.test_container_synchronization | https://launchpad.net/bugs/1317133 |
+| test rejection regular expressions                                                           | reasons                            |
+|----------------------------------------------------------------------------------------------|------------------------------------|
+| .\*test_container_sync.ContainerSyncTest.test_container_synchronization                      | https://launchpad.net/bugs/1317133 |
+| .\*test_container_sync_middleware.ContainerSyncMiddlewareTest.test_container_synchronization | container_sync                     |
 
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
