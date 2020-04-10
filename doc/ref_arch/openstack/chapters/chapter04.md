@@ -452,6 +452,10 @@ The OpenStack Placement service enables tracking (or accounting) and scheduling 
     
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
 
+#### 4.3.1.11 Barbican
+[Barbican](https://docs.openstack.org/barbican/pike/admin/index.html) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
+
+Barbican usage provides a means to fulfill security requirements such as req.sec.zon.02 “The Architecture must support password encryption” and req.sec.zon.03 “The Architecture must support data, at-rest and in-flight, encryption”.
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services 
