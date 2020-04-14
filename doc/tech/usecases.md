@@ -30,6 +30,44 @@
 <a name="5.1.5"></a>
 ### 5.1.5 Use cases
 
+
+- **Introduction**
+
+- **Use Case #1**
+
+  - **Business Objectives**
+
+  - **Targeted Segments**
+
+  - **Architecture**
+
+
+- **Use Case #2**
+
+  - **Business Objectives**
+
+  - **Targeted Segments**
+
+  - **Architecture**
+
+
+- **Use Case #3**
+
+  - **Business Objectives**
+
+  - **Targeted Segments**
+
+  - **Architecture**
+
+
+- **Use Case #4**
+
+  - **Business Objectives**
+
+  - **Targeted Segments**
+
+  - **Architecture**
+
 <a name="5.1.6"></a>
 ### 5.1.6 Terminologies
 
