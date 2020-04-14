@@ -13,7 +13,7 @@
 
 This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces.
 The OpenStack Pike version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any NFVI + VIM reference
-implementations that **get certified by RC** can be considered as CNTT RA Conformant. 
+implementations that **get certified by RC** can be considered as CNTT RA Conformant.
 
 The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and a
 consolidated view of these and other APIs that are of interest.
@@ -94,7 +94,7 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 | bulk_delete        | X             |
 | bulk_upload        | X             |
 | container_quotas   | X             |
-| container_sync     | X             |
+| container_sync     |               |
 | crossdomain        | X             |
 | discoverability    | X             |
 | form_post          | X             |
@@ -270,7 +270,7 @@ libraries.
 
 **APIs**
 
-| OpenStack Service     | Link for API list                                    | **API Version** | **Minimal API Microversion** |
+| **OpenStack Service** | Link for API list                                    | **API Version** | **Minimal API Microversion** |
 |-----------------------|------------------------------------------------------|-----------------|------------------------------|
 | Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
 | Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
@@ -280,8 +280,9 @@ libraries.
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
 | Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
 | Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
+<!--
 | Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/ | v2    |
-|
+-->
 
 ### 5.3.2. Kubernetes Interfaces
 The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
@@ -292,14 +293,24 @@ The KVM APIs are documented in Section 4 of the document https://www.kernel.org/
 #### 5.3.3.1. Libvirt Interfaces
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
 
+<!--
 ### 5.3.4. Cyborg
 
-|**OpenStack Service** | **API Version** |
-|----------------------|-----------------|
-| Accelerator: Cyborg  | v2              |
+| **OpenStack Service** | **API Version** |
+|-----------------------|-----------------|
+| Accelerator: Cyborg   | v2              |
 
 Acceleration Service API: https://docs.openstack.org/api-ref/accelerator/v2/index.html
 Please note that the initial version of the [Cyborg API v1.0](https://docs.openstack.org/cyborg/stein/admin/api.html) was deprecated in the OpenStack Train release and will be removed in the Ussuri release.
+-->
+
+### 5.3.4. Barbican
+
+| **OpenStack Service**           | **API Version** |
+|---------------------------------|-----------------|
+| Key Manager: Barbican           | v1              |
+
+Barbican API Documentation: https://docs.openstack.org/barbican/pike/api/
 
 <!--
 ### 5.3.4. vSphere/ESXi APIs

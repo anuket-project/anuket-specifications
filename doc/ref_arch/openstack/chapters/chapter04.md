@@ -24,21 +24,17 @@
 
 <a name="4.1"></a>
 ## 4.1 Introduction.
-**Will update this section with a summary from the sub-chapters**
 
-<!--
-Chapter 3 presented the high level architecture and core OpenStack services for creating an IaaS cloud. This chapter discusses the second level of details (as defined by L3) including deployment topology, distribution of the core OpenStack services among Controller and Compute nodes.
+Chapter 3 introduced the components of an OpenStack-based IaaS
+-	Consumable Infrastructure Resources and Services
+-	NFVI Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
+-	Underlying physical compute, storage and networking resources
 
-Additionally, This Chapter will delve deeper into certain topics that need to be considered in creating and operating an OpenStack based IaaS cloud, such as:
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for flavors. 
 
-- The physical (underlay) and the overlay networks needed for intra tenant and external (to the tenant) communications.
-- Cloud topology related to host aggregates and availability zones, and minimal software versions for shared services (kernel, host operating system, common drivers, etc.).
-- Listing of some of the requirements for Security and Life Cycle Management.
--->
 
 <a name="4.2"></a>
 ## 4.2 Underlying Resources
-**content to be developed**
 
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
@@ -143,8 +139,14 @@ CPU reservation for host: 1 core per NUMA
     - minimum: two nodes per profile
 -	HW specifications
     -	Boot disks are dedicated with Flash technology disks
-    - In case of DPDK usage, cores (together with their sibling threads) must be reserved for DPDK Poll Mode Drivers (PMD), hugepages set to at least 1 GB, and all power settings disabled in the BIOS. The number of cores reserved for this overhead depends on the desired throughput (the number of Mpps we want to deliver).
-    
+
+- In case of DPDK usage:
+
+| Layer | Description |
+|-------------|--|
+| Cloud infrastructure | Important is placement of NICs to get NUMA-balanced system (balancing the I/O, memory, and storage across both sockets), and configuration of NIC features. Server BIOS and Host OS kernel command line settings are described in [DPDK release notes](http://doc.dpdk.org/guides/rel_notes/) and [DPDK performance reports](http://core.dpdk.org/perf-reports/). Disabling power settings (like Intel Turbo Boost Technology) brings stable performance results, although understanding if and when they benefit workloads and enabling them can achieve better performance results. |
+| Workload | DPDK uses core affinity along with 1G or 2M Huge Pages, NUMA settings (to avoid crossing inteconnect between CPUs), and DPDK Poll Mode Drivers (PMD, on reserved cores) to get the best performance. DPDK versions xx.11 are Long-Term Support maintained stable release with back-ported bug fixes for a two-year period. |
+
 -	Sizing rules
 
 | Number of CPU sockets| s | 
@@ -227,7 +229,7 @@ While an instance with pinned CPUs cannot use CPUs of another pinned instance, t
 
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/Figure_4_1_OpenStack_Network_Layout_20200110.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/Figure_4_1_Indicative_OpenStack_Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
@@ -363,10 +365,40 @@ Swift is the object storage management service, Swift depends on Keystone and po
 _The Swift backends include iSCSI drives, Ceph RBD and NFS._ 
 
 #### 4.3.1.5 Neutron
-Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes:
--	neutron-api
--	neutron-rpc
--	neutron-*-agent agents which runs on Compute and Network nodes
+Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes. Depending upon the workloads to be hosted by the Infrastructure and the expected load on the controller node, some of the Neutron services can run on separate network node(s). Factors affecting controller node load include number of compute nodes and the number of API calls being served for the various OpenStack services (nova, neutron, cinder, glance etc.). To reduce controller node load, network nodes are widely added to manage L3 traffic for overlay tenant networks and interconnection with external networks. Table 4-2 below lists the networking service components and their placement. Please note that while network nodes are listed in the table below, network nodes only deal with tenant networks and not provider networks. Also, network nodes are not required when SDN is utilized for networking.
+
+| Networking Service component | Description | Required or Optional Service | Placement |
+|-----|-----|----|----|
+| neutron server (neutron-server and neutron-\*-plugin) | Manages user requests and exposes the Neutron APIs | Required | Controller node |
+| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node </br> (Controller node if no network node present) |
+| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node </br>(Controller node if no network node present)</br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
+| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node </br> (Controller node if no network node present) |
+| neutron plugin agent (neutron-\*-agent) | Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch or Linux Bridge) configuration and local networking configuration for VMs hosted on that node. | Required | Every Compute Node |
+<p align="center"><b>Table 4-2: Neutron Services Placement</b></p>
+
+**Issues with the standard networking (centralized routing) approach**
+
+The network node performs both routing and NAT functions and represents both a scaling bottleneck and a single point of failure. 
+
+Two VMs on different compute nodes and using different project networks (a.k.a. tenant networks) where the both of the project networks are connected by a project router. For communication between the two VMs (instances with a fixed or floating IP address), the network node routes East-West network traffic among project networks using the same project router. Even though the instances are connected by a router, all routed traffic must flow through the network node, and this becomes a bottleneck for the whole network.
+
+While the separation of the routing function from the controller node to the network node provides a degree of scaling it is not a truly scalable solution.  We can either add additional cores/compute-power or network node to the network node cluster, but, eventually, it runs out of processing power especially with high throughput requirement. Therefore, for scaled deployments, there are multiple options including use of Dynamic Virtual Routing (DVR) and Software Defined Networking (SDN).  
+
+**Distributed Virtual Routing (DVR)**
+
+With DVR, each compute node also hosts the L3-agent (providing the distributed router capability) and this then allows direct instance to instance (East-West) communications.
+
+The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation. 
+
+DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/pike/admin/config-dvr-ha-snat.html) addresses this vulnerability. 
+
+ 
+**Software Defined Networking (SDN)**
+
+For the most reliable solution that addresses all the above issues and Telco workload requirements requires SDN to offload Neutron calls. 
+
+SDN provides a truly scalable and preferred solution to suport dynamic, very large-scale, high-density, telco cloud environments. OpenStack Neutron, with its plugin architecture, provides the ability to integrate SDN controllers (
+[3.2.5. Virtual Networking – 3rd party SDN solution](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution)). With SDN incorporated in OpenStack, changes to the network is triggered by workloads (and users), translated into Neutron APIs and then handled through neutron plugins by the corresponding SDN agents.
 
 #### 4.3.1.6 Nova
 Nova is the compute management service, Nova depends on all above components and is deployed after. Nova has services running on the control nodes and the compute nodes:
@@ -395,6 +427,7 @@ Heat is the orchestration service using template to provision cloud resources, H
 #### 4.3.1.9 Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
+<!--
 #### 4.3.1.10 Cyborg
 Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
 -	cyborg-api
@@ -402,8 +435,9 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 -	cyborg-db
 - cyborg-agent  which runs on compute nodes
 - *-driver drivers which run on compute nodes and depend on the acceleration hardware
+-->
 
-#### 4.3.1.11 Placement
+#### 4.3.1.10 Placement
 The OpenStack Placement service enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as VCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”).  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
 
 <p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
@@ -418,6 +452,10 @@ The OpenStack Placement service enables tracking (or accounting) and scheduling 
     
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
 
+#### 4.3.1.11 Barbican
+[Barbican](https://docs.openstack.org/barbican/pike/admin/index.html) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
+
+Barbican usage provides a means to fulfill security requirements such as req.sec.zon.02 “The Architecture must support password encryption” and req.sec.zon.03 “The Architecture must support data, at-rest and in-flight, encryption”.
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services 

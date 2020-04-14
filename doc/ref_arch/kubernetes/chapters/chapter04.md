@@ -31,6 +31,7 @@ In order for a Host OS to be conformant with this Reference Architecture it must
 - A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is focussed on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, etc.
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
 - In order to support `req.gen.cnt.03` (immutable infrastructure), the Host OS must be easily reproduced, consistent, disposable, will have a repeatable deployment process, and will not have configuration or artifacts that are modifiable in place (i.e. once it is running).
+- The selection of Host OS shall not restrict the selection of the OS used to build container images (container base image).
 
 Table 4-1 lists the Linux kernel versions that comply with this Reference Architecture specification.
 
@@ -89,37 +90,41 @@ In order to support `req.inf.com.03`, the chosen runtime must be conformant with
 - CRI-O
 - Frakti
 
+To support `req.sec.gen.04` the architecture specifies the usage of a container runtime with the capability of Kernel isolation:
+- kata-containers
+
 These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when conformant with the above specifications) supports the requirement `req.inf.stg.06` for ephemeral storage for Pods.
+
+To fulfill `req.sec.gen.05` the architecture specifies the usage of the Kubernetes CPU Manager and to support the isolation of workload resources from the infrastructure resources [CPU Pooler](https://github.com/nokia/CPU-Pooler/).
 
 > Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
 
 <a name="4.5"></a>
 ## 4.5 CNI plugins
 
-> Editors note: The following chapter lists a set of CNI plugins conformant with the Reference Architecture. In future releases the list of CNI plugins should be refined in a way that there is only component selected for each functionality. 
+> Editors note: The following chapter lists a set of CNI plugins conformant with the Reference Architecture. In future releases the list of CNI plugins should be refined in a way that there is only one example component selected for each functionality. 
 
-The used CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm)
-as it provides the possibility to use several other CNI plugins (`req.inf.ntw.16`) and provides an API based solution to administer the networks (`req.inf.ntw.10`) from a central point (`req.inf.ntw.11`).<br>
+The selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm) as it provides the possibility to use several other CNI plugins (`req.inf.ntw.16`) and provides an API based solution to administer the networks (`req.inf.ntw.10`) from a central point (`req.inf.ntw.11`).<br>
 
 The following table contains a comparision of relevant features and requirements in Multus and DANM.
 
 | Requirement | Support in Multus | Support in DANM |
 |-------------|-------------------|-----------------|
 | `req.inf.ntw.01` | Supported | Supported |
-| `req.inf.ntw.02` | Supported via an other CNI plugin | Supported via an other CNI plugin |
-| `req.inf.ntw.03` | Supported via an other CNI plugin | Supported |
-| `req.inf.ntw.04` | Supported via an other CNI plugin | Supported via an other CNI plugin |
+| `req.inf.ntw.02` | Supported via another CNI plugin | Supported via another CNI plugin |
+| `req.inf.ntw.03` | Supported via another CNI plugin | Supported |
+| `req.inf.ntw.04` | Supported via another CNI plugin | Supported via another CNI plugin |
 | `req.inf.ntw.06` | Supported | Supported |
 | `req.inf.ntw.07` | Supported | Supported |
 | `req.inf.ntw.08` | Supported | Supported |
 | `req.inf.ntw.09` | Supported via LCM tools |  Supported via LCM tools |
 | `req.inf.ntw.10` | Not supported | Suported |
 | `req.inf.ntw.11` | Not supported | Partially supported |
-| `req.inf.ntw.14` | Supported via an other CNI plugin | Supported via an other CNI plugin |
+| `req.inf.ntw.14` | Supported via another CNI plugin | Supported via another CNI plugin |
 | `req.inf.ntw.15` | Not relevant | Not relevant |
 | `req.inf.ntw.16` | Supported | Supported |
 | Cluster wide IP address management | Not suported | Supported |
-| Service based dicovery of all provisioned interfaces | Not supported | Supported |
+| Service based discovery of all provisioned interfaces |Supported | Supported |
 
  [Calico](https://github.com/projectcalico/cni-plugin) may be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.02` due to it's capability to handle `NetworkPolicies`, what is missing from [Flannel](https://github.com/coreos/flannel-cni).
 For the network of signalling connections the built in IPVLAN CNI of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used as these provide NAT-less connectivity (`req.inf.ntw.03`). For the user plane network(s) fullfilling requirement `req.inf.ntw.04` the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.
@@ -127,7 +132,7 @@ For the network of signalling connections the built in IPVLAN CNI of DANM or the
 > Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) to the architecture are under debate.
 
 <a name="4.6"></a>
-## 4.5 Storage components
+## 4.6 Storage components
 
 As described in [chapter 3](./chapter03.md), storage in Kubernetes consists of three types of storage:
 1. Ephemeral storage that is used to execute the containers
@@ -173,7 +178,7 @@ No service meshes are part of the architecture.
 <a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
 
-The reference architecture must support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like [Helm v3](https://v3.helm.sh/).
+The reference architecture specifies the usage of a Kubernetes Application package manager using the Kubernetes API-s, like [Helm v3](https://v3.helm.sh/).
 
 <a name="4.9"></a>
 ## 4.9 Supplementary components (okay, this is a bad heading, but I do not have any better)

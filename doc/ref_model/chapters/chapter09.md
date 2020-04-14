@@ -14,14 +14,14 @@
 
 The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and VNFs, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
 
-According to the scope laid out in chapter 1, this chapter will include any requirements of the infrastructure (NFVI) and the infrastructure management (VIM) capabilities. This is reflected in Figure 9-1 below - the main area of interest for this chapter being the reference points between the reference model scope (in red) and the OSS/BSS block at the top.
+According to the scope laid out in chapter 1, this chapter will include any requirements of the Cloud Infrastructure and the Cloud Infrastructure Management capabilities. This is reflected in Figure 9-1 below - the main area of interest for this chapter being the reference points between the reference model scope (in red) and the OSS/BSS block at the top.
 
-<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
-<p align="center"><b>Figure 9-1:</b> ETSI NFVI Interface points.</p>
+<p align="center"><img src="../figures/ch09-etsi-nfv-architecture-mapping.png" alt="ETSI NFV architecture" title="ETSI NFV architecture" width="65%"/></p>
+<p align="center"><b>Figure 9-1:</b> Mapping of the reference model scope to the ETSI NFV architecture</p>
 
-Note this may seem like a large overlap with the topics in Chapter 6, however that chapter focusses primarily on the interfaces provided by the VIM and NFVI to VNFM and NFV workloads, not the interfaces used to manage the NFVI and VIM themselves.
+Note this may seem like a large overlap with the topics in Chapter 6, however that chapter focusses primarily on the interfaces provided by the Cloud Infrastructure Management and Cloud Infrastructure to application management and applications, not the interfaces used to manage the Cloud Infrastructure and Cloud Infrastructure Management themselves.
 
-There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chaper:
+There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
 - FCAPS (ISO model for network management)
 - eTOM (TM Forum Business Process Framework (eTOM))
 
@@ -81,10 +81,10 @@ However, the key requirements for the infrastructure and infrastructure manageme
   </thead>
   <tbody>
     <tr>
-      <td rowspan=6>Infrastructure Management (VIM) Software</td>
+      <td rowspan=6>Cloud Infrastructure Management Software</td>
       <td rowspan=3>Set</td>
       <td>Target software / firmware version</td>
-      <td>VIM software: v1.2.1</td>
+      <td>Software: v1.2.1</td>
     </tr>
     <tr>
       <td>Desired configuration attribute</td>
@@ -97,7 +97,7 @@ However, the key requirements for the infrastructure and infrastructure manageme
     <tr>
       <td rowspan=3>Observe</td>
       <td>Observed software / firmware version</td>
-      <td>VIM software: v1.2.1</td>
+      <td>Software: v1.2.1</td>
     </tr>
     <tr>
       <td>Observed configuration attribute</td>
@@ -108,7 +108,7 @@ However, the key requirements for the infrastructure and infrastructure manageme
       <td># hypervisor hosts: 10</td>
     </tr>
     <tr>
-      <td rowspan=6>Infrastructure (NFVI) Software</td>
+      <td rowspan=6>Cloud Infrastructure Software</td>
       <td rowspan=3>Set</td>
       <td>Target software version</td>
       <td>Hypervisor software: v3.4.1</td>
@@ -157,7 +157,7 @@ However, the key requirements for the infrastructure and infrastructure manageme
 </table>
 <p align="center"><b>Table 9-2:</b> Configuration and Lifecycle Management Capabilities</p>
 
-This leads to the following table (Table 9-3) which defines the standard interfaces that should be made available by the infrastructure and infrastructure management (VIM) components to allow for successful Configuration Management.
+This leads to the following table (Table 9-3) which defines the standard interfaces that should be made available by the infrastructure and Cloud Infrastructure Management components to allow for successful Configuration Management.
 
 | Component | Interface Standard | Link |
 | --- | --- | --- |

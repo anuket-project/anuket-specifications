@@ -1,12 +1,24 @@
 # Contribution
 
 ## Table of Contents
+* [Permission levels](#permissions)
 * [Labels](#labels)
 * [Issues & Labels](#issues)
 * [Pull Requests](#prs)
 * [Pull Requests Approval Process](#approvals)
 * [Idle Pull Requests Policy](#idle)
 * [Unresolved Pull Requests Policy](#unresolved)
+
+<a name="permissions"></a>
+### Permission levels
+There are different permissions (levels) available for contributing into CNTT:
+- **Outside Collaborators**: This includes general public. 
+  - Outside collaborators can create issues and add comments to issues and Pull Requests.
+- **Read, Triage, Write, and Maintain** Permissions, which are explained in [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization), will be assigned as follows:
+  - **Read** will be assigned to those who are interested to create issues, join the discussion, receive notifications, and provide feedback.
+  - **Triage** will be assigned to active contributors who create issues, pull requests and review them.
+  - **Writes** will be assigned to Workstream Co-Leads to allow them to manage issues and pull request, approve them and be auto requested for review.
+  - **Maintain** will be assigned to Workstream Leads to allow them to merge PRs into the repository.
 
 <a name="labels"></a>
 ### Labels
@@ -38,9 +50,10 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 
 <a name="prs"></a>
 ### Pull Requests
-- PRs must only be created when there is an issue present and a decision to create a PR is made. A PR must reference the issue it is resolving in the description field.
-  - using GitHub predefined keyword "**Fixes Issue#**" will automatically close the issue which the PR is resolving when it is merged.
-- A PR for an issues must only be created by the contributor assigned to the issue by the respective WSL.
+- PRs dealing with minor editorial changes can be raised without a corresponding Issue, but must be labelled as "Minor". Otherwise, PRs must only be created when there is an issue present and a decision to create a PR is made. 
+- A PR must reference the issue it is resolving in the description field.
+   - using GitHub predefined keyword "Fixes Issue#" will automatically close the issue which the PR is resolving when it is merged.
+- A PR for an issue must only be created by the contributor assigned to the issue (either by self assignment or by the respective WSL).
 - Only the person assigned ("assignee") to a PR may edit it. The normal process is for others to make suggests in "Comments" but not directly edit a PR unless the assignee has granter another contributor permission to contribute directly to the PR.
 - A PR is recommended to only create/modify content within the scope of a single workstream.
 - A PR should only add/change content related to the issue associated with the PR.
