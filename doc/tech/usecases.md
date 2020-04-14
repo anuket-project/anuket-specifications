@@ -20,7 +20,7 @@ In term of monetization Edge will help Digital Service provider (DSP) to start h
 alot of use cases can be developed at the Edge as Cloud Gamming , AR/VR , 5G private networks ,vRAN ,...etc
 
 
-In section under CNTT  , we try to develop  and define solid Model and Architecture to become the defacto of Edge in Telco 
+
 
 <a name="5.1.2"></a>
 ### 5.1.2 Objective
