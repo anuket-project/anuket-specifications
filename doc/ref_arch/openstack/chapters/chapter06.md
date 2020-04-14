@@ -127,6 +127,59 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 <a name="6.3.3"></a>
 ### 6.3.3 Confidentiality and Integrity
 
+Confidentiality implies that data and resources must be protected against malicious attacks such as introspection and Integrity implies that the data must be protected from unauthorized modifications or deletions.
+
+Regarding confidentiality and integrity in Cloud Infrastructure, 2 main concerns are raised: 
+- confidentiality and integrity of the Cloud Infrastructure components (networks, hypervisor, OpenStack services)
+- confidentiality and integrity of the tenants data 
+
+The Cloud Infrastructure must also provide the mechanism to identify corrupted data.
+
+#### 6.3.3.1 Confidentiality and Integrity of communications
+
+It is essential to secure the infrastructure from external attacks. To counter this threat, API endpoints exposed to external networks must be protected by either a rate-limiting proxy or web application firewall and must be placed behind a reverse HTTPS proxy. But attacks can also be generated from corrupted internal components, and for this reason, it is security best practice to ensure integrity and confidentiality of all network communications (internal and external) by using Transport Layer Security (TLS) protocol.
+When using TLS, according to [OpenStack security guide](https://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html) recommendation, the minimum version to be used is TLS 1.2.
+
+3 categories of traffic will be protected using TLS:
+- traffic from and to external domains
+- communications between OpenStack components (OpenStack services, Bus message, Data Base)
+- management traffic
+
+Certificates used for TLS encryption must be signed by a trusted authority.  
+To issue certificates for internal OpenStack users or services, the cloud provider can have a Public Key Infrastructure with its own internal Certification Authority (CA), certificate policies, and management.
+
+#### 6.3.3.2 Integrity of OpenStack components configuration
+
+The cloud deployment components/tools store all the information required to install the infrastructure including sensitive information 
+such as credentials. It is recommended to turn off deployment components after deployment to limit the risk of compromise and to deploy and provision the infrastructure through a dedicated network (VLAN).
+
+Configuration files contain sensitive information. 
+These files must be protected from malicious or accidental modifications or deletions by configuring strict access permissions for such files.
+
+The Cloud Infrastructure must provide the mechanisms to identify corrupted data:
+- the integrity of configuration files and binaries must be checked by using cryptographic hash,
+- it is recommended to run scripts (such as checksec.sh) to verify the properties of the QEMU/KVM
+- it is recommenced to use tool such as CIS-CAT (CIS tool) to check the compliance of systems configuration against respective CIS benchmarks
+
+It is strongly recommend to protect Linux repositories or Docker registries against the corruption of their data, by adoption some protection measures such as build a local repository/registry with a restricted and controlled access, use TLS. 
+This repository/registry must contain only signed images or packages.
+
+#### 6.3.3.3 Confidentiality and Integrity of tenants Data
+
+Tenant data are forwarded unencrypted over the network. Since the VNF is responsible of its security, it is up to the VMs to establish secure data plane, e.g. using IPsec over its tenant network.
+
+A Cloud actor must not be able to retrieve secrets used by VNF managers.
+All communications between the VNFM, or orchestrator, and the infrastructure must be protected in integrity and confidentiality (e.g. by using TLS) and controlled via appropriate IP filtering rules. 
+
+The Cloud Infrastructure should onboard only trusted and verified VM images implying that VNF vendors provide signed images.
+Images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
+It is recommended to scan uncertain VM image with a vulnerability scanner.
+To mitigate tampering attack, it is recommend to use [Glance image signing feature](https://docs.openstack.org/glance/pike/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
+
+In order to protect data, VNFs must encrypt the volumes they use. In this case, the encryption key must not be stored on the infrastructure. 
+When a key management service is provided by the infrastructure, OpenStack can encrypt data on behalf of tenants.
+It is recommended to rely on Barbican, as key manager service of OpenStack.
+
 <a name="6.3.4"></a>
 ### 6.3.4 Workload Security
 
