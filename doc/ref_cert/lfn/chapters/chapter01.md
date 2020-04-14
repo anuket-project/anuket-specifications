@@ -19,16 +19,17 @@
 
 ## Synopsis
 
-Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification.
+The goal of Reference Conformance (RC) is to ensure the Reference Implementation (RI) of CNTT Reference Architecture (RA) meets industry driven validation to ensure sufficient quality as an Industry Reference. Furthermore RC supports the conformance goals of the OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN) and overseen by the Compliance Verification Committee (CVC).
 
-For the purposes of this chapter, NFVI+VNF testing will be performed for **Conformances** indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but not limited to planning, logistics for communication, and testing of installed, or implemented, NFVI.  Similarily, VNFs will be checked for **Compliance** and **Validations** against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture.  The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
+For the purposes of **conformance**, NFVI testing indicates a measured performance of the adherence to, and demonstrated proficiency of  all Industry agreed aspects of hardware and software implemented Cloud Infrastructure. Similarily, VNFs will be checked for **conformance** against the RM and RA requirements ensuring VNF onboarding, instantiation, stability, and successful removal of the VNF from the implementation of the RI.
 
-In summary, NFVI+VNF testing will be performed for **Verification** and **Validation** purposes.
+In summary, NFVI + VNF testing will be performed for **Validation** and **Conformance** purposes.
 
-- **Verification** will be used to indicate conformance to design requirement specifications. Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.
-- **Validations** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour.
+- **Validation** is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behaviour per implementation specifications.
 
-**All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
+- **Conformance** is used to indicate testing performed to confirm the actual output of the product meets the expected, or desired outcome, or behaviour with pass/fail criteria agreed for an Industry badging program.
+
+**All Terms utilized throughout this chapter are intended to align with OVP definitions, and their use through OVP documentation, guidelines, and standards.**
 
 <a name="1.1"></a>
 ## 1.1 Introduction
@@ -108,17 +109,11 @@ The following best practices have been adopted to ensure verification and valida
 * Add test cases from operators, which operators already tested in their environment
 
 <a name="1.6"></a>
-## 1.6 Verification methodologies
+## 1.6 Test methods
 
-Prior to onboarding a VNF the NFVI must be tested in Network, Compute and Storage domains to ensure that it provides required capabilities that allow the VNF to behave as expected.
+Prior to onboarding a VNF the infrastructure must be tested in the Network, Compute and Storage domains to ensure that it provides sufficient resources and capabilities for the VNF to behave as expected (i.e. deliver capacity and performance as forecast). Infrastructure vendors are expected to go through extensive testing and optimization at component and stack level prior to testing with Industry agreed tests. 
 
-Predicting networking performance may be particularly difficult to establish and can be extremely sensitive to configuration details of the NFVi. Testing should be from the perspective of the VNF and create an environment that represents a realistic NFVi setup using open-source test tools and test workloads (i.e. test VNFs) that mimic how a real VNF will consume the NFVi. At this stage of testing we assume that the NFVi vendor has fully debugged and optimized the NFVI components and stack. With this approach the above objectives can be achieved:
-
-1. VNF vendors will know the capabilities of the NFVi and be able to forecast performance of the VNF. By knowing how the NFVI has been tested (and having the open-source test tools including workloads) they can reproduce test results or produce their own results using their own NFVI configurations.
-	
-2. Since testing is from the viewpoint of the VNF, performance of a commercial VNF should also be predictable. If this is not the case, the reference results provide good data to investigate the discrepancy. 
-	
-3. If the test tools are packaged as VNFs, they can be deployed using the same methods as a real VNF and hence are extremely portable across NFVi's.
+Performance measurements may be extremely sensitive to hardware and software configurations and test methods. Testing should therefore be as realistic as possible i.e. to ensure a test environment that represents a realistic Cloud Infrastructure setup using open-source tools and test VNFs (i.e. workloads) that mimic as much as possible a real VNF consuming available infrastrcuture resources. Test methods that directly measure performance from the perspective of the VNF are more realistic than infering VNF performance by testing "under-the-hood" attributes of the infrastructure. Testing the infrastructre from the viewpoint of the VNF ultimately helps to ensure that behaviour of commercial VNFs will be more predictable and if a commercial VNF does not perform well, the tools, methods and reference results from RC may be very useful for investigating the discrepancy. Furterhmore, test tools that are "stand-alone" and packaged as VNFs can be deployed using the same onboarding methods as a commercial VNFs and hence will be portable across differnt commerical infrastructures.
 
 
 <p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="conformance Methodology" title="conformance Methodology" width="100%"/></p>
