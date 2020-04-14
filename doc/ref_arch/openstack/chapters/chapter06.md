@@ -31,7 +31,6 @@ OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html
 
 <a name="6.3.1"></a>
-
 ### 6.3.1 Platform Access
 
 #### 6.3.1.1 Identity
@@ -129,6 +128,16 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 
 <a name="6.3.4"></a>
 ### 6.3.4 Workload Security
+
+OpenStack segregates its infrastructure (for example, hosts) by Regions, Host aggregates and Availability Zones (AZ). Workloads can also be segregated by server groups (affinity and non-affinity groups). These options support the workloads placement requirement _sec.wl.001_.
+
+Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (Regions, AZs) but also requires network and storage segregation as in Regions but also AZs if engineered to do so. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (_sec.wl.005_ and _sec.wl.006_).
+
+Regions also support the _sec.wl.004_ requirement for separation by Location (for example, country).
+
+Operational security (_sec.wl.002_) is handled through a combination of mechanisms including the above and security groups. Security groups limit the types of traffic that have access to instances. One or more security groups can be automatically assigned to an instance at launch. The rules associated with a security group control the incoming traffic.  Any incoming traffic not matched by a rule is denied access. The security group rules govern access through the setting of different parameters: traffic source, protocols and destination port on a VM.  Errors in provisioning/managing OpenStack Security Groups can lead to non-functioning applications and can take a long time to identify faults and correct them.  Thus, use of tools for auto provisioning and continued inspection of security groups and network policies is strongly recommended.
+
+Given the rate of change in the workload development and deployment, and the cloud environment itself, _sec.wl.003_ requires that the workloads should be assessed during the CI/CD process as the images are created and then whenever they are deployed. In addition, the infrastructure must be configured for security as discussed elsewhere in this chapter including secure boot. 
 
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
