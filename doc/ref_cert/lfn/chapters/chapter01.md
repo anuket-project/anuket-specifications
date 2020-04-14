@@ -88,30 +88,29 @@ The objectives of the verification program are to deliver a validated implementa
 These core principles will guide NFV verification deliverables:
 
 <a name="1.4.1"></a>
-### 1.4.1 Overarching Objectives and Goals
+### 1.4.1 Overarching Objectives
 
-1. Deliver tools and methods for verifying NFVI capabilities satisfy infrastructure needs of VNFs/CNFs identified in RM.
-2. Augment current OVP program to meet infrastructure verification requirements.
-3. Increase probability VNFs will on-board and function with minimal problems, or issues, during initial deployment of VNF.
-4. Increase confidence that VNF performance and capacity can be forecast for given NFVI
-5. Verification tools to be portable, or compatible, across all RAs/Distributions which already conform to standard interfaces and services.
+1. Deliver tools and methods for verifying NFVI capabilities satisfy infrastructure needs of VNFs/CNFs identified in RM and RA.
+2. Increase probability that VNFs will on-board and function with minimal problems, or issues, during deployment of the VNF.
+4. Increase confidence that VNF performance and capacity can be forecast for given NFVI, prior to deployment of the VNF.
+5. Verification tools portable across all RAs.
 
 <a name="1.5"></a>
-## 1.5 Best Practices
+## 1.5 Testing Best Practices
 
-The following best practices have been adopted to ensure verification and validation procedures are repeatable with consistent quality in test results, and RI conformances:
+The following best practices have been adopted to ensure validation procedures are repeatable with consistent quality in RI test results, and RI conformance test suites:
 
-* Standardized test methodology / flow, Test Plan, and Test Case Suites
+* Test methodologies with exsiting specifications and detailed well documented Test Plan / Test Cases
 * Integration with OPNFV Upstream Projects and OVP flow (code, docs, cert criteria, etc.)
 * Leverage Network and Service Models, with identified VNF-specific parameters
-* Standardized conformance criteria
-* Define CNTT RA as scenarios, and have all test cases for the RA be involved in OVP (could also be addressed in OVP as CNTT test)
-* Add test cases from operators, which operators already tested in their environment
+* Clear pass/fail **conformance** criteria
+* Test cases for validating the RI used for **conformance**
+* Add addioinal test cases from operators, using in their environment
 
 <a name="1.6"></a>
-## 1.6 Test methods
+## 1.6 Performance Test Approach
 
-Prior to onboarding a VNF the infrastructure must be tested in the Network, Compute and Storage domains to ensure that it provides sufficient resources and capabilities for the VNF to behave as expected (i.e. deliver capacity and performance as forecast). Infrastructure vendors are expected to go through extensive testing and optimization at component and stack level prior to testing with Industry agreed tests. 
+Prior to onboarding a VNF the infrastructure must be tested in the Network, Compute and Storage domains to ensure that it provides sufficient resources and capabilities for the VNF to behave as expected (i.e. deliver capacity and performance as forecast). Infrastructure vendors are expected to go through extensive testing and optimization at component and stack level prior to testing for **conformance**.
 
 Performance measurements may be extremely sensitive to hardware and software configurations and test methods. Testing should therefore be as realistic as possible i.e. to ensure a test environment that represents a realistic Cloud Infrastructure setup using open-source tools and test VNFs (i.e. workloads) that mimic as much as possible a real VNF consuming available infrastrcuture resources. Test methods that directly measure performance from the perspective of the VNF are more realistic than infering VNF performance by testing "under-the-hood" attributes of the infrastructure. Testing the infrastructre from the viewpoint of the VNF ultimately helps to ensure that behaviour of commercial VNFs will be more predictable and if a commercial VNF does not perform well, the tools, methods and reference results from RC may be very useful for investigating the discrepancy. Furterhmore, test tools that are "stand-alone" and packaged as VNFs can be deployed using the same onboarding methods as a commercial VNFs and hence will be portable across differnt commerical infrastructures.
 
