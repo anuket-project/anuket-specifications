@@ -11,12 +11,31 @@
 <a name="5.1.1"></a>
 ### 5.1.1 Executive Summary:
 
-Edge computing consider on of disruptive  technology should be considered by any DSP as it is tightly linked with a lot of use cases that can monetize the 5G adoption , so a lot of CSP , Punblic  cloud , content provider and application developer focus on Edge 
+Edge computing considered one of disruptive  technology should be considered by any Digital Service provider (DSP) as it is tightly linked with a lot of use cases that can monetize the 5G adoption , therefor a lot of CSP , Public  cloud , content provider and application developer put focus on Edge 
 
-Edge consider one of main enabler to 5G use cases adoption  , as there is a lot of 5G challenges that Edge will support to solve them , So to achieved 5G requirements  that define by ITU-2020 for 5G , To have enhanced mobile broadband (eMBB) , massive machine-type communications (mMTCs) and ultra-reliable low-latency communications (uRLLCs) Edge is required 
+Edge is consider one of main enabler to 5G use cases adoption  , as there are a lot of 5G challenges that Edge will support to solve them , So to achieve 5G requirements  that define by ITU-2020 for 5G , To have enhanced mobile broadband (eMBB) , massive machine-type communications (mMTCs) and ultra-reliable low-latency communications (uRLLCs) Edge is required 
 
 
-In term of monetization Edge will help SDP to start have ROI of Cloud /NFV as there is a lot use cases can be developed at the Edge as Cloud Gamming , AR/VR , 5G private networks ,..
+In term of monetization Edge will help Digital Service provider (DSP) to start have Return of investment (ROI) of Cloud as there are 
+alot of use cases can be developed at the Edge as Cloud Gamming , AR/VR , 5G private networks ,vRAN ,...etc
 
 
 In section under CNTT  , we try to develop  and define solid Model and Architecture to become the defacto of Edge in Telco 
+
+<a name="5.1.2"></a>
+### 5.1.2 Objective
+
+<a name="5.1.3"></a>
+### 5.1.3 Approach & Scope
+
+<a name="5.1.4"></a>
+### 5.1.4 Principle
+
+<a name="5.1.5"></a>
+### 5.1.5 Use cases
+
+<a name="5.1.6"></a>
+### 5.1.6 Terminologies
+
+<a name="5.1.7"></a>
+### 5.1.7 SDO interlocking
