@@ -9,6 +9,8 @@
    * [6.2.3 Detailed Milestones](#6.2.3)
  * [6.3 Dependencies between various Workstreams ](#6.3)
  * [6.4 Dependencies with Industry Communities](#6.4)
+   * [6.4.1 Dependencies with OPNFV and OVP](#6.4.1)
+   * [6.4.2 Dependencies with CNCF and OVP 2.0](#6.4.1)
 
 <a name="1"></a>
 ## 6.1 Overview
@@ -93,6 +95,10 @@ Each track follows the industry driven standards in the Reference Model as depic
 " width="100%"/>
  <p align="center"><b>Figure 3:</b> CNTT Stable 3.0 Portrait</p>
 
+<p align="center"><img src="./figures/tech_ws_dependencies.png" alt="CNTT WS Dependencies" title="CNTT WS Dependencies
+" width="100%"/>
+ <p align="center"><b>Figure 4:</b> CNTT WS Dependencies</p>
+
 
 <a name="6.4"></a>
 ## 6.4 Dependencies with Industry Communities
@@ -104,10 +110,19 @@ The CNTT is collaboratively working with other standard bodies within the Open S
 - CNCF
 - ETSI NFV ISG
 
+<a name="6.4.1"></a>
+### 6.4.1 Dependencies with OPNFV and OVP
+
 The OpenStack based work stream in CNTT community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read [Reference Implementation Chapter 01](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). 
 
 <p align="center"><img src="./figures/Relation_to_other_communities.png" alt="Relation to other communities" title="Relation to other communities" width="60%"/></p>
-<p align="center"><b>Figure 4:</b> Relation to other communities.</p>
+<p align="center"><b>Figure 5:</b> Relation to other communities.</p>
+
+<p align="center"><img src="./figures/tech_roadmap_cad.png" alt="Relation to other communities" title="Relation to other communities" width="100%"/></p>
+<p align="center"><b>Figure 6:</b> CNTT Roadmap relation to OPNFV and OVP.</p>
+
+<a name="6.4.2"></a>
+### 6.4.2 Dependencies with CNCF and OVP 2.0
 
 TODO: Placeholder for RI2 dependency diagram
 
