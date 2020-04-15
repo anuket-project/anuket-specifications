@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
-* [2.1.1 RI and RC CI/CD toolchains](#2.1.1)
+  * [2.1.1 RI and RC CI/CD toolchains](#2.1.1)
 * [2.2 Methodology](#2.2)
 * [2.3 Conformance Strategy & Vehicle](#2.3)
 * [2.4 Profiles Reference](#2.4)
@@ -20,22 +20,22 @@
     * [2.7.3.3 Test Results](#2.7.3.3)
   * [2.7.4 Badging](#2.7.4)
 * [2.8 NFVI Test Cases Requirements](#2.7)
-  * [2.8.8.1 Generic Requirements](#2.8.2)
-  * [2.8.3 Requirement Types](#2.8.3)
-  * [2.8.4 Profile Catalog](#2.8.4)
-  * [2.8.5 Software & Hardware Reference](#2.8.5)
-  * [2.8.6 Options & Extensions](#2.8.6)
-  * [2.8.7 Measurement Criteria](#2.8.7)
-    * [2.8.7.1 Storage and IOPS](#2.8.7.1)
-  * [2.8.8 Measurement Types](#2.8.8)
-    * [2.8.8.1 Performance Measurements](#2.8.8.1)
-    * [2.8.8.2 Resiliency Measurements](#2.8.8.2)
-  * [2.8.9 NFVI Test Cases](#2.8.9)
+  * [2.8.1 Generic Requirements](#2.8.1)
+  * [2.8.2 Requirement Types](#2.8.2)
+  * [2.8.3 Profile Catalog](#2.8.3)
+  * [2.8.4 Software & Hardware Reference](#2.8.4)
+  * [2.8.5 Options & Extensions](#2.8.5)
+  * [2.8.6 Measurement Criteria](#2.8.6)
+    * [2.8.6.1 Storage and IOPS](#2.8.6.1)
+  * [2.8.7 Measurement Types](#2.8.7)
+    * [2.8.7.1 Performance Measurements](#2.8.7.1)
+    * [2.8.7.2 Resiliency Measurements](#2.8.7.2)
+  * [2.8.8 NFVI Test Cases](#2.8.8)
 
 ## Synopsis:
 Ensure Reference Implementation (RI) of CNTT Reference Model (RM) and CNTT Reference Architecture (RA) meets industry driven quality assurance standards for compliance, verification and validation. The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RM/RA verification whereas CNTT will provide the badging for NFVI conformance in accordance with the conformance process as explained in this chapter.
 
-For the purposes of this chapter, NFVI+VNF testing will be performed for Verification, Validations, ultimately leading to conformances indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implemented, NFVI. Similarily, VNFs will be checked for Compliance and Validations against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture. The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
+For the purpose of this chapter, NFVI+VNF testing will be performed for Verification, Validations, ultimately leading to conformances indicating a measured performance of the adherence to, and demonstrated proficiency with, all aspects of software delivery including but no limited to planning, logistics for communication, and testing of installed, or implemented, NFVI. Similarily, VNFs will be checked for Compliance and Validations against the RM and RA requirements ensuring VNF instantiation, stability, and successful removal of the VNF from the implementation of the stated architecture. The additional VNF testing will verify that the developed VNF meets prescribed RM/RA infrastructure standards.
 
 In summary, NFVI+VNF testing will be performed for Verification and Validation purposes.
 
@@ -119,7 +119,7 @@ Verification Methodologies to be implemented, from a process perspective include
 ## 2.3 Conformance Strategy & Vehicle
 In order to begin the Conformance process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in CNTT RI. Once the target NFVI passes these tests, it would become a candidate for NFVI Conformance. If NFVI fails the tests, it will not be move to next workflow for Conformance. NFVI+VNF validations consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of CNTT RM](../../../ref_model/chapters/chapter07.md).
 
-The three part verificaiton process includes NFVI Manifest Validations, Emprical Baseline measurements against targeted VNF families, and Candidate VNF verifications. More specifically,
+The three part verification process includes NFVI Manifest Validations, Emprical Baseline measurements against targeted VNF families, and Candidate VNF verifications. More specifically,
 * NFVI Verification (Compliance): NFVI is the SUT, ensuring NFVI is compliant with specs of RM and RA accomplished with Manifest Validations (performed via Echo Tests)
 * Empirical Validation with Reference VNF (Validation): NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement
 * Candidate VNF Conformance (Validation & Performance): VNF is the SUT, ensuring VNFs operate with RM and RA leveraging VVP/CVP/VFNSDK Test Suites
@@ -378,8 +378,8 @@ Conformance and issuance of NFVI badges will be as follows:
 The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
 
 
-<a name="2.8.2"></a>
-### 2.8.2 Generic Requirements on Test Cases
+<a name="2.8.1"></a>
+### 2.8.1 Generic Requirements on Test Cases
 
 All test cases must fullfil the generic requirements listed in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
 
@@ -394,8 +394,8 @@ In addition, for test cases targeting the NFVI compliance program, the following
 
 
 
-<a name="2.8.3"></a>
-### 2.8.3 Requirement Types
+<a name="2.8.2"></a>
+### 2.8.2 Requirement Types
 
 The compliance and Conformance program intends to validate four different types of requirements and system properties:
 
@@ -411,8 +411,8 @@ The extend to which these different types of requirements are included in the co
 
 
 
-<a name="2.8.4"></a>
-### 2.8.4 Profile Catalog
+<a name="2.8.3"></a>
+### 2.8.3 Profile Catalog
 
 Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines two software profiles, targeting two different use cases:
 
@@ -425,8 +425,8 @@ The test cases selected for validating compliance of the two profiles must cover
 TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
 
 
-<a name="2.8.5"></a>
-### 2.8.5 Software & Hardware Reference
+<a name="2.8.4"></a>
+### 2.8.4 Software & Hardware Reference
 
 The LFN-based compliance and Conformance program comprises three distinct types of NFVI deployment and runtime environments:
 
@@ -447,24 +447,24 @@ Content to be written:
 - Identify HW Reference
 
 
-<a name="2.8.6"></a>
-### 2.8.6 Options & Extensions
+<a name="2.8.5"></a>
+### 2.8.5 Options & Extensions
 
 Content to be written:
 - Options Available / Configured
 - Extensions Available / Configured
 
 
-<a name="2.8.7"></a>
-### 2.8.7 Measurement Criteria
+<a name="2.8.6"></a>
+### 2.8.6 Measurement Criteria
 
 Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
 
 This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please refer to Reference Model**
 
 
-<a name="2.8.7.1"></a>
-#### 2.8.7.1 Storage and IOPS
+<a name="2.8.6.1"></a>
+#### 2.8.6.1 Storage and IOPS
 
 _**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
 
@@ -489,15 +489,15 @@ Additional factors to consider when measuring IOPS:
 
 For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
 
-<a name="2.8.8"></a>
-### 2.8.8 Measurement Types
+<a name="2.8.7"></a>
+### 2.8.7 Measurement Types
 
-<a name="2.8.8.1"></a>
-#### 2.8.8.1 Performance Measurements
+<a name="2.8.7.1"></a>
+#### 2.8.7.1 Performance Measurements
 
 **Objectives**
 
-The NFVI performance measurements aim at assessing the performance of a given NFVI implementation on the execution plane (i.e., excluding VIM) by providing it with a set of significant metrics to be measured.
+The NFVI performance measurements aim at assessing the performance of a given NFVI implementation on the execution plan (i.e., excluding VIM) by providing it with a set of significant metrics to be measured.
 
 They should allow validating the performance of any software and/or hardware NFVI implementation as described in Reference Model.
 
@@ -568,7 +568,7 @@ The different possible test cases are defined by each of the 3 following test tr
 
   3 traffic path topologies should be considered:
 
-  - ***North/South traffic***, between VNFCs whitin a node and outside NFVI  
+  - ***North/South traffic***, between VNFCs within a node and outside NFVI  
     This can be provided by PVP test setup of ETSI GS NFV-TST009.
 
   - ***East/West intra-node traffic***, between VNFCs within a node  
@@ -684,6 +684,6 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 
 > _**Note:** to be studied: how to define the different possible test cases, especially the different workload profiles (i.e., pseudo-VNF) to consider_
 
+<a name="2.8.7.2"></a>
+#### 2.8.7.2 Resiliency Measurements
 
-<a name="2.8.8.2"></a>
-#### 2.8.8.2 Resiliency Measurements
