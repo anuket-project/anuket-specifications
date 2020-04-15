@@ -58,7 +58,7 @@ To address the concern areas detailed above the specific topics listed below wil
 
 •	Variety of Overlay protocols
 
-•	SDN integration with Cloud Infrastructure Manager
+•	SDN integration with Infrastructure Management
 
 •	SRIOV workload interworking
 
@@ -68,7 +68,7 @@ To address the concern areas detailed above the specific topics listed below wil
 
 •	New networking realisation technologies ( SmartNIC , FPGA ,..)
 
-•	Inter K8s POD communication and CNI
+•	Inter K8s POD connectivity and CNI
 
 •	Networking aspects of migration from IaaS to CaaS (from the VNF paradigm to the CNF paradigm)
 
