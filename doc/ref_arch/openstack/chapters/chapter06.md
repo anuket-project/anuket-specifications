@@ -145,8 +145,7 @@ When using TLS, according to the [OpenStack security guide](https://docs.opensta
 - communications between OpenStack components (OpenStack services, Bus message, Data Base)
 - management traffic
 
-Certificates used for TLS encryption must be signed by a trusted authority.  
-To issue certificates for internal OpenStack users or services, the cloud provider can use a Public Key Infrastructure with its own internal Certification Authority (CA), certificate policies, and management.
+Certificates used for TLS encryption must be signed by a trusted authority. To issue certificates for internal OpenStack users or services, the cloud provider can use a Public Key Infrastructure with its own internal Certification Authority (CA), certificate policies, and management.
 
 #### 6.3.3.2 Integrity of OpenStack components configuration
 
