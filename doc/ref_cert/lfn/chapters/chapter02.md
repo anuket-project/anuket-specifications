@@ -171,17 +171,23 @@ The below set of steps define the compliance, verification and Conformance proce
 
 <a name="2.6"></a>
 ## 2.6 Entry & Exit Criteria
-**Entry criteria**: Before entering into NFVI Conformance, NFVI needs to satisfy the following requirements as entry pass:
+**Entry criteria**: Before entering into NFVI Conformance, NFVI needs to
+satisfy the following requirements as entry pass:
 * Design & Requirements
-  * Design, Configuration, Features, SLAs, and Capability documentation complete
+  * Design, Configuration, Features, SLAs, and Capability documentation
+    complete
   * Users stories / Adherence to CNTT Model principles and guidelines
-  * Chosen Reference Architecture Matches a Reference Architecture from the product catalog
+  * Chosen Reference Architecture Matches a Reference Architecture from the
+    product catalog
 * Environment
-  * Lab assets/resources and respective software revision levels are specified, with confirmation of compatibility across external systems
+  * Lab assets/resources and respective software revision levels are specified,
+    with confirmation of compatibility across external systems
   * Tenant needs identified
-  * All connectivity, network, image, VMs, delivered with successful pairwise tests
+  * All connectivity, network, image, VMs, delivered with successful pairwise
+    tests
   * Lab instrumented for proper monitoring
-  * Lab needs to be setup according to RA1/RA2 as defined by CNTT and should be in the NFVI required state.
+  * Lab needs to be setup according to RA1/RA2 as defined by CNTT and should be
+    in the NFVI required state.
 * Planning & Delivery
   * Kickoff / Acceptance Criteria reviews performed
   * Delivery commitments, timelines, and cadence accepted
@@ -191,17 +197,23 @@ The below set of steps define the compliance, verification and Conformance proce
   * Images uploaded to tenant space
   * External system test data needs identified
   * Owners (NFVI, VNF, PTL, etc) documented
-  * Security Compliance Satisfied (Refer to CNTT Chapter XXXX Security for additional tests, scans, and vulnerabilities validations)
+  * Security Compliance Satisfied (Refer to CNTT Chapter XXXX Security for
+    additional tests, scans, and vulnerabilities validations)
 * Test Case Contributions
   * VNF Developer/Supplier validations to be performed documented and supplied
   * NFVI validations to be performed supplied (e.g. echo, manifest)
   * Test to ensure users are added and have correct privileges for the tenant
   * Test to ensure quota against submitted request for the respective tenant
-  * Test to ensure custom flavours against submitted request for respective tenants
+  * Test to ensure custom flavours against submitted request for respective
+    tenants
 
-**Exit criteria**: NFVI Conformance testing should completed with following exit criteria:
+**Exit criteria**: NFVI Conformance testing should completed with following
+exit criteria:
 * All mandatory test cases should pass.
-* Test results collated, centralized, and normalized, with a final report generated showing status of the test scenario/case (e.g. Pass, Fail, Skip, Measurement Success/Fail, etc), along with traceability to a functional, or non-functional, requirement.
+* Test results collated, centralized, and normalized, with a final report
+  generated showing status of the test scenario/case (e.g. Pass, Fail, Skip,
+  Measurement Success/Fail, etc), along with traceability to a functional, or
+  non-functional, requirement.
 
 <a name="2.7"></a>
 ## 2.7 Framework Requirements
@@ -508,8 +520,8 @@ The validation can then be based on simple pass/fail test results or on a grade 
 
 Two categories of metrics are considered depending on whether they are related to either the VNF domain or the NFVI domain itself:
 
-- Metrics related to the VNF domain are defined from VNF perspective (i.e., per VNFC, per vNIC, per vCPU...) and should concern VNF as well as NFVI actors. 
-- Metrics related to the NFVI domain are defined per NFVI node ; their measurement is based on virtual workloads (i.e., VM or container) in order to reflect the performance of a NFVI node with a given profile ; they should only concern NFVI actors. 
+- Metrics related to the VNF domain are defined from VNF perspective (i.e., per VNFC, per vNIC, per vCPU...) and should concern VNF as well as NFVI actors.
+- Metrics related to the NFVI domain are defined per NFVI node ; their measurement is based on virtual workloads (i.e., VM or container) in order to reflect the performance of a NFVI node with a given profile ; they should only concern NFVI actors.
 
 The following table contains the list of performance metrics related to the VNF domain.
 
@@ -572,7 +584,7 @@ The different possible test cases are defined by each of the 3 following test tr
   - ***L3 processing*** (IP routing), possibly including L2 processing
   - ***L4 stateful processing*** (e.g., FW, NAT, SFC), also including L3 processing
   - ***Encryption*** (e.g., IPSec ESP tunneling)
-    
+
 - **Test traffic profile**
 
   Two different test traffic profiles should be considered according to the two VNF types that must be provided with network connectivity by the NFVI.
@@ -589,18 +601,18 @@ The different possible test cases are defined by each of the 3 following test tr
     The main OPNFV test tools candidates for that purpose are NFVbench and VSPerf.
 
     > _**Note:** to be studied whether additional frame sizes and flows number should be considered_
-    
+
   - ***Client-server traffic*** for L4/L7 endpoint VNF (e.g., MME, CDN)
 
     It should be:
 
     - **bidirectional TCP traffic** with **1400B** maximum frame size, **5k** TCP sessions,
     - between **2 TCP client&server endpoints**, one or both as pseudo-VNF, with sufficient capacity not to be the test bottleneck.
-        
+
     *Note*: the maximum TCP frame size can be forced by configuring TCP endpoint link MTU.
 
     The main OPNFV test tools candidates for that purpose are Functest (VMTP and Shaker) and Yardstick (TC011 and TC083).
-        
+
     > _**Note:** to be studied whether metrics related to latency and flows for that traffic profile should be considered (how? with UDP and/or ICMP test traffic in addition?)_
 
 The combination of each of those 3 test conditions types and the different NFVI profiles results in a wide matrix of test cases (potentially more than 50 cases).
@@ -614,7 +626,7 @@ This optimization should be based on the following principles:
 3. Basic <!-- and Compute intensive --> profile metrics measurement: client-server traffic profile only
 4. Flows & latency related metrics measurement: for PVP only
 
-The following table proposed a possible optimized matrix model of the test cases against the metrics to be measured. 
+The following table proposed a possible optimized matrix model of the test cases against the metrics to be measured.
 
 |                     | **NFVI Profiles**   | **B <!-- & C -->**      |                |                |                | **N**         |                |
 | ------------------- | ------------------- | -------------- | -------------- | -------------- | -------------- | ------------- | -------------- |
@@ -672,8 +684,6 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 
 > _**Note:** to be studied: how to define the different possible test cases, especially the different workload profiles (i.e., pseudo-VNF) to consider_
 
-
 <a name="2.8.7.2"></a>
 #### 2.8.7.2 Resiliency Measurements
-
 
