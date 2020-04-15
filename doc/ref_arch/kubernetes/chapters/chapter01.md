@@ -9,26 +9,25 @@
 * [1.3 Principles](#1.3)
   * [1.3.1 Cloud Native.](#1.3.1)
 * [1.4 Scope](#1.4)
-* [1.5 Vision](#1.5)
-* [1.6 Approach](#1.6)
-* [1.7 Roadmap](#1.7)
+* [1.5 Approach](#1.5)
+* [1.6 Roadmap](#1.6)
 
 
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-Kubernetes is a "portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available." [[kubernetes.io](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)]
+[Kubernetes](https://kubernetes.io/) is a "portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available." [[kubernetes.io](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)]. Kubernetes is developed as an open source project in the [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) repository of GitHub.
 
 This Reference Architecture for Kubernetes will describe the high level system components and their interactions, taking the goals and requirements of the [Reference Model](../../../ref_model/chapters/chapter01.md) and mapping them to real-world Kubernetes (and related) components. This document needs to be sufficiently detailed and robust such that it can be used to guide the production deployment of Kubernetes within an operator, whilst being flexible enough to evolve with and remain aligned with the wider Kubernetes ecosystem outside of Telco.
 
-To assist with this goal, we could create an "RA2 [Razor](https://en.wikipedia.org/wiki/Philosophical_razor)" along the lines of "if something is useful for non-Telco workloads, we should not include it only for Telco workloads". For example (thanks to @fzdarsky in #383) lets say we start with a vanilla Kubernetes (say, v1.16) feature set in the Reference Architecture, and we provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), we only then add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill this gap. If there are still gaps that cannot be filled by Kubernetes community technologies or extensions then we need to concisely document the requirement and take it to the relevant project maintainers.
+To assist with this goal, we could create an "RA2 [Razor](https://en.wikipedia.org/wiki/Philosophical_razor)" along the lines of "if something is useful for non-Telco workloads, we should not include it only for Telco workloads". For example, lets say we start with a vanilla Kubernetes (say, v1.16) feature set in the Reference Architecture, and we provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), we only then add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill this gap. If there are still gaps that cannot be filled by Kubernetes community technologies or extensions then we need to concisely document the requirement and take it to the relevant project maintainers.
 
-The Kubernetes Reference Architecture will also be used in conjunction with a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads of interest to the CNTT community. It is expected the Kubernetes Reference Architecture and Reference Implementation will be developed in parallel to OVP Phase 2, which is looking to build upon the work already in place with OpenStack to expand into the verification and certification of Kubernetes-based workloads.
+The Kubernetes Reference Architecture will also be used in conjunction with a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads of interest to the CNTT community. It is expected the Kubernetes Reference Architecture and Reference Implementation will be developed in parallel to OVP Phase 2, which is looking to build upon the work already in place with OpenStack to expand into the verification and conformance testing of Kubernetes-based workloads.
 
 <a name="1.2"></a>
 ### 1.2 Terminology
 
-For the terminology refer to the [glossary](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#11.1.4) 
+For the terminology refer to the [glossary](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#11.1.4)
 
 <a name="1.3"></a>
 ## 1.3 Principles
@@ -66,17 +65,12 @@ The definition above is very application centric and look at cloud native from t
 - **observable**:
 - **robust automation**:
 
-> The CNCF TUG is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: https://docs.google.com/document/d/1RHx4mnJ4ELKphIK5ktXZ53XcbCpwObkgcvju5wI3jg4/edit.  Many of the principles above are taken from this document.
+> The CNCF TUG is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://github.com/vulk/cloud-native-principles/blob/master/cloud-native-principles.md).  Many of the principles above are taken from this document.
 
 <a name="1.4"></a>
 ## 1.4 Scope
 
-The high level scope of the CNTT Reference Architectures can be seen in Figure 1-1 below.
-
-<p align="center"><img src="../figures/ch01_scope.png" alt="Description of the possible different levels of CNTT artefacts." title="Description of the possible different levels of CNTT artefacts" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> Description of the possible different levels of CNTT artefacts</p>
-
-The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-2:
+The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-1:
 - Kubernetes capabilities required to conform to the Reference Model requirements
 - Support for CNFs that consist wholly of containers
 - Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
@@ -102,4 +96,9 @@ In addition, we will start with a description of interfaces and capabilities (th
 
 As Kubernetes evolves over time it will add new technologies and capabilities and so the CNTT Reference Architecture will need to evolve with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is every three months and at least the support cadence, which is nine months (latest release, plus two previous releases).
 
+<p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
+<p align="center"><b>Figure 1-3:</b> Kubernetes Reference Architecture Roadmap</p>
+
+
 > A populated roadmap view will be added here after the January 2020 release.
+

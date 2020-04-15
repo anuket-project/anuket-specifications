@@ -14,14 +14,14 @@
 
 The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and VNFs, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
 
-According to the scope laid out in chapter 1, this chapter will include any requirements of the infrastructure (NFVI) and the infrastructure management (VIM) capabilities. This is reflected in Figure 9-1 below - the main area of interest for this chapter being the reference points between the reference model scope (in red) and the OSS/BSS block at the top.
+According to the scope laid out in chapter 1, this chapter will include any requirements of the Cloud Infrastructure and the Cloud Infrastructure Management capabilities. This is reflected in Figure 9-1 below - the main area of interest for this chapter being the reference points between the reference model scope (in red) and the OSS/BSS block at the top.
 
-<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="ETSI NFVI Interface" title="ETSI NFVI Interface" width="65%"/></p>
-<p align="center"><b>Figure 9-1:</b> ETSI NFVI Interface points.</p>
+<p align="center"><img src="../figures/ch09-etsi-nfv-architecture-mapping.png" alt="ETSI NFV architecture" title="ETSI NFV architecture" width="65%"/></p>
+<p align="center"><b>Figure 9-1:</b> Mapping of the reference model scope to the ETSI NFV architecture</p>
 
-Note this may seem like a large overlap with the topics in Chapter 6, however that chapter focusses primarily on the interfaces provided by the VIM and NFVI to VNFM and NFV workloads, not the interfaces used to manage the NFVI and VIM themselves.
+Note this may seem like a large overlap with the topics in Chapter 6, however that chapter focusses primarily on the interfaces provided by the Cloud Infrastructure Management and Cloud Infrastructure to application management and applications, not the interfaces used to manage the Cloud Infrastructure and Cloud Infrastructure Management themselves.
 
-There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chaper:
+There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
 - FCAPS (ISO model for network management)
 - eTOM (TM Forum Business Process Framework (eTOM))
 
@@ -61,14 +61,14 @@ The chapters below roughly map to these frameworks as follows:
 <a name="9.2"></a>
 ## 9.2 Configuration and Lifecycle Management
 
-Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. Figure 9-2 shows the configuration management "loop" and how this relates to lifecycle management.
+Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. Figure 9-2 shows the configuration management "loop" and how this relates to lifecycle management.
 
 <p align="center"><img src="../figures/ch09_config_mgmt.png" alt="Configuration and Lifecycle Management" title="Configuration and Lifecycle Management" width="65%"/></p>
 <p align="center"><b>Figure 9-2:</b> Configuration and Lifecycle Management</p>
 
 The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
 
-However, the key requirements for the infrastructure and infrastructure management are those interfaces and reference points in the red box - where configuration is **set**, and where it is **observed**. Table 9-1 lists the main components and capabilities required in order to manage the configuration and lifecycle of those components.
+However, the key requirements for the infrastructure and infrastructure management are those interfaces and reference points in the red box - where configuration is **set**, and where it is **observed**. Table 9-2 lists the main components and capabilities required in order to manage the configuration and lifecycle of those components.
 
 <table>
   <thead>
@@ -81,10 +81,10 @@ However, the key requirements for the infrastructure and infrastructure manageme
   </thead>
   <tbody>
     <tr>
-      <td rowspan=6>Infrastructure Management (VIM) Software</td>
+      <td rowspan=6>Cloud Infrastructure Management Software</td>
       <td rowspan=3>Set</td>
       <td>Target software / firmware version</td>
-      <td>VIM software: v1.2.1</td>
+      <td>Software: v1.2.1</td>
     </tr>
     <tr>
       <td>Desired configuration attribute</td>
@@ -97,7 +97,7 @@ However, the key requirements for the infrastructure and infrastructure manageme
     <tr>
       <td rowspan=3>Observe</td>
       <td>Observed software / firmware version</td>
-      <td>VIM software: v1.2.1</td>
+      <td>Software: v1.2.1</td>
     </tr>
     <tr>
       <td>Observed configuration attribute</td>
@@ -108,7 +108,7 @@ However, the key requirements for the infrastructure and infrastructure manageme
       <td># hypervisor hosts: 10</td>
     </tr>
     <tr>
-      <td rowspan=6>Infrastructure (NFVI) Software</td>
+      <td rowspan=6>Cloud Infrastructure Software</td>
       <td rowspan=3>Set</td>
       <td>Target software version</td>
       <td>Hypervisor software: v3.4.1</td>
@@ -157,7 +157,7 @@ However, the key requirements for the infrastructure and infrastructure manageme
 </table>
 <p align="center"><b>Table 9-2:</b> Configuration and Lifecycle Management Capabilities</p>
 
-This leads to the following table (Table 9-3) which defines the standard interfaces that should be made available by the infrastructure and infrastructure management (VIM) components to allow for successful Configuration Management.
+This leads to the following table (Table 9-3) which defines the standard interfaces that should be made available by the infrastructure and Cloud Infrastructure Management components to allow for successful Configuration Management.
 
 | Component | Interface Standard | Link |
 | --- | --- | --- |
@@ -182,13 +182,13 @@ There are the following requirement types:
     - The ability to collect data relating to component performance (total CPU used, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
 2. Capabilities of the Infrastructure Management Software to allow for in-service maintenance of the Infrastructure Software and Hardware under its management, e.g.
     - The ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
-    - The ability to co-ordinate, automate and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler components in the Infrastructure Management Software
+    - The ability to co-ordinate, automate, and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler components in the Infrastructure Management Software
 
 Note that the above only refers to components - it is expected that any "service" level assurance doesn't add any further requirements onto the infrastructure, but rather takes the data extracted and builds service models based on the knowledge it has of the services being offered.
 
 <a name="9.4"></a>
 ## 9.4 Capacity Management
 
-Capacity Management is a potentially wide ranging process that includes taking demand across lines of business, analysing data about the infrastructure that is running and calculating when additional infrastructure might be required, or when infrastructure might need to be decommissioned.
+Capacity Management is a potentially wide ranging process that includes taking demand across lines of business, analysing data about the infrastructure that is running, and calculating when additional infrastructure might be required, or when infrastructure might need to be decommissioned.
 
-As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware, software and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
+As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware, software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).

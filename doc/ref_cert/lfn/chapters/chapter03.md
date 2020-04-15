@@ -1,389 +1,877 @@
 [<< Back](../)
 
-# 3. NFVI Compliance Verification Test Case Requirements
+# 3. Cloud Infrastructure Test Cases and Traceability to CNTT Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
-* [3.2 Generic Requirements](#3.2)
-* [3.3 Requirement Types](#3.3)
-* [3.4 Profile Catalog](#3.4)
-* [3.5 Software & Hardware Reference](#3.5)
-* [3.6 Options & Extensions](#3.6)
-* [3.7 Measurement Criteria](#3.7)
-  * [3.7.1 Storage and IOPS](#3.7.1)
-* [3.8 Measurement Types](#3.8)
-  * [3.8.1 Performance Measurements](#3.8.1)
-  * [3.8.2 Resiliency Measurements](#3.8.2)
-* [3.9 NFVI Test Cases](#3.9)
-
+* [3.2 Selection Criteria](#3.2)
+* [3.3 Traceability Matrix](#3.3)
+  * [3.3.1 Architecture and OpenStack Based](#3.3.1)
+  * [3.3.2 Infrastructure](#3.3.2)
+  * [3.3.3 VIM](#3.3.3)
+  * [3.3.4 Interfaces & APIs](#3.3.4)
+  * [3.3.5 OpenStack API benchmarking](#3.3.5)
+  * [3.3.6 Dataplane Benchmarking](#3.3.6)
+  * [3.3.7 opensource VNF onboarding and testing](#3.3.7)
+  * [3.3.8 Tenants](#3.3.8)
+  * [3.3.9 LCM](#3.3.9)
+  * [3.3.10 Assurance](#3.3.10)
+  * [3.3.11 Security](#3.3.11)
+  * [3.3.12 Resilience](#3.3.13)
+  * [3.3.13 Bare-metal validations](#3.3.14)
+* [3.4 Test Cases Traceability to Requirements](#3.4)
+  * [3.4.1 Test Cases Traceability](#3.4.1)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the complaince program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
+The scope of this chapter is to identify and list down test cases based on requirements defined in [Reference Architecture-1 (RA-1)](../../../ref_arch/openstack/README.md). This will serve as traceability between test cases and requirements.
 
+Note that each requirement may have one or more test cases associated with it.
+
+**must**: Test Cases that are marked as must are considered mandatory and must pass succesfully.
+
+**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI tagetting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
+
+**may**: Test cases that are marked as may are considered optional. The same applies to may not.
 
 <a name="3.2"></a>
-## 3.2 Generic Requirements on Test Cases
-
-All test cases must fullfil the generic requirements listed in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
-
-In addition, for test cases targeting the NFVI compliance program, the following requirements must be met:
-
-| Reference         | Description                                                                                                              |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------|
-| x                 | All NFVI test cases *must* be automated. Once the pre-conditions of a test case are met, i.e., the system under test is configured and in a state according to the pre-conditions of the particular test case, no manual steps must be required to run a test case to completion.   |
-| x                 | All NFVI test cases *must* be implemented using publicly available open source tools. This enables access to test tools and test case implementations to all interested parties and organizations.  |
-| x                 | All NFVI test cases *must* be integrated and run in the OPNFV CI/CD pipeline. This requirement ensures that test cases are functionally correct, reliable, mature and pass on the NFVI reference implementation.   |
-| x                 | All NFVI test cases *must* treat the NFVI platform as a black box. In particular, test cases must not perform actions on or change the state of the system under test outside the scope of well-defined APIs as listed by RA1. This requirement ensures applicability of test cases across different implementations: reference implementations as well as commercial implementations.     |
-
-
+## 3.2 Selection Criteria
+> Test cases below are selected based on available test cases in open-source tools like OPNFV FuncTest, YardStick, DoveTail etc.
 
 <a name="3.3"></a>
-## 3.3 Requirement Types
+## 3.3 Traceability Matrix
 
-The compliance and certification program intends to validate four different types of requirements and system properties:
+The following is a Requirements Traceability Matrix (RTM) mapping Test Case, and/or Test Case Coverage, to RM and RA-1 requirements (config and deployment).
 
-* API compliance: This is the most relevant type of test case, validating the functional correctness of the system under test. API compliance test cases exercise only the specific well-defined APIs described in the reference architecture (see [Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md)).
+The RTM contains RM config (i.e. .conf) requirements listed “per profile”, followed by RA-1 requirements.  Requirements fall into 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
-* Performance: Test cases covering this type of requirement measure specific performance characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to [RI-1 Chapter 3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md).
 
-* Resilience: Test cases covering this type of requirement measure specific resilience characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
+|#|Requirement|Description|Catalog|Status|MUST|Category|RI-1 Implemented (Yes/No)|RC-1 Coverage (project)|RC-1 Project To On-board|
+|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
+|1|req.gen.ost.01|must use OpenStack APIs.|General|in Functest|Must|Functional||Functest||
+|2|req.gen.ost.02|must support dynamic request and configuration of virtual resources through APIs.|General|in Functest|Must|Functional||Functest||
+|3|req.gen.cnt.01|should consist of stateless service components. However, where state is required it must be kept external to the components.|General|||||||
+|4|req.gen.cnt.02|should consist of service components implemented as microservices that are individually dynamically scalable.|General|||||||
+|5|req.gen.scl.01|should support policy driven auto-scaling.|General|||||||
+|6|req.gen.rsl.01|must support resilient OpenStack components that are required for the continued availability of running workloads.|General - Resiliency testing|missing|Must|NFR||||
+|7|req.gen.rsl.02|should support resilient OpenStack service components that are not subject to req.gen.rsl.01.|General - Resiliency testing|missing||||||
+|8|req.gen.avl.01|must provide High Availability for OpenStack components.|General - HA|missing|Must|NFR||||
+|9|req.inf.com.01|must provide compute resources for VM instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|10|req.inf.com.02|should include industry standard hardware management systems at both HW device and platform level|Infrastructure - baremental testing|missing in Functest. Captured in Telco TCs Baremetal - validations.||||||
+|11|req.inf.com.03|should support symmetrical CPU multi-processing with shared memory access as well as multi-threading.|Infrastructure|in Functest||||Functest||
+|12|req.inf.com.04|must be able to support multiple CPU SKU options to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure||Must|NFR||||
+|13|req.inf.com.05|must support Hardware Platforms with NUMA capabilities.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
+|14|req.inf.com.06|must support CPU Pinning.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
+|15|req.inf.com.07|must support different hardware configurations to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
+|16|req.inf.stg.01|must provide shared Block storage for VM Instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|17|req.inf.stg.02|must provide shared Object storage for VM Instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|18|req.inf.stg.03|may provide local file system storage solution for VM Instances.|Infrastructure - baremental testing|missing||||||
+|19|req.inf.stg.04|may support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files.|Infrastructure - baremental testing|missing||||||
+|20|req.inf.stg.05|should be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes.|Infrastructure|in Functest||||Functest||
+|21|req.inf.stg.06|should make the immutable images available via location independent means.|Infrastructure|in Functest||||Functest||
+|22|req.inf.stg.07|should provide high-performance and horizontally scalable VM storage.|Infrastructure - performance testing|missing||||||
+|23|req.inf.stg.08|should allow use of externally provided large archival storage for its Backup / Restore / Archival needs.|Infrastructure - baremental testing|missing in Functest. Captured in Telco TCs Baremetal - validations.||||||
+|24|req.inf.stg.09|should make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption.|Infrastructure|in Functest||||Functest||
+|25|req.inf.ntw.01|must provide virtual network interfaces to VM instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|26|req.inf.ntw.02|must include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs.|Infrastructure|in Functest|Must|Functional||Functest||
+|27|req.inf.ntw.03|must support low latency and high throughput traffic needs.|performance testing|missing|Must|NFR|||NFVBenchPROX|
+|28|req.inf.ntw.04|should support service function chaining.|Infrastructure|missing||||||
+|29|req.inf.ntw.05|must allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve).|Infrastructure|missing|Must|Functional||||
+|30|req.inf.ntw.06|should support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently.|Infrastructure|missing||||||
+|31|req.inf.ntw.07|must support network resiliency.|Infrastructure - resiliency testing|missing|Must|NFR||||
+|32|req.inf.ntw.08|The NFVI Network Fabric should embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems.|Infrastructure|missing||||||
+|33|req.inf.ntw.09|The NFVI Network Fabric should embrace open-based standards and technologies.|Infrastructure|missing||||||
+|34|req.inf.ntw.10|The NFVI Network Fabric must be capable of supporting highly available (Five 9’s or better) VNF workloads.|Infrastructure - performance testing|missing|Must|NFR||||
+|35|req.inf.ntw.11|The NFVI Network Fabric should be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites.|Infrastructure|missing||||||
+|36|req.inf.ntw.12|The SDN solution should be configurable via orchestration or VIM systems in an automated manner using openly published API definitions.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
+|37|req.inf.ntw.13|The SDN solution should be able to support federated networks.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
+|38|req.inf.ntw.14|The SDN solution should be able to be centrally administrated and configured.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
+|39|req.inf.ntw.15|must support multiple networking options for NFVI to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure|missing or incomplete|Must|Functional||||
+|40|req.inf.ntw.16|must support dual stack IPv4 and IPv6 for tenant networks and workloads.|Infrastructure|missing or incomplete|Must|Functional||||
+|41|req.inf.ntw.17|should use dual stack IPv4 and IPv6 for NFVI internal networks.|Infrastructure|missing or incomplete||||||
+|42|req.inf.acc.01|should support Application Specific Acceleration (exposed to VNFs).|Infrastructure|missing in Functest. Captured in Telco TCs Openstack - VNF Interoperability - validations||||||
+|43|req.inf.acc.02|should support NFVI Acceleration (such as SmartNICs).|Infrastructure|missing||||||
+|44|req.inf.acc.03|should not rely on SR-IOV PCI-Pass through to provide acceleration to VNFs.|Infrastructure|missing||||||
+|45|req.vim.01|must allow infrastructure resource sharing.|VIM|in Functest|Must|Functional||Functest||
+|46|req.vim.02|should support deployment of OpenStack components in containers.|VIM|in Functest||||Functest||
+|47|req.vim.03|must allow VIM to discover and manage NFVI resources.|VIM|in Functest|Must|Functional||Functest||
+|48|req.vim.04|must support Enhanced Platform Awareness (EPA).|VIM|in Functest|Must|Functional||Functest||
+|49|req.vim.05|must include image repository management.|VIM|in Functest|Must|Functional||Functest||
+|50|req.vim.06|must allow orchestration solutions to be integrated with VIM.|VIM|in Functest|Must|Functional||Functest||
+|51|req.vim.07|must support a multi-tenanted environment.|VIM|in Functest|Must|Functional||Functest||
+|52|req.vim.08|must support resource tagging.|VIM|in Functest|Must|Functional||Functest||
+|53|req.vim.09|must support horizontal scaling.|VIM - performance testing|missing|Must|NFR|||NFVBench|
+|54|req.int.api.01|must provide Control API endpoints to cloud platform core services.|Interface & API|in Functest|Must|Functional||Functest||
+|55|req.int.api.02|must provide GUI access to tenant facing cloud platform core services.|Interface & API|in Functest|Must|Functional||Functest||
+|56|req.int.api.03|must provide APIs needed to discover and manage NFVI resources.|Interface & API|in Functest|Must|Functional||Functest||
+|57|req.int.acc.01|should provide an open and standard acceleration interface to VNFs.|Interface & API|in Functest||||Functest||
+|58|req.int.acc.02|should not rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs.|Interface & API|missing||||||
+|59|req.tnt.gen.01|must support multi-tenancy.|Tenants|in Functest|Must|Functional||Functest||
+|60|req.tnt.gen.02|must support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads.|Tenants|in Functest|Must|Functional||Functest||
+|61|req.lcm.gen.01|must support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement).|LCM - performance testing|missing|Must|NFR||||
+|62|req.lcm.adp.01|should allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites.|LCM|use airship||||||
+|63|req.lcm.adp.02|must support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted.|LCM - performance testing|missing or incomplete. Use airship?|Must|NFR||||
+|64|req.lcm.adp.03|should support hitless upgrade of all software provided by the cloud provider that are not covered by req.lcm.adp.02. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact.|LCM|use airship||||||
+|65|req.lcm.adp.04|should support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management.|LCM|use airship||||||
+|66|req.lcm.adp.05|should support automated process for Deployment and life-cycle management of VIM Instances.|LCM|use airship||||||
+|67|req.lcm.cid.02|should support integrating with CI/CD Toolchain for NFVI and VIM components Automation.|LCM|use Xtesting||||||
+|68|req.asr.mon.01|must include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence.|Assurance|in Functest|Must|Functional||Functest||
+|69|req.asr.mon.02|should support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads.|Assurance - operation|missing||||||
+|70|req.asr.mon.03|must allow for the collection and dissemination of performance and fault information.|Assurance - operation|missing|Must|NFR||||
+|71|req.asr.mon.04|The NFVI Network Fabric and Network Operating System must provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation.|Assurance - operation|missing|Must|NFR||||
+|72|req.sec.gen.01|must provide tenant isolation.|security|in Functest|Must|Functional||Functest||
+|73|req.sec.gen.02|must support policy based RBAC.|security|in Functest|Must|Functional||Functest||
+|74|req.sec.gen.03|must support a centralised authentication and authorisation mechanism.|security|in Functest|Must|Functional||Functest||
+|75|req.sec.zon.01|must support identity management (specific roles and permissions assigned to a domain or tenant).|security|in Functest|Must|Functional||Functest||
+|76|req.sec.zon.02|must support password encryption.|security|in Functest|Must|Functional||Functest||
+|77|req.sec.zon.03|must support data, at-rest and in-flight, encryption.|security|missing|Must|Functional||||
+|78|req.sec.zon.04|must support integration with Corporate Identity Management systems.|security|missing|Must|NFR||||
+|79|req.sec.cmp.02|must comply with all applicable standards and regulations.|security|missing in Functest. Captured in Telco TCs Security|Must|NFR||||
+|80|req.sec.cmp.03|must comply with all applicable regional standards and regulations.|security|missing|Must|NFR||||
+|81|req.sec.ntw.01|must have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework.|security|missing|Must|NFR||||
+|82|req.sec.ntw.02|must have all security logs stored in accordance with ISO27001.|security|missing|Must|NFR||||
+|83|req.sec.ntw.03|must have the underlay network incorporate encrypted and/or private communications channels to ensure its security.|security|missing|Must|Functional||||
+|84|req.sec.ntw.04|must configure all of the underlay network components to ensure the complete separation from the overlay customer deployments.|security|missing|Must|NFR||||
 
-* Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to CNTT/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
+<a name="3.3.1"></a>
+### 3.3.1 Architecture and OpenStack Requirements
 
-The extend to which these different types of requirements are included in the compliance and certification test suite is subject to the availability of test cases. See Section [NFVI Test Cases](chapter03.md#39-nfvi-test-cases).
+- Describe and define in detail, RM/RA-1 OpenStack requirements.
+
+<a name="3.3.2"></a>
+### 3.3.2 Infrastructure
 
 
+| Test case # | sub-category | Description | Requirement # |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| `cert.test.inf.01` | Compute | Create a virtual machine with CPU pinning and 2 NUMA nodes. | `req.inf.com.05` |
+| `cert.test.inf.02` | Compute | Create a virtual machine with CPU pinning enabled. | `req.inf.com.06` |
+| `cert.test.inf.03` | Compute | Create 2 virtual machines and associate block storage to it. | `req.inf.stg.01	` |
+| `cert.test.inf.04` | Compute | Create 2 virtual machines which are booted from block storage. | `req.inf.stg.01	` |
+
+<a name="3.3.3"></a>
+### 3.3.3 VIM
+
+
+| Test case # | sub-category | Description | Requirement # |
+|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| `cert.test.vim.01` | VIM | Create a virtual machine with CPU pinning, Huge Pages and 2 NUMA nodes. | `req.vim.04` |
+| `cert.test.vim.02` | VIM | Upload an image to image repository and download it back. | `req.vim.05` |
+| `cert.test.vim.03` | VIM | Deploy a heat stack having 2 virtual machines with associated network. | `req.vim.06` |
+| `cert.test.vim.04` | VIM | Create 2 tenants and then create virtual machine in each tenant. | `req.vim.07` |
+
+<a name="3.3.4"></a>
+### 3.3.4 Interfaces & APIs
+
+The [OpenStack Gates](https://opendev.org/openstack/devstack-gate) verify all
+changes proposed mostly by running thousands of Tempest tests completed by
+Rally scenarios in a few cases. Skipping tests is allowed in all OpenStack
+Gates and only failures rate the review -1 because of the multiple capabilities
+and backends selected in the different Gate jobs. The classical
+[Functest containers](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314)
+conform to this model which also fits the heterogeneous user deployments.
+
+From a CNTT Compliance state point, the capabilities are well described in
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+which allows tuning the test configurations and the test lists to avoid
+skipping any test. It results that all tests covering optional capabilities and
+all upstream skipped tests due to known bugs are not executed. All remaining
+tests must be executed and must pass successfully.
+
+New [Functest containers](https://lists.opnfv.org/g/opnfv-tsc/message/5717)
+have been proposed for CNTT Compliance which simply override the default test
+configurations and the default test lists. Any optional capability or services
+(e.g. Barbican) can be still verified by the classical Functest containers.
+
+The next subsections only detail the Tempest tests which must not be executed
+from a Compliance state point. The remaining tests have to pass successfully.
+They cover all together the API testing requirements as asked by
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+
+According to Hunter (the oldest OPNFV active release), the following software
+versions are considered here to verify OpenStack Pike selected by CNTT:
+
+| software                | version |
+|-------------------------|---------|
+| Functest                | hunter  |
+| Cinder Tempest plugin   | 0.2.0   |
+| Keystone Tempest plugin | 0.1.0   |
+| Neutron                 | rocky   |
+| Neutron Tempest plugin  | 0.3.0   |
+| Rally OpenStack         | 1.5.0   |
+| Tempest                 | 21.0.0  |
+
+#### 3.3.4.1 Identity - Keystone
+
+Keystone API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) and
+[keystone-tempest-plugin](https://opendev.org/openstack/keystone-tempest-plugin)
+as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions        | reasons    |
+|-------------------------------------------|------------|
+| .\*api.identity.v3.test_oauth1_tokens     | oauth1     |
+| .\*scenario.test_federated_authentication | federation |
+| .\*identity.admin.v2                      | API v2     |
+| .\*identity.v2                            | API v2     |
+
+Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.keystone
+- KeystoneBasic.add_and_remove_user_role
+- KeystoneBasic.create_add_and_list_user_roles
+- KeystoneBasic.create_and_list_tenants
+- KeystoneBasic.create_and_delete_role
+- KeystoneBasic.create_and_delete_service
+- KeystoneBasic.get_entities
+- KeystoneBasic.create_update_and_delete_tenant
+- KeystoneBasic.create_user
+- KeystoneBasic.create_tenant
+- KeystoneBasic.create_and_list_users
+- KeystoneBasic.create_tenant_with_users
+
+#### 3.3.4.2 Image - Glance
+
+Glance API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions | reasons |
+|------------------------------------|---------|
+| .\*image.v1                        | API v1  |
+
+Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_glance
+- GlanceImages.create_and_delete_image
+- GlanceImages.create_and_list_image
+- GlanceImages.list_images
+- GlanceImages.create_image_and_boot_instances
+
+#### 3.3.4.3 Block Storage - Cinder
+
+Cinder API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) and
+[cinder-tempest-plugin](https://opendev.org/openstack/cinder-tempest-plugin)
+as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions                                                                   | reasons                               |
+|------------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*test_incremental_backup                                                                           | https://gerrit.opnfv.org/gerrit/68881 |
+| .\*test_consistencygroups                                                                            | consistency_group                     |
+| .\*test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status                      | https://launchpad.net/bugs/1770179    |
+| .\*test_multi_backend                                                                                | multi-backend                         |
+| .\*test_volume_retype.VolumeRetypeWithMigrationTest                                                  | multi-backend                         |
+| .\*test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete          | https://launchpad.net/bugs/1677525    |
+| .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                  |
+| .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                |
+| .\*tempest.scenario.test_volume_migrate_attached                                                     | multi-backend                         |
+
+Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_cinder
+- CinderVolumes.create_and_delete_snapshot
+- CinderVolumes.create_and_delete_volume
+- CinderVolumes.create_and_extend_volume
+- CinderVolumes.create_from_volume_and_delete_volume
+- CinderQos.create_and_list_qos
+- CinderQos.create_and_set_qos
+- CinderVolumeTypes.create_and_list_volume_types
+- CinderVolumeTypes.create_volume_type_and_encryption_type
+- Quotas.cinder_update_and_delete
+- Quotas.cinder_update
+
+#### 3.3.4.4 Object Storage - Swift
+
+Swift API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions                                                           | reasons                            |
+|----------------------------------------------------------------------------------------------|------------------------------------|
+| .\*test_container_sync.ContainerSyncTest.test_container_synchronization                      | https://launchpad.net/bugs/1317133 |
+| .\*test_container_sync_middleware.ContainerSyncMiddlewareTest.test_container_synchronization | container_sync                     |
+
+Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- SwiftObjects.create_container_and_object_then_list_objects
+- SwiftObjects.list_objects_in_containers
+- SwiftObjects.create_container_and_object_then_download_object
+- SwiftObjects.create_container_and_object_then_delete_all
+- SwiftObjects.list_and_download_objects_in_containers
+
+#### 3.3.4.5 Networking - Neutron
+
+Neutron API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) and
+[neutron-tempest-plugin](https://opendev.org/openstack/neutron-tempest-plugin)
+as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions                                                                 | reasons                               |
+|----------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*admin.test_agent_availability_zone                                                              | DHCP agent and L3 agent               |
+| .\*admin.test_dhcp_agent_scheduler                                                                 | dhcp_agent_scheduler                  |
+| .\*admin.test_l3_agent_scheduler                                                                   | l3_agent_scheduler                    |
+| .\*admin.test_logging                                                                              | logging                               |
+| .\*admin.test_logging_negative                                                                     | logging                               |
+| .\*admin.test_network_segment_range                                                                | network-segment-range                 |
+| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                 | port-mac-address-regenerate           |
+| .\*admin.test_ports.PortTestCasesResourceRequest                                                   | port-resource-request                 |
+| .\*admin.test_routers_dvr                                                                          | dvr                                   |
+| .\*admin.test_routers_flavors                                                                      | l3-flavors                            |
+| .\*admin.test_routers_ha                                                                           | l3-ha                                 |
+| .\*test_floating_ips.FloatingIPPoolTestJSON                                                        | floatingip-pools                      |
+| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                 | fip-port-details                      |
+| .\*test_metering_extensions                                                                        | metering                              |
+| .\*test_metering_negative                                                                          | metering                              |
+| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                           | filter-validation                     |
+| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                               | vxlan                                 |
+| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                            | dns-integration                       |
+| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                          | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                       | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                | dns-domain-ports                      |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                  | dns-integration                       |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                               | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                              | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                 | l3-ha                                 |
+| .\*test_router_interface_fip                                                                       | router-interface-fip                  |
+| .\*test_routers.DvrRoutersTest                                                                     | dvr                                   |
+| .\*test_routers.HaRoutersTest                                                                      | l3-ha                                 |
+| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                           | extraroute-atomic                     |
+| .\*test_routers.RoutersTest.test_extra_routes_atomic                                               | extraroute-atomic                     |
+| .\*test_routers_negative.DvrRoutersNegativeTest                                                    | dvr                                   |
+| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                            | dvr                                   |
+| .\*test_routers_negative.HaRoutersNegativeTest                                                     | l3-ha                                 |
+| .\*test_security_groups.RbacSharedSecurityGroupTest                                                | rbac-security-groups                  |
+| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                     | filter-validation                     |
+| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                             | filter-validation                     |
+| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                        | standard-attr-segment                 |
+| .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                            | https://launchpad.net/bugs/1863707    |
+| .\*test_trunk.TrunkTestMtusJSON                                                                    | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestMtusJSON                                                           | vxlan                                 |
+| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                        | https://gerrit.opnfv.org/gerrit/69105 |
+| .\*network.test_tags                                                                               | tag-ext                               |
+| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                       | https://launchpad.net/bugs/1676207    |
+| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                           | https://launchpad.net/bugs/1676207    |
+| .\*test_network_v6                                                                                 | https://gerrit.opnfv.org/gerrit/69105 |
+| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                             | l3_agent_scheduler                    |
+
+Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_neutron
+- NeutronNetworks.create_and_delete_networks
+- NeutronNetworks.create_and_delete_ports
+- NeutronNetworks.create_and_delete_routers
+- NeutronNetworks.create_and_delete_subnets
+- NeutronNetworks.create_and_list_networks
+- NeutronNetworks.create_and_list_ports
+- NeutronNetworks.create_and_list_routers
+- NeutronNetworks.create_and_list_subnets
+- NeutronSecurityGroup.create_and_delete_security_groups
+- NeutronSecurityGroup.create_and_delete_security_group_rule
+- NeutronNetworks.set_and_clear_router_gateway
+- Quotas.neutron_update
+
+#### 3.3.4.6 Compute - Nova
+
+Nova API is covered in the OpenStack Gates via
+[Tempest](https://opendev.org/openstack/tempest) as integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions                                                                                        | reasons                            |
+|---------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| .\*test_fixed_ips                                                                                                         | neutron                            |
+| .\*test_fixed_ips_negative                                                                                                | neutron                            |
+| .\*test_auto_allocate_network                                                                                             | shared networks                    |
+| .\*test_floating_ips_bulk                                                                                                 | nova-network                       |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume                                                   | block live migration               |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration                                   | volume-backed live migration       |
+| .\*test_live_migration.LiveMigrationTest.test_iscsi_volume                                                                | block live migration               |
+| .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration                                                | volume-backed live migration       |
+| .\*test_live_migration.LiveMigrationRemoteConsolesV26Test                                                                 | serial_console                     |
+| .\*certificates.test_certificates                                                                                         | cert                               |
+| .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest                                                              | https://launchpad.net/bugs/1186354 |
+| .\*test_novnc                                                                                                             | vnc_console                        |
+| .\*test_server_personality                                                                                                | personality                        |
+| .\*test_servers.ServerShowV263Test.test_show_update_rebuild_list_server                                                   | certified_image_ref                |
+| .\*test_servers_negative.ServersNegativeTestJSON.test_personality_file_contents_not_encoded                               | personality                        |
+| .\*test_server_actions.ServerActionsTestJSON.test_change_server_password                                                  | change_password                    |
+| .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console                                                         | vnc_console                        |
+| .\*test_server_actions.ServerActionsTestJSON.test_reboot_server_soft                                                      | https://launchpad.net/bugs/1014647 |
+| .\*test_security_group_default_rules                                                                                      | https://launchpad.net/bugs/1311500 |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name            | neutron                            |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description | https://launchpad.net/bugs/1161411 |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_name        | https://launchpad.net/bugs/1161411 |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des            | neutron                            |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id             | neutron                            |
+| .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name           | neutron                            |
+| .\*test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex                              | https://launchpad.net/bugs/1540645 |
+| .\*servers.test_virtual_interfaces                                                                                        | nova-network                       |
+| .\*compute.test_virtual_interfaces_negative                                                                               | nova-network                       |
+| .\*compute.test_networks                                                                                                  | nova-network                       |
+| .\*test_attach_volume.AttachVolumeMultiAttach                                                                             | volume_multiattach                 |
+| .\*test_volume_boot_pattern.TestVolumeBootPattern.test_boot_server_from_encrypted_volume_luks                             | attach_encrypted_volume            |
+| .\*test_volume_swap                                                                                                       | swap_volume                        |
+| .\*test_encrypted_cinder_volumes                                                                                          | attach_encrypted_volume            |
+| .\*test_stamp_pattern.TestStampPattern.test_stamp_pattern                                                                 | https://launchpad.net/bugs/1664793 |
+| .\*test_volume_migrate_attached                                                                                           | https://launchpad.net/bugs/1664793 |
+| .\*test_minbw_allocation_placement                                                                                        | microversion                       |
+
+Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_nova
+- NovaServers.boot_and_live_migrate_server
+- NovaServers.boot_server_attach_created_volume_and_live_migrate
+- NovaServers.boot_server_from_volume_and_live_migrate
+- NovaKeypair.boot_and_delete_server_with_keypair
+- NovaServers.boot_server_from_volume_and_delete
+- NovaServers.pause_and_unpause_server
+- NovaServers.boot_and_migrate_server
+- NovaServers.boot_server_and_list_interfaces
+- NovaServers.boot_server_associate_and_dissociate_floating_ip
+- NovaServerGroups.create_and_delete_server_group
+- Quotas.nova_update
+
+#### 3.3.4.7 Orchestration - Heat
+
+Heat API is not covered in the OpenStack Gates neither via
+[Tempest](https://opendev.org/openstack/tempest) nor
+[heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin).
+
+Heat API is covered by [Rally](https://opendev.org/openstack/rally).
+
+Here are the mainline tasks integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+- Authenticate.validate_heat
+- HeatStacks.create_update_delete_stack
+- HeatStacks.create_check_delete_stack
+- HeatStacks.create_suspend_resume_delete_stack
+- HeatStacks.list_stacks_and_resources
+
+<a name="3.3.5"></a>
+### 3.3.5 OpenStack API benchmarking
+
+[Rally](https://opendev.org/openstack/rally) is tool and framework that allows
+to perform OpenStack API benchmarking.
+
+Here are the Rally-based test cases proposed by
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+- [rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+  Functest scenarios iterating 10 times the mainline Rally scenarios
+- [rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+  Neutron scenarios executed in the OpenStack gates
+
+At the time of writing, no KPI is defined in
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+which would have asked for an update of the default SLA (maximum failure rate
+of 0%) proposed in
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+
+#### 3.3.5.1 Identity - Keystone
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                     | Iterations |
+|-----------------------------------------------|:----------:|
+| Authenticate.keystone                         | 10         |
+| KeystoneBasic.add_and_remove_user_role        | 10         |
+| KeystoneBasic.create_add_and_list_user_roles  | 10         |
+| KeystoneBasic.create_and_list_tenants         | 10         |
+| KeystoneBasic.create_and_delete_role          | 10         |
+| KeystoneBasic.create_and_delete_service       | 10         |
+| KeystoneBasic.get_entities                    | 10         |
+| KeystoneBasic.create_update_and_delete_tenant | 10         |
+| KeystoneBasic.create_user                     | 10         |
+| KeystoneBasic.create_tenant                   | 10         |
+| KeystoneBasic.create_and_list_users           | 10         |
+| KeystoneBasic.create_tenant_with_users        | 10         |
+
+#### 3.3.5.2 Image - Glance
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                    | Iterations |
+|----------------------------------------------|:----------:|
+| Authenticate.validate_glance                 | 10         |
+| GlanceImages.create_and_delete_image         | 10         |
+| GlanceImages.create_and_list_image           | 10         |
+| GlanceImages.list_images                     | 10         |
+| GlanceImages.create_image_and_boot_instances | 10         |
+| GlanceImages.create_and_deactivate_image     | 10         |
+| GlanceImages.create_and_download_image       | 10         |
+| GlanceImages.create_and_get_image            | 10         |
+| GlanceImages.create_and_update_image         | 10         |
+
+#### 3.3.5.3 Block Storage - Cinder
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                     | Iterations |
+|---------------------------------------------------------------|:----------:|
+| Authenticate.validate_glance                                  | 10         |
+| CinderVolumes.create_and_attach_volume                        | 10         |
+| CinderVolumes.create_and_list_snapshots                       | 10         |
+| CinderVolumes.create_and_list_volume                          | 10         |
+| CinderVolumes.create_and_upload_volume_to_image               | 10         |
+| CinderVolumes.create_nested_snapshots_and_attach_volume       | 10         |
+| CinderVolumes.create_snapshot_and_attach_volume               | 10         |
+| CinderVolumes.create_volume                                   | 10         |
+| CinderVolumes.list_volumes                                    | 10         |
+| CinderVolumes.create_and_delete_snapshot                      | 10         |
+| CinderVolumes.create_and_delete_volume                        | 10         |
+| CinderVolumes.create_and_extend_volume                        | 10         |
+| CinderVolumes.create_from_volume_and_delete_volume            | 10         |
+| CinderQos.create_and_get_qos                                  | 10         |
+| CinderQos.create_and_list_qos                                 | 10         |
+| CinderQos.create_and_set_qos                                  | 10         |
+| CinderVolumeTypes.create_and_get_volume_type                  | 10         |
+| CinderVolumeTypes.create_and_list_volume_types                | 10         |
+| CinderVolumeTypes.create_and_update_volume_type               | 10         |
+| CinderVolumeTypes.create_volume_type_and_encryption_type      | 10         |
+| CinderVolumeTypes.create_volume_type_add_and_list_type_access | 10         |
+| Quotas.cinder_update_and_delete                               | 10         |
+| Quotas.cinder_update                                          | 10         |
+
+#### 3.3.5.4 Object Storage - Swift
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                     | Iterations |
+|---------------------------------------------------------------|:----------:|
+| SwiftObjects.create_container_and_object_then_list_objects    | 10         |
+| SwiftObjects.list_objects_in_containers                       | 10         |
+| SwiftObjects.create_container_and_object_then_download_object | 10         |
+| SwiftObjects.create_container_and_object_then_delete_all      | 10         |
+| SwiftObjects.list_and_download_objects_in_containers          | 10         |
+
+#### 3.3.5.5 Networking - Neutron
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                  | Iterations |
+|------------------------------------------------------------|:----------:|
+| Authenticate.validate_neutron                              | 10         |
+| NeutronNetworks.create_and_update_networks                 | 10         |
+| NeutronNetworks.create_and_update_ports                    | 10         |
+| NeutronNetworks.create_and_update_routers                  | 10         |
+| NeutronNetworks.create_and_update_subnets                  | 10         |
+| NeutronNetworks.create_and_delete_networks                 | 10         |
+| NeutronNetworks.create_and_delete_ports                    | 10         |
+| NeutronNetworks.create_and_delete_routers                  | 10         |
+| NeutronNetworks.create_and_delete_subnets                  | 10         |
+| NeutronNetworks.create_and_list_networks                   | 10         |
+| NeutronNetworks.create_and_list_ports                      | 10         |
+| NeutronNetworks.create_and_list_routers                    | 10         |
+| NeutronNetworks.create_and_list_subnets                    | 10         |
+| NeutronSecurityGroup.create_and_delete_security_groups     | 10         |
+| NeutronSecurityGroup.create_and_delete_security_group_rule | 10         |
+| NeutronSecurityGroup.create_and_list_security_group_rules  | 10         |
+| NeutronSecurityGroup.create_and_show_security_group        | 10         |
+| NeutronNetworks.set_and_clear_router_gateway               | 10         |
+| NeutronNetworks.create_and_show_ports                      | 10         |
+| NeutronNetworks.create_and_show_routers                    | 10         |
+| NeutronNetworks.create_and_show_subnets                    | 10         |
+| Quotas.neutron_update                                      | 10         |
+
+[Functest rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+
+| Scenarios                                    | Iterations |
+|----------------------------------------------|:----------:|
+| NeutronNetworks.create_and_delete_networks   | 40         |
+| NeutronNetworks.create_and_delete_ports      | 40         |
+| NeutronNetworks.create_and_delete_routers    | 40         |
+| NeutronNetworks.create_and_delete_subnets    | 40         |
+| NeutronNetworks.create_and_list_networks     | 100        |
+| NeutronNetworks.create_and_list_ports        | 8          |
+| NeutronNetworks.create_and_list_routers      | 40         |
+| NeutronNetworks.create_and_list_subnets      | 40         |
+| NeutronNetworks.create_and_update_networks   | 40         |
+| NeutronNetworks.create_and_update_ports      | 40         |
+| NeutronNetworks.create_and_update_routers    | 40         |
+| NeutronNetworks.create_and_update_subnets    | 100        |
+| NeutronTrunks.create_and_list_trunk_subports | 4          |
+| Quotas.neutron_update                        | 40         |
+
+#### 3.3.5.6 Compute - Nova
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                                      | Iterations |
+|----------------------------------------------------------------|:----------:|
+| Authenticate.validate_nova                                     | 10         |
+| NovaKeypair.create_and_delete_keypair                          | 10         |
+| NovaKeypair.create_and_list_keypairs                           | 10         |
+| NovaServers.boot_and_bounce_server                             | 10         |
+| NovaServers.boot_and_delete_server                             | 10         |
+| NovaServers.boot_and_list_server                               | 10         |
+| NovaServers.boot_and_rebuild_server                            | 10         |
+| NovaServers.snapshot_server                                    | 10         |
+| NovaServers.boot_server_from_volume                            | 10         |
+| NovaServers.boot_server                                        | 10         |
+| NovaServers.list_servers                                       | 10         |
+| NovaServers.resize_server                                      | 10         |
+| NovaServers.boot_and_live_migrate_server                       | 10         |
+| NovaServers.boot_server_attach_created_volume_and_live_migrate | 10         |
+| NovaServers.boot_server_from_volume_and_live_migrate           | 10         |
+| NovaKeypair.boot_and_delete_server_with_keypair                | 10         |
+| NovaServers.boot_server_from_volume_and_delete                 | 10         |
+| NovaServers.pause_and_unpause_server                           | 10         |
+| NovaServers.boot_and_migrate_server                            | 10         |
+| NovaServers.boot_server_and_list_interfaces                    | 10         |
+| NovaServers.boot_and_get_console_url                           | 10         |
+| NovaServers.boot_server_and_attach_interface                   | 10         |
+| NovaServers.boot_server_attach_volume_and_list_attachments     | 10         |
+| NovaServers.boot_server_associate_and_dissociate_floating_ip   | 10         |
+| NovaServers.boot_and_associate_floating_ip                     | 10         |
+| NovaServerGroups.create_and_delete_server_group                | 10         |
+| NovaServerGroups.create_and_get_server_group                   | 10         |
+| NovaServerGroups.create_and_list_server_groups                 | 10         |
+| Quotas.nova_update                                             | 10         |
+
+#### 3.3.5.7 Orchestration - Heat
+
+[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+
+| Scenarios                                     | Iterations |
+|-----------------------------------------------|:----------:|
+| Authenticate.validate_heat                    | 10         |
+| HeatStacks.create_and_delete_stack            | 10         |
+| HeatStacks.create_and_list_stack              | 10         |
+| HeatStacks.create_update_delete_stack         | 10         |
+| HeatStacks.create_check_delete_stack          | 10         |
+| HeatStacks.create_suspend_resume_delete_stack | 10         |
+| HeatStacks.list_stacks_and_resources          | 10         |
+
+<a name="3.3.6"></a>
+### 3.3.6 Dataplane benchmarking
+
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+offers two benchmarking dataplane test cases leveraging on:
+- [VMTP](http://vmtp.readthedocs.io/en/latest)
+- [Shaker](http://pyshaker.readthedocs.io/en/latest/)
+
+[VMTP](http://vmtp.readthedocs.io/en/latest) is a small python application that
+will automatically perform ping connectivity, round trip time measurement
+(latency) and TCP/UDP throughput measurement on any OpenStack deployment.
+
+[Shaker](http://pyshaker.readthedocs.io/en/latest/) wraps around popular system
+network testing tools like iperf, iperf3 and netperf (with help of flent).
+[Shaker](http://pyshaker.readthedocs.io/en/latest/) is able to deploy OpenStack
+instances and networks in different topologies.
+[Shaker](http://pyshaker.readthedocs.io/en/latest/) scenario specifies the
+deployment and list of tests to execute.
+
+At the time of writing, no KPI is defined in CNTT chapters which would have
+asked for an update of the default SLA proposed in
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+
+On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
+
+### 3.3.6.1 VMTP
+
+Here are the
+[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.json)
+executed by
+[Functest vmtp](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.html):
+- VM to VM same network fixed IP (intra-node)
+- VM to VM different network fixed IP (intra-node)
+- VM to VM different network floating IP (intra-node)
+- VM to VM same network fixed IP (inter-node)
+- VM to VM different network fixed IP (inter-node)
+- VM to VM different network floating IP (inter-node)
+
+Here are all results per scenario:
+
+| protocol | pkt_size | results          |
+|----------|----------|------------------|
+| ICMP     | 64       | rtt_avg_ms       |
+| ICMP     | 64       | rtt_max_ms       |
+| ICMP     | 64       | rtt_min_ms       |
+| ICMP     | 64       | rtt_stddev       |
+| ICMP     | 391      | rtt_avg_ms       |
+| ICMP     | 391      | rtt_max_ms       |
+| ICMP     | 391      | rtt_min_ms       |
+| ICMP     | 391      | rtt_stddev       |
+| ICMP     | 1500     | rtt_avg_ms       |
+| ICMP     | 1500     | rtt_max_ms       |
+| ICMP     | 1500     | rtt_min_ms       |
+| ICMP     | 1500     | rtt_stddev       |
+| UDP      | 128      | loss_rate        |
+| UDP      | 128      | throughput_kbps  |
+| UDP      | 1024     | loss_rate        |
+| UDP      | 1024     | throughput_kbps  |
+| UDP      | 8192     | loss_rate        |
+| UDP      | 8192     | throughput_kbps  |
+| TCP      | 65536    | rtt_ms           |
+| TCP      | 65536    | throughput_kbps  |
+
+### 3.3.6.2 Shaker
+
+Here are the
+[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-shaker-run-329/shaker/report.json)
+executed by Shaker:
+- OpenStack L2
+- OpenStack L3 East-West
+- OpenStack L3 North-South
+- OpenStack L3 North-South Performance
+
+Here are all samples:
+
+| test           | samples                |
+|----------      |------------------------|
+| Bi-directional | ping_icmp (ms)         |
+| Bi-directional | tcp_download (Mbits/s) |
+| Bi-directional | tcp_upload (Mbits/s)   |
+| Download       | ping_icmp (ms)         |
+| Download       | tcp_download (Mbits/s) |
+| Upload         | ping_icmp (ms)         |
+| Upload         | tcp_upload (Mbits/s)   |
+| Ping           | ping_icmp (ms)         |
+| Ping           | ping_udp (ms)          |
+| TCP            | bandwidth (bit/s)      |
+| TCP            | retransmits            |
+| UDP            | packets (pps)          |
+
+### 3.3.6.3 PROX
+
+The generator used with the rapid scripts is PROX with a specific generator configuration file.
+When multiple flows are requested, the generator starts randomizing bits in the source and destination UDP ports.
+The number of flows to be generated during each run of the test is specified in the test files (e.g. TST009_Throughput.test).
+Packet size used during the test is also defined in the test file. IMIX is not supported yet, but you could take the average packet size of the IMIX for now.
+When defining n packet sizes with m different flow sizes, the test will run n x m times and will produce the results for these n x m combinations.
+All throughput benchmarking is done by a generator sending packets to a reflector. This results in bidirectional traffic which should be identical (src and dest IP and ports swapped) if all traffic goes through.
+The VMs or containers use only 1 vNIC for incoming and outgoing traffic. Multiple queues can be used.
+Multiple VMs or containers can be deployed prior to running any tests. This allows to use generator-reflector pairs on the same or different compute nodes, on the same or different NUMA nodes.
+
+<a name="3.3.7"></a>
+### 3.3.7 opensource VNF onboarding and testing
+
+Running opensource VNFs is a key technical solution to ensure that the
+platforms meet Network Functions Virtualization requirements.
+[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml)
+offers 5 test cases which automatically onboard and test the following 3
+opensource VNFs:
+- [Clearwater IMS](https://clearwater.readthedocs.io/en/stable/)
+- [VyOS vRouter](https://www.vyos.io/)
+- [OpenAirInterface vEPC](https://www.openairinterface.org/)
+
+Here are the full list of orchestrators used for all these deployments:
+- [Cloudify](https://cloudify.co/)
+- [Heat](https://wiki.openstack.org/wiki/Heat)
+- [Juju](https://jaas.ai/)
+
+The VNF are covered by upstream tests when possible (see
+[clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)) and
+by Functest VNF tests in the other cases.
+
+<a name="3.3.8"></a>
+### 3.3.8 Tenants
+
+<a name="3.3.9"></a>
+### 3.3.9 LCM
+
+<a name="3.3.10"></a>
+### 3.3.10 Assurance
+
+<a name="3.3.11"></a>
+### 3.3.11 Security
+
+<a name="3.3.12"></a>
+### 3.3.13 Resilience
+
+<a name="3.3.13"></a>
+### 3.3.14 Bare-metal validations
 
 <a name="3.4"></a>
-## 3.4 Profile Catalog
-
-Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter04.md#42-infrastructure-profiles-catalogue) of the reference model defines three software profiles, targeting three different use cases:
-
-* Basic
-* Network intensive
-* Compute intensive
-
-The test cases selected for validating compliance of the three profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
-
-TODO: what actually needs to be done here is to reference the table from chapter 4.2.5 and mark for which of those requirements test cases are actually available in the set of test tools available to us.
-
-
-<a name="3.5"></a>
-## 3.5 Software & Hardware Reference
-
-The LFN-based compliance and certification program comprises three distinct types of NFVI deployment and runtime environments:
-
- 1. A CNTT reference implementation deployed in the OPNFV CI/CD environment,
- 2. A commercial NFVI product deployed in a vendor's internal development and testing environment, and
- 3. ACNTT reference implementation of a commercial NFVI product deployed in a 3rd party lab providing testing and certification services.
-
-The test tooling, harnesses and corresponding test cases which are part of the compliance and certification test suite must be capable of running across all of those environments. This results in the following list of requirements:
-
-| Reference         | Description                                                                                                              |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------|
-| x                 | NFVI test cases *must not* interact with remote (Internet) services apart from downloading container or VM images. In particular, test tools and test cases must not automatically upload test data to any system or service run by LFN or GSMA. The purpose of this requirement is to protect the confidentially of (intermediate) test data. |
-| x                 | NFVI test cases *must* support either proxied Internet connectivity or an offline mode if additional container or virtual machine images need to be downloaded at runtime.  |
-
-
-Content to be written:
-- Identify SW Reference
-- Identify HW Reference
-
-
-<a name="3.6"></a>
-## 3.6 Options & Extensions
-
-Content to be written:
-- Options Available / Configured
-- Extensions Available / Configured
-
-
-<a name="3.7"></a>
-## 3.7 Measurement Criteria
-
-Test validations will be corroborated, and confirmed, with direct comparison between measured results and documented non-functional requirements (NFRs) for applications, hardware and software configuration settings, and host systems.  Throughput, latency, concurrent connections/threads, are all examples of non-functional requirements which specify criteria which can be used to judge the operation of a system, rather than specific behaviours of the application which are defined by functional requirements.
-
-This section attempts to summarize a categorical list of metrics used for test validations.  **For a complete list of metrics, and requirements, please refer to Reference Model**
-
-
-<a name="3.7.1"></a>
-### 3.7.1 Storage and IOPS
-
-_**IOPS**_ validations for Storage, and/or Storage Extensions, will be included as part of the final NFVI verification, and validation, process.  
-
-From a definition perspective, IOPS is the standard unit of measurement for I/O (Input/Output) operations per second. This measurement is a performance-based measurement and is usually seen written as**(1)**:
-
-- **Total IOPS**: Average number of I/O operations per second.
-- **Read IOPS**: Average number of read I/O operations per second.
-- **Write IOPS**: Average number of write I/O operations per second.
-
-For example, if you have a disk that is capable of doing a 100 IOPS, it means that it is theoretically capable of issuing a 100 read and or write operations per second.  This is in theory.  In reality, additional time is needed to actually process the 100 reads/writes.  This additional time is referred to as "latency", which reduces the total IOPS that is calculated, and measured.  Latency needs needs to be measured, and included in the IOPS calculation.  Latency will tell us how long it takes to process a single I/O request, and is generally in the 2 millisecond (ms) range per IO operation for a physical disk, through 20+ ms, at which time users will notice an impact in their experience**(2)**.  
-
-Additional factors to consider when measuring IOPS:
-
-
-- Take into consideration the percentage of Input (write) vs. Output (reads) operations, as Writes can be more resource intensive.
-- Determine if Reads were performed from Cache, as this this may (will) result in faster performance, and faster IOPS.
-- Confirm the storage types (Physical, RAID), as storage arrays with linear, or sequential reading/writing may (will) be slower.
-- Identify the block size used, as using large block sizes vs. small block sizes can (will) impact IOPS performance.
-- Determine Hard Disk Speeds (HDD in RPMs) used, as the higher the RPMS, the potential for faster IOPS performance.
-- Quantify the number of disk controllers used to process the number of requested IO requests.
-- Determine the specific work-load requirements, as this will dictate speed, controllers, disk RPM, and latency tolerances.  
-
-For additional insight, or deeper understanding and reading of IOPS, refer to the references below.
-
-<a name="3.8"></a>
-## 3.8 Measurement Types
-
-<a name="3.8.1"></a>
-#### 3.8.1 Performance Measurements
-
-**Objectives**
-
-The NFVI performance measurements aim at assessing the performance of a given NFVI implementation on the execution plane (i.e., excluding VIM) by providing it with a set of significant metrics to be measured.
-
-They should allow validating the performance of any software and/or hardware NFVI implementation as described in Reference Model.
-
-Of course, they can also be used for other purposes, such as:
-- fine tuning of software and/or hardware NFVI configuration (e.g., the number of cores dedicated to the DPDK vSwitch)
-- comparing the performances of different software or hardware technologies (e.g., DPDK vSwitch vs hardware-offloaded vSwitch)
-- assessing the performance impact of specific features (e.g., with or without encapsulation)
-
-
-**Metrics Baseline**
-
-For the purpose of validation, a baseline of the performance metrics is required for comparison with the results of their measurements on the NFVI implementation to be validated.
-
-That baseline is a set of threshold values which could be determined by **measuring the performance metrics on Reference Implementations**.
-
-The validation can then be based on simple pass/fail test results or on a grade (e.g., "class" A, B or C) provided by the combination of pass/fail results for 2 different threshold values of some (or all) metrics.
-
-
-**Metrics Description**
-
-Two categories of metrics are considered depending on whether they are related to either the VNF domain or the NFVI domain itself:
-
-- Metrics related to the VNF domain are defined from VNF perspective (i.e., per VNFC, per vNIC, per vCPU...) and should concern VNF as well as NFVI actors. 
-- Metrics related to the NFVI domain are defined per NFVI node ; their measurement is based on virtual workloads (i.e., VM or container) in order to reflect the performance of a NFVI node with a given profile ; they should only concern NFVI actors. 
-
-The following table contains the list of performance metrics related to the VNF domain.
-
-| Reference         | Name                           | Unit          | Definition/Notes                                             |
-| ----------------- | ------------------------------ | ------------- | ------------------------------------------------------------ |
-| vnf.nfvi.perf.001 | vNIC throughput                | bits/s        | Throughput per vNIC                                          |
-| vnf.nfvi.perf.002 | vNIC latency                   | second        | Frame transfer time to vNIC at the throughput (vnf.nfvi.perf.001) |
-| vnf.nfvi.perf.003 | vNIC delay variation           | second        | Frame Delay Variation (FDV) to vNIC at the throughput (vnf.nfvi.perf.001) |
-| vnf.nfvi.perf.004 | vNIC simultaneous active flows | number        | Simultaneous active L3/L4 flows per vNIC before a new flow is dropped |
-| vnf.nfvi.perf.005 | vNIC new flows rate            | flows/s       | New L3/L4 flows rate per vNIC                                |
-| vnf.nfvi.perf.006 | Storage throughput             | bytes/s       | Throughput per virtual storage unit                          |
-| vnf.nfvi.perf.007 | vCPU capacity                  | test-specific score | Compute capacity per vCPU                                    |
-
-The following table contains the list of performance metrics related to the NFVI domain.
-
-| Reference           | Name                           | Unit          | Definition/Notes                                           |
-| ------------------- | ------------------------------ | ------------- | ---------------------------------------------------------- |
-| infra.nfvi.perf.001 | Node network throughput        | bits/s        | Network throughput per node                                |
-| infra.nfvi.perf.002 | Node simultaneous active flows | number        | Simultaneous active L3/L4 flows per node before a new flow is dropped |
-| infra.nfvi.perf.003 | Node new flows rate            | flows/s       | New L3/L4 flows rate per node                              |
-| infra.nfvi.perf.004 | Node storage throughput        | bytes/s       | Storage throughput per node                                |
-| infra.nfvi.perf.005 | Physical core capacity         | test-specific score | Compute capacity per physical core usable by VNFs          |
-| infra.nfvi.perf.006 | Energy consumption             | W             | Energy consumption of the node without hosting any VNFC    |
-| infra.nfvi.perf.007 | Network energy efficiency      | W/bits/s      | Energy consumption of the node at the network throughput (infra.nfvi.perf.001), normalized to the measured bit rate |
-| infra.nfvi.perf.008 | Storage energy efficiency      | W/bits/s      | Energy consumption of the node at the storage throughput (infra.nfvi.perf.004), normalized to the measured byte rate |
-| infra.nfvi.perf.009 | Compute energy efficiency      | W/core        | Energy consumption of the node during compute capacity test (vnf.nfvi.perf.007 or infra.nfvi.perf.005), normalized to the number of physical cores usable by VNFs |
-
-
-**MVP Metrics**
-
-The following metrics should be considered as MVP:
-
-- vnf.nfvi.perf.001,002,006,007
-- infra.nfvi.perf.001,005,006,007,009
-
-
-**Network Metrics Measurement Test Cases**
-
-The network performance metrics are vnf.nfvi.perf.001-005 and infra.nfvi.perf.001-003,006.
-
-The different possible test cases are defined by each of the 3 following test traffic conditions.
-
-- **Test traffic path across NFVI**
-
-  3 traffic path topologies should be considered:
-
-  - ***North/South traffic***, between VNFCs whitin a node and outside NFVI  
-    This can be provided by PVP test setup of ETSI GS NFV-TST009.
-
-  - ***East/West intra-node traffic***, between VNFCs within a node  
-    This can be provided by a V2V (Virtual-to-Virtual) test setup and, in some cases, by PVVP test setup of ETSI GS NFV-TST009.  
-
-  - ***East/West inter-node traffic***, between VNFCs in different nodes      
-    This can be provided by VPV (Virtual-Physical-Virtual) test setup and, in some cases, by PVVP test setup between 2 nodes.
-
-- **Test traffic processing by NFVI**
-
-  Different processing complexity applicable to the traffic crossing the NFVI should be considered, including especially (but not exhaustively):
-  - ***L2 processing*** (Ethernet switching), possibly including VLAN tagging/mapping and encapsulation (e.g., VXLAN)
-  - ***L3 processing*** (IP routing), possibly including L2 processing
-  - ***L4 stateful processing*** (e.g., FW, NAT, SFC), also including L3 processing
-  - ***Encryption*** (e.g., IPSec ESP tunneling)
-    
-- **Test traffic profile**
-
-  Two different test traffic profiles should be considered according to the two VNF types that must be provided with network connectivity by the NFVI.
-
-  - ***Forwarded traffic*** for L3/L4 forwarding VNF (e.g., PGW, FW)
-
-    It is based on ETSI GS NFV-TST009 and it should be:
-
-    -  **bidirectional UDP traffic** with **0.001%** frame loss ratio, **300B** average frame size, **10k** L3/L4 flows,
-    - between a **traffic generator** and a **traffic receiver** through a **L3 forwarding** pseudo-VNF with sufficient capacity not to be the test bottleneck.
-
-    Latency and delay variation measurement should be the 99th percentile of measured values for one-way frame transfer (i.e. from generator to receiver).
-
-    The main OPNFV test tools candidates for that purpose are NFVbench and VSPerf.
-
-    > _**Note:** to be studied whether additional frame sizes and flows number should be considered_
-    
-  - ***Client-server traffic*** for L4/L7 endpoint VNF (e.g., MME, CDN)
-
-    It should be:
-
-    - **bidirectional TCP traffic** with **1400B** maximum frame size, **5k** TCP sessions,
-    - between **2 TCP client&server endpoints**, one or both as pseudo-VNF, with sufficient capacity not to be the test bottleneck.
-        
-    *Note*: the maximum TCP frame size can be forced by configuring TCP endpoint link MTU.
-
-    The main OPNFV test tools candidates for that purpose are Functest (VMTP and Shaker) and Yardstick (TC011 and TC083).
-        
-    > _**Note:** to be studied whether metrics related to latency and flows for that traffic profile should be considered (how? with UDP and/or ICMP test traffic in addition?)_
-
-The combination of each of those 3 test conditions types and the different NFVI profiles results in a wide matrix of test cases (potentially more than 50 cases).
-Furthermore, these test cases should be combined with the different metrics resulting in a huge number of measurements (potentially more than 400 measurements).
-For the efficiency of the validation, only the most relevant combinations should be kept.
-
-This optimization should be based on the following principles:
-
-1. NFVI domain metrics measurement: on PVP topology only
-2. Metrics measurement with forwarded traffic: with no L4 stateful processing
-3. Basic and Compute intensive profiles metrics measurement: client-server traffic profile only
-4. Flows & latency related metrics measurement: for PVP only
-
-The following table proposed a possible optimized matrix model of the test cases against the metrics to be measured. 
-
-|                     | **NFVI Profiles**   | **B & C**      |                |                |                | **N**         |                |
-| ------------------- | ------------------- | -------------- | -------------- | -------------- | -------------- | ------------- | -------------- |
-|                     | **Test Cases**      | V2V - L2 - SRV | VPV - L3 - SRV | PVP - L2 - SRV | PVP - L4 - SRV | PVP - L2- SRV | PVP - L2 - FWD |
-|                     |                     |                |                |                |                |               |                |
-| **MVP Metrics**     | vnf.nfvi.perf.001   | 50Gbps         | 20Gbps         | 20Gbps         | 10Gbps         | 40Gbps        | 40Gbps         |
-|                     | vnf.nfvi.perf.002   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 0.5ms          |
-|                     | infra.nfvi.perf.001 | n/a (1)        | n/a (1)        | 40Gbps         | 20Gbps         | 60Gbps        | 80Gbps         |
-|                     | infra.nfvi.perf.007 | n/a (1)        | n/a (1)        | ? W/Gbps       | ? W/Gbps       | ? W/Gbps      | ? W/Gbps       |
-|                     |                     |                |                |                |                |               |                |
-| **Non-MVP Metrics** | vnf.nfvi.perf.003   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 1ms            |
-|                     | vnf.nfvi.perf.004   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 500k           |
-|                     | vnf.nfvi.perf.005   | n/a (4)        | n/a (4)        | ?              | ?              | ?             | 100kfps        |
-|                     | infra.nfvi.perf.002 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | 1G             |
-|                     | infra.nfvi.perf.003 | n/a (1)        | n/a (1)        | ?              | ?              | ?             | 200kfps        |
-
-*Table notes*:
-- Values are only indicative (see "Metrics Baseline" below)
-- L2/L3/L4 refers to network processing layer
-  - L2 for Ethernet switching
-  - L3 for IP routing
-  - L4 for IP routing with L4 stateful processing (e.g. NAT)
-- SRV/FWD refers to the traffic profile (and pseudo-VNF type implied)
-  - SRV for client-server traffic (and L4/L7 endpoint pseudo-VNF)
-  - FWD for forwarded traffic (and L3/L4 forwarding pseudo-VNF)
-
-
-**Energy Metrics Measurement Test Cases**
-
-Energy metrics (infra.nfvi.perf.006-009) should be considered carefully for NFVI validation since energy consumption may vary a lot across processor architectures, models and power management features.
-
-They mainly enable to have metrics available regarding NFVI environment footprint. They also allow energy-based comparison of different NFVI software implementations running on a same physical NFVI hardware implementation.
-
-OPNFV tool as possible basis: https://docs.opnfv.org/en/latest/testing/ecosystem/energy-monitoring.html
-
-
-**Storage Metrics Measurement Test Cases**
-
-Metric (MVP): vnf.nfvi.perf.006 and infra.nfvi.perf.004,008
-
-Main OPNFV test tool candidates: Yardstick (TC 005), StorPerf
-
-> _**Note:** to be completed _
-
-
-**Compute Metrics Measurement Test Cases**
-
-The compute performance metrics are vnf.nfvi.perf.007 and infra.nfvi.perf.004,009.
-
-Each compute performance test should be performed with all vCPU of the node running multiple parallel workloads and the result is then normalized:
-- to the number of vCPU, for the vCPU capacity measurements (vnf.nfvi.perf.007)
-- to the number of physical core usable by VNFs, for the physical core capacity and compute energy efficiency measurements infra.nfvi.perf.004,009)
-
-Main OPNFV test tool candidate: Yardstick (TC014)
-
-> _**Note:** to be studied: how to define the different possible test cases, especially the different workload profiles (i.e., pseudo-VNF) to consider_
-
-
-<a name="3.8.2"></a>
-#### 3.8.2 Resiliency Measurements
-
-
-<a name="3.9"></a>
-## 3.9 NFVI Test Cases
-
-This section lists all NFVI test cases, sorted by requirement type, which are part of the LFN-based compliance and certification program.
-
-
-#### 3.9.1 Functional (API) test cases
-
-The primary tool in the OpenStack domain for implementing functional tests is Tempest. Tempest test cases follow a naming scheme which allows to determine which OpenStack service is being targeted by a given test case. Test tools utilizing Tempest, e.g., Functest or Rally, often make use of regular expressions to define, by means of white- and blacklisting, a concrete set of Tempest tests for execution.
-
-Typically, each test case is calling a (set of) API(s) of a targeted OpenStack service. In addition, so called "scenario tests" call APIs across different OpenStack services in order to test  a specific workflow, for instance, creating virtual networks, spawning VMs on those networking, verifying SSH connectivity into those VMs and finally tearing down all newly created resources.
-
-Chapter [Interfaces and API](../../../ref_arch/openstack/chapters/chapter05.md) of the reference architecture RA1 defines the APIs and interfaces expected to be exposed by a system under test. This list guides the selection of Tempest test cases (along with the generic test case requirements). Please note that a compliance and certification program typically requires to list the full set of test cases which are part of the test scope. In case of Tempest tests, this list is prohibitively long. So instead of listing each test case individually, regular expressions are used to white- and blacklist test cases.
-
-
-* neutron-tempest-plugin-api
-
-* tempest-cinder
-
-* tempest-keystone
-
-* tempest-full
-
-* tempest-scenario
-
-* tempest-slow
-
-TODO: to be filled with regexs from [here](https://raw.githubusercontent.com/opnfv/functest/master/docker/smoke-cntt/testcases.yaml)
-
-
-
-Rally is a tool build on top of Tempest aiming to generate load on the OpenStack control plane by running Tempest tests in succession and in parallel.
-
-
-* rally-sanity
-
-
-
-
-#### 3.9.2 Performance test cases
-
-> none defined yet
-
-
-#### 3.9.3 Resilience test cases
-
-> none defined yet
-
-
-#### 3.9.4 Bare-metal validation test cases
-
-> none defined yet
+## 3.4 Test Cases Traceability to Requirements
+
+<a name="3.4.1"></a>
+### 3.4.1 RM/RA-1 Requirements
+
+According to [RC1 Chapter04]({{ "/doc/ref_cert/lfn/chapters/chapter04.html" | relative_url }})
+the following test cases must pass as they are for CNTT NFVI
+Conformance:
+
+| container                               | test case                       | criteria |
+|-----------------------------------------|---------------------------------|:--------:|
+| opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api-cntt | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt             | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt           | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt               | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt               | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt           | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt               | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt                 | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt                 | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | vmtp                            | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | shaker                          | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify                        | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify_ims                    | PASS     |
+| opnfv/functest-vnf:hunter               | heat_ims                        | PASS     |
+| opnfv/functest-vnf:hunter               | vyos_vrouter                    | PASS     |
+| opnfv/functest-vnf:hunter               | juju_epc                        | PASS     |
+
+<a name="3.4.2"></a>
+### 3.4.2 TC Mapping to Requirements
+
+| test case                       | requirements                                                             |
+|---------------------------------|--------------------------------------------------------------------------|
+| neutron-tempest-plugin-api-cntt | Neutron API testing                                                      |
+| tempest_cinder_cntt             | Cinder API testing                                                       |
+| tempest_keystone_cntt           | Keystone API testing                                                     |
+| rally_sanity_cntt               | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
+| tempest_full_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_scenario_cntt           | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_slow_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| rally_full_cntt                 | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
+| rally_jobs_cntt                 | Neutron API benchmarking                                                 |
+| vmtp                            | Dataplane benchmarking                                                   |
+| shaker                          | Dataplane benchmarking                                                   |
+| cloudify                        | opensource VNF onboarding and testing                                    |
+| cloudify_ims                    | opensource VNF onboarding and testing                                    |
+| heat_ims                        | opensource VNF onboarding and testing                                    |
+| vyos_vrouter                    | opensource VNF onboarding and testing                                    |
+| juju_epc                        | opensource VNF onboarding and testing                                    |

@@ -1,5 +1,5 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# Common NFVI Telco Taskforce Governance
+# Common NFVI Telco Taskforce - Community Guidelines
 
 <!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
 
