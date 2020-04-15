@@ -30,17 +30,23 @@
 <a name="5.1.5"></a>
 ### 5.1.5 Use cases
 
-
 - **Introduction**
 
-- **Use Case #1**
+- **Use Case #1 - eMBB Network Slice with CDN**
 
   - **Business Objectives**
+  
+      Monetizing 5G network slicing by providing eMBB Network slice with distributed CDN as a Service providing UHD Streaming Experience, Video Optimization, Caching for Large files, and other Capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
 
   - **Targeted Segments**
+  
+    - B2C (Targeting high Tier Packages & Bundles)
+    - Content Owners (Potential revenue sharing model)
+    - MVNOs (Wholesale)
+    - Stadiums and Venus.
 
   - **Architecture**
-
+  
 
 - **Use Case #2**
 
