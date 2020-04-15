@@ -24,7 +24,7 @@ The RI will be used as follows:
 * To develop the Reference Conformance (RC) document, which will document the tests that can be run against the RI or any Vendor Implementation (VI) to check conformance with the Kubernetes RA.
 * By software vendors to be able to install Kubernetes platforms in their own environments in order to develop against the RI
 
-In order to promote the quick deployment of the RI and avoid duplicating effort across communities, the RI community works closely with CNCF TUG, OVP and ONAP communities.
+In order to promote the quick deployment of the RI and avoid duplicating effort across communities, the RI community works closely with CNCF TUG, OVP, ONAP and TIP communities.
 
 <a name="1.1.2"></a>
 ### 1.1.2 Structure of the document
