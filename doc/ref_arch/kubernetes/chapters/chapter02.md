@@ -27,7 +27,7 @@
 
 **should**: Requirements that are marked as _should_ are expected to be fulfilled by the Reference Architecture but it is up to each service provider to accept a Vendor Implementation targeting conformance with this Reference Architecture that is not reflecting on any of those requirements. The same applies to _should not_.
 
-- ***NOTE:*** Some of these **must** and **should** requirements may be optional when it comes to an operator **deployment** (i.e. an operator may choose whether or not to deploy or not, depending on the NFVI Software Profiles required for each specific deployment). Specific requirements asking for the Reference Architecture to be flexible enough to allow that optionality will be added in the tables in section 2.3.
+- ***NOTE:*** Some of these **must** and **should** requirements may be optional when it comes to an operator **deployment** (i.e. an operator may choose whether or not to deploy or not, depending on the Cloud Infrastructure Software Profiles required for each specific deployment). Specific requirements asking for the Reference Architecture to be flexible enough to allow that optionality will be added in the tables in section 2.3.
 
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
@@ -74,15 +74,15 @@ From Reference Model section [4.1.5 Cloud Infrastructure management Capabilities
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.vim.cap.001 | Virtual Compute allocation | | Y |
-| e.vim.cap.002 | Virtual Storage allocation | | Y |
-| e.vim.cap.003 | Virtual Networking resources allocation | | Y |
-| e.vim.cap.004 | Multi-tenant isolation | | N <sup>1)</sup> |
-| e.vim.cap.005 | Images management | | Y |
-| e.vim.cap.006 | Virtual resources inventory per tenant | | Y |
-| e.vim.cap.007 | Resources Monitoring | | Y |
-| e.vim.cap.008 | Virtual resources Performance  |  | Y |
-| e.vim.cap.009 | Virtual resources Fault information | | Y |
+| e.man.cap.001 | Virtual Compute allocation | | Y |
+| e.man.cap.002 | Virtual Storage allocation | | Y |
+| e.man.cap.003 | Virtual Networking resources allocation | | Y |
+| e.man.cap.004 | Multi-tenant isolation | | N <sup>1)</sup> |
+| e.man.cap.005 | Images management | | Y |
+| e.man.cap.006 | Virtual resources inventory per tenant | | Y |
+| e.man.cap.007 | Resources Monitoring | | Y |
+| e.man.cap.008 | Virtual resources Performance  |  | Y |
+| e.man.cap.009 | Virtual resources Fault information | | Y |
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: VIM Capabilities</p>
 
@@ -95,62 +95,70 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 
 | Attribute | Description | Value | Supported |
 |-----------|---------------------------|-------|-------|
-| e.nfvi.res.cap.001 | Max number of vCPU that can be assigned to a single pod by the NFVI | at least 16<sup>1)</sup> | Y |
-| e.nfvi.res.cap.002 | Max memory in MB that can be assigned to a single pod by the NFVI | at least 32 GB<sup>1)</sup> | Y |
-| e.nfvi.res.cap.003 | Max storage in GB that can be assigned to a single pod by the NFVI | at least 320 GB<sup>1)</sup> | Y |
-| e.nfvi.res.cap.004 | # Connection Points | 6 | Y |
-| e.nfvi.res.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
-| e.nfvi.per.cap.001 | CPU pinning support | | Y |
-| e.nfvi.per.cap.002 | NUMA support | | Y |
-| e.nfvi.per.cap.003 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.004 | Crypto Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.005 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.006 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
-| e.nfvi.per.cap.007 | Enhanced Cache Management | | X (if offered) |
-| e.nfvi.mon.cap.001 | Monitoring of L2-7 data | | N<sup>3)</sup> |
-| i.nfvi.sla.cap.001 | CPU overbooking | 1:1, 1:4 | Y |
-| i.nfvi.sla.cap.002 | vNIC QoS | | Y |
-| i.nfvi.per.cap.001 | Huge page support |  | Y |
-| i.nfvi.mon.cap.001 | Monitor host CPU usage |  | Y |
-| i.nfvi.mon.cap.002 | Monitor virtual compute CPU usage | | Y |
-| i.nfvi.mon.cap.003 | Monitor host CPU utilization | | Y |
-| i.nfvi.mon.cap.004 | Monitor virtual compute CPU utilization | | Y |
-| i.nfvi.mon.cap.007 | Monitor external storage capacity | | Y |
-| nfvi.com.cfg.002 | NUMA awareness | | Y |
-| nfvi.com.cfg.003 | CPU pinning capability | | Y |
-| nfvi.com.cfg.004 | Huge Pages  | | Y |
-| nfvi.stg.cfg.001 | Catalogue storage Types | | Y |
-| nfvi.stg.cfg.002 | Storage Block |  | Y |
-| nfvi.stg.cfg.003 | Storage Object | | N<sup>4)</sub> |
-| nfvi.stg.cfg.004 | Storage with replication | | Y |
-| nfvi.stg.cfg.005 | Storage with encryption | | Y |
-| nfvi.stg.acc.cfg.001 | Storage IOPS oriented | | Y |
-| nfvi.stg.acc.cfg.002 | Storage capacity oriented | | Y |
-| nfvi.net.cfg.001 | vNIC interface | | N<sup>5)</sup>|
-| nfvi.net.cfg.002 | Overlay protocol | | Y<sup>6)</sup>|
-| nfvi.net.cfg.003 | NAT | | |
-| nfvi.net.cfg.004 | Security Group | | |
-| nfvi.net.cfg.005 | SFC support | | |
-| nfvi.net.cfg.006 | Traffic patterns symmetry | | |
-| nfvi.net.acc.cfg.001 | vSwitch optimisation | | N <sup>7)</sup>|
-| nfvi.net.acc.cfg.002 | Support of HW offload | |Y, support of SmartNic |
-| nfvi.net.acc.cfg.003 | Crypto acceleration | | Y |
-| nfvi.net.acc.cfg.004 | Crypto Acceleration Interface | | ? |
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) |  2 | Y |
-| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | Y |
-| nfvi.hw.cpu.cfg.003 | NUMA | | Y |
-| nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | | Y |
-| nfvi.hw.cac.cfg.001 | GPU | | Y |
-| nfvi.hw.stg.hdd.cfg.001 | Local Storage HDD | | Optional |
-| nfvi.hw.stg.ssd.cfg.002 | Local Storage SSD | | Recommended |
-| nfvi.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | Y |
-| nfvi.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 25 | Y |
-| nfvi.hw.pci.cfg.001 |  Number of PCIe slots available in the host | 8 | Y |
-| nfvi.hw.pci.cfg.002 | PCIe speed | Gen 3 | Y |
-| nfvi.hw.pci.cfg.003 | PCIe Lanes | 8 | Y |
-| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | | Optional |
-| nfvi.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>8)</sup> |
-| nfvi.hw.nac.cfg.003 | Compression |  | |
+| e.cap.001 | Max number of vCPU that can be assigned to a single pod by the Cloud Infrastructure | at least 16<sup>1)</sup> | Y |
+| e.cap.002 | Max memory in MB that can be assigned to a single pod by the Cloud Infrastructure | at least 32 GB<sup>1)</sup> | Y |
+| e.cap.003 | Max storage in GB that can be assigned to a single pod by the Cloud Infrastructure | at least 320 GB<sup>1)</sup> | Y |
+| e.cap.004 | # Connection Points | 6 | Y |
+| e.cap.005 | Total instance (persistent) storage (GB) | Up to 16TB<sup>2</sup> | Y |
+| e.cap.006 | CPU pinning support | | Y |
+| e.cap.007 | NUMA support | | Y |
+| e.cap.008 | IPSec Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.009 | Crypto Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.010 | Transcoding Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.011 | Programmable Acceleration | | Yes (if offered) see section [2.2.1 Network Acceleration Extensions](#2.2.1) |
+| e.cap.012 | Enhanced Cache Management | | X (if offered) |
+| e.cap.013 | SR-IOV over PCI-PT | | Y |
+| e.cap.014 | GPU/NPU | | X (if offered) |
+| e.cap.015 | SmartNIC | | X (if offered) |
+| e.cap.016 | FPGA/other Acceleration H/W | | X (if offered) |
+| e.cap.017 | Monitoring of L2-7 data | | N<sup>3)</sup> |
+| i.cap.014 | CPU cores consumed by the Cloud Infrastructure on the worker nodes | 2 | |
+| i.cap.015 | Memory consumed by Cloud Infrastructure on the worker nodes | 16 Gb | |
+| i.cap.016 | CPU allocation ratio | 1:1, 4:1 | Y |
+| i.cap.017 | Connection point QoS | | Y |
+| i.cap.018 | Huge page support |  | Y |
+| i.pm.001  | Monitor host CPU usage |  | Y |
+| i.pm.002  | Monitor virtual compute CPU usage | | Y |
+| i.pm.003  | Monitor host CPU utilization | | Y |
+| i.pm.004  | Monitor virtual compute CPU utilization | | Y |
+| i.pm.005  | Measurement of external storage IOPs | | ? |
+| i.pm.006  | Measurement of external storage throughput | | ? |
+| i.pm.007  | Available external storage capacity | | ? |
+| infra.com.cfg.002 | NUMA awareness | | Y |
+| infra.com.cfg.003 | CPU pinning capability | | Y |
+| infra.com.cfg.004 | Huge Pages  | | Y |
+| infra.stg.cfg.001 | Catalogue storage Types | | Y |
+| infra.stg.cfg.002 | Storage Block |  | Y |
+| infra.stg.cfg.003 | Storage Object | | N<sup>4)</sub> |
+| infra.stg.cfg.004 | Storage with replication | | Y |
+| infra.stg.cfg.005 | Storage with encryption | | Y |
+| infra.stg.acc.cfg.001 | Storage IOPS oriented | | Y |
+| infra.stg.acc.cfg.002 | Storage capacity oriented | | Y |
+| infra.net.cfg.001 | vNIC interface | | N<sup>5)</sup>|
+| infra.net.cfg.002 | Overlay protocol | | Y<sup>6)</sup>|
+| infra.net.cfg.003 | NAT | | |
+| infra.net.cfg.004 | Security Group | | |
+| infra.net.cfg.005 | SFC support | | |
+| infra.net.cfg.006 | Traffic patterns symmetry | | |
+| infra.net.acc.cfg.001 | vSwitch optimisation | | N <sup>7)</sup>|
+| infra.net.acc.cfg.002 | Support of HW offload | |Y, support of SmartNic |
+| infra.net.acc.cfg.003 | Crypto acceleration | | Y |
+| infra.net.acc.cfg.004 | Crypto Acceleration Interface | | ? |
+| infra.hw.cpu.cfg.001 | Number of CPU (Sockets) |  2 | Y |
+| infra.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | Y |
+| infra.hw.cpu.cfg.003 | NUMA | | Y |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | | Y |
+| infra.hw.cac.cfg.001 | GPU | | Y |
+| infra.hw.stg.hdd.cfg.001 | Local Storage HDD | | Optional |
+| infra.hw.stg.ssd.cfg.002 | Local Storage SSD | | Recommended |
+| infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | Y |
+| infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 25 | Y |
+| infra.hw.pci.cfg.001 |  Number of PCIe slots available in the host | 8 | Y |
+| infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Y |
+| infra.hw.pci.cfg.003 | PCIe Lanes | 8 | Y |
+| infra.hw.nac.cfg.001 | Cryptographic Acceleration | | Optional |
+| infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | | Optional<sup>8)</sup> |
+| infra.hw.nac.cfg.003 | Compression |  | |
 
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Instance Capabilities Mapping</p>
 
@@ -166,9 +174,9 @@ From Reference Model section [4.2.5 Instance Capabilities Mapping](../../../ref_
 <a name="2.3"></a>
 ## 2.3 Kubernetes Architecture Requirements
 
-The Reference Model (RM) defines the NFVI to consist of the physical resources, virtualised resources and a software managment system.  In the virtualised world, the NFVI Software Management System (Virtualised Infrastructure Manager -- VIM) consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  And the VIM is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management. Now consider, the containerisation equivalent.
+The Reference Model (RM) defines the Cloud Infrastructure to consist of the physical resources, virtualised resources and a software managment system.  In the virtualised world, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  And the Cloud Infrastructure Management is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management. Now consider, the containerisation equivalent.
 
-Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. physical resources), NFVI Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
+Reference to "Architecture" in this chapter refers to the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor, Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
 
 <a name="2.3.1"></a>
 ### 2.3.1 General Requirements
@@ -221,7 +229,7 @@ Reference to "Architecture" in this chapter refers to the NFVI Hardware (e.g. ph
 | `req.inf.ntw.21` | Network | The Architecture **must** support cluster wide coordination of IP address assignment. |
 | `req.inf.ntw.22` | Network | The Architecture **should** support the use of any interface with a Kubernetes Service if the interface is designed to work with Kubernetes Services. |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration. |
-| `req.inf.acc.02` | Acceleration | The Architecture **should** support NFVI Acceleration (such as SmartNICs). |
+| `req.inf.acc.02` | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). |
 | `req.inf.vir.01`   | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |
 | `req.inf.phy.01`  |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. |
 
@@ -257,7 +265,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 
 | Ref # | sub-category | Description |
 |---|---|---|
-| `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (NFVI and bare metal resources), network, and storage. |
+| `req.int.api.02` | API | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |
 | `req.int.api.03` | API |The Architecture **must** support the usage of an OCI compatible artefact repository. |
 | `req.int.api.04` | API | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API-s, like Helm v3. |
 
@@ -271,7 +279,7 @@ Please note that "shared" is a reference to multi-tenant support and pooled stor
 | `req.asr.mon.01` | Integration | The Architecture **must** include integration with infrastructure components to support collection of telemetry for assurance monitoring and network intelligence. |
 | `req.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from CNF workloads. |
 | `req.asr.mon.03` | Monitoring | The Architecture **must** allow for the collection and dissemination of performance and fault information. |
-| `req.asr.mon.04` | Network | The NFVI Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
+| `req.asr.mon.04` | Network | The Cloud Infrastructure Network Fabric and Network Operating System **must** provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation. |
 
 <p align="center"><b>Table 2-10:</b> Kubernetes Architecture: Assurance Requirements</p>
 
