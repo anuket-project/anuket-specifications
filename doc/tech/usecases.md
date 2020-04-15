@@ -32,6 +32,12 @@
 
 - **Introduction**
 
+    Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients of the ultra-low latency/eMBB Network Slicing. The requirements for user plane Local Breakout / Termination are common mandating that VASs & Any Gi-LAN applications are locally hosted at the Edge.
+
+    The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting preserving the latency requirements.
+
+    This section illustrates some selected use cases that are aligned with the technology evolution and aligned with the 5G business services offerings as well.
+
 - **Use Case #1 - eMBB Network Slice with CDN**
 
   - **Business Objectives**
