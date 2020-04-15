@@ -173,7 +173,8 @@ All communications between the VNFM or orchestrator, and the infrastructure must
 
 The Cloud Infrastructure should onboard only trusted and verified VM images implying that VNF vendors provide signed images.
 Images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
-It is recommended to scan unknown VM images with a vulnerability scanner.
+It is recommended to scan all VM images with a vulnerability scanner. The scan is mandatory for unknown images.
+
 To mitigate tampering attacks, it is recommended to use [Glance image signing feature](https://docs.openstack.org/glance/pike/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
 
 In order to protect data, VNFs must encrypt the volumes they use. In this case, the encryption key must not be stored on the infrastructure. 
