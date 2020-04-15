@@ -1,17 +1,17 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# Common NFVI Telco Taskforce Roadmap
+# 6.0 Roadmap
 
 ## Table of Contents
- * [Overview](#1)
- * [Roadmap](#2)
-   * [High Level Roadmap](#2.1)
-   * [Detailed Roadmap](#2.2)
-   * [Detailed Milestones](#2.3)
- * [Dependencies between various Workstreams ](#3)
- * [Dependencies with Industry Communities](#4)
+ * [6.1 Overview](#6.1)
+ * [6.2 Roadmap](#6.2.2)
+   * [6.2.1 High Level Roadmap](#6.2.1)
+   * [6.2.2 Detailed Roadmap](#6.2.2)
+   * [6.2.3 Detailed Milestones](#6.2.3)
+ * [6.3 Dependencies between various Workstreams ](#6.3)
+ * [6.4 Dependencies with Industry Communities](#6.4)
 
 <a name="1"></a>
-## Overview
+## 6.1 Overview
 * The activities of the CNTT community are articulated around [Projects](#project), [Milestones](#2.3) and [Releases](#release).
 * CNTT is embracing simultaneous delivery model, meaning that all contributing projects have to follow the cadence and intermediate milestones.
 * Each CNTT release is the only delivery vehicle and is common for all projects.
@@ -36,20 +36,20 @@ A Release is:
   * An unique release planning calendar with pre-defined milestones for each project
   * A vehicle to coordinate multiple projects and multiple type of projects (reference model and architecture, documentation, integration, packaging, deployment)
   
-<a name="2"></a>
-## Roadmap
+<a name="6.2"></a>
+## 6.2 Roadmap
 
-<a name="2.1"></a>
-### High Level Roadmap
+<a name="6.2.1"></a>
+### 6.2.1 High Level Roadmap
 <p align="center"><img src="./figures/cntt_roadmap.png" alt="scope" title="Roadmap" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> CNTT Technical Specification Roadmap</p>
 
-<a name="2.2"></a>
-### Detailed Roadmap
+<a name="6.2.2"></a>
+### 6.2.2 Detailed Roadmap
 Please refer to individual [release plan](./release_notes/) and features for detailed roadmap.
 
-<a name="2.3"></a>
-### Detailed Milestones
+<a name="6.2.3"></a>
+### 6.2.3 Detailed Milestones
 | Review | Milestone | Description | Activities | Comments |
 |--------|-----------|--------------|------------|---------|
 | Kick-Off | M0 | The goal of the release Kick-Off is to open the innovation platform for the intent to participate in the CNTT release. Release Kick-Off review takes place for each releases. | Name the Release and create appropriate labels in GitHub. ||
@@ -67,8 +67,8 @@ Please refer to individual [release plan](./release_notes/) and features for det
 
 <p align="center"><b>Table 1:</b> Detailed Milestones</p>
 
-<a name="3"></a>
-## Dependencies between various Workstreams
+<a name="6.3"></a>
+## 6.3 Dependencies between various Workstreams
 
 The various workstreams in CNTT are 
 - Reference Model (RM)
@@ -94,8 +94,8 @@ Each track follows the industry driven standards in the Reference Model as depic
  <p align="center"><b>Figure 3:</b> CNTT Stable 3.0 Portrait</p>
 
 
-<a name="4"></a>
-## Dependencies with Industry Communities
+<a name="6.4"></a>
+## 6.4 Dependencies with Industry Communities
 
 The CNTT is collaboratively working with other standard bodies within the Open Source industry. Some of the projects are 
 - OpenStack
