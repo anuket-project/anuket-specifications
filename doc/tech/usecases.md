@@ -47,6 +47,7 @@
 
   - **Architecture**
   
+     <img width="1079" alt="Screenshot 2020-04-14 at 8 37 57 PM" src="https://user-images.githubusercontent.com/25845305/79390856-c536f780-7f70-11ea-88d5-cfd89cf5121a.png">
 
 - **Use Case #2**
 
