@@ -159,7 +159,7 @@ These files must be protected from malicious or accidental modifications or dele
 The Cloud Infrastructure must provide the mechanisms to identify corrupted data:
 - the integrity of configuration files and binaries must be checked by using cryptographic hash,
 - it is recommended to run scripts (such as checksec.sh) to verify the properties of the QEMU/KVM
-- it is recommenced to use tool such as CIS-CAT (CIS tool) to check the compliance of systems configuration against respective CIS benchmarks
+- it is recommended to use tool such as [CIS-CAT](https://www.cisecurity.org/cybersecurity-tools/cis-cat-pro/) (Center for Internet security- Configuration Assessment Tool) to check the compliance of systems configuration against respective [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks/).
 
 It is strongly recommend to protect Linux repositories and Docker registries against the corruption of their data, by adopting protection measures such as hosting a local repository/registry with restricted and controlled access, and using TLS. 
 This repository/registry must contain only signed images or packages.
