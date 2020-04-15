@@ -76,35 +76,32 @@ To address the concern areas detailed above the specific topics listed below wil
 
 •	Version controlled catalog of APIs, and their respective spans of control, capabilities and purpose, to facilitate predictable integration with a wide selection of fabric implementations
 
+
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Principles & Strategy
 
-This section introduces some principles that should be followed during developing  and defining  Networking scopes for Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02  - K8s – down to Reference implementation and certificate under CNTT
+This section introduces some principles that should be followed during development and definition of Networking scopes for Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02  - K8s – down to development and definition of Networking under CNTT.
 
 •	**Abstraction**: A standardized layer between Virtualisation Layer domains and the Networking Hardware layer resource pool hiding the implementation details of the Networking Hardware.
-Note: This Principle may be deployed in many different ways depending on target use case requirements, workload characteristics (different algorithms implementing pipeline steps) and available platforms. This includes network functions running on server nodes with our without programmable HW acceleration, or functions running on a programmable standalone network switch in the network.
+Note: This Principle may be deployed in many different ways depending on target use case requirements, workload characteristics (different algorithms implementing pipeline steps) and available platforms. This includes network functions running on server nodes with or without programmable HW acceleration, or functions running on a programmable standalone network switch in the network.
 
-•	**Agnosticity** : Build Network Fabric that can carry any type of workload in terms of :
+•	**Agnosticity** : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+-	Control, User and Management traffic types
+-	Acceleration technologies supporting multiple types of Infrastructure deployments and Network Function Workloads 
 
-      o	Workload type : Can be Control, User and Management plane
+•	**Automation**: Enable full automation, from physical Fabric installation and provisioning to automation of VNF/CNF onboarding.
 
-      o	Workload supported acceleration Technologies 
+•	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open source networking components (e.g. SDN controllers).
 
-•	**Automation**: Full Automation, starting from Fabric provisioning to automation of VNF/CNF onboarding
+•	**Programmability**: Should enable a programmable forwarding plane controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
 
-•	**Openness**: All CNTT networking is based on open API ( NBI and SBI )  and Open source SDN controllers integration 
+•	**Scalability**: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
 
-•	**Programmability**: should be based on the state of art programmable fabric.
+•	**Workload diversity**: Should be capable to handle any VNF , CNF and BareMetal workloads.
 
-•	**Scalability**: should be scalable to handle all traffic traverse North-South and East-West.
+•	**Telco grade**: Should support deployments with Telco grade characteristics requirements.
 
-•	**Workload diversity**: should be capable to handle any VNF , CNF and BareMetal workload
-
-•	**Telco grade**: should be a Telco grade Fabric and SDN to fulfil Telco requirements such as Service Chaining , Network Slicing,...etc
-
-•	**Edge**: Can be extended to cover the edge use cases
-
-•	**Future prove**: should be support a new acceleration technologies like smartNIC 
+•	**Future proof**: Should support known and emerging acceleration technologies e.g. SmartNICs, FPGAs and Programmable Switches. 
 
 
 <a name="5.1.3"></a>
