@@ -80,18 +80,18 @@ To address the concern areas detailed above the specific topics listed below wil
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Principles & Strategy
 
-This section introduces some principles that should be followed during development and definition of Networking scopes for Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02  - K8s – down to development and definition of Networking under CNTT.
+This section introduces some networking related principles that should be followed during development and definition of Networking scopes for Reference Model, Reference Architecture 01 (OpenStack), Reference Architecture 02 (K8s) and down to Reference Implementations and Reference Conformance test suites under CNTT.
 
-•	**Abstraction**: A standardized layer between Virtualisation Layer domains and the Networking Hardware layer resource pool hiding the implementation details of the Networking Hardware.
-Note: This Principle may be deployed in many different ways depending on target use case requirements, workload characteristics (different algorithms implementing pipeline steps) and available platforms. This includes network functions running on server nodes with or without programmable HW acceleration, or functions running on a programmable standalone network switch in the network.
+•	**Abstraction**: A standardized layer between Virtualisation Layer domains and the Networking Hardware Layer resource pool hiding the implementation details of the Networking Hardware.
+> **Note:** Abstraction may be deployed in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. This includes Network Functions running on server nodes with or without programmable hardware acceleration, or networking support functions running on programmable network switches in the network.
 
 •	**Agnosticity** : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
 -	Control, User and Management traffic types
--	Acceleration technologies supporting multiple types of Infrastructure deployments and Network Function Workloads 
+-	Acceleration technologies supporting multiple types of Infrastructure deployments and Network Function workloads 
 
-•	**Automation**: Enable full automation, from physical Fabric installation and provisioning to automation of VNF/CNF onboarding.
+•	**Automation**: Enable full automation, from Physical Fabric installation and provisioning to automation of VNF/CNF onboarding.
 
-•	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open source networking components (e.g. SDN controllers).
+•	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open Source networking components (e.g. SDN controllers).
 
 •	**Programmability**: Should enable a programmable forwarding plane controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
 
@@ -99,7 +99,7 @@ Note: This Principle may be deployed in many different ways depending on target 
 
 •	**Workload diversity**: Should be capable to handle any VNF , CNF and BareMetal workloads.
 
-•	**Telco grade**: Should support deployments with Telco grade characteristics requirements.
+•	**Telco Grade**: Should support deployments with Telco Grade characteristics requirements.
 
 •	**Future proof**: Should support known and emerging acceleration technologies e.g. SmartNICs, FPGAs and Programmable Switches. 
 
