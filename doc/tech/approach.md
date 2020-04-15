@@ -11,16 +11,16 @@
 <a name="5.1"></a>
 ## 5.1 Networking and Fabric Approach
 
-The networking within a cloud infrastructure is an area where there is significant variability across implementations. Leaf-Spine topology is well established, however, after topology there are countless decisions an Operator needs to make. Differences arise from many aspects, for example, is the solution layer-2 or layer-3; is the routing static or dynamic; what mechanism is used for encapsulation; what mechanism is used for isolation; does it support SR-IOV; does it support DPDK; does it employ SmartNICs; does it employ distributed control or a centralized control driving a programmable fabric; and the list continues. The multitude of permutations enable cloud infrastructure architects (Operators and Suppliers) to design (or procure) a fabric/networking solution that's optimized for their needs, whether their needs are minimal, very extensive or somewhere in between.
+The networking within a cloud infrastructure is an area where there is significant variability across implementations. Leaf-Spine topology for large datacenters is well established, however after physical switch interconnection topology choices there are countless decisions an Operator needs to make. Differences arise from many aspects, for example, is the solution layer-2 or layer-3; is the routing static or dynamic; what mechanism is used for encapsulation; what mechanism is used for isolation; does it support SR-IOV; does it support DPDK; does it employ SmartNICs; does it employ distributed control or a centralized control driving a programmable networking fabric; are the network switches selected and provisioned by a separate Network Operations group or by a Cloud Infrastructure Operations group; and the list continues. The multitude of permutations enable cloud infrastructure architects (Operators and Suppliers) to design (or procure) a fabric/networking solution that's optimized for their needs, whether their needs are minimal, very extensive or somewhere in between.
 
 We need a strategy that affords Operators the performance, flexibility, availability, maintainability and scalability their business requires, yet doesn't require OPNFV to design, manage and test prohibitive numbers of networking solutions.
  
 
 <a name="5.1.1"></a>
 ### 5.1.1 Networking Scope
-According to the ETSI NFV Model, Networking alongside Compute and Storage, is an integral part of the Network Function Virtualisation Infrastructure (NFVI). The general function of Networking in the NFV context is to provide the connectivity between various virtualised and non-virtualised resources required for a delivery of a Network Service. Such a connectivity may manifest itself as a virtualised network between VMs or Containers (e.g. overlay networks managed by SDN Controllers, or programmable fabrics that provide such connectivity natively) or as an integration into the Infrastructure Hardware level for offloading some of the Network Functions into this level. 
+According to the ETSI NFV Model, Networking alongside Compute and Storage, is an integral part of the Network Function Virtualisation Infrastructure (NFVI). The general function of Networking in the NFV context is to provide the connectivity between various virtualised and non-virtualised resources required for a delivery of a Network Service. Such a connectivity may manifest itself as a virtualised network between VMs and/or Containers (e.g. overlay networks managed by SDN Controllers, and/or programmable networking fabrics that provide such connectivity natively) or as an integration into the Infrastructure Hardware level for offloading some of the Network Functions into this level (accelerated networking functions). 
 
-Normalization of the integration reference points between different layers of the NFV architecture stack is one of the main concerns of the telco industry.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualisation level (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into MANO level (Hardware/ Network Infrastructure Management/Control, Orchestration). 
+Normalization of the integration reference points between different layers of the NFV architecture stack is one of the main concerns of the telco industry.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualisation Layer (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into the various MANO reference points (Hardware/ Network Infrastructure Management/Control, Orchestration). 
 
 It is an important feature of the proposed Networking Model to ensure the ability for supporting simultanous usage of different reference architectures by having multiple CaaS and IaaS layers on top of a shared Hardware Infrastructure layer. The details of this approach are provided in the section "Network Layering and Concepts" below.
 
@@ -46,15 +46,15 @@ Note: Other areas of concern may be identified and addressed during the later st
 
 <a name="5.1.1.2"></a>
 #### 5.1.1.2 Specific topics to be included in the Networking Scope
-To address the concern areas detailed above the specific topics listed below will be covered under Networking.The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
+To address the concern areas detailed above the specific topics listed below will be covered under Networking. The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
 
 •	Network connectivity for L3 tenants, GWs, SDS, etc
 
 •	Spine-Leaf Architecture ( 3 Tier or 5 Tier CLOS architecture )
 
-•	Automation of the located Fabric ( Programmable Fabric )
+•	Automation of the programmable newtorking fabric
 
-•	Variety of Underlay protocols that can be used as a transport layer within the Fabric
+•	Variety of Underlay protocols that can be used as a transport layer within the physical fabric
 
 •	Variety of Overlay protocols
 
@@ -66,7 +66,7 @@ To address the concern areas detailed above the specific topics listed below wil
 
 •	Service Function Chaining (SFC ) and how it can be achieved
 
-•	New Networking technologies ( SmartNIC , FPGA ,..)
+•	New networking realisation technologies ( SmartNIC , FPGA ,..)
 
 •	Inter K8s POD communication and CNI
 
