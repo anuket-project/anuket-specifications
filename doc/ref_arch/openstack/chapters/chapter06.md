@@ -127,7 +127,7 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 <a name="6.3.3"></a>
 ### 6.3.3 Confidentiality and Integrity
 
-Confidentiality implies that data and resources must be protected against exfiltration. Integrity implies that the data must be protected from unauthorized modifications or deletions.
+Confidentiality implies that data and resources must be protected against unauthorized introspection/exfiltration. Integrity implies that the data must be protected from unauthorized modifications or deletions.
 
 Regarding confidentiality and integrity in Cloud Infrastructure, 2 main concerns are raised: 
 - confidentiality and integrity of the Cloud Infrastructure components (networks, hypervisor, OpenStack services)
