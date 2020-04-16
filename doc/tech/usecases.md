@@ -20,9 +20,9 @@ As we are not defining something new , so Edge Principle will follow Reference M
 -	Open source preference
 -	Open APIs
 -	Separation of concerns
--	Automated lifecycle management:
+-	Automated lifecycle management
 -	Automated scalability
--	Automated closed loop assurance:
+-	Automated closed loop assurance
 -	Cloud nativeness
 -	Security compliance:
 -	Resilience and Availability
