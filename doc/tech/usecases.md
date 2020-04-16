@@ -22,3 +22,5 @@ Content
 6.	Terminologies 
 7.	SDO interlocking 
    
+<p align="center"><img src="./figures/test.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure x:</b> Description of the possible different levels of CNTT artefacts</p>
