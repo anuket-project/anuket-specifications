@@ -151,7 +151,7 @@ The Reference Model specifies the Basic (B) and Network Intensive (N) instance t
 | B4 | 4:1 | Y | N | N | N | OVS-kernel |
 | NV | 1:1 | Y | Y | Y | Y | OVS-kernel |
 | ND | 1:1 | Y | Y | Y | Y | OVS-DPDK |
-| NS | 1:1 | Y | Y | Y | Y | SR-IOV with OVS-kernel |
+| NS | 1:1 | Y | Y | Y | Y | SR-IOV |
 
 <p align="center"><b>Table 4-2: Flavor Capabilities</b></p>
 
