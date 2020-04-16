@@ -40,5 +40,5 @@ There are however a couple of new things that Edge deployments bring into the pi
 -  Autonomous local infrastructure functionality and operations
 -  Heterogeneous Infrastructure
 -	Workload diversity 
--  Support of Telco and 3PP applications
+-  Support of Telco and non-Telco workloads
 -  Specific priority, control and orchestration concerns
