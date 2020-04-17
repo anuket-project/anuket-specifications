@@ -332,7 +332,7 @@ Notes:
 - Controller nodes are typically a minimum of 3.
 - Shared storage is optional but it is important to ensure shared assets are distributed across serving clouds such as boot images.
 
-| Topology Ref| Type| # Control Planes| Shared Storage (optional)| Compute AZs| Achievable Service Availability| Service Multi-region awareness| Notes |
+| Topology Ref| Type| Control Planes| Shared Storage (optional)| Compute AZs| Achievable Service Availability %| Service Multi-region awareness| Notes |
 |----------|-----|-----------------|---------------|-----------|---------|--------------|-------------|
 | 1 | Local Redundancy - workload spread across servers | 1 | 1 | 1 | Variable | Not required | Suitable where only limited local application availability is required e.g. nova anti-affinity |
 | 2 | Regional Redundancy - workload spread across AZs | 1 | >=2 | >=2 | >99.n | Not required | Suitable where local application HA is required. Control plane should be distributed across DC failure domains (assuming layer 2 connectivity) but may be unavailable during upgrades |
