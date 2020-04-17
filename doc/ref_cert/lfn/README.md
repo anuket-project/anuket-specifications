@@ -1,8 +1,8 @@
 [<< Back](../)
 
-# Certification within LFN
+# Reference Conformance 1
 
-This is the LFN Based Reference Certification
+This is the OpenStack Based Reference Conformance
 
 ## Release Information
 **Release: _0.0_**
