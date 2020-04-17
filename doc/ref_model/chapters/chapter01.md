@@ -11,7 +11,7 @@
 
 <a name="1.1"></a>
 ## 1.1 Overview
-The Reference Model (RM) specification is written on the basis of complete infrastructure abstraction and exposing set of capabilities, resources, and interfaces to workloads which they will be written against. The aim of Reference Model is to be agnostic across VM-based and container-based workloads and this document should act as a "catalogue" for VNF/CNF application designers to understand everything they need to know from the underlying infrastructure they are writing their application to run on.
+The Reference Model (RM) specification is written on the basis of complete infrastructure abstraction and exposing set of capabilities, resources, and interfaces to workloads which they will be written against. The aim of Reference Model is to be agnostic across VM-based and container-based workloads and this document should act as a "catalogue" for application designers to understand everything they need to know from the underlying infrastructure they are writing their application to run on.
 
 <a name="1.2"></a>
 ## 1.2 Terminology
@@ -38,18 +38,18 @@ This section introduces the high-level principles of infrastructure abstraction 
    - Networking resources (Limited to connectivity services only)
    - Acceleration resources
 1. Cloud Infrastructure exposed resources should be supplier independent
-1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
-1. VNFs should be modular and be designed to utilise the minimum resources required for the service
+1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of workloads and consumed by workloads.
+1. Workloads should be modular and be designed to utilise the minimum resources required for the service
 1. Cloud Infrastructure shall support pre-defined and parameterised sizes
    - These pre-defined sizes will evolve over time
 1. Cloud Infrastructure provides certain resources, capabilities and features, and workloads should only consume these resources, capabilities and features
-1. VNFs that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
+1. Workloads that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
 1. Workloads shall not require hardware-dependent software
-   - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
+   - This is in support of workload abstraction, enabling portability across the Cloud Infrastructure and simplification of workload design
    - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
    - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
-1. Specific internal hardware details shall not be exposed above the Infra+VIM layers
-   - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
+1. Specific internal hardware details shall not be exposed above the Cloud Infrastructure and Cloud Infrastructure Manager layers
+   - This is in support of workload abstraction, enabling portability across the Cloud Infrastructure and simplification of workload design
    - This pertains to features that operate at detailed levels of hardware granularity, such as EPA
 
 
@@ -61,7 +61,7 @@ This document focuses on the documenting the higher level concepts that are need
 <p align="center"><b>Figure 1-1:</b> Scope of Reference Model</p>
 
 This document specifies:
-- **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete system that supports **VNFs** and **CNFs**.
+- **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete system that supports workloads deployed in Virtual Machines (VNF) or containers (CNF).
   - **Cloud Infrastructure metrics & capabilities**: A set of metrics and capabilities for the cloud infrastructure which workloads require to perform telco scale network functions.
   - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to completely abstract the infrastructure from workloads. With a limited and well-defined set of profiles with well understood characteristics, workload compatibility and performance predictability can be achieved.
 
@@ -79,12 +79,12 @@ The document starts from the abstract and as it progresses it increasingly gets 
 
 - **Chapter 01 - Introduction**: Overall scope of the Reference Model document including the goals and objectives of the project.  
   >	**Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Chapter 02 - VNF requirements & Analysis**: High level requirements and core principles needed to understand how the model was developed.  Addresses the thinking behind the decisions that were made.
+- **Chapter 02 - Workload requirements & Analysis**: High level requirements and core principles needed to understand how the model was developed.  Addresses the thinking behind the decisions that were made.
   >	**Audience**: This chapter is written for architects and others with an interest in how the decisions were made.
 - **Chapter 03 - Modelling**:  The high-level cloud infrastructure model itself.  
   >	**Audience**: This chapter is written for architects and others who wants to gain a quick high-level understanding of the model.
 - **Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue**:  Details about the capabilities needed to support the various types of workloads and how the capabilities are applied to the model. The details regarding T-shirt sizes and other considerations are found in this section.
-  >	**Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write VNF applications.
+  >	**Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write applications.
 - **Chapter 05 - Featureset and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the cloud infrastructure.  It describes the software and hardware capabilities and configurations recommended for the different types of cloud infrastructure profiles.
   > **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write workload applications.
 - **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communication with the workloads themselves and any other external components.
@@ -97,7 +97,7 @@ The document starts from the abstract and as it progresses it increasingly gets 
   > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the workload applications.
 - **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
   > **Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Appendix A - Guidelines For VNF Vendors**: More details related to how the workload applications will interface with the cloud infrastructure through APIs (including VIM and CaaS).
+- **Appendix A - Guidelines For VNF Vendors**: More details related to how the workload applications will interface with the cloud infrastructure through APIs (including Cloud Infrastructure Manager and CaaS).
   > **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write workload applications.
 
 <!--Separate document w/labels/artefacts
