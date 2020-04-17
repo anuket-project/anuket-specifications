@@ -21,7 +21,7 @@
   * [3.4.1. Virtualisation](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
 * [3.5. Cloud Topology](#3.5)
-
+ 
 
 <a name="3.1"></a>
 ## 3.1 Introduction
