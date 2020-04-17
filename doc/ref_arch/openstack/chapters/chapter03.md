@@ -21,6 +21,8 @@
   * [3.4.1. Virtualisation](#3.4.1)
   * [3.4.2. Physical Infrastructure](#3.4.2)
 * [3.5. Cloud Topology](#3.5)
+  * [3.5.1. Topology Overview](#3.5.1)
+  * [3.5.2. Topology Detail](#3.5.2)
 
 
 <a name="3.1"></a>
@@ -332,9 +334,9 @@ Notes:
 
 | Topology Ref| Type| # Control Planes| Shared Storage (optional)| Compute AZs| Achievable Service Availability| Service Multi-region awareness| Notes |
 |----------|-----|-----------------|---------------|-----------|---------|--------------|-------------|
-| 1 | Limited Redundancy - workload spread across servers | 1 | 1 | 1 | Variable | Not required | Suitable where only limited local application availability is required e.g. nova anti-affinity |
-| 2 | Regional Redundancy - workload spread across AZs | 1 | 2+ | 2+ | >99.n | Not required | Suitable where local application HA is required. Control plane should be distributed across DC failure domains (assuming layer 2 connectivity) but may be unavailable during upgrades |
-| 3 | Global Redundancy - workload spread across multiple Regions | >=2 | >=2 | >=2 | >99.nn | Required e.g. GSLB | Suitable where local and region application HA is required Control plane could be kept available in one site during upgrades |
+| 1 | Local redundancy - workload spread across servers | 1 | 1 | 1 | Variable | Not required | Suitable where only limited local application availability is required e.g. nova anti-affinity |
+| 2 | Regional redundancy - workload spread across AZs | 1 | 2+ | 2+ | >99.n | Not required | Suitable where local application HA is required. Control plane should be distributed across DC failure domains (assuming layer 2 connectivity) but may be unavailable during upgrades |
+| 3 | Global redundancy - workload spread across multiple Regions | >=2 | >=2 | >=2 | >99.nn | Required e.g. GSLB | Suitable where local and region application HA is required Control plane could be kept available in one site during upgrades |
 
 <a name="3.5.2"></a>
 ### 3.5.2. Topology Detail 
