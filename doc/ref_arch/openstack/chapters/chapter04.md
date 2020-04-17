@@ -17,8 +17,7 @@
   * [4.4.1 Support for Profiles and T-shirt instance types](#4.4.1)
   * [4.4.2 Logical segregation and high availability](#4.4.2)
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
-* [4.5 Cloud Topology.](#4.5)
-  * [4.5.1 Cloud Topology Considerations](#4.5.1)
+
 
 
 
