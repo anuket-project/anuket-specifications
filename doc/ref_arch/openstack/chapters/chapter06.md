@@ -139,6 +139,13 @@ Operational security (_sec.wl.002_) is handled through a combination of mechanis
 
 Given the rate of change in the workload development and deployment, and the cloud environment itself, _sec.wl.003_ requires that the workloads should be assessed during the CI/CD process as the images are created and then whenever they are deployed. In addition, the infrastructure must be configured for security as discussed elsewhere in this chapter including secure boot. 
 
+<a name="6.3.4.1"></a>
+### 6.3.4.1 SR-IOV and DPDK Considerations
+
+SR-IOV agent only works with NoopFirewallDriver when Security Groups are enabled, but can still use other firewall_driver for other Agents by updating their conf with the requested firewall driver." Please see [SR-IOV Passthrough for Networking](https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking).
+
+Operators typically do not implement Security Groups when ussing SR-IOV or DPDK networking technologies.
+
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
 
