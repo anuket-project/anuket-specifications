@@ -13,7 +13,7 @@
   * [3.3.4 Interfaces & APIs](#3.3.4)
   * [3.3.5 OpenStack API benchmarking](#3.3.5)
   * [3.3.6 Dataplane Benchmarking](#3.3.6)
-  * [3.3.7 opensource VNF onboarding and testing](#3.3.7)
+  * [3.3.7 Opensource VNF onboarding and testing](#3.3.7)
   * [3.3.8 Tenants](#3.3.8)
   * [3.3.9 LCM](#3.3.9)
   * [3.3.10 Assurance](#3.3.10)
@@ -30,9 +30,9 @@ The scope of this chapter is to identify and list down test cases based on requi
 
 Note that each requirement may have one or more test cases associated with it.
 
-**must**: Test Cases that are marked as must are considered mandatory and must pass succesfully.
+**must**: Test Cases that are marked as must are considered mandatory and must pass successfully.
 
-**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI tagetting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
+**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI targeting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
 
 **may**: Test cases that are marked as may are considered optional. The same applies to may not.
 
@@ -787,7 +787,7 @@ The VMs or containers use only 1 vNIC for incoming and outgoing traffic. Multipl
 Multiple VMs or containers can be deployed prior to running any tests. This allows to use generator-reflector pairs on the same or different compute nodes, on the same or different NUMA nodes.
 
 <a name="3.3.7"></a>
-### 3.3.7 opensource VNF onboarding and testing
+### 3.3.7 Opensource VNF onboarding and testing
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
