@@ -11,7 +11,7 @@
 
 <a name="1.1"></a>
 ## 1.1 Overview
-The Reference Model (RM) specification is written on the basis of complete infrastructure abstraction and exposing set of capabilities, resources, and interfaces to workloads which they will be written against. The aim of Reference Model is to be agnostic across VM-based and container-based workloads and this document should act as a "catalogue" for application designers to understand everything they need to know from the underlying infrastructure they are writing their application to run on.
+The Reference Model (RM) specifies complete infrastructure abstraction and the exposure of a set of capabilities, resources, and interfaces to workloads. The aim of the Reference Model is to be virtualisation technology agnostic (VM-based and container-based) and act as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces needed to develop the workloads.
 
 <a name="1.2"></a>
 ## 1.2 Terminology
