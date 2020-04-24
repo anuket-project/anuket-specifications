@@ -133,7 +133,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.3"></a>
 ## 3.3 NFVI Management Software
 
-Network Function Virtualisation Infrastructure provides the capability to manage virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
+Network Function Virtualisation Infrastructure provides the capability to manage physical and virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
@@ -161,7 +161,7 @@ Network Function Virtualisation Infrastructure provides the capability to manage
 :  monitors and collects information on all events and the current state of all physical and virtual resources
 
 **Additional Management Functions**
-: include identity management, policy management (e.g. to enforce security policies), etc.
+: include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 **Compute Resources Manager**
 : provides a mechanism to provision virtual resources with the help of physical compute resources
