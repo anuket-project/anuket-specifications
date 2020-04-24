@@ -19,39 +19,7 @@ To help guide the reader, a glossary [Reference Model Terminology](../../tech/gl
 
 <a name="1.3"></a>
 ## 1.3 Principles
-This section introduces the high-level principles of infrastructure abstraction and profiling that will be used in context of this document.
-
-1. A top-level objective is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical. Two principles are introduced in support of these objectives:
-    - **Minimise Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
-      - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same cloud infrastructure instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
-      - Focus on the commonalities of the features over the perceived differences. Seek an approach that allows small differences to be handled at either the low-level design or implementation stage. For example, assume the use of existing common APIs over new ones.
-
-    - **Create an additional Architecture only when incompatible elements are unavoidable:**
-      - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to community consensus, such that one Architecture would be KVM-based and the other would be ESXi-based.
-
-        >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, the infrastructure architecture designers might implement the Architecture as described in the reference document, however when there is a potential for incompatibility for particular component, they would select their preferred option from one of the relevant annexes. For example, if one member wanted to use Software-Defined storage (SDS) as CEPH, and another member wanted to use Storage attached network(SAN), assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the CEPH implementation and one annex for the SAN implementation.
-
-1. Cloud Infrastructure provides abstract and physical resources corresponding to:
-   - Compute resources
-   - Storage resources
-   - Memory resources
-   - Networking resources (Limited to connectivity services only)
-   - Acceleration resources
-1. Cloud Infrastructure exposed resources should be supplier independent
-1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of workloads and consumed by workloads.
-1. Workloads should be modular and be designed to utilise the minimum resources required for the service
-1. Cloud Infrastructure shall support pre-defined and parameterised sizes
-   - These pre-defined sizes will evolve over time
-1. Cloud Infrastructure provides certain resources, capabilities and features, and workloads should only consume these resources, capabilities and features
-1. Workloads that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
-1. Workloads shall not require hardware-dependent software
-   - This is in support of workload abstraction, enabling portability across the Cloud Infrastructure and simplification of workload design
-   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
-   - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
-1. Specific internal hardware details shall not be exposed above the Cloud Infrastructure and Cloud Infrastructure Manager layers
-   - This is in support of workload abstraction, enabling portability across the Cloud Infrastructure and simplification of workload design
-   - This pertains to features that operate at detailed levels of hardware granularity, such as EPA
-
+The Reference Model specification conform with the principles defined in [here](../../tech#2.0).
 
 <a name="1.4"></a>
 ## 1.4 Scope

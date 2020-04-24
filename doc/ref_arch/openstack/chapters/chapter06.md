@@ -17,7 +17,7 @@
 
 ## 6.1 Introduction
 
-This guide is intended to provide basic security requirements to CNTT architects who are looking to implementing NFVI using [OpenStack](https://www.openstack.org/) technology.  This is minimal set of high-level general security practice, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to CNTT architects who are implementing NFVI using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
@@ -37,21 +37,21 @@ https://docs.openstack.org/security-guide/introduction/introduction-to-openstack
 #### 6.3.1.1 Identity
 The OpenStack Identity service (Keystone) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end.
 
-OpenStack Keystone could work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
+OpenStack Keystone can work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
 
 #### 6.3.1.2 Authentication
 Authentication is the first line of defense for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone supports multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html)
 
 ##### Keystone Tokens
-Once a user is authenticated, a token is generated for authorization and access to an OpenStack environment and resources.  By default, the token is set to expire in one hour.  This setting could be change based on the business and operational needs, but it's highly recommended to set the expiration to the shortest possible value without dramatically impacting your operations.
+Once a user is authenticated, a token is generated for authorization and access to an OpenStack environment and resources.  By default, the token is set to expire in one hour. This setting can be changed based on the business and operational needs, but it's highly recommended to set the expiration to the shortest possible value without dramatically impacting your operations.
 
 <b>Special Note on Logging Tokens:</b> since the token would allow access to the OpenStack services, it <i>MUST</i> be masked before outputting to any logs.
 
 #### 6.3.1.3 Authorization
-Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Service supports the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resource. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource then the user’s group/roles and association to determine if access can the requested resource.  For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
+Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Service supports the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
 
 #### 6.3.1.4 RBAC
-In order to properly manage user access to OpenStack services, service provider should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles.
+In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles.
 
 ###### Rules
 The following rules govern create, read, update, and delete (CRUD) level access.
@@ -127,6 +127,59 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 <a name="6.3.3"></a>
 ### 6.3.3 Confidentiality and Integrity
 
+Confidentiality implies that data and resources must be protected against unauthorized introspection/exfiltration. Integrity implies that the data must be protected from unauthorized modifications or deletions.
+
+Regarding confidentiality and integrity in Cloud Infrastructure, 2 main concerns are raised: 
+- confidentiality and integrity of the Cloud Infrastructure components (networks, hypervisor, OpenStack services)
+- confidentiality and integrity of the tenant's data 
+
+The Cloud Infrastructure must also provide the mechanism to identify corrupted data.
+
+#### 6.3.3.1 Confidentiality and Integrity of communications
+
+It is essential to secure the infrastructure from external attacks. To counter this threat, API endpoints exposed to external networks must be protected by either a rate-limiting proxy or web application firewall and must be placed behind a reverse HTTPS proxy. Attacks can also be generated by corrupted internal components, and for this reason, it is security best practice to ensure integrity and confidentiality of all network communications (internal and external) by using Transport Layer Security (TLS) protocol.
+When using TLS, according to the [OpenStack security guide](https://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html) recommendation, the minimum version to be used is TLS 1.2.
+
+3 categories of traffic will be protected using TLS:
+- traffic from and to external domains
+- communications between OpenStack components (OpenStack services, Bus message, Data Base)
+- management traffic
+
+Certificates used for TLS encryption must be signed by a trusted authority. To issue certificates for internal OpenStack users or services, the cloud provider can use a Public Key Infrastructure with its own internal Certification Authority (CA), certificate policies, and management.
+
+#### 6.3.3.2 Integrity of OpenStack components configuration
+
+The cloud deployment components/tools store all the information required to install the infrastructure including sensitive information 
+such as credentials. It is recommended to turn off deployment components after deployment to minimize attack surface area, limit the risk of compromise, and to deploy and provision the infrastructure through a dedicated network (VLAN).
+
+Configuration files contain sensitive information. 
+These files must be protected from malicious or accidental modifications or deletions by configuring strict access permissions for such files.
+
+The Cloud Infrastructure must provide the mechanisms to identify corrupted data:
+- the integrity of configuration files and binaries must be checked by using cryptographic hash,
+- it is recommended to run scripts (such as checksec.sh) to verify the properties of the QEMU/KVM
+- it is recommended to use tool such as [CIS-CAT](https://www.cisecurity.org/cybersecurity-tools/cis-cat-pro/) (Center for Internet security- Configuration Assessment Tool) to check the compliance of systems configuration against respective [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks/).
+
+It is strongly recommend to protect Linux repositories and Docker registries against the corruption of their data, by adopting protection measures such as hosting a local repository/registry with restricted and controlled access, and using TLS. 
+This repository/registry must contain only signed images or packages.
+
+#### 6.3.3.3 Confidentiality and Integrity of tenants Data
+
+Tenant data are forwarded unencrypted over the network. Since the VNF is responsible for its security, it is up to the VMs to establish secure data plane, e.g. using IPsec over its tenant network.
+
+A Cloud actor must not be able to retrieve secrets used by VNF managers.
+All communications between the VNFM or orchestrator, and the infrastructure must be protected in integrity and confidentiality (e.g. by using TLS) and controlled via appropriate IP filtering rules. 
+
+The Cloud Infrastructure should onboard only trusted and verified VM images implying that VNF vendors provide signed images.
+Images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
+It is recommended to scan all VM images with a vulnerability scanner. The scan is mandatory for images from unknown or untrusted sources.
+
+To mitigate tampering attacks, it is recommended to use [Glance image signing feature](https://docs.openstack.org/glance/pike/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
+
+In order to protect data, VNFs must encrypt the volumes they use. In this case, the encryption key must not be stored on the infrastructure. 
+When a key management service is provided by the infrastructure, OpenStack can encrypt data on behalf of tenants.
+It is recommended to rely on Barbican, as key manager service of OpenStack.
+
 <a name="6.3.4"></a>
 ### 6.3.4 Workload Security
 
@@ -138,11 +191,11 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 
 <a name="6.3.7"></a>
 ### 6.3.7 Security Audit Logging
-This intent of this section is to provide key baseline and minimal requirement to implement logging that would meet the basic security auditing needs.  This  should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution.  Regular review of security logs that record user access, as well as session and network activity, is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion. 
+This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session and network activity, is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion. 
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
-* Logs must be generated for any component (ex. Nova in Openstack) that form the NFVI.
+* Logs must be generated for all components (ex. Nova in Openstack) that form the NFVI.
 * All security logging mechanisms must be active from system initialization. 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 
