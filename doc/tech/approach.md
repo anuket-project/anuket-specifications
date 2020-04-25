@@ -184,12 +184,12 @@ This also imply that programmable forwarding functions in a Programmable Network
 <a name="5.1.4"></a>
 ### 5.1.4 Networking Reference Model
 
-The Networking Reference Model depicted in **Figure 5-1-4**, based on the ETSI NFV model, describes the Container Virtualisation support and a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous SW Virtualisation domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure. 
+The Networking Reference Model, based on the ETSI NFV model, is depicted in **Figure 5-1-4**. The Networking Reference Model describes the Container Virtualisation support and a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous SW Virtualisation domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure. 
 
 It is up to any deployment of  the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA7.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Cloud Infrastructure Networking Reference Model" width="100%"/></p>
-<p align="center"><b>Figure 5-1-4:</b> Networking Reference Model based on the ETSI NFV</p>
+<p align="center"><b>Figure 5-1-4:</b> Cloud Infrastructure Networking Reference Model</p>
 
 <a name="5.1.5"></a>
 ### 5.1.5 Deployment examples based on the Networking Reference Model
