@@ -117,9 +117,9 @@ Before we start developing a deep model we need to agree on some foundational co
 <a name="5.1.3.1"></a>
 #### 5.1.3.1 Underlay and Overlay Networking concepts
 
-The ETSI NFV model divide networking in an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the SW Virtualisation tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected HW units.
+The ETSI NFV model divides networking into an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the SW Virtualisation tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected HW units.
 
-The Overlay Networking separation is often done through encapsulation of Tenants traffic using overlay protocols e.g. through VxLAN or EVPN on the Underlay Networks e.g. based on L2 (VLAN) or L3 (IP) networks.
+The Overlay Networking separation is often done through encapsulation of Tenants' traffic using overlay protocols e.g. through VxLAN or EVPN over the Underlay Network e.g. based on L2 (VLAN) or L3 (IP) networks.
 
 In some instances, the SW Virtualisation Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation normally done by the SW Virtualisation Layer, is the VNF/CNF usage of SR-IOV that effectively take over the Physical and Virtual Functions of the NIC directly into the VNF/CNF Tenant. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
 
@@ -130,7 +130,7 @@ VTEP could be manually provisioned in the Underlay Networking or be automated an
 <a name="5.1.3.2"></a>
 #### 5.1.3.2 Hardware and Software Infrastructure Layer concepts
 
-The ETSI NFV Infrastructure (that CNTT refers to as Cloud Infrastructure) can be considered to be composed of two distinct layers, referred to as HW Infrastructure Layer and SW Infrastructure Layer. When there are multiple separated simultaneously deployed SW Virtualisation domains, the architecture and deployed implementations must enable each of them to be in individual non-dependent administrative domains. The HW Infrastructure must also be enabled to be a fully separated administrative domain from all of the SW Virtualisation domains. 
+The Cloud Infrastructure can be considered to be composed of two distinct layers, referred to as HW Infrastructure Layer and SW Infrastructure Layer. When there are multiple separated simultaneously deployed SW Virtualisation domains, the architecture and deployed implementations must enable each of them to be in individual non-dependent administrative domains. The HW Infrastructure must also be enabled to be a fully separated administrative domain from all of the SW Virtualisation domains. 
 
 For Cloud implementations of multiple well separated simultaneous SW Virtualisation domains on a shared HW Infrastructure there must be a separation of the hardware resources e.g. servers and the Underlay Networking resources that interconnect the hardware resources e.g. through a switching fabric.
 
@@ -139,8 +139,6 @@ To allow multiple separated simultaneous SW Virtualisation domains onto a shared
 These concepts are very similar to how the Hyperscaler Cloud Providers (HCP) offer Virtual Private Clouds for users of Bare Metal deployment on the HCP shared pool of servers, storage and network resources.
 
 The separation of Hardware and Software Infrastructure Layers makes it important that CNTT Reference Architectures do not include direct management or dependencies of the physical hardware resources e.g. servers and switches inside the HW Infrastructure Layer. All automated interaction from the SW Infrastructure Layer implementations towards the HW and shared networking resources in the HW Infrastructure Layer should go through a common abstracted Reference Model  interface. 
-
-Referenced ETSI NFV model in the Architectural Framework, [ETSI GS NFV 002 V1.2.1.](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
 
 <a name="5.1.3.3"></a>
 #### 5.1.3.3 Software Defined Networking, SDNu and SDNo concepts
@@ -186,11 +184,11 @@ This also imply that programmable forwarding functions in a Programmable Network
 <a name="5.1.4"></a>
 ### 5.1.4 Networking Reference Model
 
-The Networking Reference Model depicted in **Figure 5-1-4** is based on the ETSI NFV model enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous SW Virtualisation domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure. 
+The Networking Reference Model depicted in **Figure 5-1-4**, based on the ETSI NFV model, describes the Container Virtualisation support and a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous SW Virtualisation domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure. 
 
 It is up to any deployment of  the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
-<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA7.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
+<p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA7.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Cloud Infrastructure Networking Reference Model" width="100%"/></p>
 <p align="center"><b>Figure 5-1-4:</b> Networking Reference Model based on the ETSI NFV</p>
 
 <a name="5.1.5"></a>
