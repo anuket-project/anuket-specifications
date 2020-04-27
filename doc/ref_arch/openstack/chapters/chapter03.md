@@ -349,7 +349,7 @@ Under normal operation this deployment can handle a single failure of a controll
 
 -	Where possible servers should be distributed and cabled to reduce the impact of any failure e.g. PDU, rack failure.   Because each operator has individual site constraints this document will not propose a standard rack layout.
 -	During maintenance of the control plane the API may not be available and for some applications this could cause problems when relying on it during BAU application operation and additionally if the upgrade involves updating OpenStack services on the compute nodes.  OVS-kernel operations may also be impacted during this time.
--	During maintenance of storage (e.g. ceph) there is an increased risk of a service-impacting failure so deploying a minimum of four physical servers is generally recommended.
+-	During maintenance of storage (e.g. ceph) there is an increased risk of a service-impacting failure so it is generally recommended to deploy at least one more server than the minimum required for redundancy.
 
 #### 3.5.2.2. Topology 2	- Regional Redundancy
 
