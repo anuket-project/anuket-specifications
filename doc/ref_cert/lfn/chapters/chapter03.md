@@ -477,11 +477,26 @@ Here are the mainline tasks integrated in
 
 #### 3.3.4.7 Orchestration - Heat
 
-Heat API is not covered in the OpenStack Gates neither via
-[Tempest](https://opendev.org/openstack/tempest) nor
-[heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin).
+Heat API is covered in the OpenStack Gates via
+[heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin) as
+integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml)
 
-Heat API is covered by [Rally](https://opendev.org/openstack/rally).
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions                         | reasons                                            |
+|------------------------------------------------------------|----------------------------------------------------|
+| .\*functional.test_lbaasv2                                 | lbaasv2                                            |
+| .\*RemoteStackTest.test_stack_create_with_cloud_credential | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*scenario.test_aodh_alarm                                | aodh                                               |
+| .\*tests.scenario.test_autoscaling_lb                      | lbaas                                              |
+| .\*scenario.test_autoscaling_lbv2                          | lbaasv2                                            |
+| .\*scenario.test_server_software_config                    | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*test_volumes.VolumeBackupRestoreIntegrationTest         | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
+
+Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
@@ -840,6 +855,7 @@ Conformance:
 | opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api-cntt | PASS     |
 | opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt             | PASS     |
 | opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt           | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_heat_cntt               | PASS     |
 | opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt               | PASS     |
 | opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt               | PASS     |
 | opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt           | PASS     |
@@ -862,6 +878,7 @@ Conformance:
 | neutron-tempest-plugin-api-cntt | Neutron API testing                                                      |
 | tempest_cinder_cntt             | Cinder API testing                                                       |
 | tempest_keystone_cntt           | Keystone API testing                                                     |
+| tempest_heat_cntt               | Heat API testing                                                         |
 | rally_sanity_cntt               | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
 | tempest_full_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
 | tempest_scenario_cntt           | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
