@@ -138,14 +138,14 @@ To allow multiple separated simultaneous SW Virtualization domains onto a shared
 
 These concepts are very similar to how the Hyperscaler Cloud Providers (HCP) offer Virtual Private Clouds for users of Bare Metal deployment on the HCP shared pool of servers, storage and network resources.
 
-The separation of Hardware and Software Infrastructure Layers makes it important that CNTT Reference Architectures do not include direct management or dependencies of the physical hardware resources e.g. servers and switches inside the HW Infrastructure Layer. All automated interaction from the SW Infrastructure Layer implementations towards the HW and shared networking resources in the HW Infrastructure Layer should go through a common abstracted Reference Model interface. 
+The separation of Hardware and Software Infrastructure Layers makes it important that CNTT Reference Architectures do not include direct management or dependencies of the physical hardware resources e.g. servers and switches inside the HW Infrastructure Layer. All automated interaction from the SW Infrastructure Layer implementations towards the HW and shared networking resources in the HW Infrastructure Layer must go through a common abstracted Reference Model interface. 
 
 <a name="5.1.3.3"></a>
 #### 5.1.3.3 Software Defined Networking, SDNu and SDNo concepts
 
 A major point with a Cloud Infrastructures is to automate as much as possible. An important tool for Networking automation is Software Defined Networking (SDN) that comes in many different shapes and can act on multiple layers of the networking. In this section we will deal with the internal networking of a data center and not how data centers interconnect with each other or  get access to the world outside of a data center.
 
-When there are multiple simultaneous SW Virtualisation Layers on the same HW Infrastructure, there is a need to ensure Underlay networking separation in the HW Infrastructure Layer. This separation can be done manually through provisioning of a statically configured separation of the Underlay Networking in the HW Infrastructure Layer. A better and more agile usage of the HW Infrastructure is to offer each instance of the SW Virtualisation Layer an SDN interface to the HW Infrastructure. Since these SDN instances only deals with a well separated portion (or slice) of the Underlay Networking we call this interface SDN-Underlay (SDNu).
+When there are multiple simultaneous SW Virtualisation domain using one HW Infrastructure, there is a need to ensure Underlay networking separation in the HW Infrastructure Layer. This separation can be done manually through provisioning of a statically configured separation of the Underlay Networking in the HW Infrastructure Layer. A better and more agile usage of the HW Infrastructure is to offer each instance of the SW Virtualisation Layer an SDN interface to the HW Infrastructure. Since these SDN instances only deals with a well separated portion (or slice) of the Underlay Networking we call this interface SDN-Underlay (SDNu).
 
 The HW Layer is responsible to keep the Underlay Networking well separated in between the different SW Virtualisation instances which can be done through manual provisioning methods or through a HW Layer orchestration interface. The separation responsibility is also valid in between each instance of the SDNu interface since each SW Virtualizasion instance shall not know about, be disturbed by or have any capability to reach the other instances.
 
@@ -165,9 +165,9 @@ Hence, when Networking now gets introduced into the Reference Model, it is impor
 <a name="5.1.3.4"></a>
 #### 5.1.3.4 Programmable Networking Fabric concept
 
-The concept of a Programmable Networking Fabric pertains to the ability to have an effective forwarding pipeline (a.k.a. forwarding plane) that can be programmed and/or configured without any risk of disruption to the shared Underlay Networking that is involved with the reprogramming for the specific efficiency increase.
+The concept of a Programmable Networking Fabric pertains to the ability to have an effective forwarding pipeline (a.k.a. forwarding plane) that can be programmed, scaled and/or configured as a centrally controlled HW Infrastructure Layer instance without any risk of harmful disruption to the Underlay Networking that is shared by all SW Virtualization and BareMetal instances.
 
-The forwarding plane is distributed by nature and must be possible to implement both in switch elements and on SmartNICs (managed outside the reach of host SW) that both can be managed from a logically centralised control plane residing in the HW Infrastructure Layer.
+The forwarding plane is physically distributed by nature and must be possible to implement both in switch elements and on SmartNICs (managed outside the reach of the host SW in the SW Virtualization or Bare Metal application instance) that both can be managed from a logically centralized control plane residing in the HW Infrastructure Layer.
 
 The logically centralised control plane is the foundation for the authoritative separation between different SW Virtualisation domains or Bare Metal Network Function applications that are regarded as untrusted both from the shared layers and each other.
 
