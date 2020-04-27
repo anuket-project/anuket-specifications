@@ -99,10 +99,10 @@ This section introduces some networking related principles that should be follow
 
 •	**Telco Grade**: Should support deployments with Telco Grade characteristics requirements.
 
-•	**Future proof**: Should support known and emerging acceleration technologies e.g. SmartNICs, FPGAs and Programmable Switches. 
+•	**Future proof**: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), multi-location aspects (multi-cluster, DCI, etc), Edge realted technologies, etc.
 
 
-<a name="5.1.3"></a>
+<a name="5.1.3"></a> 
 ### 5.1.3 Network Layering and Concepts
 
 Cloud and Telco networking are layered, and it is very important to keep the layering dependencies low to enable security, separation and portability in between multiple implementations.
