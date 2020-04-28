@@ -202,43 +202,43 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|-------|-------|---------|
-| sec.sys.001 | Access | The Platform **must** support authenticated and secure APIs, API endpoints. The Platform **must** implement authenticated and secure access to GUI |  |
-| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) |  |
-| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic |  |
-| sec.sys.004 | Access | The Cloud Infrastructure **must** support Secure network channels |  | 
-| sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks |  |
-| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity management capabilities |  |
-| sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) |  |
-| sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) |  |  
-| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. |  | 
-| sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly |  |
-| sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) |  | |
-| sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) |  | 
-| sec.sys.013 | Access | The Platform **must** provide secrets dynamically as and when needed |  |
+| sec.sys.001 | Access | The Platform **must** support authenticated and secure APIs, API endpoints. The Platform **must** implement authenticated and secure access to GUI | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.004 | Access | The Cloud Infrastructure **must** support Secure network channels | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
+| sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity management capabilities | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |  
+| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
+| sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
+| sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
+| sec.sys.013 | Access | The Platform **must** provide secrets dynamically as and when needed | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
 
 #### 2.3.8.3. Confidentiality and Integrity
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit |  |
-| sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata |  |
-| sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |  |
-| sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |  |
-| sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  |
-| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. Admin access must be carefully regulated  |  | 
-| sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation |  |
+| sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit | [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. Admin access must be carefully regulated  |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) | 
+| sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation | [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
 
 
 #### 2.3.8.4. Workload Security
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.wl.001 | Workload | The Platform **must** support Workload placement policy |  |
-| sec.wl.002 | Workload Workload Workload Workload Workload | The Platform **must** support operational security |  |
-| sec.wl.003 | Workload Workload Workload Workload | The Platform **must** support secure provisioning of workloads  |  |
-| sec.wl.004 | Workload Workload Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements) |  |
-| sec.wl.005 | Workload Workload | Production workloads **must** be separated from non-production workloads |  |
-| sec.wl.006 | Workload | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) |  |
+| sec.wl.001 | Workload | The Platform **must** support Workload placement policy | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.002 | Workload Workload Workload Workload Workload | The Platform **must** support operational security | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.003 | Workload Workload Workload Workload | The Platform **must** support secure provisioning of workloads  | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.004 | Workload Workload Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements) | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.005 | Workload Workload | Production workloads **must** be separated from non-production workloads | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.006 | Workload | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
 
 
 
@@ -259,16 +259,16 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Maintaining availability, Deprovisioning (secure Clean-Up) of workload resources; Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |  |  
-| sec.lcm.002 | LCM | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS |  |
-| sec.lcm.003 | LCM | The Cloud Operator **must** implement change management for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud; Platform change control on hardware |  |  
-| sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be regularly scanned |  |
-| sec.lcm.006 | LCM | The Platform **must** verify the integrity of all Resource management requests |  |
-| sec.lcm.007 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information |  |
-| sec.lcm.008 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  |
-| sec.lcm.009 | LCM | The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information |  |
-| sec.lcm.010 | LCM | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  |
-| sec.lcm.011 | LCM | The Platform **must** implement Security life cycle management processes including proactively update and patch all deployed Cloud Infrastructure software. | |
+| sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Maintaining availability, Deprovisioning (secure Clean-Up) of workload resources; Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |  
+| sec.lcm.002 | LCM | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.003 | LCM | The Cloud Operator **must** implement change management for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud; Platform change control on hardware | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |  
+| sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be regularly scanned | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.006 | LCM | The Platform **must** verify the integrity of all Resource management requests | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.007 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.008 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.009 | LCM | The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.010 | LCM | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.011 | LCM | The Platform **must** implement Security life cycle management processes including proactively update and patch all deployed Cloud Infrastructure software. | [6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
 
 
 #### 2.3.8.7. Monitoring and Security Audit
