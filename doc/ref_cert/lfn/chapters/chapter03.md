@@ -835,43 +835,43 @@ According to [RC1 Chapter04]({{ "/doc/ref_cert/lfn/chapters/chapter04.html" | re
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
-| container                               | test case                       | criteria |
-|-----------------------------------------|---------------------------------|:--------:|
-| opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api-cntt | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt             | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt           | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt               | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt               | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt           | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt               | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt                 | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt                 | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | vmtp                            | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | shaker                          | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify                        | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify_ims                    | PASS     |
-| opnfv/functest-vnf:hunter               | heat_ims                        | PASS     |
-| opnfv/functest-vnf:hunter               | vyos_vrouter                    | PASS     |
-| opnfv/functest-vnf:hunter               | juju_epc                        | PASS     |
+| container                               | test case             | criteria |
+|-----------------------------------------|-----------------------|:--------:|
+| opnfv/functest-smoke-cntt:hunter        | tempest_neutron_cntt  | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt   | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt     | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | vmtp                  | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | shaker                | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify              | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify_ims          | PASS     |
+| opnfv/functest-vnf:hunter               | heat_ims              | PASS     |
+| opnfv/functest-vnf:hunter               | vyos_vrouter          | PASS     |
+| opnfv/functest-vnf:hunter               | juju_epc              | PASS     |
 
 <a name="3.4.2"></a>
 ### 3.4.2 TC Mapping to Requirements
 
-| test case                       | requirements                                                             |
-|---------------------------------|--------------------------------------------------------------------------|
-| neutron-tempest-plugin-api-cntt | Neutron API testing                                                      |
-| tempest_cinder_cntt             | Cinder API testing                                                       |
-| tempest_keystone_cntt           | Keystone API testing                                                     |
-| rally_sanity_cntt               | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
-| tempest_full_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| tempest_scenario_cntt           | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| tempest_slow_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| rally_full_cntt                 | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
-| rally_jobs_cntt                 | Neutron API benchmarking                                                 |
-| vmtp                            | Dataplane benchmarking                                                   |
-| shaker                          | Dataplane benchmarking                                                   |
-| cloudify                        | opensource VNF onboarding and testing                                    |
-| cloudify_ims                    | opensource VNF onboarding and testing                                    |
-| heat_ims                        | opensource VNF onboarding and testing                                    |
-| vyos_vrouter                    | opensource VNF onboarding and testing                                    |
-| juju_epc                        | opensource VNF onboarding and testing                                    |
+| test case             | requirements                                                             |
+|-----------------------|--------------------------------------------------------------------------|
+| tempest_neutron_cntt  | Neutron API testing                                                      |
+| tempest_cinder_cntt   | Cinder API testing                                                       |
+| tempest_keystone_cntt | Keystone API testing                                                     |
+| rally_sanity_cntt     | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
+| tempest_full_cntt     | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_scenario_cntt | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_slow_cntt     | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| rally_full_cntt       | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
+| rally_jobs_cntt       | Neutron API benchmarking                                                 |
+| vmtp                  | Dataplane benchmarking                                                   |
+| shaker                | Dataplane benchmarking                                                   |
+| cloudify              | opensource VNF onboarding and testing                                    |
+| cloudify_ims          | opensource VNF onboarding and testing                                    |
+| heat_ims              | opensource VNF onboarding and testing                                    |
+| vyos_vrouter          | opensource VNF onboarding and testing                                    |
+| juju_epc              | opensource VNF onboarding and testing                                    |
