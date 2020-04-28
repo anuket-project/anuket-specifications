@@ -173,7 +173,7 @@ The logically centralised control plane is the foundation for the authoritative 
 
 Although the control plane is logically centralized, scaling and control latency concerns must allow the actual implementation of the control plane to be distributed when required.
 
-All VNF, CNF and SW Virtualisation based acceleration as well as all specific support functionality that is programmable in the forwarding plane must be confined to the well separated sections or stages of any shared Underlay Networking. A practical example could be a SW Virtualisation instance or VNF/CNF that controls a NIC/SmartNIC where the Underlay Networking (Switch Fabric) ensures the separation in the same way as it is done for SR-IOV cases today.
+All VNF, CNF and SW Virtualisation (applications) utilized HW-based acceleration and support functionality that is programmable in the forwarding plane must be confined to well separated, protected and defined sections or stages of any shared Underlay Networking ensuring that no other application is effected. A practical example could be a SW Virtualisation instance or VNF/CNF that controls a NIC/SmartNIC where the Underlay Networking (Switch Fabric) ensures the separation in the same way as it is done for SR-IOV cases today.
 
 The nature of a shared Underlay Network that shall ensure separation and be robust is that all code in the forwarding plane and in the control plane must be under the scrutiny and life cycle management of the HW Infrastructure Layer.
 
