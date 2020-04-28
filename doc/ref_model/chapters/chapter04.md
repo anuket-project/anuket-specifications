@@ -543,7 +543,7 @@ Whereas:
 
 <a name="4.2.7.2"></a>
 #### 4.2.7.2 Backwards Compatibility
-The Reference Model (RM) specification describes a complete infrastructure abstraction including a set of cloud infrastructure hardware and software profiles and compute flavours offered to workloads. The set of defined profiles and flavours will evolve along the releases but at the same time the existing workloads need to be supported.  This means that any CNTT deployed cloud should be backwards compatible and support profiles and flavours from the latest three CNTT releases (N-2, N-1, N) as presented in Figure 4-4. 
+The Reference Model (RM) specification describes a complete infrastructure abstraction including a set of cloud infrastructure hardware and software profiles and compute flavours offered to workloads. The set of defined profiles and flavours will evolve along the releases but at the same time the existing workloads need to be supported. This means that any CNTT deployed cloud should be backwards compatible and support profiles and flavours from the latest three CNTT releases (N-2, N-1, N) as presented in Figure 4-4.
 
 
 <p align="center"><img src="../figures/ch04-Backwards-compatibility_overview.png" alt="backwards compatibility" title="backwards compatibility" width="100%"/></p>
@@ -553,11 +553,10 @@ Cloud Infrastructure profiles that are available in CNTT release N deployment ca
 
  1. Cloud infrastructure profiles that are part of CNTT release N. These can be either
     * new profiles defined in release N or
-    * profiles that were defined in earlier releases but are also supported in release N
+    * existing profiles from earlier releases that are supported for backward compatibility reasons in release N
  2. Cloud infrastructure profiles from releases N-1 and N-2 that are deployed only because of backwards compatibility, these profiles are not part of CNTT release N definition.
 
-Notice1: it is possible that in CNTT release N deployment there is release N-1 profile with exception because of backwards compatibility and in release N the same profile but without the exception. 
-Notice2: a profile defined in previous releases that is modified in release N is considered to be a new profile
+**Notice:** a profile defined in previous releases that is modified in release N is considered to be a new profile
 
 Different profile categories described above are presented in Figure 4-5. In this example profiles that are part of CNTT release N consist of two new profiles (yellow), one profile that is originally defined in release N-1 (green) and one defined in release N-2 (blue). Profiles that were defined in earlier releases but are also supported in release N will be referred to by several names. Existing workloads continue using the profile names from previous releases. New workloads will use release N naming.
 
