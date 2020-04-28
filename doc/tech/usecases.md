@@ -17,7 +17,7 @@
 
 Based on CNTT’s goal and purpose is to develop a robust cloud infrastructure model and define a limited set of discrete architectures  built on that model that can be tested and validated for use across the entire member community.
 
-CNTT Scope is extending beyond the Cloud infrastructure that should build into the Regional or National Data Center  but it extended to the Edge , which CNTT consider it as a disruptive  approach and use case that CNTT will add value especially there is a lot of scattered project/Initiative either under Standard Development bodies or  Open source communities
+Extend CNTT's Scope beyond the Regional and National Data Center cloud infrastructures to the Edge. The Edge is a disruptive use case where CNTT can add value especially as there are a number of scattered initiatives under various Standard Development Organisations (SDO) and open source communities."
 
 Edge Stream related activities :
 -	To Harmonize the work under Standard Development bodies or  Open source communities 
