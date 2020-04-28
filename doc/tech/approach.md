@@ -123,16 +123,16 @@ The Overlay Networking separation is often done through encapsulation of Tenants
 
 In some instances, the SW Virtualisation Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation normally done by the SW Virtualisation Layer, is the VNF/CNF usage of SR-IOV that effectively take over the Physical and Virtual Functions of the NIC directly into the VNF/CNF Tenant. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
 
-> **Note:** Bypassing the Overlay Networking layer is a violation of the basic CNTT decoupling principles, but in some cases unavoidable with existing technologies and standards. Until suitable technologies and standards are developed, CNTT have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
+> **Note:** Bypassing the Overlay Networking layer is a violation of the basic CNTT decoupling principles, but in some cases unavoidable with existing technologies and standards. Until suitable technologies and standards are developed, CNTT needs to have an exemption that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
 
-VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer. 
+VTEP could be manually provisioned in the Underlay Networking, which is not a recommended practice, or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer. 
 
 <a name="5.1.3.2"></a>
 #### 5.1.3.2 Hardware and Software Infrastructure Layer concepts
 
 The Cloud Infrastructure can be considered to be composed of two distinct layers, referred to as HW Infrastructure Layer and SW Infrastructure Layer. When there are multiple separated simultaneously deployed SW Virtualisation domains, the architecture and deployed implementations must enable each of them to be in individual independent administrative domains. The HW Infrastructure must also be enabled to be a fully separated administrative domain from all of the SW Virtualisation domains. 
 
-For Cloud implementations of multiple well separated simultaneous SW Virtualisation domains on a shared HW Infrastructure there must be a separation of the hardware resources e.g. servers and the Underlay Networking resources that interconnect the hardware resources e.g. through a switching fabric.
+For Cloud implementations of multiple well separated simultaneous SW Virtualisation domains on a shared HW Infrastructure there must be a relevant separation of the hardware resources; for example, the seperation of servers and the Underlay Networking resources through a switching fabric.
 
 To allow multiple separated simultaneous SW Virtualization domains onto a shared switching fabric there is a need to split up the Underlay Networking resources into non overlapping addressing domains e.g. using suitable encapsulation protocols like VxLAN with their VNI Ranges that then cannot overlap but still allow the encapsulated IP addresses of each SW Virtualization domain to overlap without any risk of collisions. This separation must be done through an administrative domain that could not be compromised by any of the individual SW Virtualisation domains either by malicious or unintentional Underlay Network mapping or configuration.
 
