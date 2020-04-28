@@ -37,6 +37,16 @@ A Release is:
   * An agreed common framework (template, criteria, best practice) for all projects
   * An unique release planning calendar with pre-defined milestones for each project
   * A vehicle to coordinate multiple projects and multiple type of projects (reference model and architecture, documentation, integration, packaging, deployment)
+
+<a name="bundle"></a>
+A Bundle is: A set of related specifications that are built to complement each other, specifically (RM -> RA -> RC -> RI).
+
+<a name="version"></a>
+A Version:
+* Each document has a version number attached to it that consist of **Bundle.Sequence**:
+  * **Bundle**: specifies the bundle number of which the the document belongs to.
+  * **Sequence**: specifies the sequential version of each document (improvement or enhancements).
+* Any Change in RM that will impact RAs and consequently RC and RI will triggers a new Bundle number.
   
 <a name="6.2"></a>
 ## 6.2 Roadmap
@@ -80,9 +90,7 @@ The various workstreams in CNTT are
 
 The workstream dependency relationship in simple terms, [Reference Conformance](../ref_cert) verifies and tests the [Reference Implementation](../ref_impl) which follows the requirements and architecture defined in the CNTT [Reference Architecture](../ref_arch) and Reference Architecture describes the high level system components and its interactions by adhering to the requirements and expectations set by the CNTT [Reference Model](../ref_model) which sets the standards for infrastructure abstraction, compliance and verification. 
 
-For the standard release stabilisation, the pattern in each release follows RM must be the advanced version of RA. Similarly RA must be the advanced version of RI and simultaneously for RC.
-
-For the standard release stabilisation, each release follows the pattern of one workstream is functioning ahead of another workstream in the sequence of Reference Model, Reference Architecture, Reference Implementation and Reference Conformance. For eg. In Baldy release, RM3.0 inputs will feed into RA2.0 and likewise as shown in the Figure 3.
+For the standard release stabilisation, On each release, All documents that are related to each other will have the same **main** version number as shown in the Figure 3.
 
 There are two different tracks in CNTT
 - Virtualized workloads, deployed on OpenStack
@@ -90,14 +98,9 @@ There are two different tracks in CNTT
 
 Each track follows the industry driven standards in the Reference Model as depicted in the below diagram.
 
-
-<p align="center"><img src="./figures/CNTT_Stable_3.0.png" alt="CNTT Stable 3.0 Portrait" title="CNTT Stable 3.0 Portrait
-" width="100%"/>
- <p align="center"><b>Figure 3:</b> CNTT Stable 3.0 Portrait</p>
-
 <p align="center"><img src="./figures/tech_ws_dependencies.png" alt="CNTT WS Dependencies" title="CNTT WS Dependencies
 " width="100%"/>
- <p align="center"><b>Figure 4:</b> CNTT WS Dependencies</p>
+ <p align="center"><b>Figure 3:</b> CNTT WS Dependencies</p>
 
 
 <a name="6.4"></a>
@@ -116,10 +119,10 @@ The CNTT is collaboratively working with other standard bodies within the Open S
 The OpenStack based work stream in CNTT community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read [Reference Implementation Chapter 01](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). 
 
 <p align="center"><img src="./figures/Relation_to_other_communities.png" alt="Relation to other communities" title="Relation to other communities" width="60%"/></p>
-<p align="center"><b>Figure 5:</b> Relation to other communities.</p>
+<p align="center"><b>Figure 4:</b> Relation to other communities.</p>
 
 <p align="center"><img src="./figures/tech_roadmap_cad.png" alt="Relation to other communities" title="Relation to other communities" width="100%"/></p>
-<p align="center"><b>Figure 6:</b> CNTT Roadmap relation to OPNFV and OVP.</p>
+<p align="center"><b>Figure 5:</b> CNTT Roadmap relation to OPNFV and OVP.</p>
 
 <a name="6.4.2"></a>
 ### 6.4.2 Dependencies with CNCF and OVP 2.0
