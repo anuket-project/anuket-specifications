@@ -95,7 +95,7 @@ This section introduces some networking related principles that should be follow
 
 •	**Scalability**: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
 
-•	**Workload diversity**: Should be capable to handle any VNF , CNF and BareMetal workloads.
+•	**Workload diversity**: Should be capable to p=to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
 
 •	**Telco Grade**: Should support deployments with Telco Grade characteristics requirements.
 
@@ -117,7 +117,7 @@ Before we start developing a deep model we need to agree on some foundational co
 <a name="5.1.3.1"></a>
 #### 5.1.3.1 Underlay and Overlay Networking concepts
 
-The ETSI NFV model divides networking into an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the SW Virtualisation tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected HW units.
+The typical NFV model divides networking into an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of tenants' Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected HW units.
 
 The Overlay Networking separation is often done through encapsulation of Tenants' traffic using overlay protocols e.g. through VxLAN or EVPN over the Underlay Network e.g. based on L2 (VLAN) or L3 (IP) networks.
 
@@ -160,7 +160,7 @@ Multiple instances of Container as a Service (CaaS) Virtualization Layers runnin
 > **Note:** The Reference Model describes a logical separation of SDNu and SDNo interfaces to clarify the separation of administrative domains where applicable. In real deployment cases an Operator can select to deploy a single SDN controller instance that implements all needed administrative domain separations or have separate SDN controllers for each administrative domain. A common deployment scenario today is to use a single SDN controller handling both Underlay and Overlay Networking which works on the implementation level when there is only one administrative domain that owns both the HW Infrastructure and the only  SW Virtualisation Infrastructure. The nature of a shared Underlay Network that shall ensure separation and be robust is that all code in the forwarding plane and in the control plane must be under the scrutiny and life cycle management of the HW Infrastructure Layer.
 One consequence of this is that the Reference Architectures must not model collapsed SDNo and SDNu controllers since they must stay unaware of other deployed implementations  running on the same HW Infrastructure.
 
-Hence, when Networking now gets introduced into the Reference Model, it is important that SDN also is considered and that the two now existing Reference Architectures are harmonised with the new common Networking Reference Model. In the absence of a Networking Reference Model, both Reference Architectures have mostly been specifying networking as if they where the only single SW Infrastructure on a dedicated HW resource pool.
+
 
 <a name="5.1.3.4"></a>
 #### 5.1.3.4 Programmable Networking Fabric concept
@@ -173,7 +173,7 @@ The logically centralised control plane is the foundation for the authoritative 
 
 Although the control plane is logically centralized, scaling and control latency concerns must allow the actual implementation of the control plane to be distributed when required.
 
-All VNF, CNF and SW Virtualisation acceleration as well as all specific support functionality that is programmable in the forwarding plane must be confined to the well separated sections or stages of any shared Underlay Networking. A practical example could be a SW Virtualisation instance or VNF/CNF that controls a NIC/SmartNIC where the Underlay Networking (Switch Fabric) ensures the separation in the same way as it is done for SR-IOV cases today.
+All VNF, CNF and SW Virtualisation based acceleration as well as all specific support functionality that is programmable in the forwarding plane must be confined to the well separated sections or stages of any shared Underlay Networking. A practical example could be a SW Virtualisation instance or VNF/CNF that controls a NIC/SmartNIC where the Underlay Networking (Switch Fabric) ensures the separation in the same way as it is done for SR-IOV cases today.
 
 The nature of a shared Underlay Network that shall ensure separation and be robust is that all code in the forwarding plane and in the control plane must be under the scrutiny and life cycle management of the HW Infrastructure Layer.
 
