@@ -9,8 +9,8 @@ When a new CNTT OpenStack baseline release is selected, it will trigger the crea
 ## 1.1 Triggering Events for next release selection
 This section specifies events that may trigger the selection of the next OpenStack release.
 -	Complete change in architecture: OpenStack or OpenStack Service 
--	New OpenStack features needed by CNTT workloads
--	Security Fix (not fixed through a patch; OpenStack or OS)
+-	New OpenStack features, services or projects needed by CNTT workloads
+-	Major Security Fix (not fixed through a patch; OpenStack or OS) that affect APIs 
 -	Current CNTT [OpenStack release]( https://releases.openstack.org/) entered “[Extended Maintenance]( https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases)” phase approximately 18 months ago
 
 ## 1.2 OpenStack Release Selection Committee
@@ -27,5 +27,5 @@ The OpenStack Release Selection Committee shall utilize the following criteria, 
 -	Consider OpenStack Distribution vendors and their extended support versions
 
 ## 1.4 Deprecation of CNTT OpenStack Releases
-CNTT shall support no more than 2 (two) OpenStack releases at any given time. Thus, on selection of a new CNN OpenStack baseline release, an existing CNTT OpenStack release may be deprecated. The selection of new CNTT OpenStack release n, triggers the deprecation of the n-2 release. On the completion of the Reference Architecture for release n, the release n-2 will stand deprecated.
+CNTT shall support no more than 2 (two) OpenStack releases at any given time. Thus, on selection of a new CNTT OpenStack baseline release, an existing CNTT OpenStack release may be deprecated. The selection of new CNTT OpenStack release n, triggers the deprecation of the n-2 release. On the completion of the Reference Architecture for release n, the release n-2 will stand deprecated.
 Please note that reference to releases in this subsection is to CNTT’s OpenStack release where Pike is release 1. 
