@@ -23,7 +23,7 @@ Edge scope under CNTT will cover :
 -	Define some guideline about external factors that can affect the edge like WAN latency based on telco use case 
 -	Define VNF/CNF profiles ( if needed )specific to Edge use case such as profile required acceleration technologies 
 -	Define resources requirements in terms of compute , Storage and networking , new concept can be introduced such as hyper coverage infrastructure 
--	Define Different Architecture model as no size fill fit all 
+-	Define different Architecture models as no one size fits all"
 -	
 
 Out of Scope 
