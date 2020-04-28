@@ -13,7 +13,7 @@
 ## 5.1 Edge
 
 
-2-Objective :
+5.1.2 -Objective :
 
 Based on CNTT’s goal and purpose is to develop a robust cloud infrastructure model and define a limited set of discrete architectures  built on that model that can be tested and validated for use across the entire member community.
 
