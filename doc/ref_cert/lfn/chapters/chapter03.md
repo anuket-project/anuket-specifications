@@ -199,6 +199,7 @@ versions are considered here to verify OpenStack Pike selected by CNTT:
 | Functest                | hunter  |
 | Cinder Tempest plugin   | 0.2.0   |
 | Keystone Tempest plugin | 0.1.0   |
+| Heat Tempest plugin     | 1.0.0   |
 | Neutron                 | rocky   |
 | Neutron Tempest plugin  | 0.3.0   |
 | Rally OpenStack         | 1.5.0   |
