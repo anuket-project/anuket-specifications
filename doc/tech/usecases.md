@@ -30,7 +30,7 @@ Out of Scope
 
 -	The API that can be exposed to 3rd party application developer 
 -	The Architecture of VNF/CNF ( CNTT Guideline only )
--	Exact location of Edge deployment may be vary from Operator to another 
+-	Exact location of Edge deployment will vary by Operator 
 -	Larceny may be vary based on operator transmission type ( Microwave , Fixed ) , a well Transmission network reachability and architecture ( Backhaul , front haul , Mid haul )
 -	Onboarding of VNF/CNF on edges cloud infrastructure 
 
