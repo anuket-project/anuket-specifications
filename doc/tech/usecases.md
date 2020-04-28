@@ -15,8 +15,7 @@
 
 2-Objective :
 
-
-Based on CNTT’s Project goals & Purpose was formulated is to develop a robust infrastructure model and define a limited discrete set of architectures built on that model that can be tested and validated for use across the entire member community. 
+Based on CNTT’s goal and purpose is to develop a robust cloud infrastructure model and define a limited set of discrete architectures  built on that model that can be tested and validated for use across the entire member community.
 
 CNTT Scope is extending beyond the Cloud infrastructure that should build into the Regional or National Data Center  but it extended to the Edge , which CNTT consider it as a disruptive  approach and use case that CNTT will add value especially there is a lot of scattered project/Initiative either under Standard Development bodies or  Open source communities
 
