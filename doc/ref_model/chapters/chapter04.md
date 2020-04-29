@@ -553,7 +553,7 @@ Cloud Infrastructure profiles that are available in CNTT release N deployment ca
 
  1. Cloud infrastructure profiles that are part of CNTT release N. These can be either
     * new profiles defined in release N or
-    * existing profiles from earlier releases that are supported for backward compatibility reasons in release N
+    * existing profiles from earlier releases that are incorporated for backward compatibility reasons in release N
  2. Cloud infrastructure profiles from releases N-1 and N-2 that are deployed only because of backwards compatibility, these profiles are not part of CNTT release N definition.
 
 **Notice:** a profile defined in previous releases that is modified in release N is considered to be a new profile
