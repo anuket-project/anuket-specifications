@@ -544,11 +544,11 @@ Whereas:
 <a name="4.2.7.3"></a>
 4.2.7.3 Forward compatibility
 
-CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The exceptions of a given CNTT release are listed in [A.3 Exception List](appendix-a.md#a3-exception-list). The exceptions are not part of any Cloud Infrastructure profile defined in CNTT. If a flavour needs to be defined to support one or more exceptions its name should contain the idenfityer of the exception. If needed several exceptions can be combined into the same flavour.
+CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The exceptions of a given CNTT release are listed in [A.3 Exception List](appendix-a.md#a3-exception-list). The exceptions are not part of any Cloud Infrastructure profile defined in CNTT. If a flavour needs to be defined to support one or more exceptions its name should contain the identifyer of the exception. If needed several exceptions can be combined into the same flavour.
 
-`B_GenN.small.ExceptionIds`
+The naming scheme for flavours with exceptions should be `B_GenN.small.ExceptionIds` where the exception is is generated from the numerical part of the exception identifyer prefixed with `ex`.
 
-For example `B_4.small.ex001` refers to `rm.exc.001` defined in the [Exception List](appendix-a.md#a3-exception-list).
+For example `B_Gen4.small.ex001` refers to `rm.exc.001` defined in the [Exception List](appendix-a.md#a3-exception-list).
 These flavors, similarly to other flavours, should be supported for three CNTT releases after the exception was removed from the CNTT release.
 
 
