@@ -115,13 +115,13 @@ The following table contains a comparision of relevant features and requirements
 | Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant |
 | Network resiliency (`req.inf.ntw.01`) | Supported | Supported |
 | Centrally administrated and configured (`req.inf.ntw.03`) | Not supported | Partially suported |
-| dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported | Suported |
+| Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via another CNI plugin | Suported |
 | Integrating SDN controllers (`req.inf.ntw.05`) | Supported via another CNI plugin | Supported via another CNI plugin |
 | More than one networking solution (`req.inf.ntw.06`) | Supported | Supported |
 | Choose whether or not to deploy more than one networking solution (`req.inf.ntw.07`) | Supported | Supported |
 | Kubernetes network model (`req.inf.ntw.08`) | Supported via another CNI plugin | Supported via another CNI plugin |
 | Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported |
-| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Not supported | Supported |
+| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via another CNI plugin | Supported |
 
 <p align="center"><b>Table 4-2:</b> Comparision of CNI multiplexers/metaplugins</p>
 
