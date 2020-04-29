@@ -540,6 +540,18 @@ Whereas:
 <p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="100%"/></p>
 <p align="center"><b>Figure 4-3:</b> Infrastructure Profiles Catalogue</p>
 
+
+<a name="4.2.7.3"></a>
+4.2.7.3 Forward compatibility
+
+CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The exceptions of a given CNTT release are listed in [A.3 Exception List](appendix-a.md#a3-exception-list). The exceptions are not part of any Cloud Infrastructure profile defined in CNTT. If a flavour needs to be defined to support one or more exceptions its name should contain the idenfityer of the exception. If needed several exceptions can be combined into the same flavour.
+
+`B_GenN.small.ExceptionIds`
+
+For example `B_4.small.ex001` refers to `rm.exc.001` defined in the [Exception List](appendix-a.md#a3-exception-list).
+These flavors, similarly to other flavours, should be supported for three CNTT releases after the exception was removed from the CNTT release.
+
+
 <a name="4.3"></a>
 ## 4.3 Networking
 
