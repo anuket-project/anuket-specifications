@@ -106,27 +106,25 @@ To fulfill `req.sec.gen.05` the architecture specifies the usage of the Kubernet
 
 The selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm) as it provides the possibility to use several other CNI plugins (`req.inf.ntw.16`) and provides an API based solution to administer the networks (`req.inf.ntw.10`) from a central point (`req.inf.ntw.11`).<br>
 
-The NSX Container Plugin ([NCP](https://kubernetes.io/docs/concepts/cluster-administration/addons/)) is a CNCF-compliant container plugin that integrates with NSX-T Data Center to build Kubernetes networking and security objects.  NSX-T Container Plugin natively supports Containers in VM deployment model with superior security/isolation while meeting the data plane performance requirements. The [NCP](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.5/ncp-openshift/GUID-30FECC09-B327-49CB-874F-DBDD3CF5208E.html) is capable of supporting multiple interfaces to Kubernetes Pods.
+The following table contains a comparision of relevant features and requirements in Multus and DANM.
 
-The following table contains a comparision of relevant features and requirements in Multus, DANM and NCP.
-
-| Requirement | Support in Multus | Support in DANM | Support in NCP |
-|-------------|-------------------|-----------------|----------------|
-| `req.inf.ntw.01` | Supported | Supported | Supported |
-| `req.inf.ntw.02` | Supported via an other CNI plugin | Supported via an other CNI plugin | Supported |
-| `req.inf.ntw.03` | Supported via an other CNI plugin | Supported | Supported |
-| `req.inf.ntw.04` | Supported via an other CNI plugin | Supported via an other CNI plugin | Supported |
-| `req.inf.ntw.06` | Supported | Supported | Supported |
-| `req.inf.ntw.07` | Supported | Supported | Supported |
-| `req.inf.ntw.08` | Supported | Supported | Supported |
-| `req.inf.ntw.09` | Supported via LCM tools |  Supported via LCM tools | Supported via LCM tools |
-| `req.inf.ntw.10` | Not supported | Suported | Supported |
-| `req.inf.ntw.11` | Not supported | Partially supported | Supported |
-| `req.inf.ntw.14` | Supported via an other CNI plugin | Supported via an other CNI plugin | Supported |
-| `req.inf.ntw.15` | Not relevant | Not relevant | Not relevant |
-| `req.inf.ntw.16` | Supported | Supported | Supported |
-| Cluster wide IP address management | Not suported | Supported | Supported |
-| Service based dicovery of all provisioned interfaces | Not supported | Supported | Supported |
+| Requirement | Support in Multus | Support in DANM |
+|-------------|-------------------|-----------------|
+| `req.inf.ntw.01` | Supported | Supported |
+| `req.inf.ntw.02` | Supported via another CNI plugin | Supported via another CNI plugin |
+| `req.inf.ntw.03` | Supported via another CNI plugin | Supported |
+| `req.inf.ntw.04` | Supported via another CNI plugin | Supported via another CNI plugin |
+| `req.inf.ntw.06` | Supported | Supported |
+| `req.inf.ntw.07` | Supported | Supported |
+| `req.inf.ntw.08` | Supported | Supported |
+| `req.inf.ntw.09` | Supported via LCM tools |  Supported via LCM tools |
+| `req.inf.ntw.10` | Not supported | Suported |
+| `req.inf.ntw.11` | Not supported | Partially supported |
+| `req.inf.ntw.14` | Supported via another CNI plugin | Supported via another CNI plugin |
+| `req.inf.ntw.15` | Not relevant | Not relevant |
+| `req.inf.ntw.16` | Supported | Supported |
+| Cluster wide IP address management | Not suported | Supported |
+| Service based discovery of all provisioned interfaces |Supported | Supported |
 
  [Calico](https://github.com/projectcalico/cni-plugin) may be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.02` due to it's capability to handle `NetworkPolicies`, what is missing from [Flannel](https://github.com/coreos/flannel-cni).
 For the network of signalling connections the built in IPVLAN CNI of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used as these provide NAT-less connectivity (`req.inf.ntw.03`). For the user plane network(s) fullfilling requirement `req.inf.ntw.04` the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.
@@ -134,7 +132,7 @@ For the network of signalling connections the built in IPVLAN CNI of DANM or the
 > Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) to the architecture are under debate.
 
 <a name="4.6"></a>
-## 4.5 Storage components
+## 4.6 Storage components
 
 As described in [chapter 3](./chapter03.md), storage in Kubernetes consists of three types of storage:
 1. Ephemeral storage that is used to execute the containers

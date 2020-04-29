@@ -1,19 +1,19 @@
 [<< Back](../)
 
-# 3. NNFVI Test Cases and Traceability to CNTT Requirements
+# 3. Cloud Infrastructure Test Cases and Traceability to CNTT Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
 * [3.2 Selection Criteria](#3.2)
-* [3.3 Test Cases](#3.3)
+* [3.3 Traceability Matrix](#3.3)
   * [3.3.1 Architecture and OpenStack Based](#3.3.1)
   * [3.3.2 Infrastructure](#3.3.2)
   * [3.3.3 VIM](#3.3.3)
   * [3.3.4 Interfaces & APIs](#3.3.4)
   * [3.3.5 OpenStack API benchmarking](#3.3.5)
   * [3.3.6 Dataplane Benchmarking](#3.3.6)
-  * [3.3.7 opensource VNF onboarding and testing](#3.3.7)
+  * [3.3.7 Opensource VNF onboarding and testing](#3.3.7)
   * [3.3.8 Tenants](#3.3.8)
   * [3.3.9 LCM](#3.3.9)
   * [3.3.10 Assurance](#3.3.10)
@@ -30,9 +30,9 @@ The scope of this chapter is to identify and list down test cases based on requi
 
 Note that each requirement may have one or more test cases associated with it.
 
-**must**: Test Cases that are marked as must are considered mandatory and must pass succesfully.
+**must**: Test Cases that are marked as must are considered mandatory and must pass successfully.
 
-**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI tagetting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
+**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI targeting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
 
 **may**: Test cases that are marked as may are considered optional. The same applies to may not.
 
@@ -314,9 +314,10 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following test names must not be executed:
 
-| test rejection regular expressions                                      | reasons                            |
-|-------------------------------------------------------------------------|------------------------------------|
-| .\*test_container_sync.ContainerSyncTest.test_container_synchronization | https://launchpad.net/bugs/1317133 |
+| test rejection regular expressions                                                           | reasons                            |
+|----------------------------------------------------------------------------------------------|------------------------------------|
+| .\*test_container_sync.ContainerSyncTest.test_container_synchronization                      | https://launchpad.net/bugs/1317133 |
+| .\*test_container_sync_middleware.ContainerSyncMiddlewareTest.test_container_synchronization | container_sync                     |
 
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -685,7 +686,7 @@ of 0%) proposed in
 | HeatStacks.list_stacks_and_resources          | 10         |
 
 <a name="3.3.6"></a>
-### 5.3.6 Dataplane benchmarking
+### 3.3.6 Dataplane benchmarking
 
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
 offers two benchmarking dataplane test cases leveraging on:
@@ -786,7 +787,7 @@ The VMs or containers use only 1 vNIC for incoming and outgoing traffic. Multipl
 Multiple VMs or containers can be deployed prior to running any tests. This allows to use generator-reflector pairs on the same or different compute nodes, on the same or different NUMA nodes.
 
 <a name="3.3.7"></a>
-### 3.3.7 opensource VNF onboarding and testing
+### 3.3.7 Opensource VNF onboarding and testing
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
@@ -834,43 +835,43 @@ According to [RC1 Chapter04]({{ "/doc/ref_cert/lfn/chapters/chapter04.html" | re
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
-| container                               | test case                  | criteria |
-|-----------------------------------------|----------------------------|:--------:|
-| opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_cinder             | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_keystone           | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | rally_sanity               | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_full               | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_scenario           | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_slow               | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_full                 | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_jobs                 | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | vmtp                       | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | shaker                     | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify                   | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify_ims               | PASS     |
-| opnfv/functest-vnf:hunter               | heat_ims                   | PASS     |
-| opnfv/functest-vnf:hunter               | vyos_vrouter               | PASS     |
-| opnfv/functest-vnf:hunter               | juju_epc                   | PASS     |
+| container                               | test case                       | criteria |
+|-----------------------------------------|---------------------------------|:--------:|
+| opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api-cntt | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt             | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt           | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt               | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt               | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt           | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt               | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt                 | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt                 | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | vmtp                            | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | shaker                          | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify                        | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify_ims                    | PASS     |
+| opnfv/functest-vnf:hunter               | heat_ims                        | PASS     |
+| opnfv/functest-vnf:hunter               | vyos_vrouter                    | PASS     |
+| opnfv/functest-vnf:hunter               | juju_epc                        | PASS     |
 
 <a name="3.4.2"></a>
 ### 3.4.2 TC Mapping to Requirements
 
-| test case                  | requirements                                                             |
-|----------------------------|--------------------------------------------------------------------------|
-| neutron-tempest-plugin-api | Neutron API testing                                                      |
-| tempest_cinder             | Cinder API testing                                                       |
-| tempest_keystone           | Keystone API testing                                                     |
-| rally_sanity               | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
-| tempest_full               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| tempest_scenario           | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| tempest_slow               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| rally_full                 | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
-| rally_jobs                 | Neutron API benchmarking                                                 |
-| vmtp                       | Dataplane benchmarking                                                   |
-| shaker                     | Dataplane benchmarking                                                   |
-| cloudify                   | opensource VNF onboarding and testing                                    |
-| cloudify_ims               | opensource VNF onboarding and testing                                    |
-| heat_ims                   | opensource VNF onboarding and testing                                    |
-| vyos_vrouter               | opensource VNF onboarding and testing                                    |
-| juju_epc                   | opensource VNF onboarding and testing                                    |
+| test case                       | requirements                                                             |
+|---------------------------------|--------------------------------------------------------------------------|
+| neutron-tempest-plugin-api-cntt | Neutron API testing                                                      |
+| tempest_cinder_cntt             | Cinder API testing                                                       |
+| tempest_keystone_cntt           | Keystone API testing                                                     |
+| rally_sanity_cntt               | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
+| tempest_full_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_scenario_cntt           | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_slow_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| rally_full_cntt                 | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
+| rally_jobs_cntt                 | Neutron API benchmarking                                                 |
+| vmtp                            | Dataplane benchmarking                                                   |
+| shaker                          | Dataplane benchmarking                                                   |
+| cloudify                        | opensource VNF onboarding and testing                                    |
+| cloudify_ims                    | opensource VNF onboarding and testing                                    |
+| heat_ims                        | opensource VNF onboarding and testing                                    |
+| vyos_vrouter                    | opensource VNF onboarding and testing                                    |
+| juju_epc                        | opensource VNF onboarding and testing                                    |

@@ -64,7 +64,7 @@ this flow.
 
 2. As part of OVP lab, already required test cases, test tools, eco-system like
 MANO and appropriate certified NFVi to be setup as defined part of entry criteria.
-This lab could either either *OVP 3rd party lab* or *VNF vendors*.
+This lab could either *OVP 3rd party lab* or *VNF vendors*.
 
 ![](media/f3b0c214bc58c44406fd5b801d3dfc89.png)
 
@@ -76,7 +76,7 @@ OVP portal for community review along with additional information such as produc
 approve or reject it based the details provided.
 
 5.  If reviewer rejected it, then step 2 and 3 will be ran again to address the
-review comments. Otherwise Once reviewer approved it, corresponding VNF will be
+review comments. Otherwise once reviewer approved it, corresponding VNF will be
 published into OVP VNF Portal with OVP badge.
 
 6. LFN staff will provide the certificate badge graphics and graphical usage guidelines.  
@@ -99,14 +99,14 @@ The NFV Infrastructure (NFVI) is the totality of all hardware and software compo
  important to certify the VNF based on profiled defined in
  [reference model](../../../ref_model/chapters/chapter02.md).
 
-In [reference model](../../../ref_model/chapters/chapter02.md), following following
+In [reference model](../../../ref_model/chapters/chapter02.md), following
 NFVi profiles are proposed as reference:
 
  - **Basic**: for VNF that can tolerate resource over-subscription and variable latency.
 
  - **Network Intensive**: for VNF that require predictable computing performance, high network throughput and low network latency.
 
- - **Compute Intensive**: for VNF that require predictable computing performance and low network latency.
+ <!---- **Compute Intensive**: for VNF that require predictable computing performance and low network latency.--->
 
 <a name="5.2.2"></a>
 ### 5.2.2 Protoype VNFs
@@ -373,16 +373,10 @@ and related eco system management elements.
 Testing involves design, distribution by different user roles and executed
 across multiple tenant’s environments.
 
+
+
 <a name="5.4.9"></a>
-### 5.4.9 3rd-party test tool integration
-
-In any telco environment, heterogeneous is inevitable and need for executing the
-test cases from different test tools is required. So system would support to
-on-board the 3rd party test tools and corresponding test cases from them and
-allows executing the test cases from those 3rd party test tools.
-
-<a name="5.4.10"></a>
-### 5.4.10 Conformance management & integration
+### 5.4.9 Conformance management & integration
 
 Platform should have integration with OVP Conformance portal for submitting
 results with OVP defined format.
@@ -390,8 +384,8 @@ results with OVP defined format.
 It should enable repository of certified VNFs which can be used for testing
 validation and performance.
 
-<a name="5.4.11"></a>
-### 5.4.11 User & System interfaces
+<a name="5.4.10"></a>
+### 5.4.10 User & System interfaces
 
 **User interface**:
 
@@ -403,7 +397,8 @@ validation and performance.
 * REST API
 * gRPC
 
-### 5.4.12 Deliverables
+<a name="5.4.11"></a>
+### 5.4.11 Deliverables
 Platform should be able to get deployed in both container and cloud environments.
 so following model deliverables would enable it:
 
@@ -418,7 +413,7 @@ so following model deliverables would enable it:
 
 Network functions virtualization (NFV) and softwaredefined networking (SDN) offer service providers increased service agility, OpEx improvements, and back-office automation. Disaggregation, the approach of decoupling the various layers of the stack, from hardware, to NFVI/VIM software, to dataplane acceleration, SDN controllers, MANO components, and VNFs, enables multi-vendor deployments with best-of-breed options at each layer.
 
-CNTT is defining the required architecture and model for NFVI along with VNF specification which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI.Therefore,in addition to verify general NFVI capabilities based on CNTT RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the CNTT-compatible NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
+CNTT is defining the required architecture and model for NFVI which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI.Therefore,in addition to verify general NFVI capabilities based on CNTT RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the CNTT-compatible NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
 
 In this chapter, the scope and requirements of VNF test cases are defined as reference for VNF Conformance, which helps to perform the various compliance and verification (C&V) testing and submit results to LFN OVP Conformance portal.
 
@@ -492,7 +487,7 @@ According to the current level of the entire network virtualization, the core ne
 
 We can also classify VNFs based on the level of VNF operation：
 
-a) VNFs that operate at Layer 2 or Layer 3 and are primarily involved in switching or routing packets at these layers. Examples include vRouter, vBNG, vCE device, or vSwitch.
+a) VNFs that operate at Layer 2 or Layer 3 are primarily involved in switching or routing packets at these layers. Examples include vRouter, vBNG, vCE device, or vSwitch.
 
 b) VNFs that operate at Layer 4 through Layer 7 and are involved in forwarding, dropping, filtering or redirecting packets at Layer 4 through 7. Examples include vFirewall, vADC, vIDS/vIPS, or vWAN Accelerator.
 

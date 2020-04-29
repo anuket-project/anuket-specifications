@@ -50,9 +50,10 @@ Every Issue and PR should be tagged with one or more of the following labels to 
 
 <a name="prs"></a>
 ### Pull Requests
-- PRs must only be created when there is an issue present and a decision to create a PR is made. A PR must reference the issue it is resolving in the description field.
-  - using GitHub predefined keyword "**Fixes Issue#**" will automatically close the issue which the PR is resolving when it is merged.
-- A PR for an issues must only be created by the contributor assigned to the issue by the respective WSL.
+- PRs dealing with minor editorial changes can be raised without a corresponding Issue, but must be labelled as "Minor". Otherwise, PRs must only be created when there is an issue present and a decision to create a PR is made. 
+- A PR must reference the issue it is resolving in the description field.
+   - using GitHub predefined keyword "Fixes Issue#" will automatically close the issue which the PR is resolving when it is merged.
+- A PR for an issue must only be created by the contributor assigned to the issue (either by self assignment or by the respective WSL).
 - Only the person assigned ("assignee") to a PR may edit it. The normal process is for others to make suggests in "Comments" but not directly edit a PR unless the assignee has granter another contributor permission to contribute directly to the PR.
 - A PR is recommended to only create/modify content within the scope of a single workstream.
 - A PR should only add/change content related to the issue associated with the PR.
