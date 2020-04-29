@@ -4,13 +4,13 @@ This section specifies policies for the selection of the next CNTT OpenStack bas
 -	criteria to use in choosing the next OpenStack release, and 
 -	the number of OpenStack releases to be supported by CNTT
 
-When a new CNTT OpenStack baseline release is selected, it will trigger the creation of a new release of the Reference Architecture (RA-1), Reference Implementation (RI-1) and Reference Conformance (RC-1) documents. Please note that while a new OpenStack release selection may only trigger updates to certain sections, all document releases will be complete and can be utilised on their own independent of previous releases.
+The selection of a new OpenStack baseline release will be associated with a new CNTT release and a whole set of documents (RA1, RI1 and RC1) with new versions.. Please note that while a new OpenStack release selection may only trigger updates to certain sections, all document releases will be complete and can be utilised on their own independent of previous releases.
 
 ## 1.1 Triggering Events for next release selection
 This section specifies events that may trigger the selection of the next OpenStack release.
 -	Complete change in architecture: OpenStack or OpenStack Service 
 -	New OpenStack features, services or projects needed by CNTT workloads
--	Major Security Fix (not fixed through a patch; OpenStack or OS) that affect APIs 
+-	Major Security Fix (not fixed through a patch; OpenStack or OS) that affect APIs
 -	Current CNTT [OpenStack release]( https://releases.openstack.org/) entered “[Extended Maintenance]( https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases)” phase approximately 18 months ago
 
 ## 1.2 OpenStack Release Selection Committee
