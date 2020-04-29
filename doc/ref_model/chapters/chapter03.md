@@ -38,8 +38,8 @@ _**To summarise:** the abstraction model presented in this document will build u
 
 The abstraction model for the NFVI makes use of the following layers (only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs)):
 
-<p align="center"><img src="../figures/ch03_model_overview.png" alt="NFVI Model Overview" Title="NFVI Model Overview" width="65%"/></p>
-<p align="center"><b>Figure 3-1:</b> NFVI Model Overview</p>
+<p align="center"><img src="../figures/ch03-model-overview.png" alt="NFVI Model Overview" Title="NFVI Model Overview" width="65%"/></p>
+<p align="center"><b>Figure 3-1:</b> NFVI Model Overview.</p>
 
 The functionalities of each layer are as follows:
 - **Virtual Infrastructure Resources:** These are all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
@@ -52,8 +52,8 @@ The functionalities of each layer are as follows:
 
 The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
 
-<p align="center"><img src="../figures/ch03_model_virtual_resources.png" alt="NFVI Virtual Infrastructure Resources" Title="NFVI Virtual Infrastructure Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context</p>
+<p align="center"><img src="../figures/ch03-model-virtual-resources.png" alt="NFVI Virtual Infrastructure Resources" Title="NFVI Virtual Infrastructure Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
 
 - **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
 - **Compute resources:** represent virtualised computes for workloads and other systems as necessary
@@ -147,15 +147,15 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 <a name="3.3"></a>
 ## 3.3 NFVI Management Software
 
-Network Function Virtualisation Infrastructure provides the capability to manage virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
+Network Function Virtualisation Infrastructure provides the capability to manage physical and virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
 * manage access privileges and
 * provision, manage, monitor and delete virtual resources.
 
-<p align="center"><img src="../figures/ch03_model_management_software.png" alt="NFVI Management Software" Title="NFVI Management Software" width="65%"/></p>
-<p align="center"><b>Figure 3-3:</b> NFVI Management Software</p>
+<p align="center"><img src="../figures/ch03-model-management-software.png" alt="NFVI Management Software" Title="NFVI Management Software" width="65%"/></p>
+<p align="center"><b>Figure 3-3:</b> NFVI Management Software.</p>
 
  The management software needs to support following functional aspects:
 
@@ -175,7 +175,7 @@ Network Function Virtualisation Infrastructure provides the capability to manage
 :  monitors and collects information on all events and the current state of all physical and virtual resources
 
 **Additional Management Functions**
-: include identity management, policy management (e.g. to enforce security policies), etc.
+: include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 **Compute Resources Manager**
 : provides a mechanism to provision virtual resources with the help of physical compute resources

@@ -94,7 +94,7 @@ REST API Version History: https://docs.openstack.org/cinder/latest/contributor/a
 | bulk_delete        | X             |
 | bulk_upload        | X             |
 | container_quotas   | X             |
-| container_sync     | X             |
+| container_sync     |               |
 | crossdomain        | X             |
 | discoverability    | X             |
 | form_post          | X             |
@@ -250,12 +250,13 @@ REST API Version History: https://docs.openstack.org/placement/latest/placement-
 
 ### 5.2.8. Heat
 
-|**OpenStack Service** | **API Version** |
-|----------------------|-----------------|
-| Orchestration: Heat  | v1              |
+|**OpenStack Service** | **API Version** | **Minimal Template Version** |
+|----------------------|-----------------|------------------------------|
+| Orchestration: Heat  | v1              | 2017-09-01                   |
 
 Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
 
+Heat Orchestration Template (HOT) specification: https://docs.openstack.org/heat/pike/template_guide/hot_spec.html#pike
 
 <a name="5.3"></a>
 ## 5.3. Consolidated Set of APIs
