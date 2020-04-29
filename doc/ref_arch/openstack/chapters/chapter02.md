@@ -187,13 +187,13 @@ Traceability to Reference Model.
 | sec.gen.002 | Hardening | All systems part of Cloud Infrastructure **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  | 
 | sec.gen.003 | Hardening | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot |  | 
 | sec.gen.004 | Hardening | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened |  | 
-| sec.gen.005 | Hardening Hardening Hardening Hardening Hardening | The Platform **must** support Operating System level access control |  | 
-| sec.gen.006 | Hardening Hardening Hardening Hardening | The Platform **must** support Secure logging |  | 
-| sec.gen.007 | Hardening Hardening Hardening | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service |  |
-| sec.gen.008 | Hardening Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities |  |
+| sec.gen.005 | Hardening | The Platform **must** support Operating System level access control |  | 
+| sec.gen.006 | Hardening | The Platform **must** support Secure logging |  | 
+| sec.gen.007 | Hardening | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service |  |
+| sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities |  |
 | sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification |  |
-| sec.gen.010 | Hardening Hardening Hardening | The Cloud Infrastructure **must** support Secure storage (all types) |  | Expand/Delete based on other requirements |
-| sec.gen.012 | Hardening Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  |
+| sec.gen.010 | Hardening | The Cloud Infrastructure **must** support Secure storage (all types) |  | Expand/Delete based on other requirements |
+| sec.gen.012 | Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  |
 | sec.gen.013 | Hardening | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  |
 
 
@@ -210,7 +210,7 @@ Traceability to Reference Model.
 | sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity management capabilities | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
 | sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
 | sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |  
-| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
+| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
 | sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
 | sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
 | sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
@@ -220,13 +220,13 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit | [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
-| sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
-| sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
-| sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
-| sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
-| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. Admin access must be carefully regulated  |  [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) | 
-| sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation | [6.3.3 Confidentiality and Integrity]./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit | [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. Admin access must be carefully regulated  |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) | 
+| sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation | [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
 
 
 #### 2.3.8.4. Workload Security
@@ -234,10 +234,10 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
 | sec.wl.001 | Workload | The Platform **must** support Workload placement policy | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.002 | Workload Workload Workload Workload Workload | The Platform **must** support operational security | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.003 | Workload Workload Workload Workload | The Platform **must** support secure provisioning of workloads  | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.004 | Workload Workload Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements) | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.005 | Workload Workload | Production workloads **must** be separated from non-production workloads | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.002 | Workload | The Platform **must** support operational security | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.003 | Workload | The Platform **must** support secure provisioning of workloads  | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements) | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.005 | Workload | Production workloads **must** be separated from non-production workloads | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
 | sec.wl.006 | Workload | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) | [6.3.4 Workload Security](./chapter06.md#634-workload-security) |
 
 
@@ -277,7 +277,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.mon.001 | Audit | Platform **must** provide logs and these logs must be regularly scanned for events of interest |  |
+| sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly scanned for events of interest |  |
 | sec.mon.002 | Monitoring | Security logs **must** be time synchronised |  |
 | sec.mon.003 | Monitoring | The Platform **must** log all changes to time server source, time, date and time zones |  |
 | sec.mon.004 | Audit | The Platform **must** secure and protect Audit logs (contain sensitive information) both in-transit and at rest |  |
