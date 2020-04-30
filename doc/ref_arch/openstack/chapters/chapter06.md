@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 6. Security
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
@@ -22,7 +22,7 @@ This guide is intended to provide basic security requirements to CNTT architects
 <a name="6.2"></a>
 ## 6.2 Security Requirements
 
-Based on chapter 2 requirements
+Chapter 2 gathers all requirements and recommendations regarding security topics developed in this chapter.
 
 <a name="6.3"></a>
 ## 6.3 NFVI and VIM Security
