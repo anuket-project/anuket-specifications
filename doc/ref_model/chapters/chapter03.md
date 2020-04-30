@@ -8,7 +8,7 @@
   * [3.2.1 Tenant](#3.2.1)
   * [3.2.2 Compute](#3.2.2)
   * [3.2.3 Storage](#3.2.4)
-  * [3.2.4 Availability Zone](#3.2.5)
+  * [3.2.4 Availability Zone](#3.2.4)
 * [3.3 NFVI Management Software](#3.3)
 * [3.4 Physical Resources](#3.4)
 
