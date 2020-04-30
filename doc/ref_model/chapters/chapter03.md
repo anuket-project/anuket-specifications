@@ -116,19 +116,7 @@ _**Example**: an OpenStack cinder volume._
 
 _**Comments**: we need to be more specific regarding acceleration and metadata._
 
-<a name="3.2.4"></a>
-### 3.2.4 Network
-A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context.
 
-_**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
-
-| Attribute      | Description                                                              |
-|----------------|--------------------------------------------------------------------------|
-| `name`         | name of the network resource                                             |
-| `subnet`       | network address of the subnet                                            |
-| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
-
-<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
 
 <a name="3.3"></a>
 ## 3.3 NFVI Management Software
