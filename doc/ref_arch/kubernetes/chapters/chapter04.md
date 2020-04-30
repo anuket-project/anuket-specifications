@@ -102,7 +102,7 @@ To support the isolation of the resources used by the infrastructure from the re
 <a name="4.5"></a>
 ## 4.5 CNI plugins
 
-The selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm) as it provides the possibility to use several other CNI plugins (`req.inf.ntw.06`) and provides an API based solution to administer the networks from a central point (`req.inf.ntw.03`).<br>
+As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and MUST provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm).<br>
 
 The following table contains a comparision of relevant features and requirements in Multus and DANM.
 
