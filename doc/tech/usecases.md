@@ -13,11 +13,11 @@
 ## 5.2 Edge
 Principles:
 
-This section introduces principles that should be followed during the definition and development of the Edge scope for the CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
+This section introduces some principles that should be followed during the definition and development of the Edge scope to be covered in CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
-A main principle is that we shall not define a new branch of CNTT and refrain from inventing new things where other organizations already have solutions or ongoing suitable standardization. By that follows that the Edge Principles, as far as possible, shall follow and amend the existing [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles), the [Reference Architecture Principles](../ref_arch#principles) and the Network Principles that are being developed in parallel. 
+A main principle is that we shall not re-define a new branch of CNTT and avoid to re-inventing what other organizations already have . we are following the same principles that defined in existing [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles), the [Reference Architecture Principles](../ref_arch#principles) and the Network Principles.
 
-There are however a couple of new things that Edge deployments bring into the picture compared to the larger or regional Cloud Infrastructure deployments. These differences will generate a small set of additional principles. For now, there are only a few high level mixed differences and principles listed to generate suitable debate and feedback, but it will be filled out with more clarifications over time and during the development of the prioritized use cases.
+CNTT believe that Edge is unique in terms of infrastructure requirement ,  Implementation and deployment . that why There are some additional principle be defined covering a specific to the edge.
 
 -	Distribution into many small sites
 -  Deployment automation
