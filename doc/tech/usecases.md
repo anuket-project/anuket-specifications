@@ -15,8 +15,7 @@ Edge computing, a disruptive technology, that should be considered for adoption 
 
 Edge is considered as one of the main enablers to 5G use cases adoption. There are a number of 5G challenges that Edge will support solve so as to implement the 5G requirements defined by "ITU-2020 for 5G." Edge is required to support enhanced mobile broadband (eMBB), massive machine-type communications (mMTCs) and ultra-reliable low-latency communications (uRLLCs).
 
-In term of monetization ,  Edge will help Digital Service provider (DSP) to start have Return of investment (ROI) of Cloud as there are 
-alot of use cases can be developed at the Edge as Cloud Gamming , AR/VR , 5G private networks ,vRAN ,...etc
+With respect to monetization, Edge will help DSPs with their Return on investment (ROI) on 5G and cloud as a number of new services require the Edge. For example, services such as Cloud Gaming, Assisted Reality/Virtual Reality (AR/VR), 5G private networks, and vRAN.
 
 
 <a name="5.1.2"></a>
