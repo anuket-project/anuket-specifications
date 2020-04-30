@@ -53,6 +53,7 @@ In OpenStack, KVM is configured as the default hypervisor for compute nodes.
 <a name="4.2.2"></a>
 ### 4.2.2. Compute
 
+
 #### 4.2.2.1. Cloud Deployment (Foundation/management) Node
 Minimal configuration: 1 node
 
@@ -65,8 +66,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 | Boot disks |RAID 1 |
 | CPU reservation for host (kernel) |1 core per Numa |
 | CPU allocation ratio |2:1 |
-| <to be filled if needed>|  |
-| …|     |
+
 
 -	How many nodes to meet SLA
     -	Minimum 3 nodes for high availability
@@ -88,8 +88,7 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
-| <to be filled if needed>|  |
-| …|  
+ 
  
 -	How many nodes to meet SLA
     - Minimum 2 nodes for high availibility using VRRP.
@@ -108,26 +107,59 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
-| <to be filled if needed>|  |
-| …|  
+  
  
 -	HW specifications
 -	How many nodes to meet SLA
 -	Sizing rules
 
 #### 4.2.2.5. Compute Nodes
+
+This section specifies the compute node configurations to support the flavors. Because a flavor has the same capabilities but different geometry sizes, the term “flavor series” is used.
+
 -	The software and hardware configurations are as specified in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 -	BIOS requirement
-    -	The general bios requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
-    -	Additionally, for OpenStack we need to set the following boot parameters:
+    -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
+
+Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1. 
+
+**Flavor Geometry**
+
+| .conf | vCPU (c) | RAM (r) | Local Disk (d) | Management interface |
+|----|----|----|----|----|
+| .tiny | 1 | 512 MB | 1 GB | 1 Gbps |
+| .small | 1 | 2 GB | 20 GB  | 1 Gbps |
+| .medium | 2 | 4 GB | 40 GB | 1 Gbps |
+| .large | 4 | 8 GB | 80 GB | 1 Gbps |
+| .2xlarge* | 8 | 16 GB | 160 GB | 1 Gbps |
+| .4xlarge* | 16 | 32 GB | 320 GB | 1 Gbps |
+| .8xlarge* | 32 | 64 GB | 640 GB | 1 Gbps |
+
+<p align="center"><b>Table 4-1: Flavor Geometries</b></p>
+
+**Flavor Series**
+
+The Reference Model specifies the Basic (B) and Network Intensive (N) instance types (or flavor series). The Reference Model also specifies support for two different CPU allocation ratio values for the Basic flavor types, and choice of network acceleration capabilities utilising DPDK and SR-IOV technologies; please note SR-IOV is supported under an exception policy. Table 4-2 lists the capabilities for each flavor series.
+
+| Flavor Series | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
+|----|----|----|----|----|----|----|
+| B1 | 1:1 | Y | N | N | N | OVS-kernel |
+| B4 | 4:1 | Y | N | N | N | OVS-kernel |
+| NV | 1:1 | Y | Y | Y | Y | OVS-kernel |
+| ND | 1:1 | Y | Y | Y | Y | OVS-DPDK |
+| NS | 1:1 | Y | Y | Y | Y | SR-IOV |
+
+<p align="center"><b>Table 4-2: Flavor Capabilities</b></p>
+
+**BIOS Settings**
+
+SMT, CPU Pinning, NUMA and Huge Pages are configured in the BIOS.
+
+Additionally, for OpenStack, we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Basic  | Network Intensive |
 |---------------|-----------|------------------|
 | Boot disks | RAID 1 | RAID 1 | 
-| CPU reservation for host (kernel) | 1 core per Numa | 1 core per Numa | 
-| CPU Pinning | No | Yes | 
-| <to be filled if needed> |  |  | 
-| … |  |  | <!--- | --->
 
 <!--- 
 Had to delete the Column for Compute intensive as commenting in table  didn't work 
@@ -210,6 +242,139 @@ When a VM instance is created the vCPUs are, by default, not assigned to a parti
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; openstack flavor set .xlarge --property hw:cpu_policy=dedicated
 
 While an instance with pinned CPUs cannot use CPUs of another pinned instance, this does not apply to unpinned instances; an unpinned instance can utilize the pinned CPUs of another instance. To prevent unpinned instances from disrupting pinned instances, the hosts with CPU pinning enabled are pooled in their own host aggregate and hosts with CPU pinning disabled are pooled in another non-overlapping host aggregate. 
+
+#### 4.2.2.9 Compute node configurations for Profiles and Flavors 
+
+This section specifies the compute node configurations to support the flavors. 
+
+**Cloud Infrastructure Hardware Profile**
+
+The Cloud Infrastructure Hardware (or simply “host”) profile and configuration parameters are utilised in the reference architecture to define different hardware profiles; these are used to configure the BIOS settings on a physical server. 
+
+A flavor (see RM Chapters 4 and 5) defines the characteristics (“capabilities”) of Virtual Machines (VMs or vServers) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between flavors and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Host profiles are immutable and hence when a configuration needs to be changed, a new host profile is created. 
+
+**CPU Allocation Ratio and CPU Pinning**
+
+Host profiles need to be created. for example, for each of the CPU Allocation Ratios specified for a flavor; this gives rise in the different flavor series. A given host (compute node) can only support a single CPU Allocation Ratio. Thus, to support the 2 Basic flavor types with CPU Allocation Ratios of 1.0 and 4.0 we will need to create 2 different host profiles and separate host aggregates for each of the host profiles. The CPU Allocation Ratio is set in the hypervisor on the host.
+
+When a CPU Allocation Ratio exceeds 1.0 then CPU Pinning also needs to be disabled. 
+
+
+**Server Configurations**
+
+The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result in different NIC port, LAG (Link Aggregation Group), and other configurations. Some of these are shown diagrammatically in the next section.
+
+**_Leaf and Compute Ports for Server Flavors must align_**
+
+Compute hosts have varying numbers of Ports/Bonds/LAGs/Trunks/VLANs connected with Leaf ports. Each Leaf port (in A/B pair) must be configured to align with the interfaces required for the compute flavor.
+
+Physical Connections/Cables are generally the same within a zone, regardless of these specific L2/L3/SR-IOV configurations for the compute
+
+**Compute Bond Port:**  TOR port maps vlans directly with IRBs on the TOR pair for tunnel packets and Control Plane Control and Storage packets.  These packets are then routed on the underlay network GRT. 
+
+Server Flavors:  B1, B4, NV, ND
+
+**Compute SR-IOV Port:**  TOR port maps vlans with bridge domains that extend to IRBs, using VXLAN VNI.  The TOR port associates each packet’s outer vlan tag with a bridge domain to support VNF interface adjacencies over the local EVPN/MAC bridge domain.  This model also applies to direct physical connections with transport elements. 
+
+Server Flavors:  NS
+
+**Notes on SR-IOV**
+
+SR-IOV at the Compute Server routes Guest traffic directly with a partitioned NIC card, bypassing the hypervisor and vSwitch software, which provides higher bps/pps throughput for the Guest VM.  OpenStack and MANO manage SR-IOV configurations for Tenant VM interfaces. 
+
+- Server, Linux, and NIC card hardware standards include SR-IOV and VF requirements
+- Network Intensive Flavors for SR-IOV (ns series) with specific NIC/Leaf port configurations 
+- OpenStack supports SR-IOV provisioning 
+- Implement Security Policy, Tap/Mirror, QoS, etc. functions in the NIC, Leaf, and other places 
+
+Because SR-IOV involves Guest VLANs between the Compute Server and the ToR/Leafs, Guest automation and VM placement necessarily involves the Leaf switches (e.g., access VLAN outer tag mapping with VXLAN EVPN).   
+
+- Local VXLAN tunneling over IP-switched fabric implemented between VTEPs on Leaf switches.  
+- Leaf configuration controlled by SDN-Fabric/Global Controller.
+- Underlay uses VXLAN-enabled switches for EVPN support
+
+SR-IOV-based networking for Tenant Use Cases is required where vSwitch-based networking throughput is inadequate.
+
+**Example Host Configurations**
+
+_Host configurations for B1, B4 Flavor Series_
+
+
+<p align="center"><img src="../figures/Figure_4_4_Basic_host_config.png" alt=" Basic Profile Host Configuration"><b> Figure 4-4: Basic Profile Host Configuration (example and simplified).</b></p>
+
+
+Let us refer to the data traffic networking configuration of Figure 4-4 to be part of the hp-B1-a and hp-B4-a host profiles and this requires the configurations as Table 4-3.
+
+| | Configured in | Host profile: hp-B1-a | Host profile: hp-B4-a |
+|----|----|----|----|
+| CPU Allocation Ratio | Hypervisor | 1:1 | 4:1 |
+| CPU Pinning | BIOS | Disable | Disable |
+| SMT  | BIOS | Enable | Enable |
+| NUMA | BIOS | Disable | Disable |
+| Huge Pages  | BIOS | No | No |
+| Flavor Series | | B1 | B4 |
+<p align="center"><b>Table 4-3: Configuration of Basic Flavor Capabilities</b></p>
+
+
+Figure 4-5 shows the networking configuration where the storage and OAM share networking but are independent of the PXE network.
+
+<p align="center"><img src="../figures/Figure_4_5_Basic_host_config_with_Storage_Network.png" alt=" Basic Profile Host Configuration with shared Storage and OAM networking"><b> Figure 4-5: Basic Profile Host Configuration with shared Storage and OAM networking (example and simplified).</b></p>
+
+Let us refer to the above networking set up to be part of the hp-B1-b and hp-B4-b host profiles but the basic configurations as specified in Table 4-3.
+
+In our example, the flavor series B1 and B4, are each mapped to two different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b respectively. Different network configurations, reservation of CPU cores, Lag values, etc. result in different host profiles.
+
+To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
+
+| GRUB bootloader Parameter |Description |Values |
+|----|----|----|
+| isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants | isolcpus=1-19, 21-39, 41-59, 61-79 |
+
+_Host configuration for nv Flavor Series_
+
+
+The above examples of host networking configurations for the B1 and B4 flavor series are also suitable for the nv flavor series; however, the hypervisor and BIOS settings will be different (see table below) and hence there will be a need for different host profiles. Table 4-4 gives examples of three different host profiles; one each for nv, nd and ns flavor series.
+
+|  | Configured in | Host profile: hp-nv-a | Host profile: hp-nd-a | Host profile: hp-ns-a |
+|----|----|----|----|----|
+| CPU Allocation Ratio | Hypervisor | 1:1 | 1:1 | 1:1 |
+| CPU Pinning | BIOS | Enable | Enable | Enable |
+| SMT  | BIOS | Enable | Enable | Enable |
+| NUMA | BIOS | Enable | Enable | Enable |
+| Huge Pages  | BIOS | Yes | Yes | Yes |
+| Flavor Series | nv | nd | ns |
+<p align="center"><b>Table 4-4: Configuration of Network Intensive Flavor Capabilities</b></p>
+
+_Host Networking configuration for nd Flavor Series_
+
+An example of the data traffic configuration for the nd (OVS-DPDK) flavor series is shown in Figure 4-6. 
+
+<p align="center"><img src="../figures/Figure_4_6_Network_Intensive_DPDK.png" alt="Network Intensive Profile Host Configuration with DPDK acceleration "><b> Figure 4-6: Network Intensive Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
+
+To ensure Tenant and DPDK CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
+
+| GRUB bootloader Parameter |Description |Values |
+|----|----|----|
+| isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants and DPDK | isolcpus=3-19, 23-39, 43-59, 63-79 |
+
+_Host Networking configuration for ns Flavor Series_
+
+An example of the data traffic configuration for the ns (SR-IOV) flavor series is shown in Figure 4-7.
+
+<p align="center"><img src="../figures/Figure_4_7_Network_Intensive_SRIOV.png" alt=" Network Intensive Profile Host Configuration with SR-IOV "><b> Figure 4-7: Network Intensive Profile Host Configuration with SR-IOV (example and simplified).</b></p>
+
+To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
+
+| GRUB bootloader Parameter |Description |Values |
+|----|----|----|
+| isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants | isolcpus=1-19, 21-39, 41-59, 61-79 |
+
+**Using Hosts of a Host Profile type**
+
+As we have seen a flavor series is supported by configuring hosts in accordance with the flavor series specifications. For example, an instance of flavor type B1 can be hosted on a compute node that is configured as an hp-B1-a or hp-B1-b host profile. All compute nodes configured with hp-B1-a or hp-B1-b host profile are made part of a host aggregate, say, ha-B1 and thus during VM instantiation of B1 flavor hosts from the ha-B1 host aggregate will be selected.
+
+
+
 
 <a name="4.2.3"></a>
 ### 4.2.3. Network Fabric
