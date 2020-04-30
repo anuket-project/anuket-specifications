@@ -141,6 +141,7 @@ System should be implemented to allow installation of the latest patches to addr
 | High | 60 days |
 | Medium | 90 days |
 | Low | 180 days |
+*See [Common Vulnerability Scoring System] (https://nvd.nist.gov/vuln-metrics/cvss)
 	
 #### 6.3.2.4 Network Protocols
 - Only allow protocols that are required by the system functions
@@ -157,7 +158,7 @@ System should be implemented to allow installation of the latest patches to addr
 - Install and run firewall software where applicable
 
 #### 6.3.2.7 Vulnerability Detection and Prevention
-- Implement DoS (Denial of Service) projection where applicable
+- Implement DoS (Denial of Service) protection where applicable
 - Ensure logging and alerting is actively running
 - Run host-based scanning and fix all findings per vulnerability severity 
 - Run network-based scanning and fix all findings per vulnerability severity
