@@ -112,7 +112,7 @@ The CNTT is collaboratively working with other standard bodies and open source c
 - ONAP
 - CNCF
 - ETSI NFV ISG
-- TIP
+- Telecom Infra Project (TIP)
 
 <a name="6.4.1"></a>
 ### 6.4.1 Dependencies with OPNFV and OVP
