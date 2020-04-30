@@ -47,7 +47,8 @@ According to CNCF TOC (Technical Oversight Committee), following is the definiti
 
 >The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendor-neutral projects. We democratize state-of-the-art patterns to make these innovations accessible for everyone”
 
-The CNCF TUG (Telecom User Group) is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://github.com/vulk/cloud-native-principles/blob/master/cloud-native-principles.md). There are many similarities, but the key principles from both, which are applicable to this document, are:
+
+The CNCF TUG (Telecom User Group) is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://networking.cloud-native-principles.org/cloud-native-principles). There are many similarities, but the key principles from both, which are applicable to this document, are:
 
 - **scalable**
 - **dynamic environments**
