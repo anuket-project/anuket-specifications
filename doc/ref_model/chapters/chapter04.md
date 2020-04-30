@@ -235,13 +235,15 @@ Table 4-9 shows capabilities related to resources allocation
 
 <a name="Table4-12"></a>
 
-| Ref       | Cloud Infrastructure management Capability | Unit   | Definition/Notes                                                 |
-|-----------|--------------------------------------------|--------|------------------------------------------------------------------|
-| e.man.001 | Virtual Compute allocation                 | Yes/No | Capability to allocate virtual compute resources to a workload   |
-| e.man.002 | Virtual Storage allocation                 | Yes/No | Capability to allocate virtual storage resources to a workload    |
-| e.man.003 | Virtual Networking resources allocation    | Yes/No | Capability to allocate virtual networking resources to a workload |
-| e.man.004 | Multi-tenant isolation                     | Yes/No | Capability to isolate resources between tenants                  |
-| e.man.005 | Images management                          | Yes/No | Capability to manage workload software images                    |
+| Ref       | Cloud Infrastructure management Capability | Unit            | Definition/Notes                                                 |
+|-----------|--------------------------------------------|-----------------|------------------------------------------------------------------|
+| e.man.001 | Virtual Compute allocation                 | Yes/No          | Capability to allocate virtual compute resources to a workload   |
+| e.man.002 | Virtual Storage allocation                 | Yes/No          | Capability to allocate virtual storage resources to a workload    |
+| e.man.003 | Virtual Networking resources allocation    | Yes/No          | Capability to allocate virtual networking resources to a workload |
+| e.man.004 | Multi-tenant isolation                     | Yes/No          | Capability to isolate resources between tenants                  |
+| e.man.005 | Images management                          | Yes/No          | Capability to manage workload software images                    |
+| e.man.010 | Compute Availability Zones                 | list of strings | The names of each Compute Availability Zone that was defined to separate failure domains |
+| e.man.011 | Storage Availability Zones                 | list of strings | The names of each Storage Availability Zone that was defined to separate failure domains |
 
 <p align="center"><b>Table 4-9:</b> Cloud Infrastructure management Resource Allocation Capabilities</p>
 
