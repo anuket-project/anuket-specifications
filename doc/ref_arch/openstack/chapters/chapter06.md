@@ -122,7 +122,7 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 
 <a name="6.3.2"></a>
 ### 6.3.2 System Hardening
-All infrastructure should undergo hardening and have the hardening should consider at a minimal the following:
+All infrastructure should undergo system hardening, establishes processes to govern the hardening, and documents to cover at a minimal for the following areas:
 
 #### 6.3.2.1 Function
 Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
