@@ -204,11 +204,11 @@ Operators typically do not implement Security Groups when ussing SR-IOV or DPDK 
 
 <a name="6.3.6"></a>
 ### 6.3.6 Security LCM
-Cloud Infrastructure LCM encompasses provisioning, deployment, configuration and management (resources scaling, services upgrades…) as described in chapter 7. These operations must be securely performed in order to keep the infrastructure safe and operational.
+Cloud Infrastructure LCM encompasses provisioning, deployment, configuration and management (resources scaling, services upgrades…) as described in [chapter 7](./chapter07.md). These operations must be securely performed in order to keep the infrastructure safe and operational.
 
 **Provisioning/Deployment**
 
-Regarding the provisioning of servers, switches, routers and networking, tools must be used to automate the provisioning eliminating human error. For Infrastructure hardware resources, a set of recommendations is detailed in 7.2.1 to automate and secure their provisioning.
+Regarding the provisioning of servers, switches, routers and networking, tools must be used to automate the provisioning eliminating human error. For Infrastructure hardware resources, a set of recommendations is detailed in [7.2.1](./chapter07.md#7.2.1) to automate and secure their provisioning.
 
 For OpenStack services and software components, deployment tools or components must be used to automate the deployment and avoid errors.  The deployment tool is a sensitive component storing critical information (deployment scripts, credentials…). 
 The following rules must be applied:
@@ -222,7 +222,7 @@ Strict access permissions must be set on OpenStack configuration files.
 
 **Configuration and management**
 
-Configuration operations must be traced. Events such as system access attempt, actions with high privileges, modification of configuration must be logged and export on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification.
+Configuration operations must be traced. Events such as system access attempts, actions with high privileges, modification of configuration must be logged and export on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification.
 
 Per sec.LCM.002 requirement, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
 
