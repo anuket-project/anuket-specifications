@@ -310,7 +310,12 @@ Most cloud storage architectures incorporate a number of clustered storage nodes
 <a name="3.5"></a>
 ## 3.5. Cloud Topology
 
-Please note: This section focuses on central DC based cloud deployments, Edge is currently out of scope.
+A telco cloud will typically be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or looking at this in the context of OpenStack, multiple clouds (i.e. OpenStack end-points) will be deployed and they all contain isolated resources that do not rely on each other, by design. The application layer must span such end-points in order to provide the required service SLA.  Irrespective of the nature of the deployment characteristics (e.g. number of racks, number of hosts, etc.), the intent of the architecture would be to allow VNFs to be deployed in these sites without major changes.  
+
+Some examples of such topologies include:
+- Large data center capable of hosting potentially thousands of servers and the networking to support them
+- Mini data center (such as a central office) capable of hosting up to a hundred servers
+- Edge (not customer premise) capable of hosting ten to fifty servers
 
 In order to provide the expected availability for any given service, a number of different OpenStack deployment topologies can be considered.  This section explores the main options and highlights the characteristics of each.  Ultimately the decision rests with the operator to achieve specific availability target taking into account use case, data centre capabilities, economics and risks.
 
@@ -319,36 +324,36 @@ Availability of any single OpenStack cloud is dependent on a number of factors i
 -	resilient network fabric – ToR (leaf), spine, overlay networking, underlay networking etc.   It is assumed that all network components are designed to be fault tolerant and all OpenStack controllers, computes and storage are dual-homed to alternate leaf switches.
 -	controller nodes setup in-line with the vendor recommendation (e.g. min 3 physical nodes)
 -	network nodes (where applicable) 
--	storage nodes setup in line with the vendor recommendation
--	compute nodes – enough to handle the workload after local failure scenario
+- backend storage nodes setup for highly availablility based on quorum (aligned with vendor implementation)
+-	compute nodes sized to handle the entire workload following local failure scenario
 
 <a name="3.5.1"></a>
 ### 3.5.1. Topology Overview
 
-Notes:
+Assumptions and conventions:
 - Region is represented by a single OpenStack control plane.
 - Resource Failure Domain is effectively the “blast radius” of any major infrastructure failure such as loss of PDU or network leafs.
-- Control planes includes redundant network nodes where OVS-kernel is used.
-- Controller nodes are typically a minimum of 3.
+- Control plane includes redundant network nodes where OVS-kernel is used.
+- Controller nodes should be setup for high availability based on quorum (aligned with vendor implementation).
 - Shared storage is optional but it is important to ensure shared assets are distributed across serving clouds such as boot images.
 
 | Topology Ref| Type| Control Planes| Shared Storage (optional)| Compute AZs| Achievable Service Availability %| Service Multi-region awareness| Notes |
 |----------|-----|-----------------|---------------|-----------|---------|--------------|-------------|
 | 1 | Local Redundancy - workload spread across servers | 1 | 1 | 1 | Variable | Not required | Suitable where only limited local application availability is required e.g. nova anti-affinity |
 | 2 | Regional Redundancy - workload spread across AZs | 1 | >=2 | >=2 | >99.n | Not required | Suitable where local application HA is required. Control plane should be distributed across DC failure domains (assuming layer 2 connectivity) but may be unavailable during upgrades |
-| 3 | Global Redundancy - workload spread across multiple Regions | >=2 | >=2 | >=2 | >99.nn | Required e.g. GSLB | Suitable where local and region application HA is required Control plane could be kept available in one site during upgrades |
+| 3 | Global Redundancy - workload spread across multiple Regions | >=2 | >=2 | >=2 | >99.nn | Required | Suitable where local and region application HA is required Control plane could be kept available in one site during upgrades |
 
 <a name="3.5.2"></a>
 ### 3.5.2. Topology Detail 
 
 #### 3.5.2.1. Topology 1	- Local Redundancy
 
-Under normal operation this deployment can handle a single failure of a controller node or storage node without any impact to the service.   If a compute node fails the application layer (often the VNFm) would need to restart workloads on a spare compute node of similar capability i.e. cloud may need to be provided with n+1 capacity.  In the case of an active/active application deployed to separate compute nodes (with hypervisor anti-affinity) then there would be no service impact.  
+Under normal operation this deployment can handle a single failure of a controller node or storage node without any impact to the service.   If a compute node fails the application layer (often the VNFM) would need to restart workloads on a spare compute node of similar capability i.e. cloud may need to be provided with n+1 capacity.  In the case of an active/active application deployed to separate compute nodes (with hypervisor anti-affinity) there would be no service impact.  
 
 *Important to consider:*
 
 -	Where possible servers should be distributed and cabled to reduce the impact of any failure e.g. PDU, rack failure.   Because each operator has individual site constraints this document will not propose a standard rack layout.
--	During maintenance of the control plane the API may not be available and for some applications this could cause problems when relying on it during BAU application operation and additionally if the upgrade involves updating OpenStack services on the compute nodes.  OVS-kernel operations may also be impacted during this time.
+-	During maintenance of the control plane, whilst the data (forwarding) plane remains unaffected, the control plane API may not be available and some applications may be relying on it during normal application operation for example for scaling. Additionally if the upgrade involves updating OpenStack services on the compute nodes care needs to be taken.  OVS-kernel networking operations may also be impacted during this time.
 -	During maintenance of storage (e.g. ceph) there is an increased risk of a service-impacting failure so it is generally recommended to deploy at least one more server than the minimum required for redundancy.
 
 #### 3.5.2.2. Topology 2	- Regional Redundancy
