@@ -43,7 +43,7 @@ A Bundle is: A set of related specifications that are built to complement each o
 
 <a name="version"></a>
 A Version:
-* Each document has a version number attached to it that consist of **Bundle.Sequence**:
+* Each document has a version number attached to it that consists of **Bundle.Sequence**:
   * **Bundle**: specifies the bundle number of which the the document belongs to.
   * **Sequence**: specifies the sequential version of each document (improvement or enhancements).
 * Any Change in RM that will impact RAs and consequently RC and RI will triggers a new Bundle number.
@@ -58,7 +58,7 @@ A Version:
 
 <a name="6.2.2"></a>
 ### 6.2.2 Detailed Roadmap
-Please refer to individual [release plan](./release_notes/) and features for detailed roadmap.
+Please refer to individual [release plans](./release_notes/) and features for detailed roadmap.
 
 <a name="6.2.3"></a>
 ### 6.2.3 Detailed Milestones
@@ -106,12 +106,13 @@ Each track follows the industry driven standards in the Reference Model as depic
 <a name="6.4"></a>
 ## 6.4 Dependencies with Industry Communities
 
-The CNTT is collaboratively working with other standard bodies within the Open Source industry. Some of the projects are 
+The CNTT is collaboratively working with other standard bodies and open source communities such as: 
 - OpenStack
 - OPNFV
 - ONAP
 - CNCF
 - ETSI NFV ISG
+- TIP
 
 <a name="6.4.1"></a>
 ### 6.4.1 Dependencies with OPNFV and OVP
