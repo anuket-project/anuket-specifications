@@ -21,7 +21,7 @@ The committee may agree by unanimous agreement to adjust the OpenStack Release S
 ## 1.3 OpenStack Release Selection Criteria
 The OpenStack Release Selection Committee shall utilize the following criteria, and any other criteria that it unanimously agrees to, in selecting the next CNTT OpenStack baseline release:
 -	The latest OpenStack release that was released approximately 6 months ago
-    - The Committee may agree to relax or extend the 6 months period based on it knowledge of OpenStack releases
+    - The Committee may agree to relax or extend the 6 months period based on its knowledge of OpenStack releases
 -	The OpenStack release should be supported by the OPNFV Installer (Airship)
 -	Backward Compatibility: ensure API support
 -	Consider OpenStack Distribution vendors and their extended support versions
