@@ -170,7 +170,7 @@ satisfy the following requirements as entry pass:
   * Design, Configuration, Features, SLAs, and Capability documentation
     complete
   * Users stories / Adherence to CNTT Model principles and guidelines
-  * Chosen Reference Architecture Matches the Architecture from the
+  * Chosen Reference Architecture matches the Architecture from the
     product catalog
 * Environment
   * Lab assets/resources and respective software revision levels are specified,
