@@ -170,8 +170,8 @@ By trying to sort workloads into different categories based on the requirements 
 # 2.3 Cloud Infrastructure Profiles
 
 Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
-- **Basic**: for VNFCs that can tolerate resource over-subscription and variable latency.
-- **Network Intensive**: for VNFCs that require predictable computing performance, high network throughput and low network latency.
+- **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
+- **Network Intensive**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
@@ -180,7 +180,7 @@ On **Chapter 4** later in the document, these infrastructure profiles will be of
 
 >***Note**  
 >This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
->- **Compute Intensive**: for VNFCs that require predictable computing performance and low network latency.
->- ***Storage Intensive**: for VNFCs that require low storage latency and/or high storage IOPS.*
->- ***Enhanced Compute Intensive**: for compute intensive VNFCs that require higher computing performance and/or specific compute resource (e.g., GPU).*
->- ***Enhanced Network Intensive**: for network intensive VNFCs that require higher network performance and/or specific network resource (e.g., crypto acceleration).*
+>- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
+>- ***Storage Intensive**: for Workloads that require low storage latency and/or high storage IOPS.*
+>- ***Enhanced Compute Intensive**: for compute intensive Workloads that require higher computing performance and/or specific compute resource (e.g., GPU).*
+>- ***Enhanced Network Intensive**: for network intensive Workloads that require higher network performance and/or specific network resource (e.g., crypto acceleration).*

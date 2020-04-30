@@ -21,7 +21,34 @@ The goal is not to be prescriptive on how to re-architect existing or architect 
 
 <a name="A.2"></a>
 ## A.2 Intro and Terminology
-(Summary status and trends of ETSI NFV and Cloud. Decoupling application from platform. Terminology used/introduced.)
+
+Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
+
+**1. Infrastructure**:
+- a. Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond RA exposed APIs. Generally, such an application is tightly coupled with the infrastructure which results in an Appliance deployment model.
+- b. Application control using RA APIs finds node (already configured in support of the profiles) with required infrastructure component(s), and in that node using RA APIs configures infrastructure components that make application work. Example is application that to achieve latency requirements needs certain acceleration adapter available in RM profile and is exposed through RA APIs.
+- c. Application control using RA APIs finds node (already configured in support of the profiles) with optional infrastructure component(s), and in that node using RA APIs configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is application that would have better TCO with certain acceleration adapter but can also work without it.
+- d. Application control using RA APIs finds general profile node without any specific infrastructure component.
+
+**2. Platform Services**
+- a. Application functionality or application control can work only with its own components instead of using RA-defined Platform Services.
+- b. With custom integration effort, application can be made to use RA-defined Platform Services.
+- c. Application is designed and can be configured for running with RA-defined Platform Services.
+
+**3. Application Resiliency**
+- a. Application was designed and tested to run only on Carrier Grade platform with predictable infrastructure availability and performance.
+- b. Application was designed and tested for full failures of infrastructure HW and SW components, but not for infrastructure impairment as the Application still needs predictable infrastructure performance (like CPU cycles and network latencies).
+- c. Application was designed to run on shared Cloud platforms and tested for resilience to infrastructure impairments.
+
+Relevant for sizing infrastructure and application operations (which often is another telco organizational unit or external 3rd party) is also how much is application decomposed from:
+
+**4. Other application functionality** (decomposition and manageability for scaling, availability and upgrades):
+- a. Application consists of huge monolithic components including algorithms that have different scaling (for example depending on type of traffic) and/or availability requirements.
+- b. Application consists of smaller tightly coupled components.
+- c. Decomposed application with loosely- or decoupled components.
+- d. Availability like N+K or 1+1 is defined during application design and not configurable at deployment time.
+- e. Mutable or immutable instances of application components.
+
 
 <a name="A.3"></a>
 ## A.3 Exception List
