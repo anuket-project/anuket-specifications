@@ -52,21 +52,21 @@ The document starts from the abstract and as it progresses it increasingly gets 
 - **Chapter 03 - Modelling**:  The high-level cloud infrastructure model itself.  
   >	**Audience**: This chapter is written for architects and others who wants to gain a quick high-level understanding of the model.
 - **Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue**:  Details about the capabilities needed to support the various types of workloads and how the capabilities are applied to the model. The details regarding T-shirt sizes and other considerations are found in this section.
-  >	**Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write applications.
+  >	**Audience**: This chapter is written for architects, developers and others who need to develop and deploy infrastructure or write applications.
 - **Chapter 05 - Featureset and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the cloud infrastructure.  It describes the software and hardware capabilities and configurations recommended for the different types of cloud infrastructure profiles.
-  > **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write workload applications.
-- **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communication with the workloads themselves and any other external components.
-  >	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or write workload applications that use the APIs.
+  > **Audience**: This chapter is written for architects, developers and others who need to develop and deploy infrastructure or write applications.
+- **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communicate with the workloads and any other external components.
+  >	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or write applications that use the APIs.
 - **Chapter 07 - Security Guidelines**:  This chapter identifies the security components that need to be taken into consideration when designing and implementing a cloud infrastructure environment.  It does not cover details related to company specific requirements to meet regulatory requirements.
   > **Audience**: This chapter is written for security professional, architects, developers and others who need to understand the role of security in the cloud infrastructure environment.
 - **Chapter 08 - Conformance, Verification, and Certification**: This chapter details the requirements for developing test suites for a verification and validation program for developers and vendors to validate that their software and applications meet the requirements for the cloud infrastructure architectures.
-  >	**Audience**: This chapter is written for QA testers, developers and others who need to develop infrastructure or write workload applications.
+  >	**Audience**: This chapter is written for QA testers, developers and others who need to develop and deploy infrastructure or write applications.
 - **Chapter 09 - Life Cycle Management**: This chapter focuses on the operational aspects of the cloud infrastructure.  Discussions include deployment considerations, on-going management, upgrades and other lifecycle concerns and requirements.  It does not cover details related to company specific operational requirements, nor does it go into how the cloud infrastructure will interface with existing BSS/OSS systems.
-  > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the workload applications.
+  > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the applications.
 - **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
   > **Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Appendix A - Guidelines For VNF Vendors**: More details related to how the workload applications will interface with the cloud infrastructure through APIs (including Cloud Infrastructure Manager and CaaS).
-  > **Audience**: This chapter is written for architects, developers and others who need to develop infrastructure or write workload applications.
+- **Appendix A - Guidelines For Application Vendors**: More details related to how the applications will interface with the cloud infrastructure through APIs (including Cloud Infrastructure Manager and CaaS).
+  > **Audience**: This chapter is written for architects, developers and others who need to develop and deploy infrastructure or write applications.
 
 <!--Separate document w/labels/artefacts
 Not part of model but will be applicable to architecture -->
