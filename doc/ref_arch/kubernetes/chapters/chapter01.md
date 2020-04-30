@@ -43,25 +43,24 @@ According to CNCF TOC (Technical Oversight Committee), following is the definiti
 
 >“Cloud native technologies empower organizations to build and run **scalable** applications in modern, **dynamic environments** such as public, private, and hybrid clouds. Containers, **service meshes**, **microservices**, **immutable infrastructure**, and **declarative APIs** exemplify this approach.
 
->These techniques enable **loosely coupled** systems that are **resilient**, **manageable**, and **observable**. Combined with **robust automation**, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
+>These techniques enable **loosely coupled** systems that are **resilient**, **manageable**, and **observable**. Combined with **robust automation**, they allow engineers to make **high-impact changes frequently and predictably** with minimal toil.
 
 >The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendor-neutral projects. We democratize state-of-the-art patterns to make these innovations accessible for everyone”
 
-The definition above is very application centric and look at cloud native from the application point of view, in here, we will try and relate those definitions to the infrastructure on which cloud native applications run. For the purposes of this document, a Cloud Native Network Function (CNF) is a type of cloud native application.
+The CNCF TUG (Telecom User Group) is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://github.com/vulk/cloud-native-principles/blob/master/cloud-native-principles.md). There are many similarities, but the key principles from both, which are applicable to this document, are:
 
-- **scalable**:
-- **dynamic environments**:
-- **service meshes**:
-- **microservices**:
-- **immutable infrastructure**:
-- **declarative APIs**:
-- **loosely coupled**:
-- **resilient**:
-- **manageable**:
-- **observable**:
-- **robust automation**:
-
-> The CNCF TUG is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://github.com/vulk/cloud-native-principles/blob/master/cloud-native-principles.md).  Many of the principles above are taken from this document.
+- **scalable**
+- **dynamic environments**
+- **service meshes**
+- **microservices**
+- **immutable infrastructure**
+- **declarative APIs**
+- **loosely coupled**
+- **resilient**
+- **manageable**
+- **observable**
+- **robust automation**
+- **high-impact changes frequently and predictably**
 
 <a name="1.4"></a>
 ## 1.4 Scope
@@ -97,4 +96,3 @@ As Kubernetes evolves over time it will add new technologies and capabilities an
 
 
 > A populated roadmap view will be added here after the January 2020 release.
-
