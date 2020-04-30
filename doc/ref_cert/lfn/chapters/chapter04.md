@@ -94,21 +94,21 @@ Functest Smoke (see
 [Functest daily jobs](https://build.opnfv.org/ci/job/functest-hunter-daily/392/)
 for more details):
 
-| Testcases                  | Gates              |
-| :------------------------- | :----------------- |
-| neutron-tempest-plugin-api | Neutron            |
-| tempest_cinder             | Cinder             |
-| tempest_keystone           | Keystone           |
-| rally_sanity               | General            |
-| refstack_defcore           | General            |
-| tempest_full               | General            |
-| tempest_slow               | General            |
-| tempest_scenario           | General            |
-| neutron_trunk              | Neutron            |
-| patrole                    | Patrole            |
-| barbican                   | Barbican           |
-| networking-bgpvpn          | Networking BGP VPN |
-| networking-sfc             | Networking SFC     |
+| Testcases         | Gates              |
+| :-----------------| :----------------- |
+| tempest_neutron   | Neutron            |
+| tempest_cinder    | Cinder             |
+| tempest_keystone  | Keystone           |
+| rally_sanity      | General            |
+| refstack_defcore  | General            |
+| tempest_full      | General            |
+| tempest_slow      | General            |
+| tempest_scenario  | General            |
+| neutron_trunk     | Neutron            |
+| patrole           | Patrole            |
+| barbican          | Barbican           |
+| networking-bgpvpn | Networking BGP VPN |
+| networking-sfc    | Networking SFC     |
 
 To complete functional testing, Functest also integrates a few
 [performance tools](https://docs.openstack.org/developer/performance-docs/methodologies/tools.html)

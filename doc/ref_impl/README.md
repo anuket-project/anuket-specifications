@@ -6,4 +6,4 @@
 
 ## Available Reference Implementations
 * [RI1 - OpenStack Based](cntt-ri)
-* [RI2 - K8s Based](cntt-ri2)
+* [RI2 - Kubernetes Based](cntt-ri2)

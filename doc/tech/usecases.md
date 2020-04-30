@@ -12,7 +12,10 @@
 <a name="5.1"></a>
 ## 5.1 Edge
 
-3-Approach & Scope  : 
+1.	Executive Summary
+2.	Objective 
+
+3. Approach & Scope 
 
 Edge Approach:
 -	 All gaps under Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02 - K8s will be identified and Edge requirements will be fulfilled  under Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02 - K8s  
@@ -32,5 +35,9 @@ Out of Scope
 -	The Architecture of VNF/CNF ( CNTT Guideline only )
 -	Exact location of Edge deployment will vary by Operator 
 -	latency may be vary based on operator transmission type (Microwave,Fixed),a well Transmission network reachability and architecture (Backhaul,front haul, Mid haul)
--	Onboarding of VNF/CNF on edges cloud infrastructure 
+-	Onboarding of VNF/CNF on edges cloud infrastructure.
 
+4.	Principle
+5.	Use cases 
+6.	Terminologies 
+7.	SDO interlocking 
