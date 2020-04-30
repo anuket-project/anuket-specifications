@@ -32,11 +32,7 @@ For the terminology refer to the [glossary](https://github.com/cntt-n/CNTT/blob/
 <a name="1.3"></a>
 ## 1.3 Principles
 
-Kubernetes Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
-- [CNTT Reference Architecture Principles](../../#principles)
-
->Any Kubernetes specific principles needs to be added here.
+This Reference Architecture conform with the principles defined in [here](../../tech#2.0).
 
 <a name="1.3.1"></a>
 ### 1.3.1 Cloud Native Principles
@@ -50,6 +46,7 @@ According to CNCF TOC (Technical Oversight Committee), following is the definiti
 >These techniques enable **loosely coupled** systems that are **resilient**, **manageable**, and **observable**. Combined with **robust automation**, they allow engineers to make **high-impact changes frequently and predictably** with minimal toil.
 
 >The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendor-neutral projects. We democratize state-of-the-art patterns to make these innovations accessible for everyone”
+
 
 The CNCF TUG (Telecom User Group) is also working on a set of Cloud Native Principles at more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://networking.cloud-native-principles.org/cloud-native-principles). There are many similarities, but the key principles from both, which are applicable to this document, are:
 

@@ -3,14 +3,15 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="bogo" title="Bogo Meter" width="35%"/></p>
 
 ## Table of Contents
-* [3.1 Model.](#3.1)
-* [3.2 Virtual Resources.](#3.2)
-  * [3.2.1 Tenant.](#3.2.1)
-  * [3.2.2 Compute.](#3.2.2)
-  * [3.2.3 Storage.](#3.2.3)
-  * [3.2.4 Network.](#3.2.4)
-* [3.3 NFVI Management Software.](#3.3)
-* [3.4 Physical Resources.](#3.4)
+* [3.1 Model](#3.1)
+* [3.2 Virtual Resources](#3.2)
+  * [3.2.1 Tenant](#3.2.1)
+  * [3.2.2 Compute](#3.2.2)
+  * [3.2.3 Storage](#3.2.3)
+  * [3.2.4 Network](#3.2.4)
+  * [3.2.5 Availability Zone](#3.2.5)
+* [3.3 NFVI Management Software](#3.3)
+* [3.4 Physical Resources](#3.4)
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of the workloads match the capabilities of the NFVI.
 
@@ -78,7 +79,7 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 | `networks` | description of external networks required for inter-domain connectivity                                 |
 | `metadata` | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 
-<p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
+<p align="center"><b>Table 3-1:</b> Attributes of a tenant</p>
 
 <a name="3.2.2"></a>
 ### 3.2.2 Compute
@@ -96,7 +97,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology      |
 | `metadata`     | key/value pairs for selection of the appropriate redundancy domain            |
 
-<p align="center"><b>Table 3-2:</b> Attributes of compute resources.</p>
+<p align="center"><b>Table 3-2:</b> Attributes of compute resources</p>
 
 <a name="3.2.3"></a>
 ### 3.2.3 Storage
@@ -112,7 +113,7 @@ _**Example**: an OpenStack cinder volume._
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 | `metadata`     | key/value pairs for selection of the appropriate redundancy domain       |
 
-<p align="center"><b>Table 3-3:</b> Attributes of storage resources.</p>
+<p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
 _**Comments**: we need to be more specific regarding acceleration and metadata._
 
@@ -128,12 +129,25 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 | `subnet`       | network address of the subnet                                            |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 
-<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
+<p align="center"><b>Table 3-4:</b> Attributes of network resources</p>
+
+<a name="3.2.5"></a>
+### 3.2.5 Availability Zone
+An Availability Zone is a logical pool of physical resources (e.g. compute, block storage, network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
+
+As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
+
+| Attribute | Description |
+| --- | --- |
+| `name` | name of the availability zone |
+|
+<p align="center"><b>Table 3-4:</b> Attributes of availability zones</p>
+
 
 <a name="3.3"></a>
 ## 3.3 NFVI Management Software
 
-Network Function Virtualisation Infrastructure provides the capability to manage virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
+Network Function Virtualisation Infrastructure provides the capability to manage physical and virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
@@ -161,7 +175,7 @@ Network Function Virtualisation Infrastructure provides the capability to manage
 :  monitors and collects information on all events and the current state of all physical and virtual resources
 
 **Additional Management Functions**
-: include identity management, policy management (e.g. to enforce security policies), etc.
+: include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 **Compute Resources Manager**
 : provides a mechanism to provision virtual resources with the help of physical compute resources
