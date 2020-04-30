@@ -11,15 +11,12 @@
 <a name="5.1.1"></a>
 ### 5.1.1 Executive Summary:
 
-Edge computing, a disruptive technology, should be considered for adoption by Digital Service Providers (DSP) as it is tightly linked with a number of use cases that monetize 5G. Thus, operators, cloud service providers, content providers and application developers are increasingly focussed on Edge computing.
+Edge computing, a disruptive technology, that should be considered for adoption by Digital Service Providers (DSP) as it is tightly linked with a number of use cases that monetize 5G. Thus, operators, cloud service providers, content providers and application developers are increasingly focussed on Edge computing.
 
 Edge is considered as one of the main enablers to 5G use cases adoption. There are a number of 5G challenges that Edge will support solve so as to implement the 5G requirements defined by "ITU-2020 for 5G." Edge is required to support enhanced mobile broadband (eMBB), massive machine-type communications (mMTCs) and ultra-reliable low-latency communications (uRLLCs).
 
-
-In term of monetization Edge will help Digital Service provider (DSP) to start have Return of investment (ROI) of Cloud as there are 
+In term of monetization ,  Edge will help Digital Service provider (DSP) to start have Return of investment (ROI) of Cloud as there are 
 alot of use cases can be developed at the Edge as Cloud Gamming , AR/VR , 5G private networks ,vRAN ,...etc
-
-
 
 
 <a name="5.1.2"></a>
