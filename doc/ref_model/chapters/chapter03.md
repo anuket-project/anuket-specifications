@@ -179,3 +179,11 @@ The physical compute, storage and network resources serve as the foundation of t
 
 <p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> NFVI Physical Resources</p>
+
+<a name="3.5"></a>
+## 3.4 Network
+Networking, alongside Compute and Storage, is an integral part of the Cloud Infrastructure (Network Function Virtualisation Infrastructure). The general function of networking in this context is to provide the connectivity between various virtual and physical resources required for a delivery of a network service. Such connectivity may manifest itself as a virtualised network between VMs and/or containers (e.g. overlay networks managed by SDN controllers, and/or programmable networking fabrics) or as an integration into the infrastructure hardware level for offloading some of the network service functionality.
+
+Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture stack is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual reosurces (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Fig. 3-1. The importance of understanding the seperation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it the cardinality of having multiple CaaS and IaaS virtual resources on top of a shared HW Infrastructure Layer cannot be expressed. 
+
+
