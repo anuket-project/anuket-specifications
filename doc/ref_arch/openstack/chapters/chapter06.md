@@ -122,6 +122,47 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 
 <a name="6.3.2"></a>
 ### 6.3.2 System Hardening
+All infrastructure should undergo system hardening, establishes processes to govern the hardening, and documents to cover at a minimal for the following areas:
+
+#### 6.3.2.1 Function
+Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
+
+#### 6.3.2.2 Software
+- Install only software which is required to support the functions
+- Remove any unnecessary software or packages
+- Where software cannot be removed, disable all service to it
+
+#### 6.3.2.3 Patches
+System should be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery:
+| Severity | Time to Remediate |
+| ----------- | ----------- |
+| Zero-Day | Immediately or as soon as practically possible |
+| Critical | 30 days |
+| High | 60 days |
+| Medium | 90 days |
+| Low | 180 days |
+*See [Common Vulnerability Scoring System] (https://nvd.nist.gov/vuln-metrics/cvss)
+	
+#### 6.3.2.4 Network Protocols
+- Only allow protocols that are required by the system functions
+- Tighten all required TCP/IP (Transmission Control Protocol/Internet Protocol) services
+
+#### 6.3.2.5 System Access
+- Remove, or at a minimal, disable all unnecessary user accounts 
+- Change all default user accounts where technically feasible
+- Change all default credentials
+- Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+
+#### 6.3.2.6 Anti-Virus and Firewall
+- Install and run your Enterprise approved anti-virus software / intrusion protection / malware / spyware endpoint security software with up to date profiles, minimal refresh daily
+- Install and run firewall software where applicable
+
+#### 6.3.2.7 Vulnerability Detection and Prevention
+- Implement DoS (Denial of Service) protection where applicable
+- Ensure logging and alerting is actively running
+- Run host-based scanning and fix all findings per vulnerability severity 
+- Run network-based scanning and fix all findings per vulnerability severity
+
 
 <a name="6.3.3"></a>
 ### 6.3.3 Confidentiality and Integrity
