@@ -8,8 +8,7 @@
   * [3.2.1 Tenant](#3.2.1)
   * [3.2.2 Compute](#3.2.2)
   * [3.2.3 Storage](#3.2.3)
-  * [3.2.4 Network](#3.2.4)
-  * [3.2.5 Availability Zone](#3.2.5)
+  * [3.2.4 Availability Zone](#3.2.4)
 * [3.3 NFVI Management Software](#3.3)
 * [3.4 Physical Resources](#3.4)
 
@@ -117,22 +116,9 @@ _**Example**: an OpenStack cinder volume._
 
 _**Comments**: we need to be more specific regarding acceleration and metadata._
 
+
 <a name="3.2.4"></a>
-### 3.2.4 Network
-A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context.
-
-_**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
-
-| Attribute      | Description                                                              |
-|----------------|--------------------------------------------------------------------------|
-| `name`         | name of the network resource                                             |
-| `subnet`       | network address of the subnet                                            |
-| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
-
-<p align="center"><b>Table 3-4:</b> Attributes of network resources</p>
-
-<a name="3.2.5"></a>
-### 3.2.5 Availability Zone
+### 3.2.4 Availability Zone
 An Availability Zone is a logical pool of physical resources (e.g. compute, block storage, network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
 
 As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
@@ -142,7 +128,6 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 | `name` | name of the availability zone |
 |
 <p align="center"><b>Table 3-4:</b> Attributes of availability zones</p>
-
 
 <a name="3.3"></a>
 ## 3.3 NFVI Management Software
