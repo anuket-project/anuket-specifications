@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 6. Security
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
@@ -22,7 +22,7 @@ This guide is intended to provide basic security requirements to CNTT architects
 <a name="6.2"></a>
 ## 6.2 Security Requirements
 
-Based on chapter 2 requirements
+Chapter 2 gathers all requirements and recommendations regarding security topics developed in this chapter.
 
 <a name="6.3"></a>
 ## 6.3 NFVI and VIM Security
@@ -31,7 +31,6 @@ OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html
 
 <a name="6.3.1"></a>
-
 ### 6.3.1 Platform Access
 
 #### 6.3.1.1 Identity
@@ -123,6 +122,47 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 
 <a name="6.3.2"></a>
 ### 6.3.2 System Hardening
+All infrastructure should undergo system hardening, establishes processes to govern the hardening, and documents to cover at a minimal for the following areas:
+
+#### 6.3.2.1 Function
+Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
+
+#### 6.3.2.2 Software
+- Install only software which is required to support the functions
+- Remove any unnecessary software or packages
+- Where software cannot be removed, disable all service to it
+
+#### 6.3.2.3 Patches
+System should be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery:
+| Severity | Time to Remediate |
+| ----------- | ----------- |
+| Zero-Day | Immediately or as soon as practically possible |
+| Critical | 30 days |
+| High | 60 days |
+| Medium | 90 days |
+| Low | 180 days |
+*See [Common Vulnerability Scoring System] (https://nvd.nist.gov/vuln-metrics/cvss)
+	
+#### 6.3.2.4 Network Protocols
+- Only allow protocols that are required by the system functions
+- Tighten all required TCP/IP (Transmission Control Protocol/Internet Protocol) services
+
+#### 6.3.2.5 System Access
+- Remove, or at a minimal, disable all unnecessary user accounts 
+- Change all default user accounts where technically feasible
+- Change all default credentials
+- Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+
+#### 6.3.2.6 Anti-Virus and Firewall
+- Install and run your Enterprise approved anti-virus software / intrusion protection / malware / spyware endpoint security software with up to date profiles, minimal refresh daily
+- Install and run firewall software where applicable
+
+#### 6.3.2.7 Vulnerability Detection and Prevention
+- Implement DoS (Denial of Service) protection where applicable
+- Ensure logging and alerting is actively running
+- Run host-based scanning and fix all findings per vulnerability severity 
+- Run network-based scanning and fix all findings per vulnerability severity
+
 
 <a name="6.3.3"></a>
 ### 6.3.3 Confidentiality and Integrity
@@ -183,11 +223,66 @@ It is recommended to rely on Barbican, as key manager service of OpenStack.
 <a name="6.3.4"></a>
 ### 6.3.4 Workload Security
 
+OpenStack segregates its infrastructure (for example, hosts) by Regions, Host aggregates and Availability Zones (AZ). Workloads can also be segregated by server groups (affinity and non-affinity groups). These options support the workloads placement requirement _sec.wl.001_.
+
+Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (for example, Regions, AZs) but also requires network and storage segregation as in Regions but also AZs if engineered to do so. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (_sec.wl.005_ and _sec.wl.006_).
+
+Regions also support the _sec.wl.004_ requirement for separation by Location (for example, country).
+
+Operational security (_sec.wl.002_) is handled through a combination of mechanisms including the above and security groups. Security groups limit the types of traffic that have access to instances. One or more security groups can be automatically assigned to an instance at launch. The rules associated with a security group control the incoming traffic.  Any incoming traffic not matched by a rule is denied access. The security group rules govern access through the setting of different parameters: traffic source, protocols and destination port on a VM.  Errors in provisioning/managing OpenStack Security Groups can lead to non-functioning applications and can take a long time to identify faults and correct them.  Thus, use of tools for auto provisioning and continued inspection of security groups and network policies is required.
+
+Given the rate of change in the workload development and deployment, and the cloud environment itself, _sec.wl.003_ requires that the workloads should be assessed during the CI/CD process as the images are created and then whenever they are deployed. In addition, the infrastructure must be configured for security as discussed elsewhere in this chapter including secure boot. 
+
+<a name="6.3.4.1"></a>
+### 6.3.4.1 SR-IOV and DPDK Considerations
+
+SR-IOV agent only works with NoopFirewallDriver when Security Groups are enabled, but can still use other firewall_driver for other Agents by updating their conf with the requested firewall driver." Please see [SR-IOV Passthrough for Networking](https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking).
+
+Operators typically do not implement Security Groups when ussing SR-IOV or DPDK networking technologies.
+
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
 
+Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/) that "describes how to obtain, create, and modify" OpenStack compatible virtual machine images. 
+
+Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance). The operator will need toolsets for scanning images, including for virus and malware detection. Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). The chain of trust requires that all images are verified again in the Compute service (Nova) prior to use.
+
+Integrity Verification at the time of instantiation is required by [ETSI NFV SEC021](https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=53601) and the creation of signature per individual artifact in the VNF package is required by [ETSI NFV SOL004](http://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/02.03.01_60/gs_nfv-sol004v020301p.pdf).
+
+
+
 <a name="6.3.6"></a>
 ### 6.3.6 Security LCM
+Cloud Infrastructure LCM encompasses provisioning, deployment, configuration and management (resources scaling, services upgrades…) as described in [chapter 7](./chapter07.md). These operations must be securely performed in order to keep the infrastructure safe and operational.
+
+**Provisioning/Deployment**
+
+Regarding the provisioning of servers, switches, routers and networking, tools must be used to automate the provisioning eliminating human error. For Infrastructure hardware resources, a set of recommendations is detailed in [7.2.1](./chapter07.md#7.2.1) to automate and secure their provisioning.
+
+For OpenStack services and software components, deployment tools or components must be used to automate the deployment and avoid errors.  The deployment tool is a sensitive component storing critical information (deployment scripts, credentials…). 
+The following rules must be applied:
+
+- The boot of the server or the VM hosting the deployment tool must be protected
+- Integrity of the deployment images must be checked, before starting deployment
+- Deployment must be done through dedicated network (e.g. VLAN)
+- When the deployment is finished, the deployment tool must be turned-off
+- When the deployment is finished, the deployment tool must be turned-off, if the tool is only dedicated to deployment. Otherwise, any access to the deployment tool must be restricted.
+
+Strict access permissions must be set on OpenStack configuration files.
+
+**Configuration and management**
+
+Configuration operations must be traced. Events such as system access attempts, actions with high privileges, modification of configuration must be logged and exported on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification.
+
+Per sec.LCM.002 requirement, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
+
+**Platform backup**
+
+The storage for backup must be independent of storage offered to tenants. 
+
+**Security upgrades**
+
+To defend against virus or other attacks, security patches must be installed for firmware, OS, Hypervisor and OpenStack services according to their criticality.
 
 <a name="6.3.7"></a>
 ### 6.3.7 Security Audit Logging

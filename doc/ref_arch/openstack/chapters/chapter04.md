@@ -17,8 +17,7 @@
   * [4.4.1 Support for Profiles and T-shirt instance types](#4.4.1)
   * [4.4.2 Logical segregation and high availability](#4.4.2)
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
-* [4.5 Cloud Topology.](#4.5)
-  * [4.5.1 Cloud Topology Considerations](#4.5.1)
+
 
 
 
@@ -697,24 +696,3 @@ For Network intensive instances, VNF Component should fit into a single NUMA zon
 ### 4.4.3. Transaction Volume Considerations
 
 Storage transaction volumes impose a requirement on North-South network traffic in and out of the storage backend. Data availability requires that the data be replicated on multiple storage nodes and each new write imposes East-West network traffic requirements.
-
-
-<a name="4.5"></a>
-## 4.5 Cloud Topology
-
-<a name="4.5.1"></a>
-### 4.5.1. Cloud Topology Considerations
-
-A Telco cloud will be deployed in multiple locations (“sites”) of varying size and capabilities (HVAC, for example); or stated slightly differently, multiple telco clouds (i.e. OpenStack end points) will be deployed and they all contain isolated resources that do not rely on each other.   The application must span such end points in order to provide the required service SLA Irrespective of the nature of the deployment characteristics (number of racks, number of hosts, etc.), the intent of the architecture would be to allow VNFs to be deployed in these sites as needed without major changes; if not all as many as possible.
--	Large data center capable of hosting thousands of servers and the networking to support them
--	Mini data center (such as a central office) capable of hosting up to a hundred servers
--	Edge (not customer premise) capable of hosting between ten to fifty servers
-
-Host profiles (SW Host profile + HW host profile) “partition” the cloud into pseudo sub-clouds, for example, hosts targeted for basic instance types, network intensive instance types and compute intensive instance types. This can happen, because of specific hardware adds and/or hardware and software configurations.  Depending upon the workload types and the capacity requirements, cloud providers and operators may choose to support the instance types with targeted hardware (different number of sockets, RAM, clock speeds, etc.) and host profiles or choose common hardware and minimize the number of host profiles (for example, network intensive and compute intensive types using a common host profile).
-
-As we get away from the large data centers to the smaller sites it becomes progressively difficult to be able to create enough capacity for each of these instance types in support of their target VNFs or to have a mix of hardware targeted for each instance type.
-
-
-
-
-

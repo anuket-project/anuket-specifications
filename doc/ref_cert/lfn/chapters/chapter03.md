@@ -11,15 +11,16 @@
   * [3.3.2 Infrastructure](#3.3.2)
   * [3.3.3 VIM](#3.3.3)
   * [3.3.4 Interfaces & APIs](#3.3.4)
-  * [3.3.5 OpenStack API benchmarking](#3.3.5)
-  * [3.3.6 Dataplane Benchmarking](#3.3.6)
-  * [3.3.7 opensource VNF onboarding and testing](#3.3.7)
-  * [3.3.8 Tenants](#3.3.8)
-  * [3.3.9 LCM](#3.3.9)
-  * [3.3.10 Assurance](#3.3.10)
-  * [3.3.11 Security](#3.3.11)
-  * [3.3.12 Resilience](#3.3.13)
-  * [3.3.13 Bare-metal validations](#3.3.14)
+  * [3.3.5 Dashboard](#3.3.5)
+  * [3.3.6 OpenStack API benchmarking](#3.3.6)
+  * [3.3.7 Dataplane Benchmarking](#3.3.7)
+  * [3.3.8 Opensource VNF onboarding and testing](#3.3.8)
+  * [3.3.9 Tenants](#3.3.9)
+  * [3.3.10 LCM](#3.3.10)
+  * [3.3.11 Assurance](#3.3.11)
+  * [3.3.12 Security](#3.3.12)
+  * [3.3.13 Resilience](#3.3.13)
+  * [3.3.14 Bare-metal validations](#3.3.14)
 * [3.4 Test Cases Traceability to Requirements](#3.4)
   * [3.4.1 Test Cases Traceability](#3.4.1)
 
@@ -30,9 +31,9 @@ The scope of this chapter is to identify and list down test cases based on requi
 
 Note that each requirement may have one or more test cases associated with it.
 
-**must**: Test Cases that are marked as must are considered mandatory and must pass succesfully.
+**must**: Test Cases that are marked as must are considered mandatory and must pass successfully.
 
-**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI tagetting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
+**should**: Test Cases that are marked as should are expected to be fulfilled by NFVI but it is up to each service provider to accept an NFVI targeting reference architecture that is not reflecting on any of those requirements. The same applies to should not.
 
 **may**: Test cases that are marked as may are considered optional. The same applies to may not.
 
@@ -49,119 +50,103 @@ The RTM contains RM config (i.e. .conf) requirements listed “per profile”, f
 
 For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to [RI-1 Chapter 3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md).
 
-|#|Requirement|Description|Catalog|Status|MUST|Category|RI-1 Implemented (Yes/No)|RC-1 Coverage (project)|RC-1 Project To On-board|
-|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
-|1|req.gen.ost.01|must use OpenStack APIs.|General|in Functest|Must|Functional||Functest||
-|2|req.gen.ost.02|must support dynamic request and configuration of virtual resources through APIs.|General|in Functest|Must|Functional||Functest||
-|3|req.gen.cnt.01|should consist of stateless service components. However, where state is required it must be kept external to the components.|General|||||||
-|4|req.gen.cnt.02|should consist of service components implemented as microservices that are individually dynamically scalable.|General|||||||
-|5|req.gen.scl.01|should support policy driven auto-scaling.|General|||||||
-|6|req.gen.rsl.01|must support resilient OpenStack components that are required for the continued availability of running workloads.|General - Resiliency testing|missing|Must|NFR||||
-|7|req.gen.rsl.02|should support resilient OpenStack service components that are not subject to req.gen.rsl.01.|General - Resiliency testing|missing||||||
-|8|req.gen.avl.01|must provide High Availability for OpenStack components.|General - HA|missing|Must|NFR||||
-|9|req.inf.com.01|must provide compute resources for VM instances.|Infrastructure|in Functest|Must|Functional||Functest||
-|10|req.inf.com.02|should include industry standard hardware management systems at both HW device and platform level|Infrastructure - baremental testing|missing in Functest. Captured in Telco TCs Baremetal - validations.||||||
-|11|req.inf.com.03|should support symmetrical CPU multi-processing with shared memory access as well as multi-threading.|Infrastructure|in Functest||||Functest||
-|12|req.inf.com.04|must be able to support multiple CPU SKU options to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure||Must|NFR||||
-|13|req.inf.com.05|must support Hardware Platforms with NUMA capabilities.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
-|14|req.inf.com.06|must support CPU Pinning.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
-|15|req.inf.com.07|must support different hardware configurations to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
-|16|req.inf.stg.01|must provide shared Block storage for VM Instances.|Infrastructure|in Functest|Must|Functional||Functest||
-|17|req.inf.stg.02|must provide shared Object storage for VM Instances.|Infrastructure|in Functest|Must|Functional||Functest||
-|18|req.inf.stg.03|may provide local file system storage solution for VM Instances.|Infrastructure - baremental testing|missing||||||
-|19|req.inf.stg.04|may support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files.|Infrastructure - baremental testing|missing||||||
-|20|req.inf.stg.05|should be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes.|Infrastructure|in Functest||||Functest||
-|21|req.inf.stg.06|should make the immutable images available via location independent means.|Infrastructure|in Functest||||Functest||
-|22|req.inf.stg.07|should provide high-performance and horizontally scalable VM storage.|Infrastructure - performance testing|missing||||||
-|23|req.inf.stg.08|should allow use of externally provided large archival storage for its Backup / Restore / Archival needs.|Infrastructure - baremental testing|missing in Functest. Captured in Telco TCs Baremetal - validations.||||||
-|24|req.inf.stg.09|should make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption.|Infrastructure|in Functest||||Functest||
-|25|req.inf.ntw.01|must provide virtual network interfaces to VM instances.|Infrastructure|in Functest|Must|Functional||Functest||
-|26|req.inf.ntw.02|must include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs.|Infrastructure|in Functest|Must|Functional||Functest||
-|27|req.inf.ntw.03|must support low latency and high throughput traffic needs.|performance testing|missing|Must|NFR|||NFVBenchPROX|
-|28|req.inf.ntw.04|should support service function chaining.|Infrastructure|missing||||||
-|29|req.inf.ntw.05|must allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve).|Infrastructure|missing|Must|Functional||||
-|30|req.inf.ntw.06|should support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently.|Infrastructure|missing||||||
-|31|req.inf.ntw.07|must support network resiliency.|Infrastructure - resiliency testing|missing|Must|NFR||||
-|32|req.inf.ntw.08|The NFVI Network Fabric should embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems.|Infrastructure|missing||||||
-|33|req.inf.ntw.09|The NFVI Network Fabric should embrace open-based standards and technologies.|Infrastructure|missing||||||
-|34|req.inf.ntw.10|The NFVI Network Fabric must be capable of supporting highly available (Five 9’s or better) VNF workloads.|Infrastructure - performance testing|missing|Must|NFR||||
-|35|req.inf.ntw.11|The NFVI Network Fabric should be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites.|Infrastructure|missing||||||
-|36|req.inf.ntw.12|The SDN solution should be configurable via orchestration or VIM systems in an automated manner using openly published API definitions.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
-|37|req.inf.ntw.13|The SDN solution should be able to support federated networks.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
-|38|req.inf.ntw.14|The SDN solution should be able to be centrally administrated and configured.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
-|39|req.inf.ntw.15|must support multiple networking options for NFVI to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure|missing or incomplete|Must|Functional||||
-|40|req.inf.ntw.16|must support dual stack IPv4 and IPv6 for tenant networks and workloads.|Infrastructure|missing or incomplete|Must|Functional||||
-|41|req.inf.ntw.17|should use dual stack IPv4 and IPv6 for NFVI internal networks.|Infrastructure|missing or incomplete||||||
-|42|req.inf.acc.01|should support Application Specific Acceleration (exposed to VNFs).|Infrastructure|missing in Functest. Captured in Telco TCs Openstack - VNF Interoperability - validations||||||
-|43|req.inf.acc.02|should support NFVI Acceleration (such as SmartNICs).|Infrastructure|missing||||||
-|44|req.inf.acc.03|should not rely on SR-IOV PCI-Pass through to provide acceleration to VNFs.|Infrastructure|missing||||||
-|45|req.vim.01|must allow infrastructure resource sharing.|VIM|in Functest|Must|Functional||Functest||
-|46|req.vim.02|should support deployment of OpenStack components in containers.|VIM|in Functest||||Functest||
-|47|req.vim.03|must allow VIM to discover and manage NFVI resources.|VIM|in Functest|Must|Functional||Functest||
-|48|req.vim.04|must support Enhanced Platform Awareness (EPA).|VIM|in Functest|Must|Functional||Functest||
-|49|req.vim.05|must include image repository management.|VIM|in Functest|Must|Functional||Functest||
-|50|req.vim.06|must allow orchestration solutions to be integrated with VIM.|VIM|in Functest|Must|Functional||Functest||
-|51|req.vim.07|must support a multi-tenanted environment.|VIM|in Functest|Must|Functional||Functest||
-|52|req.vim.08|must support resource tagging.|VIM|in Functest|Must|Functional||Functest||
-|53|req.vim.09|must support horizontal scaling.|VIM - performance testing|missing|Must|NFR|||NFVBench|
-|54|req.int.api.01|must provide Control API endpoints to cloud platform core services.|Interface & API|in Functest|Must|Functional||Functest||
-|55|req.int.api.02|must provide GUI access to tenant facing cloud platform core services.|Interface & API|in Functest|Must|Functional||Functest||
-|56|req.int.api.03|must provide APIs needed to discover and manage NFVI resources.|Interface & API|in Functest|Must|Functional||Functest||
-|57|req.int.acc.01|should provide an open and standard acceleration interface to VNFs.|Interface & API|in Functest||||Functest||
-|58|req.int.acc.02|should not rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs.|Interface & API|missing||||||
-|59|req.tnt.gen.01|must support multi-tenancy.|Tenants|in Functest|Must|Functional||Functest||
-|60|req.tnt.gen.02|must support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads.|Tenants|in Functest|Must|Functional||Functest||
-|61|req.lcm.gen.01|must support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement).|LCM - performance testing|missing|Must|NFR||||
-|62|req.lcm.adp.01|should allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites.|LCM|use airship||||||
-|63|req.lcm.adp.02|must support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted.|LCM - performance testing|missing or incomplete. Use airship?|Must|NFR||||
-|64|req.lcm.adp.03|should support hitless upgrade of all software provided by the cloud provider that are not covered by req.lcm.adp.02. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact.|LCM|use airship||||||
-|65|req.lcm.adp.04|should support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management.|LCM|use airship||||||
-|66|req.lcm.adp.05|should support automated process for Deployment and life-cycle management of VIM Instances.|LCM|use airship||||||
-|67|req.lcm.cid.02|should support integrating with CI/CD Toolchain for NFVI and VIM components Automation.|LCM|use Xtesting||||||
-|68|req.asr.mon.01|must include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence.|Assurance|in Functest|Must|Functional||Functest||
-|69|req.asr.mon.02|should support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads.|Assurance - operation|missing||||||
-|70|req.asr.mon.03|must allow for the collection and dissemination of performance and fault information.|Assurance - operation|missing|Must|NFR||||
-|71|req.asr.mon.04|The NFVI Network Fabric and Network Operating System must provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation.|Assurance - operation|missing|Must|NFR||||
-|72|req.sec.gen.01|must provide tenant isolation.|security|in Functest|Must|Functional||Functest||
-|73|req.sec.gen.02|must support policy based RBAC.|security|in Functest|Must|Functional||Functest||
-|74|req.sec.gen.03|must support a centralised authentication and authorisation mechanism.|security|in Functest|Must|Functional||Functest||
-|75|req.sec.zon.01|must support identity management (specific roles and permissions assigned to a domain or tenant).|security|in Functest|Must|Functional||Functest||
-|76|req.sec.zon.02|must support password encryption.|security|in Functest|Must|Functional||Functest||
-|77|req.sec.zon.03|must support data, at-rest and in-flight, encryption.|security|missing|Must|Functional||||
-|78|req.sec.zon.04|must support integration with Corporate Identity Management systems.|security|missing|Must|NFR||||
-|79|req.sec.cmp.02|must comply with all applicable standards and regulations.|security|missing in Functest. Captured in Telco TCs Security|Must|NFR||||
-|80|req.sec.cmp.03|must comply with all applicable regional standards and regulations.|security|missing|Must|NFR||||
-|81|req.sec.ntw.01|must have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework.|security|missing|Must|NFR||||
-|82|req.sec.ntw.02|must have all security logs stored in accordance with ISO27001.|security|missing|Must|NFR||||
-|83|req.sec.ntw.03|must have the underlay network incorporate encrypted and/or private communications channels to ensure its security.|security|missing|Must|Functional||||
-|84|req.sec.ntw.04|must configure all of the underlay network components to ensure the complete separation from the overlay customer deployments.|security|missing|Must|NFR||||
-
 <a name="3.3.1"></a>
 ### 3.3.1 Architecture and OpenStack Requirements
 
-- Describe and define in detail, RM/RA-1 OpenStack requirements.
+<!-- 
+|#|Requirement|Description|Catalog|Status|MUST|Category|RI-1 Implemented (Yes/No)|RC-1 Coverage (project)|RC-1 Project To On-board|
+|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
+|1|req.gen.ost.01|must use OpenStack APIs.|General|in Functest|Must|Functional||Functest||
+|2|req.gen.ost.02|must support dynamic request and configuration of virtual resources through APIs.|General|in Functest|Must|Functional||Functest||
+|3|req.gen.cnt.01|should consist of stateless service components. However, where state is required it must be kept external to the components.|General|||||||
+|4|req.gen.cnt.02|should consist of service components implemented as microservices that are individually dynamically scalable.|General|||||||
+|5|req.gen.scl.01|should support policy driven auto-scaling.|General|||||||
+|6|req.gen.rsl.01|must support resilient OpenStack components that are required for the continued availability of running workloads.|General - Resiliency testing|missing|Must|NFR||||
+|7|req.gen.rsl.02|should support resilient OpenStack service components that are not subject to req.gen.rsl.01.|General - Resiliency testing|missing||||||
+|8|req.gen.avl.01|must provide High Availability for OpenStack components.|General - HA|missing|Must|NFR||||
+|9|req.inf.com.01|must provide compute resources for VM instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|10|req.inf.com.02|should include industry standard hardware management systems at both HW device and platform level|Infrastructure - baremental testing|missing in Functest. Captured in Telco TCs Baremetal - validations.||||||
+|11|req.inf.com.03|should support symmetrical CPU multi-processing with shared memory access as well as multi-threading.|Infrastructure|in Functest||||Functest||
+|12|req.inf.com.04|must be able to support multiple CPU SKU options to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure||Must|NFR||||
+|13|req.inf.com.05|must support Hardware Platforms with NUMA capabilities.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
+|14|req.inf.com.06|must support CPU Pinning.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
+|15|req.inf.com.07|must support different hardware configurations to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
+|16|req.inf.stg.01|must provide shared Block storage for VM Instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|17|req.inf.stg.02|must provide shared Object storage for VM Instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|18|req.inf.stg.03|may provide local file system storage solution for VM Instances.|Infrastructure - baremental testing|missing||||||
+|19|req.inf.stg.04|may support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files.|Infrastructure - baremental testing|missing||||||
+|20|req.inf.stg.05|should be able to accommodate VNFs that store back into its image through use of hypervisor attached volumes.|Infrastructure|in Functest||||Functest||
+|21|req.inf.stg.06|should make the immutable images available via location independent means.|Infrastructure|in Functest||||Functest||
+|22|req.inf.stg.07|should provide high-performance and horizontally scalable VM storage.|Infrastructure - performance testing|missing||||||
+|23|req.inf.stg.08|should allow use of externally provided large archival storage for its Backup / Restore / Archival needs.|Infrastructure - baremental testing|missing in Functest. Captured in Telco TCs Baremetal - validations.||||||
+|24|req.inf.stg.09|should make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption.|Infrastructure|in Functest||||Functest||
+|25|req.inf.ntw.01|must provide virtual network interfaces to VM instances.|Infrastructure|in Functest|Must|Functional||Functest||
+|26|req.inf.ntw.02|must include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs.|Infrastructure|in Functest|Must|Functional||Functest||
+|27|req.inf.ntw.03|must support low latency and high throughput traffic needs.|performance testing|missing|Must|NFR|||NFVBenchPROX|
+|28|req.inf.ntw.04|should support service function chaining.|Infrastructure|missing||||||
+|29|req.inf.ntw.05|must allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve).|Infrastructure|missing|Must|Functional||||
+|30|req.inf.ntw.06|should support Distributed Virtual Routing (DVR) to allow compute nodes to route traffic efficiently.|Infrastructure|missing||||||
+|31|req.inf.ntw.07|must support network resiliency.|Infrastructure - resiliency testing|missing|Must|NFR||||
+|32|req.inf.ntw.08|The NFVI Network Fabric should embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems.|Infrastructure|missing||||||
+|33|req.inf.ntw.09|The NFVI Network Fabric should embrace open-based standards and technologies.|Infrastructure|missing||||||
+|34|req.inf.ntw.10|The NFVI Network Fabric must be capable of supporting highly available (Five 9’s or better) VNF workloads.|Infrastructure - performance testing|missing|Must|NFR||||
+|35|req.inf.ntw.11|The NFVI Network Fabric should be architected to provide a standardised, scalable, and repeatable deployment model across all applicable NFVI sites.|Infrastructure|missing||||||
+|36|req.inf.ntw.12|The SDN solution should be configurable via orchestration or VIM systems in an automated manner using openly published API definitions.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
+|37|req.inf.ntw.13|The SDN solution should be able to support federated networks.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
+|38|req.inf.ntw.14|The SDN solution should be able to be centrally administrated and configured.|Infrastructure - SDN|missing or incomplete. All captured in ODL?||||||
+|39|req.inf.ntw.15|must support multiple networking options for NFVI to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure|missing or incomplete|Must|Functional||||
+|40|req.inf.ntw.16|must support dual stack IPv4 and IPv6 for tenant networks and workloads.|Infrastructure|missing or incomplete|Must|Functional||||
+|41|req.inf.ntw.17|should use dual stack IPv4 and IPv6 for NFVI internal networks.|Infrastructure|missing or incomplete||||||
+|42|req.inf.acc.01|should support Application Specific Acceleration (exposed to VNFs).|Infrastructure|missing in Functest. Captured in Telco TCs Openstack - VNF Interoperability - validations||||||
+|43|req.inf.acc.02|should support NFVI Acceleration (such as SmartNICs).|Infrastructure|missing||||||
+|44|req.inf.acc.03|should not rely on SR-IOV PCI-Pass through to provide acceleration to VNFs.|Infrastructure|missing||||||
+|45|req.vim.01|must allow infrastructure resource sharing.|VIM|in Functest|Must|Functional||Functest||
+|46|req.vim.02|should support deployment of OpenStack components in containers.|VIM|in Functest||||Functest||
+|47|req.vim.03|must allow VIM to discover and manage NFVI resources.|VIM|in Functest|Must|Functional||Functest||
+|48|req.vim.04|must support Enhanced Platform Awareness (EPA).|VIM|in Functest|Must|Functional||Functest||
+|49|req.vim.05|must include image repository management.|VIM|in Functest|Must|Functional||Functest||
+|50|req.vim.06|must allow orchestration solutions to be integrated with VIM.|VIM|in Functest|Must|Functional||Functest||
+|51|req.vim.07|must support a multi-tenanted environment.|VIM|in Functest|Must|Functional||Functest||
+|52|req.vim.08|must support resource tagging.|VIM|in Functest|Must|Functional||Functest||
+|53|req.vim.09|must support horizontal scaling.|VIM - performance testing|missing|Must|NFR|||NFVBench|
+|54|req.int.api.01|must provide Control API endpoints to cloud platform core services.|Interface & API|in Functest|Must|Functional||Functest||
+|55|req.int.api.02|must provide GUI access to tenant facing cloud platform core services.|Interface & API|in Functest|Must|Functional||Functest||
+|56|req.int.api.03|must provide APIs needed to discover and manage NFVI resources.|Interface & API|in Functest|Must|Functional||Functest||
+|57|req.int.acc.01|should provide an open and standard acceleration interface to VNFs.|Interface & API|in Functest||||Functest||
+|58|req.int.acc.02|should not rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs.|Interface & API|missing||||||
+|59|req.tnt.gen.01|must support multi-tenancy.|Tenants|in Functest|Must|Functional||Functest||
+|60|req.tnt.gen.02|must support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads.|Tenants|in Functest|Must|Functional||Functest||
+|61|req.lcm.gen.01|must support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement).|LCM - performance testing|missing|Must|NFR||||
+|62|req.lcm.adp.01|should allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple NFVI sites.|LCM|use airship||||||
+|63|req.lcm.adp.02|must support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted.|LCM - performance testing|missing or incomplete. Use airship?|Must|NFR||||
+|64|req.lcm.adp.03|should support hitless upgrade of all software provided by the cloud provider that are not covered by req.lcm.adp.02. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact.|LCM|use airship||||||
+|65|req.lcm.adp.04|should support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management.|LCM|use airship||||||
+|66|req.lcm.adp.05|should support automated process for Deployment and life-cycle management of VIM Instances.|LCM|use airship||||||
+|67|req.lcm.cid.02|should support integrating with CI/CD Toolchain for NFVI and VIM components Automation.|LCM|use Xtesting||||||
+|68|req.asr.mon.01|must include integration with various infrastructure components to support collection of telemetry for assurance monitoring and network intelligence.|Assurance|in Functest|Must|Functional||Functest||
+|69|req.asr.mon.02|should support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads.|Assurance - operation|missing||||||
+|70|req.asr.mon.03|must allow for the collection and dissemination of performance and fault information.|Assurance - operation|missing|Must|NFR||||
+|71|req.asr.mon.04|The NFVI Network Fabric and Network Operating System must provide network operational visibility through alarming and streaming telemetry services for operational management, engineering planning, troubleshooting, and network performance optimisation.|Assurance - operation|missing|Must|NFR||||
+|72|req.sec.gen.01|must provide tenant isolation.|security|in Functest|Must|Functional||Functest||
+|73|req.sec.gen.02|must support policy based RBAC.|security|in Functest|Must|Functional||Functest||
+|74|req.sec.gen.03|must support a centralised authentication and authorisation mechanism.|security|in Functest|Must|Functional||Functest||
+|75|req.sec.zon.01|must support identity management (specific roles and permissions assigned to a domain or tenant).|security|in Functest|Must|Functional||Functest||
+|76|req.sec.zon.02|must support password encryption.|security|in Functest|Must|Functional||Functest||
+|77|req.sec.zon.03|must support data, at-rest and in-flight, encryption.|security|missing|Must|Functional||||
+|78|req.sec.zon.04|must support integration with Corporate Identity Management systems.|security|missing|Must|NFR||||
+|79|req.sec.cmp.02|must comply with all applicable standards and regulations.|security|missing in Functest. Captured in Telco TCs Security|Must|NFR||||
+|80|req.sec.cmp.03|must comply with all applicable regional standards and regulations.|security|missing|Must|NFR||||
+|81|req.sec.ntw.01|must have the underlay network include strong access controls that comply with ISO 27001 and adhere to the V1.1 NIST Cybersecurity Framework.|security|missing|Must|NFR||||
+|82|req.sec.ntw.02|must have all security logs stored in accordance with ISO27001.|security|missing|Must|NFR||||
+|83|req.sec.ntw.03|must have the underlay network incorporate encrypted and/or private communications channels to ensure its security.|security|missing|Must|Functional||||
+|84|req.sec.ntw.04|must configure all of the underlay network components to ensure the complete separation from the overlay customer deployments.|security|missing|Must|NFR||||
+-->
 
 <a name="3.3.2"></a>
 ### 3.3.2 Infrastructure
 
-
-| Test case # | sub-category | Description | Requirement # |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| `cert.test.inf.01` | Compute | Create a virtual machine with CPU pinning and 2 NUMA nodes. | `req.inf.com.05` |
-| `cert.test.inf.02` | Compute | Create a virtual machine with CPU pinning enabled. | `req.inf.com.06` |
-| `cert.test.inf.03` | Compute | Create 2 virtual machines and associate block storage to it. | `req.inf.stg.01	` |
-| `cert.test.inf.04` | Compute | Create 2 virtual machines which are booted from block storage. | `req.inf.stg.01	` |
-
 <a name="3.3.3"></a>
 ### 3.3.3 VIM
-
-
-| Test case # | sub-category | Description | Requirement # |
-|----|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| `cert.test.vim.01` | VIM | Create a virtual machine with CPU pinning, Huge Pages and 2 NUMA nodes. | `req.vim.04` |
-| `cert.test.vim.02` | VIM | Upload an image to image repository and download it back. | `req.vim.05` |
-| `cert.test.vim.03` | VIM | Deploy a heat stack having 2 virtual machines with associated network. | `req.vim.06` |
-| `cert.test.vim.04` | VIM | Create 2 tenants and then create virtual machine in each tenant. | `req.vim.07` |
 
 <a name="3.3.4"></a>
 ### 3.3.4 Interfaces & APIs
@@ -197,8 +182,10 @@ versions are considered here to verify OpenStack Pike selected by CNTT:
 | software                | version |
 |-------------------------|---------|
 | Functest                | hunter  |
+| Horizon Tempest plugin  | 0.1.0   |
 | Cinder Tempest plugin   | 0.2.0   |
 | Keystone Tempest plugin | 0.1.0   |
+| Heat Tempest plugin     | 1.0.0   |
 | Neutron                 | rocky   |
 | Neutron Tempest plugin  | 0.3.0   |
 | Rally OpenStack         | 1.5.0   |
@@ -477,11 +464,28 @@ Here are the mainline tasks integrated in
 
 #### 3.3.4.7 Orchestration - Heat
 
-Heat API is not covered in the OpenStack Gates neither via
-[Tempest](https://opendev.org/openstack/tempest) nor
-[heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin).
+Heat API is covered in the OpenStack Gates via
+[heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin) as
+integrated in
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml)
 
-Heat API is covered by [Rally](https://opendev.org/openstack/rally).
+According to
+[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+the following test names must not be executed:
+
+| test rejection regular expressions                         | reasons                                            |
+|------------------------------------------------------------|----------------------------------------------------|
+| .\*functional.test_lbaasv2                                 | lbaasv2                                            |
+| .\*RemoteStackTest.test_stack_create_with_cloud_credential | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*scenario.test_aodh_alarm                                | aodh                                               |
+| .\*tests.scenario.test_autoscaling_lb                      | lbaas                                              |
+| .\*scenario.test_autoscaling_lbv2                          | lbaasv2                                            |
+| .\*scenario.test_server_software_config                    | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*test_volumes.VolumeBackupRestoreIntegrationTest         | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
+| .\*scenario.test_octavia_lbaas                             | octavia                                            |
+| .\*scenario.test_server_cfn_init                           | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
+
+Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
@@ -492,7 +496,14 @@ Here are the mainline tasks integrated in
 - HeatStacks.list_stacks_and_resources
 
 <a name="3.3.5"></a>
-### 3.3.5 OpenStack API benchmarking
+### 3.3.5 Dashboard
+
+Horizon is covered in the OpenStack Gates via
+[tempest-horizon](https://github.com/openstack/tempest-horizon) as integrated
+in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml).
+
+<a name="3.3.6"></a>
+### 3.3.6 OpenStack API benchmarking
 
 [Rally](https://opendev.org/openstack/rally) is tool and framework that allows
 to perform OpenStack API benchmarking.
@@ -510,7 +521,7 @@ which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
 
-#### 3.3.5.1 Identity - Keystone
+#### 3.3.6.1 Identity - Keystone
 
 [Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
 
@@ -529,7 +540,7 @@ of 0%) proposed in
 | KeystoneBasic.create_and_list_users           | 10         |
 | KeystoneBasic.create_tenant_with_users        | 10         |
 
-#### 3.3.5.2 Image - Glance
+#### 3.3.6.2 Image - Glance
 
 [Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
 
@@ -545,7 +556,7 @@ of 0%) proposed in
 | GlanceImages.create_and_get_image            | 10         |
 | GlanceImages.create_and_update_image         | 10         |
 
-#### 3.3.5.3 Block Storage - Cinder
+#### 3.3.6.3 Block Storage - Cinder
 
 [Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
 
@@ -575,7 +586,7 @@ of 0%) proposed in
 | Quotas.cinder_update_and_delete                               | 10         |
 | Quotas.cinder_update                                          | 10         |
 
-#### 3.3.5.4 Object Storage - Swift
+#### 3.3.6.4 Object Storage - Swift
 
 [Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
 
@@ -587,7 +598,7 @@ of 0%) proposed in
 | SwiftObjects.create_container_and_object_then_delete_all      | 10         |
 | SwiftObjects.list_and_download_objects_in_containers          | 10         |
 
-#### 3.3.5.5 Networking - Neutron
+#### 3.3.6.5 Networking - Neutron
 
 [Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
 
@@ -635,7 +646,7 @@ of 0%) proposed in
 | NeutronTrunks.create_and_list_trunk_subports | 4          |
 | Quotas.neutron_update                        | 40         |
 
-#### 3.3.5.6 Compute - Nova
+#### 3.3.6.6 Compute - Nova
 
 [Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
 
@@ -671,7 +682,7 @@ of 0%) proposed in
 | NovaServerGroups.create_and_list_server_groups                 | 10         |
 | Quotas.nova_update                                             | 10         |
 
-#### 3.3.5.7 Orchestration - Heat
+#### 3.3.6.7 Orchestration - Heat
 
 [Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
 
@@ -685,8 +696,8 @@ of 0%) proposed in
 | HeatStacks.create_suspend_resume_delete_stack | 10         |
 | HeatStacks.list_stacks_and_resources          | 10         |
 
-<a name="3.3.6"></a>
-### 3.3.6 Dataplane benchmarking
+<a name="3.3.7"></a>
+### 3.3.7 Dataplane benchmarking
 
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
 offers two benchmarking dataplane test cases leveraging on:
@@ -710,7 +721,7 @@ asked for an update of the default SLA proposed in
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
 
-### 3.3.6.1 VMTP
+### 3.3.7.1 VMTP
 
 Here are the
 [scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.json)
@@ -748,7 +759,7 @@ Here are all results per scenario:
 | TCP      | 65536    | rtt_ms           |
 | TCP      | 65536    | throughput_kbps  |
 
-### 3.3.6.2 Shaker
+### 3.3.7.2 Shaker
 
 Here are the
 [scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-shaker-run-329/shaker/report.json)
@@ -775,7 +786,7 @@ Here are all samples:
 | TCP            | retransmits            |
 | UDP            | packets (pps)          |
 
-### 3.3.6.3 PROX
+### 3.3.7.3 PROX
 
 The generator used with the rapid scripts is PROX with a specific generator configuration file.
 When multiple flows are requested, the generator starts randomizing bits in the source and destination UDP ports.
@@ -786,8 +797,8 @@ All throughput benchmarking is done by a generator sending packets to a reflecto
 The VMs or containers use only 1 vNIC for incoming and outgoing traffic. Multiple queues can be used.
 Multiple VMs or containers can be deployed prior to running any tests. This allows to use generator-reflector pairs on the same or different compute nodes, on the same or different NUMA nodes.
 
-<a name="3.3.7"></a>
-### 3.3.7 opensource VNF onboarding and testing
+<a name="3.3.8"></a>
+### 3.3.8 Opensource VNF onboarding and testing
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
@@ -807,22 +818,22 @@ The VNF are covered by upstream tests when possible (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)) and
 by Functest VNF tests in the other cases.
 
-<a name="3.3.8"></a>
-### 3.3.8 Tenants
-
 <a name="3.3.9"></a>
-### 3.3.9 LCM
+### 3.3.9 Tenants
 
 <a name="3.3.10"></a>
-### 3.3.10 Assurance
+### 3.3.10 LCM
 
 <a name="3.3.11"></a>
-### 3.3.11 Security
+### 3.3.11 Assurance
 
 <a name="3.3.12"></a>
-### 3.3.13 Resilience
+### 3.3.12 Security
 
 <a name="3.3.13"></a>
+### 3.3.13 Resilience
+
+<a name="3.3.14"></a>
 ### 3.3.14 Bare-metal validations
 
 <a name="3.4"></a>
@@ -835,43 +846,43 @@ According to [RC1 Chapter04]({{ "/doc/ref_cert/lfn/chapters/chapter04.html" | re
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
-| container                               | test case                       | criteria |
-|-----------------------------------------|---------------------------------|:--------:|
-| opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api-cntt | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt             | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt           | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt               | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt               | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt           | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt               | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt                 | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt                 | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | vmtp                            | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | shaker                          | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify                        | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify_ims                    | PASS     |
-| opnfv/functest-vnf:hunter               | heat_ims                        | PASS     |
-| opnfv/functest-vnf:hunter               | vyos_vrouter                    | PASS     |
-| opnfv/functest-vnf:hunter               | juju_epc                        | PASS     |
+| container                               | test case             | criteria |
+|-----------------------------------------|-----------------------|:--------:|
+| opnfv/functest-smoke-cntt:hunter        | tempest_neutron_cntt  | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt   | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt | PASS     |
+| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt     | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | vmtp                  | PASS     |
+| opnfv/functest-benchmarking-cntt:hunter | shaker                | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify              | PASS     |
+| opnfv/functest-vnf:hunter               | cloudify_ims          | PASS     |
+| opnfv/functest-vnf:hunter               | heat_ims              | PASS     |
+| opnfv/functest-vnf:hunter               | vyos_vrouter          | PASS     |
+| opnfv/functest-vnf:hunter               | juju_epc              | PASS     |
 
 <a name="3.4.2"></a>
 ### 3.4.2 TC Mapping to Requirements
 
-| test case                       | requirements                                                             |
-|---------------------------------|--------------------------------------------------------------------------|
-| neutron-tempest-plugin-api-cntt | Neutron API testing                                                      |
-| tempest_cinder_cntt             | Cinder API testing                                                       |
-| tempest_keystone_cntt           | Keystone API testing                                                     |
-| rally_sanity_cntt               | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
-| tempest_full_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| tempest_scenario_cntt           | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| tempest_slow_cntt               | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
-| rally_full_cntt                 | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
-| rally_jobs_cntt                 | Neutron API benchmarking                                                 |
-| vmtp                            | Dataplane benchmarking                                                   |
-| shaker                          | Dataplane benchmarking                                                   |
-| cloudify                        | opensource VNF onboarding and testing                                    |
-| cloudify_ims                    | opensource VNF onboarding and testing                                    |
-| heat_ims                        | opensource VNF onboarding and testing                                    |
-| vyos_vrouter                    | opensource VNF onboarding and testing                                    |
-| juju_epc                        | opensource VNF onboarding and testing                                    |
+| test case             | requirements                                                             |
+|-----------------------|--------------------------------------------------------------------------|
+| tempest_neutron_cntt  | Neutron API testing                                                      |
+| tempest_cinder_cntt   | Cinder API testing                                                       |
+| tempest_keystone_cntt | Keystone API testing                                                     |
+| rally_sanity_cntt     | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API testing      |
+| tempest_full_cntt     | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_scenario_cntt | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| tempest_slow_cntt     | Keystone, Glance, Cinder, Swift, Neutron and Nova API testing            |
+| rally_full_cntt       | Keystone, Glance, Cinder, Swift, Neutron, Nova and Heat API benchmarking |
+| rally_jobs_cntt       | Neutron API benchmarking                                                 |
+| vmtp                  | Dataplane benchmarking                                                   |
+| shaker                | Dataplane benchmarking                                                   |
+| cloudify              | opensource VNF onboarding and testing                                    |
+| cloudify_ims          | opensource VNF onboarding and testing                                    |
+| heat_ims              | opensource VNF onboarding and testing                                    |
+| vyos_vrouter          | opensource VNF onboarding and testing                                    |
+| juju_epc              | opensource VNF onboarding and testing                                    |

@@ -20,7 +20,7 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT conformance; conformance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any conformant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.
+The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT conformance; conformance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any conformant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.  The specification of how to use these components is detailed in [Chapter 04](chapter04.md).
 
 Kubernetes is already very well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
 
@@ -68,7 +68,7 @@ A key thing to note is that the container runtime itself is also a set of proces
 
 > Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
-The Reference Model requires the support of Huge Pages in `nfvi.com.cfg.004` which is supported by upstream Kubernetes already. In case of some applications the Huge Pages should be allocated with the considerations of the HW topology. This later feature is missing from Kubernetes, therefore a gap was added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
+The Reference Model requires the support of Huge Pages in `i.cap.018` which is supported by upstream Kubernetes already. In case of some applications the Huge Pages should be allocated with the considerations of the HW topology. This later feature is missing from Kubernetes, therefore a gap was added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
@@ -99,20 +99,20 @@ Where low-level runtimes are focused on the execution of a container within an O
 
 When it comes to Kubernetes, the important interface that we need to consider for container management is the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/), which is an interface specification for any container runtime to be able to integrate with the kubelet on a Kubernetes Node. The CRI decouples the kubelet from the runtime that is running in the Host OS, meaning that the code required to integrate kubelet with a container runtime is not part of the kubelet itself (i.e. if a new container runtime comes along, and it uses CRI, it will work with kubelet). Examples of this type of runtime include containerd (with cri plugin) and cri-o, which was built specifically for Kubernetes.
 
-To fullfill `req.sec.gen.04` the architecture should support a container runtime which provides the isolation of Operating System kernels.
+To fullfill `req.inf.vir.01` the architecture should support a container runtime which provides the isolation of Operating System kernels.
 
-As `req.sec.gen.05` mandates the architecture to support the isolation of compute resources the architecture must support a way to isolate the compute resources of the infrastructure itself from the workloads compute resources.
+The architecture must support a way to isolate the compute resources of the infrastructure itself from the workloads compute resources.
 
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
-Because `req.inf.ntw.01` requires the architecture to support CNI and `req.inf.ntw.16` requires the capability to attach several network interfaces to the pods the architecture must support a CNI metaplugin/CNI multiplexer.
+As all production grade networking solutions for Kubernetes are based on CNI plugins and the implicit requirement in [4.2.2 Virtual Network Interface Specifications](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) requires the capability to attach several network interfaces to the pods the architecture must support a CNI metaplugin/CNI multiplexer.
 
 A CNI metaplugin/CNI multiplexer is capable to attach several interfaces, using different other CNI plugins, to a pod. The different network characteristics of the interfaces, which require different networking technologies require different CNI plugins.
 
-Inter node communication required by `req.inf.ntw.02` must be served by a CNI plugin which complies with the default K8s networking assumptions.
+To comply with `req.inf.ntw.08` inter node communication must be served by a CNI plugin which complies with the default K8s networking assumptions.
 
-There are two types of low latency and high throughput networks required by `req.inf.ntw.04`. Network used for signalling traffic are more demanding than what an overlay network can handle, but still does not need the usage of user space networking. Due to the nature of signalling protocols used, this type of networks require the NAT-less communication stated by `req.inf.ntw.03`. Due to the combination of these two requirements networks with these characteristics must be served by a CNI plugin with IPVLAN or MACVLAN support.
+There are two types of low latency and high throughput networks required by telecom workloads. Network used for signalling traffic are more demanding than what an overlay network can handle, but still does not need the usage of user space networking. Due to the nature of signalling protocols used, this type of networks require the NAT-less communication stated by `infra.net.cfg.003`. Due to the combination of these two requirements networks with these characteristics must be served by a CNI plugin with IPVLAN or MACVLAN support.
 
 The low latency, high throughput networks for handling the user plane traffic require the capability to use an user space networking technology.
 
@@ -120,16 +120,16 @@ The low latency, high throughput networks for handling the user plane traffic re
 
 > Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
-As `req.inf.ntw.14` mandates the architecture must enable the integration of different SDN solutions via their respective CNI integration.
+The integration of SDN solutions required by `req.inf.ntw.05` should be enabled via their respective CNI integration.
 
 > Note: An SDN solution can manage the pod networks via the Kubernetes API or can have a CNI integration.
 
-The architecture must support telecom equipment networking where the CNF networks are set up by the operator's network administrators. This is why, as `req.inf.ntw.10` requires, the architecture must provide a set of abstract management API-s to manage the network connectivity of the CNF pods.
+The architecture must support telecom equipment networking where the CNF networks are set up by the operator's network administrators. This is why, as `req.gen.cnt.05` requires, the architecture must provide a set of abstract management API-s to manage the network connectivity of the CNF pods.
 The API must support multiple tenants and must require elevated acces rights to manipulate infrastructure related API objects as these operations require reconfiguration of the physical network infrastructure.
 
-To fulfill the requirements of `req.inf.acc.02` the architecture must support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and Huge Pages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+To fulfill the requirements of `e.cap.016` the architecture should optionally support the usage of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and Huge Pages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
 
-The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads.
+The architecture must support both IPv4, IPv6 and dual stack interfaces of the workloads as it is required by `req.inf.ntw.04`.
 
 As Kubernetes Ingress, Egress and Services have no support for all the protocols needed in telecommunication environments (Diameter, SIP, LDAP, etc) and their capacity is limited, the architecture must enable the usage of alternative load balancers, like external or built into the application. Management of external load balancers must be possible via Kubernetes API objects.
 

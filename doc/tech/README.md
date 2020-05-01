@@ -265,7 +265,7 @@ CNTT Addresses wide range of use cases from Core all the way to the Edge of the 
 # 6. Roadmap and Releases
 
 * [CNTT Releases](./release_notes)
-* [CNTT Roadmap](./release_notes/release_process.md#roadmap)
+* [CNTT Roadmap](./roadmap.md)
 
 <a name="7.0"></a>
 # 7. CNTT Technical Policies and Transition Plan

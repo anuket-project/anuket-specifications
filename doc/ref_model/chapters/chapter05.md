@@ -135,22 +135,24 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-8** depicts the features and configurations related to virtual compute for the 2 types of Cloud Infrastructure Profiles.
 
-| .conf            | Feature                | Type   | Basic | Network Intensive |
-|------------------|------------------------|--------|-------|-------------------|
-| infra.com.cfg.001 | CPU allocation ratio   | value  | 4:1   | 1:1               |
-| infra.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 |
-| infra.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 |
-| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |
+| .conf             | Feature                | Type   | Basic | Network Intensive | Notes |
+|-------------------|------------------------|--------|-------|-------------------|-------|
+| infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               |_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
+| infra.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 |       |
+| infra.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 |       |
+| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
 
 <!--
-| .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
-|------------------|----------------|----------------|----------------|----------------|----------------|
-| infra.com.cfg.001 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
-| infra.com.cfg.002 | NUMA awareness | Yes/No  | N | Y | Y |
-| infra.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
-| infra.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |
+| .conf             | Feature                | Type   | Basic | Network Intensive | Compute Intensive | Notes |
+|-------------------|------------------------|--------|-------|-------------------|-------------------|-------|
+| infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               | 1:1               |_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
+| infra.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 | Y                 |       |
+| infra.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 | Y                 |       |
+| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 | Y                 |       |
 -->
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
+
+Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking, certification, and deployment.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to these workloads.
 
 **Table 5-9** will gather virtual compute acceleration features. It will be filled over time.
 
@@ -309,7 +311,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference           | Feature                                             | Description                                                        | Basic Type | Network Intensive |
 |---------------------|-----------------------------------------------------|--------------------------------------------------------------------|------------|-------------------|
 | infra.hw.cpu.cfg.001 | Number of CPU (Sockets)                             | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
-| infra.hw.cpu.cfg.002 | Number of Cores per CPU                             | This determines the number of cores needed per each CPU.           | 20         | 20                |
+| infra.hw.cpu.cfg.002 | Number of Cores per CPU                             | This determines the number of cores needed per CPU.                | 20         | 20                |
 | infra.hw.cpu.cfg.003 | NUMA                                                | NUMA support and BIOS configured to enable NUMA                    | N          | Y                 |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
 

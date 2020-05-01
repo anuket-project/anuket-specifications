@@ -235,13 +235,15 @@ Table 4-9 shows capabilities related to resources allocation
 
 <a name="Table4-12"></a>
 
-| Ref       | Cloud Infrastructure management Capability | Unit   | Definition/Notes                                                 |
-|-----------|--------------------------------------------|--------|------------------------------------------------------------------|
-| e.man.001 | Virtual Compute allocation                 | Yes/No | Capability to allocate virtual compute resources to a workload   |
-| e.man.002 | Virtual Storage allocation                 | Yes/No | Capability to allocate virtual storage resources to a workload    |
-| e.man.003 | Virtual Networking resources allocation    | Yes/No | Capability to allocate virtual networking resources to a workload |
-| e.man.004 | Multi-tenant isolation                     | Yes/No | Capability to isolate resources between tenants                  |
-| e.man.005 | Images management                          | Yes/No | Capability to manage workload software images                    |
+| Ref       | Cloud Infrastructure management Capability | Unit            | Definition/Notes                                                 |
+|-----------|--------------------------------------------|-----------------|------------------------------------------------------------------|
+| e.man.001 | Virtual Compute allocation                 | Yes/No          | Capability to allocate virtual compute resources to a workload   |
+| e.man.002 | Virtual Storage allocation                 | Yes/No          | Capability to allocate virtual storage resources to a workload    |
+| e.man.003 | Virtual Networking resources allocation    | Yes/No          | Capability to allocate virtual networking resources to a workload |
+| e.man.004 | Multi-tenant isolation                     | Yes/No          | Capability to isolate resources between tenants                  |
+| e.man.005 | Images management                          | Yes/No          | Capability to manage workload software images                    |
+| e.man.010 | Compute Availability Zones                 | list of strings | The names of each Compute Availability Zone that was defined to separate failure domains |
+| e.man.011 | Storage Availability Zones                 | list of strings | The names of each Storage Availability Zone that was defined to separate failure domains |
 
 <p align="center"><b>Table 4-9:</b> Cloud Infrastructure management Resource Allocation Capabilities</p>
 
@@ -478,7 +480,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.016`<br />(FPGA/other Acceleration H/W)                        | Yes (if offered)         | No                       | || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
 | `i.cap.014`<br />(CPU cores consumed by the Cloud Infrastructure on the worker nodes) | any                      | any                      | |
 | `i.cap.015`<br />(Memory consumed by Cloud Infrastructure on the worker nodes)        | any                      | any                      | |
-| `i.cap.016`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)        |
+| `i.cap.016`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)<br/><br/>_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._  |
 | `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
 | `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.pm.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
@@ -504,7 +506,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
 | `e.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
 | `e.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.sla.cap.001`<br />(CPU allocation ratio) | 4:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
+| `i.sla.cap.001`<br />(CPU allocation ratio) | 1:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
 | `i.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
 | `i.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
@@ -540,9 +542,9 @@ Whereas:
 <p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="100%"/></p>
 <p align="center"><b>Figure 4-3:</b> Infrastructure Profiles Catalogue</p>
 
-
 <a name="4.2.7.2"></a>
 #### 4.2.7.2 Backwards Compatibility
+
 The Reference Model (RM) specification describes an infrastructure abstraction including a set of cloud infrastructure hardware and software profiles and compute flavours offered to workloads. The set of defined profiles and flavours will evolve along the releases but at the same time the existing workloads need to be supported. This means that any CNTT deployed cloud should be backwards compatible and support profiles and flavours from the latest three CNTT releases (N-2, N-1, N) as presented in Figure 4-4.
 
 <p align="center"><img src="../figures/ch04-Backwards-compatibility_overview.png" alt="backwards compatibility" title="backwards compatibility" width="100%"/></p>
@@ -574,6 +576,17 @@ As discussed above backwards compatibility is the reason why cloud infrastructur
 Flavours are unique only when combined with a profile. For example, CNTT release N small flavour in basic profile has the naming:
 
 `B_GenN.small`
+
+<a name="4.2.7.3"></a>
+4.2.7.3 Forward compatibility
+
+CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The exceptions of a given CNTT release are listed in [A.3 Exception List](appendix-a.md#a3-exception-list). The exceptions are not part of any Cloud Infrastructure profile defined in CNTT. If a flavour needs to be defined to support one or more exceptions its name should contain the identifyer of the exception. If needed several exceptions can be combined into the same flavour.
+
+The naming scheme for flavours with exceptions should be `B_GenN.small.ExceptionIds` where the exception is is generated from the numerical part of the exception identifier prefixed with `ex`.
+
+For example `B_Gen4.small.ex001` refers to `rm.exc.001` defined in the [Exception List](appendix-a.md#a3-exception-list).
+These flavors, similarly to other flavours, should be supported for three CNTT releases after the exception was removed from the CNTT release.
+
 
 <a name="4.3"></a>
 ## 4.3 Networking
