@@ -47,7 +47,7 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 
 | Ref #            | sub-category | Description                                                                              |
 |------------------|--------------|------------------------------------------------------------------------------------------|
-| `req.gen.ins.01` | Installer    | Installer **must** accept a descriptor file to finish deployment.                        |
+| `req.gen.ins.01` | Installer    | Installer **may** accept a descriptor file to finish deployment.                        |
 | `req.gen.ins.02` | Installer    | Installer implementation **must** validate the descriptor file with schema.              |
 | `req.gen.ins.03` | Installer    | Any existing installer implementation **may** need adaption for the descriptor file.     |
 | `req.gen.ins.04` | Installer    | Installer **may** support reporting the deployment progress status.                      |
