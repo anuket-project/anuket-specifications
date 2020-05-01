@@ -1,5 +1,5 @@
 [<< Back](../../ref_model)
-# Appendix A - Guidelines for VNF Vendors
+# Appendix A - Guidelines For Application Vendors
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -53,7 +53,7 @@ Relevant for sizing infrastructure and application operations (which often is an
 <a name="A.3"></a>
 ## A.3 Exception List
 
-As Part of the [Transition Plan](../../gov/chapters/chapter09.md#9.2) described in the adoption strategy, following table explains the exceptions allowed in this RM release. The list of Exceptions described here are considered to be against CNTT principles and will be removed in future releases as soon as an alternative technology that is aligned with CNTT principles develops and matures. 
+As Part of the [Transition Plan](../../gov/chapters/chapter09.md#9.2) described in the adoption strategy, following table explains the exceptions allowed in this RM release. The list of Exceptions described here are considered to be against CNTT principles and will be removed in future releases as soon as an alternative technology that is aligned with CNTT principles develops and matures.
 
 | Ref        	| Type       	| Name               	| Description                                                           	|
 |------------	|------------	|--------------------	|-----------------------------------------------------------------------	|
@@ -110,7 +110,7 @@ End of policies.
 
 <a name="A.6"></a>
 ## A.6 VNF Design Guidelines
-A number of software design guidelines (industry best practices) have been developed over the years including micro-services, cohesion and coupling. In addition to the industry best-practices, there are additonal guidelines and requirements specified by  ONAP in "[VNF or PNF Requirements Documentation](https://onap.readthedocs.io/en/latest/submodules/vnfrqts/requirements.git/docs/index.html)." This section does not supplant these well-known guidelines and practices. The content here only draws attention to some other design consideration that VNF Developers need to incorporate in their practices. Please note that some of these guidelines may be incorporated by operators in their contracts with VNF Vendors. 
+A number of software design guidelines (industry best practices) have been developed over the years including micro-services, cohesion and coupling. In addition to the industry best-practices, there are additonal guidelines and requirements specified by  ONAP in "[VNF or PNF Requirements Documentation](https://onap.readthedocs.io/en/latest/submodules/vnfrqts/requirements.git/docs/index.html)." This section does not supplant these well-known guidelines and practices. The content here only draws attention to some other design consideration that VNF Developers need to incorporate in their practices. Please note that some of these guidelines may be incorporated by operators in their contracts with VNF Vendors.
 
 
 These guidelines are written in an informal style and any resemblance to requirements is incidental. The VNF Developer **should** ensure that their software and the resultant VNF image:
@@ -120,9 +120,9 @@ These guidelines are written in an informal style and any resemblance to require
 1. are only created with content and files from trusted sources.
 1. are only packaged with files that have been found free of malware and vulnerabilities.
 
-Additionally, in the design and implementation of their software, the VNF Developer **should** follow the guidance in the: 
-1. [CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version)](https://cloudsecurityalliance.org). 
-1. [OWASP Cheat Sheet Series (OCSS)](https://github.com/OWASP/CheatSheetSeries) from the [Open Web Application Security Project](https://www.owasp.org). 
+Additionally, in the design and implementation of their software, the VNF Developer **should** follow the guidance in the:
+1. [CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version)](https://cloudsecurityalliance.org).
+1. [OWASP Cheat Sheet Series (OCSS)](https://github.com/OWASP/CheatSheetSeries) from the [Open Web Application Security Project](https://www.owasp.org).
 
 The VNF Developer **should** ensure that their code is not vulnerable to the [OWASP Top Ten Security Risks](https://owasp.org/www-project-top-ten/) created by the [Open Web Application Security Project](https://www.owasp.org).
 
