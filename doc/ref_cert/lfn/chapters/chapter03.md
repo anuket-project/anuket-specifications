@@ -498,6 +498,7 @@ the following test names must not be executed:
 | .\*scenario.test_autoscaling_lbv2                          | lbaasv2                                            |
 | .\*scenario.test_server_software_config                    | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
 | .\*test_volumes.VolumeBackupRestoreIntegrationTest         | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
+| .\*scenario.test_octavia_lbaas                             | octavia                                            |
 | .\*scenario.test_server_cfn_init                           | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
 
 Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
