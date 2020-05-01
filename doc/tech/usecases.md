@@ -61,11 +61,11 @@ Out of Scope
 <a name="5.1.4"></a>
 ### 5.1.4 Principle
 
-This section introduces some principles that should be followed during the definition and development of the Edge scope to be covered in CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
+This section introduces some principles that should be followed during the definition and development of Edge scope to be covered in CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
-A main principle is that we shall not re-define a new branch of CNTT and avoid to re-inventing what other organizations already have . we are following the same principles that defined in existing [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles), the [Reference Architecture Principles](../ref_arch#principles) and the Network Principles.
+A main principle is that CNTT Edge will not re-define a new branch of CNTT and target to avoid re-inventing what other organizations already have . CNTT Edge following the same principles that defined in existing [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles), the [Reference Architecture Principles](../ref_arch#principles) and the Network Principles.
 
-CNTT believe that Edge is unique in terms of infrastructure requirement ,  Implementation and deployment . that why There are some additional principle be defined covering a specific to the edge.
+CNTT believe that Edge is unique in terms of infrastructure requirement ,  Implementation and deployment . that why There are some additional principle can be defined covering a specific to the edge.
 
 -	Distribution into many small sites
 -  Deployment automation
