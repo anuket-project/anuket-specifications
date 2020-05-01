@@ -216,13 +216,13 @@ The following rules must be applied:
 - The boot of the deployment tool must be protected
 - Integrity of the deployment images must be checked, before starting deployment
 - Deployment must be done through dedicated network (e.g. VLAN)
-- When the deployment is finished, the deployment tool must be turn-off
+- When the deployment is finished, the deployment tool must be turned-off
 
 Strict access permissions must be set on OpenStack configuration files.
 
 **Configuration and management**
 
-Configuration operations must be traced. Events such as system access attempts, actions with high privileges, modification of configuration must be logged and export on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification.
+Configuration operations must be traced. Events such as system access attempts, actions with high privileges, modification of configuration must be logged and exported on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification.
 
 Per sec.LCM.002 requirement, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
 
