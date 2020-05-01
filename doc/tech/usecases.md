@@ -6,7 +6,7 @@
    * [5.1.1 Executive Summary](#5.1.1)
    * [5.1.2 Objective](#5.1.2)
    * [5.1.3 Approach & Scope](#5.1.3)
-   * [5.1.4 Principle](#5.1.4)
+   * [5.1.4 Principles](#5.1.4)
    * [5.1.5 Use cases](#5.1.5)
    * [5.1.6 Terminologies](#5.1.6)
    * [5.1.7 SDO interlocking](#5.1.7)
@@ -59,7 +59,7 @@ Out of Scope
 -	Edge deployment locations as they will vary by operator. 
 
 <a name="5.1.4"></a>
-### 5.1.4 Principle
+### 5.1.4 Principles
 
 This section introduces some principles that should be followed during the definition and development of Edge scope to be covered in CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
