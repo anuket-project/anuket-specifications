@@ -213,10 +213,11 @@ Regarding the provisioning of servers, switches, routers and networking, tools m
 For OpenStack services and software components, deployment tools or components must be used to automate the deployment and avoid errors.  The deployment tool is a sensitive component storing critical information (deployment scripts, credentials…). 
 The following rules must be applied:
 
-- The boot of the deployment tool must be protected
+- The boot of the server or the VM hosting the deployment tool must be protected
 - Integrity of the deployment images must be checked, before starting deployment
 - Deployment must be done through dedicated network (e.g. VLAN)
 - When the deployment is finished, the deployment tool must be turned-off
+- When the deployment is finished, the deployment tool must be turned-off, if the tool is only dedicated to deployment. Otherwise, any access to the deployment tool must be restricted.
 
 Strict access permissions must be set on OpenStack configuration files.
 
