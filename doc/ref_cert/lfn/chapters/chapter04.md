@@ -105,7 +105,7 @@ for more details):
 | tempest_slow      | General            |
 | tempest_scenario  | General            |
 | patrole           | Patrole            |
-| barbican          | Barbican           |
+| tempest_barbican  | Barbican           |
 | networking-bgpvpn | Networking BGP VPN |
 | networking-sfc    | Networking SFC     |
 
