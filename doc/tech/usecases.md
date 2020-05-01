@@ -41,7 +41,7 @@ Edge Stream related activities :
 <a name="5.1.3"></a>
 ### 5.1.3 Approach & Scope
 
-All gaps under Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02 - K8s will be identified and Edge requirements will be fulfilled  under Reference Model , Reference Architecture 01 -OpenStack- , Reference Architecture 02 - K8s  
+All Edge requirement gaps under Reference Model , Reference Architecture 01 (OpenStack), Reference Architecture 02 (Kubernetes) will be identified and fulfilled.
 
 Edge scope under CNTT will cover :
 
