@@ -55,7 +55,7 @@ Edge scope under CNTT will cover :
 Out of Scope 
 
 -	APIs exposed to 3rd party applications. 
--	The Architecture of VNF/CNF ( CNTT Guideline only).
+-	VNF/CNF Architecture.
 -	Exact location of Edge deployment will vary by Operator. 
 -	latency may be vary based on operator transmission type (Microwave,Fixed),a well Transmission network reachability and architecture (Backhaul,front haul, Mid haul).
 -	Onboarding of VNF/CNF on edges cloud infrastructure.
