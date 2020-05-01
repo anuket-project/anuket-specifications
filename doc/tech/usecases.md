@@ -34,7 +34,7 @@ Extend CNTT's Scope beyond the Regional and National Data Center cloud infrastru
 Edge Stream related activities :
 
 To harmonize the work under Standard Development bodies or Open source communities
-To build Common Cloud infrastructure based on CNTT principles that can be consum ed by any operator
+To build Common Cloud infrastructure based on CNTT principles that can be consumed by any operator
 To build Cloud infrastructure that can scale over hundreds of thousands of nodesand cover the Edge Telco use cases that can help operators to monetize the NFV/SDN journey
 Modify the existing RM and RA-s so that they are aligned with the edge requirements
 
