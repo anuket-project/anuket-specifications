@@ -243,6 +243,14 @@ Operators typically do not implement Security Groups when ussing SR-IOV or DPDK 
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
 
+Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/) that "describes how to obtain, create, and modify" OpenStack compatible virtual machine images. 
+
+Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance). The operator will need toolsets for scanning images, including for virus and malware detection. Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). The chain of trust requires that all images are verified again in the Compute service (Nova) prior to use.
+
+Integrity Verification at the time of instantiation is required by [ETSI NFV SEC021](https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=53601) and the creation of signature per individual artifact in the VNF package is required by [ETSI NFV SOL004](http://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/02.03.01_60/gs_nfv-sol004v020301p.pdf).
+
+
+
 <a name="6.3.6"></a>
 ### 6.3.6 Security LCM
 
