@@ -253,6 +253,36 @@ Integrity Verification at the time of instantiation is required by [ETSI NFV SEC
 
 <a name="6.3.6"></a>
 ### 6.3.6 Security LCM
+Cloud Infrastructure LCM encompasses provisioning, deployment, configuration and management (resources scaling, services upgrades…) as described in [chapter 7](./chapter07.md). These operations must be securely performed in order to keep the infrastructure safe and operational.
+
+**Provisioning/Deployment**
+
+Regarding the provisioning of servers, switches, routers and networking, tools must be used to automate the provisioning eliminating human error. For Infrastructure hardware resources, a set of recommendations is detailed in [7.2.1](./chapter07.md#7.2.1) to automate and secure their provisioning.
+
+For OpenStack services and software components, deployment tools or components must be used to automate the deployment and avoid errors.  The deployment tool is a sensitive component storing critical information (deployment scripts, credentials…). 
+The following rules must be applied:
+
+- The boot of the server or the VM hosting the deployment tool must be protected
+- Integrity of the deployment images must be checked, before starting deployment
+- Deployment must be done through dedicated network (e.g. VLAN)
+- When the deployment is finished, the deployment tool must be turned-off
+- When the deployment is finished, the deployment tool must be turned-off, if the tool is only dedicated to deployment. Otherwise, any access to the deployment tool must be restricted.
+
+Strict access permissions must be set on OpenStack configuration files.
+
+**Configuration and management**
+
+Configuration operations must be traced. Events such as system access attempts, actions with high privileges, modification of configuration must be logged and exported on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification.
+
+Per sec.LCM.002 requirement, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
+
+**Platform backup**
+
+The storage for backup must be independent of storage offered to tenants. 
+
+**Security upgrades**
+
+To defend against virus or other attacks, security patches must be installed for firmware, OS, Hypervisor and OpenStack services according to their criticality.
 
 <a name="6.3.7"></a>
 ### 6.3.7 Security Audit Logging
