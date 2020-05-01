@@ -460,7 +460,6 @@ missing.
 | opnfv/functest-smoke:hunter | tempest_scenario  | Success            |
 | opnfv/functest-smoke:hunter | tempest_slow      | Success            |
 | opnfv/functest-smoke:hunter | patrole           | Success            |
-| opnfv/functest-smoke:hunter | neutron_trunk     | Success            |
 | opnfv/functest-smoke:hunter | networking-bgpvpn | Success            |
 | opnfv/functest-smoke:hunter | networking-sfc    | Success            |
 | opnfv/functest-smoke:hunter | barbican          | Success            |
