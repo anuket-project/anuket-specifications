@@ -50,13 +50,13 @@ Edge scope under CNTT will cover :
 -	Define Edge use case specific hardware and software profiles, if needed. 
 -	Define resource requirements in terms of compute, storage and networking; new concepts, such as hyper converged infrastructure, can     be introduced.
 -	Define different architecture models as no one size fits all".
--
+
 
 Out of Scope 
 
 -	APIs exposed to 3rd party applications. 
 -	VNF/CNF Architecture.
--	Exact location of Edge deployment will vary by Operator. 
+-	Edge deployment locations as they will vary by operator. 
 -	latency may be vary based on operator transmission type (Microwave,Fixed),a well Transmission network reachability and architecture (Backhaul,front haul, Mid haul).
 -	Onboarding of VNF/CNF on edges cloud infrastructure.
 
