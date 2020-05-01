@@ -46,18 +46,18 @@ All Edge requirement gaps under Reference Model , Reference Architecture 01 (Ope
 Edge scope under CNTT will cover :
 
 -	Define Edge locations based on use case 
--	Define some guideline about external factors that can affect the edge like WAN latency based on telco use case 
--	Define VNF/CNF profiles (if needed) specific to Edge use cases such as profiles required for acceleration technologies 
--	Define resource requirements in terms of compute, storage and networking; new concepts, such as hyper converged infrastructure, can     be introduced
--	Define different Architecture models as no one size fits all"
--	
+-	Define guidelines around factors that can affect the edge, for example, WAN latency based on telco use cases.
+-	Define VNF/CNF profiles (if needed) specific to Edge use cases such as profiles required for acceleration technologies. 
+-	Define resource requirements in terms of compute, storage and networking; new concepts, such as hyper converged infrastructure, can     be introduced.
+-	Define different Architecture models as no one size fits all".
+-
 
 Out of Scope 
 
--	The API that can be exposed to 3rd party application developer 
--	The Architecture of VNF/CNF ( CNTT Guideline only )
--	Exact location of Edge deployment will vary by Operator 
--	latency may be vary based on operator transmission type (Microwave,Fixed),a well Transmission network reachability and architecture (Backhaul,front haul, Mid haul)
+-	The API that can be exposed to 3rd party application developer. 
+-	The Architecture of VNF/CNF ( CNTT Guideline only).
+-	Exact location of Edge deployment will vary by Operator. 
+-	latency may be vary based on operator transmission type (Microwave,Fixed),a well Transmission network reachability and architecture (Backhaul,front haul, Mid haul).
 -	Onboarding of VNF/CNF on edges cloud infrastructure.
 
 <a name="5.1.4"></a>
@@ -81,17 +81,17 @@ CNTT believe that Edge is unique in terms of infrastructure requirement ,  Imple
 -  Remote analysis, isolation and serviceability
 -  Resource restrictions
 -  Cloud Infrastructure overhead minimization
--	 Separation of concerns
--	 Cloud nativeness
--  Geographical presence and data origin
--  Data locality, protection and regulatory fulfilments
--	 Resilience and Availability
--  WAN connectivity availability, capabilities and quality
--  Autonomous local infrastructure functionality and operations
--  Heterogeneous Infrastructure
--	 Workload diversity 
--  Support of Telco and non-Telco workloads
--  Specific priority, control and orchestration concerns
+-	 Separation of concerns.
+-	 Cloud nativeness.
+-  Geographical presence and data origin.
+-  Data locality, protection and regulatory fulfilments.
+-	 Resilience and Availability.
+-  WAN connectivity availability, capabilities and quality.
+-  Autonomous local infrastructure functionality and operations.
+-  Heterogeneous Infrastructure.
+-	 Workload diversity. 
+-  Support of Telco and non-Telco workloads.
+-  Specific priority, control and orchestration concerns.
 
 <a name="5.1.5"></a>
 ### 5.1.5 Use cases
