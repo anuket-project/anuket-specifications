@@ -57,8 +57,6 @@ Out of Scope
 -	APIs exposed to 3rd party applications. 
 -	VNF/CNF Architecture.
 -	Edge deployment locations as they will vary by operator. 
--	latency may be vary based on operator transmission type (Microwave,Fixed),a well Transmission network reachability and architecture (Backhaul,front haul, Mid haul).
--	Onboarding of VNF/CNF on edges cloud infrastructure.
 
 <a name="5.1.4"></a>
 ### 5.1.4 Principle
