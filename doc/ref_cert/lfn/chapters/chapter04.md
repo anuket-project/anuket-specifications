@@ -104,9 +104,8 @@ for more details):
 | tempest_full      | General            |
 | tempest_slow      | General            |
 | tempest_scenario  | General            |
-| neutron_trunk     | Neutron            |
 | patrole           | Patrole            |
-| barbican          | Barbican           |
+| tempest_barbican  | Barbican           |
 | networking-bgpvpn | Networking BGP VPN |
 | networking-sfc    | Networking SFC     |
 

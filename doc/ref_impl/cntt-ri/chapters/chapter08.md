@@ -460,10 +460,9 @@ missing.
 | opnfv/functest-smoke:hunter | tempest_scenario  | Success            |
 | opnfv/functest-smoke:hunter | tempest_slow      | Success            |
 | opnfv/functest-smoke:hunter | patrole           | Success            |
-| opnfv/functest-smoke:hunter | neutron_trunk     | Success            |
 | opnfv/functest-smoke:hunter | networking-bgpvpn | Success            |
 | opnfv/functest-smoke:hunter | networking-sfc    | Success            |
-| opnfv/functest-smoke:hunter | barbican          | Success            |
+| opnfv/functest-smoke:hunter | tempest_barbican  | Success            |
 
 According to [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 and [RC1 TC Requirements]({{ "doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
@@ -524,7 +523,7 @@ cannot be executed successfully.
 | opnfv/functest-smoke:hunter             | tempest_scenario  | Success            |
 | opnfv/functest-smoke:hunter             | networking-bgpvpn | Success            |
 | opnfv/functest-smoke:hunter             | networking-sfc    | Success            |
-| opnfv/functest-smoke:hunter             | barbican          | Success            |
+| opnfv/functest-smoke:hunter             | tempest_barbican  | Success            |
 | opnfv/functest-benchmarking-cntt:hunter | vmtp              | Success            |
 | opnfv/functest-benchmarking-cntt:hunter | shaker            | Success            |
 | opnfv/functest-vnf:hunter               | cloudify          | Success            |
