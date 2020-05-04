@@ -53,7 +53,7 @@ For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to
 <a name="3.3.1"></a>
 ### 3.3.1 Architecture and OpenStack Requirements
 
-<!-- 
+<!--
 |#|Requirement|Description|Catalog|Status|MUST|Category|RI-1 Implemented (Yes/No)|RC-1 Coverage (project)|RC-1 Project To On-board|
 |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
 |1|req.gen.ost.01|must use OpenStack APIs.|General|in Functest|Must|Functional||Functest||
@@ -375,7 +375,6 @@ the following test names must not be executed:
 | .\*network.test_tags                                                                               | tag-ext                               |
 | .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                       | https://launchpad.net/bugs/1676207    |
 | .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                           | https://launchpad.net/bugs/1676207    |
-| .\*test_network_v6                                                                                 | https://gerrit.opnfv.org/gerrit/69105 |
 | .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                             | l3_agent_scheduler                    |
 
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
