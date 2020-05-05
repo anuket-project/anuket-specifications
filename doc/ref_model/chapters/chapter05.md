@@ -122,12 +122,9 @@ This section details the services that may be made available to workloads by the
 |------------------|----------------|--------|--------------------------------------------|
 | infra.svc.stg.001 | Object Storage | Yes/No | Object Storage Service (e.g S3-compatible) |
 
-<p align="center"><b>Table 5-7:</b>Table 5-7: Cloud Infrastructure Platform services.</p>
-| Minimum requirements | Example                                    |
-|----------------------|--------------------------------------------|
-|Database as a service | Cassandra                                  |
-|Queue                 | Rabbit MQ                                  |
-|LB and HA Proxy       |                                            |
+<p align="center"><b>Table 5-7:</b> Virtual Networking Acceleration features.</p>
+
+
 <a name="5.2"></a>
 ## 5.2 Cloud Infrastructure Software Profiles features and requirements
 
