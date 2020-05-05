@@ -49,7 +49,7 @@ The functionalities of each layer are as follows:
 <a name="3.2"></a>
 ## 3.2 Virtual Resources
 
-The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
+The virtual infrastructure resources provided by the Cloud Infrastructure can be grouped into four categories as shown in the diagram below:
 
 <p align="center"><img src="../figures/ch03-model-virtual-resources.png" alt="NFVI Virtual Infrastructure Resources" Title="NFVI Virtual Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
@@ -74,7 +74,7 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 | `type`     | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …)                                           |
 | `vcpus`    | max. number of virtual CPUs                                                                             |
 | `ram`      | max. size of random access memory in GB                                                                 |
-| `disc`     | max. size of ephemeral disc in GB                                                                       |
+| `disk`     | max. size of ephemeral disk in GB                                                                       |
 | `networks` | description of external networks required for inter-domain connectivity                                 |
 | `metadata` | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 
