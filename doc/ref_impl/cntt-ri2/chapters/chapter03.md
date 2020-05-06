@@ -16,7 +16,7 @@
 
 The purpose of this chapter is to list and describe the requirements on labs used to deploy and run the RI2. Overall, the RI2 serves two purposes which guide the definition of requirements in this chapter:
 
-1. RI2 serves as a baseline and prooving ground for developing the [Reference Conformance 2 (RC2) specification](../../ref_cert/RC2) as well as the Cloud Native OVP program (LINK), and
+1. RI2 serves as a baseline and proving ground for developing the [Reference Conformance 2 (RC2) specification](../../ref_cert/RC2) as well as the Cloud Native OVP program (LINK), and
 1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their development environment to develop and validate against.
 
 As a result of those two main use cases, RI2 must be deployable in different lab environments:
@@ -58,7 +58,7 @@ The network fabric in the lab must support the following networks:
 * Private (cluster internal network)
 * Storage
 
-The network topology should provide at least 2 networks with preallocated IP addressing schemes for the out-of-band management network and the Public network. The Public network must be able to reach / access the public Internet, preferably directly or via an enterprise proxy. At least IPv4 addresses must be available, ideally IPv6 address space should also be supported. At least 1 network interface must be capable of performing PXE boot and that network must be available to both the jump / test host and each physical server.
+The network topology should provide at least 2 networks with preallocated IP addressing schemes for the out-of-band management network and the Public network. The Public network must be able to reach / access the public Internet, preferably directly or via an enterprise proxy. At least IPv4 addresses must be available, ideally IPv6 address space should also be supported. At least 1 network interface must be capable of performing PXE boot and that network must be available to both the jump / test host and each physical or virtual server.
 
 The network fabric shall comprise redundant layer 2 connectivity between hosts. The switching hardware shall support VLANs for separating networks as well as supporting line speeds corresponding to the speeds of the NICs listed below. 
 
@@ -66,14 +66,14 @@ The network fabric shall comprise redundant layer 2 connectivity between hosts. 
 <a name="3.3"></a>
 ## 3.3 Infrastructure Requirements
 
-The requirements on infrastructure hardware used to deploy and run the RIi2 are as follows:
+The requirements on infrastructure hardware used to deploy and run the RI2 are as follows:
 
-1. One (1) physical server dedicated as a jump / test host
-1. Six (6) physical servers, serving as either controller or compute/worker nodes
+1. One (1) physical or virtual server dedicated as a jump / test host
+1. Six (6) physical or virtual servers, serving as either controller or compute/worker nodes
 
-The jump / test host allows to install and manage the operation of the RI2. For example, the host can be used to execute the installer software to deploy and configure the RI2 on the other physical servers. Once installed, the host may be used to run test tools or it may be used to generate test traffic intended for performance measurements. To support these operations, the physical server provided for the jump / test host shall meet the same hardware requirements as the controller / compute hosts, as outlined below. In this context, this host may be considered as a miscellaneous use or general purpose system.
+The jump / test host allows to install and manage the operation of the RI2. For example, the host can be used to execute the installer software to deploy and configure the RI2 on the other physical or virtual servers. Once installed, the host may be used to run test tools or it may be used to generate test traffic intended for performance measurements. To support the latter, the server provided for the jump / test host shall meet similar hardware requirements as the controller / compute hosts. If only functional tests are run on the test host after deployment, a VM with fewer resources as outlined below is sufficient.
 
-Each physical server shall meet the following minimum specifications:
+Each server shall meet the following minimum specifications:
 
 * CPU
   *  2x x86_64 CPU sockets, providing 20 cores each, 40 simultaneous multi-threads (SMT), at 2.2 GHz
@@ -83,7 +83,7 @@ Each physical server shall meet the following minimum specifications:
   * 1.0 TB SSD via SATA 6 Gbps
 * Network Interfaces
   * 4x 10 Gbps Ethernet Ports
-  * Out-of-band Management Port
+  * Out-of-band Management Port (physical server only)
 
 
 
