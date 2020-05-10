@@ -205,4 +205,4 @@ Principles that should be followed during the development and definition of the 
 •Scalability: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
 •Workload agnostic: Should be capable to to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
 •Telco Grade: Should support deployments of the telco grade worklaods.
-•Future proof: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), multi-location aspects (multi-cluster, DCI, etc), and Edge related technologies.
+•Future proof: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), and Edge related technologies.
