@@ -185,30 +185,24 @@ Networking, alongside Compute and Storage, is an integral part of the Cloud Infr
 
 Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual reosurces (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Figure 3-1. The importance of understanding the seperation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
 
-<p align="center"><img src="../figures/RM-Chapter4-Network-Model.png" alt="Network Model" Title="Network Model" width="65%"/></p>
-<p align="center"><b>Figure 3-5:</b> Network Model</p>
+The following diagram represents a high level Network Model detailing, form the network perspective, major subcomponents of the Virtual Resources, Physical Resources, and Management Software components of the NFVI Model Overview in Figure 3-1.The details of this model are discussed in Section 4.3.
 
-Principles that should be followed during development and definition of Networking scopes for Reference Model, Reference Architectures and down to Reference Implementations and Reference Conformance test suites under CNTT:
+<p align="center"><img src="../figures/RM-Chapter 3-Network-Model.png" alt="Network Model Overview" Title="Network Model Overview" width="65%"/></p>
+<p align="center"><b>Figure 3-5:</b> Network Model Overview</p>
 
-• Abstraction: A standardized layer between Virtualisation Layer domains and the Networking Hardware Layer resource pool hiding the implementation details of the Networking Hardware.
+Principles that should be followed during the development and definition of the networking scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
-    Note: Abstraction may be deployed in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. This includes Network Functions running on server nodes with or without programmable hardware acceleration, or networking support functions running on programmable network switches in the network.
+• Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
 
-• Agnosticity : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+    Note: In deployment phases this Principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
 
+•Agnosticity : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
     Control, User and Management traffic types
     Acceleration technologies supporting multiple types of Infrastructure deployments and Network Function workloads
-
-• Automation: Enable full automation, from Physical Fabric installation and provisioning to automation of VNF/CNF onboarding.
-
-• Openness: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open Source networking components (e.g. SDN controllers).
-
-• Programmability: Should enable a programmable forwarding plane controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
-
-• Scalability: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
-
-• Workload diversity: Should be capable to p=to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
-
-• Telco Grade: Should support deployments with Telco Grade characteristics requirements.
-
-• Future proof: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), multi-location aspects (multi-cluster, DCI, etc), Edge realted technologies, etc.
+•Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workload onboarding.
+•Openness: All Networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components (e.g. SDN controllers).
+•Programmability: Should enable a programmable forwarding plane controlled from a separately deployed control plane.
+•Scalability: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
+•Workload agnostic: Should be capable to to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
+•Telco Grade: Should support deployments of the telco grade worklaods.
+•Future proof: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), multi-location aspects (multi-cluster, DCI, etc), and Edge related technologies.
