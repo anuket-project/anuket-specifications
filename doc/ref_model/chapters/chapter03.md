@@ -199,10 +199,17 @@ Principles that should be followed during the development and definition of the 
 •Agnosticity : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
     Control, User and Management traffic types
     Acceleration technologies supporting multiple types of Infrastructure deployments and Network Function workloads
+    
 •Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workload onboarding.
+
 •Openness: All Networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components (e.g. SDN controllers).
+
 •Programmability: Should enable a programmable forwarding plane controlled from a separately deployed control plane.
+
 •Scalability: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
+
 •Workload agnostic: Should be capable to to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
+
 •Telco Grade: Should support deployments of the telco grade worklaods.
+
 •Future proof: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), and Edge related technologies.
