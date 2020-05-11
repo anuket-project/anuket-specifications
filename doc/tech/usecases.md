@@ -194,8 +194,13 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
       <img width="1068" alt="Screenshot 2020-05-11 at 5 51 34 PM" src="https://user-images.githubusercontent.com/25845305/81582240-15f31200-93b0-11ea-993e-a89f820a5d97.png">
       
         Note (1) – There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge.
+        https://www.ngmn.org/wp-content/uploads/Publications/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf
+        
         Note (2) – The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
+        
         Note (3) – Following Split Option 7.2, The average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec      while the latency for DU-CU (MIdhaul) is tens of milliseconds. 
+        https://static1.squarespace.com/static/5ad774cce74940d7115044b0/t/5db36ffa820b8d29022b6d08/1572040705841/ORAN-WG4.IOT.0-v01.00.pdf
+        
 
 <a name="5.1.6"></a>
 ### 5.1.6 Terminologies
