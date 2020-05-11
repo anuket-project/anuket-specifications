@@ -1,7 +1,7 @@
 [<< Back](../)
 
 # 5. Concensus-based Decision Making
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)
