@@ -23,31 +23,31 @@ It is vitally important for the success of the CNTT mission to have as many work
 
 A Transition plan is needed to address technology components that do not presently conform to CNTT mandates, and hence require explicit direction on how the situation will be treated in the present, as well as plans for the future.  The plans might be that the component will be added to the CNTT corpus in a future release, or remain outside of the main body, depending on the nature of the given technology or system.  For example, a technology might be propriatary to a specific vendor, yet has become a de facto standard  would not be part of the reference, but might be referred to due to its wildspread adoption by the industry.
 
-The transition plan described here informs application designers how the Reference Compliance, and ultimately the industry certification programs will react to exceptions encountered during the qualification process.  The actions taken might include flagging warnings and potential errors which could prevent issuance of a certification badge.
+The transition plan described here informs application designers on how the Reference Compliance, and ultimately the industry certification programs will manage and document exceptions encountered during the qualification process.  The actions taken might include flagging warnings and potential errors caused by the variance from the CNTT conformance levels, which could prevent issuance of a certification badge.
 
 <a name="9.2.1"></a>
 ### 9.2.1 Conformance Levels
 
-- **Fully Conformant**: VNFs/CNFs or NFVI are written and designed to be fully conformant to CNTT specification with no use of any of the allowed Exceptions.
-- **Conformant with Exceptions**: VNFs/CNFs or NFVI are written and designed to be conformant to CNTT with one or more of the allowed Exceptions used.
+- **Fully Conformant**: VNFs/CNFs or NFVI written and designed to be fully conformant to CNTT specifications with no use of any of the allowed Exceptions.
+- **Conformant with Exceptions**: VNFs/CNFs or NFVI written and designed to be conformant to CNTT specifications with one or more of the allowed Exceptions used.
 
 <a name="9.2.2"></a>
 ### 9.2.2 Exception Types
 
-- **Technology Exceptions** : Using specific technologies that are considered non conformant to CNTT principles (such as PCIe Direct Assignment, exposure of hardware features to VNFs/CNFs).
-- **Version Exceptions**: Using Versions of  Software components, , APIs, or Hardware that are different from the one specified in the specification.
+- **Technology Exceptions** : The use of specific technologies that are considered non conformant to CNTT principles (such as PCIe Direct Assignment, exposure of hardware features to VNFs/CNFs).
+- **Version Exceptions**: Using versions of  Software components, , APIs, or Hardware that are different from the ones specified in the specification.
 
 <a name="9.2.3"></a>
 ### 9.2.3 Transition Framework
 
 #### VNF/CNF Transition Plan Framework 
 
-Exceptions will be clearly recorded in the appropriate specification Appendix which will act as a guidance to VNFs/CNFs vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrate the concept.
+Exceptions will be clearly recorded in the appropriate specification Appendix which will service as guidance to VNF/CNF application vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrates the concept.
 
-- As technology matures, fewer and fewer Exceptions will be allowed in CNTT releases.
+- It is expected that over time, as technology matures, there will be a decreasing numbers of Exceptions allowed in CNTT releases.
 - For each CNTT Release, VNF/CNF can be either:
   - **Fully Conformant**: No Exception used.
-  - **Conformant with Exception**: One or More of the allowed Exceptions in RM has been used.  
+  - **Conformant with Exception**: One or More of the allowed Exceptions in the Reference Model have been used.  
 
 
 <p align="center"><img src="../figures/vnf_cnf_transition.png" alt="Transition" title="VNF/CNF Transition Plan" width="70%"/></p>
@@ -55,11 +55,11 @@ Exceptions will be clearly recorded in the appropriate specification Appendix wh
 
 #### NFVI Transition Plan Framework 
 
-Exceptions will be clearly recorded in Reference Architectures' Appendices which will act as a guidance to NFVI vendors of what Exceptions will be allowed in each CNTT release. **Figure 2** below demonstrate the concept.
+Exceptions will be clearly recorded in a given Reference Architecture's Appendix.  That document provides guidance to NFVI vendors of what Exceptions will be allowed in each CNTT release. **Figure 2** below demonstrates the concept.
 
-- As technology matures, fewer and fewer Exceptions will be allowed in CNTT releases.
-- For each CNTT Release, VNF/CNF can be either:
-  - **Fully Conformant**: Support the Target Reference Architecture without any exceptions. There should be a technology choice in RA to support RM Exceptions (However, none of the Exceptions allowed in RA has been used).
+- It is expected that over time, as technology matures, there will be a decreasing numbers of Exceptions allowed in CNTT releases.
+- For each CNTT Release, the NFVI can be either:
+  - **Fully Conformant**: Supports the Target Reference Architecture without any exceptions. There should be a technology choice in RA to support RM Exceptions (However, none of the Exceptions allowed in RA has been used).
   - **Conformant with Exceptions**: One or more of the allowed exceptions in RA are used.
 
 <p align="center"><img src="../figures/nfvi_transition.png" alt="Transition" title="NFVI Transition Plan" width="70%"/></p>
@@ -83,51 +83,51 @@ Exceptions will be clearly recorded in Reference Architectures' Appendices which
 <a name="9.5"></a>
 ## 9.5 CNTT Field Trial/ Approach
 
-This portion of Chapter 9 is segmented into two subsections. Section 9.5.1 provides a summary and overview of the trials activities specifically targeted to potential trials participants. Section 9.5.2 addresses the overall approach of CNTT to field trials as a method of ensuring consistency between releases.
+This portion of Chapter 9 is segmented into two subsections. Section 9.5.1 provides a summary and overview of the trials activities specifically targeted to potential trials participants. Section 9.5.2 addresses the overall CNTT approach to field trials as a method of ensuring consistency between releases.
 
 <a name="9.5.1"></a>
 
 ### 9.5.1 Summary/Field Trials Participants Overview
 
-CNTT has built a Reference Architecture (RA-1) on which Reference Implementation (RI-1) and Reference Conformance (RC-1) requirements have been defined. To ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its requirements and methods (RI-1/RC-1).
+Reference Implementation (RI-1) and Reference Conformance (RC-1) requirements have been defined by the Reference Architecture (RA-1). To ensure that Telecom industry operators, suppliers, and end user customers will derive benefit for the effort, CNTT is running field tests to validate the feasibility, utility, and effectiveness of its requirements and methods (RI-1/RC-1).
 
 <a name="9.5.1.1"></a>
-#### 9.5.1.1 Intents of Field Trials
+#### 9.5.1.1 Field Trials Intentions
 
-This is a partnership of CNTT with participants to validate the community is adopting a consistent approach. This is not a VI badging exercise. The trials will validate the RI-1 and the RC-1 test suite requirements and methods themselves, not VNFs or VI systems under test. 
+The field trials are viewed as a partnership of CNTT with participants to validate that the community is adopting a consistent approach. This is not a VI badging exercise. The trials will validate the RI-1 and the RC-1 test suite requirements and methods themselves, not VNFs or VI systems under test. 
 
 <a name="9.5.1.2"></a>
 #### 9.5.1.2 Expectations and Assumptions of Field Trials
 
-CNTT expects to exit the trial with either validation of RI-1 and RC-1 or a set of actions to close gaps. Through the community continuous improvement process, badging processes mutually beneficial to operators and suppliers will be defined/refined. CNTT assumes that performance testing is not included in the field trial.
+CNTT expects to exit the trials with either validation of RI-1 and RC-1 or a set of actions to review and possibly modify the RI-1 or RC-1 to address any gaps identified.  By taking advantage of the community continuous improvement process, the lessons learned in the field trials will be applied to the badging processes to refine/define the criteria with the intention of making the badges meaningful and mutually beneficial to operators and suppliers. Performance testing is not included in the field trials.
 
 <a name="9.5.1.3"></a>
 #### 9.5.1.3 Pre-trials activities
 
-Prior to the beginning of field trials, the CNTT community will define an operational plan, secure resources, and provide all designated contact information required to support the trial participants.  As the results of the trails may produce data and information that could be considered sensitive by participants, CNTT will establish standard data set requirements and secure collection methods to ensure participant privacy protection.
+Prior to the comencement of any field trials, the CNTT community will define an operational plan, secure resources, and provide all designated contact information required to support trial participants.  As the results of the trails may produce data and information that could be considered sensitive by participants, CNTT will establish standard data set requirements and secure collection methods to ensure participant privacy protection.
 
 <a name="9.5.1.4"></a>
 #### 9.5.1.4 Expectations of Trials Participants
 
-Trials participants will be expected to commit to establishing an RA-1 compliant NFVi through means that are most appropriate for the participant. 
+Trials participants will be expected to commit to establishing an RA-1 compliant NFVI, in whatever manner best suited to the participant. 
 
-First, the participant will secure appropriate environment space from pre-existing space, newly built space or securing LaaS.  The environment can exist in private or community hardware infrastructure.
+The first step is for the participant to secure appropriate environment space from pre-existing space, newly built space or securing LaaS.  The environment can exist in any mix of private or community hardware infrastructure.
 
-Second, the participant will build/setup/configure the environment space via their preferred method. This can include the use of a cookbook, automated install, and/or build from RA-1/RI-1 requirements and specifications. CNTT RI-1 Chapter 3 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md ) documentation provides the matching RI-1 requirements for the build.
+Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA-1/RI-1 requirements and specifications. CNTT RI-1 Chapter 3 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md ) documentation provides the matching RI-1 requirements for the build.
 
 <a name="9.5.1.5"></a>
 #### 9.5.1.5 Expectation 2: Execute the RC-1 Test suite
 
 CNTT will provide the participants with the community RC-1 Test suite, found at this Link: https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter04.md. The participants will execute test cases per instructions and record the quantitative results.
 
-Test case suite should be executed successfully at least 3 times. Three times represents the recommended number of test suite runs to eliminate false positives in results.  A triage process will be used to determine and manage root cause analysis of failures. If the failures are determined to be issues with the participant’s VI, CNTT will convey the issues to the RI work stream and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
+Test case suite should be executed successfully at least 3 times, because this number represents the recommended number of test suite runs to eliminate false positives in results.  A triage process will be used to determine and manage root cause analysis of any failures encountered. If the failures are determined to be issues with the participant’s VI, CNTT will convey the issues to the RI work stream and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
 
 Once the test case suite execution is successful for 3 consecutive iterations, the participant will provide the data of all iterations (both successful and unsuccessful) to CNTT based on participant privacy expectations (See Expectation #4)
 
 <a name="9.5.1.6"></a>
 #### 9.5.1.6 Expectation #3: The Qualitative Survey
 
-At the conclusion of Test Case iterations, the participant will be asked to complete a qualitative survey of their experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI-1 specifications, installation/configuration methods and RC-1 Test case efficacy. The survey will use an Agile User Story format. The Table below provides an example of the survey questions:
+At the conclusion of the Test Case iterations, the participant will be asked to complete a qualitative survey of their experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI-1 specifications, installation/configuration methods and RC-1 Test case efficacy. The survey will use an Agile User Story format. The Table below provides an example of the survey questions:
 
 <p align="center"><img src="../figures/Table 1-1.png" alt="Qualitative Survey" title="Survey/Questionnaire example" width="85%"/></p>
 <p align="center"><b>Table 1:</b> Survey/Questionnaire example</p>
