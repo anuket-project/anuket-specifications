@@ -177,13 +177,25 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
         Note (3) - The potential use cases that may consume services from Edge is the Network Model (V2N) and potentially the V2I (According on how the Infrastructure will be mapped to an Edge level)
 
-- **Use Case #4**
+- **Use Case #4 – vRAN**
 
   - **Business Objectives**
-
+      vRAN is one of the trending technologies of RAN deployment that fits for all Radio Access Technologies. vRAN helps to provide coverage for rural & uncovered areas with a compelling CAPEX reduction compared to Traditional and legacy RAN deployments. This coverage can be extended to all area types with 5G greenfield deployment as a typical example. 
+  
   - **Targeted Segments**
+  
+      - Private 5G Customers (vRAN Can be part of the Non-Public Network, NPN)
+      - B2B Customers & MVNOs (vRAN Can be part of an E2E Network Slicing)
+      - B2C (Mobile Consumers Segment).
 
+  
   - **Architecture**
+      
+      <img width="1068" alt="Screenshot 2020-05-11 at 5 51 34 PM" src="https://user-images.githubusercontent.com/25845305/81582240-15f31200-93b0-11ea-993e-a89f820a5d97.png">
+      
+        Note (1) – There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge.
+        Note (2) – The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
+        Note (3) – Following Split Option 7.2, The average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec      while the latency for DU-CU (MIdhaul) is tens of milliseconds. 
 
 <a name="5.1.6"></a>
 ### 5.1.6 Terminologies
