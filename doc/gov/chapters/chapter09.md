@@ -1,5 +1,5 @@
 # 9. Adoption
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [9.1 Introduction](#9.1)
@@ -16,9 +16,7 @@
 <a name="9.1"></a>
 ## 9.1 Introduction
 
-It is vitally important for CNTT to have working solution from infrastructure vendors and mature VNFs/CNFs designs from application vendors that is compliant to CNTT specifications. It is also understood that, in some areas, the industry might not have solutions that are fully aligned with CNTT requirements. 
-
-Therefore, a transition plan, an adoption strategy, and adoption Roadmap is needed to be agreed on within the CNTT community. This document explains those elements in details. 
+It is vitally important for the success of the CNTT mission to have as many working CNTT compliant solutions, including infrastructure and VNFs/CNFs designs from the vendor community as possible. Obviously, there will be solutions that will not be able to be fully aligned with CNTT requirements, however, the intention is to make the CNTT reference architectures and implementations map to the real world so to make compliance attractive to the broader community. Therefore, a transition plan, an adoption strategy, and adoption roadmap needs to be agreed on within the CNTT community. The intention of this document is to detail the strategy for broader adoption in the larger telecom ecosystem. 
 
 <a name="9.2"></a>
 ## 9.2 Transition Plan
