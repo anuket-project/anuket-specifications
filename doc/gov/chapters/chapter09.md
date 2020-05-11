@@ -21,9 +21,9 @@ It is vitally important for the success of the CNTT mission to have as many work
 <a name="9.2"></a>
 ## 9.2 Transition Plan
 
-A Transition plan comprised of one or more exceptions and/or transitions is required to address technology that does not presently conform to CNTT mandates, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future.
+A Transition plan is needed to address technology components that do not presently conform to CNTT mandates, and hence require explicit direction on how the situation will be treated in the present, as well as plans for the future.  The plans might be that the component will be added to the CNTT corpus in a future release, or remain outside of the main body, depending on the nature of the given technology or system.  For example, a technology might be propriatary to a specific vendor, yet has become a de facto standard  would not be part of the reference, but might be referred to due to its wildspread adoption by the industry.
 
-The transition plan described here will inform application designers how RC and ultimately industry certification programs will react when encountering exceptions during the qualification process, including flagging warnings and potentially errors which could prevent issuance of a certification badge.
+The transition plan described here informs application designers how the Reference Compliance, and ultimately the industry certification programs will react to exceptions encountered during the qualification process.  The actions taken might include flagging warnings and potential errors which could prevent issuance of a certification badge.
 
 <a name="9.2.1"></a>
 ### 9.2.1 Conformance Levels
