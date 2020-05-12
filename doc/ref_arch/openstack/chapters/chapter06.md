@@ -54,71 +54,51 @@ In order to properly manage user access to OpenStack services, service providers
 
 ###### Rules
 The following rules govern create, read, update, and delete (CRUD) level access.
+- *_member_* can create, read, update, and delete the resources defined at the tenant level.
+- *support_member* can create and read the resources defined at the tenant level.
+- *viewer* can read the resources defined at the tenant level.
+- *admin* can create, read, update, and delete all resources.
 
-<ul>
- <li><i>_member_</i> can create, read, update, and delete the resources defined at the tenant level.</li>
- <li><i>support_member</i> can create and read the resources defined at the tenant level.</li>
- <li><i>viewer</i> can read the resources defined at the tenant level.</li>
- <li><i>admin</i> can create, read, update, and delete all resources.</li>
-</ul>
 
 ###### Recommended Default Roles to Start
-</ul>
- <li><b>site_admin</b> (HIGHLY RESTRICTED) </li>
- <ul>
-  <li>Site Level Super Admin - usually assign to Operation Staffs who already have root level access to hosts</li>
-  <li>Permission to create/read/update/delete all tenants and resources at the site, including creating snapshot and upload public images</li>
-  <li>Limited ability to create/read/update/delete tenant projects</li>
- </ul>
+ **site_admin** (HIGHLY RESTRICTED)
+ - *Site Level Super Admin* - usually assign to Operation Staffs who already have root level access to hosts
+ - Permission to create/read/update/delete all tenants and resources at the site, including creating snapshot and upload public images
+ - Limited ability to create/read/update/delete tenant projects
   
- <li><b>site_admin_support</b></li>
- <ul>
-  <li>Site Level Admin - usually assign to Operation Staffs who need to manage resource except delete </li>
-  <li>Permission to create/read/update all tenants and resources at the site</li>
-  <li>Cannot create snapshots</li>
- </ul>
-
- <li><b>site_admin_viewer</b></li>
- <ul>
-  <li>Site Level Admin Read Only - usually assign to groups who need to view all resources, such as Capacity Planners</li>
-  <li>Permission to read all tenants and resources at the site</li>
-  <li>Cannot create/update/delete </li>
- </ul>
-
- <li><b>site_image_manager</b></li>
- <ul>
-  <li>Site wide admin level privileges to Glance API (via CLI)</li>
-  <li>Restricted to Image team</li>
- </ul>
-  
- <li><b>tenant_member</b></li>
- <ul>
-  <li>Tenant Level Admin - typically assign to majority of tenant users to manage their resources</li>
-  <li>Permission to create/read/update/delete to all resources at the tenant project level</li>
-  <li>Cannot upload image or create snapshot</li>
-  <li>Cannot touch any other tenant except the one the role is located</li>
- </ul>
-
- <li><b>tenant_snapshot_member</b></li>
- <ul>
-  <li>Tenant Level Admin with Snapshot - typically assign to tenant users who needs to create snapshot via special request to Operations Staff</li>
-  <li>Permission is same as tenant_member except the user can also create snapshots</li>
- </ul>
-
- <li><b>tenant_support_member</b></li>
- <ul>
-  <li>Tenant Level Support - typically assign to tenant users who needs to create resource in the project space</li>
-  <li>Permission to create/read all resources at the tenant project level</li>
-  <li>Cannot update/delete or create snapshots</li>
- </ul>
+ **site_admin_support**
+ - *Site Level Admin* - usually assign to Operation Staffs who need to manage resource except delete
+ - Permission to create/read/update all tenants and resources at the site
+ - Cannot create snapshots
  
- <li><b>tenant_viewer</b></li>
- <ul>
-  <li>Tenant Level Read Only - typically assign to tenant users who needs to read all resource in the project space</li>
-  <li>Permission to read all resources at the tenant level</li>
-  <li>Cannot create/update/delete</li>
- </ul>
-</ul>
+ **site_admin_viewer**
+  - *Site Level Admin Read Only* - usually assign to groups who need to view all resources, such as Capacity Planners
+  - Permission to read all tenants and resources at the site
+  - Cannot create/update/delete
+
+ **site_image_manager**
+  - Site wide admin level privileges to Glance API (via CLI)
+  - Restricted to Image team
+    
+ **tenant_member**
+  - *Tenant Level Admin* - typically assign to majority of tenant users to manage their resources
+  - Permission to create/read/update/delete to all resources at the tenant project level
+  - Cannot upload image or create snapshot
+  - Cannot touch any other tenant except the one the role is located
+
+ **tenant_snapshot_member**
+  - *Tenant Level Admin with Snapshot* - typically assign to tenant users who needs to create snapshot via special request to Operations Staff
+  - Permission is same as tenant_member except the user can also create snapshots
+
+ **tenant_support_member**
+  - *Tenant Level Support* - typically assign to tenant users who needs to create resource in the project space
+  - Permission to create/read all resources at the tenant project level
+  - Cannot update/delete or create snapshots
+ 
+ **tenant_viewer**
+  - *Tenant Level Read Only* - typically assign to tenant users who needs to read all resource in the project space
+  - Permission to read all resources at the tenant level
+  - Cannot create/update/delete
 
 <a name="6.3.2"></a>
 ### 6.3.2 System Hardening
@@ -141,7 +121,8 @@ System should be implemented to allow installation of the latest patches to addr
 | High | 60 days |
 | Medium | 90 days |
 | Low | 180 days |
-*See [Common Vulnerability Scoring System] (https://nvd.nist.gov/vuln-metrics/cvss)
+
+**See** [Common Vulnerability Scoring System] (https://nvd.nist.gov/vuln-metrics/cvss)
 	
 #### 6.3.2.4 Network Protocols
 - Only allow protocols that are required by the system functions
