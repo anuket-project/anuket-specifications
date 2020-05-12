@@ -7,6 +7,7 @@
 ## Table of Contents
 
 * [2.1 Introduction](#2.1)
+  * [2.1.1 Definitions](#2.1.1)
 * [2.2 Reference Model Requirements](#2.2)
   * [2.2.1 Cloud Infrastructure Software Profile Capabilities](#2.2.1)
   * [2.2.2 Virtual Network Interface Specifications](#2.2.2)
@@ -19,16 +20,18 @@
 <a name="2.1"></a>
 ## 2.1 Introduction
 
-This chapter aims to pull through the requirements that are defined in the Reference Model and only if there are additional requirements needed for this Reference Architecture then additional entries will be created in section [2.3](#2.3) below.
+This chapter will use the requirements defined in the overall Reference Model and only make additional entires in section [2.3](#2.3) if there are additional requirements needed for this Reference Architecture.
 
+<a name="2.1.1"></a>
+## 2.1.1 Definitions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
-The tables below contains the requirements pulled through from the Reference Model to cover the Basic and Network Intensive profiles.  The table will also include a reference to the specification from [Chapter 04 - Architecture Specification](./chapter04.md) to ensure traceability.
+The tables below contains the requirements from the Reference Model to cover the Basic and Network Intensive profiles.  The table also includes a reference to the specification from [Chapter 04 - Architecture Specification](./chapter04.md) to ensure traceability.
 
-To ensure alignment with the infrastructure profile catalogue, the following requirements have been pulled through:
+To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 - Those relating to Cloud Infrastructure Software Profiles
 - Those relating to Cloud Infrastructure Hardware Profiles
 - Those relating to Storage Extensions (S extension)
@@ -76,7 +79,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 
 **(1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)<br>
 **(2)** Defined in the `.bronze` configuration in section [4.2.3 Storage Extensions](../../../ref_model/chapters/chapter04.md#423-storage-extensions)<br>
-**(3)** In Kubernetes based infrastructures the packet monitoring is out of the scope of the infrastructure.
+**(3)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
 
 <a name="2.2.2"></a>
 ### 2.2.2 Virtual Network Interface Specifications
@@ -120,7 +123,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
-**(1)** [Workload Transition Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).<br>
+**(1)** [Workload Transition Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).<br>
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)<br>
 **(3)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.
 
@@ -271,9 +274,9 @@ These rows are removed and commented out as it's not clear what the requirement 
 <a name="2.3"></a>
 ## 2.3 Kubernetes Architecture Requirements
 
-The Reference Model (RM) defines the Cloud Infrastructure to consist of the physical resources, virtualised resources and a software management system.  In the virtualised world, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  And the Cloud Infrastructure Management is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management.
+The Reference Model (RM) defines the Cloud Infrastructure, which consist of the physical resources, virtualised resources and a software management system.  In the virtualised world, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  The Cloud Infrastructure Management component is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management.
 
-Now consider, the containerisation equivalent. Reference to "Architecture" in this chapter refers to the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor (optional), Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
+Compare the RM with the containerisation equivalent, references to "Architecture" in this chapter refer to the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor (optional), Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
 
 The requirements in this section are to be delivered in addition to those in [section 2.2](#2.2), and have been created to support the Principles defined in [Chapter 1 of this Reference Architecture](./chapter01.md).
 
