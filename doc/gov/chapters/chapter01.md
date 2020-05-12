@@ -22,7 +22,7 @@ The goal of this document is to assist CNTT to continue to scale, gain momentum,
 
 This document is intended for use by CNTT Task Force's new and existing contributors, participants, associated organizations, and, as an open-source community following the GSMA and LFN Anti-Trust Policies and Creative Commons Licensing, the public at-large.
 
-This document is not intended to be used to define any technical specifications, definitions, requirements, testing, certifications, or lab platforms developed by CNTT. 
+This document does not define any technical specifications, definitions, requirements, architectures, testing, certifications, or lab platforms. 
 
 <a name="1.3"></a>
 ## 1.3 Operational Scope
