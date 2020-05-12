@@ -3,55 +3,84 @@
 
 ## Table of Contents
 * [9.1 Introduction](#9.1)
-* [9.2 Transition Plan](#9.2)
-  * [9.2.1 Conformance Levels](#9.2.1)
-  * [9.2.2 Exception Types](#9.2.2)
-  * [9.2.3 Transition Framework](#9.2.3)
-* [9.3 Adoption Strategy](#9.3)
-  * [9.3.1 Expectations from Operators](#9.3.1)
-  * [9.3.2 Expectations from Vendors](#9.3.2)
-  * [9.3.3 Expectations from Industry](#9.3.3)
-* [9.4 Adoption Roadmaps](#9.4)
+  * [9.1.1 Background](#9.1.1)
+  * [9.1.2 Field Trial Purpose](#9.1.2)
+  * [9.1.3 Purpose of this Document Section](#9.1.3)  
+* [9.2 Adoption Strategy](#9.3)
+  * [9.2.1 Expectations from Operators](#9.3.1)
+  * [9.2.2 Expectations from Vendors](#9.3.2)
+  * [9.2.3 Expectations from Industry](#9.3.3)
+* [9.3 Adoption Roadmaps](#9.4)
+* [9.4 Transition Plan](#9.2)
+  * [9.4.1 Conformance Levels](#9.2.1)
+  * [9.4.2 Exception Types](#9.2.2)
+  * [9.4.3 Transition Framework](#9.2.3)
 * [9.5 CNTT Field Trial Approach] (#9.5) 
+
 <a name="9.1"></a>
 ## 9.1 Introduction
-
 It is vitally important for the success of the CNTT mission to have as many working CNTT compliant solutions, including infrastructure and VNFs/CNFs designs from the vendor community as possible. Obviously, there will be solutions that will not be able to be fully aligned with CNTT requirements, however, the intention is to make the CNTT reference architectures and implementations map to the real world so to make compliance attractive to the broader community. Therefore, a transition plan, an adoption strategy, and adoption roadmap needs to be agreed on within the CNTT community. The intention of this document is to detail the strategy for broader adoption in the larger telecom ecosystem. 
 
+<a name="9.1.1"></a>
+### 9.1.1 Background
+The Cloud iNfrastructure Telco Taskforce (CNTT) is building a set of infrastructure standards to be implemented within telcos to improve cost effectiveness and speed of delivery of Virtual Network Functions. As part of the standards development, the organization has built a Reference Model (RM) on which Reference Implementation (RI) and Reference Conformance (RC) standards have been defined.  For CNTT to ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its methods (RI/RC standards).
+
+<a name="9.1.2"></a>
+### 9.1.2 Field Trial Purpose
+
+In the truest form, adoption of a standard is an indication of it’s success within an industry. Standards developed must be interactively tested in multiple environments or “trialed” to ensure they are practicable, functional, and operative. Without running trials to validate the CNTT approach, standards may not provide intended value across a sufficient spectrum of participating entities to be widely adopted. The intentions of these field trials is as follows:
+
+1)	Demostrate the partnership approach to validate CNTT community is adopting a consistent approach
+2)	Validate the RI-1 specifications and RC-1 test suite, not VNFs or NFVI’s
+
+<a name="9.1.3"></a>
+### 9.1.3 Purpose of this Document Section
+The purpose of this document is to define the goals/outcomes, expectations, and roles necessary to support the CNTT release trials. The document will define/discuss the following:
+
+*	Purpose of field trials
+*	Goals/desired outcomes of the field trials
+*	Success indicators 
+*	Intentions and expectations
+*	Action plan
+*	Resource requirements
+*	Metrics definition
+
 <a name="9.2"></a>
-## 9.2 Transition Plan
+## 9.2 Adoption Strategy
+
+<a name="9.3.1"></a>
+### 9.2.1 Expectations from Operators
+
+<a name="9.2.2"></a>
+### 9.2.2 Expectations from Vendors
+
+<a name="9.2.3"></a>
+### 9.3.3 Expectations from Industry
+
+<a name="9.3"></a>
+## 9.3 Adoption Roadmap
+
+<a name="9.4"></a>
+## 9.4 Transition Plan
 
 A Transition plan is needed to address technology components that do not presently conform to CNTT mandates, and hence require explicit direction on how the situation will be treated in the present, as well as plans for the future.  The plans might be that the component will be added to the CNTT corpus in a future release, or remain outside of the main body, depending on the nature of the given technology or system.  For example, a technology might be propriatary to a specific vendor, yet has become a de facto standard  would not be part of the reference, but might be referred to due to its wildspread adoption by the industry.
 
 The transition plan described here informs application designers on how the Reference Compliance, and ultimately the industry certification programs will manage and document exceptions encountered during the qualification process.  The actions taken might include flagging warnings and potential errors caused by the variance from the CNTT conformance levels, which could prevent issuance of a certification badge.
 
-<a name="9.2.1"></a>
-### 9.2.1 Conformance Levels
+<a name="9.4.1"></a>
+### 9.4.1 Conformance Levels
 
 - **Fully Conformant**: VNFs/CNFs or NFVI written and designed to be fully conformant to CNTT specifications with no use of any of the allowed Exceptions.
 - **Conformant with Exceptions**: VNFs/CNFs or NFVI written and designed to be conformant to CNTT specifications with one or more of the allowed Exceptions used.
 
-<a name="9.2.2"></a>
-### 9.2.2 Exception Types
+<a name="9.4.2"></a>
+### 9.4.2 Exception Types
 
 - **Technology Exceptions** : The use of specific technologies that are considered non conformant to CNTT principles (such as PCIe Direct Assignment, exposure of hardware features to VNFs/CNFs).
 - **Version Exceptions**: Using versions of  Software components, , APIs, or Hardware that are different from the ones specified in the specification.
 
-<a name="9.2.3"></a>
-### 9.2.3 Transition Framework
-
-#### VNF/CNF Transition Plan Framework 
-
-Exceptions will be clearly recorded in the appropriate specification Appendix which will service as guidance to VNF/CNF application vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrates the concept.
-
-- It is expected that over time, as technology matures, there will be a decreasing numbers of Exceptions allowed in CNTT releases.
-- For each CNTT Release, VNF/CNF can be either:
-  - **Fully Conformant**: No Exception used.
-  - **Conformant with Exception**: One or More of the allowed Exceptions in the Reference Model have been used.  
-
-
-<p align="center"><img src="../figures/vnf_cnf_transition.png" alt="Transition" title="VNF/CNF Transition Plan" width="70%"/></p>
-<p align="center"><b>Figure 1:</b> Transition Plan for VNFs/CNFs within CNTT</p>
+<a name="9.4.3"></a>
+### 9.4.3 Transition Framework
 
 #### NFVI Transition Plan Framework 
 
@@ -65,20 +94,17 @@ Exceptions will be clearly recorded in a given Reference Architecture's Appendix
 <p align="center"><img src="../figures/nfvi_transition.png" alt="Transition" title="NFVI Transition Plan" width="70%"/></p>
 <p align="center"><b>Figure 2:</b> Transition Plan for NFVI solutions within CNTT</p>
 
-<a name="9.3"></a>
-## 9.3 Adoption Strategy
+#### VNF/CNF Transition Plan Framework 
 
-<a name="9.3.1"></a>
-### 9.3.1 Expectations from Operators
+Exceptions will be clearly recorded in the appropriate specification Appendix which will service as guidance to VNF/CNF application vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrates the concept.
 
-<a name="9.3.2"></a>
-### 9.3.2 Expectations from Vendors
+- It is expected that over time, as technology matures, there will be a decreasing numbers of Exceptions allowed in CNTT releases.
+- For each CNTT Release, VNF/CNF can be either:
+  - **Fully Conformant**: No Exception used.
+  - **Conformant with Exception**: One or More of the allowed Exceptions in the Reference Model have been used.  
 
-<a name="9.3.3"></a>
-### 9.3.3 Expectations from Industry
-
-<a name="9.4"></a>
-## 9.4 Adoption Roadmap
+<p align="center"><img src="../figures/vnf_cnf_transition.png" alt="Transition" title="VNF/CNF Transition Plan" width="70%"/></p>
+<p align="center"><b>Figure 1:</b> Transition Plan for VNFs/CNFs within CNTT</p>
 
 <a name="9.5"></a>
 ## 9.5 CNTT Field Trial/ Approach
@@ -89,7 +115,7 @@ This portion of Chapter 9 is segmented into two subsections. Section 9.5.1 provi
 
 ### 9.5.1 Summary/Field Trials Participants Overview
 
-Reference Implementation (RI-1) and Reference Conformance (RC-1) requirements have been defined by the Reference Architecture (RA-1). To ensure that Telecom industry operators, suppliers, and end user customers will derive benefit for the effort, CNTT is running field tests to validate the feasibility, utility, and effectiveness of its requirements and methods (RI-1/RC-1).
+Reference Implementation (RI-1) and Reference Conformance (RC-1) requirements are defined by the Reference Architecture (RA-1). To ensure that Telecom industry operators, suppliers, and end user customers will derive benefit for the effort, CNTT is running field tests to validate the feasibility, utility, and effectiveness of its requirements and methods (RI-1/RC-1).
 
 <a name="9.5.1.1"></a>
 #### 9.5.1.1 Field Trials Intentions
@@ -109,9 +135,7 @@ Prior to the comencement of any field trials, the CNTT community will define an 
 <a name="9.5.1.4"></a>
 #### 9.5.1.4 Expectations of Trials Participants
 
-Trials participants will be expected to commit to establishing an RA-1 compliant NFVI, in whatever manner best suited to the participant. 
-
-The first step is for the participant to secure appropriate environment space from pre-existing space, newly built space or securing LaaS.  The environment can exist in any mix of private or community hardware infrastructure.
+Trials participants will be expected to commit to establishing an RA-1 compliant NFVI, in whatever manner best suited to the participant. The first step is for the participant to secure appropriate environment space from pre-existing space, newly built space or securing LaaS.  The environment can exist in any mix of participant owned, private or community hardware infrastructure.
 
 Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA-1/RI-1 requirements and specifications. CNTT RI-1 Chapter 3 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md ) documentation provides the matching RI-1 requirements for the build.
 
@@ -120,14 +144,14 @@ Second, the participant will build/setup/configure the environment space using t
 
 CNTT will provide the participants with the community RC-1 Test suite, found at this Link: https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter04.md. The participants will execute test cases per instructions and record the quantitative results.
 
-Test case suite should be executed successfully at least 3 times, because this number represents the recommended number of test suite runs to eliminate false positives in results.  A triage process will be used to determine and manage root cause analysis of any failures encountered. If the failures are determined to be issues with the participant’s VI, CNTT will convey the issues to the RI work stream and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
+Test case suite should be executed successfully at least three (3) times, because this number represents the recommended number of test suite runs to eliminate false positives in results.  A triage process will be used to determine and manage root cause analysis of any failures encountered. If the failures are determined to be issues with the participant’s VI, CNTT will convey the issues to the RI work stream and make available SMEs to assist the participant in resolving the issues. When failures are deemed to be caused by an issue or gap in the RA/RI/RC, the community will work to determine the resolution, and modify the RA/RI/RC accordingly.
 
 Once the test case suite execution is successful for 3 consecutive iterations, the participant will provide the data of all iterations (both successful and unsuccessful) to CNTT based on participant privacy expectations (See Expectation #4)
 
 <a name="9.5.1.6"></a>
 #### 9.5.1.6 Expectation #3: The Qualitative Survey
 
-At the conclusion of the Test Case iterations, the participant will be asked to complete a qualitative survey of their experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI-1 specifications, installation/configuration methods and RC-1 Test case efficacy. The survey will use an Agile User Story format. The Table below provides an example of the survey questions:
+At the conclusion of the Test Case iterations, the participant will be asked to complete a qualitative survey of their experience. This survey will be used to measure the feasibility, utility, and effectiveness of the RI-1 specifications, installation/configuration methods and RC-1 Test case efficacy. The survey will be in an Agile User Story format. The Table below provides an example of the survey questions:
 
 <p align="center"><img src="../figures/Table 1-1.png" alt="Qualitative Survey" title="Survey/Questionnaire example" width="85%"/></p>
 <p align="center"><b>Table 1:</b> Survey/Questionnaire example</p>
@@ -136,47 +160,20 @@ At the conclusion of the Test Case iterations, the participant will be asked to 
 <a name="9.5.1.7"></a>
 #### 9.5.1.7 Expectation 4: Providing Trials Results
 
-As a community, CNTT is concerned with the privacy of the participant data. CNTT subscribes to the LFN anti-trust policies ( https://www.linuxfoundation.org/antitrust-policy/ ) and the LFN Privacy Policy ( https://www.linuxfoundation.org/privacy/ ). As discussed in the Pre-trials activity section of the document, data generated by the trials will be secured to protect participant privacy. Additionally, should participants have concerns regarding the data they generate from the trials, CNTT will either work with the participant to eliminate their concerns, honor instructions from the participant on the data use, or agree to exclude that participant’s data from the analysis.
+As a community, CNTT is concerned with the privacy of participant data. CNTT abides by the LFN anti-trust policies ( https://www.linuxfoundation.org/antitrust-policy/ ) and the LFN Privacy Policy ( https://www.linuxfoundation.org/privacy/ ). As discussed in the Pre-trials activity section of the document, data generated by the trials will be secured to protect participant privacy. Additionally, should participants have concerns regarding the data they generate from the trials, CNTT will either work with the participant to eliminate their concerns, honor instructions from the participant on limitations to the data use, or agree to exclude that participant’s data from the analysis.
 
 <a name="9.5.1.8"></a>
 #### 9.5.1.8 Conclusion: Final Deliverable - End-of-Trial Report
 
-Upon completion of field trials, CNTT shall develop an End of Trial Report which summarizes the overall conclusions based on the evaluation, to include:
+Upon completion of field trials, CNTT write an End of Trial Report which summarizes the overall conclusions based on the evaluation.  The report will include:
 
-1.	Successes: What went activities went well generally or specifically? How did it compare to the past or alternative results?
-2.	Challenges: What didn’t go well overall? What impact could these challenges have on adoption?
-3.	Discoveries: What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
-4.	Decisions and Recommendations: Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
-5.	Next Steps: Indication of proposed steps and activities to be undertaken by the community
+1.	Successes: What activities went well both generally and specifically? How did it compare to past or alternative results?
+2.	Challenges: What did not go well overall? What impact could these challenges have on future community adoption?
+3.	Discoveries: What are key discoveries/strategic learnings about any of the CNTT approaches or methods? Other?
+4.	Decisions and Recommendations: Identification of the key decisions made and list of what corrective actions shall be taken. What shoud be changed, enhanced, maintained, or discontinued?
+5.	Next Steps: Indication of proposed steps and activities to be undertaken by the community to further the objectives of the CNTT work group.
 
 ### 9.5.2 CNTT Field Trials Approach 
-
-### 9.5.2.1 Background
-The Common NVFI Telco Taskforce (CNTT) is building a set of infrastructure standards to be implemented within telcos to improve cost effectiveness and speed of delivery of Virtual Network Functions. As part of the standards development, the organization has built a Reference Model (RM) on which Reference Implementation (RI) and Reference Conformance (RC) standards have been defined.  For CNTT to ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its methods (RI/RC standards).
-
-<a name="9.5.2.2"></a>
-### 9.5.2.2 Purpose of this Document Section
-
-The purpose of this document is to define the goals/outcomes, expectations, and roles necessary to support the CNTT release trials. The document will define/discuss the following:
-
-*	Purpose of field trials
-*	Goals/desired outcomes of the field trials
-*	Success indicators 
-*	Intentions and expectations
-*	Action plan
-*	Resource requirements
-*	Metrics definition
-
-<a name="9.5.2.3"></a>
-### 9.5.2.3 Field Trial Purpose
-
-In the truest form, adoption of a standard is an indication of it’s success within an industry. Standards developed must be interactively tested in multiple environments or “trialed” to ensure they are practicable, functional, and operative. Without running trials to validate the CNTT approach, standards may not provide intended value across a sufficient spectrum of participating entities to be widely adopted. 
-
-<a name="9.5.2.4"></a>
-#### 9.5.2.4 Intents
-
-1)	This is a partnership approach to validate CNTT community is adopting a consistent approach
-2)	Validate RI-1 specifications and RC-1 test suite, not VNFs or NFVI’s in the trial
 
 <a name="9.5.2.5"></a>
 #### 9.5.2.5 Key Expectations and Assumptions
@@ -197,11 +194,11 @@ The following diagram the key components and flow of activities, actions, and de
 #### Success Indicators
 
 1) Agreement secured on the use of trials results data, including:
-a.	Detail level of data required to validate
+a.	Level of data detail required to validate the results
 b.	Acceptable data values indicating valid results
-c.	Detail level of data that will be published
+c.	Level of data detail that will be published
 
-2) VI-1 Labs are successfully stood up in all target environments
+2) VI-1 Labs are successfully deployed in all target environments
 * Vendor (NFVI, VNF, VIM, 3rd Party)
 *	Community (OPNFV)
 *	LaaS (e.g. UNH)
@@ -223,7 +220,7 @@ The object is to quantitively and qualitatively assess and evaluate the followin
 * TC Traceability
 * Test Pass Criteria
 * Benchmark Data
- * Other?
+* Other criteria to be determined at commencment or during the execution of the trial
 
 Overall, feedback from the trials and issues and gaps found shall be used to enhance and improve the CNTT approach. Enhancements to future releases will/shall be identified accordingly.
 
@@ -256,7 +253,7 @@ Specific test cases for the field trials will be documented and provided to the 
 <a name="9.5.2.7.4"></a>
 #### 9.5.2.7.4 Vendor Solicitation/Commitment
 
-Vendor members will be solicited for participation in the trials. The vendors will be required to commit fully to the assessment and evaluation  processes. As previously mentioned, additional discussion is needed to define what results data and at what level is acceptable to be shared.
+Vendor members will be solicited for participation in the trials. The vendors will be required to commit fully to the assessment and evaluation  processes. As previously mentioned, additional discussion is needed to define what results data and at what level of detail is acceptable to be shared.
 
 <a name="9.5.2.7.5"></a>
 #### 9.5.2.7.5 Deliverable
@@ -295,7 +292,7 @@ The field trial will run the Test Suite for 3 Iterations. For each iteration:
 The Community shall review Issues/Gaps during the evaluate stage and do one of the following:
 
 *	Accept the Issue/Gap, and accordingly modify the RI/RC 
-*	Not-Accept the Issue/Gap and document the condition while maintaining the privacy of participants
+*	Not-Accept the Issue/Gap and document the condition of non-conformance while maintaining the privacy of participants
 
 <a name="9.5.6.1"></a>
 #### 9.5.6.1 Resources and Roles
@@ -310,7 +307,7 @@ CNTT will staff the plan by soliciting volunteers from the participants. The lis
 *	OPNVF lead for RI1/RC1
 *	Other support roles such as Governance, technical writers, etc.
 
-The participants that volunteer for the roles will be expected to provide the appropriate level of time to support the trials initiative.
+The participants that volunteer for the roles will be expected to provide the appropriate amount of time to support the trials initiative.
 
 <a name="9.5.2.8.4"></a>
 #### 9.5.2.8.4 Deliverables
@@ -376,7 +373,7 @@ Technical outcomes i.e. technical test results will be collected and managed by 
 
 Proving the ‘right’ value to the operator and vendor community is ultimately what will ensure adoption of CNTT requirements. These field trials are intended to verify and validate the requirements and  methods developed by CNTT so that adjustments can be made to ensure the intended value is being delivered. 
 
-CNTT shall evaluate all feedback and test results to understand whether CNTT methods and measures are meeting intended purposes. If a method or measure is not meeting its intended purpose, it shall be identified as a gap or an issue for resolution. Determinations if and when adjustments or adaptations are needed shall be made to by CNTT community.
+CNTT shall evaluate all feedback and test results to understand whether CNTT methods and measures are meeting intended objectives. If a method or measure is not meeting its intended purpose, it shall be identified as a gap or an issue for resolution. Determinations if and when adjustments or adaptations are needed shall be made to by the CNTT community.
 
 
 <a name="9.5.2.10.1"></a>
@@ -385,7 +382,7 @@ CNTT shall evaluate all feedback and test results to understand whether CNTT met
 All identified gaps and issues shall be captured in the CNTT GitHub repository. Decisions and determinations will be captured and logged accordingly.
    
 <a name="9.5.2.11"></a>
-### 9.5.2.11 Close Stage
+### 9.5.2.11 Closeout Stage
 
 To close out the Field Trial, CNTT shall summarize its evaluation of the Field Trial and actions to be taken to address any adaption needed.
 
@@ -393,8 +390,8 @@ To close out the Field Trial, CNTT shall summarize its evaluation of the Field T
 #### 9.5.2.11.1 Final Deliverable - End-of-Trial Report
 
 Upon completion of field trials, CNTT shall develop an End of Trial Report which summarizes the overall conclusions based on the evaluation, to include:
-   *	Successes - What went activities well generally or specifically? How did it compare to the past or alternative results?   
+   *	Successes - What went activities well both generally or specifically? How did it compare to the past or alternative results?   
    * Challenges - What didn’t go well overall? What impact could these challenges have to adoption?
    *	Discoveries - What are key discoveries/strategic learnings about any CNTT approaches or methods? Other?
-   *	Decisions and Recommendations - Identification of key decisions made and list of what corrective actions shall be taken? What to enhance, maintain, or discontinue?
+   *	Decisions and Recommendations - Identification of key decisions made and list of what corrective actions shall be taken. What to enhance, maintain, or discontinue?
    *	Next Steps - Indication of proposed steps and activities to be undertaken by the community
