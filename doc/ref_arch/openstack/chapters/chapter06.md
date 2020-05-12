@@ -44,7 +44,7 @@ Authentication is the first line of defense for any real-world implementation of
 ##### Keystone Tokens
 Once a user is authenticated, a token is generated for authorization and access to an OpenStack environment and resources.  By default, the token is set to expire in one hour. This setting can be changed based on the business and operational needs, but it's highly recommended to set the expiration to the shortest possible value without dramatically impacting your operations.
 
-<b>Special Note on Logging Tokens:</b> since the token would allow access to the OpenStack services, it <i>MUST</i> be masked before outputting to any logs.
+**Special Note on Logging Tokens:** since the token would allow access to the OpenStack services, it *MUST* be masked before outputting to any logs.
 
 #### 6.3.1.3 Authorization
 Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Service supports the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
