@@ -20,13 +20,13 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The CNTT Kubernetes Reference Architecture (RA) aims to provide an industry standard reference architecture independent of the many Kubernetes offerings and distributions. The RA does not seek to require vendor-specific enhancements in order to achieve CNTT conformance; conformance is achieved using upstream components or features that are developed by the open source community. This would allow operators to provide a common Kubernetes-based architecture that allows any conformant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.  The specification of how to use these components is detailed in [Chapter 04](chapter04.md).
+The CNTT Kubernetes Reference Architecture (RA) provides an industry standard independent Kubernetes reference architecture that is not tied to any specific offering or distribution. No vendor-specific enhancements are required in order to achieve conformance to CNTT principles; conformance is achieved by using upstream components or features that are developed by the open source community. This allows operators to have a common Kubernetes-based architecture that supports any conformant VNF or CNF to be deployed and operated as expected. The purpose of this chapter is to outline all the components required to provide Kubernetes in a consistent and reliable way.  The specification of how to use these components is detailed in [Chapter 04](chapter04.md).
 
-Kubernetes is already very well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so rather than repeat content from there this and following chapters will describe the specific features used and how we expect them to be implemented.
+Kubernetes is already well documented at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/) so the following chapters will describe only the specific features required and how would be expected to be implemented. For any information about standard Kubernates features and capabilities, refer back to the standard Kubernates documentation.
 
-This reference architecture provides optionality in terms of pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution.
+This reference architecture provides options for pluggable components such as service mesh and other plugins that might be used, however the focus of the reference architecture is on the abstracted interfaces and features that are required for workload management and execution.
 
-Chapter 5 of the Reference Model (RM) describes the [hardware](../../../ref_model/chapters/chapter05.md#5.3) and [software](../../../ref_model/chapters/chapter05.md#5.1) profiles, which are descriptions of the capabilities and features that the NFVI offer to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high level view of the software profile features that apply to each instance profile (Basic and Network Intensive). For more information on the instance profiles please read [RM Chapter 4, section 4.2.4](../../../ref_model/chapters/chapter04.md#4.2.4).
+Chapter 5 of the Reference Model (RM) describes the [hardware](../../../ref_model/chapters/chapter05.md#5.3) and [software](../../../ref_model/chapters/chapter05.md#5.1) profiles that are descriptions of the capabilities and features that the NFVi offer to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high level view of the software profile features that apply to each instance profile (Basic and Network Intensive). For more information on the instance profiles please read [RM Chapter 4, section 4.2.4](../../../ref_model/chapters/chapter04.md#4.2.4).
 
 <p align="center"><img src="../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png" width="80%"/></p>
 <p align="center"><b>Figure 5-3 (from RM):</b> NFVI software profiles</p>
@@ -36,24 +36,24 @@ In addition, Figure 5-4 (also shown below) depicts the hardware profile features
 <p align="center"><img src="../../../ref_model/figures/RM_chap5_fig_5_4_HW_profile.png" width="80%"/></p>
 <p align="center"><b>Figure 5-4 (from RM):</b> NFVI hardware profiles and host associated capabilities</p>
 
-These features and capabilities that are described in the software and hardware profiles are considered throughout this RA, with traceability of the RA requirements to the RM requirements formally captured in [chapter 2, section 2.2](./chapter02.md#2.2) of this RA.
+The features and capabilities described in the software and hardware profiles are considered throughout this RA, with traceability of the RA requirements to the RM requirements formally captured in [chapter 2, section 2.2](./chapter02.md#2.2) of this RA.
 
 <a name="3.2"></a>
 ## 3.2 Infrastructure Services
 
-> This chapter shall list the services provided by the infrastructure. Some example of these services can be: log collection, monitoring, health check, load balancer. For the sake of clarity CaaS services should be also listed, like container lifecycle management or networking services.
+> This chapter shall list the services provided by the infrastructure. Some example of these services are: log collection, monitoring, health check, load balancer. For the sake of clarity CaaS services should be also listed, like container lifecycle management or networking services.
 
 <a name="3.2.1"></a>
 ### 3.2.1 Container Compute Services
 
-> This chapter should describe considerations about container compute services.
+> This chapter should describe requirements for container compute services.
 
-The primary interface between the Physical / Virtual Infrastructure and any container-relevant components is the Host Operating System.  This is the OS within which the container runtime exists, and within which the containers run (and therefore, the OS whose kernel is shared by said containers).  This is shown in Figure 3-1 below.
+The primary interface between the Physical / Virtual Infrastructure and any container-relevant components is the Host Operating System.  This is the OS within which the container runtime exists, and within which the containers run (and therefore, the OS whose kernel is shared by the referenced containers).  This is shown in Figure 3-1 below.
 
 <p align="center"><img src="../figures/ch03_hostOS.png" alt="Kubernetes Host Operating System" Title="Kubernetes Host Operating System" width="65%"/></p>
 <p align="center"><b>Figure 3-1:</b> Kubernetes Host Operating System</p>
 
-The Host OS (as with any OS) consists of two main layers:
+The Host OS (as with any OS) consists of two main  components:
 - Kernel space
 - User space
 
