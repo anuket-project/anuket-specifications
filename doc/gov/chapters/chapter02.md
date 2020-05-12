@@ -23,7 +23,7 @@ As an open-source community organization, CNTT has developed the following proce
 [Sample Welcome Message Here] 
 Welcome to the CNTT group –
 
-It is wonderful that [Company and person] has decided to join in the effort to make building the infrastructure to support Telecom workloads more robust and standardized. We believe that these efforts will benefit not only the operators, but also the vendors, and ultimately all our customers as well, by hopefully making it easier and simpler to incorporate new technology into our systems.
+It is wonderful that you, [Company and person] have decided to join in the effort to make building the infrastructure to support Telecom workloads more robust and standardized. We believe that these efforts will benefit not only the operators, but also the vendors, and ultimately all our customers as well, by hopefully making it easier and simpler to incorporate new technology into our systems.
 
 To get you started, I encourage you to go to our Getting Started page to download a packet of information on how to get engaged at the working level with CNTT.  We also have materials in the Wiki and Github repositories, so I hope that all this doesn’t overwhelm you.  We are excited that you will be able to become more engaged in our efforts and as always, we will be happy to help you get up to speed.  
 
