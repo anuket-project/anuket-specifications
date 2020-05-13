@@ -164,8 +164,8 @@ Sometimes container isolation is compared directly with VM based isolation, with
 - Containers: isolation by SW based mechanisms available in OS, Docker and Kubernetes. A container workload is just a set of Linux processes. It is _possible_ to configure SW based _additional isolation_ for container workloads, for example by kernel namespaces.
 
 
-Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist.
+Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist. In such cases, the default is to allocate one namespace per Containerised Network Function (CNF).
 
 ### Container Isolation in Kubernetes Cluster
 #### Namespaces  
-Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. Kubernetes should be used to isolate different types of workloads like Development, Production or Test. The default is to allocate one namespace per Containerised Network Function (CNF).
+Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. They should not be used to isolate different steps in the deployment process like Development, Production, or Testing. The most reliable separation is achieved by deploying sensitive workloads into dedicated clusters. 
