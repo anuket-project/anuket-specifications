@@ -13,7 +13,7 @@ This is the OPNFV based Reference Implementation (RI-1)
 
 ## Version History
 
-| Version | Date | Note
+| Release.Version | Date | Note
 | --- | --- | --- |
 | 1.0-alpha | 10th January 2020 | Snezka Release|
 | 3.0-alpha | 15th May 2020 | Baldy Release|

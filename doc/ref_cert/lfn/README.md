@@ -13,7 +13,7 @@ This is the Reference Conformance for OpenStack based infrastructure (RC-1)
 
 ## Version History
 
-| Version | Date | Note
+| Release.Version | Date | Note
 | --- | --- | --- |
 | 0.0 | 10th January 2020 | First Initial Draft|
 | 3.0 | 15th May 2020 | Baldy Release|
