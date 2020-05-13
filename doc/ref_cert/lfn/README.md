@@ -2,20 +2,21 @@
 
 # Reference Conformance 1
 
-This is the Reference Conformance for OpenStack based infrastructure.
+This is the Reference Conformance for OpenStack based infrastructure (RC-1)
 
 ## Release Information
-**Release: _0.0_**
+**Release: _3.0_**
 
 **Version: _0.0_**
 
-**Release Date: _10th January 2020_**
+**Release Date: _15th May 2020_**
 
 ## Version History
 
 | Version | Date | Note
 | --- | --- | --- |
 | 0.0 | 10th January 2020 | First Initial Draft|
+| 3.0 | 15th May 2020 | Baldy Release|
 
 
 ## Overall Status

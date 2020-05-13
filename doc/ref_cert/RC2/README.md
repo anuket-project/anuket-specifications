@@ -2,20 +2,20 @@
 
 # Reference Conformance - Kubernetes based
 
-This is the Kubernetes Based Reference Conformance
+This is the Kubernetes Based Reference Conformance (RC-2)
 
 ## Release Information
 **Release: _0.0_**
 
 **Version: _0.0_**
 
-**Release Date: _3rd March 2020_**
+**Release Date: _15th May 2020_**
 
 ## Version History
 
-| Version | Date | Note
+| Release.Version | Date | Note
 | --- | --- | --- |
-| 0.0 | 3rd March 2020 | First Initial Draft|
+| 0.0 | 15th May 2020 | First Initial Draft|
 
 
 ## Overall Status

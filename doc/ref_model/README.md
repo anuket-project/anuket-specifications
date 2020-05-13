@@ -4,20 +4,21 @@
 <!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
 
 ## Release Information
-**Release: _3.0-alpha_**
+**Release: _3.0_**
 
-**Version: _1.0_**
+**Version: _0.0_**
 
-**Release Date: _10th January 2020_**
+**Release Date: _15th May 2020_**
 
 ## Version History
 
-| Version | Date | Note
+| Release.Version | Date | Note
 | --- | --- | --- |
 | 1.0 | 16th July 2019 | First Release|
 | 1.1 | 2nd August 2019 | Post Paris F2F clean up|
 | 2.0 | 20th September 2019 | Botrange Release|
 | 3.0-alpha| 10th January 2020 | Snezka Release|
+| 3.0| 15th May 2020 | Baldy Release|
 
 
 ## Overall Status
