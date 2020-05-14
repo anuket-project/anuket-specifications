@@ -17,7 +17,7 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-This chapter will describe in detail the Kubernetes Reference Architecture in terms of the functional capabilities and how they relate to the Reference Model requirements, i.e. how the infrastructure profiles are delivered and described.
+This chapter describes in detail the CNTT Kubernetes Reference Architecture in terms of the functional capabilities and how they relate to the Reference Model requirements, i.e. how the infrastructure profiles are determined, documented and delivered.
 
 Figure 4-1 below shows the architectural components that are described in the subsequent sections of this chapter.
 
@@ -27,10 +27,10 @@ Figure 4-1 below shows the architectural components that are described in the su
 <a name="4.2"></a>
 ## 4.2 Host OS
 
-In order for a Host OS to be conformant with this Reference Architecture it must meet the following requirements:
-- A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is focussed on installing and managing the lifecycle of Kubernetes and nothing else, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, etc.
+In order for a Host OS to be conformant with the Reference Architecture it must meet the following requirements:
+- A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is concerned with nothing other than installing and managing the lifecycle of Kubernetes, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, and other tools and applications required for the full system.
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
-- In order to support `req.gen.cnt.02` (immutable infrastructure), the Host OS must be easily reproduced, consistent, disposable, will have a repeatable deployment process, and will not have configuration or artifacts that are modifiable in place (i.e. once it is running).
+- Support `req.gen.cnt.02` (immutable infrastructure), which means that the Host OS must be easily reproduced, consistent, disposable, with a repeatable deployment process, and will not have configuration or artifacts that are modifiable in place (i.e. once it is in a  running state).
 - The selection of Host OS shall not restrict the selection of the OS used to build container images (container base image).
 
 Table 4-1 lists the Linux kernel versions that comply with this Reference Architecture specification.
@@ -45,8 +45,6 @@ Table 4-1 lists the Linux kernel versions that comply with this Reference Archit
 
 <a name="4.3"></a>
 ## 4.3 Kubernetes
-
-> This chapter should discuss:
 > * The version of version range of Kubernetes and the mandatory components needed for Kubernetes (e.g.: etcd, cadvisor)
 > * Which optional features are used and which optional API-s are available
 > * Which [alfa or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
@@ -59,13 +57,13 @@ This Reference Architecture also specifies:
     - kube-apiserver
     - kube-scheduler
     - kube-controller-manager
-- Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes
+- Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes if desired
 - In order to support `req.gen.rsl.01`, `req.gen.rsl.02` and `req.gen.avl.01` a Reference Implementation must:
     - Consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes)
-    - At least one master node per availability zone or fault domain to ensure the high availability and resilience of Kubernetes control plane services
+    - At least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services
     - At least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes
 - Master node services, including etcd, and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
-- Workloads must ***not*** rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue)
+- Workloads must ***not*** rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). This function is essential for support of Edge type architectures.
 - The following kubelet features must be enabled
     - CPU Manager
     - Device Plugin
@@ -84,18 +82,19 @@ feature-gates:
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-The chosen runtime must be conformant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are conformant with these specification are (note this is not a complete list and in no particular order):
+The chosen runtime must be conformant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are conformant with these specification in no particular order are:
 - container-d (with CRI plugin enabled, which it is by default)
 - Docker CE (via the dockershim, which is currently built in to the kubelet)
 - CRI-O
 - Frakti
+The above list is by no means intended to be a complete listing of all the possible options for container runtimes.
 
-To support `req.inf.vir.01` the architecture specifies the usage of a container runtime with the capability of Kernel isolation:
+To support `req.inf.vir.01` the architecture specifies the use of a container runtime with the capability for Kernel isolation:
 - kata-containers
 
-These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of storage that is required during this lifecycle - this is management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when conformant with the above specifications) supports the ephemeral storage for Pods.
+These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of any storage required during the lifecycle of the container, including the management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when conformant with the above specifications) supports ephemeral storage for Pods.
 
-To support the isolation of the resources used by the infrastructure from the resources used by the workloads the architecture specifies the usage of the Kubernetes CPU Manager and [CPU Pooler](https://github.com/nokia/CPU-Pooler/).
+To support the isolation of the resources used by the infrastructure from the resources used by the workloads the architecture specifies the use of the Kubernetes CPU Manager and [CPU Pooler](https://github.com/nokia/CPU-Pooler/).
 
 > Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
 
@@ -125,12 +124,12 @@ The following table contains a comparision of relevant features and requirements
 
 <p align="center"><b>Table 4-2:</b> Comparision of CNI multiplexers/metaplugins</p>
 
-1): Under implementation inthe current release.  
+1): Under implementation in the current release.  
 
  [Calico](https://github.com/projectcalico/cni-plugin) may be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.08` due to it's capability to handle `NetworkPolicies`, what is missing from [Flannel](https://github.com/coreos/flannel-cni).
 For the network of signalling connections the built in IPVLAN CNI of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used as these provide NAT-less connectivity. For the user plane network(s) the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.
 
-> Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) to the architecture are under debate.
+> Editors note: The usage SR-IOV in container environments, therefore the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) to the architecture are still under debate.
 
 <a name="4.6"></a>
 ## 4.6 Storage components
@@ -174,14 +173,14 @@ A note on object storage:
 <a name="4.7"></a>
 ## 4.7 Service meshes
 
-No service meshes are part of the architecture.
+Service meshes are not in scope for the architecture.
 
 <a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
 
-The reference architecture specifies the usage of a Kubernetes Application package manager using the Kubernetes API-s, like [Helm v3](https://v3.helm.sh/).
+The reference architecture specifies the use of a Kubernetes Application package manager using the Kubernetes API-s, such as [Helm v3](https://v3.helm.sh/).
 
 <a name="4.9"></a>
-## 4.9 Supplementary components (okay, this is a bad heading, but I do not have any better)
+## 4.9 Additional required components
 
-> This chapter should list all the supplementary components needed to provide the services defined in Chapter 3.2 (e.g: Prometheus)
+> This chapter should list any additional components needed to provide the services defined in Chapter 3.2 (e.g: Prometheus)
