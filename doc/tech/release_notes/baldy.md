@@ -7,8 +7,8 @@
 ## Baldy Release Contents
 * [Overview](#overview)
 * [RM (v3.0)](#rm)
-* [RA-1 (v3.0)](#ra1)
-* [RC-1 (v3.0)](#rc1)
+* [RA-1 (v2.0)](#ra1)
+* [RC-1 (v2.0)](#rc1)
 * [RI-1 (v3.0-alpha)](#ri1)
 * [RA-2 (v3.0)](#ra2)
 * [RI-2 (draft)](#ri2)
@@ -42,7 +42,7 @@
 *Baldy Release includes at least features up to and including `baldy.rm.4`.
 
 <a name="ra1"></a>
-## Reference Architecture 1 (v3.0)
+## Reference Architecture 1 (v2.0)
 
 >WSL Note: Features below should be implemented in order.
 
@@ -61,7 +61,7 @@
 *Baldy Release includes at least features up to and including `baldy.ra1.6`.
 
 <a name="rc1"></a>
-## Reference Conformance 1 (v3.0)
+## Reference Conformance 1 (v2.0)
 
 <p align="center"><img src="../figures/rc1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> RC-1 Baldy Release plan</p>

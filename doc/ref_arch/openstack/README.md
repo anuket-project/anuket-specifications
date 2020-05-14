@@ -5,7 +5,7 @@
 This is Openstack based Reference Architecture (RA-1)
 
 ## Release Information
-**Bundle: _3_**
+**Bundle: _2_**
 
 **Version: _0_**
 
@@ -17,7 +17,7 @@ This is Openstack based Reference Architecture (RA-1)
 | --- | --- | --- |
 | 1.0 | 20th September 2019 | Botrange Release|
 | 2.0-alpha | 10th January 2020 | Snezka Release|
-| 3.0 | 15th May 2020 | Baldy Release|
+| 2.0 | 15th May 2020 | Baldy Release|
 
 ## Overall Status
 
