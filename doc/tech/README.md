@@ -19,6 +19,7 @@
 * [6. Roadmap and Releases](#6.0)
 * [7. CNTT Technical Policies and Transition Plan](#7.0)
 * [8. Relevant Technologies](#8.0)
+* [9. Policies](#9.0)
 
 ## Available Specifications
 * [Reference Model](../ref_model)
@@ -79,7 +80,7 @@ By providing a pre-defined environment with common capabilities, applications ar
 - Better utilisation
   - Properly mapping VNFs/CNFs to flavours to the underlying infrastructure, brings the potential for more efficient utilisation, than needing to create specific configurations for each type of application in the infrastructure.  
 
-In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the CNTT is documentation of a reference model, a select set of architectures and a set of validation and testing suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
+In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the CNTT is documentation of a reference model, a select set of architectures, a set of reference implementations, and a set of conformance suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
 
 
 <a name="2.0"></a>
@@ -107,17 +108,17 @@ Any specification work created within CNTT **must** conform to the following pri
    - Networking resources (Limited to connectivity services only)
    - Acceleration resources
 1. Cloud Infrastructure exposed resources should be supplier independent
-1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs and consumed by VNFs.
-1. VNFs should be modular and be designed to utilise the minimum resources required for the service
+1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs/CNFs and consumed by VNFs/CNFs.
+1. VNFs/CNFs should be modular and be designed to utilise the minimum resources required for the service
 1. Cloud Infrastructure shall support pre-defined and parameterised sizes
    - These pre-defined sizes will evolve over time
 1. Cloud Infrastructure provides certain resources, capabilities and features, and workloads should only consume these resources, capabilities and features
-1. VNFs that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
+1. VNFs/CNFs that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
 1. Workloads shall not require hardware-dependent software
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
    - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
    - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
-1. Specific internal hardware details shall not be exposed above the Infra+VIM layers
+1. Specific internal hardware details shall not be exposed above the Infra+Cloud Management layers
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
    - This pertains to features that operate at detailed levels of hardware granularity, such as EPA.
 
@@ -126,17 +127,17 @@ Any specification work created within CNTT **must** conform to the following pri
 
 Following are a number of key architectural principles that apply to all Reference Architectures produced by CNTT:
 
-1. **Open source preference:** To ensure, by building on technology available in open source projects, that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready NFVI solution portfolio.
+1. **Open source preference:** To ensure, by building on technology available in open source projects, that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready Cloud Infrastructure solution portfolio.
 
 1. **Open APIs:** To enable interoperability and component substitution, and minimize integration efforts by using openly published API definitions.
 
-1. **Separation of concerns:** To promote lifecycle independence of different architectural layers and modules (e.g. disagregation of software from hardware).
+1. **Separation of concerns:** To promote lifecycle independence of different architectural layers and modules (e.g. disaggregation of software from hardware).
 
 1. **Automated lifecycle management:** To minimize costs of the end-to-end lifecycle, maintenance downtime (target zero downtime), avoid errors and discrepancies resulting from manual processes.
 
 1. **Automated scalability:** To minimize costs and operational impacts through automated policy-driven scaling of workloads by enabling automated horizontal scalability of workloads.
 
-1. **Automated closed loop assurance:** To minimize operational costs and simplify NFVI platform operations by using automated fault resolution and performance optimization.
+1. **Automated closed loop assurance:** To minimize operational costs and simplify Cloud Infrastructure platform operations by using automated fault resolution and performance optimization.
 
 1. **Cloud nativeness:** To optimise the utilization of resources and enable operational efficiencies.
 
@@ -168,7 +169,7 @@ Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/e
 ## 3.2 Out of Scope Components
 While the nature of the CNTT might seem quite broad, the following areas are not at this time part of the scope of this effort.  
 - Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the documents so they are general enough that any vendor hardware can be used in a conformant implementation without making significant changes to the model.
-- Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a blackbox that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the cloud infrastructure whenever possible.
+- Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a black box that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the cloud infrastructure whenever possible.
 - Lifecycle Management of the CaaS Clusters: whilst a complete NFV-MANO solution would need to provide lifecycle management for the Kubernetes clusters it is using to deploy its CNFs, the CNTT doesn't describe the NFVO and VNFM parts, and therefore the management of the cluster(s) is not in scope, while the VIM and the lifecycle management of containers (by Kubernetes) is in scope.
 - Company specific requirements: The CNTT documents are designed to be general enough that most operators and others in the Open Source communities will be able to adapt and extend them to their own non-functional requirements.
 
@@ -278,3 +279,8 @@ There are multiple situations where a [policy](./policies.md), comprised of one 
 # 8. Relevant Technologies
 
 There are different technologies used and specified by CNTT specifications. This [section](./technologies.md) describes the relevant technologies for CNTT and clarifies CNTT position about them.
+
+<a name="9.0"></a>
+# 9. Policies
+
+* [OpenStack Release selection](./openstack-release.md)
