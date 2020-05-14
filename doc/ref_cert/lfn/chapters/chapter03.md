@@ -53,7 +53,7 @@ For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to
 <a name="3.3.1"></a>
 ### 3.3.1 Architecture and OpenStack Requirements
 
-<!-- 
+<!--
 |#|Requirement|Description|Catalog|Status|MUST|Category|RI-1 Implemented (Yes/No)|RC-1 Coverage (project)|RC-1 Project To On-board|
 |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
 |1|req.gen.ost.01|must use OpenStack APIs.|General|in Functest|Must|Functional||Functest||
@@ -411,17 +411,22 @@ the following test names must not be executed:
 | .\*test_fixed_ips                                                                                                         | neutron                            |
 | .\*test_fixed_ips_negative                                                                                                | neutron                            |
 | .\*test_auto_allocate_network                                                                                             | shared networks                    |
+| .\*test_flavors_microversions.FlavorsV255TestJSON                                                                         | max_microversion: 2.53             |
+| .\*test_flavors_microversions.FlavorsV261TestJSON                                                                         | max_microversion: 2.53             |
 | .\*test_floating_ips_bulk                                                                                                 | nova-network                       |
 | .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume                                                   | block live migration               |
 | .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration                                   | volume-backed live migration       |
 | .\*test_live_migration.LiveMigrationTest.test_iscsi_volume                                                                | block live migration               |
 | .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration                                                | volume-backed live migration       |
 | .\*test_live_migration.LiveMigrationRemoteConsolesV26Test                                                                 | serial_console                     |
+| .\*test_quotas.QuotasAdminTestV257                                                                                        | max_microversion: 2.53             |
 | .\*certificates.test_certificates                                                                                         | cert                               |
 | .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest                                                              | https://launchpad.net/bugs/1186354 |
 | .\*test_novnc                                                                                                             | vnc_console                        |
 | .\*test_server_personality                                                                                                | personality                        |
 | .\*test_servers.ServerShowV263Test.test_show_update_rebuild_list_server                                                   | certified_image_ref                |
+| .\*test_servers_microversions.ServerShowV254Test                                                                          | max_microversion: 2.53             |
+| .\*test_servers_microversions.ServerShowV257Test                                                                          | max_microversion: 2.53             |
 | .\*test_servers_negative.ServersNegativeTestJSON.test_personality_file_contents_not_encoded                               | personality                        |
 | .\*test_server_actions.ServerActionsTestJSON.test_change_server_password                                                  | change_password                    |
 | .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console                                                         | vnc_console                        |
