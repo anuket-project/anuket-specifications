@@ -372,7 +372,7 @@ the CNTT requirements which induces that the validation is composed of:
   they are considered as optional in
   [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 - all test cases listed in
-  [RC1 TC Requirements]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+  [RC1 TC Requirements]({{ "/doc/ref_cert/lfn/chapters/chapter03.html" | relative_url }})
 
 Like the
 [classical Functest containers](https://functest.readthedocs.io/en/stable-hunter/testing/user/configguide/configguide.html),
@@ -465,7 +465,7 @@ missing.
 | opnfv/functest-smoke:hunter | tempest_barbican  | Success            |
 
 According to [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-and [RC1 TC Requirements]({{ "doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+and [RC1 TC Requirements]({{ "doc/ref_cert/lfn/chapters/chapter03.html" | relative_url }})
 the following test cases are executed at the end.
 
 | container                               | test case             | criteria (Jenkins) |
@@ -504,7 +504,7 @@ Only the following test cases must pass as a temporarily bypass in
 [RI gates](https://build.opnfv.org/ci/view/airship/job/airship-latest-gate/) to
 allow merging the next patches. At the time writing, CNTT RI is not compliant
 with [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-and then a part of the containers selected in [RC1 TC Requirements]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+and then a part of the containers selected in [RC1 TC Requirements]({{ "/doc/ref_cert/lfn/chapters/chapter03.html" | relative_url }})
 cannot be executed successfully.
 
 | container                               | test case         | criteria (Jenkins) |
