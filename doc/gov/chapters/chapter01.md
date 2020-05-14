@@ -43,12 +43,11 @@ Covers the processes for nominating and selecting candidates to be leads and co-
 
 * Consensus-Based Decision Making (Ch. 5)
 
-The approaches and processes by which CNTT contributors shall use to ensure fair representation for any key decisions and approve release approvals. This includes mechanisms on how to manage dissention. 
+The approaches and processes CNTT contributors shall use to ensure fair representation for key decisions and release approvals. This includes mechanisms on how to manage dissension. 
 
 * Relationship to LFN Projects and GSMA (Ch. 6)
 
 Provides operational guidance for how CNTT operational structures shall interoperate with GSMA and LFN.
-
 
 
 
