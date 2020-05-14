@@ -25,7 +25,7 @@ Welcome to the CNTT group –
 
 It is wonderful that you, [Company and person] have decided to join in the effort to make building the infrastructure to support Telecom workloads more robust and standardized. We believe that these efforts will benefit not only the operators, but also the vendors, and ultimately all our customers as well, by hopefully making it easier and simpler to incorporate new technology into our systems.
 
-To get you started, I encourage you to go to our Getting Started page to download a packet of information on how to get engaged at the working level with CNTT.  We also have materials in the Wiki and Github repositories, so I hope that all this doesn’t overwhelm you.  We are excited that you will be able to become more engaged in our efforts and as always, we will be happy to help you get up to speed.  
+To get you started, I encourage you to go to our Getting Started page to download a packet of information on how to get engaged at the working level with CNTT.  We also have materials in the Wiki and Github repositories, so I hope that all this doesn’t overwhelm you.  We are excited that you have decided to become engaged with our community and look forward to your active participation.  
 
 In addition to the many on-line work streams and workstream related on-line meetings, we also have periodic face to face workshops, which we find are invaluable for speeding the delivery of CNTT’s desired outcomes. More details on upcoming events can be found on the CNTT wiki. 
 
@@ -96,4 +96,3 @@ In order to deliver on CNTT objectives, community participants are expected to b
   - Signup for workstream participation
   - Schedule attending workstream(s), Governance Steering, and or Technology Steering meeting(s)
   - Start engaging!
-
