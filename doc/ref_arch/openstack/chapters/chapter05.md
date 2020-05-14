@@ -32,7 +32,7 @@ For the purpose of conformance tests, this chapter also identifies the set of th
 
 ### 5.2.1. Keystone
 
-| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+| **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
 | Identity: Keystone    | v3              | 3.8                          |
 
@@ -54,7 +54,7 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 
 ### 5.2.2 Glance
 
-| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+| **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
 | Image: Glance         | v2              | 2.5                          |
 
@@ -62,7 +62,7 @@ Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.
 
 ### 5.2.3. Cinder
 
-| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+| **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
 | Block Storage: Cinder | v3              | 3.43                         |
 
@@ -205,7 +205,7 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 ### 5.2.6. Nova
 
-| **OpenStack Service** | **API Version** | **Minimal API Microversion** |
+| **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
 | Compute: Nova         | v2.1            | 2.53                         |
 
@@ -240,7 +240,7 @@ REST API Version History: https://docs.openstack.org/nova/latest/reference/api-m
 
 ### 5.2.7. Placement
 
-|**OpenStack Service** |  **API Version** | **Minimal API Microversion** |
+|**OpenStack Service** |  **API Version** | **Maximal API Microversion** |
 |----------------------|------------------|------------------------------|
 | Placement            | v1               | 1.10                         |
 
@@ -250,11 +250,13 @@ REST API Version History: https://docs.openstack.org/placement/latest/placement-
 
 ### 5.2.8. Heat
 
-|**OpenStack Service** | **API Version** | **Minimal Template Version** |
+|**OpenStack Service** | **API Version** | **Maximal Template Version** |
 |----------------------|-----------------|------------------------------|
 | Orchestration: Heat  | v1              | 2017-09-01                   |
 
 Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
+
+Template version history: https://docs.openstack.org/heat/pike/template_guide/hot_spec.html
 
 Heat Orchestration Template (HOT) specification: https://docs.openstack.org/heat/pike/template_guide/hot_spec.html#pike
 
@@ -271,7 +273,7 @@ libraries.
 
 **APIs**
 
-| **OpenStack Service** | Link for API list                                    | **API Version** | **Minimal API Microversion** |
+| **OpenStack Service** | Link for API list                                    | **API Version** | **Maximal API Microversion** |
 |-----------------------|------------------------------------------------------|-----------------|------------------------------|
 | Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
 | Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
