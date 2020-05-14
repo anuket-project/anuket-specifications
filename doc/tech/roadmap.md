@@ -43,7 +43,7 @@ A Bundle is: A set of related specifications that are built to complement each o
 
 <a name="version"></a>
 A Version:
-* Each document has a version number attached to it that consists of **Bundle.Sequence**:
+* Each document within a release has a number attached to it that consists of **Bundle.Version**:
   * **Bundle**: specifies the bundle number of which the the document belongs to.
   * **Version**: specifies the sequential version of each document (improvement or enhancements).
 * Any Change in RM that will impact RAs and consequently RC and RI will triggers a new Bundle number.
