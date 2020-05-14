@@ -5,15 +5,15 @@
 This is Kubernetes based Reference Architecture (RA-2)
 
 ## Release Information
-**Release: _3.0_**
+**Bundle: _3_**
 
-**Version: _0.0_**
+**Version: _0_**
 
 **Release Date: _15th May 2020_**
 
-## Version History
+## Bundle/Version History
 
-| Release.Version | Date | Note
+| Bundle.Version | Date | Note
 | --- | --- | --- |
 | 1.0-alpha | 10th January 2020 | Snezka Release|
 | 3.0 | 15th May 2020 | Baldy Release|

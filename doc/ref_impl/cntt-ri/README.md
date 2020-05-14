@@ -5,15 +5,15 @@
 This is the OPNFV based Reference Implementation (RI-1)
 
 ## Release Information
-**Release: _3.0-alpha_**
+**Bundle: _3_**
 
-**Version: _0.0_**
+**Version: _alpha_**
 
 **Release Date: _15th May 2020_**
 
-## Version History
+## Bundle/Version History
 
-| Release.Version | Date | Note
+| Bundle.Version | Date | Note
 | --- | --- | --- |
 | 1.0-alpha | 10th January 2020 | Snezka Release|
 | 3.0-alpha | 15th May 2020 | Baldy Release|
