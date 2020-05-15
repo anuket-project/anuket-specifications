@@ -70,7 +70,7 @@ This section will describe the different services that are exposed for the VNF c
 ### 3.2.1. Multi-Tenancy (execution environment)
 The multi tenancy service will permit to host several VNF projects with the insurance to have isolated environment for each project. Tenants or confusingly “Projects” in OpenStack are isolated environments that enable workloads to be logically separated from each other with:
 -	differentiated set of associated users
--	role-based access of two levels – admin or member ( see [RBAC security section](./chapter06.md#6314-rbac)). 
+-	role-based access of two levels – admin or member (see [RBAC security section](./chapter06.md#6314-rbac)). 
 -	quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across tenants however where multiple related OpenStack clouds are deployed it is important that naming and quotas are kept consistent.  Chapter 4 provides a proposed naming convention for users and tenants (link-TBA).   
