@@ -20,7 +20,7 @@ In order to establish governing guidelines and procedures by which the CNTT tech
 
 The goal of this document is to assist CNTT to continue to scale, gain momentum, and plan for the future of CNTT-- outlined at the September 2019 3rd Technical Workshop held in Antwerp, Belgium. The purpose of this document is to define and detail basic CNTT community operations and important structures. It provides a reference of the organisation and related work streams, processes, and procedures around which the CNTT Community is managed; including operational scope, structure, and responsibilities of all groups and individuals associated with CNTT.  
 
-This document is intended for use by CNTT Task Force's new and existing contributors, participants, associated organizations, and, as an open-source community following the GSMA and LFN Anti-Trust Policies and Creative Commons Licensing, the public at-large.
+This document is intended for use by CNTT's new and existing contributors, participants, associated organisations, and, as an open-source community following the GSMA and LFN Anti-Trust Policies and Creative Commons Licensing, the public at-large.
 
 This document does not define any technical specifications, definitions, requirements, architectures, testing, certifications, or lab platforms. 
 
@@ -48,5 +48,4 @@ The approaches and processes CNTT contributors shall use to ensure fair represen
 * Relationship to LFN Projects and GSMA (Ch. 6)
 
 Provides operational guidance for how CNTT operational structures shall interoperate with GSMA and LFN.
-
 
