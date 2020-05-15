@@ -37,7 +37,7 @@ This Reference Architecture conform with the principles defined in [here](../../
 <a name="1.3.1"></a>
 ### 1.3.1 Cloud Native Principles
 
-The definition for Cloud Native is somewhat controvercial.  For the purposes of this document, the CNCF TOC's (Technical Oversight Committee) definition of Cloud Native will be used:
+The definition for Cloud Native is somewhat controversial.  For the purposes of this document, the CNCF TOC's (Technical Oversight Committee) definition of Cloud Native will be used:
 >CNCF Cloud Native Definition v1.0
 >Approved by TOC: 2018-06-11
 
