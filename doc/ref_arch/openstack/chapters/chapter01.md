@@ -15,7 +15,7 @@
 
 <a name="1.1"></a>
 ## 1.1 Introduction
-This Reference Architectures is focussed on OpenStack as the VIM chosen based on the criteria laid out in the [Reference Model](../../../ref_model/chapters/chapter01.md). OpenStack has the advantages of being a mature and widely accepted Open Source technology; a strong ecosystem of vendors that support it, the OpenStack Foundation for managing the community, and, most importantly, it is widely deployed by the global operator community for both internal infrastructure and external facing products and services.  This means that the operators have existing staff with the right skill sets to support an NFVI deployment into development, test and production. Another reason to chose OpenStack is that it has a large active community of vendors and operators, which means that any code or component changes needed to support the Common Telecon NFVI requirements can be managed through the existing project communities processes to add and validate the required features through well established mechanisms.
+This Reference Architecture is focussed on OpenStack as the VIM chosen based on the criteria laid out in the [Reference Model](../../../ref_model/chapters/chapter01.md). OpenStack has the advantages of being a mature and widely accepted Open Source technology; a strong ecosystem of vendors that support it, the OpenStack Foundation for managing the community, and, most importantly, it is widely deployed by the global operator community for both internal infrastructure and external facing products and services.  This means that the operators have existing staff with the right skill sets to support an NFVI deployment into development, test and production. Another reason to chose OpenStack is that it has a large active community of vendors and operators, which means that any code or component changes needed to support the Common Telco NFVI requirements can be managed through the existing project communities processes to add and validate the required features through well established mechanisms.
 
 <a name="1.1.1"></a>
 ## 1.1.1. Vision
@@ -23,7 +23,7 @@ The OpenStack-based CNTT Reference Architecture will host NFV workloads, primari
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
-Several NFV use cases are documented in OpenStack. For more examples and details refer to the OpenStack docs found at the following link: https://docs.openstack.org/arch-design/use-cases.html  Examples include:
+Several NFV use cases are documented in OpenStack. For more examples and details refer to the OpenStack docs found at the following link: https://docs.openstack.org/arch-design/use-cases.html. Examples include:
 
   - **Overlay networks**: The overlay functionality design includes OpenStack Networking in Open vSwitch GRE tunnel mode. In this case, the layer-3 external routers pair with VRRP, and switches pair with an implementation of MLAG to ensure that you do not lose connectivity with the upstream routing infrastructure.
 
@@ -41,11 +41,11 @@ General terminology definitions can be found [Glossary](../../../tech/glossary.m
 <a name="1.4"></a>
 ## 1.4 Principles
 
-Open Stack Reference Architecture must obey to the following set of principles:
+OpenStack Reference Architecture must obey to the following set of principles:
 - [CNTT Reference Model Principles](../../../tech#2.0)
 - [CNTT Reference Architecture Principles](../../../tech#22-architectural-principles)
 
-**Open Stack specific principles**
+**OpenStack specific principles**
 
 OpenStack considers the following Four Opens essential for success:
 - Open Source
