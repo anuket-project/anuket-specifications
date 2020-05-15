@@ -303,10 +303,10 @@ Proxy information, this section could be empty if not needed.
 
 <a name="6.4.1"></a>
 ### 6.4.1 Hardware validation
-User need check the BIOS setting, raid configuration, PXE boot order, boot mode, disk capacity for each server.
-User need check CPU, memory setting which can meet deployment requirements.
-User need validate the remote management(IPMI,ILO,BMC) accessibility.
-User need validate NIC quantity and configuration which can match the requirements.
+Before the installation, the user has to check if each server meets the deployment requirements:
+ - BIOS settings: RAID configuration, PXE boot order and boot mode, disk capacity, CPU, and memory settings,
+ - remote management accessibility (for example, IPMI, iLO, BMC),
+ - NIC quantity and configuration.
 
 <a name="6.4.2"></a>
 ### 6.4.2 Network configuration
