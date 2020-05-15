@@ -1,4 +1,4 @@
-# Common NFVI Telco Task Force (CNTT)
+# Cloud iNfrastructure Telco Task Force (CNTT)
 
 ## Available Specifications
 * [Governance](doc/gov)
