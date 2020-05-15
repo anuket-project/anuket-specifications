@@ -45,7 +45,7 @@ Any Workstream Leads or Co-Leads positions can be held by any Participant.
 ### 4.2.3 Nomination
 
 - Any individual can nominate themselves or another participant for a given lead/co-lead position (the nominee must accept nomination if was nominate by someone else) as long as they agree to CNTT ToR.
-- An individual can nominate themselves or another participant to multiple positions.
+- An individual can nominate themselves or another participant to one or more positions.
 
 <a name="4.2.4"></a>
 ### 4.2.4 Selection
