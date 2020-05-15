@@ -143,7 +143,7 @@ For those scenarios where data persistence is required, Persistent Volumes (PV) 
 
 Kubernetes also provides an object called Storage Class, which is created by cluster administrators and maps to storage attributes such as quality-of-service, encryption, data resilience, etc. Storage Classes also enable the dynamic provisioning of Persistent Volumes (as opposed to the default manual creation). This can be beneficial for organisations where the administration of storage is performed separately from the administration of Kubernetes-based workloads.
 
-There are no restrictions or constraints that Kubernetes places on the storage that can be consumed by a workload, in terms of the requirements that are defined in RM sections [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) (software) and [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) (hardware). The only point of difference is that Kubernetes does not have a native object storage offering, and and addresing this this capability gap directly is outside of the scope of this RA.
+There are no restrictions or constraints that Kubernetes places on the storage that can be consumed by a workload, in terms of the requirements that are defined in RM sections [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) (software) and [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) (hardware). The only point of difference is that Kubernetes does not have a native object storage offering, and addressing this capability gap directly is outside of the scope of this RA.
 
 <a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager
