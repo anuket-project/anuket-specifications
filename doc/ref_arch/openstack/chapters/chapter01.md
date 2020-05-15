@@ -34,7 +34,7 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 <a name="1.3"></a>
 ## 1.3 Terminology
 
-General terminology definitions can be found [CNTT Reference Model](../../../ref_model/chapters/glossary.md#1.1) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./terminology.md).
+General terminology definitions can be found [Glossary](../../../tech/glossary.md) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./Terminology.md). 
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
 
@@ -42,8 +42,8 @@ General terminology definitions can be found [CNTT Reference Model](../../../ref
 ## 1.4 Principles
 
 Open Stack Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
-- [CNTT Reference Architecture Principles](../../#principles)
+- [CNTT Reference Model Principles](../../../tech#2.0)
+- [CNTT Reference Architecture Principles](../../../tech#22-architectural-principles)
 
 **Open Stack specific principles**
 
@@ -59,12 +59,9 @@ This OpenStack Reference Architecture is organised around the three major NFVI r
 <a name="1.5"></a>
 ## 1.5 CNTT OpenStack Reference Release
 
-This Reference Architecture document conforms to the OpenStack Pike release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture version can be referred to as "RA-1 OSTK Pike."
+This Reference Architecture document in its current version conforms to the OpenStack Pike release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Pike."
 
 <a name="1.6"></a>
 ## 1.6 Document Organisation
 
-The Reference Architecture requirements and the traceability where in this document the requirement is addressed is documented in Chapter 2. The intent of this document is to address all of the mandatory ("must") requirements and the most useful of the other optional ("should") requirements. Chapter 3 and 4 cover the NFVI resources and the core OpenStack services, while the APIs are covered in Chapter 5. Chapter 6 covers the implementation and enforcement of security capabilities and controls. Life Cycle Management of the NFVI and VIM are covered in Chapter 7 with stress on Logging, Monitoring and Analytics (LMA), configuration management and some other operational items, Please note that Chapter 7 is not a replacement for the implementation, configuration and operational documentation that accompanies the different OpenStack distributions. Chapter 8 identifies certain Gaps that currently exist and plans on how to address them. For example, Service Function Chaining support needs to be addressed to realise the full potential and value of SDN and NFV.
-
-
-
+Chapter 2 defines the Reference Architecture requirements and, when appropriate, provides references to where these requirements are addressed in this document. The intent of this document is to address all of the mandatory ("must") requirements and the most useful of the other optional ("should") requirements. Chapter 3 and 4 cover the NFVI resources and the core OpenStack services, while the APIs are covered in Chapter 5. Chapter 6 covers the implementation and enforcement of security capabilities and controls. Life Cycle Management of the NFVI and VIM are covered in Chapter 7 with stress on Logging, Monitoring and Analytics (LMA), configuration management and some other operational items, Please note that Chapter 7 is not a replacement for the implementation, configuration and operational documentation that accompanies the different OpenStack distributions. Chapter 8 identifies certain Gaps that currently exist and plans on how to address them. For example, Service Function Chaining support needs to be addressed to realise the full potential and value of SDN and NFV.
