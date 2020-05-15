@@ -240,7 +240,7 @@ operations when configuring the server running the test cases and prevent
 conflicts between all test case dependencies.
 
 It's worth mentioning that current
-[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter03.html" | relative_url }})
 already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
