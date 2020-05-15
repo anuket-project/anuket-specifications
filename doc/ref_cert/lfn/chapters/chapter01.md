@@ -8,14 +8,15 @@
   * [1.1.1 Terminology](#1.1)
   * [1.1.2 Relation to other communities](#1.1)
 * [1.2 Scope](#1.2)
-* [1.3 Principles and Guidelines](#1.3)
-  * [1.3.1 Overarching Objectives and Goals](#1.3.1)
-* [1.4	Best Practices](#1.4)
-* [1.5 Verification methodologies](#1.5)
-*	[1.6 Assumptions & Dependencies](#1.6)
-*	[1.7 Results Collation & Presentation](#1.7)
-*	[1.8 Governance](#1.8)
-* [x.x Resources & References](#x.x)
+* [1.3 Relation to other communities](#1.3)
+* [1.3 Principles and Guidelines](#1.4)
+  * [1.4.1 Overarching Objectives and Goals](#1.4.1)
+* [1.5 Best Practices](#1.5)
+* [1.6 Verification methodologies](#1.6)
+*	[1.7 Assumptions & Dependencies](#1.7)
+*	[1.8 Results Collation & Presentation](#1.8)
+*	[1.9 Governance](#1.9)
+* [1.10 Resources & References](#1.10)
 
 ## Synopsis
 
@@ -174,10 +175,10 @@ Test suites will be categorized as functional or performance based. Results repo
 1. Conformance badges will be presented by the CVC
 2. CVC will maintain requirements for conformance
 
-<a name="x.x"></a>
-## x.x Resources & References
+<a name="1.10"></a>
+## 1.10 Resources & References
 
-1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a common NFVI, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
+1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a cloud infrastructure, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
 2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and conformance program to the Governing Board of LF Networking (“Governing Board”).
 3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
 4. **Dovetail**

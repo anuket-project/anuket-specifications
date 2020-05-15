@@ -1,4 +1,4 @@
-# Common NFVI Telco Task Force (CNTT)
+# Cloud iNfrastructure Telco Task Force (CNTT)
 
 ## Table of Contents
 * [Vendor Implementation Template](ven_template)
