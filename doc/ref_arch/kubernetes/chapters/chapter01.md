@@ -81,7 +81,7 @@ The following items are considered **out of scope**:
 <a name="1.5"></a>
 ## 1.5 Approach
 
-The approach taken in this Reference Architecture is to start as simply as possible (i.e. with a basic Kubernetes architecture), and then add detail and additional features/extensions as is required to meet the requirements of the Reference Model and the needs of the CNTT community.
+The approach taken in this Reference Architecture is to start as simply as possible (i.e. with a basic Kubernetes architecture), and then add detail and additional features/extensions as is required to meet the requirements of the Reference Model and the functional and non-functional requirements of common cloud native network functions.
 
 For example, while the management of VMs through Kubernetes is included, the intention is to start with the "native" control of containers and add support for VMs at a later date.  The final decision will be determined and documented in the Roadmap section.
 
