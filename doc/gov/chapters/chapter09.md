@@ -70,8 +70,8 @@ The transition plan described here informs application designers on how the Refe
 <a name="9.4.1"></a>
 ### 9.4.1 Conformance Levels
 
-- **Fully Conformant**: VNFs/CNFs or NFVI written and designed to be fully conformant to CNTT specifications with no use of any of the allowed Exceptions.
-- **Conformant with Exceptions**: VNFs/CNFs or NFVI written and designed to be conformant to CNTT specifications with one or more of the allowed Exceptions used.
+- **Fully Conformant**: VNFs/CNFs or Cloud Infrastructure designed and developed to be fully conformant to CNTT specifications with no use of any of the allowed Exceptions.
+- **Conformant with Exceptions**: VNFs/CNFs or Cloud Infrastructure written and designed to be conformant to CNTT specifications with one or more of the allowed Exceptions used.
 
 <a name="9.4.2"></a>
 ### 9.4.2 Exception Types
