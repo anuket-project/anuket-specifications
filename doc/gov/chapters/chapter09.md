@@ -87,7 +87,7 @@ The transition plan described here informs application designers on how the Refe
 Exceptions will be clearly recorded in a given Reference Architecture's Appendix.  That document provides guidance to NFVI vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrates the concept.
 
 - It is expected that over time, as technology matures, there will be a decreasing numbers of Exceptions allowed in CNTT releases.
-- For each CNTT Release, the NFVI can be either:
+- For each CNTT Release, the Cloud Infrastructure can be either Fully Conformant or Conformant with Exceptions.
   - **Fully Conformant**: Supports the Target Reference Architecture without any exceptions. There should be a technology choice in RA to support RM Exceptions (However, none of the Exceptions allowed in RA has been used).
   - **Conformant with Exceptions**: One or more of the allowed exceptions in RA are used.
 
