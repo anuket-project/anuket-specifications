@@ -90,7 +90,7 @@ This document will start with a description of interfaces and capabilities (the 
 <a name="1.6"></a>
 ## 1.6 Roadmap
 
-Kubernates is a relatively new technology (First release was in June 2014), so is still rapidly evolving. As Kubernetes changes over time it will be adding new capabilities and featues, so the CNTT Reference Architecture will need to evolve along with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is as of June 2020, every three months.  The back rev support again should match to the Kubernates cadence, which is nine months (latest release, plus two previous releases).
+Kubernetes is a relatively new technology (First release was in June 2014), so is still rapidly evolving. As Kubernetes changes over time it will be adding new capabilities and featues, so the CNTT Reference Architecture will need to evolve along with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is as of June 2020, every three months.  The back rev support again should match to the Kubernates cadence, which is nine months (latest release, plus two previous releases).
 
 <p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
 <p align="center"><b>Figure 1-3:</b> Kubernetes Reference Architecture Roadmap</p>
