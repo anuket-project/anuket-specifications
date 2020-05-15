@@ -77,7 +77,7 @@ The transition plan described here informs application designers on how the Refe
 ### 9.4.2 Exception Types
 
 - **Technology Exceptions** : The use of specific technologies that are considered non conformant to CNTT principles (such as PCIe Direct Assignment, exposure of hardware features to VNFs/CNFs).
-- **Version Exceptions**: Using versions of  Software components, , APIs, or Hardware that are different from the ones specified in the specification.
+- **Version Exceptions**: Using versions of  Software components, APIs, or Hardware that are different from the specifications.
 
 <a name="9.4.3"></a>
 ### 9.4.3 Transition Framework
