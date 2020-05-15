@@ -42,7 +42,7 @@ General terminology definitions can be found [CNTT Reference Model](../../../tec
 ## 1.4 Principles
 
 Open Stack Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../ref_model/chapters/chapter01.md#1.3)
+- [CNTT Reference Model Principles](../../../tech#2.0)
 - [CNTT Reference Architecture Principles](../../#principles)
 
 **Open Stack specific principles**
