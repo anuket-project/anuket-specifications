@@ -1,5 +1,5 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# Common NFVI Telco Taskforce
+# Cloud iNfrastructure Telco Taskforce
 
 ## Table of Contents
 * [1. Overview](#1.0)

@@ -26,7 +26,7 @@ The purpose of this chapter is to establish an operational run-book containing s
 
 The term Run-Book is synonymous with "Cookbook", and either term will be used interchangeably to indicate that if a user follows the steps or procedures in the "book", the expected result will be an RI identical to the lab utilized by CNTT for the instantiation and certification of RI-1.
 
-It is assumed that the reader of this chapter has the skill set to install Common NFVI on their own labs.
+It is assumed that the reader of this chapter has the skill set to install Common Cloud Infrastructure on their own labs.
 
 *   Covers installers, automation, etc.
 *   Integration of installers and components.
