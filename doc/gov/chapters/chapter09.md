@@ -137,7 +137,7 @@ Prior to the comencement of any field trials, the CNTT community will define an 
 
 Trials participants will be expected to commit to establishing an RA-1 compliant NFVI, in whatever manner best suited to the participant. The first step is for the participant to secure appropriate environment space from pre-existing space, newly built space or securing LaaS.  The environment can exist in any mix of participant owned, private or community hardware infrastructure.
 
-Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA-1/RI-1 requirements and specifications. CNTT [RI-1 Chapter 3](../cntt-ri/chapters/chapter03.md ) documentation provides the matching RI-1 requirements for the build.
+Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA-1/RI-1 requirements and specifications. CNTT [RI-1 Chapter 3](../ref-impl/cntt-ri/chapters/chapter03.md ) documentation provides the matching RI-1 requirements for the build.
 
 <a name="9.5.1.5"></a>
 #### 9.5.1.5 Expectation 2: Execute the RC-1 Test suite
