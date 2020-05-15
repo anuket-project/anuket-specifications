@@ -20,7 +20,7 @@
 <a name="2.1"></a>
 ## 2.1 Introduction
 
-This chapter will use the requirements defined in the overall Reference Model and only make additional entires in section [2.3](#2.3) if there are additional requirements needed for this Reference Architecture.
+This chapter will use the requirements defined in the overall Reference Model and only make additional entries in section [2.3](#2.3) if there are additional requirements needed for this Reference Architecture.
 
 <a name="2.1.1"></a>
 ## 2.1.1 Definitions
