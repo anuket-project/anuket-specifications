@@ -92,7 +92,7 @@ Exceptions will be clearly recorded in a given Reference Architecture's Appendix
   - **Conformant with Exceptions**: One or more of the allowed exceptions in RA are used.
 
 <p align="center"><img src="../figures/nfvi_transition.png" alt="Transition" title="NFVI Transition Plan" width="70%"/></p>
-<p align="center"><b>Figure 2:</b> Transition Plan for NFVI solutions within CNTT</p>
+<p align="center"><b>Figure 1:</b> Transition Plan for NFVI solutions within CNTT</p>
 
 #### VNF/CNF Transition Plan Framework 
 
