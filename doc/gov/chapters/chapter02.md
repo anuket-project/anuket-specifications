@@ -13,7 +13,7 @@
 <a name="2.1"></a>
 ## 2.1 Introduction
 
-As an open-source community organization, CNTT has developed the following process to ensure delivery on the CNTT objectives. This process has several goals. First, to inform new participants with the background and overview of this open-source initiative. Second, to communicate the organizational and legal structures under which the community operates. And third, to help new participants to quickly become fully engaged in the CNTT work and to be contributing effectively to the work streams they are interested in.
+As an open-source community organization, CNTT has developed the following process to ensure delivery on the CNTT objectives. This process has several goals. First, to inform new participants about the background and overview of this open-source initiative. Second, to communicate the organizational and legal structures under which the community operates. And third, to help new participants to quickly become fully engaged in the CNTT work and to be contributing effectively to the work streams they are interested in.
 
 
 
