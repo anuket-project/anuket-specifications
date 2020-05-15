@@ -120,7 +120,7 @@ The integration of SDN solutions required by `req.inf.ntw.05` should be enabled 
 
 The container based architecture must support telecom equipment networking where the CNF networks are set up by the operator's network administrators. This is why, as `req.gen.cnt.05` requires, the architecture must provide a set of abstract management APIs to manage the network connectivity of the CNF pods themselves.
 
-The API must support multiple tenants and must require elevated acces rights to manipulate infrastructure related API objects as these operations generally require reconfiguration of the physical network infrastructure.
+The API must support multiple tenants and must require elevated access rights to manipulate infrastructure related API objects as these operations generally require reconfiguration of the physical network infrastructure.
 
 To fulfill the requirements of `e.cap.016` the architecture should optionally support the use of device plugins via the Device Plugin API and the alignment of the devices, CPU topology and Huge Pages must be supported using the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
 
