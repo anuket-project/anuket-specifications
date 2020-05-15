@@ -276,7 +276,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consist of the physical resources, virtualised resources and a software management system.  In the virtualised world, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  The Cloud Infrastructure Management component is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management.
 
-Compare the RM with the containerisation equivalent, references to "Architecture" in this chapter refer to the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor (optional), Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
+Now consider the containerisation equivalent, references to "Architecture" in this chapter refer to the Cloud Infrastructure Hardware (e.g. physical resources), Cloud Infrastructure Software (e.g. Hypervisor (optional), Container Runtime, virtual or container Orchestrator(s), Operating System), and infrastructure resources consumed by virtual machines or containers.
 
 The requirements in this section are to be delivered in addition to those in [section 2.2](#2.2), and have been created to support the Principles defined in [Chapter 1 of this Reference Architecture](./chapter01.md).
 
