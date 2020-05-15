@@ -59,12 +59,9 @@ This OpenStack Reference Architecture is organised around the three major NFVI r
 <a name="1.5"></a>
 ## 1.5 CNTT OpenStack Reference Release
 
-his Reference Architecture document in its current version conforms to the OpenStack Pike release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Pike."
+This Reference Architecture document in its current version conforms to the OpenStack Pike release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Pike."
 
 <a name="1.6"></a>
 ## 1.6 Document Organisation
 
 Chapter 2 defines the Reference Architecture requirements and, when appropriate, provides references to where these requirements are addressed in this document. The intent of this document is to address all of the mandatory ("must") requirements and the most useful of the other optional ("should") requirements. Chapter 3 and 4 cover the NFVI resources and the core OpenStack services, while the APIs are covered in Chapter 5. Chapter 6 covers the implementation and enforcement of security capabilities and controls. Life Cycle Management of the NFVI and VIM are covered in Chapter 7 with stress on Logging, Monitoring and Analytics (LMA), configuration management and some other operational items, Please note that Chapter 7 is not a replacement for the implementation, configuration and operational documentation that accompanies the different OpenStack distributions. Chapter 8 identifies certain Gaps that currently exist and plans on how to address them. For example, Service Function Chaining support needs to be addressed to realise the full potential and value of SDN and NFV.
-
-
-
