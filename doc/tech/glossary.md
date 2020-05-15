@@ -115,7 +115,7 @@ Terms not defined by Kubernetes:
 >_*Note:*_ The official [OpenStack Glossary]( https://docs.openstack.org/image-guide/common/glossary.html) is an extensive list of OpenStack-related concepts. Some additional terms used in the Reference Architecture RA-1 or used to relate RA-1 terms with terms defined elsewhere.
 
 <a name="Core"></a>
-**Core (physical)** is an independent computer processing unit that can independently execute CPU instructions but is integrated with other cores on a multiprocessor chip (integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
+**Core (physical)** is an independent computer processing unit that can independently execute CPU instructions and is integrated with other cores on a multiprocessor (chip, integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
 
 **Flavor Capabilities** such as (CPU Pinning, NUMA, huge pages): CNTT NFVI Profile
 
