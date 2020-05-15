@@ -34,7 +34,7 @@ For each Workstream, following leadership positions exist:
 <a name="4.2.1"></a>
 ### 4.2.1 Length of Terms
 
-The length of term for all CNTT leadership roles is **12** calendar months. It will start typically in February each year and end around the same time the year after.  The exact dates and timing might vary to accommodate CNTT releases and workshops).
+The length of term for all CNTT leadership roles is **12** calendar months. It will start typically in February each year and end around the same time the year after.  The exact dates and timing might vary to accommodate CNTT releases and workshops.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Representation
