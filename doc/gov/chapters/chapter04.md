@@ -58,7 +58,7 @@ During the nomination period, Participants can send their nominations to a desig
 
 Once the nomination period ends, the selection process for the new leads and co-leads for a given workstream is as follows:
 
-- The selection process for Leads positions and Co-Leads will occur separately.
+- The selection process for Lead positions and Co-Lead positions will occur separately.
 - No voting is required if the number of nominations received for a particular position is less than or equal to the number of available vacancies. 
 - An online voting process will take place to select candidate(s) from the nominee list for each position.
   - The exact tool used for voting will be determined by the LFN Staff and depends on the approved tool at time of voting.
