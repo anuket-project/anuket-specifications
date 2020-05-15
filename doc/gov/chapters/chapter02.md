@@ -38,7 +38,7 @@ Feel free to reach out at any time, I am sure we will be more than happy to answ
   
   - **How long will it take to onboard?** The onboarding process will initially take approximately one hour.
   
-  - **What will I learn during onboarding process?** There will be an overview of the CNTT mission and goals, community organizational structures and processes, as well as an introduction to the technology development status and roadmaps. Additionally, participant responsibilities and legal obligations with be covered. Finally, you will be introduced to the support and logistical information needed to participate fully in the CNTT community.
+  - **What will I learn during the onboarding process?** There will be an overview of the CNTT mission and goals, community organisational structures and processes, as well as an introduction to the technology development status and roadmaps. Additionally, participant responsibilities and legal obligations with be covered. Finally, you will be introduced to the support and logistical information needed to participate fully in the CNTT community.
 
   - **What help will I get during the onboarding process?** Once you submit a request to participate in the Task Force, new members are supported by the CNTT onboarding team listed in your “Getting Started” email. Any time during the onboarding process, participants are welcome to reach out for any additional assistance.
   
