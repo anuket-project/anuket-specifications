@@ -70,7 +70,7 @@ This section will describe the different services that are exposed for the VNF c
 ### 3.2.1. Multi-Tenancy (execution environment)
 The multi tenancy service will permit to host several VNF projects with the insurance to have isolated environment for each project. Tenants or confusingly “Projects” in OpenStack are isolated environments that enable workloads to be logically separated from each other with:
 -	differentiated set of associated users
--	role-based access of two levels – admin or member.  (see security section link-TBA for further details). 
+-	role-based access of two levels – admin or member (see [RBAC security section](./chapter06.md#6314-rbac)). 
 -	quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across tenants however where multiple related OpenStack clouds are deployed it is important that naming and quotas are kept consistent.  Chapter 4 provides a proposed naming convention for users and tenants (link-TBA).   
@@ -193,9 +193,8 @@ The data plane consists of the compute nodes. It is typical to consider the othe
 Deployments can be structured using the distribution of services amongst the 4 node types as depicted in Figure 3-2, but depending on workloads requirements, OpenStack services can also be hosted on the same nodes. For instance, services related to Controller, network and storage roles can be hosted on controller nodes.
 
 #### 3.3.1.2. Foundation Services
-Foundation Node
 
-To build and lifecycle manage an OpenStack cloud, it is typically necessary to deploy a server or virtual machine as a deployment node.
+To build and lifecycle manage an OpenStack cloud, it is typically necessary to deploy a server or virtual machine as a deployment node or foundation node.
 
 This function must be able to manage the bare-metal provisioning of the hardware resources but since this does not affect cloud execution it can be detached from the OpenStack cloud and an operator can select their own tooling as they wish.
 Functional requirements of this node include:
