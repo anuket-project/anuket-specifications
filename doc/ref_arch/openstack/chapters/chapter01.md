@@ -34,7 +34,7 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 <a name="1.3"></a>
 ## 1.3 Terminology
 
-General terminology definitions can be found [CNTT Reference Model](../../../ref_model/chapters/glossary.md#1.1) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./terminology.md).
+General terminology definitions can be found [CNTT Reference Model](../../../tech/glossary.md) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./terminology.md). 
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
 
