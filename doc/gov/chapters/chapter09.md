@@ -28,7 +28,7 @@ The Cloud iNfrastructure Telco Taskforce (CNTT) is developing a set of cloud inf
 <a name="9.1.2"></a>
 ### 9.1.2 Field Trial Purpose
 
-In the truest form, adoption of a standard is an indication of it’s success within an industry. Standards developed must be interactively tested in multiple environments or “trialed” to ensure they are practicable, functional, and operative. Without running trials to validate the CNTT approach, standards may not provide intended value across a sufficient spectrum of participating entities to be widely adopted. The intentions of these field trials is as follows:
+In the truest form, adoption of a specification is an indication of it’s success within an industry. Specifications developed must be interactively tested in multiple environments or “trialed” to ensure they are practicable, functional, and operative. Without running trials to validate the CNTT approach, specifications may not provide intended value across a sufficient spectrum of participating entities to be widely adopted. The intentions of these field trials is as follows:
 
 1)	Demostrate the partnership approach to validate CNTT community is adopting a consistent approach
 2)	Validate the RI-1 specifications and RC-1 test suite, not VNFs or NFVI’s
