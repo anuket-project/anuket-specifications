@@ -96,7 +96,7 @@ Exceptions will be clearly recorded in a given Reference Architecture's Appendix
 
 #### VNF/CNF Transition Plan Framework 
 
-Exceptions will be clearly recorded in the appropriate specification Appendix which will service as guidance to VNF/CNF application vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrates the concept.
+Exceptions will be clearly recorded in the appropriate specification Appendix which will service as guidance to VNF/CNF application vendors of what Exceptions will be allowed in each CNTT release. **Figure 2** below demonstrates the concept.
 
 - It is expected that over time, as technology matures, there will be a decreasing numbers of Exceptions allowed in CNTT releases.
 - For each CNTT Release, VNF/CNF can be either:
