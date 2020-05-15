@@ -64,7 +64,7 @@ It is important to note that the container runtime itself is also a set of proce
 
 > Relate back to features described in the RM [here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that the RM appears to be missing Memory-based HW profile features [here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
-The Reference Model requires the support of Huge Pages in `i.cap.018` which is already supported by upstream Kubernetes. For some applications the Huge Pages should be allocated to account for considerations of the underlying HW topology. This newer feature is missing from Kubernetes, therefore a gap has been identify which has been added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
+The Reference Model requires the support of Huge Pages in `i.cap.018` which is already supported by upstream Kubernetes. For some applications, Huge Pages should be allocated to account for consideration of the underlying HW topology. This newer feature is missing from Kubernetes, therefore a gap has been identified and added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
 
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
