@@ -23,7 +23,7 @@ It is vitally important for the success of the CNTT mission to have as many work
 
 <a name="9.1.1"></a>
 ### 9.1.1 Background
-The Cloud iNfrastructure Telco Taskforce (CNTT) is building a set of infrastructure standards to be implemented within telcos to improve cost effectiveness and speed of delivery of Virtual Network Functions. As part of the standards development, the organization has built a Reference Model (RM) on which Reference Implementation (RI) and Reference Conformance (RC) standards have been defined.  For CNTT to ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its methods (RI/RC standards).
+The Cloud iNfrastructure Telco Taskforce (CNTT) is developing a set of cloud infrastructure specifications to be implemented within telcos to improve the cost effectiveness and speed of deployment of cloud network functions. As part of the specifications development, the organization has built a Reference Model (RM) on which Reference Implementation (RI) and Reference Conformance (RC) standards have been defined.  For CNTT to ensure value add to Telco industry operators, suppliers, and end user customers, it is running field tests to validate the feasibility, utility, and effectiveness of its methods (RI/RC standards).
 
 <a name="9.1.2"></a>
 ### 9.1.2 Field Trial Purpose
