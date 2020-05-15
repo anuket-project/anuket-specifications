@@ -84,7 +84,7 @@ The transition plan described here informs application designers on how the Refe
 
 #### NFVI Transition Plan Framework 
 
-Exceptions will be clearly recorded in a given Reference Architecture's Appendix.  That document provides guidance to NFVI vendors of what Exceptions will be allowed in each CNTT release. **Figure 2** below demonstrates the concept.
+Exceptions will be clearly recorded in a given Reference Architecture's Appendix.  That document provides guidance to NFVI vendors of what Exceptions will be allowed in each CNTT release. **Figure 1** below demonstrates the concept.
 
 - It is expected that over time, as technology matures, there will be a decreasing numbers of Exceptions allowed in CNTT releases.
 - For each CNTT Release, the NFVI can be either:
