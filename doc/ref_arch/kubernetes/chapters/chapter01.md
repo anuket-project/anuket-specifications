@@ -94,5 +94,3 @@ Kubernetes is a relatively new technology (First release was in June 2014), so i
 
 <p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
 <p align="center"><b>Figure 1-3:</b> Kubernetes Reference Architecture Roadmap</p>
-
-> A populated roadmap view will be added here after the January 2020 release.
