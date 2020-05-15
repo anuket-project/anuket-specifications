@@ -104,7 +104,7 @@ Exceptions will be clearly recorded in the appropriate specification Appendix wh
   - **Conformant with Exception**: One or More of the allowed Exceptions in the Reference Model have been used.  
 
 <p align="center"><img src="../figures/vnf_cnf_transition.png" alt="Transition" title="VNF/CNF Transition Plan" width="70%"/></p>
-<p align="center"><b>Figure 1:</b> Transition Plan for VNFs/CNFs within CNTT</p>
+<p align="center"><b>Figure 2:</b> Transition Plan for VNFs/CNFs within CNTT</p>
 
 <a name="9.5"></a>
 ## 9.5 CNTT Field Trial/ Approach
