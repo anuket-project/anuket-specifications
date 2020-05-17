@@ -102,7 +102,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
     This section illustrates some selected use cases that are aligned with the technology evolution and aligned with the 5G business services offerings as well.
 
-- **Use Case #1 - eMBB Network Slice with CDN**
+- **Use Case #1 - Edge CDN with eMBB Core Network Slicing**
 
   - **Business Objectives**
   
@@ -117,9 +117,9 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
   - **Architecture**
   
-     <img width="1079" alt="Screenshot 2020-04-14 at 8 37 57 PM" src="https://user-images.githubusercontent.com/25845305/79390856-c536f780-7f70-11ea-88d5-cfd89cf5121a.png">
+     <img width="1066" alt="Screenshot 2020-05-17 at 11 31 44 PM" src="https://user-images.githubusercontent.com/25845305/82160584-b35db280-9896-11ea-921c-6a7f8e5bb866.png">
 
-- **Use Case #2 - Private 5G with Network Slicing**
+- **Use Case #2 - Edge Private 5G with Core Network Slicing**
 
   - **Business Objectives**
   
@@ -135,7 +135,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
   - **Architecture**
 
-      <img width="1089" alt="Screenshot 2020-04-16 at 6 22 58 PM" src="https://user-images.githubusercontent.com/25845305/79684936-635ae400-8235-11ea-9c97-4774aba24d17.png">
+      <img width="1066" alt="Screenshot 2020-05-17 at 11 34 47 PM" src="https://user-images.githubusercontent.com/25845305/82160627-0172b600-9897-11ea-99ec-7339deb19fce.png">
       
         Note (1) - There are multiple flavours for Private 5G deployments or NPN, Non-Public Network as defined by 3GPP.
         
@@ -147,9 +147,9 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
         
         Note (5) - Hosting the CU/DU on-Customer Infrastructure depends on the enterprise offering by the Mobile Operator and the selected Private 5G setup.
         
-        Note (6) – The Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator) as part of Managed-services model.
+        Note (6) – The Edge Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator) as part of Managed-services model.
 
-- **Use Case #3 - Edge Automotive (V2X) with uRLLC Network Slicing**
+- **Use Case #3 - Edge Automotive (V2X) with uRLLC Core Network Slicing**
 
   - **Business Objectives**
 
@@ -177,7 +177,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
         Note (3) - The potential use cases that may consume services from Edge is the Network Model (V2N) and potentially the V2I (According on how the Infrastructure will be mapped to an Edge level)
 
-- **Use Case #4 – vRAN**
+- **Use Case #4 – Edge vRAN Deployments**
 
   - **Business Objectives**
       vRAN is one of the trending technologies of RAN deployment that fits for all Radio Access Technologies. vRAN helps to provide coverage for rural & uncovered areas with a compelling CAPEX reduction compared to Traditional and legacy RAN deployments. This coverage can be extended to all area types with 5G greenfield deployment as a typical example. 
