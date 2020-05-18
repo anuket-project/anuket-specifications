@@ -180,12 +180,12 @@ The physical compute, storage and network resources serve as the foundation of t
 <p align="center"><b>Figure 3-4:</b> NFVI Physical Resources</p>
 
 <a name="3.5"></a>
-## 3.4 Network
+## 3.5 Network
 Networking, alongside Compute and Storage, is an integral part of the Cloud Infrastructure (Network Function Virtualisation Infrastructure). The general function of networking in this context is to provide the connectivity between various virtual and physical resources required for the delivery of a network service. Such connectivity may manifest itself as a virtualised network between VMs and/or containers (e.g. overlay networks managed by SDN controllers, and/or programmable network fabrics) or as an integration into the infrastructure hardware level for offloading some of the network service functionality.
 
-Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual reosurces (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Figure 3-1. The importance of understanding the seperation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
+Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual resources (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Figure 3-1. The importance of understanding the separation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
 
-The following diagram represents a high level Network Model detailing, form the network perspective, major subcomponents of the Virtual Resources, Physical Resources, and Management Software components of the NFVI Model Overview in Figure 3-1.The details of this model are discussed in Section 4.3.
+The following diagram represents a high level Network Model detailing, from the network perspective, major subcomponents of the Virtual Resources, Physical Resources, and Management Software components of the NFVI Model Overview in Figure 3-1.The details of this model are discussed in Section 4.3.
 
 <p align="center"><img src="../figures/RM-Chapter 3-Network-Model.png" alt="Network Model Overview" Title="Network Model Overview" width="65%"/></p>
 <p align="center"><b>Figure 3-5:</b> Network Model Overview</p>
@@ -194,22 +194,22 @@ Principles that should be followed during the development and definition of the 
 
 • Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
 
-> **Note:**  In deployment phases this principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
+> **Note:**  In deployment phases this principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementations of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
 
-•Agnosticity : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+•Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
     Control, User and Management traffic types
-    Acceleration technologies supporting multiple types of Infrastructure deployments and Network Function workloads
+    Acceleration technologies supporting multiple types of infrastructure deployments and network function workloads
     
 •Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workload onboarding.
 
-•Openness: All Networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components (e.g. SDN controllers).
+•Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components (e.g. SDN controllers).
 
-•Programmability: Should enable a programmable forwarding plane controlled from a separately deployed control plane.
+•Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
 
-•Scalability: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
+•Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments.
 
-•Workload agnostic: Should be capable to to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
+•Workload agnostic: Network model is capable to provide connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
 
-•Telco Grade: Should support deployments of the telco grade worklaods.
+•Telco Grade: Network model is capable of supporting deployments of the telco grade workloads.
 
-•Future proof: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), and Edge related technologies.
+•Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
