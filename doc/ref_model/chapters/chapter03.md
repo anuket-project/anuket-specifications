@@ -208,7 +208,7 @@ Principles that should be followed during the development and definition of the 
 
 •Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments.
 
-•Workload agnostic: Network model is capable to provide connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
+•Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
 
 •Telco Grade: Network model is capable of supporting deployments of the telco grade workloads.
 
