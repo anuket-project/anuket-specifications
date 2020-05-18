@@ -165,7 +165,7 @@ OpenStack is a complex, multi-project framework, so we initially will focus on t
 The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific CNTT conformant implementation requirements and recommendations for the core services.
 
 
-<p align="center"><img src="../figures/Figure_3_1_Core_NFVI_Services_v5.png" alt="Core OpenStack Software Services" title="Core OpenStack Software Services" width="100%"/><b>Figure 3-1:</b> OpenStack Core Services</p>
+<p align="center"><img src="../figures/RA1-Ch03-Core-Cloud-Infra-Services.png" alt="Core OpenStack Software Services" title="Core OpenStack Software Services" width="100%"/><b>Figure 3-1:</b> OpenStack Core Services</p>
 
 We will refer to the functions above as falling into the following categories to avoid any confusion with other terminology that may be used:
 -	Foundation node
@@ -188,7 +188,7 @@ The architecture based on OpenStack technology relies on different types of node
 
 The data plane consists of the compute nodes. It is typical to consider the other node types to be part of the control plane. Figure 3-2 depicts the 4 types of nodes constitutive of the Infrastructure: control, compute, network and storage nodes.
 
-<p align="center"><img src="../figures/Figure_3_2_ NFVI_Software_Services_Topology_v2.png" alt="OpenSatck Software Services Topology" title="OpenStack Software Services Topology" width="100%"/><b>Figure 3-2:</b> OpenStack Services Topology</p>
+<p align="center"><img src="../figures/RA1-Ch03-OpenStack-Services-Topology.png" alt="OpenSatck Software Services Topology" title="OpenStack Software Services Topology" width="100%"/><b>Figure 3-2:</b> OpenStack Services Topology</p>
 
 Deployments can be structured using the distribution of services amongst the 4 node types as depicted in Figure 3-2, but depending on workloads requirements, OpenStack services can also be hosted on the same nodes. For instance, services related to Controller, network and storage roles can be hosted on controller nodes.
 
@@ -297,7 +297,7 @@ HW profiles are defined in the chapters 5.3 and 5.4 of the reference model docum
 #### 3.4.2.2. Network
 The recommended network architecture is spine and leaf topology
 
-<p align="center"><img src="../figures/Figure_4_1_Network_Fabric_Physical.png" alt="Network Fabric -- Physical"><b>Figure 3-3:</b> Network Fabric – Physical</p>
+<p align="center"><img src="../figures/RA1-Ch03-Network-Fabric.png" alt="Network Fabric -- Physical"><b>Figure 3-3:</b> Network Fabric – Physical</p>
 Figure 3-3 shows a physical network layout where each physical server is dual homed to TOR (Leaf/Access) switches with redundant (2x) connections. The Leaf switches are dual homed with redundant connections to spines.
 
 #### 3.4.2.3. Storage
