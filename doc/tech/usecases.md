@@ -98,7 +98,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
     Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients of the ultra-low latency/eMBB Network Slicing. The requirements for user plane Local Breakout / Termination are common mandating that VASs & Any Gi-LAN applications are locally hosted at the Edge.
 
-    The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting preserving the latency requirements.
+    The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting that satisfy the latency requirements.
 
     This section illustrates some selected use cases that are aligned with the technology evolution and aligned with the 5G business services offerings as well.
 
@@ -106,7 +106,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
   - **Business Objectives**
   
-      Monetizing 5G network slicing by providing eMBB Network slice with distributed CDN as a Service providing UHD Streaming Experience, Video Optimization, Caching for Large files, and other Capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
+      Monetizing 5G by provisioning eMBB network slice with distributed CDN as a service, that enables UHD streaming, Video Optimization, caching for large files, and other capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
 
   - **Targeted Segments**
   
