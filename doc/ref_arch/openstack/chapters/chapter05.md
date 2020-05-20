@@ -217,6 +217,7 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 | cold_migration           | X             |
 | console_output           | X             |
 | disk_config              | X             |
+| instance_password        | X             |
 | interface_attach         | X             |
 | live_migration           | X             |
 | metadata_service         | X             |
