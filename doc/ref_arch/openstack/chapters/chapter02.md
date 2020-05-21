@@ -74,12 +74,6 @@ Traceability to Reference Model.
 | `req.inf.com.09` | Compute | The Architecture **must** ensure that the host cores/threads assigned to a workload are thread-sibling aware: that is, that a core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | Achieved through configuring the "cpu_dedicated_set" and "cpu_shared_set" parameters in nova.conf correctly. |
 | `req.inf.stg.01` | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for VM Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
 | `req.inf.stg.02` | Storage | The Architecture **must** provide Object storage for VM Instances. Operators **may** choose not to implement Object Storage but must be cognizant of the risk of "Compliant VNFs" failing in their environment. | OpenStack Swift Service ([RA-1 4.3.1.4 "Swift"](./chapter04.md#4314-swift)) |
-| `req.inf.stg.03` | Storage | The Architecture **may** provide a file system service (file system storage solution) for VM Instances. | [RA-1 4.2.4. "Storage Backend"](./chapter04.md#424-storage-backend) |
-| `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. | [RA-1 4.2.4.1. "Ceph Storage Cluster"](./chapter04.md#4241-ceph-storage-cluster) |
-| `req.inf.stg.06` | Storage | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
-| `req.inf.stg.07` | Storage | The Architecture **should** provide high-performance and horizontally scalable VM storage. | [RA-1 4.2.4.1. "Ceph Storage Cluster"](./chapter04.md#4241-ceph-storage-cluster) |
-| `req.inf.stg.10` | Storage | The Architecture **should** provide local Block storage for VM Instances. | [RA-1 "Virtual Storage"](./chapter03.md#323-virtual-storage) |
-| `req.inf.stg.11` | Storage | The Architecture **should** support the Block storage capabilities specified in https://docs.openstack.org/api-ref/block-storage/. | [RA-1 5.2.3. "Cinder"](./chapter05.md#523-cinder) |
 | `req.inf.ntw.01` | Network | The Architecture **must** provide virtual network interfaces to VM instances. | [RA-1 5.2.5. "Neutron" ](./chapter05.md#525-neutron) |
 | `req.inf.ntw.02` | Network | The Architecture **must** include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs. | [RA-1 3.2.5. "Virtual Networking – 3rd party SDN solution"](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution) |
 | `req.inf.ntw.03` | Network | The Architecture **must** support low latency and high throughput traffic needs. | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
@@ -88,10 +82,7 @@ Traceability to Reference Model.
 | `req.inf.ntw.10` | Network | The Cloud Infrastructure Network Fabric **must** be capable of enabling highly available (Five 9’s or better) Cloud Infrastructure. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
 | `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for Cloud Infrastructure to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
 | `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.| |
-| `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for Cloud Infrastructure internal networks.| |
-| `req.inf.ntw.17` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](./chapter05.md#525-neutron) |
-| `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). | [RA-1 3.2.6. "Acceleration"](./chapter03.md#326-acceleration) |
-| `req.inf.acc.02` | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). | ["OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
+
 
 <p align="center"><b>Table 2-2:</b> Infrastructure Requirements</p>
 
@@ -101,7 +92,6 @@ Traceability to Reference Model.
 | Ref # | sub-category | Description |  Traceability |
 |----|----------------|----------------------|-----------|
 | `req.vim.01` | General | The Architecture **must** allow infrastructure resource sharing. | [RA-1 3.2. "Consumable Infrastructure Resources and Services"](./chapter03.md#32-consumable-infrastructure-resources-and-services) |
-| `req.vim.02` | General | The Architecture **should** support deployment of OpenStack components in containers. | [RA-1 4.3.2. "Containerised OpenStack Services"](./chapter04.md#432-containerised-openstack-services) |
 | `req.vim.03` | General | The Architecture **must** allow VIM to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
 | `req.vim.05` | General | The Architecture **must** include image repository management. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
 | `req.vim.07` | General | The Architecture **must** support multi-tenancy. | [RA-1 3.2.1. "Multi-Tenancy"](./chapter03.md#321-multi-tenancy-execution-environment) |
@@ -119,7 +109,7 @@ Traceability to Reference Model.
 | `req.int.api.02` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) |
 | `req.int.api.03` | API | The Architecture **must** provide APIs needed to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
 | `req.int.api.04` | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services | [RA-1 5.2 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#52-core-openstack-services-apis) |
-| `req.int.acc.01` | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |  |
+
 
 
 <p align="center"><b>Table 2-4:</b> Interfaces and APIs Requirements</p>
@@ -330,6 +320,12 @@ The requirements listed in this section are optional, and are not required in or
 |----|-------|---------------------|-------------|
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
 | `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. | |
+| `req.inf.stg.03` | Storage | The Architecture **may** provide a file system service (file system storage solution) for VM Instances. | [RA-1 4.2.4. "Storage Backend"](./chapter04.md#424-storage-backend) |
+| `req.inf.stg.04` | Storage | The Architecture **may** support Software Defined Storage (SDS) that seamlessly supports shared block storage, object storage and flat files. | [RA-1 4.2.4.1. "Ceph Storage Cluster"](./chapter04.md#4241-ceph-storage-cluster) |
+| `req.inf.stg.06` | Storage | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
+| `req.inf.stg.07` | Storage | The Architecture **should** provide high-performance and horizontally scalable VM storage. | [RA-1 4.2.4.1. "Ceph Storage Cluster"](./chapter04.md#4241-ceph-storage-cluster) |
+| `req.inf.stg.10` | Storage | The Architecture **should** provide local Block storage for VM Instances. | [RA-1 "Virtual Storage"](./chapter03.md#323-virtual-storage) |
+| `req.inf.stg.11` | Storage | The Architecture **should** support the Block storage capabilities specified in https://docs.openstack.org/api-ref/block-storage/. | [RA-1 5.2.3. "Cinder"](./chapter05.md#523-cinder) |
 | `req.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
 | `req.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
 | `req.inf.ntw.04` | Network | The Architecture **should** support service function chaining. |  |
@@ -340,6 +336,10 @@ The requirements listed in this section are optional, and are not required in or
 | `req.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. | |
 | `req.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. | |
 | `req.inf.ntw.14` | Network | The SDN solution **should** be able to be centrally administrated and configured. | |
+| `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for Cloud Infrastructure internal networks.| |
+| `req.inf.ntw.18` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](./chapter05.md#525-neutron) |
+| `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). | [RA-1 3.2.6. "Acceleration"](./chapter03.md#326-acceleration) |
+| `req.inf.acc.02` | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). | ["OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
 
 <p align="center"><b>Table 2-10:</b> Infrastructure Recommendations</p>
@@ -350,6 +350,7 @@ The requirements listed in this section are optional, and are not required in or
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------------|----------------------|-----------|
+| `req.vim.02` | General | The Architecture **should** support deployment of OpenStack components in containers. | [RA-1 4.3.2. "Containerised OpenStack Services"](./chapter04.md#432-containerised-openstack-services) |
 | `req.vim.04` | General | The Architecture **should** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.| |
 | `req.vim.06` | General | The Architecture **should** allow orchestration solutions to be integrated with VIM. |  |
 | `req.vim.09` | General | The Architecture **should** support horizontal scaling of OpenStack core services. |  |
@@ -362,6 +363,7 @@ The requirements listed in this section are optional, and are not required in or
 
 | Ref # | sub-category | Description |  Traceability |
 |----|-------|---------------------|-------------|
+| `req.int.acc.01` | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |  |
 | `req.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of `req.inf.acc.03` under "Infrastructure Recommendations" |
 
 <p align="center"><b>Table 2-12:</b> Interfaces and APIs Recommendations</p>
