@@ -38,11 +38,11 @@ While this Reference Architecture is being developed, Gaps will be identified th
 
 
 <a name="6.2.2"></a>
-### 6.2.2 Multi-tenancy within Kubernetes
+### 6.2.2 Multi-tenancy and workload isolation with Kubernetes
 
-> Today, Kubernetes lacks hard multi-tenancy capabilities<sup>citations</sup>
-
-> Ability to allow untrusted tenants to share infrastructure resources.
+**Related requirements:** `e.man.004` `sec.ci.008` `sec.wl.005``sec.wl.006` `req.inf.ntw.03` 
+**Baseline project:** none
+**Gap description:** Today, Kubernetes lacks hard multi-tenancy capabilities that give the ability to allow untrusted tenants to share infrastructure resources. This presents a security problem when operators seek to separate workloads by categorization or even just production vs non-production. Further, tenant networks need to be both segregated, but still centrally administered and maintained. Beyond just security, this also presents an operational problem. Trying to deploy too many CNFs into the same cluster could result in version conflicts, configuration conflicts, and problems with software life cycle management. Finally, without proper isolation there is an increased risk of cascading failures. 
 
 
 <a name="6.2.3"></a>
@@ -94,6 +94,15 @@ While this Reference Architecture is being developed, Gaps will be identified th
 
 <a name="6.3"></a>
 ## 6.3 Proposals & Resolution
+
+### 6.3.2 Multi-tenancy and workload isolation with Kubernetes
+
+Kubernetes is not a single cluster solution. This has been demonstrated across the industry from case studies at prominent companies like [Twitter](https://www.alibabacloud.com/blog/what-can-we-learn-from-twitters-move-to-kubernetes_595156), [USA Today](https://medium.com/usa-today-network/there-and-back-again-scaling-multi-tenant-kubernetes-cluster-s-67afb437716c), [Zalando](https://www.youtube.com/watch?v=LpFApeaGv7A), and [Alibaba](https://www.cncf.io/blog/2019/12/12/demystifying-kubernetes-as-a-service-how-does-alibaba-cloud-manage-10000s-of-kubernetes-clusters/) to the bi-annual CNCF survey that finds that the number of clusters being deployed within an organization is growing. While there are many reasons behind the multi cluster paradigm, examining the gap above we find that a multi cluster solution can address many of these problems like security and software life cycle management. 
+
+Without hard multi tenancy within a clusters, separate clusters must be used to provide adequate separation for different types of workloads like production vs. non production or per categorization. Having multiple clusters to deploy CNFs into allows operators to chose similar CNFs together while segregating those with different lifecycles from each other. CNFs deployed into the same cluster can be upgraded together to reduce the operational load while CNFs that require different versions, configurations, and dependencies can run in separate clusters and be upgraded independently.
+
+If running multiple clusters is the only solution to meeting these workload and infrastructure requirements, the operational burden of this model must also be considered. Running a multitude of clusters at scale could be a massive operational challenge if done manually. Any operator considering running Kubernetes at scale should carefully evaluate their multi cluster management strategy.
+
 
 <a name="6.4"></a>
 ## 6.4 Development Efforts
