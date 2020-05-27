@@ -106,13 +106,13 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
   - **Business Objectives**
   
-      Monetizing 5G by provisioning eMBB network slice with distributed CDN as a service, that enables UHD streaming, Video Optimization, caching for large files, and other capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
+      Monetizing 5G by provisioning Enhanced Mobile Broadband (eMBB) network slice with distributed Content Delivery Network (CDN) as a service, that enables Ultra-HD (UHD) streaming, Video Optimization, caching for large files, and other capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
 
   - **Targeted Segments**
   
     - B2C (Targeting high Tier Packages & Bundles)
     - Content Owners (Potential revenue sharing model)
-    - MVNOs (Wholesale)
+    - Mobile Virtual Network Operators (MVNOs - Wholesale)
     - Stadiums and Venus.
 
   - **Architecture**
