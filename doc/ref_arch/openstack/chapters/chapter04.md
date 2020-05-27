@@ -299,10 +299,10 @@ SR-IOV-based networking for Tenant Use Cases is required where vSwitch-based net
 _Host configurations for B1, B4 Flavor Series_
 
 
-<p align="center"><img src="../figures/Figure_4_4_Basic_host_config.png" alt=" Basic Profile Host Configuration"><b> Figure 4-4: Basic Profile Host Configuration (example and simplified).</b></p>
+<p align="center"><img src="../figures/RA1-Ch04-Basic-host-config.png" alt=" Basic Profile Host Configuration"><b> Figure 4-1: Basic Profile Host Configuration (example and simplified).</b></p>
 
 
-Let us refer to the data traffic networking configuration of Figure 4-4 to be part of the hp-B1-a and hp-B4-a host profiles and this requires the configurations as Table 4-3.
+Let us refer to the data traffic networking configuration of Figure 4-1 to be part of the hp-B1-a and hp-B4-a host profiles and this requires the configurations as Table 4-3.
 
 | | Configured in | Host profile: hp-B1-a | Host profile: hp-B4-a |
 |----|----|----|----|
@@ -315,9 +315,9 @@ Let us refer to the data traffic networking configuration of Figure 4-4 to be pa
 <p align="center"><b>Table 4-3: Configuration of Basic Flavor Capabilities</b></p>
 
 
-Figure 4-5 shows the networking configuration where the storage and OAM share networking but are independent of the PXE network.
+Figure 4-2 shows the networking configuration where the storage and OAM share networking but are independent of the PXE network.
 
-<p align="center"><img src="../figures/Figure_4_5_Basic_host_config_with_Storage_Network.png" alt=" Basic Profile Host Configuration with shared Storage and OAM networking"><b> Figure 4-5: Basic Profile Host Configuration with shared Storage and OAM networking (example and simplified).</b></p>
+<p align="center"><img src="../figures/RA1-Ch04-Basic-host-config-w-Storage-Network.png" alt=" Basic Profile Host Configuration with shared Storage and OAM networking"><b>Figure 4-2: Basic Profile Host Configuration with shared Storage and OAM networking (example and simplified).</b></p>
 
 Let us refer to the above networking set up to be part of the hp-B1-b and hp-B4-b host profiles but the basic configurations as specified in Table 4-3.
 
@@ -346,9 +346,9 @@ The above examples of host networking configurations for the B1 and B4 flavor se
 
 _Host Networking configuration for nd Flavor Series_
 
-An example of the data traffic configuration for the nd (OVS-DPDK) flavor series is shown in Figure 4-6. 
+An example of the data traffic configuration for the nd (OVS-DPDK) flavor series is shown in Figure 4-3. 
 
-<p align="center"><img src="../figures/Figure_4_6_Network_Intensive_DPDK.png" alt="Network Intensive Profile Host Configuration with DPDK acceleration "><b> Figure 4-6: Network Intensive Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
+<p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-DPDK.png" alt="Network Intensive Profile Host Configuration with DPDK acceleration "><b> Figure 4-3: Network Intensive Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
 
 To ensure Tenant and DPDK CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
 
@@ -358,9 +358,9 @@ To ensure Tenant and DPDK CPU isolation from the host services (Operating System
 
 _Host Networking configuration for ns Flavor Series_
 
-An example of the data traffic configuration for the ns (SR-IOV) flavor series is shown in Figure 4-7.
+An example of the data traffic configuration for the ns (SR-IOV) flavor series is shown in Figure 4-4.
 
-<p align="center"><img src="../figures/Figure_4_7_Network_Intensive_SRIOV.png" alt=" Network Intensive Profile Host Configuration with SR-IOV "><b> Figure 4-7: Network Intensive Profile Host Configuration with SR-IOV (example and simplified).</b></p>
+<p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-SRIOV.png" alt=" Network Intensive Profile Host Configuration with SR-IOV "><b> Figure 4-4: Network Intensive Profile Host Configuration with SR-IOV (example and simplified).</b></p>
 
 To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
 
@@ -393,7 +393,7 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/Figure_4_1_Indicative_OpenStack_Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-1. Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Indicative-OpenStack-Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-5: Indicative OpenStack Network Layout.</p>
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
@@ -467,7 +467,7 @@ The Ceph storage cluster is deployed on bare metal hardware. The minimal configu
 
 Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
 
-<p align="center"><img src="../figures/Figure_4_x_Ceph.png" alt="Ceph Storage System"></br>Figure 4-2. Ceph Storage System.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"></br>Figure 4-6: Ceph Storage System.</p>
 
 **BIOS Requirement for Ceph servers**
 
@@ -625,9 +625,9 @@ Barbican usage provides a means to fulfill security requirements such as req.sec
 ### 4.3.2. Containerised OpenStack Services 
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc. Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
 
-In Chapter 3, Figure 3.2 shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-3.
+In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-7.
 
-<p align="center"><img src="../figures/Figure_4_2_Containerised_OpenStack_Services.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-3. Containerised OpenStack Services Topology.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-7: Containerised OpenStack Services Topology.</p>
 
 
 <a name="4.4"></a>
