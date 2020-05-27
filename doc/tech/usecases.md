@@ -96,7 +96,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
 - **Introduction**
 
-    Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients of the ultra-low latency/eMBB Network Slicing. The requirements for user plane Local Breakout / Termination are common mandating that VASs & Any Gi-LAN applications are locally hosted at the Edge.
+    Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients of the Ultra-Reliable Low-latency Communication (URLLC) and Enhanced Mobile Broadband (eMBB) Network Slicing. The requirements for user plane Local Breakout / Termination are common mandating that Value Added Services (VASs) & Any Gi-LAN applications are locally hosted at the Edge.
 
     The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting that satisfy the latency requirements.
 
@@ -106,7 +106,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
   - **Business Objectives**
   
-      Monetizing 5G by provisioning Enhanced Mobile Broadband (eMBB) network slice with distributed Content Delivery Network (CDN) as a service, that enables Ultra-HD (UHD) streaming, Video Optimization, caching for large files, and other capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
+      Monetizing 5G by provisioning eMBB network slice with distributed Content Delivery Network (CDN) as a service, that enables Ultra-HD (UHD) streaming, Video Optimization, caching for large files, and other capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
 
   - **Targeted Segments**
   
@@ -153,7 +153,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 
   - **Business Objectives**
 
-      The V2X set of use cases provides a 5G Monetization framework for Mobile Operators developing 5G URLLC business use cases targeting the Automotive Industry, Smart City Regulators, & Public Safety. 
+      The V2X (Viechle-to-everthing) set of use cases provides a 5G Monetization framework for Mobile Operators developing 5G URLLC business use cases targeting the Automotive Industry, Smart City Regulators, & Public Safety. 
       
   - **Targeted Segments**
 
