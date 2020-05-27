@@ -56,7 +56,7 @@ Terminology in this document will follow [CNTT Terminology](../../../tech/glossa
 <a name="1.2"></a>
 ## 1.2 Scope
 
-This document covers the realisation aspects of conformance of both NFVI and VNFs. The document will cover the following topics:
+This document covers the realisation aspects of conformance of both Kubernetes infrastructure and CNFs. The document will cover the following topics:
 
 - Identify in details the Requirement of Test Cases (and mapping them to requirements from The Reference Model and the Kubernetes Based Reference Architecture).
 - Analysis of existing community projects.
@@ -133,7 +133,7 @@ is required if new test suites are added in place of older, stale projects.
 <p align="center"><b>Figure:</b> Instance Type</p>
 
 
-**NFVI+VNF Instance Type:**
+**Infrastructure Instance Type:**
 * Standard compute flavours to be tested are defined in RM
   [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
 * Performance profiles come in the form of Basic, Network Intensive, and
