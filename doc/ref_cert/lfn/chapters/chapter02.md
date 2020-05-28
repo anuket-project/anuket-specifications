@@ -43,7 +43,7 @@ All Terms utilized throughout this chapter are intended to align with CVC defini
 
 <a name="2.1"></a>
 ## 2.1 Introduction
-NFVI (Network Functions Virtualization Infrastructure) refers to the physical and virtual resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. Due to differentiation of API and under layer configuration and capability matrix, cross vendor VNF deployment on NFVI becomes hard to predict, and requires huge amount of cross vendor interoperability tests. With combined effort from operators and vendors, CNTT define RA and RM, to make sure to consolidate the under layer configuration, capability and API, so as to provide the upper layer VNF with a 'common NFVI'. Based on this, CNTT also provides RC for conformance test of SUT against RA & RM requirements. SUT passes the conformance test will be identified as NFVI that can fit into the common requirements.
+NFVI (Network Functions Virtualization Infrastructure) refers to the physical and virtual resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. Due to differentiation of API and under layer configuration and capability matrix, cross vendor VNF deployment on NFVI becomes hard to predict, and requires huge amount of cross vendor interoperability tests. With combined effort from operators and vendors, CNTT define RA and RM, to make sure to consolidate the under layer configuration, capability and API, so as to provide the upper layer VNF with a 'common cloud infrastructure'. Based on this, CNTT also provides RC for conformance test of SUT against RA & RM requirements. SUT passes the conformance test will be identified as NFVI that can fit into the common requirements.
 
 In the meantime, CNTT RC also provides conformance test for VNF. The intention is to make sure VNF that passes RC test cases can be deployed on any NFVI which also passes RC without any conformance and interoperability issue.
 <!---As such, the performance of a VNF depends on the underlying NFVI over which it is hosted. A certain VNF may perform good in one hardware and may perform worst in another. Thus, a need arises to certify NFVI that can help in onboarding VNFs onto a hardware with an acceptable level of VNF performance. Certain frameworks like [yardstick](https://github.com/opnfv/yardstick), [vsperf](https://github.com/opnfv/vswitchperf) etc. provide a set of tests that can be run on a hardware to obtain Key Performance Indicators (KPIs) which give a measurable output of the NFVI's performance. With these KPIs, a decision can be made on the VNFs that can offer an acceptable level of performance when on-boarded on the NFVI.--->
@@ -240,7 +240,7 @@ operations when configuring the server running the test cases and prevent
 conflicts between all test case dependencies.
 
 It's worth mentioning that current
-[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter03.html" | relative_url }})
 already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the

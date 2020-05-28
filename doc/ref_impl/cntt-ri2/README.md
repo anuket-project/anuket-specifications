@@ -2,20 +2,20 @@
 
 # Reference Implementation 2
 
-This is the Kubernetes-based Reference Implementation.
+This is the Kubernetes-based Reference Implementation (RI-2)
 
 ## Release Information
-**Release: _1.0-alpha_**
+**Bundle: _0_**
 
-**Version: _1.0_**
+**Version: _0_**
 
 **Release Date: _15th May 2020_**
 
-## Version History
+## Bundle/Version History
 
-| Version | Date | Note
+| Bundle.Version | Date | Note
 | --- | --- | --- |
-| 1.0-alpha | 15th May 2020 | Baldy Release|
+| 0.0 | 15th May 2020 | First Initial Draft|
 
 
 ## Overall Status
