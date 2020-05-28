@@ -274,6 +274,7 @@ the following test names must not be executed:
 | .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                  |
 | .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                |
 | .\*tempest.scenario.test_volume_migrate_attached                                                     | multi-backend                         |
+| .\*test_snapshot_manage                                                                              | manage_snapshot                       |
 
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
