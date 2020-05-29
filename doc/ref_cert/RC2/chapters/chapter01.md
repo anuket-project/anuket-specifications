@@ -136,8 +136,7 @@ is required if new test suites are added in place of older, stale projects.
 **Infrastructure Instance Type:**
 * Standard compute flavours to be tested are defined in RM
   [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
-* Performance profiles come in the form of Basic, Network Intensive, and
-  Compute intensive. Refer to RM
+* Performance profiles come in the form of Basic and Network Intensive. Refer to RM
   [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3)
   for details on these profiles.
 
