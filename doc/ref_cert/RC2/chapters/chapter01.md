@@ -19,7 +19,7 @@
 
 ## Executive Summary
 
-The RC2 was established to ensure implementations of the CNTT Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet industry driven quality assurance standards for conformance, verification, and validation. For the purpose of this chapter, infrastructure and cloud native network function (CNF) testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
+The Reference Conformance 2 (RC2) was established to ensure implementations of the Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet industry driven quality assurance standards for conformance, verification, and validation. For the purpose of this chapter, infrastructure and cloud native network function (CNF) testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
 
  - Verified implementations of infrastructure and CNF match expected design requirements
  - Clearly stated guidelines for test, badging, and lifecycle management
