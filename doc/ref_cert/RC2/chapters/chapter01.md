@@ -29,7 +29,7 @@ The Reference Conformance 2 (RC2) was established to ensure implementations of t
 
 In summary, **Conformance** testing will be performed for **Verification** and **Validation** purposes, defined further as:
 
-- **Verification** will be used to indicate conformance to design requirement specifications. Accomplished with Requirement Traceability and Manifest Reviews to ensure the Kubernetes infrastructure is delivered per implementation specifications.
+- **Verification** will be used to indicate conformance to requirements/specifications. Accomplished with Requirement Traceability and Manifest Reviews to ensure that the Kubernetes infrastructure is delivered per implementation specifications.
 - **Validations** is used to indicate that testing performed confirms the infrastructure and CNF meet the expected, or desired outcome, or behaviour.
 
 **All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
