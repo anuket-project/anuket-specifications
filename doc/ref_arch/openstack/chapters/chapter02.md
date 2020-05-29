@@ -115,7 +115,7 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------|--------------------|------------|
-| `req.int.api.01` | API | The Architecture **must** provide APIs to access to the authentication service and all associated mandatory features selected for the CNTT conformance of the given OpenStack release and detailed in chapter 5 | [RA-1 5.2.1 "Keystone"](./chapter05.md#521-keystone) |
+| `req.int.api.01` | API | The Architecture **must** provide APIs to access to the authentication service and the associated mandatory features detailed in chapter 5 | [RA-1 5.2.1 "Keystone"](./chapter05.md#521-keystone) |
 | `req.int.api.02` | API | The Architecture **must** provide APIs to access to the image management service and all associated mandatory features selected for the CNTT conformance of the given OpenStack release and detailed in chapter 5 | [RA-1 5.2.2 "Glance"](./chapter05.md#522-glance) |
 | `req.int.api.03` | API | The Architecture **must** provide APIs to access to the the block storage management service and all associated mandatory features selected for the CNTT conformance of the given OpenStack release and detailed in chapter 5 | [RA-1 5.2.3 "Cinder"](./chapter05.md#523-cinder) |
 | `req.int.api.04` | API | The Architecture **must** provide APIs to access to object storage management service and all associated mandatory features selected for the CNTT conformance of the given OpenStack release and detailed in chapter 5 | [RA-1 5.2.4 "Swift"](./chapter05.md#524-swift) |
