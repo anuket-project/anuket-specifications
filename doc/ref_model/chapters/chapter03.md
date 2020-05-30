@@ -185,11 +185,6 @@ Networking, alongside Compute and Storage, is an integral part of the Cloud Infr
 
 Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual resources (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Figure 3-1. The importance of understanding the separation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
 
-The following diagram represents a high level Network Model detailing, from the network perspective, major subcomponents of the Virtual Resources, Physical Resources, and Management Software components of the NFVI Model Overview in Figure 3-1.The details of this model are discussed in Section 4.3.
-
-<p align="center"><img src="../figures/RM-Chapter 3-Network-Model.png" alt="Network Model Overview" Title="Network Model Overview" width="65%"/></p>
-<p align="center"><b>Figure 3-5:</b> Network Model Overview</p>
-
 Principles that should be followed during the development and definition of the networking scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
 • Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
@@ -210,6 +205,6 @@ Principles that should be followed during the development and definition of the 
 
 •Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
 
-•Telco Grade: Network model is capable of supporting deployments of the telco grade workloads.
+•Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
 
 •Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
