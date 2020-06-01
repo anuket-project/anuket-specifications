@@ -8,7 +8,7 @@
   * [1.2 Hardware layers terminology](#1.2)
   * [1.3 Operational and administrative terminology](#1.3)
   * [1.4 Container Related Terminology](#1.4)
-  * [1.5 OpenStack Related Terminology](#1.5) 
+  * [1.5 OpenStack Related Terminology](#1.5)
   * [1.6 Cloud Platform Abstraction Related Terminology](#1.6)
   * [1.7 Other terminology](#1.7)
 
@@ -61,7 +61,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Cloud Infrastructure Hardware Profile**: defines the behaviour, capabilities and metrics provided by an cloud infrastructure Hardware Layer.
   - **Host Profile**: is another term for a **cloud infrastructure hardware profile**.
 - **Cloud Infrastructure Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **Cloud Infrastructure** HW deployment.
-- **Simultaneous Multi-threading**: Simultaneous multithreading (SMT) is a technique for improving the overall efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution to better utilise the resources provided by modern processor architectures.
+- **Simultaneous Multithreading**: Simultaneous multithreading (SMT) is a technique for improving the overall efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution on a single [Core](#Core) to better utilise the resources provided by modern processor architectures.
 
 
 <a name="1.3"></a>
@@ -114,7 +114,8 @@ Terms not defined by Kubernetes:
 
 >_*Note:*_ The official [OpenStack Glossary]( https://docs.openstack.org/image-guide/common/glossary.html) is an extensive list of OpenStack-related concepts. Some additional terms used in the Reference Architecture RA-1 or used to relate RA-1 terms with terms defined elsewhere.
 
-**Core (physical)** is an independent computer processing unit (pcpu) that can independently execute CPU instructions but is integrated with other cores on a multiprocessor chip (integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
+<a name="Core"></a>
+**Core (physical)** is an independent computer processing unit that can independently execute CPU instructions and is integrated with other cores on a multiprocessor (chip, integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
 
 **Flavor Capabilities** such as (CPU Pinning, NUMA, huge pages): CNTT NFVI Profile
 
@@ -157,4 +158,3 @@ Terms not defined by Kubernetes:
 - **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance.
 
 - PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
-

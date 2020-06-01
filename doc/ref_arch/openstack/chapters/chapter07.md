@@ -145,7 +145,7 @@ software to watch for changing conditions.
 In this section, a possible framework utilizing Prometheus, Fluentd, Elasticsearch and Kibana is given as an example only.
 
 
-<p align="center"><img src="../figures/Figure_7_1_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"><b>
+<p align="center"><img src="../figures/RA1-Ch07-Monitoring-Logging-Framework.png" alt="Monitoring and Logging Framework"><b>
   Figure 7-1: Monitoring and Logging Framework</b> </p>
 
 The monitoring and logging framework (**Figure 7-1**) leverages Prometheus as the monitoring engine and 

@@ -179,7 +179,7 @@ There are the following requirement types:
 1. Data collection from all components, e.g.
     - The ability to collect data relating to events (transactions, security events, physical interface up/down events, warning events, error events, etc.)
     - The ability to collect data relating to component status (up/down, physical temperature, disk speed, etc.)
-    - The ability to collect data relating to component performance (total CPU used, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
+    - The ability to collect data relating to component performance (used CPU resources, storage throughput, network bandwidth in/out, API transactions, transaction response times, etc.)
 2. Capabilities of the Infrastructure Management Software to allow for in-service maintenance of the Infrastructure Software and Hardware under its management, e.g.
     - The ability to mark a physical compute node as being in some sort of "maintenance mode" and for the Infrastructure Management Software to ensure all running workloads are moved off or rescheduled on to other available nodes (after checking that there is sufficient capacity) before marking the node as being ready for whatever maintenance activity needs to be performed
     - The ability to co-ordinate, automate, and allow the declarative input of in-service software component upgrades - such as internal orchestration and scheduler components in the Infrastructure Management Software
