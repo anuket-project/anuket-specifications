@@ -146,15 +146,24 @@ Terms not defined by Kubernetes:
 - Observability = Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs. ([Wikipedia:Observability](https://en.wikipedia.org/wiki/Observability))
 
 <a name="1.7"></a>
-## 1.7 Other Referenced Terminology
+## 1.7 Test Related Terminology
+
+- **Performance Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, Performance Measurements reflect data generated and collected within the cloud infrastructure, that reflects a perfromance aspect of the cloud infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
+
+- **Performance Testing**: The main objective of CNTT performance testing is to understand if a potential BOM is functioning correctly to get expected performance. It requires a set of performance testing tools (open source) that help with the dimensioning of a solution by an operator. This testing provides a comparison between the SUT and a CNTT reference implementation. Performance testing for comparisons between commercial implementations is not a goal of CNTT. Performance testing relies on established benchmark specifications.
+
+- **Benchmarking**: Benchmarking assessments do not define acceptance criteria or numerical performance requirement. Benchmark testing and Conformance testing intersect when a specific requirement in the software specification is very important, such as a frequently-executed function. Correct execution with the expected result constitutes conformance. The completion time for a single conforming execution, or the number of conforming executions per second are potential Benchmarks. Benchmarks assess a key aspect of the computing environment in its role as the infrastructure for cloud-native network functions. The benchmarks (and related metrics) have been agreed by the Industry and documented in publications of an accredited standards body. As a result, benchmarks are a sub-set of all possible performance metrics. Examples benchmarks include data rate, latency, and loss ratio of various components of the environment, expressed in quantitative units to allow direct comparison between different systems treated as a black box (vendor-independence). Because the demands on a particular system may vary from deployment to deployment, Benchmarking assessments do not define acceptance criteria or numerical performance requirements.
+
+- **PVP: Physical-Virtual-Physical:** PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
+
+<a name="1.8"></a>
+## 1.8 Other Referenced Terminology
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **Network Function Virtualisation Infrastructure** compute, storage and network resources.
+
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **Cloud Infrastructure** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
+
 - **Platform**: A cloud capabilities type in which the cloud service user can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider ([ITU](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items)).
 >_*Note:*_ For CNTT,  this includes the physical infrastructure, Operating Systems, virtualisation/containerisation software and other orchestration, security, monitoring/logging and life-cycle management software.
 
-- **PM / Performance Measurement / Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, PMs reflect data generated and collected within the cloud infrastructure, that reflects the performance of the infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra)
-
 - **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance.
-
-- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
