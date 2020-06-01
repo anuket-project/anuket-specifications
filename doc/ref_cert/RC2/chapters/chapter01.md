@@ -40,7 +40,14 @@ In summary, **Conformance** testing will be performed as part of cloud infrastru
 This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
 **Objective**<br>
-Perform Kubernetes infrastructure and CNF Conformance using requirements from CNTT RA2 and RM. Upstream projects will define features/capabilities, test scenarios, and test cases. Upstream projects define features/capabilities, test scenarios, and test cases which may be used for infrastructure or CNF verification and validation. Existing test frameworks, test methods and test tools will be utilized where feasible. 
+Specify Kubernetes infrastructure and CNF Conformance aspects using requirements in CNTT RA2 and RM.
+
+Upstream projects define features/capabilities, test scenarios, and test cases which may be used for infrastructure and/or CNF verification and validation. Where feasible existing test frameworks, test methods and tests may also be used be used for conformance testing along with new tests developed where there are gaps.  
+
+Many existing tests currently being considered for RC-2 are functional tests from upstream projects. Reuse of existing test suites is encouraged however OVP 2.0 is not aiming to replace programs such as Certified Kubernetes which is a "CNCF software conformance program that ensures a vendor’s version of Kubernetes supports the required APIs, as do open source community version". 
+
+The focus of conformance is to test the actual behavior of the system with respect to a capability specified in the RM or RA-2. 
+
 
 **Test Methodology**
 - Verification test to make sure that the Kubernetes services have been deployed and configured correctly
@@ -51,13 +58,6 @@ Perform Kubernetes infrastructure and CNF Conformance using requirements from CN
 ### 1.1.1 Terminology
 
 Terminology in this document will follow [CNTT Terminology](../../../tech/glossary.md). Relevant testing terminology includes:
-
-**Functional Testing**: Most but not all the existing tests currently being considered for RC-2 are functional tests. Reuse of existing test suites is encouraged however OVP 2.0 is not aiming to replace programs such as Certified Kubernetes which is a "CNCF software conformance program that ensures a vendor’s version of Kubernetes supports the required APIs, as do open source community version". Testing to confirm specific versions of APIs or software components is out of scope of conformance sine this is an unambiguous part of a product specification. The focus of functional testing in conformance is the actual behavior of the system wrt a capability specified in the RM or RA-2.
-
-**Performance Testing**: The main objective of CNTT performance testing is to understand if a potential BOM is functioning correctly to get expected performance. It requires a set of performance testing tools (open source) that help with the dimensioning of a solution by an operator. This testing is a comparison between the SUT and a CNTT reference implementation with (pass/fail) result. Performance testing for comparisons between commercial implementations is not a goal of CNTT. Performance testing relies on existing benchmarks.
-
-**Benchmarking**: Benchmarking assessments do not define acceptance criteria or numerical performance requirement. Benchmark testing and Conformance testing intersect when a specific requirement in the software specification is very important, such as a frequently-executed function. Correct execution with the expected result constitutes conformance. The completion time for a single conforming execution, or the number of conforming executions per second are potential Benchmarks. Benchmarks assess a key aspect of the computing environment in its role as the infrastructure for cloud-native network functions. The benchmarks (and related metrics) have been agreed by the Industry and documented in publications of an accredited standards body. As a result, benchmarks are a sub-set of all possible performance metrics. Examples benchmarks include data rate, latency, and loss ratio of various components of the environment, expressed in quantitative units to allow direct comparison between different systems treated as a black box (vendor-independence). Because the demands on a particular system may vary from deployment to deployment, Benchmarking assessments do not define acceptance criteria or numerical performance requirements.
-
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -71,6 +71,7 @@ This document covers aspects of CNTT conformance for both Kubernetes based cloud
 
 **Not in Scope**
 - Functional testing / validation of the application provided by the CNF is outside the scope of this work.
+- Testing to confirm specific versions of APIs or software components is out of scope of conformance since this is an unambiguous part of a product specification.
 - ONAP is not used in the process flow for infrastructure verifications, or validations.
 - Upgrades to CNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
