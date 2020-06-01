@@ -72,7 +72,7 @@ Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.
 | clone                  | X             |
 | consistency_group      |               |
 | extend_attached_volume |               |
-| manage_snapshot        | X             |
+| manage_snapshot        |               |
 | manage_volume          | X             |
 | multi_backend          |               |
 | snapshot               | X             |
