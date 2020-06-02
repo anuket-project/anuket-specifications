@@ -41,7 +41,7 @@ Terminology in this document will follow [CNTT Terminology](../../../tech/glossa
 
 The scope of this document is as follows:
 1. To generate eco-system requirements for the establishment of the RI, including labs, tooling, installers, releases and automation requirements
-1. Provide detailed description file definition for installers, VNF features, and etc..
+1. Provide detailed description file definition for installers, CNF features, and etc..
 1. Provide detailed lab criteria and operations but that are generic enough to allow any environment to be used as the "lab".
 1. Provide an operational runbook for the RI, which includes detailed steps for the deployment and configuration of the RI into a chosen lab environment
 1. Provide detailed design for automation of deployment and testing, provide continuous integration and delivery pipeline for the RI
