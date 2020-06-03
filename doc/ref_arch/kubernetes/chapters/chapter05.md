@@ -99,7 +99,7 @@ The following are recommended best practices for container run-time:
 ##  5.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
 
-- Ensure the cloud native application code can read only the secrets that it needs
+- Ensure that the cloud native applications can only read the secrets that these applications need
 - Have different set of secrets for different environments( like production, development, and testing)
 
 Secret values protect sensitive data, it is recommended to protect them from unauthorised access. Ideally, they must be protected at rest and in transit. Encryption in transit is achieved by encrypting the traffic between the Kubernetes control-plane components and worker nodes using TLS.
