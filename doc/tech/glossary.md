@@ -96,7 +96,7 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 - **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 
 - **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
-- **Kubernetes Cluster**: A set of machines, called nodes and master, that run container-based and VM-based applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
+- **Kubernetes Cluster**: A set of machines, called nodes and master, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
 >_*Note:*_ adapted from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster).
 - **Kubernetes Master**:	The master node(s) manage the worker nodes and the pods in the cluster. Multiple masters are used to provide a cluster with failover and high availability.
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.

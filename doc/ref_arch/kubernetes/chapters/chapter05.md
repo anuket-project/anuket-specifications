@@ -93,14 +93,14 @@ Logging, monitoring, alerting and log aggregation are essential for Kubernetes. 
 The following are recommended best practices for container run-time:
 - Integrate run-time processes to Security Information and Event Monitoring (SIEM)
 - Use container-aware run-time defense tools
-- Ensure all running container applications are from secure and verified images
-- Cloud native application should not run with root privileges
+- Ensure all running cloud native applications are from secure and verified images
+- Cloud native applications should not run with root privileges
 - Ensure sensitive workloads are properly segmented by namespaces or cluster to mitigate the scope of compromise.
 
 ##  5.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
 
-- Ensure the cloud native application code can read only the secrets that it needs
+- Ensure that the cloud native applications can only read the secrets that these applications need
 - Have different set of secrets for different environments( like production, development, and testing)
 
 Secret values protect sensitive data, it is recommended to protect them from unauthorised access. Ideally, they must be protected at rest and in transit. Encryption in transit is achieved by encrypting the traffic between the Kubernetes control-plane components and worker nodes using TLS.
@@ -165,7 +165,7 @@ Sometimes container isolation is compared directly with VM based isolation, with
 - Containers: isolation by SW based mechanisms available in OS, Docker and Kubernetes. A container workload is just a set of Linux processes. It is _possible_ to configure SW based _additional isolation_ for container workloads, for example by kernel namespaces.
 
 
-Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist. In such cases, the default is to allocate one namespace per Cloud Native Network Function (CNF).
+The primary isolation mechanism in Kubernetes environment should be VM or physical machine based. This implies that multiple cloud native applications should not be deployed together in the same Kubernetes cluster - unless these applications have been planned and verified to co-exist. Thus, the default is to allocate one namespace per Cloud Native Network Function (CNF).
 
 ### Container Isolation in Kubernetes Cluster
 #### Namespaces  
