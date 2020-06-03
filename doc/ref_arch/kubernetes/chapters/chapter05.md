@@ -74,7 +74,7 @@ To limit the potential impact of a compromise, it is best to run sensitive workl
 - The seperation can achieved by using node pools and Kubernetes namespaces.
 
 ##  5.7 Create and Define Network Policies
-Network Policies allow kubernetes managers to control network access into and out of the containerized applications. It is recommended to have a well defined ingress and egress policy for containerised applications. It is also important to modify the default network policies, such as blocking or allowing traffic from other namespaces or clusters while ensuring the namespaces/clusters are running with policy support enabled.
+Network Policies allow kubernetes managers to control network access into and out of the cloud native applications. It is recommended to have a well defined ingress and egress policy for cloud native applications. It is also important to modify the default network policies, such as blocking or allowing traffic from other namespaces or clusters while ensuring the namespaces/clusters are running with policy support enabled.
 
 ##  5.8 Run latest Version
 As new security features and patches are added in every quarterly update, it is important to take advantage of these fixes and patches.
@@ -93,13 +93,13 @@ The following are recommended best practices for container run-time:
 - Integrate run-time processes to Security Information and Event Monitoring (SIEM)
 - Use container-aware run-time defense tools
 - Ensure all running container applications are from secure and verified images
-- Containerised application should not run with root privileges
+- Cloud native application should not run with root privileges
 - Ensure sensitive workloads are properly segmented by namespaces or cluster to mitigate the scope of compromise.
 
 ##  5.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
 
-- Ensure the containerised code can read only the secrets that it needs
+- Ensure the cloud native application code can read only the secrets that it needs
 - Have different set of secrets for different environments( like production, development, and testing)
 
 Secret values protect sensitive data, it is recommended to protect them from unauthorised access. Ideally, they must be protected at rest and in transit. Encryption in transit is achieved by encrypting the traffic between the Kubernetes control-plane components and worker nodes using TLS.
@@ -164,8 +164,8 @@ Sometimes container isolation is compared directly with VM based isolation, with
 - Containers: isolation by SW based mechanisms available in OS, Docker and Kubernetes. A container workload is just a set of Linux processes. It is _possible_ to configure SW based _additional isolation_ for container workloads, for example by kernel namespaces.
 
 
-Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist. In such cases, the default is to allocate one namespace per Containerised Network Function (CNF).
+Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist. In such cases, the default is to allocate one namespace per Cloud Native Network Function (CNF).
 
 ### Container Isolation in Kubernetes Cluster
 #### Namespaces  
-Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. They should not be used to isolate different steps in the deployment process like Development, Production, or Testing. The most reliable separation is achieved by deploying sensitive workloads into dedicated clusters. 
+Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. They should not be used to isolate different steps in the deployment process like Development, Production, or Testing. The most reliable separation is achieved by deploying sensitive workloads into dedicated clusters.

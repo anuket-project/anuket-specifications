@@ -28,7 +28,7 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network Function Virtualisation Infrastructure (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the Cloud Infrastructure (NFVI and the VIM) in a consistent and reliable way. 
+This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network Function Virtualisation Infrastructure (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the Cloud Infrastructure (NFVI and the VIM) in a consistent and reliable way.
 
 [OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and fetaures, Cloud Infrastructure features and how we expect them to be implemented.
 
@@ -38,7 +38,7 @@ The Cloud Infrastructure layer includes the physical infrastructure which is the
 The VIM is expected to be OpenStack in line with the OpenStack Foundation core release.
 
 This chapter is organized as follows:
-*	Consumable Infrastructure Resources and Services: these are infrastructure services and resources being exposed northbound consumption 
+*	Consumable Infrastructure Resources and Services: these are infrastructure services and resources being exposed northbound consumption
     - Multi-tenancy with quotas
       -	Virtual compute: vCPU / vRAM
       -	Virtual storage: Ephemeral, Persistent and Image
@@ -70,7 +70,7 @@ This section will describe the different services that are exposed for the VNF c
 ### 3.2.1. Multi-Tenancy (execution environment)
 The multi tenancy service will permit to host several VNF projects with the insurance to have isolated environment for each project. Tenants or confusingly “Projects” in OpenStack are isolated environments that enable workloads to be logically separated from each other with:
 -	differentiated set of associated users
--	role-based access of two levels – admin or member (see [RBAC security section](./chapter06.md#6314-rbac)). 
+-	role-based access of two levels – admin or member (see [RBAC security section](./chapter06.md#6314-rbac)).
 -	quota system to provide maximum resources that can be consumed.
 
 This RA does not intend to restrict how workloads are distributed across tenants however where multiple related OpenStack clouds are deployed it is important that naming and quotas are kept consistent.  Chapter 4 provides a proposed naming convention for users and tenants (link-TBA).   
@@ -84,14 +84,14 @@ The configuration of the virtual resources will depend on the profile and the fl
 <a name="3.2.3"></a>
 ### 3.2.3. Virtual Storage
 The three storage services offered by Cloud Infrastructure are:
--	Persistent storage 
+-	Persistent storage
 -	Ephemeral storage
 -	Image storage
 
 The different profiles and storage extensions are defined in the reference model document.
 
-Two types of persistent data storage are supported in OpenStack: 
--	Block storage 
+Two types of persistent data storage are supported in OpenStack:
+-	Block storage
 -	Object storage
 
 The OpenStack services, Cinder for block storage and Swift for Object Storage, are discussed below in Section 3.3 “Cloud Infrastructure Management Software (VIM)”.
@@ -101,7 +101,7 @@ Images are stored using the OpenStack Glance service discussed below in Section 
 The [OpenStack Storage Table](https://docs.openstack.org/arch-design/design-storage/design-storage-concepts.html#table-openstack-storage) explains the differences between the storage types and typical use cases. The [OpenStack compatible storage backend drivers](https://docs.openstack.org/cinder/latest/reference/support-matrix.html) table lists the capabilities that each of these drivers support.
 
 <a name="3.2.4"></a>
-### 3.2.4. Virtual Networking Neutron standalone 
+### 3.2.4. Virtual Networking Neutron standalone
 Neutron is an OpenStack project that provides "network connectivity as a service" between interface devices(e.g., vNICs) managed by other OpenStack services (e.g., nova). Neutron allows users to create networks, subnets, ports, routers etc. Neutron also facilitates traffic isolation between different subnets - within as well as across project(s) by using different type drivers/mechanism drivers that use VLANs, VxLANs, GRE (Generic Routing Encapsulation) tunnels etc. For Neutron API consumer, this is abstracted and provided by Neutron. Multiple network segments are supported by Neutron via ML2 plugins to simultaneously utilize varierty of layer 2 networking technologies like VLAN, VxLAN, GRE etc. Neutron also allows to create routers to connect layer 2 networks via "neutron-l3-agent". In addition, floating IP support is also provided that allows a project VM to be accessed using a public IP.
 
 <a name="3.2.5"></a>
@@ -159,7 +159,7 @@ With the acceleration abstraction layer defined, hardware accelerators as well a
 The Cloud Infrastructure Management Software (VIM) provides the services for the management of Consumable Resources/Services.
 
 <a name="3.3.1"></a>
-### 3.3.1. VIM Core services 
+### 3.3.1. VIM Core services
 OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for Cloud Infrastructure/VIM use cases. Other components are optional and provide functionality above and beyond Cloud Infrastructure/VIM requirements.
 
 The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific CNTT conformant implementation requirements and recommendations for the core services.
@@ -229,7 +229,7 @@ The APIs for these OpenStack services are listed in [Chapter 5: Interfaces and A
 
 #### 3.3.1.4 Cloud Workload Services
 This section describes the core set of services and service components needed to run workloads including instances (such as VMs), their networks and storage are referred to as the “Compute Node Services” (a.k.a. user or data plane services). Contrast this with the Controller nodes which host OpenStack services used for cloud administration and management. The Compute Node Services include virtualisation, hypervisor instance creation/deletion, networking and storage services; some of these activities include RabbitMQ queues in the control plane including the scheduling, networking and cinder volume creation / attachment.
-*	Compute, Storage, Network services: 
+*	Compute, Storage, Network services:
     - Nova Compute service: nova-compute (creating/deleting instances)
     -	Neutron Networking service: neutron-l2-agent (manage local Open vSwitch (OVS) configuration), VXLAN
     -	Local Storage (Ephemeral, Root, etc.)
@@ -263,7 +263,7 @@ The number of Compute nodes (for workloads) determines the load on the controlle
 ### 3.4.1. Virtualisation
 Virtualisation is a technology that enables a guest Operating System (OS) to be abstracted from the underlying hardware and software. This allows to run multiple Virtual Machines(VMs) on the same hardware. Each such VMs have their own OS and are isolated from each other i.e. application running on one VM does not have the access to resources of another VM. Such virtualisation is supported by various hypervisors available as open-source (KVM, Xen etc.) as well as commercial (Hyper-V, Citrix XenServer etc.). Selecting a hypervisor depends on the workload needs and the features provided by various hypervisors as illustrated in Hypervisor [Feature Support Matrix](https://docs.openstack.org/nova/latest/user/support-matrix.html). OpenStack (Nova) allows the use of various hypervisors within a single installation by means of scheduler filters like ComputeFilter, ImagePropertiesFilter etc.
 
-Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The preferred supported hypervisor in this Reference Architecture is KVM. 
+Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The preferred supported hypervisor in this Reference Architecture is KVM.
 
 *Note*: Other hypervisors (such as ESXI) can also be supported as long as it can interoperate with other OpenStack components in this Reference Architecture using standard interfaces and APIs as specified in Chapter 5.
 
@@ -271,17 +271,17 @@ Virtualisation Services: The OpenStack nova-compute service supports multiple hy
 ### 3.4.2. Physical Infrastructure
 
 The aim is to specify the requirements on deploying the VIM, from ground up (in a shipping container), and what resources are  required of the DC (Data Centre).
-*	Servers 
+*	Servers
     - Compute
     -	Storage
     -	Control (min 3 for Core DC)
 *	Network considerations
     - Data centre gateway
     -	Firewall (around the control plane, storage, etc.)
-    -	Data centre network fabric / Clos (spine/leaf) – Horizontal scale 
+    -	Data centre network fabric / Clos (spine/leaf) – Horizontal scale
     -	Storage networking, control plane and data plane
     -	Raw packet – tenant networking allowing “wild west” connection.  
-*	Storage 
+*	Storage
     - discussed in [RA-1 Chapter 04](./chapter04.md#424-storage-backend)
 *	Acceleration
     - SmartNIC
@@ -291,7 +291,7 @@ The aim is to specify the requirements on deploying the VIM, from ground up (in 
 #### 3.4.2.1. Compute
 Cloud Infrastructure physical Nodes
 
-The physical resources required for the Cloud Infrastructure are mainly based on COTS X86 hardware for control and data plane nodes. 
+The physical resources required for the Cloud Infrastructure are mainly based on COTS X86 hardware for control and data plane nodes.
 HW profiles are defined in the chapters 5.3 and 5.4 of the reference model document.
 
 #### 3.4.2.2. Network
@@ -302,7 +302,7 @@ Figure 3-3 shows a physical network layout where each physical server is dual ho
 
 #### 3.4.2.3. Storage
 
-[OpenStack](https://docs.openstack.org/arch-design/design-storage.html) supports many different storage architectures and backends. The choice of a particular backend storage is driven by a number of factors including: scalability, resiliency, availability, data durability, capacity and performance. 
+[OpenStack](https://docs.openstack.org/arch-design/design-storage.html) supports many different storage architectures and backends. The choice of a particular backend storage is driven by a number of factors including: scalability, resiliency, availability, data durability, capacity and performance.
 
 Most cloud storage architectures incorporate a number of clustered storage nodes that provide high bandwidth access to physical storage backends connected by high speed networks. The architecture consists of multiple storage controller units, each a generic server (CPU, Cache, storage), managing a number of high-performance hard drives. The distributed block storage software creates an abstract single pool of storage by aggregating all of the controller units. Advanced and high-speed networking (data routing) and global load balancing techniques ensure high-performance,high availability storage system.
 
@@ -318,11 +318,11 @@ Some examples of such topologies include:
 
 In order to provide the expected availability for any given service, a number of different OpenStack deployment topologies can be considered.  This section explores the main options and highlights the characteristics of each.  Ultimately the decision rests with the operator to achieve specific availability target taking into account use case, data centre capabilities, economics and risks.
 
-Availability of any single OpenStack cloud is dependent on a number of factors including: 
--	environmental – dual connected power and PDUs, redundant cooling, rack distribution etc. 
+Availability of any single OpenStack cloud is dependent on a number of factors including:
+-	environmental – dual connected power and PDUs, redundant cooling, rack distribution etc.
 -	resilient network fabric – ToR (leaf), spine, overlay networking, underlay networking etc.   It is assumed that all network components are designed to be fault tolerant and all OpenStack controllers, computes and storage are dual-homed to alternate leaf switches.
 -	controller nodes setup in-line with the vendor recommendation (e.g. min 3 physical nodes)
--	network nodes (where applicable) 
+-	network nodes (where applicable)
 - backend storage nodes setup for highly availablility based on quorum (aligned with vendor implementation)
 -	compute nodes sized to handle the entire workload following local failure scenario
 
@@ -343,7 +343,7 @@ Assumptions and conventions:
 | 3 | Global Redundancy - workload spread across multiple Regions | >=2 | >=2 | >=2 | >99.nn | Required | Suitable where local and region application HA is required Control plane could be kept available in one site during upgrades |
 
 <a name="3.5.2"></a>
-### 3.5.2. Topology Detail 
+### 3.5.2. Topology Detail
 
 #### 3.5.2.1. Topology 1	- Local Redundancy
 
@@ -357,13 +357,13 @@ Under normal operation this deployment can handle a single failure of a controll
 
 #### 3.5.2.2. Topology 2	- Regional Redundancy
 
-Under normal operation this topology can handle a single failure of a controller node but provides additional protection to the compute plane and storage.   If the application is deployed across 2 or more AZs a major failure impacting the nodes in one AZ can be tolerated assuming the application deployment allows for this.  There is a risk with split-brain so a means of deciding application quorum is recommended or by using a third AZ or arbitrator. 
+Under normal operation this topology can handle a single failure of a controller node but provides additional protection to the compute plane and storage.   If the application is deployed across 2 or more AZs a major failure impacting the nodes in one AZ can be tolerated assuming the application deployment allows for this.  There is a risk with split-brain so a means of deciding application quorum is recommended or by using a third AZ or arbitrator.
 
 *Important to consider:*
 
 -	All those points listed for Topology 1 above.
 -	When using 3 controller nodes and distributing these physically across the same locations as the computes, if you lose the location with 2 controllers the OpenStack services would be impacted as quorum cannot be gained with a single controller node.   It is also possible to use more than 3 controller nodes and co-locate one with each compute AZ allowing lower-risk maintenance but care must be taken to avoid split brain.
--	The distributed network fabric must support L2 for the OpenStack control plane VIPs. 
+-	The distributed network fabric must support L2 for the OpenStack control plane VIPs.
 
 #### 3.5.2.3. Topology 3	- Global Redundancy
 
