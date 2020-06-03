@@ -92,7 +92,7 @@ Logging, monitoring, alerting and log aggregation are essential for Kubernetes. 
 The following are recommended best practices for container run-time:
 - Integrate run-time processes to Security Information and Event Monitoring (SIEM)
 - Use container-aware run-time defense tools
-- Ensure all running container applications are from secure and verified images
+- Ensure all running cloud native applications are from secure and verified images
 - Cloud native applications should not run with root privileges
 - Ensure sensitive workloads are properly segmented by namespaces or cluster to mitigate the scope of compromise.
 
