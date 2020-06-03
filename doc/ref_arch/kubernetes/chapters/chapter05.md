@@ -93,7 +93,7 @@ The following are recommended best practices for container run-time:
 - Integrate run-time processes to Security Information and Event Monitoring (SIEM)
 - Use container-aware run-time defense tools
 - Ensure all running container applications are from secure and verified images
-- Cloud native application should not run with root privileges
+- Cloud native applications should not run with root privileges
 - Ensure sensitive workloads are properly segmented by namespaces or cluster to mitigate the scope of compromise.
 
 ##  5.12  Secrets Management
