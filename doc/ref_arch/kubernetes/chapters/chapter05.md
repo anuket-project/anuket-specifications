@@ -85,6 +85,7 @@ Kubernetes metadata contain sensitive information including kubelet admin creden
 
 - Limit discovery by restricting services and users that can access cluster managment metadata on configuration, container application, and nodes
 - Ensure all metadata  information are encryption and network access must run over TLS connections
+
 ##  5.10  Enable Logging and Monitoring
 Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure.
 
