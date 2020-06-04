@@ -19,29 +19,34 @@
 
 ## Executive Summary
 
-The Reference Conformance 2 (RC2) was established to ensure implementations of the Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet industry driven quality assurance standards for conformance, verification, and validation. For the purpose of this chapter, infrastructure and cloud native network function (CNF) testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
+The RC2 was established to ensure implementations of the CNTT Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet functional and performance requirements derived from RA2 and the CNTT Reference Model (RM). For the purpose of this chapter, cloud infrastructure and cloud native network function (CNF) testing will be specified to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of hardware and software delivery that is within the scope of CNTT. Conformance scope includes:
 
- - Verified implementations of infrastructure and CNF match expected design requirements
- - Clearly stated guidelines for test, badging, and lifecycle management
- - Inclusion of Operational run-books for 3rd party supplier instantiation and validations
- - Evidence, through test results, confirming delivered code matches industrial requirements
- - Interoperability testing with Reference CNFs, ensuring integration stability and life-cycle management of the Reference CNF on the target implementation.
+ - Test criteria with requirements tracebility ensuring implementations of cloud infrastructure match expected capabilites exemplified by CNTT Reference Implementations and CNFs match match expected capabilites for consuming compliant cloud infrastructure resources
+ - Guidelines for conformance testing evaluation criteria used for CNTT related infrastructure badging programs
+ - Guidelines for conformance testing environments and tools for enabling infrastructure vendor or 3rd party conformance testing
 
-In summary, **Conformance** testing will be performed for **Verification** and **Validation** purposes, defined further as:
+In summary, **Conformance** testing will be performed as part of cloud infrastructure and CNF lifecycle testing which includes **Verification** and **Validation**, defined further as:
 
-- **Verification** will be used to indicate conformance to requirements/specifications. Accomplished with Requirement Traceability and Manifest Reviews to ensure that the Kubernetes infrastructure is delivered per implementation specifications.
-- **Validation** is performed using testing to confirm that the cloud infrastructure and CNF meet the expected outcomes or desired outcomes, and behaviours.
+- **Verification** confirms design requirement specifications are met using Requirement Traceability and Manifest Reviews to ensure the cloud infrastructure or CNF is delivered per implementation specifications.
+- **Validation** confirms the infrastructure or CNF meet the expected or desired behaviour.
 
-**All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
+**All Terms utilized throughout this chapter are intended to align with LFN Complinace and Verification Committee (CVC) definitions, and their use through CVC documentation, guidelines, and standards.**
 
 <a name="1.1"></a>
 ## 1.1 Introduction
 
 **Chapter Purpose**<br>
-This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to test for infrastructure verification purposes. Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of infrastructures will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided Kubernetes infrastructure and CNFs.
+This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
 **Objective**<br>
-Perform Kubernetes infrastructure and CNF Verification and Validations using CNTT RA2 to test code for compliance. Upstream projects will define features/capabilities, test scenarios, and test cases.
+Specify Kubernetes infrastructure and CNF Conformance aspects using requirements in CNTT RA2 and RM.
+
+Upstream projects define features/capabilities, test scenarios, and test cases which may be used for infrastructure and/or CNF verification and validation. Where feasible existing test frameworks, test methods and tests may also be used be used for conformance testing along with new tests developed where there are gaps.  
+
+Many existing tests currently being considered for RC-2 are functional tests from upstream projects. Reuse of existing test suites is encouraged however OVP 2.0 is not aiming to replace programs such as Certified Kubernetes which is a "CNCF software conformance program that ensures a vendor’s version of Kubernetes supports the required APIs, as do open source community version". 
+
+The focus of conformance is to test the actual behavior of the system with respect to a capability specified in the RM or RA-2. 
+
 
 **Test Methodology**
 - Verification test to make sure that the Kubernetes services have been deployed and configured correctly
@@ -51,31 +56,40 @@ Perform Kubernetes infrastructure and CNF Verification and Validations using CNT
 <a name="1.1.1"></a>
 ### 1.1.1 Terminology
 
-Terminology in this document will follow [CNTT Terminology](../../../tech/glossary.md).
+Terminology in this document will follow [CNTT Terminology](../../../tech/glossary.md). Relevant testing terminology includes:
 
 <a name="1.2"></a>
 ## 1.2 Scope
 
-This document covers the realisation aspects of conformance of both Kubernetes infrastructure and CNFs. The document will cover the following topics:
+This document covers aspects of CNTT conformance for both Kubernetes based cloud infrastructure and CNFs. The document will cover the following topics:
 
-- Identify in details the Requirement of Test Cases (and mapping them to requirements from The Reference Model and the Kubernetes Based Reference Architecture).
-- Analysis of existing community projects.
-- Propose an E2E Framework for conformance of Kubernetes infrastructures and CNFs.
-- Playbook of instructions, user manuals, steps of how to perform verification and conformance for both infrastructure and CNFs using the proposed E2E Framework.
-- Gap analysis to identify where the Gaps are in the industry (tooling, test cases, process, etc).
-- Identify development efforts needed to address any gaps identified.
+- Identify in details the requirements of test-cases (mapped from RA2 and RM)
+- Test criteria that shows a certain capability or feature of the system-under-test exists and behaves as expected
+- An E2E framework for conformance of Kubernetes infrastructures and CNFs, including specification for conformance test infrastructure (lab environment and tools)
+- Analysis to identify where the gaps are in the industry for implementing conformance test objectives (tooling, methods, process, etc).
 
 **Not in Scope**
 - Functional testing / validation of the application provided by the CNF is outside the scope of this work.
+- Testing to confirm specific versions of APIs or software components is out of scope of conformance since this is an unambiguous part of a product specification.
 - ONAP is not used in the process flow for infrastructure verifications, or validations.
 - Upgrades to CNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
 <a name="1.3"></a>
 ## 1.3 Principles and Guidelines
 
-The objectives of the Reference Conformance is to deliver a validated set of test cases to validate implementations against the reference architecture which satisfies infrastructure needs for CNF-developer teams.
+The objectives of the Reference Conformance for cloud infrastrucute is to verify implementations against the reference architecture which satisfies infrastructure needs for CNFs.
 
-These core principles will guide CFV verification deliverables:
+The objectives of the Reference Conformance for CNFs is to verify CNF implementations consume resources and behave as expected against the reference architecture.
+
+These core principles will guide RC2 deliverables:
+
+- RC-2 requirements are derived from RM and RA-2 which specify infrastructure capabilities which include compute, memory, storage resource capabilities, performance optimization capabilities, monitoring capabilities.
+
+- Requirements in the RM and RAs that are performance related may not have minimum perfromance criteria identified but where feasible will have tests with metrics to show relevant capabilities are present and working as expected.
+
+- Must/shall conformance criteria are testable as pass/fail and ensure requirement are met to ensure minimum thresholds of functional operability and/or performance behavior. This is the focus of RC-2 since this is what will drive a commercially significant badging program.
+
+- Should/may conformance criteria may be testable or non-testable and provide recommendations or best-practices for functional operability and/or performance behavior. These criteria and associated tests can be very useful for developing, evaluating or deploying a cloud infrastructure but are not critical to a commercially significant badging program.
 
 <a name="1.3.1"></a>
 ### 1.3.1 Overarching Standards and Goals
