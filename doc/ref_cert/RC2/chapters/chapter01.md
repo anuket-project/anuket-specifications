@@ -28,7 +28,6 @@ The RC2 was established to ensure implementations of the CNTT Reference Architec
 In summary, **Conformance** testing will be performed as part of cloud infrastructure and CNF lifecycle testing which includes **Verification** and **Validation**, defined further as:
 
 - **Verification** confirms design requirement specifications are met using Requirement Traceability and Manifest Reviews to ensure the cloud infrastructure or CNF is delivered per implementation specifications.
-
 - **Validation** confirms the infrastructure or CNF meet the expected or desired behaviour.
 
 **All Terms utilized throughout this chapter are intended to align with LFN Complinace and Verification Committee (CVC) definitions, and their use through CVC documentation, guidelines, and standards.**
@@ -151,8 +150,7 @@ is required if new test suites are added in place of older, stale projects.
 **Infrastructure Instance Type:**
 * Standard compute flavours to be tested are defined in RM
   [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
-* Performance profiles come in the form of Basic, Network Intensive, and
-  Compute intensive. Refer to RM
+* Performance profiles come in the form of Basic and Network Intensive. Refer to RM
   [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3)
   for details on these profiles.
 
