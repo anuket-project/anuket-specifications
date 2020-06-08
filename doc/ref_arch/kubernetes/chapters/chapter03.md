@@ -135,7 +135,7 @@ The well known service meshes are "application service meshes" that address and 
 <a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
 
-Since its 1.13 version Kubernetes supports Container Storage Interface (CSI) in production and in-tree volume plugins are moved out from the Kubernetes repository. It is advised that in an RA2 compliant cluster the storage is managed with a [CSI driver](https://kubernetes-csi.github.io/docs/drivers.html) instead of an in-tree volume plugin.
+Since its 1.13 version Kubernetes supports Container Storage Interface (CSI) in production and in-tree volume plugins are moved out from the Kubernetes repository (see a list of CSI drivers [here](https://kubernetes-csi.github.io/docs/drivers.html)).
 
 Running containers will require ephemeral storage on which to run themselves (i.e. storage on which the unpacked container image is stored and executed from). This ephemeral storage lives and dies with the container and is a directory on the worker node on which the container is running.  Note, this means that the ephemeral storage is mounted locally in the worker node filesystem. The filesystem can also be physically external to the worker node (e.g. iSCSI, NFS, FC) but the container will still reference it as part of the local filesystem.
 
