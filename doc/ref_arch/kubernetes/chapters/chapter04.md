@@ -5,19 +5,22 @@
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
-* [4.2 Host OS](#4.2)
+* [4.2 Container Host OS](#4.2)
 * [4.3 Kubernetes](#4.3)
 * [4.4 Container runtimes](#4.4)
-* [4.5 CNI plugins](#4.5)
+* [4.5 Networking solutions](#4.5)
 * [4.6 Storage components](#4.6)
 * [4.7 Service meshes](#4.7)
 * [4.8 Container package managers](#4.8)
-* [4.9 Supplementary components](#4.9)
+* [4.9 Kubernetes workloads](#4.9)
+* [4.10 Supplementary components](#4.10)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-This chapter describes in detail the CNTT Kubernetes Reference Architecture in terms of the functional capabilities and how they relate to the Reference Model requirements, i.e. how the infrastructure profiles are determined, documented and delivered.
+This chapter describes in detail the Kubernetes Reference Architecture in terms of the functional capabilities and how they relate to the Reference Model requirements, i.e. how the infrastructure profiles are determined, documented and delivered.
+
+The specifications defined in this chapter will be detailed with unique identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g. `ra2.chos.001` for the first requirement in the Container Host OS section.  These specifications will then be used as requirements input for the Kubernetes Reference Implementation and any Vendor or Community Implementations.
 
 Figure 4-1 below shows the architectural components that are described in the subsequent sections of this chapter.
 
@@ -25,9 +28,25 @@ Figure 4-1 below shows the architectural components that are described in the su
 <p align="center"><b>Figure 4-1:</b> Kubernetes Reference Architecture</p>
 
 <a name="4.2"></a>
-## 4.2 Host OS
+## 4.2 Container Host OS
 
-In order for a Host OS to be conformant with the Reference Architecture it must meet the following requirements:
+In order for a Container Host OS to be conformant with the Reference Architecture it must be implemented as per the following specifications:
+
+|Ref|Specification|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.chos.001`||||
+|`ra2.chos.002`||||
+|`ra2.chos.003`||||
+
+<p align="center"><b>Table 4-1:</b> Host OS Specifications</p>
+
+<!--
+> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REPLACING WITH SPECS IN THE ABOVE TABLE AS PER:
+#991
+#920
+#1184
+#1634
+
 - A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is concerned with nothing other than installing and managing the lifecycle of Kubernetes, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, and other tools and applications required for the full system.
 - Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
 - Support `req.gen.cnt.02` (immutable infrastructure), which means that the Host OS must be easily reproduced, consistent, disposable, with a repeatable deployment process, and will not have configuration or artifacts that are modifiable in place (i.e. once it is in a  running state).
@@ -41,6 +60,7 @@ Table 4-1 lists the Linux kernel versions that comply with this Reference Archit
 |Windows|1809 (10.0.17763)|For worker nodes only|
 
 <p align="center"><b>Table 4-1:</b> Conformant OS Kernels</p>
+-->
 
 
 <a name="4.3"></a>
@@ -48,6 +68,24 @@ Table 4-1 lists the Linux kernel versions that comply with this Reference Archit
 > * The version of version range of Kubernetes and the mandatory components needed for Kubernetes (e.g.: etcd, cadvisor)
 > * Which optional features are used and which optional API-s are available
 > * Which [alfa or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
+
+In order for the Kubernetes components to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+
+|Ref|Specification|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.k8s.001`|Kubernetes Conformance|The Kubernetes distribution, product, or installer used in the implementation must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) and marked (X) as conformant for the Kubernetes version that is being used.|[req.gen.cnt.03](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.002`|Highly available etcd|An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes).|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.003`|Highly available control plane|An implementation must consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.004`|Highly available worker nodes|An implementation must consist of at least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes|[req.gen.rsl.01 req.gen.avl.01 req.kcm.gen.02](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.004`||||
+|`ra2.k8s.005`||||
+|`ra2.k8s.006`||||
+
+<p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
+
+<!--
+> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
+#1635
 
 In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), a Reference Implementation must use one of three latest minor versions (`n-2`) - e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15. The Kubernetes distribution, product, or installer used in the RI must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) and marked (X) as conformant for the Kubernetes version that is being used.
 
@@ -58,10 +96,6 @@ This Reference Architecture also specifies:
     - kube-scheduler
     - kube-controller-manager
 - Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes if desired
-- In order to support `req.gen.rsl.01`, `req.gen.rsl.02` and `req.gen.avl.01` a Reference Implementation must:
-    - Consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes)
-    - At least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services
-    - At least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes
 - Master node services, including etcd, and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
 - Workloads must ***not*** rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). This function is essential for support of Edge type architectures.
 - The following kubelet features must be enabled
@@ -78,9 +112,25 @@ feature-gates:
   DevicePlugins: true|false (BETA - default=true)
   TopologyManager: true|false (ALPHA - default=false)
 ```
+-->
 
 <a name="4.4"></a>
 ## 4.4 Container runtimes
+
+In order for the Container runtime(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+
+|Ref|Specification|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.crt.001`||||
+|`ra2.crt.002`||||
+|`ra2.crt.003`||||
+|`ra2.crt.004`||||
+
+<p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
+
+<!--
+> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
+#1636
 
 The chosen runtime must be conformant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are conformant with these specification in no particular order are:
 - container-d (with CRI plugin enabled, which it is by default)
@@ -96,10 +146,26 @@ These specifications cover the [full lifecycle of a container](https://github.co
 
 To support the isolation of the resources used by the infrastructure from the resources used by the workloads the architecture specifies the use of the Kubernetes CPU Manager and [CPU Pooler](https://github.com/nokia/CPU-Pooler/).
 
-> Todo: details and RA2 specifications relating to runtimes in order to meet RM features and requirements from RM chapters 4 and 5.
+-->
 
 <a name="4.5"></a>
-## 4.5 CNI plugins
+## 4.5 Networking solutions
+
+In order for the networking solution(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+
+|Ref|Specification|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.ntw.001`||||
+|`ra2.ntw.002`||||
+|`ra2.ntw.003`||||
+|`ra2.ntw.004`||||
+
+<p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
+
+<!--
+> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
+#1555
+#1637
 
 As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm).<br>
 
@@ -130,9 +196,25 @@ The following table contains a comparision of relevant features and requirements
 For the network of signalling connections the built in IPVLAN CNI of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used as these provide NAT-less connectivity. For the user plane network(s) the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.
 
 > Editors note: The use of SR-IOV in container environments and, therefore, the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) are still under debate.
+-->
 
 <a name="4.6"></a>
 ## 4.6 Storage components
+
+In order for the storage solution(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+
+|Ref|Specification|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.stg.001`||||
+|`ra2.stg.002`||||
+|`ra2.stg.003`||||
+|`ra2.stg.004`||||
+
+<p align="center"><b>Table 4-5:</b> Storage Solution Specifications</p>
+
+<!--
+> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
+#1638
 
 As described in [chapter 3](./chapter03.md), storage in Kubernetes consists of three types of storage:
 1. Ephemeral storage that is used to execute the containers
@@ -160,10 +242,8 @@ Volume plugins are used in Kubernetes to allow for the use of a range of backend
     - In order to support ephemeral storage use through a CSI-compatible volume plugin, the `CSIInlineVolume` feature gate must be enabled
     - In order to support Persistent Volumes through a CSI-compatible volume plugin, the `CSIPersistentVolume` feature gate must be enabled
 
-> Should the following paragraph be moved to the Security chapter?
-
 > In order to support automation and the separation of concerns between providers of a service and consumers of the service, Kubernetes Storage Classes should be used. Storage Classes allow a consumer of the Kubernetes platform to request Persistent Storage using a Persistent Volume Claim and for a Persistent Volume to be dynamically created based on the "class" that has been requested. This avoids having to grant `create`/`update`/`delete` permissions in RBAC to PersistentVolume resources, which are cluster-scoped rather than namespace-scoped (meaning an identity can manage all PVs or none).
-
+-->
 A note on object storage:
 - This Reference Architecture does not include any specifications for object storage, as this is neither a native Kubernetes object, nor something that is required by CSI drivers.  Object storage is an application-level requirement that would ordinarily be provided by a highly scalable service offering rather than being something an individual Kubernetes cluster could offer.
 
@@ -173,14 +253,34 @@ A note on object storage:
 <a name="4.7"></a>
 ## 4.7 Service meshes
 
-Service meshes are not in scope for the architecture.
+Application service meshes are not in scope for the architecture.  Network service mesh specifications are handled in section [4.5 Networking solutions](#4.5).
 
 <a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
 
-The reference architecture specifies the use of a Kubernetes Application package manager using the Kubernetes API-s, such as [Helm v3](https://v3.helm.sh/).
+In order for the storage solution(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+
+|Ref|Specification|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.pkg.001`|API-based package management|A package manager must use the Kubernetes APIs to manage application artefacts. Cluster-side components such as Tiller are not supported.|[req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements)|
+
+<p align="center"><b>Table 4-6:</b> Kubernetes Application Package Management Specifications</p>
 
 <a name="4.9"></a>
-## 4.9 Additional required components
+## 4.9 Kubernetes workloads
+
+In order for the Kubernetes workloads to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+
+|Ref|Specification|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.app.001`||||
+|`ra2.app.002`||||
+|`ra2.app.003`||||
+|`ra2.app.004`||||
+
+<p align="center"><b>Table 4-7:</b> Kubernetes Workload Specifications</p>
+
+<a name="4.10"></a>
+## 4.10 Additional required components
 
 > This chapter should list any additional components needed to provide the services defined in Chapter 3.2 (e.g: Prometheus)
