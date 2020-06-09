@@ -19,7 +19,7 @@
 
 ## Executive Summary
 
-The Reference Conformance for the Kubernetes-based workstream (RC2) was established to ensure implementations of the CNTT Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet functional and performance requirements specified in RA2 and the CNTT Reference Model (RM). Cloud infrastructure and cloud native network function (CNF) verification and validation will be utilised to evaluate **Conformance** (i.e. adherence) to the Ra-2 and RM specifications. Conformance scope includes:
+The Reference Conformance for the Kubernetes-based workstream (RC2) was established to ensure implementations of the CNTT Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet functional and performance requirements specified in RA2 and the CNTT Reference Model (RM). Cloud infrastructure and cloud native network function (CNF) verification and validation will be utilised to evaluate **Conformance** (i.e. adherence) to the RA2 and RM specifications. Conformance scope includes:
 
  - Test criteria, with requirements traceability, to validate that the cloud infrastructure implementation meets the expected capabilities specified in RA-2 and that the CNFs consume compliant cloud infrastructure resources
  - Verify, with requirements traceability, that the installation cookbooks (manifests) are in conformance with the RA-2 specifications (for example, software versions, plugins, and configurations).
