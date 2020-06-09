@@ -27,7 +27,7 @@ The Kubernetes Reference Architecture will be used to determine a Kubernetes Ref
 <a name="1.2"></a>
 ### 1.2 Terminology
 
-For terminology used in this document refer to the [glossary](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#11.1.4)
+For terminology used in this document refer to the [glossary](../../../tech/glossary.md)
 
 <a name="1.3"></a>
 ## 1.3 Principles
