@@ -72,7 +72,7 @@ This document covers aspects of CNTT conformance for both Kubernetes based cloud
 **Not in Scope**
 - Functional testing / validation of the application provided by the CNF is outside the scope of this work.
 - Testing to confirm specific versions of APIs or software components is out of scope of conformance since this is an unambiguous part of a product specification.
-- ONAP is not used in the process flow for infrastructure verifications, or validations.
+- VNFM/NFVO, like ONAP, is not used in the process flow for infrastructure verifications, or validations.
 - Upgrades to CNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
 <a name="1.3"></a>
