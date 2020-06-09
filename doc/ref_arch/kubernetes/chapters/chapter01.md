@@ -32,7 +32,7 @@ For terminology used in this document refer to the [glossary](https://github.com
 <a name="1.3"></a>
 ## 1.3 Principles
 
-This Reference Architecture conform with the principles defined in [here](../../../tech/README.md#2.0).
+This Reference Architecture conforms with the principles defined in [here](../../../tech/README.md#2.0).
 
 <a name="1.3.1"></a>
 ### 1.3.1 Cloud Native Principles
