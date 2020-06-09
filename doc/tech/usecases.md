@@ -208,10 +208,10 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 <a name="5.1.7"></a>
 ### 5.1.7 SDO interlocking
 -	OpenStack Edge Computing Group 
-- Linux Foundation - Edge ( LF-Edge)
-- GMSA - Opertaor Platform Group & Telco Edge Cloud
+- Linux Foundation - Edge (LF-Edge)
+- GMSA - Opertaor Platform Group (OPG)& Telco Edge Cloud (TEC)
 - ETSI MEC
 - ETSI NFV 
-- Telecom Infra Project ( TIP )
+- Telecom Infra Project (TIP)
 
 
