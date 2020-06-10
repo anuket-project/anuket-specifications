@@ -127,8 +127,7 @@ qualifiers are present in a test execution, and subsequent result:
 * Ability to Control (or manipulate), manifestations of RM/RA/RI for the
   purposes to adjust the test environment, and respective cases, scenarios, and
   apparatus, to support actual test validations
-* Ability to monitor, measure, and report, Validations performed against a
-  target, controlled system under test
+* Ability to monitor, measure, and report validations performed against a controlled system under test
 
 In addition, respective Entrance criteria is a prerequisite which needs to be
 satisfied for infrastructure and CNFs to be considered **Testable**.
