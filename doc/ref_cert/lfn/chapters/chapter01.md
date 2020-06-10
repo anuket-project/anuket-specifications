@@ -4,17 +4,12 @@
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [1.1 Introduction](#1.1)
-  * [1.1.1 Terminology](#1.1)
-  * [1.1.2 Relation to other communities](#1.1)
+* [1.1 Summary](#1.1)
 * [1.2 Scope](#1.2)
 * [1.3 Principles and Guidelines](#1.3)
-  * [1.3.1 Overarching Objectives and Goals](#1.3.1)
-* [1.4	Best Practices](#1.4)
-* [1.5 Verification methodologies](#1.5)
-*	[1.6 Assumptions & Dependencies](#1.6)
-*	[1.7 Results Collation & Presentation](#1.7)
-*	[1.8 Governance](#1.8)
+  [1.4	Performance Testing](#1.4)
+*	[1.5 Assumptions & Dependencies](#1.5)
+*	[1.6 Governance of Conformance Programs](#1.6)
 * [x.x Resources & References](#x.x)
 
 <a name="1.1"></a>
@@ -97,9 +92,8 @@ In addition, respective Entrance criteria is a prerequisite which needs to be sa
 * Standard compute flavours to be tested are defined in [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
 * Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
-<a name="1.8"></a>
+<a name="1.6"></a>
 ## 1.6 Governance of Conformance Program
-
 CVC is responsible for governance and process of LFN conformance programs
 
 <a name="x.x"></a>
