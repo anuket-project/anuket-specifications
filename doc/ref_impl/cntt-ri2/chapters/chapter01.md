@@ -50,9 +50,11 @@ The scope of this document is as follows:
 <a name="1.3"></a>
 ## 1.3 Reference Implementation Approach
 
-The approach separates automation stages for the infrastructure on which the RI will be installed, and the RI. Meaning, initially, the RI is not looking to have a single installer that can both build out virtual or physical machines **and** build out the Kubernetes and other components.
+The approach this RI will take is to separate out the deployment in to two layers:
+1. Automation of the infrastructure on which the RI will be installed (i.e. networks, storage, servers, etc.)
+1. Automation of the RI installation itself
 
-The primary reason for this was to ensure the loose coupling between the two layers, to drive the concept that RI2 is a standalone platform that can (in theory at least) be deployable to any infrastructure, whether that be some physical machines in a lab, or virtual machines in a private or public cloud environment, for example. To combine the deployment of machines and Kubernetes platform with a single installer would potentially limit the locations on which the RI can be installed.
+Meaning, initially, the RI is not looking to have a single installer that can both build out virtual or physical machines **and** build out the Kubernetes and other components. The primary reason for this was to ensure the loose coupling between the two layers, to drive the concept that RI2 is a standalone platform that can (in theory at least) be deployable to any infrastructure, whether that be some physical machines in a lab, or virtual machines in a private or public cloud environment, for example. To combine the deployment of machines and Kubernetes platform with a single installer would potentially limit the locations on which the RI can be installed.
 
 However, that's not to say full end-to-end installers aren't welcome, but if used we must be clear on the limitations and compromises made when we document them in [Chapter 4](./chapter04.md).
 
