@@ -96,7 +96,7 @@ These core principles will guide RC2 deliverables:
 ### 1.3.1 Overarching Standards and Goals
 
 1. Test Harnesses will be portable, or compatible, across all RAs/Distributions which already conform to standard interfaces and services.
-2. Increase probability of CNFs.
+2. Increase portability of CNFs.
 3. Decrease operator onboarding time for both Kubernetes infrastructures and CNFs.
 
 <a name="1.4"></a>
