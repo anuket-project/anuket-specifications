@@ -63,7 +63,7 @@ However, that's not to say full end-to-end installers aren't welcome, but if use
 The main communities involved in driving requirements and development of this RI are:
 - **OPNFV - Cloud Native OVP aka OVP2.0**
     - OPNFV, and CNOVP within it, owns the definition of the end-to-end framework (tooling, process, tests) used to verify compliance of cloud native infrastructure and network functions
-    - This verification and certification process is the end goal for the Rx2 stream of documents; the RC2 is defining tests that will be used by vendors and others to validate conformance to the RA2 specification, with RI2 being a deployable reference for vendors to develop against
+    - This verification process is the end goal for the Rx2 stream of documents; the RC2 is defining tests that will be used by vendors and others to validate conformance to the RA2 specification, with RI2 being a deployable reference for vendors to develop against
 - **CNCF - CNF Conformance, Kubernetes, etc.**
     - The CNF Conformance project in CNCF has a stated aim to provide "visibility into how well Cloud native Network Functions (CNFs) and the underlying Telecom platform follows cloud native principles".
     - As such, there are a number of contributions between CNF Conformance and RI2, to align requirements, to share artefacts and so on
