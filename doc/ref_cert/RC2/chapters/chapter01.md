@@ -122,8 +122,8 @@ Perform CNF interoperability verifications against an implementation of CNTT RA2
 
 **Assumptions** Infrastructure and CNF testing will be considered **Testable** if the follow
 qualifiers are present in a test execution, and subsequent result:
-* Ability to perform Conformance, or Verification of Artifacts to ensure
-  designs (RM/RA/RI) are delivered per specification
+* Ability to perform conformance testing and/or verification of a system under test to ensure
+  it meets the designs (RM/RA) as specified
 * Ability to Control (or manipulate), manifestations of RM/RA/RI for the
   purposes to adjust the test environment, and respective cases, scenarios, and
   apparatus, to support actual test validations
