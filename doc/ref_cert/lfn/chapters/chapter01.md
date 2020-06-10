@@ -50,13 +50,7 @@ This document covers conformance of Cloud Infrastructure and VNFs with respec to
 - VNFs capabilites other than consumption of Cloud infrastructure resources.
 
 <a name="1.3"></a>
-## 1.3 Relation to other communities
-
-<p align="center"><img src="../figures/rc1_relation.png" alt="relation" title="RC1 Relation" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> RC-1 Relations other communities.</p>
-
-<a name="1.4"></a>
-## 1.4 Principles and Guidelines
+## 1.3 Principles and Guidelines
 
 The conformance program served by RC aims to deliver a framework and tests for OVP. OVP aims to 
 1. Deliver tools and methods for verifying NFVI capabilities satisfy infrastructure needs of VNFs/CNFs identified in RM and RA.
@@ -69,8 +63,8 @@ Best practices should ensure procedures are repeatable with consistent quality:
 * Integrate with Upstream Projects and OVP process (code, docs, cert criteria, etc.)
 * Have clear pass/fail criteria
 
-<a name="1.5"></a>
-## 1.5 Performance Testing
+<a name="1.4"></a>
+## 1.4 Performance Testing
 
 Prior to onboarding a VNF the infrastructure must be tested in the Network, Compute and Storage domains to ensure that it provides sufficient resources and capabilities for the VNF to behave as expected (i.e. deliver capacity and performance as forecast). Infrastructure vendors are expected to go through extensive testing and optimization at component and stack level prior to testing for **conformance**.
 
@@ -79,8 +73,8 @@ Performance measurements may be extremely sensitive to hardware and software con
 <p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="conformance Methodology" title="conformance Methodology" width="100%"/></p>
 <p align="center"><b>Figure:</b> Conformance Methodology</p>
 
-<a name="1.6"></a>
-## 1.6 Assumptions & Dependencies
+<a name="1.5"></a>
+## 1.5 Assumptions & Dependencies
 
 **Assumptions** NFVI+VNF testing will be considered **Testable** if the follow qualifiers are present in a test execution, and subsequent result:
 
@@ -104,7 +98,7 @@ In addition, respective Entrance criteria is a prerequisite which needs to be sa
 * Performance profiles come in the form of Basic, Network Intensive, and Compute intensive. Refer to [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3) for details on these profiles.
 
 <a name="1.8"></a>
-## 1.8 Governance of Conformance Program
+## 1.6 Governance of Conformance Program
 
 CVC is responsible for governance and process of LFN conformance programs
 
