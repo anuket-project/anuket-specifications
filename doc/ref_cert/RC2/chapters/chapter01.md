@@ -113,7 +113,7 @@ The following best practices have been adopted to ensure verification and valida
 <a name="1.5"></a>
 ## 1.5 Verification methodologies
 
-Perform CNF interoperability verifications against an implementation of CNTT RA2. Upstream projects will define features/capabilities, test scenarios, and test cases to be executed via the OVP Ecosystem.
+Perform verification that ensures CNFs can interoperate with the CNTT RA2 infrastructure. Upstream projects will define features/capabilities, test scenarios, and test cases to be executed via the OPNFV Ecosystem.
 
 3rd Party test platforms may also be leveraged, if desired.
 
