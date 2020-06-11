@@ -51,7 +51,7 @@ The focus of conformance is to test the actual behavior of the system with respe
 
 **Test Methodology**
 - Verification and validation tests to make sure that the Kubernetes services have been deployed and configured correctly
-- Manifest Verifications (Termed Compliance by CVC) will ensure the infrastructure is compliant, and delivered for testing, with hardware and software profile specifications defined by the RM and RA2
+- Manifest Verification and Validation (Termed Compliance by CVC) will ensure the infrastructure is compliant, and delivered for testing, with hardware and software profile specifications defined by the RM and RA2
 - Candidate CNF Validation will ensure interoperablity of CNF behaviour on the Kubernetes infrastructure.  Testing ensures CNFs can be spun up, modified, or removed, on the target infrastructure (aka Interoperability).  
 
 <a name="1.1.1"></a>
