@@ -24,7 +24,7 @@ The Reference Conformance for the Kubernetes-based workstream (RC2) was establis
  - Test criteria, with requirements traceability, to validate that the cloud infrastructure implementation meets the expected capabilities specified in RA-2 and that the CNFs consume compliant cloud infrastructure resources
  - Verify, with requirements traceability, that the installation cookbooks (manifests) of RI-2 are in conformance with the RA-2 specifications (for example, software versions, plugins, and configurations).
  - Guidelines for conformance testing evaluation criteria used for CNTT related infrastructure badging programs
- - Guidelines for conformance testing environments and tools for enabling infrastructure vendor or 3rd party conformance testing
+ - Guidelines for processes, environments, and tools for enabling conformance testing
 
 In summary, **Conformance** testing will be performed as part of cloud infrastructure and CNF lifecycle testing which includes **Verification** and **Validation**, defined further as:
 
