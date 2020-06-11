@@ -60,12 +60,8 @@
 <a name="7.1"></a>
 ## 7.1 Introduction
 
-This document includes process flow, logistics, and requirements which must be satisfied to ensure workloads meet the design, feature, and capability expectations of workload consumers to deliver cloud promoting the use and scalability of SDN capabilities. This chapter captures the core fundamentals and steps needed to conformance test workloads on target Cloud Infrastructure frameworks and architectures which drives more work into the community, resulting in pre-certified workloads on core capabilities ultimately reducing the amount of time and cost it takes each operator to on-board and maintain vendor provided workloads.
+The objectives of this chapter are to deliver a comprehensive list of platform security requirements. The chapter examines multiples aspects of security as it relates to the platform and security aspects for workloads. After discussing security attack vectors and security standards, this chapter delves into the Platform Security requirements. The chapters culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
 
-<p align="center"><img src="../figures/ch10_ref_model_lfn.png" alt="scope" title="Scope" width="100%"/></p>
-<p align="center"><b>Figure 7-1:</b> CNTT relation to LFN OVP</p>
-
-<a name="7.2"></a>
 ## 7.2 Principles and Guidelines
 
 The objectives of the Security verification program are to deliver certified reference architectures which match application-developer specifications, leveraging the OVP ecosystem as the vehicle for deliverying security validated Cloud Infrastructure.
