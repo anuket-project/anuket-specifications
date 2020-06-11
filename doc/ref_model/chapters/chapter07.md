@@ -73,19 +73,7 @@ The objectives of the Security verification program are to deliver certified ref
 These core principles will guide Cloud Infrastructure verification deliverables
 
 <a name="7.2.1"></a>
-### 7.2.1 Overarching Objectives and Goals
 
-1. Deliver security certified reference architecture which matches application-developer specifications<br>
-2. All accomplished with augmentation to the current OVP ecosystem.<br>
-3. Certified applications will on-board and function first shot<br>
-
-<a name="7.2.2"></a>
-### 7.2.2 Verification Methodologies
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-<a name="7.2.3"></a>
-### 7.2.3 Governance
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <a name="7.3"></a>
 ## 7.3 Common standards
