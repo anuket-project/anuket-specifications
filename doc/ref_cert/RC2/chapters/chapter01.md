@@ -124,9 +124,7 @@ Perform CNF interoperability verifications against an implementation of CNTT RA2
 qualifiers are present in a test execution, and subsequent result:
 * Ability to perform conformance testing and/or verification of a system under test to ensure
   it meets the designs (RM/RA) as specified
-* Ability to Control (or manipulate), manifestations of RM/RA/RI for the
-  purposes to adjust the test environment, and respective cases, scenarios, and
-  apparatus, to support actual test validations
+* Ability to control or manipulate a system under test and its respective test environment to support validations
 * Ability to monitor, measure, and report validations performed against a controlled system under test
 
 In addition, respective Entrance criteria is a prerequisite which needs to be
