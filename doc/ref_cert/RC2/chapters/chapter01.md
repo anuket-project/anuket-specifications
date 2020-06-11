@@ -84,7 +84,7 @@ The objectives of the Reference Conformance for CNFs is to verify CNF implementa
 
 These core principles will guide RC2 deliverables:
 
-- RC-2 requirements are derived from RM and RA-2 which specify infrastructure capabilities which include compute, memory, storage resource capabilities, performance optimization capabilities, monitoring capabilities.
+- RC-2 requirements are derived from RM and RA-2 which specify infrastructure capabilities including compute, memory, storage, resource capabilities, performance optimization capabilities, and monitoring capabilities.
 
 - Requirements in the RM and RAs that are performance related may not have minimum perfromance criteria identified but where feasible will have tests with metrics to show relevant capabilities are present and working as expected.
 
