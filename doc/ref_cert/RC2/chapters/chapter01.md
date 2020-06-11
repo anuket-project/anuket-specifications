@@ -100,6 +100,8 @@ These core principles will guide RC2 deliverables:
 3. Decrease operator onboarding time for both Kubernetes infrastructures and CNFs.
 
 <a name="1.4"></a>
+<!---
+Best practices will be defined as we progress
 ## 1.4 Best Practices
 
 The following best practices have been adopted to ensure verification and validation procedures are repeatable with consistent quality in test results and RI conformances:
@@ -109,6 +111,7 @@ The following best practices have been adopted to ensure verification and valida
 * Leverage Network and Service Models, with identified CNF-specific parameters
 * Standardized conformance criteria
 * Add test cases from operators, which operators already tested in their environment
+--->
 
 <a name="1.5"></a>
 ## 1.5 Verification methodologies
