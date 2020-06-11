@@ -64,7 +64,7 @@ Terminology in this document will follow [CNTT Terminology](../../../tech/glossa
 
 This document covers aspects of CNTT conformance for both Kubernetes based cloud infrastructure and CNFs. The document will cover the following topics:
 
-- Identify in details the requirements of test-cases (mapped from RA2 and RM)
+- Identify in detail the requirements of test-cases (mapped from RA2 and RM)
 - Test criteria that shows a certain capability or feature of the system-under-test exists and behaves as expected
 - An E2E framework for conformance of Kubernetes infrastructures and CNFs, including specification for conformance test infrastructure (lab environment and tools)
 - Analysis to identify where the gaps are in the industry for implementing conformance test objectives (tooling, methods, process, etc).
