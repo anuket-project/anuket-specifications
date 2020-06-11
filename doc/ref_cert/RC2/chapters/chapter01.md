@@ -90,7 +90,7 @@ These core principles will guide RC2 deliverables:
 
 - Must/shall conformance criteria are testable as pass/fail and ensure requirements are met to ensure minimum thresholds of functional operability and/or performance behavior. This is the focus of RC-2 since this is what will drive a commercially significant badging program.
 
-- Should/may conformance criteria may be testable or non-testable and provide recommendations or best-practices for functional operability and/or performance behavior. These criteria and associated tests can be very useful for developing, evaluating or deploying a cloud infrastructure but are not critical to a commercially significant badging program.
+- Should/may conformance criteria, which may or may not be testable, provide recommendations or best-practices for functional operability and/or performance behavior. These criteria and associated tests can be very useful for developing, evaluating or deploying a cloud infrastructure but are not critical to a commercially significant badging program.
 
 <a name="1.3.1"></a>
 ### 1.3.1 Overarching Standards and Goals
