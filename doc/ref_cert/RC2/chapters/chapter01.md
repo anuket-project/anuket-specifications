@@ -28,7 +28,7 @@ The Reference Conformance for the Kubernetes-based workstream (RC2) was establis
 
 In summary, **Conformance** testing will be performed as part of cloud infrastructure and CNF lifecycle testing which includes **Verification** and **Validation**, defined further as:
 
-- **Verification** confirms design requirement specifications are met using Requirement Traceability and Manifest Reviews to ensure the cloud infrastructure or CNF is delivered per implementation specifications.
+- **Verification** is performed using reviews (e.g., manifests) to ensure that the cloud infrastructure or CNF is delivered as per implementation specifications.
 - **Validation** confirms the infrastructure or CNF meet the expected or desired behaviour.
 
 **All Terms utilized throughout this chapter are intended to align with LFN Complinace and Verification Committee (CVC) definitions, and their use through CVC documentation, guidelines, and standards.**
