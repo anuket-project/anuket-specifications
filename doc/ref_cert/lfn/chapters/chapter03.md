@@ -481,6 +481,7 @@ the following test names must not be executed:
 | test rejection regular expressions                                | reasons                                            |
 |-------------------------------------------------------------------|----------------------------------------------------|
 | .\*functional.test_lbaasv2                                        | lbaasv2                                            |
+| .\*functional.test_encryption_vol_type                            | https://storyboard.openstack.org/#!/story/2007804  |
 | .\*functional.test_remote_stack.RemoteStackTest                   | https://bugs.launchpad.net/heat/+bug/1701498       |
 | .\*RemoteStackTest.test_stack_create_with_cloud_credential        | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
 | .\*scenario.test_aodh_alarm                                       | aodh                                               |
