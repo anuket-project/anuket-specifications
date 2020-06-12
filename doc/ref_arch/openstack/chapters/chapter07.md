@@ -108,7 +108,7 @@ data of interest to the NFVI and workloads so that appropriate actions can be ta
 particular operation or event. Data typically includes resources accessed, destination and source 
 addresses, and a timestamp and login information for the person who accessed the resources.
 
-Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](../../ref_model/chapters/chapter04.md).
+Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](../../../ref_model/chapters/chapter04.md).
 
 Logs have multiple operational uses including for:
 
