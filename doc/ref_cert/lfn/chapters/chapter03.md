@@ -160,7 +160,7 @@ and backends selected in the different Gate jobs. The classical
 conform to this model which also fits the heterogeneous user deployments.
 
 From a CNTT Compliance state point, the capabilities are well described in
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which allows tuning the test configurations and the test lists to avoid
 skipping any test. It results that all tests covering optional capabilities and
 all upstream skipped tests due to known bugs are not executed. All remaining
@@ -174,7 +174,7 @@ configurations and the default test lists. Any optional capability or services
 The next subsections only detail the Tempest tests which must not be executed
 from a Compliance state point. The remaining tests have to pass successfully.
 They cover all together the API testing requirements as asked by
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
 According to Hunter (the oldest OPNFV active release), the following software
 versions are considered here to verify OpenStack Pike selected by CNTT:
@@ -200,7 +200,7 @@ as integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions        | reasons    |
@@ -234,7 +234,7 @@ Glance API is covered in the OpenStack Gates via
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions | reasons |
@@ -260,7 +260,7 @@ as integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                                   | reasons                               |
@@ -299,7 +299,7 @@ Swift API is covered in the OpenStack Gates via
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                           | reasons                            |
@@ -326,7 +326,7 @@ as integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                                 | reasons                               |
@@ -403,7 +403,7 @@ Nova API is covered in the OpenStack Gates via
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                                                        | reasons                            |
@@ -475,7 +475,7 @@ integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml)
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                | reasons                                            |
@@ -524,7 +524,7 @@ Here are the Rally-based test cases proposed by
   Neutron scenarios executed in the OpenStack gates
 
 At the time of writing, no KPI is defined in
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
@@ -850,7 +850,7 @@ by Functest VNF tests in the other cases.
 <a name="3.4.1"></a>
 ### 3.4.1 RM/RA-1 Requirements
 
-According to [RC1 Chapter04]({{ "/doc/ref_cert/lfn/chapters/chapter04.html" | relative_url }})
+According to [RC1 Chapter04](chapter04.html)
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
