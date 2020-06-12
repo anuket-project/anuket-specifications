@@ -9,7 +9,7 @@ The selection of a new OpenStack baseline release will be associated with a new 
 
 ## 9.1 Triggering Events for next release selection
 This section specifies events that may trigger the selection of the next OpenStack release.
--	Complete change in architecture: OpenStack, OpenStack Service or major change on an OpenStack mandatory service's API
+-	Complete change in architecture: OpenStack, OpenStack Service or major API change of an OpenStack RA-1 required service
 -	New OpenStack features, services or projects needed by CNTT workloads
 -	Major Security Fix (not fixed through a patch; OpenStack or OS) that affect APIs
 -	Current CNTT [OpenStack release]( https://releases.openstack.org/) entered “[Extended Maintenance]( https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases)” phase approximately 18 months ago
