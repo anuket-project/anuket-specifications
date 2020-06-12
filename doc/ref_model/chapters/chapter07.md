@@ -66,6 +66,9 @@ This document includes process flow, logistics, and requirements which must be s
 <p align="center"><b>Figure 7-1:</b> CNTT relation to LFN OVP</p>
 
 <a name="7.2"></a>
+## 7.2 Principles and Guidelines
+
+To Be Developed 
 
 
 <a name="7.3"></a>
