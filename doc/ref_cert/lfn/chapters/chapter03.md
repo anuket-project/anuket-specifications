@@ -477,17 +477,19 @@ According to
 [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
 the following test names must not be executed:
 
-| test rejection regular expressions                         | reasons                                            |
-|------------------------------------------------------------|----------------------------------------------------|
-| .\*functional.test_lbaasv2                                 | lbaasv2                                            |
-| .\*RemoteStackTest.test_stack_create_with_cloud_credential | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
-| .\*scenario.test_aodh_alarm                                | aodh                                               |
-| .\*tests.scenario.test_autoscaling_lb                      | lbaas                                              |
-| .\*scenario.test_autoscaling_lbv2                          | lbaasv2                                            |
-| .\*scenario.test_server_software_config                    | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
-| .\*test_volumes.VolumeBackupRestoreIntegrationTest         | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
-| .\*scenario.test_octavia_lbaas                             | octavia                                            |
-| .\*scenario.test_server_cfn_init                           | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
+| test rejection regular expressions                                | reasons                                            |
+|-------------------------------------------------------------------|----------------------------------------------------|
+| .\*functional.test_lbaasv2                                        | lbaasv2                                            |
+| .\*functional.test_remote_stack.RemoteStackTest                   | https://bugs.launchpad.net/heat/+bug/1701498       |
+| .\*RemoteStackTest.test_stack_create_with_cloud_credential        | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*scenario.test_aodh_alarm                                       | aodh                                               |
+| .\*tests.scenario.test_autoscaling_lb                             | lbaas                                              |
+| .\*scenario.test_autoscaling_lbv2                                 | lbaasv2                                            |
+| .\*scenario.test_remote_deeply_nested.RemoteDeeplyNestedStackTest | https://bugs.launchpad.net/heat/+bug/1701498       |
+| .\*scenario.test_server_software_config                           | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*test_volumes.VolumeBackupRestoreIntegrationTest                | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
+| .\*scenario.test_octavia_lbaas                                    | octavia                                            |
+| .\*scenario.test_server_cfn_init                                  | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
 
 Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
