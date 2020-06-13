@@ -8,15 +8,15 @@
   * [7.2.1 Overarching Objectives and Goals](#7.2.1)
   * [7.2.2 Verification Methodologies](#7.2.2)
   * [7.2.3 Governance](#7.2.3)
-* [7.3 Common standards](#7.3)
-  * [7.3.1 Potential attack vectors](#7.3.1)
-  * [7.3.2 Testing demarcation points](#7.3.2)
-* [7.4 Security Scope](#7.4)
-  * [7.4.1 In-scope and Out-of-Scope definition](#7.4.1)
-  * [7.4.2 Security requirements](#7.4.2)
-  * [7.4.3 Platform security requirements](#7.4.3)
-  * [7.4.4 Workload security requirements](#7.4.4)
-  * [7.4.5 Certification/validation requirements](#7.4.5)
+* [7.3 Security Scope](#7.4)
+  * [7.3.1 In-scope and Out-of-Scope definition](#7.4.1)
+  * [7.3.2 Security requirements](#7.4.2)
+  * [7.3.3 Platform security requirements](#7.4.3)
+  * [7.3.4 Workload security requirements](#7.4.4)
+  * [7.3.5 Certification/validation requirements](#7.4.5)
+* [7.4 Common standards](#7.3)
+  * [7.4.1 Potential attack vectors](#7.3.1)
+  * [7.4.2 Testing demarcation points](#7.3.2)
 * [7.5 Platform Security](#7.5)
   * [7.5.1 General Platform Security](#7.5.1)
   * [7.5.2 Platform ‘back-end’ access security](#7.5.2)
@@ -87,8 +87,68 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ### 7.2.3 Governance
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+
 <a name="7.3"></a>
-## 7.3 Common standards
+## 7.3 Security Scope
+
+<a name="7.3.1"></a>
+## 7.3.1 In-scope and Out-of-Scope definition
+
+The scope of the security controls requirements maps to the scope of the Reference Model architecture.
+
+The Reference Model scope is shown below (as outlined in chapter 1 of the reference model):
+
+<p align="center"><img src="../figures/ch09-etsi-nfv-architecture-mapping.png" alt="ETSI NFV architecture mapping" title="ETSI NFV architecture mapping" width="100%"/></p>
+<p align="center"><b>Figure 7-2:</b> ETSI NFV architecture mapping</p>
+
+This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
+
+There will be a different set of security requirements for each Cloud Infrastructure reference architecture. In this case, the first reference architecture is OpenStack.
+
+<a name="7.3.2"></a>
+## 7.3.2 Security Requirements
+
+The following diagram shows the different security domains that impact the Reference Model:
+
+<p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
+<p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
+
+<a name="7.3.3"></a>
+## 7.3.3 Platform security requirements
+
+At a high level, the following areas/requirements cover platform security for a particular deployment:
+* Platform certification
+* Secure access controls for administrators
+* Secure API interface for Tenants
+* Encryption for all external and control comms
+* Strong separation between tenants - ensuring network, data, and runtime process isolation between tenants
+* Authenticated/secure APIs provided to overlay network administrators
+* Platform change control on hardware
+* Templated approved changes for automation where available
+* Typically well defined security framework documentation including approved deployment use cases
+* Infrastructure software update process
+* Identity Domain = platform
+
+<a name="7.3.4"></a>
+## 7.3.4 Workload security requirements
+
+At a high level, the following areas/requirements cover workload security for a particular deployment:
+* Up to platform-level certification
+* Each workload network will need to undertake it own security self-assessment and accreditation, and not inherit a security accreditation from the platform
+* Potentially automated service activation
+* Workload owner owns workload security certification process
+* Workload owner owns workload design change process
+* Workload owner owns workload software update process
+* Identity Domain = workload
+
+<a name="7.3.5"></a>
+## 7.3.5 Certification/validation requirements
+
+    *(An overview/introduction to workload certification requirements and
+    incl types of workloads covered)*
+    
+<a name="7.4"></a>
+## 7.4 Common standards
 
 Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world.   The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global Telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
 
@@ -118,12 +178,12 @@ A good place to start to understand the requirements is to use the widely accept
 Additional Cloud Infrastructure security principles that need to be incorporated:
 * Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
 
-<a name="7.3.1"></a>
-## 7.3.1 Potential attack vectors
+<a name="7.4.1"></a>
+## 7.4.1 Potential attack vectors
 Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
 
-<a name="7.3.2"></a>
-## 7.3.2 Testing demarcation points
+<a name="7.4.2"></a>
+## 7.4.2 Testing demarcation points
 
 It is not enough to just secure all potential points of entry and hope for the best, any Cloud Infrastructure architecture must be able to be tested and validated that it is in fact protected from attack as much as possible. The ability to test the infrastructure for vulnerabilities on a continuous basis is critical for maintaining the highest level of security possible.  Testing needs to be done both from the inside and outside of the systems and networks.  Below is a small sample of some of the testing methodologies and frameworks available.
 
@@ -149,64 +209,6 @@ It is not enough to just secure all potential points of entry and hope for the b
 
 Insuring that the security standards and best practices are incorporated into the Cloud Infrastructure and architectures must be a shared responsibility, among the Telecommunications operators interested in building and maintaining the infrastructures in support of their services, the application vendors developing the network services that will be consumed by the operators, and the Cloud Infrastructure vendors creating the infrastructures for their Telecommunications customers.  All of the parties need to incorporate security and testing components, and maintain operational processes and procedures to address any security threats or incidents in an appropriate manner.  Each of the stakeholders need to contribute their part to create effective security for the Cloud Infrastructure.
 
-<a name="7.4"></a>
-## 7.4 Security Scope
-
-<a name="7.4.1"></a>
-## 7.4.1 In-scope and Out-of-Scope definition
-
-The scope of the security controls requirements maps to the scope of the Reference Model architecture.
-
-The Reference Model scope is shown below (as outlined in chapter 1 of the reference model):
-
-<p align="center"><img src="../figures/ch09-etsi-nfv-architecture-mapping.png" alt="ETSI NFV architecture mapping" title="ETSI NFV architecture mapping" width="100%"/></p>
-<p align="center"><b>Figure 7-2:</b> ETSI NFV architecture mapping</p>
-
-This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
-
-There will be a different set of security requirements for each Cloud Infrastructure reference architecture. In this case, the first reference architecture is OpenStack.
-
-<a name="7.4.2"></a>
-## 7.4.2 Security Requirements
-
-The following diagram shows the different security domains that impact the Reference Model:
-
-<p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
-<p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
-
-<a name="7.4.2"></a>
-## 7.4.3 Platform security requirements
-
-At a high level, the following areas/requirements cover platform security for a particular deployment:
-* Platform certification
-* Secure access controls for administrators
-* Secure API interface for Tenants
-* Encryption for all external and control comms
-* Strong separation between tenants - ensuring network, data, and runtime process isolation between tenants
-* Authenticated/secure APIs provided to overlay network administrators
-* Platform change control on hardware
-* Templated approved changes for automation where available
-* Typically well defined security framework documentation including approved deployment use cases
-* Infrastructure software update process
-* Identity Domain = platform
-
-<a name="7.4.3"></a>
-## 7.4.4 Workload security requirements
-
-At a high level, the following areas/requirements cover workload security for a particular deployment:
-* Up to platform-level certification
-* Each workload network will need to undertake it own security self-assessment and accreditation, and not inherit a security accreditation from the platform
-* Potentially automated service activation
-* Workload owner owns workload security certification process
-* Workload owner owns workload design change process
-* Workload owner owns workload software update process
-* Identity Domain = workload
-
-<a name="7.4.4"></a>
-## 7.4.5 Certification/validation requirements
-
-    *(An overview/introduction to workload certification requirements and
-    incl types of workloads covered)*
 
 <a name="7.5"></a>
 ## 7.5 Platform Security
