@@ -73,7 +73,7 @@ The requirements on infrastructure hardware used to deploy and run the RI2 are a
 1. One (1) physical or virtual server dedicated as a jump / test host
 1. Six (6) physical or virtual servers, serving as either master (controller) or compute/worker nodes
 
-The jump / test host allows to install and manage the operation of the RI2. For example, the host can be used to execute the installer software to deploy and configure the RI2 on the other physical or virtual servers. Once installed, the host may be used to run test tools or it may be used to generate test traffic intended for performance measurements. To support the latter, the server provided for the jump / test host shall meet similar hardware requirements as the master (controller) / compute hosts. If only functional tests are run on the test host after deployment, a VM with less resources as outlined below is sufficient.
+The jump / test host allows to install and manage the operation of the RI2. For example, the host can be used to execute the installer software to deploy and configure the RI2 on the other physical or virtual servers. Once installed, the host may be used to run test tools or it may be used to generate test traffic intended for performance measurements. To support the latter, the server provided for the jump / test host shall meet similar hardware requirements as the master (controller) / compute hosts. If the jump host is used only for deployment or execution of functional tests after deployment, a VM with the resources as outlined below is sufficient.
 
 Each server shall meet the following minimum specifications:
 
@@ -86,6 +86,19 @@ Each server shall meet the following minimum specifications:
 * Network Interfaces
   * 4x 10 Gbps Ethernet Ports
   * Out-of-band Management Port (physical server only)
+
+
+A virtual jump / test host can be a VM with the following specifications:
+
+* CPU
+  *  4x vCPUs x86_64
+* Memory
+  * 8 GB RAM
+* Storage
+  * 50GB disk (SSD backed)
+* Network Interfaces
+  * 1x vNIC (virtio device) for OAM, access to public Kubernetes APIs, and traffic generation
+  * 1x vNIC (virtio device) for out-of-band management of physical servers
 
 
 
