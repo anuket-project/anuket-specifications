@@ -45,7 +45,13 @@ Gaps
 This section addresses major open issues identified in the development of the Reference Model, Reference Architecture, Reference Implementation of the Common Cloud Infrastructure Lifecycle Framework. 
 
 ## 10.3.1 Discovery [Initial language]
-The VNFs and NFVI frameworks should be able to discover each other and exchange their capabilities required or offered. CNTT reference model specifies a model, but OpenStack does not provide APIs to support such capabilities. Following should be supported: NFVI should be able to publish the capabilities it offers to VNFs/CNFs VNFs/CNFs should be able to query the NFVI for specific capabilities - such as number of cores, performance parameters. Negotiation/Hand Shake API - VNFs and NFVIs should be able to negotiate on certain capabilities. For instance, VNF desires HW acceleration for high throughput, but, should be able to fall back to high throughput offered by NFVI via DPDK offering, and vice-a-versa.
+The Cloud infrastructure and their workloads (VNFs/CNFs) should be able to discover each other and exchange their required or offered capabilities. While the CNTT reference model specifies a model that supports such discovery and information exchange, but Reference Architecture may not provide (or surface) APIs that support such capabilities. 
+
+The following Discovery APIs should be supported: 
+1. The cloud infrastructure should be able to publish the capabilities it offers to VNFs/CNFs 
+1. VNFs/CNFs should be able to query the cloud infrastructure for specific capabilities - such as number of cores, performance parameters. 
+
+Negotiation/Hand Shake between VNFs/CNFs and cloud infrastructure should be supported.  VNFs/CNFs and cloud infrastructure should be able to negotiate on certain capabilities. For instance, a VNF desires HW acceleration for high throughput, but, should be able to fall back to high throughput offered by the cloud infrastructure via aDPDK offering, and vice-a-versa.
 
 ## 10.3.2 Support Load Balance of VNF/CNFs [Initial language]
 Ability to load balance workflows through multiple instances of same VNF or CNF - e.g. using ECMP to distribute workloads through the multiple instances of Firewall. As an example imagine a distributed finance application with multiple instances of Web-tier and DB-tier. The traffic needs to flow through multiple instances of Firewall (for HA as well load balancing). There is no simple way to accomplish this in OpenStack.
@@ -55,4 +61,3 @@ Reference model makes a reference to SFC support from NFVI. Moreover to support 
 
 ## 10.3.4 Packet Acceleration Request (e.g Hardware Acceleration) [Initial language]
 Reference model states packet acceleration should be supported. OpenStack does not have such support that could be easily used or automated for deployments of VNFs/NFVIs.
-
