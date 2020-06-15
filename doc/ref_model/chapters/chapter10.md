@@ -60,4 +60,4 @@ Ability to load balance workflows through multiple instances of same VNF or CNF 
 The Reference model has a requirement for SFC support from the cloud infrastructure. Moreover to support network services, a way is needed to chain the services. Service Function Chain was developed in OpenStack and went dormant. It is not supported and well tested. This requires to be revamped to be useful for CNTT reference architecture.
 
 ## 10.3.4 Packet Acceleration Request (e.g Hardware Acceleration) [Initial language]
-Reference model states packet acceleration should be supported. OpenStack does not have such support that could be easily used or automated for deployments of VNFs/NFVIs.
+Reference model states packet acceleration should be supported. The Reference Architectures do not have such support that could be easily used or automated.
