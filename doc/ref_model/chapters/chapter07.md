@@ -60,7 +60,7 @@
 <a name="7.1"></a>
 ## 7.1 Introduction
 
-The objectives of this chapter are to deliver a comprehensive list of platform security requirements. The chapter examines multiples aspects of security as it relates to the platform and security aspects for workloads. After discussing security attack vectors and security standards, this chapter delves into the Platform Security requirements. The chapters culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
+This chapter examines multiples aspects of security as it relates to the platform and security aspects for workloads. After discussing security attack vectors and security standards, this chapter delves into the Platform Security requirements. The chapters culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
 
 ## 7.2 Principles and Guidelines
 
