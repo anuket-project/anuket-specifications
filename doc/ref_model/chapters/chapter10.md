@@ -35,7 +35,7 @@ Challenge 1
 The initial challenge was launching the Reference Model as an MVP and then gathering and incorporating necessary feedback from the community on the initial assumptions, and then iterating foundational constructs of the model with that feedback. This release includes the results of a significant effort to incorporate the feedback. Of course, alignment efforts will always continue.
 
 Challenge 2
-The current challenge is getting to a stable working version from which all stakeholders in the application value-chain can begin to extract the intended value of a Common Cloud Infrastructure. The next maturity level is reached when the Reference Model has stabilized enough for stakeholders to begin to intake the model into their own application development and deployment cycles.
+The current challenge is getting to a stable working version from which all stakeholders in the application value-chain can begin to extract the intended value of a Common Cloud Infrastructure. The next maturity level is reached when the Reference Model has stabilized enough for stakeholders to adopt the model into their own application development and deployment cycles.
 
 
 ## 10.3 Gaps 
