@@ -111,7 +111,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 <a name="5.1.4"></a>
 ### 5.1.4 Security
-_**Comment:** To be worked on._
+Please see the [RM Security Chapter](./chapter07.md) and, in particular, the [Consolidated Requirements](./chapter07.md#711-consolidated-security-requirements) section.
 
 <a name="5.1.5"></a>
 ### 5.1.5 Platform Services
