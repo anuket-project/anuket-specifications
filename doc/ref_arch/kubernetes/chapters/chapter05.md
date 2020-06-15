@@ -37,8 +37,8 @@ The following functionalities are recommended for securing kubernetes platform;
 - Role-base Access Control
 - Secret Managment
 - How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
-  - Tenant can be distinct teams or workload types (Development or Production) within an organisation, each with a namespace
-  - Tenant can also be per dedicated Kubernetes cluster
+  - Tenants without hard multi-tenancy requirements (multiple development teams in the same organization) separated from each other by namespaces
+  - For strict multi tenancy, a dedicated Kubernetes cluster per tenant should be used
 - Integration with other security ecosystem like monitoring and alerting tools
 
 <a name="5.2"></a>
