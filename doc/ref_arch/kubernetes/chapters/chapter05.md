@@ -23,7 +23,10 @@
 
 <a name="5.1"></a>
 ## 5.1 Introduction
-Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which supports separation of concerns during image build. A fully integrated security testing phase should be baked into the CI/CD pipelines of both the vendors and operators. Automated security policies should also be used to flag builds with issues.  Image registries must be monitored to automatically block or replace images with known vulnerabilites, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
+Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which supports separation of concerns during image build. It is recommended that:
+- Security testing is fully integrated into the CI/CD pipelines of all parties (e.g. vendors and operators).
+- Automated security policies are used to flag builds with issues.
+- Image registries are monitored to automatically block or replace images with known vulnerabilities, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
 
 The following functionalities are recommended for securing kubernetes platform;
 
