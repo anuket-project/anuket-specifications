@@ -312,4 +312,4 @@ Before the installation, the user has to check if each server meets the deployme
 ### 6.4.2 Network configuration
 The necessary prerequisite settings must be ready before the deployment, for example:
  - the VLAN must be configured on the switch,
- - the used IP address ranges must be allocated.
+ - the IP address ranges to be used must be allocated.
