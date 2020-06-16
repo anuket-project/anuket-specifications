@@ -178,7 +178,7 @@ By trying to sort workloads into different categories based on the requirements 
 Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: For Workloads that can tolerate resource over-subscription and variable latency.
 - **Network Intensive**: For Workloads that require predictable computing performance, high network throughput and low network latency.
-- **Edge** : For Edge use cases that requirment sepical requirements, in terms of offloading some functions and with very low network latency.
+- **Edge** : For Edge use cases that requirment special requirements, in terms of offloading some functions and with very low network latency.
 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
