@@ -850,7 +850,7 @@ by Functest VNF tests in the other cases.
 <a name="3.4.1"></a>
 ### 3.4.1 RM/RA-1 Requirements
 
-According to [RC1 Chapter04](chapter04.html)
+According to [RC1 Chapter04](chapter04.md)
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
