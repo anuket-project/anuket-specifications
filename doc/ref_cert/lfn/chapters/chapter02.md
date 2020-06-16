@@ -240,7 +240,7 @@ operations when configuring the server running the test cases and prevent
 conflicts between all test case dependencies.
 
 It's worth mentioning that current
-[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter03.html" | relative_url }})
+[test cases selected by CNTT](./chapter03.md)
 already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
@@ -393,7 +393,7 @@ The compliance and Conformance program intends to validate four different types 
 
 * Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to CNTT/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
 
-The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases](chapter02.8.md#39-nfvi-test-cases).
+The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases Requirements](chapter02.md#28-nfvi-test-cases-requirements).
 
 
 
