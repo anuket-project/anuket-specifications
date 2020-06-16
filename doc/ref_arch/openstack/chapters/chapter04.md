@@ -58,7 +58,7 @@ Minimal configuration: 1 node
 
 #### 4.2.2.2. OpenStack Control Plane Servers (Control Nodes)
 - BIOS Requirements
-For OpenStack control nodes we use the BIOS parameters for the basic profile defined in [Chapter 5.4 of the Reference Model](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#5.4). Additionally, for OpenStack we need to set the following boot parameters:
+For OpenStack control nodes we use the BIOS parameters for the basic profile defined in [Chapter 5.4 of the Reference Model](../../../ref_model/chapters/chapter05.md#5.4). Additionally, for OpenStack we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
@@ -426,7 +426,7 @@ CNTT Reference Architecture support the ML2 plugin (see below) as well as the se
 
 Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/pike/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
 
-[Chapter 5](../chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions]( ../chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
+[Chapter 5](chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions](chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
 
 **Neutron ML2 integration**
 The OpenStack Modular Layer 2 (ML2) plugin simplifies adding networking technologies by utilizing drivers that implement these network types and methods for accessing them. Each network type is managed by an ML2 type driver and the mechanism driver exposes interfaces to support the actions that can be performed on the network type resources. The [OpenStack ML2 documentation](https://wiki.openstack.org/wiki/Neutron/ML2) lists example mechanism drivers.
