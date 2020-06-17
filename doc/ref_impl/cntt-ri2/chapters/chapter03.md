@@ -98,7 +98,7 @@ A virtual jump / test host can be a VM with the following specifications:
   * 50GB disk (SSD backed)
 * Network Interfaces
   * 1x vNIC (virtio device) for OAM, access to public Kubernetes APIs, and traffic generation
-  * 1x vNIC (virtio device) for out-of-band management of physical servers
+  * 1x vNIC (virtio device) for out-of-band management of physical servers (e.g., IPMI or RedFish for power cycling)
 
 
 
