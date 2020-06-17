@@ -35,7 +35,7 @@ A former OPNFV baremetal provisioner XCI, now referred to as Cloud Infra Automat
 
 Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in OPNFV terminology need to be defined. Both PDF and IDF files are modelled as yaml schema.
 
-A PDF is a hardware configuration template that includes hardware characteristics of the jumphost host & the set of compute/controller hosts. For each host, the following characteristics should be defined:
+A PDF is a hardware configuration template that includes hardware characteristics of the jump host and the set of compute/controller hosts. For each host, the following characteristics should be defined:
 - CPU, disk & memory information
 - Remote management parameters
 - Network interfaces list including name, MAC address, IP address, link speed
