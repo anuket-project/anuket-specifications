@@ -48,7 +48,7 @@ After filling in the PDF and IDF with correct information, the user needs to gen
 
 `./deploy.sh -o <OStype>-p file:///<pdf.yaml> -i file:///<idf.yaml> -l provision`
 
-Currently, Ubuntu 18.04 & CentOS 7.8 are supported (default Ubuntu 18.04). Support for other system can be added as well depending on the requirements.
+Currently, Ubuntu 18.04 & CentOS 7.8 are supported (default Ubuntu 18.04). Support for other operating systems can be added as well depending on the requirements.
 
 After the hosts have been provsioned successfully, one can setup host networking for K8s & run software provisioning tooling from CNF Testbed or Intel’s BMRA playbooks to configure and install k8s & other plugins (Refer 4.3.2).
 
