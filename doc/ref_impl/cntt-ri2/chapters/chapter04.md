@@ -8,14 +8,14 @@
 * [4.2 Prerequisites](#4.2)
 * [4.3 Installation of the Reference Implementation](#4.3)
   * [4.3.1 Host Provisioning](#4.3.1)
-  * [4.3.2 Software Provisioning](#4.3.2)
+  * [4.3.2 Kubernetes Provisioning](#4.3.2)
 * [4.4 Validation of the Reference Implementation](#4.4)
 * [4.5 Automation Tooling](#4.5)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-This chapter describes the steps to install Kubernetes based Reference Implementation (RI-2). The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. The host provisioning stage is provided here for information only and can be skipped when using Bare Metal Providers like Packet, etc.  The kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the kubernetes provisioning stage and any tools used in the host provisioning stage.
+This chapter describes the steps to install Kubernetes based Reference Implementation (RI-2). The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. The host provisioning stage is provided here for information only and can be skipped when using Bare Metal Providers like Packet, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
 <a name="4.2"></a>
 ## 4.2 Prerequisites
@@ -50,10 +50,10 @@ After filling in the PDF and IDF with correct information, the user needs to gen
 
 Currently, Ubuntu 18.04 and CentOS 7.8 are supported (default Ubuntu 18.04). Support for other operating systems can be added as well depending on the requirements.
 
-After the hosts have been provisioned successfully, one can set up host networking for Kubernetes and run software provisioning tooling from CNF Testbed or Intel’s BMRA playbooks to configure and install k8s and other plugins (Refer 4.3.2)
+After the hosts have been provisioned successfully, one can set up host networking for Kubernetes and run Kubernetes provisioning tooling from CNF Testbed or Intel’s BMRA playbooks to configure and install k8s and other plugins (Refer 4.3.2)
 
 <a name="4.3.2"></a>
-### 4.3.2 Software Provisioning
+### 4.3.2 Kubernetes Provisioning
 <Intel BMRA/CNF Testbed>
 
 <a name="4.4"></a>
