@@ -111,7 +111,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 <a name="5.1.4"></a>
 ### 5.1.4 Security
-_**Comment:** All Secuirty features defined in RM Chapter 07 
+_**Comment:**_  RM Chapter 07 (./chapter07.md) discusses and specifies requirements for platform security.
 https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md
 
 <a name="5.1.5"></a>
