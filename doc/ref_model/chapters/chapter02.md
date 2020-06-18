@@ -156,11 +156,13 @@ By trying to sort workloads into different categories based on the requirements 
   - Requirements
     - very Low network latency
     - Offload some Radio requirments
-       - Hi-PHY processing, FPGA accelerators are used for enhancing performance. 
+       - Hi-PHY processing. 
        - FEC offload at L1.
        - 5G NR, PHY is offloaded to the FPGA
        - Real Time Signal Processing 
        - Fronthaul Acceleration & Conversion
+       - Timing Accuracy
+       - Edge-limited power envelope
 
 <!--
 - **Profile Four**
