@@ -188,12 +188,12 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|------|------|-------|
-| sec.gen.001 | Hardening | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. |   |
+| sec.gen.001 | Hardening | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
 | sec.gen.002 | Hardening | All systems part of Cloud Infrastructure **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  |
 | sec.gen.003 | Hardening | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot |  |
 | sec.gen.004 | Hardening | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened |  |
 | sec.gen.005 | Hardening | The Platform **must** support Operating System level access control |  |
-| sec.gen.006 | Hardening | The Platform **must** support Secure logging |  |
+| sec.gen.006 | Hardening | The Platform **must** support Secure logging | [RA-1 6.3.2.5 "System Access"](./chapter06.md#6325-system-access) |
 | sec.gen.007 | Hardening | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service |  |
 | sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities |  |
 | sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification |  |
@@ -207,19 +207,19 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|-------|-------|---------|
-| sec.sys.001 | Access | The Platform **must** support authenticated and secure APIs, API endpoints. The Platform **must** implement authenticated and secure access to GUI | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.004 | Access | The Cloud Infrastructure **must** support Secure network channels | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity management capabilities | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |  
-| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.013 | Access | The Platform **must** provide secrets dynamically as and when needed | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.001 | Access | The Platform **must** support authenticated and secure APIs, API endpoints. The Platform **must** implement authenticated and secure access to GUI | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access)) |
+| sec.sys.004 | Access | The Cloud Infrastructure **must** support Secure network channels | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity management capabilities | [RA-1 6.3.1 "Identity"](./chapter06.md#6311-identity) |
+| sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |  
+| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.013 | Access | The Platform **must** provide secrets dynamically as and when needed | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 
 #### 2.3.8.3. Confidentiality and Integrity
 
@@ -251,8 +251,8 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.img.001 | Image | Images from untrusted sources **must not** be used |  |
-| sec.img.002 | Image | Images **must** be maintained to be free from known vulnerabilities |  |
+| sec.img.001 | Image | Images from untrusted sources **must not** be used | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
+| sec.img.002 | Image | Images **must** be maintained to be free from known vulnerabilities | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.img.003 | Image | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  |
 | sec.img.004 | Image | Images **must** only be accessible to authorized actors |  |
 | sec.img.005 | Image | Image Registries **must** only be accessible to authorized actors |  |
@@ -282,21 +282,21 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly scanned for events of interest |  |
+| sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly scanned for events of interest | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.002 | Monitoring | Security logs **must** be time synchronised |  |
 | sec.mon.003 | Monitoring | The Platform **must** log all changes to time server source, time, date and time zones |  |
 | sec.mon.004 | Audit | The Platform **must** secure and protect Audit logs (contain sensitive information) both in-transit and at rest |  |
-| sec.mon.005 | Monitoring/Audit | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly |  |
+| sec.mon.005 | Monitoring/Audit | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | [RA-1 6.3.7.2 "What to log, what not to log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
 | sec.mon.006 | Monitoring/Audit | The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions accordingly |  |
 | sec.mon.007 | Monitoring/Audit | The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies |  |
 | sec.mon.008 | Monitoring/Audit | The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures |  |
 | sec.mon.009 | Monitoring/Audit | The Platform **must** Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly |  |
 | sec.mon.010 | Monitoring/Audit | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly |  |
-| sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly |  |
+| sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.012 | Monitoring/Audit | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts |  |
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
 | sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources |  |
-| sec.lcm.017 | Audit | The Platform **must** Audit systems for any missing security patches and take appropriate actions |  |
+| sec.lcm.017 | Audit | The Platform **must** Audit systems for any missing security patches and take appropriate actions | [RA-1 6.3.2.3 "Patches"](./chapter06.md#6323-patches) |
 
 
 #### 2.3.8.8. Compliance with Standards
