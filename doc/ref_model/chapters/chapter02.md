@@ -152,7 +152,7 @@ By trying to sort workloads into different categories based on the requirements 
 - **Profile Three**
   - Workload types
     - Edge functions with very specific computing and networking needs
-    - _Examples: vRAN ( vDU , vCU ) **First Edge use cases** https://github.com/cntt-n/CNTT/blob/master/doc/tech/usecases.md
+    - _Examples: vRAN ( vDU , vCU ) [First Edge use cases](../../tech/usecases.md)
   - Requirements
     - very Low network latency
     - Offload some Radio requirments
