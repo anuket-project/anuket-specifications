@@ -127,7 +127,7 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 | Attribute | Description |
 | --- | --- |
 | `name` | name of the availability zone |
-|
+
 <p align="center"><b>Table 3-4:</b> Attributes of availability zones</p>
 
 <a name="3.3"></a>
