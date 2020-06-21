@@ -206,7 +206,8 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 ### 5.1.6 Terminologies
 
 <a name="5.1.7"></a>
-### 5.1.7 SDO interlocking
+### 5.1.7 Standard Developing Bodies (SDO) and Open Source Communities Interlock 
+
 -	OpenStack Edge Computing Group 
     - Working will OpenStack ECG on defining various archiecture that will be fit in RA01 & RA02
 - Linux Foundation - Edge (LF-Edge)
