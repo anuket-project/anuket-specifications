@@ -23,7 +23,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Network Function Virtualisation (NFV)**: The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 - **Network Function Virtualisation Infrastructure (NFVI)**: The totality of all hardware and software components used to build the environment in which a set of VAs are deployed (also referred to as cloud infrastructure).
  >_*Note:*_ The NFVI can span across many locations, e.g. places where data centres or edge nodes are operated. The network providing connectivity between these locations is regarded to be part of the cloud infrastructure. **NFVI** and **VNF** are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
-- **Cloud Infrastructure**: A generic term covering **NFVI** and **CaaS** capabilities - essentially the infrastructure on which a **Workload** can be executed.
+- **Cloud Infrastructure**: A generic term covering **NFVI**, **IaaS** and **CaaS** capabilities - essentially the infrastructure on which a **Workload** can be executed.
+>_*Note:*_ **NFVI**, **IaaS** and **CaaS** layers can be built on top of each other. In case of CaaS some cloud infrastructure features (e.g.: HW management or multitenancy) are implemented by using an underlaying **IaaS** layer.
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
   - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Cloud Native NF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
