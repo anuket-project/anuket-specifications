@@ -334,7 +334,7 @@ The requirements listed in this section are optional, and are not required in or
 | Ref # | sub-category | Description |  Traceability |
 |----|-------|---------------------|-------------|
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
-| `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as symmetrical multi-threading. | |
+| `req.inf.com.03` | Compute | The Architecture **should** support Symmetric Multiprocessing with shared memory access as well as Simultaneous Multithreading. | |
 | `req.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
 | `req.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
 | `req.inf.ntw.04` | Network | The Architecture **should** support service function chaining. |  |
