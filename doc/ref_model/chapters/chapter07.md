@@ -21,6 +21,7 @@
   * [7.5.1 General Platform Security](#7.5.1)
   * [7.5.2 Platform ‘back-end’ access security](#7.5.2)
   * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
+  * [7.5.4 Platform Patching](#7.5.4)
 * [7.6 Workload Security - Vendor Responsibility](#7.6)
   * [7.6.1 Software Hardening](#7.6.1)
   * [7.6.2 Port Protection](#7.6.2)
@@ -40,9 +41,9 @@
 * [7.9 Cloud Infrastructure Vendors responsibility](#7.9)
   * [7.9.1 Networking Security Zoning](#7.9.1)
   * [7.9.2 Encryption](#7.9.2)
-  * [7.9.3 Platform Patching](#7.9.3)
-  * [7.9.4 Boot Integrity Measurement (TPM)](#7.9.4)
-  * [7.9.5 Runtime Integrity Measurement (TPM)](#7.9.5)
+  * [7.9.3 Root of Trust for Measurements (RTM)](#7.9.3)
+  * [7.9.4 Static Root of Trust for Measurements (SRTM)](#7.9.4)
+  * [7.9.5 Dynamic Root of Trust for Measurements (DRTM)](#7.9.5)
   * [7.9.6 Cloud Infrastructure & Cloud Infrastructure Manager](#7.9.6)
 * [7.10 Certification requirements](#7.10)
 * [7.11 Consolidated Security requirements](#7.11)
@@ -257,6 +258,11 @@ The platform supports the workload, and in effect controls access to the workloa
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
 * The front-end network may provide (Distributed Denial Of Service) DDOS support.
 
+<a name="7.5.4"></a>
+### 7.5.4 Platform Patching
+
+Cloud Infrastructure operators should ensure that the platform including the components (hypervisors, VMs, etc.) are kept up to date with the latest patch.
+
 <a name="7.6"></a>
 ## 7.6 Workload Security - Vendor Responsibility
 
@@ -310,6 +316,8 @@ The platform supports the workload, and in effect controls access to the workloa
 
 * Security defect reporting
 * Cadence with Cloud Infrastructure vendors (OSSA for OpenStack)
+* Component analysis: Mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
+  * Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
 
 <a name="7.6.9"></a>
 ### 7.6.9 Encryption suite support
@@ -339,7 +347,7 @@ The Operator’s responsibility is to not only make sure that security is includ
 <a name="7.7.1"></a>
 ### 7.7.1 Remote Attestation/openCIT
 
-Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the TPM built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
+Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
 
 Insert diagram here:
 https://01.org/sites/default/files/users/u26957/32_architecture.png
@@ -348,6 +356,8 @@ https://01.org/sites/default/files/users/u26957/32_architecture.png
 ### 7.7.2 Workload Image Scanning / Signing
 
 It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the VNF operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
+
+Use of Image scanners such as OpenSCAP to determine security vulnerabilities is strongly recommended.
 
 <a name="7.8"></a>
 ## 7.8 Application Vendors responsibility
@@ -363,17 +373,9 @@ The application vendors need to incorporate security elements to support the hig
 Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
 
 <a name="7.9"></a>
-## 7.9 Cloud Infrastructure and Cloud Infrastructure Manager Vendors responsibility
+## 7.9 Cloud Infrastructure vendors and Cloud Infrastructure Manager vendors responsibility
 
-The Cloud Infrastructure vendors need to incorporate security elements to support the highest level of security of the infrastructure they support.  This includes but is not limited to securing the following elements:
-
-* Hypervisor
-* VM/container management system
-* APIs
-* Network interfaces
-* Networking security zoning
-* Platform patching mechanisms
-* Regulatory compliance Failure
+The Cloud Infrastructure vendors and Cloud Infrastructure Manager vendors need to ensure security of the infrastructure they support and manage. 
 
 <a name="7.9.1"></a>
 ### 7.9.1 Networking Security Zoning
@@ -383,32 +385,55 @@ Network segmentation is important to ensure that VMs can only communicate with t
 Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
 
 <a name="7.9.2"></a>
-### 7.9.2 Encryption
+### 7.9.2 Volume Encryption
 
 Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
 
-* Composition analysis: New vulnerabilities are discovered in common open source libraries every week. As such, mechanisms to validate components of the VNF application stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
-* Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
-* The use of Image scanners such as OpenSCAP to determine security vulnerabilities
 
 <a name="7.9.3"></a>
-### 7.9.3 Platform Patching
+### 7.9.3 Root of Trust for Measurements (RTM)
 
-Cloud Infrastructure operators should ensure that the platform including the components (hypervisors, VMs, etc.) are kept up to date with the latest patch.
+The sections that follow define mecahnisms to ensure the integrity of the infrastructure pre-boot and post-boot (running). The following defines a set of terms used in those sections.
 
+-  The hardware root of trust helps with the pre-boot and post-boot security issues. 
+
+-  Unified Extensible Firmware Interface (UEFI) adheres to standards defined by an industry consortium. Vendors (hardware, software) and solution providers collaborate to define common interfaces, protocols and  structures for computing  platforms.
+
+-  Platform Configuration Register (PCR) is a memory location in the TPM used to store TPM Measurements (hash values generated by the SHA-1 standard hashing algorithm). PCRs are cleared only on TPM reset. UEFI dfines 24 PCRs of which the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
+
+-  Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
+
+-  Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
+
+-  Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section [7.7.1 Remote Attestation/openCIT](#7.7.1) 
+
+Values stored in a PCR cannot be reset (or forged) as they can only be extended. Whenever a measurement is sent to a TPM, the hash of the concatenation of the current value of the PCR and the new measurement is stored in the PCR. The PCR values are used to encrypt data.  If the proper environment is not loaded which will result in different PCR values, the TPM will be unable to decrypt the data.  
+ 
 <a name="7.9.4"></a>
-### 7.9.4 Boot Integrity Measurement (TPM)
+### 7.9.4 Static Root of Trust for Measurement (SRTM)
 
-Using a trusted platform module (TPM) as a hardware root of trust, the measurement of system sensitive components, such as platform firmware, bootloader, OS kernel, static filesystem, and other system components can be securely stored and verified.
-NFVI Operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
+Static RTM (SRTM) begins with measuring and verifying the integrity of the BIOS firmware. It then measures additional firmware modules, verifies their integrity, and adds each component’s measure to an SRTM value. The final value represents the expected state of boot path loads. SRTM stores results as one or more values stored in PCR storage. In SRTM, the CRTM resets PCRs 0 to 15 only at boot.
 
-Additionally, NFVI Operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
+Using a Trusted Platform Module (TPM), as a hardware root of trust, measurements of platform components, such as firmware, bootloader, OS kernel, can be securely stored and verified.
+Cloud Infrastructure operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
+
+A simple process would work as follows;
+1. The BIOS CRTM (Bios Boot Block) is executed by the CPU and used to measure the BIOS firmware
+1. The SHA1 hash of the result of the measurement is sent to the TPM
+1. The TPM stores this new result hash by extending the currently stored value
+1. The has comparisons can validate settings as well as the integrity of the modules
+
+Cloud Infrastructure operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
+
 The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
 <a name="7.9.5"></a>
-### 7.9.5 Runtime Integrity Measurement (TPM)
+### 7.9.5 Dynamic Root of Trust for Measurement (DRTM)
+In Dynamic Root of Trust for Measurement (DRTM), the RTM for the running environment are stored in PCRs starting with PCR 17. 
+
 If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
-Additionally, platform measurements may be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
+Additionally, platform monitoring can be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
+
 The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
 
