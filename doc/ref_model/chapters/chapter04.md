@@ -411,7 +411,7 @@ This Cloud Infrastructure Profile is intended to be used for both IT workloads a
 This Cloud Infrastructure Profile is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
 
 #### 4.2.4.3 Edge Profile
-This Cloud Infrastructure Profile is intended to be used for Edge use cases that have special requirmenet , as FPGA for vRAN use case which required offloading some RAN functionality.
+This Cloud Infrastructure Profile is intended to be used for Edge use cases that have special requirements, such as for the vRAN use case where  FPGA is required for offloading some RAN functionality.
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
