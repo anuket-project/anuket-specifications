@@ -29,7 +29,7 @@ and all artifacts (reports, logs, etc.) to
 The CNTT verification and conformance processes will leverage existing OPNFV
 testing knowledge (projects) and experience (history) and then will conform
 to the overall toolchain design already in-place. The RC toolchain only
-requires for the local deployment of the components instead of leveraging on
+requires for the local deployment of the components instead of leveraging
 the common OPNFV centralized services. But the interfaces remain unchanged
 mainly leveraging on jenkins jobs, the common test case execution, the test
 result database and the S3 protocol to publish the artifacts. It's worth
