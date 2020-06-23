@@ -2,7 +2,7 @@
 
 # CNTT Reference Conformance
 
-All CNTT conformance suites fulfill to the next couple of test case integration
+All CNTT conformance suites fulfill the following test case integration
 requirements to guarantee a smooth overall integration, the same end user
 actions and a unique test result format (e.g. OPNFV test result database)
 needed by the end users and the test case result verification programs (e.g.
