@@ -31,7 +31,7 @@ testing knowledge (projects) and experience (history) and then will conform
 to the overall toolchain design already in-place. The RC toolchain only
 requires for the local deployment of the components instead of leveraging
 the common OPNFV centralized services. But the interfaces remain unchanged
-mainly leveraging on jenkins jobs, the common test case execution, the test
+mainly leveraging jenkins jobs, the common test case execution, the test
 result database and the S3 protocol to publish the artifacts. It's worth
 mentioning that dumping all results and logs required by conformance is already
 in place in CIRV (see
