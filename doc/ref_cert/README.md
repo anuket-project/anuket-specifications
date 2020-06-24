@@ -20,8 +20,7 @@ for continuously deploying and testing cloud infrastructure.
 
 As for all OPNFV installer projects,
 [Jenkins](https://build.opnfv.org/ci/view/cntt/) triggers scenario deployments,
-runs the OPNFV gating test cases and then publishes all
-test results in the
+runs the OPNFV gating test cases and then publishes all test results in the
 [centralized test database](https://docs.opnfv.org/en/stable-hunter/_images/OPNFV_testing_working_group.png)
 and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
@@ -31,25 +30,25 @@ testing knowledge (projects) and experience (history) and then will conform
 to the overall toolchain design already in-place. The RC toolchain only
 requires for the local deployment of the components instead of leveraging
 the common OPNFV centralized services. But the interfaces remain unchanged
-mainly leveraging jenkins jobs, the common test case execution, the test
+mainly leveraging test jobs, the common test case execution, the test
 result database and the S3 protocol to publish the artifacts. It's worth
-mentioning that dumping all results and logs required for conformance is already
-in place in CIRV (see
+mentioning that dumping all results and logs required for conformance is
+already in place in CIRV (see
 [cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
 Functest daily jobs (see
 [functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console)).
 
 It should be noted that
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) supports both
-centralized and distributed deployment models as described below. It has
+centralized and distributed deployment models as described before. It has
 deployed the full toolchain in one small virtual machine to verify ONAP Openlab
 via Functest.
 
 <a name="testing-integration-requirements"></a>
 ## Test case integration requirements
 
-To reach all goals (verification, validation, compliance and conformance) expected by
-CNTT, all test cases must be delivered as
+To reach all goals (verification, validation, compliance and conformance)
+expected by CNTT, all test cases must be delivered as
 [Docker containers](https://www.docker.com/) and meet the requirements to
 simplify the CI toolchain setups:
 - the common test case execution
@@ -70,11 +69,11 @@ adoption of CI/CD best practices. By managing all the interactions with the
 CI/CD components (test scheduler, test results database, artifact repository),
 it allows the developer to work only on the test suites without diving into
 CI/CD integration. Even more, it brings the capability to run heterogeneous
-test cases in the same CI toolchains thanks to a few, [quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/), constraints.
-[quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/).
+test cases in the same CI toolchains thanks to a few,
+[quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/),
+constraints.
 
-Following the design in use, the Docker containers proposed by the test
-projects must also embed
+The Docker containers proposed by the test projects must also embed
 [the Xtesting Python package](https://pypi.org/project/xtesting/) and
 [the related test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
 as required by Xtesting.
@@ -94,9 +93,8 @@ projects:
 common test case execution proposed by Xtesting. Thanks to a simple test case
 list, this tool deploys plug-and-play
 [CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
-In addition, 
-it supports multiple components such as Jenkins and Gitlab CI (test
-schedulers) and
+In addition, it supports multiple components such as Jenkins and Gitlab CI
+(test schedulers) and
 [multiple deployment models](https://lists.opnfv.org/g/opnfv-tsc/message/5702)
 such as all-in-one or centralized services.
 
