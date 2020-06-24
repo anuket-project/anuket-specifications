@@ -59,7 +59,7 @@ simplify the CI toolchain setups:
 
 For their parts, the Docker containers simply enforce that the test cases are
 delivered with all runtime dependencies. This prevents lots of manual
-operations when configuring the server running the test cases and prevent
+operations when configuring the servers running the test cases and prevents
 conflicts between all test case dependencies.
 
 It's worth mentioning that current
