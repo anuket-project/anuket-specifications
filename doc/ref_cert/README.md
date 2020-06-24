@@ -95,7 +95,7 @@ common test case execution proposed by Xtesting. Thanks to a simple test case
 list, this tool deploys anywhere plug-and-play
 [CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
 In addition of this teaching capability needed by the Network Automation
-journey, it supports multiple components such as Jenkins and Gitlab CI (test
+it supports multiple components such as Jenkins and Gitlab CI (test
 schedulers) and
 [multiple deployment models](https://lists.opnfv.org/g/opnfv-tsc/message/5702)
 such as all-in-one or centralized services.
