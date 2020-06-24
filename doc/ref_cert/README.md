@@ -64,7 +64,7 @@ conflicts between all test case dependencies.
 
 It's worth mentioning that current
 [test cases selected by CNTT](./chapter03.md)
-already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
+already leverages [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
 CI/CD components (test scheduler, test results database, artifact repository),
