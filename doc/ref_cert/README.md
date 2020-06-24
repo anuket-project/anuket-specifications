@@ -111,7 +111,7 @@ CNTT requirements about verification, validation, compliance and conformance:
 - [dump all test case results and logs](http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip)
   for third-party conformance review
 
-Here are a couple of playbooks publically available:
+Here are a couple of publicly available playbooks :
 - [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/kali)
 - [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/kali)
 - [CNTT RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/hunter)
