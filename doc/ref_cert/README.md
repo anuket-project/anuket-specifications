@@ -37,7 +37,7 @@ mentioning that dumping all results and logs required for conformance is already
 in place in CIRV (see
 [cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
 Functest daily jobs (see
-[functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console))
+[functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console)).
 
 It should be noted that
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) supports both
