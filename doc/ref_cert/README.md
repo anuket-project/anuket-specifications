@@ -33,7 +33,7 @@ requires for the local deployment of the components instead of leveraging
 the common OPNFV centralized services. But the interfaces remain unchanged
 mainly leveraging jenkins jobs, the common test case execution, the test
 result database and the S3 protocol to publish the artifacts. It's worth
-mentioning that dumping all results and logs required by conformance is already
+mentioning that dumping all results and logs required for conformance is already
 in place in CIRV (see
 [cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
 Functest daily jobs (see
