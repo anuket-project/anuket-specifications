@@ -70,7 +70,7 @@ adoption of CI/CD best practices. By managing all the interactions with the
 CI/CD components (test scheduler, test results database, artifact repository),
 it allows the developer to work only on the test suites without diving into
 CI/CD integration. Even more, it brings the capability to run heterogeneous
-test cases in the same CI toolchains thanks to a few low constraints
+test cases in the same CI toolchains thanks to a few, [quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/), constraints.
 [quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/).
 
 Following the design in use, the Docker containers proposed by the test
