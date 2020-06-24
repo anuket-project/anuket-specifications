@@ -92,7 +92,7 @@ projects:
 
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) leverages the
 common test case execution proposed by Xtesting. Thanks to a simple test case
-list, this tool deploys anywhere plug-and-play
+list, this tool deploys plug-and-play
 [CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
 In addition of this teaching capability needed by the Network Automation
 it supports multiple components such as Jenkins and Gitlab CI (test
