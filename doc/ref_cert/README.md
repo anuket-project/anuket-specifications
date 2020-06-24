@@ -16,7 +16,7 @@ suites.
 ## CNTT RI and RC toolchains
 
 [OPNFV](https://www.opnfv.org/) has built a complete CI/CD toolchain
-continuously deploying and testing NFVI.
+for continuously deploying and testing cloud infrastructure.
 
 As for all OPNFV installer projects,
 [Jenkins](https://build.opnfv.org/ci/view/cntt/) triggers scenario deployments,
