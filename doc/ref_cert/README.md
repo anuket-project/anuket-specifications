@@ -48,7 +48,7 @@ via Functest.
 <a name="testing-integration-requirements"></a>
 ## Test case integration requirements
 
-To reach all goals (verification, compliance and conformance) expected by
+To reach all goals (verification, validation, compliance and conformance) expected by
 CNTT, all test cases must be delivered as
 [Docker containers](https://www.docker.com/) and meet the requirements to
 simplify the CI toolchain setups:
