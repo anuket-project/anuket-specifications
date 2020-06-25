@@ -59,7 +59,7 @@ simplify the CI toolchain setups:
 For their part, the Docker containers simply enforce that the test cases are
 delivered with all runtime dependencies. This prevents lots of manual
 operations when configuring the servers running the test cases and prevents
-conflicts between all test case dependencies.
+conflicts between the test cases due to any dependencies.
 
 It's worth mentioning that current
 [test cases selected by CNTT](./chapter03.md)
