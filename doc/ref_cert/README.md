@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# CNTT Reference Conformance
+# CNTT Reference Conformance (RC) Test Case Integration
 
 All CNTT conformance suites fulfill the following test case integration
 requirements to guarantee a smooth overall integration, the same end user
