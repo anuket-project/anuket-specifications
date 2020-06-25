@@ -25,10 +25,10 @@ runs the OPNFV gating test cases and then publishes all test results in the
 and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
 
-The CNTT verification and conformance processes will leverage existing OPNFV
-testing knowledge (projects) and experience (history) and then will conform
-to the overall toolchain design already in-place. The RC toolchain only
-requires for the local deployment of the components instead of leveraging
+The CNTT verification, validation and conformance processes will leverage
+existing OPNFV testing knowledge (projects) and experience (history) and then
+will conform to the overall toolchain design already in-place. The RC toolchain
+only requires for the local deployment of the components instead of leveraging
 the common OPNFV centralized services. But the interfaces remain unchanged
 mainly leveraging test jobs, the common test case execution, the test
 result database and the S3 protocol to publish the artifacts. It's worth
