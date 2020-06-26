@@ -54,7 +54,25 @@ After the hosts have been provisioned successfully, one can set up host networki
 
 <a name="4.3.2"></a>
 ### 4.3.2 Kubernetes Provisioning
-<Intel BMRA/CNF Testbed>
+
+Early efforts to provision Kubernetes are based on existing tools such [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf), using scripts available on [Github](https://github.com/intel/container-experience-kits), and the CNCF initiative [CNF Testbed](https://github.com/cncf/cnf-testbed).
+
+Requirements are based on the [Reference Architecture 2 (RA-2) specification](../../../ref_arch/kubernetes), with initial focus on hardware and functionality related to CPU and networking. While this will not be sufficient to satisfy all the requirements listed in RA-2, it will serve as a development platform for further feature integration, verification and ideally testing related to the [Reference Conformance 2 (RC-2) specification](../../../ref_cert/RC2).
+
+Before provisioning Kubernetes using BMRA, a set of configuration files will have to be updated with information related to the target hosts, which includes:
+- Host information (IPs for SSH)
+- Cluster information (Master/worker node distribution and datastore)
+- CPU isolation (Kernel)
+- Memory allocation (Hugepages)
+- Network interfaces (PFs/VFs and drivers)
+- Additional Kubernetes features (device plugins, CNIs)
+
+After updating the configuration, BMRA is installed using Ansible playbooks:
+```
+$ ansible-playbook -i inventory.ini playbooks/cluster.yml
+```
+
+Once completed, the cluster is accessible through the `kubectl` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file found in `$HOME/.kube/config`.
 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
