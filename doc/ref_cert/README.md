@@ -100,7 +100,7 @@ such as all-in-one or centralized services.
 
 [Xtesting](https://xtesting.readthedocs.io/en/latest/) and
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) combined meet the
-CNTT requirements about verification, validation, compliance and conformance:
+CNTT requirements about verification, validation, compliance, and conformance:
 - smoothly assemble multiple heterogeneous test cases
 - generate the Jenkins jobs in
   [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
