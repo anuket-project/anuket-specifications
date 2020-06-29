@@ -55,11 +55,11 @@ After the hosts have been provisioned successfully, one can set up host networki
 <a name="4.3.2"></a>
 ### 4.3.2 Kubernetes Provisioning
 
-Early efforts to provision Kubernetes are based on existing tools such [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf), using scripts available on [Github](https://github.com/intel/container-experience-kits), and the CNCF initiative [CNF Testbed](https://github.com/cncf/cnf-testbed).
+For provisioning Kubernetes in the Reference Implementation, existing tools will be used to set up a baseline cluster. The initial goal is to cover at least a subset of the requirements described in the [Reference Architecture 2 (RA-2)](../../../ref_arch/kubernetes), with the possibility of extending the implementation to cover more requirements over time.
 
-Requirements are based on the [Reference Architecture 2 (RA-2) specification](../../../ref_arch/kubernetes), with initial focus on hardware and functionality related to CPU and networking. While this will not be sufficient to satisfy all the requirements listed in RA-2, it will serve as a development platform for further feature integration, verification and ideally testing related to the [Reference Conformance 2 (RC-2) specification](../../../ref_cert/RC2).
+Initial efforts have been looking at the features of different installers, which has been used to select a few open source Kubernetes provisioning tools. Common for these tools is the use of Ansible and Helm to assist with deploying Kubernetes, configuring the host and adding additional features and functionality to the cluster. 
 
-Before provisioning Kubernetes using BMRA, a set of configuration files will have to be updated with information related to the target hosts, which includes:
+Depending on the tool used for provisioning, there are likely configuration parameters that will need to be modified before running the installer:
 - Host information (IPs for SSH)
 - Cluster information (Master/worker node distribution and datastore)
 - CPU isolation (Kernel)
@@ -67,12 +67,20 @@ Before provisioning Kubernetes using BMRA, a set of configuration files will hav
 - Network interfaces (PFs/VFs and drivers)
 - Additional Kubernetes features (device plugins, CNIs)
 
-After updating the configuration, BMRA is installed using Ansible playbooks:
+Once completed, the cluster must be accessible through the `kubectl` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file, usually found in `$HOME/.kube/config` on the master nodes. This file can be copied to the jumphost and referenced through the `KUBECONFIG` environment variable, after which the cluster can be managed through `kubectl` from the jumphost.
+
+While the presentation of resources can depend on the specific features and functionality, a good way to start is to check the node status as follows:
 ```
-$ ansible-playbook -i inventory.ini playbooks/cluster.yml
+kubectl get node <NAME> -o json | jq ".status.allocatable"
 ```
 
-Once completed, the cluster is accessible through the `kubectl` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file found in `$HOME/.kube/config`.
+Resources related to networks are usually handled differently, with the exception of hardware resources which are usually listed under each node. There are two common CNI multiplexers that are both considered for the RI-2, [Multus](https://github.com/intel/multus-cni) and [DANM](https://github.com/nokia/danm). They both provide similar functionlity, but with some differences in how resources are defined, configured and consumed.
+
+For the ongoing proof of concept work related to both RA-2 and RI-2, most of the features specifically aimed at production ready deployments are initially omitted. These features include but are not limited to:
+- High availability
+- Network infrastucture
+- Storage
+- Security
 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
