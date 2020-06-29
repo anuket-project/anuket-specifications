@@ -1,7 +1,7 @@
 ## Table of Contents
-* [Community Guidelines](gov)
-* [Reference Model](ref_model)
-* [Reference Architecture](ref_arch)
-* [Reference Implementation](ref_impl)
-* [Reference Conformance](ref_cert)
-* [Vendor Implementations](ven_impl)
+* [Community Guidelines](gov/README.md)
+* [Reference Model](ref_model/README.md)
+* [Reference Architecture](ref_arch/README.md)
+* [Reference Implementation](ref_impl/README.md)
+* [Reference Conformance](ref_cert/README.md)
+* [Vendor Implementations](ven_impl/README.md)
