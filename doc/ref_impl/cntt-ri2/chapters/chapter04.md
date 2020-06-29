@@ -76,11 +76,13 @@ kubectl get node <NAME> -o json | jq ".status.allocatable"
 
 Resources related to networks are usually handled differently, with the exception of hardware resources which are usually listed under each node. There are two common CNI multiplexers that are both considered for the RI-2, [Multus](https://github.com/intel/multus-cni) and [DANM](https://github.com/nokia/danm). They both provide similar functionlity, but with some differences in how resources are defined, configured and consumed.
 
-For the ongoing proof of concept work related to both RA-2 and RI-2, most of the features specifically aimed at production ready deployments are initially omitted. These features include but are not limited to:
+For the ongoing proof of concept work related to both RA-2 and RI-2, some of the features specifically aimed at production ready deployments are initially omitted. These features are mostly part of the below topics:
 - High availability
 - Network infrastucture
 - Storage
 - Security
+
+As work progresses with the proof of concept it is expected that additional features will be added.
 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
