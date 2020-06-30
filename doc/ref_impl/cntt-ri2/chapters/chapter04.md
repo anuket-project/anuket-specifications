@@ -69,8 +69,9 @@ Depending on the tool used for provisioning, there are likely configuration para
 
 Once completed, the cluster must be accessible through the `kubectl` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file, usually found in `$HOME/.kube/config` on the master nodes. This file can be copied to the jumphost and referenced through the `KUBECONFIG` environment variable, after which the cluster can be managed through `kubectl` from the jumphost.
 
-While the presentation of resources can depend on the specific features and functionality, a good way to start is to check the node status as follows:
+While the presentation of resources can depend on the specific features and functionality, a good way to start is to check the node status for allocatable resources as follows:
 ```
+kubectl get nodes
 kubectl get node <NAME> -o json | jq ".status.allocatable"
 ```
 
