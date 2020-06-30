@@ -1,5 +1,49 @@
 [<< Back](../)
 
+# CNTT Reference Conformance (RC) Requirements and Testing Principles
+
+The objective each RC workstream is to provide an automated mechanism to measure either a network function (NF) or a cloud infrastructure with a standard set of requirements defined by the associated Reference Architecture (RA).  Through this measurement, a provider of either NFs or cloud infrastructure will be able to test their conformance to the RA.  This will ease the integration of NFs into operator environments that host compatible cloud infrastructures, thereby reducing cost, complexity, and time of integration.
+
+The overall program requires the close coordination of the following:
+
+**Requirements** - The agreed upon rules and recommendations to which a compliant NF or cloud infrastructure must adhere. All requirements will be hosted and maintianed in the RA.
+**Tests** - The verification mechanism that determines that a given NF or cloud infrastructure complies with one or more requirements.
+**Conformance Specifications** - The definition of the requirements, tests, and circumstances (test case integration, etc.) that must be met to be deemed conformant.
+
+If there is not clear traceability and strong links between these 3 components, then it becomes difficult to determine if a NF or cloud infrastructure is compliant. With this in mind, below are the set of recommended principles for each of the three components to follow. Adherence to these principles will provide the following:
+
+* Enable clear progress tracking and linkage between independent projects (i.e. know what has and hasn't been covered, and track changes over time)
+* Help users better understand mandatory vs. optional requirements
+* Provide a stable set of point-in-time requirements and tests to achieve conformance.  
+* Reduce ambiguity in testing, requirements, and conformance
+
+
+## Requirement Principles
+* All requirements must be assigned a requirements ID and not be embedded in narrative text.  This is to ensure that readers do not have to infer if a requirement exists and is applicable
+* Requirements must have a unique ID for tracking and reference purposes
+* The requirement ID should include a prefix to delineate the source project
+* Requirements must state the level of compliance (ex: MUST, SHOULD, MAY) per RFC 2119
+* Mandatory requirements must be defined in such a way that they are unambiguously verifiable via automated testing
+* Requirements should be publishable or extractable into a machine readable format such as JSON
+* Requirements should include information about the impact of non-conformance and the rationale for their existence
+
+## Testing Principles
+* Tests must provide a mapping to the requirement being validated
+* Failures should explicitly reference the requirement IDs violated (optionally they can provide a link or text of the requirement)
+* Failures should provide additional content to inform the user where or how the requirement was violated (ex: which file or resource violated the requirement).  Put another way, don’t require the user to read the test to understand what went wrong.
+* Testing tools should allow users to select between validation of mandatory and optional requirements (if validation of optional requirements is supported).
+* Testing tools should support selection of tests based on category or profile.
+* Result reports must clearly delineate violations of mandatory vs. optional requirements
+* Tests must be available to run locally by both CNF and NFVI providers
+* Testing tools must produce machine-readable result formats that can be used as input into the badging program (OVP already defines a format).
+
+## Conformance Specifications
+* Conformance specifications must refer to or define the *versioned* requirements that must be satisfied
+* Conformance specifications must refer to the *versioned* test implementations that must be used to validate the requirements
+* Conformance specifications must define the expected preconditions and environment requirements for any test tooling
+* Conformance specifications must define which tests must be executed in the given testing tools to achieve conformance
+* The conformance specification must provide the mapping between tests and requirements to demonstrate traceability and coverage.
+
 # CNTT Reference Conformance (RC) Test Case Integration
 
 All CNTT conformance suites must fulfill the following test case integration
