@@ -13,10 +13,10 @@ This is the Kubernetes-based Reference Implementation (RI-2)
 
 ## Bundle/Version History
 
-| Bundle.Version | Date | Note
-| --- | --- | --- |
-| 0.0 | 15th May 2020 | First Initial Draft|
-| 1.0-alpha| 25th Sep 2020 | Baraque Release|
+| Bundle.Version    | Date          | Note
+| ---               | ---           | ---                   |
+| 0.0               | 15th May 2020 | First Initial Draft   |
+| 1.0-alpha         | 25th Sep 2020 | Baraque Release       |
 
 
 ## Overall Status

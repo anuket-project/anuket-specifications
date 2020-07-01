@@ -13,12 +13,12 @@ This is Openstack based Reference Architecture (RA-1)
 
 ## Bundle/Version History
 
-| Bundle.Version | Date | Note
-| --- | --- | --- |
-| 1.0 | 20th September 2019 | Botrange Release|
-| 2.0-alpha | 10th January 2020 | Snezka Release|
-| 2.0 | 15th May 2020 | Baldy Release|
-| 3.0| 25th Sep 2020 | Baraque Release|
+| Bundle.Version    | Date                  | Note
+| ---               | ---                   | ---               |
+| 1.0               | 20th September 2019   | Botrange Release  |
+| 2.0-alpha         | 10th January 2020     | Snezka Release    |
+| 2.0               | 15th May 2020         | Baldy Release     |
+| 3.0               | 25th Sep 2020         | Baraque Release   |
 
 ## Overall Status
 

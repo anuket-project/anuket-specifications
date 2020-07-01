@@ -13,11 +13,11 @@ This is the Reference Conformance for OpenStack based infrastructure (RC-1)
 
 ## Bundle/Version History
 
-| Bundle.Version | Date | Note
-| --- | --- | --- |
-| 0.0 | 10th January 2020 | First Initial Draft|
-| 2.0 | 15th May 2020 | Baldy Release|
-| 3.0| 25th Sep 2020 | Baraque Release|
+| Bundle.Version    | Date              | Note
+| ---               | ---               | ---                   |
+| 0.0               | 10th January 2020 | First Initial Draft   |
+| 2.0               | 15th May 2020     | Baldy Release         |
+| 3.0               | 25th Sep 2020     | Baraque Release       |
 
 ## Overall Status
 
