@@ -15,12 +15,12 @@
    * [5.3.4 Server](#5.3.4)
    * [5.3.5 Network device](#5.3.5)
    * [5.3.6 EOR card](#5.3.6)
-   * [5.3.7 Cabling](#5.3.7) 
+   * [5.3.7 Cabling](#5.3.7)
    * [5.3.8 Server model](#5.3.8)
-   * [5.3.9 Network device model](#5.3.9) 
+   * [5.3.9 Network device model](#5.3.9)
 * [5.4 Appendix](#5.4)
    * [5.4.1 HDV Original collection.](#5.4.1)
-   
+
 <a name="5.1"></a>
 ## 5.1 Introduction
 
@@ -31,11 +31,11 @@
 <a name="5.2"></a>
 ## 5.2 Requirements
 As we known, the NFVi software builds upon a set of hardware resources. For the operator(user) having a set of hardware resources, there is an inevitable step to examine it before deployment of the software.
-If there is only limited nodes for lab demonstration or something like this, it's acceptable to do it manually, however it would be a time consuming process especially there are large scale of hardware nodes, for example 1000 node. 
+If there is only limited nodes for lab demonstration or something like this, it's acceptable to do it manually, however it would be a time consuming process especially there are large scale of hardware nodes, for example 1000 node.
 Also,adding the different provider's factor, that's much complicated to validate it and a headache thing if doing it in manual.
 In order to resolve this issue of how to validate hardware efficiently , we call on here to build up a common data model for describing the hardware data, which is extensible to large scale and can be recognized by some automated check tool (Let's call it checker).
 Let's also name it to description file, which is align with the one for software deployment definition already commited in another chapter.
-The description file defines the same information data model accross the hardware vendor provider. 
+The description file defines the same information data model accross the hardware vendor provider.
 At present, in the first release,only the "readable" hardware parameter can be focused, in future release, "writable" parameter might add also.
 Besides, we also collect the common hardware check requiremnt here, most of which are origially from Prague meeting.
 We are expecting that by utilizing the common hardware description file, the check tool will perform all the neccessary hardware check point automatically.
@@ -43,9 +43,9 @@ We believe this is a mutual interest for all operators having such needs.
 
 <a name="5.2.1"></a>
 ### 5.2.1 General
-A Descriptor File defines the configuration required by the checker in a common schema. 
+A Descriptor File defines the configuration required by the checker in a common schema.
 The "checker tool" validates the current hardware against the descriptor file, listing mismatches or differences, as failures, allowing the user to quickly identify and correct any errors in hardware, network wiring, or configuration.
-If failures are detected, the process can be rerun after corrective actions are taken. 
+If failures are detected, the process can be rerun after corrective actions are taken.
 This checking process must be completed before the software stack deployment.
 
 | Ref # | sub-category | Description |
@@ -62,14 +62,14 @@ Till now, following the check point requirements are collected: (#5.4.1)
 
 | Test Type # | Purpose | Example | Check when |
 |----|---------------|-----------|-----------|
-| BIOS Settings | Verifies all applicable BIOS settings per hardware model.| Boot mode/Boot Sequence Retry/AC Power Recovery/Power Setting (balanced / performance)/Virt. Technology/Hyper Threading/Trusted platform module||
+| BIOS Settings | Verifies all applicable BIOS settings per hardware model.| Boot mode/Boot Sequence Retry/AC Power Recovery/Power Setting (balanced / performance)/Virt. Technology/Simultaneous Multithreading/Trusted platform module||
 | Firmware Settings | Verifies all applicable Firmware settings.| BIOS/Storage Array Controller/NIC (e.g.Intel X710)/PXE Enabled Ports||
 | Boot Order | Verifies applicable boot order settings.|First boot, Second boot.||
 | Hardware Health | Queries Intelligent Platform Management Interface (IPMI) is for all hardware components and their health status.| Raid/System Board/CPU temp/Power Supply ||
 | PCI Slot Status & MAC | Which cards are in which slot, which slot is assigned to which CPU, slot type | card(s) in slot/port/PCI partition /Slot speed / type / CPU / Slot assignment ||
 | NIC | Validates that all NICs are in the correct slots, with a healthy status (per IPMI), have correct MAC addresses, and are detecting a cable connection (or not). |Correct LLDP neighbor MAC Addresses.||
 | IPMI Logs | Check for existence of logs.| Physical event logged.  E.g. chassis open on power up.||
-| IPMI Users | Check for existence of user accounts.| Check if IPMI is availabile,if IPMI account is existing, if IPMI default credentials.||
+| IPMI Users | Check for existence of user accounts.| Check if IPMI is available, if IPMI account is existing, if IPMI default credentials.||
 | Hardware Inventory | Inventory of h/w on platform.| CPU and count, NUMA topology, CPU Freq, RAM, speed, size, model, etc.||
 | Physical Disk Configuration | Verifies storage / disk config (type, size)|Physical disk type, card/port location,capacity||
 | SRIOV Port Validation | Verifies global and NIC level enabled.|Confirm setting is enabled (or none)||
@@ -82,7 +82,7 @@ Till now, following the check point requirements are collected: (#5.4.1)
 ## 5.3 Descriptor file definition
 As mentioned at the beginning, the description file is used to define the common hardware data which are used by the checker implementation
 The entry information must be included in the description file,which are the remote access parameter settings.
- 
+
 <a name="5.3.1"></a>
 ### 5.3.1 Resource pool
 Resource pool is the conception which a NFV resource is planned to build up. It consists hardware server device, network device and cabling among them.
@@ -95,7 +95,7 @@ It is referenced by other resource type to introduce later.
 | type | String | Yes | TOCHECK: OTHER |
 
 <p align="center"><b>Table 5-3-1:</b> Resource pool.</p>
- 
+
 <a name="5.3.2"></a>
 ### 5.3.2 NIC template
 NIC Template defines network interface card parameters, it includes the crucial port number on the NIC, which is used as the reference in the cabling data and check.
@@ -137,7 +137,7 @@ There are many ways to validate the hardware by remote interface verifcation, fo
 Considering the amount of server, user can validate the server interface in distributed way or centralized way.
 Distributed validation is to temporally install OS with inband ip configured, which can connect itself remote ip, and invoked the remote(BMC,IPMI) ip and validate the inteface from OS.
 Centralized validation is to invoke and validate the interface from remote access interface.
-This is totally decided by operator theirselves. 
+This is totally decided by operator theirselves.
 For storage type server, centralized way proposed as the amount is less than computational type server.
 For computational type server it's better to choose distributed validation way.
 
