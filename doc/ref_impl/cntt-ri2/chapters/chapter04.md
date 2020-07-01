@@ -55,7 +55,7 @@ After the hosts have been provisioned successfully, one can set up host networki
 <a name="4.3.2"></a>
 ### 4.3.2 Kubernetes Provisioning
 
-For provisioning Kubernetes in the Reference Implementation, existing tools should be used to set up a baseline cluster. The initial goal is to cover at least a subset of the requirements described in the [Reference Architecture 2 (RA-2)](../../../ref_arch/kubernetes), with the possibility of extending the implementation to cover more requirements over time.
+For provisioning Kubernetes in the Reference Implementation, existing open source tools should be used to set up the cluster. The goal is to cover the requirements listed in the [Reference Architecture 2 (RA-2)](../../../ref_arch/kubernetes), but due to the scope this will be done through multiple iterations, starting with a subset of requirements and expanding the deployment over time. 
 
 Initial efforts have been looking at the features of different installers, which has been used to select a few open source Kubernetes provisioning tools for proof of concept deployments. Common for these tools is the use of Ansible and Helm to assist with deploying Kubernetes, configuring the host, and adding additional features and functionality to the cluster. 
 
