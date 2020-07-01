@@ -318,7 +318,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.1"></a>
 ### 2.4.1 General Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
@@ -331,7 +331,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.2"></a>
 ### 2.4.2 Infrastructure Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
 | `req.inf.com.03` | Compute | The Architecture **should** support Symmetric Multiprocessing with shared memory access as well as Simultaneous Multithreading. | |
@@ -353,7 +353,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.3"></a>
 ### 2.4.3 VIM Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|----------------|----------------------|-----------|
 | `req.vim.04` | General | The Architecture **should** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.| |
 | `req.vim.06` | General | The Architecture **should** allow orchestration solutions to be integrated with VIM. |  |
@@ -365,7 +365,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.4"></a>
 ### 2.4.4 Interfaces and APIs Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | `req.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of `req.inf.acc.03` under "Infrastructure Recommendations" |
 
@@ -375,7 +375,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.5"></a>
 ### 2.4.5 Tenant Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 
 <p align="center"><b>Table 2-13:</b> Tenant Recommendations</p>
@@ -384,7 +384,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.6"></a>
 ### 2.4.6 Operations and LCM Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|----------|-------------|-------------|
 | `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple Cloud Infrastructure sites. | |
 | `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. | |
@@ -398,7 +398,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.7"></a>
 ### 2.4.7 Assurance Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|--------|-------------------|----------|
 | `req.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads. | |
 
@@ -412,7 +412,7 @@ The requirements listed in this section are optional, and are not required in or
 
 #### 2.4.8.1. System Hardening
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |-------|------|------|-------|
 | sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  |
 | sec.gen.014 | Hardening | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
@@ -420,34 +420,34 @@ The requirements listed in this section are optional, and are not required in or
 
 ####  2.4.8.2. Platform and Access
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |-------|-------|-------|---------|
 
 
 #### 2.4.8.3. Confidentiality and Integrity
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.ci.002 | Confidentiality/Integrity | The Platform **should** support self-encrypting storage devices |  |
 
 
 #### 2.4.8.4. Workload Security
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.wl.007 | Workload | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
 
 #### 2.4.8.5. Image Security
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 
 
 
 #### 2.4.8.6. Security LCM
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.lcm.004 | LCM | The Cloud Operator **should** support automated templated approved changes; Templated approved changes for automation where available |  |  
 
@@ -457,7 +457,7 @@ The requirements listed in this section are optional, and are not required in or
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.mon.014 | Monitoring | The Monitoring systems **should** not impact IAAS, PAAS, and SAAS SLAs including availability SLAs |  |
 | sec.mon.016 | Monitoring | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing |  |
@@ -466,7 +466,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 #### 2.4.8.8. Compliance with Standards
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---------|---------------|----------------|------------|
 | sec.std.001 | Standards | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)); Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) | |
 | sec.std.002 | Standards | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/).  Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) | |
