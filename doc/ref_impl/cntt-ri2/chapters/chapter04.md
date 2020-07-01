@@ -57,7 +57,7 @@ After the hosts have been provisioned successfully, one can set up host networki
 
 For provisioning Kubernetes in the Reference Implementation, existing tools should be used to set up a baseline cluster. The initial goal is to cover at least a subset of the requirements described in the [Reference Architecture 2 (RA-2)](../../../ref_arch/kubernetes), with the possibility of extending the implementation to cover more requirements over time.
 
-Initial efforts have been looking at the features of different installers, which has been used to select a few open source Kubernetes provisioning tools for proof of concept deployments. Common for these tools is the use of Ansible and Helm to assist with deploying Kubernetes, configuring the host and adding additional features and functionality to the cluster. 
+Initial efforts have been looking at the features of different installers, which has been used to select a few open source Kubernetes provisioning tools for proof of concept deployments. Common for these tools is the use of Ansible and Helm to assist with deploying Kubernetes, configuring the host, and adding additional features and functionality to the cluster. 
 
 Depending on the tool used for provisioning, there are likely configuration parameters that will need to be modified before running the installer:
 - Host information (IPs for SSH)
@@ -75,11 +75,11 @@ kubectl get nodes
 kubectl get node <NAME> -o json | jq ".status.allocatable"
 ```
 
-Resources related to networks are usually handled differently, with the exception of hardware resources which are usually listed under each node. There are two common CNI multiplexers that are both considered for the RI-2, [Multus](https://github.com/intel/multus-cni) and [DANM](https://github.com/nokia/danm). They both provide similar functionlity, but with some differences in how resources are defined, configured and consumed.
+Resources related to networks are usually handled differently, with the exception of hardware resources which are usually listed under each node. There are two common CNI multiplexers that are both considered for the RI-2, [Multus](https://github.com/intel/multus-cni) and [DANM](https://github.com/nokia/danm). They both provide similar functionality, but with some differences in how resources are defined, configured, and consumed.
 
 For the ongoing proof of concept work related to both RA-2 and RI-2, some of the features specifically aimed at production ready deployments are initially omitted. These features are mostly part of the below topics:
 - High availability
-- Network infrastucture
+- Network infrastructure
 - Storage
 - Security
 
