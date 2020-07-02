@@ -410,9 +410,6 @@ This Cloud Infrastructure Profile is intended to be used for both IT workloads a
 #### 4.2.4.2 Network Intensive Profile
 This Cloud Infrastructure Profile is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
 
-#### 4.2.4.3 Edge Profile
-This Cloud Infrastructure Profile is intended to be used for Edge use cases that have special requirements, as FPGA for vRAN use case which required for offloading some RAN functionality.
-
 ##### 4.2.4.2.1 Network Acceleration Extensions
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
 >_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
@@ -426,10 +423,17 @@ Network Intensive Profile can come with Network Acceleration extensions to assis
 
 > _*Need to work with relevant open source communities to create missing interfaces._
 
+
+#### 4.2.4.3 Edge Profile
+This Cloud Infrastructure Profile is intended to be used for Edge use cases that have special requirements, as FPGA for vRAN use case which required for offloading some RAN functionality.
+
+
+
 <!--
 <a name="4.2.4.3"></a>
 #### 4.2.4.3 Compute Intensive Profile
 This NFVI Profile is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This NFVI Profile is intended to be available in local data centers and more towards the Edge of the network.
+
 
 ##### 4.2.4.3.1 Compute Acceleration Extensions
 Compute Intensive Profile can come with compute acceleration extensions to assist workloads/VAs offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
@@ -458,6 +462,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <p align="center"><b>Table 4-18:</b> Virtual NIC Interfaces Options</p>
 
 > _*workloads are expected to use the minimum number of interfaces and adopt Microservice design principles._
+
+
+
 
 -->
 <a name="4.2.5"></a>
