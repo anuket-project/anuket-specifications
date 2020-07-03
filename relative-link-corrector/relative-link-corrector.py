@@ -47,12 +47,16 @@ def relative_link_corrector(app, exception):
     # See also: http://stackoverflow.com/a/33640970/1447225
     target_files = []
     for doc in app.env.found_docs:
-        target_filename = app.builder.get_target_uri(doc)
+        target_filename = "#"
+        try:
+            target_filename = app.builder.get_target_uri(doc)
+        except sphinx.environment.NoUri:
+            continue
         if '#' in target_filename:
             logger.info("Skipping")
             continue
 
-        logger.info("tfn1.1: " + target_filename)
+        logger.info("tfn1: " + target_filename)
         target_filename = os.path.join(app.outdir, target_filename)
         logger.info("tfn2: " + target_filename)
         target_filename = os.path.abspath(target_filename)
