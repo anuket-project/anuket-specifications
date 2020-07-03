@@ -48,8 +48,11 @@ def relative_link_corrector(app, exception):
     target_files = []
     for doc in app.env.found_docs:
         target_filename = app.builder.get_target_uri(doc)
+        logger.info("tfn1: " + target_filename)
         target_filename = os.path.join(app.outdir, target_filename)
+        logger.info("tfn2: " + target_filename)
         target_filename = os.path.abspath(target_filename)
+        logger.info("tfn3: " + target_filename)
         target_files.append(target_filename)
 
     for fn in target_files:
@@ -66,21 +69,6 @@ def relative_link_corrector(app, exception):
         except Exception as exc:
             app.error("Exception raised during HTML tweaking: " + str(exc))
 
-    for fn in target_files:
-        try:
-            with open(fn, mode="rb") as f:
-                soup = bs4.BeautifulSoup(f.read(), "html.parser")
-
-            transform_html(soup)
-            html = soup.prettify(encoding=app.config.html_output_encoding)
-
-            with open(fn, mode='wb') as f:
-                f.write(html)
-
-        except Exception as exc:
-            app.warn("exception raised during HTML tweaking: %s"
-                     % exc, location=os.path.basename(fn))
-    
 def setup(app):
     app.connect('build-finished', relative_link_corrector)
 
