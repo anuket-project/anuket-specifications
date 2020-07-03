@@ -8,6 +8,7 @@
 #from sphinx.locale import _
 #from sphinx.util.docutils import SphinxDirective
 from sphinx.util import logging
+from sphinx.environment import NoUri
 
 import bs4
 import shutil
@@ -50,7 +51,7 @@ def relative_link_corrector(app, exception):
         target_filename = "#"
         try:
             target_filename = app.builder.get_target_uri(doc)
-        except sphinx.environment.NoUri:
+        except NoUri:
             continue
         if '#' in target_filename:
             logger.info("Skipping")
