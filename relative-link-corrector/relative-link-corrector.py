@@ -48,9 +48,10 @@ def relative_link_corrector(app, exception):
     target_files = []
     for doc in app.env.found_docs:
         target_filename = app.builder.get_target_uri(doc)
-        logger.info("tfn1: " + target_filename)
-        target_filename_split = target_filename.split("#")
-        target_filename = target_filename_split[0]
+        if '#' in target_filename:
+            logger.info("Skipping")
+            continue
+
         logger.info("tfn1.1: " + target_filename)
         target_filename = os.path.join(app.outdir, target_filename)
         logger.info("tfn2: " + target_filename)
