@@ -197,7 +197,7 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 | Ref       | Cloud Infrastructure capability | Unit   | Definition/Notes                      |
 |-----------|---------------------------------|--------|---------------------------------------|
-| i.cap.018 | Huge pages support               | Yes/No | Indicates if the Cloud Infrastructure supports huge pages |
+| i.cap.018 | Huge pages                      | Yes/No | Indicates if the Cloud Infrastructure supports huge pages |
 
 <p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of Cloud Infrastructure</p>
 
