@@ -67,11 +67,11 @@ Traceability to Reference Model.
 |----|--------------|---------------------|-----------|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for VM instances. | [RA-1 3.3.1.4 "Cloud Workload Services"](./chapter03.md#3314-cloud-workload-services) |
 | `req.inf.com.04` | Compute | The Architecture **must** be able to support multiple CPU SKU options to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
-| `req.inf.com.05` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapters/chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
+| `req.inf.com.05` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
 | `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning of the vCPUs of VM instance.| [RA-1 4.4.1. "Support for Profiles and T-shirt instance types"](./chapter04.md#441-support-for-profiles-and-t-shirt-instance-types) |
 | `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 3.3.3. "Host aggregates providing resource pooling"](./chapter03.md#333-host-aggregates-providing-resource-pooling) |
-| `req.inf.com.08` | Compute | The Architecture **must** support allocating certain number of host cores/threads to non-tenant workloads such as for OpenStack services. | [Dedicating host core/sibling threads to certain workloads (e.g., OpenStack services](https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set). Please see example, ["Configuring libvirt compute nodes for CPU pinning"](https://docs.openstack.org/nova/latest/admin/cpu-topologies.html) |
-| `req.inf.com.09` | Compute | The Architecture **must** ensure that the host cores/threads assigned to a workload are thread-sibling aware: that is, that a core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | Achieved through configuring the "cpu_dedicated_set" and "cpu_shared_set" parameters in nova.conf correctly. |
+| `req.inf.com.08` | Compute | The Architecture **must** support allocating certain number of host cores for all non-tenant workloads such as for OpenStack services. SMT threads can be allocated to individual OpenStack services or their components. | [Dedicating host cores to certain workloads (e.g., OpenStack services)](https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set). Please see example, ["Configuring libvirt compute nodes for CPU pinning"](https://docs.openstack.org/nova/latest/admin/cpu-topologies.html) |
+| `req.inf.com.09` | Compute | The Architecture **must** ensure that the host cores assigned to non-tenant and tenant workloads are SMT aware: that is, a host core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | Achieved through configuring the "cpu_dedicated_set" and "cpu_shared_set" parameters in nova.conf correctly. |
 | `req.inf.stg.01` | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for VM Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
 | `req.inf.stg.02` | Storage | The Architecture **must** provide Object storage for VM Instances. Operators **may** choose not to implement Object Storage but must be cognizant of the risk of "Compliant VNFs" failing in their environment. | OpenStack Swift Service ([RA-1 4.3.1.4 "Swift"](./chapter04.md#4314-swift)) |
 | `req.inf.stg.03` | Storage | The Architecture **may** provide a file system service (file system storage solution) for VM Instances. | [RA-1 4.2.4. "Storage Backend"](./chapter04.md#424-storage-backend) |
@@ -188,12 +188,12 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|------|------|-------|
-| sec.gen.001 | Hardening | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. |   |
-| sec.gen.002 | Hardening | All systems part of Cloud Infrastructure **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  | 
-| sec.gen.003 | Hardening | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot |  | 
-| sec.gen.004 | Hardening | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened |  | 
-| sec.gen.005 | Hardening | The Platform **must** support Operating System level access control |  | 
-| sec.gen.006 | Hardening | The Platform **must** support Secure logging |  | 
+| sec.gen.001 | Hardening | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
+| sec.gen.002 | Hardening | All systems part of Cloud Infrastructure **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  |
+| sec.gen.003 | Hardening | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot |  |
+| sec.gen.004 | Hardening | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened |  |
+| sec.gen.005 | Hardening | The Platform **must** support Operating System level access control |  |
+| sec.gen.006 | Hardening | The Platform **must** support Secure logging | [RA-1 6.3.2.5 "System Access"](./chapter06.md#6325-system-access) |
 | sec.gen.007 | Hardening | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service |  |
 | sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities |  |
 | sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification |  |
@@ -207,19 +207,19 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|-------|-------|---------|
-| sec.sys.001 | Access | The Platform **must** support authenticated and secure APIs, API endpoints. The Platform **must** implement authenticated and secure access to GUI | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.004 | Access | The Cloud Infrastructure **must** support Secure network channels | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
-| sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity management capabilities | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |  
-| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
-| sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
-| sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
-| sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) | 
-| sec.sys.013 | Access | The Platform **must** provide secrets dynamically as and when needed | [6.3.1 Platform Access](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#631-platform-access) |
+| sec.sys.001 | Access | The Platform **must** support authenticated and secure APIs, API endpoints. The Platform **must** implement authenticated and secure access to GUI | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access)) |
+| sec.sys.004 | Access | The Cloud Infrastructure **must** support Secure network channels | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity management capabilities | [RA-1 6.3.1 "Identity"](./chapter06.md#6311-identity) |
+| sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |  
+| sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.013 | Access | The Platform **must** provide secrets dynamically as and when needed | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 
 #### 2.3.8.3. Confidentiality and Integrity
 
@@ -230,7 +230,7 @@ Traceability to Reference Model.
 | sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
 | sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
 | sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
-| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. Admin access must be carefully regulated  |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) | 
+| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. Admin access must be carefully regulated  |  [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
 | sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation | [6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
 
 
@@ -251,8 +251,8 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.img.001 | Image | Images from untrusted sources **must not** be used |  |
-| sec.img.002 | Image | Images **must** be maintained to be free from known vulnerabilities |  |
+| sec.img.001 | Image | Images from untrusted sources **must not** be used | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
+| sec.img.002 | Image | Images **must** be maintained to be free from known vulnerabilities | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.img.003 | Image | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  |
 | sec.img.004 | Image | Images **must** only be accessible to authorized actors |  |
 | sec.img.005 | Image | Image Registries **must** only be accessible to authorized actors |  |
@@ -282,21 +282,21 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly scanned for events of interest |  |
+| sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly scanned for events of interest | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.002 | Monitoring | Security logs **must** be time synchronised |  |
 | sec.mon.003 | Monitoring | The Platform **must** log all changes to time server source, time, date and time zones |  |
 | sec.mon.004 | Audit | The Platform **must** secure and protect Audit logs (contain sensitive information) both in-transit and at rest |  |
-| sec.mon.005 | Monitoring/Audit | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly |  |
+| sec.mon.005 | Monitoring/Audit | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | [RA-1 6.3.7.2 "What to log, what not to log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
 | sec.mon.006 | Monitoring/Audit | The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions accordingly |  |
 | sec.mon.007 | Monitoring/Audit | The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies |  |
 | sec.mon.008 | Monitoring/Audit | The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures |  |
 | sec.mon.009 | Monitoring/Audit | The Platform **must** Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly |  |
 | sec.mon.010 | Monitoring/Audit | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly |  |
-| sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly |  |
+| sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.012 | Monitoring/Audit | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts |  |
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
 | sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources |  |
-| sec.lcm.017 | Audit | The Platform **must** Audit systems for any missing security patches and take appropriate actions |  |
+| sec.lcm.017 | Audit | The Platform **must** Audit systems for any missing security patches and take appropriate actions | [RA-1 6.3.2.3 "Patches"](./chapter06.md#6323-patches) |
 
 
 #### 2.3.8.8. Compliance with Standards
@@ -318,7 +318,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.1"></a>
 ### 2.4.1 General Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | `req.gen.cnt.01` | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | `req.gen.cnt.02` | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
@@ -331,10 +331,10 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.2"></a>
 ### 2.4.2 Infrastructure Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). | |
-| `req.inf.com.03` | Compute | The Architecture **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. | |
+| `req.inf.com.03` | Compute | The Architecture **should** support Symmetric Multiprocessing with shared memory access as well as Simultaneous Multithreading. | |
 | `req.inf.stg.08` | Storage | The Architecture **should** allow use of externally provided large archival storage for its Backup / Restore / Archival needs. | |
 | `req.inf.stg.09` | Storage | The Architecture **should** make available all non-host OS / Hypervisor / Host systems storage as network-based Block, File or Object Storage for tenant/management consumption. | |
 | `req.inf.ntw.04` | Network | The Architecture **should** support service function chaining. |  |
@@ -353,7 +353,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.3"></a>
 ### 2.4.3 VIM Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|----------------|----------------------|-----------|
 | `req.vim.04` | General | The Architecture **should** support Enhanced Platform Awareness (EPA) only for discovery of infrastructure resource capabilities.| |
 | `req.vim.06` | General | The Architecture **should** allow orchestration solutions to be integrated with VIM. |  |
@@ -365,7 +365,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.4"></a>
 ### 2.4.4 Interfaces and APIs Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | `req.int.acc.02` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of `req.inf.acc.03` under "Infrastructure Recommendations" |
 
@@ -375,7 +375,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.5"></a>
 ### 2.4.5 Tenant Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 
 <p align="center"><b>Table 2-13:</b> Tenant Recommendations</p>
@@ -384,7 +384,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.6"></a>
 ### 2.4.6 Operations and LCM Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|----------|-------------|-------------|
 | `req.lcm.adp.01` | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple Cloud Infrastructure sites. | |
 | `req.lcm.adp.03` | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by `req.lcm.adp.02`. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. | |
@@ -398,7 +398,7 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.7"></a>
 ### 2.4.7 Assurance Recommendations
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |----|--------|-------------------|----------|
 | `req.asr.mon.02` | Monitoring | The Architecture **should** support Network Intelligence capabilities that allow richer diagnostic capabilities which take as input broader set of data across the network and from VNF workloads. | |
 
@@ -412,7 +412,7 @@ The requirements listed in this section are optional, and are not required in or
 
 #### 2.4.8.1. System Hardening
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |-------|------|------|-------|
 | sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  |
 | sec.gen.014 | Hardening | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
@@ -420,34 +420,34 @@ The requirements listed in this section are optional, and are not required in or
 
 ####  2.4.8.2. Platform and Access
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |-------|-------|-------|---------|
 
 
 #### 2.4.8.3. Confidentiality and Integrity
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.ci.002 | Confidentiality/Integrity | The Platform **should** support self-encrypting storage devices |  |
 
 
 #### 2.4.8.4. Workload Security
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.wl.007 | Workload | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
 
 #### 2.4.8.5. Image Security
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 
 
 
 #### 2.4.8.6. Security LCM
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.lcm.004 | LCM | The Cloud Operator **should** support automated templated approved changes; Templated approved changes for automation where available |  |  
 
@@ -457,7 +457,7 @@ The requirements listed in this section are optional, and are not required in or
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.mon.014 | Monitoring | The Monitoring systems **should** not impact IAAS, PAAS, and SAAS SLAs including availability SLAs |  |
 | sec.mon.016 | Monitoring | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing |  |
@@ -466,7 +466,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 #### 2.4.8.8. Compliance with Standards
 
-| Ref # | sub-category | Description |  Traceability |
+| Ref # | sub-category | Description |  Notes |
 |---------|---------------|----------------|------------|
 | sec.std.001 | Standards | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)); Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) | |
 | sec.std.002 | Standards | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/).  Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) | |

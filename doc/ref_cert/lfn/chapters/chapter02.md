@@ -5,7 +5,6 @@
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
-  * [2.1.1 RI and RC CI/CD toolchains](#2.1.1)
 * [2.2 Methodology](#2.2)
 * [2.3 Conformance Strategy & Vehicle](#2.3)
 * [2.4 Profiles Reference](#2.4)
@@ -13,12 +12,11 @@
 * [2.6 Entry & Exit Criteria](#2.6)
 * [2.7 Framework Requirements](#2.7)
   * [2.7.1 Best Practices (General)](#2.7.1)
-  * [2.7.2 Test case integration requirements](#2.7.2)
-  * [2.7.3 Testing](#2.7.3)
-    * [2.7.3.1 Test Categories](#2.7.3.1)
-    * [2.7.3.2 Test Harnessess](#2.7.3.2)
-    * [2.7.3.3 Test Results](#2.7.3.3)
-  * [2.7.4 Badging](#2.7.4)
+  * [2.7.2 Testing](#2.7.2)
+    * [2.7.2.1 Test Categories](#2.7.2.1)
+    * [2.7.2.2 Test Harnessess](#2.7.2.2)
+    * [2.7.2.3 Test Results](#2.7.2.3)
+  * [2.7.3 Badging](#2.7.3)
 * [2.8 NFVI Test Cases Requirements](#2.7)
   * [2.8.1 Generic Requirements](#2.8.1)
   * [2.8.2 Requirement Types](#2.8.2)
@@ -48,39 +46,6 @@ NFVI (Network Functions Virtualization Infrastructure) refers to the physical an
 In the meantime, CNTT RC also provides conformance test for VNF. The intention is to make sure VNF that passes RC test cases can be deployed on any NFVI which also passes RC without any conformance and interoperability issue.
 <!---As such, the performance of a VNF depends on the underlying NFVI over which it is hosted. A certain VNF may perform good in one hardware and may perform worst in another. Thus, a need arises to certify NFVI that can help in onboarding VNFs onto a hardware with an acceptable level of VNF performance. Certain frameworks like [yardstick](https://github.com/opnfv/yardstick), [vsperf](https://github.com/opnfv/vswitchperf) etc. provide a set of tests that can be run on a hardware to obtain Key Performance Indicators (KPIs) which give a measurable output of the NFVI's performance. With these KPIs, a decision can be made on the VNFs that can offer an acceptable level of performance when on-boarded on the NFVI.--->
 
-<a name="2.1.1"></a>
-### 2.1.1 CNTT RI and RC toolchains
-
-[OPNFV](https://www.opnfv.org/) has built a complete CI/CD toolchain
-continuously deploying and testing NFVI.
-
-As for all OPNFV installer projects,
-[Jenkins](https://build.opnfv.org/ci/view/cntt/) triggers scenario deployments,
-runs the OPNFV gating test cases and then publishes all
-test results in the
-[centralized test database](https://docs.opnfv.org/en/stable-hunter/_images/OPNFV_testing_working_group.png)
-and all artifacts (reports, logs, etc.) to
-[an S3 compatible storage service](http://artifacts.opnfv.org/).
-
-The CNTT compliance and conformance processes will leverage on existing OPNFV
-testing knowledge (projects) and experience (history) and then will conform
-to the overall toolchain design already in-place. The RC toolchain only
-requires for the local deployment of the components instead of leveraging on
-the common OPNFV centralized services. But the interfaces remain unchanged
-mainly leveraging on jenkins jobs, the common test case execution, the test
-result DB and the S3 protocol to publish the artifacts. It's worth mentioning
-that dumping all results and logs required by conformance is already in place
-in CIRV (see
-[cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
-Functest daily jobs (see
-[functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console))
-
-It should be noted that
-[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) supports both
-centralized and distributed deployment models as described below. It has
-deployed the full toolchain in one small virtual machine to verify ONAP Openlab
-via Functest.
-
 <a name="2.2"></a>
 ## 2.2 Methodology
 The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. CNTT recommends RA1 to be used as a reference architecture for NFVI conformance. This  would provide a set of standard interfaces to create resources on NFVI. Below step by step process illustrates the NFVI conformance methodology:
@@ -91,7 +56,7 @@ The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastruct
 * KPIs obtained from the SUT are collected and submitted to conformance portal.
 * The SUT KPIs are reviewed and compared with Golden KPIs to determine if the conformance badge is to be provided to SUT or not.
 
-Based on a NFVI passing RC test and getting the conformance badge, VNF conformance test can be further conducted. Such test will leverage existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem. 
+Based on a NFVI passing RC test and getting the conformance badge, VNF conformance test can be further conducted. Such test will leverage existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 <p align="center"><img src="../figures/RC_CertificationMethodology.jpg" alt="conformance Methodology" title="Conformance Methodology" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Conformance Methodology</p>
@@ -223,53 +188,11 @@ The NFVI Conformance framework will be guided by the following core principles:
 -   Add test cases from operators, which operators already tested in their environment
 
 <a name="2.7.2"></a>
-### 2.7.2 Test case integration requirements
-
-To reach all goals (verification, compliance and Conformance) expected by
-CNTT, all test cases must be delivered as
-[Docker containers](https://www.docker.com/) and meet the requirements to
-simplify the CI toolchain setups:
-- the common test case execution
-- the unified way to manage all the interactions with the CI/CD components and
-  with third-parties (e.g. dump all test case logs and results for
-  Conformance)
-
-For their parts, the Docker containers simply enforce that the test cases are
-delivered with all runtime dependencies. Then it prevents lots of manual
-operations when configuring the server running the test cases and prevent
-conflicts between all test case dependencies.
-
-It's worth mentioning that current
-[test cases selected by CNTT]({{ "/doc/ref_cert/lfn/chapters/chapter03.html" | relative_url }})
-already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
-which is a simple framework to assemble sparse test cases and to accelerate the
-adoption of CI/CD best practices. By managing all the interactions with the
-CI/CD components (test scheduler, test results database, artifact repository),
-it allows the developer to work only on the test suites without diving into
-CI/CD integration. Even more, it brings the capability to run heterogeneous
-test cases in the same CI toolchains thanks to a few low constraints
-[quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/).
-
-Following the design in use, the Docker containers proposed by the test
-projects must also embed
-[the Xtesting Python package](https://pypi.org/project/xtesting/) and
-[the related test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
-as required by Xtesting.
-
-Here are the issues tracking the updates of the existing OPNFV test
-projects:
-- Bottlenecks: https://github.com/cntt-n/CNTT/issues/510
-- NFVBench: https://github.com/cntt-n/CNTT/issues/865
-- StorPerf: https://github.com/cntt-n/CNTT/issues/673
-- VSPERF: https://github.com/cntt-n/CNTT/issues/511
-- YardStick: https://github.com/cntt-n/CNTT/issues/509
-
-<a name="2.7.3"></a>
-### 2.7.3 Testing
+### 2.7.2 Testing
 Testing for NFVI Conformance falls under three broad categories - Compliance, Validation and Performance. Target NFVI for Conformance needs to pass all these tests in order to obtain the Conformance badge.
 
-<a name="2.7.3.1"></a>
-#### 2.7.3.1 Test Categories
+<a name="2.7.2.1"></a>
+#### 2.7.2.1 Test Categories
 The following five test categories have been identified as **minimal testing required** to verify NFVI interoperability to satisfy the needs of VNF developer teams.
  1. Baremetal validation: To validate control and compute nodes hardware
  2. VNF Interoperability: After VNFs are on-boarded, Openstack resources like Tenant, Network (L2/L3), CPU Pining, security policies, Affinity anti-affinity roles and flavors etc. would be validated.
@@ -292,8 +215,8 @@ The following **Optional Test Categories** which can be considered by the Operat
  - Fault Recovery Testing
  - PM/KPI/Service Assurance Testing
 
-<a name="2.7.3.2"></a>
-#### 2.7.3.2 Test Harnesses
+<a name="2.7.2.2"></a>
+#### 2.7.2.2 Test Harnesses
 In addition to General Best Practices for NFVI Conformance, the following Quality Engineering (QE) standards will be applied when defining and delivering test scenarios for Conformance:  
 1.  Standardized test methodologies / flows capturing requirements from RA's, goals and scenarios for test execution, and normalizing test results.
 2.  Establishing, and leveraging, working test-beds which can be referenced in subsequent test scenario designs.  
@@ -303,8 +226,8 @@ In addition to General Best Practices for NFVI Conformance, the following Qualit
 6.  Documentation needs to be dynamic, and consumable.
 7.  Harnesses need to apply a “Just add Water” deployment strategy, enabling test teams to readily implement test harnesses which promotes Conformance scalability.
 
-<a name="2.7.3.3"></a>
-#### 2.7.3.3 Test Results
+<a name="2.7.2.3"></a>
+#### 2.7.2.3 Test Results
 
 **Categorization**.  Test suites will be categorized as Functional or Performance based.  
 
@@ -325,8 +248,8 @@ In addition to General Best Practices for NFVI Conformance, the following Qualit
  - Summarized conclusion if conditions warrant test Conformance (see Badging Section).
  - Portal contains links to Conformance badge(s) received.
 
-<a name="2.7.4"></a>
-### 2.7.4 Badging
+<a name="2.7.3"></a>
+### 2.7.3 Badging
 **Defined**.  _Badging_ refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of CNTT NFVI upon demonstration the testing performed confirms:
 
  - NFVI adheres to CNTT RA/RM requirements.
@@ -393,7 +316,7 @@ The compliance and Conformance program intends to validate four different types 
 
 * Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to CNTT/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
 
-The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases](chapter02.8.md#39-nfvi-test-cases).
+The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases Requirements](chapter02.md#28-nfvi-test-cases-requirements).
 
 
 
@@ -672,4 +595,3 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 
 <a name="2.8.7.2"></a>
 #### 2.8.7.2 Resiliency Measurements
-
