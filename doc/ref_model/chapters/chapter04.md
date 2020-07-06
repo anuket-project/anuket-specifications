@@ -32,7 +32,7 @@ The Capability and PM identifiers conform to the following schema:
 
 **a.b.c** (Ex. "e.pm.001")  
 a = Scope <(e)xternal | (i)nternal | (t)hird_party_instrumentation>  
-b = Type <(cap)ability | (pm)>  
+b = Type <(cap)ability | (man)agmenet | (pm) performance | (man-pm)>  
 c = Serial Number  
 
 A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and the next available identifier, globally across all chapters of the RM.
