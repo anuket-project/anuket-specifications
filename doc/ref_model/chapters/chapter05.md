@@ -48,16 +48,16 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 **Table 5-1** and **Table 5-2** depict the features related to virtual compute.
 
-| .conf            | Feature                | Type   | Description                                           |
+| Reference        | Feature                | Type   | Description                                           |
 |------------------|------------------------|--------|-------------------------------------------------------|
 | infra.com.cfg.001 | CPU allocation ratio   | Value  | Number of virtual cores per physical core             |
-| infra.com.cfg.002 | NUMA awareness         | Yes/No | Support of NUMA at the virtualization layer           |
-| infra.com.cfg.003 | CPU pinning capability | Yes/No | Binds a process/vCPU to a physical core or SMT thread |
+| infra.com.cfg.002 | NUMA alignment         | Yes/No | Support of NUMA at the virtualization layer           |
+| infra.com.cfg.003 | CPU pinning            | Yes/No | Binds a process/vCPU to a physical core or SMT thread |
 | infra.com.cfg.004 | Huge Pages             | Yes/No | Ability to manage huge pages of memory                |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
 
-| .conf | Feature | Type  | Description |
+| Reference        | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
 | infra.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |  | |
 
@@ -68,17 +68,17 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 **Table 5-3** and **Table 5-4** depict the features related to virtual storage.
 
-| .conf | Feature | Type  | Description |
+| Reference        | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| infra.stg.cfg.001 | Storage Types | Yes/No   | Support of Storage types described in the catalogue |
-| infra.stg.cfg.002 | Storage Block | Yes/No  | |
-| infra.stg.cfg.003 | Storage with replication | Yes/No | |
-| infra.stg.cfg.004 | Storage with encryption | Yes/No | |
+| infra.stg.cfg.001 | Catalogue Storage Types  | Yes/No   | Support of Storage types described in the catalogue |
+| infra.stg.cfg.002 | Storage Block            | Yes/No   | |
+| infra.stg.cfg.003 | Storage with replication | Yes/No   | |
+| infra.stg.cfg.004 | Storage with encryption  | Yes/No   | |
 
 <p align="center"><b>Table 5-3:</b> Virtual Storage features.</p>
 
-| .conf                | Feature                   | Type   | Description |
-|----------------------|---------------------------|--------|-------------|
+| Reference             | Feature                   | Type   | Description |
+|-----------------------|---------------------------|--------|-------------|
 | infra.stg.acc.cfg.001 | Storage IOPS oriented     | Yes/No |             |
 | infra.stg.acc.cfg.002 | Storage capacity oriented | Yes/No |             |
 
@@ -89,19 +89,19 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 **Table 5-5** and **Table 5-6** depict the features related to virtual networking.
 
-| .conf            | Feature                   | Type              | Description                                                                                                                                                                                                                                            |
+| Reference        | Feature                   | Type              | Description                                                                                                                                                                                                                                            |
 |------------------|---------------------------|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| infra.net.cfg.001 | vNIC interface            | IO virtualisation | e.g. virtio1.1                                                                                                                                                                                                                                         |
+| infra.net.cfg.001 | Connection Point interface | IO virtualisation | e.g. virtio1.1                                                                                                                                                                                                                                         |
 | infra.net.cfg.002 | Overlay protocol          | Protocols         | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.                                                                                                     |
 | infra.net.cfg.003 | NAT                       | Yes/No            | Support of Network Address Translation                                                                                                                                                                                                                 |
 | infra.net.cfg.004 | Security Groups           | Yes/No            | Set of rules managing incoming and outgoing network traffic                                                                                                                                                                                            |
-| infra.net.cfg.005 | SFC                       | Yes/No            | Support of Service Function Chaining                                                                                                                                                                                                                   |
+| infra.net.cfg.005 | Service Function Chaining | Yes/No            | Support of Service Function Chaining (SFC)                                                                                                                                                                                                                  |
 | infra.net.cfg.006 | Traffic patterns symmetry | Yes/No            | Traffic patterns should be optimal, in terms of packet flow. North-south traffic shall not be concentrated in specific elements in the architecture, making those critical choke-points, unless strictly necessary (i.e. when NAT 1:many is required). |
 
 <p align="center"><b>Table 5-5:</b> Virtual Networking features.</p>
 
-| .conf                | Feature                       | Type                       | Description               |
-|----------------------|-------------------------------|----------------------------|---------------------------|
+| Reference             | Feature                       | Type                       | Description               |
+|-----------------------|-------------------------------|----------------------------|---------------------------|
 | infra.net.acc.cfg.001 | vSwitch optimisation          | Yes/No and SW Optimisation | e.g. DPDK.                |
 | infra.net.acc.cfg.002 | Support of HW offload         | Yes/No                     | e.g. support of SmartNic. |
 | infra.net.acc.cfg.003 | Crypto acceleration           | Yes/No                     |                           |
@@ -118,8 +118,8 @@ Please see the [RM Security Chapter](./chapter07.md) and, in particular, the [Co
 
 This section details the services that may be made available to workloads by the Cloud Infrastructure.  
 
-| .conf            | Feature        | Type   | Description                                |
-|------------------|----------------|--------|--------------------------------------------|
+| Reference         | Feature        | Type   | Description                                |
+|-------------------|----------------|--------|--------------------------------------------|
 | infra.svc.stg.001 | Object Storage | Yes/No | Object Storage Service (e.g S3-compatible) |
 
 <p align="center"><b>Table 5-7:</b>Table 5-7: Cloud Infrastructure Platform services.</p>
@@ -140,11 +140,11 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-8** depicts the features and configurations related to virtual compute for the 2 types of Cloud Infrastructure Profiles.
 
-| .conf             | Feature                | Type   | Basic | Network Intensive | Notes |
+| Reference         | Feature                | Type   | Basic | Network Intensive | Notes |
 |-------------------|------------------------|--------|-------|-------------------|-------|
 | infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               |_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
-| infra.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 |       |
-| infra.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 |       |
+| infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |       |
+| infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |       |
 | infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
 
 <!--
@@ -161,8 +161,8 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 
 **Table 5-9** will gather virtual compute acceleration features. It will be filled over time.
 
-| .conf                | Feature                            | Type | Basic | Network Intensive |
-|----------------------|------------------------------------|------|-------|-------------------|
+| Reference             | Feature                            | Type | Basic | Network Intensive |
+|-----------------------|------------------------------------|------|-------|-------------------|
 | infra.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |      |       |                   |
 
 <p align="center"><b>Table 5-9:</b> Virtual Compute Acceleration features.</p>
@@ -180,8 +180,8 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 | infra.stg.cfg.004 | Storage with encryption |Yes/No | Y | Y | Y |
 -->
 
-| .conf            | Feature                  | Type   | Basic | Network Intensive |
-|------------------|--------------------------|--------|-------|-------------------|
+| Reference         | Feature                  | Type   | Basic | Network Intensive |
+|-------------------|--------------------------|--------|-------|-------------------|
 | infra.stg.cfg.001 | Catalogue storage Types  | Yes/No | Y     | Y                 |
 | infra.stg.cfg.002 | Storage Block            | Yes/No | Y     | Y                 |
 | infra.stg.cfg.003 | Storage with replication | Yes/No | N     | Y                 |
@@ -197,8 +197,8 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 | infra.stg.acc.cfg.002 | Storage capacity oriented |  Yes/No| N | N | Y |
 -->
 
-| .conf                | Feature                   | Type   | Basic | Network Intensive |
-|----------------------|---------------------------|--------|-------|-------------------|
+| Reference             | Feature                   | Type   | Basic | Network Intensive |
+|-----------------------|---------------------------|--------|-------|-------------------|
 | infra.stg.acc.cfg.001 | Storage IOPS oriented     | Yes/No | N     | Y                 |
 | infra.stg.acc.cfg.002 | Storage capacity oriented | Yes/No | N     | N                 |
 
@@ -219,13 +219,13 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 | infra.net.cfg.006 | Traffic patterns symmetry | Yes/No  | Y | Y | Y |
 -->
 
-| .conf            | Feature                   | Type              | Basic                          | Network Intensive |
-|------------------|---------------------------|-------------------|--------------------------------|-------------------|
-| infra.net.cfg.001 | vNIC interface            | IO virtualisation | virtio1.1                      | virtio1.1*        |
+| Reference         | Feature                   | Type              | Basic                           | Network Intensive |
+|-------------------|-----------------------------|-------------------|-------------------------------|-------------------|
+| infra.net.cfg.001 | Connection Point interface | IO virtualisation | virtio1.1                     | virtio1.1*        |
 | infra.net.cfg.002 | Overlay protocol          | Protocols         | VXLAN, MPLSoUDP, GENEVE, other |                   |
 | infra.net.cfg.003 | NAT                       | Yes/No            | Y                              | Y                 |
 | infra.net.cfg.004 | Security Group            | Yes/No            | Y                              | Y                 |
-| infra.net.cfg.005 | SFC support               | Yes/No            | N                              | Y                 |
+| infra.net.cfg.005 | Service Function Chaining | Yes/No            | N                              | Y                 |
 | infra.net.cfg.006 | Traffic patterns symmetry | Yes/No            | Y                              | Y                 |
 
 *[Workload Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
@@ -240,8 +240,8 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No | N  | Y | Y |
 -->
 
-| .conf                | Feature                       | Type                       | Basic | Network Intensive      |
-|----------------------|-------------------------------|----------------------------|-------|------------------------|
+| Reference             | Feature                       | Type                       | Basic | Network Intensive      |
+|-----------------------|-------------------------------|----------------------------|-------|------------------------|
 | infra.net.acc.cfg.001 | vSwitch optimisation          | Yes/No and SW Optimisation | N     | Y, DPDK                |
 | infra.net.acc.cfg.002 | Support of HW offload         | Yes/No                     | N     | Y, support of SmartNic |
 | infra.net.acc.cfg.003 | Crypto acceleration           | Yes/No                     | N     | Y                      |
@@ -315,9 +315,9 @@ The configurations specified in here will be used in specifying the actual hardw
 
 | Reference           | Feature                                             | Description                                                        | Basic Type | Network Intensive |
 |---------------------|-----------------------------------------------------|--------------------------------------------------------------------|------------|-------------------|
-| infra.hw.cpu.cfg.001 | Number of CPU (Sockets)                             | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
-| infra.hw.cpu.cfg.002 | Number of Cores per CPU                             | This determines the number of cores needed per CPU.                | 20         | 20                |
-| infra.hw.cpu.cfg.003 | NUMA                                                | NUMA support and BIOS configured to enable NUMA                    | N          | Y                 |
+| infra.hw.cpu.cfg.001 | Minimum Number of CPU (Sockets)  | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
+| infra.hw.cpu.cfg.002 | Minimum Number of Cores per CPU  | This determines the number of cores needed per CPU.                | 20         | 20                |
+| infra.hw.cpu.cfg.003 | NUMA alignment                    | NUMA support and BIOS configured to enable NUMA                    | N          | Y                 |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
 
 <!--
@@ -433,9 +433,9 @@ The configurations specified in here will be used in specifying the actual hardw
 
 | Reference           | Feature                    | Description                                                          | Basic Type | Network Intensive |
 |---------------------|----------------------------|----------------------------------------------------------------------|------------|-------------------|
-| infra.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto                                                        | N          | Optional          |
-| infra.hw.nac.cfg.002 | SmartNIC                   | A SmartNIC that is used to offload network functionality to hardware | N          | Optional          |
-| infra.hw.nac.cfg.003 | Compression                |                                                                      |            |                   |
+| infra.hw.nac.cfg.001 | Crypto Acceleration | IPSec, Crypto                                                        | N          | Optional          |
+| infra.hw.nac.cfg.002 | SmartNIC            | A SmartNIC that is used to offload network functionality to hardware | N          | Optional          |
+| infra.hw.nac.cfg.003 | Compression         |                                                                      |            | Optional          |
 
 <!--
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
