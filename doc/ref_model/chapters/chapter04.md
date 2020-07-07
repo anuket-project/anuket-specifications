@@ -512,7 +512,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <a name="4.2.6"></a>
 ### 4.2.6 Cloud Infrastructure Profile Performance Measurement Mapping
 
-_**Comment:** To be worked on._
+_**Comment:** For further study_
 
 <a name="4.2.7"></a>
 ### 4.2.7 One stop shop
