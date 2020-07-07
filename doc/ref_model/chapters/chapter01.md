@@ -41,7 +41,7 @@ The document starts from the abstract and as it progresses it increasingly gets 
 
 <a name="1.2"></a>
 ## 1.2 Scope
-This document focuses on the documenting the higher level concepts that are needed to identify **Reference Model**. **Figure 1-1** below highlights its scope in more details.
+This **Reference Model** document focuses on identifying the abstractions, and associated concepts, that are needed to represent the cloud infrastructure. **Figure 1-1** below highlights its scope in more details.
 
 <p align="center"><img src="../figures/ch01_scope.png" alt="scope" title="Scope" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b> Scope of Reference Model</p>
