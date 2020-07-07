@@ -56,7 +56,7 @@ This document specifies:
   - **Cloud Infrastructure hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined cloud infrastructure software profiles & configurations.
 
 - Conformance and verification
-  - **Conformance programs**: This defines the requirements for certification and validation programs for both workloads and cloud infrastructure.
+  - **Conformance programs**: These define the requirements for verification and validation programs for both the cloud infrastructure and workloads.
   - **Test framework**: Provide test suites to allow conformance, certification, and verification of workloads and cloud infrastructure against the defined set of profiles.
 
 <a name="1.3"></a>
