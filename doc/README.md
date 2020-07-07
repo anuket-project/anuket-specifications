@@ -1,9 +1,7 @@
 # Cloud iNfrastructure Telco Task Force (CNTT)
 
 ## Table of Contents
-
-* [Cloud iNfrastructure Telco Taskforce](#)
-  * [Governance & Community Guidelines](gov)
+* [Governance & Community Guidelines](gov)
   * [Term of Reference](../GSMA_CNTT_Terms_of_Reference.pdf)
   * [Code of Conduct](../CODE_OF_CONDUCT.md)
   * [The License (Creative Commons Attribution 4.0 International)](https://creativecommons.org/licenses/by/4.0/legalcode)
