@@ -132,5 +132,5 @@ the network settings:
 
 <a name="available-cr"></a>
 ## Available Programs
-* [RC1 - LFN Based](lfn)
+* [RC1 - Openstack Based](lfn)
 * [RC2 - Kubernetes Based](RC2)
