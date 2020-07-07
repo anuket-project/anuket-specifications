@@ -47,7 +47,7 @@ OPNFV has developed many test cases in the different
 [OPNFV test projects](https://wiki.opnfv.org/display/testing/TestPerf) which
 can quickly improve RC. As highlighted in OPNFV Marketing Goals for 2020 and
 listed in
-[RC Test case integration requirements]({{ "/doc/ref_cert/lfn/chapters/chapter02.html" | relative_url }}),
+[RC Test case integration requirements](chapter02.md),
 porting all the existing testcases to Xtesting will unify the test case
 execution and simplify the test integration as required by RC. Here are all the
 related issues:
@@ -70,8 +70,8 @@ OPNFV projects to improve RC:
 
 As proposed in [port VTP test cases to Xtesting](https://github.com/cntt-n/CNTT/issues/917),
 VTP selected in
-[VNF E2E C&V Framework ]({{ "/doc/ref_cert/lfn/chapters/chapter05.html" | relative_url }})
+[VNF E2E C&V Framework ](chapter05.md)
 requires small adaptations to fully fulfill the current
-[RC Test case integration requirements]({{ "/doc/ref_cert/lfn/chapters/chapter02.html" | relative_url }}).
+[RC Test case integration requirements](chapter02.md).
 It seems trivial changes as VTP proposed a REST API but will ensure that both
 NFVI and VNF testing can be executed in the same CI toolchain very easily.

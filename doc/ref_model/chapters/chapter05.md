@@ -111,7 +111,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 <a name="5.1.4"></a>
 ### 5.1.4 Security
-_**Comment:** To be worked on._
+Please see the [RM Security Chapter](./chapter07.md) and, in particular, the [Consolidated Requirements](./chapter07.md#711-consolidated-security-requirements) section.
 
 <a name="5.1.5"></a>
 ### 5.1.5 Platform Services
@@ -122,8 +122,13 @@ This section details the services that may be made available to workloads by the
 |------------------|----------------|--------|--------------------------------------------|
 | infra.svc.stg.001 | Object Storage | Yes/No | Object Storage Service (e.g S3-compatible) |
 
-<p align="center"><b>Table 5-7:</b> Virtual Networking Acceleration features.</p>
+<p align="center"><b>Table 5-7:</b>Table 5-7: Cloud Infrastructure Platform services.</p>
 
+| Minimum requirements | Example                                    |
+|----------------------|--------------------------------------------|
+|Database as a service | Cassandra                                  |
+|Queue                 | Rabbit MQ                                  |
+|LB and HA Proxy       |                                            |
 
 <a name="5.2"></a>
 ## 5.2 Cloud Infrastructure Software Profiles features and requirements
@@ -135,22 +140,24 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-8** depicts the features and configurations related to virtual compute for the 2 types of Cloud Infrastructure Profiles.
 
-| .conf            | Feature                | Type   | Basic | Network Intensive |
-|------------------|------------------------|--------|-------|-------------------|
-| infra.com.cfg.001 | CPU allocation ratio   | value  | 4:1   | 1:1               |
-| infra.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 |
-| infra.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 |
-| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |
+| .conf             | Feature                | Type   | Basic | Network Intensive | Notes |
+|-------------------|------------------------|--------|-------|-------------------|-------|
+| infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               |_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
+| infra.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 |       |
+| infra.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 |       |
+| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
 
 <!--
-| .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
-|------------------|----------------|----------------|----------------|----------------|----------------|
-| infra.com.cfg.001 | CPU allocation ratio  | value | 4:1 | 1:1  | 1:1 |
-| infra.com.cfg.002 | NUMA awareness | Yes/No  | N | Y | Y |
-| infra.com.cfg.003 | CPU pinning capability | Yes/No  | N | Y | Y |
-| infra.com.cfg.004 | Huge Pages  | Yes/No  | N | Y | Y |
+| .conf             | Feature                | Type   | Basic | Network Intensive | Compute Intensive | Notes |
+|-------------------|------------------------|--------|-------|-------------------|-------------------|-------|
+| infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               | 1:1               |_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
+| infra.com.cfg.002 | NUMA awareness         | Yes/No | N     | Y                 | Y                 |       |
+| infra.com.cfg.003 | CPU pinning capability | Yes/No | N     | Y                 | Y                 |       |
+| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 | Y                 |       |
 -->
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
+
+Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking, certification, and deployment.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to these workloads.
 
 **Table 5-9** will gather virtual compute acceleration features. It will be filled over time.
 
@@ -276,14 +283,14 @@ The host profile and capabilities include:
 1. **# of cores/CPU**: is the number of cores on each of the CPUs of the physical server.
 1. **RAM (GB)**: is the amount of RAM installed on the pysical server.
 1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
-1. **SMT/HT (SMT: Simultaneous Multithreading/ HT: Hyper Threading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
+1. **SMT (Simultaneous Multithreading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized workloads. Configured in the host.
 1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to enable SR-IOV.
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
 1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
 1. **Security features**: such as TRusted Platform Module (TPM).
 
-<!--1. **CPU Oversubscription Ratio**: is based on the number of threads available. For example, on a 2CPU, 24-core host with SMT/HT, there are 96 vCPUs with 1:1 CPU Ratio and 192 vCPUs with 2:1 CPU Ratio. NOTE: While the oversubscription ratio is specified in the Virtual Infrastructure MAnager (VIM), once assigned it becomes part of the host personality and hence will be treated as part of the host profile and capabilities. -->
+<!--1. **CPU Oversubscription Ratio**: is based on the number of threads available. For example, on a 2CPU, 24-core host with SMT, there are 96 vCPUs with 1:1 CPU Ratio and 192 vCPUs with 2:1 CPU Ratio. NOTE: While the oversubscription ratio is specified in the Virtual Infrastructure MAnager (VIM), once assigned it becomes part of the host personality and hence will be treated as part of the host profile and capabilities. -->
 <!--1. **DPDK (Data Plane Development Kit)**: Accelerated virtual switch using Data Plan Development Kit (DPDK) -->
 <!--1. **CPU Pinning**: vCPU is pinned to a physical core and dedicated to the requesting VM. Configured in VIM and Hypervisor.-->
 <!--1. **Huge Pages**: By default, CPUs allocate RAM in 4K chunks. Huge Pages can be enabled to allocate in larger Chunks (such as 2MB, 1GB). This helps improve performance in some cases. Configured in the Operating System. -->
@@ -309,9 +316,9 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference           | Feature                                             | Description                                                        | Basic Type | Network Intensive |
 |---------------------|-----------------------------------------------------|--------------------------------------------------------------------|------------|-------------------|
 | infra.hw.cpu.cfg.001 | Number of CPU (Sockets)                             | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
-| infra.hw.cpu.cfg.002 | Number of Cores per CPU                             | This determines the number of cores needed per each CPU.           | 20         | 20                |
+| infra.hw.cpu.cfg.002 | Number of Cores per CPU                             | This determines the number of cores needed per CPU.                | 20         | 20                |
 | infra.hw.cpu.cfg.003 | NUMA                                                | NUMA support and BIOS configured to enable NUMA                    | N          | Y                 |
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
 
 <!--
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
@@ -319,7 +326,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | infra.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets within each host | 2| 2| 2 |
 | infra.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
 | infra.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y| Y |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y| Y |
 -->
 
 <!--

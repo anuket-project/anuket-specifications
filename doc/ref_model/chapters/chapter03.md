@@ -3,14 +3,15 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="bogo" title="Bogo Meter" width="35%"/></p>
 
 ## Table of Contents
-* [3.1 Model.](#3.1)
-* [3.2 Virtual Resources.](#3.2)
-  * [3.2.1 Tenant.](#3.2.1)
-  * [3.2.2 Compute.](#3.2.2)
-  * [3.2.3 Storage.](#3.2.3)
-  * [3.2.4 Network.](#3.2.4)
-* [3.3 NFVI Management Software.](#3.3)
-* [3.4 Physical Resources.](#3.4)
+* [3.1 Model](#3.1)
+* [3.2 Virtual Resources](#3.2)
+  * [3.2.1 Tenant](#3.2.1)
+  * [3.2.2 Compute](#3.2.2)
+  * [3.2.3 Storage](#3.2.3)
+  * [3.2.4 Availability Zone](#3.2.4)
+* [3.3 NFVI Management Software](#3.3)
+* [3.4 Physical Resources](#3.4)
+* [3.5 Network](#3.5)
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of the workloads match the capabilities of the NFVI.
 
@@ -49,7 +50,7 @@ The functionalities of each layer are as follows:
 <a name="3.2"></a>
 ## 3.2 Virtual Resources
 
-The virtual infrastructure resources provided by the NFVI can be grouped into four categories as shown in the diagram below:
+The virtual infrastructure resources provided by the Cloud Infrastructure can be grouped into four categories as shown in the diagram below:
 
 <p align="center"><img src="../figures/ch03-model-virtual-resources.png" alt="NFVI Virtual Infrastructure Resources" Title="NFVI Virtual Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
@@ -74,11 +75,11 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 | `type`     | type of tenant (e.g. OpenStack tenant, Kubernetes cluster, …)                                           |
 | `vcpus`    | max. number of virtual CPUs                                                                             |
 | `ram`      | max. size of random access memory in GB                                                                 |
-| `disc`     | max. size of ephemeral disc in GB                                                                       |
+| `disk`     | max. size of ephemeral disk in GB                                                                       |
 | `networks` | description of external networks required for inter-domain connectivity                                 |
 | `metadata` | key/value pairs for selection of the appropriate physical context (e.g. location, availability zone, …) |
 
-<p align="center"><b>Table 3-1:</b> Attributes of a tenant.</p>
+<p align="center"><b>Table 3-1:</b> Attributes of a tenant</p>
 
 <a name="3.2.2"></a>
 ### 3.2.2 Compute
@@ -96,7 +97,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology      |
 | `metadata`     | key/value pairs for selection of the appropriate redundancy domain            |
 
-<p align="center"><b>Table 3-2:</b> Attributes of compute resources.</p>
+<p align="center"><b>Table 3-2:</b> Attributes of compute resources</p>
 
 <a name="3.2.3"></a>
 ### 3.2.3 Storage
@@ -112,28 +113,27 @@ _**Example**: an OpenStack cinder volume._
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
 | `metadata`     | key/value pairs for selection of the appropriate redundancy domain       |
 
-<p align="center"><b>Table 3-3:</b> Attributes of storage resources.</p>
+<p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
 _**Comments**: we need to be more specific regarding acceleration and metadata._
 
+
 <a name="3.2.4"></a>
-### 3.2.4 Network
-A layer 2 / layer 3 communication domain within a tenant. A network requires a tenant context.
+### 3.2.4 Availability Zone
+An Availability Zone is a logical pool of physical resources (e.g. compute, block storage, network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
 
-_**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
+As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
 
-| Attribute      | Description                                                              |
-|----------------|--------------------------------------------------------------------------|
-| `name`         | name of the network resource                                             |
-| `subnet`       | network address of the subnet                                            |
-| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
+| Attribute | Description |
+| --- | --- |
+| `name` | name of the availability zone |
 
-<p align="center"><b>Table 3-4:</b> Attributes of network resources.</p>
+<p align="center"><b>Table 3-4:</b> Attributes of availability zones</p>
 
 <a name="3.3"></a>
 ## 3.3 NFVI Management Software
 
-Network Function Virtualisation Infrastructure provides the capability to manage virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
+Network Function Virtualisation Infrastructure provides the capability to manage physical and virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
@@ -161,7 +161,7 @@ Network Function Virtualisation Infrastructure provides the capability to manage
 :  monitors and collects information on all events and the current state of all physical and virtual resources
 
 **Additional Management Functions**
-: include identity management, policy management (e.g. to enforce security policies), etc.
+: include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 **Compute Resources Manager**
 : provides a mechanism to provision virtual resources with the help of physical compute resources
@@ -179,3 +179,33 @@ The physical compute, storage and network resources serve as the foundation of t
 
 <p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> NFVI Physical Resources</p>
+
+<a name="3.5"></a>
+## 3.5 Network
+Networking, alongside Compute and Storage, is an integral part of the Cloud Infrastructure (Network Function Virtualisation Infrastructure). The general function of networking in this context is to provide the connectivity between various virtual and physical resources required for the delivery of a network service. Such connectivity may manifest itself as a virtualised network between VMs and/or containers (e.g. overlay networks managed by SDN controllers, and/or programmable network fabrics) or as an integration into the infrastructure hardware level for offloading some of the network service functionality.
+
+Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual resources (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Figure 3-1. The importance of understanding the separation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
+
+Principles that should be followed during the development and definition of the networking scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
+
+• Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
+
+> **Note:**  In deployment phases this principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementations of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
+
+•Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+    Control, User and Management traffic types
+    Acceleration technologies supporting multiple types of infrastructure deployments and network function workloads
+    
+•Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workload onboarding.
+
+•Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components (e.g. SDN controllers).
+
+•Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
+
+•Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments.
+
+•Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
+
+•Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
+
+•Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.

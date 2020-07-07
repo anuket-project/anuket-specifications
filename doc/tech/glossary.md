@@ -8,7 +8,7 @@
   * [1.2 Hardware layers terminology](#1.2)
   * [1.3 Operational and administrative terminology](#1.3)
   * [1.4 Container Related Terminology](#1.4)
-  * [1.5 OpenStack Related Terminology](#1.5) 
+  * [1.5 OpenStack Related Terminology](#1.5)
   * [1.6 Cloud Platform Abstraction Related Terminology](#1.6)
   * [1.7 Other terminology](#1.7)
 
@@ -23,7 +23,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Network Function Virtualisation (NFV)**: The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 - **Network Function Virtualisation Infrastructure (NFVI)**: The totality of all hardware and software components used to build the environment in which a set of VAs are deployed (also referred to as cloud infrastructure).
  >_*Note:*_ The NFVI can span across many locations, e.g. places where data centres or edge nodes are operated. The network providing connectivity between these locations is regarded to be part of the cloud infrastructure. **NFVI** and **VNF** are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
-- **Cloud Infrastructure**: A generic term covering **NFVI** and **CaaS** capabilities - essentially the infrastructure on which a **Workload** can be executed.
+- **Cloud Infrastructure**: A generic term covering **NFVI**, **IaaS** and **CaaS** capabilities - essentially the infrastructure on which a **Workload** can be executed.
+>_*Note:*_ **NFVI**, **IaaS** and **CaaS** layers can be built on top of each other. In case of CaaS some cloud infrastructure features (e.g.: HW management or multitenancy) are implemented by using an underlaying **IaaS** layer.
 - **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
   - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Cloud Native NF**.
 - **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
@@ -61,7 +62,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Cloud Infrastructure Hardware Profile**: defines the behaviour, capabilities and metrics provided by an cloud infrastructure Hardware Layer.
   - **Host Profile**: is another term for a **cloud infrastructure hardware profile**.
 - **Cloud Infrastructure Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **Cloud Infrastructure** HW deployment.
-- **Simultaneous Multi-threading**: Simultaneous multithreading (SMT) is a technique for improving the overall efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution to better utilise the resources provided by modern processor architectures.
+- **Simultaneous Multithreading**: Simultaneous multithreading (SMT) is a technique for improving the overall efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution on a single [Core](#Core) to better utilise the resources provided by modern processor architectures.
 
 
 <a name="1.3"></a>
@@ -114,7 +115,8 @@ Terms not defined by Kubernetes:
 
 >_*Note:*_ The official [OpenStack Glossary]( https://docs.openstack.org/image-guide/common/glossary.html) is an extensive list of OpenStack-related concepts. Some additional terms used in the Reference Architecture RA-1 or used to relate RA-1 terms with terms defined elsewhere.
 
-**Core (physical)** is an independent computer processing unit (pcpu) that can independently execute CPU instructions but is integrated with other cores on a multiprocessor chip (integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
+<a name="Core"></a>
+**Core (physical)** is an independent computer processing unit that can independently execute CPU instructions and is integrated with other cores on a multiprocessor (chip, integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
 
 **Flavor Capabilities** such as (CPU Pinning, NUMA, huge pages): CNTT NFVI Profile
 
@@ -156,5 +158,6 @@ Terms not defined by Kubernetes:
 
 - **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance.
 
-- PVP: Physical-Virtual-Physical; PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
+- **PVP: Physical-Virtual-Physical:** PVP represents a workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf).
 
+- **Carrier Grade:** Carrier grade refers to network functions and infrastructure that are characterised by all or some of the following attributes: High reliability allowing near 100% uptime, typically measured as better than “five nines”; Quality of Service (QoS) allowing prioritization of traffic; High Performance optimized for low latency/packet loss, and high bandwidth; Scalability to handle demand growth by adding virtual and/or physical resources; Security to be able to withstand natural and man-made attacks.

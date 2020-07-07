@@ -47,7 +47,7 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 
 | Ref #            | sub-category | Description                                                                              |
 |------------------|--------------|------------------------------------------------------------------------------------------|
-| `req.gen.ins.01` | Installer    | Installer **must** accept a descriptor file to finish deployment.                        |
+| `req.gen.ins.01` | Installer    | Installer **may** accept a descriptor file to finish deployment.                        |
 | `req.gen.ins.02` | Installer    | Installer implementation **must** validate the descriptor file with schema.              |
 | `req.gen.ins.03` | Installer    | Any existing installer implementation **may** need adaption for the descriptor file.     |
 | `req.gen.ins.04` | Installer    | Installer **may** support reporting the deployment progress status.                      |
@@ -303,13 +303,13 @@ Proxy information, this section could be empty if not needed.
 
 <a name="6.4.1"></a>
 ### 6.4.1 Hardware validation
-User need check the BIOS setting, raid configuration, PXE boot order, boot mode, disk capacity for each server.
-User need check CPU, memory setting which can meet deployment requirements.
-User need validate the remote management(IPMI,ILO,BMC) accessibility.
-User need validate NIC quantity and configuration which can match the requirements.
+Before the installation, the user has to check if each server meets the deployment requirements:
+ - BIOS settings: RAID configuration, PXE boot order and boot mode, disk capacity, CPU, and memory settings,
+ - remote management accessibility (for example, IPMI, iLO, BMC),
+ - NIC quantity and configuration.
 
 <a name="6.4.2"></a>
 ### 6.4.2 Network configuration
-It's very important to make sure the necessary prerequisite settings should be ready before the deployment.
-For example, user need configurate necessary vlan on the switch before deployment.
-And user need obtain the valid ip address planned from lab administrator.
+The necessary prerequisite settings must be ready before the deployment, for example:
+ - the VLAN must be configured on the switch,
+ - the IP address ranges to be used must be allocated.

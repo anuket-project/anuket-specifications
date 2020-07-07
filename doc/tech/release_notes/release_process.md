@@ -1,4 +1,4 @@
-# Common NFVI Telco Taskforce Technical Release Process
+# Cloud iNfrastructure Telco Taskforce Technical Release Process
 
 ## Table of Contents
 * [Scope](#scope)

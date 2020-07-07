@@ -108,7 +108,7 @@ data of interest to the NFVI and workloads so that appropriate actions can be ta
 particular operation or event. Data typically includes resources accessed, destination and source 
 addresses, and a timestamp and login information for the person who accessed the resources.
 
-Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](../../ref_model/chapters/chapter04.md).
+Some of the data is to support the metrics collection specified in the [Reference Model Chapter 4: Infrastructure Capabilities, Metrics and Catalogue](../../../ref_model/chapters/chapter04.md).
 
 Logs have multiple operational uses including for:
 
@@ -145,7 +145,7 @@ software to watch for changing conditions.
 In this section, a possible framework utilizing Prometheus, Fluentd, Elasticsearch and Kibana is given as an example only.
 
 
-<p align="center"><img src="../figures/Figure_7_1_Monitoring_Logging_Framework.png" alt="Monitoring and Logging Framework"><b>
+<p align="center"><img src="../figures/RA1-Ch07-Monitoring-Logging-Framework.png" alt="Monitoring and Logging Framework"><b>
   Figure 7-1: Monitoring and Logging Framework</b> </p>
 
 The monitoring and logging framework (**Figure 7-1**) leverages Prometheus as the monitoring engine and 

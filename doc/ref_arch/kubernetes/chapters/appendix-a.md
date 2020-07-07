@@ -12,7 +12,7 @@
 <a name="A.1"></a>
 ## A.1 Exception List
 
-The exception list is collected in [Appendix A - Guidelines for VNF Vendors of the Reference Model](../../../ref_model/chapters/appendix-a.md#A.3).
+The exception list is collected in [Appendix A - Guidelines For Application Vendors of the Reference Model](../../../ref_model/chapters/appendix-a.md#A.3).
 
 <a name="A.2"></a>
 ## A.2 Guidance for VNF-to-CNF Transition

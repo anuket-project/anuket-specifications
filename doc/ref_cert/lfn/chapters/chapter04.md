@@ -94,21 +94,20 @@ Functest Smoke (see
 [Functest daily jobs](https://build.opnfv.org/ci/job/functest-hunter-daily/392/)
 for more details):
 
-| Testcases                  | Gates              |
-| :------------------------- | :----------------- |
-| neutron-tempest-plugin-api | Neutron            |
-| tempest_cinder             | Cinder             |
-| tempest_keystone           | Keystone           |
-| rally_sanity               | General            |
-| refstack_defcore           | General            |
-| tempest_full               | General            |
-| tempest_slow               | General            |
-| tempest_scenario           | General            |
-| neutron_trunk              | Neutron            |
-| patrole                    | Patrole            |
-| barbican                   | Barbican           |
-| networking-bgpvpn          | Networking BGP VPN |
-| networking-sfc             | Networking SFC     |
+| Testcases         | Gates              |
+| :-----------------| :----------------- |
+| tempest_neutron   | Neutron            |
+| tempest_cinder    | Cinder             |
+| tempest_keystone  | Keystone           |
+| rally_sanity      | General            |
+| refstack_defcore  | General            |
+| tempest_full      | General            |
+| tempest_slow      | General            |
+| tempest_scenario  | General            |
+| patrole           | Patrole            |
+| tempest_barbican  | Barbican           |
+| networking-bgpvpn | Networking BGP VPN |
+| networking-sfc    | Networking SFC     |
 
 To complete functional testing, Functest also integrates a few
 [performance tools](https://docs.openstack.org/developer/performance-docs/methodologies/tools.html)
@@ -188,38 +187,10 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 <a name="4.3"></a>
 ## 4.3 NFVI Testing Cookbook
 
-> using existing testing framework, proposal of an E2E integrated one to be used fir NFVI testing.
-
-<p align="center"><img src="../figures/rc1_cookbook_nfvi.png" alt="nfvi_cookbook" title="NFVI Cookbook" width="60%"/></p>
-<p align="center"><b>Figure 1-2:</b> NFVI Testing Integrated Framework.</p>
-
-[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) leverages on the
-common test case execution proposed by Xtesting. Thanks to a simple test case
-list, this tool deploys anywhere plug-and-play
-[CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
-In addition of this teaching capability needed by the Network Automation
-journey, it supports multiple components such as Jenkins and Gitlab CI (test
-schedulers) and
-[multiple deployment models](https://lists.opnfv.org/g/opnfv-tsc/message/5702)
-such as all-in-one or centralized services.
-
-[Xtesting](https://xtesting.readthedocs.io/en/latest/) and
-[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) combined meet the
-CNTT requirements about verification, compliance and Conformance:
-- smoothly assemble multiple heterogeneous test cases
-- generate the Jenkins jobs in
-  [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
-  verify CNTT RI
-- deploy local CI/CD toolchains everywhere to check compliance with CNTT
-- [dump all test case results and logs](http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip)
-  for third-party Conformance review
-
-[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
-GNU/Linux as Operating System and asks for a few dependencies as described in
-[Deploy your own Xtesting CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004):
-- python-virtualenv
-- docker.io
-- git
+At the time of writing, the CI description file is hosted in Functest and only
+runs the containers listed in RM/RA-1 Requirements. It will be completed by the
+next CNTT mandatory test cases and then a new CI description file will be
+proposed in CIRV tree.
 
 Please note the next two points depending on the GNU/Linux distributions and
 the network settings:
@@ -228,11 +199,6 @@ the network settings:
   (libselinux-python) aren't installed!")
 - Proxy: you may set your proxy in env for Ansible and in systemd for Docker
   https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
-
-At the time of writing, the CI description file is hosted in Functest and only
-runs the containers listed in RM/RA-1 Requirements. It will be completed by the
-next CNTT mandatory test cases and then a new CI description file will be
-proposed in CIRV tree.
 
 To deploy your own CI toolchain running CNTT Compliance:
 ```bash

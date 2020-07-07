@@ -21,17 +21,17 @@
 /doc/gov/chapters/chapter11.md       @jbeltranatl
 
 # Reference Model
-/doc/ref_model/chapters/chapter01.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter02.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter03.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter04.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter05.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter06.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter07.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter09.md        @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter08.md        @rabi-abdel @kedmison 
-/doc/ref_model/chapters/appendix-a.md       @rabi-abdel @kedmison
-/doc/ref_model/chapters/chapter08-annex.md  @rabi-abdel @kedmison 
+/doc/ref_model/chapters/chapter01.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter02.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter03.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter04.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter05.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter06.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter07.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter09.md        @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter08.md        @rabi-abdel @walterkozlowski 
+/doc/ref_model/chapters/appendix-a.md       @rabi-abdel @walterkozlowski
+/doc/ref_model/chapters/chapter08-annex.md  @rabi-abdel @walterkozlowski 
 
 # Reference Architectures 1
 /doc/ref_arch/openstack/chapters/chapter01.md        @rabi-abdel @pgoyal01
@@ -102,7 +102,7 @@
 /doc/ref_cert/RC2/chapters/chapter09.md        @xmulligan @rabi-abdel
 
 # Edge
-/doc/tech/usecases.md @ASawwaf @rabi-abdel
+/doc/tech/usecases.md        @ASawwaf @rabi-abdel
 
 # NFG
-/doc/tech/approach.md @walterkozlowski @rabi-abdel
+/doc/tech/approach.md        @walterkozlowski @rabi-abdel

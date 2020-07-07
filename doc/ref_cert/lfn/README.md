@@ -1,35 +1,35 @@
 [<< Back](../)
 
-# Certification within LFN
+# Reference Conformance 1
 
-This is the LFN Based Reference Certification
+This is the Reference Conformance for OpenStack based infrastructure (RC-1)
 
 ## Release Information
-**Release: _0.0_**
+**Bundle: _2_**
 
-**Version: _0.0_**
+**Version: _0_**
 
-**Release Date: _10th January 2020_**
+**Release Date: _15th May 2020_**
 
-## Version History
+## Bundle/Version History
 
-| Version | Date | Note
+| Bundle.Version | Date | Note
 | --- | --- | --- |
 | 0.0 | 10th January 2020 | First Initial Draft|
-
+| 2.0 | 15th May 2020 | Baldy Release|
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 - Introduction                                           | Initial Framework Only |
-| Chapter 02 - NFVI Conformance Requirements                          | Initial Framework Only |
-| Chapter 03 - NFVI Test Cases and Traceability to CNTT Requirements  | Initial Framework Only |
-| Chapter 04 - NFVI Testing Cookbook                                  | Initial Framework Only |
-| Chapter 05 - VNF Conformance Requirements                           | Initial Framework Only |
-| Chapter 06 - VNF Test Cases and Traceability to CNTT Requirements   | Initial Framework Only |
-| Chapter 07 - VNF Testing Cookbook                                   | Initial Framework Only |
-| Chapter 08 - Gap analysis and Development                           | Initial Framework Only |
+| Chapter 01 - Introduction                                           | SME Feedback |
+| Chapter 02 - NFVI Conformance Requirements                          | SME Feedback |
+| Chapter 03 - NFVI Test Cases and Traceability to CNTT Requirements  | SME Feedback |
+| Chapter 04 - NFVI Testing Cookbook                                  | SME Feedback |
+| Chapter 05 - VNF Conformance Requirements                           | SME Feedback |
+| Chapter 06 - VNF Test Cases and Traceability to CNTT Requirements   | SME Feedback |
+| Chapter 07 - VNF Testing Cookbook                                   | SME Feedback |
+| Chapter 08 - Gap analysis and Development                           | SME Feedback |
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)

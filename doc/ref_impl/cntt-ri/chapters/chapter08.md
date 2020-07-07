@@ -26,7 +26,7 @@ The purpose of this chapter is to establish an operational run-book containing s
 
 The term Run-Book is synonymous with "Cookbook", and either term will be used interchangeably to indicate that if a user follows the steps or procedures in the "book", the expected result will be an RI identical to the lab utilized by CNTT for the instantiation and certification of RI-1.
 
-It is assumed that the reader of this chapter has the skill set to install Common NFVI on their own labs.
+It is assumed that the reader of this chapter has the skill set to install Common Cloud Infrastructure on their own labs.
 
 *   Covers installers, automation, etc.
 *   Integration of installers and components.
@@ -370,9 +370,9 @@ the CNTT requirements which induces that the validation is composed of:
 - the basic test cases as asked by the OPNFV release criteria
 - the functional tests checking all OpenStack services and capabilities even if
   they are considered as optional in
-  [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+  [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 - all test cases listed in
-  [RC1 TC Requirements]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+  [RC1 TC Requirements](../../../ref_cert/lfn/chapters/chapter03.md)
 
 Like the
 [classical Functest containers](https://functest.readthedocs.io/en/stable-hunter/testing/user/configguide/configguide.html),
@@ -440,6 +440,7 @@ mentioning that test cases can be skipped here.
 | opnfv/functest-healthcheck:hunter | cinder_test      | Success            |
 | opnfv/functest-healthcheck:hunter | odl              | Success            |
 | opnfv/functest-healthcheck:hunter | tempest_smoke    | Success            |
+| opnfv/functest-healthcheck:hunter | tempest_horizon  | Success            |
 
 Then all testcases proposed in OPNFV Functest smoke suite are executed to
 verify all services and capabilities. It should be noted that they allow
@@ -447,44 +448,45 @@ skipping tests if optional services (e.g. Gnocchi, Barbican, etc.) or
 capabilities (e.g. remote console access, Neutron BGPVPN or SFC, etc.) are
 missing.
 
-| container                   | test case                  | criteria (Jenkins) |
-|-----------------------------|----------------------------|:------------------:|
-| opnfv/functest-smoke:hunter | neutron-tempest-plugin-api | Success            |
-| opnfv/functest-smoke:hunter | tempest_cinder             | Success            |
-| opnfv/functest-smoke:hunter | tempest_keystone           | Success            |
-| opnfv/functest-smoke:hunter | rally_sanity               | Success            |
-| opnfv/functest-smoke:hunter | refstack_defcore           | Success            |
-| opnfv/functest-smoke:hunter | tempest_full               | Success            |
-| opnfv/functest-smoke:hunter | tempest_scenario           | Success            |
-| opnfv/functest-smoke:hunter | tempest_slow               | Success            |
-| opnfv/functest-smoke:hunter | patrole                    | Success            |
-| opnfv/functest-smoke:hunter | neutron_trunk              | Success            |
-| opnfv/functest-smoke:hunter | networking-bgpvpn          | Success            |
-| opnfv/functest-smoke:hunter | networking-sfc             | Success            |
-| opnfv/functest-smoke:hunter | barbican                   | Success            |
+| container                   | test case         | criteria (Jenkins) |
+|-----------------------------|-------------------|:------------------:|
+| opnfv/functest-smoke:hunter | tempest_neutron   | Success            |
+| opnfv/functest-smoke:hunter | tempest_cinder    | Success            |
+| opnfv/functest-smoke:hunter | tempest_keystone  | Success            |
+| opnfv/functest-smoke:hunter | tempest_heat      | Success            |
+| opnfv/functest-smoke:hunter | rally_sanity      | Success            |
+| opnfv/functest-smoke:hunter | refstack_defcore  | Success            |
+| opnfv/functest-smoke:hunter | tempest_full      | Success            |
+| opnfv/functest-smoke:hunter | tempest_scenario  | Success            |
+| opnfv/functest-smoke:hunter | tempest_slow      | Success            |
+| opnfv/functest-smoke:hunter | patrole           | Success            |
+| opnfv/functest-smoke:hunter | networking-bgpvpn | Success            |
+| opnfv/functest-smoke:hunter | networking-sfc    | Success            |
+| opnfv/functest-smoke:hunter | tempest_barbican  | Success            |
 
-According to [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-and [RC1 TC Requirements]({{ "doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+According to [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
+and [RC1 TC Requirements](../../../ref_cert/lfn/chapters/chapter03.md)
 the following test cases are executed at the end.
 
-| container                               | test case                  | criteria (Jenkins) |
-|-----------------------------------------|----------------------------|:------------------:|
-| opnfv/functest-smoke-cntt:hunter        | neutron-tempest-plugin-api | Success            |
-| opnfv/functest-smoke-cntt:hunter        | tempest_cinder             | Success            |
-| opnfv/functest-smoke-cntt:hunter        | tempest_keystone           | Success            |
-| opnfv/functest-smoke-cntt:hunter        | rally_sanity               | Success            |
-| opnfv/functest-smoke-cntt:hunter        | tempest_full               | Success            |
-| opnfv/functest-smoke-cntt:hunter        | tempest_scenario           | Success            |
-| opnfv/functest-smoke-cntt:hunter        | tempest_slow               | Success            |
-| opnfv/functest-benchmarking-cntt:hunter | rally_full                 | Success            |
-| opnfv/functest-benchmarking-cntt:hunter | rally_jobs                 | Success            |
-| opnfv/functest-benchmarking-cntt:hunter | vmtp                       | Success            |
-| opnfv/functest-benchmarking-cntt:hunter | shaker                     | Success            |
-| opnfv/functest-vnf:hunter               | cloudify                   | Success            |
-| opnfv/functest-vnf:hunter               | cloudify_ims               | Success            |
-| opnfv/functest-vnf:hunter               | heat_ims                   | Success            |
-| opnfv/functest-vnf:hunter               | vyos_vrouter               | Success            |
-| opnfv/functest-vnf:hunter               | juju_epc                   | Success            |
+| container                               | test case             | criteria (Jenkins) |
+|-----------------------------------------|-----------------------|:------------------:|
+| opnfv/functest-smoke-cntt:hunter        | tempest_neutron_cntt  | Success            |
+| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt   | Success            |
+| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt | Success            |
+| opnfv/functest-smoke-cntt:hunter        | tempest_heat_cntt     | Success            |
+| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt     | Success            |
+| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt     | Success            |
+| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt | Success            |
+| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt     | Success            |
+| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt       | Success            |
+| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt       | Success            |
+| opnfv/functest-benchmarking-cntt:hunter | vmtp                  | Success            |
+| opnfv/functest-benchmarking-cntt:hunter | shaker                | Success            |
+| opnfv/functest-vnf:hunter               | cloudify              | Success            |
+| opnfv/functest-vnf:hunter               | cloudify_ims          | Success            |
+| opnfv/functest-vnf:hunter               | heat_ims              | Success            |
+| opnfv/functest-vnf:hunter               | vyos_vrouter          | Success            |
+| opnfv/functest-vnf:hunter               | juju_epc              | Success            |
 
 <a name="8.7"></a>
 ## 8.7 Development Validations
@@ -501,8 +503,8 @@ automatically voted -1 by Jenkins in case of failures.
 Only the following test cases must pass as a temporarily bypass in
 [RI gates](https://build.opnfv.org/ci/view/airship/job/airship-latest-gate/) to
 allow merging the next patches. At the time writing, CNTT RI is not compliant
-with [RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
-and then a part of the containers selected in [RC1 TC Requirements]({{ "/doc/ref_cert/lfn/chapters/chapter09.html" | relative_url }})
+with [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
+and then a part of the containers selected in [RC1 TC Requirements](../../../ref_cert/lfn/chapters/chapter03.md)
 cannot be executed successfully.
 
 | container                               | test case         | criteria (Jenkins) |
@@ -519,10 +521,9 @@ cannot be executed successfully.
 | opnfv/functest-healthcheck:hunter       | cinder_test       | Success            |
 | opnfv/functest-healthcheck:hunter       | odl               | Success            |
 | opnfv/functest-smoke:hunter             | tempest_scenario  | Success            |
-| opnfv/functest-smoke:hunter             | neutron_trunk     | Success            |
 | opnfv/functest-smoke:hunter             | networking-bgpvpn | Success            |
 | opnfv/functest-smoke:hunter             | networking-sfc    | Success            |
-| opnfv/functest-smoke:hunter             | barbican          | Success            |
+| opnfv/functest-smoke:hunter             | tempest_barbican  | Success            |
 | opnfv/functest-benchmarking-cntt:hunter | vmtp              | Success            |
 | opnfv/functest-benchmarking-cntt:hunter | shaker            | Success            |
 | opnfv/functest-vnf:hunter               | cloudify          | Success            |

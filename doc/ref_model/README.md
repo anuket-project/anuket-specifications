@@ -4,20 +4,21 @@
 <!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
 
 ## Release Information
-**Release: _3.0-alpha_**
+**Bundle: _3_**
 
-**Version: _1.0_**
+**Version: _0_**
 
-**Release Date: _10th January 2020_**
+**Release Date: _15th May 2020_**
 
-## Version History
+## Bundle/Version History
 
-| Version | Date | Note
+| Bundle.Version | Date | Note
 | --- | --- | --- |
 | 1.0 | 16th July 2019 | First Release|
 | 1.1 | 2nd August 2019 | Post Paris F2F clean up|
 | 2.0 | 20th September 2019 | Botrange Release|
 | 3.0-alpha| 10th January 2020 | Snezka Release|
+| 3.0| 15th May 2020 | Baldy Release|
 
 
 ## Overall Status
@@ -45,8 +46,8 @@
 * [Chapter 05 - Featureset and Requirements from Infrastructure](chapters/chapter05.md)
 * [Chapter 06 - External Interfaces](chapters/chapter06.md)
 * [Chapter 07 - Security Guidelines](chapters/chapter07.md)
-* [Chapter 08 - Compliance, Verification, and Certification](chapters/chapter08.md)
+* [Chapter 08 - Chapter reserved for future use](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
-* [Appendix A - Guidelines For VNF Vendors](chapters/appendix-a.md)
+* [Appendix A - Guidelines For Application Vendors](chapters/appendix-a.md)
 * [Glossary](../tech/glossary.md)

@@ -8,9 +8,11 @@
 * [Overview](#overview)
 * [RM (v3.0)](#rm)
 * [RA-1 (v2.0)](#ra1)
-* [RI-1 (v1.0)](#ri1)
-* [RC-1 (v1.0-pre-alpha)](#rc1)
-* [RA-2 (v1.0)](#ra2)
+* [RC-1 (v2.0)](#rc1)
+* [RI-1 (v3.0-alpha)](#ri1)
+* [RA-2 (v3.0)](#ra2)
+* [RI-2 (draft)](#ri2)
+* [RC-2 (draft)](#rc2)
 
 <a name="overview"></a>
 ## Overview
@@ -18,11 +20,8 @@
 | Reference # 	| Feature 	| Notes 	|
 |-------------	|-----------------	|-------	|
 | `baldy.tech.1` 	| VNF Evolution policy and strategy 	|  	|
-| `baldy.tech.2` 	| Backward/Forward Compitability 	|  	|
+| `baldy.tech.2` 	| Backward/Forward Compatibility 	|  	|
 | `baldy.tech.3` 	| Future Roadmap |  |
-| `baldy.tech.4` 	| TBD |  |
-
-*Baldy Release should include at least features up to and including `baldy.tech.2`.
 
 <a name="rm"></a>
 ## Reference Model (v3.0)
@@ -40,7 +39,7 @@
 | `baldy.rm.7` 	| Generic Installer Model 	| Ch09 	|
 | `baldy.rm.8` 	| Guidelines 	| Appnedix-A 	|
 
-*Baldy Release should include at least features up to and including `baldy.rm.4`.
+*Baldy Release includes at least features up to and including `baldy.rm.4`.
 
 <a name="ra1"></a>
 ## Reference Architecture 1 (v2.0)
@@ -59,11 +58,29 @@
 | `baldy.ra1.8` 	| Complete Security Chapter 	|  Ch06	|
 | `baldy.ra1.9` 	| Complete LCM Chapter 	|  Ch07	|
 
-*Baldy Release should include at least features up to and including `baldy.ra1.6`.
+*Baldy Release includes at least features up to and including `baldy.ra1.6`.
 
+<a name="rc1"></a>
+## Reference Conformance 1 (v2.0)
+
+<p align="center"><img src="../figures/rc1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><b>Figure 2:</b> RC-1 Baldy Release plan</p>
+
+>WSL Note: Features below should be implemented in order.
+
+| Reference # 	| Feature 	| Notes 	|
+|-------------	|-----------------	|-------	|
+| `baldy.rc1.1` 	| General Cleanup 	| All Chapters 	|
+| `baldy.rc1.2` 	| Clarify Conformance Categories (NFVI & VNFs)	| Ch01 	|
+| `baldy.rc1.3` 	| Complete NFVI Framework Requirements 	| Ch02 	|
+| `baldy.rc1.4` 	| Categorise NFVI TC Req and Write API Testing TC 	|  Ch03	|
+| `baldy.rc1.5` 	| Create NFVI Mapping & Traceability Matrix and populate it 	| Ch05 	|
+| `baldy.rc1.6` 	| Restructure NFVI Cookbook and Cleanup  	| Ch04 	|
+| `baldy.rc1.7` 	| NFVI Framework & Test Cases Development   | **DEV** 	|
+| `baldy.rc1.8` 	| RC-1 test suites can run against RI-1   | **DEV** 	|
 
 <a name="ri1"></a>
-## Reference Implementation 1 (v1.0)
+## Reference Implementation 1 (v3.0-alpha)
 
 <p align="center"><img src="../figures/ri1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> RI-1 Baldy Release plan</p>
@@ -80,33 +97,10 @@
 | `baldy.ri1.6` 	| Complete Lab Cookbook (Ops) 	| Ch06 	|
 | `baldy.ri1.6` 	| Restructure & Complete Integration Cookbook	| Ch07 	|
 | `baldy.ri1.7` 	| Implement Profiles within OPNFV Installers and consume CNTT metadata 	|  **DEV**	|
-| `baldy.ri1.8*` 	| RI-1 passes the RC-1 test suite execution (For sanity and APIs)   | **DEV** 	|
-
-*Baldy Release should include at least features up to and including `baldy.ri1.8`.
-
-<a name="rc1"></a>
-## Reference Conformance 1 (v1.0-Pre-alpha)
-
-<p align="center"><img src="../figures/rc1_baldy.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 2:</b> RC-1 Baldy Release plan</p>
-
->WSL Note: Features below should be implemented in order.
-
-| Reference # 	| Feature 	| Notes 	|
-|-------------	|-----------------	|-------	|
-| `baldy.rc1.1` 	| General Cleanup 	| All Chapters 	|
-| `baldy.rc1.2` 	| Clarify Conformance Categories (NFVI & VNFs)	| Ch01 	|
-| `baldy.rc1.3` 	| Complete NFVI Framework Requirements 	| Ch02 	|
-| `baldy.rc1.4` 	| Categorise NFVI TC Req and Write API Testing TC 	|  Ch03	|
-| `baldy.rc1.5` 	| Create NFVI Mapping & Traceability Matrix and populate it 	| Ch05 	|
-| `baldy.rc1.6` 	| Restructure NFVI Cookbook and Cleanup  	| Ch04 	|
-| `baldy.rc1.7` 	| NFVI Framework & Test Cases Development   | **DEV** 	|
-| `baldy.rc1.8*` 	| RC-1 test suites can run against RI-1   | **DEV** 	|
-
-*Baldy Release should include at least features up to and including `baldy.rc1.8`.
+| `baldy.ri1.8` 	| RI-1 passes the RC-1 test suite execution (For sanity and APIs)   | **DEV** 	|
 
 <a name="ra2"></a>
-## Reference Architecture 2 (v1.0)
+## Reference Architecture 2 (v3.0)
 
 >WSL Note: Features below should be implemented in order. For Baldy, At least 
 
@@ -123,4 +117,4 @@
 | `baldy.ra2.9` 	| More Details and proposals about Gaps 	| Ch08 	|
 | `baldy.ra2.10` 	| Guidelines	| Appendix-A 	|
 
-*Baldy Release should include at least features up to and including `baldy.ra2.4`.
+*Baldy Release includes at least features up to and including `baldy.ra2.4`.
