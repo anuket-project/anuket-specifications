@@ -91,7 +91,7 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 | Ref       | Cloud Infrastructure Capability           | Unit   | Definition/Notes                                            |
 |-----------|-------------------------------------------|--------|-------------------------------------------------------------|
 | e.cap.006 | CPU pinning                               | Yes/No | Indicates if Cloud Infrastructure supports CPU pinning      |
-| e.cap.007 | NUMA alignment                            | Yes/No | Indicates if Cloud Infrastructure supports NUMA             |
+| e.cap.007 | NUMA alignment                            | Yes/No | Indicates if Cloud Infrastructure supports NUMA alignment |
 | e.cap.008 | IPSec Acceleration                        | Yes/No | IPSec Acceleration                                          |
 | e.cap.009 | Crypto Acceleration                       | Yes/No | Crypto Acceleration                                         |
 | e.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration                                    |
