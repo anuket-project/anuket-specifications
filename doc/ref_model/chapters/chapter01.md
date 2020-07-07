@@ -12,7 +12,7 @@
 
 <a name="1.1"></a>
 ## 1.1 Overview
-The Reference Model (RM) specifies the infrastructure abstraction and the exposure of a set of capabilities, resources, and interfaces to workloads. The aim of the Reference Model is to be virtualisation technology agnostic (VM-based and container-based) and act as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces needed to develop the workloads. 
+The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. 
 
 The document starts from the abstract and as it progresses it increasingly gets into more details.  It follows the traditional design process where you start from core principles, progress to abstract concepts and models, then finish with operational considerations, such as security and lifecycle management.
 
