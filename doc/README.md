@@ -1,7 +1,11 @@
 ## Table of Contents
-* [Community Guidelines](gov)
-* [Reference Model](ref_model)
-* [Reference Architecture](ref_arch)
-* [Reference Implementation](ref_impl)
-* [Reference Conformance](ref_cert)
-* [Vendor Implementations](ven_impl)
+
+* [Cloud iNfrastructure Telco Taskforce](#)
+  * [Governance & Community Guidelines](gov)
+* [Technical Specefication](#)
+  * [Introduction, Direction, and Roadmap](tech)
+  * [Reference Model](ref_model)
+  * [Reference Architectures](ref_arch)
+  * [Reference Implementations](ref_impl)
+    * [Vendor Implementations](ven_impl)
+  * [Reference Conformances](ref_cert)
