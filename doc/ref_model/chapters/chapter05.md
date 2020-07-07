@@ -317,7 +317,7 @@ The configurations specified in here will be used in specifying the actual hardw
 |---------------------|-----------------------------------------------------|--------------------------------------------------------------------|------------|-------------------|
 | infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets  | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
 | infra.hw.cpu.cfg.002 | Minimum Number of Cores per CPU  | This determines the number of cores needed per CPU.                | 20         | 20                |
-| infra.hw.cpu.cfg.003 | NUMA alignment                    | NUMA support and BIOS configured to enable NUMA                    | N          | Y                 |
+| infra.hw.cpu.cfg.003 | NUMA alignment                    | NUMA alignment support and BIOS configured to enable NUMA                    | N          | Y                 |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
 
 <!--
