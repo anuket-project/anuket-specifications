@@ -396,8 +396,9 @@ The following table defines persistent storage extensions that can be provided t
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 //
 <p align="center"><b>Table 4-15:</b> Storage Extension Options</p>
---->
+
 Table 4-15: Reserved
+--->
 
 <a name="4.2.4"></a>
 ### 4.2.4 Cloud Infrastructure Profiles
@@ -466,7 +467,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <a name="4.2.5"></a>
 ### 4.2.5 Cloud Infrastructure Profile Capabilities Mapping
 
-<a name="Table4-19"></a>
+<a name="Table4-17"></a>
 
 | Ref                                                                  | Basic                    | Network Intensive        | Notes |
 |----------------------------------------------------------------------|--------------------------|--------------------------|---------------------------------------------------------------------|
@@ -524,7 +525,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
 -->
 
-<p align="center"><b>Table 4-19:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
+<p align="center"><b>Table 4-17:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Cloud Infrastructure Profile Performance Measurement Mapping
