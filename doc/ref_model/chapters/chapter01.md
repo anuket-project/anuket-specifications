@@ -51,7 +51,7 @@ This document specifies:
   - **Cloud Infrastructure capabilities & metrics**: A set of cloud infrastructure capabilities and metrics required to perform telco scale network functions and satisfy their performance criterion.
   - **Infrastructure profiles catalogue**: A catalogue of standard infrastructure software and hardware configurations, referred to as profiles; these profiles abstract the infrastructure for the workloads. Only a few profiles, with well-defined characteristics, can meet the operational and performance requirements of all workloads.
 
-- Cloud Infrastructure Software and Hardware profiling
+- Cloud Infrastructure Software and Hardware profiles:
   - **Cloud Infrastructure software profiles and configurations**: These are software profiles and configurations that map directly to the infrastructure profiles within the infrastructure profiles catalogue.
   - **Cloud Infrastructure hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined cloud infrastructure software profiles & configurations.
 
