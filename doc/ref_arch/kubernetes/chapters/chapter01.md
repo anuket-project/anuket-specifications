@@ -27,12 +27,12 @@ The Kubernetes Reference Architecture will be used to determine a Kubernetes Ref
 <a name="1.2"></a>
 ### 1.2 Terminology
 
-For terminology used in this document refer to the [glossary](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/glossary.md#11.1.4)
+For terminology used in this document refer to the [glossary](../../../tech/glossary.md)
 
 <a name="1.3"></a>
 ## 1.3 Principles
 
-This Reference Architecture conform with the principles defined in [here](../../tech#2.0).
+This Reference Architecture conforms with the principles defined in [here](../../../tech/README.md#2.0).
 
 <a name="1.3.1"></a>
 ### 1.3.1 Cloud Native Principles
@@ -47,8 +47,7 @@ The definition for Cloud Native is somewhat controversial.  For the purposes of 
 
 >The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendor-neutral projects. We democratize state-of-the-art patterns to make these innovations accessible for everyone”
 
-
-The CNCF TUG (Telecom User Group), formed in June 2019, is working on a set of Cloud Native Principles that are more suited to the requirements of the Telecom cummunity and with more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://networking.cloud-native-principles.org/cloud-native-principles). There are many similarities between the CNCF TOC and TUG definitions, but the key principles from both applicable to this document, are:
+Individual contributors who are also active in the CNCF TUG (Telecom User Group), formed in June 2019, are also working on a set of Cloud Native Principles that are more suited to the requirements of the Telecom cummunity and with more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://networking.cloud-native-principles.org/cloud-native-principles). There are many similarities, but the key principles from both, which are applicable to this document, are:
 
 - **scalable**
 - **dynamic environments**

@@ -160,7 +160,7 @@ and backends selected in the different Gate jobs. The classical
 conform to this model which also fits the heterogeneous user deployments.
 
 From a CNTT Compliance state point, the capabilities are well described in
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which allows tuning the test configurations and the test lists to avoid
 skipping any test. It results that all tests covering optional capabilities and
 all upstream skipped tests due to known bugs are not executed. All remaining
@@ -174,7 +174,7 @@ configurations and the default test lists. Any optional capability or services
 The next subsections only detail the Tempest tests which must not be executed
 from a Compliance state point. The remaining tests have to pass successfully.
 They cover all together the API testing requirements as asked by
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
 According to Hunter (the oldest OPNFV active release), the following software
 versions are considered here to verify OpenStack Pike selected by CNTT:
@@ -200,7 +200,7 @@ as integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions        | reasons    |
@@ -234,7 +234,7 @@ Glance API is covered in the OpenStack Gates via
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions | reasons |
@@ -260,7 +260,7 @@ as integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                                   | reasons                               |
@@ -274,6 +274,7 @@ the following test names must not be executed:
 | .\*test_volumes_backup.VolumesBackupsTest.test_volume_backup_create_get_detailed_list_restore_delete | ceph                                  |
 | .\*test_volumes_extend.VolumesExtendAttachedTest.test_extend_attached_volume                         | extend_attached_volume                |
 | .\*tempest.scenario.test_volume_migrate_attached                                                     | multi-backend                         |
+| .\*test_snapshot_manage                                                                              | manage_snapshot                       |
 
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -298,7 +299,7 @@ Swift API is covered in the OpenStack Gates via
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                           | reasons                            |
@@ -325,7 +326,7 @@ as integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                                 | reasons                               |
@@ -402,7 +403,7 @@ Nova API is covered in the OpenStack Gates via
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
 | test rejection regular expressions                                                                                        | reasons                            |
@@ -474,20 +475,23 @@ integrated in
 [Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml)
 
 According to
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
-| test rejection regular expressions                         | reasons                                            |
-|------------------------------------------------------------|----------------------------------------------------|
-| .\*functional.test_lbaasv2                                 | lbaasv2                                            |
-| .\*RemoteStackTest.test_stack_create_with_cloud_credential | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
-| .\*scenario.test_aodh_alarm                                | aodh                                               |
-| .\*tests.scenario.test_autoscaling_lb                      | lbaas                                              |
-| .\*scenario.test_autoscaling_lbv2                          | lbaasv2                                            |
-| .\*scenario.test_server_software_config                    | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
-| .\*test_volumes.VolumeBackupRestoreIntegrationTest         | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
-| .\*scenario.test_octavia_lbaas                             | octavia                                            |
-| .\*scenario.test_server_cfn_init                           | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
+| test rejection regular expressions                                | reasons                                            |
+|-------------------------------------------------------------------|----------------------------------------------------|
+| .\*functional.test_lbaasv2                                        | lbaasv2                                            |
+| .\*functional.test_encryption_vol_type                            | https://storyboard.openstack.org/#!/story/2007804  |
+| .\*functional.test_remote_stack.RemoteStackTest                   | https://bugs.launchpad.net/heat/+bug/1701498       |
+| .\*RemoteStackTest.test_stack_create_with_cloud_credential        | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*scenario.test_aodh_alarm                                       | aodh                                               |
+| .\*tests.scenario.test_autoscaling_lb                             | lbaas                                              |
+| .\*scenario.test_autoscaling_lbv2                                 | lbaasv2                                            |
+| .\*scenario.test_remote_deeply_nested.RemoteDeeplyNestedStackTest | https://bugs.launchpad.net/heat/+bug/1701498       |
+| .\*scenario.test_server_software_config                           | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*test_volumes.VolumeBackupRestoreIntegrationTest                | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
+| .\*scenario.test_octavia_lbaas                                    | octavia                                            |
+| .\*scenario.test_server_cfn_init                                  | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
 
 Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -520,7 +524,7 @@ Here are the Rally-based test cases proposed by
   Neutron scenarios executed in the OpenStack gates
 
 At the time of writing, no KPI is defined in
-[RA1 Core OpenStack Services APIs]({{ "/doc/ref_arch/openstack/chapters/chapter05.html" | relative_url }})
+[RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
@@ -633,22 +637,22 @@ of 0%) proposed in
 
 [Functest rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
 
-| Scenarios                                    | Iterations |
-|----------------------------------------------|:----------:|
-| NeutronNetworks.create_and_delete_networks   | 40         |
-| NeutronNetworks.create_and_delete_ports      | 40         |
-| NeutronNetworks.create_and_delete_routers    | 40         |
-| NeutronNetworks.create_and_delete_subnets    | 40         |
-| NeutronNetworks.create_and_list_networks     | 100        |
-| NeutronNetworks.create_and_list_ports        | 8          |
-| NeutronNetworks.create_and_list_routers      | 40         |
-| NeutronNetworks.create_and_list_subnets      | 40         |
-| NeutronNetworks.create_and_update_networks   | 40         |
-| NeutronNetworks.create_and_update_ports      | 40         |
-| NeutronNetworks.create_and_update_routers    | 40         |
-| NeutronNetworks.create_and_update_subnets    | 100        |
-| NeutronTrunks.create_and_list_trunk_subports | 4          |
-| Quotas.neutron_update                        | 40         |
+| Scenarios                                  | Iterations |
+|--------------------------------------------|:----------:|
+| NeutronNetworks.create_and_delete_networks | 40         |
+| NeutronNetworks.create_and_delete_ports    | 40         |
+| NeutronNetworks.create_and_delete_routers  | 40         |
+| NeutronNetworks.create_and_delete_subnets  | 40         |
+| NeutronNetworks.create_and_list_networks   | 100        |
+| NeutronNetworks.create_and_list_ports      | 8          |
+| NeutronNetworks.create_and_list_routers    | 40         |
+| NeutronNetworks.create_and_list_subnets    | 40         |
+| NeutronNetworks.create_and_update_networks | 40         |
+| NeutronNetworks.create_and_update_ports    | 40         |
+| NeutronNetworks.create_and_update_routers  | 40         |
+| NeutronNetworks.create_and_update_subnets  | 100        |
+| NeutronTrunks.create_and_list_trunks       | 4          |
+| Quotas.neutron_update                      | 40         |
 
 #### 3.3.6.6 Compute - Nova
 
@@ -846,7 +850,7 @@ by Functest VNF tests in the other cases.
 <a name="3.4.1"></a>
 ### 3.4.1 RM/RA-1 Requirements
 
-According to [RC1 Chapter04]({{ "/doc/ref_cert/lfn/chapters/chapter04.html" | relative_url }})
+According to [RC1 Chapter04](chapter04.md)
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 

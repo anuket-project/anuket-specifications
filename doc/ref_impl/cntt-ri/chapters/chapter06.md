@@ -310,6 +310,6 @@ Before the installation, the user has to check if each server meets the deployme
 
 <a name="6.4.2"></a>
 ### 6.4.2 Network configuration
-It's very important to make sure the necessary prerequisite settings should be ready before the deployment.
-For example, user need configurate necessary vlan on the switch before deployment.
-And user need obtain the valid ip address planned from lab administrator.
+The necessary prerequisite settings must be ready before the deployment, for example:
+ - the VLAN must be configured on the switch,
+ - the IP address ranges to be used must be allocated.

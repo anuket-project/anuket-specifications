@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 6 External Interfaces
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
@@ -98,69 +98,63 @@ ETSI ETSI (Ref: NFV IFA 019 v03101p) has defined a set of technology independent
 
 These acceleration interfaces are summarized here in Table 6.3 only for convenience.
 
-| **Request**|**Response**|**From, To**|**Type**|**Parameter**|**Description** |
-| ------------|------------|------------|------------|------------|------------ |
-| InitAccRequest|InitAccResponse|VNF → NFVI|Input|accFilter|the accelartor sub-system(s) to initialize and retrieve their capabilities. |
-| |||Filter|accAttributeSelector|attribute names of accelerator capabilities |
-| |||Output|accCapabilities|acceleration sub-system capabilities |
-| RegisterForAccEventRequest|RegisterForAccEventResponse|VNF → NFVI|Input|accEvent|event the VNF is interested in |
-| |||Input|vnfEventHandlerId|the handler for NFVI to use when notifying the VNF of the event |
-| AccEventNotificationRequest|AccEventNotificationResponse|NFVI → VNF|Input|vnfEventHandlerId|Handler used by VNF registering |
-| for this event |
-| |||Input|accEventMetaData| |
-| DeRegisterForAccEventRequest|DeRegisterForAccEventResponse|VNF → NFVI|Input|accEvent|Event VNF is deregistering from |
-| ReleaseAccRequest|ReleaseAccResponse|VNF → NFVI||| |
-| ModifyAccConfigurationRequest|ModifyAccConfigurationResponse|VNF → NFVI|Input|accConfigurationData|Config data for accelerator |
-| |||Input|accSubSysConfigurationData|Config data for accelerator sub-system |
-| GetAccConfigsRequest|GetAccConfigsResponse|VNF → NFVI|Input|accFilter|Filter for subsystems from which config data requested |
-| |||Input|accConfigSelector|attributes of config types |
-| |||Output|accComfigs|Config info (only for the specified attributes) for specified subsystems |
-| ResetAccConfigsRequest|ResetAccConfigsResponse|VNF → NFVI|Input|accFilter|Filter for subsystems for which config is to be reset |
-| |||Input|accConfigSelector|attributes of config types whose values will be reset |
-| AccDataRequest|AccDataResponse|VNF → NFVI|Input|accData|Data (metadata) sent too accelerator |
-| |||Input|accChannel|Channel data is to be sent to |
-| |||Output|accData|Data from accelerator |
-| AccSendDataRequest|AccSendDataResponse|VNF → NFVI|Input|accData|Data (metadata) sent too accelerator |
-| |||Input|accChannel|Channel data is to be sent to |
-| AccReceiveDataRequest|AccReceiveDataResponse|VNF → NFVI|Input|maxNumberOfDataItems|Max number of data items to be received |
-| |||Input|accChannel|Channel data is requested from |
-| |||Output|accData|Data received form Accelerator |
-| RegisterForAccDataAvailableEventRequest|RegisterForAccDataAvailableEventResponse|VNF → NFVI|Input|regHandlerId|Registration Identifier |
-| |||Input|accChannel|Channel where event is requested for |
-| AccDataAvailableEventNotificationRequest|AccDataAvailableEventNotificationResponse|NFVI → VNF|Input|regHandlerId|Reference used by VNF when registering for the event |
-| DeRegisterForAccDataAvailableEventRequest|DeRegisterForAccDataAvailableEventResponse|VNF → NFVI|Input|accChannel|Channel related to the event  |
-| AllocateAccResourceRequest|AllocateAccResourceResponse|VIM → NFVI|Input|attachTargetInfo|the resource the |
-| accelerator is to be attached to (e.g., VM) |
-| |||Input|accResourceInfo|Accelerator Information |
-| |||Output|accResourceId|Id if successful |
-| ReleaseAccResourceRequest|ReleaseAccResourceResponse|VIM → NFVI|Input|accResourceId|Id of resource to be released |
-| QueryAccResourceRequest|QueryAccResourceResponse|VIM → NFVI|Input|hostId|Id of specified host |
-| |||Input|Filter|Specifies the accelerators for which query applies |
-| |||Output|accQueryResult|Details of the accelerators matching the input filter located in the selected host. |
-| GetAccStatisticsRequest|GetAccStatisticsResponse|VIM → NFVI|Input|accFilter|Accelerator subsystems from which data is requested |
-| |||Input|accStatSelector|attributes of AccStatistics whose data will be returned |
-| |||Output|accStatistics|Statistics data of the accelerators |
-| matching the input filter located in the |
-| selected host. |
-| ResetAccStatisticsRequest|ResetAccStatisticsResponse|VIM → NFVI|Input|accFilter|Accelerator subsystems for which data is to be reset |
-| |||Input|accStatSelector|attributes of AccStatistics whose data will be reset |
-| SubscribeRequest|SubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
-| |||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
-| |||Output|SubscriptionId|Identifier of the successfully created |
-| subscription. |
-| UnsubscribeRequest|UnsubscribeResponse|VIM → NFVI|Input|hostId|Id of specified host |
-| |||Input|SubscriptionId|Identifier of the subscription to be |
-| unsubscribed. |
-| Notify||NFVI → VIM|||NFVI notifies an alarm to VIM |
-| GetAlarmInfoRequest|GetAlarmInfoResponse|VIM → NFVI|Input|hostId|Id of specified host |
-| |||Input|Filter|Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc. |
-| |||Output|Alarm|Information about the alarms if filter matches an alarm. |
-|  |
-| AccResourcesDiscoveryRequest|AccResourcesDiscoveryResponse|VIM → NFVI|Input|hostId|Id of specified host |
-| |||Output|discoveredAccResourceInfo|Information on the acceleration resources discovered within the NFVI. |
-| OnloadAccImageRequest|OnloadAccImageResponse|VIM → NFVI|Input|accResourceId|Identifier of the chosen accelerator in the NFVI. |
-| |||Input|accImageInfo|Information about the acceleration image. |
-| |||Input|accImage|The binary file of acceleration image. |
+<table>
+<tr><th>  **Request** </th> <th>  **Response** </th> <th>  **From, To** </th> <th>  **Type** </th> <th>  **Parameter**  </th> <th>  **Description** </th></tr>
+<tr><td rowspan="3"> InitAccRequest </td><td rowspan="3"> InitAccResponse </td><td rowspan="3"> VNF → NFVI </td> <td>  Input </td> <td>  accFilter </td> <td>  the accelartor sub-system(s) to initialize and retrieve their capabilities. </td></tr>
+<tr><td> Filter </td><td> accAttributeSelector </td><td> attribute names of accelerator capabilities  </td></tr>
+<tr><td> Output </td><td> accCapabilities </td><td> acceleration sub-system capabilities  </td></tr>
+<tr><td rowspan="2">  RegisterForAccEventRequest </td><td rowspan="2"> RegisterForAccEventResponse </td><td rowspan="2"> VNF → NFVI </td><td> Input </td><td> accEvent </td><td> event the VNF is interested in  </td></tr>
+<tr><td> Input </td><td> vnfEventHandlerId </td><td> the handler for NFVI to use when notifying the VNF of the event  </td></tr>
+<tr><td rowspan="2">  AccEventNotificationRequest </td><td rowspan="2"> AccEventNotificationResponse </td><td rowspan="2"> NFVI → VNF </td><td> Input </td><td> vnfEventHandlerId </td><td> Handler used by VNF registering for this event  </td></tr>
+<tr><td> Input </td><td> accEventMetaData </td><td>   </td></tr>
+<tr><td>  DeRegisterForAccEventRequest </td><td> DeRegisterForAccEventResponse </td><td> VNF → NFVI </td><td> Input </td><td> accEvent </td><td> Event VNF is deregistering from  </td><td> 
+<tr><td>  ReleaseAccRequest </td><td> ReleaseAccResponse </td><td> VNF → NFVI </td><td>  </td><td>  </td><td>   </td></tr>
+<tr><td rowspan="2">  ModifyAccConfigurationRequest </td><td rowspan="2"> ModifyAccConfigurationResponse </td><td rowspan="2"> VNF → NFVI </td><td> Input </td><td> accConfigurationData </td><td> Config data for accelerator  </td></tr>
+<tr><td> Input </td><td> accSubSysConfigurationData </td><td> Config data for accelerator sub-system  </td></tr>
+<tr><td  rowspan="3">  GetAccConfigsRequest </td><td rowspan="3"> GetAccConfigsResponse </td><td rowspan="3"> VNF → NFVI </td><td> Input </td><td> accFilter </td><td> Filter for subsystems from which config data requested  </td></tr>
+<tr><td> Input </td><td> accConfigSelector </td><td> attributes of config types  </td></tr>
+<tr><td> Output </td><td> accComfigs </td><td> Config info (only for the specified attributes) for specified subsystems  </td></tr>
+<tr><td rowspan="2">  ResetAccConfigsRequest </td><td rowspan="2"> ResetAccConfigsResponse </td><td rowspan="2"> VNF → NFVI </td><td> Input </td><td> accFilter </td><td> Filter for subsystems for which config is to be reset  </td></tr>
+<tr><td> Input </td><td> accConfigSelector </td><td> attributes of config types whose values will be reset  </td></tr>
+<tr><td rowspan="3">  AccDataRequest </td><td rowspan="3"> AccDataResponse </td><td rowspan="3"> VNF → NFVI </td><td> Input </td><td> accData </td><td> Data (metadata) sent too accelerator  </td></tr>
+<tr><td> Input </td><td> accChannel </td><td> Channel data is to be sent to  </td></tr>
+<tr><td> Output </td><td> accData </td><td> Data from accelerator  </td></tr>
+<tr><td rowspan="2">  AccSendDataRequest </td><td rowspan="2"> AccSendDataResponse </td><td rowspan="2"> VNF → NFVI </td><td> Input </td><td> accData </td><td> Data (metadata) sent too accelerator  </td></tr>
+<tr><td> Input </td><td> accChannel </td><td> Channel data is to be sent to  </td></tr>
+<tr><td rowspan="3">  AccReceiveDataRequest </td><td rowspan="3"> AccReceiveDataResponse </td><td rowspan="3"> VNF → NFVI </td><td> Input </td><td> maxNumberOfDataItems </td><td> Max number of data items to be received  </td></tr>
+<tr><td> Input </td><td> accChannel </td><td> Channel data is requested from  </td></tr>
+<tr><td> Output </td><td> accData </td><td> Data received form Accelerator  </td></tr>
+<tr><td rowspan="2">  RegisterForAccDataAvailableEventRequest </td><td rowspan="2"> RegisterForAccDataAvailableEventResponse </td><td rowspan="2"> VNF → NFVI </td><td> Input </td><td> regHandlerId </td><td> Registration Identifier  </td></tr>
+<tr><td> Input </td><td> accChannel </td><td> Channel where event is requested for  </td></tr>
+<tr><td>  AccDataAvailableEventNotificationRequest </td><td> AccDataAvailableEventNotificationResponse </td><td> NFVI → VNF </td><td> Input </td><td> regHandlerId </td><td> Reference used by VNF when registering for the event  </td></tr>
+<tr><td>  DeRegisterForAccDataAvailableEventRequest </td><td> DeRegisterForAccDataAvailableEventResponse </td><td> VNF → NFVI </td><td> Input </td><td> accChannel </td><td> Channel related to the event   </td></tr>
+<tr><td rowspan="3">  AllocateAccResourceRequest </td><td rowspan="3"> AllocateAccResourceResponse </td><td rowspan="3"> VIM → NFVI </td><td> Input </td><td> attachTargetInfo </td><td> the resource the accelerator is to be attached to (e.g., VM)  </td></tr>
+<tr><td> Input </td><td> accResourceInfo </td><td> Accelerator Information  </td></tr>
+<tr><td> Output </td><td> accResourceId </td><td> Id if successful  </td></tr>
+<tr><td>  ReleaseAccResourceRequest </td><td> ReleaseAccResourceResponse </td><td> VIM → NFVI </td><td> Input </td><td> accResourceId </td><td> Id of resource to be released  </td></tr>
+<tr><td rowspan="3">  QueryAccResourceRequest </td><td rowspan="3"> QueryAccResourceResponse </td><td rowspan="3"> VIM → NFVI </td><td> Input </td><td> hostId </td><td> Id of specified host  </td></tr>
+<tr><td> Input </td><td> Filter </td><td> Specifies the accelerators for which query applies  </td></tr>
+<tr><td> Output </td><td> accQueryResult </td><td> Details of the accelerators matching the input filter located in the selected host.  </td></tr>
+<tr><td rowspan="3">  GetAccStatisticsRequest </td><td rowspan="3"> GetAccStatisticsResponse </td><td rowspan="3"> VIM → NFVI </td><td> Input </td><td> accFilter </td><td> Accelerator subsystems from which data is requested  </td></tr>
+<tr><td> Input </td><td> accStatSelector </td><td> attributes of AccStatistics whose data will be returned  </td></tr>
+<tr><td> Output </td><td> accStatistics </td><td> Statistics data of the accelerators matching the input filter located in the selected host.  </td></tr>
+<tr><td rowspan="2">  ResetAccStatisticsRequest </td><td rowspan="2"> ResetAccStatisticsResponse </td><td rowspan="2"> VIM → NFVI </td><td> Input </td><td> accFilter </td><td> Accelerator subsystems for which data is to be reset  </td></tr>
+<tr><td> Input </td><td> accStatSelector </td><td> attributes of AccStatistics whose data will be reset  </td></tr>
+<tr><td rowspan="3">  SubscribeRequest </td><td rowspan="3"> SubscribeResponse </td><td rowspan="3"> VIM → NFVI </td><td> Input </td><td> hostId </td><td> Id of specified host  </td></tr>
+<tr><td> Input </td><td> Filter </td><td> Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc.  </td></tr>
+<tr><td> Output </td><td> SubscriptionId </td><td> Identifier of the successfully created subscription.  </td></tr>
+<tr><td rowspan="2">  UnsubscribeRequest </td><td rowspan="2"> UnsubscribeResponse </td><td rowspan="2"> VIM → NFVI </td><td> Input </td><td> hostId </td><td> Id of specified host  </td></tr>
+<tr><td> Input </td><td> SubscriptionId </td><td> Identifier of the subscription to be unsubscribed.  </td></tr>
+<tr><td>  Notify </td><td>  </td><td> NFVI → VIM </td><td>  </td><td>  </td><td> NFVI notifies an alarm to VIM  </td></tr>
+<tr><td rowspan="3">  GetAlarmInfoRequest </td><td rowspan="3"> GetAlarmInfoResponse </td><td rowspan="3"> VIM → NFVI </td><td> Input </td><td> hostId </td><td> Id of specified host  </td></tr>
+<tr><td> Input </td><td> Filter </td><td> Specifies the accelerators and related alarmsThe filter could include accelerator information, severity of the alarm, etc.  </td></tr>
+<tr><td> Output </td><td> Alarm </td><td> Information about the alarms if filter matches an alarm.  </td></tr>
+<tr><td rowspan="2">  AccResourcesDiscoveryRequest </td><td rowspan="2"> AccResourcesDiscoveryResponse </td><td rowspan="2"> VIM → NFVI </td><td> Input </td><td> hostId </td><td> Id of specified host  </td></tr>
+<tr><td> Output </td><td> discoveredAccResourceInfo </td><td> Information on the acceleration resources discovered within the NFVI.  </td></tr>
+<tr><td rowspan="3">  OnloadAccImageRequest </td><td rowspan="3"> OnloadAccImageResponse </td><td rowspan="3"> VIM → NFVI </td><td> Input </td><td> accResourceId </td><td> Identifier of the chosen accelerator in the NFVI.  </td></tr>
+<tr><td> Input </td><td> accImageInfo </td><td> Information about the acceleration image.  </td></tr>
+<tr><td> Input </td><td> accImage </td><td> The binary file of acceleration image.  </td></tr>
+</table>
 
 <p align="center"><b>Table 6-3:</b> Hardware Acceleration Interfaces in the ETSI NFV architecture</p>
 

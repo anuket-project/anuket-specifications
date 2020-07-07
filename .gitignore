@@ -3,3 +3,5 @@ doc/.DS_Store
 .DS_Store
 .idea/
 ~$*
+_build/
+.tox/
