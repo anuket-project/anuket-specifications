@@ -163,7 +163,7 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 
 | Reference             | Feature                            | Type | Basic | Network Intensive |
 |-----------------------|------------------------------------|------|-------|-------------------|
-| infra.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |      |       |                   |
+| infra.com.acc.cfg.001 | _**Note:** for further study_ |      |       |                   |
 
 <p align="center"><b>Table 5-9:</b> Virtual Compute Acceleration features.</p>
 
