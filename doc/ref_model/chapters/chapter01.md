@@ -61,7 +61,7 @@ This document specifies:
 
 <a name="1.3"></a>
 ## 1.3 Principles
-The Reference Model specification conform with the overall principles defined in the preface chapter [Cloud iNfrastructure Telco Taskforce](../../tech#2.0).
+The Reference Model specifications conform with the overall principles defined in the preface chapter [Cloud iNfrastructure Telco Taskforce](../../tech#2.0).
 
 <a name="1.4"></a>
 ## 1.4 Definitions/Terminology
