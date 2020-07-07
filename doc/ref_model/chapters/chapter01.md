@@ -47,7 +47,7 @@ This **Reference Model** document focuses on identifying the abstractions, and a
 <p align="center"><b>Figure 1-1:</b> Scope of Reference Model</p>
 
 This document specifies:
-- **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete system that supports workloads deployed in Virtual Machines (VNF) or containers (CNF).
+- **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete cloud system that supports workloads deployed in Virtual Machines (VM) or containers. Network function workloads that are deployed on virtual machines and containers are referred to as virtual network functions (VNF) and containerised network functions (CNF), respectively; please note that it is now more common to refer CNFs as cloud native network functions. 
   - **Cloud Infrastructure metrics & capabilities**: A set of metrics and capabilities for the cloud infrastructure which workloads require to perform telco scale network functions.
   - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to abstract the infrastructure from workloads. With a limited and well-defined set of profiles with well understood characteristics, workload compatibility and performance predictability can be achieved.
 
