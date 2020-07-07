@@ -227,7 +227,7 @@ The Cloud Infrastructure Manager (CIM) is responsible for controlling and managi
 
 Table 4-9 shows capabilities related to resources allocation.
 
-<a name="Table4-12"></a>
+<a name="Table4-9"></a>
 
 | Ref       | Cloud Infrastructure Management Capability | Unit            | Definition/Notes                                                 |
 |-----------|--------------------------------------------|-----------------|------------------------------------------------------------------|
@@ -246,7 +246,7 @@ Table 4-9 shows capabilities related to resources allocation.
 
 Table 4-10 shows performance measurement capabilities.
 
-<a name="Table4-13"></a>
+<a name="Table4-10"></a>
 
 | Ref       | Cloud Infrastructure Management Capability | Unit   | Definition/Notes                                                                            |
 |-----------|--------------------------------------------|--------|---------------------------------------------------------------------------------------------|
@@ -262,20 +262,22 @@ Table 4-10 shows performance measurement capabilities.
 #### 4.1.6.1 Resources Management Measurements
 **Table 4-11** shows resource management measurements of CIM as aligned with ETSI GS NFV TST-012 [3].
 
+<a name="Table4-11"></a>
+
 | Ref          | Cloud Infrastructure Management Measurement                   | Unit   | Definition/Notes |
 |--------------|---------------------------------------------------------------|--------|------------------|
-| e.man-pm.001 | Time to create Virtual Compute resources for a given workload | Max ms | This is typically for a component: VNFC or CNFC |
-| e.man-pm.002 | Time to delete Virtual Compute resources of a given workload  | Max ms | This is typically for a component: VNFC or CNFC |
-| e.man-pm.003 | Time to start Virtual Compute resources of a given workload   | Max ms | This is typically for a component: VNFC or CNFC |
-| e.man-pm.004 | Time to stop Virtual Compute resources of a given workload    | Max ms | In case of containers there is no stop operation |
-| e.man-pm.005 | Time to pause Virtual Compute resources of a given workload   | Max ms | In case of containers there is no pause operation |
-| e.man-pm.006 | Time to create internal virtual network                       | Max ms |                  |
-| e.man-pm.007 | Time to delete internal virtual network                       | Max ms |                  |
-| e.man-pm.008 | Time to update internal virtual network                       | Max ms |                  |
-| e.man-pm.009 | Time to create external virtual network                       | Max ms |                  |
-| e.man-pm.010 | Time to delete external virtual network                       | Max ms |                  |
-| e.man-pm.011 | Time to update external virtual network                       | Max ms |                  |
-| e.man-pm.012 | Time to create external storage ready for use by workload     | Max ms |                  |
+| e.man-pm.001 | Time to create Virtual Compute resources (VM/container) for a given workload | Max ms |                  |
+| e.man-pm.002 | Time to delete Virtual Compute resources (VM/container) of a given workload  | Max ms |                  |
+| e.man-pm.003 | Time to start Virtual Compute resources (VM/container) of a given workload   | Max ms |                  |
+| e.man-pm.004 | Time to stop Virtual Compute resources (VM/container) of a given workload    | Max ms |                  |
+| e.man-pm.005 | Time to pause Virtual Compute resources (VM/container) of a given workload   | Max ms |                  |
+| e.man-pm.006 | Time to create internal virtual network                                      | Max ms |                  |
+| e.man-pm.007 | Time to delete internal virtual network                                      | Max ms |                  |
+| e.man-pm.008 | Time to update internal virtual network                                      | Max ms |                  |
+| e.man-pm.009 | Time to create external virtual network                                      | Max ms |                  |
+| e.man-pm.010 | Time to delete external virtual network                                      | Max ms |                  |
+| e.man-pm.011 | Time to update external virtual network                                      | Max ms |                  |
+| e.man-pm.012 | Time to create external storage ready for use by workload                    | Max ms |                  |
 
 <p align="center"><b>Table 4-11:</b> Cloud Infrastructure management Resource Management Measurements</p>
 
@@ -298,6 +300,8 @@ Compute Flavours represent the compute, memory, storage, and management network 
 
 Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute Flavour geometry consists of the following elements:
 
+<a name="Table4-12"></a>
+
 | Element                               | Description                                                                                                                                                                                             |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Compute Flavour Name                  | A descriptive name                                                                                                                                                                                      |
@@ -314,6 +318,8 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 
 >_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
 
+<a name="Table4-13"></a>
+
 | .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") | Management Interface |
 |------------------------|--------------------------|-------------------------|------------------|----------------------|
 | .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
@@ -324,7 +330,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 | .4xlarge <sup>1)</sup> | 16                       | 32 GB                   | 320 GB           | 1 Gbps               |
 | .8xlarge <sup>1)</sup> | 32                       | 64 GB                   | 640 GB           | 1 Gbps               |
 
-<p align="center"><b>Table 4-12:</b> Predefined Compute Flavours.</p>
+<p align="center"><b>Table 4-13:</b> Predefined Compute Flavours.</p>
 
 **1)** These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
 **2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
@@ -341,6 +347,7 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
+<a name="Table4-14"></a>
 
 | Virtual Network Interface Option   | Interface Bandwidth               |
 |------------------------------------|-----------------------------------|
@@ -350,7 +357,7 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 | n50, n100, n150, n200, n250, n300  | 50, 100, 150, 200, 250, 300 Gbps  |
 | n100, n200, n300, n400, n500, n600 | 100, 200, 300, 400, 500, 600 Gbps |
 
-<p align="center"><b>Table 4-13:</b> Virtual Network Interface Specification Examples</p>
+<p align="center"><b>Table 4-14:</b> Virtual Network Interface Specification Examples</p>
 
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
@@ -359,13 +366,15 @@ Persistent storage is associated with workloads via Storage Extensions. The size
 
 Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
+<a name="Table4-15"></a>
+
 | .conf   | Read IO/s  | Write IO/s | Read Throughput (MB/s) | Write Throughput (MB/s) | Max Ext Size |
 |---------|------------|------------|------------------------|-------------------------|--------------|
 | .bronze | Up to 3K   | Up to 1.5K | Up to 180              | Up to 120               | 16TB         |
 | .silver | Up to 60K  | Up to 30K  | Up to 1200             | Up to 400               | 1TB          |
 | .gold   | Up to 680K | Up to 360K | Up to 2650             | Up to 1400              | 1TB          |
 
-<p align="center"><b>Table 4-14:</b> Storage Performance Profiles</p>
+<p align="center"><b>Table 4-15:</b> Storage Performance Profiles</p>
 
 Note, performance is based on a block size of 256KB or larger.
 
@@ -405,6 +414,8 @@ This Cloud Infrastructure Profile is intended to be used for those applications 
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
 >_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
 
+<a name="Table4-16"></a>
+
 | .conf      | Interface type | Description                              |
 |------------|----------------|------------------------------------------|
 | .il-ipsec  | virtio-ipsec*  | In-line IPSec acceleration.              |
@@ -422,6 +433,8 @@ This NFVI Profile is intended to be used for those applications that has high co
 ##### 4.2.4.3.1 Compute Acceleration Extensions
 Compute Intensive Profile can come with compute acceleration extensions to assist workloads/VAs offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
 
+<a name="Table4-17"></a>
+
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. |
@@ -434,6 +447,8 @@ Compute Intensive Profile can come with compute acceleration extensions to assis
 <a name="4.2.4.4"></a>
 #### 4.2.4.4 Network Interface Options
 **Table 4-18** below shows the various network interface extension bandwidth options (from **Table 4-18**) available for each profile type (Up to 6 extensions (i.e. interfaces) may be associated with a virtual compute instance).
+
+<a name="Table4-18"></a>
 
 | Virtual Interface Option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
@@ -450,6 +465,8 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 -->
 <a name="4.2.5"></a>
 ### 4.2.5 Cloud Infrastructure Profile Capabilities Mapping
+
+<a name="Table4-19"></a>
 
 | Ref                                                                  | Basic                    | Network Intensive        | Notes |
 |----------------------------------------------------------------------|--------------------------|--------------------------|---------------------------------------------------------------------|
