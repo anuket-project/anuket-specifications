@@ -53,7 +53,7 @@ This document specifies:
 
 - Cloud Infrastructure Software and Hardware profiles:
   - **Cloud Infrastructure software profiles**: These software profiles are components of the corresponding infrastructure profiles within the infrastructure profiles catalogue, and specify the host infrastructure software configurations.
-  - **Cloud Infrastructure hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined cloud infrastructure software profiles & configurations.
+  - **Cloud Infrastructure hardware profiles**: These hardware profiles are components of the corresponding infrastructure profiles within the infrastructure profiles catalogue, and specify the host infrastructure hardware configurations.
 
 - Conformance and verification
   - **Conformance programs**: These define the requirements for verification and validation programs for both the cloud infrastructure and workloads.
