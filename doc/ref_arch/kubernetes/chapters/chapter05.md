@@ -33,7 +33,7 @@ It is recommended that:
 
 The following functionalities are recommended for securing Kubernetes platforms:
 
-- Image Certification (Scan for voulnerabilities) and Signing
+- Image Certification (Scan for vulnerabilities) and Signing
 - Role-base Access Control
 - Secret Managment
 - How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
