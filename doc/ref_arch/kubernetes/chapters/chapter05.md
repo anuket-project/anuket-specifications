@@ -31,7 +31,7 @@ It is recommended that:
 - Image registries are monitored to automatically block or replace images with known vulnerabilities, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
 - Adopt a layered packaging model which supports separation of concerns during image build.
 
-The following functionalities are recommended for securing kubernetes platform:
+The following functionalities are recommended for securing Kubernetes platforms:
 
 - Image Certification (Scan for voulnerabilities) and Signing
 - Role-base Access Control
