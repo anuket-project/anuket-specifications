@@ -35,7 +35,7 @@ The following functionalities are recommended for securing Kubernetes platforms:
 
 - Image Certification (Scan for vulnerabilities) and Signing
 - Role-base Access Control
-- Secret Managment
+- Secret Management
 - How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
   - Tenants without hard multi-tenancy requirements (multiple development teams in the same organization) separated from each other by namespaces
   - For strict multi tenancy, a dedicated Kubernetes cluster per tenant should be used
