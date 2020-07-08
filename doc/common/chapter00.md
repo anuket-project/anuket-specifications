@@ -24,7 +24,7 @@ Initially organized early in 2019, the Cloud iNfrastructure Telco Taskforce (CNT
 
 <a name="1.1"></a>
 ## Glossary
-The definition and intent of the terminology used throughout the documents is defined in the [Glossary](tech/glossary.md).
+The definition and intent of the terminology used throughout the documents is defined in the [Glossary](common/glossary.md).
 
 <a name="1.2"></a>
 ## Problem Statement

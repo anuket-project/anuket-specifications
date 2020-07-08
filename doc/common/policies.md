@@ -25,7 +25,7 @@ CNTT realizes there are implications to these types of prohibitions and practica
 
 Solving the problems associated with implementing the Abstraction Principle is a work in progress. CNTT has not solved all of the associated problems, nor has the industry. As technology evolves and more designs implement Cloud Native concepts, these problems will be addressed. This document is specifically intended as a one-stop-shop to capture CNTT policies which manage these situations as they exist today and their associated exceptions and transitions, and help drive the technology around and supporting the maturation of the Abstraction Principle.
 
-<sup>1)</sup> For a detailed description of the mechanisms underlying PCI-PT (PCI-PassThrough), refer to [Section 8.1](https://github.com/cntt-n/CNTT/blob/master/doc/tech/technologies.md#8.1) of Relevant Technologies.
+<sup>1)</sup> For a detailed description of the mechanisms underlying PCI-PT (PCI-PassThrough), refer to [Section 8.1](./technologies.md#8.1) of Relevant Technologies.
 
 Several specific technology areas have been identified by CNTT as using an ABI impacted by the Abstraction Principle, as follows:
 - SR-IOV over PCI-PT

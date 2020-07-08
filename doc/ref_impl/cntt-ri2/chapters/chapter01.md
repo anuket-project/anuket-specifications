@@ -34,7 +34,7 @@ The document first consolidates the requirements that need to be addressed by th
 <a name="1.1.3"></a>
 ### 1.1.3 Terminology
 
-Terminology in this document will follow [CNTT Terminology](../../../tech/glossary.md).
+Terminology in this document will follow [CNTT Terminology](../../../common/glossary.md).
 
 <a name="1.2"></a>
 ## 1.2 Scope

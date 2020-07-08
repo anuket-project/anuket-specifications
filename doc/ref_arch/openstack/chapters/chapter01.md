@@ -34,7 +34,7 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 <a name="1.3"></a>
 ## 1.3 Terminology
 
-General terminology definitions can be found [Glossary](../../../tech/glossary.md) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./Terminology.md). 
+General terminology definitions can be found [Glossary](../../../common/glossary.md) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./Terminology.md). 
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
 
@@ -42,8 +42,8 @@ General terminology definitions can be found [Glossary](../../../tech/glossary.m
 ## 1.4 Principles
 
 OpenStack Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../tech#2.0)
-- [CNTT Reference Architecture Principles](../../../tech#22-architectural-principles)
+- [CNTT Reference Model Principles](../../../common/chapter00.md#2.0)
+- [CNTT Reference Architecture Principles](../../../common/chapter00.md#22-architectural-principles)
 
 **OpenStack specific principles**
 
