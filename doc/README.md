@@ -6,7 +6,7 @@
   * [Code of Conduct](../CODE_OF_CONDUCT.md)
   * [The License (Creative Commons Attribution 4.0 International)](https://creativecommons.org/licenses/by/4.0/legalcode)
 * [Technical Specifications](tech)
-  * [Introduction, Direction, and Roadmap](tech)
+  * [Introduction](chapter00.md)
   * [Reference Model](ref_model)
   * [Reference Architectures](ref_arch)
   * [Reference Implementations](ref_impl)
