@@ -3,7 +3,7 @@
 
 ## Table of Contents
 * [Overview](#1.0)
-    * [ Glossary](#1.1)
+    * [Glossary](#1.1)
     * [Problem Statement](#1.2)
     * [Project Goals and Purpose](#1.3)
     * [Common Cloud Infrastructure Benefits](#1.4)
@@ -14,6 +14,8 @@
   * [Specification Types](#3.3)
   * [Relationship to other industry projects](#3.4)
   * [Bogo-Meter](#3.5)
+* [Abbreviations](#4.0)
+* [References](#5.0)
 
 <a name="1.0"></a>
 # Overview
@@ -137,7 +139,7 @@ Following are a number of key architectural principles that apply to all Referen
 
 Within the framework of the Common Telecom cloud infrastructure vision, there are four levels of documents needed to describe the components, realize the practical application of the systems and qualify the resulting cloud infrastructure. They are, as highlighted in **Figure 1**:  **Reference Model**, **Reference Architecture**, **Reference Implementation**, and **Reference Conformance**.
 
-<p align="center"><img src="tech/figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Documentation Scope of CNTT</p>
 
 <a name="3.1"></a>
@@ -149,7 +151,7 @@ In terms of the functional scope of the CNTT documentation, in order to target t
 
 Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf), those ETSI interfaces that are considered relevant (with notes where required) are included in the figure below.
 
-<p align="center"><img src="tech/figures/cntt-scope.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/cntt-scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> Functional Scope of CNTT</p>
 
 <a name="3.2"></a>
@@ -170,12 +172,12 @@ While the nature of the CNTT might seem quite broad, the following areas are not
 
 **Figure 2** below illustrates how each type of  specifications relate to different element of a typical cloud platform stack.
 
-<p align="center"><img src="tech/figures/tech_stack.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_stack.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 3:</b> Documentation Scope of CNTT</p>
 
 Below is a diagram of the different artefacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture**, that will be deployed using the requirements spelled out in the **Reference Implementation**.
 
-<p align="center"><img src="tech/figures/tech_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_scope_3.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 4:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="3.4"></a>
@@ -197,7 +199,7 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 
 The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
 
-<p align="center"><img src="tech/figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
 
 <a name="3.4.2"></a>
@@ -207,7 +209,7 @@ The CNTT is also closely aligned with OVP, an open source, community-led complia
 
 Once the CNTT specifications are on place, OPNFV is expected to create a reference implementation that is adherent to requirements set in CNTT (**Reference Implementations**). Additionally, Commercial products adhering to CNTT specifications will be able to undergo an enhanced OVP’s program (based on CNTT **Reference Conformance** specification) using OPNFV testing framework and tools. **Figure 6** below illustrates the relationship with OPNFV and OVP in more details (specific to OpenStack based specifications)
 
-<p align="center"><img src="tech/figures/tech_relation_opnfv.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_relation_opnfv.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 6:</b> CNTT Relationship with OPNFV and OVP.</p>
 
 As can be seen from the above figure, roles and responsibilities are as follows:
@@ -234,7 +236,7 @@ The CNTT collaborates with relevant API workgroups of SDOs ( such as MEF, TM For
 <a name="3.5"></a>
 ## Bogo-Meter
 At the beginning of each chapter there is a graphic that indicates the completeness and maturity each chapter's content at a glance.  
-<p align="right"><img src="tech/figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="./figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 The ratings are as follows:
  - **Initial framework only**: Indicates that there is little or no useful content, just the bare outline.
@@ -242,3 +244,14 @@ The ratings are as follows:
  -	**Lots of SME feedback**: Indicates that most of the content has been developed, but that there is still opportunity for contributors to shape the content.
  - **Dickering over the fine points**: The content is mostly completed, but the community needs to refine its shared thinking and build final consensus.
  - **Complete**: Content has been finalized for this release.  Few changes are anticipated in the future beyond fixing errors or slight refinements.
+
+ <a name="4.0"></a>
+# Abbreviations
+
+Please refer to [Abbreviations](./abbreviations.md) for a full list. 
+
+
+<a name="5.0"></a>
+# References 
+
+Please refer to [References](./references.md) for a full list. 

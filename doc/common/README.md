@@ -1,4 +1,4 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
+[<< Back](../)
 # Cloud iNfrastructure Telco Taskforce
 
 ## Table of Contents
@@ -20,7 +20,7 @@
 <a name="1.0"></a>
 # Introduction
 
-Cloud iNfrastructure Telco Taskforce [Introduction](../chapter00.md). 
+Cloud iNfrastructure Telco Taskforce [Introduction](chapter00.md). 
 
 <a name="4.0"></a>
 # Approach

@@ -3,19 +3,19 @@
 
 ## Table of Contents
 * [Networking and Fabric Approach](#5.1)
-  * [5.1.1 Networking Scope](#5.1.1)
-  * [5.1.2 Networking Principles & Strategy](#5.1.2)
-  * [5.1.3 Network Layering and Concepts](#5.1.3)
+  * [Networking Scope](#5.1.1)
+  * [Networking Principles & Strategy](#5.1.2)
+  * [Network Layering and Concepts](#5.1.3)
 
 
 <a name="5.1"></a>
-## 5.1 Networking and Fabric Approach
+## Networking and Fabric Approach
 
 The networking within a cloud infrastructure is an area where there is significant variability across implementations. Leaf-Spine topology for large datacenters is well established, however after physical switch interconnection topology choices there are countless decisions an Operator needs to make. Differences arise from many aspects, for example, is the solution layer-2 or layer-3; is the routing static or dynamic; what mechanism is used for encapsulation; what mechanism is used for isolation; does it support SR-IOV; does it support DPDK; does it employ SmartNICs; does it employ distributed control or a centralized control driving a programmable networking fabric; are the network switches selected and provisioned by a separate Network Operations group or by a Cloud Infrastructure Operations group; and the list continues. The multitude of permutations enable cloud infrastructure architects (Operators and Suppliers) to design (or procure) a fabric/networking solution that's optimized for their needs, whether their needs are minimal, very extensive or somewhere in between. There is a need for a strategy that affords Operators the performance, flexibility, availability, maintainability and scalability their business requires, yet doesn't require OPNFV to design, manage and test prohibitive numbers of networking solutions.
  
 
 <a name="5.1.1"></a>
-### 5.1.1 Networking Scope
+### Networking Scope
 According to the ETSI NFV Model, Networking alongside Compute and Storage, is an integral part of the Network Function Virtualisation Infrastructure (aka Cloud Infrastructure). The general function of Networking in this context is to provide the connectivity between various virtualised and non-virtualised resources required for a delivery of a Network Service. Such connectivity may manifest itself as a virtualised network between VMs and/or Containers (e.g. overlay networks managed by SDN Controllers, and/or programmable networking fabrics) or as an integration into the Infrastructure Hardware level for offloading some of the Network Service functionality into Hardware Layer. 
 
 Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture stack is one of the main concerns of the telco industry.  In the Networking context the primary focus is directed on the packet flow and control flow interfaces between Virtualisation Layer (be it IaaS or CaaS type of virtualisation) and Networking Hardware resources, as well as on related integration into the various MANO reference points (Hardware/ Network Infrastructure Management/Control, Orchestration). 
@@ -23,7 +23,7 @@ Normalization of the integration reference points between different layers of th
 It is a critical feature of the proposed Networking Model to ensure the ability for supporting simultaneous usage of different reference architectures by having multiple Virtualisation Layers (e.g., CaaS and IaaS) on top of a shared Hardware Infrastructure Layer. The details of this approach are provided in the section "Network Layering and Concepts" below.
 
 <a name="5.1.1.1"></a>
-#### 5.1.1.1 Identified Areas of Concern
+#### Identified Areas of Concern
 The following areas present concerns for integration of NFV-MANO and CNF/VNF implementations with networking infrastructures:
 
 •	Need to define the separation between HW Infrastructure Management and SW Virtualisation Management without which the cardinality of having multiple CaaS and IaaS layers on top of a shared HW Infrastructure Layer cannot be expressed
@@ -36,12 +36,12 @@ The following areas present concerns for integration of NFV-MANO and CNF/VNF imp
 
 •	Need to enable programmable forwarding planes in the HW Layer controlled from higher layers of virtualization managers, orchestrators or Network Functions
 
-<p align="center"><img src="../tech/figures/ETSI.png"><b> Figure 5-1-1-1: ETSI model and Networking.</b></p>
+<p align="center"><img src="../common/figures/ETSI.png"><b> Figure 1</b>: ETSI model and Networking.</p>
 
 > **Editor's Note:** Other areas of concern may be identified and addressed during the later stages of work on the RM/RA contents for Networking.
 
 <a name="5.1.1.2"></a>
-#### 5.1.1.2 Specific topics to be included in the Networking Scope
+#### Specific topics to be included in the Networking Scope
 To address the concern areas detailed above the specific topics listed below will be covered under Networking. 
 
 > **Editor's Note:** The list below does not pretend to be complete. It will be a subject to modifications as a result of the community discussion.
@@ -76,7 +76,7 @@ To address the concern areas detailed above the specific topics listed below wil
 
 
 <a name="5.1.2"></a>
-### 5.1.2 Networking Principles & Strategy
+### Networking Principles & Strategy
 
 This section introduces some networking related principles that should be followed during development and definition of Networking scopes for Reference Model, Reference Architecture 01 (OpenStack), Reference Architecture 02 (K8s) and down to Reference Implementations and Reference Conformance test suites under CNTT.
 
@@ -103,7 +103,7 @@ This section introduces some networking related principles that should be follow
 
 
 <a name="5.1.3"></a> 
-### 5.1.3 Network Layering and Concepts
+### Network Layering and Concepts
 
 Cloud and Telco networking are layered, and it is very important to keep the layering dependencies low to enable security, separation and portability in between multiple implementations.
 
@@ -115,7 +115,7 @@ Before we start developing a deep model we need to agree on some foundational co
  - Programmable Networking Fabric concept
 
 <a name="5.1.3.1"></a>
-#### 5.1.3.1 Underlay and Overlay Networking concepts
+#### Underlay and Overlay Networking concepts
 
 The typical NFV model divides networking into an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of tenants' Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected HW units.
 
@@ -128,7 +128,7 @@ In some instances, the SW Virtualisation Tenants can bypass the Overlay Networki
 VTEP could be manually provisioned in the Underlay Networking, which is not a recommended practice, or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer. 
 
 <a name="5.1.3.2"></a>
-#### 5.1.3.2 Hardware and Software Infrastructure Layer concepts
+#### Hardware and Software Infrastructure Layer concepts
 
 The Cloud Infrastructure can be considered to be composed of two distinct layers, referred to as HW Infrastructure Layer and SW Infrastructure Layer. When there are multiple separated simultaneously deployed SW Virtualisation domains, the architecture and deployed implementations must enable each of them to be in individual independent administrative domains. The HW Infrastructure must also be enabled to be a fully separated administrative domain from all of the SW Virtualisation domains. 
 
@@ -141,7 +141,7 @@ These concepts are very similar to how the Hyperscaler Cloud Providers (HCP) off
 The separation of Hardware and Software Infrastructure Layers makes it important that CNTT Reference Architectures do not include direct management or dependencies of the physical hardware resources e.g. servers and switches inside the HW Infrastructure Layer. All automated interaction from the SW Infrastructure Layer implementations towards the HW and shared networking resources in the HW Infrastructure Layer must go through a common abstracted Reference Model interface. 
 
 <a name="5.1.3.3"></a>
-#### 5.1.3.3 Software Defined Networking, SDNu and SDNo concepts
+#### Software Defined Networking, SDNu and SDNo concepts
 
 A major point with a Cloud Infrastructures is to automate as much as possible. An important tool for Networking automation is Software Defined Networking (SDN) that comes in many different shapes and can act on multiple layers of the networking. In this section we will deal with the internal networking of a data center and not how data centers interconnect with each other or  get access to the world outside of a data center.
 
@@ -163,7 +163,7 @@ One consequence of this is that the Reference Architectures must not model colla
 
 
 <a name="5.1.3.4"></a>
-#### 5.1.3.4 Programmable Networking Fabric concept
+#### Programmable Networking Fabric concept
 
 The concept of a Programmable Networking Fabric pertains to the ability to have an effective forwarding pipeline (a.k.a. forwarding plane) that can be programmed, scaled and/or configured as a centrally controlled HW Infrastructure Layer instance without any risk of harmful disruption to the Underlay Networking that is shared by all SW Virtualization and BareMetal instances.
 
@@ -182,20 +182,20 @@ This also imply that programmable forwarding functions in a Programmable Network
 > **Note:** Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud implementation and falls outside the use cases for these specifications.
 
 <a name="5.1.4"></a>
-### 5.1.4 Networking Reference Model
+### Networking Reference Model
 
-The Networking Reference Model, based on the ETSI NFV model, is depicted in **Figure 5-1-4**. The Networking Reference Model describes the Container Virtualisation support and a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous SW Virtualisation domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure. 
+The Networking Reference Model, based on the ETSI NFV model, is depicted in **Figure 2**. The Networking Reference Model describes the Container Virtualisation support and a strict separation of the HW Infrastructure and SW Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous SW Virtualisation domains allowing a mix of CaaS on Metal, CaaS on IaaS and IaaS on a shared HW infrastructure. 
 
 It is up to any deployment of  the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_ETSINFV-PA7.jpg" alt="Networking Reference Model based on the ETSI NFV" title="Cloud Infrastructure Networking Reference Model" width="100%"/></p>
-<p align="center"><b>Figure 5-1-4:</b> Cloud Infrastructure Networking Reference Model</p>
+<p align="center"><b>Figure 2:</b> Cloud Infrastructure Networking Reference Model</p>
 
 <a name="5.1.5"></a>
-### 5.1.5 Deployment examples based on the Networking Reference Model
+### Deployment examples based on the Networking Reference Model
 
 <a name="5.1.5.1"></a>
-#### 5.1.5.1 Switch Fabric and SmartNIC examples for Underlay Networking separation
+#### Switch Fabric and SmartNIC examples for Underlay Networking separation
 
 The HW Infrastructure Layer can implement the Underlay Networking separation in any type of packet handling component. This may be deployed in many different ways depending on target use case requirements, workload characteristics and available platforms. Two of the most common ways is 1. within the physical Switch Fabric and 2. in a SmartNIC connected to the Server CPU being controlled over a management channel that is not reachable from the Server CPU and its host software. In either way the Underlay Networking separation is controlled by the HW Infrastructure Manager.
 
@@ -203,26 +203,26 @@ In both cases the Underlay Networking can be externally controlled over the SDNu
 
 > **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of SW Virtualisation instances in separate Overlay domains in much the same way as AWS do with their Nitro SmartNIC. This is the important consideration for the Reference Model that enables multiple instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific SW Virtualisation instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
 
-Two exemplifications of different common HW realisations of Underlay separation in the HW Infrastructure Layer can be seen in **Figure 5-1-5-1**.
+Two exemplifications of different common HW realisations of Underlay separation in the HW Infrastructure Layer can be seen in **Figure 3**.
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-HWInfra_Underlay_Examples-PA6.jpg" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
-<p align="center"><b>Figure 5-1-5-1:</b> Underlay Networking separation examples</p>
+<p align="center"><b>Figure 3:</b> Underlay Networking separation examples</p>
 
 <a name="5.1.5.2"></a>
-#### 5.1.5.2 SDN Overlay and SDN Underlay layering and relationship example
+#### SDN Overlay and SDN Underlay layering and relationship example
 
-Two use case examples with both SDNo and SDNu controllers depicting a normal virtual switch encapsulating SW Virtualisation Infrastructure instance and another high performance oriented SW Virtualisation Infrastructure instance (e.g. using SR-IOV) are described in **Figure 5-1-5-2**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+Two use case examples with both SDNo and SDNu controllers depicting a normal virtual switch encapsulating SW Virtualisation Infrastructure instance and another high performance oriented SW Virtualisation Infrastructure instance (e.g. using SR-IOV) are described in **Figure 4**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-SDNo_SDNu_Examples-PA6.jpg" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
-<p align="center"><b>Figure 5-1-5-2:</b> SDN Controller relationship examples</p>
+<p align="center"><b>Figure 4:</b> SDN Controller relationship examples</p>
 
 <a name="5.1.5.3"></a>
-#### 5.1.5.3 IaaS and CaaS SW Virtualisation example on a shared HW Infrastructure with SDN
+#### IaaS and CaaS SW Virtualisation example on a shared HW Infrastructure with SDN
 
-A Networking Reference Model deployment example is depicted in **Figure 5-1-5-3** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains here represented with separate colors.
+A Networking Reference Model deployment example is depicted in **Figure 5** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains here represented with separate colors.
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNF on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks since it is not foreseen any generic standard of a CaaS that will be capable to handle all types of CNFs and also have a decoupled Life Cycle Management from all individual CNFs from a multi-vendor community. 
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_DeploymentExample-PA7.jpg" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
-<p align="center"><b>Figure 5-1-5-3:</b> Networking Reference Model deployment example</p>
+<p align="center"><b>Figure 5:</b> Networking Reference Model deployment example</p>
 
