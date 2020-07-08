@@ -2,7 +2,7 @@
 # CNTT Approach
 
 ## Table of Contents
-* [5.1 Networking and Fabric Approach](#5.1)
+* [Networking and Fabric Approach](#5.1)
   * [5.1.1 Networking Scope](#5.1.1)
   * [5.1.2 Networking Principles & Strategy](#5.1.2)
   * [5.1.3 Network Layering and Concepts](#5.1.3)
