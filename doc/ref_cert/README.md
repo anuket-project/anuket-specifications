@@ -130,7 +130,7 @@ the network settings:
 - Proxy: you may set your proxy in env for Ansible and in systemd for Docker
   https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
 
-<a name="available-cr"></a>
+<a name="available-rc"></a>
 ## Available Programs
-* [RC1 - LFN Based](lfn)
+* [RC1 - Openstack Based](RC1)
 * [RC2 - Kubernetes Based](RC2)
