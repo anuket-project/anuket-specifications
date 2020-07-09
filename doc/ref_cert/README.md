@@ -24,7 +24,6 @@ If there is no clear traceability and strong links between these 3 components, t
 
 ## Testing Principles
 * There must be traceability between test cases and requirement being validated
-* Failures should explicitly reference the requirement IDs violated (optionally they can provide a link or text of the requirement)
 * Failures should provide additional content to inform the user where or how the requirement was violated (ex: which file or resource violated the requirement).  Put another way, don’t require the user to read the test to understand what went wrong.
 * Testing tools should support selection of tests based on category or profile.
 * Result reports must clearly delineate violations of mandatory vs. optional requirements
