@@ -20,7 +20,7 @@
 
 This chapter describes in detail the Kubernetes Reference Architecture in terms of the functional capabilities and how they relate to the Reference Model requirements, i.e. how the infrastructure profiles are determined, documented and delivered.
 
-The specifications defined in this chapter will be detailed with unique identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g. `ra2.ch.001` for the first requirement in the Container Host OS section.  These specifications will then be used as requirements input for the Kubernetes Reference Implementation and any Vendor or Community Implementations.
+The specifications defined in this chapter will be detailed with unique identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g. `ra2.ch.001` for the first requirement in the Container Host section.  These specifications will then be used as requirements input for the Kubernetes Reference Implementation and any Vendor or Community Implementations.
 
 Figure 4-1 below shows the architectural components that are described in the subsequent sections of this chapter.
 
