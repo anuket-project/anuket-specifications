@@ -4,7 +4,7 @@
 
 The objective each RC workstream is to provide an automated mechanism to measure either a network function (NF) or a cloud infrastructure with a standard set of requirements defined by the associated Reference Architecture (RA).  Through this measurement, a provider of either NFs or cloud infrastructure will be able to test their conformance to the RA.  This will ease the integration of NFs into operator environments that host compatible cloud infrastructures, thereby reducing cost, complexity, and time of integration.
 
-The overall program requires the close coordination of the following:
+The overall workstream requires the close coordination of the following:
 
 **Requirements** - The agreed upon rules and recommendations to which a compliant NF or cloud infrastructure must adhere. All requirements will be hosted and maintianed in the RA.
 **Tests** - The verification mechanism that determines that a given NF or cloud infrastructure complies with one or more requirements.
