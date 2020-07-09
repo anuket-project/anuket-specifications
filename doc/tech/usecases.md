@@ -206,4 +206,15 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 ### 5.1.6 Terminologies
 
 <a name="5.1.7"></a>
-### 5.1.7 SDO interlocking
+### 5.1.7 Standard Developing Bodies (SDO) and Open Source Communities Interlock 
+
+-	OpenStack Edge Computing Group 
+    - Working will OpenStack ECG on defining various architecture that will be fit in RA01 & RA02
+- Linux Foundation - Edge (LF-Edge)
+- GMSA - operator Platform Group (OPG) & Telco Edge Cloud (TEC)
+- ETSI MEC
+- ETSI NFV 
+- Telecom Infra Project (TIP)
+    - Working will TIP for Requirements gathering to be adopted from Telco Edge cloud infrastructure prospective
+
+
