@@ -120,7 +120,7 @@ Secrets must not be stored in scripts or code but provided dynamically at runtim
 ##  5.13  Trusted Registry
 Ensure that the container registry only accepts container images from trusted sources that have tested and validated the images. Where images are provided by third parties, define and follow a formal process to validate compliance with security requirements. Also ensure that access control is applied to registries requiring unique credentials, to limit who can control the build or add images.
 
-- Network access to the registry must run over TLS or VPN connections
+- It is strongly recommended that network access to the registry is secured using TLS, SSL or VPN connections to ensure trust.
 
 Ensure container applications are validated to assess their use and applicability as well as scanned for viruses and vulnerabilities. Only deploy container application from images that are signed with a trusted key
 
