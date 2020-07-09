@@ -10,7 +10,7 @@ The overall program requires the close coordination of the following:
 **Tests** - The verification mechanism that determines that a given NF or cloud infrastructure complies with one or more requirements.
 **Conformance Specifications** - The definition of the requirements, tests, and circumstances (test case integration, etc.) that must be met to be deemed conformant.
 
-If there is not clear traceability and strong links between these 3 components, then it becomes difficult to determine if a NF or cloud infrastructure is compliant. With this in mind, below are the set of recommended principles for each of the three components to follow. Adherence to these principles will provide the following:
+If there is no clear traceability and strong links between these 3 components, then it becomes difficult to determine if a NF or cloud infrastructure is compliant. With this in mind, below are the set of recommended principles for each of the three components to follow. Adherence to these principles will provide the following:
 
 * Enable clear progress tracking and linkage between independent projects (i.e. know what has and hasn't been covered, and track changes over time)
 * Help users better understand mandatory requirements
