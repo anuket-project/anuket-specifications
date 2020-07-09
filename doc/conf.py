@@ -1,5 +1,6 @@
 import os
 import sys
+import sphinx_rtd_theme
 
 from recommonmark.parser import CommonMarkParser
 source_parsers = {
@@ -16,7 +17,8 @@ sys.path.append(os.path.abspath("../relative-link-corrector"))
 extensions = ['direct-copy', 
               'readme-to-index', 
               'relative-link-corrector',
-              'sphinx_markdown_tables']
+              'sphinx_markdown_tables', 
+              'sphinx_rtd_theme']
 
 direct_copy_directories = ['/gov/figures', 
                            '/ref_model/figures', 
@@ -29,3 +31,5 @@ direct_copy_directories = ['/gov/figures',
                            '/ref_impl/cntt-ri2/figures',
                            '/tech/figures', 
                            '/ven_impl/figures'] 
+
+html_theme = "sphinx_rtd_theme"
