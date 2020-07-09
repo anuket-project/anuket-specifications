@@ -13,25 +13,19 @@ The overall program requires the close coordination of the following:
 If there is not clear traceability and strong links between these 3 components, then it becomes difficult to determine if a NF or cloud infrastructure is compliant. With this in mind, below are the set of recommended principles for each of the three components to follow. Adherence to these principles will provide the following:
 
 * Enable clear progress tracking and linkage between independent projects (i.e. know what has and hasn't been covered, and track changes over time)
-* Help users better understand mandatory vs. optional requirements
+* Help users better understand mandatory requirements
 * Provide a stable set of point-in-time requirements and tests to achieve conformance.  
 * Reduce ambiguity in testing, requirements, and conformance
 
 
 ## Requirement Principles
-* All requirements must be assigned a requirements ID and not be embedded in narrative text.  This is to ensure that readers do not have to infer if a requirement exists and is applicable
-* Requirements must have a unique ID for tracking and reference purposes
-* The requirement ID should include a prefix to delineate the source project
-* Requirements must state the level of compliance (ex: MUST, SHOULD, MAY) per RFC 2119
 * Mandatory requirements must be defined in such a way that they are unambiguously verifiable via automated testing
 * Requirements should be publishable or extractable into a machine readable format such as JSON
-* Requirements should include information about the impact of non-conformance and the rationale for their existence
 
 ## Testing Principles
 * Tests must provide a mapping to the requirement being validated
 * Failures should explicitly reference the requirement IDs violated (optionally they can provide a link or text of the requirement)
 * Failures should provide additional content to inform the user where or how the requirement was violated (ex: which file or resource violated the requirement).  Put another way, don’t require the user to read the test to understand what went wrong.
-* Testing tools should allow users to select between validation of mandatory and optional requirements (if validation of optional requirements is supported).
 * Testing tools should support selection of tests based on category or profile.
 * Result reports must clearly delineate violations of mandatory vs. optional requirements
 * Tests must be available to run locally by both CNF and NFVI providers
