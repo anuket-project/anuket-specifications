@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
-* [4.2 Container Host OS](#4.2)
+* [4.2 Container Host](#4.2)
 * [4.3 Kubernetes](#4.3)
 * [4.4 Container runtimes](#4.4)
 * [4.5 Networking solutions](#4.5)
@@ -20,7 +20,7 @@
 
 This chapter describes in detail the Kubernetes Reference Architecture in terms of the functional capabilities and how they relate to the Reference Model requirements, i.e. how the infrastructure profiles are determined, documented and delivered.
 
-The specifications defined in this chapter will be detailed with unique identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g. `ra2.chos.001` for the first requirement in the Container Host OS section.  These specifications will then be used as requirements input for the Kubernetes Reference Implementation and any Vendor or Community Implementations.
+The specifications defined in this chapter will be detailed with unique identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g. `ra2.ch.001` for the first requirement in the Container Host OS section.  These specifications will then be used as requirements input for the Kubernetes Reference Implementation and any Vendor or Community Implementations.
 
 Figure 4-1 below shows the architectural components that are described in the subsequent sections of this chapter.
 
@@ -28,15 +28,16 @@ Figure 4-1 below shows the architectural components that are described in the su
 <p align="center"><b>Figure 4-1:</b> Kubernetes Reference Architecture</p>
 
 <a name="4.2"></a>
-## 4.2 Container Host OS
+## 4.2 Container Host
 
-In order for a Container Host OS to be conformant with the Reference Architecture it must be implemented as per the following specifications:
+This section describes the configuration that will be applied to the physical or virtual machine and an installed Operating System.
+In order for a Container Host to be conformant with the Reference Architecture it must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.chos.001`||||
-|`ra2.chos.002`||||
-|`ra2.chos.003`||||
+|`ra2.ch.001`||||
+|`ra2.ch.002`||||
+|`ra2.ch.003`||||
 
 <p align="center"><b>Table 4-1:</b> Host OS Specifications</p>
 
@@ -67,7 +68,7 @@ Table 4-1 lists the Linux kernel versions that comply with this Reference Archit
 ## 4.3 Kubernetes
 > * The version of version range of Kubernetes and the mandatory components needed for Kubernetes (e.g.: etcd, cadvisor)
 > * Which optional features are used and which optional API-s are available
-> * Which [alfa or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
+> * Which [alpha or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
 
 In order for the Kubernetes components to be conformant with the Reference Architecture they must be implemented as per the following specifications:
 
@@ -77,9 +78,9 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.002`|Highly available etcd|An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes).|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.003`|Highly available control plane|An implementation must consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.004`|Highly available worker nodes|An implementation must consist of at least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes|[req.gen.rsl.01 req.gen.avl.01 req.kcm.gen.02](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.k8s.004`||||
-|`ra2.k8s.005`||||
+|`ra2.k8s.005`|Kubernetes API Version|In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), an implementation must use one of three latest minor versions (`n-2`). e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15.|TBC|
 |`ra2.k8s.006`||||
+|`ra2.k8s.007`||||
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
 
@@ -87,7 +88,7 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 > THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
 #1635
 
-In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), a Reference Implementation must use one of three latest minor versions (`n-2`) - e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15. The Kubernetes distribution, product, or installer used in the RI must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) and marked (X) as conformant for the Kubernetes version that is being used.
+
 
 This Reference Architecture also specifies:
 
