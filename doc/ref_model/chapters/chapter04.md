@@ -725,6 +725,15 @@ Two use case examples with both SDNo and SDNu control functions depicting a soft
 <p align="center"><img src="./../figures/ch04_Underlay_Separation_MultiVIM_Example.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
 <p align="center"><b>Figure 4-3-3-2:</b> SDN Controller relationship examples</p>
 
+<a name="4.3.3.3"></a>
+#### 4.3.3.3 Example of IaaS and CaaS Virtualization Infrastructure instances on a shared HW Infrastructure with SDN
+
+A Networking Reference Model deployment example is depicted in **Figure 4-3-3-3** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
+
+The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNFs on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks, since it is not foreseen any generic standard of a CaaS implementation that will be capable to support all types of CNFs from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances. 
+
+<p align="center"><img src="./../figures/ch04_Multi-VIM_Deployment_Example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
+<p align="center"><b>Figure 4-3-3-3:</b> Networking Reference Model deployment example</p>
 
 
 <!--
