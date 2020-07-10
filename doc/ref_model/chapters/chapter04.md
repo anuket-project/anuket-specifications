@@ -600,7 +600,28 @@ These flavors, similarly to other flavours, should be supported for three CNTT r
 <a name="4.3"></a>
 ## 4.3 Networking
 
-This is a placeholder for Cloud Infrastructure infrastructure networking information that is common to all Reference Architectures.
+The Cloud Infrastructure Networking Reference Model is an essential foundation that governance all Reference Architectures and Cloud Infrastructure implementations to enable a continuous evolution and migration from current single Infrastructure as a Service (IaaS) based virtualization instances with Virtual Machines (VM) into tomorrow’s multitude of Cloud Native Container as a Service (CaaS) based virtualization instances.  
+
+To retain the Cloud paradigms of automation, scalability and usage of shared hardware resources when introducing CaaS instances it is necessary to enable an ability to co-deploy multiple simultaneous IaaS and CaaS instances on a shared pool of hardware resources.
+
+Compute and Storage resources are rarely shared in between IaaS or CaaS instances, but the underpinning networking most commonly implemented with Ethernet and IP, must be shared and managed to have a shared pool of hardware resources.
+
+Throughout this chapter and its figures a number of references to ETSI NFV are made and they explicitly are made towards the ETSI NFV models in the Architectural Framework: 
+-	[ETSI GS NFV 002 V1.2.1](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
+-	[ETSI GR NFV-IFA 029 V3.3.1](https://www.etsi.org/deliver/etsi_gr/NFV-IFA/001_099/029/03.03.01_60/gr_NFV-IFA029v030301p.pdf)
+
+
+<a name="4.3.1"></a>
+### 4.3.1 Network Layering and Concepts
+
+Cloud and Telco networking are layered, and it is very important to keep the layering dependencies low to enable security, separation and portability in between multiple implementations and generations.
+
+Before we start developing a deep model we need to agree on some foundational concepts and layering that allow decoupling of implementations in between the layers. We will emphasize four concepts in this section:
+
+ - Underlay and Overlay Networking concepts
+ - Hardware and Virtual Infrastructure Layer concepts
+ - Software Defined Underlay and Overlay Networking concepts 
+ - Programmable Networking Fabric concept
 
 
 <!--
