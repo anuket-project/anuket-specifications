@@ -6,7 +6,7 @@ The objective each RC workstream is to provide an automated mechanism to measure
 
 The overall workstream requires the close coordination of the following:
 
-**Requirements** - The agreed upon rules and recommendations to which a compliant NF or cloud infrastructure must adhere. All requirements will be hosted and maintianed in the RA.
+**Requirements** - The agreed upon capabilities and conditions that a compliant NF or cloud infrastructure must provide or satisfy. All requirements will be hosted and maintained in the RA.
 **Tests** - The verification mechanism that determines that a given NF or cloud infrastructure complies with one or more requirements.
 **Conformance Specifications** - The definition of the requirements, tests, and circumstances (test case integration, etc.) that must be met to be deemed conformant.
 
