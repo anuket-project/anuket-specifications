@@ -2,7 +2,7 @@
 
 # CNTT Reference Conformance (RC) Requirements and Testing Principles
 
-The objective each RC workstream is to provide an automated mechanism to measure either a network function (NF) or a cloud infrastructure with a standard set of requirements defined by the associated Reference Architecture (RA).  Through this measurement, a provider of either NFs or cloud infrastructure will be able to test their conformance to the RA.  This will ease the integration of NFs into operator environments that host compatible cloud infrastructures, thereby reducing cost, complexity, and time of integration.
+The objective each RC workstream is to provide an automated mechanism to validate either a network function (NF) or a cloud infrastructure against a standard set of requirements defined by the associated Reference Architecture (RA).  Through this validation mechanism, a provider of either NFs or cloud infrastructure will be able to test their conformance to the RA.  This will ease the integration of NFs into operator environments that host compatible cloud infrastructures, thereby reducing cost, complexity, and time of integration.
 
 The overall workstream requires the close coordination of the following:
 
