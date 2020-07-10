@@ -690,6 +690,16 @@ This also imply that programmable forwarding functions in a Programmable Network
 
 > **Note:** Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud Infrastructure implementation and falls outside the use cases for these specifications.
 
+<a name="4.3.2"></a>
+### 4.3.2 Networking Reference Model
+
+The Cloud Infrastructure Networking Reference Model depicted in **Figure 4-3-2** is based on the ETSI NFV model enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and Virtualization Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous Virtualisation instances and domains allowing a mix of IaaS, CaaS on IaaS and CaaS on Bare Metal on top of a shared HW Infrastructure. 
+
+It is up to any deployment of the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
+
+<p align="center"><img src="./figures/Networking_Reference_Model.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
+<p align="center"><b>Figure 4-3-2:</b> Networking Reference Model based on the ETSI NFV</p>
+
 
 
 <!--
