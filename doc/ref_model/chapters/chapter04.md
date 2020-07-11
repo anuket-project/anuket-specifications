@@ -483,7 +483,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
 | `e.cap.011`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
 | `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | Yes                      | No                       | |
+| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       | |
 | `e.cap.014`<br />(GPU/NPU)                                            | No                       | Yes / No                       | Yes : in case of AI and Video Edge use cases|
 | `e.cap.015`<br />(SmartNIC)                                           | No        | Yes / No                       | |
 | `e.cap.016`<br />(FPGA/other Acceleration H/W)                        |No             | Yes / No                       | Yes : in case of vRAN Edge use case || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
