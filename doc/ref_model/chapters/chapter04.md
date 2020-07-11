@@ -481,7 +481,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.008`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
 | `e.cap.009`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
 | `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
-| `e.cap.011`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
+| `e.cap.011`<br />(Programmable Acceleration)                | No                       | Yes/No                       |                                                                     |
 | `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
 | `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       | |
 | `e.cap.014`<br />(GPU/NPU)                                            | No                       | Yes / No                       | Yes : in case of AI and Video Edge use cases|
