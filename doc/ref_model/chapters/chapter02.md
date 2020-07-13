@@ -14,7 +14,7 @@ This means, operators will be able to host their Telco workloads (VNFs/CNFs) wit
 
 Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine Learning, and Artificial Intelligence.
 
-This chapter tries to analyse various workload types used telco and examine their requirements. The chapter will also highlight some of the cloud infrastructure parameters needed to achieve the desired performance expected by various workloads.
+This chapter analyses various telco workloads and their requirements, and recommends certain cloud infrastructure parameters needed to specify the desired performance expected by these workloads.
 
 <a name="2.1"></a>
 ## 2.1 Workloads Collateral
