@@ -32,7 +32,7 @@ There are different ways that workloads can be classified, for example:
   - Value-Added-Services
 - **By technology:** 2G, 3G, 4G, 5G, IMS, FTTx, Wi-Fi...
 
-Below is a list of Network Functions that covers almost _**95%**_ of the Telco workloads (and the most likely to be virtualised). They are gathered by network segment and function type.
+The list of, most likely to be virtualised,  Network Functions below, covering almost _**95%**_ of the Telco workloads, is organised by network segment and function type.
 - **Radio Access Network (RAN)**
   - Data Plane
     - BBU: BaseBand Unit
