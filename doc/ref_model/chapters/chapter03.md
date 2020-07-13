@@ -9,8 +9,10 @@
   * [3.2.2 Compute](#3.2.2)
   * [3.2.3 Storage](#3.2.3)
   * [3.2.4 Availability Zone](#3.2.4)
-* [3.3 NFVI Management Software](#3.3)
-* [3.4 Physical Resources](#3.4)
+* [3.3 Cloud Infrastructure Management](#3.3)
+  * [3.3.1 Virtual Infrastructure Manager](#3.3.1)
+  * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
+* [3.4 Hardware Infrastructure Resources](#3.4)
 * [3.5 Network](#3.5)
 
 There is the necessity to clearly define which kind of infrastructure resources a shared network function virtualisation infrastructure (NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNF), so that the requirements of the workloads match the capabilities of the NFVI.
@@ -131,54 +133,103 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 <p align="center"><b>Table 3-4:</b> Attributes of availability zones</p>
 
 <a name="3.3"></a>
-## 3.3 NFVI Management Software
+## 3.3 Cloud Infrastructure Management
+Cloud infrastructure provides the capability to manage virtual and hardware resources via Application Programmable Interfaces or graphical user interfaces. 
 
-Network Function Virtualisation Infrastructure provides the capability to manage physical and virtual resources via Application Programmable Interfaces or graphical user interfaces. The management software allows to:
+<a name="3.3.1"></a>
+### 3.3.1 Virtual Infrastructure Manager
+The virtual infrastructure manager allows to:
 
 * setup, manage and delete tenants,
 * setup, manage and delete user- and service-accounts,
 * manage access privileges and
 * provision, manage, monitor and delete virtual resources.
 
-<p align="center"><img src="../figures/ch03-model-management-software.png" alt="NFVI Management Software" Title="NFVI Management Software" width="65%"/></p>
-<p align="center"><b>Figure 3-3:</b> NFVI Management Software.</p>
+<p align="center"><img src="../figures/ch03-model-virtual-manager.png" alt="Virtual Infrastructure Manager" Title="Virtual Infrastructure Manager" width="65%"/></p>
+<p align="center"><b>Figure 3-3:</b> Virtual Infrastructure Manager.</p>
 
- The management software needs to support following functional aspects:
+ The virtual infrastructure manager needs to support the following functional aspects:
 
  **API/UI**
- : an application programming interface / user interface providing access to the NFVI management functions
+ : an application programming interface / user interface providing access to the virtual resource management function
 
 **Catalogue**
-: manages the collection of available templates for virtual resource the NFVI can provide
+: manages the collection of available templates for virtual resource the cloud infrastructure can provide
 
 **Inventory**
-: manages the information related to all the physical and virtual resources of a NFVI
+: manages the information related to virtual resources of a cloud infrastructure
 
 **Scheduler**
 : receives requests via API/UI, provisions and manages virtual resources by coordinating the activities of the compute-, storage- and network resources managers
 
 **Monitoring**
-:  monitors and collects information on all events and the current state of all physical and virtual resources
+:  monitors and collects information on all events and the current state of all virtual resources
 
 **Additional Management Functions**
 : include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 **Compute Resources Manager**
-: provides a mechanism to provision virtual resources with the help of physical compute resources
+: provides a mechanism to provision virtual resources with the help of hardware compute resources
 
 **Storage Resources Manager**
-: provides a mechanism to provision virtual resources with the help of physical storage resources
+: provides a mechanism to provision virtual resources with the help of hardware storage resources
 
 **Network Resources Manager**
-: provides a mechanism to provision virtual resources with the help of physical network resources
+: provides a mechanism to provision virtual resources with the help of hardware network resources
+
+<a name="3.3.2"></a>
+### 3.3.1 Hardware Infrastructure Manager
+The hardware infrastructure manager allows to:
+* provision, manage, monitor and delete hardware resources (underlay network, physical compute, physical storage, accelerators)
+* manage hardware resource discovery and topology
+* manage equipment 
+* manage hardware infrastructure telemetry and log collection services
+
+<p align="center"><img src="../figures/ch03-model-hardware-manager.png" alt="Hardware Infrastructure Manager" Title="Hardware Infrastructure Manager" width="65%"/></p>
+<p align="center"><b>Figure 3-3:</b> Hardware Infrastructure Manager.</p>
+
+The hardware infrastructure manager needs to support the following functional aspects:
+
+ **API/UI**
+ : an application programming interface / user interface providing access to the hardware resource management functions
+
+**Discovery**
+: discover and manages the information related to hardware resources of a cloud infrastructure
+
+**Equipment**
+: discover and manages the information related to hardware resources of a cloud infrastructure
+
+**Resource Allocation and Composition**
+: creates and allocates abstracted hardware resources
+
+**Monitoring**
+:  monitors and collects information on all events and the current state of all hardware resources
+
+**Topology**
+:  manages topological view of hardware resources
+
+**Additional Management Functions**
+: include identity management, access management, policy management (e.g. to enforce security policies), etc.
+
+**Underlay Network Resources Manager**
+: provides a mechanism to provision hardware resources for the use by the underlay network (e.g. switch fabric, smartNICs)
+
+**Physical Compute Resources Manager**
+: provides a mechanism to provision hardware compute resources
+
+**Physical Storage Resources Manager**
+: provides a mechanism to provision hardware storage resources
+
+**Accelerators**
+: provide a mechanism to provision hardware accelerator services
 
 <a name="3.4"></a>
-## 3.4 Physical Resources
+## 3.4 Hardware Infrastructure Resources
 
-The physical compute, storage and network resources serve as the foundation of the network function virtualisation infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
+The physical compute, storage and network resources serve as the foundation of the cloud infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
 
-<p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="NFVI Physical Infrastructure Resources" Title="NFVI Physical Infrastructure Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-4:</b> NFVI Physical Resources</p>
+<p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="Hardware Infrastructure Resources" Title="Hardware Infrastructure Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-4:</b> Hardware Infrastructure Resources</p>
 
 <a name="3.5"></a>
 ## 3.5 Network
