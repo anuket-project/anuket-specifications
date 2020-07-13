@@ -690,6 +690,7 @@ This also imply that programmable forwarding functions in a Programmable Network
 
 > **Note:** Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud Infrastructure implementation and falls outside the use cases for these specifications.
 
+
 <a name="4.3.2"></a>
 ### 4.3.2 Networking Reference Model
 
@@ -699,6 +700,7 @@ It is up to any deployment of the Cloud Infrastructure to decide what Networking
 
 <p align="center"><img src="./../figures/ch04_Networking_Reference_Model.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
 <p align="center"><b>Figure 4-3-2:</b> Networking Reference Model based on the ETSI NFV</p>
+
 
 <a name="4.3.3"></a>
 ### 4.3.3 Deployment examples based on the Networking Reference Model
@@ -716,7 +718,6 @@ Two exemplifications of different common HW realisations of Underlay Network sep
 
 <p align="center"><img src="./../figures/ch04_Underlay_Separation_Example.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
 <p align="center"><b>Figure 4-3-3-1:</b> Underlay Networking separation examples</p>
-
 
 
 <!--
