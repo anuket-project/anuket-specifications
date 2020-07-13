@@ -702,6 +702,24 @@ It is up to any deployment of the Cloud Infrastructure to decide what Networking
 <p align="center"><b>Figure 4-3-2:</b> Networking Reference Model based on the ETSI NFV</p>
 
 
+<a name="4.3.3"></a>
+### 4.3.3 Deployment examples based on the Networking Reference Model
+
+<a name="4.3.3.1"></a>
+#### 4.3.3.1 Switch Fabric and SmartNIC examples for Underlay Networking separation
+
+The HW Infrastructure Layer can implement the Underlay Networking separation in any type of packet handling component. This may be deployed in many different ways depending on target use case requirements, workload characteristics and available platforms. Two of the most common ways is 1. within the physical Switch Fabric and 2. in a SmartNIC connected to the Server CPU being controlled over a management channel that is not reachable from the Server CPU and its host software. In either way the Underlay Networking separation is controlled by the HW Infrastructure Manager.
+
+In both cases the Underlay Networking can be externally controlled over the SDNu interface, that must be instantiated with appropriate Underlay Networking separation for each of the Virtualization administrative domains.
+
+> **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of Virtual instances in separate Overlay domains in much the same way as AWS do with their Nitro SmartNIC. This is the important consideration for the Reference Model that enables multiple implementation instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific Virtual instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
+
+Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 4-3-3-1**.
+
+<p align="center"><img src="./../figures/ch04_Underlay_Separation_Example.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
+<p align="center"><b>Figure 4-3-3-1:</b> Underlay Networking separation examples</p>
+
+
 <!--
 The following draft definition placeholders are in support of the new PM schema/description. They are currently commented out as alignment discussions are in progress. They are to be published when their language is finalized. -MXS
 //
