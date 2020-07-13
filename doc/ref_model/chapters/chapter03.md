@@ -19,7 +19,7 @@ The lack of a common understanding of which resources and corresponding capabili
 - Supporting any kind of workload specific requirements (e.g. regarding network acceleration or API access) might result in having to establish different silo of cloud infrastructures for each workload type.
 - Synchronising the release cycles of a large set of different technologies will sooner or later lead to situations in which required upgrades cannot be applied easily due to incompatibilities.
 
-The abstraction model presented in this chapter specifies a common set of virtual infrastructure resources which a cloud infrastructure will need to provide to be able to host most of the typical VNF/CNF workloads required by the operator community.
+The abstraction model presented in this Reference Model (RM) specifies a common set of virtual infrastructure resources that a cloud infrastructure will need to provide to be able to host most of the typical VNF/CNF telco workloads.
 
 Although a couple of explicit and implicit abstraction models (e.g. in the context of ETSI NFV) are already available, they fall short when addressing the following design principles:
 - **Scope:** the model should describe the most relevant virtualised infrastructure resources (incl. acceleration technologies) a cloud infrastructure needs to provide for hosting Telco workloads
