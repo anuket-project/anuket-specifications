@@ -6,9 +6,7 @@
 * [1.2 Scope](#1.2)
 * [1.3 Principles](#1.3)
 * [1.4 Definitions/Terminology](#1.4)
-* [1.5 Abbreviations](#1.5)
-* [1.6 References](#1.6)
-* [1.7 Conventions](#1.7)
+* [1.5 Conventions](#1.7)
 
 <a name="1.1"></a>
 ## 1.1 Overview
@@ -61,31 +59,14 @@ This document specifies:
 
 <a name="1.3"></a>
 ## 1.3 Principles
-The Reference Model specifications conform with the overall principles defined in the preface chapter [Cloud iNfrastructure Telco Taskforce](../../tech#2.0).
+The Reference Model specifications conform with the overall principles defined in the preface chapter [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
 
 <a name="1.4"></a>
 ## 1.4 Definitions/Terminology
-To help guide the reader, a [CNTT Terminology](../../tech/glossary.md) section in [Cloud iNfrastructure Telco Taskforce] provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the [ETSI GR NFV 003 V1.5.1 (2020-01)](https://www.etsi.org/deliver/etsi_gr/NFV/001_099/003/01.05.01_60/gr_NFV003v010501p.pdf) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
+To help guide the reader, a [CNTT Terminology](../../common/glossary.md) section in [Cloud iNfrastructure Telco Taskforce] provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the [ETSI GR NFV 003 V1.5.1 (2020-01)](https://www.etsi.org/deliver/etsi_gr/NFV/001_099/003/01.05.01_60/gr_NFV003v010501p.pdf) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
-<a name="1.5"></a>
-## 1.5	Abbreviations
-| Term           | Description                                                                                                                |
-|----------------|----------------------------------------------------------------------------------------------------------------------------|
-| CNTT           | Cloud iNfrastructure Telco Taskforce  |  
-| PRD            | Permanent Reference Document |
-| RM             | Reference Model |
-
-
-<a name="1.6"></a>
-## 1.6	References 
-|Ref	   | Doc Number	            |Title                                                                                                             |
-|--------|------------------------|------------------------------------------------------------------------------------------------------------------|
-| [1]    | ETSI GR NFV 003 V1.5.1 | "Network Functions Virtualisation (NFV); Terminology for Main Concepts in NFV", January 2020. Available at https://www.etsi.org/deliver/etsi_gr/NFV/001_099/003/01.05.01_60/gr_NFV003v010501p.pdf |
-| [2]    |  RFC 2119              | “Key words for use in RFCs to Indicate Requirement Levels”, S. Bradner, March 1997. Available at http://www.ietf.org/rfc/rfc2119.txt |
-
-
-<a name="1.7"></a>  
-## 1.7	Conventions
+<a name="1.5"></a>  
+## 1.5	Conventions
  “The key words “must”, “must not”, “required”, “shall”, “shall not”, “should”, “should not”, “recommended”, “may”, and “optional” in this document are to be interpreted as described in RFC2119 [2].”
 
 <!--Separate document w/labels/artefacts

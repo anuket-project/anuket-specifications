@@ -1,19 +1,19 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# 6.0 Roadmap
+# Roadmap
 
 ## Table of Contents
- * [6.1 Overview](#6.1)
- * [6.2 Roadmap](#6.2.2)
-   * [6.2.1 High Level Roadmap](#6.2.1)
-   * [6.2.2 Detailed Roadmap](#6.2.2)
-   * [6.2.3 Detailed Milestones](#6.2.3)
- * [6.3 Dependencies between various Workstreams ](#6.3)
- * [6.4 Dependencies with Industry Communities](#6.4)
-   * [6.4.1 Dependencies with OPNFV and OVP](#6.4.1)
-   * [6.4.2 Dependencies with CNCF and OVP 2.0](#6.4.1)
+ * [Overview](#6.1)
+ * [Roadmap](#6.2.2)
+   * [High Level Roadmap](#6.2.1)
+   * [Detailed Roadmap](#6.2.2)
+   * [Detailed Milestones](#6.2.3)
+ * [Dependencies between various Workstreams ](#6.3)
+ * [Dependencies with Industry Communities](#6.4)
+   * [Dependencies with OPNFV and OVP](#6.4.1)
+   * [Dependencies with CNCF and OVP 2.0](#6.4.1)
 
 <a name="1"></a>
-## 6.1 Overview
+## Overview
 * The activities of the CNTT community are articulated around [Projects](#project), [Milestones](#2.3) and [Releases](#release).
 * CNTT is embracing simultaneous delivery model, meaning that all contributing projects have to follow the cadence and intermediate milestones.
 * Each CNTT release is the only delivery vehicle and is common for all projects.
@@ -49,19 +49,19 @@ A Version:
 * Any Change in RM that will impact RAs and consequently RC and RI will triggers a new Bundle number.
   
 <a name="6.2"></a>
-## 6.2 Roadmap
+## Roadmap
 
 <a name="6.2.1"></a>
-### 6.2.1 High Level Roadmap
+### High Level Roadmap
 <p align="center"><img src="./figures/cntt_roadmap.png" alt="scope" title="Roadmap" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> CNTT Technical Specification Roadmap</p>
 
 <a name="6.2.2"></a>
-### 6.2.2 Detailed Roadmap
+### Detailed Roadmap
 Please refer to individual [release plans](./release_notes/) and features for detailed roadmap.
 
 <a name="6.2.3"></a>
-### 6.2.3 Detailed Milestones
+### Detailed Milestones
 | Review | Milestone | Description | Activities | Comments |
 |--------|-----------|--------------|------------|---------|
 | Kick-Off | M0 | The goal of the release Kick-Off is to open the innovation platform for the intent to participate in the CNTT release. Release Kick-Off review takes place for each releases. | Name the Release and create appropriate labels in GitHub. ||
@@ -80,7 +80,7 @@ Please refer to individual [release plans](./release_notes/) and features for de
 <p align="center"><b>Table 1:</b> Detailed Milestones</p>
 
 <a name="6.3"></a>
-## 6.3 Dependencies between various Workstreams
+## Dependencies between various Workstreams
 
 The various workstreams in CNTT are 
 - Reference Model (RM)
@@ -104,7 +104,7 @@ Each track follows the industry driven standards in the Reference Model as depic
 
 
 <a name="6.4"></a>
-## 6.4 Dependencies with Industry Communities
+## Dependencies with Industry Communities
 
 The CNTT is collaboratively working with other standard bodies and open source communities such as: 
 - OpenStack
@@ -115,7 +115,7 @@ The CNTT is collaboratively working with other standard bodies and open source c
 - Telecom Infra Project (TIP)
 
 <a name="6.4.1"></a>
-### 6.4.1 Dependencies with OPNFV and OVP
+### Dependencies with OPNFV and OVP
 
 The OpenStack based work stream in CNTT community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read [Reference Implementation Chapter 01](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). 
 
@@ -126,7 +126,7 @@ The OpenStack based work stream in CNTT community works closely with OPNFV by le
 <p align="center"><b>Figure 5:</b> CNTT Roadmap relation to OPNFV and OVP.</p>
 
 <a name="6.4.2"></a>
-### 6.4.2 Dependencies with CNCF and OVP 2.0
+### Dependencies with CNCF and OVP 2.0
 
 TODO: Placeholder for RI2 dependency diagram
 

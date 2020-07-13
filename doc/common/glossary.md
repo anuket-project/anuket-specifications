@@ -3,22 +3,22 @@
 <p align="right"><img src="./figures/bogo_lsf.png" alt="scope" title="baldy" width="35%"/></p>
 
 ## Table of Contents
-* [1. Terminology](#1.0)
-  * [1.1 Software layers terminology](#1.1)
-  * [1.2 Hardware layers terminology](#1.2)
-  * [1.3 Operational and administrative terminology](#1.3)
-  * [1.4 Container Related Terminology](#1.4)
-  * [1.5 OpenStack Related Terminology](#1.5)
-  * [1.6 Cloud Platform Abstraction Related Terminology](#1.6)
-  * [1.7 Other terminology](#1.7)
+* [Terminology](#1.0)
+  * [Software layers terminology](#1.1)
+  * [Hardware layers terminology](#1.2)
+  * [Operational and administrative terminology](#1.3)
+  * [Container Related Terminology](#1.4)
+  * [OpenStack Related Terminology](#1.5)
+  * [Cloud Platform Abstraction Related Terminology](#1.6)
+  * [Other terminology](#1.7)
 
 <a name="1.0"></a>
-# 1 Terminology
+# Terminology
 
 To help guide the reader, this glossary provides an introduction to the terminology used within this document. These definitions are, with a few exceptions, based on the ETSI GS NFV 003 V1.4.1 (2018-08) definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
 <a name="1.1"></a>
-## 1.1 Software Layer Terminology
+## Software Layer Terminology
 
 - **Network Function Virtualisation (NFV)**: The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 - **Network Function Virtualisation Infrastructure (NFVI)**: The totality of all hardware and software components used to build the environment in which a set of VAs are deployed (also referred to as cloud infrastructure).
@@ -54,7 +54,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Cloud Infrastructure Software Configuration**: a set of settings (Key:Value) that are applied/mapped to **cloud infrastructure** SW deployment.
 
 <a name="1.2"></a>
-## 1.2 Hardware Layer Terminology
+## Hardware Layer Terminology
 
 - **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system.
   >_*Note:*_ This is a physical cloud infrastructure resource with the NF software.
@@ -66,7 +66,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 
 <a name="1.3"></a>
-## 1.3 Operational and Administrative Terminology
+## Operational and Administrative Terminology
 
 - **Cloud service user**: Natural person, or entity acting on their behalf, associated with a cloud service customer that uses cloud services.
 >_*Note*_ Examples of such entities include devices and applications.
@@ -82,7 +82,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
 
 <a name="1.4"></a>
-## 1.4 Container Related Terminology
+## Container Related Terminology
 
 >_*Note:*_ Relevant terms are added here from RA2. Most of these term definitions are taken from [Kubernetes glossary](https://kubernetes.io/docs/reference/glossary) but in some cases should be made independent from Kubernetes as a specific container orchestration engine.
 
@@ -111,7 +111,7 @@ Terms not defined by Kubernetes:
 
 
 <a name="1.5"></a>
-## 1.5 OpenStack Related Terminology
+## OpenStack Related Terminology
 
 >_*Note:*_ The official [OpenStack Glossary]( https://docs.openstack.org/image-guide/common/glossary.html) is an extensive list of OpenStack-related concepts. Some additional terms used in the Reference Architecture RA-1 or used to relate RA-1 terms with terms defined elsewhere.
 
@@ -135,7 +135,7 @@ Terms not defined by Kubernetes:
 **Software Defined Storage (SDS)** architecture consists of the storage software that is independent from the underlying storage hardware. The storage access software provides data request interfaces (APIs) and the SDS controller software provides storage access services and networking.
 
 <a name="1.6"></a>
-## 1.6 Cloud Platform Abstraction Related Terminology:
+## Cloud Platform Abstraction Related Terminology:
 - Decoupling, Loose Coupling = Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the implementation details of other separate components. Loose coupling is the opposite of tight coupling. ([Wikipedia:Loose Coupling](https://en.wikipedia.org/wiki/Loose_coupling))
 - Abstraction = Process of removing smaller details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)), [Wikipedia:Generalization](https://en.wikipedia.org/wiki/Generalization))
 - Encapsulation = Restricting of direct access to some of an object's components. ([Wikipedia:Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)))
@@ -147,7 +147,7 @@ Terms not defined by Kubernetes:
 - Observability = Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs. ([Wikipedia:Observability](https://en.wikipedia.org/wiki/Observability))
 
 <a name="1.7"></a>
-## 1.7 Other Referenced Terminology
+## Other Referenced Terminology
 
 - **Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **Network Function Virtualisation Infrastructure** compute, storage and network resources.
 - **NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **Cloud Infrastructure** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
