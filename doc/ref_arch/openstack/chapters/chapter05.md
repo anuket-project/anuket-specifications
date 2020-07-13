@@ -186,7 +186,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | standard-attr-timestamp        | X             |
 | subnet_allocation              | X             |
 | subnet-service-types           | X             |
-| subnetpool_prefix_ops          |               |
+| subnetpool-prefix-ops          |               |
 | tag-ext                        |               |
 | trunk                          | X             |
 | trunk-details                  | X             |
