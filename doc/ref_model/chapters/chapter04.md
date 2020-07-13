@@ -671,8 +671,6 @@ One consequence of this is that the Reference Architectures must not model colla
 
 In the absence of a Networking Reference Model, both Reference Architectures have had no guidelines or Reference Models to refer to and by that their networking specifications have possibly been done as if they where the only single Virtual Infrastructure instance on a dedicated HW Infrastructure resource pool in a shared single administrative domain. Hence, when Networking now gets introduced into the Reference Model, it is important that SDN also is considered and that the two now existing Reference Architectures are harmonised with the new common Networking Reference Model, if adjustments are found to be needed. 
 
-
-
 <!--
 The following draft definition placeholders are in support of the new PM schema/description. They are currently commented out as alignment discussions are in progress. They are to be published when their language is finalized. -MXS
 //
