@@ -12,7 +12,7 @@ One of the main targets of the CNTT is to define an agnostic cloud infrastructur
 
 This means, operators will be able to host their Telco workloads (VNFs/CNFs) with different traffic types, behaviour and from any vendor on a unified consistent cloud infrastructure.
 
-Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine Learning, Artificial Intelligence, etc.
+Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine Learning, and Artificial Intelligence.
 
 This chapter tries to analyse various workload types used telco and examine their requirements. The chapter will also highlight some of the cloud infrastructure parameters needed to achieve the desired performance expected by various workloads.
 
