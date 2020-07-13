@@ -69,6 +69,7 @@ A network function virtualisation infrastructure (NFVI) needs to be capable of s
 
 _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
+
 | Attribute  | Description                                                                                             |
 |------------|---------------------------------------------------------------------------------------------------------|
 | `name`     | name of the logical resource pool                                                                       |
