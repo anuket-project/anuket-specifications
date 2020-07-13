@@ -719,6 +719,14 @@ Two exemplifications of different common HW realisations of Underlay Network sep
 <p align="center"><img src="./../figures/ch04_Underlay_Separation_Example.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
 <p align="center"><b>Figure 4-3-3-1:</b> Underlay Networking separation examples</p>
 
+<a name="4.3.3.2"></a>
+#### 4.3.3.2 SDN Overlay and SDN Underlay layering and relationship example
+
+Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 4-3-3-2**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+
+<p align="center"><img src="./../figures/ch04_Underlay_Separation_MultiVIM_Example.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
+<p align="center"><b>Figure 4-3-3-2:</b> SDN Controller relationship examples</p>
+
 
 <!--
 The following draft definition placeholders are in support of the new PM schema/description. They are currently commented out as alignment discussions are in progress. They are to be published when their language is finalized. -MXS
