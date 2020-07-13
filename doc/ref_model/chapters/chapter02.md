@@ -175,7 +175,7 @@ Based on the above analysis, following cloud infrastructure profiles are propose
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-In **Chapter 4** later in the document, these infrastructure profiles will be offered to workloads: **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> respectively.
+In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> infrastructure profiles will be defined in greater detail for use by workloads: .
 
 >***Note**  
 >This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
