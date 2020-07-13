@@ -92,7 +92,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 | `name`         | name of the virtual host                                                      |
 | `vcpus`        | number of virtual cpus                                                        |
 | `ram`          | size of random access memory in GB                                            |
-| `disc`         | size of root disc in GB                                                       |
+| `disk`         | size of root disc in GB                                                       |
 | `nics`         | sorted list of network interfaces connecting the host to the virtual networks |
 | `acceleration` | key/value pairs for selection of the appropriate acceleration technology      |
 | `metadata`     | key/value pairs for selection of the appropriate redundancy domain            |
