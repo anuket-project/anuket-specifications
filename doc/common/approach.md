@@ -211,7 +211,7 @@ Two exemplifications of different common HW realisations of Underlay separation 
 <a name="5.1.5.2"></a>
 #### SDN Overlay and SDN Underlay layering and relationship example
 
-Two use case examples with both SDNo and SDNu controllers depicting a normal virtual switch encapsulating SW Virtualisation Infrastructure instance and another high performance oriented SW Virtualisation Infrastructure instance (e.g. using SR-IOV) are described in **Figure 4**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+Two use case examples with both SDNo and SDNu controllers depicting a normal virtual switch encapsulating SW Virtualisation Infrastructure instance and another high performance oriented SW Virtualisation Infrastructure instance (e.g. using SR-IOV) are shown in **Figure 4**. The examples show how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-SDNo_SDNu_Examples-PA6.jpg" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
 <p align="center"><b>Figure 4:</b> SDN Controller relationship examples</p>
@@ -225,4 +225,3 @@ The example is or will be a common scenario for operators that modernise their n
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_DeploymentExample-PA7.jpg" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
 <p align="center"><b>Figure 5:</b> Networking Reference Model deployment example</p>
-
