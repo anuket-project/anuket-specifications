@@ -36,7 +36,7 @@ _**To summarise:** the abstraction model presented in this document will build u
 <a name="3.1"></a>
 ## 3.1 Model
 
-The abstraction model for the cloud infrastructure is divided into two logical layers: the virtual infrastructure layer and the hardwaren infrastructure layer, with the intention that only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs)):
+The abstraction model for the cloud infrastructure is divided into two logical layers: the virtual infrastructure layer and the hardware infrastructure layer, with the intention that only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs)):
 
 <p align="center"><img src="../figures/ch03-model-overview.png" alt="Cloud Infrastructure Model Overview" Title="Cloud Infrastructure Model Overview" width="65%"/></p>
 <p align="center"><b>Figure 3-1:</b> Cloud Infrastructure Model Overview.</p>
