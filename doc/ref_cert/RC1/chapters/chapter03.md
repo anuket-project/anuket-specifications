@@ -328,54 +328,57 @@ According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
-| test rejection regular expressions                                                                 | reasons                               |
-|----------------------------------------------------------------------------------------------------|---------------------------------------|
-| .\*admin.test_agent_availability_zone                                                              | DHCP agent and L3 agent               |
-| .\*admin.test_dhcp_agent_scheduler                                                                 | dhcp_agent_scheduler                  |
-| .\*admin.test_l3_agent_scheduler                                                                   | l3_agent_scheduler                    |
-| .\*admin.test_logging                                                                              | logging                               |
-| .\*admin.test_logging_negative                                                                     | logging                               |
-| .\*admin.test_network_segment_range                                                                | network-segment-range                 |
-| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                 | port-mac-address-regenerate           |
-| .\*admin.test_ports.PortTestCasesResourceRequest                                                   | port-resource-request                 |
-| .\*admin.test_routers_dvr                                                                          | dvr                                   |
-| .\*admin.test_routers_flavors                                                                      | l3-flavors                            |
-| .\*admin.test_routers_ha                                                                           | l3-ha                                 |
-| .\*test_floating_ips.FloatingIPPoolTestJSON                                                        | floatingip-pools                      |
-| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                 | fip-port-details                      |
-| .\*test_metering_extensions                                                                        | metering                              |
-| .\*test_metering_negative                                                                          | metering                              |
-| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                           | filter-validation                     |
-| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                               | vxlan                                 |
-| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                            | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                          | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                       | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                | dns-domain-ports                      |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                  | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                               | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                              | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                 | l3-ha                                 |
-| .\*test_router_interface_fip                                                                       | router-interface-fip                  |
-| .\*test_routers.DvrRoutersTest                                                                     | dvr                                   |
-| .\*test_routers.HaRoutersTest                                                                      | l3-ha                                 |
-| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                           | extraroute-atomic                     |
-| .\*test_routers.RoutersTest.test_extra_routes_atomic                                               | extraroute-atomic                     |
-| .\*test_routers_negative.DvrRoutersNegativeTest                                                    | dvr                                   |
-| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                            | dvr                                   |
-| .\*test_routers_negative.HaRoutersNegativeTest                                                     | l3-ha                                 |
-| .\*test_security_groups.RbacSharedSecurityGroupTest                                                | rbac-security-groups                  |
-| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                     | filter-validation                     |
-| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                             | filter-validation                     |
-| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                        | standard-attr-segment                 |
-| .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                            | https://launchpad.net/bugs/1863707    |
-| .\*test_trunk.TrunkTestMtusJSON                                                                    | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestMtusJSON                                                           | vxlan                                 |
-| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                        | https://gerrit.opnfv.org/gerrit/69105 |
-| .\*network.test_tags                                                                               | tag-ext                               |
-| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                       | https://launchpad.net/bugs/1676207    |
-| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                           | https://launchpad.net/bugs/1676207    |
-| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                             | l3_agent_scheduler                    |
+| test rejection regular expressions                                                                              | reasons                               |
+|-----------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*admin.test_agent_availability_zone                                                                           | DHCP agent and L3 agent               |
+| .\*admin.test_dhcp_agent_scheduler                                                                              | dhcp_agent_scheduler                  |
+| .\*admin.test_l3_agent_scheduler                                                                                | l3_agent_scheduler                    |
+| .\*admin.test_logging                                                                                           | logging                               |
+| .\*admin.test_logging_negative                                                                                  | logging                               |
+| .\*admin.test_network_segment_range                                                                             | network-segment-range                 |
+| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                              | port-mac-address-regenerate           |
+| .\*admin.test_ports.PortTestCasesResourceRequest                                                                | port-resource-request                 |
+| .\*admin.test_routers_dvr                                                                                       | dvr                                   |
+| .\*admin.test_routers_flavors                                                                                   | l3-flavors                            |
+| .\*admin.test_routers_ha                                                                                        | l3-ha                                 |
+| .\*test_floating_ips.FloatingIPPoolTestJSON                                                                     | floatingip-pools                      |
+| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                              | fip-port-details                      |
+| .\*test_metering_extensions                                                                                     | metering                              |
+| .\*test_metering_negative                                                                                       | metering                              |
+| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                                        | filter-validation                     |
+| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                                            | vxlan                                 |
+| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                                         | dns-integration                       |
+| .\*test_port_forwardings                                                                                        | floating-ip-port-forwarding           |
+| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                                       | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                                    | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                             | dns-domain-ports                      |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                               | dns-integration                       |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                                            | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                                           | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                              | l3-ha                                 |
+| .\*test_router_interface_fip                                                                                    | router-interface-fip                  |
+| .\*test_routers.DvrRoutersTest                                                                                  | dvr                                   |
+| .\*test_routers.HaRoutersTest                                                                                   | l3-ha                                 |
+| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                                        | extraroute-atomic                     |
+| .\*test_routers.RoutersTest.test_extra_routes_atomic                                                            | extraroute-atomic                     |
+| .\*test_routers_negative.DvrRoutersNegativeTest                                                                 | dvr                                   |
+| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                                         | dvr                                   |
+| .\*test_routers_negative.HaRoutersNegativeTest                                                                  | l3-ha                                 |
+| .\*test_security_groups.RbacSharedSecurityGroupTest                                                             | rbac-security-groups                  |
+| .\*test_subnetpool_prefix_ops                                                                                   | subnetpool-prefix-ops                 |
+| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                                  | filter-validation                     |
+| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                                          | filter-validation                     |
+| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                                     | standard-attr-segment                 |
+| .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                                         | https://launchpad.net/bugs/1863707    |
+| .\*test_trunk.TrunkTestMtusJSON                                                                                 | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type              | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestMtusJSON                                                                        | vxlan                                 |
+| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                                     | https://gerrit.opnfv.org/gerrit/69105 |
+| .\*network.test_tags                                                                                            | tag-ext                               |
+| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                                    | https://launchpad.net/bugs/1676207    |
+| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                                        | https://launchpad.net/bugs/1676207    |
+| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                                          | l3_agent_scheduler                    |
+| .\*test_network_advanced_server_ops.TestNetworkAdvancedServerOps.test_server_connectivity_cold_migration_revert | https://launchpad.net/bugs/1836595    |
 
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -445,8 +448,6 @@ the following test names must not be executed:
 | .\*test_volume_boot_pattern.TestVolumeBootPattern.test_boot_server_from_encrypted_volume_luks                             | attach_encrypted_volume            |
 | .\*test_volume_swap                                                                                                       | swap_volume                        |
 | .\*test_encrypted_cinder_volumes                                                                                          | attach_encrypted_volume            |
-| .\*test_stamp_pattern.TestStampPattern.test_stamp_pattern                                                                 | https://launchpad.net/bugs/1664793 |
-| .\*test_volume_migrate_attached                                                                                           | https://launchpad.net/bugs/1664793 |
 | .\*test_minbw_allocation_placement                                                                                        | microversion                       |
 
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
