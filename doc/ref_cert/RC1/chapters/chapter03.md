@@ -196,7 +196,7 @@ Keystone API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [keystone-tempest-plugin](https://opendev.org/openstack/keystone-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -212,7 +212,7 @@ the following test names must not be executed:
 Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.keystone
 - KeystoneBasic.add_and_remove_user_role
 - KeystoneBasic.create_add_and_list_user_roles
@@ -243,7 +243,7 @@ the following test names must not be executed:
 Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_glance
 - GlanceImages.create_and_delete_image
 - GlanceImages.create_and_list_image
@@ -256,7 +256,7 @@ Cinder API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [cinder-tempest-plugin](https://opendev.org/openstack/cinder-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -278,7 +278,7 @@ the following test names must not be executed:
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_cinder
 - CinderVolumes.create_and_delete_snapshot
 - CinderVolumes.create_and_delete_volume
@@ -295,7 +295,7 @@ Here are the mainline tasks integrated in
 
 Swift API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -309,7 +309,7 @@ the following test names must not be executed:
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - SwiftObjects.create_container_and_object_then_list_objects
 - SwiftObjects.list_objects_in_containers
 - SwiftObjects.create_container_and_object_then_download_object
@@ -322,7 +322,7 @@ Neutron API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [neutron-tempest-plugin](https://opendev.org/openstack/neutron-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -383,7 +383,7 @@ the following test names must not be executed:
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_neutron
 - NeutronNetworks.create_and_delete_networks
 - NeutronNetworks.create_and_delete_ports
@@ -402,7 +402,7 @@ Here are the mainline tasks integrated in
 
 Nova API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -453,7 +453,7 @@ the following test names must not be executed:
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_nova
 - NovaServers.boot_and_live_migrate_server
 - NovaServers.boot_server_attach_created_volume_and_live_migrate
@@ -472,7 +472,7 @@ Here are the mainline tasks integrated in
 Heat API is covered in the OpenStack Gates via
 [heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin) as
 integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml)
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma)
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -494,7 +494,7 @@ the following test names must not be executed:
 Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_heat
 - HeatStacks.create_update_delete_stack
 - HeatStacks.create_check_delete_stack
@@ -506,7 +506,7 @@ Here are the mainline tasks integrated in
 
 Horizon is covered in the OpenStack Gates via
 [tempest-horizon](https://github.com/openstack/tempest-horizon) as integrated
-in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml).
+in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml?h=stable%2Fjerma).
 
 <a name="3.3.6"></a>
 ### 3.3.6 OpenStack API benchmarking
