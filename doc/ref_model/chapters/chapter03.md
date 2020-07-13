@@ -53,7 +53,7 @@ The functionalities of each layer are as follows:
 The virtual infrastructure resources provided by the Cloud Infrastructure can be grouped into four categories as shown in the diagram below:
 
 <p align="center"><img src="../figures/ch03-model-virtual-resources.png" alt="NFVI Virtual Infrastructure Resources" Title="NFVI Virtual Infrastructure Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provides virtual compute, storage and networks in a tenant context.</p>
+<p align="center"><b>Figure 3-2:</b> Virtual Infrastructure Resources provide virtual compute, storage and networks in a tenant context.</p>
 
 - **Tenants:** represent an isolated and independently manageable elastic pool of compute, storage and network resources
 - **Compute resources:** represent virtualised computes for workloads and other systems as necessary
@@ -65,7 +65,7 @@ The virtualised infrastructure resources related to these categories are listed 
 <a name="3.2.1"></a>
 ### 3.2.1 Tenant
 
-A network function virtualisation infrastructure (NFVI) needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
+A cloud infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 
 _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
@@ -83,7 +83,7 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 <a name="3.2.2"></a>
 ### 3.2.2 Compute
-A virtual machine or a container/pod belonging to a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and since it will need to communicate with other communication partners it is assumed that the networks have been provisioned in advance.
+A virtual machine or a container/pod is used by a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and, since it will need to communicate with other communication partners, it is assumed that the networks have been provisioned in advance.
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
 
@@ -115,12 +115,10 @@ _**Example**: an OpenStack cinder volume._
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
-_**Comments**: we need to be more specific regarding acceleration and metadata._
-
 
 <a name="3.2.4"></a>
 ### 3.2.4 Availability Zone
-An Availability Zone is a logical pool of physical resources (e.g. compute, block storage, network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
+An availability zone is a logical pool of physical resources (e.g. compute, block storage, network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
 
 As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
 
