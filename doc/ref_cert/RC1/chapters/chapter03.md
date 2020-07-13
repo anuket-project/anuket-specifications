@@ -176,20 +176,19 @@ from a Compliance state point. The remaining tests have to pass successfully.
 They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
-According to Hunter (the oldest OPNFV active release), the following software
-versions are considered here to verify OpenStack Pike selected by CNTT:
+According to Jerma, the following software versions are considered here to
+verify OpenStack Train selected by CNTT:
 
-| software                | version |
-|-------------------------|---------|
-| Functest                | hunter  |
-| Horizon Tempest plugin  | 0.1.0   |
-| Cinder Tempest plugin   | 0.2.0   |
-| Keystone Tempest plugin | 0.1.0   |
-| Heat Tempest plugin     | 1.0.0   |
-| Neutron                 | rocky   |
-| Neutron Tempest plugin  | 0.3.0   |
-| Rally OpenStack         | 1.5.0   |
-| Tempest                 | 21.0.0  |
+| software                | version     |
+|-------------------------|-------------|
+| Functest                | jerma       |
+| Horizon Tempest plugin  | 0.2.0       |
+| Cinder Tempest plugin   | 0.3.0       |
+| Keystone Tempest plugin | 0.3.0       |
+| Heat Tempest plugin     | 1.0.0       |
+| Neutron Tempest plugin  | 0.6.0       |
+| Rally OpenStack         | 1.7.1.dev21 |
+| Tempest                 | 22.0.0      |
 
 #### 3.3.4.1 Identity - Keystone
 
@@ -517,21 +516,21 @@ in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck
 to perform OpenStack API benchmarking.
 
 Here are the Rally-based test cases proposed by
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
-- [rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+- [rally_full](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
   Functest scenarios iterating 10 times the mainline Rally scenarios
-- [rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+- [rally_jobs](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_jobs_cntt-run-60/rally_jobs_cntt/rally_jobs_cntt.html):
   Neutron scenarios executed in the OpenStack gates
 
 At the time of writing, no KPI is defined in
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 
 #### 3.3.6.1 Identity - Keystone
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                     | Iterations |
 |-----------------------------------------------|:----------:|
@@ -550,7 +549,7 @@ of 0%) proposed in
 
 #### 3.3.6.2 Image - Glance
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                    | Iterations |
 |----------------------------------------------|:----------:|
@@ -566,7 +565,7 @@ of 0%) proposed in
 
 #### 3.3.6.3 Block Storage - Cinder
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                     | Iterations |
 |---------------------------------------------------------------|:----------:|
@@ -596,7 +595,7 @@ of 0%) proposed in
 
 #### 3.3.6.4 Object Storage - Swift
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                     | Iterations |
 |---------------------------------------------------------------|:----------:|
@@ -608,7 +607,7 @@ of 0%) proposed in
 
 #### 3.3.6.5 Networking - Neutron
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                  | Iterations |
 |------------------------------------------------------------|:----------:|
@@ -635,7 +634,7 @@ of 0%) proposed in
 | NeutronNetworks.create_and_show_subnets                    | 10         |
 | Quotas.neutron_update                                      | 10         |
 
-[Functest rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+[Functest rally_jobs_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_jobs_cntt-run-60/rally_jobs_cntt/rally_jobs_cntt.html):
 
 | Scenarios                                  | Iterations |
 |--------------------------------------------|:----------:|
@@ -656,7 +655,7 @@ of 0%) proposed in
 
 #### 3.3.6.6 Compute - Nova
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                      | Iterations |
 |----------------------------------------------------------------|:----------:|
@@ -692,7 +691,7 @@ of 0%) proposed in
 
 #### 3.3.6.7 Orchestration - Heat
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                     | Iterations |
 |-----------------------------------------------|:----------:|
@@ -707,7 +706,7 @@ of 0%) proposed in
 <a name="3.3.7"></a>
 ### 3.3.7 Dataplane benchmarking
 
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 offers two benchmarking dataplane test cases leveraging on:
 - [VMTP](http://vmtp.readthedocs.io/en/latest)
 - [Shaker](http://pyshaker.readthedocs.io/en/latest/)
@@ -725,16 +724,16 @@ deployment and list of tests to execute.
 
 At the time of writing, no KPI is defined in CNTT chapters which would have
 asked for an update of the default SLA proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
 
 ### 3.3.7.1 VMTP
 
 Here are the
-[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.json)
+[scenarios](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-vmtp-run-123/vmtp/vmtp.json)
 executed by
-[Functest vmtp](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.html):
+[Functest vmtp](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-vmtp-run-123/vmtp/vmtp.html):
 - VM to VM same network fixed IP (intra-node)
 - VM to VM different network fixed IP (intra-node)
 - VM to VM different network floating IP (intra-node)
@@ -770,7 +769,7 @@ Here are all results per scenario:
 ### 3.3.7.2 Shaker
 
 Here are the
-[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-shaker-run-329/shaker/report.json)
+[scenarios](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-shaker-run-124/shaker/report.json)
 executed by Shaker:
 - OpenStack L2
 - OpenStack L3 East-West
@@ -810,7 +809,7 @@ Multiple VMs or containers can be deployed prior to running any tests. This allo
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
-[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml)
+[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fjerma)
 offers 5 test cases which automatically onboard and test the following 3
 opensource VNFs:
 - [Clearwater IMS](https://clearwater.readthedocs.io/en/stable/)
@@ -854,30 +853,32 @@ According to [RC1 Chapter04](chapter04.md)
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
-| container                               | test case             | criteria |
-|-----------------------------------------|-----------------------|:--------:|
-| opnfv/functest-smoke-cntt:hunter        | tempest_neutron_cntt  | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt   | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt     | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt     | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt     | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt       | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt       | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | vmtp                  | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | shaker                | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify              | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify_ims          | PASS     |
-| opnfv/functest-vnf:hunter               | heat_ims              | PASS     |
-| opnfv/functest-vnf:hunter               | vyos_vrouter          | PASS     |
-| opnfv/functest-vnf:hunter               | juju_epc              | PASS     |
+| container                              | test case             | criteria |
+|----------------------------------------|-----------------------|:--------:|
+| opnfv/functest-healthcheck:jerma       | tempest_horizon       | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_neutron_cntt  | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_cinder_cntt   | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_keystone_cntt | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | rally_sanity_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_full_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_scenario_cntt | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_slow_cntt     | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | rally_full_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | rally_jobs_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | vmtp                  | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | shaker                | PASS     |
+| opnfv/functest-vnf:jerma               | cloudify              | PASS     |
+| opnfv/functest-vnf:jerma               | cloudify_ims          | PASS     |
+| opnfv/functest-vnf:jerma               | heat_ims              | PASS     |
+| opnfv/functest-vnf:jerma               | vyos_vrouter          | PASS     |
+| opnfv/functest-vnf:jerma               | juju_epc              | PASS     |
 
 <a name="3.4.2"></a>
 ### 3.4.2 TC Mapping to Requirements
 
 | test case             | requirements                                                             |
 |-----------------------|--------------------------------------------------------------------------|
+| tempest_horizon       | Horizon testing                                                      |
 | tempest_neutron_cntt  | Neutron API testing                                                      |
 | tempest_cinder_cntt   | Cinder API testing                                                       |
 | tempest_keystone_cntt | Keystone API testing                                                     |
