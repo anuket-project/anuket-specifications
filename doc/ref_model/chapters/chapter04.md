@@ -690,6 +690,7 @@ This also imply that programmable forwarding functions in a Programmable Network
 
 > **Note:** Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud Infrastructure implementation and falls outside the use cases for these specifications.
 
+
 <a name="4.3.2"></a>
 ### 4.3.2 Networking Reference Model
 
@@ -699,7 +700,6 @@ It is up to any deployment of the Cloud Infrastructure to decide what Networking
 
 <p align="center"><img src="./../figures/ch04_Networking_Reference_Model.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
 <p align="center"><b>Figure 4-3-2:</b> Networking Reference Model based on the ETSI NFV</p>
-
 
 
 <!--
