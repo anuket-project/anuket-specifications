@@ -23,7 +23,7 @@ Although a couple of explicit and implicit abstraction models (e.g. in the conte
 - **Declarative**: the model should allow for the description of the intended state and configuration of the cloud infrastructure resources for automated life cycle management
 - **Explicit:** the model needs to be rich enough to allow for a direct mapping towards the APIs of the cloud infrastructure for the instantiation of virtual infrastructure elements without requiring any additional parameters
 - **Lifecycle:** the model must distinguish between resources which have independent lifecycles but should group together those resources which share a common lifecycle
-- **Aligned:** the model should clearly highlight the dependencies between the elements to allow for a well-defined and simplified synchronisation of independent automation tasks.
+- **Aligned:** the model should clearly highlight the dependencies between its components to allow for a well-defined and simplified synchronisation of independent automation tasks.
 
 _**To summarise:** the abstraction model presented in this document will build upon existing modelling concepts and simplify and streamline them to the needs of telco operators who intend to distinguish between infrastructure related and workload related responsibilities._
 
