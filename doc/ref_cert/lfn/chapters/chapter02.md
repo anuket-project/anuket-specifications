@@ -62,18 +62,18 @@ test results in the
 and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
 
-The CNTT compliance and conformance processes will leverage on existing OPNFV
-testing knowledge (projects) and experience (history) and then will conform
-to the overall toolchain design already in-place. The RC toolchain only
-requires for the local deployment of the components instead of leveraging on
+The CNTT verification, validation, compliance, and conformance processes will
+leverage existing OPNFV testing knowledge (projects) and experience (history)
+and conform to the overall toolchain design already in-place. The RC toolchain
+only requires for the local deployment of the components instead of leveraging
 the common OPNFV centralized services. But the interfaces remain unchanged
-mainly leveraging on jenkins jobs, the common test case execution, the test
+mainly leveraging jenkins jobs, the common test case execution, the test
 result DB and the S3 protocol to publish the artifacts. It's worth mentioning
-that dumping all results and logs required by conformance is already in place
+that dumping all results and logs required for conformance is already in place
 in CIRV (see
 [cntt-latest-zip](https://build.opnfv.org/ci/job/cntt-latest-zip/)) and
 Functest daily jobs (see
-[functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console))
+[functest-hunter-zip](https://build.opnfv.org/ci/job/functest-hunter-zip/3/console)).
 
 It should be noted that
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) supports both
@@ -91,7 +91,7 @@ The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastruct
 * KPIs obtained from the SUT are collected and submitted to conformance portal.
 * The SUT KPIs are reviewed and compared with Golden KPIs to determine if the conformance badge is to be provided to SUT or not.
 
-Based on a NFVI passing RC test and getting the conformance badge, VNF conformance test can be further conducted. Such test will leverage existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem. 
+Based on a NFVI passing RC test and getting the conformance badge, VNF conformance test can be further conducted. Such test will leverage existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 <p align="center"><img src="../figures/RC_CertificationMethodology.jpg" alt="conformance Methodology" title="Conformance Methodology" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Conformance Methodology</p>
@@ -225,8 +225,8 @@ The NFVI Conformance framework will be guided by the following core principles:
 <a name="2.7.2"></a>
 ### 2.7.2 Test case integration requirements
 
-To reach all goals (verification, compliance and Conformance) expected by
-CNTT, all test cases must be delivered as
+To reach all goals (verification, validation, compliance, and conformance)
+expected by CNTT, all test cases must be delivered as
 [Docker containers](https://www.docker.com/) and meet the requirements to
 simplify the CI toolchain setups:
 - the common test case execution
@@ -234,20 +234,20 @@ simplify the CI toolchain setups:
   with third-parties (e.g. dump all test case logs and results for
   Conformance)
 
-For their parts, the Docker containers simply enforce that the test cases are
-delivered with all runtime dependencies. Then it prevents lots of manual
-operations when configuring the server running the test cases and prevent
-conflicts between all test case dependencies.
+For their part, the Docker containers simply enforce that the test cases are
+delivered with all runtime dependencies. This prevents lots of manual
+operations when configuring the servers running the test cases and prevents
+conflicts between the test cases due to any dependencies.
 
 It's worth mentioning that current
 [test cases selected by CNTT](./chapter03.md)
-already leverages on [Xtesting](https://xtesting.readthedocs.io/en/latest/)
+already leverage [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
 CI/CD components (test scheduler, test results database, artifact repository),
 it allows the developer to work only on the test suites without diving into
 CI/CD integration. Even more, it brings the capability to run heterogeneous
-test cases in the same CI toolchains thanks to a few low constraints
+test cases in the same CI toolchains thanks to a few constraints
 [quickly achievable](https://www.sdxcentral.com/articles/news/opnfvs-6th-release-brings-testing-capabilities-that-orange-is-already-using/2018/05/).
 
 Following the design in use, the Docker containers proposed by the test
@@ -672,4 +672,3 @@ Main OPNFV test tool candidate: Yardstick (TC014)
 
 <a name="2.8.7.2"></a>
 #### 2.8.7.2 Resiliency Measurements
-

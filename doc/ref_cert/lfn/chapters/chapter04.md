@@ -66,7 +66,7 @@ Functest also integrates
 [Kubernetes End-to-end tests](https://kubernetes.io/blog/2019/03/22/kubernetes-end-to-end-testing-for-everyone/) and allows verifying Kubernetes Conformance (see
 [k8s-conformance](https://build.opnfv.org/ci/job/functest-kubernetes-opnfv-functest-kubernetes-smoke-iruya-k8s_conformance-run/206/console)).
 
-Dovetail (OVP) mostly leverages on Functest but only runs a small part of
+Dovetail (OVP) mostly leverages Functest but only runs a small part of
 Functest (~15% of all functional tests, no benchmarking tests, no VNF
 deployment and testing). It's worth mentioning that Functest is patched to
 [disable API verification](https://github.com/opnfv/dovetail/tree/master/etc/patches/functest/disable-api-validation) which has differed from OpenStack rules for
@@ -82,7 +82,7 @@ integration of tests developed upstream (and the Functest team directly
 contributes in these projects:
 [Rally](https://github.com/openstack/rally-openstack),
 [Tempest](https://github.com/openstack/tempest), etc.).
-It's worth mentioning that, as opposed to the OpenStack Gates leveraging on
+It's worth mentioning that, as opposed to the OpenStack Gates leveraging
 [DevStack](https://docs.openstack.org/devstack/latest/), it can check the same
 already deployed SUT over and over even from a
 [Raspberry PI](https://www.raspberrypi.org/). Here the testcases can be
@@ -192,19 +192,19 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 <p align="center"><img src="../figures/rc1_cookbook_nfvi.png" alt="nfvi_cookbook" title="NFVI Cookbook" width="60%"/></p>
 <p align="center"><b>Figure 1-2:</b> NFVI Testing Integrated Framework.</p>
 
-[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) leverages on the
+[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) leverages the
 common test case execution proposed by Xtesting. Thanks to a simple test case
-list, this tool deploys anywhere plug-and-play
+list, this tool deploys plug-and-play
 [CI/CD toolchains in a few commands](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004).
-In addition of this teaching capability needed by the Network Automation
-journey, it supports multiple components such as Jenkins and Gitlab CI (test
-schedulers) and
+In addition, it supports multiple components such as Jenkins and Gitlab CI
+(test schedulers) and
 [multiple deployment models](https://lists.opnfv.org/g/opnfv-tsc/message/5702)
 such as all-in-one or centralized services.
 
 [Xtesting](https://xtesting.readthedocs.io/en/latest/) and
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) combined meet the
-CNTT requirements about verification, compliance and Conformance:
+CNTT requirements about CNTT requirements about verification, validation,
+compliance, and conformance:
 - smoothly assemble multiple heterogeneous test cases
 - generate the Jenkins jobs in
   [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to

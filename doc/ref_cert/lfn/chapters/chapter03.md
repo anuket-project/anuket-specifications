@@ -708,7 +708,7 @@ of 0%) proposed in
 ### 3.3.7 Dataplane benchmarking
 
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
-offers two benchmarking dataplane test cases leveraging on:
+offers two benchmarking dataplane test cases leveraging:
 - [VMTP](http://vmtp.readthedocs.io/en/latest)
 - [Shaker](http://pyshaker.readthedocs.io/en/latest/)
 
