@@ -186,7 +186,7 @@ The hardware infrastructure manager allows to:
 * manage hardware infrastructure telemetry and log collection services
 
 <p align="center"><img src="../figures/ch03-model-hardware-manager.png" alt="Hardware Infrastructure Manager" Title="Hardware Infrastructure Manager" width="65%"/></p>
-<p align="center"><b>Figure 3-3:</b> Hardware Infrastructure Manager.</p>
+<p align="center"><b>Figure 3-4:</b> Hardware Infrastructure Manager.</p>
 
 The hardware infrastructure manager needs to support the following functional aspects:
 
@@ -229,7 +229,7 @@ The hardware infrastructure manager needs to support the following functional as
 The physical compute, storage and network resources serve as the foundation of the cloud infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
 
 <p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="Hardware Infrastructure Resources" Title="Hardware Infrastructure Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-4:</b> Hardware Infrastructure Resources</p>
+<p align="center"><b>Figure 3-5:</b> Hardware Infrastructure Resources</p>
 
 <a name="3.5"></a>
 ## 3.5 Network
