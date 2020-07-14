@@ -31,11 +31,11 @@ It is recommended that:
 - Image registries are monitored to automatically block or replace images with known vulnerabilities, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
 - Adopt a layered packaging model which supports separation of concerns during image build.
 
-The following functionalities are recommended for securing kubernetes platform;
+The following functionalities are recommended for securing Kubernetes platforms:
 
-- Image Signing
+- Image Certification (Scan for vulnerabilities) and Signing
 - Role-base Access Control
-- Secret Managment
+- Secret Management
 - How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
   - Tenants without hard multi-tenancy requirements (multiple development teams in the same organization) separated from each other by namespaces
   - For strict multi tenancy, a dedicated Kubernetes cluster per tenant should be used
@@ -120,7 +120,7 @@ Secrets must not be stored in scripts or code but provided dynamically at runtim
 ##  5.13  Trusted Registry
 Ensure that the container registry only accepts container images from trusted sources that have tested and validated the images. Where images are provided by third parties, define and follow a formal process to validate compliance with security requirements. Also ensure that access control is applied to registries requiring unique credentials, to limit who can control the build or add images.
 
- - Network access to the registry must run over TLS or VPN connections
+- It is strongly recommended that network access to the registry is secured using TLS, SSL or VPN connections to ensure trust.
 
 Ensure container applications are validated to assess their use and applicability as well as scanned for viruses and vulnerabilities. Only deploy container application from images that are signed with a trusted key
 
