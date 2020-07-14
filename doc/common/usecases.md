@@ -2,21 +2,21 @@
 # CNTT Use Cases
 
 ## Table of Contents
- * [5.1 Edge](#5.1)
-   * [5.1.1 Executive Summary](#5.1.1)
-   * [5.1.2 Objective](#5.1.2)
-   * [5.1.3 Approach & Scope](#5.1.3)
-   * [5.1.4 Principles](#5.1.4)
-   * [5.1.5 Use cases](#5.1.5)
-   * [5.1.6 Terminologies](#5.1.6)
-   * [5.1.7 SDO interlocking](#5.1.7)
+ * [Edge](#5.1)
+   * [Executive Summary](#5.1.1)
+   * [Objective](#5.1.2)
+   * [Approach & Scope](#5.1.3)
+   * [Principles](#5.1.4)
+   * [Use cases](#5.1.5)
+   * [Terminologies](#5.1.6)
+   * [SDO interlocking](#5.1.7)
    
 
 <a name="5.1"></a>
-## 5.1 Edge
+## Edge
 
 <a name="5.1.1"></a>
-### 5.1.1 Executive Summary
+### Executive Summary
 
 Edge computing, a disruptive technology, that should be considered for adoption by Digital Service Providers (DSP) as it is tightly linked with a number of use cases that monetize 5G. Thus, operators, cloud service providers, content providers and application developers are increasingly focussed on Edge computing.
 
@@ -25,7 +25,7 @@ Edge is considered as one of the main enablers to 5G use cases adoption. There a
 With respect to monetization, Edge will help DSPs with their Return on investment (ROI) on 5G and cloud as a number of new services require the Edge. For example, services such as Cloud Gaming, Assisted Reality/Virtual Reality (AR/VR), 5G private networks, and vRAN.
 
 <a name="5.1.2"></a>
-### 5.1.2 Objective
+### Objective
 
 Based on CNTT's goal and purpose is to develop a robust cloud infrastructure model and define a limited set of discrete architectures built on that model that can be tested and validated for use across the entire member community.
 
@@ -39,7 +39,7 @@ Edge Stream related activities :
 - Modify the existing RM and RA-s so that they are aligned with the edge requirements
 
 <a name="5.1.3"></a>
-### 5.1.3 Approach & Scope
+### Approach & Scope
 
 All Edge requirement gaps under Reference Model , Reference Architecture 01 (OpenStack), Reference Architecture 02 (Kubernetes) will be identified and fulfilled.
 
@@ -59,7 +59,7 @@ Out of Scope
 -	Edge deployment locations as they will vary by operator. 
 
 <a name="5.1.4"></a>
-### 5.1.4 Principles
+### Principles
 
 This section introduces some principles that should be followed during the definition and development of Edge scope to be covered in CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
@@ -92,7 +92,7 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
 -  Specific priority, control and orchestration concerns.
 
 <a name="5.1.5"></a>
-### 5.1.5 Use cases
+### Use cases
 
 - **Introduction**
 
@@ -203,10 +203,10 @@ CNTT believes that Edge computing is unique in terms of infrastructure requireme
         
 
 <a name="5.1.6"></a>
-### 5.1.6 Terminologies
+### Terminologies
 
 <a name="5.1.7"></a>
-### 5.1.7 Standard Developing Bodies (SDO) and Open Source Communities Interlock 
+### Standard Developing Bodies (SDO) and Open Source Communities Interlock 
 
 -	OpenStack Edge Computing Group 
     - Working will OpenStack ECG on defining various architecture that will be fit in RA01 & RA02

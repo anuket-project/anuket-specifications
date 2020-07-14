@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 2 Workload Requirements & Analysis
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Workloads Collateral](#2.1)
@@ -13,12 +12,12 @@ One of the main targets of the CNTT is to define an agnostic cloud infrastructur
 
 This means, operators will be able to host their Telco workloads (VNFs/CNFs) with different traffic types, behaviour and from any vendor on a unified consistent cloud infrastructure.
 
-Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine learning, Artificial Intelligence, etc.
+Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine Learning, and Artificial Intelligence.
 
-In this chapter we try to analyse various workload types used in telco and examine their requirements. We will also highlight some of the cloud infrastructure parameters needed to achieve the desired performance expected by various workloads.
+This chapter analyses various telco workloads and their requirements, and recommends certain cloud infrastructure parameters needed to specify the desired performance expected by these workloads.
 
 <a name="2.1"></a>
-# 2.1 Workloads Collateral
+## 2.1 Workloads Collateral
 
 There are different ways that workloads can be classified, for example:
 - **By function type:**
@@ -33,7 +32,7 @@ There are different ways that workloads can be classified, for example:
   - Value-Added-Services
 - **By technology:** 2G, 3G, 4G, 5G, IMS, FTTx, Wi-Fi...
 
-Below is a list of Network Functions that covers almost _**95%**_ of the Telco workload (and the most likely to be virtualised). They are gathered by network segment and function type.
+The list of, most likely to be virtualised,  Network Functions below, covering almost _**95%**_ of the Telco workloads, is organised by network segment and function type.
 - **Radio Access Network (RAN)**
   - Data Plane
     - BBU: BaseBand Unit
@@ -113,7 +112,7 @@ Below is a list of Network Functions that covers almost _**95%**_ of the Telco w
     - NMS: Network Management System
 
 <a name="2.2"></a>
-# 2.2 Analysis
+## 2.2 Analysis
 
 Studying various requirements of workloads helps understanding what expectation they will have from the underlying cloud infrastructure. Following are _some_ of the requirement types on which various workloads might have different expectation levels:
 
@@ -167,7 +166,7 @@ By trying to sort workloads into different categories based on the requirements 
 -->
 
 <a name="2.3"></a>
-# 2.3 Cloud Infrastructure Profiles
+## 2.3 Cloud Infrastructure Profiles
 
 Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
@@ -176,7 +175,7 @@ Based on the above analysis, following cloud infrastructure profiles are propose
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-On **Chapter 4** later in the document, these infrastructure profiles will be offered to workloads: **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> respectively.
+In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> infrastructure profiles will be defined in greater detail for use by workloads: .
 
 >***Note**  
 >This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
