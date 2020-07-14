@@ -316,7 +316,7 @@ Please note that the initial version of the [Cyborg API v1.0](https://docs.opens
 |---------------------------------|-----------------|
 | Key Manager: Barbican           | v1              |
 
-Barbican API Documentation: https://docs.openstack.org/barbican/pike/api/
+Barbican API Documentation: https://docs.openstack.org/barbican/latest/api/
 
 <!--
 ### 5.3.4. vSphere/ESXi APIs
