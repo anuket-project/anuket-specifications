@@ -135,7 +135,7 @@ Cabinet is the rack holder for the server and network devices. The data will be 
 The server device data defines key information about how to access the server remotely, for example remote IP address, user, credentials and so on.
 There are many ways to validate the hardware by remote interface verification, for example IPMI, redfish and so on.
 Considering the number of servers, the user can choose to validate the server interface in a distributed way or in a centralized way.
-Distributed validation means that an operating system (OS) is installed and an IP address is configured for the OS, which connects to the hardware management device (for example, BMC, IPMI and so on) to validate the connection.
+Distributed validation means that the server connects to the hardware management device (for example, BMC, IPMI and so on) to validate the connection.
 Centralized validation means that the hardware management device connects to the server to validate the connection.
 The best practice is to use centralized validation when the number of servers is low (for example, storage servers), and use distributed validation when the number of servers is high (for example, generic servers).
 
