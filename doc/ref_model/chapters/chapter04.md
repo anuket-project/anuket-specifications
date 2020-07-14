@@ -481,17 +481,17 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.008`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
 | `e.cap.009`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
 | `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
-| `e.cap.011`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
+| `e.cap.011`<br />(Programmable Acceleration)                | No                       | Yes/No                       |                                                                     |
 | `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | Yes                      | No                       | |
-| `e.cap.014`<br />(GPU/NPU)                                            | No                       | No                       | |
-| `e.cap.015`<br />(SmartNIC)                                           | Yes (if offered)         | No                       | |
-| `e.cap.016`<br />(FPGA/other Acceleration H/W)                        | Yes (if offered)         | No                       | || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
-| `i.cap.014`<br />(CPU cores consumed by the Cloud Infrastructure overhead on a worker (compute) node) | any                      | any                      | |
-| `i.cap.015`<br />(Memory consumed by Cloud Infrastructure on the worker (compute) nodes)        | any                      | any                      | |
+| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       | |
+| `e.cap.014`<br />(GPU/NPU)                                            | No                       | Yes / No                       | Yes : in case of AI and Video Edge use cases|
+| `e.cap.015`<br />(SmartNIC)                                           | No        | Yes / No                       | |
+| `e.cap.016`<br />(FPGA/other Acceleration H/W)                        |No             | Yes / No                       | Yes : in case of vRAN Edge use case || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
+| `i.cap.014`<br />(CPU cores consumed by the Cloud Infrastructure on the worker nodes) | any                      | any                      | |
+| `i.cap.015`<br />(Memory consumed by Cloud Infrastructure on the worker nodes)        | any                      | any                      | |
 | `i.cap.016`<br />(CPU allocation ratio)                     | 1:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)<br/><br/>_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._  |
-| `i.cap.017`<br />(Connection point QoS)                    | No                       | Yes                      |                                                                     |
-| `i.cap.018`<br />(Huge pages)                              | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
+| `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
+| `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.pm.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
 | `i.pm.002`<br />(Virtual compute resource CPU usage)                | Yes                      | Yes                      |                                                                     |
 | `i.pm.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
