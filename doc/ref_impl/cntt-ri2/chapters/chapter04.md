@@ -55,35 +55,7 @@ After the hosts have been provisioned successfully, one can set up host networki
 <a name="4.3.2"></a>
 ### 4.3.2 Kubernetes Provisioning
 
-For provisioning Kubernetes in the Reference Implementation, existing open source tools should be used to set up the cluster. The goal is to cover the requirements listed in the [Reference Architecture 2 (RA-2)](../../../ref_arch/kubernetes), but due to the scope this will be done through multiple iterations, starting with a subset of requirements and expanding the deployment over time. 
-
-Initial efforts have been looking at the features of different installers, which has been used to select a few open source Kubernetes provisioning tools for proof of concept deployments. Common for these tools is the use of Ansible and Helm to assist with deploying Kubernetes, configuring the host, and adding additional features and functionality to the cluster. 
-
-Depending on the tool used for provisioning, there are likely configuration parameters that will need to be modified before running the installer:
-- Host information (IPs for SSH)
-- Cluster information (Master/worker node distribution and datastore)
-- CPU isolation (Kernel)
-- Memory allocation (Hugepages)
-- Network interfaces (PFs/VFs and drivers)
-- Additional Kubernetes features (device plugins, CNIs)
-
-Once completed, the cluster must be accessible through the `kubectl` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file, usually found in `$HOME/.kube/config` on the master nodes. This file can be copied to the jumphost and referenced through the `KUBECONFIG` environment variable, after which the cluster can be managed through `kubectl` from the jumphost.
-
-While the presentation of resources can depend on the specific features and functionality, a good way to start is to check the node status for allocatable resources as follows:
-```
-kubectl get nodes
-kubectl get node <NAME> -o json | jq ".status.allocatable"
-```
-
-Resources related to networks are usually handled differently, with the exception of hardware resources which are usually listed under each node. There are two common CNI multiplexers that are both considered for the RI-2, [Multus](https://github.com/intel/multus-cni) and [DANM](https://github.com/nokia/danm). They both provide similar functionality, but with some differences in how resources are defined, configured, and consumed.
-
-For the ongoing proof of concept work related to both RA-2 and RI-2, some of the features specifically aimed at production ready deployments are initially omitted. These features are mostly part of the below topics:
-- High availability
-- Network infrastructure
-- Storage
-- Security
-
-As work progresses with the proof of concept it is expected that additional features will be added.
+> Add detailed description of current K8s provisioning
 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
