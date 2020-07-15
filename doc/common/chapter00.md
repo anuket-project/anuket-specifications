@@ -112,6 +112,19 @@ Any specification work created within CNTT **must** conform to the following pri
    - This pertains to features that operate at detailed levels of hardware granularity, such as EPA.
 
 <a name="2.2"></a>
+## Requirements Principles
+The agreed upon rules and recommendations to which a compliant NF or cloud infrastructure must adhere. 
+
+* All requirements will be hosted and maintianed in the RM or relevant RA
+* All requirements must be assigned a requirements ID and not be embedded in narrative text.  This is to ensure that readers do not have to infer if a requirement exists and is applicable
+* Requirements must have a unique ID for tracking and reference purposes
+* The requirement ID should include a prefix to delineate the source project
+* Requirements must state the level of compliance (ex: MUST, SHOULD, MAY) per [RFC 2119](https://tools.ietf.org/html/rfc2119)
+* Mandatory requirements must be defined in such a way that they are unambiguously verifiable via automated testing
+* Requirements should be publishable or extractable into a machine readable format such as JSON
+* Requirements should include information about the impact of non-conformance and the rationale for their existence
+
+<a name="2.3"></a>
 ## Architectural Principles
 
 Following are a number of key architectural principles that apply to all Reference Architectures produced by CNTT:
@@ -133,19 +146,6 @@ Following are a number of key architectural principles that apply to all Referen
 1. **Security compliance:** To ensure the architecture follows the industry best security practices and is at all levels compliant to relevant security regulations.
 
 1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and to avoid Single Point of Failure.
-
-<a name="2.2"></a>
-## Requirements Principles
-The agreed upon rules and recommendations to which a compliant NF or cloud infrastructure must adhere. 
-
-* All requirements will be hosted and maintianed in the RM or relevant RA
-* All requirements must be assigned a requirements ID and not be embedded in narrative text.  This is to ensure that readers do not have to infer if a requirement exists and is applicable
-* Requirements must have a unique ID for tracking and reference purposes
-* The requirement ID should include a prefix to delineate the source project
-* Requirements must state the level of compliance (ex: MUST, SHOULD, MAY) per [RFC 2119](https://tools.ietf.org/html/rfc2119)
-* Mandatory requirements must be defined in such a way that they are unambiguously verifiable via automated testing
-* Requirements should be publishable or extractable into a machine readable format such as JSON
-* Requirements should include information about the impact of non-conformance and the rationale for their existence
 
 <a name="3.0"></a>
 # Scope
