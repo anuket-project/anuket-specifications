@@ -19,8 +19,7 @@ If there is no clear traceability and strong links between these 3 components, t
 
 
 ## Requirement Principles
-* Mandatory requirements must be defined in such a way that they are unambiguously verifiable via automated testing
-* Requirements should be publishable or extractable into a machine readable format such as JSON
+Requirements Principles can be found in the [RM Principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0)
 
 ## Testing Principles
 * There must be traceability between test cases and requirement being validated
