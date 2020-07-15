@@ -6,6 +6,7 @@ Documents
 .. toctree::
     :maxdepth: 16
 
+    /common/README.md
     /gov/README.md
     /ref_model/README.md
     /ref_arch/README.md
