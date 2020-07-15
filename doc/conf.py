@@ -25,11 +25,11 @@ direct_copy_directories = ['/gov/figures',
                            '/ref_arch/figures', 
                            '/ref_arch/kubernetes/figures', 
                            '/ref_arch/openstack/figures', 
-                           '/ref_cert/lfn/figures', 
+                           '/ref_cert/RC1/figures', 
                            '/ref_cert/RC2/figures', 
                            '/ref_impl/cntt-ri/figures', 
                            '/ref_impl/cntt-ri2/figures',
-                           '/tech/figures', 
-                           '/ven_impl/figures'] 
+                           '/ven_impl/figures', 
+                           '/common/figures'] 
 
 html_theme = "sphinx_rtd_theme"

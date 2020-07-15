@@ -55,11 +55,10 @@ Relevant for sizing infrastructure and application operations (which often is an
 
 As Part of the [Transition Plan](../../gov/chapters/chapter09.md#9.2) described in the adoption strategy, following table explains the exceptions allowed in this RM release. The list of Exceptions described here are considered to be against CNTT principles and will be removed in future releases as soon as an alternative technology that is aligned with CNTT principles develops and matures.
 
-| Ref        	| Type       	| Name               	| Description                                                           	|
-|------------	|------------	|--------------------	|-----------------------------------------------------------------------	|
-| rm.exc.001 	| Technology 	| SRIOV 	| This exception allows workloads (VNF/CNF) to rely on SR-IOV over PCI-PassThrough technology. 	|
-| rm.exc.002 	|            	|                    	|                                                                       	|
-| rm.exc.003 	|            	|                    	|                                                                       	|
+| Ref        | Type       | Name       | Description                                                           |
+|------------|------------|------------|-----------------------------------------------------------------------|
+| rm.exc.001 | Technology | SRIOV      | This exception allows workloads (VNF/CNF) to rely on SR-IOV over PCI-PassThrough technology. |
+
 
 <p align="center"><b>Table A-1:</b> Exceptions allowed in this RM release</p>
 
@@ -75,7 +74,7 @@ CNTT realizes there are implications and limitations to the ability to live by t
 
 Solving the problems associated with implementing the Abstraction Principle is a work in progress. CNTT has not solved all of the associated problems, nor has the industry. As technology evolves and more designs incorporate cloud native concepts, these problems will be addressed. This appendix is specifically intended to provide CNTT policies to manage these situations as they exist today, and their exceptions and transitions, as the technology around and supporting the Abstraction Principle matures.
 
-<sup>1)</sup> For a detailed description of the mechanisms underlying PCI-PT (PCI-PassThrough), refer to [Section 8.1](https://github.com/cntt-n/CNTT/blob/master/doc/tech/technologies.md#8.1) of Relevant Technologies.
+<sup>1)</sup> For a detailed description of the mechanisms underlying PCI-PT (PCI-PassThrough), refer to [Section 8.1](../../common/technologies.md#8.1) of Relevant Technologies.
 
 Several specific technology areas have been identified by CNTT as using an ABI impacted by the Abstraction Principle, as follows:
 - SR-IOV over PCI-PT
