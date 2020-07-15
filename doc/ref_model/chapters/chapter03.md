@@ -202,3 +202,12 @@ Principles that should be followed during the development and definition of the 
 •Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
 
 •Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
+
+<a name="3.6"></a>
+## 3.6 Sample reference model realization
+The following diagram presents an example of the realization of the reference model, where a virtual infrastructure layer contains three coexisting but different types of implementation: a typical IaaS using VMs and a hypervisor for virtualisation, a CaaS on VM/hypervisor, and a CaaS on bare metal. This diagram is presented for illustration purposes only and it does not precluded validity of many different combinations of implementation types. Note that the model enables several potentially different SDN controllers orchestrating different level of resources (virtual and/or hardware). Management clients can manage virtual resources via Virtual Infrastructure Manager (Container Infrastructure Service Manager for CaaS, or Virtual Infrastructure Manager for IaaS), or alternatively hardware infrastructure resources via hardware infrastructure manager.  The latter situation may occur for instance when an orchestrator (an example of a management client) is involved in provisioning the physical network resources with the assistance of SDN controllers. Also, this realization example would enable implementation of a programmable fabric.
+
+<p align="center"><img src="../figures/ch03-model-realization-diagram.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
+<p align="center"><b>Figure 3-6:</b> NFVI Physical Resources</p>
+
+The terms: Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understand as defined in ETSI GR NFV-IFA 029 https://www.etsi.org/deliver/etsi_gr/NFV-IFA/001_099/029/03.03.01_60/gr_NFV-IFA029v030301p.pdf. More detailed deployment examples cna be found in Section 4.3 of this Reference Model document.
