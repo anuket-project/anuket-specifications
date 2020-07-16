@@ -113,7 +113,7 @@ Any specification work created within CNTT **must** conform to the following pri
 
 <a name="2.2"></a>
 ## Requirements Principles
-The agreed upon rules and recommendations to which a compliant NF or cloud infrastructure must adhere. 
+The agreed upon rules and recommendations to which a compliant workload or cloud infrastructure must adhere. 
 
 * All requirements will be hosted and maintianed in the RM or relevant RA
 * All requirements must be assigned a requirements ID and not be embedded in narrative text.  This is to ensure that readers do not have to infer if a requirement exists and is applicable
