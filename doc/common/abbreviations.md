@@ -56,7 +56,7 @@
 | RC             | Reference Conformance                 |
 | RI             | Reference Implementation              |
 | RM             | Reference Model                       |
-| SDN            | Software Define Networking            |
+| SDN            | Software-Defined Networking            |
 | SDS            | Software-Defined Storage              |
 | SFC            | Service Function Chaining             |
 | SMT            | Simultaneous multithreading           |
