@@ -12,7 +12,7 @@
 ## 5.1 Introduction
 
 This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces.
-The OpenStack Pike version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any NFVI + VIM reference
+The OpenStack Train version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any NFVI + VIM reference
 implementations that **get certified by RC** can be considered as CNTT RA Conformant.
 
 The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and a
@@ -30,13 +30,13 @@ For the purpose of conformance tests, this chapter also identifies the set of th
 <a name="5.2"></a>
 ## 5.2. Core OpenStack Services APIs
 
-Please note that OpenStack provides a maximum microversion to be used with an OpenStack release. In the following sections the "Maximal API Version" refers to this maximum microversion specified for the OpenStack Pike release. Please note that in Reference Conformance (RC-1) testing, the System Under Test (SUT) can utilise newer microversions because of the OpenStack microversion policies. As per multiple OpenStack services documentation, for example the [Compute Service](https://docs.openstack.org/api-guide/compute/microversions.html), "A cloud that is upgraded to support newer microversions will still support all older microversions to maintain the backward compatibility for those users who depend on older microversions."
+Please note that OpenStack provides a maximum microversion to be used with an OpenStack release. In the following sections the "Maximal API Version" refers to this maximum microversion specified for the OpenStack Train release. Please note that in Reference Conformance (RC-1) testing, the System Under Test (SUT) can utilise newer microversions because of the OpenStack microversion policies. As per multiple OpenStack services documentation, for example the [Compute Service](https://docs.openstack.org/api-guide/compute/microversions.html), "A cloud that is upgraded to support newer microversions will still support all older microversions to maintain the backward compatibility for those users who depend on older microversions."
 
 ### 5.2.1. Keystone
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
-| Identity: Keystone    | v3              | 3.8                          |
+| Identity: Keystone    | v3              | 3.13                         |
 
 | **Keystone Features**   | **Mandatory** |
 |-------------------------|:-------------:|
@@ -58,7 +58,7 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
-| Image: Glance         | v2              | 2.5                          |
+| Image: Glance         | v2              | 2.9                          |
 
 Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
@@ -66,7 +66,7 @@ Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
-| Block Storage: Cinder | v3              | 3.43                         |
+| Block Storage: Cinder | v3              | 3.59                         |
 
 | **Cinder Features**    | **Mandatory** |
 |------------------------|:-------------:|
@@ -74,7 +74,7 @@ Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.
 | clone                  | X             |
 | consistency_group      |               |
 | extend_attached_volume |               |
-| manage_snapshot        |               |
+| manage_snapshot        | X             |
 | manage_volume          | X             |
 | multi_backend          |               |
 | snapshot               | X             |
@@ -209,7 +209,7 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
-| Compute: Nova         | v2.1            | 2.53                         |
+| Compute: Nova         | v2.1            | 2.79                         |
 
 | **Nova Features**        | **Mandatory** |
 |--------------------------|:-------------:|
@@ -245,7 +245,7 @@ REST API Version History: https://docs.openstack.org/nova/latest/reference/api-m
 
 |**OpenStack Service** |  **API Version** | **Maximal API Microversion** |
 |----------------------|------------------|------------------------------|
-| Placement            | v1               | 1.10                         |
+| Placement            | v1               | 1.36                         |
 
 Placement API: https://docs.openstack.org/api-ref/placement/
 
@@ -255,13 +255,13 @@ REST API Version History: https://docs.openstack.org/placement/latest/placement-
 
 |**OpenStack Service** | **API Version** | **Maximal Template Version** |
 |----------------------|-----------------|------------------------------|
-| Orchestration: Heat  | v1              | 2017-09-01                   |
+| Orchestration: Heat  | v1              | 2018-08-31                   |
 
 Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
 
-Template version history: https://docs.openstack.org/heat/pike/template_guide/hot_spec.html
+Template version history: https://docs.openstack.org/heat/latest/template_guide/hot_spec.html
 
-Heat Orchestration Template (HOT) specification: https://docs.openstack.org/heat/pike/template_guide/hot_spec.html#pike
+Heat Orchestration Template (HOT) specification: https://docs.openstack.org/heat/latest/template_guide/hot_spec.html#rocky
 
 <a name="5.3"></a>
 ## 5.3. Consolidated Set of APIs
@@ -278,13 +278,13 @@ libraries.
 
 | **OpenStack Service** | Link for API list                                    | **API Version** | **Maximal API Microversion** |
 |-----------------------|------------------------------------------------------|-----------------|------------------------------|
-| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
-| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
+| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | v3              | 3.13                         |
+| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.79                         |
 | Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0            |                              |
-| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.5                          |
-| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.43                         |
+| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.9                          |
+| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.59                         |
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
-| Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
+| Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.36                         |
 | Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
 <!--
 | Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/ | v2    |
@@ -316,7 +316,7 @@ Please note that the initial version of the [Cyborg API v1.0](https://docs.opens
 |---------------------------------|-----------------|
 | Key Manager: Barbican           | v1              |
 
-Barbican API Documentation: https://docs.openstack.org/barbican/pike/api/
+Barbican API Documentation: https://docs.openstack.org/barbican/latest/api/
 
 <!--
 ### 5.3.4. vSphere/ESXi APIs
