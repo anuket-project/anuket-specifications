@@ -18,20 +18,32 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-This chapter describes in detail the Kubernetes Reference Architecture in terms of the functional capabilities and how they relate to the Reference Model requirements, i.e. how the infrastructure profiles are determined, documented and delivered.
+This chapter describes in detail the Kubernetes Reference Architecture in terms
+of the functional capabilities and how they relate to the Reference Model
+requirements, i.e. how the infrastructure profiles are determined, documented
+and delivered.
 
-The specifications defined in this chapter will be detailed with unique identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g. `ra2.ch.001` for the first requirement in the Container Host section.  These specifications will then be used as requirements input for the Kubernetes Reference Implementation and any Vendor or Community Implementations.
+The specifications defined in this chapter will be detailed with unique
+identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g.
+`ra2.ch.001` for the first requirement in the Container Host section.  These
+specifications will then be used as requirements input for the Kubernetes
+Reference Implementation and any Vendor or Community Implementations.
 
-Figure 4-1 below shows the architectural components that are described in the subsequent sections of this chapter.
+Figure 4-1 below shows the architectural components that are described in the
+subsequent sections of this chapter.
 
-<p align="center"><img src="../figures/ch04_k8s_architecture.png" alt="Kubernetes Reference Architecture" Title="Kubernetes Reference Architecture" width="65%"/></p>
+<p align="center"><img src="../figures/ch04_k8s_architecture.png"
+alt="Kubernetes Reference Architecture" Title="Kubernetes Reference
+Architecture" width="65%"/></p>
 <p align="center"><b>Figure 4-1:</b> Kubernetes Reference Architecture</p>
 
 <a name="4.2"></a>
 ## 4.2 Container Host
 
-This section describes the configuration that will be applied to the physical or virtual machine and an installed Operating System.
-In order for a Container Host to be conformant with the Reference Architecture it must be implemented as per the following specifications:
+This section describes the configuration that will be applied to the physical or
+virtual machine and an installed Operating System. In order for a Container Host
+to be conformant with the Reference Architecture it must be implemented as per
+the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
@@ -79,7 +91,7 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.003`|Highly available control plane|An implementation must consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.004`|Highly available worker nodes|An implementation must consist of at least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes|[req.gen.rsl.01 req.gen.avl.01 req.kcm.gen.02](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.005`|Kubernetes API Version|In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), an implementation must use one of three latest minor versions (`n-2`). e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15.|TBC|
-|`ra2.k8s.006`||||
+|`ra2.k8s.006`|NUMA Support|The `TopologyManager` feature gate must be enabled and configured on the kubelet (note, it is enabled by default in Kubernetes v1.18 and later) with static CPU management policy also enabled. `--feature-gates="...,TopologyManager=true --topology-manager-policy=single-numa-node --cpu-manager-policy=static"`|[e.cap.007](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities) [infra.com.cfg.002](./chapter02.md#223-cloud-infrastructure-software-profile-requirements) [infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.k8s.007`||||
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
@@ -118,7 +130,8 @@ feature-gates:
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-In order for the Container runtime(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+In order for the Container runtime(s) to be conformant with the Reference
+Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
@@ -152,7 +165,8 @@ To support the isolation of the resources used by the infrastructure from the re
 <a name="4.5"></a>
 ## 4.5 Networking solutions
 
-In order for the networking solution(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+In order for the networking solution(s) to be conformant with the Reference
+Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
@@ -202,7 +216,8 @@ For the network of signalling connections the built in IPVLAN CNI of DANM or the
 <a name="4.6"></a>
 ## 4.6 Storage components
 
-In order for the storage solution(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+In order for the storage solution(s) to be conformant with the Reference
+Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
@@ -246,7 +261,11 @@ Volume plugins are used in Kubernetes to allow for the use of a range of backend
 > In order to support automation and the separation of concerns between providers of a service and consumers of the service, Kubernetes Storage Classes should be used. Storage Classes allow a consumer of the Kubernetes platform to request Persistent Storage using a Persistent Volume Claim and for a Persistent Volume to be dynamically created based on the "class" that has been requested. This avoids having to grant `create`/`update`/`delete` permissions in RBAC to PersistentVolume resources, which are cluster-scoped rather than namespace-scoped (meaning an identity can manage all PVs or none).
 -->
 A note on object storage:
-- This Reference Architecture does not include any specifications for object storage, as this is neither a native Kubernetes object, nor something that is required by CSI drivers.  Object storage is an application-level requirement that would ordinarily be provided by a highly scalable service offering rather than being something an individual Kubernetes cluster could offer.
+- This Reference Architecture does not include any specifications for object
+storage, as this is neither a native Kubernetes object, nor something that is
+required by CSI drivers.  Object storage is an application-level requirement
+that would ordinarily be provided by a highly scalable service offering rather
+than being something an individual Kubernetes cluster could offer.  
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 
@@ -254,12 +273,15 @@ A note on object storage:
 <a name="4.7"></a>
 ## 4.7 Service meshes
 
-Application service meshes are not in scope for the architecture.  Network service mesh specifications are handled in section [4.5 Networking solutions](#4.5).
+Application service meshes are not in scope for the architecture.  Network
+service mesh specifications are handled in section [4.5 Networking
+solutions](#4.5).
 
 <a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
 
-In order for the storage solution(s) to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+In order for the storage solution(s) to be conformant with the Reference
+Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
@@ -270,7 +292,8 @@ In order for the storage solution(s) to be conformant with the Reference Archite
 <a name="4.9"></a>
 ## 4.9 Kubernetes workloads
 
-In order for the Kubernetes workloads to be conformant with the Reference Architecture they must be implemented as per the following specifications:
+In order for the Kubernetes workloads to be conformant with the Reference
+Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
