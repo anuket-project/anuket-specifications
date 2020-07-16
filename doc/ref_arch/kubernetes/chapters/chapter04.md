@@ -47,7 +47,7 @@ the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ch.001`|Huge Pages|Huge Pages must be enabled within the Container Host OS (e.g. to verify run `cat /proc/meminfo ¦ grep Huge`)|[infra.com.cfg.004](./chapters/chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ch.001`|Huge Pages|Huge Pages must be enabled within the Container Host OS, with at least one each of 2048KiB and 1048576KiB page sizes, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|[infra.com.cfg.004](./chapters/chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.002`|SR-IOV capable NICs|The physical machine on which the Container Host runs must be equipped with NICs that are SR-IOV capable (e.g. [this list from Intel](../../../../../../../../intel/sriov-network-device-plugin#supported-sr-iov-nics)).|[e.cap.013](./chapters/chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.003`|SR-IOV Virtual Functions|SR-IOV virtual functions (VFs) must be configured within the Container Host OS, as the SR-IOV Device Plugin does not manage the creation of these VFs. (e.g. [vf-setup.md](../../../../../../../../intel/sriov-network-device-plugin/blob/master/docs/vf-setup.md)).|[e.cap.013](./chapters/chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.004`||||
