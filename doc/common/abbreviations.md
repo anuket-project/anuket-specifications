@@ -43,9 +43,9 @@
 | K8s            | Kubernetes                            |
 | LAN            | Local Area Network                    |
 | MANO           | Management and Orchestration          |
-| NFV            | Network Funciton Virtualisation       |
-| NFVI           | Network Funciton Virtualisation Infrastructure |
-| NFVO           | Network Funciton Virtualisation Orchestrator |
+| NFV            | Network Function Virtualisation       |
+| NFVI           | Network Function Virtualisation Infrastructure |
+| NFVO           | Network Function Virtualisation Orchestrator |
 | NIC            | Network Interface Card                |
 | ONAP           | Open Network Automation Platform      |
 | OPNFV          | Open Platform for NFV                 |
