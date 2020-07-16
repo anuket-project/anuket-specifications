@@ -21,7 +21,7 @@
 | API            | Application Programming Interface     |
 | CaaS           | Container as a Service                |
 | CI/CD          | Continuous Integration / Continuous Deployment |
-| CNF            | Cloud native Network Functio          |
+| CNF            | Cloud native Network Function          |
 | CNI            | Container Network Interface           |
 | CNTT           | Cloud iNfrastructure Telco Taskforce  |
 | CPU            | Central Processing Unit               |
