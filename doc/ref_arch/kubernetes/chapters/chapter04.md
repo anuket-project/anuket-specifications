@@ -52,8 +52,12 @@ the following specifications:
 |`ra2.ch.003`|SR-IOV Virtual Functions|SR-IOV virtual functions (VFs) must be configured within the Container Host OS, as the SR-IOV Device Plugin does not manage the creation of these VFs. (e.g. [vf-setup.md](../../../../../../../../intel/sriov-network-device-plugin/blob/master/docs/vf-setup.md)).|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Container Host runs.|[infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.005`|System Resource Reservations|To avoid resource starvation issues on nodes, reserve compute resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, etc. (requires Kubernetes version 1.17 or later). Use the following kubelet flags: `--reserved-cpus=0-3`|NB: There doesn't appear to be a requirement that this is for?  Do we need to be specific about the values used?  The guidelines [here](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#general-guidelines) suggest a more nuanced approach is recommended? |
-|`ra2.ch.006`||||
+|`ra2.ch.006`|CPU Allocation Ratio|For Kubernetes nodes running as Virtual Machines, ensure the CPU allocation ratio between vCPU and physical CPU is 1:1 (note that it is not possible for the kubelet to over-allocate CPU resources.)|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.007`||||
+|`ra2.ch.008`||||
+|`ra2.ch.009`||||
+|`ra2.ch.010`||||
+|`ra2.ch.011`||||
 
 <p align="center"><b>Table 4-1:</b> Host OS Specifications</p>
 
