@@ -31,16 +31,17 @@ _**To summarise:** the abstraction model presented in this document will build u
 <a name="3.1"></a>
 ## 3.1 Model
 
-The abstraction model for the NFVI makes use of the following layers (only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs)):
+The abstraction model for the cloud infrastructure is divided into two logical layers: the virtual infrastructure layer and the hardware infrastructure layer, with the intention that only the virtual infrastructure layer will be directly exposed to workloads (VNFs/CNFs):
 
-<p align="center"><img src="../figures/ch03-model-overview.png" alt="NFVI Model Overview" Title="NFVI Model Overview" width="65%"/></p>
-<p align="center"><b>Figure 3-1:</b> NFVI Model Overview.</p>
+<p align="center"><img src="../figures/ch03-model-overview.png" alt="Cloud Infrastructure Model Overview" Title="Cloud Infrastructure Model Overview" width="65%"/></p>
+<p align="center"><b>Figure 3-1:</b> Cloud Infrastructure Model Overview.</p>
 
 The functionalities of each layer are as follows:
-- **Virtual Infrastructure Resources:** These are all the infrastructure resources (compute, storage and networks) which the NFVI provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
-- **NFVI Management Software:** This consists of the software components that manage the physical and virtual resources and make those management capabilities accessible via one or more APIs. The host Operating System (OS) is responsible for managing the physical infrastructure resources and abstracting them from processes running within the OS. Virtualisation / containerisation technology dynamically allocates these abstracted hardware components and exposes them as virtual resources. Additional software is responsible for the management of logical constructs such as tenants, tenant workloads, resource catalogues, identities, access controls, security policies, etc.
+- **Virtual infrastructure resources:** These are all the infrastructure resources (compute, storage and networks) which the cloud infrastructure provides to the workloads such as VNFs/CNFs. These virtual resources can be managed by the tenants and tenant workloads directly or indirectly via an application programming interface (API).
+- **Virtual infrastructure manager:** This consists of the software components that manage the virtual resources and make those management capabilities accessible via one or more APIs. The responsibilities of this functionality include the management of logical constructs such as tenants, tenant workloads, resource catalogues, identities, access controls, security policies, etc.
+- **Hardware infrastructure manager:** This is a logical block of functionality responsible for the management of the abstracted hardware resources (compute, network and storage) and as such it is shielded from the direct involvement with server host software.
 - **Physical Infrastructure Resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, and the basic input output system (BIOS).
-- **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run on top of a VM or as a Container.
+- **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run within a virtual machine (VM) or as a set of containers.
 
 <a name="3.2"></a>
 ## 3.2 Virtual Resources
@@ -63,6 +64,7 @@ The virtualised infrastructure resources related to these categories are listed 
 A cloud infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 
 _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
+
 
 | Attribute  | Description                                                                                             |
 |------------|---------------------------------------------------------------------------------------------------------|
