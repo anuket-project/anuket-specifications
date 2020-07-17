@@ -51,8 +51,7 @@ the following specifications:
 |`ra2.ch.002`|SR-IOV capable NICs|The physical machine on which the Container Host runs must be equipped with NICs that are SR-IOV capable (e.g. [this list from Intel](../../../../../../../../intel/sriov-network-device-plugin#supported-sr-iov-nics)).|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.003`|SR-IOV Virtual Functions|SR-IOV virtual functions (VFs) must be configured within the Container Host OS, as the SR-IOV Device Plugin does not manage the creation of these VFs. (e.g. [vf-setup.md](../../../../../../../../intel/sriov-network-device-plugin/blob/master/docs/vf-setup.md)).|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Container Host runs.|[infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.005`|System Resource Reservations|To avoid resource starvation issues on nodes, reserve compute resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, etc. (requires Kubernetes version 1.17 or later). Use the following kubelet flags: `--reserved-cpus=0-3`|NB: There doesn't appear to be a requirement that this is for?  Do we need to be specific about the values used?  The guidelines [here](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#general-guidelines) suggest a more nuanced approach is recommended? |
-|`ra2.ch.006`|CPU Allocation Ratio|For Kubernetes nodes running as Virtual Machines, ensure the CPU allocation ratio between vCPU and physical CPU is 1:1 (note that it is not possible for the kubelet to over-allocate CPU resources.)|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ch.005`|CPU Allocation Ratio|For Kubernetes nodes running as Virtual Machines, ensure the CPU allocation ratio between vCPU and physical CPU is 1:1 (note that it is not possible for the kubelet to over-allocate CPU resources.)|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.007`||||
 |`ra2.ch.008`||||
 |`ra2.ch.009`||||
@@ -101,6 +100,14 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.005`|Kubernetes API Version|In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), an implementation must use one of three latest minor versions (`n-2`). e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15.|TBC|
 |`ra2.k8s.006`|NUMA Support|The `TopologyManager` and `CPUManager` feature gates must be enabled and configured on the kubelet (note, TopologyManager is enabled by default in Kubernetes v1.18 and later, with CPUManager enabled by default in Kubernetes v1.10 and later). `--feature-gates="...,TopologyManager=true,CPUManager=true" --topology-manager-policy=single-numa-node --cpu-manager-policy=static`|[e.cap.007](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities) [infra.com.cfg.002](./chapter02.md#223-cloud-infrastructure-software-profile-requirements) [infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.k8s.007`|DevicePlugins Feature Gate|In order to support the various acceleration devices required, the DevicePlugins feature gate must be enabled (note, this is enabled by default in Kubernetes v1.10 or later). `--feature-gates="...,DevicePlugins=true,..."`|Various, e.g. [e.cap.013, e.cap.014](./chapters/chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.k8s.008`|System Resource Reservations|To avoid resource starvation issues on nodes, reserve compute resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, etc. (requires Kubernetes version 1.17 or later). Use the following kubelet flags: `--reserved-cpus=[0-3]`|NB: There doesn't appear to be a requirement that this is for?  Do we need to be specific about the values used?  The guidelines [here](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#general-guidelines) suggest a more nuanced approach is recommended?|
+|`ra2.k8s.009`||||
+|`ra2.k8s.010`||||
+|`ra2.k8s.011`||||
+|`ra2.k8s.012`||||
+|`ra2.k8s.013`||||
+|`ra2.k8s.014`||||
+|`ra2.k8s.015`||||
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
 
