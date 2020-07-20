@@ -21,7 +21,7 @@
 <a name="8.2"></a>
 ## 8.2 Openstack Release Comparisons
 
-- Provide detail, perhaps in table format, comparing Openstack releases based
+- Provide details, preferably in table format, comparing OpenStack releases based
   on Train baseline for CNTT RI-1 (e.g. Train, Ussuri, etc)
 
 <a name="8.3"></a>
