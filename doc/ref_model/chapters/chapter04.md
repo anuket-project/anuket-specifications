@@ -600,11 +600,15 @@ These flavors, similarly to other flavours, should be supported for three CNTT r
 <a name="4.3"></a>
 ## 4.3 Networking
 
-The Cloud Infrastructure Networking Reference Model is an essential foundation that governance all Reference Architectures and Cloud Infrastructure implementations to enable a continuous evolution and migration from current single Infrastructure as a Service (IaaS) based virtualization instances with Virtual Machines (VM) into tomorrow’s multitude of Cloud Native Container as a Service (CaaS) based virtualization instances.  
+The Cloud Infrastructure Networking Reference Model is an essential foundation that governs all Reference Architectures and Cloud Infrastructure implementations to enable multiple cloud infrastructure virtualisation technology choices and their evolution. These include:
+- the current single Infrastructure as a Service (IaaS) based virtualisation instances with Virtual Machines (VM)
+- multi IaaS based virtualisation instances
+- Cloud Native Container as a Service (CaaS) based virtualisation instances, and
+- hybrid multi IaaS and CaaS based virtualisation instances
 
-To retain the Cloud paradigms of automation, scalability and usage of shared hardware resources when introducing CaaS instances it is necessary to enable an ability to co-deploy multiple simultaneous IaaS and CaaS instances on a shared pool of hardware resources.
+To retain the cloud paradigms of automation, scalability and usage of shared hardware resources when introducing CaaS instances it is necessary to enable an ability to co-deploy multiple simultaneous IaaS and CaaS instances on a shared pool of hardware resources.
 
-Compute and Storage resources are rarely shared in between IaaS or CaaS instances, but the underpinning networking most commonly implemented with Ethernet and IP, must be shared and managed to have a shared pool of hardware resources.
+Compute and Storage resources are rarely shared in between IaaS or CaaS instances, but the underpinning networking, most commonly implemented with Ethernet and IP, must be shared and managed as a shared pool of underlay network resources to enable the pooled usage of Compute and Storage from a managed shared pool.
 
 Throughout this chapter and its figures a number of references to ETSI NFV are made and they explicitly are made towards the ETSI NFV models in the Architectural Framework: 
 -	[ETSI GS NFV 002 V1.2.1](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
@@ -614,7 +618,7 @@ Throughout this chapter and its figures a number of references to ETSI NFV are m
 <a name="4.3.1"></a>
 ### 4.3.1 Network Layering and Concepts
 
-Cloud and Telco networking are layered, and it is very important to keep the layering dependencies low to enable security, separation and portability in between multiple implementations and generations.
+Cloud and Telco networking are layered, and it is very important to keep the dependencies between the layers low to enable security, separation and portability in between multiple implementations and generations.
 
 Before we start developing a deep model we need to agree on some foundational concepts and layering that allow decoupling of implementations in between the layers. We will emphasize four concepts in this section:
 
@@ -626,7 +630,9 @@ Before we start developing a deep model we need to agree on some foundational co
 <a name="4.3.1.1"></a>
 #### 4.3.1.1 Underlay and Overlay Networking concepts
 
-The ETSI NFV model divide networking in an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the Virtualisation Tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected hardware (HW) devices.
+The ETSI Network Functions Virtualisation Architectural Framework (as referred  above) describes how a Virtualization Layer instance abstract the hardware resources and separate Virtualisation Tenants (Workload) from each other. It does also specifically state that the control and implementation of the hardware layer is out of scope for that specification.
+
+When having multiple Virtualization Layer instances on a shared hardware infrastructure, the networking can be layered in an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the Virtualisation Tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected hardware (HW) devices.
 
 The Overlay Networking separation is often done through encapsulation of Tenants traffic using overlay protocols e.g. through VxLAN or EVPN on the Underlay Networks e.g. based on L2 (VLAN) or L3 (IP) networks.
 
@@ -654,9 +660,9 @@ The separation of Hardware and Virtual Infrastructure Layers administrative doma
 
 A major point with a Cloud Infrastructures is to automate as much as possible. An important tool for Networking automation is Software Defined Networking (SDN) that comes in many different shapes and can act on multiple layers of the networking. In this section we will deal with the internal networking of a datacentre and not how datacentres interconnect with each other or get access to the world outside of a datacentre.
 
-When there are multiple simultaneously deployed instances of the Virtual Infrastructure Layers on the same HW Infrastructure, there is a need to ensure Underlay networking separation in the HW Infrastructure Layer. This separation can be done manually through provisioning of a statically configured separation of the Underlay Networking in the HW Infrastructure Layer. A better and more agile usage of the HW Infrastructure is to offer each instance of the Virtual Infrastructure Layer a unique instance of a SDN interface into the shared HW Infrastructure. Since these SDN instances only deals with a well separated portion (or slice) of the Underlay Networking we call this interface SDN-Underlay (SDNu).
+When there are multiple simultaneously deployed instances of the Virtual Infrastructure Layers on the same HW Infrastructure, there is a need to ensure Underlay networking separation in the HW Infrastructure Layer. This separation can be done manually through provisioning of a statically configured separation of the Underlay Networking in the HW Infrastructure Layer. A better and more agile usage of the HW Infrastructure is to offer each instance of the Virtual Infrastructure Layer a unique instance of a SDN interface into the shared HW Infrastructure. Since these SDN instances only deal with a well separated portion (or slice) of the Underlay Networking we call this interface SDN-Underlay (SDNu).
 
-The HW Infrastructure Layer is responsible to keep the Underlay Networking well separated in between the different Virtual Infrastructure Layer instances which can be done through manual provisioning methods or be automated through a HW Infrastructure Layer orchestration interface. The separation responsibility is also valid in between each instance of the SDNu interface since each Virtual Infrastructure Layer instance shall not know about, be disturbed by or have any capability to reach the other Virtual Infrastructure instances.
+The HW Infrastructure Layer is responsible for keeping the different Virtual Infrastructure Layer instances separated in the Underlay Networking. This can be done through manual provisioning methods or be automated through a HW Infrastructure Layer orchestration interface. The separation responsibility is also valid between each instance of the SDNu interface since each Virtual Infrastructure Layer instance shall not know about, be disturbed by or have any capability to reach the other Virtual Infrastructure instances.
 
 An SDN-Overlay control interface (here denoted SDNo) is responsible for managing the Virtual Infrastructure Layer virtual switching and/or routing as well as its encapsulation and its mapping onto the Underlay Networks.
 
@@ -666,10 +672,8 @@ SDNo controllers can request Underlay Networking encapsulation and mapping to be
 
 Multiple instances of Container as a Service (CaaS) Virtualization Layers running on an Infrastructure as a Service (IaaS) Virtual Infrastructure Layer could make use of the IaaS layer to handle the required Underlay Networking separation. In these cases, the IaaS Virtualisation Infrastructure Manager (VIM) could include a SDNu control interface enabling automation.
 
-> **Note:** The Reference Model describes a logical separation of SDNu and SDNo interfaces to clarify the separation of administrative domains where applicable. In real deployment cases an Operator can select to deploy a single SDN controller instance that implements all needed administrative domain separations or have separate SDN controllers for each administrative domain. A common deployment scenario today is to use a single SDN controller handling both Underlay and Overlay Networking which works on the implementation level whene there is only one administrative domain that owns both the HW Infrastructure and a single Virtual Infrastructure instance. However a shared Underlay Network that shall ensure separation must be under the control of the shared HW Infrastructure Layer.
+> **Note:** The Reference Model describes a logical separation of SDNu and SDNo interfaces to clarify the separation of administrative domains where applicable. In real deployment cases an Operator can select to deploy a single SDN controller instance that implements all needed administrative domain separations or have separate SDN controllers for each administrative domain. A common deployment scenario today is to use a single SDN controller handling both Underlay and Overlay Networking which works well in the implementations where there is only one administrative domain that owns both the HW Infrastructure and the single Virtual Infrastructure instance. However a shared Underlay Network that shall ensure separation must be under the control of the shared HW Infrastructure Layer.
 One consequence of this is that the Reference Architectures must not model collapsed SDNo and SDNu controllers since each SDNo must stay unaware of other deployed implementations in the Virtual Infrastructure Layer running on the same HW Infrastructure.
-
-In the absence of a Networking Reference Model, both Reference Architectures have had no guidelines or Reference Models to refer to and by that their networking specifications have possibly been done as if they where the only single Virtual Infrastructure instance on a dedicated HW Infrastructure resource pool in a shared single administrative domain. Hence, when Networking now gets introduced into the Reference Model, it is important that SDN also is considered and that the two now existing Reference Architectures are harmonised with the new common Networking Reference Model, if adjustments are found to be needed. 
 
 <a name="4.3.1.4"></a>
 #### 4.3.1.4 Programmable Networking Fabric concept
