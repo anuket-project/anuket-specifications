@@ -16,7 +16,7 @@
 - Describe the purpose of this chapter, which includes, but not limited to:
 - Test Case Gaps (analysis)
 -	Automation Gaps
--	Open Stack release Comparisons (Train, Ussuri, etc)
+-	OpenStack release Comparisons (Train, Ussuri, etc)
 
 <a name="8.2"></a>
 ## 8.2 Openstack Release Comparisons
