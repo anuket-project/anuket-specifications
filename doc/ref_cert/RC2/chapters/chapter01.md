@@ -6,10 +6,10 @@
 ## Table of Contents
 
 * [1.1 Introduction](#1.1)
-* [1.2 CNTT RC2 End User Requirements](#1.2)
+* [1.2 RC2 End User Requirements](#1.2)
 * [1.3 Scope](#1.3)
 * [1.4 Guidlines](#1.4)
-* [1.5 Verification Methodologies](#1.5)
+* [1.5 Conformance Methodologies](#1.5)
 
 ## Executive Summary
 
@@ -89,7 +89,7 @@ These guidlines will drive RC2 deliverables:
 - Should/may conformance criteria, which may or may not be testable, provide recommendations or best-practices for functional operability and/or performance behavior. These criteria and associated tests can be very useful for developing, evaluating or deploying a cloud infrastructure but are not critical to a commercially significant badging program.
 
 <a name="1.5"></a>
-## 1.5 Verification Methodologies
+## 1.5 Conformance Methodologies
 
 The RC2 test suite will provide validation to ensure workloads can interoperate with the RA2 infrastructure. Upstream projects will define features/capabilities, test scenarios, and test cases to be executed. 3rd Party test platforms may also be leveraged, if desired.
 
