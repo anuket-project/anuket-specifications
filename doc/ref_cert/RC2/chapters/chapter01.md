@@ -33,7 +33,7 @@ In summary, **Conformance** testing will be performed as part of cloud infrastru
 This chapter includes tracability from requirements to test cases and a test case execution framework to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
 <a name="1.2"></a>
-## 1.2 CNTT RC2 End User Requirements
+## 1.2 RC2 End User Requirements
 
 Telcom service providers / operators are the primary intended audience for CNTT RC-2 results. Specifically those selecting infrastructure and network function technologies to use in their network. The RC2 result artefact(s) should be clear and provide confidence to the service provider that the test results meet the requirements *they have.*
 
