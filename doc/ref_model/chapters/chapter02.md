@@ -175,7 +175,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
 
   - **Business Objectives**
 
-      The V2X (Viechle-to-everthing) set of use cases provides a 5G Monetization framework for Mobile Operators developing 5G URLLC business use cases targeting the Automotive Industry, Smart City Regulators, & Public Safety. 
+      The V2X (Vehicle-to-everything) set of use cases provides a 5G monetization framework for Mobile Operators developing 5G URLLC business use cases targeting the Automotive Industry, Smart City Regulators, & Public Safety. 
       
   - **Targeted Segments**
 
