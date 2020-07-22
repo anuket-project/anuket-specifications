@@ -135,7 +135,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     - B2C (Targeting high Tier Packages & Bundles)
     - Content Owners (Potential revenue sharing model)
     - Mobile Virtual Network Operators (MVNOs - Wholesale)
-    - Stadiums and Venus.
+    - Stadiums and Venues.
 
   - **Architecture**
   
