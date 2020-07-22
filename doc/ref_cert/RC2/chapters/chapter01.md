@@ -35,7 +35,7 @@ This chapter includes tracability from requirements to test cases and a test cas
 <a name="1.2"></a>
 ## 1.2 RC2 End User Requirements
 
-Telcom service providers / operators are the primary intended audience for CNTT RC-2 results. Specifically those selecting infrastructure and network function technologies to use in their network. The RC2 result artefact(s) should be clear and provide confidence to the service provider that the test results meet the requirements *they have.*
+Telcom service providers / operators are the primary intended audience for RC2 results. Specifically those selecting infrastructure and network function technologies to use in their network. The RC2 result artefact(s) should be clear and provide confidence to the service provider that the test results meet the requirements *they have.*
 
 Vendors/Developers are a secondary audience. They should be able to clearly see the mapping from a specific test result (pass or fail) to the requirement.
 
