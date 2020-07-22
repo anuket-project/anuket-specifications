@@ -29,7 +29,7 @@ In summary, **Conformance** testing will be performed as part of cloud infrastru
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-**Chapter Purpose**<br>
+**Document Purpose**<br>
 This chapter includes tracability from requirements to test cases and a test case execution framework to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
 <a name="1.2"></a>
