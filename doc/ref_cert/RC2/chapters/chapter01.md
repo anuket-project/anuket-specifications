@@ -60,7 +60,7 @@ Vendors/Developers are a secondary audience. They should be able to clearly see 
 <a name="1.3"></a>
 ## 1.3 Scope
 
-This document covers aspects of CNTT conformance for both Kubernetes based cloud infrastructure and workloads. The document will cover the following topics:
+This document covers aspects of conformance for both Kubernetes based cloud infrastructure and workloads. The document will cover the following topics:
 
 - Identify in detail the requirements of test-cases (mapped from RA2 and RM)
 - Test criteria that shows a certain capability or feature of the system-under-test exists and behaves as expected
