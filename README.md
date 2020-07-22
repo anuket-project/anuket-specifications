@@ -2,7 +2,7 @@
 
 ## Available Specifications
 * [Governance](doc/gov)
-* [Technical Specifications](doc/tech)
+* [Technical Specifications](doc/common)
 
 ## Navigation tips
 * **design your OpenStack product?**
