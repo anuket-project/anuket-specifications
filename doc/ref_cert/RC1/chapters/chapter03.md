@@ -176,20 +176,19 @@ from a Compliance state point. The remaining tests have to pass successfully.
 They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
-According to Hunter (the oldest OPNFV active release), the following software
-versions are considered here to verify OpenStack Pike selected by CNTT:
+According to Jerma, the following software versions are considered here to
+verify OpenStack Train selected by CNTT:
 
-| software                | version |
-|-------------------------|---------|
-| Functest                | hunter  |
-| Horizon Tempest plugin  | 0.1.0   |
-| Cinder Tempest plugin   | 0.2.0   |
-| Keystone Tempest plugin | 0.1.0   |
-| Heat Tempest plugin     | 1.0.0   |
-| Neutron                 | rocky   |
-| Neutron Tempest plugin  | 0.3.0   |
-| Rally OpenStack         | 1.5.0   |
-| Tempest                 | 21.0.0  |
+| software                | version     |
+|-------------------------|-------------|
+| Functest                | jerma       |
+| Horizon Tempest plugin  | 0.2.0       |
+| Cinder Tempest plugin   | 0.3.0       |
+| Keystone Tempest plugin | 0.3.0       |
+| Heat Tempest plugin     | 1.0.0       |
+| Neutron Tempest plugin  | 0.6.0       |
+| Rally OpenStack         | 1.7.1.dev21 |
+| Tempest                 | 22.0.0      |
 
 #### 3.3.4.1 Identity - Keystone
 
@@ -197,7 +196,7 @@ Keystone API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [keystone-tempest-plugin](https://opendev.org/openstack/keystone-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -213,7 +212,7 @@ the following test names must not be executed:
 Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.keystone
 - KeystoneBasic.add_and_remove_user_role
 - KeystoneBasic.create_add_and_list_user_roles
@@ -244,7 +243,7 @@ the following test names must not be executed:
 Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_glance
 - GlanceImages.create_and_delete_image
 - GlanceImages.create_and_list_image
@@ -257,7 +256,7 @@ Cinder API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [cinder-tempest-plugin](https://opendev.org/openstack/cinder-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -278,7 +277,7 @@ the following test names must not be executed:
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_cinder
 - CinderVolumes.create_and_delete_snapshot
 - CinderVolumes.create_and_delete_volume
@@ -295,7 +294,7 @@ Here are the mainline tasks integrated in
 
 Swift API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -309,7 +308,7 @@ the following test names must not be executed:
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - SwiftObjects.create_container_and_object_then_list_objects
 - SwiftObjects.list_objects_in_containers
 - SwiftObjects.create_container_and_object_then_download_object
@@ -322,65 +321,68 @@ Neutron API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [neutron-tempest-plugin](https://opendev.org/openstack/neutron-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
-| test rejection regular expressions                                                                 | reasons                               |
-|----------------------------------------------------------------------------------------------------|---------------------------------------|
-| .\*admin.test_agent_availability_zone                                                              | DHCP agent and L3 agent               |
-| .\*admin.test_dhcp_agent_scheduler                                                                 | dhcp_agent_scheduler                  |
-| .\*admin.test_l3_agent_scheduler                                                                   | l3_agent_scheduler                    |
-| .\*admin.test_logging                                                                              | logging                               |
-| .\*admin.test_logging_negative                                                                     | logging                               |
-| .\*admin.test_network_segment_range                                                                | network-segment-range                 |
-| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                 | port-mac-address-regenerate           |
-| .\*admin.test_ports.PortTestCasesResourceRequest                                                   | port-resource-request                 |
-| .\*admin.test_routers_dvr                                                                          | dvr                                   |
-| .\*admin.test_routers_flavors                                                                      | l3-flavors                            |
-| .\*admin.test_routers_ha                                                                           | l3-ha                                 |
-| .\*test_floating_ips.FloatingIPPoolTestJSON                                                        | floatingip-pools                      |
-| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                 | fip-port-details                      |
-| .\*test_metering_extensions                                                                        | metering                              |
-| .\*test_metering_negative                                                                          | metering                              |
-| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                           | filter-validation                     |
-| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                               | vxlan                                 |
-| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                            | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                          | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                       | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                | dns-domain-ports                      |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                  | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                               | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                              | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                 | l3-ha                                 |
-| .\*test_router_interface_fip                                                                       | router-interface-fip                  |
-| .\*test_routers.DvrRoutersTest                                                                     | dvr                                   |
-| .\*test_routers.HaRoutersTest                                                                      | l3-ha                                 |
-| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                           | extraroute-atomic                     |
-| .\*test_routers.RoutersTest.test_extra_routes_atomic                                               | extraroute-atomic                     |
-| .\*test_routers_negative.DvrRoutersNegativeTest                                                    | dvr                                   |
-| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                            | dvr                                   |
-| .\*test_routers_negative.HaRoutersNegativeTest                                                     | l3-ha                                 |
-| .\*test_security_groups.RbacSharedSecurityGroupTest                                                | rbac-security-groups                  |
-| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                     | filter-validation                     |
-| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                             | filter-validation                     |
-| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                        | standard-attr-segment                 |
-| .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                            | https://launchpad.net/bugs/1863707    |
-| .\*test_trunk.TrunkTestMtusJSON                                                                    | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestMtusJSON                                                           | vxlan                                 |
-| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                        | https://gerrit.opnfv.org/gerrit/69105 |
-| .\*network.test_tags                                                                               | tag-ext                               |
-| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                       | https://launchpad.net/bugs/1676207    |
-| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                           | https://launchpad.net/bugs/1676207    |
-| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                             | l3_agent_scheduler                    |
+| test rejection regular expressions                                                                              | reasons                               |
+|-----------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*admin.test_agent_availability_zone                                                                           | DHCP agent and L3 agent               |
+| .\*admin.test_dhcp_agent_scheduler                                                                              | dhcp_agent_scheduler                  |
+| .\*admin.test_l3_agent_scheduler                                                                                | l3_agent_scheduler                    |
+| .\*admin.test_logging                                                                                           | logging                               |
+| .\*admin.test_logging_negative                                                                                  | logging                               |
+| .\*admin.test_network_segment_range                                                                             | network-segment-range                 |
+| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                              | port-mac-address-regenerate           |
+| .\*admin.test_ports.PortTestCasesResourceRequest                                                                | port-resource-request                 |
+| .\*admin.test_routers_dvr                                                                                       | dvr                                   |
+| .\*admin.test_routers_flavors                                                                                   | l3-flavors                            |
+| .\*admin.test_routers_ha                                                                                        | l3-ha                                 |
+| .\*test_floating_ips.FloatingIPPoolTestJSON                                                                     | floatingip-pools                      |
+| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                              | fip-port-details                      |
+| .\*test_metering_extensions                                                                                     | metering                              |
+| .\*test_metering_negative                                                                                       | metering                              |
+| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                                        | filter-validation                     |
+| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                                            | vxlan                                 |
+| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                                         | dns-integration                       |
+| .\*test_port_forwardings                                                                                        | floating-ip-port-forwarding           |
+| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                                       | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                                    | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                             | dns-domain-ports                      |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                               | dns-integration                       |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                                            | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                                           | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                              | l3-ha                                 |
+| .\*test_router_interface_fip                                                                                    | router-interface-fip                  |
+| .\*test_routers.DvrRoutersTest                                                                                  | dvr                                   |
+| .\*test_routers.HaRoutersTest                                                                                   | l3-ha                                 |
+| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                                        | extraroute-atomic                     |
+| .\*test_routers.RoutersTest.test_extra_routes_atomic                                                            | extraroute-atomic                     |
+| .\*test_routers_negative.DvrRoutersNegativeTest                                                                 | dvr                                   |
+| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                                         | dvr                                   |
+| .\*test_routers_negative.HaRoutersNegativeTest                                                                  | l3-ha                                 |
+| .\*test_security_groups.RbacSharedSecurityGroupTest                                                             | rbac-security-groups                  |
+| .\*test_subnetpool_prefix_ops                                                                                   | subnetpool-prefix-ops                 |
+| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                                  | filter-validation                     |
+| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                                          | filter-validation                     |
+| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                                     | standard-attr-segment                 |
+| .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                                         | https://launchpad.net/bugs/1863707    |
+| .\*test_trunk.TrunkTestMtusJSON                                                                                 | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type              | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestMtusJSON                                                                        | vxlan                                 |
+| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                                     | https://gerrit.opnfv.org/gerrit/69105 |
+| .\*network.test_tags                                                                                            | tag-ext                               |
+| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                                    | https://launchpad.net/bugs/1676207    |
+| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                                        | https://launchpad.net/bugs/1676207    |
+| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                                          | l3_agent_scheduler                    |
+| .\*test_network_advanced_server_ops.TestNetworkAdvancedServerOps.test_server_connectivity_cold_migration_revert | https://launchpad.net/bugs/1836595    |
 
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_neutron
 - NeutronNetworks.create_and_delete_networks
 - NeutronNetworks.create_and_delete_ports
@@ -399,7 +401,7 @@ Here are the mainline tasks integrated in
 
 Nova API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -445,14 +447,12 @@ the following test names must not be executed:
 | .\*test_volume_boot_pattern.TestVolumeBootPattern.test_boot_server_from_encrypted_volume_luks                             | attach_encrypted_volume            |
 | .\*test_volume_swap                                                                                                       | swap_volume                        |
 | .\*test_encrypted_cinder_volumes                                                                                          | attach_encrypted_volume            |
-| .\*test_stamp_pattern.TestStampPattern.test_stamp_pattern                                                                 | https://launchpad.net/bugs/1664793 |
-| .\*test_volume_migrate_attached                                                                                           | https://launchpad.net/bugs/1664793 |
 | .\*test_minbw_allocation_placement                                                                                        | microversion                       |
 
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_nova
 - NovaServers.boot_and_live_migrate_server
 - NovaServers.boot_server_attach_created_volume_and_live_migrate
@@ -471,31 +471,29 @@ Here are the mainline tasks integrated in
 Heat API is covered in the OpenStack Gates via
 [heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin) as
 integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml)
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma)
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
-| test rejection regular expressions                                | reasons                                            |
-|-------------------------------------------------------------------|----------------------------------------------------|
-| .\*functional.test_lbaasv2                                        | lbaasv2                                            |
-| .\*functional.test_encryption_vol_type                            | https://storyboard.openstack.org/#!/story/2007804  |
-| .\*functional.test_remote_stack.RemoteStackTest                   | https://bugs.launchpad.net/heat/+bug/1701498       |
-| .\*RemoteStackTest.test_stack_create_with_cloud_credential        | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
-| .\*scenario.test_aodh_alarm                                       | aodh                                               |
-| .\*tests.scenario.test_autoscaling_lb                             | lbaas                                              |
-| .\*scenario.test_autoscaling_lbv2                                 | lbaasv2                                            |
-| .\*scenario.test_remote_deeply_nested.RemoteDeeplyNestedStackTest | https://bugs.launchpad.net/heat/+bug/1701498       |
-| .\*scenario.test_server_software_config                           | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
-| .\*test_volumes.VolumeBackupRestoreIntegrationTest                | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
-| .\*scenario.test_octavia_lbaas                                    | octavia                                            |
-| .\*scenario.test_server_cfn_init                                  | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
+| test rejection regular expressions                         | reasons                                            |
+|------------------------------------------------------------|----------------------------------------------------|
+| .\*functional.test_lbaasv2                                 | lbaasv2                                            |
+| .\*functional.test_encryption_vol_type                     | https://storyboard.openstack.org/#!/story/2007804  |
+| .\*RemoteStackTest.test_stack_create_with_cloud_credential | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*scenario.test_aodh_alarm                                | aodh                                               |
+| .\*tests.scenario.test_autoscaling_lb                      | lbaas                                              |
+| .\*scenario.test_autoscaling_lbv2                          | lbaasv2                                            |
+| .\*scenario.test_server_software_config                    | https://gerrit.opnfv.org/gerrit/c/functest/+/69926 |
+| .\*test_volumes.VolumeBackupRestoreIntegrationTest         | https://gerrit.opnfv.org/gerrit/c/functest/+/69931 |
+| .\*scenario.test_octavia_lbaas                             | octavia                                            |
+| .\*scenario.test_server_cfn_init                           | https://gerrit.opnfv.org/gerrit/c/functest/+/70004 |
 
 Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_heat
 - HeatStacks.create_update_delete_stack
 - HeatStacks.create_check_delete_stack
@@ -507,7 +505,7 @@ Here are the mainline tasks integrated in
 
 Horizon is covered in the OpenStack Gates via
 [tempest-horizon](https://github.com/openstack/tempest-horizon) as integrated
-in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml).
+in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml?h=stable%2Fjerma).
 
 <a name="3.3.6"></a>
 ### 3.3.6 OpenStack API benchmarking
@@ -516,21 +514,21 @@ in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck
 to perform OpenStack API benchmarking.
 
 Here are the Rally-based test cases proposed by
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
-- [rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+- [rally_full](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
   Functest scenarios iterating 10 times the mainline Rally scenarios
-- [rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+- [rally_jobs](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_jobs_cntt-run-60/rally_jobs_cntt/rally_jobs_cntt.html):
   Neutron scenarios executed in the OpenStack gates
 
 At the time of writing, no KPI is defined in
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 
 #### 3.3.6.1 Identity - Keystone
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                     | Iterations |
 |-----------------------------------------------|:----------:|
@@ -549,7 +547,7 @@ of 0%) proposed in
 
 #### 3.3.6.2 Image - Glance
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                    | Iterations |
 |----------------------------------------------|:----------:|
@@ -565,7 +563,7 @@ of 0%) proposed in
 
 #### 3.3.6.3 Block Storage - Cinder
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                     | Iterations |
 |---------------------------------------------------------------|:----------:|
@@ -595,7 +593,7 @@ of 0%) proposed in
 
 #### 3.3.6.4 Object Storage - Swift
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                     | Iterations |
 |---------------------------------------------------------------|:----------:|
@@ -607,7 +605,7 @@ of 0%) proposed in
 
 #### 3.3.6.5 Networking - Neutron
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                  | Iterations |
 |------------------------------------------------------------|:----------:|
@@ -634,7 +632,7 @@ of 0%) proposed in
 | NeutronNetworks.create_and_show_subnets                    | 10         |
 | Quotas.neutron_update                                      | 10         |
 
-[Functest rally_jobs](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_jobs-run-328/rally_jobs/rally_jobs.html):
+[Functest rally_jobs_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_jobs_cntt-run-60/rally_jobs_cntt/rally_jobs_cntt.html):
 
 | Scenarios                                  | Iterations |
 |--------------------------------------------|:----------:|
@@ -655,7 +653,7 @@ of 0%) proposed in
 
 #### 3.3.6.6 Compute - Nova
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                      | Iterations |
 |----------------------------------------------------------------|:----------:|
@@ -691,7 +689,7 @@ of 0%) proposed in
 
 #### 3.3.6.7 Orchestration - Heat
 
-[Functest rally_full](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-rally_full-run-324/rally_full/rally_full.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                     | Iterations |
 |-----------------------------------------------|:----------:|
@@ -706,7 +704,7 @@ of 0%) proposed in
 <a name="3.3.7"></a>
 ### 3.3.7 Dataplane benchmarking
 
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 offers two benchmarking dataplane test cases leveraging on:
 - [VMTP](http://vmtp.readthedocs.io/en/latest)
 - [Shaker](http://pyshaker.readthedocs.io/en/latest/)
@@ -724,16 +722,16 @@ deployment and list of tests to execute.
 
 At the time of writing, no KPI is defined in CNTT chapters which would have
 asked for an update of the default SLA proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
 
 ### 3.3.7.1 VMTP
 
 Here are the
-[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.json)
+[scenarios](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-vmtp-run-123/vmtp/vmtp.json)
 executed by
-[Functest vmtp](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-vmtp-run-328/vmtp/vmtp.html):
+[Functest vmtp](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-vmtp-run-123/vmtp/vmtp.html):
 - VM to VM same network fixed IP (intra-node)
 - VM to VM different network fixed IP (intra-node)
 - VM to VM different network floating IP (intra-node)
@@ -769,7 +767,7 @@ Here are all results per scenario:
 ### 3.3.7.2 Shaker
 
 Here are the
-[scenarios](http://artifacts.opnfv.org/functest/IR6NYE2BYC8W/functest-opnfv-functest-benchmarking-hunter-shaker-run-329/shaker/report.json)
+[scenarios](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-shaker-run-124/shaker/report.json)
 executed by Shaker:
 - OpenStack L2
 - OpenStack L3 East-West
@@ -809,7 +807,7 @@ Multiple VMs or containers can be deployed prior to running any tests. This allo
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
-[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml)
+[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fjerma)
 offers 5 test cases which automatically onboard and test the following 3
 opensource VNFs:
 - [Clearwater IMS](https://clearwater.readthedocs.io/en/stable/)
@@ -853,30 +851,32 @@ According to [RC1 Chapter04](chapter04.md)
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
-| container                               | test case             | criteria |
-|-----------------------------------------|-----------------------|:--------:|
-| opnfv/functest-smoke-cntt:hunter        | tempest_neutron_cntt  | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_cinder_cntt   | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_keystone_cntt | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | rally_sanity_cntt     | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_full_cntt     | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_scenario_cntt | PASS     |
-| opnfv/functest-smoke-cntt:hunter        | tempest_slow_cntt     | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_full_cntt       | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | rally_jobs_cntt       | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | vmtp                  | PASS     |
-| opnfv/functest-benchmarking-cntt:hunter | shaker                | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify              | PASS     |
-| opnfv/functest-vnf:hunter               | cloudify_ims          | PASS     |
-| opnfv/functest-vnf:hunter               | heat_ims              | PASS     |
-| opnfv/functest-vnf:hunter               | vyos_vrouter          | PASS     |
-| opnfv/functest-vnf:hunter               | juju_epc              | PASS     |
+| container                              | test case             | criteria |
+|----------------------------------------|-----------------------|:--------:|
+| opnfv/functest-healthcheck:jerma       | tempest_horizon       | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_neutron_cntt  | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_cinder_cntt   | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_keystone_cntt | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | rally_sanity_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_full_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_scenario_cntt | PASS     |
+| opnfv/functest-smoke-cntt:jerma        | tempest_slow_cntt     | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | rally_full_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | rally_jobs_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | vmtp                  | PASS     |
+| opnfv/functest-benchmarking-cntt:jerma | shaker                | PASS     |
+| opnfv/functest-vnf:jerma               | cloudify              | PASS     |
+| opnfv/functest-vnf:jerma               | cloudify_ims          | PASS     |
+| opnfv/functest-vnf:jerma               | heat_ims              | PASS     |
+| opnfv/functest-vnf:jerma               | vyos_vrouter          | PASS     |
+| opnfv/functest-vnf:jerma               | juju_epc              | PASS     |
 
 <a name="3.4.2"></a>
 ### 3.4.2 TC Mapping to Requirements
 
 | test case             | requirements                                                             |
 |-----------------------|--------------------------------------------------------------------------|
+| tempest_horizon       | Horizon testing                                                      |
 | tempest_neutron_cntt  | Neutron API testing                                                      |
 | tempest_cinder_cntt   | Cinder API testing                                                       |
 | tempest_keystone_cntt | Keystone API testing                                                     |

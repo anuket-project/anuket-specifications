@@ -91,7 +91,7 @@ different pools of virtual machines.
 
 Here are the functional tests (>2000) running in OpenStack gates integrated in
 Functest Smoke (see
-[Functest daily jobs](https://build.opnfv.org/ci/job/functest-hunter-daily/392/)
+[Functest daily jobs](https://build.opnfv.org/ci/view/functest/job/functest-jerma-daily/371/)
 for more details):
 
 | Testcases         | Gates              |
@@ -207,7 +207,7 @@ virtualenv functest
 pip install ansible
 ansible-galaxy install collivier.xtesting
 git clone https://gerrit.opnfv.org/gerrit/functest functest-src
-(cd functest-src && git checkout -b stable/hunter origin/stable/hunter)
+(cd functest-src && git checkout -b stable/jerma origin/stable/jerma)
 ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
@@ -215,16 +215,16 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ### 4.3.1 NFVI API testing configuration
 
 Here is the default Functest tree as proposed in
-[Run Alpine Functest containers (Hunter)](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314):
+[Run Alpine Functest containers (Jerma)](https://wiki.opnfv.org/pages/viewpage.action?pageId=44892403):
 - /home/opnfv/functest/openstack.creds
 - /home/opnfv/functest/images
 
 Download the images and fill /home/opnfv/functest/openstack.creds as proposed
 in
-[Run Alpine Functest containers (Hunter)](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314)
+[Run Alpine Functest containers (Jerma)](https://wiki.opnfv.org/pages/viewpage.action?pageId=44892403)
 
 You may have to modify a few Functest env vars according to the SUT (see env in
-[Run Alpine Functest containers (Hunter)](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314)).
+[Run Alpine Functest containers (Jerma)](https://wiki.opnfv.org/pages/viewpage.action?pageId=44892403)).
 Be free to modify functest-src/ansible/host_vars/127.0.0.1 at your convenience
 and then to reconfigure the toolchain:
 ```bash
@@ -234,13 +234,13 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 <a name="4.3.2"></a>
 ### 4.3.2 Run CNTT NFVI Testing
 
-Open http://127.0.0.1:8080/job/functest-hunter-daily/ in a web browser, login
+Open http://127.0.0.1:8080/job/functest-jerma-daily/ in a web browser, login
 as admin/admin and click on "Build with Parameters" (keep the default build_tag
 value).
 
 If the System under test (SUT) is CNTT compliant, a link to the full archive
 containing all test results and artifacts will be printed in
-functest-hunter-zip's console. Be free to download it and then to send it to
+functest-jerma-zip's console. Be free to download it and then to send it to
 any reviewer committee.
 
 To clean your working dir:
