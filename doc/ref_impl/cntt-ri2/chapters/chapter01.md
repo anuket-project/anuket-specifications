@@ -56,7 +56,7 @@ The scope of this document is as follows:
 The main communities involved in driving requirements and development of this RI are:
 
 - **CNTT RC2 workstream**
-  - The **RC2 workstream** within CNTT defines criteria, including tests, that will be used to verify and validate conformance of an implementation to the RA2 specification, with RI2 being a deployable reference for operators, vendors and others to develop against.
+  - The **RC2 workstream** within CNTT takes requirements from the RM and RA2 and identifies test cases and a test integration suite that will be used to verify and validate conformance of an implementation. RI2 will be a deployable reference for operators, vendors, and others to develop against.
 
 - **OPNFV**
   - The **Kuberef** project in OPNFV acts as the main integration point for RI2: Its purpose it to provide all necessary glue code and mechanisms for i) integrating and configuring selected upstream Kubernetes deployers and components into a deployable platform, ii) continuously deploy the integrated platform in OPNFV labs and iii) run the latest RC2 test suite against the deployed platform. The test results are meant to be fed back to RA2 and RC2 to support the refinement of architecture requirements and the selection of test cases for the RC2 test suite.
@@ -127,4 +127,3 @@ For the ongoing proof of concept work related to both RA2 and RI2, some of the f
 - Security
 
 As work progresses with the proof of concept it is expected that additional features will be added.
-
