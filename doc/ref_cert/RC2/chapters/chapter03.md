@@ -21,6 +21,6 @@ All of the requirements for RC2 have been defined in the Reference Model (RM) an
 ### Definitions
 *must*: Test Cases that are marked as must are considered mandatory and must pass successfully
 
-*should*: Test Cases that are marked as should are expected to be fulfilled by the cloud infrastructure but it is up to each service provider whether to accept a cloud infrastructure that is fulfilling any of these requirements. The same applies to should not.
+*should*: Test Cases that are marked as should are expected to be fulfilled by the cloud infrastructure but it is up to each service provider whether to accept a cloud infrastructure that is not fulfilling any of these requirements. The same applies to should not.
 
 *may*: Test cases that are marked as may are considered optional. The same applies to may not.
