@@ -8,7 +8,7 @@
 All of the requirements for RC2 have been defined in the Reference Model (RM) and Reference Architecture (RA2). The scope of this chapter is to identify and list down test cases based on these requirements. Users of this chapter will be able to use it to determine which test cases they must run in order to test compliance with the requirements. This will enable traceability between the test cases and requirements. They should be able to clearly see which requirements are covered by which tests and the mapping from a specific test result (pass or fail) to a requirement. Each requirement may have one or more test case associated with it.
 
 ### Goals
-- Clear mapping between requirements and test results
+- Clear mapping between requirements and test cases
 - Provide a stable set of point-in-time requirements and tests to achieve conformance
 - Enable clear tracability with versioning to know which requirements have and haven't been covered and track changes over time
 - Clickable links from test cases to requirements
