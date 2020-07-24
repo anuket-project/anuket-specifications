@@ -75,13 +75,14 @@ Next, update parts of `group_vars/all.yml`:
 
 [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
 ```
-cmk_enabled: true
-  # Install CPU Manager for Kubernetes (CMK), which provides core affinity and isolation of workloads
+cmk_enabled: false
+  # Provides core affinity and isolation of workloads
+  # Can be enabled if the native CPU Manager is insufficient for workloads
 cmk_hosts_list: <csv of hosts where CMK should be deployed>
   # Update the list if CMK is enabled
 cmk_shared_num_cores: <#>
 cmk_exclusive_num_cores: <#>
-  # Number of cores that will be added to the shared and exclusive pools of CMK
+  # Number of cores that will be added to the shared and exclusive pools of CMK if enabled
 ```
 [SR-IOV Network device plugin for Kubernetes](https://github.com/intel/sriov-network-device-plugin):
 ```
@@ -163,7 +164,7 @@ hugepages_2M: <#>
   # Set the number of hugepages for a given size. If only one size is used the other can be set to 0
 isolcpus_enabled: true
   # Core/thread isolation to the host kernel configuration.
-  # This should be true if CMK is configured (see above), or isolation is needed for workload
+  # This should be true if CMK is configured (see above), or isolation is needed for workloads
 isolcpus: <String of cores to isolate>
   # String of cores/threads to isolate, e.g. "4-8,12"
 sst_bf_configuration_enabled: false
@@ -188,8 +189,6 @@ $ kubectl get node <node> -o json | jq '.status.allocatable'
 The list of allocatable resources will vary depending on the configuration, but an example output could look as follows:
 ```
 { 
-  "cmk.intel.com/exclusive-cores": "6",
-    # Exclusive cores configured with CPU Manager for Kubernetes
   "cpu": "63900m",
   "ephemeral-storage": "210725550141",
   "hugepages-1Gi": "0",
