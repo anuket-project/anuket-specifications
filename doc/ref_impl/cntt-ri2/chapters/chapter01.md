@@ -59,7 +59,7 @@ The main communities involved in driving requirements and development of this RI
   - The **RC2 workstream** within CNTT defines criteria, including tests, that will be used to verify and validate conformance of an implementation to the RA2 specification, with RI2 being a deployable reference for operators, vendors and others to develop against.
 
 - **OPNFV**
-  - The **Kuberef** project in OPNFV acts as the main integration point for RI2: Its purpose it to provide all necessary glue code and mechanisms for i) integrating and configuring selected upstream Kubernetes deployers and components into a deployable platform, ii) continuously deploy the integrated platform in OPNFV labs and iii) run the latest RC2 test suite against the deployed platform.
+  - The **Kuberef** project in OPNFV acts as the main integration point for RI2: Its purpose it to provide all necessary glue code and mechanisms for i) integrating and configuring selected upstream Kubernetes deployers and components into a deployable platform, ii) continuously deploy the integrated platform in OPNFV labs and iii) run the latest RC2 test suite against the deployed platform. The test results are meant to be fed back to RA2 and RC2 to support the refinement of architecture requirements and the selection of test cases for the RC2 test suite.
 
   - The **Functest** project integrates available test tools and test cases from across the open source ecosystem into a single framework. In particular, it allows to run the test cases selected by the RC2 workstream and outputs a test result package for submission to the OVP program.
 
@@ -67,12 +67,14 @@ The main communities involved in driving requirements and development of this RI
   - The Compliance and Verification Committee governs the Cloud Native OVP program which owns the definition of the end-to-end framework (tooling, process, tests, review, badging) used to verify conformance of a cloud native infrastructure implementation with the RA2 specifications.
 
 - **CNCF - CNF Conformance, Kubernetes, etc.**
+  - CNCF hosts a wide variety of projects providing software components for RI2, such as Kuberntes itself, deployment tooling (e.g. kubeadm and kubespray) as well as test suites (e.g., Kubernetes conformance).
+  - The Telco User Group (TUG) is a forum within CNCF to identify and discuss telco requirements on the Kubernetes ecosystem.
   - The CNF Conformance project in CNCF has a stated aim to provide "visibility into how well Cloud native Network Functions (CNFs) and the underlying Telecom platform follows cloud native principles".
-  - As such, there are a number of contributions between CNF Conformance and RI2, to align requirements, to share artefacts and so on.
+  - The CNF testbed is a project providing a framework for building and deploying technology show cases with a strong focus on telco platform requirements.
 
 The following figure gives an overview of the relationship of the communities involved.
 
-<p align="center"><img src="../figures/ra2-ch01-relationship_of_communities.png" alt="relationship" title="Relationship of communities" width="100%"/></p>
+<p align="center"><img src="../figures/ri2-ch01-relationship_of_communities.png" alt="Relationship of communities" title="Relationship of communities" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b>Relationship of Communities.</p>
 
 
