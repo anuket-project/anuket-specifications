@@ -102,7 +102,7 @@ At a high level, the following areas/requirements cover platform security for a 
 * Secure access controls for administrators
 * Secure API interface for Tenants
 * Encryption for all external and control comms
-* Strong separation between tenants - ensuring network, data, and runtime process isolation between tenants
+* Strong separation between tenants - ensuring network, data, memory and runtime process (CPU running core) isolation between tenants, [rep.sec.ci.006](./chapter07.md#7113-confidentiality-and-integrity)
 * Authenticated/secure APIs provided to overlay network administrators
 * Platform change control on hardware
 * Templated approved changes for automation where available
