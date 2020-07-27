@@ -62,7 +62,7 @@ operations when configuring the servers running the test cases and prevents
 conflicts between the test cases due to any dependencies.
 
 It's worth mentioning that current
-[test cases selected by CNTT](./chapter03.md)
+[test cases selected by CNTT](RC1/chapters/chapter03.md)
 already leverage [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
