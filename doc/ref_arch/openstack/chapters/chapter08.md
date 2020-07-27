@@ -19,6 +19,8 @@ The most obvious way to address the gaps will be to propose a set of APIs in the
 
 * Public and Multi-Cloud  - The framework offered by OpenStack does not support multi-cloud deployments, along with the core deployments
 
+For a short term point of view, we could use ONAP to deal with this gap. However, for a long term point of view, reliance on ONAP should be avoided and the OpenStack APIs should be implemented/enhanced to address this gap.
+
 
 
 <a name="8.3"></a>
