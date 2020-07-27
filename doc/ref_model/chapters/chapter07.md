@@ -239,6 +239,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * Logs are to be regularly scanned for events of interest.
 * An incident response plan must exist for the platform.
 * The cloud services must be regularly vulnerability and penetration tested.
+* In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
 <a name="7.5.2"></a>
 ### 7.5.2 Platform ‘back-end’ access security
@@ -523,6 +524,7 @@ Ref | Requirement | Definition/Note |
 | req.sec.sys.011 | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | |
 | req.sec.sys.012 | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component | e.g., Barbican (OpenStack) |
 | req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed | |
+| req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources | |
 
 <a name="7.11.3"></a>
 ### 7.11.3. Confidentiality and Integrity
