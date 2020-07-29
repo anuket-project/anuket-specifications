@@ -10,9 +10,9 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 project = u'CNTT-CNTT'
 
-sys.path.append(os.path.abspath("../direct-copy"))
-sys.path.append(os.path.abspath("../readme-to-index"))
-sys.path.append(os.path.abspath("../relative-link-corrector"))
+sys.path.append(os.path.abspath("../build/direct-copy"))
+sys.path.append(os.path.abspath("../build/readme-to-index"))
+sys.path.append(os.path.abspath("../build/relative-link-corrector"))
 
 extensions = ['direct-copy', 
               'readme-to-index', 

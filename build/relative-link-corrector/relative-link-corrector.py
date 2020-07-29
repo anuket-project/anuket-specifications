@@ -1,6 +1,7 @@
 ###
 # A sphinx extension to support the relative linking of html files.
-# Inspired by and partly copyed from # https://github.com/firegurafiku/sphinxcontrib-divparams/
+# Inspired by and partly copyed from 
+# https://github.com/firegurafiku/sphinxcontrib-divparams/
 ###
 
 #from docutils import nodes
@@ -57,11 +58,11 @@ def relative_link_corrector(app, exception):
             logger.info("Skipping")
             continue
 
-        logger.info("tfn1: " + target_filename)
+#        logger.info("tfn1: " + target_filename)
         target_filename = os.path.join(app.outdir, target_filename)
-        logger.info("tfn2: " + target_filename)
+#        logger.info("tfn2: " + target_filename)
         target_filename = os.path.abspath(target_filename)
-        logger.info("tfn3: " + target_filename)
+#        logger.info("tfn3: " + target_filename)
         target_files.append(target_filename)
 
     for fn in target_files:
