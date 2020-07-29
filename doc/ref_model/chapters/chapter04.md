@@ -19,7 +19,7 @@
   * [4.2.3 Storage Extensions](#4.2.3)
   * [4.2.4 Instance Types](#4.2.4)
   * [4.2.5 Instance Capabilities Mapping](#4.2.5)
-  * [4.2.6 Instance Measurements Mapping](#4.2.6)
+  * [4.2.6 TBD](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
 * [4.3 Networking](#4.2)
 
@@ -528,9 +528,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <p align="center"><b>Table 4-17:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
 
 <a name="4.2.6"></a>
-### 4.2.6 Cloud Infrastructure Profile Performance Measurement Mapping
+### 4.2.6 TBD
 
-_**Comment:** For further study_
+_**Comment:** For future use_
 
 <a name="4.2.7"></a>
 ### 4.2.7 One stop shop
