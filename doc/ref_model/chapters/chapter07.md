@@ -227,7 +227,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
 * A process to check change management adherence that is implemented, and rigourously followed.
 * Processes for managing platform access control filters that are documented, followed, and monitored.
-* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform).
+* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
 * Role-Based Access Control (RBAC) must apply for all platform systems access.
 * An approved system or process for last resort access must exist for the platform.
 * All API access must use TLS protocol.
@@ -239,6 +239,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * Logs are to be regularly scanned for events of interest.
 * An incident response plan must exist for the platform.
 * The cloud services must be regularly vulnerability and penetration tested.
+* In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
 <a name="7.5.2"></a>
 ### 7.5.2 Platform ‘back-end’ access security
@@ -249,7 +250,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
 * A process to check change management adherence that is implemented, and rigourously followed.
 * Processes for managing platform access control filters that are documented, followed, and monitored.
-* No login to root on any platform systems.
+* No login to root on any platform systems, when root privileges are not required.
 * Role-Based Access Control (RBAC) must apply for all systems access.
 * An approved system or process for last resort access must exist for the platform.
 * All back-end API access must use TLS.
@@ -494,7 +495,7 @@ Table 7-2 shows security capabilities
 | req.sec.gen.003 | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot |  |
 | req.sec.gen.004 | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened | NIST SP 800-123 |
 | req.sec.gen.005 | The Platform **must** support Operating System level access control | Details on OS |
-| req.sec.gen.006 | The Platform **must** support Secure logging | Details |
+| req.sec.gen.006 | The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required | Details |
 | req.sec.gen.007 | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service | |
 | req.sec.gen.008 | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities | |
 | req.sec.gen.009 | The Platform **must** support Software integrity protection and verification | |
@@ -523,6 +524,7 @@ Ref | Requirement | Definition/Note |
 | req.sec.sys.011 | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | |
 | req.sec.sys.012 | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component | e.g., Barbican (OpenStack) |
 | req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed | |
+| req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources | |
 
 <a name="7.11.3"></a>
 ### 7.11.3. Confidentiality and Integrity

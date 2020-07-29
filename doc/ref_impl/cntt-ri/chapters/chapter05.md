@@ -268,4 +268,5 @@ network device model will be referenced by network device.
 ## 5.4 Appendix
 <a name="5.4.1"></a>
 ### 5.4.1 HDV original collection.
-[CNTT Hardware Delivery Validation (01-2020 DDF)] https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908
+
+[CNTT Hardware Delivery Validation (01-2020 DDF)](https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908)

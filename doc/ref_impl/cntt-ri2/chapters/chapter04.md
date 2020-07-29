@@ -54,7 +54,8 @@ After the hosts have been provisioned successfully, one can set up host networki
 
 <a name="4.3.2"></a>
 ### 4.3.2 Kubernetes Provisioning
-<Intel BMRA/CNF Testbed>
+
+> Add detailed description of current K8s provisioning
 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation

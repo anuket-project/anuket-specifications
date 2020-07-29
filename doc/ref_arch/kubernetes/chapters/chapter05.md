@@ -73,7 +73,7 @@ All connections to a Kubernetes cluster must be via a secure channel. The follow
  - Access control should be integrated with existing identity management platforms e.g SAML, AD, etc.
 
 ##  5.5 Use Namespaces to Establish Security Boundaries
-Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc) to diffferent types of workloads when deployed in separate namespaces.
+Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc.) to different types of workloads when deployed in separate namespaces.
 
 ##  5.6 Separate Sensitive Workload
 To limit the potential impact of a compromise, it is best to run sensitive workloads on a dedicated set of machines. This approach reduces the risk of a sensitive application being accessed through a less-secure application that shares a container runtime or host.
