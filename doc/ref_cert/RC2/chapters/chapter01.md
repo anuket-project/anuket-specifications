@@ -69,7 +69,7 @@ This document covers aspects of conformance for both Kubernetes based cloud infr
 
 **Not in Scope**
 - Functional testing / validation of the application provided by the workload is outside the scope of this work
-- Testing to confirm specific versions of APIs is out of scope
+- Testing to confirm anything not in RM or RA2 requirements
 - VNFM/NFVO, like ONAP, is not used in the process flow for infrastructure verifications or validations
 - Upgrades to workloads, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope
 
