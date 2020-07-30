@@ -84,7 +84,7 @@ This section introduces some networking related principles that should be follow
 > **Note:** Abstraction may be deployed in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. This includes Network Functions running on server nodes with or without programmable hardware acceleration, or networking support functions running on programmable network switches in the network.
 - **Agnosticity** : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
   - Control, User and Management traffic types
-  - Acceleration technologies supporting multiple types of Infrastructure deployments and Network Function workloads 
+  - Acceleration technologies that can support multiple types of Infrastructure deployments and Network Function workloads 
 -	**Automation**: Enable full automation, from Physical Fabric installation and provisioning to automation of VNF/CNF onboarding.
 -	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open Source networking components (e.g. SDN controllers).
 -	**Programmability**: Should enable a programmable forwarding plane controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
