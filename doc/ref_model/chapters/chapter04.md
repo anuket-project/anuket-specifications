@@ -32,7 +32,7 @@ The Capability and PM identifiers conform to the following schema:
 
 **a.b.c** (Ex. "e.pm.001")  
 a = Scope <(e)xternal | (i)nternal | (t)hird_party_instrumentation>  
-b = Type <(cap)ability | (pm)>  
+b = Type <(cap) capability | (man) management | (pm) performance | (man-pm)>  
 c = Serial Number  
 
 A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and the next available identifier, globally across all chapters of the RM.
@@ -90,25 +90,19 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 
 | Ref       | Cloud Infrastructure Capability           | Unit   | Definition/Notes                                            |
 |-----------|-------------------------------------------|--------|-------------------------------------------------------------|
-| e.cap.006 | CPU core pinning support                  | Yes/No | Indicates if Cloud Infrastructure supports CPU core pinning |
-| e.cap.007 | NUMA support                              | Yes/No | Indicates if Cloud Infrastructure supports NUMA             |
+| e.cap.006 | CPU pinning                               | Yes/No | Indicates if Cloud Infrastructure supports CPU pinning      |
+| e.cap.007 | NUMA alignment                            | Yes/No | Indicates if Cloud Infrastructure supports NUMA alignment |
 | e.cap.008 | IPSec Acceleration                        | Yes/No | IPSec Acceleration                                          |
 | e.cap.009 | Crypto Acceleration                       | Yes/No | Crypto Acceleration                                         |
 | e.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration                                    |
 | e.cap.011 | Programmable Acceleration                 | Yes/No | Programmable Acceleration                                   |
-| e.cap.012 | Enhanced Cache Management <sup>1)</sup>   | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded                   |
-| e.cap.013 | SR-IOV over PCI-PT <sup>2)</sup>          | Yes/No | Traditional SR-IOV                                          |
-| e.cap.014 | GPU/NPU <sup>2)</sup>                     | Yes/No | Hardware coprocessor                                        |
-| e.cap.015 | SmartNIC <sup>2)3)</sup>                  | Yes/No | Network Acceleration                                        |
-| e.cap.016 | FPGA/other Acceleration H/W <sup>2)</sup> | Yes/No | Non-specific hardware                                       |
+| e.cap.012 | Enhanced Cache Management                 | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded.  L and X cache policies require CPU pinning to be active. |
+| e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type.  |
+| e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type. |
+| e.cap.015 | SmartNIC                                  | Yes/No | Network Acceleration. SmartNICs that do not utilise PCI-PT are not subject to the CNTT principles, nor any related policies or prohibitions. |
+| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type. |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of Cloud Infrastructure</p>
-
-<sup>1)</sup> L and X cache policies require CPU pinning to be active.
-
-<sup>2)</sup> These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type.
-
-<sup>3)</sup> SmartNICs that do not utilise PCI-PT are not subject to the Abstraction Principle, nor any related policies or prohibitions.
 
 Enhanced Cache Management is a compute performance enhancer that applies a cache management policy to the socket hosting a given virtual compute instance, provided the associated physical CPU microarchitecture supports it. Cache management policy can be used to specify the static allocation of cache resources to cores within a socket. The "Equal" policy distributes the available cache resources equally across all of the physical cores in the socket. The "eXpanded" policy provides additional resources to the core pinned to a workload that has the "X" attribute applied. The "Lean" attribute can be applied to workloads which do not realize significant benefit from a marginal cache size increase and are hence willing to relinquish unneeded resources.
 
@@ -162,8 +156,8 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 | Ref       | Cloud Infrastructure Capability                       | Unit                   | Definition/Notes                                                   |
 |-----------|-------------------------------------------------------|------------------------|--------------------------------------------------------|
-| i.cap.014 | CPU cores consumed by the Cloud Infrastructure overhead in a compute node | % (of total available) | Indicates the percentage of cores consumed by the Cloud Infrastructure components (including host OS) in a compute node  |
-| i.cap.015 | Memory consumed by the Cloud Infrastructure overhead in a compute node    | % (of total available) | Indicates the percentage of memory consumed by the Cloud Infrastructure components (including host OS) in a compute node  |
+| i.cap.014 | CPU cores consumed by the Cloud Infrastructure overhead on a worker (compute) node | % | The ratio of cores consumed by the Cloud Infrastructure components (including host OS) in a compute node to the total number of cores available espressed as a percentage |
+| i.cap.015 | Memory consumed by the Cloud Infrastructure overhead on a worker (compute) node    | % | The ratio of memory consumed by the Cloud Infrastructure components (including host OS) in a worker (compute) node to the total available memory expressed as a percentage |
 
 <p align="center"><b>Table 4-5:</b> Internal Resource Capabilities of Cloud Infrastructure</p>
 
@@ -203,7 +197,7 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 | Ref       | Cloud Infrastructure capability | Unit   | Definition/Notes                      |
 |-----------|---------------------------------|--------|---------------------------------------|
-| i.cap.018 | Huge page support               | Yes/No | Indicates if the Cloud Infrastructure supports huge pages |
+| i.cap.018 | Huge pages                      | Yes/No | Indicates if the Cloud Infrastructure supports huge pages |
 
 <p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of Cloud Infrastructure</p>
 
@@ -220,22 +214,22 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 | i.pm.002 | Virtual compute resource CPU usage         | nanoseconds | Per VM or Pod.  It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
 | i.pm.003 | Host CPU utilization                       | %           | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (Cloud Infrastructure internal).           |
 | i.pm.004 | Virtual compute resource CPU utilization   | %           | Per VM or Pod. It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
-| i.pm.005 | Measurement of external storage IOPs       | Yes/No      |                                                                                                                                                                                                                             |
+| i.pm.005 | Measurement of external storage IOPS       | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.006 | Measurement of external storage throughput | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.007 | Available external storage capacity        | Yes/No      |                                                                                                                                                                                                                             |
 
 <p align="center"><b>Table 4-8:</b> Internal Measurement Capabilities of Cloud Infrastructure</p>
 
 <a name="4.1.5"></a>
-### 4.1.5 Cloud Infrastructure management Capabilities
+### 4.1.5 Cloud Infrastructure Management Capabilities
 
-Cloud Infrastructure management is responsible for controlling and managing the Cloud Infrastructure compute, storage, and network resources. Resources allocation is dynamically set up upon workloads requirements. This section covers the list of capabilities offered by the VIM to workloads or service orchestrator.
+The Cloud Infrastructure Manager (CIM) is responsible for controlling and managing the Cloud Infrastructure compute, storage, and network resources. Resources allocation is dynamically set up upon workloads requirements. This section covers the list of capabilities offered by the CIM to workloads or service orchestrator.
 
-Table 4-9 shows capabilities related to resources allocation
+Table 4-9 shows capabilities related to resources allocation.
 
-<a name="Table4-12"></a>
+<a name="Table4-9"></a>
 
-| Ref       | Cloud Infrastructure management Capability | Unit            | Definition/Notes                                                 |
+| Ref       | Cloud Infrastructure Management Capability | Unit            | Definition/Notes                                                 |
 |-----------|--------------------------------------------|-----------------|------------------------------------------------------------------|
 | e.man.001 | Virtual Compute allocation                 | Yes/No          | Capability to allocate virtual compute resources to a workload   |
 | e.man.002 | Virtual Storage allocation                 | Yes/No          | Capability to allocate virtual storage resources to a workload    |
@@ -245,50 +239,49 @@ Table 4-9 shows capabilities related to resources allocation
 | e.man.010 | Compute Availability Zones                 | list of strings | The names of each Compute Availability Zone that was defined to separate failure domains |
 | e.man.011 | Storage Availability Zones                 | list of strings | The names of each Storage Availability Zone that was defined to separate failure domains |
 
-<p align="center"><b>Table 4-9:</b> Cloud Infrastructure management Resource Allocation Capabilities</p>
+<p align="center"><b>Table 4-9:</b> Cloud Infrastructure Management Resource Allocation Capabilities</p>
 
+<a name="4.1.6"></a>
+### 4.1.6 Cloud Infrastructure Management Performance Measurements
 
-Table 4-10 Shows performance measurement capabilities
+Table 4-10 shows performance measurement capabilities.
 
-<a name="Table4-13"></a>
+<a name="Table4-10"></a>
 
-| Ref       | Cloud Infrastructure management Capability | Unit   | Definition/Notes                                                                            |
+| Ref       | Cloud Infrastructure Management Capability | Unit   | Definition/Notes                                                                            |
 |-----------|--------------------------------------------|--------|---------------------------------------------------------------------------------------------|
 | e.man.006 | Virtual resources inventory per tenant     | Yes/No | Capability to provide information related to allocated virtualised resources per tenant     |
 | e.man.007 | Resources Monitoring                       | Yes/No | Capability to notify state changes of allocated resources                          |
 | e.man.008 | Virtual resources Performance              | Yes/No | Capability to collect and expose performance information on virtualised resources allocated |
 | e.man.009 | Virtual resources Fault information        | Yes/No | Capability to collect and notify fault information on virtualised resources                 |
 
-<p align="center"><b>Table 4-10:</b> Cloud Infrastructure management Performance Measurement Capabilities</p>
+<p align="center"><b>Table 4-10:</b> Cloud Infrastructure Management Performance Measurement Capabilities</p>
 
-
-
-<a name="4.1.6"></a>
-### 4.1.6 Cloud Infrastructure management Performance Measurements
 
 <a name="4.1.6.1"></a>
 #### 4.1.6.1 Resources Management Measurements
-**Table 4-11** shows resource management measurements of VIM as aligned with ETSI GS NFV TST-012 [3].
+**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GS NFV TST-012 [3].
 
-| Ref          | Cloud Infrastructure management Measurement                   | Unit   | Definition/Notes |
+<a name="Table4-11"></a>
+
+| Ref          | Cloud Infrastructure Management Measurement                   | Unit   | Definition/Notes |
 |--------------|---------------------------------------------------------------|--------|------------------|
-| e.man-pm.001 | Time to create Virtual Compute resources for a given workload | Max ms |                  |
-| e.man-pm.002 | Time to delete Virtual Compute resources of a given workload  | Max ms |                  |
-| e.man-pm.003 | Time to start Virtual Compute resources of a given workload   | Max ms |                  |
-| e.man-pm.004 | Time to stop Virtual Compute resources of a given workload    | Max ms | <sup>1)</sup>    |
-| e.man-pm.005 | Time to pause Virtual Compute resources of a given workload   | Max ms | <sup>2)</sup>    |
-| e.man-pm.006 | Time to create internal virtual network                       | Max ms |                  |
-| e.man-pm.007 | Time to delete internal virtual network                       | Max ms |                  |
-| e.man-pm.008 | Time to update internal virtual network                       | Max ms |                  |
-| e.man-pm.009 | Time to create external virtual network                       | Max ms |                  |
-| e.man-pm.010 | Time to delete external virtual network                       | Max ms |                  |
-| e.man-pm.011 | Time to update external virtual network                       | Max ms |                  |
-| e.man-pm.012 | Time to create external storage ready for use by workload     | Max ms |                  |
+| e.man-pm.001 | Time to create Virtual Compute resources (VM/container) for a given workload | Max ms |                  |
+| e.man-pm.002 | Time to delete Virtual Compute resources (VM/container) of a given workload  | Max ms |                  |
+| e.man-pm.003 | Time to start Virtual Compute resources (VM/container) of a given workload   | Max ms |                  |
+| e.man-pm.004 | Time to stop Virtual Compute resources (VM/container) of a given workload    | Max ms |                  |
+| e.man-pm.005 | Time to pause Virtual Compute resources (VM/container) of a given workload   | Max ms |                  |
+| e.man-pm.006 | Time to create internal virtual network                                      | Max ms |                  |
+| e.man-pm.007 | Time to delete internal virtual network                                      | Max ms |                  |
+| e.man-pm.008 | Time to update internal virtual network                                      | Max ms |                  |
+| e.man-pm.009 | Time to create external virtual network                                      | Max ms |                  |
+| e.man-pm.010 | Time to delete external virtual network                                      | Max ms |                  |
+| e.man-pm.011 | Time to update external virtual network                                      | Max ms |                  |
+| e.man-pm.012 | Time to create external storage ready for use by workload                    | Max ms |                  |
 
 <p align="center"><b>Table 4-11:</b> Cloud Infrastructure management Resource Management Measurements</p>
 
-**1)** In case of containers there is no stop operation.<br>
-**2)** In case of containers there is no pause operation.
+
 
 <a name="4.2"></a>
 ## 4.2 Infrastructure Profiles Catalogue
@@ -307,6 +300,8 @@ Compute Flavours represent the compute, memory, storage, and management network 
 
 Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute Flavour geometry consists of the following elements:
 
+<a name="Table4-12"></a>
+
 | Element                               | Description                                                                                                                                                                                             |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Compute Flavour Name                  | A descriptive name                                                                                                                                                                                      |
@@ -323,6 +318,8 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 
 >_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
 
+<a name="Table4-13"></a>
+
 | .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") | Management Interface |
 |------------------------|--------------------------|-------------------------|------------------|----------------------|
 | .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
@@ -333,7 +330,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 | .4xlarge <sup>1)</sup> | 16                       | 32 GB                   | 320 GB           | 1 Gbps               |
 | .8xlarge <sup>1)</sup> | 32                       | 64 GB                   | 640 GB           | 1 Gbps               |
 
-<p align="center"><b>Table 4-12:</b> Predefined Compute Flavours.</p>
+<p align="center"><b>Table 4-13:</b> Predefined Compute Flavours.</p>
 
 **1)** These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
 **2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
@@ -350,6 +347,7 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 ```
 <network interface bandwidth option> :: <”n”><number (bandwidth in Gbps)>
 ```
+<a name="Table4-14"></a>
 
 | Virtual Network Interface Option   | Interface Bandwidth               |
 |------------------------------------|-----------------------------------|
@@ -359,7 +357,7 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 | n50, n100, n150, n200, n250, n300  | 50, 100, 150, 200, 250, 300 Gbps  |
 | n100, n200, n300, n400, n500, n600 | 100, 200, 300, 400, 500, 600 Gbps |
 
-<p align="center"><b>Table 4-13:</b> Virtual Network Interface Specification Examples</p>
+<p align="center"><b>Table 4-14:</b> Virtual Network Interface Specification Examples</p>
 
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
@@ -368,13 +366,15 @@ Persistent storage is associated with workloads via Storage Extensions. The size
 
 Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
+<a name="Table4-15"></a>
+
 | .conf   | Read IO/s  | Write IO/s | Read Throughput (MB/s) | Write Throughput (MB/s) | Max Ext Size |
 |---------|------------|------------|------------------------|-------------------------|--------------|
 | .bronze | Up to 3K   | Up to 1.5K | Up to 180              | Up to 120               | 16TB         |
 | .silver | Up to 60K  | Up to 30K  | Up to 1200             | Up to 400               | 1TB          |
 | .gold   | Up to 680K | Up to 360K | Up to 2650             | Up to 1400              | 1TB          |
 
-<p align="center"><b>Table 4-14:</b> Storage Performance Profiles</p>
+<p align="center"><b>Table 4-15:</b> Storage Performance Profiles</p>
 
 Note, performance is based on a block size of 256KB or larger.
 
@@ -396,8 +396,9 @@ The following table defines persistent storage extensions that can be provided t
 | .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
 //
 <p align="center"><b>Table 4-15:</b> Storage Extension Options</p>
---->
+
 Table 4-15: Reserved
+--->
 
 <a name="4.2.4"></a>
 ### 4.2.4 Cloud Infrastructure Profiles
@@ -413,6 +414,8 @@ This Cloud Infrastructure Profile is intended to be used for those applications 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
 >_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
+
+<a name="Table4-16"></a>
 
 | .conf      | Interface type | Description                              |
 |------------|----------------|------------------------------------------|
@@ -431,6 +434,8 @@ This NFVI Profile is intended to be used for those applications that has high co
 ##### 4.2.4.3.1 Compute Acceleration Extensions
 Compute Intensive Profile can come with compute acceleration extensions to assist workloads/VAs offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
 
+<a name="Table4-17"></a>
+
 | .conf | Interface type | Description |
 |------------|----------------|-----------------------------------------|
 | .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. |
@@ -443,6 +448,8 @@ Compute Intensive Profile can come with compute acceleration extensions to assis
 <a name="4.2.4.4"></a>
 #### 4.2.4.4 Network Interface Options
 **Table 4-18** below shows the various network interface extension bandwidth options (from **Table 4-18**) available for each profile type (Up to 6 extensions (i.e. interfaces) may be associated with a virtual compute instance).
+
+<a name="Table4-18"></a>
 
 | Virtual Interface Option* | Basic Type | Network Intensive Type | Compute Intensive Type
 |---------------------------|-----|-----|-----
@@ -460,34 +467,36 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <a name="4.2.5"></a>
 ### 4.2.5 Cloud Infrastructure Profile Capabilities Mapping
 
+<a name="Table4-17"></a>
+
 | Ref                                                                  | Basic                    | Network Intensive        | Notes |
 |----------------------------------------------------------------------|--------------------------|--------------------------|---------------------------------------------------------------------|
 | `e.cap.001`<br />(#vCPU cores)                              | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)     |
-| `e.cap.002`<br />(Amount of RAM (MB))                       | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
+| `e.cap.002`<br />(RAM Size (MB))                            | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
 | `e.cap.003`<br />(Total instance (ephemeral) storage (GB))  | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
-| `e.cap.004`<br />(# vNICs)                                  | Per selected  <I Opt>    | Per selected  <I Opt>    |                                                                     |
-| `e.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext>    | Per selected  <S Ext>    |                                                                     |
-| `e.cap.006`<br />(CPU pinning support)                      | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2)  |
-| `e.cap.007`<br />(NUMA support)                             | No                       | Yes                      |                                                                     |
+| `e.cap.004`<br />(# Connection points)                      | Per selected  <I Opt>    | Per selected  <I Opt>    |                                                                     |
+| `e.cap.005`<br />(Total external (persistent) storage (GB)) | Per selected  <S Ext>    | Per selected  <S Ext>    |                                                                     |
+| `e.cap.006`<br />(CPU pinning)                              | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2)  |
+| `e.cap.007`<br />(NUMA alignment)                           | No                       | Yes                      |                                                                     |
 | `e.cap.008`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
 | `e.cap.009`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
 | `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
-| `e.cap.011`<br />(Programmable Acceleration)                | No                       | No                       |                                                                     |
+| `e.cap.011`<br />(Programmable Acceleration)                | No                       | Yes/No                       |                                                                     |
 | `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | Yes                      | No                       | |
-| `e.cap.014`<br />(GPU/NPU)                                            | No                       | No                       | |
-| `e.cap.015`<br />(SmartNIC)                                           | Yes (if offered)         | No                       | |
-| `e.cap.016`<br />(FPGA/other Acceleration H/W)                        | Yes (if offered)         | No                       | || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
+| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       | SR-IOV over PCI-PT does not conform CNTT principles, but it is a technology commonly used when network performance are required. It is temporarily accepted and part of the transition plan exceptions list described in [Appendix A3 Exception list](./appendix-a.md#a3-exception-list) and in [Appendix A5 Hardware Dependent Coding policies](./appendix-a.md#a5-hardware-dependent-coding-policies)  |
+| `e.cap.014`<br />(GPU/NPU)                                            | No                       | Yes / No                       | Yes : in case of AI and Video Edge use cases|
+| `e.cap.015`<br />(SmartNIC)                                           | No        | Yes / No                       | |
+| `e.cap.016`<br />(FPGA/other Acceleration H/W)                        |No             | Yes / No                       | Yes : in case of vRAN Edge use case || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
 | `i.cap.014`<br />(CPU cores consumed by the Cloud Infrastructure on the worker nodes) | any                      | any                      | |
 | `i.cap.015`<br />(Memory consumed by Cloud Infrastructure on the worker nodes)        | any                      | any                      | |
-| `i.cap.016`<br />(CPU allocation ratio)                     | 4:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)<br/><br/>_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._  |
+| `i.cap.016`<br />(CPU allocation ratio)                     | 1:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)<br/><br/>_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._  |
 | `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
 | `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.pm.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
-| `i.pm.002`<br />(Virtual compute CPU usage)                | Yes                      | Yes                      |                                                                     |
+| `i.pm.002`<br />(Virtual compute resource CPU usage)                | Yes                      | Yes                      |                                                                     |
 | `i.pm.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
-| `i.pm.004`<br />(Virtual compute CPU utilization)          | Yes                      | Yes                      |                                                                     |
-| `i.pm.005`<br />(Measurement of external storage IOPs)                | Yes                      | Yes                      | |
+| `i.pm.004`<br />(Virtual compute resource CPU utilization)          | Yes                      | Yes                      |                                                                     |
+| `i.pm.005`<br />(Measurement of external storage IOPS)                | Yes                      | Yes                      | |
 | `i.pm.006`<br />(Measurement of external storage throughput)          | Yes                      | Yes                      | |
 | `i.pm.007`<br />(Available external storage capacity)                 | Yes                      | Yes                      | |
 <!--
@@ -516,12 +525,12 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
 -->
 
-<p align="center"><b>Table 4-19:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
+<p align="center"><b>Table 4-17:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
 
 <a name="4.2.6"></a>
 ### 4.2.6 Cloud Infrastructure Profile Performance Measurement Mapping
 
-_**Comment:** To be worked on._
+_**Comment:** For further study_
 
 <a name="4.2.7"></a>
 ### 4.2.7 One stop shop
@@ -591,7 +600,144 @@ These flavors, similarly to other flavours, should be supported for three CNTT r
 <a name="4.3"></a>
 ## 4.3 Networking
 
-This is a placeholder for Cloud Infrastructure infrastructure networking information that is common to all Reference Architectures.
+The Cloud Infrastructure Networking Reference Model is an essential foundation that governs all Reference Architectures and Cloud Infrastructure implementations to enable multiple cloud infrastructure virtualisation technology choices and their evolution. These include:
+- the current single Infrastructure as a Service (IaaS) based virtualisation instances with Virtual Machines (VM)
+- multi IaaS based virtualisation instances
+- Cloud Native Container as a Service (CaaS) based virtualisation instances, and
+- hybrid multi IaaS and CaaS based virtualisation instances
+
+To retain the cloud paradigms of automation, scalability and usage of shared hardware resources when introducing CaaS instances it is necessary to enable an ability to co-deploy multiple simultaneous IaaS and CaaS instances on a shared pool of hardware resources.
+
+Compute and Storage resources are rarely shared in between IaaS or CaaS instances, but the underpinning networking, most commonly implemented with Ethernet and IP, must be shared and managed as a shared pool of underlay network resources to enable the pooled usage of Compute and Storage from a managed shared pool.
+
+Throughout this chapter and its figures a number of references to ETSI NFV are made and they explicitly are made towards the ETSI NFV models in the Architectural Framework: 
+-	[ETSI GS NFV 002 V1.2.1](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
+-	[ETSI GR NFV-IFA 029 V3.3.1](https://www.etsi.org/deliver/etsi_gr/NFV-IFA/001_099/029/03.03.01_60/gr_NFV-IFA029v030301p.pdf)
+
+
+<a name="4.3.1"></a>
+### 4.3.1 Network Layering and Concepts
+
+Cloud and Telco networking are layered, and it is very important to keep the dependencies between the layers low to enable security, separation and portability in between multiple implementations and generations.
+
+Before we start developing a deep model we need to agree on some foundational concepts and layering that allow decoupling of implementations in between the layers. We will emphasize four concepts in this section:
+
+ - Underlay and Overlay Networking concepts
+ - Hardware and Virtual Infrastructure Layer concepts
+ - Software Defined Underlay and Overlay Networking concepts 
+ - Programmable Networking Fabric concept
+
+<a name="4.3.1.1"></a>
+#### 4.3.1.1 Underlay and Overlay Networking concepts
+
+The ETSI Network Functions Virtualisation Architectural Framework (as referred  above) describes how a Virtualization Layer instance abstract the hardware resources and separate Virtualisation Tenants (Workload) from each other. It does also specifically state that the control and implementation of the hardware layer is out of scope for that specification.
+
+When having multiple Virtualization Layer instances on a shared hardware infrastructure, the networking can be layered in an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the Virtualisation Tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected hardware (HW) devices.
+
+The Overlay Networking separation is often done through encapsulation of Tenants traffic using overlay protocols e.g. through VxLAN or EVPN on the Underlay Networks e.g. based on L2 (VLAN) or L3 (IP) networks.
+
+In some instances, the Virtualisation Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation normally done by the Virtualisation Layer, is the VNF/CNF usage of SR-IOV that effectively take over the Physical and Virtual Functions of the NIC directly into the VNF/CNF Tenant. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
+
+> **Note:** Bypassing the Overlay Networking layer is a violation of the basic CNTT decoupling principles, but in some cases unavoidable with existing technologies and available standards. Until suitable technologies and standards are developed, CNTT have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
+
+VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer. 
+
+<a name="4.3.1.2"></a>
+#### 4.3.1.2 Hardware and Virtual Infrastructure Layer concepts
+
+The Cloud Infrastructure (based on ETSI NFV Infrastructure with hardware extensions) can be considered to be composed of two distinct layers, here referred to as HW Infrastructure Layer and Virtual Infrastructure Layer. When there are multiple separated simultaneously deployed Virtual Infrastructure domains, the architecture and deployed implementations must enable each of them to be in individual non-dependent administrative domains. The HW Infrastructure must then also be enabled to be a fully separated administrative domain from all of the Virtualisation domains. 
+
+For Cloud Infrastructure implementations of multiple well separated simultaneous Virtual Infrastructure Layer instances on a shared HW Infrastructure there must be a separation of the hardware resources i.e. servers, storage and the Underlay Networking resources that interconnect the hardware resources e.g. through a switching fabric.
+
+To allow multiple separated simultaneous Virtual Infrastructure Layer instances onto a shared switching fabric there is a need to split up the Underlay Networking resources into non overlapping addressing domains on suitable protocols e.g. VxLAN with their VNI Ranges. This separation must be done through an administrative domain that could not be compromised by any of the individual Virtualisation Infrastructure Layer domains either by malicious or unintentional Underlay Network mapping or configuration.
+
+These concepts are very similar to how the Hyperscaler Cloud Providers (HCP) offer Virtual Private Clouds for users of Bare Metal deployment on the HCP shared pool of servers, storage and networking resources.
+
+The separation of Hardware and Virtual Infrastructure Layers administrative domains makes it important that the Reference Architectures do not include direct management or dependencies of the pooled physical hardware resources in the HW Infrastructure Layer e.g. servers, switches and underlay networks from within the Virtual Infrastructure Layer. All automated interaction from the Virtual Infrastructure Layer implementations towards the HW Infrastructure with its shared networking resources in the HW Infrastructure Layer must go through a common abstracted Reference Model interface. 
+
+<a name="4.3.1.3"></a>
+#### 4.3.1.3 Software Defined Underlay and Overlay Networking concepts
+
+A major point with a Cloud Infrastructures is to automate as much as possible. An important tool for Networking automation is Software Defined Networking (SDN) that comes in many different shapes and can act on multiple layers of the networking. In this section we will deal with the internal networking of a datacentre and not how datacentres interconnect with each other or get access to the world outside of a datacentre.
+
+When there are multiple simultaneously deployed instances of the Virtual Infrastructure Layers on the same HW Infrastructure, there is a need to ensure Underlay networking separation in the HW Infrastructure Layer. This separation can be done manually through provisioning of a statically configured separation of the Underlay Networking in the HW Infrastructure Layer. A better and more agile usage of the HW Infrastructure is to offer each instance of the Virtual Infrastructure Layer a unique instance of a SDN interface into the shared HW Infrastructure. Since these SDN instances only deal with a well separated portion (or slice) of the Underlay Networking we call this interface SDN-Underlay (SDNu).
+
+The HW Infrastructure Layer is responsible for keeping the different Virtual Infrastructure Layer instances separated in the Underlay Networking. This can be done through manual provisioning methods or be automated through a HW Infrastructure Layer orchestration interface. The separation responsibility is also valid between all instance of the SDNu interface since each Virtual Infrastructure Layer instance shall not know about, be disturbed by or have any capability to reach the other Virtual Infrastructure instances.
+
+An SDN-Overlay control interface (here denoted SDNo) is responsible for managing the Virtual Infrastructure Layer virtual switching and/or routing as well as its encapsulation and its mapping onto the Underlay Networks.
+
+In cases where the VNF/CNF bypasses the Virtual Infrastructure Layer virtual switching and its encapsulation, as described above, the HW Infrastructure Layer must perform the encapsulation and mapping onto the Underlay Networking to ensure the Underlay Networking separation. This should be a prioritized capability in the SDNu control interface since CNTT currently allow exemptions for bypassing the virtual switching (e.g. through SR-IOV). 
+
+SDNo controllers can request Underlay Networking encapsulation and mapping to be done by signalling to an SDNu controller. There are however today no standardized way for this signalling and by that there is a missing reference point and API description in this architecture. 
+
+Multiple instances of Container as a Service (CaaS) Virtualization Layers running on an Infrastructure as a Service (IaaS) Virtual Infrastructure Layer could make use of the IaaS layer to handle the required Underlay Networking separation. In these cases, the IaaS Virtualisation Infrastructure Manager (VIM) could include a SDNu control interface enabling automation.
+
+> **Note:** The Reference Model describes a logical separation of SDNu and SDNo interfaces to clarify the separation of administrative domains where applicable. In real deployment cases an Operator can select to deploy a single SDN controller instance that implements all needed administrative domain separations or have separate SDN controllers for each administrative domain. A common deployment scenario today is to use a single SDN controller handling both Underlay and Overlay Networking which works well in the implementations where there is only one administrative domain that owns both the HW Infrastructure and the single Virtual Infrastructure instance. However a shared Underlay Network that shall ensure separation must be under the control of the shared HW Infrastructure Layer.
+One consequence of this is that the Reference Architectures must not model collapsed SDNo and SDNu controllers since each SDNo must stay unaware of other deployed implementations in the Virtual Infrastructure Layer running on the same HW Infrastructure.
+
+<a name="4.3.1.4"></a>
+#### 4.3.1.4 Programmable Networking Fabric concept
+
+The concept of a Programmable Networking Fabric pertains to the ability to have an effective forwarding pipeline (a.k.a. forwarding plane) that can be programmed and/or configured without any risk of disruption to the shared Underlay Networking that is involved with the reprogramming for the specific efficiency increase.
+
+The forwarding plane is distributed by nature and must be possible to implement both in switch elements and on SmartNICs (managed outside the reach of host software), that both can be managed from a logically centralised control plane, residing in the HW Infrastructure Layer.
+
+The logically centralised control plane is the foundation for the authoritative separation between different Virtualisation instances or Bare Metal Network Function applications that are regarded as untrusted both from the shared layers and each other.
+
+Although the control plane is logically centralized, scaling and control latency concerns must allow the actual implementation of the control plane to be distributed when required.
+
+All VNF, CNF and Virtualisation instance acceleration as well as all specific support functionality that is programmable in the forwarding plane must be confined to the well separated sections or stages of any shared Underlay Networking. A practical example could be a Virtualisation instance or VNF/CNF that controls a NIC/SmartNIC where the Underlay Networking (Switch Fabric) ensures the separation in the same way as it is done for SR-IOV cases today.
+
+The nature of a shared Underlay Network that shall ensure separation and be robust is that all code in the forwarding plane and in the control plane must be under the scrutiny and life cycle management of the HW Infrastructure Layer.
+
+This also imply that programmable forwarding functions in a Programmable Networking Fabric are shared resources and by that will have to get standardised interfaces over time to be useful for multiple VNF/CNF and multi-vendor architectures such as ETSI NFV. Example of such future extensions of shared functionality implemented by a Programmable Networking Fabric could be L3 as a Service, Firewall as a Service and Load Balancing as a Service.
+
+> **Note:** Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud Infrastructure implementation and falls outside the use cases for these specifications.
+
+<a name="4.3.2"></a>
+### 4.3.2 Networking Reference Model
+
+The Cloud Infrastructure Networking Reference Model depicted in **Figure 4-3-2** is based on the ETSI NFV model enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and Virtualization Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous Virtualisation instances and domains allowing a mix of IaaS, CaaS on IaaS and CaaS on Bare Metal on top of a shared HW Infrastructure. 
+
+It is up to any deployment of the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
+
+<p align="center"><img src="./../figures/ch04_Networking_Reference_Model.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
+<p align="center"><b>Figure 4-3-2:</b> Networking Reference Model based on the ETSI NFV</p>
+
+<a name="4.3.3"></a>
+### 4.3.3 Deployment examples based on the Networking Reference Model
+
+<a name="4.3.3.1"></a>
+#### 4.3.3.1 Switch Fabric and SmartNIC examples for Underlay Networking separation
+
+The HW Infrastructure Layer can implement the Underlay Networking separation in any type of packet handling component. This may be deployed in many different ways depending on target use case requirements, workload characteristics and available platforms. Two of the most common ways is 1. within the physical Switch Fabric and 2. in a SmartNIC connected to the Server CPU being controlled over a management channel that is not reachable from the Server CPU and its host software. In either way the Underlay Networking separation is controlled by the HW Infrastructure Manager.
+
+In both cases the Underlay Networking can be externally controlled over the SDNu interface, that must be instantiated with appropriate Underlay Networking separation for each of the Virtualization administrative domains.
+
+> **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of Virtual instances in separate Overlay domains in much the same way as AWS do with their Nitro SmartNIC. This is the important consideration for the Reference Model that enables multiple implementation instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific Virtual instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
+
+Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 4-3-3-1**.
+
+<p align="center"><img src="./../figures/ch04_Underlay_Separation_Example.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
+<p align="center"><b>Figure 4-3-3-1:</b> Underlay Networking separation examples</p>
+
+<a name="4.3.3.2"></a>
+#### 4.3.3.2 SDN Overlay and SDN Underlay layering and relationship example
+
+Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 4-3-3-2**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+
+<p align="center"><img src="./../figures/ch04_Underlay_Separation_MultiVIM_Example.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
+<p align="center"><b>Figure 4-3-3-2:</b> SDN Controller relationship examples</p>
+
+<a name="4.3.3.3"></a>
+#### 4.3.3.3 Example of IaaS and CaaS Virtualization Infrastructure instances on a shared HW Infrastructure with SDN
+
+A Networking Reference Model deployment example is depicted in **Figure 4-3-3-3** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
+
+The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNFs on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks, since it is not foreseen any generic standard of a CaaS implementation that will be capable to support all types of CNFs from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances. 
+
+<p align="center"><img src="./../figures/ch04_Multi-VIM_Deployment_Example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
+<p align="center"><b>Figure 4-3-3-3:</b> Networking Reference Model deployment example</p>
 
 
 <!--

@@ -16,12 +16,13 @@
 - Describe the purpose of this chapter, which includes, but not limited to:
 - Test Case Gaps (analysis)
 -	Automation Gaps
--	Open Stack release Comparisons (Ocata, Pike, Queens, Stein, etc)
+-	OpenStack release Comparisons (Train, Ussuri, etc)
 
 <a name="8.2"></a>
 ## 8.2 Openstack Release Comparisons
 
-- Provide detail, perhaps in table format, comparing Openstack releases based on Pike baseline for CNTT RI-1 (e.g. Ocata, Pike, Queens, Stein, etc)
+- Provide details, preferably in table format, comparing OpenStack releases based
+  on Train baseline for CNTT RI-1 (e.g. Train, Ussuri, etc)
 
 <a name="8.3"></a>
 ## 8.3 Automation Gaps

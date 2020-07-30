@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 2 Workload Requirements & Analysis
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Workloads Collateral](#2.1)
@@ -13,12 +12,12 @@ One of the main targets of the CNTT is to define an agnostic cloud infrastructur
 
 This means, operators will be able to host their Telco workloads (VNFs/CNFs) with different traffic types, behaviour and from any vendor on a unified consistent cloud infrastructure.
 
-Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine learning, Artificial Intelligence, etc.
+Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine Learning, and Artificial Intelligence.
 
-In this chapter we try to analyse various workload types used in telco and examine their requirements. We will also highlight some of the cloud infrastructure parameters needed to achieve the desired performance expected by various workloads.
+This chapter analyses various telco workloads and their requirements, and recommends certain cloud infrastructure parameters needed to specify the desired performance expected by these workloads.
 
 <a name="2.1"></a>
-# 2.1 Workloads Collateral
+## 2.1 Workloads Collateral
 
 There are different ways that workloads can be classified, for example:
 - **By function type:**
@@ -33,7 +32,7 @@ There are different ways that workloads can be classified, for example:
   - Value-Added-Services
 - **By technology:** 2G, 3G, 4G, 5G, IMS, FTTx, Wi-Fi...
 
-Below is a list of Network Functions that covers almost _**95%**_ of the Telco workload (and the most likely to be virtualised). They are gathered by network segment and function type.
+The list of, most likely to be virtualised,  Network Functions below, covering almost _**95%**_ of the Telco workloads, is organised by network segment and function type.
 - **Radio Access Network (RAN)**
   - Data Plane
     - BBU: BaseBand Unit
@@ -111,9 +110,123 @@ Below is a list of Network Functions that covers almost _**95%**_ of the Telco w
     - DNS: Domain Name System
   - Management Plane
     - NMS: Network Management System
+    
+    
+    
+    
+### 2.2 Use cases
+
+- **Introduction**
+
+    Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients of the Ultra-Reliable Low-latency Communication (URLLC) and Enhanced Mobile Broadband (eMBB) Network Slicing. The requirements for user plane Local Breakout / Termination are common mandating that Value Added Services (VASs) & Any Gi-LAN applications are locally hosted at the Edge.
+
+    The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting that satisfy the latency requirements.
+
+    This section illustrates some selected use cases that are aligned with the technology evolution and aligned with the 5G business services offerings as well.
+
+- **Use Case #1 - Edge CDN with eMBB Core Network Slicing**
+
+  - **Business Objectives**
+  
+      Monetizing 5G by provisioning eMBB network slice with distributed Content Delivery Network (CDN) as a service, that enables Ultra-HD (UHD) streaming, Video Optimization, caching for large files, and other capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
+
+  - **Targeted Segments**
+  
+    - B2C (Targeting high Tier Packages & Bundles)
+    - Content Owners (Potential revenue sharing model)
+    - Mobile Virtual Network Operators (MVNOs - Wholesale)
+    - Stadiums and Venues.
+
+  - **Architecture**
+  
+     <img width="1066" alt="Screenshot 2020-05-17 at 11 31 44 PM" src="https://user-images.githubusercontent.com/25845305/82160584-b35db280-9896-11ea-921c-6a7f8e5bb866.png">
+
+- **Use Case #2 - Edge Private 5G with Core Network Slicing**
+
+  - **Business Objectives**
+  
+      Private 5G is considered one of the most anticipated Business use cases in the coming few years enabling Mobile Operators to provide a standalone private Mobile Network to enterprises that may include all the ingredients of PLMN such as Radio, Core, Infrastructure & Services covering the business requirements in terms of security, performance, reliability, & availability.
+
+  - **Targeted Segments**
+  
+      - Governmental Sectors & Public Safety (Mission critical applications)
+      - Factories and Industry sector.
+      - Enterprises with Business-critical applications. 
+      - Enterprises with strict security requirements with respect to assets reachability.
+      - Enterprises with strict KPIs requirements that mandate the on-premise deployment.
+
+  - **Architecture**
+
+      <img width="1066" alt="Screenshot 2020-05-17 at 11 34 47 PM" src="https://user-images.githubusercontent.com/25845305/82160627-0172b600-9897-11ea-99ec-7339deb19fce.png">
+      
+        Note (1) - There are multiple flavours for Private 5G deployments or NPN, Non-Public Network as defined by 3GPP.
+        
+        Note (2) - The use case addresses the technical realization of NPN as a Network Slice of a PLMN as per Annex D – 3GPP TS 23.501 R16 and not covering the other scenarios of deployment.
+        
+        Note (3) - The use case assumes a network slice that is constructed from a single UPF deployed on Customer premises while sharing the 5G Control Plane (AMF, SMF, & other CP Network Functions) with the PLMN. 
+        
+        Note (4) - The use case doesn’t cover the requirements of the private Application Servers (ASs) as they may vary with each customer setup.
+        
+        Note (5) - Hosting the CU/DU on-Customer Infrastructure depends on the enterprise offering by the Mobile Operator and the selected Private 5G setup.
+        
+        Note (6) – The Edge Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator) as part of Managed-services model.
+
+- **Use Case #3 - Edge Automotive (V2X) with uRLLC Core Network Slicing**
+
+  - **Business Objectives**
+
+      The V2X (Vehicle-to-everything) set of use cases provides a 5G monetization framework for Mobile Operators developing 5G URLLC business use cases targeting the Automotive Industry, Smart City Regulators, & Public Safety. 
+      
+  - **Targeted Segments**
+
+      - Automotive Industry.
+      - Governmental Departments (Smart Cities, Transport, Police, Emergency Services, etc). 
+      - Private residencies (Compounds, Hotels and Resorts).
+      - Enterprise and Industrial Campuses.
+
+  - **Architecture**
+
+    <img width="1006" alt="Screenshot 2020-04-19 at 12 17 43 PM" src="https://user-images.githubusercontent.com/25845305/79685269-c8afd480-8237-11ea-90d5-0e7b0edc684e.png">
+
+        Note (1) – 5G NR-V2X is a work item in 3GPP Release 16 that is not completed yet by the time of writing this document.
+        
+        Note (2) – C-V2X, Cellular V2X has two modes of communications
+           1.	Direct Mode (Commonly described by SL, Sidelink by 3GPP)
+              This includes the V2V, V2I, & V2P using a direct Interface (PC5) operating in ITS, Intelligent Transport Bands (e.g. 5.9 GHZ).
+
+           2.	Network Mode (UL/DL)
+              This covers the V2N while operating in the common telecom licensed spectrum. This use case is capitalizing on this mode.
+
+        Note (3) - The potential use cases that may consume services from Edge is the Network Model (V2N) and potentially the V2I (According on how the Infrastructure will be mapped to an Edge level)
+
+- **Use Case #4 – Edge vRAN Deployments**
+
+  - **Business Objectives**
+      vRAN is one of the trending technologies of RAN deployment that fits for all Radio Access Technologies. vRAN helps to provide coverage for rural & uncovered areas with a compelling CAPEX reduction compared to Traditional and legacy RAN deployments. This coverage can be extended to all area types with 5G greenfield deployment as a typical example. 
+  
+  - **Targeted Segments**
+  
+      - Private 5G Customers (vRAN Can be part of the Non-Public Network, NPN)
+      - B2B Customers & MVNOs (vRAN Can be part of an E2E Network Slicing)
+      - B2C (Mobile Consumers Segment).
+
+  
+  - **Architecture**
+      
+      <img width="1068" alt="Screenshot 2020-05-11 at 5 51 34 PM" src="https://user-images.githubusercontent.com/25845305/81582240-15f31200-93b0-11ea-993e-a89f820a5d97.png">
+      
+        Note (1) – There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge.
+        https://www.ngmn.org/wp-content/uploads/Publications/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf
+        
+        Note (2) – The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
+        
+        Note (3) – Following Split Option 7.2, The average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec      while the latency for DU-CU (MIdhaul) is tens of milliseconds. 
+        https://static1.squarespace.com/static/5ad774cce74940d7115044b0/t/5db36ffa820b8d29022b6d08/1572040705841/ORAN-WG4.IOT.0-v01.00.pdf
+            
+    
 
 <a name="2.2"></a>
-# 2.2 Analysis
+## 2.2 Analysis
 
 Studying various requirements of workloads helps understanding what expectation they will have from the underlying cloud infrastructure. Following are _some_ of the requirement types on which various workloads might have different expectation levels:
 
@@ -132,6 +245,10 @@ Studying various requirements of workloads helps understanding what expectation 
   - Volume
   - Ephemeral or Persistent
   - Specific features (e.g., object storage, local storage)
+
+
+
+
 
 By trying to sort workloads into different categories based on the requirements observed, below are the different profiles concluded, which are mainly driven by expected performance levels:
 
@@ -167,7 +284,7 @@ By trying to sort workloads into different categories based on the requirements 
 -->
 
 <a name="2.3"></a>
-# 2.3 Cloud Infrastructure Profiles
+## 2.3 Cloud Infrastructure Profiles
 
 Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
@@ -176,7 +293,7 @@ Based on the above analysis, following cloud infrastructure profiles are propose
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-On **Chapter 4** later in the document, these infrastructure profiles will be offered to workloads: **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> respectively.
+In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> infrastructure profiles will be defined in greater detail for use by workloads: .
 
 >***Note**  
 >This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
