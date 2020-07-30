@@ -86,7 +86,7 @@ This section introduces some networking related principles that should be follow
   - Control, User and Management traffic types
   - Acceleration technologies that can support multiple types of Infrastructure deployments and Network Function workloads 
 -	**Automation**: Enable full automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
--	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open Source networking components (e.g. SDN controllers).
+-	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open Source networking components such as SDN controllers.
 -	**Programmability**: Should enable a programmable forwarding plane controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
 -	**Scalability**: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
 - **Workload diversity**: Should be capable to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
