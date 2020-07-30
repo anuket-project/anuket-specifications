@@ -104,7 +104,7 @@ Storage resources have the following attributes:
 | Attribute           | Description                                                              |
 |---------------------|--------------------------------------------------------------------------|
 | `name`              | name of storage resources                                                |
-| `data availibilty`  | persistent or ephemral                                                   |  
+| `data availibilty`  | persistent or ephemeral                                                  |  
 | `performance`       | low latency, IOPS oriented, capacity oriented                            |
 | `enhanced features` | replication, encryption                                                  |
 | `type`              | block, object or file                                                    |
