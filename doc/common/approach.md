@@ -81,18 +81,17 @@ To address the concern areas detailed above the specific topics listed below wil
 This section introduces some networking related principles that should be followed during the development and definition of the networking scope for Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
 -	**Abstraction**: A standardized layer between Virtualisation Layer domains and the Networking Hardware Layer resource pool hiding the implementation details of the Networking Hardware.
-> **Note:** Abstraction may be deployed in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. This includes Network Functions running on server nodes with or without programmable hardware acceleration, or networking support functions running on programmable network switches in the network.
+> **Note:** Abstraction may be implemented in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. This includes Network Functions running on server nodes with or without programmable hardware acceleration, or networking support functions running on programmable network switches in the network.
 - **Agnosticity** : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
   - Control, User and Management traffic types
   - Acceleration technologies that can support multiple types of Infrastructure deployments and Network Function workloads 
 -	**Automation**: Enable full automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 -	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open Source networking components such as SDN controllers.
--	**Programmability**: Should enable a programmable forwarding plane controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
--	**Scalability**: Should be scalable to handle all traffic traverse North-South and East-West enabling small to large deployments.
+-	**Programmability**: Should enable a programmable user plane (forwarding plane) controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
+-	**Scalability**: Should be scalable to handle all traffic traverse North-South and East-West enabling small to large deployments in a non-blocking manner.
 - **Workload diversity**: Should be capable to provide connectivity to any type of workloads, including VNF , CNF and BareMetal workloads.
--	**Telco Grade**: Should support deployments with Telco Grade characteristics requirements.
+-	**Telco Grade**: Should support deployments with Telco Grade characteristics.
 -	**Future proof**: Should support known and emerging technology trends e.g. SmartNICs, FPGAs and Programmable Switches, multi-cloud aspects (public/private/hybrid), multi-location aspects (multi-cluster, DCI, etc), Edge realted technologies, etc.
-- **Dimensionability**: Should support network design in a way that the network is capable to handle the traffic in a non-blocking manner without swapping out the leaf switches.
 
 <a name="5.1.3"></a> 
 ### Network Layering and Concepts
