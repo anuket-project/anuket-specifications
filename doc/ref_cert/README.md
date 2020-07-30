@@ -14,7 +14,7 @@ If there is no clear traceability and strong links between these 3 components, t
 
 * Enable clear progress tracking and linkage between independent projects (i.e. know what has and hasn't been covered, and track changes over time)
 * Help users better understand mandatory requirements
-* Provide a stable set of point-in-time requirements and tests to achieve conformance.  
+* Provide a stable set of point-in-time requirements and tests to achieve conformance
 * Reduce ambiguity in testing, requirements, and conformance
 
 
