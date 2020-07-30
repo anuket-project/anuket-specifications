@@ -1,3 +1,9 @@
+# © 2020 Nokia
+#
+# Licensed under the Apache License 2.0
+#
+# SPDX-License-Identifier: Apache-2.0
+
 ###
 # A sphinx extension to support the relative linking of html files.
 # Inspired by and partly copyed from 
