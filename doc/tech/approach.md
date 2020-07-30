@@ -85,7 +85,7 @@ This section introduces some networking related principles that should be follow
 - **Agnosticity** : Define Network Fabric concepts and models that can carry any type of traffic in terms of:
   - Control, User and Management traffic types
   - Acceleration technologies that can support multiple types of Infrastructure deployments and Network Function workloads 
--	**Automation**: Enable full automation, from Physical Fabric installation and provisioning to automation of VNF/CNF onboarding.
+-	**Automation**: Enable full automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 -	**Openness**: All Networking is based on open source or standardized APIs (NBI and SBI) and should enable integration of Open Source networking components (e.g. SDN controllers).
 -	**Programmability**: Should enable a programmable forwarding plane controlled from a separately deployed control plane that abstracts into standardized functions and interfaces.
 -	**Scalability**: Should be scalable to handle all traffic traverse North-South and East-West enabling small up to large deployments.
