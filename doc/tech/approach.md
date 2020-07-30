@@ -78,7 +78,7 @@ To address the concern areas detailed above the specific topics listed below wil
 <a name="5.1.2"></a>
 ### 5.1.2 Networking Principles & Strategy
 
-This section introduces some networking related principles that should be followed during development and definition of Networking scopes for Reference Model, Reference Architecture 01 (OpenStack), Reference Architecture 02 (K8s) and down to Reference Implementations and Reference Conformance test suites under CNTT.
+This section introduces some networking related principles that should be followed during the development and definition of the networking scope for Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
 -	**Abstraction**: A standardized layer between Virtualisation Layer domains and the Networking Hardware Layer resource pool hiding the implementation details of the Networking Hardware.
 > **Note:** Abstraction may be deployed in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementions of pipeline stages and available platforms. This includes Network Functions running on server nodes with or without programmable hardware acceleration, or networking support functions running on programmable network switches in the network.
@@ -217,4 +217,3 @@ The example is or will be a common scenario for operators that modernise their n
 
 <p align="center"><img src="./figures/RM_NW_Concepts_Layering-RMNW_DeploymentExample-PA7.jpg" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
 <p align="center"><b>Figure 5-1-5-3:</b> Networking Reference Model deployment example</p>
-
