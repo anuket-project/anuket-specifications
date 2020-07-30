@@ -98,17 +98,17 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 
 <a name="3.2.3"></a>
 ### 3.2.3 Storage
-A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host.
 
-_**Example**: an OpenStack cinder volume._
+Storage resources have the following attributes:
 
-| Attribute      | Description                                                              |
-|----------------|--------------------------------------------------------------------------|
-| `name`         | name of storage resources                                                |
-| `size`         | size of disc in GB                                                       |
-| `attachments`  | list of compute hosts to which the device is currently attached          |
-| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
-| `metadata`     | key/value pairs for selection of the appropriate redundancy domain       |
+| Attribute           | Description                                                              |
+|---------------------|--------------------------------------------------------------------------|
+| `name`              | name of storage resources                                                |
+| `data availibilty`  | persistent or ephemral                                                   |  
+| `performance`       | low latency, IOPS oriented, capacity oriented                            |
+| `enhanced features` | replication, encryption                                                  |
+| `type`              | block, object or file                                                    |
+| `size`              | size of disc in GB                                                       |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
