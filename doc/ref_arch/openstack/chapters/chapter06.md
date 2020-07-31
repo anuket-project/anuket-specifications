@@ -107,7 +107,7 @@ All infrastructure should undergo system hardening, establishes processes to gov
 #### 6.3.2.1 Password policy
 For all infrastructure components, passwords must be hardened and a strict password policy must be applied (req.sec.gen.002).
 
-Passwords must be strengthen:
+Passwords must be strengthened:
 -	All vendors default passwords must be changed
 -	Passwords must contain at least 8 characters
 -	Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
