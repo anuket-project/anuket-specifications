@@ -104,10 +104,23 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 ### 6.3.2 System Hardening
 All infrastructure should undergo system hardening, establishes processes to govern the hardening, and documents to cover at a minimal for the following areas:
 
-#### 6.3.2.1 Function
+#### 6.3.2.1 Password policy
+For all infrastructure components, passwords must be hardened and a strict password policy must be applied (req.sec.gen.002).
+
+Passwords must be strengthen:
+-	All vendors default passwords must be changed
+-	Passwords must contain at least 8 characters
+-	Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
+
+For passwords updates, the identity of users must be verified before providing new passwords.
+
+Passwords must be securely stored and transmit in an encrypted format. Password files must be stored separately from application system data.
+
+
+#### 6.3.2.2 Function and Software
 Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
 
-#### 6.3.2.2 Software
+Regarding software:
 - Install only software which is required to support the functions
 - Remove any unnecessary software or packages
 - Where software cannot be removed, disable all service to it
