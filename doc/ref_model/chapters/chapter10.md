@@ -42,7 +42,12 @@ This section addresses major open issues identified in the development of the Re
 
 ## 10.3.1 Discovery
 The workloads (VNFs/CNFs) and Cloud Infrastructure should be able to discover each other and exchange their capabilities required or offered. One of the key pain points for most of the operators is the VNF/CNF onboarding - both in terms of time and complexity. It could take weeks or months to onboard a VNF/CNF. There are lots of static and laborious checks performed to ensure the compatibility of the workloads with the corresponding Cloud Infrastructure. 
-The onboarding of the workloads (network functions) should be as much automated as possible. The CNTT conformant workloads and Cloud Infrastructure should be able to discover and negotiate their capabilities. Following should be supported: Cloud Infrastructure should be able to publish the capabilities it offers to workloads (network functions) and workloads should be able to query the Cloud Infrastructure for specific capabilities - such as number of cores, performance parameters. Negotiation/Hand Shake API - VNFs and NFVIs should be able to negotiate on certain capabilities. For instance, VNF desires HW acceleration for high throughput, but should be able to fall back to high throughput offered by NFVI via DPDK offering, and vice-a-versa.
+The onboarding of the workloads (network functions) should be automated as much as possible. The workloads and Cloud Infrastructure should be able to discover and negotiate their capabilities. Following should be supported: 
+- Capabilities Discovery and Advertising
+    - Cloud Infrastructure should be able to publish the capabilities it offers to workloads (network functions) 
+    - workloads should be able to query the Cloud Infrastructure for specific capabilities - such as number of cores, performance parameters
+- Capabilities Negotiation/Hand Shake API: 
+    - workloads and Cloud Infrastructure should be able to negotiate on certain capabilities. For instance, workload desires HW acceleration for high throughput, but should be able to fall back to high throughput offered by Cloud Infrastructure via DPDK offering, and vice-a-versa.
 
 ## 10.3.2 Support Load Balance of VNF/CNFs [Initial language]
 Ability to load balance workflows through multiple instances of same VNF or CNF - e.g. using ECMP to distribute workloads through the multiple instances of Firewall. As an example imagine a distributed finance application with multiple instances of Web-tier and DB-tier. The traffic needs to flow through multiple instances of Firewall (for HA as well load balancing). There is no simple way to accomplish this in OpenStack.
