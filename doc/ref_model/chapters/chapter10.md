@@ -49,7 +49,7 @@ The onboarding of the workloads (network functions) should be automated as much 
 - Capabilities Negotiation/Hand Shake API: 
     - workloads and Cloud Infrastructure should be able to negotiate on certain capabilities. For instance, workload desires HW acceleration for high throughput, but should be able to fall back to high throughput offered by Cloud Infrastructure via DPDK offering, and vice-a-versa.
 
-## 10.3.2 Support Load Balance of VNF/CNFs [Initial language]
+## 10.3.2 Support Load Balance workloads (VNF/CNFs) [Initial language]
 Ability to load balance workflows through multiple instances of same VNF or CNF - e.g. using ECMP to distribute workloads through the multiple instances of Firewall. As an example imagine a distributed finance application with multiple instances of Web-tier and DB-tier. The traffic needs to flow through multiple instances of Firewall (for HA as well load balancing). There is no simple way to accomplish this in OpenStack.
 
 ## 10.3.3 Service Function Chain [Initial language]
