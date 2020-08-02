@@ -52,3 +52,6 @@ Over the past few years there has been a significant move towards decomposing ne
 ## 10.3.4 Packet Acceleration Request (e.g Hardware Acceleration) [Initial language]
 While generic server hardware capabilities can be exclusively used for handling networking related workloads, this strategy is neither performant nor energy efficient. There are several forms of accelerators such as smart NICs, programmable networking fabrics/switches, and GPUs that can offload some of these workloads in order to provide higher throughput, energy efficiency and lower latency. The acceleration hardware is typically optimized for specific kinds of workloads and some form of disaggregation might be required to separate control and user plane responsibilities between generic server hardware and accelerators. There is also a need for workload orchestration to be able to understand the packet acceleration needs of specific workloads and schedule such workloads on infrastructure with the requisite capabilities.
 
+## 10.3.5 Public and Multi-Cloud (Initial language)
+The framework offered by OpenStack does not support multi-cloud deployments, along with the core deployments
+
