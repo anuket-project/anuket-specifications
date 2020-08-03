@@ -41,7 +41,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
     >_*Note:*_ Can be used to specify VM Instance or Container Instance.
 
 - **Network Function (NF):**  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
-  - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Cloud Native NF**.
+  - Within **NFV**, a **Network Function** is implemented in a form of **Virtualised NF** (VNF) or a **Cloud Native NF** (CNF).
 
 
 - **Network Function Virtualisation (NFV):** The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
