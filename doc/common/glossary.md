@@ -27,7 +27,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Cloud Infrastructure Software Configuration:** a set of settings (Key:Value) that are applied/mapped to **cloud infrastructure** SW deployment.
 
-- **Cloud Infrastructure Software Profile:** defines the behaviour, capabilities and metrics provided by a cloud infrastructure Software Layer
+- **Cloud Infrastructure Software Profile:** defines the behaviour, capabilities and metrics provided by a Cloud Infrastructure Software Layer.
 
 - **Cloud Native Network Function (CNF):** A cloud native network function (CNF) is a cloud native application that implements network functionality. A CNF consists of one or more microservices and has been developed using Cloud Native Principles including immutable infrastructure, declarative APIs, and a “repeatable deployment process”.
   >_*Note:*_ This definition is derived from the [Cloud Native Thinking for Telecommunications Whitepaper](https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4), which also includes further detail and examples.
