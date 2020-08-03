@@ -112,7 +112,7 @@ Passwords must be strengthened:
 -	Passwords must contain at least 8 characters
 -	Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
 
-For passwords updates, the identity of users must be verified before providing new passwords.
+For passwords updates, the identity of users must be verified before permitting a password change.
 
 Passwords must be securely stored and transmit in an encrypted format. Password files must be stored separately from application system data.
 
