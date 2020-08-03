@@ -40,13 +40,13 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Instance:** is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server.
     >_*Note:*_ Can be used to specify VM Instance or Container Instance.
 
-- **Network Function (NF):**  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
+- **Network Function (NF):**  functional block or application that has well-defined external interfaces and well-defined functional behaviour.
   - Within **NFV**, a **Network Function** is implemented in a form of **Virtualised NF** (VNF) or a **Cloud Native NF** (CNF).
 
 
 - **Network Function Virtualisation (NFV):** The concept of separating network functions from the hardware they run on by using a virtual hardware abstraction layer.
 
-- **Network Function Virtualisation Infrastructure (NFVI):** The totality of all hardware and software components used to build the environment in which a set of VAs are deployed (also referred to as cloud infrastructure).
+- **Network Function Virtualisation Infrastructure (NFVI):** The totality of all hardware and software components used to build the environment in which a set of virtual applications (VAs) are deployed; also referred to as cloud infrastructure.
  >_*Note:*_ The NFVI can span across many locations, e.g. places where data centres or edge nodes are operated. The network providing connectivity between these locations is regarded to be part of the cloud infrastructure. **NFVI** and **VNF** are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 
 - **Network Service (NS):** composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
@@ -65,14 +65,14 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Virtual resources:**
   - **Virtual Compute resource (a.k.a. virtualisation container):** partition of a compute node that provides an isolated virtualised computation environment.
-  - **Virtual Storage resource:** virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
-  - **Virtual Networking resource:** routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
+  - **Virtual Storage resource:** virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**.
+  - **Virtual Networking resource:** routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity.
 
 
 - **Workload:** Workload refers to software running on top of compute resources such as **VMs** or **Containers**. Most relevant workload categories in context of cloud infrastructure are:
-  - **Data Plane Workloads:** are related to packet handling of the end-to-end communication between applications. These tasks are expected to be very I/O and memory read/write operations intensive.
-  - **Control Plane Workloads:** are the task related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. For example, this category includes session management, routing or authentication.
-  - **Storage Workloads:** are all tasks related to disk storage (either SSD or HDD or other).  Examples range from non-intensive router logging to more intensive database read/write operations.
+  - **Data Plane Workloads:** related to packet handling of the end-to-end communication between applications. These tasks are expected to be very I/O and memory read/write operations intensive.
+  - **Control Plane Workloads:** that perform tasks related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. For example, this category includes session management, routing or authentication.
+  - **Storage Workloads:** that perform tasks related to disk storage (either SSD or HDD or other).  Examples range from non-intensive router logging to more intensive database read/write operations.
 
 <a name="1.2"></a>
 ## Hardware Layer Terminology
@@ -102,9 +102,9 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **External Network:** External networks provide network connectivity for a cloud infrastructure tenant to resources outside of the tenant space.
 
-- **Multi-tenancy:** feature where physical, virtual or service resources are allocated in such a way that multiple tenants and their computations and data are isolated from and inaccessible by each another. ([ETSI](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/003/01.04.01_60/gs_nfv003v010401p.pdf))
+- **Multi-tenancy:** feature where physical, virtual or service resources are allocated in such a way that multiple tenants and their computations and data are isolated from and inaccessible by each other ([ETSI](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/003/01.04.01_60/gs_nfv003v010401p.pdf)).
 
-- **Quota:** An imposed upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
+- **Quota:** An imposed upper limit on specific types of resources, usually used to prevent excessive resource consumption by a given consumer (tenant, VM, container).
 
 - **Resource pool:** A logical grouping of cloud infrastructure hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **Cloud Infrastructure** resource can be part of none, one or more resource pools.
 
@@ -147,7 +147,7 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 - **Pod:**	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
 
 Terms not defined by Kubernetes:
-- **CaaS:**	Container-as-a-Service. A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
+- **Container-as-a-Service (CaaS)**: A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
 
 - **CaaS Manager:**	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
 
@@ -179,7 +179,7 @@ Terms not defined by Kubernetes:
 <a name="1.6"></a>
 ## Cloud Platform Abstraction Related Terminology:
 
-- **Abstraction:** Process of removing smaller details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)), [Wikipedia:Generalization](https://en.wikipedia.org/wiki/Generalization))
+- **Abstraction:** Process of removing concrete, fine-grained or lower level details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be the result of decoupling. ([Wikipedia:Abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)), [Wikipedia:Generalization](https://en.wikipedia.org/wiki/Generalization))
 
 - **Appliance deployment model:** Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
 
