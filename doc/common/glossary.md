@@ -35,7 +35,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Compute flavour:** defines the sizing of the virtualised resources (compute, memory, and storage) required to run a workload.
      >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
 
-- **Hypervisor:** A piece of software with management components that allows the user to partition the underlying physical resources and allocate them to Virtual Machines. Typically, the hypervisor is managed by a cloud management software such as OpenStack.
+- **Hypervisor:** a software that abstracts and isolates workloads with their own operating systems from the underlying physical resources. Also known as a virtual machine monitor (VMM).
 
 - **Instance:** is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server.
     >_*Note:*_ Can be used to specify VM Instance or Container Instance.
@@ -55,9 +55,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
   >_*Note:*_ a **VNF** is one type of VA.
 
 - **Virtual Machine (VM):** virtualised computation environment that behaves like a physical computer/server.
-  >_*Note:*_ A **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour.  
-
-- **Virtual Machine instances Catalogue:** Pre-defined instance types and compute flavours.  
+  >_*Note:*_ A **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using sizing information or Compute Flavour.
 
 - **Virtual Network Function (VNF):** a software implementation of a **Network Function**, capable of running on the **Cloud Infrastructure**.
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
@@ -77,11 +75,10 @@ To help guide the reader, this glossary provides an introduction to the terminol
 <a name="1.2"></a>
 ## Hardware Layer Terminology
 
+- **Cloud Infrastructure Hardware Configuration:** a set of settings (Key:Value) that are applied/mapped to **Cloud Infrastructure** HW deployment.
+
 - **Cloud Infrastructure Hardware Profile:** defines the behaviour, capabilities and metrics provided by an cloud infrastructure Hardware Layer.
   - **Host Profile:** is another term for a **cloud infrastructure hardware profile**.
-
-
-- **Cloud Infrastructure Hardware Configuration:** a set of settings (Key:Value) that are applied/mapped to **Cloud Infrastructure** HW deployment.
 
 - **Hardware resources:** Compute/Storage/Network hardware resources on which the cloud infrastructure platform software, virtual machines and containers run on.
 
@@ -137,7 +134,7 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 
 - **Kubernetes Control Plane:**	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
 
-- **Kubernetes Master:**	The master node(s) manage the worker nodes and the pods in the cluster. Multiple masters are used to provide a cluster with failover and high availability.
+- **Kubernetes Master:** Master(s) manage the worker nodes and the Pods in the cluster. The master may run on a **VM** or a physical machine. Multiple masters can be used to provide a cluster with failover and high availability.
 
 - **Kubernetes Node:**	A node is a worker machine in Kubernetes. A worker node may be a **VM** or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
 
