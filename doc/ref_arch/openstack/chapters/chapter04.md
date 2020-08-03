@@ -38,7 +38,7 @@ This chapter delves deeper into the capabilities of these different resources an
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
 In OpenStack, KVM is configured as the default hypervisor for compute nodes. 
-- Configuration: [OpenStack](https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
+- Configuration: [OpenStack](https://docs.openstack.org/nova/train/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
     - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
   -	Configure Compute backing storage
@@ -226,7 +226,7 @@ If we wish to dedicate specific cores for host processing we need to consider tw
     1. Require dedicated cores for Guest resources
     2. No dedicated cores are required for Guest resources
 
-Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Pike release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
+Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Train release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
 
 Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vcpus numbered '0' and '20', '1' and '21', etc. are siblings:
 
@@ -422,9 +422,9 @@ Octavia supports provider drivers which allows third-party load balancing driver
 #### 4.2.3.4. Neutron Extensions
 OpenStack Neutron is an extensible framework that allows incorporation through plugins and API Extensions. API Extensions provides a method for introducing new functionality and vendor specific capabilities. Neutron plugins support new or vendor-specific functionality. Extensions also allow specifying new resources or extensions to existing resources and the actions on these resources.  Plugins implement these resources and actions.
 
-CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/pike/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
+CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
-Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/pike/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
+Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
 
 [Chapter 5](chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions](chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
 
@@ -554,7 +554,7 @@ With DVR, each compute node also hosts the L3-agent (providing the distributed r
 
 The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation. 
 
-DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/pike/admin/config-dvr-ha-snat.html) addresses this vulnerability. 
+DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/train/admin/config-dvr-ha-snat.html) addresses this vulnerability. 
 
  
 **Software Defined Networking (SDN)**
@@ -617,7 +617,7 @@ The OpenStack Placement service enables tracking (or accounting) and scheduling 
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
 
 #### 4.3.1.11 Barbican
-[Barbican](https://docs.openstack.org/barbican/pike/admin/index.html) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
+[Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
 
 Barbican usage provides a means to fulfill security requirements such as req.sec.zon.02 “The Architecture must support password encryption” and req.sec.zon.03 “The Architecture must support data, at-rest and in-flight, encryption”.
 

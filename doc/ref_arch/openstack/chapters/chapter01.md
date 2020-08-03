@@ -59,7 +59,7 @@ This OpenStack Reference Architecture is organised around the three major NFVI r
 <a name="1.5"></a>
 ## 1.5 CNTT OpenStack Reference Release
 
-This Reference Architecture document in its current version conforms to the OpenStack Pike release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Pike."
+This Reference Architecture document in its current version conforms to the [OpenStack Train](https://docs.openstack.org/train/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Train."
 
 <a name="1.6"></a>
 ## 1.6 Document Organisation
