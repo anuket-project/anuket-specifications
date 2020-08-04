@@ -72,12 +72,6 @@ A pharos compliant OPNFV test-bed provides:
     between storage nodes.
   * OpenStack Management (Management): Used for internal communication between OpenStack Components.
 
-For the purpose of this RI, the following diagram illustrates the networks and node connectivity.
-
-<img src="../figures/ch04_opnfv_lab_topology.jpg" title="OPNFV Pharos Lab Topology">
-
-
-<a name="9.2.2"></a>
 ### 9.2.2 Hardware Specification
 
 CPU:
