@@ -156,11 +156,13 @@ In order for the networking solution(s) to be conformant with the Reference Arch
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ntw.001`|CNI multiplexer/metaplugin|As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm).| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
-|`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|[Calico](https://github.com/projectcalico/cni-plugin) may be used based on the requirement `req.inf.ntw.08` due to it's capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ntw.003`|NAT less connectivity|IPVLAN CNI component of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used||
-|`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
-|`ra2.ntw.005`|SR-IOV|SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) may be used||
+|`ra2.ntw.001`|CNI multiplexer/metaplugin|As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin must be [DANM](https://github.com/nokia/danm).| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
+|`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|[Calico](https://github.com/projectcalico/cni-plugin) must be used based on the requirement `req.inf.ntw.08` due to it's capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.003`|NAT less connectivity|IPVLAN CNI component of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) must be used||
+|`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
+|`ra2.ntw.005`|SR-IOV|[SR-IOV CNI plugin](https://github.com/intel/sriov-cni) must be used||
+|`ra2.ntw.005`|SR-IOV|[SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) must be used||
+
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
 
