@@ -232,27 +232,27 @@ Normalization of the integration reference points between different layers of th
 
 Principles that should be followed during the development and definition of the networking scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
-• Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
+* Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
 
 > **Note:**  In deployment phases this principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementations of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
 
-•Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
-    Control, User and Management traffic types
-    Acceleration technologies supporting multiple types of infrastructure deployments and network function workloads
-    
-•Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workload onboarding.
+* Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+  * Control, User and Management traffic types
+  * Acceleration technologies that can support multiple types of infrastructure deployments and network function workloads
 
-•Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components (e.g. SDN controllers).
+* Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 
-•Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
+* Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components such as SDN controllers.
 
-•Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments.
+* Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
 
-•Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
+* Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments in a non-blocking manner.
 
-•Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
+* Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
 
-•Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
+* Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
+
+* Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
 
 <a name="3.6"></a>
 ## 3.6 Sample reference model realization
