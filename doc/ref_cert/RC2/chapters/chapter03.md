@@ -75,4 +75,16 @@ This section focuses on the test case covering requirements in [RA-2 Chapter 2.3
 
 
 
+<a name="3.4.2"></a>
+### 3.4.2 TC Mapping to Requirements
+
+> Example with minimal details
+> 
+
+| Test Case | Requirement | 
+|---|---|
+| [DaemonSet-RollingUpdate](https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.15.md#daemonset-rollingupdate) | sec.lcm.004  	The Cloud Operator should support automated templated approved changes | 
+| [Deployment DaemonSet-RollingUpdate](https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.15.md#deployment-rollingupdate) | sec.lcm.004  	The Cloud Operator should support automated templated approved changes | 
+
+
 
