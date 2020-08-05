@@ -102,7 +102,7 @@ At a high level, the following areas/requirements cover platform security for a 
 * Secure access controls for administrators
 * Secure API interface for Tenants
 * Encryption for all external and control comms
-* Strong separation between tenants - ensuring network, data, memory and runtime process (CPU running core) isolation between tenants, [rep.sec.ci.006](./chapter07.md#7113-confidentiality-and-integrity)
+* Strong separation between tenants - ensuring network, data, memory and runtime process (CPU running core) isolation between tenants, [req.sec.ci.006](./chapter07.md#7113-confidentiality-and-integrity)
 * Authenticated/secure APIs provided to overlay network administrators
 * Platform change control on hardware
 * Templated approved changes for automation where available
@@ -667,4 +667,3 @@ NIST SP 800-137 Information Security Continuous Monitoring for Federal Informati
 NIST SP 800-145 The NIST Definition of Cloud Computing https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
 
 NIST SP 800-190 Application Container Security Guide [https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf)
-
