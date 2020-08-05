@@ -625,7 +625,7 @@ Containers are lightweight compared to Virtual Machines and leads to efficient r
 
 In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-7.
 
-<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"><br>Figure 4-7: Containerised OpenStack Services Topology.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"><b>Figure 4-7: Containerised OpenStack Services Topology.</b></p>
 
 
 <a name="4.4"></a>
