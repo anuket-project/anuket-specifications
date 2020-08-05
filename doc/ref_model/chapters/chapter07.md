@@ -25,7 +25,7 @@
   * [7.5.9 Encryption suite supports](#7.5.9)
   * [7.5.10 Password complexity support](#7.5.10)
   * [7.5.11 Customized Banner](#7.5.11)
- * [7.6 Workload Security- Operator Responsibility](#7.6)
+* [7.6 Workload Security- Operator Responsibility](#7.6)
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
   * [7.6.2 VNF Image Scanning / Signing](#7.6.2)
 * [7.7 VNF Vendors responsibility](#7.7)
@@ -71,7 +71,7 @@ The scope of the security controls requirements maps to the scope of the Referen
 The Reference Model scope is shown below (as outlined in chapter 1 of the reference model):
 
 <p align="center"><img src="../figures/ch09-etsi-nfv-architecture-mapping.png" alt="ETSI NFV architecture mapping" title="ETSI NFV architecture mapping" width="100%"/></p>
-<p align="center"><b>Figure 7-2:</b> ETSI NFV architecture mapping</p>
+<p align="center"><b>Figure 7-1:</b> ETSI NFV architecture mapping</p>
 
 This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
 
@@ -81,7 +81,7 @@ This means that the security of the Reference Model requirements must cover the 
 The following diagram shows the different security domains that impact the Reference Model:
 
 <p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
-<p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
+<p align="center"><b>Figure 7-2:</b> Reference Model Security Domains</p>
 
 <a name="7.3.2.1"></a>
 #### 7.3.2.1 Platform security requirements
@@ -123,7 +123,7 @@ The security certification of the platform will typically need to be the same, o
 The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
 <p align="center"><img src="../figures/ch7-data-access-model.png" alt="Overview" title="Access Controls" width="100%"/></p>
-<p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
+<p align="center"><b>Figure 7-3:</b> Reference Model Access Controls</p>
 
 <a name="7.4.1.1"></a>
 #### 7.4.1.1 The high-level functions of these different access controls
@@ -294,8 +294,6 @@ The application vendors need to incorporate security elements to support the hig
 * Network interfaces
 * Management and controller systems used to support the VNFs directly, examples include a SIEM system or a SD WAN policy manager
 * Regulatory compliance failure as it relates to the application itself only
-
-Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
 
 <a name="7.8"></a>
 ## 7.8 Cloud Infrastructure vendors and Cloud Infrastructure Manager vendors responsibility
