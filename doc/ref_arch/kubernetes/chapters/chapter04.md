@@ -161,7 +161,7 @@ In order for the networking solution(s) to be conformant with the Reference Arch
 |`ra2.ntw.003`|NAT less connectivity|IPVLAN CNI component of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) must be used||
 |`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
 |`ra2.ntw.005`|SR-IOV|[SR-IOV CNI plugin](https://github.com/intel/sriov-cni) must be used||
-|`ra2.ntw.005`|SR-IOV|[SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) must be used||
+|`ra2.ntw.006`|SR-IOV|[SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) must be used||
 
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
