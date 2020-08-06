@@ -156,15 +156,37 @@ In order for the networking solution(s) to be conformant with the Reference Arch
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ntw.001`|CNI multiplexer/metaplugin|As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin must be [DANM](https://github.com/nokia/danm).| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
-|`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|[Calico](https://github.com/projectcalico/cni-plugin) must be used based on the requirement `req.inf.ntw.08` due to it's capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ntw.003`|NAT less connectivity|IPVLAN CNI component of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) must be used||
+|`ra2.ntw.001`|CNI multiplexer/metaplugin|As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin must be [DANM](https://github.com/nokia/danm). For more detailed feature comparision of CNI multiplexers/metaplugins see Table 4-5| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
+|`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|A CNI plugin must be used which implements the Kubernetes network model and have capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.003`|NAT less connectivity|An IPVLAN CNI plugin or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) must be used||
 |`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) must be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
 |`ra2.ntw.005`|SR-IOV|[SR-IOV CNI plugin](https://github.com/intel/sriov-cni) must be used||
 |`ra2.ntw.006`|SR-IOV|[SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) must be used||
 
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
+
+
+| Requirement | Support in Multus | Support in DANM |
+|-------------|-------------------|-----------------|
+| The overlay network encapsulation protocol needs to enable ECMP in the underlay (`infra.net.cfg.002`) | Supported via another CNI plugin | Supported via another CNI plugin |
+| NAT (`infra.net.cfg.003`) | Supported via another CNI plugin | Supported |
+| Security Groups (`infra.net.cfg.004`) | Not supported | Not supported <sub>1)<sub> |
+| SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant |
+| Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant |
+| Network resiliency (`req.inf.ntw.01`) | Supported | Supported |
+| Centrally administrated and configured (`req.inf.ntw.03`) | Not supported | Partially suported |
+| Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via another CNI plugin | Suported |
+| Integrating SDN controllers (`req.inf.ntw.05`) | Supported via another CNI plugin | Supported via another CNI plugin |
+| More than one networking solution (`req.inf.ntw.06`) | Supported | Supported |
+| Choose whether or not to deploy more than one networking solution (`req.inf.ntw.07`) | Supported | Supported |
+| Kubernetes network model (`req.inf.ntw.08`) | Supported via another CNI plugin | Supported via another CNI plugin |
+| Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported |
+| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via another CNI plugin | Supported |
+
+<p align="center"><b>Table 4-5:</b> Comparision of CNI multiplexers/metaplugins</p>
+
+1): Under implementation in the current release.  
 
 <a name="4.6"></a>
 ## 4.6 Storage components
@@ -178,7 +200,7 @@ In order for the storage solution(s) to be conformant with the Reference Archite
 |`ra2.stg.003`||||
 |`ra2.stg.004`||||
 
-<p align="center"><b>Table 4-5:</b> Storage Solution Specifications</p>
+<p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
 
 <!--
 > THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
@@ -232,7 +254,7 @@ In order for the storage solution(s) to be conformant with the Reference Archite
 |---|---|---|---|
 |`ra2.pkg.001`|API-based package management|A package manager must use the Kubernetes APIs to manage application artefacts. Cluster-side components such as Tiller are not supported.|[req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements)|
 
-<p align="center"><b>Table 4-6:</b> Kubernetes Application Package Management Specifications</p>
+<p align="center"><b>Table 4-7:</b> Kubernetes Application Package Management Specifications</p>
 
 <a name="4.9"></a>
 ## 4.9 Kubernetes workloads
@@ -246,7 +268,7 @@ In order for the Kubernetes workloads to be conformant with the Reference Archit
 |`ra2.app.003`||||
 |`ra2.app.004`||||
 
-<p align="center"><b>Table 4-7:</b> Kubernetes Workload Specifications</p>
+<p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 <a name="4.10"></a>
 ## 4.10 Additional required components
