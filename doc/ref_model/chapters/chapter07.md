@@ -4,48 +4,40 @@
 
 ## Table of Contents
 * [7.1 Introduction](#7.1)
-* [7.2 Principles and Guidelines](#7.2)
-  * [7.2.1 Overarching Objectives and Goals](#7.2.1)
-  * [7.2.2 Verification Methodologies](#7.2.2)
-  * [7.2.3 Governance](#7.2.3)
-* [7.3 Security Scope](#7.4)
-  * [7.3.1 In-scope and Out-of-Scope definition](#7.4.1)
-  * [7.3.2 Security requirements](#7.4.2)
-  * [7.3.3 Platform security requirements](#7.4.3)
-  * [7.3.4 Workload security requirements](#7.4.4)
-  * [7.3.5 Certification/validation requirements](#7.4.5)
-* [7.4 Common standards](#7.3)
-  * [7.4.1 Potential attack vectors](#7.3.1)
-  * [7.4.2 Testing demarcation points](#7.3.2)
-* [7.5 Platform Security](#7.5)
-  * [7.5.1 General Platform Security](#7.5.1)
-  * [7.5.2 Platform ‘back-end’ access security](#7.5.2)
-  * [7.5.3 Platform ‘front-end’ access security](#7.5.3)
-  * [7.5.4 Platform Patching](#7.5.4)
-* [7.6 Workload Security - Vendor Responsibility](#7.6)
-  * [7.6.1 Software Hardening](#7.6.1)
-  * [7.6.2 Port Protection](#7.6.2)
-  * [7.6.3 Software Code Quality](#7.6.3)
-  * [7.6.4 Alerting and Monitoring](#7.6.4)
-  * [7.6.5 Logging](#7.6.5)
-  * [7.6.6 VNF images](#7.6.6)
-  * [7.6.7 Identity and Access Management](#7.6.7)
-  * [7.6.8 CVEs and Vulnerability Management](#7.6.8)
-  * [7.6.9 Encryption suite supports](#7.6.9)
-  * [7.6.10 Password complexity support](#7.6.10)
-  * [7.6.11 Customized Banner](#7.6.11)
- * [7.7 Workload Security- Operator Responsibility](#7.7)
-  * [7.7.1 Remote Attestation/openCIT](#7.7.1)
-  * [7.7.2 VNF Image Scanning / Signing](#7.7.2)
-* [7.8 VNF Vendors responsibility](#7.8)
-* [7.9 Cloud Infrastructure Vendors responsibility](#7.9)
-  * [7.9.1 Networking Security Zoning](#7.9.1)
-  * [7.9.2 Encryption](#7.9.2)
-  * [7.9.3 Root of Trust for Measurements (RTM)](#7.9.3)
-  * [7.9.4 Static Root of Trust for Measurements (SRTM)](#7.9.4)
-  * [7.9.5 Dynamic Root of Trust for Measurements (DRTM)](#7.9.5)
-  * [7.9.6 Cloud Infrastructure & Cloud Infrastructure Manager](#7.9.6)
-* [7.10 Certification requirements](#7.10)
+* [7.2 Potential attack vectors](#7.2)
+* [7.3 Security Scope](#7.3)
+  * [7.3.1 In-scope and Out-of-Scope definition](#7.3.1)
+  * [7.3.2 Security requirements](#7.3.2)
+* [7.4 Platform Security](#7.4)
+  * [7.4.1 General Platform Security](#7.4.1)
+  * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
+  * [7.4.3 Platform ‘front-end’ access security](#7.4.3)
+  * [7.4.4 Platform Patching](#7.4.4)
+* [7.5 Workload Security - Vendor Responsibility](#7.5)
+  * [7.5.1 Software Hardening](#7.5.1)
+  * [7.5.2 Port Protection](#7.5.2)
+  * [7.5.3 Software Code Quality](#7.5.3)
+  * [7.5.4 Alerting and Monitoring](#7.5.4)
+  * [7.5.5 Logging](#7.5.5)
+  * [7.5.6 VNF images](#7.5.6)
+  * [7.5.7 Identity and Access Management](#7.5.7)
+  * [7.5.8 CVEs and Vulnerability Management](#7.5.8)
+  * [7.5.9 Encryption suite supports](#7.5.9)
+  * [7.5.10 Password complexity support](#7.5.10)
+  * [7.5.11 Customized Banner](#7.5.11)
+* [7.6 Workload Security- Operator Responsibility](#7.6)
+  * [7.6.1 Remote Attestation/openCIT](#7.6.1)
+  * [7.6.2 VNF Image Scanning / Signing](#7.6.2)
+* [7.7 VNF Vendors responsibility](#7.7)
+* [7.8 Cloud Infrastructure Vendors responsibility](#7.8)
+  * [7.8.1 Networking Security Zoning](#7.8.1)
+  * [7.8.2 Encryption](#7.8.2)
+  * [7.8.3 Root of Trust for Measurements (RTM)](#7.8.3)
+  * [7.8.4 Static Root of Trust for Measurements (SRTM)](#7.8.4)
+  * [7.8.5 Dynamic Root of Trust for Measurements (DRTM)](#7.8.5)
+  * [7.8.6 Cloud Infrastructure & Cloud Infrastructure Manager](#7.8.6)
+* [7.9 Common security standards](#7.9)
+* [7.10 Testing & Certification](#7.10)
 * [7.11 Consolidated Security requirements](#7.11)
   * [7.11.1 System Hardening](#7.11.1)
   * [7.11.2 Platform Access](#7.11.2)
@@ -61,41 +53,38 @@
 <a name="7.1"></a>
 ## 7.1 Introduction
 
+Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world.   The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global Telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
+
 This chapter examines multiple aspects of security as it relates to the platform and security aspects for workloads. After discussing security attack vectors and security standards, this chapter delves into the Platform Security requirements. The chapters culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
 
-## 7.2 Principles and Guidelines
-
-To Be Developed 
-
-
+## 7.2 Potential attack vectors
+Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
 
 <a name="7.3"></a>
 ## 7.3 Security Scope
 
 <a name="7.3.1"></a>
-## 7.3.1 In-scope and Out-of-Scope definition
+### 7.3.1 In-scope and Out-of-Scope definition
 
 The scope of the security controls requirements maps to the scope of the Reference Model architecture.
 
 The Reference Model scope is shown below (as outlined in chapter 1 of the reference model):
 
 <p align="center"><img src="../figures/ch09-etsi-nfv-architecture-mapping.png" alt="ETSI NFV architecture mapping" title="ETSI NFV architecture mapping" width="100%"/></p>
-<p align="center"><b>Figure 7-2:</b> ETSI NFV architecture mapping</p>
+<p align="center"><b>Figure 7-1:</b> ETSI NFV architecture mapping</p>
 
 This means that the security of the Reference Model requirements must cover the virtual resources (including the virtualisation layer), the hardware resources, and the VIM (Virtualised Infrastructure Manager).
 
-There will be a different set of security requirements for each Cloud Infrastructure reference architecture. In this case, the first reference architecture is OpenStack.
-
 <a name="7.3.2"></a>
-## 7.3.2 Security Requirements
+### 7.3.2 Security Requirements
 
 The following diagram shows the different security domains that impact the Reference Model:
 
 <p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
-<p align="center"><b>Figure 7-3:</b> Reference Model Security Domains</p>
+<p align="center"><b>Figure 7-2:</b> Reference Model Security Domains</p>
 
-<a name="7.3.3"></a>
-## 7.3.3 Platform security requirements
+<a name="7.3.2.1"></a>
+#### 7.3.2.1 Platform security requirements
 
 At a high level, the following areas/requirements cover platform security for a particular deployment:
 * Platform certification
@@ -110,8 +99,8 @@ At a high level, the following areas/requirements cover platform security for a 
 * Infrastructure software update process
 * Identity Domain = platform
 
-<a name="7.3.4"></a>
-## 7.3.4 Workload security requirements
+<a name="7.3.2.2"></a>
+#### 7.3.2.2 Workload security requirements
 
 At a high level, the following areas/requirements cover workload security for a particular deployment:
 * Up to platform-level certification
@@ -121,19 +110,260 @@ At a high level, the following areas/requirements cover workload security for a 
 * Workload owner owns workload design change process
 * Workload owner owns workload software update process
 * Identity Domain = workload
+  
 
-<a name="7.3.5"></a>
-## 7.3.5 Certification/validation requirements
-
-    *(An overview/introduction to workload certification requirements and
-    incl types of workloads covered)*
-    
 <a name="7.4"></a>
-## 7.4 Common standards
+## 7.4 Platform Security
 
-Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world.   The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global Telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
+<a name="7.4.1"></a>
+### 7.4.1 General Platform Security
 
-With that in mind, the Cloud Infrastructure reference model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
+The security certification of the platform will typically need to be the same, or higher, than the workload or VNF requirements.
+
+The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
+
+<p align="center"><img src="../figures/ch7-data-access-model.png" alt="Overview" title="Access Controls" width="100%"/></p>
+<p align="center"><b>Figure 7-3:</b> Reference Model Access Controls</p>
+
+<a name="7.4.1.1"></a>
+#### 7.4.1.1 The high-level functions of these different access controls
+
+* **MGNT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
+* **DATA ACCESS CONTROLS** - Control of east-west traffic between workloads, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
+* **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
+* **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
+* **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific workloads to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
+* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as approriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
+
+<a name="7.4.1.2"></a>
+#### 7.4.1.2 The following general security requirements apply to the platform
+
+* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
+* Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
+* Support zoning within a tenant workload - using application-level filtering.
+* All host to host communications within the cloud provider network are to be cryptographically protected in transit.
+* Not expose tenant IP address details to another tenant.
+* Use cryptographically-protected protocols for administrative access to the platform.
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
+* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence that is implemented, and rigourously followed.
+* Processes for managing platform access control filters that are documented, followed, and monitored.
+* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
+* Role-Based Access Control (RBAC) must apply for all platform systems access.
+* An approved system or process for last resort access must exist for the platform.
+* All API access must use TLS protocol.
+* All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
+* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management, and application communication are cryptographically protected in transit between data centre facilities.
+* Continuous cloud security compliance is mandatory.
+* All data persisted to primary, replica, or backup storage is to be encrypted.
+* All platform security logs are to be time synchronised.
+* Logs are to be regularly scanned for events of interest.
+* An incident response plan must exist for the platform.
+* The cloud services must be regularly vulnerability and penetration tested.
+* In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
+
+<a name="7.4.2"></a>
+### 7.4.2 Platform ‘back-end’ access security
+
+* Restrict traffic to only traffic that is necessary, and deny all other traffic.
+* Use cryptographically-protected protocols for administrative access to the platform.
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
+* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence that is implemented, and rigourously followed.
+* Processes for managing platform access control filters that are documented, followed, and monitored.
+* No login to root on any platform systems, when root privileges are not required.
+* Role-Based Access Control (RBAC) must apply for all systems access.
+* An approved system or process for last resort access must exist for the platform.
+* All back-end API access must use TLS.
+* Validate and verify the integrity of resources management requests coming from a higher orchestration layer to the Cloud Infrastructure manager.
+
+<a name="7.4.3"></a>
+### 7.4.3 Platform ‘front-end’ access security
+
+* Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
+* The front-end network may provide (Distributed Denial Of Service) DDOS support.
+
+<a name="7.4.4"></a>
+### 7.4.4 Platform Patching
+
+Cloud Infrastructure operators should ensure that the platform including the components (hypervisors, VMs, etc.) are kept up to date with the latest patch.
+
+<a name="7.5"></a>
+## 7.5 Workload Security - Vendor Responsibility
+
+<a name="7.5.1"></a>
+### 7.5.1 Software Hardening
+
+* No hard-coded credentials/ clear text passwords
+* Software should be independent of the infrastructure platform (no OS point release dependencies to patch)
+* Software is code signed and all individual sub-components are assessed and verified for EULA violations
+* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc)
+
+<a name="7.5.2"></a>
+### 7.5.2 Port Protection
+
+* Unused software and unused network ports should be disabled by default
+
+<a name="7.5.3"></a>
+### 7.5.3 Software Code Quality
+
+* Vendors should use industry recognized software testing suites
+  * Static and dynamic scanning
+  * Automated static code review with remediation of Medium/High/Critical security issues. The tool used for static code analysis and analysis of code being released must be shared.
+  * Dynamic security tests with remediation of Medium/High/Critical security issues. The tool used for Dynamic security analysis of code being released must be shared
+  * Penetration tests (pen tests) with remediation of Medium/High/Critical security issues.
+  * Methodology for ensuring security is included in the Agile/DevOps delivery lifecycle for ongoing feature enhancement/maintenance.
+
+<a name="7.5.4"></a>
+### 7.5.4 Alerting and monitoring
+
+* Security event logging (All security events should be logged, including informational)
+* Privilege escalation detection
+
+  <a name="7.5.5"></a>
+### 7.5.5 Logging
+
+* (Logging output should support customizable Log retention and Log rotation)
+
+  <a name="7.5.6"></a>
+### 7.5.6 VNF images
+
+* Image integrity – fingerprinting/validation
+* Container Images
+  * Container Management
+  * Immutability
+
+<a name="7.5.7"></a>
+### 7.5.7 Identity and Access Management
+
+<a name="7.5.8"></a>
+### 7.5.8 CVEs and Vulnerability Management
+
+* Security defect reporting
+* Cadence with Cloud Infrastructure vendors (OSSA for OpenStack)
+* Component analysis: Mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
+  * Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
+
+<a name="7.5.9"></a>
+### 7.5.9 Encryption suite support
+* Software should support recognized encryption standards and encryption should be decoupled from software
+
+<a name="7.5.10"></a>
+### 7.5.10 Password complexity support
+
+* Software should support configurable, or industry standard, password complexity rules
+
+ <a name="7.5.11"></a>
+### 7.5.11 Banner
+
+* Software should have support for configurable banners to display authorized use criteria/policy
+
+<a name="7.6"></a>
+## 7.6 Workload Security  - Operator Responsibility.
+
+The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective.   This includes but is not limited to securing the following elements:
+
+* Maintaining standard security operational management methods and processes
+* Monitoring and reporting functions
+* Processes to address regulatory compliance failure
+* Support for appropriate incident response and reporting
+* Methods to support appropriate remote attestation certification of the validity of the security components, architectures, and methodologies used
+
+<a name="7.6.1"></a>
+### 7.6.1 Remote Attestation/openCIT
+
+Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
+
+Insert diagram here:
+https://01.org/sites/default/files/users/u26957/32_architecture.png
+
+<a name="7.6.2"></a>
+### 7.6.2 Workload Image Scanning / Signing
+
+It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the VNF operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
+
+Use of Image scanners such as OpenSCAP to determine security vulnerabilities is strongly recommended.
+
+<a name="7.7"></a>
+## 7.7 Application Vendors responsibility
+
+The application vendors need to incorporate security elements to support the highest level of security of the networks they support.  This includes but is not limited to securing the following elements:
+
+* Operating system or container
+* Application
+* Network interfaces
+* Management and controller systems used to support the VNFs directly, examples include a SIEM system or a SD WAN policy manager
+* Regulatory compliance failure as it relates to the application itself only
+
+<a name="7.8"></a>
+## 7.8 Cloud Infrastructure vendors and Cloud Infrastructure Manager vendors responsibility
+
+The Cloud Infrastructure vendors and Cloud Infrastructure Manager vendors need to ensure security of the infrastructure they support and manage. 
+
+<a name="7.8.1"></a>
+### 7.8.1 Networking Security Zoning
+
+Network segmentation is important to ensure that VMs can only communicate with the VMs they are supposed to. To prevent a VM from impacting other VMs or hosts, it is a good practice to separate VM traffic and management traffic. This will prevent attacks by VMs breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, VMs of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
+
+Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
+
+<a name="7.8.2"></a>
+### 7.8.2 Volume Encryption
+
+Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
+
+
+<a name="7.8.3"></a>
+### 7.8.3 Root of Trust for Measurements (RTM)
+
+The sections that follow define mecahnisms to ensure the integrity of the infrastructure pre-boot and post-boot (running). The following defines a set of terms used in those sections.
+
+-  The hardware root of trust helps with the pre-boot and post-boot security issues. 
+
+-  Unified Extensible Firmware Interface (UEFI) adheres to standards defined by an industry consortium. Vendors (hardware, software) and solution providers collaborate to define common interfaces, protocols and  structures for computing  platforms.
+
+-  Platform Configuration Register (PCR) is a memory location in the TPM used to store TPM Measurements (hash values generated by the SHA-1 standard hashing algorithm). PCRs are cleared only on TPM reset. UEFI dfines 24 PCRs of which the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
+
+-  Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
+
+-  Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
+
+-  Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section [7.7.1 Remote Attestation/openCIT](#7.7.1) 
+
+Values stored in a PCR cannot be reset (or forged) as they can only be extended. Whenever a measurement is sent to a TPM, the hash of the concatenation of the current value of the PCR and the new measurement is stored in the PCR. The PCR values are used to encrypt data.  If the proper environment is not loaded which will result in different PCR values, the TPM will be unable to decrypt the data.  
+ 
+<a name="7.8.4"></a>
+### 7.8.4 Static Root of Trust for Measurement (SRTM)
+
+Static RTM (SRTM) begins with measuring and verifying the integrity of the BIOS firmware. It then measures additional firmware modules, verifies their integrity, and adds each component’s measure to an SRTM value. The final value represents the expected state of boot path loads. SRTM stores results as one or more values stored in PCR storage. In SRTM, the CRTM resets PCRs 0 to 15 only at boot.
+
+Using a Trusted Platform Module (TPM), as a hardware root of trust, measurements of platform components, such as firmware, bootloader, OS kernel, can be securely stored and verified.
+Cloud Infrastructure operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
+
+A simple process would work as follows;
+1. The BIOS CRTM (Bios Boot Block) is executed by the CPU and used to measure the BIOS firmware
+1. The SHA1 hash of the result of the measurement is sent to the TPM
+1. The TPM stores this new result hash by extending the currently stored value
+1. The has comparisons can validate settings as well as the integrity of the modules
+
+Cloud Infrastructure operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
+
+The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
+
+<a name="7.8.5"></a>
+### 7.8.5 Dynamic Root of Trust for Measurement (DRTM)
+In Dynamic Root of Trust for Measurement (DRTM), the RTM for the running environment are stored in PCRs starting with PCR 17. 
+
+If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
+Additionally, platform monitoring can be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
+
+The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
+This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
+
+<a name="7.9"></a>
+## 7.9 Common security standards
+
+The Cloud Infrastructure reference model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
 Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
 
 * Center for Internet Security - https://www.cisecurity.org/
@@ -159,12 +389,11 @@ A good place to start to understand the requirements is to use the widely accept
 Additional Cloud Infrastructure security principles that need to be incorporated:
 * Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
 
-<a name="7.4.1"></a>
-## 7.4.1 Potential attack vectors
-Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
+<a name="7.10"></a>
+## 7.10 Testing & certification
 
-<a name="7.4.2"></a>
-## 7.4.2 Testing demarcation points
+<a name="7.10.1"></a>
+### 7.10.1 Testing demarcation points
 
 It is not enough to just secure all potential points of entry and hope for the best, any Cloud Infrastructure architecture must be able to be tested and validated that it is in fact protected from attack as much as possible. The ability to test the infrastructure for vulnerabilities on a continuous basis is critical for maintaining the highest level of security possible.  Testing needs to be done both from the inside and outside of the systems and networks.  Below is a small sample of some of the testing methodologies and frameworks available.
 
@@ -191,286 +420,8 @@ It is not enough to just secure all potential points of entry and hope for the b
 Insuring that the security standards and best practices are incorporated into the Cloud Infrastructure and architectures must be a shared responsibility, among the Telecommunications operators interested in building and maintaining the infrastructures in support of their services, the application vendors developing the network services that will be consumed by the operators, and the Cloud Infrastructure vendors creating the infrastructures for their Telecommunications customers.  All of the parties need to incorporate security and testing components, and maintain operational processes and procedures to address any security threats or incidents in an appropriate manner.  Each of the stakeholders need to contribute their part to create effective security for the Cloud Infrastructure.
 
 
-<a name="7.5"></a>
-## 7.5 Platform Security
-
-<a name="7.5.1"></a>
-### 7.5.1 General Platform Security
-
-The security certification of the platform will typically need to be the same, or higher, than the workload or VNF requirements.
-
-The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
-
-<p align="center"><img src="../figures/ch7-data-access-model.png" alt="Overview" title="Access Controls" width="100%"/></p>
-<p align="center"><b>Figure 7-4:</b> Reference Model Access Controls</p>
-
-<a name="7.5.1.1"></a>
-#### 7.5.1.1 The high-level functions of these different access controls
-
-* **MGNT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
-* **DATA ACCESS CONTROLS** - Control of east-west traffic between workloads, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
-* **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
-* **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
-* **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific workloads to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
-* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as approriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
-
-<a name="7.5.1.2"></a>
-#### 7.5.1.2 The following general security requirements apply to the platform
-
-* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
-* Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
-* Support zoning within a tenant workload - using application-level filtering.
-* All host to host communications within the cloud provider network are to be cryptographically protected in transit.
-* Not expose tenant IP address details to another tenant.
-* Use cryptographically-protected protocols for administrative access to the platform.
-* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
-* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
-* A process to check change management adherence that is implemented, and rigourously followed.
-* Processes for managing platform access control filters that are documented, followed, and monitored.
-* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
-* Role-Based Access Control (RBAC) must apply for all platform systems access.
-* An approved system or process for last resort access must exist for the platform.
-* All API access must use TLS protocol.
-* All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
-* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management, and application communication are cryptographically protected in transit between data centre facilities.
-* Continuous cloud security compliance is mandatory.
-* All data persisted to primary, replica, or backup storage is to be encrypted.
-* All platform security logs are to be time synchronised.
-* Logs are to be regularly scanned for events of interest.
-* An incident response plan must exist for the platform.
-* The cloud services must be regularly vulnerability and penetration tested.
-* In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
-
-<a name="7.5.2"></a>
-### 7.5.2 Platform ‘back-end’ access security
-
-* Restrict traffic to only traffic that is necessary, and deny all other traffic.
-* Use cryptographically-protected protocols for administrative access to the platform.
-* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
-* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
-* A process to check change management adherence that is implemented, and rigourously followed.
-* Processes for managing platform access control filters that are documented, followed, and monitored.
-* No login to root on any platform systems, when root privileges are not required.
-* Role-Based Access Control (RBAC) must apply for all systems access.
-* An approved system or process for last resort access must exist for the platform.
-* All back-end API access must use TLS.
-
-<a name="7.5.3"></a>
-### 7.5.3 Platform ‘front-end’ access security
-
-* Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
-* The front-end network may provide (Distributed Denial Of Service) DDOS support.
-
-<a name="7.5.4"></a>
-### 7.5.4 Platform Patching
-
-Cloud Infrastructure operators should ensure that the platform including the components (hypervisors, VMs, etc.) are kept up to date with the latest patch.
-
-<a name="7.6"></a>
-## 7.6 Workload Security - Vendor Responsibility
-
-<a name="7.6.1"></a>
-### 7.6.1 Software Hardening
-
-* No hard-coded credentials/ clear text passwords
-* Software should be independent of the infrastructure platform (no OS point release dependencies to patch)
-* Software is code signed and all individual sub-components are assessed and verified for EULA violations
-* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc)
-
-<a name="7.6.2"></a>
-### 7.6.2 Port Protection
-
-* Unused software and unused network ports should be disabled by default
-
-<a name="7.6.3"></a>
-### 7.6.3 Software Code Quality
-
-* Vendors should use industry recognized software testing suites
-  * Static and dynamic scanning
-  * Automated static code review with remediation of Medium/High/Critical security issues. The tool used for static code analysis and analysis of code being released must be shared.
-  * Dynamic security tests with remediation of Medium/High/Critical security issues. The tool used for Dynamic security analysis of code being released must be shared
-  * Penetration tests (pen tests) with remediation of Medium/High/Critical security issues.
-  * Methodology for ensuring security is included in the Agile/DevOps delivery lifecycle for ongoing feature enhancement/maintenance.
-
-<a name="7.6.4"></a>
-### 7.6.4 Alerting and monitoring
-
-* Security event logging (All security events should be logged, including informational)
-* Privilege escalation detection
-
-  <a name="7.6.5"></a>
-### 7.6.5 Logging
-
-* (Logging output should support customizable Log retention and Log rotation)
-
-  <a name="7.6.6"></a>
-### 7.6.6 VNF images
-
-* Image integrity – fingerprinting/validation
-* Container Images
-  * Container Management
-  * Immutability
-
-<a name="7.6.7"></a>
-### 7.6.7 Identity and Access Management
-
-<a name="7.6.8"></a>
-### 7.6.8 CVEs and Vulnerability Management
-
-* Security defect reporting
-* Cadence with Cloud Infrastructure vendors (OSSA for OpenStack)
-* Component analysis: Mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
-  * Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
-
-<a name="7.6.9"></a>
-### 7.6.9 Encryption suite support
-* Software should support recognized encryption standards and encryption should be decoupled from software
-
-<a name="7.6.10"></a>
-### 7.6.10 Password complexity support
-
-* Software should support configurable, or industry standard, password complexity rules
-
- <a name="7.6.11"></a>
-### 7.6.11 Banner
-
-* Software should have support for configurable banners to display authorized use criteria/policy
-
-<a name="7.7"></a>
-## 7.7 Workload Security  - Operator Responsibility.
-
-The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective.   This includes but is not limited to securing the following elements:
-
-* Maintaining standard security operational management methods and processes
-* Monitoring and reporting functions
-* Processes to address regulatory compliance failure
-* Support for appropriate incident response and reporting
-* Methods to support appropriate remote attestation certification of the validity of the security components, architectures, and methodologies used
-
-<a name="7.7.1"></a>
-### 7.7.1 Remote Attestation/openCIT
-
-Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
-
-Insert diagram here:
-https://01.org/sites/default/files/users/u26957/32_architecture.png
-
-<a name="7.7.2"></a>
-### 7.7.2 Workload Image Scanning / Signing
-
-It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the VNF operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
-
-Use of Image scanners such as OpenSCAP to determine security vulnerabilities is strongly recommended.
-
-<a name="7.8"></a>
-## 7.8 Application Vendors responsibility
-
-The application vendors need to incorporate security elements to support the highest level of security of the networks they support.  This includes but is not limited to securing the following elements:
-
-* Operating system or container
-* Application
-* Network interfaces
-* Management and controller systems used to support the VNFs directly, examples include a SIEM system or a SD WAN policy manager
-* Regulatory compliance failure as it relates to the application itself only
-
-Image from https://www.networkworld.com/article/2840273/sdn-security-attack-vectors-and-sdn-hardening.html Will replace with a better image when I create it in the future.
-
-<a name="7.9"></a>
-## 7.9 Cloud Infrastructure vendors and Cloud Infrastructure Manager vendors responsibility
-
-The Cloud Infrastructure vendors and Cloud Infrastructure Manager vendors need to ensure security of the infrastructure they support and manage. 
-
-<a name="7.9.1"></a>
-### 7.9.1 Networking Security Zoning
-
-Network segmentation is important to ensure that VMs can only communicate with the VMs they are supposed to. To prevent a VM from impacting other VMs or hosts, it is a good practice to separate VM traffic and management traffic. This will prevent attacks by VMs breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, VMs of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
-
-Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
-
-<a name="7.9.2"></a>
-### 7.9.2 Volume Encryption
-
-Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
-
-
-<a name="7.9.3"></a>
-### 7.9.3 Root of Trust for Measurements (RTM)
-
-The sections that follow define mecahnisms to ensure the integrity of the infrastructure pre-boot and post-boot (running). The following defines a set of terms used in those sections.
-
--  The hardware root of trust helps with the pre-boot and post-boot security issues. 
-
--  Unified Extensible Firmware Interface (UEFI) adheres to standards defined by an industry consortium. Vendors (hardware, software) and solution providers collaborate to define common interfaces, protocols and  structures for computing  platforms.
-
--  Platform Configuration Register (PCR) is a memory location in the TPM used to store TPM Measurements (hash values generated by the SHA-1 standard hashing algorithm). PCRs are cleared only on TPM reset. UEFI dfines 24 PCRs of which the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
-
--  Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
-
--  Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
-
--  Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section [7.7.1 Remote Attestation/openCIT](#7.7.1) 
-
-Values stored in a PCR cannot be reset (or forged) as they can only be extended. Whenever a measurement is sent to a TPM, the hash of the concatenation of the current value of the PCR and the new measurement is stored in the PCR. The PCR values are used to encrypt data.  If the proper environment is not loaded which will result in different PCR values, the TPM will be unable to decrypt the data.  
- 
-<a name="7.9.4"></a>
-### 7.9.4 Static Root of Trust for Measurement (SRTM)
-
-Static RTM (SRTM) begins with measuring and verifying the integrity of the BIOS firmware. It then measures additional firmware modules, verifies their integrity, and adds each component’s measure to an SRTM value. The final value represents the expected state of boot path loads. SRTM stores results as one or more values stored in PCR storage. In SRTM, the CRTM resets PCRs 0 to 15 only at boot.
-
-Using a Trusted Platform Module (TPM), as a hardware root of trust, measurements of platform components, such as firmware, bootloader, OS kernel, can be securely stored and verified.
-Cloud Infrastructure operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
-
-A simple process would work as follows;
-1. The BIOS CRTM (Bios Boot Block) is executed by the CPU and used to measure the BIOS firmware
-1. The SHA1 hash of the result of the measurement is sent to the TPM
-1. The TPM stores this new result hash by extending the currently stored value
-1. The has comparisons can validate settings as well as the integrity of the modules
-
-Cloud Infrastructure operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
-
-The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
-
-<a name="7.9.5"></a>
-### 7.9.5 Dynamic Root of Trust for Measurement (DRTM)
-In Dynamic Root of Trust for Measurement (DRTM), the RTM for the running environment are stored in PCRs starting with PCR 17. 
-
-If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
-Additionally, platform monitoring can be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
-
-The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
-This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
-
-<a name="7.9.6"></a>
-### 7.9.6 Cloud Infrastructure & Cloud Infrastructure Manager
-
-Resources management is essential. Requests coming from a higher orchestration layer to the Cloud Infrastructure manager must validated and the integrity of these requets must be verified.
-
-<!-- The following tables have been relocated from Chapter 4, per Issue #245. -MXS 10/9/2019 -->
-#### 7.9.6.1 Internal security capabilities
-
-<a name="Table7-1"></a>
-
-| Ref                | NFVI capability                     | Unit   | Definition/Notes                                                |
-|--------------------|-------------------------------------|--------|-----------------------------------------------------------------|
-| i.sec.cap.001 | VNF-C<->VNF-C  memory isolation     | Yes/No | Are VNF-C memories isolated from each other by hardware support |
-| i.sec.cap.002 | VNF-C -> Host                       | Yes/No | Can VNF-C access host memory                                    |
-| i.sec.cap.003 | Host -> VNF-C                       | Yes/No | Can Host access VNF-C memory                                    |
-| i.sec.cap.004 | External storage at-rest encryption | Yes/No | Is external storage encrypted at-rest                           |
-
-<p align="center"><b>Table 7-1:</b> Cloud Infrastructure internal security capabilities</p>
-
-Table 7-2 shows security capabilities
-
-<a name="Table7-2"></a>
-
-| Ref               | VIM capability                             | Unit   | Definition/Notes                                                                                            |
-|-------------------|--------------------------------------------|--------|-------------------------------------------------------------------------------------------------------------|
-| e.sec.cap.001 | Resources management requests verification | Yes/No | Capability to validate and verify the integrity of a resources management requests coming from NFVO or VNFM |
-
-<p align="center"><b>Table 7-2:</b> Cloud Infrastructure Manager capabilities related to security</p>
-
-<a name="7.10"></a>
-## 7.10 Certification requirements (Just ideas)
+<a name="7.10.2"></a>
+### 7.10.2 Certification requirements (Just ideas)
 
 * Security test cases executed and test case results
 * Industry standard compliance achieved (NIST, ISO, PCI, FedRAMP Moderate etc.)
@@ -483,7 +434,6 @@ Table 7-2 shows security capabilities
 
 <a name="7.11"></a>
 ## 7.11 Consolidated Security Requirements
-
 
 <a name="7.11.1"></a>
 ### 7.11.1. System Hardening
