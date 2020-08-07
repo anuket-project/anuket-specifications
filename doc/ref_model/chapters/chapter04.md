@@ -374,7 +374,7 @@ Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> 
 | .silver | Up to 60K  | Up to 30K  | Up to 1200             | Up to 400               | 1TB          |
 | .gold   | Up to 680K | Up to 360K | Up to 2650             | Up to 1400              | 1TB          |
 
-<p align="center"><b>Table 4-15:</b> Storage Performance Profiles</p>
+<p align="center"><b>Table 4-15:</b> Storage Extensions</p>
 
 Note, performance is based on a block size of 256KB or larger.
 
