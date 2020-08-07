@@ -91,6 +91,6 @@ These guidlines will drive RC2 deliverables:
 <a name="1.5"></a>
 ## 1.5 Conformance Methodologies
 
-The RC2 test suite will provide validation to ensure workloads can interoperate with the RA2 infrastructure. Upstream projects will define features/capabilities, test scenarios, and test cases to be executed. 3rd Party test platforms may also be leveraged, if desired.
+The RC2 test suite will provide validation to ensure workloads can interoperate with the RA2 conformant infrastructure. Upstream projects will define features/capabilities, test scenarios, and test cases to be executed. 3rd Party test platforms may also be leveraged if desired.
 
 **Dependencies** infrastructure and workload validation will rely upon test harnesses, test tools, and test suites provided by upstream projects, including OPNFV and CNF conformance. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the conformance process may change, but test parity is required if new test suites are added in place of older, stale projects.
