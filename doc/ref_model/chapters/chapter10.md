@@ -40,10 +40,16 @@ Gaps
 
 This section addresses major open issues identified in the development of the Reference Model, Reference Architecture, Reference Implementation of the Common Cloud Infrastructure Lifecycle Framework. 
 
-## 10.3.1 Discovery [Initial language]
-The VNFs and NFVI frameworks should be able to discover each other and exchange their capabilities required or offered. CNTT reference model specifies a model, but OpenStack does not provide APIs to support such capabilities. Following should be supported: NFVI should be able to publish the capabilities it offers to VNFs/CNFs VNFs/CNFs should be able to query the NFVI for specific capabilities - such as number of cores, performance parameters. Negotiation/Hand Shake API - VNFs and NFVIs should be able to negotiate on certain capabilities. For instance, VNF desires HW acceleration for high throughput, but, should be able to fall back to high throughput offered by NFVI via DPDK offering, and vice-a-versa.
+## 10.3.1 Discovery
+The workloads (VNFs/CNFs) and Cloud Infrastructure should be able to discover each other and exchange their capabilities required or offered. One of the key pain points for most of the operators is the VNF/CNF onboarding - both in terms of time and complexity. It could take weeks or months to onboard a VNF/CNF. There are lots of static and laborious checks performed to ensure the compatibility of the workloads with the corresponding Cloud Infrastructure. 
+The onboarding of the workloads (network functions) should be automated as much as possible. The workloads and Cloud Infrastructure should be able to discover and negotiate their capabilities. Following should be supported: 
+- Capabilities Discovery and Advertising
+    - Cloud Infrastructure should be able to publish the capabilities it offers to workloads (network functions) 
+    - workloads should be able to query the Cloud Infrastructure for specific capabilities - such as number of cores, performance parameters
+- Capabilities Negotiation/Hand Shake API: 
+    - workloads and Cloud Infrastructure should be able to negotiate on certain capabilities. For instance, workload desires HW acceleration for high throughput, but should be able to fall back to high throughput offered by Cloud Infrastructure via DPDK offering, and vice-a-versa.
 
-## 10.3.2 Support Load Balance of VNF/CNFs [Initial language]
+## 10.3.2 Support Load Balance workloads (VNF/CNFs) [Initial language]
 Ability to load balance workflows through multiple instances of same VNF or CNF - e.g. using ECMP to distribute workloads through the multiple instances of Firewall. As an example imagine a distributed finance application with multiple instances of Web-tier and DB-tier. The traffic needs to flow through multiple instances of Firewall (for HA as well load balancing). There is no simple way to accomplish this in OpenStack.
 
 ## 10.3.3 Service Function Chain [Initial language]
@@ -51,4 +57,3 @@ Over the past few years there has been a significant move towards decomposing ne
 
 ## 10.3.4 Packet Acceleration Request (e.g Hardware Acceleration) [Initial language]
 While generic server hardware capabilities can be exclusively used for handling networking related workloads, this strategy is neither performant nor energy efficient. There are several forms of accelerators such as smart NICs, programmable networking fabrics/switches, and GPUs that can offload some of these workloads in order to provide higher throughput, energy efficiency and lower latency. The acceleration hardware is typically optimized for specific kinds of workloads and some form of disaggregation might be required to separate control and user plane responsibilities between generic server hardware and accelerators. There is also a need for workload orchestration to be able to understand the packet acceleration needs of specific workloads and schedule such workloads on infrastructure with the requisite capabilities.
-
