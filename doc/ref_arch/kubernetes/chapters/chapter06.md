@@ -54,7 +54,7 @@ While this Reference Architecture is being developed, Gaps will be identified th
 
 > **Baseline project:** _Kubernetes v1.18.6_, _Kubevirt v0.30.5_
 
-> **Gap description:** Kubernetes and at least on CRI compliant runtime shuld support the runing of VNF-s without completly changing the VNF-s architecture and deployment artifacts.
+> **Gap description:** Kubernetes and at least one CRI compliant runtime should support the running of VNFs without requiring changes to the VNF's architecture and deployment artifacts.
 
 
 <a name="6.2.4"></a>
