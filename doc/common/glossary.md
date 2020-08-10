@@ -29,7 +29,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Cloud Infrastructure Software Profile:** defines the behaviour, capabilities and metrics provided by a Cloud Infrastructure Software Layer.
 
-- **Cloud Native Network Function (CNF):** A cloud native network function (CNF) is a cloud native application that implements network functionality. A CNF consists of one or more microservices and has been developed using Cloud Native Principles including immutable infrastructure, declarative APIs, and a “repeatable deployment process”.
+- **Cloud Native Network Function (CNF):** A cloud native network function (CNF) is a cloud native application that implements network functionality. A CNF consists of one or more microservices. All layers of a CNF is developed using Cloud Native Principles including immutable infrastructure, declarative APIs, and a “repeatable deployment process”.
   >_*Note:*_ This definition is derived from the [Cloud Native Thinking for Telecommunications Whitepaper](https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4), which also includes further detail and examples.
 
 - **Compute flavour:** defines the sizing of the virtualised resources (compute, memory, and storage) required to run a workload.
@@ -50,6 +50,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
  >_*Note:*_ The NFVI can span across many locations, e.g. places where data centres or edge nodes are operated. The network providing connectivity between these locations is regarded to be part of the cloud infrastructure. **NFVI** and **VNF** are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
 
 - **Network Service (NS):** composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
+
+- **Software Defined Storage (SDS):** An architecture which consists of the storage software that is independent from the underlying storage hardware. The storage access software provides data request interfaces (APIs) and the SDS controller software provides storage access services and networking.
 
 - **Virtual Application (VA):** A general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
@@ -77,8 +79,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Cloud Infrastructure Hardware Configuration:** a set of settings (Key:Value) that are applied/mapped to **Cloud Infrastructure** HW deployment.
 
-- **Cloud Infrastructure Hardware Profile:** defines the behaviour, capabilities and metrics provided by an cloud infrastructure Hardware Layer.
-  - **Host Profile:** is another term for a **cloud infrastructure hardware profile**.
+- **Cloud Infrastructure Hardware Profile:** defines the behaviour, capabilities, configuration, and metrics provided by a cloud infrastructure hardware layer.
+  - **Host Profile:** is another term for a **Cloud Infrastructure Hardware Profile**.
 
 - **Hardware resources:** Compute/Storage/Network hardware resources on which the cloud infrastructure platform software, virtual machines and containers run on.
 
@@ -99,11 +101,17 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **External Network:** External networks provide network connectivity for a cloud infrastructure tenant to resources outside of the tenant space.
 
+- **[Fluentd](https://www.fluentd.org/):** An open source data collector for unified logging layer, which allows data collection and consumption for better use and understanding of data. **Fluentd** is a CNCF graduated project.
+
+- **Kibana:** An open source data visualisation system.
+
 - **Multi-tenancy:** feature where physical, virtual or service resources are allocated in such a way that multiple tenants and their computations and data are isolated from and inaccessible by each other ([ETSI](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/003/01.04.01_60/gs_nfv003v010401p.pdf)).
 
 - **Quota:** An imposed upper limit on specific types of resources, usually used to prevent excessive resource consumption by a given consumer (tenant, VM, container).
 
 - **Resource pool:** A logical grouping of cloud infrastructure hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **Cloud Infrastructure** resource can be part of none, one or more resource pools.
+
+- **Prometheus:** An open-source monitoring and alerting system.
 
 - **Service Assurance (SA):** collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
 
@@ -117,6 +125,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 >_*Note:*_ Relevant terms are added here from RA2. Most of these term definitions are taken from [Kubernetes glossary](https://kubernetes.io/docs/reference/glossary) but in some cases should be made independent from Kubernetes as a specific container orchestration engine.
 
+- **CaaS Manager:**	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
+
 - **Container:**	A lightweight and portable executable image that contains software and all of its dependencies.
 >_*Note:*_ OCI defines **Container** as "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment."
 A **Container** provides operating-system-level virtualisation by abstracting the “user space”. One big difference between **Containers** and **VMs** is that unlike VMs, where each **VM** is self-contained with all the operating systems components are within the **VM** package, containers "share" the host system’s kernel with other containers.
@@ -128,6 +138,8 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 - **Container Runtime:** The software that is responsible for running containers.
 >_*Note:*_ as explained in [OCI Glossary](https://github.com/opencontainers/runtime-spec/blob/master/glossary.md) it reads the configuration files for a
 **Container** from a directory structure, uses that information to create a container, launches a process inside the container, and performs other lifecycle actions.
+
+- **Container-as-a-Service (CaaS)**: A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
 
 - **Kubernetes Cluster:** A set of machines, called nodes and master, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
 >_*Note:*_ adapted from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster).
@@ -143,12 +155,6 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 
 - **Pod:**	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
 
-Terms not defined by Kubernetes:
-- **Container-as-a-Service (CaaS)**: A complete set of technologies to enable the management of containerised software, including a Kubernetes cluster, container networking, storage, routing, service mesh, etc.
-
-- **CaaS Manager:**	A management plane function that manages the lifecycle (instantiation, scaling, healing, etc.) of one or more CaaS instances, including communication with VIM for master/node lifecycle management.
-
-
 <a name="1.5"></a>
 ## OpenStack Related Terminology
 
@@ -157,21 +163,11 @@ Terms not defined by Kubernetes:
 <a name="Core"></a>
 **Core (physical):** An independent computer processing unit that can independently execute CPU instructions and is integrated with other cores on a multiprocessor (chip, integrated circuit die). Please note that the multiprocessor chip is also referred to as a CPU that is placed in a socket of a computer motherboard.
 
-**Flavor Capabilities** such as (CPU Pinning, NUMA, huge pages): CNTT NFVI Profile.
+**Flavor Capability:** The capability of the Cloud Infrastructure Profile, such as CPU Pinning, NUMA or huge pages.
 
 **Flavor Geometry:** Flavor sizing such as number of vCPUs, RAM, disk, etc.
 
-**[Fluentd](https://www.fluentd.org/):** An open-source data collector for unified logging layer, which allows data collection and consumption for better use and understanding of data. **Fluentd** is a CNCF graduated project,
-
-**Host profile:** A set of underlay configuration values used to install a new compute host/server. Typically, the host profile configurations match the capabilities of one or more flavors.
-
 **Hugepages:** Physical memory is partitioned and accessed using the basic page unit (in Linux default size of 4 KB). Hugepages, typically 2 MB and 1GB size, allows large amounts of memory to be utilised with reduced overhead. In an NFV environment, huge pages are critical to support large memory pool allocation for data packet buffers. This results in fewer Translation Lookaside Buffers (TLB) lookups, which reduces the virtual to physical pages address translations. Without huge pages enabled high TLB miss rates would occur thereby degrading performance.
-
-**Kibana:** An open source data visualisation system.
-
-**Prometheus:** An open-source monitoring and alerting system.
-
-**Software Defined Storage (SDS):** An architecture which consists of the storage software that is independent from the underlying storage hardware. The storage access software provides data request interfaces (APIs) and the SDS controller software provides storage access services and networking.
 
 <a name="1.6"></a>
 ## Cloud Platform Abstraction Related Terminology:
