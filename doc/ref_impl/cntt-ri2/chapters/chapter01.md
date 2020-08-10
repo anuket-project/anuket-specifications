@@ -70,7 +70,7 @@ The main communities involved in driving requirements and development of this RI
   - CNCF hosts a wide variety of projects providing software components for RI2, such as Kuberntes itself, deployment tooling (e.g. kubeadm and kubespray) as well as test suites (e.g., Kubernetes conformance).
   - The Telco User Group (TUG) is a forum within CNCF to identify and discuss telco requirements on the Kubernetes ecosystem.
   - The CNF Conformance project in CNCF has a stated aim to provide "visibility into how well Cloud native Network Functions (CNFs) and the underlying Telecom platform follows cloud native principles".
-  - The CNF testbed is a project providing a framework for building and deploying technology show cases with a strong focus on telco platform requirements.
+  - The CNF Testbed is an initiative providing a framework for building and deploying technology show cases with a strong focus on telco platform requirements.
 
 The following figure gives an overview of the relationship of the communities involved.
 
