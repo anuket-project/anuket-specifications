@@ -114,7 +114,7 @@ Passwords must be strengthened:
 
 For passwords updates, the identity of users must be verified before permitting a password change.
 
-Passwords must be securely stored and transmit in an encrypted format. Password files must be stored separately from application system data.
+Passwords must be encrypted at rest and in-transit. Password files must be stored separately from application system data.
 
 
 #### 6.3.2.2 Function and Software
