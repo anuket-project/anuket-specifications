@@ -305,7 +305,7 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.ntw.09` | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
 | `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support cluster wide coordination of IP address assignment. | |
 | `req.inf.ntw.11` | Infrastructure 	Network 	The Architecture must support multiple network interfaces to be configured for a pod. | |
-| `req.inf.ntw.12` | Infrastructure 	Network 	The networking solution to support req.inf.ntw.11 must conform to the Kubernetes Networking CRD de-facto standard (K8S Network Plumbing Working Group). | |
+| `req.inf.ntw.12` | Infrastructure |	Network | The networking solution to support req.inf.ntw.11 must conform to the Kubernetes Networking CRD de-facto standard (K8S Network Plumbing Working Group). | |
 | `req.inf.ntw.13` | Infrastructure 	Network 	The networking solution to support req.inf.ntw.11 must support any Kubernetes conformant CNI plugin to be incorporated as a networking solution. | |
 | `req.inf.ntw.14` | Infrastructure 	Network 	A tenant must specify at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
 | `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. | |
