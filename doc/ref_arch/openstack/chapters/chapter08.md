@@ -17,9 +17,6 @@ The most obvious way to address the gaps will be to propose a set of APIs in the
 <a name="8.2"></a>
 ## 8.2 The Gaps
 
-* Public and Multi-Cloud  - The framework offered by OpenStack does not support multi-cloud deployments, along with the core deployments
-
-
 
 <a name="8.3"></a>
 ## 8.3 OpenStack Release Gaps
