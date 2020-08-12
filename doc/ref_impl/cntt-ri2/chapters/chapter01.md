@@ -9,10 +9,10 @@
     * [1.1.2 Structure of the document](#1.1.2)
     * [1.1.3 Terminology](#1.1.3)
 * [1.2 Scope](#1.2)
-* [1.3 Reference Implementation Approach](#1.3)
-    * [1.3.1 Host Provisioning](#1.3.1)
-    * [1.3.2 Kubernetes Provisioning](#1.3.2)
-* [1.4 Relationship to other communities](#1.4)
+* [1.3 Relationship to other communities](#1.4)
+* [1.4 Reference Implementation Approach](#1.3)
+    * [1.4.1 Host Provisioning](#1.3.1)
+    * [1.4.2 Kubernetes Provisioning](#1.3.2)
 
 <a name="1.1"></a>
 ## 1.1 Introduction
@@ -49,8 +49,37 @@ The scope of this document is as follows:
 1. Provide detailed design for automation of deployment and testing, provide continuous integration and delivery pipeline for the RI
 1. Gap analysis with required actions for existing eco-system within adjacent community projects
 
+
 <a name="1.3"></a>
-## 1.3 Reference Implementation Approach
+## 1.3 Relationship to other communities and workstreams
+
+The main communities involved in driving requirements and development of this RI are:
+
+- **CNTT RC2 workstream**
+  - The **RC2 workstream** within CNTT takes requirements from the RM and RA2 and identifies test cases and a test integration suite that will be used to verify and validate conformance of an implementation. RI2 will be a deployable reference for operators, vendors, and others to develop against.
+
+- **OPNFV**
+  - The **Kuberef** project in OPNFV acts as the main integration point for RI2: Its purpose it to provide all necessary glue code and mechanisms for i) integrating and configuring selected upstream Kubernetes deployers and components into a deployable platform, ii) continuously deploy the integrated platform in OPNFV labs and iii) run the latest RC2 test suite against the deployed platform. The test results are meant to be fed back to RA2 and RC2 to support the refinement of architecture requirements and the selection of test cases for the RC2 test suite.
+
+  - The **Functest** project integrates available test tools and test cases from across the open source ecosystem into a single framework. In particular, it allows to run the test cases selected by the RC2 workstream and outputs a test result package for submission to the OVP program.
+
+- **Compliance and Verification Committee & Cloud Native OVP aka OVP 2.0**
+  - The Compliance and Verification Committee governs the Cloud Native OVP program which owns the definition of the end-to-end framework (tooling, process, tests, review, badging) used to verify conformance of a cloud native infrastructure implementation with the RA2 specifications.
+
+- **CNCF - CNF Conformance, Kubernetes, etc.**
+  - CNCF hosts a wide variety of projects providing software components for RI2, such as Kuberntes itself, deployment tooling (e.g. kubeadm and kubespray) as well as test suites (e.g., Kubernetes conformance).
+  - The Telco User Group (TUG) is a forum within CNCF to identify and discuss telco requirements on the Kubernetes ecosystem.
+  - The CNF Conformance project in CNCF has a stated aim to provide "visibility into how well Cloud native Network Functions (CNFs) and the underlying Telecom platform follows cloud native principles".
+  - The CNF Testbed is an initiative providing a framework for building and deploying technology show cases with a strong focus on telco platform requirements.
+
+The following figure gives an overview of the relationship of the communities involved.
+
+<p align="center"><img src="../figures/ri2-ch01-relationship_of_communities.png" alt="Relationship of communities" title="Relationship of communities" width="100%"/></p>
+<p align="center"><b>Figure 1-1:</b>Relationship of Communities.</p>
+
+
+<a name="1.4"></a>
+## 1.4 Reference Implementation Approach
 
 The approach this RI will take is to separate out the deployment in to two layers:
 1. Automation of the infrastructure on which the RI will be installed (i.e. networks, storage, servers, etc.)
@@ -60,12 +89,12 @@ Meaning, initially, the RI is not looking to have a single installer that can bo
 
 The following subsections provide an overview of the provisioning stages as they are currently planned. However, that's not to say full end-to-end installers aren't welcome, but if used we must be clear on the limitations and compromises made when we document them in [Chapter 4](./chapter04.md).
 
-<a name="1.3.1"></a>
-### 1.3.1 Host Provisioning
+<a name="1.4.1"></a>
+### 1.4.1 Host Provisioning
 > Add high level description of host provisioning stage
 
-<a name="1.3.2"></a>
-### 1.3.2 Kubernetes Provisioning
+<a name="1.4.2"></a>
+### 1.4.2 Kubernetes Provisioning
 
 For provisioning Kubernetes in the Reference Implementation, existing open source tools should be used to set up the cluster. The goal is to cover the requirements listed in the Kubernetes Based Reference Architecture (RA2), but due to the scope this will be done through multiple iterations, starting with a subset of requirements and expanding the deployment over time.
 
@@ -98,14 +127,3 @@ For the ongoing proof of concept work related to both RA2 and RI2, some of the f
 - Security
 
 As work progresses with the proof of concept it is expected that additional features will be added.
-
-<a name="1.4"></a>
-## 1.4 Relationship to other communities
-
-The main communities involved in driving requirements and development of this RI are:
-- **OPNFV - Cloud Native OVP aka OVP2.0**
-    - OPNFV, and CNOVP within it, owns the definition of the end-to-end framework (tooling, process, tests) used to verify conformance of a cloud native infrastructure implementation with the RA2 specifications
-    - This conformance process is the end goal for the Rx2 stream of documents; the RC2 is defining criteria, including tests, that will be used to verify and validate conformance of an implementation to the RA2 specification, with RI2 being a deployable reference for operators, vendors and others to develop against.
-- **CNCF - CNF Conformance, Kubernetes, etc.**
-    - The CNF Conformance project in CNCF has a stated aim to provide "visibility into how well Cloud native Network Functions (CNFs) and the underlying Telecom platform follows cloud native principles".
-    - As such, there are a number of contributions between CNF Conformance and RI2, to align requirements, to share artefacts and so on
