@@ -104,7 +104,7 @@ Persistent storage outlives the compute instance whereas ephemeral storage is li
 
 There are multiple storage performance requirements such as latency, IOPS and capacity. For example, a workload may require one of its storage device to provide low latency, high IOPS and very large/huge storage capacity (terabytes of data).
 Low Latency storage is for workloads which have strong constraints on the time to access the storage.
-IOPS oriented storage is for workloads requiring lots of read/write actions.
+High IOPS oriented storage is for workloads requiring lots of read/write actions.
 Capacity oriented storage is for workloads that need lots of volumetry without strong perfomance constraints.
 
 Storage resources have the following attributes:
