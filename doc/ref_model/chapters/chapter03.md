@@ -102,7 +102,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 A workload can request different types of storage based on data longevity: persistent or ephemeral storage.
 Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
 
-Performance requirements are multiple depending on the workload to be hosted:low latency, IOPS oriented and capacity oriented storage. 
+There are multiple storage performance requirements such as latency, IOPS and capacity. For example, a workload may require one of its storage device to provide low latency, high IOPS and very large/hige storage capacity (terabytes of data).
 Low Latency storage is for workloads which have strong constraints on the time to access the storage.
 IOPS oriented storage is for workloads requiring lots of read/write actions.
 Capacity oriented storage is for workloads that need lots of volumetry without strong perfomance constraints.
