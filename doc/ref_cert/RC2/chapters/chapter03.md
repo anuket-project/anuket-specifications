@@ -13,6 +13,7 @@ All of the requirements for RC2 have been defined in the Reference Model (RM) an
 - Enable clear tracability with versioning to know which requirements have and haven't been covered and track changes over time
 - Clickable links from test cases to requirements
 - One or more tests for every MUST requirement
+- A set of test cases to serve as a template for Cloud Native OVP
 
 ### Non-Goals
 - Defining any requirements
