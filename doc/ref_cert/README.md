@@ -26,7 +26,7 @@ and all artifacts (reports, logs, etc.) to
 
 The CNTT verification, validation, and conformance processes leverage
 existing OPNFV testing knowledge (projects) and experience (history) by utilising
-the overall toolchain design already in-place. The RC toolchain
+the OPNFV toolchain design already in-place. The RC toolchain
 only requires for the local deployment of the components instead of leveraging
 the common OPNFV centralized services. However, the interfaces remain unchanged
 for leveraging test jobs, the common test case execution, the test
