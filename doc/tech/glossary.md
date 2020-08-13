@@ -10,7 +10,8 @@
   * [1.4 Container Related Terminology](#1.4)
   * [1.5 OpenStack Related Terminology](#1.5)
   * [1.6 Cloud Platform Abstraction Related Terminology](#1.6)
-  * [1.7 Other terminology](#1.7)
+  * [1.7 Test Related Terminology](#1.7)
+  * [1.8 Other Referenced Terminology](#1.8)
 
 <a name="1.0"></a>
 # 1 Terminology
@@ -148,13 +149,33 @@ Terms not defined by Kubernetes:
 <a name="1.7"></a>
 ## 1.7 Test Related Terminology
 
-- **Performance Measurement:** The procedure or set of operations having the object of determining a Measured Value or Measurement Result. In this context, Performance Measurements reflect data generated and collected within the cloud infrastructure, that reflects a performance aspect of the cloud infrastructure. For example, a count of frames or packets traversing an interface, memory usage information, other resource usage and availability, etc. These data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g., workload vs. infra).
+- **Calibration**: The process of checking and/or adjusting a stimulus generation or measurement device with a known reference value, to improve the overall quality of the measured results.  Calibration may be very simple, such as a comparison of the configured traffic generator sending rate and measured rate using a simple SUT (System Under Test)  such as loop-back cable between interfaces, such that that the known reference value is the published nominal interface rate.
 
-- **Performance Testing**: The main objective of CNTT performance testing is to understand if a potential BOM is functioning correctly to get expected performance. It requires a set of performance testing tools (open source) that help with the dimensioning of a solution by an operator. Testing results may be useful to compare infrastructure capabilites between the System Under Test (SUT) and a CNTT reference implementation of RA-2. Performance testing for the purpose of comparing between different commercial implementations is not a goal of CNTT. Performance testing relies on well established benchmark specifications.
+- **Reference Value**: A measured or established result or outcome for comparison with new measurements. For example, the reference value or expected outcome of a Functional Test is "PASS". The reference value or expected outcome of a Performance Measurement or Benchmarking test may be the value measured for the previous SUT release, or the published value or theoretical limit of a simple SUT.
 
-- **Benchmarking**: Benchmarking assessments do not define acceptance criteria or numerical performance requirement. Benchmark testing and Conformance testing intersect when a specific requirement in the software specification is very important, such as a frequently-executed function. Correct execution with the expected result constitutes conformance. The completion time for a single conforming execution, or the number of conforming executions per second are potential Benchmarks. Benchmarks assess a key aspect of the computing environment in its role as the infrastructure for cloud-native network functions. The benchmarks (and related metrics) have been agreed by the Industry and documented in publications of an accredited standards body. As a result, benchmarks are a sub-set of all possible performance metrics. Examples benchmarks include data rate, latency, and loss ratio of various components of the environment, expressed in quantitative units to allow direct comparison between different systems treated as a black box (vendor-independence). Because the demands on a particular system may vary from deployment to deployment, Benchmarking assessments do not define acceptance criteria or numerical performance requirements.
+- **API Testing**: Testing against a protocol specification for conformance.
 
-- **PVP: Physical-Virtual-Physical:** PVP represents a Workload test topology where a measurement is taken across two physical test points (e.g., physical NICs on a host), with traffic traversing a virtualized Workload that is logically connected between the physical points. PVP is an ETSI term, defined in [ETSI GS NFV-TST 009](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf)
+- **Functional Testing**: The main objective of functional testing is the verification of a specific stimulus / response within the SUT, including the expected behavior.  These tests generally result in a binary outcome, i.e. pass / fail.  For example, verification of an "API call" and its associated response, such as the instantiation of a VM (or container) and verification of the VM's (or container's) existence (expected behavior), or the ability to activate a specific feature of the SUT (e.g. SR-IOV).
+
+- **Performance Measurement**: The procedure or set of operations having the objective of determining a Measured Value or Measurement Result of an infrastructure in operation according to a defined metric.
+
+In the context of telemetry, Performance Measurements reflect data generated and collected within the cloud infrastructure, that reflects a performance aspect of the cloud infrastructure. For example, a count of frames or packets traversing an interface per unit of time, memory usage information, other resource usage and availability, etc. This data may be instantaneous or accumulated, and made available (i.e. exposed) based on permissions and contexts (e.g. workload vs. infra).
+
+Other Performance Measurements are designed to assess the efficiency of SUT Functions, such as the time to successfully instantiate one or more VMs or containers, or the percentage of failures in a set of many instantiation attempts.
+
+Still other Performance Measurements are conducted under controlled conditions using Calibrated test systems, such that the measured results are more likely to comparable with other such measurements.
+
+- **Performance Testing**: The main objective of performance testing is to understand if the SUT is able to achieve the expected performance, through conducting a series of performance measurements and comparing those results against a reference value.
+
+Operators need to do performance testing to help dimension a solution or to assess that a platform (particular hardware + software combination) is configured correctly and performing as expected (as compared with capacity / performance claims made by the infrastructure and VNF/CNF vendors).
+
+Performance Testing may be useful to compare infrastructure capabilities between a particular SUT and a CNTT reference implementation with well understood known good configurations and previously established performance ranges. Performance testing for the purpose of comparing between different commercial implementations is not a goal of CNTT and hence out of scope for the purposes of this definition. Performance testing relies on well established benchmark specifications to help establish appropriate methodologies and accuracy tolerances.
+
+- **Benchmarking**: Benchmarking is a type of performance test that assesses a key aspect of the computing environment in its role as the infrastructure for network functions, using calibrated test systems and controlled conditions. In general the benchmark testing attempts to isolate the feature or parameter under test, to reduce the impact of other system components or operations on the test result.  The benchmark (and related metrics) have been agreed by the Industry and documented in publications of an accredited standards body. As a result, benchmarks are a sub-set of all possible performance tests and metrics i.e. they are selected measurements which are more important than others. Example benchmarks include Zero-loss Throughput, Latency, and Loss ratio (ref to ETSI NFV TST009, RFC 2544) of various components of the environment, expressed in quantitative units to allow direct comparison between different systems treated as a black box (vendor-independence).
+
+Because the demands on a particular system may vary from deployment to deployment, benchmarking assessments do not define acceptance criteria or numerical performance requirements.
+
+Benchmark testing and conformance testing intersect when a specific requirement in the reference architecture specification is very important to the performance of the system. Correct execution of the performance test with the valid result constitutes conformance. The completion time for a single conforming execution, or the number of conforming executions per second are potential benchmark metrics, and sources of known reference values.
 
 <a name="1.8"></a>
 ## 1.8 Other Referenced Terminology
