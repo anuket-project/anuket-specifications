@@ -7,7 +7,7 @@ toolchain to deliver overall integration, the same end user
 actions, and a unique test result format (e.g. OPNFV test result database)
 needed by the end users and the test case result verification programs (e.g.
 [OVP](https://www.opnfv.org/verification)). Historically, these rules were
-agreed by RC1 team and have been applied since
+agreed by RC1 team and have been applied since.
 The OPNFV Test 
 Integration toolchains will be used by all CNTT conformance suites.
 
