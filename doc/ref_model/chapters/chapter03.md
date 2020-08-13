@@ -116,7 +116,7 @@ Storage resources have the following attributes:
 | `performance`       | low latency, IOPS oriented, capacity oriented                            |
 | `enhanced features` | replication, encryption                                                  |
 | `type`              | block, object or file                                                    |
-| `size`              | size of disc in GB                                                       |
+| `size`              | size in GB                                                       |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
