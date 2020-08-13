@@ -486,9 +486,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.std.016 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management; ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management | |
 | sec.std.017 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
 
-
-
 <p align="center"><b>Table 2-16:</b> Security Recommendations</p>
+
 <!--
 **Backlog of Req**
 
@@ -554,4 +553,6 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 1. Logging, Monitoring, Alerting of the Cloud should ensure any failures in the control plane are either self-healed or alerted on and ideally some sort of centralised log file analysis should be possible without needing to trawl local log files.    Logging in the tenant space is left to the application.
 1. Backup of the control plane configuration (keystone DB, other DB, policy.json’s) to a remote object store.
+
 -->
+

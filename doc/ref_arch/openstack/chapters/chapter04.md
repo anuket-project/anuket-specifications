@@ -389,11 +389,9 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 #### 4.2.3.1 Physical Network Topology
 
-
-
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/RA1-Ch04-Indicative-OpenStack-Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-5: Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Indicative-OpenStack-Network.png" alt="Indicative OpenStack Network Layout"><b>Figure 4-5: Indicative OpenStack Network Layout.</b></p>
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
@@ -467,7 +465,7 @@ The Ceph storage cluster is deployed on bare metal hardware. The minimal configu
 
 Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
 
-<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"></br>Figure 4-6: Ceph Storage System.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"><b>Figure 4-6: Ceph Storage System.</b></p>
 
 **BIOS Requirement for Ceph servers**
 
@@ -534,9 +532,9 @@ Neutron is the networking service, Neutron depends on Keystone and has services 
 | Networking Service component | Description | Required or Optional Service | Placement |
 |-----|-----|----|----|
 | neutron server (neutron-server and neutron-\*-plugin) | Manages user requests and exposes the Neutron APIs | Required | Controller node |
-| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node </br> (Controller node if no network node present) |
-| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node </br>(Controller node if no network node present)</br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
-| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node </br> (Controller node if no network node present) |
+| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node <br> (Controller node if no network node present) |
+| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node <br>(Controller node if no network node present)<br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
+| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node <br> (Controller node if no network node present) |
 | neutron plugin agent (neutron-\*-agent) | Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch or Linux Bridge) configuration and local networking configuration for VMs hosted on that node. | Required | Every Compute Node |
 <p align="center"><b>Table 4-2: Neutron Services Placement</b></p>
 
@@ -627,7 +625,7 @@ Containers are lightweight compared to Virtual Machines and leads to efficient r
 
 In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-7.
 
-<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-7: Containerised OpenStack Services Topology.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"><b>Figure 4-7: Containerised OpenStack Services Topology.</b></p>
 
 
 <a name="4.4"></a>
