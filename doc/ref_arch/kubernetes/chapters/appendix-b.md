@@ -7,7 +7,7 @@
 * [B.1 Overview](#B.1)
 * [B.2 Best Practices For workload isolation(Multitenancy](#B.2)
 * [B.3 TBC](#B.3)
-* [B.4 TBC](#B.4)
+
 
 <a name="B.1"></a>
 ## B.1 Overview
@@ -26,8 +26,8 @@ Use cases:
 <a name="B.2"></a>
 ## B.2 Multitenancy Models for CNFs
 Solution Models :
-1.Seperate Namespace per Vendor within Single Kubernetes Cluster
-2.Seperate Kubernetes Cluster per Vendor
+1. Seperate Namespace per Vendor within Single Kubernetes Cluster
+2. Seperate Kubernetes Cluster per Vendor
 
 <a name="B.3"></a>
 ## B.3 Solution Areas
@@ -40,5 +40,4 @@ The scope is to identify the solution area which is needed to secure the CNF wor
 6. RBAC and secrets Management for CNF Workload
 7. Seperate Isolated view of Logging,Monitoring,Alerting and Tracing for CNF Workloads
 
-<a name="B.4"></a>
-## B.4 TBC
+
