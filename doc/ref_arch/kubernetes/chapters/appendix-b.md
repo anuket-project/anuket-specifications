@@ -16,8 +16,7 @@ Problem statement: A single Kubernetes cluster does not provide hard multitenanc
 Namespace does provide isolation by means of RBAC, Resource Isolation and Network Policy, however they are still within the same trust domain and a potential breach of Cluster Admin Role could lead to the Blast Radius across the entire Cluster and all its namespaces.
 So there is a need to define various use cases or ways to build Multitenancy Deployment Models and define the Best Practices to secure each Model.
 
-<p align="left"><img src="../figures/Model2-cluster.png" alt="scope" title="Scope" width="50%"/></p>
-<p align="right"><img src="../figures/Model2-ns.png" alt="scope" title="Scope" width="50%"/></p>
+<p align="left"><img src="../figures/Model2-cluster.png" alt="scope" title="Scope" width="50%"/></p> <p align="right"><img src="../figures/Model2-ns.png" alt="scope" title="Scope" width="50%"/></p>
 Use cases:
 1 Two CNF-s which are in the same trust domain (e.g.: they are from the same vendor) are running in a container infrastructure
 2 Two CNF-s which are in different trust domains (e.g.: they are from different vendors) are running in a container infrastructure
