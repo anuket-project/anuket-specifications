@@ -109,12 +109,19 @@ For all infrastructure components, passwords must be hardened and a strict passw
 
 Passwords must be strengthened:
 -	All vendors default passwords must be changed
--	Passwords must contain at least 8 characters
+-	Passwords must contain at least 8 characters as a minimal value, 14 characters length passworda are recommended
 -	Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
+-       For administration privileges accounts, passwords must contain at least one upper case letter, one lower case letter, one numeral and one special (non-alphanumeric) character
 
 For passwords updates, the identity of users must be verified before permitting a password change.
 
 Passwords must be encrypted at rest and in-transit. Password files must be stored separately from application system data.
+
+Password's composition, complexity and policy should follow the recommendations consolidated within the CIS Password Policy guide(https://www.cisecurity.org/white-papers/cis-password-policy-guide/) such as:
+- 	Check the password for known bad passwords(repetitive or sequential characters, dictionary words, context-specific words, previously used passwords...)
+- 	Limit failed login attempts
+-	Implement Multi-factor Authentication
+-	Yearly password change or on key events e.g. indication of compromise, change of user roles, when  user leaves the organization.
 
 
 #### 6.3.2.2 Function and Software
