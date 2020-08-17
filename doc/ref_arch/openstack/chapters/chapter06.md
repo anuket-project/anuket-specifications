@@ -121,7 +121,7 @@ Password's composition, complexity and policy should follow the recommendations 
 - Check the password for known bad passwords (repetitive or sequential characters, dictionary words, context-specific words, previously used passwords, etc.)
 - Limit number of failed login attempts
 - Implement Multi-factor Authentication
-- Yearly password change or on key events e.g. indication of compromise, change of user roles, when  user leaves the organization.
+- Periodic (for example, Yearly, Quarterly, etc.)  password change or on key events such as indication of compromise, change of user roles, a defined period of inactivity, when a user leaves the organization, etc..
 
 
 #### 6.3.2.2 Function and Software
