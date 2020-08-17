@@ -118,7 +118,7 @@ For passwords updates, the identity of users must be verified before permitting 
 Passwords must be encrypted at rest and in-transit. Password files must be stored separately from application system data.
 
 Password's composition, complexity and policy should follow the recommendations consolidated within the [CIS Password Policy guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/) such as:
-- Check the password for known bad passwords(repetitive or sequential characters, dictionary words, context-specific words, previously used passwords...)
+- Check the password for known bad passwords (repetitive or sequential characters, dictionary words, context-specific words, previously used passwords, etc.)
 - Limit failed login attempts
 - Implement Multi-factor Authentication
 - Yearly password change or on key events e.g. indication of compromise, change of user roles, when  user leaves the organization.
