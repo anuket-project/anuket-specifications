@@ -34,7 +34,7 @@ Requirements Principles can be found in the [RM Principles](https://github.com/c
 * Conformance specifications must refer to the *versioned* test implementations that must be used to validate the requirements
 * Conformance specifications must define the expected preconditions and environment requirements for any test tooling
 * Conformance specifications must define which tests must be executed in the given testing tools to achieve conformance
-* The conformance specification must provide the mapping between tests and requirements to demonstrate traceability and coverage.
+* The conformance specifications must provide the mapping between tests and requirements to demonstrate traceability and coverage.
 
 # CNTT Reference Conformance (RC) Test Case Integration
 
