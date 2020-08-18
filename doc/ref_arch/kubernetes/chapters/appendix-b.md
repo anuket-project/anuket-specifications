@@ -26,7 +26,7 @@ Use cases:
 <a name="B.2"></a>
 ## B.2 Multitenancy Models for CNFs
 Solution Models :
-1. Seperate Namespace per Vendor within Single Kubernetes Cluster
+1. Seperate Kubernetes Namespace per Vendor within Single Kubernetes Cluster
 2. Seperate Kubernetes Cluster per Vendor
 
 <a name="B.3"></a>
