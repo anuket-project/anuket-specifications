@@ -12,7 +12,7 @@
 <a name="B.1"></a>
 ## B.1 Overview
 
-Problem statement: A single Kubernetes cluster does not provide hard multitenancy by design. Within a Cluster, Namespace is a mechanism to provide Soft isolation multitenancy.
+Problem statement: A single Kubernetes cluster does not provide hard multitenancy by design. Within a Cluster, Kubernetes Namespace is a mechanism to provide Soft isolation multitenancy.
 Namespace does provide isolation by means of RBAC, Resource Isolation and Network Policy, however they are still within the same trust domain and a potential breach of Cluster Admin Role could lead to the Blast Radius across the entire Cluster and all its namespaces.
 So there is a need to define various use cases or ways to build Multitenancy Deployment Models and define the Best Practices to secure each Model.
 
@@ -39,5 +39,4 @@ The scope is to identify the solution area which is needed to secure the CNF wor
 5. Seperate Storage Backend for each CNF Workloads
 6. RBAC and secrets Management for CNF Workload
 7. Seperate Isolated view of Logging,Monitoring,Alerting and Tracing for CNF Workloads
-
 
