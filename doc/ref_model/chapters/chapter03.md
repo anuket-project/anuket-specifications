@@ -98,17 +98,25 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 
 <a name="3.2.3"></a>
 ### 3.2.3 Storage
-A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host.
 
-_**Example**: an OpenStack cinder volume._
+A workload can request different types of storage based on data longevity: persistent or ephemeral storage.
+Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
 
-| Attribute      | Description                                                              |
-|----------------|--------------------------------------------------------------------------|
-| `name`         | name of storage resources                                                |
-| `size`         | size of disc in GB                                                       |
-| `attachments`  | list of compute hosts to which the device is currently attached          |
-| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
-| `metadata`     | key/value pairs for selection of the appropriate redundancy domain       |
+There are multiple storage performance requirements such as latency, IOPS and capacity. For example, a workload may require one of its storage device to provide low latency, high IOPS and very large/huge storage capacity (terabytes of data).
+Low Latency storage is for workloads which have strong constraints on the time to access the storage.
+High IOPS oriented storage is for workloads requiring lots of read/write actions.
+Capacity oriented storage is for workloads that need lots of volumetry without strong perfomance constraints.
+
+Storage resources have the following attributes:
+
+| Attribute           | Description                                                              |
+|---------------------|--------------------------------------------------------------------------|
+| `name`              | name of storage resources                                                |
+| `data availibilty`  | persistent or ephemeral                                                  |  
+| `performance`       | latency, IOPS, capacity                            |
+| `enhanced features` | replication, encryption                                                  |
+| `type`              | block, object or file                                                    |
+| `size`              | size in GB                                                       |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
