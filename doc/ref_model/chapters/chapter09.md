@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 9 Infrastructure Operations and Lifecycle Management
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+
 
 ## Table of Contents
 * [9.1 Introduction](#9.1)
@@ -154,8 +154,8 @@ This leads to the following table (Table 9-3) which defines the standard interfa
 
 | Component | Interface Standard | Link |
 | --- | --- | --- |
-| Infrastructure Management | ... | ... |
-| Infrastructure Software | ... | ... |
+| Infrastructure Management | Defined in RA specifications | RA-1, RA-2 |
+| Infrastructure Software | Defined in RA specifications | RA-1, RA-2 |
 | Infrastructure Hardware | Redfish API | [DMTF Specification](https://www.dmtf.org/standards/redfish) |
 
 <p align="center"><b>Table 9-3:</b> Interface Standards for Configuration Management</p>
