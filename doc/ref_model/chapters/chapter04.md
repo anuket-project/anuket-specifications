@@ -260,7 +260,7 @@ Table 4-10 shows performance measurement capabilities.
 
 <a name="4.1.6.1"></a>
 #### 4.1.6.1 Resources Management Measurements
-**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GS NFV TST-012 [3].
+**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GR NFV TST-012 [3]. The intention of this table is to provide a list of measurements to be used in the Reference Architecture specifications, where the concrete values allowed for these measurements in the context of a particular Reference Architecture will be defined.
 
 <a name="Table4-11"></a>
 
