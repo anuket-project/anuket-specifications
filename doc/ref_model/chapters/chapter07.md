@@ -447,7 +447,7 @@ Insuring that the security standards and best practices are incorporated into th
 | req.sec.gen.005 | The Platform **must** support Operating System level access control. |   |
 | req.sec.gen.006 | The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required. |   |
 | req.sec.gen.007 | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service. | |
-| req.sec.gen.008 | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities | |
+| req.sec.gen.008 | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. |  |
 | req.sec.gen.009 | The Platform **must** support Software integrity protection and verification | |
 | req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. [Controlled Access Based on the Need to Know]https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/ | Expand/Delete based on other requirements |
 | req.sec.gen.011 | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) | |
