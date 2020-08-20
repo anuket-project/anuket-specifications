@@ -13,7 +13,7 @@ The overall workstream requires the close coordination of the following:
 If there is no clear traceability and strong links between these 3 components, then it becomes difficult to determine if a NF or cloud infrastructure is compliant. With this in mind, below are the set of recommended principles for each of the three components to follow. Adherence to these principles will provide the following:
 
 * Enable clear progress tracking and linkage between independent projects (i.e. know what has and hasn't been covered, and track changes over time)
-* Help users better understand mandatory requirements
+* Help users better understand if they meet requirements
 * Provide a stable set of point-in-time requirements and tests to achieve conformance
 * Reduce ambiguity in testing, requirements, and conformance
 
