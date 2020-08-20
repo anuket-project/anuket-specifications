@@ -206,10 +206,13 @@ In order for the storage solution(s) to be conformant with the Reference Archite
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.stg.001`||||
-|`ra2.stg.002`||||
-|`ra2.stg.003`||||
-|`ra2.stg.004`||||
+|`ra2.stg.001`| Ephemeral Storage | An implementation must support ephemeral storage, for the unpacked container images to be stored and executed from, as a directory in the filesystem on the worker node on which the container is running. <br>See the [Container runtimes](#4.4) section above for more information on how this meets the requirement for ephemeral storage for containers. ||
+|`ra2.stg.002`| Kubernetes Volumes | An implementation may attach additional storage to containers using Kubernetes Volumes. ||
+|`ra2.stg.003`| Kubernetes Volumes | An implementation may use Volume Plugins (see `ra2.stg.005` below) to allow the use of a storage protocol (e.g. iSCSI, NFS) or management API (e.g. Cinder, EBS) for the attaching and mounting of storage into a Pod. ||
+|`ra2.stg.004`| Persistent Volumes | An implementation may support Kubernetes Persistent Volumes (PV) to provide persistent storage for Pods (requirement 'req.inf.stg.01'.<br>Persistent Volumes exist independent of the lifecycle of containers and/or pods. |[req.inf.stg.01](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/kubernetes/chapters/chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.stg.005`| Storage Extension | Volume plugins must allow for the use of a range of backend storage systems. ||
+|`ra2.stg.006`| Container Storage Interface (CSI) | An implementation may support the Container Storage Interface (CSI), an Out-of-tree plugin.<br>In order to support CSI, the  feature gates `CSIDriverRegistry` and `CSINodeInfo` must be enabled.<br>The implementation must use a CSI driver (a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)). <br>An implementation may support ephemeral storage through a CSI-compatible volume plugin in which case the `CSIInlineVolume` feature gate must be enabled.<br>An implementation may support Persistent Volumes through a CSI-compatible volume plugin in which case  the `CSIPersistentVolume` feature gate must be enabled. | |
+ |`ra2.stg.007`|  | An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns between providers of a service and consumers of the service. | |
 
 <p align="center"><b>Table 4-5:</b> Storage Solution Specifications</p>
 
