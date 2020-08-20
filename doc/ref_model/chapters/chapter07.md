@@ -452,7 +452,7 @@ Insuring that the security standards and best practices are incorporated into th
 | req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. [Controlled Access Based on the Need to Know]https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/ |   |
 | req.sec.gen.011 | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) | |
 | req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  |
-| req.sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure | |
+| req.sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  |
 | req.sec.gen.014 | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers | |
 | req.sec.gen.005 | Any change to the Platform must be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | |
 
