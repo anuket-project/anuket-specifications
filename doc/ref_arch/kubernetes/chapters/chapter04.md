@@ -122,10 +122,10 @@ In order for the Container runtime(s) to be conformant with the Reference Archit
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.crt.001`||||
-|`ra2.crt.002`||||
-|`ra2.crt.003`||||
-|`ra2.crt.004`||||
+|`ra2.crt.001`|Runtime conformance with OCI 1.0 for Linux platform|The configuration parameters of the runtimes distribution, product, or installer used in the implementation must comply with [OCI 1.0 Specification](https://github.com/opencontainers/runtime-spec/blob/master/config.md).|Requierement ID??|
+|`ra2.crt.002`|Runtime conformance with OCI 1.0 for Solaris platform|The configuration parameters of the runtimes distribution, product, or installer used in the implementation must comply with [OCI 1.0 Specification](https://github.com/opencontainers/runtime-spec/blob/master/config.md).|Requierement ID??|
+|`ra2.crt.003`|Runtime conformance with OCI 1.0 for Windows platform|The configuration parameters of the runtimes distribution, product, or installer used in the implementation must comply with [OCI 1.0 Specification](https://github.com/opencontainers/runtime-spec/blob/master/config.md).|Requierement ID??|
+|`ra2.crt.004`|Runtime conformance with OCI 1.0 for Baremetel platform|The configuration parameters of the runtimes distribution, product, or installer used in the implementation must comply with [OCI 1.0 Specification](https://github.com/opencontainers/runtime-spec/blob/master/config.md).|Requierement ID??|
 
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 
