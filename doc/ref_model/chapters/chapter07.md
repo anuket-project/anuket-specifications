@@ -445,7 +445,7 @@ Insuring that the security standards and best practices are incorporated into th
 | req.sec.gen.003 | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot. |  |
 | req.sec.gen.004 | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or disabling unnecessary services, applications and network protocols, configuring operating system user authentication, configuring resource controls, installing and configuring additional security controls where needed, and testing the security of the Operating System. | NIST SP 800-123 |
 | req.sec.gen.005 | The Platform **must** support Operating System level access control. |   |
-| req.sec.gen.006 | The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required | Details |
+| req.sec.gen.006 | The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required. |   |
 | req.sec.gen.007 | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service | |
 | req.sec.gen.008 | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities | |
 | req.sec.gen.009 | The Platform **must** support Software integrity protection and verification | |
