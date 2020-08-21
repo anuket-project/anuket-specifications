@@ -291,7 +291,7 @@ Running containers will require ephemeral storage on which to run themselves
 from). This ephemeral storage lives and dies with the container and is a
 directory on the worker node on which the container is running.  Note, this
 means that the ephemeral storage is mounted locally in the worker node
-filesystem. The filesystem can also be physically external to the worker node
+filesystem. The filesystem can be physically external to the worker node
 (e.g. iSCSI, NFS, FC) but the container will still reference it as part of the
 local filesystem.
 
