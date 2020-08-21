@@ -54,10 +54,21 @@ the following specifications:
 |`ra2.ch.005`|CPU Allocation Ratio - VMs|For Kubernetes nodes running as Virtual Machines, ensure the CPU allocation ratio between vCPU and physical CPU is 1:1.|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.006`|CPU Allocation Ratio - Pods|To ensure the CPU allocation ratio between vCPU and physical CPU is 1:1, the sum of CPU requests and limits by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu < allocatable.cpu` and `limits.cpu < allocatable.cpu`).|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.007`|IPv6DualStack|To support IPv4/IPv6 dual stack networking, the Container Host OS must support and be allocated routable IPv4 and IPv6 addresses.|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ch.008`||||
-|`ra2.ch.009`||||
-|`ra2.ch.010`||||
-|`ra2.ch.011`||||
+|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Container Hosts run must be equipped with at least 2 physical sockets, each of at least 20 CPU cores.|[infra.hw.cpu.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)<br>[infra.hw.cpu.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.009`|Physical Storage|The physical machines on which the Container Hosts run should be equipped with Sold State Drives (SSDs).|[infra.hw.stg.ssd.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.010`|Physical Local Storage Quantity|The physical machines on which the Container Hosts run must be equipped with at least 320GB of local storage for container images to be unpacked and executed. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc. |[e.cap.003](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ch.011`|Virtual Node CPU Quantity|If using VMs, the Container Hosts must be equipped with at least 8 physical cores in order to support the "Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure" of at least 16, with SMT enabled, and the "CPU overbooking ratio" of 1:1 (see `ra2.ch.004`, `ra2.ch.005` and `ra2.ch.006`).  Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.001](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ch.012`|Container Host RAM Quantity|The Container Hosts must be equipped with at least 32GB of RAM. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.002](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ch.013`|Physical NIC Quantity|The physical machines on which the Container Hosts run must be equipped with at least four (4) Network Interface Card (NIC) ports.|[infra.hw.nic.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.014`|Physical NIC Speed - Basic Profile|The NIC ports housed in the physical machines on which the Container Hosts run for workloads matching the Basic Profile must be at least 10Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.015`|Physical NIC Speed - Network Intensive Profile|The NIC ports housed in the physical machines on which the Container Hosts run for workloads matching the Network Intensive profile must be at least 25Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.015`|Physical PCIe slots|The physical machines on which the Container Hosts run must be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.|
+|`ra2.ch.016`|||
+|`ra2.ch.017`|||
+|`ra2.ch.018`|||
+|`ra2.ch.019`|||
+|`ra2.ch.020`|||
+|`ra2.ch.021`|||
 
 <p align="center"><b>Table 4-1:</b> Host OS Specifications</p>
 
