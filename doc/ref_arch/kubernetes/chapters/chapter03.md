@@ -60,7 +60,7 @@ src="../../../ref_model/figures/RM_chap5_fig_5_3_SW_profile.png"
 width="80%"/></p> <p align="center"><b>Figure 5-3 (from RM):</b> NFVI software
 profiles</p>
 
-In addition, Figure 5-4 (also shown below) depicts the hardware profile features
+In addition, the RM Figure 5-4 (shown below) depicts the hardware profile features
 that apply to each instance profile.
 
 <p align="center"><img
