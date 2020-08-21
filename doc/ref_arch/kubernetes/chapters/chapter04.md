@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
-* [4.2 Container Host](#4.2)
+* [4.2 Kubernetes Node](#4.2)
 * [4.3 Kubernetes](#4.3)
 * [4.4 Container runtimes](#4.4)
 * [4.5 Networking solutions](#4.5)
@@ -25,7 +25,7 @@ and delivered.
 
 The specifications defined in this chapter will be detailed with unique
 identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g.
-`ra2.ch.001` for the first requirement in the Container Host section.  These
+`ra2.ch.001` for the first requirement in the Kubernetes Node section.  These
 specifications will then be used as requirements input for the Kubernetes
 Reference Implementation and any Vendor or Community Implementations.
 
@@ -38,32 +38,32 @@ Architecture" width="65%"/></p>
 <p align="center"><b>Figure 4-1:</b> Kubernetes Reference Architecture</p>
 
 <a name="4.2"></a>
-## 4.2 Container Host
+## 4.2 Kubernetes Node
 
 This section describes the configuration that will be applied to the physical or
-virtual machine and an installed Operating System. In order for a Container Host
+virtual machine and an installed Operating System. In order for a Kubernetes Node
 to be conformant with the Reference Architecture it must be implemented as per
 the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ch.001`|Huge Pages|It must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Container Host OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|[infra.com.cfg.004](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.002`|SR-IOV capable NICs|When hosting workloads requiring SR-IOV acceleration, the physical machines on which the Container Hosts run must be equipped with NICs that are SR-IOV capable.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.003`|SR-IOV Virtual Functions|When hosting workloads requiring SR-IOV acceleration, SR-IOV virtual functions (VFs) must be configured within the Container Host OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Container Host runs.|[infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.001`|Huge Pages|It must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|[infra.com.cfg.004](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ch.002`|SR-IOV capable NICs|When hosting workloads requiring SR-IOV acceleration, the physical machines on which the Kubernetes Nodes run must be equipped with NICs that are SR-IOV capable.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ch.003`|SR-IOV Virtual Functions|When hosting workloads requiring SR-IOV acceleration, SR-IOV virtual functions (VFs) must be configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.|[infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.005`|CPU Allocation Ratio - VMs|For Kubernetes nodes running as Virtual Machines, ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1.|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ch.006`|CPU Allocation Ratio - Pods|To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu < allocatable.cpu` and `limits.cpu < allocatable.cpu`).|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.007`|IPv6DualStack|To support IPv4/IPv6 dual stack networking, the Container Host OS must support and be allocated routable IPv4 and IPv6 addresses.|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Container Hosts run must be equipped with at least 2 physical sockets, each of at least 20 CPU cores.|[infra.hw.cpu.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)<br>[infra.hw.cpu.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.009`|Physical Storage|The physical machines on which the Container Hosts run should be equipped with Sold State Drives (SSDs).|[infra.hw.stg.ssd.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.007`|IPv6DualStack|To support IPv4/IPv6 dual stack networking, the Kubernetes Node OS must support and be allocated routable IPv4 and IPv6 addresses.|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Kubernetes Nodes run must be equipped with at least 2 physical sockets, each of at least 20 CPU cores.|[infra.hw.cpu.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)<br>[infra.hw.cpu.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.009`|Physical Storage|The physical machines on which the Kubernetes Nodes run should be equipped with Sold State Drives (SSDs).|[infra.hw.stg.ssd.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.010`|Local Filesystem Storage Quantity|The Kubernetes Nodes must be equipped with local filesystem capacity of at least 320GB for unpacking and executing containers. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.003](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ch.011`|Virtual Node CPU Quantity|If using VMs, the Kubernetes Nodes must be equipped with at least 16 vCPUs.  Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.001](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
-|`ra2.ch.012`|Container Host RAM Quantity|The Container Hosts must be equipped with at least 32GB of RAM. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.002](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
-|`ra2.ch.013`|Physical NIC Quantity|The physical machines on which the Container Hosts run must be equipped with at least four (4) Network Interface Card (NIC) ports.|[infra.hw.nic.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.014`|Physical NIC Speed - Basic Profile|The NIC ports housed in the physical machines on which the Container Hosts run for workloads matching the Basic Profile must be at least 10Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.015`|Physical NIC Speed - Network Intensive Profile|The NIC ports housed in the physical machines on which the Container Hosts run for workloads matching the Network Intensive profile must be at least 25Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.015`|Physical PCIe slots|The physical machines on which the Container Hosts run must be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.|
-|`ra2.ch.016`|Immutable infrastructure|Whether physical or virtual machines are used, the Container Host is not changed after it is made ready for use. New changes to the Container Host are rolled out as new instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|[`req.gen.cnt.02`](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ch.012`|Kubernetes Node RAM Quantity|The Kubernetes Nodes must be equipped with at least 32GB of RAM. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.002](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ch.013`|Physical NIC Quantity|The physical machines on which the Kubernetes Nodes run must be equipped with at least four (4) Network Interface Card (NIC) ports.|[infra.hw.nic.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.014`|Physical NIC Speed - Basic Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Basic Profile must be at least 10Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.015`|Physical NIC Speed - Network Intensive Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Network Intensive profile must be at least 25Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
+|`ra2.ch.015`|Physical PCIe slots|The physical machines on which the Kubernetes Nodes run must be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.|
+|`ra2.ch.016`|Immutable infrastructure|Whether physical or virtual machines are used, the Kubernetes Node is not changed after it is made ready for use. New changes to the Kubernetes Node are rolled out as new instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|[`req.gen.cnt.02`](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ch.017`||||
 |`ra2.ch.018`||||
 |`ra2.ch.019`||||
