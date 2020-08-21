@@ -72,29 +72,6 @@ the following specifications:
 
 <p align="center"><b>Table 4-1:</b> Host OS Specifications</p>
 
-<!--
-> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REPLACING WITH SPECS IN THE ABOVE TABLE AS PER:
-#991
-#920
-#1184
-#1634
-
-- A version of the Linux kernel that is [compatible with kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/#kubeadm-init-workflow-internal-design) - this has been chosen as the baseline because kubeadm is concerned with nothing other than installing and managing the lifecycle of Kubernetes, hence it is easily integrated into higher-level and more complete tooling for the full lifecycle management of the infrastructure, cluster add-ons, and other tools and applications required for the full system.
-- Windows Server 2019 (this can be used for worker nodes, but be aware of the [limitations](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/#limitations)).
-- Support `req.gen.cnt.02` (immutable infrastructure), which means that the Host OS must be easily reproduced, consistent, disposable, with a repeatable deployment process, and will not have configuration or artifacts that are modifiable in place (i.e. once it is in a  running state).
-- The selection of Host OS shall not restrict the selection of the OS used to build container images (container base image).
-
-Table 4-1 lists the Linux kernel versions that comply with this Reference Architecture specification.
-
-|OS Family|Version(s)|Notes|
-|---|---|---|
-|Linux|3.10+||
-|Windows|1809 (10.0.17763)|For worker nodes only|
-
-<p align="center"><b>Table 4-1:</b> Conformant OS Kernels</p>
--->
-
-
 <a name="4.3"></a>
 ## 4.3 Kubernetes
 > * The version of version range of Kubernetes and the mandatory components needed for Kubernetes (e.g.: etcd, cadvisor)
