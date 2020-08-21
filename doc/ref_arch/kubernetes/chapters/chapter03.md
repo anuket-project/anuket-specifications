@@ -130,7 +130,7 @@ The Reference Model requires the support of Huge Pages in `i.cap.018` which is
 already supported by upstream Kubernetes. For some applications, Huge Pages
 should be allocated to account for consideration of the underlying HW topology.
 This newer feature is missing from Kubernetes, therefore a gap has been
-identified and added to [Chapter 8.2.8](./chapter08.md/#8.2.8)
+identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hugepages)
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 HW Topology management
 
