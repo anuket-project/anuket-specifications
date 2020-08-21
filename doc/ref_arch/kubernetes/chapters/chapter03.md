@@ -82,16 +82,16 @@ RM requirements formally documented in [chapter 2, section
 ### 3.2.1 Container Compute Services
 
 The primary interface between the Physical / Virtual Infrastructure and any
-container-relevant components is the Host Operating System.  This is
+container-relevant components is the Container Host Operating System.  This is
 the OS within which the container runtime exists, and within which the
 containers run (and therefore, the OS whose kernel is shared by the referenced
 containers).  This is shown in Figure 3-1 below.
 
 <p align="center"><img src="../figures/ch03_hostOS.png" alt="Kubernetes Host
-Operating System" Title="Kubernetes Host Operating System" width="65%"/></p>
-<p align="center"><b>Figure 3-1:</b> Kubernetes Host Operating System</p>
+Operating System" Title="Kubernetes Container Host Operating System" width="65%"/></p>
+<p align="center"><b>Figure 3-1:</b> Kubernetes Container Host Operating System</p>
 
-The Host OS (as with any OS) consists of two main  components:
+The Container Host OS (as with any OS) consists of two main  components:
 - Kernel space
 - User space
 
@@ -101,13 +101,13 @@ an interpreter or libraries). Key containerisation capabilities such as Control
 Groups (cgroups) and namespaces are kernel features, and are used and managed by
 the container runtime in order to provide isolation between the user space
 processes, which would also include the container itself as well as any
-processes running within it. The security of the Host OS and its relationship to
-the container and the applications running within the container or containers is
-essential to the overall security posture of the entire system, and must be
-appropriately secured to ensure processes running in one container cannot
-escalate their privileges or otherwise affect processes running in an adjacent
-container.  An example and more details of this concept can be found in [chapter
-6](./chapter06.md)).
+processes running within it. The security of the Container Host OS and its
+relationship to the container and the applications running within the container
+or containers is essential to the overall security posture of the entire system,
+and must be appropriately secured to ensure processes running in one container
+cannot escalate their privileges or otherwise affect processes running in an
+adjacent container.  An example and more details of this concept can be found in
+[chapter 6](./chapter06.md)).
 
 It is important to note that the container runtime itself is also a set of
 processes that run in user space, and therefore also interact with the kernel
@@ -156,12 +156,12 @@ device management.
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Container Runtime Services
 
-The Container Runtime is the component that runs within a Host Operating System
-(OS) and manages the underlying OS functionality, such as cgroups and namespaces
-(in Linux), in order to provide a service within which container images can be
-executed and make use of the infrastructure resources (compute, storage,
-networking and other I/O devices) abstracted by the Host OS, based on API
-instructions from the kubelet.
+The Container Runtime is the component that runs within a Container Host
+Operating System (OS) and manages the underlying OS functionality, such as
+cgroups and namespaces (in Linux), in order to provide a service within which
+container images can be executed and make use of the infrastructure resources
+(compute, storage, networking and other I/O devices) abstracted by the Container
+Host OS, based on API instructions from the kubelet.
 
 There are a number of different container runtimes. The simplest form, low-level
 container runtimes, just manage the OS capabilities such as cgroups and
