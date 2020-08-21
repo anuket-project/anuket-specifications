@@ -40,7 +40,7 @@ While this Reference Architecture is being developed, Gaps will be identified th
 <a name="6.2.2"></a>
 ### 6.2.2 Multi-tenancy and workload isolation with Kubernetes
 
-**Related requirements:** `e.man.004` `sec.ci.008` `sec.wl.005``sec.wl.006` `req.inf.ntw.03`
+**Related requirements:** `e.man.004` `sec.ci.008` `sec.wl.005``sec.wl.006`
 
 **Baseline project:** none
 
