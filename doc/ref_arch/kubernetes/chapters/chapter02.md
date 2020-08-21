@@ -133,7 +133,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Minimum number of CPU (Sockets) | 2 | 2 | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | 20 | |
+| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 | |
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Must support | |
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cac.cfg.001 | GPU | Not required | Not required | |
