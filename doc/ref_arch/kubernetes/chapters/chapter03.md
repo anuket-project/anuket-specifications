@@ -82,16 +82,16 @@ RM requirements formally documented in [chapter 2, section
 ### 3.2.1 Container Compute Services
 
 The primary interface between the Physical / Virtual Infrastructure and any
-container-relevant components is the Container Host Operating System.  This is
+container-relevant components is the Kubernetes Node Operating System.  This is
 the OS within which the container runtime exists, and within which the
 containers run (and therefore, the OS whose kernel is shared by the referenced
 containers).  This is shown in Figure 3-1 below.
 
 <p align="center"><img src="../figures/ch03_hostOS.png" alt="Kubernetes Host
-Operating System" Title="Kubernetes Container Host Operating System" width="65%"/></p>
-<p align="center"><b>Figure 3-1:</b> Kubernetes Container Host Operating System</p>
+Operating System" Title="Kubernetes Node Operating System" width="65%"/></p>
+<p align="center"><b>Figure 3-1:</b> Kubernetes Node Operating System</p>
 
-The Container Host OS (as with any OS) consists of two main  components:
+The Kubernetes Node OS (as with any OS) consists of two main  components:
 - Kernel space
 - User space
 
@@ -101,7 +101,7 @@ an interpreter or libraries). Key containerisation capabilities such as Control
 Groups (cgroups) and namespaces are kernel features, and are used and managed by
 the container runtime in order to provide isolation between the user space
 processes, which would also include the container itself as well as any
-processes running within it. The security of the Container Host OS and its
+processes running within it. The security of the Kubernetes Node OS and its
 relationship to the container and the applications running within the container
 or containers is essential to the overall security posture of the entire system,
 and must be appropriately secured to ensure processes running in one container
