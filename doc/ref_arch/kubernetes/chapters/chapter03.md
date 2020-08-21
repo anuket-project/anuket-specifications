@@ -48,11 +48,11 @@ required for telco type workload management and execution.
 Chapter 5 of the Reference Model (RM) describes the
 [hardware](../../../ref_model/chapters/chapter05.md#5.3) and
 [software](../../../ref_model/chapters/chapter05.md#5.1) profiles that are
-descriptions of the capabilities and features that the NFVi provide to the
-workloads. As of v2.0, Figure 5-3 in the RM (also shown below) depicts a high
-level view of the software profile features that apply to each instance profile
-(Basic and Network Intensive). For more information on the instance profiles
-please refer to [RM Chapter 4, section
+descriptions of the capabilities and features that the Cloud Infrastructure
+provide to the workloads. As of v2.0, Figure 5-3 in the RM (also shown below)
+depicts a high level view of the software profile features that apply to each
+instance profile (Basic and Network Intensive). For more information on the
+instance profiles please refer to [RM Chapter 4, section
 4.2.4](../../../ref_model/chapters/chapter04.md#4.2.4).
 
 <p align="center"><img
