@@ -1,7 +1,7 @@
 [<< Back](../../ref_model)
 # 10 Challenges and Gaps
 
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+
 
 ## Table of Contents
 * [10.1 Introduction](#10.1)
@@ -49,11 +49,14 @@ The onboarding of the workloads (network functions) should be automated as much 
 - Capabilities Negotiation/Hand Shake API: 
     - workloads and Cloud Infrastructure should be able to negotiate on certain capabilities. For instance, workload desires HW acceleration for high throughput, but should be able to fall back to high throughput offered by Cloud Infrastructure via DPDK offering, and vice-a-versa.
 
-## 10.3.2 Support Load Balance workloads (VNF/CNFs) [Initial language]
+## 10.3.2 Support Load Balance workloads (VNF/CNFs) 
 Ability to load balance workflows through multiple instances of same VNF or CNF - e.g. using ECMP to distribute workloads through the multiple instances of Firewall. As an example imagine a distributed finance application with multiple instances of Web-tier and DB-tier. The traffic needs to flow through multiple instances of Firewall (for HA as well load balancing). There is no simple way to accomplish this in OpenStack.
 
 ## 10.3.3 Service Function Chain [Initial language]
 Over the past few years there has been a significant move towards decomposing network functions into smaller sub-functions that can be independently scaled and potentially reused across multiple network functions. A service function chain allows composition of network functions by passing selected packets through an ordered list of services. In order to support this capability in a sustainable manner, there is a need to have the capability to model service chains as a high level abstraction. This is essential to ensure that the underlying connection setup, and (re-)direction of traffic flows can be performed in an automated manner. There is also a need to provide specialized tools aid troubleshooting of individual services and the communication between them in order to investigate issues in the performance of composed network functions.
 
-## 10.3.4 Packet Acceleration Request (e.g Hardware Acceleration) [Initial language]
+## 10.3.4 Packet Acceleration Request (e.g Hardware Acceleration)
 While generic server hardware capabilities can be exclusively used for handling networking related workloads, this strategy is neither performant nor energy efficient. There are several forms of accelerators such as smart NICs, programmable networking fabrics/switches, and GPUs that can offload some of these workloads in order to provide higher throughput, energy efficiency and lower latency. The acceleration hardware is typically optimized for specific kinds of workloads and some form of disaggregation might be required to separate control and user plane responsibilities between generic server hardware and accelerators. There is also a need for workload orchestration to be able to understand the packet acceleration needs of specific workloads and schedule such workloads on infrastructure with the requisite capabilities.
+
+## 10.3.5 Multi-cloud architecture directions for network workloads
+There is a growing interest in using a multi-cloud environment for the deployment of network functions. The industry investigates and starts to experiment with deploying and operating network functiuons across several private and/or public clouds to reuse services and capabilities available in these cloud enviroments instead of investing in a duplications of such capabilities.  Edge deployments seem to be one of the catalysts of the growing interest due to a potential of using infrastracture that can be provided by the HCPs with prominent examples of AWS Wavelength or MS Azure Stack.  The 5G GSMA specifications promoting SBA (Service Base Architecture) may also provide an opportunity for the future deployments of the 5G control plane functions (such as AMF) in seperate environments from the 5G data plane functions (such as UPF), which in conjunction with network programmability of some kind may create substantial infrastructure savings for the network operators. The Reference Model will need to provide in its future releases a guidelines for such multi-cloud architectures.
