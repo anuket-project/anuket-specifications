@@ -25,3 +25,65 @@ All of the requirements for RC2 have been defined in the Reference Model (RM) an
 *should*: Test Cases that are marked as should are expected to be fulfilled by the cloud infrastructure but it is up to each service provider whether to accept a cloud infrastructure that is not fulfilling any of these requirements. The same applies to should not.
 
 *may*: Test cases that are marked as may are considered optional. The same applies to may not.
+
+## Traceability Matrix
+
+### Kubernetes API benchmarking
+
+[Rally](https://github.com/openstack/rally) and is tool and framework that
+allows to perform Kubernetes API benchmarking.
+
+[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fkali)
+proposed a Rally-based test case,
+[xrally_kubernetes_full](http://artifacts.opnfv.org/functest-kubernetes/LCY61RV15EX7/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-kali-xrally_kubernetes_full-run-4/xrally_kubernetes_full/xrally_kubernetes_full.html),
+which iterates 10 times the mainline
+[xrally-kubernetes](https://github.com/xrally/xrally-kubernetes) scenarios.
+
+At the time of writing, no KPI is defined in
+[Kubernetes based Reference Architecture](../../../ref_arch/kubernetes/chapters/chapter02.md)
+which would have asked for an update of the default SLA (maximum failure rate
+of 0%) proposed in
+[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fkali)
+
+[Functest xrally_kubernetes_full](http://artifacts.opnfv.org/functest-kubernetes/LCY61RV15EX7/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-kali-xrally_kubernetes_full-run-4/xrally_kubernetes_full/xrally_kubernetes_full.html):
+
+| Scenarios                                                          | Iterations |
+|--------------------------------------------------------------------|:----------:|
+| Kubernetes.create_and_delete_deployment                            | 10         |
+| Kubernetes.create_and_delete_job                                   | 10         |
+| Kubernetes.create_and_delete_namespace                             | 10         |
+| Kubernetes.create_and_delete_pod                                   | 10         |
+| Kubernetes.create_and_delete_pod_with_configmap_volume             | 10         |
+| Kubernetes.create_and_delete_pod_with_configmap_volume [2]         | 10         |
+| Kubernetes.create_and_delete_pod_with_emptydir_volume              | 10         |
+| Kubernetes.create_and_delete_pod_with_emptydir_volume [2]          | 10         |
+| Kubernetes.create_and_delete_pod_with_hostpath_volume              | 10         |
+| Kubernetes.create_and_delete_pod_with_secret_volume                | 10         |
+| Kubernetes.create_and_delete_pod_with_secret_volume [2]            | 10         |
+| Kubernetes.create_and_delete_replicaset                            | 10         |
+| Kubernetes.create_and_delete_replication_controller                | 10         |
+| Kubernetes.create_and_delete_statefulset                           | 10         |
+| Kubernetes.create_check_and_delete_pod_with_cluster_ip_service     | 10         |
+| Kubernetes.create_check_and_delete_pod_with_cluster_ip_service [2] | 10         |
+| Kubernetes.create_check_and_delete_pod_with_node_port_service      | 10         |
+| Kubernetes.create_rollout_and_delete_deployment                    | 10         |
+| Kubernetes.create_scale_and_delete_replicaset                      | 10         |
+| Kubernetes.create_scale_and_delete_replication_controller          | 10         |
+| Kubernetes.create_scale_and_delete_statefulset                     | 10         |
+| Kubernetes.list_namespaces                                         | 10         |
+
+The following software versions are considered to verify Kubernetes v1.18
+(latest stable release) selected by CNTT:
+
+| software                | version     |
+|-------------------------|-------------|
+| Functest                | kali        |
+| xrally-kubernetes       | 1.1.1.dev12 |
+
+## Test Cases Traceability to Requirements
+
+The following test case must pass as they are for Reference Conformance:
+
+| container                                   | test case              | criteria | requirements                |
+|---------------------------------------------|------------------------|:--------:|-----------------------------|
+| opnfv/functest-kubernetes-benchmarking:kali | xrally_kubernetes_full | PASS     | Kubernetes API benchmarking |
