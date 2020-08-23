@@ -38,4 +38,4 @@ The scope is to identify the solution area which is needed to secure the CNF wor
 4. Securing the CNF Workload Network Traffic using Network Policy and Service Mesh
 5. Seperate Storage Backend for each CNF Workloads
 6. RBAC and secrets Management for CNF Workload
-7. Seperate Isolated view of Logging,Monitoring,Alerting and Tracing for CNF Workloads
+7. Separate Isolated view of Logging, Monitoring, Alerting and Tracing for CNF Workloads
