@@ -1,5 +1,5 @@
 [<< Back](../../kubernetes)
-# Appendix B - Guidance For workload isolation(Multitenancy) with Kubernetes for application Vendors
+# Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application Vendors
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
