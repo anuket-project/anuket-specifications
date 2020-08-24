@@ -209,7 +209,7 @@ Traceability to Reference Model.
 | sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.011 | Access | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.012 | Access | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component (e.g., Barbican (OpenStack)) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
-| sec.sys.013 | Access | The Platform **must** generate secrets dynamically as and when needed | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.013 | Access | The Platform **must** generate secrets dynamically as and when needed. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 
 #### 2.3.8.3. Confidentiality and Integrity
 
@@ -555,4 +555,3 @@ The Platform is assumed to provide configurable alerting and notification capabi
 1. Backup of the control plane configuration (keystone DB, other DB, policy.json’s) to a remote object store.
 
 -->
-
