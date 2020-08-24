@@ -80,6 +80,37 @@ The following software versions are considered to verify Kubernetes v1.18
 | Functest                | kali        |
 | xrally-kubernetes       | 1.1.1.dev12 |
 
+### Security testing
+
+There are a couple of opensource tools that help securing the Kubernetes stack.
+Amongst them,
+[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fkali)
+offers two test cases based on
+[kube-hunter](https://github.com/aquasecurity/kube-hunter) and
+[kube-bench](https://github.com/aquasecurity/kube-bench).
+
+[kube-hunter](https://github.com/aquasecurity/kube-hunter) hunts for security
+weaknesses in Kubernetes clusters and
+[kube-bench](https://github.com/aquasecurity/kube-bench) checks
+whether Kubernetes is deployed securely by running the checks documented in the
+[CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/).
+
+At the time of writing, no clear security rules are defined as mandatory
+(e.g. sec.std.001: The Cloud Operator **should** comply with Center for
+Internet Security CIS Controls) which would have asked for an update of the
+default
+[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fkali))
+behavior (all failures and warnings are only printed).
+
+The following software versions are considered to verify Kubernetes v1.18
+(latest stable release) selected by CNTT:
+
+| software                | version     |
+|-------------------------|-------------|
+| Functest                | kali        |
+| kube-hunter             | 0.3.1       |
+| kube-bench              | 0.3.1       |
+
 ### Opensource CNF onboarding and testing
 
 Running opensource containerized network functions (CNF) is a key technical
@@ -90,6 +121,9 @@ Functest CNF offers one test case which automatically onboards and
 tests [Clearwater IMS](https://github.com/Metaswitch/clearwater-docker). It's
 worth mentioning that this CNF is covered by the upstream tests (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)).
+
+The following software versions are considered to verify Kubernetes v1.18
+(latest stable release) selected by CNTT:
 
 | software                | version     |
 |-------------------------|-------------|
@@ -102,5 +136,7 @@ The following test case must pass as they are for Reference Conformance:
 
 | container                                   | test case              | criteria | requirements                          |
 |---------------------------------------------|------------------------|:--------:|---------------------------------------|
+| opnfv/functest-kubernetes-security:kali     | kube_hunter            | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-security:kali     | kube_bench             | PASS     | Security testing                      |
 | opnfv/functest-kubernetes-benchmarking:kali | xrally_kubernetes_full | PASS     | Kubernetes API benchmarking           |
 | opnfv/functest-kubernetes-cnf:kali          | k8s_vims               | PASS     | Opensource CNF onboarding and testing |
