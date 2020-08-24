@@ -158,7 +158,7 @@ At the time of writing, no clear security rules are defined as mandatory
 (e.g. sec.std.001: The Cloud Operator **should** comply with Center for
 Internet Security CIS Controls) which would have asked for an update of the
 default
-[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fkali))
+[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fkali)
 behavior (all failures and warnings are only printed).
 
 The following software versions are considered to verify Kubernetes v1.18
