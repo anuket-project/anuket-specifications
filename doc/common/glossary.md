@@ -32,7 +32,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
   - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
 - **Cloud Native Network Function (CNF)**: A cloud native network function (CNF) is a cloud native application that implements network functionality. A CNF consists of one or more microservices and has been developed using Cloud Native Principles including immutable infrastructure, declarative APIs, and a “repeatable deployment process”.
   >_*Note:*_ This definition is derived from the [Cloud Native Thinking for Telecommunications Whitepaper](https://github.com/cncf/telecom-user-group/blob/master/whitepaper/cloud_native_thinking_for_telecommunications.md#1.4), which also includes further detail and examples.
-- **Virtual Application (VA)**: A general term for software which can be loaded into a Virtual Machine.
+- **Virtual Application (VA)**: A general term for software which can be loaded into a Virtual Machine or a set of Containers.
   >_*Note:*_ a **VNF** is one type of VA.
 - **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of cloud infrastructure are:
   - **Data Plane Workloads**: are related to packet handling of the end-to-end communication between applications. These tasks are expected to be very I/O and memory read/write operations intensive.
