@@ -156,21 +156,16 @@ In order for the networking solution(s) to be conformant with the Reference Arch
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ntw.001`||||
-|`ra2.ntw.002`||||
-|`ra2.ntw.003`||||
-|`ra2.ntw.004`||||
+|`ra2.ntw.001`|CNI multiplexer/metaplugin|As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm). For more detailed feature comparision of CNI multiplexers/metaplugins see Table 4-5| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
+|`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|A CNI plugin may be used which implements the Kubernetes network model and have capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.003`|NAT less connectivity|An IPVLAN CNI plugin or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used||
+|`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
+|`ra2.ntw.005`|SR-IOV|[SR-IOV CNI plugin](https://github.com/intel/sriov-cni) may be used||
+|`ra2.ntw.006`|SR-IOV|[SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) may be used||
+
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
 
-<!--
-> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
-#1555
-#1637
-
-As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm).<br>
-
-The following table contains a comparision of relevant features and requirements in Multus and DANM.
 
 | Requirement | Support in Multus | Support in DANM |
 |-------------|-------------------|-----------------|
@@ -189,15 +184,9 @@ The following table contains a comparision of relevant features and requirements
 | Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported |
 | Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via another CNI plugin | Supported |
 
-<p align="center"><b>Table 4-2:</b> Comparision of CNI multiplexers/metaplugins</p>
+<p align="center"><b>Table 4-5:</b> Comparision of CNI multiplexers/metaplugins</p>
 
 1): Under implementation in the current release.  
-
- [Calico](https://github.com/projectcalico/cni-plugin) may be used as the CNI what complies with the basic networking assumptions of Kubernetes based on the requirement `req.inf.ntw.08` due to it's capability to handle `NetworkPolicies`, what is missing from [Flannel](https://github.com/coreos/flannel-cni).
-For the network of signalling connections the built in IPVLAN CNI of DANM or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used as these provide NAT-less connectivity. For the user plane network(s) the [User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.
-
-> Editors note: The use of SR-IOV in container environments and, therefore, the inclusion of an SR-IOV CNI plugin and the [SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) are still under debate.
--->
 
 <a name="4.6"></a>
 ## 4.6 Storage components
@@ -214,7 +203,7 @@ In order for the storage solution(s) to be conformant with the Reference Archite
 |`ra2.stg.006`| Container Storage Interface (CSI) | An implementation may support the Container Storage Interface (CSI), an Out-of-tree plugin.<br>In order to support CSI, the  feature gates `CSIDriverRegistry` and `CSINodeInfo` must be enabled.<br>The implementation must use a CSI driver (a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)). <br>An implementation may support ephemeral storage through a CSI-compatible volume plugin in which case the `CSIInlineVolume` feature gate must be enabled.<br>An implementation may support Persistent Volumes through a CSI-compatible volume plugin in which case  the `CSIPersistentVolume` feature gate must be enabled. | |
  |`ra2.stg.007`|  | An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns between providers of a service and consumers of the service. | |
 
-<p align="center"><b>Table 4-5:</b> Storage Solution Specifications</p>
+<p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
 
 <!--
 > THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
@@ -268,7 +257,7 @@ In order for the storage solution(s) to be conformant with the Reference Archite
 |---|---|---|---|
 |`ra2.pkg.001`|API-based package management|A package manager must use the Kubernetes APIs to manage application artefacts. Cluster-side components such as Tiller are not supported.|[req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements)|
 
-<p align="center"><b>Table 4-6:</b> Kubernetes Application Package Management Specifications</p>
+<p align="center"><b>Table 4-7:</b> Kubernetes Application Package Management Specifications</p>
 
 <a name="4.9"></a>
 ## 4.9 Kubernetes workloads
@@ -282,7 +271,7 @@ In order for the Kubernetes workloads to be conformant with the Reference Archit
 |`ra2.app.003`||||
 |`ra2.app.004`||||
 
-<p align="center"><b>Table 4-7:</b> Kubernetes Workload Specifications</p>
+<p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 <a name="4.10"></a>
 ## 4.10 Additional required components
