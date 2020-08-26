@@ -1,7 +1,7 @@
 [<< Back](../../ref_model)
 # 10 Challenges and Gaps
 
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+
 
 ## Table of Contents
 * [10.1 Introduction](#10.1)
@@ -49,8 +49,11 @@ The onboarding of the workloads (network functions) should be automated as much 
 - Capabilities Negotiation/Hand Shake API: 
     - workloads and Cloud Infrastructure should be able to negotiate on certain capabilities. For instance, workload desires HW acceleration for high throughput, but should be able to fall back to high throughput offered by Cloud Infrastructure via DPDK offering, and vice-a-versa.
 
+
+
 ## 10.3.2 Support Load Balance of VNF/CNFs
 The ability to dynamically scale a network function by load balancing accross multiple instances/replicas of the same VNF or CNF is essential. New architectures and application patterns such as micro services is making this even more crucial. It must not only be possible to load balance and scale each service layer independently, support to chain the different layers together through "Service Function Chaining" is also needed. 
+
 
 The load balancing and scaling needed for typical enterprise applications is well supported in OpenStack by the LBaaSv2 API and Octavia. The built in mechanism in Kubernetes for scaling enterprise type of services and PODs is also sufficient for applications that only use one interface.
 
@@ -61,3 +64,6 @@ Over the past few years there has been a significant move towards decomposing ne
 
 ## 10.3.4 Packet Acceleration Request (e.g Hardware Acceleration)
 While generic server hardware capabilities can be exclusively used for handling networking related workloads, this strategy is neither performant nor energy efficient. There are several forms of accelerators such as smart NICs, programmable networking fabrics/switches, and GPUs that can offload some of these workloads in order to provide higher throughput, energy efficiency and lower latency. The acceleration hardware is typically optimized for specific kinds of workloads and some form of disaggregation might be required to separate control and user plane responsibilities between generic server hardware and accelerators. There is also a need for workload orchestration to be able to understand the packet acceleration needs of specific workloads and schedule such workloads on infrastructure with the requisite capabilities.
+
+## 10.3.5 Multi-cloud architecture directions for network workloads
+There is a growing interest in using a multi-cloud environment for the deployment of network functions. The industry investigates and starts to experiment with deploying and operating network functions across several private and/or public clouds to reuse services and capabilities available in these cloud enviroments instead of investing in a duplications of such capabilities.  5G and Edge deployments seem to be some of the catalysts of the growing interest.  The Reference Model will need to provide in its future releases relevant guidelines for such multi-cloud architectures.
