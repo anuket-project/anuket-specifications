@@ -40,7 +40,7 @@ While this Reference Architecture is being developed, Gaps will be identified th
 <a name="6.2.2"></a>
 ### 6.2.2 Multi-tenancy and workload isolation with Kubernetes
 
-**Related requirements:** `e.man.004` `sec.ci.008` `sec.wl.005``sec.wl.006` `req.inf.ntw.03`
+**Related requirements:** `e.man.004` `sec.ci.008` `sec.wl.005``sec.wl.006`
 
 **Baseline project:** none
 
@@ -50,39 +50,54 @@ While this Reference Architecture is being developed, Gaps will be identified th
 <a name="6.2.3"></a>
 ### 6.2.3 Kubernetes as a VM-based VNF Orchestrator
 
-> In order to support a transition from VNFs only to VNFs and CNFs in the same environment.
+> **Related requirements:** None.
+
+> **Baseline project:** _Kubernetes v1.18.6_, _Kubevirt v0.30.5_
+
+> **Gap description:** Kubernetes and at least one CRI compliant runtime should support the running of VNFs without requiring changes to the VNF's architecture and deployment artifacts.
 
 
 <a name="6.2.4"></a>
 ### 6.2.4 Multiple network interfaces on Pods
 
-> As well as having multiple network interfaces on Pods (e.g. Multus), need to support different network interfaces in different Pods using different CNI plugins within the same cluster.
+> **Related requirements:** [RM Chapter 4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications)
+
+> **Baseline project:** _Kubernetes v1.18.6_
+
+> **Gap description:** Kubernetes does not have native support for multiple Pod interfaces, therefore a CNI multiplexer, like [DANM](https://github.com/nokia/danm) or [Multus](https://github.com/intel/multus-cni) is needed to provision multiple interfaces. Implementation of different network services for the interfaces, like Network Policies, Ingress, Egress or Load Balancers depends on the feature set of the CNI multiplexer and the CNI plugins it uses, therefore it is inconsistent.
 
 
 <a name="6.2.5"></a>
 ### 6.2.5 Dynamic network management
 
-> this is done today with Netconf etc. integration with SDN controllers, for example
+> **Related requirements:** [req.inf.ntw.03](chapter02.md#23-kubernetes-architecture-requirements)
 
-> connecting individual VPNs - e.g. L3VPN - onto the CNF, on demand
+> **Baseline project:** _Kubernetes v1.18.6_
 
-> look to enable this via a standard API
+> **Gap description:** Kubernetes does not have an API for network management, therefore a different CNI plugin, like [DANM](https://github.com/nokia/danm) needs to be used to expose Kubernetes network services on an API. Alternatively this is done today with Netconf etc. integration with SDN controllers, for example connecting individual VPNs - e.g. L3VPN - onto the CNF, on demand.
 
 
 <a name="6.2.6"></a>
 ### 6.2.6 Control Plane Efficiency
 
-> For example, in situations where multiple sites / availability zones exist, an operator may choose to run multiple Kubernetes clusters, not only for security/multitenancy reasons but also fault, resilience, latency, etc.
+> **Related requirements:** None
 
-> This produces an overhead of Kubernetes Masters - is there a way of making this more efficient whilst still able to meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
+> **Baseline project:** _Kubernetes v1.18.6_
+
+> **Gap description:** For example, in situations where multiple sites / availability zones exist, an operator may choose to run multiple Kubernetes clusters, not only for security/multitenancy reasons but also fault, resilience, latency, etc.
+This produces an overhead of Kubernetes Masters - is there a way of making this more efficient whilst still able to meet the non-functional requirements of the operator (fault, resilience, latency, etc.)
 
 
 <a name="6.2.7"></a>
 ### 6.2.7 Interoperability with VNF-based networking
 
-> For example, today in existing networks L3 VPNs are commonly used for traffic separation (e.g. separate L3 VPN for signalling, charging, LI, O&M etc.). CNFs will have to interwork with existing network elements and therefore a K8s POD will somehow need to be connected to a L3 VPN. Today this is only possible via Multus (or DANM), however typically there is a network orchestration responsibility to connect the network interface to a gateway router (where the L3 VPN is terminated). This network orchestration is not taken care of by K8s, nor there is a production grade solution in the open source space to take care of this.
->
-> Note: with an underlying IAAS this is possible, but then it introduces (undesirable) dependency between workload orchestration in K8s and infrastructure orchestration in IAAS.
+> **Related requirements:** None
+
+> **Baseline project:** _Kubernetes v1.18.6_
+
+> **Gap description:** For example, today in existing networks L3 VPNs are commonly used for traffic separation (e.g. separate L3 VPN for signalling, charging, LI, O&M etc.). CNFs will have to interwork with existing network elements and therefore a K8s POD will somehow need to be connected to a L3 VPN. Today this is only possible via Multus (or DANM), however typically there is a network orchestration responsibility to connect the network interface to a gateway router (where the L3 VPN is terminated). This network orchestration is not taken care of by K8s, nor there is a production grade solution in the open source space to take care of this.
+
+Note: with an underlying IaaS this is possible, but then it introduces (undesirable) dependency between workload orchestration in K8s and infrastructure orchestration in IaaS.
 
 <a name="6.2.8"></a>
 ### 6.2.8 HW topology aware hugepages
