@@ -122,12 +122,31 @@ In order for the Container runtime(s) to be conformant with the Reference Archit
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.crt.001`||||
+|`ra2.crt.001`|Conformance with OCI 1.0 for Linux, Solaris, Windows, VM platform|The configuration parameters of the runtime(s) distribution, product, or installer used in the implementation must comply with [OCI 1.0 Specification](https://github.com/opencontainers/runtime-spec/blob/master/config.md).||
 |`ra2.crt.002`||||
 |`ra2.crt.003`||||
 |`ra2.crt.004`||||
 
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
+
+
+<a name="4.4.1"></a>
+## 4.4.1 Container Runtime(s) Configuration
+Following table highlights the high level configuration parameters to be set by Container runtime(s) to be conformant with Open container Initiative (OCI).
+|Ref|Configuration Group|Details|Requirement Trace|
+|---|---|---|---|
+|`ra2.crt.002`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md)|Specifies the container's root filesystem.||
+|`ra2.crt.003`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)|Specifies additional mounts beyond root||
+|`ra2.crt.004`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process)|Specifies the container process||
+|`ra2.crt.005`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname)|Specifies the container's hostname as seen by processes running inside the container||
+|`ra2.crt.006`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user)|User for the process is a platform-specific structure that allows specific control over which user the process runs as||
+|`ra2.crt.007`|[Platform-specific configuration](https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration)|This specifies the set of platform (linux/windows,solaris,vm) specific configurations||
+|`ra2.crt.008`|[POSIX-platform Hooks](https://github.com/opencontainers/runtime-spec/blob/master/config.md#posix-platform-hooks)|For POSIX platforms, the configuration structure supports hooks for configuring custom actions related to the lifecycle of the container||
+|`ra2.crt.009`|[Annotations](https://github.com/opencontainers/runtime-spec/blob/master/config.md#annotations)|Contains arbitrary metadata for the container||
+|`ra2.crt.0010`|[Extensibility](https://github.com/opencontainers/runtime-spec/blob/master/config.md#extensibility)|Runtimes MAY log unknown properties but MUST otherwise ignore them||
+|`ra2.crt.0011`|[Valid values](https://github.com/opencontainers/runtime-spec/blob/master/config.md#valid-values)|Runtimes MUST generate an error when invalid or unsupported values are encountered||
+<p align="center"><b>Table 4-4:</b> OCI Conferment Container Runtime Configurations</p>
+
 
 <!--
 > THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
