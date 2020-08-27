@@ -96,20 +96,18 @@ Any specification work created within CNTT **must** conform to the following pri
    - Memory resources
    - Networking resources (Limited to connectivity services only)
    - Acceleration resources
-1. Cloud Infrastructure exposed resources should be supplier independent
-1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs/CNFs and consumed by VNFs/CNFs.
-1. VNFs/CNFs should be modular and be designed to utilise the minimum resources required for the service
-1. Cloud Infrastructure shall support pre-defined and parameterised sizes
-   - These pre-defined sizes will evolve over time
-1. Cloud Infrastructure provides certain resources, capabilities and features, and workloads should only consume these resources, capabilities and features
-1. VNFs/CNFs that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
-1. Workloads shall not require hardware-dependent software
+1. Vendor independence of Cloud Infrastructure exposed resources .
+1. Cloud Infrastructure Application Programming Interfaces (APIs) ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). 
+•	These APIs support, for example, cloud infrastructure resources discovery, monitoring by management entities, configuration on behalf of workloads and consumption by workloads
+1. Workloads are modular and designed to utilise the minimum resources required for the service.
+1. Workloads consume only the resources, capabilities and features provided by the Cloud infrastructure.
+1. Workload functional capabilities independence from Cloud Infrastructure (hardware and software) accelerations.
+1. Workload independence from Cloud Infrastructure (hardware and software) hardware-dependent software
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
-   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
-   - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
-1. Specific internal hardware details shall not be exposed above the Infra+Cloud Management layers
+   - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
+1. Abstraction of specific internal hardware details above the Infrastructure Cloud Management layers unless is managed through Hardware Infrastructure Manager
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
-   - This pertains to features that operate at detailed levels of hardware granularity, such as EPA.
+   - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
 
 <a name="2.2"></a>
 ## Requirements Principles
