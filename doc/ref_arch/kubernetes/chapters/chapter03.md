@@ -222,7 +222,7 @@ network characteristics of the interfaces might require different networking
 technologies, which would potentially require different CNI plugins.
 
 To comply with `req.inf.ntw.08`, inter node communication must be served by a
-CNI plugin which complies with the default K8s networking assumptions.
+CNI plugin which complies with the default [Kubernetes networking assumptions](https://kubernetes.io/docs/concepts/cluster-administration/networking/#the-kubernetes-network-model).
 
 There are two types of low latency and high throughput networks required by
 telco workloads: signalling traffic workloads and user plane traffic workloads.
