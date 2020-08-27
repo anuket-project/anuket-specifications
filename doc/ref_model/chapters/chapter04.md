@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 4 Infrastructure Capabilities, Measurements and Catalogue
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 
  ______________________________________________________________
@@ -483,7 +482,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
 | `e.cap.011`<br />(Programmable Acceleration)                | No                       | Yes/No                       |                                                                     |
 | `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       | SR-IOV over PCI-PT does not conform CNTT principles, but it is a technology commonly used when network performance are required. It is temporarily accepted and part of the transition plan exceptions list described in [Appendix A3 Exception list](./appendix-a.md#a3-exception-list) and in [Appendix A5 Hardware Dependent Coding policies](./appendix-a.md#a5-hardware-dependent-coding-policies)  |
+| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       |   |
 | `e.cap.014`<br />(GPU/NPU)                                            | No                       | Yes / No                       | Yes : in case of AI and Video Edge use cases|
 | `e.cap.015`<br />(SmartNIC)                                           | No        | Yes / No                       | |
 | `e.cap.016`<br />(FPGA/other Acceleration H/W)                        |No             | Yes / No                       | Yes : in case of vRAN Edge use case || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
@@ -589,12 +588,7 @@ Flavours are unique only when combined with a profile. For example, CNTT release
 <a name="4.2.7.3"></a>
 4.2.7.3 Forward compatibility
 
-CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The exceptions of a given CNTT release are listed in [A.3 Exception List](appendix-a.md#a3-exception-list). The exceptions are not part of any Cloud Infrastructure profile defined in CNTT. If a flavour needs to be defined to support one or more exceptions its name should contain the identifyer of the exception. If needed several exceptions can be combined into the same flavour.
-
-The naming scheme for flavours with exceptions should be `B_GenN.small.ExceptionIds` where the exception is is generated from the numerical part of the exception identifier prefixed with `ex`.
-
-For example `B_Gen4.small.ex001` refers to `rm.exc.001` defined in the [Exception List](appendix-a.md#a3-exception-list).
-These flavors, similarly to other flavours, should be supported for three CNTT releases after the exception was removed from the CNTT release.
+CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The technology specific are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
 
 
 <a name="4.3"></a>
