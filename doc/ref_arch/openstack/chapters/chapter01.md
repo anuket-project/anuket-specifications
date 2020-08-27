@@ -59,7 +59,7 @@ This OpenStack Reference Architecture is organised around the three major NFVI r
 <a name="1.4.1"></a>
 ### 1.4.1 Exceptions
 
-CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) but technology, performance and other considerations makes conformance to these primciples and policies impractical. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies)). 
+CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) but technology, performance and other considerations makes conformance to these primciples and policies impractical. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)). 
 
 The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associted period of validity and this period shall include time for transitioning.
 
@@ -67,26 +67,26 @@ The following sub-sections list the exceptions to the CNTT principles and shall 
 
 The list of Technology Exceptions will be updated or removed when alternative technologies aligned with CNTT principles develop and mature.
 
-| Ref |	Type |	Name |	Description | Valid Until |
-|-----|------|------|-------------|-------------|
-| ra1.exc.tec.001 |	Technology |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD |
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra1.exc.tec.001 |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. | Compromises virtualisation and creates dependnecy on hardware defeating CNTT and Cloud Principles. | 
 
 #### 1.4.1.2 Version Exceptions
 
 The list of Version Exceptions will be updated as and when alternative versions become available.
 
-| Ref |	Type |	Name |	Description | Valid Until |
-|-----|------|------|-------------|-------------|
-| ra1.exc.ver.001 |	Version |	xxx |	xxxxxxxxxxxxxxxxxxxxxxxxxxxx. |
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra1.exc.ver.001 |	xxx |	xxxxxxxxxxxxx. | | | |
 
 
 #### 1.4.1.3 Requirements Exceptions
 
 The list of Requirements Exceptions will be updated to allow for a period of transitioning as and when requirements change.
 
-| Ref |	Type |	Name |	Description | Valid Until |
-|-----|------|------|-------------|-------------|
-| ra1.exc.req.001 |	Version |	xxx |	xxxxxxxxxxxxxxxxxxxxxxxxxxxx. | |
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra1.exc.req.001 |	Requirement |	xxx |	xxxxxxxxxxxxx. | | | |
 
 <a name="1.5"></a>
 ## 1.5 CNTT OpenStack Reference Release
