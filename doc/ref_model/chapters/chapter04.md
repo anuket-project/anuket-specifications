@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 4 Infrastructure Capabilities, Measurements and Catalogue
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 
  ______________________________________________________________
@@ -97,10 +96,10 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 | e.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration                                    |
 | e.cap.011 | Programmable Acceleration                 | Yes/No | Programmable Acceleration                                   |
 | e.cap.012 | Enhanced Cache Management                 | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded.  L and X cache policies require CPU pinning to be active. |
-| e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type.  |
-| e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type. |
+| e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
+| e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
 | e.cap.015 | SmartNIC                                  | Yes/No | Network Acceleration. SmartNICs that do not utilise PCI-PT are not subject to the CNTT principles, nor any related policies or prohibitions. |
-| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type. |
+| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of Cloud Infrastructure</p>
 
