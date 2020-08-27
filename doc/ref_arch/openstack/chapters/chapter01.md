@@ -9,6 +9,7 @@
 * [1.2 Use Cases](#1.2)
 * [1.3 Terminology.](#1.3)
 * [1.4 Principles](#1.4)
+  * [1.4.1 Exceptions](#1.4.1)
 * [1.5 CNTT OpenStack Reference Release](#1.5)
 * [1.6 Document Organisation](#1.6)
 
@@ -55,6 +56,37 @@ OpenStack considers the following Four Opens essential for success:
 
 This OpenStack Reference Architecture is organised around the three major NFVI resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
 
+<a name="1.4.1"></a>
+### 1.4.1 Exceptions
+
+CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) but technology, performance and other considerations makes conformance to these primciples and policies impractical. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies)). 
+
+The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associted period of validity and this period shall include time for transitioning.
+
+#### 1.4.1.1 Technology Exceptions
+
+The list of Technology Exceptions will be updated or removed when alternative technologies aligned with CNTT principles develop and mature.
+
+| Ref |	Type |	Name |	Description | Valid Until |
+|-----|------|------|-------------|-------------|
+| ra1.exc.tec.001 |	Technology |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD |
+
+#### 1.4.1.2 Version Exceptions
+
+The list of Version Exceptions will be updated as and when alternative versions become available.
+
+| Ref |	Type |	Name |	Description | Valid Until |
+|-----|------|------|-------------|-------------|
+| ra1.exc.ver.001 |	Version |	xxx |	xxxxxxxxxxxxxxxxxxxxxxxxxxxx. |
+
+
+#### 1.4.1.3 Requirements Exceptions
+
+The list of Requirements Exceptions will be updated to allow for a period of transitioning as and when requirements change.
+
+| Ref |	Type |	Name |	Description | Valid Until |
+|-----|------|------|-------------|-------------|
+| ra1.exc.req.001 |	Version |	xxx |	xxxxxxxxxxxxxxxxxxxxxxxxxxxx. | |
 
 <a name="1.5"></a>
 ## 1.5 CNTT OpenStack Reference Release
