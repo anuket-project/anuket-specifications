@@ -105,7 +105,7 @@ Any specification work created within CNTT **must** conform to the following pri
 1. Workload independence from Cloud Infrastructure (hardware and software) hardware-dependent software
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
    - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
-1. Abstraction of specific internal hardware details above the Infrastructure Cloud Management layers unless is managed through Hardware Infrastructure Manager
+1. Abstraction of specific internal hardware details above the Infrastructure Cloud Management layers unless managed through Hardware Infrastructure Manager
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
    - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
 
