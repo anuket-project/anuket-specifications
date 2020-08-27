@@ -197,7 +197,7 @@ kubelet from the runtime that is running in the Host OS, meaning that the code
 required to integrate kubelet with a container runtime is not part of the
 kubelet itself (i.e. if a new container runtime is needed and it uses CRI, it
 will work with kubelet). Examples of this type of runtime include containerd
-(with cri plugin) and cri-o, which is built specifically to work with
+(with CRI plugin) and cri-o, which is built specifically to work with
 Kubernetes.
 
 To fullfill `req.inf.vir.01` the architecture should support a container runtime
