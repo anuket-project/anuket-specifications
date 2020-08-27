@@ -156,7 +156,7 @@ device management.
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Container Runtime Services
 
-The Container Runtime is the component that runs within a Container Host
+The Container Runtime is the component that runs within a Kubernetes Node
 Operating System (OS) and manages the underlying OS functionality, such as
 cgroups and namespaces (in Linux), in order to provide a service within which
 container images can be executed and make use of the infrastructure resources
