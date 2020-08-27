@@ -586,9 +586,9 @@ Flavours are unique only when combined with a profile. For example, CNTT release
 `B_GenN.small`
 
 <a name="4.2.7.3"></a>
-4.2.7.3 Forward compatibility
+### 4.2.7.3 Forward compatibility
 
-CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The technology specific are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
+CNTT provides a framework for exceptions described in [9.4.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
 
 
 <a name="4.3"></a>
