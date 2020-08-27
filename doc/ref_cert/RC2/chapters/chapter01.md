@@ -10,6 +10,7 @@
 * [1.3 Scope](#1.3)
 * [1.4 Guidlines](#1.4)
 * [1.5 Conformance Methodologies](#1.5)
+* [1.6 Reading Guide and Usage](#1.6)
 
 ## Executive Summary
 
@@ -94,3 +95,12 @@ These guidlines will drive RC2 deliverables:
 The RC2 test suite will provide validation to ensure workloads can interoperate with the RA2 conformant infrastructure. Upstream projects will define features/capabilities, test scenarios, and test cases to be executed. 3rd Party test platforms may also be leveraged if desired.
 
 **Dependencies** infrastructure and workload validation will rely upon test harnesses, test tools, and test suites provided by upstream projects, including OPNFV and CNF conformance. These upstream projects will be reviewed semi-annually to verify they are still healthy and active projects. Over time, the projects representing the conformance process may change, but test parity is required if new test suites are added in place of older, stale projects.
+
+<a name="1.6"></a>
+## 1.6 Reading Guide and Usage
+
+RC2 focuses on testing of Kubernetes based cloud infrastructure thus the chapter structure is designed to facilitate this by matching test cases to requirements and building test cookbooks. If you are looking for requirements or the reasons behind them, please refer to the RA2. Chapters 2 and 3 cover Kubernetes infrastructure conformance while 4 and 5 cover CNF conformance. 
+
+Chapter 2 takes the requirements from the RA2 and matches them to upstream test cases. This will cover how specific test cases map to requirements and the overall coverage of requirements with test cases. Chatper 3 outlines how these test cases can be integrated together into an automated toolchain to test conformance of the Kubernetes infrastructure.
+
+Similarly, Chapter 4 maps test cases map to requirements for CNFs and Chapter 5 builds a testing cookbook. Chapter 6 encompasses any gaps in the Reference Conformance 2.
