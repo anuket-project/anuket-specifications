@@ -69,7 +69,7 @@ The list of Technology Exceptions will be updated or removed when alternative te
 
 | Ref |	Name |	Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|
-| ra1.exc.tec.001 |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. | Compromises virtualisation and creates dependnecy on hardware defeating CNTT and Cloud Principles. | 
+| ra1.exc.tec.001 |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. | Compromises virtualisation and creates dependency on hardware defeating CNTT and Cloud Principles. | 
 
 #### 1.4.1.2 Version Exceptions
 
