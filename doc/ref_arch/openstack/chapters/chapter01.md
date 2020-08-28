@@ -59,9 +59,9 @@ This OpenStack Reference Architecture is organised around the three major NFVI r
 <a name="1.4.1"></a>
 ### 1.4.1 Exceptions
 
-CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) but technology, performance and other considerations makes conformance to these primciples and policies impractical. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)). 
+CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) but technology, performance and other considerations makes conformance to these principles and policies impractical based on the current technologies, standards and costs. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)). 
 
-The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associted period of validity and this period shall include time for transitioning.
+The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
 
 #### 1.4.1.1 Technology Exceptions
 
@@ -82,7 +82,7 @@ The list of Version Exceptions will be updated as and when alternative versions 
 
 #### 1.4.1.3 Requirements Exceptions
 
-The list of Requirements Exceptions will be updated to allow for a period of transitioning as and when requirements change.
+The Requirements Exceptions lists the Reference Model (RM) requirements and/or Reference Architecture (RA) requirements that will be either waived or be only partially implemented in this version of the RA.  The exception list will be updated to allow for a period of transitioning as and when requirements change.
 
 | Ref |	Name |	Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|
