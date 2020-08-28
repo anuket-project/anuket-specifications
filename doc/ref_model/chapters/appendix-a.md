@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # Appendix A - Guidelines For Application Vendors
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [A.1 Goals](#A.1)
@@ -53,14 +52,7 @@ Relevant for sizing infrastructure and application operations (which often is an
 <a name="A.3"></a>
 ## A.3 Exception List
 
-As Part of the [Transition Plan](../../gov/chapters/chapter09.md#9.2) described in the adoption strategy, following table explains the exceptions allowed in this RM release. The list of Exceptions described here are considered to be against CNTT principles and will be removed in future releases as soon as an alternative technology that is aligned with CNTT principles develops and matures.
-
-| Ref        | Type       | Name       | Description                                                           |
-|------------|------------|------------|-----------------------------------------------------------------------|
-| rm.exc.001 | Technology | SRIOV      | This exception allows workloads (VNF/CNF) to rely on SR-IOV over PCI-PassThrough technology. |
-
-
-<p align="center"><b>Table A-1:</b> Exceptions allowed in this RM release</p>
+The technology specific exceptions to the principles and policies are discussed in the relevant technology specific RA specifications.
 
 <a name="A.4"></a>
 ## A.4 Links
