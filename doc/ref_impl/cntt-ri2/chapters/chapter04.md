@@ -94,6 +94,7 @@ cluster_name: cluster.local
   # Can be updated if needed
 ```
 Similarly, it is not recommended to change the following configuration options in `sw_config/bmra/node1.yml`, unless for debugging and development purposes. Note that depending on your deployment setup and inventory, you might have to create additional nodeN.yml files.
+
 ```
 sriov_enabled: true
   # Change to true as the SR-IOV Network device plugin for Kubernetes is used
