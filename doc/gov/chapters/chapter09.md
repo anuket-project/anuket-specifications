@@ -15,7 +15,7 @@
   * [9.4.1 Conformance Levels](#9.2.1)
   * [9.4.2 Exception Types](#9.2.2)
   * [9.4.3 Transition Framework](#9.2.3)
-* [9.5 CNTT Field Trial Approach] (#9.5) 
+* [9.5 CNTT Field Trial Approach](#9.5)
 
 <a name="9.1"></a>
 ## 9.1 Introduction

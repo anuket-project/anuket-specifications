@@ -48,10 +48,6 @@ Pharos lab infrastructure has the following objectives:
 * Deploying OpenStack in a Virtualized environment is possible and will be useful, however it does not provide a fully
   featured deployment and realistic test environment for the Euphrates release of OPNFV.
 
-The high level architecture is outlined in the following diagram:
-
-<img src="../figures/ch04_opnfv_pharos_high_level.jpg" title="OPNFV Pharos High Level Architecture">
-
 A pharos compliant OPNFV test-bed provides:
 
 * One CentOS/Ubuntu jump server (Foundation Node) which can be used to perform the OpenStack RI installation, or host any
@@ -76,12 +72,6 @@ A pharos compliant OPNFV test-bed provides:
     between storage nodes.
   * OpenStack Management (Management): Used for internal communication between OpenStack Components.
 
-For the purpose of this RI, the following diagram illustrates the networks and node connectivity.
-
-<img src="../figures/ch04_opnfv_lab_topology.jpg" title="OPNFV Pharos Lab Topology">
-
-
-<a name="9.2.2"></a>
 ### 9.2.2 Hardware Specification
 
 CPU:

@@ -31,7 +31,7 @@ This document includes the requirement and deployment details of the the first r
 <a name="1.1.2"></a>
 ### 1.1.2 Terminology
 
-Terminology in this document will follow [CNTT Terminology](ref_model/chapters/glossary.md).
+Terminology in this document will follow [CNTT Terminology](../../../common/glossary.md).
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -77,7 +77,7 @@ https://wiki.opnfv.org/pages/viewpage.action?pageId=47284396
 b) OPNFV Infra WG.
 
 The CNTT RI WSs work closely with the OPNFV Infra WG for the requirement of Labs and Installers. The detailed requirements explained in
-[Chapter 4](ref_impl/cntt-ri/chapters/chapter04.md) and [Chapter 5](ref_impl/cntt-ri/chapters/chapter05.md) of this document are discussed and
+[Chapter 4](chapter04.md) and [Chapter 5](chapter05.md) of this document are discussed and
 reviewed with the Infra WG, and will be used as guideline for detailed development work in Infra WG.
 
 c) OPNFV Testing WG.

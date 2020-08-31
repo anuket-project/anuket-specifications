@@ -334,22 +334,19 @@ Consumable Infrastructure Resources and Services
 
 ## 3.8 Interface and API for Reference Implementation 1
 
-The following table lists the interface for RI1. 
+The following table lists the interface for RI1.
+
 | OpenStack Service     | Link for API list                                    | **API Version** | **Minimal API Microversion** |
-|-----------------------|------------------------------------------------------|-----------------|------------------------------|
-| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3               | 3.8                          |
-| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1            | 2.53                         |
-| Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0            |                              |
-| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2              | 2.5                          |
-| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3              | 3.43                         |
-| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
-| Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.10                         |
-| Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
-| Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/ | v2    |   |
-|K8S API  |https://kubernetes.io/docs/concepts/overview/kubernetes-api/|  |  |
-|KVM APIs  |https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt|  |  |
-| Libvirt APIs |https://libvirt.org/html/index.html|  |  |
-
-
-
-
+|-----------------------|------------------------------------------------------|------|------|
+| Identity: Keystone    | https://docs.openstack.org/api-ref/identity/v3/      | 3    | 3.8  |
+| Compute: Nova         | https://docs.openstack.org/api-ref/compute/          | v2.1 | 2.53 |
+| Networking: Neutron   | https://docs.openstack.org/api-ref/network/v2/       | v2.0 |      |
+| Image: Glance         | https://docs.openstack.org/api-ref/image/v2/         | v2   | 2.5  |
+| Block Storage: Cinder | https://docs.openstack.org/api-ref/block-storage/v3/ | v3   | 3.43 |
+| Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1   |      |
+| Placement             | https://docs.openstack.org/api-ref/placement/        | v1   | 1.10 |
+| Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1   |      |
+| Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/   | v2   |      |
+| K8S API               | https://kubernetes.io/docs/concepts/overview/kubernetes-api/ |  |  |
+| KVM APIs              | https://www.kernel.org/doc/Documentation/virtual/kvm/api.txt |  |  |
+| Libvirt APIs          | https://libvirt.org/html/index.html                  |      |      |

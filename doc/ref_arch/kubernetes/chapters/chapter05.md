@@ -23,15 +23,22 @@
 
 <a name="5.1"></a>
 ## 5.1 Introduction
-Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications. It is also important to adopt a layered packaging model which supports separation of concerns during image build. A fully integrated security testing phase should be baked into the CI/CD pipeline. Automated security policies should also be used to flag builds with issues.  Image registries must be monitored to automatically block or replace images with known vulnerabilites, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
+Securing Kubernetes requires several layers of security features to provide end to end security for cloud native applications.
+It is recommended that:
 
-The following functionalities are recommended for securing kubernetes platform;
-- Image Signing
+- Security testing is fully integrated into the CI/CD pipelines of all parties (e.g. vendors and operators).
+- Automated security policies are used to flag builds with issues.
+- Image registries are monitored to automatically block or replace images with known vulnerabilities, while also ensuring policies are used to gate what can be deployed and who can deploy from the registry.
+- Adopt a layered packaging model which supports separation of concerns during image build.
+
+The following functionalities are recommended for securing Kubernetes platforms:
+
+- Image Certification (Scan for vulnerabilities) and Signing
 - Role-base Access Control
-- Secret Managment
-- Kubernetes Cluster Multi-tenancy security
-  - Tenant can be distinct teams or workload types (Development or Production) within an organisation, each with a namespace
-  - Tenant can also be per dedicated Kubernetes cluster
+- Secret Management
+- How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
+  - Tenants without hard multi-tenancy requirements (multiple development teams in the same organization) separated from each other by namespaces
+  - For strict multi tenancy, a dedicated Kubernetes cluster per tenant should be used
 - Integration with other security ecosystem like monitoring and alerting tools
 
 <a name="5.2"></a>
@@ -66,7 +73,7 @@ All connections to a Kubernetes cluster must be via a secure channel. The follow
  - Access control should be integrated with existing identity management platforms e.g SAML, AD, etc.
 
 ##  5.5 Use Namespaces to Establish Security Boundaries
-Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc) to diffferent types of workloads when deployed in separate namespaces.
+Namespaces in Kubernetes is the first level of isolation between components. It is easier to apply security controls (Network Policies, Pod policies, etc.) to different types of workloads when deployed in separate namespaces.
 
 ##  5.6 Separate Sensitive Workload
 To limit the potential impact of a compromise, it is best to run sensitive workloads on a dedicated set of machines. This approach reduces the risk of a sensitive application being accessed through a less-secure application that shares a container runtime or host.
@@ -74,7 +81,7 @@ To limit the potential impact of a compromise, it is best to run sensitive workl
 - The seperation can achieved by using node pools and Kubernetes namespaces.
 
 ##  5.7 Create and Define Network Policies
-Network Policies allow kubernetes managers to control network access into and out of the containerized applications. It is recommended to have a well defined ingress and egress policy for containerised applications. It is also important to modify the default network policies, such as blocking or allowing traffic from other namespaces or clusters while ensuring the namespaces/clusters are running with policy support enabled.
+Network Policies allow kubernetes managers to control network access into and out of the cloud native applications. It is recommended to have a well defined ingress and egress policy for cloud native applications. It is also important to modify the default network policies, such as blocking or allowing traffic from other namespaces or clusters while ensuring the namespaces/clusters are running with policy support enabled.
 
 ##  5.8 Run latest Version
 As new security features and patches are added in every quarterly update, it is important to take advantage of these fixes and patches.
@@ -85,6 +92,7 @@ Kubernetes metadata contain sensitive information including kubelet admin creden
 
 - Limit discovery by restricting services and users that can access cluster managment metadata on configuration, container application, and nodes
 - Ensure all metadata  information are encryption and network access must run over TLS connections
+
 ##  5.10  Enable Logging and Monitoring
 Logging, monitoring, alerting and log aggregation are essential for Kubernetes. Audit logs must be enabled and monitored for anomalous or unwanted API calls, especially any authorisation failure.
 
@@ -92,14 +100,14 @@ Logging, monitoring, alerting and log aggregation are essential for Kubernetes. 
 The following are recommended best practices for container run-time:
 - Integrate run-time processes to Security Information and Event Monitoring (SIEM)
 - Use container-aware run-time defense tools
-- Ensure all running container applications are from secure and verified images
-- Containerised application should not run with root privileges
+- Ensure all running cloud native applications are from secure and verified images
+- Cloud native applications should not run with root privileges
 - Ensure sensitive workloads are properly segmented by namespaces or cluster to mitigate the scope of compromise.
 
 ##  5.12  Secrets Management
 The principle of least privilege must be applied to secret management in Kubernetes;
 
-- Ensure the containerised code can read only the secrets that it needs
+- Ensure that the cloud native applications can only read the secrets that these applications need
 - Have different set of secrets for different environments( like production, development, and testing)
 
 Secret values protect sensitive data, it is recommended to protect them from unauthorised access. Ideally, they must be protected at rest and in transit. Encryption in transit is achieved by encrypting the traffic between the Kubernetes control-plane components and worker nodes using TLS.
@@ -112,7 +120,7 @@ Secrets must not be stored in scripts or code but provided dynamically at runtim
 ##  5.13  Trusted Registry
 Ensure that the container registry only accepts container images from trusted sources that have tested and validated the images. Where images are provided by third parties, define and follow a formal process to validate compliance with security requirements. Also ensure that access control is applied to registries requiring unique credentials, to limit who can control the build or add images.
 
- - Network access to the registry must run over TLS or VPN connections
+- It is strongly recommended that network access to the registry is secured using TLS, SSL or VPN connections to ensure trust.
 
 Ensure container applications are validated to assess their use and applicability as well as scanned for viruses and vulnerabilities. Only deploy container application from images that are signed with a trusted key
 
@@ -164,8 +172,8 @@ Sometimes container isolation is compared directly with VM based isolation, with
 - Containers: isolation by SW based mechanisms available in OS, Docker and Kubernetes. A container workload is just a set of Linux processes. It is _possible_ to configure SW based _additional isolation_ for container workloads, for example by kernel namespaces.
 
 
-Thus the primary isolation mechanism in Kubernetes environment should be VM or physical machine based isolation. This means: multiple container applications should not be deployed together in the same Kubernetes cluster - unless those have been planned and verified to co-exist. In such cases, the default is to allocate one namespace per Containerised Network Function (CNF).
+The primary isolation mechanism in Kubernetes environment should be VM or physical machine based. This implies that multiple cloud native applications should not be deployed together in the same Kubernetes cluster - unless these applications have been planned and verified to co-exist. Thus, the default is to allocate one namespace per Cloud Native Network Function (CNF).
 
 ### Container Isolation in Kubernetes Cluster
 #### Namespaces  
-Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. They should not be used to isolate different steps in the deployment process like Development, Production, or Testing. The most reliable separation is achieved by deploying sensitive workloads into dedicated clusters. 
+Kubernetes namespaces should be used to provide resource isolation within a Kubernetes cluster. They should not be used to isolate different steps in the deployment process like Development, Production, or Testing. The most reliable separation is achieved by deploying sensitive workloads into dedicated clusters.

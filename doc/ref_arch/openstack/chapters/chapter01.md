@@ -34,7 +34,7 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 <a name="1.3"></a>
 ## 1.3 Terminology
 
-General terminology definitions can be found [Glossary](../../../tech/glossary.md) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./Terminology.md). 
+General terminology definitions can be found [Glossary](../../../common/glossary.md) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./Terminology.md). 
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
 
@@ -42,8 +42,8 @@ General terminology definitions can be found [Glossary](../../../tech/glossary.m
 ## 1.4 Principles
 
 OpenStack Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../tech#2.0)
-- [CNTT Reference Architecture Principles](../../../tech#22-architectural-principles)
+- [CNTT Reference Model Principles](../../../common/chapter00.md#2.0)
+- [CNTT Reference Architecture Principles](../../../common/chapter00.md#22-architectural-principles)
 
 **OpenStack specific principles**
 
@@ -59,7 +59,7 @@ This OpenStack Reference Architecture is organised around the three major NFVI r
 <a name="1.5"></a>
 ## 1.5 CNTT OpenStack Reference Release
 
-This Reference Architecture document in its current version conforms to the OpenStack Pike release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Pike."
+This Reference Architecture document in its current version conforms to the [OpenStack Train](https://docs.openstack.org/train/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Pike release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Train."
 
 <a name="1.6"></a>
 ## 1.6 Document Organisation

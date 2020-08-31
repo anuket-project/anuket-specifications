@@ -38,7 +38,7 @@ This chapter delves deeper into the capabilities of these different resources an
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
 In OpenStack, KVM is configured as the default hypervisor for compute nodes. 
-- Configuration: [OpenStack](https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
+- Configuration: [OpenStack](https://docs.openstack.org/nova/train/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
     - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
   -	Configure Compute backing storage
@@ -58,7 +58,7 @@ Minimal configuration: 1 node
 
 #### 4.2.2.2. OpenStack Control Plane Servers (Control Nodes)
 - BIOS Requirements
-For OpenStack control nodes we use the BIOS parameters for the basic profile defined in [Chapter 5.4 of the Reference Model](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#5.4). Additionally, for OpenStack we need to set the following boot parameters:
+For OpenStack control nodes we use the BIOS parameters for the basic profile defined in [Chapter 5.4 of the Reference Model](../../../ref_model/chapters/chapter05.md#5.4). Additionally, for OpenStack we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
@@ -226,7 +226,7 @@ If we wish to dedicate specific cores for host processing we need to consider tw
     1. Require dedicated cores for Guest resources
     2. No dedicated cores are required for Guest resources
 
-Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Pike release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
+Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Train release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
 
 Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vcpus numbered '0' and '20', '1' and '21', etc. are siblings:
 
@@ -389,11 +389,9 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 #### 4.2.3.1 Physical Network Topology
 
-
-
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/RA1-Ch04-Indicative-OpenStack-Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-5: Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Indicative-OpenStack-Network.png" alt="Indicative OpenStack Network Layout"><b>Figure 4-5: Indicative OpenStack Network Layout.</b></p>
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
@@ -422,11 +420,11 @@ Octavia supports provider drivers which allows third-party load balancing driver
 #### 4.2.3.4. Neutron Extensions
 OpenStack Neutron is an extensible framework that allows incorporation through plugins and API Extensions. API Extensions provides a method for introducing new functionality and vendor specific capabilities. Neutron plugins support new or vendor-specific functionality. Extensions also allow specifying new resources or extensions to existing resources and the actions on these resources.  Plugins implement these resources and actions.
 
-CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/pike/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
+CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
-Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/pike/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
+Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
 
-[Chapter 5](../chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions]( ../chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
+[Chapter 5](chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions](chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
 
 **Neutron ML2 integration**
 The OpenStack Modular Layer 2 (ML2) plugin simplifies adding networking technologies by utilizing drivers that implement these network types and methods for accessing them. Each network type is managed by an ML2 type driver and the mechanism driver exposes interfaces to support the actions that can be performed on the network type resources. The [OpenStack ML2 documentation](https://wiki.openstack.org/wiki/Neutron/ML2) lists example mechanism drivers.
@@ -467,7 +465,7 @@ The Ceph storage cluster is deployed on bare metal hardware. The minimal configu
 
 Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
 
-<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"></br>Figure 4-6: Ceph Storage System.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"><b>Figure 4-6: Ceph Storage System.</b></p>
 
 **BIOS Requirement for Ceph servers**
 
@@ -534,9 +532,9 @@ Neutron is the networking service, Neutron depends on Keystone and has services 
 | Networking Service component | Description | Required or Optional Service | Placement |
 |-----|-----|----|----|
 | neutron server (neutron-server and neutron-\*-plugin) | Manages user requests and exposes the Neutron APIs | Required | Controller node |
-| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node </br> (Controller node if no network node present) |
-| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node </br>(Controller node if no network node present)</br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
-| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node </br> (Controller node if no network node present) |
+| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node <br> (Controller node if no network node present) |
+| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node <br>(Controller node if no network node present)<br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
+| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node <br> (Controller node if no network node present) |
 | neutron plugin agent (neutron-\*-agent) | Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch or Linux Bridge) configuration and local networking configuration for VMs hosted on that node. | Required | Every Compute Node |
 <p align="center"><b>Table 4-2: Neutron Services Placement</b></p>
 
@@ -554,7 +552,7 @@ With DVR, each compute node also hosts the L3-agent (providing the distributed r
 
 The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation. 
 
-DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/pike/admin/config-dvr-ha-snat.html) addresses this vulnerability. 
+DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/train/admin/config-dvr-ha-snat.html) addresses this vulnerability. 
 
  
 **Software Defined Networking (SDN)**
@@ -617,7 +615,7 @@ The OpenStack Placement service enables tracking (or accounting) and scheduling 
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
 
 #### 4.3.1.11 Barbican
-[Barbican](https://docs.openstack.org/barbican/pike/admin/index.html) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
+[Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
 
 Barbican usage provides a means to fulfill security requirements such as req.sec.zon.02 “The Architecture must support password encryption” and req.sec.zon.03 “The Architecture must support data, at-rest and in-flight, encryption”.
 
@@ -627,7 +625,7 @@ Containers are lightweight compared to Virtual Machines and leads to efficient r
 
 In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-7.
 
-<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-7: Containerised OpenStack Services Topology.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"><b>Figure 4-7: Containerised OpenStack Services Topology.</b></p>
 
 
 <a name="4.4"></a>
