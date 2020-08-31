@@ -144,7 +144,7 @@ isolcpus: <String of cores to isolate>
   # String of cores/threads to isolate, e.g. "4-8,12"
 sst_bf_configuration_enabled: false
   # Speed Select Technology - Base Frequency (SST-BF). Can be enabled if processor is supported.
-
+```
 Lastly, modify the environmental variables defined in `deploy.env` to match your setup.
 
 Once ready, issue the following command to initiate the deployment
@@ -180,15 +180,7 @@ The list of allocatable resources will vary depending on the configuration, but 
 }
 ```
 
-# TODO Consider if we need the section below as majority of the text has been moved to the section above
-<a name="4.3.2"></a>
-### 4.3.2 Kubernetes Provisioning
-
-Early efforts to provision Kubernetes are based on existing tools such as [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf), using scripts available on [Github](https://github.com/intel/container-experience-kits), and the CNCF initiative [CNF Testbed](https://github.com/cncf/cnf-testbed).
-
-Requirements are based on the [Kubernetes Based Reference Architecture (RA2)](../../../ref_arch/kubernetes), with initial focus on hardware and functionality related to CPU and networking. While this will not be sufficient to satisfy all the requirements listed in RA2, it will serve as a development platform for further feature integration, verification and ideally testing related to the [Kubernetes Based Reference Conformance (RC2)](../../../ref_cert/RC2).
-
-The Kubernetes provisioning follows the approach described in [Chapter 1](chapter01.md#13-reference-implementation-approach) of this RI. Steps for preparing the BMRA environment can be found here: [CNTT RI2 Confluence page](https://wiki.lfnetworking.org/display/LN/Kubernetes+Bare-Metal+Install+and+Configuration).
+### 4.3.2 [Placeholder for other Deployment Scenarios]
 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
