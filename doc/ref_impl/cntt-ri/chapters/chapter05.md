@@ -137,7 +137,7 @@ There are many ways to validate the hardware by remote interface verification, f
 Considering the number of servers, the user can choose to validate the server interface in a distributed way or in a centralized way.
 Distributed validation means that the server connects to the hardware management device (for example, BMC and IPMI) to validate the connection.
 Centralized validation means that the hardware management device connects to the server to validate the connection.
-The best practice is to use centralized validation when the number of servers is low (for example, storage servers), and use distributed validation when the number of servers is high (for example, generic servers).
+The best practice is to use centralized validation when the number of servers is small (for example, storage servers), and use distributed validation when the number of servers is large (for example, generic servers).
 
 
 | Field # | type | mandatory | Instruction |
