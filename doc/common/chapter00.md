@@ -2,44 +2,32 @@
 # Cloud iNfrastructure Telco Taskforce
 
 ## Table of Contents
-* [1. Overview](#1.0)
-    * [1.1 Glossary](#1.1)
-    * [1.2 Problem Statement](#1.2)
-    * [1.3 Project Goals and Purpose](#1.3)
-    * [1.4 Common Cloud Infrastructure Benefits](#1.4)
-* [2. Principles](#2.0)
-* [3. Scope](#3.0)
-  * [3.1 Functional Scope](#3.1)
-  * [3.2 Out of Scope Components](#3.2)
-  * [3.3 Specification Types](#3.3)
-  * [3.4 Relationship to other industry projects](#3.4)
-  * [3.5 Bogo-Meter](#3.5)
-* [4. Approach](#4.0)
-* [5. Use Cases](#5.0)
-* [6. Roadmap and Releases](#6.0)
-* [7. CNTT Technical Policies and Transition Plan](#7.0)
-* [8. Other Policies](#9.0)
-* [9. Relevant Technologies](#8.0)
-
-
-## Available Specifications
-* [Reference Model](../ref_model)
-* [Reference Architecture](../ref_arch)
-* [Reference Implementation](../ref_impl)
-* [Reference Conformance](../ref_cert)
-* [Vendor Implementations](../ven_impl)
+* [Overview](#1.0)
+    * [Glossary](#1.1)
+    * [Problem Statement](#1.2)
+    * [Project Goals and Purpose](#1.3)
+    * [Common Cloud Infrastructure Benefits](#1.4)
+* [Principles](#2.0)
+* [Scope](#3.0)
+  * [Functional Scope](#3.1)
+  * [Out of Scope Components](#3.2)
+  * [Specification Types](#3.3)
+  * [Relationship to other industry projects](#3.4)
+  * [Bogo-Meter](#3.5)
+* [Abbreviations](#4.0)
+* [References](#5.0)
 
 <a name="1.0"></a>
-# 1. Overview
+# Overview
 
 Initially organized early in 2019, the Cloud iNfrastructure Telco Taskforce (CNTT) was created in response to rapid changes in how networking applications are being designed, built and managed, plus a growing recognition of a perceived functional gap between the previous standard infrastructure models and the architectures needed to support Network Function Virtualisation (NFV) applications.  Organizationally, the Cloud iNfrastructure Telco Taskforce, jointly hosted by GSMA and the Linux Foundation, operates as an open committee responsible for creating and documenting an industry aligned Common Cloud Infrastructure Framework.  The CNTT was created with the intent that it would create the cloud infrastructure framework, and eventually morph into an on-going project under the auspices of the GSMA and the Linux Foundation umbrellas.  The final on-going operational form of the Taskforce will be determined as the project evolves.
 
 <a name="1.1"></a>
-## 1.1 Glossary
+## Glossary
 The definition and intent of the terminology used throughout the documents is defined in the [Glossary](./glossary.md).
 
 <a name="1.2"></a>
-## 1.2 Problem Statement
+## Problem Statement
 Based on informal conversations with many operators and developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of VNF/CNF applications related to the lack of a common cloud infrastructure platform.  These include but are not limited to the following:
 
  - Higher development costs due to the need to develop Virtual Network Functions (VNF) on multiple custom platforms for each operator
@@ -53,9 +41,9 @@ One of major challenges holding back the more rapid and widespread adoption of V
 To put this effort into perspective, over the past few years, the telecom industry has been going through a massive technology revolution by embracing software defined networking and cloud architecture principles, in pursuit of the goal of achieving more flexibility, agility and operational efficiency. At a high level, the main objective of NFV (Network Function Virtualisation) is the ability to use general purpose standard COTS (Commercial off the Shelf) compute, memory and storage hardware platforms to run multiple Virtualised Network Functions.  Earlier common infrastructure models built on the previous assumption that networking applications are typically built on discrete hardware, do not offer the level of flexibility and agility needed for the support of newer networking technologies such as 5G, intelligent networks and Edge computing.  By running network applications as software rather than on purpose-built hardware, as it has been done since the early 1990’s, the operators aspire to realize operational efficiencies, and capital expense savings.  These Software Defined Network (SDN) applications are increasingly being used by telecom operators to support their internal and customer facing network infrastructures.  The need for a common model across the industry to facilitate more rapid adoption is clear.
 
 <a name="1.3"></a>
-## 1.3 Project Goals and Purpose
+## Project Goals and Purpose
 
-The goal of the task force is to develop a robust infrastructure model and a limited discrete set of architectures built on that model that can be tested and validated for use across the entire member community. The community, which is made up of a cross section of global operators and supporting vendors alike, was created to support the development, deployment and management of NFV applications faster and more easily.  
+The goal of the task force is to develop a robust infrastructure model and a limited discrete set of architectures built on that model that can be validated for use across the entire member community. The community, which is made up of a cross section of global operators and supporting vendors alike, was created to support the development, deployment and management of NFV applications faster and more easily.  
 
 All of this had led to a growing awareness of the need to develop more open models and validation mechanisms to bring the most value to telco operators as well as vendors, by agreeing on a standard set of infrastructure profiles to use for the underlying infrastructure to support VNF/CNF applications across the industry and telecom community at large. To achieve this goal, the cloud environment needs to be fully abstracted via APIs and other mechanisms to the VNFs/CNFs so that both developers of the VNF/CNF applications and the operators managing the environments can benefit from the flexibility that the disaggregation of the underlying infrastructure offers.
 
@@ -65,7 +53,7 @@ The next step after the Reference Model has been identified and developed is to 
   - Subsequent architectures should be based on either additional established or promising emerging technologies that are chosen by the community members.  
 
 <a name="1.4"></a>
-## 1.4 Common Cloud Infrastructure Benefits
+## Common Cloud Infrastructure Benefits
 
 By providing a pre-defined environment with common capabilities, applications are able to be developed and deployed more rapidly.  In addition, the common infrastructure can be optimized for various workloads, such as IT (Information Technology), VNF, AI (Artificial Intelligence), and other future workload types as new technologies emerge. The benefits of this approach are:
 
@@ -85,12 +73,12 @@ In conclusion, to serve the stated objective building a common cloud infrastruct
 
 
 <a name="2.0"></a>
-# 2. Principles
+# Principles
 
 Any specification work created within CNTT **must** conform to the following principles:
 
 <a name="2.1"></a>
-## 2.1 Overall Principles
+## Overall Principles
 
 1. A top-level objective is to build a single, overarching Reference Model with the smallest number of Reference Architectures tied to it as is practical. Two principles are introduced in support of these objectives:
     - **Minimise Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
@@ -108,23 +96,34 @@ Any specification work created within CNTT **must** conform to the following pri
    - Memory resources
    - Networking resources (Limited to connectivity services only)
    - Acceleration resources
-1. Cloud Infrastructure exposed resources should be supplier independent
-1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs/CNFs and consumed by VNFs/CNFs.
-1. VNFs/CNFs should be modular and be designed to utilise the minimum resources required for the service
-1. Cloud Infrastructure shall support pre-defined and parameterised sizes
-   - These pre-defined sizes will evolve over time
-1. Cloud Infrastructure provides certain resources, capabilities and features, and workloads should only consume these resources, capabilities and features
-1. VNFs/CNFs that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
-1. Workloads shall not require hardware-dependent software
+1. Vendor independence of Cloud Infrastructure exposed resources .
+1. Cloud Infrastructure Application Programming Interfaces (APIs) ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). 
+•	These APIs support, for example, cloud infrastructure resources discovery, monitoring by management entities, configuration on behalf of workloads and consumption by workloads
+1. Workloads are modular and designed to utilise the minimum resources required for the service.
+1. Workloads consume only the resources, capabilities and features provided by the Cloud infrastructure.
+1. Workload functional capabilities independence from Cloud Infrastructure (hardware and software) accelerations.
+1. Workload independence from Cloud Infrastructure (hardware and software) hardware-dependent software
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
-   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
-   - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
-1. Specific internal hardware details shall not be exposed above the Infra+Cloud Management layers
+   - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
+1. Abstraction of specific internal hardware details above the Infrastructure Cloud Management layers unless managed through Hardware Infrastructure Manager
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
-   - This pertains to features that operate at detailed levels of hardware granularity, such as EPA.
+   - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
 
 <a name="2.2"></a>
-## 2.2 Architectural Principles
+## Requirements Principles
+The agreed upon rules and recommendations to which a compliant workload or cloud infrastructure must adhere. 
+
+* All requirements will be hosted and maintianed in the RM or relevant RA
+* All requirements must be assigned a requirements ID and not be embedded in narrative text.  This is to ensure that readers do not have to infer if a requirement exists and is applicable
+* Requirements must have a unique ID for tracking and reference purposes
+* The requirement ID should include a prefix to delineate the source project
+* Requirements must state the level of compliance (ex: MUST, SHOULD, MAY) per [RFC 2119](https://tools.ietf.org/html/rfc2119)
+* Mandatory requirements must be defined in such a way that they are unambiguously verifiable via automated testing
+* Requirements should be publishable or extractable into a machine readable format such as JSON
+* Requirements should include information about the impact of non-conformance and the rationale for their existence
+
+<a name="2.3"></a>
+## Architectural Principles
 
 Following are a number of key architectural principles that apply to all Reference Architectures produced by CNTT:
 
@@ -147,15 +146,15 @@ Following are a number of key architectural principles that apply to all Referen
 1. **Resilience and Availability:** To allow High Availability and Resilience for hosted VNFs, and to avoid Single Point of Failure.
 
 <a name="3.0"></a>
-# 3. Scope
+# Scope
 
-Within the framework of the Common Telecom cloud infrastructure vision, there are four levels of documents needed to describe the components, realize the practical application of the systems and qualify the resulting cloud infrastructure. They are, as highlighted in **Figure 1**:  **Reference Model**, **Reference Architecture**, **Reference Implementation**, and **Reference Conformance**.
+Within the framework of the common Telecom cloud infrastructure vision, there are four levels of documents needed to describe the components, realize the practical application of the systems and qualify the resulting cloud infrastructure. They are, as highlighted in **Figure 1**:  **Reference Model**, **Reference Architecture**, **Reference Implementation**, and **Reference Conformance**.
 
 <p align="center"><img src="./figures/tech_scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 1:</b> Documentation Scope of CNTT</p>
 
 <a name="3.1"></a>
-## 3.1 Functional Scope
+## Functional Scope
 In terms of the functional scope of the CNTT documentation, in order to target the project goals as described above, we are focussed on:
 - Functional capabilities of the cloud infrastructure and the infrastructure management
 - Functional interfaces between infrastructure and infrastructure management
@@ -167,7 +166,7 @@ Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/e
 <p align="center"><b>Figure 2:</b> Functional Scope of CNTT</p>
 
 <a name="3.2"></a>
-## 3.2 Out of Scope Components
+## Out of Scope Components
 While the nature of the CNTT might seem quite broad, the following areas are not at this time part of the scope of this effort.  
 - Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the documents so they are general enough that any vendor hardware can be used in a conformant implementation without making significant changes to the model.
 - Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a black box that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the cloud infrastructure whenever possible.
@@ -175,7 +174,7 @@ While the nature of the CNTT might seem quite broad, the following areas are not
 - Company specific requirements: The CNTT documents are designed to be general enough that most operators and others in the Open Source communities will be able to adapt and extend them to their own non-functional requirements.
 
 <a name="3.3"></a>
-## 3.3 Specification Types
+## Specification Types
 
 - **Reference Model (RM)**: focuses on the __**Infrastructure Abstraction**__ and how services and resources are exposed to VNFs/CNFs. It needs to be written at a high enough level that as new **Reference Architectures** and **Reference Implementations** are added, the model document should require few or no changes. Additionally, the Reference Model is intended to be neutral towards VMs or Containers.
 - **Reference Architecture (RA)**: Reference Architectures defines all infrastructure components and properties which have effect on the VNF/CNF run time, deployment time, and design time.  It is expected that at least one, but not more than a few Reference Architectures will be created, and they will conform to the Reference Model.  The intention is, whenever possible, to use existing elements, rather than specify entirely new architectures in support of the high-level goals specified in the **Reference Model**.
@@ -193,7 +192,7 @@ Below is a diagram of the different artefacts that will need to be created to su
 <p align="center"><b>Figure 4:</b> Description of the possible different levels of CNTT artefacts</p>
 
 <a name="3.4"></a>
-## 3.4 Relationship to other industry projects
+## Relationship to other industry projects
 The CNTT work is not done in a vacuum.  The intention from the beginning was to utilize the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
 
 - ETSI NFV ISG
@@ -207,7 +206,7 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 - VMware (While not an Open Source project, VMware is a commonly used platform used for VNF deployments in the telecom industry)
 
 <a name="3.4.1"></a>
-### 3.4.1 Relationship to ETSI-NFV
+### Relationship to ETSI-NFV
 
 The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
 
@@ -215,7 +214,7 @@ The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that
 <p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
 
 <a name="3.4.2"></a>
-### 3.4.2 Relationship to OPNFV and OVP
+### Relationship to OPNFV and OVP
 
 The CNTT is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services including **Vendor's Implementation (VI)** of cloud infrastructure and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
@@ -236,17 +235,17 @@ As can be seen from the above figure, roles and responsibilities are as follows:
 
 
 <a name="3.4.3"></a>
-### 3.4.3 Relationship to CNCF
+### Relationship to CNCF
 
 >to be clarified while as relationship is being established.
 
 <a name="3.4.4"></a>
-### 3.4.4 Relationship to Other communities
+### Relationship to Other communities
 
 The CNTT collaborates with relevant API workgroups of SDOs ( such as MEF, TM Forum, 3GPP, TIP, etc) where applicable to align with their specification work and utilise their efforts.
 
 <a name="3.5"></a>
-## 3.5 Bogo-Meter
+## Bogo-Meter
 At the beginning of each chapter there is a graphic that indicates the completeness and maturity each chapter's content at a glance.  
 <p align="right"><img src="./figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -257,31 +256,13 @@ The ratings are as follows:
  - **Dickering over the fine points**: The content is mostly completed, but the community needs to refine its shared thinking and build final consensus.
  - **Complete**: Content has been finalized for this release.  Few changes are anticipated in the future beyond fixing errors or slight refinements.
 
-<a name="4.0"></a>
-# 4. Approach
-Different specification types within CNTT are related to each other and requires alignments between different parts. The Approach CNTT is taking to tackle those issues is described in [here](./approach.md).
+ <a name="4.0"></a>
+# Abbreviations
+
+Please refer to [Abbreviations](./abbreviations.md) for a full list. 
+
 
 <a name="5.0"></a>
-# 5. Use Cases
-CNTT Addresses wide range of use cases from Core all the way to the Edge of the Network. Different use cases supported by CNTT specifications are described in [here](./usecases.md).
+# References 
 
-<a name="6.0"></a>
-# 6. Roadmap and Releases
-
-* [CNTT Releases](./release_notes)
-* [CNTT Roadmap](./roadmap.md)
-
-<a name="7.0"></a>
-# 7. CNTT Technical Policies and Transition Plan
-
-There are multiple situations where a [policy](./policies.md), comprised of one or more compromises and/or transitions is required to address technology that does not presently conform to CNTT mandates or strategy, and hence requires explicit direction to prescribe how the situation will be treated in the present, as well as in the future. This informs application designers how RC will react when encountering such technologies during the qualification process, including flagging warnings and potentially errors which could prevent issuance of a conformance badge.
-
-<a name="8.0"></a>
-# 8. Other Policies
-
-* [OpenStack Release selection](./openstack-release.md)
-
-<a name="9.0"></a>
-# 9. Relevant Technologies
-
-There are different technologies used and specified by CNTT specifications. This [section](./technologies.md) describes the relevant technologies for CNTT and clarifies CNTT position about them.
+Please refer to [References](./references.md) for a full list. 

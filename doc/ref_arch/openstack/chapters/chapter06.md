@@ -104,10 +104,30 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 ### 6.3.2 System Hardening
 All infrastructure should undergo system hardening, establishes processes to govern the hardening, and documents to cover at a minimal for the following areas:
 
-#### 6.3.2.1 Function
+#### 6.3.2.1 Password policy
+For all infrastructure components, passwords must be hardened and a strict password policy must be applied (req.sec.gen.002).
+
+Passwords must be strengthened:
+- All vendors default passwords must be changed
+- Passwords must contain at least 8 characters as a minimal value, 14 characters length passwords are recommended
+- Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
+- For administration privileges accounts, passwords must contain at least one upper case letter, one lower case letter, one numeral and one special (non-alphanumeric) character   
+
+For passwords updates, the identity of users must be verified before permitting a password change.
+
+Passwords must be encrypted at rest and in-transit. Password files must be stored separately from application system data.
+
+Password's composition, complexity and policy should follow the recommendations consolidated within the [CIS Password Policy guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/) such as:
+- Check the password for known bad passwords (repetitive or sequential characters, dictionary words, context-specific words, previously used passwords, etc.)
+- Limit number of failed login attempts
+- Implement Multi-factor Authentication
+- Periodic (for example, Yearly, Quarterly, etc.)  password change or on key events such as indication of compromise, change of user roles, a defined period of inactivity, when a user leaves the organization, etc..
+
+
+#### 6.3.2.2 Function and Software
 Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
 
-#### 6.3.2.2 Software
+Regarding software:
 - Install only software which is required to support the functions
 - Remove any unnecessary software or packages
 - Where software cannot be removed, disable all service to it

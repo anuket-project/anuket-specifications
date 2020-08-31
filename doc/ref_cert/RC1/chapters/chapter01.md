@@ -58,7 +58,7 @@ The three step methodology described above of verifying Manifest compliance, exe
 <a name="1.1.1"></a>
 ### 1.1.1 Terminology
 
-Terminology in this document will follow [CNTT Terminology](../../../tech/glossary.md).
+Terminology in this document will follow [CNTT Terminology](../../../common/glossary.md).
 
 <a name="1.2"></a>
 ## 1.2 Scope

@@ -2,7 +2,7 @@
 
 ## Available Specifications
 * [Governance](doc/gov)
-* [Technical Specifications](doc/tech)
+* [Technical Specifications](doc/common)
 
 ## Navigation tips
 * **design your OpenStack product?**
@@ -10,8 +10,8 @@
   and [OpenStack API descriptions and selection](doc/ref_arch/openstack/chapters/chapter05.md).
 * **check the CNTT conformance of your existing OpenStack deployments?**
   You would be primarily interested by
-  [the NFVI Testing Cookbook](doc/ref_cert/lfn/chapters/chapter04.md)
-  and [the test case descriptions and selection](doc/ref_cert/lfn/chapters/chapter03.md)
+  [the NFVI Testing Cookbook](doc/ref_cert/RC1/chapters/chapter04.md)
+  and [the test case descriptions and selection](doc/ref_cert/RC1/chapters/chapter03.md)
   for more details.
 * **deploy OpenStack to onboard your VNFs?**
   You would be primarily interested by
