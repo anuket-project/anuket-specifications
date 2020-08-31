@@ -149,7 +149,7 @@ Terms not defined by Kubernetes:
 <a name="1.7"></a>
 ## 1.7 Test Related Terminology
 
-- **Calibration**: The process of checking and/or adjusting a stimulus generation or measurement device with a known reference value, to improve the overall quality of the measured results.  Calibration may be very simple, such as a comparison of the configured traffic generator sending rate and measured rate using a simple SUT (System Under Test)  such as loop-back cable between interfaces, such that that the known reference value is the published nominal interface rate.
+- **Calibration**: The process of checking and/or adjusting a stimulus generation or measurement device with a known reference value, to improve the overall quality of the measured results.  Calibration may be very simple, such as a comparison of the configured traffic generator sending rate and measured rate using a simple SUT (System Under Test)  such as loop-back cable between interfaces, such that the known reference value is the published nominal interface rate.
 
 - **Reference Value**: A measured or established result or outcome for comparison with new measurements. For example, the reference value or expected outcome of a Functional Test is "PASS". The reference value or expected outcome of a Performance Measurement or Benchmarking test may be the value measured for the previous SUT release, or the published value or theoretical limit of a simple SUT.
 
