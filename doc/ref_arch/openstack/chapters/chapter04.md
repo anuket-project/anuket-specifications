@@ -565,13 +565,14 @@ SDN provides a truly scalable and preferred solution to suport dynamic, very lar
 #### 4.3.1.6 Nova
 Nova is the compute management service, Nova depends on all above components and is deployed after. Nova has services running on the control nodes and the compute nodes:
 -	nova-metadata-api
--	nova-placement-api
 -	nova-compute api
 -	nova-consoleauth
 -	nova-scheduler
 -	nova-conductor
 -	nova-novncproxy
 -	nova-compute-agent which runs on Compute node
+
+Please note that the Placeemnt-API must have been installed and configured prior to nova compute starts.
 
 #### 4.3.1.7 Ironic
 Ironic is the bare metal provisioning service. Ironic depends on all above components and is deployed after. Ironic has services running on the control nodes and the compute nodes:
@@ -600,7 +601,7 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 -->
 
 #### 4.3.1.10 Placement
-The OpenStack Placement service enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as VCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”).  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
+The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
 
 <p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
     
@@ -613,6 +614,12 @@ The OpenStack Placement service enables tracking (or accounting) and scheduling 
 <p>Allocations represent resources that have been assigned/used by some consumer of that resource.</p>
     
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
+
+
+The Placement API is stateless and, thus, resiliency, availability and scaling, it is possible to deploy as many servers as needed. On start, the nova-compute service will attempt to make a connection to the Placement API and keep attempting to connect to the Placement API, logging and warning periodically until successful. Thus, the Placement API must be installed and enabled prio to Nova compute.
+
+Placement has services running on the control node:
+-	nova-placement-api
 
 #### 4.3.1.11 Barbican
 [Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
