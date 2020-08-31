@@ -47,7 +47,7 @@ More details regarding these descriptor files as well as their schema are very w
 
 Additionally, modify the BMRA config by first updating `sw_config/bmra/inventory.ini` with the correct servers and functionality planned for each node. For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster.
 
-Next, update parts of `sw_config/bmra/all.yml`:
+Note that the following configuration options in `sw_config/bmra/all.yml` are set to specific values according to RA-2 requirements. Its recommended not to change them (except for debugging and development purposes).
 
 [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
 ```
@@ -93,8 +93,7 @@ example_net_attach_defs:
 cluster_name: cluster.local
   # Can be updated if needed
 ```
-
-Update `sw_config/bmra/node1.yml` (and create additional nodeN.yml files according to the inventory and deployment:
+Similarly, it is not recommended to change the following configuration options in `sw_config/bmra/node1.yml`, unless for debugging and development purposes. Note that depending on your deployment setup and inventory, you might have to create additional nodeN.yml files.
 ```
 sriov_enabled: true
   # Change to true as the SR-IOV Network device plugin for Kubernetes is used
