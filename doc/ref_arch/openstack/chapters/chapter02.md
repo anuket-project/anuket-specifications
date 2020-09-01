@@ -178,19 +178,19 @@ Traceability to Reference Model.
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|------|------|-------|
-| sec.gen.001 | Hardening | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
-| sec.gen.002 | Hardening | All systems part of Cloud Infrastructure **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  |
-| sec.gen.003 | Hardening | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot |  |
-| sec.gen.004 | Hardening | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened |  |
-| sec.gen.005 | Hardening | The Platform **must** support Operating System level access control |  |
-| sec.gen.006 | Hardening | The Platform **must** support Secure logging | [RA-1 6.3.2.5 "System Access"](./chapter06.md#6325-system-access) |
-| sec.gen.007 | Hardening | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service |  |
-| sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities |  |
-| sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification |  |
-| sec.gen.010 | Hardening | The Cloud Infrastructure **must** support Secure storage (all types) |  | Expand/Delete based on other requirements |
+| sec.gen.001 | Hardening | The Platform **must** maintain the specified configuration. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
+| sec.gen.002 | Hardening | All systems part of Cloud Infrastructure **must** support password hardening as defined in [CIS Password Policy Guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/). | [Hardening: CIS Password Policy Guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/) |
+| sec.gen.003 | Hardening | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot. |  |
+| sec.gen.004 | Hardening | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or disabling unnecessary services, applications and network protocols, configuring operating system user authentication, configuring resource controls, installing and configuring additional security controls where needed, and testing the security of the Operating System. | NIST SP 800-123 |
+| sec.gen.005 | Hardening | The Platform **must** support Operating System level access control. |  |
+| sec.gen.006 | Hardening | The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required. | [RA-1 6.3.2.5 "System Access"](./chapter06.md#6325-system-access) |
+| sec.gen.007 | Hardening | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service. |  |
+| sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. |  |
+| sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification. |  |
+| sec.gen.010 | Hardening | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know ([Controlled Access Based on the Need to Know](https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/)). |  |  |
 | sec.gen.012 | Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  |
 | sec.gen.013 | Hardening | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  |
-
+| sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | |
 
 
 ####  2.3.8.2. Platform and Access
@@ -420,7 +420,7 @@ Commented out until RM defines requirements for SDN
 
 | Ref # | sub-category | Description |  Notes |
 |-------|------|------|-------|
-| sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors) |  |
+| sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). |  |
 | sec.gen.014 | Hardening | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 
 
