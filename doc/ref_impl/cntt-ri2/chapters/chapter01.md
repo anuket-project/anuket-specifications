@@ -91,7 +91,19 @@ The following subsections provide an overview of the provisioning stages as they
 
 <a name="1.4.1"></a>
 ### 1.4.1 Host Provisioning
-> Add high level description of host provisioning stage
+The RI should be deployable on different infrastructures. Specifically, the following deployment scenarios are in scope of the RI:
+
+- **Deployment on bare-metal hosts**
+   This deployment scenario is typically used in internal labs and existing OPNFV community labs. It requires the RI installation tooling to provision empty bare-metal machines with a base operating system and to apply a baseline network configuration.
+
+- **Deployment on bare-metal hosts provided by a cloud provider**
+   This deployment scenario makes use of bare-metal cloud providers such as Packet.net. The machines provided in this case have been pre-provisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.
+
+- **Deployment on an Infrastructure-as-aa-Service Layer**
+  In this deployment scenario, the infrastructure hosts for the Kubernetes cluster are provided by an Infrastructure-as-a-Service layer, for instance based on OpenStack running in a private or public cloud. This scenario requires the RI installation tooling to request and configure compute resources via the API of the IaaS.
+
+While all three deployment scenarios are in scope of RI2, the initial implementation focus is on bare-metal deployments. Support for the other two scenarios will be added subsequently based on available development resources.
+
 
 <a name="1.4.2"></a>
 ### 1.4.2 Kubernetes Provisioning
