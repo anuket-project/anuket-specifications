@@ -179,7 +179,7 @@ The virtual infrastructure manager allows to:
 : provides a mechanism to provision virtual resources with the help of hardware network resources
 
 <a name="3.3.2"></a>
-### 3.3.1 Hardware Infrastructure Manager
+### 3.3.2 Hardware Infrastructure Manager
 The hardware infrastructure manager allows to:
 * provision, manage, monitor and delete hardware resources (underlay network, physical compute, physical storage, accelerators)
 * manage hardware resource discovery and topology
