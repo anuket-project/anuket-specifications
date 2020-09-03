@@ -25,7 +25,6 @@ Requirements Principles can be found in the [RM Principles](https://github.com/c
 * There must be traceability between test cases and requirement being validated
 * Failures should provide additional content to inform the user where or how the requirement was violated (ex: which file or resource violated the requirement).  Put another way, don’t require the user to read the test to understand what went wrong
 * Testing tools should support selection of tests based on category or profile.
-* Result reports must clearly delineate violations of mandatory vs. optional requirements
 * Tests must be available to run locally by both CNF and cloud infrastructure providers
 * Testing tools must produce machine-readable result formats that can be used as input into the badging program (OVP already defines a format)
 
