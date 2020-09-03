@@ -89,7 +89,7 @@ The following software versions are considered to verify Kubernetes v1.18
 
 ### Kubernetes API benchmarking
 
-[Rally](https://github.com/openstack/rally) and is tool and framework that
+[Rally](https://github.com/openstack/rally) is a tool and framework that
 allows to perform Kubernetes API benchmarking.
 
 [Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fkali)
