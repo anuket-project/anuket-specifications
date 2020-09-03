@@ -131,7 +131,7 @@ of 0%) proposed in
 | Kubernetes.create_scale_and_delete_statefulset                     | 10         |
 | Kubernetes.list_namespaces                                         | 10         |
 
-The following software versions are considered to verify Kubernetes v1.18
+The following software versions are considered to benchmark Kubernetes v1.18
 (latest stable release) selected by CNTT:
 
 | software                | version     |
