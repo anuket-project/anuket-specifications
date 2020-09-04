@@ -62,11 +62,11 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
-| e.cap.001 | Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | |
-| e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | |
-| e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | |
-| e.cap.004 | Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure | 6 | 6 | |
-| e.cap.005 | Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
+| e.cap.001 | Max number of vCPU that can be assigned to a single VM by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | |
+| e.cap.002 | Max memory in MB that can be assigned to a single VM by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | |
+| e.cap.003 | Max storage in GB that can be assigned to a single VM by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | |
+| e.cap.004 | Max number of connection points that can be assigned to a single VM by the Cloud Infrastructure | 6 | 6 | |
+| e.cap.005 | Max storage in GB that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
 | e.cap.006 | CPU pinning support | Not required | Must support | |
 | e.cap.007 | NUMA support | Not required | Must support | |
 | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
@@ -85,9 +85,9 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
 | i.cap.018 | Support for huge pages | Not required | Must support | |
 | i.pm.001  | Monitor worker node CPU usage, per nanosecond | Must support | Must support | |
-| i.pm.002  | Monitor pod CPU usage, per nanosecond | Must support | Must support | |
+| i.pm.002  | Monitor VM CPU usage, per nanosecond | Must support | Must support | |
 | i.pm.003  | Monitor worker node CPU utilisation (%) | Must support | Must support | |
-| i.pm.004  | Monitor pod CPU utilisation | Must support | Must support | |
+| i.pm.004  | Monitor VM CPU utilisation | Must support | Must support | |
 | i.pm.005  | Measure external storage IOPs | Must support | Must support | |
 | i.pm.006  | Measure external storage throughput | Must support | Must support | |
 | i.pm.007  | Measure external storage capacity | Must support | Must support | |
@@ -101,7 +101,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 <a name="2.2.2"></a>
 ### 2.2.2 Virtual Network Interface Specifications (source [RM 4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications))
 
-The required number of connection points to a Pod is described in `e.cap.004` above.  This section describes the required bandwidth of those connection points.
+The required number of connection points to a VM is described in `e.cap.004` above.  This section describes the required bandwidth of those connection points.
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
