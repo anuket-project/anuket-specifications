@@ -15,7 +15,8 @@
 Problem statement: A single Kubernetes cluster does not provide hard multitenancy* by design. Within a Cluster, Kubernetes Namespace is a mechanism to provide Soft isolation multitenancy**.
 A Kubernetes Namespace does provide isolation by means of role based access control (RBAC), Resource Isolation and Network Policy, however they are still within the same trust domain and a potential breach of Cluster Admin Role could lead to the Blast Radius across the entire Cluster and all its Kubernetes Namespaces.
 So there is a need to define various use cases or ways to build Multitenancy Deployment Models and define the Best Practices to secure each Model.
-Kubernetes namespace is a logical representation of namespace(boundary for resources) within the Kubernetes cluster and this is different from the linux namespaces(Refer: https://en.wikipedia.org/wiki/Linux_namespaces).
+Kubernetes namespace is a logical representation of namespace(boundary for resources) within the Kubernetes cluster. 
+This is different from the linux namespaces which is defined at the operating system kernel level (Refer: https://en.wikipedia.org/wiki/Linux_namespaces).
 <p align="left"><img src="../figures/Model2-cluster-isolation.png" alt="scope" title="Scope" width="50%"/></p> 
 <p align="left"><img src="../figures/Model1-ns.png" alt="scope" title="Scope" width="50%"/></p>
 Use cases:
@@ -27,7 +28,8 @@ Use cases:
 ## B.2 Multitenancy Models for CNFs
 Solution Models :
 1. Seperate Kubernetes Namespace per Vendor within Single Kubernetes Cluster
-2. Seperate Kubernetes Cluster per Vendor
+2. Seperate Kubernetes Cluster per Vendor. 
+The Kubernetes Clusters can be created using Baremetal Nodes or Virtual Machines (either on the Baremetal Machines or also the way Public CLoud Provider APIs are used to create the Virtual Machines like in GCP Compute Engine, Azure or AWS Providers.
 
 <a name="B.3"></a>
 ## B.3 Solution Areas
