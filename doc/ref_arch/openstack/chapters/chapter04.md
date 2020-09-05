@@ -616,7 +616,7 @@ The OpenStack [Placement service](https://docs.openstack.org/placement/train/ind
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
 
 
-The Placement API is stateless and, thus, resiliency, availability and scaling, it is possible to deploy as many servers as needed. On start, the nova-compute service will attempt to make a connection to the Placement API and keep attempting to connect to the Placement API, logging and warning periodically until successful. Thus, the Placement API must be installed and enabled prio to Nova compute.
+The Placement API is stateless and, thus, resiliency, availability and scaling, it is possible to deploy as many servers as needed. On start, the nova-compute service will attempt to make a connection to the Placement API and keep attempting to connect to the Placement API, logging and warning periodically until successful. Thus, the Placement API must be installed and enabled prior to Nova compute.
 
 Placement has services running on the control node:
 -	nova-placement-api
