@@ -45,7 +45,7 @@ Then CNTT RC2 starts with
 defined by [K8s Conformance](https://github.com/cncf/k8s-conformance) which is
 expected to grow according to the ongoing requirement traceability:
 - focus: \[Conformance\]
-- skip: Alpha|\[(Disruptive|Feature:[^\]]+|Flaky)\]
+- skip: \[Disruptive\]|NoExecuteTaintManager
 
 [Rally](https://github.com/openstack/rally) and is tool and framework that
 allows to perform Kubernetes API testing by iterating once the mainline
