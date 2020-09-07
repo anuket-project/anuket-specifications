@@ -56,6 +56,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Virtual Application (VA):** A general term for software which can be loaded into a Virtual Machine.
   >_*Note:*_ a **VNF** is one type of VA.
 
+- **Virtual CPU (vCPU):** Represents a portion of the host's computing resources allocated to a workload. One or more vCPUs can be assigned to a workload.
+
 - **Virtual Machine (VM):** virtualised computation environment that behaves like a physical computer/server.
   >_*Note:*_ A **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using sizing information or Compute Flavour.
 
