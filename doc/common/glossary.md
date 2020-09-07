@@ -97,11 +97,11 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 - **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
 
 - **Pod**:	The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging.
-- **Kubernetes Cluster**: A set of machines, called nodes and master, that run containerised applications managed by Kubernetes. A cluster has at least one worker node and at least one master.
+- **Kubernetes Cluster**: A set of servers, called nodes and master, that run containerised applications and the management functionality of Kubernetes. A cluster has at least one worker node and at least one master.
 >_*Note:*_ adapted from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster).
 - **Kubernetes Master**:	The master node(s) manage the worker nodes and the pods in the cluster. Multiple masters are used to provide a cluster with failover and high availability.
 - **Kubernetes Control Plane**:	The container orchestration layer that exposes the API and interfaces to define, deploy, and manage the lifecycle of containers.
-- **Kubernetes Node**:	A node is a worker machine in Kubernetes. A worker node may be a **VM** or physical machine, depending on the cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
+- **Kubernetes Node**:	A node is one of the servers from a Kubernetes Cluster used as a worker machine in Kubernetes. A worker node may be a **VM** or physical server, depending on the Kubernetes Cluster. It has local daemons or services necessary to run Pods and is managed by the control plane.
 - **Kubernetes Service**: An abstract way to expose an application running on a set of Pods as a network service.
 >_*Note:*_ This definition from [Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-service) uses the term "network service" differently than in ETSI NFV.
 
