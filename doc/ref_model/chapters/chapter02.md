@@ -3,8 +3,9 @@
 
 ## Table of Contents
 * [2.1 Workloads Collateral](#2.1)
-* [2.2 Analysis](#2.2)
-* [2.3 Cloud Infrastructure Profiles](#2.3)
+* [2.2 Use cases](#2.2)
+* [2.3 Analysis](#2.2)
+* [2.4 Cloud Infrastructure Profiles](#2.3)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
 
