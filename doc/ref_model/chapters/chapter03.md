@@ -274,7 +274,7 @@ Storage also follows the alignment of separated virtual and physical resources o
 * Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
 * Scalability: Storage model enables scalability to enable small up to large deployments.
 * Workload agnostic: Storage model can provide storage functionality to any type of workloads, including VNF, CNF and BareMetal workloads.
-* Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVME-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+* Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
