@@ -78,7 +78,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.014 | Hardware coprocessor support (GPU/NPU) | Not required | Not required | |
 | e.cap.015 | SmartNICs | Not required | Optional | |
 | e.cap.016 | FPGA/other Acceleration H/W | Not required | Optional | |
-| *e.cap.017* | *Ability to monitor L2-L7 data from workload* | *n/a<sup>(3)</sup>* | *n/a<sup>(3)</sup>* | |
+| *e.cap.017* | *Ability to monitor L2-L7 data from workload* | n/a | n/a | |
 | i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the worker nodes | 2 | 2 | |
 | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the worker nodes | 16 GB | 16GB | |
 | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
@@ -96,7 +96,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 
 **(1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)<br>
 **(2)** Defined in the `.bronze` configuration in section [4.2.3 Storage Extensions](../../../ref_model/chapters/chapter04.md#423-storage-extensions)<br>
-**(3)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
+
 
 <a name="2.2.2"></a>
 ### 2.2.2 Virtual Network Interface Specifications (source [RM 4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications))
@@ -110,10 +110,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | |
 | nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | |
 | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | |2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | |
+
 
 <p align="center"><b>Table 2-2:</b> Reference Model Requirements: Network Interface Specifications</p>
 
@@ -123,30 +120,28 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
 | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | |
-| infra.com.cfg.002 | NUMA awareness | Must support | Must support | |
+| infra.com.cfg.002 | Not required | Must support | Must support | |
 | infra.com.cfg.003 | CPU pinning capability | Not required | Must support | |
-| infra.com.cfg.004 | Huge Pages | Must support | Must support | |
+| infra.com.cfg.004 | Huge Pages | Not required | Must support | |
 | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
 | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
 | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | |
 | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | |
 | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | |
 | infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| |
-| infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.<sup>(2)</sup> | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | |
+| infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | |
 | infra.net.cfg.003 | Network Address Translation | Must support | Must support | |
 | infra.net.cfg.004 | Security Groups | Must support | Must support | |
 | infra.net.cfg.005 | SFC support | Not required | Must support | |
 | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | |
-| infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>| |
-| infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNic | |
+| infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK | |
+| infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNiC | |
 | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Must support | |
 | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Must support | |
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
-**(1)** [Workload Transition Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).<br>
-**(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)<br>
-**(3)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.
+**(1)** [Workload Transition Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
 
 <a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
@@ -166,12 +161,11 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 | |
 | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 | |
 | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
-| infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | Not required | Optional<sup>(1)</sup> | |
+| infra.hw.nac.cfg.002 | SmartNiC used to offload vSwitch functionality to hardware | Not required | Optional | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
-**(1)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.
 
 <a name="2.2.5"></a>
 ### 2.2.5 Cloud Infrastructure Management Requirements (source [RM 4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities))
