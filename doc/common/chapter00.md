@@ -202,7 +202,7 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 - MEF
 - TM Forum
 - OSM (ETSi Open Source MANO project)
-- ODIM (Open Distributed Ifrastructure Management)
+- ODIM (Open Distributed Infrastructure Management)
 - VMware (While not an Open Source project, VMware is a commonly used platform used for VNF deployments in the telecom industry)
 
 <a name="3.4.1"></a>
