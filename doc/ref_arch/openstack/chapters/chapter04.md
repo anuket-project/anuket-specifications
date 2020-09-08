@@ -1,6 +1,6 @@
 [<< Back](../../openstack)
 
-# 4. NFVI + VIM Component Level Architecture
+# 4. Cloud Infrastructure + VIM Component Level Architecture
 <p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -26,7 +26,7 @@
 
 Chapter 3 introduced the components of an OpenStack-based IaaS
 -	Consumable Infrastructure Resources and Services
--	NFVI Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
+-	Cloud Infrastructure Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
 -	Underlying physical compute, storage and networking resources
 
 This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for flavors. 
@@ -687,7 +687,7 @@ To Ensure Logical segregation and high availability, the architecture will rely 
 -	Availability zone: provide resiliency and fault tolerance for VNF deployments, by means of physical hosting distribution of Compute Nodes in separate racks with separate power supply, in the same or different DC room
 -	Affinity-groups: allow tenants to make sure that VNFC instances are on the same compute node or are on different compute nodes.
 
-Note: The NFVI doesn’t provide any resiliency mechanisms at the service level. Any VM restart shall be triggered by the VNF Manager instead of OpenStack:
+Note: The Cloud Infrastructure doesn’t provide any resiliency mechanisms at the service level. Any VM restart shall be triggered by the VNF Manager instead of OpenStack:
 -	It doesn’t implement Instance High Availability which could allow OpenStack Platform to automatically re-spawn instances on a different Compute node when their host Compute node breaks.
 -	Physical host reboot does not trigger automatic VM recovery.
 -	Physical host reboot does not trigger the automatic start of VM
