@@ -79,14 +79,14 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.015 | SmartNICs | Not required | Optional | |
 | e.cap.016 | FPGA/other Acceleration H/W | Not required | Optional | |
 | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | n/a | n/a | |
-| i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the worker nodes | 2 | 2 | |
-| i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the worker nodes | 16 GB | 16GB | |
+| i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the compute nodes | 2 | 2 | |
+| i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the compute nodes | 16 GB | 16GB | |
 | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
 | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
 | i.cap.018 | Support for huge pages | Not required | Must support | |
-| i.pm.001  | Monitor worker node CPU usage, per nanosecond | Must support | Must support | |
+| i.pm.001  | Monitor compute node CPU usage, per nanosecond | Must support | Must support | |
 | i.pm.002  | Monitor VM CPU usage, per nanosecond | Must support | Must support | |
-| i.pm.003  | Monitor worker node CPU utilisation (%) | Must support | Must support | |
+| i.pm.003  | Monitor compute node CPU utilisation (%) | Must support | Must support | |
 | i.pm.004  | Monitor VM CPU utilisation | Must support | Must support | |
 | i.pm.005  | Measure external storage IOPs | Must support | Must support | |
 | i.pm.006  | Measure external storage throughput | Must support | Must support | |
@@ -120,7 +120,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
 | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | |
-| infra.com.cfg.002 | Not required | Must support | Must support | |
+| infra.com.cfg.002 | NUMA alignment | Not required | Must support | |
 | infra.com.cfg.003 | CPU pinning capability | Not required | Must support | |
 | infra.com.cfg.004 | Huge Pages | Not required | Must support | |
 | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
