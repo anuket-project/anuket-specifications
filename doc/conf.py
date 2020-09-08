@@ -12,11 +12,10 @@ project = u'CNTT-CNTT'
 
 sys.path.append(os.path.abspath("../build/direct-copy"))
 sys.path.append(os.path.abspath("../build/readme-to-index"))
-sys.path.append(os.path.abspath("../build/relative-link-corrector"))
 
 extensions = ['direct-copy', 
               'readme-to-index', 
-              'relative-link-corrector',
+              'sphinxcontrib.relative-link-corrector',
               'sphinx_markdown_tables', 
               'sphinx_rtd_theme']
 
