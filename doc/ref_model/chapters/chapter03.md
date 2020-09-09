@@ -13,6 +13,8 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Hardware Infrastructure Resources](#3.4)
 * [3.5 Network](#3.5)
+* [3.6 Storage](#3.6)
+* [3.7 Sample reference model realization](#3.7)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure. 
 
@@ -179,7 +181,7 @@ The virtual infrastructure manager allows to:
 : provides a mechanism to provision virtual resources with the help of hardware network resources
 
 <a name="3.3.2"></a>
-### 3.3.1 Hardware Infrastructure Manager
+### 3.3.2 Hardware Infrastructure Manager
 The hardware infrastructure manager allows to:
 * provision, manage, monitor and delete hardware resources (underlay network, physical compute, physical storage, accelerators)
 * manage hardware resource discovery and topology
@@ -263,7 +265,20 @@ Principles that should be followed during the development and definition of the 
 * Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
 
 <a name="3.6"></a>
-## 3.6 Sample reference model realization
+## 3.6 Storage
+The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
+Storage also follows the alignment of separated virtual and physical resources of SW Virtualization Layer and HW infrastructure. Reasons for such alignment are described more in above Networking section. The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
+* Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
+* Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources [3.2.3 Storage](#3.2.3)).
+* Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
+* Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
+* Scalability: Storage model enables scalability to enable small up to large deployments.
+* Workload agnostic: Storage model can provide storage functionality to any type of workloads, including VNF, CNF and BareMetal workloads.
+* Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+
+<a name="3.7"></a>
+## 3.7 Sample reference model realization
+
 The following diagram presents an example of the realization of the reference model, where a virtual infrastructure layer contains three coexisting but different types of implementation: a typical IaaS using VMs and a hypervisor for virtualisation, a CaaS on VM/hypervisor, and a CaaS on bare metal. This diagram is presented for illustration purposes only and it does not preclude validity of many other different combinations of implementation types. Note that the model enables several potentially different controllers orchestrating different type of resources (virtual and/or hardware). Management clients can manage virtual resources via Virtual Infrastructure Manager (Container Infrastructure Service Manager for CaaS, or Virtual Infrastructure Manager for IaaS), or alternatively hardware infrastructure resources via hardware infrastructure manager.  The latter situation may occur for instance when an orchestrator (an example of a management client) is involved in provisioning the physical network resources with the assistance of the controllers. Also, this realization example would enable implementation of a programmable fabric.
 
 <p align="center"><img src="../figures/ch03-model-realization diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>

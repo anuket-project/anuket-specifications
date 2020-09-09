@@ -11,7 +11,7 @@
 * [1.2 Scope](#1.2)
 * [1.3 Relationship to other communities](#1.4)
 * [1.4 Reference Implementation Approach](#1.3)
-    * [1.4.1 Host Provisioning](#1.3.1)
+    * [1.4.1 Infrastructure Provisioning](#1.3.1)
     * [1.4.2 Kubernetes Provisioning](#1.3.2)
 
 <a name="1.1"></a>
@@ -85,13 +85,25 @@ The approach this RI will take is to separate out the deployment in to two layer
 1. Automation of the infrastructure on which the RI will be installed (i.e. networks, storage, servers, etc.)
 1. Automation of the RI installation itself
 
-Meaning, initially, the RI is not looking to have a single installer that can both build out virtual or physical machines **and** build out the Kubernetes and other components. The primary reason for this was to ensure the loose coupling between the two layers, to drive the concept that RI2 is a standalone platform that can (in theory at least) be deployable to any infrastructure, whether that be some physical machines in a lab, or virtual machines in a private or public cloud environment, for example. To combine the deployment of machines and Kubernetes platform with a single installer would potentially limit the locations on which the RI can be installed.
+Meaning, initially, the RI is not looking to have a single installer that can both build out virtual or physical machines **and** build out the Kubernetes and other components. The primary reason for this was to ensure the loose coupling between the two layers, to drive the concept that RI2 is a standalone platform that can (in theory at least) be deployable to any infrastructure, whether that be some physical machines in a lab, or virtual machines in a private or public cloud environment, for example. From am implementation perspective, this means that the first step - infrastructure provisioning - needs to potentially support many different infrastructures and could even be an optional step in the overall end-to-end deployment process if an infrastructure is provided by other means. To tightly intertwine the deployment of machines and the Kubernetes platform with a single installer would potentially limit the locations on which the RI can be installed.
 
 The following subsections provide an overview of the provisioning stages as they are currently planned. However, that's not to say full end-to-end installers aren't welcome, but if used we must be clear on the limitations and compromises made when we document them in [Chapter 4](./chapter04.md).
 
 <a name="1.4.1"></a>
-### 1.4.1 Host Provisioning
-> Add high level description of host provisioning stage
+### 1.4.1 Infrastructure Provisioning
+The RI should be deployable on different infrastructures. Specifically, the following deployment scenarios are in scope of the RI:
+
+- **Deployment on bare-metal hosts**
+   This deployment scenario is typically used in internal labs and existing OPNFV community labs. It requires the RI installation tooling to provision empty bare-metal machines with a base operating system and to apply a baseline network configuration.
+
+- **Deployment on bare-metal hosts provided by a cloud provider**
+   This deployment scenario makes use of bare-metal cloud providers such as Packet.net. The machines provided in this case have been pre-provisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.
+
+- **Deployment on an Infrastructure-as-a-Service Layer**
+  In this deployment scenario, the infrastructure hosts for the Kubernetes cluster are provided by an Infrastructure-as-a-Service layer, for instance based on OpenStack running in a private or public cloud. This scenario requires the RI installation tooling to request and configure compute resources via the API of the IaaS.
+
+While all three deployment scenarios are in scope of RI2, the initial implementation focus is on bare-metal deployments. Support for the other two scenarios will be added subsequently based on available development resources.
+
 
 <a name="1.4.2"></a>
 ### 1.4.2 Kubernetes Provisioning

@@ -1,5 +1,40 @@
 [<< Back](../)
 
+# CNTT Reference Conformance (RC) Requirements and Testing Principles
+
+The objective of each RC workstream is to provide an automated mechanism to validate either a network function (NF) or a cloud infrastructure against a standard set of requirements defined by the Reference Model (RM) and associated Reference Architecture (RA).  Through this validation mechanism, a provider of either NFs or cloud infrastructure will be able to test their conformance to the RM and RA.  This will ease the integration of NFs into operator environments that host compatible cloud infrastructures, thereby reducing cost, complexity, and time of integration.
+
+The overall workstream requires the close coordination of the following:
+
+**Requirements** - The agreed upon capabilities and conditions that a compliant NF or cloud infrastructure must provide or satisfy. All requirements will be hosted and maintained in the RA.
+**Tests** - The verification mechanism that determines that a given NF or cloud infrastructure complies with one or more requirements.
+**Conformance Specifications** - The definition of the requirements, tests, and circumstances (test case integration, etc.) that must be met to be deemed conformant.
+
+If there is no clear traceability and strong links between these 3 components, then it becomes difficult to determine if a NF or cloud infrastructure is compliant. With this in mind, below are the set of recommended principles for each of the three components to follow. Adherence to these principles will provide the following:
+
+* Enable clear progress tracking and linkage between independent projects (i.e. know what has and hasn't been covered, and track changes over time)
+* Help users better understand if they meet requirements
+* Provide a stable set of point-in-time requirements and tests to achieve conformance
+* Reduce ambiguity in testing, requirements, and conformance
+
+
+## Requirement Principles
+Requirements Principles can be found in the [RM Principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0)
+
+## Testing Principles
+* There must be traceability between test cases and requirement being validated
+* Failures should provide additional content to inform the user where or how the requirement was violated (ex: which file or resource violated the requirement).  Put another way, don’t require the user to read the test to understand what went wrong
+* Testing tools should support selection of tests based on category or profile.
+* Tests must be available to run locally by both CNF and cloud infrastructure providers
+* Testing tools must produce machine-readable result formats that can be used as input into the badging program (OVP already defines a format)
+
+## Conformance Specifications
+* Conformance specifications must refer to or define the *versioned* requirements that must be satisfied
+* Conformance specifications must refer to the *versioned* test implementations that must be used to validate the requirements
+* Conformance specifications must define the expected preconditions and environment requirements for any test tooling
+* Conformance specifications must define which tests must be executed in the given testing tools to achieve conformance
+* The conformance specifications must provide the mapping between tests and requirements to demonstrate traceability and coverage.
+
 # CNTT Reference Conformance (RC) Test Case Integration
 
 All CNTT conformance suites must fulfill the following test case integration

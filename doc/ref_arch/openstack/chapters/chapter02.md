@@ -46,6 +46,7 @@ This chapter includes both "Requirements" that must be satisifed in an RA-1 conf
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
+
 The tables below contains the requirements from the Reference Model to cover the Basic and Network Intensive profiles. 
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
@@ -164,6 +165,10 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | infra.hw.nac.cfg.002 | SmartNiC used to offload vSwitch functionality to hardware | Not required | Optional | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
+<!--
+These rows are removed and commented out as it's not clear what the requirement is.
+| infra.stg.cfg.001 | Catalogue storage Types | | Y |
+-->
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
 
@@ -181,10 +186,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | e.man.007 | Capability to notify state changes of allocated resources | Must support | |
 | e.man.008 | Capability to collect and expose performance information on virtualised resources allocated | Must support | |
 | e.man.009 | Capability to collect and notify fault information on virtualised resources | Must support | |
-<!--
-These rows are removed and commented out as it's not clear what the requirement is.
-| infra.stg.cfg.001 | Catalogue storage Types | | Y |
--->
+
 <p align="center"><b>Table 2-5:</b> Reference Model Requirements: Cloud Infrastructure Management Requirements</p>
 
 <a name="2.2.6"></a>
@@ -313,6 +315,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 
 <p align="center"><b>Table 2-6:</b> Reference Model Requirements: Cloud Infrastructure Security Requirements</p>
+
 
 <a name="2.3"></a>
 ## 2.3 Architecture and OpenStack Requirements
