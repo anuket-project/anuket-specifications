@@ -29,6 +29,6 @@ interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## 2.3 Reference Implementation Requirements
 
-| Ref # | Category | Sub-category | Description | RI2 Traceability |
+| RI2 Ref # | Category | Sub-category | Description | RI2 Traceability |
 |---|---|---|---|---|
 ||||||
