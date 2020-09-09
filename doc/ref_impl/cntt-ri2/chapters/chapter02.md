@@ -22,7 +22,7 @@ interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## 2.2 Reference Architecture Specification
 
-| RA2 Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| RI2 Traceability |
+| RA2 Section | RA2 Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| RI2 Traceability |
 |---|---|---|---|---|---|
 |Kubernetes Nodes|`ra2.ch.001`|Huge Pages|Not required|It must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|_TBC_|
 |||||||
