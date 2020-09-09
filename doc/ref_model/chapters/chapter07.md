@@ -407,7 +407,7 @@ Security certification should encompass the following elements:
 <a name="7.9.2"></a>
 ###  7.9.2. Platform and Access
 
-Ref | Requirement | Definition/Note |
+| Ref | Requirement | Definition/Note |
 |-------|-------|---------|
 | req.sec.sys.001 | The Platform **must** support authenticated and secure APIs, API endpoints | |
 | | The Platform **must** implement authenticated and secure access to GUI | |
@@ -445,11 +445,11 @@ Ref | Requirement | Definition/Note |
 | Ref | Requirement | Definition/Note |
 |---|----|----|
 | req.sec.wl.001 | The Platform **must** support Workload placement policy | |
-| req.sec.wl.002 | The Platform **must** support operational security | |
+| req.sec.wl.002 | The Cloud Infrastructure Operator **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module) | |
 | req.sec.wl.003 | The Platform **must** support secure provisioning of workloads  | |
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) | |
 | req.sec.wl.005 | Production workloads **must** be separated from non-production workloads | |
-| req.sec.wl.006 | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) | |
+| req.sec.wl.006 | Workloads must be separable by their categorisation (for example, payment card information, healthcare, etc.). Cloud Infrastructure **must** support Availability zones | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity |  |
 
 <a name="7.11.5"></a>
