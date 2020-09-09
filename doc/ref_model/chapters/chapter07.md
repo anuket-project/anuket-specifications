@@ -156,7 +156,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
 * A process to check change management adherence that is implemented, and rigourously followed.
 * An approved system or process for last resort access must exist for the platform.
-* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management, and application communication are cryptographically protected in transit between data centre facilities.
+* Where there are multiple hosting facilities used in the provisioning of a service, network communications between the facilities for the purpose of backup, management, and workload communications are cryptographically protected in transit between data centre facilities.
 * Continuous cloud security compliance is mandatory.
 * An incident response plan must exist for the platform.
 
