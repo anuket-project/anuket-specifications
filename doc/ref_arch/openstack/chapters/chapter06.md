@@ -6,7 +6,7 @@
 ## Table of Contents
 * [6.1 Introduction](#6.1)
 * [6.2 Security Requirements](#6.2)
-* [6.3 NFVI and VIM Security](#6.3)
+* [6.3 Cloud Infrastructure and VIM Security](#6.3)
     * [6.3.1 Platform Access](#6.3.1) 
     * [6.3.2 System Hardening](#6.3.2) 
     * [6.3.3 Confidentiality and Integrity](#6.3.3) 
@@ -17,7 +17,7 @@
 
 ## 6.1 Introduction
 
-This guide is intended to provide basic security requirements to CNTT architects who are implementing NFVI using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to CNTT architects who are implementing Cloud Infrastructure using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
@@ -25,7 +25,7 @@ This guide is intended to provide basic security requirements to CNTT architects
 Chapter 2 gathers all requirements and recommendations regarding security topics developed in this chapter.
 
 <a name="6.3"></a>
-## 6.3 NFVI and VIM Security
+## 6.3 Cloud Infrastructure and VIM Security
 
 OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html. In the section "[Sceurity boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
@@ -129,7 +129,7 @@ Password's composition, complexity and policy should follow the recommendations 
 
 
 #### 6.3.2.2 Function and Software
-Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
+Infrastructure should be implemented to perform the minimal function that’s practically needed to support Cloud Infrastructure. 
 
 Regarding software:
 - Install only software which is required to support the functions
@@ -295,7 +295,7 @@ This intent of this section is to provide a key baseline and minimum requirement
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
-* Logs must be generated for all components (ex. Nova in Openstack) that form the NFVI.
+* Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure.
 * All security logging mechanisms must be active from system initialization. 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 
