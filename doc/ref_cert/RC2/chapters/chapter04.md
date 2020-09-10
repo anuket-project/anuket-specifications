@@ -15,6 +15,14 @@ runs the containers selected by CNTT RC2. It will be completed by the
 next CNTT mandatory test cases and then a new CI description file will be
 proposed in a shared tree.
 
+[Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
+internet access, GNU/Linux as Operating System and asks for a few
+dependencies as described in
+[Deploy your own Xtesting CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004):
+- python-virtualenv
+- docker.io
+- git
+
 Please note the next two points depending on the GNU/Linux distributions and
 the network settings:
 - SELinux: you may have to add -\-system-site-packages when creating the
