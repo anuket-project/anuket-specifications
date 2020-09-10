@@ -45,9 +45,10 @@ ansible-playbook functest-kubernetes-src/ansible/site.cntt.yml
 <a name="4.2"></a>
 ### 4.2 Configure Kubernetes API testing
 
-Here is the default Functest tree as proposed in
-[Run Alpine Functest containers (Kali)](https://wiki.opnfv.org/pages/viewpage.action?pageId=56295675):
-- /home/opnfv/functest-kubernetes/config (usually /etc/kubernetes/admin.conf)
+Place the kubeconfig configuration file corresponding to the Kubernetes cluster under test in the following location on the machine running the cookbook:
+
+`/home/opnfv/functest-kubernetes/config`
+
 
 <a name="4.3"></a>
 ### 4.3 Run Kubernetes conformance suite
