@@ -6,6 +6,7 @@
 ## Table of Contents
 * [8.1 Introduction](#8.1)
 * [8.2 The Gaps](#8.2)
+  * [8.2.1 Autoscaling](#8.2.1)
 * [8.3 OpenStack Release Gaps](#8.3)
 
 <a name="8.1"></a>
@@ -15,8 +16,15 @@ Once gaps are identified, the next step will be to propose a plan to address the
 The most obvious way to address the gaps will be to propose a set of APIs in the upstream OpenStack community
 
 <a name="8.2"></a>
-## 8.2 The Gaps
+## 8.2 The Gap
 
+<a name="8.2"></a>
+### 8.2.1 Autoscaling
+With regards to resource autoscaling (req.gen.scl.01) it is recommended that the NFVO/VNFM manages the policy and triggers a scale-up or scale-down action based on application telemetry, event, AI, or ML etc. While the use of telemetry and alarming system can trigger a scaling operation based on resource utilisation, without application context this may not provide the granularity or reaction time required by the application. It is therefore suggested that an OpenStack scaling operation is called using an appropriate autoscaling web-hook by the NFVO/VNFM.
+
+For more information on auto-scaling please see: https://docs.openstack.org/senlin/latest/scenarios/autoscaling_heat.html. Please note that the OpenStack Senlin service is still under development with major architectural changes made in the OpenStack Ussuri release. It might be possible for the next version of this RA to recommend Senlin for auto-scaling.
+
+Please note: physical compute node autoscaling is out of scope.
 
 <a name="8.3"></a>
 ## 8.3 OpenStack Release Gaps
@@ -37,4 +45,3 @@ overview of the differences. For detailed changes, please check the
 
 Additionally, Stein release also provide an upgrade check before actually upgrading any of the services. 
 See more details on [upgrade-check](https://governance.openstack.org/tc/goals/selected/stein/upgrade-checkers.html).
-
