@@ -143,7 +143,7 @@ It is based on proven, standards-based networking technologies that today suppor
 - BGP as a Service (BGPaaS) for distribution of routes between privately managed customer networks and service provider networks
 
 
-Based on the network layering concepts introduced in the Reference Model ChXX (provide link), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
+Based on the network layering concepts introduced in the [Reference Model Section 3.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#35-network), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
 
 The SDN controller exposes a NB API that can be consumed by ETSI MANO for VNF/CNF onboarding, network service onboarding and dynamic service function chaining.
 
