@@ -45,7 +45,8 @@ ansible-playbook functest-kubernetes-src/ansible/site.cntt.yml
 <a name="4.2"></a>
 ### 4.2 Configure Kubernetes API testing
 
-Place the kubeconfig configuration file corresponding to the Kubernetes cluster under test in the following location on the machine running the cookbook:
+Place the kubeconfig configuration file corresponding to the Kubernetes cluster
+under test in the following location on the machine running the cookbook:
 
 `/home/opnfv/functest-kubernetes/config`
 
