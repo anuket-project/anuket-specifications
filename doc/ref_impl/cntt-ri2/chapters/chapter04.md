@@ -15,25 +15,26 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-This chapter describes the steps to install Kubernetes based Reference Implementation (RI-2). The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. The host provisioning stage is provided here for information only and can be skipped when using Bare Metal Providers like Packet, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
+This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in OPNFV Labs as a part of the [OPNFV Kuberef project](https://wiki.opnfv.org/display/KUB/Kuberef). The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef only focuses on bare-metal RI2 deployments, but support for other uses cases (running on Packet, other infrastructure providers, etc.) will be added as the development progresses.
+
+The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using pre-provisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
 <a name="4.2"></a>
 ## 4.2 Prerequisites
 
-Before attempting the installation, please ensure that all requirements described in [Chapter 3](./chapter03.md) are met.
-(More details to follow)
+You need one physical server acting as a jump server along with minimum of two additional servers on which RI-2 will be deployed. Please refer to [Chapter 3](./chapter03.md) for detailed information on the server and network specifications.
 
 <a name="4.3"></a>
 ## 4.3 Installation of the Reference Implementation
 
 <a name="4.3.1"></a>
-### 4.3.1 Host Provisioning
+### 4.3.1 Installation on Bare Metal Infratructure
 
-Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc.
+This section describes how to get started with RI-2 deployment on bare metal servers.
 
-A former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage. The mentioned framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/).
+For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits) (version v1.4.1).
 
-Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in OPNFV terminology need to be defined. Both PDF and IDF files are modeled as YAML schema.
+Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in OPNFV terminology need to be defined under `hw_config/<vendor>`. Both PDF and IDF files are modeled as YAML schema.
 
 A PDF is a hardware configuration template that includes hardware characteristics of the jumphost host and the set of compute/controller hosts. For each host, the following characteristics should be defined:
 - CPU, disk and memory information
@@ -44,34 +45,9 @@ IDF includes information about network information required by the installer. Al
 
 More details regarding these descriptor files as well as their schema are very well documented in [RI-1 Chapter 8](../../cntt-ri/chapters/chapter08.md#opnfv-descriptor-files-1).
 
-After filling in the PDF and IDF with correct information, the user needs to generate SSH keypair, add a user to the sudo group and have passwordless sudo enabled. After this the deployment can be initiated by cloning the repo, navigating to the engine directory and running the deploy command
+Additionally, modify the BMRA config by first updating `sw_config/bmra/inventory.ini` with the correct servers and functionality planned for each node. For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster.
 
-`./deploy.sh -o <OStype>-p file:///<pdf.yaml> -i file:///<idf.yaml> -l provision`
-
-Currently, Ubuntu 18.04 and CentOS 7.8 are supported (default Ubuntu 18.04). Support for other operating systems can be added as well depending on the requirements.
-
-After the hosts have been provisioned successfully, one can set up host networking for Kubernetes and run Kubernetes provisioning tooling from CNF Testbed or Intel’s BMRA playbooks to configure and install k8s and other plugins (Refer 4.3.2)
-
-<a name="4.3.2"></a>
-### 4.3.2 Kubernetes Provisioning
-
-Early efforts to provision Kubernetes are based on existing tools such as [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf), using scripts available on [Github](https://github.com/intel/container-experience-kits), and the CNCF initiative [CNF Testbed](https://github.com/cncf/cnf-testbed). 
-
-Requirements are based on the [Kubernetes Based Reference Architecture (RA2)](../../../ref_arch/kubernetes), with initial focus on hardware and functionality related to CPU and networking. While this will not be sufficient to satisfy all the requirements listed in RA2, it will serve as a development platform for further feature integration, verification and ideally testing related to the [Kubernetes Based Reference Conformance (RC2)](../../../ref_cert/RC2).
-
-The Kubernetes provisioning follows the approach described in [Chapter 1](chapter01.md#13-reference-implementation-approach) of this RI. Steps for preparing the BMRA environment can be found here: [CNTT RI2 Confluence page](https://wiki.lfnetworking.org/display/LN/Kubernetes+Bare-Metal+Install+and+Configuration). 
-
-Make sure all servers are reachable from the jumphost through SSH. If necessary, create a key and push it to the master and worker nodes
-```
-$ ssh-keygen -t rsa -b 4096
-$ ssh-copy-id -i <path to public key> <user>@<host>
-```
-
-The following paragraphs will use v1.4.1 of the BMRA, and focus on configuration options that are relevant in terms of the RA2 and RI2.
-
-Start by updating `inventory.ini` with the correct servers and functionality planned for each node. For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster.
-
-Next, update parts of `group_vars/all.yml`:
+Note that the following configuration options in `sw_config/bmra/all.yml` are set to specific values according to RA-2 requirements. Its recommended not to change them (except for debugging and development purposes).
 
 [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
 ```
@@ -117,8 +93,7 @@ example_net_attach_defs:
 cluster_name: cluster.local
   # Can be updated if needed
 ```
-
-Lastly, update `host_vars/node1.yml` (and create additional nodeN.yml files according to the inventory and deployment:
+Similarly, it is not recommended to change the following configuration options in `sw_config/bmra/node1.yml`, unless for debugging and development purposes. Note that depending on your deployment setup and inventory, you might have to create additional nodeN.yml files.
 ```
 sriov_enabled: true
   # Change to true as the SR-IOV Network device plugin for Kubernetes is used
@@ -170,13 +145,15 @@ isolcpus: <String of cores to isolate>
 sst_bf_configuration_enabled: false
   # Speed Select Technology - Base Frequency (SST-BF). Can be enabled if processor is supported.
 ```
+Lastly, modify the environmental variables defined in `deploy.env` to match your setup.
 
-With the configuration files updated, everything should be ready for provisioning. Before running the installer playbook, consider using a terminal multiplexer (tmux, screen) to keep the session running in case of network issues. Once ready, start the provisioning
-```
-$ ansible-playbook -i inventory.ini playbooks/cluster.yml
-```
+Once ready, issue the following command to initiate the deployment
 
-Once completed, the cluster is accessible through the `kubectl` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file found in `$HOME/.kube/config`. The environment path for using the kubeconfig file on the jumphost can be set with `export KUBECONFIG=/path/to/config`. Steps for installing `kubectl` can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+`./deploy.sh`
+
+Once the deployment is successful, you will have a fully functional RI-2 setup!
+
+The cluster is accessible through the `kubectl` CLI from the master nodes. It is possible to interact with the cluster from a jumphost outside of the cluster by using the kubeconfig file found in `$HOME/.kube/config`. The environment path for using the kubeconfig file on the jumphost can be set with `export KUBECONFIG=/path/to/config`. Steps for installing `kubectl` can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 Verify that everything is running using the following commands:
 ```
@@ -188,7 +165,7 @@ $ kubectl get node <node> -o json | jq '.status.allocatable'
 
 The list of allocatable resources will vary depending on the configuration, but an example output could look as follows:
 ```
-{ 
+{
   "cpu": "63900m",
   "ephemeral-storage": "210725550141",
   "hugepages-1Gi": "0",
@@ -202,6 +179,8 @@ The list of allocatable resources will vary depending on the configuration, but 
   "pods": "110"
 }
 ```
+
+### 4.3.2 [Placeholder for other Deployment Scenarios]
 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
