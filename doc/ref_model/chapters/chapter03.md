@@ -13,6 +13,8 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Hardware Infrastructure Resources](#3.4)
 * [3.5 Network](#3.5)
+* [3.6 Storage](#3.6)
+* [3.7 Sample reference model realization](#3.7)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure. 
 
@@ -98,17 +100,25 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 
 <a name="3.2.3"></a>
 ### 3.2.3 Storage
-A block device of a certain size for persisting information which can be created and dynamically attached to/detached from a virtual compute. A storage device resides in a tenant context and exists independently from any compute host.
 
-_**Example**: an OpenStack cinder volume._
+A workload can request different types of storage based on data longevity: persistent or ephemeral storage.
+Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
 
-| Attribute      | Description                                                              |
-|----------------|--------------------------------------------------------------------------|
-| `name`         | name of storage resources                                                |
-| `size`         | size of disc in GB                                                       |
-| `attachments`  | list of compute hosts to which the device is currently attached          |
-| `acceleration` | key/value pairs for selection of the appropriate acceleration technology |
-| `metadata`     | key/value pairs for selection of the appropriate redundancy domain       |
+There are multiple storage performance requirements such as latency, IOPS and capacity. For example, a workload may require one of its storage device to provide low latency, high IOPS and very large/huge storage capacity (terabytes of data).
+Low Latency storage is for workloads which have strong constraints on the time to access the storage.
+High IOPS oriented storage is for workloads requiring lots of read/write actions.
+Capacity oriented storage is for workloads that need lots of volumetry without strong perfomance constraints.
+
+Storage resources have the following attributes:
+
+| Attribute           | Description                                                              |
+|---------------------|--------------------------------------------------------------------------|
+| `name`              | name of storage resources                                                |
+| `data availibilty`  | persistent or ephemeral                                                  |  
+| `performance`       | latency, IOPS, capacity                            |
+| `enhanced features` | replication, encryption                                                  |
+| `type`              | block, object or file                                                    |
+| `size`              | size in GB                                                       |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
@@ -171,7 +181,7 @@ The virtual infrastructure manager allows to:
 : provides a mechanism to provision virtual resources with the help of hardware network resources
 
 <a name="3.3.2"></a>
-### 3.3.1 Hardware Infrastructure Manager
+### 3.3.2 Hardware Infrastructure Manager
 The hardware infrastructure manager allows to:
 * provision, manage, monitor and delete hardware resources (underlay network, physical compute, physical storage, accelerators)
 * manage hardware resource discovery and topology
@@ -232,30 +242,43 @@ Normalization of the integration reference points between different layers of th
 
 Principles that should be followed during the development and definition of the networking scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
-• Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
+* Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
 
 > **Note:**  In deployment phases this principle may be applied in many different ways e.g. depending on target use case requirements, workload characteristics, different algorithm implementations of pipeline stages and available platforms. The network abstraction layer supports, for example, physical resources with or without programmable hardware acceleration, or programmable network switches
 
-•Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
-    Control, User and Management traffic types
-    Acceleration technologies supporting multiple types of infrastructure deployments and network function workloads
-    
-•Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workload onboarding.
+* Agnosticism: Define Network Fabric concepts and models that can carry any type of traffic in terms of:
+  * Control, User and Management traffic types
+  * Acceleration technologies that can support multiple types of infrastructure deployments and network function workloads
 
-•Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components (e.g. SDN controllers).
+* Automation: Enable end-to-end automation, from Physical Fabric installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 
-•Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
+* Openness: All networking is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of open source networking components such as SDN controllers.
 
-•Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments.
+* Programmability: Network model enables a programmable forwarding plane controlled from a separately deployed control plane.
 
-•Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
+* Scalability: Network model enables scalability to handle all traffic traverse North-South and East-West enabling small up to large deployments in a non-blocking manner.
 
-•Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
+* Workload agnostic: Network model is capable of providing connectivity to any type of workloads, including VNF, CNF and BareMetal workloads.
 
-•Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
+* Carrier Grade: Network model is capable of supporting deployments of the carrier grade workloads.
+
+* Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
 
 <a name="3.6"></a>
-## 3.6 Sample reference model realization
+## 3.6 Storage
+The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
+Storage also follows the alignment of separated virtual and physical resources of SW Virtualization Layer and HW infrastructure. Reasons for such alignment are described more in above Networking section. The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
+* Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
+* Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources [3.2.3 Storage](#3.2.3)).
+* Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
+* Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
+* Scalability: Storage model enables scalability to enable small up to large deployments.
+* Workload agnostic: Storage model can provide storage functionality to any type of workloads, including VNF, CNF and BareMetal workloads.
+* Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+
+<a name="3.7"></a>
+## 3.7 Sample reference model realization
+
 The following diagram presents an example of the realization of the reference model, where a virtual infrastructure layer contains three coexisting but different types of implementation: a typical IaaS using VMs and a hypervisor for virtualisation, a CaaS on VM/hypervisor, and a CaaS on bare metal. This diagram is presented for illustration purposes only and it does not preclude validity of many other different combinations of implementation types. Note that the model enables several potentially different controllers orchestrating different type of resources (virtual and/or hardware). Management clients can manage virtual resources via Virtual Infrastructure Manager (Container Infrastructure Service Manager for CaaS, or Virtual Infrastructure Manager for IaaS), or alternatively hardware infrastructure resources via hardware infrastructure manager.  The latter situation may occur for instance when an orchestrator (an example of a management client) is involved in provisioning the physical network resources with the assistance of the controllers. Also, this realization example would enable implementation of a programmable fabric.
 
 <p align="center"><img src="../figures/ch03-model-realization diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>

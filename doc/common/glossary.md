@@ -72,7 +72,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 
 - **Workload:** Workload refers to software running on top of compute resources such as **VMs** or **Containers**. Most relevant workload categories in context of cloud infrastructure are:
-  - **Data Plane Workloads:** related to packet handling of the end-to-end communication between applications. These tasks are expected to be very I/O and memory read/write operations intensive.
+  - **Data Plane Workloads:** that perform tasks related to packet handling of the end-to-end communication between applications. These tasks are expected to be very I/O and memory read/write operations intensive.
   - **Control Plane Workloads:** that perform tasks related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. For example, this category includes session management, routing or authentication.
   - **Storage Workloads:** that perform tasks related to disk storage (either SSD or HDD or other).  Examples range from non-intensive router logging to more intensive database read/write operations.
 

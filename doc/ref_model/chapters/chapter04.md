@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 4 Infrastructure Capabilities, Measurements and Catalogue
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 
  ______________________________________________________________
@@ -19,9 +18,12 @@
   * [4.2.3 Storage Extensions](#4.2.3)
   * [4.2.4 Instance Types](#4.2.4)
   * [4.2.5 Instance Capabilities Mapping](#4.2.5)
-  * [4.2.6 Instance Measurements Mapping](#4.2.6)
+  * [4.2.6 TBD](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
-* [4.3 Networking](#4.2)
+* [4.3 Networking](#4.3)
+  * [4.3.1 Network Layering and Concepts](#4.3.1)
+  * [4.3.2 Networking Reference Model](#4.3.2)
+  * [4.3.3 Deployment examples based on the Networking Reference Model](#4.3.3)
 
 <a name="4.1"></a>
 ## 4.1 Capabilities and Performance Measurements
@@ -97,10 +99,10 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 | e.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration                                    |
 | e.cap.011 | Programmable Acceleration                 | Yes/No | Programmable Acceleration                                   |
 | e.cap.012 | Enhanced Cache Management                 | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded.  L and X cache policies require CPU pinning to be active. |
-| e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type.  |
-| e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type. |
+| e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
+| e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
 | e.cap.015 | SmartNIC                                  | Yes/No | Network Acceleration. SmartNICs that do not utilise PCI-PT are not subject to the CNTT principles, nor any related policies or prohibitions. |
-| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads, which is prohibited by CNTT principles. As such, use of these features shall be governed by the applicable CNTT policy. Please consult the RM Appendix for the usage policy relevant to any needed hardware Capability of this type. |
+| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of Cloud Infrastructure</p>
 
@@ -260,7 +262,7 @@ Table 4-10 shows performance measurement capabilities.
 
 <a name="4.1.6.1"></a>
 #### 4.1.6.1 Resources Management Measurements
-**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GS NFV TST-012 [3].
+**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GR NFV TST-012 [3]. The intention of this table is to provide a list of measurements to be used in the Reference Architecture specifications, where the concrete values allowed for these measurements in the context of a particular Reference Architecture will be defined.
 
 <a name="Table4-11"></a>
 
@@ -374,7 +376,7 @@ Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> 
 | .silver | Up to 60K  | Up to 30K  | Up to 1200             | Up to 400               | 1TB          |
 | .gold   | Up to 680K | Up to 360K | Up to 2650             | Up to 1400              | 1TB          |
 
-<p align="center"><b>Table 4-15:</b> Storage Performance Profiles</p>
+<p align="center"><b>Table 4-15:</b> Storage Extensions</p>
 
 Note, performance is based on a block size of 256KB or larger.
 
@@ -483,7 +485,7 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
 | `e.cap.011`<br />(Programmable Acceleration)                | No                       | Yes/No                       |                                                                     |
 | `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       | SR-IOV over PCI-PT does not conform CNTT principles, but it is a technology commonly used when network performance are required. It is temporarily accepted and part of the transition plan exceptions list described in [Appendix A3 Exception list](./appendix-a.md#a3-exception-list) and in [Appendix A5 Hardware Dependent Coding policies](./appendix-a.md#a5-hardware-dependent-coding-policies)  |
+| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       |   |
 | `e.cap.014`<br />(GPU/NPU)                                            | No                       | Yes / No                       | Yes : in case of AI and Video Edge use cases|
 | `e.cap.015`<br />(SmartNIC)                                           | No        | Yes / No                       | |
 | `e.cap.016`<br />(FPGA/other Acceleration H/W)                        |No             | Yes / No                       | Yes : in case of vRAN Edge use case || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
@@ -528,9 +530,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <p align="center"><b>Table 4-17:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
 
 <a name="4.2.6"></a>
-### 4.2.6 Cloud Infrastructure Profile Performance Measurement Mapping
+### 4.2.6 TBD
 
-_**Comment:** For further study_
+_**Comment:** For future use_
 
 <a name="4.2.7"></a>
 ### 4.2.7 One stop shop
@@ -587,14 +589,9 @@ Flavours are unique only when combined with a profile. For example, CNTT release
 `B_GenN.small`
 
 <a name="4.2.7.3"></a>
-4.2.7.3 Forward compatibility
+### 4.2.7.3 Forward compatibility
 
-CNTT provides a framework for exceptions described in [9.2.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). The exceptions of a given CNTT release are listed in [A.3 Exception List](appendix-a.md#a3-exception-list). The exceptions are not part of any Cloud Infrastructure profile defined in CNTT. If a flavour needs to be defined to support one or more exceptions its name should contain the identifyer of the exception. If needed several exceptions can be combined into the same flavour.
-
-The naming scheme for flavours with exceptions should be `B_GenN.small.ExceptionIds` where the exception is is generated from the numerical part of the exception identifier prefixed with `ex`.
-
-For example `B_Gen4.small.ex001` refers to `rm.exc.001` defined in the [Exception List](appendix-a.md#a3-exception-list).
-These flavors, similarly to other flavours, should be supported for three CNTT releases after the exception was removed from the CNTT release.
+CNTT provides a framework for exceptions described in [9.4.3 Transition Framework](../../gov/chapters/chapter09.md#9.4.3). Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
 
 
 <a name="4.3"></a>
@@ -697,12 +694,12 @@ This also imply that programmable forwarding functions in a Programmable Network
 <a name="4.3.2"></a>
 ### 4.3.2 Networking Reference Model
 
-The Cloud Infrastructure Networking Reference Model depicted in **Figure 4-3-2** is based on the ETSI NFV model enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and Virtualization Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous Virtualisation instances and domains allowing a mix of IaaS, CaaS on IaaS and CaaS on Bare Metal on top of a shared HW Infrastructure. 
+The Cloud Infrastructure Networking Reference Model depicted in **Figure 4-7** is based on the ETSI NFV model enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and Virtualization Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous Virtualisation instances and domains allowing a mix of IaaS, CaaS on IaaS and CaaS on Bare Metal on top of a shared HW Infrastructure. 
 
 It is up to any deployment of the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
 <p align="center"><img src="./../figures/ch04_Networking_Reference_Model.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
-<p align="center"><b>Figure 4-3-2:</b> Networking Reference Model based on the ETSI NFV</p>
+<p align="center"><b>Figure 4-7:</b> Networking Reference Model based on the ETSI NFV</p>
 
 <a name="4.3.3"></a>
 ### 4.3.3 Deployment examples based on the Networking Reference Model
@@ -716,28 +713,28 @@ In both cases the Underlay Networking can be externally controlled over the SDNu
 
 > **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of Virtual instances in separate Overlay domains in much the same way as AWS do with their Nitro SmartNIC. This is the important consideration for the Reference Model that enables multiple implementation instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific Virtual instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
 
-Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 4-3-3-1**.
+Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 4-8**.
 
 <p align="center"><img src="./../figures/ch04_Underlay_Separation_Example.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
-<p align="center"><b>Figure 4-3-3-1:</b> Underlay Networking separation examples</p>
+<p align="center"><b>Figure 4-8:</b> Underlay Networking separation examples</p>
 
 <a name="4.3.3.2"></a>
 #### 4.3.3.2 SDN Overlay and SDN Underlay layering and relationship example
 
-Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 4-3-3-2**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 4-9**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
 
 <p align="center"><img src="./../figures/ch04_Underlay_Separation_MultiVIM_Example.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
-<p align="center"><b>Figure 4-3-3-2:</b> SDN Controller relationship examples</p>
+<p align="center"><b>Figure 4-9:</b> SDN Controller relationship examples</p>
 
 <a name="4.3.3.3"></a>
 #### 4.3.3.3 Example of IaaS and CaaS Virtualization Infrastructure instances on a shared HW Infrastructure with SDN
 
-A Networking Reference Model deployment example is depicted in **Figure 4-3-3-3** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
+A Networking Reference Model deployment example is depicted in **Figure 4-10** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNFs on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks, since it is not foreseen any generic standard of a CaaS implementation that will be capable to support all types of CNFs from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances. 
 
 <p align="center"><img src="./../figures/ch04_Multi-VIM_Deployment_Example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
-<p align="center"><b>Figure 4-3-3-3:</b> Networking Reference Model deployment example</p>
+<p align="center"><b>Figure 4-10:</b> Networking Reference Model deployment example</p>
 
 
 <!--

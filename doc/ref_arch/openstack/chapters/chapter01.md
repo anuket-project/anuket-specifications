@@ -9,6 +9,7 @@
 * [1.2 Use Cases](#1.2)
 * [1.3 Terminology.](#1.3)
 * [1.4 Principles](#1.4)
+  * [1.4.1 Exceptions](#1.4.1)
 * [1.5 CNTT OpenStack Reference Release](#1.5)
 * [1.6 Document Organisation](#1.6)
 
@@ -55,6 +56,38 @@ OpenStack considers the following Four Opens essential for success:
 
 This OpenStack Reference Architecture is organised around the three major NFVI resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
 
+<a name="1.4.1"></a>
+### 1.4.1 Exceptions
+
+CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatabilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)). 
+
+The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
+
+#### 1.4.1.1 Technology Exceptions
+
+The list of Technology Exceptions will be updated or removed when alternative technologies aligned with CNTT principles develop and mature.
+
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra1.exc.tec.001 |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. | Compromises virtualisation and creates dependency on hardware defeating CNTT and Cloud Principles. |
+| RM e.cap.016 | HW Accelerators | This exception allows workloads to use FPGA-s and other accelerators that require the inclusion of HW specific drivers in the workload. | TBD | Use of FPGA-s and other HW accelerators are needed to meet the technical requirements or economic goals of 5G, Edge and transcoding services. | Compromises virtualisation and creates dependency on hardware defeating CNTT and Cloud Principles. |
+
+#### 1.4.1.2 Version Exceptions
+
+The list of Version Exceptions will be updated as and when alternative versions become available.
+
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra1.exc.ver.001 |	xxx |	xxxxxxxxxxxxx. | | | |
+
+
+#### 1.4.1.3 Requirements Exceptions
+
+The Requirements Exceptions lists the Reference Model (RM) requirements and/or Reference Architecture (RA) requirements that will be either waived or be only partially implemented in this version of the RA.  The exception list will be updated to allow for a period of transitioning as and when requirements change.
+
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra1.exc.req.001 |	Requirement |	xxx |	xxxxxxxxxxxxx. | | | |
 
 <a name="1.5"></a>
 ## 1.5 CNTT OpenStack Reference Release

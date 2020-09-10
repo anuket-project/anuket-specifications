@@ -389,11 +389,9 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 #### 4.2.3.1 Physical Network Topology
 
-
-
 #### 4.2.3.2 High Level Logical Network Layout
 
-<p align="center"><img src="../figures/RA1-Ch04-Indicative-OpenStack-Network.png" alt="Indicative OpenStack Network Layout"></br>Figure 4-5: Indicative OpenStack Network Layout.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Indicative-OpenStack-Network.png" alt="Indicative OpenStack Network Layout"><b>Figure 4-5: Indicative OpenStack Network Layout.</b></p>
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
@@ -467,7 +465,7 @@ The Ceph storage cluster is deployed on bare metal hardware. The minimal configu
 
 Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
 
-<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"></br>Figure 4-6: Ceph Storage System.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"><b>Figure 4-6: Ceph Storage System.</b></p>
 
 **BIOS Requirement for Ceph servers**
 
@@ -534,9 +532,9 @@ Neutron is the networking service, Neutron depends on Keystone and has services 
 | Networking Service component | Description | Required or Optional Service | Placement |
 |-----|-----|----|----|
 | neutron server (neutron-server and neutron-\*-plugin) | Manages user requests and exposes the Neutron APIs | Required | Controller node |
-| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node </br> (Controller node if no network node present) |
-| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node </br>(Controller node if no network node present)</br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
-| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node </br> (Controller node if no network node present) |
+| DHCP agent (neutron-dhcp-agent) | Provides DHCP services to tenant networks and is responsible for maintaining DHCP configuration. For High availability, multiple DHCP agents can be assigned. | Optional depending upon plug-in | Network node <br> (Controller node if no network node present) |
+| L3 agent (neutron-l3-agent) | Provides L3/NAT forwarding for external network access of VMs on tenant networks and supports services such as Firewall-as-a-service (FWaaS) and Load Balancer-as-a-service (LBaaS) | Optional depending upon plug-in | Network node <br>(Controller node if no network node present)<br> NB in DVR based OpenStack Networking, also in all Compute nodes. |
+| neutron metadata agent (neutron-metadata-agent) | The metadata service provides a way for instances to retrieve instance-specific data. The networking service, neutron, is responsible for intercepting these requests and adding HTTP headers which uniquely identify the source of the request before forwarding it to the metadata API server. These functions are performed by the neutron metadata agent. | Optional | Network node <br> (Controller node if no network node present) |
 | neutron plugin agent (neutron-\*-agent) | Runs on each compute node to control and manage the local virtual network driver (such as the Open vSwitch or Linux Bridge) configuration and local networking configuration for VMs hosted on that node. | Required | Every Compute Node |
 <p align="center"><b>Table 4-2: Neutron Services Placement</b></p>
 
@@ -567,13 +565,14 @@ SDN provides a truly scalable and preferred solution to suport dynamic, very lar
 #### 4.3.1.6 Nova
 Nova is the compute management service, Nova depends on all above components and is deployed after. Nova has services running on the control nodes and the compute nodes:
 -	nova-metadata-api
--	nova-placement-api
 -	nova-compute api
 -	nova-consoleauth
 -	nova-scheduler
 -	nova-conductor
 -	nova-novncproxy
 -	nova-compute-agent which runs on Compute node
+
+Please note that the Placeemnt-API must have been installed and configured prior to nova compute starts.
 
 #### 4.3.1.7 Ironic
 Ironic is the bare metal provisioning service. Ironic depends on all above components and is deployed after. Ironic has services running on the control nodes and the compute nodes:
@@ -602,7 +601,7 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 -->
 
 #### 4.3.1.10 Placement
-The OpenStack Placement service enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as VCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”).  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
+The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
 
 <p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
     
@@ -616,6 +615,12 @@ The OpenStack Placement service enables tracking (or accounting) and scheduling 
     
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
 
+
+The Placement API is stateless and, thus, resiliency, availability and scaling, it is possible to deploy as many servers as needed. On start, the nova-compute service will attempt to make a connection to the Placement API and keep attempting to connect to the Placement API, logging and warning periodically until successful. Thus, the Placement API must be installed and enabled prior to Nova compute.
+
+Placement has services running on the control node:
+-	nova-placement-api
+
 #### 4.3.1.11 Barbican
 [Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
 
@@ -627,7 +632,7 @@ Containers are lightweight compared to Virtual Machines and leads to efficient r
 
 In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-7.
 
-<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"></br>Figure 4-7: Containerised OpenStack Services Topology.</p>
+<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"><b>Figure 4-7: Containerised OpenStack Services Topology.</b></p>
 
 
 <a name="4.4"></a>

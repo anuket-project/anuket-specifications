@@ -28,18 +28,22 @@ Chapter 2 gathers all requirements and recommendations regarding security topics
 ## 6.3 NFVI and VIM Security
 
 OpenStack security guide:
-https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html
+https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html. In the section "[Sceurity boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
+
+The handling of these security incidents requires various levels of logging of key infrastructure, processes, and use behaviour. These logs have to be continuously monitored and analysed with alerts created for anomalies. The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
 
 <a name="6.3.1"></a>
 ### 6.3.1 Platform Access
 
-#### 6.3.1.1 Identity
+#### 6.3.1.1 [Identity Security](https://docs.openstack.org/security-guide/identity.html)
 The OpenStack Identity service (Keystone) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end.
 
 OpenStack Keystone can work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
 
 #### 6.3.1.2 Authentication
-Authentication is the first line of defense for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone supports multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html)
+Authentication is the first line of defense for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone supports multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html).
+
+Limiting the number of repeated failed login attempts (configurable) reduces the risk of unauthorised access via password guessing (Bruce force attack) - sec.mon.006 and sec.mon.009. The restriction on the number of consecutive failed login attempts ("lockout_failure_attempts") and any actions post such access attempts (such as locking the account where the "lockout_duration" is left unspecified) should abide by the operator's policies. For example, an operator may restrict the number of consecutive failed login attempts to 3 ("lockout_failure_attempts = 3") and lock the account preventing any further access and where the account is unlocked by getting necessary approvals.  
 
 ##### Keystone Tokens
 Once a user is authenticated, a token is generated for authorization and access to an OpenStack environment and resources.  By default, the token is set to expire in one hour. This setting can be changed based on the business and operational needs, but it's highly recommended to set the expiration to the shortest possible value without dramatically impacting your operations.
@@ -47,7 +51,7 @@ Once a user is authenticated, a token is generated for authorization and access 
 **Special Note on Logging Tokens:** since the token would allow access to the OpenStack services, it *MUST* be masked before outputting to any logs.
 
 #### 6.3.1.3 Authorization
-Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Service supports the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
+Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Services support the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
 
 #### 6.3.1.4 RBAC
 In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles.
@@ -102,12 +106,32 @@ The following rules govern create, read, update, and delete (CRUD) level access.
 
 <a name="6.3.2"></a>
 ### 6.3.2 System Hardening
-All infrastructure should undergo system hardening, establishes processes to govern the hardening, and documents to cover at a minimal for the following areas:
+All infrastructure should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas:
 
-#### 6.3.2.1 Function
+#### 6.3.2.1 Password policy
+For all infrastructure components, passwords must be hardened and a strict password policy must be applied (req.sec.gen.002).
+
+Passwords must be strengthened:
+- All vendors default passwords must be changed
+- Passwords must contain at least 8 characters as a minimal value, 14 characters length passwords are recommended
+- Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
+- For administration privileges accounts, passwords must contain at least one upper case letter, one lower case letter, one numeral and one special (non-alphanumeric) character   
+
+For passwords updates, the identity of users must be verified before permitting a password change.
+
+Passwords must be encrypted at rest and in-transit. Password files must be stored separately from application system data.
+
+Password's composition, complexity and policy should follow the recommendations consolidated within the [CIS Password Policy guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/) such as:
+- Check the password for known bad passwords (repetitive or sequential characters, dictionary words, context-specific words, previously used passwords, etc.)
+- Limit number of failed login attempts
+- Implement Multi-factor Authentication
+- Periodic (for example, Yearly, Quarterly, etc.)  password change or on key events such as indication of compromise, change of user roles, a defined period of inactivity, when a user leaves the organization, etc..
+
+
+#### 6.3.2.2 Function and Software
 Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
 
-#### 6.3.2.2 Software
+Regarding software:
 - Install only software which is required to support the functions
 - Remove any unnecessary software or packages
 - Where software cannot be removed, disable all service to it
@@ -158,7 +182,7 @@ The Cloud Infrastructure must also provide the mechanism to identify corrupted d
 
 #### 6.3.3.1 Confidentiality and Integrity of communications
 
-It is essential to secure the infrastructure from external attacks. To counter this threat, API endpoints exposed to external networks must be protected by either a rate-limiting proxy or web application firewall and must be placed behind a reverse HTTPS proxy. Attacks can also be generated by corrupted internal components, and for this reason, it is security best practice to ensure integrity and confidentiality of all network communications (internal and external) by using Transport Layer Security (TLS) protocol.
+It is essential to secure the infrastructure from external attacks. To counter this threat, API endpoints exposed to external networks must be protected by either a rate-limiting proxy or web application firewall and must be placed behind a reverse HTTPS proxy (sec.mon.008). Attacks can also be generated by corrupted internal components, and for this reason, it is security best practice to ensure integrity and confidentiality of all network communications (internal and external) by using Transport Layer Security (TLS) protocol.
 When using TLS, according to the [OpenStack security guide](https://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html) recommendation, the minimum version to be used is TLS 1.2.
 
 3 categories of traffic will be protected using TLS:
@@ -174,9 +198,9 @@ The cloud deployment components/tools store all the information required to inst
 such as credentials. It is recommended to turn off deployment components after deployment to minimize attack surface area, limit the risk of compromise, and to deploy and provision the infrastructure through a dedicated network (VLAN).
 
 Configuration files contain sensitive information. 
-These files must be protected from malicious or accidental modifications or deletions by configuring strict access permissions for such files.
+These files must be protected from malicious or accidental modifications or deletions by configuring strict access permissions for such files. All access, failed attempts to change and all changes (pre-change, post-change and by who) should be securely logged, and all failed access and failed changes should be alerted (sec.mon.006 and sec.mon.007).
 
-The Cloud Infrastructure must provide the mechanisms to identify corrupted data:
+The Cloud Infrastructure must provide the mechanisms to identify corrupted data (sec.mon.013):
 - the integrity of configuration files and binaries must be checked by using cryptographic hash,
 - it is recommended to run scripts (such as checksec.sh) to verify the properties of the QEMU/KVM
 - it is recommended to use tool such as [CIS-CAT](https://www.cisecurity.org/cybersecurity-tools/cis-cat-pro/) (Center for Internet security- Configuration Assessment Tool) to check the compliance of systems configuration against respective [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks/).
@@ -184,14 +208,14 @@ The Cloud Infrastructure must provide the mechanisms to identify corrupted data:
 It is strongly recommend to protect Linux repositories and Docker registries against the corruption of their data, by adopting protection measures such as hosting a local repository/registry with restricted and controlled access, and using TLS. 
 This repository/registry must contain only signed images or packages.
 
-#### 6.3.3.3 Confidentiality and Integrity of tenants Data
+#### 6.3.3.3 Confidentiality and Integrity of tenant data (sec.mon.012 and sec.mon.013)
 
 Tenant data are forwarded unencrypted over the network. Since the VNF is responsible for its security, it is up to the VMs to establish secure data plane, e.g. using IPsec over its tenant network.
 
 A Cloud actor must not be able to retrieve secrets used by VNF managers.
 All communications between the VNFM or orchestrator, and the infrastructure must be protected in integrity and confidentiality (e.g. by using TLS) and controlled via appropriate IP filtering rules. 
 
-The Cloud Infrastructure should onboard only trusted and verified VM images implying that VNF vendors provide signed images.
+The Cloud Infrastructure should onboard only trusted and verified VM images implying that VNF vendors provide signed images (sec.mon.012).
 Images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
 It is recommended to scan all VM images with a vulnerability scanner. The scan is mandatory for images from unknown or untrusted sources.
 
@@ -253,9 +277,9 @@ Strict access permissions must be set on OpenStack configuration files.
 
 **Configuration and management**
 
-Configuration operations must be traced. Events such as system access attempts, actions with high privileges, modification of configuration must be logged and exported on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification.
+Configuration operations must be tracked (sec.mon.006, sec.mon.007). Events such as system access attempts, actions with high privileges, modification of configuration must be logged and exported on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification (sec.mon.004).
 
-Per sec.LCM.002 requirement, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
+Per sec.lcm.002 requirement, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
 
 **Platform backup**
 
@@ -278,12 +302,18 @@ This intent of this section is to provide a key baseline and minimum requirement
 #### 6.3.7.2 What to Log / What NOT to Log
 ##### What to log
 Where technically feasible the following system events must be recorded:
-* Successful and unsuccessful login attempts
+* Successful and unsuccessful login attempts including:
+    * Command line authentication (i.e. when initially getting token from keystone)
+    * Horizon authentication
+    * SSH authentication and sudo on the computes, controllers, network and storage nodes
 * Logoffs
 * Successful and unsuccessful changes to a privilege level
+* Successful and unsuccessful configuration changes
+* Successful and unsuccessful security policy changes
 * Starting and stopping of security logging
 * Creating, removing, or changing the inherent privilege level of users
 * Connections to a network listener of the resource
+* Starting and stopping of processes including attempts to start unauthorised processes
 * All command line activity performed by the following innate OS programs known to otherwise leave no evidence upon command completion including PowerShell on Windows systems (e.g. Servers, Desktops, and Laptops)
 * Where technically feasible, any other security events should be recorded
 
@@ -310,3 +340,8 @@ The security audit log must contain at minimum the following fields (where appli
 #### 6.3.7.5 Data Retention 
 * Log files must be retained for 180 days, or the relevant regulator mandate, or your customer mandate, whichever is higher.
 * Implementation and monitoring: after 180 days or your mandated retention period, security audit logs must be destroyed.
+
+#### 6.3.7.6 Security Logs Time Synchronisation
+The host and various system clocks be synchronized with the NTP server (sec.mon.002). In any time synchronisation, we need to specify the synchronization interval and the tolerance where the latter specifies the permissible difference the local time cane out of synch.
+
+Whenever the time synchronisation forces the local time to change or the use of another NTP server, the change details must be logged including time server source, time, date and time zones (sec.mon.003).

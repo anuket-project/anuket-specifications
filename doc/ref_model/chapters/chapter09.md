@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 # 9 Infrastructure Operations and Lifecycle Management
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+
 
 ## Table of Contents
 * [9.1 Introduction](#9.1)
@@ -13,13 +13,6 @@
 ## 9.1 Introduction
 
 The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and VNFs, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
-
-According to the scope laid out in chapter 1, this chapter will include any requirements of the Cloud Infrastructure and the Cloud Infrastructure Management capabilities. This is reflected in Figure 9-1 below - the main area of interest for this chapter being the reference points between the reference model scope (in red) and the OSS/BSS block at the top.
-
-<p align="center"><img src="../figures/ch09-etsi-nfv-architecture-mapping.png" alt="ETSI NFV architecture" title="ETSI NFV architecture" width="65%"/></p>
-<p align="center"><b>Figure 9-1:</b> Mapping of the reference model scope to the ETSI NFV architecture</p>
-
-Note this may seem like a large overlap with the topics in Chapter 6, however that chapter focusses primarily on the interfaces provided by the Cloud Infrastructure Management and Cloud Infrastructure to application management and applications, not the interfaces used to manage the Cloud Infrastructure and Cloud Infrastructure Management themselves.
 
 There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
 - FCAPS (ISO model for network management)
@@ -161,8 +154,8 @@ This leads to the following table (Table 9-3) which defines the standard interfa
 
 | Component | Interface Standard | Link |
 | --- | --- | --- |
-| Infrastructure Management | ... | ... |
-| Infrastructure Software | ... | ... |
+| Infrastructure Management | Defined in RA specifications | RA-1, RA-2 |
+| Infrastructure Software | Defined in RA specifications | RA-1, RA-2 |
 | Infrastructure Hardware | Redfish API | [DMTF Specification](https://www.dmtf.org/standards/redfish) |
 
 <p align="center"><b>Table 9-3:</b> Interface Standards for Configuration Management</p>

@@ -207,18 +207,19 @@ The following OpenStack components are deployed on the Infrastructure. Some of t
 
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|
-| Identity Management (Additional Management Functions) + Catalogue| Keystone| the authentication service| Required| X|  |
-| Storage Resources Manager| Glance| the image management service| Required| X|  |
-| Storage Resources Manager | Cinder| the block storage management service| Required| X|  |
-| Storage Resources Manager| Swift| the Object storage management service| Required| X|   |
-| Network Resources Manager| Neutron| the network management service| Required| X| X |
-| Compute Resources Manager + Inventory + Scheduler | Nova| the compute resources management service| Required| X| X |
-| Compute Resources Manager| Ironic| the Bare Metal Provisioning service| Optional| X| X |
-| (Tool that utilizes APIs)| Heat| the orchestration service| Required| X|  |
+| Identity Management (Additional Management Functions) + Catalogue| Keystone| the authentication service| Required| X |  |
+| Storage Resources Manager| Glance| the image management service| Required| X |  |
+| Storage Resources Manager | Cinder| the block storage management service| Required| X |  |
+| Storage Resources Manager| Swift| the Object storage management service| Required| X |   |
+| Network Resources Manager| Neutron| the network management service| Required| X | X |
+| Compute Resources Inventory | Placement | resource provider inventory service | Required | X |   |
+| Compute Resources Manager + Scheduler | Nova| the compute resources management service| Required| X| X |
+| Compute Resources Manager| Ironic| the Bare Metal Provisioning service| Optional| X | X |
+| (Tool that utilizes APIs)| Heat| the orchestration service| Required| X |  |
 | UI| Horizon| the WEB UI service| Required| X|  |
-| Key Manager| Barbican| the secret data management service| Optional| X|  |
+| Key Manager| Barbican| the secret data management service| Optional| X |  |
 <!--
-| Acceleration Resources Manager| Cyborg| the acceleration resources management| Optional| X| X |
+| Acceleration Resources Manager| Cyborg| the acceleration resources management| Optional| X | X |
 -->
 
 All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services (i.e. instances of a same service must run on different nodes).

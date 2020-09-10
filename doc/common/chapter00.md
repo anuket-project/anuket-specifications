@@ -3,7 +3,7 @@
 
 ## Table of Contents
 * [Overview](#1.0)
-    * [Glossary](#1.1)
+    * [Terminology and Glossary](#1.1)
     * [Problem Statement](#1.2)
     * [Project Goals and Purpose](#1.3)
     * [Common Cloud Infrastructure Benefits](#1.4)
@@ -13,8 +13,7 @@
   * [Out of Scope Components](#3.2)
   * [Specification Types](#3.3)
   * [Relationship to other industry projects](#3.4)
-  * [Bogo-Meter](#3.5)
-* [Abbreviations](#4.0)
+ * [Abbreviations](#4.0)
 * [References](#5.0)
 
 <a name="1.0"></a>
@@ -23,7 +22,7 @@
 Initially organized early in 2019, the Cloud iNfrastructure Telco Taskforce (CNTT) was created in response to rapid changes in how networking applications are being designed, built and managed, plus a growing recognition of a perceived functional gap between the previous standard infrastructure models and the architectures needed to support Network Function Virtualisation (NFV) applications.  Organizationally, the Cloud iNfrastructure Telco Taskforce, jointly hosted by GSMA and the Linux Foundation, operates as an open committee responsible for creating and documenting an industry aligned Common Cloud Infrastructure Framework.  The CNTT was created with the intent that it would create the cloud infrastructure framework, and eventually morph into an on-going project under the auspices of the GSMA and the Linux Foundation umbrellas.  The final on-going operational form of the Taskforce will be determined as the project evolves.
 
 <a name="1.1"></a>
-## Glossary
+## Terminology and Glossary
 The definition and intent of the terminology used throughout the documents is defined in the [Glossary](./glossary.md).
 
 <a name="1.2"></a>
@@ -96,20 +95,18 @@ Any specification work created within CNTT **must** conform to the following pri
    - Memory resources
    - Networking resources (Limited to connectivity services only)
    - Acceleration resources
-1. Cloud Infrastructure exposed resources should be supplier independent
-1. All Cloud Infrastructure Application Programming Interfaces (APIs) must ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). Through such APIs will cloud infrastructure resources be discovered/monitored by management entities, configured on behalf of VNFs/CNFs and consumed by VNFs/CNFs.
-1. VNFs/CNFs should be modular and be designed to utilise the minimum resources required for the service
-1. Cloud Infrastructure shall support pre-defined and parameterised sizes
-   - These pre-defined sizes will evolve over time
-1. Cloud Infrastructure provides certain resources, capabilities and features, and workloads should only consume these resources, capabilities and features
-1. VNFs/CNFs that are designed to take advantage of Cloud Infrastructure accelerations shall still be able to run without these accelerations, however with the understanding that there will be potential performance impacts
-1. Workloads shall not require hardware-dependent software
+1. Vendor independence of Cloud Infrastructure exposed resources .
+1. Cloud Infrastructure Application Programming Interfaces (APIs) ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations). 
+•	These APIs support, for example, cloud infrastructure resources discovery, monitoring by management entities, configuration on behalf of workloads and consumption by workloads
+1. Workloads are modular and designed to utilise the minimum resources required for the service.
+1. Workloads consume only the resources, capabilities and features provided by the Cloud infrastructure.
+1. Workload functional capabilities independence from Cloud Infrastructure (hardware and software) accelerations.
+1. Workload independence from Cloud Infrastructure (hardware and software) hardware-dependent software
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
-   - This pertains to features that expose hardware directly to workloads, such as PCIe PassThrough (PCI-PT) and capabilities that use these features, for example, SR-IOV
-   - Use of critical features in this category are governed by policies in the RM Appendix and referenced in RM Chapter 4
-1. Specific internal hardware details shall not be exposed above the Infra+Cloud Management layers
+   - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
+1. Abstraction of specific internal hardware details above the Infrastructure Cloud Management layers unless managed through Hardware Infrastructure Manager
    - This is in support of workload abstraction, enabling portability across the Infra and simplification of workload design
-   - This pertains to features that operate at detailed levels of hardware granularity, such as EPA.
+   - Use of critical features in this category are governed by technology specific policies and exceptions in the RA specifications.
 
 <a name="2.2"></a>
 ## Requirements Principles
@@ -205,6 +202,7 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 - MEF
 - TM Forum
 - OSM (ETSi Open Source MANO project)
+- ODIM (Open Distributed Infrastructure Management)
 - VMware (While not an Open Source project, VMware is a commonly used platform used for VNF deployments in the telecom industry)
 
 <a name="3.4.1"></a>
@@ -245,18 +243,6 @@ As can be seen from the above figure, roles and responsibilities are as follows:
 ### Relationship to Other communities
 
 The CNTT collaborates with relevant API workgroups of SDOs ( such as MEF, TM Forum, 3GPP, TIP, etc) where applicable to align with their specification work and utilise their efforts.
-
-<a name="3.5"></a>
-## Bogo-Meter
-At the beginning of each chapter there is a graphic that indicates the completeness and maturity each chapter's content at a glance.  
-<p align="right"><img src="./figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
-
-The ratings are as follows:
- - **Initial framework only**: Indicates that there is little or no useful content, just the bare outline.
- -	**Still developing content**:  Generally, indicates that while there is some content that might have some use, it is actively being worked on and needs considerable contributions from the community.
- -	**Lots of SME feedback**: Indicates that most of the content has been developed, but that there is still opportunity for contributors to shape the content.
- - **Dickering over the fine points**: The content is mostly completed, but the community needs to refine its shared thinking and build final consensus.
- - **Complete**: Content has been finalized for this release.  Few changes are anticipated in the future beyond fixing errors or slight refinements.
 
  <a name="4.0"></a>
 # Abbreviations
