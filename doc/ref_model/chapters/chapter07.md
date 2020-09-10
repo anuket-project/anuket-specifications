@@ -19,7 +19,7 @@
   * [7.5.4 Alerting and Monitoring](#7.5.4)
   * [7.5.5 Logging](#7.5.5)
   * [7.5.6 VNF images](#7.5.6)
-  * [7.5.7 CVEs and Vulnerability Management](#7.5.8)
+  * [7.5.7 Vulnerability Management](#7.5.7)
 * [7.6 Workload Security- Cloud Infrastructure Operator Responsibility](#7.6)
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
   * [7.6.2 Workload Image Scanning / Signing](#7.6.2)
@@ -43,9 +43,9 @@
 <a name="7.1"></a>
 ## 7.1 Introduction
 
-Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world.   The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global Telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
+Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world. The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global Telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
 
-This chapter examines multiple aspects of security as it relates to Cloud Infrastructure and security aspects for workloads. After discussing security attack vectors and security standards, this chapter delves into Security requirements. The chapters culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
+This chapter examines multiple aspects of security as it relates to Cloud Infrastructure and security aspects for workloads. After discussing security attack vectors, this chapter delves into Security requirements. Regarding security requirements and best practices, specifications and documents are published by standards organizations. A selection of standards of interest for Cloud Infrastructure security is listed in a dedicated section. The chapter culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
 
 ## 7.2 Potential attack vectors
 Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
@@ -68,6 +68,8 @@ The following diagram shows the different security domains that impact the Refer
 <p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
 <p align="center"><b>Figure 7-2:</b> Reference Model Security Domains</p>
 
+Note: "Platform" refers to the cloud Infrastructure with all its hardware and software components.
+
 <a name="7.3.2.1"></a>
 #### 7.3.2.1 Platform security requirements
 
@@ -76,7 +78,7 @@ At a high level, the following areas/requirements cover platform security for a 
 * Secure access controls for administrators
 * Secure API interface for Tenants
 * Encryption for all external and control comms
-* Strong separation between tenants - ensuring network, data, memory and runtime process (CPU running core) isolation between tenants, [req.sec.ci.006](./chapter07.md#7113-confidentiality-and-integrity)
+* Strong separation between tenants - ensuring network, data, memory and runtime process (CPU running core) isolation between tenants
 * Authenticated/secure APIs provided to overlay network administrators
 * Platform change control on hardware
 * Templated approved changes for automation where available
@@ -200,8 +202,8 @@ The platform supports the workload, and in effect controls access to the workloa
 <a name="7.5.4"></a>
 ### 7.5.4 Alerting and monitoring
 
-* Security event logging (All security events should be logged, including informational)
-* Privilege escalation detection
+* Security event logging: all security events should be logged, including informational
+* Privilege escalation must be detected
 
   <a name="7.5.5"></a>
 ### 7.5.5 Logging
@@ -216,16 +218,15 @@ The platform supports the workload, and in effect controls access to the workloa
   * Container Management
   * Immutability
 
-<a name="7.5.8"></a>
-### 7.5.8 CVEs and Vulnerability Management
+<a name="7.5.7"></a>
+### 7.5.7 Vulnerability Management
 
-* Security defect reporting
-* Cadence with Cloud Infrastructure vendors (OSSA for OpenStack)
-* Component analysis: Mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include:
-  * Tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
+* Security defect must be reported
+* Cadence should aligned with Cloud Infrastructure vendors (OSSA for OpenStack)
+* Components should be analysed: mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
 
 <a name="7.6"></a>
-## 7.6 Workload Security - Cloud Infrastructure Operator Responsibility.
+## 7.6 Workload Security - Cloud Infrastructure Operator Responsibility
 
 The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective. This includes but is not limited to securing the following elements:
 
@@ -250,7 +251,7 @@ Use of Image scanners such as OpenSCAP to determine security vulnerabilities is 
 <a name="7.6.3"></a>
 ### 7.6.3 Networking Security Zoning
 
-Network segmentation is important to ensure that VMs can only communicate with the VMs they are supposed to. To prevent a VM from impacting other VMs or hosts, it is a good practice to separate VM traffic and management traffic. This will prevent attacks by VMs breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, VMs of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
+Network segmentation is important to ensure that applications can only communicate with the applications they are supposed to. To prevent a workload from impacting other workloads or hosts, it is a good practice to separate workoad traffic and management traffic. This will prevent attacks by VMs or containers breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, workloads of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
 
 Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
 
@@ -322,10 +323,10 @@ Standards organizations with recommendations and best practices, and certificati
 * ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/technologies/nfv
   * ETSI NFV ISG [SEC WG specifications](https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword=&TB=&stdType=&frequency=&mandate=&collection=&sort=1)
 * ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
-  * ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs).
-  * ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity.
-  * ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. Incident management
-  * ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity.
+  * ISO/IEC 27002:2013 - ISO/IEC 27001 are the international Standard for best-practice information security management systems (ISMSs)
+  * ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity
+  * ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management
+  * ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity
 
 A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP – Open Web Application Security Project.  These include the following core principles:
 
@@ -346,19 +347,17 @@ It is not enough to just secure all potential points of entry and hope for the b
 
 • OWASP testing guide
 
-• PCI Penetration testing guide
+• Penetration Testing Execution Standard, PTES
 
-• Penetration Testing Execution Standard
+• Technical Guide to Information Security Testing and Assessment, NIST 800-115
 
-• NIST 800-115
+• VULCAN, Vulnerability Assessment Framework for Cloud Computing, IEEE 2013
 
-    o VULCAN: Vulnerability Assessment Framework for Cloud Computing (NIST)
-
-• Penetration Testing Framework
+• Penetration Testing Framework, VulnerabilityAssessment.co.uk
 
 • Information Systems Security Assessment Framework (ISSAF)
 
-• Open Source Security Testing Methodology Manual (“OSSTMM”)
+• Open Source Security Testing Methodology Manual (OSSTMM)
 
 • FedRAMP Penetration Test Guidance (US Only)
 
@@ -368,7 +367,9 @@ Insuring that the security standards and best practices are incorporated into th
 
 
 <a name="7.8.2"></a>
-### 7.8.2 Certification requirements (Just ideas)
+### 7.8.2 Certification requirements
+
+Security certification should encompass the following elements:
 
 * Security test cases executed and test case results
 * Industry standard compliance achieved (NIST, ISO, PCI, FedRAMP Moderate etc.)
@@ -398,7 +399,7 @@ Insuring that the security standards and best practices are incorporated into th
 | req.sec.gen.009 | The Platform **must** support Software integrity protection and verification. | |
 | req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. [Controlled Access Based on the Need to Know]https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/ |   |
 | req.sec.gen.011 | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). | |
-| req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. |  |
+| req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | It is mandatory for a Cloud Infrastructure Operator, but this requirement’s verification goes beyond CNTT testing scope |
 | req.sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  |
 | req.sec.gen.014 | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 | req.sec.gen.015 | Any change to the Platform must be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. |  |
@@ -406,7 +407,7 @@ Insuring that the security standards and best practices are incorporated into th
 <a name="7.9.2"></a>
 ###  7.9.2. Platform and Access
 
-Ref | Requirement | Definition/Note |
+| Ref  | Requirement | Definition/Note |
 |-------|-------|---------|
 | req.sec.sys.001 | The Platform **must** support authenticated and secure APIs, API endpoints | |
 | | The Platform **must** implement authenticated and secure access to GUI | |
@@ -447,7 +448,7 @@ Ref | Requirement | Definition/Note |
 | req.sec.wl.002 | The Platform **must** support operational security | |
 | req.sec.wl.003 | The Platform **must** support secure provisioning of workloads  | |
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) | |
-| req.sec.wl.005 | Production workloads **must** be separated from non-production workloads | |
+| req.sec.wl.005 | Production workloads **must** be separated from non-production workloads | This requirement’s verification goes beyond CNTT testing scope  |
 | req.sec.wl.006 | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity |  |
 

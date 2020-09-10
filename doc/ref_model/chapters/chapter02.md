@@ -226,7 +226,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     
 
 <a name="2.2"></a>
-## 2.2 Analysis
+## 2.3 Analysis
 
 Studying various requirements of workloads helps understanding what expectation they will have from the underlying cloud infrastructure. Following are _some_ of the requirement types on which various workloads might have different expectation levels:
 
@@ -284,7 +284,7 @@ By trying to sort workloads into different categories based on the requirements 
 -->
 
 <a name="2.3"></a>
-## 2.3 Cloud Infrastructure Profiles
+## 2.4 Cloud Infrastructure Profiles
 
 Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.

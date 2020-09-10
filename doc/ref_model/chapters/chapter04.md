@@ -20,7 +20,10 @@
   * [4.2.5 Instance Capabilities Mapping](#4.2.5)
   * [4.2.6 TBD](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
-* [4.3 Networking](#4.2)
+* [4.3 Networking](#4.3)
+  * [4.3.1 Network Layering and Concepts](#4.3.1)
+  * [4.3.2 Networking Reference Model](#4.3.2)
+  * [4.3.3 Deployment examples based on the Networking Reference Model](#4.3.3)
 
 <a name="4.1"></a>
 ## 4.1 Capabilities and Performance Measurements
@@ -588,7 +591,7 @@ Flavours are unique only when combined with a profile. For example, CNTT release
 <a name="4.2.7.3"></a>
 ### 4.2.7.3 Forward compatibility
 
-CNTT provides a framework for exceptions described in [9.4.3 Transition Framework](../../gov/chapters/chapter09.md#9.2). Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
+CNTT provides a framework for exceptions described in [9.4.3 Transition Framework](../../gov/chapters/chapter09.md#9.4.3). Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
 
 
 <a name="4.3"></a>
@@ -691,12 +694,12 @@ This also imply that programmable forwarding functions in a Programmable Network
 <a name="4.3.2"></a>
 ### 4.3.2 Networking Reference Model
 
-The Cloud Infrastructure Networking Reference Model depicted in **Figure 4-3-2** is based on the ETSI NFV model enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and Virtualization Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous Virtualisation instances and domains allowing a mix of IaaS, CaaS on IaaS and CaaS on Bare Metal on top of a shared HW Infrastructure. 
+The Cloud Infrastructure Networking Reference Model depicted in **Figure 4-7** is based on the ETSI NFV model enhanced with Container Virtualisation support and a strict separation of the HW Infrastructure and Virtualization Infrastructure Layers in NFVI. It includes all above concepts and enables multiple well separated simultaneous Virtualisation instances and domains allowing a mix of IaaS, CaaS on IaaS and CaaS on Bare Metal on top of a shared HW Infrastructure. 
 
 It is up to any deployment of the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
 <p align="center"><img src="./../figures/ch04_Networking_Reference_Model.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
-<p align="center"><b>Figure 4-3-2:</b> Networking Reference Model based on the ETSI NFV</p>
+<p align="center"><b>Figure 4-7:</b> Networking Reference Model based on the ETSI NFV</p>
 
 <a name="4.3.3"></a>
 ### 4.3.3 Deployment examples based on the Networking Reference Model
@@ -710,28 +713,28 @@ In both cases the Underlay Networking can be externally controlled over the SDNu
 
 > **Note:** The use of SmartNIC in this section is only pertaining to Underlay Networking separation of Virtual instances in separate Overlay domains in much the same way as AWS do with their Nitro SmartNIC. This is the important consideration for the Reference Model that enables multiple implementation instances from one or several Reference Architectures to be used on a shared Underlay Network. The use of SmartNIC components from any specific Virtual instance e.g. for internal virtual switching control and acceleration must be regulated by each Reference Architecture without interfering with the authoritative Underlay separation laid out in the Reference Model.
 
-Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 4-3-3-1**.
+Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 4-8**.
 
 <p align="center"><img src="./../figures/ch04_Underlay_Separation_Example.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
-<p align="center"><b>Figure 4-3-3-1:</b> Underlay Networking separation examples</p>
+<p align="center"><b>Figure 4-8:</b> Underlay Networking separation examples</p>
 
 <a name="4.3.3.2"></a>
 #### 4.3.3.2 SDN Overlay and SDN Underlay layering and relationship example
 
-Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 4-3-3-2**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
+Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 4-9**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
 
 <p align="center"><img src="./../figures/ch04_Underlay_Separation_MultiVIM_Example.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
-<p align="center"><b>Figure 4-3-3-2:</b> SDN Controller relationship examples</p>
+<p align="center"><b>Figure 4-9:</b> SDN Controller relationship examples</p>
 
 <a name="4.3.3.3"></a>
 #### 4.3.3.3 Example of IaaS and CaaS Virtualization Infrastructure instances on a shared HW Infrastructure with SDN
 
-A Networking Reference Model deployment example is depicted in **Figure 4-3-3-3** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
+A Networking Reference Model deployment example is depicted in **Figure 4-10** to demonstrate the mapping to ETSI NFV reference points with additions of packet flows through the infrastructure layers and some other needed reference points. The example illustrates individual responsibilities of a complex organization with multiple separated administrative domains represented with separate colours.
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNFs on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks, since it is not foreseen any generic standard of a CaaS implementation that will be capable to support all types of CNFs from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances. 
 
 <p align="center"><img src="./../figures/ch04_Multi-VIM_Deployment_Example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
-<p align="center"><b>Figure 4-3-3-3:</b> Networking Reference Model deployment example</p>
+<p align="center"><b>Figure 4-10:</b> Networking Reference Model deployment example</p>
 
 
 <!--

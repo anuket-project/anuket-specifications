@@ -302,7 +302,10 @@ This intent of this section is to provide a key baseline and minimum requirement
 #### 6.3.7.2 What to Log / What NOT to Log
 ##### What to log
 Where technically feasible the following system events must be recorded:
-* Successful and unsuccessful login attempts
+* Successful and unsuccessful login attempts including:
+    * Command line authentication (i.e. when initially getting token from keystone)
+    * Horizon authentication
+    * SSH authentication and sudo on the computes, controllers, network and storage nodes
 * Logoffs
 * Successful and unsuccessful changes to a privilege level
 * Successful and unsuccessful configuration changes
