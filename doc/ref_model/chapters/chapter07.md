@@ -445,7 +445,7 @@ Security certification should encompass the following elements:
 | Ref | Requirement | Definition/Note |
 |---|----|----|
 | req.sec.wl.001 | The Platform **must** support Workload placement policy | |
-| req.sec.wl.002 | The Cloud Infrastructure Operator **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module) | |
+| req.sec.wl.002 | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module) | |
 | req.sec.wl.003 | The Platform **must** support secure provisioning of workloads  | |
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) | |
 | req.sec.wl.005 | Production workloads **must** be separated from non-production workloads | |
