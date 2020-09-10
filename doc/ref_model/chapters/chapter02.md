@@ -3,8 +3,9 @@
 
 ## Table of Contents
 * [2.1 Workloads Collateral](#2.1)
-* [2.2 Analysis](#2.2)
-* [2.3 Cloud Infrastructure Profiles](#2.3)
+* [2.2 Use Cases](#2.2)
+* [2.3 Analysis](#2.3)
+* [2.4 Cloud Infrastructure Profiles](#2.4)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
 
@@ -113,8 +114,8 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     
     
     
-    
-### 2.2 Use cases
+<a name="2.2"></a>    
+## 2.2 Use cases
 
 - **Introduction**
 
@@ -225,7 +226,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
             
     
 
-<a name="2.2"></a>
+<a name="2.3"></a>
 ## 2.3 Analysis
 
 Studying various requirements of workloads helps understanding what expectation they will have from the underlying cloud infrastructure. Following are _some_ of the requirement types on which various workloads might have different expectation levels:
@@ -283,7 +284,7 @@ By trying to sort workloads into different categories based on the requirements 
     - High storage volume
 -->
 
-<a name="2.3"></a>
+<a name="2.4"></a>
 ## 2.4 Cloud Infrastructure Profiles
 
 Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
