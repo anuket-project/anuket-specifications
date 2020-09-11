@@ -134,10 +134,8 @@ feature-gates:
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-In order for the Container runtime(s) to be conformant with the Reference Architecture they must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open container Initiative 1.0) specification.
-OCI 1.0 runtime specification recomonds different parameters for Linux, Solaris, Windows, VM platforms.
-Following table highlights the high level configuration parameters recommonded by to be OCI 1.0 runtime spec specification to be set by Container runtime(s) to be conformant with Open container Initiative (OCI).
-|Ref|Configuration Group|Details|Requirement Trace|
+|Ref|Specification|Details|Requirement Trace|
+|`ra2.crt.001`|Conformance with OCI 1.0|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|TBC|
 |---|---|---|---|
 |`ra2.crt.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md)|Specifies the container's root filesystem.|TBD|
 |`ra2.crt.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)|Specifies additional mounts beyond root|TBD|
