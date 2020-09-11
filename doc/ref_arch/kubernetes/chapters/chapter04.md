@@ -134,37 +134,11 @@ feature-gates:
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-In order for the Container runtime(s) to be conformant with the Reference
-Architecture they must be implemented as per the following specifications:
-
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.crt.001`||||
-|`ra2.crt.002`||||
-|`ra2.crt.003`||||
-|`ra2.crt.004`||||
-
+|`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|TBC|
+|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|TBC|
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
-
-<!--
-> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
-#1636
-
-The chosen runtime must be conformant with the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/) and the [Open Container Initiative (OCI) runtime spec](https://github.com/opencontainers/runtime-spec). Examples of container runtimes that are conformant with these specification in no particular order are:
-- container-d (with CRI plugin enabled, which it is by default)
-- Docker CE (via the dockershim, which is currently built in to the kubelet)
-- CRI-O
-- Frakti
-The above list is by no means intended to be a complete listing of all the possible options for container runtimes.
-
-To support `req.inf.vir.01` the architecture specifies the use of a container runtime with the capability for Kernel isolation:
-- kata-containers
-
-These specifications cover the [full lifecycle of a container](https://github.com/opencontainers/runtime-spec/blob/master/runtime.md#lifecycle) `creating > created > running > stopped` which includes the use of any storage required during the lifecycle of the container, including the management of the Host OS filesystem by the container runtime. This lifecycle management by the container runtime (when conformant with the above specifications) supports ephemeral storage for Pods.
-
-To support the isolation of the resources used by the infrastructure from the resources used by the workloads the architecture specifies the use of the Kubernetes CPU Manager and [CPU Pooler](https://github.com/nokia/CPU-Pooler/).
-
--->
 
 <a name="4.5"></a>
 ## 4.5 Networking solutions
@@ -293,11 +267,11 @@ Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.app.001`||||
-|`ra2.app.002`||||
-|`ra2.app.003`||||
-|`ra2.app.004`||||
-
+|`ra2.app.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md) Parameter Group (OCI Spec)|Specifies the container's root filesystem.|TBD|
+|`ra2.app.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts) Parameter Group (OCI Spec)|Specifies additional mounts beyond root|TBD|
+|`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process) Parameter Group (OCI Spec)|Specifies the container process|TBD|
+|`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname) Parameter Group (OCI Spec)|Specifies the container's hostname as seen by processes running inside the container|TBD|
+|`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 <a name="4.10"></a>
