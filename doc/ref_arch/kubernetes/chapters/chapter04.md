@@ -149,7 +149,7 @@ Following table highlights the high level configuration parameters recommonded b
 |`ra2.crt.008`|[Annotations](https://github.com/opencontainers/runtime-spec/blob/master/config.md#annotations)|Contains arbitrary metadata for the container|TBD|
 |`ra2.crt.009`|[Extensibility](https://github.com/opencontainers/runtime-spec/blob/master/config.md#extensibility)|Runtimes MAY log unknown properties but MUST otherwise ignore them|TBD|
 |`ra2.crt.0010`|[Valid values](https://github.com/opencontainers/runtime-spec/blob/master/config.md#valid-values)|Runtimes MUST generate an error when invalid or unsupported values are encountered|TBD|
-<p align="center"><b>Table 4-3:</b> OCI 1.0 Conferment Container Runtime Configurations</p>
+<p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 <!--
 > THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
 #1636
