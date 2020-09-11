@@ -141,7 +141,7 @@ The platform supports the workload, and in effect controls access to the workloa
 **Workload security**
 * Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
 * Support zoning within a tenant workload - using application-level filtering.
-* Not expose tenant IP address details to another tenant.
+* Not expose tenant internal IP address details to another tenant.
 * All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
 
 **Confidentiality and Integrity**
