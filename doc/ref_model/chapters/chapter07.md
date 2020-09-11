@@ -123,44 +123,46 @@ The platform supports the workload, and in effect controls access to the workloa
 <a name="7.4.1.2"></a>
 #### 7.4.1.2 The following general security requirements apply to the Cloud Infrastructure
 
-* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
+**System Hardening**
+* Adhering to the principle of least privilege, no login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
+* Ensure that all the platform's components(including hypervisors, VMs, etc.) are kept up to date with the latest patch.
+* In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
+
+**Platform access**
+* Restrict traffic to only traffic that is necessary, and deny all other traffic, including traffic from and to 'Back-end'.
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
-* Support zoning within a tenant workload - using application-level filtering.
 * All host to host communications within the cloud provider network are to be cryptographically protected in transit.
-* Not expose tenant IP address details to another tenant.
 * Use cryptographically-protected protocols for administrative access to the platform.
 * Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
-* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
-* A process to check change management adherence that is implemented, and rigourously followed.
-* Processes for managing platform access control filters that are documented, followed, and monitored.
-* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
+* Processes for managing platform access control filters must be documented, followed, and monitored.
 * Role-Based Access Control (RBAC) must apply for all platform systems access.
-* An approved system or process for last resort access must exist for the platform.
-* All API access must use TLS protocol.
+* All APIs access must use TLS protocol, including back-end APIs.
+
+**Workload security**
+* Restrict traffic to (and from) the workload to only traffic that is necessary, and deny all other traffic.
+* Support zoning within a tenant workload - using application-level filtering.
+* Not expose tenant internal IP address details to another tenant.
 * All production workloads must be separated from all non-production workloads including separation between non-hosted non-production external networks.
-* Where there are multiple hosting facilities used in provision of the service, network communications between facilities for the purpose of backup, management, and application communication are cryptographically protected in transit between data centre facilities.
-* Continuous cloud security compliance is mandatory.
-* Ensure that all the platform's components(including hypervisors, VMs, etc.) are kept up to date with the latest patch.
+
+**Confidentiality and Integrity**
 * All data persisted to primary, replica, or backup storage is to be encrypted.
+
+**Monitoring and security audit**
 * All platform security logs are to be time synchronised.
 * Logs are to be regularly scanned for events of interest.
-* An incident response plan must exist for the platform.
 * The cloud services must be regularly vulnerability and penetration tested.
-* In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
+
+**Platform provisioning and LCM**
+* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
+* A process to check change management adherence that is implemented, and rigourously followed.
+* An approved system or process for last resort access must exist for the platform.
+* Where there are multiple hosting facilities used in the provisioning of a service, network communications between the facilities for the purpose of backup, management, and workload communications are cryptographically protected in transit between data centre facilities.
+* Continuous cloud security compliance is mandatory.
+* An incident response plan must exist for the platform.
 
 <a name="7.4.2"></a>
 ### 7.4.2 Platform ‘back-end’ access security
 
-* Restrict traffic to only traffic that is necessary, and deny all other traffic.
-* Use cryptographically-protected protocols for administrative access to the platform.
-* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
-* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
-* A process to check change management adherence that is implemented, and rigourously followed.
-* Processes for managing platform access control filters that are documented, followed, and monitored.
-* No login to root on any platform systems, when root privileges are not required.
-* Role-Based Access Control (RBAC) must apply for all systems access.
-* An approved system or process for last resort access must exist for the platform.
-* All back-end API access must use TLS.
 * Validate and verify the integrity of resources management requests coming from a higher orchestration layer to the Cloud Infrastructure manager.
 
 <a name="7.4.3"></a>
