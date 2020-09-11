@@ -248,13 +248,15 @@ Operators typically do not implement Security Groups when ussing SR-IOV or DPDK 
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
 
-Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/) that "describes how to obtain, create, and modify" OpenStack compatible virtual machine images. 
+Images from untrusted sources must not be used (sec.img.001). Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/) that "describes how to obtain, create, and modify" OpenStack compatible virtual machine images. 
 
-Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance). The operator will need toolsets for scanning images, including for virus and malware detection. Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). The chain of trust requires that all images are verified again in the Compute service (Nova) prior to use.
+Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance) (sec.gen.009). The operator will need toolsets for scanning images, including for virus and malware detection (sec.img.002, sec.wl.007).
+Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). 
+Image signing and verification protects image integrity and authenticity by enabling deployers to sign images and save the signatures and public key certificates as image properties. The creation of signature per individual artifact in the VNF package is required by [ETSI NFV SOL004](http://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/02.03.01_60/gs_nfv-sol004v020301p.pdf).
 
-Integrity Verification at the time of instantiation is required by [ETSI NFV SEC021](https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=53601) and the creation of signature per individual artifact in the VNF package is required by [ETSI NFV SOL004](http://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/02.03.01_60/gs_nfv-sol004v020301p.pdf).
+The chain of trust requires that all images are verified again in the Compute service (Nova) prior to use. Integrity verification at the time of instantiation is required by [ETSI NFV SEC021](https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf).
 
-
+Images must be also updated to benefit from the latest security patches (sec.gen.008, sec.img.007).
 
 <a name="6.3.6"></a>
 ### 6.3.6 Security LCM
