@@ -283,7 +283,7 @@ Architecture they must be implemented as per the following specifications:
 In order for the Kubernetes workloads to be conformant with the Reference
 Architecture they must implement the parameter values as per the following specifications:
 
-|Ref|Parameter Group|Details|Requirement Trace|
+|Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
 |`ra2.app.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md)|Specifies the container's root filesystem.|TBD|
 |`ra2.app.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)|Specifies additional mounts beyond root|TBD|
