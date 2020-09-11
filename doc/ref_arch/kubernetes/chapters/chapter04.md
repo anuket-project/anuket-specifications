@@ -285,11 +285,11 @@ Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.app.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md)|Specifies the container's root filesystem.|TBD|
-|`ra2.app.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)|Specifies additional mounts beyond root|TBD|
-|`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process)|Specifies the container process|TBD|
-|`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname)|Specifies the container's hostname as seen by processes running inside the container|TBD|
-|`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|
+|`ra2.app.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md) Parameter Group (OCI Spec)|Specifies the container's root filesystem.|TBD|
+|`ra2.app.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts) Parameter Group (OCI Spec)|Specifies additional mounts beyond root|TBD|
+|`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process) Parameter Group (OCI Spec)|Specifies the container process|TBD|
+|`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname) Parameter Group (OCI Spec)|Specifies the container's hostname as seen by processes running inside the container|TBD|
+|`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|
 |`ra2.app.006`|[Platform-specific configuration](https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration)|This specifies the set of platform (linux/windows,solaris,vm) specific configurations|TBD|
 |`ra2.app.007`|[POSIX-platform Hooks](https://github.com/opencontainers/runtime-spec/blob/master/config.md#posix-platform-hooks)|For POSIX platforms, the configuration structure supports hooks for configuring custom actions related to the lifecycle of the container|TBD|
 |`ra2.app.008`|[Annotations](https://github.com/opencontainers/runtime-spec/blob/master/config.md#annotations)|Contains arbitrary metadata for the container|TBD|
