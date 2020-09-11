@@ -135,18 +135,8 @@ feature-gates:
 ## 4.4 Container runtimes
 
 |Ref|Specification|Details|Requirement Trace|
-|`ra2.crt.001`|Conformance with OCI 1.0|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|TBC|
 |---|---|---|---|
-|`ra2.crt.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md)|Specifies the container's root filesystem.|TBD|
-|`ra2.crt.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)|Specifies additional mounts beyond root|TBD|
-|`ra2.crt.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process)|Specifies the container process|TBD|
-|`ra2.crt.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname)|Specifies the container's hostname as seen by processes running inside the container|TBD|
-|`ra2.crt.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|
-|`ra2.crt.006`|[Platform-specific configuration](https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration)|This specifies the set of platform (linux/windows,solaris,vm) specific configurations|TBD|
-|`ra2.crt.007`|[POSIX-platform Hooks](https://github.com/opencontainers/runtime-spec/blob/master/config.md#posix-platform-hooks)|For POSIX platforms, the configuration structure supports hooks for configuring custom actions related to the lifecycle of the container|TBD|
-|`ra2.crt.008`|[Annotations](https://github.com/opencontainers/runtime-spec/blob/master/config.md#annotations)|Contains arbitrary metadata for the container|TBD|
-|`ra2.crt.009`|[Extensibility](https://github.com/opencontainers/runtime-spec/blob/master/config.md#extensibility)|Runtimes MAY log unknown properties but MUST otherwise ignore them|TBD|
-|`ra2.crt.0010`|[Valid values](https://github.com/opencontainers/runtime-spec/blob/master/config.md#valid-values)|Runtimes MUST generate an error when invalid or unsupported values are encountered|TBD|
+|`ra2.crt.001`|Conformance with OCI 1.0|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|TBC|
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 <!--
 > THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
@@ -291,14 +281,20 @@ Architecture they must be implemented as per the following specifications:
 ## 4.9 Kubernetes workloads
 
 In order for the Kubernetes workloads to be conformant with the Reference
-Architecture they must be implemented as per the following specifications:
+Architecture they must implement the parameter values as per the following specifications:
 
-|Ref|Specification|Details|Requirement Trace|
+|Ref|Parameter Group|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.app.001`||||
-|`ra2.app.002`||||
-|`ra2.app.003`||||
-|`ra2.app.004`||||
+|`ra2.app.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md)|Specifies the container's root filesystem.|TBD|
+|`ra2.app.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)|Specifies additional mounts beyond root|TBD|
+|`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process)|Specifies the container process|TBD|
+|`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname)|Specifies the container's hostname as seen by processes running inside the container|TBD|
+|`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|
+|`ra2.app.006`|[Platform-specific configuration](https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration)|This specifies the set of platform (linux/windows,solaris,vm) specific configurations|TBD|
+|`ra2.app.007`|[POSIX-platform Hooks](https://github.com/opencontainers/runtime-spec/blob/master/config.md#posix-platform-hooks)|For POSIX platforms, the configuration structure supports hooks for configuring custom actions related to the lifecycle of the container|TBD|
+|`ra2.app.008`|[Annotations](https://github.com/opencontainers/runtime-spec/blob/master/config.md#annotations)|Contains arbitrary metadata for the container|TBD|
+|`ra2.app.009`|[Extensibility](https://github.com/opencontainers/runtime-spec/blob/master/config.md#extensibility)|Runtimes MAY log unknown properties but MUST otherwise ignore them|TBD|
+|`ra2.app.0010`|[Valid values](https://github.com/opencontainers/runtime-spec/blob/master/config.md#valid-values)|Runtimes MUST generate an error when invalid or unsupported values are encountered|TBD|
 
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
