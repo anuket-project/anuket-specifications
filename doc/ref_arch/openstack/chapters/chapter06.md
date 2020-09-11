@@ -54,7 +54,14 @@ Once a user is authenticated, a token is generated for authorization and access 
 Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Services support the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
 
 #### 6.3.1.4 RBAC
-In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles.
+In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles. 
+
+Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Train release, Keystone applies the following personas consistently across its API.
+The reader role provides read-only access to resources within the system, a domain, or a project.
+The member role is the same as reader in Keystone, but allows to introduce granularity between admin and reader to other OpenStack services.
+The admin role is reserved for the most privileged operations within a given scope for managing resources. 
+
+For specific use-case, policies can be overridden and new roles can be created for each OpenStack service by editing the policy.json file.
 
 ###### Rules
 The following rules govern create, read, update, and delete (CRUD) level access.
