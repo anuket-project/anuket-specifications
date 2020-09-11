@@ -124,7 +124,7 @@ The platform supports the workload, and in effect controls access to the workloa
 #### 7.4.1.2 The following general security requirements apply to the Cloud Infrastructure
 
 **System Hardening**
-* No login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
+* Adhering to the principle of least privilege, no login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
 * Ensure that all the platform's components(including hypervisors, VMs, etc.) are kept up to date with the latest patch.
 * In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
