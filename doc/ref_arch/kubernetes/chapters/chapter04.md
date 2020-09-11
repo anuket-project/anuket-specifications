@@ -281,7 +281,7 @@ Architecture they must be implemented as per the following specifications:
 ## 4.9 Kubernetes workloads
 
 In order for the Kubernetes workloads to be conformant with the Reference
-Architecture they must implement the parameter values as per the following specifications:
+Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
