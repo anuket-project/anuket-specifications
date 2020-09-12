@@ -472,17 +472,17 @@ Security certification should encompass the following elements:
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Maintaining availability, Deprovisioning (secure Clean-Up) of workload resources | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |
-| req.sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS | |
-| req.sec.lcm.003 | The Cloud Operator **must** implement change management for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud | Platform change control on hardware |
+| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |
+| req.sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher | |
+| req.sec.lcm.003 | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware | |
 | req.sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes | Templated approved changes for automation where available |
-| req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly scanned |  |
+| req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly monitored for anomalous behavior |  |
 | req.sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests | |
 | req.sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information |  |
 | req.sec.lcm.008 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information |  |
 | req.sec.lcm.009 |  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information | |
 | req.sec.lcm.010 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing) |  |
-| req.sec.lcm.011 | The Platform **must** implement Security life cycle management processes including proactively update and patch all deployed Cloud Infrastructure software | |
+| req.sec.lcm.011 | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software | |
 
 <a name="7.9.7"></a>
 ### 7.9.7. Monitoring and Security Audit
@@ -491,15 +491,15 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.mon.001 | Platform must provide logs and these logs must be regularly scanned for events of interest | |
+| req.sec.mon.001 | Platform must provide logs and these logs must be regularly monitored for events of interest | |
 | req.sec.mon.002 | Security logs must be time synchronised |  |
 | req.sec.mon.003 | The Platform must log all changes to time server source, time, date and time zones |  |
-| req.sec.mon.004 | The Platform must secure and protect Audit logs (contain sensitive information) both in-transit and at rest |  |
+| req.sec.mon.004 | The Platform must secure and protect Audit logs (containing sensitive information) both in-transit and at rest |  |
 | req.sec.mon.005 | The Platform must Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | |
-| req.sec.mon.006 | The Platform must Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions accordingly |  |
+| req.sec.mon.006 | The Platform must Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions |  |
 | req.sec.mon.007 | The Platform must Monitor and Audit security parameter configurations for compliance with defined security policies | |
 | req.sec.mon.008 | The Platform must Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures | |
-| req.sec.mon.009 | The Platform must Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly | |
+| req.sec.mon.009 | The Platform must Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly | |
 | req.sec.mon.010 | The Platform must Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly |  |
 | req.sec.mon.011 | The Platform must Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly | |
 | req.sec.mon.012 | The Platform must Monitor and Audit Traffic patterns and volumes to prevent malware download attempts | |
