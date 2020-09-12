@@ -450,8 +450,8 @@ Security certification should encompass the following elements:
 | req.sec.wl.002 | The Platform **must** support operational security | |
 | req.sec.wl.003 | The Platform **must** support secure provisioning of workloads  | |
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) | |
-| req.sec.wl.005 | Production workloads **must** be separated from non-production workloads | This requirement’s verification goes beyond CNTT testing scope  |
-| req.sec.wl.006 | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) | |
+| req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads | This requirement’s verification goes beyond CNTT testing scope |
+| req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity |  |
 
 <a name="7.11.5"></a>
@@ -464,8 +464,8 @@ Security certification should encompass the following elements:
 | req.sec.img.003 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  |
 | req.sec.img.004 | Images **must** only be accessible to authorized actors |  |
 | req.sec.img.005 | Image Registries **must** only be accessible to authorized actors |  |
-| req.sec.img.006 | Image Registries **must** only be accessible over secure networks |  |
-| req.sec.img.007 | Image registries **must** be clear of vulnerable and stale (out of date) versions |  |
+| req.sec.img.006 | Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality |  |
+| req.sec.img.007 | Image registries **must** be clear of vulnerable and out of date versions |  |
 
 <a name="7.9.6"></a>
 ### 7.9.6. Security LCM
