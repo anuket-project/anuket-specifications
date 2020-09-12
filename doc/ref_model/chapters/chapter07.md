@@ -415,15 +415,15 @@ Security certification should encompass the following elements:
 | | The Platform **must** implement authenticated and secure access to GUI | |
 | req.sec.sys.002 | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) | |
 | req.sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic | |
-| req.sec.sys.004 | The Cloud Infrastructure **must** support Secure network channels | A secure channel enables transferring of data that is resistant to overhearing and tampering |
+| req.sec.sys.004 | The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels | A secure channel enables transferring of data that is resistant to overhearing and tampering |
 | req.sec.sys.005 | The Cloud Infrastructure **must** segregate the underlay and overlay networks | |
-| req.sec.sys.006 | The Cloud Infrastructure must be able to utilize the Cloud Infrastructure Manager identity management capabilities | |
+| req.sec.sys.006 | The Cloud Infrastructure must be able to utilize the Cloud Infrastructure Manager identity lifecycle management capabilities | |
 | req.sec.sys.007 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | |
 | req.sec.sys.008 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. | Communication between different trust domains is not allowed, by default  |
 | req.sec.sys.009 | The Platform **must** support creation of Trust Relationships between trust domains | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
 | req.sec.sys.010 | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | |
-| req.sec.sys.011 | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | |
-| req.sec.sys.012 | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component | e.g., Barbican (OpenStack) |
+| req.sec.sys.011 | The Platform **must not** reuse the same authentication credential (e.g., key-pair) on different Platform components (e.g., on different hosts, or different services) | |
+| req.sec.sys.012 | The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected secrets externally from the component | (e.g., in OpenStack Barbican) |
 | req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed | |
 | req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources | |
 
