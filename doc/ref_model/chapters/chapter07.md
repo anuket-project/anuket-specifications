@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 7 Security
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [7.1 Introduction](#7.1)
