@@ -447,12 +447,13 @@ Security certification should encompass the following elements:
 | Ref | Requirement | Definition/Note |
 |---|----|----|
 | req.sec.wl.001 | The Platform **must** support Workload placement policy. | |
-| req.sec.wl.002 | The Platform **must** support operational security. | |
+| req.sec.wl.002 | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). | |
 | req.sec.wl.003 | The Platform **must** support secure provisioning of workloads.  | |
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements). | |
 | req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
 | req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.). | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
+
 
 <a name="7.11.5"></a>
 ### 7.9.5. Image Security
