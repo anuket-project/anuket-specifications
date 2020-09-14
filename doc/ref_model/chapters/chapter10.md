@@ -22,7 +22,7 @@ This chapter is dedicated to identifying the challenges and gaps found in the co
 <a name="10.2"></a>
 ## 10.2 Challenges 
 
-The current challenge is finalizing a stable version from which all stakeholders in the application value-chain can begin to extract the intended value of a Common Cloud Infrastructure. The next maturity level is reached when the Reference Model has stabilized enough for stakeholders to adopt the model into their own application development and deployment cycles.
+The continuous challenge is finalizing a stable version from which all stakeholders in the application value-chain can derive the intended value of a Common Cloud Infrastructure. This maturity level is reached when the released Reference Model version is adopted by stakeholders into their application development and deployment cycles.
 
 <a name="10.3"></a>
 ## 10.3 Gaps 
