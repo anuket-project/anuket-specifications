@@ -209,7 +209,7 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 | Ref      | Cloud Infrastructure Measurement           | Unit        | Definition/Notes                                                                                                                                                                                                            |
 |----------|--------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| i.pm.001 | Host CPU usage                             | nanoseconds | Per Compute node. It maps to ETSI GR NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
+| i.pm.001 | Host CPU usage                             | nanoseconds | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
 | i.pm.002 | Virtual compute resource CPU usage         | nanoseconds | Per VM or Pod.  It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
 | i.pm.003 | Host CPU utilization                       | %           | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] ] clause 6, processor usage metric (Cloud Infrastructure internal).           |
 | i.pm.004 | Virtual compute resource CPU utilization   | %           | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
