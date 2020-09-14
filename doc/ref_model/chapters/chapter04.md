@@ -16,7 +16,7 @@
   * [4.2.1 Compute Flavours](#4.2.1)
   * [4.2.2 Virtual Network Interface Specifications](#4.2.2)
   * [4.2.3 Storage Extensions](#4.2.3)
-  * [4.2.4 Instance Types](#4.2.4)
+  * [4.2.4 Cloud Infrastructure Profiles](#4.2.4)
   * [4.2.5 Instance Capabilities Mapping](#4.2.5)
   * [4.2.6 TBD](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
@@ -36,9 +36,6 @@ The Capability and PM identifiers conform to the following schema:
 a = Scope <(e)xternal | (i)nternal | (t)hird_party_instrumentation>  
 b = Type <(cap) capability | (man) management | (pm) performance | (man-pm)>  
 c = Serial Number  
-
-A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and the next available identifier, globally across all chapters of the RM.
-> To-Do: Create tracking ss and add link here
 
 <a name="4.1.1"></a>
 ### 4.1.1 Exposed vs Internal
