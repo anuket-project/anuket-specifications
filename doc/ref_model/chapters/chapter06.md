@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 6 External Interfaces
-<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
