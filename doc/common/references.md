@@ -21,6 +21,9 @@
 | [5]      | ETSI GR NFV-TST 008 V3.2.1 | “Network Functions Virtualisation (NFV) Release 3; Testing; NFVI Compute and Network Metrics Specification”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf |
 | [6]      | ETSI GR NFV-IFA 027 V2.4.1 | “Network Functions Virtualisation (NFV) Release 2; Management and Orchestration; Performance Measurements Specification”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf |
 | [7]      | ETSI GR NFV-IFA 002 V2.1.1 | “Network Functions Virtualisation (NFV);Acceleration Technologies; VNF Interfaces Specification”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf |
+| [8]      | ETSI NFV-IFA 019 V3.1.1 | “Network Functions Virtualisation (NFV); Acceleration Technologies; Acceleration Resource Management Interface Specification; Release 3 ”. Available at https://www.etsi.org/deliver/etsi_gs/nfv-ifa/001_099/019/03.01.01_60/gs_nfv-ifa019v030101p.pdf |
+
+
 
 
 <a name="1.2"></a>
