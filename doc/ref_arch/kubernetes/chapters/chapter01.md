@@ -1,7 +1,7 @@
 [<< Back](../../kubernetes)
 
 # 1. Overview
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [1.1 Introduction.](#1.1)
@@ -10,7 +10,6 @@
   * [1.3.1 Cloud Native.](#1.3.1)
 * [1.4 Scope](#1.4)
 * [1.5 Approach](#1.5)
-* [1.6 Roadmap](#1.6)
 
 
 <a name="1.1"></a>
@@ -85,11 +84,3 @@ The approach taken in this Reference Architecture is to start as simply as possi
 For example, while the management of VMs through Kubernetes is included, the intention is to start with the "native" control of containers and add support for VMs at a later date.  The final decision will be determined and documented in the Roadmap section.
 
 This document will start with a description of interfaces and capabilities (the "what") before at a later date providing guidance on "how" those elements are deployed.  The details of how the elements will be used together will be documented in full detail in the Reference Implementation. In addition, an [Appendix](./appendix-a.md) is included with the purpose of describing the transition from VNF to CNF and the potential pitfalls and complexities that may need consideration. This appendix may in turn lead to the identification of gaps that need attention in one or more Reference Architectures.
-
-<a name="1.6"></a>
-## 1.6 Roadmap
-
-Kubernetes is a relatively new technology (First release was in June 2014), so is still rapidly evolving. As Kubernetes changes over time it will be adding new capabilities and featues, so the CNTT Reference Architecture will need to evolve along with it. The final release cadence for the Reference Model changes and feature updates is still under discussion but the cadence of the Kubernetes Reference Architecture should at least follow the release cadence for Kubernetes, which is as of June 2020, every three months. The back revision support again should match to the Kubernates cadence, which is nine months (latest release, plus two previous releases).
-
-<p align="center"><img src="../figures/k8s_ref_arch_roadmap.png" alt="Kubernetes Reference Architecture Roadmap" title="Kubernetes Reference Architecture Roadmap" width="100%"/></p>
-<p align="center"><b>Figure 1-3:</b> Kubernetes Reference Architecture Roadmap</p>
