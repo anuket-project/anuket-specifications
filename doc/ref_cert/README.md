@@ -37,15 +37,13 @@ Requirements Principles can be found in the [RM Principles](https://github.com/c
 
 # CNTT Reference Conformance (RC) Test Case Integration
 
-All CNTT conformance suites must fulfill the following test case integration
-requirements to guarantee a smooth overall integration, the same end user
-actions and a unique test result format (e.g. OPNFV test result database)
+All CNTT conformance suites must utilize the OPNFV test case integration
+toolchain to deliver overall integration, the same end user
+actions, and a unique test result format (e.g. OPNFV test result database)
 needed by the end users and the test case result verification programs (e.g.
 [OVP](https://www.opnfv.org/verification)). Historically, these rules were
-agreed by RC1 team and have been applied since
-[CNTT Snezka](https://github.com/cntt-n/CNTT/wiki/Snezka). The new RC2 stream
-asks to move them in this common place applicable to all CNTT conformance
-suites.
+agreed by RC1 team and have been applied since.
+The OPNFV test integration toolchains will be used by all CNTT conformance suites.
 
 <a name="ri-rc-toolchaings"></a>
 ## CNTT RI and RC toolchains
@@ -61,11 +59,11 @@ and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
 
 The CNTT verification, validation, and conformance processes leverage
-existing OPNFV testing knowledge (projects) and experience (history) and then
-conform to the overall toolchain design already in-place. The RC toolchain
+existing OPNFV testing knowledge (projects) and experience (history) by utilising
+the OPNFV toolchain design already in-place. The RC toolchain
 only requires for the local deployment of the components instead of leveraging
-the common OPNFV centralized services. But the interfaces remain unchanged
-mainly leveraging test jobs, the common test case execution, the test
+the common OPNFV centralized services. However, the interfaces remain unchanged
+for leveraging test jobs, the common test case execution, the test
 result database and the S3 protocol to publish the artifacts. It's worth
 mentioning that dumping all results and logs required for conformance is
 already in place in CIRV (see
@@ -80,12 +78,11 @@ deployed the full toolchain in one small virtual machine to verify ONAP Openlab
 via Functest.
 
 <a name="testing-integration-requirements"></a>
-## Test case integration requirements
+## Test Case Integration
 
 To reach all goals (verification, validation, compliance, and conformance)
 expected by CNTT, all test cases must be delivered as
-[Docker containers](https://www.docker.com/) and meet the requirements to
-simplify the CI toolchain setups:
+[Docker containers](https://www.docker.com/) to simplify the CI toolchain setup including:
 - the common test case execution
 - the unified way to manage all the interactions with the CI/CD components and
   with third-parties (e.g. dump all test case logs and results for

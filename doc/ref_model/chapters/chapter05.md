@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 5 Feature set and Requirements from Infrastructure
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 Cloud Infrastructure Software Profile description.](#5.1)
@@ -59,7 +58,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 | Reference        | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| infra.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |  | |
+| infra.com.acc.cfg.001 | Left for RA specifications |  | |
 
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
@@ -111,7 +110,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 <a name="5.1.4"></a>
 ### 5.1.4 Security
-Please see the [RM Security Chapter](./chapter07.md) and, in particular, the [Consolidated Requirements](./chapter07.md#711-consolidated-security-requirements) section.
+Please see the [RM Security Chapter](./chapter07.md).
 
 <a name="5.1.5"></a>
 ### 5.1.5 Platform Services

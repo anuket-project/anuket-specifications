@@ -26,18 +26,18 @@
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Lots of SME Feedback |
-| Chapter 02 | Lots of SME feedback |
-| Chapter 03 | Lots of SME Feedback |
-| Chapter 04 | Lots of SME feedback |
-| Chapter 05 | Lots of SME Feedback |
-| Chapter 06 | Lots of SME Feedback |
-| Chapter 07 | Still Developing Content |
-| Chapter 08 | Still Developing Content |
-| Chapter 09 | Still Developing Content |
-| Chapter 10 | Initial Framework Only |
-| Appendix A | Initial Framework Only |
-| Glossary | Lots of SME Feedback |
+| Chapter 01 | Release ready |
+| Chapter 02 | Release ready |
+| Chapter 03 | Release ready |
+| Chapter 04 | Release ready |
+| Chapter 05 | Release ready |
+| Chapter 06 | Release ready |
+| Chapter 07 | Release ready |
+| Chapter 08 | Release ready |
+| Chapter 09 | Release ready |
+| Chapter 10 | Release ready |
+| Appendix A | Release ready |
+| Glossary | Release ready|
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)

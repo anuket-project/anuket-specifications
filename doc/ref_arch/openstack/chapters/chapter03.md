@@ -143,14 +143,14 @@ It is based on proven, standards-based networking technologies that today suppor
 - BGP as a Service (BGPaaS) for distribution of routes between privately managed customer networks and service provider networks
 
 
-Based on the network layering concepts introduced in the Reference Model ChXX (provide link), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
+Based on the network layering concepts introduced in the [Reference Model Section 3.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#35-network), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
 
 The SDN controller exposes a NB API that can be consumed by ETSI MANO for VNF/CNF onboarding, network service onboarding and dynamic service function chaining.
 
 
 <a name="3.2.6"></a>
 ### 3.2.6. Acceleration
-Acceleration deals with both hardware and software accelerations. Hardware acceleration is the use of specialized hardware to perform some function faster than is possible by executing the same function on a general-purpose CPU or on a traditional networking (or other I/O) device (e.g. NIC, switch, storage controller, etc.). The hardware accelerator covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the main CPU, and to accelerate workload performance. NFVI should manage the accelerators by plugins and provide the acceleration capabilities to VNFs.
+Acceleration deals with both hardware and software accelerations. Hardware acceleration is the use of specialized hardware to perform some function faster than is possible by executing the same function on a general-purpose CPU or on a traditional networking (or other I/O) device (e.g. NIC, switch, storage controller, etc.). The hardware accelerator covers the options for ASICs, SmartNIC, FPGAs, GPU etc. to offload the main CPU, and to accelerate workload performance. Cloud Infrastructure should manage the accelerators by plugins and provide the acceleration capabilities to VNFs.
 
 With the acceleration abstraction layer defined, hardware accelerators as well as software accelerators can be abstracted as a set of acceleration functions (or acceleration capabilities) which exposes a common API to either the VNF or the host.
 

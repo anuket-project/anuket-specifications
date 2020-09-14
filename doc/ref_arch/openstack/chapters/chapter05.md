@@ -12,7 +12,7 @@
 ## 5.1 Introduction
 
 This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces.
-The OpenStack Train version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any NFVI + VIM reference
+The OpenStack Train version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any Cloud Infrastructure + VIM reference
 implementations that **get certified by RC** can be considered as CNTT RA Conformant.
 
 The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and a

@@ -16,8 +16,8 @@
   * [4.2.1 Compute Flavours](#4.2.1)
   * [4.2.2 Virtual Network Interface Specifications](#4.2.2)
   * [4.2.3 Storage Extensions](#4.2.3)
-  * [4.2.4 Instance Types](#4.2.4)
-  * [4.2.5 Instance Capabilities Mapping](#4.2.5)
+  * [4.2.4 Cloud Infrastructure Profiles](#4.2.4)
+  * [4.2.5 Cloud Infrastructure Profile Capabilities Mapping](#4.2.5)
   * [4.2.6 TBD](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
 * [4.3 Networking](#4.3)
@@ -36,9 +36,6 @@ The Capability and PM identifiers conform to the following schema:
 a = Scope <(e)xternal | (i)nternal | (t)hird_party_instrumentation>  
 b = Type <(cap) capability | (man) management | (pm) performance | (man-pm)>  
 c = Serial Number  
-
-A spreadsheet in the artefact repository maintains the list of assigned identifiers, along with their respective descriptions and the next available identifier, globally across all chapters of the RM.
-> To-Do: Create tracking ss and add link here
 
 <a name="4.1.1"></a>
 ### 4.1.1 Exposed vs Internal
@@ -212,10 +209,10 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 | Ref      | Cloud Infrastructure Measurement           | Unit        | Definition/Notes                                                                                                                                                                                                            |
 |----------|--------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| i.pm.001 | Host CPU usage                             | nanoseconds | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (Cloud Infrastructure internal).           |
-| i.pm.002 | Virtual compute resource CPU usage         | nanoseconds | Per VM or Pod.  It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
-| i.pm.003 | Host CPU utilization                       | %           | Per Compute node. It maps to [ETSI GS NFV-TST 008 V3.2.1](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/008/03.02.01_60/gs_NFV-TST008v030201p.pdf) clause 6, processor usage metric (Cloud Infrastructure internal).           |
-| i.pm.004 | Virtual compute resource CPU utilization   | %           | Per VM or Pod. It maps to [ETSI GS NFV-IFA 027 v2.4.1](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/027/02.04.01_60/gs_nfv-ifa027v020401p.pdf) Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
+| i.pm.001 | Host CPU usage                             | nanoseconds | Per Compute node. It maps to ETSI GR NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
+| i.pm.002 | Virtual compute resource CPU usage         | nanoseconds | Per VM or Pod.  It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
+| i.pm.003 | Host CPU utilization                       | %           | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] ] clause 6, processor usage metric (Cloud Infrastructure internal).           |
+| i.pm.004 | Virtual compute resource CPU utilization   | %           | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
 | i.pm.005 | Measurement of external storage IOPS       | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.006 | Measurement of external storage throughput | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.007 | Available external storage capacity        | Yes/No      |                                                                                                                                                                                                                             |
@@ -415,7 +412,7 @@ This Cloud Infrastructure Profile is intended to be used for those applications 
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
->_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
+>_Interface types are aligned with ETSI GS NFV-IFA 002 [7]._
 
 <a name="Table4-16"></a>
 
@@ -608,8 +605,8 @@ To retain the cloud paradigms of automation, scalability and usage of shared har
 Compute and Storage resources are rarely shared in between IaaS or CaaS instances, but the underpinning networking, most commonly implemented with Ethernet and IP, must be shared and managed as a shared pool of underlay network resources to enable the pooled usage of Compute and Storage from a managed shared pool.
 
 Throughout this chapter and its figures a number of references to ETSI NFV are made and they explicitly are made towards the ETSI NFV models in the Architectural Framework: 
--	[ETSI GS NFV 002 V1.2.1](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf)
--	[ETSI GR NFV-IFA 029 V3.3.1](https://www.etsi.org/deliver/etsi_gr/NFV-IFA/001_099/029/03.03.01_60/gr_NFV-IFA029v030301p.pdf)
+-	ETSI GS NFV 002 V1.2.1 [3]
+-	ETSI GR NFV-IFA 029 V3.3.1 [4]
 
 
 <a name="4.3.1"></a>

@@ -6,7 +6,7 @@
 ## Table of Contents
 * [6.1 Introduction](#6.1)
 * [6.2 Security Requirements](#6.2)
-* [6.3 NFVI and VIM Security](#6.3)
+* [6.3 Cloud Infrastructure and VIM Security](#6.3)
     * [6.3.1 Platform Access](#6.3.1) 
     * [6.3.2 System Hardening](#6.3.2) 
     * [6.3.3 Confidentiality and Integrity](#6.3.3) 
@@ -17,7 +17,7 @@
 
 ## 6.1 Introduction
 
-This guide is intended to provide basic security requirements to CNTT architects who are implementing NFVI using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to CNTT architects who are implementing Cloud Infrastructure using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
@@ -25,7 +25,7 @@ This guide is intended to provide basic security requirements to CNTT architects
 Chapter 2 gathers all requirements and recommendations regarding security topics developed in this chapter.
 
 <a name="6.3"></a>
-## 6.3 NFVI and VIM Security
+## 6.3 Cloud Infrastructure and VIM Security
 
 OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html. In the section "[Sceurity boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
@@ -54,7 +54,14 @@ Once a user is authenticated, a token is generated for authorization and access 
 Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Services support the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
 
 #### 6.3.1.4 RBAC
-In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles.
+In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles. 
+
+Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Train release, Keystone applies the following personas consistently across its API.
+The reader role provides read-only access to resources within the system, a domain, or a project.
+The member role is the same as reader in Keystone, but allows to introduce granularity between admin and reader to other OpenStack services.
+The admin role is reserved for the most privileged operations within a given scope for managing resources. 
+
+For specific use-case, policies can be overridden and new roles can be created for each OpenStack service by editing the policy.json file.
 
 ###### Rules
 The following rules govern create, read, update, and delete (CRUD) level access.
@@ -129,7 +136,7 @@ Password's composition, complexity and policy should follow the recommendations 
 
 
 #### 6.3.2.2 Function and Software
-Infrastructure should be implemented to perform the minimal function that’s practically needed to support NFVI. 
+Infrastructure should be implemented to perform the minimal function that’s practically needed to support Cloud Infrastructure. 
 
 Regarding software:
 - Install only software which is required to support the functions
@@ -248,13 +255,15 @@ Operators typically do not implement Security Groups when ussing SR-IOV or DPDK 
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
 
-Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/) that "describes how to obtain, create, and modify" OpenStack compatible virtual machine images. 
+Images from untrusted sources must not be used (sec.img.001). Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/) that "describes how to obtain, create, and modify" OpenStack compatible virtual machine images. 
 
-Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance). The operator will need toolsets for scanning images, including for virus and malware detection. Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). The chain of trust requires that all images are verified again in the Compute service (Nova) prior to use.
+Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance) (sec.gen.009). The operator will need toolsets for scanning images, including for virus and malware detection (sec.img.002, sec.wl.007).
+Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). 
+Image signing and verification protects image integrity and authenticity by enabling deployers to sign images and save the signatures and public key certificates as image properties. The creation of signature per individual artifact in the VNF package is required by [ETSI NFV SOL004](http://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/02.03.01_60/gs_nfv-sol004v020301p.pdf).
 
-Integrity Verification at the time of instantiation is required by [ETSI NFV SEC021](https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=53601) and the creation of signature per individual artifact in the VNF package is required by [ETSI NFV SOL004](http://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/02.03.01_60/gs_nfv-sol004v020301p.pdf).
+The chain of trust requires that all images are verified again in the Compute service (Nova) prior to use. Integrity verification at the time of instantiation is required by [ETSI NFV SEC021](https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf).
 
-
+Images must be also updated to benefit from the latest security patches (sec.gen.008, sec.img.007).
 
 <a name="6.3.6"></a>
 ### 6.3.6 Security LCM
@@ -295,14 +304,17 @@ This intent of this section is to provide a key baseline and minimum requirement
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
-* Logs must be generated for all components (ex. Nova in Openstack) that form the NFVI.
+* Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure.
 * All security logging mechanisms must be active from system initialization. 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 
 #### 6.3.7.2 What to Log / What NOT to Log
 ##### What to log
 Where technically feasible the following system events must be recorded:
-* Successful and unsuccessful login attempts
+* Successful and unsuccessful login attempts including:
+    * Command line authentication (i.e. when initially getting token from keystone)
+    * Horizon authentication
+    * SSH authentication and sudo on the computes, controllers, network and storage nodes
 * Logoffs
 * Successful and unsuccessful changes to a privilege level
 * Successful and unsuccessful configuration changes

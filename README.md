@@ -13,6 +13,11 @@
   [the NFVI Testing Cookbook](doc/ref_cert/RC1/chapters/chapter04.md)
   and [the test case descriptions and selection](doc/ref_cert/RC1/chapters/chapter03.md)
   for more details.
+* **check the CNTT conformance of your existing Kubernetes deployments?**
+  You would be primarily interested by
+  [Kubernetes Testing Cookbook](doc/ref_cert/RC2/chapters/chapter04.md)
+  and [the test case descriptions and selection](doc/ref_cert/RC2/chapters/chapter03.md)
+  for more details.
 * **deploy OpenStack to onboard your VNFs?**
   You would be primarily interested by
   [the CNTT reference implementation](doc/ref_impl/cntt-ri/chapters/chapter01.md)

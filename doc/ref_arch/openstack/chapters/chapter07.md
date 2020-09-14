@@ -5,10 +5,10 @@
 
 ## Table of Contents
 * [7.1 Introduction ](#7.1)
-* [7.2 NFVI and VIM configuration management ](#7.2)
+* [7.2 Cloud Infrastructure and VIM configuration management ](#7.2)
   * [7.2.1 Provisioning](#7.2.1)
   * [7.2.2 Configuration Management](#7.2.2)
-* [7.3 NFVI and VIM Maintenance ](#7.3)
+* [7.3 Cloud Infrastructure and VIM Maintenance ](#7.3)
 * [7.4 Logging, Monitoring and Analytics ](#7.4)
   * [7.4.1 Logging](#7.4.1)
   * [7.4.2 Monitoring](#7.4.2)
@@ -34,7 +34,7 @@ The procedural style IaC tools require code that specifies how to achieve the de
 In the mutable infrastructure paradigm, software updates are made in place. Over time this can lead to configuration drift where each server becomes slightly different from all other servers. In the immutable infrastructure paradigm, new servers are deployed with the new software version and then the old servers are undeployed. 
 
 <a name="7.2"></a>
-## 7.2 NFVI and VIM configuration management
+## 7.2 Cloud Infrastructure and VIM configuration management
 In [Chapter 9.2 Configuration and Lifecycle Management]( ../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management) defines the functions of Configuration and Life Cycle Management (LCM).  To operate and manage a scalable cloud, that minimizes operational costs, requires tools that incorporates systems for automated provisioing and deployment, and managing configurations that ensures the correctness and integrity of the deployed and configured systems. 
 
 <a name="7.2.1"></a>
@@ -68,12 +68,12 @@ Configuration Management is composed of the following activities:
 - State variance mitigation: The CM system, on discovering a variance between the desired and current states, acts to drive the state to the desired state. Each CM system accomplishes the task in different ways.
 
 <a name="7.3"></a>
-## 7.3 NFVI and VIM Maintenance
-NFVI and VIM Maintenance activities can be classified as
+## 7.3 Cloud Infrastructure and VIM Maintenance
+Cloud Infrastructure and VIM Maintenance activities can be classified as
 1.	Deployment of additional infrastructure components (or removal of infrastructure components)
-1.	NFVI Configuration changes 
+1.	Cloud Infrastructure Configuration changes 
 1.	VIM Configuration changes 
-1.	Version changes (upgrade) of NFVI software (for example, Host Operating System, Hypervisor, etc.)
+1.	Version changes (upgrade) of Cloud Infrastructure software (for example, Host Operating System, Hypervisor, etc.)
 1.	Version changes of VIM Software (or component services) 
 
 **Deployment (or removal) of infrastructure components** 
@@ -100,7 +100,7 @@ of events relevant to a particular system. All software, including operating sys
 applications produce log files. 
 Enterprises and vendors may have custom monitoring and logging solutions. 
 The intent of the logging and monitoring is to capture events and 
-data of interest to the NFVI and workloads so that appropriate actions can be taken. For example, 
+data of interest to the Cloud Infrastructure and workloads so that appropriate actions can be taken. For example, 
 
 - Operating systems and web servers maintain an access log of all access requests, session details and file access.
 - Databases maintain a transaction log of all transaction executed including an added, changed and deleted data.
