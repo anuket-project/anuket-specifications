@@ -15,7 +15,7 @@
 
 
 <a name="10.1"></a>
-## 10.1 Introduction [Draft Language]
+## 10.1 Introduction 
 
 The development of this Reference Model is in its initialization stage and it will go through several iteration cycles before it is adding the full value intended. The reference model is also the first component in the establishment of a Common Cloud Infrastructure Lifecycle Framework--see also diagram below:
 
