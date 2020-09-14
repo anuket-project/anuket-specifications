@@ -411,78 +411,78 @@ Security certification should encompass the following elements:
 
 | Ref  | Requirement | Definition/Note |
 |-------|-------|---------|
-| req.sec.sys.001 | The Platform **must** support authenticated and secure APIs, API endpoints | |
-| | The Platform **must** implement authenticated and secure access to GUI | |
-| req.sec.sys.002 | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall) | |
-| req.sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic | |
-| req.sec.sys.004 | The Cloud Infrastructure **must** support Secure network channels | A secure channel enables transferring of data that is resistant to overhearing and tampering |
-| req.sec.sys.005 | The Cloud Infrastructure **must** segregate the underlay and overlay networks | |
-| req.sec.sys.006 | The Cloud Infrastructure must be able to utilize the Cloud Infrastructure Manager identity management capabilities | |
-| req.sec.sys.007 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control) | |
+| req.sec.sys.001 | The Platform **must** support authenticated and secure APIs, API endpoints. | |
+| | The Platform **must** implement authenticated and secure access to GUI. | |
+| req.sec.sys.002 | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall). | |
+| req.sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic.| |
+| req.sec.sys.004 | The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels. | A secure channel enables transferring of data that is resistant to overhearing and tampering. |
+| req.sec.sys.005 | The Cloud Infrastructure **must** segregate the underlay and overlay networks. | |
+| req.sec.sys.006 | The Cloud Infrastructure must be able to utilize the Cloud Infrastructure Manager identity lifecycle management capabilities. | |
+| req.sec.sys.007 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control). | |
 | req.sec.sys.008 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. | Communication between different trust domains is not allowed, by default  |
-| req.sec.sys.009 | The Platform **must** support creation of Trust Relationships between trust domains | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
-| req.sec.sys.010 | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly | |
-| req.sec.sys.011 | The Platform **must not** reuse the same authentication key-pair (for example, on different hosts, for different services) | |
-| req.sec.sys.012 | The Platform **must** only use secrets encrypted using strong encryption techniques, and stored externally from the component | e.g., Barbican (OpenStack) |
-| req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed | |
-| req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources | |
+| req.sec.sys.009 | The Platform **must** support creation of Trust Relationships between trust domains. | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
+| req.sec.sys.010 | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly. | |
+| req.sec.sys.011 | The Platform **must not** reuse the same authentication credential (e.g., key-pair) on different Platform components (e.g., on different hosts, or different services). | |
+| req.sec.sys.012 | The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected secrets externally from the component | (e.g., in OpenStack Barbican). |
+| req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed. | |
+| req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
 
 <a name="7.9.3"></a>
 ### 7.9.3. Confidentiality and Integrity
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.ci.001 | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit | |
-| req.sec.ci.002 | The Platform **should** support self-encrypting storage devices | |
-| req.sec.ci.003 | The Platform **must** support Confidentiality and Integrity of data related metadata | |
-| req.sec.ci.004 | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant) | |
-| req.sec.ci.005 | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant) | |
-| req.sec.ci.006 | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant) | |
-| req.sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services | Admin access must be carefully regulated |
-| req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation | |
+| req.sec.ci.001 | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit. | |
+| req.sec.ci.002 | The Platform **should** support self-encrypting storage devices. | |
+| req.sec.ci.003 | The Platform **must** support Confidentiality and Integrity of data related metadata. | |
+| req.sec.ci.004 | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). | |
+| req.sec.ci.005 | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). | |
+| req.sec.ci.006 | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). | |
+| req.sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. | Admin access must be carefully regulated |
+| req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation. | |
 
 <a name="7.9.4"></a>
 ### 7.9.4. Workload Security
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.wl.001 | The Platform **must** support Workload placement policy | |
-| req.sec.wl.002 | The Platform **must** support operational security | |
-| req.sec.wl.003 | The Platform **must** support secure provisioning of workloads  | |
-| req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements) | |
-| req.sec.wl.005 | Production workloads **must** be separated from non-production workloads | This requirement’s verification goes beyond CNTT testing scope  |
-| req.sec.wl.006 | Workloads **must** be separable by their categorisation (for example, payment card information, healthcare, etc.) | |
-| req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity |  |
+| req.sec.wl.001 | The Platform **must** support Workload placement policy. | |
+| req.sec.wl.002 | The Platform **must** support operational security. | |
+| req.sec.wl.003 | The Platform **must** support secure provisioning of workloads.  | |
+| req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements). | |
+| req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
+| req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.). | |
+| req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
 <a name="7.11.5"></a>
 ### 7.9.5. Image Security
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.img.001 | Images from untrusted sources **must not** be used | |
-| req.sec.img.002 | Images **must** be maintained to be free from known vulnerabilities |  |
-| req.sec.img.003 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them |  |
-| req.sec.img.004 | Images **must** only be accessible to authorized actors |  |
-| req.sec.img.005 | Image Registries **must** only be accessible to authorized actors |  |
-| req.sec.img.006 | Image Registries **must** only be accessible over secure networks |  |
-| req.sec.img.007 | Image registries **must** be clear of vulnerable and stale (out of date) versions |  |
+| req.sec.img.001 | Images from untrusted sources **must not** be used. | |
+| req.sec.img.002 | Images **must** be maintained to be free from known vulnerabilities. |  |
+| req.sec.img.003 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them. |  |
+| req.sec.img.004 | Images **must** only be accessible to authorized actors. |  |
+| req.sec.img.005 | Image Registries **must** only be accessible to authorized actors. |  |
+| req.sec.img.006 | Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality. |  |
+| req.sec.img.007 | Image registries **must** be clear of vulnerable and out of date versions. |  |
 
 <a name="7.9.6"></a>
 ### 7.9.6. Security LCM
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Maintaining availability, Deprovisioning (secure Clean-Up) of workload resources | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |
-| req.sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS | |
-| req.sec.lcm.003 | The Cloud Operator **must** implement change management for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud | Platform change control on hardware |
-| req.sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes | Templated approved changes for automation where available |
-| req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly scanned |  |
-| req.sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests | |
-| req.sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information |  |
-| req.sec.lcm.008 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information |  |
-| req.sec.lcm.009 |  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information | |
-| req.sec.lcm.010 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing) |  |
-| req.sec.lcm.011 | The Platform **must** implement Security life cycle management processes including proactively update and patch all deployed Cloud Infrastructure software | |
+| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |
+| req.sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | |
+| req.sec.lcm.003 | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | |
+| req.sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes. | Templated approved changes for automation where available |
+| req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly monitored for anomalous behavior. |  |
+| req.sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests. | |
+| req.sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information. |  |
+| req.sec.lcm.008 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  |
+| req.sec.lcm.009 |  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information. | |
+| req.sec.lcm.010 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  |
+| req.sec.lcm.011 | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software. | |
 
 <a name="7.9.7"></a>
 ### 7.9.7. Monitoring and Security Audit
@@ -491,23 +491,23 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.mon.001 | Platform must provide logs and these logs must be regularly scanned for events of interest | |
-| req.sec.mon.002 | Security logs must be time synchronised |  |
-| req.sec.mon.003 | The Platform must log all changes to time server source, time, date and time zones |  |
-| req.sec.mon.004 | The Platform must secure and protect Audit logs (contain sensitive information) both in-transit and at rest |  |
-| req.sec.mon.005 | The Platform must Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | |
-| req.sec.mon.006 | The Platform must Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions accordingly |  |
-| req.sec.mon.007 | The Platform must Monitor and Audit security parameter configurations for compliance with defined security policies | |
-| req.sec.mon.008 | The Platform must Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures | |
-| req.sec.mon.009 | The Platform must Monitor and Audit service handling for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly | |
-| req.sec.mon.010 | The Platform must Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly |  |
-| req.sec.mon.011 | The Platform must Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly | |
-| req.sec.mon.012 | The Platform must Monitor and Audit Traffic patterns and volumes to prevent malware download attempts | |
-| req.sec.mon.013 | The monitoring system must not affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries) |  |
-| req.sec.mon.014 | The Monitoring systems should not impact IAAS, PAAS, and SAAS SLAs including availability SLAs |  |
-| req.sec.mon.015 | The Platform must ensure that the Monitoring systems are never starved of resources |  |
-| req.sec.mon.016 | The Platform Monitoring components should follow security best practices for auditing, including secure logging and tracing | |
-| req.sec.lcm.017 | The Platform must Audit systems for any missing security patches and take appropriate actions |  |
+| req.sec.mon.001 | Platform must provide logs and these logs must be regularly monitored for events of interest. | |
+| req.sec.mon.002 | Security logs must be time synchronised. |  |
+| req.sec.mon.003 | The Platform must log all changes to time server source, time, date and time zones. |  |
+| req.sec.mon.004 | The Platform must secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
+| req.sec.mon.005 | The Platform must Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly. | |
+| req.sec.mon.006 | The Platform must Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. |  |
+| req.sec.mon.007 | The Platform must Monitor and Audit security parameter configurations for compliance with defined security policies. | |
+| req.sec.mon.008 | The Platform must Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures. | |
+| req.sec.mon.009 | The Platform must Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | |
+| req.sec.mon.010 | The Platform must Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. |  |
+| req.sec.mon.011 | The Platform must Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | |
+| req.sec.mon.012 | The Platform must Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
+| req.sec.mon.013 | The monitoring system must not affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
+| req.sec.mon.014 | The Monitoring systems should not impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
+| req.sec.mon.015 | The Platform must ensure that the Monitoring systems are never starved of resources. |  |
+| req.sec.mon.016 | The Platform Monitoring components should follow security best practices for auditing, including secure logging and tracing. | |
+| req.sec.lcm.017 | The Platform must Audit systems for any missing security patches and take appropriate actions. |  |
 
 <a name="7.9.8"></a>
 ### 7.9.8. Compliance with Standards
