@@ -412,7 +412,7 @@ This Cloud Infrastructure Profile is intended to be used for those applications 
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
->_Interface types are aligned with [ETSI GS NFV-IFA 002](https://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/002/02.01.01_60/gs_NFV-IFA002v020101p.pdf)._
+>_Interface types are aligned with ETSI GS NFV-IFA 002 [7]._
 
 <a name="Table4-16"></a>
 
