@@ -198,6 +198,7 @@ The following test case must pass as they are for Reference Conformance:
 | opnfv/functest-kubernetes-smoke:kali        | k8s_conformance        | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:kali        | xrally_kubernetes      | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-security:kali     | kube_hunter            | PASS     | Security testing                      |
-| opnfv/functest-kubernetes-security:kali     | kube_bench             | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-security:kali     | kube_bench_master      | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-security:kali     | kube_bench_node        | PASS     | Security testing                      |
 | opnfv/functest-kubernetes-benchmarking:kali | xrally_kubernetes_full | PASS     | Kubernetes API benchmarking           |
 | opnfv/functest-kubernetes-cnf:kali          | k8s_vims               | PASS     | Opensource CNF onboarding and testing |
