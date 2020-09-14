@@ -17,7 +17,7 @@
   * [4.2.2 Virtual Network Interface Specifications](#4.2.2)
   * [4.2.3 Storage Extensions](#4.2.3)
   * [4.2.4 Cloud Infrastructure Profiles](#4.2.4)
-  * [4.2.5 Instance Capabilities Mapping](#4.2.5)
+  * [4.2.5 Cloud Infrastructure Profile Capabilities Mapping](#4.2.5)
   * [4.2.6 TBD](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
 * [4.3 Networking](#4.3)
