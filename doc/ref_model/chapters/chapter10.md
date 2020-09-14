@@ -17,27 +17,12 @@
 <a name="10.1"></a>
 ## 10.1 Introduction 
 
-Reference Model is the first component in the establishment of a Common Cloud Infrastructure Lifecycle Framework--see also diagram below:
-
-Key Components of The Common Cloud Infrastructure Lifecycle Framework
-
-- Reference Model
-- Reference Architecture
-- Reference Implementation
-- Verification & Validation
-- Lifecycle Feedback Loops
-
-As the first component, the reference model must also be structured and iterated so that it plays its part as the foundation on which the other five components of the ecosystem are built.
-
-Going forward, this chapter shall be dedicated to identifying the challenges and gaps found in the course the development--to ensure the reference model is adding the strategic and tactical value intended over time. Should a challenge or gap not be identified and it is not already addressed in the model itself, the community may assume it will remain an unknown and, therefore, the community is welcomed to engage with and raise an issue with the appropriate working group(s) to close the gap. In this manner, the Reference Model can continuously improve.
-
-For Reference - Common Cloud Infrastructure Lifecycle Framework Diagram (Figure 10-1)
-<p align="center"><img src="../figures/ch10-fig-10-1-common-nfvi_lifecycle_framework.png" alt="Framework" title="Framework" width="65%"/></p>
+This chapter is dedicated to identifying the challenges and gaps found in the course the development--to ensure the reference model is adding the strategic and tactical value intended over time. Should a challenge or gap not be identified and it is not already addressed in the model itself, the community may assume it will remain an unknown and, therefore, the community is welcomed to engage with and raise an issue with the appropriate working group(s) to close the gap. In this manner, the Reference Model can continuously improve.
 
 <a name="10.2"></a>
 ## 10.2 Challenges 
 
-The current challenge is getting to a stable working version from which all stakeholders in the application value-chain can begin to extract the intended value of a Common Cloud Infrastructure. The next maturity level is reached when the Reference Model has stabilized enough for stakeholders to adopt the model into their own application development and deployment cycles.
+The current challenge is finalizing a stable version from which all stakeholders in the application value-chain can begin to extract the intended value of a Common Cloud Infrastructure. The next maturity level is reached when the Reference Model has stabilized enough for stakeholders to adopt the model into their own application development and deployment cycles.
 
 <a name="10.3"></a>
 ## 10.3 Gaps 
