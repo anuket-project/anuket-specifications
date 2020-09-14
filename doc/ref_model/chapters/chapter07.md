@@ -455,7 +455,7 @@ Security certification should encompass the following elements:
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
 
-<a name="7.11.5"></a>
+<a name="7.9.5"></a>
 ### 7.9.5. Image Security
 
 | Ref | Requirement | Definition/Note |
