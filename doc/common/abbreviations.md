@@ -2,8 +2,6 @@
 
 # Abbreviations
 
-<p align="right"><img src="./figures/bogo_sdc.png" alt="scope" title="baldy" width="35%"/></p>
-
 
 ## Table of Contents
 * [Common Abbreviations](#1.1)
