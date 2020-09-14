@@ -156,7 +156,7 @@ This leads to the following table (Table 9-3) which defines the standard interfa
 | --- | --- | --- |
 | Infrastructure Management | Defined in RA specifications | RA-1, RA-2 |
 | Infrastructure Software | Defined in RA specifications | RA-1, RA-2 |
-| Infrastructure Hardware | Redfish API | [DMTF Specification](https://www.dmtf.org/standards/redfish) |
+| Infrastructure Hardware | Redfish API | DMTF RedFish specification [11] |
 
 <p align="center"><b>Table 9-3:</b> Interface Standards for Configuration Management</p>
 
