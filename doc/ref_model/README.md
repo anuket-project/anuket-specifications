@@ -41,7 +41,7 @@
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)
-* [Chapter 02 - Workload requirements & Analysis](chapters/chapter02.md)
+* [Chapter 02 - Workload Requirements & Analysis](chapters/chapter02.md)
 * [Chapter 03 - Modelling](chapters/chapter03.md)
 * [Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue](chapters/chapter04.md)
 * [Chapter 05 - Featureset and Requirements from Infrastructure](chapters/chapter05.md)
