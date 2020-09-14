@@ -58,7 +58,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 | Reference        | Feature | Type  | Description |
 |------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| infra.com.acc.cfg.001 | _**Editor Note:** To be worked on_ |  | |
+| infra.com.acc.cfg.001 | Left for RA specifications |  | |
 
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
