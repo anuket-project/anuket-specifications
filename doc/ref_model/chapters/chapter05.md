@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # 5 Feature set and Requirements from Infrastructure
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 Cloud Infrastructure Software Profile description.](#5.1)
