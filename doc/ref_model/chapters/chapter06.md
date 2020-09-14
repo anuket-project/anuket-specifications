@@ -163,14 +163,14 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 <a name="6.3.1"></a>
 ### 6.3.1. Hypervisor Hardware Interface
 
-Table 6-1 lists a number of NFVI and VIM interfaces, including the internal VI-Ha interface. The VI-Ha interface allows the hypervisor to control the physical infrastructure; the hypervisor acts under VIM control. The VIM issues all requests and responses using the NF-VI interface; requests and responses include commands, configuration requests, policies, updates, alerts, and response to infrastructure results. The hypervisor also provides information about the health of the physical infrastructure resources to the VM.  All these activities, on behalf of the VIM, are performed by the hypervisor using the VI-Ha interface. While no abstract APIs have yet been defined for this internal VI-Ha interface, ETSI GS NFV-INF 004 defines a set of requirements and details of the information that is required by the VIM from the physical infrastructure resources. Hypervisors utilize various programs to get this data including BIOS, IPMI, PCI, I/O Adapters/Drivers, etc.
+Table 6-1 lists a number of NFVI and VIM interfaces, including the internal VI-Ha interface. The VI-Ha interface allows the hypervisor to control the physical infrastructure; the hypervisor acts under VIM control. The VIM issues all requests and responses using the NF-VI interface; requests and responses include commands, configuration requests, policies, updates, alerts, and response to infrastructure results. The hypervisor also provides information about the health of the physical infrastructure resources to the VM.  All these activities, on behalf of the VIM, are performed by the hypervisor using the VI-Ha interface. While no abstract APIs have yet been defined for this internal VI-Ha interface, ETSI GS NFV-INF 004 [9] defines a set of requirements and details of the information that is required by the VIM from the physical infrastructure resources. Hypervisors utilize various programs to get this data including BIOS, IPMI, PCI, I/O Adapters/Drivers, etc.
 
 <a name="6.4"></a>
 ## 6.4. Enabler Services Interfaces
 An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming requests amongst a pool of designated resources.
 
 ## References
-Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004
-Network Functions Virtualisation (NFV); Acceleration Technologies; VNF Interfaces SpecificationETSI. GS NFV-IFA 002 v2.4.1
-Network Functions Virtualisation (NFV); Acceleration Technologies; Acceleration Resource Management Interface Specification; NFV IFA 019 v03101p
-Network Functions Virtualisation (NFV); Management and Orchestration; Or-Vi reference point - Interface and Information Model Specification; ETSI GS NFV-IFA 005 V3.2.1
+Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004 V1.1.1 [9]
+Network Functions Virtualisation (NFV); Acceleration Technologies; VNF Interfaces Specification ETSI GS NFV-IFA 002 V2.4.1 [7]
+Network Functions Virtualisation (NFV); Acceleration Technologies; Acceleration Resource Management Interface Specification; NFV IFA 019 V3.1.1 [8]
+Network Functions Virtualisation (NFV); Management and Orchestration; Or-Vi reference point - Interface and Information Model Specification; ETSI GS NFV-IFA 005 V3.2.1 [10]
