@@ -116,7 +116,7 @@ The agreed upon rules and recommendations to which a compliant workload or cloud
 * All requirements must be assigned a requirements ID and not be embedded in narrative text.  This is to ensure that readers do not have to infer if a requirement exists and is applicable
 * Requirements must have a unique ID for tracking and reference purposes
 * The requirement ID should include a prefix to delineate the source project
-* Requirements must state the level of compliance (ex: MUST, SHOULD, MAY) per [RFC 2119](https://tools.ietf.org/html/rfc2119)
+* Requirements must state the level of compliance (ex: MUST, SHOULD, MAY) per RFC 2119[2]
 * Mandatory requirements must be defined in such a way that they are unambiguously verifiable via automated testing
 * Requirements should be publishable or extractable into a machine readable format such as JSON
 * Requirements should include information about the impact of non-conformance and the rationale for their existence
@@ -159,7 +159,7 @@ In terms of the functional scope of the CNTT documentation, in order to target t
 - Functional interfaces between infrastructure and infrastructure management
 - Functional interfaces between workloads and workload management
 
-Due to the close alignment with [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf), those ETSI interfaces that are considered relevant (with notes where required) are included in the figure below.
+Due to the close alignment with ETSI GR NFV 002[3], those ETSI interfaces that are considered relevant (with notes where required) are included in the figure below.
 
 <p align="center"><img src="./figures/cntt-scope.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 2:</b> Functional Scope of CNTT</p>
@@ -208,7 +208,7 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 <a name="3.4.1"></a>
 ### Relationship to ETSI-NFV
 
-The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by [ETSI GS NFV 002](https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf).
+The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by ETSI GR NFV 002[3].
 
 <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
@@ -237,7 +237,7 @@ As can be seen from the above figure, roles and responsibilities are as follows:
 <a name="3.4.3"></a>
 ### Relationship to CNCF
 
->to be clarified while as relationship is being established.
+A close relationship between CNTT and CNCF is maintained around the contents development for RA-2, RI-2, and RC-2.
 
 <a name="3.4.4"></a>
 ### Relationship to Other communities
