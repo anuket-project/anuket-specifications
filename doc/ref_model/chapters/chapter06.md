@@ -173,4 +173,4 @@ An operational cloud needs a set of standard services to function. Services such
 Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004 V1.1.1 [9]
 Network Functions Virtualisation (NFV); Acceleration Technologies; VNF Interfaces Specification ETSI GS NFV-IFA 002 V2.4.1 [7]
 Network Functions Virtualisation (NFV); Acceleration Technologies; Acceleration Resource Management Interface Specification; NFV IFA 019 V3.1.1 [8]
-Network Functions Virtualisation (NFV); Management and Orchestration; Or-Vi reference point - Interface and Information Model Specification; ETSI GS NFV-IFA 005 V3.2.1 [10]
+Network Functions Virtualisation (NFV); Management and Orchestration; Or-Vi reference point - Interface and Information Model Specification; ETSI GS NFV-IFA 005 V3.1.1 [10]
