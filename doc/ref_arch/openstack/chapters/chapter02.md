@@ -379,15 +379,15 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------|--------------------|------------|
-| `req.int.api.01` | API | The Architecture **must** provide APIs to access to the authentication service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.1 "Keystone"](./chapter05.md#521-keystone) |
-| `req.int.api.02` | API | The Architecture **must** provide APIs to access to the image management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.2 "Glance"](./chapter05.md#522-glance) |
-| `req.int.api.03` | API | The Architecture **must** provide APIs to access to the block storage management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.3 "Cinder"](./chapter05.md#523-cinder) |
-| `req.int.api.04` | API | The Architecture **must** provide APIs to access to the object storage management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.4 "Swift"](./chapter05.md#524-swift) |
-| `req.int.api.05` | API | The Architecture **must** provide APIs to access to the network management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.5 "Neutron"](./chapter05.md#525-neutron) |
-| `req.int.api.06` | API | The Architecture **must** provide APIs to access to the compute resources management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.6 "Nova"](./chapter05.md#526-nova) |
+| `req.int.api.01` | API | The Architecture **must** provide APIs to access the authentication service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.1 "Keystone"](./chapter05.md#521-keystone) |
+| `req.int.api.02` | API | The Architecture **must** provide APIs to access the image management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.2 "Glance"](./chapter05.md#522-glance) |
+| `req.int.api.03` | API | The Architecture **must** provide APIs to access the block storage management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.3 "Cinder"](./chapter05.md#523-cinder) |
+| `req.int.api.04` | API | The Architecture **must** provide APIs to access the object storage management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.4 "Swift"](./chapter05.md#524-swift) |
+| `req.int.api.05` | API | The Architecture **must** provide APIs to access the network management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.5 "Neutron"](./chapter05.md#525-neutron) |
+| `req.int.api.06` | API | The Architecture **must** provide APIs to access the compute resources management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.6 "Nova"](./chapter05.md#526-nova) |
 | `req.int.api.07` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) |
 | `req.int.api.08` | API | The Architecture **must** provide APIs needed to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
-| `req.int.api.09` | API | The Architecture **must** provide APIs to access to the orchestration service. | [RA-1 5.2.8 "Heat"](./chapter05.md#528-heat) |
+| `req.int.api.09` | API | The Architecture **must** provide APIs to access the orchestration service. | [RA-1 5.2.8 "Heat"](./chapter05.md#528-heat) |
 | `req.int.api.10` | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services. | [RA-1 5.2 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#52-core-openstack-services-apis) |
 
 
@@ -460,23 +460,23 @@ The requirements listed in this section are optional, and are not required in or
 | `req.inf.ntw.08` | Network | The Cloud Infrastructure Network Fabric **should** embrace the concepts of open networking and disaggregation using commodity networking hardware and disaggregated Network Operating Systems. | |
 | `req.inf.ntw.09` | Network | The Cloud Infrastructure Network Fabric **should** embrace open-based standards and technologies. | |
 | `req.inf.ntw.11` | Network | The Cloud Infrastructure Network Fabric **should** be architected to provide a standardised, scalable, and repeatable deployment model across all applicable Cloud Infrastructure sites. | |
+| `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for Cloud Infrastructure internal networks. | |
+| `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). | [RA-1 3.2.6. "Acceleration"](./chapter03.md#326-acceleration) |
+| `req.inf.acc.02` | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). | ["OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
+| `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
+| `req.inf.img.01` | Image | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
 
 <!---
 Commented out until RM defines requirements for SDN
 | `req.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. | |
 | `req.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. | |
 | `req.inf.ntw.14` | Network | The SDN solution **should** be able to be centrally administrated and configured. | |
--->
-| `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for Cloud Infrastructure internal networks.| |
-|----|-------|---------------------|-------------|
-| `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). | [RA-1 3.2.6. "Acceleration"](./chapter03.md#326-acceleration) |
-| `req.inf.acc.02` | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). | ["OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
-| `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
-| `req.inf.img.01` | Image | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
-<!--
+--->
+
+<!---
 | `req.inf.stg.11` | Storage | The Architecture **should** support the Block storage capabilities specified in https://docs.openstack.org/api-ref/block-storage/. | [RA-1 5.2.3. "Cinder"](./chapter05.md#523-cinder) |
 | `req.inf.ntw.18` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](./chapter05.md#525-neutron) |
--->
+--->
 
 <p align="center"><b>Table 2-15:</b> Infrastructure Recommendations</p>
 
