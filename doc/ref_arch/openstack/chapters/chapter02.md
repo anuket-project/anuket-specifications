@@ -251,7 +251,6 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
 | sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
 | sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.007 | Workload | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. | [RA-1 6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity)  |
 
 
 
