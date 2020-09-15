@@ -106,9 +106,9 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
 | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | |
-| nn10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | |
+| n10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | |
 | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | |
-| nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | |
+| n50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | |
 | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | |2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | |
 
 
@@ -141,7 +141,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
-**(1)** [Workload Transition Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
+**(1)** [Workload Transition Guidelines](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
 
 <a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
@@ -161,7 +161,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 | |
 | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 | |
 | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
-| infra.hw.nac.cfg.002 | SmartNiC used to offload vSwitch functionality to hardware | Not required | Optional | |
+| infra.hw.nac.cfg.002 | SmartNIC used to offload vSwitch functionality to hardware | Not required | Optional | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
 <!--
@@ -246,11 +246,12 @@ These rows are removed and commented out as it's not clear what the requirement 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
 | sec.wl.001 | Workload | The Platform **must** support Workload placement policy. | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.002 | Workload | The Platform **must** support operational security | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.002 | Workload | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
 | sec.wl.003 | Workload | The Platform **must** support secure provisioning of Workloads. | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
 | sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
 | sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.007 | Workload | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. | [RA-1 6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity)  |
 
 
 
