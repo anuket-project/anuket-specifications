@@ -2,7 +2,7 @@
 [<< Back](../../kubernetes)
 
 # 2. Architecture Requirements
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 

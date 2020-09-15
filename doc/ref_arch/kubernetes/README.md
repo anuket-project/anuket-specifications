@@ -24,13 +24,14 @@ This is Kubernetes based Reference Architecture (RA-2)
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Still Developing Content |
-| Chapter 02 | Still Developing Content |
+| Chapter 01 | Dickering over the finer points |
+| Chapter 02 | Lots of SME feedback |
 | Chapter 03 | Still Developing Content |
 | Chapter 04 | Still Developing Content |
-| Chapter 05 | Still Developing Content |
-| Chapter 06 | Still Developing Content |
+| Chapter 05 | Lots of SME feedback |
+| Chapter 06 | Lots of SME feedback |
 | Appendix A - Guidance for VNF-to-CNF Transition | Initial Framework Only |
+| Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application Vendors | Still developing content |
 
 
 ## Table of Contents
