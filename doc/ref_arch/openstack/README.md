@@ -1,8 +1,8 @@
 [<< Back](https://cntt-n.github.io/CNTT/doc/ref_arch/)
 
-# Openstack based Reference Architecture
+# OpenStack based Reference Architecture
 
-This is Openstack based Reference Architecture (RA-1)
+This is OpenStack based Reference Architecture (RA-1)
 
 ## Release Information
 **Bundle: _3_**
