@@ -23,10 +23,10 @@ This is the Kubernetes-based Reference Implementation (RI-2)
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 - Overview                                         | Initial Framework Only |
+| Chapter 01 - Overview                                         | Dickering over the finer points |
 | Chapter 02 - Reference Implementation Requirements            | Initial Framework Only |
-| Chapter 03 - Requirements for Labs                            | Initial Framework Only |
-| Chapter 04 - Operational Runbook                              | Initial Framework Only |
+| Chapter 03 - Requirements for Labs                            | Lots of SME feedback |
+| Chapter 04 - Operational Runbook                              | Still developing content |
 | Chapter 05 - Gap Analysis & Development                       | Initial Framework Only |
 
 

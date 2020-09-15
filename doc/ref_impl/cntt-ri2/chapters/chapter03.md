@@ -1,7 +1,7 @@
 [<< Back](../)
 
 # 3. Requirements for Labs
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
@@ -62,7 +62,7 @@ The network fabric in the lab must support the following networks:
 
 The network topology should provide at least 2 networks with preallocated IP addressing schemes for the out-of-band management network and the Public network. The Public network must be able to reach / access the public Internet, preferably directly or via an enterprise proxy. IPv4 as well as IPv6 addresses must be available. At least 1 network interface must be capable of performing PXE boot and that network must be available to both the jump / test host and each physical or virtual server.
 
-The network fabric shall comprise redundant layer 2 connectivity between hosts. The switching hardware shall support VLANs for separating networks as well as supporting line speeds corresponding to the speeds of the NICs listed below. 
+The network fabric shall comprise redundant layer 2 connectivity between hosts. The switching hardware shall support VLANs for separating networks as well as supporting line speeds corresponding to the speeds of the NICs listed below.
 
 
 <a name="3.3"></a>
