@@ -36,7 +36,6 @@
 | Chapter 08 | Release ready |
 | Chapter 09 | Release ready |
 | Chapter 10 | Release ready |
-| Appendix A | Release ready |
 | Glossary | Release ready|
 
 ## Table of Contents
@@ -50,5 +49,4 @@
 * [Chapter 08 - Chapter reserved for future use](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
-* [Appendix A - Guidelines For Application Vendors](chapters/appendix-a.md)
 * [Glossary](../common/glossary.md)
