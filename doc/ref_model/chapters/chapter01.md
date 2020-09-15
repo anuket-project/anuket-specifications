@@ -33,8 +33,6 @@ The document starts from the abstract and as it progresses it increasingly gets 
   > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the applications.
 - **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
   > **Audience**: This chapter is written for a general technical audience with interest in this topic.
-- **Appendix A - Guidelines For Application Vendors**: More details related to how the applications will interface with the cloud infrastructure through APIs (including Cloud Infrastructure Manager and CaaS).
-  > **Audience**: This chapter is written for architects, developers and others who need to deploy infrastructure or develop applications.
 
 <a name="1.2"></a>
 ## 1.2 Scope
