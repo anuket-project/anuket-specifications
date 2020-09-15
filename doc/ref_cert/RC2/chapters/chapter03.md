@@ -154,11 +154,15 @@ weaknesses in Kubernetes clusters and
 whether Kubernetes is deployed securely by running the checks documented in the
 [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/).
 
-The following
+[kube-hunter](https://github.com/aquasecurity/kube-hunter) classifies all
+vulnerabilities as low, medium, and high. In context of this conformance suite,
+only the high vulnerabilities lead to a test case failure. Then all low and
+medium vulnerabilities are only printed for information.
+
+Here are the
 [vulnerability categories](https://github.com/aquasecurity/kube-hunter/blob/v0.3.1/kube_hunter/core/events/types.py)
 tagged as high by
-[kube-hunter](https://github.com/aquasecurity/kube-hunter) lead to a test case
-failure:
+[kube-hunter](https://github.com/aquasecurity/kube-hunter):
 - RemoteCodeExec
 - IdentityTheft
 - PrivilegeEscalation
