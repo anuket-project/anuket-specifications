@@ -341,7 +341,7 @@ The above examples of host networking configurations for the B1 and B4 flavor se
 | SMT  | BIOS | Enable | Enable | Enable |
 | NUMA | BIOS | Enable | Enable | Enable |
 | Huge Pages  | BIOS | Yes | Yes | Yes |
-| Flavor Series | NV | ND | ND |
+| Flavor Series | NV | ND | NS |
 <p align="center"><b>Table 4-4: Configuration of Network Intensive Flavor Capabilities</b></p>
 
 _Host Networking configuration for ND Flavor Series_
