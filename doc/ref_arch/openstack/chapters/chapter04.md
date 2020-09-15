@@ -92,7 +92,7 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 -	How many nodes to meet SLA
     - Minimum 2 nodes for high availibility using VRRP.
 -	HW specifications
-    - 3 NICs card are needed if we want to isolate the different flows :
+    - 3 NICs card are needed if we want to isolate the different flows:
          - 1 NIC for Tenant Network
          - 1 NIC for External Network
          - 1 NIC for Other Networks (PXE, Mngt ...)
@@ -269,11 +269,11 @@ Compute hosts have varying numbers of Ports/Bonds/LAGs/Trunks/VLANs connected wi
 
 Physical Connections/Cables are generally the same within a zone, regardless of these specific L2/L3/SR-IOV configurations for the compute
 
-**Compute Bond Port:**  TOR port maps vlans directly with IRBs on the TOR pair for tunnel packets and Control Plane Control and Storage packets.  These packets are then routed on the underlay network GRT. 
+**Compute Bond Port:**  TOR port maps VLANs directly with IRBs on the TOR pair for tunnel packets and Control Plane Control and Storage packets.  These packets are then routed on the underlay network GRT. 
 
 Server Flavors:  B1, B4, NV, ND
 
-**Compute SR-IOV Port:**  TOR port maps vlans with bridge domains that extend to IRBs, using VXLAN VNI.  The TOR port associates each packet’s outer vlan tag with a bridge domain to support VNF interface adjacencies over the local EVPN/MAC bridge domain.  This model also applies to direct physical connections with transport elements. 
+**Compute SR-IOV Port:**  TOR port maps VLANs with bridge domains that extend to IRBs, using VXLAN VNI.  The TOR port associates each packet’s outer VLAN tag with a bridge domain to support VNF interface adjacencies over the local EVPN/MAC bridge domain.  This model also applies to direct physical connections with transport elements. 
 
 Server Flavors:  NS
 
@@ -329,10 +329,10 @@ To ensure Tenant CPU isolation from the host services (Operating System (OS), hy
 |----|----|----|
 | isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants | isolcpus=1-19, 21-39, 41-59, 61-79 |
 
-_Host configuration for nv Flavor Series_
+_Host configuration for NV Flavor Series_
 
 
-The above examples of host networking configurations for the B1 and B4 flavor series are also suitable for the nv flavor series; however, the hypervisor and BIOS settings will be different (see table below) and hence there will be a need for different host profiles. Table 4-4 gives examples of three different host profiles; one each for nv, nd and ns flavor series.
+The above examples of host networking configurations for the B1 and B4 flavor series are also suitable for the NV flavor series; however, the hypervisor and BIOS settings will be different (see table below) and hence there will be a need for different host profiles. Table 4-4 gives examples of three different host profiles; one each for NV, ND and NS flavor series.
 
 |  | Configured in | Host profile: hp-nv-a | Host profile: hp-nd-a | Host profile: hp-ns-a |
 |----|----|----|----|----|
@@ -341,12 +341,12 @@ The above examples of host networking configurations for the B1 and B4 flavor se
 | SMT  | BIOS | Enable | Enable | Enable |
 | NUMA | BIOS | Enable | Enable | Enable |
 | Huge Pages  | BIOS | Yes | Yes | Yes |
-| Flavor Series | nv | nd | ns |
+| Flavor Series | NV | ND | NS |
 <p align="center"><b>Table 4-4: Configuration of Network Intensive Flavor Capabilities</b></p>
 
-_Host Networking configuration for nd Flavor Series_
+_Host Networking configuration for ND Flavor Series_
 
-An example of the data traffic configuration for the nd (OVS-DPDK) flavor series is shown in Figure 4-3. 
+An example of the data traffic configuration for the ND (OVS-DPDK) flavor series is shown in Figure 4-3. 
 
 <p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-DPDK.png" alt="Network Intensive Profile Host Configuration with DPDK acceleration "><b> Figure 4-3: Network Intensive Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
 
@@ -356,9 +356,9 @@ To ensure Tenant and DPDK CPU isolation from the host services (Operating System
 |----|----|----|
 | isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants and DPDK | isolcpus=3-19, 23-39, 43-59, 63-79 |
 
-_Host Networking configuration for ns Flavor Series_
+_Host Networking configuration for NS Flavor Series_
 
-An example of the data traffic configuration for the ns (SR-IOV) flavor series is shown in Figure 4-4.
+An example of the data traffic configuration for the NS (SR-IOV) flavor series is shown in Figure 4-4.
 
 <p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-SRIOV.png" alt=" Network Intensive Profile Host Configuration with SR-IOV "><b> Figure 4-4: Network Intensive Profile Host Configuration with SR-IOV (example and simplified).</b></p>
 
@@ -422,7 +422,7 @@ OpenStack Neutron is an extensible framework that allows incorporation through p
 
 CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
-Every Neutron plugin needs to implement a minimum set of common [methods (actions for Pike release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
+Every Neutron plugin needs to implement a minimum set of common [methods (actions for Train release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
 
 [Chapter 5](chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions](chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
 
@@ -434,17 +434,18 @@ With support of VNF workloads, the resources bottlenecks are not only the CPU an
 -	Nodes interfaces segmentation: Have separated NIC ports for Storage and Tenant networks. Actually, the storage traffic is bursty, and especially in case of service restoration after some failure or new service implementation, upgrades, etc. Control and management networks should rely on a separate interface from the interface used to handle tenant networks.
 -	Capacity planning: FW, physical links, switches, routers, NIC interfaces and DCGW dimensioning (+ load monitoring: each link within a LAG or a bond shouldn’t be loaded over 50% of its maximum capacity to guaranty service continuity in case of individual failure).
 -	Hardware choice: e.g. ToR/fabric switches, DCGW and NIC cards should have appropriate buffering and queuing capacity.
--	Network intensive compute node tuning (including OVS-DPDK)
+-	Network intensive compute node tuning (including OVS-DPDK).
 
-#### 4.2.3.6. Integration Interfaces.
-DHCP When the Neutron-DHCP agent is hosted in controller nodes, then VMs, on a Tenant network, that need to acquire an IPv4 and/or IPv6 address, the VLAN for the Tenant must be extended to the control plane servers so that the Neutron agent can receive the DHCP requests from the VM and send the response to the VM with the IPv4 and/or IPv6 addresses and the lease time. Please see OpenStack provider Network.
+#### 4.2.3.6. Integration Interfaces
+- DHCP 
+When the Neutron-DHCP agent is hosted in controller nodes, then for VMs, on a Tenant network, that need to acquire an IPv4 and/or IPv6 address, the VLAN for the Tenant must be extended to the control plane servers so that the Neutron agent can receive the DHCP requests from the VM and send the response to the VM with the IPv4 and/or IPv6 addresses and the lease time. Please see OpenStack provider Network.
 -	DNS
 -	LDAP
 -	IPAM
 
 <a name="4.2.4"></a>
 ### 4.2.4. Storage Backend
-Storage systems are available from multiple vendors and can also utilize commodity hardware from any number of open-source based storage packages (such as LVM, Ceph, NFS, etc.). The proprietary and open-source storage systems are supported in Cinder through specific plugin drivers. The OpenStack [Cinder documentation]( https://docs.openstack.org/cinder/latest/reference/support-matrix.html) specifies the minimum functionality that all storage drivers must support. The functions include:
+Storage systems are available from multiple vendors and can also utilize commodity hardware from any number of Open Source based storage packages (such as LVM, Ceph, NFS, etc.). The proprietary and open-source storage systems are supported in Cinder through specific plugin drivers. The OpenStack [Cinder documentation]( https://docs.openstack.org/cinder/latest/reference/support-matrix.html) specifies the minimum functionality that all storage drivers must support. The functions include:
 -	Volume: create, delete, attach, detach, extend, clone (volume from volume), migrate
 -	Snapshot: create, delete and create volume from snapshot
 -	Image: create from volume
@@ -456,6 +457,7 @@ The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configurati
 [Ceph](https://ceph.io/) is the default CNTT Reference Architecture storage backend and is discussed below.
 
 #### 4.2.4.1. Ceph Storage Cluster
+
 The Ceph storage cluster is deployed on bare metal hardware. The minimal configuration is a cluster of three bare metal servers to ensure High availability. The Ceph Storage cluster consists of the following components:
 -	CEPH-MON (Ceph Monitor)
 -	OSD (object storage daemon)
@@ -624,7 +626,7 @@ Placement has services running on the control node:
 #### 4.3.1.11 Barbican
 [Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
 
-Barbican usage provides a means to fulfill security requirements such as req.sec.zon.02 “The Architecture must support password encryption” and req.sec.zon.03 “The Architecture must support data, at-rest and in-flight, encryption”.
+Barbican usage provides a means to fulfill security requirements such as sec.sys.012 “The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component” and sec.ci.001 “The Platform **must** support Confidentiality and Integrity of data at rest and in transit.”.
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services 

@@ -4,5 +4,5 @@
 
 <a name="available-ra"></a>
 ## Available Reference Architectures
-* [Openstack Based](openstack)
+* [OpenStack Based](openstack)
 * [Kubernetes Based](kubernetes)
