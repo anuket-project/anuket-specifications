@@ -7,7 +7,10 @@
 * [1.1 Introduction.](#1.1)
 * [1.2 Terminology](#1.2)
 * [1.3 Principles](#1.3)
-  * [1.3.1 Cloud Native.](#1.3.1)
+  * [1.3.1 Cloud Native Principles](#1.3.1)
+  * [1.3.2 Exceptions](#132-exceptions)
+    * [1.3.2.1 Technology Exceptions](1321-technology-exceptions)
+    * [1.3.2.2 Requirements Exceptions](1322-requirements-exceptions)
 * [1.4 Scope](#1.4)
 * [1.5 Approach](#1.5)
 * [1.6 Roadmap](#1.6)
@@ -61,6 +64,27 @@ Individual contributors who are also active in the CNCF TUG (Telecom User Group)
 - **observable**
 - **robust automation**
 - **high-impact changes frequently and predictably**
+
+## 1.3.2 Exceptions
+CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatibilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-conformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)).
+
+The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
+
+#### 1.3.2.1 Technology Exceptions
+
+The list of Technology Exceptions will be updated or removed when alternative technologies aligned with CNTT principles develop and mature.
+
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra2.exc.tec.001 |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. For containerisation the downsides of creating dependencies on hardware is reduced as Kubernetes nodes are either physical, or if virtual have no need to "live migrate" as a VNF VM might.| |
+
+#### 1.3.2.2 Requirements Exceptions
+
+The Requirements Exceptions lists the Reference Model (RM) requirements and/or Reference Architecture (RA) requirements that will be either waived or be only partially implemented in this version of the RA.  The exception list will be updated to allow for a period of transitioning as and when requirements change.
+
+| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+|-----|------|-------------|-------------|-----------|-------------|
+| ra1.exc.req.001 |	Requirement |	xxx |	xxxxxxxxxxxxx. | | | |
 
 <a name="1.4"></a>
 ## 1.4 Scope
