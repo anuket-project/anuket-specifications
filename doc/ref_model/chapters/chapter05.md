@@ -229,7 +229,9 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 | infra.net.cfg.006 | Traffic patterns symmetry | Yes/No            | Y                              | Y                 |
 
 <p align="center"><b>Table 5-12:</b> Virtual Networking features and configuration for the 2 types of SW profiles.</p>
+
 > **Note:** * might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
+
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -375,7 +377,7 @@ The configurations specified in here will be used in specifying the actual hardw
 
 <p align="center"><b>Table 5-16:</b> Storage configuration specification.</p>
 
-> **Note:** *This specified local storage configurations including # and capacity of storage drives._
+> **Note:** *This specified local storage configurations including # and capacity of storage drives.
 
 <a name="5.4.3"></a>
 ### 5.4.3 Network Resources
