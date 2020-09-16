@@ -27,8 +27,6 @@ The continuous challenge is finalizing a stable version from which all stakehold
 <a name="10.3"></a>
 ## 10.3 Gaps 
 
-Gaps
-
 This section addresses major open issues identified in the development of the Reference Model, Reference Architecture, Reference Implementation of the Common Cloud Infrastructure Lifecycle Framework. 
 
 <a name="10.3.1"></a>
