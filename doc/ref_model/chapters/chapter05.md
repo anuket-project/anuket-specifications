@@ -121,14 +121,14 @@ This section details the services that may be made available to workloads by the
 |-------------------|----------------|--------|--------------------------------------------|
 | infra.svc.stg.001 | Object Storage | Yes/No | Object Storage Service (e.g S3-compatible) |
 
-<p align="center"><b>Table 5-7:</b>Cloud Infrastructure Platform services.</p>
+<p align="center"><b>Table 5-7:</b> Cloud Infrastructure Platform services.</p>
 
 | Minimum requirements | Example                                    |
 |----------------------|--------------------------------------------|
 |Database as a service | Cassandra                                  |
 |Queue                 | Rabbit MQ                                  |
 |LB and HA Proxy       |                                            |
-<p align="center"><b>Table 5-7a:</b>Service examples.</p>
+<p align="center"><b>Table 5-7a:</b> Service examples.</p>
 
 <a name="5.2"></a>
 ## 5.2 Cloud Infrastructure Software Profiles features and requirements
@@ -157,7 +157,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 -->
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
 
-Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking, certification, and deployment.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to these workloads.
+> **Note:** Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking, certification, and deployment.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to these workloads.
 
 **Table 5-9** will gather virtual compute acceleration features. It will be filled over time.
 
@@ -229,7 +229,7 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 | infra.net.cfg.006 | Traffic patterns symmetry | Yes/No            | Y                              | Y                 |
 
 <p align="center"><b>Table 5-12:</b> Virtual Networking features and configuration for the 2 types of SW profiles.</p>
->_* might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption)._
+> **Note:** * might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
@@ -259,7 +259,8 @@ This chapter defines a simplified host, host profile and related capabilities mo
 <p align="center"><b>Figure 5-4:</b> Cloud Infrastructure Hardware Profiles and host associated capabilities.</p>
 
 The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be used in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on Cloud Infrastructure resources.
->Please note that in this chapter we shall not list all of the EPA-related configuration parameters.
+
+> **Note:** In this chapter we shall not list all of the EPA-related configuration parameters.
 
 A software profile (see **Chapter 4**, **5.1 and 5.2**) defines the characteristics of Cloud Infrastructure SW of which Virtual Machines or Containers will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles.
 
@@ -267,15 +268,16 @@ The following naming convention is used in this document:
 
 `<host profile name>:: <”hp”><numeral host profile sequence #>`
 
-When a software profile is associated with a host profile,  a qualified name can be used as specified below. _**For Example:** for software profile “n” (network intensive) the above host profile name would be “n-hp1”_.
-
+When a software profile is associated with a host profile,  a qualified name can be used as specified below.
 `<qualified host profile>:: <software profile><”-“><”hp”><numeral host profile sequence #>`
+_**For Example:** for software profile “n” (network intensive) the above host profile name would be “n-hp1”_.
 
 <p align="center"><img src="../figures/Chapter-6-HW-SW-Profile-Diagram_v2.png" alt="HW-Profile-SW-Flavour" Title="HW Profile and SW Profile relationship" width="85%"/></p>
 <p align="center"><b>Figure 5-5:</b> Generic Hardware Profile, Software Flavour, Physical server relationship.</p>
 
+
 **Figure 5-5** shows a simplistic depiction of the relationship between Hardware profile, Software Profile, Physical server, and virtual compute. In the diagram the resource pool, a logical construct, depicts all physical hosts that have been configured as per a given host profile; there is one resource pool for each hardware profile.
->_Please note resource pools are not OpenStack host aggregates._
+> **Note:** resource pools are not OpenStack host aggregates.
 
 The host profile and capabilities include:
 1. **# of CPUs (sockets)**: is the #of CPUs installed on the physical server.
@@ -373,7 +375,7 @@ The configurations specified in here will be used in specifying the actual hardw
 
 <p align="center"><b>Table 5-16:</b> Storage configuration specification.</p>
 
-> _*This specified local storage configurations including # and capacity of storage drives._
+> **Note:** *This specified local storage configurations including # and capacity of storage drives._
 
 <a name="5.4.3"></a>
 ### 5.4.3 Network Resources
