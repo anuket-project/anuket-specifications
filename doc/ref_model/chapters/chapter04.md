@@ -526,9 +526,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 <p align="center"><b>Table 4-17:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
 
 <a name="4.2.6"></a>
-### 4.2.6 TBD
+### 4.2.6 Void
 
-_**Comment:** For future use_
+_**Note:** Reserved for future use_
 
 <a name="4.2.7"></a>
 ### 4.2.7 One stop shop
@@ -564,7 +564,7 @@ Cloud Infrastructure profiles that are available in CNTT release N deployment ca
     * existing profiles from earlier releases that are incorporated for backward compatibility reasons in release N
  2. Cloud infrastructure profiles from releases N-1 and N-2 that are deployed only because of backwards compatibility, these profiles are not part of CNTT release N definition.
 
-**Notice:** a profile defined in previous releases that is modified in release N is considered to be a new profile
+**Note:** a profile defined in previous releases that is modified in release N is considered to be a new profile
 
 Different profile categories described above are presented in Figure 4-5. In this example profiles that are part of CNTT release N consist of two new profiles (yellow), one profile that is originally defined in release N-1 (green) and one defined in release N-2 (blue). Profiles that were defined in earlier releases but are also supported in release N will be referred to by several names. Existing workloads continue using the profile names from previous releases. New workloads will use release N naming.
 
@@ -587,7 +587,7 @@ Flavours are unique only when combined with a profile. For example, CNTT release
 <a name="4.2.7.3"></a>
 ### 4.2.7.3 Forward compatibility
 
-CNTT provides a framework for exceptions described in [9.4.3 Transition Framework](../../gov/chapters/chapter09.md#9.4.3). Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
+Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT. 
 
 
 <a name="4.3"></a>
