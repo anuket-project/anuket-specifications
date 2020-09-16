@@ -177,7 +177,7 @@ solution to ensure that the platforms meet Network Functions Virtualization
 requirements.
 
 Functest CNF offers 2 test cases which automatically onboard and test
-[Clearwater IMS](https://github.com/Metaswitch/clearwater-docker) respectively
+[Clearwater IMS](https://github.com/Metaswitch/clearwater-docker) 
 via kubecltl and Helm. It's worth mentioning that this CNF is covered by the
 upstream tests (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)).
