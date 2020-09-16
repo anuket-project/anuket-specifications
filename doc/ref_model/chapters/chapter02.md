@@ -213,9 +213,8 @@ vRAN is one of the trending technologies of RAN deployment that fits for all Rad
                 
        -  The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
         
-       -  Following Split Option 7.2, The average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds. 
-        https://static1.squarespace.com/static/5ad774cce74940d7115044b0/t/5db36ffa820b8d29022b6d08/1572040705841/ORAN-WG4.IOT.0-v01.00.pdf
-            
+       -  Following Split Option 7.2, The average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13]. 
+                   
     
 
 <a name="2.3"></a>
