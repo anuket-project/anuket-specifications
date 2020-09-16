@@ -83,6 +83,7 @@ A virtual compute resource is created as per the flavour template (specifies the
 | Tenant          | +      | +    |        | +      | +      | Create/delete only by Cloud Zone administrators                                                             |
 | Virtual compute | +      | +    |        | +      | +      | Create/delete by VDC users with appropriate role.  Additional operations would include suspend/unsuspend    |
 | Virtual network | +      | +    | +      | +      | +      | Create/delete by VDC users with appropriate role                                                            |
+
 <p align="center"><b>Table 6-2:</b> API types for a minimal set of resources.</p>
 
 **Table 6-2** specifies a minimal set of operations for a minimal set of resources that are needed to orchestrate workloads. The actual APIs for the listed operations will be specified in the Reference Architectures; each listed operation could have a number of associated APIs with a different set of parameters. For example, create virtual resource using an image or a device.
@@ -91,14 +92,14 @@ A virtual compute resource is created as per the flavour template (specifies the
 ### 6.2.2 Hardware Acceleration Interfaces
 
 **Acceleration Interface Specifications**
-ETSI GS NFV-IFA 002 [3] defines a technology and implementation independent virtual accelerator, the accelerator interface requirements and specifications that would allow a workload to leverage a Virtual Accelerator. The virtual accelerator is modeled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 [3] specifies the architectural model in Chapter 4 and the abstract interfaces for management, configuration, monitoring, and Data exchange in Chapter 7.
+ETSI GS NFV-IFA 002 [7] defines a technology and implementation independent virtual accelerator, the accelerator interface requirements and specifications that would allow a workload to leverage a Virtual Accelerator. The virtual accelerator is modeled on extensible para-virtualised devices (EDP). ETSI GS NFV-IFA 002 [7] specifies the architectural model in Chapter 4 and the abstract interfaces for management, configuration, monitoring, and Data exchange in Chapter 7.
 
 ETSI NFV-IFA 019 3.1.1 [8] has defined a set of technology independent interfaces for acceleration resource life cycle management. These operations allow: allocation, release, and querying of acceleration resource, get and reset statistics, subscribe/unsubscribe (terminate) to fault notifications, notify (only used by NFVI), and get alarm information.
 
 These acceleration interfaces are summarized here in Table 6.3 only for convenience.
 
 <table>
-<tr><th>  **Request** </th> <th>  **Response** </th> <th>  **From, To** </th> <th>  **Type** </th> <th>  **Parameter**  </th> <th>  **Description** </th></tr>
+<tr><th>  Request </th> <th> Response </th> <th> From, To </th> <th> Type </th> <th>  Parameter  </th> <th> Description </th></tr>
 <tr><td rowspan="3"> InitAccRequest </td><td rowspan="3"> InitAccResponse </td><td rowspan="3"> VNF → NFVI </td> <td>  Input </td> <td>  accFilter </td> <td>  the accelartor sub-system(s) to initialize and retrieve their capabilities. </td></tr>
 <tr><td> Filter </td><td> accAttributeSelector </td><td> attribute names of accelerator capabilities  </td></tr>
 <tr><td> Output </td><td> accCapabilities </td><td> acceleration sub-system capabilities  </td></tr>
