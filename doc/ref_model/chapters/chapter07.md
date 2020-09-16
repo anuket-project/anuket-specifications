@@ -42,7 +42,7 @@
 <a name="7.1"></a>
 ## 7.1 Introduction
 
-Security vulnerabilities and attack vectors are everywhere.  The telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world. The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
+Security vulnerabilities and attack vectors are everywhere.  The Telecom industry and its cloud infrastructures are even more vulnerable to potential attacks due to the ubiquitous nature of the infrastructures and services combined with the vital role Telecommunications play in the modern world. The attack vectors are many and varied, ranging from the potential for exposure of sensitive data, both personal and corporate, to weaponized disruption to the global telecommunications networks.  The threats can take the form of a physical attack on the locations the infrastructure hardware is housed, to network attacks such as denial of service and targeted corruption of the network service applications themselves.  Whatever the source, any Cloud Infrastructure built needs to be able to withstand attacks in whatever form they take.
 
 This chapter examines multiple aspects of security as it relates to Cloud Infrastructure and security aspects for workloads. After discussing security attack vectors, this chapter delves into security requirements. Regarding security requirements and best practices, specifications and documents are published by standards organizations. A selection of standards of interest for Cloud Infrastructure security is listed in a dedicated section. The chapter culminates with a consolidated set of “must” requirements and desired (should) recommendations; it is suggested that operators carefully evaluate the recommendations for possible implementation.
 
@@ -68,7 +68,7 @@ The following diagram shows the different security domains that impact the Refer
 <p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
 <p align="center"><b>Figure 7-1:</b> Reference Model Security Domains</p>
 
-Note: "Platform" refers to the cloud Infrastructure with all its hardware and software components.
+Note: "Platform" refers to the Cloud Infrastructure with all its hardware and software components.
 
 <a name="7.3.2.1"></a>
 #### 7.3.2.1 Platform security requirements
@@ -118,7 +118,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
 * **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific workloads to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
-* **TENANT ACCESS CONTROLS** - Provides apropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as approriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
+* **TENANT ACCESS CONTROLS** - Provides appropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as approriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
 
 <a name="7.4.1.2"></a>
 #### 7.4.1.2 The following general security requirements apply to the Cloud Infrastructure
@@ -133,7 +133,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
 * All host to host communications within the cloud provider network are to be cryptographically protected in transit.
 * Use cryptographically-protected protocols for administrative access to the platform.
-* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS.
+* Data Centre Operations staff and systems must use management protocols that limit security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog, and TLS v1.2 or higher.
 * Processes for managing platform access control filters must be documented, followed, and monitored.
 * Role-Based Access Control (RBAC) must apply for all platform systems access.
 * All APIs access must use TLS protocol, including back-end APIs.
@@ -157,7 +157,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * A process to check change management adherence that is implemented, and rigourously followed.
 * An approved system or process for last resort access must exist for the platform.
 * Where there are multiple hosting facilities used in the provisioning of a service, network communications between the facilities for the purpose of backup, management, and workload communications are cryptographically protected in transit between data centre facilities.
-* Continuous cloud security compliance is mandatory.
+* Continuous Cloud security compliance is mandatory.
 * An incident response plan must exist for the platform.
 
 <a name="7.4.2"></a>
@@ -178,53 +178,53 @@ The platform supports the workload, and in effect controls access to the workloa
 <a name="7.5.1"></a>
 ### 7.5.1 Software Hardening
 
-* No hard-coded credentials or clear text passwords. Software should support configurable, or industry standard, password complexity rules
-* Software should be independent of the infrastructure platform (no OS point release dependencies to patch)
-* Software is code signed and all individual sub-components are assessed and verified for EULA violations
-* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc)
-* Software should support recognized encryption standards and encryption should be decoupled from software
-* Software should have support for configurable banners to display authorized use criteria/policy
+* No hard-coded credentials or clear text passwords. Software should support configurable, or industry standard, password complexity rules.
+* Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
+* Software is code signed and all individual sub-components are assessed and verified for EULA violations.
+* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc).
+* Software should support recognized encryption standards and encryption should be decoupled from software.
+* Software should have support for configurable banners to display authorized use criteria/policy.
 
 
 <a name="7.5.2"></a>
 ### 7.5.2 Port Protection
 
-* Unused software and unused network ports should be disabled by default
+* Unused software and unused network ports should be disabled by default.
 
 <a name="7.5.3"></a>
 ### 7.5.3 Software Code Quality and Security
 
 * Vendors should use industry recognized software testing suites
-  * Static and dynamic scanning
+  * Static and dynamic scanning.
   * Automated static code review with remediation of Medium/High/Critical security issues. The tool used for static code analysis and analysis of code being released must be shared.
-  * Dynamic security tests with remediation of Medium/High/Critical security issues. The tool used for Dynamic security analysis of code being released must be shared
+  * Dynamic security tests with remediation of Medium/High/Critical security issues. The tool used for Dynamic security analysis of code being released must be shared.
   * Penetration tests (pen tests) with remediation of Medium/High/Critical security issues.
   * Methodology for ensuring security is included in the Agile/DevOps delivery lifecycle for ongoing feature enhancement/maintenance.
 
 <a name="7.5.4"></a>
 ### 7.5.4 Alerting and monitoring
 
-* Security event logging: all security events should be logged, including informational
-* Privilege escalation must be detected
+* Security event logging: all security events must be logged, including informational.
+* Privilege escalation must be detected.
 
   <a name="7.5.5"></a>
 ### 7.5.5 Logging
 
-* Logging output should support customizable Log retention and Log rotation
+* Logging output should support customizable Log retention and Log rotation.
 
   <a name="7.5.6"></a>
 ### 7.5.6 VNF images
 
-* Image integrity – fingerprinting/validation
+* Image integrity – fingerprinting/validation.
 * Container Images
-  * Container Management
-  * Immutability
+  * Container Management.
+  * Immutability.
 
 <a name="7.5.7"></a>
 ### 7.5.7 Vulnerability Management
 
-* Security defect must be reported
-* Cadence should aligned with Cloud Infrastructure vendors (OSSA for OpenStack)
+* Security defect must be reported.
+* Cadence should aligned with Cloud Infrastructure vendors (OSSA for OpenStack).
 * Components should be analysed: mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
 
 <a name="7.6"></a>
@@ -232,16 +232,16 @@ The platform supports the workload, and in effect controls access to the workloa
 
 The Operator’s responsibility is to not only make sure that security is included in all the vendor supplied infrastructure and NFV components, but it is also responsible for the maintenance of the security functions from an operational and management perspective. This includes but is not limited to securing the following elements:
 
-* Maintaining standard security operational management methods and processes
-* Monitoring and reporting functions
-* Processes to address regulatory compliance failure
-* Support for appropriate incident response and reporting
-* Methods to support appropriate remote attestation certification of the validity of the security components, architectures, and methodologies used
+* Maintaining standard security operational management methods and processes.
+* Monitoring and reporting functions.
+* Processes to address regulatory compliance failure.
+* Support for appropriate incident response and reporting.
+* Methods to support appropriate remote attestation certification of the validity of the security components, architectures, and methodologies used.
 
 <a name="7.6.1"></a>
 ### 7.6.1 Remote Attestation/openCIT
 
-Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the open cloud integrity tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the cloud infrastructure and enables compliance in cloud datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
+Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the Open Cloud Integrity Tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the Cloud Infrastructure and enables compliance in Cloud Datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
 
 <a name="7.6.2"></a>
 ### 7.6.2 Workload Image Scanning / Signing
@@ -255,7 +255,7 @@ Use of Image scanners such as OpenSCAP to determine security vulnerabilities is 
 
 Network segmentation is important to ensure that applications can only communicate with the applications they are supposed to. To prevent a workload from impacting other workloads or hosts, it is a good practice to separate workoad traffic and management traffic. This will prevent attacks by VMs or containers breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, workloads of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
 
-Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFVI infrastructure.
+Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFV Infrastructure.
 
 <a name="7.6.4"></a>
 ### 7.6.4 Volume Encryption
@@ -272,13 +272,13 @@ The sections that follow define mechanisms to ensure the integrity of the infras
 
 -  Unified Extensible Firmware Interface (UEFI) adheres to standards defined by an industry consortium. Vendors (hardware, software) and solution providers collaborate to define common interfaces, protocols and  structures for computing  platforms.
 
--  Platform Configuration Register (PCR) is a memory location in the TPM used to store TPM Measurements (hash values generated by the SHA-1 standard hashing algorithm). PCRs are cleared only on TPM reset. UEFI dfines 24 PCRs of which the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
+-  Platform Configuration Register (PCR) is a memory location in the TPM used to store TPM Measurements (hash values generated by the SHA-1 standard hashing algorithm). PCRs are cleared only on TPM reset. UEFI defines 24 PCRs of which the first 16, PCR 0 - PCR 15, are used to store measures created during the UEFI boot process.
 
 -  Root of Trust for Measurement (RTM) is a computing engine capable of making integrity measurements.
 
 -  Core Root of Trust for Measurements (CRTM) is a set of instructions executed when performing RTM.
 
--  Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section [7.6.1 Remote Attestation/openCIT](#7.6.1) 
+-  Platform Attestation provides proof of validity of the platform’s integrity measurements. Please see Section [7.6.1 Remote Attestation/openCIT](#7.6.1).
 
 Values stored in a PCR cannot be reset (or forged) as they can only be extended. Whenever a measurement is sent to a TPM, the hash of the concatenation of the current value of the PCR and the new measurement is stored in the PCR. The PCR values are used to encrypt data.  If the proper environment is not loaded which will result in different PCR values, the TPM will be unable to decrypt the data.  
  
@@ -291,10 +291,10 @@ Using a Trusted Platform Module (TPM), as a hardware root of trust, measurements
 Cloud Infrastructure operators should ensure that the TPM support is enabled in the platform firmware, so that platform measurements are correctly recorded during boot time.
 
 A simple process would work as follows;
-1. The BIOS CRTM (Bios Boot Block) is executed by the CPU and used to measure the BIOS firmware
-1. The SHA1 hash of the result of the measurement is sent to the TPM
-1. The TPM stores this new result hash by extending the currently stored value
-1. The has comparisons can validate settings as well as the integrity of the modules
+1. The BIOS CRTM (Bios Boot Block) is executed by the CPU and used to measure the BIOS firmware.
+1. The SHA1 hash of the result of the measurement is sent to the TPM.
+1. The TPM stores this new result hash by extending the currently stored value.
+1. The hash comparisons can validate settings as well as the integrity of the modules.
 
 Cloud Infrastructure operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
 
@@ -313,7 +313,7 @@ This allows the attestation server to detect any tampering with the static files
 <a name="7.7"></a>
 ## 7.7 Common security standards
 
-The Cloud Infrastructure reference model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
+The Cloud Infrastructure Reference Model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
 Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
 
 * Center for Internet Security - https://www.cisecurity.org/
@@ -332,9 +332,9 @@ Standards organizations with recommendations and best practices, and certificati
 
 A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP – Open Web Application Security Project.  These include the following core principles:
 
-* Confidentiality – Only allow access to data for which the user is permitted
-* Integrity – Ensure data is not tampered with or altered by unauthorized users
-* Availability – ensure systems and data are available to authorized users when they need it
+* Confidentiality – Only allow access to data for which the user is permitted.
+* Integrity – Ensure data is not tampered with or altered by unauthorized users.
+* Availability – ensure systems and data are available to authorized users when they need it.
 
 Additional Cloud Infrastructure security principles that need to be incorporated:
 * Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
@@ -373,13 +373,13 @@ Insuring that the security standards and best practices are incorporated into th
 
 Security certification should encompass the following elements:
 
-* Security test cases executed and test case results
-* Industry standard compliance achieved (NIST, ISO, PCI, FedRAMP Moderate etc.)
+* Security test cases executed and test case results.
+* Industry standard compliance achieved (NIST, ISO, PCI, FedRAMP Moderate etc.).
 * Output and analysis from automated static code review, dynamic tests, and penetration tests with remediation of Medium/High/Critical security issues. Tools used for security testing of software being released must be shared.
 * Details on un-remediated low severity security issues must be shared.
 * Threat models performed during design phase. Including remediation summary to mitigate threats identified.
 * Details on un-remediated low severity security issues.
-* Any additional Security and Privacy requirements implemented in the software deliverable beyond the default rules used security analysis tools
+* Any additional Security and Privacy requirements implemented in the software deliverable beyond the default rules used security analysis tools.
 * Resiliency tests run (such as hardware failures or power failure tests)
 
 <a name="7.9"></a>
@@ -391,7 +391,7 @@ Security certification should encompass the following elements:
 |  Ref | Requirement  | Definition/Note  |
 |-------|------|-------|
 | req.sec.gen.001 | The Platform **must** maintain the specified configuration. |  |
-| req.sec.gen.002 | All systems part of Cloud Infrastructure **must** support password hardening as defined in [CIS Password Policy Guide]https://www.cisecurity.org/white-papers/cis-password-policy-guide/. | Hardening: CIS Password Policy Guide |
+| req.sec.gen.002 | All systems part of Cloud Infrastructure **must** support password hardening as defined in [CIS Password Policy Guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide). | Hardening: CIS Password Policy Guide |
 | req.sec.gen.003 | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot. |  |
 | req.sec.gen.004 | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or disabling unnecessary services, applications and network protocols, configuring operating system user authentication, configuring resource controls, installing and configuring additional security controls where needed, and testing the security of the Operating System. | NIST SP 800-123 |
 | req.sec.gen.005 | The Platform **must** support Operating System level access control. |   |
@@ -399,7 +399,7 @@ Security certification should encompass the following elements:
 | req.sec.gen.007 | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service. | |
 | req.sec.gen.008 | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. |  |
 | req.sec.gen.009 | The Platform **must** support Software integrity protection and verification. | |
-| req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. [Controlled Access Based on the Need to Know]https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/ |   |
+| req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. [Controlled Access Based on the Need to Know](https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know). |   |
 | req.sec.gen.011 | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). | |
 | req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | It is mandatory for a Cloud Infrastructure Operator, but this requirement’s verification goes beyond CNTT testing scope |
 | req.sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  |
@@ -409,8 +409,8 @@ Security certification should encompass the following elements:
 <a name="7.9.2"></a>
 ###  7.9.2. Platform and Access
 
-| Ref  | Requirement | Definition/Note |
-|-------|-------|---------|
+|  Ref | Requirement  | Definition/Note  |
+|-------|------|-------|
 | req.sec.sys.001 | The Platform **must** support authenticated and secure APIs, API endpoints. | |
 | | The Platform **must** implement authenticated and secure access to GUI. | |
 | req.sec.sys.002 | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall). | |
@@ -419,11 +419,11 @@ Security certification should encompass the following elements:
 | req.sec.sys.005 | The Cloud Infrastructure **must** segregate the underlay and overlay networks. | |
 | req.sec.sys.006 | The Cloud Infrastructure must be able to utilize the Cloud Infrastructure Manager identity lifecycle management capabilities. | |
 | req.sec.sys.007 | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control). | |
-| req.sec.sys.008 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. | Communication between different trust domains is not allowed, by default  |
-| req.sec.sys.009 | The Platform **must** support creation of Trust Relationships between trust domains. | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted” |
+| req.sec.sys.008 | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. | Communication between different trust domains is not allowed, by default.  |
+| req.sec.sys.009 | The Platform **must** support creation of Trust Relationships between trust domains. | These maybe uni-directional relationships where the trusting domain trusts anther domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. |
 | req.sec.sys.010 | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly. | |
 | req.sec.sys.011 | The Platform **must not** reuse the same authentication credential (e.g., key-pair) on different Platform components (e.g., on different hosts, or different services). | |
-| req.sec.sys.012 | The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected secrets externally from the component | (e.g., in OpenStack Barbican). |
+| req.sec.sys.012 | The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected secrets externally from the component. | (e.g., in OpenStack Barbican). |
 | req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed. | |
 | req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
 
@@ -432,13 +432,13 @@ Security certification should encompass the following elements:
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.ci.001 | The Platform **must** support Confidentiality and Integrity of data at rest and in-transit. | |
+| req.sec.ci.001 | The Platform **must** support Confidentiality and Integrity of data at rest and in transit. | |
 | req.sec.ci.002 | The Platform **should** support self-encrypting storage devices. | |
 | req.sec.ci.003 | The Platform **must** support Confidentiality and Integrity of data related metadata. | |
 | req.sec.ci.004 | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). | |
 | req.sec.ci.005 | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). | |
 | req.sec.ci.006 | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). | |
-| req.sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. | Admin access must be carefully regulated |
+| req.sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. | Admin access must be carefully regulated. |
 | req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation. | |
 
 <a name="7.9.4"></a>
@@ -450,7 +450,7 @@ Security certification should encompass the following elements:
 | req.sec.wl.002 | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). | |
 | req.sec.wl.003 | The Platform **must** support secure provisioning of workloads.  | |
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements). | |
-| req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
+| req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope. |
 | req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.). | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
@@ -473,10 +473,10 @@ Security certification should encompass the following elements:
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data |
+| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data. |
 | req.sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | |
 | req.sec.lcm.003 | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | |
-| req.sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes. | Templated approved changes for automation where available |
+| req.sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes. | Templated approved changes for automation where available. |
 | req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly monitored for anomalous behavior. |  |
 | req.sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests. | |
 | req.sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information. |  |
@@ -492,42 +492,41 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.mon.001 | Platform must provide logs and these logs must be regularly monitored for events of interest. | |
-| req.sec.mon.002 | Security logs must be time synchronised. |  |
-| req.sec.mon.003 | The Platform must log all changes to time server source, time, date and time zones. |  |
-| req.sec.mon.004 | The Platform must secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
-| req.sec.mon.005 | The Platform must Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly. | |
-| req.sec.mon.006 | The Platform must Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. |  |
-| req.sec.mon.007 | The Platform must Monitor and Audit security parameter configurations for compliance with defined security policies. | |
-| req.sec.mon.008 | The Platform must Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures. | |
-| req.sec.mon.009 | The Platform must Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | |
-| req.sec.mon.010 | The Platform must Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. |  |
-| req.sec.mon.011 | The Platform must Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | |
-| req.sec.mon.012 | The Platform must Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
-| req.sec.mon.013 | The monitoring system must not affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
-| req.sec.mon.014 | The Monitoring systems should not impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
-| req.sec.mon.015 | The Platform must ensure that the Monitoring systems are never starved of resources. |  |
-| req.sec.mon.016 | The Platform Monitoring components should follow security best practices for auditing, including secure logging and tracing. | |
-| req.sec.lcm.017 | The Platform must Audit systems for any missing security patches and take appropriate actions. |  |
+| req.sec.mon.001 | Platform **must** provide logs and these logs must be regularly monitored for events of interest. | |
+| req.sec.mon.002 | Security logs **must** be time synchronised. |  |
+| req.sec.mon.003 | The Platform **must** log all changes to time server source, time, date and time zones. |  |
+| req.sec.mon.004 | The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
+| req.sec.mon.005 | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly. | |
+| req.sec.mon.006 | The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. |  |
+| req.sec.mon.007 | The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies. | |
+| req.sec.mon.008 | The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures. | |
+| req.sec.mon.009 | The Platform **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | |
+| req.sec.mon.010 | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. |  |
+| req.sec.mon.011 | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | |
+| req.sec.mon.012 | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
+| req.sec.mon.013 | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
+| req.sec.mon.014 | The Monitoring systems **should not** impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
+| req.sec.mon.015 | The Platform **must** ensure that the Monitoring systems are never starved of resources. |  |
+| req.sec.mon.016 | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
+| req.sec.lcm.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
 
 <a name="7.9.8"></a>
 ### 7.9.8. Compliance with Standards
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.std.001 | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)) | Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) |
-| | [Q: Are we going to verify compliance w Controls? If not, then why a “must” – but making it a “should” implies only guidance and not a control.] |  |
-| req.sec.std.002 | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/)  | Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |
-| req.sec.std.003 | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries  | Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) |
-| req.sec.std.004 | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |
-| req.sec.std.005 | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  |
-| <Testing> | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
-| req.sec.std.013 | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en | ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) |
-| req.sec.std.014 | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | |
-| req.sec.std.015 | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en | ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity |
-| req.sec.std.016 | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management | ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management |
-| req.sec.std.017 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity |
-| req.sec.std.018 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16) | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16 |
+| req.sec.std.001 | The Cloud Operator **should** comply with Center for Internet Security CIS Controls. | Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) |
+| req.sec.std.002 | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version). | Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |
+| req.sec.std.003 | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries. | Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) |
+| req.sec.std.004 | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/). |  |
+| req.sec.std.005 | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/. |  |
+| req.sec.std.006 | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document. |  |
+| req.sec.std.007 | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en .| ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs). |
+| req.sec.std.008 | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en .| |
+| req.sec.std.009 | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en .| ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity. |
+| req.sec.std.010 | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management. | ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. |
+| req.sec.std.011 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. |  |
+| req.sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. |
 
 <a name="7.9.9"></a>
 ### 7.9.9. References
