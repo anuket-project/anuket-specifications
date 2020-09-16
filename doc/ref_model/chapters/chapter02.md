@@ -210,7 +210,7 @@ vRAN is one of the trending technologies of RAN deployment that fits for all Rad
   
   - **Architecture**
      <p align="center"><img src="../figures/Fig 4-4 use case 4.png" alt="" Title="Edge vRAN Deployments" width="65%"/></p> 
-     <p align="center"><b>Figure 4-4:</b>  EEdge vRAN Deployments.</p>
+     <p align="center"><b>Figure 4-4:</b>  Edge vRAN Deployments.</p>
      
            
        - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge, see NGMN Overview on 5GRAN Functional Decomposition ver 1.0 [12]
