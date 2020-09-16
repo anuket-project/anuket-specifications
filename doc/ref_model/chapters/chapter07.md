@@ -66,7 +66,7 @@ Cloud Infrastructure requirements must cover the virtual infrastructure layer an
 The following diagram shows the different security domains that impact the Reference Model:
 
 <p align="center"><img src="../figures/ch7_security_posture.png" alt="Overview" title="Security Domains" width="100%"/></p>
-<p align="center"><b>Figure 7-2:</b> Reference Model Security Domains</p>
+<p align="center"><b>Figure 7-1:</b> Reference Model Security Domains</p>
 
 Note: "Platform" refers to the cloud Infrastructure with all its hardware and software components.
 
@@ -108,7 +108,7 @@ The security certification of the platform will typically need to be the same, o
 The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
 <p align="center"><img src="../figures/ch7-data-access-model.png" alt="Overview" title="Access Controls" width="100%"/></p>
-<p align="center"><b>Figure 7-3:</b> Reference Model Access Controls</p>
+<p align="center"><b>Figure 7-2:</b> Reference Model Access Controls</p>
 
 <a name="7.4.1.1"></a>
 #### 7.4.1.1 The high-level functions of these different access controls
