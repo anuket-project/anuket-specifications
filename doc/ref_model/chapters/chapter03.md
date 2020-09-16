@@ -163,8 +163,7 @@ The virtual infrastructure manager allows to:
 
 * **Monitoring**:  monitors and collects information on all events and the current state of all virtual resources
 
-**Additional Management Functions**
-: include identity management, access management, policy management (e.g. to enforce security policies), etc.
+* **Additional Management Functions**: include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 * **Compute Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware compute resources
 
@@ -185,38 +184,27 @@ The hardware infrastructure manager allows to:
 
 The hardware infrastructure manager needs to support the following functional aspects:
 
- **API/UI**
- : an application programming interface / user interface providing access to the hardware resource management functions
+ * **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
 
-**Discovery**
-: discover and manages the information related to hardware resources of a cloud infrastructure
+* **Discovery**: discover and manages the information related to hardware resources of a cloud infrastructure
 
-**Equipment**
-: discover and manages the information related to hardware resources of a cloud infrastructure
+* **Equipment**: discover and manages the information related to hardware resources of a cloud infrastructure
 
-**Resource Allocation and Composition**
-: creates and allocates abstracted hardware resources
+* **Resource Allocation and Composition**: creates and allocates abstracted hardware resources
 
-**Monitoring**
-:  monitors and collects information on all events and the current state of all hardware resources
+* **Monitoring**:  monitors and collects information on all events and the current state of all hardware resources
 
-**Topology**
-:  manages topological view of hardware resources
+* **Topology**:  manages topological view of hardware resources
 
-**Additional Management Functions**
-: include identity management, access management, policy management (e.g. to enforce security policies), etc.
+* **Additional Management Functions**: include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
-**Underlay Network Resources Manager**
-: provides a mechanism to provision hardware resources for the use by the underlay network (e.g. switch fabric, smartNICs)
+* **Underlay Network Resources Manager**: provides a mechanism to provision hardware resources for the use by the underlay network (e.g. switch fabric, smartNICs)
 
-**Physical Compute Resources Manager**
-: provides a mechanism to provision hardware compute resources
+* **Physical Compute Resources Manager**: provides a mechanism to provision hardware compute resources
 
-**Physical Storage Resources Manager**
-: provides a mechanism to provision hardware storage resources
+* **Physical Storage Resources Manager**: provides a mechanism to provision hardware storage resources
 
-**Accelerators**
-: provide a mechanism to provision hardware accelerator services
+* **Accelerators**: provide a mechanism to provision hardware accelerator services
 
 <a name="3.4"></a>
 ## 3.4 Hardware Infrastructure Resources
