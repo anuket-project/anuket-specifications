@@ -110,7 +110,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 <a name="5.1.4"></a>
 ### 5.1.4 Security
-Please see the [RM Security Chapter](./chapter07.md).
+See Chapter 7 Security.
 
 <a name="5.1.5"></a>
 ### 5.1.5 Platform Services
@@ -121,13 +121,14 @@ This section details the services that may be made available to workloads by the
 |-------------------|----------------|--------|--------------------------------------------|
 | infra.svc.stg.001 | Object Storage | Yes/No | Object Storage Service (e.g S3-compatible) |
 
-<p align="center"><b>Table 5-7:</b>Table 5-7: Cloud Infrastructure Platform services.</p>
+<p align="center"><b>Table 5-7:</b>Cloud Infrastructure Platform services.</p>
 
 | Minimum requirements | Example                                    |
 |----------------------|--------------------------------------------|
 |Database as a service | Cassandra                                  |
 |Queue                 | Rabbit MQ                                  |
 |LB and HA Proxy       |                                            |
+<p align="center"><b>Table 5-7a:</b>Service examples.</p>
 
 <a name="5.2"></a>
 ## 5.2 Cloud Infrastructure Software Profiles features and requirements
@@ -141,7 +142,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 | Reference         | Feature                | Type   | Basic | Network Intensive | Notes |
 |-------------------|------------------------|--------|-------|-------------------|-------|
-| infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               |_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
+| infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               |This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
 | infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |       |
 | infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |       |
 | infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
@@ -227,9 +228,8 @@ Note: Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable 
 | infra.net.cfg.005 | Service Function Chaining | Yes/No            | N                              | Y                 |
 | infra.net.cfg.006 | Traffic patterns symmetry | Yes/No            | Y                              | Y                 |
 
-*[Workload Transtion Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
-
 <p align="center"><b>Table 5-12:</b> Virtual Networking features and configuration for the 2 types of SW profiles.</p>
+>_* might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption)._
 <!--
 | .conf | Feature | Type  | Basic | Network Intensive | Compute Intensive |
 |------------------|----------------|----------------|----------------|----------------|----------------|
