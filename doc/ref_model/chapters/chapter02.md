@@ -154,8 +154,9 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       - Enterprises with strict KPIs requirements that mandate the on-premise deployment.
 
   - **Architecture**
-
-      <img width="1066" alt="Screenshot 2020-05-17 at 11 34 47 PM" src="https://user-images.githubusercontent.com/25845305/82160627-0172b600-9897-11ea-99ec-7339deb19fce.png">
+     <p align="center"><img src="../figures/Fig 4-2 use case 2.png" alt="" Title="Edge Private 5G with Core Network Slicing" width="65%"/></p> 
+     <p align="center"><b>Figure 4-2:</b> Edge Private 5G with Core Network Slicing.</p>
+      
       
        - There are multiple flavours for Private 5G deployments or NPN, Non-Public Network as defined by 3GPP.
         
@@ -183,9 +184,10 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       - Enterprise and Industrial Campuses.
 
   - **Architecture**
-
-    <img width="1006" alt="Screenshot 2020-04-19 at 12 17 43 PM" src="https://user-images.githubusercontent.com/25845305/79685269-c8afd480-8237-11ea-90d5-0e7b0edc684e.png">
-
+     <p align="center"><img src="../figures/Fig 4-3 use case 3.png" alt="" Title="Edge Automotive (V2X) with uRLLC Core Network Slicing" width="65%"/></p> 
+     <p align="center"><b>Figure 4-3:</b>  Edge Automotive (V2X) with uRLLC Core Network Slicing.</p>
+    
+    
        - 5G NR-V2X is a work item in 3GPP Release 16 that is not completed yet by the time of writing this document.
         
        - C-V2X, Cellular V2X has two modes of communications
@@ -207,9 +209,10 @@ vRAN is one of the trending technologies of RAN deployment that fits for all Rad
 
   
   - **Architecture**
-      
-      <img width="1068" alt="Screenshot 2020-05-11 at 5 51 34 PM" src="https://user-images.githubusercontent.com/25845305/81582240-15f31200-93b0-11ea-993e-a89f820a5d97.png">
-      
+     <p align="center"><img src="../figures/Fig 4-4 use case 4.png" alt="" Title="Edge vRAN Deployments" width="65%"/></p> 
+     <p align="center"><b>Figure 4-4:</b>  EEdge vRAN Deployments.</p>
+     
+           
        - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge, see NGMN Overview on 5GRAN Functional Decomposition ver 1.0 [12]
                 
        -  The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
