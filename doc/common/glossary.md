@@ -1,6 +1,5 @@
 [<< Back](../../ref_model)
 # Glossary
-<p align="right"><img src="./figures/bogo_lsf.png" alt="scope" title="baldy" width="35%"/></p>
 
 ## Table of Contents
 * [Terminology](#1.0)
