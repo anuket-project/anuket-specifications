@@ -153,32 +153,24 @@ The virtual infrastructure manager allows to:
 
  The virtual infrastructure manager needs to support the following functional aspects:
 
- **API/UI**
- : an application programming interface / user interface providing access to the virtual resource management function
+* **API/UI**: an application programming interface / user interface providing access to the virtual resource management function
+ 
+* **Catalogue**: manages the collection of available templates for virtual resource the cloud infrastructure can provide
 
-**Catalogue**
-: manages the collection of available templates for virtual resource the cloud infrastructure can provide
+* **Inventory**: manages the information related to virtual resources of a cloud infrastructure
 
-**Inventory**
-: manages the information related to virtual resources of a cloud infrastructure
+* **Scheduler**: receives requests via API/UI, provisions and manages virtual resources by coordinating the activities of the compute-, storage- and network resources managers
 
-**Scheduler**
-: receives requests via API/UI, provisions and manages virtual resources by coordinating the activities of the compute-, storage- and network resources managers
-
-**Monitoring**
-:  monitors and collects information on all events and the current state of all virtual resources
+* **Monitoring**:  monitors and collects information on all events and the current state of all virtual resources
 
 **Additional Management Functions**
 : include identity management, access management, policy management (e.g. to enforce security policies), etc.
 
-**Compute Resources Manager**
-: provides a mechanism to provision virtual resources with the help of hardware compute resources
+* **Compute Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware compute resources
 
-**Storage Resources Manager**
-: provides a mechanism to provision virtual resources with the help of hardware storage resources
+* **Storage Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware storage resources
 
-**Network Resources Manager**
-: provides a mechanism to provision virtual resources with the help of hardware network resources
+* **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
 
 <a name="3.3.2"></a>
 ### 3.3.2 Hardware Infrastructure Manager
