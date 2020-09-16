@@ -2,7 +2,6 @@
 # 4 Infrastructure Capabilities, Measurements and Catalogue
 
 
- ______________________________________________________________
 ## Table of Contents
 
 * [4.1 Capabilities and Performance Measurements](#4.1)
@@ -42,9 +41,9 @@ c = Serial Number
 
 The following pertains to the context of Cloud Infrastructure Resources, Capabilities and Performance Measurements (PMs) as discussed within this chapter.
 
-<b>Exposed:</b> Refers to any object (e.g., resource discovery/configuration/consumption, platform telemetry, Interface, etc.) that exists in or pertains to, the domain of the Cloud Infrastructure and is made visible (aka “Exposed”) to a workload. When an object is exposed to a given workload, the scope of visibility within a given workload is at the discretion of the specific workload’s designer. From an Infra perspective, the Infra-resident object is simply being exposed to one or more virtual environments (i.e. Workloads). It is then the responsibility of the kernel or supervisor/executive within the VM to control how, when and where the object is further exposed within the VM, with regard to permissions, security, etc. As the object(s) originate with the Infra, they are by definition visible within that domain.
+**Exposed:** Refers to any object (e.g., resource discovery/configuration/consumption, platform telemetry, Interface, etc.) that exists in or pertains to, the domain of the Cloud Infrastructure and is made visible (aka “Exposed”) to a workload. When an object is exposed to a given workload, the scope of visibility within a given workload is at the discretion of the specific workload’s designer. From an Infra perspective, the Infra-resident object is simply being exposed to one or more virtual environments (i.e. Workloads). It is then the responsibility of the kernel or supervisor/executive within the VM to control how, when and where the object is further exposed within the VM, with regard to permissions, security, etc. As the object(s) originate with the Infra, they are by definition visible within that domain.
 
-<b>Internal:</b> Effectively the opposite of Exposed; objects Internal to the Cloud Infrastructure, which are exclusively available for use by the Cloud Infrastructure and components within the Cloud Infrastructure.
+**Internal:** Effectively the opposite of Exposed; objects Internal to the Cloud Infrastructure, which are exclusively available for use by the Cloud Infrastructure and components within the Cloud Infrastructure.
 
 <p align="center"><img src="../figures/Exposed_vs_Internal_Diagram.png" alt="Exposed vs. Internal Scope" title="Exposed vs. Internal Scope" width="65%"/></p>
 <p align="center"><b>Figure 4-1:</b> Exposed vs. Internal Scope</p>
@@ -129,7 +128,7 @@ The intent of the following PMs is to be available for and well known to wokload
 <a name="4.1.3.1"></a>
 #### 4.1.3.1 Exposed Performance Measurements
 
-The following table of exposed Performance Measurements shows PMs per VM or Pod, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [2]. Specifically exposed PMs use a single workload (PVP) dataplane test setup in a single host.
+The following table of exposed Performance Measurements shows PMs per VM or Pod, vNIC or vCPU. Network test setups are aligned with ETSI GS NFV-TST 009 [14]. Specifically exposed PMs use a single workload (PVP) dataplane test setup in a single host.
 
 <a name="Table4-4"></a>
 
@@ -259,7 +258,7 @@ Table 4-10 shows performance measurement capabilities.
 
 <a name="4.1.6.1"></a>
 #### 4.1.6.1 Resources Management Measurements
-**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GR NFV TST-012 [3]. The intention of this table is to provide a list of measurements to be used in the Reference Architecture specifications, where the concrete values allowed for these measurements in the context of a particular Reference Architecture will be defined.
+**Table 4-11** shows resource management measurements of CIM as aligned with ETSI GR NFV IFA-012 [15]. The intention of this table is to provide a list of measurements to be used in the Reference Architecture specifications, where the concrete values allowed for these measurements in the context of a particular Reference Architecture will be defined.
 
 <a name="Table4-11"></a>
 
@@ -361,9 +360,9 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 <a name="4.2.3"></a>
 ###  4.2.3 Storage Extensions
 
-Persistent storage is associated with workloads via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-14. Multiple persistent Storage Extensions can be attached to virtual compute instances.
+Persistent storage is associated with workloads via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-15. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
-Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
+>_*Note:*_ CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
 <a name="Table4-15"></a>
 
@@ -375,7 +374,7 @@ Note, CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> 
 
 <p align="center"><b>Table 4-15:</b> Storage Extensions</p>
 
-Note, performance is based on a block size of 256KB or larger.
+>_*Note:*_ Performance is based on a block size of 256KB or larger.
 
 <!---
 <a name="4.2.3.1"></a>
@@ -412,7 +411,7 @@ This Cloud Infrastructure Profile is intended to be used for those applications 
 
 ##### 4.2.4.2.1 Network Acceleration Extensions
 Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
->_Interface types are aligned with ETSI GS NFV-IFA 002 [7]._
+>_*Note:*_ Interface types are aligned with ETSI GS NFV-IFA 002 [7].
 
 <a name="Table4-16"></a>
 
@@ -423,7 +422,7 @@ Network Intensive Profile can come with Network Acceleration extensions to assis
 
 <p align="center"><b>Table 4-16:</b> Acceleration Extensions for Network Intensive Profile</p>
 
-> _*Need to work with relevant open source communities to create missing interfaces._
+>_*Note:*_ Need to work with relevant open source communities to create missing interfaces.
 
 <!--
 <a name="4.2.4.3"></a>
