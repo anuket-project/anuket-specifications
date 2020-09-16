@@ -25,6 +25,7 @@
 | [9]      | ETSI GS NFV-INF 004 V1.1.1 | “Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-INF/001_099/004/01.01.01_60/gs_NFV-INF004v010101p.pdf |
 | [10]      | ETSI GS NFV-IFA 005 V3.1.1 | “Network Functions Virtualisation (NFV) Release 3; Management and Orchestration; Or-Vi reference point - Interface and Information Model Specification ”. Available at https://www.etsi.org/deliver/etsi_gs/nfv-ifa/001_099/005/03.01.01_60/gs_nfv-ifa005v030101p.pdf |
 | [11]      | DMTF RedFish | “DMTF RedFish Specification”. Available at https://www.dmtf.org/standards/redfish |
+| [12]      | NGMN Overview on 5GRAN Functional Decomposition ver 1.0 | “NGMN Overview on 5GRAN Functional Decomposition”. Available at  https://www.ngmn.org/wp-content/uploads/Publications/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf |
 
 
 <a name="1.2"></a>
