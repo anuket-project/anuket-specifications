@@ -167,7 +167,7 @@ tagged as high by
 - IdentityTheft
 - PrivilegeEscalation
 
-At the time of writing, no clear Center for Internet Security (CIS) rules are
+At the time of writing, none of the  Center for Internet Security (CIS) rules are
 defined as mandatory (e.g. sec.std.001: The Cloud Operator **should** comply
 with Center for Internet Security CIS Controls) else it would have required for an
 update of the default kube-bench behavior (all failures and warnings are only
