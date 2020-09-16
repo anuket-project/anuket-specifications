@@ -176,9 +176,10 @@ Running opensource containerized network functions (CNF) is a key technical
 solution to ensure that the platforms meet Network Functions Virtualization
 requirements.
 
-Functest CNF offers one test case which automatically onboards and
-tests [Clearwater IMS](https://github.com/Metaswitch/clearwater-docker). It's
-worth mentioning that this CNF is covered by the upstream tests (see
+Functest CNF offers 2 test cases which automatically onboard and test
+[Clearwater IMS](https://github.com/Metaswitch/clearwater-docker) 
+via kubecltl and Helm. It's worth mentioning that this CNF is covered by the
+upstream tests (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)).
 
 The following software versions are considered to verify Kubernetes v1.19
@@ -188,6 +189,7 @@ The following software versions are considered to verify Kubernetes v1.19
 |-------------------------|-------------|
 | Functest                | kali        |
 | clearwater              | release-130 |
+| Helm                    | v3.3.1      |
 
 ## Test Cases Traceability to Requirements
 
@@ -202,3 +204,4 @@ The following test case must pass as they are for Reference Conformance:
 | opnfv/functest-kubernetes-security:kali     | kube_bench_node        | PASS     | Security testing                      |
 | opnfv/functest-kubernetes-benchmarking:kali | xrally_kubernetes_full | PASS     | Kubernetes API benchmarking           |
 | opnfv/functest-kubernetes-cnf:kali          | k8s_vims               | PASS     | Opensource CNF onboarding and testing |
+| opnfv/functest-kubernetes-cnf:kali          | helm_vims              | PASS     | Opensource CNF onboarding and testing |
