@@ -292,7 +292,7 @@ Based on the above analysis, following cloud infrastructure profiles are propose
 In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> infrastructure profiles will be defined in greater detail for use by workloads: .
 
 >***Note**  
->This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
+This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
 >- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
 >- ***Storage Intensive**: for Workloads that require low storage latency and/or high storage IOPS.*
 >- ***Enhanced Compute Intensive**: for compute intensive Workloads that require higher computing performance and/or specific compute resource (e.g., GPU).*
