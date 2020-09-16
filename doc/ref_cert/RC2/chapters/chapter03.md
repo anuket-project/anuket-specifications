@@ -169,7 +169,7 @@ tagged as high by
 
 At the time of writing, no clear Center for Internet Security (CIS) rules are
 defined as mandatory (e.g. sec.std.001: The Cloud Operator **should** comply
-with Center for Internet Security CIS Controls) which would have asked for an
+with Center for Internet Security CIS Controls) else it would have required for an
 update of the default kube-bench behavior (all failures and warnings are only
 printed) as integrated in
 [Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fkali).
