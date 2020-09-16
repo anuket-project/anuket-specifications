@@ -209,9 +209,8 @@ vRAN is one of the trending technologies of RAN deployment that fits for all Rad
       
       <img width="1068" alt="Screenshot 2020-05-11 at 5 51 34 PM" src="https://user-images.githubusercontent.com/25845305/81582240-15f31200-93b0-11ea-993e-a89f820a5d97.png">
       
-       - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge.
-        https://www.ngmn.org/wp-content/uploads/Publications/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf
-        
+       - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge, see NGMN Overview on 5GRAN Functional Decomposition ver 1.0 [12]
+                
        -  The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
         
        -  Following Split Option 7.2, The average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds. 
