@@ -135,8 +135,8 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
     - Stadiums and Venues.
 
   - **Architecture**
-     <p align="center"><img src="../figures/Fig 4-1 use case 1.png" alt="" Title="Edge CDN with eMBB Core Network Slicing" width="65%"/></p> 
-     <p align="center"><b>Figure 4-1:</b> Edge CDN with eMBB Core Network Slicing.</p>
+     <p align="center"><img src="../figures/Fig2-1-uc1.png" alt="" Title="Edge CDN with eMBB Core Network Slicing" width="65%"/></p> 
+     <p align="center"><b>Figure 2-1:</b> Edge CDN with eMBB Core Network Slicing.</p>
      
     
 - **Use Case #2 - Edge Private 5G with Core Network Slicing**
@@ -154,8 +154,8 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       - Enterprises with strict KPIs requirements that mandate the on-premise deployment.
 
   - **Architecture**
-     <p align="center"><img src="../figures/Fig 4-2 use case 2.png" alt="" Title="Edge Private 5G with Core Network Slicing" width="65%"/></p> 
-     <p align="center"><b>Figure 4-2:</b> Edge Private 5G with Core Network Slicing.</p>
+     <p align="center"><img src="../figures/Fig2-2-uc2.png" alt="" Title="Edge Private 5G with Core Network Slicing" width="65%"/></p> 
+     <p align="center"><b>Figure 2-2:</b> Edge Private 5G with Core Network Slicing.</p>
       
       
        - There are multiple flavours for Private 5G deployments or NPN, Non-Public Network as defined by 3GPP.
@@ -184,8 +184,8 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
       - Enterprise and Industrial Campuses.
 
   - **Architecture**
-     <p align="center"><img src="../figures/Fig 4-3 use case 3.png" alt="" Title="Edge Automotive (V2X) with uRLLC Core Network Slicing" width="65%"/></p> 
-     <p align="center"><b>Figure 4-3:</b>  Edge Automotive (V2X) with uRLLC Core Network Slicing.</p>
+     <p align="center"><img src="../figures/Fig2-3-uc3.png" alt="" Title="Edge Automotive (V2X) with uRLLC Core Network Slicing" width="65%"/></p> 
+     <p align="center"><b>Figure 2-3:</b>  Edge Automotive (V2X) with uRLLC Core Network Slicing.</p>
     
     
        - 5G NR-V2X is a work item in 3GPP Release 16 that is not completed yet by the time of writing this document.
@@ -209,8 +209,8 @@ vRAN is one of the trending technologies of RAN deployment that fits for all Rad
 
   
   - **Architecture**
-     <p align="center"><img src="../figures/Fig 4-4 use case 4.png" alt="" Title="Edge vRAN Deployments" width="65%"/></p> 
-     <p align="center"><b>Figure 4-4:</b>  Edge vRAN Deployments.</p>
+     <p align="center"><img src="../figures/Fig2-4-uc4.png" alt="" Title="Edge vRAN Deployments" width="65%"/></p> 
+     <p align="center"><b>Figure 2-4:</b>  Edge vRAN Deployments.</p>
      
            
        - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge, see NGMN Overview on 5GRAN Functional Decomposition ver 1.0 [12]
