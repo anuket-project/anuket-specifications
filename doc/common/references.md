@@ -27,7 +27,7 @@
 | [11]      | DMTF RedFish | “DMTF RedFish Specification”. Available at https://www.dmtf.org/standards/redfish |
 | [12]      | NGMN Overview on 5GRAN Functional Decomposition ver 1.0 | “NGMN Overview on 5GRAN Functional Decomposition”. Available at  https://www.ngmn.org/wp-content/uploads/Publications/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf |
 | [13]      | ORAN-WG4.IOT.0-v01.00 | “Front haul Interoperability Test Specification(IOT)”. Available at  https://static1.squarespace.com/static/5ad774cce74940d7115044b0/t/5db36ffa820b8d29022b6d08/1572040705841/ORAN-WG4.IOT.0-v01.00.pdf/2018/180226_NGMN_RANFSX_D1_V20_Final.pdf |
-
+| [14]      | ETSI GS NFV-TST 009 V3.1.1 | “Network Functions Virtualisation (NFV) Release 3; Testing; Specification of Networking Benchmarks and  Measurement Methods for NFVI ”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf |
 
 <a name="1.2"></a>
 ## RM References
