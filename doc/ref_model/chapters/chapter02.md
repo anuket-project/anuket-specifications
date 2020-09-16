@@ -135,7 +135,7 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
     - Stadiums and Venues.
 
   - **Architecture**
-     <p align="center"><img src="../figures/Edge CDN with eMBB Core Network Slicing.png" alt="" Title="Edge CDN with eMBB Core Network Slicing" width="65%"/></p> 
+     <p align="center"><img src="../figures/Fig 4-1 use case 1.png" alt="" Title="Edge CDN with eMBB Core Network Slicing" width="65%"/></p> 
      <p align="center"><b>Figure 4-1:</b> Edge CDN with eMBB Core Network Slicing.</p>
      
     
