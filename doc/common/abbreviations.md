@@ -27,16 +27,21 @@
 | CNI            | Container Network Interface           |
 | CNTT           | Cloud iNfrastructure Telco Taskforce  |
 | CPU            | Central Processing Unit               |
+| CRTM           | Core Root of Trust for Measurements        |
 | CVE            | Common Vulnerabilities and Exposures  |
+| DC             | Data Center                           |
 | DMA            | Direct Memory Access                  |
 | DNS            | Domain Name System                    |
 | DPDK           | Data Plane Development Kit            |
 | DRAM           | Dynamic Random Access Memory          |
+| DRTM           | Dynamic Root of Trust for Measurements        |
 | E2E            | End to End                            |
 | EPA            | Enhanced Platform Awareness           |
+| eTOM           | enhanced Telecom Operations Map       |
 | ETSI           | European Telecommunications Standards Institute |
 | EULA           | End-User License Agreement            |
 | EVPN           | Ethernet Virtual Private Network      |
+| FCAPS          | fault, configuration, accounting, performance, security |
 | FPGA           | Field Programmable Gate Array         |
 | FTTx           | Fiber to the x                        |
 | GB             | Giga Byte                             |
@@ -73,10 +78,13 @@
 | OPEX           | Operational Expenditure               |
 | OPNFV          | Open Platform for NFV                 |
 | ORAN           | Open Radio Access Network             |
+| OS             | Operating System                      |
 | OVP            | OPNFV Verified Program                |
 | PCIe           | Peripheral Component Interconnect Express |
 | PCI-PT         | PCIe PassThrough                      |
+| PCR            | Platform Configuration Register       |
 | PF             | Physical Function                     |
+| POD            | Point of Delivery                     |
 | PRD            | Permanent Reference Document          |
 | QoS            | Quality of Service                    |
 | RA             | Reference Architecture                |
@@ -97,11 +105,13 @@
 | SLA            | Service Level Agreement               |
 | SMT            | Simultaneous multithreading           |
 | SR-IOV         | Single Root Input Output Virtualisation |
+| SRTM           | Static Root of Trust for Measurements        |
 | SSD            | Solid State Drive                     |
 | SW             | Software                              |
 | TLS            | Transport Layer Security              |
 | TOSCA          | Topology and Orchestration Specification for Cloud Applications |
 | TPM            | Trusted Platform Module               |
+| UEFI           | Unified Extensible Firmware Interface  |
 | UI             | User Interface                        |
 | vCPU           | Virtual CPU                           |
 | VF             | Virtual Function                      |
