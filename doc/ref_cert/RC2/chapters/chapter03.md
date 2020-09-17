@@ -154,12 +154,25 @@ weaknesses in Kubernetes clusters and
 whether Kubernetes is deployed securely by running the checks documented in the
 [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/).
 
-At the time of writing, no clear security rules are defined as mandatory
-(e.g. sec.std.001: The Cloud Operator **should** comply with Center for
-Internet Security CIS Controls) which would have asked for an update of the
-default
-[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fkali)
-behavior (all failures and warnings are only printed).
+[kube-hunter](https://github.com/aquasecurity/kube-hunter) classifies all
+vulnerabilities as low, medium, and high. In context of this conformance suite,
+only the high vulnerabilities lead to a test case failure. Then all low and
+medium vulnerabilities are only printed for information.
+
+Here are the
+[vulnerability categories](https://github.com/aquasecurity/kube-hunter/blob/v0.3.1/kube_hunter/core/events/types.py)
+tagged as high by
+[kube-hunter](https://github.com/aquasecurity/kube-hunter):
+- RemoteCodeExec
+- IdentityTheft
+- PrivilegeEscalation
+
+At the time of writing, none of the  Center for Internet Security (CIS) rules
+are defined as mandatory (e.g. sec.std.001: The Cloud Operator **should**
+comply with Center for Internet Security CIS Controls) else it would have
+required an update of the default kube-bench behavior (all failures and
+warnings are only printed) as integrated in
+[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fkali).
 
 The following software versions are considered to verify Kubernetes v1.19
 (latest stable release) selected by CNTT:
