@@ -27,8 +27,9 @@
 | CNI            | Container Network Interface           |
 | CNTT           | Cloud iNfrastructure Telco Taskforce  |
 | CPU            | Central Processing Unit               |
-| DPDK           | Data Plane Development Kit            |
 | DMA            | Direct Memory Access                  |
+| DPDK           | Data Plane Development Kit            |
+| DRAM           | Dynamic Random Access Memory          |
 | E2E            | End to End                            |
 | EPA            | Enhanced Platform Awareness           |
 | ETSI           | European Telecommunications Standards Institute |
@@ -59,11 +60,13 @@
 | NFVI           | Network Function Virtualisation Infrastructure |
 | NFVO           | Network Function Virtualisation Orchestrator |
 | NIC            | Network Interface Card                |
+| NVMe           | Non-Volatile Memory Express           |
 | ONAP           | Open Network Automation Platform      |
 | OPEX           | Operational Expenditure               |
 | OPNFV          | Open Platform for NFV                 |
 | ORAN           | Open Radio Access Network             |
 | OVP            | OPNFV Verified Program                |
+| PCIe           | Peripheral Component Interconnect Express |
 | PCI-PT         | PCIe PassThrough                      |
 | PF             | Physical Function                     |
 | PRD            | Permanent Reference Document          |
@@ -75,6 +78,7 @@
 | RI             | Reference Implementation              |
 | RM             | Reference Model                       |
 | RTM            | Root of Trust for Measurements        |
+| SATA           | Serial AT Attachment                  |
 | SBA            | Service Based Architecture            |
 | SBI            | South Bound Interface                 |
 | SDN            | Software-Defined Networking           |
@@ -82,6 +86,7 @@
 | SFC            | Service Function Chaining             |
 | SMT            | Simultaneous multithreading           |
 | SR-IOV         | Single Root Input Output Virtualisation |
+| SSD            | Solid State Drive                     |
 | SW             | Software                              |
 | TOSCA          | Topology and Orchestration Specification for Cloud Applications |
 | UI             | User Interface                        |
