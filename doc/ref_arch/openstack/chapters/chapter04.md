@@ -467,7 +467,7 @@ The Ceph storage cluster is deployed on bare metal hardware. The minimal configu
 
 Ceph monitors maintain a master copy of the maps of the cluster state required by Ceph daemons to coordinate with each other. Ceph OSD handle the data storage (read/write data on the physical disks), data replication, recovery, rebalancing, and provides some monitoring information to Ceph Monitors. The RadosGW provides Object Storage RESTful gateway with a Swift-compatible API for Object Storage.
 
-<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"><b>Figure 4-6: Ceph Storage System.</b></p>
+<p align="center"><img src="../figures/RA1-Ch04-Ceph.png" alt="Ceph Storage System"><br><b>Figure 4-6: Ceph Storage System.</b></p>
 
 **BIOS Requirement for Ceph servers**
 
@@ -634,7 +634,7 @@ Containers are lightweight compared to Virtual Machines and leads to efficient r
 
 In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-7.
 
-<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"><b>Figure 4-7: Containerised OpenStack Services Topology.</b></p>
+<p align="center"><img src="../figures/RA1-Ch04-Containerised-OpenStack-Services-Stack.png" alt="Containerised OpenStack Services Topology"><br><b>Figure 4-7: Containerised OpenStack Services Topology.</b></p>
 
 
 <a name="4.4"></a>
