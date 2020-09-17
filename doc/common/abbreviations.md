@@ -55,6 +55,7 @@
 | IO             | Input/Output                          |
 | IOPS           | Input/Output per Second               |
 | IOMMU          | Input/Ouput Memory Management Unit    |
+| IoT            | Internet of Things                    |
 | IP             | Internet Protocol                     |
 | IPMI           | Intelligent Platform Management Interface |
 | IPSec          | Internet Protocol Security            |
@@ -63,6 +64,7 @@
 | LAN            | Local Area Network                    |
 | LCM            | Lifecycle Management                  |
 | MANO           | Management and Orchestration          |
+| ML             | Machine Learning                      |
 | MPLS           | Multi-Protocol Label Switching        |
 | MVNO           | Mobile Virtual Network Operator       |
 | NAT            | Network Address Translation           |
