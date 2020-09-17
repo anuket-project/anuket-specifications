@@ -28,15 +28,15 @@ Chapter 2 gathers all requirements and recommendations regarding security topics
 ## 6.3 Cloud Infrastructure and VIM Security
 
 OpenStack security guide:
-https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html. In the section "[Sceurity boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
+https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html. In the section "[Security boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
 
 The handling of these security incidents requires various levels of logging of key infrastructure, processes, and use behaviour. These logs have to be continuously monitored and analysed with alerts created for anomalies. The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
 
 <a name="6.3.1"></a>
 ### 6.3.1 Platform Access
 
-#### 6.3.1.1 [Identity Security](https://docs.openstack.org/security-guide/identity.html)
-The OpenStack Identity service (Keystone) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end.
+#### 6.3.1.1 Identity Security
+The [OpenStack Identity service (Keystone)](https://docs.openstack.org/security-guide/identity.html) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end.
 
 OpenStack Keystone can work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
 
@@ -98,16 +98,16 @@ The following rules govern create, read, update, and delete (CRUD) level access.
   - Cannot touch any other tenant except the one the role is located
 
  **tenant_snapshot_member**
-  - *Tenant Level Admin with Snapshot* - typically assign to tenant users who needs to create snapshot via special request to Operations Staff
+  - *Tenant Level Admin with Snapshot* - typically assign to tenant users who need to create snapshot via special request to Operations Staff
   - Permission is same as tenant_member except the user can also create snapshots
 
  **tenant_support_member**
-  - *Tenant Level Support* - typically assign to tenant users who needs to create resource in the project space
+  - *Tenant Level Support* - typically assign to tenant users who need to create resource in the project space
   - Permission to create/read all resources at the tenant project level
   - Cannot update/delete or create snapshots
  
  **tenant_viewer**
-  - *Tenant Level Read Only* - typically assign to tenant users who needs to read all resource in the project space
+  - *Tenant Level Read Only* - typically assign to tenant users who need to read all resources in the project space
   - Permission to read all resources at the tenant level
   - Cannot create/update/delete
 
@@ -141,7 +141,7 @@ Infrastructure should be implemented to perform the minimal function that’s pr
 Regarding software:
 - Install only software which is required to support the functions
 - Remove any unnecessary software or packages
-- Where software cannot be removed, disable all service to it
+- Where software cannot be removed, disable all services to it
 
 #### 6.3.2.3 Patches
 System should be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery:
@@ -153,7 +153,7 @@ System should be implemented to allow installation of the latest patches to addr
 | Medium | 90 days |
 | Low | 180 days |
 
-**See** [Common Vulnerability Scoring System] (https://nvd.nist.gov/vuln-metrics/cvss)
+**See** [Common Vulnerability Scoring System](https://nvd.nist.gov/vuln-metrics/cvss)
 	
 #### 6.3.2.4 Network Protocols
 - Only allow protocols that are required by the system functions
@@ -166,7 +166,7 @@ System should be implemented to allow installation of the latest patches to addr
 - Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
 
 #### 6.3.2.6 Anti-Virus and Firewall
-- Install and run your Enterprise approved anti-virus software / intrusion protection / malware / spyware endpoint security software with up to date profiles, minimal refresh daily
+- Install and run your Enterprise approved anti-virus software/ intrusion protection/ malware/ spyware endpoint security software with up to date profiles, minimal refresh daily
 - Install and run firewall software where applicable
 
 #### 6.3.2.7 Vulnerability Detection and Prevention
@@ -235,15 +235,15 @@ It is recommended to rely on Barbican, as key manager service of OpenStack.
 <a name="6.3.4"></a>
 ### 6.3.4 Workload Security
 
-OpenStack segregates its infrastructure (for example, hosts) by Regions, Host aggregates and Availability Zones (AZ). Workloads can also be segregated by server groups (affinity and non-affinity groups). These options support the workloads placement requirement _sec.wl.001_.
+OpenStack segregates its infrastructure (for example, hosts) by Regions, Host Aggregates and Availability Zones (AZ). Workloads can also be segregated by server groups (affinity and non-affinity groups). These options support the workloads placement requirement (sec.wl.001).
 
-Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (for example, Regions, AZs) but also requires network and storage segregation as in Regions but also AZs if engineered to do so. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (_sec.wl.005_ and _sec.wl.006_).
+Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (for example, Regions, AZs) but also requires network and storage segregation as in Regions but also AZs if engineered to do so. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (sec.wl.005 and sec.wl.006).
 
-Regions also support the _sec.wl.004_ requirement for separation by Location (for example, country).
+Regions also support the sec.wl.004 requirement for separation by Location (for example, country).
 
-Operational security (_sec.wl.002_) is handled through a combination of mechanisms including the above and security groups. Security groups limit the types of traffic that have access to instances. One or more security groups can be automatically assigned to an instance at launch. The rules associated with a security group control the incoming traffic.  Any incoming traffic not matched by a rule is denied access. The security group rules govern access through the setting of different parameters: traffic source, protocols and destination port on a VM.  Errors in provisioning/managing OpenStack Security Groups can lead to non-functioning applications and can take a long time to identify faults and correct them.  Thus, use of tools for auto provisioning and continued inspection of security groups and network policies is required.
+Operational security (sec.wl.002) is handled through a combination of mechanisms including the above and security groups. Security groups limit the types of traffic that have access to instances. One or more security groups can be automatically assigned to an instance at launch. The rules associated with a security group control the incoming traffic.  Any incoming traffic not matched by a rule is denied access. The security group rules govern access through the setting of different parameters: traffic source, protocols and destination port on a VM.  Errors in provisioning/managing OpenStack Security Groups can lead to non-functioning applications and can take a long time to identify faults and correct them.  Thus, use of tools for auto provisioning and continued inspection of security groups and network policies is required.
 
-Given the rate of change in the workload development and deployment, and the cloud environment itself, _sec.wl.003_ requires that the workloads should be assessed during the CI/CD process as the images are created and then whenever they are deployed. In addition, the infrastructure must be configured for security as discussed elsewhere in this chapter including secure boot. 
+Given the rate of change in the workload development and deployment, and the cloud environment itself, sec.wl.003 requires that the workloads should be assessed during the CI/CD process as the images are created and then whenever they are deployed. In addition, the infrastructure must be configured for security as discussed elsewhere in this chapter including secure boot. 
 
 <a name="6.3.4.1"></a>
 ### 6.3.4.1 SR-IOV and DPDK Considerations
@@ -255,7 +255,7 @@ Operators typically do not implement Security Groups when ussing SR-IOV or DPDK 
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
 
-Images from untrusted sources must not be used (sec.img.001). Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/) that "describes how to obtain, create, and modify" OpenStack compatible virtual machine images. 
+Images from untrusted sources must not be used (sec.img.001). Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/)" that describes how to obtain, create, and modify OpenStack compatible virtual machine images. 
 
 Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance) (sec.gen.009). The operator will need toolsets for scanning images, including for virus and malware detection (sec.img.002, sec.wl.007).
 Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). 
@@ -279,7 +279,6 @@ The following rules must be applied:
 - The boot of the server or the VM hosting the deployment tool must be protected
 - Integrity of the deployment images must be checked, before starting deployment
 - Deployment must be done through dedicated network (e.g. VLAN)
-- When the deployment is finished, the deployment tool must be turned-off
 - When the deployment is finished, the deployment tool must be turned-off, if the tool is only dedicated to deployment. Otherwise, any access to the deployment tool must be restricted.
 
 Strict access permissions must be set on OpenStack configuration files.
@@ -351,6 +350,6 @@ The security audit log must contain at minimum the following fields (where appli
 * Implementation and monitoring: after 180 days or your mandated retention period, security audit logs must be destroyed.
 
 #### 6.3.7.6 Security Logs Time Synchronisation
-The host and various system clocks be synchronized with the NTP server (sec.mon.002). In any time synchronisation, we need to specify the synchronization interval and the tolerance where the latter specifies the permissible difference the local time cane out of synch.
+The host and various system clocks must be synchronized with the NTP server (sec.mon.002). In any time synchronisation, we need to specify the synchronization interval and the tolerance where the latter specifies the permissible difference the local time cane out of synch.
 
 Whenever the time synchronisation forces the local time to change or the use of another NTP server, the change details must be logged including time server source, time, date and time zones (sec.mon.003).
