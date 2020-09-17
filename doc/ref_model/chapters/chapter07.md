@@ -413,8 +413,7 @@ Security certification should encompass the following elements:
 
 |  Ref | Requirement  | Definition/Note  |
 |-------|------|-------|
-| req.sec.sys.001 | The Platform **must** support authenticated and secure APIs, API endpoints. | |
-| | The Platform **must** implement authenticated and secure access to GUI. | |
+| req.sec.sys.001 | The Platform **must** support authenticated and secure access to API, GUI and command line interfaces. | |
 | req.sec.sys.002 | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall). | |
 | req.sec.sys.003 | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic.| |
 | req.sec.sys.004 | The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels. | A secure channel enables transferring of data that is resistant to overhearing and tampering. |
