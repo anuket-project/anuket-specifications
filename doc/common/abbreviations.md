@@ -17,7 +17,10 @@
 |----------------|-------------                          |
 | AI             | Artificial Intelligence               |
 | API            | Application Programming Interface     |
+| B2B            | Business to Business                  |
+| B2C            | Business to Consumer                  |
 | CaaS           | Container as a Service                |
+| CAPEX          | Capital Expenditure                   |
 | CI/CD          | Continuous Integration / Continuous Deployment |
 | CNF            | Cloud Native Network Function          |
 | CNI            | Container Network Interface           |
@@ -25,15 +28,18 @@
 | CPU            | Central Processing Unit               |
 | DPDK           | Data Plane Development Kit            |
 | DMA            | Direct Memory Access                  |
+| E2E            | End to End                            |
 | EPA            | Enhanced Platform Awareness           |
 | ETSI           | European Telecommunications Standards Institute |
 | EVPN           | Ethernet Virtual Private Network      |
 | FPGA           | Field Programmable Gate Array         |
+| FTTx           | Fiber to the x                        |
 | GW             | Gateway                               |
 | GPU            | Graphics Processing Unit              |
 | GSMA           | Groupe Speciale Mobile Association    |
 | HW             | Hardware                              |
 | IaaS           | Infrastructure as a Service           |
+| IMS            | IP Multimedia Subsystem               |
 | IO             | Input/Output                          |
 | IOMMU          | Input/Ouput Memory Management Unit    |
 | IP             | Internet Protocol                     |
@@ -42,24 +48,29 @@
 | LAN            | Local Area Network                    |
 | LCM            | Lifecycle Management                  |
 | MANO           | Management and Orchestration          |
+| MVNO           | Mobile Virtual Network Operator       |
+| NAT            | Network Address Translation           |
 | NFV            | Network Function Virtualisation       |
 | NFVI           | Network Function Virtualisation Infrastructure |
 | NFVO           | Network Function Virtualisation Orchestrator |
 | NIC            | Network Interface Card                |
 | ONAP           | Open Network Automation Platform      |
+| OPEX           | Operational Expenditure               |
 | OPNFV          | Open Platform for NFV                 |
 | ORAN           | Open Radio Access Network             |
 | OVP            | OPNFV Verified Program                |
 | PCI-PT         | PCIe PassThrough                      |
 | PF             | Physical Function                     |
+| PRD            | Permanent Reference Document          |
 | RA             | Reference Architecture                |
+| RAM            | Random Access Memory                  |
 | RAN            | Radio Access Network                  |
 | RFC            | Request for Change                    |
 | RC             | Reference Conformance                 |
 | RI             | Reference Implementation              |
 | RM             | Reference Model                       |
-| RTM            | Root of Trust for Measurements                       |
-| SDN            | Software-Defined Networking            |
+| RTM            | Root of Trust for Measurements        |
+| SDN            | Software-Defined Networking           |
 | SDS            | Software-Defined Storage              |
 | SFC            | Service Function Chaining             |
 | SMT            | Simultaneous multithreading           |
@@ -71,8 +82,11 @@
 | VM             | Virtual Machine                       |
 | VNF            | Virtual Network Function              |
 | VNFC           | Virtual Network Function Component    |
+| vNIC           | Virtual Network Interface Card        |
+| vRAN           | Virtual Radio Access Network          |
 | VxLAN          | Virtual Extensible LAN                |
 | vXYZ           | virual XYZ, e.g., as in vNIC          |
+| Wi-Fi          | Wireless Fidelity                     |
 
 
 <a name="1.2"></a>
