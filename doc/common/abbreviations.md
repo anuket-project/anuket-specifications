@@ -28,6 +28,7 @@
 | CNTT           | Cloud iNfrastructure Telco Taskforce  |
 | CPU            | Central Processing Unit               |
 | DMA            | Direct Memory Access                  |
+| DNS            | Domain Name System                    |
 | DPDK           | Data Plane Development Kit            |
 | DRAM           | Dynamic Random Access Memory          |
 | E2E            | End to End                            |
@@ -40,6 +41,7 @@
 | GW             | Gateway                               |
 | GPU            | Graphics Processing Unit              |
 | GSMA           | Groupe Speciale Mobile Association    |
+| HDD            | Hard Disk Drive                       |
 | HW             | Hardware                              |
 | IaaS           | Infrastructure as a Service           |
 | IMS            | IP Multimedia Subsystem               |
@@ -47,6 +49,7 @@
 | IOPS           | Input/Output per Second               |
 | IOMMU          | Input/Ouput Memory Management Unit    |
 | IP             | Internet Protocol                     |
+| IPMI           | Intelligent Platform Management Interface |
 | IPSec          | Internet Protocol Security            |
 | IT             | Information Technology                |
 | K8s            | Kubernetes                            |
@@ -73,9 +76,11 @@
 | PCI-PT         | PCIe PassThrough                      |
 | PF             | Physical Function                     |
 | PRD            | Permanent Reference Document          |
+| QoS            | Quality of Service                    |
 | RA             | Reference Architecture                |
 | RAM            | Random Access Memory                  |
 | RAN            | Radio Access Network                  |
+| RBAC           | Role-bases Access Control              |
 | RFC            | Request for Change                    |
 | RC             | Reference Conformance                 |
 | RI             | Reference Implementation              |
