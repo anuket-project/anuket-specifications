@@ -19,7 +19,7 @@
 | API            | Application Programming Interface     |
 | CaaS           | Container as a Service                |
 | CI/CD          | Continuous Integration / Continuous Deployment |
-| CNF            | Cloud native Network Function          |
+| CNF            | Cloud Native Network Function          |
 | CNI            | Container Network Interface           |
 | CNTT           | Cloud iNfrastructure Telco Taskforce  |
 | CPU            | Central Processing Unit               |
@@ -40,6 +40,7 @@
 | IT             | Information Technology                |
 | K8s            | Kubernetes                            |
 | LAN            | Local Area Network                    |
+| LCM            | Lifecycle Management                  |
 | MANO           | Management and Orchestration          |
 | NFV            | Network Function Virtualisation       |
 | NFVI           | Network Function Virtualisation Infrastructure |
@@ -47,13 +48,17 @@
 | NIC            | Network Interface Card                |
 | ONAP           | Open Network Automation Platform      |
 | OPNFV          | Open Platform for NFV                 |
+| ORAN           | Open Radio Access Network             |
 | OVP            | OPNFV Verified Program                |
 | PCI-PT         | PCIe PassThrough                      |
 | PF             | Physical Function                     |
 | RA             | Reference Architecture                |
+| RAN            | Radio Access Network                  |
+| RFC            | Request for Change                    |
 | RC             | Reference Conformance                 |
 | RI             | Reference Implementation              |
 | RM             | Reference Model                       |
+| RTM            | Root of Trust for Measurements                       |
 | SDN            | Software-Defined Networking            |
 | SDS            | Software-Defined Storage              |
 | SFC            | Service Function Chaining             |
