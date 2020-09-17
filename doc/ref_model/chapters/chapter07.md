@@ -36,7 +36,7 @@
   * [7.9.6 Security LCM](#7.9.6)
   * [7.9.7 Monitoring and Security Audit](#7.9.7)
   * [7.9.8 Compliance with Standards](#7.9.8)
-  * [7.9.9 References](#7.9.9)
+ * [7.10 Security References](#7.10)
 
 
 <a name="7.1"></a>
@@ -544,7 +544,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <p align="center"><b>Table 7-8:</b> Compliance with standards requirements</p>
 
 <a name="7.9.9"></a>
-### 7.9.9. References
+## 7.10. Security References
 
 Network Functions Virtualisation (NFV);NFV Security; Problem Statement, ETSI GS NFV-SEC 001 V1.1.1 (2014-10)
 
