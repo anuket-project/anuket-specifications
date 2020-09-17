@@ -391,7 +391,7 @@ Security certification should encompass the following elements:
 |  Ref | Requirement  | Definition/Note  |
 |-------|------|-------|
 | req.sec.gen.001 | The Platform **must** maintain the specified configuration. |  |
-| req.sec.gen.002 | All systems part of Cloud Infrastructure **must** support password hardening as defined in [CIS Password Policy Guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide). | Hardening: CIS Password Policy Guide |
+| req.sec.gen.002 | All systems part of Cloud Infrastructure **must** support password hardening as defined in CIS Password Policy Guide https://www.cisecurity.org/white-papers/cis-password-policy-guide. | Hardening: CIS Password Policy Guide |
 | req.sec.gen.003 | All servers part of Cloud Infrastructure **must** support a root of trust and secure boot. |  |
 | req.sec.gen.004 | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or disabling unnecessary services, applications and network protocols, configuring operating system user authentication, configuring resource controls, installing and configuring additional security controls where needed, and testing the security of the Operating System. | NIST SP 800-123 |
 | req.sec.gen.005 | The Platform **must** support Operating System level access control. |   |
@@ -399,7 +399,7 @@ Security certification should encompass the following elements:
 | req.sec.gen.007 | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service. | |
 | req.sec.gen.008 | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. |  |
 | req.sec.gen.009 | The Platform **must** support Software integrity protection and verification. | |
-| req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. [Controlled Access Based on the Need to Know](https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know). |   |
+| req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. Controlled Access Based on the Need to Know https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know. |   |
 | req.sec.gen.011 | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). | |
 | req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | It is mandatory for a Cloud Infrastructure Operator, but this requirement’s verification goes beyond CNTT testing scope |
 | req.sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  |
