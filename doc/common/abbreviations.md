@@ -27,6 +27,7 @@
 | CNI            | Container Network Interface           |
 | CNTT           | Cloud iNfrastructure Telco Taskforce  |
 | CPU            | Central Processing Unit               |
+| CVE            | Common Vulnerabilities and Exposures  |
 | DMA            | Direct Memory Access                  |
 | DNS            | Domain Name System                    |
 | DPDK           | Data Plane Development Kit            |
@@ -34,6 +35,7 @@
 | E2E            | End to End                            |
 | EPA            | Enhanced Platform Awareness           |
 | ETSI           | European Telecommunications Standards Institute |
+| EULA           | End-User License Agreement            |
 | EVPN           | Ethernet Virtual Private Network      |
 | FPGA           | Field Programmable Gate Array         |
 | FTTx           | Fiber to the x                        |
@@ -92,12 +94,14 @@
 | SDN            | Software-Defined Networking           |
 | SDS            | Software-Defined Storage              |
 | SFC            | Service Function Chaining             |
+| SLA            | Service Level Agreement               |
 | SMT            | Simultaneous multithreading           |
 | SR-IOV         | Single Root Input Output Virtualisation |
 | SSD            | Solid State Drive                     |
 | SW             | Software                              |
 | TLS            | Transport Layer Security              |
 | TOSCA          | Topology and Orchestration Specification for Cloud Applications |
+| TPM            | Trusted Platform Module               |
 | UI             | User Interface                        |
 | vCPU           | Virtual CPU                           |
 | VF             | Virtual Function                      |
