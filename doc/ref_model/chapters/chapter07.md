@@ -406,6 +406,8 @@ Security certification should encompass the following elements:
 | req.sec.gen.014 | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 | req.sec.gen.015 | Any change to the Platform must be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. |  |
 
+<p align="center"><b>Table 7-1:</b> System hardening requirements</p>
+
 <a name="7.9.2"></a>
 ###  7.9.2. Platform and Access
 
@@ -427,6 +429,8 @@ Security certification should encompass the following elements:
 | req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed. | |
 | req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
 
+<p align="center"><b>Table 7-2:</b> Platform and access requirements</p>
+
 <a name="7.9.3"></a>
 ### 7.9.3. Confidentiality and Integrity
 
@@ -441,6 +445,8 @@ Security certification should encompass the following elements:
 | req.sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. | Admin access must be carefully regulated. |
 | req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation. | |
 
+<p align="center"><b>Table 7-3:</b> Confidentiality and integrity requirements</p>
+
 <a name="7.9.4"></a>
 ### 7.9.4. Workload Security
 
@@ -454,6 +460,7 @@ Security certification should encompass the following elements:
 | req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.). | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
+<p align="center"><b>Table 7-4:</b> Workload security requirements</p>
 
 <a name="7.9.5"></a>
 ### 7.9.5. Image Security
@@ -467,6 +474,8 @@ Security certification should encompass the following elements:
 | req.sec.img.005 | Image Registries **must** only be accessible to authorized actors. |  |
 | req.sec.img.006 | Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality. |  |
 | req.sec.img.007 | Image registries **must** be clear of vulnerable and out of date versions. |  |
+
+<p align="center"><b>Table 7-5:</b> Image security requirements</p>
 
 <a name="7.9.6"></a>
 ### 7.9.6. Security LCM
@@ -484,6 +493,8 @@ Security certification should encompass the following elements:
 | req.sec.lcm.009 |  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information. | |
 | req.sec.lcm.010 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  |
 | req.sec.lcm.011 | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software. | |
+
+<p align="center"><b>Table 7-6:</b> Security LCM requirements</p>
 
 <a name="7.9.7"></a>
 ### 7.9.7. Monitoring and Security Audit
@@ -510,6 +521,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.016 | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
 | req.sec.lcm.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
 
+<p align="center"><b>Table 7-7:</b> Monitoring and security audit requirements</p>
+
 <a name="7.9.8"></a>
 ### 7.9.8. Compliance with Standards
 
@@ -527,6 +540,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.std.010 | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management. | ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. |
 | req.sec.std.011 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. |  |
 | req.sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. |
+
+<p align="center"><b>Table 7-8:</b> Compliance with standards requirements</p>
 
 <a name="7.9.9"></a>
 ### 7.9.9. References
