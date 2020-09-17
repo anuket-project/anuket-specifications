@@ -47,6 +47,7 @@
 | IOPS           | Input/Output per Second               |
 | IOMMU          | Input/Ouput Memory Management Unit    |
 | IP             | Internet Protocol                     |
+| IPSec          | Internet Protocol Security            |
 | IT             | Information Technology                |
 | K8s            | Kubernetes                            |
 | LAN            | Local Area Network                    |
@@ -60,6 +61,8 @@
 | NFVI           | Network Function Virtualisation Infrastructure |
 | NFVO           | Network Function Virtualisation Orchestrator |
 | NIC            | Network Interface Card                |
+| NPU            | Numeric Processing Unit               |
+| NUMA           | Non-Uniform Memory Access             |
 | NVMe           | Non-Volatile Memory Express           |
 | ONAP           | Open Network Automation Platform      |
 | OPEX           | Operational Expenditure               |
@@ -88,8 +91,10 @@
 | SR-IOV         | Single Root Input Output Virtualisation |
 | SSD            | Solid State Drive                     |
 | SW             | Software                              |
+| TLS            | Transport Layer Security              |
 | TOSCA          | Topology and Orchestration Specification for Cloud Applications |
 | UI             | User Interface                        |
+| vCPU           | Virtual CPU                           |
 | VF             | Virtual Function                      |
 | VIM            | Virtualised Infrastructure Manager    |
 | VLAN           | Virtual LAN                           |
