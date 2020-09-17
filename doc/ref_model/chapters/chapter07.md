@@ -305,7 +305,7 @@ The validation of the platform measurements can be performed by TPM’s launch c
 In Dynamic Root of Trust for Measurement (DRTM), the RTM for the running environment are stored in PCRs starting with PCR 17. 
 
 If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
-Additionally, platform monitoring can be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as [Linux IMA (Integrity Measurement Architecture)](https://sourceforge.net/p/linux-ima/wiki/Home/) for linux platforms, or by using the [trust policies](https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
+Additionally, platform monitoring can be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as Linux IMA (Integrity Measurement Architecture), see https://sourceforge.net/p/linux-ima/wiki/Home, or by using the trust policies (see https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
 
 The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
