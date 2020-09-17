@@ -19,6 +19,7 @@
 | API            | Application Programming Interface     |
 | B2B            | Business to Business                  |
 | B2C            | Business to Consumer                  |
+| BIOS           | Basic Input Output System             |
 | CaaS           | Container as a Service                |
 | CAPEX          | Capital Expenditure                   |
 | CI/CD          | Continuous Integration / Continuous Deployment |
@@ -34,6 +35,7 @@
 | EVPN           | Ethernet Virtual Private Network      |
 | FPGA           | Field Programmable Gate Array         |
 | FTTx           | Fiber to the x                        |
+| GB             | Giga Byte                             |
 | GW             | Gateway                               |
 | GPU            | Graphics Processing Unit              |
 | GSMA           | Groupe Speciale Mobile Association    |
@@ -41,6 +43,7 @@
 | IaaS           | Infrastructure as a Service           |
 | IMS            | IP Multimedia Subsystem               |
 | IO             | Input/Output                          |
+| IOPS           | Input/Output per Second               |
 | IOMMU          | Input/Ouput Memory Management Unit    |
 | IP             | Internet Protocol                     |
 | IT             | Information Technology                |
@@ -48,8 +51,10 @@
 | LAN            | Local Area Network                    |
 | LCM            | Lifecycle Management                  |
 | MANO           | Management and Orchestration          |
+| MPLS           | Multi-Protocol Label Switching        |
 | MVNO           | Mobile Virtual Network Operator       |
 | NAT            | Network Address Translation           |
+| NBI            | North Bound Interface                 |
 | NFV            | Network Function Virtualisation       |
 | NFVI           | Network Function Virtualisation Infrastructure |
 | NFVO           | Network Function Virtualisation Orchestrator |
@@ -70,12 +75,16 @@
 | RI             | Reference Implementation              |
 | RM             | Reference Model                       |
 | RTM            | Root of Trust for Measurements        |
+| SBA            | Service Based Architecture            |
+| SBI            | South Bound Interface                 |
 | SDN            | Software-Defined Networking           |
 | SDS            | Software-Defined Storage              |
 | SFC            | Service Function Chaining             |
 | SMT            | Simultaneous multithreading           |
 | SR-IOV         | Single Root Input Output Virtualisation |
 | SW             | Software                              |
+| TOSCA          | Topology and Orchestration Specification for Cloud Applications |
+| UI             | User Interface                        |
 | VF             | Virtual Function                      |
 | VIM            | Virtualised Infrastructure Manager    |
 | VLAN           | Virtual LAN                           |
@@ -85,7 +94,7 @@
 | vNIC           | Virtual Network Interface Card        |
 | vRAN           | Virtual Radio Access Network          |
 | VxLAN          | Virtual Extensible LAN                |
-| vXYZ           | virual XYZ, e.g., as in vNIC          |
+| vXYZ           | virtual XYZ, e.g., as in vNIC         |
 | Wi-Fi          | Wireless Fidelity                     |
 
 
