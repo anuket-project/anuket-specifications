@@ -296,7 +296,7 @@ A simple process would work as follows;
 1. The TPM stores this new result hash by extending the currently stored value.
 1. The hash comparisons can validate settings as well as the integrity of the modules.
 
-Cloud Infrastructure operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. [tboot](https://sourceforge.net/projects/tboot/) or [shim](https://github.com/rhboot/shim)), which can extend the root of trust up to the kernel level.
+Cloud Infrastructure operators should ensure that OS kernel measurements can be recorded by using a TPM-aware bootloader (e.g. tboot, see https://sourceforge.net/projects/tboot/ or shim, see https://github.com/rhboot/shim), which can extend the root of trust up to the kernel level.
 
 The validation of the platform measurements can be performed by TPM’s launch control policy (LCP) or through the remote attestation server.
 
