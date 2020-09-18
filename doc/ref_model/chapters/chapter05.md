@@ -33,7 +33,7 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.png" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> Cloud Infrastructure Virtual resources</p>
 
-Depending on the requirements of the workloadss, a VM or a Pod will be deployed with a Cloud Infrastructure Profile and an appropriate compute flavour. A Cloud Infrastructure Profile is defined by a Cloud Infrastructure Software Profile and a Cloud Infrastructure Hardware Profile. A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by an Cloud Infrastructure software layer. **Figure 5-3** depicts a high level view of the Basic and Network Intensive Cloud Infrastructure Profiles.
+Depending on the requirements of the workloads, a VM or a Pod will be deployed with a Cloud Infrastructure Profile and an appropriate compute flavour. A Cloud Infrastructure Profile is defined by a Cloud Infrastructure Software Profile and a Cloud Infrastructure Hardware Profile. A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by a Cloud Infrastructure software layer. **Figure 5-3** depicts a high level view of the Basic and Network Intensive Cloud Infrastructure Profiles.
 
 <p align="center"><img src="../figures/RM_chap5_fig_5_3_SW_profile.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
 <p align="center"><b>Figure 5-3:</b> Cloud Infrastructure Profiles</p>
@@ -284,14 +284,14 @@ _**For Example:** for software profile “n” (network intensive) the above hos
 The host profile and capabilities include:
 1. **# of CPUs (sockets)**: is the #of CPUs installed on the physical server.
 1. **# of cores/CPU**: is the number of cores on each of the CPUs of the physical server.
-1. **RAM (GB)**: is the amount of RAM installed on the pysical server.
-1. **Local Disk Capacity**: is the # of local disks and teh capacity of the disks installed on the physical server.
+1. **RAM (GB)**: is the amount of RAM installed on the physical server.
+1. **Local Disk Capacity**: is the # of local disks and the capacity of the disks installed on the physical server.
 1. **SMT (Simultaneous Multithreading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized workloads. Configured in the host.
 1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to enable SR-IOV.
 1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
-1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, QAT.
-1. **Security features**: such as TRusted Platform Module (TPM).
+1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, and QAT.
+1. **Security features**: such as Trusted Platform Module (TPM).
 
 <!--1. **CPU Oversubscription Ratio**: is based on the number of threads available. For example, on a 2CPU, 24-core host with SMT, there are 96 vCPUs with 1:1 CPU Ratio and 192 vCPUs with 2:1 CPU Ratio. NOTE: While the oversubscription ratio is specified in the Virtual Infrastructure MAnager (VIM), once assigned it becomes part of the host personality and hence will be treated as part of the host profile and capabilities. -->
 <!--1. **DPDK (Data Plane Development Kit)**: Accelerated virtual switch using Data Plan Development Kit (DPDK) -->
