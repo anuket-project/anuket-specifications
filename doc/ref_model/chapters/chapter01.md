@@ -22,7 +22,7 @@ The document starts from the abstract and as it progresses it increasingly gets 
   >	**Audience**: This chapter is written for architects and others who wants to gain a quick high-level understanding of the model.
 - **Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue**:  Details about the capabilities needed to support the various types of workloads and how the capabilities are applied to the model. The details regarding T-shirt sizes and other considerations are found in this section.
   >	**Audience**: This chapter is written for architects, developers and others who need to deploy infrastructure or develop applications.
-- **Chapter 05 - Featureset and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the cloud infrastructure.  It describes the software and hardware capabilities and configurations recommended for the different types of cloud infrastructure profiles.
+- **Chapter 05 - Feature set and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the cloud infrastructure.  It describes the software and hardware capabilities and configurations recommended for the different types of cloud infrastructure profiles.
   > **Audience**: This chapter is written for architects, developers and others who need to deploy infrastructure or develop applications.
 - **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communicate with the workloads and any other external components.
   >	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or develop applications that use the APIs.
@@ -56,7 +56,7 @@ This document specifies:
 
 <a name="1.3"></a>
 ## 1.3 Principles
-The Reference Model specifications conform with the overall principles defined in [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
+The Reference Model specifications conform to the overall principles defined in [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
 
 <a name="1.4"></a>
 ## 1.4 Definitions/Terminology
