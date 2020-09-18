@@ -25,7 +25,7 @@ Instead of deploying the infrastructure components and services manually, the cu
 
 The provisioning of the infrastructure is typically performed by provisioning tools while the deployment of the software and the configuration of the software, and where needed the infrastructure, falls in the domain of configuration management tools. A single tool may support both provisioning and configuration management.
 
-Operators may choose certain paradigms with respect to how they provision and configure their IaaS cloud. These paradigms will drive the selection of the provisioning and configuration tools. In this chapter we will discuss the capabilities of provisioning and configuration management systems; some open source tools may be mentioned but their capabilities are beyond the scope of this chapter. 
+Operators may choose certain paradigms with respect to how they provision and configure their IaaS cloud. These paradigms will drive the selection of the provisioning and configuration tools. In this chapter we will discuss the capabilities of provisioning and configuration management systems; some Open Source tools may be mentioned but their capabilities are beyond the scope of this chapter. 
 
 ##### Procedural versus Declarative code
 The procedural style IaC tools require code that specifies how to achieve the desired state. Whilst the declarative style IaC tools require code that specifies the desired state (what not how).  The major difference between the two styles emerges when changes to the desired state are required. In the procedural style, the change is coded in terms of the difference between the desired and current states while in the declarative style the new desired state is specified. In the procedural style since the state difference has to be coded, a new code file has to be created for each change; in the declarative style the existing code file is updated with the new state information. In the declarative style knowledge of the current state is not required. In the procedural style, knowledge of the current state has to be manually figured by tracing the created code files and the order in which they were applied.
@@ -35,11 +35,11 @@ In the mutable infrastructure paradigm, software updates are made in place. Over
 
 <a name="7.2"></a>
 ## 7.2 Cloud Infrastructure and VIM configuration management
-In [Chapter 9.2 Configuration and Lifecycle Management]( ../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management) defines the functions of Configuration and Life Cycle Management (LCM).  To operate and manage a scalable cloud, that minimizes operational costs, requires tools that incorporates systems for automated provisioing and deployment, and managing configurations that ensures the correctness and integrity of the deployed and configured systems. 
+In the Reference Model, [Chapter 9 Configuration and Lifecycle Management]( ../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management) defines the functions of Configuration and Life Cycle Management (LCM).  To operate and manage a scalable cloud, that minimizes operational costs, requires tools that incorporates systems for automated provisioing and deployment, and managing configurations that ensures the correctness and integrity of the deployed and configured systems. 
 
 <a name="7.2.1"></a>
 ### 7.2.1. Provisioning 
-This section deals with automated provisioning of the cloud infrastructure; for example, provisioning the servers, switches, routers, networking (e.g., subnets, routing tables, load balancers, etc.), databases and all required operating systems (Servers, switches, etc.). 
+This section deals with automated provisioning of the Cloud Infrastructure; for example, provisioning the servers, switches, routers, networking (e.g., subnets, routing tables, load balancers, etc.), databases and all required operating systems (Servers, switches, etc.). 
 
 The following are the minimum tasks that need to be performed by automation:
 - **Pre-boot configuration** such as BIOS/RAID/IPMI settings: Hardware manufacturers typically have their proprietary interface for these tasks but standards such as Redfish are being increasingly utilised. Consider using tooling to ensure consistency across all infrastructure components.
@@ -150,7 +150,7 @@ In this section, a possible framework utilizing Prometheus, Fluentd, Elasticsear
 
 The monitoring and logging framework (**Figure 7-1**) leverages Prometheus as the monitoring engine and 
 Fluentd for logging. In addition, the framework uses Elasticsearch to store and organize logs for easy access. 
-Prometheus agents pull information from individual components on every host.  Fluentd, an open source data 
+Prometheus agents pull information from individual components on every host.  Fluentd, an Open Source data 
 collector, unifies data collection and consumption for better use and understanding of data. Fluentd captures 
 the access, application and system logs.
 

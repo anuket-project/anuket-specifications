@@ -216,11 +216,11 @@ These rows are removed and commented out as it's not clear what the requirement 
 |-------|-------|-------|---------|
 | sec.sys.001 | Access | The Platform **must** support authenticated and secure access to API, GUI and command line interfaces | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.002 | Access | The Platform **must** support Traffic Filtering for workloads (for example, Fire Wall). | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
-| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications in order to ensure the confidentiality and integrity of network traffic. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access)) |
+| sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access)) |
 | sec.sys.004 | Access | The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity lifecycle management capabilities. | [RA-1 6.3.1 "Identity"](./chapter06.md#6311-identity) |
-| sec.sys.007 | Access | The Platform **must** implement controls enforcing least privilege use, such as Role-Based Access Control. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control). | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |  
 | sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.010 | Access | For two or more domains without existing trust relationships, the Platform **must not** allow the effect of an attack on one domain to impact the other domains either directly or indirectly. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
@@ -310,7 +310,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
-| sec.std.018 | Standards | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16); International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. | |
+| sec.std.012 | Standards | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16); International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. | |
 
 
 <p align="center"><b>Table 2-6:</b> Reference Model Requirements: Cloud Infrastructure Security Requirements</p>
@@ -607,11 +607,11 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
 | sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  |
 | sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
-| sec.std.013 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en; ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
-| sec.std.014 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | |
-| sec.std.015 | Standards | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en; ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity | |
-| sec.std.016 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management; ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management | |
-| sec.std.017 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
+| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en; ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
+| sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | |
+| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en; ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity | |
+| sec.std.010 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management; ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management | |
+| sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
 
 <p align="center"><b>Table 2-21:</b> Security Recommendations</p>
 
