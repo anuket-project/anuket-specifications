@@ -77,12 +77,12 @@ At a high level, the following areas/requirements cover platform security for a 
 * Platform certification
 * Secure access controls for administrators
 * Secure API interface for tenants
-* Encryption for all external and control comms
+* Encryption for all external and control communications
 * Strong separation between tenants - ensuring network, data, memory and runtime process (CPU running core) isolation between tenants
 * Authenticated/secure APIs provided to overlay network administrators
 * Platform change control on hardware
 * Templated approved changes for automation where available
-* Typically well defined security framework documentation including approved deployment use cases
+* Typically well-defined security framework documentation including approved deployment use cases
 * Infrastructure software update process
 
 <a name="7.3.2.2"></a>
@@ -118,14 +118,14 @@ The platform supports the workload, and in effect controls access to the workloa
 * **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
 * **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific workloads to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
-* **TENANT ACCESS CONTROLS** - Provides appropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as approriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
+* **TENANT ACCESS CONTROLS** - Provides appropriate tenant access controls to specific platform services, and tenant workloads - including Role-Based Access Control (RBAC), authentication controls as appropriate for the access arrangement, and Application Programming Interface (API) gateways for automated/script-driven processes.
 
 <a name="7.4.1.2"></a>
 #### 7.4.1.2 The following general security requirements apply to the Cloud Infrastructure
 
 **System Hardening**
 * Adhering to the principle of least privilege, no login to root on any platform systems (platform systems are those that are associated with the platform and include systems that directly or indirectly affect the viability of the platform) when root privileges are not required.
-* Ensure that all the platform's components(including hypervisors, VMs, etc.) are kept up to date with the latest patch.
+* Ensure that all the platform's components (including hypervisors, VMs, etc.) are kept up to date with the latest patch.
 * In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
 **Platform access**
@@ -153,8 +153,8 @@ The platform supports the workload, and in effect controls access to the workloa
 * The cloud services must be regularly vulnerability and penetration tested.
 
 **Platform provisioning and LCM**
-* A platform change management process that is documented, well communicated to staff and tenants, and rigourously followed.
-* A process to check change management adherence that is implemented, and rigourously followed.
+* A platform change management process that is documented, well communicated to staff and tenants, and rigorously followed.
+* A process to check change management adherence that is implemented, and rigorously followed.
 * An approved system or process for last resort access must exist for the platform.
 * Where there are multiple hosting facilities used in the provisioning of a service, network communications between the facilities for the purpose of backup, management, and workload communications are cryptographically protected in transit between data centre facilities.
 * Continuous Cloud security compliance is mandatory.
@@ -181,7 +181,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * No hard-coded credentials or clear text passwords. Software should support configurable, or industry standard, password complexity rules.
 * Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
 * Software is code signed and all individual sub-components are assessed and verified for EULA violations.
-* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc).
+* Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc.).
 * Software should support recognized encryption standards and encryption should be decoupled from software.
 * Software should have support for configurable banners to display authorized use criteria/policy.
 
@@ -253,7 +253,7 @@ Use of Image scanners such as OpenSCAP to determine security vulnerabilities is 
 <a name="7.6.3"></a>
 ### 7.6.3 Networking Security Zoning
 
-Network segmentation is important to ensure that applications can only communicate with the applications they are supposed to. To prevent a workload from impacting other workloads or hosts, it is a good practice to separate workoad traffic and management traffic. This will prevent attacks by VMs or containers breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, workloads of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
+Network segmentation is important to ensure that applications can only communicate with the applications they are supposed to. To prevent a workload from impacting other workloads or hosts, it is a good practice to separate workload traffic and management traffic. This will prevent attacks by VMs or containers breaking into the management infrastructure. It is also best to separate the VLAN traffic into appropriate groups and disable all other VLANs that are not in use. Likewise, workloads of similar functionalities can be grouped into specific zones and their traffic isolated. Each zone can be protected using access control policies and a dedicated firewall based on the needed security level.
 
 Recommended practice to set network security policies following the principle of least privileged, only allowing approved protocol flows. For example, set 'default deny' inbound and add approved policies required for the functionality of the application running on the NFV Infrastructure.
 
@@ -305,10 +305,10 @@ The validation of the platform measurements can be performed by TPM’s launch c
 In Dynamic Root of Trust for Measurement (DRTM), the RTM for the running environment are stored in PCRs starting with PCR 17. 
 
 If a remote attestation server is used to monitor platform integrity, the operators should ensure that attestation is performed periodically or in a timely manner.
-Additionally, platform monitoring can be extended to monitor the integrity of the static filesystem at run-time by using a TPM aware kernel module, such as Linux IMA (Integrity Measurement Architecture), see https://sourceforge.net/p/linux-ima/wiki/Home, or by using the trust policies (see https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
+Additionally, platform monitoring can be extended to monitor the integrity of the static file system at run-time by using a TPM aware kernel module, such as Linux IMA (Integrity Measurement Architecture), see https://sourceforge.net/p/linux-ima/wiki/Home, or by using the trust policies (see https://github.com/opencit/opencit/wiki/Open-CIT-3.2-Product-Guide#88-trust-policies) functionality of OpenCIT.
 
-The static filesystem includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
-This allows the attestation server to detect any tampering with the static filesystem during the runtime of the platform.
+The static file system includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
+This allows the attestation server to detect any tampering with the static file system during the runtime of the platform.
 
 <a name="7.7"></a>
 ## 7.7 Common security standards
@@ -482,11 +482,11 @@ Security certification should encompass the following elements:
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
-| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data. |
+| req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defence against virus or other attacks. | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data. |
 | req.sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | |
 | req.sec.lcm.003 | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | |
 | req.sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes. | Templated approved changes for automation where available. |
-| req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly monitored for anomalous behavior. |  |
+| req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly monitored for anomalous behaviour. |  |
 | req.sec.lcm.006 | The Platform **must** verify the integrity of all Resource management requests. | |
 | req.sec.lcm.007 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information. |  |
 | req.sec.lcm.008 | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  |
