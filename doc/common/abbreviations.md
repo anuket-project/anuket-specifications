@@ -54,7 +54,7 @@
 | IMS            | IP Multimedia Subsystem               |
 | IO             | Input/Output                          |
 | IOPS           | Input/Output per Second               |
-| IOMMU          | Input/Ouput Memory Management Unit    |
+| IOMMU          | Input/Output Memory Management Unit    |
 | IoT            | Internet of Things                    |
 | IP             | Internet Protocol                     |
 | IPMI           | Intelligent Platform Management Interface |
