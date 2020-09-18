@@ -13,7 +13,7 @@ One of the main targets of the CNTT is to define an agnostic cloud infrastructur
 
 This means, operators will be able to host their Telco workloads (VNFs/CNFs) with different traffic types, behaviour and from any vendor on a unified consistent cloud infrastructure.
 
-Additionally, a well defined cloud infrastructure is also needed for other type of workloads such as IT, Machine Learning, and Artificial Intelligence.
+Additionally, a well-defined cloud infrastructure is also needed for other type of workloads such as IT, Machine Learning, and Artificial Intelligence.
 
 This chapter analyses various telco workloads and their requirements, and recommends certain cloud infrastructure parameters needed to specify the desired performance expected by these workloads.
 
@@ -25,7 +25,7 @@ There are different ways that workloads can be classified, for example:
   - Data Plane (a.k.a., User Plane, Media Plane, Forwarding Plane)
   - Control Plane (a.k.a, Signalling Plane)
   - Management Plane
-  >_**Note**: Data plane workloads also include control and management plane functions ; control plane workloads also include management plane functions._
+  >_**Note**: Data plane workloads also include control and management plane functions; control plane workloads also include management plane functions._
 - **By service offered:**
   - Mobile broadband service
   - Fixed broadband Service
@@ -179,7 +179,7 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
   - **Targeted Segments**
 
       - Automotive Industry.
-      - Governmental Departments (Smart Cities, Transport, Police, Emergency Services, etc). 
+      - Governmental Departments (Smart Cities, Transport, Police, Emergency Services, etc.). 
       - Private residencies (Compounds, Hotels and Resorts).
       - Enterprise and Industrial Campuses.
 
@@ -217,7 +217,7 @@ vRAN is one of the trending technologies of RAN deployment that fits for all Rad
                 
        -  The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
         
-       -  Following Split Option 7.2, The average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13]. 
+       -  Following Split Option 7.2, the average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13]. 
                    
     
 
@@ -289,7 +289,7 @@ Based on the above analysis, following cloud infrastructure profiles are propose
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> infrastructure profiles will be defined in greater detail for use by workloads: .
+In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> infrastructure profiles will be defined in greater detail for use by workloads:
 
 >***Note:** This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
 >- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
