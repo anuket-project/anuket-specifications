@@ -187,7 +187,7 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 
 - **Decoupling, Loose Coupling:** Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the implementation details of other separate components. Loose coupling is the opposite of tight coupling. Adapted from  Wikipedia:Loose Coupling(https://en.wikipedia.org/wiki/Loose_coupling.
 
-- **Encapsulation:** Restricting of direct access to some of an object's components. Adapted from :Encapsulation (https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)
+- **Encapsulation:** Restricting of direct access to some of an object's components. Adapted from Wikipedia:Encapsulation (https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)
 
 - **Observability:** Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs. Adapted from  Wikipedia:Observability (https://en.wikipedia.org/wiki/Observability
 
