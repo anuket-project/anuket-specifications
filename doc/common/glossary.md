@@ -88,7 +88,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Physical Network Function (PNF):** Implementation of a network function via tightly coupled dedicated hardware and software system.
   >_*Note:*_ This is a physical cloud infrastructure resource with the NF software.
 
-- **Simultaneous Multithreading:** Simultaneous multithreading (SMT) is a technique for improving the overall efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution on a single [Core](#Core) to better utilise the resources provided by modern processor architectures.
+- **Simultaneous Multithreading:** Simultaneous multithreading (SMT) is a technique for improving the overall efficiency of superscalar CPUs with hardware multithreading. SMT permits multiple independent threads of execution on a single core to better utilise the resources provided by modern processor architectures.
 
 
 <a name="1.3"></a>
