@@ -175,7 +175,7 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 <a name="1.6"></a>
 ## Cloud Platform Abstraction Related Terminology:
 
-- **Abstraction:** Process of removing concrete, fine-grained or lower level details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be the result of decoupling. Adapted from Wikipedia:Abstraction(https://en.wikipedia.org/wiki/Abstraction_(computer_science)), Wikipedia:Generalization(https://en.wikipedia.org/wiki/Generalization)
+- **Abstraction:** Process of removing concrete, fine-grained or lower level details or attributes or common properties in the study of systems to focus attention on topics of greater importance or general concepts. It can be the result of decoupling. Adapted from Wikipedia:Abstraction (https://en.wikipedia.org/wiki/Abstraction_(computer_science)), Wikipedia:Generalization(https://en.wikipedia.org/wiki/Generalization)
 
 - **Appliance deployment model:** Application has tight coupling with underlying Platform even if the application is virtualized or containerized.
 
@@ -185,7 +185,7 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 
 - **Decomposition:** Decomposition (also known as factoring) is breaking a complex system into parts that are easier to program and maintain. Adapted from  Wikipedia:Decomposition (https://en.wikipedia.org/wiki/Decomposition_(computer_science)
 
-- **Decoupling, Loose Coupling:** Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the implementation details of other separate components. Loose coupling is the opposite of tight coupling. Adapted from  Wikipedia:Loose Coupling(https://en.wikipedia.org/wiki/Loose_coupling.
+- **Decoupling, Loose Coupling:** Loosely coupled system is one in which each of its components has, or makes use of, little or no knowledge of the implementation details of other separate components. Loose coupling is the opposite of tight coupling. Adapted from  Wikipedia:Loose Coupling (https://en.wikipedia.org/wiki/Loose_coupling.
 
 - **Encapsulation:** Restricting of direct access to some of an object's components. Adapted from Wikipedia:Encapsulation (https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)
 
