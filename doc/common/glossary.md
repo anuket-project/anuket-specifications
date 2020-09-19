@@ -116,7 +116,7 @@ To help guide the reader, this glossary provides an introduction to the terminol
 
 - **Service Assurance (SA):** collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
 
-- **Tenant:** cloud service users sharing access to a set of physical and virtual resources ITU(https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items).
+- **Tenant:** cloud service users sharing access to a set of physical and virtual resources ITU (https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Y.3500-201408-I!!PDF-E&type=items).
 >_*Note*_ Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 
 - **Tenant Instance:** refers to a single **Tenant**.
