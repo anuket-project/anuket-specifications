@@ -15,8 +15,8 @@
   for more details.
 * **check the CNTT conformance of your existing Kubernetes deployments?**
   You would be primarily interested by
-  [Kubernetes Testing Cookbook](doc/ref_cert/RC2/chapters/chapter04.md)
-  and [the test case descriptions and selection](doc/ref_cert/RC2/chapters/chapter03.md)
+  [Kubernetes Testing Cookbook](doc/ref_cert/RC2/chapters/chapter03.md)
+  and [the test case descriptions and selection](doc/ref_cert/RC2/chapters/chapter02.md)
   for more details.
 * **deploy OpenStack to onboard your VNFs?**
   You would be primarily interested by
