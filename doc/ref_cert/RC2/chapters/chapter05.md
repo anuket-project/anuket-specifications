@@ -1,5 +1,5 @@
 [<< Back](../)
 
-# 5. CNF Conformance Requirements
+# 5. CNF Testing Cookbook
 
 ## Table of Contents
