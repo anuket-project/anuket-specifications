@@ -14,7 +14,7 @@
   * [4.3.1 VIM Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
 * [4.4 Consumable Infrastructure Resources and Services](#4.4)
-  * [4.4.1 Support for Profiles and T-shirt instance types](#4.4.1)
+  * [4.4.1 Support for Cloud Infrastructure Profiles and flavors](#4.4.1)
   * [4.4.2 Logical segregation and high availability](#4.4.2)
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
 
@@ -29,7 +29,7 @@ Chapter 3 introduced the components of an OpenStack-based IaaS
 -	Cloud Infrastructure Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
 -	Underlying physical compute, storage and networking resources
 
-This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for flavors. 
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for flavors.
 
 
 <a name="4.2"></a>
@@ -37,15 +37,15 @@ This chapter delves deeper into the capabilities of these different resources an
 
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
-In OpenStack, KVM is configured as the default hypervisor for compute nodes. 
+In OpenStack, KVM is configured as the default hypervisor for compute nodes.
 - Configuration: [OpenStack](https://docs.openstack.org/nova/train/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
-    - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images 
+    - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilize compatible virtual machine images
   -	Configure Compute backing storage
   -	Specify the CPU Model for KVM guests (VMs)
   -	KVM Performance Tweaks
--	[Hardening](https://docs.openstack.org/security-guide/compute/hardening-the-virtualization-layers.html) 
-    - OpenStack recommends minimizing the code base by removing unused components 
+-	[Hardening](https://docs.openstack.org/security-guide/compute/hardening-the-virtualization-layers.html)
+    - OpenStack recommends minimizing the code base by removing unused components
     -	sVirt (Secure Virtualisation) provides isolation between VM processes, devices, data files and system processes
 
 
@@ -73,7 +73,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
     -	Boot disks are dedicated with Flash technology disks
 -	Sizing rules
     -	It is easy to horizontally scale the number of control nodes
-    -	The number of control nodes is determined by a minimum number needed for high availability (viz., 3 nodes) and the extra nodes needed to handle the transaction volumes, in particular, for Messaging service (e.g., RabbitMQ) and Database (e.g., MySQL) to track state. 
+    -	The number of control nodes is determined by a minimum number needed for high availability (viz., 3 nodes) and the extra nodes needed to handle the transaction volumes, in particular, for Messaging service (e.g., RabbitMQ) and Database (e.g., MySQL) to track state.
     -	The number of control nodes only needs to be increased in environments with a lot of changes, such as a testing lab, or a very large cloud footprint (rule of thumb: number of control nodes = 3 + quotient(number of compute nodes/1000)).
       -	The [Services Placement Summary table](https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html) specifies the number of instances that are required based upon the cloud size (number of nodes).
 
@@ -82,13 +82,13 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 
 Networks nodes are mainly used for L3 traffic management for overlay tenant network (see more detail in section 4.3.1.5 Neutron)
 
--	BIOS requirements 
+-	BIOS requirements
 
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
- 
- 
+
+
 -	How many nodes to meet SLA
     - Minimum 2 nodes for high availibility using VRRP.
 -	HW specifications
@@ -97,7 +97,7 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
          - 1 NIC for External Network
          - 1 NIC for Other Networks (PXE, Mngt ...)
 -	Sizing rules
-    - Scale out of network node is not easy 
+    - Scale out of network node is not easy
     - DVR can be an option for large deployment (see more detail in chapter 4.3.1.5 - Neutron)
 
 #### 4.2.2.4. Storage nodes
@@ -106,8 +106,8 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
-  
- 
+
+
 -	HW specifications
 -	How many nodes to meet SLA
 -	Sizing rules
@@ -120,7 +120,7 @@ This section specifies the compute node configurations to support the flavors. B
 -	BIOS requirement
     -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 
-Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1. 
+Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1.
 
 **Flavor Geometry**
 
@@ -158,10 +158,10 @@ Additionally, for OpenStack, we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Basic  | Network Intensive |
 |---------------|-----------|------------------|
-| Boot disks | RAID 1 | RAID 1 | 
+| Boot disks | RAID 1 | RAID 1 |
 
-<!--- 
-Had to delete the Column for Compute intensive as commenting in table  didn't work 
+<!---
+Had to delete the Column for Compute intensive as commenting in table  didn't work
 Entries were:
 Boot Disks: RAID 1
 CPU reservation for host: 1 core per NUMA
@@ -180,26 +180,26 @@ CPU reservation for host: 1 core per NUMA
 
 -	Sizing rules
 
-| Number of CPU sockets| s | 
+| Number of CPU sockets| s |
 | ------------|--|
-| Number of cores| c | 
-| SMT| t | 
-| RAM| rt | 
-| Storage| d | 
-| Overcommit| o | 
+| Number of cores| c |
+| SMT| t |
+| RAM| rt |
+| Storage| d |
+| Overcommit| o |
 | Average vCPU per instance | v |
 | Average RAM per instance | ri |
 
 
-| | | Basic | Network Intensive | 
+| | | Basic | Network Intensive |
 |---------------|------------|------------|------------|
 | # of VMs per node (vCPU) | (s*c*t*o)/v | 4*(s*c*t)/v | (s*c*t)/v|  
 | # of VMs per node (RAM) | rt/ri | rt/ri | rt/ri |  
 | | | | |  
 | Max # of VMs per node|  | min(4*(s*c*t)/v, rt/ri)| min((s*c*t)/v, rt/ri)|  
 
-<!--- 
-Had to delete the Column for Compute intensive as commenting in table  didn't work 
+<!---
+Had to delete the Column for Compute intensive as commenting in table  didn't work
 Entries were:
 # of VMs per node (vCPU): s*c*t)/v| (s*c*t)/v
 # of VMs per node (RAM): rt/ri
@@ -211,8 +211,8 @@ Caveats:
 
 #### 4.2.2.6. Compute Resource Pooling Considerations
 
--	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive) leads to inefficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type. 
--	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection. 
+-	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive) leads to inefficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type.
+-	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection.
 
 #### 4.2.2.7. Reservation of Compute Node Cores
 The [RA-1 2.3.2 Infrastructure Requirements](./chapter02.md#232-infrastructure-requirements) req.inf.com.08 requires the allocation of "certain number of host cores/threads to non-tenant workloads such as for OpenStack services." A number ("n") of random cores can be reserved for host services (including OpenStack services) by specifying the following in nova.conf:
@@ -240,23 +240,23 @@ When a VM instance is created the vCPUs are, by default, not assigned to a parti
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; openstack flavor set .xlarge --property hw:cpu_policy=dedicated
 
-While an instance with pinned CPUs cannot use CPUs of another pinned instance, this does not apply to unpinned instances; an unpinned instance can utilize the pinned CPUs of another instance. To prevent unpinned instances from disrupting pinned instances, the hosts with CPU pinning enabled are pooled in their own host aggregate and hosts with CPU pinning disabled are pooled in another non-overlapping host aggregate. 
+While an instance with pinned CPUs cannot use CPUs of another pinned instance, this does not apply to unpinned instances; an unpinned instance can utilize the pinned CPUs of another instance. To prevent unpinned instances from disrupting pinned instances, the hosts with CPU pinning enabled are pooled in their own host aggregate and hosts with CPU pinning disabled are pooled in another non-overlapping host aggregate.
 
-#### 4.2.2.9 Compute node configurations for Profiles and Flavors 
+#### 4.2.2.9 Compute node configurations for Profiles and Flavors
 
-This section specifies the compute node configurations to support the flavors. 
+This section specifies the compute node configurations to support the flavors.
 
 **Cloud Infrastructure Hardware Profile**
 
-The Cloud Infrastructure Hardware (or simply “host”) profile and configuration parameters are utilised in the reference architecture to define different hardware profiles; these are used to configure the BIOS settings on a physical server. 
+The Cloud Infrastructure Hardware (or simply “host”) profile and configuration parameters are utilised in the reference architecture to define different hardware profiles; these are used to configure the BIOS settings on a physical server.
 
-A flavor (see RM Chapters 4 and 5) defines the characteristics (“capabilities”) of Virtual Machines (VMs or vServers) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between flavors and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Host profiles are immutable and hence when a configuration needs to be changed, a new host profile is created. 
+A flavor (see RM Chapters 4 and 5) defines the characteristics (“capabilities”) of Virtual Machines (VMs or vServers) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between flavors and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Host profiles are immutable and hence when a configuration needs to be changed, a new host profile is created.
 
 **CPU Allocation Ratio and CPU Pinning**
 
 Host profiles need to be created. for example, for each of the CPU Allocation Ratios specified for a flavor; this gives rise in the different flavor series. A given host (compute node) can only support a single CPU Allocation Ratio. Thus, to support the 2 Basic flavor types with CPU Allocation Ratios of 1.0 and 4.0 we will need to create 2 different host profiles and separate host aggregates for each of the host profiles. The CPU Allocation Ratio is set in the hypervisor on the host.
 
-When a CPU Allocation Ratio exceeds 1.0 then CPU Pinning also needs to be disabled. 
+When a CPU Allocation Ratio exceeds 1.0 then CPU Pinning also needs to be disabled.
 
 
 **Server Configurations**
@@ -269,22 +269,22 @@ Compute hosts have varying numbers of Ports/Bonds/LAGs/Trunks/VLANs connected wi
 
 Physical Connections/Cables are generally the same within a zone, regardless of these specific L2/L3/SR-IOV configurations for the compute
 
-**Compute Bond Port:**  TOR port maps VLANs directly with IRBs on the TOR pair for tunnel packets and Control Plane Control and Storage packets.  These packets are then routed on the underlay network GRT. 
+**Compute Bond Port:**  TOR port maps VLANs directly with IRBs on the TOR pair for tunnel packets and Control Plane Control and Storage packets.  These packets are then routed on the underlay network GRT.
 
 Server Flavors:  B1, B4, NV, ND
 
-**Compute SR-IOV Port:**  TOR port maps VLANs with bridge domains that extend to IRBs, using VXLAN VNI.  The TOR port associates each packet’s outer VLAN tag with a bridge domain to support VNF interface adjacencies over the local EVPN/MAC bridge domain.  This model also applies to direct physical connections with transport elements. 
+**Compute SR-IOV Port:**  TOR port maps VLANs with bridge domains that extend to IRBs, using VXLAN VNI.  The TOR port associates each packet’s outer VLAN tag with a bridge domain to support VNF interface adjacencies over the local EVPN/MAC bridge domain.  This model also applies to direct physical connections with transport elements.
 
 Server Flavors:  NS
 
 **Notes on SR-IOV**
 
-SR-IOV at the Compute Server routes Guest traffic directly with a partitioned NIC card, bypassing the hypervisor and vSwitch software, which provides higher bps/pps throughput for the Guest VM.  OpenStack and MANO manage SR-IOV configurations for Tenant VM interfaces. 
+SR-IOV at the Compute Server routes Guest traffic directly with a partitioned NIC card, bypassing the hypervisor and vSwitch software, which provides higher bps/pps throughput for the Guest VM.  OpenStack and MANO manage SR-IOV configurations for Tenant VM interfaces.
 
 - Server, Linux, and NIC card hardware standards include SR-IOV and VF requirements
-- Network Intensive Flavors for SR-IOV (ns series) with specific NIC/Leaf port configurations 
-- OpenStack supports SR-IOV provisioning 
-- Implement Security Policy, Tap/Mirror, QoS, etc. functions in the NIC, Leaf, and other places 
+- Network Intensive Flavors for SR-IOV (ns series) with specific NIC/Leaf port configurations
+- OpenStack supports SR-IOV provisioning
+- Implement Security Policy, Tap/Mirror, QoS, etc. functions in the NIC, Leaf, and other places
 
 Because SR-IOV involves Guest VLANs between the Compute Server and the ToR/Leafs, Guest automation and VM placement necessarily involves the Leaf switches (e.g., access VLAN outer tag mapping with VXLAN EVPN).   
 
@@ -346,7 +346,7 @@ The above examples of host networking configurations for the B1 and B4 flavor se
 
 _Host Networking configuration for ND Flavor Series_
 
-An example of the data traffic configuration for the ND (OVS-DPDK) flavor series is shown in Figure 4-3. 
+An example of the data traffic configuration for the ND (OVS-DPDK) flavor series is shown in Figure 4-3.
 
 <p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-DPDK.png" alt="Network Intensive Profile Host Configuration with DPDK acceleration "><b> Figure 4-3: Network Intensive Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
 
@@ -382,7 +382,7 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 -	Switch OS
 -	Minimum number of switches etc.
 -	Dimensioning for East/West and North/South
--	Spine / Leaf topology – east – west 
+-	Spine / Leaf topology – east – west
 -	Global Network parameters
 -	OpenStack control plane VLAN / VXLAN layout
 -	Provider VLANs
@@ -395,26 +395,26 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 | Network | Description | Characteristics |
 |----------|---------|--------------|
-| Provisioning & Management | Initial OS bootstrapping of the servers via PXE, deployment of software and thereafter for access from within the control plane. | Security Domain: Management<br />Externally Routable: No<br />Connected to: All nodes | 
-| Internal API | Intra-OpenStack service API communications, messaging and database replication | Security Domain: Management<br />Externally Routable: No <br />Connected to: All nodes except foundation | 
-| Storage Management | Backend connectivity between storage nodes for heartbeats, data object replication and synchronisation | Security Domain: Storage <br />Externally Routable: No <br />Connected to: All nodes except foundation | 
-| Storage Front-end | Block/Object storage access via cinder/swift | Security Domain: Storage<br />Externally Routable: No<br />Connected to: All nodes except foundation | 
-| Tenant | VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e. RFC1918 re-usable private networks as controlled by cloud administrator | Security Domain: Underlay<br />Externally Routable: No <br /> Connected to: controllers and computes | 
-| External API | Hosts the public OpenStack API endpoints including the dashboard (Horizon) | Security Domain: Public<br />Externally routable: Yes<br />Connected to: controllers | 
-| External Provider (FIP) | Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918 private networks | Security Domain: Data Centre<br />Externally routable: Yes<br />Connected to: controllers, OVS computes | 
-| External Provider (VLAN) | External Data Centre L2 networks (VLANs) that are directly accessible to the project. Note: External IP address management is required | Security Domain: Data Centre<br />Externally routable: Yes<br />Connected to: OVS DPDK computes | 
-| IPMI / Out of Band | The remote “lights-out” management port of the servers e.g. iLO, IDRAC / IPMI / Redfish | Security Domain: Management<br />Externally routable: No<br />Connected to: IPMI port on all servers | 
+| Provisioning & Management | Initial OS bootstrapping of the servers via PXE, deployment of software and thereafter for access from within the control plane. | Security Domain: Management<br />Externally Routable: No<br />Connected to: All nodes |
+| Internal API | Intra-OpenStack service API communications, messaging and database replication | Security Domain: Management<br />Externally Routable: No <br />Connected to: All nodes except foundation |
+| Storage Management | Backend connectivity between storage nodes for heartbeats, data object replication and synchronisation | Security Domain: Storage <br />Externally Routable: No <br />Connected to: All nodes except foundation |
+| Storage Front-end | Block/Object storage access via cinder/swift | Security Domain: Storage<br />Externally Routable: No<br />Connected to: All nodes except foundation |
+| Tenant | VXLAN / Geneve project overlay networks (OVS kernel mode) – i.e. RFC1918 re-usable private networks as controlled by cloud administrator | Security Domain: Underlay<br />Externally Routable: No <br /> Connected to: controllers and computes |
+| External API | Hosts the public OpenStack API endpoints including the dashboard (Horizon) | Security Domain: Public<br />Externally routable: Yes<br />Connected to: controllers |
+| External Provider (FIP) | Network with a pool of externally routable IP addresses used by neutron routers to NAT to/from the tenant RFC1918 private networks | Security Domain: Data Centre<br />Externally routable: Yes<br />Connected to: controllers, OVS computes |
+| External Provider (VLAN) | External Data Centre L2 networks (VLANs) that are directly accessible to the project. Note: External IP address management is required | Security Domain: Data Centre<br />Externally routable: Yes<br />Connected to: OVS DPDK computes |
+| IPMI / Out of Band | The remote “lights-out” management port of the servers e.g. iLO, IDRAC / IPMI / Redfish | Security Domain: Management<br />Externally routable: No<br />Connected to: IPMI port on all servers |
 
 A VNF application network topology is expressed in terms of VMs, vNIC interfaces with vNet access networks, and WAN Networks while the VNF Application VMs require multiple vNICs, VLANs, and host routes configured within the VM’s Kernel.
 
 #### 4.2.3.3. Octavia v2 API conformant Load Balancing
-Load balancing is needed for automatic scaling, managing availability and changes. [Octavia](https://docs.openstack.org/octavia/latest/reference/introduction.html) is an open-source load balancer for OpenStack, based on HAProxy, and replaces the deprecated (as of OpenStack Queens release) Neutron LBaaS. The Octavia v2 API is a superset of the deprecated Neutron LBaaS v2 API and has a similar CLI for seamless transition. 
+Load balancing is needed for automatic scaling, managing availability and changes. [Octavia](https://docs.openstack.org/octavia/latest/reference/introduction.html) is an open-source load balancer for OpenStack, based on HAProxy, and replaces the deprecated (as of OpenStack Queens release) Neutron LBaaS. The Octavia v2 API is a superset of the deprecated Neutron LBaaS v2 API and has a similar CLI for seamless transition.
 
-As a default Octavia utilizes Amphorae Load Balancer. Amphorae consists of a fleet of VMs, containers or bare metal servers and delivers horizontal scaling by managing and spinning these resources on demand. The reference implementation of the Amphorae image is an Ubuntu virtual machine running HAProxy. 
+As a default Octavia utilizes Amphorae Load Balancer. Amphorae consists of a fleet of VMs, containers or bare metal servers and delivers horizontal scaling by managing and spinning these resources on demand. The reference implementation of the Amphorae image is an Ubuntu virtual machine running HAProxy.
 
 Octavia depends upon a number of OpenStack services including Nova for spinning up compute resources on demand and their life cycle management; Neutron for connectivity between the compute resources, project environment and external networks; Keystone for authentication; and Glance for storing of the compute resource images.
 
-Octavia supports provider drivers which allows third-party load balancing drivers (such as F5, AVI, etc.) to be utilized instead of the default Amphorae load balancer. When creating a third-party load balancer, the **provider** attribute is used to specify the backend to be used to create the load balancer. The **list providers** lists all enabled provider drivers.  Instead of using the provider parameter, an alternate is to specify the flavor_id in the create call where provider-specific Octavia flavors have been created. 
+Octavia supports provider drivers which allows third-party load balancing drivers (such as F5, AVI, etc.) to be utilized instead of the default Amphorae load balancer. When creating a third-party load balancer, the **provider** attribute is used to specify the backend to be used to create the load balancer. The **list providers** lists all enabled provider drivers.  Instead of using the provider parameter, an alternate is to specify the flavor_id in the create call where provider-specific Octavia flavors have been created.
 
 
 #### 4.2.3.4. Neutron Extensions
@@ -422,7 +422,7 @@ OpenStack Neutron is an extensible framework that allows incorporation through p
 
 CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
-Every Neutron plugin needs to implement a minimum set of common [methods (actions for Train release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension. 
+Every Neutron plugin needs to implement a minimum set of common [methods (actions for Train release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension.
 
 [Chapter 5](chapter05.md), Interfaces and APIs, of this Reference Architecture provides a list of [Neutron Extensions](chapter05.md#525-neutron).  The current available extensions can  be obtained using [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
 
@@ -437,7 +437,7 @@ With support of VNF workloads, the resources bottlenecks are not only the CPU an
 -	Network intensive compute node tuning (including OVS-DPDK).
 
 #### 4.2.3.6. Integration Interfaces
-- DHCP 
+- DHCP
 When the Neutron-DHCP agent is hosted in controller nodes, then for VMs, on a Tenant network, that need to acquire an IPv4 and/or IPv6 address, the VLAN for the Tenant must be extended to the control plane servers so that the Neutron agent can receive the DHCP requests from the VM and send the response to the VM with the IPv4 and/or IPv6 addresses and the lease time. Please see OpenStack provider Network.
 -	DNS
 -	LDAP
@@ -452,7 +452,7 @@ Storage systems are available from multiple vendors and can also utilize commodi
 
 The document also includes a matrix for a number of proprietary drivers and some of the optional functions that these drivers support. This matrix is a handy tool to select storage backends that have the optional storage functions needed by the cloud operator. The cloud workload storage requirements helps determine the backends that should be deployed by the cloud operator.   The common storage backend attachment methods include iSCSI, NFS, local disk, etc. and the matrix list the supported methods for each of the vendor drivers. The OpenStack Cinder [Available Drivers]( https://docs.openstack.org/cinder/latest/drivers.html) documentation provides a list of all OpenStack compatible drivers and their configuration options.
 
-The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including CNTT required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by CNTT including managing volumes, snapshots, multi-storage backends, migrate volumes, etc. 
+The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including CNTT required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by CNTT including managing volumes, snapshots, multi-storage backends, migrate volumes, etc.
 
 [Ceph](https://ceph.io/) is the default CNTT Reference Architecture storage backend and is discussed below.
 
@@ -476,7 +476,7 @@ Ceph monitors maintain a master copy of the maps of the cluster state required b
 | Boot disks | RAID 1 |
 
 How many nodes to meet SLA :
--	minimum: three bare metal servers where Monitors are collocated with OSD. Note: at least 3 Monitors and 3 OSDs are required for High AVailability. 
+-	minimum: three bare metal servers where Monitors are collocated with OSD. Note: at least 3 Monitors and 3 OSDs are required for High AVailability.
 
 HW specifications :
 - Boot disks are dedicated with Flash technology disks
@@ -492,7 +492,7 @@ Sizing rules :
 <a name="4.3"></a>
 ## 4.3 Virtualised Infrastructure Manager (VIM)
 This section covers:
--	Detailed breakdown of OpenStack core services 
+-	Detailed breakdown of OpenStack core services
 -	Specific build-time parameters
 
 <a name="4.3.1"></a>
@@ -517,7 +517,7 @@ Cinder is the block device management service, Cinder depends on Keystone and po
 -	Cinder Scheduler
 -	Cinder Volume – the Cinder volume process needs to talk to its backends
 
-_The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD and NFS._ 
+_The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD and NFS._
 
 #### 4.3.1.4 Swift
 Swift is the object storage management service, Swift depends on Keystone and possibly Glance to be able to create volumes from images. Swift has services running on the control nodes and the compute nodes:
@@ -526,7 +526,7 @@ Swift is the object storage management service, Swift depends on Keystone and po
 -	Container Services
 -	Account Services
 
-_The Swift backends include iSCSI drives, Ceph RBD and NFS._ 
+_The Swift backends include iSCSI drives, Ceph RBD and NFS._
 
 #### 4.3.1.5 Neutron
 Neutron is the networking service, Neutron depends on Keystone and has services running on the control nodes and the compute nodes. Depending upon the workloads to be hosted by the Infrastructure and the expected load on the controller node, some of the Neutron services can run on separate network node(s). Factors affecting controller node load include number of compute nodes and the number of API calls being served for the various OpenStack services (nova, neutron, cinder, glance etc.). To reduce controller node load, network nodes are widely added to manage L3 traffic for overlay tenant networks and interconnection with external networks. Table 4-2 below lists the networking service components and their placement. Please note that while network nodes are listed in the table below, network nodes only deal with tenant networks and not provider networks. Also, network nodes are not required when SDN is utilized for networking.
@@ -542,7 +542,7 @@ Neutron is the networking service, Neutron depends on Keystone and has services 
 
 **Issues with the standard networking (centralized routing) approach**
 
-The network node performs both routing and NAT functions and represents both a scaling bottleneck and a single point of failure. 
+The network node performs both routing and NAT functions and represents both a scaling bottleneck and a single point of failure.
 
 Two VMs on different compute nodes and using different project networks (a.k.a. tenant networks) where the both of the project networks are connected by a project router. For communication between the two VMs (instances with a fixed or floating IP address), the network node routes East-West network traffic among project networks using the same project router. Even though the instances are connected by a router, all routed traffic must flow through the network node, and this becomes a bottleneck for the whole network.
 
@@ -552,14 +552,14 @@ While the separation of the routing function from the controller node to the net
 
 With DVR, each compute node also hosts the L3-agent (providing the distributed router capability) and this then allows direct instance to instance (East-West) communications.
 
-The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation. 
+The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation.
 
-DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/train/admin/config-dvr-ha-snat.html) addresses this vulnerability. 
+DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/train/admin/config-dvr-ha-snat.html) addresses this vulnerability.
 
- 
+
 **Software Defined Networking (SDN)**
 
-For the most reliable solution that addresses all the above issues and Telco workload requirements requires SDN to offload Neutron calls. 
+For the most reliable solution that addresses all the above issues and Telco workload requirements requires SDN to offload Neutron calls.
 
 SDN provides a truly scalable and preferred solution to suport dynamic, very large-scale, high-density, telco cloud environments. OpenStack Neutron, with its plugin architecture, provides the ability to integrate SDN controllers (
 [3.2.5. Virtual Networking – 3rd party SDN solution](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution)). With SDN incorporated in OpenStack, changes to the network is triggered by workloads (and users), translated into Neutron APIs and then handled through neutron plugins by the corresponding SDN agents.
@@ -603,18 +603,18 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 -->
 
 #### 4.3.1.10 Placement
-The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html): 
+The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
 
 <p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
-    
+
 <p>Resource Classes specifies the type of resources (VCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)</p>
-    
+
 <p>Inventory: Each resource provider maintains the total and reserved quantity of one or more classes of resources.  For example, RP_1 has available inventory of 16 VCPU, 16384 MEMORY_MB and 1024 DISK_GB.</p>
-    
+
 <p>Traits are qualitative characteristics of the resources from a resource provider. For example, the trait for RPA_1 “is_SSD” to indicate that the DISK_GB provided by RP_1 are solid state drives.</p>
-    
+
 <p>Allocations represent resources that have been assigned/used by some consumer of that resource.</p>
-    
+
 <p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
 
 
@@ -624,12 +624,12 @@ Placement has services running on the control node:
 -	nova-placement-api
 
 #### 4.3.1.11 Barbican
-[Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification. 
+[Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g. symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification.
 
 Barbican usage provides a means to fulfill security requirements such as sec.sys.012 “The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component” and sec.ci.001 “The Platform **must** support Confidentiality and Integrity of data at rest and in transit.”.
 
 <a name="4.3.2"></a>
-### 4.3.2. Containerised OpenStack Services 
+### 4.3.2. Containerised OpenStack Services
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc. Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
 
 In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) shows a high level Virtualised OpenStack services topology. The containerized OpenStack services topology version is shown in Figure 4-7.
@@ -641,8 +641,9 @@ In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) 
 ## 4.4 Consumable Infrastructure Resources and Services
 
 <a name="4.4.1"></a>
-### 4.4.1. Support for Profiles and T-shirt instance types
-Reference Model Chapter 4 and  5 provide information about the instance types and size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes requires the setting up of information as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properies.
+### 4.4.1. Support for Cloud Infrastructure Profiles and flavors
+
+Reference Model Chapter 4 and  5 provide information about the Cloud Infrastructure Profiles and their size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes, it is required to set up the flavors as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properties.
 
 <!---
 Original Table w Compute Intensive
@@ -651,26 +652,26 @@ Original Table w Compute Intensive
 | CPU allocation ratio | nfvi.com.cfg.001| In Nova.conf include <br>cpu_allocation_ratio= 4.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 |
 | NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> |
 | CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and <br>--property hw:cpu__thread_policy= <prefer, require, isolate>|
-| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | --property hw:mem_page_size=large | 
+| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | --property hw:mem_page_size=large |
 | OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
 | Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
-| Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3276800<br><br>Note: 25 Gbps = 3276800 kilobytes per second | 
+| Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3276800<br><br>Note: 25 Gbps = 3276800 kilobytes per second |
 New Table w/o Compute Intensive column below
 --->
 
-| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | 
+| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive |
 |----------|-------------|--------------|-------------|
 | CPU allocation ratio (custom extra_specs) | nfvi.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
-| NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | 
+| NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> |
 | CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> |
-| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | 
+| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large |
 | OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
-| Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required | 
+| Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
 | Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second |
 
-To configure the T-shirt sizes (specified in [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) Reference Model Chapter4), the parameters in the following table are specified as part of the flavor create; the parameters are preceded by "--".
+To configure the flavors (specified in [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) Reference Model Chapter4), the parameters in the following table are specified as part of the flavor create command; the parameters are preceded by "--".
 
-| T-Shirt Size | vCPU ("c") | RAM ("r") | Local Disk ("d") |
+| Flavor name | vCPU ("c") | RAM ("r") | Local Disk ("d") |
 |-----|------|---------|----------------|
 | .tiny | 1<br>-- vcpus 1 | 512 MB<br>-- ram 512 | 1 GB<br>-- disk 1 |
 | .small | 1<br>-- vcpus 1 | 2 GB<br>-- ram 2048 | 20 GB<br>-- disk 20 |
@@ -695,7 +696,7 @@ Note: The Cloud Infrastructure doesn’t provide any resiliency mechanisms at th
 -	Physical host reboot does not trigger the automatic start of VM
 
 **Limitations and constraints**
--	NUMA Overhead: isolated core will be used for overhead tasks from the hypervisor 
+-	NUMA Overhead: isolated core will be used for overhead tasks from the hypervisor
 
 For Network intensive instances, VNF Component should fit into a single NUMA zone for performance reason.
 
