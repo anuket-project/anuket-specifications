@@ -17,7 +17,7 @@ Based on community consultations, including telco operators, technology supplier
 
  - Higher development costs due to the need to develop virtualised/containerised network applications on multiple custom platforms for each operator.
  - Increased complexities due to the need to maintain multiple versions of applications to support each custom environment.
- - Lack of testing and validation commonalities, leading to inefficiencies and increased time to market. While the operators will still do internal testing, but using an industry driven verification program based on a common cloud infrastructure would provide a head start.
+ - Lack of testing and validation commonalities, leading to inefficiencies and increased time to market. While the operators will still perform internal testing, the application developers utilising an industry standard verification program on a common cloud infrastructure would lead to efficiencies and faster time to market.
  - Slower adoption of cloud-native applications and architectures. A common telco cloud may provide an easier path to methodologies that will drive faster cloud-native development.
 - Increased operational overhead due to the need for operators to integrate diverse and sometime conflicting cloud platform requirements.
 
