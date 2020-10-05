@@ -254,7 +254,7 @@ An over use of Host Aggregates and Availability Zones can result in a granular p
 
 <a name="3.3.4"></a>
 ### 3.3.4. Flavor management
-A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors listed [here](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours).
+A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors listed [here](../../../ref_model/chapters/chapter04.md#predefined-compute-flavours).
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources

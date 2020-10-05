@@ -120,7 +120,7 @@ This section specifies the compute node configurations to support the flavors. B
 -	BIOS requirement
     -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 
-Reference Model Chapter 4 [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1.
+Reference Model Chapter 4 [Table 4-13](../../../ref_model/chapters/chapter04.md#predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1.
 
 **Flavor Geometry**
 
@@ -669,7 +669,7 @@ New Table w/o Compute Intensive column below
 | Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
 | Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second |
 
-To configure the flavors (specified in [Table 4-17](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours) Reference Model Chapter4), the parameters in the following table are specified as part of the flavor create command; the parameters are preceded by "--".
+To configure the flavors (specified in [Table 4-13](../../../ref_model/chapters/chapter04.md#predefined-compute-flavours) Reference Model Chapter4), the parameters in the following table are specified as part of the flavor create command; the parameters are preceded by "--".
 
 | Flavor name | vCPU ("c") | RAM ("r") | Local Disk ("d") |
 |-----|------|---------|----------------|
