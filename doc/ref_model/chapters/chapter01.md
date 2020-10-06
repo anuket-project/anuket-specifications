@@ -12,6 +12,18 @@
 ## 1.1 Overview
 The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by Cloud iNfrastructure Telco Taskforce (CNTT).  For more information about CNTT, its activities and deliverables, see [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
 
+**Problem Statement:**
+Based on community consultations, including telco operators, technology suppliers, and software developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of VNF/CNF network applications related to the lack of a common cloud infrastructure platform. These include but are not limited to the following:
+
+ - Higher development costs due to the need to develop virtualised/containerised network applications on multiple custom platforms for each operator.
+ - Increased complexities due to the need to maintain multiple versions of applications to support each custom environment.
+ - Lack of testing and validation commonalities, leading to inefficiencies and increased time to market. While the operators will still perform internal testing, the application developers utilising an industry standard verification program on a common cloud infrastructure would lead to efficiencies and faster time to market.
+ - Slower adoption of cloud-native applications and architectures. A common telco cloud may provide an easier path to methodologies that will drive faster cloud-native development.
+- Increased operational overhead due to the need for operators to integrate diverse and sometime conflicting cloud platform requirements.
+
+One of major challenges holding back the more rapid and widespread adoption of virtualised/containerised network applications is when the traditional telecom ecosystem vendors, while building or designing their virtualised services, are making their own infrastructure assumptions and requirements, often with custom design parameters. This leaves the operators being forced to build complex integrations of various vendor/function specific silos which are incompatible with each other and might possibly have different and conflicting operating models. In addition, this makes the onboarding and conformance processes of VNFs/CNFs (coming from different vendors) hard to automate and standardise. The need for a common model across the industry to facilitate more rapid adoption is clear.
+
+
 The document starts from the abstract and as it progresses it increasingly gets into more details.  It follows the traditional design process where you start from core principles, progress to abstract concepts and models, then finish with operational considerations, such as security and lifecycle management.
 
 - **Chapter 01 - Introduction**: Overall scope of the Reference Model document including the goals and objectives of the project.  
