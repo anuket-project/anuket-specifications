@@ -4,10 +4,10 @@
 <p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over Fine Points" title="Bogo: Dickering over Fine Points" width="35%"/></p>
 
 ## Table of Contents
-* [1.1 Introduction.](#1.1)
+* [1.1 Introduction](#1.1)
   * [1.1.1 Vision](#1.1.1)
 * [1.2 Use Cases](#1.2)
-* [1.3 Terminology.](#1.3)
+* [1.3 Terminology](#1.3)
 * [1.4 Principles](#1.4)
   * [1.4.1 Exceptions](#1.4.1)
 * [1.5 CNTT OpenStack Reference Release](#1.5)
@@ -35,7 +35,7 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 <a name="1.3"></a>
 ## 1.3 Terminology
 
-General terminology definitions can be found [Glossary](../../../common/glossary.md) and specific terms relating to this reference architecture are to be found [RA-1 Terminology](./Terminology.md). 
+General terminology definitions can be found in [Glossary](../../../common/glossary.md) and specific terms relating to this reference architecture are to be found in [OpenStack Related Terminology](../../../common/glossary.md#openstack-related-terminology). 
 
 <!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
 
