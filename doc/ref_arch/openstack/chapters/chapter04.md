@@ -63,7 +63,7 @@ For OpenStack control nodes we use the BIOS parameters for the basic profile def
 | BIOS/boot Parameter | Value |
 |--------------------|--------------------|
 | Boot disks |RAID 1 |
-| CPU reservation for host (kernel) |1 core per Numa |
+| CPU reservation for host (kernel) |1 core per NUMA |
 | CPU allocation ratio |2:1 |
 
 
@@ -228,7 +228,7 @@ If we wish to dedicate specific cores for host processing we need to consider tw
 
 Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Train release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
 
-Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vcpus numbered '0' and '20', '1' and '21', etc. are siblings:
+Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vCPUs numbered '0' and '20', '1' and '21', etc. are siblings:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 1-7,9-19,21-27,29-39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (can also be specified as cpu_shared_set = 1-19,^8,21-39,^28)
 
@@ -607,9 +607,9 @@ The OpenStack [Placement service](https://docs.openstack.org/placement/train/ind
 
 <p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
 
-<p>Resource Classes specifies the type of resources (VCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)</p>
+<p>Resource Classes specifies the type of resources (vCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)</p>
 
-<p>Inventory: Each resource provider maintains the total and reserved quantity of one or more classes of resources.  For example, RP_1 has available inventory of 16 VCPU, 16384 MEMORY_MB and 1024 DISK_GB.</p>
+<p>Inventory: Each resource provider maintains the total and reserved quantity of one or more classes of resources.  For example, RP_1 has available inventory of 16 vCPU, 16384 MEMORY_MB and 1024 DISK_GB.</p>
 
 <p>Traits are qualitative characteristics of the resources from a resource provider. For example, the trait for RPA_1 “is_SSD” to indicate that the DISK_GB provided by RP_1 are solid state drives.</p>
 
