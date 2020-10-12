@@ -17,7 +17,7 @@ This is the OPNFV based Reference Implementation (RI-1)
 | ---               | ---               | ---               |
 | 1.0-alpha         | 10th January 2020 | Snezka Release    |
 | 3.0-alpha         | 15th May 2020     | Baldy Release     |
-| 3.0               | 25th Sep 2020     | Baraque Release   |
+| 3.0-alpha         | 25th Sep 2020     | Baraque Release   |
 
 ## Overall Status
 
