@@ -13,3 +13,4 @@ beautifulsoup4==4.9.1
 sphinx_rtd_theme==0.4.3
 sphinxcontrib.relative-link-corrector==0.0.3
 sphinxcontrib.direct-copy==0.0.1
+sphinxcontrib.readme-to-index==0.0.1

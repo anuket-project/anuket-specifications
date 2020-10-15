@@ -10,9 +10,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 project = u'CNTT-CNTT'
 
-sys.path.append(os.path.abspath("../build/readme-to-index"))
-
-extensions = ['readme-to-index', 
+extensions = ['sphinxcontrib.readme-to-index', 
               'sphinxcontrib.relative-link-corrector',
               'sphinxcontrib.direct-copy',
               'sphinx_markdown_tables', 
