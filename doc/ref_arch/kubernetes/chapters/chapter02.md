@@ -305,9 +305,6 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.ntw.08` | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. | |
 | `req.inf.ntw.09` | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
 | `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support cluster wide coordination of IP address assignment. | |
-<!--
-| `req.inf.ntw.11` | Infrastructure |	Network | The networking solution to support multiple connection points (e.cap.004 - please see [Section 2.2.1](#2.2.1)) must conform to the [Multi-Network CRD Specification from the Kubernetes Network Plumbing Working Group](https://github.com/k8snetworkplumbingwg/multi-net-spec). | |
--->
 | `req.inf.ntw.12` | Infrastructure | Network | The networking solution to support multiple connection points (e.cap.004 - please see [Section 2.2.1](#2.2.1)) must support any Kubernetes conformant CNI plugin to be incorporated as a networking solution. | |
 |---|---|---|---|---|
 | `req.inf.ntw.13` | Infrastructure | Network | The platform must allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
