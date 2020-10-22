@@ -16,7 +16,7 @@
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 
-It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure. 
+It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
 The abstraction model presented in this Reference Model (RM) specifies a common set of virtual infrastructure resources that a cloud infrastructure will need to provide to be able to host most of the typical VNF/CNF telco workloads. The intention of this Reference Model is to follow the following principles:
 
@@ -89,7 +89,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 | Attribute      | Description                                                                   |
 |----------------|-------------------------------------------------------------------------------|
 | `name`         | name of the virtual host                                                      |
-| `vcpus`        | number of virtual cpus                                                        |
+| `vcpus`        | number of virtual CPUs                                                        |
 | `ram`          | size of random access memory in GB                                            |
 | `disk`         | size of root disc in GB                                                       |
 | `nics`         | sorted list of network interfaces connecting the host to the virtual networks |
@@ -137,7 +137,7 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 
 <a name="3.3"></a>
 ## 3.3 Cloud Infrastructure Management
-Cloud infrastructure provides the capability to manage virtual and hardware resources via Application Programmable Interfaces or graphical user interfaces. 
+Cloud infrastructure provides the capability to manage virtual and hardware resources via Application Programmable Interfaces or graphical user interfaces.
 
 <a name="3.3.1"></a>
 ### 3.3.1 Virtual Infrastructure Manager
@@ -154,7 +154,7 @@ The virtual infrastructure manager allows to:
  The virtual infrastructure manager needs to support the following functional aspects:
 
 * **API/UI**: an application programming interface / user interface providing access to the virtual resource management function
- 
+
 * **Catalogue**: manages the collection of available templates for virtual resource the cloud infrastructure can provide
 
 * **Inventory**: manages the information related to virtual resources of a cloud infrastructure
@@ -176,7 +176,7 @@ The virtual infrastructure manager allows to:
 The hardware infrastructure manager allows to:
 * provision, manage, monitor and delete hardware resources (underlay network, physical compute, physical storage, accelerators)
 * manage hardware resource discovery and topology
-* manage equipment 
+* manage equipment
 * manage hardware infrastructure telemetry and log collection services
 
 <p align="center"><img src="../figures/ch03-model-hardware-manager.png" alt="Hardware Infrastructure Manager" Title="Hardware Infrastructure Manager" width="65%"/></p>
