@@ -47,11 +47,11 @@ The following sections detail the Cloud Infrastructure Software Profile features
 
 **Table 5-1** and **Table 5-2** depict the features related to virtual compute.
 
-| Reference        | Feature                | Type   | Description                                           |
-|------------------|------------------------|--------|-------------------------------------------------------|
+| Reference         | Feature                | Type   | Description                                           |
+|-------------------|------------------------|--------|-------------------------------------------------------|
 | infra.com.cfg.001 | CPU allocation ratio   | Value  | Number of virtual cores per physical core             |
 | infra.com.cfg.002 | NUMA alignment         | Yes/No | Support of NUMA at the virtualization layer           |
-| infra.com.cfg.003 | CPU pinning            | Yes/No | Binds a process/vCPU to a physical core or SMT thread |
+| infra.com.cfg.003 | CPU pinning            | Yes/No | Binds a vCPU to a physical core or SMT thread         |
 | infra.com.cfg.004 | Huge Pages             | Yes/No | Ability to manage huge pages of memory                |
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
