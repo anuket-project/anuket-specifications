@@ -62,7 +62,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.015 | SmartNICs | Not required | Optional | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.016 | FPGA/other Acceleration H/W | Not required | Optional | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | *n/a<sup>(3)</sup>* | *n/a<sup>(3)</sup>* | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the worker nodes | 2 | 2 | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.014 | Specifies the proportion of CPU cores consumed by the Cloud Infrastructure system on the worker nodes. If SMT is used, it indicates the number of consumed SMT threads. | 2 | 2 | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the worker nodes | 16 GB | 16GB | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
@@ -132,7 +132,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Minimum number of CPU (Sockets) | 2 | 2 | |
+| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Minimum number of CPU sockets | 2 | 2 | |
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 | |
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Must support | |
