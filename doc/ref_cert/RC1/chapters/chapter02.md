@@ -585,7 +585,7 @@ Main OPNFV test tool candidates: Yardstick (TC 005), StorPerf
 
 The compute performance metrics are vnf.nfvi.perf.007 and infra.nfvi.perf.004,009.
 
-The normalized result of the compute performance test requires all the vCPUs to run parallel workloads. You need to start as many vCPUs as needed to force all the physical CPUs on the node to run a workload. In this case, the result is normalized:
+For normalized results, the compute performance test requires all of the possible vCPUs available for running workloads to execute workloads. You need to start as many VMs as needed to force all of the possible CPUs on the node to run a workload. In this case, the result is normalized:
 - to the number of vCPU, for the vCPU capacity measurements (vnf.nfvi.perf.007)
 - to the number of physical core usable by VNFs, for the physical core capacity and compute energy efficiency measurements infra.nfvi.perf.004,009)
 
