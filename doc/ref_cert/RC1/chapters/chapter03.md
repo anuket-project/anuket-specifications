@@ -67,7 +67,7 @@ For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to
 |9|req.inf.com.01|must provide compute resources for VM instances.|Infrastructure|in Functest|Must|Functional||Functest||
 |10|req.inf.com.02|should include industry standard hardware management systems at both HW device and platform level|Infrastructure - baremental testing|missing in Functest. Captured in Telco TCs Baremetal - validations.||||||
 |11|req.inf.com.03|should support symmetrical CPU multi-processing with shared memory access as well as multi-threading.|Infrastructure|in Functest||||Functest||
-|12|req.inf.com.04|must be able to support multiple CPU SKU options to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure||Must|NFR||||
+|12|req.inf.com.04|must be able to support multiple CPU types to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure||Must|NFR||||
 |13|req.inf.com.05|must support Hardware Platforms with NUMA capabilities.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
 |14|req.inf.com.06|must support CPU Pinning.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
 |15|req.inf.com.07|must support different hardware configurations to support Base, Network Intensive, and Compute Intensive infrastructure profiles.|Infrastructure - baremental testing|missing or incomplete in Functest. Captured in Telco TCs Baremetal - validations.|Must|Functional||||
