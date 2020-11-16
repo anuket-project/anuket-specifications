@@ -285,7 +285,7 @@ This sections describes the readiness of NFVI before the certification process c
 | Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
 
 ## 3.6 NFVI and VIM Architecture
-This sections concludes the expectation for NFVi and VIM architecture according to [RA1: Chapter 3 NFVI + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md)
+This sections concludes the expectation for NFVI and VIM architecture according to [RA1: Chapter 3 NFVI + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md)
 
 | Requirement Area | Description |
 |----|-------------------------------------------------------------------------------|
@@ -301,7 +301,7 @@ This sections concludes the expectation for NFVi and VIM architecture according 
 |Physical Network|The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up.
 
 ## 3.7 NFVI and VIM Component Level Architecture
-This sections concludes the expectation for NFVi and VIM component level architecture according to [RA1: Chapter 4 NFVI + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md)
+This sections concludes the expectation for NFVI and VIM component level architecture according to [RA1: Chapter 4 NFVI + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md)
 
 Requirement for control node:
 
