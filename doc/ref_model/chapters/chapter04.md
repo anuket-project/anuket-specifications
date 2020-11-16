@@ -68,7 +68,7 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 
 | Ref       | Cloud Infrastructure Capability        | Unit   | Definition/Notes                                                              |
 |-----------|----------------------------------------|--------|-------------------------------------------------------------------------------|
-| e.cap.001 | # vCPU                                 | number | Max number of vCPU that can be assigned to a single VM or Pod <sup>1)</sup>        |
+| e.cap.001 | # vCPU                                 | number | Max number of vCPUs that can be assigned to a single VM or Pod <sup>1)</sup>        |
 | e.cap.002 | RAM Size                               | MB     | Max memory in MB that can be assigned to a single VM or Pod by the Cloud Infrastructure <sup>2)</sup>  |
 | e.cap.003 | Total per-instance (ephemeral) storage | GB     | Max storage in GB that can be assigned to a single VM or Pod by the Cloud Infrastructure                |
 | e.cap.004 | # Connection points                    | number | Max number of connection points that can be assigned to a single VM or Pod by the Cloud Infrastructure          |
@@ -209,9 +209,9 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 | Ref      | Cloud Infrastructure Measurement           | Unit        | Definition/Notes                                                                                                                                                                                                            |
 |----------|--------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | i.pm.001 | Host CPU usage                             | nanoseconds | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
-| i.pm.002 | Virtual compute resource CPU usage         | nanoseconds | Per VM or Pod.  It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
+| i.pm.002 | Virtual compute resource (vCPU) usage         | nanoseconds | Per VM or Pod.  It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage and Peak vCPU usage (Cloud Infrastructure external). |
 | i.pm.003 | Host CPU utilization                       | %           | Per Compute node. It maps to ETSI GS NFV-TST 008 V3.2.1 [5] clause 6, processor usage metric (Cloud Infrastructure internal).           |
-| i.pm.004 | Virtual compute resource CPU utilization   | %           | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean Virtual CPU usage and Peak Virtual CPU usage (Cloud Infrastructure external). |
+| i.pm.004 | Virtual compute resource (vCPU) utilization   | %           | Per VM or Pod. It maps to ETSI GS NFV-IFA 027 v2.4.1 [6] Mean vCPU usage and Peak vCPU usage (Cloud Infrastructure external). |
 | i.pm.005 | Measurement of external storage IOPS       | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.006 | Measurement of external storage throughput | Yes/No      |                                                                                                                                                                                                                             |
 | i.pm.007 | Available external storage capacity        | Yes/No      |                                                                                                                                                                                                                             |
@@ -491,9 +491,9 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
 | `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
 | `i.pm.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
-| `i.pm.002`<br />(Virtual compute resource CPU usage)                | Yes                      | Yes                      |                                                                     |
+| `i.pm.002`<br />(Virtual compute resource (vCPU) usage)                | Yes                      | Yes                      |                                                                     |
 | `i.pm.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
-| `i.pm.004`<br />(Virtual compute resource CPU utilization)          | Yes                      | Yes                      |                                                                     |
+| `i.pm.004`<br />(Virtual compute resource (vCPU) utilization)          | Yes                      | Yes                      |                                                                     |
 | `i.pm.005`<br />(Measurement of external storage IOPS)                | Yes                      | Yes                      | |
 | `i.pm.006`<br />(Measurement of external storage throughput)          | Yes                      | Yes                      | |
 | `i.pm.007`<br />(Available external storage capacity)                 | Yes                      | Yes                      | |
