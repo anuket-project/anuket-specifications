@@ -311,7 +311,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.017 | Audit | The Platform **must** Audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.2.3 "Patches"](./chapter06.md#6323-patches) |
 | sec.mon.018 | Monitoring | The platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
 | sec.mon.019 | Monitoring | The platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
-| sec.mon.020 |Monitoring/Audit | The platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
+| sec.mon.020 | Monitoring/Audit | The platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
+| sec.mon.021 | Monitoring | The platform **must** store security events locally if the external logging system is unavailable and shall attempt to send these to the logging system when communications are re-established. | |
 
 
 #### 2.2.6.8. Compliance with Standards (source [RM7.11.8](../../../ref_model/chapters/chapter07.md#7118-compliance-with-standards))
