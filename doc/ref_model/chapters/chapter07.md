@@ -520,7 +520,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.012 | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
 | req.sec.mon.013 | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
 | req.sec.mon.014 | The Monitoring systems **should not** impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
-| req.sec.mon.015 | The Platform **must** ensure that the Monitoring systems are never starved of resources. |  |
+| req.sec.mon.015 | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resources exceeded a configurable threshold. |  |
 | req.sec.mon.016 | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
 | req.sec.mon.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
 | req.sec.mon.018 | The platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
