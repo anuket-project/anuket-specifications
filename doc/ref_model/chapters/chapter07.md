@@ -430,7 +430,7 @@ Security certification should encompass the following elements:
 | req.sec.sys.015 | The platform **must not** contain back door entries (unpublished access points, APIs, etc.). |  |
 | req.sec.sys.016 | Login access to the platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
 | req.sec.sys.017 | The platform must provide the capability of using digital certificates that comply with X.509 standards and issued from a trusted Certification Authority. |  |
-| req.sec.sys.018 | The paltform must provide the capability of allowing certificate renewal and revocation. |  |
+| req.sec.sys.018 | The platform must provide the capability of allowing certificate renewal and revocation. |  |
 | req.sec.sys.019 | The platform must provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
 
 
