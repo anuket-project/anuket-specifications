@@ -197,7 +197,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | `req.inf.com.01` | **must** provide compute resources for VM instances.  |
 | `req.inf.com.02` | **should** include industry standard hardware management systems at both HW device and platform level |
 | `req.inf.com.03` | **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. |
-| `req.inf.com.04` | **must** be able to support multiple CPU types to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
+| `req.inf.com.04` | **must** be able to support multiple CPU Types to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
 | `req.inf.com.05` | **must** support Hardware Platforms with NUMA capabilities.|
 | `req.inf.com.06` | **must** support CPU Pinning.|
 | `req.inf.com.07` | **must** support different hardware configurations to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
