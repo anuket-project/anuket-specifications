@@ -154,7 +154,7 @@ This profile is the global settings for the whole NFVI, which means there should
 
 <a name="3.4"></a>
 ## 3.4 NFVI Hardware Profile
-[RM1: 5.4 NFVI HW profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the NFVI hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple NFVI profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
+[RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple NFVI profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
 
 
 | Reference | Feature | Description | Basic Type | Network Intensive |
@@ -177,8 +177,8 @@ This profile is the global settings for the whole NFVI, which means there should
 | nfvi.hw.nac.cfg.003 | Compression |  |  |
 
 
-## 3.5 NFVI Required State
-This sections describes the readiness of NFVI before the certification process can begin. Once the NFVI is configured with either of the profiles - B, <!---C,---> N, a set of tests (for example functests) should be run in order to determine the readiness of NFVI for certification.
+## 3.5 Cloud Infrastructure Required State
+This sections describes the readiness of Cloud Infrastructure before the certification process can begin. Once the Cloud Infrastructure is configured with either of the profiles - B, <!---C,---> N, a set of tests (for example functests) should be run in order to determine the readiness of the Cloud Infrastructure for certification.
 #TODO : Identify the tests for this section
 
 
@@ -284,7 +284,7 @@ This sections describes the readiness of NFVI before the certification process c
 | Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | v1.0 | NA |
 | Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
 
-## 3.6 NFVI and VIM Architecture
+## 3.6 Cloud Infrastructure and VIM Architecture
 This sections concludes the expectation for NFVI and VIM architecture according to [RA1: Chapter 3 NFVI + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md)
 
 | Requirement Area | Description |
@@ -300,8 +300,8 @@ This sections concludes the expectation for NFVI and VIM architecture according 
 |Cloud Controller Services|All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services|
 |Physical Network|The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up.
 
-## 3.7 NFVI and VIM Component Level Architecture
-This sections concludes the expectation for NFVI and VIM component level architecture according to [RA1: Chapter 4 NFVI + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md)
+## 3.7 Cloud Infrastructure and VIM Component Level Architecture
+This sections concludes the expectation for Cloud Infrastructure and VIM component level architecture according to [RA1: Chapter 4 Cloud Infrastructure + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md)
 
 Requirement for control node:
 
