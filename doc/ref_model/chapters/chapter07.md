@@ -427,12 +427,6 @@ Security certification should encompass the following elements:
 | req.sec.sys.012 | The Platform **must** protect all secrets by using strong encryption techniques, and storing the protected secrets externally from the component. | (e.g., in OpenStack Barbican). |
 | req.sec.sys.013 | The Platform **must** provide secrets dynamically as and when needed. | |
 | req.sec.sys.014 | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
-| req.sec.sys.015 | The platform **must not** contain back door entries (unpublished access points, APIs, etc.). |  |
-| req.sec.sys.016 | Login access to the platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
-| req.sec.sys.017 | The platform must provide the capability of using digital certificates that comply with X.509 standards and issued from a trusted Certification Authority. |  |
-| req.sec.sys.018 | The Platform must provide the capability of allowing certificate renewal and revocation. |  |
-| req.sec.sys.019 | The platform must provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
-
 
 <p align="center"><b>Table 7-2:</b> Platform and access requirements</p>
 
@@ -488,7 +482,7 @@ Security certification should encompass the following elements:
 | Ref | Requirement | Definition/Note |
 |---|----|----|
 | req.sec.lcm.001 | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defence against virus or other attacks. | Secure clean-up: tear-down, defending against virus or other attacks, or observing of cryptographic or user service data. |
-| req.sec.lcm.002 | Cloud operations staff and systems **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | |
+| req.sec.lcm.002 | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | |
 | req.sec.lcm.003 | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | |
 | req.sec.lcm.004 | The Cloud Operator **should** support automated templated approved changes. | Templated approved changes for automation where available. |
 | req.sec.lcm.005 | Platform **must** provide logs and these logs must be regularly monitored for anomalous behaviour. |  |
@@ -498,7 +492,6 @@ Security certification should encompass the following elements:
 | req.sec.lcm.009 |  The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information. | |
 | req.sec.lcm.010 | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). |  |
 | req.sec.lcm.011 | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software. | |
-| req.sec.lcm.012 | The platform **must** log any privilege escalation. |  |
 
 <p align="center"><b>Table 7-6:</b> Security LCM requirements</p>
 
@@ -509,7 +502,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.mon.001 | Platform **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved. | |
+| req.sec.mon.001 | Platform **must** provide logs and these logs must be regularly monitored for events of interest. | |
 | req.sec.mon.002 | Security logs **must** be time synchronised. |  |
 | req.sec.mon.003 | The Platform **must** log all changes to time server source, time, date and time zones. |  |
 | req.sec.mon.004 | The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
@@ -523,13 +516,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.012 | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | |
 | req.sec.mon.013 | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
 | req.sec.mon.014 | The Monitoring systems **should not** impact IAAS, PAAS, and SAAS SLAs including availability SLAs. |  |
-| req.sec.mon.015 | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
+| req.sec.mon.015 | The Platform **must** ensure that the Monitoring systems are never starved of resources. |  |
 | req.sec.mon.016 | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
-| req.sec.mon.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
-| req.sec.mon.018 | The platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
-| req.sec.mon.019 | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
-| req.sec.mon.020 | The platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
-| req.sec.mon.021 | The platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.. | |
+| req.sec.lcm.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
 
 <p align="center"><b>Table 7-7:</b> Monitoring and security audit requirements</p>
 
