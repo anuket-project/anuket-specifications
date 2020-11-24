@@ -231,7 +231,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.sys.016 | Access | Login access to the platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
 | sec.sys.017 | Access | The platform **must** provide the capability of using digital certificates that comply with X.509 standards and issued from a trusted Certification Authority. |  |
 | sec.sys.018 | Access | The platform must provide the capability of allowing certificate renewal and revocation. |  |
-| sec.sys.019 | Access | The platform must provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
+| sec.sys.019 | Access | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
 
 
 #### 2.2.6.3. Confidentiality and Integrity (source [RM7.11.3](../../../ref_model/chapters/chapter07.md#7113-confidentiality-and-integrity))
