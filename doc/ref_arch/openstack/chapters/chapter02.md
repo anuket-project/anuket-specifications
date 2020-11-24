@@ -310,7 +310,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.012 | Monitoring/Audit | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. |  |
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
-| sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resources exceeded a configurable threshold. |  |
+| sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
 | sec.mon.017 | Audit | The Platform **must** Audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.2.3 "Patches"](./chapter06.md#6323-patches) |
 | sec.mon.018 | Monitoring | The platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
 | sec.mon.019 | Monitoring | The platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
