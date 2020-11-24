@@ -228,7 +228,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.sys.012 | Access | The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component (e.g., in OpenStack Barbican) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.013 | Access | The Platform **must** generate secrets dynamically as and when needed. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.015 | Access | The Platform **must not** contain back door entries (unpublished access points, APIs, etc.). |  |
-| sec.sys.016 | Access | Login access to the platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
+| sec.sys.016 | Access | Login access to the Platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
 | sec.sys.017 | Access | The platform **must** provide the capability of using digital certificates that comply with X.509 standards and issued from a trusted Certification Authority. |  |
 | sec.sys.018 | Access | The platform must provide the capability of allowing certificate renewal and revocation. |  |
 | sec.sys.019 | Access | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
