@@ -527,7 +527,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.016 | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
 | req.sec.mon.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
 | req.sec.mon.018 | The platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
-| req.sec.mon.019 | The platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
+| req.sec.mon.019 | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
 | req.sec.mon.020 | The platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
 | req.sec.mon.021 | The platform **must** store security events locally if the external logging system is unavailable and shall attempt to send these to the logging system when communications are re-established. | |
 
