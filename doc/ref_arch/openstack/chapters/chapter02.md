@@ -229,8 +229,8 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.sys.013 | Access | The Platform **must** generate secrets dynamically as and when needed. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.015 | Access | The Platform **must not** contain back door entries (unpublished access points, APIs, etc.). |  |
 | sec.sys.016 | Access | Login access to the Platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
-| sec.sys.017 | Access | The platform **must** provide the capability of using digital certificates that comply with X.509 standards and issued from a trusted Certification Authority. |  |
-| sec.sys.018 | Access | The platform must provide the capability of allowing certificate renewal and revocation. |  |
+| sec.sys.017 | Access | The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority. |  |
+| sec.sys.018 | Access | The Platform **must** provide the capability of allowing certificate renewal and revocation. |  |
 | sec.sys.019 | Access | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
 
 
@@ -287,7 +287,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.lcm.009 | LCM | The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
 | sec.lcm.010 | LCM | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
 | sec.lcm.011 | LCM | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
-| sec.lcm.012 | LCM | The platform **must** log any privilege escalation. |  |
+| sec.lcm.012 | LCM | The Platform **must** log any access privilege escalation. |  |
 
 
 
@@ -312,10 +312,10 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
 | sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
 | sec.mon.017 | Audit | The Platform **must** audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.2.3 "Patches"](./chapter06.md#6323-patches) |
-| sec.mon.018 | Monitoring | The platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
-| sec.mon.019 | Monitoring | The platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
-| sec.mon.020 | Monitoring/Audit | The platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
-| sec.mon.021 | Monitoring | The platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | |
+| sec.mon.018 | Monitoring | The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
+| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
+| sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
+| sec.mon.021 | Monitoring | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | |
 
 
 #### 2.2.6.8. Compliance with Standards (source [RM7.11.8](../../../ref_model/chapters/chapter07.md#7118-compliance-with-standards))
