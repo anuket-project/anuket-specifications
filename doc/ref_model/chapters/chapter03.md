@@ -12,9 +12,14 @@
   * [3.3.1 Virtual Infrastructure Manager](#3.3.1)
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Hardware Infrastructure Resources](#3.4)
+  * [3.4.1 Hardware Acceleration Resources](#3.4.1)
 * [3.5 Network](#3.5)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
+* [3.8 Hardware Acceleration Abstraction](#3.8)
+  * [3.8.1 Types of accelerators](#3.8.1)
+  * [3.8.2 Levels of accelerator consumption](#3.8.2)
+  * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -214,6 +219,13 @@ The physical compute, storage and network resources serve as the foundation of t
 <p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="Hardware Infrastructure Resources" Title="Hardware Infrastructure Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-5:</b> Hardware Infrastructure Resources</p>
 
+<a name="3.4.1"></a>
+### 3.4.1 Hardware Acceleration Resources
+
+...
+
+More details in [Section 3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8).
+
 <a name="3.5"></a>
 ## 3.5 Network
 Networking, alongside Compute and Storage, is an integral part of the Cloud Infrastructure (Network Function Virtualisation Infrastructure). The general function of networking in this context is to provide the connectivity between various virtual and physical resources required for the delivery of a network service. Such connectivity may manifest itself as a virtualised network between VMs and/or containers (e.g. overlay networks managed by SDN controllers, and/or programmable network fabrics) or as an integration into the infrastructure hardware level for offloading some of the network service functionality.
@@ -265,3 +277,15 @@ The following diagram presents an example of the realization of the reference mo
 <p align="center"><b>Figure 3-6:</b> Reference model realization example</p>
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
+
+<a name="3.8"></a>
+## 3.8 Hardware Acceleration Abstraction
+
+<a name="3.8.1"></a>
+### 3.8.1 Types of accelerators
+
+<a name="3.8.2"></a>
+### 3.8.2 Levels of accelerator consumption
+
+<a name="3.8.3"></a>
+### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
