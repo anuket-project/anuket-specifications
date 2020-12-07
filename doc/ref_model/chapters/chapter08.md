@@ -15,7 +15,7 @@
   * [8.3.4. Telco Edge Cloud Infrastructure Characteristics](#8.3.4)
   * [8.3.5. Comparison of Edge terms from various Open Source Efforts](#8.3.5)
   
- 
+
 <a name="8.1"></a>
 ## 8.1 Introduction
 The [Reference Model Chapter 3](./chapter01.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities are specified for data center or a colocation center cloud infrastructure. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, requires separate consideration.
@@ -159,6 +159,78 @@ This section characterises the hardware capabilities for different edge deployme
 
 **Table 8-4. Characteristics of Infrastructure nodes
 
+<table>
+<tr>
+<th></th>
+<th colspan="7">Platform Services</th>
+<th colspan="3">Storage</th>
+<th colspan="3">Network Services</th>
+</tr>
+<tr>
+<th></th>
+<th>Idnetity</th>
+<th>Image</th>
+<th>Placement</th>
+<th>Compute</th>
+<th>Networking</th>
+<th>Message Queue</th>
+<th>DB Server</th>
+<th>Ephemeral</th>
+<th>Persistent Block</th>
+<th>Persistent Object</th>
+<th>Management</th>
+<th>Underlay (Provider)</th>
+<th>Overlay</th>
+</tr>
+<tr>
+<td>Control Nodes</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td></td>
+<td>&#9989;</td>
+<td></td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+</tr>
+<tr>
+<td>Workload Nodes<br>(Compute)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td></td>
+<td></td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+</tr>
+<tr>
+<td>Storage Nodes</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+<td>&#9989;</td>
+</tr>
+</table>
 
 Depending on the facility capabilities, deployments at the edge may be similar to one of the following:
         - Small footprint edge device
@@ -172,6 +244,77 @@ Depending on the facility capabilities, deployments at the edge may be similar t
 
 **Table 8-5. Comparison of Edge Terms
 
+<table>
+<tr>
+<th>CNTT Term?</th><th>Compute</th><th>Storage</th><th>Networking</th><th>RTT*</th><th>Security</th><th>Scalability</th><th>Elasticity</th><th>Resiliency</th><th>Preferred Workload Architecture</th><th>Upgrades</th><th></th><th>OpenStack</th><th>OPNFV Edge</th><th>Edge Glossary</th><th>GSMA</th>
+</tr>
+<tr>
+<td>Regional Data Center (DC)<br><br>Fixed</td><td>1000's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU</td><td>10's EB<br>
+Standardised<br><br>
+HDD and NVMe<br><br>
+Permanence
+</td><td>>100 Gbps<br><br>
+Standardised</td><td>~100 ms</td><td>Highly Secure</td><td>Horizontal and unlimited scaling</td><td>Rapid spin up and down</td><td>Infrastructure architected for resiliency<br><br>
+Redundancy for FT and HA</td><td>Microservices based<br><br>
+Stateless<br><br>
+Hosted on Containers</td><td>HW Refresh: ? <br><br>
+Firmware: When required<br><br>
+Platform SW: CD</td><td></td><td>Central Data Center</td><td></td><td></td><td></td>
+</tr>
+<tr>
+<td>Metro Data Centers<br>
+Fixed</td><td>10's to 100's<br><br>
+Standardised<br><br>
+>1 CPU<br><br>
+>20 cores/CPU</td><td>100's PB<br><br>
+Standardised<br><br>
+NVMe on PCIe<br><br>
+Permanence</td><td>> 100 Gbps<br><br>
+Standardised</td><td>~10 ms</td><td>Highly Secure</td><td>Horizontal but limited scaling</td><td>Rapid spin up and down</td><td>Infrastructure architected for some level of resiliency<br><br>
+Redundancy for limited FT and HA</td><td>Microservices based<br><br>
+Stateless<br><br>
+Hosted on Containers</td><td>HW Refresh: ? <br><br>
+Firmware: When required<br><br>
+Platform SW: CD</td><td></td><td>Edge Site</td><td>Large Edge</td><td>Aggregation Edge</td><td></td>
+</tr>
+<tr>
+<td>Edge<br>
+Fixed / Mobile</td><td>10's<br><br>
+Some Variability<br><br>
+>=1 CPU<br><br>
+>10 cores/CPU</td><td>100 TB<br><br>
+Standardised<br><br>
+NVMe on PCIe<br><br>
+Permanence / Ephemeral</td><td>50 Gbps<br><br>
+Standardised</td><td>~5 ms</td><td>Low Level of Trust</td><td>Horizontal but highly constrained scaling, if any</td><td>Rapid spin up (when possible) and down</td><td>Applications designed for resiliency against infra failures<br><br>
+No or highly limited redundancy</td><td>Microservices based<br><br>
+Stateless<br><br>
+Hosted on Containers</td><td>HW Refresh: ? <br><br>
+Firmware: When required<br><br>
+Platform SW: CD</td><td></td><td>Far Edge Site</td><td>Medium Edge</td><td>Access Edge / Aggregation Edge</td><td></td>
+</tr>
+<tr>
+<td>Mini-/Micro-Edge<br>
+Mobile / Fixed</td><td>1's<br><br>
+High Variability<br><br>
+Harsh Environments<br><br>
+1 CPU<br><br>
+>2 cores/CPU</td><td>10's GB<br><br>
+NVMe<br><br>
+Ephemeral<br><br>
+Caching</td><td>10 Gbps<br><br>
+Connectivity not Guaranteed</td><td><2 ms<br><br>
+Located in network proximity of EUD/IoT</td><td>Untrusted</td><td>Limited Vertical Scaling (resizing)</td><td>Constrained</td><td>Applications designed for resiliency against infra failures<br><br>
+No or highly limited redundancy</td><td>Microservices based or monolithic<br><br>
+Stateless or Stateful<br><br>
+Hosted on Containers or VMs<br><br><br>
+Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate</td><td>HW Refresh: ? <br>
+Firmware: ? <br><br>
+Platform SW: ?</td><td></td><td>Fog Computing (Mostly deprecated terminology)<br><br>
+Extreme Edge<br><br>
+Far Edge</td><td>Small Edge</td><td>Access Edge</td><td></td>
+</tr>
+</table>
 *RTT: Round Trip Times
  EUD: End User Devices
  IoT: Internet of Things
