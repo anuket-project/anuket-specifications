@@ -63,7 +63,9 @@ The Telco Operator may own and/or have partnerships and network connections to u
 
 In general, a Telco Cloud consists of multiple interconnected very large data centers that serve trans-continentalareas (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud Region.
 
-The Table below captures the essential information about the types of deployments, and responsible parties for cloud artifacts.
+The Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud artifacts.
+
+<p align="center"><b>Table 8-1. Cloud Types and the Partrties Responsible for Artifacts.</b></p>
 
 Type | System Developer | System Maintenance | System Operated & Managed by | Location where Deployed | Primary Resource Consumption Models
 ---|---|---|---|---|---
@@ -82,3 +84,87 @@ The Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Clou
 <p align="center"><img src="../figures/RM-Ch08-Telco-Operator-Platform.png" alt="Conceptual Architecture of a Telco Operator Platform"><b>Figure 8-3: Conceptual Architecture of a Telco Operator Platform.</b></p>
 
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
+
+<a name="8.3"></a>
+## Telco Edge Cloud
+This section presents the characteristics and capabilities of different Edge cloud deployment locations, infrastructure, footprint, etc. Please note that in the literature many terms are used and, thus, this section includes a table that tries to map these different terms.
+
+<a name="8.3.1"></a>
+### 8.3.1. Telco Edge Cloud Deployment Environment Characteristics
+Telco Edge Cloud (TEC) deployment locations can be environmentally friendly such as indoors (offices, buildings, etc.) or environmentally challenged such as outdoors (near network radios, curbside, etc.) or environmentally harsh environments (factories, noise, chemical, heat and electromagnetic exposure, etc). Some of the more salient characteristics are captured in Table 8-2.
+
+<p align="center"><b>Table 8-2. TEC Deployment Location Characteristics & Capabilities.</b></p>
+
+| | Facility Type | Environmental Characteristics | Capabilities | Physical Security | Implications | Deployment Locations
+-----|-----|-----|-----|-----|-----|------
+Environmentally friendly | Indoors: typical commercial or residential structures | Protected<br>Safe for common infrastructure | Easy access to continuous electric power<br>High/Medium bandwidth Fixed and/or wireless network access | Controlled Access | Commodotised infrastructure with no or minimal need for hardening/ruggedisation<br>Operational benefits for installation and maintenance | Indoor venues: homes, shops, offices, stationary and secure cabinets<br>Data centers, central offices, co-location facilities, Vendor premises, Customer premises | 
+Environmentally challenged | Outdoors and/or exposed to environmentally harsh conditions | maybe unprotected<br>Exposure to abnormal levels of noise, vibration, heat, chemical, electromagnetic pollution | May only have battery power<br>Low/Medium bandwidth Fixed and/or mobile network access | No or minimal access control | Expensive ruggedisation<br>Operationally complex | Example locations: curbside, near cellular radios, |
+
+<a name="8.3.2"></a>
+### 8.3.2 Telco Edge Cloud Infrastructure Characteristics
+Commodity hardware is only suited for environmentally friendly environments. Commodity hardware have standardised designs and form factors. Cloud deployments in data centers typically use such commodity hardware with standardised configurations resulting in operational benefits for procurement, installation and ongoing operations.
+
+In addition to the type of infrastructure hosted in data center clouds, facilities with smaller sized infrastructure deployments, such as central offices or co-location facilities, may also host non-standard hardware designs including specialised components. The introduction of specialised hardware and custom configurations increases the cloud operations and management complexity.
+
+At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with different form factors.
+
+<a name="8.3.3"></a>
+### 8.3.3 Telco Edge Cloud Infrastructure Profiles
+The [Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.4) section specifies two infrastructure profiles:
+
+The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low to medium network throughput requirements.
+
+The **Network Intensive** cloud infrastructure profile is intended for use by applications that have high network throughput requirements (up to 50Gbps).
+
+The Network Intensive profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8). The Reference Model Network Intensive profile includes an initial set of [Network Intensive profile extensions](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#42421-network-acceleration-extensions).
+
+Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [Infrastructure Profile features and requirements](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md) that would need to be relaxed.
+
+**Table 8-3. TEC Exceptions to [Infrastructure Profile features and requirements](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md)**
+
+<table>
+<tr>
+<th>Reference</th>
+<th>Feature</th>
+<th>Description</th>
+<th colspan="2">As Specified in RM Chapter 05 </th>
+<th colspan="2">Exception for Edge</th>
+</tr>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th>Basic Type</td>        
+<th>Network Intensive</td>
+<th color="blue">Basic Type</td>        
+<th color="blue">Network Intensive</td>
+</tr>
+<tr><td>infra.stg.cfg.003</td><td>Storage with replication</td><td></td><td>N</td><td>Y</td><td>N</td><td>Optional</td></tr>
+<tr><<td>infra.stg.cfg.004</td><td>Storage with encryption</td><td></td><td>Y</td><td>Y</td><td>N</td><td>Optional</td></tr>
+<tr><<td>infra.hw.cpu.cfg.001</td><td>Minimum Number of CPU sockets</td><td>This determines the minimum number of CPU sockets within each host</td><td>2</td><td>2</td><td>1</td><td>1</td></tr>
+<tr><<td>infra.hw.cpu.cfg.002</td><td>Minimum Number of cores per CPU</td><td>This determines the number of cores needed per CPU.</td><td>20</td><td>20</td><td>2</td><td>2</td></tr>
+<tr><<td>infra.hw.cpu.cfg.003</td><td>NUMA alignment</td><td>NUMA alignment support and BIOS configured to enable NUMA</td><td>N</td><td>Y</td><td>N</td><td>Optional</td></tr>
+</table>
+
+<a name="8.3.4"></a>
+### 8.3.4  Telco Edge Cloud Infrastructure Characteristics
+This section characterises the hardware capabilities for different edge deployments and the Platform services that run on the infrastructure. Please note, that the Platform services are containerised to save resources, and benefit from intrinsic availability and auto-scaling capabilities.
+
+**Table 8-4. Characteristics of Infrastructure nodes
+
+
+Depending on the facility capabilities, deployments at the edge may be similar to one of the following:
+        - Small footprint edge device
+        - Single server: deploy multiple (one or more) workloads
+        - Single server: single Controller and multiple (one or more) workloads
+        - HA at edge (at least 2 edge servers): Multiple Controller and multiple workloads
+
+
+<a name="8.3.5"></a>
+### 8.3.5 Comparison of Edge terms from various Open Source Efforts
+
+
+
+*RTT: Round Trip Times
+ EUD: End User Devices
+ IoT: Internet of Things
