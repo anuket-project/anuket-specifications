@@ -6,9 +6,9 @@
 ## Table of Contents
 * [2.1 Introduction](#2.1)
 * [2.2 Reference Model Requirements](#2.2)
-  * [2.2.1 Cloud Infrastructure Software Profile Capabilities](#2.2.1)
+  * [2.2.1 Cloud Infrastructure Software Profile Requirements](#2.2.1)
   * [2.2.2 Virtual Network Interface Specifications](#2.2.2)
-  * [2.2.3 Cloud Infrastructure Software Profile Requirements](#2.2.3)
+  * [2.2.3 Cloud Infrastructure Software Profile Requirements for Storage and Networking](#2.2.3)
   * [2.2.4 Cloud Infrastructure Hardware Profile Requirements](#2.2.4)
   * [2.2.5 Cloud Infrastructure Management Requirements](#2.2.5)
   * [2.2.6 Cloud Infrastructure Security Requirements](#2.2.6)  
@@ -58,7 +58,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 > Note: "(if offered)" used in the Reference Model has been replaced with "Optional" in the tables below so as to align with the RFC2119.
 
 <a name="2.2.1"></a>
-### 2.2.1 Cloud Infrastructure Software Profile Capabilities (source [RM 4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping))
+### 2.2.1 Cloud Infrastructure Software Profile Requirements (source [RM 4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping))
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
@@ -67,8 +67,8 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.003 | Max storage in GB that can be assigned to a single VM by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | |
 | e.cap.004 | Max number of connection points that can be assigned to a single VM by the Cloud Infrastructure | 6 | 6 | |
 | e.cap.005 | Max storage in GB that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
-| e.cap.006 | CPU pinning support | Not required | Must support | |
-| e.cap.007 | NUMA support | Not required | Must support | |
+| e.cap.006/ infra.com.cfg.003 | CPU pinning support | Not required | Must support | |
+| e.cap.007/ infra.com.cfg.002 | NUMA support | Not required | Must support | |
 | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
 | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
 | e.cap.010 | Transcoding Acceleration | Not required | Not required | |
@@ -81,9 +81,9 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | n/a | n/a | |
 | i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the compute nodes | 2 | 2 | |
 | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the compute nodes | 16 GB | 16GB | |
-| i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
+| i.cap.016/ infra.com.cfg.001 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
 | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
-| i.cap.018 | Support for huge pages | Not required | Must support | |
+| i.cap.018/ infra.com.cfg.004 | Support for huge pages | Not required | Must support | |
 | i.pm.001  | Monitor compute node CPU usage, per nanosecond | Must support | Must support | |
 | i.pm.002  | Monitor VM CPU usage, per nanosecond | Must support | Must support | |
 | i.pm.003  | Monitor compute node CPU utilisation (%) | Must support | Must support | |
@@ -115,14 +115,10 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 <p align="center"><b>Table 2-2:</b> Reference Model Requirements: Network Interface Specifications</p>
 
 <a name="2.2.3"></a>
-### 2.2.3 Cloud Infrastructure Software Profile Requirements (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
+### 2.2.3 Cloud Infrastructure Software Profile Requirements for Storage and Networking (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
-| infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | |
-| infra.com.cfg.002 | NUMA alignment | Not required | Must support | |
-| infra.com.cfg.003 | CPU pinning capability | Not required | Must support | |
-| infra.com.cfg.004 | Huge Pages | Not required | Must support | |
 | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
 | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
 | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | |
