@@ -3,12 +3,19 @@
 # 8. Hybrid Multi-Cloud: Data Center to Edge
 
 ## Table of Contents
-* [8.1 Introduction](#8.1)
-* [8.2 Hybrid Multi-Cloud Architecture](#8.2)
+* [8.1. Introduction](#8.1)
+* [8.2. Hybrid Multi-Cloud Architecture](#8.2)
   * [8.2.1. Characteristics of a Federated Cloud](#8.2.1)
   * [8.2.2. Telco Cloud](#8.2.2)
   * [8.2.3. Telco Operator Platform Conceptual Architecture](#8.2.3)
-
+ * [8.3. Telco Edge Cloud](#8.3)
+  * [8.3.1. Telco Edge Cloud Deployment Environment Characteristics](#8.3.1)
+  * [8.3.2. Telco Edge Cloud Infrastructure Characteristics](#8.3.2)
+  * [8.3.3. Telco Edge Cloud Infrastructure Profiles](#8.3.3)
+  * [8.3.4. Telco Edge Cloud Infrastructure Characteristics](#8.3.4)
+  * [8.3.5. Comparison of Edge terms from various Open Source Efforts](#8.3.5)
+  
+ 
 <a name="8.1"></a>
 ## 8.1 Introduction
 The [Reference Model Chapter 3](./chapter01.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities are specified for data center or a colocation center cloud infrastructure. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, requires separate consideration.
@@ -163,7 +170,7 @@ Depending on the facility capabilities, deployments at the edge may be similar t
 <a name="8.3.5"></a>
 ### 8.3.5 Comparison of Edge terms from various Open Source Efforts
 
-
+**Table 8-5. Comparison of Edge Terms
 
 *RTT: Round Trip Times
  EUD: End User Devices
