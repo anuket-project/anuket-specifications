@@ -11,7 +11,7 @@
 
 <a name="8.1"></a>
 ## 8.1 Introduction
-The [Reference Model Chapter 3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter01.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities are specified for data center or a colocation center cloud infrastructure. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, requires separate consideration.
+The [Reference Model Chapter 3](./chapter01.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities are specified for data center or a colocation center cloud infrastructure. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, requires separate consideration.
 
 It is unrealistic to expect that a private cloud can cost effectively meet the need of all loads, including peak and disaster recovery. It is for that reason that enterprises will implement an hybrid cloud.  In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.  In a multi-cloud the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies.  The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
 
@@ -23,7 +23,7 @@ A generic Telco cloud is an hybrid multi-cloud or a Federated cloud that has dep
 ## 8.2 Hybrid Multi-Cloud Architecture
 The GSMA whitepaper on "Operator Platform Concept Phase 1: Edge Cloud Computing" (January 2020) states, "Given the wide diversity of use cases that the operators will tasked to address, from healthcare to industrial IoT, it seems logical for operators to create a generic platform that can package the existing assets and capabilities (e.g., voice messaging, IP data services, billing, security, identity management, etc. ...) as well as the new ones that 5G makes available (e.g., Edge cloud, network slicing, etc.) in such a way as to create the necessary flexibility required by this new breed of enterprise customers."
 
-Cloud computing has evolved and matured since 2010 when NIST (http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pd) published its definition of cloud computing, with its 5 essential characteristics, 3 service models and 4 deployment models.
+Cloud computing has evolved and matured since 2010 when [NIST](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pd) published its definition of cloud computing, with its 5 essential characteristics, 3 service models and 4 deployment models.
 
 The generic model for an enterprise cloud has to be "hybrid" with the special cases of purely private or public clouds as subsets of the generic hybrid cloud deployment model. In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.
 
@@ -44,7 +44,7 @@ A generic Telco cloud is an hybrid multi-cloud. A better designation would be a 
 ### 8.2.1 Characteristics of a Federated Cloud
 In this section we will further explore the characteristics of the federated cloud, architecture and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on prem, Cloud Vendor provided on prem, Private outsourced (Commercial Cloud Provider such as an Hyperscalar Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
-<p align="center"><img src="../figures/RM-Ch08-HMC-Image-1.png" alt="Example Hybrid Multi-Cloud Component Cloud"><b>Figure 8-1: Example Hybrid Multi-Cloud Component Cloud.</b></p>
+<p align="center"><img src="../figures/RM-Ch08-HMC-Image-1.png" alt="Example Hybrid Multi-Cloud Component Cloud"><br><b>Figure 8-1: Example Hybrid Multi-Cloud Component Cloud.</b></p>
 
 <a name="8.2.2"></a>
 ### 8.2.2 Telco Cloud
