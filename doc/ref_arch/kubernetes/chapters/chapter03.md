@@ -235,7 +235,9 @@ plugins and the provision of multiple network connections to each Pod, as shown
 by the use of additional CNI Plugin and `net0` connection in the Pod. Note that
 the different network characteristics of the interfaces might require different
 networking technologies, which would potentially require different CNI plugins.
-Also note that this is only required for the Network Intensive profile.
+Also note that this is only required for the Network Intensive profile.  Example
+CNI implementations which meet these requirements include Multus and DANM.  For
+more detailed feature comparison of CNI multiplexers/meta-plugins see Table 3-1 below.
 - **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
 additional networking needs to Pods, that aren't provided by the default CNI plugin.
 This can include connectivity to underlay networks via accelerated hardware devices.
@@ -273,6 +275,28 @@ networks require NAT-less communication documented in `infra.net.cfg.003` and wi
 need to be served by a CNI plugin with IPVLAN or MACVLAN support. On the other
 hand, the low latency, high throughput networks used for handling the user plane
 traffic require the capability to use a user space networking technology.
+
+
+| Requirement | Networking Solution with Multus | Networking Solution with DANM |
+|---|---|---|
+| The overlay network encapsulation protocol needs to enable ECMP in the underlay (`infra.net.cfg.002`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin |
+| NAT (`infra.net.cfg.003`) | Supported via the additional CNI plugin | Supported |
+| Security Groups (`infra.net.cfg.004`) | Not supported | Not supported <sub>(1)<sub> |
+| SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant |
+| Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant |
+| Network resiliency (`req.inf.ntw.01`) | Supported | Supported |
+| Centrally administrated and configured (`req.inf.ntw.03`) | Supported via Kubernetes API | Supported via Kubernetes API |
+| Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via the additional CNI plugin | Supported |
+| Integrating SDN controllers (`req.inf.ntw.05`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin |
+| More than one networking solution (`req.inf.ntw.06`) | Supported | Supported |
+| Choose whether or not to deploy more than one networking solution (`req.inf.ntw.07`) | Supported | Supported |
+| Kubernetes network model (`req.inf.ntw.08`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin |
+| Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported |
+| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via the additional CNI plugin | Supported |
+
+<p align="center"><b>Table 3-1:</b> Comparison of CNI multiplexers/meta-plugins within the networking solution</p>
+
+(1): Under implementation in the current release.  
 
 > Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as
 an additional feature and still be conformant with CNTT.
