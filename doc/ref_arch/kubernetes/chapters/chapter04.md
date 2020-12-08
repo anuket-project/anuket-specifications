@@ -148,37 +148,34 @@ Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ntw.001`|CNI multiplexer/metaplugin|The selected CNI multiplexer/metapulgin MUST be conformant with the CNI spec, MUST support other CNI plugins (req.inf.ntw.06), and SHOULD provide an API based solution to administer the networks from a central point (req.inf.ntw.03). Example CNI implementations which meet these requirements include:<br> - DANM<br> - Multus.<br><br>For more detailed feature comparision of CNI multiplexers/metaplugins see Table 4-5| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
-|`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|A CNI plugin may be used which implements the Kubernetes network model and have capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ntw.003`|NAT less connectivity|An IPVLAN CNI plugin or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used||
-|`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
-|`ra2.ntw.005`|SR-IOV|[SR-IOV CNI plugin](https://github.com/intel/sriov-cni) may be used||
-|`ra2.ntw.006`|SR-IOV|[SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) may be used||
-
+|`ra2.ntw.001`|Centralised network administration|The networking solution deployed within the implementation must be administered through the Kubernetes API using native Kubernetes API resources and objects, or Custom Resources.|[`req.inf.ntw.03`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.002`|Container Network Interface|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin for the Default Pod Network, as the alternative (kubenet) does not support cross-node networking or Network Policies.|[`req.inf.ntw.08`](chapter02.md#23-kubernetes-architecture-requirements)<br><br>[`infra.net.cfg.004`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.003`|Multiplexer/meta-plugin CNI Conformance|The networking solution deployed within the implementation must support the use a multiplexer/meta-plugin that conforms with the CNI specification.|[`req.inf.ntw.06`](chapter02.md#23-kubernetes-architecture-requirements)<br><br>[`req.inf.ntw.07`](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.004`|Multiplexer/meta-plugin CNI Plugins|The selected multiplexer/meta-plugin must support the use of multiple CNI-conformant Network Plugins.|[`req.inf.ntw.06`](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.005`|SR-IOV Device Plugin for Network Intensive|When hosting workloads matching the Network Intensive profile, a Device Plugin for SR-IOV must be used.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.006`|SR-IOV Network Plugin for Network Intensive|When hosting workloads matching the Network Intensive profile, a CNI-conformant Network Plugin for SR-IOV must be used.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.007`|User plane networking|When hosting workloads matching the Network Intensive profile, a CNI network plugin that supports the use of OVS-DPDK or VPP vSwitches must be deployed as part of the networking solution.|[`infra.net.acc.cfg.001`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.008`||||
+|`ra2.ntw.009`||||
+|`ra2.ntw.010`||||
+|`ra2.ntw.011`||||
+|`ra2.ntw.012`||||
+|`ra2.ntw.013`||||
+|`ra2.ntw.014`||||
+|`ra2.ntw.015`||||
+|`ra2.ntw.016`||||
+|`ra2.ntw.017`||||
+|`ra2.ntw.018`||||
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
 
+<!--
+Have commented out the below as there is no requirement driving this specification.
+Issue #2119 has been created to review this
+https://github.com/cntt-n/CNTT/issues/2119
 
-| Requirement | Support in Multus | Support in DANM |
-|-------------|-------------------|-----------------|
-| The overlay network encapsulation protocol needs to enable ECMP in the underlay (`infra.net.cfg.002`) | Supported via another CNI plugin | Supported via another CNI plugin |
-| NAT (`infra.net.cfg.003`) | Supported via another CNI plugin | Supported |
-| Security Groups (`infra.net.cfg.004`) | Not supported | Not supported <sub>1)<sub> |
-| SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant |
-| Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant |
-| Network resiliency (`req.inf.ntw.01`) | Supported | Supported |
-| Centrally administrated and configured (`req.inf.ntw.03`) | Not supported | Partially suported |
-| Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via another CNI plugin | Suported |
-| Integrating SDN controllers (`req.inf.ntw.05`) | Supported via another CNI plugin | Supported via another CNI plugin |
-| More than one networking solution (`req.inf.ntw.06`) | Supported | Supported |
-| Choose whether or not to deploy more than one networking solution (`req.inf.ntw.07`) | Supported | Supported |
-| Kubernetes network model (`req.inf.ntw.08`) | Supported via another CNI plugin | Supported via another CNI plugin |
-| Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported |
-| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via another CNI plugin | Supported |
-
-<p align="center"><b>Table 4-5:</b> Comparision of CNI multiplexers/metaplugins</p>
-
-1): Under implementation in the current release.  
+|`ra2.ntw.005`|NAT less connectivity|An IPVLAN CNI plugin or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used||
+-->
 
 <a name="4.6"></a>
 ## 4.6 Storage components
