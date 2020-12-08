@@ -12,46 +12,24 @@
 <a name="9.1"></a>
 ## 9.1 Introduction
 
-The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and VNFs, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
+The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and workloads, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
 
-There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
+There are three main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
 - FCAPS (ISO model for network management)
 - eTOM (TM Forum Business Process Framework (eTOM))
+- ITIL (ITIL 4.0 attempts to adapt IT Service Management practices to the cloud environment needs)
 
 The chapters below roughly map to these frameworks as follows:
-
-<table>
-  <thead>
-    <tr>
-      <th>Chapter Name</th>
-      <th>FCAPS</th>
-      <th>eTOM</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Configuration and Lifecycle Management</td>
-      <td>Configuration</td>
-      <td>Fulfilment</td>
-    </tr>
-    <tr>
-      <td rowspan=2>Assurance</td>
-      <td>Performance</td>
-      <td rowspan=2>Assurance</td>
-    </tr>
-    <tr>
-      <td>Fault</td>
-    </tr>
-    <tr>
-      <td>Capacity Management</td>
-      <td>Configuration</td>
-      <td>Fulfilment</td>
-    </tr>
-  </tbody>
-</table>
-<p align="center"><b>Table 9-1:</b> Operating Frameworks</p>
+| Chapter Name | FCAPS | eTOM | ITIL |
+| --- | --- | --- | --- |
+| Configuration and Lifecycle Management | Configuration | Fulfilment |Configuration, Release, Change |
+| Assurance | Performance, Fault | Assurance |Event, Incident |
+| Capacity Management | Configuration | Fulfilment |Capacity Management|
 
 <a name="9.2"></a>
+
+> **Note:**  The above mapping is provided for the general orientation purpose only.  Detailed mapping of the required Cloud Infrastructure Lifecycle Management capabilities to any of these frameworks is beyond the scope of this document.
+
 ## 9.2 Configuration and Lifecycle Management
 
 Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. Figure 9-1 shows the configuration management "loop" and how this relates to lifecycle management.
@@ -62,6 +40,7 @@ Configuration management is concerned with defining the configuration of infrast
 The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
 
 However, the key requirements for the infrastructure and infrastructure management are those interfaces and reference points in the red box - where configuration is **set**, and where it is **observed**. Table 9-2 lists the main components and capabilities required in order to manage the configuration and lifecycle of those components.
+
 
 <table>
   <thead>
