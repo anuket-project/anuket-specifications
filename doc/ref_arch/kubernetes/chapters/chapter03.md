@@ -209,27 +209,67 @@ infrastructure itself from the workloads compute resources.
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
-As all production networking solutions for Kubernetes are based on CNI plugins
-and the implicit requirement in [4.2.2 Virtual Network Interface
-Specifications](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications)
-that documents the requirement to have the capability to attach several network
-interfaces to the pods, the CNTT architecture must support a CNI metaplugin/CNI
-multiplexer.
+Kubernetes networking is considered an "extension" to the core functionality,
+and is managed through the use of plugins [Network
+Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/).
+For hardware resources that are needed by Kubernetes applications, [Device
+Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)
+can be used to manage those resources and advertise them to the kubelet for use
+by the Kubernetes applications. This allows resources such as "GPUs,
+high-performance NICs, FPGAs, InfiniBand adapters, and other similar computing
+resources that may require vendor specific initialization and setup" to be
+managed and consumed via standard interfaces.
 
-A CNI metaplugin/CNI multiplexer has the capability to attach several
-interfaces, using different other CNI plugins, to a pod. Note that the different
-network characteristics of the interfaces might require different networking
-technologies, which would potentially require different CNI plugins.
+Figure 3-2 below shows the main building blocks of a Kubernetes networking solution:
+- **Kubernetes Control Plane**: this is the core of a Kubernetes cluster - the
+apiserver, etcd cluster, kube-scheduler and the various controller-managers. The
+control plane (in particular the apiserver) provide a centralised point by which
+the networking solution is managed using an abstract management API.
+- **Default CNI Plugin (Cluster Network)**: this is the default cluster network plugin
+that has been deployed within the cluster to provide IP addresses to Pods. Note that
+support for IPv6 requires not only changes in the Kubernetes control plane, but
+also requires the use of a CNI Plugin that support dual-stack networking.
+- **CNI multiplexer/meta-plugin**: this is the component that integrates with
+the Kubernetes control plane via CNI, but allows for the use of multiple CNI
+plugins and the provision of multiple network connections to each Pod, as shown
+by the use of additional CNI Plugin and `net0` connection in the Pod. Note that
+the different network characteristics of the interfaces might require different
+networking technologies, which would potentially require different CNI plugins.
+Also note that this is only required for the Network Intensive profile.
+- **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
+additional networking needs to Pods, that aren't provided by the default CNI plugin.
+This can include connectivity to underlay networks via accelerated hardware devices.
+- **Device Plugin**: this is a Kubernetes extension that allows for the management
+and advertisement of vendor hardware devices. In particular, devices such as
+FPGA, SR-IOV NICs, SmartNICs, etc. can be made available to Pods by using Device Plugins.
+Note that alignment of these devices, CPU topology and Huge Pages will need the use
+of the [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+- **External / Application Load Balancing**: As Kubernetes Ingress, Egress and Services have no
+support for all the protocols needed in telecommunication environments
+(Diameter, SIP, LDAP, etc) and their capacity is limited, the architecture includes
+the use of alternative load balancers, including external or ones built into the
+application. Management of external load balancers must be possible via Kubernetes API objects.
+- **Other Features**: these additional features that are required by the
+networking solution as a whole, may be delivered by the **"Default CNI Plugin"**,
+or the **"CNI multiplexer/meta-plugin"** if it is deployed. For example,
+the integration of SDN solutions required by `req.inf.ntw.05` is enabled
+via CNI integration.
+- **Service Mesh**: The well known service meshes are "application service meshes" that address and
+interact with the application layer 7 protocols (eg.: HTTP) only. Therefore,
+their support is not required in this architecture, as these service meshes are
+outside the scope of the infrastructure layer of the CNTT stack.
 
-To comply with `req.inf.ntw.08`, inter node communication must be served by a
-CNI plugin which complies with the default [Kubernetes networking assumptions](https://kubernetes.io/docs/concepts/cluster-administration/networking/#the-kubernetes-network-model).
+<p align="center"><img src="../figures/ch03_networking.png" alt="Kubernetes Networking Architecture" Title="Kubernetes Networking Architecture" width="100%"/></p>
+<p align="center"><b>Figure 3-2:</b> Kubernetes Networking Architecture</p>
+
+<!--The above diagram is maintained here: https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
 
 There are two types of low latency and high throughput networks required by
 telco workloads: signalling traffic workloads and user plane traffic workloads.
 Networks used for signalling traffic are more demanding than what a standard
 overlay network can handle, but still do not need the use of user space
 networking. Due to the nature of the signalling protocols used, these type of
-networks require NAT-less communication documented in infra.net.cfg.003 and will
+networks require NAT-less communication documented in `infra.net.cfg.003` and will
 need to be served by a CNI plugin with IPVLAN or MACVLAN support. On the other
 hand, the low latency, high throughput networks used for handling the user plane
 traffic require the capability to use a user space networking technology.
@@ -238,41 +278,6 @@ traffic require the capability to use a user space networking technology.
 an additional feature and still be conformant with CNTT.
 
 > Editors note: The possibility to SR-IOV for DPDK is under discussion.
-
-The integration of SDN solutions required by `req.inf.ntw.05` should be enabled
-via their respective CNI integration.
-
-> Note: An SDN solution can manage the pod networks via the Kubernetes API or
-can have a CNI integration.
-
-The container based architecture must support telecom equipment networking where
-the CNF networks are set up by the operator's network administrators. This is
-why, as `req.gen.cnt.05` requires, the architecture must provide a set of
-abstract management APIs to manage the network connectivity of the CNF pods
-themselves.
-
-The API must support multiple tenants and must require elevated access rights to
-manipulate infrastructure related API objects as these operations generally
-require reconfiguration of the physical network infrastructure.
-
-To fulfill the requirements of `e.cap.016` the architecture should optionally
-support the use of device plugins via the Device Plugin API and the alignment of
-the devices, CPU topology and Huge Pages must be supported using the [Topology
-Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
-
-The architecture must support IPv4, IPv6 and dual stack interfaces of the
-workloads as required by `req.inf.ntw.04`.
-
-As Kubernetes Ingress, Egress and Services have no support for all the protocols
-needed in telecommunication environments (Diameter, SIP, LDAP, etc) and their
-capacity is limited, the architecture must enable the use of alternative load
-balancers, including external or ones built into the application. Management of
-external load balancers must be possible via Kubernetes API objects.
-
-The well known service meshes are "application service meshes" that address and
-interact with the application layer 7 protocols (eg.: HTTP) only. Therefore,
-their support is not required in this architecture, as these service meshes are
-outside the scope of the infrastructure layer of the CNTT stack.
 
 > Refer to software profile features
 [here](../../../ref_model/chapters/chapter05.md#5.1) and hardware profile
