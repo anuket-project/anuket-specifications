@@ -18,7 +18,7 @@
 
 <a name="8.1"></a>
 ## 8.1 Introduction
-The [Reference Model Chapter 3](./chapter01.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities are specified for data center or a colocation center cloud infrastructure. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, requires separate consideration.
+The [Reference Model Chapter 3](./chapter03.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities are specified for data center or a colocation center cloud infrastructure. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, requires separate consideration.
 
 It is unrealistic to expect that a private cloud can cost effectively meet the need of all loads, including peak and disaster recovery. It is for that reason that enterprises will implement an hybrid cloud.  In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.  In a multi-cloud the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies.  The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
 
@@ -39,7 +39,7 @@ Cloud deployments can be created using a variety of technologies  (e.g., OpenSta
 A generic Telco cloud is an hybrid multi-cloud. A better designation would be a federation of clouds - a federated cloud:
    - a collection of cooperating, interoperable autonomous component clouds
    -  the component clouds perform their local operations (internal requests) while also participating in the federation and responding to other component clouds (external requests)
-        - the component clouds are autonomous in terms of, for example, execution autonomy
+        - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in the  centrailised control plane scenario the edge clouds do not have total autonomy and are subject to constraints (e.g., workload LCM)  
         - execution autonomy is the ability of a component cloud to decide the order in which internal and external requests are performed
    - the component clouds are loosely coupled where no no changes are required to participate in a federation
         - also, a federation controller does not impose changes to the component cloud except for running some central component(s) of the federated system (for example, a broker agent – executes as a workload)
@@ -117,17 +117,17 @@ At the edge, the infrastructure may further include ruggedised hardware for hars
 
 <a name="8.3.3"></a>
 ### 8.3.3 Telco Edge Cloud Infrastructure Profiles
-The [Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.4) section specifies two infrastructure profiles:
+The [Cloud Infrastructure Profiles](./chapter04.md#4.2.4) section specifies two infrastructure profiles:
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low to medium network throughput requirements.
 
 The **Network Intensive** cloud infrastructure profile is intended for use by applications that have high network throughput requirements (up to 50Gbps).
 
-The Network Intensive profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8). The Reference Model Network Intensive profile includes an initial set of [Network Intensive profile extensions](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#42421-network-acceleration-extensions).
+The Network Intensive profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](./chapter03.md#3.8). The Reference Model Network Intensive profile includes an initial set of [Network Intensive profile extensions](./chapter04.md#42421-network-acceleration-extensions).
 
-Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [Infrastructure Profile features and requirements](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md) that would need to be relaxed.
+Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [Infrastructure Profile features and requirements](./chapter05.md) that would need to be relaxed.
 
-**Table 8-3. TEC Exceptions to [Infrastructure Profile features and requirements](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md)**
+**Table 8-3. TEC Exceptions to [Infrastructure Profile features and requirements](./chapter05.md)**
 
 <table>
 <tr>
