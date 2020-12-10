@@ -18,11 +18,11 @@
 
 <a name="8.1"></a>
 ## 8.1 Introduction
-The [Reference Model Chapter 3](./chapter03.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities are specified for data center or a colocation center cloud infrastructure. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, requires separate consideration.
+The [Reference Model Chapter 3](./chapter03.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities of the cloud infrastructure are specified for data centers, central office and colocation centers. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, require separate consideration.
 
-It is unrealistic to expect that a private cloud can cost effectively meet the need of all loads, including peak and disaster recovery. It is for that reason that enterprises will implement an hybrid cloud.  In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.  In a multi-cloud the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies.  The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
+It is unrealistic to expect that a private cloud can cost effectively meet the need of all loads, including peak loads and disaster recovery. It is for that reason that enterprises will implement an hybrid cloud.  In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.  In a multi-cloud the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies.  The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
 
-In IaaS clouds, the cloud infrastructure is defined but the tenant workloads include certain needed services (such as LB, messaging); thus, the VNF/CNFs may incorporate different services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the CNTT Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
+In the [Reference Model Chapter 3](./chapter03.md), the cloud infrastructure is defined. The tenants are required to provide certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of the same services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the CNTT Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
 
 A generic Telco cloud is an hybrid multi-cloud or a Federated cloud that has deployments in large data centers, central offices or colocation facilities, and the edge. In this chapter we will discuss the characteristics of Telco Edge and hybrid multi-cloud.
 
@@ -72,13 +72,13 @@ In general, a Telco Cloud consists of multiple interconnected very large data ce
 
 The Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud artifacts.
 
-<p align="center"><b>Table 8-1. Cloud Types and the Partrties Responsible for Artifacts.</b></p>
+<p align="center"><b>Table 8-1. Cloud Types and the Parties Responsible for Artifacts.</b></p>
 
 Type | System Developer | System Maintenance | System Operated & Managed by | Location where Deployed | Primary Resource Consumption Models
 ---|---|---|---|---|---
 Private (Internal Users) | Open Source | Self/Vendor | Self/Vendor | On Prem | Reserved, Dedicated
-Private | Vendor  |  HCP* | Self/Vendor | Self/Vendor | On Prem | Reserved, Dedicated
-Public | Vendor  |  HCP | Self/Vendor | Self/Vendor | On Prem | Reserved, On Demand
+Private | Vendor  \|  HCP* | Self/Vendor | Self/Vendor | On Prem | Reserved, Dedicated
+Public | Vendor  \|  HCP | Self/Vendor | Self/Vendor | On Prem | Reserved, On Demand
 Private | HCP | Vendor | Vendor | Vendor Locations | Reserved, Dedicated
 Public (All Users) | HCP | Vendor | Vendor | Vendor Locations | On Demand, Reserved
 
@@ -93,7 +93,7 @@ The Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Clou
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
 
 <a name="8.3"></a>
-## Telco Edge Cloud
+## 8.3 Telco Edge Cloud
 This section presents the characteristics and capabilities of different Edge cloud deployment locations, infrastructure, footprint, etc. Please note that in the literature many terms are used and, thus, this section includes a table that tries to map these different terms.
 
 <a name="8.3.1"></a>
@@ -168,7 +168,7 @@ This section characterises the hardware capabilities for different edge deployme
 </tr>
 <tr>
 <th></th>
-<th>Idnetity</th>
+<th>Identity</th>
 <th>Image</th>
 <th>Placement</th>
 <th>Compute</th>
