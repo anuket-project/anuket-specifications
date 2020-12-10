@@ -129,29 +129,16 @@ Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [I
 
 **Table 8-3. TEC Exceptions to [Infrastructure Profile features and requirements](./chapter05.md)**
 
-<table>
-<tr>
-<th>Reference</th>
-<th>Feature</th>
-<th>Description</th>
-<th colspan="2">As Specified in RM Chapter 05 </th>
-<th colspan="2">Exception for Edge</th>
-</tr>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th>Basic Type</td>        
-<th>Network Intensive</td>
-<th color="blue">Basic Type</td>        
-<th color="blue">Network Intensive</td>
-</tr>
-<tr><td>infra.stg.cfg.003</td><td>Storage with replication</td><td></td><td>N</td><td>Y</td><td>N</td><td>Optional</td></tr>
-<tr><<td>infra.stg.cfg.004</td><td>Storage with encryption</td><td></td><td>Y</td><td>Y</td><td>N</td><td>Optional</td></tr>
-<tr><<td>infra.hw.cpu.cfg.001</td><td>Minimum Number of CPU sockets</td><td>This determines the minimum number of CPU sockets within each host</td><td>2</td><td>2</td><td>1</td><td>1</td></tr>
-<tr><<td>infra.hw.cpu.cfg.002</td><td>Minimum Number of cores per CPU</td><td>This determines the number of cores needed per CPU.</td><td>20</td><td>20</td><td>2</td><td>2</td></tr>
-<tr><<td>infra.hw.cpu.cfg.003</td><td>NUMA alignment</td><td>NUMA alignment support and BIOS configured to enable NUMA</td><td>N</td><td>Y</td><td>N</td><td>Optional</td></tr>
-</table>
+
+| Reference | Feature | Description | As Specified in RM Chapter 05| | Exception for Edge | |
+|----|----|----|----|----|----|----|
+| | | | **Basic Type** | **Network Intensive** | **Basic Type** | **Network Intensive** |
+| infra.stg.cfg.003 | Storage with replication |  | N | Y | N | Optional |
+| infra.stg.cfg.004 | Storage with encryption |  | Y | Y | N | Optional |
+| infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets | This determines the minimum number of CPU sockets within each host | 2 | 2 | 1 | 1 |
+| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 2 | 2 |
+| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Optional |
+
 
 <a name="8.3.4"></a>
 ### 8.3.4  Telco Edge Cloud Infrastructure Characteristics
@@ -159,78 +146,13 @@ This section characterises the hardware capabilities for different edge deployme
 
 **Table 8-4. Characteristics of Infrastructure nodes
 
-<table>
-<tr>
-<th></th>
-<th colspan="7">Platform Services</th>
-<th colspan="3">Storage</th>
-<th colspan="3">Network Services</th>
-</tr>
-<tr>
-<th></th>
-<th>Identity</th>
-<th>Image</th>
-<th>Placement</th>
-<th>Compute</th>
-<th>Networking</th>
-<th>Message Queue</th>
-<th>DB Server</th>
-<th>Ephemeral</th>
-<th>Persistent Block</th>
-<th>Persistent Object</th>
-<th>Management</th>
-<th>Underlay (Provider)</th>
-<th>Overlay</th>
-</tr>
-<tr>
-<td>Control Nodes</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td></td>
-<td>&#9989;</td>
-<td></td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-</tr>
-<tr>
-<td>Workload Nodes<br>(Compute)</td>
-<td></td>
-<td></td>
-<td></td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td></td>
-<td></td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-</tr>
-<tr>
-<td>Storage Nodes</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-<td>&#9989;</td>
-</tr>
-</table>
+| | Platform Services | | | | | | | | Storage | | | | Network Services | | |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  | Identity | Image | Placement | Compute | Networking | Message Queue | DB Server | | Ephemeral | Persistent Block | Persistent Object | | Management | Underlay (Provider) | Overlay |
+| Control Nodes | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | | | &#9989; | | | &#9989; | &#9989; | &#9989; |
+| Workload Nodes<br>(Compute) |  |  |  | &#9989; | &#9989; |  |  | | &#9989; | &#9989; | &#9989; | | &#9989; | &#9989; | &#9989; |
+| Storage Nodes |  |  |  |  |  |  |  | | | &#9989; | &#9989; | | &#9989; | &#9989; | &#9989; |
+
 
 Depending on the facility capabilities, deployments at the edge may be similar to one of the following:
         - Small footprint edge device
@@ -244,77 +166,14 @@ Depending on the facility capabilities, deployments at the edge may be similar t
 
 **Table 8-5. Comparison of Edge Terms
 
-<table>
-<tr>
-<th>CNTT Term?</th><th>Compute</th><th>Storage</th><th>Networking</th><th>RTT*</th><th>Security</th><th>Scalability</th><th>Elasticity</th><th>Resiliency</th><th>Preferred Workload Architecture</th><th>Upgrades</th><th></th><th>OpenStack</th><th>OPNFV Edge</th><th>Edge Glossary</th><th>GSMA</th>
-</tr>
-<tr>
-<td>Regional Data Center (DC)<br><br>Fixed</td><td>1000's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU</td><td>10's EB<br>
-Standardised<br><br>
-HDD and NVMe<br><br>
-Permanence
-</td><td>>100 Gbps<br><br>
-Standardised</td><td>~100 ms</td><td>Highly Secure</td><td>Horizontal and unlimited scaling</td><td>Rapid spin up and down</td><td>Infrastructure architected for resiliency<br><br>
-Redundancy for FT and HA</td><td>Microservices based<br><br>
-Stateless<br><br>
-Hosted on Containers</td><td>HW Refresh: ? <br><br>
-Firmware: When required<br><br>
-Platform SW: CD</td><td></td><td>Central Data Center</td><td></td><td></td><td></td>
-</tr>
-<tr>
-<td>Metro Data Centers<br>
-Fixed</td><td>10's to 100's<br><br>
-Standardised<br><br>
->1 CPU<br><br>
->20 cores/CPU</td><td>100's PB<br><br>
-Standardised<br><br>
-NVMe on PCIe<br><br>
-Permanence</td><td>> 100 Gbps<br><br>
-Standardised</td><td>~10 ms</td><td>Highly Secure</td><td>Horizontal but limited scaling</td><td>Rapid spin up and down</td><td>Infrastructure architected for some level of resiliency<br><br>
-Redundancy for limited FT and HA</td><td>Microservices based<br><br>
-Stateless<br><br>
-Hosted on Containers</td><td>HW Refresh: ? <br><br>
-Firmware: When required<br><br>
-Platform SW: CD</td><td></td><td>Edge Site</td><td>Large Edge</td><td>Aggregation Edge</td><td></td>
-</tr>
-<tr>
-<td>Edge<br>
-Fixed / Mobile</td><td>10's<br><br>
-Some Variability<br><br>
->=1 CPU<br><br>
->10 cores/CPU</td><td>100 TB<br><br>
-Standardised<br><br>
-NVMe on PCIe<br><br>
-Permanence / Ephemeral</td><td>50 Gbps<br><br>
-Standardised</td><td>~5 ms</td><td>Low Level of Trust</td><td>Horizontal but highly constrained scaling, if any</td><td>Rapid spin up (when possible) and down</td><td>Applications designed for resiliency against infra failures<br><br>
-No or highly limited redundancy</td><td>Microservices based<br><br>
-Stateless<br><br>
-Hosted on Containers</td><td>HW Refresh: ? <br><br>
-Firmware: When required<br><br>
-Platform SW: CD</td><td></td><td>Far Edge Site</td><td>Medium Edge</td><td>Access Edge / Aggregation Edge</td><td></td>
-</tr>
-<tr>
-<td>Mini-/Micro-Edge<br>
-Mobile / Fixed</td><td>1's<br><br>
-High Variability<br><br>
-Harsh Environments<br><br>
-1 CPU<br><br>
->2 cores/CPU</td><td>10's GB<br><br>
-NVMe<br><br>
-Ephemeral<br><br>
-Caching</td><td>10 Gbps<br><br>
-Connectivity not Guaranteed</td><td><2 ms<br><br>
-Located in network proximity of EUD/IoT</td><td>Untrusted</td><td>Limited Vertical Scaling (resizing)</td><td>Constrained</td><td>Applications designed for resiliency against infra failures<br><br>
-No or highly limited redundancy</td><td>Microservices based or monolithic<br><br>
-Stateless or Stateful<br><br>
-Hosted on Containers or VMs<br><br><br>
-Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate</td><td>HW Refresh: ? <br>
-Firmware: ? <br><br>
-Platform SW: ?</td><td></td><td>Fog Computing (Mostly deprecated terminology)<br><br>
-Extreme Edge<br><br>
-Far Edge</td><td>Small Edge</td><td>Access Edge</td><td></td>
-</tr>
-</table>
+| CNTT Term | Compute | Storage | Networking | RTT* | Security | Scalability | Elasticity | Resiliency | Preferred Workload Architecture | Upgrades |  | OpenStack | OPNFV Edge | Edge Glossary | GSMA |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Regional Data Center (DC)<br><br>Fixed | 1000's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 10's EB<br><br>Standardised<br><br>HDD and NVMe<br><br>Permanence | >100 Gbps<br><br>Standardised | ~100 ms | Highly Secure | Horizontal and unlimited scaling | Rapid spin up and down | Infrastructure architected for resiliency<br><br>Redundancy for FT and HA | Microservices based<br><br>Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Central Data Center |  |  |  
+| Metro Data Centers<br>Fixed | 10's to 100's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 100's PB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence | > 100 Gbps<br><br>Standardised | ~10 ms | Highly Secure | Horizontal but limited scaling | Rapid spin up and down | Infrastructure architected for somelevel of resiliency<br><br>Redundancy for limited FT and HA | Microservices based<br><br>
+Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Edge Site | Large Edge | Aggregation Edge |  
+| Edge<br>Fixed / Mobile | 10's<br><br>Some Variability<br><br>>=1 CPU<br><br>>10 cores/CPU | 100 TB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence / Ephemeral | 50 Gbps<br><br>Standardised | ~5 ms | Low Level of Trust | Horizontal but highly constrained scaling, if any | Rapid spin up (when possible) and down | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based<br><br>Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Far Edge Site | Medium Edge | Access Edge / Aggregation Edge |  
+| Mini-/Micro-Edge<br>Mobile / Fixed | 1's<br><br>High Variability<br><br>Harsh Environments<br><br>1 CPU<br><br>>2 cores/CPU | 10's GB<br><br>NVMe<br><br>Ephemeral<br><br>Caching | 10 Gbps<br><br>Connectivity not Guaranteed | <2 ms<br><br>Located in network proximity of EUD/IoT | Untrusted | Limited Vertical Scaling (resizing) | Constrained | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based or monolithic<br><br>Stateless or Stateful<br><br>Hosted on Containers or VMs<br><br><br>Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate | HW Refresh: ? <br>Firmware: ? <br><br>Platform SW: ? |  | Fog Computing (Mostly deprecated terminology)<br><br>Extreme Edge<br><br>Far Edge | Small Edge | Access Edge |
+
 *RTT: Round Trip Times
  EUD: End User Devices
  IoT: Internet of Things
