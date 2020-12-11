@@ -4,16 +4,18 @@
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [4.1 Introduction](#4.1)
-* [4.2 Kubernetes Node](#4.2)
-* [4.3 Kubernetes](#4.3)
-* [4.4 Container runtimes](#4.4)
-* [4.5 Networking solutions](#4.5)
-* [4.6 Storage components](#4.6)
-* [4.7 Service meshes](#4.7)
-* [4.8 Container package managers](#4.8)
-* [4.9 Kubernetes workloads](#4.9)
-* [4.10 Supplementary components](#4.10)
+- [4. Component Level Architecture](#4-component-level-architecture)
+  - [Table of Contents](#table-of-contents)
+  - [4.1 Introduction](#41-introduction)
+  - [4.2 Kubernetes Node](#42-kubernetes-node)
+  - [4.3 Kubernetes](#43-kubernetes)
+  - [4.4 Container runtimes](#44-container-runtimes)
+  - [4.5 Networking solutions](#45-networking-solutions)
+  - [4.6 Storage components](#46-storage-components)
+  - [4.7 Service meshes](#47-service-meshes)
+  - [4.8 Kubernetes Application package manager](#48-kubernetes-application-package-manager)
+  - [4.9 Kubernetes workloads](#49-kubernetes-workloads)
+  - [4.10 Additional required components](#410-additional-required-components)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -154,7 +156,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.004`|Multiplexer/meta-plugin CNI Plugins|The selected multiplexer/meta-plugin must support the use of multiple CNI-conformant Network Plugins.|[`req.inf.ntw.06`](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.005`|SR-IOV Device Plugin for Network Intensive|When hosting workloads matching the Network Intensive profile, a Device Plugin for SR-IOV must be used.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ntw.006`|SR-IOV Network Plugin for Network Intensive|When hosting workloads matching the Network Intensive profile, a CNI-conformant Network Plugin for SR-IOV must be used.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
-|`ra2.ntw.007`|User plane networking|When hosting workloads matching the Network Intensive profile, a CNI network plugin that supports the use of OVS-DPDK or VPP vSwitches must be deployed as part of the networking solution.|[`infra.net.acc.cfg.001`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.007`|User plane overlay networking|When hosting workloads matching the Network Intensive profile, a CNI network plugin that supports the use of OVS-DPDK or VPP vSwitches should be deployed as part of the networking solution.|[`infra.net.acc.cfg.001`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.ntw.008`||||
 |`ra2.ntw.009`||||
 |`ra2.ntw.010`||||
