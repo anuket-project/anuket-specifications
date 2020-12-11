@@ -109,15 +109,6 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 > **Gap description:** Allocation of hugepages from the same NUMA node as other resources of a Pod. To support this [cAdvisor needed a change to support NUMA](https://github.com/google/cadvisor/pull/2304). Changes in Kubernetes are planned to be implemented in the [Node Topology Manager](https://github.com/kubernetes/enhancements/issues/693).
 
 <a name="6.2.9"></a>
-### 6.2.9 Missing central IPAM solution in Multus
-
-> **Related requirements:** `req.inf.ntw.04` and `req.inf.ntw.10`
-
-> **Baseline project:** Multus
-
-> **Gap description:** If Multus is selected as a CNI multiplexer an additional component have to be added and configured to support the centralized management of IP addresses. This is cruical to avoid the overlap of allocated IP address ranges.
-
-<a name="6.2.9"></a>
 ### 6.2.9 Lack of management API in Multus
 
 > **Related requirements:** `req.inf.ntw.03`
@@ -127,7 +118,7 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 > **Gap description:** If Multus is selected as a CNI multiplexer no network management API is provided. Multus does not provide a management API, therefore its API to consume the networks needs to contain administrative data, like CIDRs.
 
 
-<a name="6.2.9"></a>
+<a name="6.2.10"></a>
 ### 6.2.9 Missing IPVLAN CNI in case of Multus is used as a CNI multiplexer 
 
 > **Related requirements:** `infra.net.cfg.003`
