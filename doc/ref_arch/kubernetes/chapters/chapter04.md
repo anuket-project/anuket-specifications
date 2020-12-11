@@ -157,7 +157,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.005`|SR-IOV Device Plugin for Network Intensive|When hosting workloads matching the Network Intensive profile, a Device Plugin for SR-IOV must be used.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ntw.006`|SR-IOV Network Plugin for Network Intensive|When hosting workloads matching the Network Intensive profile, a CNI-conformant Network Plugin for SR-IOV must be used.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ntw.007`|User plane overlay networking|When hosting workloads matching the Network Intensive profile, a CNI network plugin that supports the use of OVS-DPDK or VPP vSwitches should be deployed as part of the networking solution.|[`infra.net.acc.cfg.001`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ntw.008`||||
+|`ra2.ntw.008`|NATless connectivity|When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers, a CNI plugin that exposes the pod IP directly to the external networks (e.g. MACVLAN or IPVLAN) is required.|*tbd*|
 |`ra2.ntw.009`||||
 |`ra2.ntw.010`||||
 |`ra2.ntw.011`||||
