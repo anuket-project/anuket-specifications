@@ -12,6 +12,7 @@
   * [10.3.3 Service Function Chain](#10.3.3)
   * [10.3.4 Packet Acceleration Request (e.g Hardware Acceleration)](#10.3.4)
   * [10.3.5 Multi-cloud architecture directions for network workloads)](#10.3.5)
+  * [10.3.6 Closed-loop automation](#10.3.6)
 
 
 <a name="10.1"></a>
@@ -62,3 +63,7 @@ While generic server hardware capabilities can be exclusively used for handling 
 <a name="10.3.5"></a>
 ### 10.3.5 Multi-cloud architecture directions for network workloads
 There is a growing interest in using a multi-cloud environment for the deployment of network functions. The industry investigates and starts to experiment with deploying and operating network functions across several private and/or public clouds to reuse services and capabilities available in these cloud environments instead of investing in a duplications of such capabilities.  5G and Edge deployments seem to be some of the catalysts of the growing interest.  The Reference Model will need to provide in its future releases relevant guidelines for such multi-cloud architectures.
+
+<a name="10.3.6"></a>
+### 10.3.6 Closed-loop automation 
+In general, closed loop means an automatic control system in which an operation, process, or mechanism is regulated by feedback. Closed-loop automation is evolving as a major advancement in the telecommunication network automation. In the context of the telecommunication cloud infrastructure, it means a system that in a continuous loop programmatically validates the state of the cloud infrastructure against the declared desired state, and in case of deviation from the desires state, it automatically takes remediation actions necessary for bringing the actual state back to the desired state. The Reference Model specification will in its next releases address this important area.
