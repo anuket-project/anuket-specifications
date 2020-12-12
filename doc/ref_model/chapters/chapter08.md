@@ -39,7 +39,7 @@ Cloud deployments can be created using a variety of technologies  (e.g., OpenSta
 A generic Telco cloud is an hybrid multi-cloud. A better designation would be a federation of clouds - a federated cloud:
    - a collection of cooperating, interoperable autonomous component clouds
    -  the component clouds perform their local operations (internal requests) while also participating in the federation and responding to other component clouds (external requests)
-        - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in the  centrailised control plane scenario the edge clouds do not have total autonomy and are subject to constraints (e.g., workload LCM)  
+        - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centrailised control plane scenario (please see the section "Centralised Control Plane" in the "[Edge Computing: Next Steps in Architecture, Design and Testing](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/)" whitepaper) the edge clouds do not have total autonomy and are subject to constraints (e.g., workload LCM)  
         - execution autonomy is the ability of a component cloud to decide the order in which internal and external requests are performed
    - the component clouds are loosely coupled where no no changes are required to participate in a federation
         - also, a federation controller does not impose changes to the component cloud except for running some central component(s) of the federated system (for example, a broker agent – executes as a workload)
