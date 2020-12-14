@@ -109,21 +109,21 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 > **Gap description:** Allocation of hugepages from the same NUMA node as other resources of a Pod. To support this [cAdvisor needed a change to support NUMA](https://github.com/google/cadvisor/pull/2304). Changes in Kubernetes are planned to be implemented in the [Node Topology Manager](https://github.com/kubernetes/enhancements/issues/693).
 
 <a name="6.2.9"></a>
-### 6.2.9 Lack of management API in Multus
+### 6.2.9 Lack of management API in case of Multus is used as a CNI multiplexer
 
 > **Related requirements:** `req.inf.ntw.03`
 
-> **Baseline project:** Multus
+> **Baseline project:** ?
 
 > **Gap description:** If Multus is selected as a CNI multiplexer no network management API is provided. Multus does not provide a management API, therefore its API to consume the networks needs to contain administrative data, like CIDRs.
 
 
 <a name="6.2.10"></a>
-### 6.2.9 Missing IPVLAN CNI in case of Multus is used as a CNI multiplexer 
+### 6.2.10 Missing IPVLAN CNI in case of Multus is used as a CNI multiplexer 
 
 > **Related requirements:** `infra.net.cfg.003`
 
-> **Baseline project:** Multus, ?
+> **Baseline project:** ?
 
 > **Gap description:** If Multus is selected as a CNI multiplexer an additional component is needed to serve as IPVLAN CNI and automatically provision the VLAN-s to the local interfaces.
 
