@@ -213,7 +213,7 @@ Kubernetes networking is considered an "extension" to the core functionality,
 and is managed through the use of plugins [Network
 Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/).
 For hardware resources that are needed by Kubernetes applications, [Device
-Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)
+Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/)
 can be used to manage those resources and advertise them to the kubelet for use
 by the Kubernetes applications. This allows resources such as "GPUs,
 high-performance NICs, FPGAs, InfiniBand adapters, and other similar computing
