@@ -192,7 +192,24 @@ As such the requirements for Capacity Management on the infrastructure are cover
 
 <a name="9.5.2.2"></a>
 #### 9.5.2.2 Software CI/CD Requirements
+The requirements including for CI/CD for ensuring software security scans, image integrity checks, OS version checks, etc. prior to deployment, are listed in the Table XX.XX (below). Please note that the tenant processes for application LCM (such as updates) are out of scope. For the purpose of these requirements, CI includes Continuous Delivery, and CD refers to Continuous Deployment.
 
+Ref # | Description | Comments/Notes
+---|---|---
+auto.cicd.001 | The CI/CD pipeline must support deployment on any cloud and cloud infrastructures including different hardware accelerators. | CI/CD pipelines automate CI/CD best practices into repeatable workflows for integrating code and configurations into builds, testing builds including validation against design and operator specific criteria, and delivery of the product onto a runtime environment.<br>Example of an open-source cloud native CI/CD framework is the Tekton project (https://tekton.dev/)
+auto.cicd.002 | The CI/CD pipelines must use event-driven task automation | 
+auto.cicd.003 | The CI/CD pipelines should avoid scheduling tasks | 
+auto.cicd.004 | The CI/CD pipeline is triggered by a new or updated software release being loaded into a repository | The software release cane be source code files, configuration files, images, manifests.<br>Operators may support a single or multiple repositories and may, thus, specify which repository is to be used for these release.<br>An example, of an open source repository is the CNCF Harbor (https://goharbor.io/)
+auto.cicd.005 | The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices. | 
+auto.cicd.006 | The CI pipeline must support build and packaging of images and deployment manifests from source code and configuration files. | 
+auto.cicd.007 | The CI pipeline must scan images and manifests to validate for compliance with security requirements.  | Refer to RM Chapter 07 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#79-consolidated-security-requirements).<br>Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
+auto.cicd.008 | The CI pipeline must validate images and manifests | Example, different tests
+auto.cicd.009 | The CI pipeline must validate with all hardware offload permutations and without hardware offload | 
+auto.cicd.010 | The CI pipeline must promote validated images and manifests to be deployable. | Example, promote from a development repository to a production repository
+auto.cicd.011 | The CD pipeline must verify and validate the tenant request | Example, RBAC, request is within quota limits, affinity/anti-affinity, …
+auto.cicd.012 | The CD pipeline after all validations must turn over control to orchestration of the software | |
+auto.cicd.013 | The CD pipeline must be able to deploy into Development, Test and Production environments | |
+auto.cicd.014 | The CD pipeline must be able to automatically promote software from Development to Test and Production environments | |
 
 <a name="9.5.3"></a>
 ### 9.5.3 Tenant Creation Automation
