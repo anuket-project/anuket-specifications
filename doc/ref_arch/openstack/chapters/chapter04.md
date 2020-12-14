@@ -377,7 +377,8 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 <a name="4.2.3"></a>
 ### 4.2.3. Network Fabric
-**Content to be developed**
+
+Networking Fabric consists of:
 -	Physical switches, routers…
 -	Switch OS
 -	Minimum number of switches etc.
