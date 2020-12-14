@@ -7,7 +7,10 @@
 * [9.2 Configuration and Lifecycle Management](#9.2)
 * [9.3 Assurance](#9.3)
 * [9.4 Capacity Management](#9.4)
-
+* [9.5 Automation](#9.5)
+  * [9.5.1 Infrastructure LCM Automation](#9.5.1)
+  * [9.5.2 Software Onboarding Automation and CI/CD Requirements](#9.5.2)
+  * [9.5.3 Tenant creation automation](#9.5.3)
 
 <a name="9.1"></a>
 ## 9.1 Introduction
@@ -164,3 +167,39 @@ Note that the above only refers to components - it is expected that any "service
 Capacity Management is a potentially wide ranging process that includes taking demand across lines of business, analysing data about the infrastructure that is running, and calculating when additional infrastructure might be required, or when infrastructure might need to be decommissioned.
 
 As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware, software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
+
+<a name="9.5"></a>
+## 9.5 Automation
+
+<a name="9.5.1"></a>
+### 9.5.1 Infrastructure LCM Automation
+
+<a name="9.5.1.1"></a>
+#### 9.5.1.1. Hardware Configuration CI/CD
+
+<a name="9.5.1.1"></a>
+#### 9.5.1.2. Networking Automation
+
+<a name="9.5.1.1"></a>
+#### 9.5.1.3. Software Development CI/CD
+
+
+<a name="9.5.2"></a>
+### 9.5.2 Software Onboarding Automation and CI/CD Requirements
+
+<a name="9.5.2.1"></a>
+#### 9.5.2.1 Software Onboarding Automation
+
+<a name="9.5.2.2"></a>
+#### 9.5.2.2 Software CI/CD Requirements
+
+
+<a name="9.5.3"></a>
+### 9.5.3 Tenant Creation Automation
+
+<a name="9.5.3.1"></a>
+#### 9.5.3.1. Pre-tenant Creation Requirements
+
+<a name="9.5.3.2"></a>
+#### 9.5.3.2. Tenant Networking Automation
+
