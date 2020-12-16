@@ -3,9 +3,8 @@
 # 4. Component Level Architecture
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 - [4. Component Level Architecture](#4-component-level-architecture)
-  - [Table of Contents](#table-of-contents)
   - [4.1 Introduction](#41-introduction)
   - [4.2 Kubernetes Node](#42-kubernetes-node)
   - [4.3 Kubernetes](#43-kubernetes)

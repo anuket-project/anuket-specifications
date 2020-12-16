@@ -4,10 +4,9 @@
 # 2. Architecture Requirements
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 - [2. Architecture Requirements](#2-architecture-requirements)
-  - [Table of Contents](#table-of-contents)
   - [2.1 Introduction](#21-introduction)
   - [2.1.1 Definitions](#211-definitions)
   - [2.2 Reference Model Requirements](#22-reference-model-requirements)
