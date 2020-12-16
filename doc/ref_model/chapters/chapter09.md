@@ -189,6 +189,20 @@ As such the requirements for Capacity Management on the infrastructure are cover
 
 <a name="9.5.2.1"></a>
 #### 9.5.2.1 Software Onboarding Automation
+The Cloud Infrastructure workload onboarding process describes activities needed for the integration of tenants' workloads into the Cloud Infrastructure environment. Typically, this business process consists of the following key phases:
+1. Tenant Engagement and Workload Evaluation:
+    - In this phase the request from the tenant to host a workload on the Cloud Infrastructure platform is assessed and a decision made on whether to proceed with the hosting request.
+    - This phase may also involve the tenant accessing a pre-staging environment to perform their own evaluation and/or pre-staging activities in preparation for later onboarding phases.
+2. Workload Packaging:
+    - The main outcome of this phase is to produce the workload deployable image and  the deployment manifests (such as TOSCA blueprints or HEAT templates or Helm charts) that will define the Cloud Infrastructure service attributes for the workload. 
+    - The workload packaging can be performed by the tenant, through self-service capabilities or by the Cloud Infrastructure Operations team.
+3. Workload Validation and Certification:
+    - In this phase the workload is deployed and tested to validate it against the service design and other Operator specific acceptance criteria, as required.
+    - Workload validation and certification should be automated using CI/CD toolsets / pipelines and Test as a Service (TaaS) capabilities.
+4. Publish Workload:
+    - After the workload is certified the final onboarding process phase is for it to be published to the Cloud Infrastructure  production catalogue from where it can be instantiated on the Cloud Infrastructure platform by the tenant.
+    
+All phases described above can be automated using technology specific toolsets and procedures.  Hence, details of such automation are left for the technology specific Reference Architecture and Reference Implementation specifications.
 
 <a name="9.5.2.2"></a>
 #### 9.5.2.2 Software CI/CD Requirements
