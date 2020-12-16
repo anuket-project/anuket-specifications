@@ -199,7 +199,7 @@ Ref # | Description | Comments/Notes
 auto.cicd.001 | The CI/CD pipeline must support deployment on any cloud and cloud infrastructures including different hardware accelerators. | CI/CD pipelines automate CI/CD best practices into repeatable workflows for integrating code and configurations into builds, testing builds including validation against design and operator specific criteria, and delivery of the product onto a runtime environment.<br>Example of an open-source cloud native CI/CD framework is the Tekton project (https://tekton.dev/)
 auto.cicd.002 | The CI/CD pipelines must use event-driven task automation | 
 auto.cicd.003 | The CI/CD pipelines should avoid scheduling tasks | 
-auto.cicd.004 | The CI/CD pipeline is triggered by a new or updated software release being loaded into a repository | The software release cane be source code files, configuration files, images, manifests.<br>Operators may support a single or multiple repositories and may, thus, specify which repository is to be used for these release.<br>An example, of an open source repository is the CNCF Harbor (https://goharbor.io/)
+auto.cicd.004 | The CI/CD pipeline is triggered by a new or updated software release being loaded into a repository | The software release can be source code files, configuration files, images, manifests, and these are all stored in a repository.<br>Operators may support a single or multiple repositories and may, thus, specify which repository is to be used for the release.<br>An example, of an open source repository is the CNCF Harbor (https://goharbor.io/)
 auto.cicd.005 | The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices. | 
 auto.cicd.006 | The CI pipeline must support build and packaging of images and deployment manifests from source code and configuration files. | 
 auto.cicd.007 | The CI pipeline must scan images and manifests to validate for compliance with security requirements.  | Refer to RM Chapter 07 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#79-consolidated-security-requirements).<br>Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
@@ -219,4 +219,3 @@ auto.cicd.014 | The CD pipeline must be able to automatically promote software f
 
 <a name="9.5.3.2"></a>
 #### 9.5.3.2. Tenant Networking Automation
-
