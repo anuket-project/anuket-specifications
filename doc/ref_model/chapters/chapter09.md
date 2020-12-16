@@ -214,6 +214,12 @@ All phases described above can be automated using technology specific toolsets a
 <a name="9.5.3.1"></a>
 #### 9.5.3.1. Pre-tenant Creation Requirements
 
+Topics may include:
+1. Tenant Approval -- use, capacity, data centers, ..
+1. Tenant Admin, Tenant Member and other Tenant Role approvals for user by role
+1. Tenant Images and manifests approvals
+1. ....
+
 <a name="9.5.3.2"></a>
 #### 9.5.3.2. Tenant Networking Automation
 
