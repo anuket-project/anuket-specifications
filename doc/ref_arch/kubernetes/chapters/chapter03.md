@@ -3,10 +3,9 @@
 # 3. High Level Architecture
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 - [3. High Level Architecture](#3-high-level-architecture)
-  - [Table of Contents](#table-of-contents)
   - [3.1 Introduction](#31-introduction)
   - [3.2 Infrastructure Services](#32-infrastructure-services)
     - [3.2.1 Container Compute Services](#321-container-compute-services)
