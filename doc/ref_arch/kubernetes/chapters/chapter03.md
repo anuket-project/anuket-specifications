@@ -5,17 +5,19 @@
 
 ## Table of Contents
 
-* [3.1 Introduction](#3.1)
-* [3.2 Infrastructure Services](#3.2)
-    * [3.2.1 Container Compute Services](#3.2.1)
-        * [3.2.1.1 Memory management](#3.2.1.1)
-        * [3.2.1.2 HW Topology management](#3.2.1.2)
-        * [3.2.1.3 HW Acceleration](#3.2.1.3)
-        * [3.2.1.4 CPU management](#3.2.1.4)
-        * [3.2.1.5 Container Runtime Services](#3.2.1.5)
-    * [3.2.2 Container Networking Services](#3.2.2)
-    * [3.2.3 Container Storage Services](#3.2.3)
-    * [3.2.4 Container Package Managers](#3.2.4)
+- [3. High Level Architecture](#3-high-level-architecture)
+  - [Table of Contents](#table-of-contents)
+  - [3.1 Introduction](#31-introduction)
+  - [3.2 Infrastructure Services](#32-infrastructure-services)
+    - [3.2.1 Container Compute Services](#321-container-compute-services)
+      - [3.2.1.1 Memory management](#3211-memory-management)
+      - [3.2.1.2 HW Topology management](#3212-hw-topology-management)
+      - [3.2.1.3 HW Acceleration](#3213-hw-acceleration)
+      - [3.2.1.4 CPU management](#3214-cpu-management)
+      - [3.2.1.5 Container Runtime Services](#3215-container-runtime-services)
+    - [3.2.2 Container Networking Services](#322-container-networking-services)
+    - [3.2.3 Container Storage Services](#323-container-storage-services)
+    - [3.2.4 Kubernetes Application package manager](#324-kubernetes-application-package-manager)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
@@ -266,7 +268,13 @@ outside the scope of the infrastructure layer of the CNTT stack.
 
 <!--The above diagram is maintained here: https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
 
-There are two types of low latency and high throughput networks required by
+Network plugins can be categorised based on the topology of the networks they manage, and the integration with the switching (eg vlan vs tunnels) and routing (eg virtual vs physical gateways) infrastructure outside of the cluster:
+
+* **Layer 2 underlay** plugins provide east/west ethernet connectivity between pods and north/south connectivity between pods and external networks by using the network underlay (eg VLANs on DC switches). When using the underlay for layer 2 segments, configuration is required on the DC network for every network.
+* **Layer 2 overlay** plugins provide east/west pod-to-pod connectivity by creating overlay tunnels (eg VXLAN/GENEVE tunnels) between the nodes, without requiring creation of per-application layer 2 segments on the underlay. North-south connectivity cannot be provided.
+* **Layer 3** plugins create a virtual router (eg BPF, iptables, kubeproxy) in each node, and can route traffic between multiple layer 2 overlays via them. North-south traffic is managed by peering (eg with BGP) virtual routers on the nodes with the DC network underlay, allowing each pod or service IP to be announced independently.
+
+There are several types of low latency and high throughput networks required by
 telco workloads: signalling traffic workloads and user plane traffic workloads.
 Networks used for signalling traffic are more demanding than what a standard
 overlay network can handle, but still do not need the use of user space
