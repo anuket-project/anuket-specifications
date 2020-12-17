@@ -288,7 +288,7 @@ traffic require the capability to use a user space networking technology.
 |---|---|---|
 | The overlay network encapsulation protocol needs to enable ECMP in the underlay (`infra.net.cfg.002`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin |
 | NAT (`infra.net.cfg.003`) | Supported via the additional CNI plugin | Supported |
-| Security Groups (`infra.net.cfg.004`) | Not supported | Not supported <sub>(1)<sub> |
+| Network Policies (Security Groups) (`infra.net.cfg.004`) | Not supported | Not supported <sub>(1)<sub> |
 | SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant |
 | Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant |
 | Network resiliency (`req.inf.ntw.01`) | Supported | Supported |
