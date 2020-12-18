@@ -266,6 +266,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname) Parameter Group (OCI Spec)|Specifies the container's hostname as seen by processes running inside the container|TBD|
 |`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|
 |`ra2.app.006`|Consumption of additional, non-default connection points|The workload must request additional non-default connection points through the use of workload annotations or resource requests and limits within the container spec passed to the Kubernetes API Server.|TBD|
+
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 <a name="4.10"></a>
