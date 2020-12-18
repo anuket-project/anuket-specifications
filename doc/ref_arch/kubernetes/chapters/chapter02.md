@@ -306,8 +306,6 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.ntw.08` | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. | |
 | `req.inf.ntw.09` | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
 | `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support cluster wide coordination of IP address assignment. | |
-| `req.inf.ntw.12` | Infrastructure | Network | The networking solution to support multiple connection points (e.cap.004 - please see [Section 2.2.1](#2.2.1)) must support any Kubernetes conformant CNI plugin to be incorporated as a networking solution. | |
-|---|---|---|---|---|
 | `req.inf.ntw.13` | Infrastructure | Network | The platform must allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
 | `req.inf.ntw.14` | Infrastructure | Network | The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.| |
 | `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. | |
