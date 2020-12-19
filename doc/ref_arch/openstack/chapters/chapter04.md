@@ -17,6 +17,7 @@
   * [4.4.1 Support for Cloud Infrastructure Profiles and flavors](#4.4.1)
   * [4.4.2 Logical segregation and high availability](#4.4.2)
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
+* [4.5 Cloud Topology and Control Plane Scenarios](#4.5)
 
 
 
@@ -705,3 +706,29 @@ For Network intensive instances, VNF Component should fit into a single NUMA zon
 ### 4.4.3. Transaction Volume Considerations
 
 Storage transaction volumes impose a requirement on North-South network traffic in and out of the storage backend. Data availability requires that the data be replicated on multiple storage nodes and each new write imposes East-West network traffic requirements.
+
+
+<a name="4.5"></a>
+### 4.5 Cloud Topology and Control Plane Scenarios
+
+Typically, Clouds have been mplemented in large central cloud centers with 100' to tens of thousads of servers. Telco Operators have also been creating intermediate cloud centers in central office locations, colocation centers, and now edge cloud centers at the physical edge of their networks because of the demand for low latency and high throughput for 5G, IoT and connected devices (inclding autonomous driverless vehicles and connected vehicles). Chapter 3 of this document, discusses [Cloud Topology](./chapter03.md#3.5) and lists 3 types of data centers. In the Intermediate and Edge cloud centers, there may be limitations on the resource capacity, as in the number of servers, and the capacity of these servers in terms of # of cores, RAM, etc. restricting the set of services that can be deployed and, thus, creating a dependnecy between other data cenetrs. In [Reference Model Chapter 8.3](../../../ref_model/chapters/chapter08.md#8.3), Table 8-5 specifies the physical and environmental chracteristics, infratsructure capabilities and deployment scenarios of different locations.
+
+For ease of convenience, unless specifically required, in this section we will use Central Cloud Center, Edge Cloud Center and Intermediate Cloud Center as representative terms for cloud services hosted at centralsied large data centers, Telco edge locations and for locations with capacity somehwre in between the large data centers and edge locations, respectively.
+
+Chapter [3.3.1.1. OpenStack Services Topology](./chapter03.md#3311-openstack-services-topology) of this document, specifies the differences between the Control Plane and Data Plane, and specifies which of the contorl nodes, comoute nodes, storage nodes (optional) and network nodes (optional) are components of these planes.  The previous sections of Chapter 4 include a description of the OpenStack services and their deployment in control nodes, compute nodes, and optionally storage nodes and network nodes (rarely). The Control Plane deployment scenarios determine the distribution of OpenStack and other needed srevices among the different node types. This section considers the Centralised Control Plane (CCP) and Distributed Control Plane (DCP) scenarios. The choice of control plane and the cloud center resource capacity and capability determines the deployment of OpenStack services in the different node types.
+
+The Central Cloud Centers are organized around a Centralised Control Plane. With the introduction of Intermediate and Edge Cloud Centers, the Distributed Control Plane deployment becomes a possibility. A number of independent control planes (sometimes referred to as Local Control Planes (LCP) exist in the Distributed Control Plane scenario, compared with a single control plane in the Centralised Control Plane scenario. Thus, in addition to the control plane and controller services deployed at the Central Cloud Center, Local Control Planes hosting a full-set or subset of the controller services are also deployed on the Intermediate and Edge Cloud Centers. Table 4-5 presents examples of such deployment choices.
+
+
+|   |   | Orchestration | Identity Management | Image Management | Compute | Network Management | Storage Management |
+|---|---|---|---|---|---|---|---|
+| CCP | Centralised DC – control nodes | heat-api,<br>heat-engine,<br>nova-placement-api | Identity Provider (IdP),<br>Keystone API | Glance API, Glance Registry | nova-compute api,<br>nova-scheduler,<br>nova-conductor | neutron-server,<br>neutron-dhcp-agent,<br>neutron-L2-agent,<br>neutron-L3-agent (optional),<br>neutron-metadata-agent | Cinder API,<br>Cinder Scheduler,<br>Cinder Volume |
+| DCP: combination of services depending upon Center size | Any DC - Control nodes Option 1 | heat-api,<br>heat-engine,<br>nova-placement-api | Identity Provider (IdP),<br>Keystone API | Glance API, Glance Registry | nova-compute api,<br>nova-scheduler,<br>nova-conductor | neutron-server,<br>neutron-dhcp-agent,<br>neutron-L2-agent,<br>neutron-L3-agent (optional),<br>neutron-metadata-agent | Cinder API,<br>Cinder Scheduler,<br>Cinder Volume |
+|   | Any DC - Control nodes Option 2: split services between DCs | ** in other DC | * in Large DC | * in Large DC | ** in another DC | ** in another DC | ** in another DC
+| CCP or DCP | Compute nodes |  |  |  | nova-compute-agent | neutron-L2-agent, neutron-L3-agent (optional) |  |
+| CCP | Compute nodes | nova-placement-api |  |  | nova-compute-agent,<br>nova-conductor | neutron-server,<br>neutron-dhcp-agent,<br>neutron-L2-agent,<br>neutron-L3-agent (optional) |  |
+
+<p align="center>**Table 4-5: Distribution of OpenStack services on different nodes depending upon Control Plane Scenario</p>
+
+The Edge computing whitepaper (https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/) includes information such as the services that run on various nodes. The information from the WP coupled with that from the OpenStack Reference Architecture for 100, 300 and 500 nodes (https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary) will help in deciding which OpenStack and other services (such as database, messaging) run on which nodes in what Cloud Center and the number of copies that should be deployed. These references also present the pros and cons of DCP and CCP and designs to address some of the challengesof each of the models. 
+
