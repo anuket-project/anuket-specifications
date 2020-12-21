@@ -12,8 +12,8 @@
   * [8.3.1. Telco Edge Cloud Deployment Environment Characteristics](#8.3.1)
   * [8.3.2. Telco Edge Cloud Infrastructure Characteristics](#8.3.2)
   * [8.3.3. Telco Edge Cloud Infrastructure Profiles](#8.3.3)
-  * [8.3.4. Telco Edge Cloud Infrastructure Characteristics](#8.3.4)
-  * [8.3.5. Comparison of Edge terms from various Open Source Efforts](#8.3.5)
+  * [8.3.4. Telco Edge Cloud: Platform Services Deployment](#8.3.4)
+  * [8.3.5. Comparison of Deployment Topologies and Edge terms](#8.3.5)
   
 
 <a name="8.1"></a>
@@ -135,15 +135,18 @@ Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [I
 | infra.stg.cfg.003 | Storage with replication |  | N | Y | N | Optional |
 | infra.stg.cfg.004 | Storage with encryption |  | Y | Y | N | Optional |
 | infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets | This determines the minimum number of CPU sockets within each host | 2 | 2 | 1 | 1 |
-| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 2 | 2 |
-| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Optional |
+| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 2 | 1 |
+| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Optional* \| Y |
 
+- Optional only if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1
+
+Please note that none of the listed parameters form part of a typical OpenStack flavour except that the vCPU and memory requirements of a flavour cannot exceed the available hardware capacity.
 
 <a name="8.3.4"></a>
-### 8.3.4  Telco Edge Cloud Infrastructure Characteristics
+### 8.3.4  Telco Edge Cloud: Platform Services Deployment
 This section characterises the hardware capabilities for different edge deployments and the Platform services that run on the infrastructure. Please note, that the Platform services are containerised to save resources, and benefit from intrinsic availability and auto-scaling capabilities.
 
-**Table 8-4. Characteristics of Infrastructure nodes
+**Table 8-4. Characteristics of Infrastructure nodes**
 
 | | Platform Services | | | | | | | | Storage | | | | Network Services | | |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -161,10 +164,10 @@ Depending on the facility capabilities, deployments at the edge may be similar t
 
 
 <a name="8.3.5"></a>
-### 8.3.5 Comparison of Edge terms from various Open Source Efforts
+### 8.3.5 Comparison of Deployment Topologies and Edge terms
 
 
-**Table 8-5. Comparison of Edge Terms
+**Table 8-5. Comparison of Deployment Topologies**
 
 | CNTT Term | Compute | Storage | Networking | RTT* | Security | Scalability | Elasticity | Resiliency | Preferred Workload Architecture | Upgrades |  | OpenStack | OPNFV Edge | Edge Glossary | GSMA |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
