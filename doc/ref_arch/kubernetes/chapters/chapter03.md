@@ -8,11 +8,14 @@
 * [3.1 Introduction](#3.1)
 * [3.2 Infrastructure Services](#3.2)
     * [3.2.1 Container Compute Services](#3.2.1)
-        * [3.2.1.1 Memory management](#3.2.1.1)
-        * [3.2.1.2 HW Topology management](#3.2.1.2)
-        * [3.2.1.3 HW Acceleration](#3.2.1.3)
-        * [3.2.1.4 CPU management](#3.2.1.4)
-        * [3.2.1.5 Container Runtime Services](#3.2.1.5)
+        * [3.2.1.1 Container Runtime Services](#3.2.1.1)
+        * [3.2.1.2 CPU Management](#3.2.1.2)
+        * [3.2.1.3 Memory and Huge Pages Resources Management](#3.2.1.3)
+        * [3.2.1.4 Hardware Topology Management](#3.2.1.4)
+        * [3.2.1.5 Node Feature Discovery](#3.2.1.5)
+        * [3.2.1.6 Device Plugin Framework](#3.2.1.6)
+        * [3.2.1.7 Hardware Acceleration](#3.2.1.7)
+        * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3.2.1.8)
     * [3.2.2 Container Networking Services](#3.2.2)
     * [3.2.3 Container Storage Services](#3.2.3)
     * [3.2.4 Container Package Managers](#3.2.4)
@@ -118,43 +121,9 @@ set of processes that are used to manage these containers (pull, run, delete,
 etc.), and the kernel features required to provide the isolation mechanisms
 (cgroups, namespaces, filesystems, etc.) between the components.
 
+
 <a name="3.2.1.1"></a>
-#### 3.2.1.1 Memory management
-
-> Relate back to features described in the RM
-[here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that
-the RM appears to be missing Memory-based HW profile features
-[here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
-
-The Reference Model requires the support of Huge Pages in `i.cap.018` which is
-already supported by upstream Kubernetes. For some applications, Huge Pages
-should be allocated to account for consideration of the underlying HW topology.
-This newer feature is missing from Kubernetes, therefore a gap has been
-identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hugepages)
-<a name="3.2.1.2"></a>
-#### 3.2.1.2 HW Topology management
-
-> This chapter should describe considerations about hardware topology
-management.
-
-<a name="3.2.1.3"></a>
-#### 3.2.1.3 HW Acceleration
-
-> This chapter should describe considerations about hardware acceleration, like
-device management.
-
-<a name="3.2.1.4"></a>
-#### 3.2.1.4 CPU management
-
-> This chapter should describe considerations about CPU management.
-
-> Relate back to features described in the RM
-[here](../../../ref_model/chapters/chapter05.md#521-virtual-compute) and
-[here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
-
-
-<a name="3.2.1.5"></a>
-#### 3.2.1.5 Container Runtime Services
+#### 3.2.1.1 Container Runtime Services
 
 The Container Runtime is the component that runs within a Kubernetes Node
 Operating System (OS) and manages the underlying OS functionality, such as
@@ -205,6 +174,42 @@ which provides the isolation of Operating System kernels.
 
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
+
+
+<a name="3.2.1.1"></a>
+#### 3.2.1.1 Memory management
+
+> Relate back to features described in the RM
+[here](../../../ref_model/chapters/chapter05.md#521-virtual-compute). Note that
+the RM appears to be missing Memory-based HW profile features
+[here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+
+The Reference Model requires the support of Huge Pages in `i.cap.018` which is
+already supported by upstream Kubernetes. For some applications, Huge Pages
+should be allocated to account for consideration of the underlying HW topology.
+This newer feature is missing from Kubernetes, therefore a gap has been
+identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hugepages)
+<a name="3.2.1.2"></a>
+#### 3.2.1.2 HW Topology management
+
+> This chapter should describe considerations about hardware topology
+management.
+
+<a name="3.2.1.3"></a>
+#### 3.2.1.3 HW Acceleration
+
+> This chapter should describe considerations about hardware acceleration, like
+device management.
+
+<a name="3.2.1.4"></a>
+#### 3.2.1.4 CPU management
+
+> This chapter should describe considerations about CPU management.
+
+> Relate back to features described in the RM
+[here](../../../ref_model/chapters/chapter05.md#521-virtual-compute) and
+[here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+
 
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
