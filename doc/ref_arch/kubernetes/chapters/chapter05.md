@@ -235,11 +235,11 @@ trusted sources.
 - **Containers**: A lightweight and portable executable image that contains
 software and all of its dependencies. The containers need to be prevented from
 accessing the underlying OS like loading of kernel modules, mounting of
-directories of underlying OS etc and it must also be ensured that they don't
+directories of underlying OS etc and ensuring that they don't
 run in privileged mode.
 - **Pods**: A Pod represents a set of running containers on your cluster.
 Kubernetes inherently offers pod security policies that define a set of
-conditions that a pod must run with in order to be accepted into the system.
+conditions that a pod needs to run with in order to be accepted into the system.
 These policies help in ensuring the necessary checks for running the pods.
 - **Kubernetes Node**: A Kubernetes node in an unsecured boundary can lead to a
 potential threat to the running workloads. Such a node should be hardened by
