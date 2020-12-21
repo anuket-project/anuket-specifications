@@ -141,7 +141,7 @@ management.
 <a name="3.2.1.6"></a>
 #### 3.2.1.6 Device Plugin Framework
 
-[Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises system hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely mapping those devices to containers.
+[Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely map these devices to containers.
 
 
 <a name="3.2.1.3"></a>
