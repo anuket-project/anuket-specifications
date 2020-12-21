@@ -178,38 +178,34 @@ The virtual infrastructure manager allows to:
 
 <a name="3.3.2"></a>
 ### 3.3.2 Hardware Infrastructure Manager
-The hardware infrastructure manager allows to:
-* provision, manage, monitor and delete hardware resources (underlay network, physical compute, physical storage, accelerators)
-* manage hardware resource discovery and topology
-* manage equipment
-* manage hardware infrastructure telemetry and log collection services
+The HW Infrastructure Manager shall at least support equipment management for all managed physical hardware resources of the Cloud Infrastructure. For better understanding of some of the hardware resources concepts see chapter 3.4.
+
+In most deployments the HW Infrastructure Manager should also be the HW Infrastructure Layer provisioning manager of the Compute, Storage and Network resources that can be used by the Virtualization Infrastructure Layer instances. It shall provide an API enabling vital resource recovery and control functions of the provisioned functions e.g. Reset and Power control of the Computes.
+
+For deployments with more than one Virtualization Infrastructure Layer instance that will be using a common pool of hardware resources there is a need for a HW Infrastructure Layer provisioning manager of the Compute, Storage and Network resources to handle the resource assignment and arbitration.
+
+The resource allocation could be a simple book-keeping of which Virtualization Infrastructure Layer instance that have been allocated a physical hardware resource or a more advanced resource Composition function that assemble the consumed Compute, Storage and Network resources on demand from the pools of physical hardware resources.
 
 <p align="center"><img src="../figures/ch03-model-hardware-manager.png" alt="Hardware Infrastructure Manager" Title="Hardware Infrastructure Manager" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> Hardware Infrastructure Manager.</p>
 
+The hardware infrastructure manager allows to:
+* provision, manage, monitor and delete hardware resources 
+* manage physical hardware resource discovery, monitoring and topology
+* manage hardware infrastructure telemetry and log collection services
+
 The hardware infrastructure manager needs to support the following functional aspects:
 
- * **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
+* **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
 
-* **Discovery**: discover and manages the information related to hardware resources of a cloud infrastructure
-
-* **Equipment**: discover and manages the information related to hardware resources of a cloud infrastructure
-
-* **Resource Allocation and Composition**: creates and allocates abstracted hardware resources
-
-* **Monitoring**:  monitors and collects information on all events and the current state of all hardware resources
-
-* **Topology**:  manages topological view of hardware resources
-
-* **Additional Management Functions**: include identity management, access management, policy management (e.g. to enforce security policies), etc.
-
-* **Underlay Network Resources Manager**: provides a mechanism to provision hardware resources for the use by the underlay network (e.g. switch fabric, smartNICs)
-
-* **Physical Compute Resources Manager**: provides a mechanism to provision hardware compute resources
-
-* **Physical Storage Resources Manager**: provides a mechanism to provision hardware storage resources
-
-* **Accelerators**: provide a mechanism to provision hardware accelerator services
+* **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
+* **Discovery**: discover physical hardware resources and collect relevant information about them 
+* **Topology**: discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources
+* **Equipment**:  manages the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations
+* **Resource Allocation and Composition**: creates, modifies and delete logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources
+* **Underlay Network Resources Manager**: provides a mechanism to provision hardware resources and provide separation in between multiple Virtualization Infrastructure instances for the use of the underlay network (e.g. switch fabric, switches, SmartNICs)
+* **Monitoring**: monitors and collects information on events, current state and telemetry data of physical hardware resources, Equipment autonomous control functions as well as Switch and Storage Fabric systems
+* **Additional Management Functions**: include software and configuration life cycle management, identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 <a name="3.4"></a>
 ## 3.4 Hardware Infrastructure Resources
