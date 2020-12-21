@@ -123,7 +123,7 @@ etc.), and the kernel features required to provide the isolation mechanisms
 
 The Reference Model requires the support of Huge Pages in i.cap.018 which is supported by upstream Kubernetes ([documentation](https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/)).
 
-For proper mapping of Huge Pages to scheduled pods, needed is to both have Huge Pages enabled in operating system (configured in kernel and mounted with correct permissions) and kubelet configuration. Multiple sizes of Huge Pages can be enabled like 2 MiB and 1 GiB.
+For proper mapping of Huge Pages to scheduled pods, both need to have Huge Pages enabled in the operating system (configured in kernel and mounted with correct permissions) and kubelet configuration. Multiple sizes of Huge Pages can be enabled like 2 MiB and 1 GiB.
 
 For some applications, Huge Pages
 should be allocated to account for consideration of the underlying HW topology.
