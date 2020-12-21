@@ -214,11 +214,30 @@ All phases described above can be automated using technology specific toolsets a
 <a name="9.5.3.1"></a>
 #### 9.5.3.1. Pre-tenant Creation Requirements
 
-Topics may include:
+Topics include:
 1. Tenant Approval -- use, capacity, data centers, ..
+    - Validate that the [Tenant's](../../../common/glossary.md#operational-and-administrative-terminology) planned use meets the Operators Cloud Use policies
+    - Validate that the capacity available within the requests cloud site(s) can satisfy the Tenant requested quota for vCPU, RAM, Disk, Network Bandwidth
+    - Validate that the Cloud Infrastructure can meet Tenant's performance requirements (e.g. I/O, latency, jitter, etc)
+    - Validate that the Cloud Infrastructure can meet Tenant's resilience requirements
+1. For VM-based environments:
+    - Verify that any requested private flavours have been created
+    - Verify that the metadata for these private flavours have been created
+    - Verify that the tenant has permissions to use the requested private flavours
+    - Validate that host aggregates are available for specified flavors (public and private)
+    - Verify that the metadata matches for the requested new flavours and host aggregates
+1. Tenant Networks
+    - Verify that the networks requested by the tenant exist
+    - Verify that the security policies are correctly configured to only approved ingress and egress
 1. Tenant Admin, Tenant Member and other Tenant Role approvals for user by role
+    - Add all Tenant Members and configure their assigned roles in the Enterprise Identity and Access management system (e.g., LDAP)
+    - Verify that these roles have been created for the Tenant
 1. Tenant Images and manifests approvals
-1. ....
+    - Verify and Validate Tenant Images and manifests: virus scan, correct OS version and patch, etc.
+1. Create, Verify and Validate Tenant
+    - Create Tenant
+    - Using a proto- or Tenant provided HEAT-template/Helm-chart for a NF and perform sanity test (e.g., using scripts test creation of VM/container, ping test, etc.)
+
 
 <a name="9.5.3.2"></a>
 #### 9.5.3.2. Tenant Networking Automation
