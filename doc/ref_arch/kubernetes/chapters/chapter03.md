@@ -125,8 +125,7 @@ The Reference Model requires the support of Huge Pages in i.cap.018 which is sup
 
 For proper mapping of Huge Pages to scheduled pods, needed is to both have Huge Pages enabled in operating system (configured in kernel and mounted with correct permissions) and kubelet configuration. Multiple sizes of Huge Pages can be enabled like 2 MiB and 1 GiB.
 
-The Reference Model requires the support of Huge Pages in `i.cap.018` which is
-already supported by upstream Kubernetes. For some applications, Huge Pages
+For some applications, Huge Pages
 should be allocated to account for consideration of the underlying HW topology.
 This newer feature is missing from Kubernetes, therefore a gap has been
 identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hugepages).
