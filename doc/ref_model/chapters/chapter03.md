@@ -214,10 +214,14 @@ The hardware infrastructure manager needs to support the following functional as
 <a name="3.4"></a>
 ## 3.4 Hardware Infrastructure Resources
 
-The physical compute, storage and network resources serve as the foundation of the cloud infrastructure. They are as such not directly exposed to the workloads (VNFs/CNFs).
+Compute, Storage and Network resources serve as the foundation of the cloud infrastructure. They are exposed to and used by a set of networked Host Operating Systems in a cluster that normally handles the Virtualization Layer offering Virtual Machines or Containers where the application workloads (VNFs/CNFs) runs.
 
-<p align="center"><img src="../figures/ch03-model-physical-resources.png" alt="Hardware Infrastructure Resources" Title="Hardware Infrastructure Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-5:</b> Hardware Infrastructure Resources</p>
+<p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-5:</b> Cloud Infrastructure Hardware Resources</p>
+
+In managed Hardware Infrastructure systems that can provision these consumed Compute, Storage and Network resources through operator commands or through software APIs there is a need to separate these offered resources, that shall be treated as leased resources, from the actual physical hardware resources that are installed in the datacenter. For that purpose, the hardware resource layer is split into a Logical Resource Layer that is visible for the software layer above and the Physical Resource Layer that is handled by the hardware installation and maintenance staff, and managed from the HW Infrastructure Management functions.
+
+Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
 
 <a name="3.4.1"></a>
 ### 3.4.1 Hardware Acceleration Resources
