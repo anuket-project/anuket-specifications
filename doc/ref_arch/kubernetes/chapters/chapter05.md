@@ -54,7 +54,7 @@ The following are core principles to consider when securing cloud native applica
 - Deploy only secure applications and trusted codes
 - Only deploy applications from validated and verified images
 - Only deploy applications from trusted registries
-- Containers orchestration (Kubernetes) must be secure with administrative boundaries
+- Containers orchestration (Kubernetes) secured with administrative boundaries
 between tenants
   - Use Namespaces to establish security boundaries between tenants
   - Create and define cluster network policies
