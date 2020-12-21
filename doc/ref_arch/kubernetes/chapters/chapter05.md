@@ -139,7 +139,7 @@ applications need
 development, and testing)
 
 Secret values protect sensitive data, it is recommended to protect them from
-unauthorised access. Ideally, they must be protected at rest and in transit.
+unauthorised access. Ideally, by being protected at rest and in transit.
 Encryption in transit is achieved by encrypting the traffic between the
 Kubernetes control-plane components and worker nodes using TLS.
 
