@@ -143,14 +143,16 @@ management.
 > This chapter should describe considerations about hardware acceleration, like
 device management.
 
-<a name="3.2.1.4"></a>
-#### 3.2.1.4 CPU management
+<a name="3.2.1.2"></a>
+#### 3.2.1.2 CPU Management
 
-> This chapter should describe considerations about CPU management.
+CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, so must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK workloads) are designed to run on isolated CPUs (like Linux isolcpus kernel parameter specifying cores isolated from general SMB balancing and scheduler algorighms).
 
-> Relate back to features described in the RM
-[here](../../../ref_model/chapters/chapter05.md#521-virtual-compute) and
-[here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/) works with Topology Manager. Special care needs to be taken of:
+
+•	Supporting isolated CPUs: Using kubelet [Reserved CPUs](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list) and Linux isolcpus allows configuration where all allocatable CPUs are isolcpus, and pod scheduling on such nodes can be influenced with taints, tolerations and node affinity.
+
+•	Differentiating between physical cores and SMT: For pods with even number of CPUs can pod scheduling be influenced with taints, tolerations and node affinity.
 
 
 <a name="3.2.1.5"></a>
