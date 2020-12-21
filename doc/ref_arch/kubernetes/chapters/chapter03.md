@@ -206,6 +206,23 @@ which provides the isolation of Operating System kernels.
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
 
+
+<a name="3.2.1.8"></a>
+#### 3.2.1.8 Scheduling Pods with Non-resilient Applications
+
+Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
+
+| # | Intensive on  | Not intensive on | Using hardware acceleration | Requirements for optimized pod scheduling |
+|---|---|---|---|---|
+| 1 | Compute | Networking (dataplane) | No | CPU Manager |
+| 2 | Compute | Networking (dataplane) | CPU instructions | #1 plus NFD |
+| 3 | Compute | Networking (dataplane) | Fixed function acceleration, Firmware-programmable network adapters or SmartNICs | #1 plus Device Plugin |
+| 4 | Networking (dataplane) | | No, or Fixed function acceleration, Firmware-programmable network adapters or SmartNICs  | Huge Pages (for DPDK-based applications), CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin |
+| 5 | Networking (dataplane) | | CPU instructions | #4 plus NFD |
+
+<p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
+
+
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
