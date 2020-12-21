@@ -18,7 +18,7 @@
   * [4.4.2 Logical segregation and high availability](#4.4.2)
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
 * [4.5 Cloud Topology and Control Plane Scenarios](#4.5)
-
+  * [4.5.1 Edge Cloud Topology](#4.5.1)
 
 
 
@@ -730,5 +730,11 @@ The Central Cloud Centers are organized around a Centralised Control Plane. With
 
 <p align="center>**Table 4-5: Distribution of OpenStack services on different nodes depending upon Control Plane Scenario</p>
 
-The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/) includes information such as the services that run on various nodes. The information from the WP coupled with that from the [OpenStack Reference Architecture](https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary) for 100, 300 and 500 nodes will help in deciding which OpenStack and other services (such as database, messaging) run on which nodes in what Cloud Center and the number of copies that should be deployed. These references also present the pros and cons of DCP and CCP and designs to address some of the challengesof each of the models. 
+<a name="4.5.1"></a>
+### 4.5.1 Edge Cloud Topology
 
+The Reference Model Chapter 8.3 "[Telco Edge Cloud](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3)", presents the deployment environment characteristics, infrastructure characteristics and new values for the Infrastructure Profiles at the Edge.
+
+The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/) includes information such as the services that run on various nodes. The information from the WP coupled with that from the [OpenStack Reference Architecture](https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary) for 100, 300 and 500 nodes will help in deciding which OpenStack and other services (such as database, messaging) run on which nodes in what Cloud Center and the number of copies that should be deployed. These references also present the pros and cons of DCP and CCP and designs to address some of the challenges of each of the models.
+
+Table 8-4 in the Reference Model Chapter 8.3.4 "[Telco Edge Cloud Infrastructure Characteristics](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3.4)" lists the Platform Services that may be placed in the different node types (control, compute and storage). Depending upon the capacity and resources available only the compute nodes may exist at the Edge.
