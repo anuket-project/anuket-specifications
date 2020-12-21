@@ -137,20 +137,24 @@ identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hug
 > This chapter should describe considerations about hardware topology
 management.
 
-<a name="3.2.1.3"></a>
-#### 3.2.1.3 HW Acceleration
+<a name="3.2.1.7"></a>
+#### 3.2.1.7 Hardware Acceleration
 
-> This chapter should describe considerations about hardware acceleration, like
-device management.
+Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
+
+Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator used:
+
+•	CPU instructions can be found with Node Feature Discovery
+
+•	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
+
 
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 CPU management
 
-> This chapter should describe considerations about CPU management.
+Hardware Acceleration Abstraction in RM Chapter 3 (WIP writing) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Network adapters, SmartNICs and SmartSwitches), usage for Infrastructure Level Acceleration and Application Level Acceleration, three levels of consumption (underlay separation, overlay acceleration and application acceleration).
 
-> Relate back to features described in the RM
-[here](../../../ref_model/chapters/chapter05.md#521-virtual-compute) and
-[here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
+From those acceleration types will CPU instructions require usage of Node Feature Discovery. All other types of acceleration are generally acceleration devices attached to one peripheral interconnect and for those will appropriate Device Plugin make device assignments to satisfy container resource requirements.
 
 
 <a name="3.2.1.5"></a>
