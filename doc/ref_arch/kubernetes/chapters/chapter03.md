@@ -146,7 +146,7 @@ device management.
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 CPU Management
 
-CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK workloads) are designed to run on isolated CPUs (like Linux isolcpus kernel parameter specifying cores isolated from general SMP balancing and scheduler algorithms).
+CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK workloads) are designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores isolated from general SMP balancing and scheduler algorithms).
 
 Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/) works with Topology Manager. Special care needs to be taken of:
 
