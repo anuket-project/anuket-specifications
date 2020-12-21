@@ -709,7 +709,7 @@ Storage transaction volumes impose a requirement on North-South network traffic 
 
 
 <a name="4.5"></a>
-### 4.5 Cloud Topology and Control Plane Scenarios
+## 4.5 Cloud Topology and Control Plane Scenarios
 
 Typically, Clouds have been mplemented in large central cloud centers with 100' to tens of thousads of servers. Telco Operators have also been creating intermediate cloud centers in central office locations, colocation centers, and now edge cloud centers at the physical edge of their networks because of the demand for low latency and high throughput for 5G, IoT and connected devices (inclding autonomous driverless vehicles and connected vehicles). Chapter 3 of this document, discusses [Cloud Topology](./chapter03.md#3.5) and lists 3 types of data centers. In the Intermediate and Edge cloud centers, there may be limitations on the resource capacity, as in the number of servers, and the capacity of these servers in terms of # of cores, RAM, etc. restricting the set of services that can be deployed and, thus, creating a dependnecy between other data cenetrs. In [Reference Model Chapter 8.3](../../../ref_model/chapters/chapter08.md#8.3), Table 8-5 specifies the physical and environmental chracteristics, infratsructure capabilities and deployment scenarios of different locations.
 
@@ -730,5 +730,5 @@ The Central Cloud Centers are organized around a Centralised Control Plane. With
 
 <p align="center>**Table 4-5: Distribution of OpenStack services on different nodes depending upon Control Plane Scenario</p>
 
-The Edge computing whitepaper (https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/) includes information such as the services that run on various nodes. The information from the WP coupled with that from the OpenStack Reference Architecture for 100, 300 and 500 nodes (https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary) will help in deciding which OpenStack and other services (such as database, messaging) run on which nodes in what Cloud Center and the number of copies that should be deployed. These references also present the pros and cons of DCP and CCP and designs to address some of the challengesof each of the models. 
+The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/) includes information such as the services that run on various nodes. The information from the WP coupled with that from the [OpenStack Reference Architecture](https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary) for 100, 300 and 500 nodes will help in deciding which OpenStack and other services (such as database, messaging) run on which nodes in what Cloud Center and the number of copies that should be deployed. These references also present the pros and cons of DCP and CCP and designs to address some of the challengesof each of the models. 
 
