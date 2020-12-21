@@ -198,7 +198,7 @@ configure RBAC on the cluster manager and configure node service accounts
 following the principle of least privilege.
 - Ensure that access control is applied to registries requiring unique credentials,
 to limit who can control the build or add images.
-- Network access must run over TLS connections.
+- Network access runs over TLS connections.
 - User roles and access levels are configured to provide segregation of duties.
   - Do not mix container and non-containers services on the same node
   - Do not run containers as root
