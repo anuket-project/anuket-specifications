@@ -1,4 +1,4 @@
-[<< Back](../../Kubernetes)
+[<< Back](../../kubernetes)
 
 # 5. Security Guidance
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
