@@ -216,7 +216,7 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 |---|---|---|---|---|
 | 1 | Compute | Networking (dataplane) | No | CPU Manager |
 | 2 | Compute | Networking (dataplane) | CPU instructions | CPU Manager, NFD |
-| 3 | Compute | Networking (dataplane) | Fixed function acceleration, Firmware-programmable network adapters or SmartNICs | #1 plus Device Plugin |
+| 3 | Compute | Networking (dataplane) | Fixed function acceleration, Firmware-programmable network adapters or SmartNICs | CPU Manager, Device Plugin |
 | 4 | Networking (dataplane) | | No, or Fixed function acceleration, Firmware-programmable network adapters or SmartNICs  | Huge Pages (for DPDK-based applications), CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin |
 | 5 | Networking (dataplane) | | CPU instructions | #4 plus NFD |
 
