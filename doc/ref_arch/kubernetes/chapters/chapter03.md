@@ -152,7 +152,7 @@ Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu
 
 •	Supporting isolated CPUs: Using kubelet [Reserved CPUs](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list) and Linux isolcpus allows configuration where all allocatable CPUs are isolcpus, and pod scheduling on such nodes can be influenced with taints, tolerations and node affinity.
 
-•	Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling can be influenced with taints, tolerations and node affinity.
+•	Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling can be influenced with taints, tolerations, and node affinity.
 
 
 <a name="3.2.1.5"></a>
