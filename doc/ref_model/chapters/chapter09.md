@@ -189,6 +189,13 @@ As such the requirements for Capacity Management on the infrastructure are cover
 
 <a name="9.5.2.1"></a>
 #### 9.5.2.1 Software Onboarding Automation
+For software deployment, as far as Cloud Infrastructure services or workloads are concerned, automation is the core of DevOps concept. Automation allows to eliminate manual processes, reducing human errors and speeding software deployments. The prerequisite is to install CI/CD tools chain to:
+- Build, package, test application/software
+- Store environment's parameters and configurations
+- Automate the delivery and deployment
+ 
+The CI/CD pipeline is used to deploy, test and update the Cloud Infrastructure services, but also to onboard workloads hosted on the infrastructure.
+
 The Cloud Infrastructure workload onboarding process describes activities needed for the integration of tenants' workloads into the Cloud Infrastructure environment. Typically, this business process consists of the following key phases:
 1. Tenant Engagement and Workload Evaluation:
     - In this phase the request from the tenant to host a workload on the Cloud Infrastructure platform is assessed and a decision made on whether to proceed with the hosting request.
