@@ -19,6 +19,7 @@
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of accelerators](#3.8.1)
   * [3.8.2 Levels of accelerator consumption](#3.8.2)
+  * [3.8.3 Workload Placement](#3.8.3)
   * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
@@ -286,6 +287,19 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 
 <a name="3.8.2"></a>
 ### 3.8.2 Levels of accelerator consumption
+
+
+<a name="3.8.3"></a>
+### 3.8.3 Workload Placement
+
+Workload placement can be done by a combination of filters/selectors to find appropriate compute, subsystems to manage assignment of scheduled workloads to Hardware Accelerator, and intelligence in workload startup scripts to detect presence of Hardware Accelerator.
+
+For initial limited cloud deployments of network functions on private clouds it is possible to have a workload placement orchestrator that handle optimizations of selected virtualization clusters and available hardware resources. This will however soon become too complex with an increasing amount of acceleration devices, hardware composability and hybrid multi-cloud deployments.
+
+Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to granular lists of optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and dataplane-optimized category instead of specifying individual optimizations required to reach it.
+
+With further growth in size of clusters and variety of hardware acceleration, in a hybrid or multi-cloud deployment it will be necessary to have a workload orchestrator placement that operate on Cloud Infrastructure Support Level Agreement (SLA) levels and a Cloud Infrastructure provider that makes internal Infrastructure optimizations towards their own internal optimization targets whilst fulfilling the SLAs.
+
 
 <a name="3.8.3"></a>
 ### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
