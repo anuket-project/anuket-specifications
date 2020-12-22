@@ -18,7 +18,7 @@
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of accelerators](#3.8.1)
-  * [3.8.2 Levels of accelerator consumption](#3.8.2)
+  * [3.8.2 Infrastructure and Application Level Acceleration](#3.8.2)
   * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
@@ -285,7 +285,29 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 ### 3.8.1 Types of accelerators
 
 <a name="3.8.2"></a>
-### 3.8.2 Levels of accelerator consumption
+### 3.8.2 Infrastructure and Application Level Acceleration
+
+Figure 3-8 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+
+<p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
+<p align="center"><b>Figure 3-6:</b> Hardware Acceleration in RM Realization Diagram</p>
+
+Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software reaching them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
+
+Application uses software library supporting hardware acceleration and running on generic CPU instructions. Mapping workload to acceleration hardware is done with Cyborg in OpenStack or Device Plugin framework in Kubernetes. Hardware accelerator supports both in-band and/or out of band management, with service exposing it to Cloud Infrastructure operator or Application tenant roles.
+
+Hardware Accelerators can be used as:
+- Virtualization Infrastructure layer acceleration: Example can be vSwitch, which can be leveraged agnostically by VNFs if standard host interfaces (like VirtIO) are used.
+- Application layer acceleration: Example of software library/framework (like DPDK) in VM providing Application level acceleration with (where available) hardware-abstracted APIs to access platform Hardware Acceleration and providing software equivalent libraries when hardware assist not available.
+- Hardware Infrastructure layer offload: Example can be an OOB managed underlay network separation providing network separation secured from host OS reach on any provisioned transport switch infrastructure.
+
+Two levels of consumption are for underlay separation or overlay acceleration. Underlay Separation ensures that multiple different Virtualization Infrastructure instances are kept in separate underlay network access domains. Overlay Acceleration offloads Virtualization Infrastructure instance vSwitch/vRouter or virtual termination endpoints (for applications that bypass the Virtualization layer).
+
+Preferably, Application or Infrastructure acceleration can take benefit from underlying hardware acceleration and still be decoupled from it by using open multi-vendor API for Hardware Acceleration devices like for example:
+- For Linux IO virtualization: VirtIO
+- For Network Functions using DPDK libraries: Crypto Device, EthDev, Event Device and Base Band Device
+- For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
+
 
 <a name="3.8.3"></a>
 ### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
