@@ -17,7 +17,7 @@
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
-  * [3.8.1 Types of accelerators](#3.8.1)
+  * [3.8.1 Types of Accelerators](#3.8.1)
   * [3.8.2 Levels of accelerator consumption](#3.8.2)
   * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
 
@@ -282,7 +282,22 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 ## 3.8 Hardware Acceleration Abstraction
 
 <a name="3.8.1"></a>
-### 3.8.1 Types of accelerators
+### 3.8.1 Types of Accelerators
+
+Accelerator technologies can be categorized depending on where they are realized in the hardware product and how they get activated, life cycle managed and supported in running infrastructure.
+
+| Acceleration technology/hardware | Example implementation | Activation/LCM/support | Usage by application tenant |
+|---|---|---|---|
+| CPU instructions | Within CPU cores | None for hardware | Could be application binary differences (application to load software library that recognizes and uses) |
+| Fixed function accelerator | Crypto, vRAN-specific adapter | Rare updates | Could be application binary differences (application to load software library/driver) |
+| Firmware-programmable adapter | Network/storage adapter with programmable part of firmware image | Rare updates | Application normally not modified or aware |
+| SmartNIC | Programmable accelerator for vSwitch/vRouter, NF and/or Hardware Infrastructure | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 types/operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3 Reprogrammable |
+| SmartSwitch-based | Programmable Switch Fabric or TOR switch | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3. Reprogrammable |
+
+<p align="center"><img src="../figures/ch03-example-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
+<p align="center"><b>Figure 3-7:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+
+
 
 <a name="3.8.2"></a>
 ### 3.8.2 Levels of accelerator consumption
