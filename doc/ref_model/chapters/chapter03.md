@@ -222,9 +222,18 @@ The physical compute, storage and network resources serve as the foundation of t
 <a name="3.4.1"></a>
 ### 3.4.1 Hardware Acceleration Resources
 
-...
+For a given software network function and software infrastructure, Hardware Acceleration resources can be used to achieve requirements or improve cost/performance. Following table gives reasons and examples for using Hardware Acceleration.
 
-More details in [Section 3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8).
+| Reason for using Hardware Acceleration | Example | Comment |
+|---|---|---|
+| Achieve technical requirements | Strict latency or timing accuracy | Must be done by optimizing compute node; cannot be solved by adding more compute nodes |
+| Achieve technical requirements | Fit within power or space envelope | Done by optimizing cluster of compute nodes |
+| Improve cost/performance | Better cost and less power/cooling by improving performance per node | Used when functionality can be achieved through usage of accelerator or by adding more compute nodes |
+
+Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve more or faster performance, or offloading them to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
+
+More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8).
+
 
 <a name="3.5"></a>
 ## 3.5 Network
