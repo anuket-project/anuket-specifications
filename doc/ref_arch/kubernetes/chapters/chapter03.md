@@ -146,11 +146,11 @@ device management.
 <a name="3.2.1.2"></a>
 #### 3.2.1.2 CPU Management
 
-CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK workloads) are designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores isolated from general SMP balancing and scheduler algorithms).
+CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores isolated from general SMP balancing and scheduler algorithms).
 
 Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/) works with Topology Manager. Special care needs to be taken of:
 
-•	Supporting isolated CPUs: Using kubelet [Reserved CPUs](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list) and Linux isolcpus allows configuration where all allocatable CPUs are isolcpus, and pod scheduling on such nodes can be influenced with taints, tolerations and node affinity.
+•	Supporting isolated CPUs: Using kubelet [Reserved CPUs](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list) and Linux isolcpus allows configuration where only isolcpus are allocatable to pods. Scheduling pods to such nodes can be influenced with taints, tolerations and node affinity.
 
 •	Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling can be influenced with taints, tolerations, and node affinity.
 
