@@ -20,6 +20,7 @@
   * [3.8.1 Types of accelerators](#3.8.1)
   * [3.8.2 Levels of accelerator consumption](#3.8.2)
   * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
+  * [3.8.5 Fixed Function Accelerators](#3.8.5)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -289,3 +290,14 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 
 <a name="3.8.3"></a>
 ### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
+
+
+<a name="3.8.5"></a>
+### 3.8.5 Fixed Function Accelerators
+
+Fixed function accelerators can come as adapters with in-line (typically PCIe adapter with Ethernet ports or storage drives) or look-aside (typically PCIe adapters without any external ports) functionality, additional chip on motherboard, included into server chipsets or packaged/embedded into main CPU. They can accelerate cryptographic functions, highly parallelized or other specific algorithms. Initial activation and rare life cycle management events (like updating firmware image) can typically be done from the Host OS (e.g. the OS driver or a Library), the Hardware Infrastructure Manager (from a library) or the NF (mostly through a library).
+
+Beyond finding such compute nodes during scheduling workloads, those workloads also need to be mapped to the accelerator, both of which in Kubernetes can be done with Device Plugin framework. Once mapped to the application, the application can use enabled software libraries and/or device drivers that will use hardware acceleration. If hardware acceleration is used to improve cost/performance, then application can also run on generic compute node without hardware accelerator when application will use the same software library to run on generic CPU instructions.
+
+
+
