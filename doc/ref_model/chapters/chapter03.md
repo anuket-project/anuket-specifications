@@ -19,7 +19,7 @@
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of accelerators](#3.8.1)
   * [3.8.2 Levels of accelerator consumption](#3.8.2)
-  * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
+  * [3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration](#3.8.9)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -287,5 +287,21 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 <a name="3.8.2"></a>
 ### 3.8.2 Levels of accelerator consumption
 
-<a name="3.8.3"></a>
-### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
+<a name="3.8.9"></a>
+### 3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration
+
+[Decoupling](https://github.com/cntt-n/CNTT/blob/master/doc/common/glossary.md#cloud-platform-abstraction-related-terminology) application from hardware accelerator normally goes through drivers that if available are preferred to be towards some interface standardized across vendors and their products, or if not available then through drivers specific to hardware device”. Decoupling infrastructure software from hardware accelerator is also preferred through standardized interface, or if not available is comparatively less of an issue for one or few software infrastructure functions than similar for many applications.
+
+Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
+
+#### 1. Infrastructure:
+- a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond RA-exposed APIs. Generally, such an application is tightly coupled with the infrastructure which results in an [Appliance deployment model](https://github.com/cntt-n/CNTT/blob/master/doc/common/glossary.md#cloud-platform-abstraction-related-terminology).
+- b) Application control using RA APIs finds node (already configured in support of the profiles) with required infrastructure component(s), and in that node using RA APIs configures infrastructure components that make application work. Example is application that to achieve latency requirements needs certain hardware acceleration available in RM profile and is exposed through RA APIs.
+- c) Application control using RA APIs finds node (already configured in support of the profiles) with optional infrastructure component(s), and in that node using RA APIs configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is application that would have better TCO with certain acceleration adapter but can also work without it.
+- d) Application control using RA APIs finds general profile node without any specific infrastructure component.
+
+#### 2. Platform Services:
+- a) Application functionality or application control can work only with its own components instead of using RA-defined Platform Services. Example is application that brings its own Load Balancer.
+- b) With custom integration effort, application can be made to use RA-defined Platform Services. Example is application that with custom integration effort can use RA-defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
+- c) Application is designed and can be configured for running with RA-defined Platform Services. Example is application that can be configured to use RA-defined Load Balancer which can be accelerated with hardware acceleration.
+
