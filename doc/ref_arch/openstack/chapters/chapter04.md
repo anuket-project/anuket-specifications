@@ -734,7 +734,7 @@ The Central Cloud Centers are organized around a Centralised Control Plane. With
 | CCP or DCP | Compute nodes |  |  |  | nova-compute-agent | neutron-L2-agent, neutron-L3-agent (optional) |  |
 | CCP | Compute nodes | nova-placement-api |  |  | nova-compute-agent,<br>nova-conductor | neutron-server,<br>neutron-dhcp-agent,<br>neutron-L2-agent,<br>neutron-L3-agent (optional) |  |
 
-<p align="center>**Table 4-5: Distribution of OpenStack services on different nodes depending upon Control Plane Scenario</p>
+<p align="center"><b>Table 4-5:</b> Distribution of OpenStack services on different nodes depending upon Control Plane Scenario</p>
 
 <a name="4.5.1"></a>
 ### 4.5.1 Edge Cloud Topology
