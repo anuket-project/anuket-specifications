@@ -233,7 +233,7 @@ Topics include:
     - Add all Tenant Members and configure their assigned roles in the Enterprise Identity and Access management system (e.g., LDAP)
     - Verify that these roles have been created for the Tenant
 1. Tenant Images and manifests approvals
-    - Verify and Validate Tenant Images and manifests: virus scan, correct OS version and patch, etc.
+    - Verify and Validate Tenant Images and manifests: virus scan, correct OS version and patch, etc. (Please note that Tenants may also add other images or replace existing images after their environments are created and will also be subjected to image secuirty measures.)
 1. Create, Verify and Validate Tenant
     - Create Tenant
     - Using a proto- or Tenant provided HEAT-template/Helm-chart for a NF and perform sanity test (e.g., using scripts test creation of VM/container, ping test, etc.)
