@@ -194,9 +194,7 @@ For software deployment, as far as Cloud Infrastructure services or workloads ar
 - Store environment's parameters and configurations
 - Automate the delivery and deployment
  
-The CI/CD pipeline is used to deploy, test and update the Cloud Infrastructure services, but also to onboard workloads hosted on the infrastructure.
-
-The Cloud Infrastructure workload onboarding process describes activities needed for the integration of tenants' workloads into the Cloud Infrastructure environment. Typically, this business process consists of the following key phases:
+The CI/CD pipeline is used to deploy, test and update the Cloud Infrastructure services, and also to onboard workloads hosted on the infrastructure. Typically, this business process consists of the following key phases:
 1. Tenant Engagement and Workload Evaluation:
     - In this phase the request from the tenant to host a workload on the Cloud Infrastructure platform is assessed and a decision made on whether to proceed with the hosting request.
     - This phase may also involve the tenant accessing a pre-staging environment to perform their own evaluation and/or pre-staging activities in preparation for later onboarding phases.
