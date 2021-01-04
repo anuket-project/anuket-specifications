@@ -713,11 +713,11 @@ Storage transaction volumes impose a requirement on North-South network traffic 
 
 Typically, Clouds have been implemented in large (central) data centers with 100' to tens of thousands of servers. Telco Operators have also been creating intermediate data centers in central office locations, colocation centers, and now edge centers at the physical edge of their networks because of the demand for low latency and high throughput for 5G, IoT and connected devices (including autonomous driverless vehicles and connected vehicles). Chapter 3 of this document, discusses [Cloud Topology](./chapter03.md#3.5) and lists 3 types of data centers: Large, Intermediate and Edge.
 
-For ease of convenience, unless specifically required, in this section we will use Central Cloud Center, Edge Cloud Center and Intermediate Cloud Center as representative terms for cloud services hosted at centralised large data centers, Telco edge locations and for locations with capacity somewhere in between the large data centers and edge locations, respectively. The mapping of various terms, including the Reference Model terminology specified in Table [8-5](../../..//ref_model/chapters/chapter08.md#8.3.5) is as follows:
+For ease of convenience, unless specifically required, in this section we will use Central Cloud Center, Edge Cloud Center and Intermediate Cloud Center as representative terms for cloud services hosted at centralised large data centers, Telco edge locations and for locations with capacity somewhere in between the large data centers and edge locations, respectively. The mapping of various terms, including the Reference Model terminology specified in Table [8-5](../../..//ref_model/chapters/chapter08.md#8.3.5) and [Open Glossary of Edge Computing](https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md) is as follows:
 
-- Central Cloud Center: Large, Regional Data Center
-- Intermediate Cloud Center: Metro Data Center
-- Edge Cloud Center: Edge, Mini-/Micro-Edge
+- Central Cloud Center: Large Centralised Data Center, Regional Data Center
+- Intermediate Cloud Center: Metro Data Center, Regional Edge, Aggregation Edge
+- Edge Cloud Center: Edge, Mini-/Micro-Edge, Micro Modular Data Center, Service Provider Edge, Access Edge, Aggregation Edge
 
 In the Intermediate and Edge cloud centers, there may be limitations on the resource capacity, as in the number of servers, and the capacity of these servers in terms of # of cores, RAM, etc. restricting the set of services that can be deployed and, thus, creating a dependency between other data centers. In [Reference Model Chapter 8.3](../../../ref_model/chapters/chapter08.md#8.3), Table 8-5 specifies the physical and environmental characteristics, infrastructure capabilities and deployment scenarios of different locations.
 
