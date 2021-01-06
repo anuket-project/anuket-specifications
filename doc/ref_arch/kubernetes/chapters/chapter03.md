@@ -152,10 +152,6 @@ Scheduling pods that require or prefer to run on nodes with hardware accelerator
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 CPU management
 
-Hardware Acceleration Abstraction in RM Chapter 3 (WIP writing) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Network adapters, SmartNICs and SmartSwitches), usage for Infrastructure Level Acceleration and Application Level Acceleration, three levels of consumption (underlay separation, overlay acceleration and application acceleration).
-
-From those acceleration types will CPU instructions require usage of Node Feature Discovery. All other types of acceleration are generally acceleration devices attached to one peripheral interconnect and for those will appropriate Device Plugin make device assignments to satisfy container resource requirements.
-
 
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Container Runtime Services
