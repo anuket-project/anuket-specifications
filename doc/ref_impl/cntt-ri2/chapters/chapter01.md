@@ -97,7 +97,7 @@ The RI should be deployable on different infrastructures. Specifically, the foll
    This deployment scenario is typically used in internal labs and existing OPNFV community labs. It requires the RI installation tooling to provision empty bare-metal machines with a base operating system and to apply a baseline network configuration.
 
 - **Deployment on bare-metal hosts provided by a cloud provider**
-   This deployment scenario makes use of bare-metal cloud providers such as Packet.net. The machines provided in this case have been pre-provisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.
+   This deployment scenario makes use of bare-metal cloud providers such as [Equinix Metal](https://metal.equinix.com/). The machines provided in this case have been pre-provisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.
 
 - **Deployment on an Infrastructure-as-a-Service Layer**
   In this deployment scenario, the infrastructure hosts for the Kubernetes cluster are provided by an Infrastructure-as-a-Service layer, for instance based on OpenStack running in a private or public cloud. This scenario requires the RI installation tooling to request and configure compute resources via the API of the IaaS.
