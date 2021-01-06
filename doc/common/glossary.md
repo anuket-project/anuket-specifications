@@ -83,6 +83,8 @@ To help guide the reader, this glossary provides an introduction to the terminol
 - **Cloud Infrastructure Hardware Profile:** defines the behaviour, capabilities, configuration, and metrics provided by a cloud infrastructure hardware layer resources available for the workloads.
   - **Host Profile:** is another term for a **Cloud Infrastructure Hardware Profile**.
 
+- **CPU Type:** A classification of CPUs by features needed for the execution of computer programs; for example, instruction sets, cache size, number of cores.
+
 - **Hardware resources:** Compute/Storage/Network hardware resources on which the cloud infrastructure platform software, virtual machines and containers run on.
 
 - **Physical Network Function (PNF):** Implementation of a network function via tightly coupled dedicated hardware and software system.

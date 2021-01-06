@@ -22,6 +22,8 @@
 | BIOS           | Basic Input Output System             |
 | CaaS           | Container as a Service                |
 | CAPEX          | Capital Expenditure                   |
+| CCS            | Converged Charging System             | 
+| CHF            | Charging Function                     | 
 | CI/CD          | Continuous Integration / Continuous Deployment |
 | CNF            | Cloud Native Network Function          |
 | CNI            | Container Network Interface           |

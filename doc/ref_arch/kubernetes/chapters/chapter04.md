@@ -148,7 +148,7 @@ Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ntw.001`|CNI multiplexer/metaplugin|As the selected CNI multiplexer/metapulgin MUST support other CNI plugins (`req.inf.ntw.06`) and SHOULD provide an API based solution to administer the networks from a central point (`req.inf.ntw.03`) the selected CNI multiplexer/metapulgin may be [DANM](https://github.com/nokia/danm). For more detailed feature comparision of CNI multiplexers/metaplugins see Table 4-5| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
+|`ra2.ntw.001`|CNI multiplexer/metaplugin|The selected CNI multiplexer/metapulgin MUST be conformant with the CNI spec, MUST support other CNI plugins (req.inf.ntw.06), and SHOULD provide an API based solution to administer the networks from a central point (req.inf.ntw.03). Example CNI implementations which meet these requirements include:<br> - DANM<br> - Multus.<br><br>For more detailed feature comparision of CNI multiplexers/metaplugins see Table 4-5| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
 |`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|A CNI plugin may be used which implements the Kubernetes network model and have capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.003`|NAT less connectivity|An IPVLAN CNI plugin or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used||
 |`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
@@ -162,19 +162,19 @@ Architecture they must be implemented as per the following specifications:
 | Requirement | Support in Multus | Support in DANM |
 |-------------|-------------------|-----------------|
 | The overlay network encapsulation protocol needs to enable ECMP in the underlay (`infra.net.cfg.002`) | Supported via another CNI plugin | Supported via another CNI plugin |
-| NAT (`infra.net.cfg.003`) | Supported via another CNI plugin | Supported |
+| NAT less connectivity (`infra.net.cfg.003`) | Supported via another CNI plugin | Supported |
 | Security Groups (`infra.net.cfg.004`) | Not supported | Not supported <sub>1)<sub> |
 | SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant |
 | Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant |
 | Network resiliency (`req.inf.ntw.01`) | Supported | Supported |
 | Centrally administrated and configured (`req.inf.ntw.03`) | Not supported | Partially suported |
-| Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via another CNI plugin | Suported |
+| Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Automatic management of the IP allocation of IPv4 and IPv6 addresses requires additional components | Suported |
 | Integrating SDN controllers (`req.inf.ntw.05`) | Supported via another CNI plugin | Supported via another CNI plugin |
 | More than one networking solution (`req.inf.ntw.06`) | Supported | Supported |
 | Choose whether or not to deploy more than one networking solution (`req.inf.ntw.07`) | Supported | Supported |
 | Kubernetes network model (`req.inf.ntw.08`) | Supported via another CNI plugin | Supported via another CNI plugin |
 | Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported |
-| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via another CNI plugin | Supported |
+| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Automatic management of the IP allocation of IPv4 and IPv6 addresses requires additional components | Supported |
 
 <p align="center"><b>Table 4-5:</b> Comparision of CNI multiplexers/metaplugins</p>
 

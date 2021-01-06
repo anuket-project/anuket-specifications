@@ -46,7 +46,7 @@
 * [Chapter 05 - Feature set and Requirements from Infrastructure](chapters/chapter05.md)
 * [Chapter 06 - External Interfaces](chapters/chapter06.md)
 * [Chapter 07 - Security](chapters/chapter07.md)
-* [Chapter 08 - Chapter reserved for future use](chapters/chapter08.md)
+* [Chapter 08 - Hybrid Multi-Cloud: Data Center to Edge](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
 * [Glossary](../common/glossary.md)

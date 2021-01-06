@@ -236,7 +236,7 @@ This implies that the two physical cores '0' and '8' and their sibling threads '
 
 #### 4.2.2.8. Pinned and Unpinned CPUs
 
-When a VM instance is created the vCPUs are, by default, not assigned to a particular host CPU. Certain workloads require real-time or near real-time behavior viz., uninterrupted access to their cores. For such workloads, CPU pinning allows us to bind an instance’s vCPUs to particular host cores. To configure a flavor to use pinned vCPUs, we use a dedicated CPU policy.
+When a VM instance is created the vCPUs are, by default, not assigned to a particular host CPU. Certain workloads require real-time or near real-time behavior viz., uninterrupted access to their cores. For such workloads, CPU pinning allows us to bind an instance’s vCPUs to particular host cores or SMT threads. To configure a flavor to use pinned vCPUs, we use a dedicated CPU policy.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; openstack flavor set .xlarge --property hw:cpu_policy=dedicated
 
@@ -377,7 +377,8 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 <a name="4.2.3"></a>
 ### 4.2.3. Network Fabric
-**Content to be developed**
+
+Networking Fabric consists of:
 -	Physical switches, routers…
 -	Switch OS
 -	Minimum number of switches etc.
@@ -605,7 +606,7 @@ Cyborg is the acceleration resources management service. Cyborg depends on Nova 
 #### 4.3.1.10 Placement
 The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
 
-<p>Resource Providers provide consumable inventory of one or more classes of resources (cpu, memory or disk). A resource provider can be a compute host, for example.</p>
+<p>Resource Providers provide consumable inventory of one or more classes of resources (CPU, memory or disk). A resource provider can be a compute host, for example.</p>
 
 <p>Resource Classes specifies the type of resources (vCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)</p>
 

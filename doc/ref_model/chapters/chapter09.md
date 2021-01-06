@@ -7,51 +7,32 @@
 * [9.2 Configuration and Lifecycle Management](#9.2)
 * [9.3 Assurance](#9.3)
 * [9.4 Capacity Management](#9.4)
-
+* [9.5 Automation](#9.5)
+  * [9.5.1 Infrastructure LCM Automation](#9.5.1)
+  * [9.5.2 Software Onboarding Automation and CI/CD Requirements](#9.5.2)
+  * [9.5.3 Tenant creation automation](#9.5.3)
 
 <a name="9.1"></a>
 ## 9.1 Introduction
 
-The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and VNFs, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
+The purpose of this chapter is to define the capabilities required of the infrastructure to ensure it is effectively supported, maintained and otherwise lifecycle-managed by Operations teams.  This includes requirements relating to the need to be able to maintain infrastructure services "in-service" without impacting the applications and workloads, whilst minimising human labour. It shall also capture any exceptions and related assumptions.
 
-There are two main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
+There are three main business operating frameworks that are commonly known and used across the Telecommunications industry related to the topics in this chapter:
 - FCAPS (ISO model for network management)
 - eTOM (TM Forum Business Process Framework (eTOM))
+- ITIL (ITIL 4.0 attempts to adapt IT Service Management practices to the cloud environment needs)
 
 The chapters below roughly map to these frameworks as follows:
-
-<table>
-  <thead>
-    <tr>
-      <th>Chapter Name</th>
-      <th>FCAPS</th>
-      <th>eTOM</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Configuration and Lifecycle Management</td>
-      <td>Configuration</td>
-      <td>Fulfilment</td>
-    </tr>
-    <tr>
-      <td rowspan=2>Assurance</td>
-      <td>Performance</td>
-      <td rowspan=2>Assurance</td>
-    </tr>
-    <tr>
-      <td>Fault</td>
-    </tr>
-    <tr>
-      <td>Capacity Management</td>
-      <td>Configuration</td>
-      <td>Fulfilment</td>
-    </tr>
-  </tbody>
-</table>
-<p align="center"><b>Table 9-1:</b> Operating Frameworks</p>
+| Chapter Name | FCAPS | eTOM | ITIL |
+| --- | --- | --- | --- |
+| Configuration and Lifecycle Management | Configuration | Fulfilment |Configuration, Release, Change |
+| Assurance | Performance, Fault | Assurance |Event, Incident |
+| Capacity Management | Configuration | Fulfilment |Capacity Management|
 
 <a name="9.2"></a>
+
+> **Note:**  The above mapping is provided for the general orientation purpose only.  Detailed mapping of the required Cloud Infrastructure Lifecycle Management capabilities to any of these frameworks is beyond the scope of this document.
+
 ## 9.2 Configuration and Lifecycle Management
 
 Configuration management is concerned with defining the configuration of infrastructure and its components, and tracking (observing) the running configuration of that infrastructure, and any changes that take place. Modern configuration management practices such as desired state configuration management also mean that any changes from the desired state that are observed (aka the delta) are rectified by an orchestration / fulfilment component of the configuration management system. This "closed loop" mitigates against configuration drift in the infrastructure and its components. Our recommendation is to keep these closed loops as small as possible to reduce complexity and risk of error. Figure 9-1 shows the configuration management "loop" and how this relates to lifecycle management.
@@ -62,6 +43,7 @@ Configuration management is concerned with defining the configuration of infrast
 The initial desired state might be for 10 hosts with a particular set of configuration attributes, including the version of the hypervisor and any management agents. The configuration management system will take that as input (1) and configure the infrastructure as required (2). It will then observe the current state periodically over time (3) and in the case of a difference between the desired state and the observed state it will calculate the delta (4) and re-configure the infrastructure (5). For each lifecycle stage (create, update, delete) this loop takes place - for example if an update to the hypervisor version is defined in the desired state, the configuration management system will calculate the delta (e.g. v1 --> v2) and re-configure the infrastructure as required.
 
 However, the key requirements for the infrastructure and infrastructure management are those interfaces and reference points in the red box - where configuration is **set**, and where it is **observed**. Table 9-2 lists the main components and capabilities required in order to manage the configuration and lifecycle of those components.
+
 
 <table>
   <thead>
@@ -185,3 +167,79 @@ Note that the above only refers to components - it is expected that any "service
 Capacity Management is a potentially wide ranging process that includes taking demand across lines of business, analysing data about the infrastructure that is running, and calculating when additional infrastructure might be required, or when infrastructure might need to be decommissioned.
 
 As such the requirements for Capacity Management on the infrastructure are covered by the Assurance and Configuration and Lifecycle Management sections above. The Assurance section deals with the collection of data - there is no reason to consider that this would be done by a different mechanism for Capacity Management as it is for Assurance - and the Configuration and Lifecycle Management section deals with the changes being made to the infrastructure hardware, software, and management components (e.g. changing of number of hypervisor hosts from 10 to 12).
+
+<a name="9.5"></a>
+## 9.5 Automation
+
+<a name="9.5.1"></a>
+### 9.5.1 Infrastructure LCM Automation
+
+<a name="9.5.1.1"></a>
+#### 9.5.1.1. Hardware Configuration CI/CD
+
+<a name="9.5.1.1"></a>
+#### 9.5.1.2. Networking Automation
+
+<a name="9.5.1.1"></a>
+#### 9.5.1.3. Software Development CI/CD
+
+
+<a name="9.5.2"></a>
+### 9.5.2 Software Onboarding Automation and CI/CD Requirements
+
+<a name="9.5.2.1"></a>
+#### 9.5.2.1 Software Onboarding Automation
+For software deployment, as far as Cloud Infrastructure services or workloads are concerned, automation is the core of DevOps concept. Automation allows to eliminate manual processes, reducing human errors and speeding software deployments. The prerequisite is to install CI/CD tools chain to:
+- Build, package, test application/software
+- Store environment's parameters and configurations
+- Automate the delivery and deployment
+ 
+The CI/CD pipeline is used to deploy, test and update the Cloud Infrastructure services, and also to onboard workloads hosted on the infrastructure. Typically, this business process consists of the following key phases:
+1. Tenant Engagement and Software Evaluation:
+    - In this phase the request from the tenant to host a workload on the Cloud Infrastructure platform is assessed and a decision made on whether to proceed with the hosting request.
+    - If the Cloud infrastructure software needs to be updated or installed, an evaluation is made of the impacts (including to tenants) and if it is OK to proceed 
+    - This phase may also involve the tenant accessing a pre-staging environment to perform their own evaluation and/or pre-staging activities in preparation for later onboarding phases.
+2. Software Packaging:
+    - The main outcome of this phase is to produce the software deployable image and the deployment manifests (such as TOSCA blueprints or HEAT templates or Helm charts) that will define the Cloud Infrastructure service attributes. 
+    - The software packaging can be automated or performed by designated personnel, through self-service capabilities (for tenants) or by the Cloud Infrastructure Operations team.
+3. Software Validation and Certification:
+    - In this phase the software is deployed and tested to validate it against the service design and other Operator specific acceptance criteria, as required.
+    - Software validation and certification should be automated using CI/CD toolsets / pipelines and Test as a Service (TaaS) capabilities.
+4. Publish Software:
+    - Tenant Workloads: After the software is certified the final onboarding process phase is for it to be published to the Cloud Infrastructure production catalogue from where it can be instantiated on the Cloud Infrastructure platform by the tenant.
+    - Cloud Infrastructure software: After the software is certified, it is scheduled for deployment inconcurrence with the user community.
+    
+All phases described above can be automated using technology specific toolsets and procedures.  Hence, details of such automation are left for the technology specific Reference Architecture and Reference Implementation specifications.
+
+<a name="9.5.2.2"></a>
+#### 9.5.2.2 Software CI/CD Requirements
+The requirements including for CI/CD for ensuring software security scans, image integrity checks, OS version checks, etc. prior to deployment, are listed in the Table 9-4 (below). Please note that the tenant processes for application LCM (such as updates) are out of scope. For the purpose of these requirements, CI includes Continuous Delivery, and CD refers to Continuous Deployment.
+
+Ref # | Description | Comments/Notes
+---|---|---
+auto.cicd.001 | The CI/CD pipeline must support deployment on any cloud and cloud infrastructures including different hardware accelerators. | CI/CD pipelines automate CI/CD best practices into repeatable workflows for integrating code and configurations into builds, testing builds including validation against design and operator specific criteria, and delivery of the product onto a runtime environment.<br>Example of an open-source cloud native CI/CD framework is the Tekton project (https://tekton.dev/)
+auto.cicd.002 | The CI/CD pipelines must use event-driven task automation | 
+auto.cicd.003 | The CI/CD pipelines should avoid scheduling tasks | 
+auto.cicd.004 | The CI/CD pipeline is triggered by a new or updated software release being loaded into a repository | The software release cane be source code files, configuration files, images, manifests.<br>Operators may support a single or multiple repositories and may, thus, specify which repository is to be used for these release.<br>An example, of an open source repository is the CNCF Harbor (https://goharbor.io/)
+auto.cicd.005 | The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices. | 
+auto.cicd.006 | The CI pipeline must support build and packaging of images and deployment manifests from source code and configuration files. | 
+auto.cicd.007 | The CI pipeline must scan images and manifests to validate for compliance with security requirements.  | Refer to RM Chapter 07 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#79-consolidated-security-requirements).<br>Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
+auto.cicd.008 | The CI pipeline must validate images and manifests | Example, different tests
+auto.cicd.009 | The CI pipeline must validate with all hardware offload permutations and without hardware offload | 
+auto.cicd.010 | The CI pipeline must promote validated images and manifests to be deployable. | Example, promote from a development repository to a production repository
+auto.cicd.011 | The CD pipeline must verify and validate the tenant request | Example, RBAC, request is within quota limits, affinity/anti-affinity, …
+auto.cicd.012 | The CD pipeline after all validations must turn over control to orchestration of the software | |
+auto.cicd.013 | The CD pipeline must be able to deploy into Development, Test and Production environments | |
+auto.cicd.014 | The CD pipeline must be able to automatically promote software from Development to Test and Production environments | |
+
+<p align="center"><b>Table 9-4:</b> Automation CI/CD</p>
+
+<a name="9.5.3"></a>
+### 9.5.3 Tenant Creation Automation
+
+<a name="9.5.3.1"></a>
+#### 9.5.3.1. Pre-tenant Creation Requirements
+
+<a name="9.5.3.2"></a>
+#### 9.5.3.2. Tenant Networking Automation
+

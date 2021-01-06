@@ -6,9 +6,9 @@
 ## Table of Contents
 * [2.1 Introduction](#2.1)
 * [2.2 Reference Model Requirements](#2.2)
-  * [2.2.1 Cloud Infrastructure Software Profile Capabilities](#2.2.1)
+  * [2.2.1 Cloud Infrastructure Software Profile Requirements](#2.2.1)
   * [2.2.2 Virtual Network Interface Specifications](#2.2.2)
-  * [2.2.3 Cloud Infrastructure Software Profile Requirements](#2.2.3)
+  * [2.2.3 Cloud Infrastructure Software Profile Requirements for Storage and Networking](#2.2.3)
   * [2.2.4 Cloud Infrastructure Hardware Profile Requirements](#2.2.4)
   * [2.2.5 Cloud Infrastructure Management Requirements](#2.2.5)
   * [2.2.6 Cloud Infrastructure Security Requirements](#2.2.6)  
@@ -58,7 +58,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 > Note: "(if offered)" used in the Reference Model has been replaced with "Optional" in the tables below so as to align with the RFC2119.
 
 <a name="2.2.1"></a>
-### 2.2.1 Cloud Infrastructure Software Profile Capabilities (source [RM 4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping))
+### 2.2.1 Cloud Infrastructure Software Profile Requirements (source [RM 4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping))
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
@@ -67,8 +67,8 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.003 | Max storage in GB that can be assigned to a single VM by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | |
 | e.cap.004 | Max number of connection points that can be assigned to a single VM by the Cloud Infrastructure | 6 | 6 | |
 | e.cap.005 | Max storage in GB that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
-| e.cap.006 | CPU pinning support | Not required | Must support | |
-| e.cap.007 | NUMA support | Not required | Must support | |
+| e.cap.006/ infra.com.cfg.003 | CPU pinning support | Not required | Must support | |
+| e.cap.007/ infra.com.cfg.002 | NUMA support | Not required | Must support | |
 | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
 | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
 | e.cap.010 | Transcoding Acceleration | Not required | Not required | |
@@ -81,9 +81,9 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | n/a | n/a | |
 | i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the compute nodes | 2 | 2 | |
 | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the compute nodes | 16 GB | 16GB | |
-| i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
+| i.cap.016/ infra.com.cfg.001 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
 | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
-| i.cap.018 | Support for huge pages | Not required | Must support | |
+| i.cap.018/ infra.com.cfg.004 | Support for huge pages | Not required | Must support | |
 | i.pm.001  | Monitor compute node CPU usage, per nanosecond | Must support | Must support | |
 | i.pm.002  | Monitor VM CPU usage, per nanosecond | Must support | Must support | |
 | i.pm.003  | Monitor compute node CPU utilisation (%) | Must support | Must support | |
@@ -115,14 +115,10 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 <p align="center"><b>Table 2-2:</b> Reference Model Requirements: Network Interface Specifications</p>
 
 <a name="2.2.3"></a>
-### 2.2.3 Cloud Infrastructure Software Profile Requirements (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
+### 2.2.3 Cloud Infrastructure Software Profile Requirements for Storage and Networking (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|
-| infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | |
-| infra.com.cfg.002 | NUMA alignment | Not required | Must support | |
-| infra.com.cfg.003 | CPU pinning capability | Not required | Must support | |
-| infra.com.cfg.004 | Huge Pages | Not required | Must support | |
 | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
 | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
 | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | |
@@ -227,6 +223,12 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.sys.011 | Access | The Platform **must not** reuse the same authentication credentials (e.g., key pairs) on different Platform components (e.g., different hosts, or different services). | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.012 | Access | The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component (e.g., in OpenStack Barbican) | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
 | sec.sys.013 | Access | The Platform **must** generate secrets dynamically as and when needed. | [RA-1 6.3.1 "Platform Access"](./chapter06.md#631-platform-access) |
+| sec.sys.015 | Access | The Platform **must not** contain back door entries (unpublished access points, APIs, etc.). |  |
+| sec.sys.016 | Access | Login access to the Platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
+| sec.sys.017 | Access | The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority. |  |
+| sec.sys.018 | Access | The Platform **must** provide the capability of allowing certificate renewal and revocation. |  |
+| sec.sys.019 | Access | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
+
 
 #### 2.2.6.3. Confidentiality and Integrity (source [RM7.11.3](../../../ref_model/chapters/chapter07.md#7113-confidentiality-and-integrity))
 
@@ -272,7 +274,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
 | sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |  
-| sec.lcm.002 | LCM | Operational **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.002 | LCM | The Cloud Operator **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
 | sec.lcm.003 | LCM | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |  
 | sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be monitored for anomalous behavior. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
 | sec.lcm.006 | LCM | The Platform **must** verify the integrity of all Resource management requests. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
@@ -281,6 +283,8 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.lcm.009 | LCM | The Platform **must** be able to update the tag of newly instantiated, suspended, hibernated, migrated and restarted images with relevant geolocation (geographical) information. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
 | sec.lcm.010 | LCM | The Platform **must** log all changes to geolocation along with the mechanisms and sources of location information (i.e. GPS, IP block, and timing). | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
 | sec.lcm.011 | LCM | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software. | [RA-1 6.3.7 Security Audit Logging](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter06.md#637-security-audit-logging) |
+| sec.lcm.012 | LCM | The Platform **must** log any access privilege escalation. |  |
+
 
 
 #### 2.2.6.7. Monitoring and Security Audit (source [RM7.11.7](../../../ref_model/chapters/chapter07.md#7117-monitoring-and-security-audit))
@@ -289,7 +293,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly monitored for events of interest. | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
+| sec.mon.001 | Monitoring/Audit | Platform **must** provide logs and these logs must be regularly monitored for events of interest. The logs **must** contain the following fields: event type, date/time, protocol, service or program used for access, success/failure, login ID or process ID, IP address and ports (source and destination) involved.| [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.002 | Monitoring | Security logs **must** be time synchronised. | [RA-1 6.3.7.5 "Security Logs Time Synchronisation"](./chapter06.md#6376-security-logs-time-synchronisation) |
 | sec.mon.003 | Monitoring | The Platform **must** log all changes to time server source, time, date and time zones. |  |
 | sec.mon.004 | Audit | The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. |  |
@@ -302,8 +306,12 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.012 | Monitoring/Audit | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. |  |
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
-| sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources. |  |
-| sec.lcm.017 | Audit | The Platform **must** Audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.2.3 "Patches"](./chapter06.md#6323-patches) |
+| sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
+| sec.mon.017 | Audit | The Platform **must** audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.2.3 "Patches"](./chapter06.md#6323-patches) |
+| sec.mon.018 | Monitoring | The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
+| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
+| sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
+| sec.mon.021 | Monitoring | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | |
 
 
 #### 2.2.6.8. Compliance with Standards (source [RM7.11.8](../../../ref_model/chapters/chapter07.md#7118-compliance-with-standards))
@@ -352,7 +360,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | `req.inf.ntw.02` | Network | The Architecture **must** include capabilities for integrating SDN controllers to support provisioning of network services, from the OpenStack Neutron service, such as networking of VTEPs to the Border Edge based VRFs. | [RA-1 3.2.5. "Virtual Networking – 3rd party SDN solution"](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution) |
 | `req.inf.ntw.03` | Network | The Architecture **must** support low latency and high throughput traffic needs. | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
 | `req.inf.ntw.05` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
-| `req.inf.ntw.07` | Network | The Architecture **must** support network resiliency. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
+| `req.inf.ntw.07` | Network | The Architecture **must** support network [resiliency](../../../common/glossary.md#cloud-platform-abstraction-related-terminology). | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
 | `req.inf.ntw.10` | Network | The Cloud Infrastructure Network Fabric **must** be capable of enabling highly available (Five 9’s or better) Cloud Infrastructure. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
 | `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for Cloud Infrastructure to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
 | `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.| |
@@ -409,8 +417,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |----|----------|-------------|-------------|
-| `req.lcm.gen.01`	| General | The Architecture **must** support zero downtime expansion/change of physical capacity (compute hosts, storage increase/replacement). | |
-| `req.lcm.adp.02` | Automated deployment | The Architecture **must** support hitless upgrades of software provided by the cloud provider so that the availability of running workloads is not impacted. | |
+| `req.lcm.gen.01`	| General | The Architecture must support zero downtime of running workloads when the number of compute hosts and/or the storage capacity is being expanded or unused capacity is being removed. | |
+| `req.lcm.adp.02` | Automated deployment | The Architecture must support upgrades of software, provided by the cloud provider, so that the running workloads are not impacted (viz., hitless upgrades). Please note that this means that the existing data plane services should not fail (go down). | |
 
 <p align="center"><b>Table 2-12:</b> LCM Requirements</p>
 
@@ -555,7 +563,7 @@ Commented out until RM defines requirements for SDN
 
 | Ref # | sub-category | Description |  Notes |
 |-------|-------|-------|---------|
-
+| sec.sys.014 | Access | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
 
 #### 2.4.8.3. Confidentiality and Integrity (source [RM7.11.3](../../../ref_model/chapters/chapter07.md#7113-confidentiality-and-integrity))
 
