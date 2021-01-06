@@ -49,7 +49,7 @@ A generic Telco cloud is an hybrid multi-cloud. A better designation would be a 
 
 <a name="8.2.1"></a>
 ### 8.2.1 Characteristics of a Federated Cloud
-In this section we will further explore the characteristics of the federated cloud, architecture and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on prem, Cloud Vendor provided on prem, Private outsourced (Commercial Cloud Provider such as an Hyperscalar Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
+In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on prem, Cloud Vendor provided on prem, Private outsourced (Commercial Cloud Provider such as an Hyperscalar Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
 <p align="center"><img src="../figures/RM-Ch08-HMC-Image-1.png" alt="Example Hybrid Multi-Cloud Component Cloud"><br><b>Figure 8-1: Example Hybrid Multi-Cloud Component Cloud.</b></p>
 
@@ -68,7 +68,7 @@ The Telco Operator may own and/or have partnerships and network connections to u
    - (Outsourced) Public: Commercial Cloud Service | Examples: AWS, Azure, VMware, etc.
    - Multiple different Clouds can be co-located in the same physical location and may share some of the physical infrastructure (for example, racks)
 
-In general, a Telco Cloud consists of multiple interconnected very large data centers that serve trans-continentalareas (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud Region.
+In general, a Telco Cloud consists of multiple interconnected very large data centers that serve trans-continental areas (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud Region.
 
 The Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud artifacts.
 
@@ -157,10 +157,10 @@ This section characterises the hardware capabilities for different edge deployme
 
 
 Depending on the facility capabilities, deployments at the edge may be similar to one of the following:
-        - Small footprint edge device
-        - Single server: deploy multiple (one or more) workloads
-        - Single server: single Controller and multiple (one or more) workloads
-        - HA at edge (at least 2 edge servers): Multiple Controller and multiple workloads
+- Small footprint edge device
+- Single server: deploy multiple (one or more) workloads
+- Single server: single Controller and multiple (one or more) workloads
+- HA at edge (at least 2 edge servers): Multiple Controller and multiple workloads
 
 
 <a name="8.3.5"></a>
