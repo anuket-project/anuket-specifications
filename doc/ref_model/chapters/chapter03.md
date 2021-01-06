@@ -232,7 +232,7 @@ For a given software network function and software infrastructure, Hardware Acce
 
 Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve more or faster performance, or offloading them to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
 
-More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8).
+More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
 
 
 <a name="3.5"></a>
