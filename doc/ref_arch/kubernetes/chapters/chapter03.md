@@ -138,6 +138,12 @@ identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hug
 management.
 
 
+<a name="3.2.1.5"></a>
+#### 3.2.1.5 Node Feature Discovery
+
+[Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) (NFD) can run on every node as a daemon or as a job. NFD detects detailed hardware and software capabilities of each node and then advertises those capabilities as node labels. Those node labels can be used in scheduling pods by using Node Selector or Node Affinity for pods that require such capabilities.
+
+
 <a name="3.2.1.6"></a>
 #### 3.2.1.6 Device Plugin Framework
 
