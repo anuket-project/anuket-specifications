@@ -301,6 +301,6 @@ Taking advantage of RM and RA environments with common capabilities, application
 - d) Application control using APIs required by RA finds general profile node without any specific infrastructure component.
 
 #### 2. Platform Services:
-- a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is application that brings its own Load Balancer.
+- a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
 - b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
 - c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
