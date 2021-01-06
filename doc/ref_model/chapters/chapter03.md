@@ -288,8 +288,8 @@ Accelerator technologies can be categorized depending on where they are realized
 
 | Acceleration technology/hardware | Example implementation | Activation/LCM/support | Usage by application tenant |
 |---|---|---|---|
-| CPU instructions | Within CPU cores | None for hardware | Could be application binary differences (application to load software library that recognizes and uses) |
-| Fixed function accelerator | Crypto, vRAN-specific adapter | Rare updates | Could be application binary differences (application to load software library/driver) |
+| CPU instructions | Within CPU cores | None for hardware | Application to load software library that recognizes and uses CPU instructions |
+| Fixed function accelerator | Crypto, vRAN-specific adapter | Rare updates | Application to load software library/driver that recognizes and uses the accelerator |
 | Firmware-programmable adapter | Network/storage adapter with programmable part of firmware image | Rare updates | Application normally not modified or aware |
 | SmartNIC | Programmable accelerator for vSwitch/vRouter, NF and/or Hardware Infrastructure | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 types/operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3 Reprogrammable |
 | SmartSwitch-based | Programmable Switch Fabric or TOR switch | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3. Reprogrammable |
