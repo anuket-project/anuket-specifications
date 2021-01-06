@@ -9,9 +9,9 @@
   * [8.2.2. Telco Cloud](#8.2.2)
   * [8.2.3. Telco Operator Platform Conceptual Architecture](#8.2.3)
 * [8.3. Telco Edge Cloud](#8.3)
-  * [8.3.1. Telco Edge Cloud Deployment Environment Characteristics](#8.3.1)
-  * [8.3.2. Telco Edge Cloud Infrastructure Characteristics](#8.3.2)
-  * [8.3.3. Telco Edge Cloud Infrastructure Profiles](#8.3.3)
+  * [8.3.1. Telco Edge Cloud: Deployment Environment Characteristics](#8.3.1)
+  * [8.3.2. Telco Edge Cloud: Infrastructure Characteristics](#8.3.2)
+  * [8.3.3. Telco Edge Cloud: Infrastructure Profiles](#8.3.3)
   * [8.3.4. Telco Edge Cloud: Platform Services Deployment](#8.3.4)
   * [8.3.5. Comparison of Deployment Topologies and Edge terms](#8.3.5)
   
@@ -97,7 +97,7 @@ The Cloud Services and the Cloud Resources Brokers provide value-added services 
 This section presents the characteristics and capabilities of different Edge cloud deployment locations, infrastructure, footprint, etc. Please note that in the literature many terms are used and, thus, this section includes a table that tries to map these different terms.
 
 <a name="8.3.1"></a>
-### 8.3.1. Telco Edge Cloud Deployment Environment Characteristics
+### 8.3.1. Telco Edge Cloud: Deployment Environment Characteristics
 Telco Edge Cloud (TEC) deployment locations can be environmentally friendly such as indoors (offices, buildings, etc.) or environmentally challenged such as outdoors (near network radios, curbside, etc.) or environmentally harsh environments (factories, noise, chemical, heat and electromagnetic exposure, etc). Some of the more salient characteristics are captured in Table 8-2.
 
 <p align="center"><b>Table 8-2. TEC Deployment Location Characteristics & Capabilities.</b></p>
@@ -108,7 +108,7 @@ Environmentally friendly | Indoors: typical commercial or residential structures
 Environmentally challenged | Outdoors and/or exposed to environmentally harsh conditions | maybe unprotected<br>Exposure to abnormal levels of noise, vibration, heat, chemical, electromagnetic pollution | May only have battery power<br>Low/Medium bandwidth Fixed and/or mobile network access | No or minimal access control | Expensive ruggedisation<br>Operationally complex | Example locations: curbside, near cellular radios, |
 
 <a name="8.3.2"></a>
-### 8.3.2 Telco Edge Cloud Infrastructure Characteristics
+### 8.3.2 Telco Edge Cloud: Infrastructure Characteristics
 Commodity hardware is only suited for environmentally friendly environments. Commodity hardware have standardised designs and form factors. Cloud deployments in data centers typically use such commodity hardware with standardised configurations resulting in operational benefits for procurement, installation and ongoing operations.
 
 In addition to the type of infrastructure hosted in data center clouds, facilities with smaller sized infrastructure deployments, such as central offices or co-location facilities, may also host non-standard hardware designs including specialised components. The introduction of specialised hardware and custom configurations increases the cloud operations and management complexity.
@@ -116,7 +116,7 @@ In addition to the type of infrastructure hosted in data center clouds, faciliti
 At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with different form factors.
 
 <a name="8.3.3"></a>
-### 8.3.3 Telco Edge Cloud Infrastructure Profiles
+### 8.3.3 Telco Edge Cloud: Infrastructure Profiles
 The [Cloud Infrastructure Profiles](./chapter04.md#4.2.4) section specifies two infrastructure profiles:
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low to medium network throughput requirements.
