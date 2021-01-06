@@ -20,7 +20,7 @@
   * [3.8.1 Types of accelerators](#3.8.1)
   * [3.8.2 Levels of accelerator consumption](#3.8.2)
   * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
-  * [3.8.8 SmartSwitches](#3.8.8)
+  * [3.8.8 Smart Switches](#3.8.8)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -293,9 +293,9 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 
 
 <a name="3.8.8"></a>
-### 3.8.8 SmartSwitches
+### 3.8.8 Smart Switches
 
-SmartSwiches can be broadly categorized into Configurable Switches and Programable Switches.
+Smart Swiches can be broadly categorized into Configurable Switches and Programable Switches.
 
 Configurable Smart Switches run generic “smart” configurable network operating system offering full range of network functionality and are flexible enough to support most network solutions. The most common such network operating system is Linux-based [SONiC](https://azure.github.io/SONiC/) allowing hardware and software disaggregation by running on switches from multiple switch vendors with different types of merchant fixed-function ASICs. Still, SONiC today cannot implement new type of data plane functionality or patch/modify/correct an ASIC, which is type of support is offered by programable smart switches.
 
