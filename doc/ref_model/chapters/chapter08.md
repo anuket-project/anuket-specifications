@@ -135,7 +135,7 @@ Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [I
 | infra.stg.cfg.003 | Storage with replication |  | N | Y | N | Optional |
 | infra.stg.cfg.004 | Storage with encryption |  | Y | Y | N | Optional |
 | infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets | This determines the minimum number of CPU sockets within each host | 2 | 2 | 1 | 1 |
-| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 2 | 1 |
+| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 1 | 1 |
 | infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Y* |
 
 - Note: immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1
