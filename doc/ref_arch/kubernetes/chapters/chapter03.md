@@ -10,9 +10,9 @@
     * [3.2.1 Container Compute Services](#3.2.1)
         * [3.2.1.1 Memory management](#3.2.1.1)
         * [3.2.1.2 HW Topology management](#3.2.1.2)
-        * [3.2.1.3 HW Acceleration](#3.2.1.3)
         * [3.2.1.4 CPU management](#3.2.1.4)
         * [3.2.1.5 Container Runtime Services](#3.2.1.5)
+        * [3.2.1.7 HW Acceleration](#3.2.1.7)
     * [3.2.2 Container Networking Services](#3.2.2)
     * [3.2.3 Container Storage Services](#3.2.3)
     * [3.2.4 Container Package Managers](#3.2.4)
@@ -155,20 +155,9 @@ Memory or Huge Pages are not considered by the Topology Manager. This can be don
 [Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
 
-<a name="3.2.1.3"></a>
-#### 3.2.1.3 HW Acceleration
-
-> This chapter should describe considerations about hardware acceleration, like
-device management.
 
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 CPU management
-
-> This chapter should describe considerations about CPU management.
-
-> Relate back to features described in the RM
-[here](../../../ref_model/chapters/chapter05.md#521-virtual-compute) and
-[here](../../../ref_model/chapters/chapter05.md#54-nfvi-hw-profiles-features-and-requirements).
 
 
 <a name="3.2.1.5"></a>
@@ -223,6 +212,19 @@ which provides the isolation of Operating System kernels.
 
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
+
+
+<a name="3.2.1.7"></a>
+#### 3.2.1.7 Hardware Acceleration
+
+Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
+
+Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator used:
+
+•	CPU instructions can be found with Node Feature Discovery
+
+•	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
+
 
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
