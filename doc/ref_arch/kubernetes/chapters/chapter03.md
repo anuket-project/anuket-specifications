@@ -10,9 +10,9 @@
     * [3.2.1 Container Compute Services](#3.2.1)
         * [3.2.1.1 Memory management](#3.2.1.1)
         * [3.2.1.2 HW Topology management](#3.2.1.2)
-        * [3.2.1.3 HW Acceleration](#3.2.1.3)
         * [3.2.1.4 CPU management](#3.2.1.4)
         * [3.2.1.5 Container Runtime Services](#3.2.1.5)
+        * [3.2.1.7 HW Acceleration](#3.2.1.7)
     * [3.2.2 Container Networking Services](#3.2.2)
     * [3.2.3 Container Storage Services](#3.2.3)
     * [3.2.4 Container Package Managers](#3.2.4)
@@ -137,17 +137,6 @@ identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hug
 > This chapter should describe considerations about hardware topology
 management.
 
-<a name="3.2.1.7"></a>
-#### 3.2.1.7 Hardware Acceleration
-
-Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
-
-Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator used:
-
-•	CPU instructions can be found with Node Feature Discovery
-
-•	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
-
 
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 CPU management
@@ -205,6 +194,19 @@ which provides the isolation of Operating System kernels.
 
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
+
+
+<a name="3.2.1.7"></a>
+#### 3.2.1.7 Hardware Acceleration
+
+Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
+
+Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator used:
+
+•	CPU instructions can be found with Node Feature Discovery
+
+•	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
+
 
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
