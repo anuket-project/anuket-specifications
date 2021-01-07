@@ -220,7 +220,7 @@ Topics include:
     - Validate that the capacity available within the requests cloud site(s) can satisfy the Tenant requested quota for vCPU, RAM, Disk, Network Bandwidth
     - Validate that the Cloud Infrastructure can meet Tenant's performance requirements (e.g. I/O, latency, jitter, etc)
     - Validate that the Cloud Infrastructure can meet Tenant's resilience requirements
-1. For VM-based environments:
+1. For environments that support [Compute Flavours](./chapter04.md#4.2.1):
     - Verify that any requested private flavours have been created
     - Verify that the metadata for these private flavours have been created
     - Verify that the tenant has permissions to use the requested private flavours
