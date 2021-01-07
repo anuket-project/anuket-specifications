@@ -135,7 +135,7 @@ identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hug
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 Hardware Topology Management
 
-Scheduling pods across NUMA boundaries can result in lower performance and higher latencies for applications that require optimizations of CPU isolation, memory and device locality.
+Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimizations of CPU isolation, memory and device locality.
 
 Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
 
