@@ -7,8 +7,8 @@
 * [6.1 Introduction](#6.1)
 * [6.2 Security Requirements](#6.2)
 * [6.3 Cloud Infrastructure and VIM Security](#6.3)
-    * [6.3.1 Platform Access](#6.3.1) 
-    * [6.3.2 System Hardening](#6.3.2) 
+    * [6.3.1 System Hardening](#6.3.1) 
+    * [6.3.2 Platform Access](#6.3.2)
     * [6.3.3 Confidentiality and Integrity](#6.3.3) 
     * [6.3.4 Workload Security](#6.3.4) 
     * [6.3.5 Image Security](#6.3.5) 
@@ -30,17 +30,85 @@ Chapter 2 gathers all requirements and recommendations regarding security topics
 OpenStack security guide:
 https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html. In the section "[Security boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
 
-The handling of these security incidents requires various levels of logging of key infrastructure, processes, and use behaviour. These logs have to be continuously monitored and analysed with alerts created for anomalies. The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
-
 <a name="6.3.1"></a>
-### 6.3.1 Platform Access
+### 6.3.1 System Hardening
+All infrastructure should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas:
 
-#### 6.3.1.1 Identity Security
+#### 6.3.1.1 Servers boot hardening
+Servers boot process must be trusted. For this purpose, the integrity and authenticity of all BIOS firmware components must be verified at boot. Secure Boot based on UEFI must be used (sec.gen.003). By verifying the signatures of all BIOS components, Secure Boot will ensure servers start with the firmware expected and without malware insertion into the system. Secure Boot checks the digital signatures locally. To implement a chain of trust, Secure Boot must be extended by the use of a hardware based root of trust provided by a TPM. ... measued boot technologies with TPM as hardware and static root-of-trust.
+
+
+#### 6.3.1.2 System Access
+Access to all the platform's components must be restricted applying the following rules:
+- Remove, or at a minimal, disable all unnecessary user accounts 
+- Change all default user accounts where technically feasible
+- Change all default credentials
+- Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+
+#### 6.3.1.3 Password policy
+For all infrastructure components, passwords must be hardened and a strict password policy must be applied (req.sec.gen.002).
+
+Passwords must be strengthened:
+- All vendors default passwords must be changed
+- Passwords must contain at least 8 characters as a minimal value, 14 characters length passwords are recommended
+- Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
+- For administration privileges accounts, passwords must contain at least one upper case letter, one lower case letter, one numeral and one special (non-alphanumeric) character   
+
+For passwords updates, the identity of users must be verified before permitting a password change.
+
+Passwords must be encrypted at rest and in-transit. Password files must be stored separately from application system data.
+
+Password's composition, complexity and policy should follow the recommendations consolidated within the [CIS Password Policy guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/) such as:
+- Check the password for known bad passwords (repetitive or sequential characters, dictionary words, context-specific words, previously used passwords, etc.)
+- Limit number of failed login attempts
+- Implement Multi-factor Authentication
+- Periodic (for example, Yearly, Quarterly, etc.)  password change or on key events such as indication of compromise, change of user roles, a defined period of inactivity, when a user leaves the organization, etc..
+
+#### 6.3.1.4 Function and Software
+Infrastructure should be implemented to perform the minimal function that’s practically needed to support Cloud Infrastructure. 
+
+Regarding software:
+- Install only software which is required to support the functions
+- Remove any unnecessary software or packages
+- Where software cannot be removed, disable all services to it
+
+#### 6.3.1.5 Patches
+System should be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery:
+| Severity | Time to Remediate |
+| ----------- | ----------- |
+| Zero-Day | Immediately or as soon as practically possible |
+| Critical | 30 days |
+| High | 60 days |
+| Medium | 90 days |
+| Low | 180 days |
+
+**See** [Common Vulnerability Scoring System](https://nvd.nist.gov/vuln-metrics/cvss)
+	
+#### 6.3.1.6 Network Protocols
+- Only allow protocols that are required by the system functions
+- Tighten all required TCP/IP (Transmission Control Protocol/Internet Protocol) services
+
+#### 6.3.1.7 Anti-Virus and Firewall
+- Install and run your Enterprise approved anti-virus software/ intrusion protection/ malware/ spyware endpoint security software with up to date profiles, minimal refresh daily
+- Install and run firewall software where applicable
+
+#### 6.3.1.8 Vulnerability Detection and Prevention
+- Implement DoS (Denial of Service) protection where applicable
+- Ensure logging and alerting is actively running
+- Run host-based scanning and fix all findings per vulnerability severity 
+- Run network-based scanning and fix all findings per vulnerability severity
+
+
+
+<a name="6.3.2"></a>
+### 6.3.2 Platform Access
+
+#### 6.3.2.1 Identity Security
 The [OpenStack Identity service (Keystone)](https://docs.openstack.org/security-guide/identity.html) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end.
 
 OpenStack Keystone can work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
 
-#### 6.3.1.2 Authentication
+#### 6.3.2.2 Authentication
 Authentication is the first line of defense for any real-world implementation of OpenStack.  At its core, authentication is the process of confirming the user logging in is who they claim to be.  OpenStack Keystone supports multiple methods of authentication, such as username/password, LDAP, and others.  For more details, please refer to [OpenStack Authentication Methods](https://docs.openstack.org/security-guide/identity/authentication-methods.html).
 
 Limiting the number of repeated failed login attempts (configurable) reduces the risk of unauthorised access via password guessing (Bruce force attack) - sec.mon.006 and sec.mon.009. The restriction on the number of consecutive failed login attempts ("lockout_failure_attempts") and any actions post such access attempts (such as locking the account where the "lockout_duration" is left unspecified) should abide by the operator's policies. For example, an operator may restrict the number of consecutive failed login attempts to 3 ("lockout_failure_attempts = 3") and lock the account preventing any further access and where the account is unlocked by getting necessary approvals.  
@@ -50,10 +118,10 @@ Once a user is authenticated, a token is generated for authorization and access 
 
 **Special Note on Logging Tokens:** since the token would allow access to the OpenStack services, it *MUST* be masked before outputting to any logs.
 
-#### 6.3.1.3 Authorization
+#### 6.3.2.3 Authorization
 Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Services support the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
 
-#### 6.3.1.4 RBAC
+#### 6.3.2.4 RBAC
 In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles. 
 
 Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Train release, Keystone applies the following personas consistently across its API.
@@ -110,70 +178,6 @@ The following rules govern create, read, update, and delete (CRUD) level access.
   - *Tenant Level Read Only* - typically assign to tenant users who need to read all resources in the project space
   - Permission to read all resources at the tenant level
   - Cannot create/update/delete
-
-<a name="6.3.2"></a>
-### 6.3.2 System Hardening
-All infrastructure should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas:
-
-#### 6.3.2.1 Password policy
-For all infrastructure components, passwords must be hardened and a strict password policy must be applied (req.sec.gen.002).
-
-Passwords must be strengthened:
-- All vendors default passwords must be changed
-- Passwords must contain at least 8 characters as a minimal value, 14 characters length passwords are recommended
-- Passwords must contain at least one upper case letter, one lower case letter and one non-alphabetic character
-- For administration privileges accounts, passwords must contain at least one upper case letter, one lower case letter, one numeral and one special (non-alphanumeric) character   
-
-For passwords updates, the identity of users must be verified before permitting a password change.
-
-Passwords must be encrypted at rest and in-transit. Password files must be stored separately from application system data.
-
-Password's composition, complexity and policy should follow the recommendations consolidated within the [CIS Password Policy guide](https://www.cisecurity.org/white-papers/cis-password-policy-guide/) such as:
-- Check the password for known bad passwords (repetitive or sequential characters, dictionary words, context-specific words, previously used passwords, etc.)
-- Limit number of failed login attempts
-- Implement Multi-factor Authentication
-- Periodic (for example, Yearly, Quarterly, etc.)  password change or on key events such as indication of compromise, change of user roles, a defined period of inactivity, when a user leaves the organization, etc..
-
-
-#### 6.3.2.2 Function and Software
-Infrastructure should be implemented to perform the minimal function that’s practically needed to support Cloud Infrastructure. 
-
-Regarding software:
-- Install only software which is required to support the functions
-- Remove any unnecessary software or packages
-- Where software cannot be removed, disable all services to it
-
-#### 6.3.2.3 Patches
-System should be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery:
-| Severity | Time to Remediate |
-| ----------- | ----------- |
-| Zero-Day | Immediately or as soon as practically possible |
-| Critical | 30 days |
-| High | 60 days |
-| Medium | 90 days |
-| Low | 180 days |
-
-**See** [Common Vulnerability Scoring System](https://nvd.nist.gov/vuln-metrics/cvss)
-	
-#### 6.3.2.4 Network Protocols
-- Only allow protocols that are required by the system functions
-- Tighten all required TCP/IP (Transmission Control Protocol/Internet Protocol) services
-
-#### 6.3.2.5 System Access
-- Remove, or at a minimal, disable all unnecessary user accounts 
-- Change all default user accounts where technically feasible
-- Change all default credentials
-- Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
-
-#### 6.3.2.6 Anti-Virus and Firewall
-- Install and run your Enterprise approved anti-virus software/ intrusion protection/ malware/ spyware endpoint security software with up to date profiles, minimal refresh daily
-- Install and run firewall software where applicable
-
-#### 6.3.2.7 Vulnerability Detection and Prevention
-- Implement DoS (Denial of Service) protection where applicable
-- Ensure logging and alerting is actively running
-- Run host-based scanning and fix all findings per vulnerability severity 
-- Run network-based scanning and fix all findings per vulnerability severity
 
 
 <a name="6.3.3"></a>
@@ -250,7 +254,7 @@ Given the rate of change in the workload development and deployment, and the clo
 
 SR-IOV agent only works with NoopFirewallDriver when Security Groups are enabled, but can still use other firewall_driver for other Agents by updating their conf with the requested firewall driver." Please see [SR-IOV Passthrough for Networking](https://wiki.openstack.org/wiki/SR-IOV-Passthrough-For-Networking).
 
-Operators typically do not implement Security Groups when ussing SR-IOV or DPDK networking technologies.
+Operators typically do not implement Security Groups when using SR-IOV or DPDK networking technologies.
 
 <a name="6.3.5"></a>
 ### 6.3.5 Image Security
@@ -301,6 +305,8 @@ To defend against virus or other attacks, security patches must be installed for
 ### 6.3.7 Security Audit Logging
 This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session and network activity, is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion. 
 
+The handling of security incidents requires various levels of logging of key infrastructure, processes, and use behaviour. These logs have to be continuously monitored and analysed with alerts created for anomalies. The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
+
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
 * Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure.
@@ -336,14 +342,14 @@ Security audit logs must NOT contain:
 * Where it is not technically feasible to record the event on the resource on which it occurs, then the operational use of another resource like a centralized log repository must record the event in a manner where the event can be linked to the resource on which it occurred.
 
 #### 6.3.7.4 Required Fields
-The security audit log must contain at minimum the following fields (where applicable and technically feasible): 
+The security audit log must contain at minimum the following fields (sec.mon.001) where applicable and technically feasible: 
 * Event type
 * Date/time
 * Protocol
 * Service or program used for access
 * Success/failure
 * Login ID — Where the Login ID is defined on the system/application/authentication server; otherwise, the field should contain 'unknown', in order to protect authentication credentials accidentally entered at the Login ID prompt from appearing in the security audit log.
-* Source IP Address
+* Source and destination IP Addresses and ports
 
 #### 6.3.7.5 Data Retention 
 * Log files must be retained for 180 days, or the relevant regulator mandate, or your customer mandate, whichever is higher.
