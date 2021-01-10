@@ -13,7 +13,7 @@
     * [6.3.4 Workload Security](#6.3.4) 
     * [6.3.5 Image Security](#6.3.5) 
     * [6.3.6 Security LCM](#6.3.6) 
-    * [6.3.7 Security Audit Logging](#6.3.7)
+    * [6.3.7 Monitoring and Security Audit](#6.3.7)
 
 ## 6.1 Introduction
 
@@ -32,11 +32,10 @@ https://docs.openstack.org/security-guide/introduction/introduction-to-openstack
 
 <a name="6.3.1"></a>
 ### 6.3.1 System Hardening
-All infrastructure should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas:
+All infrastructure should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas.
 
-#### 6.3.1.1 Servers boot hardening
-Servers boot process must be trusted. For this purpose, the integrity and authenticity of all BIOS firmware components must be verified at boot. Secure Boot based on UEFI must be used (sec.gen.003). By verifying the signatures of all BIOS components, Secure Boot will ensure servers start with the firmware expected and without malware insertion into the system. Secure Boot checks the digital signatures locally. To implement a chain of trust, Secure Boot must be extended by the use of a hardware based root of trust provided by a TPM. ... measued boot technologies with TPM as hardware and static root-of-trust.
-
+#### 6.3.1.1 Server boot hardening
+Server boot process must be trusted. For this purpose, the integrity and authenticity of all BIOS firmware components must be verified at boot. Secure Boot based on UEFI must be used (sec.gen.003). By verifying the signatures of all BIOS components, Secure Boot will ensure that servers start with the firmware expected and without malware insertion into the system. Secure Boot checks the digital signatures locally. To implement a chain of trust, Secure Boot must be complemented by the use of a hardware based Root of Trust provided by a TPM (Trusted Platform Module).
 
 #### 6.3.1.2 System Access
 Access to all the platform's components must be restricted applying the following rules:
@@ -46,7 +45,7 @@ Access to all the platform's components must be restricted applying the followin
 - Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
 
 #### 6.3.1.3 Password policy
-For all infrastructure components, passwords must be hardened and a strict password policy must be applied (req.sec.gen.002).
+For all infrastructure components, passwords must be hardened and a strict password policy must be applied (sec.gen.002).
 
 Passwords must be strengthened:
 - All vendors default passwords must be changed
@@ -65,9 +64,9 @@ Password's composition, complexity and policy should follow the recommendations 
 - Periodic (for example, Yearly, Quarterly, etc.)  password change or on key events such as indication of compromise, change of user roles, a defined period of inactivity, when a user leaves the organization, etc..
 
 #### 6.3.1.4 Function and Software
-Infrastructure should be implemented to perform the minimal function that’s practically needed to support Cloud Infrastructure. 
+Infrastructure must be implemented to perform the minimal function that’s practically needed to support Cloud Infrastructure. 
 
-Regarding software:
+Regarding software (sec.gen.004):
 - Install only software which is required to support the functions
 - Remove any unnecessary software or packages
 - Where software cannot be removed, disable all services to it
@@ -97,8 +96,6 @@ System should be implemented to allow installation of the latest patches to addr
 - Ensure logging and alerting is actively running
 - Run host-based scanning and fix all findings per vulnerability severity 
 - Run network-based scanning and fix all findings per vulnerability severity
-
-
 
 <a name="6.3.2"></a>
 ### 6.3.2 Platform Access
@@ -302,15 +299,15 @@ The storage for backup must be independent of storage offered to tenants.
 To defend against virus or other attacks, security patches must be installed for firmware, OS, Hypervisor and OpenStack services according to their criticality.
 
 <a name="6.3.7"></a>
-### 6.3.7 Security Audit Logging
-This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session and network activity, is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion. 
+### 6.3.7 Monitoring and Security Audit
+This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monotoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session and network activity(sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion(sec.mon011). 
 
-The handling of security incidents requires various levels of logging of key infrastructure, processes, and use behaviour. These logs have to be continuously monitored and analysed with alerts created for anomalies. The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
+The logs have to be continuously monitored and analysed with alerts created for anomalies. The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
 * Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure.
-* All security logging mechanisms must be active from system initialization. 
+* All security logging mechanisms must be active from system initialization (sec.mon.018): 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 
 #### 6.3.7.2 What to Log / What NOT to Log
@@ -333,13 +330,13 @@ Where technically feasible the following system events must be recorded:
 
 ##### What NOT to log
 Security audit logs must NOT contain:
-* Authentication credentials, even if encrypted (ex. password);
+* Authentication credentials, even if encrypted (ex. password) (sec.mon.019);
 * Keystone Token;
 * Proprietary or Sensitive Personal Information.
 
 #### 6.3.7.3 Where to Log
-* Where technically feasible, events MUST be recorded on the device (e.g. VM, physical node, etc.) where the event occurs. 
-* Where it is not technically feasible to record the event on the resource on which it occurs, then the operational use of another resource like a centralized log repository must record the event in a manner where the event can be linked to the resource on which it occurred.
+* The logs must be store in an external system (sec.mon018), in a manner where the event can be linked to the resource on which it occurred.
+* Where technically feasible, events MUST be recorded on the device (e.g. VM, physical node, etc.) where the event occurs, if the external logging system is not available (sec.mon.021).
 
 #### 6.3.7.4 Required Fields
 The security audit log must contain at minimum the following fields (sec.mon.001) where applicable and technically feasible: 
@@ -352,7 +349,7 @@ The security audit log must contain at minimum the following fields (sec.mon.001
 * Source and destination IP Addresses and ports
 
 #### 6.3.7.5 Data Retention 
-* Log files must be retained for 180 days, or the relevant regulator mandate, or your customer mandate, whichever is higher.
+* Log files must be retained for 180 days, or the relevant regulator mandate, or your customer mandate, whichever is higher (sec.mon.020).
 * Implementation and monitoring: after 180 days or your mandated retention period, security audit logs must be destroyed.
 
 #### 6.3.7.6 Security Logs Time Synchronisation
