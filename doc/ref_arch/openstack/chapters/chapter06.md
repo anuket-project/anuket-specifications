@@ -43,6 +43,8 @@ Access to all the platform's components must be restricted applying the followin
 - Change all default user accounts where technically feasible
 - Change all default credentials
 - Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+- The same authentication credentials must not be reused on different components (sec.sys.011)
+- Restrict access to Operating System (sec.gen.005)
 
 #### 6.3.1.3 Password policy
 For all infrastructure components, passwords must be hardened and a strict password policy must be applied (sec.gen.002).
@@ -72,7 +74,7 @@ Regarding software (sec.gen.004):
 - Where software cannot be removed, disable all services to it
 
 #### 6.3.1.5 Patches
-System should be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery:
+The platform must be audited and system must be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery(sec.gen.008, sec.mon007, sec.mon.011):
 | Severity | Time to Remediate |
 | ----------- | ----------- |
 | Zero-Day | Immediately or as soon as practically possible |
@@ -84,7 +86,7 @@ System should be implemented to allow installation of the latest patches to addr
 **See** [Common Vulnerability Scoring System](https://nvd.nist.gov/vuln-metrics/cvss)
 	
 #### 6.3.1.6 Network Protocols
-- Only allow protocols that are required by the system functions
+- Only allow protocols that are required by the system functions(sec.sys.002)
 - Tighten all required TCP/IP (Transmission Control Protocol/Internet Protocol) services
 
 #### 6.3.1.7 Anti-Virus and Firewall
@@ -101,7 +103,7 @@ System should be implemented to allow installation of the latest patches to addr
 ### 6.3.2 Platform Access
 
 #### 6.3.2.1 Identity Security
-The [OpenStack Identity service (Keystone)](https://docs.openstack.org/security-guide/identity.html) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end.
+The [OpenStack Identity service (Keystone)](https://docs.openstack.org/security-guide/identity.html) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the front end (sec.sys.006).
 
 OpenStack Keystone can work with an Identity service that your enterprise may already have, such as LDAP with Active Directory.  In those cases, the recommendation is to integrate Keystone with the cloud provider's Identity Services.  
 
@@ -119,7 +121,7 @@ Once a user is authenticated, a token is generated for authorization and access 
 Authorization serves as the next level of defense.  At its core, it checks if the authenticated users have the permission to execute an action. Most Identity Services support the notion of groups and roles. A user belongs to groups and each group has a list of roles that permits certain action on certain resources. OpenStack services reference the roles of the user attempting to access the service. OpenStack policy enforcer middleware takes into consideration the policy rules associated with each resource and the user’s group/roles and association to determine if access will be permitted for the requested resource. For more details on policies, please refer to the [OpenStack Policies](https://docs.openstack.org/security-guide/identity/policies.html#policy-section).
 
 #### 6.3.2.4 RBAC
-In order to properly manage user access to OpenStack services, service providers should utilize the Role Based Access Control (RBAC) system.  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles. 
+In order to properly manage user access to OpenStack services, service providers must utilize the Role Based Access Control (RBAC) system (sec.sys.001, sec.sys.007)).  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles. 
 
 Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Train release, Keystone applies the following personas consistently across its API.
 The reader role provides read-only access to resources within the system, a domain, or a project.
@@ -190,7 +192,7 @@ The Cloud Infrastructure must also provide the mechanism to identify corrupted d
 
 #### 6.3.3.1 Confidentiality and Integrity of communications
 
-It is essential to secure the infrastructure from external attacks. To counter this threat, API endpoints exposed to external networks must be protected by either a rate-limiting proxy or web application firewall and must be placed behind a reverse HTTPS proxy (sec.mon.008). Attacks can also be generated by corrupted internal components, and for this reason, it is security best practice to ensure integrity and confidentiality of all network communications (internal and external) by using Transport Layer Security (TLS) protocol.
+It is essential to secure the infrastructure from external attacks. To counter this threat, API endpoints exposed to external networks must be protected by either a rate-limiting proxy or web application firewall and must be placed behind a reverse HTTPS proxy (sec.mon.008). Attacks can also be generated by corrupted internal components, and for this reason, it is security best practice to ensure integrity and confidentiality of all network communications (internal and external) by using Transport Layer Security (TLS) protocol (sec.sys.003, sec.sys.004).
 When using TLS, according to the [OpenStack security guide](https://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html) recommendation, the minimum version to be used is TLS 1.2.
 
 3 categories of traffic will be protected using TLS:
@@ -198,7 +200,7 @@ When using TLS, according to the [OpenStack security guide](https://docs.opensta
 - communications between OpenStack components (OpenStack services, Bus message, Data Base)
 - management traffic
 
-Certificates used for TLS encryption must be signed by a trusted authority. To issue certificates for internal OpenStack users or services, the cloud provider can use a Public Key Infrastructure with its own internal Certification Authority (CA), certificate policies, and management.
+Certificates used for TLS encryption must be compliant with X.509 standards and be signed by a trusted authority (sec.sys.017). To issue certificates for internal OpenStack users or services, the cloud provider can use a Public Key Infrastructure with its own internal Certification Authority (CA), certificate policies, and management.
 
 #### 6.3.3.2 Integrity of OpenStack components configuration
 
@@ -206,14 +208,14 @@ The cloud deployment components/tools store all the information required to inst
 such as credentials. It is recommended to turn off deployment components after deployment to minimize attack surface area, limit the risk of compromise, and to deploy and provision the infrastructure through a dedicated network (VLAN).
 
 Configuration files contain sensitive information. 
-These files must be protected from malicious or accidental modifications or deletions by configuring strict access permissions for such files. All access, failed attempts to change and all changes (pre-change, post-change and by who) should be securely logged, and all failed access and failed changes should be alerted (sec.mon.006 and sec.mon.007).
+These files must be protected from malicious or accidental modifications or deletions by configuring strict access permissions for such files. All access, failed attempts to change and all changes (pre-change, post-change and by who) must be securely logged, and all failed access and failed changes must be alerted (sec.mon.005).
 
-The Cloud Infrastructure must provide the mechanisms to identify corrupted data (sec.mon.013):
+The Cloud Infrastructure must provide the mechanisms to identify corrupted data (sec.gen.009):
 - the integrity of configuration files and binaries must be checked by using cryptographic hash,
 - it is recommended to run scripts (such as checksec.sh) to verify the properties of the QEMU/KVM
 - it is recommended to use tool such as [CIS-CAT](https://www.cisecurity.org/cybersecurity-tools/cis-cat-pro/) (Center for Internet security- Configuration Assessment Tool) to check the compliance of systems configuration against respective [CIS benchmarks](https://www.cisecurity.org/cis-benchmarks/).
 
-It is strongly recommend to protect Linux repositories and Docker registries against the corruption of their data, by adopting protection measures such as hosting a local repository/registry with restricted and controlled access, and using TLS. 
+It is strongly recommend to protect Linux repositories and Docker registries against the corruption of their data, by adopting protection measures such as hosting a local repository/registry with restricted and controlled access, and using TLS (sec.img.004, sec.img.005, sec.img.006).
 This repository/registry must contain only signed images or packages.
 
 #### 6.3.3.3 Confidentiality and Integrity of tenant data (sec.mon.012 and sec.mon.013)
@@ -223,9 +225,9 @@ Tenant data are forwarded unencrypted over the network. Since the VNF is respons
 A Cloud actor must not be able to retrieve secrets used by VNF managers.
 All communications between the VNFM or orchestrator, and the infrastructure must be protected in integrity and confidentiality (e.g. by using TLS) and controlled via appropriate IP filtering rules. 
 
-The Cloud Infrastructure should onboard only trusted and verified VM images implying that VNF vendors provide signed images (sec.mon.012).
+The Cloud Infrastructure must onboard only trusted and verified VM images implying that VNF vendors provide signed images (sec.img.01, sec.mon.012).
 Images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
-It is recommended to scan all VM images with a vulnerability scanner. The scan is mandatory for images from unknown or untrusted sources.
+It is recommended to scan all VM images with a vulnerability scanner(sec.img.002). The scan is mandatory for images from unknown or untrusted sources.
 
 To mitigate tampering attacks, it is recommended to use [Glance image signing feature](https://docs.openstack.org/glance/pike/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
 
@@ -236,9 +238,9 @@ It is recommended to rely on Barbican, as key manager service of OpenStack.
 <a name="6.3.4"></a>
 ### 6.3.4 Workload Security
 
-OpenStack segregates its infrastructure (for example, hosts) by Regions, Host Aggregates and Availability Zones (AZ). Workloads can also be segregated by server groups (affinity and non-affinity groups). These options support the workloads placement requirement (sec.wl.001).
+OpenStack segregates its infrastructure (sec.ci.008) (for example, hosts) by Regions, Host Aggregates and Availability Zones (AZ). Workloads can also be segregated by server groups (affinity and non-affinity groups) (sec.sys.008). These options support the workloads placement requirement (sec.wl.001, sec.wl.004).
 
-Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (for example, Regions, AZs) but also requires network and storage segregation as in Regions but also AZs if engineered to do so. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (sec.wl.005 and sec.wl.006).
+Separation of non-production and production workloads, or by workload category (for example, payment card information, healthcare, etc.) requires separation through server groups (for example, Regions, AZs) but also requires network and storage segregation as in Regions, but also AZs if engineered to do so. Thus, the separation of these workloads is handled through placement of workloads in separate AZs and/or Regions (sec.wl.005 and sec.wl.006).
 
 Regions also support the sec.wl.004 requirement for separation by Location (for example, country).
 
@@ -258,7 +260,7 @@ Operators typically do not implement Security Groups when using SR-IOV or DPDK n
 
 Images from untrusted sources must not be used (sec.img.001). Valuable guidance on trusted image creation process and image signature verification is provided in the "Trusted Images" section of the [OpenStack Security Guide](https://docs.openstack.org/security-guide/instance-management/security-services-for-instances.html#trusted-images/). The OpenStack Security Guide includes reference to the "[OpenStack Virtual Machine Image Guide](https://docs.openstack.org/image-guide/)" that describes how to obtain, create, and modify OpenStack compatible virtual machine images. 
 
-Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance) (sec.gen.009). The operator will need toolsets for scanning images, including for virus and malware detection (sec.img.002, sec.wl.007).
+Images to be ingested, including signed images from trusted sources, need to be verified prior to ingestion into the Image Service (Glance) (sec.gen.009). The operator will need toolsets for scanning images, including for virus and malware detection (sec.img.002).
 Adding Signed Images to the Image Service (Glance) is specified in [OpenStack Operations Guide](https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images). 
 Image signing and verification protects image integrity and authenticity by enabling deployers to sign images and save the signatures and public key certificates as image properties. The creation of signature per individual artifact in the VNF package is required by [ETSI NFV SOL004](http://www.etsi.org/deliver/etsi_gs/NFV-SOL/001_099/004/02.03.01_60/gs_nfv-sol004v020301p.pdf).
 
@@ -268,11 +270,11 @@ Images must be also updated to benefit from the latest security patches (sec.gen
 
 <a name="6.3.6"></a>
 ### 6.3.6 Security LCM
-Cloud Infrastructure LCM encompasses provisioning, deployment, configuration and management (resources scaling, services upgrades…) as described in [chapter 7](./chapter07.md). These operations must be securely performed in order to keep the infrastructure safe and operational.
+Cloud Infrastructure LCM encompasses provisioning, deployment, configuration and management (resources scaling, services upgrades…) as described in [chapter 7](./chapter07.md). These operations must be securely performed in order to keep the infrastructure safe and operational (sec.lcm.003).
 
 **Provisioning/Deployment**
 
-Regarding the provisioning of servers, switches, routers and networking, tools must be used to automate the provisioning eliminating human error. For Infrastructure hardware resources, a set of recommendations is detailed in [7.2.1](./chapter07.md#7.2.1) to automate and secure their provisioning.
+Regarding the provisioning of servers, switches, routers and networking, tools must be used to automate the provisioning eliminating human error. For Infrastructure hardware resources, a set of recommendations is detailed in [7.2.1](./chapter07.md#7.2.1) to automate and secure their provisioning (sec.lcm.001).
 
 For OpenStack services and software components, deployment tools or components must be used to automate the deployment and avoid errors.  The deployment tool is a sensitive component storing critical information (deployment scripts, credentials…). 
 The following rules must be applied:
@@ -286,9 +288,9 @@ Strict access permissions must be set on OpenStack configuration files.
 
 **Configuration and management**
 
-Configuration operations must be tracked (sec.mon.006, sec.mon.007). Events such as system access attempts, actions with high privileges, modification of configuration must be logged and exported on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification (sec.mon.004).
+Configuration operations must be tracked (sec.gen.015, sec.mon.006, sec.mon.007). Events such as system access attempts, actions with high privileges, modification of configuration must be logged and exported on the fly to a distant storage. The communication channel used for log collection must be protected in integrity and confidentiality and logs protected against unauthorized modification (sec.mon.004).
 
-Per sec.lcm.002 requirement, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
+Per sec.sys.0016 and sec.lcm.002 requirements, management protocols limiting security risks must be used such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS. How to secure logging is described in the following section. 
 
 **Platform backup**
 
@@ -300,9 +302,9 @@ To defend against virus or other attacks, security patches must be installed for
 
 <a name="6.3.7"></a>
 ### 6.3.7 Monitoring and Security Audit
-This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monotoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session and network activity(sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion(sec.mon011). 
+This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monotoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session (sec.mon.010)and network activity(sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion(sec.mon011). 
 
-The logs have to be continuously monitored and analysed with alerts created for anomalies. The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
+The logs have to be continuously monitored and analysed with alerts created for anomalies(sec.lcm.005). The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
@@ -311,8 +313,8 @@ The logs have to be continuously monitored and analysed with alerts created for 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 
 #### 6.3.7.2 What to Log / What NOT to Log
-##### What to log
-Where technically feasible the following system events must be recorded:
+##### What to log 
+Where technically feasible the following system events must be recorded (sec.mon.005):
 * Successful and unsuccessful login attempts including:
     * Command line authentication (i.e. when initially getting token from keystone)
     * Horizon authentication
@@ -336,7 +338,8 @@ Security audit logs must NOT contain:
 
 #### 6.3.7.3 Where to Log
 * The logs must be store in an external system (sec.mon018), in a manner where the event can be linked to the resource on which it occurred.
-* Where technically feasible, events MUST be recorded on the device (e.g. VM, physical node, etc.) where the event occurs, if the external logging system is not available (sec.mon.021).
+* Where technically feasible, events must be recorded on the device (e.g. VM, physical node, etc.) where the event occurs, if the external logging system is not available (sec.mon.021).
+* Security audit logs must be protected in transit and at rest (sec.mon04).
 
 #### 6.3.7.4 Required Fields
 The security audit log must contain at minimum the following fields (sec.mon.001) where applicable and technically feasible: 
