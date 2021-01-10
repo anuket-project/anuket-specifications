@@ -35,7 +35,8 @@ https://docs.openstack.org/security-guide/introduction/introduction-to-openstack
 All infrastructure should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas.
 
 #### 6.3.1.1 Server boot hardening
-Server boot process must be trusted. For this purpose, the integrity and authenticity of all BIOS firmware components must be verified at boot. Secure Boot based on UEFI must be used (sec.gen.003). By verifying the signatures of all BIOS components, Secure Boot will ensure that servers start with the firmware expected and without malware insertion into the system. Secure Boot checks the digital signatures locally. To implement a chain of trust, Secure Boot must be complemented by the use of a hardware based Root of Trust provided by a TPM (Trusted Platform Module).
+Server boot process must be trusted. For this purpose, the integrity and authenticity of all BIOS firmware components must be verified at boot. Per sec.gen.003 requirement, Secure Boot based on UEFI must be used. By verifying the signatures of all BIOS components, Secure Boot will ensure that servers start with the firmware expected and without malware insertion into the system.  
+Secure Boot checks the digital signatures locally. To implement a chain of trust, Secure Boot must be complemented by the use of a hardware based Root of Trust provided by a TPM (Trusted Platform Module).
 
 #### 6.3.1.2 System Access
 Access to all the platform's components must be restricted applying the following rules:
@@ -225,7 +226,7 @@ Tenant data are forwarded unencrypted over the network. Since the VNF is respons
 A Cloud actor must not be able to retrieve secrets used by VNF managers.
 All communications between the VNFM or orchestrator, and the infrastructure must be protected in integrity and confidentiality (e.g. by using TLS) and controlled via appropriate IP filtering rules. 
 
-The Cloud Infrastructure must onboard only trusted and verified VM images implying that VNF vendors provide signed images (sec.img.01, sec.mon.012).
+The Cloud Infrastructure must onboard only trusted and verified VM images implying that VNF vendors provide signed images (sec.img.001, sec.mon.012).
 Images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
 It is recommended to scan all VM images with a vulnerability scanner(sec.img.002). The scan is mandatory for images from unknown or untrusted sources.
 
@@ -302,15 +303,16 @@ To defend against virus or other attacks, security patches must be installed for
 
 <a name="6.3.7"></a>
 ### 6.3.7 Monitoring and Security Audit
-This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monotoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session (sec.mon.010)and network activity(sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion(sec.mon011). 
+This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monotoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session (sec.mon.010)and network activity(sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion(sec.mon.011). 
 
 The logs have to be continuously monitored and analysed with alerts created for anomalies(sec.lcm.005). The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
 
 #### 6.3.7.1 Creating Logs
-* All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs.
-* Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure.
+* All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs (sec.mon.001).
+* Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure (sec.mon.001).
 * All security logging mechanisms must be active from system initialization (sec.mon.018): 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
+* Logs must be time synchronised (sec.mon.002).
 
 #### 6.3.7.2 What to Log / What NOT to Log
 ##### What to log 
@@ -356,6 +358,7 @@ The security audit log must contain at minimum the following fields (sec.mon.001
 * Implementation and monitoring: after 180 days or your mandated retention period, security audit logs must be destroyed.
 
 #### 6.3.7.6 Security Logs Time Synchronisation
-The host and various system clocks must be synchronized with the NTP server (sec.mon.002). In any time synchronisation, we need to specify the synchronization interval and the tolerance where the latter specifies the permissible difference the local time cane out of synch.
+The host and various system clocks must be synchronised with an authenticated time service/NTP server (sec.gen.007). 
 
+In any time synchronisation, we need to specify the synchronisation interval and the tolerance where the latter specifies the permissible difference the local time can be out of synchronisation.
 Whenever the time synchronisation forces the local time to change or the use of another NTP server, the change details must be logged including time server source, time, date and time zones (sec.mon.003).
