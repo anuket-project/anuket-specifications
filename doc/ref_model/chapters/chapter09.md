@@ -255,7 +255,7 @@ The following requirements also aims at deploying smoothly and easily all CI/CD
 toolchains via simple playbooks as targeted by the Reference Conformance
 suites currently leveraging [XtestingCI](https://galaxy.ansible.com/collivier/xtesting).
 
-Ref #           | Description                                                                                                    |
+Ref #           | Description                                                                                                    | Comments |
 ----------------|----------------------------------------------------------------------------------------------------------------|
 design.cicd.001 | The pipeline must allow chaining all deployment and test operations from baremetal to the network services     |
 design.cicd.002 | The pipeline should be modular to only execute a subset of the overall steps                                   |
