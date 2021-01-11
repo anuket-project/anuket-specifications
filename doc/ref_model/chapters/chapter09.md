@@ -235,7 +235,7 @@ auto.cicd.014 | The CD pipeline must be able to automatically promote software f
 <p align="center"><b>Table 9-4:</b> Automation CI/CD</p>
 
 
-#### 9.5.2.2 CI/CD Design Requirements
+#### 9.5.2.3 CI/CD Design Requirements
 
 A couple of CI/CD pipeline properties and rules must be agreed between the
 different actors to allow smoothly deploy and test the cloud infrastructures
