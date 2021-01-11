@@ -11,6 +11,7 @@
   * [9.5.1 Infrastructure LCM Automation](#9.5.1)
   * [9.5.2 Software Onboarding Automation and CI/CD Requirements](#9.5.2)
   * [9.5.3 Tenant creation automation](#9.5.3)
+* [9.6 Telemetry and Observability]
 
 <a name="9.1"></a>
 ## 9.1 Introduction
@@ -242,4 +243,83 @@ auto.cicd.014 | The CD pipeline must be able to automatically promote software f
 
 <a name="9.5.3.2"></a>
 #### 9.5.3.2. Tenant Networking Automation
+
+
+<a name="9.6"></a>
+#### 9.6. Telemetry and Observability
+
+Operating complex distributed systems, such as Telco network, is a demanding and challenging task, being increased as the production excellence requirement grows. There are multiple reasons why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services, a complex system is divided into multiple blocks with functional differences, called network functions. Internal communication between diversity of network functions of a distributed system is based on a message exchange. To formalize it, clearly defined interfaces are introduced, and protocols are being designed. Even though the architecture of Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces, and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is indeed a system with remarkably high level of complexity which requires significant efforts for operating it.
+
+To ensure proper support and flawless work in the large ecosystem of end user services, a formalized approach directed towards high reliability and scalability of systems is required. The discipline which applies well known practices of software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to overcome missing limitations of the common DevOps approach.
+
+Common supporting system (OSS – Operation Support System, BSS – Business Support System) requirements are redefined, driven by introduction of new technologies in computing infrastructure; modern data centres with abstraction of resources – known as virtualization and cloud computing. This brings many advantages – such as easy scaling, error recovery, reaching a high level of operational autonomy etc., but also many new challenges in the Telecom network management space. Those novel challenges are mostly directed towards the dynamical nature of the system, orientation towards microservices instead of a silo approach, and huge amounts of data which has to be processed in order to understand the internal status of the system. Hence the need of improved ways to monitor systems - observability.
+
+
+<a name="9.6.1"></a>
+#### 9.6.1. Why Observability
+
+Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and most importantly, before they call the help desk. This requires to collect alarms and telemetry data from the physical layer (wires), the cloud infrastructure up to the network, application and services virtualized functions (VNF) running on top of Cloud Infrastructure, typically isolated by tenants.		
+
+Long term trending data are essential for capacity planning purposes and typically collected, aggregated and kept over the full lifespan. To keep the amount of data collected manageable, automatic data reduction algorithms are typically used, e.g. by merging data points from the smallest intervals to more granular intervals.
+
+A cloud typically consists of one or more regional data centers, central offices, and edge sites. These are managed from redundant central management sites, each hosted in their own data centers.
+
+While many Telco Clouds start as a vertical cloud by hosting one prime application, e.g. IMS, the intent is to host more applications over time in order to truly maximize the cloud to its full potential. Therefore it is pure coincidence to have the same team responsible and manage the infrastructure and the application running on top. Network services and applications deployed on a Telco Cloud are managed by separate teams, within the same or different organizations and a monitoring solution must be capable of keeping the collection of monitoring data isolated between tenants and NFVI. At the same time, some monitoring data from the NFVI layer must selectively be available to tenant monitoring applications in order to correlate e.g. VNF metrics with the underlying infrastructure it currently runs on.
+
+<a name="9.6.2"></a>
+#### 9.6.2. What to Monitor
+
+These physical and virtual devices need to be monitored: 
+
+* Network Services across sites and tenants 							
+* Virtualized functions per site and tenant
+* Individual Virtual Machines and Containers
+* Virtualization infrastructure components
+* Physical servers (compute) and network elements
+* Toolservers with their applications (DNS, IdM, ZTP, etc) 
+* Cabling 
+
+<a name="9.6.3"></a>
+#### 9.6.3. The Architecture
+
+In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads and infrastructure components. Furthermore, it is even more important to be able to correlate between the metrics provided by these entities to determine the performance and/or issues in such deployments. 
+
+The cloud deployment tends to shrink and expand based upon the customer demand. Therefore, an architecture is required that can scale on demand and does not force a strong tie between various entities. This means, the workloads and cloud infrastructure components that provide telemetry/performance metrics must not be burdened to discover each other. The capacity (e.g. speed, storage) of one component must not force overrun or underrun situations that would cause critical data to be lost or delayed to a point to render it useless. 
+
+Operators in charge of the Cloud Infrastructure (physical infra plus virtualization platform) require very detailed alarms and metrics to efficiently run their platform. While they need indicators about how well or poorly individual virtual machines and containers run, they don’t need a view inside these workloads. In fact, what and how workloads do is none of the NFVI operators business. The architecture must allow for different consumers to grant or deny access to available resources.
+
+Multiple workloads or network services can be deployed onto one or more sites. These workloads require logical separation so that their metrics don’t mix by accident or simply based on security and privacy requirements. This is achieved by deploying these workloads within their own tenant space. All virtualization platforms offer such isolation down to virtual networks per tenant.
+
+
+<a name="9.6.3.1"></a>
+#### 9.6.3.1. Push Vs. Pull
+
+Two widely deployed models for providing telemetry data are pull and push. 
+
+ <a name="9.6.3.1.1"></a>
+#### 9.6.3.1.1. Pull Model
+
+Typical characteristics of a pull model are:
+
+* The consumers are required to discover the producers of the data
+* Once the producers are identified, there should be a tight relationship (synchronization) between the producer and consumer. For example, if a producer encounters a LCM (Life Cycle Management) event - such as it moves to a different location or reboots/restarts, the consumer must re-discover it and bind the relationship again - makes the systems very complex in terms of configuration as well management. 
+* Data is pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage to deal with this data - example SNMP pull/walks
+
+ <a name="9.6.3.1.2"></a>
+#### 9.6.3.1.2. Push Model
+
+Typical characteristics of a push model are:
+
+* Declarative definition of destination - The producers of data know explicitly where to stream/push their data
+* A “well known” data broker is utilized - all consumers and producers know about it through declarative definition. The data broker can be a bus such as RabitMQ, Apache Kafka, Apache Pulsar
+* No restrictions on the bandwidth or data storage constraints on producers or consumers. Producers produce the data and stream/push it to the broker and consumers pull the data from the broker. No explicit sync is required between producers and consumers. 
+* LCM (Life Cycle Management) events, such as moves, reboot/restarts, of consumers or producers have no impact on others.
+* Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and scalable and better suited for large (or small) geographically dispersed telco clouds. 
+* Example of push model are gRPC, SNMP traps, syslogs
+
+
+
+
+
+
 
