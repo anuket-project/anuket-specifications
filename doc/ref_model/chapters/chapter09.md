@@ -260,7 +260,7 @@ Ref #           | Description                                                   
 design.cicd.001 | The pipeline must allow chaining all deployment and test operations from baremetal to the network services     |
 design.cicd.002 | The pipeline jobs should be modular | This allows execution of jobs independently of others, for example, start with an existing OpenStack  deployment   |
 design.cicd.003 | The pipeline must decouple the deployment and the test steps                                                   |
-design.cicd.004 | The pipeline should leverage the jobs artifacts proposed by the CI/CD tool                                     |
+design.cicd.004 | The pipeline should leverage the job artifacts specified by the operator provided CI/CD tools                                     |  |
 design.cicd.005 | The pipeline must execute all relevant Reference Conformance suites as they are                                |
 design.cicd.006 | All single jobs must not ask for a specific CI/CD tool                                                         |
 design.cicd.007 | All single jobs must be packaged as containers                                                                 |
