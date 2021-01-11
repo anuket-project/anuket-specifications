@@ -287,9 +287,14 @@ or ones built into the application. Management of external load balancers must
 be possible via Kubernetes API objects.
 - **Other Features**: these additional features that are required by the
 networking solution as a whole, may be delivered by the **"Default CNI Plugin"**,
-or the **"CNI multiplexer/meta-plugin"** if it is deployed. For example,
-the integration of SDN solutions required by `req.inf.ntw.05` is enabled
+or the **"CNI multiplexer/meta-plugin"** if it is deployed. For example:
+    - The integration of SDN solutions required by `req.inf.ntw.05` is enabled
 via CNI integration.
+    - IP Address Management (**IPAM**) of the various networks can be provided
+by one or more IPAM plugins, which can be part of a CNI plugin, or some other
+component (i.e. external SDN solution) - it is key that there are no overlapping
+IP addresses within a cluster, and if multiple IPAM solutions are used that
+they are co-ordinated in some way (as required by `req.inf.ntw.10`).
 - **Service Mesh**: The well known service meshes are "application service meshes"
 that address and interact with the application layer 7 protocols (eg.: HTTP)
 only. Therefore, their support is not required in this architecture, as these
