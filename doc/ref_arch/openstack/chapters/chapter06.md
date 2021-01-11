@@ -32,7 +32,7 @@ https://docs.openstack.org/security-guide/introduction/introduction-to-openstack
 
 <a name="6.3.1"></a>
 ### 6.3.1 System Hardening
-All infrastructure should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas.
+All infrastructure components should undergo system hardening, establish processes to govern the hardening, and documents to cover at a minimal for the following areas.
 
 #### 6.3.1.1 Server boot hardening
 Server boot process must be trusted. For this purpose, the integrity and authenticity of all BIOS firmware components must be verified at boot. Per sec.gen.003 requirement, Secure Boot based on UEFI must be used. By verifying the signatures of all BIOS components, Secure Boot will ensure that servers start with the firmware expected and without malware insertion into the system.  
