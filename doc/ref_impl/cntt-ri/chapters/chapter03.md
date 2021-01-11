@@ -285,7 +285,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
 
 ## 3.6 Cloud Infrastructure and VIM Architecture
-This sections concludes the expectation for NFVI and VIM architecture according to [RA1: Chapter 3 NFVI + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md)
+This sections concludes the expectation for Cloud Infrastructure and VIM architecture according to [RA1: Chapter 3 Cloud Infrastructure + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md)
 
 | Requirement Area | Description |
 |----|-------------------------------------------------------------------------------|
