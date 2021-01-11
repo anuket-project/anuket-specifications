@@ -256,7 +256,7 @@ toolchains via simple playbooks as targeted by the Reference Conformance
 suites currently leveraging [XtestingCI](https://galaxy.ansible.com/collivier/xtesting).
 
 Ref #           | Description                                                                                                    | Comments |
-----------------|----------------------------------------------------------------------------------------------------------------|
+----------------|----------------------------------------------------------------------------------------------------------------|---|
 design.cicd.001 | The pipeline must allow chaining all deployment and test operations from baremetal to the network services     |
 design.cicd.002 | The pipeline should be modular to only execute a subset of the overall steps                                   |
 design.cicd.003 | The pipeline must decouple the deployment and the test steps                                                   |
