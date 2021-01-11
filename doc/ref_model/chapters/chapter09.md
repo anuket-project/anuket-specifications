@@ -265,7 +265,7 @@ design.cicd.005 | The pipeline must execute all relevant Reference Conformance s
 design.cicd.006 | Software vendors/providers must utilise operator provided CI/CD tools                                                        |  |
 design.cicd.007 | All jobs must be packaged as containers                                                                 |   |
 design.cicd.008 | All jobs should leverage a common execution to allow templating all deployment and test steps                  |
-design.cicd.009 | The deployment jobs must publish all outputs as artifacts in the best formats (OpenStack RC, kubeconfig, etc.) |
+design.cicd.009 | The deployment jobs must publish all outputs as artifacts in a specified format | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
 design.cicd.010 | All test jobs must download all inputs as artifacts in the best formats (OpenStack RC, kubeconfig, etc.)       |
 design.cicd.011 | All test jobs should conform with the Reference Conformance test case integration requirements                 |
 
