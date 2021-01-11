@@ -261,7 +261,9 @@ the networking solution is managed using an abstract management API.
 - **Default CNI Plugin (Cluster Network)**: this is the default cluster network plugin
 that has been deployed within the cluster to provide IP addresses to Pods. Note that
 support for IPv6 requires not only changes in the Kubernetes control plane, but
-also requires the use of a CNI Plugin that support dual-stack networking.
+also requires the use of a CNI Plugin that support dual-stack networking. This
+can be managed by config file or via the Kubernetes API Server (e.g. through the
+use of Custom Resource Definitions) or a combination of the two.
 - **CNI multiplexer/meta-plugin**: as described above, this is an optional component
 that integrates with the Kubernetes control plane via CNI, but allows for the
 use of multiple CNI plugins and the provision of multiple network connections to
@@ -270,10 +272,16 @@ the Pod. Note that the different network characteristics of the interfaces might
 require different networking technologies, which would potentially require
 different CNI plugins. Also note that this is only required for the Network
 Intensive profile.  Example CNI implementations which meet these requirements
-include Multus and DANM.
+include Multus and DANM.  This can be managed by config file or via the Kubernetes
+API Server (e.g. through the use of Custom Resource Definitions) or a combination
+of the two, with the additional connections to Pods being managed through the
+Kubernetes API server.
 - **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
 additional networking needs to Pods, that aren't provided by the default CNI plugin.
 This can include connectivity to underlay networks via accelerated hardware devices.
+This can be managed by config file or via the Kubernetes API Server (e.g.
+through the use of Custom Resource Definitions) or a combination of the two, with
+the additional connections to Pods being managed through the Kubernetes API server.
 - **Device Plugin**: this is a Kubernetes extension that allows for the management
 and advertisement of vendor hardware devices. In particular, devices such as
 FPGA, SR-IOV NICs, SmartNICs, etc. can be made available to Pods by using Device Plugins.
