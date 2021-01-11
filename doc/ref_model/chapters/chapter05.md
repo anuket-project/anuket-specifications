@@ -253,7 +253,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 <a name="5.3"></a>
 ## 5.3 Cloud Infrastructure Hardware Profile description
 
-The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as compute host, host, node, or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as #CPUs (sockets), # of cores/CPU, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, <!--software (VIM, Hypervisor, Operating System),--> specialised hardware (such as accelerators), the underlay networking, and storage.
+The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as compute host, host, node, or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as number of CPU sockets, number of CPU cores, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, <!--software (VIM, Hypervisor, Operating System),--> specialised hardware (such as accelerators), the underlay networking, and storage.
 
 This chapter defines a simplified host, host profile and related capabilities model associated with each of the different Cloud Infrastructure Hardware Profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 5-4**.
 
@@ -282,10 +282,10 @@ _**For Example:** for software profile “n” (network intensive) the above hos
 > **Note:** resource pools are not OpenStack host aggregates.
 
 The host profile and capabilities include:
-1. **# of CPUs (sockets)**: is the #of CPUs installed on the physical server.
-1. **# of cores/CPU**: is the number of cores on each of the CPUs of the physical server.
+1. **Number of CPU sockets**: is the number of CPUs installed on the physical server.
+1. **Number of CPU cores**: is the number of cores on each of the CPUs of the physical server.
 1. **RAM (GB)**: is the amount of RAM installed on the physical server.
-1. **Local Disk Capacity**: is the # of local disks and the capacity of the disks installed on the physical server.
+1. **Local Disk Capacity**: is the number of local disks and the capacity of the disks installed on the physical server.
 1. **SMT (Simultaneous Multithreading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
 1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized workloads. Configured in the host.
 1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to enable SR-IOV.
@@ -318,8 +318,8 @@ The configurations specified in here will be used in specifying the actual hardw
 
 | Reference           | Feature                                             | Description                                                        | Basic Type | Network Intensive |
 |---------------------|-----------------------------------------------------|--------------------------------------------------------------------|------------|-------------------|
-| infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets  | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
-| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU  | This determines the number of cores needed per CPU.                | 20         | 20                |
+| infra.hw.cpu.cfg.001 | Minimum number of CPU sockets  | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
+| infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | This determines the number of cores needed per CPU.                | 20         | 20                |
 | infra.hw.cpu.cfg.003 | NUMA alignment                    | NUMA alignment support and BIOS configured to enable NUMA                    | N          | Y                 |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
 
@@ -387,13 +387,13 @@ The configurations specified in here will be used in specifying the actual hardw
 
 | Reference           | Feature    | Description                                     | Basic Type | Network Intensive |
 |---------------------|------------|-------------------------------------------------|------------|-------------------|
-| infra.hw.nic.cfg.001 | NIC Ports  | Total Number of NIC Ports available in the host | 4          | 4                 |
+| infra.hw.nic.cfg.001 | NIC Ports  | Total number of NIC Ports available in the host | 4          | 4                 |
 | infra.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values)   | 10         | 25                |
 
 <!--
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
 |---------------------|-----------|---------------------------|--------|--------|--------|
-| infra.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the host | 4 | 4 | 4 |
+| infra.hw.nic.cfg.001 | NIC Ports | Total number of NIC Ports available in the host | 4 | 4 | 4 |
 | infra.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values) | 10 | 25 | 25 |
 -->
 
