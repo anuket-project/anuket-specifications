@@ -258,7 +258,7 @@ suites currently leveraging [XtestingCI](https://galaxy.ansible.com/collivier/xt
 Ref #           | Description                                                                                                    | Comments |
 ----------------|----------------------------------------------------------------------------------------------------------------|---|
 design.cicd.001 | The pipeline must allow chaining all deployment and test operations from baremetal to the network services     |
-design.cicd.002 | The pipeline should be modular to only execute a subset of the overall steps                                   |
+design.cicd.002 | The pipeline jobs should be modular | This allows execution of jobs independently of others, for example, start with an existing OpenStack  deployment   |
 design.cicd.003 | The pipeline must decouple the deployment and the test steps                                                   |
 design.cicd.004 | The pipeline should leverage the jobs artifacts proposed by the CI/CD tool                                     |
 design.cicd.005 | The pipeline must execute all relevant Reference Conformance suites as they are                                |
