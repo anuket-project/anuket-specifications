@@ -255,19 +255,19 @@ The following requirements also aims at deploying smoothly and easily all CI/CD
 toolchains via simple playbooks as targeted by the Reference Conformance
 suites currently leveraging [XtestingCI](https://galaxy.ansible.com/collivier/xtesting).
 
-Ref #           | Description                                                                                                    | Comments |
-----------------|----------------------------------------------------------------------------------------------------------------|---|
-design.cicd.001 | The pipeline must allow chaining of independent CI/CD jobs | For example, all deployment and test operations from baremetal to Kubernetes, OpenStack, to the network services   |
-design.cicd.002 | The pipeline jobs should be modular | This allows execution of jobs independently of others, for example, start with an existing OpenStack  deployment   |
-design.cicd.003 | The pipeline must decouple the deployment and the test steps                                                   |  |
-design.cicd.004 | The pipeline should leverage the job artifacts specified by the operator provided CI/CD tools                                     |  |
-design.cicd.005 | The pipeline must execute all relevant Reference Conformance suites without modification                                |  |
-design.cicd.006 | Software vendors/providers must utilise operator provided CI/CD tools                                                        |  |
-design.cicd.007 | All jobs must be packaged as containers                                                                 |   |
-design.cicd.008 | All jobs must leverage a common execution to allow templating all deployment and test steps                  |  |
-design.cicd.009 | The deployment jobs must publish all outputs as artifacts in a specified format | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
-design.cicd.010 | Test jobs must provide all inputs as artifacts in a specified format | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC       |
-design.cicd.011 | Test jobs must conform with the Reference Conformance test case integration requirements                 |  |
+Ref #           | Description                                                                                   | Comments |
+----------------|-----------------------------------------------------------------------------------------------|----------|
+design.cicd.001 | The pipeline must allow chaining of independent CI/CD jobs                                    | For example, all deployment and test operations from baremetal to Kubernetes, OpenStack, to the network services |
+design.cicd.002 | The pipeline jobs should be modular                                                           | This allows execution of jobs independently of others, for example, start with an existing OpenStack  deployment |
+design.cicd.003 | The pipeline must decouple the deployment and the test steps                                  |          |
+design.cicd.004 | The pipeline should leverage the job artifacts specified by the operator provided CI/CD tools |          |
+design.cicd.005 | The pipeline must execute all relevant Reference Conformance suites without modification      |          |
+design.cicd.006 | Software vendors/providers must utilise operator provided CI/CD tools                         |          |
+design.cicd.007 | All jobs must be packaged as containers                                                       |          |
+design.cicd.008 | All jobs must leverage a common execution to allow templating all deployment and test steps   |          |
+design.cicd.009 | The deployment jobs must publish all outputs as artifacts in a specified format               | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
+design.cicd.010 | The test jobs must pull all inputs as artifacts in a specified format                         | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
+design.cicd.011 | The test jobs must conform with the Reference Conformance test case integration requirements  |          |
 
 <p align="center"><b>Table 9-5:</b> CI/CD Design</p>
 
