@@ -261,9 +261,7 @@ the networking solution is managed using an abstract management API.
 - **Default CNI Plugin (Cluster Network)**: this is the default cluster network plugin
 that has been deployed within the cluster to provide IP addresses to Pods. Note that
 support for IPv6 requires not only changes in the Kubernetes control plane, but
-also requires the use of a CNI Plugin that support dual-stack networking. This
-can be managed by config file or via the Kubernetes API Server (e.g. through the
-use of Custom Resource Definitions) or a combination of the two.
+also requires the use of a CNI Plugin that support dual-stack networking.
 - **CNI multiplexer/meta-plugin**: as described above, this is an optional component
 that integrates with the Kubernetes control plane via CNI, but allows for the
 use of multiple CNI plugins and the provision of multiple network connections to
@@ -272,16 +270,10 @@ the Pod. Note that the different network characteristics of the interfaces might
 require different networking technologies, which would potentially require
 different CNI plugins. Also note that this is only required for the Network
 Intensive profile.  Example CNI implementations which meet these requirements
-include Multus and DANM.  This can be managed by config file or via the Kubernetes
-API Server (e.g. through the use of Custom Resource Definitions) or a combination
-of the two, with the additional connections to Pods being managed through the
-Kubernetes API server.
+include Multus and DANM.
 - **CNI Plugin (Additional)**: this is a CNI plugin that is used to provide
 additional networking needs to Pods, that aren't provided by the default CNI plugin.
 This can include connectivity to underlay networks via accelerated hardware devices.
-This can be managed by config file or via the Kubernetes API Server (e.g.
-through the use of Custom Resource Definitions) or a combination of the two, with
-the additional connections to Pods being managed through the Kubernetes API server.
 - **Device Plugin**: this is a Kubernetes extension that allows for the management
 and advertisement of vendor hardware devices. In particular, devices such as
 FPGA, SR-IOV NICs, SmartNICs, etc. can be made available to Pods by using Device Plugins.
@@ -314,6 +306,25 @@ architecture.
 
 <!--The above diagram is maintained here:
 https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
+
+There are a number of different methods involved in managing, configuring and
+consuming networking resources in Kubernetes, including:
+- The Default Cluster Network can be installed and managed by config files,
+Kubernetes API Server (e.g. Custom Resource Definitions) or a combination of the
+two.
+- Additional networking management plane (e.g. CNI multiplexer/meta-plugin or
+federated networking manager) can be installed and managed by config files,
+Kubernetes API Server (e.g. Custom Resource Definitions) or a combination of the
+two.
+- The connecting of Pods to the Default Cluster Network is handled by the Default
+CNI Plugin (Cluster Network).
+- The connecting of Pods to the additional networks is handled by the additional
+networking management plane through the Kubernetes API (e.g. Custom Resource
+Definitions, Device Plugin API).
+- Configuration of these additional network connections to Pods (i.e. provision of
+an IP address to a Pod) can either be managed through the Kubernetes API (e.g.
+Custom Resource Definitions) or an external mangement plane (e.g. dynamic
+address assignment from a VPN server).
 
 There are several types of low latency and high throughput networks required by
 telco workloads: signalling traffic workloads and user plane traffic workloads.
