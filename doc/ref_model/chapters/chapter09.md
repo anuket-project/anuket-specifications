@@ -189,18 +189,25 @@ As such the requirements for Capacity Management on the infrastructure are cover
 
 <a name="9.5.2.1"></a>
 #### 9.5.2.1 Software Onboarding Automation
-The Cloud Infrastructure workload onboarding process describes activities needed for the integration of tenants' workloads into the Cloud Infrastructure environment. Typically, this business process consists of the following key phases:
-1. Tenant Engagement and Workload Evaluation:
+For software deployment, as far as Cloud Infrastructure services or workloads are concerned, automation is the core of DevOps concept. Automation allows to eliminate manual processes, reducing human errors and speeding software deployments. The prerequisite is to install CI/CD tools chain to:
+- Build, package, test application/software
+- Store environment's parameters and configurations
+- Automate the delivery and deployment
+ 
+The CI/CD pipeline is used to deploy, test and update the Cloud Infrastructure services, and also to onboard workloads hosted on the infrastructure. Typically, this business process consists of the following key phases:
+1. Tenant Engagement and Software Evaluation:
     - In this phase the request from the tenant to host a workload on the Cloud Infrastructure platform is assessed and a decision made on whether to proceed with the hosting request.
+    - If the Cloud infrastructure software needs to be updated or installed, an evaluation is made of the impacts (including to tenants) and if it is OK to proceed 
     - This phase may also involve the tenant accessing a pre-staging environment to perform their own evaluation and/or pre-staging activities in preparation for later onboarding phases.
-2. Workload Packaging:
-    - The main outcome of this phase is to produce the workload deployable image and  the deployment manifests (such as TOSCA blueprints or HEAT templates or Helm charts) that will define the Cloud Infrastructure service attributes for the workload. 
-    - The workload packaging can be performed by the tenant, through self-service capabilities or by the Cloud Infrastructure Operations team.
-3. Workload Validation and Certification:
-    - In this phase the workload is deployed and tested to validate it against the service design and other Operator specific acceptance criteria, as required.
-    - Workload validation and certification should be automated using CI/CD toolsets / pipelines and Test as a Service (TaaS) capabilities.
-4. Publish Workload:
-    - After the workload is certified the final onboarding process phase is for it to be published to the Cloud Infrastructure  production catalogue from where it can be instantiated on the Cloud Infrastructure platform by the tenant.
+2. Software Packaging:
+    - The main outcome of this phase is to produce the software deployable image and the deployment manifests (such as TOSCA blueprints or HEAT templates or Helm charts) that will define the Cloud Infrastructure service attributes. 
+    - The software packaging can be automated or performed by designated personnel, through self-service capabilities (for tenants) or by the Cloud Infrastructure Operations team.
+3. Software Validation and Certification:
+    - In this phase the software is deployed and tested to validate it against the service design and other Operator specific acceptance criteria, as required.
+    - Software validation and certification should be automated using CI/CD toolsets / pipelines and Test as a Service (TaaS) capabilities.
+4. Publish Software:
+    - Tenant Workloads: After the software is certified the final onboarding process phase is for it to be published to the Cloud Infrastructure production catalogue from where it can be instantiated on the Cloud Infrastructure platform by the tenant.
+    - Cloud Infrastructure software: After the software is certified, it is scheduled for deployment inconcurrence with the user community.
     
 All phases described above can be automated using technology specific toolsets and procedures.  Hence, details of such automation are left for the technology specific Reference Architecture and Reference Implementation specifications.
 
