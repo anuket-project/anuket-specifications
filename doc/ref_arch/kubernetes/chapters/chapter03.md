@@ -235,7 +235,10 @@ announced independently.
 However, for more complex requirements such as providing connectivity through
 acceleration hardware, there are three approaches that can be taken, with Table 3-1
 showing some of the differences between networking solutions that consist of
-these options:
+these options. It is important to note that different networking solutions require
+different descriptors from the Kubernetes workloads (specifically, the deployment
+artefacts such as YAML files, etc.), therefore the networking solution should be
+agreed between the CNF vendors and the CNF operators:
 - The **Default CNI Plugin** through the use of deployment specific configuration
 (e.g. [Tungsten Fabric](https://tungstenfabric.github.io/website/Tungsten-Fabric-Architecture.html#vrouter-deployment-options))
 - A **multiplexer/meta-plugin** that integrates with the Kubernetes control plane
