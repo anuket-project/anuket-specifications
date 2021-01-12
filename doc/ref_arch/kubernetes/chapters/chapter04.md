@@ -65,11 +65,7 @@ the following specifications:
 |`ra2.ch.015`|Physical NIC Speed - Network Intensive Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Network Intensive profile must be at least 25Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.015`|Physical PCIe slots|The physical machines on which the Kubernetes Nodes run must be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.|
 |`ra2.ch.016`|Immutable infrastructure|Whether physical or virtual machines are used, the Kubernetes Node is not changed after it is made ready for use. New changes to the Kubernetes Node are rolled out as new instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|[`req.gen.cnt.02`](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ch.017`||||
-|`ra2.ch.018`||||
-|`ra2.ch.019`||||
-|`ra2.ch.020`||||
-|`ra2.ch.021`||||
+
 
 <p align="center"><b>Table 4-1:</b> Host OS Specifications</p>
 
@@ -93,11 +89,6 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.008`|System Resource Reservations|To avoid resource starvation issues on nodes, reserve compute resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, etc. (requires Kubernetes version 1.17 or later). Use the following kubelet flags: `--reserved-cpus=[a-z]`|TBC|
 |`ra2.k8s.009`|CPU Pinning|When hosting workloads matching the Network Intensive profile, in order to support CPU Pinning, the kubelet must be started with the `--cpu-manager-policy=static` option. (Note, only containers in `Guaranteed` pods - where CPU resource `requests` and `limits` are identical - and configured with positive-integer CPU `requests` will take advantage of this. All other Pods will run on CPUs in the remaining shared pool.)|[infra.com.cfg.003](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.k8s.010`|IPv6DualStack|To support IPv6 and IPv4, the `IPv6DualStack` feature gate must be enabled on various components (requires Kubernetes v1.16 or later). kube-apiserver: `--feature-gates="IPv6DualStack=true"`. kube-controller-manager: `--feature-gates="IPv6DualStack=true" --cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --service-cluster-ip-range=<IPv4 CIDR>,<IPv6 CIDR> --node-cidr-mask-size-ipv4 ¦ --node-cidr-mask-size-ipv6` defaults to /24 for IPv4 and /64 for IPv6. kubelet: `--feature-gates="IPv6DualStack=true"`. kube-proxy: `--cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --feature-gates="IPv6DualStack=true"`|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.k8s.011`||||
-|`ra2.k8s.012`||||
-|`ra2.k8s.013`||||
-|`ra2.k8s.014`||||
-|`ra2.k8s.015`||||
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
 
@@ -162,13 +153,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.011`|NATless connectivity|When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers, a CNI plugin that exposes the pod IP directly to the external networks (e.g. Calico, MACVLAN or IPVLAN CNI plugins) is required.|[`req.inf.ntw.14`](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.012`|Optional Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware may be used.|[`e.cap.016`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ntw.013`|Dual stack CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able to support dual-stack IPv4/IPv6 networking.|[`req.inf.ntw.04`](chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ntw.012`||||
-|`ra2.ntw.013`||||
-|`ra2.ntw.014`||||
-|`ra2.ntw.015`||||
-|`ra2.ntw.016`||||
-|`ra2.ntw.017`||||
-|`ra2.ntw.018`||||
+
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
 
