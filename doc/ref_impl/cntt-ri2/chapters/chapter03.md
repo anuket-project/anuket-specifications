@@ -16,14 +16,14 @@
 
 The purpose of this chapter is to list and describe the requirements on labs used to deploy and run the RI2. Overall, the RI2 serves two purposes which guide the definition of requirements in this chapter:
 
-1. RI2 serves as a baseline and proving ground for developing the [Reference Conformance 2 (RC2) specification](../../ref_cert/RC2) as well as the Cloud Native OVP program (LINK), and
+1. RI2 serves as a baseline and proving ground for developing the [Reference Conformance 2 (RC2) specification](../../../ref_cert/RC2) as well as the [Cloud Native OVP](https://wiki.lfnetworking.org/x/agCDAQ) program.
 1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their development environment to develop and validate against.
 
 As a result of those two main use cases, RI2 must be deployable in different lab environments:
 
 1. internal development labs of software vendors, operators and 3rd party test labs,
 1. public community labs (e.g. OPNFV),
-1. resources hosted by cloud infrastructure providers (e.g. Packet.com)
+1. resources hosted by cloud infrastructure providers (e.g. [Equinix Metal](https://metal.equinix.com/))
 
 In addition, lab environments must meet specific requirements on hardware resources (e.g. compute and storage), capabilities (e.g. support for SR-IOV), and connectivity (e.g., number of NICs) to run the RI2. The following sections describe the resulting requirements in detail.
 
