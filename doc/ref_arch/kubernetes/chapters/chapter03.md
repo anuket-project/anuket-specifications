@@ -9,9 +9,9 @@
 * [3.2 Infrastructure Services](#3.2)
     * [3.2.1 Container Compute Services](#3.2.1)
         * [3.2.1.1 Memory management](#3.2.1.1)
-        * [3.2.1.2 HW Topology management](#3.2.1.2)
+        * [3.2.1.2 CPU management](#3.2.1.2)
         * [3.2.1.3 Memory and Huge Pages Resources Management](#3.2.1.3)
-        * [3.2.1.4 CPU management](#3.2.1.4)
+        * [3.2.1.4 HW Topology management](#3.2.1.4)
         * [3.2.1.5 Container Runtime Services](#3.2.1.5)
         * [3.2.1.7 HW Acceleration](#3.2.1.7)
     * [3.2.2 Container Networking Services](#3.2.2)
@@ -120,6 +120,21 @@ etc.), and the kernel features required to provide the isolation mechanisms
 (cgroups, namespaces, filesystems, etc.) between the components.
 
 
+<a name="3.2.1.2"></a>
+#### 3.2.1.2 CPU Management
+
+CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores isolated from general SMP balancing and scheduler algorithms).
+
+Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/) works with Topology Manager. Special care needs to be taken of:
+
+•	Supporting isolated CPUs: Using kubelet [Reserved CPUs](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list) and Linux isolcpus allows configuration where only isolcpus are allocatable to pods. Scheduling pods to such nodes can be influenced with taints, tolerations and node affinity.
+
+•	Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling can be influenced with taints, tolerations, and node affinity.
+Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
+
+Memory or Huge Pages are not considered by the Topology Manager. This can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
+
+
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Memory and Huge Pages Resources Management
 
@@ -138,11 +153,6 @@ identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hug
 
 Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimizations of CPU isolation, memory and device locality.
 
-Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
-
-Memory or Huge Pages are not considered by the Topology Manager. This can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
-
-
 
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Node Feature Discovery
@@ -154,11 +164,6 @@ Memory or Huge Pages are not considered by the Topology Manager. This can be don
 #### 3.2.1.6 Device Plugin Framework
 
 [Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
-
-
-
-<a name="3.2.1.4"></a>
-#### 3.2.1.4 CPU management
 
 
 <a name="3.2.1.5"></a>
