@@ -8,12 +8,12 @@
   * [8.2.1. Characteristics of a Federated Cloud](#8.2.1)
   * [8.2.2. Telco Cloud](#8.2.2)
   * [8.2.3. Telco Operator Platform Conceptual Architecture](#8.2.3)
- * [8.3. Telco Edge Cloud](#8.3)
-  * [8.3.1. Telco Edge Cloud Deployment Environment Characteristics](#8.3.1)
-  * [8.3.2. Telco Edge Cloud Infrastructure Characteristics](#8.3.2)
-  * [8.3.3. Telco Edge Cloud Infrastructure Profiles](#8.3.3)
-  * [8.3.4. Telco Edge Cloud Infrastructure Characteristics](#8.3.4)
-  * [8.3.5. Comparison of Edge terms from various Open Source Efforts](#8.3.5)
+* [8.3. Telco Edge Cloud](#8.3)
+  * [8.3.1. Telco Edge Cloud: Deployment Environment Characteristics](#8.3.1)
+  * [8.3.2. Telco Edge Cloud: Infrastructure Characteristics](#8.3.2)
+  * [8.3.3. Telco Edge Cloud: Infrastructure Profiles](#8.3.3)
+  * [8.3.4. Telco Edge Cloud: Platform Services Deployment](#8.3.4)
+  * [8.3.5. Comparison of Deployment Topologies and Edge terms](#8.3.5)
   
 
 <a name="8.1"></a>
@@ -49,7 +49,7 @@ A generic Telco cloud is an hybrid multi-cloud. A better designation would be a 
 
 <a name="8.2.1"></a>
 ### 8.2.1 Characteristics of a Federated Cloud
-In this section we will further explore the characteristics of the federated cloud, architecture and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on prem, Cloud Vendor provided on prem, Private outsourced (Commercial Cloud Provider such as an Hyperscalar Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
+In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on prem, Cloud Vendor provided on prem, Private outsourced (Commercial Cloud Provider such as an Hyperscalar Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
 <p align="center"><img src="../figures/RM-Ch08-HMC-Image-1.png" alt="Example Hybrid Multi-Cloud Component Cloud"><br><b>Figure 8-1: Example Hybrid Multi-Cloud Component Cloud.</b></p>
 
@@ -68,7 +68,7 @@ The Telco Operator may own and/or have partnerships and network connections to u
    - (Outsourced) Public: Commercial Cloud Service | Examples: AWS, Azure, VMware, etc.
    - Multiple different Clouds can be co-located in the same physical location and may share some of the physical infrastructure (for example, racks)
 
-In general, a Telco Cloud consists of multiple interconnected very large data centers that serve trans-continentalareas (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud Region.
+In general, a Telco Cloud consists of multiple interconnected very large data centers that serve trans-continental areas (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud Region.
 
 The Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud artifacts.
 
@@ -97,7 +97,7 @@ The Cloud Services and the Cloud Resources Brokers provide value-added services 
 This section presents the characteristics and capabilities of different Edge cloud deployment locations, infrastructure, footprint, etc. Please note that in the literature many terms are used and, thus, this section includes a table that tries to map these different terms.
 
 <a name="8.3.1"></a>
-### 8.3.1. Telco Edge Cloud Deployment Environment Characteristics
+### 8.3.1. Telco Edge Cloud: Deployment Environment Characteristics
 Telco Edge Cloud (TEC) deployment locations can be environmentally friendly such as indoors (offices, buildings, etc.) or environmentally challenged such as outdoors (near network radios, curbside, etc.) or environmentally harsh environments (factories, noise, chemical, heat and electromagnetic exposure, etc). Some of the more salient characteristics are captured in Table 8-2.
 
 <p align="center"><b>Table 8-2. TEC Deployment Location Characteristics & Capabilities.</b></p>
@@ -108,7 +108,7 @@ Environmentally friendly | Indoors: typical commercial or residential structures
 Environmentally challenged | Outdoors and/or exposed to environmentally harsh conditions | maybe unprotected<br>Exposure to abnormal levels of noise, vibration, heat, chemical, electromagnetic pollution | May only have battery power<br>Low/Medium bandwidth Fixed and/or mobile network access | No or minimal access control | Expensive ruggedisation<br>Operationally complex | Example locations: curbside, near cellular radios, |
 
 <a name="8.3.2"></a>
-### 8.3.2 Telco Edge Cloud Infrastructure Characteristics
+### 8.3.2 Telco Edge Cloud: Infrastructure Characteristics
 Commodity hardware is only suited for environmentally friendly environments. Commodity hardware have standardised designs and form factors. Cloud deployments in data centers typically use such commodity hardware with standardised configurations resulting in operational benefits for procurement, installation and ongoing operations.
 
 In addition to the type of infrastructure hosted in data center clouds, facilities with smaller sized infrastructure deployments, such as central offices or co-location facilities, may also host non-standard hardware designs including specialised components. The introduction of specialised hardware and custom configurations increases the cloud operations and management complexity.
@@ -116,7 +116,7 @@ In addition to the type of infrastructure hosted in data center clouds, faciliti
 At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with different form factors.
 
 <a name="8.3.3"></a>
-### 8.3.3 Telco Edge Cloud Infrastructure Profiles
+### 8.3.3 Telco Edge Cloud: Infrastructure Profiles
 The [Cloud Infrastructure Profiles](./chapter04.md#4.2.4) section specifies two infrastructure profiles:
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low to medium network throughput requirements.
@@ -129,22 +129,24 @@ Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [I
 
 **Table 8-3. TEC Exceptions to [Infrastructure Profile features and requirements](./chapter05.md)**
 
-
 | Reference | Feature | Description | As Specified in RM Chapter 05| | Exception for Edge | |
 |----|----|----|----|----|----|----|
 | | | | **Basic Type** | **Network Intensive** | **Basic Type** | **Network Intensive** |
 | infra.stg.cfg.003 | Storage with replication |  | N | Y | N | Optional |
 | infra.stg.cfg.004 | Storage with encryption |  | Y | Y | N | Optional |
 | infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets | This determines the minimum number of CPU sockets within each host | 2 | 2 | 1 | 1 |
-| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 2 | 2 |
-| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Optional |
+| infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 1 | 1 |
+| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Y* |
 
+- Note: immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1
+
+Please note that none of the listed parameters form part of a typical OpenStack flavour except that the vCPU and memory requirements of a flavour cannot exceed the available hardware capacity.
 
 <a name="8.3.4"></a>
-### 8.3.4  Telco Edge Cloud Infrastructure Characteristics
+### 8.3.4  Telco Edge Cloud: Platform Services Deployment
 This section characterises the hardware capabilities for different edge deployments and the Platform services that run on the infrastructure. Please note, that the Platform services are containerised to save resources, and benefit from intrinsic availability and auto-scaling capabilities.
 
-**Table 8-4. Characteristics of Infrastructure nodes
+**Table 8-4. Characteristics of Infrastructure nodes**
 
 | | Platform Services | | | | | | | | Storage | | | | Network Services | | |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -155,22 +157,22 @@ This section characterises the hardware capabilities for different edge deployme
 
 
 Depending on the facility capabilities, deployments at the edge may be similar to one of the following:
-        - Small footprint edge device
-        - Single server: deploy multiple (one or more) workloads
-        - Single server: single Controller and multiple (one or more) workloads
-        - HA at edge (at least 2 edge servers): Multiple Controller and multiple workloads
+- Small footprint edge device
+- Single server: deploy multiple (one or more) workloads
+- Single server: single Controller and multiple (one or more) workloads
+- HA at edge (at least 2 edge servers): Multiple Controller and multiple workloads
 
 
 <a name="8.3.5"></a>
-### 8.3.5 Comparison of Edge terms from various Open Source Efforts
+### 8.3.5 Comparison of Deployment Topologies and Edge terms
 
-**Table 8-5. Comparison of Edge Terms
+
+**Table 8-5. Comparison of Deployment Topologies**
 
 | CNTT Term | Compute | Storage | Networking | RTT* | Security | Scalability | Elasticity | Resiliency | Preferred Workload Architecture | Upgrades |  | OpenStack | OPNFV Edge | Edge Glossary | GSMA |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Regional Data Center (DC)<br><br>Fixed | 1000's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 10's EB<br><br>Standardised<br><br>HDD and NVMe<br><br>Permanence | >100 Gbps<br><br>Standardised | ~100 ms | Highly Secure | Horizontal and unlimited scaling | Rapid spin up and down | Infrastructure architected for resiliency<br><br>Redundancy for FT and HA | Microservices based<br><br>Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Central Data Center |  |  |  
-| Metro Data Centers<br>Fixed | 10's to 100's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 100's PB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence | > 100 Gbps<br><br>Standardised | ~10 ms | Highly Secure | Horizontal but limited scaling | Rapid spin up and down | Infrastructure architected for somelevel of resiliency<br><br>Redundancy for limited FT and HA | Microservices based<br><br>
-Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Edge Site | Large Edge | Aggregation Edge |  
+| Metro Data Centers<br>Fixed | 10's to 100's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 100's PB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence | > 100 Gbps<br><br>Standardised | ~10 ms | Highly Secure | Horizontal but limited scaling | Rapid spin up and down | Infrastructure architected for some level of resiliency<br><br>Redundancy for limited FT and HA | Microservices based<br><br>Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Edge Site | Large Edge | Aggregation Edge |  
 | Edge<br>Fixed / Mobile | 10's<br><br>Some Variability<br><br>>=1 CPU<br><br>>10 cores/CPU | 100 TB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence / Ephemeral | 50 Gbps<br><br>Standardised | ~5 ms | Low Level of Trust | Horizontal but highly constrained scaling, if any | Rapid spin up (when possible) and down | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based<br><br>Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Far Edge Site | Medium Edge | Access Edge / Aggregation Edge |  
 | Mini-/Micro-Edge<br>Mobile / Fixed | 1's<br><br>High Variability<br><br>Harsh Environments<br><br>1 CPU<br><br>>2 cores/CPU | 10's GB<br><br>NVMe<br><br>Ephemeral<br><br>Caching | 10 Gbps<br><br>Connectivity not Guaranteed | <2 ms<br><br>Located in network proximity of EUD/IoT | Untrusted | Limited Vertical Scaling (resizing) | Constrained | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based or monolithic<br><br>Stateless or Stateful<br><br>Hosted on Containers or VMs<br><br><br>Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate | HW Refresh: ? <br>Firmware: ? <br><br>Platform SW: ? |  | Fog Computing (Mostly deprecated terminology)<br><br>Extreme Edge<br><br>Far Edge | Small Edge | Access Edge |
 

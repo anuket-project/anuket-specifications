@@ -45,9 +45,9 @@ IDF includes information about network information required by the installer. Al
 
 More details regarding these descriptor files as well as their schema are very well documented in [RI-1 Chapter 8](../../cntt-ri/chapters/chapter08.md#opnfv-descriptor-files-1).
 
-Additionally, modify the BMRA config by first updating `sw_config/bmra/inventory.ini` with the correct servers and functionality planned for each node. For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster.
+For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster. Node roles are configured through the vendor specific IDF file.
 
-Note that the following configuration options in `sw_config/bmra/all.yml` are set to specific values according to RA-2 requirements. Its recommended not to change them (except for debugging and development purposes).
+The following configuration options in `sw_config/bmra/all.yml` are set to specific values according to RA-2 requirements. Its recommended not to change them (except for debugging and development purposes).
 
 [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
 ```
@@ -93,7 +93,8 @@ example_net_attach_defs:
 cluster_name: cluster.local
   # Can be updated if needed
 ```
-Similarly, it is not recommended to change the following configuration options in `sw_config/bmra/node1.yml`, unless for debugging and development purposes. Note that depending on your deployment setup and inventory, you might have to create additional nodeN.yml files.
+Similarly, it is not recommended to change the following configuration options in `sw_config/bmra/kube-node.yml`, unless for debugging and development purposes.
+
 ```
 sriov_enabled: true
   # Change to true as the SR-IOV Network device plugin for Kubernetes is used
@@ -185,8 +186,9 @@ The list of allocatable resources will vary depending on the configuration, but 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
 
-> Describe the steps to run through to validate the RI.  Will need automated tests available and a simple way to run them.
+In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of testcases specified in RC-2 should be executued. A selection of these testcases is documented in [RC-2 Chapter 2](../../ref_cert/RC2/chapters/chapter02.md).
 
+For deploying your own CNTT RC2 toolchain, please refer to the steps mentioned in [RC-2 Kubernetes Testing Cookbook](../../ref_cert/RC2/chapters/chapter03.md).
 
 <a name="4.5"></a>
 ## 4.5 Automation Tooling
