@@ -298,7 +298,7 @@ For initial limited cloud deployments of network functions on private clouds it 
 
 Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to lists of individual optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and dataplane-optimized category instead of specifying individual optimizations required to reach it.
 
-With further growth in size of clusters and variety of hardware acceleration, in a hybrid or multi-cloud deployment it will be necessary to have a workload orchestrator placement that operate on Cloud Infrastructure Support Level Agreement (SLA) levels and a Cloud Infrastructure provider that makes internal Infrastructure optimizations towards their own internal optimization targets whilst fulfilling the SLAs.
+With further growth in size of clusters and the variety of hardware acceleration, in a hybrid or multi-cloud deployment, it will be necessary to enable separate optimization levels for the workload placement and each Cloud Infrastructure provider. The workload placement orchestrator will operate on one or several Cloud Infrastructures resources to satisfy the workloads according to Service Level Agreements (SLA) that do not specify all implementation and resource details. Each Cloud Infrastructure provider will make internal Infrastructure optimisations towards their own internal optimisation targets whilst fulfilling the SLAs.
 
 
 <a name="3.8.3"></a>
