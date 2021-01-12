@@ -248,7 +248,7 @@ auto.cicd.014 | The CD pipeline must be able to automatically promote software f
 <a name="9.6"></a>
 #### 9.6. Telemetry and Observability
 
-Operating complex distributed systems, such as Telco network, is a demanding and challenging task, being increased as the production excellence requirement grows. There are multiple reasons why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services, a complex system is divided into multiple blocks with functional differences, called network functions. Internal communication between diversity of network functions of a distributed system is based on a message exchange. To formalize it, clearly defined interfaces are introduced, and protocols are being designed. Even though the architecture of Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces, and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is indeed a system with remarkably high level of complexity which requires significant efforts for operating it.
+Operating complex distributed systems, such as a Telco network, is a demanding and challenging task, that is continuously being increased as the network complexity and the production excellence requirements grow. There are multiple reasons why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services, a complex system is decomposed into multiple different functional blocks, called network functions. Internal communication between the diverse network functions of a distributed system is based on message exchange. To formalize this communication, clearly defined interfaces are introduced, and protocols designed. Even though the architecture of a Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces, and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is indeed a system with remarkably high level of complexity which requires significant efforts for managing and operating it.
 
 To ensure proper support and flawless work in the large ecosystem of end user services, a formalized approach directed towards high reliability and scalability of systems is required. The discipline which applies well known practices of software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to overcome missing limitations of the common DevOps approach.
 
@@ -316,7 +316,6 @@ Typical characteristics of a push model are:
 * LCM (Life Cycle Management) events, such as moves, reboot/restarts, of consumers or producers have no impact on others.
 * Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and scalable and better suited for large (or small) geographically dispersed telco clouds. 
 * Example of push model are gRPC, SNMP traps, syslogs
-
 
 
 
