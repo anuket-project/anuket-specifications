@@ -294,7 +294,7 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 
 Workload placement can be done by a combination of filters/selectors to find appropriate compute resources, subsystems to manage assignment of scheduled workloads to Hardware Accelerator, and intelligence in the workload to detect the presence of Hardware Accelerators.
 
-For initial limited cloud deployments of network functions on private clouds it is possible to have a workload placement orchestrator that handle optimizations of selected virtualization clusters and available hardware resources. This will however soon become too complex with an increasing amount of acceleration devices, hardware composability and hybrid multi-cloud deployments.
+For initial limited cloud deployments of network functions on private clouds it is possible to have a workload placement orchestrator that handles optimizations of selected virtualisation clusters and available hardware resources. This will however soon become too complex with the increasing number of acceleration devices, hardware composability and hybrid multi-cloud deployments.
 
 Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to granular lists of optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and dataplane-optimized category instead of specifying individual optimizations required to reach it.
 
