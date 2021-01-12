@@ -186,9 +186,6 @@ Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu
 •	Supporting isolated CPUs: Using kubelet [Reserved CPUs](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#explicitly-reserved-cpu-list) and Linux isolcpus allows configuration where only isolcpus are allocatable to pods. Scheduling pods to such nodes can be influenced with taints, tolerations and node affinity.
 
 •	Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling can be influenced with taints, tolerations, and node affinity.
-Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
-
-Memory or Huge Pages are not considered by the Topology Manager. This can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 
 <a name="3.2.1.3"></a>
@@ -208,6 +205,10 @@ identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hug
 #### 3.2.1.4 Hardware Topology Management
 
 Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimizations of CPU isolation, memory and device locality.
+
+Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
+
+Memory or Huge Pages are not considered by the Topology Manager. This can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 
 <a name="3.2.1.5"></a>
