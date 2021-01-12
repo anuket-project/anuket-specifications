@@ -257,7 +257,7 @@ Figure 3-2 below shows the main building blocks of a Kubernetes networking solut
 - **Kubernetes Control Plane**: this is the core of a Kubernetes cluster - the
 apiserver, etcd cluster, kube-scheduler and the various controller-managers. The
 control plane (in particular the apiserver) provide a centralised point by which
-the networking solution is managed using an abstract management API.
+the networking solution is managed using a centralised management API.
 - **Default CNI Plugin (Cluster Network)**: this is the default cluster network plugin
 that has been deployed within the cluster to provide IP addresses to Pods. Note that
 support for IPv6 requires not only changes in the Kubernetes control plane, but
