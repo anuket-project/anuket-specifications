@@ -246,17 +246,17 @@ auto.cicd.014 | The CD pipeline must be able to automatically promote software f
 
 
 <a name="9.6"></a>
-#### 9.6. Telemetry and Observability
+## 9.6. Telemetry and Observability
 
 Operating complex distributed systems, such as a Telco network, is a demanding and challenging task, that is continuously being increased as the network complexity and the production excellence requirements grow. There are multiple reasons why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services, a complex system is decomposed into multiple different functional blocks, called network functions. Internal communication between the diverse network functions of a distributed system is based on message exchange. To formalize this communication, clearly defined interfaces are introduced, and protocols designed. Even though the architecture of a Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces, and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is indeed a system with remarkably high level of complexity which requires significant efforts for managing and operating it.
 
 To ensure proper support and flawless work in the large ecosystem of end user services, a formalized approach directed towards high reliability and scalability of systems is required. The discipline which applies well known practices of software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to overcome limitations of the common DevOps approach.
 
-Common supporting system (OSS – Operation Support System, BSS – Business Support System) requirements are redefined, driven by introduction of new technologies in computing infrastructure; modern data centres with abstraction of resources – known as virtualization and cloud computing. This brings many advantages – such as easy scaling, error recovery, reaching a high level of operational autonomy etc., but also many new challenges in the Telecom network management space. Those novel challenges are mostly directed towards the dynamical nature of the system, orientation towards microservices instead of a silo approach, and huge amounts of data which has to be processed in order to understand the internal status of the system. Hence the need of improved ways to monitor systems - observability.
+Common supporting system (OSS – Operation Support System, BSS – Business Support System) requirements are redefined, driven by introduction of new technologies in computing infrastructure and modern data centres with abstraction of resources – known as virtualization and cloud computing. This brings many advantages – such as easy scaling, error recovery, reaching a high level of operational autonomy etc., but also many new challenges in the Telecom network management space. Those novel challenges are mostly directed towards the dynamical nature of the system, orientation towards microservices instead of a silo approach, and huge amounts of data which has to be processed in order to understand the internal status of the system. Hence the need of improved ways to monitor systems - observability.
 
 
 <a name="9.6.1"></a>
-#### 9.6.1. Why Observability
+### 9.6.1. Why Observability
 
 Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and most importantly, before they call the help desk. This requires to collect alarms and telemetry data from the physical layer (wires), the cloud infrastructure up to the network, application and services virtualized functions (VNF) running on top of Cloud Infrastructure, typically isolated by tenants.		
 
@@ -267,7 +267,7 @@ A cloud typically consists of one or more regional data centers, central offices
 While many Telco Clouds start as a vertical cloud by hosting one prime application, e.g. IMS, the intent is to host more applications over time in order to truly maximize the cloud to its full potential. Therefore it is pure coincidence to have the same team responsible and manage the infrastructure and the application running on top. Network services and applications deployed on a Telco Cloud are managed by separate teams, within the same or different organizations and a monitoring solution must be capable of keeping the collection of monitoring data isolated between tenants and NFVI. At the same time, some monitoring data from the NFVI layer must selectively be available to tenant monitoring applications in order to correlate e.g. VNF metrics with the underlying infrastructure it currently runs on.
 
 <a name="9.6.2"></a>
-#### 9.6.2. What to Monitor
+### 9.6.2. What to Monitor
 
 These physical and virtual devices need to be monitored: 
 
@@ -280,7 +280,7 @@ These physical and virtual devices need to be monitored:
 * Cabling 
 
 <a name="9.6.3"></a>
-#### 9.6.3. The Architecture
+### 9.6.3. The Architecture
 
 In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads and infrastructure components. Furthermore, it is even more important to be able to correlate between the metrics provided by these entities to determine the performance and/or issues in such deployments. 
 
@@ -297,7 +297,7 @@ Multiple workloads or network services can be deployed onto one or more sites. T
 Two widely deployed models for providing telemetry data are pull and push. 
 
  <a name="9.6.3.1.1"></a>
-#### 9.6.3.1.1. Pull Model
+##### 9.6.3.1.1. Pull Model
 
 Typical characteristics of a pull model are:
 
@@ -306,7 +306,7 @@ Typical characteristics of a pull model are:
 * Data is pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage to deal with this data - example SNMP pull/walks
 
  <a name="9.6.3.1.2"></a>
-#### 9.6.3.1.2. Push Model
+##### 9.6.3.1.2. Push Model
 
 Typical characteristics of a push model are:
 
