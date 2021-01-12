@@ -11,7 +11,10 @@
   * [9.5.1 Infrastructure LCM Automation](#9.5.1)
   * [9.5.2 Software Onboarding Automation and CI/CD Requirements](#9.5.2)
   * [9.5.3 Tenant creation automation](#9.5.3)
-* [9.6 Telemetry and Observability]
+* [9.6 Telemetry and Observability](#9.6)
+  * [9.6.1 Why Observability](#9.6.1)
+  * [9.6.2 What to Monitor](#9.6.2)  
+  * [9.6.3 The Architecture](#9.6.3)
 
 <a name="9.1"></a>
 ## 9.1 Introduction
@@ -290,6 +293,9 @@ Operators in charge of the Cloud Infrastructure (physical infra plus virtualizat
 
 Multiple workloads or network services can be deployed onto one or more sites. These workloads require logical separation so that their metrics don’t mix by accident or simply based on security and privacy requirements. This is achieved by deploying these workloads within their own tenant space. All virtualization platforms offer such isolation down to virtual networks per tenant.
 
+<p align="center"><img src="../figures/RM-Ch09-Fig-Producers-Consumers.png" alt="Producers and Consumers"><br><b>Figure 9-2: Producers and Consumers.</b></p>
+
+<p align="center"><img src="../figures/RM-Ch09-Fig-Broker-Service.png" alt="Broker Services"><br><b>Figure 9-3: Broker Services.</b></p>
 
 <a name="9.6.3.1"></a>
 #### 9.6.3.1. Push Vs. Pull
