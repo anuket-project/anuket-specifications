@@ -258,7 +258,6 @@ Mesh](https://networkservicemesh.io/docs/concepts/what-is-nsm/))
 | Network Policies (Security Groups) (`infra.net.cfg.004`) | Supported via a CNI Network Plugin that supports Network Policies | Supported via a CNI Network Plugin that supports Network Policies | Supported via a CNI Network Plugin that supports Network Policies | Supported via a CNI Network Plugin that supports Network Policies |
 | SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant | Not relevant | Not relevant |
 | Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant | Not relevant | Not relevant |
-| Network resiliency (`req.inf.ntw.01`) | Supported | Supported | Supported | Supported |
 | Centrally administrated and configured (`req.inf.ntw.03`) | Supported via Kubernetes API Server | Supported via Kubernetes API Server | Supported via Kubernetes API Server | Supported via Kubernetes API Server |
 | Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via the additional CNI plugin | Supported | Supported | Supported |
 | Integrating SDN controllers (`req.inf.ntw.05`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin | TF is an SDN controller | TBC |
