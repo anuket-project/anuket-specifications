@@ -351,7 +351,7 @@ traffic require the capability to use a user space networking technology.
 | Choose whether or not to deploy more than one networking solution (`req.inf.ntw.07`) | Supported | Supported | Supported | Supported |
 | Kubernetes network model (`req.inf.ntw.08`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin | Supported | Supported via the default CNI plugin |
 | Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported | Supported | Supported |
-| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via the additional CNI plugin | Supported | Supported | Supported via IPAM CNI plugin |
+| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via IPAM CNI plugin | Supported | Supported | Supported via IPAM CNI plugin |
 
 <p align="center"><b>Table 3-1:</b> Comparison of example networking solutions</p>
 
