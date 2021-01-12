@@ -226,6 +226,23 @@ Scheduling pods that require or prefer to run on nodes with hardware accelerator
 •	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
 
 
+<a name="3.2.1.8"></a>
+#### 3.2.1.8 Scheduling Pods with Non-resilient Applications
+
+Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
+
+| # | Intensive on  | Not intensive on | Using hardware acceleration | Requirements for optimized pod scheduling |
+|---|---|---|---|---|
+| 1 | Compute | Networking (dataplane) | No | CPU Manager |
+| 2 | Compute | Networking (dataplane) | CPU instructions | CPU Manager, NFD |
+| 3 | Compute | Networking (dataplane) | Fixed function acceleration, Firmware-programmable network adapters or SmartNICs | CPU Manager, Device Plugin |
+| 4 | Networking (dataplane) | | No, or Fixed function acceleration, Firmware-programmable network adapters or SmartNICs  | Huge Pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin |
+| 5 | Networking (dataplane) | | CPU instructions | Huge Pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin; NFD |
+
+<p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
+=======
+
+
 <a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
