@@ -296,7 +296,7 @@ Workload placement can be done by a combination of filters/selectors to find app
 
 For initial limited cloud deployments of network functions on private clouds it is possible to have a workload placement orchestrator that handles optimizations of selected virtualisation clusters and available hardware resources. This will however soon become too complex with the increasing number of acceleration devices, hardware composability and hybrid multi-cloud deployments.
 
-Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to granular lists of optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and dataplane-optimized category instead of specifying individual optimizations required to reach it.
+Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to lists of individual optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and dataplane-optimized category instead of specifying individual optimizations required to reach it.
 
 With further growth in size of clusters and variety of hardware acceleration, in a hybrid or multi-cloud deployment it will be necessary to have a workload orchestrator placement that operate on Cloud Infrastructure Support Level Agreement (SLA) levels and a Cloud Infrastructure provider that makes internal Infrastructure optimizations towards their own internal optimization targets whilst fulfilling the SLAs.
 
