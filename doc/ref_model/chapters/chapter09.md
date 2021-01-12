@@ -261,7 +261,7 @@ Common supporting system (OSS – Operation Support System, BSS – Business Sup
 <a name="9.6.1"></a>
 ### 9.6.1. Why Observability
 
-Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and most importantly, before they call the help desk. This requires to collect alarms and telemetry data from the physical layer (wires), the cloud infrastructure up to the network, application and services virtualized functions (VNF) running on top of Cloud Infrastructure, typically isolated by tenants.		
+Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and, most importantly, before they call the help desk. This requires the collection of alarms and telemetry data from the physical layer (wires), the cloud infrastructure up to the network, application and services virtualized functions (VNF) running on top of Cloud Infrastructure, typically isolated by tenants.
 
 Long term trending data are essential for capacity planning purposes and typically collected, aggregated and kept over the full lifespan. To keep the amount of data collected manageable, automatic data reduction algorithms are typically used, e.g. by merging data points from the smallest intervals to more granular intervals.
 
@@ -322,7 +322,6 @@ Typical characteristics of a push model are:
 * LCM (Life Cycle Management) events, such as moves, reboot/restarts, of consumers or producers have no impact on others.
 * Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and scalable and better suited for large (or small) geographically dispersed telco clouds. 
 * Example of push model are gRPC, SNMP traps, syslogs
-
 
 
 
