@@ -230,6 +230,8 @@ For a given software network function and software infrastructure, Hardware Acce
 | Achieve technical requirements | Fit within power or space envelope | Done by optimizing cluster of compute nodes |
 | Improve cost/performance | Better cost and less power/cooling by improving performance per node | Used when functionality can be achieved through usage of accelerator or by adding more compute nodes |
 
+<p align="center"><b>Table 3-5:</b> Reasons and examples for using Hardware Acceleration</p>
+
 Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
 
 More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
