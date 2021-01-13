@@ -231,6 +231,8 @@ auto.cicd.011 | The CD pipeline must verify and validate the tenant request | Ex
 auto.cicd.012 | The CD pipeline after all validations must turn over control to orchestration of the software | |
 auto.cicd.013 | The CD pipeline must be able to deploy into Development, Test and Production environments | |
 auto.cicd.014 | The CD pipeline must be able to automatically promote software from Development to Test and Production environments | |
+auto.cicd.015 | The CI pipeline must run all relevant Reference Conformance test suites | |
+auto.cicd.016 | The CD pipeline must run all relevant Reference Conformance test suites | |
 
 <p align="center"><b>Table 9-4:</b> Automation CI/CD</p>
 
