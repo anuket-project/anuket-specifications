@@ -273,6 +273,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process) Parameter Group (OCI Spec)|Specifies the container process|TBD||
 |`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname) Parameter Group (OCI Spec)|Specifies the container's hostname as seen by processes running inside the container|TBD||
 |`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD||
+|`ra2.app.006`|Host Volumes|Workloads should not use `hostPath` volumes, as [Pods with identical configuration (such as created from a PodTemplate) may behave differently on different nodes due to different files on the nodes.](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)|[`req.kcm.gen.02`](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/kubernetes/chapters/chapter02.md#23-kubernetes-architecture-requirements)||
 
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
