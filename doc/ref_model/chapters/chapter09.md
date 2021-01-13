@@ -13,8 +13,16 @@
   * [9.5.3 Tenant creation automation](#9.5.3)
 * [9.6 Telemetry and Observability](#9.6)
   * [9.6.1 Why Observability](#9.6.1)
-  * [9.6.2 What to Monitor](#9.6.2)  
-  * [9.6.3 The Architecture](#9.6.3)
+    * [9.6.1.1 What to observe](#9.6.1.1)
+    * [9.6.1.2 What data to collect](#9.6.1.2)
+    * [9.6.1.3 Data categories](#9.6.1.3)
+    * [9.6.1.4 Where to send the data](#9.6.1.4)
+    * [9.6.1.5 Which protocol, interface, and format to use](#9.6.1.5)
+  * [9.6.2 The Architecture](#9.6.2)
+    * [9.6.2.1 Push Vs. Pull](#9.6.2.1)
+    * [9.6.2.2 Producers, Consumers, and Message broker](#9.6.2.2)
+
+
 
 <a name="9.1"></a>
 ## 9.1 Introduction
@@ -261,7 +269,13 @@ Common supporting system (OSS – Operation Support System, BSS – Business Sup
 <a name="9.6.1"></a>
 ### 9.6.1. Why Observability
 
-Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and, most importantly, before they call the help desk. This requires the collection of alarms and telemetry data from the physical layer (wires), the cloud infrastructure up to the network, application and services virtualized functions (VNF) running on top of Cloud Infrastructure, typically isolated by tenants.
+Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and, most importantly, before they call the help desk. 
+
+Common approach to understanding aforementioned telecom network status in conventional non-cloud environments is referred to as monitoring. Usually it would include metric information related toresources, such as CPU, memory, HDD, Network I/O, but also business related technical indicators (KPIs) such as number of active users, number of registrations, etc. This monitoring data isrepresented as a time series, retrieved in regular intervals, usually with granulation of 5 to 30 minutes.In addition to it, async messages such as alarms and notifications were exposed by the monitored systems in order to provide information about foreseen situations. It is worth noting that metric data provides approximation of the health of the system, while the alarms and notifications try to bring more information about the problem. In general, they provide information about known unknowns - anticipated situations occurring at random time. However, this would very rarely be sufficient information for understanding the problem (RCA - root cause analysis), therefore it is necessary to retrieve more data related to the problem - logs and network signalization. Logs are application output information created by developers to get more granular information about the code execution. Network packet captures/traces are useful since telecommunication networks are distributed systems where components communicate utilizing various protocols, and the communication can be examined to get details of the problem. The latter two sources of information need manual human analysis in order to extract useful information, and as such are usually not essential parts of the regular monitoring systems.
+
+As the transition towards cloud environments takes place simultaneously with the introduction of DevOps mindset, conventional monitoring approach becomes suboptimal. Cloud environments allow greater flexibility as the microservice architecture is embraced to bring improvements in operability, therefore the automation can be utilized to much higher extent than ever before. Automation in telecom networks usually supposes actions based on decisions derived from system output data (system observation). In order to derive useful decisions, data with rich context are inevitable. Obviously, conventional monitoring approach has to be improved in order to retrieve sufficient data, not only from the wider context, but also without delays - as soon as data is produced or available. The new enhanced approach was introduced as a concept of observability, borrowed from the control theory which states that it is possible to make conclusions about the system internal state based on the external outputs.
+
+This requires the collection of alarms and telemetry data from the physical layer (wires), the cloud infrastructure up to the network, application and services virtualized functions (VNF) running on top of Cloud Infrastructure, typically isolated by tenants.
 
 Long term trending data are essential for capacity planning purposes and typically collected, aggregated and kept over the full lifespan. To keep the amount of data collected manageable, automatic data reduction algorithms are typically used, e.g. by merging data points from the smallest intervals to more granular intervals.
 
@@ -269,10 +283,18 @@ A cloud typically consists of one or more regional data centers, central offices
 
 While many Telco Clouds start as a vertical cloud by hosting one prime application, e.g. IMS, the intent is to host more applications over time in order to truly maximize the cloud to its full potential. Therefore it is pure coincidence to have the same team responsible and manage the infrastructure and the application running on top. Network services and applications deployed on a Telco Cloud are managed by separate teams, within the same or different organizations and a monitoring solution must be capable of keeping the collection of monitoring data isolated between tenants and NFVI. At the same time, some monitoring data from the NFVI layer must selectively be available to tenant monitoring applications in order to correlate e.g. VNF metrics with the underlying infrastructure it currently runs on.
 
-<a name="9.6.2"></a>
-### 9.6.2. What to Monitor
+<a name="9.6.1.1"></a>
+#### 9.6.1.1. What to observe
 
-These physical and virtual devices need to be monitored: 
+Typically, when it comes to data collection, three questions arise:
+1. Which data to collect?
+2. Where to send the data?
+3. Which protocol/interface/format to use?
+
+<a name="9.6.1.2"></a>
+#### 9.6.1.2. What data to collect
+
+Assessment on which data to collect should start by iterating over the physical and virtual infrastructure components: 
 
 * Network Services across sites and tenants 							
 * Virtualized functions per site and tenant
@@ -282,8 +304,41 @@ These physical and virtual devices need to be monitored:
 * Toolservers with their applications (DNS, IdM, ZTP, etc) 
 * Cabling 
 
-<a name="9.6.3"></a>
-### 9.6.3. The Architecture
+<a name="9.6.1.3"></a>
+#### 9.6.1.3. Data categories
+
+There are three main observability categories: metrics, alarms and logs:
+
+1. **Metrics** or telemetry report counters and gauge levels and can either be pulled periodically e.g. via SNMP or REST, or pushed as streams using gRPC, NETCONF, which receivers registered for certain sensors, or by registering as a publisher to a Kafka bus. These messages must be structured in order to get parsed successfully.
+
+2. **Alarms** indicate state changes, categorized by severity, often with a description of what just
+hap- pened. Most common transport protocol is SNMP (traps and inform messages). They
+are generated by physical network elements as well as logical devices. In addition, they can
+also be generated by monitoring applications in form of configured thresholds or dynamic by
+means of Machine Learning (ML) algorithms - generally, they are describing anomalies.
+
+3. **Logs** messages are generated by most physical devices (compute and network) and virtual
+applications and transported over SYSLOG and tend to come in high volumes.
+
+4. **Traces** are end-to-end signalling messages (events) created to fullfil execution of requests on
+the distributed system services. OTHER WORDS: Traces are all action points executed in
+order to provide response to the request set to the distributed system service. Even the call
+can be thought of as a request which starts by INVITE message of the SIP protocol.
+
+<a name="9.6.1.4"></a>
+#### 9.6.1.4. Where to send the data
+
+If the sources of observability data have to send their data towards particular specific destinations, then it is a concept with high dependency and extremely prone to errors, especially in case of configuration changes. In order to keep it clean and elegant, data sources should be completely independent of the data receivers; i.e. data sources must not be impacted with any change in the data receivers.
+
+Ideally, observability data would be sent from the source systems always to the same destination. This is achieved by using message brokers to decouple data producers from data consumers, and that inherently means that sources send data always to the same point. It is worth noting that message brokers can be considered as a common data bus.
+
+<a name="9.6.1.5"></a>
+#### 9.6.1.5. Which protocol, interface, and format to use
+
+While protocols and interfaces are dictated by the selection of the message broker (common data bus) system, data format is usually customizable according to the needs of users. The concept of Schema Registry mechanism, well known in the world of big data, is helpful here to make sure that message structures and formats are consistently used.
+
+<a name="9.6.2"></a>
+### 9.6.2. The Architecture
 
 In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads and infrastructure components. Furthermore, it is even more important to be able to correlate between the metrics provided by these entities to determine the performance and/or issues in such deployments. 
 
@@ -293,17 +348,13 @@ Operators in charge of the Cloud Infrastructure (physical infra plus virtualizat
 
 Multiple workloads or network services can be deployed onto one or more sites. These workloads require logical separation so that their metrics don’t mix by accident or simply based on security and privacy requirements. This is achieved by deploying these workloads within their own tenant space. All virtualization platforms offer such isolation down to virtual networks per tenant.
 
-<p align="center"><img src="../figures/RM-Ch09-Fig-Producers-Consumers.png" alt="Producers and Consumers"><br><b>Figure 9-2: Producers and Consumers.</b></p>
-
-<p align="center"><img src="../figures/RM-Ch09-Fig-Broker-Service.png" alt="Broker Services"><br><b>Figure 9-3: Broker Services.</b></p>
-
-<a name="9.6.3.1"></a>
-#### 9.6.3.1. Push Vs. Pull
+<a name="9.6.2.1"></a>
+#### 9.6.2.1. Push Vs. Pull
 
 Two widely deployed models for providing telemetry data are pull and push. 
 
- <a name="9.6.3.1.1"></a>
-##### 9.6.3.1.1. Pull Model
+ <a name="9.6.2.1.1"></a>
+##### 9.6.2.1.1. Pull Model
 
 Typical characteristics of a pull model are:
 
@@ -311,8 +362,8 @@ Typical characteristics of a pull model are:
 * Once the producers are identified, there should be a tight relationship (synchronization) between the producer and consumer. For example, if a producer encounters a LCM (Life Cycle Management) event - such as it moves to a different location or reboots/restarts, the consumer must re-discover it and bind the relationship again - makes the systems very complex in terms of configuration as well management. 
 * Data is pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage to deal with this data - example SNMP pull/walks
 
- <a name="9.6.3.1.2"></a>
-##### 9.6.3.1.2. Push Model
+ <a name="9.6.2.1.2"></a>
+##### 9.6.2.1.2. Push Model
 
 Typical characteristics of a push model are:
 
@@ -322,6 +373,19 @@ Typical characteristics of a push model are:
 * LCM (Life Cycle Management) events, such as moves, reboot/restarts, of consumers or producers have no impact on others.
 * Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and scalable and better suited for large (or small) geographically dispersed telco clouds. 
 * Example of push model are gRPC, SNMP traps, syslogs
+
+
+<a name="9.6.2.2"></a>
+#### 9.6.2.2. Producers, Consumers, and Message broker
+
+In ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can take and „understand“ the data without additional logic. Message brokers do not limit on the data types:
+
+Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is not neccessary to use Schema Registry, it is highly recommended.
+
+
+<p align="center"><img src="../figures/RM-Ch09-Fig-Producers-Consumers.png" alt="Producers and Consumers"><br><b>Figure 9-2: Producers and Consumers.</b></p>
+
+<p align="center"><img src="../figures/RM-Ch09-Fig-Broker-Service.png" alt="Broker Services"><br><b>Figure 9-3: Broker Services.</b></p>
 
 
 
