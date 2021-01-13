@@ -189,19 +189,26 @@ As such the requirements for Capacity Management on the infrastructure are cover
 
 <a name="9.5.2.1"></a>
 #### 9.5.2.1 Software Onboarding Automation
-The Cloud Infrastructure workload onboarding process describes activities needed for the integration of tenants' workloads into the Cloud Infrastructure environment. Typically, this business process consists of the following key phases:
-1. Tenant Engagement and Workload Evaluation:
+For software deployment, as far as Cloud Infrastructure services or workloads are concerned, automation is the core of DevOps concept. Automation allows to eliminate manual processes, reducing human errors and speeding software deployments. The prerequisite is to install CI/CD tools chain to:
+- Build, package, test application/software
+- Store environment's parameters and configurations
+- Automate the delivery and deployment
+
+The CI/CD pipeline is used to deploy, test and update the Cloud Infrastructure services, and also to onboard workloads hosted on the infrastructure. Typically, this business process consists of the following key phases:
+1. Tenant Engagement and Software Evaluation:
     - In this phase the request from the tenant to host a workload on the Cloud Infrastructure platform is assessed and a decision made on whether to proceed with the hosting request.
+    - If the Cloud infrastructure software needs to be updated or installed, an evaluation is made of the impacts (including to tenants) and if it is OK to proceed
     - This phase may also involve the tenant accessing a pre-staging environment to perform their own evaluation and/or pre-staging activities in preparation for later onboarding phases.
-2. Workload Packaging:
-    - The main outcome of this phase is to produce the workload deployable image and  the deployment manifests (such as TOSCA blueprints or HEAT templates or Helm charts) that will define the Cloud Infrastructure service attributes for the workload. 
-    - The workload packaging can be performed by the tenant, through self-service capabilities or by the Cloud Infrastructure Operations team.
-3. Workload Validation and Certification:
-    - In this phase the workload is deployed and tested to validate it against the service design and other Operator specific acceptance criteria, as required.
-    - Workload validation and certification should be automated using CI/CD toolsets / pipelines and Test as a Service (TaaS) capabilities.
-4. Publish Workload:
-    - After the workload is certified the final onboarding process phase is for it to be published to the Cloud Infrastructure  production catalogue from where it can be instantiated on the Cloud Infrastructure platform by the tenant.
-    
+2. Software Packaging:
+    - The main outcome of this phase is to produce the software deployable image and the deployment manifests (such as TOSCA blueprints or HEAT templates or Helm charts) that will define the Cloud Infrastructure service attributes.
+    - The software packaging can be automated or performed by designated personnel, through self-service capabilities (for tenants) or by the Cloud Infrastructure Operations team.
+3. Software Validation and Certification:
+    - In this phase the software is deployed and tested to validate it against the service design and other Operator specific acceptance criteria, as required.
+    - Software validation and certification should be automated using CI/CD toolsets / pipelines and Test as a Service (TaaS) capabilities.
+4. Publish Software:
+    - Tenant Workloads: After the software is certified the final onboarding process phase is for it to be published to the Cloud Infrastructure production catalogue from where it can be instantiated on the Cloud Infrastructure platform by the tenant.
+    - Cloud Infrastructure software: After the software is certified, it is scheduled for deployment inconcurrence with the user community.
+
 All phases described above can be automated using technology specific toolsets and procedures.  Hence, details of such automation are left for the technology specific Reference Architecture and Reference Implementation specifications.
 
 <a name="9.5.2.2"></a>
@@ -211,21 +218,60 @@ The requirements including for CI/CD for ensuring software security scans, image
 Ref # | Description | Comments/Notes
 ---|---|---
 auto.cicd.001 | The CI/CD pipeline must support deployment on any cloud and cloud infrastructures including different hardware accelerators. | CI/CD pipelines automate CI/CD best practices into repeatable workflows for integrating code and configurations into builds, testing builds including validation against design and operator specific criteria, and delivery of the product onto a runtime environment.<br>Example of an open-source cloud native CI/CD framework is the Tekton project (https://tekton.dev/)
-auto.cicd.002 | The CI/CD pipelines must use event-driven task automation | 
-auto.cicd.003 | The CI/CD pipelines should avoid scheduling tasks | 
+auto.cicd.002 | The CI/CD pipelines must use event-driven task automation |
+auto.cicd.003 | The CI/CD pipelines should avoid scheduling tasks |
 auto.cicd.004 | The CI/CD pipeline is triggered by a new or updated software release being loaded into a repository | The software release cane be source code files, configuration files, images, manifests.<br>Operators may support a single or multiple repositories and may, thus, specify which repository is to be used for these release.<br>An example, of an open source repository is the CNCF Harbor (https://goharbor.io/)
-auto.cicd.005 | The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices. | 
-auto.cicd.006 | The CI pipeline must support build and packaging of images and deployment manifests from source code and configuration files. | 
+auto.cicd.005 | The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices. |
+auto.cicd.006 | The CI pipeline must support build and packaging of images and deployment manifests from source code and configuration files. |
 auto.cicd.007 | The CI pipeline must scan images and manifests to validate for compliance with security requirements.  | Refer to RM Chapter 07 (https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter07.md#79-consolidated-security-requirements).<br>Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
 auto.cicd.008 | The CI pipeline must validate images and manifests | Example, different tests
-auto.cicd.009 | The CI pipeline must validate with all hardware offload permutations and without hardware offload | 
+auto.cicd.009 | The CI pipeline must validate with all hardware offload permutations and without hardware offload |
 auto.cicd.010 | The CI pipeline must promote validated images and manifests to be deployable. | Example, promote from a development repository to a production repository
 auto.cicd.011 | The CD pipeline must verify and validate the tenant request | Example, RBAC, request is within quota limits, affinity/anti-affinity, …
 auto.cicd.012 | The CD pipeline after all validations must turn over control to orchestration of the software | |
 auto.cicd.013 | The CD pipeline must be able to deploy into Development, Test and Production environments | |
 auto.cicd.014 | The CD pipeline must be able to automatically promote software from Development to Test and Production environments | |
+auto.cicd.015 | The CI pipeline must run all relevant Reference Conformance test suites | |
+auto.cicd.016 | The CD pipeline must run all relevant Reference Conformance test suites | |
 
 <p align="center"><b>Table 9-4:</b> Automation CI/CD</p>
+
+
+#### 9.5.2.3 CI/CD Design Requirements
+
+A couple of CI/CD pipeline properties and rules must be agreed between the
+different actors to allow smoothly deploy and test the cloud infrastructures
+and the hosted network functions whatever if the jobs operate opensource or
+proprietary software. They all prevent that specific deployment or testing
+operations force a particular CI/CD design or even worse ask to deploy a full
+dedicated CI/CD toolchain for a particular network service.
+
+At first glance, the deployment and test job must not basically ask for a
+specific CI/CD tools such as [Jenkins](https://www.jenkins.io/) or
+[Gitlab CI/CD](https://docs.gitlab.com/ee/ci/). But they are many other
+ways where deployment and test jobs can constraint the end users from the
+build servers to the artifact management. Any manual operation is discouraged
+whatever it's about the deployment or the test resources.
+
+The following requirements also aims at deploying smoothly and easily all CI/CD
+toolchains via simple playbooks as targeted by the Reference Conformance
+suites currently leveraging [XtestingCI](https://galaxy.ansible.com/collivier/xtesting).
+
+Ref #           | Description                                                                                   | Comments |
+----------------|-----------------------------------------------------------------------------------------------|----------|
+design.cicd.001 | The pipeline must allow chaining of independent CI/CD jobs                                    | For example, all deployment and test operations from baremetal to Kubernetes, OpenStack, to the network services |
+design.cicd.002 | The pipeline jobs should be modular                                                           | This allows execution of jobs independently of others, for example, start with an existing OpenStack  deployment |
+design.cicd.003 | The pipeline must decouple the deployment and the test steps                                  |          |
+design.cicd.004 | The pipeline should leverage the job artifacts specified by the operator provided CI/CD tools |          |
+design.cicd.005 | The pipeline must execute all relevant Reference Conformance suites without modification      |          |
+design.cicd.006 | Software vendors/providers must utilise operator provided CI/CD tools                         |          |
+design.cicd.007 | All jobs must be packaged as containers                                                       |          |
+design.cicd.008 | All jobs must leverage a common execution to allow templating all deployment and test steps   |          |
+design.cicd.009 | The deployment jobs must publish all outputs as artifacts in a specified format               | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
+design.cicd.010 | The test jobs must pull all inputs as artifacts in a specified format                         | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
+design.cicd.011 | The test jobs must conform with the Reference Conformance test case integration requirements  |          |
+
+<p align="center"><b>Table 9-5:</b> CI/CD Design</p>
 
 <a name="9.5.3"></a>
 ### 9.5.3 Tenant Creation Automation
@@ -233,6 +279,30 @@ auto.cicd.014 | The CD pipeline must be able to automatically promote software f
 <a name="9.5.3.1"></a>
 #### 9.5.3.1. Pre-tenant Creation Requirements
 
+Topics include:
+1. Tenant Approval -- use, capacity, data centers, ..
+    - Validate that the [Tenant's](../../../common/glossary.md#operational-and-administrative-terminology) planned use meets the Operators Cloud Use policies
+    - Validate that the capacity available within the requests cloud site(s) can satisfy the Tenant requested quota for vCPU, RAM, Disk, Network Bandwidth
+    - Validate that the Cloud Infrastructure can meet Tenant's performance requirements (e.g. I/O, latency, jitter, etc)
+    - Validate that the Cloud Infrastructure can meet Tenant's resilience requirements
+1. For environments that support [Compute Flavours](./chapter04.md#4.2.1):
+    - Verify that any requested private flavours have been created
+    - Verify that the metadata for these private flavours have been created
+    - Verify that the tenant has permissions to use the requested private flavours
+    - Validate that host aggregates are available for specified flavors (public and private)
+    - Verify that the metadata matches for the requested new flavours and host aggregates
+1. Tenant Networks
+    - Verify that the networks requested by the tenant exist
+    - Verify that the security policies are correctly configured to only approved ingress and egress
+1. Tenant Admin, Tenant Member and other Tenant Role approvals for user by role
+    - Add all Tenant Members and configure their assigned roles in the Enterprise Identity and Access management system (e.g., LDAP)
+    - Verify that these roles have been created for the Tenant
+1. Tenant Images and manifests approvals
+    - Verify and Validate Tenant Images and manifests: virus scan, correct OS version and patch, etc. (Please note that Tenants may also add other images or replace existing images after their environments are created and will also be subjected to image security measures.)
+1. Create, Verify and Validate Tenant
+    - Create Tenant
+    - Using a proto- or Tenant provided HEAT-template/Helm-chart for a NF and perform sanity test (e.g., using scripts test creation of VM/container, ping test, etc.)
+
+
 <a name="9.5.3.2"></a>
 #### 9.5.3.2. Tenant Networking Automation
-

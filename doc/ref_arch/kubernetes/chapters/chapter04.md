@@ -1,19 +1,20 @@
 [<< Back](../../kubernetes)
 
 # 4. Component Level Architecture
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
-* [4.1 Introduction](#4.1)
-* [4.2 Kubernetes Node](#4.2)
-* [4.3 Kubernetes](#4.3)
-* [4.4 Container runtimes](#4.4)
-* [4.5 Networking solutions](#4.5)
-* [4.6 Storage components](#4.6)
-* [4.7 Service meshes](#4.7)
-* [4.8 Container package managers](#4.8)
-* [4.9 Kubernetes workloads](#4.9)
-* [4.10 Supplementary components](#4.10)
+## Table of Contents <!-- omit in toc -->
+- [4. Component Level Architecture](#4-component-level-architecture)
+  - [4.1 Introduction](#41-introduction)
+  - [4.2 Kubernetes Node](#42-kubernetes-node)
+  - [4.3 Kubernetes](#43-kubernetes)
+  - [4.4 Container runtimes](#44-container-runtimes)
+  - [4.5 Networking solutions](#45-networking-solutions)
+  - [4.6 Storage components](#46-storage-components)
+  - [4.7 Service meshes](#47-service-meshes)
+  - [4.8 Kubernetes Application package manager](#48-kubernetes-application-package-manager)
+  - [4.9 Kubernetes workloads](#49-kubernetes-workloads)
+  - [4.10 Additional required components](#410-additional-required-components)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -45,32 +46,27 @@ virtual machine and an installed Operating System. In order for a Kubernetes Nod
 to be conformant with the Reference Architecture it must be implemented as per
 the following specifications:
 
-|Ref|Specification|Details|Requirement Trace|
-|---|---|---|---|
-|`ra2.ch.001`|Huge Pages|When hosting workloads matching the Network Intensive profile, it must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|[infra.com.cfg.004](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.002`|SR-IOV capable NICs|When hosting workloads matching the Network Intensive profile, the physical machines on which the Kubernetes Nodes run must be equipped with NICs that are SR-IOV capable.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.003`|SR-IOV Virtual Functions|When hosting workloads matching the Network Intensive profile, SR-IOV virtual functions (VFs) must be configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.|[infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.005`|CPU Allocation Ratio - VMs|For Kubernetes nodes running as Virtual Machines, ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1.|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.006`|CPU Allocation Ratio - Pods|To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu < allocatable.cpu` and `limits.cpu < allocatable.cpu`).|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
-|`ra2.ch.007`|IPv6DualStack|To support IPv4/IPv6 dual stack networking, the Kubernetes Node OS must support and be allocated routable IPv4 and IPv6 addresses.|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Kubernetes Nodes run must be equipped with at least 2 physical sockets, each of at least 20 CPU cores.|[infra.hw.cpu.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)<br>[infra.hw.cpu.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.009`|Physical Storage|The physical machines on which the Kubernetes Nodes run should be equipped with Sold State Drives (SSDs).|[infra.hw.stg.ssd.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
-|`ra2.ch.010`|Local Filesystem Storage Quantity|The Kubernetes Nodes must be equipped with local filesystem capacity of at least 320GB for unpacking and executing containers. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.003](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
-|`ra2.ch.011`|Virtual Node CPU Quantity|If using VMs, the Kubernetes Nodes must be equipped with at least 16 vCPUs.  Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.001](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
-|`ra2.ch.012`|Kubernetes Node RAM Quantity|The Kubernetes Nodes must be equipped with at least 32GB of RAM. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.002](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
+|---|---|---|---|---|
+|`ra2.ch.001`|Huge Pages|When hosting workloads matching the Network Intensive profile, it must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|[infra.com.cfg.004](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)||
+|`ra2.ch.002`|SR-IOV capable NICs|When hosting workloads matching the Network Intensive profile, the physical machines on which the Kubernetes Nodes run must be equipped with NICs that are SR-IOV capable.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)||
+|`ra2.ch.003`|SR-IOV Virtual Functions|When hosting workloads matching the Network Intensive profile, SR-IOV virtual functions (VFs) must be configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.|[e.cap.013](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)||
+|`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.|[infra.hw.cpu.cfg.004](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)||
+|`ra2.ch.005`|CPU Allocation Ratio - VMs|For Kubernetes nodes running as Virtual Machines, ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1.|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)||
+|`ra2.ch.006`|CPU Allocation Ratio - Pods|To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu < allocatable.cpu` and `limits.cpu < allocatable.cpu`).|[infra.com.cfg.001](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)||
+|`ra2.ch.007`|IPv6DualStack|To support IPv4/IPv6 dual stack networking, the Kubernetes Node OS must support and be allocated routable IPv4 and IPv6 addresses.|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Kubernetes Nodes run must be equipped with at least 2 physical sockets, each of at least 20 CPU cores.|[infra.hw.cpu.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)<br>[infra.hw.cpu.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)||
+|`ra2.ch.009`|Physical Storage|The physical machines on which the Kubernetes Nodes run should be equipped with Sold State Drives (SSDs).|[infra.hw.stg.ssd.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)||
+|`ra2.ch.010`|Local Filesystem Storage Quantity|The Kubernetes Nodes must be equipped with local filesystem capacity of at least 320GB for unpacking and executing containers. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.003](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)||
+|`ra2.ch.011`|Virtual Node CPU Quantity|If using VMs, the Kubernetes Nodes must be equipped with at least 16 vCPUs.  Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.001](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)||
+|`ra2.ch.012`|Kubernetes Node RAM Quantity|The Kubernetes Nodes must be equipped with at least 32GB of RAM. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|[e.cap.002](./chapter02.md#221-cloud-infrastructure-software-profile-capabilities)||
 |`ra2.ch.013`|Physical NIC Quantity|The physical machines on which the Kubernetes Nodes run must be equipped with at least four (4) Network Interface Card (NIC) ports.|[infra.hw.nic.cfg.001](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.014`|Physical NIC Speed - Basic Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Basic Profile must be at least 10Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.015`|Physical NIC Speed - Network Intensive Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Network Intensive profile must be at least 25Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.015`|Physical PCIe slots|The physical machines on which the Kubernetes Nodes run must be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.|
 |`ra2.ch.016`|Immutable infrastructure|Whether physical or virtual machines are used, the Kubernetes Node is not changed after it is made ready for use. New changes to the Kubernetes Node are rolled out as new instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|[`req.gen.cnt.02`](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ch.017`||||
-|`ra2.ch.018`||||
-|`ra2.ch.019`||||
-|`ra2.ch.020`||||
-|`ra2.ch.021`||||
 
-<p align="center"><b>Table 4-1:</b> Host OS Specifications</p>
+<p align="center"><b>Table 4-1:</b> Node Specifications</p>
 
 <a name="4.3"></a>
 ## 4.3 Kubernetes
@@ -92,11 +88,8 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.008`|System Resource Reservations|To avoid resource starvation issues on nodes, reserve compute resources for system daemons and Kubernetes system daemons such as kubelet, container runtime, etc. (requires Kubernetes version 1.17 or later). Use the following kubelet flags: `--reserved-cpus=[a-z]`|TBC|
 |`ra2.k8s.009`|CPU Pinning|When hosting workloads matching the Network Intensive profile, in order to support CPU Pinning, the kubelet must be started with the `--cpu-manager-policy=static` option. (Note, only containers in `Guaranteed` pods - where CPU resource `requests` and `limits` are identical - and configured with positive-integer CPU `requests` will take advantage of this. All other Pods will run on CPUs in the remaining shared pool.)|[infra.com.cfg.003](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.k8s.010`|IPv6DualStack|To support IPv6 and IPv4, the `IPv6DualStack` feature gate must be enabled on various components (requires Kubernetes v1.16 or later). kube-apiserver: `--feature-gates="IPv6DualStack=true"`. kube-controller-manager: `--feature-gates="IPv6DualStack=true" --cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --service-cluster-ip-range=<IPv4 CIDR>,<IPv6 CIDR> --node-cidr-mask-size-ipv4 ¦ --node-cidr-mask-size-ipv6` defaults to /24 for IPv4 and /64 for IPv6. kubelet: `--feature-gates="IPv6DualStack=true"`. kube-proxy: `--cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --feature-gates="IPv6DualStack=true"`|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.k8s.011`||||
-|`ra2.k8s.012`||||
-|`ra2.k8s.013`||||
-|`ra2.k8s.014`||||
-|`ra2.k8s.015`||||
+|`ra2.k8s.011`|Anuket profile labels|To clearly identify which worker nodes are compliant with the different profiles defined by Anuket the worker nodes must be labelled according to the following pattern: an `anuket.io/profile/basic` label must be set to `true` on the worker node if it can fulfil the requirements of the basic profile and an `anuket.io/profile/network-intensive` label must be set to `true` on the worker node if it can fulfil the requirements of the network intensive profile. The requirements for both profiles can be found in [chapter 2](./chapter02.md#22-reference-model-requirements)|||
+
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
 
@@ -134,10 +127,11 @@ feature-gates:
 <a name="4.4"></a>
 ## 4.4 Container runtimes
 
-|Ref|Specification|Details|Requirement Trace|
-|---|---|---|---|
-|`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|TBC|
-|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|TBC|
+|Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
+|---|---|---|---|---|
+|`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|TBC||
+|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|TBC||
+
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 
 <a name="4.5"></a>
@@ -148,37 +142,21 @@ Architecture they must be implemented as per the following specifications:
 
 |Ref|Specification|Details|Requirement Trace|
 |---|---|---|---|
-|`ra2.ntw.001`|CNI multiplexer/metaplugin|The selected CNI multiplexer/metapulgin MUST be conformant with the CNI spec, MUST support other CNI plugins (req.inf.ntw.06), and SHOULD provide an API based solution to administer the networks from a central point (req.inf.ntw.03). Example CNI implementations which meet these requirements include:<br> - DANM<br> - Multus.<br><br>For more detailed feature comparision of CNI multiplexers/metaplugins see Table 4-5| [req.inf.ntw.06](./chapter02.md#23-kubernetes-architecture-requirements), [req.inf.ntw.03](./chapter02.md#23-kubernetes-architecture-requirements) |
-|`ra2.ntw.002`|CNI to implement a default network which implements the Kubernetes network model|A CNI plugin may be used which implements the Kubernetes network model and have capability to handle `NetworkPolicies`|[req.inf.ntw.08](./chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ntw.003`|NAT less connectivity|An IPVLAN CNI plugin or the [MACVLAN CNI](https://github.com/containernetworking/plugins/tree/master/plugins/main/macvlan) may be used||
-|`ra2.ntw.004`|User plane networks|[User Space CNI](https://github.com/intel/userspace-cni-network-plugin) may be used. The User Space CNI may use VPP or OVS-DPDK as a backend.||
-|`ra2.ntw.005`|SR-IOV|[SR-IOV CNI plugin](https://github.com/intel/sriov-cni) may be used||
-|`ra2.ntw.006`|SR-IOV|[SR-IOV Device Plugin](https://github.com/intel/sriov-network-device-plugin) may be used||
-
+|`ra2.ntw.001`|Centralised network administration|The networking solution deployed within the implementation must be administered through the Kubernetes API using native Kubernetes API resources and objects, or Custom Resources.|[`req.inf.ntw.03`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.002`|Default Pod Network - CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin for the Default Pod Network, as the alternative (kubenet) does not support cross-node networking or Network Policies.|[`req.inf.ntw.08`](chapter02.md#23-kubernetes-architecture-requirements)<br><br>[`infra.net.cfg.004`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.003`|Multiple connection points|The networking solution deployed within the implementation must support the capability to connect at least FIVE connection points to each Pod, which are additional to the default connection point managed by the default Pod network CNI plugin.|[`e.cap.004`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.004`|Multiple connection points presentation|The networking solution deployed within the implementation must ensure that all additional non-default connection points are requested by Pods using standard Kubernetes resource scheduling mechanisms such as annotations or container resource requests and limits.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.005`|Multiplexer/meta-plugin|The networking solution deployed within the implementation may use a multiplexer/meta-plugin.|[`req.inf.ntw.06`](chapter02.md#23-kubernetes-architecture-requirements)<br><br>[`req.inf.ntw.07`](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.006`|Multiplexer/meta-plugin CNI Conformance|If used, the selected multiplexer/meta-plugin must integrate with the Kubernetes control plane via CNI.|[`req.inf.ntw.06`](chapter02.md#23-kubernetes-architecture-requirements)<br><br>[`req.inf.ntw.07`](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.007`|Multiplexer/meta-plugin CNI Plugins|If used, the selected multiplexer/meta-plugin must support the use of multiple CNI-conformant Network Plugins.|[`req.inf.ntw.06`](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.008`|SR-IOV Device Plugin for Network Intensive|When hosting workloads that match the Network Intensive profile and require SR-IOV acceleration, a Device Plugin for SR-IOV must be used to configure the SR-IOV devices and advertise them to the `kubelet`.|[`e.cap.013`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.009`|Multiple connection points with multiplexer/meta-plugin|When a multiplexer/meta-plugin is used, the additional non-default connection points must be managed by a CNI-conformant Network Plugin.|[`req.inf.ntw.08`](chapter02.md#23-kubernetes-architecture-requirements)<br><br>[`infra.net.cfg.004`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.010`|User plane networking|When hosting workloads matching the Network Intensive profile, CNI network plugins that support the use of DPDK, VPP, or SR-IOV must be deployed as part of the networking solution.|[`infra.net.acc.cfg.001`](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.011`|NATless connectivity|When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers, a CNI plugin that exposes the pod IP directly to the external networks (e.g. Calico, MACVLAN or IPVLAN CNI plugins) is required.|[`req.inf.ntw.14`](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.012`|Optional Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware may be used.|[`e.cap.016`](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.013`|Dual stack CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able to support dual-stack IPv4/IPv6 networking.|[`req.inf.ntw.04`](chapter02.md#23-kubernetes-architecture-requirements)|
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
-
-
-| Requirement | Support in Multus | Support in DANM |
-|-------------|-------------------|-----------------|
-| The overlay network encapsulation protocol needs to enable ECMP in the underlay (`infra.net.cfg.002`) | Supported via another CNI plugin | Supported via another CNI plugin |
-| NAT (`infra.net.cfg.003`) | Supported via another CNI plugin | Supported |
-| Security Groups (`infra.net.cfg.004`) | Not supported | Not supported <sub>1)<sub> |
-| SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant |
-| Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant |
-| Network resiliency (`req.inf.ntw.01`) | Supported | Supported |
-| Centrally administrated and configured (`req.inf.ntw.03`) | Not supported | Partially suported |
-| Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via another CNI plugin | Suported |
-| Integrating SDN controllers (`req.inf.ntw.05`) | Supported via another CNI plugin | Supported via another CNI plugin |
-| More than one networking solution (`req.inf.ntw.06`) | Supported | Supported |
-| Choose whether or not to deploy more than one networking solution (`req.inf.ntw.07`) | Supported | Supported |
-| Kubernetes network model (`req.inf.ntw.08`) | Supported via another CNI plugin | Supported via another CNI plugin |
-| Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported |
-| Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via another CNI plugin | Supported |
-
-<p align="center"><b>Table 4-5:</b> Comparision of CNI multiplexers/metaplugins</p>
-
-1): Under implementation in the current release.  
 
 <a name="4.6"></a>
 ## 4.6 Storage components
@@ -194,7 +172,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.stg.004`| Persistent Volumes | An implementation may support Kubernetes Persistent Volumes (PV) to provide persistent storage for Pods (requirement 'req.inf.stg.01'.<br>Persistent Volumes exist independent of the lifecycle of containers and/or pods. |[req.inf.stg.01](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/kubernetes/chapters/chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.stg.005`| Storage Extension | Volume plugins must allow for the use of a range of backend storage systems. ||
 |`ra2.stg.006`| Container Storage Interface (CSI) | An implementation may support the Container Storage Interface (CSI), an Out-of-tree plugin.<br>In order to support CSI, the  feature gates `CSIDriverRegistry` and `CSINodeInfo` must be enabled.<br>The implementation must use a CSI driver (a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)). <br>An implementation may support ephemeral storage through a CSI-compatible volume plugin in which case the `CSIInlineVolume` feature gate must be enabled.<br>An implementation may support Persistent Volumes through a CSI-compatible volume plugin in which case  the `CSIPersistentVolume` feature gate must be enabled. | |
- |`ra2.stg.007`|  | An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns between providers of a service and consumers of the service. | |
+|`ra2.stg.007`|  | An implementation should use Kubernetes Storage Classes to support automation and the separation of concerns between providers of a service and consumers of the service. | |
 
 <p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
 
@@ -253,9 +231,9 @@ solutions](#4.5).
 In order for the storage solution(s) to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
-|Ref|Specification|Details|Requirement Trace|
-|---|---|---|---|
-|`ra2.pkg.001`|API-based package management|A package manager must use the Kubernetes APIs to manage application artefacts. Cluster-side components such as Tiller are not supported.|[req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements)|
+|Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
+|---|---|---|---|---|
+|`ra2.pkg.001`|API-based package management|A package manager must use the Kubernetes APIs to manage application artefacts. Cluster-side components such as Tiller are not supported.|[req.int.api.02](./chapter02.md#23-kubernetes-architecture-requirements)||
 
 <p align="center"><b>Table 4-7:</b> Kubernetes Application Package Management Specifications</p>
 
@@ -272,6 +250,9 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process) Parameter Group (OCI Spec)|Specifies the container process|TBD|
 |`ra2.app.004`|[Hostname](https://github.com/opencontainers/runtime-spec/blob/master/config.md#hostname) Parameter Group (OCI Spec)|Specifies the container's hostname as seen by processes running inside the container|TBD|
 |`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|
+|`ra2.app.006`|Consumption of additional, non-default connection points|The workload must request additional non-default connection points through the use of workload annotations or resource requests and limits within the container spec passed to the Kubernetes API Server.|TBD|
+|`ra2.app.007`|Host Volumes|Workloads should not use `hostPath` volumes, as [Pods with identical configuration (such as created from a PodTemplate) may behave differently on different nodes due to different files on the nodes.](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)|[`req.kcm.gen.02`](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/kubernetes/chapters/chapter02.md#23-kubernetes-architecture-requirements)||
+
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 <a name="4.10"></a>
