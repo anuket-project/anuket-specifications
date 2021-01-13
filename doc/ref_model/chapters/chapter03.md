@@ -320,7 +320,7 @@ Configurable Smart Switches run generic “smart” configurable network operati
 
 Programmable Smart Switches make it possible to quickly support new or correct/modify existing protocols and network functions, allow end customers to implement network functions, and to only implement and load functionality that is needed. Such switches contain one or more programmable switch ASICs of the same or different types. The two most used programming languages are [P4](https://p4.org/) and [NPL](https://nplang.org/), and both can be used with vendor-specific toolchains to program their switch ASICs and/or FPGAs. Open Networking Foundation [Stratum](https://opennetworking.org/stratum/) is an example of network operating system that offers generic life cycle management control services for the P4 components and a management API. The control API for the individual network functions are not part of the Stratum APIs.
 
-Based on Smart Switches, for fully integrated edge and fabric products exist other solutions from vendors like Arista, Cisco or Kaloom.
+Based on Smart Switches, products exist for fully integrated edge and fabric solutions from vendors like Arista, Cisco or Kaloom.
 
 
 <a name="3.8.3"></a>
