@@ -256,8 +256,7 @@ Mesh](https://networkservicemesh.io/docs/concepts/what-is-nsm/))
 | The overlay network encapsulation protocol needs to enable ECMP in the underlay (`infra.net.cfg.002`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin | Supported | TBC |
 | NAT (`infra.net.cfg.003`) | Supported via the additional CNI plugin | Supported | Supported | TBC |
 | Network Policies (Security Groups) (`infra.net.cfg.004`) | Supported via a CNI Network Plugin that supports Network Policies | Supported via a CNI Network Plugin that supports Network Policies | Supported via a CNI Network Plugin that supports Network Policies | Supported via a CNI Network Plugin that supports Network Policies |
-| SFC support (`infra.net.cfg.005`) | Not relevant | Not relevant | Not relevant | Not relevant |
-| Traffic patterns symmetry (`infra.net.cfg.006`) | Not relevant | Not relevant | Not relevant | Not relevant |
+| Traffic patterns symmetry (`infra.net.cfg.006`) | Depends on CNI plugin used | Depends on CNI plugin used | Depends on CNI plugin used | Depends on CNI plugin used |
 | Centrally administrated and configured (`req.inf.ntw.03`) | Supported via Kubernetes API Server | Supported via Kubernetes API Server | Supported via Kubernetes API Server | Supported via Kubernetes API Server |
 | Dual stack IPv4 and IPv6 for Kubernetes workloads (`req.inf.ntw.04`) | Supported via the additional CNI plugin | Supported | Supported | Supported |
 | Integrating SDN controllers (`req.inf.ntw.05`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin | TF is an SDN controller | TBC |
