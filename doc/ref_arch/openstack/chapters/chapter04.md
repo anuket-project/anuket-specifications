@@ -17,7 +17,8 @@
   * [4.4.1 Support for Cloud Infrastructure Profiles and flavors](#4.4.1)
   * [4.4.2 Logical segregation and high availability](#4.4.2)
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
-
+* [4.5 Cloud Topology and Control Plane Scenarios](#4.5)
+  * [4.5.1 Edge Cloud Topology](#4.5.1)
 
 
 
@@ -377,7 +378,8 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 
 <a name="4.2.3"></a>
 ### 4.2.3. Network Fabric
-**Content to be developed**
+
+Networking Fabric consists of:
 -	Physical switches, routers…
 -	Switch OS
 -	Minimum number of switches etc.
@@ -704,3 +706,45 @@ For Network intensive instances, VNF Component should fit into a single NUMA zon
 ### 4.4.3. Transaction Volume Considerations
 
 Storage transaction volumes impose a requirement on North-South network traffic in and out of the storage backend. Data availability requires that the data be replicated on multiple storage nodes and each new write imposes East-West network traffic requirements.
+
+
+<a name="4.5"></a>
+## 4.5 Cloud Topology and Control Plane Scenarios
+
+Typically, Clouds have been implemented in large (central) data centers with 100' to tens of thousands of servers. Telco Operators have also been creating intermediate data centers in central office locations, colocation centers, and now edge centers at the physical edge of their networks because of the demand for low latency and high throughput for 5G, IoT and connected devices (including autonomous driverless vehicles and connected vehicles). Chapter 3 of this document, discusses [Cloud Topology](./chapter03.md#3.5) and lists 3 types of data centers: Large, Intermediate and Edge.
+
+For ease of convenience, unless specifically required, in this section we will use Central Cloud Center, Edge Cloud Center and Intermediate Cloud Center as representative terms for cloud services hosted at centralised large data centers, Telco edge locations and for locations with capacity somewhere in between the large data centers and edge locations, respectively. The mapping of various terms, including the Reference Model terminology specified in Table [8-5](../../..//ref_model/chapters/chapter08.md#8.3.5) and [Open Glossary of Edge Computing](https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md) is as follows:
+
+- Central Cloud Center: Large Centralised Data Center, Regional Data Center
+- Intermediate Cloud Center: Metro Data Center, Regional Edge, Aggregation Edge
+- Edge Cloud Center: Edge, Mini-/Micro-Edge, Micro Modular Data Center, Service Provider Edge, Access Edge, Aggregation Edge
+
+In the Intermediate and Edge cloud centers, there may be limitations on the resource capacity, as in the number of servers, and the capacity of these servers in terms of # of cores, RAM, etc. restricting the set of services that can be deployed and, thus, creating a dependency between other data centers. In [Reference Model Chapter 8.3](../../../ref_model/chapters/chapter08.md#8.3), Table 8-5 specifies the physical and environmental characteristics, infrastructure capabilities and deployment scenarios of different locations.
+
+Chapter [3.3.1.1. OpenStack Services Topology](./chapter03.md#3311-openstack-services-topology) of this document, specifies the differences between the Control Plane and Data Plane, and specifies which of the control nodes, compute nodes, storage nodes (optional) and network nodes (optional) are components of these planes.  The previous sections of Chapter 4 include a description of the OpenStack services and their deployment in control nodes, compute nodes, and optionally storage nodes and network nodes (rarely). The Control Plane deployment scenarios determine the distribution of OpenStack and other needed services among the different node types. This section considers the Centralised Control Plane (CCP) and Distributed Control Plane (DCP) scenarios. The choice of control plane and the cloud center resource capacity and capabilities determine the deployment of OpenStack services in the different node types.
+
+The Central Cloud Centers are organized around a Centralised Control Plane. With the introduction of Intermediate and Edge Cloud Centers, the Distributed Control Plane deployment becomes a possibility. A number of independent control planes (sometimes referred to as Local Control Planes (LCP)) exist in the Distributed Control Plane scenario, compared with a single control plane in the Centralised Control Plane scenario. Thus, in addition to the control plane and controller services deployed at the Central Cloud Center, Local Control Planes hosting a full-set or subset of the controller services are also deployed on the Intermediate and Edge Cloud Centers. Table 4-5 presents examples of such deployment choices.
+
+
+|   |   | Orchestration | Identity Management | Image Management | Compute | Network Management | Storage Management |
+|---|---|---|---|---|---|---|---|
+| CCP | Centralised DC – control nodes | heat-api,<br>heat-engine,<br>nova-placement-api | Identity Provider (IdP),<br>Keystone API | Glance API, Glance Registry | nova-compute api,<br>nova-scheduler,<br>nova-conductor | neutron-server,<br>neutron-dhcp-agent,<br>neutron-L2-agent,<br>neutron-L3-agent (optional),<br>neutron-metadata-agent | Cinder API,<br>Cinder Scheduler,<br>Cinder Volume |
+| DCP: combination of services depending upon Center size | Any DC - Control nodes Option 1 | heat-api,<br>heat-engine,<br>nova-placement-api | Identity Provider (IdP),<br>Keystone API | Glance API, Glance Registry | nova-compute api,<br>nova-scheduler,<br>nova-conductor | neutron-server,<br>neutron-dhcp-agent,<br>neutron-L2-agent,<br>neutron-L3-agent (optional),<br>neutron-metadata-agent | Cinder API,<br>Cinder Scheduler,<br>Cinder Volume |
+|   | Any DC - Control nodes Option 2: split services between DCs | ** in other DC | * in Large DC | * in Large DC | ** in another DC | ** in another DC | ** in another DC
+| CCP or DCP | Compute nodes |  |  |  | nova-compute-agent | neutron-L2-agent, neutron-L3-agent (optional) |  |
+| CCP | Compute nodes | nova-placement-api |  |  | nova-compute-agent,<br>nova-conductor | neutron-server,<br>neutron-dhcp-agent,<br>neutron-L2-agent,<br>neutron-L3-agent (optional) |  |
+
+<p align="center"><b>Table 4-5:</b> Distribution of OpenStack services on different nodes depending upon Control Plane Scenario</p>
+
+<a name="4.5.1"></a>
+### 4.5.1 Edge Cloud Topology
+
+The Reference Model Chapter 8.3 "[Telco Edge Cloud](../../../ref_model/chapters/chapter08.md#8.3)", presents the deployment environment characteristics, infrastructure characteristics and new values for the Infrastructure Profiles at the Edge.
+
+The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/) includes information such as the services that run on various nodes. The information from the whitepaper coupled with that from the [OpenStack Reference Architecture](https://fuel-ccp.readthedocs.io/en/latest/design/ref_arch_100_nodes.html#services-placement-summary) for 100, 300 and 500 nodes will help in deciding which OpenStack and other services (such as database, messaging) run on which nodes in what Cloud Center and the number of copies that should be deployed. These references also present the pros and cons of DCP and CCP and designs to address some of the challenges of each of the models.
+
+Table 8-4 in the Reference Model Chapter 8.3.4 "[Telco Edge Cloud: Platform Services Deployment](../../../ref_model/chapters/chapter08.md#8.3.4)" lists the Platform Services that may be placed in the different node types (control, compute and storage). Depending upon the capacity and resources available only the compute nodes may exist at the Edge thereby impacting operations.
+
+Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavours.
+
+
