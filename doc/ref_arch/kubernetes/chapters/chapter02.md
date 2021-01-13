@@ -4,18 +4,19 @@
 # 2. Architecture Requirements
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-* [2.1 Introduction](#2.1)
-  * [2.1.1 Definitions](#2.1.1)
-* [2.2 Reference Model Requirements](#2.2)
-  * [2.2.1 Cloud Infrastructure Software Profile Capabilities](#2.2.1)
-  * [2.2.2 Virtual Network Interface Specifications](#2.2.2)
-  * [2.2.3 Cloud Infrastructure Software Profile Requirements](#2.2.3)
-  * [2.2.4 Cloud Infrastructure Hardware Profile Requirements](#2.2.4)
-  * [2.2.5 Cloud Infrastructure Management Requirements](#2.2.5)
-  * [2.2.6 Cloud Infrastructure Security Requirements](#2.2.6)
-* [2.3 Kubernetes Architecture Requirements](#2.3)
+- [2. Architecture Requirements](#2-architecture-requirements)
+  - [2.1 Introduction](#21-introduction)
+  - [2.1.1 Definitions](#211-definitions)
+  - [2.2 Reference Model Requirements](#22-reference-model-requirements)
+    - [2.2.1 Cloud Infrastructure Software Profile Capabilities](#221-cloud-infrastructure-software-profile-capabilities)
+    - [2.2.2 Virtual Network Interface Specifications](#222-virtual-network-interface-specifications)
+    - [2.2.3 Cloud Infrastructure Software Profile Requirements](#223-cloud-infrastructure-software-profile-requirements)
+    - [2.2.4 Cloud Infrastructure Hardware Profile Requirements](#224-cloud-infrastructure-hardware-profile-requirements)
+    - [2.2.5 Cloud Infrastructure Management Requirements](#225-cloud-infrastructure-management-requirements)
+    - [2.2.6 Cloud Infrastructure Security Requirements](#226-cloud-infrastructure-security-requirements)
+  - [2.3 Kubernetes Architecture Requirements](#23-kubernetes-architecture-requirements)
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -316,9 +317,8 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.ntw.08` | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. | |
 | `req.inf.ntw.09` | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
 | `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support cluster wide coordination of IP address assignment. | |
-| `req.inf.ntw.12` | Infrastructure | Network | The networking solution to support multiple connection points (e.cap.004 - please see [Section 2.2.1](#2.2.1)) must support any Kubernetes conformant CNI plugin to be incorporated as a networking solution. | |
-|---|---|---|---|---|
 | `req.inf.ntw.13` | Infrastructure | Network | The platform must allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
+| `req.inf.ntw.14` | Infrastructure | Network | The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.| |
 | `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. | |
 | `req.inf.phy.01`  | Infrastructure |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. | |
 | `req.kcm.gen.01` | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. | |
