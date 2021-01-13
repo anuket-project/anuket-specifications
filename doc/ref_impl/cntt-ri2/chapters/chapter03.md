@@ -22,8 +22,8 @@ The purpose of this chapter is to list and describe the requirements on labs use
 
 As a result of these, RI2 must be deployable in different lab environments:
 
-1. internal development labs of software vendors, operators and 3rd party test labs,
-1. public community labs (e.g. OPNFV),
+1. internal development labs of software vendors, operators and 3<sup>rd</sup> party test labs
+1. public community labs (e.g. Anuket (formerly OPNFV))
 1. resources hosted by cloud infrastructure providers (e.g. [Equinix Metal](https://metal.equinix.com/))
 
 In addition, lab environments must meet specific requirements on hardware resources (e.g. compute and storage), capabilities (e.g. support for SR-IOV), and connectivity (e.g., number of NICs) to run the RI2. The following sections describe the resulting requirements in detail.
@@ -45,9 +45,9 @@ The requirements on and means of accessing a given lab differ per hosting organi
 
 * Access to lab resources hosted by **public cloud providers** is managed by the cloud provider.
 
-* Access to **internal development and test labs** of software vendors, operators and 3rd party test labs is managed by the corresponding entity and not expected to be available to community members outside of the respective organization.
+* Access to **internal development and test labs** of software vendors, operators and 3<sup>rd</sup> party test labs is managed by the corresponding entity and not expected to be available to community members outside of the respective organization.
 
-For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in OPNFV labs, 3rd party labs or public cloud infrastructure.
+For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in OPNFV labs, 3<sup>rd</sup> party labs or public cloud infrastructure.
 
 
 <a name="3.2.2"></a>
