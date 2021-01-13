@@ -18,7 +18,7 @@ The purpose of this chapter is to list and describe the requirements on labs use
 
 1. RI2 is an implementation of and a proving ground for the [Reference Architecture 2 (RA2) specification](../../../ref_arch/kubernetes). RI2 is verified against RA2 through the [Reference Conformance 2 (RC2) specification](../../../ref_cert/RC2).
 1. RI2 will align itself with the implementation work conducted within the [Cloud Native OVP](https://wiki.lfnetworking.org/x/agCDAQ) program.
-1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their development environment to develop and validate against.
+1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their environment to develop and validate against.
 
 As a result of these, RI2 must be deployable in different lab environments:
 
