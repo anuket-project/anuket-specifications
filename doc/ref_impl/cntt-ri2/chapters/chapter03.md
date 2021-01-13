@@ -20,7 +20,7 @@ The purpose of this chapter is to list and describe the requirements on labs use
 1. RI2 will align itself with the implementation work conducted within the [Cloud Native OVP](https://wiki.lfnetworking.org/x/agCDAQ) program.
 1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their development environment to develop and validate against.
 
-As a result of those two main use cases, RI2 must be deployable in different lab environments:
+As a result of these, RI2 must be deployable in different lab environments:
 
 1. internal development labs of software vendors, operators and 3rd party test labs,
 1. public community labs (e.g. OPNFV),
