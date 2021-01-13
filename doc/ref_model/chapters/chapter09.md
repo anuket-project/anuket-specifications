@@ -301,7 +301,7 @@ Assessment on which data to collect should start by iterating over the physical 
 * Individual Virtual Machines and Containers
 * Virtualization infrastructure components
 * Physical servers (compute) and network elements
-* Toolservers with their applications (DNS, IdM, ZTP, etc) 
+* Toolservers with their applications (DNS, Identity Management, Zero Touch Provisioning, etc) 
 * Cabling 
 
 <a name="9.6.1.3"></a>
