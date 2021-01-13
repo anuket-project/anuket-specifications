@@ -16,7 +16,7 @@
 
 The purpose of this chapter is to list and describe the requirements on labs used to deploy and run the RI2. Overall, the RI2 serves two purposes which guide the definition of requirements in this chapter:
 
-1. RI2 serves as a baseline and proving ground for developing the [Reference Conformance 2 (RC2) specification](../../../ref_cert/RC2) as well as the [Cloud Native OVP](https://wiki.lfnetworking.org/x/agCDAQ) program.
+1. RI2 serves as a baseline and proving ground for the [Reference Architecture 2 (RA2) specification](../../../ref_arch/kubernetes). It is verified through the [Reference Conformance 2 (RC2) specification](../../../ref_cert/RC2).
 1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their development environment to develop and validate against.
 
 As a result of those two main use cases, RI2 must be deployable in different lab environments:
