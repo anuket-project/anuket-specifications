@@ -17,10 +17,11 @@
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
-  * [3.8.1 Types of accelerators](#3.8.1)
+  * [3.8.1 Types of Accelerators](#3.8.1)
   * [3.8.2 Levels of accelerator consumption](#3.8.2)
-  * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
+  * [3.8.4 CPU Instructions](#3.8.4)
   * [3.8.7 SmartNICs](#3.8.7)
+  * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -283,13 +284,31 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 ## 3.8 Hardware Acceleration Abstraction
 
 <a name="3.8.1"></a>
-### 3.8.1 Types of accelerators
+### 3.8.1 Types of Accelerators
+
+Accelerator technologies can be categorized depending on where they are realized in the hardware product and how they get activated, life cycle managed and supported in running infrastructure.
+
+| Acceleration technology/hardware | Example implementation | Activation/LCM/support | Usage by application tenant |
+|---|---|---|---|
+| CPU instructions | Within CPU cores | None for hardware | Application to load software library that recognizes and uses CPU instructions |
+| Fixed function accelerator | Crypto, vRAN-specific adapter | Rare updates | Application to load software library/driver that recognizes and uses the accelerator |
+| Firmware-programmable adapter | Network/storage adapter with programmable part of firmware image | Rare updates | Application normally not modified or aware |
+| SmartNIC | Programmable accelerator for vSwitch/vRouter, NF and/or Hardware Infrastructure | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 types/operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3 Reprogrammable |
+| SmartSwitch-based | Programmable Switch Fabric or TOR switch | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3. Reprogrammable |
+
+<p align="center"><img src="../figures/ch03-example-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
+<p align="center"><b>Figure 3-7:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+
+
 
 <a name="3.8.2"></a>
 ### 3.8.2 Levels of accelerator consumption
 
-<a name="3.8.3"></a>
-### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
+
+<a name="3.8.4"></a>
+### 3.8.4 CPU Instructions
+
+CPU architecture often includes instructions and execution blocks for most common compute-heavy algorithms like block cypher (example AES-NI), Random Number Generator or vector instructions. Those are normally consumed in software infrastructure or application by using enabled software libraries that will run faster when instructions are available in hardware and slower when instructions are not available in hardware, so other more general CPU instructions are used. CPU instructions don’t need to be activated or life-cycle-managed. Finding such compute nodes during scheduling workloads can be done by application control/orchestrator using OpenStack Nova filters or Kubernetes Node Feature Discovery labels, or directly from the Hardware Management layer.
 
 
 <a name="3.8.7"></a>
@@ -319,4 +338,8 @@ The trusted forwarding functions must be handled through a Hardware Infrastructu
 The separated management channel could either come in through the BMC, a direct management port on the DPU or through a management VPN on the switch ports. This enable the Hardware Infrastructure Management to automate its networking through the DPU without any need to dynamically manage the switch fabric, thereby enabling a free choice of switch fabric vendor. These deployments allow the switch fabric to be statically provisioned by the operators networking operation unit, as it is often required.
 
 The DPU can offload control and data plane of the virtual switching to the DPU as well as trusted hardware offload for virtualized Packet Core and Radio data plane networking and transport related functionality in a power efficient way. It can also offload relevant application tenant control functions if the DPU offers an Execution Environment for VMs or containers and there is space and performance headroom. In such cases the DPU must also setup a communication channel into respective application tenant environment.
+
+
+<a name="3.8.3"></a>
+### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
 
