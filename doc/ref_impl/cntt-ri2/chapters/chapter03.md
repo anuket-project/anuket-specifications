@@ -14,15 +14,16 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The purpose of this chapter is to list and describe the requirements on labs used to deploy and run the RI2. Overall, the RI2 serves two purposes which guide the definition of requirements in this chapter:
+The purpose of this chapter is to list and describe the requirements on labs used to deploy and run the RI2. Overall, the RI2 serves the following purposes which guide the definition of requirements in this chapter:
 
-1. RI2 serves as a baseline and proving ground for developing the [Reference Conformance 2 (RC2) specification](../../../ref_cert/RC2) as well as the [Cloud Native OVP](https://wiki.lfnetworking.org/x/agCDAQ) program.
-1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their development environment to develop and validate against.
+1. RI2 is an implementation of and a proving ground for the [Reference Architecture 2 (RA2) specification](../../../ref_arch/kubernetes). RI2 is verified against RA2 through the [Reference Conformance 2 (RC2) specification](../../../ref_cert/RC2).
+1. RI2 will align itself with the implementation work conducted within the [Cloud Native OVP](https://wiki.lfnetworking.org/x/agCDAQ).
+1. RI2 enables software vendors of CNFs and cloud container platforms to deploy a reference implementation in their environment to develop and validate against.
 
-As a result of those two main use cases, RI2 must be deployable in different lab environments:
+As a result of these, RI2 must be deployable in different lab environments:
 
-1. internal development labs of software vendors, operators and 3rd party test labs,
-1. public community labs (e.g. OPNFV),
+1. internal development labs of software vendors, operators and 3<sup>rd</sup> party test labs
+1. public community labs (e.g. Anuket (formerly OPNFV))
 1. resources hosted by cloud infrastructure providers (e.g. [Equinix Metal](https://metal.equinix.com/))
 
 In addition, lab environments must meet specific requirements on hardware resources (e.g. compute and storage), capabilities (e.g. support for SR-IOV), and connectivity (e.g., number of NICs) to run the RI2. The following sections describe the resulting requirements in detail.
@@ -44,9 +45,9 @@ The requirements on and means of accessing a given lab differ per hosting organi
 
 * Access to lab resources hosted by **public cloud providers** is managed by the cloud provider.
 
-* Access to **internal development and test labs** of software vendors, operators and 3rd party test labs is managed by the corresponding entity and not expected to be available to community members outside of the respective organization.
+* Access to **internal development and test labs** of software vendors, operators and 3<sup>rd</sup> party test labs is managed by the corresponding entity and not expected to be available to community members outside of the respective organization.
 
-For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in OPNFV labs, 3rd party labs or public cloud infrastructure.
+For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in OPNFV labs, 3<sup>rd</sup> party labs or public cloud infrastructure.
 
 
 <a name="3.2.2"></a>
