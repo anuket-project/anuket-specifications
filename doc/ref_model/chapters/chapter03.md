@@ -20,6 +20,7 @@
   * [3.8.1 Types of Accelerators](#3.8.1)
   * [3.8.2 Levels of accelerator consumption](#3.8.2)
   * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
+  * [3.8.4 CPU Instructions](#3.8.4)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -304,3 +305,10 @@ Accelerator technologies can be categorized depending on where they are realized
 
 <a name="3.8.3"></a>
 ### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
+
+
+<a name="3.8.4"></a>
+### 3.8.4 CPU Instructions
+
+CPU architecture often includes instructions and execution blocks for most common compute-heavy algorithms like block cypher (example AES-NI), Random Number Generator or vector instructions. Those are normally consumed in software infrastructure or application by using enabled software libraries that will run faster when instructions are available in hardware and slower when instructions are not available in hardware, so other more general CPU instructions are used. CPU instructions don’t need to be activated or life-cycle-managed. Finding such compute nodes during scheduling workloads can be done by application control/orchestrator using OpenStack Nova filters or Kubernetes Node Feature Discovery labels, or directly from the Hardware Management layer.
+
