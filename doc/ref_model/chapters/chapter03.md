@@ -22,6 +22,7 @@
   * [3.8.2 Infrastructure and Application Level Acceleration](#3.8.2)
   * [3.8.3 Workload Placement](#3.8.3)
   * [3.8.4 CPU Instructions](#3.8.4)
+  * [3.8.5 Fixed Function Accelerators](#3.8.5)
   * [3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration](#3.8.9)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
@@ -362,7 +363,6 @@ Preferably, Application or Infrastructure acceleration can take benefit from und
 - For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
 
 
-
 <a name="3.8.3"></a>
 ### 3.8.3 Workload Placement
 
@@ -375,14 +375,18 @@ Growing lists of individual optimizations including hardware acceleration during
 With further growth in size of clusters and the variety of hardware acceleration, in a hybrid or multi-cloud deployment, it will be necessary to enable separate optimization levels for the workload placement and each Cloud Infrastructure provider. The workload placement orchestrator will operate on one or several Cloud Infrastructures resources to satisfy the workloads according to Service Level Agreements (SLA) that do not specify all implementation and resource details. Each Cloud Infrastructure provider will make internal Infrastructure optimisations towards their own internal optimisation targets whilst fulfilling the SLAs.
 
 
-<a name="3.8.3"></a>
-### 3.8.3 Decoupling applications from infrastructure with Hardware Acceleration
-
-
 <a name="3.8.4"></a>
 ### 3.8.4 CPU Instructions
 
 CPU architecture often includes instructions and execution blocks for most common compute-heavy algorithms like block cypher (example AES-NI), Random Number Generator or vector instructions. Those are normally consumed in software infrastructure or application by using enabled software libraries that will run faster when instructions are available in hardware and slower when instructions are not available in hardware, so other more general CPU instructions are used. CPU instructions don’t need to be activated or life-cycle-managed. Finding such compute nodes during scheduling workloads can be done by application control/orchestrator using OpenStack Nova filters or Kubernetes Node Feature Discovery labels, or directly from the Hardware Management layer.
+
+
+<a name="3.8.5"></a>
+### 3.8.5 Fixed Function Accelerators
+
+Fixed function accelerators can come as adapters with in-line (typically PCIe adapter with Ethernet ports or storage drives) or look-aside (typically PCIe adapters without any external ports) functionality, additional chip on motherboard, included into server chipsets or packaged/embedded into main CPU. They can accelerate cryptographic functions, highly parallelized or other specific algorithms. Initial activation and rare life cycle management events (like updating firmware image) can typically be done from the Host OS (e.g. the OS driver or a Library), the Hardware Infrastructure Manager (from a library) or the NF (mostly through a library).
+
+Beyond finding such compute nodes during scheduling workloads, those workloads also need to be mapped to the accelerator, both of which in Kubernetes can be done with Device Plugin framework. Once mapped to the application, the application can use enabled software libraries and/or device drivers that will use hardware acceleration. If hardware acceleration is used to improve cost/performance, then application can also run on generic compute node without hardware accelerator when application will use the same software library to run on generic CPU instructions.
 
 
 <a name="3.8.9"></a>
@@ -402,4 +406,3 @@ Taking advantage of RM and RA environments with common capabilities, application
 - a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
 - b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
 - c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
-
