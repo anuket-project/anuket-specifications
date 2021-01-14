@@ -19,7 +19,7 @@
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of Accelerators](#3.8.1)
   * [3.8.2 Infrastructure and Application Level Acceleration](#3.8.2)
-  * [3.8.3 Decoupling applications from infrastructure with Hardware Acceleration](#3.8.3)
+  * [3.8.3 Workload Placement](#3.8.3)
   * [3.8.4 CPU Instructions](#3.8.4)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
@@ -343,6 +343,19 @@ Preferably, Application or Infrastructure acceleration can take benefit from und
 - For Linux IO virtualization: VirtIO
 - For Network Functions using DPDK libraries: Crypto Device, EthDev, Event Device and Base Band Device
 - For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
+
+
+
+<a name="3.8.3"></a>
+### 3.8.3 Workload Placement
+
+Workload placement can be done by a combination of filters/selectors to find appropriate compute resources, subsystems to manage assignment of scheduled workloads to Hardware Accelerator, and intelligence in the workload to detect the presence of Hardware Accelerators.
+
+For initial limited cloud deployments of network functions on private clouds it is possible to have a workload placement orchestrator that handles optimizations of selected virtualisation clusters and available hardware resources. This will however soon become too complex with the increasing number of acceleration devices, hardware composability and hybrid multi-cloud deployments.
+
+Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to lists of individual optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and dataplane-optimized category instead of specifying individual optimizations required to reach it.
+
+With further growth in size of clusters and the variety of hardware acceleration, in a hybrid or multi-cloud deployment, it will be necessary to enable separate optimization levels for the workload placement and each Cloud Infrastructure provider. The workload placement orchestrator will operate on one or several Cloud Infrastructures resources to satisfy the workloads according to Service Level Agreements (SLA) that do not specify all implementation and resource details. Each Cloud Infrastructure provider will make internal Infrastructure optimisations towards their own internal optimisation targets whilst fulfilling the SLAs.
 
 
 <a name="3.8.3"></a>
