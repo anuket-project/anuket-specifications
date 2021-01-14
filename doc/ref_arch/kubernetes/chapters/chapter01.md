@@ -3,16 +3,17 @@
 # 1. Overview
 <p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
-* [1.1 Introduction.](#1.1)
-* [1.2 Terminology](#1.2)
-* [1.3 Principles](#1.3)
-  * [1.3.1 Cloud Native Principles](#1.3.1)
-  * [1.3.2 Exceptions](#132-exceptions)
-    * [1.3.2.1 Technology Exceptions](1321-technology-exceptions)
-    * [1.3.2.2 Requirements Exceptions](1322-requirements-exceptions)
-* [1.4 Scope](#1.4)
-* [1.5 Approach](#1.5)
+## Table of Contents <!-- omit in toc -->
+- [1. Overview](#1-overview)
+  - [1.1 Introduction](#11-introduction)
+    - [1.2 Terminology](#12-terminology)
+  - [1.3 Principles](#13-principles)
+    - [1.3.1 Cloud Native Principles](#131-cloud-native-principles)
+  - [1.3.2 Exceptions](#132-exceptions)
+      - [1.3.2.1 Technology Exceptions](#1321-technology-exceptions)
+      - [1.3.2.2 Requirements Exceptions](#1322-requirements-exceptions)
+  - [1.4 Scope](#14-scope)
+  - [1.5 Approach](#15-approach)
 
 
 <a name="1.1"></a>
