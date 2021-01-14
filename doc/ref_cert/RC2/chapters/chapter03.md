@@ -37,6 +37,7 @@ virtualenv functest-kubernetes
 . functest-kubernetes/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
+ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes
 git clone https://gerrit.opnfv.org/gerrit/functest-kubernetes functest-kubernetes-src
 (cd functest-kubernetes-src && git checkout -b stable/kali origin/stable/kali)
 ansible-playbook functest-kubernetes-src/ansible/site.cntt.yml
