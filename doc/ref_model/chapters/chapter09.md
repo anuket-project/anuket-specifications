@@ -390,7 +390,6 @@ can be thought of as a request which starts by INVITE message of the SIP protoco
 #### 9.6.1.4. Where to send the data
 
 If the observability data have to be sent from their sources (or producers) to specific destinations (or consumers), then this creates high degree of dependency between producers and consumers, and is extremely prone to errors, especially in case of configuration changes. Ideally, the data producers must not be impacted with any change in the data consumers and vice versa.
-
 This is achieved by decoupling data producers from data consumers through the use of Brokers. The Producers always send their data to the same endpoint - the Broker. While the Consumers register with the Broker for data that is of interest to them and always receive their data from the Broker.
 
 <a name="9.6.1.5"></a>
