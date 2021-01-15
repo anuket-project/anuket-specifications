@@ -186,7 +186,7 @@ The list of allocatable resources will vary depending on the configuration, but 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
 
-In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of testcases specified in RC-2 should be executued. A selection of these testcases is documented in [RC-2 Chapter 2](../../../ref_cert/RC2/chapters/chapter02.md).
+In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of testcases specified in RC-2 should be executed. A selection of these testcases is documented in [RC-2 Chapter 2](../../../ref_cert/RC2/chapters/chapter02.md).
 
 For deploying your own CNTT RC2 toolchain, please refer to the steps mentioned in [RC-2 Kubernetes Testing Cookbook](../../../ref_cert/RC2/chapters/chapter03.md).
 
