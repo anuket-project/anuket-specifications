@@ -19,7 +19,7 @@
     * [9.6.1.4 Where to send the data](#9.6.1.4)
     * [9.6.1.5 Which protocol, interface, and format to use](#9.6.1.5)
   * [9.6.2 The Architecture](#9.6.2)
-    * [9.6.2.1 Push Vs. Pull](#9.6.2.1)
+    * [9.6.2.1 Push vs. Pull](#9.6.2.1)
     * [9.6.2.2 Producers, Consumers, and Message broker](#9.6.2.2)
 
 
