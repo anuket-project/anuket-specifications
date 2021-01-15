@@ -358,7 +358,7 @@ Typically, when it comes to data collection, three questions arise:
 <a name="9.6.1.2"></a>
 #### 9.6.1.2. What data to collect
 
-Assessment on which data to collect should start by iterating over the physical and virtual infrastructure components: 
+Assessment on what data to collect should start by iterating over the physical and virtual infrastructure components: 
 
 * Network Services across sites and tenants 							
 * Virtualized functions per site and tenant
