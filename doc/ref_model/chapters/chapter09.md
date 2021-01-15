@@ -345,7 +345,7 @@ Long term trending data are essential for capacity planning purposes and typical
 
 A cloud typically consists of one or more regional data centers, central offices, and edge sites. These are managed from redundant central management sites, each hosted in their own data centers.
 
-While many Telco Clouds start as a vertical cloud by hosting one prime application, e.g. IMS, the intent is to host more applications over time in order to truly maximize the cloud to its full potential. Therefore it is pure coincidence to have the same team responsible and manage the infrastructure and the application running on top. Network services and applications deployed on a Telco Cloud are managed by separate teams, within the same or different organizations and a monitoring solution must be capable of keeping the collection of monitoring data isolated between tenants and NFVI. At the same time, some monitoring data from the NFVI layer must selectively be available to tenant monitoring applications in order to correlate e.g. VNF metrics with the underlying infrastructure it currently runs on.
+The network services and applications deployed on a Telco Cloud, and the Telco Cloud infrastructure are usually managed by separate teams, and, thus, the monitoring solution must be capable of keeping the collected monitoring data isolated between tenants and Cloud Infrastructure operations. Some monitoring data from the Cloud Infrastructure layer must selectively be available to tenant monitoring applications in order to correlate, say, the Network Functions/Services data with the underlying cloud infrastructure data.
 
 <a name="9.6.1.1"></a>
 #### 9.6.1.1. What to observe
@@ -450,5 +450,4 @@ Enforcing correct message structures (carrying the data) is performed using Sche
 <p align="center"><img src="../figures/RM-Ch09-Fig-Producers-Consumers.png" alt="Producers and Consumers"><br><b>Figure 9-2: Producers and Consumers.</b></p>
 
 <p align="center"><img src="../figures/RM-Ch09-Fig-Broker-Service.png" alt="Broker Services"><br><b>Figure 9-3: Broker Services.</b></p>
-
 
