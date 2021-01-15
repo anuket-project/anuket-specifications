@@ -419,7 +419,7 @@ Two widely deployed models for providing telemetry data are pull and push.
 Typical characteristics of a pull model are:
 
 * The consumers are required to discover the producers of the data
-* Once the producers are identified, there should be a tight relationship (synchronization) between the producer and consumer. For example, if a producer encounters a LCM (Life Cycle Management) event - such as it moves to a different location or reboots/restarts, the consumer must re-discover it and bind the relationship again - makes the systems very complex in terms of configuration as well management. 
+* Once the producers are identified, there should be a tight relationship (synchronization) between the producer and consumer. For example, if a producer encounters a LCM (Life Cycle Management) event - such as it moves to a different location or reboots/restarts, the consumer must re-discover it and bind the relationship again - makes the systems very complex in terms of configuration and management. 
 * Data is pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage to deal with this data - example SNMP pull/walks
 
  <a name="9.6.2.1.2"></a>
