@@ -21,7 +21,7 @@ If there is no clear traceability and strong links between these 3 components, t
 
 
 ### Requirement Principles
-Requirements Principles can be found in the [RM Principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0)
+Requirement Principles can be found in the [CNTT Principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0)
 
 ### Testing Principles
 * There must be traceability between test cases and requirement being validated
