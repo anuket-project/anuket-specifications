@@ -371,7 +371,7 @@ Assessment on what data to collect should start by iterating over the physical a
 <a name="9.6.1.3"></a>
 #### 9.6.1.3. Data categories
 
-There are three main observability categories: metrics, alarms and logs:
+There are four main observability categories: metrics, alarms, logs and traces:
 
 1. **Metrics** or telemetry report counters and gauge levels and can either be pulled periodically e.g. via SNMP or REST, or pushed as streams using gRPC, NETCONF, which receivers registered for certain sensors, or by registering as a publisher to a message broker. These messages must be structured in order to get parsed successfully.
 
