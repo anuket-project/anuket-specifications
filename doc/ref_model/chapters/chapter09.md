@@ -391,7 +391,7 @@ can be thought of as a request which starts by INVITE message of the SIP protoco
 
 If the observability data have to be sent from their sources (or producers) to specific destinations (or consumers), then this creates high degree of dependency between producers and consumers, and is extremely prone to errors, especially in case of configuration changes. Ideally, the data producers must not be impacted with any change in the data consumers and vice versa.
 
-Ideally, observability data would be sent from the source systems always to the same destination. This is achieved by using message brokers to decouple data producers from data consumers, and that inherently means that sources send data always to the same point. It is worth noting that message brokers can be considered as a common data bus.
+This is achieved by decoupling data producers from data consumers through the use of Brokers. The Producers always send their data to the same endpoint - the Broker. While the Consumers register with the Broker for data that is of interest to them and always receive their data from the Broker.
 
 <a name="9.6.1.5"></a>
 #### 9.6.1.5. Which protocol, interface, and format to use
