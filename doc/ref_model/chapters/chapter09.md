@@ -351,7 +351,7 @@ The network services and applications deployed on a Telco Cloud, and the Telco C
 #### 9.6.1.1. What to observe
 
 Typically, when it comes to data collection, three questions arise:
-1. Which data to collect?
+1. What data to collect?
 2. Where to send the data?
 3. Which protocol/interface/format to use?
 
@@ -450,4 +450,3 @@ Enforcing correct message structures (carrying the data) is performed using Sche
 <p align="center"><img src="../figures/RM-Ch09-Fig-Producers-Consumers.png" alt="Producers and Consumers"><br><b>Figure 9-2: Producers and Consumers.</b></p>
 
 <p align="center"><img src="../figures/RM-Ch09-Fig-Broker-Service.png" alt="Broker Services"><br><b>Figure 9-3: Broker Services.</b></p>
-
