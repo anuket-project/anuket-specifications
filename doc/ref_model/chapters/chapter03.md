@@ -336,7 +336,7 @@ Accelerator technologies can be categorized depending on where they are realized
 
 <p align="center"><b>Table 3-6:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
-<p align="center"><img src="../figures/ch03-example-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
+<p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
 <p align="center"><b>Figure 3-7:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 <a name="3.8.2"></a>
@@ -345,7 +345,7 @@ Accelerator technologies can be categorized depending on where they are realized
 Figure 3-8 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
-<p align="center"><b>Figure 3-6:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-8:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
 
