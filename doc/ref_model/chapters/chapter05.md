@@ -222,7 +222,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 | Reference         | Feature                   | Type              | Basic                           | Network Intensive |
 |-------------------|-----------------------------|-------------------|-------------------------------|-------------------|
 | infra.net.cfg.001 | Connection Point interface | IO virtualisation | virtio1.1                     | virtio1.1*        |
-| infra.net.cfg.002 | Overlay protocol          | Protocols         | VXLAN, MPLSoUDP, GENEVE, other |                   |
+| infra.net.cfg.002 | Overlay protocol          | Protocols         | VXLAN, MPLSoUDP, GENEVE, other | VXLAN, MPLSoUDP, GENEVE, other |
 | infra.net.cfg.003 | NAT                       | Yes/No            | Y                              | Y                 |
 | infra.net.cfg.004 | Security Group            | Yes/No            | Y                              | Y                 |
 | infra.net.cfg.005 | Service Function Chaining | Yes/No            | N                              | Y                 |
