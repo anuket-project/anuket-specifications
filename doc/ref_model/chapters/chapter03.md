@@ -26,6 +26,7 @@
   * [3.8.6 Firmware-programmable Adapters](#3.8.6)
   * [3.8.7 SmartNICs](#3.8.7)
   * [3.8.8 Smart Switches](#3.8.8)
+  * [3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration](#3.8.9)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -335,7 +336,7 @@ Accelerator technologies can be categorized depending on where they are realized
 
 <p align="center"><b>Table 3-6:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
-<p align="center"><img src="../figures/ch03-example-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
+<p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
 <p align="center"><b>Figure 3-7:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 <a name="3.8.2"></a>
@@ -344,7 +345,7 @@ Accelerator technologies can be categorized depending on where they are realized
 Figure 3-8 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
-<p align="center"><b>Figure 3-6:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-8:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
 
@@ -420,6 +421,8 @@ The trusted forwarding functions must be handled through a Hardware Infrastructu
 
 The separated management channel could either come in through the BMC, a direct management port on the DPU or through a management VPN on the switch ports. This enable the Hardware Infrastructure Management to automate its networking through the DPU without any need to dynamically manage the switch fabric, thereby enabling a free choice of switch fabric vendor. These deployments allow the switch fabric to be statically provisioned by the operators networking operation unit, as it is often required.
 
+The DPU can offload control and data plane of the virtual switching to the DPU as well as trusted hardware offload for virtualized Packet Core and Radio data plane networking and transport related functionality in a power efficient way. It can also offload relevant application tenant control functions if the DPU offers an Execution Environment for VMs or containers and there is space and performance headroom. In such cases the DPU must also setup a communication channel into respective application tenant environment.
+
 
 <a name="3.8.8"></a>
 ### 3.8.8 Smart Switches
@@ -432,5 +435,21 @@ Programmable Smart Switches make it possible to quickly support new or correct/m
 
 Based on Smart Switches, products exist for fully integrated edge and fabric solutions from vendors like Arista, Cisco or Kaloom.
 
-=======
-The DPU can offload control and data plane of the virtual switching to the DPU as well as trusted hardware offload for virtualized Packet Core and Radio data plane networking and transport related functionality in a power efficient way. It can also offload relevant application tenant control functions if the DPU offers an Execution Environment for VMs or containers and there is space and performance headroom. In such cases the DPU must also setup a communication channel into respective application tenant environment.
+
+<a name="3.8.9"></a>
+### 3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration
+
+[Decoupling](https://github.com/cntt-n/CNTT/blob/master/doc/common/glossary.md#cloud-platform-abstraction-related-terminology) applications from hardware accelerator is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and their products, or if not available then through drivers specific to the vendor hardware device. Decoupling infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not available for target hardware accelerator, coupling one or limited number of software infrastructures is less of an issue compared to coupling multiple applications.
+
+Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
+
+#### 1. Infrastructure:
+- a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an [Appliance deployment model](../../common/glossary.md#cloud-platform-abstraction-related-terminology).
+- b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure components that make application work. Example is an application that to achieve latency requirements needs certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
+- c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is an application that would have better cost/performance with certain acceleration adapter but can also work without it.
+- d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure components.
+
+#### 2. Platform Services:
+- a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
+- b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
+- c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
