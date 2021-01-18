@@ -319,7 +319,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference           | Feature                                             | Description                                                        | Basic Type | Network Intensive |
 |---------------------|-----------------------------------------------------|--------------------------------------------------------------------|------------|-------------------|
 | infra.hw.cpu.cfg.001 | Minimum number of CPU sockets  | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
-| infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | This determines the number of cores needed per CPU.                | 20         | 20                |
+| infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | This determines the number of cores needed per CPU                 | 20         | 20                |
 | infra.hw.cpu.cfg.003 | NUMA alignment                    | NUMA alignment support and BIOS configured to enable NUMA                    | N          | Y                 |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
 
@@ -327,7 +327,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | Reference | Feature | Description | Basic Type | Network Intensive | Compute Intensive |
 |---------------------|-----------|---------------------------|--------|--------|--------|
 | infra.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets within each host | 2| 2| 2 |
-| infra.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 20 |
+| infra.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU  | 20 | 20 | 20 |
 | infra.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y| Y |
 -->
