@@ -57,38 +57,38 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 |vNIC QoS | N | Y | Y |
 |Huge page support | N | Y | Y |
 |Host CPU usage | Y | Y | Y |
-|Virtual compute CPU usage | Y | Y | Y |
+|Virtual compute resource (vCPU) usage | Y | Y | Y |
 |Host CPU utilization | Y | Y | Y |
-|Virtual compute CPU utilization | Y | Y | Y |
+|Virtual compute resource (vCPU) utilization | Y | Y | Y |
 |External storage capacity | N | N | Y |--->
 
-|.conf | Basic | Network Intensive | 
+|.conf | Basic | Network Intensive |
 |------|-------|-------------------|
 |#vCPU cores |Per selected \<Flavour>|Per selected \<Flavour>|
 |Amount of RAM |Per selected \<Flavour>|Per selected \<Flavour>|
 |Total instance (ephemeral) storage (GB) |Per selected \<Flavour>|Per selected \<Flavour>|
 |Total instance (persistent) storage (GB) |Per selected |Per selected |
-|n1, n2, n3, n4, n5, n6 | Y | N | 
-|n10, n20, n30, n40, n50, n60 | Y | Y | 
-|n25, n50, n75, n100, n125, n150 | N | Y | 
+|n1, n2, n3, n4, n5, n6 | Y | N |
+|n10, n20, n30, n40, n50, n60 | Y | Y |
+|n25, n50, n75, n100, n125, n150 | N | Y |
 |n50, n100, n150, n200, n250, n300 | N | Y |
-|n100, n200, n300, n400, n500, n600 | N | Y | 
-|CPU pinning support | N | Y | 
-|NUMA support | N | Y | 
-|IPSec Acceleration) | N | Y | 
-|Crypto Acceleration | N | Y | 
-|Transcoding Acceleration | N | N | 
-|Programmable Acceleration | N | N | 
-|Enhanced Cache Management | E | E | 
+|n100, n200, n300, n400, n500, n600 | N | Y |
+|CPU pinning support | N | Y |
+|NUMA support | N | Y |
+|IPSec Acceleration) | N | Y |
+|Crypto Acceleration | N | Y |
+|Transcoding Acceleration | N | N |
+|Programmable Acceleration | N | N |
+|Enhanced Cache Management | E | E |
 |Monitoring of L2-7 data | N | Y |
 |CPU overbooking | 1:4 | 1:1 |
-|vNIC QoS | N | Y | 
-|Huge page support | N | Y | 
-|Host CPU usage | Y | Y | 
-|Virtual compute CPU usage | Y | Y |
-|Host CPU utilization | Y | Y | 
-|Virtual compute CPU utilization | Y | Y | 
-|External storage capacity | N | N | 
+|vNIC QoS | N | Y |
+|Huge page support | N | Y |
+|Host CPU usage | Y | Y |
+|Virtual compute resource (vCPU) usage | Y | Y |
+|Host CPU utilization | Y | Y |
+|Virtual compute resource (vCPU) utilization | Y | Y |
+|External storage capacity | N | N |
 
 > Open Point 1: Does ONAP have some relevant spec or VNF declaration schema so that CNTT can re-use/revise to cover what we need ? Or define a new one ?
 
@@ -128,57 +128,57 @@ This profile is the global settings for the whole NFVI, which means there should
 | Crypto acceleration | N  | Y | Y |
 | Crypto Acceleration Interface | N  | Y | Y |--->
 
-| .conf | Basic | Network Intensive | 
+| .conf | Basic | Network Intensive |
 |-------|----------------|----------------|
-| CPU allocation ratio  | 4:1 | 1:1  | 
-| NUMA awareness | N | Y | 
-| CPU pinning capability | N | Y | 
-| Huge Pages | N | Y | 
-| Catalogue storage Types | Y  | Y  | 
+| CPU allocation ratio  | 4:1 | 1:1  |
+| NUMA awareness | N | Y |
+| CPU pinning capability | N | Y |
+| Huge Pages | N | Y |
+| Catalogue storage Types | Y  | Y  |
 | Storage Block | Y | Y |
-| Storage Object | Y | Y | 
-| Storage with replication | N | Y | 
-| Storage with encryption | Y | Y | 
-| Storage IOPS oriented | N | Y | 
+| Storage Object | Y | Y |
+| Storage with replication | N | Y |
+| Storage with encryption | Y | Y |
+| Storage IOPS oriented | N | Y |
 | Storage capacity oriented | N | N |
-| vNIC interface | virtio1.1 |  virtio1.1| 
+| vNIC interface | virtio1.1 |  virtio1.1|
 | Overlay protocol | VXLAN, MPLSoUDP, GENEVE, other |  VXLAN, MPLSoUDP, GENEVE, other |
 | NAT | Y | Y |
-| Security Group | Y | Y | 
-| SFC support | N | Y | 
-| Traffic patterns symmetry | Y | Y | 
-| vSwitch optimisation | N | Y, DPDK | 
+| Security Group | Y | Y |
+| SFC support | N | Y |
+| Traffic patterns symmetry | Y | Y |
+| vSwitch optimisation | N | Y, DPDK |
 | Support of HW offload | N | Y, support of SmartNic |
-| Crypto acceleration | N  | Y | 
-| Crypto Acceleration Interface | N  | Y | 
+| Crypto acceleration | N  | Y |
+| Crypto Acceleration Interface | N  | Y |
 
 <a name="3.4"></a>
 ## 3.4 NFVI Hardware Profile
-[RM1: 5.4 NFVI HW profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the NFVI hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple NFVI profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification. 
+[RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple NFVI profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
 
 
-| Reference | Feature | Description | Basic Type | Network Intensive | 
+| Reference | Feature | Description | Basic Type | Network Intensive |
 |---------------------|-----------|---------------------------|--------|--------|
-| nfvi.hw.cpu.cfg.001 | Number of CPU (Sockets) | This determines the minimum number of CPU sockets within each host | 2| 2| 
-| nfvi.hw.cpu.cfg.002 | Number of Cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 | 
+| nfvi.hw.cpu.cfg.001 | Number of CPU sockets | This determines the minimum number of CPU sockets within each host | 2| 2|
+| nfvi.hw.cpu.cfg.002 | Number of cores per CPU | This determines the number of cores needed per each CPU. | 20 | 20 |
 | nfvi.hw.cpu.cfg.003 | NUMA | NUMA support and BIOS configured to enable NUMA | N | Y | Y |
-| nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | This allows a CPU to work multiple streams of data simultaneously | Y | Y|
-| nfvi.hw.cac.cfg.001 | GPU | GPU | N | N | 
+| nfvi.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This permits multiple independent threads of execution on a single core. | Y | Y|
+| nfvi.hw.cac.cfg.001 | GPU | GPU | N | N |
 | nfvi.hw.stg.hdd.cfg.001* | Local Storage HDD | Hard Disk Drive |  |  |
 | nfvi.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid State Drive | Recommended | Recommended |
 | nfvi.hw.nic.cfg.001 | NIC Ports | Total Number of NIC Ports available in the host | 4 | 4 |
-| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values) | 10 | 25 | 
+| nfvi.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values) | 10 | 25 |
 | nfvi.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the host | 8 | 8 |
-| nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 | 
-| nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 | 
+| nfvi.hw.pci.cfg.002 | PCIe speed |  | Gen 3 | Gen 3 |
+| nfvi.hw.pci.cfg.003 | PCIe Lanes |  | 8 | 8 |
 | nfvi.hw.bdc.cfg.001 | Bonded VLAN ports |  | Y | Y |
-| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |  N | Optional | 
-| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload network functionality to hardware | N | Optional  | 
-| nfvi.hw.nac.cfg.003 | Compression |  |  | 
+| nfvi.hw.nac.cfg.001 | Cryptographic Acceleration | IPSec, Crypto |  N | Optional |
+| nfvi.hw.nac.cfg.002 | SmartNIC | A SmartNIC that is used to offload network functionality to hardware | N | Optional  |
+| nfvi.hw.nac.cfg.003 | Compression |  |  |
 
 
-## 3.5 NFVI Required State
-This sections describes the readiness of NFVI before the certification process can begin. Once the NFVI is configured with either of the profiles - B, <!---C,---> N, a set of tests (for example functests) should be run in order to determine the readiness of NFVI for certification. 
+## 3.5 Cloud Infrastructure Required State
+This sections describes the readiness of Cloud Infrastructure before the certification process can begin. Once the Cloud Infrastructure is configured with either of the profiles - B, <!---C,---> N, a set of tests (for example functests) should be run in order to determine the readiness of the Cloud Infrastructure for certification.
 #TODO : Identify the tests for this section
 
 
@@ -197,7 +197,7 @@ This sections describes the readiness of NFVI before the certification process c
 | `req.inf.com.01` | **must** provide compute resources for VM instances.  |
 | `req.inf.com.02` | **should** include industry standard hardware management systems at both HW device and platform level |
 | `req.inf.com.03` | **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. |
-| `req.inf.com.04` | **must** be able to support multiple CPU SKU options to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
+| `req.inf.com.04` | **must** be able to support multiple CPU Types to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
 | `req.inf.com.05` | **must** support Hardware Platforms with NUMA capabilities.|
 | `req.inf.com.06` | **must** support CPU Pinning.|
 | `req.inf.com.07` | **must** support different hardware configurations to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
@@ -284,8 +284,8 @@ This sections describes the readiness of NFVI before the certification process c
 | Orchestration: Heat | https://docs.openstack.org/api-ref/orchestration/v1/index.html#api-versions  | v1.0 | NA |
 | Acceleration: Cyborg | https://docs.openstack.org/cyborg/pike/userdoc/api.html | v1.0 | NA |
 
-## 3.6 NFVI and VIM Architecture 
-This sections concludes the expectation for NFVi and VIM architecture according to [RA1: Chapter 3 NFVI + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md) 
+## 3.6 Cloud Infrastructure and VIM Architecture
+This sections concludes the expectation for Cloud Infrastructure and VIM architecture according to [RA1: Chapter 3 Cloud Infrastructure + VIM Architecture](../../../ref_arch/openstack/chapters/chapter03.md)
 
 | Requirement Area | Description |
 |----|-------------------------------------------------------------------------------|
@@ -300,10 +300,10 @@ This sections concludes the expectation for NFVi and VIM architecture according 
 |Cloud Controller Services|All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services|
 |Physical Network|The recommended network architecture is spine and leaf topology; however, for small sites, a legacy topology (access/aggregation switches) can be set up.
 
-## 3.7 NFVI and VIM Component Level Architecture 
-This sections concludes the expectation for NFVi and VIM component level architecture according to [RA1: Chapter 4 NFVI + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md) 
+## 3.7 Cloud Infrastructure and VIM Component Level Architecture
+This sections concludes the expectation for Cloud Infrastructure and VIM component level architecture according to [RA1: Chapter 4 Cloud Infrastructure + VIM Component Level Architecture](../../../ref_arch/openstack/chapters/chapter04.md)
 
-Requirement for control node: 
+Requirement for control node:
 
 | Requirement Area | Description |
 |----|-------------------------------------------------------------------------------|
