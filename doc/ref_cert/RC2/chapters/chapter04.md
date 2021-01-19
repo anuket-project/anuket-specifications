@@ -18,7 +18,7 @@ Note that each requirement may have one or more test cases associated with it.
 ## 4.2 Selection Criteria
 Test cases and their dependencies must be open source. The test cases (or test suite with the test case) as well as the environment needed to run the test should be reproducible by any party following publicly available documentation.
 
-Examples initiatives (having testing tools, test suites, etc) with test cases which could be used include K8s Conformance, K8s e2e, Sonobuoy, OPNFV FuncTest, CNF Conformance.
+Examples of initiatives (having testing tools, test suites, etc) with test cases which could be used include K8s Conformance, K8s e2e, Sonobuoy, Anuket FuncTest, CNF Conformance.
 
 <a name="4.3"></a>
 ## 4.3 Traceability Matrix
