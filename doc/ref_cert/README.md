@@ -142,10 +142,10 @@ CNTT requirements about verification, validation, compliance, and conformance:
   for third-party conformance review
 
 Here are a couple of publicly available playbooks :
-- [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/kali)
-- [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/kali)
+- [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/leguer)
+- [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/leguer)
 - [CNTT RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/hunter)
-- [Kubernetes verification](https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/kali)
+- [Kubernetes verification](https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/leguer)
 
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
 GNU/Linux as Operating System and asks for a few dependencies as described in
