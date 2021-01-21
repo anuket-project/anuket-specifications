@@ -102,7 +102,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | [ra2.ch.004](chapter04.md#42-kubernetes-node)<br>[ra2.ch.005](chapter04.md#42-kubernetes-node)|
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | [ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.006](chapter04.md#42-kubernetes-node)|
 | [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Must support | Must support |[ra2.k8s.006](chapter04.md#43-kubernetes)|
 | [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Not required | Must support |[ra2.k8s.009](chapter04.md#43-kubernetes)|
 | [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.004 | Huge Pages | Must support | Must support | [ra2.ch.001](chapter04.md#42-kubernetes-node)|
