@@ -323,8 +323,8 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.phy.01`  | Infrastructure |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. | |
 | `req.kcm.gen.01` | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. | |
 | `req.kcm.gen.02` | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
-| `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |[ra2.ntw.001](chapter04.md#45-networking-solutions)<br>[ra2.ntw.008](chapter04.md#45-networking-solutions)<br>[ra2.app.006](chapters/chapter04.md#49-kubernetes-workloads)|
-| `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapters/chapter04.md#48-kubernetes-application-package-manager)|
+| `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |[ra2.ntw.001](chapter04.md#45-networking-solutions)<br>[ra2.ntw.008](chapter04.md#45-networking-solutions)<br>[ra2.app.006](chapter04.md#49-kubernetes-workloads)|
+| `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|
 
 <!--
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
