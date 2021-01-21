@@ -142,9 +142,9 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support |[ra2.ch.009](chapter04.md#42-kubernetes-node)|
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 |[ra2.ch.013](chapter04.md#42-kubernetes-node)|
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 10 | 25 |[ra2.ch.014](chapter04.md#42-kubernetes-node)<br>[ra2.ch.015](chapter04.md#42-kubernetes-node)|
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | [ra2.ch.015](chapter04.md#42-kubernetes-node) |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 |[ra2.ch.015](chapter04.md#42-kubernetes-node) |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 |[ra2.ch.015](chapter04.md#42-kubernetes-node) |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | [ra2.ch.016](chapter04.md#42-kubernetes-node) |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 |[ra2.ch.016](chapter04.md#42-kubernetes-node) |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 |[ra2.ch.016](chapter04.md#42-kubernetes-node) |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | Not required | Optional<sup>(1)</sup> | |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
