@@ -110,7 +110,7 @@ or containers is essential to the overall security posture of the entire system,
 and must be appropriately secured to ensure processes running in one container
 cannot escalate their privileges or otherwise affect processes running in an
 adjacent container.  An example and more details of this concept can be found in
-[chapter 6](./chapter06.md)).
+[chapter 6](./chapter06.md).
 
 It is important to note that the container runtime itself is also a set of
 processes that run in user space, and therefore also interact with the kernel
