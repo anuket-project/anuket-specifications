@@ -382,7 +382,7 @@ As we have seen a flavor series is supported by configuring hosts in accordance 
 Networking Fabric consists of:
 -	Physical switches, routers…
 -	Switch OS
--	Minimum number of switches etc.
+-	Minimum number of switches
 -	Dimensioning for East/West and North/South
 -	Spine / Leaf topology – east – west
 -	Global Network parameters
@@ -576,7 +576,7 @@ Nova is the compute management service, Nova depends on all above components and
 -	nova-novncproxy
 -	nova-compute-agent which runs on Compute node
 
-Please note that the Placeemnt-API must have been installed and configured prior to nova compute starts.
+Please note that the Placement-API must have been installed and configured prior to nova compute starts.
 
 #### 4.3.1.7 Ironic
 Ironic is the bare metal provisioning service. Ironic depends on all above components and is deployed after. Ironic has services running on the control nodes and the compute nodes:

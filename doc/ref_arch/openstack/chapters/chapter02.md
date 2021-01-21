@@ -187,7 +187,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 <a name="2.2.6"></a>
 ### 2.2.6 Cloud Infrastructure Security Requirements
 
-#### 2.2.6.1. System Hardening (source [RM 7.11.1](../../../ref_model/chapters/chapter07.md#7111-system-hardening))
+#### 2.2.6.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapter07.md#791-system-hardening)) 
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|------|------|-------|
@@ -206,7 +206,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
 
-####  2.2.6.2. Platform and Access (source [RM 7.11.2](../../../ref_model/chapters/chapter07.md#7112-platform-and-access))
+####  2.2.6.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access)) 
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|-------|-------|---------|
@@ -230,11 +230,11 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.sys.019 | Access | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
 
 
-#### 2.2.6.3. Confidentiality and Integrity (source [RM7.11.3](../../../ref_model/chapters/chapter07.md#7113-confidentiality-and-integrity))
+#### 2.2.6.3. Confidentiality and Integrity (source [RM7.9.3](../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity))
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in transit. | [RA-1 6.3.3 Confidentiality and Integrity](./chapter06.md#633-confidentiality-and-integrity) |
+| sec.ci.001 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data at rest and in transit. | [RA-1 6.3.3 "Confidentiality and Integrity"](./chapter06.md#633-confidentiality-and-integrity) |
 | sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata. |   |
 | sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |   |
 | sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |   |
@@ -243,20 +243,20 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
 
-#### 2.2.6.4. Workload Security (source [RM7.11.4](../../../ref_model/chapters/chapter07.md#7114-workload-security))
+#### 2.2.6.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security)) 
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.wl.001 | Workload | The Platform **must** support Workload placement policy. | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.001 | Workload | The Platform **must** support Workload placement policy. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.002 | Workload | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). |  |
-| sec.wl.003 | Workload | The Platform **must** support secure provisioning of Workloads. | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
-| sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.003 | Workload | The Platform **must** support secure provisioning of Workloads. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
+| sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
-| sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 Workload Security](./chapter06.md#634-workload-security) |
+| sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
 
 
-#### 2.2.6.5. Image Security (source [RM7.11.5](../../../ref_model/chapters/chapter07.md#7115-image-security))
+#### 2.2.6.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security)) 
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
@@ -269,14 +269,14 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.img.007 | Image | Image registries **must** be clear of vulnerable and out of date versions. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security)  |
 
 
-#### 2.2.6.6. Security LCM (source [RM7.11.6](../../../ref_model/chapters/chapter07.md#7116-security-lcm))
+#### 2.2.6.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm)) 
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
-| sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | [RA-1 6.3.7 Monitoring and Security Audit](./chapter06.md#637-monitoring-and-security-audit) |  
+| sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |  
 | sec.lcm.002 | LCM | The Cloud Operator **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
-| sec.lcm.003 | LCM | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | [RA-1 6.3.7 Monitoring and Security Audit](./chapter06.md#637-monitoring-and-security-audit) |  
-| sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be monitored for anomalous behavior. | [RA-1 6.3.7 Monitoring and Security Audit](./chapter06.md#637-monitoring-and-security-audit) |
+| sec.lcm.003 | LCM | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |  
+| sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be monitored for anomalous behavior. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |
 | sec.lcm.006 | LCM | The Platform **must** verify the integrity of all Resource management requests. | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
 | sec.lcm.007 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information. |  |
 | sec.lcm.008 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  |
@@ -287,7 +287,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 
 
 
-#### 2.2.6.7. Monitoring and Security Audit (source [RM7.11.7](../../../ref_model/chapters/chapter07.md#7117-monitoring-and-security-audit))
+#### 2.2.6.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit)) 
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
@@ -298,23 +298,23 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.003 | Monitoring | The Platform **must** log all changes to time server source, time, date and time zones. | [RA-1 6.3.7.6 "Security Logs Time Synchronisation"](./chapter06.md#6376-security-logs-time-synchronisation) |
 | sec.mon.004 | Audit | The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
 | sec.mon.005 | Monitoring/Audit | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7.2 "What to log, what not to log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
-| sec.mon.006 | Monitoring/Audit | The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7 Monitoring and Security Audit](./chapter06.md#637-monitoring-and-security-audit) |
+| sec.mon.006 | Monitoring/Audit | The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |
 | sec.mon.007 | Monitoring/Audit | The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.mon.008 | Monitoring/Audit | The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications) |
-| sec.mon.009 | Monitoring/Audit | The Platform **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7 Monitoring and Security Audit](./chapter06.md#637-monitoring-and-security-audit)  |
-| sec.mon.010 | Monitoring/Audit | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. | [RA-1 6.3.7 Monitoring and Security Audit](./chapter06.md#637-monitoring-and-security-audit)  |
+| sec.mon.009 | Monitoring/Audit | The Platform **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
+| sec.mon.010 | Monitoring/Audit | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
 | sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.012 | Monitoring/Audit | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
-| sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. | [RA-1 6.3.7 Monitoring and Security Audit](./chapter06.md#637-monitoring-and-security-audit)  |
+| sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
 | sec.mon.017 | Audit | The Platform **must** audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches) |
 | sec.mon.018 | Monitoring | The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
-| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"] (./chapter06.md#6372-what-to-log--what-not-to-log) | 
-| sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | [RA-1 6.3.7.5 "Data Retention"](./chapter06.md#6375-data-retention  |
+| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) | 
+| sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | [RA-1 6.3.7.5 "Data Retention](./chapter06.md#6375-data-retention)  |
 | sec.mon.021 | Monitoring | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
 
 
-#### 2.2.6.8. Compliance with Standards (source [RM7.11.8](../../../ref_model/chapters/chapter07.md#7118-compliance-with-standards))
+#### 2.2.6.8. Compliance with Standards (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-compliance-with-standards))
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
@@ -551,7 +551,7 @@ Commented out until RM defines requirements for SDN
 ### 2.4.8 Security Recommendations
 
 
-#### 2.4.8.1. System Hardening (source [RM 7.11.1](../../../ref_model/chapters/chapter07.md#7111-system-hardening))
+#### 2.4.8.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapters/chapter07.md#791-system-hardening))
 
 | Ref # | sub-category | Description |  Notes |
 |-------|------|------|-------|
@@ -559,34 +559,34 @@ Commented out until RM defines requirements for SDN
 | sec.gen.014 | Hardening | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 
 
-####  2.4.8.2. Platform and Access (source [RM 7.11.2](../../../ref_model/chapters/chapter07.md#7112-platform-and-access))
+####  2.4.8.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access))
 
 | Ref # | sub-category | Description |  Notes |
 |-------|-------|-------|---------|
 | sec.sys.014 | Access | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
 
-#### 2.4.8.3. Confidentiality and Integrity (source [RM7.11.3](../../../ref_model/chapters/chapter07.md#7113-confidentiality-and-integrity))
+#### 2.4.8.3. Confidentiality and Integrity (source [RM7.9.3](../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity))
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.ci.002 | Confidentiality/Integrity | The Platform **should** support self-encrypting storage devices |  |
 
 
-#### 2.4.8.4. Workload Security (source [RM7.11.4](../../../ref_model/chapters/chapter07.md#7114-workload-security))
+#### 2.4.8.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security))
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.wl.007 | Workload | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
 
 
-#### 2.4.8.5. Image Security (source [RM7.11.5](../../../ref_model/chapters/chapter07.md#7115-image-security))
+#### 2.4.8.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 
 
 
-#### 2.4.8.6. Security LCM (source [RM7.11.6](../../../ref_model/chapters/chapter07.md#7116-security-lcm))
+#### 2.4.8.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
@@ -594,7 +594,7 @@ Commented out until RM defines requirements for SDN
 
 
 
-#### 2.4.8.7. Monitoring and Security Audit (source [RM7.11.7](../../../ref_model/chapters/chapter07.md#7117-monitoring-and-security-audit))
+#### 2.4.8.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit)) 
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
@@ -605,7 +605,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 
 
-#### 2.4.8.8. Compliance with Standards (source [RM7.11.8](../../../ref_model/chapters/chapter07.md#7118-compliance-with-standards))
+#### 2.4.8.8. Compliance with Standards (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-compliance-with-standards))
 
 | Ref # | sub-category | Description |  Notes |
 |---------|---------------|----------------|------------|
