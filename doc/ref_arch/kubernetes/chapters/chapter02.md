@@ -140,8 +140,8 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cac.cfg.001 | GPU | Not required | Not required | |
 | [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
 | [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support |[ra2.ch.009](chapter04.md#42-kubernetes-node)|
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 10 | 25 | |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 |[ra2.ch.013](chapter04.md#42-kubernetes-node)|
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 10 | 25 |[ra2.ch.014](chapter04.md#42-kubernetes-node)<br>[ra2.ch.015](chapter04.md#42-kubernetes-node)|
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | [ra2.ch.015](chapter04.md#42-kubernetes-node) |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 |[ra2.ch.015](chapter04.md#42-kubernetes-node) |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 |[ra2.ch.015](chapter04.md#42-kubernetes-node) |
