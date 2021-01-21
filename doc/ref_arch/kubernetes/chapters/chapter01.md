@@ -48,7 +48,7 @@ The definition for Cloud Native is somewhat controversial.  For the purposes of 
 
 >These techniques enable **loosely coupled** systems that are **resilient**, **manageable**, and **observable**. Combined with **robust automation**, they allow engineers to make **high-impact changes frequently and predictably** with minimal toil.
 
->The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendor-neutral projects. We democratize state-of-the-art patterns to make these innovations accessible for everyone”
+>The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendor-neutral projects. We democratize state-of-the-art patterns to make these innovations accessible for everyone.”
 
 Individual contributors who are also active in the CNCF TUG (Telecom User Group), formed in June 2019, are also working on a set of Cloud Native Principles that are more suited to the requirements of the Telecom cummunity and with more detail than the existing CNCF definition: [Expanded Cloud Native Principles](https://networking.cloud-native-principles.org/cloud-native-principles). There are many similarities, but the key principles from both, which are applicable to this document, are:
 
