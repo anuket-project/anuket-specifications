@@ -46,28 +46,28 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.001 | Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.004 | Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure | 6 | 6 | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.001 | Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | [ra2.ch.011](chapter04.md#42-kubernetes-node)|
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | [ra2.ch.012](chapter04.md#42-kubernetes-node)|
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | [ra2.ch.010](chapter04.md#42-kubernetes-node)|
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.004 | Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure | 6 | 6 | [ra2.ntw.003](chapter04.md#45-networking-solutions) |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.005 | Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.006 | CPU pinning support | Not required | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.007 | NUMA support | Not required | Must support | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.006 | CPU pinning support | Not required | Must support | [ra2.k8s.009](chapter04.md#43-kubernetes)|
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.007 | NUMA support | Not required | Must support | [ra2.k8s.006](chapter04.md#43-kubernetes)|
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.010 | Transcoding Acceleration | Not required | Not required | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.011 | Programmable Acceleration | Not required | Not required | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.012 | Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded | E | E | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.013 | SR-IOV over PCI-PT | Not required | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.014 | Hardware coprocessor support (GPU/NPU) | Not required | Not required | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.013 | SR-IOV over PCI-PT | Not required | Must support | [ra2.ch.002](chapter04.md#42-kubernetes-node)<br>[ra2.ch.003](chapter04.md#42-kubernetes-node)<br>[ra2.k8s.006](chapter04.md#43-kubernetes)<br>[ra2.ntw.004](chapter04.md#45-networking-solutions)<br>[ra2.ntw.008](chapter04.md#45-networking-solutions)|
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.014 | Hardware coprocessor support (GPU/NPU) | Not required | Not required | [ra2.k8s.006](chapter04.md#43-kubernetes)|
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.015 | SmartNICs | Not required | Optional | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.016 | FPGA/other Acceleration H/W | Not required | Optional | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.016 | FPGA/other Acceleration H/W | Not required | Optional | [ra2.k8s.006](chapter04.md#43-kubernetes)<br>[ra2.ntw.012](chapter04.md#45-networking-solutions)|
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | *n/a<sup>(3)</sup>* | *n/a<sup>(3)</sup>* | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.014 | Specifies the proportion of CPU cores consumed by the Cloud Infrastructure system on the worker nodes. If SMT is used, it indicates the number of consumed SMT threads. | 2 | 2 | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.014 | Specifies the proportion of CPU cores consumed by the Cloud Infrastructure system on the worker nodes. If SMT is used, it indicates the number of consumed SMT threads. | 2 | 2 | [ra2.k8s.006](chapter04.md#43-kubernetes) |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the worker nodes | 16 GB | 16GB | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | [ra2.ch.004](chapter04.md#42-kubernetes-node)<br>[ra2.ch.005](chapter04.md#42-kubernetes-node)|
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.018 | Support for huge pages | Not required | Must support | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.018 | Support for huge pages | Not required | Must support | [ra2.ch.001](chapter04.md#42-kubernetes-node)|
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.001  | Monitor worker node CPU usage, per nanosecond | Must support | Must support | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.002  | Monitor pod CPU usage, per nanosecond | Must support | Must support | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.003  | Monitor worker node CPU utilisation (%) | Must support | Must support | |
@@ -102,11 +102,11 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Must support | Must support | |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Not required | Must support | |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.004 | Huge Pages | Must support | Must support | |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | [ra2.ch.004](chapter04.md#42-kubernetes-node)<br>[ra2.ch.005](chapter04.md#42-kubernetes-node)|
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Must support | Must support |[ra2.k8s.006](chapter04.md#43-kubernetes)|
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Not required | Must support |[ra2.k8s.009](chapter04.md#43-kubernetes)|
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.004 | Huge Pages | Must support | Must support | [ra2.ch.001](chapter04.md#42-kubernetes-node)|
+| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | [ra2.stg.004](chapter04.md#46-storage-components)|
 | [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
 | [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | |
 | [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | |
@@ -117,7 +117,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.004 | Security Groups | Must support | Must support | |
 | [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.005 | SFC support | Not required | Must support | |
 | [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>| |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>|[ra2.ntw.010](chapter04.md#45-networking-solutions)|
 | [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNic | |
 | [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Must support | |
 | [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Must support | |
@@ -133,18 +133,18 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Minimum number of CPU sockets | 2 | 2 | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Must support | |
+| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Minimum number of CPU sockets | 2 | 2 |[ra2.ch.008](chapter04.md#42-kubernetes-node)|
+| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 |[ra2.ch.008](chapter04.md#42-kubernetes-node)|
+| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support |[ra2.k8s.006](chapter04.md#43-kubernetes)|
+| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Must support |[ra2.ch.004](chapter04.md#42-kubernetes-node)|
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cac.cfg.001 | GPU | Not required | Not required | |
 | [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
-| [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support | |
+| [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support |[ra2.ch.009](chapter04.md#42-kubernetes-node)|
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 | |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 10 | 25 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 | |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | [ra2.ch.015](chapter04.md#42-kubernetes-node) |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 |[ra2.ch.015](chapter04.md#42-kubernetes-node) |
+| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 |[ra2.ch.015](chapter04.md#42-kubernetes-node) |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | Not required | Optional<sup>(1)</sup> | |
 | [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
@@ -296,35 +296,35 @@ The requirements in this section are to be delivered in addition to those in [se
 | Ref # | Category | Sub-category | Description | Specification Reference |
 |---|---|---|---|---|
 | `req.gen.cnt.01` | General | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
-| `req.gen.cnt.02` | General | Cloud nativeness | The Architecture **must** support immutable infrastructure. | |
-| `req.gen.cnt.03` | General | Cloud nativeness | The Architecture **must** run conformant Kubernetes as defined by the [CNCF](https://github.com/cncf/k8s-conformance). | |
+| `req.gen.cnt.02` | General | Cloud nativeness | The Architecture **must** support immutable infrastructure. |[ra2.ch.016](chapter04.md#42-kubernetes-node)|
+| `req.gen.cnt.03` | General | Cloud nativeness | The Architecture **must** run conformant Kubernetes as defined by the [CNCF](https://github.com/cncf/k8s-conformance). |[ra2.k8s.001](chapter04.md#43-kubernetes)|
 | `req.gen.cnt.04` | General | Cloud nativeness | The Architecture **must** support clearly defined abstraction layers. | |
-| `req.gen.cnt.05` | General | Cloud nativeness | The Architecture **should** support configuration of all components in an automated manner using openly published API definitions. |
+| `req.gen.cnt.05` | General | Cloud nativeness | The Architecture **should** support configuration of all components in an automated manner using openly published API definitions. ||
 | `req.gen.scl.01` | General | Scalability | The Architecture **should** support policy driven horizontal auto-scaling of workloads. | |
-| `req.gen.rsl.01` | General | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. | |
-| `req.gen.rsl.02` | General | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. | |
-| `req.gen.avl.01` | General | Availability | The Architecture **must** provide High Availability for Kubernetes components. | |
-| `req.gen.ost.01` | General | Openness | The Architecture **should** embrace open-based standards and technologies. |
-| `req.inf.com.01` | Infrastructure | Compute | The Architecture **must** provide compute resources for Pods.  | |
-| `req.inf.stg.01` | Infrastructure | Storage | The Architecture **must** support the ability for an operator to choose whether or not to deploy persistent storage for Pods. | |
+| `req.gen.rsl.01` | General | Resiliency | The Architecture **must** support resilient Kubernetes components that are required for the continued availability of running workloads. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
+| `req.gen.rsl.02` | General | Resiliency | The Architecture **should** support resilient Kubernetes service components that are not subject to `req.gen.rsl.01`. |[ra2.k8s.002](chapter04.md#43-kubernetes)<br>[ra2.k8s.003](chapter04.md#43-kubernetes)|
+| `req.gen.avl.01` | General | Availability | The Architecture **must** provide High Availability for Kubernetes components. |[ra2.k8s.002](chapter04.md#43-kubernetes)<br>[ra2.k8s.003](chapter04.md#43-kubernetes)<br>[ra2.k8s.004](chapter04.md#43-kubernetes)|
+| `req.gen.ost.01` | General | Openness | The Architecture **should** embrace open-based standards and technologies. |[ra2.crt.001](chapter04.md#44-container-runtimes)<br>[ra2.crt.002](chapter04.md#44-container-runtimes)<br>[ra2.ntw.002](chapter04.md#45-networking-solutions)<br>[ra2.ntw.006](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions)|
+| `req.inf.com.01` | Infrastructure | Compute | The Architecture **must** provide compute resources for Pods.  |[ra2.k8s.004](chapter04.md#43-kubernetes)|
+| `req.inf.stg.01` | Infrastructure | Storage | The Architecture **must** support the ability for an operator to choose whether or not to deploy persistent storage for Pods. |[ra2.stg.004](chapter04.md#46-storage-components)|
 | `req.inf.ntw.01` | Infrastructure | Network | The Architecture **must** support network resiliency. | |
 | `req.inf.ntw.02` | Infrastructure | Network | The Architecture **must** be fully redundant. | |
-| `req.inf.ntw.03` | Infrastructure | Network | The networking solution **should** be able to be centrally administrated and configured. | |
-| `req.inf.ntw.04` | Infrastructure | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. | |
+| `req.inf.ntw.03` | Infrastructure | Network | The networking solution **should** be able to be centrally administrated and configured. |[ra2.ntw.001](chapter04.md#45-networking-solutions) |
+| `req.inf.ntw.04` | Infrastructure | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |[ra2.ch.007](chapter04.md#42-kubernetes-node)|
 | `req.inf.ntw.05` | Infrastructure | Network | The Architecture **must** support capabilities for integrating SDN controllers. | |
-| `req.inf.ntw.06` | Infrastructure | Network | The Architecture **must**  support more than one networking solution. | |
-| `req.inf.ntw.07` | Infrastructure | Network | The Architecture **must** support the ability for an operator to choose whether or not to deploy more than one networking solution. | |
-| `req.inf.ntw.08` | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. | |
+| `req.inf.ntw.06` | Infrastructure | Network | The Architecture **must**  support more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions) |
+| `req.inf.ntw.07` | Infrastructure | Network | The Architecture **must** support the ability for an operator to choose whether or not to deploy more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)|
+| `req.inf.ntw.08` | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. |[ra2.ntw.002](chapter04.md#45-networking-solutions)  |
 | `req.inf.ntw.09` | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
 | `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support cluster wide coordination of IP address assignment. | |
 | `req.inf.ntw.13` | Infrastructure | Network | The platform must allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
-| `req.inf.ntw.14` | Infrastructure | Network | The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.| |
-| `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. | |
+| `req.inf.ntw.14` | Infrastructure | Network | The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.|[ra2.ntw.011](chapter04.md#45-networking-solutions)|
+| `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |[ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.011](chapter04.md#42-kubernetes-node)|
 | `req.inf.phy.01`  | Infrastructure |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. | |
 | `req.kcm.gen.01` | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. | |
 | `req.kcm.gen.02` | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. | |
-| `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. | |
-| `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. | |
+| `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |[ra2.ntw.001](chapter04.md#45-networking-solutions)<br>[ra2.ntw.008](chapter04.md#45-networking-solutions)<br>[ra2.app.006](chapters/chapter04.md#49-kubernetes-workloads)|
+| `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapters/chapter04.md#48-kubernetes-application-package-manager)|
 
 <!--
 | `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
