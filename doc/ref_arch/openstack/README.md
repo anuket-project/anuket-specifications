@@ -19,18 +19,19 @@ This is OpenStack based Reference Architecture (RA-1)
 | 2.0-alpha         | 10th January 2020     | Snezka Release    |
 | 2.0               | 15th May 2020         | Baldy Release     |
 | 3.0               | 25th Sep 2020         | Baraque Release   |
+| 4.0               | 29th Jan 2021         | Elbrus Release    |
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | SME Feedback |
+| Chapter 01 | Dickering over the final points |
 | Chapter 02 | Dickering over the final points |
 | Chapter 03 | Dickering over the final points |
-| Chapter 04 | Still Developing Content |
+| Chapter 04 | Dickering over the final points |
 | Chapter 05 | Dickering over the final points |
-| Chapter 06 | Still Developing Content |
-| Chapter 07 | SME Feedback |
+| Chapter 06 | SME Feedback |
+| Chapter 07 | Still Developing Content |
 | Chapter 08 | Dickering over the final points |
 
 
