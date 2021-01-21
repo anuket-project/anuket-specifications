@@ -309,7 +309,7 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.stg.01` | Infrastructure | Storage | The Architecture **must** support the ability for an operator to choose whether or not to deploy persistent storage for Pods. |[ra2.stg.004](chapter04.md#46-storage-components)|
 | `req.inf.ntw.01` | Infrastructure | Network | The Architecture **must** support network resiliency. | |
 | `req.inf.ntw.02` | Infrastructure | Network | The Architecture **must** be fully redundant. | |
-| `req.inf.ntw.03` | Infrastructure | Network | The networking solution **should** be able to be centrally administrated and configured. |[ra2.ntw.001](chapter04.md#45-networking-solutions) |
+| `req.inf.ntw.03` | Infrastructure | Network | The networking solution **should** be able to be centrally administrated and configured. |[ra2.ntw.001](chapter04.md#45-networking-solutions)<br>[ra2.ntw.004](chapter04.md#45-networking-solutions) |
 | `req.inf.ntw.04` | Infrastructure | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |[ra2.ch.007](chapter04.md#42-kubernetes-node)<br>[ra2.k8s.010](chapter04.md#43-kubernetes)|
 | `req.inf.ntw.05` | Infrastructure | Network | The Architecture **must** support capabilities for integrating SDN controllers. | |
 | `req.inf.ntw.06` | Infrastructure | Network | The Architecture **must**  support more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions) |
