@@ -1,26 +1,25 @@
 [<< Back](../../kubernetes)
 
 # 3. High Level Architecture
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 
-* [3.1 Introduction](#3.1)
-* [3.2 Infrastructure Services](#3.2)
-    * [3.2.1 Container Compute Services](#3.2.1)
-        * [3.2.1.1 Container Runtime Services](#3.2.1.1)
-        * [3.2.1.2 CPU Management](#3.2.1.2)
-        * [3.2.1.3 Memory and Huge Pages Resources Management](#3.2.1.3)
-        * [3.2.1.4 Hardware Topology Management](#3.2.1.4)
-        * [3.2.1.5 Node Feature Discovery](#3.2.1.5)
-        * [3.2.1.6 Device Plugin Framework](#3.2.1.6)
-        * [3.2.1.7 Hardware Acceleration](#3.2.1.7)
-        * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3.2.1.8)
-    * [3.2.2 Container Networking Services](#3.2.2)
-    * [3.2.3 Container Storage Services](#3.2.3)
-    * [3.2.4 Container Package Managers](#3.2.4)
+* [3.1 Introduction](#31-introduction)
+* [3.2 Infrastructure Services](#32-infrastructure-services)
+    * [3.2.1 Container Compute Services](#321-container-compute-services)
+        * [3.2.1.1 Container Runtime Services](#3211-container-runtime-services)
+        * [3.2.1.2 CPU Management](#3212-cpu-management)
+        * [3.2.1.3 Memory and Huge Pages Resources Management](#3213-memory-and-huge-pages-resources-management)
+        * [3.2.1.4 Hardware Topology Management](#3214-hardware-topology-management)
+        * [3.2.1.5 Node Feature Discovery](#3215-node-feature-discovery)
+        * [3.2.1.6 Device Plugin Framework](#3216-device-plugin-framework)
+        * [3.2.1.7 Hardware Acceleration](#3217-hardware-acceleration)
+        * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
+    * [3.2.2 Container Networking Services](#322-container-networking-services)
+    * [3.2.3 Container Storage Services](#323-container-storage-services)
+    * [3.2.4 Container Package Managers](#324-container-package-managers)
 
-<a name="3.1"></a>
 ## 3.1 Introduction
 
 The CNTT Kubernetes Reference Architecture (RA) is intended to be an industry
@@ -76,12 +75,8 @@ are considered throughout this RA, with the RA requirements traceability to the
 RM requirements formally documented in [chapter 2, section
 2.2](./chapter02.md#2.2) of this RA.
 
-<a name="3.2"></a>
 ## 3.2 Infrastructure Services
 
-> This chapter shall list the services provided by the infrastructure. Some example of these services are: log collection, monitoring, health check, load balancer. For the sake of clarity CaaS services should be also listed, like container lifecycle management or networking services.
-
-<a name="3.2.1"></a>
 ### 3.2.1 Container Compute Services
 
 The primary interface between the Physical / Virtual Infrastructure and any
@@ -110,7 +105,7 @@ or containers is essential to the overall security posture of the entire system,
 and must be appropriately secured to ensure processes running in one container
 cannot escalate their privileges or otherwise affect processes running in an
 adjacent container.  An example and more details of this concept can be found in
-[chapter 6](./chapter06.md)).
+[chapter 6](./chapter06.md).
 
 It is important to note that the container runtime itself is also a set of
 processes that run in user space, and therefore also interact with the kernel
@@ -122,7 +117,6 @@ etc.), and the kernel features required to provide the isolation mechanisms
 (cgroups, namespaces, filesystems, etc.) between the components.
 
 
-<a name="3.2.1.1"></a>
 #### 3.2.1.1 Container Runtime Services
 
 The Container Runtime is the component that runs within a Kubernetes Node
@@ -134,7 +128,7 @@ Host OS, based on API instructions from the kubelet.
 
 There are a number of different container runtimes. The simplest form, low-level
 container runtimes, just manage the OS capabilities such as cgroups and
-namespaces, and then run commands from within those cgroups and namesapces. An
+namespaces, and then run commands from within those cgroups and namespaces. An
 example of this type of runtime is runc, which underpins many of the
 higher-level runtimes and is considered a reference implementation of the [Open
 Container Initiative (OCI) runtime
@@ -169,14 +163,13 @@ will work with kubelet). Examples of this type of runtime include containerd
 (with CRI plugin) and cri-o, which is built specifically to work with
 Kubernetes.
 
-To fullfill `req.inf.vir.01` the architecture should support a container runtime
+To fulfil `req.inf.vir.01` the architecture should support a container runtime
 which provides the isolation of Operating System kernels.
 
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
 
 
-<a name="3.2.1.2"></a>
 #### 3.2.1.2 CPU Management
 
 CPU management has policies to determine placement preferences to use for workloads that are sensitive to cache affinity or latency, and so the workloads must not be moved by OS scheduler or throttled by kubelet. Additionally, some workloads are sensitive to differences between physical cores and SMT, while others (like DPDK-based workloads) are designed to run on isolated CPUs (like on Linux with cpuset-based selection of CPUs and isolcpus kernel parameter specifying cores isolated from general SMP balancing and scheduler algorithms).
@@ -188,7 +181,6 @@ Kubernetes [CPU Manager](https://kubernetes.io/docs/tasks/administer-cluster/cpu
 •	Differentiating between physical cores and SMT: When requesting even number of CPU cores for pods, scheduling can be influenced with taints, tolerations, and node affinity.
 
 
-<a name="3.2.1.3"></a>
 #### 3.2.1.3 Memory and Huge Pages Resources Management
 
 The Reference Model requires the support of Huge Pages in i.cap.018 which is supported by upstream Kubernetes ([documentation](https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/)).
@@ -201,29 +193,25 @@ This newer feature is missing from Kubernetes, therefore a gap has been
 identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hugepages).
 
 
-<a name="3.2.1.4"></a>
 #### 3.2.1.4 Hardware Topology Management
 
-Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimizations of CPU isolation, memory and device locality.
+Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimisations of CPU isolation, memory and device locality.
 
 Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
 
 Memory or Huge Pages are not considered by the Topology Manager. This can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 
-<a name="3.2.1.5"></a>
 #### 3.2.1.5 Node Feature Discovery
 
 [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) (NFD) can run on every node as a daemon or as a job. NFD detects detailed hardware and software capabilities of each node and then advertises those capabilities as node labels. Those node labels can be used in scheduling pods by using Node Selector or Node Affinity for pods that require such capabilities.
 
 
-<a name="3.2.1.6"></a>
 #### 3.2.1.6 Device Plugin Framework
 
 [Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
 
-<a name="3.2.1.7"></a>
 #### 3.2.1.7 Hardware Acceleration
 
 Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
@@ -235,12 +223,11 @@ Scheduling pods that require or prefer to run on nodes with hardware accelerator
 •	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
 
 
-<a name="3.2.1.8"></a>
 #### 3.2.1.8 Scheduling Pods with Non-resilient Applications
 
 Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
 
-| # | Intensive on  | Not intensive on | Using hardware acceleration | Requirements for optimized pod scheduling |
+| # | Intensive on  | Not intensive on | Using hardware acceleration | Requirements for optimised pod scheduling |
 |---|---|---|---|---|
 | 1 | Compute | Networking (dataplane) | No | CPU Manager |
 | 2 | Compute | Networking (dataplane) | CPU instructions | CPU Manager, NFD |
@@ -251,7 +238,6 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 <p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
 
 
-<a name="3.2.2"></a>
 ### 3.2.2 Container Networking Services
 
 Kubernetes considers networking as a key component, with a number of distinct
@@ -318,7 +304,7 @@ Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-n
 can be used to manage those resources and advertise them to the kubelet for use
 by the Kubernetes applications. This allows resources such as "GPUs,
 high-performance NICs, FPGAs, InfiniBand adapters, and other similar computing
-resources that may require vendor specific initialization and setup" to be
+resources that may require vendor specific initialisation and setup" to be
 managed and consumed via standard interfaces.
 
 Figure 3-2 below shows the main building blocks of a Kubernetes networking solution:
@@ -413,7 +399,6 @@ an additional feature and still be conformant with CNTT.
 [here](../../../ref_model/chapters/chapter05.md#5.1) and hardware profile
 features [here](../../../ref_model/chapters/chapter05.md#5.4).
 
-<a name="3.2.3"></a>
 ### 3.2.3 Container Storage Services
 
 Since its 1.13 version Kubernetes supports Container Storage Interface (CSI) in
@@ -469,7 +454,6 @@ and [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations)
 native object storage offering, and addressing this capability gap directly is
 outside of the scope of this RA.
 
-<a name="3.2.4"></a>
 ### 3.2.4 Kubernetes Application package manager
 
 To manage complex applications consisting of several Pods the Reference
