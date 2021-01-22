@@ -16,7 +16,6 @@
   - [4.9 Kubernetes workloads](#49-kubernetes-workloads)
   - [4.10 Additional required components](#410-additional-required-components)
 
-<a name="4.1"></a>
 ## 4.1 Introduction
 
 This chapter describes in detail the Kubernetes Reference Architecture in terms
@@ -38,7 +37,6 @@ alt="Kubernetes Reference Architecture" Title="Kubernetes Reference
 Architecture" width="65%"/></p>
 <p align="center"><b>Figure 4-1:</b> Kubernetes Reference Architecture</p>
 
-<a name="4.2"></a>
 ## 4.2 Kubernetes Node
 
 This section describes the configuration that will be applied to the physical or
@@ -68,11 +66,7 @@ the following specifications:
 
 <p align="center"><b>Table 4-1:</b> Node Specifications</p>
 
-<a name="4.3"></a>
 ## 4.3 Kubernetes
-> * The version of version range of Kubernetes and the mandatory components needed for Kubernetes (e.g.: etcd, cadvisor)
-> * Which optional features are used and which optional API-s are available
-> * Which [alpha or beta features](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) are used
 
 In order for the Kubernetes components to be conformant with the Reference Architecture they must be implemented as per the following specifications:
 
@@ -124,7 +118,6 @@ feature-gates:
 ```
 -->
 
-<a name="4.4"></a>
 ## 4.4 Container runtimes
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
@@ -134,7 +127,6 @@ feature-gates:
 
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 
-<a name="4.5"></a>
 ## 4.5 Networking solutions
 
 In order for the networking solution(s) to be conformant with the Reference
@@ -158,7 +150,6 @@ Architecture they must be implemented as per the following specifications:
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
 
-<a name="4.6"></a>
 ## 4.6 Storage components
 
 In order for the storage solution(s) to be conformant with the Reference
@@ -218,14 +209,12 @@ than being something an individual Kubernetes cluster could offer.
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 
 
-<a name="4.7"></a>
 ## 4.7 Service meshes
 
 Application service meshes are not in scope for the architecture.  Network
 service mesh specifications are handled in section [4.5 Networking
-solutions](#4.5).
+solutions](#45-networking-solutions).
 
-<a name="4.8"></a>
 ## 4.8 Kubernetes Application package manager
 
 In order for the storage solution(s) to be conformant with the Reference
@@ -237,7 +226,6 @@ Architecture they must be implemented as per the following specifications:
 
 <p align="center"><b>Table 4-7:</b> Kubernetes Application Package Management Specifications</p>
 
-<a name="4.9"></a>
 ## 4.9 Kubernetes workloads
 
 In order for the Kubernetes workloads to be conformant with the Reference
@@ -255,7 +243,6 @@ Architecture they must be implemented as per the following specifications:
 
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
-<a name="4.10"></a>
 ## 4.10 Additional required components
 
 > This chapter should list any additional components needed to provide the services defined in Chapter 3.2 (e.g: Prometheus)

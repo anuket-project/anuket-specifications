@@ -18,16 +18,13 @@
     - [2.2.6 Cloud Infrastructure Security Requirements](#226-cloud-infrastructure-security-requirements)
   - [2.3 Kubernetes Architecture Requirements](#23-kubernetes-architecture-requirements)
 
-<a name="2.1"></a>
 ## 2.1 Introduction
 
 This chapter will use the requirements defined in the overall Reference Model and only make additional entries in section [2.3](#2.3) if there are additional requirements needed for this Reference Architecture.
 
-<a name="2.1.1"></a>
 ## 2.1.1 Definitions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-<a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
 The tables below contains the requirements from the Reference Model to cover the Basic and Network Intensive profiles.  The table also includes a reference to the specification from [Chapter 04 - Architecture Specification](./chapter04.md) to ensure traceability.
@@ -41,7 +38,6 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 
 > Note; where "(if offered)" is used in the Reference Model, this has been replaced with "Optional" in the table below in order to align with the RFC2119 wording.
 
-<a name="2.2.1"></a>
 ### 2.2.1 Cloud Infrastructure Software Profile Capabilities
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
@@ -82,7 +78,6 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 **(2)** Defined in the `.bronze` configuration in section [4.2.3 Storage Extensions](../../../ref_model/chapters/chapter04.md#423-storage-extensions)<br>
 **(3)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
 
-<a name="2.2.2"></a>
 ### 2.2.2 Virtual Network Interface Specifications
 
 The required number of connection points to a Pod is described in `e.cap.004` above.  This section describes the required bandwidth of those connection points.
@@ -97,7 +92,6 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 <p align="center"><b>Table 2-2:</b> Reference Model Requirements: Network Interface Specifications</p>
 
-<a name="2.2.3"></a>
 ### 2.2.3 Cloud Infrastructure Software Profile Requirements
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
@@ -128,7 +122,6 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)<br>
 **(3)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.
 
-<a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
@@ -153,7 +146,6 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 **(1)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.
 
-<a name="2.2.5"></a>
 ### 2.2.5 Cloud Infrastructure Management Requirements
 
 | Reference Model Section | Reference | Description | Requirement (common to all Profiles) | Specification Reference |
@@ -174,7 +166,6 @@ These rows are removed and commented out as it's not clear what the requirement 
 -->
 <p align="center"><b>Table 2-5:</b> Reference Model Requirements: Cloud Infrastructure Management Requirements</p>
 
-<a name="2.2.6"></a>
 ### 2.2.6 Cloud Infrastructure Security Requirements
 
 | Reference Model Section | Reference | Requirement (common to all Profiles) | Specification Reference |
@@ -284,7 +275,6 @@ These rows are removed and commented out as it's not clear what the requirement 
 
 <p align="center"><b>Table 2-6:</b> Reference Model Requirements: Cloud Infrastructure Security Requirements</p>
 
-<a name="2.3"></a>
 ## 2.3 Kubernetes Architecture Requirements
 
 The Reference Model (RM) defines the Cloud Infrastructure, which consists of the physical resources, virtualised resources and a software management system.  In the virtualised world, the Cloud Infrastructure consists of the Guest Operating System, Hypervisor and, if needed, other software such as libvirt.  The Cloud Infrastructure Management component is responsible for, among others, tenant management, resources management, inventory, scheduling, and access management.
@@ -320,6 +310,7 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.ntw.13` | Infrastructure | Network | The platform must allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
 | `req.inf.ntw.14` | Infrastructure | Network | The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.|[ra2.ntw.011](chapter04.md#45-networking-solutions)|
 | `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |[ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.011](chapter04.md#42-kubernetes-node)|
+
 | `req.inf.phy.01`  | Infrastructure |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. | |
 | `req.kcm.gen.01` | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. | |
 | `req.kcm.gen.02` | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
