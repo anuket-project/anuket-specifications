@@ -1,0 +1,13 @@
+Pygments==2.3.1
+setuptools==41.0.1
+docutils==0.14
+mock==1.0.1
+pillow>=7.1.0
+alabaster>=0.7,<0.8,!=0.7.5
+commonmark==0.8.1
+recommonmark==0.6.0
+sphinx<2
+readthedocs-sphinx-ext<1.1
+sphinx-markdown-tables==0.0.15
+beautifulsoup4==4.9.1
+sphinx_rtd_theme==0.4.3

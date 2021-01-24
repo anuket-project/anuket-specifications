@@ -1,65 +1,52 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
-# Common NFVI for Telco Reference Model
+# Reference Model
 
 <!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
 
 ## Release Information
-**Release: _1.0_**
+**Bundle: _4_**
 
-**Version: _1.0_**
+**Version: _0_**
 
-**Release Date: _16th July 2019_**
+**Release Date: _25th September 2020_**
 
-## Version History
+## Bundle/Version History
 
-| Version | Date | Note
-| --- | --- | --- |
-| 1.0 | 16th July 2019 | First Release|
+| Bundle.Version    | Date                  | Note
+| ---               | ---                   | ---                       |
+| 1.0               | 16th July 2019        | First Release             |
+| 1.1               | 2nd August 2019       | Post Paris F2F clean up   |
+| 2.0               | 20th September 2019   | Botrange Release          |
+| 3.0-alpha         | 10th January 2020     | Snezka Release            |
+| 3.0               | 15th May 2020         | Baldy Release             |
+| 4.0               | 25th Sep 2020         | Baraque Release           |
 
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Lots of SME Feedback |
-| Chapter 02 | Lots of SME feedback |
-| Chapter 03 | Lots of SME Feedback |
-| Chapter 04 | Lots of SME feedback |
-| Chapter 05 | Lots of SME Feedback |
-| Chapter 06 | Lots of SME Feedback |
-| Chapter 07 | Still Developing Content |
-| Chapter 08 | Still Developing Content |
-| Chapter 09 | Initial Framework Only |
-| Chapter 10 | Initial Framework Only |
+| Chapter 01 | Release ready |
+| Chapter 02 | Release ready |
+| Chapter 03 | Release ready |
+| Chapter 04 | Release ready |
+| Chapter 05 | Release ready |
+| Chapter 06 | Release ready |
+| Chapter 07 | Release ready |
+| Chapter 08 | Release ready |
+| Chapter 09 | Release ready |
+| Chapter 10 | Release ready |
+| Glossary | Release ready|
 
 ## Table of Contents
-* [Abbreviations](abbreviations.md)
 * [Chapter 01 - Introduction](chapters/chapter01.md)
-* [Chapter 02 - VNF requirements & Analysis](chapters/chapter02.md)
-* [Chapter 03 - Infrastructure Abstraction](chapters/chapter03.md)
-* [Chapter 04 - Catalogue](chapters/chapter04.md)
-* [Chapter 05 - NFVI SW profiles](chapters/chapter05.md)
-* [Chapter 06 - NFVI HW profiles](chapters/chapter06.md)
-* [Chapter 07 - APIs & Interfaces](chapters/chapter07.md)
-* [Chapter 08 - Security](chapters/chapter08.md)
-* [Chapter 09 - Operations (OA&M)](chapters/chapter09.md)
-* [Chapter 10 - Compliance, Verification, and Certification](chapters/chapter10.md)
-* [Chapter 11 - Challenges and Gaps](chapters/chapter11.md)
-
-## Contributors
-
-
-| Item/Chapter | Lead | Priority |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------|
-| Overall Document & Rapporteur | Rabi Abdel (abdel.rabi@vodafone.com) |  |
-| Chapter 1 - Introduction | Beth Cohen (beth.cohen@one.verizon.com) | 1 |
-| Chapter 2 - VNF requirements and analysis | Ahmed ElSawaf (aelsawaf.c@stc.com.sa) | 1 |
-| Chapter 3 - Infrastructure Abstraction | Mark Shostak (Mark.Shostak@att.com),  Bernard Tsai (Bernard.Tsai@telekom.de),  Tom Kivlin (tom.kivlin@vodafone.com) | 1 |
-| Chapter 4 - Catalogue | Burak Kazan (burak.kazan@turkcell.com.tr) | 1 |
-| Chapter 5 - SW Config | Karine Sevilla (karine.sevilla@orange.com) | 1 |
-| Chapter 6 - HW Config | Pankaj Goyal (pg683k@att.com) | 1 |
-| Chapter 7 - API | Pankaj Goyal (pg683k@att.com) | 1 (subset) |
-| Chapter 8 - Security | Beth Cohen (beth.cohen@one.verizon.com) | >1 |
-| Chapter 9 - Operations | Mark Shostak (Mark.Shostak@att.com) | >1 |
-| Chapter 10 - Compliance and Verification | Rabi Abdel (abdel.rabi@vodafone.com) | >1 |
-| Chapter 11 - GAPS | JONATHAN BELTRAN (jb788y@att.com) | >1 |
+* [Chapter 02 - Workload Requirements & Analysis](chapters/chapter02.md)
+* [Chapter 03 - Modelling](chapters/chapter03.md)
+* [Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue](chapters/chapter04.md)
+* [Chapter 05 - Feature set and Requirements from Infrastructure](chapters/chapter05.md)
+* [Chapter 06 - External Interfaces](chapters/chapter06.md)
+* [Chapter 07 - Security](chapters/chapter07.md)
+* [Chapter 08 - Hybrid Multi-Cloud: Data Center to Edge](chapters/chapter08.md)
+* [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
+* [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
+* [Glossary](../common/glossary.md)

@@ -1,205 +1,82 @@
 [<< Back](../../ref_model)
 # 1. Introduction
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-* [1.1 Overview & Problem Statement.](#1.1)
-* [1.2 Terminology.](#1.2)
-  * [1.2.1 Software layers terminology.](#1.2.1)
-  * [1.2.2 Hardware layers terminology.](#1.2.2)
-  * [1.2.3 Operational and administrative terminology.](#1.2.3)
-  * [1.2.4 Other terminology.](#1.2.4)
-* [1.3 Principles.](#1.3)
-* [1.4 How this document works.](#1.4)
-* [1.5 Scope.](#1.5)
-* [1.6 Relations to other industry projects.](#1.6)
-* [1.7 What this document is not covering.](#1.7)
-* [1.8 Bogo-Meter.](#1.8)
-* [1.9 Roadmap.](#1.9)
+* [1.1 Overview](#1.1)
+* [1.2 Scope](#1.2)
+* [1.3 Principles](#1.3)
+* [1.4 Definitions/Terminology](#1.4)
+* [1.5 Conventions](#1.7)
 
 <a name="1.1"></a>
-## 1.1 Overview & Problem Statement
-The main concept of NFV (Network Function Virtualization) is the ability to use general purpose compute hardware and platforms to run multiple VNFs (Virtualised Network Functions) and hence achieving the desired CapEx and OpEx savings. However, one of big challenges NFV is facing with VNF vendors is that vendors, while building or designing their virtualized services (whether it's VoLTE, EPC, or enterprise services like SD-WAN (Software Defined Wide Area Network)), must bring their own set of infrastructure requirements and custom design parameters. This attitude from vendors triggered the creation of various vendor/function specific silos which are incompatible with each other and have different operating models. In addition, this makes the onboarding and certification processes of VNFs (coming from different vendors) hard to automate and standardise.
- 
-Therefore, for a true cloud type deployment, a model, which relies on engagement with specific vendors and unique infrastructure, needs to be reversed in a way that there is a lot more consistency on the infrastructure. Vendors need to bring their software to run on pre-defined environment with common capabilities. That common infrastructure, whether it is optimized for IT (Information Technology) workloads, NFV workloads, or even for AI (Artificial Intelligence) workloads, needs to be fully abstracted to VNFs so that it can be a standard offer.
- 
-Additionally, to bring the most value to telco operators as well as vendors, agreeing on a standard set of infrastructure profiles for vendors to use for their VNFs is needed within the industry.
+## 1.1 Overview
+The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by Cloud iNfrastructure Telco Taskforce (CNTT).  For more information about CNTT, its activities and deliverables, see [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
 
-The benefits of this approach are:
+**Problem Statement:**
+Based on community consultations, including telco operators, technology suppliers, and software developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of VNF/CNF network applications related to the lack of a common cloud infrastructure platform. These include but are not limited to the following:
 
-- Configuration over customisation
-  - By abstracting the infrastructure capabilities, operators are able to have common infrastructure platforms across all VNF vendors.
-  - Maintaining a consistent infrastructure allows for higher levels of automation as there is less customisation.
-  - Overall, this will reduce the total cost of ownership for operators.
+ - Higher development costs due to the need to develop virtualised/containerised network applications on multiple custom platforms for each operator.
+ - Increased complexities due to the need to maintain multiple versions of applications to support each custom environment.
+ - Lack of testing and validation commonalities, leading to inefficiencies and increased time to market. While the operators will still perform internal testing, the application developers utilising an industry standard verification program on a common cloud infrastructure would lead to efficiencies and faster time to market.
+ - Slower adoption of cloud-native applications and architectures. A common telco cloud may provide an easier path to methodologies that will drive faster cloud-native development.
+- Increased operational overhead due to the need for operators to integrate diverse and sometime conflicting cloud platform requirements.
 
-- Onboarding and certification
-  - By defining abstracted infrastructure capabilities, and the metrics by which they are measured, the onboarding and certification process for both NFVI and VNFs can be standardised.
-  - Supply chain, procurement and assurance teams can also then use these metrics to more accurately assess the most efficient / best value vendor for each scenario.
-- Better utilization
-  - Mapping VNFs to flavours which are properly mapped to IaaS will bring better utilization, than current VNFs expressing variety of instance types as their needs on IaaS.
+One of major challenges holding back the more rapid and widespread adoption of virtualised/containerised network applications is when the traditional telecom ecosystem vendors, while building or designing their virtualised services, are making their own infrastructure assumptions and requirements, often with custom design parameters. This leaves the operators being forced to build complex integrations of various vendor/function specific silos which are incompatible with each other and might possibly have different and conflicting operating models. In addition, this makes the onboarding and conformance processes of VNFs/CNFs (coming from different vendors) hard to automate and standardise. The need for a common model across the industry to facilitate more rapid adoption is clear.
 
-<!--<a name="1.2"></a>
-## 1.2	Problem Statement
-Analysis of On-Boarding and On-Going Support of ‘i’ in relation to the VNF Challenges - Identified Long-Poles.
 
->_**Comment**: This section is still under development._
--->
+The document starts from the abstract and as it progresses it increasingly gets into more details.  It follows the traditional design process where you start from core principles, progress to abstract concepts and models, then finish with operational considerations, such as security and lifecycle management.
+
+- **Chapter 01 - Introduction**: Overall scope of the Reference Model document including the goals and objectives of the project.  
+  >	**Audience**: This chapter is written for a general technical audience with interest in this topic.
+- **Chapter 02 - Workload requirements & Analysis**: High level requirements and core principles needed to understand how the model was developed.  Addresses the thinking behind the decisions that were made.
+  >	**Audience**: This chapter is written for architects and others with an interest in how the decisions were made.
+- **Chapter 03 - Modelling**:  The high-level cloud infrastructure model itself.  
+  >	**Audience**: This chapter is written for architects and others who wants to gain a quick high-level understanding of the model.
+- **Chapter 04 - Infrastructure Capabilities, Metrics, and Catalogue**:  Details about the capabilities needed to support the various types of workloads and how the capabilities are applied to the model. The details regarding T-shirt sizes and other considerations are found in this section.
+  >	**Audience**: This chapter is written for architects, developers and others who need to deploy infrastructure or develop applications.
+- **Chapter 05 - Feature set and Requirements from Infrastructure**: This chapter goes into more details on what needs to be part of the cloud infrastructure.  It describes the software and hardware capabilities and configurations recommended for the different types of cloud infrastructure profiles.
+  > **Audience**: This chapter is written for architects, developers and others who need to deploy infrastructure or develop applications.
+- **Chapter 06 - External Interfaces**:  This chapter covers APIs and any actual interfaces needed to communicate with the workloads and any other external components.
+  >	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or develop applications that use the APIs.
+- **Chapter 07 - Security**:  This chapter identifies the security requirements that need to be taken into consideration when designing and implementing a cloud infrastructure environment.  It does not cover details related to company specific requirements to meet regulatory requirements.
+  > **Audience**: This chapter is written for security professional, architects, developers and others who need to understand the role of security in the cloud infrastructure environment.
+- **Chapter 08**: This chapter is reserved for future use
+- **Chapter 09 - Life Cycle Management**: This chapter focuses on the operational aspects of the cloud infrastructure.  Discussions include deployment considerations, on-going management, upgrades and other lifecycle concerns and requirements.  It does not cover details related to company specific operational requirements, nor does it go into how the cloud infrastructure will interface with existing BSS/OSS systems.
+  > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the applications.
+- **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
+  > **Audience**: This chapter is written for a general technical audience with interest in this topic.
 
 <a name="1.2"></a>
-## 1.2	Terminology
-
-This section defines the main terms used in this document; these deinitions are primarily based on the ETSI GS NFV 003 V1.4.1 (2018-08) but have been cleaned to avoid deployment technology dependencies when necessary.
-
-<a name="1.2.1"></a>
-### 1.2.1 Software layers terminology
-
-- **Network Function Virtualisation (NFV)**: principle of separating network functions from the hardware they run on by using virtual hardware abstraction.
-- **Network Function (NF)**:  functional block or application within a network infrastructure that has well-defined external interfaces and well-defined functional behaviour.
-  - Within **NFV**, A **Network Function** is implemented in a form of **Virtualised NF** or a **Containerised NF**.
-- **Network Service (NS)**: composition of **Network Function**(s) and/or **Network Service**(s), defined by its functional and behavioural specification, including the service lifecycle.
-- **Virtual Network Function (VNF)**: a software implementation of a **Network Function**, capable of running on the **NFVi**.
-  - **VNF**s are built from one or more VNF Components (**VNFC**) and, in most cases,  the VNFC is hosted on a single VM or Container.
-- **Cloud-native (containerised) Network Function (CNF)**: **VNF** with a full adherence to cloud native principles, or a **VNF** that is transitioning to cloud native. 
-  >_*Note:*_ It is a containerised **VNF** that is microservices-oriented, to increase agility and maintainability, and that can be dynamically orchestrated and managed to optimize resource utilization; the containers can be Linux, Docker or other similar container technology.
-- **Virtual Application (VA)**: is more of a general term for software which can be loaded into a Virtual Machine. 
-  >_*Note:*_ a **VNF** is one type of VA.
-- **Workload**: Workload refers to software running on top of compute resources such as **VMs** or **Container**s. Most relevant workload categories in context of NFVI are:
-  - **Data Plane Workloads**: are related to packet handling in an end-to-end communication between applications. These tasks are expected to be very intensive in I/O operations and memory read/write operations.
-  - **Control Plane Workloads**: are the task related to any other communication between NFs that is not directly related to the end-to-end data communication between applications. This category includes session management, routing or authentication.
-  - **Storage Workloads**: are all tasks related to disk storage, from the non-intensive logging of a router, to more intensive read/write operations.
-- **Virtual Machine (VM)**: virtualised computation environment that behaves like a physical computer/server. 
-  >_*Note:*_ a **VM** consists of all of the components (processor (CPU), memory, storage, interfaces/ports, etc.) of a physical computer/server. It is created using Instance Type together with sizing information or Compute Flavour. 
-- **Instance type**: specifies a set of virtualized hardware resources and capabilities used for the creation of a virtual compute on which a workload runs on; includes capability specifications such as CPU, storage, and memory.
-- **Instance**: is a virtual compute resource, in a known state such as running or suspended, that can be used like a physical server. NOTE: can be used to specify VM Instance or Container Instance.
-- **Compute flavour**: defines the compute, memory, and storage capacity, and the capabilities of the physical compute server that the virtual compute resource can run on. 
-     >_*Note:*_ used to define the configuration/capacity limit of a virtualised container.
-- **VM instances Catalogue**: Pre-defined instance types and compute flavours.
-- **Container**: a container provides operating-system-level virtualization by abstracting the “user space”. One big difference between **Container**s and **VM**s is that containers "share" the host system’s kernel with other containers.
-- **Network Function Virtualisation Infrastructure (NFVI)**: totality of all hardware and software components that build up the environment in which **VA** are deployed. 
-  >_*Note:*_ The NFV-Infrastructure can span across several locations, e.g. places where data centres are operated. The network providing connectivity between these locations is regarded to be part of the NFVI. NFVI and VNF are the top-level conceptual entities in the scope of Network Function Virtualisation. All other components are sub-entities of these two main entities.
-- **Virtual resources**:
-  -	**Virtual Compute resource (a.k.a. virtualised container)**: partition of a compute node that provides an isolated virtualised computation environment.
-  -	**Virtual Storage resource**: virtualised non-volatile storage allocated to a virtualised computation environment hosting a **VNFC**
-  -	**Virtual Networking resource**: routes information among the network interfaces of a virtual compute resource and physical network interfaces, providing the necessary connectivity
--	**Hypervisor**: software that partitions the underlying physical resources and allocates them to Virtual Machines.
-- **Container Engine**: Software components used to create, destroy, and manage containers on top of an operating system.
-- **NFVI Software Profile (NFVI SW Profile)**: defines the behaviour, capabilities and metrics provided by an NFVI Software Layer
-- **NFVI Software Configuration (NFVI SW Configuration)**: a set of settings (Key:Value) that are applied/mapped to **NFVI** SW deployment.
-
-<a name="1.2.2"></a>
-### 1.2.2 Hardware layers terminology
-
-- **Physical Network Function (PNF)**: Implementation of a network function via tightly coupled dedicated hardware and software system. NOTE: it is a physical NFVi resource with the NF software.
--	**Hardware resources**: Compute/Storage/Network hardware resources on which the NFVI platform software, virtual machines and containers run on.
-- **NFVI Hardware Profile**: defines the behaviour, capabilities and metrics provided by an NFVI Hardware Layer.
-  - **Host Profile**: is another term for a **NFVI hardware profile**.
-- **NFVI Hardware Configuration**: a set of settings (Key:Value) that are applied/mapped to **NFVI** HW deployment.
-
-<a name="1.2.3"></a>
-### 1.2.3 Operational and administrative terminology
-
--	**Tenant**: one or more service users, in an administrative realm, sharing access to a set of physical, virtual or service resources.
--	**Tenant (Internal) Networks**: virtual networks that are internal to tenant instances.
--	**External Network**: External networks provide network connectivity for an NFVI tenant to resources outside of the tenant space.
--	**Quota**: upper limit on specific types of resources, usually used to prevent excessive resource consumption in the **VIM** by a given consumer (tenant).
--	**Resource pool**: logical grouping of NFVI hardware and software resources. A resource pool can be based on a certain resource type (for example, compute, storage, network) or a combination of resource types. An **NFVI** resource can be part of none, one or more resource pools.
--	**Compute Node**: abstract definition of a server.
--	**Service Assurance (SA)**: collects alarm and monitoring data. Applications within SA or interfacing with SA can then use this data for fault correlation, root cause analysis, service impact analysis, SLA management, security, monitoring and analytic, etc.
-
-<a name="1.2.4"></a>
-### 1.2.4 Other terminology
--	**Virtualised Infrastructure Manager (VIM)**: responsible for controlling and managing the **NFVI** compute, storage and network resources.
--	**NFV Orchestrator (NFVO)**: manages the VNF lifecycle and **NFVI** resources (supported by the **VIM**) to ensure an optimised allocation of the necessary resources and connectivity.
-
-<a name="1.3"></a>
-## 1.3	Principles
-
-This section specifies the principles of infrastructure abstraction and profiling work presented by this document.
-
-1. NFVI provides abstract and physical resources corresponding to:
-   - Compute resources.
-   - Storage resources.
-   - Networking resources. (Limited to connectivity services).
-   - Acceleration resources.
-1.	NFVI exposed resources should be supplier independent.
-1. All NFVI APIs must be standard and open to ensure components substitution.
-   - NFVI resources are consumed by VNFs through standard and open APIs.
-   - NFVI resources are configured on behalf of VNFs through standard and open APIs.
-   - NFVI resources are discovered/monitored by management entities (such as orchestration) through standard and open APIs.
-1.	VNFs should be modular and utilise minimum resources. 
-1. NFVI shall support pre-defined and parameterized T-Shirt sizes.
-   - T-Shirt sizes will evolve with time.
-1.	NFVI provides certain resources, capabilities and features and virtual applications (VA) should only consume these resources, capabilities and features.
-1. VNFs that are designed to take advantage of NFVI accelerations should still be able to run without these accelerations with potential performance impacts.
-1. An objective of CNTT is to have a single, overarching Reference Model and the smallest number of Reference Architectures as is practical. Two principles are introduced in support of these objectives:
-    - **Minimize Architecture proliferation by stipulating compatible features be contained within a single Architecture as much as possible:**
-      - Features which are compatible, meaning they are not mutually exclusive and can coexist in the same NFVI instance, shall be incorporated into the same Reference Architecture. For example, IPv4 and IPv6 should be captured in the same Architecture, because they don't interfere with each other
-      - Focus on the commonalities of the features over the perceived differences.  Seek an approach that allows small differences to be handled at either the low level design or implementation stage. For example, assume the use of existing common APIs over new ones.
- 
-    - **Create an additional Architecture only when incompatible elements are unavoidable:** 
-      - Creating additional Architectures is limited to when incompatible elements are desired by Taskforce members. For example, if one member desires KVM be used as the hypervisor, and another desires ESXi be used as the hypervisor, and no compromise or mitigation* can be negotiated, the Architecture could be forked, subject to review and vote to approve by the CNTT technical Working Group, such that one Architecture would be KVM-based and the other would be ESXi-based.
-     
-        >*Depending on the relationships and substitutability of the component(s) in question, it may be possible to mitigate component incompatibility by creating annexes to a single Architecture, rather than creating an additional Architecture. With this approach, designers at a Telco would implement the Architecture as described in the reference document and when it came to the particular component in question, they would select from one of the relevant annexes, their preferred option. For example, if one member wanted to use Ceph, and another member wanted to use Swift, assuming the components are equally compatible with the rest of the Architecture, there could be one annex for the Ceph implementation and one annex for the Swift implementation. 
-
-<a name="1.4"></a>
-## 1.4	How this document works
-There are three level of documents needed to fulfil the CNTT vision. They are, as highlighted in **Figure 1-4**:  **Reference Model**, **Reference Architecture**, and **Reference Implementation**. 
-
-<p align="center"><img src="../figures/ch01_scope_doc_types.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-4:</b> Scope of CNTT</p>
-
-- **Reference Model**: (This document) focuses on the __**NFVI Abstraction**__ and how NFVI services and resources are exposed to VNFs. 
-- **Reference Architecture**: High level NFVI system components and their interactions to deliver on the Reference Model goals. It is expected that at least one, but not more than a few, Reference Architecture will conform to the Reference Model.
-- **Reference Implementation**: Focuses on the design and implementation of a NFVI Reference Architecture. Each Reference Architecture is expected to be implemented by at least one Reference Implementation.
-
-<a name="1.5"></a>
-## 1.5	Scope
-
-This document focuses on the **Reference Model**. **Figure 1-5** below highlights its scope in more details.
+## 1.2 Scope
+This **Reference Model** document focuses on identifying the abstractions, and associated concepts, that are needed to represent the cloud infrastructure. **Figure 1-1** below highlights its scope in more details.
 
 <p align="center"><img src="../figures/ch01_scope.png" alt="scope" title="Scope" width="100%"/></p>
-<p align="center"><b>Figure 1-5:</b> Scope of Reference Model</p>
+<p align="center"><b>Figure 1-1:</b> Scope of Reference Model</p>
 
 This document specifies:
-- NFVI Infrastructure abstraction
-  - **NFVI metrics & capabilities**: A set of carrier grade metrics and capabilities of NFVI which VNFs require to perform telco grade network functions.
-  - **Infrastructure profiles catalogue**: A catalogue of standard profiles needed in order to completely abstract the infrastructure from VNFs. With a limited and well defined profiles and well understood characteristics, VNF compatibility and performance predictability can be achieved. 
+- **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete cloud system that supports workloads deployed in Virtual Machines (VM) or containers. Network function workloads that are deployed on virtual machines and containers are referred to as virtual network functions (VNF) and containerised network functions (CNF), respectively; please note that it is now more common to refer CNFs as cloud native network functions. 
+  - **Cloud Infrastructure capabilities & metrics**: A set of cloud infrastructure capabilities and metrics required to perform telco scale network functions and satisfy their performance criterion.
+  - **Infrastructure profiles catalogue**: A catalogue of standard infrastructure software and hardware configurations, referred to as profiles; these profiles abstract the infrastructure for the workloads. Only a few profiles, with well-defined characteristics, can meet the operational and performance requirements of all workloads.
 
-    >_The current focus is for VMs but the intention is to expand the definition to include Container profiles too._
+- Cloud Infrastructure Software and Hardware profiles:
+  - **Cloud Infrastructure software profiles**: These software profiles are components of the corresponding infrastructure profiles within the infrastructure profiles catalogue, and specify the host infrastructure software configurations.
+  - **Cloud Infrastructure hardware profiles**: These hardware profiles are components of the corresponding infrastructure profiles within the infrastructure profiles catalogue, and specify the host infrastructure hardware configurations.
 
-- NFVI Software and Hardware profiling
-  - **NFVI software profiles and configurations**: These are software profiles and configurations that maps directly to the infrastructure profiles within the infrastructure profiles catalogue.
+- Conformance and verification
+  - **Conformance programs**: These define the requirements for verification and validation programs for both the cloud infrastructure and workloads.
+  - **Test framework**: Provides test suites to allow conformance of cloud infrastructure and workloads.
 
-  - **NFVI hardware profiles and configurations**: These are hardware profiles and configurations which are suitable for the defined NFVI software profiles & configurations.
+<a name="1.3"></a>
+## 1.3 Principles
+The Reference Model specifications conform to the overall principles defined in [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
 
-- Compliance and verification
-  - **Certification programs**: Define the requirement for certification programs for both VNFs and NFVI.
+<a name="1.4"></a>
+## 1.4 Definitions/Terminology
+To help guide the reader, the Reference Model [Glossary](../../common/glossary.md) provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GR NFV 003 [1] definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
-  - **Test framework**: Provide test suites to allow compliance, certification, and verification of VNFs and NFVI against the defined set of profiles.
+<a name="1.5"></a>  
+## 1.5	Conventions
+ “The key words “must”, “must not”, “required”, “shall”, “shall not”, “should”, “should not”, “recommended”, “may”, and “optional” in this document are to be interpreted as described in RFC2119 [2].”
 
-<a name="1.6"></a>
-## 1.6	Relations to other industry projects 
-
-Regarding the ETSI NFV architecture specified by ETSI GS NFV002<!--[link to ref: NFV Architectural framework v1.2.1]-->, the scope of this document is only, but the entirety of, the NFVI part, including its external reference points.
-A mapping of the functional blocks considered in that document to that NFV architecture is illustrated in **Figure 1-6** below
-
-<p align="center"><img src="../figures/ch01_etsi_archi_mapping_v2.PNG" alt="mapping" title="Mapping to ETSI NFV architecture" width="100%"/></p>
-<p align="center"><b>Figure 1-6:</b> Mapping to ETSI NFV architecture</p>
-
-Following ETSI model, **Figure 1-6**, the VIM, Virtualised Infrastructure Manager, which controls and manages the NFVI, is not included into NFVI. Nevertheless, the interactions between NFVI and VIM will be part of this document as infrastructure resources management and orchestration have a strong impact on NFVI. These interactions will be detailed in **Chapter 7 "API & Interfaces"**.
-
-<a name="1.7"></a>
-## 1.7	What this document is not covering 
->_**Comment**: This section is still under development._
-<!--Separate document w/labels/artifacts
+<!--Separate document w/labels/artefacts
 Not part of model but will be applicable to architecture -->
-
-<a name="1.8"></a>
-## 1.8	Bogo-Meter
-A carefully chosen “Bogo-Meter” rating at the beginning of each chapter indicates the completeness and maturity each chapter's content, at a glance.
-
-<a name="1.9"></a>
-## 1.9	Roadmap
->_**Comment**: Please Contact the CNTT team for access to the Roadmap_
-
-
