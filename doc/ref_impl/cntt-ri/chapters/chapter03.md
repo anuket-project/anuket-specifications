@@ -1,34 +1,34 @@
 [<< Back](../)
 
-# 3. NFVI + VNF Target State & Specification
+# 3. Cloud Infrastructure + VNF Target State & Specification
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
 * [3.2 VNF profile](#3.2)
-* [3.3 NFVI SW profile](#3.3)
-* [3.4 NFVI Required State](#3.4)
+* [3.3 Cloud Infrastructure SW profile](#3.3)
+* [3.4 Cloud Infrastructure Required State](#3.4)
 
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The VNF profile is used to describe every workload running on top of NFVI. The NFVI SW profile is used to describe the list of features provided by the hypervisor and host OS.
+The VNF profile is used to describe every workload running on top of Cloud Infrastructure. The Cloud Infrastructure SW profile is used to describe the list of features provided by the hypervisor and host OS.
 
 The CNTT Reference Model will be referenced as **RM1** to avoid long and duplicated reference titles.
 
 <a name="3.2"></a>
 ## 3.2 VNF profile
 
-Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in NFVI Infrastructure Profiles Catalogue. As states in [RM1: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
+Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in [RM1: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
 
-`B/N/C <I opt> . <Flavour> . <S ext> . <A ext>`
+`B/N<!--/C--> <I opt> . <Flavour> . <S ext> . <A ext>`
 
-B/N<!---/C---> is used to specify the instance type (Basic, Network Intensive<!---, and Compute Intensive--->), different instance types are associated with different acceleartion extensions, network characteristics ([RM1: 4.2.4 Instance Types](../../../ref_model/chapters/chapter04.md#4.2.4)) and instance capabilities([RM1: 4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)).
+B/N<!--/C--> is used to specify the instance type (Basic, Network Intensive<!--, and Compute Intensive-->), different instance types are associated with different acceleartion extensions, network characteristics ([RM1: 4.2.4 Instance Types](../../../ref_model/chapters/chapter04.md#4.2.4)) and instance capabilities([RM1: 4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)).
 
 Whereas:
 
   - `<I opt>` stands for network interface options, e.g., the range of vNIC Bandwidth of B instance shall be selected from n1 to n60, for C instance is from n10 to n300, for N instance is from n10 to n600. (RM1: 4.2.2 Virtual Network Interface Specifications and Table 4-23: Virtual NIC Interfaces Options)
-  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM1: 4.2.1 Compute Flavours), additionally there are a few capabilities which are bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!---/C---> instances, while CPU overbooking can only happens B instance but not for N<!---/C--->. (See RM1: Table 4-24 Mapping of NFVI Capabilities to Instance Types for full mapping details)
+  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM1: 4.2.1 Compute Flavours), additionally there are a few capabilities which are bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!--/C--> instances, while CPU overbooking can only happens B instance but not for N<!--/C-->. (See RM1: Table 4-24 Mapping of Cloud Infrastructure Capabilities to Instance Types for full mapping details)
   - `<S ext>` stands for persistent storage extensions, contains the size and the performance settings (RM1: Table 4-20: Storage Extension Options), note the storage extension is common to all instance types as <Flavours>
   - `<A ext>` stands for accelaration extensions, features like Transcoding and Programmable are associated with C instances (RM1: 4.2.4.3.1 Compute Accleration Extensions), while IPSec and Crypto features only make scene with N instance (RM1: 4.2.4.2.1 Network Acceleration Extensions),
 
@@ -153,8 +153,8 @@ This profile is the global settings for the whole NFVI, which means there should
 | Crypto Acceleration Interface | N  | Y |
 
 <a name="3.4"></a>
-## 3.4 NFVI Hardware Profile
-[RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple NFVI profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
+## 3.4 Cloud Infrastructure Hardware Profile
+[RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple Cloud Infrastructure profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
 
 
 | Reference | Feature | Description | Basic Type | Network Intensive |
@@ -178,7 +178,7 @@ This profile is the global settings for the whole NFVI, which means there should
 
 
 ## 3.5 Cloud Infrastructure Required State
-This sections describes the readiness of Cloud Infrastructure before the certification process can begin. Once the Cloud Infrastructure is configured with either of the profiles - B, <!---C,---> N, a set of tests (for example functests) should be run in order to determine the readiness of the Cloud Infrastructure for certification.
+This sections describes the readiness of Cloud Infrastructure before the certification process can begin. Once the Cloud Infrastructure is configured with either of the profiles - B, <!--C,--> N, a set of tests (for example functests) should be run in order to determine the readiness of the Cloud Infrastructure for certification.
 #TODO : Identify the tests for this section
 
 
@@ -197,10 +197,10 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | `req.inf.com.01` | **must** provide compute resources for VM instances.  |
 | `req.inf.com.02` | **should** include industry standard hardware management systems at both HW device and platform level |
 | `req.inf.com.03` | **should** support symmetrical CPU multi-processing with shared memory access as well as multi-threading. |
-| `req.inf.com.04` | **must** be able to support multiple CPU Types to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
+| `req.inf.com.04` | **must** be able to support multiple CPU Types to support Base, Network Intensive<!--, and Compute Intensive--> infrastructure profiles. |
 | `req.inf.com.05` | **must** support Hardware Platforms with NUMA capabilities.|
 | `req.inf.com.06` | **must** support CPU Pinning.|
-| `req.inf.com.07` | **must** support different hardware configurations to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
+| `req.inf.com.07` | **must** support different hardware configurations to support Base, Network Intensive<!--, and Compute Intensive--> infrastructure profiles. |
 | `req.inf.stg.01` | **must** provide shared Block storage for VM Instances. |
 | `req.inf.stg.02` | **must** provide shared Object storage for VM Instances. |
 | `req.inf.stg.03` | **may** provide local file system storage solution for VM Instances. |
@@ -224,7 +224,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | `req.inf.ntw.12` | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. |
 | `req.inf.ntw.13` | The SDN solution **should** be able to support federated networks. |
 | `req.inf.ntw.14` | The SDN solution **should** be able to be centrally administrated and configured. |
-| `req.inf.ntw.15` | **must** support multiple networking options for NFVI to support Base, Network Intensive<!---, and Compute Intensive---> infrastructure profiles. |
+| `req.inf.ntw.15` | **must** support multiple networking options for NFVI to support Base, Network Intensive<!--, and Compute Intensive--> infrastructure profiles. |
 | `req.inf.ntw.16` | **must** support dual stack IPv4 and IPv6 for tenant networks and workloads. |
 | `req.inf.ntw.17` | **should** use dual stack IPv4 and IPv6 for NFVI internal networks. |
 | `req.inf.acc.01` | **should** support Application Specific Acceleration (exposed to VNFs). |
