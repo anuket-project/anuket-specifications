@@ -17,7 +17,7 @@
   * [7.5.3 Software Code Quality and Security](#7.5.3)
   * [7.5.4 Alerting and Monitoring](#7.5.4)
   * [7.5.5 Logging](#7.5.5)
-  * [7.5.6 VNF images](#7.5.6)
+  * [7.5.6 NF images](#7.5.6)
   * [7.5.7 Vulnerability Management](#7.5.7)
 * [7.6 Workload Security- Cloud Infrastructure Operator Responsibility](#7.6)
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
@@ -48,7 +48,7 @@ This chapter examines multiple aspects of security as it relates to Cloud Infras
 
 <a name="7.2"></a>
 ## 7.2 Potential attack vectors
-Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure VNF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
+Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure NF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
 
 <a name="7.3"></a>
 ## 7.3 Security Scope
@@ -103,7 +103,7 @@ At a high level, the following areas/requirements cover workload security for a 
 <a name="7.4.1"></a>
 ### 7.4.1 General Platform Security
 
-The security certification of the platform will typically need to be the same, or higher, than the workload or VNF requirements.
+The security certification of the platform will typically need to be the same, or higher, than the workload requirements.
 
 The platform supports the workload, and in effect controls access to the workload from and to external endpoints such as carriage networks used by workloads, or by Data Centre Operations staff supporting the workload, or by tenants accessing workloads. From an access security perspective, the following diagram shows where different access controls will operate within the platform to provide access controls throughout the platform:
 
@@ -114,7 +114,7 @@ The platform supports the workload, and in effect controls access to the workloa
 #### 7.4.1.1 The high-level functions of these different access controls
 
 * **MGNT ACCESS CONTROLS** - Platform access to workloads for service management. Typically all management and control-plane traffic is encrypted.
-* **DATA ACCESS CONTROLS** - Control of east-west traffic between workloads, and control of north-south traffic between the VNF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
+* **DATA ACCESS CONTROLS** - Control of east-west traffic between workloads, and control of north-south traffic between the NF and other platform services such as front-end carriage networks and platform services. Inherently strong separation between tenants is mandatory.
 * **SERVICES ACCESS CONTROLS** - Protects platform services from any platform access
 * **BACK-END ACCESS CONTROLS** - Data Centre Operations access to the platform, and subsequently, workloads. Typically stronger authentication requirements such as (Two-Factor Authentication) 2FA, and using technologies such as Role-Based Access Control (RBAC) and encryption. Application Programming Interface (API) gateways may be required for automated/script-driven processes.
 * **FRONT-END ACCESS CONTROLS** - Protects the platform from malicious carriage network access, and provides connectivity for specific workloads to specific carriage networks. Carriage networks being those that are provided as public networks and operated by carriers, and in this case with interfaces that are usually sub, or virtual networks.
@@ -213,7 +213,7 @@ The platform supports the workload, and in effect controls access to the workloa
 * Logging output should support customizable Log retention and Log rotation.
 
   <a name="7.5.6"></a>
-### 7.5.6 VNF images
+### 7.5.6 NF images
 
 * Image integrity – fingerprinting/validation.
 * Container Images
@@ -246,7 +246,7 @@ Cloud Infrastructure operators must ensure that remote attestation methods are u
 <a name="7.6.2"></a>
 ### 7.6.2 Workload Image Scanning / Signing
 
-It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the VNF operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
+It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the workload operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
 
 Use of Image scanners such as OpenSCAP to determine security vulnerabilities is strongly recommended.
 
@@ -398,7 +398,7 @@ Security certification should encompass the following elements:
 | req.sec.gen.006 | The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required. |   |
 | req.sec.gen.007 | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service. | |
 | req.sec.gen.008 | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. |  |
-| req.sec.gen.009 | The Platform **must** support Software integrity protection and verification. | |
+| req.sec.gen.009 | The Platform **must** support Software integrity protection and verification and **must** scan source code and manifests. | |
 | req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. Controlled Access Based on the Need to Know https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know. |   |
 | req.sec.gen.011 | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). | |
 | req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | It is mandatory for a Cloud Infrastructure Operator, but this requirement’s verification goes beyond CNTT testing scope |
@@ -463,7 +463,7 @@ Security certification should encompass the following elements:
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements). | |
 | req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope. |
 | req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.). | |
-| req.sec.wl.007 | The Operator **should** implement processes and tools to verify VNF authenticity and integrity. |  |
+| req.sec.wl.007 | The Operator **should** implement processes and tools to verify NF authenticity and integrity. |  |
 
 <p align="center"><b>Table 7-4:</b> Workload security requirements</p>
 
@@ -473,7 +473,7 @@ Security certification should encompass the following elements:
 | Ref | Requirement | Definition/Note |
 |---|----|----|
 | req.sec.img.001 | Images from untrusted sources **must not** be used. | |
-| req.sec.img.002 | Images **must** be maintained to be free from known vulnerabilities. |  |
+| req.sec.img.002 | Images **must** be scanned to be maintained free from known vulnerabilities. |  |
 | req.sec.img.003 | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them. |  |
 | req.sec.img.004 | Images **must** only be accessible to authorized actors. |  |
 | req.sec.img.005 | Image Registries **must** only be accessible to authorized actors. |  |

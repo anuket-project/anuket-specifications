@@ -23,7 +23,7 @@ Requirements Principles can be found in the [RM Principles](https://github.com/c
 
 ## Testing Principles
 * There must be traceability between test cases and requirement being validated
-* Failures should provide additional content to inform the user where or how the requirement was violated (ex: which file or resource violated the requirement).  Put another way, don’t require the user to read the test to understand what went wrong
+* Failures should provide additional content to inform the user where or how the requirement was violated (e.g. which file or resource violated the requirement). Put another way, don’t require the user to read the test to understand what went wrong
 * Testing tools should support selection of tests based on category or profile.
 * Tests must be available to run locally by both CNF and cloud infrastructure providers
 * Testing tools must produce machine-readable result formats that can be used as input into the badging program (OVP already defines a format)
@@ -142,10 +142,10 @@ CNTT requirements about verification, validation, compliance, and conformance:
   for third-party conformance review
 
 Here are a couple of publicly available playbooks :
-- [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/kali)
-- [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/kali)
+- [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/leguer)
+- [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/leguer)
 - [CNTT RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/hunter)
-- [Kubernetes verification](https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/kali)
+- [Kubernetes verification](https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/leguer)
 
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
 GNU/Linux as Operating System and asks for a few dependencies as described in

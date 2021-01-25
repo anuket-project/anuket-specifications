@@ -314,7 +314,7 @@ A telco cloud will typically be deployed in multiple locations (“sites”) of 
 
 Some examples of such topologies include:
 - Large data center capable of hosting potentially thousands of servers and the networking to support them
-- Mini data center (such as a central office) capable of hosting up to a hundred servers
+- Intermediate data center (such as a central office) capable of hosting up to a hundred servers
 - Edge (not customer premise) capable of hosting ten to fifty servers
 
 In order to provide the expected availability for any given service, a number of different OpenStack deployment topologies can be considered.  This section explores the main options and highlights the characteristics of each.  Ultimately the decision rests with the operator to achieve specific availability target taking into account use case, data centre capabilities, economics and risks.
