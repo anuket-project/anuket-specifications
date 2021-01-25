@@ -77,8 +77,6 @@ RM requirements formally documented in [chapter 2, section
 
 ## 3.2 Infrastructure Services
 
-> This chapter shall list the services provided by the infrastructure. Some example of these services are: log collection, monitoring, health check, load balancer. For the sake of clarity CaaS services should be also listed, like container lifecycle management or networking services.
-
 ### 3.2.1 Container Compute Services
 
 The primary interface between the Physical / Virtual Infrastructure and any
@@ -107,7 +105,7 @@ or containers is essential to the overall security posture of the entire system,
 and must be appropriately secured to ensure processes running in one container
 cannot escalate their privileges or otherwise affect processes running in an
 adjacent container.  An example and more details of this concept can be found in
-[chapter 6](./chapter06.md)).
+[chapter 6](./chapter06.md).
 
 It is important to note that the container runtime itself is also a set of
 processes that run in user space, and therefore also interact with the kernel
@@ -130,7 +128,7 @@ Host OS, based on API instructions from the kubelet.
 
 There are a number of different container runtimes. The simplest form, low-level
 container runtimes, just manage the OS capabilities such as cgroups and
-namespaces, and then run commands from within those cgroups and namesapces. An
+namespaces, and then run commands from within those cgroups and namespaces. An
 example of this type of runtime is runc, which underpins many of the
 higher-level runtimes and is considered a reference implementation of the [Open
 Container Initiative (OCI) runtime
@@ -165,7 +163,7 @@ will work with kubelet). Examples of this type of runtime include containerd
 (with CRI plugin) and cri-o, which is built specifically to work with
 Kubernetes.
 
-To fullfill `req.inf.vir.01` the architecture should support a container runtime
+To fulfil `req.inf.vir.01` the architecture should support a container runtime
 which provides the isolation of Operating System kernels.
 
 The architecture must support a way to isolate the compute resources of the
@@ -197,7 +195,7 @@ identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hug
 
 #### 3.2.1.4 Hardware Topology Management
 
-Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimizations of CPU isolation, memory and device locality.
+Scheduling pods across NUMA boundaries can result in lower performance and higher latencies. This would be an issue for applications that require optimisations of CPU isolation, memory and device locality.
 
 Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
 
@@ -229,7 +227,7 @@ Scheduling pods that require or prefer to run on nodes with hardware accelerator
 
 Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
 
-| # | Intensive on  | Not intensive on | Using hardware acceleration | Requirements for optimized pod scheduling |
+| # | Intensive on  | Not intensive on | Using hardware acceleration | Requirements for optimised pod scheduling |
 |---|---|---|---|---|
 | 1 | Compute | Networking (dataplane) | No | CPU Manager |
 | 2 | Compute | Networking (dataplane) | CPU instructions | CPU Manager, NFD |
@@ -306,7 +304,7 @@ Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-n
 can be used to manage those resources and advertise them to the kubelet for use
 by the Kubernetes applications. This allows resources such as "GPUs,
 high-performance NICs, FPGAs, InfiniBand adapters, and other similar computing
-resources that may require vendor specific initialization and setup" to be
+resources that may require vendor specific initialisation and setup" to be
 managed and consumed via standard interfaces.
 
 Figure 3-2 below shows the main building blocks of a Kubernetes networking solution:
