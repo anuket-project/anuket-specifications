@@ -253,7 +253,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 <a name="5.3"></a>
 ## 5.3 Cloud Infrastructure Hardware Profile description
 
-The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as compute host, host, node, or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as number of CPU sockets, number of CPU cores, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, <!--software (VIM, Hypervisor, Operating System),--> specialised hardware (such as accelerators), the underlay networking, and storage.
+The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as compute host, host, node, or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as number of CPU sockets, number of cores per CPU, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, <!--software (VIM, Hypervisor, Operating System),--> specialised hardware (such as accelerators), the underlay networking, and storage.
 
 This chapter defines a simplified host, host profile and related capabilities model associated with each of the different Cloud Infrastructure Hardware Profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 5-4**.
 
@@ -283,7 +283,7 @@ _**For Example:** for software profile “n” (network intensive) the above hos
 
 The host profile and capabilities include:
 1. **Number of CPU sockets**: is the number of CPUs installed on the physical server.
-1. **Number of CPU cores**: is the number of cores on each of the CPUs of the physical server.
+1. **Number of cores per CPU**: is the number of cores on each of the CPUs of the physical server.
 1. **RAM (GB)**: is the amount of RAM installed on the physical server.
 1. **Local Disk Capacity**: is the number of local disks and the capacity of the disks installed on the physical server.
 1. **SMT (Simultaneous Multithreading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
