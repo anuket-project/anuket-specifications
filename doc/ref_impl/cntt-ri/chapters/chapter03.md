@@ -92,7 +92,7 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 
 > Open Point 1: Does ONAP have some relevant spec or VNF declaration schema so that CNTT can re-use/revise to cover what we need ? Or define a new one ?
 
-> Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customerize" ?
+> Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customise" ?
 
 <a name="3.3"></a>
 ## 3.3 Cloud Infrastructure SW profile
