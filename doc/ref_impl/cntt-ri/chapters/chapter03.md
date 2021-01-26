@@ -7,7 +7,13 @@
 * [3.1 Introduction](#3.1)
 * [3.2 VNF profile](#3.2)
 * [3.3 Cloud Infrastructure SW profile](#3.3)
-* [3.4 Cloud Infrastructure Required State](#3.4)
+* [3.4 Cloud Infrastructure Hardware Profile](#3.4)
+* [3.5 Cloud Infrastructure Required State](#3.5)
+* [3.6 Cloud Infrastructure and VIM Architecture](#3.6)
+* [3.7 Cloud Infrastructure and VIM Component Level Architecture](#3.7)
+* [3.8 Interface and API for Reference Implementation 1](#3.8)
+
+
 
 <a name="3.1"></a>
 ## 3.1 Introduction
