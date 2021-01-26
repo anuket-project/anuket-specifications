@@ -14,23 +14,23 @@
 
 The VNF profile is used to describe every workload running on top of Cloud Infrastructure. The Cloud Infrastructure SW profile is used to describe the list of features provided by the hypervisor and host OS.
 
-The CNTT Reference Model will be referenced as **RM1** to avoid long and duplicated reference titles.
+The CNTT Reference Model will be referenced as **RM** to avoid long and duplicated reference titles.
 
 <a name="3.2"></a>
 ## 3.2 VNF profile
 
-Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in [RM1: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
+Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in [RM: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
 
 `B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
-B/N<!--/C--> is used to specify the instance type (Basic, Network Intensive<!--, and Compute Intensive-->), different instance types are associated with different acceleartion extensions, network characteristics ([RM1: 4.2.4 Instance Types](../../../ref_model/chapters/chapter04.md#4.2.4)) and instance capabilities([RM1: 4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)).
+B/N<!--/C--> is used to specify the instance type (Basic, Network Intensive<!--, and Compute Intensive-->), different instance types are associated with different acceleartion extensions, network characteristics ([RM: 4.2.4 Instance Types](../../../ref_model/chapters/chapter04.md#4.2.4)) and instance capabilities([RM: 4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)).
 
 Whereas:
 
-  - `<I opt>` stands for network interface options, e.g., the range of vNIC Bandwidth of B instance shall be selected from n1 to n60, for C instance is from n10 to n300, for N instance is from n10 to n600. (RM1: 4.2.2 Virtual Network Interface Specifications and Table 4-23: Virtual NIC Interfaces Options)
-  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM1: 4.2.1 Compute Flavours), additionally there are a few capabilities which are bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!--/C--> instances, while CPU overbooking can only happens B instance but not for N<!--/C-->. (See RM1: Table 4-24 Mapping of Cloud Infrastructure Capabilities to Instance Types for full mapping details)
-  - `<S ext>` stands for persistent storage extensions, contains the size and the performance settings (RM1: Table 4-20: Storage Extension Options), note the storage extension is common to all instance types as <Flavours>
-  - `<A ext>` stands for accelaration extensions, features like Transcoding and Programmable are associated with C instances (RM1: 4.2.4.3.1 Compute Accleration Extensions), while IPSec and Crypto features only make scene with N instance (RM1: 4.2.4.2.1 Network Acceleration Extensions),
+  - `<I opt>` stands for network interface options, e.g., the range of vNIC Bandwidth of B instance shall be selected from n1 to n60, for C instance is from n10 to n300, for N instance is from n10 to n600. (RM: 4.2.2 Virtual Network Interface Specifications and Table 4-23: Virtual NIC Interfaces Options)
+  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM: 4.2.1 Compute Flavours), additionally there are a few capabilities which are bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!--/C--> instances, while CPU overbooking can only happens B instance but not for N<!--/C-->. (See RM: Table 4-24 Mapping of Cloud Infrastructure Capabilities to Instance Types for full mapping details)
+  - `<S ext>` stands for persistent storage extensions, contains the size and the performance settings (RM: Table 4-20: Storage Extension Options), note the storage extension is common to all instance types as <Flavours>
+  - `<A ext>` stands for accelaration extensions, features like Transcoding and Programmable are associated with C instances (RM: 4.2.4.3.1 Compute Accleration Extensions), while IPSec and Crypto features only make scene with N instance (RM: 4.2.4.2.1 Network Acceleration Extensions),
 
 Every VNF instance must declare its profiles explicitly, which can be used by VIM to allocate resources duration instantiation, also it would be useful to evaluate portability of workload.
 
