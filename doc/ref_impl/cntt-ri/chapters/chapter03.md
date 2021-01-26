@@ -21,7 +21,7 @@ The CNTT Reference Model will be referenced as **RM1** to avoid long and duplica
 
 Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in [RM1: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
 
-`B/N<!--/C--> <I opt> . <Flavour> . <S ext> . <A ext>`
+`B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
 B/N<!--/C--> is used to specify the instance type (Basic, Network Intensive<!--, and Compute Intensive-->), different instance types are associated with different acceleartion extensions, network characteristics ([RM1: 4.2.4 Instance Types](../../../ref_model/chapters/chapter04.md#4.2.4)) and instance capabilities([RM1: 4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)).
 
@@ -95,14 +95,14 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 > Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customerize" ?
 
 <a name="3.3"></a>
-## 3.3 NFVI SW profile
+## 3.3 Cloud Infrastructure SW profile
 
-[RM1: 5.2 NFVI SW profile features and requirements](../../../ref_model/chapters/chapter05.md#5.2) defines the NFVI software layer. The profile depicts the feature status of the
-  - virtual Compute (**nfvi.com.cfg.xxx** in RM1 Table 5-7: Virtual Compute features and configuration for the 3 types of SW profiles and **nfvi.com.acc.cfg.xxx** in Table 5-8: Virtual Compute Acceleration features),
+[RM: 5.2 Cloud Infrastructure Software Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.2) defines the Cloud Infrastructure software layer. The profile depicts the feature status of the
+  - virtual Compute (**nfvi.com.cfg.xxx** in RM Table 5-7: Virtual Compute features and configuration for the 3 types of SW profiles and **nfvi.com.acc.cfg.xxx** in Table 5-8: Virtual Compute Acceleration features),
   - storage (**nfvi.stg.cfg.xxx** in RM1: Table 5-9: Virtual Storage features and configuration for the 3 types of SW profiles and **nfvi.stg.acc.cfg.xxx** in Table 5-10: Virtual Storage Acceleration features)
   - networking configuration(see **nfvi.net.cfg.xxx** in Table 5-11 Virtual Networking features and configuration for the 3 types of SW profiles and **nfvi.net.acc.cfg.xxx** in Table 5-12 Virtual Networking Acceleration features)
 
-This profile is the global settings for the whole NFVI, which means there should be only one entry per NFVI resource pool, i.e., Basic/Network<!---/Compute--->
+This profile is the global settings for the whole Cloud Infrastructure, which means there should be only one entry per Cloud Infrastructure resource pool, i.e., Basic/Network<!--/Compute-->
 
 <!---| .conf | Basic | Network Intensive | Compute Intensive |
 |-------|----------------|----------------|----------------|
