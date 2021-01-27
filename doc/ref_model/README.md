@@ -4,7 +4,7 @@
 <!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
 
 ## Release Information
-**Bundle: _4_**
+**Bundle: _5_**
 
 **Version: _0_**
 
@@ -20,6 +20,7 @@
 | 3.0-alpha         | 10th January 2020     | Snezka Release            |
 | 3.0               | 15th May 2020         | Baldy Release             |
 | 4.0               | 25th Sep 2020         | Baraque Release           |
+| 5.0               | 29th Jan 2021         | Elbrus Release           |
 
 
 ## Overall Status
