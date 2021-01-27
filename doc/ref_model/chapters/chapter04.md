@@ -318,7 +318,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 
 <a name="Table4-13"></a>
 
-| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") | Management Interface |
+| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") | Bandwidth |
 |------------------------|--------------------------|-------------------------|------------------|----------------------|
 | .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
 | .small                 | 1                        | 2 GB                    | 20 GB            | 1 Gbps               |
