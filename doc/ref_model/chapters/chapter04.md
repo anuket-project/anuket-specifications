@@ -318,7 +318,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 
 <a name="Table4-13"></a>
 
-| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") | Bandwidth |
+| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") <sup>3)</sup>| Bandwidth |
 |------------------------|--------------------------|-------------------------|------------------|----------------------|
 | .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
 | .small                 | 1                        | 2 GB                    | 20 GB            | 1 Gbps               |
@@ -331,7 +331,8 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 <p align="center"><b>Table 4-13:</b> Predefined Compute Flavours.</p>
 
 **1)** These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
-**2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
+**2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.<br>
+**3)** The "local disk" is an ephemeral disk that provides storage for the life of a VM/Pod, and can either be provided by storage devices housed within the physical server on which the VM/Pod is running, or from an external storage device such as SAN or NFS.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
