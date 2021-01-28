@@ -24,10 +24,10 @@ This is Kubernetes based Reference Architecture (RA-2)
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Dickering over the finer points |
+| Chapter 01 | Complete |
 | Chapter 02 | Lots of SME feedback |
-| Chapter 03 | Still Developing Content |
-| Chapter 04 | Still Developing Content |
+| Chapter 03 | Lots of SME feedback |
+| Chapter 04 | Lots of SME feedback |
 | Chapter 05 | Lots of SME feedback |
 | Chapter 06 | Lots of SME feedback |
 | Appendix A - Guidance for VNF-to-CNF Transition | Initial Framework Only |

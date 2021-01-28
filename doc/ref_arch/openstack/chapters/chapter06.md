@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 6. Security
-<p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
@@ -340,9 +340,9 @@ Security audit logs must NOT contain:
 * Proprietary or Sensitive Personal Information.
 
 #### 6.3.7.3 Where to Log
-* The logs must be store in an external system (sec.mon018), in a manner where the event can be linked to the resource on which it occurred.
+* The logs must be store in an external system (sec.mon.018), in a manner where the event can be linked to the resource on which it occurred.
 * Where technically feasible, events must be recorded on the device (e.g. VM, physical node, etc.) where the event occurs, if the external logging system is not available (sec.mon.021).
-* Security audit logs must be protected in transit and at rest (sec.mon04).
+* Security audit logs must be protected in transit and at rest (sec.mon.004).
 
 #### 6.3.7.4 Required Fields
 The security audit log must contain at minimum the following fields (sec.mon.001) where applicable and technically feasible: 
