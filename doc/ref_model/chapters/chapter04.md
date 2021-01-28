@@ -332,7 +332,7 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 
 **1)** These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
 **2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.<br>
-**3)** The disk is local to the VM/POD, which can be either installed on the local server or and external physical storage
+**3)** The "local disk" is an ephemeral disk that provides storage for the life of a VM/Pod, and can either be provided by storage devices housed within the physical server on which the VM/Pod is running, or from an external storage device such as SAN or NFS.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
