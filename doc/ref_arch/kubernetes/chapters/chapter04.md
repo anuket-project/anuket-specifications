@@ -70,8 +70,8 @@ the following specifications:
 
 In order for the Kubernetes components to be conformant with the Reference Architecture they must be implemented as per the following specifications:
 
-|Ref|Specification|Details|Requirement Trace|
-|---|---|---|---|
+|Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
+|---|---|---|---|---|
 |`ra2.k8s.001`|Kubernetes Conformance|The Kubernetes distribution, product, or installer used in the implementation must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) and marked (X) as conformant for the Kubernetes version that is being used.|[req.gen.cnt.03](./chapter02.md#23-kubernetes-architecture-requirements)||
 |`ra2.k8s.002`|Highly available etcd|An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes).|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|["For the high availability requirement"](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.k8s.003`|Highly available control plane|An implementation must consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
@@ -132,8 +132,8 @@ feature-gates:
 In order for the networking solution(s) to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
-|Ref|Specification|Details|Requirement Trace|
-|---|---|---|---|
+|Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
+|---|---|---|---|---|
 |`ra2.ntw.001`|Centralised network administration|The networking solution deployed within the implementation must be administered through the Kubernetes API using native Kubernetes API resources and objects, or Custom Resources.|[req.inf.ntw.03](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.002`|Default Pod Network - CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin for the Default Pod Network, as the alternative (kubenet) does not support cross-node networking or Network Policies.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)<br>[req.inf.ntw.08](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.003`|Multiple connection points|The networking solution deployed within the implementation must support the capability to connect at least FIVE connection points to each Pod, which are additional to the default connection point managed by the default Pod network CNI plugin.|[e.cap.004](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
@@ -231,8 +231,8 @@ Architecture they must be implemented as per the following specifications:
 In order for the Kubernetes workloads to be conformant with the Reference
 Architecture they must be implemented as per the following specifications:
 
-|Ref|Specification|Details|Requirement Trace|
-|---|---|---|---|
+|Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
+|---|---|---|---|---|
 |`ra2.app.001`|[Root](https://github.com/opencontainers/runtime-spec/blob/master/config.md) Parameter Group (OCI Spec)|Specifies the container's root filesystem.|TBD|N/A|
 |`ra2.app.002`|[Mounts](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts) Parameter Group (OCI Spec)|Specifies additional mounts beyond root|TBD|N/A|
 |`ra2.app.003`|[Process](https://github.com/opencontainers/runtime-spec/blob/master/config.md#process) Parameter Group (OCI Spec)|Specifies the container process|TBD|N/A|
