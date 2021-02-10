@@ -12,6 +12,7 @@
    * [6.3.1 Resource Pool information](#6.3.1)
    * [6.3.2 Global Settings](#6.3.2)
    * [6.3.3 Rack information](#6.3.3)
+   * [6.3.3 Server information](#6.3.3)
    * [6.3.1 Hardware resource information](#6.3.1)
    * [6.3.2 Server template](#6.3.2)
    * [6.3.3 Server information](#6.3.3)
@@ -119,12 +120,29 @@ This table describes the information for each server in the resource pool.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| NAME | String | Yes | The unique name for s |
-| RACK_ROW | String | Yes | This describes the row where rack located |
-| RACK_NO | String | Yes | This is the ID number of rack |
-| RACK_NAME | String | Yes | This is full name of the rack, used in PDF to identify the rack |
+| NAME | String | Yes | Server name should be aligned with naming rule, this is the unique ID for each device to be referred for identify device |
+| VENDOR | String | Yes | Vendor of device |
+| SKU | String | Yes | The SKU of device, can be referred by other table NIC connection table, to identify slot-port mapping for device  |
+| MODEL | String | Yes | This is the model for different service type, this value is defined from design document of resource pool |
+| SN | String | Yes | Serial Number |
+| RES_POOL | String | Yes | Resource pool name |
+| RACK | String | Yes | rack name where device located |
+| POS | String | Yes | the position of device in rack, like 2-3U,4-5U |
+| BMC_IP | String | Yes |  |
+| BMC_GATEWAY | String | Yes |  |
+| BMC_MASK | String | Yes |  |
+| BMC_SUBNET | String | Yes |  |
+| BMC_USR | String | Yes | BMC user |
+| BMC_PWD | String | Yes | BMC password |
+| SERVICE_IP | String | Yes |  |
+| SERVICE_GATEWAY | String | Yes |  |
+| SERVICE_MASK | String | Yes |  |
+| GROUP_NAME | String | Yes | the usage of server, Manage or Storaage or Service  |
+| BMC_PRE_CONFIGURED | String | Yes | YES or NO |
+| HW_REGION | String | Yes | hardware region that divided by design documents, like A area or B area |
+| MODULE_NAME | String | Yes | hardware model that divided within each region, Like "Model 3 in Region A", usually contains certain number of racks |
 
-<p align="center"><b>Table 6-3-4:</b> Resource Pool Information.</p>
+<p align="center"><b>Table 6-3-4:</b> Server Information.</p>
 
 
 <a name="6.3.1"></a>
