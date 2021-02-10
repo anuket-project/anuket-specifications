@@ -9,6 +9,9 @@
    * [6.2.1 General](#6.2.1)
    * [6.2.2 Additional](#6.2.2)
 * [6.3 Descriptor file definition](#6.3)
+   * [6.3.1 Resource Pool information](#6.3.1)
+   * [6.3.2 Global Settings](#6.3.2)
+   * [6.3.3 Rack information](#6.3.3)
    * [6.3.1 Hardware resource information](#6.3.1)
    * [6.3.2 Server template](#6.3.2)
    * [6.3.3 Server information](#6.3.3)
@@ -64,6 +67,65 @@ Depends xxx.
 ## 6.3 Descriptor file definition
 There must be a Descriptor File definition, which used by installer as input of necessary configuration.
 Mandatory and optional definition shall be defined.
+
+<a name="6.3.1"></a>
+### 6.3.1 Resource Pool information
+This table is the description of the resource pool, it contains only 2 parameters: name and type of the resource pool.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RES_POOL_NAME | String | Yes | This is the unique name of the resource pool, could be refered by other parameters |
+| RES_POOL_TYPE | String | Yes |  |
+
+<p align="center"><b>Table 6-3-1:</b> Resource Pool Information.</p>
+
+
+<a name="6.3.2"></a>
+### 6.3.2 Global Settings
+The Global settings is provided by the user, contains data like like IP_Type, VLAN_Type, etc.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| IP_TYPE | String | Yes | IPV4 or IPV6 |
+| NETWORK_TYPE | String | Yes | VLAN or VXLAN  |
+| TIMEZONE | String | Yes | The timezone where VIM deployed, like UTC+8  |
+| STORAGE_TYPE | String | Yes |  The Storage type, for example "ceph" |
+| HUGEPAGE_ENABLE | String | Yes | TRUE or FALSE  |
+| HUGEPAGE_SIZE | String | Yes | The storage size that hypervisor set for VM, for example "1GB" |
+| QINQ_ENABLE | List | Yes | TRUE or FALSE |
+| HYPERVISOR_CORES | List | Yes | number of CPU bounded for Hypervisor |
+| EXTERNAL_NTP_SERVER_IP | List | Yes | IP list of NTP server, seperated by comma, for example: primariy_IP;second_IP |
+
+<p align="center"><b>Table 6-3-2:</b> Global Settings </p>
+
+
+<a name="6.3.3"></a>
+### 6.3.3 Rack information
+This table describes the information for each rack in each lab.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ROOM | String | Yes | This is the room ID for each lab |
+| RACK_ROW | String | Yes | This describes the row where rack located |
+| RACK_NO | String | Yes | This is the ID number of rack |
+| RACK_NAME | String | Yes | This is full name of the rack, used in PDF to identify the rack |
+
+<p align="center"><b>Table 6-3-3:</b> Rack Information.</p>
+
+
+<a name="6.3.2"></a>
+### 6.3.4 server information
+This table describes the information for each server in the resource pool.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NAME | String | Yes | The unique name for s |
+| RACK_ROW | String | Yes | This describes the row where rack located |
+| RACK_NO | String | Yes | This is the ID number of rack |
+| RACK_NAME | String | Yes | This is full name of the rack, used in PDF to identify the rack |
+
+<p align="center"><b>Table 6-3-4:</b> Resource Pool Information.</p>
+
 
 <a name="6.3.1"></a>
 ### 6.3.1 Hardware resource information
