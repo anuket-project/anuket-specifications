@@ -5,11 +5,11 @@
 This is Kubernetes based Reference Architecture (RA-2)
 
 ## Release Information
-**Bundle: _4_**
+**Bundle: _5_**
 
 **Version: _0_**
 
-**Release Date: _25th September 2020_**
+**Release Date: _29th January 2021_**
 
 ## Bundle/Version History
 
@@ -18,7 +18,7 @@ This is Kubernetes based Reference Architecture (RA-2)
 | 1.0-alpha         | 10th January 2020 | Snezka Release    |
 | 3.0               | 15th May 2020     | Baldy Release     |
 | 4.0               | 25th Sep 2020     | Baraque Release   |
-
+| 5.0               | 29th Jan 2021     | Elbrus Release    |
 
 ## Overall Status
 
