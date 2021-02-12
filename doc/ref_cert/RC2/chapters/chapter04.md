@@ -6,7 +6,7 @@
 * [4.1 Introduction](#4.1)
 * [4.2 Selection Criteria](#4.2)
 * [4.3 Traceability Matrix](#4.3)
-  * [4.3.1Test Case Traceability to RA2 Requirements](#4.3.1)
+  * [4.3.1 Test Case Traceability to RA2 Requirements](#4.3.1)
   
 <a name="4.1"></a>
 ## 4.1 Introduction
