@@ -285,7 +285,6 @@ The requirements in this section are to be delivered in addition to those in [se
 
 | Ref # | Category | Sub-category | Description | Specification Reference |
 |---|---|---|---|---|
-| `req.gen.cnt.01` | General | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
 | `req.gen.cnt.02` | General | Cloud nativeness | The Architecture **must** support immutable infrastructure. |[ra2.ch.017](chapter04.md#42-kubernetes-node)|
 | `req.gen.cnt.03` | General | Cloud nativeness | The Architecture **must** run conformant Kubernetes as defined by the [CNCF](https://github.com/cncf/k8s-conformance). |[ra2.k8s.001](chapter04.md#43-kubernetes)|
 | `req.gen.cnt.04` | General | Cloud nativeness | The Architecture **must** support clearly defined abstraction layers. | |
