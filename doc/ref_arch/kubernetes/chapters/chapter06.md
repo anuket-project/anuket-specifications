@@ -119,7 +119,7 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 
 > **Baseline project:** _Kubernetes v1.20_
 
-> **Gap description:** Kubernetes does not have a support for user namespaces to provide namespace scoped user ID-s (UID), therefore when an application in a container requires system user privileges the container either needs to run in privileged mode or the infrastructure provides random system UID-s. Scrambling UID-s results in errors when the application needs to set kernel capabilities (e.g.: in case of VLAN trunking) or when a Pod shares data with other Pod-s via persistent storage, therefore none of these solutions are secure or error prone, therefore they are not advised. Support for proper user namespaces in Kubernetes is [under discussion](https://github.com/kubernetes/enhancements/pull/2101).
+> **Gap description:** Kubernetes does not support namespace scoped user IDs (UIDs). Therefore, when a container-based application in a requires system privileges the container either needs to run in privileged mode or the infrastructure needs to provide random system UIDs. Randomised UIDs result in errors when the application needs to set kernel capabilities (e.g.: in case of VLAN trunking) or when a Pod shares data with other Pods via persistent storage. The "privileged mode" solution is not secure while "random UIDs" is error prone, and therefore these techniques are advised for use. Support for proper user namespaces in Kubernetes is [under discussion](https://github.com/kubernetes/enhancements/pull/2101).
 
 
 
