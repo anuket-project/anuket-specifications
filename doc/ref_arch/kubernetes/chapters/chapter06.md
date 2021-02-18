@@ -111,7 +111,11 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 <a name="6.2.9"></a>
 ### 6.2.0 User namespaces in Kubernetes
 
-> **Related requirements:** `e.man.004`, `sec.gen.006`
+> **Related requirements:**
+| Reference | Requirement |
+|---|---|
+| e.man.004 | Capability to isolate resources between tenants |
+| sec.sys.007 | The Platform must implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control). |
 
 > **Baseline project:** _Kubernetes v1.20_
 
