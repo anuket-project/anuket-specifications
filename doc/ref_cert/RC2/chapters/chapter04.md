@@ -10,7 +10,7 @@
   
 <a name="4.1"></a>
 ## 4.1 Introduction
-The scope of this chapter is to identify and list down test cases based on requirements defined in [Reference Architecture-2 (RA-2)](../../../ref_arch/kubernetes/README.md). This will serve as traceability between test cases and requirements for Kubernetes platform interoperability.
+The scope of this chapter is to identify and list test cases based on requirements defined in [Reference Architecture-2 (RA-2)](../../../ref_arch/kubernetes/README.md). This will serve as traceability between test cases and requirements for Kubernetes platform interoperability.
 
 Note that each requirement may have one or more test cases associated with it.
 
