@@ -114,16 +114,19 @@ This table describes the information for each rack in each lab.
 <p align="center"><b>Table 6-3-3:</b> Rack Information.</p>
 
 
-<a name="6.3.2"></a>
+<a name="6.3.4"></a>
 ### 6.3.4 server information
-This table describes the information for each server in the resource pool.
+Server information should be provided for installer, including full detail info. for each server, nic mapping etc.
+
+#### 6.3.4.1 server information
+First, a table describes the information for each server in the resource pool should be provided.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NAME | String | Yes | Server name should be aligned with naming rule, this is the unique ID for each device to be referred for identify device |
 | VENDOR | String | Yes | Vendor of device |
 | SKU | String | Yes | The SKU of device, can be referred by other table NIC connection table, to identify slot-port mapping for device  |
-| MODEL | String | Yes | This is the model for different service type, this value is defined from design document of resource pool |
+| MODEL | String | Yes | This is the model for different service type, this value is defined from design document of resource pool, example NC1, NC1-S |
 | SN | String | Yes | Serial Number |
 | RES_POOL | String | Yes | Resource pool name |
 | RACK | String | Yes | rack name where device located |
@@ -142,8 +145,61 @@ This table describes the information for each server in the resource pool.
 | HW_REGION | String | Yes | hardware region that divided by design documents, like A area or B area |
 | MODULE_NAME | String | Yes | hardware model that divided within each region, Like "Model 3 in Region A", usually contains certain number of racks |
 
-<p align="center"><b>Table 6-3-4:</b> Server Information.</p>
+<p align="center"><b>Table 6-3-4-1:</b> Server Information.</p>
 
+#### 6.3.4.2 server nic information
+This table is describing the slot and port mapping relationship for NIC in each model of server. 
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| VENDOR | String | Yes | Vendor of server |
+| SKU | String | Yes | SKU of server |
+| MODEL | String | Yes | server service type defined by provider/user, same definition as in above table, example: NC1 or NC2  |
+| SLOT | String | Yes | Slot number in server for each NIC, for example, PCIeSlot2  |
+| PORTS | String | Yes | Ports number for the above NIC, for example: 1_1;1_2 2 ports for one NIC  |
+| SLOT | String | Yes | Slot number in server for each NIC, for example, PCIeSlot2  |
+
+<p align="center"><b>Table 6-3-4-2:</b> Server NIC Information.</p>
+
+#### 6.3.4.3 Port BDF information for each type pf server
+Port BDF information need to be provided for each port on server, 
+it will be used to identify the logical port name after OS is installed. 
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SKU | String | Yes | SKU of server |
+| MODEL | String | Yes | server service type defined by provider/user, same definition as in above table, example: NC1 or NC2  |
+| NETWORK_PLANE | String | Yes | Network plane for each nic, Manage or Storage or Service  |
+| PORT | String | Yes | Ports number for example: 1_1  |
+| PORT_BDF | String | Yes | Port BDF value for above port  |
+
+<p align="center"><b>Table 6-3-4-3:</b> Port BDF Information.</p>
+
+<a name="6.3.5"></a>
+### 6.3.5 Network Device information
+This table describes each network device, it can be used for network configuration and verification.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NAME | String | Yes | Name of network device |
+| VENDOR | String | Yes | Vendor name for network device  |
+| SKU | String | Yes | SKU |
+| MODEL | String | Yes | Type of switch, like TOR or EOR |
+| SN | String | Yes | Serial number |
+| HW_RES_POOL | String | Yes | Resource pool name for hardware |
+| RACK | List | Yes | rack number where switch is placed |
+| POS | List | Yes | position in rack |
+| BMC_IP | List | Yes |  |
+| BMC_GATEWAY | List | Yes |  |
+| BMC_MASK | List | Yes |  |
+| BMC_USR | List | Yes | BMC login user |
+| BMC_PWD | List | Yes | password for BMC login user |
+| ENABLE_PWD | List | Yes | Enable password |
+| GROUP_NAME | List | Yes | Manage or storage or service |
+| HW_REGION | List | Yes | Hardware region |
+| MODULE_NAME | List | Yes | Hardware module which is devided by location, like area A module 1 |
+
+<p align="center"><b>Table 6-3-5:</b> Network device information.</p>
 
 <a name="6.3.1"></a>
 ### 6.3.1 Hardware resource information
