@@ -160,10 +160,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.008 | Capability to collect and expose performance information on virtualised resources allocated | Must support | |
 | [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.009 | Capability to collect and notify fault information on virtualised resources | Must support | |
 
-<!--
-These rows are removed and commented out as it's not clear what the requirement is.
-| infra.stg.cfg.001 | Catalogue storage Types | | Y |
--->
+
 <p align="center"><b>Table 2-5:</b> Reference Model Requirements: Cloud Infrastructure Management Requirements</p>
 
 ### 2.2.6 Cloud Infrastructure Security Requirements
@@ -317,8 +314,5 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |For Networking: <ul><li>[ra2.ntw.001](chapter04.md#45-networking-solutions)<li>[ra2.ntw.008](chapter04.md#45-networking-solutions)<li>[ra2.app.006](chapter04.md#49-kubernetes-workloads)</ul><br>Compute/storage not yet met. |
 | `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|
 
-<!--
-| `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
--->
 
 <p align="center"><b>Table 2-7:</b> Kubernetes Architecture Requirements</p>
