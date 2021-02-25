@@ -109,7 +109,7 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 > **Gap description:** Allocation of hugepages from the same NUMA node as other resources of a Pod. To support this [cAdvisor needed a change to support NUMA](https://github.com/google/cadvisor/pull/2304). Changes in Kubernetes are planned to be implemented in the [Node Topology Manager](https://github.com/kubernetes/enhancements/issues/693).
 
 <a name="6.2.9"></a>
-### 6.2.0 User namespaces in Kubernetes
+### 6.2.9 User namespaces in Kubernetes
 
 > **Related requirements:**
 | Reference | Requirement |
