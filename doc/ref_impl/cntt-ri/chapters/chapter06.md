@@ -144,6 +144,38 @@ This table describes the information for each server in the resource pool.
 
 <p align="center"><b>Table 6-3-4:</b> Server Information.</p>
 
+### Host Aggregate
+Servers in the resource pool are divided to multiple HAs according to the difference from service or different hardware requirements.  
+One HA could belong to multiple AZ   
+It is the definition of each HA in the resource pool. it should contain the server list for each HA, and also the HA meta data.
+
+#### Host HA Mapping 
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| HA_NAME | String | Yes |  |
+| DEVICE_NAME | String | Yes | server name list in HA |
+
+#### HA metadata 
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| HA_NAME | String | Yes |  |
+| HA_METADATA | String | Yes | properties for each HA, for example: type=TrustPlane,ovs=C-plane,sriov=false |
+| AZ_NAME | String | Yes | AZ name that HA belongs to |
+
+
+### VIM Nodes
+There's a list of servers that was defined as control/management nodes according to resource pool plan
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DEVICE_NAME | String | Yes | The server name  |
+
+### SDNC Nodes
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DEVICE_NAME | String | Yes | The server name  |
+
+
 
 <a name="6.3.1"></a>
 ### 6.3.1 Hardware resource information
