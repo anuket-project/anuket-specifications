@@ -27,12 +27,14 @@ You need one physical server acting as a jump server along with minimum of two a
 <a name="4.3"></a>
 ## 4.3 Installation of the Reference Implementation
 
+This section describes how to get started with RI-2 deployment on bare metal servers. The deployment is done using [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef), which is a project that aims to deliver a reference implementation for Kubernetes based on the RA-2.
+
+For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v2.1.0) (version v2.1.0).
+
 <a name="4.3.1"></a>
 ### 4.3.1 Installation on Bare Metal Infratructure
 
-This section describes how to get started with RI-2 deployment on bare metal servers.
-
-For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v2.1.0) (version v2.1.0).
+Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed. Details and installation steps can be found in `docs/release/installation/deployment-guide.rst`. 
 
 Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in OPNFV terminology need to be defined under `hw_config/<vendor>`. Both PDF and IDF files are modeled as YAML schema.
 
@@ -97,6 +99,8 @@ References for the above features:
 * [SR-IOV Network device plugin for Kubernetes](https://github.com/intel/sriov-network-device-plugin)
 * [Intel Device Plugins for Kubernetes](https://github.com/intel/intel-device-plugins-for-kubernetes)
 * [Telemtry Aware Scheduling](https://github.com/intel/telemetry-aware-scheduling)
+
+Additional settings are available in the BMRA templates located in `playbooks/roles/bmra-config/templates`. Changing these might have unexpected results and should generally not be done.
 
 You will also have to modify environmental variables defined in `deploy.env` to match your setup.
 
