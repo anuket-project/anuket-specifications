@@ -24,7 +24,11 @@ interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 | RA2 Section | RA2 Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| RI2 Traceability |
 |---|---|---|---|---|---|
-|Kubernetes Nodes|`ra2.ch.001`|Huge Pages|Not required|It must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|_TBC_|
+|Kubernetes Nodes|`ra2.ch.001`|Huge Pages|It must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|It must be possible to enable Huge Pages (2048KiB and 1048576KiB) within the Kubernetes Node OS, exposing schedulable resources `hugepages-2Mi` and `hugepages-1Gi`.|4.3.1|
+|Kubernetes Nodes|`ra2.ch.002`|SR-IOV Capable NICs|Not required|When hosting workloads matching the Network Intensive profile, the physical machines on which the Kubernetes Nodes run must be equipped with NICs that are SR-IOV capable.|3.3|
+|Kubernetes Nodes|`ra2.ch.003`|SR-IOV Virtual Functions|Not required|When hosting workloads matching the Network Intensive profile, SR-IOV virtual functions (VFs) must be configured within the Kubernetes Node OS, as the SR-IOV Device Plugin does not manage the creation of these VFs.|4.3.1|
+|Kubernetes Nodes|`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.|SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.|3.3|
+|Kubernetes Nodes|`ra2.ch.006`|CPU Allocation Ratio - Pods|To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu` < `allocatable.cpu` and `limits.cpu` < `allocatable.cpu`).|To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu` < `allocatable.cpu` and `limits.cpu` < `allocatable.cpu`).|3.3|
 |||||||
 
 ## 2.3 Reference Implementation Requirements
