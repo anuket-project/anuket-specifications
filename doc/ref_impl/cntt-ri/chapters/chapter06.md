@@ -39,7 +39,7 @@
 **may**: Requirements that are marked as _may_ are considered optional. The same applies to _may not_.
 
 <a name="6.2"></a>
-## 6.2 Installer requirements
+## 6.2 Installer requirements 
 
 <a name="6.2.1"></a>
 ### 6.2.1 General
@@ -65,9 +65,11 @@ Thanks to the descriptor file, the NFVi infrastructure deployment could be compl
 Depends xxx.
 
 <a name="6.3"></a>
-## 6.3 Descriptor file definition
+## 6.3 Descriptor file definition specification
 There must be a Descriptor File definition, which used by installer as input of necessary configuration.
-Mandatory and optional definition shall be defined.
+Mandatory and optional definition shall be defined.  
+All the required definition for description file is listed in this specification session, there's no restrictions on how to use it,
+there could be multiple ways to implement PDF, the implementation will be in next session
 
 <a name="6.3.1"></a>
 ### 6.3.1 Resource Pool information
@@ -200,6 +202,10 @@ This table describes each network device, it can be used for network configurati
 | MODULE_NAME | List | Yes | Hardware module which is devided by location, like area A module 1 |
 
 <p align="center"><b>Table 6-3-5:</b> Network device information.</p>
+
+
+
+
 
 <a name="6.3.1"></a>
 ### 6.3.1 Hardware resource information
@@ -449,3 +455,5 @@ Before the installation, the user has to check if each server meets the deployme
 The necessary prerequisite settings must be ready before the deployment, for example:
  - the VLAN must be configured on the switch,
  - the IP address ranges to be used must be allocated.
+
+## 6.5 PDF implementation
