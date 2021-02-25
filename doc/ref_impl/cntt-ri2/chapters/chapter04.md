@@ -123,16 +123,14 @@ $ kubectl get node <node> -o json | jq '.status.allocatable'
 The list of allocatable resources will vary depending on the configuration, but an example output could look as follows:
 ```
 {
-  "cpu": "63900m",
-  "ephemeral-storage": "210725550141",
+  "cmk.intel.com/exclusive-cores": "3",
+  "cpu": "61",
+  "ephemeral-storage": "210667024855",
   "hugepages-1Gi": "0",
   "hugepages-2Mi": "20Gi",
-    # The amount of memory allocated as hugepages, i.e. 10240 2Mi pages
-  "intel.com/intel_sriov_dpdk": "4",
-  "intel.com/intel_sriov_netdevice": "4",
-    # The two resources above are created by SR-IOV Network device plugin
-    # Configured through `sriovdp_config_data` in group_vars
-  "memory": "373411876Ki",
+  "intel.com/intel_sriov_dpdk_700_series": "4",
+  "intel.com/intel_sriov_netdevice": "2",
+  "memory": "373489916Ki",
   "pods": "110"
 }
 ```
