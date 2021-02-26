@@ -11,21 +11,19 @@
 * [6.3 Descriptor file definition](#6.3)
    * [6.3.1 Resource Pool information](#6.3.1)
    * [6.3.2 Global Settings](#6.3.2)
-   * [6.3.3 Rack information](#6.3.3)
-   * [6.3.3 Server information](#6.3.3)
-   * [6.3.1 Hardware resource information](#6.3.1)
-   * [6.3.2 Server template](#6.3.2)
-   * [6.3.3 Server information](#6.3.3)
-   * [6.3.4 Software configuration definition](#6.3.4)
-   * [6.3.5 Network information](#6.3.5)
-   * [6.3.6 Controller information](#6.3.6)
-   * [6.3.7 Compute information](#6.3.7)
-   * [6.3.8 Distributed storage information](#6.3.8)
-   * [6.3.9 NTP server information](#6.3.9)
-   * [6.3.10 DNS server information](#6.3.10)
-   * [6.3.11 Deployment host information](#6.3.11)
-   * [6.3.12 Deployment control information](#6.3.12)
-   * [6.3.13 Proxy information](#6.3.13)   
+   * [6.3.3 Parameters for network virtualization](#6.3.3)
+   * [6.3.4 Server information](#6.3.4)
+   * [6.3.5 Network Device information](#6.3.5)
+   * [6.3.6 Port mapping information](#6.3.6)
+   * [6.3.7 Network planning information](#6.3.7)
+   * [6.3.8 TOR VLAN configuration information](#6.3.8)
+   * [6.3.9 TOR VLAN configuration information](#6.3.9)
+   * [6.3.10 Host Aggregate information](#6.3.10)
+   * [6.3.11 VIM Nodes](#6.3.11)
+   * [6.3.12 SDNC Nodes](#6.3.12)
+   * [6.3.13 Storage cluster information](#6.3.13)
+   * [6.3.14 Software integration information](#6.3.14)
+   * [6.3.15 Device Management information](#6.3.15)
 
 * [6.4 Installer prerequisite ](#6.4)
    * [6.4.1 Hardware validation ](#6.4.1)
@@ -103,17 +101,15 @@ The Global settings is provided by the user, contains data like like IP_Type, VL
 
 
 <a name="6.3.3"></a>
-### 6.3.3 Rack information
-This table describes the information for each rack in each lab.
+### 6.3.3 Parameters for network virtualization
+MTU value for network virtualization should be defined, this is usually standard value that defined by user.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ROOM | String | Yes | This is the room ID for each lab |
-| RACK_ROW | String | Yes | This describes the row where rack located |
-| RACK_NO | String | Yes | This is the ID number of rack |
-| RACK_NAME | String | Yes | This is full name of the rack, used in PDF to identify the rack |
+| NIC_PORT_TYPE | String | Yes | Type for nic port, Manage, Service or Storage |
+| MTU | String | Yes | This describes the row where rack located |
 
-<p align="center"><b>Table 6-3-3:</b> Rack Information.</p>
+<p align="center"><b>Table 6-3-3:</b> Network Virtualization parameter .</p>
 
 
 <a name="6.3.4"></a>
@@ -204,8 +200,248 @@ This table describes each network device, it can be used for network configurati
 <p align="center"><b>Table 6-3-5:</b> Network device information.</p>
 
 
+<a name="6.3.6"></a>
+### 6.3.6 Port mapping information
+Wiremap defines the port mapping between server/switch and switch for each line, 
+we will need this information to trace the connected server and port, so we can extrapolate the required network configuration for the port.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NAME | String | Yes | Name of network device |
+| LOCAL_RACK | String | Yes | the rack info for local device   |
+| LOCAL_NAME | String | Yes | local device name |
+| LOCAL_TYPE | String | Yes | Local device type, switch or server |
+| LOCAL_PORT | String | Yes | connected port in local device |
+| REMOTE_RACK | String | Yes |  |
+| REMOTE_NAME | List | Yes | connected remote device name |
+| REMOTE_TYPE | List | Yes | remote device type |
+| REMOTE_PORT | List | Yes | connected port in remote device  |
+| LINE_TYPE | List | Yes | line type to describe local device type and remote device type |
+
+<p align="center"><b>Table 6-3-6:</b> Port mapping information.</p>
 
 
+<a name="6.3.7"></a>
+### 6.3.7 Network planning information
+Network planning info for resource pool needs to be defined, which should include Vlan ID, allocated IP range, the applied node set.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| APPLICATION_LAYER | String | Yes |   |
+| DOMAIN | String | Yes |  |
+| VENDOR_NETWORK_PLANE | String | Yes |  |
+| NETWORK_PLANE | String | Yes |  |
+| VENDOR | String | Yes |  |
+| VLAN_ID | List | Yes |  |
+| IP_SEGMENT | List | Yes |  |
+| GATEWAY | List | Yes |  |
+| SWITCH_CONFIG_TYPE | List | Yes |   |
+
+<p align="center"><b>Table 6-3-7:</b> Network planning information.</p>
+
+
+<a name="6.3.8"></a>
+### 6.3.8 TOR VLAN configuration information
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DEVICE_NAME | String | Yes |   |
+| VENDOR | String | Yes |  |
+| DEVICE_MODEL | String | Yes |  |
+| DEVICE_SN | String | Yes |  |
+| BMC_IP | String | Yes |  |
+| SSH_USER | List | Yes |  |
+| SSH_PASSWORD | List | Yes |  |
+| ENABLE_PASSWORD | List | Yes |  |
+| PORT | List | Yes |   |
+| VLAN_TYPE | List | Yes |   |
+| VLAN_ID | List | Yes |   |
+| PORT_TYPE | List | Yes |   |
+
+<p align="center"><b>Table 6-3-8:</b> TOR VLAN information.</p>
+
+
+<a name="6.3.9"></a>
+### 6.3.9 EOR VLAN configuration information
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DEVICE_NAME | String | Yes |   |
+| VENDOR | String | Yes |  |
+| DEVICE_MODEL | String | Yes |  |
+| DEVICE_SN | String | Yes |  |
+| BMC_IP | String | Yes |  |
+| SSH_USER | List | Yes |  |
+| SSH_PASSWORD | List | Yes |  |
+| ENABLE_PASSWORD | List | Yes |  |
+| PORT | List | Yes |   |
+| VLAN_ID | List | Yes |   |
+| VLANIF_ADDRESS | List | Yes |   |
+| NETWORK_MASK | List | Yes |   |
+
+<p align="center"><b>Table 6-3-9:</b> EOR VLAN information.</p>
+
+
+<a name="6.3.10"></a>
+### 6.3.10 Host Aggregate
+Servers in the resource pool are divided to multiple HAs according to the difference from service or different hardware requirements.  
+One HA could belong to multiple AZ   
+It is the definition of each HA in the resource pool. it should contain the server list for each HA, and also the HA meta data.
+
+####  6.3.10.1 Host HA Mapping 
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| HA_NAME | String | Yes |  |
+| DEVICE_NAME | String | Yes | server name list in HA |
+
+<p align="center"><b>Table 6-3-10-1:</b> Host HA Information.</p>
+
+#### 6.3.10.2 HA metadata 
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| HA_NAME | String | Yes |  |
+| HA_METADATA | String | Yes | properties for each HA, for example: type=TrustPlane,ovs=C-plane,sriov=false |
+| AZ_NAME | String | Yes | AZ name that HA belongs to |
+
+<p align="center"><b>Table 6-3-10-2:</b> HA meta Information.</p>
+
+<a name="6.3.11"></a>
+### 6.3.11 VIM Nodes
+There's a list of servers that was defined as control/management nodes according to resource pool plan
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DEVICE_NAME | String | Yes | The server name  |
+
+<p align="center"><b>Table 6-3-11:</b> VIM Nodes Information.</p>
+
+<a name="6.3.12"></a>
+### 6.3.12 SDNC Nodes
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DEVICE_NAME | String | Yes | The server name  |
+<p align="center"><b>Table 6-3-12:</b> SDNC Nodes Information.</p>
+
+<a name="6.3.13"></a>
+### 6.3.13 Storage cluster information 
+Definition of storage cluster and storage pool, 
+
+#### 6.3.13.1 Storage pool plan
+Storage pool name in each storage cluster, and nodes in Storage pool should be defined, so the storage installer will know which nodes are installing.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| STORAGE_CLUSTER_NAME | String | Yes |   |
+| STORAGE_POOL_NAME | String | Yes |  |
+| DEVICE_NAME | String | Yes |  |
+
+<p align="center"><b>Table 6-3-13-1:</b> Storage Pool Plan </p>
+
+#### 6.3.13.2 Distribution storage pool info
+Storage pool information, defines the management account and network information
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| STORAGE_CLUSTER_NAME | String | Yes |   |
+| NODE_POOL | String | Yes |  |
+| DISK_POOL_NAME | String | Yes |  |
+| STORAGE_POOL_NAME | String | Yes |  |
+| HA_NAME_LIST | String | Yes |  |
+| AZ_NAME | List | Yes |  |
+| STORAGE_POOL_NODE_ACCOUNT | List | Yes |  |
+| MAX_QUOTA_CAPACITY | List | Yes |  |
+| STORAGE_POOL_MANAGEMENT_IP | List | Yes |   |
+| NETWORK_MASK | List | Yes |   |
+| GATEWAY | List | Yes |   |
+| VIM_USER | List | Yes |   |
+| VIM_PASSWORD | List | Yes |   |
+| PIM_USER | List | Yes |   |
+| PIM_PASSWORD | List | Yes |   |
+| STORAGE_CLUSTER_SERVICE_IP | List | Yes |   |
+| STORAGE_CLUSTER_SERVICE_GW | List | Yes |   |
+| STORAGE_CLUSTER_BACKEND_IP | List | Yes |   |
+| STORAGE_CLUSTER_BACKEND_GW | List | Yes |   |
+| BACKUP_POLICY | List | Yes |   |
+
+<p align="center"><b>Table 6-3-13-2:</b> Distribution storage pool info.</p>
+
+
+<a name="6.3.14"></a>
+### 6.3.14 Software integration information
+After VIM and Storage software installation finished, parameters willl be needed in integration process of VIM and Storage,
+the parameters should be defined in advance.
+
+#### 6.3.14.1 VIM Context
+Parameters from VIM vendor for integration.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| VENDOR | String | Yes |  |
+| AUTHORIZATION | String | Yes | One-way or Two-way authentication |
+| JOINT_WAY | String | Yes | by ISCSI or client |
+| VIM_CERTIFICATES_PATH | String | Yes | Full path for certificates that used for integration |
+
+<p align="center"><b>Table 6-3-14-1:</b> VIM context Information.</p>
+
+#### 6.3.14.2 Storage Context
+Parameters from storage vendor for integration.
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| VENDOR | String | Yes |  |
+| AUTHORIZATION | String | Yes | One-way or Two-way authentication |
+| JOINT_WAY | String | Yes | by ISCSI or client |
+| DRIVER_FULL_NAME | String | Yes | Full path for storage driver |
+| CEPH_CONFIG_PATH | String | Yes | Full path for ceph.conf storage |
+| IS_PIM_JOINT | String | Yes | whether integrate with PIM, usaually "YES" for this value |
+| STORAGE_SOFTWARE_VERSION | String | Yes |  |
+
+<p align="center"><b>Table 6-3-14-2:</b> Storage context Information.</p>
+
+#### 6.3.14.3 Storage Client context
+This table defines the parameters for integration with storage client
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| JOINT_WAY | String | Yes | integration method for storage client, for example, RBD  |
+| COMPONENT_TYPE | String | Yes | for example: cinder, glance or nova |
+| AUTHORIZATION_USER | String | Yes | match with the component type |
+| KEYRING_FILENAME | String | Yes | Full path for keyring file, this should match the authentication user, |
+
+<p align="center"><b>Table 6-3-14-3:</b> Storage client context.</p>
+
+<a name="6.3.15"></a>
+### 6.3.15 Device Management information
+
+#### 6.3.15.1 SERVER PIM ACCOUNT
+Servers are managed by redfish, credentials should be the same for same type of device  
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| VENDOR | String | Yes |  |
+| SERVER_MODEL | String | Yes | MODEL for each type of server |
+| REDFISH_USER | String | Yes |  |
+| REDFISH_PASSWD | String | Yes |  |
+
+<p align="center"><b>Table 6-3-15-1:</b> SERVER PIM ACCOUNT Information.</p>
+
+#### 6.3.15.2 Switch PIM Account
+Servers are managed by SNMP, credentials should be the same for same type of device  
+
+| Field # | type | mandatory | Instruction |
+|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| VENDOR | String | Yes |  |
+| DEVICE_MODEL | String | Yes | MODEL for each type of switch |
+| SNMP_VERSION | String | Yes | v3 by default |
+| SNMP_USER | String | Yes |  |
+| AUTHENTICATION_METHOD | String | Yes | for example: MD5 or SHA1 |
+| VERIFICATION_CODE | String | Yes |  |
+| ENCRYPTION_METHOD | String | Yes |  |
+| ENCRYPTION_KEY | String | Yes |  |
+
+<p align="center"><b>Table 6-3-15-2:</b> Switch PIM Account.</p>
+
+*[·-·]:previous content are retained as backup, if the aboved 6.3.1 - 6.3.15 are reviewed and agreed, will delete redundant content in below and adjust accordingly.
 
 <a name="6.3.1"></a>
 ### 6.3.1 Hardware resource information
