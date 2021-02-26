@@ -30,7 +30,14 @@ interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 |Kubernetes Nodes|`ra2.ch.004`|CPU Simultaneous Multi-Threading (SMT)|SMT must be enabled in the BIOS on the physical machine on which the Kubernetes Node runs.|True|True|3.3|
 |Kubernetes Nodes|`ra2.ch.006`|CPU Allocation Ratio - Pods|To ensure the CPU allocation ratio between vCPU and physical CPU core is 1:1, the sum of CPU requests and limits by containers in Pod specifications must remain less than the allocatable quantity of CPU resources (i.e. `requests.cpu` < `allocatable.cpu` and `limits.cpu` < `allocatable.cpu`).|Must support|Must support|3.3|
 |Kubernetes Nodes|`ra2.ch.008`|Physical CPU Quantity|The physical machines on which the Kubernetes Nodes run must be equipped with at least 2 physical sockets, each of at least 20 CPU cores.|Must support|Must support|3.3|
-||||||||
+|Kubernetes Nodes|`ra2.ch.009`|Physical Storage|The physical machines on which the Kubernetes Nodes run should be equipped with Sold State Drives (SSDs).|Should support|Should support|3.3|
+|Kubernetes Nodes|`ra2.ch.010`|Local Filesystem Storage Quantity|The Kubernetes Nodes must be equipped with local filesystem capacity of at least 320GB for unpacking and executing containers. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|Must support|Must support|3.3|
+|Kubernetes Nodes|`ra2.ch.012`|Kubernetes Node RAM Quantity|The Kubernetes Nodes must be equipped with at least 32GB of RAM. Note, extra should be provisioned to cater for any overhead required by the Operating System and any required OS processes such as the container runtime, Kubernetes agents, etc.|Must support|Must support|3.3|
+|Kubernetes Nodes|`ra2.ch.013`|Physical NIC Quantity|The physical machines on which the Kubernetes Nodes run must be equipped with at least four (4) Network Interface Card (NIC) ports.|Must support|Must support|3.3|
+|Kubernetes Nodes|`ra2.ch.014`|Physical NIC Speed - Basic Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Basic Profile must be at least 10Gbps.|Must support|N/A|3.3|
+|Kubernetes Nodes|`ra2.ch.016`|Immutable Infrastructure|Whether physical or virtual machines are used, the Kubernetes Node is not changed after it is made ready for use. New changes to the Kubernetes Node are rolled out as new instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|Must support|Must support|4.3.1|
+
+
 
 ## 2.3 Reference Implementation Requirements
 
