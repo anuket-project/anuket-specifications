@@ -10,9 +10,7 @@
   * [10.3.1 Discovery](#10.3.1)
   * [10.3.2 Support Load Balance of VNF/CNFs](#10.3.2)
   * [10.3.3 Service Function Chain](#10.3.3)
-  * [10.3.4 Packet Acceleration Request (e.g Hardware Acceleration)](#10.3.4)
-  * [10.3.5 Multi-cloud architecture directions for network workloads)](#10.3.5)
-  * [10.3.6 Closed-loop automation](#10.3.6)
+  * [10.3.4 Closed-loop automation](#10.3.4)
 
 
 <a name="10.1"></a>
@@ -59,8 +57,8 @@ Over the past few years there has been a significant move towards decomposing ne
 
 
 
-<a name="10.3.6"></a>
-### 10.3.6 Closed-loop automation 
+<a name="10.3.4"></a>
+### 10.3.4 Closed-loop automation 
 The state of a system is defined by a set of variables that fully describe the system and determines the response of the system to any given set of inputs. A closed loop automation system automatically maintains the specified desired state of the controlled system. 
 
 Closed-loop automation is evolving as a major advancement in the telecommunication network automation. In the context of telecommunication systems, it means a system that in a continuous loop programmatically validates the state of the cloud infrastructure against the declared desired state, and in case of deviation from the desires state, it automatically takes remediation actions necessary for bringing the actual state to the desired state. The Reference Model specification will in its next releases address this important area.
