@@ -123,7 +123,7 @@ feature-gates:
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
 |`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
-|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The Kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
 
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 
