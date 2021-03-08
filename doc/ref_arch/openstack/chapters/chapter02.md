@@ -160,10 +160,6 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | infra.hw.nac.cfg.002 | SmartNIC used to offload vSwitch functionality to hardware | Not required | Optional | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
-<!--
-These rows are removed and commented out as it's not clear what the requirement is.
-| infra.stg.cfg.001 | Catalogue storage Types | | Y |
--->
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
 
@@ -187,7 +183,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 <a name="2.2.6"></a>
 ### 2.2.6 Cloud Infrastructure Security Requirements
 
-#### 2.2.6.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapter07.md#791-system-hardening)) 
+#### 2.2.6.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapter07.md#791-system-hardening))
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|------|------|-------|
@@ -206,7 +202,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
 
-####  2.2.6.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access)) 
+####  2.2.6.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access))
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|-------|-------|---------|
@@ -243,7 +239,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
 
-#### 2.2.6.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security)) 
+#### 2.2.6.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security))
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
@@ -256,7 +252,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 
 
 
-#### 2.2.6.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security)) 
+#### 2.2.6.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
@@ -269,7 +265,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.img.007 | Image | Image registries **must** be clear of vulnerable and out of date versions. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security)  |
 
 
-#### 2.2.6.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm)) 
+#### 2.2.6.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
@@ -287,7 +283,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 
 
 
-#### 2.2.6.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit)) 
+#### 2.2.6.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
@@ -309,7 +305,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
 | sec.mon.017 | Audit | The Platform **must** audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches) |
 | sec.mon.018 | Monitoring | The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
-| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) | 
+| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
 | sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | [RA-1 6.3.7.5 "Data Retention](./chapter06.md#6375-data-retention)  |
 | sec.mon.021 | Monitoring | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
 
@@ -348,10 +344,10 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | Ref # | sub-category | Description |  Traceability |
 |----|--------------|---------------------|-----------|
 | `req.inf.com.01` | Compute | The Architecture **must** provide compute resources for VM instances. | [RA-1 3.3.1.4 "Cloud Workload Services"](./chapter03.md#3314-cloud-workload-services) |
-| `req.inf.com.04` | Compute | The Architecture **must** be able to support multiple CPU type options to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
+| `req.inf.com.04` | Compute | The Architecture **must** be able to support multiple CPU type options to support various infrastructure profiles (Basic and Network Intensive).| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
 | `req.inf.com.05` | Compute | The Architecture **must** support Hardware Platforms with NUMA capabilities.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
 | `req.inf.com.06` | Compute | The Architecture **must** support CPU Pinning of the vCPUs of VM instance.| [RA-1 4.4.1. "Support for Cloud Infrastructure Profiles and flavors"](./chapter04.md#4.4.1) |
-| `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 3.3.3. "Host aggregates providing resource pooling"](./chapter03.md#333-host-aggregates-providing-resource-pooling) |
+| `req.inf.com.07` | Compute | The Architecture **must** support different hardware configurations to support various infrastructure profiles (Basic and Network Intensive).| [RA-1 3.3.3. "Host aggregates providing resource pooling"](./chapter03.md#333-host-aggregates-providing-resource-pooling) |
 | `req.inf.com.08` | Compute | The Architecture **must** support allocating certain number of host cores for all non-tenant workloads such as for OpenStack services. SMT threads can be allocated to individual OpenStack services or their components. | [Dedicating host cores to certain workloads (e.g., OpenStack services)](https://docs.openstack.org/nova/latest/configuration/config.html#compute.cpu_dedicated_set). Please see example, ["Configuring libvirt compute nodes for CPU pinning"](https://docs.openstack.org/nova/latest/admin/cpu-topologies.html) |
 | `req.inf.com.09` | Compute | The Architecture **must** ensure that the host cores assigned to non-tenant and tenant workloads are SMT aware: that is, a host core and its associated SMT threads are either all assigned to non-tenant workloads or all assigned to tenant workloads. | Achieved through configuring the "cpu_dedicated_set" and "cpu_shared_set" parameters in nova.conf correctly. |
 | `req.inf.stg.01` | Storage | The Architecture **must** provide remote (not directly attached to the host) Block storage for VM Instances. | [RA-1 3.4.2.3. "Storage"](./chapter03.md#3423-storage) |
@@ -362,7 +358,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | `req.inf.ntw.05` | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
 | `req.inf.ntw.07` | Network | The Architecture **must** support network [resiliency](../../../common/glossary.md#cloud-platform-abstraction-related-terminology). | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
 | `req.inf.ntw.10` | Network | The Cloud Infrastructure Network Fabric **must** be capable of enabling highly available (Five 9’s or better) Cloud Infrastructure. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
-| `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for Cloud Infrastructure to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
+| `req.inf.ntw.15` | Network | The Architecture **must** support multiple networking options for Cloud Infrastructure to support various infrastructure profiles (Basic and Network Intensive).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
 | `req.inf.ntw.16` | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.| |
 
 
@@ -474,18 +470,6 @@ The requirements listed in this section are optional, and are not required in or
 | `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
 | `req.inf.img.01` | Image | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
 
-<!---
-Commented out until RM defines requirements for SDN
-| `req.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. | |
-| `req.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. | |
-| `req.inf.ntw.14` | Network | The SDN solution **should** be able to be centrally administrated and configured. | |
---->
-
-<!---
-| `req.inf.stg.11` | Storage | The Architecture **should** support the Block storage capabilities specified in https://docs.openstack.org/api-ref/block-storage/. | [RA-1 5.2.3. "Cinder"](./chapter05.md#523-cinder) |
-| `req.inf.ntw.18` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](./chapter05.md#525-neutron) |
---->
-
 <p align="center"><b>Table 2-15:</b> Infrastructure Recommendations</p>
 
 
@@ -594,7 +578,7 @@ Commented out until RM defines requirements for SDN
 
 
 
-#### 2.4.8.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit)) 
+#### 2.4.8.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
@@ -622,71 +606,3 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
 
 <p align="center"><b>Table 2-21:</b> Security Recommendations</p>
-
-<!--
-**Backlog of Req**
-
-1. Manage discovery of resources, resource capabilities/features
-1. Manage repository of resources and their allocations
-1. Orchestrate (create, update, delete, …) virtual computes, storage, virtual links, networks, subnets and ports
-1. Collect and disseminate performance and fault information
-1. Provides transparent, fully automated hardware addition, removal, and replacement with zero to minimal service disruption
-1. Provides transparent, fully automated software updates, rollback, and post-install configuration changes with zero to minimal service disruption
-1. Automated and validated deployment of Enhanced Platform Awareness (EPA) features across multiple nodes
-1. Support tenant isolation
-1. Policy driven auto-scaling
-1. Image management and provisioning control
-1. Policy based RBAC
-1. Tenant based (a user may have different access rights in different tenants)
-1. **Q:** do site administrators have access to Tenant space and what are their rights (public cloud?)
-1. Policy based security
-1. Policy driven performance and fault management
-1. Principles should apply to all reference architectures we design and develop
-1. Traceability between reference model to reference architecture (and vice versa)
-1. Implementable and usable for VNF developer community, i.e. with enough specificity to support the design and development of a VNF
-1. Define the NFVI so that developers can understand how to build VNFs
-1. Design the architectures with common elements so that the VNFs require less operator specific customizations
-1. Rationalize need for each discrete architecture
-    1. Intention is to minimize the number of discrete reference architectures
-1. Architectures should be:
-    1. Resilient
-    1. Scalable
-    1. Elastic
-    1. Secure
-    1. Low Latency
-    1. Resource and Operational Efficiency
-    1. E2E Lifecycle Automation (Deployment, Operations, & Maintenance)
-    1. High-Availability
-1. Prioritize incorporation of open source components
-    1. Design architectures to established open standards as much as possible
-1. Architectures will evolve over time
-1. Mandatory Core services:
-    1. Neutron (networking)
-    1. Nova (compute)
-    1. Cinder (block storage)
-    1. Keystone (authentication/authorisation)
-    1. Glance (image repository)
-    1. Heat (orchestration)
-
-1. Optional Core Services:
-    1. Swift (object storage)
-    1. Ceilometer / Panko / Aodh (workload monitoring / autoscaling)
-    1. Ironic (baremetal)
-      … the list could get quite long so perhaps we tier these requirements…
-1. Compute:
-    1. The hypervisor should be KVM with EMU (we can be prescriptive here as it makes certification simpler)
-    1. We could state that we don’t want SR-IOV but any network acceleration should be based on DP-DK or SmartNIC.
-    1. I don’t want to be prescriptive over CPU pinning or NUMA but we can discuss.
-1. Network:
-    1. Load balancing – should we base this on Octavia or do we need a plug-in like AVI / F5?
-    1. OpenVSwitch?
-    1. Geneve/VXLAN tunnelling?
-    1. IPv6… when?
-
-1. Tagging:
-    1. We may want to define a standard for tagging resources.
-
-1. Logging, Monitoring, Alerting of the Cloud should ensure any failures in the control plane are either self-healed or alerted on and ideally some sort of centralised log file analysis should be possible without needing to trawl local log files.    Logging in the tenant space is left to the application.
-1. Backup of the control plane configuration (keystone DB, other DB, policy.json’s) to a remote object store.
-
--->

@@ -161,12 +161,6 @@ Additionally, for OpenStack, we need to set the following boot parameters:
 |---------------|-----------|------------------|
 | Boot disks | RAID 1 | RAID 1 |
 
-<!---
-Had to delete the Column for Compute intensive as commenting in table  didn't work
-Entries were:
-Boot Disks: RAID 1
-CPU reservation for host: 1 core per NUMA
---->
 -	How many nodes to meet SLA
     - minimum: two nodes per profile
 -	HW specifications
@@ -199,13 +193,6 @@ CPU reservation for host: 1 core per NUMA
 | | | | |  
 | Max # of VMs per node|  | min(4*(s*c*t)/v, rt/ri)| min((s*c*t)/v, rt/ri)|  
 
-<!---
-Had to delete the Column for Compute intensive as commenting in table  didn't work
-Entries were:
-# of VMs per node (vCPU): s*c*t)/v| (s*c*t)/v
-# of VMs per node (RAM): rt/ri
-Max # of VMs per node: min((s*c*t)/v, rt/ri)
---->
 Caveats:
 -	These are theoretical limits
 -	Affinity and anti-affinity rules, among other factors, affect the sizing
@@ -594,16 +581,6 @@ Heat is the orchestration service using template to provision cloud resources, H
 #### 4.3.1.9 Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
-<!--
-#### 4.3.1.10 Cyborg
-Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
--	cyborg-api
--	cyborg-conductor
--	cyborg-db
-- cyborg-agent  which runs on compute nodes
-- *-driver drivers which run on compute nodes and depend on the acceleration hardware
--->
-
 #### 4.3.1.10 Placement
 The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
 
@@ -646,20 +623,6 @@ In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) 
 ### 4.4.1. Support for Cloud Infrastructure Profiles and flavors
 
 Reference Model Chapter 4 and  5 provide information about the Cloud Infrastructure Profiles and their size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes, it is required to set up the flavors as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properties.
-
-<!---
-Original Table w Compute Intensive
-| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | Compute Intensive |
-|----------|-------------|--------------|-------------|-------------|
-| CPU allocation ratio | nfvi.com.cfg.001| In Nova.conf include <br>cpu_allocation_ratio= 4.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 |
-| NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> |
-| CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and <br>--property hw:cpu__thread_policy= <prefer, require, isolate>|
-| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | --property hw:mem_page_size=large |
-| OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
-| Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
-| Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3276800<br><br>Note: 25 Gbps = 3276800 kilobytes per second |
-New Table w/o Compute Intensive column below
---->
 
 | Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive |
 |----------|-------------|--------------|-------------|
@@ -746,5 +709,3 @@ The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computi
 Table 8-4 in the Reference Model Chapter 8.3.4 "[Telco Edge Cloud: Platform Services Deployment](../../../ref_model/chapters/chapter08.md#8.3.4)" lists the Platform Services that may be placed in the different node types (control, compute and storage). Depending upon the capacity and resources available only the compute nodes may exist at the Edge thereby impacting operations.
 
 Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavours.
-
-

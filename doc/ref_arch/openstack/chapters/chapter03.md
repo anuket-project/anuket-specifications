@@ -218,9 +218,6 @@ The following OpenStack components are deployed on the Infrastructure. Some of t
 | (Tool that utilizes APIs)| Heat| the orchestration service| Required| X |  |
 | UI| Horizon| the WEB UI service| Required| X|  |
 | Key Manager| Barbican| the secret data management service| Optional| X |  |
-<!--
-| Acceleration Resources Manager| Cyborg| the acceleration resources management| Optional| X | X |
--->
 
 All components must be deployed within a high available architecture that can withstand at least a single node failure and respects the anti-affinity rules for the location of the services (i.e. instances of a same service must run on different nodes).
 
