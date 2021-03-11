@@ -96,7 +96,12 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 
 This Reference Architecture also specifies:
 
-- Workloads must ***not*** rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). This function is essential for support of Edge type architectures.
+- Master nodes must run the following Kubernetes control plane services:
+    - kube-apiserver
+    - kube-scheduler
+    - kube-controller-manager
+- Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes if desired
+- Master node services, including etcd, and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
 - The following kubelet features must be enabled
     - CPU Manager
     - Device Plugin
@@ -235,7 +240,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|N/A|
 |`ra2.app.006`|Consumption of additional, non-default connection points|The workload must request additional non-default connection points through the use of workload annotations or resource requests and limits within the container spec passed to the Kubernetes API Server.|[req.int.api.01](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
 |`ra2.app.007`|Host Volumes|Workloads should not use `hostPath` volumes, as [Pods with identical configuration (such as created from a PodTemplate) may behave differently on different nodes due to different files on the nodes.](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)|[req.kcm.gen.02](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
-
+|`ra2.app.008`|Infrastrucure dependency|Workloads must not rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). |TBD|N/A|
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 ## 4.10 Additional required components
