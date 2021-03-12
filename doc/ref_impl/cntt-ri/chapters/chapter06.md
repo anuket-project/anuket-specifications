@@ -692,4 +692,11 @@ The necessary prerequisite settings must be ready before the deployment, for exa
  - the VLAN must be configured on the switch,
  - the IP address ranges to be used must be allocated.
 
+<a name="6.5"></a>
 ## 6.5 PDF implementation
+When we use PDF for installer or verification tools, all the required data described in 6.3 should be included.
+There's no limitation on how to implement PDF, like the file type of PDF could be csv or json, 
+and also you can adjust the file structure, whichever is more readable to the tools.
+Taking servers information for example, you can use flat version to include all parameters in 6.3.4 for each device,
+or you can group servers with same properties like same Vendor, same model, or same usage. 
+You can refer anuket PDF pages for details about how to implement: https://wiki.anuket.io/pages/viewpage.action?pageId=4406598
