@@ -270,27 +270,40 @@ Infrastructure profiles are used to tag infrastructure (such as hypervisor hosts
 Two profile layers are proposed:
 
 - The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, ie: an infrastructure object can belong to one and only one profile, and workloads can request to be instantiated on one infrastructure profile only.
-- Within each profile, **flavours** represent small deviations from the profile baseline that do not require partitioning the infrastructure into separate pools, whose specifications have a finer granularity than top-level profiles, and can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure object can have more than one flavour attached to it, and workloads can request to be instantiated infrastructure with certain flavours. 
+- Within each profile, **flavours** represent small deviations from the profile baseline that do not require partitioning the infrastructure into separate pools, whose specifications have a finer granularity than top-level profiles, and can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure object can have **more than one flavour** attached to it, and workloads can request to be instantiated infrastructure with a number of (0+) certain flavours.
 
-> Note: the fact that flavours do not partition the infrastructure may mean that infrastructure objects with certain flavours may host workloads that do not request that flavour explicitly.
+> Note: the fact that profiles do partition the infrastructure means that workloads can only choose one profile to run on, and infrastructure objects with a given profile will host only workloads requiring that specific profile.
+> 
+> On the other hand, the fact that flavours do not partition the infrastructure may mean that infrastructure objects with certain flavours may host workloads that do not require that flavour, but can run on that infrastructure partition anyway.
+
 
 ### 2.4.1 Infrastructure profiles (top-level)
 
-Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
+Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 - **Network Intensive**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** infrastructure profiles will be defined in greater detail for use by workloads:
+In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** infrastructure profiles will be defined in greater detail for use by workloads.
 
->***Note:** This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
+Profiles partition the infrastructure: an infrastructure object (host/node) **must** have one and only one profile associated to it.
+
+### 2.4.2 Infrastructure/node flavours
+
+The following cloud infrastructure flavours are proposed:
+
+- High performance CPU: for Workloads that require predictable computing performance (or higher clock speed).
+- High performance storage: for Workloads that require low storage latency and/or high storage IOPS.
+- GPU: denotes the presence of a consumable GPU on the infrastructure
+- High performance network (25G): denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater.
+- High performance network (100G): denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater.
+- High Latency - Core Sites: labels a host/node as located in a central/core site, for workloads requiring geographical centralisation.
+- Low Latency - Edge Sites: labels a host/node as located in an edge site, for workloads requiring low latency to final users or geographical distribution.
+
+>***Note:** This is an initial set of proposed profiles and flavours and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
 >- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
 >- ***Storage Intensive**: for Workloads that require low storage latency and/or high storage IOPS.*
 >- ***Enhanced Compute Intensive**: for compute intensive Workloads that require higher computing performance and/or specific compute resource (e.g., GPU).*
 >- ***Enhanced Network Intensive**: for network intensive Workloads that require higher network performance and/or specific network resource (e.g., crypto acceleration).*
-
-### 2.4.2 Infrastructure/node flavours
-
-> placeholder
