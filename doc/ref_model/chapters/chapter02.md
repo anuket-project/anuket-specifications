@@ -266,6 +266,16 @@ By trying to sort workloads into different categories based on the requirements 
 <a name="2.4"></a>
 ## 2.4 Cloud Infrastructure Profiles
 
+Infrastructure profiles are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities exploitable by the workloads.
+Two profile layers are proposed:
+
+- The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, ie: an infrastructure object can belong to one and only one profile, and workloads can request to be instantiated on one infrastructure profile only.
+- Within each profile, **flavours** represent small deviations from the profile baseline that do not require partitioning the infrastructure into separate pools, whose specifications have a finer granularity than top-level profiles, and can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure object can have more than one flavour attached to it, and workloads can request to be instantiated infrastructure with certain flavours. 
+
+> Note: the fact that flavours do not partition the infrastructure may mean that infrastructure objects with certain flavours may host workloads that do not request that flavour explicitly.
+
+### 2.4.1 Infrastructure profiles (top-level)
+
 Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 - **Network Intensive**: for Workloads that require predictable computing performance, high network throughput and low network latency.
@@ -280,3 +290,7 @@ In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensiv
 >- ***Storage Intensive**: for Workloads that require low storage latency and/or high storage IOPS.*
 >- ***Enhanced Compute Intensive**: for compute intensive Workloads that require higher computing performance and/or specific compute resource (e.g., GPU).*
 >- ***Enhanced Network Intensive**: for network intensive Workloads that require higher network performance and/or specific network resource (e.g., crypto acceleration).*
+
+### 2.4.2 Infrastructure/node flavours
+
+> placeholder
