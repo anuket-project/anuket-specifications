@@ -269,10 +269,10 @@ By trying to sort workloads into different categories based on the requirements 
 Infrastructure profiles are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities exploitable by the workloads.
 Two profile layers are proposed:
 
-- The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, ie: an infrastructure object can belong to one and only one profile, and workloads can request to be instantiated on one infrastructure profile only.
-- Within each profile, **flavours** represent small deviations from the profile baseline that do not require partitioning the infrastructure into separate pools, whose specifications have a finer granularity than top-level profiles, and can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure object can have **more than one flavour** attached to it, and workloads can request to be instantiated infrastructure with a number of (0+) certain flavours.
+- The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, ie: an infrastructure object can belong to one and only one profile, and workloads can only be created using a single profile.
+- For a given profile, **flavours** represent small deviations from (or further qualification, such as sizing) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Flavours can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure resource can have **more than one flavour** attached to it, and workloads can request VMs to be instantiated on infrastructure with a certain flavour.
 
-> Note: the fact that profiles do partition the infrastructure means that workloads can only choose one profile to run on, and infrastructure objects with a given profile will host only workloads requiring that specific profile.
+> Note: the fact that profiles partition the infrastructure means that workloads run on VMs/Pods where each VM/Pod is created on infrastructure of a given profile to run on, and the infrastructure resources with a given profile will host only VMs/Pods requiring that specific profile.
 > 
 > On the other hand, the fact that flavours do not partition the infrastructure may mean that infrastructure objects with certain flavours may host workloads that do not require that flavour, but can run on that infrastructure partition anyway.
 
@@ -281,7 +281,7 @@ Two profile layers are proposed:
 
 Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
-- **Network Intensive**: for Workloads that require predictable computing performance, high network throughput and low network latency.
+- **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
