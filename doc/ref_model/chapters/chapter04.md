@@ -296,42 +296,77 @@ The idea of the Cloud Infrastructure profiles is to have a predefined set of inf
 
 Compute Flavours represent the compute, memory, storage, and management network resource templates that are used by VMs on the compute hosts. Each VM is given a compute Flavour (resource template), which determines the VMs compute, memory and storage characteristics.
 
+Customised (Parameterized) Flavors can be used in concession by operators and, if needed, and can be  created using TOSCA, HEAT templates, and/or VIM APIs. These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
+
 Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute Flavour geometry consists of the following elements:
 
 <a name="Table4-12"></a>
 
-| Element                               | Description                                                                                                                                                                                             |
+| Element                               | Description  |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Compute Flavour Name                  | A descriptive name                                                                                                                                                                                      |
-| Number of vCPUs | Number of virtual compute resources (vCPUs) presented to the VM instance.                                                                                                                               |
-| Memory                                | Virtual compute instance memory in megabytes.                                                                                                                                                           |
+| Compute Flavour Name                  | A descriptive name |
+| Compute Flavour ID                  | Flavor unique identifier |
+| Number of vCPUs | Number of virtual compute resources (vCPUs) presented to the VM instance.  |
+| Memory                                | Virtual compute instance memory in megabytes.  |
 | Ephemeral/Local Disk                  | Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
-| Management Interface                  | Specifies the bandwidth of management interface/s                                                                                                                                                       |
-
+| Root Disk                  | Specifies the size of '/' root partition. It can be considered an Ephemeral Disk |
+| CPU Parameters                  | Capability to associate virtual CPUs to the physical CPUs, and enable specific CPU architectures |
+| NUMA                  | Allow system memory allocation into cells or nodes that are associated with particular CPUs (there could be performance degradation due to an high number of requests through this shared bus) |
+| Network Parameters                  | Enable network capabilities allowing improvements on network performance (make sure that current deployment allows it, otherwise, it can lead either to a decrease on performance or instability) |
 <p align="center"><b>Table 4-12:</b> Compute Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
-#### 4.2.1.1 Predefined Compute Flavours
-The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting virtual compute instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
+#### 4.2.1.1 Predefined Compute Flavors
 
->_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
+The following tables provide a descriptive approach on how a Compute flavor can be created to suit the needs of an application, so it can be onboarded. This will minimize several challenges related to Infrastructure management:
+
+* Applications can be categorized based on their resource requirements towards cloud infrastructure
+* Additional flavors can be created which are linked to  to different VM requirements
+* Cloud infrastructure "scattering" is minimized
+* Application scaling optimization
+* Better usage of Cloud Objects (Memory;Processor;Network;Storage)
+* Applications can be categorized based on their resource requirements towards cloud infrastructure
+
+
+The intent of the following Flavors list, and respective profile is to be comprehensive and yet effective to cover both IT and NFV workloads. <br>
+
+In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
+
+There are two flavors profiles that can be used:
+
+* Basic: Minimum number attributes for Virtual Server Hardware configuration
+
+* High Performance: Detailed Hardware configuration of a virtual server. It allows a deep level configuration (e.g. Specific configuration parameters for Hardware acceleration)
+
+OpenStack Flavor Examples can be found in [Anuket Reference Architecture](../ref_arch/OpenStack/) <br>
 
 <a name="Table4-13"></a>
 
-| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") | Management Interface |
-|------------------------|--------------------------|-------------------------|------------------|----------------------|
-| .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
-| .small                 | 1                        | 2 GB                    | 20 GB            | 1 Gbps               |
-| .medium                | 2                        | 4 GB                    | 40 GB            | 1 Gbps               |
-| .large                 | 4                        | 8 GB                    | 80 GB            | 1 Gbps               |
-| .2xlarge <sup>1)</sup> | 8                        | 16 GB                   | 160 GB           | 1 Gbps               |
-| .4xlarge <sup>1)</sup> | 16                       | 32 GB                   | 320 GB           | 1 Gbps               |
-| .8xlarge <sup>1)</sup> | 32                       | 64 GB                   | 640 GB           | 1 Gbps               |
+| Ref | Attribute | Unit | (B)asic/(H)igh Performance | Presence |
+|----------|--------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -----------|
+| i.fl.001 | Flavor ID             | integer       | B/H           | Required |
+| i.fl.002 | vCPU                      | integer      | B/H           | Required |
+| i.fl.003 | RAM                       | Gb           | B/H           | Required |
+| i.fl.004 | external_disk             | Gb           | B/H           | Required |
+| i.fl.005 | ephemeral-Disk            | Gb           | B/H           | Optional |
+| i.fl.006 | root-disk                 | GB           | H             | Required
+| i.fl.007 | cpu_SMT                   | Y/N          | H             | Optional
+| i.fl.008 | cpu_pinning               | Y/N          | H             | Optional
+| i.fl.009 | cpu_alloc_ratio           | n:m          | H             | Optional
+| i.fl.010 | numa_alignment            | Y/N          | H             | Optional
+| i.fl.011 | huge_pages                | Y/N          | H             | Optional
+| i.fl.012 | network_DPDK              | Y/N          | H             | Optional
+| i.fl.013 | network_SRIOV             | Y/N          | H             | Optional
+| i.fl.014 | network_GPU               | Y/N          | H             | Optional
+| i.fl.015 | network_SmartNIC          | Y/N          | H             | Optional
+| i.fl.016 | network_FPGA              | Y/N          | H             | Optional
+| i.fl.017 | network_IPSec_Accel       | Y/N          | H             | Optional
+| i.fl.018 | network_Crypto_Accel      | Y/N          | H             | Optional
+| i.fl.019 | network_Transcode_Accel   | Y/N          | H             | Optional
 
-<p align="center"><b>Table 4-13:</b> Predefined Compute Flavours.</p>
+<p align="center"><b>Table 4-13:</b> Basic/High Performance Flavor Profiles</p>
 
-**1)** These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
-**2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
+
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
