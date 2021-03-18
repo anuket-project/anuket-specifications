@@ -305,7 +305,7 @@ Service function chaining utilizes a service-specific overlay that creates the s
 
 In Overlay network, packets are routed based on networking principles as use a suitable path for the packet from source to its destination in network. 
 
-However, in service overlay network, packets are routed based on policies unlike overlay network, again defined at Orchestrator level. This requires specific support at network level such as  at CNI in CNF environment to provide such specific routing mechanism.
+However, in a service-specific overlay network, packets are routed based on policies. This requires specific support at network level such as  at CNI in CNF environment to provide such specific routing mechanism.
 
 
 <a name="3.6"></a>
