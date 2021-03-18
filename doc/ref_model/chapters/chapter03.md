@@ -307,6 +307,36 @@ In a typical overlay network, packets are routed based on networking principles 
 
 However, in a service-specific overlay network, packets are routed based on policies. This requires specific support at network level such as  at CNI in CNF environment to provide such specific routing mechanism.
 
+<a name="3.5.1.2"></a>
+#### 3.5.1.2 SFC Architecture
+ The SFC Architecture is built out of architectural building blocks that are logical components to relaize the service function chaining. These consist of management, control and data components. 
+
+The table below highlights areas under which common SFC functional components can be categorized.
+
+
+| Components | Example         | Resposbilities |
+|:---:|:----:|:---|
+|**Manangement** | `SFC orchestrator`  | High Level of orchestrator <br /> Orchestrate the SFC based on SFC Models/Policies with help of control components.| 
+| | `SFC OAM Components` | Responsible for SFC OAM functions |
+|| `VNF MANO` | NFVO, VNFM, and VIM <br />Responsible for SFC Data components lifecycle |
+|| `CNF MANO` | CNF DevOps Components <br />Responsible for SFC data componets lifecycle |
+| **Control** | `SFC SDN Controller` | SDNC resopsosible to create the service specific overlay network. <br /> Deploy different techniques to stitch the wiring but provide the same functionality, for example l2xconn, srv6 , Segment routing etc.  |
+|| `SFC Renderer` | Creates and wires ports/interfaces for SF data path |
+| **Data** | `Core components`<br /> SF, SFF, SF Proxy  | Ressponsible for steering the traffic for intended service functionalities based on Policies |
+
+<p align="center"><b>Table 3-6:</b> SFC Architecture Components</p>
+
+
+> **Note:** These are logical components and listed for their functionalies only.  
+
+The SFC Architecture components can be viewed as:- 
+<p align="center"><img src="../figures/ch03-model-sfc-architecture-vnf.png" alt="SFC Architecture for VNF based SFs" Title="SFC Architecture for VNF based SFs" width="65%"/>
+<img src="../figures/ch03-model-sfc-architecture-cnf.png" alt="SFC Architecture for CNF based SFs" Title="SFC Architecture for CNF based SFs" width="65%"/></p>
+
+<p align ="center"><b>Figure 3-6:</b> SFC Architecture for VNF based SFs <b>Figure 3-7:</b> SFC Architecture for CNF based SFs</p>
+
+
+SFC management components together with control components are responsible for rendering SFC requests to Service function paths, converting requisite SFC policies into network topology dependent paths and forwarding steering policies to relevant SFC data components - classifiers, service function forwarders. SFC data plane components are responsible for carrying out the steering policies.
 
 <a name="3.6"></a>
 ## 3.6 Storage
