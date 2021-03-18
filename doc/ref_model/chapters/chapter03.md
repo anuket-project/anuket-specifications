@@ -330,8 +330,8 @@ The table below highlights areas under which common SFC functional components ca
 > **Note:** These are logical components and listed for their functionalies only.  
 
 The SFC Architecture components can be viewed as:- 
-<p align="center"><img src="../figures/ch03-model-sfc-architecture-vnf.png" alt="SFC Architecture for VNF based SFs" Title="SFC Architecture for VNF based SFs" width="65%"/>
-<img src="../figures/ch03-model-sfc-architecture-cnf.png" alt="SFC Architecture for CNF based SFs" Title="SFC Architecture for CNF based SFs" width="65%"/></p>
+<p align="center"><img src="../figures/ch03-model-sfc-architecture-vnf.png" alt="SFC Architecture for VNF based SFs" Title="SFC Architecture for VNF based SFs" width="45%"/>
+<img src="../figures/ch03-model-sfc-architecture-cnf.png" alt="SFC Architecture for CNF based SFs" Title="SFC Architecture for CNF based SFs" width="45%"/></p>
 
 <p align ="center"><b>Figure 3-6:</b> SFC Architecture for VNF based SFs <b>Figure 3-7:</b> SFC Architecture for CNF based SFs</p>
 
