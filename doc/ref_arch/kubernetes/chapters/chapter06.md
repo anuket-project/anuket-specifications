@@ -108,6 +108,20 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 
 > **Gap description:** Allocation of hugepages from the same NUMA node as other resources of a Pod. To support this [cAdvisor needed a change to support NUMA](https://github.com/google/cadvisor/pull/2304). Changes in Kubernetes are planned to be implemented in the [Node Topology Manager](https://github.com/kubernetes/enhancements/issues/693).
 
+<a name="6.2.9"></a>
+### 6.2.9 User namespaces in Kubernetes
+
+> **Related requirements:**
+| Reference | Requirement |
+|---|---|
+| e.man.004 | Capability to isolate resources between tenants |
+| sec.sys.007 | The Platform must implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control). |
+
+> **Baseline project:** _Kubernetes v1.20_
+
+> **Gap description:** Kubernetes does not support namespace scoped user IDs (UIDs). Therefore, when a container-based application requires system privileges the container either needs to run in privileged mode or the infrastructure needs to provide random system UIDs. Randomised UIDs result in errors when the application needs to set kernel capabilities (e.g.: in case of VLAN trunking) or when a Pod shares data with other Pods via persistent storage. The "privileged mode" solution is not secure while "random UID" solution is error prone, and therefore these techniques should not be used. Support for proper user namespaces in Kubernetes is [under discussion](https://github.com/kubernetes/enhancements/pull/2101).
+
+
 
 <a name="6.3"></a>
 ## 6.3 Proposals & Resolution

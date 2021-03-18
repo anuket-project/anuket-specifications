@@ -5,11 +5,11 @@
 This is Kubernetes based Reference Architecture (RA-2)
 
 ## Release Information
-**Bundle: _4_**
+**Bundle: _5_**
 
 **Version: _0_**
 
-**Release Date: _25th September 2020_**
+**Release Date: _29th January 2021_**
 
 ## Bundle/Version History
 
@@ -18,16 +18,16 @@ This is Kubernetes based Reference Architecture (RA-2)
 | 1.0-alpha         | 10th January 2020 | Snezka Release    |
 | 3.0               | 15th May 2020     | Baldy Release     |
 | 4.0               | 25th Sep 2020     | Baraque Release   |
-
+| 5.0               | 29th Jan 2021     | Elbrus Release    |
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Dickering over the finer points |
+| Chapter 01 | Complete |
 | Chapter 02 | Lots of SME feedback |
-| Chapter 03 | Still Developing Content |
-| Chapter 04 | Still Developing Content |
+| Chapter 03 | Lots of SME feedback |
+| Chapter 04 | Lots of SME feedback |
 | Chapter 05 | Lots of SME feedback |
 | Chapter 06 | Lots of SME feedback |
 | Appendix A - Guidance for VNF-to-CNF Transition | Initial Framework Only |
@@ -42,3 +42,4 @@ This is Kubernetes based Reference Architecture (RA-2)
 * [Chapter 05 - Security Guidance](chapters/chapter05.md)
 * [Chapter 06 - Gaps, Innovation, and Development](chapters/chapter06.md)
 * [Appendix A - Guidance for VNF-to-CNF Transition](chapters/appendix-a.md)
+* [Appendix B - Guidance For workload isolation (multitenancy) with Kubernetes for application vendors](chapters/appendix-b.md)

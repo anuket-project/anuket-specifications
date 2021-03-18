@@ -27,12 +27,14 @@ You need one physical server acting as a jump server along with minimum of two a
 <a name="4.3"></a>
 ## 4.3 Installation of the Reference Implementation
 
+This section describes how to get started with RI-2 deployment on bare metal servers. The deployment is done using [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef), which is a project that aims to deliver a reference implementation for Kubernetes based on the RA-2.
+
+For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v2.1.0) (version v2.1.0).
+
 <a name="4.3.1"></a>
 ### 4.3.1 Installation on Bare Metal Infratructure
 
-This section describes how to get started with RI-2 deployment on bare metal servers.
-
-For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits) (version v1.4.1).
+Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed. Details and installation steps can be found in `docs/release/installation/deployment-guide.rst`. 
 
 Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in OPNFV terminology need to be defined under `hw_config/<vendor>`. Both PDF and IDF files are modeled as YAML schema.
 
@@ -41,112 +43,66 @@ A PDF is a hardware configuration template that includes hardware characteristic
 - Remote management parameters
 - Network interfaces list including name, MAC address, IP address, link speed
 
-IDF includes information about network information required by the installer. All the networks along with possible VLAN, DNS, and gateway information should be defined here.
+IDF includes information about network information required by the installer. All the networks along with possible VLAN, DNS, and gateway information should be defined here. The IDF file also contains configuration options for the Kubernetes deployment using BMRA. These options are described in greater detail below.
 
 More details regarding these descriptor files as well as their schema are very well documented in [RI-1 Chapter 8](../../cntt-ri/chapters/chapter08.md#opnfv-descriptor-files-1).
 
 For the high availability requirement at least 3 nodes should be running as master with etcd enabled, but only a single master (and worker) is required to deploy the cluster. Node roles are configured through the vendor specific IDF file.
 
-The following configuration options in `sw_config/bmra/all.yml` are set to specific values according to RA-2 requirements. Its recommended not to change them (except for debugging and development purposes).
-
-[CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
-```
-cmk_enabled: false
-  # Provides core affinity and isolation of workloads
-  # Can be enabled if the native CPU Manager is insufficient for workloads
-cmk_hosts_list: <csv of hosts where CMK should be deployed>
-  # Update the list if CMK is enabled
-cmk_shared_num_cores: <#>
-cmk_exclusive_num_cores: <#>
-  # Number of cores that will be added to the shared and exclusive pools of CMK if enabled
-```
-[SR-IOV Network device plugin for Kubernetes](https://github.com/intel/sriov-network-device-plugin):
-```
-sriov_net_dp_enabled: true
-  # Install SR-IOV Network device plugin
-sriovdp_config_data: <json configuration of resources>
-  # Update configuration according to PCI devices and planned network resources
-  # Additional configuration is done through host_vars (see below)
-```
-[Intel Device Plugins for Kubernetes](https://github.com/intel/intel-device-plugins-for-kubernetes):
-```
-qat_dp_enabled: false
-  # Can be enabled if supported by HW
-gpu_dp_enabled: false
-  # Can be enabled if supported by HW
-```
-[Telemtry Aware Scheduling](https://github.com/intel/telemetry-aware-scheduling):
-```
-tas_enabled: false
-  # Can be enabled if needed
-tas_create_policy: false
-  # Can be enabled if 'tas_enabled' is true
-```
-Miscellaneous configuration:
-```
-example_net_attach_defs:
-  userspace_ovs_dpdk: <true/false>
-  userspace_vpp: <true/false>
-    # Can be enabled if userspace CNI and OVS or VPP is enabled (see host_vars configuration below)
-  sriov_net_dp: <true/false>
-    # Can be enabled if 'sriov_net_dp_enabled' is true
-cluster_name: cluster.local
-  # Can be updated if needed
-```
-Similarly, it is not recommended to change the following configuration options in `sw_config/bmra/kube-node.yml`, unless for debugging and development purposes.
+Most of the configuration options in `hw_config/{deployment}/idf.yaml` shown below are set to specific values according to RA-2 requirements. Some of them might need to be changed depending on the hardware, such as the NIC and CPU configuration.
 
 ```
-sriov_enabled: true
-  # Change to true as the SR-IOV Network device plugin for Kubernetes is used
-sriov_nics:
-  - name: <PF Interface Name>
-      # Get the interface names by checking on each node prior to provisioning Kubernetes
-    sriov_numvfs: <#>
-      # Number of VFs to create for the PF
-    vf_driver: <Driver>
-      # e.g. vfio-pci for use with DPDK, or iavf for use with host-based networking
-  - name: <PF Interface Name>
-    (...)
-
-sriov_cni_enabled: true
-  # Install the SR-IOV CNI plugin for use with host-based VFs
-install_dpdk: true
-  # Required if 'sriov_enabled' is true
-userspace_cni_enabled: false
-  # Can be enabled if needed
-bond_cni_enabled: false
-  # Can be enabled if needed
-vpp_enabled: false
-ovs_dpdk_enabled: false
-  # One of the above can be enabled if needed. In that case, 'userspace_cni_enabled' should be set to true as well
-ovs_dpdk_lcore_mask: <Core mask>
-  # e.g. 0x1, but can be changed depending on setup and requirements
-  # Only relevant if 'ovs_dpdk_enabled' is set to true
-ovs_dpdk_socket_mem: <csv of memory (MB) per socket>
-  # e.g. "256,0" to allocate 256MB on socket 0, and nothing on socket 1
-  # Only relevant if 'ovs_dpdk_enabled' is set to true
-force_nic_drivers_update: <true/false>
-  # Can be used to force an update of NIC drivers during provisioning
-  # Use with caution, as this can break the connectivity to the server, causing provisioning to fail
-  # If in doubt, set to 'false'
-install_ddp_packages: false
-  # Dynamic Device Personalization (DDP) is not currently considered
-hugepages_enabled: true
-  # Enable to configure hugepages in the host
-default_hugepage_size: <2M/1G>
-  # Consider using 2M due to support and better utilization of memory
-hugepages_1G: <#>
-hugepages_2M: <#>
-  # Set the number of hugepages for a given size. If only one size is used the other can be set to 0
-isolcpus_enabled: true
-  # Core/thread isolation to the host kernel configuration.
-  # This should be true if CMK is configured (see above), or isolation is needed for workloads
-isolcpus: <String of cores to isolate>
-  # String of cores/threads to isolate, e.g. "4-8,12"
-sst_bf_configuration_enabled: false
-  # Speed Select Technology - Base Frequency (SST-BF). Can be enabled if processor is supported.
+bmra:
+  profile: full_nfv
+  network_roles:
+    sriov:
+      - name: eno2                     # PF interface name
+        bus_info: "19:00.1"            # PCI ID of the interface (bus:device.function)
+        device_info: "8086:1572:0200"  # Device info for the PCI ID - Can be optained using 'lspci -nn'
+        driver: iavf                   # Driver to be used with the interface
+    sriov_dpdk:
+      - name: eno4
+        bus_info: "19:00.3"
+        device_info: "8086:1572:0200"
+        driver: vfio-pci
+  features:
+    sriov:
+      enable: true                # Enable SR-IOV
+      sriov_vfs_per_port: 2       # Number of VFs to be created for each interface in network_roles:sriov above
+      sriov_dpdk_vfs_per_port: 4  # Number of VFs to be created for each interface in network_roles:sriov_dpdk above
+    sriov_cni: true               # Enable SR-IOV CNI plugin
+    sriov_net_dp: true            # Enable SR-IOV Network Device Plugin
+    hugepages:
+      enable: true                # Enable hugepages
+      default: 2M                 # Default hugepage size [2M, 1G]
+      hugepages_1G: 0             # Number of 1G hugepages to allocate
+      hugepages_2M: 10240         # Number of 2M hugepages to allocate
+    isolcpus:
+      enable: true                # Enable CPU isolation in the host
+      cpus: "8-27,36-55"          # List of CPUs (cores/threads) to isolate
+    nfd: true                     # Enable Node Feature Discovery
+    cmk:
+      enable: true                # Enable CPU Manager for Kubernetes
+      num_shared_cores: 3         # Number of CPU cores to assign to the "shared pool" on each node 
+      num_exclusive_cores: 3      # Number of CPU cores to assign to the "exclusive pool" on each node
+    topology_manager:
+      enable: true                # Enable Kubernetes built-in Topology Manager
+      policy: "best-effort"       # Policy to use with Topology Manager ["none", "best-effort", "restricted", "single-numa-node"]
+    tas:
+      enable: true                # Enable Telemetry Aware Scheduling
+      demo_policy: false          # Enable demo policy for Telemetry Aware Scheduling (default: false)
+    psp: true                     # Enable Pod Security Policy (admission controller and basic set of rules)
 ```
-Lastly, modify the environmental variables defined in `deploy.env` to match your setup.
+
+References for the above features:
+* [CPU Manager for Kubernetes](https://github.com/intel/CPU-Manager-for-Kubernetes)
+* [SR-IOV Network device plugin for Kubernetes](https://github.com/intel/sriov-network-device-plugin)
+* [Intel Device Plugins for Kubernetes](https://github.com/intel/intel-device-plugins-for-kubernetes)
+* [Telemtry Aware Scheduling](https://github.com/intel/telemetry-aware-scheduling)
+
+Additional settings are available in the BMRA templates located in `playbooks/roles/bmra-config/templates`. Changing these might have unexpected results and should generally not be done.
+
+You will also have to modify environmental variables defined in `deploy.env` to match your setup.
 
 Once ready, issue the following command to initiate the deployment
 
@@ -167,16 +123,14 @@ $ kubectl get node <node> -o json | jq '.status.allocatable'
 The list of allocatable resources will vary depending on the configuration, but an example output could look as follows:
 ```
 {
-  "cpu": "63900m",
-  "ephemeral-storage": "210725550141",
+  "cmk.intel.com/exclusive-cores": "3",
+  "cpu": "61",
+  "ephemeral-storage": "210667024855",
   "hugepages-1Gi": "0",
   "hugepages-2Mi": "20Gi",
-    # The amount of memory allocated as hugepages, i.e. 10240 2Mi pages
-  "intel.com/intel_sriov_dpdk": "4",
-  "intel.com/intel_sriov_netdevice": "4",
-    # The two resources above are created by SR-IOV Network device plugin
-    # Configured through `sriovdp_config_data` in group_vars
-  "memory": "373411876Ki",
+  "intel.com/intel_sriov_dpdk_700_series": "4",
+  "intel.com/intel_sriov_netdevice": "2",
+  "memory": "373489916Ki",
   "pods": "110"
 }
 ```
