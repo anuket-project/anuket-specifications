@@ -303,7 +303,7 @@ There is also a need to provide specialised tools to aid troubleshooting of indi
 Service function chaining (SFC) can be visualized as layered structure where Service function plane (SFC data plane, consists of service function forwarder, classifier, service function, service function proxy) resides over Service function overlay network. 
 Service function chaining utilizes a service-specific overlay that creates the service topology.  The service overlay provides service function connectivity, built "on top" of the existing network topology. It leverages various overlay network technologies (e.g., Virtual eXtensible Local Area Network (VXLAN)) for interconnecting SFC data-plane elements and allows establishing Service Function Paths (SFPs).
 
-In Overlay network, packets are routed based on networking principles as use a suitable path for the packet from source to its destination in network. 
+In a typical overlay network, packets are routed based on networking principles and use a suitable path for the packet to be routed from a source to its destination. 
 
 However, in a service-specific overlay network, packets are routed based on policies. This requires specific support at network level such as  at CNI in CNF environment to provide such specific routing mechanism.
 
