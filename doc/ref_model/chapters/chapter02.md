@@ -266,11 +266,11 @@ By trying to sort workloads into different categories based on the requirements 
 <a name="2.4"></a>
 ## 2.4 Cloud Infrastructure Profiles
 
-Infrastructure profiles are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities exploitable by the workloads.
-Two profile layers are proposed:
+Infrastructure profiles are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities exploitable by the workloads. *Workload profiles* are requirements expressed as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance.
+Two profile *layers* are proposed:
 
-- The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, ie: an infrastructure object can belong to one and only one profile, and workloads can only be created using a single profile.
-- For a given profile, **flavours** represent small deviations from (or further qualification, such as sizing) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Flavours can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure resource can have **more than one flavour** attached to it, and workloads can request VMs to be instantiated on infrastructure with a certain flavour.
+- The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, ie: an infrastructure object can belong to one and only one profile, and workloads can only be created using a single profile. Workloads requesting a given profile **must** be instantiated on infrastructure of that same profile.
+- For a given profile, **flavours** represent small deviations from (or further qualification, such as sizing) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Flavours can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure resource can have **more than one flavour** attached to it, and workloads can request VMs to be instantiated on infrastructure with a certain flavour. Workloads requesting a given flavour **must** be instantiated on infrastructure with that same flavour. It is allowed to instantiate workloads on infrastructure with more flavours than what is requested, as long as the minimum requirements are satisfied.
 
 > Note: the fact that profiles partition the infrastructure means that workloads run on VMs/Pods where each VM/Pod is created on infrastructure of a given profile to run on, and the infrastructure resources with a given profile will host only VMs/Pods requiring that specific profile.
 > 
@@ -296,6 +296,7 @@ The following cloud infrastructure flavours are proposed:
 
 - High performance CPU: for Workloads that require predictable computing performance (or higher clock speed).
 - High performance storage: for Workloads that require low storage latency and/or high storage IOPS.
+- High memory: for Workloads that require high amounts of RAM.
 - GPU: denotes the presence of a consumable GPU on the infrastructure
 - High performance network (25G): denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater.
 - High performance network (100G): denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater.
