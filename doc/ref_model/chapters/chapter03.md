@@ -5,7 +5,7 @@
 * [3.1 Model](#3.1)
 * [3.2 Virtual Infrastructure Layer](#3.2)
   * [3.2.1 Virtual Resources](#3.2.1)
-   * [3.2.1.1 Virtual Tenant](#3.2.1.1)
+   * [3.2.1.1 Tenant](#3.2.1.1)
    * [3.2.1.2 Virtual Compute](#3.2.1.2)
    * [3.2.1.3 Virtual Storage](#3.2.1.3)
    * [3.2.1.4 Virtual Network](#3.2.1.4)
