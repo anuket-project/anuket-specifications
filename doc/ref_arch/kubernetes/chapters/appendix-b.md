@@ -1,5 +1,5 @@
 [<< Back](../../kubernetes)
-# Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application Vendors
+# Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application vendors
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -27,8 +27,8 @@ Use cases:
 <a name="B.2"></a>
 ## B.2 Multitenancy Models for CNFs
 Solution Models :
-1. Seperate Kubernetes Namespace per Vendor within Single Kubernetes Cluster
-2. Seperate Kubernetes Cluster per Vendor. 
+1. Seperate Kubernetes Namespace per vendor within Single Kubernetes Cluster
+2. Seperate Kubernetes Cluster per vendor. 
 The Kubernetes Clusters can be created using Baremetal Nodes or Virtual Machines (either on the Baremetal Machines or also the way Public CLoud Provider APIs are used to create the Virtual Machines like in GCP Compute Engine, Azure or AWS Providers.
 
 <a name="B.3"></a>
