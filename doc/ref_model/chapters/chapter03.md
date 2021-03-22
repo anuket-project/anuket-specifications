@@ -3,11 +3,13 @@
 
 ## Table of Contents
 * [3.1 Model](#3.1)
-* [3.2 Virtual Resources](#3.2)
-  * [3.2.1 Tenant](#3.2.1)
-  * [3.2.2 Compute](#3.2.2)
-  * [3.2.3 Storage](#3.2.3)
-  * [3.2.4 Availability Zone](#3.2.4)
+* [3.2 Virtual Infrastructure Layer](#3.2)
+  * [3.2.1 Virtual Resources](#3.2.1)
+   * [3.2.1.1 Virtual Tenant](#3.2.1.1)
+   * [3.2.1.2 Virtual Compute](#3.2.1.2)
+   * [3.2.1.3 Virtual Storage](#3.2.1.3)
+   * [3.2.1.4 Virtual Network](#3.2.1.4)
+   * [3.2.1.5 Availability Zone](#3.2.1.5
 * [3.3 Cloud Infrastructure Management](#3.3)
   * [3.3.1 Virtual Infrastructure Manager](#3.3.1)
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
@@ -64,7 +66,9 @@ The functionalities of each layer are as follows:
 - **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run within a virtual machine (VM) or as a set of containers.
 
 <a name="3.2"></a>
-## 3.2 Virtual Resources
+## 3.2 Virtual Infrastructure Layer
+<a name="3.2.1"></a>
+## 3.2.1 Virtual Resources
 
 The virtual infrastructure resources provided by the Cloud Infrastructure can be grouped into four categories as shown in the diagram below:
 
@@ -78,8 +82,8 @@ The virtual infrastructure resources provided by the Cloud Infrastructure can be
 
 The virtualised infrastructure resources related to these categories are listed below.
 
-<a name="3.2.1"></a>
-### 3.2.1 Tenant
+<a name="3.2.1.1"></a>
+### 3.2.1.1 Tenant
 
 A cloud infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 
@@ -98,8 +102,8 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 <p align="center"><b>Table 3-1:</b> Attributes of a tenant</p>
 
-<a name="3.2.2"></a>
-### 3.2.2 Compute
+<a name="3.2.1.2"></a>
+### 3.2.1.2 Virtual Compute
 A virtual machine or a container/pod is used by a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and, since it will need to communicate with other communication partners, it is assumed that the networks have been provisioned in advance.
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
@@ -116,8 +120,8 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 
 <p align="center"><b>Table 3-2:</b> Attributes of compute resources</p>
 
-<a name="3.2.3"></a>
-### 3.2.3 Storage
+<a name="3.2.1.3"></a>
+### 3.2.1.3 Virtual Storage
 
 A workload can request different types of storage based on data longevity: persistent or ephemeral storage.
 Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
@@ -140,9 +144,11 @@ Storage resources have the following attributes:
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
+<a name="3.2.1.4"></a>
+### 3.2.1.4 Virtual Network
 
-<a name="3.2.4"></a>
-### 3.2.4 Availability Zone
+<a name="3.2.1.5"></a>
+### 3.2.1.5 Availability Zone
 An availability zone is a logical pool of physical resources (e.g. compute, block storage, and network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
 
 As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
