@@ -9,7 +9,7 @@
    * [3.2.1.2 Virtual Compute](#3.2.1.2)
    * [3.2.1.3 Virtual Storage](#3.2.1.3)
    * [3.2.1.4 Virtual Network](#3.2.1.4)
-   * [3.2.1.5 Availability Zone](#3.2.1.5
+   * [3.2.1.5 Availability Zone](#3.2.1.5)
 * [3.3 Cloud Infrastructure Management](#3.3)
   * [3.3.1 Virtual Infrastructure Manager](#3.3.1)
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
