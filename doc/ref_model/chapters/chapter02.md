@@ -272,11 +272,6 @@ Two profile *layers* are proposed:
 - The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, ie: an infrastructure object can belong to one and only one profile, and workloads can only be created using a single profile. Workloads requesting a given profile **must** be instantiated on infrastructure of that same profile.
 - For a given profile, **flavours** represent small deviations from (or further qualification, such as sizing) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Flavours can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, ie: an infrastructure resource can have **more than one flavour** attached to it, and workloads can request VMs to be instantiated on infrastructure with a certain flavour. Workloads requesting a given flavour **must** be instantiated on infrastructure with that same flavour. It is allowed to instantiate workloads on infrastructure with more flavours than what is requested, as long as the minimum requirements are satisfied.
 
-> Note: the fact that profiles partition the infrastructure means that workloads run on VMs/Pods where each VM/Pod is created on infrastructure of a given profile to run on, and the infrastructure resources with a given profile will host only VMs/Pods requiring that specific profile.
-> 
-> On the other hand, the fact that flavours do not partition the infrastructure may mean that infrastructure objects with certain flavours may host workloads that do not require that flavour, but can run on that infrastructure partition anyway.
-
-
 ### 2.4.1 Infrastructure profiles (top-level)
 
 Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
@@ -290,9 +285,10 @@ In **[Chapter 4](./chapter04.md)** these **B (Basic) Performance** and **H (High
 
 Profiles partition the infrastructure: an infrastructure object (host/node) **must** have one and only one profile associated to it.
 
-### 2.4.2 Infrastructure/node flavours
+### 2.4.2 Node flavours
 
-The following cloud infrastructure flavours are proposed:
+Node flavours are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain flavours may be relevant only for some profiles.
+The following **node flavours** are proposed:
 
 - **High performance CPU**: for Workloads that require predictable computing performance (or higher clock speed).
 - **High performance storage**: for Workloads that require low storage latency and/or high storage IOPS.
