@@ -286,7 +286,7 @@ Based on the above analysis, the following cloud infrastructure profiles are pro
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** infrastructure profiles will be defined in greater detail for use by workloads.
+In **[Chapter 4](./chapter04.md)** these **B (Basic) Performance** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 
 Profiles partition the infrastructure: an infrastructure object (host/node) **must** have one and only one profile associated to it.
 
