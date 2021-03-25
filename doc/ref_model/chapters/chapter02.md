@@ -294,14 +294,18 @@ Profiles partition the infrastructure: an infrastructure object (host/node) **mu
 
 The following cloud infrastructure flavours are proposed:
 
-- High performance CPU: for Workloads that require predictable computing performance (or higher clock speed).
-- High performance storage: for Workloads that require low storage latency and/or high storage IOPS.
-- High memory: for Workloads that require high amounts of RAM.
-- GPU: denotes the presence of a consumable GPU on the infrastructure
-- High performance network (25G): denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater.
-- High performance network (100G): denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater.
-- High Latency - Core Sites: labels a host/node as located in a central/core site, for workloads requiring geographical centralisation.
-- Low Latency - Edge Sites: labels a host/node as located in an edge site, for workloads requiring low latency to final users or geographical distribution.
+- **High performance CPU**: for Workloads that require predictable computing performance (or higher clock speed).
+- **High performance storage**: for Workloads that require low storage latency and/or high storage IOPS.
+- **High memory**: for Workloads that require high amounts of RAM.
+- **GPU**: denotes the presence of a consumable GPU on the infrastructure
+- **High performance network (25G)**: denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater.
+- **High performance network (100G)**: denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater.
+- **High Latency** - Core Sites: labels a host/node as located in a central/core site, for workloads requiring geographical centralisation.
+- **Low Latency** - Edge Sites: labels a host/node as located in an edge site, for workloads requiring low latency to final users or geographical distribution.
+- **Fixed function accelerator**: labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter).
+- **Firmware-programmable adapter**: labels a host/node that includes a consumable Firmware-programmable adapter (programmable, eg Network/storage FPGA with programmable part of firmware image).
+- **SmartNIC enabled**: labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, NF and/or Hardware Infrastructure.
+- **SmartSwitch enabled**: labels a host/node that is *connected to* a Programmable Switch Fabric or TOR switch
 
 >***Note:** This is an initial set of proposed profiles and flavours and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
 >- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
