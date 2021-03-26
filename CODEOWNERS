@@ -80,15 +80,15 @@
 
 
 # Reference Implementation 2
-/doc/ref_impl/cntt-ri2/chapters/chapter01.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter02.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter03.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter05.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter04.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter06.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter07.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter08.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
-/doc/ref_impl/cntt-ri2/chapters/chapter09.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter01.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter02.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter03.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter05.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter04.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter06.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter07.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter08.md        @scottsteinbrueck @rihabbanday @jgu17
+/doc/ref_impl/cntt-ri2/chapters/chapter09.md        @scottsteinbrueck @rihabbanday @jgu17
 
 # Reference Conformance 2
 /doc/ref_cert/RC2/chapters/chapter01.md        @xmulligan @scottsteinbrueck @walterkozlowski
