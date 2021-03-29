@@ -73,18 +73,21 @@ there could be multiple ways to implement PDF, the implementation will be in nex
 ### 6.3.1 Resource Pool information
 This table is the description of the resource pool, it contains only 2 parameters: name and type of the resource pool.
 
+Only one instance per resource pool.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RES_POOL_NAME | String | Yes | This is the unique name of the resource pool, could be refered by other parameters |
-| RES_POOL_TYPE | String | Yes |  |
+| RES_POOL_TYPE | String | Yes | User defined value to identify different hardware or software configuration requirements. |
 
 <p align="center"><b>Table 6-3-1:</b> Resource Pool Information.</p>
 
 
 <a name="6.3.2"></a>
 ### 6.3.2 Global Settings
-The Global settings is provided by the user, contains data like like IP_Type, VLAN_Type, etc.
+The Global settings are provided by the user, contains data like like IP_Type, VLAN_Type, etc.
 
+Only one instance per resource pool.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | IP_TYPE | String | Yes | IPV4 or IPV6 |
@@ -104,6 +107,8 @@ The Global settings is provided by the user, contains data like like IP_Type, VL
 ### 6.3.3 Parameters for network virtualization
 MTU value for network virtualization should be defined, this is usually standard value that defined by user.
 
+3 instances are expected for Manage Service and storage,  they may have different MTU requirement.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NIC_PORT_TYPE | String | Yes | Type for nic port, Manage, Service or Storage |
@@ -118,6 +123,8 @@ Server information should be provided for installer, including full detail info.
 
 #### 6.3.4.1 server information
 First, a table describes the information for each server in the resource pool should be provided.
+
+Multiple instances are expected, one instance for each server.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -135,9 +142,9 @@ First, a table describes the information for each server in the resource pool sh
 | BMC_SUBNET | String | Yes |  |
 | BMC_USR | String | Yes | BMC user |
 | BMC_PWD | String | Yes | BMC password |
-| SERVICE_IP | String | Yes |  |
-| SERVICE_GATEWAY | String | Yes |  |
-| SERVICE_MASK | String | Yes |  |
+| INTERNAL_IP | String | Yes | It is an internal IP  configured and used by hardware integration tools, it will be removed after hardware integration verification |
+| INTERNAL_GATEWAY | String | Yes |  |
+| INTERNAL_MASK | String | Yes |  |
 | GROUP_NAME | String | Yes | the usage of server, Manage or Storaage or Service  |
 | BMC_PRE_CONFIGURED | String | Yes | YES or NO |
 | HW_REGION | String | Yes | hardware region that divided by design documents, like A area or B area |
@@ -147,6 +154,8 @@ First, a table describes the information for each server in the resource pool sh
 
 #### 6.3.4.2 server nic information
 This table is describing the slot and port mapping relationship for NIC in each model of server. 
+
+Multiple entries are expected, one entry for each slot of each type of server, so, multiple entries for each type of server, and there's maybe multiple types of server.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -163,6 +172,8 @@ This table is describing the slot and port mapping relationship for NIC in each 
 Port BDF information need to be provided for each port on server, 
 it will be used to identify the logical port name after OS is installed. 
 
+Multiple entries are expected, 1 instance for each port, BDF info for all server SKU should be included.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SKU | String | Yes | SKU of server |
@@ -176,6 +187,8 @@ it will be used to identify the logical port name after OS is installed.
 <a name="6.3.5"></a>
 ### 6.3.5 Network Device information
 This table describes each network device, it can be used for network configuration and verification.
+
+Multiple instances are expected, one instance for each network device.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -205,6 +218,8 @@ This table describes each network device, it can be used for network configurati
 Wiremap defines the port mapping between server/switch and switch for each line, 
 we will need this information to trace the connected server and port, so we can extrapolate the required network configuration for the port.
 
+Multiple instances are expected, one instance for each physical cable.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NAME | String | Yes | Name of network device |
@@ -225,6 +240,8 @@ we will need this information to trace the connected server and port, so we can 
 ### 6.3.7 Network planning information
 Network planning info for resource pool needs to be defined, which should include Vlan ID, allocated IP range, the applied node set.
 
+Multiple instances are expected, one instance for each network plane.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | APPLICATION_LAYER | String | Yes |   |
@@ -242,6 +259,7 @@ Network planning info for resource pool needs to be defined, which should includ
 
 <a name="6.3.8"></a>
 ### 6.3.8 TOR VLAN configuration information
+Multiple instances are expected, one instance for each TOR. 
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -253,16 +271,17 @@ Network planning info for resource pool needs to be defined, which should includ
 | SSH_USER | List | Yes |  |
 | SSH_PASSWORD | List | Yes |  |
 | ENABLE_PASSWORD | List | Yes |  |
-| PORT | List | Yes |   |
-| VLAN_TYPE | List | Yes |   |
-| VLAN_ID | List | Yes |   |
-| PORT_TYPE | List | Yes |   |
+| PORT | List | Yes |  group multiple ports with same VLAN configuration, and separate different port group with ";" |
+| VLAN_TYPE | List | Yes | tag or untag |
+| VLAN_ID | List | Yes |  group multiple VLAN with same configuration requirements, and separate different VLAN group with ";" |
+| PORT_TYPE | List | Yes | trunk or access or hybrid  |
 
 <p align="center"><b>Table 6-3-8:</b> TOR VLAN information.</p>
 
 
 <a name="6.3.9"></a>
 ### 6.3.9 EOR VLAN configuration information
+Multiple instances are expected, one instance for each EOR. 
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -274,8 +293,8 @@ Network planning info for resource pool needs to be defined, which should includ
 | SSH_USER | List | Yes |  |
 | SSH_PASSWORD | List | Yes |  |
 | ENABLE_PASSWORD | List | Yes |  |
-| PORT | List | Yes |   |
-| VLAN_ID | List | Yes |   |
+| PORT | List | Yes |   group a list of ports with same VLAN configuration, and separate different port group with ";" |
+| VLAN_ID | List | Yes |  group multiple VLAN with same configuration requirements, and separate different VLAN group with ";" |
 | VLANIF_ADDRESS | List | Yes |   |
 | NETWORK_MASK | List | Yes |   |
 
@@ -289,6 +308,7 @@ One HA could belong to multiple AZ
 It is the definition of each HA in the resource pool. it should contain the server list for each HA, and also the HA meta data.
 
 ####  6.3.10.1 Host HA Mapping 
+Multiple instances are expected, defines all servers in HA
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | HA_NAME | String | Yes |  |
@@ -297,6 +317,7 @@ It is the definition of each HA in the resource pool. it should contain the serv
 <p align="center"><b>Table 6-3-10-1:</b> Host HA Information.</p>
 
 #### 6.3.10.2 HA metadata 
+Multiple instances are expected, service, management and DMZ.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | HA_NAME | String | Yes |  |
@@ -309,6 +330,7 @@ It is the definition of each HA in the resource pool. it should contain the serv
 ### 6.3.11 VIM Nodes
 There's a list of servers that was defined as control/management nodes according to resource pool plan
 
+Multiple instances are expected, defines all management servers.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DEVICE_NAME | String | Yes | The server name  |
@@ -317,6 +339,8 @@ There's a list of servers that was defined as control/management nodes according
 
 <a name="6.3.12"></a>
 ### 6.3.12 SDNC Nodes
+
+Multiple instances are expected, defines all SDN controllers
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DEVICE_NAME | String | Yes | The server name  |
@@ -329,6 +353,7 @@ Definition of storage cluster and storage pool,
 #### 6.3.13.1 Storage pool plan
 Storage pool name in each storage cluster, and nodes in Storage pool should be defined, so the storage installer will know which nodes are installing.
 
+Multiple instances are expected, each instance defines one storage node
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | STORAGE_CLUSTER_NAME | String | Yes |   |
@@ -340,6 +365,7 @@ Storage pool name in each storage cluster, and nodes in Storage pool should be d
 #### 6.3.13.2 Distribution storage pool info
 Storage pool information, defines the management account and network information
 
+Multiple instances are expected, each instance defines one storage pool
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | STORAGE_CLUSTER_NAME | String | Yes |   |
@@ -374,11 +400,11 @@ the parameters should be defined in advance.
 #### 6.3.14.1 VIM Context
 Parameters from VIM vendor for integration.
 
+Only one entry is expected.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes |  |
 | AUTHORIZATION | String | Yes | One-way or Two-way authentication |
-| JOINT_WAY | String | Yes | by ISCSI or client |
 | VIM_CERTIFICATES_PATH | String | Yes | Full path for certificates that used for integration |
 
 <p align="center"><b>Table 6-3-14-1:</b> VIM context Information.</p>
@@ -386,6 +412,7 @@ Parameters from VIM vendor for integration.
 #### 6.3.14.2 Storage Context
 Parameters from storage vendor for integration.
 
+Only one entry is expected.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes |  |
@@ -401,6 +428,7 @@ Parameters from storage vendor for integration.
 #### 6.3.14.3 Storage Client context
 This table defines the parameters for integration with storage client
 
+Multiple entries are expected, one entry for each authorization user.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | JOINT_WAY | String | Yes | integration method for storage client, for example, RBD  |
@@ -416,6 +444,7 @@ This table defines the parameters for integration with storage client
 #### 6.3.15.1 SERVER PIM ACCOUNT
 Servers are managed by redfish, credentials should be the same for same type of device  
 
+Multiple entries are expected, one entry for each server model.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes |  |
@@ -428,6 +457,7 @@ Servers are managed by redfish, credentials should be the same for same type of 
 #### 6.3.15.2 Switch PIM Account
 Servers are managed by SNMP, credentials should be the same for same type of device  
 
+Multiple entries are expected, one entry for each device model.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes |  |
