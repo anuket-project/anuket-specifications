@@ -204,7 +204,7 @@ A note on object storage:
 storage, as this is neither a native Kubernetes object, nor something that is
 required by CSI drivers.  Object storage is an application-level requirement
 that would ordinarily be provided by a highly scalable service offering rather
-than being something an individual Kubernetes cluster could offer.  
+than being something an individual Kubernetes Cluster could offer.  
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 

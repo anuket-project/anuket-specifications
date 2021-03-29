@@ -42,6 +42,6 @@ The scope is to identify the solution area which is needed to secure the CNF wor
 6. RBAC and secrets Management for CNF Workload
 7. Separate Isolated view of Logging, Monitoring, Alerting and Tracing for CNF Workloads
 
-"*" hard multitenancy : can be defined as workload isolation mechanism in which the workloads do not share the same cluster resources and are isolated at cluster level. So typically a seperate Cluster for each tenant could be considered as hard isolation.
+"*" hard multitenancy: can be defined as workload isolation mechanism in which the workloads do not share the same Cluster resources and are isolated at Cluster level. So typically a seperate Cluster for each tenant could be considered as hard isolation.
 
 "**" soft multitenancy is a mechanism in which the same Kubernetes Cluster is being shared between different tenants, like using namespaces to isolate the tenants.
