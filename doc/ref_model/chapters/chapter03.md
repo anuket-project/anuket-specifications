@@ -309,7 +309,7 @@ However, in a service-specific overlay network, packets are routed based on poli
 
 <a name="3.5.1.2"></a>
 #### 3.5.1.2 SFC Architecture
- The SFC Architecture is built out of architectural building blocks that are logical components to relaize the service function chaining. These consist of management, control and data components. 
+ The SFC Architecture is composed of functional management, control and data components as categorised in the Table 3-6 below. 
 
 The table below highlights areas under which common SFC functional components can be categorized.
 
