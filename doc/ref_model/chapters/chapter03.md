@@ -10,8 +10,8 @@
    * [3.2.1.3 Virtual Storage](#3.2.1.3)
    * [3.2.1.4 Virtual Network](#3.2.1.4)
    * [3.2.1.5 Availability Zone](#3.2.1.5)
+  * [3.2.2 Virtual Infrastructure Manager](#3.2.2)
 * [3.3 Cloud Infrastructure Management](#3.3)
-  * [3.3.1 Virtual Infrastructure Manager](#3.3.1)
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Hardware Infrastructure Resources](#3.4)
   * [3.4.1 Hardware Acceleration Resources](#3.4.1)
@@ -159,12 +159,9 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 
 <p align="center"><b>Table 3-4:</b> Attributes of availability zones</p>
 
-<a name="3.3"></a>
-## 3.3 Cloud Infrastructure Management
-Cloud infrastructure provides the capability to manage virtual and hardware resources via Application Programmable Interfaces or graphical user interfaces.
 
-<a name="3.3.1"></a>
-### 3.3.1 Virtual Infrastructure Manager
+<a name="3.2.2"></a>
+### 3.2.2 Virtual Infrastructure Manager
 The virtual infrastructure manager allows to:
 
 * setup, manage and delete tenants,
@@ -194,6 +191,9 @@ The virtual infrastructure manager allows to:
 * **Storage Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware storage resources
 
 * **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
+<a name="3.3"></a>
+## 3.3 Cloud Infrastructure Management
+Cloud infrastructure provides the capability to manage virtual and hardware resources via Application Programmable Interfaces or graphical user interfaces.
 
 <a name="3.3.2"></a>
 ### 3.3.2 Hardware Infrastructure Manager
