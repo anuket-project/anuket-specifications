@@ -343,6 +343,68 @@ Figure 3-7 shows a simple architecture of an SFC with multiple CNFs, as SF data 
 
 The SFC management components together with the control components are responsible for rendering SFC requests to Service Function paths. For this they convert requisite SFC policies into network topology dependent paths and forwarding steering policies. Relevant SFC data components - classifiers, service function forwarders - are responsible for managing the steering policies.
 
+<a name="3.5.1.3"></a>
+#### 3.5.1.3 Information Flows in Service Function Chaining
+ 
+<a name="3.5.1.3.1"></a>
+##### 3.5.1.3.1 Creation of Service Function Chain
+ 
+The creation of the SFC might include design/preparation phase as: 
+-	The service functions that are included in the SFC.
+- The routing order in the service function, if the SFC is composed of more than one service function.
+
+Figure 3-8 shows SFC creation call flow, separated logically in two steps.
+<p align="center"> <img src="../figures/ch03-model-sfc-info-create-flow.png" alt="Creation of Service Function Chain" Title="Creation of Service Function Chain" width="45%"/></p>
+<p align ="center"><b>Figure 3-8:</b> Creation of Service Function Chain</p>
+
+1.	Creation of service functions of SFC.
+
+The flow of steps to enable the SFC creation can be as follows:-
+
+a.	SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
+
+b.	SFC Rendere attaches the SFC aware interfaces at SFs to enable Service plane 
+
+c.	NFVO boots up the relevant SF configurations at SF.
+> **Note:** These steps are optional, if SFC orchestrator disovers that SFs are already created and existing.
+
+2.	Creation of service function path (SFP) using the created SFs and associated interfaces.
+
+A Service Function Path consists of:
+- A set of ports( in VNF environment) or interfaces ( in CNF environment) , that define the sequence of service functions 
+- A set of flow classifiers that specify the classified traffic flows entering the chain.
+
+This step creates a new chain policy with chain rules. Chain rules can include the identifier of a traffic flow, service characteristics, the SFC identifier and related information to route the packets along the chain. 
+
+Service characteristics can be application layer matching information (e.g., URL). Traffic flow identifier can be kind of traffic (e.g., Video, TCP, HTTP) flow need to be serviced. It can be specific Subscriber to apply service (e.g., parental control). The SFC identifier to steer the matched traffic along the SFP with SFC encapsulation. 
+
+a.	SFC orchestrator creates SFP with help of SDNC.
+
+b.	SDNC pushes the SFC traffic steering policies to SFF(s).
+
+c.	SFC classifier Policy provided for SFP to SFC classifier by SFC Controller. **Note:** not shown in call flow.
+
+<a name="3.5.1.3.2"></a>
+##### 3.5.1.3.2 Updation of Service Function Chain
+SFP or SFC can be updated for various reasons and some of them are :-
+- SFC controller monitors the SFP status and alerts SFC controller in case of not meeting SLA or some anamoly.
+- SFC design changes to update SF order, inclusion/removal of SFs
+- SFC Policy Rules changes
+
+<a name="3.5.1.3.3"></a>
+##### 3.5.1.3.3 Data Steering in Service Function Chain
+
+Figure 3-9 shows traffic steering along SFP.
+<p align="center"> <img src="../figures/ch03-model-sfc-data-flow.png" alt="Data steering in Service Function Chain" Title="Data steering in Service Function Chain" width="45%"/></p>
+<p align ="center"><b>Figure 3-9:</b> Data steering in Service Function Chain</p>
+
+- SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as SFC, UPF acts as SFC classifier.  UPF receives the classification policies from PCF (via SMF) as traffic steering policies. 
+- SFC classifier applies the SFC encapsulation (e.g., SCH, NSH) and routes traffic towards SFF, acts as entry point to SFP. The SFC Encapsulation provides, at a minimum, SFP identification, and is used by the SFC-aware functions, such as the SFF and SFC-aware SFs.
+- SFF based on SFC encapsulation routes the traffic to SF for service functionalities. 
+- SF updates the SFC encapsulation based on its policies for further services.
+- At end of SFP, SFC encapsulation is removed and packet is routed out of SFP.
+ 
+
 <a name="3.6"></a>
 ## 3.6 Storage
 The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
@@ -361,7 +423,7 @@ Storage also follows the alignment of separated virtual and physical resources o
 The following diagram presents an example of the realization of the reference model, where a virtual infrastructure layer contains three coexisting but different types of implementation: a typical IaaS using VMs and a hypervisor for virtualisation, a CaaS on VM/hypervisor, and a CaaS on bare metal. This diagram is presented for illustration purposes only and it does not preclude validity of many other different combinations of implementation types. Note that the model enables several potentially different controllers orchestrating different type of resources (virtual and/or hardware). Management clients can manage virtual resources via Virtual Infrastructure Manager (Container Infrastructure Service Manager for CaaS, or Virtual Infrastructure Manager for IaaS), or alternatively hardware infrastructure resources via hardware infrastructure manager.  The latter situation may occur for instance when an orchestrator (an example of a management client) is involved in provisioning the physical network resources with the assistance of the controllers. Also, this realization example would enable implementation of a programmable fabric.
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
-<p align="center"><b>Figure 3-6:</b> Reference model realization example</p>
+<p align="center"><b>Figure 3-10:</b> Reference model realization example</p>
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
 
@@ -384,7 +446,7 @@ Accelerator technologies can be categorized depending on where they are realized
 <p align="center"><b>Table 3-6:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
-<p align="center"><b>Figure 3-7:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+<p align="center"><b>Figure 3-11:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
@@ -392,7 +454,7 @@ Accelerator technologies can be categorized depending on where they are realized
 Figure 3-8 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
-<p align="center"><b>Figure 3-8:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-12:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
 
@@ -450,7 +512,7 @@ Programmable SmartNIC accelerators can come as programmable in-line adapters (ty
 There are two main types of Smart NICs that can accelerate network functions in-line between CPU and Ethernet ports of servers. The simpler types have a configurable or programmable packet pipeline that can implement offload for the infrastructure virtual switching or part of an application functions data plane. The more advanced type, often called Data Processing Unit (DPU), have a programmable pipeline and some strong CPU cores that simultaneously can implement underlay networking separation and trusted forwarding functions, infrastructure virtual switching data and control plane as well as part of an application functions control plane.
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
-<p align="center"><b>Figure 3-9:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-13:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 #### Simple SmartNIC
 
