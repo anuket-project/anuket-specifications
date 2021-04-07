@@ -15,6 +15,7 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Hardware Infrastructure Resources](#3.4)
   * [3.4.1 Hardware Acceleration Resources](#3.4.1)
+  * [3.4.2 Time Sensitive Workloads](#3.4.2)
 * [3.5 Network](#3.5)
   * [3.5.1 Service Function Chaining](#3.5.1)
 * [3.6 Storage](#3.6)
@@ -258,6 +259,8 @@ Hardware Accelerators can be used to offload software execution for purpose of a
 
 More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
 
+<a name="3.4.2"></a>
+### 3.4.2 Time Sensitive Workloads
 
 <a name="3.5"></a>
 ## 3.5 Network
