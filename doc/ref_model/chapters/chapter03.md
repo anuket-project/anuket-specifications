@@ -15,7 +15,7 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Hardware Infrastructure Resources](#3.4)
   * [3.4.1 Hardware Acceleration Resources](#3.4.1)
-  * [3.4.2 Time Sensitive Workloads](#3.4.2)
+  * [3.4.2 Time Sensitive Networking](#3.4.2)
 * [3.5 Network](#3.5)
   * [3.5.1 Service Function Chaining](#3.5.1)
 * [3.6 Storage](#3.6)
@@ -30,6 +30,7 @@
   * [3.8.7 SmartNICs](#3.8.7)
   * [3.8.8 Smart Switches](#3.8.8)
   * [3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration](#3.8.9)
+* [3.9 Time Sensitive Networking](#3.9)
 
 It is necessary to clearly define the infrastructure resources and their capabilities a shared cloud infrastructure (network function virtualisation infrastructure, NFVI) will provide for hosting workloads including virtual network functions (VNFs) and/or cloud-native network functions (CNFs). The lack of a common understanding of which resources and corresponding capabilities a suitable cloud infrastructure should provide may lead to several issues which could negatively impact the time and the cost for on-boarding and maintaining these solutions on top of a virtualised infrastructure.
 
@@ -260,7 +261,21 @@ Hardware Accelerators can be used to offload software execution for purpose of a
 More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
 
 <a name="3.4.2"></a>
-### 3.4.2 Time Sensitive Workloads
+### 3.4.2 Time Sensitive Networking
+
+Many network function have time sensativity for processing and require high precision synchronized clock for the virtialization/containerization platform.  Subset of these, like RAN, in addition require support for Synchronous Ethernet as well.
+
+| Reason for using Synchronous Precision Clock | Example | Comment |
+|---|---|---|
+| Achieve technical requirements | Strict latency or timing accuracy | Must be done for precise low latency communication between data source and receiver |
+| Achieve technical requirements | Separation of processing pipeline | Ability to seperate RAN into RU, DU, CU on different or stretch clusters |
+| Improve cost/felxibility | Ability to innovate on different portions of Radio Network Functoins | Different latency requirements for different parts of RAN processing |
+
+<p align="center"><b>Table 3-6:</b> Reasons and examples for Precise Clock and Synchronization</p>
+
+Precise Synchronization require specialized card that can be on server or network device motherboard or be part of NIC of both.
+
+More details about Precision clock and Synchronization see [Section 3.9 Time Sensative Networking](chapter03.md#3.9).
 
 <a name="3.5"></a>
 ## 3.5 Network
@@ -355,10 +370,10 @@ Accelerator technologies can be categorized depending on where they are realized
 | SmartNIC | Programmable accelerator for vSwitch/vRouter, NF and/or Hardware Infrastructure | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 types/operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3 Reprogrammable |
 | SmartSwitch-based | Programmable Switch Fabric or TOR switch | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3. Reprogrammable |
 
-<p align="center"><b>Table 3-6:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
+<p align="center"><b>Table 3-7:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
-<p align="center"><b>Figure 3-7:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+<p align="center"><b>Figure 3-8:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
@@ -366,7 +381,7 @@ Accelerator technologies can be categorized depending on where they are realized
 Figure 3-8 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
-<p align="center"><b>Figure 3-8:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-9:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
 
@@ -424,7 +439,7 @@ Programmable SmartNIC accelerators can come as programmable in-line adapters (ty
 There are two main types of Smart NICs that can accelerate network functions in-line between CPU and Ethernet ports of servers. The simpler types have a configurable or programmable packet pipeline that can implement offload for the infrastructure virtual switching or part of an application functions data plane. The more advanced type, often called Data Processing Unit (DPU), have a programmable pipeline and some strong CPU cores that simultaneously can implement underlay networking separation and trusted forwarding functions, infrastructure virtual switching data and control plane as well as part of an application functions control plane.
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
-<p align="center"><b>Figure 3-9:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-10:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 #### Simple SmartNIC
 
@@ -474,3 +489,10 @@ Taking advantage of RM and RA environments with common capabilities, application
 - a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
 - b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
 - c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.
+
+<a name="3.9"></a>
+### 3.9 Time Sensitive Networking
+
+Openstack and Kuberentes clusters use NTP as the default time synchronization for the cluster. That level of synchronization is not sufficient for many network functions. Just like real-time operating system requirement instead of base OS so is precision timing for clock synchronization. Precision Time Protocol version 2 [PTP] (IEEE 1588-2019) is commonly used for Time-Sensative Networking. This allow synchronization in microsecond range rather than millisecond range that NTP provides.
+
+Some Network functions, like vDU, of vRAN, also require SyncE. Control, User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer SPlit Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements (ITU-T G.8275.2).
