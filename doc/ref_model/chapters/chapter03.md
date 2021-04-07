@@ -15,6 +15,7 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Hardware Infrastructure Resources](#3.4)
   * [3.4.1 Hardware Acceleration Resources](#3.4.1)
+  * [3.4.2. Test](#3.4.2)
 * [3.5 Network](#3.5)
   * [3.5.1 Service Function Chaining](#3.5.1)
 * [3.6 Storage](#3.6)
