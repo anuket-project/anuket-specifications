@@ -295,17 +295,17 @@ Profiles partition the infrastructure: an infrastructure object (host/node) **mu
 Node flavours are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain flavours may be relevant only for some profiles.
 The following **node flavours** are proposed:
 
-|Flavour Name|Applicable to Basic Profile|Applicable to High Performance Profile|Description|
-|---|---|---|---|
-|**High performance CPU**|❌|✅|Nodes that have predictable computing performance (or higher clock speed).|
+|Flavour Name|Applicable to Basic Profile|Applicable to High Performance Profile|Description|Notes|
+|---|---|---|---|---|
+|**High performance CPU**|❌|✅|Nodes that have predictable computing performance (or higher clock speed).|May use vanilla VIM/K8S scheduling instead.|
 |**High performance storage**|❌|✅|Nodes that have low storage latency and/or high storage IOPS|
-|**High memory**|❌|✅|Nodes that have high amounts of RAM.|
-|**GPU**|❌|✅|denotes the presence of a consumable GPU on the node|
+|**High memory**|❌|✅|Nodes that have high amounts of RAM.|May use vanilla VIM/K8S scheduling instead.|
+|**GPU**|❌|✅|denotes the presence of a consumable GPU on the node|May use Node Feature Discovery.|
 |**High speed network (25G)**|❌|✅|denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.|
 |**High speed network (100G)**|❌|✅|denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.|
-|**100ms Latency**|✅|✅|labels a host/node as located in a site that has less than 100ms of latency to the specified set of users (requires defining the users/locations this refers to).|
-|**50ms Latency**|✅|✅|labels a host/node as located in a site that has less than 50ms of latency to the specified set of users (requires defining the users/locations this refers to).|
-|**10ms Latency**|✅|✅|labels a host/node as located in a site that has less than 10ms of latency to the specified set of users (requires defining the users/locations this refers to).|
+|**100ms Latency**|✅|✅|labels a host/node as located in a site that has less than 100ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
+|**50ms Latency**|✅|✅|labels a host/node as located in a site that has less than 50ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
+|**10ms Latency**|✅|✅|labels a host/node as located in a site that has less than 10ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
 |**Low Latency** - Edge Sites|✅|✅|labels a host/node as located in an edge site, for workloads requiring low latency to final users or geographical distribution.|
 |**Fixed function accelerator**|❌|✅|labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter).|
 |**Firmware-programmable adapter**|❌|✅|labels a host/node that includes a consumable Firmware-programmable adapter (programmable, eg Network/storage FPGA with programmable part of firmware image).|
