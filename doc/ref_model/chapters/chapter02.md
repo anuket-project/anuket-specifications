@@ -298,7 +298,7 @@ The following **node flavours** are proposed:
 |Flavour Name|Applicable to Basic Profile|Applicable to High Performance Profile|Description|
 |---|---|---|---|
 |**High performance CPU**|❌|✅|Nodes that have predictable computing performance (or higher clock speed).|
-|**High performance storage**|||Nodes that have low storage latency and/or high storage IOPS|
+|**High performance storage**|❌|✅|Nodes that have low storage latency and/or high storage IOPS|
 |**High memory**|❌|✅|Nodes that have high amounts of RAM.|
 |**GPU**|❌|✅|denotes the presence of a consumable GPU on the node|
 |**High speed network (25G)**|❌|✅|denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.|
