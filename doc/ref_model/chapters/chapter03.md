@@ -11,10 +11,11 @@
    * [3.2.1.4 Virtual Network](#3.2.1.4)
    * [3.2.1.5 Availability Zone](#3.2.1.5)
   * [3.2.2 Virtual Infrastructure Manager](#3.2.2)
-* [3.3 Cloud Infrastructure Management](#3.3)
+* [3.3 Hardware Infrastructure Layer](#3.3)
+  * [3.3.1 Hardware Infrastructure Resources](#3.3.1)
+   * [3.3.1.1 Hardware Acceleration Resources](#3.3.1.1) 
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
-* [3.4 Hardware Infrastructure Resources](#3.4)
-  * [3.4.1 Hardware Acceleration Resources](#3.4.1)
+* [3.4 Left for future use](#3.4)
 * [3.5 Network](#3.5)
   * [3.5.1 Service Function Chaining](#3.5.1)
 * [3.6 Storage](#3.6)
@@ -192,8 +193,39 @@ The virtual infrastructure manager allows to:
 
 * **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
 <a name="3.3"></a>
-## 3.3 Cloud Infrastructure Management
-Cloud infrastructure provides the capability to manage virtual and hardware resources via Application Programmable Interfaces or graphical user interfaces.
+
+## 3.3 Hardware Infrastructure Layer
+
+<a name="3.3.1"></a>
+### 3.3.1 Hardware Infrastructure Resources
+Compute, Storage and Network resources serve as the foundation of the cloud infrastructure. They are exposed to and used by a set of networked Host Operating Systems in a cluster that normally handles the Virtualization Layer offering Virtual Machines or Containers where the application workloads (VNFs/CNFs) runs.
+
+<p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-5:</b> Cloud Infrastructure Hardware Resources</p>
+
+In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data center. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Center Operations team from the HW Infrastructure Management functions.
+
+Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
+
+An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts. The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
+This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Center.
+
+<a name="3.3.1.1"></a>
+#### 3.3.1.1 Hardware Acceleration Resources
+
+For a given software network function and software infrastructure, Hardware Acceleration resources can be used to achieve requirements or improve cost/performance. Following table gives reasons and examples for using Hardware Acceleration.
+
+| Reason for using Hardware Acceleration | Example | Comment |
+|---|---|---|
+| Achieve technical requirements | Strict latency or timing accuracy | Must be done by optimizing compute node; cannot be solved by adding more compute nodes |
+| Achieve technical requirements | Fit within power or space envelope | Done by optimizing cluster of compute nodes |
+| Improve cost/performance | Better cost and less power/cooling by improving performance per node | Used when functionality can be achieved through usage of accelerator or by adding more compute nodes |
+
+<p align="center"><b>Table 3-5:</b> Reasons and examples for using Hardware Acceleration</p>
+
+Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
+
+More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
 
 <a name="3.3.2"></a>
 ### 3.3.2 Hardware Infrastructure Manager
@@ -227,37 +259,8 @@ The hardware infrastructure manager needs to support the following functional as
 * **Additional Management Functions**: include software and configuration life cycle management, identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 <a name="3.4"></a>
-## 3.4 Hardware Infrastructure Resources
-
-Compute, Storage and Network resources serve as the foundation of the cloud infrastructure. They are exposed to and used by a set of networked Host Operating Systems in a cluster that normally handles the Virtualization Layer offering Virtual Machines or Containers where the application workloads (VNFs/CNFs) runs.
-
-<p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-5:</b> Cloud Infrastructure Hardware Resources</p>
-
-In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data center. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Center Operations team from the HW Infrastructure Management functions.
-
-Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
-
-An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts. The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
-This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Center.
-
-<a name="3.4.1"></a>
-### 3.4.1 Hardware Acceleration Resources
-
-For a given software network function and software infrastructure, Hardware Acceleration resources can be used to achieve requirements or improve cost/performance. Following table gives reasons and examples for using Hardware Acceleration.
-
-| Reason for using Hardware Acceleration | Example | Comment |
-|---|---|---|
-| Achieve technical requirements | Strict latency or timing accuracy | Must be done by optimizing compute node; cannot be solved by adding more compute nodes |
-| Achieve technical requirements | Fit within power or space envelope | Done by optimizing cluster of compute nodes |
-| Improve cost/performance | Better cost and less power/cooling by improving performance per node | Used when functionality can be achieved through usage of accelerator or by adding more compute nodes |
-
-<p align="center"><b>Table 3-5:</b> Reasons and examples for using Hardware Acceleration</p>
-
-Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
-
-More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
-
+## 3.4 Left for future use
+This section is left blank for future use
 
 <a name="3.5"></a>
 ## 3.5 Network
