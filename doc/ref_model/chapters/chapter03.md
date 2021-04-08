@@ -275,7 +275,7 @@ Many network function have time sensativity for processing and require high prec
 
 Precise Synchronization require specialized card that can be on server or network device motherboard or be part of NIC of both.
 
-More details about Precision clock and Synchronization see [Section 3.9 Time Sensative Networking](chapter03.md#3.9).
+More details about Precision clock and Synchronization see [Section 3.9 Time Sensitive Networking](chapter03.md#3.9).
 
 <a name="3.5"></a>
 ## 3.5 Network
@@ -493,6 +493,6 @@ Taking advantage of RM and RA environments with common capabilities, application
 <a name="3.9"></a>
 ### 3.9 Time Sensitive Networking
 
-Openstack and Kuberentes clusters use NTP as the default time synchronization for the cluster. That level of synchronization is not sufficient for many network functions. Just like real-time operating system requirement instead of base OS so is precision timing for clock synchronization. Precision Time Protocol version 2 [PTP] (IEEE 1588-2019) is commonly used for Time-Sensative Networking. This allow synchronization in microsecond range rather than millisecond range that NTP provides.
+Openstack and Kuberentes clusters use NTP as the default time synchronization for the cluster. That level of synchronization is not sufficient for many network functions. Just like real-time operating system requirement instead of base OS so is precision timing for clock synchronization. Precision Time Protocol version 2 [PTP] (IEEE 1588-2019) is commonly used for Time-Sensitive Networking. This allow synchronization in microsecond range rather than millisecond range that NTP provides.
 
 Some Network functions, like vDU, of vRAN, also require SyncE. Control, User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer SPlit Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements (ITU-T G.8275.2).
