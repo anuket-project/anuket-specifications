@@ -93,7 +93,7 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
 |`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
-|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The Kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
 
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 
@@ -142,7 +142,7 @@ A note on object storage:
 storage, as this is neither a native Kubernetes object, nor something that is
 required by CSI drivers.  Object storage is an application-level requirement
 that would ordinarily be provided by a highly scalable service offering rather
-than being something an individual Kubernetes cluster could offer.  
+than being something an individual Kubernetes Cluster could offer.  
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 
