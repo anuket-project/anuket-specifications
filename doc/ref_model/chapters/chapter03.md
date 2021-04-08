@@ -372,7 +372,7 @@ Storage also follows the alignment of separated virtual and physical resources o
 The following diagram presents an example of the realization of the reference model, where a virtual infrastructure layer contains three coexisting but different types of implementation: a typical IaaS using VMs and a hypervisor for virtualisation, a CaaS on VM/hypervisor, and a CaaS on bare metal. This diagram is presented for illustration purposes only and it does not preclude validity of many other different combinations of implementation types. Note that the model enables several potentially different controllers orchestrating different type of resources (virtual and/or hardware). Management clients can manage virtual resources via Virtual Infrastructure Manager (Container Infrastructure Service Manager for CaaS, or Virtual Infrastructure Manager for IaaS), or alternatively hardware infrastructure resources via hardware infrastructure manager.  The latter situation may occur for instance when an orchestrator (an example of a management client) is involved in provisioning the physical network resources with the assistance of the controllers. Also, this realization example would enable implementation of a programmable fabric.
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
-<p align="center"><b>Figure 3-6:</b> Reference model realization example</p>
+<p align="center"><b>Figure 3-8:</b> Reference model realization example</p>
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
 
@@ -395,15 +395,15 @@ Accelerator technologies can be categorized depending on where they are realized
 <p align="center"><b>Table 3-6:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
-<p align="center"><b>Figure 3-7:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+<p align="center"><b>Figure 3-9:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-8 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-10 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
-<p align="center"><b>Figure 3-8:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-10:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
 
@@ -461,7 +461,7 @@ Programmable SmartNIC accelerators can come as programmable in-line adapters (ty
 There are two main types of Smart NICs that can accelerate network functions in-line between CPU and Ethernet ports of servers. The simpler types have a configurable or programmable packet pipeline that can implement offload for the infrastructure virtual switching or part of an application functions data plane. The more advanced type, often called Data Processing Unit (DPU), have a programmable pipeline and some strong CPU cores that simultaneously can implement underlay networking separation and trusted forwarding functions, infrastructure virtual switching data and control plane as well as part of an application functions control plane.
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
-<p align="center"><b>Figure 3-9:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-11:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 #### Simple SmartNIC
 
