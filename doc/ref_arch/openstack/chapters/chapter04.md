@@ -607,6 +607,17 @@ Placement has services running on the control node:
 
 Barbican usage provides a means to fulfill security requirements such as sec.sys.012 “The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component” and sec.ci.001 “The Platform **must** support Confidentiality and Integrity of data at rest and in transit.”.
 
+<!--
+ #### 4.3.1.12 Cyborg
+
+ Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
+ -	cyborg-api
+ -	cyborg-conductor
+ -	cyborg-db
+ - cyborg-agent  which runs on compute nodes
+ - *-driver drivers which run on compute nodes and depend on the acceleration hardware
+ -->
+
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc. Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.

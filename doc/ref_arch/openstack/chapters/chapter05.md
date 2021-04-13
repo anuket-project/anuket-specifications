@@ -287,6 +287,9 @@ libraries.
 | Object Storage: Swift | https://docs.openstack.org/api-ref/object-store/     | v1              |                              |
 | Placement             | https://docs.openstack.org/api-ref/placement/        | v1              | 1.36                         |
 | Orchestration: Heat   | https://docs.openstack.org/api-ref/orchestration/v1/ | v1              |                              |
+<!--
+| Acceleration: Cyborg  | https://docs.openstack.org/api-ref/accelerator/v2/ | v2    |
+-->
 
 ### 5.3.2. Kubernetes Interfaces
 The Kubernetes APIs are available at https://kubernetes.io/docs/concepts/overview/kubernetes-api/.
