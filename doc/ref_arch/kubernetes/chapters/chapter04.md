@@ -88,42 +88,12 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
 
-<!--
-> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
-#1635
-
-
-
-This Reference Architecture also specifies:
-
-- Master nodes must run the following Kubernetes control plane services:
-    - kube-apiserver
-    - kube-scheduler
-    - kube-controller-manager
-- Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes if desired
-- Master node services, including etcd, and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
-- The following kubelet features must be enabled
-    - CPU Manager
-    - Device Plugin
-    - Topology Manager
-
-All kubelet features can be enabled/disabled by using the `feature-gates:` section in the kubelet config file.  e.g.
-```
-apiVersion: kubelet.config.k8s.io/v1beta1
-kind: KubeletConfiguration
-feature-gates:
-  CPUManager: true|false (BETA - default=true)
-  DevicePlugins: true|false (BETA - default=true)
-  TopologyManager: true|false (ALPHA - default=false)
-```
--->
-
 ## 4.4 Container runtimes
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
 |`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
-|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The Kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
 
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 
@@ -167,44 +137,12 @@ Architecture they must be implemented as per the following specifications:
 
 <p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
 
-<!--
-> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
-#1638
-
-As described in [chapter 3](./chapter03.md), storage in Kubernetes consists of three types of storage:
-1. Ephemeral storage that is used to execute the containers
-    - **Ephemeral storage follows the lifecycle of a container**
-    - See the [Container runtimes](#4.4) section above for more information how this meets the requirement for ephemeral storage for Pods
-1. Kubernetes Volumes, which are used to present additional storage to containers
-    - **A Volume follow the lifecycle of a Pod**
-    - This is a native Kubernetes capability and therefore `req.inf.stg.01` is supported by default
-    - This capability also delivers support for ephemeral storage although depending on the Volume Plugin used there may be additional steps required in order to remove data from disk (not all plugins manage the full lifecycle of the storage mounted using Volumes)
-1. Kubernetes Persistent Volumes, which are a subset of the above whose lifecycle persists beyond the lifetime of a Pod to allow for data persistence
-    - **Persistent Volumes have a lifecycle that is independent of Containers and/or Pods**
-    - This supports the requirement `req.inf.stg.01` for persistent storage for Pods
-
-Volume plugins are used in Kubernetes to allow for the use of a range of backend storage systems. There are two types of Volume plugin:
-1. In-tree
-    - These plugins are built, linked, compiled and shipped with the core Kubernetes binaries
-    - Therefore if a new backend storage system needs adding this is a change to the core Kubernetes code
-1. Out-of-tree
-    - These plugins allow new storage plugins to be created without any changes to the core Kubernetes code
-    - The Container Storage Interface (CSI) is such an out-of-tree plugin and many in-tree drivers are being migrated to use the CSI plugin instead (e.g. the [Cinder CSI plugin](https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/using-cinder-csi-plugin.md))
-    - In order to support CSI, the following feature gates must be enabled:
-      - `CSIDriverRegistry`
-      - `CSINodeInfo`
-    - In addition to these feature gates, a CSI driver must be used (as opposed to an in-tree volume plugin) - a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)
-    - In order to support ephemeral storage use through a CSI-compatible volume plugin, the `CSIInlineVolume` feature gate must be enabled
-    - In order to support Persistent Volumes through a CSI-compatible volume plugin, the `CSIPersistentVolume` feature gate must be enabled
-
-> In order to support automation and the separation of concerns between providers of a service and consumers of the service, Kubernetes Storage Classes should be used. Storage Classes allow a consumer of the Kubernetes platform to request Persistent Storage using a Persistent Volume Claim and for a Persistent Volume to be dynamically created based on the "class" that has been requested. This avoids having to grant `create`/`update`/`delete` permissions in RBAC to PersistentVolume resources, which are cluster-scoped rather than namespace-scoped (meaning an identity can manage all PVs or none).
--->
 A note on object storage:
 - This Reference Architecture does not include any specifications for object
 storage, as this is neither a native Kubernetes object, nor something that is
 required by CSI drivers.  Object storage is an application-level requirement
 that would ordinarily be provided by a highly scalable service offering rather
-than being something an individual Kubernetes cluster could offer.  
+than being something an individual Kubernetes Cluster could offer.  
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 

@@ -45,7 +45,7 @@ The following functionalities are recommended for securing Kubernetes platforms:
 - How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
   - Tenants without hard multi-tenancy requirements (multiple development teams
     in the same organisation) separated from each other by namespaces
-  - For strict multi tenancy, a dedicated Kubernetes cluster per tenant should be used
+  - For strict multi tenancy, a dedicated Kubernetes Cluster per tenant should be used
 - Integration with other security ecosystem like monitoring and alerting tools
 
 ## 5.2 Principles
@@ -57,8 +57,8 @@ The following are core principles to consider when securing cloud native applica
 - Containers orchestration (Kubernetes) secured with administrative boundaries
 between tenants
   - Use Namespaces to establish security boundaries between tenants
-  - Create and define cluster network policies
-  - Run a cluster-wide pod security policy
+  - Create and define Cluster network policies
+  - Run a Cluster-wide pod security policy
   - Turn on Audit Logging
   - Separate sensitive workloads using namespaces
   - Secure tenant metadata Access
@@ -74,7 +74,7 @@ access to Kubernetes nodes while avoiding direct access to nodes for operational
 activities including debugging, troubleshooting, and other tasks.
 
 ## 5.4 Authentication & Authorisation
-Secure all connections to a Kubernetes cluster. Adopt the following security
+Secure all connections to a Kubernetes Cluster. Adopt the following security
 authentication mechanisms:
  - Configure user roles and access levels to provide segregation of duties (RBAC)
  - Use multi-factor authentication for all administrative access
@@ -99,7 +99,7 @@ Network Policies allow Kubernetes managers to control network access into and
 out of the cloud native applications. It is recommended to have a well defined
 ingress and egress policy for cloud native applications. It is also important to
 modify the default network policies, such as blocking or allowing traffic from
-other namespaces or clusters while ensuring the namespaces/clusters are running
+other namespaces or Clusters while ensuring the namespaces/Clusters are running
 with policy support enabled.
 
 ## 5.8 Run latest Version
@@ -110,9 +110,9 @@ important to take advantage of these fixes and patches.
 ## 5.9 Secure Platform Metadata
 Kubernetes metadata contain sensitive information including kubelet admin
 credentials. It is recommended to secure them using encryption to avoid this
-being stolen and use to for escalated privileges in the the cluster.
+being stolen and use to for escalated privileges in the the Cluster.
 
-- Limit discovery by restricting services and users that can access cluster
+- Limit discovery by restricting services and users that can access Cluster
 management metadata on configuration, container application, and nodes
 - Ensure all metadata is encrypted and network access runs over TLS connections
 
@@ -127,7 +127,7 @@ The following are recommended best practices for container run-time:
 - Use container-aware run-time defence tools
 - Ensure all running cloud native applications are from secure and verified images
 - Cloud native applications are not run with root privileges
-- Ensure sensitive workloads are properly segmented by namespaces or cluster to
+- Ensure sensitive workloads are properly segmented by namespaces or Cluster to
 mitigate the scope of compromise.
 
 ## 5.12  Secrets Management
@@ -194,7 +194,7 @@ They following are security recommendations for orchestration manager:
 
 - Cluster management Network isolation can help protect the master node and
 control where administrative commands can run. Use network isolation techniques,
-configure RBAC on the cluster manager and configure node service accounts
+configure RBAC on the Cluster manager and configure node service accounts
 following the principle of least privilege.
 - Ensure that access control is applied to registries requiring unique credentials,
 to limit who can control the build or add images.
@@ -211,12 +211,12 @@ anomaly detection for preventing malicious activity
 effects of potential attacks.
 - Enable integration with other security ecosystem (SIEM)
 - Isolate environments (Dev /test /Production) from other environments within the
-cluster.
+Cluster.
 - Create administrative boundaries between resources using namespace and avoid
 using default namespaces.
 - Enable Seccomp to ensure that the workloads have restricted actions available
 within the container application.
-- Limit discovery by restricting services and users that can access cluster
+- Limit discovery by restricting services and users that can access Cluster
 management metadata on configuration, containers and nodes
 
 ## 5.15  Security Perimeters
@@ -237,7 +237,7 @@ software and all of its dependencies. The containers need to be prevented from
 accessing the underlying OS like loading of kernel modules, mounting of
 directories of underlying OS etc and ensuring that they don't
 run in privileged mode.
-- **Pods**: A Pod represents a set of running containers on your cluster.
+- **Pods**: A Pod represents a set of running containers on your Cluster.
 Kubernetes inherently offers pod security policies that define a set of
 conditions that a pod needs to run with in order to be accepted into the system.
 These policies help in ensuring the necessary checks for running the pods.
@@ -266,13 +266,13 @@ for example by kernel namespaces.
 
 The primary isolation mechanism in Kubernetes environment should be VM or
 physical machine based. This implies that multiple cloud native applications
-should not be deployed together in the same Kubernetes cluster - unless these
+should not be deployed together in the same Kubernetes Cluster - unless these
 applications have been planned and verified to co-exist. Thus, the default is to
 allocate one namespace per Cloud Native Network Function (CNF).
 
 ### 5.16.2 Container Isolation in Kubernetes Cluster
 #### 5.16.2.1 Namespaces  
 Kubernetes namespaces should be used to provide resource isolation within a
-Kubernetes cluster. They should not be used to isolate different steps in the
+Kubernetes Cluster. They should not be used to isolate different steps in the
 deployment process like Development, Production, or Testing. The most reliable
-separation is achieved by deploying sensitive workloads into dedicated clusters.
+separation is achieved by deploying sensitive workloads into dedicated Clusters.
