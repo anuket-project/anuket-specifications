@@ -15,8 +15,8 @@
 Problem statement: A single Kubernetes Cluster does not provide hard multitenancy* by design. Within a Cluster, Kubernetes Namespace is a mechanism to provide Soft isolation multitenancy**.
 A Kubernetes Namespace does provide isolation by means of role based access control (RBAC), Resource Isolation and Network Policy, however they are still within the same trust domain and a potential breach of Cluster Admin Role could lead to the Blast Radius across the entire Cluster and all its Kubernetes Namespaces.
 So there is a need to define various use cases or ways to build Multitenancy Deployment Models and define the Best Practices to secure each Model.
-Kubernetes Namespace is a logical representation of namespace(boundary for resources) within the Kubernetes Cluster.
-This is different from the linux namespaces which is defined at the operating system kernel level (Refer: https://en.wikipedia.org/wiki/Linux_namespaces).
+Kubernetes Namespace is a logical representation of namespace (boundary for resources) within the Kubernetes Cluster.
+This is different from the Linux namespaces which is defined at the operating system kernel level (Refer: https://en.wikipedia.org/wiki/Linux_namespaces).
 <p align="left"><img src="../figures/Model2-cluster-isolation.png" alt="scope" title="Scope" width="50%"/></p>
 <p align="left"><img src="../figures/Model1-ns.png" alt="scope" title="Scope" width="50%"/></p>
 Use cases:
@@ -44,4 +44,4 @@ The scope is to identify the solution area which is needed to secure the CNF wor
 
 "*" hard multitenancy: can be defined as workload isolation mechanism in which the workloads do not share the same Cluster resources and are isolated at Cluster level. So typically a seperate Cluster for each tenant could be considered as hard isolation.
 
-"**" soft multitenancy is a mechanism in which the same Kubernetes Cluster is being shared between different tenants, like using namespaces to isolate the tenants.
+"**" soft multitenancy is a mechanism in which the same Kubernetes Cluster is being shared between different tenants, like using Namespaces to isolate the tenants.
