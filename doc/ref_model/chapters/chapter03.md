@@ -263,13 +263,12 @@ More details about Hardware Acceleration are in [Section 3.8 Hardware Accelerati
 <a name="3.4.2"></a>
 ### 3.4.2 Time Sensitive Networking
 
-Many network function have time sensativity for processing and require high precision synchronized clock for the virtialization/containerization platform.  Subset of these, like RAN, in addition require support for Synchronous Ethernet as well.
+Many network function have time sensativity for processing and require high precision synchronized clock for the Cloud Infrastructure.  Subset of these, like RAN, in addition require support for Synchronous Ethernet as well.
 
 | Reason for using Synchronous Precision Clock | Example | Comment |
 |---|---|---|
 | Achieve technical requirements | Strict latency or timing accuracy | Must be done for precise low latency communication between data source and receiver |
 | Achieve technical requirements | Separation of processing pipeline | Ability to seperate RAN into RU, DU, CU on different or stretch clusters |
-| Improve cost/felxibility | Ability to innovate on different portions of Radio Network Functoins | Different latency requirements for different parts of RAN processing |
 
 <p align="center"><b>Table 3-6:</b> Reasons and examples for Precise Clock and Synchronization</p>
 
