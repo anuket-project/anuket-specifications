@@ -3,16 +3,19 @@
 
 ## Table of Contents
 * [3.1 Model](#3.1)
-* [3.2 Virtual Resources](#3.2)
-  * [3.2.1 Tenant](#3.2.1)
-  * [3.2.2 Compute](#3.2.2)
-  * [3.2.3 Storage](#3.2.3)
-  * [3.2.4 Availability Zone](#3.2.4)
-* [3.3 Cloud Infrastructure Management](#3.3)
-  * [3.3.1 Virtual Infrastructure Manager](#3.3.1)
+* [3.2 Virtual Infrastructure Layer](#3.2)
+  * [3.2.1 Virtual Resources](#3.2.1)
+    * [3.2.1.1 Tenant](#3.2.1.1)
+    * [3.2.1.2 Virtual Compute](#3.2.1.2)
+    * [3.2.1.3 Virtual Storage](#3.2.1.3)
+    * [3.2.1.4 Virtual Network](#3.2.1.4)
+    * [3.2.1.5 Availability Zone](#3.2.1.5)
+  * [3.2.2 Virtual Infrastructure Manager](#3.2.2)
+* [3.3 Hardware Infrastructure Layer](#3.3)
+  * [3.3.1 Hardware Infrastructure Resources](#3.3.1)
+    * [3.3.1.1 Hardware Acceleration Resources](#3.3.1.1) 
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
-* [3.4 Hardware Infrastructure Resources](#3.4)
-  * [3.4.1 Hardware Acceleration Resources](#3.4.1)
+* [3.4 Left for future use](#3.4)
 * [3.5 Network](#3.5)
   * [3.5.1 Service Function Chaining](#3.5.1)
 * [3.6 Storage](#3.6)
@@ -64,7 +67,9 @@ The functionalities of each layer are as follows:
 - **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run within a virtual machine (VM) or as a set of containers.
 
 <a name="3.2"></a>
-## 3.2 Virtual Resources
+## 3.2 Virtual Infrastructure Layer
+<a name="3.2.1"></a>
+### 3.2.1 Virtual Resources
 
 The virtual infrastructure resources provided by the Cloud Infrastructure can be grouped into four categories as shown in the diagram below:
 
@@ -78,8 +83,8 @@ The virtual infrastructure resources provided by the Cloud Infrastructure can be
 
 The virtualised infrastructure resources related to these categories are listed below.
 
-<a name="3.2.1"></a>
-### 3.2.1 Tenant
+<a name="3.2.1.1"></a>
+#### 3.2.1.1 Tenant
 
 A cloud infrastructure needs to be capable of supporting multiple tenants and has to isolate sets of infrastructure resources dedicated to specific workloads (VNF/CNF) from one another. Tenants represent an independently manageable logical pool of compute, storage and network resources abstracted from physical hardware.
 
@@ -98,8 +103,8 @@ _**Example**: a tenant within an OpenStack environment or a Kubernetes cluster._
 
 <p align="center"><b>Table 3-1:</b> Attributes of a tenant</p>
 
-<a name="3.2.2"></a>
-### 3.2.2 Compute
+<a name="3.2.1.2"></a>
+#### 3.2.1.2 Virtual Compute
 A virtual machine or a container/pod is used by a tenant capable of hosting the application components of workloads (VNFs). A virtual compute therefore requires a tenant context and, since it will need to communicate with other communication partners, it is assumed that the networks have been provisioned in advance.
 
 _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile for NFV._
@@ -116,8 +121,8 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 
 <p align="center"><b>Table 3-2:</b> Attributes of compute resources</p>
 
-<a name="3.2.3"></a>
-### 3.2.3 Storage
+<a name="3.2.1.3"></a>
+#### 3.2.1.3 Virtual Storage
 
 A workload can request different types of storage based on data longevity: persistent or ephemeral storage.
 Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
@@ -140,9 +145,11 @@ Storage resources have the following attributes:
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
+<a name="3.2.1.4"></a>
+#### 3.2.1.4 Virtual Network
 
-<a name="3.2.4"></a>
-### 3.2.4 Availability Zone
+<a name="3.2.1.5"></a>
+#### 3.2.1.5 Availability Zone
 An availability zone is a logical pool of physical resources (e.g. compute, block storage, and network).  These logical pools segment the physical resources of a cloud based on factors chosen by the cloud operator. The cloud operator may create availability zones based on location (rack, datacenter), or indirect failure domain dependencies like power sources.  Workloads can leverage availability zones to utilise multiple locations or avoid sharing failure domains for a workload, and thus increase its fault-tolerance.
 
 As a logical group with operator-specified criteria, the only mandatory attribute for an Availability Zone is the name.
@@ -153,12 +160,9 @@ As a logical group with operator-specified criteria, the only mandatory attribut
 
 <p align="center"><b>Table 3-4:</b> Attributes of availability zones</p>
 
-<a name="3.3"></a>
-## 3.3 Cloud Infrastructure Management
-Cloud infrastructure provides the capability to manage virtual and hardware resources via Application Programmable Interfaces or graphical user interfaces.
 
-<a name="3.3.1"></a>
-### 3.3.1 Virtual Infrastructure Manager
+<a name="3.2.2"></a>
+### 3.2.2 Virtual Infrastructure Manager
 The virtual infrastructure manager allows to:
 
 * setup, manage and delete tenants,
@@ -188,6 +192,40 @@ The virtual infrastructure manager allows to:
 * **Storage Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware storage resources
 
 * **Network Resources Manager**: provides a mechanism to provision virtual resources with the help of hardware network resources
+<a name="3.3"></a>
+
+## 3.3 Hardware Infrastructure Layer
+
+<a name="3.3.1"></a>
+### 3.3.1 Hardware Infrastructure Resources
+Compute, Storage and Network resources serve as the foundation of the cloud infrastructure. They are exposed to and used by a set of networked Host Operating Systems in a cluster that normally handles the Virtualization Layer offering Virtual Machines or Containers where the application workloads (VNFs/CNFs) runs.
+
+<p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
+<p align="center"><b>Figure 3-5:</b> Cloud Infrastructure Hardware Resources</p>
+
+In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data center. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Center Operations team from the HW Infrastructure Management functions.
+
+Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
+
+An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts. The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
+This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Center.
+
+<a name="3.3.1.1"></a>
+#### 3.3.1.1 Hardware Acceleration Resources
+
+For a given software network function and software infrastructure, Hardware Acceleration resources can be used to achieve requirements or improve cost/performance. Following table gives reasons and examples for using Hardware Acceleration.
+
+| Reason for using Hardware Acceleration | Example | Comment |
+|---|---|---|
+| Achieve technical requirements | Strict latency or timing accuracy | Must be done by optimizing compute node; cannot be solved by adding more compute nodes |
+| Achieve technical requirements | Fit within power or space envelope | Done by optimizing cluster of compute nodes |
+| Improve cost/performance | Better cost and less power/cooling by improving performance per node | Used when functionality can be achieved through usage of accelerator or by adding more compute nodes |
+
+<p align="center"><b>Table 3-5:</b> Reasons and examples for using Hardware Acceleration</p>
+
+Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
+
+More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
 
 <a name="3.3.2"></a>
 ### 3.3.2 Hardware Infrastructure Manager
@@ -221,37 +259,8 @@ The hardware infrastructure manager needs to support the following functional as
 * **Additional Management Functions**: include software and configuration life cycle management, identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 <a name="3.4"></a>
-## 3.4 Hardware Infrastructure Resources
-
-Compute, Storage and Network resources serve as the foundation of the cloud infrastructure. They are exposed to and used by a set of networked Host Operating Systems in a cluster that normally handles the Virtualization Layer offering Virtual Machines or Containers where the application workloads (VNFs/CNFs) runs.
-
-<p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
-<p align="center"><b>Figure 3-5:</b> Cloud Infrastructure Hardware Resources</p>
-
-In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data center. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Center Operations team from the HW Infrastructure Management functions.
-
-Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
-
-An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts. The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
-This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Center.
-
-<a name="3.4.1"></a>
-### 3.4.1 Hardware Acceleration Resources
-
-For a given software network function and software infrastructure, Hardware Acceleration resources can be used to achieve requirements or improve cost/performance. Following table gives reasons and examples for using Hardware Acceleration.
-
-| Reason for using Hardware Acceleration | Example | Comment |
-|---|---|---|
-| Achieve technical requirements | Strict latency or timing accuracy | Must be done by optimizing compute node; cannot be solved by adding more compute nodes |
-| Achieve technical requirements | Fit within power or space envelope | Done by optimizing cluster of compute nodes |
-| Improve cost/performance | Better cost and less power/cooling by improving performance per node | Used when functionality can be achieved through usage of accelerator or by adding more compute nodes |
-
-<p align="center"><b>Table 3-5:</b> Reasons and examples for using Hardware Acceleration</p>
-
-Hardware Accelerators can be used to offload software execution for purpose of accelerating tasks to achieve faster performance, or offloading the tasks to another execution entity to get more predictable execution times, efficient handling of the tasks or separation of authority regarding who can control the tasks execution.
-
-More details about Hardware Acceleration are in [Section 3.8 Hardware Acceleration Abstraction](chapter03.md#3.8).
-
+## 3.4 Left for future use
+This section is left blank for future use
 
 <a name="3.5"></a>
 ## 3.5 Network
@@ -306,6 +315,7 @@ SFC utilizes a service-specific overlay that creates the service topology.  The 
 In a typical overlay network, packets are routed based on networking principles and use a suitable path for the packet to be routed from a source to its destination. 
 
 However, in a service-specific overlay network, packets are routed based on policies. This requires specific support at network level such as  at CNI in CNF environment to provide such specific routing mechanism.
+
 
 <a name="3.5.1.2"></a>
 #### 3.5.1.2 SFC Architecture
@@ -403,7 +413,6 @@ Figure 3-9 shows traffic steering along SFP.
 - SFF based on SFC encapsulation routes the traffic to SF for service functionalities. 
 - SF updates the SFC encapsulation based on its policies for further services.
 - At end of SFP, SFC encapsulation is removed and packet is routed out of SFP.
- 
 
 <a name="3.6"></a>
 ## 3.6 Storage
@@ -423,6 +432,7 @@ Storage also follows the alignment of separated virtual and physical resources o
 The following diagram presents an example of the realization of the reference model, where a virtual infrastructure layer contains three coexisting but different types of implementation: a typical IaaS using VMs and a hypervisor for virtualisation, a CaaS on VM/hypervisor, and a CaaS on bare metal. This diagram is presented for illustration purposes only and it does not preclude validity of many other different combinations of implementation types. Note that the model enables several potentially different controllers orchestrating different type of resources (virtual and/or hardware). Management clients can manage virtual resources via Virtual Infrastructure Manager (Container Infrastructure Service Manager for CaaS, or Virtual Infrastructure Manager for IaaS), or alternatively hardware infrastructure resources via hardware infrastructure manager.  The latter situation may occur for instance when an orchestrator (an example of a management client) is involved in provisioning the physical network resources with the assistance of the controllers. Also, this realization example would enable implementation of a programmable fabric.
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
+
 <p align="center"><b>Figure 3-10:</b> Reference model realization example</p>
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
@@ -446,14 +456,17 @@ Accelerator technologies can be categorized depending on where they are realized
 <p align="center"><b>Table 3-6:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
+
 <p align="center"><b>Figure 3-11:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-8 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-10 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
+
 <p align="center"><b>Figure 3-12:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
@@ -512,7 +525,9 @@ Programmable SmartNIC accelerators can come as programmable in-line adapters (ty
 There are two main types of Smart NICs that can accelerate network functions in-line between CPU and Ethernet ports of servers. The simpler types have a configurable or programmable packet pipeline that can implement offload for the infrastructure virtual switching or part of an application functions data plane. The more advanced type, often called Data Processing Unit (DPU), have a programmable pipeline and some strong CPU cores that simultaneously can implement underlay networking separation and trusted forwarding functions, infrastructure virtual switching data and control plane as well as part of an application functions control plane.
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
+
 <p align="center"><b>Figure 3-13:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+
 
 #### Simple SmartNIC
 
