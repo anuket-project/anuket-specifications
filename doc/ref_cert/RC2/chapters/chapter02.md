@@ -149,7 +149,7 @@ deployments. Then all the following labels are defacto skipped in
   - alpha
 
 [End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
-basically respectivelly asks focus and fix regexes to select or to blacklist
+basically respectively asks focus and fix regexes to select or to blacklist
 single tests:
   - focus basically matches SIG
   - skip matches the mandatory SIG labels listed in
