@@ -1,11 +1,13 @@
 [<< Back](../../ref_model)
-# 2 Workload Requirements & Analysis
+# 2 Workload Requirements & Analysis <!-- omit in toc -->
 
-## Table of Contents
-* [2.1 Workloads Collateral](#2.1)
-* [2.2 Use Cases](#2.2)
-* [2.3 Analysis](#2.3)
-* [2.4 Cloud Infrastructure Profiles](#2.4)
+## Table of Contents <!-- omit in toc -->
+- [2.1 Workloads Collateral](#21-workloads-collateral)
+- [2.2 Use cases](#22-use-cases)
+- [2.3 Analysis](#23-analysis)
+- [2.4 Node Profiles & Workload Profiles](#24-node-profiles--workload-profiles)
+  - [2.4.1 Node profiles (top-level partitions)](#241-node-profiles-top-level-partitions)
+  - [2.4.2 Node flavours (specialisations)](#242-node-flavours-specialisations)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
 
@@ -112,9 +114,9 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     - DNS: Domain Name System
   - Management Plane
     - NMS: Network Management System
-    
-    
-    
+
+
+
 <a name="2.2"></a>    
 ## 2.2 Use cases
 
@@ -125,72 +127,72 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
 - **Use Case #1 - Edge CDN with eMBB Core Network Slicing**
 
   - **Business Objectives**
-  
+
       Monetizing 5G by provisioning eMBB network slice with distributed Content Delivery Network (CDN) as a service, that enables Ultra-HD (UHD) streaming, Video Optimization, caching for large files, and other capabilities that can either bundled by the Network Slice offering or implicitly enabled by the operator.
 
   - **Targeted Segments**
-  
+
     - B2C (Targeting high Tier Packages & Bundles)
     - Content Owners (Potential revenue sharing model)
     - Mobile Virtual Network Operators (MVNOs - Wholesale)
     - Stadiums and Venues.
 
   - **Architecture**
-     <p align="center"><img src="../figures/Fig2-1-uc1.png" alt="" Title="Edge CDN with eMBB Core Network Slicing" width="65%"/></p> 
+     <p align="center"><img src="../figures/Fig2-1-uc1.png" alt="" Title="Edge CDN with eMBB Core Network Slicing" width="65%"/></p>
      <p align="center"><b>Figure 2-1:</b> Edge CDN with eMBB Core Network Slicing.</p>
-     
-    
+
+
 - **Use Case #2 - Edge Private 5G with Core Network Slicing**
 
   - **Business Objectives**
-  
+
       Private 5G is considered one of the most anticipated Business use cases in the coming few years enabling Mobile Operators to provide a standalone private Mobile Network to enterprises that may include all the ingredients of PLMN such as Radio, Core, Infrastructure & Services covering the business requirements in terms of security, performance, reliability, & availability.
 
   - **Targeted Segments**
-  
+
       - Governmental Sectors & Public Safety (Mission critical applications)
       - Factories and Industry sector.
-      - Enterprises with Business-critical applications. 
+      - Enterprises with Business-critical applications.
       - Enterprises with strict security requirements with respect to assets reachability.
       - Enterprises with strict KPIs requirements that mandate the on-premise deployment.
 
   - **Architecture**
-     <p align="center"><img src="../figures/Fig2-2-uc2.png" alt="" Title="Edge Private 5G with Core Network Slicing" width="65%"/></p> 
+     <p align="center"><img src="../figures/Fig2-2-uc2.png" alt="" Title="Edge Private 5G with Core Network Slicing" width="65%"/></p>
      <p align="center"><b>Figure 2-2:</b> Edge Private 5G with Core Network Slicing.</p>
-      
-      
+
+
        - There are multiple flavours for Private 5G deployments or NPN, Non-Public Network as defined by 3GPP.
-        
+
        - The use case addresses the technical realization of NPN as a Network Slice of a PLMN as per Annex D – 3GPP TS 23.501 R16 and not covering the other scenarios of deployment.
-        
-       - The use case assumes a network slice that is constructed from a single UPF deployed on Customer premises while sharing the 5G Control Plane (AMF, SMF, & other CP Network Functions) with the PLMN. 
-        
+
+       - The use case assumes a network slice that is constructed from a single UPF deployed on Customer premises while sharing the 5G Control Plane (AMF, SMF, & other CP Network Functions) with the PLMN.
+
        - The use case doesn’t cover the requirements of the private Application Servers (ASs) as they may vary with each customer setup.
-        
+
        - Hosting the CU/DU on-Customer Infrastructure depends on the enterprise offering by the Mobile Operator and the selected Private 5G setup.
-        
+
        - The Edge Cloud Infrastructure can be governed by the client or handled by the Service Provider (Mobile Operator) as part of Managed-services model.
 
 - **Use Case #3 - Edge Automotive (V2X) with uRLLC Core Network Slicing**
 
   - **Business Objectives**
 
-      The V2X (Vehicle-to-everything) set of use cases provides a 5G monetization framework for Mobile Operators developing 5G URLLC business use cases targeting the Automotive Industry, Smart City Regulators, & Public Safety. 
-      
+      The V2X (Vehicle-to-everything) set of use cases provides a 5G monetization framework for Mobile Operators developing 5G URLLC business use cases targeting the Automotive Industry, Smart City Regulators, & Public Safety.
+
   - **Targeted Segments**
 
       - Automotive Industry.
-      - Governmental Departments (Smart Cities, Transport, Police, Emergency Services, etc.). 
+      - Governmental Departments (Smart Cities, Transport, Police, Emergency Services, etc.).
       - Private residencies (Compounds, Hotels and Resorts).
       - Enterprise and Industrial Campuses.
 
   - **Architecture**
-     <p align="center"><img src="../figures/Fig2-3-uc3.png" alt="" Title="Edge Automotive (V2X) with uRLLC Core Network Slicing" width="65%"/></p> 
+     <p align="center"><img src="../figures/Fig2-3-uc3.png" alt="" Title="Edge Automotive (V2X) with uRLLC Core Network Slicing" width="65%"/></p>
      <p align="center"><b>Figure 2-3:</b>  Edge Automotive (V2X) with uRLLC Core Network Slicing.</p>
-    
-    
+
+
        - 5G NR-V2X is a work item in 3GPP Release 16 that is not completed yet by the time of writing this document.
-        
+
        - C-V2X, Cellular V2X has two modes of communications
          - Direct Mode (Commonly described by SL, Sidelink by 3GPP): This includes the V2V, V2I, & V2P using a direct Interface (PC5) operating in ITS, Intelligent Transport Bands (e.g. 5.9 GHZ).
          - Network Mode (UL/DL): This covers the V2N while operating in the common telecom licensed spectrum. This use case is capitalizing on this mode.
@@ -200,27 +202,27 @@ Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients
 - **Use Case #4 – Edge vRAN Deployments**
 
   - **Business Objectives**
-vRAN is one of the trending technologies of RAN deployment that fits for all Radio Access Technologies. vRAN helps to provide coverage for rural & uncovered areas with a compelling CAPEX reduction compared to Traditional and legacy RAN deployments. This coverage can be extended to all area types with 5G greenfield deployment as a typical example. 
-  
+vRAN is one of the trending technologies of RAN deployment that fits for all Radio Access Technologies. vRAN helps to provide coverage for rural & uncovered areas with a compelling CAPEX reduction compared to Traditional and legacy RAN deployments. This coverage can be extended to all area types with 5G greenfield deployment as a typical example.
+
   - **Targeted Segments**
-  
+
       - Private 5G Customers (vRAN Can be part of the Non-Public Network, NPN)
       - B2B Customers & MVNOs (vRAN Can be part of an E2E Network Slicing)
       - B2C (Mobile Consumers Segment).
 
-  
+
   - **Architecture**
-     <p align="center"><img src="../figures/Fig2-4-uc4.png" alt="" Title="Edge vRAN Deployments" width="65%"/></p> 
+     <p align="center"><img src="../figures/Fig2-4-uc4.png" alt="" Title="Edge vRAN Deployments" width="65%"/></p>
      <p align="center"><b>Figure 2-4:</b>  Edge vRAN Deployments.</p>
-     
-           
+
+
        - There are multiple deployment models for Centralized Unit (CU) & Distributed Unit (DU). This use case covers the placement case of having the DU & CU collocated & deployed on Telco Edge, see NGMN Overview on 5GRAN Functional Decomposition ver 1.0 [12]
-                
+
        -  The use case covers the 5G vRAN deployment. However, this can be extended to cover 4G vRAN as well.
-        
-       -  Following Split Option 7.2, the average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13]. 
-                   
-    
+
+       -  Following Split Option 7.2, the average market latency for RU-DU (Fronthaul) is 100 microsec – 200 microsec while the latency for DU-CU (MIdhaul) is tens of milliseconds, see ORAN-WG4.IOT.0-v01.00 [13].
+
+
 
 <a name="2.3"></a>
 ## 2.3 Analysis
@@ -262,37 +264,55 @@ By trying to sort workloads into different categories based on the requirements 
     - Predictable computing
     - High network throughput
     - Low network latency
-<!--
-- **Profile Three**
-  - Workload types
-    - Control plane functions with specific computing needs
-    - _Examples: MME, AMF, IMS-CSCF_
-  - Requirements
-    - Predictable computing
-    - Low network latency    
 
-- **Profile Four**
-  - Workload types
-    - Control plane functions with specific storage needs
-    - _Example: UDR_
-  - Requirements
-    - High storage IOPS
-    - High storage volume
--->
+## 2.4 Node Profiles & Workload Profiles
 
-<a name="2.4"></a>
-## 2.4 Cloud Infrastructure Profiles
+**Node Profiles** are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities that are exploitable by the workloads.
 
-Based on the above analysis, following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
+**Workload Profiles** are requirements expressed as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. They are a resource requesting mechanism, identifying a set of sizing metadata and infrastructure characteristics (such as NUMA alignment, CPU pinning) that are required for the workload to run as intended, then mapped to node flavours at instantiation time.
+A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and set of flavours, and the necessary capacity.
+
+Two profile *layers* are proposed:
+
+- The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, i.e.: an infrastructure object can belong to one and only one profile, and workloads can only be created using a single profile. Workloads requesting a given profile **must** be instantiated on infrastructure of that same profile.
+- For a given profile, **flavours** represent small deviations from (or further qualification, such as sizing) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Flavours can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, i.e.: an infrastructure resource can have **more than one flavour** attached to it, and workloads can request VMs to be instantiated on infrastructure with a certain flavour. Workloads requesting a given flavour **must** be instantiated on infrastructure with that same flavour. It is allowed to instantiate workloads on infrastructure with more flavours than what is requested, as long as the minimum requirements are satisfied.
+
+### 2.4.1 Node profiles (top-level partitions)
+
+Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
-- **Network Intensive**: for Workloads that require predictable computing performance, high network throughput and low network latency.
+- **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
 <p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
-In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **N (Network intensive)** <!--, and **C (Compute intensive)** --> infrastructure profiles will be defined in greater detail for use by workloads:
+In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 
->***Note:** This is an initial set of proposed profiles and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
+Profiles partition the infrastructure: an infrastructure object (host/node) **must** have one and only one profile associated to it.
+
+### 2.4.2 Node flavours (specialisations)
+
+Node flavours are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain flavours may be relevant only for some profiles.
+The following **node flavours** are proposed:
+
+|Flavour Name|Applicable to Basic Profile|Applicable to High Performance Profile|Description|Notes|
+|---|---|---|---|---|
+|**High performance CPU**|❌|✅|Nodes that have predictable computing performance (or higher clock speed).|May use vanilla VIM/K8S scheduling instead.|
+|**High performance storage**|❌|✅|Nodes that have low storage latency and/or high storage IOPS|
+|**High memory**|❌|✅|Nodes that have high amounts of RAM.|May use vanilla VIM/K8S scheduling instead.|
+|**GPU**|❌|✅|denotes the presence of a consumable GPU on the node|May use Node Feature Discovery.|
+|**High speed network (25G)**|❌|✅|denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.|
+|**High speed network (100G)**|❌|✅|denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.|
+|**100ms Latency**|✅|✅|labels a host/node as located in a site that has less than 100ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
+|**50ms Latency**|✅|✅|labels a host/node as located in a site that has less than 50ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
+|**10ms Latency**|✅|✅|labels a host/node as located in a site that has less than 10ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
+|**Low Latency** - Edge Sites|✅|✅|labels a host/node as located in an edge site, for workloads requiring low latency to final users or geographical distribution.|
+|**Fixed function accelerator**|❌|✅|labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter).|
+|**Firmware-programmable adapter**|❌|✅|labels a host/node that includes a consumable Firmware-programmable adapter (programmable, eg Network/storage FPGA with programmable part of firmware image).|
+|**SmartNIC enabled**|❌|✅|labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.|
+|**SmartSwitch enabled**|❌|✅|labels a host/node that is *connected to* a Programmable Switch Fabric or TOR switch|
+
+>***Note:** This is an initial set of proposed profiles and flavours and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
 >- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
 >- ***Storage Intensive**: for Workloads that require low storage latency and/or high storage IOPS.*
 >- ***Enhanced Compute Intensive**: for compute intensive Workloads that require higher computing performance and/or specific compute resource (e.g., GPU).*

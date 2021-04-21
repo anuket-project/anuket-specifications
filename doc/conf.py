@@ -10,13 +10,9 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 project = u'CNTT-CNTT'
 
-sys.path.append(os.path.abspath("../build/direct-copy"))
-sys.path.append(os.path.abspath("../build/readme-to-index"))
-sys.path.append(os.path.abspath("../build/relative-link-corrector"))
-
-extensions = ['direct-copy', 
-              'readme-to-index', 
-              'relative-link-corrector',
+extensions = ['sphinxcontrib.readme-to-index', 
+              'sphinxcontrib.relative-link-corrector',
+              'sphinxcontrib.direct-copy',
               'sphinx_markdown_tables', 
               'sphinx_rtd_theme']
 
@@ -33,3 +29,8 @@ direct_copy_directories = ['/gov/figures',
                            '/common/figures'] 
 
 html_theme = "sphinx_rtd_theme"
+
+html_static_path = ['_static']
+html_css_files = [
+    'css/custom.css',
+]

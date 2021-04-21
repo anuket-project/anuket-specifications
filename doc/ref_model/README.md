@@ -1,14 +1,12 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
 # Reference Model
 
-<!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
-
 ## Release Information
-**Bundle: _4_**
+**Bundle: _5_**
 
-**Version: _0_**
+**Version: _5.1_**
 
-**Release Date: _25th September 2020_**
+**Release Date: _29th January 2021_**
 
 ## Bundle/Version History
 
@@ -20,23 +18,24 @@
 | 3.0-alpha         | 10th January 2020     | Snezka Release            |
 | 3.0               | 15th May 2020         | Baldy Release             |
 | 4.0               | 25th Sep 2020         | Baraque Release           |
-
+| 5.0               | 29th Jan 2021         | Elbrus Release            |
+| 5.1               | 8th March 2021        | Kali Release work started |
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Release ready |
-| Chapter 02 | Release ready |
-| Chapter 03 | Release ready |
-| Chapter 04 | Release ready |
-| Chapter 05 | Release ready |
-| Chapter 06 | Release ready |
-| Chapter 07 | Release ready |
-| Chapter 08 | Release ready |
-| Chapter 09 | Release ready |
-| Chapter 10 | Release ready |
-| Glossary | Release ready|
+| Chapter 01 | Release work started |
+| Chapter 02 | Release work started |
+| Chapter 03 | Release work started |
+| Chapter 04 | Release work started |
+| Chapter 05 | Release work started |
+| Chapter 06 | Release work started |
+| Chapter 07 | Release work started |
+| Chapter 08 | Release work started |
+| Chapter 09 | Release work started |
+| Chapter 10 | Release work started |
+| Glossary   | Release work started |
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)
@@ -46,7 +45,7 @@
 * [Chapter 05 - Feature set and Requirements from Infrastructure](chapters/chapter05.md)
 * [Chapter 06 - External Interfaces](chapters/chapter06.md)
 * [Chapter 07 - Security](chapters/chapter07.md)
-* [Chapter 08 - Chapter reserved for future use](chapters/chapter08.md)
+* [Chapter 08 - Hybrid Multi-Cloud: Data Center to Edge](chapters/chapter08.md)
 * [Chapter 09 - Life Cycle Management](chapters/chapter09.md)
 * [Chapter 10 - Challenges and Gaps](chapters/chapter10.md)
 * [Glossary](../common/glossary.md)
