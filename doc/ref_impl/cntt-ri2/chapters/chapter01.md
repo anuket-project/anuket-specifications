@@ -55,12 +55,13 @@ The scope of this document is as follows:
 
 The main communities involved in driving requirements and development of this RI are:
 
-- **CNTT RC2 workstream**
-  - The **RC2 workstream** within CNTT takes requirements from the RM and RA2 and identifies test cases and a test integration suite that will be used to verify and validate conformance of an implementation. RI2 will be a deployable reference for operators, vendors, and others to develop against.
+- **Anuket RC2 workstream**
+  - The **RC2 workstream** within Anuket takes requirements from the RM and RA2 and identifies test cases and a test integration suite that will be used to verify and validate conformance of an implementation. RI2 will be a deployable reference for operators, vendors, and others to develop against.
 
-- **OPNFV**
-  - The **Kuberef** project in OPNFV acts as the main integration point for RI2: Its purpose it to provide all necessary glue code and mechanisms for i) integrating and configuring selected upstream Kubernetes deployers and components into a deployable platform, ii) continuously deploy the integrated platform in OPNFV labs and iii) run the latest RC2 test suite against the deployed platform. The test results are meant to be fed back to RA2 and RC2 to support the refinement of architecture requirements and the selection of test cases for the RC2 test suite.
+- **Anuket Kuberef**
+  - The **Kuberef** project in Anuket acts as the main integration point for RI2: Its purpose is to provide all necessary glue code and mechanisms for i) integrating and configuring selected upstream Kubernetes deployers and components into a deployable platform, ii) continuously deploy the integrated platform in Anuket labs and iii) run the latest RC2 test suite against the deployed platform. The test results are meant to be fed back to RA2 and RC2 to support the refinement of architecture requirements and the selection of test cases for the RC2 test suite.
 
+- **Anuket Functest**
   - The **Functest** project integrates available test tools and test cases from across the open source ecosystem into a single framework. In particular, it allows to run the test cases selected by the RC2 workstream and outputs a test result package for submission to the OVP program.
 
 - **Compliance and Verification Committee & Cloud Native OVP aka OVP 2.0**
@@ -94,7 +95,7 @@ The following subsections provide an overview of the provisioning stages as they
 The RI should be deployable on different infrastructures. Specifically, the following deployment scenarios are in scope of the RI:
 
 - **Deployment on bare-metal hosts**
-   This deployment scenario is typically used in internal labs and existing OPNFV community labs. It requires the RI installation tooling to provision empty bare-metal machines with a base operating system and to apply a baseline network configuration.
+   This deployment scenario is typically used in internal labs and existing Anuket community labs. It requires the RI installation tooling to provision empty bare-metal machines with a base operating system and to apply a baseline network configuration.
 
 - **Deployment on bare-metal hosts provided by a cloud provider**
    This deployment scenario makes use of bare-metal cloud providers such as [Equinix Metal](https://metal.equinix.com/). The machines provided in this case have been pre-provisioned with a base operating system and optionally a corresponding network configuration. This scenario requires the RI installation tooling to request and configure compute resources via the API of the cloud provider.

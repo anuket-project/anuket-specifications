@@ -15,7 +15,7 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in OPNFV Labs as a part of the [OPNFV Kuberef project](https://wiki.opnfv.org/display/KUB/Kuberef). The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef only focuses on bare-metal RI2 deployments, but support for other uses cases (running on Packet, other infrastructure providers, etc.) will be added as the development progresses.
+This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in Anuket Labs as a part of the [Anuket Kuberef project](https://wiki.anuket.io/display/HOME/Kuberef). The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef only focuses on bare-metal RI-2 deployments, but support for other use cases (running on Equinix Metal, other infrastructure providers, etc.) will be added as the development progresses.
 
 The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using pre-provisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
@@ -36,7 +36,7 @@ For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now 
 
 Start by cloning the Kuberef repository. Before you are able to run the installer some prerequisites must be installed. Details and installation steps can be found in `docs/release/installation/deployment-guide.rst`. 
 
-Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in OPNFV terminology need to be defined under `hw_config/<vendor>`. Both PDF and IDF files are modeled as YAML schema.
+Before initiating a deployment, two configuration templates, referred to as POD Descriptor File (PDF) and Installer Descriptor File (IDF) in Anuket terminology need to be defined under `hw_config/<vendor>`. Both PDF and IDF files are modeled as YAML schema.
 
 A PDF is a hardware configuration template that includes hardware characteristics of the jumphost host and the set of compute/controller hosts. For each host, the following characteristics should be defined:
 - CPU, disk and memory information
@@ -140,9 +140,9 @@ The list of allocatable resources will vary depending on the configuration, but 
 <a name="4.4"></a>
 ## 4.4 Validation of the Reference Implementation
 
-In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of testcases specified in RC-2 should be executed. A selection of these testcases is documented in [RC-2 Chapter 2](../../../ref_cert/RC2/chapters/chapter02.md).
+In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in RC-2 should be executed. A selection of these test cases is documented in [RC-2 Chapter 2](../../../ref_cert/RC2/chapters/chapter02.md).
 
-For deploying your own CNTT RC2 toolchain, please refer to the steps mentioned in [RC-2 Kubernetes Testing Cookbook](../../../ref_cert/RC2/chapters/chapter03.md).
+For deploying your own RC-2 toolchain, please refer to the steps mentioned in [RC-2 Kubernetes Testing Cookbook](../../../ref_cert/RC2/chapters/chapter03.md).
 
 <a name="4.5"></a>
 ## 4.5 Automation Tooling
