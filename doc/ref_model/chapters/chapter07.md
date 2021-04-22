@@ -344,7 +344,7 @@ In mobile network field, the GSM Association ([GSMA](https://www.gsma.com/)) and
 
 The GSMA security activities are currently focussed around 5G services and the new challenges posed by network functions virtualisation and open source software. The 2 following documents are in the scope of Cloud Infrastructure security:
 * The white paper [“Open Networking & the Security of Open Source Software deployment”](https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/), published in January 2021, deals with open source software security, it highlights the importance of layered security defences and lists recommendations and security concepts able to secure deployments. 
-* The “5G security Guide”, FS.40 version 1.0, Sept. 2020 (GSMA members only) is covering 5G security in a holistic way from user equipment to networks. The document describes the new security features in 5G. It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualization, cloud native applications and containerization security. 
+* The “5G Security Guide”, FS.40 version 1.0, Sept. 2020 (GSMA members only) covers 5G security, in a holistic way, from user equipment to networks. The document describes the new security features in 5G. It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualization, cloud native applications and containerization security. 
 
 <a name="7.8"></a>
 ## 7.8 Testing & certification
