@@ -69,14 +69,14 @@
 
 
 # Reference Architectures 2
-/doc/ref_arch/kubernetes/chapters/chapter01.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter02.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter03.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter04.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter05.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter06.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter07.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter08.md        @scottsteinbrueck @tomkivlin @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter01.md        @scottsteinbrueck @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter02.md        @scottsteinbrueck @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter03.md        @scottsteinbrueck @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter04.md        @scottsteinbrueck @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter05.md        @scottsteinbrueck @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter06.md        @scottsteinbrueck @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter07.md        @scottsteinbrueck @rgstori
+/doc/ref_arch/kubernetes/chapters/chapter08.md        @scottsteinbrueck @rgstori
 
 
 # Reference Implementation 2
