@@ -338,7 +338,6 @@ There are two flavors profiles that can be used:
 
 * High Performance: Detailed Hardware configuration of a virtual server. It allows a deep level configuration (e.g. Specific configuration parameters for Hardware acceleration)
 
-OpenStack Flavor Examples can be found in [Anuket Reference Architecture](../ref_arch/OpenStack/) <br>
 
 <a name="Table4-13"></a>
 
