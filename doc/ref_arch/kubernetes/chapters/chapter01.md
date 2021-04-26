@@ -62,13 +62,13 @@ Individual contributors who are also active in the CNCF TUG (Telecom User Group)
 - **high-impact changes frequently and predictably**
 
 ## 1.3.2 Exceptions
-Anuket specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatibilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. Anuket specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-conformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)).
+Anuket specification define certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatibilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. These policies describe how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-conformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)).
 
-The following sub-sections list the exceptions to the Anuket principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
+The following sub-sections list the exceptions to the principles of Anuket specifications and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
 
 #### 1.3.2.1 Technology Exceptions
 
-The list of Technology Exceptions will be updated or removed when alternative technologies aligned with Anuket principles develop and mature.
+The list of Technology Exceptions will be updated or removed when alternative technologies, aligned with the principles of Anuket specifications, develop and mature.
 
 | Ref |	Name |	Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|

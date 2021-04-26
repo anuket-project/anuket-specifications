@@ -25,7 +25,7 @@
 The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
 standard independent Kubernetes reference architecture that is not tied to any
 specific offering or distribution. No vendor-specific enhancements are required
-in order to achieve conformance to Anuket principles; conformance is achieved by
+in order to achieve conformance to the principles of Anuket specifications; conformance is achieved by
 using upstream components or features that are developed by the open source
 community. This allows operators to have a common Kubernetes-based architecture
 that supports any conformant VNF or CNF deployed on it to operate as expected.
