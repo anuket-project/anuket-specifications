@@ -85,12 +85,14 @@ The Requirements Exceptions lists the Reference Model (RM) requirements and/or R
 ## 1.4 Scope
 
 The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-1:
+
 - Kubernetes capabilities required to conform to the Reference Model requirements
 - Support for CNFs that consist wholly of containers
 - Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
+- **Kubernetes Cluster lifecycle management**: including Cluster creation/upgrade/scaling/deletion, and node customisation due to workload requirements.
 
 The following items are considered **out of scope**:
-- **Kubernetes Cluster lifecycle management**: Since it is not considered to be "visible" to a CNF, it should not be included.
+
 - **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of Anuket. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
 
 <p align="center"><img src="../figures/ch01_scope_k8s.png" alt="Kubernetes Reference Architecture scope" title="Kubernetes Reference Architecture scope" width="100%"/></p>
