@@ -24,7 +24,7 @@ To set this in context, it makes sense to start with the high level definition a
 
 To assist with the goal of creating a reference architecture that will support Telco workloads, but at the same time leverage the work that already has been completed in the Kubernetes community, RA2 will take an "RA2 [Razor](https://en.wikipedia.org/wiki/Philosophical_razor)" approach to build the foundation. This can be explained along the lines of "if something is useful for non-Telco workloads, we will not include it only for Telco workloads". For example, start the Reference Architecture from a vanilla Kubernetes (say, v1.16) feature set, then provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), only then the RA would add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill the gap. If there are still gaps that cannot be filled by standard Kubernetes community technologies or extensions then the RA will concisely document the requirement and approach the relevant project maintainers with a request to add this functionality into the feature set.
 
-The Kubernetes Reference Architecture will be used to determine a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads of interest to the CNTT community. It is expected the Kubernetes Reference Architecture, Reference Implementation, and Reference Conformance will be developed in parallel to OVP Phase 2, which is building on the work already in place for OpenStack implementations. The intention is to expand as much of the existing test frameworks to be used for the verification and conformance testing of Kubernetes-based workloads.
+The Kubernetes Reference Architecture will be used to determine a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads of interest to the Anuket community. It is expected the Kubernetes Reference Architecture, Reference Implementation, and Reference Conformance will be developed in parallel to OVP Phase 2, which is building on the work already in place for OpenStack implementations. The intention is to expand as much of the existing test frameworks to be used for the verification and conformance testing of Kubernetes-based workloads.
 
 ### 1.2 Terminology
 
@@ -62,13 +62,13 @@ Individual contributors who are also active in the CNCF TUG (Telecom User Group)
 - **high-impact changes frequently and predictably**
 
 ## 1.3.2 Exceptions
-CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatibilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-conformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)).
+Anuket specification define certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatibilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. These policies describe how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-conformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)).
 
-The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
+The following sub-sections list the exceptions to the principles of Anuket specifications and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
 
 #### 1.3.2.1 Technology Exceptions
 
-The list of Technology Exceptions will be updated or removed when alternative technologies aligned with CNTT principles develop and mature.
+The list of Technology Exceptions will be updated or removed when alternative technologies, aligned with the principles of Anuket specifications, develop and mature.
 
 | Ref |	Name |	Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|
@@ -91,7 +91,7 @@ The scope of this particular Reference Architecture can be described as follows 
 
 The following items are considered **out of scope**:
 - **Kubernetes Cluster lifecycle management**: Since it is not considered to be "visible" to a CNF, it should not be included.
-- **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of CNTT. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
+- **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of Anuket. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
 
 <p align="center"><img src="../figures/ch01_scope_k8s.png" alt="Kubernetes Reference Architecture scope" title="Kubernetes Reference Architecture scope" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b> Kubernetes Reference Architecture scope</p>
