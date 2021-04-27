@@ -1,24 +1,25 @@
 [<< Back](../../kubernetes)
 
-# 3. High Level Architecture
+# 3. High Level Architecture <!-- omit in toc -->
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
-## Table of Contents
+## Table of Contents  <!-- omit in toc -->
 
-* [3.1 Introduction](#31-introduction)
-* [3.2 Infrastructure Services](#32-infrastructure-services)
-    * [3.2.1 Container Compute Services](#321-container-compute-services)
-        * [3.2.1.1 Container Runtime Services](#3211-container-runtime-services)
-        * [3.2.1.2 CPU Management](#3212-cpu-management)
-        * [3.2.1.3 Memory and Huge Pages Resources Management](#3213-memory-and-huge-pages-resources-management)
-        * [3.2.1.4 Hardware Topology Management](#3214-hardware-topology-management)
-        * [3.2.1.5 Node Feature Discovery](#3215-node-feature-discovery)
-        * [3.2.1.6 Device Plugin Framework](#3216-device-plugin-framework)
-        * [3.2.1.7 Hardware Acceleration](#3217-hardware-acceleration)
-        * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
-    * [3.2.2 Container Networking Services](#322-container-networking-services)
-    * [3.2.3 Container Storage Services](#323-container-storage-services)
-    * [3.2.4 Container Package Managers](#324-container-package-managers)
+- [3.1 Introduction](#31-introduction)
+- [3.2 Infrastructure Services](#32-infrastructure-services)
+  - [3.2.1 Container Compute Services](#321-container-compute-services)
+    - [3.2.1.1 Container Runtime Services](#3211-container-runtime-services)
+    - [3.2.1.2 CPU Management](#3212-cpu-management)
+    - [3.2.1.3 Memory and Huge Pages Resources Management](#3213-memory-and-huge-pages-resources-management)
+    - [3.2.1.4 Hardware Topology Management](#3214-hardware-topology-management)
+    - [3.2.1.5 Node Feature Discovery](#3215-node-feature-discovery)
+    - [3.2.1.6 Device Plugin Framework](#3216-device-plugin-framework)
+    - [3.2.1.7 Hardware Acceleration](#3217-hardware-acceleration)
+    - [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
+  - [3.2.2 Container Networking Services](#322-container-networking-services)
+  - [3.2.3 Container Storage Services](#323-container-storage-services)
+  - [3.2.4 Kubernetes Application package manager](#324-kubernetes-application-package-manager)
+- [3.3 CaaS Manager - Cluster Lifecycle Management](#33-caas-manager---cluster-lifecycle-management)
 
 ## 3.1 Introduction
 
@@ -465,3 +466,23 @@ complies with the CNCF Conformance test for the package managers to use in the
 lifecycle management of the applications they manage. The Reference Architecture
 does not recommend the usage of a Kubernetes Application package manager with a
 server side component installed to the Kubernetes Cluster (e.g.: Tiller).
+
+## 3.3 CaaS Manager - Cluster Lifecycle Management
+
+In order to provision multiple Kubernetes clusters, which is a common scenario where workloads and network functions require dedicated, single-tenant, clusters, the the Reference
+Architecture must provide support for a **CaaS Manager**: a component responsible for the Lifecycle Management of multiple Kubernetes Clusters.
+This component is responsible of delivering an end-to-end life cycle management (creation and installation, scaling, updating, deleting, etc., of entire clusters), visibility and control of CaaS clusters, along with verification of security and compliance of Kubernetes clusters across multiple data centres and clouds.
+Specifically, the scope of the CaaS Manager includes:
+
+- Infrastructure (Kubernetes Clusters) provisioning
+  - LCM of master/worker VM nodes - via IaaS API
+  - or Baremetal provisioning for physical nodes
+- Control plane installation (i.e. K8S control plane components on the nodes)
+- Node Host OS customisation (e.g. Kernel customisation)
+- Management of Cluster add-ons (eg CNIs, CSIs, Service Meshes)
+
+The CaaS Manager should maintain a catalogue **clusters templates**, used to create clusters specific to the requirements of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
+
+The CaaS manager works by integrating with an underlying virtualisation provider for VM-based clusters, or with Bare Metal management APIs for physical clusters, to create Cluster nodes and provide other capabilities such as node scaling (e.g. provisioning a new node and attaching it to a cluster).
+
+A CaaS Manager should leverage the closed-loop desired state configuration management concept that Kubernetes itself enables. Meaning, the CaaS Manager takes the desired state of a CaaS Cluster as input and the controller must be able to maintain that desired state through a series of closed loops.
