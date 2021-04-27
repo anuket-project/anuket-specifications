@@ -1,16 +1,16 @@
 [<< Back](../../kubernetes)
-# Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application Vendors
+# Appendix A - Guidance For workload isolation (Multitenancy) with Kubernetes for application Vendors
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 
-* [B.1 Overview](#B.1)
-* [B.2 Multitenancy Models for CNFs](#B.2)
-* [B.3 Solution Areas](#B.3)
+* [A.1 Overview](#B.1)
+* [A.2 Multitenancy Models for CNFs](#B.2)
+* [A.3 Solution Areas](#B.3)
 
 
-<a name="B.1"></a>
-## B.1 Overview
+<a name="A.1"></a>
+## A.1 Overview
 
 Problem statement: A single Kubernetes Cluster does not provide hard multitenancy* by design. Within a Cluster, Kubernetes Namespace is a mechanism to provide Soft isolation multitenancy**.
 A Kubernetes Namespace does provide isolation by means of role based access control (RBAC), Resource Isolation and Network Policy, however they are still within the same trust domain and a potential breach of Cluster Admin Role could lead to the Blast Radius across the entire Cluster and all its Kubernetes Namespaces.
@@ -24,15 +24,15 @@ Use cases:
 2 Two CNF-s which are in different trust domains (e.g.: they are from different vendors) are running in a container infrastructure
 
 
-<a name="B.2"></a>
-## B.2 Multitenancy Models for CNFs
+<a name="A.2"></a>
+## A.2 Multitenancy Models for CNFs
 Solution Models :
 1. Seperate Kubernetes Namespace per Vendor within Single Kubernetes Cluster
 2. Seperate Kubernetes Cluster per Vendor.
 The Kubernetes Clusters can be created using Baremetal Nodes or Virtual Machines (either on the Baremetal Machines or also the way Public CLoud Provider APIs are used to create the Virtual Machines like in GCP Compute Engine, Azure or AWS Providers.
 
-<a name="B.3"></a>
-## B.3 Solution Areas
+<a name="A.3"></a>
+## A.3 Solution Areas
 The scope is to identify the solution area which is needed to secure the CNF workloads. Securing the platform might happen as part of it but not directly the focus or objective here.
 1. Isolation of Platform and Tenant Deployment based on the Solution Model
 2. Seperate CICD, Manifest and Image Repository for Platform and Tenants
