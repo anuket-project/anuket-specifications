@@ -124,7 +124,7 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Virtual Storage
 
-A workload can request different sizes and types of storage based on data longevity: persistent or ephemeral storage.
+A workload can request storage based on data availability (persistent or ephemeral storage), different types of storage (HDD, SSD, etc.) and storage size.
 Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
 
 There are multiple storage performance attributes, such as latency, IO/s (Input/Output Operations per second, a.k.a. IOPS), and throughput. For example, a workload may require one of its storage devices to provide low latency, high IO/s and very large/huge storage size (terabytes of data).
