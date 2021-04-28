@@ -138,8 +138,8 @@ Storage resources have the following attributes, with metric definitions that su
 |---------------------|------------------------------------------------------------------------------------------------|
 | `name`              | name of storage resources                                                                      |
 | `data availibilty`  | persistent or ephemeral                                                                        |
-|                     | Read and Write Latency, The average amount of time to perform a R/W operation, in milliseconds |
-| `performance`       | Read and Write IO/s, The average rate of performing R/W in IO operations per second            |
+| `performance`       | Read and Write Latency, The average amount of time to perform a R/W operation, in milliseconds |
+|                     | Read and Write IO/s, The average rate of performing R/W in IO operations per second            |
 |                     | Read and Write Throughput, The average rate of performing R/W operations in Bytes per second   |
 | `enhanced features` | replication, encryption                                                                        |
 | `type`              | block, object or file                                                                          |
