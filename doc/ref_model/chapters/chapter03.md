@@ -130,7 +130,9 @@ Persistent storage outlives the compute instance whereas ephemeral storage is li
 There are multiple storage performance attributes, such as latency, IO/s (Input/Output Operations per second, a.k.a. IOPS), and throughput. For example, a workload may require one of its storage devices to provide low latency, high IO/s and very large/huge storage size (terabytes of data).
 Low Latency storage is for workloads which have strong constraints on the time to access the storage.
 High IO/s oriented storage is for workloads requiring lots of read/write actions.
-Large size storage is for workloads that need lots of volume without strong perfomance constraints.
+Large size storage is for workloads that need lots of volume without strong performance constraints.
+Note that approximate numeric ranges for the qualitative values used above are given in the 
+"["Storage Extensions"]"(https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter04.html#4.2.3) section.
 
 Storage resources have the following attributes, with metric definitions that support verification through passive measurements (telemetry) where appropriate:
 
