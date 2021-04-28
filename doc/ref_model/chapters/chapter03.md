@@ -124,24 +124,26 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Virtual Storage
 
-A workload can request different types of storage based on data longevity: persistent or ephemeral storage.
+A workload can request different sizes and types of storage based on data longevity: persistent or ephemeral storage.
 Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
 
-There are multiple storage performance requirements such as latency, IOPS and capacity. For example, a workload may require one of its storage device to provide low latency, high IOPS and very large/huge storage capacity (terabytes of data).
+There are multiple storage performance attributes, such as latency, IO/s (Input/Output Operations per second, a.k.a. IOPS), and throughput. For example, a workload may require one of its storage devices to provide low latency, high IO/s and very large/huge storage size (terabytes of data).
 Low Latency storage is for workloads which have strong constraints on the time to access the storage.
-High IOPS oriented storage is for workloads requiring lots of read/write actions.
-Capacity oriented storage is for workloads that need lots of volumetry without strong perfomance constraints.
+High IO/s oriented storage is for workloads requiring lots of read/write actions.
+Large size storage is for workloads that need lots of volume without strong perfomance constraints.
 
-Storage resources have the following attributes:
+Storage resources have the following attributes, with metric definitions that support verification through passive measurements (telemetry) where appropriate:
 
-| Attribute           | Description                                                              |
-|---------------------|--------------------------------------------------------------------------|
-| `name`              | name of storage resources                                                |
-| `data availibilty`  | persistent or ephemeral                                                  |  
-| `performance`       | latency, IOPS, capacity                            |
-| `enhanced features` | replication, encryption                                                  |
-| `type`              | block, object or file                                                    |
-| `size`              | size in GB                                                       |
+| Attribute           | Description                                                                                    |
+|---------------------|------------------------------------------------------------------------------------------------|
+| `name`              | name of storage resources                                                                      |
+| `data availibilty`  | persistent or ephemeral                                                                        |
+|                     | Read and Write Latency, The average amount of time to perform a R/W operation, in milliseconds |
+| `performance`       | Read and Write IO/s, The average rate of performing R/W in IO operations per second            |
+|                     | Read and Write Throughput, The average rate of performing R/W operations in Bytes per second   |
+| `enhanced features` | replication, encryption                                                                        |
+| `type`              | block, object or file                                                                          |
+| `size`              | size in GB, telemetery includes the amount of free, used, and reserved disk space, in bytes    |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
