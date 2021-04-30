@@ -268,14 +268,39 @@ Table 4-10 shows performance measurement capabilities.
 
 
 <a name="4.2"></a>
-## 4.2 Infrastructure Profiles Catalogue
+## 4.2 Profiles and Workload Flavours
 
-Infrastructure exposes compute Flavours with options, virtual interface options, storage extensions, and acceleration extensions to workloads. These Cloud Infrastructure Profiles are offered to workloads with their corresponding options and extensions.
+Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) and the need for specialisation through [profile extensions](#2.4.3).  Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would, in addition specify the needed resource sizing information using [predefined workload flavours](#4.2.4.1) or ]parameterized flavours](#4.2.4.2) resource requests. 
 
-The idea of the Cloud Infrastructure profiles is to have a predefined set of infrastructure capabilities with a predefined set of compute Flavours which workload vendors use to build their workloads. Each workload can use several Flavours from different Cloud Infrastructure Profiles to build its overall functionality as illustrated in **Figure 4-2**.
+In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, Figure 4-2), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
 
-<p align="center"><img src="../figures/ch04_vnf_design.png" alt="workload_design" title="Workload Design" width="65%"/></p>
-<p align="center"><b>Figure 4-2:</b> Workloads built against Cloud Infrastructure Profiles and compute Flavours.</p>
+<p align="center"><img src="../figures/RM-ch04-node-profiles.png" alt="node_workload_profiles" title="Node and Workload Profiles" width="65%"/></p>
+<p align="center"><b>Figure 4-2:</b>Cloud infrastructure Profiles.</p>
+
+The two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) are:
+
+    Basic (B): for Workloads that can tolerate resource over-subscription and variable latency.
+    High Performance (H): for Workloads that require predictable computing performance, high network throughput and low network latency
+
+These profiles are offered with [extensions](#4.2.3), that specify capability deviations, and allow for the specification of even more capabilities. The Cloud Infrastructure will have nodes configured as with options, such as virtual interface options, storage extensions, and acceleration extensions.
+
+Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.2 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes of "small" and "large".
+
+<p align="center"><img src="../figures/RM-ch04-workload-prolfiles-falvours.png" alt="workload_design" title="Workload Design" width="65%"/></p>
+<p align="center"><b>Figure 4-3:</b>Workloads built against Cloud Infrastructure Profiles and compute Flavours.</p>
+
+A very simple syntax to specify the capabilities required by the workload:
+
+>  \<profile name>.[profile_extension.]\<workload flavour name>[.\<extra-specs>]
+
+
+While the node configuration can be specified as:
+
+>  \<profile name>[profile_extension.][.\<extra profile specs>]
+
+where the 'extra profile specs" are needed to capture special node configurations not accounted for by the profile and profile extensions.
+
+Examples, node configurations specified as: B, B.low-latency, H,  and H.very-high-speed-network.very-low-latency-edge.
 
 <a name="4.2.1"></a>
 ### 4.2.1 Compute Flavours
