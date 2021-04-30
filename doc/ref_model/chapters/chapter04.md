@@ -286,8 +286,8 @@ These profiles are offered with [extensions](#4.2.3), that specify capability de
 
 Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.2 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes of "small" and "large".
 
-<p align="center"><img src="../figures/RM-ch04-workload-prolfiles-falvours.png" alt="workload_design" title="Workload Design" width="65%"/></p>
-<p align="center"><b>Figure 4-3:</b>Workloads built against Cloud Infrastructure Profiles and compute Flavours.</p>
+<p align="center"><img src="../figures/RM-ch04-Workload-Prolfiles-Flavours.png" alt="workload_design" title="Workload Design" width="65%"/></p>
+<p align="center"><b>Figure 4-3:</b>Workloads built against Cloud Infrastructure Profiles and Workload Flavours.</p>
 
 A very simple syntax to specify the capabilities required by the workload:
 
