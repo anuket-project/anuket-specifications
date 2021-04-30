@@ -345,7 +345,7 @@ Profile Extensions represent small deviations from or further qualification of t
 Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload profile specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
 
 | Workload Flavour Name | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
-|----------|------|------------|--------------|-------------|-------------|
+|----------|------|------------|--------------|-------------|
 | Compute Intensive | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. |  |
 | Latency |	✅	| ✅	| Specifies latency requirements used for locating workloads	| |
 | Affinity|	✅	| ✅	| Specifies workloads that should be hosted on the same computer node	| |
@@ -359,6 +359,7 @@ Workload Flavour geometry consists of the following cloud infrastructure resourc
 <a name="Table4-12"></a>
 
 | Element | Mnemonic | Description |
+|-----|----|-----|
 | cpu | c | Number of virtual compute resources (vCPUs) |
 | memory | r | Virtual resource instance memory in megabytes. |
 | storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0.<br>
