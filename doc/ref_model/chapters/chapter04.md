@@ -286,7 +286,7 @@ These profiles are offered with [extensions](#4.2.3), that specify capability de
 
 Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.2 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes of "small" and "large".
 
-<p align="center"><img src="../figures/RM-ch04-Workload-Prolfiles-Flavours.png" alt="workload_design" title="Workload Design" width="65%"/></p>
+<p align="center"><img src="../figures/RM-ch04-Workloads-Profiles-Flavours.png" alt="workload_design" title="Workload Design" width="65%"/></p>
 <p align="center"><b>Figure 4-3:</b>Workloads built against Cloud Infrastructure Profiles and Workload Flavours.</p>
 
 A very simple syntax to specify the capabilities required by the workload:
@@ -303,26 +303,74 @@ where the 'extra profile specs" are needed to capture special node configuration
 Examples, node configurations specified as: B, B.low-latency, H,  and H.very-high-speed-network.very-low-latency-edge.
 
 <a name="4.2.1"></a>
-### 4.2.1 Compute Flavours
+### 4.2.1 Profiles
 
-Compute Flavours represent the compute, memory, storage, and management network resource templates that are used by VMs on the compute hosts. Each VM is given a compute Flavour (resource template), which determines the VMs compute, memory and storage characteristics.
+<a name="4.2.1.1"></a>
+#### 4.2.1.1 Basic Profile
 
-Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute Flavour geometry consists of the following elements:
+Hardware resources configured as per the Basic profile (B) such that they are only suited for workloads that tolerate variable performance, including latency, and resource over-subscription. Only Simultaneous Multi-Threading (SMT) is configured on nodes supporting the Basic profile. With no NUMA alignment, the vCPUs executing processes may not be on the same NUMA node as the memory used by these processes. When the vCPU and memory are on different NUMA nodes, memory accesses are not local to the vCPU node and thus add latency to memory accesses. The Basic profile supports over subscription (using CPU Allocation Ratio) which is specified as part of sizing information in the workload profiles
+
+<a name="4.2.1.2"></a>
+#### 4.2.1.2 High Performance Profile
+
+The high-performance profile (H) is intended to be used for workloads that require predictable performance, high network throughput requirements and/or low network latency. To satisfy predictable performance needs, NUMA alignment, CPU pinning, and Huge pages are enabled. For obvious reasons, the high-performance profile doesn’t support over-subscription.
+
+<a name="4.2.2"></a>
+### 4.2.2 Profiles Specifications & Capability Mapping
+
+| Ref | Capability  | Basic | High Performance | Notes |
+|-----|---------|----------|----------|--------|
+| e.cap.006 | CPU pinning | No | Yes | Exposed performance capabilities as per Table 4-2 | 
+| e.cap.007 | NUMA alignment  | No | Yes | | 
+| e.cap.013 | SR-IOV over PCI-PT  | No   | Yes | | 
+| i.cap.018 | Huge page support  | No  | Yes | Internal performance capabilities as per Table 4-7 | 
+| | SMT | Yes | Yes | | 
+| | Storage encryption | Yes | Yes | | 
+| | DPDK | No | Yes| | 
+| | CPU Architecture | Yes | Yes | Values such as x64, ARM, etc. | 
+| | Host Operating System (OS) | Yes | Yes | Values such as specific Linux version, Windows | 
+| | Hypervisor| Yes | Yes | Values such as KVM, Hyper-V, etc. when relevant, depending on technology |
+
+Table 4-xx: Profile Capabilities Mapping
+
+<a name="4.2.3"></a>
+### 4.2.3 Profile Extensions
+
+Profile Extensions represent small deviations from or further qualification of the profiles that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Profile Extensions provide workloads a more granular control over what infrastructure they can run on.
+
+
+<a name="4.2.4"></a>
+### 4.2.4 Workload Flavours
+
+Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload profile specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
+
+| Workload Flavour Name | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
+|----------|------|------------|--------------|-------------|-------------|
+| Compute Intensive | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. |  |
+| Latency |	✅	| ✅	| Specifies latency requirements used for locating workloads	| |
+| Affinity|	✅	| ✅	| Specifies workloads that should be hosted on the same computer node	| |
+| Non-Affinity	| ✅	| ✅	| Specifies workloads that should not be hosted on the same computer node	| 
+
+Table 4-xx: Workload Flavour Characteristics
+
+
+Workload Flavour geometry consists of the following cloud infrastructure resource elements:
 
 <a name="Table4-12"></a>
 
-| Element                               | Description                                                                                                                                                                                             |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Compute Flavour Name                  | A descriptive name                                                                                                                                                                                      |
-| Number of vCPUs | Number of virtual compute resources (vCPUs) presented to the VM instance.                                                                                                                               |
-| Memory                                | Virtual compute instance memory in megabytes.                                                                                                                                                           |
-| Ephemeral/Local Disk                  | Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
-| Management Interface                  | Specifies the bandwidth of management interface/s                                                                                                                                                       |
+| Element | Mnemonic | Description |
+| cpu | c | Number of virtual compute resources (vCPUs) |
+| memory | r | Virtual resource instance memory in megabytes. |
+| storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0.<br>
+The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
+| storage - permanent | d | Specifies the disk size of permanent storage |
+| cpu allocation ratio | OR | This is the cpu over-subscription or over-commit ratio and is expressed as the number of virtual cores per physical core |
+| Management Interface |  | Specifies the bandwidth of management interface/s |
 
 <p align="center"><b>Table 4-12:</b> Compute Flavour Geometry Specification.</p>
 
-<a name="4.2.1.1"></a>
-#### 4.2.1.1 Predefined Compute Flavours
+<a name="4.2.4.1"></a>
+#### 4.2.4.1 Predefined Compute Flavours
 The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting virtual compute instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
 
 >_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
@@ -345,8 +393,13 @@ The intent of the following Flavours list is to be comprehensive and yet effecti
 **2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.<br>
 **3)** The "local disk" is an ephemeral disk that provides storage for the life of a VM/Pod, and can either be provided by storage devices housed within the physical server on which the VM/Pod is running, or from an external storage device such as SAN or NFS.
 
-<a name="4.2.2"></a>
-### 4.2.2 Virtual Network Interface Specifications
+<a name="4.2.4.2"></a>
+#### 4.2.4.2 Parameterised/Customised Workload Flavour Sizing Syntax
+
+The flavours syntax consists of specifying using the <element, value> pairs separated by a colon (“:”). For example, the equivalent parameterized flavour request for the above pre-defined “large” flavour is: {cpu : 4; memory: 8192 Mi; storage: 80Gi}.
+
+<a name="4.2.5"></a>
+### 4.2.5 Virtual Network Interface Specifications
 
 
 The virtual network interface specifications extend a Flavour customization with network interface(s), with an associated bandwidth, and are identified by the literal, “n”, followed by the interface bandwidth (in Gbps). Multiple network interfaces can be specified by repeating the “n” option.
@@ -369,8 +422,8 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 
 <p align="center"><b>Table 4-14:</b> Virtual Network Interface Specification Examples</p>
 
-<a name="4.2.3"></a>
-###  4.2.3 Storage Extensions
+<a name="4.2.6"></a>
+###  4.2.6 Storage Extensions
 
 Persistent storage is associated with workloads via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-15. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
@@ -388,74 +441,6 @@ Persistent storage is associated with workloads via Storage Extensions. The size
 
 >_*Note:*_ Performance is based on a block size of 256KB or larger.
 
-<a name="4.2.4"></a>
-### 4.2.4 Cloud Infrastructure Profiles
-
-<a name="4.2.4.1"></a>
-#### 4.2.4.1 Basic Profile
-This Cloud Infrastructure Profile is intended to be used for both IT workloads as well as NFV workloads. It has limited IO capabilities (up to 10Gbps Network interface).
-
-<a name="4.2.4.2"></a>
-#### 4.2.4.2 Network Intensive Profile
-This Cloud Infrastructure Profile is intended to be used for those applications that has high network throughput requirements (up to 50Gbps).
-
-##### 4.2.4.2.1 Network Acceleration Extensions
-Network Intensive Profile can come with Network Acceleration extensions to assist workloads offloading some of their network intensive operations to hardware. The list below is preliminary and is expected to grow as more network acceleration resources are developed and standardized.
->_*Note:*_ Interface types are aligned with ETSI GS NFV-IFA 002 [7].
-
-<a name="Table4-16"></a>
-
-| .conf      | Interface type | Description                              |
-|------------|----------------|------------------------------------------|
-| .il-ipsec  | virtio-ipsec  | In-line IPSec acceleration.              |
-| .la-crypto | virtio-crypto  | Look-Aside encryption/decryption engine. |
-
-<p align="center"><b>Table 4-16:</b> Acceleration Extensions for Network Intensive Profile</p>
-
->_*Note:*_ Need to work with relevant open source communities to create missing interfaces.
-
-<a name="4.2.5"></a>
-### 4.2.5 Cloud Infrastructure Profile Capabilities Mapping
-
-<a name="Table4-17"></a>
-
-| Ref                                                                  | Basic                    | Network Intensive        | Notes |
-|----------------------------------------------------------------------|--------------------------|--------------------------|---------------------------------------------------------------------|
-| `e.cap.001`<br />(#vCPU cores)                              | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)     |
-| `e.cap.002`<br />(RAM Size (MB))                            | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
-| `e.cap.003`<br />(Total instance (ephemeral) storage (GB))  | Per selected  \<Flavour> | Per selected  \<Flavour> |                                                                     |
-| `e.cap.004`<br />(# Connection points)                      | Per selected  <I Opt>    | Per selected  <I Opt>    |                                                                     |
-| `e.cap.005`<br />(Total external (persistent) storage (GB)) | Per selected  <S Ext>    | Per selected  <S Ext>    |                                                                     |
-| `e.cap.006`<br />(CPU pinning)                              | No                       | Yes                      | Exposed performance capabilities as per [**Table 4-2**](#Table4-2)  |
-| `e.cap.007`<br />(NUMA alignment)                           | No                       | Yes                      |                                                                     |
-| `e.cap.008`<br />(IPSec Acceleration)                       | No                       | Yes (if offered)         |                                                                     |
-| `e.cap.009`<br />(Crypto Acceleration)                      | No                       | Yes (if offered)         |                                                                     |
-| `e.cap.010`<br />(Transcoding Acceleration)                 | No                       | No                       |                                                                     |
-| `e.cap.011`<br />(Programmable Acceleration)                | No                       | Yes/No                       |                                                                     |
-| `e.cap.012`<br />(Enhanced Cache Management)                | E                        | E                        |                                                                     |
-| `e.cap.013`<br />(SR-IOV over PCI-PT)                                 | No                      | Yes                       |   |
-| `e.cap.014`<br />(GPU/NPU)                                            | No                       | Yes / No                       | Yes : in case of AI and Video Edge use cases|
-| `e.cap.015`<br />(SmartNIC)                                           | No        | Yes / No                       | |
-| `e.cap.016`<br />(FPGA/other Acceleration H/W)                        |No             | Yes / No                       | Yes : in case of vRAN Edge use case || | `e.cap.017`<br />(Monitoring of L2-7 data)                  | No                       | Yes                      | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)   |
-| `i.cap.014`<br />(CPU cores consumed by the Cloud Infrastructure on the worker nodes) | any                      | any                      | |
-| `i.cap.015`<br />(Memory consumed by Cloud Infrastructure on the worker nodes)        | any                      | any                      | |
-| `i.cap.016`<br />(CPU allocation ratio)                     | 1:1                      | 1:1                      | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6)<br/><br/>_**Note**: This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._  |
-| `i.cap.017`<br />(Connection point QoS)                                 | No                       | Yes                      |                                                                     |
-| `i.cap.018`<br />(Huge page support)                        | No                       | Yes                      | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.pm.001`<br />(Host CPU usage)                           | Yes                      | Yes                      | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8)  |
-| `i.pm.002`<br />(Virtual compute resource (vCPU) usage)                | Yes                      | Yes                      |                                                                     |
-| `i.pm.003`<br />(Host CPU utilization)                     | Yes                      | Yes                      |                                                                     |
-| `i.pm.004`<br />(Virtual compute resource (vCPU) utilization)          | Yes                      | Yes                      |                                                                     |
-| `i.pm.005`<br />(Measurement of external storage IOPS)                | Yes                      | Yes                      | |
-| `i.pm.006`<br />(Measurement of external storage throughput)          | Yes                      | Yes                      | |
-| `i.pm.007`<br />(Available external storage capacity)                 | Yes                      | Yes                      | |
-
-<p align="center"><b>Table 4-17:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
-
-<a name="4.2.6"></a>
-### 4.2.6 Void
-
-_**Note:** Reserved for future use_
 
 <a name="4.2.7"></a>
 ### 4.2.7 One stop shop
