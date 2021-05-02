@@ -17,7 +17,9 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Left for future use](#3.4)
 * [3.5 Network](#3.5)
-  * [3.5.1 Service Function Chaining](#3.5.1)
+  * [3.5.1 Network Introduction](#3.5.1)
+  * [3.5.2 Network Principles](#3.5.2)
+  * [3.5.3 Service Function Chaining](#3.5.3)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
@@ -124,24 +126,28 @@ _**Example**: a virtual compute descriptor as defined in TOSCA Simple Profile fo
 <a name="3.2.1.3"></a>
 #### 3.2.1.3 Virtual Storage
 
-A workload can request different types of storage based on data longevity: persistent or ephemeral storage.
+A workload can request storage based on data retaining policy (persistent or ephemeral storage), different types of storage (HDD, SSD, etc.) and storage size.
 Persistent storage outlives the compute instance whereas ephemeral storage is linked to compute instance lifecycle.
 
-There are multiple storage performance requirements such as latency, IOPS and capacity. For example, a workload may require one of its storage device to provide low latency, high IOPS and very large/huge storage capacity (terabytes of data).
+There are multiple storage performance attributes, such as latency, IOPS (Input/Output Operations per second), and throughput. For example, a workload may require one of its storage devices to provide low latency, high IOPS and very large/huge storage size (terabytes of data).
 Low Latency storage is for workloads which have strong constraints on the time to access the storage.
 High IOPS oriented storage is for workloads requiring lots of read/write actions.
-Capacity oriented storage is for workloads that need lots of volumetry without strong perfomance constraints.
+Large size storage is for workloads that need lots of volume without strong performance constraints.
+Note that approximate numeric ranges for the qualitative values used above are given in the 
+[Storage Extensions](./chapter04.html#4.2.3) section.
 
-Storage resources have the following attributes:
+Storage resources have the following attributes, with metric definitions that support verification through passive measurements (telemetry) where appropriate:
 
-| Attribute           | Description                                                              |
-|---------------------|--------------------------------------------------------------------------|
-| `name`              | name of storage resources                                                |
-| `data availibilty`  | persistent or ephemeral                                                  |  
-| `performance`       | latency, IOPS, capacity                            |
-| `enhanced features` | replication, encryption                                                  |
-| `type`              | block, object or file                                                    |
-| `size`              | size in GB                                                       |
+| Attribute                | Description                                                                                    |
+|--------------------------|------------------------------------------------------------------------------------------------|
+| `name`                   | name of storage resources                                                                      |
+| `data retaining policy`  | persistent or ephemeral                                                                        |
+| `performance`            | Read and Write Latency, The average amount of time to perform a R/W operation, in milliseconds |
+|                          | Read and Write IOPS, The average rate of performing R/W in IO operations per second            |
+|                          | Read and Write Throughput, The average rate of performing R/W operations in Bytes per second   |
+| `enhanced features`      | replication, encryption                                                                        |
+| `type`                   | block, object or file                                                                          |
+| `size`                   | size in GB, telemetery includes the amount of free, used, and reserved disk space, in bytes    |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
@@ -264,10 +270,14 @@ This section is left blank for future use
 
 <a name="3.5"></a>
 ## 3.5 Network
+<a name="3.5.1"></a>
+### 3.5.2 Network Introduction
 Networking, alongside Compute and Storage, is an integral part of the Cloud Infrastructure (Network Function Virtualisation Infrastructure). The general function of networking in this context is to provide the connectivity between various virtual and physical resources required for the delivery of a network service. Such connectivity may manifest itself as a virtualised network between VMs and/or containers (e.g. overlay networks managed by SDN controllers, and/or programmable network fabrics) or as an integration into the infrastructure hardware level for offloading some of the network service functionality.
 
 Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual resources (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Figure 3-1. The importance of understanding the separation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
 
+<a name="3.5.2"></a>
+### 3.5.2 Network Principles
 Principles that should be followed during the development and definition of the networking scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 
 * Abstraction: A standardized network abstraction layer between the Virtualisation Layers and the Network Physical Resources Layer that hides (or abstracts) the details of the Network Physical resources from the Virtualisation Layers.
@@ -292,8 +302,8 @@ Principles that should be followed during the development and definition of the 
 
 * Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
 
-<a name="3.5.1"></a>
-### 3.5.1 Service Function Chaining
+<a name="3.5.3"></a>
+### 3.5.3 Service Function Chaining
 Over the past few years there has been a significant move towards decomposing network functions into smaller sub-functions that can be independently scaled and potentially reused across multiple network functions. A service chain allows composition of network functions by passing selected packets through multiple smaller services.
 
 In order to support this capability in a sustainable manner, there is a need to have the capability to model service chains as a high level abstraction. This is essential to ensure that the underlying connection setup, and (re-)direction of traffic flows can be performed in an automated manner. At a very high level a service chain can be considered a directed acyclic graph with the composing network functions being the vertices. Building on top of this, a service chain can be modelled by defining two parameters:
@@ -307,8 +317,8 @@ It is expected that reference architectures will provide a service chain workflo
 
 There is also a need to provide specialised tools to aid troubleshooting of individual services and the communication between them in order to investigate issues in the performance of composed network functions. Minimally, there is a need to provide packet level and byte level counters and statistics as the packets pass through the service chain in order to ascertain any issues with forwarding and performance. Additionally, there is a need for mechanisms to trace the paths of selected subsets of traffic as they flow through the service chain.
 
-<a name="3.5.1.1"></a>
-#### 3.5.1.1 Service Function Chaining Model Introduction 
+<a name="3.5.3.1"></a>
+#### 3.5.3.1 Service Function Chaining Model Introduction 
 Service Function Chaining (SFC) can be visualized as a layered structure where the Service Function plane (SFC data plane, consists of service function forwarder, classifier, service function, service function proxy) resides over a Service Function overlay network. 
 SFC utilizes a service-specific overlay that creates the service topology.  The service overlay provides service function connectivity built "on top" of the existing network topology. It leverages various overlay network technologies (e.g., Virtual eXtensible Local Area Network (VXLAN)) for interconnecting SFC data-plane elements and allows establishing Service Function Paths (SFPs).
 
@@ -317,8 +327,8 @@ In a typical overlay network, packets are routed based on networking principles 
 However, in a service-specific overlay network, packets are routed based on policies. This requires specific support at network level such as  at CNI in CNF environment to provide such specific routing mechanism.
 
 
-<a name="3.5.1.2"></a>
-#### 3.5.1.2 SFC Architecture
+<a name="3.5.3.2"></a>
+#### 3.5.3.2 SFC Architecture
  The SFC Architecture is composed of functional management, control and data components as categorised in the Table 3-6 below. 
 
 The table below highlights areas under which common SFC functional components can be categorized.
@@ -359,7 +369,7 @@ The SFC management components together with the control components are responsib
 The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
 Storage also follows the alignment of separated virtual and physical resources of SW Virtualization Layer and HW infrastructure. Reasons for such alignment are described more in Section 3.5. The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 * Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
-* Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources [3.2.3 Storage](#3.2.3)).
+* Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources [3.2.1.3 Storage](#3.2.1.3)).
 * Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 * Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
 * Scalability: Storage model enables scalability to enable small up to large deployments.
