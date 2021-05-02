@@ -153,6 +153,7 @@ Storage resources have the following attributes, with metric definitions that su
 
 <a name="3.2.1.4"></a>
 #### 3.2.1.4 Virtual Network
+This topic is currently covered in [Network](./chapter03.html#3.5) section.
 
 <a name="3.2.1.5"></a>
 #### 3.2.1.5 Availability Zone
