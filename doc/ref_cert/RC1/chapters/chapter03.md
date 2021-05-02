@@ -724,7 +724,15 @@ At the time of writing, no KPI is defined in CNTT chapters which would have
 asked for an update of the default SLA proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 
-On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
+Industry Standard-based Benchmarking Projects
+
+In addition to the dataplane testing described in Functest, two projects have integrated industry standard benchmarking test as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.04.01_60/gs_NFV-TST009v030401p.pdf), and other IETF standards as well. 
+- [SampleVNF](https://wiki.anuket.io/display/HOME/Sample+VNF)
+- [ViNePERF](https://wiki.anuket.io/display/HOME/ViNePERF)
+
+This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
+
+The test automation in [ViNePERF](https://wiki.anuket.io/display/HOME/ViNePERF) includes many Industry Standard and customized tests in the [test list](https://wiki.anuket.io/display/HOME/Test+List). This open source tool allows use of several types of traffic generators (both hardware and several open source software types), and automated data plane path deployment on a baremetal host or use of Openstack and Kubernetes to instantiate the data plane. Also, configurations can allocate same + cross-NUMA cores, PMD core assignments, and Noisy-neighbor configuration.
 
 ### 3.3.7.1 VMTP
 
@@ -801,6 +809,45 @@ When defining n packet sizes with m different flow sizes, the test will run n x 
 All throughput benchmarking is done by a generator sending packets to a reflector. This results in bidirectional traffic which should be identical (src and dest IP and ports swapped) if all traffic goes through.
 The VMs or containers use only 1 vNIC for incoming and outgoing traffic. Multiple queues can be used.
 Multiple VMs or containers can be deployed prior to running any tests. This allows to use generator-reflector pairs on the same or different compute nodes, on the same or different NUMA nodes.
+
+### 3.3.7.4 ViNePERF
+
+Similar to PROX (described above), the ViNePERF tool excels in automating tests and collecting the specific benchmarking results that allow clear comparison between a reference implementation's benchmark performance and an NFVI under test.
+
+Deployments include the 
+- phy2phy, 
+- PVP, and 
+- PVVP 
+baremetal scenarios, and the Internal-Internal or External-External scenarios using Openstack or Kubernetes for data plane and network function configuration. See clause 6.2 of [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.04.01_60/gs_NFV-TST009v030401p.pdf).
+
+<p align="center"><b>Table :</b> ViNePERF Test Results</p>
+
+| protocol | pkt_size | results            |
+|----------|----------|--------------------|
+| UDP      | 64       | delay_avg_ms       |
+| UDP      | 64       | delay_max_ms       |
+| UDP      | 64       | delay_min_ms       |
+| UDP      | 64       | throughput_Mbps    |
+| UDP      | 128      | delay_avg_ms       |
+| UDP      | 128      | delay_max_ms       |
+| UDP      | 128      | delay_min_ms       |
+| UDP      | 128      | throughput_Mbps    |
+| UDP      | 256      | delay_avg_ms       |
+| UDP      | 256      | delay_max_ms       |
+| UDP      | 256      | delay_min_ms       |
+| UDP      | 256      | throughput_Mbps    |
+| UDP      | 512      | delay_avg_ms       |
+| UDP      | 512      | delay_max_ms       |
+| UDP      | 512      | delay_min_ms       |
+| UDP      | 512      | throughput_Mbps    |
+| UDP      | 1024     | delay_avg_ms       |
+| UDP      | 1024     | delay_max_ms       |
+| UDP      | 1024     | delay_min_ms       |
+| UDP      | 1024     | throughput_Mbps    |
+| UDP      | 1500     | delay_avg_ms       |
+| UDP      | 1500     | delay_max_ms       |
+| UDP      | 1500     | delay_min_ms       |
+| UDP      | 1500     | throughput_Mbps    |
 
 <a name="3.3.8"></a>
 ### 3.3.8 Opensource VNF onboarding and testing
