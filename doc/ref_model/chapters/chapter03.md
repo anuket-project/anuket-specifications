@@ -20,6 +20,7 @@
   * [3.5.1 Network Introduction](#3.5.1)
   * [3.5.2 Network Principles](#3.5.2)
   * [3.5.3 Service Function Chaining](#3.5.3)
+  * [3.5.4 Time Sensitive Networking](#3.5.4)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
@@ -363,6 +364,23 @@ Figure 3-7 shows a simple architecture of an SFC with multiple CNFs, as SF data 
 
 The SFC management components together with the control components are responsible for rendering SFC requests to Service Function paths. For this they convert requisite SFC policies into network topology dependent paths and forwarding steering policies. Relevant SFC data components - classifiers, service function forwarders - are responsible for managing the steering policies.
 
+<a name="3.5.4"></a>
+ ### 3.5.4 Time Sensitive Networking
+
+ Many network functions have time sensitivity for processing and require high precision synchronized clock for the Cloud Infrastructure.  Subset of these workloads, like RAN, in addition require support for Synchronous Ethernet as well.
+
+ | Reason for using Synchronous Precision Clock | Example | Comment |
+ |---|---|---|
+ | Achieve technical requirements | Strict latency or timing accuracy | Must be done for precise low latency communication between data source and receiver |
+ | Achieve technical requirements | Separation of processing pipeline | Ability to separate RAN into RU, DU, CU on different or stretch clusters |
+
+ <p align="center"><b>Table 3-6:</b> Reasons and examples for Precise Clock and Synchronization</p>
+
+Precise Synchronization require specialized card that can be on server or network device motherboard or be part of NIC or both.
+
+OpenStack and Kubernetes clusters use NTP as the default time synchronization for the cluster. That level of synchronization is not sufficient for many network functions. Just like real-time operating system requirement instead of base OS so is precision timing for clock synchronization. Precision Time Protocol version 2 [PTP] (IEEE 1588-2019) is commonly used for Time-Sensitive Networking. This allow synchronization in microsecond range rather than millisecond range that NTP provides.
+
+ Some Network functions, like vDU, of vRAN, also require SyncE. Control, User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer Split Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements (ITU-T G.8275.2).
 
 <a name="3.6"></a>
 ## 3.6 Storage
