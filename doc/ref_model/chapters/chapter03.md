@@ -17,7 +17,7 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Left for future use](#3.4)
 * [3.5 Network](#3.5)
-  * [3.5.1 Service Function Chaining](#3.5.1)
+  * [3.5.3 Service Function Chaining](#3.5.3)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
@@ -292,8 +292,8 @@ Principles that should be followed during the development and definition of the 
 
 * Future proof: Network model is extendible to support known and emerging technology trends including SmartNICs, FPGAs and Programmable Switches, integrated for multi-clouds, and Edge related technologies.
 
-<a name="3.5.1"></a>
-### 3.5.1 Service Function Chaining
+<a name="3.5.3"></a>
+### 3.5.3 Service Function Chaining
 Over the past few years there has been a significant move towards decomposing network functions into smaller sub-functions that can be independently scaled and potentially reused across multiple network functions. A service chain allows composition of network functions by passing selected packets through multiple smaller services.
 
 In order to support this capability in a sustainable manner, there is a need to have the capability to model service chains as a high level abstraction. This is essential to ensure that the underlying connection setup, and (re-)direction of traffic flows can be performed in an automated manner. At a very high level a service chain can be considered a directed acyclic graph with the composing network functions being the vertices. Building on top of this, a service chain can be modelled by defining two parameters:
@@ -307,8 +307,8 @@ It is expected that reference architectures will provide a service chain workflo
 
 There is also a need to provide specialised tools to aid troubleshooting of individual services and the communication between them in order to investigate issues in the performance of composed network functions. Minimally, there is a need to provide packet level and byte level counters and statistics as the packets pass through the service chain in order to ascertain any issues with forwarding and performance. Additionally, there is a need for mechanisms to trace the paths of selected subsets of traffic as they flow through the service chain.
 
-<a name="3.5.1.1"></a>
-#### 3.5.1.1 Service Function Chaining Model Introduction 
+<a name="3.5.3.1"></a>
+#### 3.5.3.1 Service Function Chaining Model Introduction 
 Service Function Chaining (SFC) can be visualized as a layered structure where the Service Function plane (SFC data plane, consists of service function forwarder, classifier, service function, service function proxy) resides over a Service Function overlay network. 
 SFC utilizes a service-specific overlay that creates the service topology.  The service overlay provides service function connectivity built "on top" of the existing network topology. It leverages various overlay network technologies (e.g., Virtual eXtensible Local Area Network (VXLAN)) for interconnecting SFC data-plane elements and allows establishing Service Function Paths (SFPs).
 
@@ -317,8 +317,8 @@ In a typical overlay network, packets are routed based on networking principles 
 However, in a service-specific overlay network, packets are routed based on policies. This requires specific support at network level such as  at CNI in CNF environment to provide such specific routing mechanism.
 
 
-<a name="3.5.1.2"></a>
-#### 3.5.1.2 SFC Architecture
+<a name="3.5.3.2"></a>
+#### 3.5.3.2 SFC Architecture
  The SFC Architecture is composed of functional management, control and data components as categorised in the Table 3-6 below. 
 
 The table below highlights areas under which common SFC functional components can be categorized.
