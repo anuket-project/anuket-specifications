@@ -17,6 +17,7 @@
   * [3.3.2 Hardware Infrastructure Manager](#3.3.2)
 * [3.4 Left for future use](#3.4)
 * [3.5 Network](#3.5)
+  * [3.5.1 Network Introduction](#3.5.1)
   * [3.5.2 Network Principles](#3.5.2)
   * [3.5.3 Service Function Chaining](#3.5.3)
 * [3.6 Storage](#3.6)
@@ -265,6 +266,8 @@ This section is left blank for future use
 
 <a name="3.5"></a>
 ## 3.5 Network
+<a name="3.5.1"></a>
+### 3.5.2 Network Introduction
 Networking, alongside Compute and Storage, is an integral part of the Cloud Infrastructure (Network Function Virtualisation Infrastructure). The general function of networking in this context is to provide the connectivity between various virtual and physical resources required for the delivery of a network service. Such connectivity may manifest itself as a virtualised network between VMs and/or containers (e.g. overlay networks managed by SDN controllers, and/or programmable network fabrics) or as an integration into the infrastructure hardware level for offloading some of the network service functionality.
 
 Normalization of the integration reference points between different layers of the Cloud Infrastructure architecture is one of the main concerns. In the networking context the primary focus is directed on the packet flow and control flow interfaces between the virtual resources (referred to as Software (SW) Virtualisation Layer) and physical resources (referred to as Hardware (HW) Infrastructure Layer), as well as on related integration into the various MANO reference points (hardware/network infrastructure management, orchestration). The identification of these two different layers (SW Virtualisation Layer and HW Infrastructure Layer) remains in alignment with the separation of resources into virtual and physical resources, generally used in this document, see e.g. Figure 3-1. The importance of understanding the separation of concerns between SW Virtualisation Layer and HW Infrastructure Layer is important because without it, the cardinality of having multiple CaaS and IaaS instances executing on their own private virtual resources from the single shared HW Infrastructure Layer cannot be expressed into separate administrative domains.
