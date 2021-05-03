@@ -375,7 +375,7 @@ Workload Flavour geometry consists of the following cloud infrastructure resourc
 |-----|----|-----|
 | cpu | c | Number of virtual compute resources (vCPUs) |
 | memory | r | Virtual resource instance memory in megabytes. |
-| storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br />
+| storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. 
 The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
 | storage - permanent | d | Specifies the disk size of permanent storage |
 
@@ -407,7 +407,7 @@ The complete list of Flavour specification attributes is shown in the table bbel
 |----------|------|------|------------|--------------|-------------|
 | cpu | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs) | Required |
 | memory | r | 	✅	| ✅	| Virtual resource instance memory in megabytes. | Required |
-| storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br />
+| storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. 
 The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
 | storage - permanent | d | 	✅	| ✅	| Specifies the disk size of permanent storage | Required |
 | storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk | Optional |
