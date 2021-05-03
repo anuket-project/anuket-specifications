@@ -338,7 +338,7 @@ There are two flavors profiles that can be used:
 | i.fl.006 | root-disk                 | GB           | H             | Required
 | i.fl.007 | cpu_SMT                   | Y/N          | H             | Optional
 | i.fl.008 | cpu_pinning               | Y/N          | H             |
-| i.fl.009 | cpu_alloc_ratio           | n:m          | H             | Optional
+| i.fl.009 | cpu_alloc_ratio           | 1:1/n:m          | B/H             | Optional
 | i.fl.010 | numa_alignment            | Y/N          | H             | Optional
 | i.fl.011 | huge_pages                | Y/N          | H             | Optional
 | i.fl.012 | network_DPDK              | Y/N          | H             | Optional
