@@ -750,7 +750,7 @@ Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure
 #### 4.5.1.1 Edge Cloud Deployment
 
 Deployment at the Edge requires support for large scale deployment. A number of open-source tools are available for the purpose including:
-- [Airship 2](https://docs.airshipit.org/): declaratively configure, deploy and maintain an integrated virtualization and containerization platform
+- [Airship](https://docs.airshipit.org/): declaratively configure, deploy and maintain an integrated virtualization and containerization platform
 - [Starling-X](https://www.starlingx.io/): cloud infrastructure software stack for the edge
 - [Triple-O](https://wiki.openstack.org/wiki/TripleO): for installing, upgrading and operating OpenStack clouds 
 
