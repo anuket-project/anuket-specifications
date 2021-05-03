@@ -270,7 +270,7 @@ Table 4-10 shows performance measurement capabilities.
 <a name="4.2"></a>
 ## 4.2 Profiles and Workload Flavours
 
-Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) and the need for specialisation through [profile extensions](#2.4.3).  Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would, in addition specify the needed resource sizing information using [predefined workload flavours](#4.2.4.1) or ]parameterized flavours](#4.2.4.2) resource requests. 
+Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) and the need for specialisation through [profile extensions](#2.4.3).  Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would, in addition specify the needed resource sizing information using [predefined workload flavours](#4.2.4.1) or ]parameterized flavours](#4.2.4.2) resource requests.
 
 In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, Figure 4-2), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
 
@@ -280,27 +280,28 @@ In this section we will specify the capabilities and features associated with ea
 The two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) are:
 
     Basic (B): for Workloads that can tolerate resource over-subscription and variable latency.
-    High Performance (H): for Workloads that require predictable computing performance, high network throughput and low network latency
+    High Performance (H): for Workloads that require predictable computing performance, high network throughput and low network latency.
 
 These profiles are offered with [extensions](#4.2.3), that specify capability deviations, and allow for the specification of even more capabilities. The Cloud Infrastructure will have nodes configured as with options, such as virtual interface options, storage extensions, and acceleration extensions.
 
-Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.2 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes of "small" and "large".
+Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.2 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
 
 <p align="center"><img src="../figures/RM-ch-04-Workloads-Profiles-Flavours.png" alt="workload_design" title="Workload Design" width="65%"/></p>
 <p align="center"><b>Figure 4-3:</b>Workloads built against Cloud Infrastructure Profiles and Workload Flavours.</p>
 
-A very simple syntax to specify the capabilities required by the workload:
+A node configuration can be specified using the syntax:
 
->  \<profile name>.[profile_extension.]\<workload flavour name>[.\<extra-specs>]
+>  \<profile name>[.\<profile_extension>][.\<extra profile specs>]
 
-
-While the node configuration can be specified as:
-
->  \<profile name>[profile_extension.][.\<extra profile specs>]
-
-where the 'extra profile specs" are needed to capture special node configurations not accounted for by the profile and profile extensions.
+where the specifications enclosed within "[" and "]" are optional, and the 'extra profile specs" are needed to capture special node configurations not accounted for by the profile and profile extensions.
 
 Examples, node configurations specified as: B, B.low-latency, H,  and H.very-high-speed-network.very-low-latency-edge.
+
+Similarly, the capabilities required by the workload can be specified as:
+
+>  \<profile name>[.\<profile_extension>][.\<extra profile specs>].\<workload flavour specs>[.\<extra-specs>]
+
+where the \<workload flavour specs> are specified as defined in [4.2.4.3 Workload Flavours Specifications Format](#4.2.4.3) below.
 
 <a name="4.2.1"></a>
 ### 4.2.1 Profiles
@@ -308,7 +309,7 @@ Examples, node configurations specified as: B, B.low-latency, H,  and H.very-hig
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Basic Profile
 
-Hardware resources configured as per the Basic profile (B) such that they are only suited for workloads that tolerate variable performance, including latency, and resource over-subscription. Only Simultaneous Multi-Threading (SMT) is configured on nodes supporting the Basic profile. With no NUMA alignment, the vCPUs executing processes may not be on the same NUMA node as the memory used by these processes. When the vCPU and memory are on different NUMA nodes, memory accesses are not local to the vCPU node and thus add latency to memory accesses. The Basic profile supports over subscription (using CPU Allocation Ratio) which is specified as part of sizing information in the workload profiles
+Hardware resources configured as per the Basic profile (B) such that they are only suited for workloads that tolerate variable performance, including latency, and resource over-subscription. Only Simultaneous Multi-Threading (SMT) is configured on nodes supporting the Basic profile. With no NUMA alignment, the vCPUs executing processes may not be on the same NUMA node as the memory used by these processes. When the vCPU and memory are on different NUMA nodes, memory accesses are not local to the vCPU node and thus add latency to memory accesses. The Basic profile supports over subscription (using CPU Allocation Ratio) which is specified as part of sizing information in the workload profiles.
 
 <a name="4.2.1.2"></a>
 #### 4.2.1.2 High Performance Profile
@@ -320,16 +321,17 @@ The high-performance profile (H) is intended to be used for workloads that requi
 
 | Ref | Capability  | Basic | High Performance | Notes |
 |-----|---------|----------|----------|--------|
-| e.cap.006 | CPU pinning | No | Yes | Exposed performance capabilities as per Table 4-2 | 
-| e.cap.007 | NUMA alignment  | No | Yes | | 
-| e.cap.013 | SR-IOV over PCI-PT  | No   | Yes | | 
-| i.cap.018 | Huge page support  | No  | Yes | Internal performance capabilities as per Table 4-7 | 
-| | SMT | Yes | Yes | | 
-| | Storage encryption | Yes | Yes | | 
-| | DPDK | No | Yes| | 
-| | CPU Architecture | Yes | Yes | Values such as x64, ARM, etc. | 
-| | Host Operating System (OS) | Yes | Yes | Values such as specific Linux version, Windows | 
-| | Hypervisor| Yes | Yes | Values such as KVM, Hyper-V, etc. when relevant, depending on technology |
+| e.cap.006 | CPU pinning | No | Yes | Exposed performance capabilities as per Table 4-2 |
+| e.cap.007 | NUMA alignment  | No | Yes | |
+| e.cap.013 | SR-IOV over PCI-PT  | No   | Yes | |
+| i.cap.018 | Huge page support  | No  | Yes | Internal performance capabilities as per Table 4-7 |
+| | SMT | Yes | Yes | |
+| | Storage encryption | Yes | Yes | |
+| | DPDK | No | Yes| |
+| | SR-IOV | No | Yes| |
+| | CPU Architecture | \<value> | \<value> | Values such as x64, ARM, etc. |
+| | Host Operating System (OS) | \<value> | \<value> | Values such as specific Linux version, Windows |
+| | Hypervisor| \<value> | \<value> | Values such as KVM, Hyper-V, etc. when relevant, depending on technology |
 
 Table 4-xx: Profile Capabilities Mapping
 
@@ -338,21 +340,32 @@ Table 4-xx: Profile Capabilities Mapping
 
 Profile Extensions represent small deviations from or further qualification of the profiles that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Profile Extensions provide workloads a more granular control over what infrastructure they can run on.
 
+| Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
+|----|----|----|----|----|----|
+| Compute Intensive High-performance CPU | compute-high-perf-cpu | ❌ | ✅ | Nodes that have predictable computing performance and higher clock speeds. | May use vanilla VIM/K8S scheduling instead. |
+| Storage Intensive High-performance storage | storage-high-perf | ❌ | ✅ | Nodes that have low storage latency and/or high storage IOPS |  |
+| Compute Intensive High memory | compute-high-memory | ❌ | ✅ | Nodes that have high amounts of RAM. | May use vanilla VIM/K8S scheduling instead. |
+| Compute Intensive GPU | compute-gpu | ❌ | ✅ | for compute intensive Workloads that requires GPU compute resource on the node | May use Node Feature Discovery. |
+| Network Intensive High speed network (25G) | high-speed-network | ❌ | ✅ | denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node. |  |
+| Network Intensive Very High speed network (100G) | very-high-speed-network | ❌ | ✅ | denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node. |  |
+| Low Latency - Edge Sites | low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
+| Very Low Latency - Edge Sites | very-low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
+| Ultra Low Latency - Edge Sites | ultra-low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
+| Fixed function accelerator | compute-ffa | ❌ | ✅ | labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter). |  |
+| Firmware-programmable adapter | compute-fpga | ❌ | ✅ | labels a host/node that includes a consumable Firmware-programmable adapter (programmable, eg Network/storage FPGA with programmable part of firmware image). |  |
+| SmartNIC enabled | network-smartnic | ❌ | ✅ | labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |  |
+| SmartSwitch enabled | network-smartswitch | ❌ | ✅ | labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
+
 
 <a name="4.2.4"></a>
 ### 4.2.4 Workload Flavours
 
-Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload profile specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
+Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload flavour specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
 
-| Workload Flavour Name | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
-|----------|------|------------|--------------|-------------|
-| Compute Intensive | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. |  |
-| Latency |	✅	| ✅	| Specifies latency requirements used for locating workloads	| |
-| Affinity|	✅	| ✅	| Specifies workloads that should be hosted on the same computer node	| |
-| Non-Affinity	| ✅	| ✅	| Specifies workloads that should not be hosted on the same computer node	| 
 
-Table 4-xx: Workload Flavour Characteristics
 
+<a name="4.2.4.2"></a>
+#### 4.2.4.1 Workload Flavours Geometry (Sizing)
 
 Workload Flavour geometry consists of the following cloud infrastructure resource elements:
 
@@ -362,42 +375,51 @@ Workload Flavour geometry consists of the following cloud infrastructure resourc
 |-----|----|-----|
 | cpu | c | Number of virtual compute resources (vCPUs) |
 | memory | r | Virtual resource instance memory in megabytes. |
-| storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0.<br>
+| storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br />
 The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
 | storage - permanent | d | Specifies the disk size of permanent storage |
-| cpu allocation ratio | OR | This is the cpu over-subscription or over-commit ratio and is expressed as the number of virtual cores per physical core |
-| Management Interface |  | Specifies the bandwidth of management interface/s |
 
-<p align="center"><b>Table 4-12:</b> Compute Flavour Geometry Specification.</p>
+<p align="center"><b>Table 4-12:</b> Workload Flavour Geometry Specification.</p>
 
-<a name="4.2.4.1"></a>
-#### 4.2.4.1 Predefined Compute Flavours
-The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting virtual compute instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
-
->_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
-
-<a name="Table4-13"></a>
-
-| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") <sup>3)</sup>| Bandwidth |
-|------------------------|--------------------------|-------------------------|------------------|----------------------|
-| .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
-| .small                 | 1                        | 2 GB                    | 20 GB            | 1 Gbps               |
-| .medium                | 2                        | 4 GB                    | 40 GB            | 1 Gbps               |
-| .large                 | 4                        | 8 GB                    | 80 GB            | 1 Gbps               |
-| .2xlarge <sup>1)</sup> | 8                        | 16 GB                   | 160 GB           | 1 Gbps               |
-| .4xlarge <sup>1)</sup> | 16                       | 32 GB                   | 320 GB           | 1 Gbps               |
-| .8xlarge <sup>1)</sup> | 32                       | 64 GB                   | 640 GB           | 1 Gbps               |
-
-<p align="center"><b>Table 4-13:</b> Predefined Compute Flavours.</p>
-
-**1)** These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
-**2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.<br>
-**3)** The "local disk" is an ephemeral disk that provides storage for the life of a VM/Pod, and can either be provided by storage devices housed within the physical server on which the VM/Pod is running, or from an external storage device such as SAN or NFS.
+The flavours syntax consists of specifying using the <element, value> pairs separated by a colon (“:”). For example, the flavour specification: {cpu : 4; memory: 8 Gi; storage-permanent: 80Gi}.
 
 <a name="4.2.4.2"></a>
-#### 4.2.4.2 Parameterised/Customised Workload Flavour Sizing Syntax
+#### 4.2.4.2 Workload Flavours Extra Specifications
 
-The flavours syntax consists of specifying using the <element, value> pairs separated by a colon (“:”). For example, the equivalent parameterized flavour request for the above pre-defined “large” flavour is: {cpu : 4; memory: 8192 Mi; storage: 80Gi}.
+In addition to the sizing information, a workload may need to specifiy additional capabilities. These include capabilities for workload placement such as latency, workload affinity and non-affinity. It also includes capabuilities such as workload placement on multiple NUMA nodes. The extra specifications also include the [Virtual Network Interface Specifications](#4.2.5) and [Storage Extensions](#4.2.6).
+
+| Attribute | Description |
+|----------|---------------------------|
+| CPU Allocation Ratio | Specifies the cpu allocation (a.k.a. oversubsrciption) ratio |
+| Compute Intensive |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes |
+| Latency | Specifies latency requirements used for locating workloads	|
+| Affinity| Specifies workloads that should be hosted on the same computer node	|
+| Non-Affinity	| Specifies workloads that should not be hosted on the same computer node	|
+| Network Interface Option | See [below](#4.2.5 ) |
+| Storage Extension | See [below](#4.2.6 ) |
+
+<a name="4.2.4.3"></a>
+#### 4.2.4.3 Workload Flavours Specifications Format
+
+The complete list of Flavour specification attributes is shown in the table bbelow.
+
+| Attribute | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
+|----------|------|------|------------|--------------|-------------|
+| cpu | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs) | Required |
+| memory | r | 	✅	| ✅	| Virtual resource instance memory in megabytes. | Required |
+| storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br />
+The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
+| storage - permanent | d | 	✅	| ✅	| Specifies the disk size of permanent storage | Required |
+| storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk | Optional |
+| CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the cpu allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU ALlocation Ratio is 1:1  | Required for Basic profile |
+| Compute Intensive | ci | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. | Optional |
+| Latency | l |	✅	| ✅	| Specifies latency requirements used for locating workloads	| Optional |
+| Affinity| af |	✅	| ✅	| Specifies workloads that should be hosted on the same computer node	| Optional |
+| Non-Affinity	| naf | ✅	| ✅	| Specifies workloads that should not be hosted on the same computer node	| Optional |
+| Network Interface Option | n |	✅	| ✅	| See [below](#4.2.5 ) | Optional 
+| Storage Extension | s |	✅	| ✅	| See [below](#4.2.6 ) | Optional 
+
+Table 4-xx: Workload Flavour Specifications
 
 <a name="4.2.5"></a>
 ### 4.2.5 Virtual Network Interface Specifications
