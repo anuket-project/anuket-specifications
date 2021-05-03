@@ -187,7 +187,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 <a name="2.2.6"></a>
 ### 2.2.6 Cloud Infrastructure Security Requirements
 
-#### 2.2.6.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapter07.md#791-system-hardening)) 
+#### 2.2.6.1. System Hardening (source [RM 7.9.1](../../../ref_model/chapters/chapter07.md#791-system-hardening))
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|------|------|-------|
@@ -206,7 +206,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
 
-####  2.2.6.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access)) 
+####  2.2.6.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access))
 
 | Ref # | sub-category | Description |  Traceability |
 |-------|-------|-------|---------|
@@ -243,7 +243,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
 
-#### 2.2.6.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security)) 
+#### 2.2.6.4. Workload Security (source [RM7.9.4](../../../ref_model/chapters/chapter07.md#794-workload-security))
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
@@ -256,7 +256,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 
 
 
-#### 2.2.6.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security)) 
+#### 2.2.6.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
@@ -269,7 +269,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.img.007 | Image | Image registries **must** be clear of vulnerable and out of date versions. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security)  |
 
 
-#### 2.2.6.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm)) 
+#### 2.2.6.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
 
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
@@ -287,7 +287,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 
 
 
-#### 2.2.6.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit)) 
+#### 2.2.6.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
@@ -309,7 +309,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
 | sec.mon.017 | Audit | The Platform **must** audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches) |
 | sec.mon.018 | Monitoring | The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
-| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) | 
+| sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
 | sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | [RA-1 6.3.7.5 "Data Retention](./chapter06.md#6375-data-retention)  |
 | sec.mon.021 | Monitoring | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
 
@@ -396,7 +396,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | `req.int.api.07` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) |
 | `req.int.api.08` | API | The Architecture **must** provide APIs needed to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
 | `req.int.api.09` | API | The Architecture **must** provide APIs to access the orchestration service. | [RA-1 5.2.8 "Heat"](./chapter05.md#528-heat) |
-| `req.int.api.10` | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services. | [RA-1 5.2 Core OpenStack Services APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md#52-core-openstack-services-apis) |
+| `req.int.api.10` | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services. | [RA-1 5.2 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md#52-core-openstack-services-apis) |
 
 
 <p align="center"><b>Table 2-10:</b> Interfaces and APIs Requirements</p>
@@ -594,7 +594,7 @@ Commented out until RM defines requirements for SDN
 
 
 
-#### 2.4.8.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit)) 
+#### 2.4.8.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
 
 The Platform is assumed to provide configurable alerting and notification capability and the operator is assumed to have automated systems, policies and procedures to act on alerts and notifications in a timely fashion. In the following the monitoring and logging capabilities can trigger alerts and notifications for appropriate action.
 
