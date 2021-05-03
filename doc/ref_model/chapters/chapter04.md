@@ -333,7 +333,6 @@ The high-performance profile (H) is intended to be used for workloads that requi
 | | Host Operating System (OS) | \<value> | \<value> | Values such as specific Linux version, Windows |
 | | Hypervisor| \<value> | \<value> | Values such as KVM, Hyper-V, etc. when relevant, depending on technology |
 
-Table 4-xx: Profile Capabilities Mapping
 
 <a name="4.2.3"></a>
 ### 4.2.3 Profile Extensions
@@ -375,8 +374,7 @@ Workload Flavour geometry consists of the following cloud infrastructure resourc
 |-----|----|-----|
 | cpu | c | Number of virtual compute resources (vCPUs) |
 | memory | r | Virtual resource instance memory in megabytes. |
-| storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. 
-The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
+| storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
 | storage - permanent | d | Specifies the disk size of permanent storage |
 
 <p align="center"><b>Table 4-12:</b> Workload Flavour Geometry Specification.</p>
@@ -401,14 +399,13 @@ In addition to the sizing information, a workload may need to specifiy additiona
 <a name="4.2.4.3"></a>
 #### 4.2.4.3 Workload Flavours Specifications Format
 
-The complete list of Flavour specification attributes is shown in the table bbelow.
+The complete list of Flavour specification attributes is shown in the table below.
 
 | Attribute | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
 |----------|------|------|------------|--------------|-------------|
 | cpu | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs) | Required |
 | memory | r | 	✅	| ✅	| Virtual resource instance memory in megabytes. | Required |
-| storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. 
-The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
+| storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
 | storage - permanent | d | 	✅	| ✅	| Specifies the disk size of permanent storage | Required |
 | storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk | Optional |
 | CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the cpu allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU ALlocation Ratio is 1:1  | Required for Basic profile |
@@ -419,7 +416,7 @@ The ephemeral disk may be partitioned into boot (base image) and swap space disk
 | Network Interface Option | n |	✅	| ✅	| See [below](#4.2.5 ) | Optional 
 | Storage Extension | s |	✅	| ✅	| See [below](#4.2.6 ) | Optional 
 
-Table 4-xx: Workload Flavour Specifications
+Table 4-13: Workload Flavour Specifications
 
 <a name="4.2.5"></a>
 ### 4.2.5 Virtual Network Interface Specifications
