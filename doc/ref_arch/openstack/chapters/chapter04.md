@@ -754,4 +754,4 @@ Deployment at the Edge requires support for large scale deployment. A number of 
 - [Starling-X](https://www.starlingx.io/): cloud infrastructure software stack for the edge
 - [Triple-O](https://wiki.openstack.org/wiki/TripleO): for installing, upgrading and operating OpenStack clouds 
 
-The Rference Implementation (RI-1) is responsible for the implementation and usage details of these tools.
+The Reference Implementation (RI1) is responsible to choose the tools for the implementation and shall specify implementation and usage details of the chosen tools.
