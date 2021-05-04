@@ -22,10 +22,10 @@
 
 ## 3.1 Introduction
 
-The CNTT Kubernetes Reference Architecture (RA) is intended to be an industry
+The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
 standard independent Kubernetes reference architecture that is not tied to any
 specific offering or distribution. No vendor-specific enhancements are required
-in order to achieve conformance to CNTT principles; conformance is achieved by
+in order to achieve conformance to the principles of Anuket specifications; conformance is achieved by
 using upstream components or features that are developed by the open source
 community. This allows operators to have a common Kubernetes-based architecture
 that supports any conformant VNF or CNF deployed on it to operate as expected.
@@ -37,7 +37,7 @@ Kubernetes is already a well documented and widely deployed Open Source project
 managed by the Cloud Native Computing Foundation (CNCF). Full documentation of
 the Kubernetes code and project can be found at
 [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/). The
-following chapters will only describe the specific features required by the CNTT
+following chapters will only describe the specific features required by the Anuket
 Reference Architecture, and how they would be expected to be implemented. For
 any information related to standard Kubernetes features and capabilities, refer
 back to the standard Kubernetes documentation.
@@ -246,7 +246,7 @@ core functionality, and is managed through the use of [Network
 Plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/),
 which can be categorised based on the topology of the networks they manage, and
 the integration with the switching (e.g. vlan vs tunnels) and routing (e.g.
-virtual vs physical gateways) infrastructure outside of the cluster:
+virtual vs physical gateways) infrastructure outside of the Cluster:
 
 * **Layer 2 underlay** plugins provide east/west ethernet connectivity between
 pods and north/south connectivity between pods and external networks by using
@@ -308,12 +308,12 @@ resources that may require vendor specific initialisation and setup" to be
 managed and consumed via standard interfaces.
 
 Figure 3-2 below shows the main building blocks of a Kubernetes networking solution:
-- **Kubernetes Control Plane**: this is the core of a Kubernetes cluster - the
+- **Kubernetes Control Plane**: this is the core of a Kubernetes Cluster - the
 apiserver, etcd cluster, kube-scheduler and the various controller-managers. The
 control plane (in particular the apiserver) provide a centralised point by which
 the networking solution is managed using a centralised management API.
-- **Default CNI Plugin (Cluster Network)**: this is the default cluster network plugin
-that has been deployed within the cluster to provide IP addresses to Pods. Note that
+- **Default CNI Plugin (Cluster Network)**: this is the default Cluster network plugin
+that has been deployed within the Cluster to provide IP addresses to Pods. Note that
 support for IPv6 requires not only changes in the Kubernetes control plane, but
 also requires the use of a CNI Plugin that support dual-stack networking.
 - **CNI multiplexer/meta-plugin**: as described above, this is an optional component
@@ -347,7 +347,7 @@ via CNI integration.
     - IP Address Management (**IPAM**) of the various networks can be provided
 by one or more IPAM plugins, which can be part of a CNI plugin, or some other
 component (i.e. external SDN solution) - it is key that there are no overlapping
-IP addresses within a cluster, and if multiple IPAM solutions are used that
+IP addresses within a Cluster, and if multiple IPAM solutions are used that
 they are co-ordinated in some way (as required by `req.inf.ntw.10`).
 - **Service Mesh**: The well known service meshes are "application service meshes"
 that address and interact with the application layer 7 protocols (eg.: HTTP)
@@ -377,7 +377,7 @@ networking management plane through the Kubernetes API (e.g. Custom Resource
 Definitions, Device Plugin API).
 - Configuration of these additional network connections to Pods (i.e. provision of
 an IP address to a Pod) can either be managed through the Kubernetes API (e.g.
-Custom Resource Definitions) or an external mangement plane (e.g. dynamic
+Custom Resource Definitions) or an external management plane (e.g. dynamic
 address assignment from a VPN server).
 
 There are several types of low latency and high throughput networks required by
@@ -391,7 +391,7 @@ hand, the low latency, high throughput networks used for handling the user plane
 traffic require the capability to use a user space networking technology.
 
 > Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as
-an additional feature and still be conformant with CNTT.
+an additional feature and still be conformant with Anuket.
 
 > Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
@@ -438,7 +438,7 @@ the Pod spec; a PVC is a request for persistent storage (a PV) by a Pod. By
 default, PVs and PVCs are manually created and deleted.
 
 Kubernetes also provides an object called Storage Class, which is created by
-cluster administrators and maps to storage attributes such as
+Cluster administrators and maps to storage attributes such as
 quality-of-service, encryption, data resilience, etc. Storage Classes also
 enable the dynamic provisioning of Persistent Volumes (as opposed to the default
 manual creation). This can be beneficial for organisations where the
@@ -464,4 +464,4 @@ requirement for this Reference Architecture is to provide a Kubernetes API that
 complies with the CNCF Conformance test for the package managers to use in the
 lifecycle management of the applications they manage. The Reference Architecture
 does not recommend the usage of a Kubernetes Application package manager with a
-server side component installed to the Kubernetes cluster (e.g.: Tiller).
+server side component installed to the Kubernetes Cluster (e.g.: Tiller).
