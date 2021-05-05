@@ -270,7 +270,7 @@ Table 4-10 shows performance measurement capabilities.
 <a name="4.2"></a>
 ## 4.2 Profiles and Workload Flavours
 
-Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) and the need for specialisation through [profile extensions](#2.4.3).  Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would, in addition specify the needed resource sizing information using [predefined workload flavours](#4.2.4.1) or ]parameterized flavours](#4.2.4.2) resource requests.
+Section 4.1 enumerates the different capabilities exposed by the infrastructure resources. Not every workload is sensitive to all listed capabilities of the cloud infrastructure. In Chapter 2, the analysis of the use cases led to the definition of two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) and the need for specialisation through [profile extensions](#2.4.3).  Profiles and Profile Extensions are used to configure the cloud infrastructure nodes. They are also used by workloads to specify the infrastructure capabilities needed by them to run on. Workloads would, in addition, specify the needed [resource sizing](#4.2.4.1) and [placement](#4.2.4.2) information.
 
 In this section we will specify the capabilities and features associated with each of the defined profiles and extensions. Each Profile (for example, Figure 4-2), and each Extension associated with that profile, specifies a predefined standard set of infrastructure capabilities that workload vendors can use to build their workloads for deployment on conformant cloud infrastructure. A workload can use several profiles and associated Extensions to build its overall functionality as discussed below.
 
@@ -293,15 +293,15 @@ A node configuration can be specified using the syntax:
 
 >  \<profile name>[.\<profile_extension>][.\<extra profile specs>]
 
-where the specifications enclosed within "[" and "]" are optional, and the 'extra profile specs" are needed to capture special node configurations not accounted for by the profile and profile extensions.
+where the specifications enclosed within "[" and "]" are optional, and the 'extra profile specs' are needed to capture special node configurations not accounted for by the profile and profile extensions.
 
 Examples, node configurations specified as: B, B.low-latency, H,  and H.very-high-speed-network.very-low-latency-edge.
 
-Similarly, the capabilities required by the workload can be specified as:
+A workload needs to specify the configuration and capabilities of the infratsructure that it can un on, the size of the resources it needs, and additional information (extra-specs) such as whether the workload can share core siblings (SMT thread) or not, whether it has affinity (viz., needs to be placed on the same infrastructure node) with other workloads, etc. The capabilities required by the workload can, thus, be specified as:
 
 >  \<profile name>[.\<profile_extension>][.\<extra profile specs>].\<workload flavour specs>[.\<extra-specs>]
 
-where the \<workload flavour specs> are specified as defined in [4.2.4.3 Workload Flavours Specifications Format](#4.2.4.3) below.
+where the \<workload flavour specs> are specified as defined in [4.2.4.3 Resource Flavours Specifications Format](#4.2.4.3) below.
 
 <a name="4.2.1"></a>
 ### 4.2.1 Profiles
@@ -356,16 +356,16 @@ Profile Extensions represent small deviations from or further qualification of t
 
 
 <a name="4.2.4"></a>
-### 4.2.4 Workload Flavours
+### 4.2.4 Resource Flavours
+
+The GSMA document "Operator Platform Technical Requirements" (OPG.02) defines "Resource Flavour" as the set of resource requirements needed by an application to run successfully. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement.
+
+<a name="4.2.4.1"></a>
+#### 4.2.4.1 Workload Flavours Geometry (Sizing)
 
 Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload flavour specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
 
-
-
-<a name="4.2.4.2"></a>
-#### 4.2.4.1 Workload Flavours Geometry (Sizing)
-
-Workload Flavour geometry consists of the following cloud infrastructure resource elements:
+Workload Flavour sizing consists of the following:
 
 <a name="Table4-12"></a>
 
@@ -381,41 +381,46 @@ Workload Flavour geometry consists of the following cloud infrastructure resourc
 The flavours syntax consists of specifying using the <element, value> pairs separated by a colon (“:”). For example, the flavour specification: {cpu : 4; memory: 8 Gi; storage-permanent: 80Gi}.
 
 <a name="4.2.4.2"></a>
-#### 4.2.4.2 Workload Flavours Extra Specifications
+#### 4.2.4.2 Resource Flavours Extra Specifications
 
 In addition to the sizing information, a workload may need to specifiy additional capabilities. These include capabilities for workload placement such as latency, workload affinity and non-affinity. It also includes capabuilities such as workload placement on multiple NUMA nodes. The extra specifications also include the [Virtual Network Interface Specifications](#4.2.5) and [Storage Extensions](#4.2.6).
 
 | Attribute | Description |
 |----------|---------------------------|
-| CPU Allocation Ratio | Specifies the cpu allocation (a.k.a. oversubsrciption) ratio |
-| Compute Intensive |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a limitation. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes |
-| Latency | Specifies latency requirements used for locating workloads	|
-| Affinity| Specifies workloads that should be hosted on the same computer node	|
-| Non-Affinity	| Specifies workloads that should not be hosted on the same computer node	|
-| Network Interface Option | See [below](#4.2.5 ) |
-| Storage Extension | See [below](#4.2.6 ) |
+| CPU Allocation Ratio | Specifies the cpu allocation (a.k.a. oversubsrciption) ratio. |
+| Compute Intensive |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a limitation. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. |
+| Latency | Specifies latency requirements used for locating workloads.	|
+| Affinity| Specifies workloads that should be hosted on the same computer node.	|
+| Non-Affinity	| Specifies workloads that should not be hosted on the same computer node.	|
+| Dedicated cores | Specifies whether or not the workload can share sibling threads with other workloads. Default is No such that it allows different workloads on different threads. |
+| Network Interface Option | See [below](#4.2.5). |
+| Storage Extension | See [below](#4.2.6). |
 
 <a name="4.2.4.3"></a>
-#### 4.2.4.3 Workload Flavours Specifications Format
+#### 4.2.4.3 Resource Flavours Specifications Format
 
-The complete list of Flavour specification attributes is shown in the table below.
+The complete list of specifications needed to be specified by workloads is shown in the Table 4-13 below.
 
 | Attribute | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
 |----------|------|------|------------|--------------|-------------|
-| cpu | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs) | Required |
+| cpu | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs). | Required |
 | memory | r | 	✅	| ✅	| Virtual resource instance memory in megabytes. | Required |
 | storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
-| storage - permanent | d | 	✅	| ✅	| Specifies the disk size of permanent storage | Required |
-| storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk | Optional |
-| CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the cpu allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU ALlocation Ratio is 1:1  | Required for Basic profile |
+| storage - permanent | d | 	✅	| ✅	| Specifies the disk size of permanent storage. | Required |
+| storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk. | Optional |
+| CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the cpu allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU ALlocation Ratio is 1:1.  | Required for Basic profile |
 | Compute Intensive | ci | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. | Optional |
-| Latency | l |	✅	| ✅	| Specifies latency requirements used for locating workloads	| Optional |
-| Affinity| af |	✅	| ✅	| Specifies workloads that should be hosted on the same computer node	| Optional |
-| Non-Affinity	| naf | ✅	| ✅	| Specifies workloads that should not be hosted on the same computer node	| Optional |
-| Network Interface Option | n |	✅	| ✅	| See [below](#4.2.5 ) | Optional 
-| Storage Extension | s |	✅	| ✅	| See [below](#4.2.6 ) | Optional 
+| Latency | l |	✅	| ✅	| Specifies latency requirements used for locating workloads.	| Optional |
+| Affinity| af |	✅	| ✅	| Specifies workloads that should be hosted on the same computer node.	| Optional |
+| Non-Affinity	| naf | ✅	| ✅	| Specifies workloads that should not be hosted on the same computer node.	| Optional |
+| Dedicate cores | dc | ❌ | ✅ | Specifies whether or not the workload can share sibling threads with other workloads. Default is No such that it allows different workloads on different threads. | Optional |
+| Network Interface Option | n |	✅	| ✅	| See [below](#4.2.5). | Optional |
+| Storage Extension | s |	✅	| ✅	| See [below](#4.2.6). | Optional |
+| Profile Name | pn | ✅	| ✅	| Specifies the profile "B" or "H". | Required |
+| Profile Extension | pe | ❌ | ✅ | Specifies the [profile extensions](#4.2.3). | Optional |
+| Profile Extra Specs | pes | ❌ | ✅ | Specifies special node configurations not accounted for by the profile and profile extensions. | Optional |
 
-Table 4-13: Workload Flavour Specifications
+Table 4-13: Resource Flavours (complete list of Workload Capabilities) Specifications
 
 <a name="4.2.5"></a>
 ### 4.2.5 Virtual Network Interface Specifications
