@@ -378,9 +378,15 @@ The SFC management components together with the control components are responsib
 
 Precise Synchronization require specialized card that can be on server or network device motherboard or be part of NIC or both.
 
-OpenStack and Kubernetes clusters use NTP as the default time synchronization for the cluster. That level of synchronization is not sufficient for many network functions. Just like real-time operating system requirement instead of base OS so is precision timing for clock synchronization. Precision Time Protocol version 2 [PTP] (IEEE 1588-2019) is commonly used for Time-Sensitive Networking. This allow synchronization in microsecond range rather than millisecond range that NTP provides.
+OpenStack and Kubernetes clusters use Network Time Protocol [NTP] (RFC 958 Network Time Protocol (NTP), September 1985) as the default time synchronization for the cluster. That level of synchronization is not sufficient for many network functions. Just like real-time operating system requirement instead of base OS so is precision timing for clock synchronization. Precision Time Protocol version 2 [PTP] (IEEE 1588-2019) is commonly used for Time-Sensitive Networking. This allow synchronization in microsecond range rather than millisecond range that NTP provides.
 
- Some Network functions, like vDU, of vRAN, also require SyncE. Control, User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer Split Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements (ITU-T G.8275.2).
+Some Network functions, like vDU, of vRAN, also require SyncE (https://www.itu.int/rec/T-REC-G.8275.2-202011-I!Amd1). Control, User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer Split Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements (ITU-T G.8275.2).
+
+SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommendations:
+ITU-T Rec. G.8261 that defines aspects about the architecture and the wander performance of SyncE networks
+ITU-T Rec. G.8262 that specifies Synchronous Ethernet clocks for SyncE
+ITU-T Rec. G.8264 that describes the specification of Ethernet Synchronization Messaging Channel (ESMC)
+SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
 
 <a name="3.6"></a>
 ## 3.6 Storage
