@@ -388,7 +388,7 @@ In addition to the sizing information, a workload may need to specifiy additiona
 | Attribute | Description |
 |----------|---------------------------|
 | CPU Allocation Ratio | Specifies the cpu allocation (a.k.a. oversubsrciption) ratio |
-| Compute Intensive |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes |
+| Compute Intensive |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a limitation. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes |
 | Latency | Specifies latency requirements used for locating workloads	|
 | Affinity| Specifies workloads that should be hosted on the same computer node	|
 | Non-Affinity	| Specifies workloads that should not be hosted on the same computer node	|
