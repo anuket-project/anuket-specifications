@@ -15,7 +15,7 @@
   * [4.2.1 Profiles](#4.2.1)
   * [4.2.2 Profiles Specifications & Capability Mapping](#4.2.2)
   * [4.2.3 Profile Extensions](#4.2.3)
-  * [4.2.4 Workload Flavours](#4.2.4)
+  * [4.2.4 Workload Flavours and Other Capabilities Specifications](#4.2.4)
   * [4.2.5 Virtual Network Interface Specifications](#4.2.5)
   * [4.2.6 Storage Extensions](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
@@ -301,7 +301,7 @@ A workload needs to specify the configuration and capabilities of the infratsruc
 
 >  \<profile name>[.\<profile_extension>][.\<extra profile specs>].\<workload flavour specs>[.\<extra-specs>]
 
-where the \<workload flavour specs> are specified as defined in [4.2.4.3 Resource Flavours Specifications Format](#4.2.4.3) below.
+where the \<workload flavour specs> are specified as defined in [4.2.4.3 Workload Flavours and Other Capabilities Specifications Format](#4.2.4.3) below.
 
 <a name="4.2.1"></a>
 ### 4.2.1 Profiles
@@ -356,9 +356,12 @@ Profile Extensions represent small deviations from or further qualification of t
 
 
 <a name="4.2.4"></a>
-### 4.2.4 Resource Flavours
+### 4.2.4 Workload Flavours and Other Capabilities Specifications
 
-The GSMA document "Operator Platform Technical Requirements" (OPG.02) defines "Resource Flavour" as the set of resource requirements needed by an application to run successfully. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement.
+The workload requests a set of resource capabilities needed by it, including its components, to run successfully. 
+The GSMA document "Operator Platform Technical Requirements" (OPG.02) defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavour](#4.2) above. 
+
+This section provides details of the capabilities that need to be provided in a resource request. The [profiles](#4.2.1), the [profile specifications](#4.2.2) and the [profile extensions](#4.2.3) specify the infrastructure (hardware and software) configuration. In a resource request they need to be augmented with workload specific capabilities and configurations, including the [sizing of requested resource](#4.2.4.1), extra specifications related to the [placement of the workload](#4.2.4.2), network(#4.2.5) and storage extensions(#4.2.6).
 
 <a name="4.2.4.1"></a>
 #### 4.2.4.1 Workload Flavours Geometry (Sizing)
@@ -381,7 +384,7 @@ Workload Flavour sizing consists of the following:
 The flavours syntax consists of specifying using the <element, value> pairs separated by a colon (“:”). For example, the flavour specification: {cpu : 4; memory: 8 Gi; storage-permanent: 80Gi}.
 
 <a name="4.2.4.2"></a>
-#### 4.2.4.2 Resource Flavours Extra Specifications
+#### 4.2.4.2 Workloads Extra Capabilities Specifications
 
 In addition to the sizing information, a workload may need to specifiy additional capabilities. These include capabilities for workload placement such as latency, workload affinity and non-affinity. It also includes capabuilities such as workload placement on multiple NUMA nodes. The extra specifications also include the [Virtual Network Interface Specifications](#4.2.5) and [Storage Extensions](#4.2.6).
 
@@ -397,7 +400,7 @@ In addition to the sizing information, a workload may need to specifiy additiona
 | Storage Extension | See [below](#4.2.6). |
 
 <a name="4.2.4.3"></a>
-#### 4.2.4.3 Resource Flavours Specifications Format
+#### 4.2.4.3 Workload Flavours and Other Capabilities Specifications Format
 
 The complete list of specifications needed to be specified by workloads is shown in the Table 4-13 below.
 
