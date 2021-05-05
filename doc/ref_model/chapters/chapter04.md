@@ -328,7 +328,6 @@ The high-performance profile (H) is intended to be used for workloads that requi
 | | SMT | Yes | Yes | |
 | | Storage encryption | Yes | Yes | |
 | | DPDK | No | Yes| |
-| | SR-IOV | No | Yes| |
 | | CPU Architecture | \<value> | \<value> | Values such as x64, ARM, etc. |
 | | Host Operating System (OS) | \<value> | \<value> | Values such as specific Linux version, Windows |
 | | Hypervisor| \<value> | \<value> | Values such as KVM, Hyper-V, etc. when relevant, depending on technology |
