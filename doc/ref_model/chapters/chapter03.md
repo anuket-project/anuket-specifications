@@ -381,7 +381,7 @@ Precise Synchronization require specialized card that can be on server or networ
 
 OpenStack and Kubernetes clusters use Network Time Protocol (NTP) (RFC 5905: Network Time Protocol Version 4: Protocol and Algorithms Specification, RFC 5906: Network Time Protocol Version 4: Autokey Specification, RFC 5907: Definitions of Managed Objects for Network Time Protocol Version 4 (NTPv4), and RFC 5908: Network Time Protocol (NTP) Server Option for DHCPv6) as the default time synchronization for the cluster. That level of synchronization is not sufficient for many network functions. Just like real-time operating systems instead of base OS, so is precision timing for clock synchronization. Precision Time Protocol version 2 (PTP) (IEEE 1588-2019) is commonly used for Time-Sensitive Networking. This allow synchronization in microsecond range rather than millisecond range that NTP provides.
 
-Some Network functions, like vDU, of vRAN, also require [SyncE](http://www.itu.int/rec/T-REC-G.8262). Control, User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer Split Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements (ITU-T G.8275.2).
+Some Network functions, like vDU, of vRAN, also require [SyncE](http://www.itu.int/rec/T-REC-G.8262). Control, User and Synchronization (CUS) Plane specification defines different topology options that provides Lower Layer Split Control plane 1-4 (LLS-C1 - LLS-C4) with different synchronization requirements ([ITU-T G.8275.2](https://www.itu.int/rec/T-REC-G.8275.2/en)).
  
 SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommendations:
 
