@@ -68,16 +68,17 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 
 | Ref       | Cloud Infrastructure Capability        | Unit   | Definition/Notes                                                              |
 |-----------|----------------------------------------|--------|-------------------------------------------------------------------------------|
-| e.cap.001 | # vCPU                                 | number | Max number of vCPUs that can be assigned to a single VM or Pod <sup>1)</sup>        |
-| e.cap.002 | RAM Size                               | MB     | Max memory in MB that can be assigned to a single VM or Pod by the Cloud Infrastructure <sup>2)</sup>  |
-| e.cap.003 | Total per-instance (ephemeral) storage | GB     | Max storage in GB that can be assigned to a single VM or Pod by the Cloud Infrastructure                |
-| e.cap.004 | # Connection points                    | number | Max number of connection points that can be assigned to a single VM or Pod by the Cloud Infrastructure          |
-| e.cap.005 | Total external (persistent) storage    | GB     | Max storage in GB that can be attached / mounted to VM or Pod by the Cloud Infrastructure                |
+| e.cap.001 | # vCPU                                 | number | Max number of vCPUs that can be assigned to a single VM or Pod <sup>1</sup>.       |
+| e.cap.002 | RAM Size                               | MB     | Max memory in MB that can be assigned to a single VM or Pod by the Cloud Infrastructure <sup>2</sup>. |
+| e.cap.003 | Total per-instance (ephemeral) storage | GB     | Max storage in GB that can be assigned to a single VM or Pod by the Cloud Infrastructure.               |
+| e.cap.004 | # Connection points                    | number | Max number of connection points that can be assigned to a single VM or Pod by the Cloud Infrastructure.         |
+| e.cap.005 | Total external (persistent) storage    | GB     | Max storage in GB that can be attached / mounted to VM or Pod by the Cloud Infrastructure.               |
 
 <p align="center"><b>Table 4-1:</b> Exposed Resource Capabilities of Cloud Infrastructure</p>
 
-**1)** In a Kubernetes based environment this means the CPU limit of a pod. <br>
-**2)** In a Kubernetes based environment this means the memory limit of a pod.
+> <sup><b>1</b></sup> In a Kubernetes based environment this means the CPU limit of a pod.<br>
+ <sup><b>2</b></sup> In a Kubernetes based environment this means the memory limit of a pod.
+
 
 <a name="4.1.2.2"></a>
 #### 4.1.2.2 Exposed Performance Optimisation Capabilities
@@ -88,17 +89,19 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 
 | Ref       | Cloud Infrastructure Capability           | Unit   | Definition/Notes                                            |
 |-----------|-------------------------------------------|--------|-------------------------------------------------------------|
-| e.cap.006 | CPU pinning                               | Yes/No | Indicates if Cloud Infrastructure supports CPU pinning      |
-| e.cap.007 | NUMA alignment                            | Yes/No | Indicates if Cloud Infrastructure supports NUMA alignment |
-| e.cap.008 | IPSec Acceleration                        | Yes/No | IPSec Acceleration                                          |
-| e.cap.009 | Crypto Acceleration                       | Yes/No | Crypto Acceleration                                         |
-| e.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration                                    |
-| e.cap.011 | Programmable Acceleration                 | Yes/No | Programmable Acceleration                                   |
+| e.cap.006 | CPU pinning                               | Yes/No | Indicates if Cloud Infrastructure supports CPU pinning.     |
+| e.cap.007 | NUMA alignment                            | Yes/No | Indicates if Cloud Infrastructure supports NUMA alignment.  |
+| e.cap.008 | IPSec Acceleration                        | Yes/No | IPSec Acceleration.                                         |
+| e.cap.009 | Crypto Acceleration                       | Yes/No | Crypto Acceleration.                                        |
+| e.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration.                                   |
+| e.cap.011 | Programmable Acceleration                 | Yes/No | Programmable Acceleration.                                  |
 | e.cap.012 | Enhanced Cache Management                 | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded.  L and X cache policies require CPU pinning to be active. |
 | e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
 | e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
 | e.cap.015 | SmartNIC                                  | Yes/No | Network Acceleration. SmartNICs that do not utilise PCI-PT are not subject to the CNTT principles, nor any related policies or prohibitions. |
-| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
+| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type. |
+| e.cap.018 | Simultaneous Multithreading (SMT)         | Yes/No | Hardware multithreading. SMT permits multiple independent threads of execution.  |
+| e.cap.019 | vSwitch Optimisation (DPDK)               | Yes/No | The Data Plane Development Kit is a set of libraries to accelerate packet processing.  |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of Cloud Infrastructure</p>
 
@@ -115,9 +118,9 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 <a name="Table4-3"></a>
 
-| Ref       | Cloud Infrastructure Capability | Unit   | Definition/Notes                            |
-|-----------|---------------------------------|--------|---------------------------------------------|
-| e.cap.017 | Monitoring of L2-7 data         | Yes/No | Ability to monitor L2-L7 data from workload |
+| Ref       | Cloud Infrastructure Capability | Unit   | Definition/Notes                             |
+|-----------|---------------------------------|--------|----------------------------------------------|
+| e.cap.017 | Monitoring of L2-7 data         | Yes/No | Ability to monitor L2-L7 data from workload. |
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of Cloud Infrastructure</p>
 
@@ -153,9 +156,9 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 <a name="Table4-5"></a>
 
 | Ref       | Cloud Infrastructure Capability                       | Unit                   | Definition/Notes                                                   |
-|-----------|-------------------------------------------------------|------------------------|--------------------------------------------------------|
-| i.cap.014 | CPU cores consumed by the Cloud Infrastructure overhead on a worker (compute) node | % | The ratio of cores consumed by the Cloud Infrastructure components (including host OS) in a compute node to the total number of cores available expressed as a percentage |
-| i.cap.015 | Memory consumed by the Cloud Infrastructure overhead on a worker (compute) node    | % | The ratio of memory consumed by the Cloud Infrastructure components (including host OS) in a worker (compute) node to the total available memory expressed as a percentage |
+|-----------|-------------------------------------------------------|------------------------|---------------------------------------------------------|
+| i.cap.014 | CPU cores consumed by the Cloud Infrastructure overhead on a worker (compute) node | % | The ratio of cores consumed by the Cloud Infrastructure components (including host OS) in a compute node to the total number of cores available expressed as a percentage. |
+| i.cap.015 | Memory consumed by the Cloud Infrastructure overhead on a worker (compute) node    | % | The ratio of memory consumed by the Cloud Infrastructure components (including host OS) in a worker (compute) node to the total available memory expressed as a percentage. |
 
 <p align="center"><b>Table 4-5:</b> Internal Resource Capabilities of Cloud Infrastructure</p>
 
@@ -167,21 +170,23 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 <a name="Table4-6"></a>
 
 | Ref       | Cloud Infrastructure capability      | Unit   | Definition/Notes                                                               |
-|-----------|----------------------|--------|--------------------------------------------------------------------------------|
-| i.cap.016 | CPU allocation ratio | N:1    | Number of virtual cores per physical core; also known as CPU overbooking ratio |
-| i.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface)                     |
+|-----------|----------------------|--------|---------------------------------------------------------------------------------|
+| i.cap.016 | CPU allocation ratio | N:1    | Number of virtual cores per physical core; also known as CPU overbooking ratio. |
+| i.cap.017 | Connection point QoS | Yes/No | QoS enablement of the connection point (vNIC or interface).                     |
 
 <p align="center"><b>Table 4-6:</b> Internal SLA capabilities to Cloud Infrastructure</p>
 
 <a name="4.1.4.3"></a>
-#### 4.1.4.3 Internal Performance Optimisation Capabilities
-**Table 4-7** below shows possible performance optimisation capabilities that can be provided by Cloud Infrastructure. These include capabilities exposed to workloads as well as internal capabilities to Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
+#### 4.1.4.3 Internal Performance Optimisation and Security Capabilities
+**Table 4-7** below shows possible performance optimisation and secuirty capabilities that can be provided by Cloud Infrastructure. These include capabilities exposed to workloads as well as capabilities internal to the Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
 
 <a name="Table4-7"></a>
 
-| Ref       | Cloud Infrastructure capability | Unit   | Definition/Notes                      |
-|-----------|---------------------------------|--------|---------------------------------------|
-| i.cap.018 | Huge pages                      | Yes/No | Indicates if the Cloud Infrastructure supports huge pages |
+| Ref       | Cloud Infrastructure capability | Unit/ Value | Definition/Notes |
+|-----------|----------------------|--------|--------------------|
+| i.cap.018 | Huge pages | Yes/No | Indicates if the Cloud Infrastructure supports huge pages. |
+| i.cap.019 | CPU Clock Speed | <value> | Indicates the Cloud Infrastructure CPU Clock Speed (in GHz). |
+| i.cap.020 | Storage Encryption | Yes/No | Indicates if the Cloud Infrastructure supports storage encryption. |
 
 <p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of Cloud Infrastructure</p>
 
@@ -265,6 +270,15 @@ Table 4-10 shows performance measurement capabilities.
 
 <p align="center"><b>Table 4-11:</b> Cloud Infrastructure management Resource Management Measurements</p>
 
+
+<a name="4.1.7"></a>
+### 4.1.7 Other Cloud Infrastructure Capabilities
+
+| Ref | Cloud Infrastructure Capability   | Unit/ Value | Definition/Notes |
+|-----|----------------------|---------|-----------------------|
+| o.cap.001 | CPU Architecture | <value> | Values such as x64, ARM, etc. |
+| o.cap.002 | Host Operating System | <value> | Values such as Ubuntu20.04, Windows 10 Release #, etc. |
+| o.cap.003 | Virtualisation (inc. Containerisation) Software | <value> | Values such as None, KVM, Hyper-V, etc. |
 
 
 <a name="4.2"></a>
