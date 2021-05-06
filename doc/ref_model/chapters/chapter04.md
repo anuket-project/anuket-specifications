@@ -297,7 +297,7 @@ Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A
 | Ephemeral/Local Disk                  | Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
 | Root Disk                  | Specifies the size of '/' root partition. It can be considered an Ephemeral Disk |
 | CPU Parameters                  | Capability to associate virtual CPUs to the physical CPUs, and enable specific CPU architectures |
-| NUMA                  | Allow system memory allocation into cells or nodes that are associated with particular CPUs (there could be performance degradation due to an high number of requests through this shared bus) |
+| CPU Topology                  | NUMA topology and CPU pinning features can minimize latency and improve performance. Check which architecture is supported by the compute nodes.  |
 | Network Parameters                  | Enable network capabilities allowing improvements on network performance (make sure that current deployment allows it, otherwise, it can lead either to a decrease on performance or instability) |
 <p align="center"><b>Table 4-12:</b> Compute Flavour Geometry Specification.</p>
 
