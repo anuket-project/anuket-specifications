@@ -124,6 +124,16 @@ Monitoring capabilities are used for the passive observation of workload-specifi
 
 <p align="center"><b>Table 4-3:</b> Exposed Monitoring Capabilities of Cloud Infrastructure</p>
 
+<a name="4.1.2.4"></a>
+#### 4.1.2.4 Exposed Other Cloud Infrastructure Capabilities
+
+| Ref | Cloud Infrastructure Capability   | Unit/ Value | Definition/Notes |
+|-----|----------------------|---------|-----------------------|
+| e.cap.020 | CPU Architecture | \<value> | Values such as x64, ARM, etc. |
+| e.cap.021 | Host Operating System | \<value> | Values such as Ubuntu20.04, Windows 10 Release #, etc. |
+| e.cap.022 | Virtualisation Infrastructure Layer<sup>1</sup> | \<value> | Values such as KVM, Hyper-V, Kubernetes, etc. |
+> <sup>1</sup> See [Figure 5-1](./chapter05.md#5.1)
+
 <a name="4.1.3"></a>
 ### 4.1.3 Exposed Infrastructure Performance Measurements
 The intent of the following PMs is to be available for and well known to workloads.
@@ -185,7 +195,7 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 | Ref       | Cloud Infrastructure capability | Unit/ Value | Definition/Notes |
 |-----------|----------------------|--------|--------------------|
 | i.cap.018 | Huge pages | Yes/No | Indicates if the Cloud Infrastructure supports huge pages. |
-| i.cap.019 | CPU Clock Speed | <value> | Indicates the Cloud Infrastructure CPU Clock Speed (in GHz). |
+| i.cap.019 | CPU Clock Speed | \<value> | Indicates the Cloud Infrastructure CPU Clock Speed (in GHz). |
 | i.cap.020 | Storage Encryption | Yes/No | Indicates if the Cloud Infrastructure supports storage encryption. |
 
 <p align="center"><b>Table 4-7:</b> Internal performance optimisation capabilities of Cloud Infrastructure</p>
@@ -269,16 +279,6 @@ Table 4-10 shows performance measurement capabilities.
 | e.man-pm.012 | Time to create external storage ready for use by workload                    | Max ms |                  |
 
 <p align="center"><b>Table 4-11:</b> Cloud Infrastructure management Resource Management Measurements</p>
-
-
-<a name="4.1.7"></a>
-### 4.1.7 Other Cloud Infrastructure Capabilities
-
-| Ref | Cloud Infrastructure Capability   | Unit/ Value | Definition/Notes |
-|-----|----------------------|---------|-----------------------|
-| o.cap.001 | CPU Architecture | <value> | Values such as x64, ARM, etc. |
-| o.cap.002 | Host Operating System | <value> | Values such as Ubuntu20.04, Windows 10 Release #, etc. |
-| o.cap.003 | Virtualisation (inc. Containerisation) Software | <value> | Values such as None, KVM, Hyper-V, etc. |
 
 
 <a name="4.2"></a>
