@@ -321,17 +321,18 @@ The high-performance profile (H) is intended to be used for workloads that requi
 
 | Ref | Capability  | Basic | High Performance | Notes |
 |-----|---------|----------|----------|--------|
-| e.cap.006 | CPU pinning | No | Yes | Exposed performance capabilities as per Table 4-2 |
+| e.cap.006 | CPU pinning | No | Yes | Exposed performance capabilities as per Table 4-2. |
 | e.cap.007 | NUMA alignment  | No | Yes | |
 | e.cap.013 | SR-IOV over PCI-PT  | No   | Yes | |
-| i.cap.018 | Huge page support  | No  | Yes | Internal performance capabilities as per Table 4-7 |
-| | SMT | Yes | Yes | |
-| | Storage encryption | Yes | Yes | |
-| | DPDK | No | Yes| |
-| | CPU Architecture | \<value> | \<value> | Values such as x64, ARM, etc. |
-| | Host Operating System (OS) | \<value> | \<value> | Values such as specific Linux version, Windows |
-| | Hypervisor| \<value> | \<value> | Values such as KVM, Hyper-V, etc. when relevant, depending on technology |
-
+| i.cap.018 | Huge page support  | No  | Yes | Internal performance capabilities as per Table 4-7. |
+| e.cap.018 | Simultaneous Multithreading (SMT) | Yes | Yes | |
+| e.cap.019 | vSwitch Optimisation (DPDK) | No | Yes| |
+| e.cap.020 | CPU Architecture | \<value> | \<value> | Values such as x64, ARM, etc. |
+| e.cap.021 | Host Operating System (OS) | \<value> | \<value> | Values such as a specific Linux version, Windows version, etc. |
+| e.cap.022 | Virtualisation Infrastructure Layer<sup>1</sup> | \<value> | \<value> | Values such as KVM, Hyper-V, Kubernetes, etc. when relevant, depending on technology. |
+| i.cap.019 | CPU Clock Speed | \<value> | \<value> | Specifies the Cloud Infrastructure CPU Clock Speed (in GHz). |
+| i.cap.020 | Storage encryption | Yes | Yes | Specifies whether the Cloud Infrastructure supports storage encryption. |
+> <sup>1</sup> See [Figure 5-1](./chapter05.md#5.1).
 
 <a name="4.2.3"></a>
 ### 4.2.3 Profile Extensions
