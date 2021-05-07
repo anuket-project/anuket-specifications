@@ -45,3 +45,9 @@ This is Kubernetes based Reference Architecture (RA-2)
 * [Chapter 07 - Gaps, Innovation, and Development](chapters/chapter07.md)
 * [Appendix A - Guidance for VNF-to-CNF Transition](chapters/appendix-a.md)
 * [Appendix B - Guidance For workload isolation (multitenancy) with Kubernetes for application vendors](chapters/appendix-b.md)
+
+## Required versions of most important components
+
+| Component | Required version(s) |
+| ----------|---------------------|
+| Kubernetes | 1.21 |
