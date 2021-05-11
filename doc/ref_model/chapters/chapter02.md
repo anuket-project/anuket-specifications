@@ -296,7 +296,7 @@ Profiles partition the infrastructure: an infrastructure object (host/node) **mu
 <a name="2.4.2"></a>
 ### 2.4.2 Profile Extensions (specialisations)
 
-Profile Extensions are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain profile pxtensions may be relevant only for some profiles.
+Profile Extensions are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain profile extensions may be relevant only for some profiles.
 The following **profile extensions** are proposed:
 
 Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes
