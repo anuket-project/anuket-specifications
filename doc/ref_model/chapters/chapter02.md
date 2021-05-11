@@ -5,8 +5,8 @@
 - [2.1 Workloads Collateral](#21-workloads-collateral)
 - [2.2 Use cases](#22-use-cases)
 - [2.3 Analysis](#23-analysis)
-- [2.4 Node Profiles & Workload Profiles](#24-node-profiles--workload-profiles)
-  - [2.4.1 Node profiles (top-level partitions)](#241-node-profiles-top-level-partitions)
+- [2.4 Profiles & Flavours](#24-node-profiles--workload-profiles)
+  - [2.4.1 Profiles (top-level partitions)](#241-node-profiles-top-level-partitions)
   - [2.4.2 Profile Extensions (specialisations)](#242-profile-extensions-specialisations)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
@@ -268,24 +268,25 @@ By trying to sort workloads into different categories based on the requirements 
 <a name="2.4"></a>
 ## 2.4 Profiles & Flavours
 
-**Node Profiles** are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities that are exploitable by the workloads.
-
-**Workload Profiles** are requirements expressed as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. They are a resource requesting mechanism, identifying a set of sizing metadata and infrastructure characteristics (such as NUMA alignment, CPU pinning) that are required for the workload to run as intended, then mapped to node flavours at instantiation time.
-A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and set of flavours, and the necessary capacity.
+**Profiles** are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities that are exploitable by the workloads.
 
 Two profile *layers* are proposed:
 
 - The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, i.e.: an infrastructure object can belong to one and only one profile, and workloads can only be created using a single profile. Workloads requesting a given profile **must** be instantiated on infrastructure of that same profile.
 - For a given profile, **profile extensions** represent small deviations from (or further qualification, such as infrastructure sizing differences (e.g. memory size)) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Profile Extensions can be *optionally* requested by workloads that want a more granular control over what infrastructure they run on, i.e.: an infrastructure resource can have **more than one profile extension label** attached to it, and workloads can request resources to be instantiated on infrastructure with a certain profile extension. Workloads requesting a given profile extension **must** be instantiated on infrastructure with that same profile extension. It is allowed to instantiate workloads on infrastructure tagged with more profile extensions than requested, as long as the minimum requirements are satisfied.
 
+Workloads specify infrastructure capability requirements as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. Workloads request resources specifying the Profiles and Profile Extensions, and a set of sizing metadata that maybe expressed as flavours that are required for the workload to run as intended.
+A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and the necessary capacity to support the requested flavour or resource size.
+
+
 <a name="2.4.1"></a>
-### 2.4.1 Node profiles (top-level partitions)
+### 2.4.1 Profiles (top-level partitions)
 
 Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 - **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
-<p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/RM-ch02-node-profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
 In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
