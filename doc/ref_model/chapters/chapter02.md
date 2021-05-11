@@ -266,7 +266,7 @@ By trying to sort workloads into different categories based on the requirements 
     - Low network latency
 
 <a name="2.4"></a>
-## 2.4 Node Profiles & Workload Profiles
+## 2.4 Profiles & Flavours
 
 **Node Profiles** are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities that are exploitable by the workloads.
 
