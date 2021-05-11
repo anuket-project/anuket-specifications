@@ -5,11 +5,11 @@
 This is the Kubernetes Based Reference Conformance (RC-2)
 
 ## Release Information
-**Bundle: _5_**
+**Bundle: _6_**
 
 **Version: _0_**
 
-**Release Date: _29th January 2021_**
+**Release Date: _17th June 2021_**
 
 ## Bundle/Version History
 

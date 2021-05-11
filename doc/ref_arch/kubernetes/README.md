@@ -29,8 +29,8 @@ This is Kubernetes based Reference Architecture (RA-2)
 | Chapter 03 | Lots of SME feedback |
 | Chapter 04 | Lots of SME feedback |
 | Chapter 05 | Lots of SME feedback |
-| Chapter 06 | Lots of SME feedback |
-| Appendix A - Guidance for VNF-to-CNF Transition | Initial Framework Only |
+| Chapter 06 | Still developing content |
+| Chapter 07 | Lots of SME feedback |
 | Appendix B - Guidance For workload isolation (Multitenancy) with Kubernetes for application Vendors | Still developing content |
 
 
@@ -40,6 +40,6 @@ This is Kubernetes based Reference Architecture (RA-2)
 * [Chapter 03 - L2: High Level Architecture](chapters/chapter03.md)
 * [Chapter 04 - L3: Component Level Architecture](chapters/chapter04.md)
 * [Chapter 05 - Security Guidance](chapters/chapter05.md)
-* [Chapter 06 - Gaps, Innovation, and Development](chapters/chapter06.md)
-* [Appendix A - Guidance for VNF-to-CNF Transition](chapters/appendix-a.md)
-* [Appendix B - Guidance For workload isolation (multitenancy) with Kubernetes for application vendors](chapters/appendix-b.md)
+* [Chapter 06 - Special Interest Group level requirements](chapters/chapter06.md)
+* [Chapter 07 - Gaps, Innovation, and Development](chapters/chapter07.md)
+* [Appendix A - Guidance For workload isolation (multitenancy) with Kubernetes for application vendors](chapters/appendix-a.md)
