@@ -5,8 +5,8 @@
 - [2.1 Workloads Collateral](#21-workloads-collateral)
 - [2.2 Use cases](#22-use-cases)
 - [2.3 Analysis](#23-analysis)
-- [2.4 Profiles & Flavours](#24-node-profiles--workload-profiles)
-  - [2.4.1 Profiles (top-level partitions)](#241-node-profiles-top-level-partitions)
+- [2.4 Profiles & Flavours](#24-profiles--flavours)
+  - [2.4.1 Profiles (top-level partitions)](#241-profiles-top-level partitions)
   - [2.4.2 Profile Extensions (specialisations)](#242-profile-extensions-specialisations)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
@@ -286,7 +286,7 @@ Based on the above analysis, the following cloud infrastructure profiles are pro
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 - **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
-<p align="center"><img src="../figures/RM-ch02-node-profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/RM-ch02-node-profiles.png" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
 In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
