@@ -315,8 +315,4 @@ Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to 
 | SmartNIC enabled | network-smartnic | ❌ | ✅ | labels a host/node that includes a Programmable accelerator for  vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |   |
 | SmartSwitch enabled | network-smartswitch | ❌ | ✅ | labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
 
->***Note:** This is an initial set of proposed profiles and profile extensions and it is expected that more profiles and/or profile extensions will be added as more requirements are gathered and as technology enhances and matures. *
->- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
->
->
->- ***Enhanced Network Intensive**: for network intensive Workloads that require higher network performance and/or specific network resource (e.g., crypto acceleration).*
+>***Note:** This is an initial set of proposed profiles and profile extensions and it is expected that more profiles and/or profile extensions will be added as more requirements are gathered and as technology enhances and matures.
