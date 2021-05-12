@@ -106,7 +106,7 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 
 **Baseline project:** _Kubernetes v1.21_
 
-**Gap description:** Memory Manager was added in v1.21 as alpha feature, more in [3.2.1.3 Memory and Huge Pages Resources Management](chapter03.md#3213-memory-and-huge-pages-resources-management).
+**Gap description:** Memory Manager was added in v1.21 as alpha feature. More in [3.2.1.3 Memory and Huge Pages Resources Management](chapter03.md#3213-memory-and-huge-pages-resources-management).
 
 <a name="7.2.9"></a>
 ### 7.2.9 User namespaces in Kubernetes
