@@ -318,5 +318,5 @@ Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to 
 >***Note:** This is an initial set of proposed profiles and profile extensions and it is expected that more profiles and/or profile extensions will be added as more requirements are gathered and as technology enhances and matures. *
 >- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
 >
->- ***Enhanced Compute Intensive**: for compute intensive Workloads that require higher computing performance and/or specific compute resource (e.g., GPU).*
+>
 >- ***Enhanced Network Intensive**: for network intensive Workloads that require higher network performance and/or specific network resource (e.g., crypto acceleration).*
