@@ -63,6 +63,7 @@ the following specifications:
 |`ra2.ch.015`|Physical NIC Speed - Network Intensive Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Network Intensive profile must be at least 25Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.016`|Physical PCIe slots|The physical machines on which the Kubernetes Nodes run must be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.|
 |`ra2.ch.017`|Immutable infrastructure|Whether physical or virtual machines are used, the Kubernetes Node is not changed after it is made ready for use. New changes to the Kubernetes Node are rolled out as new instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|[req.gen.cnt.02](./chapter02.md#23-kubernetes-architecture-requirements)|[Use of Ansible](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
+|`ra2.ch.018`|NFD|[Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) must be used to advertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.|TBD|TBD|
 
 <p align="center"><b>Table 4-1:</b> Node Specifications</p>
 
@@ -115,7 +116,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.009`|Multiple connection points with multiplexer/meta-plugin|When a multiplexer/meta-plugin is used, the additional non-default connection points must be managed by a CNI-conformant Network Plugin.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.010`|User plane networking|When hosting workloads matching the Network Intensive profile, CNI network plugins that support the use of DPDK, VPP, or SR-IOV must be deployed as part of the networking solution.|[infra.net.acc.cfg.001](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|[All are available under `example_net_attach_defs:`](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.011`|NATless connectivity|When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers, a CNI plugin that exposes the pod IP directly to the external networks (e.g. Calico, MACVLAN or IPVLAN CNI plugins) is required.|[req.inf.ntw.14](chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ntw.012`|Optional Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware may be used.|[e.cap.016](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.012`|Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA, SR-IOV or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware must be used.|[e.cap.016](chapter02.md#221-cloud-infrastructure-software-profile-capabilities), [e.cap.013](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ntw.013`|Dual stack CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able to support dual-stack IPv4/IPv6 networking.|[req.inf.ntw.04](chapter02.md#23-kubernetes-architecture-requirements)|
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
@@ -179,6 +180,10 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.006`|Consumption of additional, non-default connection points|The workload must request additional non-default connection points through the use of workload annotations or resource requests and limits within the container spec passed to the Kubernetes API Server.|[req.int.api.01](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
 |`ra2.app.007`|Host Volumes|Workloads should not use `hostPath` volumes, as [Pods with identical configuration (such as created from a PodTemplate) may behave differently on different nodes due to different files on the nodes.](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)|[req.kcm.gen.02](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
 |`ra2.app.008`|Infrastructure dependency|Workloads must not rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). |TBD|N/A|
+|`ra2.app.009`|Device plugins|Workload descriptors must use the resources advertised by the device plugins to indicate their need for an FPGA, SR-IOV or other acceleration device.|TBD|N/A|
+|`ra2.app.010`|Node Feature Discovery (NFD)|Workload descriptors must use the labels advertised by [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) to indicate which node software of hardware features they need.|TBD|N/A|
+
+
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
 ## 4.10 Additional required components
