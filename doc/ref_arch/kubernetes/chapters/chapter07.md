@@ -102,11 +102,11 @@ Note: with an underlying IaaS this is possible, but then it introduces (undesira
 <a name="7.2.8"></a>
 ### 7.2.8 HW topology aware hugepages
 
-> **Related requirements:** `nfvi.com.cfg.004` and `nfvi.com.cfg.002`
+**Related requirements:** `nfvi.com.cfg.004` and `nfvi.com.cfg.002`
 
-> **Baseline project:** _Kubernetes v1.17_
+**Baseline project:** _Kubernetes v1.21_
 
-> **Gap description:** Allocation of hugepages from the same NUMA node as other resources of a Pod. To support this [cAdvisor needed a change to support NUMA](https://github.com/google/cadvisor/pull/2304). Changes in Kubernetes are planned to be implemented in the [Node Topology Manager](https://github.com/kubernetes/enhancements/issues/693).
+**Gap description:** Memory Manager was added in v1.21 as alpha feature, more in [3.2.1.3 Memory and Huge Pages Resources Management](chapter03.md#3213-memory-and-huge-pages-resources-management).
 
 <a name="7.2.9"></a>
 ### 7.2.9 User namespaces in Kubernetes
