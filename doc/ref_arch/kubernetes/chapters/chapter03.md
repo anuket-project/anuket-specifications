@@ -212,7 +212,7 @@ Memory or Huge Pages are not considered by the Topology Manager. This can be don
 [Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
 Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
-* 1: During setup, the cluster administrator as human or operator in software (see Operator Framework URL to below) knows or discovers (using Node Feature Discovery as per 3.2.x.x above) what kind of devices are present on the different machines, selects which devices to enable and deploys the associated device plugins.
+* 1: During setup, the cluster administrator as human or operator in software (more in [3.2.1.8 Operator Pattern](chapter03.md#3218-operator-pattern)) knows or discovers (as per [3.2.1.5 Node Feature Discovery](chapter03.md#3215-node-feature-discovery)) what kind of devices are present on the different machines, selects which devices to enable and deploys the associated device plugins.
 * 2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server to monitor the devices.
 * 3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
 * 4: Kubelet decides which node to schedule workload on and which device on the node to assign to the pod's containers.
