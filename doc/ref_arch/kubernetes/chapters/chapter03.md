@@ -214,7 +214,7 @@ Memory or Huge Pages are not considered by the Topology Manager. This can be don
 
 #### 3.2.1.7 Hardware Acceleration
 
-Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
+Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and Smart Switches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
 
 Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator used:
 
