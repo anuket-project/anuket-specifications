@@ -375,7 +375,7 @@ The SFC management components together with the control components are responsib
  | Achieve technical requirements | Strict latency or timing accuracy | Must be done for precise low latency communication between data source and receiver |
  | Achieve technical requirements | Separation of processing pipeline | Ability to separate RAN into RU, DU, CU on different or stretch clusters |
 
- <p align="center"><b>Table 3-6:</b> Reasons and examples for Precise Clock and Synchronization</p>
+ <p align="center"><b>Table 3-7:</b> Reasons and examples for Precise Clock and Synchronization</p>
 
 Precise Synchronization require specialized card that can be on server or network device motherboard or be part of NIC or both.
 
@@ -421,7 +421,7 @@ Accelerator technologies can be categorized depending on where they are realized
 | SmartNIC | Programmable accelerator for vSwitch/vRouter, NF and/or Hardware Infrastructure | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 types/operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3 Reprogrammable |
 | SmartSwitch-based | Programmable Switch Fabric or TOR switch | Programmable by Infrastructure operator(s) and/or application tenant(s) | 3 operational modes: 1. Non-programmable normally with unaware applications; 2. Once programmable to activate; 3. Reprogrammable |
 
-<p align="center"><b>Table 3-6:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
+<p align="center"><b>Table 3-8:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
 <p align="center"><b>Figure 3-9:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
