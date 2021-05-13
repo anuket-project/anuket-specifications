@@ -240,7 +240,7 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container Runtime in Linux host Operating System) or with virtual machines (VMs, on hypervisor).
 When running in VMs, the following list of configurations shows what is needed for non-resilient applications:
 * CPU Manager managing vCPUs that hypervisor provides to VMs.
-* Huge pages enabled in hypervisor, mapped into VM, enabled in guest OS, and mapped into pod.
+* Huge pages enabled in hypervisor, mapped to VM, enabled in guest OS, and mapped to pod.
 * Hardware Topology Management with NUMA enabled in hypervisor, mapped into VM, if needed enabled in guest OS, and mapped into pod.
 * Node Feature Discovery and Device Plugin Framework for CPU instructions and devices enabled in hypervisor, mapped into VM, enabled in guest OS, and mapped into pod.
 
