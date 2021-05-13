@@ -11,6 +11,7 @@
   * [7.4.1 General Platform Security](#7.4.1)
   * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
   * [7.4.3 Platform ‘front-end’ access security](#7.4.3)
+  * [7.4.4 Infrastructure as a Code security](#7.4.4)
 * [7.5 Workload Security - Vendor Responsibility](#7.5)
   * [7.5.1 Software Hardening](#7.5.1)
   * [7.5.2 Port Protection](#7.5.2)
@@ -170,6 +171,24 @@ The platform supports the workload, and in effect controls access to the workloa
 
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
 * The front-end network may provide (Distributed Denial Of Service) DDOS support.
+
+<a name="7.4.4"></a>
+### 7.4.4 Infrastructure as a Code security
+Infrastructure as a Code (IaaC) is used for the declarative management of cloud infrastructure resources.  In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevOps teams utilize best practices including continuous integration and continuous delivery. To effectively integrate information security controls into these processes, with the aim of providing timely and meaningful feedback, automated security capabilities will be of critical value.
+
+Because of an extremely high complexity of modern telco cloud infrastructure, even very small IaaC code changes may lead to disproportionate and sometime disastrous downstream impacts. Therefore, integration of security testing into the IaaC software development pipeline requires security activities to be automated and bridged with the native DevOps tools and procedures. 
+
+The DevSecOps Automation best practice advocates implementing a framework for security automation and programmatic execution and monitoring of security controls to identify, protect, detect, respond, and recover from cyber threats.  The framework used for the IaaC security is based on the joint publication of Cloud Security Alliance (CSA) and SAFECode entitled The Six Pillars of DevSecOps: Automation (2020), https://safecode.org/the-six-pillars-of-devsecops-automation/. The latter document refers for its base definitions and constructs to ISO 27000, and CSA Information Security Management through Reflexive Security.
+
+The framework identifies the following five distinct stages: 
+1.	Secure design and architecture 
+2.	Secure coding (Developer IDE and Code Repository) 
+3.	Continuous build, integration and test 
+4.	Continuous delivery and deployment 
+5.	Continuous monitoring and runtime defence
+
+Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of security activities meets the requirements, the deliverable is transitioned to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. Otherwise, the deliverable should not be allowed to advance to the next checkpoint. 
+Tables 7-9 to 7-13 in Section 7.9 define the IaaC security activities presented as security requirements mapped to particular stages and trigger points.
 
 
 <a name="7.5"></a>
