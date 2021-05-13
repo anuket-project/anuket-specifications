@@ -188,7 +188,7 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 <a name="4.1.4.3"></a>
 #### 4.1.4.3 Internal Performance Optimisation and Security Capabilities
-**Table 4-7** below shows possible performance optimisation and secuirty capabilities that can be provided by Cloud Infrastructure. These include capabilities exposed to workloads as well as capabilities internal to the Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
+**Table 4-7** below shows possible performance optimisation and security capabilities that can be provided by Cloud Infrastructure. These include capabilities exposed to workloads as well as capabilities internal to the Cloud Infrastructure. These capabilities will be determined by the Cloud Infrastructure Profile used by the Cloud Infrastructure.
 
 <a name="Table4-7"></a>
 
