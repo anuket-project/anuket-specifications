@@ -15,11 +15,11 @@
         * [3.2.1.5 Node Feature Discovery](#3215-node-feature-discovery)
         * [3.2.1.6 Device Plugin Framework](#3216-device-plugin-framework)
         * [3.2.1.7 Hardware Acceleration](#3217-hardware-acceleration)
-        * [3.2.1.8 Operator Pattern](#3218-operator-pattern)
-        * [3.2.1.9 Scheduling Pods with Non-resilient Applications](#3219-scheduling-pods-with-non-resilient-applications)
+        * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
     * [3.2.2 Container Networking Services](#322-container-networking-services)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
     * [3.2.4 Container Package Managers](#324-container-package-managers)
+        * [3.2.5.1 Operator Pattern](#3251-operator-pattern)
 
 ## 3.1 Introduction
 
@@ -222,17 +222,6 @@ Scheduling pods that require or prefer to run on nodes with hardware accelerator
 •	CPU instructions can be found with Node Feature Discovery
 
 •	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
-
-
-#### 3.2.1.8 Operator Pattern
-
-[Operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure. 
-Operators can have different capability levels. As per repository [OperatorHub.io](https://operatorhub.io/), operator can have different capability levels ([picture](https://operatorhub.io/static/images/capability-level-diagram.svg)):
-* Basic install: Automated application provisioning and configuration management
-* Seamless upgrades: Patch and minor version upgrades supported
-* Full lifecycle: Application lifecycle, storage lifecycle (backup, failure recovery)
-* Deep insights: Metrics, alerts, log processing and workload analysis
-* Auto pilot: Horizontal/vertical scaling, automated configuration tuning, abnormality detection, scheduling tuning
 
 
 #### 3.2.1.9 Scheduling Pods with Non-resilient Applications
@@ -477,3 +466,16 @@ complies with the CNCF Conformance test for the package managers to use in the
 lifecycle management of the applications they manage. The Reference Architecture
 does not recommend the usage of a Kubernetes Application package manager with a
 server side component installed to the Kubernetes Cluster (e.g.: Tiller).
+
+
+#### 3.2.5.1 Operator Pattern
+
+[Custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) is a control loop watching cluster for changes to a custom resource. This tries to keep the current state of the resource in sync with the desired state.
+
+[Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) combines custom resources and custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure. 
+Operators can have different capability levels. As per repository [OperatorHub.io](https://operatorhub.io/), operator can have different capability levels ([picture](https://operatorhub.io/static/images/capability-level-diagram.svg)):
+* Basic install: Automated application provisioning and configuration management.
+* Seamless upgrades: Patch and minor version upgrades supported.
+* Full lifecycle: Application lifecycle, storage lifecycle (backup, failure recovery).
+* Deep insights: Metrics, alerts, log processing and workload analysis.
+* Auto pilot: Horizontal/vertical scaling, automated configuration tuning, abnormality detection, scheduling tuning.
