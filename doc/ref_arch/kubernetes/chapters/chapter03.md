@@ -189,8 +189,7 @@ For proper mapping of Huge Pages to scheduled pods, both need to have Huge Pages
 
 For some applications, Huge Pages
 should be allocated to account for consideration of the underlying HW topology.
-This newer feature is missing from Kubernetes, therefore a gap has been
-identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hugepages).
+[The Memory Manager](https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/) (added to Kubernetes v1.21 as alpha feature) enables the feature of guaranteed memory and Huge Pages allocation for pods in the Guaranteed QoS class. The Memory Manager feeds the Topology Manager with hints for most suitable NUMA affinity.
 
 
 #### 3.2.1.4 Hardware Topology Management
@@ -199,7 +198,7 @@ Scheduling pods across NUMA boundaries can result in lower performance and highe
 
 Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
 
-Memory or Huge Pages are not considered by the Topology Manager. This can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
+If case that memory or Huge Pages are not considered by the Topology Manager, it can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 
 #### 3.2.1.5 Node Feature Discovery
