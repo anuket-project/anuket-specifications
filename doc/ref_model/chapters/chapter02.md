@@ -6,7 +6,7 @@
 - [2.2 Use cases](#22-use-cases)
 - [2.3 Analysis](#23-analysis)
 - [2.4 Profiles & Flavours](#24-profiles--flavours)
-  - [2.4.1 Profiles (top-level partitions)](#241-profiles-top-level partitions)
+  - [2.4.1 Profiles (top-level partitions)](#241-profiles-top-level-partitions)
   - [2.4.2 Profile Extensions (specialisations)](#242-profile-extensions-specialisations)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
@@ -299,8 +299,8 @@ Profiles partition the infrastructure: an infrastructure object (host/node) **mu
 Profile Extensions are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain profile extensions may be relevant only for some profiles.
 The following **profile extensions** are proposed:
 
-Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes
-|-- | -- | -- | -- | --|
+| Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
+|---| -- | -- | -- | --| ---|
 | Compute Intensive High-performance CPU | compute-high-perf-cpu | ❌ | ✅ | Nodes that have predictable computing performance and higher clock speeds. | May use vanilla VIM/K8S scheduling instead. |
 | Storage Intensive High-performance storage | storage-high-perf | ❌ | ✅ | Nodes that have low storage latency and/or high storage IOPS | | 
 | Compute Intensive High memory | compute-high-memory | ❌ | ✅ | Nodes that have high amounts of RAM. | May use vanilla VIM/K8S scheduling instead. |
