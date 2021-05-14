@@ -242,7 +242,7 @@ When running in VMs, the following list of configurations shows what is needed f
 * CPU Manager managing vCPUs that hypervisor provides to VMs.
 * Huge pages enabled in hypervisor, mapped to VM, enabled in guest OS, and mapped to pod.
 * Hardware Topology Management with NUMA enabled in hypervisor, mapped into VM, if needed enabled in guest OS, and mapped into pod.
-* Node Feature Discovery and Device Plugin Framework for CPU instructions and devices enabled in hypervisor, mapped into VM, enabled in guest OS, and mapped into pod.
+* Node Feature Discovery and Device Plugin Framework for CPU instructions and devices enabled in hypervisor, mapped into VM, if needed enabled in guest OS, and mapped into pod.
 
 
 ### 3.2.2 Container Networking Services
