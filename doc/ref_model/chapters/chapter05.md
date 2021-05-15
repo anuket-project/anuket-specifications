@@ -36,33 +36,41 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.png" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> Cloud Infrastructure Virtual resources</p>
 
-Depending on the requirements of the workloads, a VM or a Pod will be deployed with a Cloud Infrastructure Profile and an appropriate compute flavour. A Cloud Infrastructure Profile is defined by a Cloud Infrastructure Software Profile and a Cloud Infrastructure Hardware Profile. A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by a Cloud Infrastructure software layer. **Figure 5-3** depicts a high level view of the Basic and Network Intensive Cloud Infrastructure Profiles.
+A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by a Cloud Infrastructure software layer. **Figure 5-3** depicts a high level view of the Basic and High Performance Cloud Infrastructure Profiles.
 
-<p align="center"><img src="../figures/RM_chap5_fig_5_3_SW_profile.png" alt="ref_profiles" title="Reference Profiles" width="80%"/></p>
-<p align="center"><b>Figure 5-3:</b> Cloud Infrastructure Profiles</p>
+<p align="center"><img src="../figures/RM-ch05-sw-profile.png" alt="ref_sw_profiles" title="Reference Software Profiles" width="80%"/></p>
+<p align="center"><b>Figure 5-3:</b> Cloud Infrastructure Software Profiles</p>
 
 
-
-The following sections detail the Cloud Infrastructure Software Profile features per type of virtual resource. The list of these features will evolve over time.
+The following sections detail the Cloud Infrastructure Software Profile features per type of virtual resource.
 
 <a name="5.1.1"></a>
 ### 5.1.1 Virtual Compute
 
 **Table 5-1** and **Table 5-2** depict the features related to virtual compute.
 
-| Reference         | Feature                | Type   | Description                                           |
-|-------------------|------------------------|--------|-------------------------------------------------------|
-| infra.com.cfg.001 | CPU allocation ratio   | Value  | Number of virtual cores per physical core             |
-| infra.com.cfg.002 | NUMA alignment         | Yes/No | Support of NUMA at the virtualization layer           |
-| infra.com.cfg.003 | CPU pinning            | Yes/No | Binds a vCPU to a physical core or SMT thread         |
-| infra.com.cfg.004 | Huge Pages             | Yes/No | Ability to manage huge pages of memory                |
+| Reference         | Feature                | Type   | Description | Capabilities Reference<sup1</sup> |
+|-------------------|--------------|--------|--------------------|---------|
+| infra.com.cfg.001 | CPU allocation ratio | Value  | Number of virtual cores per physical core. | `i.cap.016` |
+| infra.com.cfg.002 | NUMA alignment | Yes/No | Support of NUMA at the Host OS and virtualisation layers, in addition to hardware. | `e.cap.007` |
+| infra.com.cfg.003 | CPU pinning | Yes/No | Binds a vCPU to a physical core or SMT thread. Configured in OS and virtualisation layers.| `e.cap.006` |
+| infra.com.cfg.004 | Huge Pages | Yes/No | Ability to manage huge pages of memory. Configured in OS and virtualisation layers. | `i.cap.018` |
+| infra.com.cfg.004 | Simultaneous Multithreading (SMT) | Yes/No | Allows multiple execution threads to be executed on a single physical CPU core. Configured in OS, ina ddition ot the hardware. | `e.cap.018` |
+><sup>1</sup> Reference to the capabilities defined in [Chapter 4](./chapter04.md).
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
 
-| Reference        | Feature | Type  | Description |
-|------------------|----------------|----------------|------------------------------------------------------------------------------------------------|
-| infra.com.acc.cfg.001 | Left for RA specifications |  | |
-
+| Reference        | Feature | Type  | Description | Capabilities Reference<sup1</sup> |
+|-------------|----------------|----------------|-----------------------|---------
+| infra.com.acc.cfg.001 |	IPSec Acceleration |	Yes/No |	IPSec Acceleration | `e.cap.008` |
+| infra.com.acc.cfg.002 |	Crypto Acceleration |	Yes/No |	Crypto Acceleration | `e.cap.009` |
+| infra.com.acc.cfg.003 |	Transcoding Acceleration |	Yes/No |	Transcoding Acceleration | `e.cap.010 	` |
+| infra.com.acc.cfg.004 |	Programmable Acceleration |	Yes/No |	Programmable Acceleration | `e.cap.011` |
+| infra.com.acc.cfg.005 |	GPU |	Yes/No |	Hardware coprocessor. | `e.cap.014` |
+| infra.com.acc.cfg.006 |	SmartNIC |	Yes/No |	Network Acceleration. | `e.cap.015` |
+| infra.com.acc.cfg.007 |	FPGA/other Acceleration H/W |	Yes/No |	Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. | `e.cap.016` |
+| infra.com.acc.cfg.008 |	Smart Switch |	Yes/No |	Programmable Switch Fabric or TOR switch. |  |
+  
 <p align="center"><b>Table 5-2:</b> Virtual Compute Acceleration features.</p>
 
 <a name="5.1.2"></a>
@@ -105,9 +113,7 @@ The following sections detail the Cloud Infrastructure Software Profile features
 | Reference             | Feature                       | Type                       | Description               |
 |-----------------------|-------------------------------|----------------------------|---------------------------|
 | infra.net.acc.cfg.001 | vSwitch optimisation          | Yes/No and SW Optimisation | e.g. DPDK.                |
-| infra.net.acc.cfg.002 | Support of HW offload         | Yes/No                     | e.g. support of SmartNic. |
-| infra.net.acc.cfg.003 | Crypto acceleration           | Yes/No                     |                           |
-| infra.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No                     |                           |
+
 
 <p align="center"><b>Table 5-6:</b> Virtual Networking Acceleration features.</p>
 
@@ -126,11 +132,16 @@ This section details the services that may be made available to workloads by the
 
 <p align="center"><b>Table 5-7:</b> Cloud Infrastructure Platform services.</p>
 
-| Minimum requirements | Example                                    |
-|----------------------|--------------------------------------------|
-|Database as a service | Cassandra                                  |
-|Queue                 | Rabbit MQ                                  |
-|LB and HA Proxy       |                                            |
+| Minimum requirements  | Example       |
+|-----------------------|---------------|
+| Database as a service | Cassandra     |
+| Queue                 | Rabbit MQ     |
+| LB and HA Proxy       | NGINX, Istio  |
+| Security & Compliance | Calico        |
+| Monitoring            | Prometheus    |
+| Logging and Analysis  | ELK<sup*></sup> Stack |
+> <sup*></sup> ELK: Elasticsearch, Logstash, and Kibana
+
 <p align="center"><b>Table 5-7a:</b> Service examples.</p>
 
 <a name="5.2"></a>
@@ -143,22 +154,30 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-8** depicts the features and configurations related to virtual compute for the 2 types of Cloud Infrastructure Profiles.
 
-| Reference         | Feature                | Type   | Basic | Network Intensive | Notes |
+| Reference         | Feature                | Type   | Basic | High Performance  | Notes |
 |-------------------|------------------------|--------|-------|-------------------|-------|
-| infra.com.cfg.001 | CPU allocation ratio   | value  | 1:1   | 1:1               |This is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking and certification.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to workloads using the basic profile._ |
+| infra.com.cfg.001 | CPU allocation ratio   | value  | N:1   | 1:1               |       |
 | infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |       |
 | infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |       |
 | infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
+| infra.com.cfg.004 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |       |
 
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
 
-> **Note:** Capability nfvi.com.cfg.001 is set to 1:1 for the Basic profile to enable predictable and consistent performance during benchmarking, certification, and deployment.  Operators may choose to modify this for actual deployments if they are willing to accept the risk of performance impact to these workloads.
 
-**Table 5-9** will gather virtual compute acceleration features. It will be filled over time.
+**Table 5-9** lists the features related to compute acceleration for the High Performance profile. The table also lists the applicable [Profile-Extensions](./chapter04.md#423-profile-extensions) and Extra Specs that may need to be specified.
 
-| Reference             | Feature                            | Type | Basic | Network Intensive |
+| Reference             | Feature                            | Type | Profile-Extensions | Profile Extra Specs |
 |-----------------------|------------------------------------|------|-------|-------------------|
-| infra.com.acc.cfg.001 | _**Note:** for further study_ |      |       |                   |
+| infra.com.acc.cfg.001 | IPSec Acceleration | Yes/No | Compute Intensive GPU | |
+| infra.com.acc.cfg.002 | Crypto Acceleration | Yes/No |	 Fixed function accelerator | |
+| infra.com.acc.cfg.003 | Transcoding Acceleration | Yes/No | Compute Intensive GPU | Video Transcoding |
+| infra.com.acc.cfg.004 | Programmable Acceleration | Yes/No |	Firmware-programmable adapter | Accelerator |
+| infra.com.acc.cfg.005 | GPU | Yes/No | Compute Intensive GPU | |
+| infra.com.acc.cfg.006 | SmartNIC | Yes/No | SmartNIC enabled |  |
+| infra.com.acc.cfg.007 | FPGA/other Acceleration H/W | Yes/No | Firmware-programmable adapter | |
+| infra.com.acc.cfg.008 |Smart Switch |	Yes/No |Programmable Switch Fabric or TOR switch. |  |
+
 
 <p align="center"><b>Table 5-9:</b> Virtual Compute Acceleration features.</p>
 
@@ -167,7 +186,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-10** and **Table 5-11** depict the features and configurations related to virtual storage for the 2 types of Cloud Infrastructure Profiles.
 
-| Reference         | Feature                  | Type   | Basic | Network Intensive |
+| Reference         | Feature                  | Type   | Basic | High Performance  |
 |-------------------|--------------------------|--------|-------|-------------------|
 | infra.stg.cfg.001 | Catalogue storage Types  | Yes/No | Y     | Y                 |
 | infra.stg.cfg.002 | Storage Block            | Yes/No | Y     | Y                 |
@@ -178,7 +197,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-11** depicts the features related to Virtual storage Acceleration
 
-| Reference             | Feature                   | Type   | Basic | Network Intensive |
+| Reference             | Feature                   | Type   | Basic | High Performance  |
 |-----------------------|---------------------------|--------|-------|-------------------|
 | infra.stg.acc.cfg.001 | Storage IOPS oriented     | Yes/No | N     | Y                 |
 | infra.stg.acc.cfg.002 | Storage capacity oriented | Yes/No | N     | N                 |
@@ -190,7 +209,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-12** and **Table 5-13** depict the features and configurations related to virtual networking for the 2 types of Cloud Infrastructure Profiles.
 
-| Reference         | Feature                   | Type              | Basic                           | Network Intensive |
+| Reference         | Feature                   | Type              | Basic                           | High Performance |
 |-------------------|-----------------------------|-------------------|-------------------------------|-------------------|
 | infra.net.cfg.001 | Connection Point interface | IO virtualisation | virtio1.1                     | virtio1.1*        |
 | infra.net.cfg.002 | Overlay protocol          | Protocols         | VXLAN, MPLSoUDP, GENEVE, other | VXLAN, MPLSoUDP, GENEVE, other |
@@ -203,7 +222,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 > **Note:** * might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until mature enough solutions are available with a similar efficiency level (for example regarding CPU and energy consumption).
 
-| Reference             | Feature                       | Type                       | Basic | Network Intensive      |
+| Reference             | Feature                       | Type                       | Basic | High Performance       |
 |-----------------------|-------------------------------|----------------------------|-------|------------------------|
 | infra.net.acc.cfg.001 | vSwitch optimisation          | Yes/No and SW Optimisation | N     | Y, DPDK                |
 | infra.net.acc.cfg.002 | Support of HW offload         | Yes/No                     | N     | Y, support of SmartNic |
@@ -217,50 +236,18 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 The support of a variety of different workload types, each with different (sometimes conflicting) compute, storage, and network characteristics, including accelerations and optimizations, drives the need to aggregate these characteristics as a hardware (host) profile and capabilities. A host profile is essentially a “personality” assigned to a compute host (physical server, also known as compute host, host, node, or pServer). The host profiles and related capabilities consist of the intrinsic compute host capabilities (such as number of CPU sockets, number of cores per CPU, RAM, local disks and their capacity, etc.), and capabilities enabled in hardware/BIOS, specialised hardware (such as accelerators), the underlay networking, and storage.
 
-This chapter defines a simplified host, host profile and related capabilities model associated with each of the different Cloud Infrastructure Hardware Profile and related capabilities; some of these profiles and capability parameters are shown in **Figure 5-4**.
+This chapter defines a simplified host, profile and related capabilities model associated with each of the different Cloud Infrastructure Hardware Profile and related capabilities; the [two profiles](./chapter02.md#241-node-profiles-top-level-partitions) (aka host profiles, node profiles, hardware profiles) and some of their associated capabilities are shown in **Figure 5-4**.
 
-<p align="center"><img src="../figures/RM_chap5_fig_5_4_HW_profile.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/RM-ch05-hw-profile.png" alt="ref_hw_profiles" title="Reference HW Profiles" width="80%"/></p>
 <p align="center"><b>Figure 5-4:</b> Cloud Infrastructure Hardware Profiles and host associated capabilities.</p>
 
-The host profile model and configuration parameters (hereafter for simplicity simply "host profile") will be used in the **Reference Architecture** to define different hardware profiles. The host profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on Cloud Infrastructure resources.
+The profiles and configuration parameters will be used in the **Reference Architecture** to define different hardware profiles. The profiles can be considered to be the set of EPA-related (Enhanced Performance Awareness) configurations on Cloud Infrastructure resources.
 
 > **Note:** In this chapter we shall not list all of the EPA-related configuration parameters.
 
-A software profile (see **Chapter 4**, **5.1 and 5.2**) defines the characteristics of Cloud Infrastructure SW of which Virtual Machines or Containers will be deployed on. A many to many relationship exists between software profiles and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles.
+A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. In addition to the host profile, profile-extensions and additional capability specifications for the configuration of the host can be specified (./chapter04.md#4.2.3). Different Cloud Service Providers (CSP) may use different naming standards for their host profiles.
 
-The following naming convention is used in this document:
-
-`<host profile name>:: <”hp”><numeral host profile sequence #>`
-
-When a software profile is associated with a host profile,  a qualified name can be used as specified below.
-`<qualified host profile>:: <software profile><”-“><”hp”><numeral host profile sequence #>`
-_**For Example:** for software profile “n” (network intensive) the above host profile name would be “n-hp1”_.
-
-<p align="center"><img src="../figures/Chapter-6-HW-SW-Profile-Diagram_v2.png" alt="HW-Profile-SW-Flavour" Title="HW Profile and SW Profile relationship" width="85%"/></p>
-<p align="center"><b>Figure 5-5:</b> Generic Hardware Profile, Software Flavour, Physical server relationship.</p>
-
-
-**Figure 5-5** shows a simplistic depiction of the relationship between Hardware profile, Software Profile, Physical server, and virtual compute. In the diagram the resource pool, a logical construct, depicts all physical hosts that have been configured as per a given host profile; there is one resource pool for each hardware profile.
-> **Note:** resource pools are not OpenStack host aggregates.
-
-The host profile and capabilities include:
-1. **Number of CPU sockets**: is the number of CPUs installed on the physical server.
-1. **Number of cores per CPU**: is the number of cores on each of the CPUs of the physical server.
-1. **RAM (GB)**: is the amount of RAM installed on the physical server.
-1. **Local Disk Capacity**: is the number of local disks and the capacity of the disks installed on the physical server.
-1. **SMT (Simultaneous Multithreading)**: Enabled on all physical servers. Gets multiple threads per physical core. Always ON. Configured in the host.
-1. **NUMA (Non-Uniform Memory Access)**: Indicates that vCPU will be on a Socket that is aligned with the associated NIC card and memory. Important for performance optimized workloads. Configured in the host.
-1. **SR-IOV (Single-Root Input/Output Virtualisation)**: Configure PCIe ports to enable SR-IOV.
-1. **smartNIC (aka Intelligent Server Adaptors)**: Accelerated virtual switch using smartNIC
-1. **Cryptography Accelerators**: such as AES-NI, SIMD/AVX, and QAT.
-1. **Security features**: such as Trusted Platform Module (TPM).
-
-The following model, **Figure 5-6**, depicts the essential characteristics of a host that are of interest in specifying a host profile. The host (physical server) is composed of compute, network, and storage resources. The compute resources are composed of physical CPUs (aka CPU sockets or sockets) and memory (RAM). The network resources and storage resources are similarly modelled.
-
-<p align="center"><img src="../figures/ch06_generic_model.PNG" alt="generic_model" title="Generic Model" width="100%"/></p>
-<p align="center"><b>Figure 5-6:</b> Generic model of a compute host for use in Host Profile configurations.</p>
-
-The hardware (host) profile properties are specified in the following sub-sections. The following diagram (**Figure 5-7**) pictorially represents a high-level abstraction of a physical server (host).
+The host profile properties are specified in the following sub-sections. The following diagram (**Figure 5-7**) pictorially represents a high-level abstraction of a physical server (host).
 
 <p align="center"><img src="../figures/ch06_ref_hw_profile.PNG" alt="reference_hw_profile" title="Reference HW Profile" width="65%"/></p>
 <p align="center"><b>Figure 5-7:</b> Generic model of a compute host for use in Host Profile configurations.</p>
@@ -273,21 +260,21 @@ The configurations specified in here will be used in specifying the actual hardw
 <a name="5.4.1"></a>
 ### 5.4.1 Compute Resources
 
-| Reference           | Feature                                             | Description                                                        | Basic Type | Network Intensive |
-|---------------------|-----------------------------------------------------|--------------------------------------------------------------------|------------|-------------------|
-| infra.hw.cpu.cfg.001 | Minimum number of CPU sockets  | This determines the minimum number of CPU sockets within each host | 2          | 2                 |
-| infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | This determines the number of cores needed per CPU                 | 20         | 20                |
-| infra.hw.cpu.cfg.003 | NUMA alignment                    | NUMA alignment support and BIOS configured to enable NUMA                    | N          | Y                 |
-| infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously  | Y          | Y                 |
+| Reference | Feature | Description | Basic  | High Performance |
+|---------------------|----------------------|------------|------------|------------|
+| infra.hw.cpu.cfg.001 | Minimum number of CPU sockets  | This determines the minimum number of CPU sockets within each host | 2 | 2 |
+| infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | This determines the number of cores needed per CPU | 20 | 20 |
+| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y |
+| infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | This allows a CPU to work multiple streams of data simultaneously  | Y | Y |
 
 <p align="center"><b>Table 5-14:</b> Minimum Compute resources configuration parameters.</p>
 
 <a name="5.4.1.1"></a>
 #### 5.4.1.1 Compute Acceleration Hardware Specifications
 
-| Reference           | Feature | Description | Basic Type | Network Intensive |
+| Reference | Feature | Description | Basic  | High Performance |
 |---------------------|---------|-------------|------------|-------------------|
-| infra.hw.cac.cfg.001 | GPU     | GPU         | N          | N                 |
+| infra.hw.cac.cfg.001 | GPU | GPU | N | N |
 
 <p align="center"><b>Table 5-15:</b> Compute acceleration configuration specifications.</p>
 
@@ -295,7 +282,7 @@ The configurations specified in here will be used in specifying the actual hardw
 <a name="5.4.2"></a>
 ### 5.4.2 Storage Configurations
 
-| Reference                | Feature           | Description       | Basic Type  | Network Intensive |
+| Reference                | Feature           | Description       | Basic   | High Performance |
 |--------------------------|-------------------|-------------------|-------------|-------------------|
 | infra.hw.stg.hdd.cfg.001* | Local Storage HDD | Hard Disk Drive   |             |                   |
 | infra.hw.stg.ssd.cfg.002* | Local Storage SSD | Solid State Drive | Recommended | Recommended       |
@@ -310,7 +297,7 @@ The configurations specified in here will be used in specifying the actual hardw
 <a name="5.4.3.1"></a>
 #### 5.4.3.1 NIC configurations
 
-| Reference           | Feature    | Description                                     | Basic Type | Network Intensive |
+| Reference           | Feature    | Description                                     | Basic | High Performance |
 |---------------------|------------|-------------------------------------------------|------------|-------------------|
 | infra.hw.nic.cfg.001 | NIC Ports  | Total number of NIC Ports available in the host | 4          | 4                 |
 | infra.hw.nic.cfg.002 | Port Speed | Port speed specified in Gbps (minimum values)   | 10         | 25                |
@@ -320,7 +307,7 @@ The configurations specified in here will be used in specifying the actual hardw
 <a name="5.4.3.2"></a>
 #### 5.4.3.2 PCIe Configurations
 
-| Reference           | Feature    | Description                                | Basic Type | Network Intensive |
+| Reference           | Feature    | Description                                | Basic | High Performance |
 |---------------------|------------|--------------------------------------------|------------|-------------------|
 | infra.hw.pci.cfg.001 | PCIe slots | Number of PCIe slots available in the host | 8          | 8                 |
 | infra.hw.pci.cfg.002 | PCIe speed |                                            | Gen 3      | Gen 3             |
@@ -331,7 +318,7 @@ The configurations specified in here will be used in specifying the actual hardw
 <a name="5.4.3.3"></a>
 #### 5.4.3.3 Network Acceleration Configurations
 
-| Reference           | Feature                    | Description                                                          | Basic Type | Network Intensive |
+| Reference           | Feature                    | Description                                                          | Basic | High Performance |
 |---------------------|----------------------------|----------------------------------------------------------------------|------------|-------------------|
 | infra.hw.nac.cfg.001 | Crypto Acceleration | IPSec, Crypto                                                        | N          | Optional          |
 | infra.hw.nac.cfg.002 | SmartNIC            | A SmartNIC that is used to offload network functionality to hardware | N          | Optional          |
