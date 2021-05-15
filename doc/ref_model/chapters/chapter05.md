@@ -137,11 +137,12 @@ This section details the services that may be made available to workloads by the
 
 <p align="center"><b>Table 5-7:</b> Cloud Infrastructure Platform services.</p>
 
-| Minimum requirements  | Example       |
+| Minimum requirements  | Platform Service Examples |
 |-----------------------|---------------|
 | Database as a service | Cassandra     |
 | Queue                 | Rabbit MQ     |
-| LB and HA Proxy       | NGINX, Istio  |
+| LB and HA Proxy       | NGINX,        |
+| Service Mesh          | Istio         |
 | Security & Compliance | Calico        |
 | Monitoring            | Prometheus    |
 | Logging and Analysis  | ELK<sup*></sup> Stack |
