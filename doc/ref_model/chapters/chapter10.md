@@ -67,7 +67,7 @@ Closed-loop automation is evolving as a major advancement in the telecommunicati
 
 <a name="10.3.5"></a>
 ### 10.3.5 Acceleration Abstraction
-Many of vRAN network functions and some other domains network functions require accelerators to meet latency and thruput requirements. And large number of advanced ASICs, FPGAs, GPUs, and Smart NIC have been come to market to assist with it. Unfortunately there is a lack of common way to use and utilize them.
+Many vRAN and some other domain's network functions require accelerators to meet latency and thruput requirements. A large number of advanced ASICs, FPGAs, GPUs, and Smart NIC have come to the market to address these needs but unfortunately there is a lack of a common way to utilize them.
 		
 The first gap is common programming model for application development. oRAN Alliance is developing a common abstraction and programming model for RAN application domain (see https://oranalliance.atlassian.net/wiki/download/attachments/872841331/O-RAN.WG6.AAL-GAnP-v01.00.pdf?api=v2). P4 Language Consortium (https://p4.org/) defines specification for switching and routing domains.
 		
