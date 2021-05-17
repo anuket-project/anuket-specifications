@@ -346,7 +346,6 @@ There are two flavors profiles that can be used:
 | i.fl.014 | network_GPU               | Y/N          | H             | Optional
 | i.fl.015 | network_SmartNIC          | Y/N          | H             | Optional
 | i.fl.016 | network_FPGA              | Y/N          | H             | Optional
-| i.fl.017 | network_IPSec_Accel       | Y/N          | H             | Optional
 
 
 <a name="4.2.2"></a>
