@@ -327,7 +327,6 @@ There are two workload profiles available which can be selected:
 
 
 | i.fl.009 | cpu_alloc_ratio           | 1:1/n:m          | B/H             | Optional
-| i.fl.010 | numa_alignment            | Y/N          | H             | Optional
 | i.fl.012 | network_DPDK              | Y/N          | H             | Optional
 | i.fl.013 | network_SRIOV             | Y/N          | H             | Optional
 | i.fl.014 | network_GPU               | Y/N          | H             | Optional
