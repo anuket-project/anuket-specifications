@@ -307,7 +307,7 @@ Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A
 The following tables provide a descriptive approach on how a profile can be created to suit the needs of a workload, so it can be onboarded. This will minimize several challenges related to Infrastructure management:
 
 * Workloads can be deployed according to specific profiles (Basic; High Performance), and can be configured with a lower level of granularity by using profile extensions
-* Additional flavors can be created which are linked to  to different VM requirements
+* Profile extensions allow a more precise configuration of a workload (e.g. GPU, high, speed network, Edge deployment)
 * Cloud infrastructure "scattering" is minimized
 * Workload optimisation by using existing profiles and its extensions
 * Better usage of Cloud Objects (Memory;Processor;Network;Storage)
