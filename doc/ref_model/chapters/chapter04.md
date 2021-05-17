@@ -326,7 +326,6 @@ There are two workload profiles available which can be selected:
 <a name="Table4-13"></a>
 
 
-| i.fl.008 | cpu_pinning               | Y/N          | H             |
 | i.fl.009 | cpu_alloc_ratio           | 1:1/n:m          | B/H             | Optional
 | i.fl.010 | numa_alignment            | Y/N          | H             | Optional
 | i.fl.011 | huge_pages                | Y/N          | H             | Optional
