@@ -326,7 +326,6 @@ There are two workload profiles available which can be selected:
 <a name="Table4-13"></a>
 
 
-| Ref | Attribute | Unit | (B)asic/(H)igh Performance | Presence |
 |----------|--------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -----------|
 | i.fl.001 | Flavor ID             | integer       | B/H           | Required |
 | i.fl.002 | vCPU                      | integer      | B/H           | Required |
