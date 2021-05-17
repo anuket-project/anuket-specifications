@@ -302,7 +302,7 @@ Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A
 <p align="center"><b>Table 4-12:</b> Compute Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
-#### 4.2.1.1 Predefined Compute Flavors
+#### 4.2.1.1 Predefined Workload Profiles
 
 The following tables provide a descriptive approach on how a Compute flavor can be created to suit the needs of an application, so it can be onboarded. This will minimize several challenges related to Infrastructure management:
 
