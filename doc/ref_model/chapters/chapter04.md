@@ -326,7 +326,6 @@ There are two workload profiles available which can be selected:
 <a name="Table4-13"></a>
 
 
-| i.fl.012 | network_DPDK              | Y/N          | H             | Optional
 
 
 <a name="4.2.2"></a>
