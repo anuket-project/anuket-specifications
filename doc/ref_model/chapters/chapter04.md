@@ -320,7 +320,7 @@ In Kubernetes based environments these are the resource requests of the containe
 There are two workload profiles available which can be selected:
 There are two flavors profiles that can be used:
 
-* Basic: Minimum number attributes for Virtual Server Hardware configuration
+* Basic: for Workloads that can tolerate resource over-subscription and variable latency
 
 * High Performance: Detailed Hardware configuration of a virtual server. It allows a deep level configuration (e.g. Specific configuration parameters for Hardware acceleration)
 
