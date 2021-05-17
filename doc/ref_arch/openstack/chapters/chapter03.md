@@ -203,7 +203,7 @@ Functional requirements of this node include:
 -	Grow / Shrink resources
 
 #### 3.3.1.3 Cloud Controller Services
-The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Management Software components [Reference Model Chapter 3.3 Management Software](../../../ref_model/chapters/chapter03.md#3.3").
+The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Virtual Infrastructure Manager [Reference Model Chapter 3.2.2 Virtual Infrastructure Manager](../../../ref_model/chapters/chapter03.md#322").
 
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|

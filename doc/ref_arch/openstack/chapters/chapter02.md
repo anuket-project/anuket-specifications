@@ -396,7 +396,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | `req.int.api.07` | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) |
 | `req.int.api.08` | API | The Architecture **must** provide APIs needed to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
 | `req.int.api.09` | API | The Architecture **must** provide APIs to access the orchestration service. | [RA-1 5.2.8 "Heat"](./chapter05.md#528-heat) |
-| `req.int.api.10` | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services. | [RA-1 5.2 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md#52-core-openstack-services-apis) |
+| `req.int.api.10` | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services. | [RA-1 5.2 Core OpenStack Services APIs](./chapter05.md#52-core-openstack-services-apis) |
 
 
 <p align="center"><b>Table 2-10:</b> Interfaces and APIs Requirements</p>
