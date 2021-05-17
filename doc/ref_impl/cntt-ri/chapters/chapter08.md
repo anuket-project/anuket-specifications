@@ -209,7 +209,7 @@ The other section(s) in IDF are Installer specific.
 
 Airship is a collection of loosely coupled and interoperable open source tools that declaratively automate cloud provisioning - Infrastructure Deployment and Lifecycle Management of cloud.
 
-Airship is a robust delivery mechanism for organizations who want to embrace containers as the new unit of infrastructure delivery at scale. Starting from raw bare metal infrastructure, Airship manages the full lifecycle of data center infrastructure to deliver a production-grade Kubernetes cluster with Helm deployed artifacts, including OpenStack-Helm. OpenStack-Helm is a set of Helm charts that enable deployment, maintenance, and upgrading of loosely coupled OpenStack services and their dependencies individually or as part of complex environments.
+Airship is a robust delivery mechanism for organizations who want to embrace containers as the new unit of infrastructure delivery at scale. Starting from raw bare metal infrastructure, Airship manages the full lifecycle of data center infrastructure to deliver a production-grade Kubernetes Cluster with Helm deployed artifacts, including OpenStack-Helm. OpenStack-Helm is a set of Helm charts that enable deployment, maintenance, and upgrading of loosely coupled OpenStack services and their dependencies individually or as part of complex environments.
 
 Airship allows operators to manage their infrastructure deployments and lifecycle through the declarative YAML documents that describe an Airship environment.
 
@@ -319,7 +319,7 @@ The complete installation can take signification time - 2-3 hours, and it involv
   - Dataplane nodes.
 - Software deployment.
 
-First, the genesis node is setup as single-node kubernetes cluster. This is followed by provisioning baremetal nodes. Once the Baremetal provisioning starts, user can use this link to check for the status:
+First, the genesis node is setup as single-node Kubernetes Cluster. This is followed by provisioning baremetal nodes. Once the Baremetal provisioning starts, user can use this link to check for the status:
 
 http://&lt;IP-OF-GENESIS-NODE&gt;:31900/MAAS/#/nodes
 
@@ -327,7 +327,7 @@ Ex: for Pod10 - [http://10.10.100.21:31900/MAAS/#/nodes](http://10.10.100.21:319
 
 The provisioning of the baremetal nodes is done in a particular order - ex: control nodes (node2 and node3 of intel-pod10) first and then the compute nodes (node4 and node5). To understand any failures in this step, user can check the logs of the drydock service in genesis-node.
 
-Once the baremetal provisioning is completed, the software deployment process starts. This includes setting up multiple services on the Kubernetes cluster, under following namespaces – in that particular order:
+Once the baremetal provisioning is completed, the software deployment process starts. This includes setting up multiple services on the Kubernetes Cluster, under following namespaces – in that particular order:
 
 - kube-system
 - ceph

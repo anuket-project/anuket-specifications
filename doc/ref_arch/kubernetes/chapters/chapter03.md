@@ -22,10 +22,10 @@
 
 ## 3.1 Introduction
 
-The CNTT Kubernetes Reference Architecture (RA) is intended to be an industry
+The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
 standard independent Kubernetes reference architecture that is not tied to any
 specific offering or distribution. No vendor-specific enhancements are required
-in order to achieve conformance to CNTT principles; conformance is achieved by
+in order to achieve conformance to the principles of Anuket specifications; conformance is achieved by
 using upstream components or features that are developed by the open source
 community. This allows operators to have a common Kubernetes-based architecture
 that supports any conformant VNF or CNF deployed on it to operate as expected.
@@ -37,7 +37,7 @@ Kubernetes is already a well documented and widely deployed Open Source project
 managed by the Cloud Native Computing Foundation (CNCF). Full documentation of
 the Kubernetes code and project can be found at
 [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/). The
-following chapters will only describe the specific features required by the CNTT
+following chapters will only describe the specific features required by the Anuket
 Reference Architecture, and how they would be expected to be implemented. For
 any information related to standard Kubernetes features and capabilities, refer
 back to the standard Kubernetes documentation.
@@ -189,8 +189,7 @@ For proper mapping of Huge Pages to scheduled pods, both need to have Huge Pages
 
 For some applications, Huge Pages
 should be allocated to account for consideration of the underlying HW topology.
-This newer feature is missing from Kubernetes, therefore a gap has been
-identified and added to [Chapter 6.2.8](./chapter06.md#628-hw-topology-aware-hugepages).
+[The Memory Manager](https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/) (added to Kubernetes v1.21 as alpha feature) enables the feature of guaranteed memory and Huge Pages allocation for pods in the Guaranteed QoS class. The Memory Manager feeds the Topology Manager with hints for most suitable NUMA affinity.
 
 
 #### 3.2.1.4 Hardware Topology Management
@@ -199,7 +198,7 @@ Scheduling pods across NUMA boundaries can result in lower performance and highe
 
 Kubernetes supports Topology policy per node as beta feature ([documentation](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/)) and not per pod. The Topology Manager receives Topology information from Hint Providers which identify NUMA nodes (defined as server system architecture divisions of CPU sockets) and preferred scheduling. In the case of the pod with Guaranteed QoS class having integer CPU requests, the static CPU Manager policy would return topology hints relating to the exclusive CPU and the Device Manager would provide hints for the requested device.
 
-Memory or Huge Pages are not considered by the Topology Manager. This can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
+If case that memory or Huge Pages are not considered by the Topology Manager, it can be done by the operating system providing best-effort local page allocation for containers as long as there is sufficient free local memory on the node, or with Control Groups (cgroups) cpuset subsystem that can isolate memory to single NUMA node.
 
 
 #### 3.2.1.5 Node Feature Discovery
@@ -214,7 +213,7 @@ Memory or Huge Pages are not considered by the Topology Manager. This can be don
 
 #### 3.2.1.7 Hardware Acceleration
 
-Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
+Hardware Acceleration Abstraction in RM [3.8 Hardware Acceleration Abstraction](../../../ref_model/chapters/chapter03.md#3.8) describes types of hardware acceleration (CPU instructions, Fixed function accelerators, Firmware-programmable adapters, SmartNICs and SmartSwitches), and usage for Infrastructure Level Acceleration and Application Level Acceleration.
 
 Scheduling pods that require or prefer to run on nodes with hardware accelerators will depend on type of accelerator used:
 
@@ -391,7 +390,7 @@ hand, the low latency, high throughput networks used for handling the user plane
 traffic require the capability to use a user space networking technology.
 
 > Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as
-an additional feature and still be conformant with CNTT.
+an additional feature and still be conformant with Anuket.
 
 > Editors note: The possibility to SR-IOV for DPDK is under discussion.
 
