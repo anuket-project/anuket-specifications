@@ -311,7 +311,6 @@ The following tables provide a descriptive approach on how a profile can be crea
 * Cloud infrastructure "scattering" is minimized
 * Workload optimisation by using existing profiles and its extensions
 * Better usage of Cloud Objects (Memory;Processor;Network;Storage)
-* Applications can be categorized based on their resource requirements towards cloud infrastructure
 
 
 The intent of the following Flavors list, and respective profile is to be comprehensive and yet effective to cover both IT and NFV workloads. <br>
