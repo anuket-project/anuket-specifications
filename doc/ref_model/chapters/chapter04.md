@@ -350,7 +350,6 @@ There are two flavors profiles that can be used:
 | i.fl.018 | network_Crypto_Accel      | Y/N          | H             | Optional
 | i.fl.019 | network_Transcode_Accel   | Y/N          | H             | Optional
 
-<p align="center"><b>Table 4-13:</b> Basic/High Performance Flavor Profiles</p>
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
