@@ -306,7 +306,7 @@ Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A
 
 The following tables provide a descriptive approach on how a Compute flavor can be created to suit the needs of an application, so it can be onboarded. This will minimize several challenges related to Infrastructure management:
 
-* Applications can be categorized based on their resource requirements towards cloud infrastructure
+* Workloads can be deployed according to specific profiles (Basic; High Performance), and can be configured with a lower level of granularity by using profile extensions
 * Additional flavors can be created which are linked to  to different VM requirements
 * Cloud infrastructure "scattering" is minimized
 * Application scaling optimization
