@@ -326,7 +326,6 @@ There are two workload profiles available which can be selected:
 <a name="Table4-13"></a>
 
 
-| i.fl.003 | RAM                       | Gb           | B/H           | Required |
 | i.fl.005 | ephemeral-Disk            | Gb           | B/H           | Optional |
 | i.fl.006 | root-disk                 | GB           | H             | Required
 | i.fl.007 | cpu_SMT                   | Y/N          | H             | Optional
