@@ -313,7 +313,7 @@ The following tables provide a descriptive approach on how a profile can be crea
 * Better usage of Cloud Objects (Memory;Processor;Network;Storage)
 
 
-The intent of the following Flavors list, and respective profile is to be comprehensive and yet effective to cover both IT and NFV workloads. <br>
+The intent of the following profiles is to match the cloud infrastructure most common needs, and allow a more  comprehensive configuration in case needed. <br>
 
 In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
 There are two workload profiles available which can be selected:
