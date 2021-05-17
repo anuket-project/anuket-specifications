@@ -21,9 +21,9 @@ The CNTT Reference Model will be referenced as **RM** to avoid long and duplicat
 
 Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in NFVI Infrastructure Profiles Catalogue. As states in [RM: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
 
-`B/N/C <I opt> . <Flavour> . <S ext> . <A ext>`
+`B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
-B/N is used to specify the instance type (Basic, Network Intensive), different instance types are associated with different acceleartion extensions, network characteristics ([RM: 4.2.4 Instance Types](../../../ref_model/chapters/chapter04.md#4.2.4)) and instance capabilities([RM: 4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)).
+B/N is used to specify the instance type (Basic, Network Intensive), different instance types are associated with different acceleration extensions, network characteristics ([RM: 4.2.4 Instance Types](../../../ref_model/chapters/chapter04.md#4.2.4)) and instance capabilities([RM: 4.2.5 Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#4.2.5)).
 
 Whereas:
 
@@ -130,7 +130,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 #TODO : Identify the tests for this section
 
 
-[RA1: Chapter 2.3 Openstack Requirements](../../../ref_arch/openstack/chapters/chapter02.md#2.3) describes the requirements related to the following 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
+[RA1: Chapter 2.3 OpenStack Requirements](../../../ref_arch/openstack/chapters/chapter02.md#2.3) describes the requirements related to the following 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
 | Ref # | Description |
 |----|-------------------------------------------------------------------------------|
@@ -219,7 +219,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | `req.sec.ntw.03` | **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
 | `req.sec.ntw.04` | **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. |
 
-[RA1: Chapter 5 Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md) describes the baseline version regarding to Openstack Service APIs.
+[RA1: Chapter 5 Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md) describes the baseline version regarding to OpenStack Service APIs.
 
 | OpenStack Service | Link for API list | Baseline Version | Minimal API Microversion |
 |------------------|--------------------|------------------------|------------------------|

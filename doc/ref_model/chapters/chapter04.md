@@ -94,11 +94,11 @@ This section describes a set of explicit Cloud Infrastructure capabilities and p
 | e.cap.009 | Crypto Acceleration                       | Yes/No | Crypto Acceleration                                         |
 | e.cap.010 | Transcoding Acceleration                  | Yes/No | Transcoding Acceleration                                    |
 | e.cap.011 | Programmable Acceleration                 | Yes/No | Programmable Acceleration                                   |
-| e.cap.012 | Enhanced Cache Management                 | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded.  L and X cache policies require CPU pinning to be active. |
-| e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
-| e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
-| e.cap.015 | SmartNIC                                  | Yes/No | Network Acceleration. SmartNICs that do not utilise PCI-PT are not subject to the CNTT principles, nor any related policies or prohibitions. |
-| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | Non-specific hardware. These Capabilities generally require hardware-dependent drivers be injected into workloads. As such, use of these features shall be governed by the applicable CNTT policy. Consult the relevant RA specification for the usage policy relevant to any needed hardware capability of this type.  |
+| e.cap.012 | Enhanced Cache Management                 | Yes/No | If supported, L=Lean; E=Equal; X=eXpanded.  L and X cache policies require CPU pinning to be active |
+| e.cap.013 | SR-IOV over PCI-PT                        | Yes/No | Traditional SR-IOV. These Capabilities generally require hardware-dependent drivers be injected into workloads |
+| e.cap.014 | GPU/NPU                                   | Yes/No | Hardware coprocessor. These Capabilities generally require hardware-dependent drivers be injected into workloads |
+| e.cap.015 | SmartNIC                                  | Yes/No | Network Acceleration |
+| e.cap.016 | FPGA/other Acceleration H/W               | Yes/No | These Capabilities generally require hardware-dependent drivers be injected into workloads |
 
 <p align="center"><b>Table 4-2:</b> Exposed Performance Optimisation Capabilities of Cloud Infrastructure</p>
 
@@ -159,20 +159,6 @@ This section covers a list of implicit Cloud Infrastructure capabilities and mea
 
 <p align="center"><b>Table 4-5:</b> Internal Resource Capabilities of Cloud Infrastructure</p>
 
-<!--
-/* MXS 13/7/2019 - Mapping table 3-14 is being commented out. If someone can provide supporting details,
-   we can put it back. Details should include assumptions (e.g., is it SRIOV, OvS or what?),
-   citable references, an explanation of what we're mapping and why (#s represent min? max? anticipated?, etc.),
-   and a detailed basis for the values, including an explanation for how come the numbers are identical for both
-   cores and ram. Thanks, -Mark */
-//
-| Ref             | B Instance | N Instance | C Instance |
-|-----------------|--------------------------|--------------------------|--------------------------|
-| `i.res.cap.001` | 5-10% | 10-20% | 15-25% |
-| `i.res.cap.002` | 5-10% | 10-20% | 15-25% |
-<p align="center"><b>Table 3-14:</b> Mapping of Internal resource capabilities to Cloud Infrastructure instance types.</p>
-//
--->
 <a name="4.1.4.2"></a>
 #### 4.1.4.2 Internal SLA capabilities
 
@@ -377,28 +363,6 @@ Persistent storage is associated with workloads via Storage Extensions. The size
 
 >_*Note:*_ Performance is based on a block size of 256KB or larger.
 
-<!---
-<a name="4.2.3.1"></a>
-#### 4.2.3.1 Available Storage Extensions
-The following table defines persistent storage extensions that can be provided to workloads for data storage. More than one storage extension can be provided to a single VM or Pod. The option selected determines both the size and the performance of the extension.
-//
-| .conf | capacity | Read IOPS | Write IOPS | Read Throughput (MB/s) | Write Throughput (MB/s) |
-|----------|----------|------------|------------|------------------------|-------------------------|
-| .bronze1 | 100GB | Up to 3K | Up to 15K | Up to 180 | Up to 120 |
-| .bronze2 | 200GB | Up to 3K | Up to 15K | Up to 180 | Up to 120 |
-| .bronze3 | 300GB | Up to 3K | Up to 15K | Up to 180 | Up to 120 |
-| .silver1 | 100GB | Up to 60K | Up to 30K | Up to 1200 | Up to 400 |
-| .silver2 | 200GB | Up to 60K | Up to 30K | Up to 1200 | Up to 400 |
-| .silver3 | 300GB | Up to 60K | Up to 30K | Up to 1200 | Up to 400 |
-| .gold1 | 100GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
-| .gold2 | 200GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
-| .gold3 | 300GB | Up to 680K | Up to 360K | Up to 2650 | Up to 1400 |
-//
-<p align="center"><b>Table 4-15:</b> Storage Extension Options</p>
-
-Table 4-15: Reserved
---->
-
 <a name="4.2.4"></a>
 ### 4.2.4 Cloud Infrastructure Profiles
 
@@ -425,44 +389,6 @@ Network Intensive Profile can come with Network Acceleration extensions to assis
 
 >_*Note:*_ Need to work with relevant open source communities to create missing interfaces.
 
-<!--
-<a name="4.2.4.3"></a>
-#### 4.2.4.3 Compute Intensive Profile
-This NFVI Profile is intended to be used for those applications that has high compute requirements and can take advantage of acceleration technologies such as GPU, FPGA, etc. This NFVI Profile is intended to be available in local data centers and more towards the Edge of the network.
-
-##### 4.2.4.3.1 Compute Acceleration Extensions
-Compute Intensive Profile can come with compute acceleration extensions to assist workloads/VAs offloading some of their compute intensive operations to hardware. The list below is preliminary and is expected to grow as more compute acceleration resources are developed and standardized.
-
-<a name="Table4-17"></a>
-
-| .conf | Interface type | Description |
-|------------|----------------|-----------------------------------------|
-| .la-trans | virtio-trans* | Look-Aside Transcoding acceleration. |
-| .la-programmable | virtio-programmable | Look-Aside programmable acceleration. |
-
-<p align="center"><b>Table 4-17:</b> Acceleration Extensions for Compute Intensive Profile</p>
-
-> _*Need to work with relevant open source communities to create missing interfaces._
-
-<a name="4.2.4.4"></a>
-#### 4.2.4.4 Network Interface Options
-**Table 4-18** below shows the various network interface extension bandwidth options (from **Table 4-18**) available for each profile type (Up to 6 extensions (i.e. interfaces) may be associated with a virtual compute instance).
-
-<a name="Table4-18"></a>
-
-| Virtual Interface Option* | Basic Type | Network Intensive Type | Compute Intensive Type
-|---------------------------|-----|-----|-----
-n1, n2, n3, n4, n5, n6 | Y | N |N
-n10, n20, n30, n40, n50, n60 | Y | Y | Y
-n25, n50, n75, n100, n125, n150 | N | Y | Y
-n50, n100, n150, n200, n250, n300 | N | Y | Y
-n100, n200, n300, n400, n500, n600 | N | Y | N
-
-<p align="center"><b>Table 4-18:</b> Virtual NIC Interfaces Options</p>
-
-> _*workloads are expected to use the minimum number of interfaces and adopt Microservice design principles._
-
--->
 <a name="4.2.5"></a>
 ### 4.2.5 Cloud Infrastructure Profile Capabilities Mapping
 
@@ -498,31 +424,6 @@ n100, n200, n300, n400, n500, n600 | N | Y | N
 | `i.pm.005`<br />(Measurement of external storage IOPS)                | Yes                      | Yes                      | |
 | `i.pm.006`<br />(Measurement of external storage throughput)          | Yes                      | Yes                      | |
 | `i.pm.007`<br />(Available external storage capacity)                 | Yes                      | Yes                      | |
-<!--
-| Ref | Basic | Network Intensive | Compute Intensive | Notes |
-|----------------------|----------------------------|----------------------------|----------------------------|-------|
-| `e.cap.001`<br />(#vCPU cores) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> | Exposed resource capabilities as per [**Table 4-1**](#Table4-1)|
-| `e.cap.002`<br />(Amount of RAM (MB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.cap.003`<br />(Total instance (ephemeral) storage (GB)) | Per selected  \<Flavour> | Per selected  \<Flavour> | Per selected  \<Flavour> |  |
-| `e.cap.004`<br />(# vNICs) | Per selected  <I Opt> | Per selected  <I Opt> | Per selected  <I Opt> |  |
-| `e.cap.005`<br />(Total instance (persistent) storage (GB)) | Per selected  <S Ext> | Per selected  <S Ext> | Per selected  <S Ext> |  |
-| `e.per.cap.001`<br />(CPU pinning support) | No | Yes | Yes | Exposed performance capabilities as per [**Table 4-2**](#Table4-2) |
-| `e.per.cap.002`<br />(NUMA support) | No | Yes | Yes | |
-| `e.per.cap.003`<br />(IPSec Acceleration) | No | Yes (if offered) | No | |
-| `e.per.cap.004`<br />(Crypto Acceleration) | No | Yes (if offered) | No | |
-| `e.per.cap.005`<br />(Transcoding Acceleration) | No | No | Yes (if offered) | |
-| `e.per.cap.006`<br />(Programmable Acceleration) | No | No | Yes (if offered) | |
-| `e.per.cap.007`<br />(Enhanced Cache Management) | E | E | X (if offered) | |
-| `e.mon.cap.001`<br />(Monitoring of L2-7 data) | No | Yes | No | Exposed monitoring capabilities as per [**Table 4-3**](#Table4-3)|
-| `i.sla.cap.001`<br />(CPU allocation ratio) | 1:1 | 1:1 | 1:1 | Internal SLA capabilities as per [**Table 4-6**.](#Table4-6) |
-| `i.sla.cap.002`<br />(vNIC QoS) | No | Yes | Yes | |
-| `i.per.cap.001`<br />(Huge page support) | No | Yes | Yes | Internal performance capabilities as per [**Table 4-7**](#Table4-7) |
-| `i.mon.cap.001`<br />(Host CPU usage) | Yes | Yes | Yes | Internal monitoring capabilities as per [**Table 4-8**](#Table4-8) |
-| `i.mon.cap.002`<br />(Virtual compute CPU usage) | Yes | Yes | Yes | |
-| `i.mon.cap.003`<br />(Host CPU utilization) | Yes | Yes | Yes | |
-| `i.mon.cap.004`<br />(Virtual compute CPU utilization) | Yes | Yes | Yes | |
-| `i.mon.cap.007`<br />(External storage capacity) | No | No | Yes | |
--->
 
 <p align="center"><b>Table 4-17:</b> Mapping of Capabilities to Cloud Infrastructure Profiles</p>
 
@@ -734,19 +635,3 @@ The example is or will be a common scenario for operators that modernise their n
 
 <p align="center"><img src="./../figures/ch04_Multi-VIM_Deployment_Example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
 <p align="center"><b>Figure 4-10:</b> Networking Reference Model deployment example</p>
-
-
-<!--
-The following draft definition placeholders are in support of the new PM schema/description. They are currently commented out as alignment discussions are in progress. They are to be published when their language is finalized. -MXS
-//
-- Virtual Resources (aka “Resources”): Abstracted and isolated portions of physical resources, furnished to virtual environments such as VMs and containers. The most common examples of Virtual Resources include compute, storage and network.
-//
-- **Capabilities:** Potential ability of the infrastructure to furnish something, frequently a Resource, but potentially a feature or datum, to another entity. Capabilities in CNTT are divided into the following categories:
--	**(R)**esource: Compute (RAM/CPU), Storage, Network, etc.
--	**(F)**eature: NUMA, Acceleration, SMT, etc.
--	**(D)**ata: Describing attributes of the infrastructure, such as constraints, limits, etc.
-//
-- - **Resources and Features:** In the context of Capabilities, describes active aspects of infrastructure, which are directly applied to the task of operating a Workload. For example, some portion of the RAM Resource is applied to a given Workload, which in-turn will use it to store runtime data. Similarly, a Feature such as NUMA may be utilized by a Workload, to ensure the Workload’s access to the Workload’s RAM at runtime is as efficient as possible.
-//
-- - **Data:** Is passive and used to describe static aspects of the infrastructure, which may be determined at design time or otherwise in advance of runtime. For example, a Capability datum can represent the maximum number of virtual CPU cores a single VM can be allocated. The absolute maximum value for this Capability is determined by the physical CPU’s SKU, however, the value may be lowered arbitrarily by the infrastructure designer, to achieve various business or technical  objectives. In either case, the value is known before power is applied to the system, and does not change at run-time.
--->

@@ -5,11 +5,11 @@
 This is the Kubernetes Based Reference Conformance (RC-2)
 
 ## Release Information
-**Bundle: _1_**
+**Bundle: _6_**
 
 **Version: _0_**
 
-**Release Date: _25th September 2020_**
+**Release Date: _17th June 2021_**
 
 ## Bundle/Version History
 
@@ -17,6 +17,7 @@ This is the Kubernetes Based Reference Conformance (RC-2)
 | ---               | ---           | ---                   |
 | 0.0               | 15th May 2020 | First Initial Draft   |
 | 4.0               | 25th Sep 2020 | Baraque Release       |
+| 5.0               | 29th Jan 2021 | Elbrus Release        |
 
 
 ## Overall Status

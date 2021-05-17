@@ -1,4 +1,4 @@
-Pygments==2.3.1
+Pygments==2.7.4
 setuptools==41.0.1
 docutils==0.14
 mock==1.0.1
@@ -11,3 +11,6 @@ readthedocs-sphinx-ext<1.1
 sphinx-markdown-tables==0.0.15
 beautifulsoup4==4.9.1
 sphinx_rtd_theme==0.4.3
+sphinxcontrib.relative-link-corrector==0.0.3
+sphinxcontrib.direct-copy==0.0.1
+sphinxcontrib.readme-to-index==0.0.1

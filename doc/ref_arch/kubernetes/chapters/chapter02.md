@@ -160,10 +160,7 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 | [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.008 | Capability to collect and expose performance information on virtualised resources allocated | Must support | |
 | [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.009 | Capability to collect and notify fault information on virtualised resources | Must support | |
 
-<!--
-These rows are removed and commented out as it's not clear what the requirement is.
-| infra.stg.cfg.001 | Catalogue storage Types | | Y |
--->
+
 <p align="center"><b>Table 2-5:</b> Reference Model Requirements: Cloud Infrastructure Management Requirements</p>
 
 ### 2.2.6 Cloud Infrastructure Security Requirements
@@ -259,7 +256,6 @@ These rows are removed and commented out as it's not clear what the requirement 
 | [7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit) | sec.mon.019 | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. |  |
 | [7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit) | sec.mon.020 | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. |  |
 | [7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit) | sec.mon.021 |The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.  |  |
-| [7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit) | sec.lcm.017 | The Platform **must** Audit systems for any missing security patches and take appropriate actions. |  |
 | [7.9.8](../../../ref_model/chapters/chapter07.md#798-compliance-with-standards) | sec.std.001 | The Cloud Operator **should** comply with Center for Internet Security CIS Controls ([https://www.cisecurity.org/](https://www.cisecurity.org/)) | |
 | [7.9.8](../../../ref_model/chapters/chapter07.md#798-compliance-with-standards) | sec.std.002 | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version) [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) | |
 | [7.9.8](../../../ref_model/chapters/chapter07.md#798-compliance-with-standards) | sec.std.003 | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries |  |
@@ -285,7 +281,6 @@ The requirements in this section are to be delivered in addition to those in [se
 
 | Ref # | Category | Sub-category | Description | Specification Reference |
 |---|---|---|---|---|
-| `req.gen.cnt.01` | General | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
 | `req.gen.cnt.02` | General | Cloud nativeness | The Architecture **must** support immutable infrastructure. |[ra2.ch.017](chapter04.md#42-kubernetes-node)|
 | `req.gen.cnt.03` | General | Cloud nativeness | The Architecture **must** run conformant Kubernetes as defined by the [CNCF](https://github.com/cncf/k8s-conformance). |[ra2.k8s.001](chapter04.md#43-kubernetes)|
 | `req.gen.cnt.04` | General | Cloud nativeness | The Architecture **must** support clearly defined abstraction layers. | |
@@ -297,8 +292,8 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.gen.ost.01` | General | Openness | The Architecture **should** embrace open-based standards and technologies. |[ra2.crt.001](chapter04.md#44-container-runtimes)<br>[ra2.crt.002](chapter04.md#44-container-runtimes)<br>[ra2.ntw.002](chapter04.md#45-networking-solutions)<br>[ra2.ntw.006](chapter04.md#45-networking-solutions)<br>[ra2.ntw.007](chapter04.md#45-networking-solutions)|
 | `req.inf.com.01` | Infrastructure | Compute | The Architecture **must** provide compute resources for Pods.  |[ra2.k8s.004](chapter04.md#43-kubernetes)|
 | `req.inf.stg.01` | Infrastructure | Storage | The Architecture **must** support the ability for an operator to choose whether or not to deploy persistent storage for Pods. |[ra2.stg.004](chapter04.md#46-storage-components)|
-| `req.inf.ntw.01` | Infrastructure | Network | The Architecture **must** support network resiliency. | |
-| `req.inf.ntw.02` | Infrastructure | Network | The Architecture **must** be fully redundant. | |
+| `req.inf.ntw.01` | Infrastructure | Network | The Architecture **must** support network resiliency on the Kubernetes nodes. | |
+| `req.inf.ntw.02` | Infrastructure | Network | The Architecture **must** support fully redundant network connectivity to the Kubernetes nodes, leveraging multiple network connections. | |
 | `req.inf.ntw.03` | Infrastructure | Network | The networking solution **should** be able to be centrally administrated and configured. |[ra2.ntw.001](chapter04.md#45-networking-solutions)<br>[ra2.ntw.004](chapter04.md#45-networking-solutions) |
 | `req.inf.ntw.04` | Infrastructure | Network | The Architecture **must** support dual stack IPv4 and IPv6 for Kubernetes workloads. |[ra2.ch.007](chapter04.md#42-kubernetes-node)<br>[ra2.k8s.010](chapter04.md#43-kubernetes)|
 | `req.inf.ntw.05` | Infrastructure | Network | The Architecture **must** support capabilities for integrating SDN controllers. | |
@@ -306,19 +301,15 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.inf.ntw.07` | Infrastructure | Network | The Architecture **must** support the ability for an operator to choose whether or not to deploy more than one networking solution. |[ra2.ntw.005](chapter04.md#45-networking-solutions)|
 | `req.inf.ntw.08` | Infrastructure | Network | The Architecture **must**  provide a default network which implements the Kubernetes network model. |[ra2.ntw.002](chapter04.md#45-networking-solutions)  |
 | `req.inf.ntw.09` | Infrastructure | Network | The networking solution **must not** interfere with or cause interference to any interface or network it does not own. | |
-| `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support cluster wide coordination of IP address assignment. | |
+| `req.inf.ntw.10` | Infrastructure | Network | The Architecture **must** support Cluster wide coordination of IP address assignment. | |
 | `req.inf.ntw.13` | Infrastructure | Network | The platform must allow specifying multiple separate IP pools. Tenants are required to select at least one IP pool that is different from the control infrastructure IP pool or other tenant IP pools. | |
 | `req.inf.ntw.14` | Infrastructure | Network | The platform must allow NATless traffic (i.e. exposing the pod IP address directly to the outside), allowing source and destination IP addresses to be preserved in the traffic headers from workloads to external networks. This is needed e.g. for signaling applications, using SIP and Diameter protocols.|[ra2.ntw.011](chapter04.md#45-networking-solutions)|
 | `req.inf.vir.01` | Infrastructure | Virtual Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a virtual machine. |[ra2.ch.005](chapter04.md#42-kubernetes-node)<br>[ra2.ch.011](chapter04.md#42-kubernetes-node)|
-
-| `req.inf.phy.01`  | Infrastructure |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server. | |
-| `req.kcm.gen.01` | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes cluster. | |
+| `req.inf.phy.01`  | Infrastructure |  Physical Infrastructure | The Architecture must support the capability for Containers to consume infrastructure resources abstracted by Host Operating Systems that are running within a physical server.| |
+| `req.kcm.gen.01` | Kubernetes Cluster | General | The Architecture **must** support policy driven horizontal auto-scaling of Kubernetes Cluster. | |
 | `req.kcm.gen.02` | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
 | `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |For Networking: <ul><li>[ra2.ntw.001](chapter04.md#45-networking-solutions)<li>[ra2.ntw.008](chapter04.md#45-networking-solutions)<li>[ra2.app.006](chapter04.md#49-kubernetes-workloads)</ul><br>Compute/storage not yet met. |
 | `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|
 
-<!--
-| `req.inf.com.02` | Compute | The Architecture **should** include industry standard hardware management systems at both HW device level (embedded) and HW platform level (external to device). |
--->
 
 <p align="center"><b>Table 2-7:</b> Kubernetes Architecture Requirements</p>
