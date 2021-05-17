@@ -326,7 +326,6 @@ There are two workload profiles available which can be selected:
 <a name="Table4-13"></a>
 
 
-| i.fl.009 | cpu_alloc_ratio           | 1:1/n:m          | B/H             | Optional
 | i.fl.012 | network_DPDK              | Y/N          | H             | Optional
 
 
