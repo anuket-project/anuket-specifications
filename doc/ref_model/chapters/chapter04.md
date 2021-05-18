@@ -291,7 +291,6 @@ Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A
 | Element                               | Description  |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Compute Flavour Name                  | A descriptive name |
-| Compute Flavour ID                  | Flavor unique identifier |
 | Number of vCPUs | Number of virtual compute resources (vCPUs) presented to the VM instance.  |
 | Memory                                | Virtual compute instance memory in megabytes.  |
 | Ephemeral/Local Disk                  | Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
