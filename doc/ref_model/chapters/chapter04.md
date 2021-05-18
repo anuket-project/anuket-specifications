@@ -280,7 +280,7 @@ The idea of the Cloud Infrastructure profiles is to have a predefined set of inf
 <a name="4.2.1"></a>
 ### 4.2.1 Workload Profiles
 
-Compute Flavours represent the compute, memory, storage, and management network resource sizing templates that are used to create VMs on the compute hosts. Each VM create request specifies a Workload Profile and a compute Flavour, which will determine the compute host (node) on which the VM will be hosted and the VMs compute, memory and storage characteristics.
+Compute Flavours represent the compute, memory, storage, and management network resource templates that are used to create VMs on the compute hosts. Each VM create request specifies a Workload Profile and a compute Flavour, which will determine the characterisics of the compute host (node) on which the VM will be hosted and the VMs compute, memory and storage characteristics.
 
 Parameterized Compute Flavours can be used by operators and specified in request for resources. 
 
