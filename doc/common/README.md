@@ -3,7 +3,6 @@
 
 ## Table of Contents
 * [Introduction](#1.0)
-* [Approach](#4.0)
 * [Use Cases](#5.0)
 * [Roadmap and Releases](#6.0)
 * [CNTT Technical Policies and Transition Plan](#7.0)
@@ -21,10 +20,6 @@
 ## Introduction
 
 Cloud iNfrastructure Telco Taskforce [Introduction](chapter00.md). 
-
-<a name="4.0"></a>
-## Approach
-Different specification types within CNTT are related to each other and requires alignments between different parts. The Approach CNTT is taking to tackle those issues is described in [here](./approach.md).
 
 <a name="5.0"></a>
 ## Use Cases
