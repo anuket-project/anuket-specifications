@@ -303,7 +303,7 @@ Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Predefined Workload Profiles
 
-The following tables provide a descriptive approach on how a profile can be created to suit the needs of a workload, so it can be onboarded. This will minimize several challenges related to Infrastructure management:
+The availability of two (2) Profiles will facilitate and accelerate the workload deployment, in case there is a need to implement special capabilities, by the workload, then profile extensions can be used too. The following requirements were taken in consideration for the profile definition:
 
 * Workloads can be deployed according to specific profiles (Basic; High Performance), and can be configured with a lower level of granularity by using profile extensions
 * Profile extensions allow a more precise configuration of a workload (e.g. GPU, high, speed network, Edge deployment)
