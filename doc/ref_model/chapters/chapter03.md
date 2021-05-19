@@ -316,10 +316,10 @@ Principles that should be followed during the development and definition of the 
 ### 3.5.2 Network Layering and Concepts
 
 The Cloud Infrastructure Networking Reference Model is an essential foundation that governs all Reference Architectures and Cloud Infrastructure implementations to enable multiple cloud infrastructure virtualisation technology choices and their evolution. These include:
-- the current single Infrastructure as a Service (IaaS) based virtualisation instances with Virtual Machines (VM)
-- multi IaaS based virtualisation instances
+- Single Infrastructure as a Service (IaaS) based virtualisation instances with Virtual Machines (VM)
+- Multi IaaS based virtualisation instances
 - Cloud Native Container as a Service (CaaS) based virtualisation instances, and
-- hybrid multi IaaS and CaaS based virtualisation instances
+- Hybrid multi IaaS and CaaS based virtualisation instances
 
 To retain the cloud paradigms of automation, scalability and usage of shared hardware resources when introducing CaaS instances it is necessary to enable an ability to co-deploy multiple simultaneous IaaS and CaaS instances on a shared pool of hardware resources.
 
@@ -351,7 +351,7 @@ The Overlay Network for each Cloud Infrastructure deployment must support a basi
 
 In some instances, the Virtualisation Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation normally done by the Virtualisation Layer, is the VNF/CNF usage of SR-IOV that effectively take over the Physical and Virtual Functions of the NIC directly into the VNF/CNF Tenant. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
 
-> **Note:** Bypassing the Overlay Networking layer is a violation of the basic CNTT decoupling principles, but in some cases unavoidable with existing technologies and available standards. Until suitable technologies and standards are developed, CNTT have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
+> **Note:** Bypassing the Overlay Networking layer is a violation of the basic Anuket decoupling principles, but in some cases unavoidable with existing technologies and available standards. Until suitable technologies and standards are developed, Anuket have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
 
 VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer.
 
@@ -379,7 +379,7 @@ The HW Infrastructure Layer is responsible for keeping the different Virtual Inf
 
 An SDN-Overlay control interface (here denoted SDNo) is responsible for managing the Virtual Infrastructure Layer virtual switching and/or routing as well as its encapsulation and its mapping onto the Underlay Networks.
 
-In cases where the VNF/CNF bypasses the Virtual Infrastructure Layer virtual switching and its encapsulation, as described above, the HW Infrastructure Layer must perform the encapsulation and mapping onto the Underlay Networking to ensure the Underlay Networking separation. This should be a prioritized capability in the SDNu control interface since CNTT currently allow exemptions for bypassing the virtual switching (e.g. through SR-IOV).
+In cases where the VNF/CNF bypasses the Virtual Infrastructure Layer virtual switching and its encapsulation, as described above, the HW Infrastructure Layer must perform the encapsulation and mapping onto the Underlay Networking to ensure the Underlay Networking separation. This should be a prioritized capability in the SDNu control interface since Anuket currently allow exemptions for bypassing the virtual switching (e.g. through SR-IOV).
 
 SDN controllers can request Underlay Networking encapsulation and mapping to be done by signalling to an SDNu controller. There are however today no standardized way for this signalling and by that there is a missing reference point and API description in this architecture.
 
