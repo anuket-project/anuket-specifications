@@ -310,8 +310,8 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.kcm.gen.02` | Kubernetes Cluster | General | The Architecture **must** enable workload resiliency. |[ra2.k8s.004](chapter04.md#43-kubernetes)|
 | `req.int.api.01` | API | General | The Architecture **must** leverage the Kubernetes APIs to discover and declaratively manage compute (virtual and bare metal resources), network, and storage. |For Networking: <ul><li>[ra2.ntw.001](chapter04.md#45-networking-solutions)<li>[ra2.ntw.008](chapter04.md#45-networking-solutions)<li>[ra2.app.006](chapter04.md#49-kubernetes-workloads)</ul><br>Compute/storage not yet met. |
 | `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|
-| `req.int.api.03` | API | General | The Architecture **must** support stable features in its API-s. ||
-| `req.int.api.03` | API | General | The Architecture **must** support limited backward compatibility in its API-s. Support for the whole API must not be dropped, but the schema or other details can change. ||
+| `req.int.api.03` | API | General | The Architecture **must** support stable features in its APIs. ||
+| `req.int.api.03` | API | General | The Architecture **must** support limited backward compatibility in its APIs. Support for the whole API must not be dropped, but the schema or other details can change. ||
 
 
 <p align="center"><b>Table 2-7:</b> Kubernetes Architecture Requirements</p>
