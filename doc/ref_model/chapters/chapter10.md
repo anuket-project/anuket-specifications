@@ -11,6 +11,7 @@
   * [10.3.2 Support Load Balance of VNF/CNFs](#10.3.2)
   * [10.3.3 Service Function Chain](#10.3.3)
   * [10.3.4 Closed-loop automation](#10.3.4)
+  * [10.3.5 Acceleration Abstraction(#10.3.5)
 
 
 <a name="10.1"></a>
@@ -62,3 +63,12 @@ Over the past few years there has been a significant move towards decomposing ne
 The state of a system is defined by a set of variables that fully describe the system and determines the response of the system to any given set of inputs. A closed loop automation system automatically maintains the specified desired state of the controlled system. 
 
 Closed-loop automation is evolving as a major advancement in the telecommunication network automation. In the context of telecommunication systems, it means a system that in a continuous loop programmatically validates the state of the cloud infrastructure against the declared desired state, and in case of deviation from the desires state, it automatically takes remediation actions necessary for bringing the actual state to the desired state. The Reference Model specification will in its next releases address this important area.
+
+
+<a name="10.3.5"></a>
+### 10.3.5 Acceleration Abstraction
+Many vRAN and some other domain's network functions require accelerators to meet latency and thruput requirements. A large number of advanced ASICs, FPGAs, GPUs, and Smart NIC have come to the market to address these needs but unfortunately there is a lack of a common way to utilize them.
+		
+[O-RAN Alliance](https://www.o-ran.org) is developing a common abstraction and programming model for RAN application domain (see [Acceleration Abstraction Layer General Aspects an Principles 1.0 - November 2020 (O-RAN.WG6.AAL-GAnP-v01.00](https://www.o-ran.org/specifications)). [P4 Language Consortium](https://p4.org/) defines specifications for switching and routing domains. There is, however, a lack of a common programming model for accelerator applications development.
+		
+There is also a need for a seamless integration with platforms, Kubernetes and OpenStack in particular. Kubernetes treats each device as unique HW and, hence, application developers are forced to specify vendor specific labels and utilise vendor specific libraries in their workload manifests as dependencies. OpenStack is attempting to address this gap with their Cyborg project (https://wiki.openstack.org/wiki/Cyborg).
