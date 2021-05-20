@@ -236,6 +236,13 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 
 <p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
 
+Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container Runtime in Linux host Operating System) or with virtual machines (VMs, on hypervisor).
+When running in VMs, the following list of configurations shows what is needed for non-resilient applications:
+* CPU Manager managing vCPUs that hypervisor provides to VMs.
+* Huge pages enabled in hypervisor, mapped to VM, enabled in guest OS, and mapped to pod.
+* Hardware Topology Management with NUMA enabled in hypervisor, mapped into VM, if needed enabled in guest OS, and mapped into pod.
+* If Node Feature Discovery and Device Plugin Framework are required, the required CPU instructions must be enabled in the VM virtual hardware, and the required devices must be virtualised in the hypervisor or passed through to the Node VM, and mapped into the pods.
+
 
 ### 3.2.2 Container Networking Services
 
