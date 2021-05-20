@@ -46,6 +46,7 @@ This is Kubernetes based Reference Architecture (RA-2)
 * [Appendix A - Guidance for VNF-to-CNF Transition](chapters/appendix-a.md)
 * [Appendix B - Guidance For workload isolation (multitenancy) with Kubernetes for application vendors](chapters/appendix-b.md)
 
+<a name="required-versions"></a>
 ## Required versions of most important components
 
 | Component | Required version(s) |
