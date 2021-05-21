@@ -314,7 +314,7 @@ The availability of two (2) Profiles will facilitate and accelerate the workload
 
 The intent of the following profiles is to match the cloud infrastructure most common needs, and allow a more  comprehensive configuration in case needed. <br>
 
-NOTE: In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.
+NOTE: On a Kubernetes based environment, resource allocation will directly depend on how resource requests are configured (please check [RA2](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/) for additional details).
 
 There are two workload profiles available which can be selected:
 
