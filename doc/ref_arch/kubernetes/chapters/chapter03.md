@@ -470,7 +470,7 @@ server side component installed to the Kubernetes Cluster (e.g.: Tiller).
 
 #### 3.2.5.1 Operator Pattern
 
-[Custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) is a control loop watching cluster for changes to a custom resource. This tries to keep the current state of the resource in sync with the desired state.
+A [custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) is a control loop that watches a custom resource for changes and tries to keep the current state of the resource in sync with the desired state.
 
 [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) combines custom resources and custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure. 
 Operators can have different capability levels. As per repository [OperatorHub.io](https://operatorhub.io/), operator can have different capability levels ([picture](https://operatorhub.io/static/images/capability-level-diagram.svg)):
