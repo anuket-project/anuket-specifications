@@ -19,7 +19,7 @@
     * [3.2.2 Container Networking Services](#322-container-networking-services)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
     * [3.2.4 Container Package Managers](#324-container-package-managers)
-        * [3.2.5.1 Operator Pattern](#3251-operator-pattern)
+    * [3.2.5 Operator Pattern](#325-operator-pattern)
 
 ## 3.1 Introduction
 
@@ -468,7 +468,7 @@ does not recommend the usage of a Kubernetes Application package manager with a
 server side component installed to the Kubernetes Cluster (e.g.: Tiller).
 
 
-#### 3.2.5.1 Operator Pattern
+### 3.2.5 Operator Pattern
 
 A [custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) is a control loop that watches a custom resource for changes and tries to keep the current state of the resource in sync with the desired state.
 
