@@ -46,7 +46,7 @@ This chapter includes both "Requirements" that must be satisifed in an RA-1 conf
 ## 2.2 Reference Model Requirements
 
 
-The tables below contain the requirements from the [Reference Model](../../ref_model/chapters/chapter02.md#241-node-profiles-top-level-partitions) to cover the Basic (B) and High Performance (H) profiles, and their associated extensions.
+The tables below contain the requirements from the [Reference Model](../../../ref_model/chapters/chapter02.md#241-node-profiles-top-level-partitions) to cover the Basic (B) and High Performance (H) profiles, and their associated extensions.
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 - Those relating to Cloud Infrastructure Software Profiles
