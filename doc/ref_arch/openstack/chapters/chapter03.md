@@ -293,7 +293,7 @@ The aim is to specify the requirements on deploying the VIM, from ground up (in 
 Cloud Infrastructure physical Nodes
 
 The physical resources required for the Cloud Infrastructure are mainly based on COTS X86 hardware for control and data plane nodes.
-HW profiles are defined in [Reference Model chapters 5.3 and 5.4](../../ref_model/chapters/chapter05.md).
+HW profiles are defined in [Reference Model chapters 5.3 and 5.4](../../../ref_model/chapters/chapter05.md).
 
 #### 3.4.2.2. Network
 The recommended network architecture is spine and leaf topology.
