@@ -61,7 +61,7 @@ The following sections detail the Cloud Infrastructure Software Profile capabili
 | infra.com.cfg.002 | NUMA alignment | Yes/No | Support of NUMA at the Host OS and virtualisation layers, in addition to hardware. | `e.cap.007` |
 | infra.com.cfg.003 | CPU pinning | Yes/No | Binds a vCPU to a physical core or SMT thread. Configured in OS and virtualisation layers.| `e.cap.006` |
 | infra.com.cfg.004 | Huge Pages | Yes/No | Ability to manage huge pages of memory. Configured in OS and virtualisation layers. | `i.cap.018` |
-| infra.com.cfg.004 | Simultaneous Multithreading (SMT) | Yes/No | Allows multiple execution threads to be executed on a single physical CPU core. Configured in OS, in addition to the hardware. | `e.cap.018` |
+| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | Allows multiple execution threads to be executed on a single physical CPU core. Configured in OS, in addition to the hardware. | `e.cap.018` |
 
 
 <p align="center"><b>Table 5-1:</b> Virtual Compute features.</p>
@@ -166,7 +166,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 | infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |       |
 | infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |       |
 | infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
-| infra.com.cfg.004 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |       |
+| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |       |
 
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
 
