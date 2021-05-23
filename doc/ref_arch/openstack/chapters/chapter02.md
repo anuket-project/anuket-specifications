@@ -6,9 +6,9 @@
 ## Table of Contents
 * [2.1 Introduction](#2.1)
 * [2.2 Reference Model Requirements](#2.2)
-  * [2.2.1 Cloud Infrastructure Software Profile Requirements](#2.2.1)
-  * [2.2.2 Virtual Network Interface Specifications](#2.2.2)
-  * [2.2.3 Cloud Infrastructure Software Profile Requirements for Storage and Networking](#2.2.3)
+  * [2.2.1 Cloud Infrastructure Software Profile Requirements for Compute](#2.2.1)
+  * [2.2.2 Cloud Infrastructure Software Profile Requirements for Netowkring](#2.2.2)
+  * [2.2.3 Cloud Infrastructure Software Profile Requirements for Storage](#2.2.3)
   * [2.2.4 Cloud Infrastructure Hardware Profile Requirements](#2.2.4)
   * [2.2.5 Cloud Infrastructure Management Requirements](#2.2.5)
   * [2.2.6 Cloud Infrastructure Security Requirements](#2.2.6)  
@@ -46,7 +46,7 @@ This chapter includes both "Requirements" that must be satisifed in an RA-1 conf
 ## 2.2 Reference Model Requirements
 
 
-The tables below contain the requirements from the Reference Model to cover the Basic and Network Intensive profiles.
+The tables below contain the requirements from the [Reference Model](../../ref_model/chapters/chapter02.md#241-node-profiles-top-level-partitions) to cover the Basic (B) and High Performance (H) profiles, and their associated extensions.
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 - Those relating to Cloud Infrastructure Software Profiles
@@ -55,95 +55,108 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 - Those relating to Network Acceleration Extensions (A extension)
 - Those relating to Cloud Infrastructure Management
 
-> Note: "(if offered)" used in the Reference Model has been replaced with "Optional" in the tables below so as to align with the RFC2119.
+> Note: "(if offered)" used in the Reference Model has been replaced with "Optional" in the tables below so as to align with RFC2119.
 
 <a name="2.2.1"></a>
-### 2.2.1 Cloud Infrastructure Software Profile Requirements (source [RM 4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping))
+### 2.2.1 Cloud Infrastructure Software Profile Requirements for Compute (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
-| e.cap.001 | Max number of vCPU that can be assigned to a single VM by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | |
-| e.cap.002 | Max memory in MB that can be assigned to a single VM by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | |
-| e.cap.003 | Max storage in GB that can be assigned to a single VM by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | |
+| e.cap.001 | Max number of vCPU that can be assigned to a single VM by the Cloud Infrastructure | At least 16 | At least 16 | |
+| e.cap.002 | Max memory that can be assigned to a single VM by the Cloud Infrastructure | at least 32 GB | at least 32 GB | |
+| e.cap.003 | Max storage that can be assigned to a single VM by the Cloud Infrastructure | at least 320 GB | at least 320 GB | |
 | e.cap.004 | Max number of connection points that can be assigned to a single VM by the Cloud Infrastructure | 6 | 6 | |
-| e.cap.005 | Max storage in GB that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
+| e.cap.005 | Max storage that can be attached / mounted to VM by the Cloud Infrastructure | Up to 16TB<sup>1</sup> | Up to 16TB<sup>1</sup> | |
 | e.cap.006/ infra.com.cfg.003 | CPU pinning support | Not required | Must support | |
 | e.cap.007/ infra.com.cfg.002 | NUMA support | Not required | Must support | |
-| e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
-| e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
-| e.cap.010 | Transcoding Acceleration | Not required | Not required | |
-| e.cap.011 | Programmable Acceleration | Not required | Not required | |
-| e.cap.012 | Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded | E | E | |
-| e.cap.013 | SR-IOV over PCI-PT | Not required | Must support | |
-| e.cap.014 | Hardware coprocessor support (GPU/NPU) | Not required | Not required | |
-| e.cap.015 | SmartNICs | Not required | Optional | |
-| e.cap.016 | FPGA/other Acceleration H/W | Not required | Optional | |
-| *e.cap.017* | *Ability to monitor L2-L7 data from workload* | n/a | n/a | |
-| i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the compute nodes | 2 | 2 | |
-| i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the compute nodes | 16 GB | 16GB | |
-| i.cap.016/ infra.com.cfg.001 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
-| i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
-| i.cap.018/ infra.com.cfg.004 | Support for huge pages | Not required | Must support | |
-| i.pm.001  | Monitor compute node CPU usage, per nanosecond | Must support | Must support | |
-| i.pm.002  | Monitor VM CPU usage, per nanosecond | Must support | Must support | |
-| i.pm.003  | Monitor compute node CPU utilisation (%) | Must support | Must support | |
-| i.pm.004  | Monitor VM CPU utilisation | Must support | Must support | |
-| i.pm.005  | Measure external storage IOPs | Must support | Must support | |
-| i.pm.006  | Measure external storage throughput | Must support | Must support | |
-| i.pm.007  | Measure external storage capacity | Must support | Must support | |
+| e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Not required | Must support | |
+| i.cap.018/ infra.com.cfg.004 | Huge Pages configured | Not required | Must support | |
 
 <p align="center"><b>Table 2-1:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities</p>
 
-**(1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#predefined-compute-flavours)<br>
-**(2)** Defined in the `.bronze` configuration in section [4.2.3 Storage Extensions](../../../ref_model/chapters/chapter04.md#423-storage-extensions)<br>
+> **<sup>1</sup>** Defined in the `.bronze` configuration in [RM section 4.2.6 Storage Extensions](../../../ref_model/chapters/chapter04.md#4.2.6)<br> 
 
+<a name="2.2.1.1"></a>
+### 2.2.1.1 Cloud Infrastructure Software Profile Extensions Requirements for Compute
+
+| Reference  | Description | Profile Extensions | Profile Extra-Specs| Specification Reference |
+|---|---|---|---|---|
+| e.cap.008/ infra.com.acc.cfg.001 | IPSec Acceleration using the virtio-ipsec interface | Compute Intensive GPU | | |
+| e.cap.010/ infra.com.acc.cfg.002 | Transcoding Acceleration | Compute Intensive GPU | Video Transcoding | |
+| e.cap.011/ infra.com.acc.cfg.003 | Programmable Acceleration | Firmware-programmable adapter | Accelerator | |
+| e.cap.012 | Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded | E | E | |
+| e.cap.014/ infra.com.acc.cfg.004 | Hardware coprocessor support (GPU/NPU) | Compute Intensive GPU | | |
+| e.cap.016/ infra.com.acc.cfg.005 | FPGA/other Acceleration H/W | Firmware-programmable adapter | | |
 
 <a name="2.2.2"></a>
-### 2.2.2 Virtual Network Interface Specifications (source [RM 4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications))
+### 2.2.2 Cloud Infrastructure Software Profile Requirements for Netowkring (source [RM 5.2.3](../../../ref_model/chapters/chapter05.md#5.2.3))
 
-The required number of connection points to a VM is described in `e.cap.004` above.  This section describes the required bandwidth of those connection points.
+The features and configuration requirements related to virtual networking for the two (2) types of Cloud Infrastructure Profiles are specified below followed by networking bandwidth requirements.
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+|---|---|---|---|---|
+| infra.net.cfg.001 |	IO virtualisation using	virtio1.1* | Must support | Must support | |
+| infra.net.cfg.002 |	The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | |
+| infra.net.cfg.003 | Network Address Translation | Must support | Must support | |
+| infra.net.cfg.004 | Security Groups | Must support | Must support | |
+| infra.net.cfg.005 | SFC support | Not required | Must support | |
+| infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | |
+
+<p align="center"><b>Table 2-2a:</b> Reference Model Requirements: Virtual Networking</p>
+
+> * [Workload Transition Guidelines](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
+
+The required number of connection points to a VM is described in `e.cap.004` [above](#2.2.1).  The table below specifies the required bandwidth of those connection points.
+
+| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
 | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | |
 | n10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | |
-| n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | |
-| n50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | |
-| n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | |2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | |
+| n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Optional | Must support | |
+| n50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Optional | Must support | |
+| n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Optional | Must support | |
 
+<p align="center"><b>Table 2-2b:</b> Reference Model Requirements: Network Interface Specifications</p>
 
-<p align="center"><b>Table 2-2:</b> Reference Model Requirements: Network Interface Specifications</p>
+<a name="2.2.2.1"></a>
+### 2.2.2.1 Cloud Infrastructure Software Profile Extensions Requirements for Networking
+
+| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+|---|---|---|---|---|
+| infra.net.acc.cfg.001 |	vSwitch optimisation |	N |	Y, DPDK | |
+| infra.net.acc.cfg.002 |	SmartNIC (for HW Offload) |	N |	Optional | |
+| infra.net.acc.cfg.003 |	Crypto acceleration |	N |	Optional | |
+| infra.net.acc.cfg.004 |	Crypto Acceleration Interface |	N |	Optional | |
+
 
 <a name="2.2.3"></a>
-### 2.2.3 Cloud Infrastructure Software Profile Requirements for Storage and Networking (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
+### 2.2.3 Cloud Infrastructure Software Profile Requirements for Storage (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
 | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
 | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
 | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | |
 | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | |
 | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | |
-| infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| |
-| infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | |
-| infra.net.cfg.003 | Network Address Translation | Must support | Must support | |
-| infra.net.cfg.004 | Security Groups | Must support | Must support | |
-| infra.net.cfg.005 | SFC support | Not required | Must support | |
-| infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | |
-| infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK | |
-| infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNiC | |
-| infra.net.acc.cfg.003 | Crypto acceleration | Not required | Must support | |
-| infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Must support | |
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
-**(1)** [Workload Transition Guidelines](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
+<a name="2.2.3.1"></a>
+### 2.2.3.1 Cloud Infrastructure Software Profile Extensions Requirements for Networking
+
+| Reference  | Description | Profile Extensions | Profile Extra-Specs | Specification Reference |
+|---|---|---|---|---|
+| infra.stg.acc.cfg.001 | Storage IOPS oriented | Storage Intensive High-performance storage | | |
+| infra.stg.acc.cfg.002 | Storage capacity oriented | High Capacity | | |
+
 
 <a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
+| infra.hw.001 |	CPU Architecture (Values such as x64, ARM, etc.) | | | |
 | infra.hw.cpu.cfg.001 | Minimum number of CPU (Sockets) | 2 | 2 | |
 | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 | |
 | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
@@ -160,10 +173,6 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | infra.hw.nac.cfg.002 | SmartNIC used to offload vSwitch functionality to hardware | Not required | Optional | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
-<!--
-These rows are removed and commented out as it's not clear what the requirement is.
-| infra.stg.cfg.001 | Catalogue storage Types | | Y |
--->
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
 
