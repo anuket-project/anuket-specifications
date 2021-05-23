@@ -27,7 +27,7 @@ The specifications defined in this chapter will be detailed with unique
 identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g.
 `ra2.ch.001` for the first requirement in the Kubernetes Node section.  These
 specifications will then be used as requirements input for the Kubernetes
-Reference Implementation and any Vendor or Community Implementations.
+Reference Implementation and any vendor or community implementations.
 
 Figure 4-1 below shows the architectural components that are described in the
 subsequent sections of this chapter.
