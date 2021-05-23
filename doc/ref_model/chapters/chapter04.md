@@ -303,7 +303,7 @@ Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A
 <a name="4.2.1.1"></a>
 #### 4.2.1.1 Predefined Workload Profiles
 
-The availability of two (2) Profiles will facilitate and accelerate the workload deployment, in case there is a need to implement special capabilities, by the workload, then profile extensions can be used too. The following requirements were taken in consideration for the profile definition:
+The availability of two (2) Profiles will facilitate and accelerate the workload deployment, in case there is a need to implement special capabilities, by the workload, then profile extensions can be used too (further details and definitions can be found in [Chapter 2.4](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#24-profiles--flavours). The following requirements were taken in consideration for the profile definition:
 
 * Workloads can be deployed according to specific profiles (Basic; High Performance), and can be configured with a lower level of granularity by using profile extensions
 * Profile extensions allow a more precise configuration of a workload (e.g. GPU, high, speed network, Edge deployment)
@@ -315,13 +315,6 @@ The availability of two (2) Profiles will facilitate and accelerate the workload
 The intent of the following profiles is to match the cloud infrastructure most common needs, and allow a more  comprehensive configuration in case needed. <br>
 
 NOTE: On a Kubernetes based environment, resource allocation will directly depend on how resource requests are configured (please check [RA2](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/) for additional details).
-
-There are two workload profiles available which can be selected:
-
-* Basic: for Workloads that can tolerate resource over-subscription and variable latency
-
-* High Performance: Detailed Hardware configuration of a virtual server. It allows a deep level configuration (e.g. Specific configuration parameters for Hardware acceleration)
-
 
 <a name="Table4-13"></a>
 
