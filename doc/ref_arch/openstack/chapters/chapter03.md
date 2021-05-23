@@ -254,7 +254,7 @@ An over use of Host Aggregates and Availability Zones can result in a granular p
 
 <a name="3.3.4"></a>
 ### 3.3.4. Flavor management
-In OpenStack a flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, operators may create named flavors specifying both the sizing and the [software and hardware profile configurations](../../ref_model/chapters/chapter05.md).
+In OpenStack a flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, operators may create named flavors specifying both the sizing and the [software and hardware profile configurations](../../../ref_model/chapters/chapter05.md).
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources
