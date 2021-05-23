@@ -19,6 +19,7 @@
     * [3.2.2 Container Networking Services](#322-container-networking-services)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
     * [3.2.4 Container Package Managers](#324-container-package-managers)
+    * [3.2.5 Custom Resources](#325-custom-resources)
 
 ## 3.1 Introduction
 
@@ -471,3 +472,10 @@ complies with the CNCF Conformance test for the package managers to use in the
 lifecycle management of the applications they manage. The Reference Architecture
 does not recommend the usage of a Kubernetes Application package manager with a
 server side component installed to the Kubernetes Cluster (e.g.: Tiller).
+
+### 3.2.5 Custom Resources
+
+[Custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) are extensions of the Kubernetes API that represent customizations of Kubernetes installation. Core Kubernetes functions are also built using custom resources which makes Kubernetes more modular.
+Two ways to add custom resources are:
+* [Custom Resource Definitions](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) (CRDs): Defining CRD object creates new custom resource with a name and schema that are easy to use.
+* [API Server Aggregation](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/): Additional API that in flexible way extends Kubernetes beyond core Kubernetes API.
