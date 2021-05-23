@@ -187,7 +187,7 @@ The framework identifies the following five distinct stages:
 4.	Continuous delivery and deployment 
 5.	Continuous monitoring and runtime defence
 
-Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of security activities meets the requirements, the deliverable is transitioned to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. Otherwise, the deliverable should not be allowed to advance to the next checkpoint. 
+Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of the security activities meets the requirements, the next set of security activities are performed as the process transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. If, on the other hand, the outcome of the security activities do not meet the requirements, then the process should not be allowed to advance to the next checkpoint. 
 Tables 7-9 to 7-13 in Section 7.9 define the IaaC security activities presented as security requirements mapped to particular stages and trigger points.
 
 
