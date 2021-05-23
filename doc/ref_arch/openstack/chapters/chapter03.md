@@ -80,7 +80,7 @@ This RA does not intend to restrict how workloads are distributed across tenants
 ### 3.2.2. Virtual Compute (vCPU and vRAM)
 The virtual compute resources (vCPU and vRAM) used by the VNFs behave like their physical counterparts.  A physical core is an actual processor and can support multiple vCPUs through Simultaneous Multithreading (SMT) and CPU overbooking. With no overbooking and SMT of 2 (2 threads per core), each core can support 2 vCPUs. With the same SMT of 2 and overbooking factor of 4, each core can support 8 vCPUs. The performance of a vCPU can be affected by various configurations such as CPU pinning, NUMA alignment, and SMT.
 
-The configuration of the virtual resources will depend on the software and hardware profiles and the flavour (resource sizing) needed to host VNF components. Profiles are defined in the [Reference Model chapter 5](../../ref_model/chapters/chapter05.md).
+The configuration of the virtual resources will depend on the software and hardware profiles and the flavour (resource sizing) needed to host VNF components. Profiles are defined in the [Reference Model chapter 5](../../../ref_model/chapters/chapter05.md).
 
 <a name="3.2.3"></a>
 ### 3.2.3. Virtual Storage
