@@ -212,7 +212,7 @@ Memory or Huge Pages are not considered by the Topology Manager. This can be don
 [Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
 Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
-* 1: During setup, the cluster administrator (more in [3.2.1.8 Operator Pattern](chapter03.md#3218-operator-pattern)) knows or discovers (as per [3.2.1.5 Node Feature Discovery](chapter03.md#3215-node-feature-discovery)) what kind of devices are present on the different nodes, selects which devices to enable and deploys the associated device plugins.
+* 1: During setup, the cluster administrator (more in [3.2.5.1 Operator Pattern](chapter03.md#3251-operator-pattern)) knows or discovers (as per [3.2.1.5 Node Feature Discovery](chapter03.md#3215-node-feature-discovery)) what kind of devices are present on the different nodes, selects which devices to enable and deploys the associated device plugins.
 * 2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server to monitor the devices.
 * 3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
 * 4: Kubelet decides which node to schedule workload on and which device on the node to assign to the pod's containers.
@@ -220,7 +220,7 @@ Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 <p align="center"><img src="../figures/Ch3_Figure_Device_Plugin_operation.png" alt="Device Plugin Operation" Title="Device Plugin Operation" width="50%"/></p>
 <p align="center"><b>Figure 3-2:</b> Device Plugin Operation</p>
 
-An example of often used device plugin is [SR-IOV Network Device Plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin) that discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods. To use it, a CNI meta plugin (such as [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni) or [DANM](https://github.com/nokia/danm)), to provision additional network interfaces for VFs (beyond the original network interface for Kubernetes control), and a SR-IOV CNI is required. During pod creation, plumbs allocated SR-IOV VF to a pods network namespace using VF information given by the meta plugin. On pod deletion, CNI plugin releases the VF from the pod.
+An example of often used device plugin is the [SR-IOV Network Device Plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin), that discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods. To use it, the SR-IOV CNI is required, as well as a CNI multiplexer plugin (such as [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni) or [DANM](https://github.com/nokia/danm)), to provision additional secondary network interfaces for VFs (beyond the primary network interface). During pod creation, the plugin allocates a SR-IOV VF to a pod's network namespace using the VF information given by the meta plugin. On pod deletion, the CNI plugin releases the VF from the pod.
 
 
 #### 3.2.1.7 Hardware Acceleration
