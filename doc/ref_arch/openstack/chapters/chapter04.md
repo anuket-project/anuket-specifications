@@ -30,7 +30,7 @@ Chapter 3 introduced the components of an OpenStack-based IaaS
 -	Cloud Infrastructure Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
 -	Underlying physical compute, storage and networking resources
 
-This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for profiles and flavours; the OpenStack flavor types capture both the flavour (sizing) and the profile configuration (of the host).
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter will also covers implementation support for the [Reference Model profiles and flavours](../../../ref_model/chapters/chapter02.md#24-profiles--flavours); the OpenStack flavor types capture both the flavour (sizing) and the profile configuration (of the host).
 
 
 <a name="4.2"></a>
@@ -209,7 +209,7 @@ This implies that the two physical cores '0' and '8' and their sibling threads '
 
 #### 4.2.2.8. Pinned and Unpinned CPUs
 
-When a VM instance is created the vCPUs are, by default, not assigned to a particular host CPU. Certain compute intensive workloads require real-time or near real-time behavior viz., uninterrupted access to their cores. For such workloads, CPU pinning allows us to bind an instance’s vCPUs to particular host cores or SMT threads. To configure a flavor to use pinned vCPUs, we use a dedicated CPU policy.
+When a VM instance is created the vCPUs are, by default, not assigned to a particular host CPU. Certain workloads require real-time or near real-time behavior viz., uninterrupted access to their cores. For such workloads, CPU pinning allows us to bind an instance’s vCPUs to particular host cores or SMT threads. To configure a flavor to use pinned vCPUs, we use a dedicated CPU policy.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; openstack flavor set .xlarge --property hw:cpu_policy=dedicated
 
