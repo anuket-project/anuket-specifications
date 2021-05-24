@@ -21,6 +21,7 @@
     * [3.2.4 Container Package Managers](#324-container-package-managers)
     * [3.2.5 Custom Resources](#325-custom-resources)
 
+
 ## 3.1 Introduction
 
 The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
@@ -223,7 +224,7 @@ Scheduling pods that require or prefer to run on nodes with hardware accelerator
 •	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
 
 
-#### 3.2.1.8 Scheduling Pods with Non-resilient Applications
+#### 3.2.1.9 Scheduling Pods with Non-resilient Applications
 
 Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
 
@@ -479,3 +480,15 @@ server side component installed to the Kubernetes Cluster (e.g.: Tiller).
 Two ways to add custom resources are:
 * [Custom Resource Definitions](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) (CRDs): Defining CRD object creates new custom resource with a name and schema that are easy to use.
 * [API Server Aggregation](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/): Additional API that in flexible way extends Kubernetes beyond core Kubernetes API.
+
+#### 3.2.5.1 Operator Pattern
+
+A [custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) is a control loop that watches a custom resource for changes and tries to keep the current state of the resource in sync with the desired state.
+
+[Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) combines custom resources and custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure. 
+Operators can have different capability levels. As per repository [OperatorHub.io](https://operatorhub.io/), an operator can have different capability levels ([picture](https://operatorhub.io/static/images/capability-level-diagram.svg)):
+* Basic install: Automated application provisioning and configuration management.
+* Seamless upgrades: Patch and minor version upgrades supported.
+* Full lifecycle: Application lifecycle, storage lifecycle (backup, failure recovery).
+* Deep insights: Metrics, alerts, log processing and workload analysis.
+* Auto pilot: Horizontal/vertical scaling, automated configuration tuning, abnormality detection, scheduling tuning.
