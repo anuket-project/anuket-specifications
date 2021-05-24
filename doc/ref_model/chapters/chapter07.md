@@ -174,7 +174,7 @@ The platform supports the workload, and in effect controls access to the workloa
 
 <a name="7.4.4"></a>
 ### 7.4.4 Infrastructure as a Code security
-Infrastructure as a Code (IaaC) is used for the declarative management of cloud infrastructure resources.  In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevOps teams utilize best practices including continuous integration and continuous delivery. To effectively integrate information security controls into these processes, with the aim of providing timely and meaningful feedback, automated security capabilities will be of critical value.
+Infrastructure as a Code (IaaC) refers to the software used for the declarative management of cloud infrastructure resources.  In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevSecOps teams utilize best practices including continuous integration and continuous delivery and integrate information security controls into these processes, with the aim of providing timely and meaningful feedback. In this, automated security capabilities will be of critical value.
 
 Because of the extremely high complexity of modern telco cloud infrastructure, even minor IaaC code changes may lead to disproportionate and sometime disastrous downstream impacts. Therefore, integration of security testing into the IaaC software development pipeline requires security activities to be automated and bridged with the native DevOps tools and procedures. 
 
