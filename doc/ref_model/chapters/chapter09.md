@@ -309,10 +309,6 @@ Topics include:
     - Using a proto- or Tenant provided HEAT-template/Helm-chart for a NF and perform sanity test (e.g., using scripts test creation of VM/container, ping test, etc.)
 
 
-<a name="9.5.3.2"></a>
-#### 9.5.3.2. Tenant Networking Automation
-
-
 <a name="9.6"></a>
 ## 9.6. Telemetry and Observability
 
