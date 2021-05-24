@@ -89,7 +89,7 @@ The scope of this particular Reference Architecture can be described as follows 
 - Kubernetes capabilities required to conform to the Reference Model requirements
 - Support for CNFs that consist wholly of containers
 - Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
-- **Kubernetes Cluster lifecycle management**: including Cluster creation/upgrade/scaling/deletion, and node customisation due to workload requirements.
+- **Kubernetes Cluster lifecycle management**: including Cluster creation/upgrade/scaling/deletion, and node customisation due to workload requirements. **Note**: *detailed requirements and component specification of cluster LCM are out of scope for this release.*
 
 The following items are considered **out of scope**:
 

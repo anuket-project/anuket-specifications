@@ -469,15 +469,17 @@ server side component installed to the Kubernetes Cluster (e.g.: Tiller).
 
 ## 3.3 CaaS Manager - Cluster Lifecycle Management
 
-In order to provision multiple Kubernetes clusters, which is a common scenario where workloads and network functions require dedicated, single-tenant, clusters, the Reference
-Architecture must provide support for a **CaaS Manager**: a component responsible for the Lifecycle Management of multiple Kubernetes Clusters.
+> Note: *detailed requirements and component specification of cluster LCM are out of scope for this release.*
+
+In order to provision multiple Kubernetes Clusters, which is a common scenario where workloads and network functions require dedicated, single-tenant Clusters, the Reference
+Architecture should provide support for a **CaaS Manager**, a component responsible for the Lifecycle Management of multiple Kubernetes Clusters.
 This component is responsible for delivering an end-to-end life cycle management (creation and installation, scaling, updating, deleting, etc., of entire clusters), visibility and control of CaaS clusters, along with verification of security and compliance of Kubernetes clusters across multiple data centres and clouds.
 Specifically, the scope of the CaaS Manager includes:
 
 - Infrastructure (Kubernetes Clusters) provisioning
-  - LCM of master/worker VM nodes - via IaaS API
+  - LCM of control/worker VM nodes - via IaaS API
   - or Baremetal provisioning for physical nodes
-- Control plane installation (i.e. K8S control plane components on the nodes)
+- Control plane installation (i.e. Kubernetes control plane components on the nodes)
 - Node Host OS customisation (e.g. Kernel customisation)
 - Management of Cluster add-ons (eg CNIs, CSIs, Service Meshes)
 
