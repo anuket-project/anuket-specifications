@@ -275,47 +275,48 @@ The idea of the Cloud Infrastructure profiles is to have a predefined set of inf
 <p align="center"><b>Figure 4-2:</b> Workloads built against Cloud Infrastructure Profiles and compute Flavours.</p>
 
 <a name="4.2.1"></a>
-### 4.2.1 Compute Flavours
+### 4.2.1 Workload Profiles
 
-Compute Flavours represent the compute, memory, storage, and management network resource templates that are used by VMs on the compute hosts. Each VM is given a compute Flavour (resource template), which determines the VMs compute, memory and storage characteristics.
+Compute Flavours represent the compute, memory, storage, and management network resource templates that are used to create VMs on the compute hosts. Each VM create request specifies a Workload Profile and a compute Flavour, which will determine the characterisics of the compute host (node) on which the VM will be hosted and the VMs compute, memory and storage characteristics.
+
+Parameterized Compute Flavours can be used by operators and specified in request for resources. 
 
 Compute Flavours can also specify secondary ephemeral storage, swap disk, etc. A compute Flavour geometry consists of the following elements:
 
 <a name="Table4-12"></a>
 
-| Element                               | Description                                                                                                                                                                                             |
+| Element                               | Description  |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Compute Flavour Name                  | A descriptive name                                                                                                                                                                                      |
-| Number of vCPUs | Number of virtual compute resources (vCPUs) presented to the VM instance.                                                                                                                               |
-| Memory                                | Virtual compute instance memory in megabytes.                                                                                                                                                           |
+| Compute Flavour Name                  | A descriptive name |
+| Number of vCPUs | Number of virtual compute resources (vCPUs) presented to the VM instance.  |
+| Memory                                | Virtual compute instance memory in megabytes.  |
 | Ephemeral/Local Disk                  | Specifies the size of an ephemeral data disk that exists only for the life of the instance. Default value is 0.<br />The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
-| Management Interface                  | Specifies the bandwidth of management interface/s                                                                                                                                                       |
-
+| Root Disk                  | Specifies the size of '/' root partition. It can be considered an Ephemeral Disk |
+| CPU Parameters                  | Capability to associate virtual CPUs to the physical CPUs, and enable specific CPU architectures |
+| CPU Topology                  | NUMA topology and CPU pinning features can minimize latency and improve performance. Check which architecture is supported by the compute nodes.  |
+| Network Parameters                  | Enable network capabilities allowing improvements on network performance (make sure that current deployment allows it, otherwise, it can lead either to a decrease on performance or instability) |
 <p align="center"><b>Table 4-12:</b> Compute Flavour Geometry Specification.</p>
 
 <a name="4.2.1.1"></a>
-#### 4.2.1.1 Predefined Compute Flavours
-The intent of the following Flavours list is to be comprehensive and yet effective to cover both IT and NFV workloads. The compute Flavours are specified relative to the “large” Flavour. The “large” Flavour configuration consists of 4 vCPUs, 8 GB of RAM and 80 GB of local disk, and the resulting virtual compute instance will have a management interface of 1 Gbps. The “medium” Flavour is half the size of a large and small is half the size of medium. The tiny Flavour is a special sized Flavour.
+#### 4.2.1.1 Predefined Workload Profiles
 
->_*Note:*_ Customised (Parameterized) Flavours can be used in concession by operators and, if needed, are created using TOSCA, HEAT templates, and/or VIM APIs.
+The availability of two (2) Profiles will facilitate and accelerate the workload deployment, in case there is a need to implement special capabilities, by the workload, then profile extensions can be used too (further details and definitions can be found in [Chapter 2.4](https://cntt.readthedocs.io/en/latest/ref_model/chapters/chapter02.html#24-profiles--flavours). The following requirements were taken in consideration for the profile definition:
+
+* Workloads can be deployed according to specific profiles (Basic; High Performance), and can be configured with a lower level of granularity by using profile extensions
+* Profile extensions allow a more precise configuration of a workload (e.g. GPU, high, speed network, Edge deployment)
+* Cloud infrastructure "scattering" is minimized
+* Workload optimisation by using existing profiles and its extensions
+* Better usage of Cloud Objects (Memory;Processor;Network;Storage)
+
+
+The intent of the following profiles is to match the cloud infrastructure most common needs, and allow a more  comprehensive configuration in case needed. <br>
+
+NOTE: On a Kubernetes based environment, resource allocation will directly depend on how resource requests are configured (please check [RA2](https://cntt.readthedocs.io/en/latest/ref_arch/kubernetes/) for additional details).
 
 <a name="Table4-13"></a>
 
-| .conf                  | vCPU ("c") <sup>2)</sup> | RAM ("r") <sup>2)</sup> | Local Disk ("d") <sup>3)</sup>| Bandwidth |
-|------------------------|--------------------------|-------------------------|------------------|----------------------|
-| .tiny                  | 1                        | 512 MB                  | 1 GB             | 1 Gbps               |
-| .small                 | 1                        | 2 GB                    | 20 GB            | 1 Gbps               |
-| .medium                | 2                        | 4 GB                    | 40 GB            | 1 Gbps               |
-| .large                 | 4                        | 8 GB                    | 80 GB            | 1 Gbps               |
-| .2xlarge <sup>1)</sup> | 8                        | 16 GB                   | 160 GB           | 1 Gbps               |
-| .4xlarge <sup>1)</sup> | 16                       | 32 GB                   | 320 GB           | 1 Gbps               |
-| .8xlarge <sup>1)</sup> | 32                       | 64 GB                   | 640 GB           | 1 Gbps               |
 
-<p align="center"><b>Table 4-13:</b> Predefined Compute Flavours.</p>
 
-**1)** These compute Flavours are intended to be used for transitional purposes and workload vendors are expected to consume smaller Flavours and adopt microservices-based designs for their workloads.<br>
-**2)** In Kubernetes based environments these are the resource requests of the containers in the pods. To get guaranteed resources the resource requests should be set to the same values as the resource limits, to get burstable resources the resource limits should be higher than the resource requests while to get best effort resources none of resource requests of resource limits should be set.<br>
-**3)** The "local disk" is an ephemeral disk that provides storage for the life of a VM/Pod, and can either be provided by storage devices housed within the physical server on which the VM/Pod is running, or from an external storage device such as SAN or NFS.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Virtual Network Interface Specifications
