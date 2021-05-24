@@ -44,7 +44,7 @@ The following functionalities are recommended for securing Kubernetes platforms:
 - Secret Management
 - How to overcome the lack of hard Kubernetes Cluster Multi-tenancy
   - Tenants without hard multi-tenancy requirements (multiple development teams
-    in the same organisation) separated from each other by namespaces
+    in the same organisation) separated from each other by Namespaces
   - For strict multi tenancy, a dedicated Kubernetes Cluster per tenant should be used
 - Integration with other security ecosystem like monitoring and alerting tools
 
@@ -60,7 +60,7 @@ between tenants
   - Create and define Cluster network policies
   - Run a Cluster-wide pod security policy
   - Turn on Audit Logging
-  - Separate sensitive workloads using namespaces
+  - Separate sensitive workloads using Namespaces
   - Secure tenant metadata Access
 - Segregate container networks using security zoning and network standards
 - Harden the Host OS running the containers
@@ -85,21 +85,21 @@ authentication mechanisms:
 ## 5.5 Use Namespaces to Establish Security Boundaries
 Namespaces in Kubernetes is the first level of isolation between components. It
 is easier to apply security controls (Network Policies, Pod policies, etc.) to
-different types of workloads when deployed in separate namespaces.
+different types of workloads when deployed in separate Namespaces.
 
 ## 5.6 Separate Sensitive Workload
 To limit the potential impact of a compromise, it is recommended to run sensitive
 workloads on a dedicated set of machines. This approach reduces the risk of a
 sensitive application being accessed through a less-secure application that
 shares a container runtime or host.
-- The separation can be achieved by using node pools and Kubernetes namespaces.
+- The separation can be achieved by using node pools and Kubernetes Namespaces.
 
 ## 5.7 Create and Define Network Policies
 Network Policies allow Kubernetes managers to control network access into and
 out of the cloud native applications. It is recommended to have a well defined
 ingress and egress policy for cloud native applications. It is also important to
 modify the default network policies, such as blocking or allowing traffic from
-other namespaces or Clusters while ensuring the namespaces/Clusters are running
+other Namespaces or Clusters while ensuring the Namespaces/Clusters are running
 with policy support enabled.
 
 ## 5.8 Run latest Version
@@ -127,7 +127,7 @@ The following are recommended best practices for container run-time:
 - Use container-aware run-time defence tools
 - Ensure all running cloud native applications are from secure and verified images
 - Cloud native applications are not run with root privileges
-- Ensure sensitive workloads are properly segmented by namespaces or Cluster to
+- Ensure sensitive workloads are properly segmented by Namespaces or Cluster to
 mitigate the scope of compromise.
 
 ## 5.12  Secrets Management
@@ -212,8 +212,8 @@ effects of potential attacks.
 - Enable integration with other security ecosystem (SIEM)
 - Isolate environments (Dev /test /Production) from other environments within the
 Cluster.
-- Create administrative boundaries between resources using namespace and avoid
-using default namespaces.
+- Create administrative boundaries between resources using Namespace and avoid
+using default Namespaces.
 - Enable Seccomp to ensure that the workloads have restricted actions available
 within the container application.
 - Limit discovery by restricting services and users that can access Cluster
@@ -268,11 +268,11 @@ The primary isolation mechanism in Kubernetes environment should be VM or
 physical machine based. This implies that multiple cloud native applications
 should not be deployed together in the same Kubernetes Cluster - unless these
 applications have been planned and verified to co-exist. Thus, the default is to
-allocate one namespace per Cloud Native Network Function (CNF).
+allocate one Namespace per Cloud Native Network Function (CNF).
 
 ### 5.16.2 Container Isolation in Kubernetes Cluster
 #### 5.16.2.1 Namespaces  
-Kubernetes namespaces should be used to provide resource isolation within a
+Kubernetes Namespaces should be used to provide resource isolation within a
 Kubernetes Cluster. They should not be used to isolate different steps in the
 deployment process like Development, Production, or Testing. The most reliable
 separation is achieved by deploying sensitive workloads into dedicated Clusters.
