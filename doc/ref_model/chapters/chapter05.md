@@ -226,7 +226,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 | Reference             | Feature                       | Type                       | Basic | High Performance       |
 |-----------------------|-------------------------------|----------------------------|-------|------------------------|
-| infra.net.acc.cfg.001 | vSwitch optimisation          | Yes/No and SW Optimisation | N     | Y, DPDK                |
+| infra.net.acc.cfg.001 | vSwitch optimisation (DPDK)   | Yes/No and SW Optimisation | N     | Y                      |
 | infra.net.acc.cfg.002 | SmartNIC (for HW Offload)     | Yes/No                     | N     | Optional               |
 | infra.net.acc.cfg.003 | Crypto acceleration           | Yes/No                     | N     | Optional               |
 | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No                     | N     | Optional               |
@@ -330,5 +330,6 @@ The configurations specified in here will be used in specifying the actual hardw
 | infra.hw.nac.cfg.001 | Crypto Acceleration | IPSec, Crypto                  | N        | Optional         | `e.cap.009`           |
 | infra.hw.nac.cfg.002 | SmartNIC            | offload network functionality  | N        | Optional         | `e.cap.015`           |
 | infra.hw.nac.cfg.003 | Compression         |                                | Optional | Optional         |                       |
+| infra.hw.nac.cfg.004 | SR-IOV over PCI-PT  | SR-IOV                         | N        | Yes              | `e.cap.013`           |
 
 <p align="center"><b>Table 5-19:</b> Network acceleration configuration specification.</p>
