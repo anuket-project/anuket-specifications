@@ -162,7 +162,6 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | infra.hw.cpu.cfg.002 | Minimum number of Cores per CPU | 20 | 20 | |
 | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Symmetric Multiprocessing (SMT/SMP) | Must support | Must support | |
-| infra.hw.cac.cfg.001 | GPU | Not required | Not required | |
 | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
 | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support | |
 | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 | |
@@ -170,12 +169,21 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | |
 | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 | |
 | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 | |
-| infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
-| infra.hw.nac.cfg.002 | SmartNIC used to offload vSwitch functionality to hardware | Not required | Optional | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
-<p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
+<p align="center"><b>Table 2-4a:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
+<a name="2.2.4.1"></a>
+### 2.2.4.1 Cloud Infrastructure Hardware Profile-Extensions Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
+
+| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+|---|---|---|---|---|
+| e.cap.014/  infra.hw.cac.cfg.001 | GPU | N | Optional | |
+| e.cap.016/  infra.hw.cac.cfg.002 |FPGA/other Acceleration H/W | N | Optional | |
+| e.cap.009/ infra.hw.nac.cfg.001 | Crypto Acceleration |  N | Optional | |
+| e.cap.015/ infra.hw.nac.cfg.002 | SmartNIC |  N | Optional | |
+| infra.hw.nac.cfg.003 | Compression | Optional | Optional | |
+| e.cap.013/ infra.hw.nac.cfg.004 | SR-IOV over PCI-PT | N | Yes | |
 
 <a name="2.2.5"></a>
 ### 2.2.5 Cloud Infrastructure Management Requirements (source [RM 4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities))
