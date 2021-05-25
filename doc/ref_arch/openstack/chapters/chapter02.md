@@ -7,7 +7,7 @@
 * [2.1 Introduction](#2.1)
 * [2.2 Reference Model Requirements](#2.2)
   * [2.2.1 Cloud Infrastructure Software Profile Requirements for Compute](#2.2.1)
-  * [2.2.2 Cloud Infrastructure Software Profile Requirements for Netowkring](#2.2.2)
+  * [2.2.2 Cloud Infrastructure Software Profile Requirements for Netwokring](#2.2.2)
   * [2.2.3 Cloud Infrastructure Software Profile Requirements for Storage](#2.2.3)
   * [2.2.4 Cloud Infrastructure Hardware Profile Requirements](#2.2.4)
   * [2.2.5 Cloud Infrastructure Management Requirements](#2.2.5)
@@ -89,7 +89,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.016/ infra.com.acc.cfg.005 | FPGA/other Acceleration H/W | Firmware-programmable adapter | | |
 
 <a name="2.2.2"></a>
-### 2.2.2 Cloud Infrastructure Software Profile Requirements for Netowkring (source [RM 5.2.3](../../../ref_model/chapters/chapter05.md#5.2.3))
+### 2.2.2 Cloud Infrastructure Software Profile Requirements for Netwokring (source [RM 5.2.3](../../../ref_model/chapters/chapter05.md#5.2.3))
 
 The features and configuration requirements related to virtual networking for the two (2) types of Cloud Infrastructure Profiles are specified below followed by networking bandwidth requirements.
 
