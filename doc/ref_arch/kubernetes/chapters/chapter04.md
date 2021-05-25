@@ -27,7 +27,7 @@ The specifications defined in this chapter will be detailed with unique
 identifiers, which will follow the pattern: `ra2.<section>.<index>`, e.g.
 `ra2.ch.001` for the first requirement in the Kubernetes Node section.  These
 specifications will then be used as requirements input for the Kubernetes
-Reference Implementation and any Vendor or Community Implementations.
+Reference Implementation and any vendor or community implementations.
 
 Figure 4-1 below shows the architectural components that are described in the
 subsequent sections of this chapter.
@@ -63,6 +63,7 @@ the following specifications:
 |`ra2.ch.015`|Physical NIC Speed - Network Intensive Profile|The NIC ports housed in the physical machines on which the Kubernetes Nodes run for workloads matching the Network Intensive profile must be at least 25Gbps.|[infra.hw.nic.cfg.002](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
 |`ra2.ch.016`|Physical PCIe slots|The physical machines on which the Kubernetes Nodes run must be equipped with at least eight (8) Gen3.0 PCIe slots, each with at least eight (8) lanes.|
 |`ra2.ch.017`|Immutable infrastructure|Whether physical or virtual machines are used, the Kubernetes Node is not changed after it is made ready for use. New changes to the Kubernetes Node are rolled out as new instances. This covers any changes from BIOS through Operating System to running processes and all associated configurations.|[req.gen.cnt.02](./chapter02.md#23-kubernetes-architecture-requirements)|[Use of Ansible](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
+|`ra2.ch.018`|NFD|[Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) must be used to advertise the detailed software and hardware capabilities of each node in the Kubernetes Cluster.|TBD|TBD|
 
 <p align="center"><b>Table 4-1:</b> Node Specifications</p>
 
@@ -72,9 +73,10 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
-|`ra2.k8s.001`|Kubernetes Conformance|The Kubernetes distribution, product, or installer used in the implementation must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0) and marked (X) as conformant for the Kubernetes version that is being used.|[req.gen.cnt.03](./chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.k8s.001`|Kubernetes Conformance|The Kubernetes distribution, product, or installer used in the implementation must be listed in the [Kubernetes Distributions and Platforms document](https://docs.google.com/spreadsheets/d/1uF9BoDzzisHSQemXHIKegMhuythuq_GL3N1mlUUK2h0/edit#gid=0) and marked (X) as conformant for the Kubernetes version that is being used.|[req.gen.cnt.03](./chapter02.md#23-kubernetes-architecture-requirements)||
 |`ra2.k8s.002`|Highly available etcd|An implementation must consist of either three, five or seven nodes running the etcd service (can be colocated on the master nodes, or can run on separate nodes, but not on worker nodes).|[req.gen.rsl.02 req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|["For the high availability requirement"](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
-|`ra2.k8s.003`|Highly available control plane|An implementation must consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.003`|Highly available control plane|An implementation must consist of at least one master node per availability zone or fault domain to ensure the high availability and resilience of the Kubernetes control plane services.|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.k8s.012`|Control plane services|A master node must run at least the following Kubernetes control plane services: `kube-apiserver`, `kube-scheduler` and `kube-controller-manager`.|[req.gen.rsl.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.004`|Highly available worker nodes|An implementation must consist of at least one worker node per availability zone or fault domain to ensure the high availability and resilience of workloads managed by Kubernetes|[req.gen.rsl.01](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.gen.avl.01](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.kcm.gen.02](./chapter02.md#23-kubernetes-architecture-requirements)<br>[req.inf.com.01](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.005`|Kubernetes API Version|In alignment with the [Kubernetes version support policy](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions), an implementation must use one of three latest minor versions (`n-2`). e.g. if the latest version is 1.17 then the RI must use either 1.17, 1.16 or 1.15.|TBC|
 |`ra2.k8s.006`|NUMA Support|When hosting workloads matching the Network Intensive profile, the `TopologyManager` and `CPUManager` feature gates must be enabled and configured on the kubelet (note, TopologyManager is enabled by default in Kubernetes v1.18 and later, with CPUManager enabled by default in Kubernetes v1.10 and later). `--feature-gates="...,TopologyManager=true,CPUManager=true" --topology-manager-policy=single-numa-node --cpu-manager-policy=static`|[e.cap.007](chapter02.md#221-cloud-infrastructure-software-profile-capabilities) [infra.com.cfg.002](./chapter02.md#223-cloud-infrastructure-software-profile-requirements) [infra.hw.cpu.cfg.003](./chapter02.md#224-cloud-infrastructure-hardware-profile-requirements)|
@@ -83,47 +85,18 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.009`|CPU Pinning|When hosting workloads matching the Network Intensive profile, in order to support CPU Pinning, the kubelet must be started with the `--cpu-manager-policy=static` option. (Note, only containers in `Guaranteed` pods - where CPU resource `requests` and `limits` are identical - and configured with positive-integer CPU `requests` will take advantage of this. All other Pods will run on CPUs in the remaining shared pool.)|[infra.com.cfg.003](./chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 |`ra2.k8s.010`|IPv6DualStack|To support IPv6 and IPv4, the `IPv6DualStack` feature gate must be enabled on various components (requires Kubernetes v1.16 or later). kube-apiserver: `--feature-gates="IPv6DualStack=true"`. kube-controller-manager: `--feature-gates="IPv6DualStack=true" --cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --service-cluster-ip-range=<IPv4 CIDR>,<IPv6 CIDR> --node-cidr-mask-size-ipv4 ¦ --node-cidr-mask-size-ipv6` defaults to /24 for IPv4 and /64 for IPv6. kubelet: `--feature-gates="IPv6DualStack=true"`. kube-proxy: `--cluster-cidr=<IPv4 CIDR>,<IPv6 CIDR> --feature-gates="IPv6DualStack=true"`|[req.inf.ntw.04](./chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.k8s.011`|Anuket profile labels|To clearly identify which worker nodes are compliant with the different profiles defined by Anuket the worker nodes must be labelled according to the following pattern: an `anuket.io/profile/basic` label must be set to `true` on the worker node if it can fulfil the requirements of the basic profile and an `anuket.io/profile/network-intensive` label must be set to `true` on the worker node if it can fulfil the requirements of the network intensive profile. The requirements for both profiles can be found in [chapter 2](./chapter02.md#22-reference-model-requirements)|||
+|`ra2.k8s.012`|Kubernetes APIs|Kubernetes [Alpha API](https://kubernetes.io/docs/reference/using-api/#api-versioning) are recommended only for testing, therefore all Alpha APIs **must** be disabled.|[req.int.api.03](./chapter02.md#22-reference-model-requirements)||
+|`ra2.k8s.013`|Kubernetes APIs|Backward compatibility of all supported GA and Beta APIs of Kubernetes **must** be supported. |[req.int.api.04](./chapter02.md#22-reference-model-requirements)||
 
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
-
-<!--
-> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
-#1635
-
-
-
-This Reference Architecture also specifies:
-
-- Master nodes must run the following Kubernetes control plane services:
-    - kube-apiserver
-    - kube-scheduler
-    - kube-controller-manager
-- Master nodes can also run the etcd service and host the etcd database, however etcd can also be hosted on separate nodes if desired
-- Master node services, including etcd, and worker node services (e.g. consumer workloads) must be kept separate - i.e. there must be at least one master node, and at least one worker node
-- Workloads must ***not*** rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). This function is essential for support of Edge type architectures.
-- The following kubelet features must be enabled
-    - CPU Manager
-    - Device Plugin
-    - Topology Manager
-
-All kubelet features can be enabled/disabled by using the `feature-gates:` section in the kubelet config file.  e.g.
-```
-apiVersion: kubelet.config.k8s.io/v1beta1
-kind: KubeletConfiguration
-feature-gates:
-  CPUManager: true|false (BETA - default=true)
-  DevicePlugins: true|false (BETA - default=true)
-  TopologyManager: true|false (ALPHA - default=false)
-```
--->
 
 ## 4.4 Container runtimes
 
 |Ref|Specification|Details|Requirement Trace|Reference Implementation Trace|
 |---|---|---|---|---|
 |`ra2.crt.001`|Conformance with OCI 1.0 runtime spec|The container runtime must be implemented as per the [OCI 1.0](https://github.com/opencontainers/runtime-spec/blob/master/spec.md) (Open Container Initiative 1.0) specification.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
-|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.crt.002`|Kubernetes Container Runtime Interface (CRI)|The Kubernetes container runtime must be implemented as per the [Kubernetes Container Runtime Interface (CRI)](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)||
 
 <p align="center"><b>Table 4-3:</b> Container Runtime Specifications</p>
 
@@ -145,7 +118,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.009`|Multiple connection points with multiplexer/meta-plugin|When a multiplexer/meta-plugin is used, the additional non-default connection points must be managed by a CNI-conformant Network Plugin.|[req.gen.ost.01](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.010`|User plane networking|When hosting workloads matching the Network Intensive profile, CNI network plugins that support the use of DPDK, VPP, or SR-IOV must be deployed as part of the networking solution.|[infra.net.acc.cfg.001](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|[All are available under `example_net_attach_defs:`](../../../ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.011`|NATless connectivity|When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers, a CNI plugin that exposes the pod IP directly to the external networks (e.g. Calico, MACVLAN or IPVLAN CNI plugins) is required.|[req.inf.ntw.14](chapter02.md#23-kubernetes-architecture-requirements)|
-|`ra2.ntw.012`|Optional Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware may be used.|[e.cap.016](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
+|`ra2.ntw.012`|Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA, SR-IOV or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware must be used.|[e.cap.016](chapter02.md#221-cloud-infrastructure-software-profile-capabilities), [e.cap.013](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ntw.013`|Dual stack CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able to support dual-stack IPv4/IPv6 networking.|[req.inf.ntw.04](chapter02.md#23-kubernetes-architecture-requirements)|
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
@@ -167,44 +140,12 @@ Architecture they must be implemented as per the following specifications:
 
 <p align="center"><b>Table 4-6:</b> Storage Solution Specifications</p>
 
-<!--
-> THE BELOW TEXT HAS BEEN COMMENTED AS NEEDS REVIEWING AND REPLACED WITH SPECS IN THE ABOVE TABLE AS PER:
-#1638
-
-As described in [chapter 3](./chapter03.md), storage in Kubernetes consists of three types of storage:
-1. Ephemeral storage that is used to execute the containers
-    - **Ephemeral storage follows the lifecycle of a container**
-    - See the [Container runtimes](#4.4) section above for more information how this meets the requirement for ephemeral storage for Pods
-1. Kubernetes Volumes, which are used to present additional storage to containers
-    - **A Volume follow the lifecycle of a Pod**
-    - This is a native Kubernetes capability and therefore `req.inf.stg.01` is supported by default
-    - This capability also delivers support for ephemeral storage although depending on the Volume Plugin used there may be additional steps required in order to remove data from disk (not all plugins manage the full lifecycle of the storage mounted using Volumes)
-1. Kubernetes Persistent Volumes, which are a subset of the above whose lifecycle persists beyond the lifetime of a Pod to allow for data persistence
-    - **Persistent Volumes have a lifecycle that is independent of Containers and/or Pods**
-    - This supports the requirement `req.inf.stg.01` for persistent storage for Pods
-
-Volume plugins are used in Kubernetes to allow for the use of a range of backend storage systems. There are two types of Volume plugin:
-1. In-tree
-    - These plugins are built, linked, compiled and shipped with the core Kubernetes binaries
-    - Therefore if a new backend storage system needs adding this is a change to the core Kubernetes code
-1. Out-of-tree
-    - These plugins allow new storage plugins to be created without any changes to the core Kubernetes code
-    - The Container Storage Interface (CSI) is such an out-of-tree plugin and many in-tree drivers are being migrated to use the CSI plugin instead (e.g. the [Cinder CSI plugin](https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/using-cinder-csi-plugin.md))
-    - In order to support CSI, the following feature gates must be enabled:
-      - `CSIDriverRegistry`
-      - `CSINodeInfo`
-    - In addition to these feature gates, a CSI driver must be used (as opposed to an in-tree volume plugin) - a full list of CSI drivers can be found [here](https://kubernetes-csi.github.io/docs/drivers.html)
-    - In order to support ephemeral storage use through a CSI-compatible volume plugin, the `CSIInlineVolume` feature gate must be enabled
-    - In order to support Persistent Volumes through a CSI-compatible volume plugin, the `CSIPersistentVolume` feature gate must be enabled
-
-> In order to support automation and the separation of concerns between providers of a service and consumers of the service, Kubernetes Storage Classes should be used. Storage Classes allow a consumer of the Kubernetes platform to request Persistent Storage using a Persistent Volume Claim and for a Persistent Volume to be dynamically created based on the "class" that has been requested. This avoids having to grant `create`/`update`/`delete` permissions in RBAC to PersistentVolume resources, which are cluster-scoped rather than namespace-scoped (meaning an identity can manage all PVs or none).
--->
 A note on object storage:
 - This Reference Architecture does not include any specifications for object
 storage, as this is neither a native Kubernetes object, nor something that is
 required by CSI drivers.  Object storage is an application-level requirement
 that would ordinarily be provided by a highly scalable service offering rather
-than being something an individual Kubernetes cluster could offer.  
+than being something an individual Kubernetes Cluster could offer.  
 
 > Todo: specifications/commentary to support req.inf.stg.04 (SDS) and req.inf.stg.05 (high performance and horizontally scalable storage). Also req.sec.gen.06 (storage resource isolation), req.sec.gen.10 (CIS - if applicable) and req.sec.zon.03 (data encryption at rest).
 
@@ -240,6 +181,10 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.app.005`|[User](https://github.com/opencontainers/runtime-spec/blob/master/config.md#user) Parameter Group (OCI Spec)|User for the process is a platform-specific structure that allows specific control over which user the process runs as|TBD|N/A|
 |`ra2.app.006`|Consumption of additional, non-default connection points|The workload must request additional non-default connection points through the use of workload annotations or resource requests and limits within the container spec passed to the Kubernetes API Server.|[req.int.api.01](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
 |`ra2.app.007`|Host Volumes|Workloads should not use `hostPath` volumes, as [Pods with identical configuration (such as created from a PodTemplate) may behave differently on different nodes due to different files on the nodes.](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)|[req.kcm.gen.02](chapter02.md#23-kubernetes-architecture-requirements)|N/A|
+|`ra2.app.008`|Infrastructure dependency|Workloads must not rely on the availability of the master nodes for the successful execution of their functionality (i.e. loss of the master nodes may affect non-functional behaviours such as healing and scaling, but components that are already running will continue to do so without issue). |TBD|N/A|
+|`ra2.app.009`|Device plugins|Workload descriptors must use the resources advertised by the device plugins to indicate their need for an FPGA, SR-IOV or other acceleration device.|TBD|N/A|
+|`ra2.app.010`|Node Feature Discovery (NFD)|Workload descriptors must use the labels advertised by [Node Feature Discovery](https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html) to indicate which node software of hardware features they need.|TBD|N/A|
+
 
 <p align="center"><b>Table 4-8:</b> Kubernetes Workload Specifications</p>
 
