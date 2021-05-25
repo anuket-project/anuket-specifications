@@ -499,7 +499,7 @@ Operators can have different capability levels. As per repository [OperatorHub.i
 > Note: *detailed requirements and component specification of cluster LCM are out of scope for this release.*
 
 In order to provision multiple Kubernetes Clusters, which is a common scenario where workloads and network functions require dedicated, single-tenant Clusters, the Reference
-Architecture should provide support for a **CaaS Manager**, a component responsible for the Lifecycle Management of multiple Kubernetes Clusters.
+Architecture provides support for a **CaaS Manager**, a component responsible for the Lifecycle Management of multiple Kubernetes Clusters.
 This component is responsible for delivering an end-to-end life cycle management (creation and installation, scaling, updating, deleting, etc., of entire clusters), visibility and control of CaaS clusters, along with verification of security and compliance of Kubernetes clusters across multiple data centres and clouds.
 Specifically, the scope of the CaaS Manager includes:
 
@@ -510,8 +510,8 @@ Specifically, the scope of the CaaS Manager includes:
 - Node Host OS customisation (e.g. Kernel customisation)
 - Management of Cluster add-ons (eg CNIs, CSIs, Service Meshes)
 
-The CaaS Manager should maintain a catalogue of **clusters templates**, used to create clusters specific to the requirements of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
+The CaaS Manager maintains a catalogue of **clusters templates**, used to create clusters specific to the requirements of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
 
 The CaaS manager works by integrating with an underlying virtualisation provider for VM-based clusters, or with Bare Metal management APIs for physical clusters, to create Cluster nodes and provide other capabilities such as node scaling (e.g. provisioning a new node and attaching it to a cluster).
 
-A CaaS Manager should leverage the closed-loop desired state configuration management concept that Kubernetes itself enables. Meaning, the CaaS Manager takes the desired state of a CaaS Cluster as input and the controller must be able to maintain that desired state through a series of closed loops.
+A CaaS Manager leverages the closed-loop desired state configuration management concept that Kubernetes itself enables. Meaning, the CaaS Manager takes the desired state of a CaaS Cluster as input and the controller must be able to maintain that desired state through a series of closed loops.
