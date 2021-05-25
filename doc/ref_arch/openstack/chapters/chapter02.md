@@ -123,9 +123,10 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
-| infra.net.acc.cfg.001 |	vSwitch optimisation |	N |	Y, DPDK | |
-| infra.net.acc.cfg.002 |	SmartNIC (for HW Offload) |	N |	Optional | |
-| infra.net.acc.cfg.003 |	Crypto acceleration |	N |	Optional | |
+| e.cap.013/ infra.hw.nac.cfg.004  |	SR-IOV over PCI-PT |	N |	Y | |
+| e.cap.019/ infra.net.acc.cfg.001 |	vSwitch optimisation (DPDK) |	N |	Y | |
+| e.cap.015/ infra.net.acc.cfg.002 |	SmartNIC (for HW Offload) |	N |	Optional | |
+| e.cap.009/ infra.net.acc.cfg.003 |	Crypto acceleration |	N |	Optional | |
 | infra.net.acc.cfg.004 |	Crypto Acceleration Interface |	N |	Optional | |
 
 
@@ -143,7 +144,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
 <a name="2.2.3.1"></a>
-### 2.2.3.1 Cloud Infrastructure Software Profile Extensions Requirements for Networking
+### 2.2.3.1 Cloud Infrastructure Software Profile Extensions Requirements for Storage
 
 | Reference  | Description | Profile Extensions | Profile Extra-Specs | Specification Reference |
 |---|---|---|---|---|
@@ -480,7 +481,7 @@ The requirements listed in this section are optional, and are not required in or
 | `req.inf.ntw.17` | Network | The Architecture **should** use dual stack IPv4 and IPv6 for Cloud Infrastructure internal networks. | |
 | `req.inf.acc.01` | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). | [RA-1 3.2.6. "Acceleration"](./chapter03.md#326-acceleration) |
 | `req.inf.acc.02` | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). | ["OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
-| `req.inf.acc.03` | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
+| `req.inf.acc.03` | Acceleration | The Architecture **may** support SR-IOV over PCI-Pass through (PCI-PT) to provide networking acceleration to VNFs. | |
 | `req.inf.img.01` | Image | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
 
 <!---
