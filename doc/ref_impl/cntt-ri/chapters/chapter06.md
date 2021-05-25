@@ -88,6 +88,7 @@ Only one instance per resource pool.
 The Global settings are provided by the user, contains data like like IP_Type, VLAN_Type, etc.
 
 Only one instance per resource pool.
+
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | IP_TYPE | String | Yes | IPV4 or IPV6 |
@@ -153,35 +154,22 @@ Multiple instances are expected, one instance for each server.
 <p align="center"><b>Table 6-3-4-1:</b> Server Information.</p>
 
 #### 6.3.4.2 server nic information
-This table is describing the slot and port mapping relationship for NIC in each model of server. 
+This table is describing the slot and port mapping for NICs in each type of server. Port BDF information is also needed for each port, 
+it will be used to identify the logical port name after OS is installed. 
 
-Multiple entries are expected, one entry for each slot of each type of server, so, multiple entries for each type of server, and there's maybe multiple types of server.
+Multiple entries per server type are expected for describing all NIC slots, 1 instance for each port. Information for all server types in pool should be included. 
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | VENDOR | String | Yes | Vendor of server |
 | SKU | String | Yes | SKU of server |
-| MODEL | String | Yes | server service type defined by provider/user, same definition as in above table, example: NC1 or NC2  |
+| SERVICE MODEL | String | Yes | server service type defined by provider/user, same definition as in above table, example: NC1 or NC2  |
 | SLOT | String | Yes | Slot number in server for each NIC, for example, PCIeSlot2  |
-| PORTS | List | Yes | Ports number for the above NIC, for example: 1_1;1_2 2 ports for one NIC  |
-
-<p align="center"><b>Table 6-3-4-2:</b> Server NIC Information.</p>
-
-#### 6.3.4.3 Port BDF information for each type pf server
-Port BDF information need to be provided for each port on server, 
-it will be used to identify the logical port name after OS is installed. 
-
-Multiple entries are expected, 1 instance for each port, BDF info for all server SKU should be included.
-
-| Field # | type | mandatory | Instruction |
-|----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SKU | String | Yes | SKU of server |
-| MODEL | String | Yes | server service type defined by provider/user, same definition as in above table, example: NC1 or NC2  |
 | NETWORK_PLANE | String | Yes | Network plane for each nic, Manage or Storage or Service  |
-| PORT | String | Yes | Ports number for example: 1_1  |
+| PORT | List | Yes | Ports number for the above NIC, for example: 1_1 or 1_2, 2 ports for one NIC, so 2 entries are needed for same slot  |
 | PORT_BDF | String | Yes | Port BDF value for above port  |
 
-<p align="center"><b>Table 6-3-4-3:</b> Port BDF Information.</p>
+<p align="center"><b>Table 6-3-4-2:</b> Server NIC Information.</p>
 
 <a name="6.3.5"></a>
 ### 6.3.5 Network Device information
@@ -223,14 +211,14 @@ Multiple instances are expected, one instance for each physical cable.
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NAME | String | Yes | Name of network device |
 | LOCAL_RACK | String | Yes | the rack info for local device   |
-| LOCAL_NAME | String | Yes | local device name |
+| LOCAL_NAME | String | Yes | local device name, LOCAL_NAME must reference either "Network Device Name" from table 6.3.5 |
 | LOCAL_TYPE | String | Yes | Local device type, switch or server |
 | LOCAL_PORT | String | Yes | connected port in local device |
 | REMOTE_RACK | String | Yes |  |
-| REMOTE_NAME | String | Yes | connected remote device name |
-| REMOTE_TYPE | String | Yes | remote device type |
-| REMOTE_PORT | String | Yes | connected port in remote device  |
-| LINE_TYPE | String | Yes | line type to describe local device type and remote device type |
+| REMOTE_NAME | String | Yes | connected remote device name, REMOTE_NAME must reference either "Network Device Name" from table 6.3.5 or "Server Name" from table 6.3.4.1 |
+| REMOTE_TYPE | String | Yes | remote device type, it can be switch or server |
+| REMOTE_PORT | String | Yes | connected port in remote device. When describing port for remote servers, we use port number like 1_1, or 1_2, instead of PCIeslot number, because the server NIC mapping is already defined in 6.3.4.2 |
+| LINE_TYPE | String | Yes | Line type to describe local device type and remote device type, how each line is connected. For example "S-SRV-C_S-TOR" means this line is connecting a service server in compute module to service TOR, and another example "ST-SRV-S_M-TOR" means storage server connecting to a manage TOR in storage module. The line type can be customized defined, as long as it's unified in end user.|
 
 <p align="center"><b>Table 6-3-6:</b> Port mapping information.</p>
 
