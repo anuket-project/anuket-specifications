@@ -5,7 +5,7 @@
 - [2.1 Workloads Collateral](#21-workloads-collateral)
 - [2.2 Use cases](#22-use-cases)
 - [2.3 Analysis](#23-analysis)
-- [2.4 Profiles, Profile-Extensions & Flavours](#24-profiles--flavours)
+- [2.4 Profiles, Profile Extensions & Flavours](#24-profiles--flavours)
   - [2.4.1 Profiles (top-level partitions)](#241-profiles-top-level-partitions)
   - [2.4.2 Profile Extensions (specialisations)](#242-profile-extensions-specialisations)
 
