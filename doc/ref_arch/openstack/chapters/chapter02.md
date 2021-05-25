@@ -174,7 +174,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 <p align="center"><b>Table 2-4a:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
 <a name="2.2.4.1"></a>
-### 2.2.4.1 Cloud Infrastructure Hardware Profile-Extensions Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
+#### 2.2.4.1 Cloud Infrastructure Hardware Profile-Extensions Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
 
 | Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
 |---|---|---|---|---|
