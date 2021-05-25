@@ -221,7 +221,7 @@ The Anuket is also closely aligned with OVP, an open source, community-led compl
 
 Once the Anuket specifications are in place, we create a reference implementation that is adherent to requirements set in the specifications (**Reference Implementations**). Additionally, commercial products adhering to Anuket specifications will be able to undergo an enhanced OVP’s program (based on the **Reference Conformance** specification) using testing framework and tools provided by Anuket. **Figure 6** below illustrates the relationship with OVP in more details (specific to OpenStack based specifications).
 
-<p align="center"><img src="./figures/tech_relation_opnfv.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/tech_relation.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 6:</b> Anuket Relationship with OVP.</p>
 
 As can be seen from the above figure, roles and responsibilities are as follows:
