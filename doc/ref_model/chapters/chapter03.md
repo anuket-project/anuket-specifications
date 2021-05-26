@@ -536,7 +536,7 @@ The flow of steps to enable the SFC creation can be as follows:-
 
 a.	SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
 
-b.	SFC Rendere attaches the SFC aware interfaces at SFs to enable Service plane 
+b.	SFC Renderer attaches the SFC aware interfaces at SFs to enable Service plane 
 
 c.	NFVO boots up the relevant SF configurations at SF.
 > **Note:** These steps are optional, if SFC orchestrator disovers that SFs are already created and existing.
@@ -559,8 +559,8 @@ c.	SFC classifier Policy provided for SFP to SFC classifier by SFC Controller. *
 
 <a name="3.5.5.3.2"></a>
 ##### 3.5.5.3.2 Updation of Service Function Chain
-SFP or SFC can be updated for various reasons and some of them are :-
-- SFC controller monitors the SFP status and alerts SFC controller in case of not meeting SLA or some anamoly.
+SFP or SFC can be updated for various reasons and some of them are :
+- SFC controller monitors the SFP status and alerts SFC controller in case of not meeting SLA or some anomaly.
 - SFC design changes to update SF order, inclusion/removal of SFs
 - SFC Policy Rules changes
 
@@ -571,7 +571,7 @@ Figure 3-11c shows traffic steering along SFP.
 <p align="center"> <img src="../figures/ch03-model-sfc-data-flow.png" alt="Data steering in Service Function Chain" Title="Data steering in Service Function Chain" width="45%"/></p>
 <p align ="center"><b>Figure 3-11c:</b> Data steering in Service Function Chain</p>
 
-- SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as SFC, UPF acts as SFC classifier.  UPF receives the classification policies from PCF (via SMF) as traffic steering policies. 
+- SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as SFC,  5G User plane function (UPF) acts as SFC classifier.  UPF receives the classification policies from 5G Policy control function (PCF) as traffic steering policies. 
 - SFC classifier applies the SFC encapsulation (e.g., SCH, NSH) and routes traffic towards SFF, acts as entry point to SFP. The SFC Encapsulation provides, at a minimum, SFP identification, and is used by the SFC-aware functions, such as the SFF and SFC-aware SFs.
 - SFF based on SFC encapsulation routes the traffic to SF for service functionalities. 
 - SF updates the SFC encapsulation based on its policies for further services.
