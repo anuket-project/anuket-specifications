@@ -215,7 +215,7 @@ Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
 * 1: During setup, the cluster administrator (more in [3.2.5.1 Operator Pattern](chapter03.md#3251-operator-pattern)) knows or discovers (as per [3.2.1.5 Node Feature Discovery](chapter03.md#3215-node-feature-discovery)) what kind of devices are present on the different nodes, selects which devices to enable and deploys the associated device plugins.
 * 2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server to monitor the devices.
 * 3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
-* 4: Kubelet decides which node to schedule workload on and which device on the node to assign to the pod's containers.
+* 4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific device to the pod's containers.
 
 <p align="center"><img src="../figures/Ch3_Figure_Device_Plugin_operation.png" alt="Device Plugin Operation" Title="Device Plugin Operation" width="50%"/></p>
 <p align="center"><b>Figure 3-2:</b> Device Plugin Operation</p>
