@@ -224,7 +224,7 @@ Scheduling pods that require or prefer to run on nodes with hardware accelerator
 •	Fixed function accelerators, Firmware-programmable network adapters and SmartNICs can be found and mapped to pods by using Device Plugin.
 
 
-#### 3.2.1.9 Scheduling Pods with Non-resilient Applications
+#### 3.2.1.8 Scheduling Pods with Non-resilient Applications
 
 Non-resilient applications are sensitive to platform impairments on Compute like pausing CPU cycles (for example because of OS scheduler) or Networking like packet drops, reordering or latencies. Such applications need to be carefully scheduled on nodes and preferably still decoupled from infrastructure details of those nodes.
 
