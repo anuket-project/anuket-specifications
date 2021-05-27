@@ -25,6 +25,7 @@
   * [7.6.3 Networking Security Zoning](#7.6.3)
   * [7.6.4 Encryption](#7.6.4)
   * [7.6.5 Root of Trust for Measurements (RTM)](#7.6.5)
+  * [7.6.6 Zero Trust Architecture (ZTA)](#7.6.6)
 * [7.7 Common security standards](#7.7)
 * [7.8 Testing & Certification](#7.8)
 * [7.9 Consolidated Security requirements](#7.9)
@@ -310,6 +311,22 @@ Additionally, platform monitoring can be extended to monitor the integrity of th
 The static file system includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static file system during the runtime of the platform.
 
+<a name="7.6.6"></a>
+### 7.6.6 Zero Trust Architecture (ZTA) 
+
+Remote attestation, section [(7.6.1)](#7.6.1), and Root of trust for measurements, section [(7.6.5)](#7.6.5), provide methods to ensure the integrity of the infrastructure. The Zero Trust concept moves a step forward enabling to build secure by design cloud infrastructure, from hardware to applications. The adoption of Zero Trust principles mitigates the threats and attacks within an entreprise, a network or an infrastructure, ensuring a fine grained segmentation between each component of the system.
+
+Zero Trust Architecture (ZTA), described in [NIST SP 800-207 publication](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf), assumes there is no implicit trust granted to assets or user accounts whatever their location or ownership.  Zero trust approach focuses on protecting all types of resources: data, services, devices, infrastructure components, virtual and cloud components. Trust is never granted implicitly, and must be evaluated continuously. 
+
+ZTA principles applied to Cloud infrastructure components are the following:
+
+-	Adopt least privilege configurations
+-	Authentication and authorization required for each entity, service, or session
+-	Fine grained segmentation
+-	Separation of control plane and data plane
+-	Secure internal and external communications
+-	Monitor, test, and analyse security continuously
+
 <a name="7.7"></a>
 ## 7.7 Common security standards
 
@@ -439,7 +456,7 @@ Security certification should encompass the following elements:
 | req.sec.sys.017 | The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority. |  |
 | req.sec.sys.018 | The Platform **must** provide the capability of allowing certificate renewal and revocation. |  |
 | req.sec.sys.019 | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
-
+| req.sec.sys.020 | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment. | Zero Trust Architecture (ZTA) described in NIST SP 800-207 |
 
 <p align="center"><b>Table 7-2:</b> Platform and access requirements</p>
 
