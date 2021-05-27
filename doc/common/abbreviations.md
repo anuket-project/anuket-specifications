@@ -16,6 +16,7 @@
 | Term           | Description                           |
 |----------------|-------------                          |
 | 3GPP           | 3rd Generation Partnership Project    |
+| AD             | Active Directory                      |
 | AI             | Artificial Intelligence               |
 | API            | Application Programming Interface     |
 | AR	           | Assisted Reality                      |
@@ -34,6 +35,7 @@
 | CDN	           | Content Distribution (or Delivery) Network |
 | CHF            | Charging Function (part of the converged charging system CCS)|
 | CI/CD          | Continuous Integration / Continuous Deployment |
+| CIS	           | Center for Internet Security          |
 | CIT	           | Cloud Integrity Tool                  |
 | CLI	           | Command Line Interface                |
 | CNCF	         | Cloud Native Computing Foundation     |
@@ -41,7 +43,10 @@
 | CNI            | Container Network Interface           |
 | CNTT           | Cloud iNfrastructure Telco Taskforce  |
 | CPU            | Central Processing Unit               |
+| CRI            | Container Runtime Interface           |
 | CRTM           | Core Root of Trust for Measurements   |
+| CSA	           | Cloud Security Alliance               |
+| CSI            | Container Storage Interface           |
 | CSP	           | Cloud Service Provider                |
 | CVE            | Common Vulnerabilities and Exposures  |
 | DBaaS	         | Data Base as a Service                |
@@ -72,6 +77,7 @@
 | GB             | Giga Byte                             |
 | GPU            | Graphics Processing Unit              |
 | GSMA           | Groupe Speciale Mobile Association    |
+| GUI            | Graphical User Interface              |
 | GW             | Gateway                               |
 | HA	           | High Availability                     |
 | HCP	           | Hyperscaler Cloud Providers           |
@@ -80,12 +86,14 @@
 | IaaS           | Infrastructure as a Service           |
 | IaC	(IaaC)     | Infrastructure as Code (or "as a")    |
 | ICMP	         | Internet Control Message Protocol     |
+| IdP            | Identity Provider                     |
 | IMS            | IP Multimedia Subsystem               |
 | IO             | Input/Output                          |
 | IOPS           | Input/Output per Second               |
-| IOMMU          | Input/Output Memory Management Unit    |
+| IOMMU          | Input/Output Memory Management Unit   |
 | IoT            | Internet of Things                    |
 | IP             | Internet Protocol                     |
+| IPAM           | IP Address Management                 |
 | IPMI           | Intelligent Platform Management Interface |
 | IPSec          | Internet Protocol Security            |
 | IT             | Information Technology                |
@@ -96,7 +104,9 @@
 | LB	           | Load Balancer                         |
 | LBaaS	         | Load Balancer as a Service            |
 | LCM            | LifeCycle Management                  |
+| LDAP	         | Lightweight Directory Access Protocol |
 | LFN	           | Linux Foundation Networking           |
+| LMA	           | Logging, Monitoring, and Analytics    |
 | MANO           | Management and Orchestration          |
 | MEC	           | Multi-access Edge Computing           |
 | ML             | Machine Learning                      |
@@ -132,6 +142,8 @@
 | OSSA	         | OpenStack Security Advisories         |
 | OSTK           | OpenStack                             |
 | OVP            | OPNFV Verified Program                |
+| OVS            | Open Virtual Switch                   |
+| OWASP          | Open Web Application Security Project |
 | PaaS           | Platform as a Service                 |
 | PCIe           | Peripheral Component Interconnect Express |
 | PCI-PT         | PCIe PassThrough                      |
@@ -145,8 +157,8 @@
 | RAM            | Random Access Memory                  |
 | RAN            | Radio Access Network                  |
 | RBAC           | Role-bases Access Control             |
-| RFC            | Request for Change                    |
 | RC             | Reference Conformance                 |
+| RFC            | Request for Change                    |
 | RI             | Reference Implementation              |
 | RM             | Reference Model                       |
 | ROI            | Return on Investment                  |
@@ -154,6 +166,7 @@
 | R/W            | Read/Write                            |
 | SA	           | Service Assurance                     |
 | SaaS	         | Software as a Service                 |
+| SAML	         | Security Assertion Markup Language    |
 | SAN	           | Storage Attached Network              |
 | SATA           | Serial Advanced Technology Attachment |
 | SBA            | Service Based Architecture            |
@@ -161,11 +174,15 @@
 | SCAP	         | Security Content Automation Protocol  |
 | SDN            | Software-Defined Networking           |
 | SDNC	         | SDN Controller                        |
+| SDNo	         | SDN Overlay                           |
+| SDNu	         | SDN Underlay                          |
 | SDO	           | Standard Development Organisation     |
 | SDS            | Software-Defined Storage              |
 | SD-WAN	       | Software Defined Wide Area Network    |
 | Sec	           | Security                              |
 | SFC            | Service Function Chaining             |
+| SIEM	         | Security Information and Event Monitoring |
+| SIP            | Session Initiation Protocol           |
 | SLA            | Service Level Agreement               |
 | SME            | SUbject Matter Expert                 |
 | SMT            | Simultaneous Multi-Threading          |
@@ -201,6 +218,7 @@
 | VNFM           | Virtual Network Function Manager      |
 | vNIC           | Virtual Network Interface Card        |
 | VoLTE	         | Voice over LTE                        |
+| VPN            | Virtual Private Network               |
 | VR	           | Virtual Reality                       |
 | vRAN           | Virtualised Radio Access Network      |
 | VxLAN          | Virtual Extensible LAN                |
@@ -231,10 +249,8 @@
 | BRAS | Broadband Remote Access Server |
 | CG-NAT | Carrier-Grade Network Address Translation |
 | CIM | Cloud Infrastructure Management |
-| CIS | Center for Internet Security |
 | CP | Control Plane |
 | CPE | Customer Premises Equipment |
-| CSA | Cloud Security Alliance |
 | CSCF | Call Session Control Function |
 | CU | Centralised Unit (O-RAN context) |
 | DPI | Deep Packet Inspection |
@@ -268,7 +284,6 @@
 | OLT | Optical Line Termination |
 | OOB | Out of Band |
 | O-RAN | Open RAN |
-| OWASP | Open Web Application Security Project |
 | PCF | Policy Control Function |
 | PCRF | Policy and Charging Rules Function |
 | PGW | Packet data network GateWay |
@@ -282,8 +297,6 @@
 | RR | Route Reflector |
 | RU | Radio Unit (O-RAN context) |
 | SBC | Session Border Controller |
-| SDNo | SDN Overlay |
-| SDNu | SDN Underlay |
 | Sec-GW | Security GateWay |
 | SF | Service Function |
 | SFF | Service Function Forwarder |
@@ -292,7 +305,6 @@
 | SGW | Serving GateWay |
 | SGW-C | SGW Control plane |
 | SGW-U | SGW User plane |
-| SIP | Session Initiation Protocol |
 | SMF | Session Management Function |
 | SMS | Short Message Service |
 | SMSC | SMS Center |
@@ -314,6 +326,47 @@
 
 <a name="1.3"></a>
 ## RA Abbreviations
+
+> The abbreviations in this section are in addition to the [Common Abbreviations](#1.1) and are specific to the Reference Architectures (RA1 and RA2).
+> 
+| Term | Description |
+| ------------- | --------------------- |
+| ARP | Address Resolution Protocol  |
+| BGP | Border Gateway Protocol |
+| BGPaaS | BGP as a Service |
+| CCP | Centralised Control Plane |
+| cgroups | Control Groups |
+| CM | Configuration Management |
+| CRD | Custom Resource Definition |
+| CRI-O | OCI compliant CRI |
+| CRUD | Create, Read, Update, and Delete |
+| DANM | Damn, Another Network Manager |
+| DCP | Distributed Control Plane |
+| DVR | Distributed Virtual Routing |
+| EBS | Elastic Block Storage |
+| EVPN | Ethernet VPN |
+| FC | Fiber Channel |
+| Gi or GiB | Gibibyte (1024<sup>3</sup>) |
+| GPS | Global Positioning System |
+| GRE | Generic Routing Encapsulation |
+| iSCSI | Internet Small Computer Systems Interface |
+| MC-LAG or MLAG | Multi-chassis Link Aggregation Group |
+| Mi or MiB | Mebibyte (1024<sup>2</sup>) |
+| ML2 or ML-2 | Modular Layer 2 |
+| NFD | Node Feature Discovery |
+| NFS | Network File System |
+| OCI | Open Container Initiative |
+| ONF | Open Networking Forum |
+| PV | Persistent Volumes |
+| PVC | Persistent Volume Claims |
+| Repo | Repository |
+| SNAT | Source Network Address Translation |
+| TBC | To Be Confirmed |
+| TF | Tungsten Fabric |
+| TTL | Time To Live |
+| VPP | Vector Packet Processing |
+| VRRP | Virtual Router Redundancy Protocol |
+
 
 <a name="1.4"></a>
 ## RI Abbreviations
