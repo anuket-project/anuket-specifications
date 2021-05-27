@@ -6,6 +6,7 @@
 |-----------|-----------------|
 | 3GPP | 3rd Generation Partnership Project |
 | AAA | Authentication, Authorisation, and Accounting |
+| AArch64 | 64bit ARM architecture |
 | Acc | Accelerator |
 | AD | Active Directory |
 | ADC | Application Delivery Controller |
@@ -30,12 +31,14 @@
 | BIOS | Basic Input Output System |
 | BM | Bare Metal |
 | BMC | Baseband Management Controller |
-| BNG | Border Network Gateway |
+| BMRA | Bare Metal Reference Architecture |
+| BNG | Broadband Network Gateway |
 | BRAS | Broadband Remote Access Server |
 | BSS | Business Support Systems |
 | CaaS | Cloud Native Container as a Service |
 | CaaS | Container as a Service |
 | CAPEX | Capital Expenditure |
+| C&V | Compliance & Verification |
 | CCP | Centralised Control Plane |
 | CCS | Converged Charging System |
 | CDN | Content Distribution (or Delivery) Network |
@@ -43,7 +46,9 @@
 | cgroups | Control Groups |
 | CHF | Charging Function (part of the converged charging system CCS) |
 | CI/CD | Continuous Integration / Continuous Deployment |
+| CIDR | Classless Inter-Domain Routing |
 | CIM | Cloud Infrastructure Management |
+| CIRV | Common Infrastructure Realization & Validation |
 | CIS | Center for Internet Security |
 | CIT | Cloud Integrity Tool |
 | CLI | Command Line Interface |
@@ -61,10 +66,12 @@
 | CRTM | Core Root of Trust for Measurements |
 | CRUD | Create, Read, Update, and Delete |
 | CSA | Cloud Security Alliance |
+| CSAR | (TOSCA) Cloud Service Archive |
 | CSCF | Call Session Control Function |
 | CSI | Container Storage Interface |
 | CSP | Cloud Service Provider |
 | CU | Centralised Unit (O-RAN context) |
+| CVC | (LFN) Compliance Verification Committee |
 | CVE | Common Vulnerabilities and Exposures |
 | DANM | Damn, Another Network Manager |
 | DBaaS | Data Base as a Service |
@@ -85,6 +92,7 @@
 | DVR | Distributed Virtual Routing |
 | E2E | End to End |
 | EBS | Elastic Block Storage |
+| EFI | (BIOS) Extensible Firmware Interface |
 | eMBB | Enhanced Mobile BroadBand |
 | EMS | Element Management System |
 | EPA | Enhanced Platform Awareness |
@@ -104,9 +112,12 @@
 | FPGA | Field Programmable Gate Array |
 | FTTx | Fiber to the x |
 | FW | Fire Wall |
+| FWD | (Traffic) ForWarDed |
 | GB | Giga Byte |
+| GFS | Global (Linux) File System |
 | GGSN | Gateway GPRS Support Node |
 | Gi or GiB | Gibibyte (1024<sup>3</sup>) |
+| GPRS | General Packet Radio Service |
 | GPS | Global Positioning System |
 | GPU | Graphics Processing Unit |
 | GRE | Generic Routing Encapsulation |
@@ -117,13 +128,23 @@
 | HA | High Availability |
 | HCP | Hyperscaler Cloud Provider |
 | HDD | Hard Disk Drive |
+| HDFS | Hadoop Distributed File System |
+| HDV | Hardware Delivery Validation |
 | HLR | Home Location Register |
+| HOT | (OpenStack) Heat Orchestration Templates |
 | HSS | Home Subscriber Server |
+| HTML | Hyper Text Markup Language |
 | HW | Hardware |
 | IaaS | Infrastructure as a Service |
 | IaC (IaaC) | Infrastructure as Code (or "as a") |
+| IAM | Identity and Access Management |
 | ICMP | Internet Control Message Protocol |
+| ID | Identifier |
+| IDF | (OPNFV) Installer Descriptor File |
 | IdP | Identity Provider |
+| IDRAC | (Dell) Integrated Dell Remote Access Controller |
+| IDS | Intrusion Detection System |
+| ILO | (HP) Integrated Lights-Out |
 | IMS | IP Multimedia Subsystem |
 | IO | Input/Output |
 | IOMMU | Input/Output Memory Management Unit |
@@ -132,11 +153,13 @@
 | IP | Internet Protocol |
 | IPAM | IP Address Management |
 | IPMI | Intelligent Platform Management Interface |
+| IPS | Intrusion Prevention System |
 | IPSec | Internet Protocol Security |
 | iSCSI | Internet Small Computer Systems Interface |
 | IT | Information Technology |
 | ITIL | IT Infrastructure Library |
 | K8s | Kubernetes |
+| KPI | Key Performance Indicator |
 | KVM | Keyboard, Video and Mouse |
 | LaaS | (Testing) Lab as a Service |
 | LAN | Local Area Network |
@@ -145,8 +168,11 @@
 | LCM | LifeCycle Management |
 | LDAP | Lightweight Directory Access Protocol |
 | LFN | Linux Foundation Networking |
+| LLDP | Link Layer Discovery Protocol |
 | LMA | Logging, Monitoring, and Analytics |
 | LSR | Label Switching Router |
+| MAAS |  (Canonical) Metal as a Service |
+| MAC | Media Access Control |
 | MANO | Management and Orchestration |
 | MC-LAG or MLAG | Multi-chassis Link Aggregation Group |
 | MEC | Multi-access Edge Computing |
@@ -168,9 +194,9 @@
 | NBI | North Bound Interface |
 | NEF | Network Exposure Function |
 | NF | Network Function |
-| NFD | Network Function Discovery |
 | NFD | Node Feature Discovery |
 | NFP | Network Forwarding Path |
+| NFR | Non Functional Requirements |
 | NFS | Network File System |
 | NFV | Network Function Virtualisation |
 | NFVI | Network Function Virtualisation Infrastructure |
@@ -204,6 +230,7 @@
 | ORAN | Open Radio Access Network |
 | O-RAN | Open RAN |
 | OS | Operating System |
+| OSD | (Ceph) Object Storage Daemon |
 | OSS | Operational Support Systems |
 | OSSA | OpenStack Security Advisories |
 | OSTK | OpenStack |
@@ -216,10 +243,12 @@
 | PCI-PT | PCIe PassThrough |
 | PCR | Platform Configuration Register |
 | PCRF | Policy and Charging Rules Function |
+| PDF | (OPNFV) Pod Descriptor File |
 | PF | Physical Function |
 | PGW | Packet data network GateWay |
 | PGW-C | PGW Control plane |
 | PGW-U | PGW User plane |
+| PIM | Privileged Identity Management |
 | PLMN | Public Land Mobile Network |
 | PM | Performance Measurements |
 | POD | Point of Delivery |
@@ -227,6 +256,7 @@
 | PTP | Precision Time Protocol |
 | PV | Persistent Volumes |
 | PVC | Persistent Volume Claims |
+| PXE | Preboot Execution Environment |
 | QEMU | Quick EMUlator |
 | QoS | Quality of Service |
 | R/W | Read/Write |
@@ -244,8 +274,10 @@
 | RM | Reference Model |
 | ROI | Return on Investment |
 | RR | Route Reflector |
+| RTM | Requirements Traceability Matrix |
 | RTM | Root of Trust for Measurements |
 | RU | Radio Unit (O-RAN context) |
+| S3 | (Amazon) Simple Storage Service |
 | SA | Service Assurance |
 | SaaS | Software as a Service |
 | SAML | Security Assertion Markup Language |
@@ -255,6 +287,8 @@
 | SBC | Session Border Controller |
 | SBI | South Bound Interface |
 | SCAP | Security Content Automation Protocol |
+| SDF | (OPNFV) Scenario Descriptor File |
+| SDK | Software Development Kit |
 | SDN | Software-Defined Networking |
 | SDNC | SDN Controller |
 | SDNo | SDN Overlay |
@@ -273,6 +307,7 @@
 | SGW-C | SGW Control plane |
 | SGW-U | SGW User plane |
 | SIEM | Security Information and Event Monitoring |
+| SIG | Special Interest Group |
 | SIP | Session Initiation Protocol |
 | SLA | Service Level Agreement |
 | SME | Subject Matter Expert |
@@ -285,6 +320,7 @@
 | SONiC | Software for Open Networking in the Cloud |
 | SR-IOV | Single Root Input Output Virtualisation |
 | SRTM | Static Root of Trust for Measurements |
+| SRV | (Traffic) client-SeRVer traffic |
 | SSD | Solid State Drive |
 | SSH | Secure SHell protocol |
 | SSL | Secure Sockets Layer |
@@ -295,6 +331,7 @@
 | TCP | Transmission Control Protocol |
 | TEC | (GSMA) Telco Edge Cloud |
 | TF | Tungsten Fabric |
+| TFTP | Trivial File Transfer Protocol |
 | TIP | Telecom Infra Project |
 | TLB | Translation Lookaside Buffers |
 | TLS | Transport Layer Security |
@@ -302,7 +339,9 @@
 | TOSCA | Topology and Orchestration Specification for Cloud Applications |
 | TPM | Trusted Platform Module |
 | TTL | Time To Live |
+| TUG | (CNCF) Telco User Group  |
 | UDM | Unified Data Management |
+| UDP | User Datagram Protocol |
 | UDR | Unified Data Repository |
 | UEFI | Unified Extensible Firmware Interface |
 | UHD | Ultra High Definition |
@@ -316,10 +355,13 @@
 | V2X | Vehicle-to-everything |
 | VA | Virtual Application |
 | VAS | Value Added Service |
+| V&V | Verification And Validation |
 | vCPU | Virtual CPU |
 | VF | Virtual Function |
 | VI | Vendor Implementation |
+| vIDS | Virtualised IDS |
 | VIM | Virtualised Infrastructure Manager |
+| vIPS | Virtualised IPS |
 | VLAN | Virtual LAN |
 | VM | Virtual Machine |
 | VMM | Virtual Machine Monitor (or Manager) |
@@ -333,12 +375,16 @@
 | VPP | Vector Packet Processing |
 | VR | Virtual Reality |
 | vRAN | Virtualised Radio Access Network |
+| VRF | Virtual Routing and Forwarding |
 | VRRP | Virtual Router Redundancy Protocol |
 | VTEP | Virtual Termination End Point |
+| VTP | (ONAP) VNF Test Platform |
 | VxLAN | Virtual Extensible LAN |
 | vXYZ | virtual XYZ, e.g., as in vNIC |
+| WG | Working Group |
 | Wi-Fi | Wireless Fidelity |
 | WLAN | Wireless Local Area Network |
 | WLC | Wireless LAN Controller |
+| WS | WorkStream  |
 
 
