@@ -213,6 +213,105 @@
 ## RM Abbreviations
 
 > The Abbreviations in this section are in addition to the [Common Abbreviations](#1.1) and are specific to the Reference Model (RM)
+
+| Term | Description |
+|-------------------|---------------------------------------------|
+| AAA | Authentication, Authorisation, and Accounting |
+| Acc | Accelerator |
+| ADC | Application Delivery Controller |
+| AES | Advanced Encryption Standard |
+| AES-NI | AES New Instructions |
+| AMF | Access and Mobility management Function |
+| AS | Application Servers |
+| ASIC | Application-Specific Integrated Circuit |
+| AUSF | AUthentication Server Function |
+| BBU | BaseBand Unit |
+| BGCF | Border Gateway Control Function |
+| BNG | Border Network Gateway |
+| BRAS | Broadband Remote Access Server |
+| CG-NAT | Carrier-Grade Network Address Translation |
+| CIM | Cloud Infrastructure Management |
+| CIS | Center for Internet Security |
+| CP | Control Plane |
+| CPE | Customer Premises Equipment |
+| CSA | Cloud Security Alliance |
+| CSCF | Call Session Control Function |
+| CU | Centralised Unit (O-RAN context) |
+| DPI | Deep Packet Inspection |
+| DPU | Data Processing Unit |
+| DRA | Diameter Routing Agent |
+| DU | Distributed Unit (O-RAN context) |
+| ePDG | Evolved Packet Data GateWay |
+| EUAG | Linux Foundation Networking End User Advisory Group |
+| FFA | Fixed Function Accelerator |
+| GGSN | Gateway GPRS Support Node |
+| HLR | Home Location Register |
+| HSS | Home Subscriber Server |
+| ITIL | IT Infrastructure Library |
+| LSR | Label Switching Router |
+| MGCF | Media Gateway Control Function |
+| MGW | Media GateWay |
+| MME | Mobility Management Entity |
+| MRF | Media Resource Function |
+| MSAN | MultiService Access Node |
+| MSC | Mobile Switching Center |
+| MTAS | Mobile Telephony Application Server |
+| NEF | Network Exposure Function |
+| NFP | Network Forwarding Path |
+| NPL | Network Programming Language |
+| NPN | Non-Public Network |
+| NR | New Radio (5G context) |
+| NRF | Network Repository Function |
+| NSSF | Network Slice Selection Function |
+| OCS | Online Charging system |
+| OFCS | Offline Charging System |
+| OLT | Optical Line Termination |
+| OOB | Out of Band |
+| O-RAN | Open RAN |
+| OWASP | Open Web Application Security Project |
+| PCF | Policy Control Function |
+| PCRF | Policy and Charging Rules Function |
+| PGW | Packet data network GateWay |
+| PGW-C | PGW Control plane |
+| PGW-U | PGW User plane |
+| PLMN | Public Land Mobile Network |
+| PM | Performance Measurements |
+| PTP | Precision Time Protocol |
+| RGW | Residential GateWay |
+| RISC | Reduced Instruction Set Computing |
+| RR | Route Reflector |
+| RU | Radio Unit (O-RAN context) |
+| SBC | Session Border Controller |
+| SDNo | SDN Overlay |
+| SDNu | SDN Underlay |
+| Sec-GW | Security GateWay |
+| SF | Service Function |
+| SFF | Service Function Forwarder |
+| SFP | Service Function Paths |
+| SGSN | Serving GPRS Support Node |
+| SGW | Serving GateWay |
+| SGW-C | SGW Control plane |
+| SGW-U | SGW User plane |
+| SIP | Session Initiation Protocol |
+| SMF | Session Management Function |
+| SMS | Short Message Service |
+| SMSC | SMS Center |
+| SONiC | Software for Open Networking in the Cloud |
+| TOR | Top of Rack |
+| UDM | Unified Data Management |
+| UDR | Unified Data Repository |
+| UHD | Ultra High Definition |
+| UPF | User Plane Function |
+| V2I | Vehicle to Infrastructure |
+| V2N | Vehicle to Network |
+| V2P | Vehicle to Pedestrian |
+| V2V | Vehicle to Vehicle |
+| V2X | Vehicle-to-everything |
+| VAS | Value Added Service |
+| VNI | VXLAN Network Identifier |
+| VTEP | Virtual Termination End Point |
+| WLC | Wireless LAN Controller |
+
 <a name="1.3"></a>
 ## RA Abbreviations
 
