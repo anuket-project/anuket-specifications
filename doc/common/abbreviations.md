@@ -14,7 +14,7 @@
 | AI | Artificial Intelligence |
 | AMF | Access and Mobility management Function |
 | API | Application Programming Interface |
-| AR | Assisted Reality |
+| AR | Augmented Reality |
 | ARM | Advanced RISC Machines |
 | ARP | Address Resolution Protocol |
 | AS | Application Servers |
@@ -29,7 +29,7 @@
 | BGPaaS | BGP as a Service |
 | BIOS | Basic Input Output System |
 | BM | Bare Metal |
-| BMC | Bare Metal Controller |
+| BMC | Baseband Management Controller |
 | BNG | Border Network Gateway |
 | BRAS | Broadband Remote Access Server |
 | BSS | Business Support Systems |
@@ -85,13 +85,13 @@
 | DVR | Distributed Virtual Routing |
 | E2E | End to End |
 | EBS | Elastic Block Storage |
-| eMBB | enhanced Mobile BroadBand |
+| eMBB | Enhanced Mobile BroadBand |
 | EMS | Element Management System |
 | EPA | Enhanced Platform Awareness |
 | EPC | Evolved Packet Core |
 | ePDG | Evolved Packet Data GateWay |
-| ESXi | ESX integrated (VMware) |
-| eTOM | enhanced Telecom Operations Map |
+| ESXi | (VMware) ESX Integrated |
+| eTOM | Enhanced Telecom Operations Map |
 | ETSI | European Telecommunications Standards Institute |
 | EUAG | Linux Foundation Networking End User Advisory Group |
 | EULA | End-User License Agreement |
@@ -156,7 +156,7 @@
 | ML | Machine Learning |
 | ML2 or ML-2 | Modular Layer 2 |
 | MME | Mobility Management Entity |
-| mMTCs | massive Machine-Type Communications |
+| mMTCs | Massive Machine-Type Communications |
 | MPLS | Multi-Protocol Label Switching |
 | MRF | Media Resource Function |
 | MSAN | MultiService Access Node |
@@ -187,7 +187,7 @@
 | NSSF | Network Slice Selection Function |
 | NTP | Network Time Protocol |
 | NUMA | Non-Uniform Memory Access |
-| NVMe | Non-Volatile Memory express |
+| NVMe | Non-Volatile Memory Express |
 | NW | Network |
 | OAM | Operations, Administration and Maintenance |
 | OCI | Open Container Initiative |
@@ -199,7 +199,7 @@
 | ONF | Open Networking Forum |
 | OOB | Out of Band |
 | OPEX | Operational Expenditure |
-| OPG | Operator Platform Group (GSMA) |
+| OPG | (GSMA) Operator Platform Group |
 | OPNFV | Open Platform for NFV |
 | ORAN | Open Radio Access Network |
 | O-RAN | Open RAN |
@@ -249,7 +249,7 @@
 | SA | Service Assurance |
 | SaaS | Software as a Service |
 | SAML | Security Assertion Markup Language |
-| SAN | Storage Attached Network |
+| SAN | Storage Area Network |
 | SATA | Serial Advanced Technology Attachment |
 | SBA | Service Based Architecture |
 | SBC | Session Border Controller |
@@ -293,7 +293,7 @@
 | TBC | To Be Confirmed |
 | TC | Test Case |
 | TCP | Transmission Control Protocol |
-| TEC | Telco Edge Cloud (GSMA) |
+| TEC | (GSMA) Telco Edge Cloud |
 | TF | Tungsten Fabric |
 | TIP | Telecom Infra Project |
 | TLB | Translation Lookaside Buffers |
@@ -308,7 +308,7 @@
 | UHD | Ultra High Definition |
 | UI | User Interface |
 | UPF | User Plane Function |
-| uRLLC | ultra-Reliable Low-Latency Communications |
+| uRLLC | Ultra-Reliable Low-Latency Communications |
 | V2I | Vehicle to Infrastructure |
 | V2N | Vehicle to Network |
 | V2P | Vehicle to Pedestrian |
