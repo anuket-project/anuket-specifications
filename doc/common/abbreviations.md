@@ -216,7 +216,7 @@
 | VMM            | Virtual Machine Monitor (or Manager)  |
 | VNF            | Virtualised Network Function          |
 | VNFC           | Virtualised Network Function Component |
-| VNFM           | Virtualisedl Network Function Manager |
+| VNFM           | Virtualised Network Function Manager |
 | vNIC           | Virtual Network Interface Card        |
 | VoLTE	         | Voice over LTE                        |
 | VPN            | Virtual Private Network               |
