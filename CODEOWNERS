@@ -69,6 +69,7 @@
 
 
 # Reference Architectures 2
+/doc/ref_arch/kubernetes/chapters/README.md           @scottsteinbrueck @rgstori @walterkozlowski
 /doc/ref_arch/kubernetes/chapters/chapter01.md        @scottsteinbrueck @rgstori @walterkozlowski
 /doc/ref_arch/kubernetes/chapters/chapter02.md        @scottsteinbrueck @rgstori @walterkozlowski
 /doc/ref_arch/kubernetes/chapters/chapter03.md        @scottsteinbrueck @rgstori @walterkozlowski
