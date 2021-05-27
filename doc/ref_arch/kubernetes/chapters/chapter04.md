@@ -87,6 +87,7 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.011`|Anuket profile labels|To clearly identify which worker nodes are compliant with the different profiles defined by Anuket the worker nodes must be labelled according to the following pattern: an `anuket.io/profile/basic` label must be set to `true` on the worker node if it can fulfil the requirements of the basic profile and an `anuket.io/profile/network-intensive` label must be set to `true` on the worker node if it can fulfil the requirements of the network intensive profile. The requirements for both profiles can be found in [chapter 2](./chapter02.md#22-reference-model-requirements)|||
 |`ra2.k8s.012`|Kubernetes APIs|Kubernetes [Alpha API](https://kubernetes.io/docs/reference/using-api/#api-versioning) are recommended only for testing, therefore all Alpha APIs **must** be disabled.|[req.int.api.03](./chapter02.md#22-reference-model-requirements)||
 |`ra2.k8s.013`|Kubernetes APIs|Backward compatibility of all supported GA and Beta APIs of Kubernetes **must** be supported. |[req.int.api.04](./chapter02.md#22-reference-model-requirements)||
+|`ra2.k8s.014`|Security Groups|Kubernetes **must** support NetworkPolicy feature. |[infra.net.cfg.004](chapter02.md#23-kubernetes-architecture-requirements)||
 
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
@@ -120,6 +121,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.011`|NATless connectivity|When hosting workloads that require source and destination IP addresses to be preserved in the traffic headers, a CNI plugin that exposes the pod IP directly to the external networks (e.g. Calico, MACVLAN or IPVLAN CNI plugins) is required.|[req.inf.ntw.14](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.012`|Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA, SR-IOV or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware must be used.|[e.cap.016](chapter02.md#221-cloud-infrastructure-software-profile-capabilities), [e.cap.013](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|
 |`ra2.ntw.013`|Dual stack CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able to support dual-stack IPv4/IPv6 networking.|[req.inf.ntw.04](chapter02.md#23-kubernetes-architecture-requirements)|
+|`ra2.ntw.014`|Security Groups|The networking solution deployed within the implementation **must** support network policies.|[infra.net.cfg.004](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
 
