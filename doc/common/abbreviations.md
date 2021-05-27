@@ -339,7 +339,7 @@
 | cgroups | Control Groups |
 | CM | Configuration Management |
 | CRD | Custom Resource Definition |
-| CRI-O | OCI compliant CRI |
+| CRI-O | OCI compliant CRI implementation |
 | CRUD | Create, Read, Update, and Delete |
 | DANM | Damn, Another Network Manager |
 | DCP | Distributed Control Plane |
