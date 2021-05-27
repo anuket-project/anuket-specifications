@@ -212,7 +212,7 @@
 <a name="1.2"></a>
 ## RM Abbreviations
 
-> The Abbreviations in this section are in addition to the [Common Abbreviations](#1.1) and are specific to the Reference Model (RM)
+> The abbreviations in this section are in addition to the [Common Abbreviations](#1.1) and are specific to the Reference Model (RM).
 
 | Term | Description |
 |-------------------|---------------------------------------------|
