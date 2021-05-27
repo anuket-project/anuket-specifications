@@ -58,7 +58,7 @@
 | DPDK           | Data Plane Development Kit            |
 | DRAM           | Dynamic Random Access Memory          |
 | DRTM           | Dynamic Root of Trust for Measurements |
-| DSP            | Digital SIgnal Processor              |
+| DSP            | Digital Signal Processor              |
 | E2E            | End to End                            |
 | eMBB	         | enhanced Mobile BroadBand             |
 | EMS	           | Element Management System             |
@@ -70,17 +70,18 @@
 | EULA           | End-User License Agreement            |
 | EVPN           | Ethernet Virtual Private Network      |
 | F2F            | Face-to-Face                          |
-| FCAPS          | fault, configuration, accounting, performance, security |
+| FCAPS          | Fault, Configuration, Accounting, Performance, Security |
 | FPGA           | Field Programmable Gate Array         |
 | FTTx           | Fiber to the x                        |
 | FW             | Fire Wall                             |
 | GB             | Giga Byte                             |
 | GPU            | Graphics Processing Unit              |
-| GSMA           | Groupe Speciale Mobile Association    |
+| GSM            | Global System for Mobile Communications<br>previously Groupe Speciale Mobile Association    |
+| GSMA           | GSM Association                       |
 | GUI            | Graphical User Interface              |
 | GW             | Gateway                               |
 | HA	           | High Availability                     |
-| HCP	           | Hyperscaler Cloud Providers           |
+| HCP	           | Hyperscaler Cloud Provider           |
 | HDD            | Hard Disk Drive                       |
 | HW             | Hardware                              |
 | IaaS           | Infrastructure as a Service           |
@@ -98,7 +99,7 @@
 | IPSec          | Internet Protocol Security            |
 | IT             | Information Technology                |
 | K8s            | Kubernetes                            |
-| KVM	           | keyboard, video and mouse             |
+| KVM	           | Keyboard, Video and Mouse             |
 | LaaS	         | (Testing) Lab as a Service            |
 | LAN            | Local Area Network                    |
 | LB	           | Load Balancer                         |
@@ -128,9 +129,9 @@
 | NS	           | Network Service                       |
 | NTP	           | Network Time Protocol                 |
 | NUMA           | Non-Uniform Memory Access             |
-| NVMe           | Non-Volatile Memory Express           |
+| NVMe           | Non-Volatile Memory express           |
 | NW	           | Network                               |
-| OAM 	         | Operations, Administration, and Maintenance |
+| OAM 	         | Operations, Administration and Maintenance |
 | ODIM	         | Open Distributed Infrastructure Management |
 | ONAP           | Open Network Automation Platform      |
 | OPEX           | Operational Expenditure               |
@@ -184,7 +185,7 @@
 | SIEM	         | Security Information and Event Monitoring |
 | SIP            | Session Initiation Protocol           |
 | SLA            | Service Level Agreement               |
-| SME            | SUbject Matter Expert                 |
+| SME            | Subject Matter Expert                 |
 | SMT            | Simultaneous Multi-Threading          |
 | SNMP	         | Simple Network Management Protocol    |
 | SR-IOV         | Single Root Input Output Virtualisation |
@@ -213,9 +214,9 @@
 | VLAN           | Virtual LAN                           |
 | VM             | Virtual Machine                       |
 | VMM            | Virtual Machine Monitor (or Manager)  |
-| VNF            | Virtual Network Function              |
-| VNFC           | Virtual Network Function Component    |
-| VNFM           | Virtual Network Function Manager      |
+| VNF            | Virtualised Network Function          |
+| VNFC           | Virtualised Network Function Component |
+| VNFM           | Virtualisedl Network Function Manager |
 | vNIC           | Virtual Network Interface Card        |
 | VoLTE	         | Voice over LTE                        |
 | VPN            | Virtual Private Network               |
