@@ -115,18 +115,18 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 
 #### 4.2.2.5. Compute Nodes
 
-This section specifies the compute node configurations to support the Basic and High Performance profiles; in OpenStack this would be accomplished by creating "flavors". In certain cases, different nodes (hosts, physical servers) in the OpenStack cloud infrastructure may be configured with a profile but with a different geometry (such as CPU over-suscription). The cloud operator may choose to create a "flavor series" as a set of standard configurations, of a given profile, capturing some of this variability.
+This section specifies the compute node configurations to support the Basic and High Performance profiles; in OpenStack this would be accomplished by specifying the configurations when creating "flavors". The cloud operator may choose to implement certail profile-extensions [RM 2.4 Profile Extensions](../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations) as a set of standard configurations, of a given profile, capturing some of the variability through different values or extra specifications.
 
 -	The software and hardware configurations are as specified in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 -	BIOS requirement
     -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 
 
-**Flavor Series**
+**Example Profile Extensions**
 
-The Reference Model specifies the Basic (B) and High Performance (H) instance types (or flavor series). The Reference Model also provides a choice of network acceleration capabilities utilising, for example, DPDK and SR-IOV technologies. Table 4-2 lists a few example flavor series and some of their capabilities.
+The Reference Model specifies the Basic (B) and High Performance (H) profile types. The Reference Model also provides a choice of network acceleration capabilities utilising, for example, DPDK and SR-IOV technologies. Table 4-2 lists a few simpe examples of progile extensions and some of their capabilities.
 
-| Flavor Series | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
+| Profile Extensions | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
 |----|----|----|----|----|----|----|
 | B1 | 1:1 | Y | N | N | N | OVS-kernel |
 | B4 | 4:1 | Y | N | N | N | OVS-kernel |
@@ -134,7 +134,7 @@ The Reference Model specifies the Basic (B) and High Performance (H) instance ty
 | HD | 1:1 | Y | Y | Y | Y | OVS-DPDK |
 | HS | 1:1 | Y | Y | Y | Y | SR-IOV |
 
-<p align="center"><b>Table 4-2: Flavor Capabilities</b></p>
+<p align="center"><b>Table 4-2: Profile Extensions and Capabilities</b></p>
 
 **BIOS Settings**
 
@@ -229,7 +229,7 @@ A given host can only be assigned a single host profile; a host profile can be a
 
 **CPU Allocation Ratio and CPU Pinning**
 
-A given host (compute node) can only support a single CPU Allocation Ratio. Thus, to support the B1 and B4 Basic flavor series types with CPU Allocation Ratios of 1.0 and 4.0 we will need to create 2 different host profiles and separate host aggregates for each of the host profiles. The CPU Allocation Ratio is set in the hypervisor on the host.
+A given host (compute node) can only support a single CPU Allocation Ratio. Thus, to support the B1 and B4 Basic profile extensions with CPU Allocation Ratios of 1.0 and 4.0 we will need to create 2 different host profiles and separate host aggregates for each of the host profiles. The CPU Allocation Ratio is set in the hypervisor on the host.
 
 > When the CPU Allocation Ratio exceeds 1.0 then CPU Pinning also needs to be disabled.
 
@@ -271,7 +271,7 @@ SR-IOV-based networking for Tenant Use Cases is required where vSwitch-based net
 
 **Example Host Configurations**
 
-_Host configurations for B1, B4 Flavor Series_
+_Host configurations for B1, B4 Profile Extensions_
 
 
 <p align="center"><img src="../figures/RA1-Ch04-Basic-host-config.png" alt=" Basic Profile Host Configuration"><b> Figure 4-1: Basic Profile Host Configuration (example and simplified).</b></p>
@@ -286,7 +286,7 @@ Let us refer to the data traffic networking configuration of Figure 4-1 to be pa
 | SMT  | BIOS | Enable | Enable |
 | NUMA | BIOS | Disable | Disable |
 | Huge Pages  | BIOS | No | No |
-| Flavor Series | | B1 | B4 |
+| Profile Extensions | | B1 | B4 |
 <p align="center"><b>Table 4-3: Configuration of Basic Flavor Capabilities</b></p>
 
 
@@ -296,7 +296,7 @@ Figure 4-2 shows the networking configuration where the storage and OAM share ne
 
 Let us refer to the above networking set up to be part of the hp-B1-b and hp-B4-b host profiles but the basic configurations as specified in Table 4-3.
 
-In our example, the flavor series B1 and B4, are each mapped to two different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b respectively. Different network configurations, reservation of CPU cores, Lag values, etc. result in different host profiles.
+In our example, the Profile Extensions B1 and B4, are each mapped to two different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b respectively. Different network configurations, reservation of CPU cores, Lag values, etc. result in different host profiles.
 
 To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OpenStack agents), the following needs to be configured
 
@@ -304,14 +304,14 @@ To ensure Tenant CPU isolation from the host services (Operating System (OS), hy
 |----|----|----|
 | isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants | isolcpus=1-19, 21-39, 41-59, 61-79 |
 
-_Host configuration for HV Flavor Series_
+_Host configuration for HV Profile Extensions_
 
 
-The above examples of host networking configurations for the B1 and B4 flavor series are also suitable for the HV flavor series; however, the hypervisor and BIOS settings will be different (see table below) and hence there will be a need for different host profiles. Table 4-4 gives examples of three different host profiles; one each for HV, HD and HS flavor series.
+The above examples of host networking configurations for the B1 and B4 Profile Extensions are also suitable for the HV Profile Extensions; however, the hypervisor and BIOS settings will be different (see table below) and hence there will be a need for different host profiles. Table 4-4 gives examples of three different host profiles; one each for HV, HD and HS Profile Extensions.
 
 |  | Configured in | Host profile: hp-hv-a | Host profile: hp-hd-a | Host profile: hp-hs-a |
 |----|----|----|----|----|
-| Flavor Series | | HV | HD | HS |
+| Profile Extensions | | HV | HD | HS |
 | CPU Allocation Ratio | Hypervisor | 1:1 | 1:1 | 1:1 |
 | NUMA | BIOS, Operating System, Hypervisor and OpenStack Nova Scheduler | Enable | Enable | Enable |
 | CPU Pinning (requires NUMA) | OpenStack Nova Scheduler | Enable | Enable | Enable |
@@ -321,9 +321,9 @@ The above examples of host networking configurations for the B1 and B4 flavor se
 <p align="center"><b>Table 4-4: Configuration of High Performance Flavor Capabilities</b></p>
 
  
-_Host Networking configuration for HD Flavor Series_
+_Host Networking configuration for HD Profile Extensions_
 
-An example of the data traffic configuration for the HD (OVS-DPDK) flavor series is shown in Figure 4-3.
+An example of the data traffic configuration for the HD (OVS-DPDK) Profile Extensions is shown in Figure 4-3.
 
 <p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-DPDK.png" alt="High Performance Profile Host Configuration with DPDK acceleration "><b> Figure 4-3: High Performance Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
 
@@ -333,9 +333,9 @@ To ensure Tenant and DPDK CPU isolation from the host services (Operating System
 |----|----|----|
 | isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants and DPDK | isolcpus=3-19, 23-39, 43-59, 63-79 |
 
-_Host Networking configuration for HS Flavor Series_
+_Host Networking configuration for HS Profile Extensions_
 
-An example of the data traffic configuration for the HS (SR-IOV) flavor series is shown in Figure 4-4.
+An example of the data traffic configuration for the HS (SR-IOV) Profile Extensions is shown in Figure 4-4.
 
 <p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-SRIOV.png" alt="High Performance Profile Host Configuration with SR-IOV "><b> Figure 4-4: High Performance Profile Host Configuration with SR-IOV (example and simplified).</b></p>
 
@@ -347,7 +347,7 @@ To ensure Tenant CPU isolation from the host services (Operating System (OS), hy
 
 **Using Hosts of a Host Profile type**
 
-As we have seen a flavor series is supported by configuring hosts in accordance with the flavor series specifications. For example, an instance of flavor type B1 can be hosted on a compute node that is configured as an hp-B1-a or hp-B1-b host profile. All compute nodes configured with hp-B1-a or hp-B1-b host profile are made part of a host aggregate, say, ha-B1 and thus during VM instantiation of B1 flavor hosts from the ha-B1 host aggregate will be selected.
+As we have seen Profile Extensions are supported by configuring hosts in accordance with the Profile Extensions specifications. For example, an instance of flavor type B1 can be hosted on a compute node that is configured as an hp-B1-a or hp-B1-b host profile. All compute nodes configured with hp-B1-a or hp-B1-b host profile are made part of a host aggregate, say, ha-B1 and thus during VM instantiation of B1 flavor hosts from the ha-B1 host aggregate will be selected.
 
 
 <a name="4.2.3"></a>
