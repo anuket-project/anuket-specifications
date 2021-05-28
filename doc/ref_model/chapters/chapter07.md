@@ -23,7 +23,7 @@
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
   * [7.6.2 Workload Image Scanning / Signing](#7.6.2)
   * [7.6.3 Networking Security Zoning](#7.6.3)
-  * [7.6.4 Encryption](#7.6.4)
+  * [7.6.4 Volume Encryption](#7.6.4)
   * [7.6.5 Root of Trust for Measurements (RTM)](#7.6.5)
 * [7.7 Common security standards](#7.7)
 * [7.8 Testing & Certification](#7.8)
@@ -260,8 +260,9 @@ Recommended practice to set network security policies following the principle of
 <a name="7.6.4"></a>
 ### 7.6.4 Volume Encryption
 
-Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
+Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Encryption functions relies on a Cloud Infrastructure internal key management service. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure. The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
 
+For sensitive data encryption, when data sovereignty is required, an external Hardware Security Module (HSM) should be integrated in order to protect the cryptographic keys. A HSM is a physical device which manages and stores secrets. Usage of a HSM strengthens the secrets security. For 5G services, GSMA FASG strongly recommends the implementation of a HSM to secure the storage of UICC (Universal Integrated Circuit Card) credentials.
 
 <a name="7.6.5"></a>
 ### 7.6.5 Root of Trust for Measurements (RTM)
@@ -456,6 +457,7 @@ Security certification should encompass the following elements:
 | req.sec.ci.006 | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). | |
 | req.sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. | Admin access must be carefully regulated. |
 | req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation. | |
+| req.sec.ci.009 | For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys. | |
 
 <p align="center"><b>Table 7-3:</b> Confidentiality and integrity requirements</p>
 
