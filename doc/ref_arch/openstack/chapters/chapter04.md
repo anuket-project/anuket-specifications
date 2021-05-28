@@ -115,7 +115,7 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 
 #### 4.2.2.5. Compute Nodes
 
-This section specifies the compute node configurations to support the Basic and High Performance profiles; in OpenStack this would be accomplished by specifying the configurations when creating "flavors". The cloud operator may choose to implement certail profile-extensions [RM 2.4 Profile Extensions](../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations) as a set of standard configurations, of a given profile, capturing some of the variability through different values or extra specifications.
+This section specifies the compute node configurations to support the Basic and High Performance profiles; in OpenStack this would be accomplished by specifying the configurations when creating "flavors". The cloud operator may choose to implement certail profile-extensions ([RM 2.4 Profile Extensions](../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations)) as a set of standard configurations, of a given profile, capturing some of the variability through different values or extra specifications.
 
 -	The software and hardware configurations are as specified in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 -	BIOS requirement
@@ -126,13 +126,13 @@ This section specifies the compute node configurations to support the Basic and 
 
 The Reference Model specifies the Basic (B) and High Performance (H) profile types. The Reference Model also provides a choice of network acceleration capabilities utilising, for example, DPDK and SR-IOV technologies. Table 4-2 lists a few simpe examples of progile extensions and some of their capabilities.
 
-| Profile Extensions | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
-|----|----|----|----|----|----|----|
-| B1 | 1:1 | Y | N | N | N | OVS-kernel |
-| B4 | 4:1 | Y | N | N | N | OVS-kernel |
-| HV | 1:1 | Y | Y | Y | Y | OVS-kernel |
-| HD | 1:1 | Y | Y | Y | Y | OVS-DPDK |
-| HS | 1:1 | Y | Y | Y | Y | SR-IOV |
+| Profile Extensions | Description | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
+|----|----|----|----|----|----|----|----|
+| B1 | Basic Profile<br>No CPU over-subscription profile extension | 1:1 | Y | N | N | N | OVS-kernel |
+| B4 | Basic Profile<br>4x CPU over-subscription profile extension | 4:1 | Y | N | N | N | OVS-kernel |
+| HV | High Performance Profile | 1:1 | Y | Y | Y | Y | OVS-kernel |
+| HD | High Performance Profile<br>Network Intensive with DPDK profile extension | 1:1 | Y | Y | Y | Y | OVS-DPDK |
+| HS | High Performance Profile<br>Network Intensive with SR-IOV profile extension | 1:1 | Y | Y | Y | Y | SR-IOV |
 
 <p align="center"><b>Table 4-2: Profile Extensions and Capabilities</b></p>
 
