@@ -4,10 +4,11 @@
 
 ## Table of Contents
 * [Common References](#1.1)
-* [RM References](#1.2)
-* [RA References](#1.3)
-* [RC References](#1.4)
-* [RI References](#1.5)
+* [Cloud Native and Kubernetes References](#1.2)
+* [Network related References](#1.3)
+* [O-RAN, 5G and Miscellaenous References](#1.4)
+* [Security Related References](#1.5)
+  * [NIST Security Related References](#1.5.1)
 
 <a name="1.1"></a>
 ## Common References
@@ -37,13 +38,61 @@
 
 
 <a name="1.2"></a>
-## RM References
+## Cloud Native and Kubernetes References
+
+|Ref	     | Doc Number	            |Title          |
+|--------  |------------------------|---------------|
+| | | "Extended Cloud Native Principles". Available at https://networking.cloud-native-principles.org/cloud-native-principles. |
+| | | "DANM". Available at https://github.com/nokia/danm. |
+| | | "Kubernetes Container Runtime Interface (CRI)". Available at https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/. |
+| | | "Multus". Available at https://github.com/intel/multus-cni. |
+| | | "Node Feature Discovery (NFD)". Available at https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html. |
+| | | "Open Container Initiative (OCI)". Available at https://github.com/opencontainers/runtime-spec. |
+
 
 <a name="1.3"></a>
-## RA References
+## Network related References
+
+|Ref	     | Doc Number	            |Title          |
+|--------  |------------------------|---------------|
+| | IETF-RFC 2544 | "Benchmarking Methodology for Network Interconnect Devices".  Available at https://datatracker.ietf.org/doc/html/rfc2544. |
+| | ITU-T Y.3500  | "Information Technology – Cloud computing – Overview and vocabulary"; SERIES Y: Global Information Infrastructure, Internet Protocol Aspects and Next-Generation Networks: Cloud Computing. Available at https://www.itu.int/rec/T-REC-Y.3500/recommendation.asp?lang=en&parent=T-REC-Y.3500-201408-I. |
+| | | "P4 Language Consortium" (Packet Processing Programming). Available at https://p4.org/.|
 
 <a name="1.4"></a>
-## RI References
+## O-RAN, 5G and Miscellaenous References
 
-<a name="1.4"></a>
-## RC References
+|Ref	     | Doc Number	            |Title          |
+|----------|------------------------|---------------|
+| | ITU-T IMT-2020 | "International Mobile Telecommunications-2020 (IMT-2020) Standard for 5G networks". Available at https://www.itu.int/pub/T-TUT-IMT. |
+| | O-RAN.WG6.AAL-GAnP-v01.00 | "O-RAN Acceleration Abstraction Layer General Aspects an Principles 1.0", November 2020; O-RAN.WG6.AAL-GAnP-v01.00. Available at https://www.o-ran.org/specifications. |
+| | ETSI TS 123 501 V16.6.0 | "System architecture for the 5G System (5GS)". ETSI TS 123 501 V16.6.0 (2020-10) (3GPP TS 23.501 version 16.6.0 Release 16). Available at https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/16.06.00_60/ts_123501v160600p.pdf. |
+
+<a name="1.5"></a>
+## Security Related References
+
+|Ref	     | Doc Number	            |Title          |
+|----------|------------------------|---------------|
+| | | ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV).  Available at https://www.etsi.org/committee/1427-nfv. |
+| | | ETSI Cyber Security Technical Committee (TC CYBER).  Available at https://www.etsi.org/committee/cyber
+| | ETSI GS NFV-SEC 014 V3.1.1 (2018-04) |  Network Functions Virtualisation (NFV) Release 3; "NFV Security; Security Specification for MANO Components and Reference points";  ETSI GS NFV-SEC 014 V3.1.1 (2018-04). Available at https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/014/03.01.01_60/gs_NFV-SEC014v030101p.pdf. |
+| | ETSI GS NFV-SEC 021 V2.6.1 (2019-06) | Network Functions Virtualisation (NFV) Release 2; Security; "VNF Package Security Specification"; ETSI GS NFV-SEC 021 V2.6.1 (2019-06). Available at https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf. |
+| | | "Open Networking & the Security of Open Source Software deployment". Available at https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/. |
+
+<a name="1.5.1"></a>
+## NIST Security Related References
+
+|Ref	     | Doc Number	            |Title          |
+|----------|------------------------|---------------|
+| | NIST SP 800-53 | Security and Privacy Controls for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf. |
+| | NIST SP 800-53A | Assessing Security and Privacy Controls in Federal Information Systems and Organizations: Building Effective Assessment Plans https://www.serdp-estcp.org/content/download/47513/453118/file/NIST%20SP%20800-53A%20Rev%204%202013.pdf. |
+| | NIST SP 800-63B | Digital Identity Guidelines https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf. |
+| | NIST SP 800-63B | Digital Identity Guidelines https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf. |
+| | NIST SP 800-123 | Guide to General Server Security https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf. |
+| | NIST SP 800-125 | Guide to Security for Full Virtualization Technologies https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-125.pdf. |
+| | NIST SP 800-125a | Security Recommendations for Server-based Hypervisor Platforms https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125Ar1.pdf. |
+| | NIST SP 800-125b | Secure Virtual Network Configuration for Virtual Machine (VM) Protection https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-125B.pdf. |
+| | NIST SP 800-137 | Information Security Continuous Monitoring for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf. |
+| | NIST SP 800-145 | The NIST Definition of Cloud Computing https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf. |
+| | NIST SP 800-190 | Application Container Security Guide https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf. |
+
