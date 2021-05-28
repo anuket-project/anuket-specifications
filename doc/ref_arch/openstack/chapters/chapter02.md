@@ -137,7 +137,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
-**(1)** [Workload Transition Guidelines](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
+**(1)** Workloads might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
 
 <a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
@@ -201,7 +201,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches), [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
 | sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.gen.010 | Hardening | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know ([Controlled Access Based on the Need to Know](https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/)). | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
-| sec.gen.012 | Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | This requirement’s verification goes beyond CNTT testing scope  |
+| sec.gen.012 | Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | This requirement’s verification goes beyond Anuket testing scope  |
 | sec.gen.013 | Hardening | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
@@ -251,7 +251,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.wl.002 | Workload | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). |  |
 | sec.wl.003 | Workload | The Platform **must** support secure provisioning of Workloads. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
-| sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
+| sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond Anuket testing scope |
 | sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
 
