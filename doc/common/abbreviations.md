@@ -144,7 +144,7 @@
 | IdP | Identity Provider |
 | IDRAC | (Dell) Integrated Dell Remote Access Controller |
 | IDS | Intrusion Detection System |
-| ILO | (HP) Integrated Lights-Out |
+| ILO | (HPE) Integrated Lights-Out |
 | IMS | IP Multimedia Subsystem |
 | IO | Input/Output |
 | IOMMU | Input/Output Memory Management Unit |
@@ -386,5 +386,4 @@
 | WLAN | Wireless Local Area Network |
 | WLC | Wireless LAN Controller |
 | WS | WorkStream  |
-
 
