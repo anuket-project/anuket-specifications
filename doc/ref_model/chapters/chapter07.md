@@ -586,7 +586,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.code.002 | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.  |
 | req.sec.code.003 | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  |
 | req.sec.code.004 | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. | On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer. |
-| req.sec.code.005 | ISAST of Source Code Repo **should** be used during Secure Coding stage triggered by Developer Code trigger. | Continuous delivery pre-deployment: scanning prior to deployment. |
+| req.sec.code.005 | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. | Continuous delivery pre-deployment: scanning prior to deployment. |
 
 <p align="center"><b>Table 7-10:</b> IaaC - Secure Code Stage Requirements</p>
 
