@@ -36,6 +36,11 @@
   * [7.9.6 Security LCM](#7.9.6)
   * [7.9.7 Monitoring and Security Audit](#7.9.7)
   * [7.9.8 Compliance with Standards](#7.9.8)
+  * [7.9.9 IaaC - Secure Design and Architecture Stage Requirements](#7.9.9)
+  * [7.9.10 IaaC - Secure Code Stage Requirements](#7.9.10)
+  * [7.9.11 IaaC - Continuous Build, Integration and Testing Stage Requirements](#7.9.11)
+  * [7.9.12 IaaC - Continuous Delivery and Deployment Stage Requirements](#7.9.12)
+  * [7.9.13 IaaC - Runtime Defence and Monitoring Requirements](#7.9.13)
  * [7.10 Security References](#7.10)
 
 
@@ -559,6 +564,72 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. |
 
 <p align="center"><b>Table 7-8:</b> Compliance with standards requirements</p>
+
+<a name="7.9.9"></a>
+### 7.9.9. IaaC - Secure Design and Architecture Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.arch.001 | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Methodology to identify and understand threats impacting a resource or set of resources. It may be done manually or using tools like open source OWASP Threat Dragon |
+| req.sec.arch.002 | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Typically done manually by internal or independent assessors.  |
+
+<p align="center"><b>Table 7-9:</b> IaaC - Secure Design and Architecture Stage Requirements</p>
+
+<a name="7.9.10"></a>
+### 7.9.10. IaaC - Secure Code Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.code.001 | SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|
+| req.sec.code.002 | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.  |
+| req.sec.code.003 | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  |
+| req.sec.code.004 | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. | On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer. |
+| req.sec.code.005 | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. | Continuous delivery pre-deployment: scanning prior to deployment. |
+
+<p align="center"><b>Table 7-10:</b> IaaC - Secure Code Stage Requirements</p>
+
+<a name="7.9.11"></a>
+### 7.9.11. IaaC - Continuous Build, Integration and Testing Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.bld.001 | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.|
+| req.sec.bld.002 | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.  |
+| req.sec.bld.003 | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. | Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |
+| req.sec.bld.004 | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. Example: OWASP ZAP. |
+| req.sec.bld.005 | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
+| req.sec.bld.006 | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. Example:  Contrast Community Edition. |
+
+<p align="center"><b>Table 7-11:</b> IaaC - Continuous Build, Integration and Testing Stage Requirements</p>
+
+<a name="7.9.12"></a>
+### 7.9.12. IaaC - Continuous Delivery and Deployment Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.del.001 | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Example: GitLab uses the open source Clair engine for container scanning.|
+| req.sec.del.002 | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |
+| req.sec.del.003 | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning.  |
+| req.sec.del.004 | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. | The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |
+
+<p align="center"><b>Table 7-12:</b> IaaC - Continuous Delivery and Deployment Stage Requirements</p>
+
+<a name="7.9.13"></a>
+### 7.9.13. IaaC - Runtime Defence and Monitoring Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.run.001 | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|
+| req.sec.run.002 | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  |
+| req.sec.run.003 | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
+| req.sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |
+
+<p align="center"><b>Table 7-13:</b> IaaC - Runtime Defence and Monitoring Requirements</p>
 
 <a name="7.10"></a>
 ## 7.10. Security References
