@@ -582,7 +582,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.code.001 | SAST -Static Application Security Testing **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|
+| req.sec.code.001 | SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|
 | req.sec.code.002 | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.  |
 | req.sec.code.003 | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  |
 | req.sec.code.004 | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. | On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer. |
