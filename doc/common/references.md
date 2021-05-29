@@ -73,11 +73,14 @@
 
 |Ref	     | Doc Number	            |Title          |
 |----------|------------------------|---------------|
+| | | CSA's Information Security Management through Reflexive Security. Available at https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/. |
 | | | ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV).  Available at https://www.etsi.org/committee/1427-nfv. |
 | | | ETSI Cyber Security Technical Committee (TC CYBER).  Available at https://www.etsi.org/committee/cyber
 | | ETSI GS NFV-SEC 014 V3.1.1 (2018-04) |  Network Functions Virtualisation (NFV) Release 3; "NFV Security; Security Specification for MANO Components and Reference points";  ETSI GS NFV-SEC 014 V3.1.1 (2018-04). Available at https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/014/03.01.01_60/gs_NFV-SEC014v030101p.pdf. |
 | | ETSI GS NFV-SEC 021 V2.6.1 (2019-06) | Network Functions Virtualisation (NFV) Release 2; Security; "VNF Package Security Specification"; ETSI GS NFV-SEC 021 V2.6.1 (2019-06). Available at https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf. |
 | | | "Open Networking & the Security of Open Source Software deployment". Available at https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/. |
+| | ISO/IEC 27000:2018 | Information technology — Security techniques — Information security management systems — Overview and vocabulary. Available at https://www.iso.org/standard/73906.html. |
+| | | Information Security Management through Reflexive Security. Available at https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/. |
 
 <a name="1.5.1"></a>
 ## NIST Security Related References
