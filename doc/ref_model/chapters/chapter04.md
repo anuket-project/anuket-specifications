@@ -357,7 +357,7 @@ Profile Extensions represent small deviations from or further qualification of t
 | Very Low Latency - Edge Sites | very-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
 | Ultra Low Latency - Edge Sites | ultra-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
 | Fixed function accelerator | compute-ffa | ❌ | ✅ | Labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter). |  |
-| Firmware-programmable adapter | compute-firmwareprogrammable | ❌ | ✅ | Labels a host/node that includes a consumable Firmware-programmable adapter (eg Network/storage adapter). |  |
+| Firmware-programmable adapter | compute-firmware programmable | ❌ | ✅ | Labels a host/node that includes a consumable Firmware-programmable adapter (eg Network/storage adapter). |  |
 | SmartNIC enabled | network-smartnic | ❌ | ✅ | Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |  |
 | SmartSwitch enabled | network-smartswitch | ❌ | ✅ | Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
 
@@ -535,4 +535,3 @@ Flavours are unique only when combined with a profile. For example, CNTT release
 #### 4.2.7.3 Forward compatibility
 
 Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT.
-
