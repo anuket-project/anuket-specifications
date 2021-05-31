@@ -157,10 +157,10 @@ is required if new test suites are added in place of older, stale projects.
 
 **NFVI+VNF Instance Type:**
 * Standard compute flavours to be tested are defined in
-  [chapter 4.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4.2.1)
+  [chapter 4.2.1](../../../ref_model/chapters/chapter04.md#4.2.1)
 * Performance profiles come in the form of Basic, Network Intensive, and
   Compute intensive. Refer to
-  [chapter 2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter02.md#2.3)
+  [chapter 2.3](../../../ref_model/chapters/chapter02.md#2.3)
   for details on these profiles.
 
 <a name="1.8"></a>
