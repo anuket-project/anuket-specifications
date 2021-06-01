@@ -330,6 +330,6 @@ The configurations specified in here will be used in specifying the actual hardw
 | infra.hw.nac.cfg.001 | Crypto Acceleration | IPSec, Crypto                  | N        | Optional         | `e.cap.009`           |
 | infra.hw.nac.cfg.002 | SmartNIC            | offload network functionality  | N        | Optional         | `e.cap.015`           |
 | infra.hw.nac.cfg.003 | Compression         |                                | Optional | Optional         |                       |
-| infra.hw.nac.cfg.004 | SR-IOV over PCI-PT  | SR-IOV                         | N        | Yes              | `e.cap.013`           |
+| infra.hw.nac.cfg.004 | SR-IOV over PCI-PT  | SR-IOV                         | N        | Optional              | `e.cap.013`           |
 
 <p align="center"><b>Table 5-19:</b> Network acceleration configuration specification.</p>
