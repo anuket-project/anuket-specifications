@@ -122,7 +122,7 @@ This section specifies the compute node configurations to support the Basic and 
     -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 
 
-**Example Profile Extensions**
+**Example Profiles and their Extensions**
 
 The Reference Model specifies the Basic (B) and High Performance (H) profile types. The Reference Model also provides a choice of network acceleration capabilities utilising, for example, DPDK and SR-IOV technologies. Table 4-2 lists a few simpe examples of progile extensions and some of their capabilities.
 
