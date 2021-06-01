@@ -57,7 +57,7 @@ This chapter is organized as follows:
       -	Network: Spine/Leaf; East/West and North/South traffic
       -	Storage
 
-> * Please note "flavours" is used in the Reference Model and shall continue to be used in the context of specify the geometry of the virtual resources. The term "flavor" will be used in OpenStack context including when specifying configurations; the OpenSTack term flavor includes what profile configuration information as "extra specs".
+> * Please note "flavours" is used in the Reference Model and shall continue to be used in the context of specifing the geometry of the virtual resources. The term "flavor" will be used in the OpenStack and this document context including when specifying configurations; the OpenStack term flavor includes the profile configuration information as "extra specs".
 
 <a name="3.2"></a>
 ## 3.2. Consumable Infrastructure Resources and Services
