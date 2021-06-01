@@ -30,6 +30,7 @@
     * [3.5.4.3 Example of IaaS and CaaS Virtualization Infrastructure Instances on a Shared HW Infrastructure With SDN](#3.5.4.3)
   * [3.5.5 Service Function Chaining](#3.5.5)
   * [3.5.6 Time Sensitive Networking](#3.5.6)
+  * [3.5.7 Kubernetes Networking Semantics](#3.5.7)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
