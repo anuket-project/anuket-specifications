@@ -30,7 +30,6 @@
     * [3.5.4.3 Example of IaaS and CaaS Virtualization Infrastructure Instances on a Shared HW Infrastructure With SDN](#3.5.4.3)
   * [3.5.5 Service Function Chaining](#3.5.5)
   * [3.5.6 Time Sensitive Networking](#3.5.6)
-  * [3.5.7 Kubernetes Networking Semantics (#3.5.7)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
@@ -540,6 +539,10 @@ SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommen
 * ITU-T Rec. G.8264 that describes the specification of Ethernet Synchronization Messaging Channel (ESMC)
 SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY. 
 
+
+<a name="3.5.7"></a>
+ ### 3.5.7 Kubernetes Networking Semantics
+ 
 <a name="3.6"></a>
 ## 3.6 Storage
 The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
