@@ -544,6 +544,15 @@ SyncE architecture minimally requires replacement of the internal clock of the E
 <a name="3.5.7"></a>
  ### 3.5.7 Kubernetes Networking Semantics
  
+The basic semantics of Kubernetes and the information found in manifest for services, workloads, pods and network policies defines the connectivity rules and behavior without in principle any references to IP addresses.
+This has many advantages, it makes it easy to create portable and scalable SW services and network policies that are not location aware and therefore can be executed more or less anywhere. 
+There is no need to explicitly define internal  load balancers, servers pools service monitors and so on. 
+Kubernetes currently only allows for one network, the “cluster” network and one network attachment for each pod. There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
+What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
+
+ 
+ 
+ 
 <a name="3.6"></a>
 ## 3.6 Storage
 The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
