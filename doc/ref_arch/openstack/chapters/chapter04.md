@@ -115,7 +115,7 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 
 #### 4.2.2.5. Compute Nodes
 
-This section specifies the compute node configurations to support the Basic and High Performance profiles; in OpenStack this would be accomplished by specifying the configurations when creating "flavors". The cloud operator may choose to implement certail profile-extensions ([RM 2.4 Profile Extensions](../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations)) as a set of standard configurations, of a given profile, capturing some of the variability through different values or extra specifications.
+This section specifies the compute node configurations to support the Basic and High Performance profiles; in OpenStack this would be accomplished by specifying the configurations when creating "flavors". The cloud operator may choose to implement certain profile-extensions ([RM 2.4 Profile Extensions](../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations)) as a set of standard configurations, of a given profile, capturing some of the variability through different values or extra specifications.
 
 -	The software and hardware configurations are as specified in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 -	BIOS requirement
