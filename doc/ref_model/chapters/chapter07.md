@@ -101,17 +101,17 @@ At a high level, the following areas/requirements cover workload security for a 
  <a name="7.3.3"></a> 
  ### 7.3.3 Common Security Standards
 
-The Cloud Infrastructure Reference Model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
+The Cloud Infrastructure Reference Model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections (internal or with outside networks), APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
 Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
 
 * Center for Internet Security - https://www.cisecurity.org/
 * Cloud Security Alliance - https://cloudsecurityalliance.org/
 * Open Web Application Security Project https://www.owasp.org
-* The National Institute of Standards and Technology (NIST) (US Only)
-* FedRAMP Certification https://www.fedramp.gov/ (US Only)
+* The National Institute of Standards and Technology (NIST)
+* FedRAMP Certification https://www.fedramp.gov/ 
 * ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
 * ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/technologies/nfv
-  * ETSI NFV ISG [SEC WG specifications](https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword=&TB=&stdType=&frequency=&mandate=&collection=&sort=1)
+* ETSI NFV ISG [SEC WG specifications](https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword=&TB=&stdType=&frequency=&mandate=&collection=&sort=1)
 * ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
   * ISO/IEC 27002:2013 - ISO/IEC 27001 are the international Standard for best-practice information security management systems (ISMSs)
   * ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity
@@ -350,11 +350,11 @@ This allows the attestation server to detect any tampering with the static file 
 <a name="7.7"></a>
 ## 7.7 Open Source Software Security 
 
-Software supply chain safety is crucial and can be a complex task in virtualised and containerized environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to application source code is variable. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
+Software supply chain safety is crucial and can be a complex task in virtualised and containerized environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
 
 To secure software code, the following methods must be applied:
 
--	Use best practices coding such as design pattern recommended in the Twelve-Factor App, https://12factor.net/ or OWASP “Secure Coding Practices - Quick Reference Guide (owasp.org)”
+-	Use best practices coding such as design pattern recommended in the [Twelve-Factor App](https://12factor.net/) or [OWASP “Secure Coding Practices - Quick Reference Guide”](owasp.org)
 -	Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s software releases
 -	Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals  
 -	Do threat modeling, as described in the document “Tactical Threat Modeling” published by SAFECode
@@ -369,7 +369,7 @@ The strength of open source code is the availability of code source developed by
 
 **SBOM**
 
-To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by US NTIA (National Telecommunications and Information Administration) https://www.ntia.gov/SBOM, is an efficient tools to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by [US NTIA](https://www.ntia.gov/SBOM)(National Telecommunications and Information Administration), is an efficient tools to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
 
 **Code inspection**
 
