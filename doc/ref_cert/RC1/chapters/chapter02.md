@@ -37,7 +37,7 @@ This chapter mainly covers the overall requirement for Reference Conformance tes
 
 <!---Validations is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.--->
 
-All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI conformance.
+All Terms utilized throughput this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI conformance.
 
 <a name="2.1"></a>
 ## 2.1 Introduction
@@ -101,9 +101,9 @@ The Infrastructure Profile Catalog contains the following attributes:
 
 <a name="2.4"></a>
 ## 2.4 Profiles Reference
-Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughout whereas a VNF like Mobility Management Entity (MME) would require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs would have different characteristics. Depending on VNF's requirements, the NFVI can be categorized into below profiles:
+Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughput whereas a VNF like Mobility Management Entity (MME) would require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs would have different characteristics. Depending on VNF's requirements, the NFVI can be categorized into below profiles:
 * Basic (B) profile for standard computing and
-* Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughout
+* Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughput
 Similarly, different NFVI vendors may specialize in different hardware profiles and some may specialize in both VNFs and NFVI.
 
 To cater to different needs from multiple NFVI vendors, CNTT allows different types of NFVI Conformance based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
