@@ -416,7 +416,7 @@ The complete list of specifications needed to be specified by workloads is shown
 | cpu | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs). | Required |
 | memory | r | 	✅	| ✅	| Virtual resource instance memory in megabytes. | Required |
 | storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
-| storage - permanent | d | 	✅	| ✅	| Specifies the disk size of permanent storage. | Required |
+| storage - persistent | d | 	✅	| ✅	| Specifies the disk size of persistent storage. | Required |
 | storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk. | Optional |
 | CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the cpu allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU ALlocation Ratio is 1:1.  | Required for Basic profile |
 | Compute Intensive | ci | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. | Optional |
