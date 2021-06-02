@@ -369,7 +369,7 @@ The strength of open source code is the availability of code source developed by
 
 **SBOM**
 
-To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by [US NTIA](https://www.ntia.gov/SBOM)(National Telecommunications and Information Administration), is an efficient tools to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
+To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by [US NTIA](https://www.ntia.gov/SBOM)(National Telecommunications and Information Administration), is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
 
 **Code inspection**
 
