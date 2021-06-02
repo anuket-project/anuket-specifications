@@ -377,7 +377,7 @@ Poor code quality is a factor of risk. Open source code advantage is its transpa
 
 **Vulnerability identification**
 
-Vulnerability management should be continuous: from development to runtime, not only on the development process, but during all the life of the application or workload or service. When a public vulnerability on a component is released, the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier to identify. It is essential to remediate the affected components as soon as possible, because code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
+Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all the life of the application or workload or service. When a public vulnerability on a component is released, the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier to identify. It is essential to remediate the affected components as soon as possible, because code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
 
 The CVE must be used to identify vulnerabilities and their severity rating. CVE identifies, defines, and catalogs publicly disclosed cybersecurity vulnerabilities.
 
