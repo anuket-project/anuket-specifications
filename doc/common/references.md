@@ -45,7 +45,7 @@
 | | | "Extended Cloud Native Principles". Available at https://networking.cloud-native-principles.org/cloud-native-principles. |
 | | | "DANM". Available at https://github.com/nokia/danm. |
 | | | "Kubernetes Container Runtime Interface (CRI)". Available at https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/. |
-| | | "Multus". Available at https://github.com/intel/multus-cni. |
+| | | "Multus". Available at https://github.com/k8snetworkplumbingwg/multus-cni. |
 | | | "Node Feature Discovery (NFD)". Available at https://kubernetes-sigs.github.io/node-feature-discovery/stable/get-started/index.html. |
 | | | "Open Container Initiative (OCI)". Available at https://github.com/opencontainers/runtime-spec. |
 
@@ -103,4 +103,3 @@
 | | NIST SP 800-137 | Information Security Continuous Monitoring for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf. |
 | | NIST SP 800-145 | The NIST Definition of Cloud Computing https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf. |
 | | NIST SP 800-190 | Application Container Security Guide https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf. |
-
