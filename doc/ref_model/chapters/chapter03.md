@@ -543,9 +543,19 @@ SyncE architecture minimally requires replacement of the internal clock of the E
 
 <a name="3.5.7"></a>
  ### 3.5.7 Kubernetes Networking Semantics
- 
-The basic semantics of Kubernetes and the information found in manifest for services, workloads, pods and network policies defines the connectivity rules and behavior without in principle any references to IP addresses.
-This has many advantages, it makes it easy to create portable and scalable SW services and network policies that are not location aware and therefore can be executed more or less anywhere. 
+
+The support for traditional network orchestration is more or less non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastrutcure as a Service (Iaas) infrastucture component. There is no orchetration API like Neutron and no way to instantiate network services such as L3aaS and LBaaS like you can do in Openstack.
+
+
+
+The basic semantics of Kubernetes and the information found in manifest for 
+* Services
+* Workloads
+* Pods
+* Network policies 
+
+defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable and scalable SW services and network policies that are not location aware and therefore can be executed more or less anywhere. 
+
 There is no need to explicitly define internal  load balancers, servers pools service monitors and so on. 
 Kubernetes currently only allows for one network, the “cluster” network and one network attachment for each pod. There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
 What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
