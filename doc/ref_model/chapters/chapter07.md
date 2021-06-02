@@ -12,6 +12,7 @@
   * [7.4.1 General Platform Security](#7.4.1)
   * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
   * [7.4.3 Platform ‘front-end’ access security](#7.4.3)
+  * [7.4.4 Infrastructure as a Code security](#7.4.4)
 * [7.5 Workload Security - Vendor Responsibility](#7.5)
   * [7.5.1 Software Hardening](#7.5.1)
   * [7.5.2 Port Protection](#7.5.2)
@@ -24,8 +25,9 @@
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
   * [7.6.2 Workload Image Scanning / Signing](#7.6.2)
   * [7.6.3 Networking Security Zoning](#7.6.3)
-  * [7.6.4 Encryption](#7.6.4)
+  * [7.6.4 Volume Encryption](#7.6.4)
   * [7.6.5 Root of Trust for Measurements (RTM)](#7.6.5)
+  * [7.6.6 Zero Trust Architecture (ZTA)](#7.6.6)
 * [7.7 Open Source Software Security](#7.7)
 * [7.8 Testing & Certification](#7.8)
 * [7.9 Consolidated Security requirements](#7.9)
@@ -37,8 +39,13 @@
   * [7.9.6 Security LCM](#7.9.6)
   * [7.9.7 Monitoring and Security Audit](#7.9.7)
   * [7.9.8 Open Source Software](#7.9.8)
-  * [7.9.9 Compliance with Standards](#7.9.9)
- * [7.10 Security References](#7.10)
+  * [7.9.9 IaaC - Secure Design and Architecture Stage Requirements](#7.9.9)
+  * [7.9.10 IaaC - Secure Code Stage Requirements](#7.9.10)
+  * [7.9.11 IaaC - Continuous Build, Integration and Testing Stage Requirements](#7.9.11)
+  * [7.9.12 IaaC - Continuous Delivery and Deployment Stage Requirements](#7.9.12)
+  * [7.9.13 IaaC - Runtime Defence and Monitoring Requirements](#7.9.13)
+  * [7.9.14 Compliance with Standards](#7.9.14)
+* [7.10 Security References](#7.10)
 
 
 <a name="7.1"></a>
@@ -208,6 +215,22 @@ The platform supports the workload, and in effect controls access to the workloa
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
 * The front-end network may provide (Distributed Denial Of Service) DDOS support.
 
+<a name="7.4.4"></a>
+### 7.4.4 Infrastructure as a Code security
+Infrastructure as a Code (IaaC) (or equivalently called Infrastructure as Code IaC) refers to the software used for the declarative management of cloud infrastructure resources. In order to dynamically address user requirements, release features incrementally, and deliver at a faster pace, DevSecOps teams utilize best practices including continuous integration and continuous delivery and integrate information security controls and scanning tools into these processes, with the aim of providing timely and meaningful feedback including identifying vulnerabilities and security policy violations. With  this automated security testing and analysis capabilities it will be of critical value to detecting vulnerabilities early and maintaining a consistent security policy.
+
+Because of the extremely high complexity of modern telco cloud infrastructures, even minor IaaC code changes may lead to disproportionate and sometime disastrous downstream security and privacy impacts. Therefore, integration of security testing into the IaaC software development pipeline requires security activities to be automated using security tools and integrated  with the native DevOps and DevSecOps tools and procedures.
+
+The DevSecOps Automation best practice advocates implementing a framework for security automation and programmatic execution and monitoring of security controls to identify, protect, detect, respond, and recover from cyber threats.  The framework used for the IaaC security is based on, the joint publication of Cloud Security Alliance (CSA) and SAFECode, "[The Six Pillars of DevSecOps: Automation (2020)](https://safecode.org/the-six-pillars-of-devsecops-automation)". The document utilises the base definitions and constructs from [ISO 27000](https://www.iso.org/standard/73906.html), and CSA's [Information Security Management through Reflexive Security](https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/).
+
+The framework identifies the following five distinct stages: 
+1.	Secure design and architecture 
+2.	Secure coding (Developer IDE and Code Repository) 
+3.	Continuous build, integration and test 
+4.	Continuous delivery and deployment 
+5.	Continuous monitoring and runtime defence
+
+Triggers and checkpoints define transitions within stages. When designing DevSecOps security processes, one needs to keep in mind, that when a trigger condition is met, one or more security activities are activated. The outcomes of those security activities need to determine whether the requirements of the process checkpoint are satisfied. If the outcome of the security activities meets the requirements, the next set of security activities are performed as the process transitions to the next checkpoint, or, alternatively, to the next stage if the checkpoint is the last one in the current stage. If, on the other hand, the outcome of the security activities does not meet the requirements, then the process should not be allowed to advance to the next checkpoint. Tables 7-9 to 7-13 in Section 7.9 define the IaaC security activities presented as security requirements mapped to particular stages and trigger points.
 
 <a name="7.5"></a>
 ## 7.5 Workload Security - Vendor Responsibility
@@ -297,8 +320,9 @@ Recommended practice to set network security policies following the principle of
 <a name="7.6.4"></a>
 ### 7.6.4 Volume Encryption
 
-Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure.  The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
+Virtual volume disks associated with workloads may contain sensitive data. Therefore, they need to be protected. Best practice is to secure the workload volumes by encrypting them and storing the cryptographic keys at safe locations. Encryption functions rely on a Cloud Infrastructure internal key management service. Be aware that the decision to encrypt the volumes might cause reduced performance, so the decision to encrypt needs to be dependent on the requirements of the given infrastructure. The TPM module can also be used to securely store these keys. In addition, the hypervisor should be configured to securely erase the virtual volume disks in the event of application crashes or is intentionally destroyed to prevent it from unauthorized access.
 
+For sensitive data encryption, when data sovereignty is required, an external Hardware Security Module (HSM) should be integrated in order to protect the cryptographic keys. A HSM is a physical device which manages and stores secrets. Usage of a HSM strengthens the secrets security. For 5G services, GSMA FASG strongly recommends the implementation of a HSM to secure the storage of UICC (Universal Integrated Circuit Card) credentials.
 
 <a name="7.6.5"></a>
 ### 7.6.5 Root of Trust for Measurements (RTM)
@@ -346,6 +370,22 @@ Additionally, platform monitoring can be extended to monitor the integrity of th
 
 The static file system includes a set of important files and folders which do not change between reboots during the lifecycle of the platform.
 This allows the attestation server to detect any tampering with the static file system during the runtime of the platform.
+
+<a name="7.6.6"></a>
+### 7.6.6 Zero Trust Architecture (ZTA) 
+
+Remote attestation, section [(7.6.1)](#7.6.1), and Root of trust for measurements, section [(7.6.5)](#7.6.5), provide methods to ensure the integrity of the infrastructure. The Zero Trust concept moves a step forward enabling to build secure by design cloud infrastructure, from hardware to applications. The adoption of Zero Trust principles mitigates the threats and attacks within an entreprise, a network or an infrastructure, ensuring a fine grained segmentation between each component of the system.
+
+Zero Trust Architecture (ZTA), described in [NIST SP 800-207 publication](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf), assumes there is no implicit trust granted to assets or user accounts whatever their location or ownership.  Zero trust approach focuses on protecting all types of resources: data, services, devices, infrastructure components, virtual and cloud components. Trust is never granted implicitly, and must be evaluated continuously. 
+
+ZTA principles applied to Cloud infrastructure components are the following:
+
+-	Adopt least privilege configurations
+-	Authentication and authorization required for each entity, service, or session
+-	Fine grained segmentation
+-	Separation of control plane and data plane
+-	Secure internal and external communications
+-	Monitor, test, and analyse security continuously
 
 <a name="7.7"></a>
 ## 7.7 Open Source Software Security 
@@ -481,7 +521,7 @@ Security certification should encompass the following elements:
 | req.sec.sys.017 | The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority. |  |
 | req.sec.sys.018 | The Platform **must** provide the capability of allowing certificate renewal and revocation. |  |
 | req.sec.sys.019 | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
-
+| req.sec.sys.020 | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment. | Zero Trust Architecture (ZTA) described in NIST SP 800-207 |
 
 <p align="center"><b>Table 7-2:</b> Platform and access requirements</p>
 
@@ -498,6 +538,7 @@ Security certification should encompass the following elements:
 | req.sec.ci.006 | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). | |
 | req.sec.ci.007 | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and by secure monitoring services. | Admin access must be carefully regulated. |
 | req.sec.ci.008 | The Cloud Infrastructure **must** support tenant networks segregation. | |
+| req.sec.ci.009 | For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys. | |
 
 <p align="center"><b>Table 7-3:</b> Confidentiality and integrity requirements</p>
 
@@ -595,7 +636,73 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <p align="center"><b>Table 7-8:</b> Open Source Sotfware requirements</p>
 
 <a name="7.9.9"></a>
-### 7.9.9. Compliance with Standards
+### 7.9.9. IaaC - Secure Design and Architecture Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.arch.001 | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Methodology to identify and understand threats impacting a resource or set of resources. It may be done manually or using tools like open source OWASP Threat Dragon |
+| req.sec.arch.002 | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Typically done manually by internal or independent assessors.  |
+
+<p align="center"><b>Table 7-9:</b> IaaC - Secure Design and Architecture Stage Requirements</p>
+
+<a name="7.9.10"></a>
+### 7.9.10. IaaC - Secure Code Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.code.001 | SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|
+| req.sec.code.002 | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.  |
+| req.sec.code.003 | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  |
+| req.sec.code.004 | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. | On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer. |
+| req.sec.code.005 | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. | Continuous delivery pre-deployment: scanning prior to deployment. |
+
+<p align="center"><b>Table 7-10:</b> IaaC - Secure Code Stage Requirements</p>
+
+<a name="7.9.11"></a>
+### 7.9.11. IaaC - Continuous Build, Integration and Testing Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.bld.001 | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.|
+| req.sec.bld.002 | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.  |
+| req.sec.bld.003 | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. | Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |
+| req.sec.bld.004 | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. Example: OWASP ZAP. |
+| req.sec.bld.005 | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
+| req.sec.bld.006 | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. Example:  Contrast Community Edition. |
+
+<p align="center"><b>Table 7-11:</b> IaaC - Continuous Build, Integration and Testing Stage Requirements</p>
+
+<a name="7.9.12"></a>
+### 7.9.12. IaaC - Continuous Delivery and Deployment Stage Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.del.001 | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Example: GitLab uses the open source Clair engine for container scanning.|
+| req.sec.del.002 | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |
+| req.sec.del.003 | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning.  |
+| req.sec.del.004 | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. | The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |
+
+<p align="center"><b>Table 7-12:</b> IaaC - Continuous Delivery and Deployment Stage Requirements</p>
+
+<a name="7.9.13"></a>
+### 7.9.13. IaaC - Runtime Defence and Monitoring Requirements
+
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.run.001 | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|
+| req.sec.run.002 | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  |
+| req.sec.run.003 | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
+| req.sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |
+
+<p align="center"><b>Table 7-13:</b> IaaC - Runtime Defence and Monitoring Requirements</p>
+
+<a name="7.9.14"></a>
+### 7.9.14. Compliance with Standards
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -612,7 +719,8 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.std.011 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. |  |
 | req.sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. |
 
-<p align="center"><b>Table 7-9:</b> Compliance with standards requirements</p>
+<p align="center"><b>Table 7-14:</b> Compliance with standards requirements</p>
+
 
 <a name="7.10"></a>
 ## 7.10. Security References
