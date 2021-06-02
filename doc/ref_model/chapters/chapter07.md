@@ -7,6 +7,7 @@
 * [7.3 Security Scope](#7.3)
   * [7.3.1 In-scope and Out-of-Scope definition](#7.3.1)
   * [7.3.2 High level security requirements](#7.3.2)
+  * [7.3.3 Common Security Standards](#7.3.3)
 * [7.4 Cloud Infrastructure Security](#7.4)
   * [7.4.1 General Platform Security](#7.4.1)
   * [7.4.2 Platform ‘back-end’ access security](#7.4.2)
@@ -27,7 +28,7 @@
   * [7.6.4 Volume Encryption](#7.6.4)
   * [7.6.5 Root of Trust for Measurements (RTM)](#7.6.5)
   * [7.6.6 Zero Trust Architecture (ZTA)](#7.6.6)
-* [7.7 Common security standards](#7.7)
+* [7.7 Open Source Software Security](#7.7)
 * [7.8 Testing & Certification](#7.8)
 * [7.9 Consolidated Security requirements](#7.9)
   * [7.9.1 System Hardening](#7.9.1)
@@ -37,13 +38,14 @@
   * [7.9.5 Image Security](#7.9.5)
   * [7.9.6 Security LCM](#7.9.6)
   * [7.9.7 Monitoring and Security Audit](#7.9.7)
-  * [7.9.8 Compliance with Standards](#7.9.8)
+  * [7.9.8 Open Source Software](#7.9.8)
   * [7.9.9 IaaC - Secure Design and Architecture Stage Requirements](#7.9.9)
   * [7.9.10 IaaC - Secure Code Stage Requirements](#7.9.10)
   * [7.9.11 IaaC - Continuous Build, Integration and Testing Stage Requirements](#7.9.11)
   * [7.9.12 IaaC - Continuous Delivery and Deployment Stage Requirements](#7.9.12)
   * [7.9.13 IaaC - Runtime Defence and Monitoring Requirements](#7.9.13)
- * [7.10 Security References](#7.10)
+  * [7.9.14 Compliance with Standards](#7.9.14)
+* [7.10 Security References](#7.10)
 
 
 <a name="7.1"></a>
@@ -103,6 +105,41 @@ At a high level, the following areas/requirements cover workload security for a 
 * Workload owner owns workload design change process
 * Workload owner owns workload software update process
   
+ <a name="7.3.3"></a> 
+ ### 7.3.3 Common Security Standards
+
+The Cloud Infrastructure Reference Model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections (internal or with outside networks), APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
+Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
+
+* Center for Internet Security - https://www.cisecurity.org/
+* Cloud Security Alliance - https://cloudsecurityalliance.org/
+* Open Web Application Security Project https://www.owasp.org
+* The National Institute of Standards and Technology (NIST)
+* FedRAMP Certification https://www.fedramp.gov/ 
+* ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
+* ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/technologies/nfv
+* ETSI ISG NFV [SEC WG specifications](https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword=&TB=&stdType=&frequency=&mandate=&collection=&sort=1)
+* ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
+  * ISO/IEC 27002:2013 - ISO/IEC 27001 are the international Standard for best-practice information security management systems (ISMSs)
+  * ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity
+  * ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management
+  * ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity
+
+A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP – Open Web Application Security Project.  These include the following core principles:
+
+* Confidentiality – Only allow access to data for which the user is permitted.
+* Integrity – Ensure data is not tampered with or altered by unauthorized users.
+* Availability – ensure systems and data are available to authorized users when they need it.
+
+Additional Cloud Infrastructure security principles that need to be incorporated:
+* Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
+
+In mobile network field, the GSM Association ([GSMA](https://www.gsma.com/)) and its Fraud and Security working group of experts have developed a set of documents specifying how to secure the global mobile ecosystem. 
+* The document “Baseline Security controls”, [FS.31 v2.0](https://www.gsma.com/security/resources/fs-31-gsma-baseline-security-controls/), published in February 2020, is a practical guide intended for operators and stakeholders to check mobile network’s internal security. It lists a set of security controls from business controls (including security roles, organizational policies, business continuity management…) to technological controls (for user equipment, networks, operations…) covering all areas of mobile network, including Cloud Infrastructure. A checklist of questions allows to improve the security of a deployed network. 
+
+The GSMA security activities are currently focussed around 5G services and the new challenges posed by network functions virtualisation and open source software. The 2 following documents are in the scope of Cloud Infrastructure security:
+* The white paper [“Open Networking & the Security of Open Source Software deployment”](https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/), published in January 2021, deals with open source software security, it highlights the importance of layered security defences and lists recommendations and security concepts able to secure deployments. 
+* The “5G Security Guide”, FS.40 version 1.0, Sept. 2020 (GSMA members only) covers 5G security, in a holistic way, from user equipment to networks. The document describes the new security features in 5G. It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualization, cloud native applications and containerization security.  
 
 <a name="7.4"></a>
 ## 7.4 Cloud Infrastructure Security
@@ -351,40 +388,45 @@ ZTA principles applied to Cloud infrastructure components are the following:
 -	Monitor, test, and analyse security continuously
 
 <a name="7.7"></a>
-## 7.7 Common security standards
+## 7.7 Open Source Software Security 
 
-The Cloud Infrastructure Reference Model and the supporting architectures are not only required to optimally support networking functions, but they must be designed with common security principles and standards from inception.  These best practices must be applied at all layers of the infrastructure stack and across all points of interconnections with outside networks, APIs and contact points with the NFV network functions overlaying or interacting with that infrastructure.
-Standards organizations with recommendations and best practices, and certifications that need to be taken into consideration include the following examples. However this is by no means an exhaustive list, just some of the more important standards in current use.
+Software supply chain safety is crucial and can be a complex task in virtualised and containerized environments. Open source code is present in Cloud Infrastructure software from host Operating System to virtualisation layer components, the most obvious being represented by Linux, KVM, QEMU, OpenStack, and Kubernetes. Workloads components can also be composed of open source code. The proportion of open source code to an application source code can vary. It can be partial or total, visible or not. Open source code can be upstream code coming directly from open source public repositories or code within a commercial application or network function. To ensure the security of the whole system, all software and hardware components must reach the same level of security by following best security practices including secure lifecycle management. The SAFECode paper “Managing Security Risks Inherent in the Use of Third-party Components” provides a detailed risk management approach.
 
-* Center for Internet Security - https://www.cisecurity.org/
-* Cloud Security Alliance - https://cloudsecurityalliance.org/
-* Open Web Application Security Project https://www.owasp.org
-* The National Institute of Standards and Technology (NIST) (US Only)
-* FedRAMP Certification https://www.fedramp.gov/ (US Only)
-* ETSI Cyber Security Technical Committee (TC CYBER) - https://www.etsi.org/committee/cyber
-* ETSI Industry Specification Group Network Functions Virtualisation (ISG NFV) - https://www.etsi.org/technologies/nfv
-  * ETSI NFV ISG [SEC WG specifications](https://www.etsi.org/standards-search#page=1&search=NFV-SEC&title=0&etsiNumber=1&content=0&version=1&onApproval=0&published=1&historical=0&startDate=1988-01-15&endDate=2020-02-27&harmonized=0&keyword=&TB=&stdType=&frequency=&mandate=&collection=&sort=1)
-* ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) - www.iso.org.  The following ISO standards are of particular interest for NFVI
-  * ISO/IEC 27002:2013 - ISO/IEC 27001 are the international Standard for best-practice information security management systems (ISMSs)
-  * ISO/IEC 27032 - ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity
-  * ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management
-  * ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity
+To secure software code, the following methods must be applied:
 
-A good place to start to understand the requirements is to use the widely accepted definitions developed by the OWASP – Open Web Application Security Project.  These include the following core principles:
+-	Use best practices coding such as design pattern recommended in the [Twelve-Factor App](https://12factor.net/) or [OWASP “Secure Coding Practices - Quick Reference Guide”](owasp.org)
+-	Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s software releases
+-	Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals  
+-	Do threat modeling, as described in the document “Tactical Threat Modeling” published by SAFECode
+-	Test the software in a pre-production environment to validate integration 
+-	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures), https://cve.mitre.org/
+-	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
+-	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
+-	Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
+-	Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in 7.4.4  ‘”Infrastructure as a Code Security”
 
-* Confidentiality – Only allow access to data for which the user is permitted.
-* Integrity – Ensure data is not tampered with or altered by unauthorized users.
-* Availability – ensure systems and data are available to authorized users when they need it.
+The strength of open source code is the availability of code source developed by a community which maintain and improve it. Open source code integration with application source code helps to develop and produce applications faster. But, in return, it can introduce security risks if a risk management DevSecOps approach is not implemented. The GSMA white paper, “Open Networking & the Security of Open Source Software Deployment - Future Networks”, alerts on these risks and addresses the challenges coming with open source code usage. Amongst these risks for security, we can mention a poor quality code containing security flaws, an obsolete code with known vulnerabilities, and the lack of knowledge of open source communities’ branches activity. An active branch will come with bugs fixes, it will not be the case with an inactive branch. The GSMA white paper develops means to mitigate these security issues.
 
-Additional Cloud Infrastructure security principles that need to be incorporated:
-* Authenticity – The ability to confirm the users are in fact valid users with the correct rights to access the systems or data.
+**SBOM**
 
-In mobile network field, the GSM Association ([GSMA](https://www.gsma.com/)) and its Fraud and Security working group of experts have developed a set of documents specifying how to secure the global mobile ecosystem. 
-* The document “Baseline Security controls”, [FS.31 v2.0](https://www.gsma.com/security/resources/fs-31-gsma-baseline-security-controls/), published in February 2020, is a practical guide intended for operators and stakeholders to check mobile network’s internal security. It lists a set of security controls from business controls (including security roles, organizational policies, business continuity management…) to technological controls (for user equipment, networks, operations…) covering all areas of mobile network, including Cloud Infrastructure. A checklist of questions allows to improve the security of a deployed network. 
+To begin, it is highly recommended to identify the software components and their origins. The Software Bill of Materials (SBOM), described by [US NTIA](https://www.ntia.gov/SBOM)(National Telecommunications and Information Administration), is an efficient tool to identify software components. The SBOM is an inventory of software components and the relationships between them. NTIA describes how to establish an SBOM and provides SBOM standard data formats. In case of vulnerability detected for a component, the SBOM inventory is an effective means to identify the impacted component and provide remediation.
 
-The GSMA security activities are currently focussed around 5G services and the new challenges posed by network functions virtualisation and open source software. The 2 following documents are in the scope of Cloud Infrastructure security:
-* The white paper [“Open Networking & the Security of Open Source Software deployment”](https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment/), published in January 2021, deals with open source software security, it highlights the importance of layered security defences and lists recommendations and security concepts able to secure deployments. 
-* The “5G Security Guide”, FS.40 version 1.0, Sept. 2020 (GSMA members only) covers 5G security, in a holistic way, from user equipment to networks. The document describes the new security features in 5G. It includes a dedicated section on the impact of Cloud on 5G security with recommendations on virtualization, cloud native applications and containerization security. 
+**Code inspection**
+
+Poor code quality is a factor of risk. Open source code advantage is its transparency, code can be inspected by tools with various capabilities such as open source software discovery and static and dynamic code analysis.
+
+**Vulnerability identification**
+
+Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all the life of the application or workload or service. When a public vulnerability on a component is released, the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier to identify. It is essential to remediate the affected components as soon as possible, because code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
+
+The CVE must be used to identify vulnerabilities and their severity rating. CVE identifies, defines, and catalogs publicly disclosed cybersecurity vulnerabilities.
+
+Various images scanning tools, such as Clair or Trivy, are useful to audit images from security vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete. 
+
+**Trusted repositories**
+
+A dedicated internal isolated repository separated from the production environment must be used to store vetted open source content, which can include images, but also installer and utilities. These software packages must be signed and the signature verified prior to packages or images installation. Access to the repository must be granted by a dedicated authorization. The code must be inspected and vulnerabilities identified as described previously. After validating the software is risk free, it can be moved to the appropriate production repository.
+
 
 <a name="7.8"></a>
 ## 7.8 Testing & certification
@@ -582,24 +624,16 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <p align="center"><b>Table 7-7:</b> Monitoring and security audit requirements</p>
 
 <a name="7.9.8"></a>
-### 7.9.8. Compliance with Standards
+### 7.9.8. Open Source Sotfware 
 
 | Ref | Requirement | Definition/Note |
-|---|----|---|
-| req.sec.std.001 | The Cloud Operator **should** comply with Center for Internet Security CIS Controls. | Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) |
-| req.sec.std.002 | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version). | Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |
-| req.sec.std.003 | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries. | Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) |
-| req.sec.std.004 | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/). |  |
-| req.sec.std.005 | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/. |  |
-| req.sec.std.006 | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document. |  |
-| req.sec.std.007 | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en .| ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs). |
-| req.sec.std.008 | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en .| |
-| req.sec.std.009 | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en .| ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity. |
-| req.sec.std.010 | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management. | ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. |
-| req.sec.std.011 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. |  |
-| req.sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. |
+|---|----|----|
+| req.sec.oss.001 | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
+| req.sec.oss.002 | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.  | https://cve.mitre.org/ |
+| req.sec.oss.003 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
+| req.sec.oss.004 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
 
-<p align="center"><b>Table 7-8:</b> Compliance with standards requirements</p>
+<p align="center"><b>Table 7-8:</b> Open Source Sotfware requirements</p>
 
 <a name="7.9.9"></a>
 ### 7.9.9. IaaC - Secure Design and Architecture Stage Requirements
@@ -666,6 +700,27 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |
 
 <p align="center"><b>Table 7-13:</b> IaaC - Runtime Defence and Monitoring Requirements</p>
+
+<a name="7.9.14"></a>
+### 7.9.14. Compliance with Standards
+
+| Ref | Requirement | Definition/Note |
+|---|----|---|
+| req.sec.std.001 | The Cloud Operator **should** comply with Center for Internet Security CIS Controls. | Center for Internet Security - [https://www.cisecurity.org/](https://www.cisecurity.org/) |
+| req.sec.std.002 | The Cloud Operator, Platform and Workloads **should** follow the guidance in the CSA Security Guidance for Critical Areas of Focus in Cloud Computing (latest version). | Cloud Security Alliance - [https://cloudsecurityalliance.org/](https://cloudsecurityalliance.org/) |
+| req.sec.std.003 | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries. | Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) |
+| req.sec.std.004 | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/). |  |
+| req.sec.std.005 | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/. |  |
+| req.sec.std.006 | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document. |  |
+| req.sec.std.007 | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en .| ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs). |
+| req.sec.std.008 | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en .| |
+| req.sec.std.009 | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en .| ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity. |
+| req.sec.std.010 | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management. | ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management. |
+| req.sec.std.011 | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity  ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity. |  |
+| req.sec.std.012 | The Public Cloud Operator **must**, and the Private Cloud Operator **may** be certified to be compliant with the International Standard on Awareness Engagements (ISAE) 3402 (in the US: SSAE 16). | International Standard on Awareness Engagements (ISAE) 3402. US Equivalent: SSAE16. |
+
+<p align="center"><b>Table 7-14:</b> Compliance with standards requirements</p>
+
 
 <a name="7.10"></a>
 ## 7.10. Security References
