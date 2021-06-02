@@ -280,7 +280,7 @@ The two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) are:
 
 The availability of these two (2) profiles will facilitate and accelerate workload deployment. The intent of the above profiles is to match the cloud infrastructure to the workloads most common needs, and allow for a more comprehensive configuration using profile-extensions when needed. These profiles are offered with [extensions](#4.2.3), that specify capability deviations, and allow for the specification of even more capabilities. The Cloud Infrastructure will have nodes configured as with options, such as virtual interface options, storage extensions, and acceleration extensions.
 
-THe justification for defining these two profiles and a set of extensible profile-extensions was provided in Section [2.4 Profiles & Flavours](./chapter02.md#24-profiles--flavours) and includes:
+The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section [2.4 Profiles & Flavours](./chapter02.md#24-profiles--flavours) and includes:
 
 * Workloads can be deployed by requesting compute hosts configured as per a specific profile (Basic or High Performance)
 * Profile extensions allow a more granular compute host configuration for the workload (e.g. GPU, high, speed network, Edge deployment)
