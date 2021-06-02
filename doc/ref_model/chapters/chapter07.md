@@ -373,7 +373,7 @@ To begin, it is highly recommended to identify the software components and their
 
 **Code inspection**
 
-The poor code quality is a factor of risk. Open source code advantage is its transparency, code can be inspected by tools with various capabilities such as open source software discovery and static and dynamic code analysis.
+Poor code quality is a factor of risk. Open source code advantage is its transparency, code can be inspected by tools with various capabilities such as open source software discovery and static and dynamic code analysis.
 
 **Vulnerability identification**
 
