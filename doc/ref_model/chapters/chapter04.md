@@ -384,7 +384,7 @@ Workload Flavour sizing consists of the following:
 | cpu | c | Number of virtual compute resources (vCPUs) |
 | memory | r | Virtual resource instance memory in megabytes. |
 | storage - ephemeral | e | Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. |
-| storage - permanent | d | Specifies the disk size of permanent storage |
+| storage - persistent | d | Specifies the disk size of persistent storage |
 
 <p align="center"><b>Table 4-12:</b> Workload Flavour Geometry Specification.</p>
 
