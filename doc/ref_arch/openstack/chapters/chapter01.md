@@ -37,8 +37,6 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 
 General terminology definitions can be found in [Glossary](../../../common/glossary.md) and specific terms relating to this reference architecture are to be found in [OpenStack Related Terminology](../../../common/glossary.md#openstack-related-terminology).
 
-<!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
-
 <a name="1.4"></a>
 ## 1.4 Principles
 
@@ -60,6 +58,7 @@ This OpenStack Reference Architecture is organised around the three major Cloud 
 ### 1.4.1 Exceptions
 
 Anuket specifies certain policies and [principles](../../../common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatabilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. Anuket specifies how to handle [non-conforming technologies](../../../common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](../../../gov/chapters/chapter09.md#942-exception-types)). 
+
 
 The following sub-sections list the exceptions to the Anuket principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
 
