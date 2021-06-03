@@ -549,6 +549,7 @@ Storage is multi-faceted and so can be classified based on its: cost, performanc
 Where:
 * (Comparitive) Cost - is monetory value / unit of end user storage capacity (see below for indicative comparative costs)
 * Performance - is IOPS / Latency / Throught Put as typically each of these increases with succesive genarations of storage
+* Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
 * Storage Class - is how the storage is accessed and used, where:
   * Platform Native = is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
   * Shared Storage = is storage this accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
@@ -576,10 +577,11 @@ The following principles apply to Storage scope for the Reference Model, Referen
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
 NOTE: In market assessemt of storage costs done in 2019, the following comparative costs where found when trying to meet with different Storage Class needs across varies performance levels:
-* Ultra High Performance - for "Platform Native" based on "Converaged Scalable Software Defined Storage" architecture where cost included: Software, Compute Chassis, NVMe Flash, 25GbE NICs: 
-* High Performance - for "Platform Native" and "Shared Storage" based on "Converged Scalable Software Defined Storage" architecture where cost included: Software, Compute Chassis, SATA Flash, 25GbE NICs:
-* Value - for "Platform Native", "Shared Storage" and "Object Storage" based on "Converage Storage with Flash Cached Disks" architecture where cost included: Software, Compute Chassis, SAS Disk with SATA Flash Cache, 25GbE NICs:
-* Capacity - for "Archival" based on "Compuer + Storage Expansion Chassis" architecture and Cloud Consumption alternative where cost included: Software, Compute Chassis, SAS Expansion Chassis, SAS Disk, 10GbE NICs:
+* Ultra High Performance - for "Platform Native" based on "Converaged Scalable Software Defined Storage" architecture where cost included: Software, Compute Chassis, NVMe Flash, 25GbE NICs: 64% > Avg
+* High Performance - for "Platform Native" and "Shared Storage" based on "Converged Scalable Software Defined Storage" architecture where cost included: Software, Compute Chassis, SATA Flash, 25GbE NICs: 46% > Avg
+* Value - for "Platform Native", "Shared Storage" and "Object Storage" based on "Converage Storage with Flash Cached Disks" architecture where cost included: Software, Compute Chassis, SAS Disk with SATA Flash Cache, 25GbE NICs: -12% < Avg
+* Capacity - for "Archival" based on "Computer + Storage Expansion Chassis" architecture: Software, Compute Chassis, SAS Expansion Chassis, SAS Disk, 10GbE NICs: -65% < Avg
+In each case the architecture was optimised to allow for the particular technology, with Flash Based solution using 2 x Replication to achieve resilience due to greater device reliability, while value used 3 x Replication due to higher failure rate of hard drives and archival storage using much more efficient "Erasure Encoding" rather then replication. For further comparative consideration the analysis looked at public cloud vs on premise storage for Value and Archival Storage. While value was cost neutral over two years, Archive was 50% lower cost with public cloud even with very pessimist projections of retrieval rates (due to asymmetic costs for storing vs retriving data)
 
 
 <a name="3.7"></a>
