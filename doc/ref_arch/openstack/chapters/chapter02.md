@@ -137,7 +137,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
-**(1)** Workloads might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
+**(1)** Workloads may have other interfaces, such as SR-IOV VFs to be directly passed to a VM, or NIC-specific drivers on guest machines.
 
 <a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
