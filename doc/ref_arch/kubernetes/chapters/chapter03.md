@@ -18,8 +18,9 @@
         * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
     * [3.2.2 Container Networking Services](#322-container-networking-services)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
-    * [3.2.4 Container Package Managers](#324-container-package-managers)
+    * [3.2.4 Kubernetes Application package manager](#324-kubernetes-application-package-managers)
     * [3.2.5 Custom Resources](#325-custom-resources)
+        * [3.2.5.1 Operator Pattern](#3251-operator-pattern)
 
 
 ## 3.1 Introduction
