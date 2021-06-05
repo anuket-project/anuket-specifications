@@ -548,7 +548,7 @@ Storage is multi-faceted and so can be classified based on its: cost, performanc
 
 Where:
 * (Comparitive) Cost - is monetory value / unit of end user storage capacity (see below for indicative comparative costs)
-* Performance - is IOPS / Latency / Throught Put as typically each of these increases with succesive genarations of storage
+* Performance - is defined by IOPS / Latency / Throught Put as typically each of these increases with succesive genarations of storage
 * Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
 * Storage Class - is how the storage is accessed and used, where:
   * Platform Native = is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
@@ -574,7 +574,7 @@ The following principles apply to Storage scope for the Reference Model, Referen
 * Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
 * Scalability: Storage model enables scalability to enable small up to large deployments.
 * Workload agnostic: Storage model can provide storage functionality to any type of workloads, including: tenant VNF, CNF and Infrastructure Managment whether this is via BareMetal or Virtualised Deployments.
-* Operationally Ammenable: The storage must be ammenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (Backup/Restoration/Archive) these processes should also be able to be provided to tenants for there own delegated management.
+* Operationally Ammenable: The storage must be ammenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own delegated management.
 * Security Policy Ammenable: The storage sub-systems must be ammenable to policy based security controls covering ares such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
@@ -584,9 +584,9 @@ NOTE: In a market assessemt of storage (for a "Ceph" based solution) costs done 
 * Value - for "Platform Native", "Shared Storage" and "Object Storage" based on "Converage Storage with Flash Cached Disks" architecture where cost included: Software, Compute Chassis, SAS Disk with SATA Flash Cache, 25GbE NICs: -12% < Avg
 * Capacity - for "Archival" case based on "Compute + Storage Expansion Chassis" architecture: Software, Compute Chassis, SAS Expansion Chassis, SAS Disk, 10GbE NICs: -65% < Avg
 
-In each case the architecture was cost optimised to allow for the particular technology, with Flash Based solution using 2 x Replication to achieve resilience due to greater device reliability, while value used 3 x Replication due to higher failure rate of hard drives and archival storage using much more efficient "Erasure Encoding" rather then replication.
+In each case the architecture was cost optimised to allow for the particular technology, with Flash Based solution using 2 x Replication to achieve resilience due to greater device reliability, while Value which was based on hard disks used 3 x Replication due to higher failure rates and archival storage using much more efficient "Erasure Encoding" rather then replication.
 
-For further comparative consideration the analysis looked at public cloud vs on premise storage for Value and Archival Storage. While for Value case this cost neutral over two years, Archive was 50% lower cost using a public cloud available offering even with very pessimist projections of retrieval rates (due to asymmetric costs for storing vs. retriving data)
+For further comparative consideration the analysis looked at public cloud vs. on premise storage for Value and Capacity Storage cases. While for Value case this cost neutral over two years, Capacity case found to be available via public cloud offeringg at a further 50% lower cost, even with very pessimist projections of retrieval rates (that took into account asymmetric costs for storing (low) vs. retriving (high) data)
 
 
 <a name="3.7"></a>
