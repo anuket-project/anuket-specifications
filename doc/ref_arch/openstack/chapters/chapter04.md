@@ -14,7 +14,7 @@
   * [4.3.1 VIM Services](#4.3.1)
   * [4.3.2 Containerised OpenStack Services](#4.3.2)
 * [4.4 Consumable Infrastructure Resources and Services](#4.4)
-  * [4.4.1 Support for Cloud Infrastructure Profiles and flavours](#4.4.1)
+  * [4.4.1 Support for Cloud Infrastructure Profiles and flavors](#4.4.1)
   * [4.4.2 Logical segregation and high availability](#4.4.2)
   * [4.4.3 Transaction Volume Considerations](#4.4.3)
 * [4.5 Cloud Topology and Control Plane Scenarios](#4.5)
@@ -30,7 +30,7 @@ Chapter 3 introduced the components of an OpenStack-based IaaS
 -	Cloud Infrastructure Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
 -	Underlying physical compute, storage and networking resources
 
-This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter will also covers implementation support for the [Reference Model profiles and flavours](../../../ref_model/chapters/chapter02.md#24-profiles--flavours); the OpenStack flavor types capture both the flavour (sizing) and the profile configuration (of the host).
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter will also covers implementation support for the [Reference Model profiles and flavours](../../../ref_model/chapters/chapter02.md#24-profiles--flavours); the OpenStack flavor types capture both the sizing and the profile configuration (of the host).
 
 
 <a name="4.2"></a>
@@ -617,7 +617,7 @@ In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) 
 ## 4.4 Consumable Infrastructure Resources and Services
 
 <a name="4.4.1"></a>
-### 4.4.1. Support for Cloud Infrastructure Profiles and flavours
+### 4.4.1. Support for Cloud Infrastructure Profiles and flavors
 
 Reference Model Chapter 4 and  5 provide information about the Cloud Infrastructure Profiles and their size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes, it is required to set up the flavors as specified in the tables below.
 
@@ -698,7 +698,7 @@ The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computi
 
 Table 8-4 in the Reference Model Chapter 8.3.4 "[Telco Edge Cloud: Platform Services Deployment](../../../ref_model/chapters/chapter08.md#8.3.4)" lists the Platform Services that may be placed in the different node types (control, compute and storage). Depending upon the capacity and resources available only the compute nodes may exist at the Edge thereby impacting operations.
 
-Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavours.
+Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavors.
 
 #### 4.5.1.1 Edge Cloud Deployment
 
