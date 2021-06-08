@@ -325,7 +325,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---------|---------------|----------------|------------|
 | sec.oss.001 | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
 | sec.oss.002 | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.  | https://cve.mitre.org/ |
-| sec.oss.003 | High severity rated vulnerabilities **must** be fixed. | Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerabilitie score. |
+| sec.oss.003 | High severity rated vulnerabilities **must** be fixed. | Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score. |
 | sec.oss.004 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
 
 <p align="center"><b>Table 2-13:</b> Reference Model Requirements: Open Source Software Security Requirements</p>
