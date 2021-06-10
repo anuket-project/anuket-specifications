@@ -20,7 +20,7 @@ This Reference Architecture is focussed on OpenStack as the VIM chosen based on 
 
 <a name="1.1.1"></a>
 ## 1.1.1. Vision
-The OpenStack-based CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the CNTT community.  The Reference Architecture document can be used by operators to deploy CNTT conformant infrastructure.  
+The OpenStack-based Anuket Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Anuket community.  The Reference Architecture document can be used by operators to deploy Anuket conformant infrastructure.  
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
@@ -35,9 +35,7 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 <a name="1.3"></a>
 ## 1.3 Terminology
 
-General terminology definitions can be found in [Glossary](../../../common/glossary.md) and specific terms relating to this reference architecture are to be found in [OpenStack Related Terminology](../../../common/glossary.md#openstack-related-terminology). 
-
-<!-- <p align="center"><img src="../figures/ref_arch_ch01_e2e.png" alt="E2E" title="E2E" width="100%"/></p><p align="center"><b>Figure 1-1:</b> E2E</p> -->
+General terminology definitions can be found in [Glossary](../../../common/glossary.md) and specific terms relating to this reference architecture are to be found in [OpenStack Related Terminology](../../../common/glossary.md#openstack-related-terminology).
 
 <a name="1.4"></a>
 ## 1.4 Principles
@@ -54,23 +52,23 @@ OpenStack considers the following Four Opens essential for success:
 - Open Development
 - Open Community
 
-This OpenStack Reference Architecture is organised around the three major Cloud Infrastructure resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc. 
+This OpenStack Reference Architecture is organised around the three major Cloud Infrastructure resource types as core services of compute, storage and networking, and a set of shared services of identity management, image management, graphical user interface, orchestration engine, etc.
 
 <a name="1.4.1"></a>
 ### 1.4.1 Exceptions
 
-CNTT specifies certain policies and [principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatabilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. CNTT specifies how to handle [non-conforming technologies](https://github.com/cntt-n/CNTT/blob/master/doc/common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](https://github.com/cntt-n/CNTT/blob/master/doc/gov/chapters/chapter09.md#942-exception-types)). 
+Anuket specifies certain policies and [principles](../../../common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatabilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. Anuket specifies how to handle [non-conforming technologies](../../../common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](../../../gov/chapters/chapter09.md#942-exception-types)). 
 
-The following sub-sections list the exceptions to the CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
+
+The following sub-sections list the exceptions to the Anuket principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
 
 #### 1.4.1.1 Technology Exceptions
 
-The list of Technology Exceptions will be updated or removed when alternative technologies aligned with CNTT principles develop and mature.
+The list of Technology Exceptions will be updated or removed when alternative technologies aligned with Anuket principles develop and mature.
 
 | Ref |	Name |	Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|
-| ra1.exc.tec.001 |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. | Compromises virtualisation and creates dependency on hardware defeating CNTT and Cloud Principles. |
-| RM e.cap.016 | HW Accelerators | This exception allows workloads to use FPGA-s and other accelerators that require the inclusion of HW specific drivers in the workload. | TBD | Use of FPGA-s and other HW accelerators are needed to meet the technical requirements or economic goals of 5G, Edge and transcoding services. | Compromises virtualisation and creates dependency on hardware defeating CNTT and Cloud Principles. |
+| ra1.exc.tec.001 |	xxx |	xxxxxxxxxxxxx. |  |  |  |
 
 #### 1.4.1.2 Version Exceptions
 
@@ -90,9 +88,9 @@ The Requirements Exceptions lists the Reference Model (RM) requirements and/or R
 | ra1.exc.req.001 |	Requirement |	xxx |	xxxxxxxxxxxxx. | | | |
 
 <a name="1.5"></a>
-## 1.5 CNTT OpenStack Reference Release
+## 1.5 Anuket OpenStack Reference Release
 
-This Reference Architecture document in its Elbrus release version conforms to the [OpenStack Train](https://docs.openstack.org/train/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Train release. For ease, this CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Train."
+This Reference Architecture document in its Kali release version conforms to the [OpenStack Train](https://docs.openstack.org/train/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Train release. For ease, this Anuket Reference Architecture document version can be referred to as "RA-1 OSTK Train."
 
 <a name="1.6"></a>
 ## 1.6 Document Organisation

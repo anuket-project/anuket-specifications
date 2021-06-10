@@ -153,7 +153,6 @@ Here are a couple of publicly available playbooks :
 GNU/Linux as Operating System and asks for a few dependencies as described in
 [Deploy your own Xtesting CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004):
 - python-virtualenv
-- docker.io
 - git
 
 Please note the next two points depending on the GNU/Linux distributions and
