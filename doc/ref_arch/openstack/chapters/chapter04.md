@@ -410,7 +410,7 @@ With support of VNF workloads, the resources bottlenecks are not only the CPU an
 -	Nodes interfaces segmentation: Have separated NIC ports for Storage and Tenant networks. Actually, the storage traffic is bursty, and especially in case of service restoration after some failure or new service implementation, upgrades, etc. Control and management networks should rely on a separate interface from the interface used to handle tenant networks.
 -	Capacity planning: FW, physical links, switches, routers, NIC interfaces and DCGW dimensioning (+ load monitoring: each link within a LAG or a bond shouldn’t be loaded over 50% of its maximum capacity to guaranty service continuity in case of individual failure).
 -	Hardware choice: e.g. ToR/fabric switches, DCGW and NIC cards should have appropriate buffering and queuing capacity.
--	High Performancee compute node tuning (including OVS-DPDK).
+-	High Performance compute node tuning (including OVS-DPDK).
 
 #### 4.2.3.6. Integration Interfaces
 - DHCP
