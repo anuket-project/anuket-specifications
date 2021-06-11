@@ -568,16 +568,6 @@ Heat is the orchestration service using template to provision cloud resources, H
 #### 4.3.1.9 Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
-<!--
-#### 4.3.1.10 Cyborg
-Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
--	cyborg-api
--	cyborg-conductor
--	cyborg-db
-- cyborg-agent  which runs on compute nodes
-- *-driver drivers which run on compute nodes and depend on the acceleration hardware
--->
-
 #### 4.3.1.10 Placement
 The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
 
@@ -604,6 +594,17 @@ Placement has services running on the control node:
 
 Barbican usage provides a means to fulfill security requirements such as sec.sys.012 “The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component” and sec.ci.001 “The Platform **must** support Confidentiality and Integrity of data at rest and in transit.”.
 
+<!--
+ #### 4.3.1.12 Cyborg
+
+ Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
+ -	cyborg-api
+ -	cyborg-conductor
+ -	cyborg-db
+ - cyborg-agent  which runs on compute nodes
+ - *-driver drivers which run on compute nodes and depend on the acceleration hardware
+ -->
+
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc. Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
@@ -619,10 +620,12 @@ In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) 
 <a name="4.4.1"></a>
 ### 4.4.1. Support for Cloud Infrastructure Profiles and flavors
 
+
 Reference Model Chapter 4 and  5 provide information about the Cloud Infrastructure Profiles and their size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes, it is required to set up the flavors as specified in the tables below.
 
 
 | Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | High Performance |
+
 |----------|-------------|--------------|-------------|
 | CPU allocation ratio (custom extra_specs) | infra.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
 | NUMA Awareness | infra.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<integer range of 0 to #numa_nodes – 1><br>To restrict an instance's vCPUs to a single host NUMA node, specify: --property hw:numa_nodes=1<br>Some compute intensive* workloads with highly sensitive memory latency or bandwidth requirements, the instance may benefit from spreading across multiple NUMA nodes: --property hw:numa_nodes=2   |
@@ -698,13 +701,15 @@ The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computi
 
 Table 8-4 in the Reference Model Chapter 8.3.4 "[Telco Edge Cloud: Platform Services Deployment](../../../ref_model/chapters/chapter08.md#8.3.4)" lists the Platform Services that may be placed in the different node types (control, compute and storage). Depending upon the capacity and resources available only the compute nodes may exist at the Edge thereby impacting operations.
 
-Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavors.
+
+Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](../../../ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavours.
+
 
 #### 4.5.1.1 Edge Cloud Deployment
 
 Deployment at the Edge requires support for large scale deployment. A number of open-source tools are available for the purpose including:
 - [Airship](https://docs.airshipit.org/): declaratively configure, deploy and maintain an integrated virtualization and containerization platform
 - [Starling-X](https://www.starlingx.io/): cloud infrastructure software stack for the edge
-- [Triple-O](https://wiki.openstack.org/wiki/TripleO): for installing, upgrading and operating OpenStack clouds 
+- [Triple-O](https://wiki.openstack.org/wiki/TripleO): for installing, upgrading and operating OpenStack clouds
 
 The Reference Implementation (RI1) is responsible to choose the tools for the implementation and shall specify implementation and usage details of the chosen tools.

@@ -397,13 +397,13 @@ toolchains in a few commands via
 
 To deploy the CI toolchain verifying OpenStack:
 ```bash
-virtualenv functest
+virtualenv functest --system-site-packages
 . functest/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
 ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes community.docker community.postgresql
 git clone https://gerrit.opnfv.org/gerrit/functest functest-src
-(cd functest-src && git checkout -b stable/hunter origin/stable/hunter)
+(cd functest-src && git checkout -b stable/jerma origin/stable/jerma)
 ansible-playbook functest-src/ansible/site.yml
 deactivate
 rm -rf functest-src functest
@@ -411,13 +411,13 @@ rm -rf functest-src functest
 
 To deploy the CI toolchain running CNTT Compliance:
 ```bash
-virtualenv functest
+virtualenv functest --system-site-packages
 . functest/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
 ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes community.docker community.postgresql
 git clone https://gerrit.opnfv.org/gerrit/functest functest-src
-(cd functest-src && git checkout -b stable/hunter origin/stable/hunter)
+(cd functest-src && git checkout -b stable/jerma origin/stable/jerma)
 ansible-playbook functest-src/ansible/site.cntt.yml
 deactivate
 rm -rf functest-src functest
