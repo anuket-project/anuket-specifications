@@ -30,7 +30,7 @@ Chapter 3 introduced the components of an OpenStack-based IaaS
 -	Cloud Infrastructure Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
 -	Underlying physical compute, storage and networking resources
 
-This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter will also covers implementation support for the [Reference Model profiles and flavours](../../../ref_model/chapters/chapter02.md#24-profiles--flavours); the OpenStack flavor types capture both the sizing and the profile configuration (of the host).
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter also covers implementation support for the [Reference Model profiles and flavours](../../../ref_model/chapters/chapter02.md#24-profiles--flavours); the OpenStack flavor types capture both the sizing and the profile configuration (of the host).
 
 
 <a name="4.2"></a>
