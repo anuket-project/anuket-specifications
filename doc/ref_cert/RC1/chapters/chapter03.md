@@ -48,7 +48,7 @@ The following is a Requirements Traceability Matrix (RTM) mapping Test Case, and
 
 The RTM contains RM config (i.e. .conf) requirements listed “per profile”, followed by RA-1 requirements.  Requirements fall into 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
-For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to [RI-1 Chapter 3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_impl/cntt-ri/chapters/chapter03.md).
+For detailed information on RM & RA-1 NFVI and VNF requirements, please refer to [RI-1 Chapter 3](../../../ref_impl/cntt-ri/chapters/chapter03.md).
 
 <a name="3.3.1"></a>
 ### 3.3.1 Architecture and OpenStack Requirements
