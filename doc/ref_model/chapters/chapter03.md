@@ -618,12 +618,10 @@ None of this is of much help however when implementing network service functions
 
 <a name="3.5.7.2"></a>
 #### 3.5.7.2 Multi networking and Orchestration
-Kubernets does curently not in it self support multi networks, pod multi network attachments and network orchestration. This is supported by using chain loading [*Container Network Interface*](https://github.com/containernetworking/cni) plugins such as [Multus:](https://github.com/k8snetworkplumbingwg/multus-cni)
- There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
-What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
+Kubernets does curently not in it self support multi networks, pod multi network attachments and network orchestration. This is supported by using a chain loading [*Container Network Interface*](https://github.com/containernetworking/cni) plugins such as [Multus:](https://github.com/k8snetworkplumbingwg/multus-cni).
+A considreable effort is being invested into adding better network support to kubernetes, all such activities are coordinated through the kubernetes [*Network Special Interest Group*](https://github.com/kubernetes/community/tree/master/sig-network) and it's sub groups. One such group, the [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods
 
- 
- 
+What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
  
 <a name="3.6"></a>
 ## 3.6 Storage
