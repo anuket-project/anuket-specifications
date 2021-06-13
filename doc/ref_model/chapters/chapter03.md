@@ -573,7 +573,24 @@ Network objects | Description
 [EndpointSlices:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | Endpoints and Endpointslices are a collections of endpoints that contains the ip address, v4 and v6, of the pods that represents a service.
 [Network Policy:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | NetworkPolicy defines which network traffic is allowed to ingress and egress from a set of pods.
 
-There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on.
+There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on. The kubernetes sematics and relation between the different objects defined in the object manifests contains all the information needed.
+
+Example: The service *my-service* and the four loadbalanced pods of type *my-app"
+
+Service:
+```
+*apiVersion: v1 
+kind: Service 
+metadata: 
+        name: my-service
+        spec: 
+                selector:		
+                        app: my-app	
+                ports: 
+                        - protocol: TCP
+                                port: 231
+                                targetPort: 123*
+```
 
 
  There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
