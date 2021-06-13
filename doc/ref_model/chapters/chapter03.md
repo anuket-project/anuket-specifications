@@ -575,7 +575,7 @@ Network objects | Description
 
 There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on. The kubernetes sematics and relation between the different objects defined in the object manifests contains all the information needed.
 
-Example: The service *my-service* and the four loadbalanced pods of type *my-app"
+Example: The service *my-service* and the four load balanced pods of type *my-app*
 
 Service:
 ```
@@ -588,8 +588,7 @@ metadata:
                         app: my-app	
                 ports: 
                         - protocol: TCP
-                                port: 231
-                                targetPort: 123
+                                port: 123
 ```
 Deployment:
 ```
@@ -612,6 +611,10 @@ spec:
                                           ports:        
                                           - containerPort: 123 
 ```
+
+This is all that is needed to deploy 4 pods/containers that are fronted by a service that performe sload balancing. The *Deplyment* will ensure that there are always four pods of type *my-app* available. the *deplyment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
+
+
 
  There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
 What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
