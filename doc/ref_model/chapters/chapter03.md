@@ -553,7 +553,25 @@ Kubernetes networking can be divided into two parts, built in network functinali
 #### 3.5.7.1 Built in Kubernetes network functionality 
 Kubernetes currently only allows for one network, the *cluster* network and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by kubernetes at pod cration and attached to the *cluster* network. All communication to and from the pod is done using this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and complicated routing tables inside the pod network namespace. 
 
-The basic semantics of Kubernetes and the information found in manifest defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable and scalable SW services and network policies that are not location aware and therefore can be executed more or less anywhere. 
+The basic semantics of Kubernetes and the information found in manifest defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW services and network policies for them that are not location aware and therefore can be executed more or less anywhere. 
+
+Kubernetes built in objects
+Pod and workloads | Description
+------------------|------------
+[Pod:](https://kubernetes.io/docs/concepts/workloads/pods/) | Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
+[ReplicaSet:](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) | ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+[Deployment:](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Deployment enables declarative updates for Pods and ReplicaSets.
+[DaemonSet:](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) | DaemonSet represents the configuration of a daemon set.
+[Job:](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | Job represents the configuration of a single job.
+[CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time based Job, namely: once at a specified point in time repeatedly at a specified point in time
+[StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage. 
+
+
+
+
+
+
+
 
 * Services
 * Workloads
@@ -561,6 +579,7 @@ The basic semantics of Kubernetes and the information found in manifest defines 
 * Network policies 
 
 There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on.
+
 
  There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
 What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
