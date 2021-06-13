@@ -618,7 +618,7 @@ None of this is of much help however when implementing network service functions
 
 <a name="3.5.7.2"></a>
 #### 3.5.7.2 Multi networking and Orchestration
-
+Kubernets does curently not in it self support multi networks, pod multi network attachments and network orchestration. This is supported by using chain loading [*Container Network Interface*](https://github.com/containernetworking/cni) plugins such as [Multus:](https://github.com/k8snetworkplumbingwg/multus-cni)
  There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
 What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
 
