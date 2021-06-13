@@ -579,7 +579,7 @@ Example: The service *my-service* and the four loadbalanced pods of type *my-app
 
 Service:
 ```
-*apiVersion: v1 
+apiVersion: v1 
 kind: Service 
 metadata: 
         name: my-service
@@ -589,9 +589,29 @@ metadata:
                 ports: 
                         - protocol: TCP
                                 port: 231
-                                targetPort: 123*
+                                targetPort: 123
 ```
-
+Deployment:
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata: name: my-app-deployment
+spec:
+        selector:
+                matchLabels:
+                        app: my-app
+                        replicas: 4
+                        template:
+                                metadata:
+                                        labels:
+                                                app: my-app
+                        spec:
+                                containers:
+                                        - name: my-app
+                                          image: my-app-1.2.3
+                                          ports:        
+                                          - containerPort: 123 
+```
 
  There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
 What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
