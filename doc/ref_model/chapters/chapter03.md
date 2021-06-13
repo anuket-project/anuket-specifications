@@ -32,6 +32,7 @@
   * [3.5.6 Time Sensitive Networking](#3.5.6)
   * [3.5.7 Kubernetes Networking Semantics](#3.5.7)
     * [3.5.7.1 Built in Kubernetes network functionality](#3.5.7.1)
+    * [3.5.7.2 Multi networking and Orchestration](#3.5.7.2)
 * [3.6 Storage](#3.6)
 * [3.7 Sample reference model realization](#3.7)
 * [3.8 Hardware Acceleration Abstraction](#3.8)
