@@ -546,18 +546,22 @@ SyncE architecture minimally requires replacement of the internal clock of the E
 
 The support for traditional network orchestration is more or less non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastrutcure as a Service (Iaas) infrastucture component. There is no orchetration API like Neutron and no way to instantiate network services such as L3aaS and LBaaS like you can do in Openstack.
 
+Kubernetes networking can be divided into two parts, built in network functinality available through the pod's mandatory primarty interface and network functionality avaiable through the pod's optional secondary inerfaces.
 
+<a name="3.5.7.1"></a>
+#### 3.5.7.1 Built in Kubernetes network functionality 
+Kubernetes currently only allows for one network, the *cluster* network and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by kubernetes at pod cration and attached to the *cluster* network. All communication to and from the pod is done using this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and complicated routing tables inside the pod network namespace. 
 
-The basic semantics of Kubernetes and the information found in manifest for 
+The basic semantics of Kubernetes and the information found in manifest defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable and scalable SW services and network policies that are not location aware and therefore can be executed more or less anywhere. 
+
 * Services
 * Workloads
 * Pods
 * Network policies 
 
-defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable and scalable SW services and network policies that are not location aware and therefore can be executed more or less anywhere. 
+There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on.
 
-There is no need to explicitly define internal  load balancers, servers pools service monitors and so on. 
-Kubernetes currently only allows for one network, the “cluster” network and one network attachment for each pod. There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
+ There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
 What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
 
  
