@@ -544,7 +544,6 @@ SyncE architecture minimally requires replacement of the internal clock of the E
 
 <a name="3.5.7"></a>
  ### 3.5.7 Kubernetes Networking Semantics
-
 The support for traditional network orchestration is more or less non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastrutcure as a Service (Iaas) infrastucture component. There is no orchetration API like Neutron and no way to instantiate network services such as L3aaS and LBaaS like you can do in Openstack.
 
 Kubernetes networking can be divided into two parts, built in network functinality available through the pod's mandatory primarty interface and network functionality avaiable through the pod's optional secondary inerfaces.
@@ -575,7 +574,7 @@ Network objects | Description
 
 There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on. The kubernetes sematics and relation between the different objects defined in the object manifests contains all the information needed.
 
-Example: The service *my-service* and the four load balanced pods of type *my-app*
+Example: The manifests for service *my-service* and the*deployment* with the four load balanced pods of type *my-app*
 
 Service:
 ```
@@ -614,7 +613,10 @@ spec:
 
 This is all that is needed to deploy 4 pods/containers that are fronted by a service that performe sload balancing. The *Deplyment* will ensure that there are always four pods of type *my-app* available. the *deplyment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
 
+None of this is of much help however when implementing network service functions such as VNFs/CNFs that requires multi networking and network orchestartion
 
+<a name="3.5.7.1"></a>
+#### 3.5.7.2 Multi networking and Orchestration
 
  There has been a lot of work going about multi networks and Kubernetes, much of this work has occurred in the “Network Plumbing working group” and resulted in the  Kubernetes Network Custom Resource Definition De-facto Standard - Google Docs. 
 What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
