@@ -566,17 +566,11 @@ Pod and workloads | Description
 [CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time based Job, namely: once at a specified point in time repeatedly at a specified point in time
 [StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage. 
 
-
-
-
-
-
-
-
-* Services
-* Workloads
-* Pods
-* Network policies 
+Network objects | Description
+[Ingress:](https://kubernetes.io/docs/concepts/services-networking/ingress/) | Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc.
+[Service:](https://kubernetes.io/docs/concepts/services-networking/service/) | Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
+[EndpointSlices:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | Endpoints and Endpointslices are a collections of endpoints that contains the ip address, v4 and v6, of the pods that represents a service.
+[Network Policy:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | NetworkPolicy defines which network traffic is allowed to ingress and egress from a set of pods.
 
 There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on.
 
