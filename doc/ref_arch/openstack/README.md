@@ -31,7 +31,7 @@ This is OpenStack based Reference Architecture (RA-1)
 | Chapter 03 | Complete |
 | Chapter 04 | Complete |
 | Chapter 05 | Complete |
-| Chapter 06 | Dickering over the final points |
+| Chapter 06 | Lots of SME feedback |
 | Chapter 07 | Still Developing Content |
 | Chapter 08 |  Complete |
 
