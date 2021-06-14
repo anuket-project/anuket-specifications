@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 8. Gaps, Innovation, and Development
-<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_com.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [8.1 Introduction](#8.1)
@@ -28,12 +28,12 @@ Please note: physical compute node autoscaling is out of scope.
 
 <a name="8.3"></a>
 ## 8.3 OpenStack Release Gaps
-Section contains the APIs versions and key differences between the chosen CNTT baseline version (Train), the current version for RI (Ocata) and the potential future version for RI (Stein).
+Section contains the APIs versions and key differences between the chosen Anuket baseline version (Train), the current version for RI (Ocata) and the potential future version for RI (Stein).
 The table below gives only an
 overview of the differences. For detailed changes, please check the
 [https://releases.openstack.org](https://releases.openstack.org).
 
-| Service Name | OpenStack (Ocata) (RI version) | OpenStack (Train) (CNTT baseline) | OpenStack (Stein) (potential future RI version) |
+| Service Name | OpenStack (Ocata) (RI version) | OpenStack (Train) (Anuket baseline) | OpenStack (Stein) (potential future RI version) |
 | --- | --- | --- | --- |
 | Keystone | 3.8 | 3.13<br>- Support for delegating fine-grained privileges.<br>- Supports the admin, member, and reader default roles across system-scope, domain-scope, and project-scope.<br>- Different role API uses new default policies that make it more accessible to end users and administrators in a secure way.  | 3.12<br>- Support for project tags, application credential, domain level resource limits, JSON Web Tokens.<br> - Introduced system scoped roles<br> - Introduced new role 'reader' along with 'member' and 'admin' |
 | Glance | 2.5 | 2.9<br>- Support for compressed  container formats.<br>- Block Storage service always creates a new secret in Barbican when it uploads a volume as an image.<br- > | 2.7<br>- Version v1 is removed<br>- Support for hidden images, interoperable image import using image data (glance-direct) or image URL(web-download), <br>- Fixed OpenStack Security Note [OSSN-0075](https://wiki.openstack.org/wiki/OSSN/OSSN-0075)<br>- Multi backend support to configure multiple stores|
