@@ -17,7 +17,7 @@
 
 ## 6.1 Introduction
 
-This guide is intended to provide basic security requirements to CNTT architects who are implementing Cloud Infrastructure using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to architects who are implementing Cloud Infrastructure using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements
