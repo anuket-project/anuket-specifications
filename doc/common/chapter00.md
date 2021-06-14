@@ -162,7 +162,8 @@ In terms of the functional scope of the Anuket specifications, in order to targe
 
 Due to the close alignment with ETSI GR NFV 002[3], those ETSI interfaces that are considered relevant (with notes where required) are included in the figure below.
 
-<p align="center"><img src="./figures/cntt-scope.png" alt="scope" title="Document Types" width="100%"/></p>
+<p align="center"><img src="./figures/anuket_scope.png" alt="scope" title="Document Types" width="100%"/></p>
+<!-- The source file of this figure is available at https://wiki.anuket.io/display/HOME/RA2+Diagrams -->
 <p align="center"><b>Figure 2:</b> Functional Scope of Anuket specifications</p>
 
 <a name="3.2"></a>
