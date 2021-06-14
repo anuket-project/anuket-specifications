@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 1. Overview
-<p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over Fine Points" title="Bogo: Dickering over Fine Points" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_com.png" alt="Dickering over Fine Points" title="Bogo: Dickering over Fine Points" width="35%"/></p>
 
 ## Table of Contents
 * [1.1 Introduction](#1.1)
@@ -10,7 +10,7 @@
 * [1.3 Terminology](#1.3)
 * [1.4 Principles](#1.4)
   * [1.4.1 Exceptions](#1.4.1)
-* [1.5 CNTT OpenStack Reference Release](#1.5)
+* [1.5 Anuket OpenStack Reference Release](#1.5)
 * [1.6 Document Organisation](#1.6)
 
 
@@ -41,8 +41,8 @@ General terminology definitions can be found in [Glossary](../../../common/gloss
 ## 1.4 Principles
 
 OpenStack Reference Architecture must obey to the following set of principles:
-- [CNTT Reference Model Principles](../../../common/chapter00.md#2.0)
-- [CNTT Reference Architecture Principles](../../../common/chapter00.md#22-architectural-principles)
+- [Reference Model Principles](../../../common/chapter00.md#2.0)
+- [Reference Architecture Principles](../../../common/chapter00.md#22-architectural-principles)
 
 **OpenStack specific principles**
 
