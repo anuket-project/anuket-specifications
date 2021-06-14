@@ -384,7 +384,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | gen.ost.01 | Open source | The Architecture **must** use OpenStack APIs.| [RA-1 5.3](./chapter05.md#5.3) |
 | gen.ost.02 | Open source | The Architecture **must** support dynamic request and configuration of virtual resources (compute, network, storage) through OpenStack APIs. | [RA-1 5.3](./chapter05.md#53-consolidated-set-of-apis) |
 | gen.rsl.01 | Resiliency | The Architecture **must** support resilient OpenStack components that are required for the continued availability of running workloads. | |
-| req.gen.avl.01 | Availability | The Architecture **must** provide High Availability for OpenStack components. | [RA-1 4.2 "Underlying Resources"](./chapter04.md#42-underlying-resources) |
+| gen.avl.01 | Availability | The Architecture **must** provide High Availability for OpenStack components. | [RA-1 4.2 "Underlying Resources"](./chapter04.md#42-underlying-resources) |
 
 <p align="center"><b>Table 2-19:</b> General Requirements</p>
 
@@ -450,7 +450,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |----|--------------|---------------|-----------------|
-| tnt.gen.01 | General | The Architecture **must** support multi-tenancy. |  **duplicate of req.vim.07** |
+| tnt.gen.01 | General | The Architecture **must** support multi-tenancy. |  **duplicate of vim.07** |
 | tnt.gen.02 | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) and [3.3.1.4 Cloud Workload Services](./chapter03.md#3314-cloud-workload-services) |
 
 <p align="center"><b>Table 2-23:</b> Tenant Requirements</p>
@@ -490,7 +490,7 @@ The requirements listed in this section are optional, and are not required in or
 | gen.cnt.01 | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | gen.cnt.02 | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
 | gen.scl.01 | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likely be supported through [Senlin](https://docs.openstack.org/senlin/train/), cluster management service. |
-| gen.rsl.02 | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to `req.gen.rsl.01`. | |
+| gen.rsl.02 | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to gen.rsl.01. | |
 
 <p align="center"><b>Table 2-26:</b> General Recommendations</p>
 
@@ -535,7 +535,7 @@ The requirements listed in this section are optional, and are not required in or
 | Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | int.acc.01 | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |  |
-| int.acc.02 | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of `req.inf.acc.03` under "Infrastructure Recommendations" |
+| int.acc.02 | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of inf.acc.03 under "Infrastructure Recommendations" |
 
 <p align="center"><b>Table 2-29:</b> Interfaces and APIs Recommendations</p>
 
