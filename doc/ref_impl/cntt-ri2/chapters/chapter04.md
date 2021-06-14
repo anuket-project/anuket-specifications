@@ -29,7 +29,7 @@ You need one physical server acting as a jump server along with minimum of two a
 
 This section describes how to get started with RI-2 deployment on bare metal servers. The deployment is done using [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef), which is a project that aims to deliver a reference implementation for Kubernetes based on the RA-2.
 
-For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v2.1.0) (version v2.1.0).
+For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.03) (version v21.03).
 
 <a name="4.3.1"></a>
 ### 4.3.1 Installation on Bare Metal Infratructure
@@ -53,18 +53,25 @@ Most of the configuration options in `hw_config/{deployment}/idf.yaml` shown bel
 
 ```
 bmra:
-  profile: full_nfv
+  profile: full_nfv               # BMRA profile for K8s provisioning - Should not be changed
   network_roles:
     sriov:
-      - name: eno2                     # PF interface name
-        bus_info: "19:00.1"            # PCI ID of the interface (bus:device.function)
-        device_info: "8086:1572:0200"  # Device info for the PCI ID - Can be optained using 'lspci -nn'
-        driver: iavf                   # Driver to be used with the interface
+      - name: eno2                # PF interface name
+        pci: "19:00.1"            # PCI ID of the interface (bus:device.function)
+        pf_driver: i40e           # Driver for the physical function (PF)
+        vf_driver: iavf           # Driver for the virtual function (VF)
     sriov_dpdk:
       - name: eno4
-        bus_info: "19:00.3"
-        device_info: "8086:1572:0200"
-        driver: vfio-pci
+        pci: "19:00.3"
+        pf_driver: i40e
+        vf_driver: vfio-pci
+  device_roles:
+#    qat:                         # Only uncomment if QAT is enabled
+#      - name: crypto01           # QAT device name
+#        pci: "0000:ab:00.0"      # PCI ID of the device (bus:device.function)
+#        mod_type: qat_c62x       # Kernel module [qat_dh895xcc,qat_c62x,qat_c3xxx,qat_200xx,qat_c4xxx,qat_d15xx]
+#        pci_type c6xx            # PCI driver ID [dh895xcc,c6xx,c3xxx,d15xx,200xx,c4xxx]
+#        vfs: 4                   # Number of VFs to be created for PCI ID
   features:
     sriov:
       enable: true                # Enable SR-IOV
@@ -79,7 +86,8 @@ bmra:
       hugepages_2M: 10240         # Number of 2M hugepages to allocate
     isolcpus:
       enable: true                # Enable CPU isolation in the host
-      cpus: "8-27,36-55"          # List of CPUs (cores/threads) to isolate
+      autogenerate: true          # Automatically generate list of CPUs to isolate
+      cpus: "8-27,36-55"          # List of CPUs (cores/threads) to isolate (not used when autogenerate: true)
     nfd: true                     # Enable Node Feature Discovery
     cmk:
       enable: true                # Enable CPU Manager for Kubernetes
@@ -91,7 +99,11 @@ bmra:
     tas:
       enable: true                # Enable Telemetry Aware Scheduling
       demo_policy: false          # Enable demo policy for Telemetry Aware Scheduling (default: false)
+    bond_cni: true                # Install CNI for network interface bonding
     psp: true                     # Enable Pod Security Policy (admission controller and basic set of rules)
+    qat:
+      enable: false               # Enable QAT Device Plugin - Configure devices under "device_roles"
+      update_drivers: false       # Update drivers for QAT devices
 ```
 
 References for the above features:

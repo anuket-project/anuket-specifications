@@ -202,7 +202,7 @@ the network settings:
 
 To deploy your own CI toolchain running CNTT Compliance:
 ```bash
-virtualenv functest
+virtualenv functest --system-site-packages
 . functest/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
