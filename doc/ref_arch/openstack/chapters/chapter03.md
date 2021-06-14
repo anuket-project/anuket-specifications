@@ -143,7 +143,7 @@ It is based on proven, standards-based networking technologies that today suppor
 - BGP as a Service (BGPaaS) for distribution of routes between privately managed customer networks and service provider networks
 
 
-Based on the network layering concepts introduced in the [Reference Model Section 3.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#35-network), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
+Based on the network layering concepts introduced in the [Reference Model Section 3.5](../../../ref_model/chapters/chapter03.md#35-network), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
 
 The SDN controller exposes a NB API that can be consumed by ETSI MANO for VNF/CNF onboarding, network service onboarding and dynamic service function chaining.
 
@@ -203,7 +203,7 @@ Functional requirements of this node include:
 -	Grow / Shrink resources
 
 #### 3.3.1.3 Cloud Controller Services
-The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Management Software components [Reference Model Chapter 3.3 Management Software](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.3").
+The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Virtual Infrastructure Manager [Reference Model Chapter 3.2.2 Virtual Infrastructure Manager](../../../ref_model/chapters/chapter03.md#322").
 
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|
@@ -226,7 +226,7 @@ All components must be deployed within a high available architecture that can wi
 
 The services can be containerized or VM hosted as long as they provide the high availability principles described above.
 
-The APIs for these OpenStack services are listed in [Chapter 5: Interfaces and APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md).
+The APIs for these OpenStack services are listed in [Chapter 5: Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md).
 
 #### 3.3.1.4 Cloud Workload Services
 This section describes the core set of services and service components needed to run workloads including instances (such as VMs), their networks and storage are referred to as the “Compute Node Services” (a.k.a. user or data plane services). Contrast this with the Controller nodes which host OpenStack services used for cloud administration and management. The Compute Node Services include virtualisation, hypervisor instance creation/deletion, networking and storage services; some of these activities include RabbitMQ queues in the control plane including the scheduling, networking and cinder volume creation / attachment.

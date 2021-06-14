@@ -5,9 +5,9 @@
 - [2.1 Workloads Collateral](#21-workloads-collateral)
 - [2.2 Use cases](#22-use-cases)
 - [2.3 Analysis](#23-analysis)
-- [2.4 Node Profiles & Workload Profiles](#24-node-profiles--workload-profiles)
-  - [2.4.1 Node profiles (top-level partitions)](#241-node-profiles-top-level-partitions)
-  - [2.4.2 Node flavours (specialisations)](#242-node-flavours-specialisations)
+- [2.4 Profiles, Profile Extensions & Flavours](#24-profiles--flavours)
+  - [2.4.1 Profiles (top-level partitions)](#241-profiles-top-level-partitions)
+  - [2.4.2 Profile Extensions (specialisations)](#242-profile-extensions-specialisations)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
 
@@ -265,55 +265,55 @@ By trying to sort workloads into different categories based on the requirements 
     - High network throughput
     - Low network latency
 
-## 2.4 Node Profiles & Workload Profiles
+<a name="2.4"></a>
+## 2.4 Profiles, Profile Extensions & Flavours
 
-**Node Profiles** are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities that are exploitable by the workloads.
-
-**Workload Profiles** are requirements expressed as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. They are a resource requesting mechanism, identifying a set of sizing metadata and infrastructure characteristics (such as NUMA alignment, CPU pinning) that are required for the workload to run as intended, then mapped to node flavours at instantiation time.
-A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and set of flavours, and the necessary capacity.
+**Profiles** are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities that are exploitable by the workloads.
 
 Two profile *layers* are proposed:
 
 - The top level **profiles** represent macro-characteristics that partition infrastructure into separate pools, i.e.: an infrastructure object can belong to one and only one profile, and workloads can only be created using a single profile. Workloads requesting a given profile **must** be instantiated on infrastructure of that same profile.
-- For a given profile, **flavours** represent small deviations from (or further qualification, such as sizing) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Flavours can be *optionally* requested by workloads that want a more granular control over what infrastructure they can run on, i.e.: an infrastructure resource can have **more than one flavour** attached to it, and workloads can request VMs to be instantiated on infrastructure with a certain flavour. Workloads requesting a given flavour **must** be instantiated on infrastructure with that same flavour. It is allowed to instantiate workloads on infrastructure with more flavours than what is requested, as long as the minimum requirements are satisfied.
+- For a given profile, **profile extensions** represent small deviations from (or further qualification, such as infrastructure sizing differences (e.g. memory size)) the profile that do not require partitioning the infrastructure into separate pools, but that have specifications with a finer granularity of the profile. Profile Extensions can be *optionally* requested by workloads that want a more granular control over what infrastructure they run on, i.e.: an infrastructure resource can have **more than one profile extension label** attached to it, and workloads can request resources to be instantiated on infrastructure with a certain profile extension. Workloads requesting a given profile extension **must** be instantiated on infrastructure with that same profile extension. It is allowed to instantiate workloads on infrastructure tagged with more profile extensions than requested, as long as the minimum requirements are satisfied.
 
-### 2.4.1 Node profiles (top-level partitions)
+Workloads specify infrastructure capability requirements as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. Workloads request resources specifying the Profiles and Profile Extensions, and a set of sizing metadata that maybe expressed as flavours that are required for the workload to run as intended.
+A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and the necessary capacity to support the requested flavour or resource size.
+
+Profiles, Profile Extensions and Flavours will be considered in greater detail in [Section 4.2](./chapter04.md#4.2).
+
+<a name="2.4.1"></a>
+### 2.4.1 Profiles (top-level partitions)
 
 Based on the above analysis, the following cloud infrastructure profiles are proposed (also shown in **Figure 2-1** below)
 - **Basic**: for Workloads that can tolerate resource over-subscription and variable latency.
 - **High Performance**: for Workloads that require predictable computing performance, high network throughput and low network latency.
 
-<p align="center"><img src="../figures/ch02_infra_profiles.PNG" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
+<p align="center"><img src="../figures/RM-ch02-node-profiles.png" alt="infra_profiles" title="Infrastructure Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-1:</b> Infrastructure profiles proposed based on VNFs categorisation.</p>
 
 In **[Chapter 4](./chapter04.md)** these **B (Basic)** and **H (High) Performance** infrastructure profiles will be defined in greater detail for use by workloads.
 
 Profiles partition the infrastructure: an infrastructure object (host/node) **must** have one and only one profile associated to it.
 
-### 2.4.2 Node flavours (specialisations)
+<a name="2.4.2"></a>
+### 2.4.2 Profile Extensions (specialisations)
 
-Node flavours are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain flavours may be relevant only for some profiles.
-The following **node flavours** are proposed:
+Profile Extensions are meant to be used as labels for infrastructure, identifying the nodes that implement special capabilities that go beyond the profile baseline. Certain profile extensions may be relevant only for some profiles.
+The following **profile extensions** are proposed:
 
-|Flavour Name|Applicable to Basic Profile|Applicable to High Performance Profile|Description|Notes|
-|---|---|---|---|---|
-|**High performance CPU**|❌|✅|Nodes that have predictable computing performance (or higher clock speed).|May use vanilla VIM/K8S scheduling instead.|
-|**High performance storage**|❌|✅|Nodes that have low storage latency and/or high storage IOPS|
-|**High memory**|❌|✅|Nodes that have high amounts of RAM.|May use vanilla VIM/K8S scheduling instead.|
-|**GPU**|❌|✅|denotes the presence of a consumable GPU on the node|May use Node Feature Discovery.|
-|**High speed network (25G)**|❌|✅|denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node.|
-|**High speed network (100G)**|❌|✅|denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node.|
-|**100ms Latency**|✅|✅|labels a host/node as located in a site that has less than 100ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
-|**50ms Latency**|✅|✅|labels a host/node as located in a site that has less than 50ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
-|**10ms Latency**|✅|✅|labels a host/node as located in a site that has less than 10ms of latency to the specified set of users.|Cannot practically enforce latency to weakly defined users. Requires defining the users/locations this refers to.|
-|**Low Latency** - Edge Sites|✅|✅|labels a host/node as located in an edge site, for workloads requiring low latency to final users or geographical distribution.|
-|**Fixed function accelerator**|❌|✅|labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter).|
-|**Firmware-programmable adapter**|❌|✅|labels a host/node that includes a consumable Firmware-programmable adapter (programmable, eg Network/storage FPGA with programmable part of firmware image).|
-|**SmartNIC enabled**|❌|✅|labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure.|
-|**SmartSwitch enabled**|❌|✅|labels a host/node that is *connected to* a Programmable Switch Fabric or TOR switch|
+| Profile Extension Name | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
+|---| -- | -- | -- | --| ---|
+| Compute Intensive High-performance CPU | compute-high-perf-cpu | ❌ | ✅ | Nodes that have predictable computing performance and higher clock speeds. | May use vanilla VIM/K8S scheduling instead. |
+| Storage Intensive High-performance storage | storage-high-perf | ❌ | ✅ | Nodes that have low storage latency and/or high storage IOPS | | 
+| Compute Intensive High memory | compute-high-memory | ❌ | ✅ | Nodes that have high amounts of RAM. | May use vanilla VIM/K8S scheduling instead. |
+| Compute Intensive GPU | compute-gpu | ❌ | ✅ | for compute intensive Workloads that requires GPU compute resource on the node | May use Node Feature Discovery. |
+| Network Intensive High speed network (25G) | high-speed-network | ❌ | ✅ | denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node. |  |
+| Network Intensive Very High speed network (100G) | very-high-speed-network | ❌ | ✅ | denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node. |   |
+| Low Latency - Edge Sites | low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
+| Very Low Latency - Edge Sites | very-low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
+| Ultra Low Latency - Edge Sites | ultra-low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
+| Fixed function accelerator | compute-ffa | ❌ | ✅ | labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter). |   |
+| Firmware-programmable adapter | compute-fpga | ❌ | ✅ | labels a host/node that includes a consumable Firmware-programmable  adapter (programmable, eg Network/storage FPGA with programmable part of  firmware image). |   |
+| SmartNIC enabled | network-smartnic | ❌ | ✅ | labels a host/node that includes a Programmable accelerator for  vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |   |
+| SmartSwitch enabled | network-smartswitch | ❌ | ✅ | labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
 
->***Note:** This is an initial set of proposed profiles and flavours and it is expected that more profiles will be added as more requirements are gathered and as technology enhances and matures. For instance, the following profiles may be added in future releases:*
->- **Compute Intensive**: for Workloads that require predictable computing performance and low network latency.
->- ***Storage Intensive**: for Workloads that require low storage latency and/or high storage IOPS.*
->- ***Enhanced Compute Intensive**: for compute intensive Workloads that require higher computing performance and/or specific compute resource (e.g., GPU).*
->- ***Enhanced Network Intensive**: for network intensive Workloads that require higher network performance and/or specific network resource (e.g., crypto acceleration).*
+>***Note:** This is an initial set of proposed profiles and profile extensions and it is expected that more profiles and/or profile extensions will be added as more requirements are gathered and as technology enhances and matures.

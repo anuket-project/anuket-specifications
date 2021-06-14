@@ -139,6 +139,33 @@ The following software versions are considered to benchmark Kubernetes v1.20
 | Functest                | leguer      |
 | xrally-kubernetes       | 1.1.1.dev12 |
 
+### SIG Testing
+
+The Reference Conformance suites must be stable and can be executed on real
+deployments. Then all the following labels are defacto skipped in
+[End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md):
+  - Disruptive
+  - Flaky
+  - alpha
+
+[End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
+basically respectively asks focus and fix regexes to select or to blacklist
+single tests:
+  - focus basically matches SIG
+  - skip matches the mandatory SIG labels listed in
+    [Reference Architecture-2 (RA-2)](../../../ref_arch/kubernetes/README.md)
+
+#### [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
+
+focus: [sig-api-machinery]
+
+skip:
+  - [Disruptive]
+  - [Flaky]
+  - [alpha]
+  - [Feature:CrossNamespacePodAffinity]
+  - [Feature:StorageVersionAPI]
+
 ### Security testing
 
 There are a couple of opensource tools that help securing the Kubernetes stack.
