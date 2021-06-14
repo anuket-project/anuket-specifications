@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 3. Cloud Infrastructure Architecture - OpenStack
-<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_com.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
@@ -28,7 +28,7 @@
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-This CNTT Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network Function Virtualisation Infrastructure (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be CNTT conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any CNTT compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the Cloud Infrastructure (NFVI and the VIM) in a consistent and reliable way.
+This Reference Architecture (RA-1) aims to provide an OpenStack distribution agnostic reference architecture that includes the Network Function Virtualisation Infrastructure (NFVI) and Virtual Infrastructure Manager (VIM). The different OpenStack distributions, without the not up-streamed vendor specific enhancements, are assumed to be Anuket conformant. This Reference Architecture allows operators to provide a common OpenStack-based architecture for any Anuket compliant VNF to be deployed and operated as expected.  The purpose of this chapter is to outline all the components required to provide the Cloud Infrastructure (NFVI and the VIM) in a consistent and reliable way.
 
 [OpenStack](http://docs.openstack.org) is already very well documented and, hence, this document will describe the specific OpenStack services and features, Cloud Infrastructure features and how we expect them to be implemented.
 
@@ -162,7 +162,7 @@ The Cloud Infrastructure Management Software (VIM) provides the services for the
 ### 3.3.1. VIM Core services
 OpenStack is a complex, multi-project framework, so we initially will focus on the core services required to provide Infrastructure-as-a-Service (IaaS) as this is generally all that is required for Cloud Infrastructure/VIM use cases. Other components are optional and provide functionality above and beyond Cloud Infrastructure/VIM requirements.
 
-The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific CNTT conformant implementation requirements and recommendations for the core services.
+The architecture consists of the core services shown in the Figure 3-1; Ironic is an optional OpenStack service needed only for bare-metal containers. The rest of this document will address the specific Anuket conformant implementation requirements and recommendations for the core services.
 
 
 <p align="center"><img src="../figures/RA1-Ch03-Core-Cloud-Infra-Services.png" alt="Core OpenStack Software Services" title="Core OpenStack Software Services" width="100%"/><b>Figure 3-1:</b> OpenStack Core Services</p>
@@ -238,7 +238,7 @@ This section describes the core set of services and service components needed to
 
 <a name="3.3.2"></a>
 ### 3.3.2. Tenant Isolation
-In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack. With Keystone v3, the term "project" got adopted and both the terms became interchangeable. However, as CNTT RA uses Keystone v3 in [this](chapter05.md#5.2) section, so it is recommended to use the term "project" when referring to OpenStack and use [tenant](../../../ref_model/chapters/chapter03.md#321-tenant) when referring to multi-tenancy. According to [OpenStack glossary](https://docs.openstack.org/doc-contrib-guide/common/glossary.html), Projects represent the base unit of resources (compute, storage and network) in OpenStack, in that all assigned resources in OpenStack are owned by a specific project.
+In Keystone v1 and v2 (both deprecated), the term "tenant" was used in OpenStack. With Keystone v3, the term "project" got adopted and both the terms became interchangeable. However, as Anuket RA uses Keystone v3 in [this](chapter05.md#5.2) section, so it is recommended to use the term "project" when referring to OpenStack and use [tenant](../../../ref_model/chapters/chapter03.md#321-tenant) when referring to multi-tenancy. According to [OpenStack glossary](https://docs.openstack.org/doc-contrib-guide/common/glossary.html), Projects represent the base unit of resources (compute, storage and network) in OpenStack, in that all assigned resources in OpenStack are owned by a specific project.
 OpenStack offers multi-tenancy by means of resource (compute, network and storage)separation via projects. OpenStack offers ways to share virtual resources between projects while maintaining logical separation. As an example, traffic separation is provided by creating different VLAN ids for neutron networks of different projects. As another example, if host separation is needed, nova scheduler offers AggregateMultiTenancyIsolation scheduler filter to separate projects in host aggregates. Thus, if a host in an aggregate is configured for a particular project, only the instances from that project are placed on the host. Overall, tenant isolation ensures that the resources of a project are not affected by resources of another project.
 
 <a name="3.3.3"></a>
