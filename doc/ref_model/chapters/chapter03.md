@@ -537,18 +537,37 @@ SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommen
 * ITU-T Rec. G.8261 that defines aspects about the architecture and the wander performance of SyncE networks
 * ITU-T Rec. G.8262 that specifies Synchronous Ethernet clocks for SyncE
 * ITU-T Rec. G.8264 that describes the specification of Ethernet Synchronization Messaging Channel (ESMC)
-SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY. 
+SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
 
 <a name="3.6"></a>
 ## 3.6 Storage
-The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
-Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5. The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
+The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of NFVi the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management.
+Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). A simplified view of this is provided in the following illustrative model:
+
+
+Where:
+* Cost - is monetory value / unit of end user storage capacity
+* Performance - is IOPS / Latency / Throught Put as typically each of these increases with succesive genarations of storage
+* Storage Class - is how the storage is accessed and used, where: Platform Native = is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances; Shared Storage = is storage this accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances; Object Storage = is storage that is accessed via API interaces (the most common example being HTTP restful services API) whichs support get/put of structured objects; and Archival = is storage that is targetted with providing long term storage for purpose of disaster recovery, legal requirements or other historical recording where the storage mechanism my go through multiple stages before landing at rest.
+The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs. This is shown in the follow table which highlights value of the storage classes and the epic use case for usage pattern.
+
+| Storage Class | Consumption Model | Performance & Capacity | Cost | Infrastructure Strategy | Use Case |
+|---|---|---|---|---|---|
+| Platform Native | Managed by the VIM / Hypervisor and attached as part of VNF/CNF start up<br />The volumes are not shareable across VNF/CNF instances | Ultra High Performance & Very High Performance<br />Capacity: 10GB - 5TB<br />"Tier 1" | $$$ - $$$$ | Always part of VIM deployment<br />Storage directly next to vCPU<br />Can support highest performance use case<br />Always available to support VNF/CNF boot/startup | Boot/Start VNF/CNF<br />Live Migrate Workload Across VIM |
+| Shared Storage | Access via Network File System<br />Concurrent consumption across multiple VNF/CNFs<br />Shareable constrainable to tenaants, cross tenants and externally | Enterprise Transactional Performance (real time transaction processing)<br />Capacity: 5GB - 100TB<br />Selectable "Tier 1" to "Tier 3" | $$$ - $$ | Leverage existing capabilities<br />Only build if needed (most data plan VNF/CNF) do not need<br />If need for Edge deployment then aim to unify with "Platform Native" deployment | VNF/CNF's share the same file content |
+| Object Storage | Consumed via HTTP/S restful services<br />Provided by serving application which manages storage needs<br />Location Indepent | Highly distributable and scalable | $$$ - $$ | Primarily tenant application responsibility |br
+| Capacity | Typically accessed as per "Shared Storage" but could have additional storage stages<br />Not suitable for real time processing | Very low transactional performance<br />Need throughput to accommodate large data flow<br />"Tier 3" | $ | Use cheapest storage available that meets capacity & security needs | Archival storage for tenant/platform backup/restore<br />DR |
+
+In cloud infrastructure the storage classes may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking). For the provision of shared platform is is not desirable to use "in chassis storage" for any other than in the storage devices for platform hypervisor / OS boot or for the hosts providing the storage sub-systems deployment, this is due to difficulty in resulting operational management (see principle below "Operationally Ammenable").
+Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5.
+The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 * Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
 * Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources [3.2.1.3 Storage](#3.2.1.3)).
 * Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 * Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
 * Scalability: Storage model enables scalability to enable small up to large deployments.
-* Workload agnostic: Storage model can provide storage functionality to any type of workloads, including VNF, CNF and BareMetal workloads.
+* Workload agnostic: Storage model can provide storage functionality to any type of workloads, including: tenant VNF, CNF and Infrastructure Managment whether this is via BareMetal or Virtualised Deployments.
+* Operationally Ammenable: The storage must be ammenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (Backup/Restoration/Archive) these processes should also be able to be provided to tenants for there own delegated management.
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
 <a name="3.7"></a>

@@ -300,17 +300,6 @@ The KVM APIs are documented in Section 4 of the document https://www.kernel.org/
 #### 5.3.3.1. Libvirt Interfaces
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
 
-<!--
-### 5.3.4. Cyborg
-
-| **OpenStack Service** | **API Version** |
-|-----------------------|-----------------|
-| Accelerator: Cyborg   | v2              |
-
-Acceleration Service API: https://docs.openstack.org/api-ref/accelerator/v2/index.html
-Please note that the initial version of the [Cyborg API v1.0](https://docs.openstack.org/cyborg/stein/admin/api.html) was deprecated in the OpenStack Train release and will be removed in the Ussuri release.
--->
-
 ### 5.3.4. Barbican
 
 | **OpenStack Service**           | **API Version** |
@@ -318,8 +307,3 @@ Please note that the initial version of the [Cyborg API v1.0](https://docs.opens
 | Key Manager: Barbican           | v1              |
 
 Barbican API Documentation: https://docs.openstack.org/barbican/latest/api/
-
-<!--
-### 5.3.4. vSphere/ESXi APIs
-The ESXi APIs are documented together with vCenter and available at https://code.vmware.com/apis/62/vcenter-management
--->

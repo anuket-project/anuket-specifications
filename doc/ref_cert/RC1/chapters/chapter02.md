@@ -44,7 +44,6 @@ All Terms utilized throughout this chapter are intended to align with CVC defini
 NFVI (Network Functions Virtualization Infrastructure) refers to the physical and virtual resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. Due to differentiation of API and under layer configuration and capability matrix, cross vendor VNF deployment on NFVI becomes hard to predict, and requires huge amount of cross vendor interoperability tests. With combined effort from operators and vendors, CNTT define RA and RM, to make sure to consolidate the under layer configuration, capability and API, so as to provide the upper layer VNF with a 'common cloud infrastructure'. Based on this, CNTT also provides RC for conformance test of SUT against RA & RM requirements. SUT passes the conformance test will be identified as NFVI that can fit into the common requirements.
 
 In the meantime, CNTT RC also provides conformance test for VNF. The intention is to make sure VNF that passes RC test cases can be deployed on any NFVI which also passes RC without any conformance and interoperability issue.
-<!---As such, the performance of a VNF depends on the underlying NFVI over which it is hosted. A certain VNF may perform good in one hardware and may perform worst in another. Thus, a need arises to certify NFVI that can help in onboarding VNFs onto a hardware with an acceptable level of VNF performance. Certain frameworks like [yardstick](https://github.com/opnfv/yardstick), [vsperf](https://github.com/opnfv/vswitchperf) etc. provide a set of tests that can be run on a hardware to obtain Key Performance Indicators (KPIs) which give a measurable output of the NFVI's performance. With these KPIs, a decision can be made on the VNFs that can offer an acceptable level of performance when on-boarded on the NFVI.--->
 
 <a name="2.2"></a>
 ## 2.2 Methodology
@@ -96,16 +95,14 @@ The Infrastructure Profile Catalog contains the following attributes:
 * Profiles are offered to VNFs as an instance types with predefined compute flavors.
   * A particular set of options is an instance type
   * Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
-* NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. <!-- , and compute intensive. --> Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
+* NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
 <p align="center"><img src="../figures/RC_NFVI_Profiles.png" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
 <p align="center"><b>Figure 2-2:</b> NFVI Profiles</p>
-<!---Targeted VNF Classes/Families for baseline measurements are described in chapter XXXX.--->
 
 <a name="2.4"></a>
 ## 2.4 Profiles Reference
 Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughout whereas a VNF like Mobility Management Entity (MME) would require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs would have different characteristics. Depending on VNF's requirements, the NFVI can be categorized into below profiles:
 * Basic (B) profile for standard computing and
-<!-- * Compute intensive (C) profile where predictable computing performance is expected and -->
 * Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughout
 Similarly, different NFVI vendors may specialize in different hardware profiles and some may specialize in both VNFs and NFVI.
 
@@ -116,7 +113,7 @@ To cater to different needs from multiple NFVI vendors, CNTT allows different ty
 <a name="2.5"></a>
 ## 2.5 Compliance, Verification, and Conformance
 The below set of steps define the compliance, verification and Conformance process for NFVI
-* Based on VNF's requirements, NFVI profile is selected - B, <!-- C, --> N
+* Based on VNF's requirements, NFVI profile is selected - B, N
 * NFVI readiness is checked for Conformance.
 * The test VNFs are on-boarded using automation scripts on the NFVI.
 * VNF on-boarding is validated by running functional tests to ensure that the on-boarding is successful.
@@ -327,7 +324,6 @@ Section [Infrastructure Profiles Catalogue](../../../ref_model/chapters/chapter0
 
 * Basic
 * Network intensive
-<!-- * Compute intensive -->
 
 The test cases selected for validating compliance of the two profiles must cover the functional and non-functional requirements as listed in Section [Instance Capabilities Mapping](../../../ref_model/chapters/chapter04.md#425-instance-capabilities-mapping) and Section [Instance Performance Measurement Mapping](../../../ref_model/chapters/chapter04.md#426-instance-performance-measurement-mapping) of the reference model.
 
@@ -351,17 +347,9 @@ The test tooling, harnesses and corresponding test cases which are part of the c
 | x                 | NFVI test cases *must* support a means of running in an internal enterprise lab environment. This could be achieved by either i) natively supporting proxied Internet connectivity and non-public DNS servers or ii) by providing a high-level description of remote dependencies (e.g., container and VM images, network services (DNS), etc.) such that local mirrors can be set up.  |
 
 
-<!---Content to be written:
-- Identify SW Reference
-- Identify HW Reference--->
-
 
 <a name="2.8.5"></a>
 ### 2.8.5 Options & Extensions
-
-<!---Content to be written:
-- Options Available / Configured
-- Extensions Available / Configured--->
 
 
 <a name="2.8.6"></a>
@@ -532,12 +520,12 @@ This optimization should be based on the following principles:
 
 1. NFVI domain metrics measurement: on PVP topology only
 2. Metrics measurement with forwarded traffic: with no L4 stateful processing
-3. Basic <!-- and Compute intensive --> profile metrics measurement: client-server traffic profile only
+3. Basic profile metrics measurement: client-server traffic profile only
 4. Flows & latency related metrics measurement: for PVP only
 
 The following table proposed a possible optimized matrix model of the test cases against the metrics to be measured.
 
-|                     | **NFVI Profiles**   | **B <!-- & C -->**      |                |                |                | **N**         |                |
+|                     | **NFVI Profiles**   | **B**      |                |                |                | **N**         |                |
 | ------------------- | ------------------- | -------------- | -------------- | -------------- | -------------- | ------------- | -------------- |
 |                     | **Test Cases**      | V2V - L2 - SRV | VPV - L3 - SRV | PVP - L2 - SRV | PVP - L4 - SRV | PVP - L2- SRV | PVP - L2 - FWD |
 |                     |                     |                |                |                |                |               |                |

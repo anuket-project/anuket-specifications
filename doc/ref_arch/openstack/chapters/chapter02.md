@@ -137,7 +137,7 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 
 <p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
 
-**(1)** [Workload Transition Guidelines](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
+**(1)** Workloads may have other interfaces, such as SR-IOV VFs to be directly passed to a VM, or NIC-specific drivers on guest machines.
 
 <a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
@@ -160,10 +160,6 @@ The required number of connection points to a VM is described in `e.cap.004` abo
 | infra.hw.nac.cfg.002 | SmartNIC used to offload vSwitch functionality to hardware | Not required | Optional | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
-<!--
-These rows are removed and commented out as it's not clear what the requirement is.
-| infra.stg.cfg.001 | Catalogue storage Types | | Y |
--->
 <p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
 
 
@@ -201,7 +197,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches), [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
 | sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.gen.010 | Hardening | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know ([Controlled Access Based on the Need to Know](https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/)). | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
-| sec.gen.012 | Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | This requirement’s verification goes beyond CNTT testing scope  |
+| sec.gen.012 | Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | This requirement’s verification goes beyond Anuket testing scope  |
 | sec.gen.013 | Hardening | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
@@ -254,7 +250,7 @@ These rows are removed and commented out as it's not clear what the requirement 
 | sec.wl.002 | Workload | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). |  |
 | sec.wl.003 | Workload | The Platform **must** support secure provisioning of Workloads. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
-| sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope |
+| sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond Anuket testing scope |
 | sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
 <p align="center"><b>Table 2-9:</b> Reference Model Requirements: Workload Security Requirements</p>
@@ -417,6 +413,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <p align="center"><b>Table 2-20:</b> Infrastructure Requirements</p>
 
+
 <a name="2.3.3"></a>
 ### 2.3.3 VIM Requirements
 
@@ -518,20 +515,7 @@ The requirements listed in this section are optional, and are not required in or
 | inf.acc.03 | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
 | inf.img.01 | Image | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
 
-<!---
-Commented out until RM defines requirements for SDN
-| `req.inf.ntw.12` | Network | The SDN solution **should** be configurable via orchestration or VIM systems in an automated manner using openly published API definitions. | |
-| `req.inf.ntw.13` | Network | The SDN solution **should** be able to support federated networks. | |
-| `req.inf.ntw.14` | Network | The SDN solution **should** be able to be centrally administrated and configured. | |
---->
-
-<!---
-| `req.inf.stg.11` | Storage | The Architecture **should** support the Block storage capabilities specified in https://docs.openstack.org/api-ref/block-storage/. | [RA-1 5.2.3. "Cinder"](./chapter05.md#523-cinder) |
-| `req.inf.ntw.18` | Network | The Architecture **should** support the network extensions specified in https://docs.openstack.org/api-ref/network/v2/.| [RA-1 5.2.5. "Neutron"](./chapter05.md#525-neutron) |
---->
-
 <p align="center"><b>Table 2-27:</b> Infrastructure Recommendations</p>
-
 
 <a name="2.4.3"></a>
 ### 2.4.3 VIM Recommendations
@@ -726,71 +710,3 @@ p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendation
 | sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
 
 <p align="center"><b>Table 2-46:</b> Security Recommendations</p>
-
-<!--
-**Backlog of Req**
-
-1. Manage discovery of resources, resource capabilities/features
-1. Manage repository of resources and their allocations
-1. Orchestrate (create, update, delete, …) virtual computes, storage, virtual links, networks, subnets and ports
-1. Collect and disseminate performance and fault information
-1. Provides transparent, fully automated hardware addition, removal, and replacement with zero to minimal service disruption
-1. Provides transparent, fully automated software updates, rollback, and post-install configuration changes with zero to minimal service disruption
-1. Automated and validated deployment of Enhanced Platform Awareness (EPA) features across multiple nodes
-1. Support tenant isolation
-1. Policy driven auto-scaling
-1. Image management and provisioning control
-1. Policy based RBAC
-1. Tenant based (a user may have different access rights in different tenants)
-1. **Q:** do site administrators have access to Tenant space and what are their rights (public cloud?)
-1. Policy based security
-1. Policy driven performance and fault management
-1. Principles should apply to all reference architectures we design and develop
-1. Traceability between reference model to reference architecture (and vice versa)
-1. Implementable and usable for VNF developer community, i.e. with enough specificity to support the design and development of a VNF
-1. Define the NFVI so that developers can understand how to build VNFs
-1. Design the architectures with common elements so that the VNFs require less operator specific customizations
-1. Rationalize need for each discrete architecture
-    1. Intention is to minimize the number of discrete reference architectures
-1. Architectures should be:
-    1. Resilient
-    1. Scalable
-    1. Elastic
-    1. Secure
-    1. Low Latency
-    1. Resource and Operational Efficiency
-    1. E2E Lifecycle Automation (Deployment, Operations, & Maintenance)
-    1. High-Availability
-1. Prioritize incorporation of open source components
-    1. Design architectures to established open standards as much as possible
-1. Architectures will evolve over time
-1. Mandatory Core services:
-    1. Neutron (networking)
-    1. Nova (compute)
-    1. Cinder (block storage)
-    1. Keystone (authentication/authorisation)
-    1. Glance (image repository)
-    1. Heat (orchestration)
-
-1. Optional Core Services:
-    1. Swift (object storage)
-    1. Ceilometer / Panko / Aodh (workload monitoring / autoscaling)
-    1. Ironic (baremetal)
-      … the list could get quite long so perhaps we tier these requirements…
-1. Compute:
-    1. The hypervisor should be KVM with EMU (we can be prescriptive here as it makes certification simpler)
-    1. We could state that we don’t want SR-IOV but any network acceleration should be based on DP-DK or SmartNIC.
-    1. I don’t want to be prescriptive over CPU pinning or NUMA but we can discuss.
-1. Network:
-    1. Load balancing – should we base this on Octavia or do we need a plug-in like AVI / F5?
-    1. OpenVSwitch?
-    1. Geneve/VXLAN tunnelling?
-    1. IPv6… when?
-
-1. Tagging:
-    1. We may want to define a standard for tagging resources.
-
-1. Logging, Monitoring, Alerting of the Cloud should ensure any failures in the control plane are either self-healed or alerted on and ideally some sort of centralised log file analysis should be possible without needing to trawl local log files.    Logging in the tenant space is left to the application.
-1. Backup of the control plane configuration (keystone DB, other DB, policy.json’s) to a remote object store.
-
--->
