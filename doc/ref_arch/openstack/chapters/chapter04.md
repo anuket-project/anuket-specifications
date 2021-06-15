@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 4. Cloud Infrastructure + VIM Component Level Architecture
-<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_com.png" alt="Complete" title="Bogo: Complete" width="35%"/></p>
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
@@ -131,8 +131,8 @@ The Reference Model specifies the Basic (B) and High Performance (H) profile typ
 | B1 | Basic Profile<br>No CPU over-subscription profile extension | 1:1 | Y | N | N | N | OVS-kernel |
 | B4 | Basic Profile<br>4x CPU over-subscription profile extension | 4:1 | Y | N | N | N | OVS-kernel |
 | HV | High Performance Profile | 1:1 | Y | Y | Y | Y | OVS-kernel |
-| HD | High Performance Profile<br>Network Intensive with DPDK profile extension | 1:1 | Y | Y | Y | Y | OVS-DPDK |
-| HS | High Performance Profile<br>Network Intensive with SR-IOV profile extension | 1:1 | Y | Y | Y | Y | SR-IOV |
+| HD | High Performance Profile<br> with DPDK profile extension | 1:1 | Y | Y | Y | Y | OVS-DPDK |
+| HS | High Performance Profile<br> with SR-IOV profile extension | 1:1 | Y | Y | Y | Y | SR-IOV |
 
 <p align="center"><b>Table 4-2: Profile Extensions and Capabilities</b></p>
 
@@ -257,7 +257,7 @@ Server Flavors:  HS
 SR-IOV at the Compute Server routes Guest traffic directly with a partitioned NIC card, bypassing the hypervisor and vSwitch software, which provides higher bps/pps throughput for the Guest VM.  OpenStack and MANO manage SR-IOV configurations for Tenant VM interfaces.
 
 - Server, Linux, and NIC card hardware standards include SR-IOV and VF requirements
-- Network Intensive Flavors for SR-IOV (ns series) with specific NIC/Leaf port configurations
+- High Performance profile for SR-IOV (hs series) with specific NIC/Leaf port configurations
 - OpenStack supports SR-IOV provisioning
 - Implement Security Policy, Tap/Mirror, QoS, etc. functions in the NIC, Leaf, and other places
 
@@ -396,7 +396,7 @@ Octavia supports provider drivers which allows third-party load balancing driver
 #### 4.2.3.4. Neutron Extensions
 OpenStack Neutron is an extensible framework that allows incorporation through plugins and API Extensions. API Extensions provides a method for introducing new functionality and vendor specific capabilities. Neutron plugins support new or vendor-specific functionality. Extensions also allow specifying new resources or extensions to existing resources and the actions on these resources.  Plugins implement these resources and actions.
 
-CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
+Anuket Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
 Every Neutron plugin needs to implement a minimum set of common [methods (actions for Train release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension.
 
@@ -428,9 +428,9 @@ Storage systems are available from multiple vendors and can also utilize commodi
 
 The document also includes a matrix for a number of proprietary drivers and some of the optional functions that these drivers support. This matrix is a handy tool to select storage backends that have the optional storage functions needed by the cloud operator. The cloud workload storage requirements helps determine the backends that should be deployed by the cloud operator.   The common storage backend attachment methods include iSCSI, NFS, local disk, etc. and the matrix list the supported methods for each of the vendor drivers. The OpenStack Cinder [Available Drivers]( https://docs.openstack.org/cinder/latest/drivers.html) documentation provides a list of all OpenStack compatible drivers and their configuration options.
 
-The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including CNTT required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by CNTT including managing volumes, snapshots, multi-storage backends, migrate volumes, etc.
+The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including Anuket required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by Anuket including managing volumes, snapshots, multi-storage backends, migrate volumes, etc.
 
-[Ceph](https://ceph.io/) is the default CNTT Reference Architecture storage backend and is discussed below.
+[Ceph](https://ceph.io/) is the default Anuket Reference Architecture storage backend and is discussed below.
 
 #### 4.2.4.1. Ceph Storage Cluster
 
@@ -625,7 +625,6 @@ Reference Model Chapter 4 and  5 provide information about the Cloud Infrastruct
 
 
 | Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | High Performance |
-
 |----------|-------------|--------------|-------------|
 | CPU allocation ratio (custom extra_specs) | infra.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
 | NUMA Awareness | infra.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<integer range of 0 to #numa_nodes – 1><br>To restrict an instance's vCPUs to a single host NUMA node, specify: --property hw:numa_nodes=1<br>Some compute intensive* workloads with highly sensitive memory latency or bandwidth requirements, the instance may benefit from spreading across multiple NUMA nodes: --property hw:numa_nodes=2   |

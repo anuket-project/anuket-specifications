@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 2. Architecture Requirements
-<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over the final points" title="Bogo: Dickering over the final points" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
@@ -45,8 +45,7 @@ This chapter includes both "Requirements" that must be satisifed in an RA-1 conf
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
-
-The tables below contain the requirements from the [Reference Model](../../../ref_model/chapters/chapter02.md#241-node-profiles-top-level-partitions) to cover the Basic (B) and High Performance (H) profiles, and their associated extensions.
+The tables below contain the requirements from the Reference Model to cover the Basic and High Performance profiles.
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 - Those relating to Cloud Infrastructure Software Profiles
@@ -344,10 +343,10 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
-| sec.oss.001 | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
-| sec.oss.002 | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.  | https://cve.mitre.org/ |
-| sec.oss.003 | High severity rated vulnerabilities **must** be fixed. | Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score. |
-| sec.oss.004 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
+| sec.oss.001 | Software | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
+| sec.oss.002 | Software | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software, https://cve.mitre.org/ |  |
+| sec.oss.003 | Software | High severity rated vulnerabilities **must** be fixed. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score. | |
+| sec.oss.004 | Software | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
 
 <p align="center"><b>Table 2-13:</b> Reference Model Requirements: Open Source Software Security Requirements</p>
 
@@ -355,35 +354,35 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 **Secure Code Stage Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.code.001 | SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|
+| Ref # | sub-category | Description |  Traceability |
+|---------|---------------|----------------|------------|
+| sec.code.001 | IaaC | SAST -Static Application Security Testing **must** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code for software vulnerabilities and gaps against best practices. Example: open source OWASP range of tools.|  |
 
 <p align="center"><b>Table 2-14:</b> Reference Model Requirements: IaaC Security Requirements, Secure Code Stage </p>
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.bld.003 | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. | Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |
+| Ref # | sub-category | Description |  Traceability |
+|---------|---------------|----------------|------------|
+| sec.bld.003 | IaaC | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |  |
 
 <p align="center"><b>Table 2-15:</b> Reference Model Requirements: IaaC Security Requirements, Continuous Build, Integration and Testing Stage </p>
 
 **Continuous Delivery and Deployment Stage Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.del.001 | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Example: GitLab uses the open source Clair engine for container image scanning.|
-| sec.del.002 | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |
-| sec.del.004 | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. | The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |
+| Ref # | sub-category | Description |  Traceability |
+|---------|---------------|----------------|------------|
+| sec.del.001 | IaaC | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Example: GitLab uses the open source Clair engine for container image scanning.|  |
+| sec.del.002 | IaaC | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |  |
+| sec.del.004 | IaaC | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |  |
 
 <p align="center"><b>Table 2-16:</b> Reference Model Requirements: IaaC Security Requirements, Continuous Delivery and Deployment Stage </p>
 
 **Runtime Defence and Monitoring Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.run.001 | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|
+| Ref # | sub-category | Description |  Traceability |
+|---------|---------------|----------------|------------|
+| sec.run.001 | IaaC | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|  |
 
 <p align="center"><b>Table 2-17:</b> Reference Model Requirements: IaaC Security Requirements, Runtime Defence and Monitoring Stage </p>
 
@@ -409,7 +408,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | gen.ost.01 | Open source | The Architecture **must** use OpenStack APIs.| [RA-1 5.3](./chapter05.md#5.3) |
 | gen.ost.02 | Open source | The Architecture **must** support dynamic request and configuration of virtual resources (compute, network, storage) through OpenStack APIs. | [RA-1 5.3](./chapter05.md#53-consolidated-set-of-apis) |
 | gen.rsl.01 | Resiliency | The Architecture **must** support resilient OpenStack components that are required for the continued availability of running workloads. | |
-| req.gen.avl.01 | Availability | The Architecture **must** provide High Availability for OpenStack components. | [RA-1 4.2 "Underlying Resources"](./chapter04.md#42-underlying-resources) |
+| gen.avl.01 | Availability | The Architecture **must** provide High Availability for OpenStack components. | [RA-1 4.2 "Underlying Resources"](./chapter04.md#42-underlying-resources) |
 
 <p align="center"><b>Table 2-19:</b> General Requirements</p>
 
@@ -433,7 +432,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | inf.ntw.05 | Network | The Architecture **must** allow for East/West tenant traffic within the cloud (via tunnelled encapsulation overlay such as VXLAN or Geneve). | [RA-1 4.2.3. "Network Fabric"](./chapter04.md#423-network-fabric) |
 | inf.ntw.07 | Network | The Architecture **must** support network [resiliency](../../../common/glossary.md#cloud-platform-abstraction-related-terminology). | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
 | inf.ntw.10 | Network | The Cloud Infrastructure Network Fabric **must** be capable of enabling highly available (Five 9’s or better) Cloud Infrastructure. | [RA-1 3.4.2.2. "Network"](./chapter03.md#3422-network) |
-| inf.ntw.15 | Network | The Architecture **must** support multiple networking options for Cloud Infrastructure to support various infrastructure profiles (Basic and Network Intensive<!-- , and Compute Intensive -->).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
+| inf.ntw.15 | Network | The Architecture **must** support multiple networking options for Cloud Infrastructure to support various infrastructure profiles (Basic and High Performance).| [RA-1 4.2.3.4. "Neutron ML2-plugin Integration"](./chapter04.md#4234-neutron-ml2-integration) and ["OpenStack Neutron Plugins"](https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers) |
 | inf.ntw.16 | Network | The Architecture **must** support dual stack IPv4 and IPv6 for tenant networks and workloads.| |
 
 <p align="center"><b>Table 2-20:</b> Infrastructure Requirements</p>
@@ -446,7 +445,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |----|----------------|----------------------|-----------|
 | vim.01 | General | The Architecture **must** allow infrastructure resource sharing. | [RA-1 3.2. "Consumable Infrastructure Resources and Services"](./chapter03.md#32-consumable-infrastructure-resources-and-services) |
 | vim.03 | General | The Architecture **must** allow VIM to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
-| vim.05  General | The Architecture **must** include image repository management. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
+| vim.05 | General | The Architecture **must** include image repository management. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
 | vim.07 | General | The Architecture **must** support multi-tenancy. | [RA-1 3.2.1. "Multi-Tenancy"](./chapter03.md#321-multi-tenancy-execution-environment) |
 | vim.08 | General | The Architecture **must** support resource tagging. | ["OpenStack Resource Tags"](https://specs.openstack.org/openstack/api-wg/guidelines/tags.html) |
 
@@ -466,7 +465,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | int.api.07 | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services except at Edge/Far Edge clouds. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) |
 | int.api.08 | API | The Architecture **must** provide APIs needed to discover and manage Cloud Infrastructure resources. | [RA-1 5.2.7. "Placement"](./chapter05.md#527-placement) |
 | int.api.09 | API | The Architecture **must** provide APIs to access the orchestration service. | [RA-1 5.2.8 "Heat"](./chapter05.md#528-heat) |
-| int.api.10 | API | The Architecture must expose the latest version and microversion of the APIs for the given CNTT OpenStack release for each of the OpenStack core services. | [RA-1 5.2 Core OpenStack Services APIs](./chapter05.md#52-core-openstack-services-apis) |
+| int.api.10 | API | The Architecture must expose the latest version and microversion of the APIs for the given Anuket OpenStack release for each of the OpenStack core services. | [RA-1 5.2 Core OpenStack Services APIs](./chapter05.md#52-core-openstack-services-apis) |
 
 <p align="center"><b>Table 2-22:</b> Interfaces and APIs Requirements</p>
 
@@ -475,7 +474,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |----|--------------|---------------|-----------------|
-| tnt.gen.01 | General | The Architecture **must** support multi-tenancy. |  **duplicate of req.vim.07** |
+| tnt.gen.01 | General | The Architecture **must** support multi-tenancy. |  **duplicate of vim.07** |
 | tnt.gen.02 | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) and [3.3.1.4 Cloud Workload Services](./chapter03.md#3314-cloud-workload-services) |
 
 <p align="center"><b>Table 2-23:</b> Tenant Requirements</p>
@@ -515,7 +514,7 @@ The requirements listed in this section are optional, and are not required in or
 | gen.cnt.01 | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | gen.cnt.02 | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
 | gen.scl.01 | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likely be supported through [Senlin](https://docs.openstack.org/senlin/train/), cluster management service. |
-| gen.rsl.02 | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to `req.gen.rsl.01`. | |
+| gen.rsl.02 | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to gen.rsl.01. | |
 
 <p align="center"><b>Table 2-26:</b> General Recommendations</p>
 
@@ -537,7 +536,7 @@ The requirements listed in this section are optional, and are not required in or
 | inf.ntw.17 | Network | The Architecture **should** use dual stack IPv4 and IPv6 for Cloud Infrastructure internal networks. | |
 | inf.acc.01 | Acceleration | The Architecture **should** support Application Specific Acceleration (exposed to VNFs). | [RA-1 3.2.6. "Acceleration"](./chapter03.md#326-acceleration) |
 | inf.acc.02 | Acceleration | The Architecture **should** support Cloud Infrastructure Acceleration (such as SmartNICs). | ["OpenStack Future - Specs defined"](https://specs.openstack.org/openstack/neutron-specs/specs/stein/neutron-ovs-agent-support-baremetal-with-smart-nic.html) |
-| inf.acc.03 | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
+| inf.acc.03 | Acceleration | The Architecture **may** rely on SR-IOV PCI-Pass through to provide acceleration to VNFs. | |
 | inf.img.01 | Image | The Architecture **should** make the immutable images available via location independent means. | [RA-1 4.3.1.2. "Glance"](./chapter04.md#4312-glance) |
 
 <p align="center"><b>Table 2-27:</b> Infrastructure Recommendations</p>
@@ -561,7 +560,7 @@ The requirements listed in this section are optional, and are not required in or
 | Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 | int.acc.01 | Acceleration | The Architecture **should** provide an open and standard acceleration interface to VNFs. |  |
-| int.acc.02 | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of `req.inf.acc.03` under "Infrastructure Recommendations" |
+| int.acc.02 | Acceleration | The Architecture **should not** rely on SR-IOV PCI-Pass through for acceleration interface exposed to VNFs. | duplicate of inf.acc.03 under "Infrastructure Recommendations" |
 
 <p align="center"><b>Table 2-29:</b> Interfaces and APIs Recommendations</p>
 
@@ -612,7 +611,7 @@ The requirements listed in this section are optional, and are not required in or
 | Ref # | sub-category | Description |  Notes |
 |-------|-------|-------|---------|
 | sec.sys.014 | Access | The Platform **should** use Linux Security Modules such as SELinux to control access to resources. | |
-| sec.sys.020 | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment. | Zero Trust Architecture (ZTA) described in NIST SP 800-207 |
+| sec.sys.020 | Access | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment. | Zero Trust Architecture (ZTA) described in NIST SP 800-207 |
 
 <p align="center"><b>Table 2-34:</b> Platform and Access Recommendations</p>
 
@@ -621,7 +620,7 @@ The requirements listed in this section are optional, and are not required in or
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.ci.002 | Confidentiality/Integrity | The Platform **should** support self-encrypting storage devices |  |
-| sec.ci.009 | For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys. | |
+| sec.ci.009 | Confidentiality/Integrity |For sensitive data encryption, the key management service **should** leverage a Hardware Security Module to manage and protect cryptographic keys. | |
 
 <p align="center"><b>Table 2-35:</b> Confidentiality and Integrity Recommendations</p>
 
@@ -654,16 +653,16 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
-| sec.mon.014 | Monitoring | The Monitoring systems **should** not impact IAAS, PAAS, and SAAS SLAs including availability SLAs |  |
+| sec.mon.014 | Monitoring | The Monitoring systems **should** not impact IaaS, PaaS, and SaaS SLAs including availability SLAs |  |
 | sec.mon.016 | Monitoring | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing |  |
 
 <p align="center"><b>Table 2-39:</b> Monitoring and Security Audit Recommendations</p>
 
 #### 2.4.8.8. Open Source Software Security (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
 
-| Ref | Requirement | Definition/Note |
-|---|----|----|
-| req.sec.oss.004 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
+| Ref # | sub-category | Description |  Notes |
+|---|----|---|----|
+| sec.oss.004 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
 
 p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendations</p>
 
@@ -671,51 +670,51 @@ p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendation
 
 **Secure Design and Architecture Stage**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.arch.001 | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Methodology to identify and understand threats impacting a resource or set of resources. It may be done manually or using tools like open source OWASP Threat Dragon |
-| sec.arch.002 | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Typically done manually by internal or independent assessors.  |
+| Ref # | sub-category | Description |  Notes |
+|---|----|---|----|
+| sec.arch.001 | IaaC | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger. Methodology to identify and understand threats impacting a resource or set of resources. | It may be done manually or using tools like open source OWASP Threat Dragon |
+| sec.arch.002 | IaaC | Security Control Baseline Assessment **should** be performed during the Secure Design and Architecture stage triggered by Software Feature Design trigger.| Typically done manually by internal or independent assessors.  | 
 
 <p align="center"><b>Table 2-41:</b> Reference Model Requirements: IaaC Security, Design and Architecture Stage</p>
 
 **Secure Code Stage Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.code.002 | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. | Security testing that analyses application source code or compiled code for software components with known vulnerabilities. Example: open source OWASP range of tools.  |
-| sec.code.003 | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  |
-| sec.code.004 | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. | On the local machine: through the IDE or integrated test suites; triggered on completion of coding be developer. |
-| sec.code.005 | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. | Continuous delivery pre-deployment: scanning prior to deployment. |
+| Ref # | sub-category | Description |  Notes |
+|---|----|---|----|
+| sec.code.002 | IaaC | SCA – Software Composition Analysis **should** be applied during Secure Coding stage triggered by Pull, Clone or Comment trigger. Security testing that analyses application source code or compiled code for software components with known vulnerabilities. | Example: open source OWASP range of tools.  | 
+| sec.code.003 | IaaC | Source Code Review **should** be performed continuously during Secure Coding stage. | Typically done manually.  | 
+| sec.code.004 | IaaC | Integrated SAST via IDE Plugins **should** be used during Secure Coding stage triggered by Developer Code trigger. On the local machine: through the IDE or integrated test suites; triggered on completion of coding by developer. |  |
+| sec.code.005 | IaaC | SAST of Source Code Repo **should** be performed during Secure Coding stage triggered by Developer Code trigger. Continuous delivery pre-deployment: scanning prior to deployment. |  |
 
 <p align="center"><b>Table 2-42:</b> Reference Model Requirements: IaaC Security, Secure Code Stage </p>
 
 **Continuous Build, Integration and Testing Stage Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.bld.001 | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.|
-| sec.bld.002 | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.  |
-| sec.bld.004 | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. Example: OWASP ZAP. |
-| sec.bld.005 | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
-| sec.bld.006 | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. Example:  Contrast Community Edition. |
+| Ref # | sub-category | Description |  Notes |
+|---|----|---|----|
+| sec.bld.001 | IaaC | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.| 
+| sec.bld.002 | IaaC | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger.| Example: open source OWASP range of tools.  |
+| sec.bld.004 | IaaC | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. | Example: OWASP ZAP. |
+| sec.bld.005 | IaaC | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. | Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
+| sec.bld.006 | IaaC | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. | Example:  Contrast Community Edition. |
 
 <p align="center"><b>Table 2-43:</b> Reference Model Requirements: IaaC Security, Continuous Build, Integration and Testing Stage </p>
 
 **Continuous Delivery and Deployment Stage Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.del.003 | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning. |
+| Ref # | sub-category | Description |  Notes |
+|---|----|---|----|
+| sec.del.003 | IaaC | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning. | 
 
 <p align="center"><b>Table 2-44:</b> Reference Model Requirements: IaaC Security, Continuous Delivery and Deployment Stage </p>
 
 **Runtime Defence and Monitoring Requirements**
 
-| Ref | Requirement | Definition/Note |
-|---|----|---|
-| sec.run.002 | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  |
-| sec.run.003 | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
-| sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |
+| Ref # | sub-category | Description |  Notes |
+|---|----|---|----|
+| sec.run.002 | IaaC | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  |  |
+| sec.run.003 | IaaC | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. | Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
+| sec.run.004 | IaaC | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |
 
 <p align="center"><b>Table 2-45:</b> Reference Model Requirements: Iaac Security, Runtime Defence and Monitoring Stage </p>
 
