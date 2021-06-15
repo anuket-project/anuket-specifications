@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 2. Architecture Requirements
-<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_dfp.png" alt="Dickering over the final points" title="Bogo: Dickering over the final points" width="35%"/></p>
 
 ## Table of Contents
 * [2.1 Introduction](#2.1)
