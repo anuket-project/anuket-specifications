@@ -23,6 +23,7 @@
 This chapter will use the requirements defined in the overall Reference Model and only make additional entries in section [2.3](#2.3) if there are additional requirements needed for this Reference Architecture.
 
 ## 2.1.1 Definitions
+
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## 2.2 Reference Model Requirements
@@ -30,6 +31,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 The tables below contains the requirements from the Reference Model to cover the Basic and Network Intensive profiles.  The table also includes a reference to the specification from [Chapter 04 - Architecture Specification](./chapter04.md) to ensure traceability.
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
+
 - Those relating to Cloud Infrastructure Software Profiles
 - Those relating to Cloud Infrastructure Hardware Profiles
 - Those relating to Storage Extensions (S extension)
@@ -312,6 +314,5 @@ The requirements in this section are to be delivered in addition to those in [se
 | `req.int.api.02` | API | General | The Architecture **must** support the usage of a Kubernetes Application package manager using the Kubernetes API, like Helm v3. |[ra2.pkg.001](chapter04.md#48-kubernetes-application-package-manager)|
 | `req.int.api.03` | API | General | The Architecture **must** support stable features in its APIs. ||
 | `req.int.api.03` | API | General | The Architecture **must** support limited backward compatibility in its APIs. Support for the whole API must not be dropped, but the schema or other details can change. ||
-
 
 <p align="center"><b>Table 2-7:</b> Kubernetes Architecture Requirements</p>
