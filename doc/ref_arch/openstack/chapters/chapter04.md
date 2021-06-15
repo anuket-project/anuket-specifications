@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 4. Cloud Infrastructure + VIM Component Level Architecture
-<p align="right"><img src="../figures/bogo_com.png" alt="Complete" title="Complete" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_com.png" alt="Complete" title="Bogo: Complete" width="35%"/></p>
 
 ## Table of Contents
 * [4.1 Introduction](#4.1)
