@@ -37,7 +37,7 @@ This chapter mainly covers the overall requirement for Reference Conformance tes
 
 <!---Validations is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.--->
 
-All Terms utilized throughput this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI conformance.
+All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI conformance.
 
 <a name="2.1"></a>
 ## 2.1 Introduction
