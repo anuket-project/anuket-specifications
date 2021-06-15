@@ -106,8 +106,6 @@ NFVi profiles are proposed as reference:
 
  - **Network Intensive**: for VNF that require predictable computing performance, high network throughput and low network latency.
 
- <!---- **Compute Intensive**: for VNF that require predictable computing performance and low network latency.--->
-
 <a name="5.2.2"></a>
 ### 5.2.2 Protoype VNFs
 
@@ -320,7 +318,7 @@ integrated system for consuming.
 **Results.**  Test results reporting will be communicated as a boolean (pass/fail), or Measurements Only.
 
 -   **Functional Pass/Fail**  signals the assertions set in a test script verify the Functional Requirements (FR) has met its stated objective as delivered by the developer. This will consist of both positive validation of expected behavior, as well as negative based testing when to confirm error handling is working as expected.
--   **Performance-based Pass/Fail**  determination will be made by comparing Non-Functional (NFR) KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc. 
+-   **Performance-based Pass/Fail**  determination will be made by comparing Non-Functional (NFR) KPIs (obtained after testing) with the Golden KPIs. Some of the examples of performance KPIs include, but not limited to: TCP bandwidth, UDP throughput, Memory latency, Jitter, IOPS etc.
 -   **Measurement Results**. Baseline Measurements will be performed when there are no benchmark standards to compare results, or established FRs/NFRs for which to gauge application / platform behavior in an integrated environment, or under load conditions. In these cases, test results will be executed to measure the application, platform, then prepare FRs/NFRs for subsequent enhancements and test runs.
 
 **Formats**.  As part of execution management, system produces the result in JSON format which can be represented in various form like YAML, CSV, Table, etc.
@@ -448,7 +446,7 @@ CNTT defines the following four category testing which should be consistent with
 
 |  VNF Test Case Category   | Requirement Number  | Type (Measurement/Boolean)  |Definition/Description   |
 | ------------ | ------------ | ------------ | ------------ |
-|  Compliance | VNF.COMPreq.001  |  Boolean (i.e. Pass/Fail) |  Test case “must”perform a platform check against the Open Stack requirements and VNF package structure and syntax requirements  | 
+|  Compliance | VNF.COMPreq.001  |  Boolean (i.e. Pass/Fail) |  Test case “must”perform a platform check against the Open Stack requirements and VNF package structure and syntax requirements  |
 |  Verification |  VNF.VERIFYreq.001 |  Boolean (i.e. Pass/Fail) | Test case “must” perform on-boarding/ verification life cycle operation validation  |
 |  Validation | VNF.VALIDreq.001  |  Boolean (i.e. Pass/Fail) | Test case “must” perform API validation tests to verify operability  |
 |  Performance  | VNF.PERFreq.001  | Measurement  | Test case “must” execute various performance related testing and facilitate for benchmarking the VNF performance on different profile and scenarios  |

@@ -30,7 +30,7 @@ Chapter 3 introduced the components of an OpenStack-based IaaS
 -	Cloud Infrastructure Management Software (VIM: OpenStack) core services and architectural constructs needed to consume and manage the consumable resources
 -	Underlying physical compute, storage and networking resources
 
-This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter gets into details into items such as the implementation support for flavors.
+This chapter delves deeper into the capabilities of these different resources and their needed configurations to create and operate an OpenStack-based IaaS cloud. This chapter specifies details on the structure of control and user planes, operating systems, hypervisors and BIOS configurations, and architectural details of underlay and overlay networking, and storage, and the distribution of OpenStack service components among nodes. The chapter also covers implementation support for the [Reference Model profiles and flavours](../../../ref_model/chapters/chapter02.md#24-profiles--flavours); the OpenStack flavor types capture both the sizing and the profile configuration (of the host).
 
 
 <a name="4.2"></a>
@@ -115,58 +115,36 @@ Networks nodes are mainly used for L3 traffic management for overlay tenant netw
 
 #### 4.2.2.5. Compute Nodes
 
-This section specifies the compute node configurations to support the flavors. Because a flavor has the same capabilities but different geometry sizes, the term “flavor series” is used.
+This section specifies the compute node configurations to support the Basic and High Performance profiles; in OpenStack this would be accomplished by specifying the configurations when creating "flavors". The cloud operator may choose to implement certain profile-extensions ([RM 2.4 Profile Extensions](../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations)) as a set of standard configurations, of a given profile, capturing some of the variability through different values or extra specifications.
 
 -	The software and hardware configurations are as specified in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 -	BIOS requirement
     -	The general BIOS requirements are described in the [Reference Model chapter 5.4](../../../ref_model/chapters/chapter05.md#5.4)
 
-Reference Model Chapter 4 [Table 4-13](../../../ref_model/chapters/chapter04.md#predefined-compute-flavours) specifies flavor geometry and capabilities.  For convenience, the flavor geometry is reproduced in Table 4-1.
 
-**Flavor Geometry**
+**Example Profiles and their Extensions**
 
-| .conf | vCPU (c) | RAM (r) | Local Disk (d) | Management interface |
-|----|----|----|----|----|
-| .tiny | 1 | 512 MB | 1 GB | 1 Gbps |
-| .small | 1 | 2 GB | 20 GB  | 1 Gbps |
-| .medium | 2 | 4 GB | 40 GB | 1 Gbps |
-| .large | 4 | 8 GB | 80 GB | 1 Gbps |
-| .2xlarge* | 8 | 16 GB | 160 GB | 1 Gbps |
-| .4xlarge* | 16 | 32 GB | 320 GB | 1 Gbps |
-| .8xlarge* | 32 | 64 GB | 640 GB | 1 Gbps |
+The Reference Model specifies the Basic (B) and High Performance (H) profile types. The Reference Model also provides a choice of network acceleration capabilities utilising, for example, DPDK and SR-IOV technologies. Table 4-2 lists a few simple examples of profile extensions and some of their capabilities.
 
-<p align="center"><b>Table 4-1: Flavor Geometries</b></p>
+| Profile Extensions | Description | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
+|----|----|----|----|----|----|----|----|
+| B1 | Basic Profile<br>No CPU over-subscription profile extension | 1:1 | Y | N | N | N | OVS-kernel |
+| B4 | Basic Profile<br>4x CPU over-subscription profile extension | 4:1 | Y | N | N | N | OVS-kernel |
+| HV | High Performance Profile | 1:1 | Y | Y | Y | Y | OVS-kernel |
+| HD | High Performance Profile<br>Network Intensive with DPDK profile extension | 1:1 | Y | Y | Y | Y | OVS-DPDK |
+| HS | High Performance Profile<br>Network Intensive with SR-IOV profile extension | 1:1 | Y | Y | Y | Y | SR-IOV |
 
-**Flavor Series**
-
-The Reference Model specifies the Basic (B) and Network Intensive (N) instance types (or flavor series). The Reference Model also specifies support for two different CPU allocation ratio values for the Basic flavor types, and choice of network acceleration capabilities utilising DPDK and SR-IOV technologies; please note SR-IOV is supported under an exception policy. Table 4-2 lists the capabilities for each flavor series.
-
-| Flavor Series | CPU Allocation Ratio | SMT | CPU Pinning | NUMA | Huge Pages | Data Traffic |
-|----|----|----|----|----|----|----|
-| B1 | 1:1 | Y | N | N | N | OVS-kernel |
-| B4 | 4:1 | Y | N | N | N | OVS-kernel |
-| NV | 1:1 | Y | Y | Y | Y | OVS-kernel |
-| ND | 1:1 | Y | Y | Y | Y | OVS-DPDK |
-| NS | 1:1 | Y | Y | Y | Y | SR-IOV |
-
-<p align="center"><b>Table 4-2: Flavor Capabilities</b></p>
+<p align="center"><b>Table 4-2: Profile Extensions and Capabilities</b></p>
 
 **BIOS Settings**
 
-SMT, CPU Pinning, NUMA and Huge Pages are configured in the BIOS.
+A number of capabilities need to be enabled in the BIOS (such as NUMA and SMT); the Reference Model section on "[Cloud Infrastructure Software profile description](../../../ref_model/chapters/chapter05.md#5.1)" specifies where each of the capabilities is required to be configured. Please note that capabilities may need to be configured in multiple systems. For OpenStack, we also need to set the following boot parameters:
 
-Additionally, for OpenStack, we need to set the following boot parameters:
-
-| BIOS/boot Parameter | Basic  | Network Intensive |
+| BIOS/boot Parameter | Basic  | High Performance |
 |---------------|-----------|------------------|
 | Boot disks | RAID 1 | RAID 1 |
 
-<!---
-Had to delete the Column for Compute intensive as commenting in table  didn't work
-Entries were:
-Boot Disks: RAID 1
-CPU reservation for host: 1 core per NUMA
---->
+
 -	How many nodes to meet SLA
     - minimum: two nodes per profile
 -	HW specifications
@@ -192,28 +170,22 @@ CPU reservation for host: 1 core per NUMA
 | Average RAM per instance | ri |
 
 
-| | | Basic | Network Intensive |
+| | | Basic | High Performance |
 |---------------|------------|------------|------------|
 | # of VMs per node (vCPU) | (s*c*t*o)/v | 4*(s*c*t)/v | (s*c*t)/v|  
 | # of VMs per node (RAM) | rt/ri | rt/ri | rt/ri |  
 | | | | |  
 | Max # of VMs per node|  | min(4*(s*c*t)/v, rt/ri)| min((s*c*t)/v, rt/ri)|  
 
-<!---
-Had to delete the Column for Compute intensive as commenting in table  didn't work
-Entries were:
-# of VMs per node (vCPU): s*c*t)/v| (s*c*t)/v
-# of VMs per node (RAM): rt/ri
-Max # of VMs per node: min((s*c*t)/v, rt/ri)
---->
+
 Caveats:
 -	These are theoretical limits
 -	Affinity and anti-affinity rules, among other factors, affect the sizing
 
 #### 4.2.2.6. Compute Resource Pooling Considerations
 
--	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, network intensive) leads to inefficient use of the hardware as the server resources are specific to the flavour. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another flavour type.
--	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support a flavour or controller. The single pool is valuable with unpredictable workloads or when the demand of certain flavours is insufficient to justify individual hardware selection.
+-	Multiple pools of hardware resources where each resource pool caters for workloads of a specific profile (for example, High Performance) leads to inefficient use of the hardware as the server resources are specific to the profile. If not properly sized or when demand changes can lead to oversupply/starvation scenarios; reconfiguration may not be possible because of the underlying hardware or inability to vacate servers for reconfiguration to support another profile type.
+-	Single pool of hardware resources including for controllers have the same CPU type. This is operationally efficient as any server can be utilized to support any profile or controller. The single pool is valuable with unpredictable workloads or when the demand of certain profiles is insufficient to justify individual hardware selection.
 
 #### 4.2.2.7. Reservation of Compute Node Cores
 The [RA-1 2.3.2 Infrastructure Requirements](./chapter02.md#232-infrastructure-requirements) req.inf.com.08 requires the allocation of "certain number of host cores/threads to non-tenant workloads such as for OpenStack services." A number ("n") of random cores can be reserved for host services (including OpenStack services) by specifying the following in nova.conf:
@@ -229,7 +201,7 @@ If we wish to dedicate specific cores for host processing we need to consider tw
 
 Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Train release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
 
-Let us consider a compute host with 20 cores and SMT enabled (let us disregard NUMA) and the following parameters have been specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vCPUs numbered '0' and '20', '1' and '21', etc. are siblings:
+Let us consider a compute host with 20 cores with SMT enabled (let us disregard NUMA) and the following parameters specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vCPUs numbered '0' and '20', '1' and '21', etc. are siblings:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cpu_shared_set = 1-7,9-19,21-27,29-39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (can also be specified as cpu_shared_set = 1-19,^8,21-39,^28)
 
@@ -243,21 +215,23 @@ When a VM instance is created the vCPUs are, by default, not assigned to a parti
 
 While an instance with pinned CPUs cannot use CPUs of another pinned instance, this does not apply to unpinned instances; an unpinned instance can utilize the pinned CPUs of another instance. To prevent unpinned instances from disrupting pinned instances, the hosts with CPU pinning enabled are pooled in their own host aggregate and hosts with CPU pinning disabled are pooled in another non-overlapping host aggregate.
 
-#### 4.2.2.9 Compute node configurations for Profiles and Flavors
+#### 4.2.2.9 Compute node configurations for Profiles and OpenStack Flavors
 
-This section specifies the compute node configurations to support the flavors.
+This section specifies the compute node configurations to support profiles and flavors.
 
 **Cloud Infrastructure Hardware Profile**
 
-The Cloud Infrastructure Hardware (or simply “host”) profile and configuration parameters are utilised in the reference architecture to define different hardware profiles; these are used to configure the BIOS settings on a physical server.
+The Cloud Infrastructure Hardware (or simply “host”) profile and configuration parameters are utilised in the reference architecture to define different hardware profiles; these are used to configure the BIOS settings on a physical server and configure utility software (such as Operating System and Hypervisor).
 
-A flavor (see RM Chapters 4 and 5) defines the characteristics (“capabilities”) of Virtual Machines (VMs or vServers) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between flavors and host profiles. A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Host profiles are immutable and hence when a configuration needs to be changed, a new host profile is created.
+An OpenStack flavor defines the characteristics (“capabilities”) of Virtual Machines (VMs or vServers) that will be deployed on hosts assigned a host-profile. A many to many relationship exists between flavors and host profiles. Multiple flavors can be defined with overlapping capability specifications with only slight variations that VMs of these flavor types can be hosted on similary configured (host profile) compute hosts. Similarly, a VM can be specified with a flavor that allows it to be hosted on, say, a host configured as per the Basic profile or a host configured as per the High Performance profile. Please note that workloads that specify a VM flavor so as to be hosted on a host configured as per the High Performance profile, may not be able to run (adequately with expected performance) on a host configured as per the Basic profile.
+
+A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. Host profiles are immutable and hence when a configuration needs to be changed, a new host profile is created.
 
 **CPU Allocation Ratio and CPU Pinning**
 
-Host profiles need to be created. for example, for each of the CPU Allocation Ratios specified for a flavor; this gives rise in the different flavor series. A given host (compute node) can only support a single CPU Allocation Ratio. Thus, to support the 2 Basic flavor types with CPU Allocation Ratios of 1.0 and 4.0 we will need to create 2 different host profiles and separate host aggregates for each of the host profiles. The CPU Allocation Ratio is set in the hypervisor on the host.
+A given host (compute node) can only support a single CPU Allocation Ratio. Thus, to support the B1 and B4 Basic profile extensions with CPU Allocation Ratios of 1.0 and 4.0 we will need to create 2 different host profiles and separate host aggregates for each of the host profiles. The CPU Allocation Ratio is set in the hypervisor on the host.
 
-When a CPU Allocation Ratio exceeds 1.0 then CPU Pinning also needs to be disabled.
+> When the CPU Allocation Ratio exceeds 1.0 then CPU Pinning also needs to be disabled.
 
 
 **Server Configurations**
@@ -272,11 +246,11 @@ Physical Connections/Cables are generally the same within a zone, regardless of 
 
 **Compute Bond Port:**  TOR port maps VLANs directly with IRBs on the TOR pair for tunnel packets and Control Plane Control and Storage packets.  These packets are then routed on the underlay network GRT.
 
-Server Flavors:  B1, B4, NV, ND
+Server Flavors:  B1, B4, HV, HD
 
 **Compute SR-IOV Port:**  TOR port maps VLANs with bridge domains that extend to IRBs, using VXLAN VNI.  The TOR port associates each packet’s outer VLAN tag with a bridge domain to support VNF interface adjacencies over the local EVPN/MAC bridge domain.  This model also applies to direct physical connections with transport elements.
 
-Server Flavors:  NS
+Server Flavors:  HS
 
 **Notes on SR-IOV**
 
@@ -297,7 +271,7 @@ SR-IOV-based networking for Tenant Use Cases is required where vSwitch-based net
 
 **Example Host Configurations**
 
-_Host configurations for B1, B4 Flavor Series_
+_Host configurations for B1, B4 Profile Extensions_
 
 
 <p align="center"><img src="../figures/RA1-Ch04-Basic-host-config.png" alt=" Basic Profile Host Configuration"><b> Figure 4-1: Basic Profile Host Configuration (example and simplified).</b></p>
@@ -312,7 +286,7 @@ Let us refer to the data traffic networking configuration of Figure 4-1 to be pa
 | SMT  | BIOS | Enable | Enable |
 | NUMA | BIOS | Disable | Disable |
 | Huge Pages  | BIOS | No | No |
-| Flavor Series | | B1 | B4 |
+| Profile Extensions | | B1 | B4 |
 <p align="center"><b>Table 4-3: Configuration of Basic Flavor Capabilities</b></p>
 
 
@@ -322,48 +296,50 @@ Figure 4-2 shows the networking configuration where the storage and OAM share ne
 
 Let us refer to the above networking set up to be part of the hp-B1-b and hp-B4-b host profiles but the basic configurations as specified in Table 4-3.
 
-In our example, the flavor series B1 and B4, are each mapped to two different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b respectively. Different network configurations, reservation of CPU cores, Lag values, etc. result in different host profiles.
+In our example, the Profile Extensions B1 and B4, are each mapped to two different host profiles hp-B1-a and hp-B1-b, and hp-B4-a and hp-B4-b respectively. Different network configurations, reservation of CPU cores, Lag values, etc. result in different host profiles.
 
-To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
+To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OpenStack agents), the following needs to be configured
 
 | GRUB bootloader Parameter |Description |Values |
 |----|----|----|
 | isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants | isolcpus=1-19, 21-39, 41-59, 61-79 |
 
-_Host configuration for NV Flavor Series_
+_Host configuration for HV Profile Extensions_
 
 
-The above examples of host networking configurations for the B1 and B4 flavor series are also suitable for the NV flavor series; however, the hypervisor and BIOS settings will be different (see table below) and hence there will be a need for different host profiles. Table 4-4 gives examples of three different host profiles; one each for NV, ND and NS flavor series.
+The above examples of host networking configurations for the B1 and B4 Profile Extensions are also suitable for the HV Profile Extensions; however, the hypervisor and BIOS settings will be different (see table below) and hence there will be a need for different host profiles. Table 4-4 gives examples of three different host profiles; one each for HV, HD and HS Profile Extensions.
 
-|  | Configured in | Host profile: hp-nv-a | Host profile: hp-nd-a | Host profile: hp-ns-a |
+|  | Configured in | Host profile: hp-hv-a | Host profile: hp-hd-a | Host profile: hp-hs-a |
 |----|----|----|----|----|
+| Profile Extensions | | HV | HD | HS |
 | CPU Allocation Ratio | Hypervisor | 1:1 | 1:1 | 1:1 |
-| CPU Pinning | BIOS | Enable | Enable | Enable |
+| NUMA | BIOS, Operating System, Hypervisor and OpenStack Nova Scheduler | Enable | Enable | Enable |
+| CPU Pinning (requires NUMA) | OpenStack Nova Scheduler | Enable | Enable | Enable |
 | SMT  | BIOS | Enable | Enable | Enable |
-| NUMA | BIOS | Enable | Enable | Enable |
 | Huge Pages  | BIOS | Yes | Yes | Yes |
-| Flavor Series | NV | ND | NS |
-<p align="center"><b>Table 4-4: Configuration of Network Intensive Flavor Capabilities</b></p>
 
-_Host Networking configuration for ND Flavor Series_
+<p align="center"><b>Table 4-4: Configuration of High Performance Flavor Capabilities</b></p>
 
-An example of the data traffic configuration for the ND (OVS-DPDK) flavor series is shown in Figure 4-3.
+ 
+_Host Networking configuration for HD Profile Extensions_
 
-<p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-DPDK.png" alt="Network Intensive Profile Host Configuration with DPDK acceleration "><b> Figure 4-3: Network Intensive Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
+An example of the data traffic configuration for the HD (OVS-DPDK) Profile Extensions is shown in Figure 4-3.
 
-To ensure Tenant and DPDK CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
+<p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-DPDK.png" alt="High Performance Profile Host Configuration with DPDK acceleration "><b> Figure 4-3: High Performance Profile Host Configuration with DPDK acceleration (example and simplified).</b></p>
+
+To ensure Tenant and DPDK CPU isolation from the host services (Operating System (OS), hypervisor and OpenStack agents), the following needs to be configured
 
 | GRUB bootloader Parameter |Description |Values |
 |----|----|----|
 | isolcpus (Applicable only on Compute Servers) | A set of cores isolated from the host processes. Contains vCPUs reserved for Tenants and DPDK | isolcpus=3-19, 23-39, 43-59, 63-79 |
 
-_Host Networking configuration for NS Flavor Series_
+_Host Networking configuration for HS Profile Extensions_
 
-An example of the data traffic configuration for the NS (SR-IOV) flavor series is shown in Figure 4-4.
+An example of the data traffic configuration for the HS (SR-IOV) Profile Extensions is shown in Figure 4-4.
 
-<p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-SRIOV.png" alt=" Network Intensive Profile Host Configuration with SR-IOV "><b> Figure 4-4: Network Intensive Profile Host Configuration with SR-IOV (example and simplified).</b></p>
+<p align="center"><img src="../figures/RA1-Ch04-Network-Intensive-SRIOV.png" alt="High Performance Profile Host Configuration with SR-IOV "><b> Figure 4-4: High Performance Profile Host Configuration with SR-IOV (example and simplified).</b></p>
 
-To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OSTK agents), the following needs to be configured
+To ensure Tenant CPU isolation from the host services (Operating System (OS), hypervisor and OpenStack agents), the following needs to be configured
 
 | GRUB bootloader Parameter |Description |Values |
 |----|----|----|
@@ -371,9 +347,7 @@ To ensure Tenant CPU isolation from the host services (Operating System (OS), hy
 
 **Using Hosts of a Host Profile type**
 
-As we have seen a flavor series is supported by configuring hosts in accordance with the flavor series specifications. For example, an instance of flavor type B1 can be hosted on a compute node that is configured as an hp-B1-a or hp-B1-b host profile. All compute nodes configured with hp-B1-a or hp-B1-b host profile are made part of a host aggregate, say, ha-B1 and thus during VM instantiation of B1 flavor hosts from the ha-B1 host aggregate will be selected.
-
-
+As we have seen Profile Extensions are supported by configuring hosts in accordance with the Profile Extensions specifications. For example, an instance of flavor type B1 can be hosted on a compute node that is configured as an hp-B1-a or hp-B1-b host profile. All compute nodes configured with hp-B1-a or hp-B1-b host profile are made part of a host aggregate, say, ha-B1 and thus during VM instantiation of B1 flavor hosts from the ha-B1 host aggregate will be selected.
 
 
 <a name="4.2.3"></a>
@@ -436,7 +410,7 @@ With support of VNF workloads, the resources bottlenecks are not only the CPU an
 -	Nodes interfaces segmentation: Have separated NIC ports for Storage and Tenant networks. Actually, the storage traffic is bursty, and especially in case of service restoration after some failure or new service implementation, upgrades, etc. Control and management networks should rely on a separate interface from the interface used to handle tenant networks.
 -	Capacity planning: FW, physical links, switches, routers, NIC interfaces and DCGW dimensioning (+ load monitoring: each link within a LAG or a bond shouldn’t be loaded over 50% of its maximum capacity to guaranty service continuity in case of individual failure).
 -	Hardware choice: e.g. ToR/fabric switches, DCGW and NIC cards should have appropriate buffering and queuing capacity.
--	Network intensive compute node tuning (including OVS-DPDK).
+-	High Performance compute node tuning (including OVS-DPDK).
 
 #### 4.2.3.6. Integration Interfaces
 - DHCP
@@ -594,16 +568,6 @@ Heat is the orchestration service using template to provision cloud resources, H
 #### 4.3.1.9 Horizon
 Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
-<!--
-#### 4.3.1.10 Cyborg
-Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
--	cyborg-api
--	cyborg-conductor
--	cyborg-db
-- cyborg-agent  which runs on compute nodes
-- *-driver drivers which run on compute nodes and depend on the acceleration hardware
--->
-
 #### 4.3.1.10 Placement
 The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
 
@@ -630,6 +594,17 @@ Placement has services running on the control node:
 
 Barbican usage provides a means to fulfill security requirements such as sec.sys.012 “The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component” and sec.ci.001 “The Platform **must** support Confidentiality and Integrity of data at rest and in transit.”.
 
+<!--
+ #### 4.3.1.12 Cyborg
+
+ Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
+ -	cyborg-api
+ -	cyborg-conductor
+ -	cyborg-db
+ - cyborg-agent  which runs on compute nodes
+ - *-driver drivers which run on compute nodes and depend on the acceleration hardware
+ -->
+
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services
 Containers are lightweight compared to Virtual Machines and leads to efficient resource utilization. Kubernetes auto manages scaling, recovery from failures, etc. Thus, it is recommended that the OpenStack services be containerized for resiliency and resource efficiency.
@@ -645,42 +620,24 @@ In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) 
 <a name="4.4.1"></a>
 ### 4.4.1. Support for Cloud Infrastructure Profiles and flavors
 
-Reference Model Chapter 4 and  5 provide information about the Cloud Infrastructure Profiles and their size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes, it is required to set up the flavors as specified in the Tables below. As OpenStack no longer provides default flavors, the CNTT pre-defined flavors will have to be created with their various configuration properties.
 
-<!---
-Original Table w Compute Intensive
-| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive | Compute Intensive |
-|----------|-------------|--------------|-------------|-------------|
-| CPU allocation ratio | nfvi.com.cfg.001| In Nova.conf include <br>cpu_allocation_ratio= 4.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 | In Nova.conf include <br>cpu_allocation_ratio= 1.0 |
-| NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> |
-| CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and <br>--property hw:cpu__thread_policy= <prefer, require, isolate>|
-| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large | --property hw:mem_page_size=large |
-| OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
-| Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
-| Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3276800<br><br>Note: 25 Gbps = 3276800 kilobytes per second |
-New Table w/o Compute Intensive column below
---->
+Reference Model Chapter 4 and  5 provide information about the Cloud Infrastructure Profiles and their size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes, it is required to set up the flavors as specified in the tables below.
 
-| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | Network Intensive |
+
+| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | High Performance |
+
 |----------|-------------|--------------|-------------|
-| CPU allocation ratio (custom extra_specs) | nfvi.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
-| NUMA Awareness | nfvi.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<#numa_nodes – 1> |
-| CPU Pinning | nfvi.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate> |
-| Huge Pages | nfvi.com.cfg.004| | --property hw:mem_page_size=large |
-| OVS-DPDK | nfvi.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
-| Local Storage SSD | nfvi.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
-| Port speed | nfvi.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second |
+| CPU allocation ratio (custom extra_specs) | infra.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
+| NUMA Awareness | infra.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<integer range of 0 to #numa_nodes – 1><br>To restrict an instance's vCPUs to a single host NUMA node, specify: --property hw:numa_nodes=1<br>Some compute intensive* workloads with highly sensitive memory latency or bandwidth requirements, the instance may benefit from spreading across multiple NUMA nodes: --property hw:numa_nodes=2   |
+| CPU Pinning | infra.com.cfg.003| In flavor create or flavor set specify <br> --property hw:cpu_policy=shared (default) | In flavor create or flavor set specify <br>--property hw:cpu_policy=dedicated <br>and<br>--property hw:cpu__thread_policy= <prefer, require, isolate><br>Use "isolate" thread policy for very high compute intensive workloads that require that each vCPU be placed on a different physical core |
+| Huge Pages | infra.com.cfg.004| | --property hw:mem_page_size=<small \|large \| size> |
+| SMT | infra.com.cfg.005 | | In flavor create or flavor set specify <br> --property hw:cpu_threads=<integer #threads (usually 1 or 2)> |
+| OVS-DPDK | infra.net.acc.cfg.001| | ml2.conf.ini configured to support <br>[OVS] <br>datapath_type=netdev <br><br>Note: huge pages should be configured to large |
+| Local Storage SSD | infra.hw.stg.ssd.cfg.002| trait:STORAGE_DISK_SSD=required | trait:STORAGE_DISK_SSD=required |
+| Port speed | infra.hw.nic.cfg.002 | --property quota vif_inbound_average=1310720 <br>and<br>vif_outbound_average=1310720<br><br>Note: 10 Gbps = 1250000 kilobytes per second | --property quota vif_inbound_average=3125000 <br>and <br>vif_outbound_average=3125000<br><br>Note: 25 Gbps = 3125000 kilobytes per second |
 
-To configure the flavors (specified in [Table 4-13](../../../ref_model/chapters/chapter04.md#predefined-compute-flavours) Reference Model Chapter4), the parameters in the following table are specified as part of the flavor create command; the parameters are preceded by "--".
+> * For example as defined in [Reference Model Profile Extensions](../../../ref_model/chapters/chapter02.md#242-profile-extensions-specialisations).
 
-| Flavor name | vCPU ("c") | RAM ("r") | Local Disk ("d") |
-|-----|------|---------|----------------|
-| .tiny | 1<br>-- vcpus 1 | 512 MB<br>-- ram 512 | 1 GB<br>-- disk 1 |
-| .small | 1<br>-- vcpus 1 | 2 GB<br>-- ram 2048 | 20 GB<br>-- disk 20 |
-| .medium | 2<br>-- vcpus 2 | 4 GB<br>-- ram 4096 | 40 GB<br>-- disk 40 |
-| .large | 4<br>-- vcpus 4 | 8 GB<br>-- ram 8192 | 80 GB<br>-- disk 80 |
-| .2xlarge* | 8<br>-- vcpus 8 | 16 GB<br>-- ram 16384 | 160 GB<br>-- disk 160 |
-| .4xlarge* | 16<br>-- vcpus 16 | 32 GB<br>-- ram 32768 | 320 GB<br>-- disk 320 |
 
 In addition, to configure the storage IOPS the following two parameters need to be specified in the flavor create: --property quota:disk_write_iops_sec=<IOPS#> and --property quota:disk_read_iops_sec=<IOPS#>.  
 
@@ -700,7 +657,6 @@ Note: The Cloud Infrastructure doesn’t provide any resiliency mechanisms at th
 **Limitations and constraints**
 -	NUMA Overhead: isolated core will be used for overhead tasks from the hypervisor
 
-For Network intensive instances, VNF Component should fit into a single NUMA zone for performance reason.
 
 <a name="4.4.3"></a>
 ### 4.4.3. Transaction Volume Considerations
@@ -745,13 +701,15 @@ The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computi
 
 Table 8-4 in the Reference Model Chapter 8.3.4 "[Telco Edge Cloud: Platform Services Deployment](../../../ref_model/chapters/chapter08.md#8.3.4)" lists the Platform Services that may be placed in the different node types (control, compute and storage). Depending upon the capacity and resources available only the compute nodes may exist at the Edge thereby impacting operations.
 
-Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavours.
+
+Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](../../../ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavours.
+
 
 #### 4.5.1.1 Edge Cloud Deployment
 
 Deployment at the Edge requires support for large scale deployment. A number of open-source tools are available for the purpose including:
 - [Airship](https://docs.airshipit.org/): declaratively configure, deploy and maintain an integrated virtualization and containerization platform
 - [Starling-X](https://www.starlingx.io/): cloud infrastructure software stack for the edge
-- [Triple-O](https://wiki.openstack.org/wiki/TripleO): for installing, upgrading and operating OpenStack clouds 
+- [Triple-O](https://wiki.openstack.org/wiki/TripleO): for installing, upgrading and operating OpenStack clouds
 
 The Reference Implementation (RI1) is responsible to choose the tools for the implementation and shall specify implementation and usage details of the chosen tools.

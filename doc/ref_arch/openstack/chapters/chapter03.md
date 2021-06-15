@@ -49,7 +49,7 @@ This chapter is organized as follows:
     - VIM Core services (keystone, cinder, nova, neutron etc.)
     - Tenant Separation
     - Host aggregates providing resource pooling
-    - Flavor management
+    - Flavor* management
 *	Underlying Resources: are what provides the resources that allow the Consumable Infrastructure Resources and Services to be created and managed by the Cloud Infrastructure Management Software (VIM).
     - Virtualisation
     - Physical infrastructure
@@ -57,6 +57,7 @@ This chapter is organized as follows:
       -	Network: Spine/Leaf; East/West and North/South traffic
       -	Storage
 
+> * Please note "flavours" is used in the Reference Model and shall continue to be used in the context of specifing the geometry of the virtual resources. The term "flavor" will be used in the OpenStack and this document context including when specifying configurations; the OpenStack term flavor includes the profile configuration information as "extra specs".
 
 <a name="3.2"></a>
 ## 3.2. Consumable Infrastructure Resources and Services
@@ -79,7 +80,7 @@ This RA does not intend to restrict how workloads are distributed across tenants
 ### 3.2.2. Virtual Compute (vCPU and vRAM)
 The virtual compute resources (vCPU and vRAM) used by the VNFs behave like their physical counterparts.  A physical core is an actual processor and can support multiple vCPUs through Simultaneous Multithreading (SMT) and CPU overbooking. With no overbooking and SMT of 2 (2 threads per core), each core can support 2 vCPUs. With the same SMT of 2 and overbooking factor of 4, each core can support 8 vCPUs. The performance of a vCPU can be affected by various configurations such as CPU pinning, NUMA alignment, and SMT.
 
-The configuration of the virtual resources will depend on the profile and the flavour needed to host VNF components. Profiles are defined in the chapters 5.1 and 5.2 of the reference model document. Flavors are defined in the chapter 4.2 of the reference model document.
+The configuration of the virtual resources will depend on the software and hardware profiles and the flavour (resource sizing) needed to host VNF components. Profiles are defined in the [Reference Model chapter 5](../../../ref_model/chapters/chapter05.md).
 
 <a name="3.2.3"></a>
 ### 3.2.3. Virtual Storage
@@ -88,8 +89,6 @@ The three storage services offered by Cloud Infrastructure are:
 -	Ephemeral storage
 -	Image storage
 
-The different profiles and storage extensions are defined in the reference model document.
-
 Two types of persistent data storage are supported in OpenStack:
 -	Block storage
 -	Object storage
@@ -97,6 +96,7 @@ Two types of persistent data storage are supported in OpenStack:
 The OpenStack services, Cinder for block storage and Swift for Object Storage, are discussed below in Section 3.3 “Cloud Infrastructure Management Software (VIM)”.
 
 Ephemeral data is typically stored on the compute host’s local disks, except in environments that support live instance migration between compute hosts. In the latter case, the ephemeral data would need to be stored in a storage system shared between the compute hosts such as on persistent block or object storage.
+
 Images are stored using the OpenStack Glance service discussed below in Section 3.3 “Cloud Infrastructure Management Software (VIM)”.  
 The [OpenStack Storage Table](https://docs.openstack.org/arch-design/design-storage/design-storage-concepts.html#table-openstack-storage) explains the differences between the storage types and typical use cases. The [OpenStack compatible storage backend drivers](https://docs.openstack.org/cinder/latest/reference/support-matrix.html) table lists the capabilities that each of these drivers support.
 
@@ -143,7 +143,7 @@ It is based on proven, standards-based networking technologies that today suppor
 - BGP as a Service (BGPaaS) for distribution of routes between privately managed customer networks and service provider networks
 
 
-Based on the network layering concepts introduced in the [Reference Model Section 3.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#35-network), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
+Based on the network layering concepts introduced in the [Reference Model Section 3.5](../../../ref_model/chapters/chapter03.md#35-network), the Tungsten Fabric Controller performs functions of both the SDN underlay (SDNu) and overlay (SDNo) controllers.
 
 The SDN controller exposes a NB API that can be consumed by ETSI MANO for VNF/CNF onboarding, network service onboarding and dynamic service function chaining.
 
@@ -203,7 +203,7 @@ Functional requirements of this node include:
 -	Grow / Shrink resources
 
 #### 3.3.1.3 Cloud Controller Services
-The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Management Software components [Reference Model Chapter 3.3 Management Software](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.3").
+The following OpenStack components are deployed on the Infrastructure. Some of them will be only deployed on control hosts and some of them will be deployed within both control and compute hosts. The Table also maps the OpenStack core services to the Reference Model (RM) Virtual Infrastructure Manager [Reference Model Chapter 3.2.2 Virtual Infrastructure Manager](../../../ref_model/chapters/chapter03.md#322").
 
 | RM Management Software| Service| Description| Required / Optional| Deployed on Controller Nodes| Deployed on Compute Nodes |
 |-----------------------|-------------|----------------------|----------------|-----------|---------|
@@ -226,7 +226,7 @@ All components must be deployed within a high available architecture that can wi
 
 The services can be containerized or VM hosted as long as they provide the high availability principles described above.
 
-The APIs for these OpenStack services are listed in [Chapter 5: Interfaces and APIs](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter05.md).
+The APIs for these OpenStack services are listed in [Chapter 5: Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md).
 
 #### 3.3.1.4 Cloud Workload Services
 This section describes the core set of services and service components needed to run workloads including instances (such as VMs), their networks and storage are referred to as the “Compute Node Services” (a.k.a. user or data plane services). Contrast this with the Controller nodes which host OpenStack services used for cloud administration and management. The Compute Node Services include virtualisation, hypervisor instance creation/deletion, networking and storage services; some of these activities include RabbitMQ queues in the control plane including the scheduling, networking and cinder volume creation / attachment.
@@ -254,7 +254,7 @@ An over use of Host Aggregates and Availability Zones can result in a granular p
 
 <a name="3.3.4"></a>
 ### 3.3.4. Flavor management
-A flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, the flavors can be named as described in RM  like .tiny, .small, .medium, .large, .2xlarge and so on. The specifications for these sizes should map to the predefined compute flavors listed [here](../../../ref_model/chapters/chapter04.md#predefined-compute-flavours).
+In OpenStack a flavor defines the compute, memory, and storage capacity of nova instances. When instances are spawned, they are mapped to flavors which define the available hardware configuration for them. For simplicity, operators may create named flavors specifying both the sizing and the [software and hardware profile configurations](../../../ref_model/chapters/chapter05.md).
 
 <a name="3.4"></a>
 ## 3.4. Underlying Resources
@@ -293,10 +293,10 @@ The aim is to specify the requirements on deploying the VIM, from ground up (in 
 Cloud Infrastructure physical Nodes
 
 The physical resources required for the Cloud Infrastructure are mainly based on COTS X86 hardware for control and data plane nodes.
-HW profiles are defined in the chapters 5.3 and 5.4 of the reference model document.
+HW profiles are defined in [Reference Model chapters 5.3 and 5.4](../../../ref_model/chapters/chapter05.md).
 
 #### 3.4.2.2. Network
-The recommended network architecture is spine and leaf topology
+The recommended network architecture is spine and leaf topology.
 
 <p align="center"><img src="../figures/RA1-Ch03-Network-Fabric.png" alt="Network Fabric -- Physical"><b>Figure 3-3:</b> Network Fabric – Physical</p>
 Figure 3-3 shows a physical network layout where each physical server is dual homed to TOR (Leaf/Access) switches with redundant (2x) connections. The Leaf switches are dual homed with redundant connections to spines.
