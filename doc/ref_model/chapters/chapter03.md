@@ -629,6 +629,47 @@ Network Attachment | A means of allowing a pod to directly communicate with a gi
 NetworkAttachmentDefinition object | This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is *"k8s.v1.cni.cncf.io/networks"*
 Network Attachment Selection Annotation | Selects one or more networks that a pod should be attached to.
 
+Example: define three network attachments and attach the three networks to a pod
+
+Green network
+```
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name:green-network
+spec:
+  config: '{
+    "cniVersion": "0.3.0",
+    "type": "plugin-A"
+  }'
+)
+```
+Blue network
+```
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name:blue-network
+spec:
+  config: '{
+    "cniVersion": "0.3.0",
+    "type": "plugin-A"
+  }'
+)
+```
+Red network
+```
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name:red-network
+spec:
+  config: '{
+    "cniVersion": "0.3.0",
+    "type": "plugin-B"
+  }'
+)
+```
 <a name="3.6"></a>
 ## 3.6 Storage
 The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
