@@ -611,7 +611,7 @@ Storage is multi-faceted and so can be classified based on its: cost, performanc
 <p align ="center"><b>Figure 3-12:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
 Where:
-* (Comparitive) Cost - is monetory value / unit of end user storage capacity (see below for indicative comparative costs)
+* (Comparative) Cost - is monetory value / unit of end user storage capacity 
 * Performance - is defined by IOPS / Latency / Throughtput as typically each of these increases with successive generations of storage
 * Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
 * Storage Types - is how the storage is accessed and used, where:
@@ -624,7 +624,7 @@ The storage model provides a relatively simple way for the storage consumer to s
 
 | Storage Type | Consumption Model | Performance & Capacity | Cost | Infrastructure Strategy | Use Case |
 |---|---|---|---|---|---|
-| Platform Native | Managed by the VIM / Hypervisor and attached as part of VNF/CNF start up via VNF Descriptor<br />The volumes are not shareable across VNF/CNF instances | Ultra High Performance & Very High Performance<br />Capacity: 10GB - 5TB<br />"Tier 1" | High to Very High | Always part of VIM deployment<br />Storage is directly next to vCPU<br />Can support highest performance use cases<br />Always available to support VNF/CNF boot/startup | Boot/Start VNF/CNF<br />Live Migrate Workload with and across VIMs |
+| Platform Native | Managed by the VIM / Hypervisor and attached as part of VNF/CNF start up via VNF Descriptor<br />Volumes shareability across VNF/CNF instances is determined by platform and storage capabilities | Ultra High Performance & Very High Performance<br />Capacity: 10GB - 5TB<br />"Tier 1" | High to Very High | Always part of VIM deployment<br />Storage is directly next to vCPU<br />Can support highest performance use cases<br />Always available to support VNF/CNF boot/startup | Boot/Start VNF/CNF<br />Live Migrate Workload within and across VIMs |
 | Shared Storage | Access via Network File System<br />Concurrent consumption across multiple VNF/CNFs<br />Sharing can be constrained to tenancy, cross tenancy and externally accessible | Enterprise Transactional Performance (real time transaction processing)<br />Capacity: 5GB - 100TB<br />Selectable "Tier 1" to "Tier 3" | High - Mid | Leverage existing capabilities<br />Only build if needed (not needed by many data plan VNF/CNFs)<br />If needed for Edge deployment then aim to unify with "Platform Native" deployment | VNF/CNF's able to share the same file content |
 | Object Storage | Consumed via HTTP/S restful services<br />Provided by serving application which manages storage needs<br />Location Indepedent | Highly distributable and scalable | High to Mid | Primarily tenant application responsibility | Cloud Native Geo-Distributed VNF/CNFs |
 | Capacity | Typically accessed as per "Shared Storage" but will likely have additional storage stages<br />Not suitable for real time processing | Very low transactional performance<br />Need throughput to accommodate large data flow<br />"Tier 3" | Low | Use cheapest storage available that meets capacity & security needs | Archival storage for tenant/platform backup/restore<br />DR |
