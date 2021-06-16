@@ -507,9 +507,9 @@ Figure 3-10 shows a simple architecture of an SFC with multiple VNFs, as SF data
 <p align ="center"><b>Figure 3-10:</b> SFC Architecture for VNF based SFs </p>
 
 
-Figure 3-11a shows a simple architecture of an SFC with multiple CNFs, as SF data plane components, along with SFC management and CNF MANO components. 
+Figure 3-11 shows a simple architecture of an SFC with multiple CNFs, as SF data plane components, along with SFC management and CNF MANO components. 
 <p align="center"> <img src="../figures/ch03-model-sfc-architecture-cnf-2.png" alt="SFC Architecture for CNF based SFs" Title="SFC Architecture for CNF based SFs" width="45%"/></p>
-<p align ="center"><b>Figure 3-11a:</b> SFC Architecture for CNF based SFs</p>
+<p align ="center"><b>Figure 3-11:</b> SFC Architecture for CNF based SFs</p>
 
 The SFC management components together with the control components are responsible for rendering SFC requests to Service Function paths. For this they convert requisite SFC policies into network topology dependent paths and forwarding steering policies. Relevant SFC data components - classifiers, service function forwarders - are responsible for managing the steering policies.
 
@@ -524,9 +524,9 @@ The creation of the SFC might include design/preparation phase as:
 -	The service functions that are included in the SFC.
 - The routing order in the service function, if the SFC is composed of more than one service function.
 
-Figure 3-11b shows SFC creation call flow, separated logically in two steps.
+Figure 3-12 shows SFC creation call flow, separated logically in two steps.
 <p align="center"> <img src="../figures/ch03-model-sfc-info-create-flow.png" alt="Creation of Service Function Chain" Title="Creation of Service Function Chain" width="45%"/></p>
-<p align ="center"><b>Figure 3-11b:</b> Creation of Service Function Chain</p>
+<p align ="center"><b>Figure 3-12:</b> Creation of Service Function Chain</p>
 
 1.	Creation of service functions of SFC.
 
@@ -565,9 +565,9 @@ SFP or SFC can be updated for various reasons and some of them are :
 <a name="3.5.5.3.3"></a>
 ##### 3.5.5.3.3 Data Steering in Service Function Chain
 
-Figure 3-11c shows traffic steering along SFP.
+Figure 3-13 shows traffic steering along SFP.
 <p align="center"> <img src="../figures/ch03-model-sfc-data-flow.png" alt="Data steering in Service Function Chain" Title="Data steering in Service Function Chain" width="45%"/></p>
-<p align ="center"><b>Figure 3-11c:</b> Data steering in Service Function Chain</p>
+<p align ="center"><b>Figure 3-13:</b> Data steering in Service Function Chain</p>
 
 - SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as SFC,  5G User plane function (UPF) acts as SFC classifier.  UPF receives the classification policies from 5G Policy control function (PCF) as traffic steering policies. 
 - SFC classifier applies the SFC encapsulation (e.g., SCH, NSH) and routes traffic towards SFF, acts as entry point to SFP. The SFC Encapsulation provides, at a minimum, SFP identification, and is used by the SFC-aware functions, such as the SFF and SFC-aware SFs.
@@ -606,7 +606,7 @@ SyncE architecture minimally requires replacement of the internal clock of the E
 The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management.
 Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). A simplified view of this is provided in the following illustrative model:
 <p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="45%"/></p>
-<p align ="center"><b>Figure 3-12:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
+<p align ="center"><b>Figure 3-14:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
 
 Where:
 * (Comparative) Cost - is monetory value / unit of end user storage capacity 
@@ -648,7 +648,7 @@ The following diagram presents an example of the realization of the reference mo
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
 
-<p align="center"><b>Figure 3-13:</b> Reference model realization example</p>
+<p align="center"><b>Figure 3-15:</b> Reference model realization example</p>
 
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
@@ -673,17 +673,17 @@ Accelerator technologies can be categorized depending on where they are realized
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
 
-<p align="center"><b>Figure 3-14:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+<p align="center"><b>Figure 3-16:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-14 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-18 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
 
-<p align="center"><b>Figure 3-15:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-17:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
@@ -743,7 +743,7 @@ There are two main types of Smart NICs that can accelerate network functions in-
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
 
-<p align="center"><b>Figure 3-16:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-18:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 
 #### Simple SmartNIC
