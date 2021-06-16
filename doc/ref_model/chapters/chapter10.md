@@ -11,7 +11,7 @@
   * [10.3.2 Support Load Balance of VNF/CNFs](#10.3.2)
   * [10.3.3 Service Function Chain](#10.3.3)
   * [10.3.4 Closed-loop automation](#10.3.4)
-  * [10.3.5 Acceleration Abstraction(#10.3.5)
+  * [10.3.5 Acceleration Abstraction](#10.3.5)
 
 
 <a name="10.1"></a>
