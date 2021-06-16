@@ -153,7 +153,7 @@ This section details the services that may be made available to workloads by the
 <a name="5.2"></a>
 ## 5.2 Cloud Infrastructure Software Profiles features and requirements
 
-This section will detail Cloud Infrastructure Software Profiles and associated configurations for the 2 types of Cloud Infrastructure Profiles: Basic and Network intensive.
+This section will detail Cloud Infrastructure Software Profiles and associated configurations for the 2 types of Cloud Infrastructure Profiles: Basic and High Performance.
 
 <a name="5.2.1"></a>
 ### 5.2.1 Virtual Compute
