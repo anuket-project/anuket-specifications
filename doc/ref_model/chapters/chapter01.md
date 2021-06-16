@@ -10,7 +10,7 @@
 
 <a name="1.1"></a>
 ## 1.1 Overview
-The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by Cloud iNfrastructure Telco Taskforce (CNTT).  For more information about CNTT, its activities and deliverables, see [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
+The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by the Linux Foundation Networking project [Anuket](../../common/chapter00.md#2.0).  
 
 **Problem Statement:**
 Based on community consultations, including telco operators, technology suppliers, and software developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of VNF/CNF network applications related to the lack of a common cloud infrastructure platform. These include but are not limited to the following:
