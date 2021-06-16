@@ -622,18 +622,13 @@ Kubernets does curently not in it self support multi networks, pod multi network
 A considreable effort is being invested to add better network support to kubernetes, all such activities are coordinated through the kubernetes [*Network Special Interest Group*](https://github.com/kubernetes/community/tree/master/sig-network) and it's sub groups. One such group, the [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
 
 This defacto standard defines among other things
-Kubernetes Cluster-Wide default network
-A network to which all pods are attached following the current behaviour and requirements of Kubernetes, this done by attaching the *eth0* interface to the pod namespace.
+Definition | Description
+------------------|------------
+Kubernetes Cluster-Wide default network | A network to which all pods are attached following the current behaviour and requirements of Kubernetes, this done by attaching the *eth0* interface to the pod namespace.
+Network Attachment | A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed in to the pod’s network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
+NetworkAttachmentDefinition object | This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is *"k8s.v1.cni.cncf.io/networks"*
+Network Attachment Selection Annotation | Selects one or more networks that a pod should be attached to.
 
-Network Attachment
-A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed in to the pod’s network namespace.  Each attachment may result in zero or more IP     addresses being assigned to the pod.
-What is clear is that the current version of the Kubernetes API and the implementations of kube-proxy does not support multiple networks and pod network attachments.
-
-NetworkAttachmentDefinition object
-This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is *"k8s.v1.cni.cncf.io/networks"*
-
-Network Attachment Selection Annotation
-Selects one or more networks that a pod should be attached to, 
 <a name="3.6"></a>
 ## 3.6 Storage
 The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
