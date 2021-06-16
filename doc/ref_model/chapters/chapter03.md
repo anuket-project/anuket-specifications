@@ -578,16 +578,6 @@ The following principles apply to Storage scope for the Reference Model, Referen
 * Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
 
-NOTE: In a market assessemt of storage (for a "Ceph" based solution) costs done in 2019, the following comparative costs where found when trying to meet the different Storage Types needs across varies performance levels, for consistent usable capacity:
-* Ultra High Performance - for "Platform Native" case based on "Converged Scalable Software Defined Storage" architecture where cost included: Software, Compute Chassis, NVMe Flash, 25GbE NICs: 64% > Avg
-* High Performance - for "Platform Native" and "Shared Storage" cases based on "Converged Scalable Software Defined Storage" architecture where cost included: Software, Compute Chassis, SATA Flash, 25GbE NICs: 46% > Avg
-* Value - for "Platform Native", "Shared Storage" and "Object Storage" based on "Converged Storage with Flash Cached Disks" architecture where cost included: Software, Compute Chassis, SAS Disk with SATA Flash Cache, 25GbE NICs: -12% < Avg
-* Capacity - for "Archival" case based on "Compute + Storage Expansion Chassis" architecture: Software, Compute Chassis, SAS Expansion Chassis, SAS Disk, 10GbE NICs: -65% < Avg
-
-In each case the architecture was cost optimised to allow for the particular technology, with Flash Based solution using 2 x Replication to achieve resilience due to greater device reliability, while Value which was based on hard disks used 3 x Replication due to higher failure rates and archival storage using much more efficient "Erasure Encoding" rather then replication.
-
-For further comparative consideration the analysis looked at public cloud vs. on premise storage for Value and Capacity Storage cases. While for Value case this cost neutral over two years, Capacity case was found to be available via public cloud offerings at a further 50% lower cost, even with very pessimist projections of retrieval rates (that took into account asymmetric costs for storing (low) vs. retriving (high) data)
-
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
