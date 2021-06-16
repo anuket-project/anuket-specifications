@@ -178,15 +178,19 @@ As such the requirements for Capacity Management on the infrastructure are cover
 
 <a name="9.5.1"></a>
 ### 9.5.1 Infrastructure LCM Automation
+To be covered in the next release.
 
 <a name="9.5.1.1"></a>
 #### 9.5.1.1. Hardware Configuration CI/CD
+To be covered in the next release.
 
 <a name="9.5.1.1"></a>
 #### 9.5.1.2. Networking Automation
+To be covered in the next release.
 
 <a name="9.5.1.1"></a>
 #### 9.5.1.3. Software Development CI/CD
+To be covered in the next release.
 
 
 <a name="9.5.2"></a>
