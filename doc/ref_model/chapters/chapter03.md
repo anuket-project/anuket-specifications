@@ -648,7 +648,7 @@ The following diagram presents an example of the realization of the reference mo
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
 
-<p align="center"><b>Figure 3-12:</b> Reference model realization example</p>
+<p align="center"><b>Figure 3-13:</b> Reference model realization example</p>
 
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
@@ -673,7 +673,7 @@ Accelerator technologies can be categorized depending on where they are realized
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
 
-<p align="center"><b>Figure 3-13:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+<p align="center"><b>Figure 3-14:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
 
 
 <a name="3.8.2"></a>
@@ -683,7 +683,7 @@ Figure 3-14 gives examples for Hardware Accelerators in [Sample reference model 
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
 
-<p align="center"><b>Figure 3-14:</b> Hardware Acceleration in RM Realization Diagram</p>
+<p align="center"><b>Figure 3-15:</b> Hardware Acceleration in RM Realization Diagram</p>
 
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
@@ -743,7 +743,7 @@ There are two main types of Smart NICs that can accelerate network functions in-
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
 
-<p align="center"><b>Figure 3-15:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-16:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 
 #### Simple SmartNIC
