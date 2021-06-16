@@ -213,7 +213,7 @@ The platform supports the workload, and in effect controls access to the workloa
 ### 7.4.3 Platform ‘front-end’ access security
 
 * Front-end network security at the application level will be the responsibility of the workload, however the platform must ensure the isolation and integrity of tenant connectivity to front-end networks.
-* The front-end network may provide (Distributed Denial Of Service) DDOS support.
+* The front-end network may provide (Distributed Denial Of Service) DDoS support.
 
 <a name="7.4.4"></a>
 ### 7.4.4 Infrastructure as a Code security
