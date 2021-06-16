@@ -640,7 +640,8 @@ metadata:
 spec:
   config: '{
     "cniVersion": "0.3.0",
-    "type": "plugin-A"
+    "type": "plugin-A",
+    "vlan": "1234"
   }'
 )
 ```
@@ -653,7 +654,8 @@ metadata:
 spec:
   config: '{
     "cniVersion": "0.3.0",
-    "type": "plugin-A"
+    "type": "plugin-A",
+    "vlan": "3456"
   }'
 )
 ```
@@ -666,10 +668,21 @@ metadata:
 spec:
   config: '{
     "cniVersion": "0.3.0",
-    "type": "plugin-B"
+    "type": "plugin-B",
+    "knid": "123456789"
   }'
 )
 ```
+Pod my-pod
+```
+kind: Pod
+metadata:
+  name: my-pod
+  namespace: my-namespace
+  annotations:
+    k8s.v1.cni.cncf.io/networks: blue-network,green-network,red-network
+```
+
 <a name="3.6"></a>
 ## 3.6 Storage
 The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
