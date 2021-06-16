@@ -94,7 +94,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     - MSAN: MultiService Access Node
     - OLT: Optical Line Termination
     - WLC: WLAN Controller
-    - BNG: Border Network Gateway
+    - BNG: Broadband Network Gateway
     - BRAS: Broadband Remote Access Server
     - RGW: Residential GateWay
     - CPE: Customer Premises Equipment
