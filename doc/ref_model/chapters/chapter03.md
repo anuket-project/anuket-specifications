@@ -629,7 +629,7 @@ Network Attachment | A means of allowing a pod to directly communicate with a gi
 NetworkAttachmentDefinition object | This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is *"k8s.v1.cni.cncf.io/networks"*
 Network Attachment Selection Annotation | Selects one or more networks that a pod should be attached to.
 
-Example: define three network attachments and attach the three networks to a pod
+Example: Define three network attachments and attach the three networks to a pod.
 
 Green network
 ```
@@ -682,6 +682,9 @@ metadata:
   annotations:
     k8s.v1.cni.cncf.io/networks: blue-network,green-network,red-network
 ```
+
+This is enough to support basic network orchestration, it is possbible to map up L2 networks from an external network infrastructure into a kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address management is however limited. The address must be assigned by the cni plugin as part of the pod creation process.
+
 
 <a name="3.6"></a>
 ## 3.6 Storage
