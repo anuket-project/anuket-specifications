@@ -265,8 +265,6 @@ The hardware infrastructure manager allows to:
 The hardware infrastructure manager needs to support the following functional aspects:
 
 * **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
-
-* **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
 * **Discovery**: discover physical hardware resources and collect relevant information about them 
 * **Topology**: discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources
 * **Equipment**:  manages the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations
