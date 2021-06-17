@@ -37,10 +37,10 @@ following Features tabs defined here.
 | Conformance                            | X             | Kubernetes conformance test |
 | None                                   | X             | Kubernetes mainstream features |
 | Feature:ComprehensiveNamespaceDraining | X             | Namespaces should always delete fast (ALL of 100 namespaces in 150 seconds) |
-| Feature:CrossNamespacePodAffinity      |               | Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors |
-| Feature:PodPriority                    | X             | Verify ResourceQuota's priority class scope against a pod with different priority class |
+| Feature:[CrossNamespacePodAffinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#namespace-selector)|               | Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors |
+| Feature:[PodPriority](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/)| X             | Verify ResourceQuota's priority class scope against a pod with different priority class |
 | Feature:ScopeSelectors                 | X             | Verify ResourceQuota with terminating scopes through scope selectors |
-| Feature:StorageVersionAPI              |               |
+| Feature:[StorageVersionAPI](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#storageversion-v1alpha1-internal-apiserver-k8s-io)|               |
 
 <a name="6.3"></a>
 ## 6.3 [Apps Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-apps)
@@ -50,12 +50,12 @@ following Features tabs defined here.
 | Conformance                  | X             | Kubernetes conformance test |
 | None                         | X             | Kubernetes mainstream features |
 | Feature:DaemonSetUpdateSurge |               | Daemon set should surge pods onto nodes when spec was updated and update strategy is RollingUpdate |
-| Feature:IndexedJob           |               | Should create pods for an Indexed job with completion indexes |
+| Feature:[IndexedJob](https://kubernetes.io/docs/concepts/workloads/controllers/job/)          |               | Should create pods for an Indexed job with completion indexes |
 | Feature:StatefulSet          |               | Should creating a working zookeeper cluster |
 | Feature:StatefulUpgrade      |               | Stateful upgrade should maintain a functioning cluster |
-| Feature:SuspendJob           |               | Should not create pods when created in suspend state |
+| Feature:[SuspendJob](https://kubernetes.io/docs/concepts/workloads/controllers/job/)|               | Should not create pods when created in suspend state |
 | Feature:TaintEviction        |               | All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be evicted after eviction timeout passes |
-| Feature:TTLAfterFinished     | X             | Job should be deleted once it finishes after TTL seconds |
+| Feature:[TTLAfterFinished](https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/)| X             | Job should be deleted once it finishes after TTL seconds |
 
 <a name="6.4"></a>
 ## 6.4 [Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
@@ -64,7 +64,7 @@ following Features tabs defined here.
 |----------------------------------------|:-------------:|:----------------|
 | Conformance                            | X             | Kubernetes conformance test |
 | None                                   | X             | Kubernetes mainstream features |
-| Feature:BoundServiceAccountTokenVolume |               | ServiceAccount admission controller migration master upgrade should maintain a functioning cluster |
+| Feature:[BoundServiceAccountTokenVolume](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/1205-bound-service-account-tokens/README.md)|               | ServiceAccount admission controller migration master upgrade should maintain a functioning cluster |
 | Feature:NodeAuthenticator              | X             | The kubelet's main port 10250 should reject requests with no credentials |
 | Feature:NodeAuthorizer                 | X             | Setting a non-existent configmap should exit with the Forbidden error, not a NotFound error |
 | Feature:PodSecurityPolicy              |               | Should enforce the restricted policy.PodSecurityPolicy |
@@ -110,7 +110,7 @@ following Features tabs defined here.
 | None                                | X             | Kubernetes mainstream features |
 | Feature:Example                     |               | Should create pod that uses DNS |
 | Feature:Ingress                     |               | Should prevent Ingress creation if more than 1 IngressClass marked as default |
-| Feature:IPv6DualStack               |               | Services Secondary IP Family should function for endpoint-Service: http... |
+| Feature:[IPv6DualStack](https://kubernetes.io/docs/concepts/services-networking/dual-stack/)|               | IPv4/IPv6 dual-stack networking enables the allocation of both IPv4 and IPv6 addresses to Pods and Services. IPv4/IPv6 dual-stack networking is enabled by default for your Kubernetes cluster starting in 1.21, allowing the simultaneous assignment of both IPv4 and IPv6 addresses. |
 | Feature:kubemci                     |               | Should create ingress with pre-shared certificate |
 | Feature:KubeProxyDaemonSetMigration |               | Upgrade kube-proxy from static pods to a DaemonSet should maintain a functioning cluster |
 | Feature:KubeProxyDaemonSetUpgrade   |               | Upgrade kube-proxy from static pods to a DaemonSet should maintain a functioning cluster |
@@ -136,11 +136,11 @@ following Features tabs defined here.
 | Feature:GPUUpgrade                        |               | Master upgrade should NOT disrupt GPU Pod |
 | Feature:PodGarbageCollector               |               | Should handle the creation of 1000 pods |
 | Feature:RegularResourceUsageTracking      |               | Resource tracking for 0 pods per node |
-| Feature:ProbeTerminationGracePeriod       | X             | Probing container should override timeoutGracePeriodSeconds when LivenessProbe field is set |
-| NodeFeature:DownwardAPIHugePages          |               | Downward API tests for hugepages should provide container's limits.hugepages-pagesize; and requests.hugepages-pagesize& as env vars |
-| NodeFeature:PodReadinessGate              | X             | Pods should support pod readiness gates |
+| Feature:[ProbeTerminationGracePeriod](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#probe-level-terminationgraceperiodseconds)| X             | Probing container should override timeoutGracePeriodSeconds when LivenessProbe field is set |
+| NodeFeature:[DownwardAPIHugePages](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information)|               | Downward API tests for hugepages should provide container's limits.hugepages-pagesize; and requests.hugepages-pagesize& as env vars |
+| NodeFeature:[PodReadinessGate](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-gate)| X             | Pods should support pod readiness gates |
 | NodeFeature:RuntimeHandler                |               | RuntimeClass should run a Pod requesting a RuntimeClass with a configured handler |
-| NodeFeature:Sysctls                       | X             | Should not launch unsafe, but not explicitly enabled sysctls on the node |
+| NodeFeature:[Sysctls](https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/)| X             | Should not launch unsafe, but not explicitly enabled sysctls on the node |
 
 
 <a name="6.10"></a>
@@ -151,5 +151,5 @@ following Features tabs defined here.
 | Conformance                           | X             | Kubernetes conformance test |
 | None                                  | X             | Kubernetes mainstream features |
 | Feature:GPUDevicePlugin               |               | Run Nvidia GPU Device Plugin tests |
-| Feature:LocalStorageCapacityIsolation | X             | Validates local ephemeral storage resource limits of pods that are allowed to run |
+| Feature:[LocalStorageCapacityIsolation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) | X             | Validates local ephemeral storage resource limits of pods that are allowed to run |
 | Feature:Recreate                      |               | Run Nvidia GPU Device Plugin tests with a recreation |
