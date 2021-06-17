@@ -40,7 +40,7 @@ following Features tabs defined here.
 | Feature:CrossNamespacePodAffinity      |               | Should verify ResourceQuota with cross namespace pod affinity scope using scope-selectors |
 | Feature:PodPriority                    | X             | Verify ResourceQuota's priority class scope against a pod with different priority class |
 | Feature:ScopeSelectors                 | X             | Verify ResourceQuota with terminating scopes through scope selectors |
-| Feature:StorageVersionAPI              |               |
+| Feature:StorageVersionAPI              |               |
 
 <a name="6.3"></a>
 ## 6.3 [Apps Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-apps)
@@ -115,9 +115,9 @@ following Features tabs defined here.
 | Feature:KubeProxyDaemonSetMigration |               | Upgrade kube-proxy from static pods to a DaemonSet should maintain a functioning cluster |
 | Feature:KubeProxyDaemonSetUpgrade   |               | Upgrade kube-proxy from static pods to a DaemonSet should maintain a functioning cluster |
 | Feature:NEG                         |               | Should sync endpoints to NEG |
-| Feature:NoSNAT                      | X             | Should be able to send traffic between Pods without SNAT |
+| Feature:NoSNAT                      | X             | Should be able to send traffic between Pods without SNAT |
 | Feature:Networking-IPv4             | X             | Networking should provide Internet connection for containers |
-| Feature:Networking-IPv6             |               | Networking should provide Internet connection for containers |
+| Feature:Networking-IPv6             |               | Networking should provide Internet connection for containers |
 | Feature:Networking-Performance      | X             | run iperf2 |
 | Feature:NetworkPolicy               |               | NetworkPolicy between server and client should enforce policy to allow traffic only from a different namespace, based on NamespaceSelector |
 | Feature:PerformanceDNS              | X             | Should answer DNS query for maximum number of services per cluster |
