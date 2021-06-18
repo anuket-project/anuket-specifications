@@ -54,13 +54,13 @@ under test in the following location on the machine running the cookbook:
 <a name="3.3"></a>
 ### 3.3 Run Kubernetes conformance suite
 
-Open http://127.0.0.1:8080/job/functest-kubernetes-leguer-daily/ in a web
+Open http://127.0.0.1:8080/job/functest-kubernetes-v1.21-daily/ in a web
 browser, login as admin/admin and click on "Build with Parameters" (keep the
 default values).
 
 If the System under test (SUT) is CNTT compliant, a link to the full archive
 containing all test results and artifacts will be printed in
-functest-kubernetes-leguer-zip's console. Be free to download it and then to send
+functest-kubernetes-v1.21-zip's console. Be free to download it and then to send
 it to any reviewer committee.
 
 To clean your working dir:

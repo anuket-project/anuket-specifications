@@ -41,7 +41,7 @@ run by the Kubernetes community (under the aegis of the CNCF).
 CNTT shares the same goal to give end users the confidence that when they use
 a certified product they can rely on a high level of common functionality.
 Then CNTT RC2 starts with
-[the test case list](https://git.opnfv.org/functest-kubernetes/tree/docker/smoke/testcases.yaml?h=stable/leguer#n23)
+[the test case list](https://git.opnfv.org/functest-kubernetes/tree/docker/smoke/testcases.yaml?h=stable/v1.21)
 defined by [K8s Conformance](https://github.com/cncf/k8s-conformance) which is
 expected to grow according to the ongoing requirement traceability:
 - focus: \[Conformance\]
@@ -51,7 +51,7 @@ expected to grow according to the ongoing requirement traceability:
 allows to perform Kubernetes API testing by iterating once the mainline
 [xrally-kubernetes](https://github.com/xrally/xrally-kubernetes) scenarios:
 
-[Functest xrally_kubernetes](http://artifacts.opnfv.org/functest-kubernetes/D8LBWLN718M8/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-leguer-xrally_kubernetes_full-run-20/xrally_kubernetes_full/xrally_kubernetes_full.html):
+[Functest xrally_kubernetes](http://artifacts.opnfv.org/functest-kubernetes/UFEMNKZPRBCO/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-v1.21-xrally_kubernetes_full-run-16/xrally_kubernetes_full/xrally_kubernetes_full.html):
 
 | Scenarios                                                          |
 |--------------------------------------------------------------------|
@@ -78,13 +78,13 @@ allows to perform Kubernetes API testing by iterating once the mainline
 | Kubernetes.create_scale_and_delete_statefulset                     |
 | Kubernetes.list_namespaces                                         |
 
-The following software versions are considered to verify Kubernetes v1.20
+The following software versions are considered to verify Kubernetes v1.21
 (latest stable release) selected by CNTT:
 
 | software                | version     |
 |-------------------------|-------------|
-| Functest                | leguer      |
-| Kubernetes              | v1.20       |
+| Functest                | v1.21       |
+| Kubernetes              | v1.21       |
 | xrally-kubernetes       | 1.1.1.dev12 |
 
 ### Kubernetes API benchmarking
@@ -92,9 +92,9 @@ The following software versions are considered to verify Kubernetes v1.20
 [Rally](https://github.com/openstack/rally) is a tool and framework that
 performs Kubernetes API benchmarking.
 
-[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fleguer)
+[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fv1.21)
 proposed a Rally-based test case,
-[xrally_kubernetes_full](http://artifacts.opnfv.org/functest-kubernetes/D8LBWLN718M8/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-leguer-xrally_kubernetes_full-run-20/xrally_kubernetes_full/xrally_kubernetes_full.html),
+[xrally_kubernetes_full](http://artifacts.opnfv.org/functest-kubernetes/UFEMNKZPRBCO/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-v1.21-xrally_kubernetes_full-run-16/xrally_kubernetes_full/xrally_kubernetes_full.html),
 which iterates 10 times the mainline
 [xrally-kubernetes](https://github.com/xrally/xrally-kubernetes) scenarios.
 
@@ -102,9 +102,9 @@ At the time of writing, no KPI is defined in
 [Kubernetes based Reference Architecture](../../../ref_arch/kubernetes/chapters/chapter02.md)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
-[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fleguer)
+[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking/testcases.yaml?h=stable%2Fv1.21)
 
-[Functest xrally_kubernetes_full](http://artifacts.opnfv.org/functest-kubernetes/D8LBWLN718M8/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-leguer-xrally_kubernetes_full-run-20/xrally_kubernetes_full/xrally_kubernetes_full.html):
+[Functest xrally_kubernetes_full](http://artifacts.opnfv.org/functest-kubernetes/UFEMNKZPRBCO/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-v1.21-xrally_kubernetes_full-run-16/xrally_kubernetes_full/xrally_kubernetes_full.html):
 
 | Scenarios                                                          | Iterations |
 |--------------------------------------------------------------------|:----------:|
@@ -131,12 +131,12 @@ of 0%) proposed in
 | Kubernetes.create_scale_and_delete_statefulset                     | 10         |
 | Kubernetes.list_namespaces                                         | 10         |
 
-The following software versions are considered to benchmark Kubernetes v1.20
+The following software versions are considered to benchmark Kubernetes v1.21
 (latest stable release) selected by CNTT:
 
 | software                | version     |
 |-------------------------|-------------|
-| Functest                | leguer      |
+| Functest                | v1.21       |
 | xrally-kubernetes       | 1.1.1.dev12 |
 
 ### SIG Testing
@@ -170,7 +170,7 @@ skip:
 
 There are a couple of opensource tools that help securing the Kubernetes stack.
 Amongst them,
-[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fleguer)
+[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fv1.21)
 offers two test cases based on
 [kube-hunter](https://github.com/aquasecurity/kube-hunter) and
 [kube-bench](https://github.com/aquasecurity/kube-bench).
@@ -199,14 +199,14 @@ are defined as mandatory (e.g. sec.std.001: The Cloud Operator **should**
 comply with Center for Internet Security CIS Controls) else it would have
 required an update of the default kube-bench behavior (all failures and
 warnings are only printed) as integrated in
-[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fleguer).
+[Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fv1.21).
 
-The following software versions are considered to verify Kubernetes v1.20
+The following software versions are considered to verify Kubernetes v1.21
 (latest stable release) selected by CNTT:
 
 | software                | version     |
 |-------------------------|-------------|
-| Functest                | leguer      |
+| Functest                | v1.21       |
 | kube-hunter             | 0.3.1       |
 | kube-bench              | 0.3.1       |
 
@@ -222,12 +222,12 @@ via kubecltl and Helm. It's worth mentioning that this CNF is covered by the
 upstream tests (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)).
 
-The following software versions are considered to verify Kubernetes v1.20
+The following software versions are considered to verify Kubernetes v1.21
 (latest stable release) selected by CNTT:
 
 | software                | version     |
 |-------------------------|-------------|
-| Functest                | leguer      |
+| Functest                | v1.21       |
 | clearwater              | release-130 |
 | Helm                    | v3.3.1      |
 
@@ -237,11 +237,11 @@ The following test case must pass as they are for Reference Conformance:
 
 | container                                     | test case              | criteria | requirements                          |
 |-----------------------------------------------|------------------------|:--------:|---------------------------------------|
-| opnfv/functest-kubernetes-smoke:leguer        | k8s_conformance        | PASS     | Kubernetes API testing                |
-| opnfv/functest-kubernetes-smoke:leguer        | xrally_kubernetes      | PASS     | Kubernetes API testing                |
-| opnfv/functest-kubernetes-security:leguer     | kube_hunter            | PASS     | Security testing                      |
-| opnfv/functest-kubernetes-security:leguer     | kube_bench_master      | PASS     | Security testing                      |
-| opnfv/functest-kubernetes-security:leguer     | kube_bench_node        | PASS     | Security testing                      |
-| opnfv/functest-kubernetes-benchmarking:leguer | xrally_kubernetes_full | PASS     | Kubernetes API benchmarking           |
-| opnfv/functest-kubernetes-cnf:leguer          | k8s_vims               | PASS     | Opensource CNF onboarding and testing |
-| opnfv/functest-kubernetes-cnf:leguer          | helm_vims              | PASS     | Opensource CNF onboarding and testing |
+| opnfv/functest-kubernetes-smoke:v1.21         | k8s_conformance        | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | xrally_kubernetes      | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-security:v1.21      | kube_hunter            | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-security:v1.21      | kube_bench_master      | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-security:v1.21      | kube_bench_node        | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-benchmarking:v1.21  | xrally_kubernetes_full | PASS     | Kubernetes API benchmarking           |
+| opnfv/functest-kubernetes-cnf:v1.21           | k8s_vims               | PASS     | Opensource CNF onboarding and testing |
+| opnfv/functest-kubernetes-cnf:v1.21           | helm_vims              | PASS     | Opensource CNF onboarding and testing |
