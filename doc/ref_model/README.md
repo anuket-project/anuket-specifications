@@ -1,14 +1,12 @@
 [<< Back](https://cntt-n.github.io/CNTT/)
 # Reference Model
 
-<!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->
-
 ## Release Information
-**Bundle: _4_**
+**Bundle: _6_**
 
-**Version: _0_**
+**Version: _6.0_**
 
-**Release Date: _25th September 2020_**
+**Release Date: _29th January 2021_**
 
 ## Bundle/Version History
 
@@ -20,23 +18,25 @@
 | 3.0-alpha         | 10th January 2020     | Snezka Release            |
 | 3.0               | 15th May 2020         | Baldy Release             |
 | 4.0               | 25th Sep 2020         | Baraque Release           |
-
+| 5.0               | 29th Jan 2021         | Elbrus Release            |
+| 5.1               | 8th March 2021        | Kali Release work started |
+| 6.0               | 1 July 2021        | Kali Release work finished |
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Release ready |
-| Chapter 02 | Release ready |
-| Chapter 03 | Release ready |
-| Chapter 04 | Release ready |
-| Chapter 05 | Release ready |
-| Chapter 06 | Release ready |
-| Chapter 07 | Release ready |
-| Chapter 08 | Release ready |
-| Chapter 09 | Release ready |
-| Chapter 10 | Release ready |
-| Glossary | Release ready|
+| Chapter 01 | Release work finished |
+| Chapter 02 | Release work finished |
+| Chapter 03 | Release work finished |
+| Chapter 04 | Release work finished |
+| Chapter 05 | Release work finished |
+| Chapter 06 | Release work finished |
+| Chapter 07 | Release work finished |
+| Chapter 08 | Release work finished |
+| Chapter 09 | Release work finished |
+| Chapter 10 | Release work finished |
+| Glossary   | Release work finished |
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)

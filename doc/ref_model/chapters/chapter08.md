@@ -22,7 +22,7 @@ The [Reference Model Chapter 3](./chapter03.md) focuses on cloud infrastructure 
 
 It is unrealistic to expect that a private cloud can cost effectively meet the need of all loads, including peak loads and disaster recovery. It is for that reason that enterprises will implement an hybrid cloud.  In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.  In a multi-cloud the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies.  The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
 
-In the [Reference Model Chapter 3](./chapter03.md), the cloud infrastructure is defined. The tenants are required to provide certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of the same services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the CNTT Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
+In the [Reference Model Chapter 3](./chapter03.md), the cloud infrastructure is defined. The tenants are required to provide certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of the same services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
 
 A generic Telco cloud is an hybrid multi-cloud or a Federated cloud that has deployments in large data centers, central offices or colocation facilities, and the edge. In this chapter we will discuss the characteristics of Telco Edge and hybrid multi-cloud.
 
@@ -121,9 +121,9 @@ The [Cloud Infrastructure Profiles](./chapter04.md#4.2.4) section specifies two 
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low to medium network throughput requirements.
 
-The **Network Intensive** cloud infrastructure profile is intended for use by applications that have high network throughput requirements (up to 50Gbps).
+The **High Performance** cloud infrastructure profile is intended for use by applications that have high network throughput requirements (up to 50Gbps).
 
-The Network Intensive profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](./chapter03.md#3.8). The Reference Model Network Intensive profile includes an initial set of [Network Intensive profile extensions](./chapter04.md#42421-network-acceleration-extensions).
+The High Performance profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](./chapter03.md#3.8). The Reference Model High Performance profile includes an initial set of [High Performance profile extensions](./chapter04.md#42421-network-acceleration-extensions).
 
 Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [Infrastructure Profile features and requirements](./chapter05.md) that would need to be relaxed.
 
@@ -131,7 +131,7 @@ Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [I
 
 | Reference | Feature | Description | As Specified in RM Chapter 05| | Exception for Edge | |
 |----|----|----|----|----|----|----|
-| | | | **Basic Type** | **Network Intensive** | **Basic Type** | **Network Intensive** |
+| | | | **Basic Type** | **High Performance** | **Basic Type** | **High Performance** |
 | infra.stg.cfg.003 | Storage with replication |  | N | Y | N | Optional |
 | infra.stg.cfg.004 | Storage with encryption |  | Y | Y | N | Optional |
 | infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets | This determines the minimum number of CPU sockets within each host | 2 | 2 | 1 | 1 |

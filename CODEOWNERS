@@ -34,75 +34,77 @@
 /doc/ref_model/chapters/chapter08-annex.md  @scottsteinbrueck @walterkozlowski
 
 # Reference Architectures 1
-/doc/ref_arch/openstack/chapters/chapter01.md        @scottsteinbrueck @pgoyal01
-/doc/ref_arch/openstack/chapters/chapter02.md        @scottsteinbrueck @pgoyal01
-/doc/ref_arch/openstack/chapters/chapter03.md        @scottsteinbrueck @pgoyal01
-/doc/ref_arch/openstack/chapters/chapter04.md        @scottsteinbrueck @pgoyal01
-/doc/ref_arch/openstack/chapters/chapter05.md        @scottsteinbrueck @pgoyal01
-/doc/ref_arch/openstack/chapters/chapter06.md        @scottsteinbrueck @pgoyal01
-/doc/ref_arch/openstack/chapters/chapter07.md        @scottsteinbrueck @pgoyal01
-/doc/ref_arch/openstack/chapters/chapter08.md        @scottsteinbrueck @pgoyal01
+/doc/ref_arch/openstack/chapters/chapter01.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter02.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter03.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter04.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter05.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter06.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter07.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
+/doc/ref_arch/openstack/chapters/chapter08.md        @scottsteinbrueck @pgoyal01 @walterkozlowski
 
 # Reference Implementation 1
-/doc/ref_impl/cntt-ri/chapters/chapter01.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter02.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter03.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter05.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter04.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter06.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter07.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter08.md        @scottsteinbrueck @jayacha
-/doc/ref_impl/cntt-ri/chapters/chapter09.md        @scottsteinbrueck @jayacha
+/doc/ref_impl/cntt-ri/chapters/chapter01.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter02.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter03.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter05.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter04.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter06.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter07.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter08.md        @scottsteinbrueck @jayacha @walterkozlowski
+/doc/ref_impl/cntt-ri/chapters/chapter09.md        @scottsteinbrueck @jayacha @walterkozlowski
 
 # Reference Certification 1
-/doc/ref_cert/RC1/chapters/chapter01.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter02.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter03.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter04.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter05.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter06.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter07.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter08.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter09.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter10.md        @scottsteinbrueck @fuqiao123
-/doc/ref_cert/RC1/chapters/chapter11.md        @scottsteinbrueck @fuqiao123
+/doc/ref_cert/RC1/chapters/chapter01.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter02.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter03.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter04.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter05.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter06.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter07.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter08.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter09.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter10.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter11.md        @scottsteinbrueck @fuqiao123 @walterkozlowski
 
 
 # Reference Architectures 2
-/doc/ref_arch/kubernetes/chapters/chapter01.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter02.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter03.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter04.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter05.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter06.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter07.md        @scottsteinbrueck @tomkivlin @rgstori
-/doc/ref_arch/kubernetes/chapters/chapter08.md        @scottsteinbrueck @tomkivlin @rgstori
+/doc/ref_arch/kubernetes/figures/*                    @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/README.md                    @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter01.md        @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter02.md        @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter03.md        @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter04.md        @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter05.md        @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter06.md        @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter07.md        @scottsteinbrueck @rgstori @walterkozlowski
+/doc/ref_arch/kubernetes/chapters/chapter08.md        @scottsteinbrueck @rgstori @walterkozlowski
 
 
 # Reference Implementation 2
-/doc/ref_impl/cntt-ri2/chapters/chapter01.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter02.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter03.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter05.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter04.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter06.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter07.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter08.md        @scottsteinbrueck @tomkivlin
-/doc/ref_impl/cntt-ri2/chapters/chapter09.md        @scottsteinbrueck @tomkivlin
+/doc/ref_impl/cntt-ri2/chapters/chapter01.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter02.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter03.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter05.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter04.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter06.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter07.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter08.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
+/doc/ref_impl/cntt-ri2/chapters/chapter09.md        @scottsteinbrueck @rihabbanday @jgu17 @walterkozlowski
 
 # Reference Conformance 2
-/doc/ref_cert/RC2/chapters/chapter01.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter02.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter03.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter05.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter04.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter06.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter07.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter08.md        @xmulligan @scottsteinbrueck
-/doc/ref_cert/RC2/chapters/chapter09.md        @xmulligan @scottsteinbrueck
+/doc/ref_cert/RC2/chapters/chapter01.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter02.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter03.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter05.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter04.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter06.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter07.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter08.md        @xmulligan @scottsteinbrueck @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter09.md        @xmulligan @scottsteinbrueck @walterkozlowski 
 
 # Edge
-/doc/tech/usecases.md        @ASawwaf @scottsteinbrueck
+/doc/tech/usecases.md        @ASawwaf @scottsteinbrueck @walterkozlowski
 
 # NFG
 /doc/tech/approach.md        @walterkozlowski @scottsteinbrueck

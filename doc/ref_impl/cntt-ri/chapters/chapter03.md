@@ -25,7 +25,9 @@ The CNTT Reference Model will be referenced as **RM** to avoid long and duplicat
 <a name="3.2"></a>
 ## 3.2 VNF profile
 
+
 Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in [RM: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
+
 
 `B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
@@ -34,7 +36,9 @@ B/N<!--/C--> is used to specify the instance type (Basic, Network Intensive<!--,
 Whereas:
 
   - `<I opt>` stands for network interface options, e.g., the range of vNIC Bandwidth of B instance shall be selected from n1 to n60, for C instance is from n10 to n300, for N instance is from n10 to n600. (RM: 4.2.2 Virtual Network Interface Specifications and Table 4-23: Virtual NIC Interfaces Options)
-  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM: 4.2.1 Compute Flavours), additionally there are a few capabilities which are bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!--/C--> instances, while CPU overbooking can only happens B instance but not for N<!--/C-->. (See RM: Table 4-24 Mapping of Cloud Infrastructure Capabilities to Instance Types for full mapping details)
+
+  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM: 4.2.1 Compute Flavours), additionally there are a few capabilities which bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!--/C--> instances, while CPU overbooking can only happen to B instance types but not for N<!--/C-->. (See RM: Table 4-24 Mapping of Cloud Infrastructure Capabilities to Instance Types for full mapping details)
+
   - `<S ext>` stands for persistent storage extensions, contains the size and the performance settings (RM: Table 4-20: Storage Extension Options), note the storage extension is common to all instance types as <Flavours>
   - `<A ext>` stands for accelaration extensions, features like Transcoding and Programmable are associated with C instances (RM: 4.2.4.3.1 Compute Accleration Extensions), while IPSec and Crypto features only make scene with N instance (RM: 4.2.4.2.1 Network Acceleration Extensions),
 
@@ -103,12 +107,14 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 <a name="3.3"></a>
 ## 3.3 Cloud Infrastructure SW profile
 
+
 [RM: 5.2 Cloud Infrastructure Software Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.2) defines the Cloud Infrastructure software layer. The profile depicts the feature status of the
   - virtual Compute (**nfvi.com.cfg.xxx** in RM Table 5-7: Virtual Compute features and configuration for the 3 types of SW profiles and **nfvi.com.acc.cfg.xxx** in Table 5-8: Virtual Compute Acceleration features),
   - storage (**nfvi.stg.cfg.xxx** in RM1: Table 5-9: Virtual Storage features and configuration for the 3 types of SW profiles and **nfvi.stg.acc.cfg.xxx** in Table 5-10: Virtual Storage Acceleration features)
   - networking configuration(see **nfvi.net.cfg.xxx** in Table 5-11 Virtual Networking features and configuration for the 3 types of SW profiles and **nfvi.net.acc.cfg.xxx** in Table 5-12 Virtual Networking Acceleration features)
 
 This profile is the global settings for the whole Cloud Infrastructure, which means there should be only one entry per Cloud Infrastructure resource pool, i.e., Basic/Network<!--/Compute-->
+
 
 <!---| .conf | Basic | Network Intensive | Compute Intensive |
 |-------|----------------|----------------|----------------|
@@ -188,7 +194,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 #TODO : Identify the tests for this section
 
 
-[RA1: Chapter 2.3 Openstack Requirements](../../../ref_arch/openstack/chapters/chapter02.md#2.3) describes the requirements related to the following 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
+[RA1: Chapter 2.3 OpenStack Requirements](../../../ref_arch/openstack/chapters/chapter02.md#2.3) describes the requirements related to the following 8 domains: general(gen), infrastructure(inf), VIM(vim), Interface & API(int), Tenants(tnt), LCM(lcm), Assurance(asr), Security(sec).
 
 | Ref # | Description |
 |----|-------------------------------------------------------------------------------|
@@ -277,7 +283,7 @@ This sections describes the readiness of Cloud Infrastructure before the certifi
 | `req.sec.ntw.03` | **must** have the underlay network incorporate encrypted and/or private communications channels to ensure its security. |
 | `req.sec.ntw.04` | **must** configure all of the underlay network components to ensure the complete separation from the overlay customer deployments. |
 
-[RA1: Chapter 5 Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md) describes the baseline version regarding to Openstack Service APIs.
+[RA1: Chapter 5 Interfaces and APIs](../../../ref_arch/openstack/chapters/chapter05.md) describes the baseline version regarding to OpenStack Service APIs.
 
 | OpenStack Service | Link for API list | Baseline Version | Minimal API Microversion |
 |------------------|--------------------|------------------------|------------------------|

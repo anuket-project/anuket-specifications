@@ -20,7 +20,6 @@ internet access, GNU/Linux as Operating System and asks for a few
 dependencies as described in
 [Deploy your own Xtesting CI/CD toolchains](https://wiki.opnfv.org/pages/viewpage.action?pageId=32015004):
 - python-virtualenv
-- docker.io
 - git
 
 Please note the next two points depending on the GNU/Linux distributions and
@@ -33,13 +32,13 @@ the network settings:
 
 To deploy your own CI toolchain running CNTT Compliance:
 ```bash
-virtualenv functest-kubernetes
+virtualenv functest-kubernetes --system-site-packages
 . functest-kubernetes/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
-ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes
+ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes community.docker community.postgresql
 git clone https://gerrit.opnfv.org/gerrit/functest-kubernetes functest-kubernetes-src
-(cd functest-kubernetes-src && git checkout -b stable/leguer origin/stable/leguer)
+(cd functest-kubernetes-src && git checkout -b stable/v1.21 origin/stable/v1.21)
 ansible-playbook functest-kubernetes-src/ansible/site.cntt.yml
 ```
 
@@ -55,13 +54,13 @@ under test in the following location on the machine running the cookbook:
 <a name="3.3"></a>
 ### 3.3 Run Kubernetes conformance suite
 
-Open http://127.0.0.1:8080/job/functest-kubernetes-leguer-daily/ in a web
+Open http://127.0.0.1:8080/job/functest-kubernetes-v1.21-daily/ in a web
 browser, login as admin/admin and click on "Build with Parameters" (keep the
 default values).
 
 If the System under test (SUT) is CNTT compliant, a link to the full archive
 containing all test results and artifacts will be printed in
-functest-kubernetes-leguer-zip's console. Be free to download it and then to send
+functest-kubernetes-v1.21-zip's console. Be free to download it and then to send
 it to any reviewer committee.
 
 To clean your working dir:

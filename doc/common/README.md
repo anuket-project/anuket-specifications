@@ -22,10 +22,6 @@
 
 Cloud iNfrastructure Telco Taskforce [Introduction](chapter00.md). 
 
-<a name="4.0"></a>
-## Approach
-Different specification types within CNTT are related to each other and requires alignments between different parts. The Approach CNTT is taking to tackle those issues is described in [here](./approach.md).
-
 <a name="5.0"></a>
 ## Use Cases
 CNTT Addresses wide range of use cases from Core all the way to the Edge of the Network. Different use cases supported by CNTT specifications are described in [here](./usecases.md).

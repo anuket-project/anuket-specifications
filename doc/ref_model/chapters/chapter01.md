@@ -10,7 +10,7 @@
 
 <a name="1.1"></a>
 ## 1.1 Overview
-The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by Cloud iNfrastructure Telco Taskforce (CNTT).  For more information about CNTT, its activities and deliverables, see [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
+The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by the Linux Foundation Networking project [Anuket](../../common/chapter00.md#2.0).  
 
 **Problem Statement:**
 Based on community consultations, including telco operators, technology suppliers, and software developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of VNF/CNF network applications related to the lack of a common cloud infrastructure platform. These include but are not limited to the following:
@@ -54,7 +54,7 @@ This **Reference Model** document focuses on identifying the abstractions, and a
 <p align="center"><b>Figure 1-1:</b> Scope of Reference Model</p>
 
 This document specifies:
-- **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete cloud system that supports workloads deployed in Virtual Machines (VM) or containers. Network function workloads that are deployed on virtual machines and containers are referred to as virtual network functions (VNF) and containerised network functions (CNF), respectively; please note that it is now more common to refer CNFs as cloud native network functions. 
+- **Cloud Infrastructure abstraction**: in context with how it interacts with the other components required to build a complete cloud system that supports workloads deployed in Virtual Machines (VM) or containers. Network function workloads that are deployed on virtual machines and containers are referred to as virtual network functions (VNF) and containerised network functions (CNF), respectively; please note that it is now more common to refer CNFs as cloud native network functions.
   - **Cloud Infrastructure capabilities & metrics**: A set of cloud infrastructure capabilities and metrics required to perform telco scale network functions and satisfy their performance criterion.
   - **Infrastructure profiles catalogue**: A catalogue of standard infrastructure software and hardware configurations, referred to as profiles; these profiles abstract the infrastructure for the workloads. Only a few profiles, with well-defined characteristics, can meet the operational and performance requirements of all workloads.
 
@@ -77,6 +77,3 @@ To help guide the reader, the Reference Model [Glossary](../../common/glossary.m
 <a name="1.5"></a>  
 ## 1.5	Conventions
  “The key words “must”, “must not”, “required”, “shall”, “shall not”, “should”, “should not”, “recommended”, “may”, and “optional” in this document are to be interpreted as described in RFC2119 [2].”
-
-<!--Separate document w/labels/artefacts
-Not part of model but will be applicable to architecture -->

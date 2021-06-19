@@ -15,9 +15,9 @@
 ## 6.1 Introduction
 In this document’s earlier chapters, the various resources and capabilities of the Cloud Infrastructure have been catalogued and the workloads have been profiled with respect to those capabilities. The intent behind this chapter and an “API Layer” is to similarly provide a single place to catalogue and thereby codify, a common set of open APIs to access (i.e. request, consume, control, etc.) the aforementioned resources, be them directly exposed to the workloads, or purely internal to the Cloud Infrastructure.
 
-It is a further intent of this chapter and this document to ensure the APIs adopted for CNTT Cloud Infrastructure implementations are open and not proprietary, in support of compatibility, component substitution, and ability to realize maximum value from existing and future test heads and harnesses.
+It is a further intent of this chapter and this document to ensure the APIs adopted for the Cloud Infrastructure implementations are open and not proprietary, in support of compatibility, component substitution, and ability to realize maximum value from existing and future test heads and harnesses.
 
-While it is the intent of this chapter to catalogue the APIs, it is not the intent of this chapter to reprint the APIs, as this would make maintenance of the chapter impractical and the length of the chapter disproportionate within the Reference Model document. Instead, the APIs selected for CNTT Cloud Infrastructure implementations and specified in this chapter, will be incorporated by reference and URLs for the latest, authoritative versions of the APIs, provided in the References section of this document.
+While it is the intent of this chapter to catalogue the APIs, it is not the intent of this chapter to reprint the APIs, as this would make maintenance of the chapter impractical and the length of the chapter disproportionate within the Reference Model document. Instead, the APIs selected for the Cloud Infrastructure implementations and specified in this chapter, will be incorporated by reference and URLs for the latest, authoritative versions of the APIs, provided in the References section of this document.
 
 Although the document does not attempt to reprint the APIs themselves, where appropriate and generally where the mapping of resources and capabilities within the Cloud Infrastructure to objects in APIs would be otherwise ambiguous, this chapter shall provide explicit identification and mapping.
 
@@ -107,7 +107,7 @@ These acceleration interfaces are summarized here in Table 6.3 only for convenie
 <tr><td> Input </td><td> vnfEventHandlerId </td><td> the handler for NFVI to use when notifying the VNF of the event  </td></tr>
 <tr><td rowspan="2">  AccEventNotificationRequest </td><td rowspan="2"> AccEventNotificationResponse </td><td rowspan="2"> NFVI → VNF </td><td> Input </td><td> vnfEventHandlerId </td><td> Handler used by VNF registering for this event  </td></tr>
 <tr><td> Input </td><td> accEventMetaData </td><td>   </td></tr>
-<tr><td>  DeRegisterForAccEventRequest </td><td> DeRegisterForAccEventResponse </td><td> VNF → NFVI </td><td> Input </td><td> accEvent </td><td> Event VNF is deregistering from  </td><td> 
+<tr><td>  DeRegisterForAccEventRequest </td><td> DeRegisterForAccEventResponse </td><td> VNF → NFVI </td><td> Input </td><td> accEvent </td><td> Event VNF is deregistering from  </td><td>
 <tr><td>  ReleaseAccRequest </td><td> ReleaseAccResponse </td><td> VNF → NFVI </td><td>  </td><td>  </td><td>   </td></tr>
 <tr><td rowspan="2">  ModifyAccConfigurationRequest </td><td rowspan="2"> ModifyAccConfigurationResponse </td><td rowspan="2"> VNF → NFVI </td><td> Input </td><td> accConfigurationData </td><td> Config data for accelerator  </td></tr>
 <tr><td> Input </td><td> accSubSysConfigurationData </td><td> Config data for accelerator sub-system  </td></tr>
@@ -169,9 +169,3 @@ Table 6-1 lists a number of NFVI and VIM interfaces, including the internal VI-H
 <a name="6.4"></a>
 ## 6.4. Enabler Services Interfaces
 An operational cloud needs a set of standard services to function. Services such as NTP for time synchronization, DHCP for IP address allocation, DNS for obtaining IP addresses for domain names, and LBaaS (version 2) to distribute incoming requests amongst a pool of designated resources.
-
-<!---## References
-Network Functions Virtualisation (NFV); Infrastructure; Hypervisor Domain. ETSI GS NFV-INF 004 V1.1.1 [9]
-Network Functions Virtualisation (NFV); Acceleration Technologies; VNF Interfaces Specification ETSI GS NFV-IFA 002 V2.4.1 [7]
-Network Functions Virtualisation (NFV); Acceleration Technologies; Acceleration Resource Management Interface Specification; NFV IFA 019 V3.1.1 [8]
-Network Functions Virtualisation (NFV); Management and Orchestration; Or-Vi reference point - Interface and Information Model Specification; ETSI GS NFV-IFA 005 V3.1.1 [10]--->
