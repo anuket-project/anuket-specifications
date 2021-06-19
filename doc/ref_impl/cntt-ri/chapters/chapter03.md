@@ -1,25 +1,33 @@
 [<< Back](../)
 
-# 3. NFVI + VNF Target State & Specification
+# 3. Cloud Infrastructure + VNF Target State & Specification
 <p align="right"><img src="../figures/bogo_sdc.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
 * [3.1 Introduction](#3.1)
 * [3.2 VNF profile](#3.2)
-* [3.3 NFVI SW profile](#3.3)
-* [3.4 NFVI Required State](#3.4)
+* [3.3 Cloud Infrastructure SW profile](#3.3)
+* [3.4 Cloud Infrastructure Hardware Profile](#3.4)
+* [3.5 Cloud Infrastructure Required State](#3.5)
+* [3.6 Cloud Infrastructure and VIM Architecture](#3.6)
+* [3.7 Cloud Infrastructure and VIM Component Level Architecture](#3.7)
+* [3.8 Interface and API for Reference Implementation 1](#3.8)
+
+
 
 <a name="3.1"></a>
 ## 3.1 Introduction
 
-The VNF profile is used to describe every workload running on top of NFVI. The NFVI SW profile is used to describe the list of features provided by the hypervisor and host OS.
+The VNF profile is used to describe every workload running on top of Cloud Infrastructure. The Cloud Infrastructure SW profile is used to describe the list of features provided by the hypervisor and host OS.
 
 The CNTT Reference Model will be referenced as **RM** to avoid long and duplicated reference titles.
 
 <a name="3.2"></a>
 ## 3.2 VNF profile
 
-Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in NFVI Infrastructure Profiles Catalogue. As states in [RM: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
+
+Any virtual network functions and/or cloud-native network functions must choose to run on one of the pre-defined of entries in Cloud Infrastructure Infrastructure Profiles Catalogue. As states in [RM: 4 Infrastructure Capabilities, Measurements and Catalogue: 4.2 Catalogue](../../../ref_model/chapters/chapter04.md#4.2), the entry uses the following naming convention.
+
 
 `B/N <I opt> . <Flavour> . <S ext> . <A ext>`
 
@@ -28,7 +36,9 @@ B/N<!--/C--> is used to specify the instance type (Basic, Network Intensive<!--,
 Whereas:
 
   - `<I opt>` stands for network interface options, e.g., the range of vNIC Bandwidth of B instance shall be selected from n1 to n60, for C instance is from n10 to n300, for N instance is from n10 to n600. (RM: 4.2.2 Virtual Network Interface Specifications and Table 4-23: Virtual NIC Interfaces Options)
-  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM: 4.2.1 Compute Flavours), additionally there are a few capabilities which are bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!--/C--> instances, while CPU overbooking can only happens B instance but not for N<!--/C-->. (See RM: Table 4-24 Mapping of NFVI Capabilities to Instance Types for full mapping details)
+
+  - Instance capabilities do not explicitly appear on the naming convention, because some are common to all instance types so they are covered in the `<Flavour>` (RM: 4.2.1 Compute Flavours), additionally there are a few capabilities which bind to certain types, e.g., CPU pinning or NUMA support are only available for N<!--/C--> instances, while CPU overbooking can only happen to B instance types but not for N<!--/C-->. (See RM: Table 4-24 Mapping of Cloud Infrastructure Capabilities to Instance Types for full mapping details)
+
   - `<S ext>` stands for persistent storage extensions, contains the size and the performance settings (RM: Table 4-20: Storage Extension Options), note the storage extension is common to all instance types as <Flavours>
   - `<A ext>` stands for accelaration extensions, features like Transcoding and Programmable are associated with C instances (RM: 4.2.4.3.1 Compute Accleration Extensions), while IPSec and Crypto features only make scene with N instance (RM: 4.2.4.2.1 Network Acceleration Extensions),
 
@@ -92,17 +102,19 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 
 > Open Point 1: Does ONAP have some relevant spec or VNF declaration schema so that CNTT can re-use/revise to cover what we need ? Or define a new one ?
 
-> Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customerize" ?
+> Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customise" ?
 
 <a name="3.3"></a>
-## 3.3 NFVI SW profile
+## 3.3 Cloud Infrastructure SW profile
 
-[RM: 5.2 NFVI SW profile features and requirements](../../../ref_model/chapters/chapter05.md#5.2) defines the NFVI software layer. The profile depicts the feature status of the
+
+[RM: 5.2 Cloud Infrastructure Software Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.2) defines the Cloud Infrastructure software layer. The profile depicts the feature status of the
   - virtual Compute (**nfvi.com.cfg.xxx** in RM Table 5-7: Virtual Compute features and configuration for the 3 types of SW profiles and **nfvi.com.acc.cfg.xxx** in Table 5-8: Virtual Compute Acceleration features),
-  - storage (**nfvi.stg.cfg.xxx** in RM: Table 5-9: Virtual Storage features and configuration for the 3 types of SW profiles and **nfvi.stg.acc.cfg.xxx** in Table 5-10: Virtual Storage Acceleration features)
+  - storage (**nfvi.stg.cfg.xxx** in RM1: Table 5-9: Virtual Storage features and configuration for the 3 types of SW profiles and **nfvi.stg.acc.cfg.xxx** in Table 5-10: Virtual Storage Acceleration features)
   - networking configuration(see **nfvi.net.cfg.xxx** in Table 5-11 Virtual Networking features and configuration for the 3 types of SW profiles and **nfvi.net.acc.cfg.xxx** in Table 5-12 Virtual Networking Acceleration features)
 
-This profile is the global settings for the whole NFVI, which means there should be only one entry per NFVI resource pool, i.e., Basic/Network<!--/Compute-->
+This profile is the global settings for the whole Cloud Infrastructure, which means there should be only one entry per Cloud Infrastructure resource pool, i.e., Basic/Network<!--/Compute-->
+
 
 <!---| .conf | Basic | Network Intensive | Compute Intensive |
 |-------|----------------|----------------|----------------|
@@ -153,8 +165,8 @@ This profile is the global settings for the whole NFVI, which means there should
 | Crypto Acceleration Interface | N  | Y |
 
 <a name="3.4"></a>
-## 3.4 NFVI Hardware Profile
-[RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple NFVI profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
+## 3.4 Cloud Infrastructure Hardware Profile
+[RM1: 5.4 Cloud Infrastructure Hardware Profiles features and requirements](../../../ref_model/chapters/chapter05.md#5.4) defines the Cloud Infrastructure hardware layer profiles.The labs are typically provisioned with the minimal required hardware and thus it is difficult to partition the available hardware to provision/configure multiple Cloud Infrastructure profiles. However, when reference implementations and the follow up testing and verification are conducted, the hardware profile need to be clearly described. This is especially important for performance testing and verification.
 
 
 | Reference | Feature | Description | Basic Type | Network Intensive |

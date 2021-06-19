@@ -25,7 +25,7 @@ This is the OPNFV based Reference Implementation (RI-1)
 | --- | --- |
 | Chapter 01 - Overview                                  |	Lots of SME Feedback |
 | Chapter 02 - Reference Implementation Requirements     | 	Lots of SME Feedback |
-| Chapter 03 - NFVI + VNF Target State and Specification |	Lots of SME Feedback |
+| Chapter 03 - Cloud Infrastructure + VNF Target State and Specification |	Lots of SME Feedback |
 | Chapter 04 - Lab Requirements                          | 	Lots of SME Feedback |
 | Chapter 05 - Hardware Delivery and Configuration Requirements | Still Developing Content |
 | Chapter 06 - Installer Requirements                    | 	Lots of SME Feedback |
