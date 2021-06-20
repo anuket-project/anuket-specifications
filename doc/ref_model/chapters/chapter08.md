@@ -100,20 +100,19 @@ This section presents the characteristics and capabilities of different Edge clo
 
 <a name="8.3.1"></a>
 ### 8.3.1. Telco Edge Cloud: Deployment Environment Characteristics
-Telco Edge Cloud (TEC) deployment locations can be environmentally friendly such as indoors (offices, buildings, etc.) or environmentally challenged such as outdoors (near network radios, curbside, etc.) or environmentally harsh environments (factories, noise, chemical, heat and electromagnetic exposure, etc). Some of the more salient characteristics are captured in Table 8-2.
-
-<p align="center"><b>Table 8-2. TEC Deployment Location Characteristics & Capabilities.</b></p>
+Telco Edge Cloud (TEC) deployment locations can be environmentally friendly such as indoors (offices, buildings, etc.) or environmentally challenged such as outdoors (near network radios, curb side, etc.) or environmentally harsh environments (factories, noise, chemical, heat and electromagnetic exposure, etc). Some of the more salient characteristics are captured in Table 8-2.
 
 | | Facility Type | Environmental Characteristics | Capabilities | Physical Security | Implications | Deployment Locations
 -----|-----|-----|-----|-----|-----|------
-Environmentally friendly | Indoors: typical commercial or residential structures | Protected<br>Safe for common infrastructure | Easy access to continuous electric power<br>High/Medium bandwidth Fixed and/or wireless network access | Controlled Access | Commodotised infrastructure with no or minimal need for hardening/ruggedisation<br>Operational benefits for installation and maintenance | Indoor venues: homes, shops, offices, stationary and secure cabinets<br>Data centers, central offices, co-location facilities, Vendor premises, Customer premises | 
-Environmentally challenged | Outdoors and/or exposed to environmentally harsh conditions | maybe unprotected<br>Exposure to abnormal levels of noise, vibration, heat, chemical, electromagnetic pollution | May only have battery power<br>Low/Medium bandwidth Fixed and/or mobile network access | No or minimal access control | Expensive ruggedisation<br>Operationally complex | Example locations: curbside, near cellular radios, |
-
+Environmentally friendly | Indoors: typical commercial or residential structures | Protected<br>Safe for common infrastructure | Easy access to continuous electric power<br>High/Medium bandwidth Fixed and/or wireless network access | Controlled Access | Commoditised infrastructure with no or minimal need for hardening/ruggedisation<br>Operational benefits for installation and maintenance | Indoor venues: homes, shops, offices, stationary and secure cabinets<br>Data centers, central offices, co-location facilities, Vendor premises, Customer premises | 
+Environmentally challenged | Outdoors and/or exposed to environmentally harsh conditions | maybe unprotected<br>Exposure to abnormal levels of noise, vibration, heat, chemical, electromagnetic pollution | May only have battery power<br>Low/Medium bandwidth Fixed and/or mobile network access | No or minimal access control | Expensive ruggedisation<br>Operationally complex | Example locations: curb side, near cellular radios, |
+<p align="center"><b>Table 8-2. TEC Deployment Location Characteristics & Capabilities</b></p>
+ 
 <a name="8.3.2"></a>
 ### 8.3.2 Telco Edge Cloud: Infrastructure Characteristics
-Commodity hardware is only suited for environmentally friendly environments. Commodity hardware have standardised designs and form factors. Cloud deployments in data centers typically use such commodity hardware with standardised configurations resulting in operational benefits for procurement, installation and ongoing operations.
+Commodity hardware is only suited for environmentally friendly environments. Commodity hardware have standardised designs and form factors. Cloud deployments in data centres typically use such commodity hardware with standardised configurations resulting in operational benefits for procurement, installation and ongoing operations.
 
-In addition to the type of infrastructure hosted in data center clouds, facilities with smaller sized infrastructure deployments, such as central offices or co-location facilities, may also host non-standard hardware designs including specialised components. The introduction of specialised hardware and custom configurations increases the cloud operations and management complexity.
+In addition to the type of infrastructure hosted in data centre clouds, facilities with smaller sized infrastructure deployments, such as central offices or co-location facilities, may also host non-standard hardware designs including specialised components. The introduction of specialised hardware and custom configurations increases the cloud operations and management complexity.
 
 At the edge, the infrastructure may further include ruggedised hardware for harsh environments and hardware with different form factors.
 
