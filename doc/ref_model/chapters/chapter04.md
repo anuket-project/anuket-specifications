@@ -388,23 +388,23 @@ Workload Flavour sizing consists of the following:
 
 <p align="center"><b>Table 4-12:</b> Workload Flavour Geometry Specification.</p>
 
-The flavours syntax consists of specifying using the <element, value> pairs separated by a colon (“:”). For example, the flavour specification: {cpu : 4; memory: 8 Gi; storage-permanent: 80Gi}.
+The flavours syntax consists of specifying using the <element, value> pairs separated by a colon (“:”). For example, the flavour specification: {cpu: 4; memory: 8 Gi; storage-permanent: 80Gi}.
 
 <a name="4.2.4.2"></a>
 #### 4.2.4.2 Workloads Extra Capabilities Specifications
 
-In addition to the sizing information, a workload may need to specifiy additional capabilities. These include capabilities for workload placement such as latency, workload affinity and non-affinity. It also includes capabuilities such as workload placement on multiple NUMA nodes. The extra specifications also include the [Virtual Network Interface Specifications](#4.2.5) and [Storage Extensions](#4.2.6).
+In addition to the sizing information, a workload may need to specify additional capabilities. These include capabilities for workload placement such as latency, workload affinity and non-affinity. It also includes capabilities such as workload placement on multiple NUMA nodes. The extra specifications also include the [Virtual Network Interface Specifications](#4.2.5) and [Storage Extensions](#4.2.6).
 
 | Attribute | Description |
 |----------|---------------------------|
-| CPU Allocation Ratio | Specifies the maximum cpu allocation (a.k.a. oversubsrciption) ratio supported by a workload. |
+| CPU Allocation Ratio | Specifies the maximum CPU allocation (a.k.a. oversubscription) ratio supported by a workload. |
 | Compute Intensive |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a limitation. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. |
 | Latency | Specifies latency requirements used for locating workloads.	|
 | Affinity| Specifies workloads that should be hosted on the same computer node.	|
 | Non-Affinity	| Specifies workloads that should not be hosted on the same computer node.	|
 | Dedicated cores | Specifies whether or not the workload can share sibling threads with other workloads. Default is No such that it allows different workloads on different threads. |
-| Network Interface Option | See [below](#4.2.5). |
-| Storage Extension | See [below](#4.2.6). |
+| Network Interface Option | See [section](#4.2.5). |
+| Storage Extension | See [section](#4.2.6). |
 
 <a name="4.2.4.3"></a>
 #### 4.2.4.3 Workload Flavours and Other Capabilities Specifications Format
@@ -413,12 +413,12 @@ The complete list of specifications needed to be specified by workloads is shown
 
 | Attribute | Mnemonic | Applicable to Basic Profile | Applicable to High Performance Profile | Description | Notes |
 |----------|------|------|------------|--------------|-------------|
-| cpu | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs). | Required |
+| CPU | c | 	✅	| ✅	| Number of virtual compute resources (vCPUs). | Required |
 | memory | r | 	✅	| ✅	| Virtual resource instance memory in megabytes. | Required |
 | storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
 | storage - persistent | d | 	✅	| ✅	| Specifies the disk size of persistent storage. | Required |
 | storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk. | Optional |
-| CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the cpu allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU ALlocation Ratio is 1:1.  | Required for Basic profile |
+| CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the CPU allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU Allocation Ratio is 1:1.  | Required for Basic profile |
 | Compute Intensive | ci | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. | Optional |
 | Latency | l |	✅	| ✅	| Specifies latency requirements used for locating workloads.	| Optional |
 | Affinity| af |	✅	| ✅	| Specifies workloads that should be hosted on the same computer node.	| Optional |
@@ -462,7 +462,7 @@ Note, the number of virtual network interfaces, aka vNICs, associated with a vir
 
 Persistent storage is associated with workloads via Storage Extensions. The size of an extension can be specified explicitly in increments of 100GB, ranging from a minimum of 100GB to a maximum of 16TB. Extensions are configured with the required performance category, as per Table 4-15. Multiple persistent Storage Extensions can be attached to virtual compute instances.
 
->_*Note:*_ CNTT documentation uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
+>_*Note:*_ This specification uses GB and GiB to refer to a Gibibyte (2<sup>30</sup> bytes), except where explicitly stated otherwise.
 
 <a name="Table4-15"></a>
 
