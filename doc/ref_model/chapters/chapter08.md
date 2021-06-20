@@ -24,7 +24,7 @@ It is unrealistic to expect that a private cloud can cost effectively meet the n
 
 In the [Reference Model Chapter 3](./chapter03.md), the cloud infrastructure is defined. The tenants are required to provide certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of the same services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
 
-A generic Telco cloud is an hybrid multi-cloud or a Federated cloud that has deployments in large data centers, central offices or colocation facilities, and the edge. In this chapter we will discuss the characteristics of Telco Edge and hybrid multi-cloud.
+A generic Telco cloud is a hybrid multi-cloud or a Federated cloud that has deployments in large data centers, central offices or colocation facilities, and the edge. This chapter discusses the characteristics of Telco Edge and hybrid multi-cloud.
 
 <a name="8.2"></a>
 ## 8.2 Hybrid Multi-Cloud Architecture
