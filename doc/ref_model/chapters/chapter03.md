@@ -429,7 +429,7 @@ In both cases the Underlay Networking can be externally controlled over the SDNu
 
 Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 3-7**.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-Underlay Networking separation examples.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-Underlay Networking separation examples.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
 <p align="center"><b>Figure 3-7:</b> Underlay Networking separation examples</p>
 
 <a name="3.5.4.2"></a>
@@ -437,7 +437,7 @@ Two exemplifications of different common HW realisations of Underlay Network sep
 
 Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 3-8**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-SDN Controller relationship examples.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-SDN Controller relationship examples.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
 <p align="center"><b>Figure 3-8:</b> SDN Controller relationship examples</p>
 
 <a name="3.5.4.3"></a>
@@ -447,7 +447,7 @@ A Networking Reference Model deployment example is depicted in **Figure 3-9** to
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNFs on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks, since it is not foreseen any generic standard of a CaaS implementation that will be capable to support all types of CNFs from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-Networking Reference Model deployment example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-Networking Reference Model deployment example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
 <p align="center"><b>Figure 3-9:</b> Networking Reference Model deployment example</p>
 
 
