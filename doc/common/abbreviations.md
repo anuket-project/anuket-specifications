@@ -102,6 +102,7 @@
 | eTOM | Enhanced Telecom Operations Map |
 | ETSI | European Telecommunications Standards Institute |
 | EUAG | Linux Foundation Networking End User Advisory Group |
+| EUD| End User Device |
 | EULA | End-User License Agreement |
 | EVPN | Ethernet Virtual Private Network |
 | EVPN | Ethernet VPN |
@@ -276,6 +277,7 @@
 | RR | Route Reflector |
 | RTM | Requirements Traceability Matrix |
 | RTM | Root of Trust for Measurements |
+| RTT | Round Trip Time |
 | RU | Radio Unit (O-RAN context) |
 | S3 | (Amazon) Simple Storage Service |
 | SA | Service Assurance |
