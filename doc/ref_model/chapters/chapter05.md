@@ -249,7 +249,7 @@ The profiles can be considered to be the set of EPA-related (Enhanced Performanc
 
 A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. In addition to the host profile, [profile-extensions](./chapter04.md#4.2.3) and additional capability specifications for the configuration of the host can be specified. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles. For the profiles to be configured, the architecture of the underlying resource needs to be known.
 
-| Ref | Cloud Infratsructure Resource | Type | Definition/Notes | Capabilities Reference  |
+| Ref | Cloud Infrastructure Resource | Type | Definition/Notes | Capabilities Reference  |
 |-----|-------------------------------|------|------------------|-------------------------|
 | infra.hw.001 | CPU Architecture |	<value> |	Values such as x64, ARM, etc. | `e.cap.020` |
 
@@ -272,7 +272,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | Specifies the number of cores needed per CPU<sup>*</sup> | 20 | 20 |
 | infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment enabled and BIOS configured to enable NUMA | N | Y |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | SMT enabled that allows each core to work multiple streams of data simultaneously  | Y | Y |
-> <sup>*</sup> PLease note that these specifications are for general purpose servers normally located in large data centers. Servers for specialised use with the data centers or other locations, such as at edge sites, are likely to have different specifications.
+> <sup>*</sup> Please note that these specifications are for general purpose servers normally located in large data centers. Servers for specialised use with the data centres or other locations, such as at edge sites, are likely to have different specifications.
 <p align="center"><b>Table 5-14:</b> Minimum sizing and capability configurations for general purpose servers.</p>
 
 <a name="5.4.1.1"></a>
