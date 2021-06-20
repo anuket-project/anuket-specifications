@@ -144,7 +144,7 @@ Low Latency storage is for workloads which have strong constraints on the time t
 High IOPS oriented storage is for workloads requiring lots of read/write actions.
 Large size storage is for workloads that need lots of volume without strong performance constraints.
 Note that approximate numeric ranges for the qualitative values used above are given in the 
-[Storage Extensions](./chapter04.html #4.2.6) section.
+[Storage Extensions](./chapter04.html#4.2.6) section.
 
 Storage resources have the following attributes, with metric definitions that support verification through passive measurements (telemetry) where appropriate:
 
