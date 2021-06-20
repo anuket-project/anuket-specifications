@@ -419,7 +419,7 @@ Poor code quality is a factor of risk. Open source code advantage is its transpa
 
 Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all the life of the application or workload or service. When a public vulnerability on a component is released, the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier to identify. It is essential to remediate the affected components as soon as possible, because code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
 
-The CVE must be used to identify vulnerabilities and their severity rating. CVE identifies, defines, and catalogs publicly disclosed cybersecurity vulnerabilities.
+The CVE must be used to identify vulnerabilities and their severity rating. CVE identifies, defines, and catalogues publicly disclosed cybersecurity vulnerabilities.
 
 Various images scanning tools, such as Clair or Trivy, are useful to audit images from security vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete. 
 
@@ -520,7 +520,7 @@ Security certification should encompass the following elements:
 | req.sec.sys.016 | Login access to the platform's components **must** be through encrypted protocols such as SSH v2 or TLS v1.2 or higher. | Note: Hardened jump servers isolated from external networks are recommended |
 | req.sec.sys.017 | The Platform **must** provide the capability of using digital certificates that comply with X.509 standards issued by a trusted Certification Authority. |  |
 | req.sec.sys.018 | The Platform **must** provide the capability of allowing certificate renewal and revocation. |  |
-| req.sec.sys.019 | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
+| req.sec.sys.019 | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non-revocation, identity). |  |
 | req.sec.sys.020 | The Cloud Infrastructure architecture **should** rely on Zero Trust principles to build a secure by design environment. | Zero Trust Architecture (ZTA) described in NIST SP 800-207 |
 
 <p align="center"><b>Table 7-2:</b> Platform and access requirements</p>
@@ -616,7 +616,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.mon.015 | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. |  |
 | req.sec.mon.016 | The Platform Monitoring components **should** follow security best practices for auditing, including secure logging and tracing. | |
 | req.sec.mon.017 | The Platform **must** audit systems for any missing security patches and take appropriate actions. |  |
-| req.sec.mon.018 | The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | |
+| req.sec.mon.018 | The Platform, starting from initialization, **must** collect and analyse logs to identify security events, and store these events in an external system. | |
 | req.sec.mon.019 | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | | 
 | req.sec.mon.020 | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | |
 | req.sec.mon.021 | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful.. | |
@@ -624,7 +624,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <p align="center"><b>Table 7-7:</b> Monitoring and security audit requirements</p>
 
 <a name="7.9.8"></a>
-### 7.9.8. Open Source Sotfware 
+### 7.9.8. Open Source Software 
 
 | Ref | Requirement | Definition/Note |
 |---|----|----|
@@ -633,7 +633,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | req.sec.oss.003 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
 | req.sec.oss.004 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
 
-<p align="center"><b>Table 7-8:</b> Open Source Sotfware requirements</p>
+<p align="center"><b>Table 7-8:</b> Open Source Software requirements</p>
 
 <a name="7.9.9"></a>
 ### 7.9.9. IaaC - Secure Design and Architecture Stage Requirements
