@@ -124,7 +124,7 @@ The **Basic** cloud infrastructure profile is intended for use by both IT and Ne
 
 The **High Performance** cloud infrastructure profile is intended for use by applications that have high network throughput requirements (up to 50Gbps).
 
-The High Performance profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](./chapter03.md#3.8). The Reference Model High Performance profile includes an initial set of [High Performance profile extensions](./chapter04.md#42421-network-acceleration-extensions).
+The High Performance profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](./chapter03.md#3.8). The Reference Model High Performance profile includes an initial set of [High Performance profile extensions](./chapter04.md#4.2.3).
 
 Based on the infrastructure deployed at the edge, Table 8-3 specifies the [Infrastructure Profile features and requirements](./chapter05.md) that would need to be relaxed.
 
