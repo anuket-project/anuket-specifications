@@ -34,8 +34,9 @@
 | [17]      | ETSI GS NFV-SEC 003 V1.1.1 | “Network Functions Virtualisation (NFV); NFV Security; Security and Trust Guidance”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/003/01.01.01_60/gs_NFV-SEC003v010101p.pdf |
 | [18]      | ETSI GS NFV-SEC 013 V3.1.1 | “Network Functions Virtualisation (NFV) Release 3; NFV Security; Security Specification for MANO Components and Reference points”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/014/03.01.01_60/gs_NFV-SEC014v030101p.pdf |
 | [19]      | ETSI GS NFV-SEC 013 V2.6.1 | “Network Functions Virtualisation (NFV) Release 2; Security; VNF Package Security Specification ”. Available at https://www.etsi.org/deliver/etsi_gs/NFV-SEC/001_099/021/02.06.01_60/gs_nfv-sec021v020601p.pdf |
-| [20]      | GSMA FS.31 V2.0 February 2020| “Baseline Security controls ”. Available at https://www.gsma.com/security/resources/fs-31-gsma-baseline-security-controls/ |
-| [21]      | GSMA whitepaper January 2021| “Open Networking & the Security of Open Source Software deployment ”. Available at https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment// |
+| [20]      | GSMA FS.31 V2.0 February 2020| “Baseline Security controls ”. Available at https://www.gsma.com/security/resources/fs-31-gsma-baseline-security-controls |
+| [21]      | GSMA whitepaper January 2021| “Open Networking & the Security of Open Source Software deployment ”. Available at https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment |
+| [22]      | Cloud Security Alliance (CSA) and SAFECode| “The Six Pillars of DevSecOps: Automation (2020) ”. Available at https://safecode.org/the-six-pillars-of-devsecops-automation |
 
 
 <a name="1.2"></a>
