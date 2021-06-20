@@ -280,7 +280,7 @@ The two [profiles]( ./chapter02.md#241-node-profiles-top-level-partitions) are:
 
 The availability of these two (2) profiles will facilitate and accelerate workload deployment. The intent of the above profiles is to match the cloud infrastructure to the workloads most common needs, and allow for a more comprehensive configuration using profile-extensions when needed. These profiles are offered with [extensions](#4.2.3), that specify capability deviations, and allow for the specification of even more capabilities. The Cloud Infrastructure will have nodes configured as with options, such as virtual interface options, storage extensions, and acceleration extensions.
 
-The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section [2.4 Profiles & Flavours](./chapter02.md#24-profiles--flavours) and includes:
+The justification for defining these two profiles and a set of extensible profile-extensions was provided in Section [2.4 Profiles, Profile Extensions & Flavours](./chapter02.md#24-profiles--flavours) and includes:
 
 * Workloads can be deployed by requesting compute hosts configured as per a specific profile (Basic or High Performance)
 * Profile extensions allow a more granular compute host configuration for the workload (e.g. GPU, high, speed network, Edge deployment)
@@ -289,7 +289,7 @@ The justification for defining these two profiles and a set of extensible profil
 * Better usage of Cloud Objects (Memory; Processor; Network; Storage)
 
 
-Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.2 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
+Workload flavours specify the resource sizing information including network and storage (size, throughput, IOPS). Figure 4.3 shows three resources (VM or Pod) on nodes configured as per the specified profile ('B' and 'H'), and the resource sizes.
 
 <p align="center"><img src="../figures/RM-ch-04-Workloads-Profiles-Flavours.png" alt="workload_design" title="Workload Design" width="65%"/></p>
 <p align="center"><b>Figure 4-3:</b>Workloads built against Cloud Infrastructure Profiles and Workload Flavours.</p>
@@ -302,11 +302,11 @@ where the specifications enclosed within "[" and "]" are optional, and the 'extr
 
 Examples, node configurations specified as: B, B.low-latency, H,  and H.very-high-speed-network.very-low-latency-edge.
 
-A workload needs to specify the configuration and capabilities of the infratsructure that it can un on, the size of the resources it needs, and additional information (extra-specs) such as whether the workload can share core siblings (SMT thread) or not, whether it has affinity (viz., needs to be placed on the same infrastructure node) with other workloads, etc. The capabilities required by the workload can, thus, be specified as:
+A workload needs to specify the configuration and capabilities of the infrastructure that it can run on, the size of the resources it needs, and additional information (extra-specs) such as whether the workload can share core siblings (SMT thread) or not, whether it has affinity (viz., needs to be placed on the same infrastructure node) with other workloads, etc. The capabilities required by the workload can, thus, be specified as:
 
 >  \<profile name>[.\<profile_extension>][.\<extra profile specs>].\<workload flavour specs>[.\<extra-specs>]
 
-where the \<workload flavour specs> are specified as defined in [4.2.4.3 Workload Flavours and Other Capabilities Specifications Format](#4.2.4.3) below.
+where the \<workload flavour specs> are specified as defined in section [4.2.4.3 Workload Flavours and Other Capabilities Specifications Format](#4.2.4.3) below.
 
 <a name="4.2.1"></a>
 ### 4.2.1 Profiles
