@@ -37,6 +37,8 @@
 | [20]      | GSMA FS.31 V2.0 February 2020| “Baseline Security controls ”. Available at https://www.gsma.com/security/resources/fs-31-gsma-baseline-security-controls |
 | [21]      | GSMA whitepaper January 2021| “Open Networking & the Security of Open Source Software deployment ”. Available at https://www.gsma.com/futurenetworks/resources/open-networking-the-security-of-open-source-software-deployment |
 | [22]      | Cloud Security Alliance (CSA) and SAFECode| “The Six Pillars of DevSecOps: Automation (2020) ”. Available at https://safecode.org/the-six-pillars-of-devsecops-automation |
+| [23]      | ISO/IEC 27000:2018 | Information technology — Security techniques — Information security management systems — Overview and vocabulary. Available at https://www.iso.org/standard/73906.html. |
+| [24]      | Cloud Security Alliance (CSA) | “Information Security Management through Reflexive Security  ”. Available at https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/ |
 
 
 <a name="1.2"></a>
