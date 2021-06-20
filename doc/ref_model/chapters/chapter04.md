@@ -18,7 +18,7 @@
   * [4.2.4 Workload Flavours and Other Capabilities Specifications](#4.2.4)
   * [4.2.5 Virtual Network Interface Specifications](#4.2.5)
   * [4.2.6 Storage Extensions](#4.2.6)
-  * [4.2.7 One Stop Shop](#4.2.7)
+
 
 
 <a name="4.1"></a>
