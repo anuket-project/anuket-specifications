@@ -160,13 +160,13 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 **Table 5-8** depicts the features and configurations related to virtual compute for the two (2) Cloud Infrastructure Profiles.
 
-| Reference         | Feature                | Type   | Basic | High Performance  | Notes |
-|-------------------|------------------------|--------|-------|-------------------|-------|
-| infra.com.cfg.001 | CPU allocation ratio   | value  | N:1   | 1:1               |       |
-| infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |       |
-| infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |       |
-| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
-| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |       |
+| Reference         | Feature                | Type   | Basic | High Performance  | 
+|-------------------|------------------------|--------|-------|-------------------|
+| infra.com.cfg.001 | CPU allocation ratio   | value  | N:1   | 1:1               |   
+| infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |  
+| infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |  
+| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 | 
+| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |  
 
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
 
