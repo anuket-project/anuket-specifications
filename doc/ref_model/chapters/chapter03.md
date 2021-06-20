@@ -268,9 +268,9 @@ The hardware infrastructure manager needs to support the following functional as
 * **Discovery**: discover physical hardware resources and collect relevant information about them 
 * **Topology**: discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources
 * **Equipment**:  manages the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations
-* **Resource Allocation and Composition**: creates, modifies and delete logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources
+* **Resource Allocation and Composition**: creates, modifies and deletes logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources
 * **Underlay Network Resources Manager**: provides a mechanism to provision hardware resources and provide separation in between multiple Virtualization Infrastructure instances for the use of the underlay network (e.g. switch fabric, switches, SmartNICs)
-* **Monitoring**: monitors and collects information on events, current state and telemetry data of physical hardware resources, Equipment autonomous control functions as well as Switch and Storage Fabric systems
+* **Monitoring**: monitors and collects information on events, current state and telemetry data of physical hardware resources, autonomous equipment control functions as well as Switch and Storage Fabric systems
 * **Additional Management Functions**: include software and configuration life cycle management, identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 <a name="3.4"></a>
@@ -339,7 +339,7 @@ Before we start developing a deep model we need to agree on some foundational co
 <a name="3.5.2.1"></a>
 #### 3.5.2.1 Underlay and Overlay Networking Concepts
 
-The ETSI Network Functions Virtualisation Architectural Framework (as referred  above) describes how a Virtual Infrastructure Layer instance abstract the hardware resources and separate Virtualisation Tenants (Workload) from each other. It does also specifically state that the control and implementation of the hardware layer is out of scope for that specification.
+The ETSI Network Functions Virtualisation Architectural Framework (as referred  above) describes how a Virtual Infrastructure Layer instance abstracts the hardware resources and separates Virtualisation Tenants (Workload) from each other. It does also specifically state that the control and implementation of the hardware layer is out of scope for that specification.
 
 When having multiple Virtual Infrastructure Layer instances on a shared hardware infrastructure, the networking can be layered in an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the Virtualisation Tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected hardware (HW) devices.
 
@@ -349,7 +349,7 @@ The Overlay Network for each Cloud Infrastructure deployment must support a basi
 
 In some instances, the Virtualisation Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation normally done by the Virtualisation Layer, is the VNF/CNF usage of SR-IOV that effectively take over the Physical and Virtual Functions of the NIC directly into the VNF/CNF Tenant. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
 
-> **Note:** Bypassing the Overlay Networking layer is a violation of the basic Anuket decoupling principles, but in some cases unavoidable with existing technologies and available standards. Until suitable technologies and standards are developed, Anuket have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
+> **Note:** Bypassing the Overlay Networking layer is a violation of the basic decoupling principles, but is in some cases unavoidable with existing technologies and available standards. Until suitable technologies and standards are developed, Anuket have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
 
 VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer.
 
