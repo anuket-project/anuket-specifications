@@ -484,7 +484,7 @@ However, in a service-specific overlay network, packets are routed based on poli
 The table below highlights areas under which common SFC functional components can be categorized.
 
 
-| Components | Example         | Responsabilities |
+| Components | Example         | Responsibilities |
 |:---:|:----:|:---|
 |**Management** | `SFC orchestrator`  | High Level of orchestrator <br /> Orchestrate the SFC based on SFC Models/Policies with help of control components.| 
 | | `SFC OAM Components` | Responsible for SFC OAM functions |
@@ -497,7 +497,7 @@ The table below highlights areas under which common SFC functional components ca
 <p align="center"><b>Table 3-6:</b> SFC Architecture Components</p>
 
 
-> **Note:** These are logical components and listed for their functionalies only.  
+> **Note:** These are logical components and listed for their functionalities only.  
 
 The SFC Architecture components can be viewed as:- 
 
