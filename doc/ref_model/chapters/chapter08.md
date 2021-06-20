@@ -51,13 +51,15 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
 ### 8.2.1 Characteristics of a Federated Cloud
 In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
-<p align="center"><img src="../figures/RM-Ch08-HMC-Image-1.png" alt="Example Hybrid Multi-Cloud Component Cloud"><br><b>Figure 8-1: Example Hybrid Multi-Cloud Component Cloud.</b></p>
+<p align="center"><img src="../figures/RM-Ch08-HMC-Image-1.png" alt="Example Hybrid Multi-Cloud Component Cloud"></p>
+<p align="center"><b>Figure 8-1:</b> Example Hybrid Multi-Cloud Component Cloud</p>
 
 <a name="8.2.2"></a>
 ### 8.2.2 Telco Cloud
-The Figure 8-2 presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centers, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional center level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
+The Figure 8-2 presents a visualisation of a Telco operator cloud (or simply, Telco cloud) with clouds and cloud components distributed across Regional Data Centres, Metro locations (such as Central Office or a Colocation site) and at the Edge, that are interconnected using a partial mesh network. Please note that at the Regional centre level the interconnections are likely to be a "fuller" mesh while being a sparser mesh at the Edges.
 
-<p align="center"><img src="../figures/RM-Ch08-Multi-Cloud-DC-Edge.png" alt="Telco Cloud: Data Center to Edge"><b>Figure 8-2: Telco Cloud: Data Center to Edge.</b></p>
+<p align="center"><img src="../figures/RM-Ch08-Multi-Cloud-DC-Edge.png" alt="Telco Cloud: Data Centre to Edge"></p>
+<p align="center"><b>Figure 8-2:</b> Telco Cloud: Data Centre to Edge</p>
 
 The Telco Operator may own and/or have partnerships and network connections to utilize multiple Clouds for network services, IT workloads, external subscribers. The types of the component clouds include:
    - On Prem Private
