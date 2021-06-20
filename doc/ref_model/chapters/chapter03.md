@@ -157,7 +157,7 @@ Storage resources have the following attributes, with metric definitions that su
 |                          | Read and Write Throughput, The average rate of performing R/W operations in Bytes per second   |
 | `enhanced features`      | replication, encryption                                                                        |
 | `type`                   | block, object or file                                                                          |
-| `size`                   | size in GB, telemetery includes the amount of free, used, and reserved disk space, in bytes    |
+| `size`                   | size in GB, telemetry includes the amount of free, used, and reserved disk space, in bytes    |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
