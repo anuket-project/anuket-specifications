@@ -15,7 +15,7 @@
   * [4.2.1 Profiles](#4.2.1)
   * [4.2.2 Profile Specifications & Capabilities Mapping](#4.2.2)
   * [4.2.3 Profile Extensions](#4.2.3)
-  * [4.2.4 Workload FLavours and Other Capabilities Specifications](#4.2.4)
+  * [4.2.4 Workload Flavours and Other Capabilities Specifications](#4.2.4)
   * [4.2.5 Virtual Network Interface Specifications](#4.2.5)
   * [4.2.6 Storage Extensions](#4.2.6)
   * [4.2.7 One Stop Shop](#4.2.7)
@@ -356,8 +356,8 @@ Profile Extensions represent small deviations from or further qualification of t
 | Low Latency - Edge Sites | low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
 | Very Low Latency - Edge Sites | very-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
 | Ultra Low Latency - Edge Sites | ultra-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an Edge site, for workloads requiring low latency (specify value) to final users or geographical distribution. |  |
-| Fixed function accelerator | compute-ffa | ❌ | ✅ | Labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter). |  |
-| Firmware-programmable adapter | compute-firmware programmable | ❌ | ✅ | Labels a host/node that includes a consumable Firmware-programmable adapter (eg Network/storage adapter). |  |
+| Fixed function accelerator | compute-ffa | ❌ | ✅ | Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g. Crypto, vRAN-specific adapter). |  |
+| Firmware-programmable adapter | compute-firmware programmable | ❌ | ✅ | Labels a host/node that includes a consumable Firmware-programmable adapter (e.g. Network/storage adapter). |  |
 | SmartNIC enabled | network-smartnic | ❌ | ✅ | Labels a host/node that includes a Programmable accelerator for vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |  |
 | SmartSwitch enabled | network-smartswitch | ❌ | ✅ | Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
 
@@ -366,12 +366,12 @@ Profile Extensions represent small deviations from or further qualification of t
 ### 4.2.4 Workload Flavours and Other Capabilities Specifications
 
 The workload requests a set of resource capabilities needed by it, including its components, to run successfully. 
-The GSMA document "Operator Platform Technical Requirements" (OPG.02) defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavour](#4.2) above. 
+The GSMA document "Operator Platform Technical Requirements" (OPG.02) defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavours](#4.2) above. 
 
-This section provides details of the capabilities that need to be provided in a resource request. The [profiles](#4.2.1), the [profile specifications](#4.2.2) and the [profile extensions](#4.2.3) specify the infrastructure (hardware and software) configuration. In a resource request they need to be augmented with workload specific capabilities and configurations, including the [sizing of requested resource](#4.2.4.1), extra specifications related to the [placement of the workload](#4.2.4.2), network(#4.2.5) and storage extensions(#4.2.6).
+This section provides details of the capabilities that need to be provided in a resource request. The [profiles](#4.2.1), the [profile specifications](#4.2.2) and the [profile extensions](#4.2.3) specify the infrastructure (hardware and software) configuration. In a resource request they need to be augmented with workload specific capabilities and configurations, including the [sizing of requested resource](#4.2.4.1), extra specifications related to the placement of the workload  [section 4.2.4.2](#4.2.4.2), network [section 4.2.5](#4.2.5) and storage extensions [section 4.2.6](#4.2.6).
 
 <a name="4.2.4.1"></a>
-#### 4.2.4.1 Workload Flavours Geometry (Sizing)
+#### 4.2.4.1 Workload Flavours Geometry (Sizing) 
 
 Workload Flavours (sometimes also referred to as “compute flavours”) are sizing specifications beyond the capabilities specified by node profiles. Workload flavours represent the compute, memory, storage, and network resource sizing templates used in requesting resources on a host that is conformant with the profiles and profile extensions. The workload flavour specifies the requested resource’s (VM, container) compute, memory and storage characteristics. Workload Flavours can also specify different storage resources such as ephemeral storage, swap disk, network speed, and storage IOPs.
 
