@@ -118,7 +118,7 @@ At the edge, the infrastructure may further include ruggedised hardware for hars
 
 <a name="8.3.3"></a>
 ### 8.3.3 Telco Edge Cloud: Infrastructure Profiles
-The [Cloud Infrastructure Profiles](./chapter04.md#4.2.4) section specifies two infrastructure profiles:
+The [Cloud Infrastructure Profiles](./chapter04.md#4.2) section specifies two infrastructure profiles:
 
 The **Basic** cloud infrastructure profile is intended for use by both IT and Network Function workloads that have low to medium network throughput requirements.
 
@@ -126,7 +126,7 @@ The **High Performance** cloud infrastructure profile is intended for use by app
 
 The High Performance profile can specify extensions for hardware offloading; please see [Hardware Acceleration Abstraction](./chapter03.md#3.8). The Reference Model High Performance profile includes an initial set of [High Performance profile extensions](./chapter04.md#42421-network-acceleration-extensions).
 
-Based on the infrastructure deployed at the edge, the Table 8-3 specifies the [Infrastructure Profile features and requirements](./chapter05.md) that would need to be relaxed.
+Based on the infrastructure deployed at the edge, Table 8-3 specifies the [Infrastructure Profile features and requirements](./chapter05.md) that would need to be relaxed.
 
 **Table 8-3. TEC Exceptions to [Infrastructure Profile features and requirements](./chapter05.md)**
 
