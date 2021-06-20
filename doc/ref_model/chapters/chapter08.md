@@ -1,6 +1,6 @@
 [<< Back](../../ref_model)
 
-# 8. Hybrid Multi-Cloud: Data Center to Edge
+# 8. Hybrid Multi-Cloud: Data Centre to Edge
 
 ## Table of Contents
 * [8.1. Introduction](#8.1)
@@ -18,28 +18,28 @@
 
 <a name="8.1"></a>
 ## 8.1 Introduction
-The [Reference Model Chapter 3](./chapter03.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities of the cloud infrastructure are specified for data centers, central office and colocation centers. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, require separate consideration.
+The [Reference Model Chapter 3](./chapter03.md) focuses on cloud infrastructure abstractions. While these are generic abstractions they and the associated capabilities of the cloud infrastructure are specified for data centres, central office and colocation centers. The environmental conditions, facility and other constraints, and the variability of deployments on the edge are significantly different and, thus, require separate consideration.
 
-It is unrealistic to expect that a private cloud can cost effectively meet the need of all loads, including peak loads and disaster recovery. It is for that reason that enterprises will implement an hybrid cloud.  In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.  In a multi-cloud the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies.  The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
+It is unrealistic to expect that a private cloud can cost effectively meet the need of all loads, including peak loads and disaster recovery. It is for that reason that enterprises will implement a hybrid cloud.  In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.  In a multi-cloud the distinct cloud infrastructures of the hybrid cloud may be implemented using one or more technologies.  The hybrid multi-cloud infrastructure has differences requiring different abstractions. These hybrid multi-clouds can be considered to be federated.
 
 In the [Reference Model Chapter 3](./chapter03.md), the cloud infrastructure is defined. The tenants are required to provide certain needed services (such as Load Balancer (LB), messaging). Thus, the VNF/CNFs incorporate different versions of the same services with the resultant issues related to an explosion of services, their integration and management complexities. To mitigate these issues, the Reference Model must specify the common services that every Telco cloud must support and thereby require workload developers to utilise these pre-specified services.
 
-A generic Telco cloud is a hybrid multi-cloud or a Federated cloud that has deployments in large data centers, central offices or colocation facilities, and the edge. This chapter discusses the characteristics of Telco Edge and hybrid multi-cloud.
+A generic Telco cloud is a hybrid multi-cloud or a Federated cloud that has deployments in large data centres, central offices or colocation facilities, and the edge. This chapter discusses the characteristics of Telco Edge and hybrid multi-cloud.
 
 <a name="8.2"></a>
 ## 8.2 Hybrid Multi-Cloud Architecture
 The GSMA whitepaper on "Operator Platform Concept Phase 1: Edge Cloud Computing" (January 2020) states, "Given the wide diversity of use cases that the operators will tasked to address, from healthcare to industrial IoT, it seems logical for operators to create a generic platform that can package the existing assets and capabilities (e.g., voice messaging, IP data services, billing, security, identity management, etc. ...) as well as the new ones that 5G makes available (e.g., Edge cloud, network slicing, etc.) in such a way as to create the necessary flexibility required by this new breed of enterprise customers."
 
-Cloud computing has evolved and matured since 2010 when [NIST](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pd) published its definition of cloud computing, with its 5 essential characteristics, 3 service models and 4 deployment models.
+Cloud computing has evolved and matured since 2010 when [NIST](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf) published its definition of cloud computing, with its 5 essential characteristics, 3 service models and 4 deployment models.
 
 The generic model for an enterprise cloud has to be "hybrid" with the special cases of purely private or public clouds as subsets of the generic hybrid cloud deployment model. In a hybrid cloud deployment, at least two or more distinct cloud infrastructures are inter-connected together.
 
 Cloud deployments can be created using a variety of technologies  (e.g., OpenStack, Kubernetes) and commercial technologies (e.g., VMware, AWS, Azure, etc.). A multi-cloud deployment can consist of the use of more than one technology.
 
-A generic Telco cloud is an hybrid multi-cloud. A better designation would be a federation of clouds - a federated cloud:
+A generic Telco cloud is a hybrid multi-cloud. A better designation would be a federation of clouds - a federated cloud:
    - a collection of cooperating, interoperable autonomous component clouds
    -  the component clouds perform their local operations (internal requests) while also participating in the federation and responding to other component clouds (external requests)
-        - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centrailised control plane scenario (please see the section "Centralised Control Plane" in the "[Edge Computing: Next Steps in Architecture, Design and Testing](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/)" whitepaper) the edge clouds do not have total autonomy and are subject to constraints (e.g., workload LCM)  
+        - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centralised control plane scenario (please see the section "Centralised Control Plane" in the "[Edge Computing: Next Steps in Architecture, Design and Testing](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/)" whitepaper) the edge clouds do not have total autonomy and are subject to constraints (e.g., workload LCM)  
         - execution autonomy is the ability of a component cloud to decide the order in which internal and external requests are performed
    - the component clouds are loosely coupled where no no changes are required to participate in a federation
         - also, a federation controller does not impose changes to the component cloud except for running some central component(s) of the federated system (for example, a broker agent – executes as a workload)
