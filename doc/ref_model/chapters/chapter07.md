@@ -374,9 +374,9 @@ This allows the attestation server to detect any tampering with the static file 
 <a name="7.6.6"></a>
 ### 7.6.6 Zero Trust Architecture (ZTA) 
 
-Remote attestation, section [7.6.1](#7.6.1), and Root of trust for measurements, section [7.6.5](#7.6.5), provide methods to ensure the integrity of the infrastructure. The Zero Trust concept moves a step forward enabling to build secure by design cloud infrastructure, from hardware to applications. The adoption of Zero Trust principles mitigates the threats and attacks within an entreprise, a network or an infrastructure, ensuring a fine grained segmentation between each component of the system.
+Remote attestation, section [7.6.1](#7.6.1), and Root of trust for measurements, section [7.6.5](#7.6.5), provide methods to ensure the integrity of the infrastructure. The Zero Trust concept moves a step forward enabling to build secure by design cloud infrastructure, from hardware to applications. The adoption of Zero Trust principles mitigates the threats and attacks within an enterprise, a network or an infrastructure, ensuring a fine grained segmentation between each component of the system.
 
-Zero Trust Architecture (ZTA), described in [NIST SP 800-207 publication](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf), assumes there is no implicit trust granted to assets or user accounts whatever their location or ownership.  Zero trust approach focuses on protecting all types of resources: data, services, devices, infrastructure components, virtual and cloud components. Trust is never granted implicitly, and must be evaluated continuously. 
+Zero Trust Architecture (ZTA), described in [NIST SP 800-207 publication](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf) [25], assumes there is no implicit trust granted to assets or user accounts whatever their location or ownership.  Zero trust approach focuses on protecting all types of resources: data, services, devices, infrastructure components, virtual and cloud components. Trust is never granted implicitly, and must be evaluated continuously. 
 
 ZTA principles applied to Cloud infrastructure components are the following:
 
