@@ -120,7 +120,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
 <a name="2.2"></a>    
 ## 2.2 Use cases
 
-The intend of this section is to describe some important use cases that are pertinent to this Reference Model.  We start with some typical Edge related use cases. The list of use cases will be extendd in the future releases.  
+The intent of this section is to describe some important use cases that are pertinent to this Reference Model.  We start with some typical Edge related use cases. The list of use cases will be extendd in the future releases.  
 
 Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients of the Ultra-Reliable Low-latency Communication (URLLC) and Enhanced Mobile Broadband (eMBB) Network Slicing. The requirements for user plane Local Breakout / Termination are common mandating that Value Added Services (VASs) & Any Gi-LAN applications are locally hosted at the Edge. The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting that satisfy the latency requirements.
 
