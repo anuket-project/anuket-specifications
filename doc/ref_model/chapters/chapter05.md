@@ -31,7 +31,7 @@ Cloud Infrastructure Software layer is composed of 2 layers, **Figure 5-1**:
 <p align="center"><img src="../figures/ch05-cloud-infrastructure-sw-profile-layers.png" alt="ref_profiles" title="Layers of Software Profile" width="40%"/></p>
 <p align="center"><b>Figure 5-1:</b> Cloud Infrastructure software layers</p>
 
-| Ref | Cloud Infratsructure Software | Type | Definition/Notes | Capabilities Reference<sup1</sup> |
+| Ref | Cloud Infrastructure Software | Type | Definition/Notes | Capabilities Reference<sup1</sup> |
 |-----|-------------------------------|------|------------------|-----------------------------------|
 | infra.sw.001 | Host Operating System |	<value> |	Values such as Ubuntu20.04, Windows 10 Release #, etc. | `e.cap.021` |
 | infra.sw.001 | Virtualisation Infrastructure Layer |	<value> |	Values such as KVM, Hyper-V, Kubernetes, etc. | `e.cap.022` |
