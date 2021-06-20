@@ -40,6 +40,7 @@
 | [23]      | ISO/IEC 27000:2018 | Information technology — Security techniques — Information security management systems — Overview and vocabulary. Available at https://www.iso.org/standard/73906.html. |
 | [24]      | Cloud Security Alliance (CSA) | “Information Security Management through Reflexive Security  ”. Available at https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/ |
 | [25]      | NIST SP 800-207  | “Zero Trust Architecture (ZTA) ”. Available at https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf |
+| [26]      | Open Infrastructure  | “Edge Computing: Next Steps in Architecture, Design and Testing ”. Available at https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/ |
 
 <a name="1.2"></a>
 ## Cloud Native and Kubernetes References
