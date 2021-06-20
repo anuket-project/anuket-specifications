@@ -41,15 +41,15 @@ A generic Telco cloud is a hybrid multi-cloud. A better designation would be a f
    -  the component clouds perform their local operations (internal requests) while also participating in the federation and responding to other component clouds (external requests)
         - the component clouds are autonomous in terms of, for example, execution autonomy; please note that in a centralised control plane scenario (please see the section "Centralised Control Plane" in the "[Edge Computing: Next Steps in Architecture, Design and Testing](https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/)" whitepaper [26]) the edge clouds do not have total autonomy and are subject to constraints (e.g., workload LCM)  
         - execution autonomy is the ability of a component cloud to decide the order in which internal and external requests are performed
-   - the component clouds are loosely coupled where no no changes are required to participate in a federation
+   - the component clouds are loosely coupled where no changes are required to participate in a federation
         - also, a federation controller does not impose changes to the component cloud except for running some central component(s) of the federated system (for example, a broker agent – executes as a workload)
    - the component clouds are likely to differ in, for example, infrastructure resources and their cloud platform software
-   - workloads may be distributed on single or multiple clouds, where the clouds may be colocated or geographically distributed
+   - workloads may be distributed on single or multiple clouds, where the clouds may be collocated or geographically distributed
    - component clouds only surface NBIs (Please note that VMware deployed in a private and  a public cloud can be treated as a single cloud instance)
 
 <a name="8.2.1"></a>
 ### 8.2.1 Characteristics of a Federated Cloud
-In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on prem, Cloud Vendor provided on prem, Private outsourced (Commercial Cloud Provider such as an Hyperscalar Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
+In this section we will further explore the characteristics of the federated cloud architecture, and architecture building blocks that constitute the  federated cloud. For example, Figure 8-1 shows a Telco Cloud that consists of 4 sub-clouds: Private on premise, Cloud Vendor provided on premise, Private outsourced (Commercial Cloud Provider such as a Hyperscaler Cloud Provider (HCP), and Public outsourced (see diagram below). Such an implementation of a Telco Cloud allows for mix'n'match of price points, flexibility in market positioning and time to market, capacity with the objective of attaining near "unlimited" capacity, scaling within a sub-cloud or through bursting across sub-clouds, access to "local" capacity near user base, and access to specialised services.
 
 <p align="center"><img src="../figures/RM-Ch08-HMC-Image-1.png" alt="Example Hybrid Multi-Cloud Component Cloud"><br><b>Figure 8-1: Example Hybrid Multi-Cloud Component Cloud.</b></p>
 
