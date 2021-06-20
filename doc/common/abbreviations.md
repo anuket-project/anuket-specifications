@@ -116,12 +116,12 @@
 | GB | Giga Byte |
 | GFS | Global (Linux) File System |
 | GGSN | Gateway GPRS Support Node |
-| Gi or GiB | Gibibyte (1024<sup>3</sup>) |
+| Gi or GiB | Gibibyte (1024<sup>3</sup>) bytes |
 | GPRS | General Packet Radio Service |
 | GPS | Global Positioning System |
 | GPU | Graphics Processing Unit |
 | GRE | Generic Routing Encapsulation |
-| GSM | Global System for Mobile Communications<br>previously Groupe Speciale Mobile |
+| GSM | Global System for Mobile Communications, previously Groupe Speciale Mobile |
 | GSMA | GSM Association |
 | GUI | Graphical User Interface |
 | GW | Gateway |
