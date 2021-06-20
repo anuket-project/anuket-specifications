@@ -40,52 +40,223 @@ run by the Kubernetes community (under the aegis of the CNCF).
 
 CNTT shares the same goal to give end users the confidence that when they use
 a certified product they can rely on a high level of common functionality.
-Then CNTT RC2 starts with
-[the test case list](https://git.opnfv.org/functest-kubernetes/tree/docker/smoke/testcases.yaml?h=stable/v1.21)
-defined by [K8s Conformance](https://github.com/cncf/k8s-conformance) which is
-expected to grow according to the ongoing requirement traceability:
-- focus: \[Conformance\]
-- skip: \[Disruptive\]|NoExecuteTaintManager
+Then CNTT RC2 starts with the test list defined by
+[K8s Conformance](https://github.com/cncf/k8s-conformance) which is expected to
+grow according to the ongoing requirement traceability.
 
-[Rally](https://github.com/openstack/rally) and is tool and framework that
-allows to perform Kubernetes API testing by iterating once the mainline
-[xrally-kubernetes](https://github.com/xrally/xrally-kubernetes) scenarios:
+[End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
+basically respectively asks focus and fix regexes to select or to blacklist
+single tests:
+  - focus basically matches
+    Conformance or [Testing Special Interest Groups](https://github.com/kubernetes/community/blob/master/sig-testing/charter.md)
+    in the following tabs
+  - skip excludes the SIG labels listed as optional in
+    [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
 
-[Functest xrally_kubernetes](http://artifacts.opnfv.org/functest-kubernetes/UFEMNKZPRBCO/functest-kubernetes-opnfv-functest-kubernetes-benchmarking-v1.21-xrally_kubernetes_full-run-16/xrally_kubernetes_full/xrally_kubernetes_full.html):
+The Reference Conformance suites must be stable and can be executed on real
+deployments. Then all the following labels are defacto skipped in
+[End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md):
+  - alpha
+  - Disruptive
+  - Flaky
 
-| Scenarios                                                          |
-|--------------------------------------------------------------------|
-| Kubernetes.create_and_delete_deployment                            |
-| Kubernetes.create_and_delete_job                                   |
-| Kubernetes.create_and_delete_namespace                             |
-| Kubernetes.create_and_delete_pod                                   |
-| Kubernetes.create_and_delete_pod_with_configmap_volume             |
-| Kubernetes.create_and_delete_pod_with_configmap_volume [2]         |
-| Kubernetes.create_and_delete_pod_with_emptydir_volume              |
-| Kubernetes.create_and_delete_pod_with_emptydir_volume [2]          |
-| Kubernetes.create_and_delete_pod_with_hostpath_volume              |
-| Kubernetes.create_and_delete_pod_with_secret_volume                |
-| Kubernetes.create_and_delete_pod_with_secret_volume [2]            |
-| Kubernetes.create_and_delete_replicaset                            |
-| Kubernetes.create_and_delete_replication_controller                |
-| Kubernetes.create_and_delete_statefulset                           |
-| Kubernetes.create_check_and_delete_pod_with_cluster_ip_service     |
-| Kubernetes.create_check_and_delete_pod_with_cluster_ip_service [2] |
-| Kubernetes.create_check_and_delete_pod_with_node_port_service      |
-| Kubernetes.create_rollout_and_delete_deployment                    |
-| Kubernetes.create_scale_and_delete_replicaset                      |
-| Kubernetes.create_scale_and_delete_replication_controller          |
-| Kubernetes.create_scale_and_delete_statefulset                     |
-| Kubernetes.list_namespaces                                         |
+It's worth mentioning that no alpha or Flaky test can be included in
+Conformance by rules.
 
-The following software versions are considered to verify Kubernetes v1.21
-(latest stable release) selected by CNTT:
+#### Conformance
 
-| software                | version     |
-|-------------------------|-------------|
-| Functest                | v1.21       |
-| Kubernetes              | v1.21       |
-| xrally-kubernetes       | 1.1.1.dev12 |
+It must be noted that the default
+[K8s Conformance](https://github.com/cncf/k8s-conformance) is disruptive and
+CNTT RC2 rather picks [non-disruptive-conformance](https://sonobuoy.io/docs/master/e2eplugin/)
+as defined by [Sonobuoy](https://sonobuoy.io/).
+
+focus: [Conformance]
+
+skip:
+  - [Disruptive]
+  - NoExecuteTaintManager
+
+#### API Machinery Testing
+
+focus: [sig-api-machinery]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Feature:CrossNamespacePodAffinity]
+  - [Feature:StorageVersionAPI]
+
+See [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+for more details.
+
+#### Apps Testing
+
+focus: [sig-apps]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Feature:DaemonSetUpdateSurge]
+  - [Feature:IndexedJob]
+  - [Feature:StatefulSet]
+  - [Feature:StatefulUpgrade]
+  - [Feature:SuspendJob]
+
+See [Apps Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-apps)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+for more details.
+
+#### Auth Testing
+
+focus: [sig-auth]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Feature:BoundServiceAccountTokenVolume]
+  - [Feature:PodSecurityPolicy]
+
+See [Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+for more details.
+
+#### CLI Testing
+
+focus: [sig-cli]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+
+See [CLI Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cli)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+for more details.
+
+#### Cluster Lifecycle Testing
+
+focus: [sig-cluster-lifecycle]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+
+See [Cluster Lifecycle Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+for more details.
+
+#### Instrumentation Testing
+
+focus: [sig-instrumentation]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Feature:Elasticsearch]
+  - [Feature:StackdriverAcceleratorMonitoring]
+  - [Feature:StackdriverCustomMetrics]
+  - [Feature:StackdriverExternalMetrics]
+  - [Feature:StackdriverMetadataAgent]
+  - [Feature:StackdriverMonitoring]
+
+See [Instrumentation Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-instrumentation)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+for more details.
+
+#### Network Testing
+
+The regexes load.balancer, LoadBalancer and
+Network.should.set.TCP.CLOSE_WAIT.timeout are currently skipped because they
+haven't been covered successfully neither by
+[sig-release-1.21-blocking](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-release/release-branch-jobs/1.21.yaml)
+nor by
+[CNTT RC2 verification](https://build.opnfv.org/ci/view/functest-kubernetes/job/functest-kubernetes-v1.21-daily/22/)
+
+focus: [sig-network]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Feature:Example]
+  - [Feature:Ingress]
+  - [Feature:IPv6DualStack]
+  - [Feature:kubemci]
+  - [Feature:KubeProxyDaemonSetMigration]
+  - [Feature:KubeProxyDaemonSetUpgrade]
+  - [Feature:NEG]
+  - [Feature:Networking-IPv6]
+  - [Feature:NetworkPolicy]
+  - [Feature:SCTP]
+  - [Feature:SCTPConnectivity]
+  - load.balancer
+  - LoadBalancer
+  - Network.should.set.TCP.CLOSE_WAIT.timeout
+
+See [Network Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-network)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+
+#### Node Testing
+
+focus: [sig-node]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Feature:ExperimentalResourceUsageTracking]
+  - [Feature:GPUUpgrade]
+  - [Feature:PodGarbageCollector]
+  - [Feature:RegularResourceUsageTracking]
+  - [NodeFeature:DownwardAPIHugePages]
+  - [NodeFeature:RuntimeHandler]
+
+See [Node Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-node)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+
+#### Scheduling Testing
+
+focus: [sig-scheduling]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Feature:GPUDevicePlugin]
+  - [Feature:Recreate]
+
+See [Scheduling Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-scheduling)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
+
+#### Storage Testing
+
+It should be noted that all in-tree driver testing, [Driver:+], is skipped.
+
+focus: [sig-storage]
+
+skip:
+  - [alpha]
+  - [Disruptive]
+  - [Flaky]
+  - [Driver:+]
+  - [Feature:ExpandInUsePersistentVolumes]
+  - [Feature:Flexvolumes]
+  - [Feature:GKELocalSSD]
+  - [Feature:VolumeSnapshotDataSource]
+  - [Feature:Flexvolumes]
+  - [Feature:vsphere]
+  - [Feature:Volumes]
+  - [Feature:Windows]
+  - [NodeFeature:EphemeralStorage]
+
+See [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
+and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
 
 ### Kubernetes API benchmarking
 
@@ -138,33 +309,6 @@ The following software versions are considered to benchmark Kubernetes v1.21
 |-------------------------|-------------|
 | Functest                | v1.21       |
 | xrally-kubernetes       | 1.1.1.dev12 |
-
-### SIG Testing
-
-The Reference Conformance suites must be stable and can be executed on real
-deployments. Then all the following labels are defacto skipped in
-[End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md):
-  - Disruptive
-  - Flaky
-  - alpha
-
-[End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
-basically respectively asks focus and fix regexes to select or to blacklist
-single tests:
-  - focus basically matches SIG
-  - skip matches the mandatory SIG labels listed in
-    [Reference Architecture-2 (RA-2)](../../../ref_arch/kubernetes/README.md)
-
-#### [API Machinery Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
-
-focus: [sig-api-machinery]
-
-skip:
-  - [Disruptive]
-  - [Flaky]
-  - [alpha]
-  - [Feature:CrossNamespacePodAffinity]
-  - [Feature:StorageVersionAPI]
 
 ### Security testing
 
@@ -235,13 +379,29 @@ The following software versions are considered to verify Kubernetes v1.21
 
 The following test case must pass as they are for Reference Conformance:
 
-| container                                     | test case              | criteria | requirements                          |
-|-----------------------------------------------|------------------------|:--------:|---------------------------------------|
-| opnfv/functest-kubernetes-smoke:v1.21         | k8s_conformance        | PASS     | Kubernetes API testing                |
-| opnfv/functest-kubernetes-smoke:v1.21         | xrally_kubernetes      | PASS     | Kubernetes API testing                |
-| opnfv/functest-kubernetes-security:v1.21      | kube_hunter            | PASS     | Security testing                      |
-| opnfv/functest-kubernetes-security:v1.21      | kube_bench_master      | PASS     | Security testing                      |
-| opnfv/functest-kubernetes-security:v1.21      | kube_bench_node        | PASS     | Security testing                      |
-| opnfv/functest-kubernetes-benchmarking:v1.21  | xrally_kubernetes_full | PASS     | Kubernetes API benchmarking           |
-| opnfv/functest-kubernetes-cnf:v1.21           | k8s_vims               | PASS     | Opensource CNF onboarding and testing |
-| opnfv/functest-kubernetes-cnf:v1.21           | helm_vims              | PASS     | Opensource CNF onboarding and testing |
+| container                                     | test case                | criteria | requirements                          |
+|-----------------------------------------------|--------------------------|:--------:|---------------------------------------|
+| opnfv/functest-kubernetes-smoke:v1.21         | xrally_kubernetes        | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | k8s_conformance          | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | k8s_conformance_serial   | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_api_machinery        | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_api_machinery_serial | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_apps                 | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_apps_serial          | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_auth                 | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_cli                  | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_cli_serial           | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_cluster_lifecycle    | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_instrumentation      | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_network              | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_network_serial       | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_node                 | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_scheduling_serial    | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_storage              | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-smoke:v1.21         | sig_storage_serial       | PASS     | Kubernetes API testing                |
+| opnfv/functest-kubernetes-security:v1.21      | kube_hunter              | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-security:v1.21      | kube_bench_master        | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-security:v1.21      | kube_bench_node          | PASS     | Security testing                      |
+| opnfv/functest-kubernetes-benchmarking:v1.21  | xrally_kubernetes_full   | PASS     | Kubernetes API benchmarking           |
+| opnfv/functest-kubernetes-cnf:v1.21           | k8s_vims                 | PASS     | Opensource CNF onboarding and testing |
+| opnfv/functest-kubernetes-cnf:v1.21           | helm_vims                | PASS     | Opensource CNF onboarding and testing |
