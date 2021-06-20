@@ -61,30 +61,29 @@ The Figure 8-2 presents a visualisation of a Telco operator cloud (or simply, Te
 <p align="center"><img src="../figures/RM-Ch08-Multi-Cloud-DC-Edge.png" alt="Telco Cloud: Data Centre to Edge"></p>
 <p align="center"><b>Figure 8-2:</b> Telco Cloud: Data Centre to Edge</p>
 
-The Telco Operator may own and/or have partnerships and network connections to utilize multiple Clouds for network services, IT workloads, external subscribers. The types of the component clouds include:
-   - On Prem Private
+The Telco Operator may own and/or have partnerships and network connections to utilize multiple Clouds for network services, IT workloads, and external subscribers. The types of the component clouds include:
+   - On Premise Private
         - Open source; Operator or Vendor deployed and managed  | OpenStack or Kubernetes based
         - Vendor developed; Operator or Vendor deployed and managed  | Examples: Azure on Prem, VMware, Packet, Nokia, Ericsson, etc.
-   - On Prem Public: Commercial Cloud service hosted at Operator location but for both Operator and Public use | Example: AWS Wavelength
+   - On Premise Public: Commercial Cloud service hosted at Operator location but for both Operator and Public use | Example: AWS Wavelength
    - Outsourced Private: hosting outsourced; hosting can be at a Commercial Cloud Service | Examples: Equinix, AWS, etc.
    - (Outsourced) Public: Commercial Cloud Service | Examples: AWS, Azure, VMware, etc.
    - Multiple different Clouds can be co-located in the same physical location and may share some of the physical infrastructure (for example, racks)
 
-In general, a Telco Cloud consists of multiple interconnected very large data centers that serve trans-continental areas (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud Region.
+In general, a Telco Cloud consists of multiple interconnected very large data centres that serve trans-continental areas (Regions). A Telco Cloud Region may connect to multiple regions of another Telco Cloud via large capacity networks. A Telco Cloud also consists of interconnected local/metro sites (multiple possible scenarios). A local site cloud may connect to multiple Regions within that Telco Cloud or another Telco Cloud. A Telco Cloud also consists of a large number of interconnected edge nodes where these edge nodes maybe impermanent. A Telco Cloud's Edge node may connect to multiple local sites within that Telco Cloud or another Telco Cloud; an Edge node may rarely connect to a Telco Cloud Region.
 
-The Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud artifacts.
+Table 8-1 captures the essential information about the types of deployments, and responsible parties for cloud artefacts.
 
-<p align="center"><b>Table 8-1. Cloud Types and the Parties Responsible for Artifacts.</b></p>
+
 
 Type | System Developer | System Maintenance | System Operated & Managed by | Location where Deployed | Primary Resource Consumption Models
 ---|---|---|---|---|---
-Private (Internal Users) | Open Source | Self/Vendor | Self/Vendor | On Prem | Reserved, Dedicated
-Private | Vendor  \|  HCP* | Self/Vendor | Self/Vendor | On Prem | Reserved, Dedicated
-Public | Vendor  \|  HCP | Self/Vendor | Self/Vendor | On Prem | Reserved, On Demand
+Private (Internal Users) | Open Source | Self/Vendor | Self/Vendor | On Premise | Reserved, Dedicated
+Private | Vendor  \|  HCP | Self/Vendor | Self/Vendor | On Premise | Reserved, Dedicated
+Public | Vendor  \|  HCP | Self/Vendor | Self/Vendor | On Premise | Reserved, On Demand
 Private | HCP | Vendor | Vendor | Vendor Locations | Reserved, Dedicated
 Public (All Users) | HCP | Vendor | Vendor | Vendor Locations | On Demand, Reserved
-
-*HCP - Hyperscaler Cloud Provider
+<p align="center"><b>Table 8-1. Cloud Types and the Parties Responsible for Artefacts</b></p>
 
 <a name="8.2.3"></a>
 ### 8.2.3 Telco Operator Platform Conceptual Architecture
