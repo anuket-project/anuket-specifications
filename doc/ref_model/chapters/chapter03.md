@@ -246,7 +246,7 @@ More details about Hardware Acceleration are in [Section 3.8 Hardware Accelerati
 
 <a name="3.3.2"></a>
 ### 3.3.2 Hardware Infrastructure Manager
-The HW Infrastructure Manager shall at least support equipment management for all managed physical hardware resources of the Cloud Infrastructure. For better understanding of some of the hardware resources concepts see chapter 3.4.
+The HW Infrastructure Manager shall at least support equipment management for all managed physical hardware resources of the Cloud Infrastructure. 
 
 In most deployments the HW Infrastructure Manager should also be the HW Infrastructure Layer provisioning manager of the Compute, Storage and Network resources that can be used by the Virtualization Infrastructure Layer instances. It shall provide an API enabling vital resource recovery and control functions of the provisioned functions e.g. Reset and Power control of the Computes.
 
