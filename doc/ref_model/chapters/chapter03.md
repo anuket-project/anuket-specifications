@@ -412,7 +412,7 @@ The Cloud Infrastructure Networking Reference Model depicted in **Figure 3-6** i
 
 It is up to any deployment of the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-Networking Reference Model based on the ETSI NFV.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-Networking Reference Model based on the ETSI NFV.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
 <p align="center"><b>Figure 3-6:</b> Networking Reference Model based on the ETSI NFV</p>
 
 <a name="3.5.4"></a>
