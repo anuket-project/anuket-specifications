@@ -77,7 +77,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     - UDR: Unified Data Repository
     - NRF:  Network Repository Function
     - NEF:  Network Exposure Function
-    - CHF:  Charging Function part of the converged charging system CCS
+    - CHF:  Charging Function part of the Converged Charging System (CCS)
     > _**Note:** for Service-based Architecture (SBA) all Network Functions are stateless (store all sessions/ state on unified data repository UDR)_
 - **IP Multimedia Subsystem (IMS)**
   - Data Plane
