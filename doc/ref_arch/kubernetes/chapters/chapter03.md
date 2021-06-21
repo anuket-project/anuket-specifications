@@ -1,6 +1,6 @@
 [<< Back](../../kubernetes)
 
-# 3. High Level Architecture
+# 3. High Level Architecture <!-- omit in toc -->
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -18,7 +18,11 @@
         * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
     * [3.2.2 Container Networking Services](#322-container-networking-services)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
-    * [3.2.4 Container Package Managers](#324-container-package-managers)
+    * [3.2.4 Kubernetes Application package manager](#324-kubernetes-application-package-managers)
+    * [3.2.5 Custom Resources](#325-custom-resources)
+        * [3.2.5.1 Operator Pattern](#3251-operator-pattern)
+* [3.3 CaaS Manager - Cluster Lifecycle Management](#33-caas-manager---cluster-lifecycle-management)
+
 
 ## 3.1 Introduction
 
@@ -210,6 +214,17 @@ If case that memory or Huge Pages are not considered by the Topology Manager, it
 
 [Device Plugin Framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) advertises device hardware resources to kubelet with which vendors can implement plugins for devices that may require vendor-specific activation and life cycle management, and securely maps these devices to containers.
 
+Figure 3-2 shows in four steps how device plugins operate on a Kubernetes node:
+* 1: During setup, the cluster administrator (more in [3.2.5.1 Operator Pattern](chapter03.md#3251-operator-pattern)) knows or discovers (as per [3.2.1.5 Node Feature Discovery](chapter03.md#3215-node-feature-discovery)) what kind of devices are present on the different nodes, selects which devices to enable and deploys the associated device plugins.
+* 2: The plugin reports the devices it found on the node to the Kubelet device manager and starts its gRPC server to monitor the devices.
+* 3: A user submits a pod specification (workload manifest file) requesting a certain type of device.
+* 4: The scheduler determines a suitable node based on device availability and the local kubelet assigns a specific device to the pod's containers.
+
+<p align="center"><img src="../figures/Ch3_Figure_Device_Plugin_operation.png" alt="Device Plugin Operation" Title="Device Plugin Operation" width="50%"/></p>
+<p align="center"><b>Figure 3-2:</b> Device Plugin Operation</p>
+
+An example of often used device plugin is the [SR-IOV Network Device Plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin), that discovers and advertises SR-IOV Virtual Functions (VFs) available on a Kubernetes node, and is used to map VFs to scheduled pods. To use it, the SR-IOV CNI is required, as well as a CNI multiplexer plugin (such as [Multus CNI](https://github.com/k8snetworkplumbingwg/multus-cni) or [DANM](https://github.com/nokia/danm)), to provision additional secondary network interfaces for VFs (beyond the primary network interface). The SR-IOV CNI during pod creation allocates a SR-IOV VF to a pod's network namespace using the VF information given by the meta plugin, and on pod deletion releases the VF from the pod.
+
 
 #### 3.2.1.7 Hardware Acceleration
 
@@ -235,6 +250,13 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 | 5 | Networking (dataplane) | | CPU instructions | Huge Pages (for DPDK-based applications); CPU Manager with configuration for isolcpus and SMT; Multiple interfaces; NUMA topology; Device Plugin; NFD |
 
 <p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
+
+Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container Runtime in Linux host Operating System) or with virtual machines (VMs, on hypervisor).
+When running in VMs, the following list of configurations shows what is needed for non-resilient applications:
+* CPU Manager managing vCPUs that hypervisor provides to VMs.
+* Huge pages enabled in hypervisor, mapped to VM, enabled in guest OS, and mapped to pod.
+* Hardware Topology Management with NUMA enabled in hypervisor, mapped into VM, if needed enabled in guest OS, and mapped into pod.
+* If Node Feature Discovery and Device Plugin Framework are required, the required CPU instructions must be enabled in the VM virtual hardware, and the required devices must be virtualised in the hypervisor or passed through to the Node VM, and mapped into the pods.
 
 
 ### 3.2.2 Container Networking Services
@@ -306,7 +328,7 @@ high-performance NICs, FPGAs, InfiniBand adapters, and other similar computing
 resources that may require vendor specific initialisation and setup" to be
 managed and consumed via standard interfaces.
 
-Figure 3-2 below shows the main building blocks of a Kubernetes networking solution:
+Figure 3-3 below shows the main building blocks of a Kubernetes networking solution:
 - **Kubernetes Control Plane**: this is the core of a Kubernetes Cluster - the
 apiserver, etcd cluster, kube-scheduler and the various controller-managers. The
 control plane (in particular the apiserver) provide a centralised point by which
@@ -355,7 +377,7 @@ service meshes are outside the scope of the infrastructure layer of this
 architecture.
 
 <p align="center"><img src="../figures/ch03_networking.png" alt="Kubernetes Networking Architecture" Title="Kubernetes Networking Architecture" width="100%"/></p>
-<p align="center"><b>Figure 3-2:</b> Kubernetes Networking Architecture</p>
+<p align="center"><b>Figure 3-3:</b> Kubernetes Networking Architecture</p>
 
 <!--The above diagram is maintained here:
 https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
@@ -464,3 +486,44 @@ complies with the CNCF Conformance test for the package managers to use in the
 lifecycle management of the applications they manage. The Reference Architecture
 does not recommend the usage of a Kubernetes Application package manager with a
 server side component installed to the Kubernetes Cluster (e.g.: Tiller).
+
+### 3.2.5 Custom Resources
+
+[Custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) are extensions of the Kubernetes API that represent customizations of Kubernetes installation. Core Kubernetes functions are also built using custom resources which makes Kubernetes more modular.
+Two ways to add custom resources are:
+* [Custom Resource Definitions](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) (CRDs): Defining CRD object creates new custom resource with a name and schema that are easy to use.
+* [API Server Aggregation](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/): Additional API that in flexible way extends Kubernetes beyond core Kubernetes API.
+
+#### 3.2.5.1 Operator Pattern
+
+A [custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers) is a control loop that watches a custom resource for changes and tries to keep the current state of the resource in sync with the desired state.
+
+[Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) combines custom resources and custom controllers. Operators are software extensions to Kubernetes that capture operational knowledge and automate usage of custom resources to manage applications, their components and cloud infrastructure. 
+Operators can have different capability levels. As per repository [OperatorHub.io](https://operatorhub.io/), an operator can have different capability levels ([picture](https://operatorhub.io/static/images/capability-level-diagram.svg)):
+* Basic install: Automated application provisioning and configuration management.
+* Seamless upgrades: Patch and minor version upgrades supported.
+* Full lifecycle: Application lifecycle, storage lifecycle (backup, failure recovery).
+* Deep insights: Metrics, alerts, log processing and workload analysis.
+* Auto pilot: Horizontal/vertical scaling, automated configuration tuning, abnormality detection, scheduling tuning.
+
+## 3.3 CaaS Manager - Cluster Lifecycle Management
+
+> Note: *detailed requirements and component specification of cluster LCM are out of scope for this release.*
+
+In order to provision multiple Kubernetes Clusters, which is a common scenario where workloads and network functions require dedicated, single-tenant Clusters, the Reference
+Architecture provides support for a **CaaS Manager**, a component responsible for the Lifecycle Management of multiple Kubernetes Clusters.
+This component is responsible for delivering an end-to-end life cycle management (creation and installation, scaling, updating, deleting, etc., of entire clusters), visibility and control of CaaS clusters, along with verification of security and compliance of Kubernetes clusters across multiple data centres and clouds.
+Specifically, the scope of the CaaS Manager includes:
+
+- Infrastructure (Kubernetes Clusters) provisioning
+  - LCM of control/worker VM nodes - via IaaS API
+  - or Baremetal provisioning for physical nodes
+- Control plane installation (i.e. Kubernetes control plane components on the nodes)
+- Node Host OS customisation (e.g. Kernel customisation)
+- Management of Cluster add-ons (eg CNIs, CSIs, Service Meshes)
+
+The CaaS Manager maintains a catalogue of **clusters templates**, used to create clusters specific to the requirements of workloads, the underlying virtualisation provider and/or the specific server hardware to be used for the cluster.
+
+The CaaS manager works by integrating with an underlying virtualisation provider for VM-based clusters, or with Bare Metal management APIs for physical clusters, to create Cluster nodes and provide other capabilities such as node scaling (e.g. provisioning a new node and attaching it to a cluster).
+
+A CaaS Manager leverages the closed-loop desired state configuration management concept that Kubernetes itself enables. Meaning, the CaaS Manager takes the desired state of a CaaS Cluster as input and the controller must be able to maintain that desired state through a series of closed loops.

@@ -10,10 +10,10 @@
 
 <a name="1.1"></a>
 ## 1.1 Overview
-The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by Cloud iNfrastructure Telco Taskforce (CNTT).  For more information about CNTT, its activities and deliverables, see [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
+The Reference Model (RM) specifies a virtualisation technology agnostic (VM-based and container-based) cloud infrastructure abstraction and acts as a "catalogue" of the exposed infrastructure capabilities, resources, and interfaces required by the workloads. This document has been developed by the Linux Foundation Networking project [Anuket](../../common/chapter00.md#2.0).  
 
 **Problem Statement:**
-Based on community consultations, including telco operators, technology suppliers, and software developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of VNF/CNF network applications related to the lack of a common cloud infrastructure platform. These include but are not limited to the following:
+Based on community consultations, including telco operators, technology suppliers, and software developers, there is a realisation that there are significant technical, operational and business challenges to the development and deployment of Virtual Network Function (VNF)/ Cloud Native Network Function (CNF) network applications related to the lack of a common cloud infrastructure platform. These include but are not limited to the following:
 
  - Higher development costs due to the need to develop virtualised/containerised network applications on multiple custom platforms for each operator.
  - Increased complexities due to the need to maintain multiple versions of applications to support each custom environment.
@@ -40,7 +40,8 @@ The document starts from the abstract and as it progresses it increasingly gets 
   >	**Audience**: This chapter is written for architects, developers and others who need to develop APIs or develop applications that use the APIs.
 - **Chapter 07 - Security**:  This chapter identifies the security requirements that need to be taken into consideration when designing and implementing a cloud infrastructure environment.  It does not cover details related to company specific requirements to meet regulatory requirements.
   > **Audience**: This chapter is written for security professional, architects, developers and others who need to understand the role of security in the cloud infrastructure environment.
-- **Chapter 08**: This chapter is reserved for future use
+- **Chapter 08 - Hybrid Multi-Cloud: Data Center to Edge**: A generic telco cloud is a hybrid multi-cloud or a federated cloud that has deployments in large data centers, central offices or colocation facilities, and the edge. This chapter discusses the characteristics of telco edge and hybrid multi-cloud. 
+  > **Audience**: This chapter is written for a general technical audience with interest in this topic.
 - **Chapter 09 - Life Cycle Management**: This chapter focuses on the operational aspects of the cloud infrastructure.  Discussions include deployment considerations, on-going management, upgrades and other lifecycle concerns and requirements.  It does not cover details related to company specific operational requirements, nor does it go into how the cloud infrastructure will interface with existing BSS/OSS systems.
   > **Audience**: This chapter is written for lifecycle managers, operational support teams and others who need to support the infrastructure or the applications.
 - **Chapter 10 - Challenges and Gaps**: Opportunities for future developments as technology changes over time.
