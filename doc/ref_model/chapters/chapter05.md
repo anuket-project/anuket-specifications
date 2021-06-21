@@ -31,7 +31,7 @@ Cloud Infrastructure Software layer is composed of 2 layers, **Figure 5-1**:
 <p align="center"><img src="../figures/ch05-cloud-infrastructure-sw-profile-layers.png" alt="ref_profiles" title="Layers of Software Profile" width="40%"/></p>
 <p align="center"><b>Figure 5-1:</b> Cloud Infrastructure software layers</p>
 
-| Ref | Cloud Infratsructure Software | Type | Definition/Notes | Capabilities Reference<sup1</sup> |
+| Ref | Cloud Infrastructure Software | Type | Definition/Notes | Capabilities Reference <sup>1</sup> |
 |-----|-------------------------------|------|------------------|-----------------------------------|
 | infra.sw.001 | Host Operating System |	<value> |	Values such as Ubuntu20.04, Windows 10 Release #, etc. | `e.cap.021` |
 | infra.sw.001 | Virtualisation Infrastructure Layer |	<value> |	Values such as KVM, Hyper-V, Kubernetes, etc. | `e.cap.022` |
@@ -42,7 +42,7 @@ For a host (compute node or physical server), the virtualisation layer is an abs
 <p align="center"><img src="../figures/ch05_b_ref_profile.png" alt="b_ref_profile" title="Reference Profile" width="70%"/></p>
 <p align="center"><b>Figure 5-2:</b> Cloud Infrastructure Virtual resources</p>
 
-A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by a Cloud Infrastructure software layer and configured in the software layers (the Operating System (OS) and the visrtualisation software (such as hypervisor)). **Figure 5-3** depicts a high level view of the Basic and High Performance Cloud Infrastructure Profiles.
+A Cloud Infrastructure Software Profile is a set of features, capabilities, and metrics offered by a Cloud Infrastructure software layer and configured in the software layers (the Operating System (OS) and the virtualisation software (such as hypervisor)). **Figure 5-3** depicts a high level view of the Basic and High Performance Cloud Infrastructure Profiles.
 
 <p align="center"><img src="../figures/RM-ch05-sw-profile.png" alt="ref_sw_profiles" title="Reference Software Profiles" width="60%"/></p>
 <p align="center"><b>Figure 5-3:</b> Cloud Infrastructure Software Profiles</p>
@@ -145,28 +145,28 @@ This section details the services that may be made available to workloads by the
 | Service Mesh          | Istio         |
 | Security & Compliance | Calico        |
 | Monitoring            | Prometheus    |
-| Logging and Analysis  | ELK<sup*></sup> Stack |
-> <sup*></sup> ELK: Elasticsearch, Logstash, and Kibana
+| Logging and Analysis  | ELK<sup>*</sup> Stack |
+> <sup>*</sup> ELK: Elasticsearch, Logstash, and Kibana
 
 <p align="center"><b>Table 5-7a:</b> Service examples.</p>
 
 <a name="5.2"></a>
 ## 5.2 Cloud Infrastructure Software Profiles features and requirements
 
-This section will detail Cloud Infrastructure Software Profiles and associated configurations for the 2 types of Cloud Infrastructure Profiles: Basic and Network intensive.
+This section will detail Cloud Infrastructure Software Profiles and associated configurations for the 2 types of Cloud Infrastructure Profiles: Basic and High Performance.
 
 <a name="5.2.1"></a>
 ### 5.2.1 Virtual Compute
 
 **Table 5-8** depicts the features and configurations related to virtual compute for the two (2) Cloud Infrastructure Profiles.
 
-| Reference         | Feature                | Type   | Basic | High Performance  | Notes |
-|-------------------|------------------------|--------|-------|-------------------|-------|
-| infra.com.cfg.001 | CPU allocation ratio   | value  | N:1   | 1:1               |       |
-| infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |       |
-| infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |       |
-| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 |       |
-| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |       |
+| Reference         | Feature                | Type   | Basic | High Performance  | 
+|-------------------|------------------------|--------|-------|-------------------|
+| infra.com.cfg.001 | CPU allocation ratio   | value  | N:1   | 1:1               |   
+| infra.com.cfg.002 | NUMA alignment         | Yes/No | N     | Y                 |  
+| infra.com.cfg.003 | CPU pinning            | Yes/No | N     | Y                 |  
+| infra.com.cfg.004 | Huge Pages             | Yes/No | N     | Y                 | 
+| infra.com.cfg.005 | Simultaneous Multithreading (SMT) | Yes/No | N  | Y         |  
 
 <p align="center"><b>Table 5-8:</b> Virtual Compute features and configuration for the 2 types of Cloud Infrastructure Profiles.</p>
 
@@ -226,7 +226,7 @@ This section will detail Cloud Infrastructure Software Profiles and associated c
 
 | Reference             | Feature                       | Type                       | Basic | High Performance       |
 |-----------------------|-------------------------------|----------------------------|-------|------------------------|
-| infra.net.acc.cfg.001 | vSwitch optimisation          | Yes/No and SW Optimisation | N     | Y, DPDK                |
+| infra.net.acc.cfg.001 | vSwitch optimisation (DPDK)   | Yes/No and SW Optimisation | N     | Y                      |
 | infra.net.acc.cfg.002 | SmartNIC (for HW Offload)     | Yes/No                     | N     | Optional               |
 | infra.net.acc.cfg.003 | Crypto acceleration           | Yes/No                     | N     | Optional               |
 | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Yes/No                     | N     | Optional               |
@@ -249,7 +249,7 @@ The profiles can be considered to be the set of EPA-related (Enhanced Performanc
 
 A given host can only be assigned a single host profile; a host profile can be assigned to multiple hosts. In addition to the host profile, [profile-extensions](./chapter04.md#4.2.3) and additional capability specifications for the configuration of the host can be specified. Different Cloud Service Providers (CSP) may use different naming standards for their host profiles. For the profiles to be configured, the architecture of the underlying resource needs to be known.
 
-| Ref | Cloud Infratsructure Resource | Type | Definition/Notes | Capabilities Reference  |
+| Ref | Cloud Infrastructure Resource | Type | Definition/Notes | Capabilities Reference  |
 |-----|-------------------------------|------|------------------|-------------------------|
 | infra.hw.001 | CPU Architecture |	<value> |	Values such as x64, ARM, etc. | `e.cap.020` |
 
@@ -272,7 +272,7 @@ The configurations specified in here will be used in specifying the actual hardw
 | infra.hw.cpu.cfg.002 | Minimum number of cores per CPU  | Specifies the number of cores needed per CPU<sup>*</sup> | 20 | 20 |
 | infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment enabled and BIOS configured to enable NUMA | N | Y |
 | infra.hw.cpu.cfg.004 | Simultaneous Multithreading (SMT) | SMT enabled that allows each core to work multiple streams of data simultaneously  | Y | Y |
-> <sup>*</sup> PLease note that these specifications are for general purpose servers normally located in large data centers. Servers for specialised use with the data centers or other locations, such as at edge sites, are likely to have different specifications.
+> <sup>*</sup> Please note that these specifications are for general purpose servers normally located in large data centers. Servers for specialised use with the data centres or other locations, such as at edge sites, are likely to have different specifications.
 <p align="center"><b>Table 5-14:</b> Minimum sizing and capability configurations for general purpose servers.</p>
 
 <a name="5.4.1.1"></a>
@@ -330,5 +330,6 @@ The configurations specified in here will be used in specifying the actual hardw
 | infra.hw.nac.cfg.001 | Crypto Acceleration | IPSec, Crypto                  | N        | Optional         | `e.cap.009`           |
 | infra.hw.nac.cfg.002 | SmartNIC            | offload network functionality  | N        | Optional         | `e.cap.015`           |
 | infra.hw.nac.cfg.003 | Compression         |                                | Optional | Optional         |                       |
+| infra.hw.nac.cfg.004 | SR-IOV over PCI-PT  | SR-IOV                         | N        | Optional              | `e.cap.013`           |
 
 <p align="center"><b>Table 5-19:</b> Network acceleration configuration specification.</p>

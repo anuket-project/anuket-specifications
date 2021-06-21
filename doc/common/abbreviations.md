@@ -102,6 +102,7 @@
 | eTOM | Enhanced Telecom Operations Map |
 | ETSI | European Telecommunications Standards Institute |
 | EUAG | Linux Foundation Networking End User Advisory Group |
+| EUD| End User Device |
 | EULA | End-User License Agreement |
 | EVPN | Ethernet Virtual Private Network |
 | EVPN | Ethernet VPN |
@@ -116,12 +117,12 @@
 | GB | Giga Byte |
 | GFS | Global (Linux) File System |
 | GGSN | Gateway GPRS Support Node |
-| Gi or GiB | Gibibyte (1024<sup>3</sup>) |
+| Gi or GiB | Gibibyte (1024<sup>3</sup>) bytes |
 | GPRS | General Packet Radio Service |
 | GPS | Global Positioning System |
 | GPU | Graphics Processing Unit |
 | GRE | Generic Routing Encapsulation |
-| GSM | Global System for Mobile Communications<br>previously Groupe Speciale Mobile |
+| GSM | Global System for Mobile Communications, previously Groupe Speciale Mobile |
 | GSMA | GSM Association |
 | GUI | Graphical User Interface |
 | GW | Gateway |
@@ -276,6 +277,7 @@
 | RR | Route Reflector |
 | RTM | Requirements Traceability Matrix |
 | RTM | Root of Trust for Measurements |
+| RTT | Round Trip Time |
 | RU | Radio Unit (O-RAN context) |
 | S3 | (Amazon) Simple Storage Service |
 | SA | Service Assurance |

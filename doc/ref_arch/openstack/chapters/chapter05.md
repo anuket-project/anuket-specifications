@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 5. Interfaces and APIs
-<p align="right"><img src="../figures/bogo_dfp.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_com.png" alt="Complete" title="Bogo: Complete" width="35%"/></p>
 
 ## Table of Contents
 * [5.1 Introduction](#5.1)
@@ -13,7 +13,7 @@
 
 This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces.
 The OpenStack Train version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any Cloud Infrastructure + VIM reference
-implementations that **get certified by RC** can be considered as CNTT RA Conformant.
+implementations that **get certified by RC** can be considered as Anuket RA Conformant.
 
 The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and a
 consolidated view of these and other APIs that are of interest.
@@ -24,8 +24,8 @@ an "API version" is associated to each OpenStack service.
 In addition to major API versions, some OpenStack services (Nova, Glance, Keystone, Cinder...) support microversions.
 The microversions allow to introduce new features over time.
 In this chapter, the **major version** and **microversion** are specified per service.
-The mentioned microversion is the minimal microversion that supports the features requested for CNTT.
-For the purpose of conformance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for CNTT compliant implementation.
+The mentioned microversion is the minimal microversion that supports the features requested for Anuket.
+For the purpose of conformance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for Anuket compliant implementation.
 
 <a name="5.2"></a>
 ## 5.2. Core OpenStack Services APIs
@@ -300,17 +300,6 @@ The KVM APIs are documented in Section 4 of the document https://www.kernel.org/
 #### 5.3.3.1. Libvirt Interfaces
 The Libvirt APIs are documented in https://libvirt.org/html/index.html.
 
-<!--
-### 5.3.4. Cyborg
-
-| **OpenStack Service** | **API Version** |
-|-----------------------|-----------------|
-| Accelerator: Cyborg   | v2              |
-
-Acceleration Service API: https://docs.openstack.org/api-ref/accelerator/v2/index.html
-Please note that the initial version of the [Cyborg API v1.0](https://docs.openstack.org/cyborg/stein/admin/api.html) was deprecated in the OpenStack Train release and will be removed in the Ussuri release.
--->
-
 ### 5.3.4. Barbican
 
 | **OpenStack Service**           | **API Version** |
@@ -318,8 +307,3 @@ Please note that the initial version of the [Cyborg API v1.0](https://docs.opens
 | Key Manager: Barbican           | v1              |
 
 Barbican API Documentation: https://docs.openstack.org/barbican/latest/api/
-
-<!--
-### 5.3.4. vSphere/ESXi APIs
-The ESXi APIs are documented together with vCenter and available at https://code.vmware.com/apis/62/vcenter-management
--->

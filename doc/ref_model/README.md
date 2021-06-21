@@ -2,9 +2,9 @@
 # Reference Model
 
 ## Release Information
-**Bundle: _5_**
+**Bundle: _6_**
 
-**Version: _5.1_**
+**Version: _6.0_**
 
 **Release Date: _29th January 2021_**
 
@@ -20,22 +20,23 @@
 | 4.0               | 25th Sep 2020         | Baraque Release           |
 | 5.0               | 29th Jan 2021         | Elbrus Release            |
 | 5.1               | 8th March 2021        | Kali Release work started |
+| 6.0               | 1 July 2021        | Kali Release work finished |
 
 ## Overall Status
 
 | Chapter | Status |
 | --- | --- |
-| Chapter 01 | Release work started |
-| Chapter 02 | Release work started |
-| Chapter 03 | Release work started |
-| Chapter 04 | Release work started |
-| Chapter 05 | Release work started |
-| Chapter 06 | Release work started |
-| Chapter 07 | Release work started |
-| Chapter 08 | Release work started |
-| Chapter 09 | Release work started |
-| Chapter 10 | Release work started |
-| Glossary   | Release work started |
+| Chapter 01 | Release work finished |
+| Chapter 02 | Release work finished |
+| Chapter 03 | Release work finished |
+| Chapter 04 | Release work finished |
+| Chapter 05 | Release work finished |
+| Chapter 06 | Release work finished |
+| Chapter 07 | Release work finished |
+| Chapter 08 | Release work finished |
+| Chapter 09 | Release work finished |
+| Chapter 10 | Release work finished |
+| Glossary   | Release work finished |
 
 ## Table of Contents
 * [Chapter 01 - Introduction](chapters/chapter01.md)

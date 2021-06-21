@@ -5,13 +5,13 @@
 - [2.1 Workloads Collateral](#21-workloads-collateral)
 - [2.2 Use cases](#22-use-cases)
 - [2.3 Analysis](#23-analysis)
-- [2.4 Profiles & Flavours](#24-profiles--flavours)
+- [2.4 Profiles, Profile Extensions & Flavours](#24-profiles--flavours)
   - [2.4.1 Profiles (top-level partitions)](#241-profiles-top-level-partitions)
   - [2.4.2 Profile Extensions (specialisations)](#242-profile-extensions-specialisations)
 
 The Cloud Infrastructure is the totality of all hardware and software components which build up the environment in which VNFs/CNFs (workloads) are deployed, managed and executed. It is, therefore, inevitable that different workloads would require different capabilities and have different expectations from it.
 
-One of the main targets of the CNTT is to define an agnostic cloud infrastructure, to remove any dependencies between workloads and the deployed cloud infrastructure, and offer infrastructure resources to workloads in an abstracted way with defined capabilities and metrics.
+One of the main targets of the Reference Model is to define an agnostic cloud infrastructure, to remove any dependencies between workloads and the deployed cloud infrastructure, and offer infrastructure resources to workloads in an abstracted way with defined capabilities and metrics.
 
 This means, operators will be able to host their Telco workloads (VNFs/CNFs) with different traffic types, behaviour and from any vendor on a unified consistent cloud infrastructure.
 
@@ -77,7 +77,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     - UDR: Unified Data Repository
     - NRF:  Network Repository Function
     - NEF:  Network Exposure Function
-    - CHF:  Charging Function part of the converged charging system CCS
+    - CHF:  Charging Function part of the Converged Charging System (CCS)
     > _**Note:** for Service-based Architecture (SBA) all Network Functions are stateless (store all sessions/ state on unified data repository UDR)_
 - **IP Multimedia Subsystem (IMS)**
   - Data Plane
@@ -94,7 +94,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
     - MSAN: MultiService Access Node
     - OLT: Optical Line Termination
     - WLC: WLAN Controller
-    - BNG: Border Network Gateway
+    - BNG: Broadband Network Gateway
     - BRAS: Broadband Remote Access Server
     - RGW: Residential GateWay
     - CPE: Customer Premises Equipment
@@ -120,7 +120,7 @@ The list of, most likely to be virtualised,  Network Functions below, covering a
 <a name="2.2"></a>    
 ## 2.2 Use cases
 
-The intend of this section is to describe some important use cases that are pertinent to this Reference Model.  We start with some typical Edge related use cases. The list of use cases will be extendd in the future releases.  
+The intent of this section is to describe some important use cases that are pertinent to this Reference Model.  We start with some typical Edge related use cases. The list of use cases will be extendd in the future releases.  
 
 Telco Edge is commonly coupled with 5G use cases, seen as one of the ingredients of the Ultra-Reliable Low-latency Communication (URLLC) and Enhanced Mobile Broadband (eMBB) Network Slicing. The requirements for user plane Local Breakout / Termination are common mandating that Value Added Services (VASs) & Any Gi-LAN applications are locally hosted at the Edge. The Telco Edge is a perfect fit for centralized vRAN deployment and vDU/vCU hosting that satisfy the latency requirements.
 
@@ -266,7 +266,7 @@ By trying to sort workloads into different categories based on the requirements 
     - Low network latency
 
 <a name="2.4"></a>
-## 2.4 Profiles & Flavours
+## 2.4 Profiles, Profile Extensions & Flavours
 
 **Profiles** are used to tag infrastructure (such as hypervisor hosts, or Kubernetes worker nodes) and associate it with a set of capabilities that are exploitable by the workloads.
 
@@ -278,6 +278,7 @@ Two profile *layers* are proposed:
 Workloads specify infrastructure capability requirements as workload metadata, indicating what kind of infrastructure they must run on to achieve functionality and/or the intended level of performance. Workloads request resources specifying the Profiles and Profile Extensions, and a set of sizing metadata that maybe expressed as flavours that are required for the workload to run as intended.
 A resource request by a workload can be met by any infrastructure node that has the same or a more specialised profile and the necessary capacity to support the requested flavour or resource size.
 
+Profiles, Profile Extensions and Flavours will be considered in greater detail in [Section 4.2](./chapter04.md#4.2).
 
 <a name="2.4.1"></a>
 ### 2.4.1 Profiles (top-level partitions)
@@ -305,14 +306,17 @@ The following **profile extensions** are proposed:
 | Storage Intensive High-performance storage | storage-high-perf | ❌ | ✅ | Nodes that have low storage latency and/or high storage IOPS | | 
 | Compute Intensive High memory | compute-high-memory | ❌ | ✅ | Nodes that have high amounts of RAM. | May use vanilla VIM/K8S scheduling instead. |
 | Compute Intensive GPU | compute-gpu | ❌ | ✅ | for compute intensive Workloads that requires GPU compute resource on the node | May use Node Feature Discovery. |
-| Network Intensive High speed network (25G) | high-speed-network | ❌ | ✅ | denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node. |  |
-| Network Intensive Very High speed network (100G) | very-high-speed-network | ❌ | ✅ | denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node. |   |
-| Low Latency - Edge Sites | low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
-| Very Low Latency - Edge Sites | very-low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
-| Ultra Low Latency - Edge Sites | ultra-low-latency-edge | ✅ | ✅ | labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
-| Fixed function accelerator | compute-ffa | ❌ | ✅ | labels a host/node that includes a consumable fixed function accelerator (non programmable, eg Crypto, vRAN-specific adapter). |   |
-| Firmware-programmable adapter | compute-fpga | ❌ | ✅ | labels a host/node that includes a consumable Firmware-programmable  adapter (programmable, eg Network/storage FPGA with programmable part of  firmware image). |   |
-| SmartNIC enabled | network-smartnic | ❌ | ✅ | labels a host/node that includes a Programmable accelerator for  vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |   |
-| SmartSwitch enabled | network-smartswitch | ❌ | ✅ | labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
+| Network Intensive High speed network (25G) | high-speed-network | ❌ | ✅ | Denotes the presence of network links (to the DC network) of speed of 25 Gbps or greater on the node. |  |
+| Network Intensive Very High speed network (100G) | very-high-speed-network | ❌ | ✅ | Denotes the presence of network links (to the DC network) of speed of 100 Gbps or greater on the node. |   |
+| Low Latency - Edge Sites | low-latency-edge | ✅ | ✅ | Labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
+| Very Low Latency - Edge Sites | very-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
+| Ultra Low Latency - Edge Sites | ultra-low-latency-edge | ✅ | ✅ | Labels a host/node as located in an edge site, for workloads  requiring low latency (specify value) to final users or geographical  distribution. |   |
+| Fixed function accelerator | compute-ffa | ❌ | ✅ | Labels a host/node that includes a consumable fixed function accelerator (non-programmable, e.g. Crypto, vRAN-specific adapter). |   |
+| Firmware-programmable adapter | compute-fpga | ❌ | ✅ | Labels a host/node that includes a consumable Firmware-programmable  adapter (programmable, e.g. Network/storage FPGA with programmable part of  firmware image). |   |
+| SmartNIC enabled | network-smartnic | ❌ | ✅ | Labels a host/node that includes a Programmable accelerator for  vSwitch/vRouter, Network Function and/or Hardware Infrastructure. |   |
+| SmartSwitch enabled | network-smartswitch | ❌ | ✅ | Labels a host/node that is connected to a Programmable Switch Fabric or TOR switch |  |
+
+<p align="center"><b>Table 2-1:</b> Profile extensions</p>
 
 >***Note:** This is an initial set of proposed profiles and profile extensions and it is expected that more profiles and/or profile extensions will be added as more requirements are gathered and as technology enhances and matures.
+

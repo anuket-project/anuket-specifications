@@ -11,7 +11,7 @@
   * [10.3.2 Support Load Balance of VNF/CNFs](#10.3.2)
   * [10.3.3 Service Function Chain](#10.3.3)
   * [10.3.4 Closed-loop automation](#10.3.4)
-  * [10.3.5 Acceleration Abstraction(#10.3.5)
+  * [10.3.5 Acceleration Abstraction](#10.3.5)
 
 
 <a name="10.1"></a>
@@ -49,7 +49,7 @@ The load balancing and scaling needed for typical enterprise applications is wel
 
 The built in mechanism in Kubernetes for scaling enterprise type of services and PODs is also sufficient for applications that only use one interface.
 
-What is not supported in either OpenStack or Kubernetes is to scale and load balance a typical VNF and CNF. There is no support in OpenStack to scale stateful L3 applications such as SCTP, QUIC. mTCP, and gRPC. In Kubernetes it is even worse. The built in Kubernetes network support is tied to the first POD/container interface. Support for secondary interfaces is managed through the Container Network Interface, CNI, and by CNI plugins, such as Multus, that support the "Kubernetes Network Customs Resource Definition" specified by the Kubernetes Network Plumbing Group. This specification supports attachment of network endpoints to PODs, IP address management and the ability of define interface specific static routes. There is no support for network orchestration and functions such as load balancing, routing, ACL and firewalls.
+What is not supported in either OpenStack or Kubernetes is to scale and load balance a typical VNF and CNF. There is no support in OpenStack to scale stateful L3 applications such as SCTP, QUIC, mTCP, and gRPC. In Kubernetes it is even worse. The built in Kubernetes network support is tied to the first POD/container interface. Support for secondary interfaces is managed through the Container Network Interface, CNI, and by CNI plugins, such as Multus, that support the "Kubernetes Network Customs Resource Definition" specified by the Kubernetes Network Plumbing Group. This specification supports attachment of network endpoints to PODs, IP address management and the ability of define interface specific static routes. There is no support for network orchestration and functions such as load balancing, routing, ACL and firewalls.
 
 <a name="10.3.3"></a>
 ### 10.3.3 Service Function Chain
@@ -67,8 +67,8 @@ Closed-loop automation is evolving as a major advancement in the telecommunicati
 
 <a name="10.3.5"></a>
 ### 10.3.5 Acceleration Abstraction
-Many vRAN and some other domain's network functions require accelerators to meet latency and thruput requirements. A large number of advanced ASICs, FPGAs, GPUs, and Smart NIC have come to the market to address these needs but unfortunately there is a lack of a common way to utilize them.
+Many vRAN and some other domain's network functions require accelerators to meet latency and throughput requirements. A large number of advanced ASICs, FPGAs, GPUs, and Smart NIC have come to the market to address these needs but unfortunately there is a lack of a common way to utilize them.
 		
 [O-RAN Alliance](https://www.o-ran.org) is developing a common abstraction and programming model for RAN application domain (see [Acceleration Abstraction Layer General Aspects an Principles 1.0 - November 2020 (O-RAN.WG6.AAL-GAnP-v01.00](https://www.o-ran.org/specifications)). [P4 Language Consortium](https://p4.org/) defines specifications for switching and routing domains. There is, however, a lack of a common programming model for accelerator applications development.
 		
-There is also a need for a seamless integration with platforms, Kubernetes and OpenStack in particular. Kubernetes treats each device as unique HW and, hence, application developers are forced to specify vendor specific labels and utilise vendor specific libraries in their workload manifests as dependencies. OpenStack is attempting to address this gap with their Cyborg project (https://wiki.openstack.org/wiki/Cyborg).
+There is also a need for a seamless integration with platforms, Kubernetes and OpenStack in particular. Kubernetes treats each device as unique HW and, hence, application developers are forced to specify vendor specific labels and utilise vendor specific libraries in their workload manifests as dependencies. OpenStack is attempting to address this gap with their [Cyborg](https://wiki.openstack.org/wiki/Cyborg) project.

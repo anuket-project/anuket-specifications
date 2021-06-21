@@ -75,7 +75,7 @@ The functionalities of each layer are as follows:
 - **Hardware infrastructure manager:** This is a logical block of functionality responsible for the management of the abstracted hardware resources (compute, network and storage) and as such it is shielded from the direct involvement with server host software.
 - **Hardware resources:** These consist of physical hardware components such as servers, (including random access memory, local storage, network ports, and hardware acceleration devices), storage devices, network devices, and the basic input output system (BIOS).
 
-**Worklaod Layer**
+**Workload Layer**
 - **Workloads (VNFs/CNFs):** These consist of workloads such as virtualized and/or containerized network functions that run within a virtual machine (VM) or as a set of containers.
 
 <a name="3.2"></a>
@@ -144,7 +144,7 @@ Low Latency storage is for workloads which have strong constraints on the time t
 High IOPS oriented storage is for workloads requiring lots of read/write actions.
 Large size storage is for workloads that need lots of volume without strong performance constraints.
 Note that approximate numeric ranges for the qualitative values used above are given in the 
-[Storage Extensions](./chapter04.html#4.2.3) section.
+[Storage Extensions](./chapter04.md#4.2.6) section.
 
 Storage resources have the following attributes, with metric definitions that support verification through passive measurements (telemetry) where appropriate:
 
@@ -157,7 +157,7 @@ Storage resources have the following attributes, with metric definitions that su
 |                          | Read and Write Throughput, The average rate of performing R/W operations in Bytes per second   |
 | `enhanced features`      | replication, encryption                                                                        |
 | `type`                   | block, object or file                                                                          |
-| `size`                   | size in GB, telemetery includes the amount of free, used, and reserved disk space, in bytes    |
+| `size`                   | size in GB, telemetry includes the amount of free, used, and reserved disk space, in bytes    |
 
 <p align="center"><b>Table 3-3:</b> Attributes of storage resources</p>
 
@@ -220,12 +220,12 @@ Compute, Storage and Network resources serve as the foundation of the cloud infr
 <p align="center"><img src="../figures/ch03-model-hardware-resources.png" alt="Cloud Infrastructure Hardware Resources" Title="Cloud Infrastructure Hardware Resources" width="65%"/></p>
 <p align="center"><b>Figure 3-4:</b> Cloud Infrastructure Hardware Resources</p>
 
-In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data center. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Center Operations team from the HW Infrastructure Management functions.
+In managed Hardware Infrastructure systems, these consumable Compute, Storage and Network resources can be provisioned through operator commands or through software APIs.  There is a need to distinguish between these consumable resources, that are treated as leased resources, from the actual physical hardware resources that are installed in the data centre. For this purpose, the hardware resource layer is conceptually split into a Logical Resource Layer that surfaces the consumable resources to the software layer above, and the Physical Resource Layer that is operated and managed by the Data Centre Operations team from the Hardware Infrastructure Management functions perspective.
 
 Some installations might use a cluster of managed switches or storage components controlled by a Switch Fabric controller and/or a Storage Fabric controller acting as an appliance system. These systems should be federated with the HW Infrastructure Management system over some API to facilitate exchange of configuration intent, status and telemetry information allowing the HW Infrastructure Management and Management stack to automate Cloud Infrastructure operations. These appliance systems normally also have their own Equipment Management APIs and procedures for the hardware installation and maintenance staff.
 
 An example could be a  Cloud Infrastructure stack federated with a commercial Switch Fabric where the Cloud Infrastructure shall be able to "send" networking configuration intent to the Switch Fabric and the Switch Fabric shall be able to "send" status and telemetry information to the Cloud Infrastructure e.g. Port/Link Status and packet counters of many sorts. The word "send" is a very lose definition of getting a message across to the other side, and could be implemented in many different ways.
-This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Center.
+This allows HW Infrastructure Management and Cloud Infrastructure management stack to have network automation that includes the switches that are controlled by the federated Switch Fabric. This would be a rather normal case for Operators  that have a separate Networking Department that owns and runs the Switch Fabric separately from the Data Centre.
 
 <a name="3.3.1.1"></a>
 #### 3.3.1.1 Hardware Acceleration Resources
@@ -246,7 +246,7 @@ More details about Hardware Acceleration are in [Section 3.8 Hardware Accelerati
 
 <a name="3.3.2"></a>
 ### 3.3.2 Hardware Infrastructure Manager
-The HW Infrastructure Manager shall at least support equipment management for all managed physical hardware resources of the Cloud Infrastructure. For better understanding of some of the hardware resources concepts see chapter 3.4.
+The HW Infrastructure Manager shall at least support equipment management for all managed physical hardware resources of the Cloud Infrastructure. 
 
 In most deployments the HW Infrastructure Manager should also be the HW Infrastructure Layer provisioning manager of the Compute, Storage and Network resources that can be used by the Virtualization Infrastructure Layer instances. It shall provide an API enabling vital resource recovery and control functions of the provisioned functions e.g. Reset and Power control of the Computes.
 
@@ -265,14 +265,12 @@ The hardware infrastructure manager allows to:
 The hardware infrastructure manager needs to support the following functional aspects:
 
 * **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
-
-* **API/UI**: an application programming interface / user interface providing access to the hardware resource management functions
 * **Discovery**: discover physical hardware resources and collect relevant information about them 
 * **Topology**: discover and monitor physical interconnection (e.g. cables) in between the physical hardware resources
 * **Equipment**:  manages the physical hardware resources in terms of configuration, firmware status, health/fault status and autonomous environmental control functions such as fan and power conversion regulations
-* **Resource Allocation and Composition**: creates, modifies and delete logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources
+* **Resource Allocation and Composition**: creates, modifies and deletes logical Compute, Network and Storage Resources through Composition of allocated physical hardware resources
 * **Underlay Network Resources Manager**: provides a mechanism to provision hardware resources and provide separation in between multiple Virtualization Infrastructure instances for the use of the underlay network (e.g. switch fabric, switches, SmartNICs)
-* **Monitoring**: monitors and collects information on events, current state and telemetry data of physical hardware resources, Equipment autonomous control functions as well as Switch and Storage Fabric systems
+* **Monitoring**: monitors and collects information on events, current state and telemetry data of physical hardware resources, autonomous equipment control functions as well as Switch and Storage Fabric systems
 * **Additional Management Functions**: include software and configuration life cycle management, identity management, access management, policy management (e.g. to enforce security policies), etc.
 
 <a name="3.4"></a>
@@ -341,7 +339,7 @@ Before we start developing a deep model we need to agree on some foundational co
 <a name="3.5.2.1"></a>
 #### 3.5.2.1 Underlay and Overlay Networking Concepts
 
-The ETSI Network Functions Virtualisation Architectural Framework (as referred  above) describes how a Virtual Infrastructure Layer instance abstract the hardware resources and separate Virtualisation Tenants (Workload) from each other. It does also specifically state that the control and implementation of the hardware layer is out of scope for that specification.
+The ETSI Network Functions Virtualisation Architectural Framework (as referred  above) describes how a Virtual Infrastructure Layer instance abstracts the hardware resources and separates Virtualisation Tenants (Workload) from each other. It does also specifically state that the control and implementation of the hardware layer is out of scope for that specification.
 
 When having multiple Virtual Infrastructure Layer instances on a shared hardware infrastructure, the networking can be layered in an Underlay and an Overlay Network layer. The purpose with this layering is to ensure separation of the Virtualisation Tenants (Workload) Overlay Networks from each other, whilst allowing the traffic to flow on the shared Underlay Network in between all Ethernet connected hardware (HW) devices.
 
@@ -351,7 +349,7 @@ The Overlay Network for each Cloud Infrastructure deployment must support a basi
 
 In some instances, the Virtualisation Tenants can bypass the Overlay Networking encapsulation to achieve better performance or network visibility/control. A common method to bypass the Overlay Networking encapsulation normally done by the Virtualisation Layer, is the VNF/CNF usage of SR-IOV that effectively take over the Physical and Virtual Functions of the NIC directly into the VNF/CNF Tenant. In these cases, the Underlay Networking must handle the separation e.g. through a Virtual Termination End Point (VTEP) that encapsulate the Overlay Network traffic.
 
-> **Note:** Bypassing the Overlay Networking layer is a violation of the basic Anuket decoupling principles, but in some cases unavoidable with existing technologies and available standards. Until suitable technologies and standards are developed, Anuket have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
+> **Note:** Bypassing the Overlay Networking layer is a violation of the basic decoupling principles, but is in some cases unavoidable with existing technologies and available standards. Until suitable technologies and standards are developed, Anuket have a set of agreed exemptions that forces the Underlay Networking to handle the bypassed Overlay Networking separation.
 
 VTEP could be manually provisioned in the Underlay Networking or be automated and controlled through a Software Defined Networking controller interfaces into the underlying networking in the HW Infrastructure Layer.
 
@@ -381,7 +379,7 @@ An SDN-Overlay control interface (here denoted SDNo) is responsible for managing
 
 In cases where the VNF/CNF bypasses the Virtual Infrastructure Layer virtual switching and its encapsulation, as described above, the HW Infrastructure Layer must perform the encapsulation and mapping onto the Underlay Networking to ensure the Underlay Networking separation. This should be a prioritized capability in the SDNu control interface since Anuket currently allow exemptions for bypassing the virtual switching (e.g. through SR-IOV).
 
-SDN controllers can request Underlay Networking encapsulation and mapping to be done by signalling to an SDNu controller. There are however today no standardized way for this signalling and by that there is a missing reference point and API description in this architecture.
+SDNu controllers can request Underlay Networking encapsulation and mapping to be done by signalling to an SDNu controller. There are however today no standardized way for this signalling and because of that there is a missing reference point and API description in this architecture.
 
 Multiple instances of Container as a Service (CaaS) Virtual Infrastructure Layers running on an Infrastructure as a Service (IaaS) Virtual Infrastructure Layer could make use of the IaaS layer to handle the required Underlay Networking separation. In these cases, the IaaS Virtualisation Infrastructure Manager (VIM) could include an SDNu control interface enabling automation.
 
@@ -403,7 +401,7 @@ All VNF, CNF and Virtualisation instance acceleration as well as all specific su
 
 The nature of a shared Underlay Network that shall ensure separation and be robust is that all code in the forwarding plane and in the control plane must be under the scrutiny and life cycle management of the HW Infrastructure Layer.
 
-This also imply that programmable forwarding functions in a Programmable Networking Fabric are shared resources and by that will have to get standardised interfaces over time to be useful for multiple VNF/CNF and multi-vendor architectures such as ETSI NFV. Example of such future extensions of shared functionality implemented by a Programmable Networking Fabric could be L3 as a Service, Firewall as a Service and Load Balancing as a Service.
+This also implies that programmable forwarding functions in a Programmable Networking Fabric are shared resources and by that will have to get standardised interfaces over time to be useful for multiple VNF/CNF and multi-vendor architectures such as ETSI NFV. Example of such future extensions of shared functionality implemented by a Programmable Networking Fabric could be L3 as a Service, Firewall as a Service and Load Balancing as a Service.
 
 > **Note:** Appliance-like applications that fully own its infrastructure layers (share nothing) could manage and utilize a Programmable Networking Fabric in many ways, but that is not a Cloud Infrastructure implementation and falls outside the use cases for these specifications.
 
@@ -414,7 +412,7 @@ The Cloud Infrastructure Networking Reference Model depicted in **Figure 3-6** i
 
 It is up to any deployment of the Cloud Infrastructure to decide what Networking related objects to use, but all Reference Architectures have to be able to map into this model.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-Networking Reference Model based on the ETSI NFV.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-Networking Reference Model based on the ETSI NFV.png" alt="Networking Reference Model based on the ETSI NFV" title="Networking Reference Model based on the ETSI NFV" width="100%"/></p>
 <p align="center"><b>Figure 3-6:</b> Networking Reference Model based on the ETSI NFV</p>
 
 <a name="3.5.4"></a>
@@ -431,7 +429,7 @@ In both cases the Underlay Networking can be externally controlled over the SDNu
 
 Two exemplifications of different common HW realisations of Underlay Network separation in the HW Infrastructure Layer can be seen in **Figure 3-7**.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-Underlay Networking separation examples.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-Underlay Networking separation examples.png" alt="Underlay Networking separation examples" title="Underlay Networking separation examples" width="100%"/></p>
 <p align="center"><b>Figure 3-7:</b> Underlay Networking separation examples</p>
 
 <a name="3.5.4.2"></a>
@@ -439,7 +437,7 @@ Two exemplifications of different common HW realisations of Underlay Network sep
 
 Two use case examples with both SDNo and SDNu control functions depicting a software based virtual switch instance in the Virtual Infrastructure Layer and another high performance oriented Virtual Infrastructure instance (e.g. enabling SR-IOV) are described in **Figure 3-8**. The examples are showing how the encapsulation and mapping could be done in the virtual switch or in a SmartNIC on top of a statically provisioned underlay switching fabric, but another example could also have been depicted with the SDNu controlling the underlay switching fabric without usage of SmartNICs.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-SDN Controller relationship examples.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-SDN Controller relationship examples.png" alt="SDN Controller relationship examples" title="SDN Controller relationship examples" width="100%"/></p>
 <p align="center"><b>Figure 3-8:</b> SDN Controller relationship examples</p>
 
 <a name="3.5.4.3"></a>
@@ -449,7 +447,7 @@ A Networking Reference Model deployment example is depicted in **Figure 3-9** to
 
 The example is or will be a common scenario for operators that modernise their network functions during a rather long period of migration from VNFs to Cloud Native CNFs. Today the network functions are predominantly VNFs on IaaS environments and the operators are gradually moving a selection of these into CNFs on CaaS that either sit on top of the existing IaaS or directly on Bare Metal. It is expected that there will be multiple CaaS instances in most networks, since it is not foreseen any generic standard of a CaaS implementation that will be capable to support all types of CNFs from any vendor. It is also expected that many CNFs will have dependencies to a particular CaaS version or instances which then will prohibit a separation of Life Cycle Management in between individual CNFs and CaaS instances.
 
-<p align="center"><img src="./../figures/RM-Ch03_5-Networking Reference Model deployment example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
+<p align="center"><img src="../figures/RM-Ch03_5-Networking Reference Model deployment example.png" alt="Networking Reference Model deployment example" title="Networking Reference Model deployment example" width="100%"/></p>
 <p align="center"><b>Figure 3-9:</b> Networking Reference Model deployment example</p>
 
 
@@ -480,12 +478,13 @@ However, in a service-specific overlay network, packets are routed based on poli
 
 <a name="3.5.5.2"></a>
 #### 3.5.5.2 SFC Architecture
+
  The SFC Architecture is composed of functional management, control and data components as categorised in the Table 3-6 below. 
 
 The table below highlights areas under which common SFC functional components can be categorized.
 
 
-| Components | Example         | Responsabilities |
+| Components | Example         | Responsibilities |
 |:---:|:----:|:---|
 |**Management** | `SFC orchestrator`  | High Level of orchestrator <br /> Orchestrate the SFC based on SFC Models/Policies with help of control components.| 
 | | `SFC OAM Components` | Responsible for SFC OAM functions |
@@ -494,11 +493,10 @@ The table below highlights areas under which common SFC functional components ca
 | **Control** | `SFC SDN Controller` | SDNC responsible to create the service specific overlay network. <br /> Deploy different techniques to stitch the wiring but provide the same functionality, for example l2xconn, SRv6 , Segment routing etc.  |
 || `SFC Renderer` | Creates and wires ports/interfaces for SF data path |
 | **Data** | `Core Components`<br /> SF, SFF, SF Proxy  | Responsible for steering the traffic for intended service functionalities based on Policies |
-
 <p align="center"><b>Table 3-6:</b> SFC Architecture Components</p>
 
 
-> **Note:** These are logical components and listed for their functionalies only.  
+> **Note:** These are logical components and listed for their functionalities only.  
 
 The SFC Architecture components can be viewed as:- 
 
@@ -513,6 +511,66 @@ Figure 3-11 shows a simple architecture of an SFC with multiple CNFs, as SF data
 <p align ="center"><b>Figure 3-11:</b> SFC Architecture for CNF based SFs</p>
 
 The SFC management components together with the control components are responsible for rendering SFC requests to Service Function paths. For this they convert requisite SFC policies into network topology dependent paths and forwarding steering policies. Relevant SFC data components - classifiers, service function forwarders - are responsible for managing the steering policies.
+
+
+<a name="3.5.5.3"></a>
+#### 3.5.5.3 Information Flows in Service Function Chaining
+ 
+<a name="3.5.5.3.1"></a>
+##### 3.5.5.3.1 Creation of Service Function Chain
+ 
+The creation of the SFC might include design/preparation phase as: 
+-	The service functions that are included in the SFC.
+- The routing order in the service function, if the SFC is composed of more than one service function.
+
+Figure 3-12 shows SFC creation call flow, separated logically in two steps.
+<p align="center"> <img src="../figures/ch03-model-sfc-info-create-flow.png" alt="Creation of Service Function Chain" Title="Creation of Service Function Chain" width="45%"/></p>
+<p align ="center"><b>Figure 3-12:</b> Creation of Service Function Chain</p>
+
+1.	Creation of service functions of SFC.
+
+The flow of steps to enable the SFC creation can be as follows:-
+
+a.	SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
+
+b.	SFC Renderer attaches the SFC aware interfaces at SFs to enable Service plane 
+
+c.	NFVO boots up the relevant SF configurations at SF.
+> **Note:** These steps are optional, if SFC orchestrator discovers that SFs are already created and existing.
+
+2.	Creation of Service Function Path (SFP) using the created SFs and associated interfaces.
+
+A Service Function Path consists of:
+- A set of ports( in VNF environment) or interfaces ( in CNF environment) , that define the sequence of service functions 
+- A set of flow classifiers that specify the classified traffic flows entering the chain.
+
+This step creates a new chain policy with chain rules. Chain rules can include the identifier of a traffic flow, service characteristics, the SFC identifier and related information to route the packets along the chain. Service characteristics can be application layer matching information (e.g., URL). Traffic flow identifier  can be kind of traffic (e.g., Video, TCP, HTTP) flow need to be serviced. It can be specific Subscriber to apply service (e.g., parental control). The SFC identifier to steer the matched traffic along the SFP with SFC encapsulation. 
+
+a.	SFC orchestrator creates SFP with help of SDNC.
+
+b.	SDNC pushes the SFC traffic steering policies to SFF(s).
+
+c.	SFC classifier Policy provided for SFP to SFC classifier by SFC Controller. **Note:** not shown in call flow.
+
+<a name="3.5.5.3.2"></a>
+##### 3.5.5.3.2 Updating Service Function Chain
+SFP or SFC can be updated for various reasons and some of them are:
+- SFC controller monitors the SFP status and alerts SFC controller in case of not meeting SLA or some anomaly.
+- SFC design changes to update SF order, inclusion/removal of SFs
+- SFC Policy Rules changes
+
+<a name="3.5.5.3.3"></a>
+##### 3.5.5.3.3 Data Steering in Service Function Chain
+
+Figure 3-13 shows traffic steering along SFP.
+<p align="center"> <img src="../figures/ch03-model-sfc-data-flow.png" alt="Data steering in Service Function Chain" Title="Data steering in Service Function Chain" width="45%"/></p>
+<p align ="center"><b>Figure 3-13:</b> Data steering in Service Function Chain</p>
+
+- SFC classifier detects the traffic flow based on classification policies. For example, to enable SGi-Lan feature as SFC,  5G User plane function (UPF) acts as SFC classifier.  UPF receives the classification policies from 5G Policy control function (PCF) as traffic steering policies. 
+- SFC classifier applies the SFC encapsulation (e.g., SCH, NSH) and routes traffic towards SFF, acts as entry point to SFP. The SFC Encapsulation provides, at a minimum, SFP identification, and is used by the SFC-aware functions, such as the SFF and SFC-aware SFs.
+- SFF based on SFC encapsulation routes the traffic to SF for service functionalities. 
+- SF updates the SFC encapsulation based on its policies for further services.
+- At end of SFP, SFC encapsulation is removed and packet is routed out of SFP.
 
 <a name="3.5.6"></a>
  ### 3.5.6 Time Sensitive Networking
@@ -537,19 +595,48 @@ SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommen
 * ITU-T Rec. G.8261 that defines aspects about the architecture and the wander performance of SyncE networks
 * ITU-T Rec. G.8262 that specifies Synchronous Ethernet clocks for SyncE
 * ITU-T Rec. G.8264 that describes the specification of Ethernet Synchronization Messaging Channel (ESMC)
-SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY. 
+SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
+
 
 <a name="3.6"></a>
 ## 3.6 Storage
-The general function of storage subsystem is to provide the needed data store to various virtual and physical resources required for the delivery of a network service. In cloud infrastructure such storage may manifest itself in various ways like storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking).
-Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5. The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
+The general function of storage subsystem is to provide the persistent data store required for the delivery of a network service. In the context of Cloud Infrastructure the storage sub-system needs to accommodate needs of: the tenanted VNF applications and the platform management.
+Storage is multi-faceted and so can be classified based on its: cost, performance (IOPS, throughput, latency), capacity and consumption model (platform native, network shared, object or archival) and the underlying implementation model (in chassis, software defined, appliance). A simplified view of this is provided in the following illustrative model:
+<p align="center"> <img src="../figures/rm-ch3.6-storage-model-02.png" alt="Storage Model - Cost vs Performance with Consumption Model" Title="Storage Model" width="45%"/></p>
+<p align ="center"><b>Figure 3-14:</b> Storage Model - Cost vs Performance with Consumption Model Overlay</p>
+
+Where:
+* (Comparative) Cost - is monetary value / unit of end user storage capacity 
+* Performance - is defined by IOPS / Latency / Throughput as typically each of these increases with successive generations of storage
+* Capacity - consumption needs are represented by width of the: Ultra High Performance, Enterprise Transactional, Value and Capacity storage options.
+* Storage Types - is how the storage is accessed and used, where:
+  * Platform Native = is managed by the hypervisor / platform (examples are a virtual disk volume from which a VNF  boots and can write back to, the storage interface that is exposed by the container runtime), this storage is typically not shared across running VNF / CNF instances;
+  * Shared Storage = is storage this accessed through a file systems interface (examples are network based storage such as CIFS or NFS) where the storage volumes can be accessed and shared by multiple VNF / CNF instances;
+  * Object Storage = is storage that is accessed via API interfaces (the most common example being HTTP restful services API), which support get/put of structured objects; and
+  * Archival = is storage that is targeted for provision of long term storage for purpose of disaster recovery, meeting legal requirements or other historical recording where the storage mechanism may go through multiple stages before landing at rest.
+
+The storage model provides a relatively simple way for the storage consumer to specify / select their storage needs. This is shown in the following table which highlights key attributes and features of the storage classes and "epic use cases" for common usage patterns.
+
+| Storage Type | Consumption Model | Performance & Capacity | Cost | Infrastructure Strategy | Use Case |
+|---|---|---|---|---|---|
+| Platform Native | Managed by the VIM / Hypervisor and attached as part of VNF/CNF start up via VNF Descriptor<br />Volumes shareability across VNF/CNF instances is determined by platform and storage capabilities | Ultra High Performance & Very High Performance<br />Capacity: 10GB - 5TB<br />"Tier 1" | High to Very High | Always part of VIM deployment<br />Storage is directly next to vCPU<br />Can support highest performance use cases<br />Always available to support VNF/CNF boot/startup | Boot/Start VNF/CNF<br />Live Migrate Workload within and across VIMs |
+| Shared Storage | Access via Network File System<br />Concurrent consumption across multiple VNF/CNFs<br />Sharing can be constrained to tenancy, cross tenancy and externally accessible | Enterprise Transactional Performance (real time transaction processing)<br />Capacity: 5GB - 100TB<br />Selectable "Tier 1" to "Tier 3" | High - Mid | Leverage existing capabilities<br />Only build if needed (not needed by many data plan VNF/CNFs)<br />If needed for Edge deployment then aim to unify with "Platform Native" deployment | VNF/CNF's able to share the same file content |
+| Object Storage | Consumed via HTTP/S restful services<br />Provided by serving application which manages storage needs<br />Location Independent | Highly distributable and scalable | High to Mid | Primarily tenant application responsibility | Cloud Native Geo-Distributed VNF/CNFs |
+| Capacity | Typically accessed as per "Shared Storage" but will likely have additional storage stages<br />Not suitable for real time processing | Very low transactional performance<br />Need throughput to accommodate large data flow<br />"Tier 3" | Low | Use cheapest storage available that meets capacity & security needs | Archival storage for tenant/platform backup/restore<br />DR |
+
+In cloud infrastructure the storage types may manifest in various ways with substantive variations in the architecture models being used. Examples include storage endpoints being exposed over network from software defined storage dedicated clusters or hyperconverged nodes (combining storage and other functions like compute or networking) and in chassis storage to support hypervisor and container host OS/Runtime.  For the provision of a shared resource platform it is not desirable to use "in chassis storage" for anything other than in the storage devices for platform hypervisor / OS boot or for the hosts providing the storage sub-systems deployment itself.  This is due to difficulty in resulting operational management (see principle below "Operationally Amenable"). For cloud based storage "Ephemeral" storage (hypervisor attached or container images which are disposed when VNF/CNF is stopped) is often distinguished from other persistent storage, however this is a behaviour variation that is managed via the VNF descriptor rather than a specific Storage Type. Storage also follows the alignment of separated virtual and physical resources of Virtual Infrastructure Layer and HW Infrastructure Layer. Reasons for such alignment are described more in Section 3.5.
+
+The following principles apply to Storage scope for the Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites:
 * Abstraction: A standardized storage abstraction layer between the Virtualisation Layers and the Storage Physical Resources Layer that hides (or abstracts) the details of the Storage Physical resources from the Virtualisation Layers.
 * Agnosticism: Define Storage subsystem concepts and models that can provide various storage types and performance requirements (more in Virtual Resources [3.2.1.3 Storage](#3.2.1.3)).
 * Automation: Enable end-to-end automation, from Physical Storage installation and provisioning to automation of workloads (VNF/CNF) onboarding.
 * Openness: All storage is based on open source or standardized APIs (North Bound Interfaces (NBI) and South Bound Interfaces (SBI)) and should enable integration of storage components such as Software Defined Storage controllers.
 * Scalability: Storage model enables scalability to enable small up to large deployments.
-* Workload agnostic: Storage model can provide storage functionality to any type of workloads, including VNF, CNF and BareMetal workloads.
+* Workload agnostic: Storage model can provide storage functionality to any type of workloads, including: tenant VNF, CNF and Infrastructure Management whether this is via BareMetal or Virtualised Deployments.
+* Operationally Amenable: The storage must be amenable to consistent set of operational processes for: Non-Disruptive Capacity Expansion and Contraction, Backup/Restoration and Archive and Performance Management. Where applicable (examples are: Backup/Restoration/Archive) these processes should also be able to be provided to tenants for their own delegated management.
+* Security Policy Amenable: The storage sub-systems must be amenable to policy based security controls covering areas such as: Encryption for Data at Rest / In Flight, Delegated Tenant Security Policy Management, Platform Management Security Policy Override, Secure Erase on Device Removal and others
 * Future proof: Storage model is extendible to support known and emerging technology trends covering spectrum of memory-storage technologies including Software Defined Storage with mix of SATA- and NVMe-based SSDs, DRAM and Persistent Memory, integrated for multi-clouds, and Edge related technologies.
+
 
 <a name="3.7"></a>
 ## 3.7 Sample reference model realization
@@ -557,7 +644,9 @@ Storage also follows the alignment of separated virtual and physical resources o
 The following diagram presents an example of the realization of the reference model, where a virtual infrastructure layer contains three coexisting but different types of implementation: a typical IaaS using VMs and a hypervisor for virtualisation, a CaaS on VM/hypervisor, and a CaaS on bare metal. This diagram is presented for illustration purposes only and it does not preclude validity of many other different combinations of implementation types. Note that the model enables several potentially different controllers orchestrating different type of resources (virtual and/or hardware). Management clients can manage virtual resources via Virtual Infrastructure Manager (Container Infrastructure Service Manager for CaaS, or Virtual Infrastructure Manager for IaaS), or alternatively hardware infrastructure resources via hardware infrastructure manager.  The latter situation may occur for instance when an orchestrator (an example of a management client) is involved in provisioning the physical network resources with the assistance of the controllers. Also, this realization example would enable implementation of a programmable fabric.
 
 <p align="center"><img src="../figures/ch03-model-realization-diagram-2.png" alt="Reference model realization example" Title="Reference model realization example" width="65%"/></p>
-<p align="center"><b>Figure 3-12:</b> Reference model realization example</p>
+
+<p align="center"><b>Figure 3-15:</b> Reference model realization example</p>
+
 
 The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
 
@@ -580,15 +669,19 @@ Accelerator technologies can be categorized depending on where they are realized
 <p align="center"><b>Table 3-8:</b> Hardware acceleration categories, implementation, activation/LCM/support and usage</p>
 
 <p align="center"><img src="../figures/ch03-examples-of-server-and-smartswitch-based-nodes.png" alt="Examples of server- and SmartSwitch-based nodes (for illustration only)" Title="Examples of server- and SmartSwitch-based nodes (for illustration only)" width="65%"/></p>
-<p align="center"><b>Figure 3-13:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+
+<p align="center"><b>Figure 3-16:</b> Examples of server- and SmartSwitch-based nodes (for illustration only)</p>
+
 
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-14 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-18 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
-<p align="center"><b>Figure 3-14:</b> Hardware Acceleration in RM Realization Diagram</p>
+
+<p align="center"><b>Figure 3-17:</b> Hardware Acceleration in RM Realization Diagram</p>
+
 
 Hardware Accelerators are part of the Hardware Infrastructure Layer. Those that need to be activated/programmed will expose management interfaces and have Accelerator Management software managing them in-band (from host OS) or out of band (OOB, over some network to the adapter without going through host OS). For more flexibility in management, such Accelerator Management can be carried over appropriate service with authentication mechanism before being exposed to Cloud Infrastructure operator and/or Application tenant.
 
@@ -613,7 +706,7 @@ Workload placement can be done by a combination of filters/selectors to find app
 
 For initial limited cloud deployments of network functions on private clouds it is possible to have a workload placement orchestrator that handles optimizations of selected virtualisation clusters and available hardware resources. This will however soon become too complex with the increasing number of acceleration devices, hardware composability and hybrid multi-cloud deployments.
 
-Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to lists of individual optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and dataplane-optimized category instead of specifying individual optimizations required to reach it.
+Growing lists of individual optimizations including hardware acceleration during scheduling makes it more complex to map workloads to lists of individual optimizations, so such optimizations get grouped together into higher level categories. An example is having category for real-time and data plane-optimized category instead of specifying individual optimizations required to reach it.
 
 With further growth in size of clusters and the variety of hardware acceleration, in a hybrid or multi-cloud deployment, it will be necessary to enable separate optimization levels for the workload placement and each Cloud Infrastructure provider. The workload placement orchestrator will operate on one or several Cloud Infrastructures resources to satisfy the workloads according to Service Level Agreements (SLA) that do not specify all implementation and resource details. Each Cloud Infrastructure provider will make internal Infrastructure optimisations towards their own internal optimisation targets whilst fulfilling the SLAs.
 
@@ -646,7 +739,9 @@ Programmable SmartNIC accelerators can come as programmable in-line adapters (ty
 There are two main types of Smart NICs that can accelerate network functions in-line between CPU and Ethernet ports of servers. The simpler types have a configurable or programmable packet pipeline that can implement offload for the infrastructure virtual switching or part of an application functions data plane. The more advanced type, often called Data Processing Unit (DPU), have a programmable pipeline and some strong CPU cores that simultaneously can implement underlay networking separation and trusted forwarding functions, infrastructure virtual switching data and control plane as well as part of an application functions control plane.
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
-<p align="center"><b>Figure 3-15:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+
+<p align="center"><b>Figure 3-18:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+
 
 #### Simple SmartNIC
 
@@ -686,13 +781,13 @@ Based on Smart Switches, products exist for fully integrated edge and fabric sol
 
 Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
 
-#### 1. Infrastructure:
+#### 3.8.9.1 Infrastructure:
 - a) Application functionality or application control requires infrastructure components beyond RM profiles or infrastructure configuration changes beyond APIs specified by RA. Generally, such an application is tightly coupled with the infrastructure which results in an [Appliance deployment model](../../common/glossary.md#cloud-platform-abstraction-related-terminology).
 - b) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with the required infrastructure component(s), and in that node using APIs specified by RA configures infrastructure components that make application work. Example is an application that to achieve latency requirements needs certain hardware acceleration available in RM profile and is exposed through APIs specified by RA.
 - c) Application control using APIs specified by RA finds nodes (already configured in support of the profiles) with optional infrastructure component(s), and in these nodes using APIs specified by RA configures infrastructure component(s) that make application work better (like more performant) than without that infrastructure component. Example is an application that would have better cost/performance with certain acceleration adapter but can also work without it.
 - d) Application control using APIs specified by RA finds general profile nodes without any specific infrastructure components.
 
-#### 2. Platform Services:
+#### 3.8.9.2 Platform Services:
 - a) Application functionality or application control can work only with its own components instead of using defined Platform Services. Example is an application that brings its own Load Balancer.
 - b) With custom integration effort, application can be made to use defined Platform Services. Example is application that with custom integration effort can use defined Load Balancer which can be accelerated with hardware acceleration in way that is fully decoupled from application (i.e. application does not have awareness of Load Balancer being hardware-accelerated).
 - c) Application is designed and can be configured for running with defined Platform Services. Example is application that can be configured to use defined Load Balancer which can be accelerated with hardware acceleration.

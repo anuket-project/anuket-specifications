@@ -28,6 +28,7 @@ There are three main business operating frameworks that are commonly known and u
 - ITIL (ITIL 4.0 attempts to adapt IT Service Management practices to the cloud environment needs)
 
 The chapters below roughly map to these frameworks as follows:
+
 | Chapter Name | FCAPS | eTOM | ITIL |
 | --- | --- | --- | --- |
 | Configuration and Lifecycle Management | Configuration | Fulfilment |Configuration, Release, Change |
@@ -178,15 +179,19 @@ As such the requirements for Capacity Management on the infrastructure are cover
 
 <a name="9.5.1"></a>
 ### 9.5.1 Infrastructure LCM Automation
+To be covered in the next release.
 
 <a name="9.5.1.1"></a>
 #### 9.5.1.1. Hardware Configuration CI/CD
+To be covered in the next release.
 
 <a name="9.5.1.1"></a>
 #### 9.5.1.2. Networking Automation
+To be covered in the next release.
 
 <a name="9.5.1.1"></a>
 #### 9.5.1.3. Software Development CI/CD
+To be covered in the next release.
 
 
 <a name="9.5.2"></a>
@@ -212,7 +217,7 @@ The CI/CD pipeline is used to deploy, test and update the Cloud Infrastructure s
     - Software validation and certification should be automated using CI/CD toolsets / pipelines and Test as a Service (TaaS) capabilities.
 4. Publish Software:
     - Tenant Workloads: After the software is certified the final onboarding process phase is for it to be published to the Cloud Infrastructure production catalogue from where it can be instantiated on the Cloud Infrastructure platform by the tenant.
-    - Cloud Infrastructure software: After the software is certified, it is scheduled for deployment inconcurrence with the user community.
+    - Cloud Infrastructure software: After the software is certified, it is scheduled for deployment in concurrence with the user community.
 
 All phases described above can be automated using technology specific toolsets and procedures.  Hence, details of such automation are left for the technology specific Reference Architecture and Reference Implementation specifications.
 
@@ -246,7 +251,7 @@ auto.cicd.016 | The CD pipeline must run all relevant Reference Conformance test
 
 A couple of CI/CD pipeline properties and rules must be agreed between the
 different actors to allow smoothly deploy and test the cloud infrastructures
-and the hosted network functions whatever if the jobs operate opensource or
+and the hosted network functions whatever if the jobs operate open-source or
 proprietary software. They all prevent that specific deployment or testing
 operations force a particular CI/CD design or even worse ask to deploy a full
 dedicated CI/CD toolchain for a particular network service.
@@ -255,7 +260,7 @@ At first glance, the deployment and test job must not basically ask for a
 specific CI/CD tools such as [Jenkins](https://www.jenkins.io/) or
 [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/). But they are many other
 ways where deployment and test jobs can constraint the end users from the
-build servers to the artifact management. Any manual operation is discouraged
+build servers to the artefact management. Any manual operation is discouraged
 whatever it's about the deployment or the test resources.
 
 The following requirements also aims at deploying smoothly and easily all CI/CD
@@ -267,13 +272,13 @@ Ref #           | Description                                                   
 design.cicd.001 | The pipeline must allow chaining of independent CI/CD jobs                                    | For example, all deployment and test operations from baremetal to Kubernetes, OpenStack, to the network services |
 design.cicd.002 | The pipeline jobs should be modular                                                           | This allows execution of jobs independently of others, for example, start with an existing OpenStack  deployment |
 design.cicd.003 | The pipeline must decouple the deployment and the test steps                                  |          |
-design.cicd.004 | The pipeline should leverage the job artifacts specified by the operator provided CI/CD tools |          |
+design.cicd.004 | The pipeline should leverage the job artefacts specified by the operator provided CI/CD tools |          |
 design.cicd.005 | The pipeline must execute all relevant Reference Conformance suites without modification      |          |
 design.cicd.006 | Software vendors/providers must utilise operator provided CI/CD tools                         |          |
 design.cicd.007 | All jobs must be packaged as containers                                                       |          |
 design.cicd.008 | All jobs must leverage a common execution to allow templating all deployment and test steps   |          |
-design.cicd.009 | The deployment jobs must publish all outputs as artifacts in a specified format               | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
-design.cicd.010 | The test jobs must pull all inputs as artifacts in a specified format                         | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
+design.cicd.009 | The deployment jobs must publish all outputs as artefacts in a specified format               | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
+design.cicd.010 | The test jobs must pull all inputs as artefacts in a specified format                         | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
 design.cicd.011 | The test jobs must conform with the Reference Conformance test case integration requirements  |          |
 
 <p align="center"><b>Table 9-5:</b> CI/CD Design</p>
@@ -285,16 +290,16 @@ design.cicd.011 | The test jobs must conform with the Reference Conformance test
 #### 9.5.3.1. Pre-tenant Creation Requirements
 
 Topics include:
-1. Tenant Approval -- use, capacity, data centers, ..
+1. Tenant Approval -- use, capacity, data centres, etc.
     - Validate that the [Tenant's](../../../common/glossary.md#operational-and-administrative-terminology) planned use meets the Operators Cloud Use policies
     - Validate that the capacity available within the requests cloud site(s) can satisfy the Tenant requested quota for vCPU, RAM, Disk, Network Bandwidth
-    - Validate that the Cloud Infrastructure can meet Tenant's performance requirements (e.g. I/O, latency, jitter, etc)
+    - Validate that the Cloud Infrastructure can meet Tenant's performance requirements (e.g. I/O, latency, jitter, etc.)
     - Validate that the Cloud Infrastructure can meet Tenant's resilience requirements
 1. For environments that support [Compute Flavours](./chapter04.md#4.2.1):
     - Verify that any requested private flavours have been created
     - Verify that the metadata for these private flavours have been created
     - Verify that the tenant has permissions to use the requested private flavours
-    - Validate that host aggregates are available for specified flavors (public and private)
+    - Validate that host aggregates are available for specified flavours (public and private)
     - Verify that the metadata matches for the requested new flavours and host aggregates
 1. Tenant Networks
     - Verify that the networks requested by the tenant exist
@@ -312,7 +317,7 @@ Topics include:
 <a name="9.6"></a>
 ## 9.6. Telemetry and Observability
 
-Operating complex distributed systems, such as a Telco network, is a demanding and challenging task, that is continuously being increased as the network complexity and the production excellence requirements grow. There are multiple reasons why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services, a complex system is decomposed into multiple different functional blocks, called network functions. Internal communication between the diverse network functions of a distributed system is based on message exchange. To formalize this communication, clearly defined interfaces are introduced, and protocols designed. Even though the architecture of a Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces, and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is indeed a system with remarkably high level of complexity which requires significant efforts for managing and operating it.
+Operating complex distributed systems, such as a Telco network, is a demanding and challenging task that is continuously being increased as the network complexity and the production excellence requirements grow. There are multiple reasons why it is so, but they originate in the nature of the system concept. To reach the ability of providing Telco services, a complex system is decomposed into multiple different functional blocks, called network functions. Internal communication between the diverse network functions of a distributed system is based on message exchange. To formalize this communication, clearly defined interfaces are introduced, and protocols designed. Even though the architecture of a Telco network is systematically formalized on the worldwide level, heterogeneity of services, functions, interfaces, and protocols cannot be avoided. By adding the multi-vendor approach in implementation of Telco networks, the outcome is indeed a system with remarkably high level of complexity which requires significant efforts for managing and operating it.
 
 To ensure proper support and flawless work in the large ecosystem of end user services, a formalized approach directed towards high reliability and scalability of systems is required. The discipline which applies well known practices of software engineering to operations is called Site Reliability Engineering. It was conceived at Google, as a means to overcome limitations of the common DevOps approach.
 
@@ -324,15 +329,15 @@ Common supporting system (OSS – Operation Support System, BSS – Business Sup
 
 Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and, most importantly, before they call the help desk. 
 
-Common approach to understand the aforementioned Telco network status in conventional non-cloud environments is referred to as monitoring. Usually it would include metric information related to resources, such as CPU, memory, HDD, Network I/O, but also business related technical key performance indicators (KPIs) such as number of active users, number of registrations, etc. This monitoring data are represented as a time series, retrieved in regular intervals, usually with granulation of 5 to 30 minutes. In addition, async messages such as alarms and notifications are exposed by the monitored systems in order to provide information about foreseen situations. It is worth noting that metric data provide approximation of the health of the system, while the alarms and notifications try to bring more information about the problem. In general, they provide information about known unknowns - anticipated situations occurring at random time. However, this would very rarely be sufficient information for understanding the problem (RCA - root cause analysis), therefore it is necessary to retrieve more data related to the problem - logs and network signalization. Logs are application output information to get more granular information about the code execution. Network packet captures/traces are useful since telecommunication networks are distributed systems where components communicate utilizing various protocols, and the communication can be examined to get details of the problem.
+Common approach to understand the aforementioned Telco network status in conventional non-cloud environments is referred to as monitoring. Usually it would include metric information related to resources, such as CPU, memory, HDD, Network I/O, but also business related technical key performance indicators (KPIs) such as number of active users, number of registrations, etc. This monitoring data are represented as a time series, retrieved in regular intervals, usually with granulation of 5 to 30 minutes. In addition, asynchronous messages such as alarms and notifications are exposed by the monitored systems in order to provide information about foreseen situations. It is worth noting that metric data provide approximation of the health of the system, while the alarms and notifications try to bring more information about the problem. In general, they provide information about known unknowns - anticipated situations occurring at random time. However, this would very rarely be sufficient information for understanding the problem (RCA - root cause analysis), therefore it is necessary to retrieve more data related to the problem - logs and network signalization. Logs are application output information to get more granular information about the code execution. Network packet captures/traces are useful since telecommunication networks are distributed systems where components communicate utilizing various protocols, and the communication can be examined to get details of the problem.
 
-As the transition towards cloud environments takes place simultaneously with the introduction of DevOps mindset, the conventional monitoring approach becomes suboptimal. Cloud environments allow greater flexibility as the microservice architecture is embraced to bring improvements in operability, therefore the automation can be utilized to much higher extent than ever before. Automation in telecom networks usually supposes actions based on decisions derived from system output data (system observation). In order to derive useful decisions, data with rich context are necessary. Obviously, the conventional monitoring approach has to be improved in order to retrieve sufficient data, not only from the wider context, but also without delays - as soon as data are produced or available. The new, enhanced approach was introduced as a concept of observability, borrowed from the control theory which states that it is possible to make conclusions about a system's internal state based on external outputs.
+As the transition towards cloud environments takes place simultaneously with the introduction of DevOps mindset, the conventional monitoring approach becomes suboptimal. Cloud environments allow greater flexibility as the microservice architecture is embraced to bring improvements in operability, therefore the automation can be utilized to a higher extent than ever before. Automation in telecom networks usually supposes actions based on decisions derived from system output data (system observation). In order to derive useful decisions, data with rich context are necessary. Obviously, the conventional monitoring approach has to be improved in order to retrieve sufficient data, not only from the wider context, but also without delays - as soon as data are produced or available. The new, enhanced approach was introduced as a concept of observability, borrowed from the control theory which states that it is possible to make conclusions about a system's internal state based on external outputs.
 
 This requires the collection of alarms and telemetry data from the physical layer (wires), the cloud infrastructure up to the network, applications and services (virtualized network functions (VNF)) running on top of the cloud infrastructure, typically isolated by tenants.
 
 Long term trending data are essential for capacity planning purposes and typically collected, aggregated and kept over the full lifespan. To keep the amount of data collected manageable, automatic data reduction algorithms are typically used, e.g. by merging data points from the smallest intervals to more granular intervals.
 
-The telco cloud infrastructure typically consists of one or more regional data centers, central offices, and edge sites. These are managed from redundant central management sites, each hosted in their own data centers.
+The telco cloud infrastructure typically consists of one or more regional data centres, central offices, and edge sites. These are managed from redundant central management sites, each hosted in their own data centres.
 
 The network services and applications deployed on a Telco Cloud, and the Telco Cloud infrastructure are usually managed by separate teams, and, thus, the monitoring solution must be capable of keeping the access to the monitoring data isolated between tenants and Cloud Infrastructure operations. Some monitoring data from the Cloud Infrastructure layer must selectively be available to tenant monitoring applications in order to correlate, say, the Network Functions/Services data with the underlying cloud infrastructure data.
 
@@ -353,7 +358,7 @@ Assessment on what data to collect should start by iterating over the physical a
 * Individual Virtual Machines and Containers
 * Virtualization infrastructure components
 * Physical servers (compute) and network elements
-* Toolservers with their applications (DNS, Identity Management, Zero Touch Provisioning, etc) 
+* Tool servers with their applications (DNS, Identity Management, Zero Touch Provisioning, etc.) 
 * Cabling 
 
 #### Data categories
@@ -368,7 +373,7 @@ happened. Most common transport protocol is SNMP with its trap and inform messag
 3. **Logs** are a record messages generated by software for most devices (compute and network) and virtual
 applications and transported over SYSLOG and tend to come in high volumes.
 
-4. **Traces** are end-to-end signalling messages (events) created to fullfil execution of requests on
+4. **Traces** are end-to-end signalling messages (events) created to fulfil execution of requests on
 the distributed system services. OTHER WORDS: Traces are all action points executed in
 order to provide response to the request set to the distributed system service. Even the call
 can be thought of as a request which starts by INVITE message of the SIP protocol.
@@ -426,11 +431,13 @@ Typical characteristics of a push model are:
 <a name="9.6.2.2"></a>
 #### 9.6.2.2. Producers, Consumers, and Message broker
 
-In ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can take and „understand“ the data without additional logic. Message brokers do not limit on the data types:
+In an ideal case, observability data will be sent directly to the message broker in agreed format, so that consumers can take and „understand“ the data without additional logic. Message brokers do not limit on the data types:
 
-Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is not neccessary to use Schema Registry, it is highly recommended.
+Enforcing correct message structures (carrying the data) is performed using Schema Registry concepts. Even though it is not necessary to use a Schema Registry, it is highly recommended.
 
 
-<p align="center"><img src="../figures/RM-Ch09-Fig-Producers-Consumers.png" alt="Producers and Consumers"><br><b>Figure 9-2: Producers and Consumers.</b></p>
+<p align="center"><img src="../figures/RM-Ch09-Fig-Producers-Consumers.png" alt="Producers and Consumers"></p>
+<p align="center"><b>Figure 9-2:</b> Producers and Consumers</p>
 
-<p align="center"><img src="../figures/RM-Ch09-Fig-Broker-Service.png" alt="Broker Services"><br><b>Figure 9-3: Broker Services.</b></p>
+<p align="center"><img src="../figures/RM-Ch09-Fig-Broker-Service.png" alt="Broker Services"></p>
+<p align="center"><b>Figure 9-3:</b> Broker Services</p>

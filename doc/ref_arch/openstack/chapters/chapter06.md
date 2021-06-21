@@ -1,7 +1,7 @@
 [<< Back](../../openstack)
 
 # 6. Security
-<p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
+<p align="right"><img src="../figures/bogo_lsf.png" alt="Lots of SME feedback" title="Bogo: Lots of SME feedback" width="35%"/></p>
 
 ## Table of Contents
 * [6.1 Introduction](#6.1)
@@ -17,7 +17,7 @@
 
 ## 6.1 Introduction
 
-This guide is intended to provide basic security requirements to CNTT architects who are implementing Cloud Infrastructure using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
+This guide is intended to provide basic security requirements to architects who are implementing Cloud Infrastructure using [OpenStack](https://www.openstack.org/) technology.  This is a minimal set of high-level general security practices, not intended to cover all implementation scenarios.  Please ensure to also reference your enterprise security and compliance requirements in addition to this guide.
 
 <a name="6.2"></a>
 ## 6.2 Security Requirements

@@ -1,20 +1,21 @@
 [<< Back](../../kubernetes)
 
 # 1. Overview
+
 <p align="right"><img src="../figures/bogo_com.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents <!-- omit in toc -->
+
 - [1. Overview](#1-overview)
   - [1.1 Introduction](#11-introduction)
     - [1.2 Terminology](#12-terminology)
   - [1.3 Principles](#13-principles)
     - [1.3.1 Cloud Native Principles](#131-cloud-native-principles)
-  - [1.3.2 Exceptions](#132-exceptions)
+    - [1.3.2 Exceptions](#132-exceptions)
       - [1.3.2.1 Technology Exceptions](#1321-technology-exceptions)
       - [1.3.2.2 Requirements Exceptions](#1322-requirements-exceptions)
   - [1.4 Scope](#14-scope)
   - [1.5 Approach](#15-approach)
-
 
 ## 1.1 Introduction
 
@@ -24,7 +25,7 @@ To set this in context, it makes sense to start with the high level definition a
 
 To assist with the goal of creating a reference architecture that will support Telco workloads, but at the same time leverage the work that already has been completed in the Kubernetes community, RA2 will take an "RA2 [Razor](https://en.wikipedia.org/wiki/Philosophical_razor)" approach to build the foundation. This can be explained along the lines of "if something is useful for non-Telco workloads, we will not include it only for Telco workloads". For example, start the Reference Architecture from a vanilla Kubernetes (say, v1.16) feature set, then provide clear evidence that a functional requirement cannot be met by that system (say, multi-NIC support), only then the RA would add the least invasive, Kubernetes-community aligned extension (say, Multus) to fill the gap. If there are still gaps that cannot be filled by standard Kubernetes community technologies or extensions then the RA will concisely document the requirement and approach the relevant project maintainers with a request to add this functionality into the feature set.
 
-The Kubernetes Reference Architecture will be used to determine a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads of interest to the Anuket community. It is expected the Kubernetes Reference Architecture, Reference Implementation, and Reference Conformance will be developed in parallel to OVP Phase 2, which is building on the work already in place for OpenStack implementations. The intention is to expand as much of the existing test frameworks to be used for the verification and conformance testing of Kubernetes-based workloads.
+The Kubernetes Reference Architecture will be used to determine a Kubernetes Reference Implementation. The Kubernetes Reference Implementation would then also be used to test and validate the supportability and compatibility with Kubernetes-based Network Function workloads, and lifecycle management of Kubernetes clusters, of interest to the Anuket community. It is expected the Kubernetes Reference Architecture, Reference Implementation, and Reference Conformance will be developed in parallel to OVP Phase 2, which is building on the work already in place for OpenStack implementations. The intention is to expand as much of the existing test frameworks to be used for the verification and conformance testing of Kubernetes-based workloads, and Kubernetes cluster lifecycle management.
 
 ### 1.2 Terminology
 
@@ -61,7 +62,8 @@ Individual contributors who are also active in the CNCF TUG (Telecom User Group)
 - **robust automation**
 - **high-impact changes frequently and predictably**
 
-## 1.3.2 Exceptions
+### 1.3.2 Exceptions
+
 Anuket specification define certain policies and [principles](../../../common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatibilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. These policies describe how to handle [non-conforming technologies](../../../common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-conformance with policies is handled through a set of exceptions (please also see [Exception Types](../../../gov/chapters/chapter09.md#942-exception-types)).
 
 The following sub-sections list the exceptions to the principles of Anuket specifications and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
@@ -70,27 +72,29 @@ The following sub-sections list the exceptions to the principles of Anuket speci
 
 The list of Technology Exceptions will be updated or removed when alternative technologies, aligned with the principles of Anuket specifications, develop and mature.
 
-| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+| Ref | Name | Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|
-| ra2.exc.tec.001 |	SR-IOV |	This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. For containerisation the downsides of creating dependencies on hardware is reduced as Kubernetes nodes are either physical, or if virtual have no need to "live migrate" as a VNF VM might.| |
+| ra2.exc.tec.001 | SR-IOV | This exception allows workloads to use SR-IOV over PCI-PassThrough technology. | TBD | Emulation of virtual devices for each virtual machine creates an I/O bottleneck resulting in poor performance and limits the number of virtual machines a physical server can support. SR-IOV implements virtual devices in hardware, and by avoiding the use of a switch, near maximal performance can be achieved. For containerisation the downsides of creating dependencies on hardware is reduced as Kubernetes nodes are either physical, or if virtual have no need to "live migrate" as a VNF VM might.| |
 
 #### 1.3.2.2 Requirements Exceptions
 
 The Requirements Exceptions lists the Reference Model (RM) requirements and/or Reference Architecture (RA) requirements that will be either waived or be only partially implemented in this version of the RA.  The exception list will be updated to allow for a period of transitioning as and when requirements change.
 
-| Ref |	Name |	Description | Valid Until | Rationale | Implication |
+| Ref | Name | Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|
-| ra1.exc.req.001 |	Requirement |	xxx |	xxxxxxxxxxxxx. | | | |
+| ra1.exc.req.001 | Requirement | xxx | xxxxxxxxxxxxx. | | | |
 
 ## 1.4 Scope
 
 The scope of this particular Reference Architecture can be described as follows (the capabilities themselves will be listed and described in subsequent chapters), also shown in Figure 1-1:
+
 - Kubernetes capabilities required to conform to the Reference Model requirements
 - Support for CNFs that consist wholly of containers
 - Support for CNFs that consist partly of containers and partly of VMs, both of which will be orchestrated by Kubernetes
+- **Kubernetes Cluster lifecycle management**: including Cluster creation/upgrade/scaling/deletion, and node customisation due to workload requirements. **Note**: *detailed requirements and component specification of cluster LCM are out of scope for this release.*
 
 The following items are considered **out of scope**:
-- **Kubernetes Cluster lifecycle management**: Since it is not considered to be "visible" to a CNF, it should not be included.
+
 - **Kubernetes-based Application / VNF Management**: similar to VNFM, this is an application layer capability that is out of scope of Anuket. This includes Kubernetes-based Application Package Management, such as Helm, as this is a client application and set of libraries that would be part of a modern/cloud native VNFM, not part of the infrastructure itself.
 
 <p align="center"><img src="../figures/ch01_scope_k8s.png" alt="Kubernetes Reference Architecture scope" title="Kubernetes Reference Architecture scope" width="100%"/></p>
