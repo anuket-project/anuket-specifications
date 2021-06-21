@@ -45,15 +45,15 @@ Then CNTT RC2 starts with the test list defined by
 grow according to the ongoing requirement traceability.
 
 [End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
-basically respectively asks focus and fix regexes to select or to blacklist
+basically asks for focus and skip regexes to select or to blacklist
 single tests:
   - focus basically matches
     Conformance or [Testing Special Interest Groups](https://github.com/kubernetes/community/blob/master/sig-testing/charter.md)
-    in the following tabs
+    in sub-sections below
   - skip excludes the SIG labels listed as optional in
     [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
 
-The Reference Conformance suites must be stable and can be executed on real
+The Reference Conformance suites must be stable and executed on real
 deployments. Then all the following labels are defacto skipped in
 [End-to-End Testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md):
   - alpha
@@ -61,14 +61,15 @@ deployments. Then all the following labels are defacto skipped in
   - Flaky
 
 It's worth mentioning that no alpha or Flaky test can be included in
-Conformance by rules.
+Conformance as per the rules.
 
 #### Conformance
 
 It must be noted that the default
-[K8s Conformance](https://github.com/cncf/k8s-conformance) is disruptive and
-CNTT RC2 rather picks [non-disruptive-conformance](https://sonobuoy.io/docs/master/e2eplugin/)
-as defined by [Sonobuoy](https://sonobuoy.io/).
+[K8s Conformance](https://github.com/cncf/k8s-conformance) testing is
+disruptive thus CNTT RC2 rather picks
+[non-disruptive-conformance](https://sonobuoy.io/docs/master/e2eplugin/)
+testing as defined by [Sonobuoy](https://sonobuoy.io/).
 
 focus: [Conformance]
 
