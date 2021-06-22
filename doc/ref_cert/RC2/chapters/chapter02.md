@@ -319,14 +319,14 @@ various Kubernetes-related performance test related tools especially
 which benchmarks Kubernetes networking performance.
 
 As listed in [README](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf#readme),
-the 5 major network traffic paths are combination of Pod IP vs Virtual IP and
-whether the pods are co-located on the same node/VM versus a remotely located
+the 5 major network traffic paths are combination of pod IP vs virtual IP and
+whether the pods are co-located on the same node versus a remotely located
 pod:
-  - same VM using Pod IP
-  - same VM using Cluster/Virtual IP
-  - remote VM using Pod IP
-  - remote VM using Cluster/Virtual IP
-  - same VM Pod Hairpin: Worker 2 to itself using Cluster IP
+  - same node using pod IP
+  - same node using cluster/virtual IP
+  - remote node using pod IP
+  - remote node using cluster/virtual IP
+  - same node pod hairpin to itself using cluster/virtual IP
 
 It should be noted that
 [netperf](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf)
