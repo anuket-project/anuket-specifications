@@ -366,7 +366,7 @@ Profile Extensions represent small deviations from or further qualification of t
 ### 4.2.4 Workload Flavours and Other Capabilities Specifications
 
 The workload requests a set of resource capabilities needed by it, including its components, to run successfully. 
-The GSMA document "Operator Platform Technical Requirements" (OPG.02) defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavours](#4.2) above. 
+The GSMA document OPG.02 "Operator Platform Technical Requirements" [34] defines "Resource Flavour" as this set of capabilities. A Resource Flavour specifies the resource profile, any profile extensions, and the size of the resources needed (workload flavour), and extra specifications for workload placement; as defined in [Section 4.2 Profiles and Workload Flavours](#4.2) above. 
 
 This section provides details of the capabilities that need to be provided in a resource request. The [profiles](#4.2.1), the [profile specifications](#4.2.2) and the [profile extensions](#4.2.3) specify the infrastructure (hardware and software) configuration. In a resource request they need to be augmented with workload specific capabilities and configurations, including the [sizing of requested resource](#4.2.4.1), extra specifications related to the placement of the workload  [section 4.2.4.2](#4.2.4.2), network [section 4.2.5](#4.2.5) and storage extensions [section 4.2.6](#4.2.6).
 
