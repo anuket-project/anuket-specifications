@@ -69,7 +69,7 @@ This document specifies:
 
 <a name="1.3"></a>
 ## 1.3 Principles
-The Reference Model specifications conform to the overall principles defined in [Cloud iNfrastructure Telco Taskforce](../../common/chapter00.md#2.0).
+The Reference Model specifications conform to the overall principles defined in [Anuket Overview](../../common/chapter00.md#2.0).
 
 <a name="1.4"></a>
 ## 1.4 Definitions/Terminology
