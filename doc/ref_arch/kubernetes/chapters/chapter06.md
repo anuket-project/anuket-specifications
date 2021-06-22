@@ -14,6 +14,7 @@
 * [6.8 Network Special Interest Group](#6.8)
 * [6.9 Node Special Interest Group](#6.9)
 * [6.10 Scheduling Special Interest Group](#6.10)
+* [6.11 Storage Special Interest Group](#6.11)
 
 <a name="6.1"></a>
 ## 6.1 Introduction
@@ -97,7 +98,7 @@ following Features tabs defined here.
 | Feature:Elasticsearch                    |               | Should check that the Kibana logging instance is alive |
 | Feature:StackdriverAcceleratorMonitoring |               | Stackdriver Monitoring should have accelerator metrics |
 | Feature:StackdriverCustomMetrics         |               | Stackdriver Monitoring should run Custom Metrics - Stackdriver Adapter for new resource model |
-| Feature:StackdriverExternalMetrics       |               | Stackdriver Monitoring should run Custom Metrics - Stackdriver Adapter for external metrics | 
+| Feature:StackdriverExternalMetrics       |               | Stackdriver Monitoring should run Custom Metrics - Stackdriver Adapter for external metrics |
 | Feature:StackdriverMetadataAgent         |               | Stackdriver Monitoring should run Stackdriver Metadata Agent |
 | Feature:StackdriverMonitoring            |               | |
 
@@ -142,7 +143,6 @@ following Features tabs defined here.
 | NodeFeature:RuntimeHandler                |               | RuntimeClass should run a Pod requesting a RuntimeClass with a configured handler |
 | NodeFeature:Sysctls                       | X             | Should not launch unsafe, but not explicitly enabled sysctls on the node |
 
-
 <a name="6.10"></a>
 ## 6.10 [Scheduling Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-scheduling)
 
@@ -153,3 +153,20 @@ following Features tabs defined here.
 | Feature:GPUDevicePlugin               |               | Run Nvidia GPU Device Plugin tests |
 | Feature:LocalStorageCapacityIsolation | X             | Validates local ephemeral storage resource limits of pods that are allowed to run |
 | Feature:Recreate                      |               | Run Nvidia GPU Device Plugin tests with a recreation |
+
+<a name="6.11"></a>
+## 6.11 [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
+
+| **Labels**                            | **Mandatory** | **Description**                |
+|---------------------------------------|:-------------:|:-------------------------------|
+| Conformance                           | X             | Kubernetes conformance test    |
+| None                                  | X             | Kubernetes mainstream features |
+| Feature:ExpandInUsePersistentVolumes  |               |                                |
+| Feature:Flexvolumes                   |               |                                |
+| Feature:GKELocalSSD                   |               |                                |
+| Feature:VolumeSnapshotDataSource      |               |                                |
+| Feature:Volumes                       |               |                                |
+| Feature:vsphere                       |               |                                |
+| Feature:Windows                       |               |                                |
+| NodeFeature:EphemeralStorage          |               |                                |
+| NodeFeature:FSGroup                   | X             |                                |
