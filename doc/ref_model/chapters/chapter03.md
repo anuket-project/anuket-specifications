@@ -529,28 +529,28 @@ Figure 3-12 shows SFC creation call flow, separated logically in two steps.
 
 1.	Creation of service functions of SFC.
 
-The flow of steps to enable the SFC creation can be as follows:-
+- The flow of steps to enable the SFC creation can be as follows:
 
-a.	SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
+       a.	SFC orchestrator creates the SFs with help of VNF MANO or CNF MANO.
 
-b.	SFC Renderer attaches the SFC aware interfaces at SFs to enable Service plane 
+       b.	SFC Renderer attaches the SFC aware interfaces at SFs to enable Service plane 
 
-c.	NFVO boots up the relevant SF configurations at SF.
+       c.	NFVO boots up the relevant SF configurations at SF.
 > **Note:** These steps are optional, if SFC orchestrator discovers that SFs are already created and existing.
 
 2.	Creation of Service Function Path (SFP) using the created SFs and associated interfaces.
 
-A Service Function Path consists of:
-- A set of ports( in VNF environment) or interfaces ( in CNF environment) , that define the sequence of service functions 
-- A set of flow classifiers that specify the classified traffic flows entering the chain.
+- A Service Function Path consists of:
+  - A set of ports( in VNF environment) or interfaces ( in CNF environment) , that define the sequence of service functions 
+  - A set of flow classifiers that specify the classified traffic flows entering the chain.
 
-This step creates a new chain policy with chain rules. Chain rules can include the identifier of a traffic flow, service characteristics, the SFC identifier and related information to route the packets along the chain. Service characteristics can be application layer matching information (e.g., URL). Traffic flow identifier  can be kind of traffic (e.g., Video, TCP, HTTP) flow need to be serviced. It can be specific Subscriber to apply service (e.g., parental control). The SFC identifier to steer the matched traffic along the SFP with SFC encapsulation. 
+- This step creates a new chain policy with chain rules. Chain rules can include the identifier of a traffic flow, service characteristics, the SFC identifier and related information to route the packets along the chain. Service characteristics can be application layer matching information (e.g., URL). Traffic flow identifier  can be kind of traffic (e.g., Video, TCP, HTTP) flow need to be serviced. It can be specific Subscriber to apply service (e.g., parental control). The SFC identifier to steer the matched traffic along the SFP with SFC encapsulation. 
 
-a.	SFC orchestrator creates SFP with help of SDNC.
+       a.	SFC orchestrator creates SFP with help of SDNC.
 
-b.	SDNC pushes the SFC traffic steering policies to SFF(s).
+       b.	SDNC pushes the SFC traffic steering policies to SFF(s).
 
-c.	SFC classifier Policy provided for SFP to SFC classifier by SFC Controller. **Note:** not shown in call flow.
+       c.	SFC classifier Policy provided for SFP to SFC classifier by SFC Controller. **Note:** not shown in call flow.
 
 <a name="3.5.5.3.2"></a>
 ##### 3.5.5.3.2 Updating Service Function Chain
