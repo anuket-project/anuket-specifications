@@ -313,12 +313,12 @@ The following software versions are considered to benchmark Kubernetes v1.21
 
 ### Dataplane benchmarking
 
-[Kubernetes perf-tests](https://github.com/kubernetes/perf-tests) stores
-various Kubernetes-related performance test related tools especially
+[Kubernetes perf-tests repository](https://github.com/kubernetes/perf-tests)
+hosts various Kubernetes-related performance test related tools especially
 [netperf](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf)
 which benchmarks Kubernetes networking performance.
 
-As listed in [README](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf#readme),
+As listed in [netperf's README](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf#readme),
 the 5 major network traffic paths are combination of pod IP vs virtual IP and
 whether the pods are co-located on the same node versus a remotely located
 pod:
@@ -335,7 +335,7 @@ leverages [iperf](https://github.com/esnet/iperf) (both TCP and UDP modes) and
 
 At the time of writing, no KPI is defined in CNTT chapters which would have
 asked for an update of the default SLA proposed in
-[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking?h=stable/v1.21)
+[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking?h=stable/v1.21).
 
 ### Security testing
 
