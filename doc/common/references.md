@@ -41,6 +41,15 @@
 | [24]      | Cloud Security Alliance (CSA) | “Information Security Management through Reflexive Security  ”. Available at https://cloudsecurityalliance.org/artifacts/information-security-management-through-reflexive-security/ |
 | [25]      | NIST SP 800-207  | “Zero Trust Architecture (ZTA) ”. Available at https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf |
 | [26]      | Open Infrastructure  | “Edge Computing: Next Steps in Architecture, Design and Testing ”. Available at https://www.openstack.org/use-cases/edge-computing/edge-computing-next-steps-in-architecture-design-and-testing/ |
+| [27]      | RFC5905 | "Network Time Protocol Version 4: Protocol and Algorithms Specification", IETF RFC, Available at https://datatracker.ietf.org/doc/html/rfc5905 |
+| [28]      | RFC5906 | "Network Time Protocol Version 4: Autokey Specification", IETF RFC, Available at https://datatracker.ietf.org/doc/html/rfc5906 |
+| [29]      | RFC5907 | "Definitions of Managed Objects for Network Time Protocol Version 4 (NTPv4)", IETF RFC, Available at https://datatracker.ietf.org/doc/html/rfc5907 |
+| [30]      | RFC5908 | "Network Time Protocol (NTP) Server Option for DHCPv6", IETF RFC, Available at https://datatracker.ietf.org/doc/html/rfc5908 |
+| [31]      | IEEE 1588-2019 | "Precision Clock Synchronization Protocol for Networked Measurement and Control Systems", Available at https://standards.ieee.org/standard/1588-2019.html |
+| [32]      | ITU-T G.8262| "Timing characteristics of a synchronous equipment slave clock", Available at https://www.itu.int/rec/T-REC-G.8262 |
+| [33]      | ITU-T G.8275.2| "Precision time protocol telecom profile for time/phase synchronization with partial timing support from the network", Available at https://www.itu.int/rec/T-REC-G.8275.2 |
+| [34]      | GSMA OPG.02| "Operator Platform Telco Edge Requirements", Available at https://www.gsma.com/operatorplatform  |
+
 
 <a name="1.2"></a>
 ## Cloud Native and Kubernetes References
