@@ -145,8 +145,7 @@ This section details the services that may be made available to workloads by the
 | Service Mesh          | Istio         |
 | Security & Compliance | Calico        |
 | Monitoring            | Prometheus    |
-| Logging and Analysis  | ELK<sup>*</sup> Stack |
-> <sup>*</sup> ELK: Elasticsearch, Logstash, and Kibana
+| Logging and Analysis  | ELK Stack (Elasticsearch, Logstash, and Kibana)|
 
 <p align="center"><b>Table 5-7a:</b> Service examples.</p>
 
