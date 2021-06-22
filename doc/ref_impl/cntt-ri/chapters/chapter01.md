@@ -103,10 +103,6 @@ b) Providing Reference Implementation as Golden NFVi for interoperability testin
 
 c) Providing Reference Compliance test requirements and test cases for compliance test for both NFVi and VNFs
 
-<!--
-<p align="center"><img src="../figures/ch01_relationship.png" alt="relationship" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> CNTT-RI Relationship with other communities.</p>
--->
 
 <a name="1.4"></a>
 ## 1.4 Roadmap
