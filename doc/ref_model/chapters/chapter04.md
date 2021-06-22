@@ -403,8 +403,8 @@ In addition to the sizing information, a workload may need to specify additional
 | Affinity| Specifies workloads that should be hosted on the same computer node.	|
 | Non-Affinity	| Specifies workloads that should not be hosted on the same computer node.	|
 | Dedicated cores | Specifies whether or not the workload can share sibling threads with other workloads. Default is No such that it allows different workloads on different threads. |
-| Network Interface Option | See [section](#4.2.5). |
-| Storage Extension | See [section](#4.2.6). |
+| Network Interface Option | See [Section 4.2.5](#4.2.5). |
+| Storage Extension | See [Section 4.2.6](#4.2.6). |
 
 <a name="4.2.4.3"></a>
 #### 4.2.4.3 Workload Flavours and Other Capabilities Specifications Format
