@@ -311,6 +311,32 @@ The following software versions are considered to benchmark Kubernetes v1.21
 | Functest                | v1.21       |
 | xrally-kubernetes       | 1.1.1.dev12 |
 
+### Dataplane benchmarking
+
+[Kubernetes perf-tests repository](https://github.com/kubernetes/perf-tests)
+hosts various Kubernetes-related performance test related tools especially
+[netperf](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf)
+which benchmarks Kubernetes networking performance.
+
+As listed in [netperf's README](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf#readme),
+the 5 major network traffic paths are combination of pod IP vs virtual IP and
+whether the pods are co-located on the same node versus a remotely located
+pod:
+  - same node using pod IP
+  - same node using cluster/virtual IP
+  - remote node using pod IP
+  - remote node using cluster/virtual IP
+  - same node pod hairpin to itself using cluster/virtual IP
+
+It should be noted that
+[netperf](https://github.com/kubernetes/perf-tests/tree/master/network/benchmarks/netperf)
+leverages [iperf](https://github.com/esnet/iperf) (both TCP and UDP modes) and
+[Netperf](https://github.com/HewlettPackard/netperf/).
+
+At the time of writing, no KPI is defined in CNTT chapters which would have
+asked for an update of the default SLA proposed in
+[Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking?h=stable/v1.21).
+
 ### Security testing
 
 There are a couple of opensource tools that help securing the Kubernetes stack.
@@ -404,5 +430,6 @@ The following test case must pass as they are for Reference Conformance:
 | opnfv/functest-kubernetes-security:v1.21      | kube_bench_master        | PASS     | Security testing                      |
 | opnfv/functest-kubernetes-security:v1.21      | kube_bench_node          | PASS     | Security testing                      |
 | opnfv/functest-kubernetes-benchmarking:v1.21  | xrally_kubernetes_full   | PASS     | Kubernetes API benchmarking           |
+| opnfv/functest-kubernetes-benchmarking:v1.21  | netperf                  | PASS     | Dataplane benchmarking                |
 | opnfv/functest-kubernetes-cnf:v1.21           | k8s_vims                 | PASS     | Opensource CNF onboarding and testing |
 | opnfv/functest-kubernetes-cnf:v1.21           | helm_vims                | PASS     | Opensource CNF onboarding and testing |
