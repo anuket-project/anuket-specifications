@@ -5,11 +5,11 @@
 This is the Reference Conformance for OpenStack based infrastructure (RC-1)
 
 ## Release Information
-**Bundle: _4_**
+**Bundle: _5_**
 
 **Version: _0_**
 
-**Release Date: _29th January 2021_**
+**Release Date: _1st July 2021_**
 
 ## Bundle/Version History
 
@@ -19,6 +19,7 @@ This is the Reference Conformance for OpenStack based infrastructure (RC-1)
 | 2.0               | 15th May 2020     | Baldy Release         |
 | 3.0               | 25th Sep 2020     | Baraque Release       |
 | 4.0               | 29th Jan 2021     | Elbrus Release        |
+| 5.0               | 1st July 2021     | Kali Release          |
 
 ## Overall Status
 
