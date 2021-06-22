@@ -418,7 +418,7 @@ The complete list of specifications needed to be specified by workloads is shown
 | storage - ephemeral | e | 	✅	| ✅	| Specifies the size of an ephemeral/local data disk that exists only for the life of the instance. Default value is 0. <br>The ephemeral disk may be partitioned into boot (base image) and swap space disks. | Optional |
 | storage - persistent | d | 	✅	| ✅	| Specifies the disk size of persistent storage. | Required |
 | storage - root disk | b | 	✅	| ✅	| Specifies the disk size of the root disk. | Optional |
-| CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the CPU allocation (a.k.a. oversubsrciption) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU Allocation Ratio is 1:1.  | Required for Basic profile |
+| CPU Allocation Ratio | o | 	✅	| ❌	| Specifies the CPU allocation (a.k.a. oversubscription) ratio. Can only be specified for Basic Profile. For workloads that utilise nodes configured as per High Performance Profile, the CPU Allocation Ratio is 1:1.  | Required for Basic profile |
 | Compute Intensive | ci | ❌ | ✅ |	For very demanding workloads with stringent memory access requirements, where the single NUMA bandwidth maybe a bandwidth. The Compute Intensive workload profile is used so that the workload can be spread across all NUMA nodes. | Optional |
 | Latency | l |	✅	| ✅	| Specifies latency requirements used for locating workloads.	| Optional |
 | Affinity| af |	✅	| ✅	| Specifies workloads that should be hosted on the same computer node.	| Optional |
