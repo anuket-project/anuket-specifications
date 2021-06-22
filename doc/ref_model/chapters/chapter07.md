@@ -397,7 +397,7 @@ To secure software code, the following methods must be applied:
 -	Use best practices coding such as design pattern recommended in the [Twelve-Factor App](https://12factor.net/) or [OWASP “Secure Coding Practices - Quick Reference Guide”](owasp.org)
 -	Require suppliers to provide a Software Bill of Materials to identify the open source modules in their product’s software releases
 -	Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals  
--	Do threat modeling, as described in the document “Tactical Threat Modeling” published by SAFECode
+-	Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
 -	Test the software in a pre-production environment to validate integration 
 -	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures), https://cve.mitre.org/
 -	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
