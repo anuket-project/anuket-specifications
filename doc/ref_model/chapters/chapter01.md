@@ -5,7 +5,7 @@
 * [1.1 Overview](#1.1)
 * [1.2 Scope](#1.2)
 * [1.3 Principles](#1.3)
-* [1.4 Definitions/Terminology](#1.4)
+* [1.4 Definitions/Terminology/Abbreviations](#1.4)
 * [1.5 Conventions](#1.7)
 
 <a name="1.1"></a>
@@ -72,8 +72,10 @@ This document specifies:
 The Reference Model specifications conform to the overall principles defined in [Anuket Principles](../../common/chapter00.md#2.0).
 
 <a name="1.4"></a>
-## 1.4 Definitions/Terminology
+## 1.4 Definitions/Terminology/Abbreviations
 To help guide the reader, the Reference Model [Glossary](../../common/glossary.md) provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GR NFV 003 [1] definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
+
+Please refer to [Abbreviations](./abbreviations.md) for a full list of abbreviations used in this document. 
 
 <a name="1.5"></a>  
 ## 1.5	Conventions
