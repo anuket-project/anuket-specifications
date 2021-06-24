@@ -76,7 +76,7 @@ The Reference Model specifications conform to the overall principles defined in 
 ## 1.4 Definitions/Terminology/Abbreviations
 To help guide the reader, the Reference Model [Glossary](../../common/glossary.md) provides an introduction to the main terms used within this document and throughout the project in general. These definitions are, with a few exceptions, based on the ETSI GR NFV 003 [1] definitions.  In a few cases, they have been modified to avoid deployment technology dependencies only when it seems necessary to avoid confusion.
 
-Please refer to [Abbreviations](./abbreviations.md) for a full list of abbreviations used in this document. 
+Please refer to [Abbreviations](../../common/abbreviations.md) for a full list of abbreviations used in this document. 
 
 <a name="1.5"></a>  
 ## 1.5	Conventions
@@ -85,5 +85,5 @@ Please refer to [Abbreviations](./abbreviations.md) for a full list of abbreviat
  <a name="1.6"></a>
 ## 1.6 References 
 
-Please refer to [References](./references.md) for a full list of references used in this document. 
+Please refer to [References](../../common/references.md) for a full list of references used in this document. 
 
