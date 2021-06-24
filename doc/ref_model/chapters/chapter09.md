@@ -34,6 +34,7 @@ The chapters below roughly map to these frameworks as follows:
 | Configuration and Lifecycle Management | Configuration | Fulfilment |Configuration, Release, Change |
 | Assurance | Performance, Fault | Assurance |Event, Incident |
 | Capacity Management | Configuration | Fulfilment |Capacity Management|
+<p align="center"><b>Table 9-1:</b> Operating Frameworks</p>
 
 <a name="9.2"></a>
 
