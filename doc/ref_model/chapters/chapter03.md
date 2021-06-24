@@ -648,7 +648,7 @@ The following diagram presents an example of the realization of the reference mo
 <p align="center"><b>Figure 3-15:</b> Reference model realization example</p>
 
 
-The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#43-networking) of this Reference Model document.
+The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 3.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#3.5-networking) of this Reference Model document.
 
 <a name="3.8"></a>
 ## 3.8 Hardware Acceleration Abstraction
