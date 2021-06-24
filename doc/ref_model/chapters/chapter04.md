@@ -18,7 +18,7 @@
   * [4.2.4 Workload Flavours and Other Capabilities Specifications](#4.2.4)
   * [4.2.5 Virtual Network Interface Specifications](#4.2.5)
   * [4.2.6 Storage Extensions](#4.2.6)
-  * [4.2.7 One Stop Shop](#4.2.7)
+
 
 
 <a name="4.1"></a>
@@ -477,61 +477,3 @@ Persistent storage is associated with workloads via Storage Extensions. The size
 >_*Note:*_ Performance is based on a block size of 256KB or larger.
 
 
-<a name="4.2.7"></a>
-### 4.2.7 One stop shop
-
-<a name="4.2.7.1"></a>
-#### 4.2.7.1 Naming convention
-An entry in the infrastructure profile catalogue can be referenced using the following naming convention.
-
-`B/N <I opt> . <Flavour> . <S ext> . <A ext>`
-
-Whereas:
-- **B/N**: specifies the Cloud Infrastructure Profile (Basic or Network Intensive)
-- **\<I opt>**: specifies the interface option.
-- **\<Flavour>**: specifies the compute Flavour.
-- **\<S ext>**: specifies an optional storage extension.
-- **\<A ext>**: specifies an optional acceleration extension for the Network Intensive Cloud Infrastructure Profile.
-
-<p align="center"><img src="../figures/ch04_one_stop_shop.PNG" alt="one_stop_shop" title="One Stop Shop" width="100%"/></p>
-<p align="center"><b>Figure 4-3:</b> Infrastructure Profiles Catalogue</p>
-
-<a name="4.2.7.2"></a>
-#### 4.2.7.2 Backwards Compatibility
-
-The Reference Model (RM) specification describes an infrastructure abstraction including a set of cloud infrastructure hardware and software profiles and compute flavours offered to workloads. The set of defined profiles and flavours will evolve along the releases but at the same time the existing workloads need to be supported. This means that any CNTT deployed cloud should be backwards compatible and support profiles and flavours from the latest three CNTT releases (N-2, N-1, N) as presented in Figure 4-4.
-
-<p align="center"><img src="../figures/ch04-Backwards-compatibility_overview.png" alt="backwards compatibility" title="backwards compatibility" width="100%"/></p>
-<p align="center"><b>Figure 4-4:</b> Backwards Compatibility</p>
-
-Cloud Infrastructure profiles that are available in CNTT release N deployment can be divided into two categories:
-
- 1. Cloud infrastructure profiles that are part of CNTT release N. These can be either
-    * new profiles defined in release N or
-    * existing profiles from earlier releases that are incorporated for backward compatibility reasons in release N
- 2. Cloud infrastructure profiles from releases N-1 and N-2 that are deployed only because of backwards compatibility, these profiles are not part of CNTT release N definition.
-
-**Note:** a profile defined in previous releases that is modified in release N is considered to be a new profile
-
-Different profile categories described above are presented in Figure 4-5. In this example profiles that are part of CNTT release N consist of two new profiles (yellow), one profile that is originally defined in release N-1 (green) and one defined in release N-2 (blue). Profiles that were defined in earlier releases but are also supported in release N will be referred to by several names. Existing workloads continue using the profile names from previous releases. New workloads will use release N naming.
-
-<p align="center"><img src="../figures/ch04-Backwards-compatibility_profiles.png" alt="backwards compatibility" title="backwards compatibility" width="100%"/></p>
-<p align="center"><b>Figure 4-5:</b> Cloud Infrastructure profiles in CNTT release N</p>
-
-Like predefined cloud infrastructure profiles, predefined compute flavours are also specified per CNTT release. CNTT release N flavours are used when new workloads are deployed into profiles that are part of the CNTT N release. Existing workloads continue using the flavours from previous releases. The difference in flavours can be for example, that newer flavours defined in release N may not have extra-large flavours that are earlier defined for transitional purposes. Workloads that use backwards compatible profiles will use the flavours from the older release (Figure 4-6).
-
-<p align="center"><img src="../figures/ch04-Backwards-compatibility_new_workloads.png" alt="backwards compatibility" title="backwards compatibility" width="100%"/></p>
-<p align="center"><b>Figure 4-6:</b> New workloads in Release N would use only Release N profiles</p>
-
-As discussed above backwards compatibility is the reason why cloud infrastructure profiles and flavours from several CNTT releases are configured and used in one CNTT deployment. Therefore, CNTT release number need to be added to each profile:
-
-`B/N<”_Gen”><release #>. <Flavour>`
-
-Flavours are unique only when combined with a profile. For example, CNTT release N small flavour in basic profile has the naming:
-
-`B_GenN.small`
-
-<a name="4.2.7.3"></a>
-#### 4.2.7.3 Forward compatibility
-
-Technology specific exceptions are dealt with in the relevant RA specifications.  Such exceptions are not part of any Cloud Infrastructure profile defined in CNTT.
