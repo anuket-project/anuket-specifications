@@ -6,7 +6,8 @@
 * [1.2 Scope](#1.2)
 * [1.3 Principles](#1.3)
 * [1.4 Definitions/Terminology/Abbreviations](#1.4)
-* [1.5 Conventions](#1.7)
+* [1.5 Conventions](#1.5)
+* [1.6 References](#1.6)
 
 <a name="1.1"></a>
 ## 1.1 Overview
@@ -80,3 +81,9 @@ Please refer to [Abbreviations](./abbreviations.md) for a full list of abbreviat
 <a name="1.5"></a>  
 ## 1.5	Conventions
  “The key words “must”, “must not”, “required”, “shall”, “shall not”, “should”, “should not”, “recommended”, “may”, and “optional” in this document are to be interpreted as described in RFC2119 [2].”
+ 
+ <a name="1.6"></a>
+## 1.6 References 
+
+Please refer to [References](./references.md) for a full list of references used in this document. 
+
