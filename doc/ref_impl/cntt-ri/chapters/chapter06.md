@@ -65,20 +65,19 @@ Depends xxx.
 <a name="6.3"></a>
 ## 6.3 Descriptor file definition specification
 There must be a Descriptor File definition, which used by installer as input of necessary configuration.
-Mandatory and optional definition shall be defined.  
-All the required definition for description file is listed in this specification session, there's no restrictions on how to use it,
-there could be multiple ways to implement PDF, the implementation will be in next session
+Mandatory and optional definition shall be defined, there's no restrictions on how to use it,
+there could be multiple ways to implement PDF, the implementation will be in next section.
 
 <a name="6.3.1"></a>
 ### 6.3.1 Resource Pool information
 This table is the description of the resource pool, it contains only 2 parameters: name and type of the resource pool.
 
-Only one instance per resource pool.
+A resource pool maps to only one instance of below parameters.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RES_POOL_NAME | String | Yes | This is the unique name of the resource pool, could be refered by other parameters |
-| RES_POOL_TYPE | String | Yes | User defined value to identify different hardware or software configuration requirements. |
+| RES_POOL_TYPE | String | No | User defined value to identify different hardware or software configuration requirements. |
 
 <p align="center"><b>Table 6-3-1:</b> Resource Pool Information.</p>
 
@@ -87,7 +86,7 @@ Only one instance per resource pool.
 ### 6.3.2 Global Settings
 The Global settings are provided by the user, contains data like like IP_Type, VLAN_Type, etc.
 
-Only one instance per resource pool.
+A resource pool maps to only one instance of below parameters.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -98,7 +97,7 @@ Only one instance per resource pool.
 | HUGEPAGE_ENABLE | String | Yes | TRUE or FALSE  |
 | HUGEPAGE_SIZE | String | Yes | The storage size that hypervisor set for VM, for example "1GB" |
 | QINQ_ENABLE | String | Yes | TRUE or FALSE |
-| HYPERVISOR_CORES | String | Yes | number of CPU bounded for Hypervisor |
+| HYPERVISOR_CORES | String | Yes | number of vCPU (CPU cores or hardware threads) assigned to the Hypervisor |
 | EXTERNAL_NTP_SERVER_IP | List | Yes | IP list of NTP server, seperated by comma, for example: primariy_IP;second_IP |
 
 <p align="center"><b>Table 6-3-2:</b> Global Settings </p>
@@ -106,34 +105,34 @@ Only one instance per resource pool.
 
 <a name="6.3.3"></a>
 ### 6.3.3 Parameters for network virtualization
-MTU value for network virtualization should be defined, this is usually standard value that defined by user.
+MTU(Maximum Transmission Unit) configuration in switch is different depends on the which network plane it belongs to, this is usually standard value that defined by user.
 
-3 instances are expected for Manage Service and storage,  they may have different MTU requirement.
+3 instances of the parameters are expected(Manage Storage and Service),  they may have different MTU requirement.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| NIC_PORT_TYPE | String | Yes | Type for nic port, Manage, Service or Storage |
-| MTU | String | Yes | This describes the row where rack located |
+| SWITCH_TYPE | String | Yes | There should be 3 type of switch based on the network plane: Manage, Storage, and User Services |
+| MTU | String | Yes | Maximum transmission unit |
 
 <p align="center"><b>Table 6-3-3:</b> Network Virtualization parameter .</p>
 
 
 <a name="6.3.4"></a>
 ### 6.3.4 server information
-Server information should be provided for installer, including full detail info. for each server, nic mapping etc.
+Server information should be provided for installer, including full detail info. for each server, NIC mapping etc.
 
 #### 6.3.4.1 server information
-First, a table describes the information for each server in the resource pool should be provided.
+A table describing information for each server in the resource pool shall be provided
 
-Multiple instances are expected, one instance for each server.
+Multiple instances are expected, one instance of all the parameters for each server.
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NAME | String | Yes | Server name should be aligned with naming rule, this is the unique ID for each device to be referred for identify device |
-| VENDOR | String | Yes | Vendor of device |
+| VENDOR | String | No | Vendor of device |
 | SKU | String | Yes | The SKU of device, can be referred by other table NIC connection table, to identify slot-port mapping for device  |
 | MODEL | String | Yes | This is the model for different service type, this value is defined from design document of resource pool, example NC1, NC1-S |
-| SN | String | Yes | Serial Number |
+| SN | String | Yes | Serial Number, each server has a unique SN  |
 | RES_POOL | String | Yes | Resource pool name |
 | RACK | String | Yes | rack name where device located |
 | POS | String | Yes | the position of device in rack, like 2-3U,4-5U |
@@ -146,18 +145,19 @@ Multiple instances are expected, one instance for each server.
 | INTERNAL_IP | String | Yes | It is an internal IP  configured and used by hardware integration tools, it will be removed after hardware integration verification |
 | INTERNAL_GATEWAY | String | Yes |  |
 | INTERNAL_MASK | String | Yes |  |
-| GROUP_NAME | String | Yes | the usage of server, Manage or Storaage or Service  |
+| GROUP_NAME | String | Yes | Usage of server, Manage or Storage or Service  |
 | BMC_PRE_CONFIGURED | String | Yes | YES or NO |
-| HW_REGION | String | Yes | hardware region that divided by design documents, like A area or B area |
+| HW_REGION | String | No | Hardware region divided by room or area, this is need when pod needs to build on more than one lab, For example: Lab01 or Lab02 |
 | MODULE_NAME | String | Yes | hardware model that divided within each region, Like "Model 3 in Region A", usually contains certain number of racks |
 
 <p align="center"><b>Table 6-3-4-1:</b> Server Information.</p>
 
-#### 6.3.4.2 server nic information
+#### 6.3.4.2 server NIC information
 This table is describing the slot and port mapping for NICs in each type of server. Port BDF information is also needed for each port, 
 it will be used to identify the logical port name after OS is installed. 
 
-Multiple entries per server type are expected for describing all NIC slots, 1 instance for each port. Information for all server types in pool should be included. 
+Multiple entries per server type are expected for describing all NIC slots, 1 entry for each port. 
+Information for all server types in pool should be included. 
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -182,7 +182,7 @@ Multiple instances are expected, one instance for each network device.
 | NAME | String | Yes | Name of network device |
 | VENDOR | String | Yes | Vendor name for network device  |
 | SKU | String | Yes | SKU |
-| MODEL | String | Yes | Type of switch, like TOR or EOR |
+| MODEL | String | Yes | Type of switch, like Access Switch or Aggregation Switch |
 | SN | String | Yes | Serial number |
 | HW_RES_POOL | String | Yes | Resource pool name for hardware |
 | RACK | String | Yes | rack number where switch is placed |
@@ -225,7 +225,7 @@ Multiple instances are expected, one instance for each physical cable.
 
 <a name="6.3.7"></a>
 ### 6.3.7 Network planning information
-Network planning info for resource pool needs to be defined, which should include Vlan ID, allocated IP range, the applied node set.
+Network planning information for the resource pool of each node needs to be defined which should include VLAN ID an allocated IP range.
 
 Multiple instances are expected, one instance for each network plane.
 
@@ -267,8 +267,8 @@ Multiple instances are expected, one instance for each TOR.
 
 
 <a name="6.3.9"></a>
-### 6.3.9 EOR VLAN configuration information
-Multiple instances are expected, one instance for each EOR. 
+### 6.3.9 VLAN configuration for Aggregation Switch
+Multiple instances are expected, one instance for each Aggregation Switch. 
 
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -282,16 +282,16 @@ Multiple instances are expected, one instance for each EOR.
 | ENABLE_PASSWORD | String | Yes |  |
 | PORT | List | Yes |   group a list of ports with same VLAN configuration, and separate different port group with ";" |
 | VLAN_ID | List | Yes |  group multiple VLAN with same configuration requirements, and separate different VLAN group with ";" |
-| VLANIF_ADDRESS | List | Yes |  Vlanif addresses that need to be configured on EOR |
+| VLANIF_ADDRESS | List | Yes |  Vlanif addresses that need to be configured on Aggregation Switch |
 | NETWORK_MASK | List | Yes |   |
 
-<p align="center"><b>Table 6-3-9:</b> EOR VLAN information.</p>
+<p align="center"><b>Table 6-3-9:</b> Aggregation Switch VLAN information.</p>
 
 
 <a name="6.3.10"></a>
-### 6.3.10 Host Aggregate
-Servers in the resource pool are divided to multiple HAs according to the difference from service or different hardware requirements.  
-One HA could belong to multiple AZ   
+### 6.3.10 Host Aggregate information
+Servers in the resource pool are usually divided to multiple groups, will use HA(Host Aggregation) to represent host group.
+One HA could belong to multiple AZ(Availability Zone)
 It is the definition of each HA in the resource pool. it should contain the server list for each HA, and also the HA meta data.
 
 ####  6.3.10.1 Host HA Mapping 
@@ -428,7 +428,7 @@ Multiple entries are expected, one entry for each authorization user.
 <a name="6.3.15"></a>
 ### 6.3.15 Device Management information
 
-#### 6.3.15.1 SERVER PIM ACCOUNT
+#### 6.3.15.1 SERVER PIM(Physical Infrastructure Manager) ACCOUNT
 Servers are managed by redfish, credentials should be the same for same type of device  
 
 Multiple entries are expected, one entry for each server model.
