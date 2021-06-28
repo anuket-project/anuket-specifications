@@ -14,7 +14,7 @@
   * [8.3.3. Telco Edge Cloud: Infrastructure Profiles](#8.3.3)
   * [8.3.4. Telco Edge Cloud: Platform Services Deployment](#8.3.4)
   * [8.3.5. Comparison of Deployment Topologies and Edge terms](#8.3.5)
-  
+
 
 <a name="8.1"></a>
 ## 8.1 Introduction
@@ -104,10 +104,10 @@ Telco Edge Cloud (TEC) deployment locations can be environmentally friendly such
 
 | | Facility Type | Environmental Characteristics | Capabilities | Physical Security | Implications | Deployment Locations
 -----|-----|-----|-----|-----|-----|------
-Environmentally friendly | Indoors: typical commercial or residential structures | Protected<br>Safe for common infrastructure | Easy access to continuous electric power<br>High/Medium bandwidth Fixed and/or wireless network access | Controlled Access | Commoditised infrastructure with no or minimal need for hardening/ruggedisation<br>Operational benefits for installation and maintenance | Indoor venues: homes, shops, offices, stationary and secure cabinets<br>Data centers, central offices, co-location facilities, Vendor premises, Customer premises | 
+Environmentally friendly | Indoors: typical commercial or residential structures | Protected<br>Safe for common infrastructure | Easy access to continuous electric power<br>High/Medium bandwidth Fixed and/or wireless network access | Controlled Access | Commoditised infrastructure with no or minimal need for hardening/ruggedisation<br>Operational benefits for installation and maintenance | Indoor venues: homes, shops, offices, stationary and secure cabinets<br>Data centers, central offices, co-location facilities, Vendor premises, Customer premises |
 Environmentally challenged | Outdoors and/or exposed to environmentally harsh conditions | maybe unprotected<br>Exposure to abnormal levels of noise, vibration, heat, chemical, electromagnetic pollution | May only have battery power<br>Low/Medium bandwidth Fixed and/or mobile network access | No or minimal access control | Expensive ruggedisation<br>Operationally complex | Example locations: curb side, near cellular radios, |
 <p align="center"><b>Table 8-2. TEC Deployment Location Characteristics & Capabilities</b></p>
- 
+
 <a name="8.3.2"></a>
 ### 8.3.2 Telco Edge Cloud: Infrastructure Characteristics
 Commodity hardware is only suited for environmentally friendly environments. Commodity hardware have standardised designs and form factors. Cloud deployments in data centres typically use such commodity hardware with standardised configurations resulting in operational benefits for procurement, installation and ongoing operations.
@@ -137,9 +137,9 @@ Based on the infrastructure deployed at the edge, Table 8-3 specifies the [Infra
 | infra.stg.cfg.004 | Storage with encryption |  | Y | Y | N | Optional |
 | infra.hw.cpu.cfg.001 | Minimum Number of CPU sockets | This determines the minimum number of CPU sockets within each host | 2 | 2 | 1 | 1 |
 | infra.hw.cpu.cfg.002 | Minimum Number of cores per CPU | This determines the number of cores needed per CPU. | 20 | 20 | 1 | 1 |
-| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Y<sup>* |
+| infra.hw.cpu.cfg.003 | NUMA alignment | NUMA alignment support and BIOS configured to enable NUMA | N | Y | N | Y<sup>*</sup> |
 
-<sup>* immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1
+<sup>*</sup> immaterial if the number of CPU sockets (infra.hw.cpu.cfg.001) is 1
 
 Please note that none of the listed parameters form part of a typical OpenStack flavour except that the vCPU and memory requirements of a flavour cannot exceed the available hardware capacity.
 
@@ -176,4 +176,3 @@ Depending on the facility capabilities, deployments at the edge may be similar t
 | Metro Data Centres<br>Fixed | 10's to 100's<br><br>Standardised<br><br>>1 CPU<br><br>>20 cores/CPU | 100's PB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence | > 100 Gbps<br><br>Standardised | ~10 ms | Highly Secure | Horizontal but limited scaling | Rapid spin up and down | Infrastructure architected for some level of resiliency<br><br>Redundancy for limited FT and HA | Microservices based<br><br>Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Edge Site | Large Edge | Aggregation Edge |  
 | Edge<br>Fixed / Mobile | 10's<br><br>Some Variability<br><br>>=1 CPU<br><br>>10 cores/CPU | 100 TB<br><br>Standardised<br><br>NVMe on PCIe<br><br>Permanence / Ephemeral | 50 Gbps<br><br>Standardised | ~5 ms | Low Level of Trust | Horizontal but highly constrained scaling, if any | Rapid spin up (when possible) and down | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based<br><br>Stateless<br><br>Hosted on Containers | HW Refresh: ? <br><br>Firmware: When required<br><br>Platform SW: CD |  | Far Edge Site | Medium Edge | Access Edge / Aggregation Edge |  
 | Mini-/Micro-Edge<br>Mobile / Fixed | 1's<br><br>High Variability<br><br>Harsh Environments<br><br>1 CPU<br><br>>2 cores/CPU | 10's GB<br><br>NVMe<br><br>Ephemeral<br><br>Caching | 10 Gbps<br><br>Connectivity not Guaranteed | <2 ms<br><br>Located in network proximity of EUD/IoT | Untrusted | Limited Vertical Scaling (resizing) | Constrained | Applications designed for resiliency against infra failures<br><br>No or highly limited redundancy | Microservices based or monolithic<br><br>Stateless or Stateful<br><br>Hosted on Containers or VMs<br><br><br>Subject to QoS, adaptive to resource availability, viz. reduce resource consumption as they saturate | HW Refresh: ? <br>Firmware: ? <br><br>Platform SW: ? |  | Fog Computing (Mostly deprecated terminology)<br><br>Extreme Edge<br><br>Far Edge | Small Edge | Access Edge |
-
