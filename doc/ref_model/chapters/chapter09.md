@@ -34,6 +34,7 @@ The chapters below roughly map to these frameworks as follows:
 | Configuration and Lifecycle Management | Configuration | Fulfilment |Configuration, Release, Change |
 | Assurance | Performance, Fault | Assurance |Event, Incident |
 | Capacity Management | Configuration | Fulfilment |Capacity Management|
+
 <p align="center"><b>Table 9-1:</b> Operating Frameworks</p>
 
 <a name="9.2"></a>
@@ -328,7 +329,7 @@ Common supporting system (OSS – Operation Support System, BSS – Business Sup
 <a name="9.6.1"></a>
 ### 9.6.1. Why Observability
 
-Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and, most importantly, before they call the help desk. 
+Knowing the status of all services and functions at all levels in a cloud based service offering is essential to act fast, ideally pro-actively before users notice and, most importantly, before they call the help desk.
 
 Common approach to understand the aforementioned Telco network status in conventional non-cloud environments is referred to as monitoring. Usually it would include metric information related to resources, such as CPU, memory, HDD, Network I/O, but also business related technical key performance indicators (KPIs) such as number of active users, number of registrations, etc. This monitoring data are represented as a time series, retrieved in regular intervals, usually with granulation of 5 to 30 minutes. In addition, asynchronous messages such as alarms and notifications are exposed by the monitored systems in order to provide information about foreseen situations. It is worth noting that metric data provide approximation of the health of the system, while the alarms and notifications try to bring more information about the problem. In general, they provide information about known unknowns - anticipated situations occurring at random time. However, this would very rarely be sufficient information for understanding the problem (RCA - root cause analysis), therefore it is necessary to retrieve more data related to the problem - logs and network signalization. Logs are application output information to get more granular information about the code execution. Network packet captures/traces are useful since telecommunication networks are distributed systems where components communicate utilizing various protocols, and the communication can be examined to get details of the problem.
 
@@ -352,15 +353,15 @@ Typically, when it comes to data collection, three questions arise:
 <a name="9.6.1.1"></a>
 #### 9.6.1.1. What data to collect
 
-Assessment on what data to collect should start by iterating over the physical and virtual infrastructure components: 
+Assessment on what data to collect should start by iterating over the physical and virtual infrastructure components:
 
 * Network Services across sites and tenants 							
 * Virtualized functions per site and tenant
 * Individual Virtual Machines and Containers
 * Virtualization infrastructure components
 * Physical servers (compute) and network elements
-* Tool servers with their applications (DNS, Identity Management, Zero Touch Provisioning, etc.) 
-* Cabling 
+* Tool servers with their applications (DNS, Identity Management, Zero Touch Provisioning, etc.)
+* Cabling
 
 #### Data categories
 
@@ -393,9 +394,9 @@ While protocols and interfaces are dictated by the selection of the message brok
 <a name="9.6.2"></a>
 ### 9.6.2. The Architecture
 
-In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads and infrastructure components. Furthermore, it is even more important to be able to correlate between the metrics provided by these entities to determine the performance and/or issues in such deployments. 
+In geographically dispersed large cloud deployments, a given telco cloud may have several cloud infrastructure components as well a large set of virtualized workloads (VNF/CNFs). It is important to monitor all of these workloads and infrastructure components. Furthermore, it is even more important to be able to correlate between the metrics provided by these entities to determine the performance and/or issues in such deployments.
 
-The cloud deployment tends to shrink and expand based upon the customer demand. Therefore, an architecture is required that can scale on demand and does not force a strong tie between various entities. This means, the workloads and cloud infrastructure components that provide telemetry and performance metrics must not be burdened to discover each other. The capacity (e.g. speed, storage) of one component must not force overrun or underrun situations that would cause critical data to be lost or delayed to a point to render them useless. 
+The cloud deployment tends to shrink and expand based upon the customer demand. Therefore, an architecture is required that can scale on demand and does not force a strong tie between various entities. This means, the workloads and cloud infrastructure components that provide telemetry and performance metrics must not be burdened to discover each other. The capacity (e.g. speed, storage) of one component must not force overrun or underrun situations that would cause critical data to be lost or delayed to a point to render them useless.
 
 Operators in charge of the cloud infrastructure (physical infra plus virtualization platform) require very detailed alarms and metrics to efficiently run their platform. While they need indicators about how well or poorly individual virtual machines and containers run, they don’t need a view inside these workloads. In fact, what and how workloads do should not be accessible to NFVI operators. The architecture must allow for different consumers to grant or deny access to available resources.
 
@@ -404,7 +405,7 @@ Multiple workloads or network services can be deployed onto one or more sites. T
 <a name="9.6.2.1"></a>
 #### 9.6.2.1. Push vs. Pull
 
-Two widely deployed models for providing telemetry data are pull and push. 
+Two widely deployed models for providing telemetry data are pull and push.
 
  <a name="9.6.2.1.1"></a>
 ##### 9.6.2.1.1. Pull Model
@@ -412,7 +413,7 @@ Two widely deployed models for providing telemetry data are pull and push.
 Typical characteristics of a pull model are:
 
 * The consumers are required to discover the producers of the data
-* Once the producers are identified, there should be a tight relationship (synchronization) between the producer and consumer. This makes the systems very complex in terms of configuration and management. For example, if a producer moves to a different location or reboots/restarts, the consumer must re-discover the producer and bind their relationship again. 
+* Once the producers are identified, there should be a tight relationship (synchronization) between the producer and consumer. This makes the systems very complex in terms of configuration and management. For example, if a producer moves to a different location or reboots/restarts, the consumer must re-discover the producer and bind their relationship again.
 * Data are pulled explicitly by the consumer. The consumer must have appropriate bandwidth, compute power, and storage to deal with this data - example SNMP pull/walks
 * A problem with Pull is that both consumers and producers have to have means for load/performance regulation in cases where the set of consumers overload the pull request serving capabilities of the producer.
 
@@ -423,9 +424,9 @@ Typical characteristics of a push model are:
 
 * Declarative definition of destination - The producers of data know explicitly where to stream/push their data
 * A “well known” data broker is utilized - all consumers and producers know about it through declarative definition. The data broker can be a bus such as RabitMQ, Apache Kafka, Apache Pulsar
-* No restrictions on the bandwidth or data storage constraints on producers or consumers. Producers produce the data and stream/push it to the broker and consumers pull the data from the broker. No explicit sync is required between producers and consumers. 
+* No restrictions on the bandwidth or data storage constraints on producers or consumers. Producers produce the data and stream/push it to the broker and consumers pull the data from the broker. No explicit sync is required between producers and consumers.
 * LCM (Life Cycle Management) events, such as moves, reboot/restarts, of consumers or producers have no impact on others.
-* Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and scalable and better suited for large (or small) geographically dispersed telco clouds. 
+* Producers and consumers can be added/removed at will. No impact on the system. This makes this model very flexible and scalable and better suited for large (or small) geographically dispersed telco clouds.
 * Example of push model are gRPC, SNMP traps, syslogs
 
 
