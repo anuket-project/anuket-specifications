@@ -787,7 +787,7 @@ Conformance:
 
 | test case             | requirements                                                             |
 |-----------------------|--------------------------------------------------------------------------|
-| tempest_horizon       | Horizon testing                                                      |
+| tempest_horizon       | Horizon testing                                                          |
 | tempest_neutron_cntt  | Neutron API testing                                                      |
 | tempest_cinder_cntt   | Cinder API testing                                                       |
 | tempest_keystone_cntt | Keystone API testing                                                     |
