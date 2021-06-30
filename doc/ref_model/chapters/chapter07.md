@@ -490,7 +490,7 @@ Security certification should encompass the following elements:
 | req.sec.gen.009 | The Platform **must** support Software integrity protection and verification and **must** scan source code and manifests. | |
 | req.sec.gen.010 | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know. Controlled Access Based on the Need to Know https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know. |   |
 | req.sec.gen.011 | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). | |
-| req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | It is mandatory for a Cloud Infrastructure Operator, but this requirement’s verification goes beyond CNTT testing scope |
+| req.sec.gen.012 | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | It is mandatory for a Cloud Infrastructure Operator, but this requirement’s verification is out of scope |
 | req.sec.gen.013 | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. |  |
 | req.sec.gen.014 | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 | req.sec.gen.015 | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. |  |
@@ -551,7 +551,7 @@ Security certification should encompass the following elements:
 | req.sec.wl.002 | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). | |
 | req.sec.wl.003 | The Platform **must** support secure provisioning of workloads.  | |
 | req.sec.wl.004 | The Platform **must** support Location assertion (for mandated in-country or location requirements). | |
-| req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond CNTT testing scope. |
+| req.sec.wl.005 | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification is out of scope. |
 | req.sec.wl.006 | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.). | |
 | req.sec.wl.007 | The Operator **should** implement processes and tools to verify NF authenticity and integrity. |  |
 
