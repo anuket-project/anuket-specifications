@@ -141,7 +141,7 @@ Multiple instances are expected, one instance of all the parameters for each ser
 | BMC_MASK | String | Yes |  |
 | BMC_SUBNET | String | Yes |  |
 | BMC_USR | String | Yes | BMC user |
-| BMC_PWD | String | Yes | BMC password |
+| BMC_PWD | String | Yes | BMC password, Instead of clear-text password, password encryption is recommended for security consideration |
 | INTERNAL_IP | String | Yes | It is an internal IP  configured and used by hardware integration tools, it will be removed after hardware integration verification |
 | INTERNAL_GATEWAY | String | Yes |  |
 | INTERNAL_MASK | String | Yes |  |
@@ -191,8 +191,8 @@ Multiple instances are expected, one instance for each network device.
 | BMC_GATEWAY | String | Yes |  |
 | BMC_MASK | String | Yes |  |
 | BMC_USR | String | Yes | BMC login user |
-| BMC_PWD | String | Yes | password for BMC login user |
-| ENABLE_PWD | String | Yes | Enable password |
+| BMC_PWD | String | Yes | password for BMC login user. Instead of clear-text password, password encryption is recommended for security consideration |
+| ENABLE_PWD | String | Yes | Enable password. Instead of clear-text password, password encryption is recommended for security consideration |
 | GROUP_NAME | String | Yes | Manage or storage or service |
 | HW_REGION | String | Yes | Hardware region |
 | MODULE_NAME | String | Yes | Hardware module which is devided by location, like area A module 1 |
@@ -245,7 +245,7 @@ Multiple instances are expected, one instance for each network plane.
 
 
 <a name="6.3.8"></a>
-### 6.3.8 TOR VLAN configuration information
+### 6.3.8 TOR(Access switch) VLAN configuration information
 Multiple instances are expected, one instance for each TOR. 
 
 | Field # | type | mandatory | Instruction |
@@ -256,8 +256,8 @@ Multiple instances are expected, one instance for each TOR.
 | DEVICE_SN | String | Yes |  |
 | BMC_IP | String | Yes |  |
 | SSH_USER | String | Yes |  |
-| SSH_PASSWORD | String | Yes |  |
-| ENABLE_PASSWORD | String | Yes |  |
+| SSH_PASSWORD | String | Yes | Instead of clear-text password, password encryption is recommended for security consideration |
+| ENABLE_PASSWORD | String | Yes | Instead of clear-text password, password encryption is recommended for security consideration |
 | PORT | List | Yes |  group multiple ports with same VLAN configuration, and separate different port group with ";" |
 | VLAN_TYPE | List | Yes | tag or untag |
 | VLAN_ID | List | Yes |  group multiple VLAN with same configuration requirements, and separate different VLAN group with ";" |
@@ -278,8 +278,8 @@ Multiple instances are expected, one instance for each Aggregation Switch.
 | DEVICE_SN | String | Yes |  |
 | BMC_IP | String | Yes |  |
 | SSH_USER | String | Yes |  |
-| SSH_PASSWORD | String | Yes |  |
-| ENABLE_PASSWORD | String | Yes |  |
+| SSH_PASSWORD | String | Yes | Instead of clear-text password, password encryption is recommended for security consideration  |
+| ENABLE_PASSWORD | String | Yes | Instead of clear-text password, password encryption is recommended for security consideration |
 | PORT | List | Yes |   group a list of ports with same VLAN configuration, and separate different port group with ";" |
 | VLAN_ID | List | Yes |  group multiple VLAN with same configuration requirements, and separate different VLAN group with ";" |
 | VLANIF_ADDRESS | List | Yes |  Vlanif addresses that need to be configured on Aggregation Switch |
@@ -356,8 +356,8 @@ Multiple instances are expected, each instance defines one storage pool
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | STORAGE_CLUSTER_NAME | String | Yes |   |
-| NODE_POOL | String | Yes |  |
-| DISK_POOL_NAME | String | Yes |  |
+| NODE_POOL | String | No |  |
+| DISK_POOL_NAME | String | No |  |
 | STORAGE_POOL_NAME | String | Yes |  |
 | HA_NAME_LIST | List| Yes | The corresponding HA lists for current storage pool |
 | AZ_NAME | String | Yes | The corresponding AZ for current storage pool |
@@ -367,9 +367,9 @@ Multiple instances are expected, each instance defines one storage pool
 | NETWORK_MASK | String | Yes |   |
 | GATEWAY | String | Yes |   |
 | VIM_USER | String | Yes |  VIM credential |
-| VIM_PASSWORD | String | Yes |   |
+| VIM_PASSWORD | String | Yes |  Instead of clear-text password, password encryption is recommended for security consideration |
 | PIM_USER | String | Yes |  PIM credential |
-| PIM_PASSWORD | String | Yes |   |
+| PIM_PASSWORD | String | Yes | Instead of clear-text password, password encryption is recommended for security consideration  |
 | STORAGE_CLUSTER_SERVICE_IP | String | Yes |   |
 | STORAGE_CLUSTER_SERVICE_GW | String | Yes |   |
 | STORAGE_CLUSTER_BACKEND_IP | String | Yes |   |
@@ -429,15 +429,16 @@ Multiple entries are expected, one entry for each authorization user.
 ### 6.3.15 Device Management information
 
 #### 6.3.15.1 SERVER PIM(Physical Infrastructure Manager) ACCOUNT
-Servers are managed by redfish, credentials should be the same for same type of device  
+This table is not mandatory because not all installer require redfish.
+It is only requried when servers managed by PIM through redfish, credentials should be the same for same type of device.
 
 Multiple entries are expected, one entry for each server model.
 | Field # | type | mandatory | Instruction |
 |----|--------------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| VENDOR | String | Yes |  |
-| SERVER_MODEL | String | Yes | MODEL for each type of server |
-| REDFISH_USER | String | Yes |  |
-| REDFISH_PASSWD | String | Yes |  |
+| VENDOR | String | No |  |
+| SERVER_MODEL | String | No | MODEL for each type of server |
+| REDFISH_USER | String | No |  |
+| REDFISH_PASSWD | String | No | Instead of clear-text password, password encryption is recommended for security consideration |
 
 <p align="center"><b>Table 6-3-15-1:</b> SERVER PIM ACCOUNT Information.</p>
 
