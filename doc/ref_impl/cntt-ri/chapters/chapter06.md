@@ -153,10 +153,10 @@ Multiple instances are expected, one instance of all the parameters for each ser
 <p align="center"><b>Table 6-3-4-1:</b> Server Information.</p>
 
 #### 6.3.4.2 server NIC information
-This table is describing the slot and port mapping for NICs in each type of server. Port BDF information is also needed for each port, 
+This table is describing the slot and port mapping for NICs in each type of server. 
+Port BDF([Bus:Device.Function (BDF) Notation](https://wiki.xenproject.org/wiki/Bus:Device.Function_(BDF)_Notation#:~:text=Simple%20BDF%20notation%20BDF%20stands%20for%20the%20Bus%3ADevice.Function,a%20leading%20zeros%20to%20two%20or%20four%20digits)) information is also needed for each port, 
 it will be used to identify the logical port name after OS is installed. 
-
-Multiple entries per server type are expected for describing all NIC slots, 1 entry for each port. 
+<br>Multiple entries per server type are expected for describing all NIC slots, 1 entry for each port. 
 Information for all server types in pool should be included. 
 
 | Field # | type | mandatory | Instruction |
