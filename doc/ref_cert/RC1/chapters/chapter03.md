@@ -87,19 +87,18 @@ from a Compliance state point. The remaining tests have to pass successfully.
 They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
-According to Jerma, the following software versions are considered here to
+According to Wallaby, the following software versions are considered here to
 verify OpenStack Train selected by CNTT:
 
-| software                | version     |
-|-------------------------|-------------|
-| Functest                | jerma       |
-| Horizon Tempest plugin  | 0.2.0       |
-| Cinder Tempest plugin   | 0.3.0       |
-| Keystone Tempest plugin | 0.3.0       |
-| Heat Tempest plugin     | 1.0.0       |
-| Neutron Tempest plugin  | 0.6.0       |
-| Rally OpenStack         | 1.7.1.dev21 |
-| Tempest                 | 22.0.0      |
+| software                | version |
+|-------------------------|---------|
+| Functest                | wallaby |
+| Cinder Tempest plugin   | 1.4.0   |
+| Keystone Tempest plugin | 0.7.0   |
+| Heat Tempest plugin     | 1.2.0   |
+| Neutron Tempest plugin  | 1.4.0   |
+| Rally OpenStack         | 2.1.0   |
+| Tempest                 | 27.0.0  |
 
 #### 3.3.4.1 Identity - Keystone
 
@@ -107,7 +106,7 @@ Keystone API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [keystone-tempest-plugin](https://opendev.org/openstack/keystone-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -123,7 +122,7 @@ the following test names must not be executed:
 Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
 - Authenticate.keystone
 - KeystoneBasic.add_and_remove_user_role
 - KeystoneBasic.create_add_and_list_user_roles
@@ -154,7 +153,7 @@ the following test names must not be executed:
 Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
 - Authenticate.validate_glance
 - GlanceImages.create_and_delete_image
 - GlanceImages.create_and_list_image
@@ -167,7 +166,7 @@ Cinder API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [cinder-tempest-plugin](https://opendev.org/openstack/cinder-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -188,7 +187,7 @@ the following test names must not be executed:
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
 - Authenticate.validate_cinder
 - CinderVolumes.create_and_delete_snapshot
 - CinderVolumes.create_and_delete_volume
@@ -205,7 +204,7 @@ Here are the mainline tasks integrated in
 
 Swift API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -219,7 +218,7 @@ the following test names must not be executed:
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
 - SwiftObjects.create_container_and_object_then_list_objects
 - SwiftObjects.list_objects_in_containers
 - SwiftObjects.create_container_and_object_then_download_object
@@ -232,7 +231,7 @@ Neutron API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [neutron-tempest-plugin](https://opendev.org/openstack/neutron-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -293,7 +292,7 @@ the following test names must not be executed:
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
 - Authenticate.validate_neutron
 - NeutronNetworks.create_and_delete_networks
 - NeutronNetworks.create_and_delete_ports
@@ -312,7 +311,7 @@ Here are the mainline tasks integrated in
 
 Nova API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -363,7 +362,7 @@ the following test names must not be executed:
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
 - Authenticate.validate_nova
 - NovaServers.boot_and_live_migrate_server
 - NovaServers.boot_server_attach_created_volume_and_live_migrate
@@ -382,7 +381,7 @@ Here are the mainline tasks integrated in
 Heat API is covered in the OpenStack Gates via
 [heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin) as
 integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby)
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -404,7 +403,7 @@ the following test names must not be executed:
 Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fwallaby):
 - Authenticate.validate_heat
 - HeatStacks.create_update_delete_stack
 - HeatStacks.create_check_delete_stack
@@ -416,7 +415,7 @@ Here are the mainline tasks integrated in
 
 Horizon is covered in the OpenStack Gates via
 [tempest-horizon](https://github.com/openstack/tempest-horizon) as integrated
-in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml?h=stable%2Fjerma).
+in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck/testcases.yaml?h=stable%2Fwallaby).
 
 <a name="3.3.6"></a>
 ### 3.3.6 OpenStack API benchmarking
@@ -425,21 +424,21 @@ in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck
 to perform OpenStack API benchmarking.
 
 Here are the Rally-based test cases proposed by
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
-- [rally_full](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
+- [rally_full](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
   Functest scenarios iterating 10 times the mainline Rally scenarios
-- [rally_jobs](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_jobs_cntt-run-60/rally_jobs_cntt/rally_jobs_cntt.html):
+- [rally_jobs](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_jobs_cntt-run-5/rally_jobs_cntt/rally_jobs_cntt.html):
   Neutron scenarios executed in the OpenStack gates
 
 At the time of writing, no KPI is defined in
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
 
 #### 3.3.6.1 Identity - Keystone
 
-[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                     | Iterations |
 |-----------------------------------------------|:----------:|
@@ -458,7 +457,7 @@ of 0%) proposed in
 
 #### 3.3.6.2 Image - Glance
 
-[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                    | Iterations |
 |----------------------------------------------|:----------:|
@@ -474,7 +473,7 @@ of 0%) proposed in
 
 #### 3.3.6.3 Block Storage - Cinder
 
-[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                     | Iterations |
 |---------------------------------------------------------------|:----------:|
@@ -504,7 +503,7 @@ of 0%) proposed in
 
 #### 3.3.6.4 Object Storage - Swift
 
-[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                     | Iterations |
 |---------------------------------------------------------------|:----------:|
@@ -516,7 +515,7 @@ of 0%) proposed in
 
 #### 3.3.6.5 Networking - Neutron
 
-[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                  | Iterations |
 |------------------------------------------------------------|:----------:|
@@ -543,7 +542,7 @@ of 0%) proposed in
 | NeutronNetworks.create_and_show_subnets                    | 10         |
 | Quotas.neutron_update                                      | 10         |
 
-[Functest rally_jobs_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_jobs_cntt-run-60/rally_jobs_cntt/rally_jobs_cntt.html):
+[Functest rally_jobs_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                  | Iterations |
 |--------------------------------------------|:----------:|
@@ -564,7 +563,7 @@ of 0%) proposed in
 
 #### 3.3.6.6 Compute - Nova
 
-[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                                      | Iterations |
 |----------------------------------------------------------------|:----------:|
@@ -600,7 +599,7 @@ of 0%) proposed in
 
 #### 3.3.6.7 Orchestration - Heat
 
-[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
+[Functest rally_full_cntt](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-cntt-wallaby-rally_full_cntt-run-5/rally_full_cntt/rally_full_cntt.html):
 
 | Scenarios                                     | Iterations |
 |-----------------------------------------------|:----------:|
@@ -615,7 +614,7 @@ of 0%) proposed in
 <a name="3.3.7"></a>
 ### 3.3.7 Dataplane benchmarking
 
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
 offers two benchmarking dataplane test cases leveraging on:
 - [VMTP](http://vmtp.readthedocs.io/en/latest)
 - [Shaker](http://pyshaker.readthedocs.io/en/latest/)
@@ -633,16 +632,16 @@ deployment and list of tests to execute.
 
 At the time of writing, no KPI is defined in CNTT chapters which would have
 asked for an update of the default SLA proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
 
 ### 3.3.7.1 VMTP
 
 Here are the
-[scenarios](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-vmtp-run-123/vmtp/vmtp.json)
+[scenarios](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-vmtp-run-8/vmtp/vmtp.json)
 executed by
-[Functest vmtp](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-vmtp-run-123/vmtp/vmtp.html):
+[Functest vmtp](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-vmtp-run-8/vmtp/vmtp.html):
 - VM to VM same network fixed IP (intra-node)
 - VM to VM different network fixed IP (intra-node)
 - VM to VM different network floating IP (intra-node)
@@ -678,7 +677,7 @@ Here are all results per scenario:
 ### 3.3.7.2 Shaker
 
 Here are the
-[scenarios](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-jerma-shaker-run-124/shaker/report.json)
+[scenarios](http://artifacts.opnfv.org/functest/KDBNITEN317M/functest-opnfv-functest-benchmarking-wallaby-shaker-run-8/shaker/report.json)
 executed by Shaker:
 - OpenStack L2
 - OpenStack L3 East-West
@@ -718,7 +717,7 @@ Multiple VMs or containers can be deployed prior to running any tests. This allo
 
 Running opensource VNFs is a key technical solution to ensure that the
 platforms meet Network Functions Virtualization requirements.
-[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fjerma)
+[Functest VNF](https://git.opnfv.org/functest/tree/docker/vnf/testcases.yaml?h=stable%2Fwallaby)
 offers 5 test cases which automatically onboard and test the following 3
 opensource VNFs:
 - [Clearwater IMS](https://clearwater.readthedocs.io/en/stable/)
@@ -762,32 +761,32 @@ According to [RC1 Chapter04](chapter04.md)
 the following test cases must pass as they are for CNTT NFVI
 Conformance:
 
-| container                              | test case             | criteria |
-|----------------------------------------|-----------------------|:--------:|
-| opnfv/functest-healthcheck:jerma       | tempest_horizon       | PASS     |
-| opnfv/functest-smoke-cntt:jerma        | tempest_neutron_cntt  | PASS     |
-| opnfv/functest-smoke-cntt:jerma        | tempest_cinder_cntt   | PASS     |
-| opnfv/functest-smoke-cntt:jerma        | tempest_keystone_cntt | PASS     |
-| opnfv/functest-smoke-cntt:jerma        | rally_sanity_cntt     | PASS     |
-| opnfv/functest-smoke-cntt:jerma        | tempest_full_cntt     | PASS     |
-| opnfv/functest-smoke-cntt:jerma        | tempest_scenario_cntt | PASS     |
-| opnfv/functest-smoke-cntt:jerma        | tempest_slow_cntt     | PASS     |
-| opnfv/functest-benchmarking-cntt:jerma | rally_full_cntt       | PASS     |
-| opnfv/functest-benchmarking-cntt:jerma | rally_jobs_cntt       | PASS     |
-| opnfv/functest-benchmarking-cntt:jerma | vmtp                  | PASS     |
-| opnfv/functest-benchmarking-cntt:jerma | shaker                | PASS     |
-| opnfv/functest-vnf:jerma               | cloudify              | PASS     |
-| opnfv/functest-vnf:jerma               | cloudify_ims          | PASS     |
-| opnfv/functest-vnf:jerma               | heat_ims              | PASS     |
-| opnfv/functest-vnf:jerma               | vyos_vrouter          | PASS     |
-| opnfv/functest-vnf:jerma               | juju_epc              | PASS     |
+| container                                | test case             | criteria |
+|------------------------------------------|-----------------------|:--------:|
+| opnfv/functest-healthcheck:wallaby       | tempest_horizon       | PASS     |
+| opnfv/functest-smoke-cntt:wallaby        | tempest_neutron_cntt  | PASS     |
+| opnfv/functest-smoke-cntt:wallaby        | tempest_cinder_cntt   | PASS     |
+| opnfv/functest-smoke-cntt:wallaby        | tempest_keystone_cntt | PASS     |
+| opnfv/functest-smoke-cntt:wallaby        | rally_sanity_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:wallaby        | tempest_full_cntt     | PASS     |
+| opnfv/functest-smoke-cntt:wallaby        | tempest_scenario_cntt | PASS     |
+| opnfv/functest-smoke-cntt:wallaby        | tempest_slow_cntt     | PASS     |
+| opnfv/functest-benchmarking-cntt:wallaby | rally_full_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:wallaby | rally_jobs_cntt       | PASS     |
+| opnfv/functest-benchmarking-cntt:wallaby | vmtp                  | PASS     |
+| opnfv/functest-benchmarking-cntt:wallaby | shaker                | PASS     |
+| opnfv/functest-vnf:wallaby               | cloudify              | PASS     |
+| opnfv/functest-vnf:wallaby               | cloudify_ims          | PASS     |
+| opnfv/functest-vnf:wallaby               | heat_ims              | PASS     |
+| opnfv/functest-vnf:wallaby               | vyos_vrouter          | PASS     |
+| opnfv/functest-vnf:wallaby               | juju_epc              | PASS     |
 
 <a name="3.4.2"></a>
 ### 3.4.2 TC Mapping to Requirements
 
 | test case             | requirements                                                             |
 |-----------------------|--------------------------------------------------------------------------|
-| tempest_horizon       | Horizon testing                                                      |
+| tempest_horizon       | Horizon testing                                                          |
 | tempest_neutron_cntt  | Neutron API testing                                                      |
 | tempest_cinder_cntt   | Cinder API testing                                                       |
 | tempest_keystone_cntt | Keystone API testing                                                     |
