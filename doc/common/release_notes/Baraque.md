@@ -17,7 +17,7 @@
 <a name="overview"></a>
 ## Overview
 
-This Release note highlights top features that will be included in Baraque release. For Full list of features in details, please refer to Baraque Release [Planning](https://wiki.lfnetworking.org/display/LN/CNTT+Baraque) page.
+This Release note highlights top features that will be included in Baraque release. For Full list of features in details, please refer to Baraque Release [Planning](https://wiki.lfnetworking.org/display/LN/Anuket+Baraque) page.
 
 <a name="rm"></a>
 ## Reference Model (v4.0)

@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# CNTT Reference Implementation
+# Anuket Reference Implementation
 
 <a name="available-ri"></a>
 

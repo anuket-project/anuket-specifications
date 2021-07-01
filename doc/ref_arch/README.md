@@ -1,6 +1,6 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
+[<< Back](https://cntt-n.github.io/Anuket/)
 
-# CNTT Reference Architectures
+# Anuket Reference Architectures
 
 <a name="available-ra"></a>
 ## Available Reference Architectures

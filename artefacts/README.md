@@ -1,4 +1,4 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
+[<< Back](https://cntt-n.github.io/Anuket/)
 # Handling of figures
 
 ## Table of Contents

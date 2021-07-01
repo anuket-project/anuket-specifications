@@ -56,7 +56,7 @@
 | CNCF | Cloud Native Computing Foundation |
 | CNF | Cloud Native Network Function |
 | CNI | Container Network Interface |
-| CNTT | Cloud iNfrastructure Telco Taskforce |
+| Anuket | Cloud iNfrastructure Telco Taskforce |
 | CP | Control Plane |
 | CPE | Customer Premises Equipment |
 | CPU | Central Processing Unit |

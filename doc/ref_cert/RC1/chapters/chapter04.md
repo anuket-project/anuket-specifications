@@ -137,9 +137,9 @@ the reference implementation:
 - compare the reference implementation and local deployments from a functional
   standpoint and from OpenStack control plane and dataplane capabilities
 
-It's worth mentioning that Functest already takes into account the first CNTT
+It's worth mentioning that Functest already takes into account the first Anuket
 [profiles](https://git.opnfv.org/functest/tree/functest/ci/config_patch.yaml#n2).
-CNTT should simply add the next Functest inputs according the reference
+Anuket should simply add the next Functest inputs according the reference
 implementation:
 - [Functest inputs](https://github.com/opnfv/functest/blob/stable/iruya/functest/utils/env.py#L17)
 - [tempest specific configuration](https://github.com/opnfv/functest/blob/stable/iruya/functest/opnfv_tests/openstack/tempest/custom_tests/tempest_conf.yaml)
@@ -189,7 +189,7 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 
 At the time of writing, the CI description file is hosted in Functest and only
 runs the containers listed in RM/RA-1 Requirements. It will be completed by the
-next CNTT mandatory test cases and then a new CI description file will be
+next Anuket mandatory test cases and then a new CI description file will be
 proposed in CIRV tree.
 
 Please note the next two points depending on the GNU/Linux distributions and
@@ -200,7 +200,7 @@ the network settings:
 - Proxy: you may set your proxy in env for Ansible and in systemd for Docker
   https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
 
-To deploy your own CI toolchain running CNTT Compliance:
+To deploy your own CI toolchain running Anuket Compliance:
 ```bash
 virtualenv functest --system-site-packages
 . functest/bin/activate
@@ -233,13 +233,13 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
 <a name="4.3.2"></a>
-### 4.3.2 Run CNTT NFVI Testing
+### 4.3.2 Run Anuket NFVI Testing
 
 Open http://127.0.0.1:8080/job/functest-jerma-daily/ in a web browser, login
 as admin/admin and click on "Build with Parameters" (keep the default build_tag
 value).
 
-If the System under test (SUT) is CNTT compliant, a link to the full archive
+If the System under test (SUT) is Anuket compliant, a link to the full archive
 containing all test results and artifacts will be printed in
 functest-jerma-zip's console. Be free to download it and then to send it to
 any reviewer committee.

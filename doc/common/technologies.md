@@ -1,5 +1,5 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
-# CNTT Relevant Technologies
+[<< Back](https://cntt-n.github.io/Anuket/)
+# Anuket Relevant Technologies
 
 ## Table of Contents
 * [IO Virtualisation](#8.1)
@@ -53,7 +53,7 @@ Once an IO device is directly assigned to a workload, that workload will then ha
 
 This method provides better performance than the para-virtualized one as no hypervisor is involved but provides less flexibility and less portability.
 
-Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of CNTT and hence this method of IO Virtualization must not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+Having an IO device directly assigned to a workload means that the workload needs to run vendor specific drivers and libraries to be able to access that device which makes the workload less portable and dependent on a specific hardware type from a specific vendor which is not aligned with the overall strategy and goals of Anuket and hence this method of IO Virtualization must not be used unless explicitly allowed as an exception as part of the transitional plan adopted by Anuket.
 
 <p align="center"><img src="./figures/tech_vtd.png" alt="virtio" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 3:</b> Direct Assignment with Virtual Technology.</p>
@@ -67,7 +67,7 @@ For this method to be possible, the IO device need to support Single Root Input 
 
 Each of those Virtual Functions can then be independently assigned exclusively to a workload (with the appropriate hardware support of an IOMMU).
 
-Similar to the previous method ("Direct Assignment"), this method provides better performance than para-virtualization, but lacks the flexibility and the portability sought and therefore must also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+Similar to the previous method ("Direct Assignment"), this method provides better performance than para-virtualization, but lacks the flexibility and the portability sought and therefore must also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by Anuket.
 
 <p align="center"><img src="./figures/tech_sriov.png" alt="sriov" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 4:</b> Device Sharing with SR-IOV & Direct Assignment.</p>
@@ -79,7 +79,7 @@ This method basically is a mixture between the software only para-virtualization
 
 Unlike the software only para-virtualized interfaces, this method provides better performance as it by-passes the hypervisor and unlike Direct Assignment methods, this method doesn’t require proprietary drivers to run in the workload and hence this method makes workloads portable.
 
-However, this method doesn’t provide the same level of flexibility as the software only para-virtualization method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by CNTT.
+However, this method doesn’t provide the same level of flexibility as the software only para-virtualization method as migrating workloads from one host to another is more challenging due to the hardware presence and the state it holds for the workloads using it and therefore should also not be used unless explicitly allowed as an exception as part of the transitional plan adopted by Anuket.
 
 <p align="center"><img src="./figures/tech_virtio_hw.png" alt="vitio_hw" title="Document Types" width="50%"/></p>
 <p align="center"><b>Figure 5:</b> Para-Virtualization method (with hardware support).</p>

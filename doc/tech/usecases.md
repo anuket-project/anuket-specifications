@@ -1,5 +1,5 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
-# CNTT Use Cases
+[<< Back](https://cntt-n.github.io/Anuket/)
+# Anuket Use Cases
 
 ## Table of Contents
  * [5.1 Edge](#5.1)
