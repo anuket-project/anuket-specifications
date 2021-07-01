@@ -1,8 +1,8 @@
-# Cloud iNfrastructure Telco Task Force (Anuket)
+# Cloud iNfrastructure Telco Task Force (Anuket CNTT)
 
 ## Table of Contents
 * [Governance & Community Guidelines](gov/README.md)
-  * [Terms of Reference](../GSMA_Anuket_Terms_of_Reference.pdf)
+  * [Terms of Reference](../GSMA_Anuket CNTT_Terms_of_Reference.pdf)
   * [Code of Conduct](../CODE_OF_CONDUCT.md)
   * [The License (Creative Commons Attribution 4.0 International)](https://creativecommons.org/licenses/by/4.0/legalcode)
 * [Technical Specifications](common/README.md)

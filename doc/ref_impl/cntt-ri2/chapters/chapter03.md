@@ -23,7 +23,7 @@ The purpose of this chapter is to list and describe the requirements on labs use
 As a result of these, RI2 must be deployable in different lab environments:
 
 1. internal development labs of software vendors, operators and 3<sup>rd</sup> party test labs
-1. public community labs (e.g. Anuket (formerly OPNFV))
+1. public community labs (e.g. Anuket CNTT (formerly OPNFV))
 1. resources hosted by cloud infrastructure providers (e.g. [Equinix Metal](https://metal.equinix.com/))
 
 In addition, lab environments must meet specific requirements on hardware resources (e.g. compute and storage), capabilities (e.g. support for SR-IOV), and connectivity (e.g., number of NICs) to run the RI2. The following sections describe the resulting requirements in detail.
@@ -41,13 +41,13 @@ This section describes the access and connectivity requirements for labs used to
 
 The requirements on and means of accessing a given lab differ per hosting organization and use case:
 
-* **Community labs**, such as those hosted by Anuket, must provide remote access from the Internet to allow usage of the lab resources by community members. Remote access shall be managed and secured by means of VPN or SSH gateways. Both the public and out-of-band management networks of the lab shall be accessible from the VPN / SSH gateway host.
+* **Community labs**, such as those hosted by Anuket CNTT, must provide remote access from the Internet to allow usage of the lab resources by community members. Remote access shall be managed and secured by means of VPN or SSH gateways. Both the public and out-of-band management networks of the lab shall be accessible from the VPN / SSH gateway host.
 
 * Access to lab resources hosted by **public cloud providers** is managed by the cloud provider.
 
 * Access to **internal development and test labs** of software vendors, operators and 3<sup>rd</sup> party test labs is managed by the corresponding entity and not expected to be available to community members outside of the respective organization.
 
-For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in Anuket labs, 3<sup>rd</sup> party labs or public cloud infrastructure.
+For all community-focused activities, access to the respective lab infrastructure must be made available to community members through an application process, irrespective of whether the infrastructure is hosted in Anuket CNTT labs, 3<sup>rd</sup> party labs or public cloud infrastructure.
 
 
 <a name="3.2.2"></a>

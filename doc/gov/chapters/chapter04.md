@@ -22,7 +22,7 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-The Anuket is structured into Workstreams so it can scale and accommodate participation from the wider community. The Anuket is open to participation by any individual or organization that agrees to comply with its Term of Reference ([ToR](../../../GSMA_Anuket_Terms_of_Reference.pdf)) (each such participant, a “Participant”). Each of the Workstreams within Anuket has one Lead and up to two Co-Leads. Leads and Co-Leads for each Workstream are selected by the community itself through a nomination and voting process. This document explains the Anuket policies and process regarding nomination and selection.
+The Anuket CNTT is structured into Workstreams so it can scale and accommodate participation from the wider community. The Anuket CNTT is open to participation by any individual or organization that agrees to comply with its Term of Reference ([ToR](../../../GSMA_Anuket CNTT_Terms_of_Reference.pdf)) (each such participant, a “Participant”). Each of the Workstreams within Anuket CNTT has one Lead and up to two Co-Leads. Leads and Co-Leads for each Workstream are selected by the community itself through a nomination and voting process. This document explains the Anuket CNTT policies and process regarding nomination and selection.
 
 <a name="4.2"></a>
 ## 4.2 Workstreams Lead/Co-Lead Nomination and Selection
@@ -34,7 +34,7 @@ For each Workstream, following leadership positions exist:
 <a name="4.2.1"></a>
 ### 4.2.1 Length of Terms
 
-The length of term for all Anuket leadership roles is **12** calendar months. It will start typically in February each year and end around the same time the year after.  The exact dates and timing might vary to accommodate Anuket releases and workshops.
+The length of term for all Anuket CNTT leadership roles is **12** calendar months. It will start typically in February each year and end around the same time the year after.  The exact dates and timing might vary to accommodate Anuket CNTT releases and workshops.
 
 <a name="4.2.2"></a>
 ### 4.2.2 Representation
@@ -44,17 +44,17 @@ Any Workstream Leads or Co-Leads positions can be held by any Participant.
 <a name="4.2.3"></a>
 ### 4.2.3 Nomination
 
-- Any individual can nominate themselves or another participant for a given lead/co-lead position (the nominee must accept nomination if was nominate by someone else) as long as they agree to Anuket ToR.
+- Any individual can nominate themselves or another participant for a given lead/co-lead position (the nominee must accept nomination if was nominate by someone else) as long as they agree to Anuket CNTT ToR.
 - An individual can nominate themselves or another participant to one or more positions.
 
 <a name="4.2.4"></a>
 ### 4.2.4 Selection
 
-The process of nomination and selection is owned and managed by Anuket with help from LFN staff.
+The process of nomination and selection is owned and managed by Anuket CNTT with help from LFN staff.
 
 There will be a nomination window (typically around February each year) during which individuals can nominate others or nominate themselves for a position. The exact start and end date of the nomination window will be determined by Technical or Governance Committee Leads(depending on the nature of the Workstream).
 
-During the nomination period, Participants can send their nominations to a designated individual who will help in administering the process (from Anuket Governance team or LFN Staff). The details and email addresses of that individual will be confirmed at the begining of the process.
+During the nomination period, Participants can send their nominations to a designated individual who will help in administering the process (from Anuket CNTT Governance team or LFN Staff). The details and email addresses of that individual will be confirmed at the begining of the process.
 
 Once the nomination period ends, the selection process for the new leads and co-leads for a given workstream is as follows:
 
@@ -110,7 +110,7 @@ Please refer to [Org Structure](../chapters/chapter03.md#32-org-structure).
 <!-- 
 <a name="4.8"></a>
 ## 4.8 Tracking contributions
-There are few scenarios where contributions needs to be tracked (e.g. to maintain voting rights for individuals or organisations). Anuket will actively look at the following contribution metrics and leverage any available automated tooling for such purposes:
+There are few scenarios where contributions needs to be tracked (e.g. to maintain voting rights for individuals or organisations). Anuket CNTT will actively look at the following contribution metrics and leverage any available automated tooling for such purposes:
 - Meeting attendance and participating in dissuasions.
 - GitHub Contributions (Issue creation, PRs Creation, Comments, Reviews, and Approvals).
 - Marketing Activities such as (Whitepaper, Industry Event Talks, Webinars, etc).

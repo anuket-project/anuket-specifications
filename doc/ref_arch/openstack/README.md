@@ -1,4 +1,4 @@
-[<< Back](https://cntt-n.github.io/Anuket/doc/ref_arch/)
+[<< Back](https://cntt-n.github.io/Anuket CNTT/doc/ref_arch/)
 
 # OpenStack based Reference Architecture
 

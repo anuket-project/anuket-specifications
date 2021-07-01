@@ -377,7 +377,7 @@ The HW Infrastructure Layer is responsible for keeping the different Virtual Inf
 
 An SDN-Overlay control interface (here denoted SDNo) is responsible for managing the Virtual Infrastructure Layer virtual switching and/or routing as well as its encapsulation and its mapping onto the Underlay Networks.
 
-In cases where the VNF/CNF bypasses the Virtual Infrastructure Layer virtual switching and its encapsulation, as described above, the HW Infrastructure Layer must perform the encapsulation and mapping onto the Underlay Networking to ensure the Underlay Networking separation. This should be a prioritized capability in the SDNu control interface since Anuket currently allow exemptions for bypassing the virtual switching (e.g. through SR-IOV).
+In cases where the VNF/CNF bypasses the Virtual Infrastructure Layer virtual switching and its encapsulation, as described above, the HW Infrastructure Layer must perform the encapsulation and mapping onto the Underlay Networking to ensure the Underlay Networking separation. This should be a prioritized capability in the SDNu control interface since Anuket CNTT currently allow exemptions for bypassing the virtual switching (e.g. through SR-IOV).
 
 SDNo controllers can request Underlay Networking encapsulation and mapping to be done by signalling to an SDNu controller. There are however today no standardized way for this signalling and because of that there is a missing reference point and API description in this architecture.
 
@@ -648,7 +648,7 @@ The following diagram presents an example of the realization of the reference mo
 <p align="center"><b>Figure 3-15:</b> Reference model realization example</p>
 
 
-The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 3.5](https://github.com/cntt-n/Anuket/blob/master/doc/ref_model/chapters/chapter03.md#3.5) of this Reference Model document.
+The terms Container Infrastructure Service Instance and Container Infrastructure Service Manager should be understood as defined in ETSI GR NFV-IFA 029 V3.3.1 [4]. More detailed deployment examples can be found in [Section 3.5](https://github.com/cntt-n/Anuket CNTT/blob/master/doc/ref_model/chapters/chapter03.md#3.5) of this Reference Model document.
 
 <a name="3.8"></a>
 ## 3.8 Hardware Acceleration Abstraction
@@ -777,7 +777,7 @@ Based on Smart Switches, products exist for fully integrated edge and fabric sol
 <a name="3.8.9"></a>
 ### 3.8.9 Decoupling Applications from Infrastructure and Platform with Hardware Acceleration
 
-[Decoupling](https://github.com/cntt-n/Anuket/blob/master/doc/common/glossary.md#cloud-platform-abstraction-related-terminology) applications from hardware accelerator is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and their products, or if not available then through drivers specific to the vendor hardware device. Decoupling infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not available for target hardware accelerator, coupling one or limited number of software infrastructures is less of an issue compared to coupling multiple applications.
+[Decoupling](https://github.com/cntt-n/Anuket CNTT/blob/master/doc/common/glossary.md#cloud-platform-abstraction-related-terminology) applications from hardware accelerator is normally accomplished using drivers that, if available, are preferred with standardised interfaces across vendors and their products, or if not available then through drivers specific to the vendor hardware device. Decoupling infrastructure software from hardware accelerators is also preferred using standard interfaces. If those are not available for target hardware accelerator, coupling one or limited number of software infrastructures is less of an issue compared to coupling multiple applications.
 
 Taking advantage of RM and RA environments with common capabilities, applications can be developed and deployed more rapidly, providing more service agility and easier operations. The extent to which this can be achieved will depend on levels of decoupling between application and infrastructure or platform underneath the application:
 

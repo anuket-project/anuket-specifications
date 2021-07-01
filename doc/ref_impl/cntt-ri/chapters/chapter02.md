@@ -26,7 +26,7 @@
 <a name="2.2"></a>
 ## 2.2 Reference Architecture Requirement
 
-This is the reference implementation for OpenStack based Anuket RA. Please refer to [Anuket Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](https://github.com/cntt-n/Anuket/blob/master/doc/ref_arch/openstack/chapters/chapter02.md) for the details of RA requirement
+This is the reference implementation for OpenStack based Anuket CNTT RA. Please refer to [Anuket CNTT Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](https://github.com/cntt-n/Anuket CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter02.md) for the details of RA requirement
 
 The implementation should follow all the requirement identified in the RA chapter.
 

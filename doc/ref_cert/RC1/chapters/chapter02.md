@@ -41,14 +41,14 @@ All Terms utilized throughout this chapter are intended to align with CVC defini
 
 <a name="2.1"></a>
 ## 2.1 Introduction
-NFVI (Network Functions Virtualization Infrastructure) refers to the physical and virtual resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. Due to differentiation of API and under layer configuration and capability matrix, cross vendor VNF deployment on NFVI becomes hard to predict, and requires huge amount of cross vendor interoperability tests. With combined effort from operators and vendors, Anuket define RA and RM, to make sure to consolidate the under layer configuration, capability and API, so as to provide the upper layer VNF with a 'common cloud infrastructure'. Based on this, Anuket also provides RC for conformance test of SUT against RA & RM requirements. SUT passes the conformance test will be identified as NFVI that can fit into the common requirements.
+NFVI (Network Functions Virtualization Infrastructure) refers to the physical and virtual resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. Due to differentiation of API and under layer configuration and capability matrix, cross vendor VNF deployment on NFVI becomes hard to predict, and requires huge amount of cross vendor interoperability tests. With combined effort from operators and vendors, Anuket CNTT define RA and RM, to make sure to consolidate the under layer configuration, capability and API, so as to provide the upper layer VNF with a 'common cloud infrastructure'. Based on this, Anuket CNTT also provides RC for conformance test of SUT against RA & RM requirements. SUT passes the conformance test will be identified as NFVI that can fit into the common requirements.
 
-In the meantime, Anuket RC also provides conformance test for VNF. The intention is to make sure VNF that passes RC test cases can be deployed on any NFVI which also passes RC without any conformance and interoperability issue.
+In the meantime, Anuket CNTT RC also provides conformance test for VNF. The intention is to make sure VNF that passes RC test cases can be deployed on any NFVI which also passes RC without any conformance and interoperability issue.
 
 <a name="2.2"></a>
 ## 2.2 Methodology
-The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. Anuket recommends RA1 to be used as a reference architecture for NFVI conformance. This  would provide a set of standard interfaces to create resources on NFVI. Below step by step process illustrates the NFVI conformance methodology:
-* SUT (Anuket RI1 or commercial NFVI) is deployed on hardware for conformance test.
+The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. Anuket CNTT recommends RA1 to be used as a reference architecture for NFVI conformance. This  would provide a set of standard interfaces to create resources on NFVI. Below step by step process illustrates the NFVI conformance methodology:
+* SUT (Anuket CNTT RI1 or commercial NFVI) is deployed on hardware for conformance test.
 * A set of tests run on SUT to determine the SUT readiness for conformance process.
 * Golden KPIs are taken as a reference.
 * A set of tests are run on the SUT (target for conformance).
@@ -64,8 +64,8 @@ Conformance methodologies to be implemented, from a process perspective include:
 * Engineering package validations will be performed against targeted infrastructure/architecture.
 * Configuration settings/features/capabilities will be baseline.
 * Entrance Criteria Guidelines will be satisfied prior to RC test (i.e. Supplier needs to submit/agree/conform)
-  * Conform to Anuket RM
-  * Conform to Anuket RA
+  * Conform to Anuket CNTT RM
+  * Conform to Anuket CNTT RA
   * Submit standard documentation
   * Adhere to security compliance
 * Exit Criteria Guidelines will be satisfied prior to issuance of OPNFV compliance badges.
@@ -74,13 +74,13 @@ Conformance methodologies to be implemented, from a process perspective include:
 
 <a name="2.3"></a>
 ## 2.3 Conformance Strategy & Vehicle
-In order to begin the Conformance process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in Anuket RI. Once the target NFVI passes these tests, it would become a candidate for NFVI Conformance. If NFVI fails the tests, it will not be move to next workflow for Conformance. NFVI+VNF conformance consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of Anuket RM](../../../ref_model/chapters/chapter07.md).
+In order to begin the Conformance process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in Anuket CNTT RI. Once the target NFVI passes these tests, it would become a candidate for NFVI Conformance. If NFVI fails the tests, it will not be move to next workflow for Conformance. NFVI+VNF conformance consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of Anuket CNTT RM](../../../ref_model/chapters/chapter07.md).
 
 The three part conformance process includes NFVI Manifest conformance, Empirical Baseline measurements against targeted VNF families, and Candidate VNF validation. More specifically,
 * NFVI conformance: NFVI is the SUT, ensuring NFVI is compliant with specs of RM and RA accomplished with Manifest test
 * Empirical Validation with Reference VNF (Validation): NFVI is the SUT, ensuring NFVI runs with Golden VNFs and is instrumented to objectively validate resources through consumption and measurement
 * Candidate VNF Conformance (Validation & Performance): VNF is the SUT, ensuring VNFs operate with RM and RA leveraging VVP/CVP/VFN SDK Test Suites
-* Security: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks (Refer to Anuket Chapter 7 Security for additional test/verification details)
+* Security: Ensures NFVI+VNF is free from known security vulnerabilities, utilizing industry standard cyber security frameworks (Refer to Anuket CNTT Chapter 7 Security for additional test/verification details)
 Validations are performed against an Infrastructure Profile Catalog, VNF performance profile, and targeted VNF class or family for baseline measurements.
 
 The Infrastructure Profile Catalog contains the following attributes:
@@ -106,7 +106,7 @@ Different vendors have different types of VNFs to serve different use-cases. A V
 * Network intensive (N) profile offering predictable computing performance along with low latency and high networking throughput
 Similarly, different NFVI vendors may specialize in different hardware profiles and some may specialize in both VNFs and NFVI.
 
-To cater to different needs from multiple NFVI vendors, Anuket allows different types of NFVI Conformance based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
+To cater to different needs from multiple NFVI vendors, Anuket CNTT allows different types of NFVI Conformance based on their types of [profile](../../../ref_model/chapters/chapter02.md#2.3)
  * Certify Vendor NFVI Hardware solution: This allows for Conformance of only NFVI.
  * Certify Vendor NFVI Hardware and Software Solution: This allows for Conformance for NFVI running a particular VNF.
 
@@ -131,7 +131,7 @@ satisfy the following requirements as entry pass:
 * Design & Requirements
   * Design, Configuration, Features, SLAs, and Capability documentation
     complete
-  * Users stories / Adherence to Anuket Model principles and guidelines
+  * Users stories / Adherence to Anuket CNTT Model principles and guidelines
   * Chosen Reference Architecture matches the Architecture from the
     product catalog
 * Environment
@@ -141,7 +141,7 @@ satisfy the following requirements as entry pass:
   * All connectivity, network, image, VMs, delivered with successful pairwise
     tests
   * Lab instrumented for proper monitoring
-  * Lab needs to be setup according to RA1/RA2 as defined by Anuket and should be
+  * Lab needs to be setup according to RA1/RA2 as defined by Anuket CNTT and should be
     in the NFVI required state.
 * Planning & Delivery
   * Kickoff / Acceptance Criteria reviews performed
@@ -152,7 +152,7 @@ satisfy the following requirements as entry pass:
   * Images uploaded to tenant space
   * External system test data needs identified
   * Owners (NFVI, VNF, PTL, etc) documented
-  * Security Compliance Satisfied (Refer to Anuket Chapter XXXX Security for
+  * Security Compliance Satisfied (Refer to Anuket CNTT Chapter XXXX Security for
     additional tests, scans, and vulnerabilities validations)
 
 **Exit criteria**: NFVI Conformance testing should complete with following
@@ -167,7 +167,7 @@ exit criteria:
 ## 2.7 Framework Requirements
 
 The NFVI Conformance framework deals with the process of testing NFVI in below three areas:
-* Compliance: The NFVI needs to comply to Anuket RA1/RA2.
+* Compliance: The NFVI needs to comply to Anuket CNTT RA1/RA2.
 * Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
 * Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
@@ -181,7 +181,7 @@ The NFVI Conformance framework will be guided by the following core principles:
 - Alliance and execution of OVP flows and methodologies, which supports common structures for code, artifact generation and repository, Conformance criteria, etc.)
 -   Where possible, leveraging ONAP Network and Service Models, with identified VNF-specific parameters
 -   Utilizing Standard Conformance criteria.
--   Defining Anuket reference architecture (RA) as scenarios, and having all test cases for the RA be involved in OVP (could also be addressed in OVP as Anuket test)
+-   Defining Anuket CNTT reference architecture (RA) as scenarios, and having all test cases for the RA be involved in OVP (could also be addressed in OVP as Anuket CNTT test)
 -   Add test cases from operators, which operators already tested in their environment
 
 <a name="2.7.2"></a>
@@ -247,10 +247,10 @@ In addition to General Best Practices for NFVI Conformance, the following Qualit
 
 <a name="2.7.3"></a>
 ### 2.7.3 Badging
-**Defined**.  _Badging_ refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of Anuket NFVI upon demonstration the testing performed confirms:
+**Defined**.  _Badging_ refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of Anuket CNTT NFVI upon demonstration the testing performed confirms:
 
- - NFVI adheres to Anuket RA/RM requirements.
- - Anuket certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
+ - NFVI adheres to Anuket CNTT RA/RM requirements.
+ - Anuket CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
 
 The below figure shows the targeted badge for NFVI.
 
@@ -311,7 +311,7 @@ The compliance and Conformance program intends to validate four different types 
 
 * Resilience: Test cases covering this type of requirement measure specific resilience characteristics of the system under test as defined in the reference model, the corresponding reference architectures and in sections further below in this chapter.
 
-* Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to Anuket/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
+* Hardware configuration: Validation of the bare-metal hardware itself in terms of specs and configuration should be included in the scope of the compliance test suite eventually. This validation step ensures that the underlying hardware is correctly configured according to Anuket CNTT/OPNFV hardware specification (TODO: add reference to updated "Pharos specs"). The purpose of this validation is to act as a pre-flight check before performing the extensive compliance test suite. Moreover, by validating key hardware configuration aspects, it ensures comparability of performance-related test results.
 
 The extend to which these different types of requirements are included in the compliance and Conformance test suite is subject to the availability of test cases. See Section [NFVI Test Cases Requirements](chapter02.md#28-nfvi-test-cases-requirements).
 
@@ -335,9 +335,9 @@ TODO: what actually needs to be done here is to reference the table from chapter
 
 The LFN-based compliance and Conformance program comprises three distinct types of NFVI deployment and runtime environments:
 
- 1. A Anuket reference implementation deployed in the OPNFV CI/CD environment,
+ 1. A Anuket CNTT reference implementation deployed in the OPNFV CI/CD environment,
  2. A commercial NFVI product deployed in a vendor's internal development and testing environment, and
- 3. A Anuket reference implementation of a commercial NFVI product deployed in a 3rd party lab providing testing and Conformance services.
+ 3. A Anuket CNTT reference implementation of a commercial NFVI product deployed in a 3rd party lab providing testing and Conformance services.
 
 The test tooling, harnesses and corresponding test cases which are part of the compliance and Conformance test suite must be capable of running across all of those environments. This results in the following list of requirements:
 

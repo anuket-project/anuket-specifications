@@ -1,4 +1,4 @@
-[<< Back](https://cntt-n.github.io/Anuket/)
+[<< Back](https://cntt-n.github.io/Anuket CNTT/)
 # Roadmap
 
 ## Table of Contents
@@ -14,10 +14,10 @@
 
 <a name="1"></a>
 ## Overview
-* The activities of the Anuket community are articulated around [Projects](#project), [Milestones](#2.3) and [Releases](#release).
-* Anuket is embracing simultaneous delivery model, meaning that all contributing projects have to follow the cadence and intermediate milestones.
-* Each Anuket release is the only delivery vehicle and is common for all projects.
-* The Anuket current release plan is available [here](./release_notes/release_process.md).
+* The activities of the Anuket CNTT community are articulated around [Projects](#project), [Milestones](#2.3) and [Releases](#release).
+* Anuket CNTT is embracing simultaneous delivery model, meaning that all contributing projects have to follow the cadence and intermediate milestones.
+* Each Anuket CNTT release is the only delivery vehicle and is common for all projects.
+* The Anuket CNTT current release plan is available [here](./release_notes/release_process.md).
 
 
 <p align="center"><img src="./figures/Release Lifecycle.png" alt="scope" title="Milestones" width="100%"/></p>
@@ -54,7 +54,7 @@ A Version:
 <a name="6.2.1"></a>
 ### High Level Roadmap
 <p align="center"><img src="./figures/cntt_roadmap.png" alt="scope" title="Roadmap" width="100%"/></p>
-<p align="center"><b>Figure 2:</b> Anuket Technical Specification Roadmap</p>
+<p align="center"><b>Figure 2:</b> Anuket CNTT Technical Specification Roadmap</p>
 
 <a name="6.2.2"></a>
 ### Detailed Roadmap
@@ -64,7 +64,7 @@ Please refer to individual [release plans](./release_notes/) and features for de
 ### Detailed Milestones
 | Review | Milestone | Description | Activities | Comments |
 |--------|-----------|--------------|------------|---------|
-| Kick-Off | M0 | The goal of the release Kick-Off is to open the innovation platform for the intent to participate in the Anuket release. Release Kick-Off review takes place for each releases. | Name the Release and create appropriate labels in GitHub. ||
+| Kick-Off | M0 | The goal of the release Kick-Off is to open the innovation platform for the intent to participate in the Anuket CNTT release. Release Kick-Off review takes place for each releases. | Name the Release and create appropriate labels in GitHub. ||
 | Planning & Scoping | | The goal of the Release Planning & Scoping is to capture the initial set of features and functionality that should be part of the release along with prioritisation. | <ul><li> Identity a list of features and functionality including from the backlog will be developed and documented as part of the current release. N.B. Feature/functionality, errors etc. are logged in GitHub as Issues.</li>  <li> Identify what is in or out of scope for the release. </li> <li> Escalate any issues to the TSC. </li></ul>| |
 | Release Plan Review | M1 | The goal of the Release Planning review is to ensure the plan is complete, sufficient, and aligned with release milestones. All people resources are identified, documented and committed. | <ul><li> After the review cut-off date any major features & functionalities changes will be added to the backlog unless it is approved by the TSC to be added into the current scope of release. </li> <li> Bug fixes or any minor changes identified during the development will be allowed. </li> <li> For any other content changes to be approved by TSC. </ul></li>||
 | Scope Changes/Logging | |  Feature/Functionality changes to be part of current Release |<ul><li> Feature/Functionality changes (in Github) for the current scope of release. </li> <li> Project leads ensure feature/functionality are correctly labelled, mapped to the corresponding project and milestone, etc.</ul></li>  | |
@@ -82,31 +82,31 @@ Please refer to individual [release plans](./release_notes/) and features for de
 <a name="6.3"></a>
 ## Dependencies between various Workstreams
 
-The various workstreams in Anuket are 
+The various workstreams in Anuket CNTT are 
 - Reference Model (RM)
 - Reference Architecture (RA)
 - Reference Implementation (RI) 
 - Reference Conformance (RC)
 
-The workstream dependency relationship in simple terms, [Reference Conformance](../ref_cert) verifies and tests the [Reference Implementation](../ref_impl) which follows the requirements and architecture defined in the Anuket [Reference Architecture](../ref_arch) and Reference Architecture describes the high level system components and its interactions by adhering to the requirements and expectations set by the Anuket [Reference Model](../ref_model) which sets the standards for infrastructure abstraction, compliance and verification. 
+The workstream dependency relationship in simple terms, [Reference Conformance](../ref_cert) verifies and tests the [Reference Implementation](../ref_impl) which follows the requirements and architecture defined in the Anuket CNTT [Reference Architecture](../ref_arch) and Reference Architecture describes the high level system components and its interactions by adhering to the requirements and expectations set by the Anuket CNTT [Reference Model](../ref_model) which sets the standards for infrastructure abstraction, compliance and verification. 
 
 For the standard release stabilisation, On each release, All documents that are related to each other will have the same **main** version number as shown in the Figure 3.
 
-There are two different tracks in Anuket
+There are two different tracks in Anuket CNTT
 - Virtualized workloads, deployed on OpenStack
 - Containerized workloads, deployed on Kubernetes
 
 Each track follows the industry driven standards in the Reference Model as depicted in the below diagram.
 
-<p align="center"><img src="./figures/tech_ws_dependencies.png" alt="Anuket WS Dependencies" title="Anuket WS Dependencies
+<p align="center"><img src="./figures/tech_ws_dependencies.png" alt="Anuket CNTT WS Dependencies" title="Anuket CNTT WS Dependencies
 " width="100%"/>
- <p align="center"><b>Figure 3:</b> Anuket WS Dependencies</p>
+ <p align="center"><b>Figure 3:</b> Anuket CNTT WS Dependencies</p>
 
 
 <a name="6.4"></a>
 ## Dependencies with Industry Communities
 
-The Anuket is collaboratively working with other standard bodies and open source communities such as: 
+The Anuket CNTT is collaboratively working with other standard bodies and open source communities such as: 
 - OpenStack
 - OPNFV
 - ONAP
@@ -117,17 +117,17 @@ The Anuket is collaboratively working with other standard bodies and open source
 <a name="6.4.1"></a>
 ### Dependencies with OPNFV and OVP
 
-The OpenStack based work stream in Anuket community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read [Reference Implementation Chapter 01](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). 
+The OpenStack based work stream in Anuket CNTT community works closely with OPNFV by leveraging and evolving OPNFV continuous integration pipeline with automation installer and testing capabilities. The Reference Implementation (RI1) has dependencies with other industry communities like OPNFV as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3) and OVP as shown [here](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). For information on the relationship to other communities, please read [Reference Implementation Chapter 01](../ref_impl/cntt-ri/chapters/chapter01.md#1.3). 
 
 <p align="center"><img src="./figures/Relation_to_other_communities.png" alt="Relation to other communities" title="Relation to other communities" width="60%"/></p>
 <p align="center"><b>Figure 4:</b> Relation to other communities.</p>
 
 <p align="center"><img src="./figures/tech_roadmap_cad.png" alt="Relation to other communities" title="Relation to other communities" width="100%"/></p>
-<p align="center"><b>Figure 5:</b> Anuket Roadmap relation to OPNFV and OVP.</p>
+<p align="center"><b>Figure 5:</b> Anuket CNTT Roadmap relation to OPNFV and OVP.</p>
 
 <a name="6.4.2"></a>
 ### Dependencies with CNCF and OVP 2.0
 
 TODO: Placeholder for RI2 dependency diagram
 
-The Kubernetes based work stream in Anuket community works closely with CNCF by leveraging and evolving Kubernetes-based infrastructure and CNF continuous integration pipelines with automated installer and testing capabilities. The testing capabilities from the RC2 workstream will be used by OVP 2.0 for their badging program.
+The Kubernetes based work stream in Anuket CNTT community works closely with CNCF by leveraging and evolving Kubernetes-based infrastructure and CNF continuous integration pipelines with automated installer and testing capabilities. The testing capabilities from the RC2 workstream will be used by OVP 2.0 for their badging program.

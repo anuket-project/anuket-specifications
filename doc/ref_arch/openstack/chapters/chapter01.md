@@ -10,7 +10,7 @@
 * [1.3 Terminology](#1.3)
 * [1.4 Principles](#1.4)
   * [1.4.1 Exceptions](#1.4.1)
-* [1.5 Anuket OpenStack Reference Release](#1.5)
+* [1.5 Anuket CNTT OpenStack Reference Release](#1.5)
 * [1.6 Document Organisation](#1.6)
 
 
@@ -20,7 +20,7 @@ This Reference Architecture is focussed on OpenStack as the VIM chosen based on 
 
 <a name="1.1.1"></a>
 ## 1.1.1. Vision
-The OpenStack-based Anuket Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Anuket community.  The Reference Architecture document can be used by operators to deploy Anuket conformant infrastructure.  
+The OpenStack-based Anuket CNTT Reference Architecture will host NFV workloads, primarily VNFs, of interest to the Anuket CNTT community.  The Reference Architecture document can be used by operators to deploy Anuket CNTT conformant infrastructure.  
 
 <a name="1.2"></a>
 ## 1.2 Use Cases
@@ -57,14 +57,14 @@ This OpenStack Reference Architecture is organised around the three major Cloud 
 <a name="1.4.1"></a>
 ### 1.4.1 Exceptions
 
-Anuket specifies certain policies and [principles](../../../common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatabilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. Anuket specifies how to handle [non-conforming technologies](../../../common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](../../../gov/chapters/chapter09.md#942-exception-types)). 
+Anuket CNTT specifies certain policies and [principles](../../../common/chapter00.md#2.0) and strives to coalesce the industry towards conformant Cloud Infrastructure technologies and configurations. With the currently available technology options, incompatabilities, performance and operator constraints (including costs), these policies and principles may not always be achievable and, thus, require an exception process. Anuket CNTT specifies how to handle [non-conforming technologies](../../../common/policies.md#cntt-policies-for-managing-non-conforming-technologies). In general, non-coformance with policies is handled through a set of exceptions (please also see [Exception Types](../../../gov/chapters/chapter09.md#942-exception-types)). 
 
 
-The following sub-sections list the exceptions to the Anuket principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
+The following sub-sections list the exceptions to the Anuket CNTT principles and shall be updated whenever technology choices, versions and requirements change. The Exceptions have an associated period of validity and this period shall include time for transitioning.
 
 #### 1.4.1.1 Technology Exceptions
 
-The list of Technology Exceptions will be updated or removed when alternative technologies aligned with Anuket principles develop and mature.
+The list of Technology Exceptions will be updated or removed when alternative technologies aligned with Anuket CNTT principles develop and mature.
 
 | Ref |	Name |	Description | Valid Until | Rationale | Implication |
 |-----|------|-------------|-------------|-----------|-------------|
@@ -88,9 +88,9 @@ The Requirements Exceptions lists the Reference Model (RM) requirements and/or R
 | ra1.exc.req.001 |	Requirement |	xxx |	xxxxxxxxxxxxx. | | | |
 
 <a name="1.5"></a>
-## 1.5 Anuket OpenStack Reference Release
+## 1.5 Anuket CNTT OpenStack Reference Release
 
-This Reference Architecture document in its Kali release version conforms to the [OpenStack Train](https://docs.openstack.org/train/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Train release. For ease, this Anuket Reference Architecture document version can be referred to as "RA-1 OSTK Train."
+This Reference Architecture document in its Kali release version conforms to the [OpenStack Train](https://docs.openstack.org/train/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Train release. For ease, this Anuket CNTT Reference Architecture document version can be referred to as "RA-1 OSTK Train."
 
 <a name="1.6"></a>
 ## 1.6 Document Organisation

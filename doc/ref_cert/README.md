@@ -1,8 +1,8 @@
 [<< Back](../)
 
-# Anuket Reference Conformance (RC)
+# Anuket CNTT Reference Conformance (RC)
 
-## Anuket Reference Conformance (RC) Requirements and Testing Principles
+## Anuket CNTT Reference Conformance (RC) Requirements and Testing Principles
 
 The objective of each RC workstream is to provide an automated mechanism to validate either a network function (NF) or a cloud infrastructure against a standard set of requirements defined by the Reference Model (RM) and associated Reference Architecture (RA).  Through this validation mechanism, a provider of either NFs or cloud infrastructure will be able to test their conformance to the RM and RA.  This will ease the integration of NFs into operator environments that host compatible cloud infrastructures, thereby reducing cost, complexity, and time of integration.
 
@@ -21,7 +21,7 @@ If there is no clear traceability and strong links between these 3 components, t
 
 
 ### Requirement Principles
-Requirement Principles can be found in the [Anuket Principles](https://github.com/cntt-n/Anuket/blob/master/doc/common/chapter00.md#2.0)
+Requirement Principles can be found in the [Anuket CNTT Principles](https://github.com/cntt-n/Anuket CNTT/blob/master/doc/common/chapter00.md#2.0)
 
 ### Testing Principles
 * There must be traceability between test cases and requirement being validated
@@ -37,18 +37,18 @@ Requirement Principles can be found in the [Anuket Principles](https://github.co
 * Conformance specifications must define which tests must be executed in the given testing tools to achieve conformance
 * The conformance specifications must provide the mapping between tests and requirements to demonstrate traceability and coverage.
 
-## Anuket Reference Conformance (RC) Test Case Integration
+## Anuket CNTT Reference Conformance (RC) Test Case Integration
 
-All Anuket conformance suites must utilize the OPNFV test case integration
+All Anuket CNTT conformance suites must utilize the OPNFV test case integration
 toolchain to deliver overall integration, the same end user
 actions, and a unique test result format (e.g. OPNFV test result database)
 needed by the end users and the test case result verification programs (e.g.
 [OVP](https://www.opnfv.org/verification)). Historically, these rules were
 agreed by RC1 team and have been applied since.
-The OPNFV test integration toolchains will be used by all Anuket conformance suites.
+The OPNFV test integration toolchains will be used by all Anuket CNTT conformance suites.
 
 <a name="ri-rc-toolchaings"></a>
-## Anuket RI and RC toolchains
+## Anuket CNTT RI and RC toolchains
 
 [OPNFV](https://www.opnfv.org/) has built a complete CI/CD toolchain
 for continuously deploying and testing cloud infrastructure.
@@ -60,7 +60,7 @@ runs the OPNFV gating test cases and then publishes all test results in the
 and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
 
-The Anuket verification, validation, and conformance processes leverage
+The Anuket CNTT verification, validation, and conformance processes leverage
 existing OPNFV testing knowledge (projects) and experience (history) by utilising
 the OPNFV toolchain design already in-place. The RC toolchain
 only requires for the local deployment of the components instead of leveraging
@@ -83,7 +83,7 @@ via Functest.
 ## Test Case Integration
 
 To reach all goals (verification, validation, compliance, and conformance)
-expected by Anuket, all test cases must be delivered as
+expected by Anuket CNTT, all test cases must be delivered as
 [Docker containers](https://www.docker.com/) to simplify the CI toolchain setup including:
 - the common test case execution
 - the unified way to manage all the interactions with the CI/CD components and
@@ -96,7 +96,7 @@ operations when configuring the servers running the test cases and prevents
 conflicts between the test cases due to any dependencies.
 
 It's worth mentioning that current
-[test cases selected by Anuket](RC1/chapters/chapter03.md)
+[test cases selected by Anuket CNTT](RC1/chapters/chapter03.md)
 already leverage [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
@@ -114,11 +114,11 @@ as required by Xtesting.
 
 Here are the issues tracking the updates of the existing OPNFV test
 projects:
-- Bottlenecks: https://github.com/cntt-n/Anuket/issues/510
-- NFVBench: https://github.com/cntt-n/Anuket/issues/865
-- StorPerf: https://github.com/cntt-n/Anuket/issues/673
-- VSPERF: https://github.com/cntt-n/Anuket/issues/511
-- YardStick: https://github.com/cntt-n/Anuket/issues/509
+- Bottlenecks: https://github.com/cntt-n/Anuket CNTT/issues/510
+- NFVBench: https://github.com/cntt-n/Anuket CNTT/issues/865
+- StorPerf: https://github.com/cntt-n/Anuket CNTT/issues/673
+- VSPERF: https://github.com/cntt-n/Anuket CNTT/issues/511
+- YardStick: https://github.com/cntt-n/Anuket CNTT/issues/509
 
 <a name="testing-cookbooks"></a>
 ## Testing Cookbooks
@@ -134,19 +134,19 @@ such as all-in-one or centralized services.
 
 [Xtesting](https://xtesting.readthedocs.io/en/latest/) and
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) combined meet the
-Anuket requirements about verification, validation, compliance, and conformance:
+Anuket CNTT requirements about verification, validation, compliance, and conformance:
 - smoothly assemble multiple heterogeneous test cases
 - generate the Jenkins jobs in
   [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
-  verify Anuket RI
-- deploy local CI/CD toolchains everywhere to check compliance with Anuket
+  verify Anuket CNTT RI
+- deploy local CI/CD toolchains everywhere to check compliance with Anuket CNTT
 - [dump all test case results and logs](http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip)
   for third-party conformance review
 
 Here are a couple of publicly available playbooks :
 - [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/wallaby)
 - [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/wallaby)
-- [Anuket RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/jerma)
+- [Anuket CNTT RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/jerma)
 - [Kubernetes verification](https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.21)
 
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires

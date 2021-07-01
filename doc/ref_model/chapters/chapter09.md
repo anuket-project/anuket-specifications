@@ -235,7 +235,7 @@ auto.cicd.003 | The CI/CD pipelines should avoid scheduling tasks |
 auto.cicd.004 | The CI/CD pipeline is triggered by a new or updated software release being loaded into a repository | The software release cane be source code files, configuration files, images, manifests.<br>Operators may support a single or multiple repositories and may, thus, specify which repository is to be used for these release.<br>An example, of an open source repository is the CNCF Harbor (https://goharbor.io/)
 auto.cicd.005 | The CI pipeline must scan source code and manifests to validate for compliance with design and coding best practices. |
 auto.cicd.006 | The CI pipeline must support build and packaging of images and deployment manifests from source code and configuration files. |
-auto.cicd.007 | The CI pipeline must scan images and manifests to validate for compliance with security requirements.  | See section 7.9 (https://github.com/cntt-n/Anuket/blob/master/doc/ref_model/chapters/chapter07.md#79-consolidated-security-requirements).<br>Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
+auto.cicd.007 | The CI pipeline must scan images and manifests to validate for compliance with security requirements.  | See section 7.9 (https://github.com/cntt-n/Anuket CNTT/blob/master/doc/ref_model/chapters/chapter07.md#79-consolidated-security-requirements).<br>Examples of such security requirements include only ingesting images, source code, configuration files, etc. only form trusted sources.
 auto.cicd.008 | The CI pipeline must validate images and manifests | Example, different tests
 auto.cicd.009 | The CI pipeline must validate with all hardware offload permutations and without hardware offload |
 auto.cicd.010 | The CI pipeline must promote validated images and manifests to be deployable. | Example, promote from a development repository to a production repository
@@ -279,8 +279,8 @@ design.cicd.005 | The pipeline must execute all relevant Reference Conformance s
 design.cicd.006 | Software vendors/providers must utilise operator provided CI/CD tools                         |          |
 design.cicd.007 | All jobs must be packaged as containers                                                       |          |
 design.cicd.008 | All jobs must leverage a common execution to allow templating all deployment and test steps   |          |
-design.cicd.009 | The deployment jobs must publish all outputs as artefacts in a specified format               | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
-design.cicd.010 | The test jobs must pull all inputs as artefacts in a specified format                         | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket shall specify formats in RC |
+design.cicd.009 | The deployment jobs must publish all outputs as artefacts in a specified format               | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket CNTT shall specify formats in RC |
+design.cicd.010 | The test jobs must pull all inputs as artefacts in a specified format                         | For example, OpenStack RC, kubeconfig, yaml, etc. Anuket CNTT shall specify formats in RC |
 design.cicd.011 | The test jobs must conform with the Reference Conformance test case integration requirements  |          |
 
 <p align="center"><b>Table 9-5:</b> CI/CD Design</p>

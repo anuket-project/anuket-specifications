@@ -1,5 +1,5 @@
 [<< Back](../)
-# Anuket Releases
+# Anuket CNTT Releases
 
 ## Content
 * [Release Process](./release_process.md)

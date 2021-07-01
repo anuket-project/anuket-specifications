@@ -1,4 +1,4 @@
-# Anuket Vendor Implementation - VI
+# Anuket CNTT Vendor Implementation - VI
 
 ## Vendor Name and contact details
 Vendor XX

@@ -26,10 +26,10 @@
 
 ## 3.1 Introduction
 
-The Anuket Kubernetes Reference Architecture (RA) is intended to be an industry
+The Anuket CNTT Kubernetes Reference Architecture (RA) is intended to be an industry
 standard independent Kubernetes reference architecture that is not tied to any
 specific offering or distribution. No vendor-specific enhancements are required
-in order to achieve conformance to the principles of Anuket specifications; conformance is achieved by
+in order to achieve conformance to the principles of Anuket CNTT specifications; conformance is achieved by
 using upstream components or features that are developed by the open source
 community. This allows operators to have a common Kubernetes-based architecture
 that supports any conformant VNF or CNF deployed on it to operate as expected.
@@ -41,7 +41,7 @@ Kubernetes is already a well documented and widely deployed Open Source project
 managed by the Cloud Native Computing Foundation (CNCF). Full documentation of
 the Kubernetes code and project can be found at
 [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/). The
-following chapters will only describe the specific features required by the Anuket
+following chapters will only describe the specific features required by the Anuket CNTT
 Reference Architecture, and how they would be expected to be implemented. For
 any information related to standard Kubernetes features and capabilities, refer
 back to the standard Kubernetes documentation.
@@ -380,7 +380,7 @@ architecture.
 <p align="center"><b>Figure 3-3:</b> Kubernetes Networking Architecture</p>
 
 <!--The above diagram is maintained here:
-https://wiki.lfnetworking.org/display/LN/Anuket+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
+https://wiki.lfnetworking.org/display/LN/Anuket CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
 
 There are a number of different methods involved in managing, configuring and
 consuming networking resources in Kubernetes, including:
@@ -412,7 +412,7 @@ hand, the low latency, high throughput networks used for handling the user plane
 traffic require the capability to use a user space networking technology.
 
 > Note: An infrastructure can provide the possibility to use SR-IOV with DPDK as
-an additional feature and still be conformant with Anuket.
+an additional feature and still be conformant with Anuket CNTT.
 
 > Editors note: The possibility to SR-IOV for DPDK is under discussion.
 

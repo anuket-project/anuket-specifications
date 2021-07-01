@@ -396,7 +396,7 @@ Octavia supports provider drivers which allows third-party load balancing driver
 #### 4.2.3.4. Neutron Extensions
 OpenStack Neutron is an extensible framework that allows incorporation through plugins and API Extensions. API Extensions provides a method for introducing new functionality and vendor specific capabilities. Neutron plugins support new or vendor-specific functionality. Extensions also allow specifying new resources or extensions to existing resources and the actions on these resources.  Plugins implement these resources and actions.
 
-Anuket Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
+Anuket CNTT Reference Architecture support the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
 Every Neutron plugin needs to implement a minimum set of common [methods (actions for Train release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension.
 
@@ -428,9 +428,9 @@ Storage systems are available from multiple vendors and can also utilize commodi
 
 The document also includes a matrix for a number of proprietary drivers and some of the optional functions that these drivers support. This matrix is a handy tool to select storage backends that have the optional storage functions needed by the cloud operator. The cloud workload storage requirements helps determine the backends that should be deployed by the cloud operator.   The common storage backend attachment methods include iSCSI, NFS, local disk, etc. and the matrix list the supported methods for each of the vendor drivers. The OpenStack Cinder [Available Drivers]( https://docs.openstack.org/cinder/latest/drivers.html) documentation provides a list of all OpenStack compatible drivers and their configuration options.
 
-The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including Anuket required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by Anuket including managing volumes, snapshots, multi-storage backends, migrate volumes, etc.
+The [Cinder Configuration]( https://docs.openstack.org/cinder/latest/configuration/index.html) document provides information on how to configure cinder including Anuket CNTT required capabilities for volume encryption, Policy configuration, quotas, etc. The [Cinder Administration]( https://docs.openstack.org/cinder/latest/admin/index.html) document provides information on the capabilities required by Anuket CNTT including managing volumes, snapshots, multi-storage backends, migrate volumes, etc.
 
-[Ceph](https://ceph.io/) is the default Anuket Reference Architecture storage backend and is discussed below.
+[Ceph](https://ceph.io/) is the default Anuket CNTT Reference Architecture storage backend and is discussed below.
 
 #### 4.2.4.1. Ceph Storage Cluster
 

@@ -13,7 +13,7 @@
 
 This chapter presents a consolidated set of OpenStack Service APIs corresponding to the ETSI NFV Nf-Vi, Vi-Vnfm and Or-Vi interfaces.
 The OpenStack Train version is used as the baseline for these APIs and CLIs in this Reference Architecture (RA-1) version. Any Cloud Infrastructure + VIM reference
-implementations that **get certified by RC** can be considered as Anuket RA Conformant.
+implementations that **get certified by RC** can be considered as Anuket CNTT RA Conformant.
 
 The Chapter presents the APIs for the core OpenStack services defined in Chapter 3 and a
 consolidated view of these and other APIs that are of interest.
@@ -24,8 +24,8 @@ an "API version" is associated to each OpenStack service.
 In addition to major API versions, some OpenStack services (Nova, Glance, Keystone, Cinder...) support microversions.
 The microversions allow to introduce new features over time.
 In this chapter, the **major version** and **microversion** are specified per service.
-The mentioned microversion is the minimal microversion that supports the features requested for Anuket.
-For the purpose of conformance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for Anuket compliant implementation.
+The mentioned microversion is the minimal microversion that supports the features requested for Anuket CNTT.
+For the purpose of conformance tests, this chapter also identifies the set of the features, offered by a service, that are mandatory for Anuket CNTT compliant implementation.
 
 <a name="5.2"></a>
 ## 5.2. Core OpenStack Services APIs

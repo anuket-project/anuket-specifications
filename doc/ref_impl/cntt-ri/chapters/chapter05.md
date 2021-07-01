@@ -268,4 +268,4 @@ network device model will be referenced by network device.
 <a name="5.4.1"></a>
 ### 5.4.1 HDV original collection.
 
-[Anuket Hardware Delivery Validation (01-2020 DDF)](https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908)
+[Anuket CNTT Hardware Delivery Validation (01-2020 DDF)](https://wiki.lfnetworking.org/pages/viewpage.action?pageId=27525908)

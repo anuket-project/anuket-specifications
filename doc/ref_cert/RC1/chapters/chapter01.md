@@ -20,7 +20,7 @@
 
 ## Synopsis
 
-Ensure an implementation of the Anuket Reference Architecture (RA), such as the Reference Implementation (RI), meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RC.
+Ensure an implementation of the Anuket CNTT Reference Architecture (RA), such as the Reference Implementation (RI), meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RC.
 
 For the purpose of this chapter, NFVI+VNF testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
 
@@ -44,7 +44,7 @@ In summary, NFVI+VNF **Conformance** testing will be performed for **Verificatio
 This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of RM and RA. Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
 
 **Objective**<br>
-Perform NFVI+VNF Verification and Validations using Anuket reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+Perform NFVI+VNF Verification and Validations using Anuket CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 **Test Methodology**
 - Verification test to make sure if the OpenStack services have been deployed and configured correctly
@@ -58,7 +58,7 @@ The three step methodology described above of verifying Manifest compliance, exe
 <a name="1.1.1"></a>
 ### 1.1.1 Terminology
 
-Terminology in this document will follow [Anuket Terminology](../../../common/glossary.md).
+Terminology in this document will follow [Anuket CNTT Terminology](../../../common/glossary.md).
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -111,13 +111,13 @@ The following best practices have been adopted to ensure verification and valida
 * Integration with OPNFV Upstream Projects and OVP flow (code, docs, cert criteria, etc.)
 * Leverage Network and Service Models, with identified VNF-specific parameters
 * Standardized conformance criteria
-* Define Anuket RA as scenarios, and have all test cases for the RA be involved in OVP (could also be addressed in OVP as Anuket test)
+* Define Anuket CNTT RA as scenarios, and have all test cases for the RA be involved in OVP (could also be addressed in OVP as Anuket CNTT test)
 * Add test cases from operators, which operators already tested in their environment
 
 <a name="1.6"></a>
 ## 1.6 Verification methodologies
 
-Perform VNF interoperability verifications against an implementation of Anuket reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+Perform VNF interoperability verifications against an implementation of Anuket CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 3rd Party test platforms may also be leveraged, if desired.
 

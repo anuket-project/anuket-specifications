@@ -18,7 +18,7 @@ Note that each requirement may have one or more test cases associated with it.
 ## 4.2 Selection Criteria
 Test cases, tools and their dependencies must be open source. The test cases (or test suite with the test case) as well as the environment needed to run the test should be reproducible by any party following publicly available documentation.
 
-Examples of initiatives (having testing tools, test suites, etc) with test cases which could be used include K8s Conformance, K8s e2e, Sonobuoy, Anuket Functest, CNF Conformance.
+Examples of initiatives (having testing tools, test suites, etc) with test cases which could be used include K8s Conformance, K8s e2e, Sonobuoy, Anuket CNTT Functest, CNF Conformance.
 
 <a name="4.3"></a>
 ## 4.3 Traceability Matrix
@@ -27,7 +27,7 @@ The following is a Requirements Traceability Matrix (RTM) mapping Test Case, and
 
 <a name="4.3.1"></a>
 ### 4.3.1 Test Case Traceability to RA2 Requirements
-This section focuses on the test case covering requirements in [RA-2 Chapter 4.9](https://github.com/cntt-n/Anuket/blob/master/doc/ref_arch/kubernetes/chapters/chapter04.md#49-kubernetes-workloads) for Kubernetes workloads.
+This section focuses on the test case covering requirements in [RA-2 Chapter 4.9](https://github.com/cntt-n/Anuket CNTT/blob/master/doc/ref_arch/kubernetes/chapters/chapter04.md#49-kubernetes-workloads) for Kubernetes workloads.
 
 | RM/RA Ref | High-level test definition | Test name and project | Priority |
 |---|---|---|---|

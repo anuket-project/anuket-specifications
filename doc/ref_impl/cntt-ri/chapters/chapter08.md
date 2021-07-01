@@ -24,7 +24,7 @@
 
 The purpose of this chapter is to establish an operational run-book containing sequences and steps explaining, with enough detail, how to install a Reference Implementation (RI).
 
-The term Run-Book is synonymous with "Cookbook", and either term will be used interchangeably to indicate that if a user follows the steps or procedures in the "book", the expected result will be an RI identical to the lab utilized by Anuket for the instantiation and certification of RI-1.
+The term Run-Book is synonymous with "Cookbook", and either term will be used interchangeably to indicate that if a user follows the steps or procedures in the "book", the expected result will be an RI identical to the lab utilized by Anuket CNTT for the instantiation and certification of RI-1.
 
 It is assumed that the reader of this chapter has the skill set to install Common Cloud Infrastructure on their own labs.
 
@@ -365,8 +365,8 @@ Start pulling in content from: https://wiki.opnfv.org/display/AIR/Airship+Instal
 <a name="8.6"></a>
 ## 8.6 Deployment Validations
 
-Anuket RI should be both verified as any OpenStack deployment and compliant with
-the Anuket requirements which induces that the validation is composed of:
+Anuket CNTT RI should be both verified as any OpenStack deployment and compliant with
+the Anuket CNTT requirements which induces that the validation is composed of:
 - the basic test cases as asked by the OPNFV release criteria
 - the functional tests checking all OpenStack services and capabilities even if
   they are considered as optional in
@@ -376,7 +376,7 @@ the Anuket requirements which induces that the validation is composed of:
 
 Like the
 [classical Functest containers](https://functest.readthedocs.io/en/stable-hunter/testing/user/configguide/configguide.html),
-all current test cases currently selected by Anuket leverages on
+all current test cases currently selected by Anuket CNTT leverages on
 [Xtesting](https://xtesting.readthedocs.io/en/latest/) which provides the
 common test case execution and the unified way to manage all the interactions
 with the CI/CD components and with third-parties. Then all test jobs needed by
@@ -409,7 +409,7 @@ deactivate
 rm -rf functest-src functest
 ```
 
-To deploy the CI toolchain running Anuket Compliance:
+To deploy the CI toolchain running Anuket CNTT Compliance:
 ```bash
 virtualenv functest --system-site-packages
 . functest/bin/activate
@@ -493,18 +493,18 @@ the following test cases are executed at the end.
 <a name="8.7"></a>
 ## 8.7 Development Validations
 
-Anuket RI jobs must verify all patches before merge as defined in the best open
+Anuket CNTT RI jobs must verify all patches before merge as defined in the best open
 source practices (see
 [OpenStack Gates](https://docs.openstack.org/infra/system-config/devstack-gate.html)
 or [Functest Gates](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/))
-to achieve the stability needed by Anuket. Then the deployment validations
+to achieve the stability needed by Anuket CNTT. Then the deployment validations
 previously detailed must be also applied for every patch proposed in RI and
 all changes published in [Gerrit](https://gerrit.opnfv.org/) must be
 automatically voted -1 by Jenkins in case of failures.
 
 Only the following test cases must pass as a temporarily bypass in
 [RI gates](https://build.opnfv.org/ci/view/airship/job/airship-latest-gate/) to
-allow merging the next patches. At the time writing, Anuket RI is not compliant
+allow merging the next patches. At the time writing, Anuket CNTT RI is not compliant
 with [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 and then a part of the containers selected in [RC1 TC Requirements](../../../ref_cert/RC1/chapters/chapter03.md)
 cannot be executed successfully.
@@ -536,7 +536,7 @@ All OPNFV test cases part of RI development validation must follow the same
 principles to prevent falsy testing and then to avoid blocking the RI gates.
 It's worth mentioning that Functest already part of RI development validation
 conform to these best practices by running all test cases vs SUTs
-[currently Anuket compliant](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/).
+[currently Anuket CNTT compliant](https://build.opnfv.org/ci/view/functest/job/functest-hunter-gate/142/).
 
 <a name="8.8"></a>
 ## 8.8 CICD Tool Chain (use of, process, and scripts)]
