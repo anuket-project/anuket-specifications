@@ -1,5 +1,5 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
-# CNTT Use Cases
+[<< Back](https://cntt-n.github.io/Anuket/)
+# Anuket Use Cases
 
 ## Table of Contents
  * [Edge](#5.1)
@@ -27,14 +27,14 @@ With respect to monetization, Edge will help DSPs with their Return on investmen
 <a name="5.1.2"></a>
 ### Objective
 
-Based on CNTT's goal and purpose is to develop a robust cloud infrastructure model and define a limited set of discrete architectures built on that model that can be tested and validated for use across the entire member community.
+Based on Anuket's goal and purpose is to develop a robust cloud infrastructure model and define a limited set of discrete architectures built on that model that can be tested and validated for use across the entire member community.
 
-Extend CNTT's Scope beyond the Regional and National Data Center cloud infrastructures to the Edge. The Edge is a disruptive use case where CNTT can add value especially as there are a number of scattered initiatives under various Standard Development Organisations (SDO) and open source communities."
+Extend Anuket's Scope beyond the Regional and National Data Center cloud infrastructures to the Edge. The Edge is a disruptive use case where Anuket can add value especially as there are a number of scattered initiatives under various Standard Development Organisations (SDO) and open source communities."
 
 Edge Stream related activities :
 
 - To harmonize the work under Standard Development bodies or Open source communities
-- To build Common Cloud infrastructure based on CNTT principles that can be consumed by any operator
+- To build Common Cloud infrastructure based on Anuket principles that can be consumed by any operator
 - To build Cloud infrastructure that can scale over hundreds of thousands of nodes and cover the Edge Telco use cases that can help operators to monetize the NFV/SDN journey
 - Modify the existing RM and RA-s so that they are aligned with the edge requirements
 
@@ -43,7 +43,7 @@ Edge Stream related activities :
 
 All Edge requirement gaps under Reference Model , Reference Architecture 01 (OpenStack), Reference Architecture 02 (Kubernetes) will be identified and fulfilled.
 
-Edge scope under CNTT will cover :
+Edge scope under Anuket will cover :
 
 -	Define Edge locations based on use case 
 -	Define guidelines around factors that can affect the edge, for example, WAN latency based on telco use cases.
@@ -61,11 +61,11 @@ Out of Scope
 <a name="5.1.4"></a>
 ### Principles
 
-This section introduces some principles that should be followed during the definition and development of Edge scope to be covered in CNTT Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
+This section introduces some principles that should be followed during the definition and development of Edge scope to be covered in Anuket Reference Model, Reference Architectures, Reference Implementations and Reference Conformance test suites.
 
-A main principle is that CNTT Edge will not re-define a new branch of CNTT and target to avoid re-inventing what other organizations already have . CNTT Edge following the same principles that defined in existing [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles), the [Reference Architecture Principles](../ref_arch#principles) and the Network Principles.
+A main principle is that Anuket Edge will not re-define a new branch of Anuket and target to avoid re-inventing what other organizations already have . Anuket Edge following the same principles that defined in existing [Reference Model Principles](../ref_model/chapters/chapter01.md#13-principles), the [Reference Architecture Principles](../ref_arch#principles) and the Network Principles.
 
-CNTT believes that Edge computing is unique in terms of infrastructure requirements, implementation and deployment, and that's why there some additional principles specific to the edge need to be defined.
+Anuket believes that Edge computing is unique in terms of infrastructure requirements, implementation and deployment, and that's why there some additional principles specific to the edge need to be defined.
 
 -	Distribution into many small sites
 -  Deployment automation

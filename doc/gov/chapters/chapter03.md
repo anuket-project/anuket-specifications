@@ -20,7 +20,7 @@
 
 <a name="3.4"></a>
 ## 3.4 New Work Streams Policy
-One of CNTT's core principals is to stay current with new and emerging trends in the industry, including how to integrate new technologies and processes. As things change over time, there will be the need to create new Work Streams within the CNTT organizational framework. The following is the CNTT policy for creating a new Work Stream:
+One of Anuket's core principals is to stay current with new and emerging trends in the industry, including how to integrate new technologies and processes. As things change over time, there will be the need to create new Work Streams within the Anuket organizational framework. The following is the Anuket policy for creating a new Work Stream:
 
 - The first step is to create a new Work Stream **Proposal**.  It should contain the following information:
   - The nature of the Work Stream proposed (Architecture, Implementation, Certification, else).

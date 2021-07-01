@@ -20,7 +20,7 @@
 
 The VNF profile is used to describe every workload running on top of Cloud Infrastructure. The Cloud Infrastructure SW profile is used to describe the list of features provided by the hypervisor and host OS.
 
-The CNTT Reference Model will be referenced as **RM** to avoid long and duplicated reference titles.
+The Anuket Reference Model will be referenced as **RM** to avoid long and duplicated reference titles.
 
 <a name="3.2"></a>
 ## 3.2 VNF profile
@@ -72,7 +72,7 @@ Every VNF instance must declare its profiles explicitly, which can be used by VI
 |Virtual compute resource (vCPU) utilization | Y | Y |
 |External storage capacity | N | N |
 
-> Open Point 1: Does ONAP have some relevant spec or VNF declaration schema so that CNTT can re-use/revise to cover what we need ? Or define a new one ?
+> Open Point 1: Does ONAP have some relevant spec or VNF declaration schema so that Anuket can re-use/revise to cover what we need ? Or define a new one ?
 
 > Open Point 2: What principles should be followed if some the pre-define VNF profile items does not match what actual requires ? How to adjust, "ceiling", "floor", "customise" ?
 

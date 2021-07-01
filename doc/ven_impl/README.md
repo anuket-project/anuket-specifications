@@ -1,4 +1,4 @@
-# Cloud iNfrastructure Telco Task Force (CNTT)
+# Cloud iNfrastructure Telco Task Force (Anuket)
 
 ## Table of Contents
 * [Vendor Implementation Template](ven_template)

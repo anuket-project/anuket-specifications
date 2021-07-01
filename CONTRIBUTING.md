@@ -11,7 +11,7 @@
 
 <a name="permissions"></a>
 ### Permission levels
-There are different permissions (levels) available for contributing into CNTT:
+There are different permissions (levels) available for contributing into Anuket:
 - **Outside Collaborators**: This includes general public. 
   - Outside collaborators can create issues and add comments to issues and Pull Requests.
 - **Read, Triage, Write, and Maintain** Permissions, which are explained in [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization), will be assigned as follows:
@@ -22,7 +22,7 @@ There are different permissions (levels) available for contributing into CNTT:
 
 <a name="labels"></a>
 ### Labels
-Every Issue and PR should be tagged with one or more of the following labels to indicate their status and for the automation pipelines to apply the correct CNTT processes.
+Every Issue and PR should be tagged with one or more of the following labels to indicate their status and for the automation pipelines to apply the correct Anuket processes.
 
   - **Backlog**: The Issue will be addressed in future releases..
   - **Major/Minor**: The Issue or PR concerns a major or minor change.. 
@@ -109,7 +109,7 @@ Any Pull Requests that are labeled as "**Unresolved**" will be discussed during 
 
 
 <!--
-* [Contribution Guidelines](https://github.com/cntt-n/CNTT/wiki/Contribution-Guidelines)
-* [Approval Process](https://github.com/cntt-n/CNTT/wiki/Approval-Process) 
+* [Contribution Guidelines](https://github.com/cntt-n/Anuket/wiki/Contribution-Guidelines)
+* [Approval Process](https://github.com/cntt-n/Anuket/wiki/Approval-Process) 
 -->
   

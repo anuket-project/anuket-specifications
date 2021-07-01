@@ -10,7 +10,7 @@
 <a name="A.1"></a>
 ## A.1 Goals
 This Appendix has two goals:
-1. Provide guidance to VNF or more generally Application vendors on how to consume CNTT Reference Model and Architectures
+1. Provide guidance to VNF or more generally Application vendors on how to consume Anuket Reference Model and Architectures
 2. Provide usable definitions of maturity levels for VNF software architecture between Physical-to-Virtual migration and “Cloud Native”.
 
 The goal is not to be prescriptive on how to re-architect existing or architect new applications but rather staying within scope of focusing on interface and interaction between applications and platform.

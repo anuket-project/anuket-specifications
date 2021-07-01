@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 3. Cloud Infrastructure Test Cases and Traceability to CNTT Requirements
+# 3. Cloud Infrastructure Test Cases and Traceability to Anuket Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -70,7 +70,7 @@ and backends selected in the different Gate jobs. The classical
 [Functest containers](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314)
 conform to this model which also fits the heterogeneous user deployments.
 
-From a CNTT Compliance state point, the capabilities are well described in
+From a Anuket Compliance state point, the capabilities are well described in
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which allows tuning the test configurations and the test lists to avoid
 skipping any test. It results that all tests covering optional capabilities and
@@ -78,7 +78,7 @@ all upstream skipped tests due to known bugs are not executed. All remaining
 tests must be executed and must pass successfully.
 
 New [Functest containers](https://lists.opnfv.org/g/opnfv-tsc/message/5717)
-have been proposed for CNTT Compliance which simply override the default test
+have been proposed for Anuket Compliance which simply override the default test
 configurations and the default test lists. Any optional capability or services
 (e.g. Barbican) can be still verified by the classical Functest containers.
 
@@ -88,7 +88,7 @@ They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
 According to Jerma, the following software versions are considered here to
-verify OpenStack Train selected by CNTT:
+verify OpenStack Train selected by Anuket:
 
 | software                | version     |
 |-------------------------|-------------|
@@ -107,7 +107,7 @@ Keystone API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [keystone-tempest-plugin](https://opendev.org/openstack/keystone-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -123,7 +123,7 @@ the following test names must not be executed:
 Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.keystone
 - KeystoneBasic.add_and_remove_user_role
 - KeystoneBasic.create_add_and_list_user_roles
@@ -141,7 +141,7 @@ Here are the mainline tasks integrated in
 
 Glance API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -154,7 +154,7 @@ the following test names must not be executed:
 Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_glance
 - GlanceImages.create_and_delete_image
 - GlanceImages.create_and_list_image
@@ -167,7 +167,7 @@ Cinder API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [cinder-tempest-plugin](https://opendev.org/openstack/cinder-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -188,7 +188,7 @@ the following test names must not be executed:
 Cinder API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_cinder
 - CinderVolumes.create_and_delete_snapshot
 - CinderVolumes.create_and_delete_volume
@@ -205,7 +205,7 @@ Here are the mainline tasks integrated in
 
 Swift API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -219,7 +219,7 @@ the following test names must not be executed:
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - SwiftObjects.create_container_and_object_then_list_objects
 - SwiftObjects.list_objects_in_containers
 - SwiftObjects.create_container_and_object_then_download_object
@@ -232,7 +232,7 @@ Neutron API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) and
 [neutron-tempest-plugin](https://opendev.org/openstack/neutron-tempest-plugin)
 as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -293,7 +293,7 @@ the following test names must not be executed:
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_neutron
 - NeutronNetworks.create_and_delete_networks
 - NeutronNetworks.create_and_delete_ports
@@ -312,7 +312,7 @@ Here are the mainline tasks integrated in
 
 Nova API is covered in the OpenStack Gates via
 [Tempest](https://opendev.org/openstack/tempest) as integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma).
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -363,7 +363,7 @@ the following test names must not be executed:
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_nova
 - NovaServers.boot_and_live_migrate_server
 - NovaServers.boot_server_attach_created_volume_and_live_migrate
@@ -382,7 +382,7 @@ Here are the mainline tasks integrated in
 Heat API is covered in the OpenStack Gates via
 [heat-tempest-plugin](https://opendev.org/openstack/heat-tempest-plugin) as
 integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma)
 
 According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
@@ -404,7 +404,7 @@ the following test names must not be executed:
 Heat API is also covered by [Rally](https://opendev.org/openstack/rally).
 
 Here are the mainline tasks integrated in
-[Functest Smoke CNTT](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
+[Functest Smoke Anuket](https://git.opnfv.org/functest/tree/docker/smoke-cntt/testcases.yaml?h=stable%2Fjerma):
 - Authenticate.validate_heat
 - HeatStacks.create_update_delete_stack
 - HeatStacks.create_check_delete_stack
@@ -425,7 +425,7 @@ in [Functest Healthcheck](https://git.opnfv.org/functest/tree/docker/healthcheck
 to perform OpenStack API benchmarking.
 
 Here are the Rally-based test cases proposed by
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Benchmarking Anuket](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 - [rally_full](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_full_cntt-run-61/rally_full_cntt/rally_full_cntt.html):
   Functest scenarios iterating 10 times the mainline Rally scenarios
 - [rally_jobs](http://artifacts.opnfv.org/functest/QQFD8QDOLI20/functest-opnfv-functest-benchmarking-cntt-jerma-rally_jobs_cntt-run-60/rally_jobs_cntt/rally_jobs_cntt.html):
@@ -435,7 +435,7 @@ At the time of writing, no KPI is defined in
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which would have asked for an update of the default SLA (maximum failure rate
 of 0%) proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Benchmarking Anuket](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 
 #### 3.3.6.1 Identity - Keystone
 
@@ -615,7 +615,7 @@ of 0%) proposed in
 <a name="3.3.7"></a>
 ### 3.3.7 Dataplane benchmarking
 
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Benchmarking Anuket](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 offers two benchmarking dataplane test cases leveraging on:
 - [VMTP](http://vmtp.readthedocs.io/en/latest)
 - [Shaker](http://pyshaker.readthedocs.io/en/latest/)
@@ -631,9 +631,9 @@ instances and networks in different topologies.
 [Shaker](http://pyshaker.readthedocs.io/en/latest/) scenario specifies the
 deployment and list of tests to execute.
 
-At the time of writing, no KPI is defined in CNTT chapters which would have
+At the time of writing, no KPI is defined in Anuket chapters which would have
 asked for an update of the default SLA proposed in
-[Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
+[Functest Benchmarking Anuket](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fjerma)
 
 On top of this dataplane benchmarking described in VMTP & Shaker, we need to integrate testing as described in [ETSI GS NFV-TST 009: Specification of Networking Benchmarks and Measurement Methods for NFVI](https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/009/03.01.01_60/gs_NFV-TST009v030101p.pdf). This type of testing is better suited to measure the networking capabilities of a compute node. The [rapid scripts](https://wiki.opnfv.org/display/SAM/Rapid+scripting) in conjunction with the [PROX tool](https://wiki.opnfv.org/pages/viewpage.action?pageId=12387840) offers an open source implementation for this type of testing.
 
@@ -759,7 +759,7 @@ by Functest VNF tests in the other cases.
 ### 3.4.1 RM/RA-1 Requirements
 
 According to [RC1 Chapter04](chapter04.md)
-the following test cases must pass as they are for CNTT NFVI
+the following test cases must pass as they are for Anuket NFVI
 Conformance:
 
 | container                              | test case             | criteria |

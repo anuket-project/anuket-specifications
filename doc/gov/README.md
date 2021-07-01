@@ -1,4 +1,4 @@
-[<< Back](https://cntt-n.github.io/CNTT/)
+[<< Back](https://cntt-n.github.io/Anuket/)
 # Cloud iNfrastructure Telco Taskforce - Community Guidelines
 
 <!--<p><span style="color: #ff0000;"><strong>** Note:</strong> This is a live (not released) document and is being updated regularly.</span></p>-->

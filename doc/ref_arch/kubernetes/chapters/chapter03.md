@@ -380,7 +380,7 @@ architecture.
 <p align="center"><b>Figure 3-3:</b> Kubernetes Networking Architecture</p>
 
 <!--The above diagram is maintained here:
-https://wiki.lfnetworking.org/display/LN/CNTT+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
+https://wiki.lfnetworking.org/display/LN/Anuket+RA2+-+Kubernetes+-+Diagrams+-+Networking-->
 
 There are a number of different methods involved in managing, configuring and
 consuming networking resources in Kubernetes, including:

@@ -23,7 +23,7 @@ The lab provides a set of physical servers, supported by a dedicated network inf
 
 Labs are organized into one or more *Pods*, where the *Pod* provides the complete set of resources [servers and network(s)] necessary to support the reference implementation installation and operation.  
 
-A CNTT compliant *Pod* shall meet the following requirements.
+A Anuket compliant *Pod* shall meet the following requirements.
 
 1. One (1) physical server dedicated as a Jump / Test Host
 2. Six (6) physical servers, serving as either compute or controllers

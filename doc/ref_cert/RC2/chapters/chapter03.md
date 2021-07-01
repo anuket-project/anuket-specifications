@@ -11,8 +11,8 @@
 ## 3.1 Deploy your own conformance toolchain
 
 At the time of writing, the CI description file is hosted in Functest and only
-runs the containers selected by CNTT RC2. It will be completed by the
-next CNTT mandatory test cases and then a new CI description file will be
+runs the containers selected by Anuket RC2. It will be completed by the
+next Anuket mandatory test cases and then a new CI description file will be
 proposed in a shared tree.
 
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
@@ -30,7 +30,7 @@ the network settings:
 - Proxy: you may set your proxy in env for Ansible and in systemd for Docker
   https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
 
-To deploy your own CI toolchain running CNTT Compliance:
+To deploy your own CI toolchain running Anuket Compliance:
 ```bash
 virtualenv functest-kubernetes --system-site-packages
 . functest-kubernetes/bin/activate
@@ -58,7 +58,7 @@ Open http://127.0.0.1:8080/job/functest-kubernetes-v1.21-daily/ in a web
 browser, login as admin/admin and click on "Build with Parameters" (keep the
 default values).
 
-If the System under test (SUT) is CNTT compliant, a link to the full archive
+If the System under test (SUT) is Anuket compliant, a link to the full archive
 containing all test results and artifacts will be printed in
 functest-kubernetes-v1.21-zip's console. Be free to download it and then to send
 it to any reviewer committee.
