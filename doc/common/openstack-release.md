@@ -29,4 +29,4 @@ The OpenStack Release Selection Committee shall utilize the following criteria, 
 
 ## Deprecation of Anuket OpenStack Releases
 Anuket shall support no more than 2 (two) OpenStack releases at any given time. Thus, on selection of a new OpenStack baseline release of the Anuket specifications, an existing Anuket OpenStack release may be deprecated. The selection of new release n triggers the deprecation of the n-2 release. On the completion of the Reference Architecture for release n, the release n-2 will stand deprecated.
-Please note that reference to releases in this subsection is to Anuket’s OpenStack release where Train is release 1.
+Please note that reference to releases in this subsection is to Anuket’s OpenStack release where Pike is release 1.
