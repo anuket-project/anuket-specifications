@@ -1,14 +1,20 @@
 import os
 import sys
-import sphinx_rtd_theme
+#import sphinx_rtd_theme
+import sphinx_bootstrap_theme
 
 from recommonmark.parser import CommonMarkParser
 source_parsers = {
 '.md': CommonMarkParser,
 }
 source_suffix = ['.rst', '.md']
+
+templates_path = ['_templates']
+
 master_doc = 'index'
-project = u'CNTT-CNTT'
+project = ''
+copyright = '2021, Anuket. Licensed under CC BY 4.0'
+author = 'Anuket Project of Linux Foundation Networking'
 
 extensions = ['sphinxcontrib.readme-to-index', 
               'sphinxcontrib.relative-link-corrector',
@@ -28,9 +34,21 @@ direct_copy_directories = ['/gov/figures',
                            '/ven_impl/figures', 
                            '/common/figures'] 
 
-html_theme = "sphinx_rtd_theme"
+html_theme = "bootstrap"
+#html_theme = "sphinx_rtd_theme"
+
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+html_sidebars = {'**': ['my_custom_sidebar.html', 'relations.html'],}
 
 html_static_path = ['_static']
 html_css_files = [
     'css/custom.css',
 ]
+
+html_theme_options = {
+    'bootswatch_theme': "journal",
+    'navbar_sidebarrel': False,
+}
+
+html_logo = '_static/anuket-logo.png'
+html_favicon = '_static/favicon.ico'
