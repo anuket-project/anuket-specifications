@@ -68,19 +68,86 @@ between tenants
 - Enable Role-Based Access Control (RBAC)
 
 ## 5.3 Node Hardening
-Ensure Kubernetes nodes are secure, hardened and configured correctly following
-well known security framework e.g. CIS benchmark, etc. Restrict administrative
-access to Kubernetes nodes while avoiding direct access to nodes for operational
-activities including debugging, troubleshooting, and other tasks.
+### 5.3.1 Node hardening: Securing Kubernetes hosts 		
+Security benchmarking
+When an operating system or application is installed, it comes with default settings. Usually, all ports are open, and all application services are turned on. In other words, freshly installed assets are highly insecure.
 
-## 5.4 Authentication & Authorisation
-Secure all connections to a Kubernetes Cluster. Adopt the following security
-authentication mechanisms:
- - Configure user roles and access levels to provide segregation of duties (RBAC)
- - Use multi-factor authentication for all administrative access
- - Use token-based or certificate-based service and session authentication mechanisms
- - Integrated with existing identity management platforms e.g SAML, AD, etc. for
- access control
+Ensure Kubernetes nodes are secure, hardened and configured correctly following well known security framework. Security benchmarks, for example CIS benchmarks are a set of configuration standards and best practices designed to help ‘harden’ the security of their digital assets. 
+
+### 5.3.2 Restrict direct access to nodes
+Restrict root/administrative access to Kubernetes nodes while avoiding direct access to nodes for operational activities including debugging, troubleshooting, and other tasks.
+
+### 5.3.3 Vulnerability assessment
+Vulnerability assessments are a crucial part of IT risk management lifecycles. It helps in protecting systems and data from unauthorized access and breaches. Implement necessary vulnerability scanner tools (Ex: OpenVAS and many other opensource and commercial tools) to identify threats and flaws within the  infrastructure that represents potential risks.
+
+### 5.3.4 Patch management 
+Patch management is another key aspect of IT risk management lifecycle for security, compliance, uptime, feature enhancements and so on. Implement necessary patch management to ensure your environment is not susceptible to exploitation.
+	
+## 5.4 Securing Kubernetes orchestrator	
+
+### 5.4.1 Control network access to sensitive ports
+Kubernetes clusters usually listen on a range of well-defined and distinctive ports which makes it easier identify the clusters and attack them. Hence it is highly recommended to configure authentication and authorization on the cluster and cluster nodes.
+
+Here is an overview of the default ports used in Kubernetes. Make sure that your network blocks access to ports and consider limiting access to the Kubernetes API server except from trusted networks.
+
+**Master node(s):**
+
+| Protocol | Port Range | Purpose                 |
+| -------- | ---------- | ----------------------- |
+| TCP      | 6443-      | Kubernetes API Server   |
+| TCP      | 2379-2380 | etcd server client API |
+| TCP      | 10250      | Kubelet API             |
+| TCP      | 10251      | kube-scheduler          |
+| TCP      | 10252      | kube-controller-manager |
+| TCP      | 10255      | Read-Only Kubelet API   |
+
+**Worker nodes:**
+
+| Protocol | Port Range | Purpose               |
+| -------- | ----------- | --------------------- |
+| TCP      | 10250       | Kubelet API           |
+| TCP      | 10255       | Read-Only Kubelet API |
+| TCP      | 30000-32767 | NodePort Services     |
+
+### 5.4.2 Controlling access to the Kubernetes API
+The Kubernetes platform is controlled using API requests and as such is the first line of defence against attackers. Controlling who has access and what actions they are allowed to perform is the primary concern
+	
+### 5.4.3 Use Transport Layer Security
+Communication in the cluster between services should be handled using TLS, encrypting all traffic by default. This, however, is often overlooked with the thought being that the cluster is secure and there is no need to provide encryption in transit within the cluster.
+
+Advances in network technology, such as the service mesh, have led to the creation of products like LinkerD and Istio which can enable TLS by default while providing extra telemetry information on transactions between services.
+
+Kubernetes expects that all API communication in the cluster is encrypted by default with TLS, and the majority of installation methods will allow the necessary certificates to be created and distributed to the cluster components. Note that some components and installation methods may enable local ports over HTTP and administrators should familiarize themselves with the settings of each component to identify potentially unsecured traffic.
+
+### 5.4.4 API Authentication, API Authorization
+Secure all connections to a Kubernetes Cluster. Adopt the following security authentication mechanisms:
+* Configure user roles and access levels to provide segregation of duties (RBAC)
+* Use multi-factor authentication for all administrative access
+* Use token-based or certificate-based service and session authentication mechanisms
+* Integrated with existing identity management platforms e.g SAML, AD, etc. for access control
+
+### 5.4.5 Restrict access to etcd and encrypt contents within etcd
+etcd is a critical Kubernetes component which stores information on state and secrets, and it should be protected differently from the rest of your cluster. Write access to the API server's etcd is equivalent to gaining root on the entire cluster, and even read access can be used to escalate privileges fairly easily.
+
+The Kubernetes scheduler will search etcd for pod definitions that do not have a node. It then sends the pods it finds to an available kubelet for scheduling. Validation for submitted pods is performed by the API server before it writes them to etcd, so malicious users writing directly to etcd can bypass many security mechanisms - e.g. PodSecurityPolicies.
+
+Administrators should always use strong credentials from the API servers to their etcd server, such as mutual auth via TLS client certificates, and it is often recommended to isolate the etcd servers behind a firewall that only the API servers may access.
+	
+### 5.4.6 Controlling access to the Kubelet
+Kubelets expose HTTPS endpoints which grant powerful control over the node and containers. By default Kubelets allow unauthenticated access to this API. Production clusters should enable Kubelet authentication and authorization
+	
+### 5.4.7 Securing Kubernetes Dashboard 
+The Kubernetes dashboard is a webapp for managing your cluster. It it is not a part of the Kubernetes cluster itself, it has to be installed by the owners of the cluster. Thus, there are a lot of tutorials on how to do this. Unfortunately, most of them create a service account with very high privileges. This caused Tesla and some others to be hacked via such a poorly configured K8s dashboard. (Reference: Tesla cloud resources are hacked to run cryptocurrency-mining malware - https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/)
+
+To prevent attacks via the dashboard, you should follow some tips:
+	
+* Do not expose the dashboard without additional authentication to the public. There is no need to access such a powerful tool from outside your LAN
+* Turn on RBAC, so you can limit the service account the dashboard uses
+* Do not grant the service account of the dashboard high privileges
+* Grant permissions per user, so each user only can see what he is supposed to see
+* If you are using network policies, you can block requests to the dashboard even from internal pods (this will not affect the proxy tunnel via kubectl proxy)
+* Before version 1.8, the dashboard had a service account with full privileges, so check that there is no role binding for cluster-admin left.
+* Deploy the dashboard with an authenticating reverse proxy, with multi-factor authentication enabled. This can be done with either embeded OIDC id_tokens or using Kubernetes Impersonation. This allows you to use the dashboard with the user's credentials instead of using a privileged ServiceAccount. This method can be used on both on-prem and managed cloud clusters.
 
 ## 5.5 Use Namespaces to Establish Security Boundaries
 Namespaces in Kubernetes is the first level of isolation between components. It
