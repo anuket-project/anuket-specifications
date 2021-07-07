@@ -4,11 +4,11 @@ body {
 }
 
 body a {
-	color: #007574;
+	color: #1d285c;
 }
 
 body a:hover {
-	color: #676767;
+	color: #007574;
 }
 
 .navbar-brand img {
