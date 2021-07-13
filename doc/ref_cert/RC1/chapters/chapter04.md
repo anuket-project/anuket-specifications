@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 4. NFVI Testing Cookbook
+# 4. Cloud Infrastructure Testing Cookbook
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -11,9 +11,9 @@
    * [4.2.3 Bottlenecks](#4.2.3)
    * [4.2.4 Test Tools](#4.2.4)
    * [4.2.5 Scenario Descriptor File (SDF)](#4.2.5)
-* [4.3 NFVI Testing Cookbook](#4.3)
-  * [4.3.1 NFVI API testing configuration](#4.3.1)
-  * [4.3.2 Run NFVI Testing](#4.3.2)
+* [4.3 Cloud Infrastructure Testing Cookbook](#4.3)
+  * [4.3.1 Cloud Infrastructure API testing configuration](#4.3.1)
+  * [4.3.2 Run Cloud Infrastructure Testing](#4.3.2)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
@@ -185,7 +185,7 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
   - Valid options per installer.
 
 <a name="4.3"></a>
-## 4.3 NFVI Testing Cookbook
+## 4.3 Cloud Infrastructure Testing Cookbook
 
 At the time of writing, the CI description file is hosted in Functest and only
 runs the containers listed in RM/RA-1 Requirements. It will be completed by the
@@ -213,7 +213,7 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
 <a name="4.3.1"></a>
-### 4.3.1 NFVI API testing configuration
+### 4.3.1 Cloud Infrastructure API testing configuration
 
 Here is the default Functest tree as proposed in
 [Run Alpine Functest containers (Jerma)](https://wiki.opnfv.org/pages/viewpage.action?pageId=44892403):
@@ -233,7 +233,7 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
 <a name="4.3.2"></a>
-### 4.3.2 Run CNTT NFVI Testing
+### 4.3.2 Run CNTT Cloud Infrastructure Testing
 
 Open http://127.0.0.1:8080/job/functest-jerma-daily/ in a web browser, login
 as admin/admin and click on "Build with Parameters" (keep the default build_tag
