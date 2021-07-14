@@ -49,9 +49,9 @@ following Features tabs defined here.
 |------------------------------|:-------------:|:----------------|
 | Conformance                  | X             | Kubernetes conformance test |
 | None                         | X             | Kubernetes mainstream features |
-| Feature:DaemonSetUpdateSurge |               | Daemon set should surge pods onto nodes when spec was updated and update strategy is RollingUpdate |
+| Feature:[DaemonSetUpdateSurge](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#rollingupdatedaemonset-v1-apps) |               | Daemon set should surge pods onto nodes when spec was updated and update strategy is RollingUpdate |
 | Feature:[IndexedJob](https://kubernetes.io/docs/concepts/workloads/controllers/job/)          |               | Should create pods for an Indexed job with completion indexes |
-| Feature:StatefulSet          |               | Should creating a working zookeeper cluster |
+| Feature:[StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)          |               | Should creating a working zookeeper cluster |
 | Feature:StatefulUpgrade      |               | Stateful upgrade should maintain a functioning cluster |
 | Feature:[SuspendJob](https://kubernetes.io/docs/concepts/workloads/controllers/job/)|               | Should not create pods when created in suspend state |
 | Feature:TaintEviction        |               | All pods on the unreachable node should be marked as NotReady upon the node turn NotReady AND all pods should be evicted after eviction timeout passes |
