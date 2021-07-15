@@ -16,6 +16,7 @@
         * [3.2.1.6 Device Plugin Framework](#3216-device-plugin-framework)
         * [3.2.1.7 Hardware Acceleration](#3217-hardware-acceleration)
         * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
+        * [3.2.1.9 Virtual Machine based Clusters](#3219-virtual-machine-based-clusters)
     * [3.2.2 Container Networking Services](#322-container-networking-services)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
     * [3.2.4 Kubernetes Application package manager](#324-kubernetes-application-package-managers)
