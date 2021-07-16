@@ -5,8 +5,7 @@
 
 ## Table of Contents
 * [1.1 History of Anuket reference specifications](#1.1)
-* [1.2 Document Purpose](#1.2)
-* [1.3 Operational Scope](#1.3)
+* [1.2 How to participate](#1.2)
 
 <a name="1.1"></a>
 ## 1.1 History of Anuket reference specifications
@@ -20,8 +19,8 @@ In the beginning of 2021 CNTT and OPNFV merged under the name [Anuket](https://a
 
 Participating to Anuket does not need any formal membership, and nothing to sign except the CLA. Participation is open to anyone, whether you are an employee of an LFN member company, supporter, or observer. By participating, you do automatically accept the individual anti-trust policies of LFN and GSMA, the joint Terms of Reference of LFN and GSMA the LFN Code of Conduct, as well as the LFN Trademark policy. 
 
-- [LFN Anti-Trust Policy](https://r.lfnetworking.org/Antitrust%20Slide.pdf) 
-- [GSMA Anti-Trust Policy](../../../Anti-Trust_Notice_GSMA_20190911.png) 
+- [LFN Anti-Trust Policy](https://lfnetworking.org/Antitrust%20Slide.pdf) 
+- [GSMA Anti-Trust Policy](https://github.com/cntt-n/CNTT/blob/master/Anti-Trust_Notice_GSMA_20190911.png) 
 - [CNTT Terms of Reference (ToR) LFN | GSMA](https://wiki.lfnetworking.org/display/LN/Terms+of+Reference?src=contextnavpagetreemode)
   - Note: If you work for someone other than yourself (self-employed), then you must ensure that your employer also agrees to the ToR before participating.
 - [Code of Conduct LFN](https://lfprojects.org/policies/code-of-conduct/)

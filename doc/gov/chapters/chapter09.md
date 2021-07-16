@@ -138,7 +138,7 @@ Prior to the comencement of any field trials, the Anuket community will define a
 
 Trials participants will be expected to commit to establishing an RA1 compliant NFVI ot RA2 comp;iant CaaS, in whatever manner best suited to the participant. The first step is for the participant to secure appropriate environment space from pre-existing space, newly built space or securing LaaS.  The environment can exist in any mix of participant owned, private or community hardware infrastructure.
 
-Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA1/RI1 or RA2/RC2 requirements and specifications. CNTT [RI1 Chapter 3](../../ref-impl/cntt-ri/chapters/chapter03.md) and [RI2 Chapter 3](../../ref-impl/cntt-ri2/chapters/chapter03.md) documentations provide the matching RI requirements for the build.
+Second, the participant will build/setup/configure the environment space using their preferred method. This can include the use of a cookbook, automated install, and/or build from RA1/RI1 or RA2/RC2 requirements and specifications. CNTT [RI1 Chapter 3](../../ref_impl/cntt-ri/chapters/chapter03.md) and [RI2 Chapter 3](../../ref_impl/cntt-ri2/chapters/chapter03.md) documentations provide the matching RI requirements for the build.
 
 <a name="9.5.1.5"></a>
 #### 9.5.1.5 Expectation 2: Execute the RC1 or RC2 Test suites
