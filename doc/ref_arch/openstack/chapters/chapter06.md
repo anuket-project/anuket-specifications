@@ -88,7 +88,7 @@ All deployed Cloud Infrastructure software must be audited and system must be im
 **See** [Common Vulnerability Scoring System](https://nvd.nist.gov/vuln-metrics/cvss)
 	
 #### 6.3.1.6 Network Protocols
-- Only allow protocols that are required by the system functions(sec.sys.002)
+- Only allow protocols that are required by the system functions (sec.sys.002)
 - Tighten all required TCP/IP (Transmission Control Protocol/Internet Protocol) services
 
 #### 6.3.1.7 Anti-Virus and Firewall
