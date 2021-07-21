@@ -304,13 +304,13 @@ To defend against virus or other attacks, security patches must be installed for
 
 <a name="6.3.7"></a>
 ### 6.3.7 Monitoring and Security Audit
-This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monitoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session (sec.mon.010)and network activity(sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion(sec.mon.011). 
+This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monitoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session (sec.mon.010) and network activity (sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion (sec.mon.011). 
 
-The logs have to be continuously monitored and analysed with alerts created for anomalies(sec.lcm.005). The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
+The logs have to be continuously monitored and analysed with alerts created for anomalies (sec.lcm.005). The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs (sec.mon.001).
-* Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure (sec.mon.001).
+* Logs must be generated for all components (ex. Nova in OpenStack) that form the Cloud Infrastructure (sec.mon.001).
 * All security logging mechanisms must be active from system initialization (sec.mon.018): 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 * Logs must be time synchronised (sec.mon.002).
