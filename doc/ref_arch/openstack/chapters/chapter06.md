@@ -76,7 +76,7 @@ Regarding software (sec.gen.004):
 - Where software cannot be removed, disable all services to it
 
 #### 6.3.1.5 Patches
-All deployed Cloud Infrastructure software must be audited and system must be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery(sec.gen.008, sec.lcm.011):
+All deployed Cloud Infrastructure software must be audited and system must be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery (sec.gen.008, sec.lcm.011):
 | Severity | Time to Remediate |
 | ----------- | ----------- |
 | Zero-Day | Immediately or as soon as practically possible |
