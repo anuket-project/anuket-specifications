@@ -233,7 +233,7 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
 <a name="4.3.2"></a>
-### 4.3.2 Run CNTT Cloud Infrastructure Testing
+### 4.3.2 Run OpenStack Testing
 
 Open http://127.0.0.1:8080/job/functest-jerma-daily/ in a web browser, login
 as admin/admin and click on "Build with Parameters" (keep the default build_tag
