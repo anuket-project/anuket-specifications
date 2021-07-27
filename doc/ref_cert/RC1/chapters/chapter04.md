@@ -13,7 +13,7 @@
    * [4.2.5 Scenario Descriptor File (SDF)](#4.2.5)
 * [4.3 Cloud Infrastructure Testing Cookbook](#4.3)
   * [4.3.1 Cloud Infrastructure API testing configuration](#4.3.1)
-  * [4.3.2 Run Cloud Infrastructure Testing](#4.3.2)
+  * [4.3.2 Run OpenStack Testing](#4.3.2)
 
 <a name="4.1"></a>
 ## 4.1 Introduction
