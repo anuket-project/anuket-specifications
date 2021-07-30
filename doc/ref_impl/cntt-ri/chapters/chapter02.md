@@ -26,7 +26,7 @@
 <a name="2.2"></a>
 ## 2.2 Reference Architecture Requirement
 
-This is the reference implementation for OpenStack based CNTT RA. Please refer to [CNTT Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](../../../ref_arch/openstack/chapters/chapter02.md) for the details of RA requirement
+This is the reference implementation for OpenStack based RA. Please refer to [Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](../../../ref_arch/openstack/chapters/chapter02.md) for the details of the RA requirements.
 
 The implementation should follow all the requirement identified in the RA chapter.
 
