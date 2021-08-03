@@ -545,15 +545,16 @@ SyncE architecture minimally requires replacement of the internal clock of the E
 
 <a name="3.5.7"></a>
  ### 3.5.7 Kubernetes Networking Semantics
-The support for traditional network orchestration is more or less non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastrutcure as a Service (Iaas) infrastucture component. There is no orchetration API like Neutron and no way to instantiate network services such as L3aaS and LBaaS like you can do in Openstack.
+The support for traditional network orchestration is non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) infrastructure component. There is no orchestration API like Neutron Openstack and no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect it all together like you can do with Neutron.
 
-Kubernetes networking can be divided into two parts, built in network functinality available through the pod's mandatory primarty interface and network functionality avaiable through the pod's optional secondary inerfaces.
+Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
+
 
 <a name="3.5.7.1"></a>
 #### 3.5.7.1 Built in Kubernetes network functionality 
-Kubernetes currently only allows for one network, the *cluster* network and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by kubernetes at pod cration and attached to the *cluster* network. All communication to and from the pod is done using this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and complicated routing tables inside the pod network namespace. 
+Kubernetes currently only allows for one network, the *cluster* network and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
 
-The basic semantics of Kubernetes and the information found in manifest defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW services and network policies for them that are not location aware and therefore can be executed more or less anywhere. 
+The basic semantics of Kubernetes and the information found in manifest defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
 
 Kubernetes built in objects
 Pod and workloads | Description
@@ -563,19 +564,19 @@ Pod and workloads | Description
 [Deployment:](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Deployment enables declarative updates for Pods and ReplicaSets.
 [DaemonSet:](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) | DaemonSet represents the configuration of a daemon set.
 [Job:](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | Job represents the configuration of a single job.
-[CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time based Job, namely: once at a specified point in time repeatedly at a specified point in time
+[CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time-based Job, namely: once at a specified point in time repeatedly at a specified point in time
 [StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage. 
 
 Network objects | Description
 ----------------|------------
-[Ingress:](https://kubernetes.io/docs/concepts/services-networking/ingress/) | Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc.
-[Service:](https://kubernetes.io/docs/concepts/services-networking/service/) | Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
-[EndpointSlices:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | Endpoints and Endpointslices are a collections of endpoints that contains the ip address, v4 and v6, of the pods that represents a service.
+[Ingress:](https://kubernetes.io/docs/concepts/services-networking/ingress/) | Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally reachable URLs, load balance traffic, terminate SSL, offer name based virtual hosting etc.
+[Service:](https://kubernetes.io/docs/concepts/services-networking/service/) | Service is a named abstraction of software service (for example, MySQL) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
+[EndpointSlices:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | Endpoints and Endpointslices are a collection of endpoints that contains the ip address, v4 and v6, of the pods that represents a service.
 [Network Policy:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | NetworkPolicy defines which network traffic is allowed to ingress and egress from a set of pods.
 
-There is no need to explicitly define internal load balancers, servers pools, service monitors, firewalls and so on. The kubernetes sematics and relation between the different objects defined in the object manifests contains all the information needed.
+There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls and so on. The Kubernetes semantics and relation between the different objects defined in the object manifests contains all the information needed.
 
-Example: The manifests for service *my-service* and the*deployment* with the four load balanced pods of type *my-app*
+Example: The manifests for service *my-service* and the *deployment* with the four load balanced pods of type *my-app*
 
 Service:
 ```
@@ -612,20 +613,20 @@ spec:
                                           - containerPort: 123 
 ```
 
-This is all that is needed to deploy 4 pods/containers that are fronted by a service that performe sload balancing. The *Deplyment* will ensure that there are always four pods of type *my-app* available. the *deplyment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
+This is all that is needed to deploy 4 pods/containers that are fronted by a service that performes load balancing. The *Deployment* will ensure that there are always four pods of type *my-app* available. the *Deployment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
 
-None of this is of much help however when implementing network service functions such as VNFs/CNFs that requires multi networking and network orchestartion
+None of this is of much help however when implementing network service functions such as VNFs/CNFs that requires multi networking and network orchestration
 
 <a name="3.5.7.2"></a>
 #### 3.5.7.2 Multi networking and Orchestration
-Kubernets does curently not in it self support multi networks, pod multi network attachments or network orchestration. This is supported by using a chain loading [*Container Network Interface*](https://github.com/containernetworking/cni) plugin such as [Multus:](https://github.com/k8snetworkplumbingwg/multus-cni).
-A considreable effort is being invested to add better network support to kubernetes, all such activities are coordinated through the kubernetes [*Network Special Interest Group*](https://github.com/kubernetes/community/tree/master/sig-network) and it's sub groups. One such group, the [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
+Kubernetes does currently not in itself support multi networks, pod multi network attachments or network orchestration. This is supported by using a chain loading [*Container Network Interface*](https://github.com/containernetworking/cni) plugin such as [Multus:](https://github.com/k8snetworkplumbingwg/multus-cni).
+A considerable effort is being invested to add better network support to Kubernetes, all such activities are coordinated through the kubernetes [*Network Special Interest Group*](https://github.com/kubernetes/community/tree/master/sig-network) and it's sub groups. One such group, the [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
 
 This defacto standard defines among other things
 Definition | Description
 ------------------|------------
-Kubernetes Cluster-Wide default network | A network to which all pods are attached following the current behaviour and requirements of Kubernetes, this done by attaching the *eth0* interface to the pod namespace.
-Network Attachment | A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed in to the pod’s network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
+Kubernetes Cluster-Wide default network | A network to which all pods are attached following the current behavior and requirements of Kubernetes, this done by attaching the *eth0* interface to the pod namespace.
+Network Attachment | A means of allowing a pod to directly communicate with a given logical or physical network. Typically (but not necessarily) each attachment takes the form of a kernel network interface placed into the pod’s network namespace. Each attachment may result in zero or more IP addresses being assigned to the pod.
 NetworkAttachmentDefinition object | This defines resource object that describes how to attach a pod to a logical or physical network, the annotation name is *"k8s.v1.cni.cncf.io/networks"*
 Network Attachment Selection Annotation | Selects one or more networks that a pod should be attached to.
 
@@ -680,10 +681,10 @@ metadata:
   name: my-pod
   namespace: my-namespace
   annotations:
-    k8s.v1.cni.cncf.io/networks: blue-network,green-network,red-network
+    k8s.v1.cni.cncf.io/networks: blue-network, green-network, red-network
 ```
 
-This is enough to support basic network orchestration, it is possbible to map up L2 networks from an external network infrastructure into a kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address management is however limited. The address must be assigned by the cni plugin as part of the pod creation process.
+This is enough to support basic network orchestration, it is possible to map up L2 networks from an external network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address management is however limited. The address must be assigned by the CNI plugin as part of the pod creation process.
 
 
 <a name="3.6"></a>
