@@ -14,7 +14,7 @@ The Cloud iNfrastructure Telco Task Force (CNTT) was founded by AT&T, Vodafone, 
 
 The Anuket project community is leading the industry in creating a common infrastructure reference platform in the form of reference model and reference architecture definitions to better support virtualised and containerised Network Functions for the Telecom industry as a whole. The Anuket community is collaborating with other open source communities to operationalize and support reference implementations and reference certification platforms. 
 
-The Anuket project operates under a Technical Oversight Committee (TSC) and governing rules documented in the Anuket Charter and in the Anuket Project Operations and Guidelines document. 
+The Anuket project operates under a Technical Oversight Committee (TSC) and governing rules documented in the [Anuket Charter](https://anuket.io/wp-content/uploads/sites/119/2021/07/Anuket-Charter_073021.pdf) and in the Anuket Project Operations and Guidelines document. 
 
 <a name="1.2"></a>
 ## 1.2 How to participate
