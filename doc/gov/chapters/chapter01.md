@@ -19,7 +19,7 @@ The Anuket project operates under a Technical Oversight Committee (TSC) and gove
 <a name="1.2"></a>
 ## 1.2 How to participate
 
-Participating in Anuket does not need any formal membership, and nothing to sign except the CLA. Participation is open to anyone, whether you are an employee of an LFN member company, supporter, or observer. By participating, you do automatically accept the individual anti-trust policies of LFN and GSMA, the joint Terms of Reference of LFN and GSMA the LFN Code of Conduct, as well as the LFN Trademark policy. 
+Participating in Anuket does not need any formal membership, and nothing to sign except the [CLA](https://anuket.io/cla/). Participation is open to anyone, whether you are an employee of an LFN member company, supporter, or observer. By participating, you do automatically accept the individual anti-trust policies of LFN and GSMA, the joint Terms of Reference of LFN and GSMA the LFN Code of Conduct, as well as the LFN Trademark policy. 
 
 - [LFN Anti-Trust Policy](https://lfnetworking.org/Antitrust%20Slide.pdf) 
 - [GSMA Anti-Trust Policy](https://github.com/cntt-n/CNTT/blob/master/Anti-Trust_Notice_GSMA_20190911.png) 
