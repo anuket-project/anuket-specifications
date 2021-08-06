@@ -1,4 +1,7 @@
-# Anuket specifications
+# Anuket
+
+This repository contains specification and documentation of the Reference Model, Reference Architectures, Reference Implementations
+and Reference Conformance projects of [Anuket](https://anuket.io/). 
 
 ## Available Specifications
 * [Governance](doc/gov)
@@ -10,7 +13,7 @@
   and [OpenStack API descriptions and selection](doc/ref_arch/openstack/chapters/chapter05.md).
 * **check the Anuket conformance of your existing OpenStack deployments?**
   You would be primarily interested in
-  [the Cloud Infrastructure Testing Cookbook](doc/ref_cert/RC1/chapters/chapter04.md)
+  [the OpenStack Testing Cookbook](doc/ref_cert/RC1/chapters/chapter04.md)
   and [the test case descriptions and selection](doc/ref_cert/RC1/chapters/chapter03.md)
   for more details.
 * **check the Anuket conformance of your existing Kubernetes deployments?**
