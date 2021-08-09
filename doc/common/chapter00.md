@@ -19,7 +19,7 @@
 <a name="1.0"></a>
 # Overview
 
-Initially organized early in 2019, the Cloud iNfrastructure Telco Taskforce (CNTT) was created in response to rapid changes in how networking applications are being designed, built and managed, plus a growing recognition of a perceived functional gap between the previous standard infrastructure models and the architectures needed to support Network Function Virtualisation (NFV) applications.  Organizationally, the Cloud iNfrastructure Telco Taskforce, jointly hosted by GSMA and the Linux Foundation, operates as an open committee responsible for creating and documenting an industry aligned Common Cloud Infrastructure Framework.  The CNTT was created with the intent that it would create the cloud infrastructure framework, and eventually morph into an on-going project under the auspices of the GSMA and the Linux Foundation umbrellas.  The final on-going operational form of the Taskforce will be determined as the project evolves.
+In January early 2021, Anuket was formed from the merger of the Cloud iNfrastructure Telco Taskforce (CNTT) and Open Platforms Network Function Virtualization (OPNFV). The merger was inplemented to marry standards and verification with coding and implementation as a response to rapid changes in how networking applications are being designed, built and managed, plus a growing recognition of a perceived functional gap between the previous standard infrastructure models and the architectures needed to support Network Function Virtualisation (NFV) applications.  Organizationally, the Anuket, hosted by the Linux Foundation, operates as an open project responsible for creating and documenting an industry aligned Common Cloud Infrastructure Framework.  
 
 <a name="1.1"></a>
 ## Terminology and Glossary
@@ -68,13 +68,13 @@ By providing a pre-defined environment with common capabilities, applications ar
 - Better utilisation
   - Properly mapping VNFs/CNFs to flavours to the underlying infrastructure, brings the potential for more efficient utilisation, than needing to create specific configurations for each type of application in the infrastructure.  
 
-In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the CNTT is documentation of a reference model, a select set of architectures, a set of reference implementations, and a set of conformance suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
+In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, Anuket is documentation of a reference model, a select set of architectures, a set of reference implementations, and a set of conformance suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
 
 
 <a name="2.0"></a>
 # Principles
 
-Any specification work created within CNTT **must** conform to the following principles:
+Any specification work created within Anuket **must** conform to the following principles:
 
 <a name="2.1"></a>
 ## Overall Principles
@@ -124,7 +124,7 @@ The agreed upon rules and recommendations to which a compliant workload or cloud
 <a name="2.3"></a>
 ## Architectural Principles
 
-Following are a number of key architectural principles that apply to all Reference Architectures produced by CNTT:
+Following are a number of key architectural principles that apply to all Reference Architectures produced by Anuket:
 
 1. **Open source preference:** To ensure, by building on technology available in open source projects, that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready Cloud Infrastructure solution portfolio.
 
@@ -183,7 +183,7 @@ While the nature of the CNTT might seem quite broad, the following areas are not
 **Figure 2** below illustrates how each type of  specifications relate to different element of a typical cloud platform stack.
 
 <p align="center"><img src="./figures/tech_stack.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 3:</b> Documentation Scope of CNTT</p>
+<p align="center"><b>Figure 3:</b> Documentation Scope of Anuket</p>
 
 Below is a diagram of the different artefacts that will need to be created to support the implementation of the abstract concepts presented in the **Reference Model**, which are then applied to create the **Reference Architecture** that will be deployed using the requirements spelled out in the **Reference Implementation**.
 
@@ -192,7 +192,7 @@ Below is a diagram of the different artefacts that will need to be created to su
 
 <a name="3.4"></a>
 ## Relationship to other industry projects
-The CNTT work is not done in a vacuum.  The intention from the beginning was to utilize the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
+Anuket work is not done in a vacuum.  The intention from the beginning was to utilize the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the CNTT efforts include:
 
 - ETSi NFV ISG
 - OpenStack
@@ -208,7 +208,7 @@ The CNTT work is not done in a vacuum.  The intention from the beginning was to 
 <a name="3.4.1"></a>
 ### Relationship to ETSI-NFV
 
-The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by ETSI GR NFV 002[3].
+The ETSI NFV ISG is very closely related to Anuket, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the CNTT scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by ETSI GR NFV 002[3].
 
 <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
@@ -216,7 +216,7 @@ The ETSI NFV ISG is very closely related to the CNTT, in that it is a group that
 <a name="3.4.2"></a>
 ### Relationship to OPNFV and OVP
 
-The CNTT is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services including **Vendor's Implementation (VI)** of cloud infrastructure and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
+Anuket is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services including **Vendor's Implementation (VI)** of cloud infrastructure and VNFs, using OPNFV. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
 Once the CNTT specifications are on place, OPNFV is expected to create a reference implementation that is adherent to requirements set in CNTT (**Reference Implementations**). Additionally, Commercial products adhering to CNTT specifications will be able to undergo an enhanced OVP’s program (based on CNTT **Reference Conformance** specification) using OPNFV testing framework and tools. **Figure 6** below illustrates the relationship with OPNFV and OVP in more details (specific to OpenStack based specifications)
 
