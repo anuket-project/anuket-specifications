@@ -88,7 +88,7 @@ They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
 According to Wallaby, the following software versions are considered here to
-verify OpenStack Train selected by CNTT:
+verify OpenStack Wallaby selected by CNTT:
 
 | software                | version |
 |-------------------------|---------|
