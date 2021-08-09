@@ -146,7 +146,7 @@ CNTT requirements about verification, validation, compliance, and conformance:
 Here are a couple of publicly available playbooks :
 - [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/wallaby)
 - [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/wallaby)
-- [CNTT RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/jerma)
+- [CNTT RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby)
 - [Kubernetes verification](https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.21)
 
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
