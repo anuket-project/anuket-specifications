@@ -602,7 +602,7 @@ SyncE architecture minimally requires replacement of the internal clock of the E
 
 <a name="3.5.7"></a>
  ### 3.5.7 Kubernetes Networking Semantics
-The support for traditional network orchestration is non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) infrastructure component. There is no orchestration API like Neutron Openstack and no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect it all together like you can do with Neutron.
+The support for traditional network orchestration is non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) infrastructure component. There is no orchestration API like Neutron in Openstack and there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then a way connect them all together like in case of Neutron.
 
 Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
 
