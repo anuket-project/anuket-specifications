@@ -620,7 +620,7 @@ Pod and workloads | Description
 [ReplicaSet:](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) | ReplicaSet ensures that a specified number of pod replicas are running at any given time.
 [Deployment:](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Deployment enables declarative updates for Pods and ReplicaSets.
 [DaemonSet:](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) | A Daemon set ensures that the correct nodes run a copy of a Pod.
-[Job:](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | A Job represent a task, it will creates one more Pods and will continue to retry until the expected number of successful completions is reached.
+[Job:](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of successful completions is reached.
 [CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time-based Job, namely: once at a specified point in time repeatedly at a specified point in time
 [StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage. 
 
