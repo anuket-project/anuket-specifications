@@ -11,12 +11,12 @@ and Reference Conformance projects of [Anuket](https://anuket.io/).
 * **design your OpenStack product?**
   You would be primarily interested in [the OpenStack requirement list](doc/ref_arch/openstack/chapters/chapter02.md)
   and [OpenStack API descriptions and selection](doc/ref_arch/openstack/chapters/chapter05.md).
-* **check the Anuket conformance of your existing OpenStack deployments?**
+* **check the Anuket conformance of your OpenStack-based deployments?**
   You would be primarily interested in
   [the OpenStack Testing Cookbook](doc/ref_cert/RC1/chapters/chapter04.md)
   and [the test case descriptions and selection](doc/ref_cert/RC1/chapters/chapter03.md)
   for more details.
-* **check the Anuket conformance of your existing Kubernetes deployments?**
+* **check the Anuket conformance of your Kubernetes-based deployments?**
   You would be primarily interested in
   [Kubernetes Testing Cookbook](doc/ref_cert/RC2/chapters/chapter03.md)
   and [the test case descriptions and selection](doc/ref_cert/RC2/chapters/chapter02.md)
