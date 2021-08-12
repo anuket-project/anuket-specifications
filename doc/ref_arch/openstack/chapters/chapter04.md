@@ -160,8 +160,9 @@ A number of capabilities need to be enabled in the BIOS (such as NUMA and SMT); 
 
 -	Sizing rules
 
-| Number of CPU sockets| s |
+| Description | Mnemonic |
 | ------------|--|
+| Number of CPU sockets| s |
 | Number of cores| c |
 | SMT| t |
 | RAM| rt |
