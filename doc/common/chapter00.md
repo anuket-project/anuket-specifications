@@ -69,13 +69,13 @@ By providing a pre-defined environment with common capabilities, applications ar
 - Better utilisation
   - Properly mapping VNFs/CNFs to flavours to the underlying infrastructure, brings the potential for more efficient utilisation, than needing to create specific configurations for each type of application in the infrastructure.  
 
-In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the Anuket specification offers a reference model, a select set of architectures, a set of reference implementations, and a set of conformance suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
+In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the Anuket specifications include a reference model, a select set of architectures, a set of reference implementations, and a set of conformance suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
 
 
 <a name="2.0"></a>
 # Principles
 
-Any specification work created within Anuket **must** conform to the following principles:
+Any specifications created within the Anuket project **must** conform to the following principles:
 
 <a name="2.1"></a>
 ## Overall Principles
@@ -125,7 +125,7 @@ The agreed upon rules and recommendations to which a compliant workload or cloud
 <a name="2.3"></a>
 ## Architectural Principles
 
-Following are a number of key architectural principles that apply to all Reference Architectures produced by Anuket specifications:
+Following are a number of key architectural principles that apply to all Reference Architectures produced by the Anuket project:
 
 1. **Open source preference:** To ensure, by building on technology available in open source projects, that suppliers’ and operators’ investment have a tangible pathway towards a standard and production ready Cloud Infrastructure solution portfolio.
 
@@ -155,7 +155,7 @@ Within the framework of the common Telecom cloud infrastructure vision, there ar
 
 <a name="3.1"></a>
 ## Functional Scope
-In terms of the functional scope of the Anuket specifications, in order to target the project goals as described above, we are focused on:
+To meet the goals, as described above, the Anuket project is focused on:
 - Functional capabilities of the cloud infrastructure and the infrastructure management
 - Functional interfaces between infrastructure and infrastructure management
 - Functional interfaces between workloads and workload management
@@ -168,7 +168,7 @@ Due to the close alignment with ETSI GR NFV 002[3], those ETSI interfaces that a
 
 <a name="3.2"></a>
 ## Out of Scope Components
-While the nature of the Anuket specifications might seem quite broad, the following areas are not at this time part of the scope of this effort.  
+While the nature of the Anuket project might seem quite broad, the following areas are not at this time part of the scope of this effort.  
 - Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the documents so they are general enough that any vendor hardware can be used in a conformant implementation without making significant changes to the model.
 - Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a black box that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the cloud infrastructure whenever possible.
 - Lifecycle Management of the CaaS Clusters: whilst a complete NFV-MANO solution would need to provide lifecycle management for the Kubernetes clusters it is using to deploy its CNFs, the Anuket specifications do not describe the NFVO and VNFM parts, and therefore the management of the cluster(s) is not in scope, while the VIM and the lifecycle management of containers (by Kubernetes) is in scope.
@@ -194,7 +194,7 @@ Below is a diagram of the different artefacts that will need to be created to su
 
 <a name="3.4"></a>
 ## Relationship to other industry projects
-The Anuket work is not done in a vacuum.  The intention from the beginning was to utilize the work from other Open Source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the Anuket efforts include:
+The Anuket work is not done in a vacuum.  The intention from the beginning was to utilize the work from other open source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the Anuket efforts include:
 
 - ETSi NFV ISG
 - OpenStack
@@ -210,7 +210,7 @@ The Anuket work is not done in a vacuum.  The intention from the beginning was t
 <a name="3.4.1"></a>
 ### Relationship to ETSI-NFV
 
-The ETSI NFV ISG is very closely related to the Anuket, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the Anuket specifications' scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by ETSI GR NFV 002[3].
+The ETSI NFV ISG is very closely related to the Anuket project, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the Anuket specifications' scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by ETSI GR NFV 002[3].
 
 <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
@@ -218,22 +218,22 @@ The ETSI NFV ISG is very closely related to the Anuket, in that it is a group th
 <a name="3.4.2"></a>
 ### Relationship between Anuket projects and OVP
 
-The Anuket is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services including **Vendor's Implementation (VI)** of cloud infrastructure and VNFs. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
+The Anuket project is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services including **Vendor's Implementation (VI)** of cloud infrastructure and VNFs. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
-Once the Anuket specifications are in place, we create a reference implementation that is adherent to requirements set in the specifications (**Reference Implementations**). Additionally, commercial products adhering to Anuket specifications will be able to undergo an enhanced OVP’s program (based on the **Reference Conformance** specification) using testing framework and tools provided by Anuket. **Figure 6** below illustrates the relationship with OVP in more details (specific to OpenStack based specifications).
+We create an implementation that adheres to the implementation requirements set in the Anuket specifications (**Reference Implementations**). Additionally, commercial products can undergo the OVP’s conformance program based on the Anuket **Reference Conformance** specifications and using Anuket specified testing frameworks and tools. **Figure 6** below illustrates the relationship with OVP in more details (specific to OpenStack based specifications).
 
 <p align="center"><img src="./figures/tech_relation.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 6:</b> Anuket Relationship with OVP.</p>
 
 As can be seen from the above figure, roles and responsibilities are as follows:
 - Anuket specifies lab requirements in the **Reference Implementation** document which will be used to define what labs can be used within the community for the purpose of installing and testing Anuket conformant cloud infrastructure implementations.
-- Anuket includes a lab Playbook in its **Reference Implementation** detailing available suitable labs to run and test cloud infrastructure implementations with access details and processes.
-- Anuket specifies installer requirements in the **Reference Implementation** document which will be used to determine a suitable installer to be used to install a **Reference Implementation** of cloud infrastructure that are conformant to Anuket specifications.
+- Anuket includes a lab Playbook in its **Reference Implementation** detailing available suitable labs to run and test cloud infrastructure implementations; the playbook includes processes, access procedures and other details.
+- Anuket specifies requirements in the **Reference Implementation** document for installers that can be used to install a cloud infrastructure.
 - Anuket includes an installation Playbook in its **Reference Implementation** detailing instructions of how to install the reference implementation using community installers. The **Reference Implementation** created is expected to be fully conformant to Anuket specifications and must pass all test suites defined in the Anuket **Reference Conformance** document.
-- Anuket specifies testing framework requirements in the **Reference Conformance** document which will be used to determine a suitable testing framework and portals to be used for the purpose of running test suites and tools, and carry out badging processes.
-- Anuket defines high level test cases in the **Reference Conformance** document that relates to requirements coming from both the **Reference Model** and **Reference Architecture** to be used to determine what testing projects within the community are suitable to deliver those tests and convert them into low level test cases that can be implemented within those testing projects.
+- Anuket specifies testing framework requirements in the **Reference Conformance** document that will be used to determine a suitable testing framework and portals to be used for the purpose of running test suites and tools, and carry out badging processes.
+- The Anuket **Reference Conformance** document defines high level test cases, for requirements from both the **Reference Model** and **Reference Architecture**, that are used to determine the testing projects within the community suitable to deliver these tests.
 - Anuket includes a traceability matrix in its **Reference Conformance** document detailing every test case (or group of test cases) available in the community and map them to the high level test case definition and the requirements they are fulfilling.
-- Anuket includes a testing Playbook in its **Reference Conformance** document detailing instructions of how to run the testing framework and test cases against commercial NFV products (infrastructure and workload) to check conformance to Anuket specifications. The testing Playbook will also detail instructions of how to submit testing results for the **OVP** badging process.
+- The Anuket **Reference Conformance** document includes a testing Playbook detailing instructions of how to run the testing framework and test cases against commercial NFV products (infrastructure and workload) to check conformance to Anuket specifications. The testing Playbook also details instructions of how to submit testing results for the **OVP** badging process.
 
 
 <a name="3.4.3"></a>
