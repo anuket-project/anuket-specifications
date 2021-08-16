@@ -4,5 +4,5 @@
 
 <a name="available-ra"></a>
 ## Available Reference Architectures
-* [RA1 - Openstack Based](openstack)
-* [RA2 - Kubernetes Based](kubernetes)
+* [RA1 - Openstack Based](openstack/README.md)
+* [RA2 - Kubernetes Based](kubernetes/README.md)

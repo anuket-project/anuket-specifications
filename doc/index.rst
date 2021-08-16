@@ -1,8 +1,5 @@
-CNTT
-----
-
-Documents
-=========
+Anuket Specifications
+=====================
 .. toctree::
     :maxdepth: 16
 

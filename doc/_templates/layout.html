@@ -1,4 +1,5 @@
+{# Import the theme's layout. #}
 {% extends "!layout.html" %}
-{% block extrahead %}
-    <link href="{{ pathto("_static/custom.css", True) }}" rel="stylesheet" type="text/css">
-{% endblock %}
+
+{# Custom CSS overrides #}
+{% set css_files = css_files + ['_static/css/custom.css'] %}
