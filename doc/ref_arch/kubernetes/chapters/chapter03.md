@@ -453,7 +453,7 @@ Network objects | Description
 [Ingress:](https://kubernetes.io/docs/concepts/services-networking/ingress/) | Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally reachable URLs, load balance traffic, terminate SSL, offer name based virtual hosting etc.
 [Service:](https://kubernetes.io/docs/concepts/services-networking/service/) | Service is a named abstraction of an application running on a set of pods consisting of a local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
 [EndpointSlices:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | Endpoints and Endpointslices are a collection of objects that contain the ip address, v4 and v6, of the pods that represents a service.
-[Network Policy:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | NetworkPolicy defines which network traffic is allowed to ingress and egress from a set of pods.
+[Network Policy:](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/) | Network Policy defines which network traffic is allowed to ingress and egress from a set of pods.
 
 There is no need to explicitly define internal load balancers, server pools, service monitors, firewalls and so on. The Kubernetes semantics and relation between the different objects defined in the object manifests contains all the information needed.
 
