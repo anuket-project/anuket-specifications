@@ -496,7 +496,7 @@ spec:
 
 This is all that is needed to deploy 4 pods/containers that are fronted by a service that performes load balancing. The *Deployment* will ensure that there are always four pods of type *my-app* available. the *Deployment* is responsible for the full lifecycle management of the pods, this includes in service update/upgrade.
 
-None of this is of much help however when implementing network service functions such as VNFs/CNFs that requires multi networking and network orchestration
+None of this is of much help however when implementing network service functions such as VNFs/CNFs that operate on multiple networks and require advanced networking configurations.
 
 <a name="3.2.2.1.2"></a>
 #### 3.2.2.1.2 Multi networking and Orchestration
