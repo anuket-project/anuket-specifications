@@ -433,7 +433,7 @@ Kubernetes networking can be divided into two parts, built in network functional
 
 <a name="3.2.2.1.1"></a>
 #### 3.2.2.1.1 Built in Kubernetes network functionality 
-Kubernetes currently only allows for one network, the *cluster* network and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
+Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
 
 The basic semantics of Kubernetes and the information found in manifest defines the connectivity rules and behavior without in principle any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
 
