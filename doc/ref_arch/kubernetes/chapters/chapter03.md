@@ -440,7 +440,7 @@ The basic semantics of Kubernetes, and the information found in manifests, defin
 Kubernetes built in objects
 Pod and workloads | Description
 ------------------|------------
-[Pod:](https://kubernetes.io/docs/concepts/workloads/pods/) | Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
+[Pod:](https://kubernetes.io/docs/concepts/workloads/pods/) | Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto nodes.
 [ReplicaSet:](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) | ReplicaSet ensures that a specified number of pod replicas are running at any given time.
 [Deployment:](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Deployment enables declarative updates for Pods and ReplicaSets.
 [DaemonSet:](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) | A Daemon set ensures that the correct nodes run a copy of a Pod.
