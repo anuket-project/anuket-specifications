@@ -426,7 +426,7 @@ features [here](../../../ref_model/chapters/chapter05.md#5.4).
 
 <a name="3.2.2.1"></a>
  ### 3.2.2.1 Kubernetes Networking Semantics
-The support for traditional network orchestration is non existing in Kubernetes proper. Kubernetes is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) infrastructure component. There is no orchestration API like Neutron in Openstack and there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then a way connect them all together like in case of Neutron.
+The support for traditional network orchestration is non existent in Kubernetes as it is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) component. There is no network orchestration API, like Neutron in OpenStack, and there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect them all together as can be done using Neutron.
 
 Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
 
