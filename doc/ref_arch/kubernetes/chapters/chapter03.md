@@ -565,7 +565,7 @@ metadata:
     k8s.v1.cni.cncf.io/networks: blue-network, green-network, red-network
 ```
 
-This is enough to support basic network orchestration, it is possible to map up L2 networks from an external network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address management is however limited. The address must be assigned by the CNI plugin as part of the pod creation process.
+This is enough to support basic network configuration management, it is possible to map up L2 networks from an external network infrastructure into a Kubernetes system and attach pods to these networks. The support for IPv4 and IPv6 address management is however limited. The address must be assigned by the CNI plugin as part of the pod creation process.
 
 
 ### 3.2.3 Container Storage Services
