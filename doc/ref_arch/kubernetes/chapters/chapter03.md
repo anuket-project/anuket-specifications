@@ -19,7 +19,7 @@
     * [3.2.2 Container Networking Services](#322-container-networking-services)
       * [3.2.2.1 Kubernetes Networking Semantics](#3.2.2.1)
          * [3.2.2.1.1 Built in Kubernetes Network Functionality](#3.2.2.1.1)
-         * [3.2.2.1.2 Multi networking and Orchestration](#3.2.2.1.2)
+         * [3.2.2.1.2 Multiple Networks and Advanced Configurations](#3.2.2.1.2)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
     * [3.2.4 Kubernetes Application package manager](#324-kubernetes-application-package-managers)
     * [3.2.5 Custom Resources](#325-custom-resources)
