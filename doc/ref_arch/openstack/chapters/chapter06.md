@@ -43,7 +43,7 @@ Access to all the platform's components must be restricted (sec.gen.013) applyin
 - Remove, or at a minimal, disable all unnecessary user accounts 
 - Change all default user accounts where technically feasible
 - Change all default credentials
-- Prohibit logging with root account when root prvileges are not required (sec.gen.006)
+- Prohibit logging with root account when root privileges are not required (sec.gen.006)
 - Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
 - The same authentication credentials must not be reused on different components (sec.sys.011)
 - Restrict access to Operating System (sec.gen.005)
