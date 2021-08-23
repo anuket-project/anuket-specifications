@@ -401,7 +401,7 @@ virtualenv functest --system-site-packages
 . functest/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
-ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes community.docker community.postgresql
+ansible-galaxy collection install ansible.posix community.general community.grafana kubernetes.core community.docker community.postgresql
 git clone https://gerrit.opnfv.org/gerrit/functest functest-src
 (cd functest-src && git checkout -b stable/jerma origin/stable/jerma)
 ansible-playbook functest-src/ansible/site.yml
@@ -415,7 +415,7 @@ virtualenv functest --system-site-packages
 . functest/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
-ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes community.docker community.postgresql
+ansible-galaxy collection install ansible.posix community.general community.grafana kubernetes.core community.docker community.postgresql
 git clone https://gerrit.opnfv.org/gerrit/functest functest-src
 (cd functest-src && git checkout -b stable/jerma origin/stable/jerma)
 ansible-playbook functest-src/ansible/site.cntt.yml
