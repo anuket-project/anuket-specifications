@@ -13,7 +13,7 @@ All of the requirements for RC2 have been defined in the Reference Model (RM) an
 - Enable clear traceability of the coverage of requirements across consecutive releases of this document
 - Clickable links from test cases to requirements
 - One or more tests for every MUST requirement
-- A set of test cases to serve as a template for Cloud Native OVP
+- A set of test cases to serve as a template for Anuket Assured
 
 ### Non-Goals
 - Defining any requirements
@@ -38,9 +38,9 @@ are insufficient. They are partially selected for the
 [Software Conformance Certification program](https://github.com/cncf/k8s-conformance)
 run by the Kubernetes community (under the aegis of the CNCF).
 
-CNTT shares the same goal to give end users the confidence that when they use
+Anuket shares the same goal to give end users the confidence that when they use
 a certified product they can rely on a high level of common functionality.
-Then CNTT RC2 starts with the test list defined by
+Then Anuket RC2 starts with the test list defined by
 [K8s Conformance](https://github.com/cncf/k8s-conformance) which is expected to
 grow according to the ongoing requirement traceability.
 
@@ -67,7 +67,7 @@ Conformance as per the rules.
 
 It must be noted that the default
 [K8s Conformance](https://github.com/cncf/k8s-conformance) testing is
-disruptive thus CNTT RC2 rather picks
+disruptive thus Anuket RC2 rather picks
 [non-disruptive-conformance](https://sonobuoy.io/docs/master/e2eplugin/)
 testing as defined by [Sonobuoy](https://sonobuoy.io/).
 
@@ -177,7 +177,7 @@ Network.should.set.TCP.CLOSE_WAIT.timeout are currently skipped because they
 haven't been covered successfully neither by
 [sig-release-1.21-blocking](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-release/release-branch-jobs/1.21.yaml)
 nor by
-[CNTT RC2 verification](https://build.opnfv.org/ci/view/functest-kubernetes/job/functest-kubernetes-v1.21-daily/22/)
+[Anuket RC2 verification](https://build.opnfv.org/ci/view/functest-kubernetes/job/functest-kubernetes-v1.21-daily/22/)
 
 focus: [sig-network]
 
@@ -304,7 +304,7 @@ of 0%) proposed in
 | Kubernetes.list_namespaces                                         | 10         |
 
 The following software versions are considered to benchmark Kubernetes v1.21
-(latest stable release) selected by CNTT:
+(latest stable release) selected by Anuket:
 
 | software                | version     |
 |-------------------------|-------------|
@@ -333,7 +333,7 @@ It should be noted that
 leverages [iperf](https://github.com/esnet/iperf) (both TCP and UDP modes) and
 [Netperf](https://github.com/HewlettPackard/netperf/).
 
-At the time of writing, no KPI is defined in CNTT chapters which would have
+At the time of writing, no KPI is defined in Anuket chapters which would have
 asked for an update of the default SLA proposed in
 [Functest Kubernetes Benchmarking](https://git.opnfv.org/functest-kubernetes/tree/docker/benchmarking?h=stable/v1.21).
 
@@ -373,7 +373,7 @@ warnings are only printed) as integrated in
 [Functest Kubernetes Security](https://git.opnfv.org/functest-kubernetes/tree/docker/security/testcases.yaml?h=stable%2Fv1.21).
 
 The following software versions are considered to verify Kubernetes v1.21
-(latest stable release) selected by CNTT:
+(latest stable release) selected by Anuket:
 
 | software                | version     |
 |-------------------------|-------------|
@@ -394,7 +394,7 @@ upstream tests (see
 [clearwater-live-test](https://github.com/Metaswitch/clearwater-live-test)).
 
 The following software versions are considered to verify Kubernetes v1.21
-(latest stable release) selected by CNTT:
+(latest stable release) selected by Anuket:
 
 | software                | version     |
 |-------------------------|-------------|
