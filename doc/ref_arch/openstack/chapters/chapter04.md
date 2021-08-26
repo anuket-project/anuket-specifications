@@ -59,6 +59,7 @@ Minimal configuration: 1 node
 
 #### 4.2.2.2. OpenStack Control Plane Servers (Control Nodes)
 - BIOS Requirements
+
 For OpenStack control nodes we use the BIOS parameters for the basic profile defined in [Chapter 5.4 of the Reference Model](../../../ref_model/chapters/chapter05.md#5.4). Additionally, for OpenStack we need to set the following boot parameters:
 
 | BIOS/boot Parameter | Value |
@@ -159,8 +160,9 @@ A number of capabilities need to be enabled in the BIOS (such as NUMA and SMT); 
 
 -	Sizing rules
 
-| Number of CPU sockets| s |
+| Description | Mnemonic |
 | ------------|--|
+| Number of CPU sockets| s |
 | Number of cores| c |
 | SMT| t |
 | RAM| rt |

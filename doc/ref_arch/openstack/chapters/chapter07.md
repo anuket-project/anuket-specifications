@@ -35,7 +35,7 @@ In the mutable infrastructure paradigm, software updates are made in place. Over
 
 <a name="7.2"></a>
 ## 7.2 Cloud Infrastructure and VIM configuration management
-In the Reference Model, [Chapter 9 Configuration and Lifecycle Management]( ../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management) defines the functions of Configuration and Life Cycle Management (LCM).  To operate and manage a scalable cloud, that minimizes operational costs, requires tools that incorporates systems for automated provisioing and deployment, and managing configurations that ensures the correctness and integrity of the deployed and configured systems. 
+In the Reference Model, [Chapter 9 Configuration and Lifecycle Management]( ../../../ref_model/chapters/chapter09.md#92-configuration-and-lifecycle-management) defines the functions of Configuration and Life Cycle Management (LCM).  To operate and manage a scalable cloud, that minimizes operational costs, requires tools that incorporates systems for automated provisioning and deployment, and managing configurations that ensures the correctness and integrity of the deployed and configured systems. 
 
 <a name="7.2.1"></a>
 ### 7.2.1. Provisioning 

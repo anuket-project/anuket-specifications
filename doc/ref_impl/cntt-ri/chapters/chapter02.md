@@ -26,7 +26,7 @@
 <a name="2.2"></a>
 ## 2.2 Reference Architecture Requirement
 
-This is the reference implementation for OpenStack based CNTT RA. Please refer to [CNTT Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](https://github.com/cntt-n/CNTT/blob/master/doc/ref_arch/openstack/chapters/chapter02.md) for the details of RA requirement
+This is the reference implementation for OpenStack based RA. Please refer to [Reference Architectures:OpenStack Based:Chapter 02 - Architecture Requirement](../../../ref_arch/openstack/chapters/chapter02.md) for the details of the RA requirements.
 
 The implementation should follow all the requirement identified in the RA chapter.
 
@@ -58,8 +58,8 @@ The implementation **must** be capable of acting as 'golden NFVi' and support VN
 ## 2.4 Typical Example for Reference Implementation
 
 The following figure explicitely shows a typical example for reference implementation based on OpenStack. Note that this is just an example, actual
-deployment can be varied in multiple aspects, including the number of VIM-ctrl, SDN/no-SDN, the number of network nodes and storage nodes and 
-leaf-spine/no leaf-spine. 
+deployment can be varied in multiple aspects, including the number of VIM-ctrl, SDN/no-SDN, the number of network nodes and storage nodes and
+leaf-spine/no leaf-spine.
 
 
 <p align="center"><img src="../figures/chp02_typical RI.PNG" alt="relationship" title="Document Types" width="100%"/></p>
@@ -73,7 +73,5 @@ For the purpose of reference implementation and verification, OPNFV based RI wil
 
 N compute nodes: support for cloud workload service identified in RA. (N>=2)
 
-Note that the number "N" can be defined according to the need for deployment or verification. It will be defined by actual work load that is going to run 
+Note that the number "N" can be defined according to the need for deployment or verification. It will be defined by actual work load that is going to run
 on the cloud. N need to be equal or larger than 2 so as to fit into the requirement for resiliency.
-
- 
