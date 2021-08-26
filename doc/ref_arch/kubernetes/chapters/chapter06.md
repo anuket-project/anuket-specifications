@@ -121,7 +121,7 @@ following Features tabs defined here.
 | Feature:Networking-IPv6             |               | Networking should provide Internet connection for containers |
 | Feature:Networking-Performance      | X             | run iperf2 |
 | Feature:NetworkPolicy               |               | NetworkPolicy between server and client should enforce policy to allow traffic only from a different namespace, based on NamespaceSelector |
-| Feature:PerformanceDNS              | X             | Should answer DNS query for maximum number of services per cluster |
+| Feature:PerformanceDNS              |               | Should answer DNS query for maximum number of services per cluster |
 | Feature:SCTP                        |               | should allow creating a basic SCTP service with pod and endpoints |
 | Feature:SCTPConnectivity            |               | Pods should function for intra-pod communication: sctp |
 
