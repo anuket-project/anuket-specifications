@@ -16,13 +16,13 @@
 - Describe the purpose of this chapter, which includes, but not limited to:
 - Test Case Gaps (analysis)
 -	Automation Gaps
--	OpenStack release Comparisons (Train, Ussuri, etc)
+-	OpenStack release Comparisons
 
 <a name="8.2"></a>
 ## 8.2 Openstack Release Comparisons
 
 - Provide details, preferably in table format, comparing OpenStack releases based
-  on Train baseline for CNTT RI-1 (e.g. Train, Ussuri, etc)
+  on Wallaby baseline for CNTT RI-1
 
 <a name="8.3"></a>
 ## 8.3 Automation Gaps
