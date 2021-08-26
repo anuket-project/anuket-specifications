@@ -179,6 +179,9 @@ haven't been covered successfully neither by
 nor by
 [CNTT RC2 verification](https://build.opnfv.org/ci/view/functest-kubernetes/job/functest-kubernetes-v1.21-daily/22/)
 
+Please note that a couple of tests must be skipped by name below as they are no
+appropriate labels.
+
 focus: [sig-network]
 
 skip:
@@ -245,6 +248,9 @@ The following exclusions are about
 [the deprecated in-tree GitRepo volume type](https://github.com/kubernetes-sigs/kind/issues/2356):
   - should provision storage with different parameters
   - should not cause race condition when used for git_repo
+
+Please note that a couple of tests must be skipped by name below as they are no
+appropriate labels.
 
 focus: [sig-storage]
 
