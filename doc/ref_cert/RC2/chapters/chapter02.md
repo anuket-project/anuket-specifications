@@ -125,19 +125,6 @@ See [Auth Special Interest Group](https://github.com/kubernetes/community/tree/m
 and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
 for more details.
 
-#### CLI Testing
-
-focus: [sig-cli]
-
-skip:
-  - [alpha]
-  - [Disruptive]
-  - [Flaky]
-
-See [CLI Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cli)
-and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
-for more details.
-
 #### Cluster Lifecycle Testing
 
 focus: [sig-cluster-lifecycle]
@@ -416,8 +403,6 @@ The following test case must pass as they are for Reference Conformance:
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_apps                 | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_apps_serial          | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_auth                 | PASS     | Kubernetes API testing                |
-| opnfv/functest-kubernetes-smoke:v1.21         | sig_cli                  | PASS     | Kubernetes API testing                |
-| opnfv/functest-kubernetes-smoke:v1.21         | sig_cli_serial           | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_cluster_lifecycle    | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_instrumentation      | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_network              | PASS     | Kubernetes API testing                |
