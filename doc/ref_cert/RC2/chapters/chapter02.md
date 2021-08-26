@@ -194,6 +194,7 @@ skip:
   - [Feature:NEG]
   - [Feature:Networking-IPv6]
   - [Feature:NetworkPolicy]
+  - [Feature:PerformanceDNS]
   - [Feature:SCTP]
   - [Feature:SCTPConnectivity]
   - load.balancer
