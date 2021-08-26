@@ -8,5 +8,5 @@ Anuket Specifications
     Reference Model </ref_model/README.md>
     Reference Architectures </ref_arch/README.md>
     Reference Implementation </ref_impl/README.md>
-    Reference Conformance (RC) Test Case Integration </ref_cert/README.md>
+    Reference Conformance </ref_cert/README.md>
     Vendor Implementations </ven_impl/README.md>

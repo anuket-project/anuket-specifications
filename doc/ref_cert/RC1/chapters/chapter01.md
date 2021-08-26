@@ -9,18 +9,17 @@
   * [1.1.2 Relation to other communities](#1.1)
 * [1.2 Scope](#1.2)
 * [1.3 Relation to other communities](#1.3)
-* [1.3 Principles and Guidelines](#1.4)
+* [1.4 Principles and Guidelines](#1.4)
   * [1.4.1 Overarching Objectives and Goals](#1.4.1)
 * [1.5 Best Practices](#1.5)
 * [1.6 Verification methodologies](#1.6)
-*	[1.7 Assumptions & Dependencies](#1.7)
-*	[1.8 Results Collation & Presentation](#1.8)
-*	[1.9 Governance](#1.9)
-* [1.10 Resources & References](#1.10)
+* [1.7 Assumptions & Dependencies](#1.7)
+* [1.8 Results Collation & Presentation](#1.8)
+* [1.9 Governance](#1.9)
 
 ## Synopsis
 
-Ensure an implementation of the CNTT Reference Architecture (RA), such as the Reference Implementation (RI), meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RC.
+Ensure an implementation of the Anuket Reference Architecture (RA), such as the Reference Implementation (RI), meets industry driven quality assurance standards for conformance, verification and validation.  The OPNFV Verified Program (OVP), by Linux Foundation Networking (LFN), overseen by the Compliance Verification Committee (CVC), will provide tracking and governance for RC.
 
 For the purpose of this chapter, NFVI+VNF testing will be performed to evaluate **Conformance** (i.e. adherence) to, and demonstrated proficiency with, all aspects of software delivery.  More specifically, Conformance includes:
 
@@ -44,7 +43,7 @@ In summary, NFVI+VNF **Conformance** testing will be performed for **Verificatio
 This chapter includes process flow, logistics, and requirements which must be satisfied to ensure Network Function Virtualisation Infrastructure (NFVI) meets the design, feature, and capability expectations of RM and RA. Upstream projects will define features/capabilities, test scenarios, and test cases which will be used to augment OVP test harnesses for infrastructure verification purposes.  Existing processes, communication mediums, and related technologies will be utilized where feasible.  Ultimately, test results of certified NFVI+VNF will reduce the amount of time and cost it takes each operator to on-board and maintain vendor provided VNFs.
 
 **Objective**<br>
-Perform NFVI+VNF Verification and Validations using CNTT reference architecture, leveraging the existing OPNFV and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+Perform NFVI+VNF Verification and Validations using Anuket reference architecture, leveraging the existing Anuket and CVC Intake and Validation Process to onboard and validate new test projects for NFVI compliance.  Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 **Test Methodology**
 - Verification test to make sure if the OpenStack services have been deployed and configured correctly
@@ -58,7 +57,7 @@ The three step methodology described above of verifying Manifest compliance, exe
 <a name="1.1.1"></a>
 ### 1.1.1 Terminology
 
-Terminology in this document will follow [CNTT Terminology](../../../common/glossary.md).
+Terminology in this document will follow [Anuket Terminology](../../../common/glossary.md).
 
 <a name="1.2"></a>
 ## 1.2 Scope
@@ -108,16 +107,16 @@ These core principles will guide NFV verification deliverables:
 The following best practices have been adopted to ensure verification and validation procedures are repeatable with consistent quality in test results, and RI conformances:
 
 * Standardized test methodology / flow, Test Plan, and Test Case Suites
-* Integration with OPNFV Upstream Projects and OVP flow (code, docs, cert criteria, etc.)
+* Integration with Anuket Upstream Projects and OVP flow (code, docs, cert criteria, etc.)
 * Leverage Network and Service Models, with identified VNF-specific parameters
 * Standardized conformance criteria
-* Define CNTT RA as scenarios, and have all test cases for the RA be involved in OVP (could also be addressed in OVP as CNTT test)
+* Define Anuket RA as scenarios, and have all test cases for the RA be involved in OVP
 * Add test cases from operators, which operators already tested in their environment
 
 <a name="1.6"></a>
 ## 1.6 Verification methodologies
 
-Perform VNF interoperability verifications against an implementation of CNTT reference architecture, leveraging existing OPNFV Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
+Perform VNF interoperability verifications against an implementation of Anuket reference architecture, leveraging existing Anuket Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
 3rd Party test platforms may also be leveraged, if desired.
 
@@ -141,7 +140,7 @@ In addition, respective Entrance criteria is a prerequisite which needs to be
 satisfied for NFVI+VNF to be considered **Testable**.
 
 **Dependencies** NFVI+VNF verification will rely upon test harnesses, test
-tools, and test suites provided by upstream OPNFV projects, including dovetaill,
+tools, and test suites provided by Anuket projects, including dovetaill,
 yardstick, and Bottleneck. These upstream projects will be reviewed
 semi-annually to verify they are still healthy and active projects. Over time,
 the projects representing the conformance process may change, but test parity
@@ -175,30 +174,3 @@ Test suites will be categorized as functional or performance based. Results repo
 
 1. Conformance badges will be presented by the CVC
 2. CVC will maintain requirements for conformance
-
-<a name="1.10"></a>
-## 1.10 Resources & References
-
-1. **OPNFV** https://www.opnfv.org/ - project and community that facilitates a cloud infrastructure, continuous integration (CI) with upstream projects, stand-alone testing toolsets, and a compliance and verification program for industry-wide testing and integration to accelerate the transformation of enterprise and service provider networks.<br>
-2. **CVC** https://wiki.lfnetworking.org/display/LN/Compliance+and+Verification+Committee - members-driven committee within LF Networking that recommends policies and oversight for compliance and conformance program to the Governing Board of LF Networking (“Governing Board”).
-3. **Conducting OVP Testing with Dovetail** https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/testing/user/userguide/testing_guide.html
-4. **Dovetail**
-   1. Framework https://wiki.opnfv.org/display/dovetail/Dovetail+Test+Case+Requirements
-   2. Test Plan: https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review?preview=/11698759/11698757/User%20Guide.pdf
-   3. TCs:
-      1. https://wiki.opnfv.org/display/dovetail/Dovetail+%28Danube%29+Documentation+for+Review
-      2. Called by functest (repo): https://github.com/opnfv/dovetail/tree/master/etc/testcase
-      3. Per OVP release in the release notes:
-        1. https://docs.opnfv.org/en/stable-fraser/submodules/dovetail/docs/release/release-notes/index.html
-       2. https://docs.opnfv.org/en/stable-danube/submodules/dovetail/docs/release/release-notes/index.html
-5. **Overall documentation** is on docs.opnfv.org for the corresponding Fraser and Danube releases
-   1. https://docs.opnfv.org/en/stable-fraser/testing/testing-user.html (Fraser)
-   2. https://docs.opnfv.org/en/stable-fraser/testing/testing-dev.html (Fraser)
-6. **OPNFV Verification Program** is an open source, community-led compliance and verification program to demonstrate the readiness and availability of commercial NFV products and services, including NFVI and VNFs, using OPNFV and ONAP components (https://www.lfnetworking.org/OVP/).
-1. **OVP Whitepaper**: https://www.lfnetworking.org/resources/2019/04/03/ovp:-opnfv-verification-program/
-1. **What is Verification And Validation In Software Testing**: [https://www.softwaretestingmaterial.com/verification-and-validation/](https://www.softwaretestingmaterial.com/verification-and-validation/)
-1. **Verification vs Validation**: [http://softwaretestingfundamentals.com/verification-vs-validation/ ](http://softwaretestingfundamentals.com/verification-vs-validation/  )
-1. **Verification/Validation/Conformance**: [https://users.ece.cmu.edu/~koopman/des_s99/verification/](https://users.ece.cmu.edu/~koopman/des_s99/verification/ )
-1. _IOPS - I/O (Input/Output) operations per second_, by Vangie Beal.  Retrieved from https://www.webopedia.com/TERM/I/IOPS.html on 9/18/2019.
-2. _The ultimate IOPS cheat sheet!_, by Bas van Kaam.  Retrieved from https://www.basvankaam.com/2014/07/29/the-ultimate-iops-cheat-sheet/ on 9/18/2019.
-3. _An explanation of IOPS and latency_, by Dimitris Krekoukias.  Retrieved from http://recoverymonkey.org/2012/07/26/an-explanation-of-iops-and-latency/ on 9/18/2019.
