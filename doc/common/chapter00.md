@@ -69,7 +69,7 @@ By providing a pre-defined environment with common capabilities, applications ar
 - Better utilisation
   - Properly mapping VNFs/CNFs to flavours to the underlying infrastructure, brings the potential for more efficient utilisation, than needing to create specific configurations for each type of application in the infrastructure.  
 
-In conclusion, to serve the stated objective building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the Anuket specifications include a reference model, a select set of architectures, a set of reference implementations, and a set of conformance suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
+In conclusion, to serve the stated objective of building a common cloud infrastructure that is able to take advantage of true cloud models for the more rapid development and deployment of SDN NFV applications, the Anuket specifications include a reference model, a select set of architectures, a set of reference implementations, and a set of conformance suites, so that there is a more consistent model infrastructure for developers and vendors of SDN software and applications to build to.
 
 
 <a name="2.0"></a>
@@ -97,7 +97,7 @@ Any specifications created within the Anuket project **must** conform to the fol
    - Networking resources (Limited to connectivity services only)
    - Acceleration resources
 1. Vendor independence of Cloud Infrastructure exposed resources .
-1. Cloud Infrastructure Application Programming Interfaces (APIs) ensure Interoperability (multi-vendor, components substitution), drive Simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations).
+1. Cloud Infrastructure Application Programming Interfaces (APIs) ensure Interoperability (multi-vendor, components substitution), drive simplification, and open source implementations that have an open governance model (e.g. come from Open Communities or Standards Development Organisations).
 •	These APIs support, for example, cloud infrastructure resources discovery, monitoring by management entities, configuration on behalf of workloads and consumption by workloads
 1. Workloads are modular and designed to utilise the minimum resources required for the service.
 1. Workloads consume only the resources, capabilities and features provided by the Cloud infrastructure.
@@ -228,7 +228,9 @@ As can be seen from the above figure, roles and responsibilities are as follows:
 - Anuket specifies lab requirements in the **Reference Implementation** document which will be used to define what labs can be used within the community for the purpose of installing and testing Anuket conformant cloud infrastructure implementations.
 - Anuket includes a lab Playbook in its **Reference Implementation** detailing available suitable labs to run and test cloud infrastructure implementations; the playbook includes processes, access procedures and other details.
 - Anuket specifies requirements in the **Reference Implementation** document for installers that can be used to install a cloud infrastructure.
-- Anuket includes an installation Playbook in its **Reference Implementation** detailing instructions of how to install the reference implementation using community installers. The **Reference Implementation** created is expected to be fully conformant to Anuket specifications and must pass all test suites defined in the Anuket **Reference Conformance** document.
+- Anuket includes an installation Playbook in its **Reference Implementation** specifications detailing instructions of how to install an infrastructure using Anuket conformant installers. 
+
+An infrastructure that follows the Anuket **Reference Implementation** specifications and passes all the tests specified in the Anuket **Reference Conformance** document is referred to as an Anuket Reference Implementation.
 - Anuket specifies testing framework requirements in the **Reference Conformance** document that will be used to determine a suitable testing framework and portals to be used for the purpose of running test suites and tools, and carry out badging processes.
 - The Anuket **Reference Conformance** document defines high level test cases, for requirements from both the **Reference Model** and **Reference Architecture**, that are used to determine the testing projects within the community suitable to deliver these tests.
 - Anuket includes a traceability matrix in its **Reference Conformance** document detailing every test case (or group of test cases) available in the community and map them to the high level test case definition and the requirements they are fulfilling.
