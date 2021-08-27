@@ -91,7 +91,7 @@ The NFV Infrastructure (NFVI) is the totality of all hardware and software compo
  which build up the environment in which VNFs are deployed, managed and executed.
  It is, therefore, inevitable that different VNFs would require different
  capabilities and have different expectations from it. So one of the main targets of
- the Anuket is to define an agnostic NFVI and removes any dependencies between
+ Anuket is to define an agnostic NFVI and removes any dependencies between
  VNFs and deployed Infrastructure (NFVI) and offer NFVI to VNFs in an abstracted way
  with defined capabilities and metrics. This would help operators to host their
  Telco Workload (VNF) with different traffic types, behaviour and from any vendor
@@ -411,7 +411,7 @@ so following model deliverables would enable it:
 
 Network functions virtualization (NFV) and softwaredefined networking (SDN) offer service providers increased service agility, OpEx improvements, and back-office automation. Disaggregation, the approach of decoupling the various layers of the stack, from hardware, to NFVI/VIM software, to dataplane acceleration, SDN controllers, MANO components, and VNFs, enables multi-vendor deployments with best-of-breed options at each layer.
 
-Anuket is defining the required architecture and model for NFVI which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI.Therefore,in addition to verify general NFVI capabilities based on Anuket RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the Anuket-compatible NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
+The Anuket specifications define the required architecture and model for NFVI which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI. Therefore, in addition to verify general NFVI capabilities based on Anuket RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the Anuket-compliant NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
 
 In this chapter, the scope and requirements of VNF test cases are defined as reference for VNF Conformance, which helps to perform the various compliance and verification (C&V) testing and submit results to LFN OVP Conformance portal.
 
@@ -419,7 +419,7 @@ In this chapter, the scope and requirements of VNF test cases are defined as ref
 ### 5.5.2 Assumptions
 
 Here lists the assumptions for VNF Conformance:
-- NFVI is ready and it should be Anuket-compatible NFVI
+- NFVI is ready and it should be an Anuket-compliant NFVI
 - VNF template is ready to deploy and certificate
 - VNF Test environment is ready, the test environment contains test functions and entities(NFVI, MANO, VNF Test Platform, VNF Test Tools) to enable controlling the test execution and collecting the test measurements.
 - VNF Test Platform has been integrated with CICD chain
@@ -436,9 +436,9 @@ This section define the developer Deliverables (artifacts),the following list th
 <a name="5.5.4"></a>
 ### 5.5.4 Requirement Type
 
-VNF test cases are used to verify whether the virtualization network functions can be deployed on the Anuket-compatible NFVI and provide normal functions and meet performance, security and other requirements.
+VNF test cases are used to verify whether the virtualization network functions can be deployed on the Anuket-compliant NFVI and provide normal functions and meet performance, security and other requirements.
 
-By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance Conformance and help on Anuket-compatible NFVI validation and performance Conformance.
+By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance Conformance and help on Anuket-compliant NFVI validation and performance Conformance.
 
 All the VNF test cases should be supported and run by VNF E2E Conformance and verification Framework and generate outputs, logs to identify whether the test passed or failed.
 

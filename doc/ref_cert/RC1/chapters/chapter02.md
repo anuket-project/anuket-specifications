@@ -508,7 +508,7 @@ The different possible test cases are defined by each of the 3 following test tr
 
     *Note*: the maximum TCP frame size can be forced by configuring TCP endpoint link MTU.
 
-    The main Anuket test tools candidate for that purpose is Functest (VMTP and Shaker).
+    The main Anuket test tool candidate for that purpose is Functest (VMTP and Shaker).
 
     > _**Note:** to be studied whether metrics related to latency and flows for that traffic profile should be considered (how? with UDP and/or ICMP test traffic in addition?)_
 
