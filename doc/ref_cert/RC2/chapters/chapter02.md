@@ -184,6 +184,7 @@ skip:
   - [Feature:PerformanceDNS]
   - [Feature:SCTP]
   - [Feature:SCTPConnectivity]
+  - DNS configMap nameserver
   - load.balancer
   - LoadBalancer
   - Network.should.set.TCP.CLOSE_WAIT.timeout
@@ -407,7 +408,6 @@ The following test case must pass as they are for Reference Conformance:
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_cluster_lifecycle    | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_instrumentation      | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_network              | PASS     | Kubernetes API testing                |
-| opnfv/functest-kubernetes-smoke:v1.21         | sig_network_serial       | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_node                 | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_scheduling_serial    | PASS     | Kubernetes API testing                |
 | opnfv/functest-kubernetes-smoke:v1.21         | sig_storage              | PASS     | Kubernetes API testing                |
