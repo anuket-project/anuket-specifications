@@ -155,7 +155,7 @@ Within the framework of the common Telecom cloud infrastructure vision, there ar
 
 <a name="3.1"></a>
 ## Functional Scope
-To meet the goals, as described above, the Anuket project is focused on:
+To meet the goals, as described above, the Anuket project is focussed on:
 - Functional capabilities of the cloud infrastructure and the infrastructure management
 - Functional interfaces between infrastructure and infrastructure management
 - Functional interfaces between workloads and workload management
@@ -172,7 +172,7 @@ While the nature of the Anuket project might seem quite broad, the following are
 - Hardware specifications: beyond the abstracted high-level CPU, memory, network interface and storage elements.  The intention is to write the documents so they are general enough that any vendor hardware can be used in a conformant implementation without making significant changes to the model.
 - Workload specifications: Other than the API interfaces when they directly need to touch the workloads themselves, the intention is to assume the workload application is a black box that the cloud infrastructure is providing resources to.  The majority of interactions for lifecycle management of the workloads will be through the cloud infrastructure whenever possible.
 - Lifecycle Management of the CaaS Clusters: whilst a complete NFV-MANO solution would need to provide lifecycle management for the Kubernetes clusters it is using to deploy its CNFs, the Anuket specifications do not describe the NFVO and VNFM parts, and therefore the management of the cluster(s) is not in scope, while the VIM and the lifecycle management of containers (by Kubernetes) is in scope.
-- Company specific requirements: The Anuket specifications are designed to be general enough that most operators and others in the Open Source communities will be able to adapt and extend them to their own non-functional requirements.
+- Company specific requirements: The Anuket specifications are designed to be general enough that most operators and others in the open source communities will be able to adapt and extend them to their own non-functional requirements.
 
 <a name="3.3"></a>
 ## Specification Types
@@ -204,7 +204,7 @@ The Anuket work is not done in a vacuum.  The intention from the beginning was t
 - TM Forum
 - OSM (ETSI Open Source MANO project)
 - ODIM (Open Distributed Infrastructure Management)
-- VMware (While not an Open Source project, VMware is a commonly used platform used for VNF deployments in the telecom industry)
+- VMware (While not an open source project, VMware is a commonly used platform used for VNF deployments in the telecom industry)
 
 <a name="3.4.1"></a>
 ### Relationship to ETSI-NFV
@@ -228,7 +228,7 @@ As can be seen from the above figure, roles and responsibilities are as follows:
 - Anuket specifies lab requirements in the **Reference Implementation** document which will be used to define what labs can be used within the community for the purpose of installing and testing Anuket conformant cloud infrastructure implementations.
 - Anuket includes a lab Playbook in its **Reference Implementation** detailing available suitable labs to run and test cloud infrastructure implementations; the playbook includes processes, access procedures and other details.
 - Anuket specifies requirements in the **Reference Implementation** document for installers that can be used to install a cloud infrastructure.
-- Anuket includes an installation Playbook in its **Reference Implementation** specifications detailing instructions of how to install an infrastructure using Anuket conformant installers. 
+- Anuket includes an installation Playbook in its **Reference Implementation** specifications detailing instructions of how to install an infrastructure using Anuket conformant installers.
 
 An infrastructure that follows the Anuket **Reference Implementation** specifications and passes all the tests specified in the Anuket **Reference Conformance** document is referred to as an Anuket Reference Implementation.
 - Anuket specifies testing framework requirements in the **Reference Conformance** document that will be used to determine a suitable testing framework and portals to be used for the purpose of running test suites and tools, and carry out badging processes.
