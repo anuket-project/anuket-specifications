@@ -1,6 +1,6 @@
 [<< Back](../)
 
-# 3. Cloud Infrastructure Test Cases and Traceability to CNTT Requirements
+# 3. Cloud Infrastructure Test Cases and Traceability to Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
@@ -39,7 +39,7 @@ Note that each requirement may have one or more test cases associated with it.
 
 <a name="3.2"></a>
 ## 3.2 Selection Criteria
-> Test cases below are selected based on available test cases in open-source tools like OPNFV FuncTest, YardStick, DoveTail etc.
+> Test cases below are selected based on available test cases in open-source tools like FuncTest etc.
 
 <a name="3.3"></a>
 ## 3.3 Traceability Matrix
@@ -70,7 +70,7 @@ and backends selected in the different Gate jobs. The classical
 [Functest containers](https://wiki.opnfv.org/pages/viewpage.action?pageId=29098314)
 conform to this model which also fits the heterogeneous user deployments.
 
-From a CNTT Compliance state point, the capabilities are well described in
+From a Anuket Compliance state point, the capabilities are well described in
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 which allows tuning the test configurations and the test lists to avoid
 skipping any test. It results that all tests covering optional capabilities and
@@ -78,7 +78,7 @@ all upstream skipped tests due to known bugs are not executed. All remaining
 tests must be executed and must pass successfully.
 
 New [Functest containers](https://lists.opnfv.org/g/opnfv-tsc/message/5717)
-have been proposed for CNTT Compliance which simply override the default test
+have been proposed for Anuket Compliance which simply override the default test
 configurations and the default test lists. Any optional capability or services
 (e.g. Barbican) can be still verified by the classical Functest containers.
 
@@ -88,7 +88,7 @@ They cover all together the API testing requirements as asked by
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 
 The following software versions are considered here to verify OpenStack Wallaby
-selected by CNTT:
+selected by Anuket:
 
 | software                | version |
 |-------------------------|---------|
@@ -630,7 +630,7 @@ instances and networks in different topologies.
 [Shaker](http://pyshaker.readthedocs.io/en/latest/) scenario specifies the
 deployment and list of tests to execute.
 
-At the time of writing, no KPI is defined in CNTT chapters which would have
+At the time of writing, no KPIs are defined in Anuket specifications which would have
 asked for an update of the default SLA proposed in
 [Functest Benchmarking CNTT](https://git.opnfv.org/functest/tree/docker/benchmarking-cntt/testcases.yaml?h=stable%2Fwallaby)
 
@@ -758,7 +758,7 @@ by Functest VNF tests in the other cases.
 ### 3.4.1 RM/RA-1 Requirements
 
 According to [RC1 Chapter04](chapter04.md)
-the following test cases must pass as they are for CNTT NFVI
+the following test cases must pass as they are for Anuket NFVI
 Conformance:
 
 | container                                | test case             | criteria |

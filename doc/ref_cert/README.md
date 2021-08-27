@@ -1,18 +1,29 @@
 [<< Back](../)
 
-# CNTT Reference Conformance (RC)
+# Anuket Reference Conformance
 
-## CNTT Reference Conformance (RC) Requirements and Testing Principles
+## Requirements and Testing Principles
 
-The objective of each RC workstream is to provide an automated mechanism to validate either a network function (NF) or a cloud infrastructure against a standard set of requirements defined by the Reference Model (RM) and associated Reference Architecture (RA).  Through this validation mechanism, a provider of either NFs or cloud infrastructure will be able to test their conformance to the RM and RA.  This will ease the integration of NFs into operator environments that host compatible cloud infrastructures, thereby reducing cost, complexity, and time of integration.
+The objective of each RC workstream is to provide an automated mechanism to
+validate either a network function (NF) or a cloud infrastructure against a
+standard set of requirements defined by the Reference Model (RM) and associated
+Reference Architecture (RA).  Through this validation mechanism, a provider of
+either NFs or cloud infrastructure will be able to test their conformance to
+the RM and RA.  This will ease the integration of NFs into operator
+environments that host compatible cloud infrastructures, thereby reducing cost,
+complexity, and time of integration.
 
 The overall workstream requires the close coordination of the following:
 
-**Requirements** - The agreed upon capabilities and conditions that a compliant NF or cloud infrastructure must provide or satisfy. All requirements will be hosted and maintained in the RA.
-**Tests** - The verification mechanism that determines that a given NF or cloud infrastructure complies with one or more requirements.
-**Conformance Specifications** - The definition of the requirements, tests, and circumstances (test case integration, etc.) that must be met to be deemed conformant.
+* **Requirements** - The agreed upon capabilities and conditions that a compliant NF or cloud infrastructure must provide or satisfy. All requirements will be hosted and maintained in the RA.
+* **Tests** - The verification mechanism that determines that a given NF or cloud infrastructure complies with one or more requirements.
+* **Conformance Specifications** - The definition of the requirements, tests, and circumstances (test case integration, etc.) that must be met to be deemed conformant.
 
-If there is no clear traceability and strong links between these 3 components, then it becomes difficult to determine if a NF or cloud infrastructure is compliant. With this in mind, below are the set of recommended principles for each of the three components to follow. Adherence to these principles will provide the following:
+If there is no clear traceability and strong links between these 3 components,
+then it becomes difficult to determine if a NF or cloud infrastructure is
+compliant. With this in mind, below are the set of recommended principles for
+each of the three components to follow. Adherence to these principles will
+provide the following:
 
 * Enable clear progress tracking and linkage between independent projects (i.e. know what has and hasn't been covered, and track changes over time)
 * Help users better understand if they meet requirements
@@ -21,7 +32,7 @@ If there is no clear traceability and strong links between these 3 components, t
 
 
 ### Requirement Principles
-Requirement Principles can be found in the [CNTT Principles](https://github.com/cntt-n/CNTT/blob/master/doc/common/chapter00.md#2.0)
+Requirement Principles can be found in the [Anuket Principles](../common/chapter00.md#2.0)
 
 ### Testing Principles
 * There must be traceability between test cases and requirement being validated
@@ -37,34 +48,35 @@ Requirement Principles can be found in the [CNTT Principles](https://github.com/
 * Conformance specifications must define which tests must be executed in the given testing tools to achieve conformance
 * The conformance specifications must provide the mapping between tests and requirements to demonstrate traceability and coverage.
 
-## CNTT Reference Conformance (RC) Test Case Integration
 
-All CNTT conformance suites must utilize the OPNFV test case integration
+## Test Case Integration and Tooling
+
+All Anuket conformance suites must utilize the Anuket test case integration
 toolchain to deliver overall integration, the same end user
-actions, and a unique test result format (e.g. OPNFV test result database)
+actions, and a unique test result format (e.g. Anuket test result database)
 needed by the end users and the test case result verification programs (e.g.
 [OVP](https://www.opnfv.org/verification)). Historically, these rules were
 agreed by RC1 team and have been applied since.
-The OPNFV test integration toolchains will be used by all CNTT conformance suites.
+The Anuket test integration toolchains will be used by all conformance suites.
 
 <a name="ri-rc-toolchaings"></a>
-## CNTT RI and RC toolchains
+## Anuket RI and RC toolchains
 
-[OPNFV](https://www.opnfv.org/) has built a complete CI/CD toolchain
+Anuket has built a complete CI/CD toolchain
 for continuously deploying and testing cloud infrastructure.
 
-As for all OPNFV installer projects,
+As for all installer projects,
 [Jenkins](https://build.opnfv.org/ci/view/cntt/) triggers scenario deployments,
-runs the OPNFV gating test cases and then publishes all test results in the
+runs the Anuket gating test cases and then publishes all test results in the
 [centralized test database](https://docs.opnfv.org/en/stable-hunter/_images/OPNFV_testing_working_group.png)
 and all artifacts (reports, logs, etc.) to
 [an S3 compatible storage service](http://artifacts.opnfv.org/).
 
-The CNTT verification, validation, and conformance processes leverage
-existing OPNFV testing knowledge (projects) and experience (history) by utilising
-the OPNFV toolchain design already in-place. The RC toolchain
+The Anuket verification, validation, and conformance processes leverage
+existing Anuket testing knowledge (projects) and experience (history) by utilising
+the Anuket toolchain design already in-place. The RC toolchain
 only requires for the local deployment of the components instead of leveraging
-the common OPNFV centralized services. However, the interfaces remain unchanged
+the common Anuket centralized services. However, the interfaces remain unchanged
 for leveraging test jobs, the common test case execution, the test
 result database and the S3 protocol to publish the artifacts. It's worth
 mentioning that dumping all results and logs required for conformance is
@@ -82,8 +94,8 @@ via Functest.
 <a name="testing-integration-requirements"></a>
 ## Test Case Integration
 
-To reach all goals (verification, validation, compliance, and conformance)
-expected by CNTT, all test cases must be delivered as
+To reach all goals  in terms of verification, validation, compliance, and conformance,
+all test cases must be delivered as
 [Docker containers](https://www.docker.com/) to simplify the CI toolchain setup including:
 - the common test case execution
 - the unified way to manage all the interactions with the CI/CD components and
@@ -96,7 +108,7 @@ operations when configuring the servers running the test cases and prevents
 conflicts between the test cases due to any dependencies.
 
 It's worth mentioning that current
-[test cases selected by CNTT](RC1/chapters/chapter03.md)
+[test cases selected by Anuket](RC1/chapters/chapter03.md)
 already leverage [Xtesting](https://xtesting.readthedocs.io/en/latest/)
 which is a simple framework to assemble sparse test cases and to accelerate the
 adoption of CI/CD best practices. By managing all the interactions with the
@@ -112,13 +124,6 @@ The Docker containers proposed by the test projects must also embed
 [the related test case execution description files](https://git.opnfv.org/functest-xtesting/tree/docker/testcases.yaml)
 as required by Xtesting.
 
-Here are the issues tracking the updates of the existing OPNFV test
-projects:
-- Bottlenecks: https://github.com/cntt-n/CNTT/issues/510
-- NFVBench: https://github.com/cntt-n/CNTT/issues/865
-- StorPerf: https://github.com/cntt-n/CNTT/issues/673
-- VSPERF: https://github.com/cntt-n/CNTT/issues/511
-- YardStick: https://github.com/cntt-n/CNTT/issues/509
 
 <a name="testing-cookbooks"></a>
 ## Testing Cookbooks
@@ -134,19 +139,19 @@ such as all-in-one or centralized services.
 
 [Xtesting](https://xtesting.readthedocs.io/en/latest/) and
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) combined meet the
-CNTT requirements about verification, validation, compliance, and conformance:
+requirements about verification, validation, compliance, and conformance:
 - smoothly assemble multiple heterogeneous test cases
 - generate the Jenkins jobs in
-  [OPNFV Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
-  verify CNTT RI
-- deploy local CI/CD toolchains everywhere to check compliance with CNTT
+  [Anuket Releng](https://git.opnfv.org/releng/tree/jjb/airship/cntt.yaml) to
+  verify Anuket RI
+- deploy local CI/CD toolchains everywhere to check compliance with Anuket
 - [dump all test case results and logs](http://artifacts.opnfv.org/functest/9ID39XK47PMZ.zip)
   for third-party conformance review
 
 Here are a couple of publicly available playbooks :
 - [Xtesting samples](https://git.opnfv.org/functest-xtesting/plain/ansible/site.yml?h=stable/wallaby)
 - [OpenStack verification](https://git.opnfv.org/functest/plain/ansible/site.yml?h=stable/wallaby)
-- [CNTT RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby)
+- [Anuket RC1](https://git.opnfv.org/functest/plain/ansible/site.cntt.yml?h=stable/wallaby)
 - [Kubernetes verification](https://git.opnfv.org/functest-kubernetes/plain/ansible/site.yml?h=stable/v1.21)
 
 [Xtesting CI](https://galaxy.ansible.com/collivier/xtesting) only requires
