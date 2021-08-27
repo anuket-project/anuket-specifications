@@ -196,14 +196,13 @@ Below is a diagram of the different artefacts that will need to be created to su
 ## Relationship to other industry projects
 The Anuket work is not done in a vacuum.  The intention from the beginning was to utilize the work from other open source and standards bodies within the industry. Some of the projects, but by no means all, that are related in some way to the Anuket efforts include:
 
-- ETSi NFV ISG
+- ETSI NFV ISG
 - OpenStack
-- OPNFV
 - ONAP
 - CNCF
 - MEF
 - TM Forum
-- OSM (ETSi Open Source MANO project)
+- OSM (ETSI Open Source MANO project)
 - ODIM (Open Distributed Infrastructure Management)
 - VMware (While not an Open Source project, VMware is a commonly used platform used for VNF deployments in the telecom industry)
 
