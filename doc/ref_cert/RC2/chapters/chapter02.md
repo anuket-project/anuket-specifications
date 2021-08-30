@@ -166,6 +166,9 @@ haven't been covered successfully neither by
 nor by
 [Anuket RC2 verification](https://build.opnfv.org/ci/view/functest-kubernetes/job/functest-kubernetes-v1.21-daily/22/)
 
+Please note that a couple of tests must be skipped by name below as they are no
+appropriate labels.
+
 focus: [sig-network]
 
 skip:
@@ -227,6 +230,16 @@ and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/cha
 #### Storage Testing
 
 It should be noted that all in-tree driver testing, [Driver:+], is skipped.
+Conforming to
+[the upstream gate](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-release/release-branch-jobs/1.21.yaml),
+all PersistentVolumes NFS testing is also skipped.
+The following exclusions are about
+[the deprecated in-tree GitRepo volume type](https://github.com/kubernetes-sigs/kind/issues/2356):
+  - should provision storage with different parameters
+  - should not cause race condition when used for git_repo
+
+Please note that a couple of tests must be skipped by name below as they are no
+appropriate labels.
 
 focus: [sig-storage]
 
@@ -244,6 +257,9 @@ skip:
   - [Feature:Volumes]
   - [Feature:Windows]
   - [NodeFeature:EphemeralStorage]
+  - PersistentVolumes.NFS
+  - should provision storage with different parameters
+  - should not cause race condition when used for git_repo
 
 See [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
 and [Reference Architecture-2 (RA-2) Chapter 6](../../../ref_arch/kubernetes/chapters/chapter06.md)
