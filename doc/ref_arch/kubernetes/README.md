@@ -48,7 +48,7 @@ This is Kubernetes based Reference Architecture (RA-2)
 <a name="required-versions"></a>
 ## Required versions of most important components
 
-| Component | Required version(s) |
-| ----------|---------------------|
-| Kubernetes | 1.21 |
+| Component  | Required version(s) |
+| -----------|---------------------|
+| Kubernetes | 1.22                |
 
