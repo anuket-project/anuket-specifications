@@ -5,20 +5,20 @@
 # the repo. Unless a later match takes precedence,
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
-*       @scottsteinbrueck
+*       @scottsteinbrueck @walterkozlowski
 
 # Governance
-/doc/gov/chapters/chapter01.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter02.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter03.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter04.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter05.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter06.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter07.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter08.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter09.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter10.md       @ss8171 @bobmon01 @scottsteinbrueck
-/doc/gov/chapters/chapter11.md       @ss8171 @bobmon01 @scottsteinbrueck
+/doc/gov/chapters/chapter01.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter02.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter03.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter04.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter05.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter06.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter07.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter08.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter09.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter10.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
+/doc/gov/chapters/chapter11.md       @ss8171 @bobmon01 @scottsteinbrueck @walterkozlowski
 
 # Reference Model
 /doc/ref_model/chapters/chapter01.md        @scottsteinbrueck @walterkozlowski
