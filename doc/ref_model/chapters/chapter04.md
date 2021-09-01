@@ -11,6 +11,7 @@
   * [4.1.4 Internal Infrastructure Capabilities](#4.1.4)
   * [4.1.5 Cloud infrastructure management Capabilities](#4.1.5)
   * [4.1.6 Cloud infrastructure management Measurements](#4.1.6)
+  * [4.1.7 Acceleration/Offload API Requirements](#4.1.7)
 * [4.2 Profiles and Workload Flavours](#4.2)
   * [4.2.1 Profiles](#4.2.1)
   * [4.2.2 Profile Specifications & Capabilities Mapping](#4.2.2)
@@ -262,6 +263,32 @@ Table 4-10 shows performance measurement capabilities.
 
 <p align="center"><b>Table 4-11:</b> Cloud Infrastructure management Resource Management Measurements</p>
 
+<a name="4.1.7"></a>
+### 4.1.7 Acceleration/Offload API Requirements 
+HW Accelerators and Offload functions with abstracted interfaces are preferred and can functionally be interchanged, but their characteristics might vary and it is likely that the CNFs/VNFs and Virtualization Infrastructure will have certification requirements for the different implementations. It is also often needed to have a SW implementation of these functions with the same abstracted interfaces for the deployment situations when there are no more HW Accelerator or Offload functions available.
+ 
+For Accelerators and Offload functions with externally exposed differences in their capabilities or management functionality these differences must be clear through the management API either explicit for the differing functions or implicit through the use of a unique APIs.
+ 
+Regardless of exposed or internal different capabilities and characteristics, the operators generally require a choice of multiple implementations also for Accelerators and Offload function realization, which drive the need for ease of portability in between implementations and vendors.
+ 
+The following table of requirement are derived from the need of the VNF/CNF applications, Cloud Infrastructure and operators need for multiple realizations of HW Acceleration and Offload functions that could also be implemented through a software implementation when no special hardware is available. These should be taken into any Reference Architecture to ensure that the different implementations on the market are as aligned as possible in their interfaces and that HW Acceleration and Offload gets an efficient eco system of accelerators that compete on their technical merits and not through obscured or proprietary interfaces.
+
+**Table 4-12** shows Acceleration/Offload API Capabilities.
+
+<a name="Table4-12"></a>
+
+| Ref       | Acceleration/Offload API Capability | Unit   | Definition/Notes                                                                            |
+|-----------|--------------------------------------------|--------|---------------------------------------------------------------------------------------------|
+| e.api.001 | VNF/CNF usage of Accelerator standard i/f                           | Yes/No | VNF/CNF shall use abstracted standardized interfaces to the Acceleration/Offload function that enables multiple HW and SW implementation of the accelerated/offloaded function from multiple vendors in the Cloud Infrastructure                        |
+| e.api.002 | Virtualization Infrastructure SW usage of Accelerator standard i/f  | Yes/No | Virtualization Infrastructure SW shall use abstracted standardized interfaces to the HW-Acceleration/Offload  function that enables multiple HW and SW implementation in the HW Infrastructure Layer of the accelerated function from multiple vendors  |
+| e.api.003 | Accelerators offering standard i/f to HW Infra Layer                | Yes/No | Acceleration/Offload functions shall offer abstracted standardized interfaces for the Virtualization Infrastructure and VNF/CNF applications                                                                                                             |
+| e.api.004 | Accelerators offering virtualized functions                         | Yes/No | Acceleration/Offload functions for VNFs/CNFs should preferably be virtualized to allow multiple VNFs/CNFs to use the same Acceleration/Offload instance                                                                                                 |
+| e.api.005 | VNF/CNF Accelerator management functions access rights              | Yes/No | VNF/CNF management functions shall be capable to request Acceleration/Offload invocation without having elevated access rights                                                                                                                       |
+| e.api.006 | Accelerators offering standard i/f to VNF/CNF management            | Yes/No | VNF/CNF management functions should be capable to request Acceleration/Offload invocation through abstracted standardized Management interfaces                                                                                                       |
+| e.api.007 | VNFs/CNFs and Virtualization Infrastructure Accelerator portability | Yes/No | VNFs/CNFs and Virtualization Infrastructure SW should be designed to handle multiple types of Accelerator or Offload Function realizations even when their differences are exposed to the infrastructure or applications layers                    |
+| e.api.008 | VNFs/CNFs and Virtualization Infrastructure Accelerator flexibility | Yes/No | VNFs/CNFs and Virtualization Infrastructure SW shall be able to use any assigned instance and type of Accelerator or Offload Function that it is certified for                                                                                          |
+
+<p align="center"><b>Table 4-12:</b> Acceleration/Offload API Capabilities</p>
 
 <a name="4.2"></a>
 ## 4.2 Profiles and Workload Flavours
