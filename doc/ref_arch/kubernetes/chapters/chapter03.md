@@ -499,7 +499,7 @@ None of this is of much help however when implementing network service functions
 
 <a name="3.2.2.1.2"></a>
 #### 3.2.2.1.2 Multiple Networks and Advanced Configurations
-Kubernetes does currently not in itself support multi networks, pod multi network attachments or network orchestration. This is supported by using a [*Container Network Interface*](https://github.com/containernetworking/cni) multiplexer such as [Multus](https://github.com/k8snetworkplumbingwg/multus-cni).
+Kubernetes does currently not in itself support multiple networks, pod multiple network attachments or advanced network configurations. This is supported by using a [*Container Network Interface*](https://github.com/containernetworking/cni) multiplexer such as [Multus](https://github.com/k8snetworkplumbingwg/multus-cni).
 A considerable effort is being invested to add better network support to Kubernetes, all such activities are coordinated through the kubernetes [*Network Special Interest Group*](https://github.com/kubernetes/community/tree/master/sig-network) and it's sub groups. One such group, the [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
 
 This defacto standard defines among other things
