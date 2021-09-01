@@ -653,6 +653,14 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 <a name="3.8"></a>
 ## 3.8 Hardware Acceleration Abstraction
 
+Hardware Accelerators are often used in Telco Clouds for a set of different reasons. Some application today require a HW Accelerator to perform some tasks since a generic CPU cannot perform the tasks fast enough, with enough timing accuracy or handle the total amount of traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance for some deployment cases, whilst that might be inefficient in other deployment situations. The Cloud Infrastructure might also benefit from specialized accelerated HW devices to perform its tasks with less power, space or cost than a generic CPU would have.
+ 
+The purpose of a HW Accelerator is hence to either Accelerate the execution of an application or to Offload functions from the generic CPU to make the application and/or Cloud Infrastructure more efficient from one or more aspects.
+ 
+The HW Accelerators are specialized and could generally not be expected to exist in large quantities, which makes it important that the usage of the limited HW Accelerators are carefully assigned to where each deployment makes best use of them at each point in time. In general this require that there are software based alternative functions that can be used for the occasions when there are no available HW Accelerator that can be assigned to the applications or Cloud Infrastructure tasks that could have been accelerated or offloaded.
+ 
+It is preferred that the Accelerated or Offloaded functions have abstracted interfaces since that would hide the different implementations from a functional point of view and make orchestrator choices simpler and more transparent to deploy. It will also allow multiple different implementations of the HW Accelerators giving the operators less integration and test of the accelerators to their applications and/or Cloud Infrastructure.
+
 <a name="3.8.1"></a>
 ### 3.8.1 Types of Accelerators
 
