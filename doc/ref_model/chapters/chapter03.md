@@ -653,7 +653,7 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 <a name="3.8"></a>
 ## 3.8 Hardware Acceleration Abstraction
 
-Hardware Accelerators are often used in Telco Clouds for a set of different reasons. Some application today require a HW Accelerator to perform some tasks since a generic CPU cannot perform the tasks fast enough, with enough timing accuracy or handle the total amount of traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance for some deployment cases, whilst that might be inefficient in other deployment situations. The Cloud Infrastructure might also benefit from specialized accelerated HW devices to perform its tasks with less power, space or cost than a generic CPU would have.
+Hardware Accelerators are often used in Telco Clouds for many reasons. Some applications require an HW Accelerator to perform tasks that a generic CPU cannot perform fast enough, with enough timing accuracy, or handle the traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance in some deployment cases, whilst being inefficient in other situations. The Cloud Infrastructure might also benefit from specialized accelerated HW devices to perform its tasks with less power, space, or cost than a generic CPU.
  
 The purpose of a HW Accelerator is hence to either Accelerate the execution of an application or to Offload functions from the generic CPU to make the application and/or Cloud Infrastructure more efficient from one or more aspects.
  
