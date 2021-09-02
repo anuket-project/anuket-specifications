@@ -271,7 +271,7 @@ For Accelerators and Offload functions with externally exposed differences in th
  
 Regardless of exposed or internal different capabilities and characteristics, the operators generally require a choice of multiple implementations also for Accelerators and Offload function realization, which drive the need for ease of portability in between implementations and vendors.
  
-The following table of requirement are derived from the need of the VNF/CNF applications, Cloud Infrastructure and Telco Operators to have multiple realizations of HW Acceleration and Offload functions that could also be implemented through a software implementation when no special hardware is available. These should be taken into any Reference Architecture to ensure that the different implementations on the market are as aligned as possible in their interfaces and that HW Acceleration and Offload gets an efficient eco system of accelerators that compete on their technical merits and not through obscured or proprietary interfaces.
+The following table of requirements are derived from the VNF/CNF applications, Cloud Infrastructure and Telco Operators needs to have multiple realizations of HW Acceleration and Offload functions that can also be implemented through SW when no special hardware is available. These requirements should be adopted in Reference Architectures to ensure that the different implementations on the market are as aligned as possible in their interfaces and that HW Acceleration and Offload functions get an efficient ecosystem of accelerators that compete on their technical merits and not through obscure or proprietary interfaces.
 
 **Table 4-12** shows Acceleration/Offload API Capabilities.
 
