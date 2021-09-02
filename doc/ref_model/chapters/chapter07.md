@@ -59,6 +59,19 @@ This chapter examines multiple aspects of security as it relates to Cloud Infras
 ## 7.2 Potential attack vectors
 Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure NF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
 
+Typical cloud associated attacker behaviours, as identified in the widely accepted MITRE ATT&CK® Framework https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf. This framework provides a systematic approach to capture adversarial behaviour targeting cloud environments. Examples of such adversarial behaviours are listed in the table below.
+ 
+ |  Attacker behaviour | Description  | 
+ |-------|------|
+ |Initial Access|Compromising user administration accounts that are not protected by multi-factor authentication|
+ |Evasion|Modifying cloud compute instances in the production environment by modifying virtual instances for attack staging|
+ |Discovery|Using open-source tools to discover what cloud services are operating and then disabling them in a later stage to avoid detection|
+ |Data Exfiltration|Moving data from the customer’s production databases to the hacker’s cloud service account or transferring the data out of the Communication Service Provider (CSP) to the attacker’s private network|
+ |Service Impact|Creating denial-of-service availability issues by modifying Web Application Firewall (WAF) rules and compromising APIs and web-based GUIs|
+
+<p align="center"><b>Table 7-0:</b> Cloud attacker bahaviours</p>
+
+
 <a name="7.3"></a>
 ## 7.3 Security Scope
 
