@@ -99,6 +99,9 @@
 | | | OWASP "Secure Coding Practices - Quick Reference Guide". Available at https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content. |
 | | | Software Bill of Materials (SBOM) described by US National Telecommunications and Information Administration (NTIA). Available at https://www.ntia.gov/SBOM. |
 | | | Twelve-Factor App. Available at https://12factor.net/. | 
+| |ETSI TS 103 457 V1.1.1 (2018-10) | CYBER; Trusted Cross-Domain Interface: Interface to offload sensitive functions to a trusted domain. Available at http://www.etsi.org/standards-search. | 
+| |MITRE ATT&CK®Framework| CYBER; MITRE ATT&CK: Design and Philosophy, MITRE, March 2020. Available at https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf. | 
+
 
 
 <a name="1.5.1"></a>
@@ -117,3 +120,4 @@
 | | NIST SP 800-137 | Information Security Continuous Monitoring for Federal Information Systems and Organizations https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf. |
 | | NIST SP 800-145 | The NIST Definition of Cloud Computing https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf. |
 | | NIST SP 800-190 | Application Container Security Guide https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-190.pdf. |
+| | NIST IR 8320A   | Hardware-Enabled Security: Container Platform Security Prototype https://doi.org/10.6028/NIST.IR.8320A. |
