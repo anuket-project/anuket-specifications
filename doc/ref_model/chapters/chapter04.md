@@ -265,7 +265,7 @@ Table 4-10 shows performance measurement capabilities.
 
 <a name="4.1.7"></a>
 ### 4.1.7 Acceleration/Offload API Requirements 
-HW Accelerators and Offload functions with abstracted interfaces are preferred and can functionally be interchanged, but their characteristics might vary and it is likely that the CNFs/VNFs and Virtualization Infrastructure will have certification requirements for the different implementations. It is also often needed to have a SW implementation of these functions with the same abstracted interfaces for the deployment situations when there are no more HW Accelerator or Offload functions available.
+HW Accelerators and Offload functions with abstracted interfaces are preferred and can functionally be interchanged, but their characteristics might vary. It is also likely that the CNFs/VNFs and the Cloud Infrastructure will have certification requirements for the implementations.  An SW implementation of these functions is also often needed to have the same abstracted interfaces for the deployment situations when there are no more HW Accelerator or Offload functions available.
  
 For Accelerators and Offload functions with externally exposed differences in their capabilities or management functionality these differences must be clear through the management API either explicit for the differing functions or implicit through the use of a unique APIs.
  
