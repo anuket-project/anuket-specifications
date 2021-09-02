@@ -55,17 +55,17 @@
 /doc/ref_impl/cntt-ri/chapters/chapter09.md        @jayacha @walterkozlowski
 
 # Reference Certification 1
-/doc/ref_cert/RC1/chapters/chapter01.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter02.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter03.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter04.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter05.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter06.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter07.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter08.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter09.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter10.md        @fuqiao123 @walterkozlowski
-/doc/ref_cert/RC1/chapters/chapter11.md        @fuqiao123 @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter01.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter02.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter03.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter04.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter05.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter06.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter07.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter08.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter09.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter10.md        @walterkozlowski
+/doc/ref_cert/RC1/chapters/chapter11.md        @walterkozlowski
 
 
 # Reference Architectures 2
@@ -93,15 +93,15 @@
 /doc/ref_impl/cntt-ri2/chapters/chapter09.md        @rihabbanday @jgu17 @walterkozlowski
 
 # Reference Conformance 2
-/doc/ref_cert/RC2/chapters/chapter01.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter02.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter03.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter05.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter04.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter06.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter07.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter08.md        @xmulligan @walterkozlowski
-/doc/ref_cert/RC2/chapters/chapter09.md        @xmulligan @walterkozlowski 
+/doc/ref_cert/RC2/chapters/chapter01.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter02.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter03.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter05.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter04.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter06.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter07.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter08.md        @walterkozlowski
+/doc/ref_cert/RC2/chapters/chapter09.md        @walterkozlowski 
 
 # Edge
 /doc/tech/usecases.md        @ASawwaf @walterkozlowski
