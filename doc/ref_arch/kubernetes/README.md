@@ -45,7 +45,6 @@ This is Kubernetes based Reference Architecture (RA-2)
 * [Chapter 07 - Gaps, Innovation, and Development](chapters/chapter07.md)
 * [Appendix A - Guidance For workload isolation (multitenancy) with Kubernetes for application vendors](chapters/appendix-a.md)
 
-<a name="required-versions"></a>
 ## Required versions of most important components
 
 | Component | Required version(s) |
