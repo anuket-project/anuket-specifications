@@ -8,6 +8,7 @@
   * [8.2.1. Characteristics of a Federated Cloud](#8.2.1)
   * [8.2.2. Telco Cloud](#8.2.2)
   * [8.2.3. Telco Operator Platform Conceptual Architecture](#8.2.3)
+  * [8.2.4. Aspects of Multi-Cloud Security](#8.2.4)
 * [8.3. Telco Edge Cloud](#8.3)
   * [8.3.1. Telco Edge Cloud: Deployment Environment Characteristics](#8.3.1)
   * [8.3.2. Telco Edge Cloud: Infrastructure Characteristics](#8.3.2)
@@ -93,6 +94,25 @@ Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud In
 <p align="center"><b>Figure 8-3:</b> Conceptual Architecture of a Telco Operator Platform</p>
 
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
+
+<a name="8.2.4"></a>
+### 8.2.4 Aspects of Multi-Cloud Security
+As cloud infrastructures become a key element in the telecommunication operator ecosystem, particularly with the 5G rollout becoming a critical business necessity, cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber threat actors use to plan and execute are part of the attack surface landscape.
+ 
+In an ecosystem comprised of different network domains, products and business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use cases falls to different organisations, creating a new level of complexities and a new range of security risks. In such an environment, there are additional security principles to be considered.  These principles, see Table 2 below, drawn from the collaboration with GSMA FASG.
+  
+| Multi-cloud Security Principle | Description |
+| ------------------------------ | ----------- |
+| Policy synchronization | Consistency in applying the right security policies across environments, services, interfaces, and configured resources |
+| Visibility | A common data model approach to capture events and behaviours across all the key compute, storage, network, and applications resources, environments, virtualised platforms, containers and interfaces |
+| Monitoring | Centralisation, correlation, and visualisation of security information across the different cloud environments to provide an end-to-end view and enable timely response to attacks |
+| Automation | Automation of critical activities including cloud security posture management, continuous security assessments, compliance monitoring, detection of misconfigurations and identification and remediation of risks |
+| Access Management | Organisation of a wide range of users including administrators, testers, DevOps, and developers and customers should be organised into security groups with privileges appropriate to different resources and environments |
+| Security Operations Model | Augmentation of security services provided by cloud service providers with the vetted third-party and/or open-source tools and services, all incorporated into the established overall security operations model |
+
+<p align="center"><b>Table 8-1a. Multi-Cloud Principles</b></p>
+
+If telecommunication operators decide to run some of their public telecom network functions in a multi-cloud environment, and specifically in public clouds, the industry will need a set of new standards and new security tools able to regulate the interactions between participating parties. For instance, it seems to be sensible to eliminate access to some restricted areas altogether rather than merely prohibit it. The ETSI standard TS 103 457 “Interface to offload sensitive functions to a trusted domain” provides extra security requirements for public clouds to offer telecommunication operators the option of running public telecom network functions in public clouds.
 
 <a name="8.3"></a>
 ## 8.3 Telco Edge Cloud
