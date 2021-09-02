@@ -659,7 +659,7 @@ Hardware Accelerators are often used in Telco Clouds for many reasons. Some appl
  
 The HW Accelerators are specialized and could generally not be expected to exist in large quantities, which makes it important that the usage of the limited HW Accelerators are carefully assigned to where each deployment makes best use of them at each point in time. In general this require that there are software based alternative functions that can be used for the occasions when there are no available HW Accelerator that can be assigned to the applications or Cloud Infrastructure tasks that could have been accelerated or offloaded.
  
-It is preferred that the Accelerated or Offloaded functions have abstracted interfaces since that would hide the different implementations from a functional point of view and make orchestrator choices simpler and more transparent to deploy. It will also allow multiple different implementations of the HW Accelerators giving the operators less integration and test of the accelerators to their applications and/or Cloud Infrastructure.
+It is preferred that the accelerated or offloaded functions have abstracted interfaces since that would hide the different implementations from a functional point of view and make orchestrator choices simpler and more transparent to deploy. It will also allow support for multiple different HW Accelerators, and reducing the operator's integration and test efforts of the accelerators and their applications and/or Cloud Infrastructure.
 
 <a name="3.8.1"></a>
 ### 3.8.1 Types of Accelerators
