@@ -27,8 +27,7 @@ The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastruct
 
 Based on a NFVI passing RC test and getting the conformance badge, VNF conformance test can be further conducted. Such test will leverage existing Anuket Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
-<p align="center"><img src="../figures/RC_CertificationMethodology.jpg" alt="conformance Methodology" title="Conformance Methodology" width="100%"/></p>
-<p align="center"><b>Figure 2-1:</b> Conformance Methodology</p>
+![Conformance Methodology](../figures/RC_CertificationMethodology.jpg)
 
 Conformance methodologies to be implemented, from a process perspective include:
 * Engineering package validations will be performed against targeted infrastructure/architecture.
@@ -65,8 +64,8 @@ The Infrastructure Profile Catalog contains the following attributes:
   * A particular set of options is an instance type
   * Compute flavors: .tiny, .small etc as defined in [RM §4.2.1.1](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)
 * NFVI performance profiles, for which NFVI validations will support and be verified against, are defined as basic and network intensive. Details for each of these profiles can be found in [RM §2.3](../../../ref_model/chapters/chapter02.md#2.3).
-<p align="center"><img src="../figures/RC_NFVI_Profiles.png" alt="NFVI Profiles" title="NFVI Profiles" width="100%"/></p>
-<p align="center"><b>Figure 2-2:</b> NFVI Profiles</p>
+
+![NFVI Profiles](../figures/RC_NFVI_Profiles.png)
 
 ## Profiles Reference
 Different vendors have different types of VNFs to serve different use-cases. A VNF like Broadband Network Gateway (BNG) would require high networking throughput whereas a VNF like Mobility Management Entity (MME) would require high computing performance. As such, BNG would require high KPI values for network throughput and MME would require high CPU performance KPIs like Index Score, Instructions Per Second (IPS) etc. The target NFVI to cater these needs would have different characteristics. Depending on VNF's requirements, the NFVI can be categorized into below profiles:
@@ -88,8 +87,8 @@ The below set of steps define the compliance, verification and Conformance proce
 * KPI comparison is run to compare NFVI KPIs with Golden KPIs, which serve as a reference for NFVI Conformance.
 * If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge.
 * If NFVI KPIs do not meet Golden KPIs, no Conformance is provided.
-<p align="center"><img src="../figures/RC_Ref_NFVI_Profiles.jpg" alt="Reference NFVI Profiles Implementation" title="Reference NFVI Profiles Implementation" width="100%"/></p>
-<p align="center"><b>Figure 2-3:</b> Reference NFVI Profiles Implementation</p>
+
+![Reference NFVI Profiles Implementation](../figures/RC_Ref_NFVI_Profiles.jpg)
 
 ## Entry & Exit Criteria
 **Entry criteria**: Before entering into NFVI Conformance, NFVI needs to
@@ -213,9 +212,7 @@ In addition to General Best Practices for NFVI Conformance, the following Qualit
 
 The below figure shows the targeted badge for NFVI.
 
-<p align="center"><img src="../figures/NFVI-badge.jpg" alt="NFVI Badge" title="NFVI Badge" width="25%"/></p>
-<p align="center"><b>Figure 2-4:</b> NFVI badge</p>
-
+![NFVI badge](../figures/NFVI-badge.jpg)
 
 **Specifics**.  More specifically, suppliers of NFVI testing seeking infrastructure Conformance are required to furnish the following:
 
@@ -235,9 +232,7 @@ Conformance and issuance of NFVI badges will be as follows:
  - Artifact validations will be corroborated and confirmed by the OVP. with direct comparison between measured results and documented FRs/NFRs for applications, hardware and software configuration settings, and host systems.
  - All OVP inquiries, requests for re-tests, or reformatting / re-uploading of results data are closed.
 
-<p align="center"><img src="../figures/NFVI_certifying_vendor_swhw_solutions.jpg" alt="NFVI Badges" title="NFVI Badges" width="100%"/></p>
-<p align="center"><b>Figure 2-5:</b> NFVI Badges</p>
-
+![NFVI Badges](../figures/NFVI_certifying_vendor_swhw_solutions.jpg)
 
 ## NFVI Test Cases Requirements
 The objective of this chapter is to describe the requirements for NFVI test cases as derived from the reference model and architecture for the LFN-based compliance program. This set of requirements eventually determines the scope of the compliance program and the corresponding list of test cases included in the compliance program.  In particular, this chapter extends the generic list of NFVI test case requirements which is provided in Section [Test Case Selection Requirements](../../../ref_model/chapters/chapter08.md#824-test-case-selection-requirements) of the reference model.
