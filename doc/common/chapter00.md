@@ -215,14 +215,14 @@ The ETSI NFV ISG is very closely related to the Anuket project, in that it is a 
 <p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
 
 <a name="3.4.2"></a>
-### Relationship between Anuket projects and OVP
+### Relationship between Anuket projects and AAP
 
-The Anuket project is also closely aligned with OVP, an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV products and services including **Vendor's Implementation (VI)** of cloud infrastructure and VNFs. OVP combines open source-based automated compliance and verification testing for multiple parts of the NFV stack specifications established by ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
+The Anuket project is also closely aligned with the Anuket Assured Program (AAP), an open source, community-led compliance and verification program that demonstrates the readiness and availability of commercial NFV and cloud native products and services including **Vendor's Implementation (VI)** of both infrastructure and and workloads. The AAP combines open source based automated compliance and verification testing for multiple parts of the stack specifications established by Anuket, ONAP, multiple SDOs such as ETSI and GSMA, and the LF Networking End User Advisory Group (EUAG).
 
-We create an implementation that adheres to the implementation requirements set in the Anuket specifications (**Reference Implementations**). Additionally, commercial products can undergo the OVP’s conformance program based on the Anuket **Reference Conformance** specifications and using Anuket specified testing frameworks and tools. **Figure 6** below illustrates the relationship with OVP in more details (specific to OpenStack based specifications).
+We create an implementation that adheres to the implementation requirements set in the Anuket specifications (**Reference Implementations**). Additionally, commercial products can undergo a conformance program based on the Anuket **Reference Conformance** specifications and using Anuket specified testing frameworks and tools. **Figure 6** below illustrates the relationship with Anuket Assured Program in more details (specific to OpenStack based specifications).
 
 <p align="center"><img src="./figures/tech_relation.png" alt="scope" title="Document Types" width="100%"/></p>
-<p align="center"><b>Figure 6:</b> Anuket Relationship with OVP.</p>
+<p align="center"><b>Figure 6:</b> Relationship between Anuket and Anuket Assured Program.</p>
 
 As can be seen from the above figure, roles and responsibilities are as follows:
 - Anuket specifies lab requirements in the **Reference Implementation** document which will be used to define what labs can be used within the community for the purpose of installing and testing Anuket conformant cloud infrastructure implementations.
@@ -234,7 +234,7 @@ An infrastructure that follows the Anuket **Reference Implementation** specifica
 - Anuket specifies testing framework requirements in the **Reference Conformance** document that will be used to determine a suitable testing framework and portals to be used for the purpose of running test suites and tools, and carry out badging processes.
 - The Anuket **Reference Conformance** document defines high level test cases, for requirements from both the **Reference Model** and **Reference Architecture**, that are used to determine the testing projects within the community suitable to deliver these tests.
 - Anuket includes a traceability matrix in its **Reference Conformance** document detailing every test case (or group of test cases) available in the community and map them to the high level test case definition and the requirements they are fulfilling.
-- The Anuket **Reference Conformance** document includes a testing Playbook detailing instructions of how to run the testing framework and test cases against commercial NFV products (infrastructure and workload) to check conformance to Anuket specifications. The testing Playbook also details instructions of how to submit testing results for the **OVP** badging process.
+- The Anuket **Reference Conformance** document includes a testing Playbook detailing instructions of how to run the testing framework and test cases against commercial NFV products (infrastructure and workload) to check conformance to Anuket specifications. The testing Playbook also details instructions of how to submit testing results for the **AAP** badging process.
 
 
 <a name="3.4.3"></a>
