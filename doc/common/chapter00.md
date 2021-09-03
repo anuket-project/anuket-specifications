@@ -209,7 +209,7 @@ The Anuket work is not done in a vacuum.  The intention from the beginning was t
 <a name="3.4.1"></a>
 ### Relationship to ETSI-NFV
 
-The ETSI NFV ISG is very closely related to the Anuket project, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the Anuket specifications' scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by ETSI GR NFV 002[3].
+The ETSI NFV ISG is very closely related to the Anuket project, in that it is a group that is working on supporting technologies for NFV applications (**Figure 5** illustrates the scope of ETSI-NFV). To facilitate more collaboration as the project matures, the Anuket specifications' scope (**Figure 2** above) purposely references certain ETSI NFV reference points, as specified by ETSI GS NFV 002[3].
 
 <p align="center"><img src="./figures/tech_relation_etsi.png" alt="scope" title="Document Types" width="100%"/></p>
 <p align="center"><b>Figure 5:</b> Scope ETSI NFV.</p>
