@@ -1,12 +1,6 @@
-# 3. Kubernetes Testing Cookbook
+# Kubernetes Testing Cookbook
 
-## Table of Contents
-* [3.1 Deploy your own conformance toolchain](#3.1)
-* [3.2 Configure Kubernetes API testing](#3.2)
-* [3.3 Run Kubernetes conformance suite](#3.3)
-
-<a name="3.1"></a>
-## 3.1 Deploy your own conformance toolchain
+## Deploy your own conformance toolchain
 
 At the time of writing, the CI description file is hosted in Functest and only
 runs the containers selected by Anuket RC2. It will be completed by the
@@ -40,17 +34,14 @@ git clone https://gerrit.opnfv.org/gerrit/functest-kubernetes functest-kubernete
 ansible-playbook functest-kubernetes-src/ansible/site.cntt.yml
 ```
 
-<a name="3.2"></a>
-### 3.2 Configure Kubernetes API testing
+### Configure Kubernetes API testing
 
 Place the kubeconfig configuration file corresponding to the Kubernetes cluster
 under test in the following location on the machine running the cookbook:
 
 `/home/opnfv/functest-kubernetes/config`
 
-
-<a name="3.3"></a>
-### 3.3 Run Kubernetes conformance suite
+### Run Kubernetes conformance suite
 
 Open http://127.0.0.1:8080/job/functest-kubernetes-v1.22-daily/ in a web
 browser, login as admin/admin and click on "Build with Parameters" (keep the

@@ -1,25 +1,17 @@
-# 7. VNF Testing Cookbook
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# VNF Testing Cookbook
 
-## Table of Contents
-* [7.1 Introduction](#7.1)
-* [7.2 Relevant Community Projects](#7.2)
-* [7.3 Relevant Community Projects and Initiatives](#7.3)
+![Scope](../figures/bogo_ifo.png)
 
-<a name="7.1"></a>
-## 7.1 Introduction
+## Introduction
 
 Define the purpose of the chapter which is to:
 -	Identify Framework Needs, Goals, and Dependencies
 - Define Opensource Integration (OVP, Functest, CVC, others)
 - Provide Automation Toolchain (list, topology, flow)
 
-<a name="7.2"></a>
-## 7.2 Relevant Community Projects.
+## Relevant Community Projects.
 
-
-<a name="7.3"></a>
-## 7.3 VNF Testing Cookbook.
+## VNF Testing Cookbook.
 
 <p align="center"><img src="../figures/rc1_cookbook_vnf.png" alt="VNF_cookbook" title="VNF Cookbook" width="60%"/></p>
 <p align="center"><b>Figure 1-3:</b> VNF Testing Integrated Framework.</p>
@@ -29,7 +21,7 @@ ONAP VNF Test Platform (VTP) helps to perform the VNF Conformance process by
 addressing those requirements. And following sections provides required
 guidelines and details for platform and test cases.
 
-### 7.3.1 Platform Architecture
+### Platform Architecture
 
 Provides details on the architecture, components and it's responsibilities.
 
@@ -56,7 +48,7 @@ Provides details on the architecture, components and it's responsibilities.
 
 *? - Feature in-progress*
 
-### 7.3.2 Platform administrator guide
+### Platform administrator guide
 
 Provides detail on installation, configuration, un-installation operations.
 
@@ -90,14 +82,14 @@ export CSAR_VALIDATE_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/s
 
 export CSAR_VALIDATE_JAR_DOWNLOAD_URL="https://nexus.onap.org/content/repositories/snapshots/org/onap/vnfsdk/validation/validation-csar/1.2.2-SNAPSHOT/validation-csar-1.2.2-20190904.082829-6.jar"
 
-### 7.3.3 Test case development guide
+### Test case development guide
 
 Provides details on how to develop new test cases and packages them for
 deploying.
 
 [More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
 
-### 7.3.4 Test case model guide
+### Test case model guide
 
 Model the required test cases for various scenario, which could help in
 standardizing the test cases for various NF, different compliance and multiple
@@ -105,7 +97,7 @@ MANO/NFVi based LCM operations.
 
 [More details](https://wiki.onap.org/pages/viewpage.action?pageId=43386304)
 
-### 7.3.5 Test case administrator guide
+### Test case administrator guide
 
 Provides detail on installation, configuration, un-installation operations
 
