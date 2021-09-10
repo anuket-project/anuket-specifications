@@ -216,6 +216,8 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 <a name="1.8"></a>
 ## Other Referenced Terminology
 
+- **Anuket Assured Program (AAP):** An open source, community-led compliance and verification program to ease the integration of telecom applications with cloud infrastructures.
+
 - **Carrier Grade:** Carrier grade refers to network functions and infrastructure that are characterised by all or some of the following attributes: High reliability allowing near 100% uptime, typically measured as better than “five nines”; Quality of Service (QoS) allowing prioritization of traffic; High Performance optimized for low latency/packet loss, and high bandwidth; Scalability to handle demand growth by adding virtual and/or physical resources; Security to be able to withstand natural and man-made attacks.
 
 - **Monitoring (Capability):** Monitoring capabilities are used for the passive observation of workload-specific traffic traversing the Cloud Infrastructure. Note, as with all capabilities, Monitoring may be unavailable or intentionally disabled for security reasons in a given cloud infrastructure instance.
