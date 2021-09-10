@@ -122,6 +122,7 @@ Architecture they must be implemented as per the following specifications:
 |`ra2.ntw.012`|Device Plugins|When hosting workloads matching the Network Intensive profile that require the use of FPGA, SR-IOV or other Acceleration Hardware, a Device Plugin for that FPGA or Acceleration Hardware must be used.|[e.cap.016](chapter02.md#221-cloud-infrastructure-software-profile-capabilities), [e.cap.013](chapter02.md#221-cloud-infrastructure-software-profile-capabilities)|[4.3.1](/doc/ref_impl/cntt-ri2/chapters/chapter04.md#431-installation-on-bare-metal-infratructure)|
 |`ra2.ntw.013`|Dual stack CNI|The networking solution deployed within the implementation must use a CNI-conformant Network Plugin that is able to support dual-stack IPv4/IPv6 networking.|[req.inf.ntw.04](chapter02.md#23-kubernetes-architecture-requirements)|
 |`ra2.ntw.014`|Security Groups|The networking solution deployed within the implementation **must** support network policies.|[infra.net.cfg.004](chapter02.md#223-cloud-infrastructure-software-profile-requirements)|
+|`ra2.ntw.015`|IPAM plugin for multiplexer|When a multiplexer/meta-plugin is used, a CNI-conformant IPAM Network Plugin **must** be installed to allocate IP addresses for secondary network interfaces across all nodes of the cluster.|[req.inf.ntw.10](chapter02.md#23-kubernetes-architecture-requirements)|
 
 <p align="center"><b>Table 4-4:</b> Networking Solution Specifications</p>
 
