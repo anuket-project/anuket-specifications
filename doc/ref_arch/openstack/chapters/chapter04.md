@@ -322,7 +322,7 @@ The above examples of host networking configurations for the B1 and B4 Profile E
 
 <p align="center"><b>Table 4-4: Configuration of High Performance Flavor Capabilities</b></p>
 
- 
+
 _Host Networking configuration for HD Profile Extensions_
 
 An example of the data traffic configuration for the HD (OVS-DPDK) Profile Extensions is shown in Figure 4-3.
@@ -573,17 +573,17 @@ Horizon is the Web User Interface to all OpenStack services. Horizon has service
 #### 4.3.1.10 Placement
 The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilized by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilize placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilized in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
 
-<p>Resource Providers provide consumable inventory of one or more classes of resources (CPU, memory or disk). A resource provider can be a compute host, for example.</p>
+Resource Providers provide consumable inventory of one or more classes of resources (CPU, memory or disk). A resource provider can be a compute host, for example.
 
-<p>Resource Classes specifies the type of resources (vCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)</p>
+Resource Classes specifies the type of resources (vCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)
 
-<p>Inventory: Each resource provider maintains the total and reserved quantity of one or more classes of resources.  For example, RP_1 has available inventory of 16 vCPU, 16384 MEMORY_MB and 1024 DISK_GB.</p>
+Inventory: Each resource provider maintains the total and reserved quantity of one or more classes of resources.  For example, RP_1 has available inventory of 16 vCPU, 16384 MEMORY_MB and 1024 DISK_GB.
 
-<p>Traits are qualitative characteristics of the resources from a resource provider. For example, the trait for RPA_1 “is_SSD” to indicate that the DISK_GB provided by RP_1 are solid state drives.</p>
+Traits are qualitative characteristics of the resources from a resource provider. For example, the trait for RPA_1 “is_SSD” to indicate that the DISK_GB provided by RP_1 are solid state drives.
 
-<p>Allocations represent resources that have been assigned/used by some consumer of that resource.</p>
+Allocations represent resources that have been assigned/used by some consumer of that resource.
 
-<p>Allocation candidates is the collection of resource providers that can satisfy an allocation request.</p>
+Allocation candidates is the collection of resource providers that can satisfy an allocation request.
 
 
 The Placement API is stateless and, thus, resiliency, availability and scaling, it is possible to deploy as many servers as needed. On start, the nova-compute service will attempt to make a connection to the Placement API and keep attempting to connect to the Placement API, logging and warning periodically until successful. Thus, the Placement API must be installed and enabled prior to Nova compute.
