@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # Anuket Reference Conformance
 
 ## Requirements and Testing Principles
