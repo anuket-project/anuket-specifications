@@ -30,7 +30,8 @@ In summary, **Conformance** testing will be performed as part of cloud infrastru
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-**Document Purpose**<br>
+**Document Purpose**
+
 This chapter includes tracability from requirements to test cases and a test case execution framework to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
 <a name="1.2"></a>
@@ -99,7 +100,7 @@ The RC2 test suite will provide validation to ensure workloads can interoperate 
 <a name="1.6"></a>
 ## 1.6 Reading Guide and Usage
 
-RC2 focuses on testing of Kubernetes based cloud infrastructure thus the chapter structure is designed to facilitate this by matching test cases to requirements and building test cookbooks. If you are looking for requirements or the reasons behind them, please refer to the RA2. Chapters 2 and 3 cover Kubernetes infrastructure conformance while 4 and 5 cover CNF conformance. 
+RC2 focuses on testing of Kubernetes based cloud infrastructure thus the chapter structure is designed to facilitate this by matching test cases to requirements and building test cookbooks. If you are looking for requirements or the reasons behind them, please refer to the RA2. Chapters 2 and 3 cover Kubernetes infrastructure conformance while 4 and 5 cover CNF conformance.
 
 Chapter 2 takes the requirements from the RA2 and matches them to upstream test cases. This will cover how specific test cases map to requirements and the overall coverage of requirements with test cases. Chatper 3 outlines how these test cases can be integrated together into an automated toolchain to test conformance of the Kubernetes infrastructure.
 
