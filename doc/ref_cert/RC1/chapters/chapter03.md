@@ -110,12 +110,14 @@ According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
-| test rejection regular expressions        | reasons    |
-|-------------------------------------------|------------|
-| .\*api.identity.v3.test_oauth1_tokens     | oauth1     |
-| .\*scenario.test_federated_authentication | federation |
-| .\*identity.admin.v2                      | API v2     |
-| .\*identity.v2                            | API v2     |
+| test rejection regular expressions                                                                                       | reasons      |
+|--------------------------------------------------------------------------------------------------------------------------|--------------|
+| .\*api.identity.v3.test_oauth1_tokens                                                                                    | oauth1       |
+| .\*scenario.test_federated_authentication                                                                                | federation   |
+| .\*identity.admin.v2                                                                                                     | API v2       |
+| .\*identity.v2                                                                                                           | API v2       |
+| .\*identity.v3.test_access_rules                                                                                         | access_rules |
+| .\*identity.v3.test_application_credentials.ApplicationCredentialsV3Test.test_create_application_credential_access_rules | access_rules |
 
 Keystone API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -144,9 +146,15 @@ According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
-| test rejection regular expressions | reasons |
-|------------------------------------|---------|
-| .\*image.v1                        | API v1  |
+| test rejection regular expressions                                                                    | reasons             |
+|-------------------------------------------------------------------------------------------------------|---------------------|
+| .\*image.v1                                                                                           | API v1              |
+| .\*image.v2.admin.test_images.ImportCopyImagesTest                                                    | import_image        |
+| .\*image.v2.test_images_negative.ImagesNegativeTest.test_create_image_reserved_property               | os_glance_reserved  |
+| .\*image.v2.test_images_negative.ImagesNegativeTest.test_update_image_reserved_property               | os_glance_reserved  |
+| .\*image.v2.test_images_negative.ImportImagesNegativeTest.test_image_web_download_import_with_bad_url | web-download import |
+| .\*image.v2.test_images.ImportImagesTest                                                              | import_image        |
+| .\*image.v2.test_images.MultiStoresImportImages                                                       | import_image        |
 
 Glance API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -174,6 +182,10 @@ the following test names must not be executed:
 |------------------------------------------------------------------------------------------------------|---------------------------------------|
 | .\*test_incremental_backup                                                                           | https://gerrit.opnfv.org/gerrit/68881 |
 | .\*test_consistencygroups                                                                            | consistency_group                     |
+| .\*test_backup_crossproject_admin_negative                                                           | https://gerrit.opnfv.org/gerrit/71011 |
+| .\*test_backup_crossproject_user_negative                                                            | https://gerrit.opnfv.org/gerrit/71011 |
+| .\*test_volume_encrypted.TestEncryptedCinderVolumes                                                  | attach_encrypted_volume               |
+| .\*test_encrypted_volumes_extend                                                                     | extend_attached_encrypted_volume      |
 | .\*test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status                      | https://launchpad.net/bugs/1770179    |
 | .\*test_multi_backend                                                                                | multi-backend                         |
 | .\*test_volume_retype.VolumeRetypeWithMigrationTest                                                  | multi-backend                         |
@@ -212,6 +224,7 @@ the following test names must not be executed:
 |----------------------------------------------------------------------------------------------|------------------------------------|
 | .\*test_container_sync.ContainerSyncTest.test_container_synchronization                      | https://launchpad.net/bugs/1317133 |
 | .\*test_container_sync_middleware.ContainerSyncMiddlewareTest.test_container_synchronization | container_sync                     |
+| .\*test_object_services.ObjectTest.test_create_object_with_transfer_encoding                 | https://launchpad.net/bugs/1905432 |
 
 Swift API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -235,57 +248,61 @@ According to
 [RA1 Core OpenStack Services APIs](../../../ref_arch/openstack/chapters/chapter05.md)
 the following test names must not be executed:
 
-| test rejection regular expressions                                                                              | reasons                               |
-|-----------------------------------------------------------------------------------------------------------------|---------------------------------------|
-| .\*admin.test_agent_availability_zone                                                                           | DHCP agent and L3 agent               |
-| .\*admin.test_dhcp_agent_scheduler                                                                              | dhcp_agent_scheduler                  |
-| .\*admin.test_l3_agent_scheduler                                                                                | l3_agent_scheduler                    |
-| .\*admin.test_logging                                                                                           | logging                               |
-| .\*admin.test_logging_negative                                                                                  | logging                               |
-| .\*admin.test_network_segment_range                                                                             | network-segment-range                 |
-| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                              | port-mac-address-regenerate           |
-| .\*admin.test_ports.PortTestCasesResourceRequest                                                                | port-resource-request                 |
-| .\*admin.test_routers_dvr                                                                                       | dvr                                   |
-| .\*admin.test_routers_flavors                                                                                   | l3-flavors                            |
-| .\*admin.test_routers_ha                                                                                        | l3-ha                                 |
-| .\*test_floating_ips.FloatingIPPoolTestJSON                                                                     | floatingip-pools                      |
-| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                              | fip-port-details                      |
-| .\*test_metering_extensions                                                                                     | metering                              |
-| .\*test_metering_negative                                                                                       | metering                              |
-| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                                        | filter-validation                     |
-| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                                            | vxlan                                 |
-| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                                         | dns-integration                       |
-| .\*test_port_forwardings                                                                                        | floating-ip-port-forwarding           |
-| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                                       | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                                    | uplink-status-propagation             |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                             | dns-domain-ports                      |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                               | dns-integration                       |
-| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                                            | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                                           | dns-integration                       |
-| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                              | l3-ha                                 |
-| .\*test_router_interface_fip                                                                                    | router-interface-fip                  |
-| .\*test_routers.DvrRoutersTest                                                                                  | dvr                                   |
-| .\*test_routers.HaRoutersTest                                                                                   | l3-ha                                 |
-| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                                        | extraroute-atomic                     |
-| .\*test_routers.RoutersTest.test_extra_routes_atomic                                                            | extraroute-atomic                     |
-| .\*test_routers_negative.DvrRoutersNegativeTest                                                                 | dvr                                   |
-| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                                         | dvr                                   |
-| .\*test_routers_negative.HaRoutersNegativeTest                                                                  | l3-ha                                 |
-| .\*test_security_groups.RbacSharedSecurityGroupTest                                                             | rbac-security-groups                  |
-| .\*test_subnetpool_prefix_ops                                                                                   | subnetpool-prefix-ops                 |
-| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                                  | filter-validation                     |
-| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                                          | filter-validation                     |
-| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                                     | standard-attr-segment                 |
-| .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                                         | https://launchpad.net/bugs/1863707    |
-| .\*test_trunk.TrunkTestMtusJSON                                                                                 | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type              | vxlan                                 |
-| .\*test_trunk_negative.TrunkTestMtusJSON                                                                        | vxlan                                 |
-| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                                     | https://gerrit.opnfv.org/gerrit/69105 |
-| .\*network.test_tags                                                                                            | tag-ext                               |
-| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                                    | https://launchpad.net/bugs/1676207    |
-| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                                        | https://launchpad.net/bugs/1676207    |
-| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                                          | l3_agent_scheduler                    |
-| .\*test_network_advanced_server_ops.TestNetworkAdvancedServerOps.test_server_connectivity_cold_migration_revert | https://launchpad.net/bugs/1836595    |
+| test rejection regular expressions                                                                                    | reasons                               |
+|-----------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| .\*admin.test_agent_availability_zone                                                                                 | DHCP agent and L3 agent               |
+| .\*admin.test_dhcp_agent_scheduler                                                                                    | dhcp_agent_scheduler                  |
+| .\*admin.test_l3_agent_scheduler                                                                                      | l3_agent_scheduler                    |
+| .\*admin.test_logging                                                                                                 | logging                               |
+| .\*admin.test_logging_negative                                                                                        | logging                               |
+| .\*admin.test_network_segment_range                                                                                   | network-segment-range                 |
+| .\*admin.test_ports.PortTestCasesAdmin.test_regenerate_mac_address                                                    | port-mac-address-regenerate           |
+| .\*admin.test_ports.PortTestCasesResourceRequest                                                                      | port-resource-request                 |
+| .\*admin.test_routers_dvr                                                                                             | dvr                                   |
+| .\*admin.test_routers_flavors                                                                                         | l3-flavors                            |
+| .\*admin.test_routers_ha                                                                                              | l3-ha                                 |
+| .\*test_floating_ips.FloatingIPPoolTestJSON                                                                           | floatingip-pools                      |
+| .\*test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_port_details                                    | fip-port-details                      |
+| .\*test_metering_extensions                                                                                           | metering                              |
+| .\*test_metering_negative                                                                                             | metering                              |
+| .\*test_networks.NetworksSearchCriteriaTest.test_list_validation_filters                                              | filter-validation                     |
+| .\*test_networks.NetworksTestAdmin.test_create_tenant_network_vxlan.                                                  | vxlan                                 |
+| .\*test_networks.NetworksTestJSON.test_create_update_network_dns_domain                                               | dns-integration                       |
+| .\*test_port_forwardings                                                                                              | floating-ip-port-forwarding           |
+| .\*test_port_forwarding_negative                                                                                      | floating-ip-port-forwarding           |
+| .\*test_ports.PortsTaggingOnCreation                                                                                  | tag-ports-during-bulk-creation        |
+| .\*test_ports.PortsTestJSON.test_create_port_with_propagate_uplink_status                                             | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_port_without_propagate_uplink_status                                          | uplink-status-propagation             |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_domain                                                   | dns-domain-ports                      |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_dns_name                                                     | dns-integration                       |
+| .\*test_ports.PortsTestJSON.test_create_update_port_with_no_dns_name                                                  | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_dns_domain_bumps_revision                                                 | dns-integration                       |
+| .\*test_revisions.TestRevisions.test_update_router_extra_attributes_bumps_revision                                    | l3-ha                                 |
+| .\*test_router_interface_fip                                                                                          | router-interface-fip                  |
+| .\*test_routers.DvrRoutersTest                                                                                        | dvr                                   |
+| .\*test_routers.HaRoutersTest                                                                                         | l3-ha                                 |
+| .\*test_routers.RoutersIpV6Test.test_extra_routes_atomic                                                              | extraroute-atomic                     |
+| .\*test_routers.RoutersTest.test_extra_routes_atomic                                                                  | extraroute-atomic                     |
+| .\*test_routers_negative.DvrRoutersNegativeTest                                                                       | dvr                                   |
+| .\*test_routers_negative.DvrRoutersNegativeTestExtended                                                               | dvr                                   |
+| .\*test_routers_negative.HaRoutersNegativeTest                                                                        | l3-ha                                 |
+| .\*test_security_groups.RbacSharedSecurityGroupTest                                                                   | rbac-security-groups                  |
+| .\*test_subnetpool_prefix_ops                                                                                         | subnetpool-prefix-ops                 |
+| .\*test_subnetpools.RbacSubnetPoolTest                                                                                | rbac-subnetpool                       |
+| .\*test_subnetpools_negative.SubnetPoolsNegativeTestJSON.test_tenant_create_subnetpool_associate_shared_address_scope | rbac-address-scope                    |
+| .\*test_subnetpools.SubnetPoolsSearchCriteriaTest.test_list_validation_filters                                        | filter-validation                     |
+| .\*test_subnets.SubnetsSearchCriteriaTest.test_list_validation_filters                                                | filter-validation                     |
+| .\*test_timestamp.TestTimeStamp.test_segment_with_timestamp                                                           | standard-attr-segment                 |
+| .\*test_trunk.TrunkTestInheritJSONBase.test_add_subport                                                               | https://launchpad.net/bugs/1863707    |
+| .\*test_trunk.TrunkTestMtusJSON                                                                                       | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestJSON.test_create_subport_invalid_inherit_network_segmentation_type                    | vxlan                                 |
+| .\*test_trunk_negative.TrunkTestMtusJSON                                                                              | vxlan                                 |
+| .\*test_qos.QosMinimumBandwidthRuleTestJSON                                                                           | https://gerrit.opnfv.org/gerrit/69105 |
+| .\*network.test_tags                                                                                                  | tag-ext                               |
+| .\*test_routers.RoutersIpV6Test.test_create_router_set_gateway_with_fixed_ip                                          | https://launchpad.net/bugs/1676207    |
+| .\*test_routers.RoutersTest.test_create_router_set_gateway_with_fixed_ip                                              | https://launchpad.net/bugs/1676207    |
+| .\*test_network_basic_ops.TestNetworkBasicOps.test_router_rescheduling                                                | l3_agent_scheduler                    |
+| .\*test_network_advanced_server_ops.TestNetworkAdvancedServerOps.test_server_connectivity_cold_migration_revert       | https://launchpad.net/bugs/1836595    |
 
 Neutron API is also covered by [Rally](https://opendev.org/openstack/rally).
 
@@ -317,6 +334,7 @@ the following test names must not be executed:
 
 | test rejection regular expressions                                                                                        | reasons                            |
 |---------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| .\*admin.test_agents                                                                                                      | xenapi_apis                        |
 | .\*test_fixed_ips                                                                                                         | neutron                            |
 | .\*test_fixed_ips_negative                                                                                                | neutron                            |
 | .\*test_auto_allocate_network                                                                                             | shared networks                    |
@@ -324,11 +342,16 @@ the following test names must not be executed:
 | .\*test_flavors_microversions.FlavorsV261TestJSON                                                                         | max_microversion: 2.53             |
 | .\*test_floating_ips_bulk                                                                                                 | nova-network                       |
 | .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_iscsi_volume                                                   | block live migration               |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_live_block_migration                                           | block live migration               |
+| .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_live_block_migration_paused                                    | block live migration               |
 | .\*test_live_migration.LiveAutoBlockMigrationV225Test.test_volume_backed_live_migration                                   | volume-backed live migration       |
 | .\*test_live_migration.LiveMigrationTest.test_iscsi_volume                                                                | block live migration               |
+| .\*test_live_migration.LiveMigrationTest.test_live_block_migration                                                        | block live migration               |
+| .\*test_live_migration.LiveMigrationTest.test_live_block_migration_paused                                                 | block live migration               |
 | .\*test_live_migration.LiveMigrationTest.test_volume_backed_live_migration                                                | volume-backed live migration       |
 | .\*test_live_migration.LiveMigrationRemoteConsolesV26Test                                                                 | serial_console                     |
 | .\*test_quotas.QuotasAdminTestV257                                                                                        | max_microversion: 2.53             |
+| .\*test_servers.ServersAdminTestJSON.test_reset_network_inject_network_info                                               | xenapi_apis                        |
 | .\*certificates.test_certificates                                                                                         | cert                               |
 | .\*test_quotas_negative.QuotasSecurityGroupAdminNegativeTest                                                              | https://launchpad.net/bugs/1186354 |
 | .\*test_novnc                                                                                                             | vnc_console                        |
@@ -340,6 +363,8 @@ the following test names must not be executed:
 | .\*test_server_actions.ServerActionsTestJSON.test_change_server_password                                                  | change_password                    |
 | .\*test_server_actions.ServerActionsTestJSON.test_get_vnc_console                                                         | vnc_console                        |
 | .\*test_server_actions.ServerActionsTestJSON.test_reboot_server_soft                                                      | https://launchpad.net/bugs/1014647 |
+| .\*test_server_rescue.ServerBootFromVolumeStableRescueTest                                                                | stable_rescue                      |
+| .\*test_server_rescue.ServerStableDeviceRescueTest                                                                        | stable_rescue                      |
 | .\*test_security_group_default_rules                                                                                      | https://launchpad.net/bugs/1311500 |
 | .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_duplicate_name            | neutron                            |
 | .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_security_group_create_with_invalid_group_description | https://launchpad.net/bugs/1161411 |
@@ -347,6 +372,15 @@ the following test names must not be executed:
 | .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_des            | neutron                            |
 | .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_id             | neutron                            |
 | .\*test_security_groups_negative.SecurityGroupsNegativeTestJSON.test_update_security_group_with_invalid_sg_name           | neutron                            |
+| .\*test_server_metadata.ServerMetadataTestJSON                                                                            | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_delete_metadata_non_existent_server                  | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_metadata_items_limit                                 | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_set_metadata_invalid_key                             | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_set_metadata_non_existent_server                     | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_set_server_metadata_blank_key                        | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_set_server_metadata_missing_metadata                 | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_update_metadata_non_existent_server                  | xenapi_apis                        |
+| .\*test_server_metadata_negative.ServerMetadataNegativeTestJSON.test_update_metadata_with_blank_key                       | xenapi_apis                        |
 | .\*test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex                              | https://launchpad.net/bugs/1540645 |
 | .\*servers.test_virtual_interfaces                                                                                        | nova-network                       |
 | .\*compute.test_virtual_interfaces_negative                                                                               | nova-network                       |
@@ -356,6 +390,8 @@ the following test names must not be executed:
 | .\*test_volume_swap                                                                                                       | swap_volume                        |
 | .\*test_encrypted_cinder_volumes                                                                                          | attach_encrypted_volume            |
 | .\*test_minbw_allocation_placement                                                                                        | microversion                       |
+| .\*test_volumes_negative.UpdateMultiattachVolumeNegativeTest.test_multiattach_rw_volume_update_failure                    | volume_multiattach                 |
+| .\*test_shelve_instance.TestShelveInstance.test_cold_migrate_unshelved_instance                                           | shelve_migrate                     |
 
 Nova API is also covered by [Rally](https://opendev.org/openstack/rally).
 
