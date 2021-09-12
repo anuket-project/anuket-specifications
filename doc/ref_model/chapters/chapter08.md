@@ -112,7 +112,7 @@ In the multi-cloud ecosystem comprised of different security postures and polici
 
 <p align="center"><b>Table 8-1a. Multi-Cloud Principles</b></p>
 
-For telco operators to run their network functions in a multi-cloud environment, and specifically, in public clouds, the industry will need a set of new standards and new security tools to manage and regulate the interactions between multi-cloud participating parties. For instance, it seems sensible to eliminate access to restricted areas rather than merely prohibit it. The ETSI standard TS 103 457 “Interface to offload sensitive functions to a trusted domain” provides extra security requirements for public clouds so as to enable telco operators the option of running network functions in public clouds.
+For telco operators to run their network functions in a multi-cloud environment, and specifically, in public clouds, the industry will need a set of new standards and new security tools to manage and regulate the interactions between multi-cloud participating parties. For instance, it is a good practice to eliminate access to restricted areas rather than merely prohibit it. For instance, the ETSI standard TS 103 457 “Interface to offload sensitive functions to a trusted domain” provides extra security requirements for public clouds so as to enable telco operators the option of running network functions in public clouds.
 
 <a name="8.3"></a>
 ## 8.3 Telco Edge Cloud
