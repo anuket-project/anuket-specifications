@@ -114,6 +114,20 @@ In the multi-cloud ecosystem comprised of different security postures and polici
 
 For telco operators to run their network functions in a multi-cloud environment, and specifically, in public clouds, the industry will need a set of new standards and new security tools to manage and regulate the interactions between multi-cloud participating parties. For instance, it is a good practice to eliminate access to restricted areas rather than merely prohibit it. For instance, the ETSI standard TS 103 457 “Interface to offload sensitive functions to a trusted domain” provides extra security requirements for public clouds so as to enable telco operators the option of running network functions in public clouds.
 
+There is also another security aspect to consider, which is related to the autonomous nature of the participants in the multi-cloud. We can prescribe certain things and if not satisfied treat that party as "untrusted".  This problem has been attcked to some extent in TS 103 457. This standard introduces a concept of an LTD (Less Trusted Domain) and an MTD (More Trusted Domain) and specifies the TCDI (Trusted Cross-Domain Interface) to standardise secure interactions between them.  The standard defined the following elementary functions of TCDI:
+Connection and session management
+Data and value management
+Transferring cryptography functionality
+- Entropy request
+- Encryption keys request
+- Trusted timestamping
+- Secure archive
+- Secure storage
+- Search capabilities
+
+As described in Sec. 1 (Scope) of this document, it “… specifies a high-level service-oriented interface, as an application layer with a set of mandatory functions, to access secured services provided by, and executed in a More Trusted Domain. The transport layer is out of scope and left to the architecture implementation “. The standard provides extra security for sensitive functions down to individual Virtual Machines or Containers. As such, it is recommended that the relevant components of reference models, reference architecture, reference implementations and reference compliance take notice of this standard and ensure their compatibility, wherever possible.
+
+
 <a name="8.3"></a>
 ## 8.3 Telco Edge Cloud
 This section presents the characteristics and capabilities of different Edge cloud deployment locations, infrastructure, footprint, etc. Please note that in the literature many terms are used and, thus, this section includes a table that tries to map these different terms.
