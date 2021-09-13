@@ -101,7 +101,7 @@ on. In other words, freshly installed assets are highly insecure.
 
 Ensure Kubernetes nodes are secure, hardened and configured correctly following
 well known security frameworks. Security benchmarks, for example, CIS benchmarks
-are a set of configuration standards and best practices designed to help‘harden’
+are a set of configuration standards and best practices designed to help ‘harden’
 the security of their digital assets. 
 
 ### 5.3.2 Restrict direct access to nodes
