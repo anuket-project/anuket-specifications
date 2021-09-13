@@ -72,7 +72,7 @@ between tenants
 Security benchmarking
 When an operating system or application is installed, it comes with default settings. Usually, all ports are open, and all application services are turned on. In other words, freshly installed assets are highly insecure.
 
-Ensure Kubernetes nodes are secure, hardened and configured correctly following well known security framework. Security benchmarks, for example CIS benchmarks are a set of configuration standards and best practices designed to help ‘harden’ the security of their digital assets. 
+Ensure Kubernetes nodes are secure, hardened and configured correctly following well known security frameworks. Security benchmarks, for example, CIS benchmarks are a set of configuration standards and best practices designed to help ‘harden’ the security of their digital assets. 
 
 ### 5.3.2 Restrict direct access to nodes
 Restrict root/administrative access to Kubernetes nodes while avoiding direct access to nodes for operational activities including debugging, troubleshooting, and other tasks.
