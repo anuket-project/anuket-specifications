@@ -86,7 +86,7 @@ Patch management is another key aspect of IT risk management lifecycle for secur
 ## 5.4 Securing Kubernetes orchestrator	
 
 ### 5.4.1 Control network access to sensitive ports
-Kubernetes clusters usually listen on a range of well-defined and distinctive ports which makes it easier identify the clusters and attack them. Hence it is highly recommended to configure authentication and authorization on the cluster and cluster nodes.
+Kubernetes clusters usually listen on a range of well-defined and distinctive ports which makes it easy to identify the clusters and attack them. Hence, it is highly recommended to configure authentication and authorization on the cluster and cluster nodes.
 
 Here is an overview of the default ports used in Kubernetes. Make sure that your network blocks access to ports and consider limiting access to the Kubernetes API server except from trusted networks.
 
