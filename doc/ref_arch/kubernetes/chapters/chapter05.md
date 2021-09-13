@@ -111,7 +111,7 @@ and other tasks.
 
 ### 5.3.3 Vulnerability assessment
 Vulnerability assessments are a crucial part of IT risk management lifecycles.
-It helps in protecting systems and data from unauthorized access and breaches.
+The mitigation of the vulnerabilities helps in protecting systems and data from unauthorized access and breaches.
 Implement necessary vulnerability scanner tools (Ex: OpenVAS and many other
 opensource and commercial tools) to identify threats and flaws within the
 infrastructure that represents potential risks.
