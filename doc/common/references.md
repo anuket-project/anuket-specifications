@@ -100,7 +100,7 @@
 | [S11] | | Software Bill of Materials (SBOM) described by US National Telecommunications and Information Administration (NTIA). Available at https://www.ntia.gov/SBOM. |
 | [S12] | | Twelve-Factor App. Available at https://12factor.net/. | 
 | [S13] |ETSI TS 103 457 V1.1.1 (2018-10) | CYBER; Trusted Cross-Domain Interface: Interface to offload sensitive functions to a trusted domain. Available at http://www.etsi.org/standards-search. | 
-| [S13] |MITRE ATT&CK®Framework| CYBER; MITRE ATT&CK: Design and Philosophy, MITRE, March 2020. Available at https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf. | 
+| [S14] |MITRE ATT&CK®Framework| CYBER; MITRE ATT&CK: Design and Philosophy, MITRE, March 2020. Available at https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf. | 
 
 
 
