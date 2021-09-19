@@ -99,7 +99,7 @@ The Cloud Services and the Cloud Resources Brokers provide value-added services 
 ### 8.2.4 Aspects of Multi-Cloud Security
 Cloud infrastructures, emerging as a key element in the telco operator ecosystem, are part of the attack surface landscape. This is particularly worrying with the 5G rollout becoming a critical business necessity. It is important to be vigilant of Cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber threat actors use.
  
-In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an environment, there are additional security principles to be considered.  These principles, see Table 2 below, are drawn from the collaboration with GSMA FASG.
+In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an environment, there are additional security principles to be considered.  These principles, see Table 8-1a below, are drawn from the collaboration with the GSMA FASG.
   
 | Multi-cloud Security Principle | Description |
 | ------------------------------ | ----------- |
