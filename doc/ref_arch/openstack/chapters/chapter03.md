@@ -35,7 +35,7 @@ This Reference Architecture (RA-1) aims to provide an OpenStack distribution agn
 This reference architecture provides optionality in terms of pluggable components such as SDN, hardware acceleration and support tools.
 
 The Cloud Infrastructure layer includes the physical infrastructure which is then offered as virtual resources via a hypervisor.
-The VIM is the OpenStack OpenInfra Foundation Train release.
+The VIM is the OpenStack Train release.
 
 This chapter is organised as follows:
 *	Consumable Infrastructure Resources and Services: these are infrastructure services and resources being exposed northbound for consumption
