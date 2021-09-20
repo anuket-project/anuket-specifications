@@ -670,7 +670,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---|----|---|----|
 | sec.oss.004 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
 
-p align="center"><b>Table 2-40:</b> Open-Source Software Security Recommendations</p>
+<p align="center"><b>Table 2-40:</b> Open-Source Software Security Recommendations</p>
 
 #### 2.4.8.9. IaaC security (source [RM7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
 
