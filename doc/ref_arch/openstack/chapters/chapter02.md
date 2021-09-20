@@ -220,12 +220,12 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.gen.004 | Hardening | The Operating Systems of all the servers part of Cloud Infrastructure **must** be hardened by removing or disabling unnecessary services, applications and network protocols, configuring operating system user authentication, configuring resource controls, installing and configuring additional security controls where needed, and testing the security of the Operating System (NIST SP 800-123). | [RA-1 6.3.1.4 "Function and Software"](./chapter06.md#6314-function-and-software) |
 | sec.gen.005 | Hardening | The Platform **must** support Operating System level access control. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
 | sec.gen.006 | Hardening | The Platform **must** support Secure logging. Logging with root account must be prohibited when root privileges are not required. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
-| sec.gen.007 | Hardening | All servers part of Cloud Infrastructure **must** be Time synchronized with authenticated Time service. | [RA-1 6.3.7.6 "Security Logs Time Synchronisation"](./chapter06.md#6376-security-logs-time-synchronisation) |
+| sec.gen.007 | Hardening | All servers part of Cloud Infrastructure **must** be Time synchronised with authenticated Time service. | [RA-1 6.3.7.6 "Security Logs Time Synchronisation"](./chapter06.md#6376-security-logs-time-synchronisation) |
 | sec.gen.008 | Hardening | All servers part of Cloud Infrastructure **must** be regularly updated to address security vulnerabilities. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches), [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
-| sec.gen.009 | Hardening | The Platform **must** support Software integrity protection and verification. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
+| sec.gen.009 | Hardening | The Platform **must** support software integrity protection and verification. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.gen.010 | Hardening | The Cloud Infrastructure **must** support encrypted storage, for example, block, object and file storage, with access to encryption keys restricted based on a need to know ([Controlled Access Based on the Need to Know](https://www.cisecurity.org/controls/controlled-access-based-on-the-need-to-know/)). | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
-| sec.gen.012 | Hardening | The Operator **must** ensure that only authorized actors have physical access to the underlying infrastructure. | This requirement’s verification goes beyond Anuket testing scope  |
-| sec.gen.013 | Hardening | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
+| sec.gen.012 | Hardening | The Operator **must** ensure that only authorised actors have physical access to the underlying infrastructure. | This requirement’s verification goes beyond Anuket testing scope  |
+| sec.gen.013 | Hardening | The Platform **must** ensure that only authorised actors have logical access to the underlying infrastructure. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
 <p align="center"><b>Table 2-6:</b> Reference Model Requirements - System Hardening Requirements</p>
@@ -239,7 +239,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.sys.003 | Access | The Platform **must** support Secure and encrypted communications, and confidentiality and integrity of network traffic. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications)  |
 | sec.sys.004 | Access | The Cloud Infrastructure **must** support authentication, integrity and confidentiality on all network channels. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications)|
 | sec.sys.005 | Access | The Cloud Infrastructure **must** segregate the underlay and overlay networks. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications) |
-| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilize the Cloud Infrastructure Manager identity lifecycle management capabilities. | [RA-1 6.3.2.1 "Identity Security"](./chapter06.md#6321-identity-security) |
+| sec.sys.006 | Access | The Cloud Infrastructure **must** be able to utilise the Cloud Infrastructure Manager identity lifecycle management capabilities. | [RA-1 6.3.2.1 "Identity Security"](./chapter06.md#6321-identity-security) |
 | sec.sys.007 | Access | The Platform **must** implement controls enforcing separation of duties and privileges, least privilege use and least common mechanism (Role-Based Access Control). | [RA-1 6.3.2.4 "RBAC"](./chapter06.md#6324-rbac) |
 | sec.sys.008 | Access | The Platform **must** be able to assign the Entities that comprise the tenant networks to different trust domains. (Communication between different trust domains is not allowed, by default.) | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |  
 | sec.sys.009 | Access | The Platform **must** support creation of Trust Relationships between trust domains. These maybe uni-directional relationships where the trusting domain trusts another domain (the “trusted domain”) to authenticate users for them or to allow access to its resources from the trusted domain.  In a bidirectional relationship both domain are “trusting” and “trusted”. |  |
@@ -263,8 +263,8 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.ci.003 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of data related metadata. |   |
 | sec.ci.004 | Confidentiality | The Platform **must** support Confidentiality of processes and restrict information sharing with only the process owner (e.g., tenant). |   |
 | sec.ci.005 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of process-related metadata and restrict information sharing with only the process owner (e.g., tenant). |   |
-| sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilization (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  |
-| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorized actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and for secure monitoring services. Administrative access must be managed using Platform Identity Lifecycle Management.  |  |
+| sec.ci.006 | Confidentiality/Integrity | The Platform **must** support Confidentiality and Integrity of workload resource utilisation (RAM, CPU, Storage, Network I/O, cache, hardware offload) and restrict information sharing with only the workload owner (e.g., tenant). |  |
+| sec.ci.007 | Confidentiality/Integrity | The Platform **must not** allow Memory Inspection by any actor other than the authorised actors for the Entity to which Memory is assigned (e.g., tenants owning the workload), for Lawful Inspection, and for secure monitoring services. Administrative access must be managed using Platform Identity Lifecycle Management.  |  |
 | sec.ci.008 | Confidentiality | The Cloud Infrastructure **must** support tenant networks segregation. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
 <p align="center"><b>Table 2-8:</b> Reference Model Requirements: Confidentiality and Integrity Requirements</p>
@@ -274,7 +274,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | Ref # | sub-category | Description |  Traceability |
 |---|----|---|----|
 | sec.wl.001 | Workload | The Platform **must** support Workload placement policy. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
-| sec.wl.002 | Workload | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g. remote attestation, Trusted Platform Module). |  |
+| sec.wl.002 | Workload | The Cloud Infrastructure **must** provide methods to ensure the platform’s trust status and integrity (e.g., remote attestation, Trusted Platform Module). |  |
 | sec.wl.003 | Workload | The Platform **must** support secure provisioning of Workloads. | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.004 | Workload | The Platform **must** support Location assertion (for mandated in-country or location requirements). | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 | sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond Anuket testing scope |
@@ -288,9 +288,9 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 |---|----|---|----|
 | sec.img.001 | Image | Images from untrusted sources **must not** be used. | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
 | sec.img.002 | Image | Images **must** be scanned to be maintained free from known vulnerabilities. | [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security) |
-| sec.img.003 | Image | Images **must not** be configured to run with privileges higher than the privileges of the actor authorized to run them. |  |
-| sec.img.004 | Image | Images **must** only be accessible to authorized actors. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration)|
-| sec.img.005 | Image | Image Registries **must** only be accessible to authorized actors. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
+| sec.img.003 | Image | Images **must not** be configured to run with privileges higher than the privileges of the actor authorised to run them. |  |
+| sec.img.004 | Image | Images **must** only be accessible to authorised actors. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration)|
+| sec.img.005 | Image | Image Registries **must** only be accessible to authorised actors. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.img.006 | Image | Image Registries **must** only be accessible over networks that enforce authentication, integrity and confidentiality. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.img.007 | Image | Image registries **must** be clear of vulnerable and out of date versions. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security)  |
 
@@ -303,7 +303,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.lcm.001 | LCM | The Platform **must** support Secure Provisioning, Availability, and Deprovisioning (Secure Clean-Up) of workload resources where Secure Clean-Up includes tear-down, defense against virus or other attacks. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |  
 | sec.lcm.002 | LCM | The Cloud Operator **must** use management protocols limiting security risk such as SNMPv3, SSH v2, ICMP, NTP, syslog and TLS v1.2 or higher. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 | sec.lcm.003 | LCM | The Cloud Operator **must** implement and strictly follow change management processes for Cloud Infrastructure, Cloud Infrastructure Manager and other components of the cloud, and Platform change control on hardware. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |  
-| sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be monitored for anomalous behavior. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |
+| sec.lcm.005 | LCM | Platform **must** provide logs and these logs must be monitored for anomalous behaviour. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |
 | sec.lcm.006 | LCM | The Platform **must** verify the integrity of all Resource management requests. | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
 | sec.lcm.007 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with current time information. |  |
 | sec.lcm.008 | LCM | The Platform **must** be able to update newly instantiated, suspended, hibernated, migrated and restarted images with relevant DNS information. |  |
@@ -325,17 +325,17 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.003 | Monitoring | The Platform **must** log all changes to time server source, time, date and time zones. | [RA-1 6.3.7.6 "Security Logs Time Synchronisation"](./chapter06.md#6376-security-logs-time-synchronisation) |
 | sec.mon.004 | Audit | The Platform **must** secure and protect Audit logs (containing sensitive information) both in-transit and at rest. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm)  |
 | sec.mon.005 | Monitoring/Audit | The Platform **must** Monitor and Audit various behaviours of connection and login attempts to detect access attacks and potential access attempts and take corrective actions accordingly | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7.2 "What to log, what not to log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
-| sec.mon.006 | Monitoring/Audit | The Platform **must** Monitor and Audit operations by authorized account access after login to detect malicious operational activity and take corrective actions. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |
+| sec.mon.006 | Monitoring/Audit | The Platform **must** Monitor and Audit operations by authorised account access after login to detect malicious operational activity and take corrective actions. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit) |
 | sec.mon.007 | Monitoring/Audit | The Platform **must** Monitor and Audit security parameter configurations for compliance with defined security policies. | [RA-1 6.3.3.2 "Integrity of OpenStack components configuration"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.mon.008 | Monitoring/Audit | The Platform **must** Monitor and Audit externally exposed interfaces for illegal access (attacks) and take corrective security hardening measures. | [RA-1 6.3.3.1 "Confidentiality and Integrity of communications"](./chapter06.md#6331-confidentiality-and-integrity-of-communications) |
 | sec.mon.009 | Monitoring/Audit | The Platform **must** Monitor and Audit service for various attacks (malformed messages, signalling flooding and replaying, etc.) and take corrective actions accordingly. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
-| sec.mon.010 | Monitoring/Audit | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorized processes and take corrective actions accordingly. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
+| sec.mon.010 | Monitoring/Audit | The Platform **must** Monitor and Audit running processes to detect unexpected or unauthorised processes and take corrective actions accordingly. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
 | sec.mon.011 | Monitoring/Audit | The Platform **must** Monitor and Audit logs from infrastructure elements and workloads to detected anomalies in the system components and take corrective actions accordingly. | [RA-1 6.3.7.1 "Creating logs"](./chapter06.md#6371-creating-logs) |
 | sec.mon.012 | Monitoring/Audit | The Platform **must** Monitor and Audit Traffic patterns and volumes to prevent malware download attempts. | [RA-1 6.3.3.3 "Confidentiality and Integrity of tenant data"](./chapter06.md#6333-confidentiality-and-integrity-of-tenant-data-secmon012-and-secmon013) |
 | sec.mon.013 | Monitoring | The monitoring system **must not** affect the security (integrity and confidentiality) of the infrastructure, workloads, or the user data (through back door entries). |  |
 | sec.mon.015 | Monitoring | The Platform **must** ensure that the Monitoring systems are never starved of resources and **must** activate alarms when resource utilisation exceeds a configurable threshold. | [RA-1 6.3.7 "Monitoring and Security Audit"](./chapter06.md#637-monitoring-and-security-audit)  |
 | sec.mon.017 | Audit | The Platform **must** audit systems for any missing security patches and take appropriate actions. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches) |
-| sec.mon.018 | Monitoring | The Platform, starting from initialization, **must** collect and analyze logs to identify security events, and store these events in an external system. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
+| sec.mon.018 | Monitoring | The Platform, starting from initialisation, **must** collect and analyse logs to identify security events, and store these events in an external system. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
 | sec.mon.019 | Monitoring | The Platform’s components **must not** include an authentication credential, e.g., password, in any logs, even if encrypted. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
 | sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | [RA-1 6.3.7.5 "Data Retention](./chapter06.md#6375-data-retention)  |
 | sec.mon.021 | Monitoring | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
@@ -346,10 +346,10 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
-| sec.oss.001 | Software | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
-| sec.oss.002 | Software | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software, https://cve.mitre.org/ |  |
+| sec.oss.001 | Software | Open-source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
+| sec.oss.002 | Software | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open-source code part of Cloud Infrastructure and workloads software, https://cve.mitre.org/ |  |
 | sec.oss.003 | Software | High severity rated vulnerabilities **must** be fixed. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score. | |
-| sec.oss.004 | Software | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
+| sec.oss.004 | Software | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open-source content. |  |
 
 <p align="center"><b>Table 2-13:</b> Reference Model Requirements - Open-Source Software Security Requirements</p>
 
@@ -513,7 +513,7 @@ The requirements listed in this section are optional, and are not required in or
 
 | Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
-| gen.cnt.01 | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilize a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
+| gen.cnt.01 | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilise a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | gen.cnt.02 | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
 | gen.scl.01 | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likely be supported through [Senlin](https://docs.openstack.org/senlin/train/), cluster management service. |
 | gen.rsl.02 | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to gen.rsl.01. | |
@@ -582,7 +582,7 @@ This section is left blank for future use.
 | Ref # | sub-category | Description |  Notes |
 |----|----------|-------------|-------------|
 | lcm.adp.01 | Automated deployment | The Architecture **should** allow for “cookie cutter” automated deployment, configuration, provisioning and management of multiple Cloud Infrastructure sites. | |
-| lcm.adp.03 | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by lcm.adp.02. Whenever hitless upgrades are not feasible, attempt should be made to minimize the duration and nature of impact. | |
+| lcm.adp.03 | Automated deployment | The Architecture **should** support hitless upgrade of all software provided by the cloud provider that are not covered by lcm.adp.02. Whenever hitless upgrades are not feasible, attempt should be made to minimise the duration and nature of impact. | |
 | lcm.adp.04 | Automated deployment | The Architecture **should** support declarative specifications of hardware and software assets for automated deployment, configuration, maintenance and management. | |
 | lcm.adp.05 | Automated deployment | The Architecture **should** support automated process for Deployment and life-cycle management of VIM Instances. | |
 | lcm.cid.02 | CI/CD | The Architecture **should** support integrating with CI/CD Toolchain for Cloud Infrastructure and VIM components Automation. | |
@@ -605,7 +605,7 @@ This section is left blank for future use.
 
 | Ref # | sub-category | Description |  Notes |
 |-------|------|------|-------|
-| sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorized actors). |  |
+| sec.gen.011 | Hardening | The Cloud Infrastructure **should** support Read and Write only storage partitions (write only permission to one or more authorised actors). |  |
 | sec.gen.014 | Hardening | All servers part of Cloud Infrastructure **should** support measured boot and an attestation server that monitors the measurements of the servers. |  |
 
 <p align="center"><b>Table 2-33:</b> System Hardening Recommendations</p>
@@ -733,7 +733,7 @@ p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendation
 | sec.std.003 | Standards | The Platform and Workloads **should** follow the guidance in the OWASP Cheat Sheet Series (OCSS) https://github.com/OWASP/CheatSheetSeries. Open Web Application Security Project [https://www.owasp.org](https://www.owasp.org) | |
 | sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
 | sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  |
-| sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
+| sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilise the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
 | sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en; ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
 | sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | |
 | sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en; ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity | |
