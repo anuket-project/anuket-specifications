@@ -339,7 +339,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <p align="center"><b>Table 2-12:</b> Reference Model Requirements: Monitoring and Security Audit Requirements</p>
 
-#### 2.2.6.9. Open Source Software (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
+#### 2.2.6.8. Open Source Software (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
@@ -664,7 +664,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---|----|---|----|
 | sec.oss.004 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
 
-p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendations</p>
+<p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendations</p>
 
 #### 2.4.8.9. IaaC security (source [RM7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
 
@@ -728,10 +728,10 @@ p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendation
 | sec.std.004 | Standards | The Cloud Operator, Platform and Workloads **should** ensure that their code is not vulnerable to the OWASP Top Ten Security Risks [https://owasp.org/www-project-top-ten/](https://owasp.org/www-project-top-ten/) |  |
 | sec.std.005 | Standards | The Cloud Operator, Platform and Workloads **should** strive to improve their maturity on the OWASP Software Maturity Model (SAMM) https://owaspsamm.org/blog/2019/12/20/version2-community-release/ |  |
 | sec.std.006  | Standards | The Cloud Operator, Platform and Workloads **should** utilize the OWASP Web Security Testing Guide https://github.com/OWASP/wstg/tree/master/document |  |
-| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en; ISO/IEC 27002:2013 - ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
+| sec.std.007 | Standards | The Cloud Operator, and Platform **should** satisfy the requirements for Information Management Systems specified in ISO/IEC 27001  https://www.iso.org/obp/ui/#iso:std:iso-iec:27001:ed-2:v1:en; ISO/IEC 27001 is the international Standard for best-practice information security management systems (ISMSs) | |
 | sec.std.008 | Standards | The Cloud Operator, and Platform **should** implement the Code of practice for Security Controls specified ISO/IEC 27002:2013 (or latest)  https://www.iso.org/obp/ui/#iso:std:iso-iec:27002:ed-2:v1:en | |
-| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en; ISO/IEC 27032 - ISO/IEC 27032is the international Standard focusing explicitly on cybersecurity | |
-| sec.std.010 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management; ISO/IEC 27035 - ISO/IEC 27035 is the international Standard for incident management | |
-| sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 - ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
+| sec.std.009 | Standards | The Cloud Operator, and Platform **should** implement the ISO/IEC 27032:2012 (or latest) Guidelines for Cybersecurity techniques  https://www.iso.org/obp/ui/#iso:std:iso-iec:27032:ed-1:v1:en; ISO/IEC 27032 is the international Standard focusing explicitly on cybersecurity | |
+| sec.std.010 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27035 standard for incidence management; ISO/IEC 27035 is the international Standard for incident management | |
+| sec.std.011 | Standards | The Cloud Operator **should** conform to the ISO/IEC 27031 standard for business continuity; ISO/IEC 27031 is the international Standard for ICT readiness for business continuity | |
 
 <p align="center"><b>Table 2-46:</b> Security Recommendations</p>
