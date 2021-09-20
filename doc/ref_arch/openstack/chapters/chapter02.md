@@ -45,7 +45,7 @@ This chapter includes both "Requirements" that must be satisifed in an RA-1 conf
 <a name="2.2"></a>
 ## 2.2 Reference Model Requirements
 
-The tables below contain the requirements from the Reference Model to cover the Basic and High Performance profiles.
+The tables below contain the requirements from the Reference Model to cover the Basic and High-Performance profiles.
 
 To ensure alignment with the infrastructure profile catalogue, the following requirements are referenced through:
 - Those relating to Cloud Infrastructure Software Profiles
@@ -87,23 +87,23 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.014/ infra.com.acc.cfg.004 | Hardware coprocessor support (GPU/NPU) | Compute Intensive GPU | | |
 | e.cap.016/ infra.com.acc.cfg.005 | FPGA/other Acceleration H/W | Firmware-programmable adapter | | |
 
+<p align="center"><b>Table 2-1a:</b> Cloud Infrastructure Software Profile Extensions Requirements for Compute</p>
+
 <a name="2.2.2"></a>
 ### 2.2.2 Cloud Infrastructure Software Profile Requirements for Netwokring (source [RM 5.2.3](../../../ref_model/chapters/chapter05.md#5.2.3))
 
 The features and configuration requirements related to virtual networking for the two (2) types of Cloud Infrastructure Profiles are specified below followed by networking bandwidth requirements.
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High-Performance Profile| Specification Reference |
 |---|---|---|---|---|
-| infra.net.cfg.001 |	IO virtualisation using	virtio1.1* | Must support | Must support | |
+| infra.net.cfg.001 |	IO virtualisation using	virtio1.1 | Must support | Must support | |
 | infra.net.cfg.002 |	The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | |
 | infra.net.cfg.003 | Network Address Translation | Must support | Must support | |
 | infra.net.cfg.004 | Security Groups | Must support | Must support | |
 | infra.net.cfg.005 | SFC support | Not required | Must support | |
 | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | |
 
-<p align="center"><b>Table 2-2a:</b> Reference Model Requirements: Virtual Networking</p>
-
-> * [Workload Transition Guidelines](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).
+<p align="center"><b>Table 2-2a:</b> Reference Model Requirements - Virtual Networking</p>
 
 The required number of connection points to a VM is described in `e.cap.004` [above](#2.2.1).  The table below specifies the required bandwidth of those connection points.
 
@@ -115,12 +115,12 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | n50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Optional | Must support | |
 | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Optional | Must support | |
 
-<p align="center"><b>Table 2-2b:</b> Reference Model Requirements: Network Interface Specifications</p>
+<p align="center"><b>Table 2-2b:</b> Reference Model Requirements - Network Interface Specifications</p>
 
 <a name="2.2.2.1"></a>
 ### 2.2.2.1 Cloud Infrastructure Software Profile Extensions Requirements for Networking
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High-Performance Profile| Specification Reference |
 |---|---|---|---|---|
 | e.cap.013/ infra.hw.nac.cfg.004  |	SR-IOV over PCI-PT |	N |	Y | |
 | e.cap.019/ infra.net.acc.cfg.001 |	vSwitch optimisation (DPDK) |	N |	Y | |
@@ -128,11 +128,12 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | e.cap.009/ infra.net.acc.cfg.003 |	Crypto acceleration |	N |	Optional | |
 | infra.net.acc.cfg.004 |	Crypto Acceleration Interface |	N |	Optional | |
 
+<p align="center"><b>Table 2-2c:</b> Cloud Infrastructure Software Profile Extensions Requirements for Networking</p>
 
 <a name="2.2.3"></a>
 ### 2.2.3 Cloud Infrastructure Software Profile Requirements for Storage (source [RM 5.2](../../../ref_model/chapters/chapter05.md#5.2))
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High-Performance Profile| Specification Reference |
 |---|---|---|---|---|
 | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
 | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
@@ -140,7 +141,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | |
 | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | |
 
-<p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
+<p align="center"><b>Table 2-3a:</b> Reference Model Requirements - Cloud Infrastructure Software Profile Requirements for Storage</p>
 
 
 <a name="2.2.3.1"></a>
@@ -151,11 +152,12 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | infra.stg.acc.cfg.001 | Storage IOPS oriented | Storage Intensive High-performance storage | | |
 | infra.stg.acc.cfg.002 | Storage capacity oriented | High Capacity | | |
 
+<p align="center"><b>Table 2-3b:</b> Reference Model Requirements - Cloud Infrastructure Software Profile Extensions Requirements for Storage</p>
 
 <a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High-Performance Profile| Specification Reference |
 |---|---|---|---|---|
 | infra.hw.001 |	CPU Architecture (Values such as x64, ARM, etc.) | | | |
 | infra.hw.cpu.cfg.001 | Minimum number of CPU (Sockets) | 2 | 2 | |
@@ -171,14 +173,13 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 | |
 | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
-
-<p align="center"><b>Table 2-4a:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
+<p align="center"><b>Table 2-4a:</b> Reference Model Requirements - Cloud Infrastructure Hardware Profile Requirements</p>
 
 <a name="2.2.4.1"></a>
 #### 2.2.4.1 Cloud Infrastructure Hardware Profile-Extensions Requirements (source [RM 5.4](../../../ref_model/chapters/chapter05.md#5.4))
 
 
-| Reference  | Description | Requirement for Basic Profile | Requirement for High Performance Profile| Specification Reference |
+| Reference  | Description | Requirement for Basic Profile | Requirement for High-Performance Profile| Specification Reference |
 |---|---|---|---|---|
 | e.cap.014/  infra.hw.cac.cfg.001 | GPU | N | Optional | |
 | e.cap.016/  infra.hw.cac.cfg.002 |FPGA/other Acceleration H/W | N | Optional | |
@@ -186,6 +187,8 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | e.cap.015/ infra.hw.nac.cfg.002 | SmartNIC |  N | Optional | |
 | infra.hw.nac.cfg.003 | Compression | Optional | Optional | |
 | e.cap.013/ infra.hw.nac.cfg.004 | SR-IOV over PCI-PT | N | Yes | |
+
+<p align="center"><b>Table 2-4b:</b> Reference Model Requirements - Cloud Infrastructure Hardware Profile Extensions Requirements</p>
 
 <a name="2.2.5"></a>
 ### 2.2.5 Cloud Infrastructure Management Requirements (source [RM 4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities))
@@ -225,7 +228,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.gen.013 | Hardening | The Platform **must** ensure that only authorized actors have logical access to the underlying infrastructure. | [RA-1 6.3.1.2 "System Access"](./chapter06.md#6312-system-access) |
 | sec.gen.015 | Hardening | Any change to the Platform **must** be logged as a security event, and the logged event must include the identity of the entity making the change, the change, the date and the time of the change. | [RA-1 6.3.6 "Security LCM"](./chapter06.md#636-security-lcm) |
 
-<p align="center"><b>Table 2-6:</b> Reference Model Requirements: System Hardening Requirements</p>
+<p align="center"><b>Table 2-6:</b> Reference Model Requirements - System Hardening Requirements</p>
 
 ####  2.2.6.2. Platform and Access (source [RM 7.9.2](../../../ref_model/chapters/chapter07.md#792-platform-and-access))
 
@@ -250,7 +253,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.sys.018 | Access | The Platform **must** provide the capability of allowing certificate renewal and revocation. |  |
 | sec.sys.019 | Access | The Platform **must** provide the capability of testing the validity of a digital certificate (CA signature, validity period, non revocation, identity). |  |
 
-<p align="center"><b>Table 2-7:</b> Reference Model Requirements: Platform and Access Requirements</p>
+<p align="center"><b>Table 2-7:</b> Reference Model Requirements - Platform and Access Requirements</p>
 
 #### 2.2.6.3. Confidentiality and Integrity (source [RM7.9.3](../../../ref_model/chapters/chapter07.md#793-confidentiality-and-integrity))
 
@@ -277,7 +280,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.wl.005 | Workload | The Platform **must** support the separation of production and non-production Workloads. | This requirement’s verification goes beyond Anuket testing scope |
 | sec.wl.006 | Workload | The Platform **must** support the separation of Workloads based on their categorisation (for example, payment card information, healthcare, etc.) | [RA-1 6.3.4 "Workload Security"](./chapter06.md#634-workload-security) |
 
-<p align="center"><b>Table 2-9:</b> Reference Model Requirements: Workload Security Requirements</p>
+<p align="center"><b>Table 2-9:</b> Reference Model Requirements - Workload Security Requirements</p>
 
 #### 2.2.6.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
 
@@ -291,7 +294,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.img.006 | Image | Image Registries **must** only be accessible over networks that enforce authentication, integrity and confidentiality. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration) |
 | sec.img.007 | Image | Image registries **must** be clear of vulnerable and out of date versions. | [RA-1 6.3.3.2 "Confidentiality and Integrity of communications"](./chapter06.md#6332-integrity-of-openstack-components-configuration), [RA-1 6.3.5 "Image Security"](./chapter06.md#635-image-security)  |
 
-<p align="center"><b>Table 2-10:</b> Reference Model Requirements: Image Security Requirements</p>
+<p align="center"><b>Table 2-10:</b> Reference Model Requirements - Image Security Requirements</p>
 
 #### 2.2.6.6. Security LCM (source [RM7.9.6](../../../ref_model/chapters/chapter07.md#796-security-lcm))
 
@@ -309,7 +312,7 @@ The required number of connection points to a VM is described in `e.cap.004` [ab
 | sec.lcm.011 | LCM | The Platform **must** implement Security life cycle management processes including the proactive update and patching of all deployed Cloud Infrastructure software. | [RA-1 6.3.1.5 "Patches"](./chapter06.md#6315-patches)  |
 | sec.lcm.012 | LCM | The Platform **must** log any access privilege escalation. | [RA-1 6.3.7.2 "What to Log"](./chapter06.md#6372-what-to-log--what-not-to-log) |
 
-<p align="center"><b>Table 2-11:</b> Reference Model Requirements: Security LCM Requirements</p>
+<p align="center"><b>Table 2-11:</b> Reference Model Requirements - Security LCM Requirements</p>
 
 #### 2.2.6.7. Monitoring and Security Audit (source [RM7.9.7](../../../ref_model/chapters/chapter07.md#797-monitoring-and-security-audit))
 
@@ -337,7 +340,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.mon.020 | Monitoring/Audit | The Platform’s logging system **must** support the storage of security audit logs for a configurable period of time. | [RA-1 6.3.7.5 "Data Retention](./chapter06.md#6375-data-retention)  |
 | sec.mon.021 | Monitoring | The Platform **must** store security events locally if the external logging system is unavailable and shall periodically attempt to send these to the external logging system until successful. | [RA-1 6.3.7.3 "Where to Log"](./chapter06.md#6373-where-to-log) |
 
-<p align="center"><b>Table 2-12:</b> Reference Model Requirements: Monitoring and Security Audit Requirements</p>
+<p align="center"><b>Table 2-12:</b> Reference Model Requirements - Monitoring and Security Audit Requirements</p>
 
 #### 2.2.6.9. Open Source Software (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
 
@@ -348,7 +351,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.oss.003 | Software | High severity rated vulnerabilities **must** be fixed. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score. | |
 | sec.oss.004 | Software | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
 
-<p align="center"><b>Table 2-13:</b> Reference Model Requirements: Open Source Software Security Requirements</p>
+<p align="center"><b>Table 2-13:</b> Reference Model Requirements - Open-Source Software Security Requirements</p>
 
 #### 2.2.6.9. IaaC security (source [RM7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
 
@@ -366,7 +369,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---------|---------------|----------------|------------|
 | sec.bld.003 | IaaC | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |  |
 
-<p align="center"><b>Table 2-15:</b> Reference Model Requirements: IaaC Security Requirements, Continuous Build, Integration and Testing Stage </p>
+<p align="center"><b>Table 2-15:</b> Reference Model Requirements - IaaC Security Requirements, Continuous Build, Integration and Testing Stage </p>
 
 **Continuous Delivery and Deployment Stage Requirements**
 
@@ -376,7 +379,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | sec.del.002 | IaaC | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |  |
 | sec.del.004 | IaaC | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |  |
 
-<p align="center"><b>Table 2-16:</b> Reference Model Requirements: IaaC Security Requirements, Continuous Delivery and Deployment Stage </p>
+<p align="center"><b>Table 2-16:</b> Reference Model Requirements - IaaC Security Requirements, Continuous Delivery and Deployment Stage</p>
 
 **Runtime Defence and Monitoring Requirements**
 
@@ -384,7 +387,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---------|---------------|----------------|------------|
 | sec.run.001 | IaaC | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|  |
 
-<p align="center"><b>Table 2-17:</b> Reference Model Requirements: IaaC Security Requirements, Runtime Defence and Monitoring Stage </p>
+<p align="center"><b>Table 2-17:</b> Reference Model Requirements - IaaC Security Requirements, Runtime Defence and Monitoring Stage</p>
 
 #### 2.2.6.10. Compliance with Standards (source [RM7.9.10](../../../ref_model/chapters/chapter07.md#7910-compliance-with-standards))
 
@@ -459,7 +462,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 | int.api.01 | API | The Architecture **must** provide APIs to access the authentication service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.1 "Keystone"](./chapter05.md#521-keystone) |
 | int.api.02 | API | The Architecture **must** provide APIs to access the image management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.2 "Glance"](./chapter05.md#522-glance) |
 | int.api.03 | API | The Architecture **must** provide APIs to access the block storage management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.3 "Cinder"](./chapter05.md#523-cinder) |
-| int.api | API | The Architecture **must** provide APIs to access the object storage management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.4 "Swift"](./chapter05.md#524-swift) |
+| int.api.04 | API | The Architecture **must** provide APIs to access the object storage management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.4 "Swift"](./chapter05.md#524-swift) |
 | int.api.05 | API | The Architecture **must** provide APIs to access the network management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.5 "Neutron"](./chapter05.md#525-neutron) |
 | int.api.06 | API | The Architecture **must** provide APIs to access the compute resources management service and the associated mandatory features detailed in chapter 5. | [RA-1 5.2.6 "Nova"](./chapter05.md#526-nova) |
 | int.api.07 | API | The Architecture **must** provide GUI access to tenant facing cloud platform core services except at Edge/Far Edge clouds. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) |
@@ -474,8 +477,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref # | sub-category | Description |  Traceability |
 |----|--------------|---------------|-----------------|
-| tnt.gen.01 | General | The Architecture **must** support multi-tenancy. |  **duplicate of vim.07** |
-| tnt.gen.02 | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) and [3.3.1.4 Cloud Workload Services](./chapter03.md#3314-cloud-workload-services) |
+| tnt.gen.01 | General | The Architecture **must** support self-service dashboard (GUI) and APIs for users to deploy, configure and manage their workloads. | [RA-1 4.3.1.9 "Horizon"](./chapter04.md#4319-horizon) and [3.3.1.4 Cloud Workload Services](./chapter03.md#3314-cloud-workload-services) |
 
 <p align="center"><b>Table 2-23:</b> Tenant Requirements</p>
 
@@ -567,6 +569,8 @@ The requirements listed in this section are optional, and are not required in or
 <a name="2.4.5"></a>
 ### 2.4.5 Tenant Recommendations
 
+This section is left blank for future use.
+
 | Ref # | sub-category | Description |  Notes |
 |----|-------|---------------------|-------------|
 
@@ -633,6 +637,8 @@ The requirements listed in this section are optional, and are not required in or
 <p align="center"><b>Table 2-36:</b> Workload Security Recommendations</p>
 
 #### 2.4.8.5. Image Security (source [RM7.9.5](../../../ref_model/chapters/chapter07.md#795-image-security))
+
+This section is left blank for future use.
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
