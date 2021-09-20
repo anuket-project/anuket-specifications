@@ -269,7 +269,7 @@ Virtualisation is a technology that enables a guest Operating System (OS) to be 
 
 Virtualisation Services: The OpenStack nova-compute service supports multiple hypervisors natively or through libvirt. The preferred supported hypervisor in this Reference Architecture is KVM.
 
-*Note*: Other hypervisors (such as ESXI) can also be supported as long as it can interoperate with other OpenStack components (e.g., those listed in this Reference Architecture) using standard interfaces and APIs as specified in Chapter 5.
+*Note*: Other hypervisors (such as ESXi) can also be supported as long as they can interoperate with other OpenStack components (e.g., those listed in this Reference Architecture) using standard interfaces and APIs as specified in Chapter 5.
 
 <a name="3.4.2"></a>
 ### 3.4.2. Physical Infrastructure
