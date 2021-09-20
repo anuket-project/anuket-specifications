@@ -71,7 +71,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.018/ infra.com.cfg.005 | Simultaneous Multithreading (SMT) enabled | Not required | Must support | |
 | i.cap.018/ infra.com.cfg.004 | Huge Pages configured | Not required | Must support | |
 
-<p align="center"><b>Table 2-1:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities</p>
+<p align="center"><b>Table 2-1a:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Capabilities</p>
 
 > **<sup>1</sup>** Defined in the `.bronze` configuration in [RM section 4.2.6 Storage Extensions](../../../ref_model/chapters/chapter04.md#4.2.6)<br> 
 
@@ -87,7 +87,7 @@ To ensure alignment with the infrastructure profile catalogue, the following req
 | e.cap.014/ infra.com.acc.cfg.004 | Hardware coprocessor support (GPU/NPU) | Compute Intensive GPU | | |
 | e.cap.016/ infra.com.acc.cfg.005 | FPGA/other Acceleration H/W | Firmware-programmable adapter | | |
 
-<p align="center"><b>Table 2-1a:</b> Cloud Infrastructure Software Profile Extensions Requirements for Compute</p>
+<p align="center"><b>Table 2-1b:</b> Cloud Infrastructure Software Profile Extensions Requirements for Compute</p>
 
 <a name="2.2.2"></a>
 ### 2.2.2 Cloud Infrastructure Software Profile Requirements for Netwokring (source [RM 5.2.3](../../../ref_model/chapters/chapter05.md#5.2.3))
@@ -342,7 +342,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <p align="center"><b>Table 2-12:</b> Reference Model Requirements - Monitoring and Security Audit Requirements</p>
 
-#### 2.2.6.9. Open Source Software (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
+#### 2.2.6.8. Open-Source Software (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
 
 | Ref # | sub-category | Description |  Traceability |
 |---------|---------------|----------------|------------|
@@ -664,13 +664,13 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <p align="center"><b>Table 2-39:</b> Monitoring and Security Audit Recommendations</p>
 
-#### 2.4.8.8. Open Source Software Security (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
+#### 2.4.8.8. Open-Source Software Security (source [RM7.9.8](../../../ref_model/chapters/chapter07.md#798-open-source-sotfware))
 
 | Ref # | sub-category | Description |  Notes |
 |---|----|---|----|
 | sec.oss.004 | Software | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. Inventory of software components | https://www.ntia.gov/SBOM. | 
 
-p align="center"><b>Table 2-40:</b> Open Source Software Security Recommendations</p>
+p align="center"><b>Table 2-40:</b> Open-Source Software Security Recommendations</p>
 
 #### 2.4.8.9. IaaC security (source [RM7.9.9](../../../ref_model/chapters/chapter07.md#799-iaac---secure-design-and-architecture-stage-requirements))
 
