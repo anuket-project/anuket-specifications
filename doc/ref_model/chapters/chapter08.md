@@ -107,7 +107,7 @@ In the multi-cloud ecosystem comprised of different security postures and polici
 | Visibility | A common data model approach to share events and behaviours across all the key compute, storage, network, and applications resources, environments, virtualised platforms, containers and interfaces |
 | Monitoring | Centralisation, correlation, and visualisation of security information across the different cloud environments to provide an end-to-end view and enable timely response to attacks |
 | Automation | Automation of critical activities including cloud security posture management, continuous security assessments, compliance monitoring, detection of misconfigurations and identification and remediation of risks |
-| Access Management | Organisation of a wide range of users including administrators, testers, DevOps, and developers and customers should be organised into security groups with privileges appropriate to different resources and environments |
+| Access Management | Wide range of users including administrators, testers, DevOps, and developers and customers should be organised into security groups with privileges appropriate to different resources and environments |
 | Security Operations Model | Augmentation of security services provided by cloud service providers with the vetted third-party and/or open-source tools and services, all incorporated into the established overall security operations model |
 
 <p align="center"><b>Table 8-1a. Multi-Cloud Principles</b></p>
