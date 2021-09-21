@@ -172,10 +172,10 @@ The platform supports the workload, and in effect controls access to the workloa
 * In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
 **Vulnerability Management**
-* Security defect must be reported.
-* Cadence should aligned with Cloud Infrastructure vendors (OSSA for OpenStack).
-* Components must be analysed: mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases, https://cve.mitre.org/, to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
-* According to vulnerabilities severity rating, the vulnerable components (from Operating Systems to virtualisation layer components) must be patched, replaced, or their access must be restricted. Refer to the Common Vulnerability Scoring System (CVSS), https://www.first.org/cvss/, to calculate a vulnerability score.
+* Security defects must be reported.
+* The Cloud Infrastructure components must be continuously analysed from deployment to runtime. The Cloud Infrastructure must offer tools to check the code libraries and all other code against the [Common Vulnerabilities and Exposures (CVE) databases]( https://cve.mitre.org/) to identify the presence of any known vulnerabilities.
+* According to vulnerabilities severity rating, the vulnerable components (from Operating Systems to virtualisation layer components) must be patched, replaced, or their access must be restricted. Refer to the [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/) to calculate a vulnerability score.
+* Security patches must be obtained from an authorised source in order to ensure their integrity.  Patches must be tested and validated into a pre-production environment before being deployed into production.
 
 **Platform access**
 * Restrict traffic to only traffic that is necessary, and deny all other traffic, including traffic from and to 'Back-end'.
