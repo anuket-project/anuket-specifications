@@ -475,19 +475,19 @@ This section covers:
 
 <a name="4.3.1"></a>
 ### 4.3.1 VIM Services
-A high level overview of the core OpenStack Services was provided in [Chapter 3](./chapter03.md). In this section we describe the core and other needed services in more detail.
+A high-level overview of the core OpenStack Services was provided in [Chapter 3](./chapter03.md). In this section we describe the core and other needed services in more detail.
 
 #### 4.3.1.1 Keystone
 Keystone is the authentication service, the foundation of identity management in OpenStack. Keystone needs to be the first deployed service. Keystone has services running on the control nodes and no services running on the compute nodes:
 -	Keystone admin API
--	Keystone public API – in Keystone V3 this is the same as the admin API,
+-	Keystone public API – in Keystone V3 this is the same as the admin API
 
 #### 4.3.1.2 Glance
 Glance is the image management service. Glance has only a dependency on the Keystone service therefore it is the second one deployed. Glance has services running on the control nodes and no services running on the compute nodes:
 -	Glance API
 -	Glance Registry
 
-_The Glance backends include Swift, Ceph RBD and NFS_
+_The Glance backends include Swift, Ceph RBD and NFS._
 
 #### 4.3.1.3 Cinder
 Cinder is the block device management service, depends on Keystone and possibly Glance to be able to create volumes from images. Cinder has services running on the control nodes and no services running on the compute nodes:
@@ -620,7 +620,7 @@ In Chapter 3, [Figure 3.2](../figures/RA1-Ch03-OpenStack-Services-Topology.png) 
 Reference Model Chapter 4 and  5 provide information about the Cloud Infrastructure Profiles and their size information. OpenStack flavors with their set of properties describe the VM capabilities and size required to determine the compute host which will run this VM. The set of properties must match compute profiles available in the infrastructure. To implement these profiles and sizes, it is required to set up the flavors as specified in the tables below.
 
 
-| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | High Performance |
+| Flavor Capabilities | Reference<br>RM Chapter 4 and 5 | Basic | High-Performance |
 |----------|-------------|--------------|-------------|
 | CPU allocation ratio (custom extra_specs) | infra.com.cfg.001| In flavor create or flavor set <br>--property cpu_allocation_ratio=4.0 | In flavor create or flavor set <br>--property cpu_allocation_ratio=1.0 |
 | NUMA Awareness | infra.com.cfg.002 | | In flavor create or flavor set specify<br>--property hw:numa_nodes=<integer range of 0 to #numa_nodes – 1><br>To restrict an instance's vCPUs to a single host NUMA node, specify: --property hw:numa_nodes=1<br>Some compute intensive* workloads with highly sensitive memory latency or bandwidth requirements, the instance may benefit from spreading across multiple NUMA nodes: --property hw:numa_nodes=2   |
@@ -694,7 +694,7 @@ The [Edge computing whitepaper](https://www.openstack.org/use-cases/edge-computi
 Table 8-4 in the Reference Model Chapter 8.3.4 "[Telco Edge Cloud: Platform Services Deployment](../../../ref_model/chapters/chapter08.md#8.3.4)" lists the Platform Services that may be placed in the different node types (control, compute and storage). Depending upon the capacity and resources available only the compute nodes may exist at the Edge thereby impacting operations.
 
 
-Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](../../../ref_model/chapters/chapter08.md#8.3.3)", lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavors.
+Table 8-3 in the Reference Model Chapter 8.3.3 "[Telco Edge Cloud Infrastructure Profiles](../../../ref_model/chapters/chapter08.md#8.3.3)" lists a number of Infrastructure Profile characteristics and the changes that may need to be made for certain Edge clouds depending upon their resource capabilities. It should be noted that none of these changes affect the definition of OpenStack flavors.
 
 
 #### 4.5.1.1 Edge Cloud Deployment
