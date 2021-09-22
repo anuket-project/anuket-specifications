@@ -65,7 +65,7 @@ Typical cloud associated attacker tactics have been identified in the widely acc
  |-------|------|
  |Initial Access|Compromising user administration accounts that are not protected by multi-factor authentication|
  |Evasion|Modifying cloud compute instances in the production environment by modifying virtual instances for attack staging|
- |Discovery|Using open-source tools to discover what cloud services are operating and then disabling them in a later stage|
+ |Discovery|Discovering what cloud services are operating and then disabling them in a later stage|
  |Data Exfiltration|Moving data from the compromised tenant’s production databases to the hacker’s cloud service account or transferring the data out of the Communication Service Provider (CSP) to the attacker’s private network|
  |Service Impact|Creating denial-of-service availability issues by modifying Web Application Firewall (WAF) rules and compromising APIs and web-based GUIs|
 
