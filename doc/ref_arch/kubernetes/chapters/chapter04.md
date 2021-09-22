@@ -88,6 +88,8 @@ In order for the Kubernetes components to be conformant with the Reference Archi
 |`ra2.k8s.012`|Kubernetes APIs|Kubernetes [Alpha API](https://kubernetes.io/docs/reference/using-api/#api-versioning) are recommended only for testing, therefore all Alpha APIs **must** be disabled.|[req.int.api.03](./chapter02.md#22-reference-model-requirements)||
 |`ra2.k8s.013`|Kubernetes APIs|Backward compatibility of all supported GA and Beta APIs of Kubernetes **must** be supported. |[req.int.api.04](./chapter02.md#22-reference-model-requirements)||
 |`ra2.k8s.014`|Security Groups|Kubernetes **must** support NetworkPolicy feature. |[infra.net.cfg.004](chapter02.md#23-kubernetes-architecture-requirements)||
+|`ra2.k8s.015`|Publishing Services (ServiceTypes)|Kubernetes **must** support LoadBalancer and **shall** support NodePort and ExternalName [Publishing Service (ServiceTypes)](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types). |[req.inf.ntw.15](chapter02.md#kubernetes-architecture-requirements), [req.inf.ntw.16](chapter02.md#kubernetes-architecture-requirements)||
+|`ra2.k8s.016`|Publishing Services (ServiceTypes)|Kubernetes **must** support [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/). |[req.inf.ntw.15](chapter02.md#kubernetes-architecture-requirements)||
 
 
 <p align="center"><b>Table 4-2:</b> Kubernetes Specifications</p>
