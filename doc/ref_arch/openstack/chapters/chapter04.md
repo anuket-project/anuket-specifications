@@ -196,7 +196,7 @@ The [RA-1 2.3.2 Infrastructure Requirements](./chapter02.md#232-infrastructure-r
 
 where n is any positive integer.
 
-If we wish to dedicate specific cores for host processing we need to consider two different use scenarios:
+If we wish to dedicate specific cores for host processing we need to consider two different usage scenarios:
 
     1. Require dedicated cores for Guest resources
     2. No dedicated cores are required for Guest resources
