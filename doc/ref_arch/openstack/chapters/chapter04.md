@@ -139,7 +139,7 @@ The Reference Model specifies the Basic (B) and High-Performance (H) profile typ
 
 **BIOS Settings**
 
-A number of capabilities need to be enabled in the BIOS (such as NUMA and SMT); the Reference Model section on "[Cloud Infrastructure Software profile description](../../../ref_model/chapters/chapter05.md#5.1)" specifies  the capabilities required to be configured. Please note that capabilities may need to be configured in multiple systems. For OpenStack, we also need to set the following boot parameters:
+A number of capabilities need to be enabled in the BIOS (such as NUMA and SMT); the Reference Model section on "[Cloud Infrastructure Software profile description](../../../ref_model/chapters/chapter05.md#5.1)" specifies the capabilities required to be configured. Please note that capabilities may need to be configured in multiple systems. For OpenStack, we also need to set the following boot parameters:
 
 | BIOS/boot Parameter | Basic  | High Performance |
 |---------------|-----------|------------------|
