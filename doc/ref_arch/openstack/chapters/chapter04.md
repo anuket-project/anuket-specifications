@@ -238,7 +238,7 @@ A given host (compute node) can only support a single CPU Allocation Ratio. Thus
 
 ##### 4.2.2.9.3 Server Configurations
 
-The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result in different NIC port, LAG (Link Aggregation Group), and other configurations. Some of these are shown diagrammatically in the section 4.2.9.5.
+The different networking choices – OVS-Kernel, OVS-DPDK, SR-IOV – result in different NIC port, LAG (Link Aggregation Group), and other configurations. Some of these are shown diagrammatically in section 4.2.9.5.
 
 ##### 4.2.2.9.4 Leaf and Compute Ports for Server Flavors must align
 
