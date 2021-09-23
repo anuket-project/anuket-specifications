@@ -142,6 +142,10 @@ A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in th
 <p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png" alt="Disaggregated SaaS Stereo-Type Interaction"></p>
 <p align="center"><b>Figure 8-5:</b> "Disaggregated SaaS Stereo-Type Interaction</p>
 
+<a name="8.2.4.3"></a>
+### 8.2.4.3 Requirements, Reference Architecture & Industry Standards Intersect
+
+Provide Summary of Needs and Fit against Reference Architecture and Existing Induatry Standard.
 
 <a name="8.3"></a>
 ## 8.3 Telco Edge Cloud
