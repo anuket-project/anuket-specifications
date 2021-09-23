@@ -117,7 +117,7 @@ For telco operators to run their network functions in a multi-cloud environment,
 There is also another security aspect to consider, which is related to the autonomous nature of the participants in the multi-cloud. We can prescribe certain things and if not satisfied treat that party as "untrusted".  This problem has been attacked to some extent in TS 103 457. This standard introduces a concept of an LTD (Less Trusted Domain) and an MTD (More Trusted Domain) and specifies the TCDI (Trusted Cross-Domain Interface) to standardise secure interactions between them.  The standard defined the following elementary functions of TCDI:
 Connection and session management
 Data and value management
-Transferring cryptography functionality
+Transferring cryptography functionality:
 - Entropy request
 - Encryption keys request
 - Trusted timestamping
