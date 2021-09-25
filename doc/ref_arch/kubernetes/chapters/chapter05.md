@@ -226,7 +226,7 @@ To prevent attacks via the dashboard, you should follow some tips:
 * Do not grant the service account of the dashboard high privileges
 * Grant permissions per user, so each user only can see what he is supposed to
   see
-* If you are using network policies, you can block requests to the dashboard
+* If using network policies, block requests to the dashboard
   even from internal pods (this will not affect the proxy tunnel via kubectl
   proxy)
 * Before version 1.8, the dashboard had a service account with full privileges,
