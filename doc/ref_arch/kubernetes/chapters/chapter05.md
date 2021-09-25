@@ -218,7 +218,7 @@ dashboard. (Reference: Tesla cloud resources are hacked to run
 cryptocurrency-mining malware -
 https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/)
 
-To prevent attacks via the dashboard, you should follow some tips:
+To prevent attacks via the dashboard, you should follow some best practices:
     
 * Do not expose the dashboard without additional authentication to the public.
   There is no need to access such a powerful tool from outside your LAN
