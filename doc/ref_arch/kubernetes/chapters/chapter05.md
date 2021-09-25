@@ -127,7 +127,7 @@ exploitation.
 ### 5.4.1 Control network access to sensitive ports
 Kubernetes clusters usually listen on a range of well-defined and distinctive
 ports which makes it easy to identify the clusters and attack them. Hence, it is
-highly recommended to configure authentication and authorization on the cluster
+highly recommended to configure authentication and authorisation on the cluster
 and cluster nodes.
 
 Here is an overview of the default ports used in Kubernetes. Make sure that your
