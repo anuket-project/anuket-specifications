@@ -233,7 +233,7 @@ To prevent attacks via the dashboard, you should follow some tips:
   so check that there is no role binding for cluster-admin left.
 * Deploy the dashboard with an authenticating reverse proxy, with multi-factor
   authentication enabled. This can be done with either embeded OIDC id_tokens or
-  using Kubernetes Impersonation. This allows you to use the dashboard with the
+  using Kubernetes Impersonation. This allows the use of the dashboard with the
   user's credentials instead of using a privileged ServiceAccount. This method
   can be used on both on-prem and managed cloud clusters.
 
