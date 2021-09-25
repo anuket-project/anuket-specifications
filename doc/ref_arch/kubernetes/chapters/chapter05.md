@@ -4,8 +4,6 @@
 <p align="right"><img src="../figures/bogo_lsf.png" alt="scope" title="Scope" width="35%"/></p>
 
 ## Table of Contents
-- [5. Security Guidance](#5-security-guidance)
-  - [Table of Contents](#table-of-contents)
   - [5.1 Introduction](#51-introduction)
   - [5.2 Principles](#52-principles)
   - [5.3 Node Hardening](#53-node-hardening)
@@ -131,7 +129,7 @@ highly recommended to configure authentication and authorisation on the cluster
 and cluster nodes.
 
 Here is an overview of the default ports used in Kubernetes. Make sure that your
-network blocks access to ports and consider limiting access to the Kubernetes
+network blocks access to unnecessary ports and consider limiting access to the Kubernetes
 API server except from trusted networks.
 
 **Master node(s):**
@@ -156,24 +154,20 @@ API server except from trusted networks.
 ### 5.4.2 Controlling access to the Kubernetes API
 The Kubernetes platform is controlled using API requests and as such is the
 first line of defence against attackers. Controlling who has access and what
-actions they are allowed to perform is the primary concern
-    
+actions they are allowed to perform is the primary concern. 
+
 ### 5.4.3 Use Transport Layer Security
 Communication in the cluster between services should be handled using TLS,
-encrypting all traffic by default. This, however, is often overlooked with the
-thought being that the cluster is secure and there is no need to provide
-encryption in transit within the cluster.
+encrypting all traffic by default. Kubernetes expects that all API communication 
+in the cluster is encrypted by default with TLS, and the majority of installation methods 
+will allow the necessary certificates to be created and distributed to the cluster components.
+Note that some components and installation methods may enable local ports over
+HTTP and administrators should familiarize themselves with the settings of each
+component to identify potentially unsecured traffic.
 
 Advances in network technology, such as the service mesh, have led to the
 creation of products like LinkerD and Istio which can enable TLS by default
 while providing extra telemetry information on transactions between services.
-
-Kubernetes expects that all API communication in the cluster is encrypted by
-default with TLS, and the majority of installation methods will allow the
-necessary certificates to be created and distributed to the cluster components.
-Note that some components and installation methods may enable local ports over
-HTTP and administrators should familiarize themselves with the settings of each
-component to identify potentially unsecured traffic.
 
 ### 5.4.4 API Authentication, API Authorisation
 Secure all connections to a Kubernetes Cluster. Adopt the following security
@@ -209,11 +203,11 @@ containers. By default Kubelets allow unauthenticated access to this API.
 Production clusters should enable Kubelet authentication and authorization
     
 ### 5.4.7 Securing Kubernetes Dashboard 
-The Kubernetes dashboard is a webapp for managing your cluster. It it is not a
+The Kubernetes dashboard is a webapp for managing your cluster. It is not a
 part of the Kubernetes cluster itself, it has to be installed by the owners of
 the cluster. Thus, there are a lot of tutorials on how to do this.
 Unfortunately, most of them create a service account with very high privileges.
-This caused Tesla and some others to be hacked via such a poorly configured K8s
+This caused Tesla and some others to be hacked via such a poorly configured Kubernetes
 dashboard. (Reference: Tesla cloud resources are hacked to run
 cryptocurrency-mining malware -
 https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/)
@@ -223,7 +217,8 @@ To prevent attacks via the dashboard, you should follow some best practices:
 * Do not expose the dashboard without additional authentication to the public.
   There is no need to access such a powerful tool from outside your LAN
 * Turn on RBAC, so you can limit the service account the dashboard uses
-* Do not grant the service account of the dashboard high privileges
+* Review the privileges granted to the service account of the dashboard privileges, 
+  and remove disable any additional privileges assigned.
 * Grant permissions per user, so each user can only access what they are supposed to
   access
 * If using network policies, block requests to the dashboard
@@ -232,7 +227,7 @@ To prevent attacks via the dashboard, you should follow some best practices:
 * Before version 1.8, the dashboard had a service account with full privileges,
   so check that there is no role binding for cluster-admin left.
 * Deploy the dashboard with an authenticating reverse proxy, with multi-factor
-  authentication enabled. This can be done with either embeded OIDC id_tokens or
+  authentication enabled. This can be done with either embeded OpenID Connect (OIDC) id_tokens or
   using Kubernetes Impersonation. This allows the use of the dashboard with the
   user's credentials instead of using a privileged ServiceAccount. This method
   can be used on both on-prem and managed cloud clusters.
@@ -244,7 +239,7 @@ different types of workloads when deployed in separate Namespaces.
 
 ## 5.6 Separate Sensitive Workload
 To limit the potential impact of a compromise, it is recommended to run
-sensitive workloads on a dedicated set of machines. This approach reduces the
+sensitive workloads on a dedicated set of nodes. This approach reduces the
 risk of a sensitive application being accessed through a less-secure application
 that shares a container runtime or host.
 - The separation can be achieved by using node pools and Kubernetes Namespaces.
