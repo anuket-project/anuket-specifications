@@ -118,7 +118,7 @@ infrastructure that represents potential risks.
 
 ### 5.3.4 Patch management 
 Patch management is another key aspect of IT risk management lifecycle for
-security, compliance, uptime, feature enhancements and so on. Implement
+security, compliance, uptime, feature enhancements, etc. Implement
 necessary patch management to ensure your environment is not susceptible to
 exploitation.
     
