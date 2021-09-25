@@ -175,7 +175,7 @@ Note that some components and installation methods may enable local ports over
 HTTP and administrators should familiarize themselves with the settings of each
 component to identify potentially unsecured traffic.
 
-### 5.4.4 API Authentication, API Authorization
+### 5.4.4 API Authentication, API Authorisation
 Secure all connections to a Kubernetes Cluster. Adopt the following security
 authentication mechanisms:
 * Configure user roles and access levels to provide segregation of duties (RBAC)
