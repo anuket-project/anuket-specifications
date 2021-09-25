@@ -22,7 +22,7 @@
       API](#542-controlling-access-to-the-kubernetes-api)
     - [5.4.3 Use Transport Layer Security](#543-use-transport-layer-security)
     - [5.4.4 API Authentication, API
-      Authorization](#544-api-authentication-api-authorization)
+      Authorisation](#544-api-authentication-api-authorisation)
     - [5.4.5 Restrict access to etcd and encrypt contents within
       etcd](#545-restrict-access-to-etcd-and-encrypt-contents-within-etcd)
     - [5.4.6 Controlling access to the
