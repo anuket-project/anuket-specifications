@@ -8,6 +8,7 @@
   * [8.2.1. Characteristics of a Federated Cloud](#8.2.1)
   * [8.2.2. Telco Cloud](#8.2.2)
   * [8.2.3. Telco Operator Platform Conceptual Architecture](#8.2.3)
+  * [8.2.4. Aspects of Multi-Cloud Security](#8.2.4)
 * [8.3. Telco Edge Cloud](#8.3)
   * [8.3.1. Telco Edge Cloud: Deployment Environment Characteristics](#8.3.1)
   * [8.3.2. Telco Edge Cloud: Infrastructure Characteristics](#8.3.2)
@@ -93,6 +94,39 @@ Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud In
 <p align="center"><b>Figure 8-3:</b> Conceptual Architecture of a Telco Operator Platform</p>
 
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
+
+<a name="8.2.4"></a>
+### 8.2.4 Aspects of Multi-Cloud Security
+Cloud infrastructures, emerging as a key element in the telco operator ecosystem, are part of the attack surface landscape. This is particularly worrying with the 5G rollout becoming a critical business necessity. It is important to be vigilant of Cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber threat actors use.
+ 
+In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an environment, there are additional security principles to be considered.  These principles, see Table 8-1a below, are drawn from the collaboration with the GSMA Fraud and Security Group (FASG).
+  
+| Multi-cloud Security Principle | Description |
+| ------------------------------ | ----------- |
+| Policy synchronization | Consistency in applying the right security policies across environments, services, interfaces, and configured resources |
+| Visibility | A common data model approach to share events and behaviours across all the key compute, storage, network, and applications resources, environments, virtualised platforms, containers and interfaces |
+| Monitoring | Centralisation, correlation, and visualisation of security information across the different cloud environments to provide an end-to-end view and enable timely response to attacks |
+| Automation | Automation of critical activities including cloud security posture management, continuous security assessments, compliance monitoring, detection of misconfigurations and identification and remediation of risks |
+| Access Management | Wide range of users including administrators, testers, DevOps, and developers and customers should be organised into security groups with privileges appropriate to different resources and environments |
+| Security Operations Model | Augmentation of security services provided by cloud service providers with the vetted third-party and/or open-source tools and services, all incorporated into the established overall security operations model |
+
+<p align="center"><b>Table 8-1a. Multi-Cloud Principles</b></p>
+
+For telco operators to run their network functions in a multi-cloud environment, and specifically, in public clouds, the industry will need a set of new standards and new security tools to manage and regulate the interactions between multi-cloud participating parties. To give an example of a step in this direction, refer to the ETSI specification [TS 103 457](https://www.etsi.org/deliver/etsi_ts/103400_103499/103457/01.01.01_60/ts_103457v010101p.pdf) “Interface to offload sensitive functions to a trusted domain”, which provides extra security requirements for public clouds so as to enable telco operators the option of running network functions in public clouds.
+
+There is also another security aspect to consider, which is related to the autonomous nature of the participants in the multi-cloud. We can prescribe certain things and if not satisfied treat that party as "untrusted".  This problem has been addressed to some extent in TS 103 457. This standard introduces a concept of an LTD (Less Trusted Domain) and an MTD (More Trusted Domain) and specifies the TCDI (Trusted Cross-Domain Interface) to standardise secure interactions between them.  The standard defined the following elementary functions of TCDI:
+Connection and session management
+Data and value management
+Transferring cryptography functionality:
+- Entropy request
+- Encryption keys request
+- Trusted timestamping
+- Secure archive
+- Secure storage
+- Search capabilities
+
+As described in Sec. 1 (Scope) of the TS 103 45 document, it specifies "… a high-level service-oriented interface, as an application layer with a set of mandatory functions, to access secured services provided by, and executed in a More Trusted Domain. The transport layer is out of scope and left to the architecture implementation". The standard provides extra security features for sensitive functions down to individual Virtual Machines or Containers. As such, it is recommended that the relevant components of reference models, reference architecture, reference implementations and reference compliance take notice of this standard and ensure their compatibility, wherever possible.
+
 
 <a name="8.3"></a>
 ## 8.3 Telco Edge Cloud
