@@ -137,16 +137,24 @@ This section details the services that may be made available to workloads by the
 
 <p align="center"><b>Table 5-7:</b> Cloud Infrastructure Platform services.</p>
 
-| Minimum requirements  | Platform Service Examples |
-|-----------------------|---------------|
-| Database as a service | Cassandra     |
-| Queue                 | Rabbit MQ     |
-| LB and HA Proxy       | NGINX,        |
-| Service Mesh          | Istio         |
-| Security & Compliance | Calico        |
-| Monitoring            | Prometheus    |
-| Logging and Analysis  | ELK Stack (Elasticsearch, Logstash, and Kibana)|
-
+| Minimum requirements             | Platform Service Examples   |
+|----------------------------------|-----------------------------|
+| Data Stores/Databases            | Ceph, etcd, MongoDB, Redis  |
+| Streaming and Messaging          | Apache Kafka, Rabbit MQ     |
+| Load Balancer and Service Proxy  | Envoy, Istio, NGINX         |
+| Service Mesh                     | Envoy, Istio                |
+| Security & Compliance            | Calico, cert-manager        |
+| Monitoring                       | Prometheus, Grafana (for Visualisation), Kiali (for Service Mesh)    |
+| Logging and Management           | Fluentd, ElasticSearch (Elastic.io, Open Distro), ELK Stack (Elasticsearch, Logstash, and Kibana)|
+| Application Definition and Image | Build Helm                  |
+| CI/CD                            | Argo, GitLab, Jenkins       |
+| Ingress/Egress Controllers       | Envoy, Istio, NGINX         |
+| Network Service                  | CoreDNS, Istio              |
+| Coordination and Service Discovery | CoreDNS, etcd, Zookeeper  |
+| Automation and Configuration     | Ansible                     |
+| Key Management                   | Vault                       |
+| Tracing                          | Jaeger                      |
+ 
 <p align="center"><b>Table 5-7a:</b> Service examples.</p>
 
 <a name="5.2"></a>
