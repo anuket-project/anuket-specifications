@@ -98,9 +98,9 @@ The Cloud Services and the Cloud Resources Brokers provide value-added services 
 ### 8.2.4 Multi-Cloud Interactions Model
 <a name="8.2.4.1"></a>
 ### 8.2.4.1 Introduction
-To realise a federated cloud requires definition and agreement of set of APIs. These APIs should allow each of the parties to interact cooperatively and need to cover the management layer: business management and service operations interactions; as well as the data plane, customer and user, transactions and conversational interfaces.
+To realise a federated cloud requires the definition and agreement on a set of APIs. These APIs should allow each of the parties to interact cooperatively and need to cover the management layer: business management and service operations interactions; as well as the data plane, customer and user, transactions and conversational interfaces.
 
-As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Service Broker". The set of interactions that these interface points need to provide are defined by the "Multii-Cloud Interaction Model". This provides a taxonomy for the interactions and is illustrated below:
+As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the "Multi-Cloud Interaction Model". This provides a taxonomy for the interactions and is illustrated below:
 
 <p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-02.png" alt="Multi-Cloud Interactions Model"></p>
 <p align="center"><b>Figure 8-4:</b> Multi-Cloud Interactions Model</p>
@@ -111,7 +111,7 @@ The model defines the following core roles:
 - Cloud Providers - are the parties providing the cloud services. These services could be any XaaS service. It could be that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
 
 The set of high level interactions cover:
-- Manage Account - covering Account, Users, Billing
+- Manage Account - covering Account, Users, Subscription, Billing
 - Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge / Cloud Connection Configuration, Connection Security Profile
 - Manage Resource - Resource Pool Management, VM / VNF Management (CPU, Memory, Storage, Network), Image Repository Management, Storage Management, VNF / CNF LCM, Monitor Resources
 - Manage App/VNF - Image / Container / Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
@@ -121,15 +121,15 @@ The set of high level interactions cover:
 ### 8.2.4.2 Stereo-Typical Scenarios
 A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per Figure 8.3) and hence extent of orchestration required to manage the interactions.
 
-<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png" alt="Simple Stereo-Type Interactions"></p>
-<p align="center"><b>Figure 8-5:</b> Simple Stereo-Type Interactions</p>
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png" alt="Simple Stereo-Typical Interactions"></p>
+<p align="center"><b>Figure 8-5:</b> Simple Stereo-Typical Interactions</p>
 
 The following patterns are visible:
 - For IaaS Cloud Integration:
-  - Cloud behaves like VIM and so needs Orchestration
+  - Cloud behaves like a set of virtual servers and, thus, requires virtual server life-cycle management and orchestration
   - Depending on whether the cloud is accessed via public internet or private connection will change the extend of the Connectivity Management
 - For SaaS Cloud Integration:
-  - Cloud behaviors is like subscription management, so avoids need for complex orchestration
+  - Cloud behaves like a running application/service and requires subscription management, and complex orchestration of the app/service and underlying resources is managed by SaaS provider with the User is relieved of having to provide direct control of resources
 - For CaaS Cloud Integration:
   - Registry for pulling Containers could be from:
     - Cloud in which case consumption model is closer to SaaS or
@@ -139,8 +139,8 @@ The following patterns are visible:
 
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
-<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png" alt="Disaggregated SaaS Stereo-Type Interaction"></p>
-<p align="center"><b>Figure 8-5:</b> "Disaggregated SaaS Stereo-Type Interaction</p>
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png" alt="Disaggregated SaaS Stereo-Typical Interaction"></p>
+<p align="center"><b>Figure 8-5:</b> "Disaggregated SaaS Stereo-Typical Interaction</p>
 
 <a name="8.2.4.3"></a>
 ### 8.2.4.3 Requirements, Reference Architecture & Industry Standards Intersect
