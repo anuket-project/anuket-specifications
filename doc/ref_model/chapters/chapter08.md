@@ -8,7 +8,8 @@
   * [8.2.1. Characteristics of a Federated Cloud](#8.2.1)
   * [8.2.2. Telco Cloud](#8.2.2)
   * [8.2.3. Telco Operator Platform Conceptual Architecture](#8.2.3)
-  * [8.2.4. Aspects of Multi-Cloud Security](#8.2.4)
+  * [8.2.4. Multi-Cloud Interactions Model](#8.2.4)
+  * [8.2.5. Aspects of Multi-Cloud Security](#8.2.5)
 * [8.3. Telco Edge Cloud](#8.3)
   * [8.3.1. Telco Edge Cloud: Deployment Environment Characteristics](#8.3.1)
   * [8.3.2. Telco Edge Cloud: Infrastructure Characteristics](#8.3.2)
@@ -96,7 +97,10 @@ Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud In
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
 
 <a name="8.2.4"></a>
-### 8.2.4 Aspects of Multi-Cloud Security
+### 8.2.4 Multi-Cloud Interactions Model
+<a name="8.2.4"></a>
+
+### 8.2.5 Aspects of Multi-Cloud Security
 Cloud infrastructures, emerging as a key element in the telco operator ecosystem, are part of the attack surface landscape. This is particularly worrying with the 5G rollout becoming a critical business necessity. It is important to be vigilant of Cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber threat actors use.
  
 In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an environment, there are additional security principles to be considered.  These principles, see Table 8-1a below, are drawn from the collaboration with the GSMA Fraud and Security Group (FASG).
