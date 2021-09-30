@@ -146,9 +146,12 @@ A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in th
 
 <a name="8.2.4.3"></a>
 ### 8.2.4.3 Requirements, Reference Architecture & Industry Standards Intersect
+The Communcations Service Provider is both a provider and consumer of Cloud based services.
+When the CSP is actings as:
+- consumer then the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems.
+- provider of cloud services, through operation of their own cloud or reselling of cloud services, then typical consideration is margin (cost to offer services vs income received).
+These two stances will drive differing approachs to how the CSP would look to manage how it interactions within a Multi-Cloud environment. The following table provide a summary of the needs for Multi-Cloud and classes of applicable technologies and standard that are available to meet these and the Anuket reference Architectures that are applicable of this;
 
-Provide Summary of Needs and Fit against Reference Architecture and Existing Induatry Standard.
-=======
 
 <a name="8.2.5"></a>
 ### 8.2.5 Aspects of Multi-Cloud Security
