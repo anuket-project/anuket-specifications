@@ -627,7 +627,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---|----|----|
 | req.sec.oss.001 | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
 | req.sec.oss.002 | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.  | https://cve.mitre.org/ |
-| req.sec.oss.003 | Critical and high severity rated vulnerabilities **must** be fixed. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score and its associated rate (low, medium, high, or critical).  | https://www.first.org/cvss/ |
+| req.sec.oss.003 | Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score and its associated rate (low, medium, high, or critical).  | https://www.first.org/cvss/ |
 | req.sec.oss.004 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
 | req.sec.oss.005 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
 
