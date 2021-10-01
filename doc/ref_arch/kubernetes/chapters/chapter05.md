@@ -209,7 +209,7 @@ the cluster. Thus, there are a lot of tutorials on how to do this.
 Unfortunately, most of them create a service account with very high privileges.
 This caused Tesla and some others to be hacked via such a poorly configured Kubernetes
 dashboard. (Reference: Tesla cloud resources are hacked to run
-cryptocurrency-mining malware -
+cryptocurrency-mining malware](
 https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/)
 
 To prevent attacks via the dashboard, you should follow some best practices:
