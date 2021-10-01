@@ -19,8 +19,7 @@
   * [7.5.3 Software Code Quality and Security](#7.5.3)
   * [7.5.4 Alerting and Monitoring](#7.5.4)
   * [7.5.5 Logging](#7.5.5)
-  * [7.5.6 NF images](#7.5.6)
-  * [7.5.7 Vulnerability Management](#7.5.7)
+  * [7.5.6 Vulnerability Management](#7.5.6)
 * [7.6 Workload Security- Cloud Infrastructure Operator Responsibility](#7.6)
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
   * [7.6.2 Workload Image Scanning / Signing](#7.6.2)
@@ -251,13 +250,12 @@ Triggers and checkpoints define transitions within stages. When designing DevSec
 <a name="7.5.1"></a>
 ### 7.5.1 Software Hardening
 
-* No hard-coded credentials or clear text passwords. Software should support configurable, or industry standard, password complexity rules.
+* No hard-coded credentials or clear text passwords in code and images. Software must support configurable, or industry standard, password complexity rules.
 * Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
-* Software is code signed and all individual sub-components are assessed and verified for EULA violations.
+* Software must be code signed and all individual sub-components are assessed and verified for EULA(End-user License Agreement) violations.
 * Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc.).
 * Software should support recognized encryption standards and encryption should be decoupled from software.
 * Software should have support for configurable banners to display authorized use criteria/policy.
-
 
 <a name="7.5.2"></a>
 ### 7.5.2 Port Protection
@@ -285,16 +283,8 @@ Triggers and checkpoints define transitions within stages. When designing DevSec
 
 * Logging output should support customizable Log retention and Log rotation.
 
-  <a name="7.5.6"></a>
-### 7.5.6 NF images
-
-* Image integrity – fingerprinting/validation.
-* Container Images
-  * Container Management.
-  * Immutability.
-
-<a name="7.5.7"></a>
-### 7.5.7 Vulnerability Management
+<a name="7.5.6"></a>
+### 7.5.6 Vulnerability Management
 
 * Security defect must be reported.
 * Cadence should aligned with Cloud Infrastructure vendors (OSSA for OpenStack).
@@ -317,11 +307,17 @@ The Operator’s responsibility is to not only make sure that security is includ
 Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the Open Cloud Integrity Tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the Cloud Infrastructure and enables compliance in Cloud Datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
 
 <a name="7.6.2"></a>
-### 7.6.2 Workload Image Scanning / Signing
+### 7.6.2 Workload Image
 
-It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the workload operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
+Only workload images from trusted sources must be used. Secrets must be stored outside of the images.
 
-Use of Image scanners such as OpenSCAP to determine security vulnerabilities is strongly recommended.
+It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. 
+
+To implement image security, the workload operator must test the image and supplementary components verifying that everything conforms to security policies and best practices. Use of Image scanners such as OpenSCAP or Trivy to determine security vulnerabilities is strongly recommended.
+
+CIS Hardened Images should be used whenever possible. CIS provides, for example, virtual machine hardened images based upon CIS benchmarks for various operating systems. Another best practice is to use minimalist base images whenever possible.
+
+Images are stored into registries. The images registry must contain only vetted images. The registry must remain a source of trust for images over time, images therefore must be continuously scanned to identify vulnerabilities and out of date versions as described previously. Access to the registry is an important security risk. It must be granted by a dedicated authorisation and trough secure networks enforcing authentication, integrity and confidentiality.
 
 <a name="7.6.3"></a>
 ### 7.6.3 Networking Security Zoning
@@ -582,6 +578,9 @@ Security certification should encompass the following elements:
 | req.sec.img.005 | Image Registries **must** only be accessible to authorized actors. |  |
 | req.sec.img.006 | Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality. |  |
 | req.sec.img.007 | Image registries **must** be clear of vulnerable and out of date versions. |  |
+| req.sec.img.008 | Images **must not** include any secrets. Secrets include passwords, cloud provider credentials, SSH keys, TLS certificate keys, etc. |  |
+| req.sec.img.009 | CIS Hardened Images **should** be used whenever possible. |  |
+| req.sec.img.010 | Minimalist base images **should** be used whenever possible. |  |
 
 <p align="center"><b>Table 7-5:</b> Image security requirements</p>
 
@@ -651,7 +650,6 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="7.9.9"></a>
 ### 7.9.9. IaaC - Secure Design and Architecture Stage Requirements
 
-
 | Ref | Requirement | Definition/Note |
 |---|----|---|
 | req.sec.arch.001 | Threat Modelling methodologies and tools **should** be used during the Secure Design and Architecture stage triggered by Software Feature Design trigger | Methodology to identify and understand threats impacting a resource or set of resources. It may be done manually or using tools like open source OWASP Threat Dragon |
@@ -661,7 +659,6 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <a name="7.9.10"></a>
 ### 7.9.10. IaaC - Secure Code Stage Requirements
-
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -676,12 +673,11 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="7.9.11"></a>
 ### 7.9.11. IaaC - Continuous Build, Integration and Testing Stage Requirements
 
-
 | Ref | Requirement | Definition/Note |
 |---|----|---|
 | req.sec.bld.001 | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.|
 | req.sec.bld.002 | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.  |
-| req.sec.bld.003 | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. | Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |
+| req.sec.bld.003 | Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. | Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |
 | req.sec.bld.004 | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. Example: OWASP ZAP. |
 | req.sec.bld.005 | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
 | req.sec.bld.006 | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. Example:  Contrast Community Edition. |
@@ -691,10 +687,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="7.9.12"></a>
 ### 7.9.12. IaaC - Continuous Delivery and Deployment Stage Requirements
 
-
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.del.001 | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Example: GitLab uses the open source Clair engine for container scanning.|
+| req.sec.del.001 | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Example: GitLab uses the open-source Clair engine for container image scanning.|
 | req.sec.del.002 | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |
 | req.sec.del.003 | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning.  |
 | req.sec.del.004 | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. | The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |
