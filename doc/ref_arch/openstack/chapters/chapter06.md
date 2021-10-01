@@ -43,7 +43,7 @@ Access to all the platform's components must be restricted (sec.gen.013) applyin
 - Remove, or at a minimal, disable all unnecessary user accounts 
 - Change all default user accounts where technically feasible
 - Change all default credentials
-- Prohibit logging with root account when root prvileges are not required (sec.gen.006)
+- Prohibit logging with root account when root privileges are not required (sec.gen.006)
 - Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
 - The same authentication credentials must not be reused on different components (sec.sys.011)
 - Restrict access to Operating System (sec.gen.005)
@@ -76,7 +76,7 @@ Regarding software (sec.gen.004):
 - Where software cannot be removed, disable all services to it
 
 #### 6.3.1.5 Patches
-All deployed Cloud Infrastrucure software must be audited and system must be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery(sec.gen.008, sec.lcm.011):
+All deployed Cloud Infrastructure software must be audited and system must be implemented to allow installation of the latest patches to address security vulnerabilities in the following timescale from discovery (sec.gen.008, sec.lcm.011):
 | Severity | Time to Remediate |
 | ----------- | ----------- |
 | Zero-Day | Immediately or as soon as practically possible |
@@ -88,7 +88,7 @@ All deployed Cloud Infrastrucure software must be audited and system must be imp
 **See** [Common Vulnerability Scoring System](https://nvd.nist.gov/vuln-metrics/cvss)
 	
 #### 6.3.1.6 Network Protocols
-- Only allow protocols that are required by the system functions(sec.sys.002)
+- Only allow protocols that are required by the system functions (sec.sys.002)
 - Tighten all required TCP/IP (Transmission Control Protocol/Internet Protocol) services
 
 #### 6.3.1.7 Anti-Virus and Firewall
@@ -304,13 +304,13 @@ To defend against virus or other attacks, security patches must be installed for
 
 <a name="6.3.7"></a>
 ### 6.3.7 Monitoring and Security Audit
-This intent of this section is to provide a key baseline and minimum requirements to implement logging that can meet the basic monotoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session (sec.mon.010)and network activity(sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion(sec.mon.011). 
+The intent of this section is to provide a baseline and minimum requirements to implement logging that can meet the basic monitoring and security auditing needs.  This should provide sufficient preliminary guidance, but is not intended to provide a comprehensive solution. Regular review of security logs that record user access, as well as session (sec.mon.010) and network activity (sec.mon.012), is critical in preventing and detecting intrusions that could disrupt business operations. This monitoring process also allows administrators to retrace an intruder's activity and may help correct any damage caused by the intrusion (sec.mon.011). 
 
-The logs have to be continuously monitored and analysed with alerts created for anomalies(sec.lcm.005). The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
+The logs have to be continuously monitored and analysed with alerts created for anomalies (sec.lcm.005). The resources for logging, monitoring and alerting also need to logged and monitored and corrective actions taken so that they are never short of the needed resources (sec.mon.015).
 
 #### 6.3.7.1 Creating Logs
 * All resources to which access is controlled, including but not limited to applications and operating systems must have the capability of generating security audit logs (sec.mon.001).
-* Logs must be generated for all components (ex. Nova in Openstack) that form the Cloud Infrastructure (sec.mon.001).
+* Logs must be generated for all components (ex. Nova in OpenStack) that form the Cloud Infrastructure (sec.mon.001).
 * All security logging mechanisms must be active from system initialization (sec.mon.018): 
     *  These mechanisms include any automatic routines necessary to maintain the activity records and cleanup programs to ensure the integrity of the security audit/logging systems.
 * Logs must be time synchronised (sec.mon.002).

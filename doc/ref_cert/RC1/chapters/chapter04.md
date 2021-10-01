@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # 4. NFVI Testing Cookbook
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -19,8 +17,8 @@
 ## 4.1 Introduction
 
 Define the purpose of the chapter which is to:
--	Identify Framework Needs, Goals, and Dependencies
-- Define Opensource Integration (OPNFV, OVP, Functest, CVC, others)
+- Identify Framework Needs, Goals, and Dependencies
+- Define Opensource Integration (OVP, Functest, CVC, others)
 - Provide Automation Toolchain (list, topology, flow)
 
 
@@ -91,7 +89,7 @@ different pools of virtual machines.
 
 Here are the functional tests (>2000) running in OpenStack gates integrated in
 Functest Smoke (see
-[Functest daily jobs](https://build.opnfv.org/ci/view/functest/job/functest-jerma-daily/371/)
+[Functest daily jobs](https://build.opnfv.org/ci/view/functest/job/functest-wallaby-daily/17/)
 for more details):
 
 | Testcases         | Gates              |
@@ -137,9 +135,9 @@ the reference implementation:
 - compare the reference implementation and local deployments from a functional
   standpoint and from OpenStack control plane and dataplane capabilities
 
-It's worth mentioning that Functest already takes into account the first CNTT
+It's worth mentioning that Functest already takes into account the first Anuket
 [profiles](https://git.opnfv.org/functest/tree/functest/ci/config_patch.yaml#n2).
-CNTT should simply add the next Functest inputs according the reference
+Anuket should simply add the next Functest inputs according the reference
 implementation:
 - [Functest inputs](https://github.com/opnfv/functest/blob/stable/iruya/functest/utils/env.py#L17)
 - [tempest specific configuration](https://github.com/opnfv/functest/blob/stable/iruya/functest/opnfv_tests/openstack/tempest/custom_tests/tempest_conf.yaml)
@@ -163,7 +161,7 @@ Additional links:
 
 <a name="4.2.5"></a>
 ### 4.2.5 Scenario Descriptor File (SDF)
-As defined by OPNFV, Scenarnio Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
+As defined by Anuket, Scenario Descriptor File's (SDF) will be utilized to relay information from the Scenario Designer (or Test Manager), to Release Managers, CI Pipeline Owners, and Installer Agents, to define test scenario content, and specifications.
 
 SDF's will contain, but not limited to, the following Metadata, Components, Deployment Options, Deployment Tools, and Hardware prerequistes:
 
@@ -189,7 +187,7 @@ SDF's will contain, but not limited to, the following Metadata, Components, Depl
 
 At the time of writing, the CI description file is hosted in Functest and only
 runs the containers listed in RM/RA-1 Requirements. It will be completed by the
-next CNTT mandatory test cases and then a new CI description file will be
+next Anuket mandatory test cases and then a new CI description file will be
 proposed in CIRV tree.
 
 Please note the next two points depending on the GNU/Linux distributions and
@@ -200,15 +198,15 @@ the network settings:
 - Proxy: you may set your proxy in env for Ansible and in systemd for Docker
   https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
 
-To deploy your own CI toolchain running CNTT Compliance:
+To deploy your own CI toolchain running Anuket Compliance:
 ```bash
 virtualenv functest --system-site-packages
 . functest/bin/activate
 pip install ansible
 ansible-galaxy install collivier.xtesting
-ansible-galaxy collection install ansible.posix community.general community.grafana community.kubernetes community.docker community.postgresql
+ansible-galaxy collection install ansible.posix community.general community.grafana kubernetes.core community.docker community.postgresql
 git clone https://gerrit.opnfv.org/gerrit/functest functest-src
-(cd functest-src && git checkout -b stable/jerma origin/stable/jerma)
+(cd functest-src && git checkout -b stable/wallaby origin/stable/wallaby)
 ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
@@ -216,16 +214,15 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ### 4.3.1 NFVI API testing configuration
 
 Here is the default Functest tree as proposed in
-[Run Alpine Functest containers (Jerma)](https://wiki.opnfv.org/pages/viewpage.action?pageId=44892403):
+[Functest Wallaby](https://wiki.anuket.io/display/HOME/Functest+Wallaby):
 - /home/opnfv/functest/openstack.creds
 - /home/opnfv/functest/images
 
 Download the images and fill /home/opnfv/functest/openstack.creds as proposed
-in
-[Run Alpine Functest containers (Jerma)](https://wiki.opnfv.org/pages/viewpage.action?pageId=44892403)
+in [Functest Wallaby](https://wiki.anuket.io/display/HOME/Functest+Wallaby)
 
 You may have to modify a few Functest env vars according to the SUT (see env in
-[Run Alpine Functest containers (Jerma)](https://wiki.opnfv.org/pages/viewpage.action?pageId=44892403)).
+[Functest Wallaby](https://wiki.anuket.io/display/HOME/Functest+Wallaby)).
 Be free to modify functest-src/ansible/host_vars/127.0.0.1 at your convenience
 and then to reconfigure the toolchain:
 ```bash
@@ -233,15 +230,15 @@ ansible-playbook functest-src/ansible/site.cntt.yml
 ```
 
 <a name="4.3.2"></a>
-### 4.3.2 Run CNTT NFVI Testing
+### 4.3.2 Run Anuket NFVI Testing
 
-Open http://127.0.0.1:8080/job/functest-jerma-daily/ in a web browser, login
+Open http://127.0.0.1:8080/job/functest-wallaby-daily/ in a web browser, login
 as admin/admin and click on "Build with Parameters" (keep the default build_tag
 value).
 
-If the System under test (SUT) is CNTT compliant, a link to the full archive
+If the System under test (SUT) is Anuket compliant, a link to the full archive
 containing all test results and artifacts will be printed in
-functest-jerma-zip's console. Be free to download it and then to send it to
+functest-wallaby-zip's console. Be free to download it and then to send it to
 any reviewer committee.
 
 To clean your working dir:

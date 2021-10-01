@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # 1. Introduction
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -14,7 +12,7 @@
 
 ## Executive Summary
 
-The Reference Conformance for the Kubernetes-based workstream (RC2) was established to ensure implementations of the CNTT Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet functional and performance requirements specified in RA2 and the CNTT Reference Model (RM). Cloud infrastructure and workload verification and validation will be utilised to evaluate **Conformance** (i.e. adherence) to the RA2 and RM requirements. Conformance scope includes:
+The Reference Conformance for the Kubernetes-based workstream (RC2) was established to ensure implementations of the Anuket Reference Architecture 2 (RA2), such as the Reference Implementation 2 (RI2), meet functional and performance requirements specified in RA2 and the Anuket Reference Model (RM). Cloud infrastructure and workload verification and validation will be utilised to evaluate **Conformance** (i.e. adherence) to the RA2 and RM requirements. Conformance scope includes:
 
  - Test cases, with traceability to requirements, to validate that the cloud infrastructure implementation meets the expected capabilities specified in RA-2 and that the workloads consume compliant cloud infrastructure resources
  - Verify, with requirements traceability, that the installation cookbooks (manifests) of RI-2 are in conformance with the RA-2 specifications (for example, software versions, plugins, and configurations)
@@ -30,7 +28,8 @@ In summary, **Conformance** testing will be performed as part of cloud infrastru
 <a name="1.1"></a>
 ## 1.1 Introduction
 
-**Document Purpose**<br>
+**Document Purpose**
+
 This chapter includes tracability from requirements to test cases and a test case execution framework to ensure Kubernetes infrastructure meets the design, feature, and capability expectations of the Reference Model (RM) and RA2. Ultimately, RC2 will reduce the amount of time and cost it takes each operator to on-board and maintain cloud infrastructure and CNFs.
 
 <a name="1.2"></a>
@@ -99,7 +98,7 @@ The RC2 test suite will provide validation to ensure workloads can interoperate 
 <a name="1.6"></a>
 ## 1.6 Reading Guide and Usage
 
-RC2 focuses on testing of Kubernetes based cloud infrastructure thus the chapter structure is designed to facilitate this by matching test cases to requirements and building test cookbooks. If you are looking for requirements or the reasons behind them, please refer to the RA2. Chapters 2 and 3 cover Kubernetes infrastructure conformance while 4 and 5 cover CNF conformance. 
+RC2 focuses on testing of Kubernetes based cloud infrastructure thus the chapter structure is designed to facilitate this by matching test cases to requirements and building test cookbooks. If you are looking for requirements or the reasons behind them, please refer to the RA2. Chapters 2 and 3 cover Kubernetes infrastructure conformance while 4 and 5 cover CNF conformance.
 
 Chapter 2 takes the requirements from the RA2 and matches them to upstream test cases. This will cover how specific test cases map to requirements and the overall coverage of requirements with test cases. Chatper 3 outlines how these test cases can be integrated together into an automated toolchain to test conformance of the Kubernetes infrastructure.
 

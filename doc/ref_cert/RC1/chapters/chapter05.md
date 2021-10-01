@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # 5. VNF Testing Framework Requirements
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -90,8 +88,8 @@ Now VNF is ready and *Telco Operators* can start consume it.
 The NFV Infrastructure (NFVI) is the totality of all hardware and software components
  which build up the environment in which VNFs are deployed, managed and executed.
  It is, therefore, inevitable that different VNFs would require different
- capabilities and have different expectations from it. so One of the main targets of
- the CNTT is to define an agnostic NFVI and removes any dependencies between
+ capabilities and have different expectations from it. So one of the main targets of
+ Anuket is to define an agnostic NFVI and removes any dependencies between
  VNFs and deployed Infrastructure (NFVI) and offer NFVI to VNFs in an abstracted way
  with defined capabilities and metrics. This would help operators to host their
  Telco Workload (VNF) with different traffic types, behaviour and from any vendor
@@ -114,10 +112,10 @@ A portion of the NFVI badging methodology includes Empirical Validation with Ref
 <a name="5.3"></a>
 ## 5.3 Badging Requirements
 
-**Defined**.  _Badging_  refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of CNTT NFVI+VNF upon demonstration the testing performed confirms:
+**Defined**.  _Badging_  refers to the granting of a Conformance badge by the OVP to Suppliers/Testers of Anuket NFVI+VNF upon demonstration the testing performed confirms:
 
--   NFVI adheres to CNTT RA/RM requirements.
--   CNTT certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
+-   NFVI adheres to Anuket RA/RM requirements.
+-   Anuket certified VNFs functionally perform as expected (i.e. test cases pass) on NFVI with acceptable levels of stability and performance.
 
 Following table shows the bading requirements with scope of mandatory (must) or
 optional.
@@ -173,7 +171,7 @@ test validations. Expected information includes:
 
 * *VNF artifact* : VNF cloud (native) image, VNF configurations and guidelines,
 automation scripts, etc
-* *NFVi profiles*: List of supporting OVP Certified CNTT compliant NFVi
+* *NFVi profiles*: List of supporting OVP Certified Anuket compliant NFVi
 * Completed Security review report
 * Vendor specific test cases and its deployment and usage guidelines
 
@@ -211,7 +209,7 @@ place and are defined based on below scope.
 #### Test cases
 
 Refer *chapter RC-06* for more details on test case requirements defined for VNF
-under CNTT. Platform should support to managed and execute these test cases.
+under Anuket. Platform should support to managed and execute these test cases.
 
 NOTE: For Conformance, only compliance and verification test cases will be
 considered, but in future, it could be extent to validation and Performance
@@ -230,11 +228,11 @@ Perform compliance check based on
 ##### Verification
 
 Perform on-boarding/ verification life cycle operation (from instantiation,
-configuration, update, termination) using MANO supporting CNTT compliant NFVI.
+configuration, update, termination) using MANO supporting Anuket compliant NFVI.
 
 ##### Validation
 
-Perform various VNF type specific functionality operations on CNTT RA & RM
+Perform various VNF type specific functionality operations on Anuket RA & RM
 compliant NFVI
 
 ##### Performance
@@ -244,7 +242,7 @@ VNF performance on different profile and scenarios.
 
 #### Eco-system MANO/NFVI
 
-Platform would support to execute various test cases on CNTT RA & RM compliant
+Platform would support to execute various test cases on Anuket RA & RM compliant
 NFVi along with required MANO system supporting these NFVi.
 
 #### VNF
@@ -411,7 +409,7 @@ so following model deliverables would enable it:
 
 Network functions virtualization (NFV) and softwaredefined networking (SDN) offer service providers increased service agility, OpEx improvements, and back-office automation. Disaggregation, the approach of decoupling the various layers of the stack, from hardware, to NFVI/VIM software, to dataplane acceleration, SDN controllers, MANO components, and VNFs, enables multi-vendor deployments with best-of-breed options at each layer.
 
-CNTT is defining the required architecture and model for NFVI which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI.Therefore,in addition to verify general NFVI capabilities based on CNTT RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the CNTT-compatible NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
+The Anuket specifications define the required architecture and model for NFVI which will help to decouple the various commercial product layers and it is important to define and certify the VNF and NFVI. Therefore, in addition to verify general NFVI capabilities based on Anuket RM/RA/RI, it is also necessary to verify that VNFs can provide virtualization functions normally based on the Anuket-compliant NFVI. So the VNF testing should at least include: Compliance，verification，validation，Performance. With the improvement of specifications, the types of tests may continue to add in the future.
 
 In this chapter, the scope and requirements of VNF test cases are defined as reference for VNF Conformance, which helps to perform the various compliance and verification (C&V) testing and submit results to LFN OVP Conformance portal.
 
@@ -419,7 +417,7 @@ In this chapter, the scope and requirements of VNF test cases are defined as ref
 ### 5.5.2 Assumptions
 
 Here lists the assumptions for VNF Conformance:
-- NFVI is ready and it should be CNTT-compatible NFVI
+- NFVI is ready and it should be an Anuket-compliant NFVI
 - VNF template is ready to deploy and certificate
 - VNF Test environment is ready, the test environment contains test functions and entities(NFVI, MANO, VNF Test Platform, VNF Test Tools) to enable controlling the test execution and collecting the test measurements.
 - VNF Test Platform has been integrated with CICD chain
@@ -436,13 +434,13 @@ This section define the developer Deliverables (artifacts),the following list th
 <a name="5.5.4"></a>
 ### 5.5.4 Requirement Type
 
-VNF test cases are used to verify whether the virtualization network functions can be deployed on the CNTT-compatible NFVI and provide normal functions and meet performance, security and other requirements.
+VNF test cases are used to verify whether the virtualization network functions can be deployed on the Anuket-compliant NFVI and provide normal functions and meet performance, security and other requirements.
 
-By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance Conformance and help on CNTT-compatible NFVI validation and performance Conformance.
+By running these VNF test cases and analysis the test results, can be used for VNF compliance, verfication,validation and performance Conformance and help on Anuket-compliant NFVI validation and performance Conformance.
 
 All the VNF test cases should be supported and run by VNF E2E Conformance and verification Framework and generate outputs, logs to identify whether the test passed or failed.
 
-CNTT defines the following four category testing which should be consistent with the VNF test category defined by OVP.
+Anuket defines the following four category testing which should be consistent with the VNF test category defined by OVP.
 
 |  VNF Test Case Category   | Requirement Number  | Type (Measurement/Boolean)  |Definition/Description   |
 | ------------ | ------------ | ------------ | ------------ |
@@ -517,7 +515,7 @@ the badging:
 
 Above compliance test cases defination can be found https://github.com/onap/vnfsdk-validation/tree/master/csarvalidation/src/main/resources/open-cli-schema
 
- In order to adapt CNTT specification, more compliance test case will be added here.
+ In order to adapt Anuket specification, more compliance test case will be added here.
 
 #### Verification test cases
 In general， the VNF Manager, in collaboration with the NFV Orchestrator, the VIM and the EM, is responsible for managing a VNF's lifecycle. The lifecycle phases are listed below：

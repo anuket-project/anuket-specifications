@@ -1,0 +1,15 @@
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    {% if prev %}
+    <a class="btn btn-default" href="{{ prev.link|e }}">Prev Page</a>
+    {% else %}
+    <button type="button" class="btn btn-default disabled">Prev Page</button>
+    {% endif %}
+
+    {% if next %}
+    <a class="btn btn-default" href="{{ next.link|e }}">Next Page</a>
+    {% else %}
+    <button type="button" class="btn btn-default disabled">Next Page</button>
+    {% endif %}
+</div>
+</center>

@@ -15,7 +15,7 @@
 <a name="4.1"></a>
 ## 4.1 Introduction
 
-This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in Anuket Labs as a part of the [Anuket Kuberef project](https://wiki.anuket.io/display/HOME/Kuberef). The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef only focuses on bare-metal RI-2 deployments, but support for other use cases (running on Equinix Metal, other infrastructure providers, etc.) will be added as the development progresses.
+This chapter documents the steps to deploy Kubernetes based Reference Implementation (RI-2) according to RA-2. The entire deployment has been tested in Anuket Labs as a part of the [Anuket Kuberef project](https://wiki.anuket.io/display/HOME/Kuberef), that aims to deliver RI-2 based on RA-2 specifications. The Kuberef project stores all the code needed to deploy RI-2 and hence serves as a reference platform for CNF vendors to develop and test against. Currently, Kuberef supports deployments on both baremetal, as well as pre-provisioned infrastructure (for e.g. offered by baremetal providers like Equinix Metal, etc.).
 
 The entire installation is divided into two stages - Host provisioning and Kubernetes provisioning. Host provisioning is the operation of preparing a host before the software stack can be installed on them. This includes (and not limited to) installing an operating system, configuring network so that the hosts are reachable via SSH, configuring storage, etc. This stage can be skipped when using pre-provisioned hardware, infrastructure providers, etc. The Kubernetes provisioning stage is agnostic to the host provisioning stage, in that there is no dependency between the installer used for the Kubernetes provisioning stage and any tools used in the host provisioning stage.
 
@@ -27,9 +27,9 @@ You need one physical server acting as a jump server along with minimum of two a
 <a name="4.3"></a>
 ## 4.3 Installation of the Reference Implementation
 
-This section describes how to get started with RI-2 deployment on bare metal servers. The deployment is done using [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef), which is a project that aims to deliver a reference implementation for Kubernetes based on the RA-2.
+This section describes how to get started with RI-2 deployment via [Kuberef](https://gerrit.opnfv.org/gerrit/q/project:kuberef).
 
-For the host provisioning stage, a former OPNFV bare-metal provisioner XCI, now referred to as [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) and hosted by Nordix Labs has been used in the host provisioning stage is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) has been used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.03) (version v21.03).
+For the host provisioning stage, the [Cloud Infra Automation Framework](https://docs.nordix.org/submodules/infra/engine/docs/user-guide.html#framework-user-guide) hosted by Nordix Foundation is used. This framework uses [Bifrost](https://docs.openstack.org/bifrost/latest/) for provisioning virtual and bare-metal hosts. It performs this automated deployment by using Ansible playbooks and [Ironic](https://docs.openstack.org/ironic/latest/). For Kubernetes provisioning, [Bare Metal Reference Architecture (BMRA)](https://builders.intel.com/docs/networkbuilders/container-bare-metal-for-2nd-generation-intel-xeon-scalable-processor.pdf) is being used. This framework uses scripts available on [Github](https://github.com/intel/container-experience-kits/tree/v21.03) (version v21.03).
 
 <a name="4.3.1"></a>
 ### 4.3.1 Installation on Bare Metal Infratructure
@@ -114,7 +114,7 @@ References for the above features:
 
 Additional settings are available in the BMRA templates located in `playbooks/roles/bmra-config/templates`. Changing these might have unexpected results and should generally not be done.
 
-You will also have to modify environmental variables defined in `deploy.env` to match your setup.
+You will also have to modify environmental variables defined in `deploy.env` to match your setup. For deploying Kuberef on pre-provisioned infrastructure, set `deployment_type=k8s`.
 
 Once ready, issue the following command to initiate the deployment
 
@@ -153,6 +153,8 @@ The list of allocatable resources will vary depending on the configuration, but 
 ## 4.4 Validation of the Reference Implementation
 
 In order to ensure that a given RI-2 meets the requirements specified in the RA-2, a set of test cases specified in RC-2 should be executed. A selection of these test cases is documented in [RC-2 Chapter 2](../../../ref_cert/RC2/chapters/chapter02.md).
+
+Currently, Kuberef is validated by running the RC-2 testsuite in GitLab. This RC-2 testsuite version is determined based on the Kuberenetes version deployed by Kuberef. The list of testcases can be found in the Kuberef `.gitlab-ci.yml` file.
 
 For deploying your own RC-2 toolchain, please refer to the steps mentioned in [RC-2 Kubernetes Testing Cookbook](../../../ref_cert/RC2/chapters/chapter03.md).
 
