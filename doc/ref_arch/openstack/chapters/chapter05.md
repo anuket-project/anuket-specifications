@@ -36,10 +36,11 @@ Please note that OpenStack provides a maximum microversion to be used with an Op
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
-| Identity: Keystone    | v3              | 3.13                         |
+| Identity: Keystone    | v3              | 3.14                         |
 
 | **Keystone Features**   | **Mandatory** |
 |-------------------------|:-------------:|
+| access_rules            |               |
 | application_credentials | X             |
 | external_idp            |               |
 | federation              |               |
@@ -60,25 +61,32 @@ Security compliance and PCI-DSS: https://docs.openstack.org/keystone/train/admin
 |-----------------------|-----------------|------------------------------|
 | Image: Glance         | v2              | 2.9                          |
 
+| **Glance Features** | **Mandatory** |
+|---------------------|:-------------:|
+| import_image        |               |
+| os_glance_reserved  |               |
+| web-download import |               |
+
 Image Service Versions: https://docs.openstack.org/api-ref/image/versions/index.html#version-history
 
 ### 5.2.3. Cinder
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
-| Block Storage: Cinder | v3              | 3.59                         |
+| Block Storage: Cinder | v3              | 3.64                         |
 
-| **Cinder Features**    | **Mandatory** |
-|------------------------|:-------------:|
-| backup                 | X             |
-| clone                  | X             |
-| consistency_group      |               |
-| extend_attached_volume |               |
-| manage_snapshot        | X             |
-| manage_volume          | X             |
-| multi_backend          |               |
-| snapshot               | X             |
-| volume_revert          | X             |
+| **Cinder Features**              | **Mandatory** |
+|----------------------------------|:-------------:|
+| backup                           | X             |
+| clone                            | X             |
+| consistency_group                |               |
+| extend_attached_volume           |               |
+| extend_attached_encrypted_volume |               |
+| manage_snapshot                  | X             |
+| manage_volume                    | X             |
+| multi_backend                    |               |
+| snapshot                         | X             |
+| volume_revert                    | X             |
 
 Block Storage API: https://docs.openstack.org/api-ref/block-storage/
 
@@ -178,7 +186,9 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | quotas                         | X             |
 | quota_details                  | X             |
 | revision-if-match              | X             |
+| rbac-address-scope             |               |
 | rbac-security-groups           |               |
+| rbac-subnetpool                |               |
 | router-interface-fip           |               |
 | security-group                 | X             |
 | service-type                   | X             |
@@ -191,6 +201,7 @@ Discoverability: https://docs.openstack.org/swift/latest/api/discoverability.htm
 | subnet-service-types           | X             |
 | subnetpool-prefix-ops          |               |
 | tag-ext                        |               |
+| tag-ports-during-bulk-creation |               |
 | trunk                          | X             |
 | trunk-details                  | X             |
 | uplink-status-propagation      |               |
@@ -210,7 +221,7 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 
 | **OpenStack Service** | **API Version** | **Maximal API Microversion** |
 |-----------------------|-----------------|------------------------------|
-| Compute: Nova         | v2.1            | 2.79                         |
+| Compute: Nova         | v2.1            | 2.88                         |
 
 | **Nova Features**        | **Mandatory** |
 |--------------------------|:-------------:|
@@ -231,12 +242,15 @@ The exhaustive list of extensions is available at https://docs.openstack.org/api
 | resize                   | X             |
 | serial_console           |               |
 | shelve                   | X             |
+| shelve_migrate           |               |
 | snapshot                 | X             |
+| stable_rescue            |               |
 | spice_console            |               |
 | suspend                  | X             |
 | swap_volume              |               |
 | vnc_console              |               |
 | volume_multiattach       |               |
+| xenapi_apis              |               |
 
 Compute API: https://docs.openstack.org/api-ref/compute/
 
@@ -256,7 +270,7 @@ REST API Version History: https://docs.openstack.org/placement/latest/placement-
 
 |**OpenStack Service** | **API Version** | **Maximal Template Version** |
 |----------------------|-----------------|------------------------------|
-| Orchestration: Heat  | v1              | 2018-08-31                   |
+| Orchestration: Heat  | v1              | 2021-04-16                   |
 
 Orchestration Service API: https://docs.openstack.org/api-ref/orchestration/
 

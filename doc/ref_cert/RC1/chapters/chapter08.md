@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # 8. Gap analysis and Development
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -16,13 +14,13 @@
 - Describe the purpose of this chapter, which includes, but not limited to:
 - Test Case Gaps (analysis)
 -	Automation Gaps
--	OpenStack release Comparisons (Train, Ussuri, etc)
+-	OpenStack release Comparisons
 
 <a name="8.2"></a>
 ## 8.2 Openstack Release Comparisons
 
 - Provide details, preferably in table format, comparing OpenStack releases based
-  on Train baseline for CNTT RI-1 (e.g. Train, Ussuri, etc)
+  on Wallaby baseline for RI-1
 
 <a name="8.3"></a>
 ## 8.3 Automation Gaps
@@ -44,25 +42,21 @@ Jenkins jobs via a simple yaml file and
 <a name="8.4"></a>
 ## 8.4 Test Case Gaps
 
-OPNFV has developed many test cases in the different
-[OPNFV test projects](https://wiki.opnfv.org/display/testing/TestPerf) which
-can quickly improve RC. As highlighted in OPNFV Marketing Goals for 2020 and
-listed in
+Anuket has developed many test cases in the different
+[test projects](https://wiki.opnfv.org/display/testing/TestPerf) which
+can quickly improve RC. As listed in
 [RC Test case integration requirements](chapter02.md),
 porting all the existing testcases to Xtesting will unify the test case
 execution and simplify the test integration as required by RC. Here are all the
 related issues:
-- [port YardStick testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/509)
-- [port Bottlenecks to Xtesting](https://github.com/cntt-n/CNTT/issues/511)
-- [port StorPerf testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/673)
+- [port VinePerf to Xtesting](https://github.com/cntt-n/CNTT/issues/511)
 - [port NFVbench testcases to Xtesting](https://github.com/cntt-n/CNTT/issues/865)
 
 Here are the possible new test cases which could be integrated in the existing
-OPNFV projects to improve RC:
+Anuket projects to improve RC:
 
 | issues                                                                                            | requirements      |
 |---------------------------------------------------------------------------------------------------|-------------------|
-| [update and integrate heat-tempest-plugin in Functest](https://github.com/cntt-n/CNTT/issues/483) | Heat API testing  |
 | [integrate KloudBuster in Functest](https://github.com/cntt-n/CNTT/issues/508)                    | disk benchmarking |
 | [add tempest-stress in Functest](https://github.com/cntt-n/CNTT/issues/916)                       | stress testing    |
 

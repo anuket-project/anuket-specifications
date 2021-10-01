@@ -16,6 +16,7 @@
         * [3.2.1.6 Device Plugin Framework](#3216-device-plugin-framework)
         * [3.2.1.7 Hardware Acceleration](#3217-hardware-acceleration)
         * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
+        * [3.2.1.9 Virtual Machine based Clusters](#3219-virtual-machine-based-clusters)
     * [3.2.2 Container Networking Services](#322-container-networking-services)
     * [3.2.3 Container Storage Services](#323-container-storage-services)
     * [3.2.4 Kubernetes Application package manager](#324-kubernetes-application-package-managers)
@@ -251,7 +252,10 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 
 <p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
 
+#### 3.2.1.9 Virtual Machine based Clusters
+
 Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container Runtime in Linux host Operating System) or with virtual machines (VMs, on hypervisor).
+
 When running in VMs, the following list of configurations shows what is needed for non-resilient applications:
 * CPU Manager managing vCPUs that hypervisor provides to VMs.
 * Huge pages enabled in hypervisor, mapped to VM, enabled in guest OS, and mapped to pod.
