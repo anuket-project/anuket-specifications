@@ -39,7 +39,7 @@ This chapter delves deeper into the capabilities of these different resources an
 <a name="4.2.1"></a>
 ### 4.2.1 Virtualisation
 In OpenStack, KVM is configured as the default hypervisor for compute nodes.
-- Configuration: [OpenStack](https://docs.openstack.org/nova/train/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
+- Configuration: [OpenStack](https://docs.openstack.org/nova/wallaby/admin/configuration/hypervisor-kvm.html) specifies the following KVM configuration steps/instructions to configure KVM:
   - Enable KVM based hardware virtualisation in BIOS. OpenStack provides instructions on how to enable hardware virtualisation for different hardware platforms (x86, Power)
     - QEMU is similar to KVM in that both are libvirt controlled, have the same feature set and utilise compatible virtual machine images
   -	Configure Compute backing storage
@@ -201,7 +201,7 @@ If we wish to dedicate specific cores for host processing we need to consider tw
     1. Require dedicated cores for Guest resources
     2. No dedicated cores are required for Guest resources
 
-Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Train release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
+Scenario #1, results in compute nodes that host both pinned and unpinned workloads. In the OpenStack Wallaby release, scenario #1 is not supported; it may also be something that operators may not allow. Scenario #2 is supported through the specification of the cpu_shared_set configuration. The cores and their sibling threads dedicated to the host services are those that do not exist in the cpu_shared_set configuration.
 
 Let us consider a compute host with 20 cores with SMT enabled (let us disregard NUMA) and the following parameters specified. The physical cores are numbered '0' to '19' while the sibling threads are numbered '20' to '39' where the vCPUs numbered '0' and '20', '1' and '21', etc. are siblings:
 
@@ -398,9 +398,9 @@ Octavia supports provider drivers which allows third-party load balancing driver
 #### 4.2.3.4. Neutron Extensions
 OpenStack Neutron is an extensible framework that allows incorporation through plugins and API Extensions. API Extensions provide a method for introducing new functionality and vendor specific capabilities. Neutron plugins support new or vendor-specific functionality. Extensions also allow specifying new resources or extensions to existing resources and the actions on these resources.  Plugins implement these resources and actions.
 
-This Reference Architecture supports the ML2 plugin (see below) as well as the service plugins including for [FWaaS (Firewall as a Service)](https://docs.openstack.org/neutron/train/admin/fwaas.html), [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
+This Reference Architecture supports the ML2 plugin (see below) as well as the service plugins including for [LBaaS (Load Balancer as a Service)](https://governance.openstack.org/tc/reference/projects/octavia.html), and [VPNaaS (VPN as a Service)](https://opendev.org/openstack/neutron-vpnaas/). The OpenStack wiki provides a list of [Neutron plugins](https://wiki.openstack.org/wiki/Neutron#Plugins).
 
-Every Neutron plugin needs to implement a minimum set of common [methods (actions for Train release)](https://docs.openstack.org/neutron/train/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension.
+Every Neutron plugin needs to implement a minimum set of common [methods (actions for Wallaby release)](https://docs.openstack.org/neutron/latest/contributor/internals/api_extensions.html).  Resources can inherit Standard Attributes and thereby have the extensions for these standard attributes automatically incorporated. Additions to resources, such as additional attributes, must be accompanied by an extension.
 
 [Chapter 5](chapter05.md), "Interfaces and APIs", of this Reference Architecture provides a list of [Neutron Extensions](chapter05.md#525-neutron).  The current available extensions can  be obtained using the [List Extensions API](https://docs.openstack.org/api-ref/network/v2/#list-extensions) and details about an extension using the [Show extension details API](https://docs.openstack.org/api-ref/network/v2/#show-extension-details).
 
@@ -478,19 +478,19 @@ This section covers:
 A high-level overview of the core OpenStack Services was provided in [Chapter 3](./chapter03.md). In this section we describe the core and other needed services in more detail.
 
 #### 4.3.1.1 Keystone
-Keystone is the authentication service, the foundation of identity management in OpenStack. Keystone needs to be the first deployed service. Keystone has services running on the control nodes and no services running on the compute nodes:
+[Keystone](https://docs.openstack.org/keystone/wallaby/) is the authentication service, the foundation of identity management in OpenStack. Keystone needs to be the first deployed service. Keystone has services running on the control nodes and no services running on the compute nodes:
 -	Keystone admin API
 -	Keystone public API – in Keystone V3 this is the same as the admin API
 
 #### 4.3.1.2 Glance
-Glance is the image management service. Glance has only a dependency on the Keystone service therefore it is the second one deployed. Glance has services running on the control nodes and no services running on the compute nodes:
+[Glance](https://docs.openstack.org/glance/wallaby/) is the image management service. Glance has only a dependency on the Keystone service therefore it is the second one deployed. Glance has services running on the control nodes and no services running on the compute nodes:
 -	Glance API
 -	Glance Registry
 
 _The Glance backends include Swift, Ceph RBD and NFS._
 
 #### 4.3.1.3 Cinder
-Cinder is the block device management service, depends on Keystone and possibly Glance to be able to create volumes from images. Cinder has services running on the control nodes and no services running on the compute nodes:
+[Cinder](https://docs.openstack.org/cinder/wallaby/) is the block device management service, depends on Keystone and possibly Glance to be able to create volumes from images. Cinder has services running on the control nodes and no services running on the compute nodes:
 -	Cinder API
 -	Cinder Scheduler
 -	Cinder Volume – the Cinder volume process needs to talk to its backends
@@ -498,7 +498,7 @@ Cinder is the block device management service, depends on Keystone and possibly 
 _The Cinder backends include SAN/NAS storage, iSCSI drives, Ceph RBD and NFS._
 
 #### 4.3.1.4 Swift
-Swift is the object storage management service, Swift depends on Keystone and possibly Glance to be able to create volumes from images. Swift has services running on the control nodes and the compute nodes:
+[Swift](https://docs.openstack.org/swift/wallaby/) is the object storage management service, Swift depends on Keystone and possibly Glance to be able to create volumes from images. Swift has services running on the control nodes and the compute nodes:
 -	Proxy Services
 -	Object Services
 -	Container Services
@@ -507,7 +507,7 @@ Swift is the object storage management service, Swift depends on Keystone and po
 _The Swift backends include iSCSI drives, Ceph RBD and NFS._
 
 #### 4.3.1.5 Neutron
-Neutron is the networking service, depends on Keystone and has services running on the control nodes and the compute nodes. Depending upon the workloads to be hosted by the Infrastructure, and the expected load on the controller node, some of the Neutron services can run on separate network node(s). Factors affecting controller node load include number of compute nodes and the number of API calls being served for the various OpenStack services (nova, neutron, cinder, glance etc.). To reduce controller node load, network nodes are widely added to manage L3 traffic for overlay tenant networks and interconnection with external networks. Table 4-2 below lists the networking service components and their placement. Please note that while network nodes are listed in the table below, network nodes only deal with tenant networks and not provider networks. Also, network nodes are not required when SDN is utilised for networking.
+[Neutron](https://docs.openstack.org/neutron/wallaby/) is the networking service, depends on Keystone and has services running on the control nodes and the compute nodes. Depending upon the workloads to be hosted by the Infrastructure, and the expected load on the controller node, some of the Neutron services can run on separate network node(s). Factors affecting controller node load include number of compute nodes and the number of API calls being served for the various OpenStack services (nova, neutron, cinder, glance etc.). To reduce controller node load, network nodes are widely added to manage L3 traffic for overlay tenant networks and interconnection with external networks. Table 4-2 below lists the networking service components and their placement. Please note that while network nodes are listed in the table below, network nodes only deal with tenant networks and not provider networks. Also, network nodes are not required when SDN is utilised for networking.
 
 | Networking Service component | Description | Required or Optional Service | Placement |
 |-----|-----|----|----|
@@ -530,9 +530,9 @@ While the separation of the routing function from the controller node to the net
 
 With DVR, each compute node also hosts the L3-agent (providing the distributed router capability) and this then allows direct instance to instance (East-West) communications.
 
-The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)]( https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in-depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation.
+The OpenStack “[High Availability Using Distributed Virtual Routing (DVR)](https://docs.openstack.org/liberty/networking-guide/scenario-dvr-ovs.html)” provides an in-depth view into how DVR works and the traffic flow between the various nodes and interfaces for three different use cases. Please note that DVR was introduced in the OpenStack Juno release and, thus, its detailed analysis in the Liberty release documentation is not out of character for OpenStack documentation.
 
-DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP]( https://docs.openstack.org/neutron/train/admin/config-dvr-ha-snat.html) addresses this vulnerability.
+DVR addresses both scalability and high availability for some L3 functions but is not fully fault tolerant. For example, North/South SNAT traffic is vulnerable to single node (network node) failures. [DVR with VRRP](https://docs.openstack.org/neutron/wallaby/admin/config-dvr-ha-snat.html) addresses this vulnerability.
 
 
 ##### 4.3.1.5.3 Software Defined Networking (SDN)
@@ -543,7 +543,7 @@ SDN provides a truly scalable and preferred solution to suport dynamic, very lar
 [3.2.5. Virtual Networking – 3rd party SDN solution](./chapter03.md#325-virtual-networking--3rd-party-sdn-solution)). With SDN incorporated in OpenStack, changes to the network is triggered by workloads (and users), translated into Neutron APIs and then handled through neutron plugins by the corresponding SDN agents.
 
 #### 4.3.1.6 Nova
-Nova is the compute management service, depends on all above components and is deployed after their deployment. Nova has services running on the control nodes and the compute nodes:
+[Nova](https://docs.openstack.org/nova/wallaby/) is the compute management service, depends on all above components and is deployed after their deployment. Nova has services running on the control nodes and the compute nodes:
 -	nova-metadata-api
 -	nova-compute api
 -	nova-consoleauth
@@ -555,23 +555,23 @@ Nova is the compute management service, depends on all above components and is d
 Please note that the Placement-API must have been installed and configured prior to nova compute starts.
 
 #### 4.3.1.7 Ironic
-Ironic is the bare metal provisioning service. Ironic depends on all above components and is deployed after them. Ironic has services running on the control nodes and the compute nodes:
+[Ironic](https://docs.openstack.org/ironic/wallaby/) is the bare metal provisioning service. Ironic depends on all above components and is deployed after them. Ironic has services running on the control nodes and the compute nodes:
 -	Ironic API
 -	ironic-conductor which executes operation on bare metal nodes
 
-Note: This is an optional service. As Ironic is currently not invoked directly (only invoked through other services such as Nova) hence its APIs will not be specified.
+Note: This is an optional service. The [Ironic APIs](https://docs.openstack.org/api-ref/baremetal/) are still under development.
 
 #### 4.3.1.8 Heat
-Heat is the orchestration service using templates to provision cloud resources, Heat integrates with all OpenStack services. Heat has services running on the control nodes and no services running on the compute nodes:
+[Heat](https://docs.openstack.org/heat/wallaby/) is the orchestration service using templates to provision cloud resources, Heat integrates with all OpenStack services. Heat has services running on the control nodes and no services running on the compute nodes:
 -	heat-api
 -	heat-cfn-api
 -	heat-engine
 
 #### 4.3.1.9 Horizon
-Horizon is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
+[Horizon](https://docs.openstack.org/horizon/wallaby/) is the Web User Interface to all OpenStack services. Horizon has services running on the control nodes and no services running on the compute nodes.
 
 #### 4.3.1.10 Placement
-The OpenStack [Placement service](https://docs.openstack.org/placement/train/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilised by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilise placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilised in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
+The OpenStack [Placement service](https://docs.openstack.org/placement/wallaby/index.html) enables tracking (or accounting) and scheduling of resources. It provides a RESTful API and a data model for the managing of resource provider inventories and usage for different classes of resources. In addition to standard resource classes, such as vCPU, MEMORY_MB and DISK_GB, the Placement service supports custom resource classes (prefixed with “CUSTOM_”) provided by some external resource pools such as a shared storage pool provided by, say, Ceph.  The placement service is primarily utilised by nova-compute and nova-scheduler. Other OpenStack services such as Neutron or Cyborg can also utilise placement and do so by creating [Provider Trees]( https://docs.openstack.org/placement/latest/user/provider-tree.html). The following data objects are utilised in the [placement service]( https://docs.openstack.org/placement/latest/user/index.html):
 
 - Resource Providers provide consumable inventory of one or more classes of resources (CPU, memory or disk). A resource provider can be a compute host, for example.
 - Resource Classes specify the type of resources (vCPU, MEMORY_MB and DISK_GB or CUSTOM_\*)
@@ -586,7 +586,7 @@ Placement has services running on the control node:
 -	nova-placement-api
 
 #### 4.3.1.11 Barbican
-[Barbican](https://docs.openstack.org/barbican/train/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning, and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g., symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification.
+[Barbican](https://docs.openstack.org/barbican/wallaby/) is the OpenStack Key Manager service. It is an optional service hosted on controller nodes. It provides secure storage, provisioning, and management of secrets as passwords, encryption keys and X.509 Certificates. Barbican API is used to centrally manage secrets used by OpenStack services, e.g., symmetric encryption keys used for Block storage encryption or Object Storage encryption or asymmetric keys and certificates used for Glance image signing and verification.
 
 Barbican usage provides a means to fulfill security requirements such as sec.sys.012 “The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component” and sec.ci.001 “The Platform **must** support Confidentiality and Integrity of data at rest and in transit.”.
 
