@@ -317,7 +317,7 @@ To implement image security, the workload operator must test the image and suppl
 
 CIS Hardened Images should be used whenever possible. CIS provides, for example, virtual machine hardened images based upon CIS benchmarks for various operating systems. Another best practice is to use minimalist base images whenever possible.
 
-Images are stored into registries. The images registry must contain only vetted images. The registry must remain a source of trust for images over time, images therefore must be continuously scanned to identify vulnerabilities and out of date versions as described previously. Access to the registry is an important security risk. It must be granted by a dedicated authorisation and trough secure networks enforcing authentication, integrity and confidentiality.
+Images are stored in registries. The images registry must contain only vetted images. The registry must remain a source of trust for images over time, images therefore must be continuously scanned to identify vulnerabilities and out-of-date versions as described previously. Access to the registry is an important security risk. It must be granted by a dedicated authorisation and through secure networks enforcing authentication, integrity and confidentiality.
 
 <a name="7.6.3"></a>
 ### 7.6.3 Networking Security Zoning
