@@ -22,7 +22,7 @@
   * [7.5.6 Vulnerability Management](#7.5.6)
 * [7.6 Workload Security- Cloud Infrastructure Operator Responsibility](#7.6)
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
-  * [7.6.2 Workload Image Scanning / Signing](#7.6.2)
+  * [7.6.2 Workload Image](#7.6.2)
   * [7.6.3 Networking Security Zoning](#7.6.3)
   * [7.6.4 Volume Encryption](#7.6.4)
   * [7.6.5 Root of Trust for Measurements (RTM)](#7.6.5)
@@ -311,7 +311,7 @@ Cloud Infrastructure operators must ensure that remote attestation methods are u
 
 Only workload images from trusted sources must be used. Secrets must be stored outside of the images.
 
-It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. 
+It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images must be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. 
 
 To implement image security, the workload operator must test the image and supplementary components verifying that everything conforms to security policies and best practices. Use of Image scanners such as OpenSCAP or Trivy to determine security vulnerabilities is strongly recommended.
 
