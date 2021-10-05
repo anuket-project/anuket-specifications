@@ -137,7 +137,7 @@ This section details the services that may be made available to workloads by the
 
 <p align="center"><b>Table 5-7:</b> Cloud Infrastructure Platform services.</p>
 
-| Minimum requirements             | Platform Service Examples   |
+| Platform Service Category             | Platform Service Examples   |
 |----------------------------------|-----------------------------|
 | Data Stores/Databases            | Ceph, etcd, MongoDB, Redis  |
 | Streaming and Messaging          | Apache Kafka, Rabbit MQ     |
