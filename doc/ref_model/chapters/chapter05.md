@@ -146,7 +146,7 @@ This section details the services that may be made available to workloads by the
 | Security & Compliance            | Calico, cert-manager        |
 | Monitoring                       | Prometheus, Grafana (for Visualisation), Kiali (for Service Mesh)    |
 | Logging and Management           | Fluentd, ElasticSearch (Elastic.io, Open Distro), ELK Stack (Elasticsearch, Logstash, and Kibana)|
-| Application Definition and Image | Build Helm                  |
+| Application Definition and Image Build | Helm                  |
 | CI/CD                            | Argo, GitLab, Jenkins       |
 | Ingress/Egress Controllers       | Envoy, Istio, NGINX         |
 | Network Service                  | CoreDNS, Istio              |
