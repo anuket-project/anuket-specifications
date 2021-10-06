@@ -12,6 +12,7 @@
   * [10.3.3 Service Function Chain](#10.3.3)
   * [10.3.4 Closed-loop automation](#10.3.4)
   * [10.3.5 Acceleration Abstraction](#10.3.5)
+  * [10.3.6 Hybrid Multi-Cloud: Data Center to Edge](#10.3.6)
 
 
 <a name="10.1"></a>
@@ -72,3 +73,14 @@ Many vRAN and some other domain's network functions require accelerators to meet
 [O-RAN Alliance](https://www.o-ran.org) is developing a common abstraction and programming model for RAN application domain (see [Acceleration Abstraction Layer General Aspects an Principles 1.0 - November 2020 (O-RAN.WG6.AAL-GAnP-v01.00](https://www.o-ran.org/specifications)). [P4 Language Consortium](https://p4.org/) defines specifications for switching and routing domains. There is, however, a lack of a common programming model for accelerator applications development.
 		
 There is also a need for a seamless integration with platforms, Kubernetes and OpenStack in particular. Kubernetes treats each device as unique HW and, hence, application developers are forced to specify vendor specific labels and utilise vendor specific libraries in their workload manifests as dependencies. OpenStack is attempting to address this gap with their [Cyborg](https://wiki.openstack.org/wiki/Cyborg) project.
+
+<a name="10.3.6"></a>
+### 10.3.6 Hybrid Multi-Cloud: Data Center to Edge
+In section "8.2.4 Multi-Cloud Interactions Model" there recognition that "To realise a federated cloud requires the definition and agreement on a set of APIs". Currently that are exists various:
+- Proprietry APIs, some of which have been adopted as default industry standards,
+- A number of Open Source Community projects aiming to provide abstract interfaces to wrap proprietary API
+- Vendors offering to act as brokers and
+- Standards and Industry APIs to address specific subset of the interactions.
+
+This sections purpose is to capture identified gaps in coverage.
+
