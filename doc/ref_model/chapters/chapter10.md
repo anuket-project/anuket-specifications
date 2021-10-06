@@ -78,7 +78,7 @@ There is also a need for a seamless integration with platforms, Kubernetes and O
 ### 10.3.6 Hybrid Multi-Cloud: Data Center to Edge
 In section "8.2.4 Multi-Cloud Interactions Model" there recognition that "To realise a federated cloud requires the definition and agreement on a set of APIs". Currently that are exists various:
 - Proprietry APIs, some of which have been adopted as default industry standards,
-- A number of Open Source Community proejcts aiming to provide abstract interfaces to wrap proprietry API
+- A number of Open Source Community projects aiming to provide abstract interfaces to wrap proprietary API
 - Vendors offering to act as brokers and
 - Standards and Industry APIs to address specific subset of the interactions.
 
