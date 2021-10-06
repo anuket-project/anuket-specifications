@@ -124,7 +124,7 @@ The set of high level interactions cover:
 A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per Figure 8.3) and hence extent of orchestration required to manage the interactions.
 
 <p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png" alt="Simple Stereo-Typical Interactions"></p>
-<p align="center"><b>Figure 8-5:</b> Simple Stereo-Typical Interactions</p>
+<p align="center"><b>Figure 8-5:</b> "Simple Stereo-Typical Interactions"</p>
 
 The following patterns are visible:
 - For IaaS Cloud Integration:
@@ -142,7 +142,22 @@ The following patterns are visible:
 A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
 
 <p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png" alt="Disaggregated SaaS Stereo-Typical Interaction"></p>
-<p align="center"><b>Figure 8-5:</b> "Disaggregated SaaS Stereo-Typical Interaction</p>
+<p align="center"><b>Figure 8-5:</b> "Disaggregated SaaS Stereo-Typical Interaction"</p>
+
+In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the integration across the Cloud Providers.
+
+To make this manageeable and avoid having to manage integration there are a number of models:
+- Industry Standard APIs that allow consistent consumption across Cloud Providers,
+- API Brokage which provide consistent set of Consumer facings APIs that manage adaption to prorietry APIs
+- Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be presented for management of the multi-cloud environment 
+
+The API and Cloud Brokerage models are illustrated in the following diagrams:
+
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png" alt="API Brokerage Multi-Cloud Stereo-Typical Interaction"></p>
+<p align="center"><b>Figure 8-6:</b> "API Brokerage Multi-Cloud Stereo-Typical Interaction"</p>
+
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png" alt="Cloud Brokerage Multi-Cloud Stereo-Typical Interaction"></p>
+<p align="center"><b>Figure 8-7:</b> "Cloud Brokerage Multi-Cloud Stereo-Typical Interaction"</p>
 
 <a name="8.2.4.3"></a>
 ### 8.2.4.3 Requirements, Reference Architecture & Industry Standards Intersect
