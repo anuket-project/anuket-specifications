@@ -146,7 +146,7 @@ A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in th
 
 In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the integration across the Cloud Providers.
 
-To make this manageeable and avoid having to manage integration there are a number of models:
+To make this manageable and avoid integration, there are a number of models:
 - Industry Standard APIs that allow consistent consumption across Cloud Providers,
 - API Brokage which provide consistent set of Consumer facings APIs that manage adaption to prorietry APIs
 - Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be presented for management of the multi-cloud environment 
