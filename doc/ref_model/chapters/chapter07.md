@@ -20,7 +20,6 @@
   * [7.5.4 Alerting and Monitoring](#7.5.4)
   * [7.5.5 Logging](#7.5.5)
   * [7.5.6 NF images](#7.5.6)
-  * [7.5.7 Vulnerability Management](#7.5.7)
 * [7.6 Workload Security- Cloud Infrastructure Operator Responsibility](#7.6)
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
   * [7.6.2 Workload Image Scanning / Signing](#7.6.2)
@@ -185,6 +184,12 @@ The platform supports the workload, and in effect controls access to the workloa
 * Ensure that all the platform's components (including hypervisors, VMs, etc.) are kept up to date with the latest patch.
 * In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
+**Vulnerability Management**
+* Security defects must be reported.
+* The Cloud Infrastructure components must be continuously analysed from deployment to runtime. The Cloud Infrastructure must offer tools to check the code libraries and all other code against the [Common Vulnerabilities and Exposures (CVE) databases]( https://cve.mitre.org/) to identify the presence of any known vulnerabilities. The CVE is a list of publicly disclosed vulnerabilities and exposures that is maintained by [MITRE](https://www.mitre.org/). Each vulnerability is characterised by an identifier, a description, a date, and comments.
+* When a vulnerability is discovered on a component (from Operating Systems to virtualisation layer components) the remediation action will depend on its severity. The [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/) allows to calculate a vulnerability score. It is an open framework widely used in vulnerability management tools. CVSS is owned and managed by FIRST (Forum of Incident Response and Security Teams). The CVSS consists of three metric groups: Base, Temporal, and Environmental. The Base metrics produce a score ranging from 0 to 10, this score can then be refined using Temporal and Environmental metrics. The numerical score can be translated into a severity qualitative representation: low, medium, high, or critical. The severity score (or the associated qualitative representation) allows organisations to prioritise the remediation activities, high scores mandating a fast response time. The vulnerable components must then be patched, replaced, or their access must be restricted.
+* Security patches must be obtained from an authorised source in order to ensure their integrity.  Patches must be tested and validated in a pre-production environment before being deployed into production.
+
 **Platform access**
 * Restrict traffic to only traffic that is necessary, and deny all other traffic, including traffic from and to 'Back-end'.
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
@@ -292,13 +297,6 @@ Triggers and checkpoints define transitions within stages. When designing DevSec
 * Container Images
   * Container Management.
   * Immutability.
-
-<a name="7.5.7"></a>
-### 7.5.7 Vulnerability Management
-
-* Security defect must be reported.
-* Cadence should aligned with Cloud Infrastructure vendors (OSSA for OpenStack).
-* Components should be analysed: mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
 
 <a name="7.6"></a>
 ## 7.6 Workload Security - Cloud Infrastructure Operator Responsibility
@@ -412,8 +410,7 @@ To secure software code, the following methods must be applied:
 -	Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals  
 -	Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
 -	Test the software in a pre-production environment to validate integration 
--	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures), https://cve.mitre.org/
--	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
+-	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply remediation actions according to their severity rating
 -	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
 -	Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
 -	Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section 7.4.4  ‘”Infrastructure as a Code Security”
@@ -432,7 +429,7 @@ Poor code quality is a factor of risk. Open source code advantage is its transpa
 
 Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all the life of the application or workload or service. When a public vulnerability on a component is released, the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier to identify. It is essential to remediate the affected components as soon as possible, because code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
 
-The CVE must be used to identify vulnerabilities and their severity rating. CVE identifies, defines, and catalogues publicly disclosed cybersecurity vulnerabilities.
+The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines, and catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the vulnerabilities' severity score.
 
 Various images scanning tools, such as Clair or Trivy, are useful to audit images from security vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete. 
 
@@ -643,8 +640,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---|----|----|
 | req.sec.oss.001 | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
 | req.sec.oss.002 | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.  | https://cve.mitre.org/ |
-| req.sec.oss.003 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
-| req.sec.oss.004 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
+| req.sec.oss.003 | Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score and its associated rate (low, medium, high, or critical).  | https://www.first.org/cvss/ |
+| req.sec.oss.004 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
+| req.sec.oss.005 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
 
 <p align="center"><b>Table 7-8:</b> Open Source Software requirements</p>
 
@@ -707,7 +705,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.run.001 | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|
+| req.sec.run.001 | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage and remediation actions **must** be applied for high severity rated vulnerabilities. | Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|
 | req.sec.run.002 | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  |
 | req.sec.run.003 | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
 | req.sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |

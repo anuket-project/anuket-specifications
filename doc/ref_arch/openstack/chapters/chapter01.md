@@ -35,7 +35,7 @@ Several NFV use cases are documented in OpenStack. For more examples and details
 <a name="1.3"></a>
 ## 1.3 Anuket OpenStack Reference Release
 
-This Reference Architecture document conforms to the [OpenStack Train](https://docs.openstack.org/train/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Train release. For ease, this Anuket Reference Architecture document version can be referred to as "RA-1 OSTK Train."
+This Reference Architecture document conforms to the [OpenStack Wallaby](https://docs.openstack.org/wallaby/projects.html) release. While many features and capabilities are conformant with many OpenStack releases, this document will refer to features, capabilities and APIs that are part of the OpenStack Wallaby release. For ease, this Anuket Reference Architecture document version can be referred to as "RA-1 OSTK Wallaby."
 
 <a name="1.4"></a>
 ## 1.4 Principles
