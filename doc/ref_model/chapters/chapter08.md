@@ -102,7 +102,7 @@ The Cloud Services and the Cloud Resources Brokers provide value-added services 
 ### 8.2.4.1 Introduction
 To realise a federated cloud requires the definition and agreement on a set of APIs. These APIs should allow each of the parties to interact cooperatively and need to cover the management layer: business management and service operations interactions; as well as the data plane, customer and user, transactions and conversational interfaces.
 
-As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the "Multi-Cloud Interaction Model". This provides a taxonomy for the interactions and is illustrated below:
+As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the "Figure 8-4 - Multi-Cloud Interaction Model" below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
 
 <p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-02.png" alt="Multi-Cloud Interactions Model"></p>
 <p align="center"><b>Figure 8-4:</b> Multi-Cloud Interactions Model</p>
@@ -146,10 +146,12 @@ A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in th
 
 In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the integration across the Cloud Providers.
 
-To make this manageable and avoid integration, there are a number of models:
+To make this manageable and avoid integration complexity, there are a number of models:
 - Industry Standard APIs that allow consistent consumption across Cloud Providers,
 - API Brokage which provide consistent set of Consumer facings APIs that manage adaption to prorietry APIs
-- Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be presented for management of the multi-cloud environment 
+- Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be presented for management of the multi-cloud environment
+
+The different means of integrating with and managing Cloud Providers is broadly covered under the umbrella topic of "Cloud Management Platforms". A survey of applicable standards to achieve this is provided in section: "8.2.4.3 Requirements, Reference Architecture & Industry Standards Intersect".
 
 The API and Cloud Brokerage models are illustrated in the following diagrams:
 
