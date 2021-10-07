@@ -515,7 +515,7 @@ The requirements listed in this section are optional, and are not required in or
 |----|-------|---------------------|-------------|
 | gen.cnt.01 | Cloud nativeness | The Architecture **should** consist of stateless service components. However, where state is required it must be kept external to the component. | OpenStack consists of both stateless and stateful services where the stateful services utilise a database. For latter see "[Configuring the stateful services](https://docs.openstack.org/ha-guide/control-plane-stateful.html)"|
 | gen.cnt.02 | Cloud nativeness | The Architecture **should** consist of service components implemented as microservices that are individually dynamically scalable. | |
-| gen.scl.01 | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likely be supported through [Senlin](https://docs.openstack.org/senlin/train/), cluster management service. |
+| gen.scl.01 | Scalability | The Architecture **should** support policy driven auto-scaling. | This requirement is currently not addressed but will likely be supported through [Senlin](https://docs.openstack.org/senlin/wallaby/), cluster management service. |
 | gen.rsl.02 | Resiliency | The Architecture **should** support resilient OpenStack service components that are not subject to gen.rsl.01. | |
 
 <p align="center"><b>Table 2-26:</b> General Recommendations</p>
