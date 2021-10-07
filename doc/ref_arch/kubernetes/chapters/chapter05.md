@@ -218,9 +218,8 @@ API server except from trusted networks.
 | TCP      | 30000-32767 | NodePort Services     |
 
 ### 5.4.2 Controlling access to the Kubernetes API
-The Kubernetes platform is controlled using API requests and as such is the
-first line of defence against attackers. Controlling who has access and what
-actions they are allowed to perform is the primary concern. 
+The Kubernetes platform is controlled using APIs, which are the first items to be secured in order to defend against attackers.
+Controlling who has access and what actions they are allowed to perform is the primary concern. 
 
 ### 5.4.3 Use Transport Layer Security
 Communication in the cluster between services should be handled using TLS,
