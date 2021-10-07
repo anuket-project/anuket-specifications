@@ -196,7 +196,7 @@ ports which makes it easy to identify the clusters and attack them. Hence, it is
 highly recommended to configure authentication and authorisation on the cluster
 and cluster nodes.
 
-Here is an overview of the default ports used in Kubernetes. Make sure that your
+The [Kubernetes documentation](https://kubernetes.io/docs/reference/ports-and-protocols/) specifies the default ports used in Kubernetes. Make sure that your
 network blocks access to unnecessary ports and consider limiting access to the Kubernetes
 API server except from trusted networks.
 
@@ -204,19 +204,17 @@ API server except from trusted networks.
 
 | Protocol | Port Range | Purpose                 |
 | -------- | ---------- | ----------------------- |
-| TCP      | 6443-      | Kubernetes API Server   |
+| TCP      | 6443       | Kubernetes API Server   |
 | TCP      | 2379-2380  | etcd server client API  |
 | TCP      | 10250      | Kubelet API             |
-| TCP      | 10251      | kube-scheduler          |
-| TCP      | 10252      | kube-controller-manager |
-| TCP      | 10255      | Read-Only Kubelet API   |
+| TCP      | 10259      | kube-scheduler          |
+| TCP      | 10257      | kube-controller-manager |
 
 **Worker nodes:**
 
 | Protocol | Port Range  | Purpose               |
 | -------- | ----------- | --------------------- |
 | TCP      | 10250       | Kubelet API           |
-| TCP      | 10255       | Read-Only Kubelet API |
 | TCP      | 30000-32767 | NodePort Services     |
 
 ### 5.4.2 Controlling access to the Kubernetes API
