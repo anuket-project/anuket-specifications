@@ -27,8 +27,7 @@ Chapter 2 gathers all requirements and recommendations regarding security topics
 <a name="6.3"></a>
 ## 6.3 Cloud Infrastructure and VIM Security
 
-In the "[Security boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" section of the [OpenStack security guide]
-(https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html), there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
+In the "[Security boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" section of the [OpenStack security guide](https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html), there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
 
 <a name="6.3.1"></a>
 ### 6.3.1 System Hardening
@@ -44,7 +43,7 @@ Access to all the platform's components must be restricted (sec.gen.013) applyin
 - Change all default user accounts where technically feasible
 - Change all default credentials
 - Prohibit logging with root account when root privileges are not required (sec.gen.006)
-- Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+- Restrict access according to only those protocols/service/address adhering to the Principle of Least Privilege
 - The same authentication credentials must not be reused on different components (sec.sys.011)
 - Restrict access to Operating System (sec.gen.005)
 
@@ -125,7 +124,7 @@ Authorisation serves as the next level of defence.  At its core, it checks if th
 #### 6.3.2.4 RBAC
 In order to properly manage user access to OpenStack services, service providers must utilise the Role Based Access Control (RBAC) system (sec.sys.001, sec.sys.007).  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles. 
 
-Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Train release, Keystone applies the following personas consistently across its API.
+Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Wallaby release, Keystone applies the following personas consistently across its API.
 - The reader role provides read-only access to resources within the system, a domain, or a project.
 - The member role is the same as reader in Keystone, but allows to introduce granularity between admin and reader to other OpenStack services.
 - The admin role is reserved for the most privileged operations within a given scope for managing resources. 
@@ -231,7 +230,7 @@ The Cloud Infrastructure must onboard only trusted and verified VM images, imply
 images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
 It is recommended to scan all VM images with a vulnerability scanner(sec.img.002). The scan is mandatory for images from unknown or untrusted sources.
 
-To mitigate tampering attacks, it is recommended to use the [Glance image signing feature](https://docs.openstack.org/glance/pike/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
+To mitigate tampering attacks, it is recommended to use the [Glance image signing feature](https://docs.openstack.org/glance/wallaby/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
 
 In order to protect data, VNFs must encrypt the volumes they use. In this case, the encryption key must not be stored on the infrastructure. 
 When a key management service is provided by the infrastructure, OpenStack can encrypt data on behalf of tenants (sec.gen.010).
