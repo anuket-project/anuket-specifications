@@ -36,6 +36,7 @@
 * [3.8 Hardware Acceleration Abstraction](#3.8)
   * [3.8.1 Types of Accelerators](#3.8.1)
   * [3.8.2 Infrastructure and Application Level Acceleration](#3.8.2)
+    * [3.8.2.1 Example of O-RAN Acceleration Abstraction Layer Interface](#3.8.2.1)
   * [3.8.3 Workload Placement](#3.8.3)
   * [3.8.4 CPU Instructions](#3.8.4)
   * [3.8.5 Fixed Function Accelerators](#3.8.5)
@@ -690,7 +691,7 @@ Accelerator technologies can be categorized depending on where they are realized
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-18 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-17 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
 
@@ -712,6 +713,20 @@ Preferably, Application or Infrastructure acceleration can take benefit from und
 - For Linux IO virtualization: VirtIO
 - For Network Functions using DPDK libraries: Crypto Device, EthDev, Event Device and Base Band Device
 - For O-RAN Network functions: O-RAN Acceleration Abstraction Layer Interface.
+
+<a name="3.8.2.1"></a>
+### 3.8.2.1 Example of O-RAN Acceleration Abstraction Layer Interface
+
+O-RAN Alliance’s Cloud and Orchestration Workgroup defined Acceleration Abstraction Layer (AAL) which is an application-level interface, as recommended way of decoupling software vendors’ network functions from different hardware accelerator implementations.
+
+<p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram_AAL.png" alt="AAL Interface in RM Realization Diagram" Title="AAL Interface in RM Realization Diagram" width="65%"/></p>
+
+<p align="center"><b>Figure 3-18:</b> AAL Interface in RM Realization Diagram</p>
+
+Document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” from November 2020 (O-RAN.WG6.AAL-GAnP-v01.00, available to the public upon agreement to the O-RAN Alliance Adopter License, from [https://www.o-ran.org](https://www.o-ran.org)):
+-	Describes the functions conveyed over the interface, including configuration and management functions.
+-	Identifies the requirements as well as general procedures and operations.
+-	Introduces the initial set of the O-DU/O-CU AAL profiles.
 
 <a name="3.8.3"></a>
 ### 3.8.3 Workload Placement
@@ -754,7 +769,7 @@ There are two main types of Smart NICs that can accelerate network functions in-
 
 <p align="center"><img src="../figures/ch03-example-smartnic-deployment-model.png" alt="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" Title="Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management" width="65%"/></p>
 
-<p align="center"><b>Figure 3-18:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
+<p align="center"><b>Figure 3-19:</b> Example SmartNIC Deployment Model That Accelerates Two Workloads and Has OOB Management</p>
 
 
 #### 3.8.7.1 Simple SmartNIC
