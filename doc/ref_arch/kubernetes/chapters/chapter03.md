@@ -177,6 +177,20 @@ which provides the isolation of Operating System kernels.
 The architecture must support a way to isolate the compute resources of the
 infrastructure itself from the workloads compute resources.
 
+The basic semantics of Kubernetes, and the information found in manifests, defines the built-in Kubernetes objects and their desired state.
+
+Kubernetes built in objects
+Pod and workloads | Description
+------------------|------------
+[Pod:](https://kubernetes.io/docs/concepts/workloads/pods/) | Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto nodes.
+[ReplicaSet:](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) | ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+[Deployment:](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Deployment enables declarative updates for Pods and ReplicaSets.
+[DaemonSet:](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) | A Daemon set ensures that the correct nodes run a copy of a Pod.
+[Job:](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of successful completions is reached.
+[CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point in time
+[StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage. 
+
+
 
 #### 3.2.1.2 CPU Management
 
@@ -429,7 +443,7 @@ an additional feature and still be conformant with Anuket.
 features [here](../../../ref_model/chapters/chapter05.md#5.4).
 
 <a name="3.2.2.1"></a>
- ### 3.2.2.1 Kubernetes Networking Semantics
+### 3.2.2.1 Kubernetes Networking Semantics
 The support for advanced network configuration management doesn't exist in core Kubernetes. Kubernetes is missing the advanced networking configuration component of Infrastructure as a Service (IaaS). For example, there is no network configuration API, there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect them all together.
 
 Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
@@ -440,17 +454,6 @@ Kubernetes networking can be divided into two parts, built in network functional
 Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
 
 The basic semantics of Kubernetes, and the information found in manifests, defines the connectivity rules and behavior without any references to IP addresses. This has many advantages, it makes it easy to create portable, scalable SW services and network policies for them that are not location aware and therefore can be executed more or less anywhere.
-
-Kubernetes built in objects
-Pod and workloads | Description
-------------------|------------
-[Pod:](https://kubernetes.io/docs/concepts/workloads/pods/) | Pod is a collection of containers that can run on a node. This resource is created by clients and scheduled onto nodes.
-[ReplicaSet:](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) | ReplicaSet ensures that a specified number of pod replicas are running at any given time.
-[Deployment:](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) | Deployment enables declarative updates for Pods and ReplicaSets.
-[DaemonSet:](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) | A Daemon set ensures that the correct nodes run a copy of a Pod.
-[Job:](https://kubernetes.io/docs/concepts/workloads/controllers/job/) | A Job represent a task, it creates one or more Pods and will continue to retry until the expected number of successful completions is reached.
-[CronJob:](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) | A CronJob manages time-based Jobs, namely: once at a specified point in time and repeatedly at a specified point in time
-[StatefulSet:](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) | StatefulSet represents a set of pods with consistent identities. Identities are defined as: network, storage. 
 
 Network objects | Description
 ----------------|------------
