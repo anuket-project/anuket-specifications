@@ -717,7 +717,7 @@ Preferably, Application or Infrastructure acceleration can take benefit from und
 <a name="3.8.2.1"></a>
 ### 3.8.2.1 Example of O-RAN Acceleration Abstraction Layer Interface
 
-O-RAN Alliance’s Cloud and Orchestration Workgroup defined Acceleration Abstraction Layer (AAL) which is an application-level interface, as recommended way of decoupling software vendors’ network functions from different hardware accelerator implementations.
+O-RAN Alliance’s Cloud and Orchestration Workgroup defines the Acceleration Abstraction Layer (AAL), an application-level interface, as the recommended way of decoupling software vendors’ network functions from the different hardware accelerator implementations.
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram_AAL.png" alt="AAL Interface in RM Realization Diagram" Title="AAL Interface in RM Realization Diagram" width="65%"/></p>
 
