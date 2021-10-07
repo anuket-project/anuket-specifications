@@ -51,7 +51,7 @@ Securing Kubernetes requires several layers of security features to provide end
 to end security for cloud native applications. It is recommended that:
 
 - Security testing is fully integrated into the CI/CD pipelines of all parties
-  (e.g. vendors and operators).
+  (e.g., vendors and operators).
 - Automated security policies are used to flag builds with issues.
 - Image registries are monitored to automatically block or replace images with
   known vulnerabilities, while also ensuring policies are used to gate what can
