@@ -5,6 +5,7 @@
 
 ## Table of Contents
   - [5.1 Introduction](#51-introduction)
+    - [5.1.1  Security Perimeters](#511--security-perimeters)  
   - [5.2 Principles](#52-principles)
   - [5.3 Node Hardening](#53-node-hardening)
     - [5.3.1 Node hardening: Securing Kubernetes
@@ -37,12 +38,11 @@
   - [5.11  Run-Time Security](#511--run-time-security)
   - [5.12  Secrets Management](#512--secrets-management)
   - [5.13  Trusted Registry](#513--trusted-registry)
-  - [5.14  Security Perimeters](#514--security-perimeters)
-  - [5.15  Isolation](#515--isolation)
-    - [5.15.1 VM vs. Container Isolation](#5151-vm-vs-container-isolation)
-    - [5.15.2 Container Isolation in Kubernetes
-      Cluster](#5152-container-isolation-in-kubernetes-cluster)
-      - [5.15.2.1 Namespaces](#51521-namespaces)
+  - [5.14  Isolation](#514--isolation)
+    - [5.14.1 VM vs. Container Isolation](#5141-vm-vs-container-isolation)
+    - [5.14.2 Container Isolation in Kubernetes
+      Cluster](#5142-container-isolation-in-kubernetes-cluster)
+      - [5.14.2.1 Namespaces](#51421-namespaces)
 
 ## 5.1 Introduction
 Securing Kubernetes requires several layers of security features to provide end
@@ -68,6 +68,40 @@ The following functionalities are recommended for securing Kubernetes platforms:
   - For strict multi tenancy, a dedicated Kubernetes Cluster per tenant should
     be used
 - Integration with other security ecosystem like monitoring and alerting tools
+
+### 5.1.1  Security Perimeters
+When applications or workloads run on Kubernetes, there are several layers which
+come into picture that govern the security. Each of these layers needs to be
+secured within their perimeters. The various layers that come into picture are:
+
+- **Container Registry**: A container registry is a repository to manage
+  container **images. The access to container registry needs to be secured in
+  order to **prevent unauthorised access or image tampering.
+- **Container Images**: Stored instance of a container that holds a set of
+  software needed to run an application. Before loading them to container
+  registry, they need to be secured by performing various checks like
+  vulnerability analysis, scans etc. These images should also be signed from
+  trusted sources.
+- **Containers**: A lightweight and portable executable image that contains
+  software and all of its dependencies. The containers need to be prevented from
+  accessing the underlying OS like loading of kernel modules, mounting of
+  directories of underlying OS etc and ensuring that they don't run in
+  privileged mode.
+- **Pods**: A Pod represents a set of running containers on your Cluster.
+  Kubernetes inherently offers pod security policies that define a set of
+  conditions that a pod needs to run with in order to be accepted into the
+  system. These policies help in ensuring the necessary checks for running the
+  pods.
+- **Kubernetes Node**: A Kubernetes node in an unsecured boundary can lead to a
+  potential threat to the running workloads. Such a node should be hardened by
+  disabling unused ports, prohibiting root access etc.
+- **Kubernetes Master**: A master node in an unsecured boundary can lead to a
+  potential threat to the running workloads. A master may be hardened in terms
+  of security by disabling unused ports, prohibiting root access etc.
+- **Kubernetes Control Plane**: The container orchestration layer that exposes
+  the API and interfaces to define, deploy, and manage the lifecycle of
+  containers. The communication over these APIs needs to be secured via
+  different mechanisms like TLS encryption, API authentication via LDAP etc.
 
 ## 5.2 Principles
 The following are core principles to consider when securing cloud native
@@ -365,42 +399,8 @@ Ensure stale images are removed from the registry. Remove unsafe, vulnerable
 images (e.g. containers should no longer be used based on time triggers and
 labels associated with images).
 
-## 5.14  Security Perimeters
-When applications or workloads run on Kubernetes, there are several layers which
-come into picture that govern the security. Each of these layers needs to be
-secured within their perimeters. The various layers that come into picture are:
-
-- **Container Registry**: A container registry is a repository to manage
-  container **images. The access to container registry needs to be secured in
-  order to **prevent unauthorised access or image tampering.
-- **Container Images**: Stored instance of a container that holds a set of
-  software needed to run an application. Before loading them to container
-  registry, they need to be secured by performing various checks like
-  vulnerability analysis, scans etc. These images should also be signed from
-  trusted sources.
-- **Containers**: A lightweight and portable executable image that contains
-  software and all of its dependencies. The containers need to be prevented from
-  accessing the underlying OS like loading of kernel modules, mounting of
-  directories of underlying OS etc and ensuring that they don't run in
-  privileged mode.
-- **Pods**: A Pod represents a set of running containers on your Cluster.
-  Kubernetes inherently offers pod security policies that define a set of
-  conditions that a pod needs to run with in order to be accepted into the
-  system. These policies help in ensuring the necessary checks for running the
-  pods.
-- **Kubernetes Node**: A Kubernetes node in an unsecured boundary can lead to a
-  potential threat to the running workloads. Such a node should be hardened by
-  disabling unused ports, prohibiting root access etc.
-- **Kubernetes Master**: A master node in an unsecured boundary can lead to a
-  potential threat to the running workloads. A master may be hardened in terms
-  of security by disabling unused ports, prohibiting root access etc.
-- **Kubernetes Control Plane**: The container orchestration layer that exposes
-  the API and interfaces to define, deploy, and manage the lifecycle of
-  containers. The communication over these APIs needs to be secured via
-  different mechanisms like TLS encryption, API authentication via LDAP etc.
-
-## 5.15  Isolation
-### 5.15.1 VM vs. Container Isolation
+## 5.14  Isolation
+### 5.14.1 VM vs. Container Isolation
 Sometimes container isolation is compared directly with VM based isolation, with
 the conclusion "*there are issues with container isolation, it is not as good as
 VM isolation*". Such 1:1 comparison is not reasonable because VM and container
@@ -417,8 +417,8 @@ should not be deployed together in the same Kubernetes Cluster - unless these
 applications have been planned and verified to co-exist. Thus, the default is to
 allocate one Namespace per Cloud Native Network Function (CNF).
 
-### 5.15.2 Container Isolation in Kubernetes Cluster
-#### 5.15.2.1 Namespaces  
+### 5.14.2 Container Isolation in Kubernetes Cluster
+#### 5.14.2.1 Namespaces  
 Kubernetes Namespaces should be used to provide resource isolation within a
 Kubernetes Cluster. They should not be used to isolate different steps in the
 deployment process like Development, Production, or Testing. The most reliable
