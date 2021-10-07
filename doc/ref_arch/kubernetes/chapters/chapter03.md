@@ -16,6 +16,7 @@
         * [3.2.1.6 Device Plugin Framework](#3216-device-plugin-framework)
         * [3.2.1.7 Hardware Acceleration](#3217-hardware-acceleration)
         * [3.2.1.8 Scheduling Pods with Non-resilient Applications](#3218-scheduling-pods-with-non-resilient-applications)
+        * [3.2.1.9 Virtual Machine based Clusters](#3219-virtual-machine-based-clusters)
     * [3.2.2 Container Networking Services](#322-container-networking-services)
        * [3.2.2.1 Kubernetes Networking Semantics](#3.2.2.1)
          * [3.2.2.1.1 Built in Kubernetes Network Functionality](#3.2.2.1.1)
@@ -254,7 +255,10 @@ Non-resilient applications are sensitive to platform impairments on Compute like
 
 <p align="center"><b>Table 3-1:</b> Categories of applications, requirements for scheduling pods and Kubernetes features</p>
 
-Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container Runtime in the host Operating System directly on the hardware without need for any hypervisor capabilities) or with virtual machines (VMs, on hypervisor).
+#### 3.2.1.9 Virtual Machine based Clusters
+
+Kubernetes clusters using above enhancements can implement worker nodes with "bare metal" servers (running Container Runtime in Linux host Operating System) or with virtual machines (VMs, on hypervisor).
+
 When running in VMs, the following list of configurations shows what is needed for non-resilient applications:
 * CPU Manager managing vCPUs that hypervisor provides to VMs.
 * Huge pages enabled in hypervisor, mapped to VM, enabled in guest OS, and mapped to pod.
@@ -319,6 +323,7 @@ Mesh](https://networkservicemesh.io/docs/concepts/what-is-nsm/))
 | Kubernetes network model (`req.inf.ntw.08`) | Supported via the additional CNI plugin | Supported via the additional CNI plugin | Supported | Supported via the default CNI plugin |
 | Do not interfere with or cause interference to any interface or network it does not own (`req.inf.ntw.09`) | Supported | Supported | Supported | Supported |
 | Cluster wide coordination of IP address assignment (`req.inf.ntw.10`) | Supported via IPAM CNI plugin | Supported | Supported | Supported via IPAM CNI plugin |
+
 
 <p align="center"><b>Table 3-1:</b> Comparison of example networking solutions</p>
 

@@ -1,5 +1,3 @@
-[<< Back](../)
-
 # 7. VNF Testing Cookbook
 <p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
 
@@ -13,7 +11,7 @@
 
 Define the purpose of the chapter which is to:
 -	Identify Framework Needs, Goals, and Dependencies
-- Define Opensource Integration (OPNFV, OVP, Functest, CVC, others)
+- Define Opensource Integration (OVP, Functest, CVC, others)
 - Provide Automation Toolchain (list, topology, flow)
 
 <a name="7.2"></a>
@@ -26,7 +24,7 @@ Define the purpose of the chapter which is to:
 <p align="center"><img src="../figures/rc1_cookbook_vnf.png" alt="VNF_cookbook" title="VNF Cookbook" width="60%"/></p>
 <p align="center"><b>Figure 1-3:</b> VNF Testing Integrated Framework.</p>
 
-As detailed in the CNTT RC chapter 05 on E2E VNF test platform requirements,
+As detailed in the RC chapter 05 on E2E VNF test platform requirements,
 ONAP VNF Test Platform (VTP) helps to perform the VNF Conformance process by
 addressing those requirements. And following sections provides required
 guidelines and details for platform and test cases.

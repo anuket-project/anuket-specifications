@@ -1,4 +1,4 @@
-[<< Back](../../ref_model)
+<< Back](../../ref_model)
 # 7 Security
 
 ## Table of Contents
@@ -19,11 +19,9 @@
   * [7.5.3 Software Code Quality and Security](#7.5.3)
   * [7.5.4 Alerting and Monitoring](#7.5.4)
   * [7.5.5 Logging](#7.5.5)
-  * [7.5.6 NF images](#7.5.6)
-  * [7.5.7 Vulnerability Management](#7.5.7)
 * [7.6 Workload Security- Cloud Infrastructure Operator Responsibility](#7.6)
   * [7.6.1 Remote Attestation/openCIT](#7.6.1)
-  * [7.6.2 Workload Image Scanning / Signing](#7.6.2)
+  * [7.6.2 Workload Image](#7.6.2)
   * [7.6.3 Networking Security Zoning](#7.6.3)
   * [7.6.4 Volume Encryption](#7.6.4)
   * [7.6.5 Root of Trust for Measurements (RTM)](#7.6.5)
@@ -58,6 +56,19 @@ This chapter examines multiple aspects of security as it relates to Cloud Infras
 <a name="7.2"></a>
 ## 7.2 Potential attack vectors
 Previously attacks designed to place and migrate workload outside the legal boundaries were not possible using traditional infrastructure, due to the closed nature of these systems. However, using Cloud Infrastructure, violation of regulatory policies and laws becomes possible by actors diverting or moving an application from an authenticated and legal location to another potentially illegal location. The consequences of violating regulatory policies may take the form of a complete banning of service and/or an exertion of a financial penalty by a governmental agency or through SLA enforcement.  Such vectors of attack may well be the original intention of the attacker in an effort to harm the service provider. One possible attack scenario can be when an attacker exploits the insecure NF API to dump the records of personal data from the database in an attempt to violate user privacy. Cloud Infrastructure operators should ensure that the applications APIs are secure, accessible over a secure network (TLS) under very strict set of security best practices, and RBAC policies to limit exposure of this vulnerability.
+
+Typical cloud associated attacker tactics have been identified in the widely accepted [MITRE ATT&CK® Framework](https://www.mitre.org/sites/default/files/publications/mitre-getting-started-with-attack-october-2019.pdf). This framework provides a systematic approach to capture adversarial tactics targeting cloud environments. Examples of such adversarial tactics are listed in the table below.
+ 
+ |  Attacker tactics | Examples  | 
+ |-------|------|
+ |Initial Access|Compromising user administration accounts that are not protected by multi-factor authentication|
+ |Evasion|Modifying cloud compute instances in the production environment by modifying virtual instances for attack staging|
+ |Discovery|Discovering what cloud services are operating and then disabling them in a later stage|
+ |Data Exfiltration|Moving data from the compromised tenant’s production databases to the hacker’s cloud service account or transferring the data out of the Communication Service Provider (CSP) to the attacker’s private network|
+ |Service Impact|Creating denial-of-service availability issues by modifying Web Application Firewall (WAF) rules and compromising APIs and web-based GUIs|
+
+<p align="center"><b>Table 7-0:</b> Cloud attacker tactics - Examples</p>
+
 
 <a name="7.3"></a>
 ## 7.3 Security Scope
@@ -172,6 +183,12 @@ The platform supports the workload, and in effect controls access to the workloa
 * Ensure that all the platform's components (including hypervisors, VMs, etc.) are kept up to date with the latest patch.
 * In order to tightly control access to resources and protect them from malicious access and introspection, Linux Security Modules such as SELinux should be used to enforce access rules.
 
+**Vulnerability Management**
+* Security defects must be reported.
+* The Cloud Infrastructure components must be continuously analysed from deployment to runtime. The Cloud Infrastructure must offer tools to check the code libraries and all other code against the [Common Vulnerabilities and Exposures (CVE) databases]( https://cve.mitre.org/) to identify the presence of any known vulnerabilities. The CVE is a list of publicly disclosed vulnerabilities and exposures that is maintained by [MITRE](https://www.mitre.org/). Each vulnerability is characterised by an identifier, a description, a date, and comments.
+* When a vulnerability is discovered on a component (from Operating Systems to virtualisation layer components) the remediation action will depend on its severity. The [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/) allows to calculate a vulnerability score. It is an open framework widely used in vulnerability management tools. CVSS is owned and managed by FIRST (Forum of Incident Response and Security Teams). The CVSS consists of three metric groups: Base, Temporal, and Environmental. The Base metrics produce a score ranging from 0 to 10, this score can then be refined using Temporal and Environmental metrics. The numerical score can be translated into a severity qualitative representation: low, medium, high, or critical. The severity score (or the associated qualitative representation) allows organisations to prioritise the remediation activities, high scores mandating a fast response time. The vulnerable components must then be patched, replaced, or their access must be restricted.
+* Security patches must be obtained from an authorised source in order to ensure their integrity.  Patches must be tested and validated in a pre-production environment before being deployed into production.
+
 **Platform access**
 * Restrict traffic to only traffic that is necessary, and deny all other traffic, including traffic from and to 'Back-end'.
 * Provide protections between the Internet and any workloads including web and volumetrics attack preventions.
@@ -238,13 +255,12 @@ Triggers and checkpoints define transitions within stages. When designing DevSec
 <a name="7.5.1"></a>
 ### 7.5.1 Software Hardening
 
-* No hard-coded credentials or clear text passwords. Software should support configurable, or industry standard, password complexity rules.
+* No hard-coded credentials or clear text passwords in code and images. Software must support configurable, or industry standard, password complexity rules.
 * Software should be independent of the infrastructure platform (no OS point release dependencies to patch).
-* Software is code signed and all individual sub-components are assessed and verified for EULA violations.
+* Software must be code signed and all individual sub-components are assessed and verified for EULA (End-user License Agreement) violations.
 * Software should have a process for discovery, classification, communication, and timely resolution of security vulnerabilities (i.e.; bug bounty, Penetration testing/scan findings, etc.).
 * Software should support recognized encryption standards and encryption should be decoupled from software.
 * Software should have support for configurable banners to display authorized use criteria/policy.
-
 
 <a name="7.5.2"></a>
 ### 7.5.2 Port Protection
@@ -272,21 +288,6 @@ Triggers and checkpoints define transitions within stages. When designing DevSec
 
 * Logging output should support customizable Log retention and Log rotation.
 
-  <a name="7.5.6"></a>
-### 7.5.6 NF images
-
-* Image integrity – fingerprinting/validation.
-* Container Images
-  * Container Management.
-  * Immutability.
-
-<a name="7.5.7"></a>
-### 7.5.7 Vulnerability Management
-
-* Security defect must be reported.
-* Cadence should aligned with Cloud Infrastructure vendors (OSSA for OpenStack).
-* Components should be analysed: mechanisms to validate components of the platform stack by checking libraries and supporting code against the Common Vulnerabilities and Exposures (CVE) databases to determine whether the code contains any known vulnerabilities must be embedded into the NFVI architecture itself.  Some of the components required include tools for checking common libraries against CVE databases integrated into the deployment and orchestration pipelines.
-
 <a name="7.6"></a>
 ## 7.6 Workload Security - Cloud Infrastructure Operator Responsibility
 
@@ -304,11 +305,17 @@ The Operator’s responsibility is to not only make sure that security is includ
 Cloud Infrastructure operators must ensure that remote attestation methods are used to remotely verify the trust status of a given Cloud Infrastructure platform.  The basic concept is based on boot integrity measurements leveraging the Trusted Platform Module (TPM) built into the underlying hardware. Remote attestation can be provided as a service, and may be used by either the platform owner or a consumer/customer to verify that the platform has booted in a trusted manner. Practical implementations of the remote attestation service include the Open Cloud Integrity Tool (Open CIT).   Open CIT provides ‘Trust’ visibility of the Cloud Infrastructure and enables compliance in Cloud Datacenters by establishing the root of trust and builds the chain of trust across hardware, operating system, hypervisor, VM, and container.  It includes asset tagging for location and boundary control. The platform trust and asset tag attestation information is used by Orchestrators and/or Policy Compliance management to ensure workloads are launched on trusted and location/boundary compliant platforms. They provide the needed visibility and auditability of infrastructure in both public and private cloud environments.
 
 <a name="7.6.2"></a>
-### 7.6.2 Workload Image Scanning / Signing
+### 7.6.2 Workload Image
 
-It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images can be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. To implement image security, the workload operator must test the image and supplementary components verifying that everything conforms to security policies and best practices.
+Only workload images from trusted sources must be used. Secrets must be stored outside of the images.
 
-Use of Image scanners such as OpenSCAP to determine security vulnerabilities is strongly recommended.
+It is easy to tamper with workload images. It requires only a few seconds to insert some malware into a workload image file while it is being uploaded to an image database or being transferred from an image database to a compute node. To guard against this possibility, workload images must be cryptographically signed and verified during launch time. This can be achieved by setting up a signing authority and modifying the hypervisor configuration to verify an image’s signature before they are launched. 
+
+To implement image security, the workload operator must test the image and supplementary components verifying that everything conforms to security policies and best practices. Use of Image scanners such as OpenSCAP or Trivy to determine security vulnerabilities is strongly recommended.
+
+CIS Hardened Images should be used whenever possible. CIS provides, for example, virtual machine hardened images based upon CIS benchmarks for various operating systems. Another best practice is to use minimalist base images whenever possible.
+
+Images are stored in registries. The images registry must contain only vetted images. The registry must remain a source of trust for images over time, images therefore must be continuously scanned to identify vulnerabilities and out-of-date versions as described previously. Access to the registry is an important security risk. It must be granted by a dedicated authorisation and through secure networks enforcing authentication, integrity and confidentiality.
 
 <a name="7.6.3"></a>
 ### 7.6.3 Networking Security Zoning
@@ -399,8 +406,7 @@ To secure software code, the following methods must be applied:
 -	Use trusted, authenticated and identified software images that are provided by authenticated software distribution portals  
 -	Do threat modelling, as described in the document “Tactical Threat Modeling” published by SAFECode
 -	Test the software in a pre-production environment to validate integration 
--	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures), https://cve.mitre.org/
--	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
+-	Detect vulnerabilities using security tools scanning and CVE (Common Vulnerabilities and Exposures) and apply remediation actions according to their severity rating
 -	Actively monitor the open source software repositories to determine if new versions have been released that address identified vulnerabilities discovered in the community
 -	Report and remove vulnerabilities by upgrading components using authenticated software update distribution portals
 -	Adopt a DevSecOps approach and rely on testing automation throughout the software build, integration, delivery, deployment, and runtime operation to perform automatic security check, as described in section 7.4.4  ‘”Infrastructure as a Code Security”
@@ -419,7 +425,7 @@ Poor code quality is a factor of risk. Open source code advantage is its transpa
 
 Vulnerability management must be continuous: from development to runtime, not only on the development process, but during all the life of the application or workload or service. When a public vulnerability on a component is released, the update of the component must be triggered. When an SBOM recording the code composition is provided, the affected components will be easier to identify. It is essential to remediate the affected components as soon as possible, because code transparency can also be exploited by attackers who can take the benefit of vulnerabilities.
 
-The CVE must be used to identify vulnerabilities and their severity rating. CVE identifies, defines, and catalogues publicly disclosed cybersecurity vulnerabilities.
+The CVE and the CVSS must be used to identify vulnerabilities and their severity rating. The CVE identifies, defines, and catalogues publicly disclosed cybersecurity vulnerabilities while the CVSS is an open framework to calculate the vulnerabilities' severity score.
 
 Various images scanning tools, such as Clair or Trivy, are useful to audit images from security vulnerabilities. The results of vulnerabilities scan audit must be analysed carefully when it is applied to vendor offering packaged solutions; as patches are not detected by scanning tools, some components can be detected as obsolete. 
 
@@ -569,6 +575,9 @@ Security certification should encompass the following elements:
 | req.sec.img.005 | Image Registries **must** only be accessible to authorized actors. |  |
 | req.sec.img.006 | Image Registries **must** only be accessible over secure networks that enforce authentication, integrity and confidentiality. |  |
 | req.sec.img.007 | Image registries **must** be clear of vulnerable and out of date versions. |  |
+| req.sec.img.008 | Images **must not** include any secrets. Secrets include passwords, cloud provider credentials, SSH keys, TLS certificate keys, etc. |  |
+| req.sec.img.009 | CIS Hardened Images **should** be used whenever possible. |  |
+| req.sec.img.010 | Minimalist base images **should** be used whenever possible. |  |
 
 <p align="center"><b>Table 7-5:</b> Image security requirements</p>
 
@@ -630,14 +639,14 @@ The Platform is assumed to provide configurable alerting and notification capabi
 |---|----|----|
 | req.sec.oss.001 | Open source code **must** be inspected by tools with various capabilities for static and dynamic code analysis. |  |
 | req.sec.oss.002 | The CVE(Common Vulnerabilities and Exposures) **must** be used to identify vulnerabilities and their severity rating for open source code part of Cloud Infrastructure and workloads software.  | https://cve.mitre.org/ |
-| req.sec.oss.003 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
-| req.sec.oss.004 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
+| req.sec.oss.003 | Critical and high severity rated vulnerabilities **must** be fixed in a timely manner. Refer to the CVSS (Common Vulnerability Scoring System) to know a vulnerability score and its associated rate (low, medium, high, or critical).  | https://www.first.org/cvss/ |
+| req.sec.oss.004 | A dedicated internal isolated repository separated from the production environment **must** be used to store vetted open source content. |  |
+| req.sec.oss.005 | A Software Bill of Materials (SBOM) **should** be provided or build, and maintained to identify the software components and their origins. | Inventory of software components, https://www.ntia.gov/SBOM. | 
 
 <p align="center"><b>Table 7-8:</b> Open Source Software requirements</p>
 
 <a name="7.9.9"></a>
 ### 7.9.9. IaaC - Secure Design and Architecture Stage Requirements
-
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -648,7 +657,6 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 <a name="7.9.10"></a>
 ### 7.9.10. IaaC - Secure Code Stage Requirements
-
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
@@ -663,12 +671,11 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="7.9.11"></a>
 ### 7.9.11. IaaC - Continuous Build, Integration and Testing Stage Requirements
 
-
 | Ref | Requirement | Definition/Note |
 |---|----|---|
 | req.sec.bld.001 | SAST -Static Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.|
 | req.sec.bld.002 | SCA – Software Composition Analysis **should** be applied during the Continuous Build, Integration and Testing stage triggered by Build and Integrate trigger. | Example: open source OWASP range of tools.  |
-| req.sec.bld.003 | Container and Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. | Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |
+| req.sec.bld.003 | Image Scan **must** be applied during the Continuous Build, Integration and Testing stage triggered by Package trigger. | Example: A push of a container image to a container registry may trigger a vulnerability scan before the image becomes available in the registry.  |
 | req.sec.bld.004 | DAST – Dynamic Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Security testing that analyses a running application by exercising application functionality and detecting vulnerabilities based on application behaviour and response. Example: OWASP ZAP. |
 | req.sec.bld.005 | Fuzzing **should** be applied during the Continuous Build, Integration and testing stage triggered by Stage & Test trigger. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition. |
 | req.sec.bld.006 | IAST – Interactive Application Security Testing **should** be applied during the Continuous Build, Integration and Testing stage triggered by Stage & Test trigger. | Software component deployed with an application that assesses application behaviour and detects presence of vulnerabilities on an application being exercised in realistic testing scenarios. Example:  Contrast Community Edition. |
@@ -678,10 +685,9 @@ The Platform is assumed to provide configurable alerting and notification capabi
 <a name="7.9.12"></a>
 ### 7.9.12. IaaC - Continuous Delivery and Deployment Stage Requirements
 
-
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.del.001 | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Example: GitLab uses the open source Clair engine for container scanning.|
+| req.sec.del.001 | Image Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Example: GitLab uses the open-source Clair engine for container image scanning.|
 | req.sec.del.002 | Code Signing **must** be applied during the Continuous Delivery and Deployment stage triggered by Publish to Artifact and Image Repository trigger. | Code Signing provides authentication to assure that downloaded files are form the publisher named on the certificate.  |
 | req.sec.del.003 | Artifact and Image Repository Scan **should** be continuously applied during the Continuous Delivery and Deployment stage. | Example: GitLab uses the open source Clair engine for container scanning.  |
 | req.sec.del.004 | Component Vulnerability Scan **must** be applied during the Continuous Delivery and Deployment stage triggered by Instantiate Infrastructure trigger. | The vulnerability scanning system is deployed on the cloud platform to detect security vulnerabilities of specified components through scanning and to provide timely security protection. Example: OWASP Zed Attack Proxy (ZAP). |
@@ -694,7 +700,7 @@ The Platform is assumed to provide configurable alerting and notification capabi
 
 | Ref | Requirement | Definition/Note |
 |---|----|---|
-| req.sec.run.001 | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|
+| req.sec.run.001 | Component Vulnerability Monitoring **must** be continuously applied during the Runtime Defence and Monitoring stage and remediation actions **must** be applied for high severity rated vulnerabilities. | Security technology that monitors components like virtual servers and assesses data, applications, and infrastructure for security risks.|
 | req.sec.run.002 | RASP – Runtime Application Self-Protection **should** be continuously applied during the Runtime Defence and Monitoring stage. | Security technology deployed within the target application in production for detecting, alerting, and blocking attacks.  |
 | req.sec.run.003 | Application testing and Fuzzing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. Example: GitLab Open Sources Protocol Fuzzer Community Edition.  |
 | req.sec.run.004 | Penetration Testing **should** be continuously applied during the Runtime Defence and Monitoring stage. | Typically done manually. |

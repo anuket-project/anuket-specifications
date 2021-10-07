@@ -599,16 +599,17 @@ SyncE was standardized by the ITU-T, in cooperation with IEEE, as three recommen
 SyncE architecture minimally requires replacement of the internal clock of the Ethernet card by a phase locked loop in order to feed the Ethernet PHY.
 
 <a name="3.5.7"></a>
- ### 3.5.7 Kubernetes Networking Semantics
+### 3.5.7 Kubernetes Networking Semantics
 The support for traditional network orchestration is non existent in Kubernetes as it is foremost a Platform as a Service (PaaS) environment and not an Infrastructure as a Service (Iaas) component. There is no network orchestration API, like Neutron in OpenStack, and there is no way to create L2 networks, instantiate network services such as L3aaS and LBaaS and then connect them all together as can be done using Neutron.
 
 Kubernetes networking can be divided into two parts, built in network functionality available through the pod's mandatory primary interface and network functionality available through the pod's optional secondary interfaces.
 
- #### Built in Kubernetes Network Functionality 
+#### Built in Kubernetes Network Functionality 
 Kubernetes currently only allows for one network, the *cluster* network, and one network attachment for each pod. All pods and containers have an *eth0* interface, this interface is created by Kubernetes at pod creation and attached to the cluster network. All communication to and from the pod is done through this interface. To only allow for one interface in a pod removes the need for traditional networking tools such as *VRFs* and additional routes and routing tables inside the pod network namespace.
 
 #### Multiple Networks and Advanced Configurations
 Kubernetes does currently not in itself support multi networks, pod multi network attachments or network orchestration. This is supported by using a [*Container Network Interface*](https://github.com/containernetworking/cni) multiplexer such as [Multus](https://github.com/k8snetworkplumbingwg/multus-cni). The [*Network Plumbing Working Group*](https://github.com/k8snetworkplumbingwg/community) has produced the [Kubernetes Network Custom Resource Definition De-facto Standard](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit). This document describes how secondary networks can be defined and attached to pods.
+
 
 <a name="3.6"></a>
 ## 3.6 Storage
@@ -664,6 +665,14 @@ The terms Container Infrastructure Service Instance and Container Infrastructure
 
 <a name="3.8"></a>
 ## 3.8 Hardware Acceleration Abstraction
+
+The purpose of a HW Accelerator is to either Accelerate the execution of an application or to Offload functions from the generic CPU to make the application and/or Cloud Infrastructure more efficient from one or more aspects.
+
+Hardware Accelerators are often used in Telco Clouds for many reasons. Some applications require an HW Accelerator to perform tasks that a generic CPU cannot perform fast enough, with enough timing accuracy, or handle the traffic that must be kept in a single context. Other applications could be satisfied with a generic CPU performance in some deployment cases, whilst being inefficient in other situations. The Cloud Infrastructure might also benefit from specialised accelerated HW devices to perform its tasks with less power, space, or cost than a generic CPU.
+ 
+The Accelerators are specialized resources and generally not expected to exist in large quantities, which makes it important that these limited HW Accelerators are carefully assigned to where they can be best used most of the time. In general, this requires that there be software-based alternative functions that can be used for the occasions when HW Accelerators can not be assigned to accelerate or offload applications or Cloud Infrastructure tasks.
+ 
+It is preferred that the accelerated or offloaded functions have abstracted interfaces since that would hide the different implementations from a functional point of view and make orchestrator choices simpler and more transparent to deploy. It will also allow support for multiple different HW Accelerators, and reducing the operator's integration and test efforts of the accelerators and their applications and/or Cloud Infrastructure.
 
 <a name="3.8.1"></a>
 ### 3.8.1 Types of Accelerators

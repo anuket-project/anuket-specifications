@@ -8,6 +8,8 @@
   * [8.2.1. Characteristics of a Federated Cloud](#8.2.1)
   * [8.2.2. Telco Cloud](#8.2.2)
   * [8.2.3. Telco Operator Platform Conceptual Architecture](#8.2.3)
+  * [8.2.4. Multi-Cloud Interactions Model](#8.2.4)
+  * [8.2.5. Aspects of Multi-Cloud Security](#8.2.5)
 * [8.3. Telco Edge Cloud](#8.3)
   * [8.3.1. Telco Edge Cloud: Deployment Environment Characteristics](#8.3.1)
   * [8.3.2. Telco Edge Cloud: Infrastructure Characteristics](#8.3.2)
@@ -93,6 +95,113 @@ Figure 8-3 shows a conceptual Telco Operator Platform Architecture. The Cloud In
 <p align="center"><b>Figure 8-3:</b> Conceptual Architecture of a Telco Operator Platform</p>
 
 The Cloud Services and the Cloud Resources Brokers provide value-added services in addition to the fundamental capabilities like service and resource discovery.  These Brokers are critical for a multi-cloud environment to function and utilise cloud specific plugins to perform the necessary activities. These Brokers can, for example, provision and manage environments with resources and services for Machine Learning (ML) services, Augmented/Virtual Reality, or specific industries.
+
+<a name="8.2.4"></a>
+### 8.2.4 Multi-Cloud Interactions Model
+<a name="8.2.4.1"></a>
+### 8.2.4.1 Introduction
+To realise a federated cloud requires the definition and agreement on a set of APIs. These APIs should allow each of the parties to interact cooperatively and need to cover the management layer: business management and service operations interactions; as well as the data plane, customer and user, transactions and conversational interfaces.
+
+As outlined in "Figure 8-3 - Conceptual Architecture of a Telco Operator Platform" above the exposure point for the Management Interactions is the "Cloud Service Broker" and the "Cloud Resource Broker". The set of interactions that these interface points need to provide are defined by the "Figure 8-4 - Multi-Cloud Interaction Model" below. This provides a taxonomy for the interactions between the Communications Service Provider and the Cloud Providers.
+
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-02.png" alt="Multi-Cloud Interactions Model"></p>
+<p align="center"><b>Figure 8-4:</b> Multi-Cloud Interactions Model</p>
+
+The model defines the following core roles:
+- Communications Service Provider (CSP) - is the party responsible for providing end user service to their customer
+- Customer / User - are the parties that use the service (User) and establishes the business agreement for the service provision (Customer). For retail services the customer and user are the same party, while for enterprise services the Enterprise is the Customer (responsible for the business agreement) and its representatives are the Users.
+- Cloud Providers - are the parties providing the cloud services. These services could be any XaaS service. It could be that a CSP has an agreement with a SaaS Cloud, which in turn uses an IaaS Cloud Provider to deliver their service.
+
+The set of high level interactions cover:
+- Manage Account - covering Account, Users, Subscription, Billing
+- Manage Connectivity - Public or Private Network, VPN Configuration, CSP Edge / Cloud Connection Configuration, Connection Security Profile
+- Manage Resource - Resource Pool Management, VM / VNF Management (CPU, Memory, Storage, Network), Image Repository Management, Storage Management, VNF / CNF LCM, Monitor Resources
+- Manage App/VNF - Image / Container / Registry Management, Deploy/Configure/Scale/Start/Stop App/VNF, Monitor App/VNFs
+- Transactions / Conversations - Use Communications Services, Use Edge Applications Services, Use Cloud Services
+
+<a name="8.2.4.2"></a>
+### 8.2.4.2 Stereo-Typical Scenarios
+A set of stereo-typical interactions cases are illustrated for the cases of a Simple Infrastructure-as-a-Service (IaaS) and Software-as-a-Service (SaaS), where deployment is on a Cloud Provider's centralised sites and/or Edge sites. The scenarios help highlight needs for the Cloud Service Broker and Cloud Resources Broker (as per Figure 8.3) and hence extent of orchestration required to manage the interactions.
+
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-simple-stereo-types-02.png" alt="Simple Stereo-Typical Interactions"></p>
+<p align="center"><b>Figure 8-5:</b> "Simple Stereo-Typical Interactions"</p>
+
+The following patterns are visible:
+- For IaaS Cloud Integration:
+  - Cloud behaves like a set of virtual servers and, thus, requires virtual server life-cycle management and orchestration
+  - Depending on whether the cloud is accessed via public internet or private connection will change the extend of the Connectivity Management
+- For SaaS Cloud Integration:
+  - Cloud behaves like a running application/service and requires subscription management, and complex orchestration of the app/service and underlying resources is managed by SaaS provider with the User is relieved of having to provide direct control of resources
+- For CaaS Cloud Integration:
+  - Registry for pulling Containers could be from:
+    - Cloud in which case consumption model is closer to SaaS or
+    - from Private / Public Registry in which case integration model requires specific registry management elements
+- For Edge Cloud Integration:
+  - Adds need for Communications Service Provider and Cloud Provider physical, network underlay and overlay connectivity management
+
+A disaggregated scenario for a CSP using SaaS who uses IaaS is illustrated in the following diagram:
+
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-disaggregated-stereo-type-01.png" alt="Disaggregated SaaS Stereo-Typical Interaction"></p>
+<p align="center"><b>Figure 8-5:</b> "Disaggregated SaaS Stereo-Typical Interaction"</p>
+
+In disaggregated SaaS scenario the application provider is able to operate as an "infra-structureless" organisation. This could be achieved through SaaS organisation using public IaaS Cloud Providers which could include the CSP itself. A key consideration for CSP in both cloud provision and consumption in Multi-Cloud scenario is how to manage the integration across the Cloud Providers.
+
+To make this manageable and avoid integration complexity, there are a number of models:
+- Industry Standard APIs that allow consistent consumption across Cloud Providers,
+- API Brokage which provide consistent set of Consumer facings APIs that manage adaption to prorietry APIs
+- Cloud Brokerage where the Brokerage function is provided "as a Service" and allow "single pane of glass" to be presented for management of the multi-cloud environment
+
+The different means of integrating with and managing Cloud Providers is broadly covered under the umbrella topic of "Cloud Management Platforms". A survey of applicable standards to achieve this is provided in section: "8.2.4.3 Requirements, Reference Architecture & Industry Standards Intersect".
+
+The API and Cloud Brokerage models are illustrated in the following diagrams:
+
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-api-brokerage-stereo-type-01.png" alt="API Brokerage Multi-Cloud Stereo-Typical Interaction"></p>
+<p align="center"><b>Figure 8-6:</b> "API Brokerage Multi-Cloud Stereo-Typical Interaction"</p>
+
+<p align="center"><img src="../figures/rm-chap8-multi-cloud-interactions-cloud-brokerage-stereo-type-01.png" alt="Cloud Brokerage Multi-Cloud Stereo-Typical Interaction"></p>
+<p align="center"><b>Figure 8-7:</b> "Cloud Brokerage Multi-Cloud Stereo-Typical Interaction"</p>
+
+<a name="8.2.4.3"></a>
+### 8.2.4.3 Requirements, Reference Architecture & Industry Standards Intersect
+The Communcations Service Provider is both a provider and consumer of Cloud based services.
+When the CSP is actings as:
+- consumer then the typical consideration is total cost of ownership as the consumption is to usually to support internal business operations: BSS/OSS systems.
+- provider of cloud services, through operation of their own cloud or reselling of cloud services, then typical consideration is margin (cost to offer services vs income received).
+
+These two stances will drive differing approachs to how the CSP would look to manage how it interactions within a Multi-Cloud environment. The following table provide a summary of the needs for Multi-Cloud and classes of applicable technologies and standard that are available to meet these and the Anuket reference Architectures that are applicable of this;
+
+
+<a name="8.2.5"></a>
+### 8.2.5 Aspects of Multi-Cloud Security
+Cloud infrastructures, emerging as a key element in the telco operator ecosystem, are part of the attack surface landscape. This is particularly worrying with the 5G rollout becoming a critical business necessity. It is important to be vigilant of Cloud-focused threats and associated adversarial behaviours, methods, tools, and strategies that cyber threat actors use.
+ 
+In the multi-cloud ecosystem comprised of different security postures and policies, network domains, products, and business partnerships, the responsibility for managing these different cloud environments necessary to support 5G use cases falls to different enterprises, creating new levels of complexities and a new range of security risks. In such an environment, there are additional security principles to be considered.  These principles, see Table 8-1a below, are drawn from the collaboration with the GSMA Fraud and Security Group (FASG).
+  
+| Multi-cloud Security Principle | Description |
+| ------------------------------ | ----------- |
+| Policy synchronization | Consistency in applying the right security policies across environments, services, interfaces, and configured resources |
+| Visibility | A common data model approach to share events and behaviours across all the key compute, storage, network, and applications resources, environments, virtualised platforms, containers and interfaces |
+| Monitoring | Centralisation, correlation, and visualisation of security information across the different cloud environments to provide an end-to-end view and enable timely response to attacks |
+| Automation | Automation of critical activities including cloud security posture management, continuous security assessments, compliance monitoring, detection of misconfigurations and identification and remediation of risks |
+| Access Management | Wide range of users including administrators, testers, DevOps, and developers and customers should be organised into security groups with privileges appropriate to different resources and environments |
+| Security Operations Model | Augmentation of security services provided by cloud service providers with the vetted third-party and/or open-source tools and services, all incorporated into the established overall security operations model |
+
+<p align="center"><b>Table 8-1a. Multi-Cloud Principles</b></p>
+
+For telco operators to run their network functions in a multi-cloud environment, and specifically, in public clouds, the industry will need a set of new standards and new security tools to manage and regulate the interactions between multi-cloud participating parties. To give an example of a step in this direction, refer to the ETSI specification [TS 103 457](https://www.etsi.org/deliver/etsi_ts/103400_103499/103457/01.01.01_60/ts_103457v010101p.pdf) “Interface to offload sensitive functions to a trusted domain”, which provides extra security requirements for public clouds so as to enable telco operators the option of running network functions in public clouds.
+
+There is also another security aspect to consider, which is related to the autonomous nature of the participants in the multi-cloud. We can prescribe certain things and if not satisfied treat that party as "untrusted".  This problem has been addressed to some extent in TS 103 457. This standard introduces a concept of an LTD (Less Trusted Domain) and an MTD (More Trusted Domain) and specifies the TCDI (Trusted Cross-Domain Interface) to standardise secure interactions between them.  The standard defined the following elementary functions of TCDI:
+Connection and session management
+Data and value management
+Transferring cryptography functionality:
+- Entropy request
+- Encryption keys request
+- Trusted timestamping
+- Secure archive
+- Secure storage
+- Search capabilities
+
+As described in Sec. 1 (Scope) of the TS 103 457 document, it specifies "… a high-level service-oriented interface, as an application layer with a set of mandatory functions, to access secured services provided by, and executed in a More Trusted Domain. The transport layer is out of scope and left to the architecture implementation". The standard provides extra security features for sensitive functions down to individual Virtual Machines or Containers. As such, it is recommended that the relevant components of reference models, reference architecture, reference implementations and reference compliance take notice of this standard and ensure their compatibility, wherever possible.
 
 <a name="8.3"></a>
 ## 8.3 Telco Edge Cloud

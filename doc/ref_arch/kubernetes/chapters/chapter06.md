@@ -8,13 +8,12 @@
 * [6.2 API Machinery Special Interest Group](#6.2)
 * [6.3 Apps Special Interest Group](#6.3)
 * [6.4 Auth Special Interest Group](#6.4)
-* [6.5 CLI Special Interest Group](#6.5)
-* [6.6 Cluster Lifecycle Special Interest Group](#6.6)
-* [6.7 Instrumentation Special Interest Group](#6.7)
-* [6.8 Network Special Interest Group](#6.8)
-* [6.9 Node Special Interest Group](#6.9)
-* [6.10 Scheduling Special Interest Group](#6.10)
-* [6.11 Storage Special Interest Group](#6.11)
+* [6.5 Cluster Lifecycle Special Interest Group](#6.5)
+* [6.6 Instrumentation Special Interest Group](#6.6)
+* [6.7 Network Special Interest Group](#6.7)
+* [6.8 Node Special Interest Group](#6.8)
+* [6.9 Scheduling Special Interest Group](#6.9)
+* [6.10 Storage Special Interest Group](#6.10)
 
 <a name="6.1"></a>
 ## 6.1 Introduction
@@ -72,15 +71,7 @@ following Features tabs defined here.
 | NodeFeature:FSGroup                    | X             | ServiceAccounts should set ownership and permission when RunAsUser or FsGroup is present |
 
 <a name="6.5"></a>
-## 6.5 [CLI Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cli)
-
-| **Labels**                             | **Mandatory** | **Description** |
-|----------------------------------------|:-------------:|:----------------|
-| Conformance                            | X             | Kubernetes conformance test |
-| None                                   | X             | Kubernetes mainstream features |
-
-<a name="6.6"></a>
-## 6.6 [Cluster Lifecycle Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle)
+## 6.5 [Cluster Lifecycle Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle)
 
 | **Labels**              | **Mandatory** | **Description** |
 |-------------------------|:-------------:|:----------------|
@@ -88,8 +79,8 @@ following Features tabs defined here.
 | None                    | X             | Kubernetes mainstream features |
 | Feature:BootstrapTokens | X             | Should delete the token secret when the secret expired |
 
-<a name="6.7"></a>
-## 6.7 [Instrumentation Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-instrumentation)
+<a name="6.6"></a>
+## 6.6 [Instrumentation Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-instrumentation)
 
 | **Labels**                               | **Mandatory** | **Description** |
 |------------------------------------------|:-------------:|:----------------|
@@ -102,8 +93,8 @@ following Features tabs defined here.
 | Feature:StackdriverMetadataAgent         |               | Stackdriver Monitoring should run Stackdriver Metadata Agent |
 | Feature:StackdriverMonitoring            |               | |
 
-<a name="6.8"></a>
-## 6.8 [Network Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-network)
+<a name="6.7"></a>
+## 6.7 [Network Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-network)
 
 | **Labels**                          | **Mandatory** | **Description** |
 |-------------------------------------|:-------------:|:----------------|
@@ -121,12 +112,12 @@ following Features tabs defined here.
 | Feature:Networking-IPv6             |               | Networking should provide Internet connection for containers |
 | Feature:Networking-Performance      | X             | run iperf2 |
 | Feature:NetworkPolicy               |               | NetworkPolicy between server and client should enforce policy to allow traffic only from a different namespace, based on NamespaceSelector |
-| Feature:PerformanceDNS              | X             | Should answer DNS query for maximum number of services per cluster |
+| Feature:PerformanceDNS              |               | Should answer DNS query for maximum number of services per cluster |
 | Feature:SCTP                        |               | should allow creating a basic SCTP service with pod and endpoints |
 | Feature:SCTPConnectivity            |               | Pods should function for intra-pod communication: sctp |
 
-<a name="6.9"></a>
-## 6.9 [Node Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-node)
+<a name="6.8"></a>
+## 6.8 [Node Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-node)
 
 | **Labels**                                | **Mandatory** | **Description** |
 |-------------------------------------------|:-------------:|:----------------|
@@ -143,8 +134,8 @@ following Features tabs defined here.
 | NodeFeature:RuntimeHandler                |               | RuntimeClass should run a Pod requesting a RuntimeClass with a configured handler |
 | NodeFeature:Sysctls                       | X             | Should not launch unsafe, but not explicitly enabled sysctls on the node |
 
-<a name="6.10"></a>
-## 6.10 [Scheduling Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-scheduling)
+<a name="6.9"></a>
+## 6.9 [Scheduling Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-scheduling)
 
 | **Labels**                            | **Mandatory** | **Description** |
 |---------------------------------------|:-------------:|:----------------|
@@ -154,8 +145,8 @@ following Features tabs defined here.
 | Feature:LocalStorageCapacityIsolation | X             | Validates local ephemeral storage resource limits of pods that are allowed to run |
 | Feature:Recreate                      |               | Run Nvidia GPU Device Plugin tests with a recreation |
 
-<a name="6.11"></a>
-## 6.11 [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
+<a name="6.10"></a>
+## 6.10 [Storage Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-storage)
 
 | **Labels**                            | **Mandatory** | **Description**                |
 |---------------------------------------|:-------------:|:-------------------------------|
