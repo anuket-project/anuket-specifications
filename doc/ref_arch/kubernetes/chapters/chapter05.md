@@ -241,7 +241,7 @@ authentication mechanisms:
 * Use multi-factor authentication for all administrative access
 * Use token-based or certificate-based service and session authentication
   mechanisms
-* Integrated with existing identity management platforms e.g SAML, AD, etc. for
+* Integrated with existing identity management platforms e.g., SAML, AD, etc. for
   access control
 
 ### 5.4.5 Restrict access to etcd and encrypt contents within etcd
