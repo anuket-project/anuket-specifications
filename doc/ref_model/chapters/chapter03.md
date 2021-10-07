@@ -691,7 +691,7 @@ Accelerator technologies can be categorized depending on where they are realized
 <a name="3.8.2"></a>
 ### 3.8.2 Infrastructure and Application Level Acceleration
 
-Figure 3-17 gives examples for Hardware Accelerators in [Sample reference model realization](#3.7) diagram.
+Figure 3-17 gives examples for the Hardware Accelerators shown in Figure 3-15 (the [Sample reference model realization](#3.7) diagram).
 
 <p align="center"><img src="../figures/ch03-hardware-acceleration-in-rm-realization-diagram.png" alt="Hardware Acceleration in RM Realization Diagram" Title="Hardware Acceleration in RM Realization Diagram" width="65%"/></p>
 
