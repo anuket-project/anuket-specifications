@@ -273,7 +273,7 @@ part of the Kubernetes cluster itself, it has to be installed by the owners of
 the cluster; a number of tutorials show how to do this.
 Unfortunately, most of them create a service account with very high privileges.
 This caused Tesla and some others to be hacked via such a poorly configured Kubernetes
-dashboard. ([Reference: Tesla cloud resources are hacked to run
+dashboard (Reference: [Tesla cloud resources are hacked to run
 cryptocurrency-mining malware](
 https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/))
 
