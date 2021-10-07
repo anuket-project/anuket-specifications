@@ -723,7 +723,7 @@ O-RAN Alliance’s Cloud and Orchestration Workgroup defined Acceleration Abstra
 
 <p align="center"><b>Figure 3-18:</b> AAL Interface in RM Realization Diagram</p>
 
-Document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” from November 2020 (O-RAN.WG6.AAL-GAnP-v01.00, available to the public upon agreement to the O-RAN Alliance Adopter License, from [https://www.o-ran.org](https://www.o-ran.org)):
+The document “O-RAN Acceleration Abstraction Layer General Aspects and Principles 1.0” (O-RAN.WG6.AAL-GAnP-v01.00, November 2020, available to the public upon agreement to the O-RAN Alliance Adopter License, from [https://www.o-ran.org](https://www.o-ran.org)):
 -	Describes the functions conveyed over the AAL interface, including configuration and management functions.
 -	Identifies the requirements as well as general procedures and operations.
 -	Introduces the initial set of the O-DU/O-CU AAL profiles.
