@@ -216,7 +216,7 @@ A **Container** provides operating-system-level virtualisation by abstracting th
 <a name="1.8"></a>
 ## Other Referenced Terminology
 
-- **Anuket Assured Program (AAP):** An open source, community-led compliance and verification program to ease the integration of telecom applications with cloud infrastructures.
+- **Anuket Assured Program (AAP):** An open source, community-led program to verify compliance of the telecom applications and the cloud infrastructures with the Anuket specifications.
 
 - **Carrier Grade:** Carrier grade refers to network functions and infrastructure that are characterised by all or some of the following attributes: High reliability allowing near 100% uptime, typically measured as better than “five nines”; Quality of Service (QoS) allowing prioritization of traffic; High Performance optimized for low latency/packet loss, and high bandwidth; Scalability to handle demand growth by adding virtual and/or physical resources; Security to be able to withstand natural and man-made attacks.
 
