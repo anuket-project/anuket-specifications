@@ -6,6 +6,7 @@
 |-----------|-----------------|
 | 3GPP | 3rd Generation Partnership Project |
 | AAA | Authentication, Authorisation, and Accounting |
+| AAP | Anuket Assured Program |
 | AArch64 | 64bit ARM architecture |
 | Acc | Accelerator |
 | AD | Active Directory |
