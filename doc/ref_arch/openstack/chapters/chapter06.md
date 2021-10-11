@@ -124,7 +124,7 @@ Authorisation serves as the next level of defence.  At its core, it checks if th
 #### 6.3.2.4 RBAC
 In order to properly manage user access to OpenStack services, service providers must utilise the Role Based Access Control (RBAC) system (sec.sys.001, sec.sys.007).  Based on the OpenStack Identify Service (Keystone v3) Group and Domain component, the RBAC system implements a set of access roles that accommodate most use cases. Operations staff can create users and assign them to roles using standard OpenStack commands for users, groups, and roles. 
 
-Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Wallaby release, Keystone applies the following personas consistently across its API.
+Keystone provides three [default roles](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html): admin, member, and reader. As of Train release, Keystone applies the following personas consistently across its API.
 - The reader role provides read-only access to resources within the system, a domain, or a project.
 - The member role is the same as reader in Keystone, but allows to introduce granularity between admin and reader to other OpenStack services.
 - The admin role is reserved for the most privileged operations within a given scope for managing resources. 
