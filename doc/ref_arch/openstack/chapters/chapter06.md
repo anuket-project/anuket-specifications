@@ -27,8 +27,7 @@ Chapter 2 gathers all requirements and recommendations regarding security topics
 <a name="6.3"></a>
 ## 6.3 Cloud Infrastructure and VIM Security
 
-In the "[Security boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" section of the [OpenStack security guide]
-(https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html), there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
+In the "[Security boundaries and threats](https://docs.openstack.org/security-guide/introduction/security-boundaries-and-threats.html)" section of the [OpenStack security guide](https://docs.openstack.org/security-guide/introduction/introduction-to-openstack.html), there is extensive description on security domains, threat classifications, and attack vectors. The following only touches on some of the topics and at a high level.
 
 <a name="6.3.1"></a>
 ### 6.3.1 System Hardening
@@ -44,7 +43,7 @@ Access to all the platform's components must be restricted (sec.gen.013) applyin
 - Change all default user accounts where technically feasible
 - Change all default credentials
 - Prohibit logging with root account when root privileges are not required (sec.gen.006)
-- Restrict access according to only those protocols/service/address adhering to the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
+- Restrict access according to only those protocols/service/address adhering to the Principle of Least Privilege
 - The same authentication credentials must not be reused on different components (sec.sys.011)
 - Restrict access to Operating System (sec.gen.005)
 
@@ -231,7 +230,7 @@ The Cloud Infrastructure must onboard only trusted and verified VM images, imply
 images from non-trusted sources may contain security breaches or unsolicited malicious code (spoofing, information disclosure). 
 It is recommended to scan all VM images with a vulnerability scanner(sec.img.002). The scan is mandatory for images from unknown or untrusted sources.
 
-To mitigate tampering attacks, it is recommended to use the [Glance image signing feature](https://docs.openstack.org/glance/pike/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
+To mitigate tampering attacks, it is recommended to use the [Glance image signing feature](https://docs.openstack.org/glance/wallaby/user/signature.html) to validate an image when uploading. In this case, Barbican service must be installed.
 
 In order to protect data, VNFs must encrypt the volumes they use. In this case, the encryption key must not be stored on the infrastructure. 
 When a key management service is provided by the infrastructure, OpenStack can encrypt data on behalf of tenants (sec.gen.010).
