@@ -590,16 +590,22 @@ Placement has services running on the control node:
 
 Barbican usage provides a means to fulfill security requirements such as sec.sys.012 “The Platform **must** protect all secrets by using strong encryption techniques and storing the protected secrets externally from the component” and sec.ci.001 “The Platform **must** support Confidentiality and Integrity of data at rest and in transit.”.
 
-<!--
+
  #### 4.3.1.12 Cyborg
 
- Cyborg is the acceleration resources management service. Cyborg depends on Nova and has services running on the control node and compute node. Cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes.
- -	cyborg-api
- -	cyborg-conductor
- -	cyborg-db
- - cyborg-agent  which runs on compute nodes
- - *-driver drivers which run on compute nodes and depend on the acceleration hardware
- -->
+[Cyborg](https://docs.openstack.org/cyborg/wallaby/) is the OpenStack project for the  general purpose management framework for accelerators (including GPUs, FPGAs, ASIC-based devices, etc.), and their lifecycle management.
+
+Cyborg will support only a subset of the [Nova operations](https://docs.openstack.org/api-guide/compute/server_concepts.html); the set of Nova operations supported in Cyborg depends upon the merge of a set of Nova patches in Cyborg. In Wallaby, not all the required Nova patches have been merged. The list of Cyborg operations with Nova dependencies supported in Wallaby is listed [here](https://docs.openstack.org/cyborg/wallaby/reference/support-matrix.html); the Nova operations supported in Cyborg at any given time is also [available](https://docs.openstack.org/cyborg/latest/reference/support-matrix.html).
+
+Cyborg supports:
+* Acceleration Resource Discovery
+* Accelerator Life Cycle Management
+
+Accelerators can be of type:
+* Software: dpdk/spdk, pmem, …
+* Hardware (device types): FPGA, GPU, ARM SoC, NVMe SSD, CCIX based Caches, …
+
+The [Cyborg architecture](https://docs.openstack.org/cyborg/latest/user/architecture.html) consists of the cyborg-api, cyborg-conductor, cyborg-db, cyborg-agent, and generic device type drivers. cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes. cyborg-agent, which runs on compute nodes, interacts with generic device type drivers. These generic device type drivers are an abstraction of the vendor specific drivers; there is a generic device type driver for each device type (see above for list of some of the device types). The current list of the supported vendor drivers is listed under "[Driver Support](https://docs.openstack.org/cyborg/latest/reference/support-matrix.html)". 
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services
