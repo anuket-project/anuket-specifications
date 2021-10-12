@@ -43,17 +43,22 @@ def main():
             lineNumber = lineNumber + 1
             state["line"] = line
             if re.match("## Table of Contents", line):
-                logger.info(" " + str(lineNumber) + " ToC found")
+                #logger.info(" " + str(lineNumber) + " ToC found")
                 state["in-toc"] = True
                 continue
 
             if ("in-toc" in state) and state["in-toc"]:
                 #logger.debug(" " + str(lineNumber) + " state in-toc")
                 if re.match('^\s+$', line):
-                    del state["in-toc"]
+                    if ("content-after-toc" in state) and state["content-after-toc"]:
+                        # In some cases thre is an empty line just after the ToC header, so
+                        # we expect to have some content before the new line what indicates the 
+                        # end of ToC
+                        del state["in-toc"]
                 else:
+                    state["content-after-toc"] = True
                     continue
-            #logger.debug("Out line is " + state["line"])
+            logger.debug("Out line is " + state["line"])
             print(state["line"], file = fOut, end = "")
         
         fIn.close()
