@@ -22,28 +22,39 @@ def main():
     if args.debug:
         logger.setLevel(logging.DEBUG)
         logger.debug("Debug logging is ON")
-
-    for filename in glob.glob(args.directory + '*.md'):
+    fileList = glob.glob(args.directory + '*.md')
+    for filename in fileList:
         logger.info("Filename is " + filename)
+        if re.match(".*-mod.md", filename):
+            logger.debug("Mod file found, deleting it.")
+            os.remove(filename)
+            continue
         filenameNew = filename.replace(".md", "-mod.md")
         logger.debug("Modified filename is " + filenameNew)
-        if os.path.isfile(filenameNew):
+        if os.path.exists(filenameNew):
             logger.debug("Removing " + filenameNew)
             os.remove(filenameNew)
         fIn = open(filename, 'r')
         fOut = open(filenameNew, 'w')
         lineNumber = 0
+        state = {}
         for line in fIn:
             #logger.debug("Line is " + line)
-            if re.match("Table of Contents", line):
-                logger.info(" " + lineNumber + "ToC found")
-                newLine = ""
-
-            else:
-                newLine = line
-
             lineNumber = lineNumber + 1
-            print(newLine, file = fOut)
+            state["line"] = line
+            if re.match("## Table of Contents", line):
+                logger.info(" " + str(lineNumber) + " ToC found")
+                state["in-toc"] = True
+                continue
+
+            if ("in-toc" in state) and state["in-toc"]:
+                #logger.debug(" " + str(lineNumber) + " state in-toc")
+                if re.match('^\s+$', line):
+                    del state["in-toc"]
+                else:
+                    continue
+            #logger.debug("Out line is " + state["line"])
+            print(state["line"], file = fOut, end = "")
         
         fIn.close()
         fOut.close()
