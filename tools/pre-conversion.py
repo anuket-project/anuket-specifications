@@ -58,7 +58,13 @@ def main():
                 else:
                     state["content-after-toc"] = True
                     continue
-            logger.debug("Out line is " + state["line"])
+            # ## 7.2 Gap analysis
+            elif (re.match("^#+\s+[0-9A-Z\.]+\s+", line)):
+                #logger.debug("Header line: " + line)
+                result = re.sub(r"(^#+\s+)([0-9A-Z\.]+\s)", r"\1", line)
+                #logger.debug("Headerless: '" + result)
+                state["line"] = result
+            #logger.debug("Out line is " + state["line"])
             print(state["line"], file = fOut, end = "")
         
         fIn.close()
