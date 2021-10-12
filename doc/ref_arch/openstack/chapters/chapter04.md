@@ -605,7 +605,7 @@ Accelerators can be of type:
 * Software: dpdk/spdk, pmem, …
 * Hardware (device types): FPGA, GPU, ARM SoC, NVMe SSD, CCIX based Caches, …
 
-The [Cyborg architecture](https://docs.openstack.org/cyborg/latest/user/architecture.html) consists of the cyborg-api, cyborg-conductor, cyborg-db, cyborg-agent, and generic device type drivers. cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes. cyborg-agent, which runs on compute nodes, interacts with generic device type drivers. These generic device type drivers are an abstraction of the vendor specific drivers; there is a generic device type driver for each device type (see above for list of some of the device types). The current list of the supported vendor drivers is listed under "[Driver Support](https://docs.openstack.org/cyborg/latest/reference/support-matrix.html)". 
+The [Cyborg architecture](https://docs.openstack.org/cyborg/latest/user/architecture.html) consists of the cyborg-api, cyborg-conductor, cyborg-db, cyborg-agent, and generic device type drivers. cyborg-api, cyborg-conductor and cyborg-db are hosted on control nodes. cyborg-agent, which runs on compute nodes, interacts with generic device type drivers on those nodes. These generic device type drivers are an abstraction of the vendor specific drivers; there is a generic device type driver for each device type (see above for list of some of the device types). The current list of the supported vendor drivers is listed under "[Driver Support](https://docs.openstack.org/cyborg/latest/reference/support-matrix.html)". 
 
 <a name="4.3.2"></a>
 ### 4.3.2. Containerised OpenStack Services
