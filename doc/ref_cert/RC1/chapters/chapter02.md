@@ -11,10 +11,6 @@ sure the SUT follows RM & RA requirements, and conformance on VNF makes sure
 that the VNF can be deployed and sufficiently work on the Cloud Infrastructure
 that has passed the conformance test.
 
-<!---Verification will be used to indicate conformance to design requirement specifications. Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.--->
-
-<!---Validations is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.--->
-
 All Terms utilized throughout this chapter are intended to align with CVC
 definitions, and their use through CVC documentation, guidelines, and
 standards. This chapter will outline the Requirements, Process, and Automation,
