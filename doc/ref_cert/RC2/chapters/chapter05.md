@@ -1,3 +1,1 @@
-# 5. CNF Testing Cookbook
-
-## Table of Contents
+# CNF Testing Cookbook

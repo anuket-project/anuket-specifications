@@ -1,19 +1,6 @@
-# 1. Introduction
-<p align="right"><img src="../figures/bogo_ifo.png" alt="scope" title="Scope" width="35%"/></p>
+# Introduction
 
-## Table of Contents
-* [1.1 Introduction](#1.1)
-  * [1.1.1 Terminology](#1.1)
-  * [1.1.2 Relation to other communities](#1.1)
-* [1.2 Scope](#1.2)
-* [1.3 Relation to other communities](#1.3)
-* [1.4 Principles and Guidelines](#1.4)
-  * [1.4.1 Overarching Objectives and Goals](#1.4.1)
-* [1.5 Best Practices](#1.5)
-* [1.6 Verification methodologies](#1.6)
-* [1.7 Assumptions & Dependencies](#1.7)
-* [1.8 Results Collation & Presentation](#1.8)
-* [1.9 Governance](#1.9)
+![Scope](../figures/bogo_ifo.png)
 
 ## Synopsis
 
@@ -34,8 +21,7 @@ In summary, NFVI+VNF **Conformance** testing will be performed for **Verificatio
 
 **All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards.**
 
-<a name="1.1"></a>
-## 1.1 Introduction
+## Introduction
 
 **Chapter Purpose**
 
@@ -54,13 +40,11 @@ Perform NFVI+VNF Verification and Validations using Anuket reference architectur
 **Different Distributions**
 The three step methodology described above of verifying Manifest compliance, executing Empirical Golden VNF transactions, and performing Interoperability Testing is the same validation process regardless of the Distribution used to establish a cloud topology, and the components and services used in the client software stack.  
 
-<a name="1.1.1"></a>
-### 1.1.1 Terminology
+### Terminology
 
 Terminology in this document will follow [Anuket Terminology](../../../common/glossary.md).
 
-<a name="1.2"></a>
-## 1.2 Scope
+## Scope
 
 <p align="center"><img src="../figures/rc1_scope.png" alt="scope" title="RC1 Scope" width="100%"/></p>
 <p align="center"><b>Figure 1-1:</b> RC1 Scope.</p>
@@ -80,29 +64,25 @@ This document covers the realisation aspects of conformance of both NFVI and VNF
 - ONAP is not used in the process flow for NFVI verifications, or validations.
 - Upgrades to VNFs, and the respective processes of verifying upgrade procedures and validating (testing) the success and compatibility of upgrades is not in scope.
 
-<a name="1.3"></a>
-## 1.3 Relation to other communities
+## Relation to other communities
 
 <p align="center"><img src="../figures/rc1_relation.png" alt="relation" title="RC1 Relation" width="100%"/></p>
 <p align="center"><b>Figure 1-2:</b> RC-1 Relations other communities.</p>
 
-<a name="1.4"></a>
-## 1.4 Principles and Guidelines
+## Principles and Guidelines
 
 The objectives of the verification program are to deliver a validated implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams, leveraging the OVP ecosystem as the vehicle for delivering validated NFVI.
 
 These core principles will guide NFV verification deliverables:
 
-<a name="1.4.1"></a>
-### 1.4.1 Overarching Objectives and Goals
+### Overarching Objectives and Goals
 
 1. Deliver verified implementation of reference architecture which satisfies infrastructure needs for VNF-developer teams.
 2. All accomplished with augmentation to the current OVP ecosystem.
 3. Increase probability VNFs will on-board and function with minimal problems, or issues, during initial instantiation of VNF.
 4. Test Harnesses will be portable, or compatible, across all RAs/Distributions which already conform to standard interfaces and services.
 
-<a name="1.5"></a>
-## 1.5 Best Practices
+## Best Practices
 
 The following best practices have been adopted to ensure verification and validation procedures are repeatable with consistent quality in test results, and RI conformances:
 
@@ -113,8 +93,7 @@ The following best practices have been adopted to ensure verification and valida
 * Define Anuket RA as scenarios, and have all test cases for the RA be involved in OVP
 * Add test cases from operators, which operators already tested in their environment
 
-<a name="1.6"></a>
-## 1.6 Verification methodologies
+## Verification methodologies
 
 Perform VNF interoperability verifications against an implementation of Anuket reference architecture, leveraging existing Anuket Intake Process. Upstream projects will define features/capabilities, test scenarios, and test cases to augment existing OVP test harnesses to be executed via the OVP Ecosystem.
 
@@ -123,8 +102,7 @@ Perform VNF interoperability verifications against an implementation of Anuket r
 <p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="conformance Methodology" title="conformance Methodology" width="100%"/></p>
 <p align="center"><b>Figure 1-3:</b> Conformance Methodology</p>
 
-<a name="1.7"></a>
-## 1.7 Assumptions & Dependencies
+## Assumptions & Dependencies
 
 **Assumptions** NFVI+VNF testing will be considered **Testable** if the follow
 qualifiers are present in a test execution, and subsequent result:
@@ -162,15 +140,13 @@ is required if new test suites are added in place of older, stale projects.
   [chapter 2.3](../../../ref_model/chapters/chapter02.md#2.3)
   for details on these profiles.
 
-<a name="1.8"></a>
-## 1.8 Results Collation & Presentation
+## Results Collation & Presentation
 
 Test suites will be categorized as functional or performance based. Results reporting will be communicated as a boolean (pass/fail). The pass/fail determination for performance-based test cases will be made by comparing results against a baseline. Example performance-based metrics include, but are not limited to: resource utilization, response times, latency, and sustained throughput per second (TPS).
 
 **Placeholder to document where results will be posted (e.g. Dovetail dashboards.)**
 
-<a name="1.9"></a>
-## 1.9 Governance
+## Governance
 
 1. Conformance badges will be presented by the CVC
 2. CVC will maintain requirements for conformance
