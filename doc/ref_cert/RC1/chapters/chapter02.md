@@ -3,21 +3,45 @@
 ![Scope](../figures/bogo_ifo.png)
 
 ## Synopsis:
-This chapter mainly covers the overall requirement for Reference Conformance test. The Conformance tests are conducted on NFVI and VNF level. Conformance on NFVI makes sure the SUT follows RM & RA requirement, and conformance on VNF makes sure VNF can be deployed and sufficiently working on the NFVI that has passed the conformance test.
+This chapter mainly covers the overall requirement for the Reference
+Conformance test. The Conformance tests are conducted on the Cloud
+Infrastructure and VNF level. Conformance on the Cloud Infrastructure makes
+sure the SUT follows RM & RA requirements, and conformance on VNF makes sure
+that the VNF can be deployed and sufficiently work on the Cloud Infrastructure
+that has passed the conformance test.
 
 <!---Verification will be used to indicate conformance to design requirement specifications. Activities involved Reviews and Walk-Throughs to ensure the NFVI is delivered per implementation specifications.--->
 
 <!---Validations is used to indicate testing performed to confirm the actual output of a product meets the expected, or desired outcome, or behavior.--->
 
-All Terms utilized throughout this chapter are intended to align with CVC definitions, and their use through CVC documentation, guidelines, and standards. This chapter will outline the Requirements, Process, and Automation, needed to deliver NFVI conformance.
+All Terms utilized throughout this chapter are intended to align with CVC
+definitions, and their use through CVC documentation, guidelines, and
+standards. This chapter will outline the Requirements, Process, and Automation,
+needed to deliver the Cloud Infrastructure conformance.
 
 ## Introduction
-NFVI (Network Functions Virtualization Infrastructure) refers to the physical and virtual resources (compute, storage and network) on which virtual network functions (VNFs) are deployed. Due to differentiation of API and under layer configuration and capability matrix, cross vendor VNF deployment on NFVI becomes hard to predict, and requires huge amount of cross vendor interoperability tests. With combined effort from operators and vendors, define RA and RM, to make sure to consolidate the under layer configuration, capability and API, so as to provide the upper layer VNF with a 'common cloud infrastructure'. Based on this, Anuket also provides RC for conformance test of SUT against RA & RM requirements. SUT passes the conformance test will be identified as NFVI that can fit into the common requirements.
+The Cloud Infrastructure refers to the physical and virtual resources (compute,
+storage and network) on which virtual network functions (VNFs) are deployed.
+Due to the differences in the API and under-layer configuration and capability
+matrix,  multiple vendor VNF deployments on the shared Cloud Infrastructure
+becomes hard to predict, and requires s amount of cross vendor interoperability
+tests. With the combined effort from operators and vendors, define the RA and
+RM, that standardises the under layer configuration, capability and API, so as
+to provide the upper layer VNF with a 'common cloud infrastructure'. Based on
+this, Anuket also provides RC for conformance tests of SUT against RA & RM
+requirements. SUT passes the conformance test will be identified as NFVI that
+can fit into the common requirements.
 
 In the meantime, RC also provides conformance test for VNF. The intention is to make sure VNF that passes RC test cases can be deployed on any NFVI which also passes RC without any conformance and interoperability issue.
 
 ## Methodology
-The NFVI is consumed or used by VNFs via APIs exposed by Virtualised Infrastructure Manager (VIM). The resources created by VIM on the NFVI use the underlying physical hardware (compute, storage and network) either directly or indirectly. Anuket recommends RA1 to be used as a reference architecture for NFVI conformance. This  would provide a set of standard interfaces to create resources on NFVI. Below step by step process illustrates the NFVI conformance methodology:
+The Cloud Infrastructure is consumed or used by VNFs via APIs exposed by
+Virtualised Infrastructure Manager (VIM). The resources created by VIM on the
+NFVI use the underlying physical hardware (compute, storage and network) either
+directly or indirectly. Anuket recommends RA1 to be used as a reference
+architecture for the Cloud Infrastructure conformance. This would provide a set
+of standard interfaces to create resources on the Cloud Infrastructure. Below
+step by step process illustrates the NFVI conformance methodology:
 * SUT (Anuket RI1 or commercial NFVI) is deployed on hardware for conformance test.
 * A set of tests run on SUT to determine the SUT readiness for conformance process.
 * Golden KPIs are taken as a reference.
@@ -42,7 +66,14 @@ Conformance methodologies to be implemented, from a process perspective include:
 * Leverage test harnesses from existing open source projects where practical, and applicable.
 
 ## Conformance Strategy & Vehicle
-In order to begin the Conformance process, NFVI needs to be validated and expected to be in a required state. This state would be determined by running tests as described in RI. Once the target NFVI passes these tests, it would become a candidate for NFVI Conformance. If NFVI fails the tests, it will not be move to next workflow for Conformance. NFVI+VNF conformance consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally important and addressed in [Chapter 7 of Reference Model](../../../ref_model/chapters/chapter07.md).
+In order to begin the Conformance process, the Cloud Infrastructure needs to be
+validated and expected to be in a required state. This state would be
+determined by running tests as described in RI. Once the target Cloud
+Infrastructure passes these tests, it would become a candidate for the Cloud Infrastructure Conformance. If the Cloud Infrastructure fails the tests, it
+will not be moved to the next workflow for Conformance. The Cloud
+Infrastructure+VNF conformance consist of a three part process for Compliance, Validation, and Performance. Adherence to Security standards are equally
+important and addressed in
+[Chapter 7 of Reference Model](../../../ref_model/chapters/chapter07.md).
 
 The three part conformance process includes NFVI Manifest conformance, Empirical Baseline measurements against targeted VNF families, and Candidate VNF validation. More specifically,
 * NFVI conformance: NFVI is the SUT, ensuring NFVI is compliant with specs of RM and RA accomplished with Manifest test
@@ -79,8 +110,9 @@ To cater to different needs from multiple NFVI vendors, Anuket allows different 
 
 ## Compliance, Verification, and Conformance
 The below set of steps define the compliance, verification and Conformance process for NFVI
-* Based on VNF's requirements, NFVI profile is selected - B, N
-* NFVI readiness is checked for Conformance.
+* Based on VNF's requirements, the Cloud Infrastructure profile is selected -
+  B, N
+* The Cloud Infrastructure readiness is checked for Conformance.
 * The test VNFs are on-boarded using automation scripts on the NFVI.
 * VNF on-boarding is validated by running functional tests to ensure that the on-boarding is successful.
 * VNF performance tests are executed and NFVI KPIs are recorded during the tests.
@@ -131,11 +163,15 @@ exit criteria:
 ## Framework Requirements
 
 The NFVI Conformance framework deals with the process of testing NFVI in below three areas:
-* Compliance: The NFVI needs to comply to Anuket RA1/RA2.
+* Compliance: The Cloud Infrastructure needs to comply to Anuket RA1/RA2.
 * Validation: Validation deals with the ability of NFVI to respond to Cloud APIs and interfaces.
 * Performance: Performance deals with running tests on NFVI depending on the NFVI profile and collecting KPIs.
 
-The NFVI KPIs are compared with Golden KPIs, which serve as a reference for NFVI Conformance. If NFVI KPIs meet Golden KPIs, NFVI is certified and granted a Conformance badge. If NFVI KPIs do not meet Golden KPIs, no Conformance badge is provided.
+The Cloud Infrastructure KPIs are compared with Golden KPIs, which serve as a
+reference for the Cloud Infrastructure Conformance. If the Cloud Infrastructure
+KPIs meet Golden KPIs, The Cloud Infrastructure is certified and granted a
+Conformance badge. If the Cloud Infrastructure KPIs do not meet Golden KPIs, no
+Conformance badge is provided.
 
 ### Best Practices (General)
 The NFVI Conformance framework will be guided by the following core principles:
