@@ -3,6 +3,7 @@
 ![Scope](../figures/bogo_ifo.png)
 
 ## Introduction
+
 This chapter covers comprehensive VNF Conformance requirements for enabling
 required process and steps to provide VNF badging based on define scope of
 compliance and validation. This includes end to end test framework requirements,

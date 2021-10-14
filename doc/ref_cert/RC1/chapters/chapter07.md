@@ -13,7 +13,8 @@ Define the purpose of the chapter which is to:
 
 ## VNF Testing Cookbook.
 
-<p align="center"><img src="../figures/rc1_cookbook_vnf.png" alt="VNF_cookbook" title="VNF Cookbook" width="60%"/></p>
+![VNF_cookbook](../figures/rc1_cookbook_vnf.png)
+
 <p align="center"><b>Figure 1-3:</b> VNF Testing Integrated Framework.</p>
 
 As detailed in the RC chapter 05 on E2E VNF test platform requirements,

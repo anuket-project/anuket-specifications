@@ -46,8 +46,7 @@ Terminology in this document will follow [Anuket Terminology](../../../common/gl
 
 ## Scope
 
-<p align="center"><img src="../figures/rc1_scope.png" alt="scope" title="RC1 Scope" width="100%"/></p>
-<p align="center"><b>Figure 1-1:</b> RC1 Scope.</p>
+![RC1 Scope](../figures/rc1_scope.png)
 
 This document covers the realisation aspects of conformance of both NFVI and VNFs. The document will cover the following topics:
 
@@ -66,8 +65,7 @@ This document covers the realisation aspects of conformance of both NFVI and VNF
 
 ## Relation to other communities
 
-<p align="center"><img src="../figures/rc1_relation.png" alt="relation" title="RC1 Relation" width="100%"/></p>
-<p align="center"><b>Figure 1-2:</b> RC-1 Relations other communities.</p>
+![RC-1 Relations other communities](../figures/rc1_relation.png)
 
 ## Principles and Guidelines
 
@@ -99,8 +97,7 @@ Perform VNF interoperability verifications against an implementation of Anuket r
 
 3rd Party test platforms may also be leveraged, if desired.
 
-<p align="center"><img src="../figures/RC_certifying_methodlogy_25Nov2019.jpg" alt="conformance Methodology" title="conformance Methodology" width="100%"/></p>
-<p align="center"><b>Figure 1-3:</b> Conformance Methodology</p>
+![Conformance Methodology](../figures/RC_certifying_methodlogy_25Nov2019.jpg)
 
 ## Assumptions & Dependencies
 
@@ -129,8 +126,6 @@ is required if new test suites are added in place of older, stale projects.
   (See image.)
 
 ![Instance Type](../figures/RC_NFVI_VNF_Instance_Type_25Nov2019.jpg)
-<p align="center"><b>Figure:</b> Instance Type</p>
-
 
 **NFVI+VNF Instance Type:**
 * Standard compute flavours to be tested are defined in
